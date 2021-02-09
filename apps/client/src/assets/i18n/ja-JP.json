@@ -465,6 +465,10 @@
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "グループ指定ができてないアラーム前にグループアラームを表示",
     "Disconnect_patreon": "Patreon連結を切る",
+    "Export_settings": "Export settings",
+    "Import_settings": "Import settings",
+    "Import_successful": "Settings imported",
+    "Import_error": "Error while trying to import settings",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -490,6 +494,7 @@
       "Inventory_tracking": "Inventory tracking",
       "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
+      "Import_export": "Import/export",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {

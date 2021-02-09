@@ -5552,6 +5552,216 @@
   "20496": {
     "zh": "对目标及其周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标所受伤害提高20%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒\n该战技有单独计算的复唱时间"
   },
+  "20701": {
+    "zh": "令目标及其周围敌人陷入麻痹状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒"
+  },
+  "20702": {
+    "zh": "对目标及其周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n目标为不死系怪物时发动追加效果\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标所受伤害提高25%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒"
+  },
+  "20703": {
+    "zh": "一定时间内，以自身加重为代价，令自身所受的伤害减轻90%，同时除特定攻击之外其他所有击退与吸引效果失效　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>6秒"
+  },
+  "20704": {
+    "zh": "打消目标身上的一种强化状态"
+  },
+  "20705": {
+    "zh": "隐藏自己的身形，大多数敌人都无法发现自己\n不过移动速度会降低25%\n对部分特殊怪物无效\n发动除冲刺以外的技能会取消该状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>自身处于非战斗状态<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "20706": {
+    "zh": "对自身或一名队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>失传铸魔<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n无法与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>失传刚刺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态共存\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>失传铸魔效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>一定时间内，所有攻击均视为魔法攻击\n不过，伤害提高等效果受技能原本属性影响\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300秒"
+  },
+  "20707": {
+    "zh": "对自身或一名队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>失传刚刺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n无法与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>失传铸魔<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态共存\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>失传刚刺效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>一定时间内，所有攻击均视为物理攻击\n不过，伤害提高等效果受技能原本属性影响\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300秒"
+  },
+  "20708": {
+    "zh": "令自身的移动速度大幅提高\n同时附加了其他移动速度提高的效果时，仅能适用其中1种\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>盗贼的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令自身回避率提高30%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>斥候的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高速复唱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>高速复唱效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果时间内，自身发动的1次能力类技能复唱时间缩短60%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒"
+  },
+  "20709": {
+    "zh": "指定自身或其他一名玩家，附加物理伤害减轻10%的防护罩\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30分"
+  },
+  "20710": {
+    "zh": "指定自身或其他一名玩家，附加魔法伤害减轻10%的防护罩\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30分"
+  },
+  "20711": {
+    "zh": "为自身或一名队员附加防护罩，在效果时间内能够反射除特定攻击之外的所有魔法\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>守护者的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>持续时间变为30秒。"
+  },
+  "20712": {
+    "zh": "指定自身或其他一名玩家，附加能够抵御一定伤害的防护罩\n该防护罩能够抵消相当于目标最大体力15%的伤害量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒"
+  },
+  "20713": {
+    "zh": "令自身或一名队员攻击造成的伤害提高5%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600秒"
+  },
+  "20714": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>蓄力<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>蓄力效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果时间内自身发动的1次战技威力提高，效果量为每档提高15%，继承其他失传技能后取消该状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>16档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n与战技和魔法共享复唱时间"
+  },
+  "20715": {
+    "zh": "一定时间内，自身发动攻击造成的伤害提高70%\n效果中会持续消耗魔力，魔力为0时取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>魔战士的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔法盾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>魔法盾效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>受到的魔法伤害减少50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "20716": {
+    "zh": "重置除特定技能之外所有职业技能、特职技能以及职能技能的复唱时间"
+  },
+  "20717": {
+    "zh": "一定时间内，自身发动攻击造成的伤害提高30%，且暴击发动率提高40%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>狂战士的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>攻击造成的伤害提高量变为40%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重骑兵的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>物理盾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>物理盾效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>受到的物理伤害减少50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "20718": {
+    "zh": "向目标所在方向发出扇形范围物理攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>800\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果（暴击时）：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>暴击伤害变为300%\n该战技有单独计算的复唱时间，不受其他战技与魔法的复唱时间影响"
+  },
+  "20719": {
+    "zh": "令目标陷入无法战斗状态\n目标剩余体力越少成功率越高\n该战技有单独计算的复唱时间，不受其他战技与魔法的复唱时间影响\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>祭司的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>提高成功率"
+  },
+  "20720": {
+    "zh": "一定时间内，以自身所受除特定技能之外的治疗魔法效果降低100%为代价，令攻击造成的伤害提高50%。\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态"
+  },
+  "20721": {
+    "zh": "一定时间内，以自身体力逐渐流失为代价，令攻击造成的伤害提高55%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态"
+  },
+  "20722": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍耐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n一定时间内，受到伤害会增加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍耐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的档数\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>忍耐境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>每档所受伤害提高15%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5档\n档数最大时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍耐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>铁壁境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>铁壁境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>所受伤害减轻30%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180秒"
+  },
+  "20723": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>坚守境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n一定时间内，受到伤害会增加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>坚守境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的档数\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>坚守境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>每档攻击造成的伤害减少15%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5档\n档数最大时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>坚守境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>铁壁境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>铁壁境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>所受伤害减轻30%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180秒"
+  },
+  "20724": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冥想境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n每隔一段时间会增加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冥想境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的档数\n效果时间内发动技能或进行移动、转身都会立即解除冥想境地\n发动之后会停止自动攻击\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态档数最大时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冥想境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>无我境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>无我境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 自身发动的体力恢复效果提高50%，且减少魔力消耗\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120秒"
+  },
+  "20725": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>敏锐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n一定时间内，回避攻击会增加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>敏锐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的档数\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系技能同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>敏锐境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>每档所受伤害提高10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态档数最大时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>敏锐境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>神速境地<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>神速境地的效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身直击发动率提高30%，攻击间隔、战技与魔法的咏唱及复唱时间缩短20%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180秒"
+  },
+  "20726": {
+    "zh": "恢复目标的体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15000"
+  },
+  "20727": {
+    "zh": "恢复目标的体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>21700\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>治愈者的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标体力持续恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>6000　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>21秒"
+  },
+  "20728": {
+    "zh": "恢复目标及其周围队员的体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15000"
+  },
+  "20729": {
+    "zh": "恢复目标及其周围队员的体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>21700\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>治愈者的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标体力持续恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>6000　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>21秒"
+  },
+  "20730": {
+    "zh": "复活目标并恢复其全部体力\n目标陷入衰弱状态时会解除衰弱复活目标。"
+  },
+  "20731": {
+    "zh": "向目标进行挑衅，令目标对自身的仇恨变为最高后，继续提高自身仇恨\n一定时间内，持续提高自身仇恨且所受的伤害减轻20%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒"
+  },
+  "20732": {
+    "zh": "从持有的失传技能中随机选取1个掷向敌人，发动单体攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50～1000\n会失去掷出的失传技能\n掷出的失传技能体积越大威力越大\n该战技有单独计算的复唱时间，不受其他战技与魔法的复唱时间影响"
+  },
+  "20733": {
+    "zh": "指定一名队员为目标，模仿并继承目标继承中的失传技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于非战斗状态"
+  },
+  "20734": {
+    "zh": "掷出命运骰子，不知道会发生什么\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身处于战斗状态"
+  },
+  "20735": {
+    "zh": "令无法战斗的目标以衰弱状态重新振作起来"
+  },
+  "20736": {
+    "zh": "持续时间内若陷入无法战斗状态，有70%几率自动复活\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180分"
+  },
+  "20737": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>自动恢复药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>自动恢复药效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果时间内体力低于50%时自动恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600秒\n发动恢复效果后有50%的几率解除自动恢复药\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>盗贼的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>发动恢复效果后解除自动恢复药状态的几率变为10%\n与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军以太药箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>和<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军治愈箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>共享复唱时间"
+  },
+  "20738": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>自动以太药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>自动以太药效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果时间内魔力低于20%时自动恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600秒\n发动恢复效果后有50%的几率解除自动以太药\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>盗贼的药状态中追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>发动恢复效果后解除自动以太药状态的几率变为10%\n与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军恢复药箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>和<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军治愈箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>共享复唱时间"
+  },
+  "20739": {
+    "zh": "解除自身身上部分弱化效果中的一种\n如果未能触发该效果，则张开可免疫一次部分弱化效果中一种的防护罩\n无法与同样效果的防护罩共存\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30分\n与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军恢复药箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>和<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义军以太药箱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>共享复唱时间"
+  },
+  "20740": {
+    "zh": "令自身体力持续恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5000　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>40秒"
+  },
+  "20741": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高80%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20742": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高60%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20743": {
+    "zh": "继承英雄的记忆，令自身发动治疗魔法的治疗量提高60%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20744": {
+    "zh": "继承英雄的记忆，令自身物理防御力提高150%、魔法防御力提高45%、最大体力提高60%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20745": {
+    "zh": "继承英雄的记忆，令自身防御力提高80%、最大体力提高45%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20746": {
+    "zh": "继承英雄的记忆，令自身防御力提高30%、最大体力提高10%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20747": {
+    "zh": "继承英雄的记忆，令自身最大魔力提高50%、发动治疗魔法的治疗量提高25%、发动攻击造成的伤害提高20%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20748": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高20%、暴击发动率提高15%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20749": {
+    "zh": "继承英雄的记忆，以自身最大体力降低5%为代价，令自身回避率提高40%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20750": {
+    "zh": "继承英雄的记忆，以自身发动治疗魔法的治疗量降低70%为代价，令自身发动攻击造成的伤害提高100%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20751": {
+    "zh": "继承英雄的记忆，以自身受到的伤害提高200%、最大体力降低30%为代价，令自身发动攻击造成的伤害提高90%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20752": {
+    "zh": "继承英雄的记忆，令自身回避率提高10%，同时提高移动速度和中毒耐性\n该移动速度提高效果在骑乘坐骑时也有效\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20753": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高40%，同时附加将自身攻击所造成伤害的一部分转化为自身体力的状态\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20754": {
+    "zh": "继承英雄的记忆，令自身防御力提高50%、最大体力提高45%，同时附加将自身攻击所造成伤害的一部分转化为自身体力的状态\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20755": {
+    "zh": "继承英雄的记忆，令自身防御力提高50%、最大体力提高45%、发动攻击造成的伤害提高60%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20756": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高96%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20757": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高72%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20758": {
+    "zh": "继承英雄的记忆，令自身发动治疗魔法的治疗量提高72%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20759": {
+    "zh": "继承英雄的记忆，令自身物理防御力提高180%、魔法防御力提高54%、最大体力提高72%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20760": {
+    "zh": "继承英雄的记忆，令自身防御力提高96%、最大体力提高54%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20761": {
+    "zh": "继承英雄的记忆，令自身防御力提高36%、最大体力提高12%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20762": {
+    "zh": "继承英雄的记忆，令自身最大魔力提高60%、发动治疗魔法的治疗量提高30%、发动攻击造成的伤害提高24%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20763": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高24%、暴击发动率提高18%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20764": {
+    "zh": "继承英雄的记忆，以自身最大体力降低3%为代价，令自身回避率提高48%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20765": {
+    "zh": "继承英雄的记忆，以自身发动治疗魔法的治疗量降低70%为代价，令自身发动攻击造成的伤害提高120%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20766": {
+    "zh": "继承英雄的记忆，以自身受到的伤害提高200%、最大体力降低30%为代价，令自身发动攻击造成的伤害提高108%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20767": {
+    "zh": "继承英雄的记忆，令自身回避率提高20%，同时提高移动速度和中毒耐性\n该移动速度提高效果在骑乘坐骑时也有效\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20768": {
+    "zh": "继承英雄的记忆，令自身发动攻击造成的伤害提高48%，同时附加将自身攻击所造成伤害的一部分转化为自身体力的状态\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20769": {
+    "zh": "继承英雄的记忆，令自身防御力提高60%、最大体力提高54%，同时附加将自身攻击所造成伤害的一部分转化为自身体力的状态\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
+  "20770": {
+    "zh": "继承英雄的记忆，令自身防御力提高60%、最大体力提高54%、发动攻击造成的伤害提高72%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+  },
   "20940": {
     "zh": "恢复自身的体力与能量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>体力恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>最大体力的40%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>能量恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>最大能量的30%"
   },
@@ -5560,5 +5770,8 @@
   },
   "21325": {
     "zh": "促进人工轰击怪自我恢复的舞蹈"
+  },
+  "21460": {
+    "zh": "此任务指令目前无法使用"
   }
 }

@@ -18,15 +18,13 @@ export class SettingsService {
   public settingsChange$ = new Subject<string>();
   private _cache: Record<string, string>;
 
-  public get cache():Record<string, string>{
+  public get cache(): Record<string, string> {
     return this._cache;
   }
 
-  public set cache(cache: Record<string, string>){
+  public set cache(cache: Record<string, string>) {
     this._cache = cache;
     localStorage.setItem('settings', JSON.stringify(this.cache));
-    this.ipc.send('apply-settings', { ...this.cache });
-    this.settingsChange$.next('');
   }
 
   constructor(@Optional() private ipc: IpcService) {
@@ -471,7 +469,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return +this.getSetting('alarm:volume', '0.5');
+    return Math.floor(+this.getSetting('alarm:volume', '0.5') * 1000) / 10;
   }
 
   public set alarmVolume(volume: number) {
@@ -487,7 +485,7 @@ export class SettingsService {
   }
 
   public get autofillCompletionVolume(): number {
-    return +this.getSetting('autofill:completion:volume', '0.5');
+    return Math.floor(+this.getSetting('autofill:completion:volume', '0.5') * 1000) / 10;
   }
 
   public set autofillCompletionVolume(volume: number) {
@@ -807,9 +805,11 @@ export class SettingsService {
   }
 
   private setSetting(name: string, value: string): void {
-    this.cache[name] = value;
-    localStorage.setItem('settings', JSON.stringify(this.cache));
-    this.ipc.send('apply-settings', { ...this.cache });
+    this._cache[name] = value;
+    localStorage.setItem('settings', JSON.stringify(this._cache));
+    if (this.ipc) {
+      this.ipc.send('apply-settings', { ...this._cache });
+    }
     this.settingsChange$.next(name);
   }
 

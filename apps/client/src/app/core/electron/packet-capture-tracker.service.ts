@@ -96,12 +96,12 @@ export class PacketCaptureTrackerService {
   private getInventoryTransactionFlag(): number {
     switch (this.settings.region) {
       case Region.China:
-        return this.constants.CN.InventoryOperationBaseValue;
+        return this.constants.CN.InventoryOperationBaseValue - 1;
       case Region.Korea:
-        return this.constants.KR.InventoryOperationBaseValue;
+        return this.constants.KR.InventoryOperationBaseValue - 1;
       case Region.Global:
       default:
-        return this.constants.Global.InventoryOperationBaseValue;
+        return this.constants.Global.InventoryOperationBaseValue - 1;
     }
   }
 
@@ -312,10 +312,11 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType<ActorControl>('actorControl'),
-      filter(packet => packet.category === 20 && packet.sourceActorSessionID === packet.targetActorSessionID)
+      ofPacketType('addStatusEffect')
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.param1);
+      // TODO use packet struct once moved to pcap-ffxiv
+      const statusId = Buffer.from(packet.data).readUInt16LE(0x1A);
+      this.eorzeaFacade.addStatus(statusId);
     });
 
     this.ipc.packets$.pipe(

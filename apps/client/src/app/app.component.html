@@ -32,20 +32,20 @@
               <div *ngSwitchCase="UpdaterStatus.DOWNLOADING"
                    class="download-spinner"
                    nz-tooltip
-                   [nzTooltipTitle]="'UPDATE.Possible_update_issue' | translate">
+                   [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
                 <nz-spin [nzSimple]="true"></nz-spin>
               </div>
-            </div>
-            <div *ngSwitchCase="UpdaterStatus.POSSIBLE_ERROR">
-              <a *ngIf="updateVersion$ | async as updateVersion"
-                 href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
-                 target="_blank">
-                <i nz-icon nzType="exclamation-circle"
-                   nzTheme="twotone"
-                   nzTwotoneColor="#f5222d"
-                   nz-tooltip
-                   [nzTooltipTitle]="'UPDATE.Downloading_update' | translate"></i>
-              </a>
+              <div *ngSwitchCase="UpdaterStatus.POSSIBLE_ERROR">
+                <a *ngIf="updateVersion$ | async as updateVersion"
+                   href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
+                   target="_blank">
+                  <i nz-icon nzType="exclamation-circle"
+                     nzTheme="twotone"
+                     nzTwotoneColor="#f5222d"
+                     nz-tooltip
+                     [nzTooltipTitle]="'UPDATE.Possible_update_issue' | translate"></i>
+                </a>
+              </div>
             </div>
           </ng-container>
         </div>
