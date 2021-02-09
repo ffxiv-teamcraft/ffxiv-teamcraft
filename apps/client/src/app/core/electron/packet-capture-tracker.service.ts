@@ -96,12 +96,12 @@ export class PacketCaptureTrackerService {
   private getInventoryTransactionFlag(): number {
     switch (this.settings.region) {
       case Region.China:
-        return this.constants.CN.InventoryOperationBaseValue;
+        return this.constants.CN.InventoryOperationBaseValue - 1;
       case Region.Korea:
-        return this.constants.KR.InventoryOperationBaseValue;
+        return this.constants.KR.InventoryOperationBaseValue - 1;
       case Region.Global:
       default:
-        return this.constants.Global.InventoryOperationBaseValue;
+        return this.constants.Global.InventoryOperationBaseValue - 1;
     }
   }
 
