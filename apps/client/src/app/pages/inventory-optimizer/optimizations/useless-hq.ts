@@ -25,11 +25,15 @@ export class UselessHq extends InventoryOptimizer {
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {
     if (item.hq && data) {
-      const lookupEntry = this.lazyData.data.recipesIngredientLookup[item.itemId];
+      const lookupEntry = this.lazyData.data.recipesIngredientLookup.searchIndex[item.itemId];
       if (lookupEntry) {
-        const uselessHq = lookupEntry.reduce((acc, recipe) => {
-          return acc && (this.levels[recipe.job] || 0) >= 80 && recipe.lvl <= 70;
-        }, true);
+        const uselessHq = lookupEntry
+          .map(recipeId => {
+            return this.lazyData.data.recipesIngredientLookup.recipes[recipeId];
+          })
+          .reduce((acc, recipe) => {
+            return acc && (this.levels[recipe.job] || 0) >= 80 && recipe.lvl <= 70;
+          }, true);
         if (uselessHq) {
           return {};
         }

@@ -1868,7 +1868,7 @@
     "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "New_character_detected": "새로운 캐릭터가 감지됨",
-    "Unknown_position": "알 수 없는 위치",
+    "Unknown_position": "Unknown position",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",

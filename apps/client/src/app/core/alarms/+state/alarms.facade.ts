@@ -139,13 +139,13 @@ export class AlarmsFacade {
     if (group) {
       this.allAlarms$.pipe(
         map(as => as.find(a => {
-          return a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes
+          return a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes;
         })),
         filter(a => !!a),
         first()
       ).subscribe(resultAlarm => {
         this.assignAlarmGroup(resultAlarm, group.$key);
-      })
+      });
     }
   }
 
@@ -454,6 +454,10 @@ export class AlarmsFacade {
   }
 
   public generateAlarms(node: GatheringNode): Alarm[] {
+    // If no spawns and no weather, no alarms.
+    if (!node.spawns?.length && !node.weathers?.length) {
+      return [];
+    }
     const alarm: Partial<Alarm> = {
       itemId: node.matchingItemId,
       nodeId: node.id,

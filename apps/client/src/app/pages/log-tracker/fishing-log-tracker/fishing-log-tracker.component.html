@@ -73,49 +73,51 @@
                              fxLayoutAlign="flex-start center">
                           <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                              <div *ngIf="entry.gatheringNode.timed || entry.gatheringNode.weathers?.length > 0">
-                                  <ng-container *ngFor="let alarm of entry.alarms">
-                                    <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
-                                      <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
-                                              [nzType]="display.spawned?'primary':'default'"
-                                              nz-button
-                                              nz-tooltip>
-                                        <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
-                                        <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
-                                        {{display.remainingTime | timer}}
-                                        <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
-                                        <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-                                      </button>
-                                      <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-                                        <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
-                                                [nzSize]="'small'"
-                                                nz-button nz-dropdown>
-                                          <i nz-icon nzType="ellipsis"></i>
-                                        </button>
-                                        <nz-dropdown-menu #menu="nzDropdownMenu">
-                                          <ul nz-menu>
-                                            <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
-                                                nz-menu-item>
-                                              {{group.name}}
-                                            </li>
-                                          </ul>
-                                        </nz-dropdown-menu>
-                                      </ng-container>
-                                    </nz-button-group>
+                              <ng-container *ngFor="let alarm of entry.alarms">
+                                <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
+                                  <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
+                                          [nzType]="display.spawned?'primary':'default'"
+                                          nz-button
+                                          nz-tooltip>
+                                    <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
+                                    <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
+                                    {{display.remainingTime | timer}}
+                                    <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
+                                    <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+                                         [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+                                  </button>
+                                  <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
+                                    <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
+                                            [nzSize]="'small'"
+                                            nz-button nz-dropdown>
+                                      <i nz-icon nzType="ellipsis"></i>
+                                    </button>
+                                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                                      <ul nz-menu>
+                                        <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
+                                            nz-menu-item>
+                                          {{group.name}}
+                                        </li>
+                                      </ul>
+                                    </nz-dropdown-menu>
                                   </ng-container>
-                              </div>
+                                </nz-button-group>
+                              </ng-container>
                               <img *ngIf="entry.gatheringNode.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/snagging.png">
                             </div>
                             <app-fishing-bait *ngIf="entry.gatheringNode.baits !== undefined" [baits]="entry.gatheringNode.baits"
                                               flex="row"></app-fishing-bait>
-                            <img *ngIf="entry.gatheringNode.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + entry.gatheringNode.gig) | translate" class="gig-icon"
+                            <img *ngIf="entry.gatheringNode.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + entry.gatheringNode.gig) | translate"
+                                 class="gig-icon"
                                  nz-tooltip src="./assets/icons/gig/{{entry.gatheringNode.gig}}.png">
-                            <img *ngIf="entry.gatheringNode.hookset" [nzTooltipTitle]="(entry.gatheringNode.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n"
+                            <img *ngIf="entry.gatheringNode.hookset"
+                                 [nzTooltipTitle]="(entry.gatheringNode.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n"
                                  class="gig-icon"
                                  nz-tooltip
                                  src="./assets/icons/hookset/{{entry.gatheringNode.hookset}}.png">
-                            <div *ngIf="entry.gatheringNode.predators && entry.gatheringNode.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+                            <div *ngIf="entry.gatheringNode.predators && entry.gatheringNode.predators.length > 0" fxLayout="row"
+                                 fxLayoutAlign="flex-start center"
                                  fxLayoutGap="10px">
                               <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/predators.png">
