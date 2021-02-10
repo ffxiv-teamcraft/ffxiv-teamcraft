@@ -2,17 +2,34 @@ import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
 
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
+import { VesselPartUpdate } from '../model/vessel-part-update';
+import { VesselTimersUpdate } from '../model/vessel-timers-update';
 
 export const readFromFile = createAction(
-  '[FreecompanyWorkshop/API] Read from file',
+  '[FreecompanyWorkshop/API] Read from file'
 );
 
 export const saveToFile = createAction(
-  '[FreecompanyWorkshop/API] Save to file',
+  '[FreecompanyWorkshop/API] Save to file'
 );
 
 export const importFromPcap = createAction(
-  '[FreecompanyWorkshop/API] Import from Pcap',
+  '[FreecompanyWorkshop/API] Import from Pcap'
+);
+
+export const updateVesselPart = createAction(
+  '[FreecompanyWorkshop/API] Update vessel part',
+  props<{ vesselPartUpdate: VesselPartUpdate }>()
+);
+
+export const updateVesselTimers = createAction(
+  '[FreecompanyWorkshop/API] Update vessel timers',
+  props<{ vesselTimersUpdate: VesselTimersUpdate }>()
+);
+
+export const setFreecompanyId = createAction(
+  '[FreecompanyWorkshop/API] Set Free company ID',
+  props<{ id: string }>()
 );
 
 export const loadFreecompanyWorkshops = createAction(

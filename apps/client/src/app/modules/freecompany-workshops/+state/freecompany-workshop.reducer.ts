@@ -2,11 +2,13 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
 import * as FreecompanyWorkshopActions from './freecompany-workshop.actions';
+import { VesselType } from '../model/vessel-type';
 
 export const freecompanyWorkshopsFeatureKey = 'freecompanyWorkshops';
 
 export interface State extends EntityState<FreecompanyWorkshop> {
   // additional entities state properties
+  currentFreecompanyId?: string;
 }
 
 export const adapter: EntityAdapter<FreecompanyWorkshop> = createEntityAdapter<FreecompanyWorkshop>();
@@ -18,6 +20,12 @@ export const initialState: State = adapter.getInitialState({
 
 export const freecompanyWorkshopReducer = createReducer(
   initialState,
+  on(FreecompanyWorkshopActions.setFreecompanyId,
+    (state, action) =>({
+      ...state,
+      currentFreecompanyId: action.id
+    })
+  ),
   on(FreecompanyWorkshopActions.addFreecompanyWorkshop,
     (state, action) => adapter.addOne(action.freecompanyWorkshop, state)
   ),

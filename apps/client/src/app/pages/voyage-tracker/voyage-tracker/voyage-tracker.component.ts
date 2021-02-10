@@ -55,7 +55,6 @@ export class VoyageTrackerComponent implements OnInit {
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.freecompanyWorkshopFacade.load();
     this.submarineMaxRank$.next(Object.keys(this.lazyData.data.submarineRanks).pop());
     this.airshipMaxRank$.next(50);
   }

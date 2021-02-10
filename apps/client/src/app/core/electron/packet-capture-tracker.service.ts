@@ -23,6 +23,7 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 import { ActorControl, EffectResult, FishingBaitMsg, InitZone, UpdateClassInfo, WeatherChange } from '../../model/pcap';
 import { HttpClient } from '@angular/common/http';
+import { FreecompanyWorkshopFacade } from '../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,7 @@ export class PacketCaptureTrackerService {
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataService,
-              private http: HttpClient) {
+              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade, private http: HttpClient) {
     this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>('https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json')
       .subscribe(constants => this.constants = constants);
     this.inventory$ = this.userInventoryService.inventory$.pipe(
@@ -340,6 +341,29 @@ export class PacketCaptureTrackerService {
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
       this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, '0').toUpperCase());
+    });
+
+    this.ipc.freecompanyId$.subscribe((packet) => {
+      this.freecompanyWorkshopFacade.setCurrentFreecompanyId(packet);
+    });
+
+
+    combineLatest([
+      this.ipc.freecompanyId$,
+      this.freecompanyWorkshopFacade.vesselPartUpdate$
+    ]).pipe(
+      filter(([fcId]) => fcId !== null)
+    ).subscribe(([,packet]) => {
+      this.freecompanyWorkshopFacade.updateVesselPartCondition(packet);
+    });
+
+    combineLatest([
+      this.ipc.freecompanyId$,
+      this.freecompanyWorkshopFacade.vesselTimers$
+    ]).pipe(
+      filter(([fcId]) => fcId !== null)
+    ).subscribe(([, data]) => {
+      this.freecompanyWorkshopFacade.updateVesselTimers(data);
     });
   }
 

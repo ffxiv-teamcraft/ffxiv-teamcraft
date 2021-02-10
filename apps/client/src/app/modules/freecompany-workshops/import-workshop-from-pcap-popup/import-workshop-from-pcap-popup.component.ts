@@ -6,7 +6,6 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { filter, finalize, map, shareReplay, startWith, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
-import { Airship } from '../model/airship';
 import { FreecompanyWorkshopFacade } from '../+state/freecompany-workshop.facade';
 import { VesselType } from '../model/vessel-type';
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
@@ -18,8 +17,6 @@ import { FreecompanyWorkshop } from '../model/freecompany-workshop';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
-  public freeCompany = new BehaviorSubject(null);
-
   public dataLoaded$ = new BehaviorSubject<boolean>(false);
   public freecompany$ = new BehaviorSubject(null);
 
@@ -51,14 +48,13 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
   ngOnInit(): void {
     const freecompanyId$ = this.ipc.freecompanyId$.pipe(
-      startWith(0),
       shareReplay(1)
     );
 
     const airshipStatusList$ = this.ipc.airshipStatusListPackets$.pipe(
       withLatestFrom(freecompanyId$),
-      filter(([, fcId]) => fcId > 0),
-      map(([airshipStatusList, fcId]) => airshipStatusList.statusList.map((airship): Airship => ({
+      filter(([, fcId]) => fcId !== null),
+      map(([airshipStatusList, fcId]) => airshipStatusList.statusList.map((airship) => ({
         rank: airship.rank,
         status: airship.status,
         name: airship.name,
@@ -76,7 +72,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] }))
     );
 
-    this.freecompanyWorkshopFacade.vesselItemInfo$.pipe(
+    this.freecompanyWorkshopFacade.vesselPartUpdate$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe((itemInfo) => {
       const pc = this.freecompanyWorkshopFacade.getVesselPartCondition(itemInfo);
@@ -128,7 +124,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
     this.ipc.submarinesStatusListPackets$.pipe(
       withLatestFrom(this.ipc.freecompanyId$),
-      filter(([, fcId]) => fcId > 0),
+      filter(([, fcId]) => fcId !== null),
       map(([submarineStatusList, fcId]) => submarineStatusList.statusList.map((submarine, slot) => {
         return {
           rank: submarine.rank,
@@ -174,7 +170,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
     this.ipc.freecompanyId$.pipe(
       switchMap((freecompanyId) => {
-        this.dataLoaded$.next(freecompanyId > 0);
+        this.dataLoaded$.next(freecompanyId !== null);
         return this.xivapiService.getFreeCompany(freecompanyId)
           .pipe(
             tap(() => {
@@ -200,7 +196,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
     const workshop: FreecompanyWorkshop = {
       ...this.freecompany$.getValue(),
       airships: { slots: this.airshipList$.getValue() },
-      submarines: { slots: this.submarineList$.getValue() },
+      submarines: { slots: this.submarineList$.getValue() }
     };
     this.modalRef.close(workshop);
   }

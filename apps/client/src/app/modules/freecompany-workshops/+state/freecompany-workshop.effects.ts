@@ -3,7 +3,6 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as FreecompanyWorkshopActions from './freecompany-workshop.actions';
 import * as FreecompanyWorkshopSelectors from './freecompany-workshop.selectors';
 import { concatMap, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
-import { Submarine } from '../model/submarine';
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
 import { ImportWorkshopFromPcapPopupComponent } from '../import-workshop-from-pcap-popup/import-workshop-from-pcap-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -13,7 +12,9 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { FreecompanyWorkshops } from '../model/freecompany-workshops';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { select, Store } from '@ngrx/store';
-import { Airship } from '../model/airship';
+import { VesselType } from '../model/vessel-type';
+import { FreecompanyWorkshopFacade } from './freecompany-workshop.facade';
+import { VesselTimersUpdate } from '../model/vessel-timers-update';
 
 @Injectable()
 export class FreecompanyWorkshopEffects {
@@ -40,11 +41,11 @@ export class FreecompanyWorkshopEffects {
       withLatestFrom(this.store.pipe(select(FreecompanyWorkshopSelectors.selectWorkshops)))
     )),
     switchMap(([action, state]) => {
-      const savePayload = JSON.parse(JSON.stringify({freecompanyWorkshops: state}));
+      const savePayload = JSON.parse(JSON.stringify({ freecompanyWorkshops: state }));
       this.ipc.send('freecompany-workshops:set', savePayload);
       return EMPTY;
     })
-  ), {dispatch: false});
+  ), { dispatch: false });
 
   importFromPcap$ = createEffect(() => this.actions$.pipe(
     ofType(FreecompanyWorkshopActions.importFromPcap),
@@ -52,9 +53,9 @@ export class FreecompanyWorkshopEffects {
         return this.dialog.create({
           nzContent: ImportWorkshopFromPcapPopupComponent,
           nzFooter: null,
-          nzTitle: this.translate.instant('FREECOMPANY_WORKSHOPS.Import_using_pcap')
+          nzTitle: this.translate.instant('VOYAGE_TRACKER.Import_using_pcap')
         }).afterClose.pipe(
-          filter(opts => opts),
+          filter(opts => opts)
         );
       }
     ),
@@ -62,12 +63,99 @@ export class FreecompanyWorkshopEffects {
       this.store.dispatch(FreecompanyWorkshopActions.upsertFreecompanyWorkshop({ freecompanyWorkshop: workshop }));
       return FreecompanyWorkshopActions.saveToFile();
     })
-  ))
-  ;
+  ));
+
+  vesselTimersUpdate$ = createEffect(() => this.actions$.pipe(
+    ofType(FreecompanyWorkshopActions.updateVesselTimers),
+    concatMap((action) => of(action).pipe(
+      withLatestFrom(this.store.pipe(select(FreecompanyWorkshopSelectors.selectWorkshop)))
+    )),
+    map(([{ vesselTimersUpdate }, state]) => {
+      let changes;
+
+      if (vesselTimersUpdate.type === VesselType.AIRSHIP) {
+        changes = {
+          airships: this.updateVesselTimers({ ...state.airships.slots }, vesselTimersUpdate)
+        };
+      } else if (vesselTimersUpdate.type === VesselType.SUBMARINE) {
+        changes = {
+          submarines: this.updateVesselTimers({ ...state.submarines.slots }, vesselTimersUpdate)
+        };
+      } else {
+        console.log('VesselType NOT FOUND', vesselTimersUpdate.type);
+      }
+
+      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
+        freecompanyWorkshop: {
+          id: state.id,
+          changes: changes
+        }
+      }));
+
+      return FreecompanyWorkshopActions.saveToFile();
+    })
+  ));
+
+  vesselPartUpdpate$ = createEffect(() => this.actions$.pipe(
+    ofType(FreecompanyWorkshopActions.updateVesselPart),
+    concatMap((action) => of(action).pipe(
+      withLatestFrom(this.store.pipe(select(FreecompanyWorkshopSelectors.selectWorkshop)))
+    )),
+    map(([{ vesselPartUpdate }, state]) => {
+      const vesselSlot = vesselPartUpdate.vesselSlot;
+      const partSlotName = this.freecompanyWorkshopFacade.getVesselPartSlotName(vesselPartUpdate.partSlot);
+      let changes;
+
+      if (vesselPartUpdate.type === VesselType.AIRSHIP) {
+        const airshipsState = { ...state.airships };
+        airshipsState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
+        changes = {
+          airships: {
+            ...airshipsState
+          }
+        };
+      } else if (vesselPartUpdate.type === VesselType.SUBMARINE) {
+        const submarinesState = { ...state.submarines };
+        submarinesState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
+        changes = {
+          submarines: {
+            ...submarinesState
+          }
+        };
+      } else {
+        console.log('VesselType NOT FOUND', vesselPartUpdate.type);
+      }
+
+      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
+        freecompanyWorkshop: {
+          id: state.id,
+          changes: changes
+        }
+      }));
+
+      return FreecompanyWorkshopActions.saveToFile();
+    })
+  ));
 
   constructor(private actions$: Actions, private dialog: NzModalService,
               private ipc: IpcService, private translate: TranslateService,
+              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade,
               private store: Store, private serializer: NgSerializerService) {
   }
 
+  private updateVesselTimers(vesselState, vesselTimersUpdate: VesselTimersUpdate): any[] {
+    if (vesselState) {
+      vesselState.slots = vesselState.slots.map((vessel, i) => {
+        if (vessel === null) {
+          vessel = Object.assign(vessel, {});
+        }
+        vessel.name = vesselTimersUpdate.timers[i].name;
+        vessel.returnTime = vesselTimersUpdate.timers[i].returnTime;
+        vessel.destinations = vesselTimersUpdate.timers[i].destinations;
+        return vessel;
+      });
+      return vesselState;
+    }
+    return [];
+  }
 }

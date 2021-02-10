@@ -7,19 +7,42 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, tap } from 'rxjs/operators';
-import { ItemInfo } from '../../../model/pcap';
+import { filter, map, shareReplay, tap } from 'rxjs/operators';
+import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
+import { merge } from 'rxjs';
+import { ofPacketType } from '../../../core/rxjs/of-packet-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FreecompanyWorkshopFacade {
   public readonly workshops$ = this.store.pipe(
-    select(FreecompanyWorkshopSelectors.selectWorkshops)
+    select(FreecompanyWorkshopSelectors.selectWorkshops),
+    shareReplay(1)
   );
 
-  public readonly vesselItemInfo$ = this.ipc.itemInfoPackets$.pipe(
+  public readonly vesselTimers$ = merge(
+    this.ipc.packets$.pipe(
+      ofPacketType<AirshipTimers>('airshipTimers'),
+      map((packet) => ({
+        type: VesselType.AIRSHIP,
+        packet: packet
+      }))
+    ),
+    this.ipc.packets$.pipe(
+      ofPacketType<SubmarineTimers>('submarineTimers'),
+      map((packet) => ({
+        type: VesselType.SUBMARINE,
+        packet: packet
+      }))
+    )
+  );
+
+  public readonly vesselPartUpdate$ = merge(
+    this.ipc.itemInfoPackets$,
+    this.ipc.updateInventorySlotPackets$
+  ).pipe(
     filter((packet) => this.isAirshipItemInfo(packet) || this.isSubmarineItemInfo(packet))
   );
 
@@ -27,11 +50,11 @@ export class FreecompanyWorkshopFacade {
               private readonly store: Store<fromFreecompanyWorkshop.State>) {
   }
 
-  public isSubmarineItemInfo(itemInfo: ItemInfo): boolean {
+  public isSubmarineItemInfo(itemInfo: ItemInfo | UpdateInventorySlot): boolean {
     return itemInfo.containerId === 25004 && itemInfo.slot <= 18;
   }
 
-  public isAirshipItemInfo(itemInfo: ItemInfo): boolean {
+  public isAirshipItemInfo(itemInfo: ItemInfo | UpdateInventorySlot): boolean {
     return itemInfo.containerId === 25003 && itemInfo.slot >= 30 && itemInfo.slot <= 48;
   }
 
@@ -39,26 +62,30 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.readFromFile());
   }
 
+  public setCurrentFreecompanyId(id: string) {
+    this.store.dispatch(FreecompanyWorkshopActions.setFreecompanyId({ id }));
+  }
+
   public importFromPcap(): void {
     this.store.dispatch(FreecompanyWorkshopActions.importFromPcap());
   }
 
-  public getVesselPartCondition(itemInfo: ItemInfo): { type: VesselType, vesselSlot: number, partSlot: number, condition: number } {
+  public getVesselPartCondition(itemInfo: ItemInfo | UpdateInventorySlot): { type: VesselType, vesselSlot: number, partSlot: number, condition: number } {
     const partCondition: any = {
       condition: itemInfo.condition
     };
 
     const airshipSlots = [
-        [30, 31, 32, 33], // hull
-        [35, 36, 37, 38], // rigging
-        [40, 41, 42, 43], // forecastle
-        [45, 46, 47, 48] // aftcastle
-      ];
-      const submarineSlots = [
-        [0, 1, 2, 3], // hull
-        [5, 6, 7, 8], // stern
-        [10, 11, 12, 13], // bow
-        [15, 16, 17, 18] // bridge
+      [30, 31, 32, 33], // hull
+      [35, 36, 37, 38], // rigging
+      [40, 41, 42, 43], // forecastle
+      [45, 46, 47, 48] // aftcastle
+    ];
+    const submarineSlots = [
+      [0, 1, 2, 3], // hull
+      [5, 6, 7, 8], // stern
+      [10, 11, 12, 13], // bow
+      [15, 16, 17, 18] // bridge
     ];
 
     if (itemInfo.containerId === 25003) {
@@ -82,6 +109,21 @@ export class FreecompanyWorkshopFacade {
     }
 
     return partCondition.type !== undefined ? partCondition : null;
+  }
+
+  public updateVesselPartCondition(packet: ItemInfo | UpdateInventorySlot): void {
+    const partUpdate = this.getVesselPartCondition(packet);
+    this.store.dispatch(FreecompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
+  }
+
+  public updateVesselTimers(data): void {
+    console.log(data);
+    this.store.dispatch(FreecompanyWorkshopActions.updateVesselTimers({
+      vesselTimersUpdate: {
+        type: data.type,
+        timers: data.packet.timersList
+      }
+    }));
   }
 
   public getRemainingTime(unixTimestamp) {
@@ -113,5 +155,53 @@ export class FreecompanyWorkshopFacade {
 
   public sumStat(statName: 'surveillance' | 'retrieval' | 'speed' | 'range' | 'favor', rank, ...parts) {
     return rank[statName] + parts.reduce((a, b) => a[statName] + b[statName]);
+  }
+
+  public getVesselPartSlotName(slot: number): string {
+    switch (slot) {
+      // Submersible
+      case 0:
+      case 5:
+      case 10:
+      case 15:
+        return 'hull';
+      case 1:
+      case 6:
+      case 11:
+      case 16:
+        return 'stern';
+      case 2:
+      case 7:
+      case 12:
+      case 17:
+        return 'bow';
+      case 3:
+      case 8:
+      case 13:
+      case 18:
+        return 'bow';
+      // Airship
+      case 30:
+      case 35:
+      case 40:
+      case 45:
+        return 'hull';
+      case 31:
+      case 36:
+      case 41:
+      case 46:
+        return 'rigging';
+      case 32:
+      case 37:
+      case 42:
+      case 47:
+        return 'forecastle';
+      case 33:
+      case 38:
+      case 43:
+      case 48:
+        return 'aftcastle';
+    }
+    return null;
   }
 }
