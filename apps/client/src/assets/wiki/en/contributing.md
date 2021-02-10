@@ -40,7 +40,7 @@ You can (and probably should) add credits to your wiki page by following this fo
 This message has to be placed at the bottom of the document.
 
 
-[Github repository]:https://github.com/supamiu/ffxiv-teamcraft
+[Github repository]:https://github.com/ffxiv-teamcraft/ffxiv-teamcraft
 [Discord]:https://discord.gg/r6qxt6P
 
 ---

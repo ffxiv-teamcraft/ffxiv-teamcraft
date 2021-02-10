@@ -6,7 +6,7 @@ This page is here to help you get the most out of the simulator feature,
 ## Presentation
 
 The [simulator] page, inspired by [Crafting Optimizer service](http://ffxiv.lokyst.net/), aims to create a more flexible approach for 
-crafting simulation, the code base, open source, is available on the main repository, in [simulator page folder](https://github.com/Supamiu/ffxiv-teamcraft/tree/master/src/app/pages/simulator). It's done in a more 
+crafting simulation, the code base, open source, is available on the main repository, in [simulator page folder](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/tree/master/src/app/pages/simulator). It's done in a more 
 Object Oriented approach to have easier implementation for things like Whistle while you work, buffs and more strange things (looking at you, Name Of Element skills). 
 
 It's fully responsive, available on both mobile and desktop version of the app, so everything can use it easily.
