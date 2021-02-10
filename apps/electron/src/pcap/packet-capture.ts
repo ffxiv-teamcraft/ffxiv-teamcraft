@@ -97,7 +97,7 @@ export class PacketCapture {
   }
 
   sendToRenderer(packet: any): void {
-    if (this.mainWindow) {
+    if (this.mainWindow?.win) {
       this.mainWindow.win.webContents.send('packet', packet);
     }
   }

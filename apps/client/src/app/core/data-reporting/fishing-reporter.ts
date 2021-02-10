@@ -6,6 +6,7 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
+import { toIpcData } from '../rxjs/to-ipc-data';
 
 enum Tug {
   MEDIUM,
@@ -136,6 +137,7 @@ export class FishingReporter implements DataReporter {
 
     const actionTimeline$ = packets$.pipe(
       ofMessageType('eventPlay4'),
+      toIpcData(),
       map(packet => {
         return this.lazyData.data?.actionTimeline[packet.param1.toString()];
       }),
