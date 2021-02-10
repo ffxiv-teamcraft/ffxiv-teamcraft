@@ -95,12 +95,10 @@ export class IpcService {
   }
 
   public get marketboardListing$() {
-    // TODO use listing packet again
-    return EMPTY;
-    // return this.packets$.pipe(
-    // ofMessageType('marketBoardItemListing'),
-    // toIpcData()
-    // );
+    return this.packets$.pipe(
+      ofMessageType('marketBoardItemListing'),
+      toIpcData()
+    );
   }
 
   public get marketboardListingHistory$() {

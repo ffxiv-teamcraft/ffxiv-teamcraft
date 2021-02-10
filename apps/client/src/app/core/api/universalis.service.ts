@@ -183,47 +183,47 @@ export class UniversalisService {
   }
 
   public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
-    // TODO Fix once the packet is properly done in pcap-ffxiv
-    // combineLatest([this.cid$, this.worldId$]).pipe(
-    //   first(),
-    //   switchMap(([cid, worldId]) => {
-    //     const data = {
-    //       worldID: worldId,
-    //       itemID: packets[0].itemId,
-    //       uploaderID: cid,
-    //       listings: packets.reduce((listings, packet) => {
-    //         return [
-    //           ...listings,
-    //           ...packet.listings.map(item => {
-    //             return {
-    //               listingID: item.listingId,
-    //               hq: item.hq,
-    //               materia: item.materia.map((materia, index) => {
-    //                 return {
-    //                   materiaId: materia,
-    //                   slotId: index
-    //                 };
-    //               }),
-    //               pricePerUnit: item.pricePerUnit,
-    //               quantity: item.quantity,
-    //               total: item.quantity * item.pricePerUnit,
-    //               retainerID: item.retainerId,
-    //               retainerName: item.retainerName,
-    //               retainerCity: item.city,
-    //               creatorName: item.playerName,
-    //               creatorID: item.artisanId,
-    //               sellerID: item.retainerOwnerId,
-    //               lastReviewTime: item.lastReviewTime,
-    //               stainID: item.dyeId
-    //             };
-    //           })];
-    //       }, [])
-    //     };
-    //     return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
-    //       headers: new HttpHeaders().append('Content-Type', 'application/json')
-    //     });
-    //   })
-    // ).subscribe();
+    combineLatest([this.cid$, this.worldId$]).pipe(
+      first(),
+      switchMap(([cid, worldId]) => {
+        const data = {
+          worldID: worldId,
+          itemID: packets[0]?.listings[0]?.itemId,
+          uploaderID: cid,
+          listings: packets.reduce((listings, packet) => {
+            return [
+              ...listings,
+              ...packet.listings.map(item => {
+                return {
+                  listingID: item.listingId,
+                  hq: item.hq,
+                  materia: item.materia.map((materia, index) => {
+                    const materiaItemId = this.lazyData.data.materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
+                    return {
+                      materiaId: materiaItemId,
+                      slotId: index
+                    };
+                  }).filter(entry => entry.materiaId > 0),
+                  pricePerUnit: item.pricePerUnit,
+                  quantity: item.quantity,
+                  total: item.quantity * item.pricePerUnit,
+                  retainerID: item.retainerId,
+                  retainerName: item.retainerName,
+                  retainerCity: item.city,
+                  creatorName: item.playerName,
+                  creatorID: item.artisanId,
+                  sellerID: item.retainerOwnerId,
+                  lastReviewTime: item.lastReviewTime,
+                  stainID: item.dyeId
+                };
+              })];
+          }, [])
+        };
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+          headers: new HttpHeaders().append('Content-Type', 'application/json')
+        });
+      })
+    ).subscribe();
   }
 
   public handleMarketboardListingHistory(packet: MarketBoardItemListingHistory): void {
