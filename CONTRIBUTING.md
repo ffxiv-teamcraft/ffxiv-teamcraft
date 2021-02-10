@@ -99,7 +99,7 @@ Tests are separated into two categories, Unit and End-to-End.
 
 Unit tests are used to test the simulator, as the `Simulation` class is pure typescript, with no Angular stuff at all. 
 
-The tests are using karma runner and [jasmine](https://jasmine.github.io/) for specs and can be found [here](https://github.com/Supamiu/ffxiv-teamcraft/tree/staging/apps/client/src/app/pages/simulator/test) with the mock file.
+The tests are using karma runner and [jasmine](https://jasmine.github.io/) for specs and can be found [here](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/tree/staging/apps/client/src/app/pages/simulator/test) with the mock file.
 
 To run unit tests, use `npm test`.
 
