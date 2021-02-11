@@ -314,8 +314,8 @@ export class NavigationSidebarService {
             {
               name: 'VOYAGE_TRACKER.Title',
               icon: {
-                type: SidebarIconType.ANTD,
-                content: 'carry-out'
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE905;')
               },
               link: '/voyage-tracker'
             },
