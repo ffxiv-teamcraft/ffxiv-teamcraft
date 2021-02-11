@@ -36,7 +36,7 @@
                         <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
                       </button>
                       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-                        <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
+                        <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
                         <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
                       </div>
                     </div>
@@ -97,7 +97,7 @@
       <ng-template #extraTemplate>
         <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
+            <nz-switch  [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
           </div>
           <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button

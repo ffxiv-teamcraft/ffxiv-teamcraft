@@ -469,7 +469,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return Math.floor(+this.getSetting('alarm:volume', '0.5') * 1000) / 10;
+    return+this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {
@@ -485,7 +485,7 @@ export class SettingsService {
   }
 
   public get autofillCompletionVolume(): number {
-    return Math.floor(+this.getSetting('autofill:completion:volume', '0.5') * 1000) / 10;
+    return +this.getSetting('autofill:completion:volume', '0.5');
   }
 
   public set autofillCompletionVolume(volume: number) {
@@ -774,6 +774,14 @@ export class SettingsService {
 
   public set retainerTaskAlarms(enabled: boolean) {
     this.setBoolean('retainerTaskAlarms', enabled);
+  }
+
+  public get hideCompletedLogEntries(): boolean {
+    return this.getBoolean('hideCompletedLogEntries', false);
+  }
+
+  public set hideCompletedLogEntries(enabled: boolean) {
+    this.setBoolean('hideCompletedLogEntries', enabled);
   }
 
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
