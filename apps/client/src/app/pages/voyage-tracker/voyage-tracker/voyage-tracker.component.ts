@@ -64,14 +64,14 @@ export class VoyageTrackerComponent implements OnInit {
   }
 
   isVesselBack(vessel: Vessel): boolean {
-    if (vessel === null) {
+    if (!vessel) {
       return true;
     }
     return vessel.returnTime <= Date.now() / 1000;
   }
 
   isVesselCompleted(vessel: Vessel): boolean {
-    if (vessel === null) {
+    if (!vessel) {
       return false;
     }
     return vessel.status === 2 && this.isVesselBack(vessel);

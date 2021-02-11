@@ -75,11 +75,11 @@ export class FreecompanyWorkshopEffects {
 
       if (vesselTimersUpdate.type === VesselType.AIRSHIP) {
         changes = {
-          airships: this.updateVesselTimers({ ...state.airships.slots }, vesselTimersUpdate)
+          airships: this.updateVesselTimers({ ...state.airships }, vesselTimersUpdate)
         };
       } else if (vesselTimersUpdate.type === VesselType.SUBMARINE) {
         changes = {
-          submarines: this.updateVesselTimers({ ...state.submarines.slots }, vesselTimersUpdate)
+          submarines: this.updateVesselTimers({ ...state.submarines }, vesselTimersUpdate)
         };
       } else {
         console.log('VesselType NOT FOUND', vesselTimersUpdate.type);
@@ -106,7 +106,7 @@ export class FreecompanyWorkshopEffects {
       const partSlotName = this.freecompanyWorkshopFacade.getVesselPartSlotName(vesselPartUpdate.partSlot);
       let changes;
 
-      if (vesselPartUpdate.type === VesselType.AIRSHIP) {
+      if (vesselPartUpdate.type === VesselType.AIRSHIP && state.airships?.slots) {
         const airshipsState = { ...state.airships };
         airshipsState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
         changes = {
@@ -114,7 +114,7 @@ export class FreecompanyWorkshopEffects {
             ...airshipsState
           }
         };
-      } else if (vesselPartUpdate.type === VesselType.SUBMARINE) {
+      } else if (vesselPartUpdate.type === VesselType.SUBMARINE && state.submarines?.slots) {
         const submarinesState = { ...state.submarines };
         submarinesState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
         changes = {
@@ -126,12 +126,14 @@ export class FreecompanyWorkshopEffects {
         console.log('VesselType NOT FOUND', vesselPartUpdate.type);
       }
 
-      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-        freecompanyWorkshop: {
-          id: state.id,
-          changes: changes
-        }
-      }));
+      if (changes !== undefined) {
+        this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
+          freecompanyWorkshop: {
+            id: state.id,
+            changes: changes
+          }
+        }));
+      }
 
       return FreecompanyWorkshopActions.saveToFile();
     })
@@ -143,11 +145,11 @@ export class FreecompanyWorkshopEffects {
               private store: Store, private serializer: NgSerializerService) {
   }
 
-  private updateVesselTimers(vesselState, vesselTimersUpdate: VesselTimersUpdate): any[] {
+  private updateVesselTimers(vesselState, vesselTimersUpdate: VesselTimersUpdate): any {
     if (vesselState) {
       vesselState.slots = vesselState.slots.map((vessel, i) => {
-        if (vessel === null) {
-          vessel = Object.assign(vessel, {});
+        if (!vessel) {
+          vessel = {};
         }
         vessel.name = vesselTimersUpdate.timers[i].name;
         vessel.returnTime = vesselTimersUpdate.timers[i].returnTime;
@@ -156,6 +158,6 @@ export class FreecompanyWorkshopEffects {
       });
       return vesselState;
     }
-    return [];
+    return {};
   }
 }

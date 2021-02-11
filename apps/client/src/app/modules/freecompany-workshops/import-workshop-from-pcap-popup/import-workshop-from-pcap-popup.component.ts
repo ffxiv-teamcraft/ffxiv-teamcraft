@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { filter, finalize, map, shareReplay, startWith, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { finalize, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import { FreecompanyWorkshopFacade } from '../+state/freecompany-workshop.facade';
 import { VesselType } from '../model/vessel-type';
@@ -47,31 +47,6 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
   }
 
   ngOnInit(): void {
-    const freecompanyId$ = this.ipc.freecompanyId$.pipe(
-      shareReplay(1)
-    );
-
-    const airshipStatusList$ = this.ipc.airshipStatusListPackets$.pipe(
-      withLatestFrom(freecompanyId$),
-      filter(([, fcId]) => fcId !== null),
-      map(([airshipStatusList, fcId]) => airshipStatusList.statusList.map((airship) => ({
-        rank: airship.rank,
-        status: airship.status,
-        name: airship.name,
-        birthdate: airship.birthdate,
-        returnTime: airship.returnTime,
-        freecompanyId: fcId
-      }))),
-      shareReplay(1)
-    );
-
-    const currentAirshipStatusFromList$ = this.ipc.eventPlay8Packets$.pipe(
-      filter((event) => event.eventId === 0xB0102),
-      map((event) => event.param1),
-      withLatestFrom(airshipStatusList$),
-      map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] }))
-    );
-
     this.freecompanyWorkshopFacade.vesselPartUpdate$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe((itemInfo) => {
@@ -79,42 +54,15 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       this.partConditions[pc.type][pc.vesselSlot][pc.partSlot] = pc.condition;
     });
 
-    this.ipc.airshipStatusPackets$.pipe(
-      withLatestFrom(currentAirshipStatusFromList$),
-      map(([airship, statusFromList]) => ({
-        slot: statusFromList.slot,
-        vessel: {
-          ...statusFromList.partialStatus,
-          capacity: airship.capacity,
-          currentExperience: airship.currentExp,
-          totalExperienceForNextRank: airship.totalExpForNextRank,
-          destinations: [
-            airship.dest1,
-            airship.dest2,
-            airship.dest3,
-            airship.dest4,
-            airship.dest5
-          ].filter((dest) => dest > -1),
-          parts: {
-            hull: {
-              partId: airship.hull,
-              condition: this.partConditions[VesselType.AIRSHIP][statusFromList.slot][0]
-            },
-            rigging: {
-              partId: airship.rigging,
-              condition: this.partConditions[VesselType.AIRSHIP][statusFromList.slot][1]
-            },
-            forecastle: {
-              partId: airship.forecastle,
-              condition: this.partConditions[VesselType.AIRSHIP][statusFromList.slot][2]
-            },
-            aftcastle: {
-              partId: airship.aftcastle,
-              condition: this.partConditions[VesselType.AIRSHIP][statusFromList.slot][3]
-            }
-          }
-        }
-      })),
+    this.freecompanyWorkshopFacade.airshipStatus$.pipe(
+      map((status) => {
+        const newState = { ...status };
+        newState.vessel.parts.hull.condition = this.partConditions[VesselType.AIRSHIP][status.slot][0];
+        newState.vessel.parts.rigging.condition = this.partConditions[VesselType.AIRSHIP][status.slot][1];
+        newState.vessel.parts.forecastle.condition = this.partConditions[VesselType.AIRSHIP][status.slot][2];
+        newState.vessel.parts.aftcastle.condition = this.partConditions[VesselType.AIRSHIP][status.slot][3];
+        return newState;
+      }),
       takeUntil(this.onDestroy$)
     ).subscribe(({ slot, vessel }) => {
       const newAirshipList = this.airshipList$.getValue().slice();
@@ -122,46 +70,14 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       this.airshipList$.next(newAirshipList);
     });
 
-    this.ipc.submarinesStatusListPackets$.pipe(
-      withLatestFrom(this.ipc.freecompanyId$),
-      filter(([, fcId]) => fcId !== null),
-      map(([submarineStatusList, fcId]) => submarineStatusList.statusList.map((submarine, slot) => {
-        return {
-          rank: submarine.rank,
-          status: submarine.status,
-          name: submarine.name,
-          birthdate: submarine.birthdate,
-          returnTime: submarine.returnTime,
-          parts: {
-            hull: {
-              partId: submarine.hull,
-              condition: this.partConditions[VesselType.SUBMARINE][slot][0]
-            },
-            stern: {
-              partId: submarine.stern,
-              condition: this.partConditions[VesselType.SUBMARINE][slot][1]
-            },
-            bow: {
-              partId: submarine.bow,
-              condition: this.partConditions[VesselType.SUBMARINE][slot][2]
-            },
-            bridge: {
-              partId: submarine.bridge,
-              condition: this.partConditions[VesselType.SUBMARINE][slot][3]
-            }
-          },
-          capacity: submarine.capacity,
-          currentExperience: submarine.currentExp,
-          totalExperienceForNextRank: submarine.totalExpForNextRank,
-          freecompanyId: fcId,
-          destinations: [
-            submarine.dest1,
-            submarine.dest2,
-            submarine.dest3,
-            submarine.dest4,
-            submarine.dest5
-          ].filter((dest) => dest > 0)
-        };
+    this.freecompanyWorkshopFacade.submarineStatusList$.pipe(
+      map((submarines) => submarines.map((submarine, slot) => {
+        const newState = { ...submarine };
+        newState.parts.hull.condition = this.partConditions[VesselType.SUBMARINE][slot][0];
+        newState.parts.stern.condition = this.partConditions[VesselType.SUBMARINE][slot][1];
+        newState.parts.bow.condition = this.partConditions[VesselType.SUBMARINE][slot][2];
+        newState.parts.bridge.condition = this.partConditions[VesselType.SUBMARINE][slot][3];
+        return newState;
       })),
       takeUntil(this.onDestroy$)
     ).subscribe((submarines) => {

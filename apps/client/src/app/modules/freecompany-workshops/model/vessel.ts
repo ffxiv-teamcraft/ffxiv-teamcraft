@@ -1,7 +1,7 @@
 export interface Vessel {
   status: number;
   name: string;
-  freecompanyId: number;
+  freecompanyId: string;
   rank: number;
   currentExperience?: number;
   totalExperienceForNextRank?: number;

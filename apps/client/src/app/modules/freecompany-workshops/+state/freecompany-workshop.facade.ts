@@ -7,11 +7,12 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, shareReplay, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
 import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
 import { merge } from 'rxjs';
 import { ofPacketType } from '../../../core/rxjs/of-packet-type';
+import { Airship } from '../model/airship';
 
 @Injectable({
   providedIn: 'root'
@@ -27,14 +28,32 @@ export class FreecompanyWorkshopFacade {
       ofPacketType<AirshipTimers>('airshipTimers'),
       map((packet) => ({
         type: VesselType.AIRSHIP,
-        packet: packet
+        timers: packet.timersList.map((vessel) => ({
+          ...vessel,
+          destinations: [
+            vessel.dest1,
+            vessel.dest2,
+            vessel.dest3,
+            vessel.dest4,
+            vessel.dest5
+          ].filter((dest) => dest > -1)
+        }))
       }))
     ),
     this.ipc.packets$.pipe(
       ofPacketType<SubmarineTimers>('submarineTimers'),
       map((packet) => ({
         type: VesselType.SUBMARINE,
-        packet: packet
+        timers: packet.timersList.map((vessel) => ({
+          ...vessel,
+          destinations: [
+            vessel.dest1,
+            vessel.dest2,
+            vessel.dest3,
+            vessel.dest4,
+            vessel.dest5
+          ].filter((dest) => dest > 0)
+        }))
       }))
     )
   );
@@ -44,6 +63,106 @@ export class FreecompanyWorkshopFacade {
     this.ipc.updateInventorySlotPackets$
   ).pipe(
     filter((packet) => this.isAirshipItemInfo(packet) || this.isSubmarineItemInfo(packet))
+  );
+
+  public readonly currentFreecompany$ = this.ipc.freecompanyId$.pipe(
+    filter((fcId) => fcId !== null),
+    shareReplay(1)
+  );
+
+  public readonly airshipStatusList$ = this.ipc.airshipStatusListPackets$.pipe(
+    withLatestFrom(this.currentFreecompany$),
+    map(([airshipStatusList, fcId]): Airship[] => airshipStatusList.statusList.map((airship) => ({
+      rank: airship.rank,
+      status: airship.status,
+      name: airship.name,
+      birthdate: airship.birthdate,
+      returnTime: airship.returnTime,
+      freecompanyId: fcId
+    }))),
+    shareReplay(1)
+  );
+
+  public readonly airshipPartialStatusFromList$ = this.ipc.eventPlay8Packets$.pipe(
+    filter((event) => event.eventId === 0xB0102),
+    map((event) => event.param1),
+    withLatestFrom(this.airshipStatusList$),
+    map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] })),
+    shareReplay(1)
+  );
+
+  public readonly airshipStatus$ = this.ipc.airshipStatusPackets$.pipe(
+    withLatestFrom(this.airshipPartialStatusFromList$),
+    map(([airship, statusFromList]): { slot: number, vessel: Airship } => ({
+      slot: statusFromList.slot,
+      vessel: {
+        ...statusFromList.partialStatus,
+        capacity: airship.capacity,
+        currentExperience: airship.currentExp,
+        totalExperienceForNextRank: airship.totalExpForNextRank,
+        destinations: [
+          airship.dest1,
+          airship.dest2,
+          airship.dest3,
+          airship.dest4,
+          airship.dest5
+        ].filter((dest) => dest > -1),
+        parts: {
+          hull: {
+            partId: airship.hull
+          },
+          rigging: {
+            partId: airship.rigging
+          },
+          forecastle: {
+            partId: airship.forecastle
+          },
+          aftcastle: {
+            partId: airship.aftcastle
+          }
+        }
+      }
+    })),
+    shareReplay(1)
+  );
+
+  public readonly submarineStatusList$ = this.ipc.submarinesStatusListPackets$.pipe(
+    withLatestFrom(this.currentFreecompany$),
+    map(([submarineStatusList, fcId]): Submarine[] => submarineStatusList.statusList.map((submarine) => {
+      return {
+        rank: submarine.rank,
+        status: submarine.status,
+        name: submarine.name,
+        freecompanyId: fcId,
+        birthdate: submarine.birthdate,
+        returnTime: submarine.returnTime,
+        parts: {
+          hull: {
+            partId: submarine.hull
+          },
+          stern: {
+            partId: submarine.stern
+          },
+          bow: {
+            partId: submarine.bow
+          },
+          bridge: {
+            partId: submarine.bridge
+          }
+        },
+        capacity: submarine.capacity,
+        currentExperience: submarine.currentExp,
+        totalExperienceForNextRank: submarine.totalExpForNextRank,
+        destinations: [
+          submarine.dest1,
+          submarine.dest2,
+          submarine.dest3,
+          submarine.dest4,
+          submarine.dest5
+        ].filter((dest) => dest > 0)
+      };
+    })),
+    shareReplay(1)
   );
 
   constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
@@ -117,11 +236,10 @@ export class FreecompanyWorkshopFacade {
   }
 
   public updateVesselTimers(data): void {
-    console.log(data);
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselTimers({
       vesselTimersUpdate: {
         type: data.type,
-        timers: data.packet.timersList
+        timers: data.timers
       }
     }));
   }
