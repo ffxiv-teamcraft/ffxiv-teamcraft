@@ -14,6 +14,7 @@ import { GatheringNodesService } from '../../../core/data/gathering-nodes.servic
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { uniqBy } from 'lodash';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -41,11 +42,11 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
   public loading = true;
 
-  public hideCompleted = false;
+  public hideCompleted = this.settings.hideCompletedLogEntries;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private lazyData: LazyDataService,
-              private gatheringNodesService: GatheringNodesService) {
+              private gatheringNodesService: GatheringNodesService, public settings: SettingsService) {
     super(alarmsFacade);
   }
 

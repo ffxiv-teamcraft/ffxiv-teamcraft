@@ -776,6 +776,14 @@ export class SettingsService {
     this.setBoolean('retainerTaskAlarms', enabled);
   }
 
+  public get hideCompletedLogEntries(): boolean {
+    return this.getBoolean('hideCompletedLogEntries', false);
+  }
+
+  public set hideCompletedLogEntries(enabled: boolean) {
+    this.setBoolean('hideCompletedLogEntries', enabled);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }

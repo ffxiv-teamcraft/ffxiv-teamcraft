@@ -11,4 +11,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **data:** update for cn patch-5.35.`;
+* **data:** update for cn patch-5.35.`;

@@ -22,6 +22,7 @@ import { Memoized } from '../../../core/decorators/memoized';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-log-tracker',
@@ -63,7 +64,7 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public type$: Observable<number>;
 
-  public hideCompleted = false;
+  public hideCompleted = this.settings.hideCompletedLogEntries;
 
   public selectedRecipes: { itemId: number, recipeId: number }[] = [];
 
@@ -79,7 +80,8 @@ export class LogTrackerComponent extends TrackerComponent {
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
+              private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService,
+              public settings: SettingsService) {
     super(alarmsFacade);
     this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
       return page.map(tab => {
