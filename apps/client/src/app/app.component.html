@@ -4,11 +4,9 @@
              class="app-container">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
-        <a class="logo" routerLink="/">
-          {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
-        </a>
-        <div class="language-swap">
-          <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+        <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
+        <div class="language-swap" *ngIf="true | ifMobile: false">
+          <nz-select (ngModelChange)="use($event)" [ngModel]="translate.currentLang"
                      fxFlex="0 0 auto"
                      fxLayout="row">
             <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
@@ -71,10 +69,7 @@
           </div>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <!--          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">-->
-          <!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
-          <!--            TODO ad banner here? -->
-          <!--          </div>-->
+          <app-ad [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
@@ -87,10 +82,10 @@
               <i nz-icon nzType="pushpin" nzTheme="outline"></i>
             </li>
           </ng-container>
-          <li class="ant-menu-item" fxFlex fxHide.lt-xl fxLayout="column" fxShow routerLink="/support-us"
-              routerLinkActive="ant-menu-item-selected">
-            {{'SUPPORT_US.Title' | translate}}
-          </li>
+          <!--          <li class="ant-menu-item" fxFlex fxHide.lt-xl fxLayout="column" fxShow routerLink="/support-us"-->
+          <!--              routerLinkActive="ant-menu-item-selected">-->
+          <!--            {{'SUPPORT_US.Title' | translate}}-->
+          <!--          </li>-->
           <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
             {{time$ | async}}
           </li>

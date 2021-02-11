@@ -70,6 +70,7 @@ import { CollectablesShopGroupNamePipe } from './pipes/collectables-shop-group-n
 import { WorldNamePipe } from './pipes/world-name.pipe';
 import { CraftingActionPipe } from './pipes/crafting-action.pipe';
 import { MateriaBonusPipe } from './pipes/materia-bonus.pipe';
+import { WidthBreakpointsPipe } from './pipes/width-breakpoints';
 
 @NgModule({
   declarations: [
@@ -145,6 +146,7 @@ import { MateriaBonusPipe } from './pipes/materia-bonus.pipe';
     WorldNamePipe,
     CraftingActionPipe,
     MateriaBonusPipe,
+    WidthBreakpointsPipe
   ],
   exports: [
     ItemNamePipe,
@@ -219,6 +221,7 @@ import { MateriaBonusPipe } from './pipes/materia-bonus.pipe';
     WorldNamePipe,
     CraftingActionPipe,
     MateriaBonusPipe,
+    WidthBreakpointsPipe
   ]
 })
 export class PipesModule {

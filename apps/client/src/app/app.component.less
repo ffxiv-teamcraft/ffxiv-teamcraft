@@ -74,6 +74,9 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
+    min-width: 40px;
+    line-height: 14px;
+    text-align: center;
   }
 
   .language-swap {
@@ -82,7 +85,7 @@
 
   .tutorial-start {
     cursor: pointer;
-    margin-right: 10px;
+    margin: 0 10px;
   }
 }
 
@@ -92,7 +95,7 @@
 
 .user-menu {
   min-width: 140px;
-  @media @mobile {
+  @media screen and (max-width: 960px) {
     min-width: 0;
   }
 }

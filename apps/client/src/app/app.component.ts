@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -72,6 +72,17 @@ export class AppComponent implements OnInit {
 
   version = environment.version;
 
+  public adsPlacementBreakpoints = {
+    475: null,
+    1350: '601845b9cf90756a43f6c4f8',
+    default: '601845ad7730eb16d35ec25a'
+  };
+
+  public titleBreakpoints = {
+    785: `TC\nv${this.version}`,
+    default: `FFXIV&nbsp;Teamcraft&nbsp;v${this.version}`
+  };
+
   public get overlay() {
     return window.location.href.indexOf('?overlay') > -1;
   }
@@ -138,6 +149,9 @@ export class AppComponent implements OnInit {
   public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
 
   public firewallRuleApplied = false;
+
+  @ViewChild('vmAdRef')
+  public vmAdRef: ElementRef;
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -570,7 +584,6 @@ export class AppComponent implements OnInit {
       this.settings.themeChange$.subscribe((change => {
         this.applyTheme(change.next);
       }));
-
     } else {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
