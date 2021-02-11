@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.11"></a>
+## [8.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.10...v8.0.11) (2021-02-10)
+
+
+### Bug Fixes
+
+* **fishing-log:** fixed alarm button not showing on some fish rows ([224156c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/224156c))
+* **i18n:** fixed a typo in the inventory position tooltip ([484b7cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/484b7cb))
+* **inventory:** fixed a bug with some transactions not being detected properly ([d1f6c4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1f6c4e))
+* **inventory-optimizer:** fixed trained eye materials optimizer not detecting items properly ([1583e1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1583e1b))
+* **list:** fixed gathering coordinates for some nodes in list details ([fd12f48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd12f48))
+* **search:** fixed a bug with craftedBy not filtering properly in some cases ([969a998](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/969a998))
+* **settings:** fixed notification volume only working with multiples of 10 ([4b61339](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b61339))
+
+
+### Features
+
+* **data:** update for cn patch-5.35 ([a40fd9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a40fd9a))
+
+
+
 <a name="8.0.10"></a>
 ## [8.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.9...v8.0.10) (2021-02-07)
 

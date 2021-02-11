@@ -469,7 +469,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return Math.floor(+this.getSetting('alarm:volume', '0.5') * 1000) / 10;
+    return+this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {
@@ -485,7 +485,7 @@ export class SettingsService {
   }
 
   public get autofillCompletionVolume(): number {
-    return Math.floor(+this.getSetting('autofill:completion:volume', '0.5') * 1000) / 10;
+    return +this.getSetting('autofill:completion:volume', '0.5');
   }
 
   public set autofillCompletionVolume(volume: number) {

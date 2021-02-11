@@ -78,7 +78,7 @@ The amount at which you can buy the item is shown in the dialog box to help you 
 
 Some items cannot be bought using gils, instead you can trade them using spoils, scripts, etc.
 
-For these items, the most interesting currency to buy the item is shown (the order being determined in the code with priorities, more details [here](https://github.com/Supamiu/ffxiv-teamcraft/blob/master/src/app/modules/item/item/item.component.ts#L58-L216). 
+For these items, the most interesting currency to buy the item is shown (the order being determined in the code with priorities, more details [here](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/blob/master/src/app/modules/item/item/item.component.ts#L58-L216). 
 
 As always, clicking on the icon will show you location details and the amount of currencies to use to buy the desired item, with the total needed to buy all you need to reach total needed.
 

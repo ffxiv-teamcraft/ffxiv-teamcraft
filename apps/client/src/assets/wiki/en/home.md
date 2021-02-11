@@ -30,5 +30,5 @@ To contribute to this wiki, check [contributing](/wiki/contributing) page.
 
 To contribute to this wiki, there isn't a lot of requirements, a basic knowledge of Markdown is required, and some rules have to be followed to ensure the format fits this wiki system.
 
-[github repository]:https://github.com/supamiu/ffxiv-teamcraft
+[github repository]:https://github.com/ffxiv-teamcraft/ffxiv-teamcraft
 [Discord]:https://discord.gg/r6qxt6P
