@@ -343,27 +343,45 @@ export class PacketCaptureTrackerService {
       this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, '0').toUpperCase());
     });
 
-    this.ipc.freecompanyId$.subscribe((packet) => {
-      this.freecompanyWorkshopFacade.setCurrentFreecompanyId(packet);
+    this.ipc.freeCompanyId$.pipe(
+      distinctUntilChanged(),
+    ).subscribe((freeCompanyId) => {
+      this.freecompanyWorkshopFacade.setCurrentFreecompanyId(freeCompanyId);
     });
 
-
-    combineLatest([
-      this.ipc.freecompanyId$,
-      this.freecompanyWorkshopFacade.vesselPartUpdate$
-    ]).pipe(
-      filter(([fcId]) => fcId !== null)
-    ).subscribe(([,packet]) => {
+    this.freecompanyWorkshopFacade.vesselPartUpdate$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([packet]) => {
       this.freecompanyWorkshopFacade.updateVesselPartCondition(packet);
     });
 
-    combineLatest([
-      this.ipc.freecompanyId$,
-      this.freecompanyWorkshopFacade.vesselTimers$
-    ]).pipe(
-      filter(([fcId]) => fcId !== null)
-    ).subscribe(([, data]) => {
+    this.freecompanyWorkshopFacade.vesselTimers$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([data]) => {
       this.freecompanyWorkshopFacade.updateVesselTimers(data);
+    });
+
+    this.freecompanyWorkshopFacade.airshipStatus$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([{ slot, vessel }]) => {
+      this.freecompanyWorkshopFacade.updateAirshipStatus(slot, vessel);
+    });
+
+    this.freecompanyWorkshopFacade.airshipStatusList$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freecompanyWorkshopFacade.updateAirshipStatusList(vessels);
+    });
+
+    this.freecompanyWorkshopFacade.submarineStatusList$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freecompanyWorkshopFacade.updateSubmarineStatusList(vessels);
     });
   }
 

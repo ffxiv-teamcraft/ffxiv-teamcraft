@@ -12,8 +12,8 @@ export const selectWorkshops = createSelector(
   getFreecompanyWorkshopState,
   fromFreecompanyWorkshop.selectAll,
 );
-export const selectWorkshop = createSelector(
+
+export const selectCurrentWorkshop = createSelector(
   getFreecompanyWorkshopState,
-  // (workshops, props: { id: number }): FreecompanyWorkshop => workshops[props.id],
   (state): FreecompanyWorkshop => state.entities[state.currentFreecompanyId],
 );

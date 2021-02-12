@@ -4,6 +4,8 @@ import { Update } from '@ngrx/entity';
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
 import { VesselPartUpdate } from '../model/vessel-part-update';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
+import { Submarine } from '../model/submarine';
+import { Airship } from '../model/airship';
 
 export const readFromFile = createAction(
   '[FreecompanyWorkshop/API] Read from file'
@@ -20,6 +22,21 @@ export const importFromPcap = createAction(
 export const updateVesselPart = createAction(
   '[FreecompanyWorkshop/API] Update vessel part',
   props<{ vesselPartUpdate: VesselPartUpdate }>()
+);
+
+export const updateAirshipStatus = createAction(
+  '[FreecompanyWorkshop/API] Update airship status',
+  props<{ slot: number, vessel: Airship }>()
+);
+
+export const updateAirshipStatusList = createAction(
+  '[FreecompanyWorkshop/API] Update airship status list',
+  props<{ vessels: Airship[] }>()
+);
+
+export const updateSubmarineStatusList = createAction(
+  '[FreecompanyWorkshop/API] Update submarine status list',
+  props<{ vessels: Submarine[] }>()
 );
 
 export const updateVesselTimers = createAction(

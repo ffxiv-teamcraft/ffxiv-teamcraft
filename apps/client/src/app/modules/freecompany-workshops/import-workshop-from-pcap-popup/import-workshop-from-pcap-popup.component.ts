@@ -84,7 +84,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       this.submarineList$.next(submarines);
     });
 
-    this.ipc.freecompanyId$.pipe(
+    this.ipc.freeCompanyId$.pipe(
       switchMap((freecompanyId) => {
         this.dataLoaded$.next(freecompanyId !== null);
         return this.xivapiService.getFreeCompany(freecompanyId)

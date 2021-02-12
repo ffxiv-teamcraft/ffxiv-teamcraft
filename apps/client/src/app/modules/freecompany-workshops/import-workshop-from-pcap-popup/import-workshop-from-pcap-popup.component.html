@@ -2,30 +2,32 @@
   <div fxLayout="column" fxLayoutGap="10px">
     <div fxLayoutGap="10px" *ngIf="freecompany$ | async as freecompanyData">
       <div>
-        <h3>Free Company</h3>
+        <h3>{{ 'FC' | translate }}</h3>
         <ng-container *ngTemplateOutlet="freecompanyTpl;context:{fc: freecompanyData}"></ng-container>
       </div>
       <div>
         <ng-container *ngIf="airshipList$ | async as airshipsData">
-          <h3>Airships</h3>
+          <h3>{{ 'FREE_COMPANY_WORKSHOPS.Airships' | translate }}</h3>
           <ng-container *ngTemplateOutlet="vesselTpl;context:{vessels: airshipsData}"></ng-container>
         </ng-container>
       </div>
       <div>
         <ng-container *ngIf="submarineList$ | async as submarinesData">
-          <h3>Submersibles</h3>
+          <h3>{{ 'FREE_COMPANY_WORKSHOPS.Submersibles' | translate }}</h3>
           <ng-container *ngTemplateOutlet="vesselTpl;context:{vessels: submarinesData}"></ng-container>
         </ng-container>
       </div>
     </div>
-    <nz-alert nzType="info" *ngIf="!(dataLoaded$ | async)" [nzMessage]="'FREECOMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></nz-alert>
-    <button *ngIf="(dataLoaded$ | async) && !(isLoading$ | async)" (click)="save()" nz-button nzType="primary">Save</button>
+    <nz-alert nzType="info" *ngIf="!(dataLoaded$ | async)" [nzMessage]="'FREE_COMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></nz-alert>
+    <button *ngIf="(dataLoaded$ | async) && !(isLoading$ | async)" (click)="save()" nz-button nzType="primary">
+      {{ 'COMMON.SAVE' | translate }}
+    </button>
   </div>
 </nz-spin>
 <ng-template #freecompanyTpl let-fc="fc">
-  <div>Server: {{ fc?.server }}</div>
-  <div>FC: {{ fc?.name }}</div>
-  <div>Rank: {{ fc?.rank }}</div>
+  <div>{{ 'Server_name' | translate }}: {{ fc?.server }}</div>
+  <div>{{ 'FC_name' | translate }}: {{ fc?.name }}</div>
+  <div>{{ 'FC_rank' | translate }}: {{ fc?.rank }}</div>
 </ng-template>
 <ng-template #vesselTpl let-vessels="vessels">
   <ol>

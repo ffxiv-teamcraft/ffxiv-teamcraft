@@ -13,6 +13,7 @@ import { VesselType } from '../model/vessel-type';
 import { merge } from 'rxjs';
 import { ofPacketType } from '../../../core/rxjs/of-packet-type';
 import { Airship } from '../model/airship';
+import { VesselTimersUpdate } from '../model/vessel-timers-update';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,11 @@ import { Airship } from '../model/airship';
 export class FreecompanyWorkshopFacade {
   public readonly workshops$ = this.store.pipe(
     select(FreecompanyWorkshopSelectors.selectWorkshops),
+    shareReplay(1)
+  );
+
+  public readonly currentWorkshop$ = this.store.pipe(
+    select(FreecompanyWorkshopSelectors.selectCurrentWorkshop),
     shareReplay(1)
   );
 
@@ -36,7 +42,7 @@ export class FreecompanyWorkshopFacade {
             vessel.dest3,
             vessel.dest4,
             vessel.dest5
-          ].filter((dest) => dest > -1)
+          ].filter((dest) => (vessel.returnTime > 0 && dest > -1 && dest < 128))
         }))
       }))
     ),
@@ -65,7 +71,8 @@ export class FreecompanyWorkshopFacade {
     filter((packet) => this.isAirshipItemInfo(packet) || this.isSubmarineItemInfo(packet))
   );
 
-  public readonly currentFreecompany$ = this.ipc.freecompanyId$.pipe(
+  public readonly currentFreecompany$ = this.store.pipe(
+    select((state) => state.currentFreecompanyId),
     filter((fcId) => fcId !== null),
     shareReplay(1)
   );
@@ -181,7 +188,7 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.readFromFile());
   }
 
-  public setCurrentFreecompanyId(id: string) {
+  public setCurrentFreecompanyId(id: string): void {
     this.store.dispatch(FreecompanyWorkshopActions.setFreecompanyId({ id }));
   }
 
@@ -230,12 +237,24 @@ export class FreecompanyWorkshopFacade {
     return partCondition.type !== undefined ? partCondition : null;
   }
 
+  public updateAirshipStatus(slot: number, vessel: Airship): void {
+    this.store.dispatch(FreecompanyWorkshopActions.updateAirshipStatus({ slot, vessel }));
+  }
+
+  public updateAirshipStatusList(vessels: Airship[]): void {
+    this.store.dispatch(FreecompanyWorkshopActions.updateAirshipStatusList({ vessels }));
+  }
+
+  public updateSubmarineStatusList(vessels: Submarine[]): void {
+    this.store.dispatch(FreecompanyWorkshopActions.updateSubmarineStatusList({ vessels }));
+  }
+
   public updateVesselPartCondition(packet: ItemInfo | UpdateInventorySlot): void {
     const partUpdate = this.getVesselPartCondition(packet);
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
   }
 
-  public updateVesselTimers(data): void {
+  public updateVesselTimers(data: VesselTimersUpdate): void {
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselTimers({
       vesselTimersUpdate: {
         type: data.type,
@@ -244,7 +263,7 @@ export class FreecompanyWorkshopFacade {
     }));
   }
 
-  public getRemainingTime(unixTimestamp) {
+  public getRemainingTime(unixTimestamp): number {
     return unixTimestamp - Math.floor(Date.now() / 1000);
   }
 

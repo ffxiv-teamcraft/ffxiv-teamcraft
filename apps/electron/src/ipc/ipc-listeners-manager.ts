@@ -387,7 +387,7 @@ export class IpcListenersManager {
         if (err) {
           event.sender.send('freecompany-workshops:value', {});
         } else {
-          event.sender.send('freecompany-workshops:value', JSON.parse(content));
+          event.sender.send('freecompany-workshops:value', JSON.parse(content) || {});
         }
       });
     });

@@ -46,15 +46,12 @@ export class VoyageTrackerComponent implements OnInit {
     })
   );
 
-  constructor(private dialog: NzModalService, private ipc: IpcService,
+  constructor(private dialog: NzModalService, public ipc: IpcService,
               private lazyData: LazyDataService, public translate: TranslateService,
               private freecompanyWorkshopFacade: FreecompanyWorkshopFacade) {
   }
 
   ngOnInit(): void {
-    this.ipc.once('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
-    });
     this.submarineMaxRank$.next(Object.keys(this.lazyData.data.submarineRanks).pop());
     this.airshipMaxRank$.next(50);
   }
