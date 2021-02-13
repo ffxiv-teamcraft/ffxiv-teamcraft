@@ -44,8 +44,8 @@
   <div class="search-box-container" *ngIf="searchType$ | async as searchType">
     <div class="search-box" fxLayout="column" [formGroup]="filtersForm">
       <div fxLayout="column" fxLayoutGap="10px">
-        <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
-          <div fxLayout="row" fxLayoutGap="10px">
+        <div class="header" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" class="search-label">
               <div>
                 <i nz-icon nzType="search"></i>
@@ -76,7 +76,7 @@
               </nz-select>
             </nz-input-group>
           </div>
-          <div fxLayout="row" fxLayoutGap="10px">
+          <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
             <nz-input-group [nzAddOnBefore]="'SEARCH.Language' | translate">
               <ng-container *ngTemplateOutlet="languageSelector"></ng-container>
             </nz-input-group>
@@ -122,8 +122,9 @@
         </div>
       </div>
       <div class="filters" [class.expanded]="showFilters">
-        <div fxLayout="row" fxLayoutGap="10px">
-          <div fxLayout="column" fxLayoutGap="10px" fxFlex="0 0 320px" class="left-side-filters" *ngIf="hasAdditionalFilters(searchType)">
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
+          <div fxFlexOrder="1" fxFlexOrder.lt-lg="3" fxLayout="column" fxLayoutGap="10px" fxFlex.lt-lg="1 1 auto" fxFlex="0 0 320px" class="left-side-filters"
+               *ngIf="hasAdditionalFilters(searchType)">
             <!--common lvl filter-->
             <nz-input-group *ngIf="shouldShowLvlFilter(searchType)" class="input-range with-addon-before" nzCompact
                             [nzAddOnBefore]="'SEARCH.Level' | translate">
@@ -189,7 +190,7 @@
               </nz-select>
             </nz-input-group>
             <div fxFlex="1 1 auto"></div>
-            <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayout="row wrap" fxLayoutGap="10px">
               <div fxFlex="1 1 auto">
                 <button nz-button nzType="primary" type="submit" fxFlex="1 1 auto" (click)="submitFilters()">
                   <i nz-icon nzType="filter"></i> {{'ITEMS.Apply_filters' | translate}}
@@ -202,7 +203,7 @@
               </div>
             </div>
           </div>
-          <nz-card [nzTitle]="jobPickerTitle" fxFlex="0 0 480px" *ngIf="shouldShowJobPicker(searchType)">
+          <nz-card fxFlexOrder="2" fxFlexOrder.lt-lg="1" [nzTitle]="jobPickerTitle" fxFlex.lt-lg="1 1 auto" fxFlex="0 0 480px" *ngIf="shouldShowJobPicker(searchType)">
             <ng-template #jobPickerTitle>
               <div fxLayout="row" fxLayoutAlign="center center" [ngSwitch]="searchType">
                 <ng-container *ngSwitchCase="searchTypes.RECIPE">
@@ -224,7 +225,8 @@
             </ng-template>
             <app-search-job-picker formControlName="jobCategories"></app-search-job-picker>
           </nz-card>
-          <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" class="stats-filters-container" fxFlex="0 1 540px">
+          <div fxFlexOrder="3" fxFlexOrder.lt-lg="2" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
+               class="stats-filters-container" fxFlex="0 1 540px"  fxFlex.lt-lg="1 1 auto">
             <ng-template #statsForm let-formName>
               <div *ngIf="filtersForm.get(formName).controls.length === 0; else form"
                    fxLayout="column" fxLayoutAlign="center center" class="nothing-here">
@@ -308,7 +310,7 @@
     </div>
   </div>
 
-  <div class="order-boxes" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <div class="order-boxes" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div>{{'SEARCH.Sort_by' | translate}}</div>
     <nz-select (ngModelChange)="sortBy$.next($event)" [ngModel]="sortBy$ | async" nzAllowClear>
       <nz-option *ngFor="let entry of possibleSortEntries$ | async" [nzLabel]="('SEARCH.SORT_BY.'+entry.label) | translate"
@@ -327,7 +329,7 @@
   <app-search-intro></app-search-intro>
 </div>
 <ng-container *ngIf="searchType$ | async as searchType">
-  <div *ngIf="results$ | async as results">
+  <div *ngIf="results$ | async as results" fxLayout="column" fxLayoutAlign="flex-start center">
     <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
          class="addition-buttons">
       <button nz-button (click)="selectAll(results, !allSelected)">{{(allSelected ? 'Unselect_all' : 'Select_all') | translate}}</button>
