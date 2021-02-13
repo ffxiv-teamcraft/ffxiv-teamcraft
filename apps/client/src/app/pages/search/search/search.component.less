@@ -1,5 +1,95 @@
 @import '../../../../common';
 
+:host ::ng-deep {
+
+  .ant-input-group-addon {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .with-addon-before {
+    width: 100%;
+
+    .ant-select-selector {
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+  }
+
+  .filters {
+    transition: all 0.3s;
+    max-height: 0;
+
+    &.expanded {
+      max-height: 1800px;
+      padding-top: 20px;
+    }
+
+    .left-side-filters {
+      .ant-input-group-addon {
+        width: 150px;
+        padding: 0 !important;
+      }
+
+      nz-input-group {
+        font-size: 18px;
+      }
+    }
+
+    .ant-card {
+      background: rgba(255, 255, 255, 0.1);
+
+      .ant-card-head {
+        background: unset;
+        min-height: unset;
+
+        .ant-card-head-title {
+          padding: 8px 0;
+        }
+      }
+    }
+  }
+
+  .ant-input-clear-icon {
+    color: var(--interact-color);
+  }
+
+  .ant-list-item {
+    @media @mobile {
+      justify-content: center;
+    }
+
+    .ant-list-item-meta {
+      align-items: center;
+      @media @mobile {
+        flex: 0 0 auto;
+        margin-bottom: 5px;
+      }
+
+      .ant-list-item-meta-title {
+        white-space: nowrap;
+      }
+    }
+
+    .ant-list-item-action {
+      @media @mobile {
+        margin: auto;
+      }
+    }
+
+    .ant-notification-notice {
+      margin-bottom: 0 !important;
+    }
+
+    .ant-list-item-content {
+      @media @mobile {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
 .patch-banner {
   max-width: 600px;
   @media @mobile {
@@ -7,12 +97,51 @@
   }
 }
 
-.search-box {
+.search-box-container {
+  font-weight: 600;
   width: 80%;
   margin: auto;
-  @media @mobile {
-    width: 90%;
+  border-radius: 4px;
+  background-color: var(--topbar-color);
+
+  .search-box {
+    padding: 24px 32px 20px;
+
+    @media @mobile {
+      width: 90%;
+    }
+
+    .input {
+
+      .ant-input-affix-wrapper {
+        background-color: white !important;
+        color: var(--interact-color);
+      }
+
+      .search-input {
+        background-color: white;
+        color: var(--interact-color);
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+    .search-label {
+      font-size: 24px;
+    }
   }
+
+  .search-box-footer {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-top: 1px solid var(--primary-color);
+    padding: 8px 14px;
+  }
+}
+
+app-search-job-picker {
+  font-weight: normal;
 }
 
 .form-row {
@@ -49,8 +178,16 @@ nz-form-item {
   width: 200px !important;
 }
 
+.patch-select {
+  min-width: 85px !important;
+}
+
 .filter-select-compact {
   width: 150px !important;
+}
+
+.stat-selector {
+  width: 100%;
 }
 
 .input-box {
@@ -79,40 +216,70 @@ nz-form-item {
   height: 24px;
 }
 
-.stat-filter-row {
-
-  ::ng-deep .ant-select-selector {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-
-  .min-input {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-  }
+.add-stat-button {
+  background-color: var(--interact-color);
 }
 
-.level-range {
-  width: 200px;
+.stats-header {
+  text-align: center;
+}
+
+.input-range {
+
+  &.with-addon-before {
+    .ant-input-number:first-child {
+      border-radius: 0;
+    }
+  }
 
   .ant-input-number {
-    width: 40%;
+    width: 47.5%;
+    background-color: var(--interact-color);
+    text-align: center;
+
+    &:first-child {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+    }
   }
 
   input:disabled {
-    width: 20%;
+    width: 5%;
+    box-sizing: content-box;
     text-align: center;
+    font-weight: 800;
     pointer-events: none;
-    height: 32px;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.nothing-here {
+  height: 100%;
+  opacity: .6;
+}
+
+.stats-form-container {
+  height: 100%;
+  width: 100%;
+}
+
+.stats-filters-container {
+  border-radius: 4px;
+
+  .stats-filter-tab {
+    padding: 16px;
   }
 }
 
 .filters {
-  width: 80%;
-  @media @mobile {
-    width: 90%;
-  }
+  overflow: hidden;
+  width: 100%;
 }
 
 .addition-buttons {
@@ -162,41 +329,4 @@ nz-form-item {
 
 .instance-banner {
   width: 220px;
-}
-
-:host ::ng-deep {
-  .ant-list-item {
-    @media @mobile {
-      justify-content: center;
-    }
-
-    .ant-list-item-meta {
-      align-items: center;
-      @media @mobile {
-        flex: 0 0 auto;
-        margin-bottom: 5px;
-      }
-
-      .ant-list-item-meta-title {
-        white-space: nowrap;
-      }
-    }
-
-    .ant-list-item-action {
-      @media @mobile {
-        margin: auto;
-      }
-    }
-
-    .ant-notification-notice {
-      margin-bottom: 0 !important;
-    }
-
-    .ant-list-item-content {
-      @media @mobile {
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-    }
-  }
 }

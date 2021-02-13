@@ -23,6 +23,8 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CompanyWorkshopTreeModule } from '../../modules/company-workshop-tree/company-workshop-tree.module';
+import { SearchJobPickerComponent } from './search-job-picker/search-job-picker.component';
+import { SimpleTabsetModule } from '../../modules/simple-tabset/simple-tabset.module';
 
 const routes: Routes = [
   {
@@ -56,9 +58,10 @@ const routes: Routes = [
     AntdSharedModule,
 
     RouterModule.forChild(routes),
-    CompanyWorkshopTreeModule
+    CompanyWorkshopTreeModule,
+    SimpleTabsetModule
   ],
-  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent]
+  declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent, SearchJobPickerComponent]
 })
 export class SearchModule {
 }

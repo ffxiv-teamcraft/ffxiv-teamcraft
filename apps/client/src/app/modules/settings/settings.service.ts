@@ -784,6 +784,14 @@ export class SettingsService {
     this.setBoolean('hideCompletedLogEntries', enabled);
   }
 
+  public get showSearchFilters(): boolean {
+    return this.getBoolean('showSearchFilters', false);
+  }
+
+  public set showSearchFilters(enabled: boolean) {
+    this.setBoolean('showSearchFilters', enabled);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }
