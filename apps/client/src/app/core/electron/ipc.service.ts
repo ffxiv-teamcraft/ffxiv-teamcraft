@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { BehaviorSubject, EMPTY, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
@@ -195,13 +195,6 @@ export class IpcService {
   public get eventPlay4Packets$() {
     return this.packets$.pipe(
       ofMessageType('eventPlay4'),
-      toIpcData()
-    );
-  }
-
-  public get eventPlay32Packets$() {
-    return this.packets$.pipe(
-      ofMessageType('eventPlay32'),
       toIpcData()
     );
   }

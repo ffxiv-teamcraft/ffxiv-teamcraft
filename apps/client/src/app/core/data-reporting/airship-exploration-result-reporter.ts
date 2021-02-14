@@ -18,7 +18,7 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
       packets$.pipe(ofMessageType('eventStart')),
       packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter((packet) => packet.eventId === 0xB0102),
+      filter((packet) => packet.parsedIpcData.eventId === 0xB0102),
       map((packet) => {
         return packet.type === 'eventStart';
       }),

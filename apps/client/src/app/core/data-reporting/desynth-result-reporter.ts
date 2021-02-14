@@ -12,7 +12,7 @@ export class DesynthResultReporter implements DataReporter {
   getDataReports(packets$: Observable<Message>): Observable<any[]> {
     const desynthResult$ = packets$.pipe(
       ofMessageType('desynthResult'),
-      toIpcData(),
+      toIpcData()
     );
 
     return desynthResult$.pipe(

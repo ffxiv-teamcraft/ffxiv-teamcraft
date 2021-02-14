@@ -279,7 +279,7 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofMessageType('actorControl', 'fishingBaitMsg'),
+      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
       toIpcData()
     ).subscribe(packet => {
       if (this.lazyData.data.baitItems.includes(packet.baitId)) {

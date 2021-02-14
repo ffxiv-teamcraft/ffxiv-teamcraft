@@ -9,6 +9,7 @@ import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
+import { EventPlay32 } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
@@ -83,7 +84,7 @@ export class CraftingReplayService {
       });
   }
 
-  isSuccess(eventPlay32: any): boolean {
+  isSuccess(eventPlay32: EventPlay32): boolean {
     if (new Int32Array([eventPlay32.params[13]])[0] < 0) {
       return eventPlay32.params[8] > 0 || eventPlay32.params[10] > 0;
     }

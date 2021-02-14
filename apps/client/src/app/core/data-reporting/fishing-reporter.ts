@@ -52,6 +52,7 @@ export class FishingReporter implements DataReporter {
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const actorControlSelf$ = packets$.pipe(
       ofMessageType('actorControlSelf'),
+      toIpcData(),
       filter(packet => packet.category === 320)
     );
 
@@ -68,6 +69,7 @@ export class FishingReporter implements DataReporter {
 
     const spot$ = packets$.pipe(
       ofMessageType('someDirectorUnk4'),
+      toIpcData(),
       map((packet) => {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
@@ -83,7 +85,7 @@ export class FishingReporter implements DataReporter {
       packets$.pipe(ofMessageType('eventStart')),
       packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter(packet => packet.eventId === 0x150001),
+      filter(packet => packet.parsedIpcData.eventId === 0x150001),
       map(packet => {
         return packet.type === 'eventStart';
       }),
@@ -93,13 +95,15 @@ export class FishingReporter implements DataReporter {
 
     const eventPlay$ = packets$.pipe(
       ofMessageType('eventPlay'),
+      toIpcData(),
       filter(packet => packet.eventId === 0x150001)
     );
 
     const moochId$ = new BehaviorSubject<number>(null);
 
     packets$.pipe(
-      ofMessageType('inventoryTransaction')
+      ofMessageType('inventoryTransaction'),
+      toIpcData()
     ).subscribe(packet => {
       moochId$.next(packet.catalogId);
     });
@@ -139,13 +143,14 @@ export class FishingReporter implements DataReporter {
       ofMessageType('eventPlay4'),
       toIpcData(),
       map(packet => {
-        return this.lazyData.data?.actionTimeline[packet.param1.toString()];
+        return this.lazyData.data?.actionTimeline[packet.params[0].toString()];
       }),
       filter(key => key !== undefined)
     );
 
     const mooch$ = packets$.pipe(
       ofMessageType('someDirectorUnk4'),
+      toIpcData(),
       filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
       map(packet => {
         return packet.param1 === 1121;
@@ -156,6 +161,7 @@ export class FishingReporter implements DataReporter {
     const misses$ = combineLatest([
       packets$.pipe(
         ofMessageType('someDirectorUnk4'),
+        toIpcData(),
         map(packet => {
           return {
             animation: packet.actionTimeline,
@@ -191,8 +197,8 @@ export class FishingReporter implements DataReporter {
     );
 
     const fisherStats$ = combineLatest([
-      packets$.pipe(ofMessageType('playerStats')),
-      packets$.pipe(ofMessageType('updateClassInfo'))
+      packets$.pipe(ofMessageType('playerStats'), toIpcData()),
+      packets$.pipe(ofMessageType('updateClassInfo'), toIpcData())
     ]).pipe(
       filter(([, classInfo]) => {
         return classInfo.classId === 18;
@@ -210,7 +216,8 @@ export class FishingReporter implements DataReporter {
      * Reset the state when user changes character
      */
     packets$.pipe(
-      ofMessageType('playerSetup')
+      ofMessageType('playerSetup'),
+      toIpcData()
     ).subscribe(() => {
       this.state = {};
       this.setState({});
