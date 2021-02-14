@@ -70,7 +70,7 @@ export class AlarmsEffects {
           return of(notFound);
         }),
         switchMap(group => {
-          if (group.notFound || group.alarms.length === 0) {
+          if (group.notFound || group.alarms?.length === 0) {
             return of(new AlarmGroupLoaded(group, []));
           }
           return combineLatest(group.alarms.map(key => this.alarmsService.get(key))).pipe(
@@ -154,8 +154,8 @@ export class AlarmsEffects {
       withLatestFrom(this.alarmsFacade.allGroups$),
       switchMap(([action, groups]) => {
         const groupsToUpdate = groups.map(g => {
-          const lengthBefore = g.alarms.length;
-          g.alarms = g.alarms.filter(key => key !== action.id);
+          const lengthBefore = g.alarms?.length || 0;
+          g.alarms = (g.alarms || []).filter(key => key !== action.id);
           return g.alarms.length !== lengthBefore ? g : null;
         }).filter(g => !!g);
         if (groupsToUpdate) {
