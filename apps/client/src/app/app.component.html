@@ -69,7 +69,7 @@
           </div>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <app-ad [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
+          <app-ad *ngIf="showAd$ | async" [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
@@ -82,10 +82,6 @@
               <i nz-icon nzType="pushpin" nzTheme="outline"></i>
             </li>
           </ng-container>
-          <!--          <li class="ant-menu-item" fxFlex fxHide.lt-xl fxLayout="column" fxShow routerLink="/support-us"-->
-          <!--              routerLinkActive="ant-menu-item-selected">-->
-          <!--            {{'SUPPORT_US.Title' | translate}}-->
-          <!--          </li>-->
           <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
             {{time$ | async}}
           </li>

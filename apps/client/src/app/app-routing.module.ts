@@ -160,10 +160,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/retainer-ventures/retainer-ventures.module').then(m => m.RetainerVenturesModule)
   },
   {
-    path: 'support-us',
-    loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
-  },
-  {
     path: 'db',
     loadChildren: () => import('./pages/db/db.module').then(m => m.DbModule)
   },
