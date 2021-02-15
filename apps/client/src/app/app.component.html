@@ -47,27 +47,6 @@
             </div>
           </ng-container>
         </div>
-        <div *ngIf="platformService.isDesktop()" class="nav-buttons">
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-            <div>
-              <button (click)="back()" nz-button nzShape="circle">
-                <i nz-icon nzType="arrow-left"></i>
-              </button>
-            </div>
-            <div>
-              <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}" nz-button
-                      (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
-                      nzShape="circle">
-                <i nz-icon nzTheme="outline" nzType="share-alt"></i>
-              </button>
-            </div>
-            <div>
-              <button (click)="forward()" nz-button nzShape="circle">
-                <i nz-icon nzType="arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
           <app-ad *ngIf="showAd$ | async" [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
         </div>
@@ -219,6 +198,18 @@
       </nz-header>
     </nz-layout>
     <nz-layout [class.overlay]="overlay" class="content-container">
+      <div *ngIf="platformService.isDesktop()" class="nav-buttons" fxLayout="row" fxLayoutAlign="center center">
+        <button (click)="back()">
+          <i nz-icon nzType="arrow-left"></i>
+        </button>
+        <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}"
+                (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null">
+          <i nz-icon nzTheme="outline" nzType="share-alt"></i>
+        </button>
+        <button (click)="forward()">
+          <i nz-icon nzType="arrow-right"></i>
+        </button>
+      </div>
       <nz-sider (nzCollapsedChange)="settings.compactSidebar = $event"
                 *ngIf="!overlay"
                 [(nzCollapsed)]="settings.compactSidebar"

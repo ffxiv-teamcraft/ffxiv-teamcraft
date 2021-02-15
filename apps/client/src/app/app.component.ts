@@ -150,11 +150,11 @@ export class AppComponent implements OnInit {
 
   public firewallRuleApplied = false;
 
-  showAd$ = this.authFacade.user$.pipe(
+  public showAd$ = this.authFacade.user$.pipe(
     map(user => {
       return !(user.admin || user.moderator || user.patron);
     })
-  )
+  );
 
   @ViewChild('vmAdRef')
   public vmAdRef: ElementRef;

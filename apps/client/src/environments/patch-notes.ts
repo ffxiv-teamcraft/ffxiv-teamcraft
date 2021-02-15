@@ -7,4 +7,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **db:** new data sources for various items.
-* **log-tracker:** "hide completed" is now persisted inside settings.`;
+* **log-tracker:** "hide completed" is now persisted inside settings.`;
