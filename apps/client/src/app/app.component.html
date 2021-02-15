@@ -198,27 +198,19 @@
       </nz-header>
     </nz-layout>
     <nz-layout [class.overlay]="overlay" class="content-container">
-      <div *ngIf="platformService.isDesktop()" class="nav-buttons" fxLayout="row" fxLayoutAlign="center center">
-        <button (click)="back()">
-          <i nz-icon nzType="arrow-left"></i>
-        </button>
-        <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}"
-                (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null">
-          <i nz-icon nzTheme="outline" nzType="share-alt"></i>
-        </button>
-        <button (click)="forward()">
-          <i nz-icon nzType="arrow-right"></i>
-        </button>
-      </div>
       <nz-sider (nzCollapsedChange)="settings.compactSidebar = $event"
                 *ngIf="!overlay"
                 [(nzCollapsed)]="settings.compactSidebar"
                 [nzCollapsedWidth]="80 | ifMobile: 0"
                 class="sider"
                 nzCollapsible>
-        <div class="flex-container" fxLayout="column" fxLayoutAlign="space-between">
-          <div fxLayout="column" fxFlex="1 1 auto" class="sidebar-scroll-box">
+        <div class="sidebar-scroll-box" fxLayout="column" fxLayoutAlign="space-between">
+          <div fxLayout="column" fxFlex="1 1 auto">
             <div class="menu-categories" fxFlex="1 1 auto">
+              <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop()">
+                <i nz-icon nzType="left" nzTheme="outline"></i>
+                {{'COMMON.Back' | translate}}
+              </button>
               <ul [nzInlineCollapsed]="settings.compactSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
                 <app-navigation-sidebar
                   [desktop]="platformService.isDesktop()"
@@ -260,38 +252,14 @@
               </button>
             </div>
 
-            <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"
-                 fxLayoutGap="5px">
-              <a *ngIf="!settings.compactSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Find_us_on_twitter' | translate}}" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab discord" href="https://discord.gg/r6qxt6P" nz-button nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Join_discord_server' | translate}}"
-                 target="_blank">
-                <i class="fab fa-discord"></i>
-              </a>
-              <a *ngIf="!desktop && !settings.compactSidebar" href="https://ffxivteamcraft.com/desktop" nz-button nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Download_desktop_app' | translate}}"
-                 target="_blank">
-                <i nz-icon nzType="desktop"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab github" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'See_code_github' | translate}}"
-                 target="_blank"><i class="fab fa-github"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab patreon" href="https://www.patreon.com/ffxivteamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Support_on_patreon' | translate}}"
-                 target="_blank">
-                <i class="fab fa-patreon"></i>
+            <div class="patreon-button">
+              <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" class="patreon-button-anchor">
+                <img
+                  alt="patreon logo" class="patreon-logo"
+                  src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
+                <br>
+                <span *ngIf="settings.compactSidebar">{{'COMMON.Support_us' | translate}}</span>
+                <span *ngIf="!settings.compactSidebar">{{'COMMON.Support_us_remove_ads' | translate}}</span>
               </a>
             </div>
           </div>
