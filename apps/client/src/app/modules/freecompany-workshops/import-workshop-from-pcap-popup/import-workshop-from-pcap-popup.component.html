@@ -20,7 +20,7 @@
     </div>
     <nz-alert nzType="info" *ngIf="!(dataLoaded$ | async)" [nzMessage]="'FREE_COMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></nz-alert>
     <button *ngIf="(dataLoaded$ | async) && !(isLoading$ | async)" (click)="save()" nz-button nzType="primary">
-      {{ 'COMMON.SAVE' | translate }}
+      {{ 'COMMON.Save' | translate }}
     </button>
   </div>
 </nz-spin>

@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { finalize, map, switchMap, tap } from 'rxjs/operators';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FreecompanyWorkshopFacade } from '../../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, timer } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { VesselType } from '../../../modules/freecompany-workshops/model/vessel-type';
-import { Observable } from 'rxjs/Observable';
-import { Vessel } from '../../../modules/freecompany-workshops/model/vessel';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-voyage-tracker',
@@ -16,77 +14,58 @@ import { Vessel } from '../../../modules/freecompany-workshops/model/vessel';
   styleUrls: ['./voyage-tracker.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VoyageTrackerComponent implements OnInit {
+export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit {
   isLoading$ = new BehaviorSubject(true);
-  private machinaToggle = false;
 
-  public airshipMaxRank$ = new BehaviorSubject(null);
-  public submarineMaxRank$ = new BehaviorSubject(null);
+  private _airshipMaxRank = new BehaviorSubject(null);
+
+  public get airshipMaxRank$() {
+    return this._airshipMaxRank.asObservable();
+  }
+
+  public _submarineMaxRank = new BehaviorSubject(null);
+
+  public get submarineMaxRank$() {
+    return this._submarineMaxRank.asObservable();
+  }
 
   public display$ = this.freecompanyWorkshopFacade.workshops$.pipe(
     map((results) => {
       this.isLoading$.next(true);
       const worlds = {};
       results.forEach((fc) => {
-        if (worlds[fc.world] === undefined) {
-          worlds[fc.world] = [];
+        if (worlds[fc.server] === undefined) {
+          worlds[fc.server] = [];
         }
-        worlds[fc.world].push(fc);
+        worlds[fc.server].push(fc);
       });
       return worlds;
     }),
     tap(() => {
       this.isLoading$.next(false);
     }),
-    switchMap((results) => timer(0, 1000).pipe(
-      map(() => results)
-    )),
     finalize(() => {
       this.isLoading$.next(false);
-    })
+    }),
+    takeUntil(this.onDestroy$)
   );
 
   constructor(private dialog: NzModalService, public ipc: IpcService,
               private lazyData: LazyDataService, public translate: TranslateService,
-              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade) {
+              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade, private cd: ChangeDetectorRef) {
+    super();
   }
 
   ngOnInit(): void {
-    this.submarineMaxRank$.next(Object.keys(this.lazyData.data.submarineRanks).pop());
-    this.airshipMaxRank$.next(50);
+    this._submarineMaxRank.next(Object.keys(this.lazyData.data.submarineRanks).pop());
+    this._airshipMaxRank.next(Object.keys(this.lazyData.data.airshipRanks).pop());
   }
 
   importFromPcap(): void {
     this.freecompanyWorkshopFacade.importFromPcap();
   }
 
-  isVesselBack(vessel: Vessel): boolean {
-    if (!vessel) {
-      return true;
-    }
-    return vessel.returnTime <= Date.now() / 1000;
-  }
-
-  isVesselCompleted(vessel: Vessel): boolean {
-    if (!vessel) {
-      return false;
-    }
-    return vessel.status === 2 && this.isVesselBack(vessel);
-  }
-
-  getRemainingTime(unixTimestamp: number): number {
-    return this.freecompanyWorkshopFacade.getRemainingTime(unixTimestamp);
-  }
-
-  getNoVesselMessageByVesselType(vesselType: VesselType): string {
-    return vesselType === VesselType.AIRSHIP ? this.translate.instant('VOYAGE_TRACKER.No_airship') : this.translate.instant('VOYAGE_TRACKER.No_submersible');
-  }
-
-  getMaxRankByVesselType(vesselType: VesselType): Observable<number> {
-    return vesselType === VesselType.AIRSHIP ? this.airshipMaxRank$ : this.submarineMaxRank$;
-  }
-
-  trackByWorldKey(index, value) {
+  trackByServerKey(index, value) {
     return value.key;
   }
 

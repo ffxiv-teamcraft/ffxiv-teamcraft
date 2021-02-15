@@ -7,26 +7,34 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
 import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
-import { merge } from 'rxjs';
+import { BehaviorSubject, merge } from 'rxjs';
 import { ofPacketType } from '../../../core/rxjs/of-packet-type';
 import { Airship } from '../model/airship';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
+import { Memoized } from '../../../core/decorators/memoized';
+import { AirshipPartClass } from '../model/airship-part-class';
+import { SubmarinePartClass } from '../model/submarine-part-class';
+import { TranslateService } from '@ngx-translate/core';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { AirshipPartType } from '../model/airship-part-type';
+import { SubmarinePartType } from '../model/submarine-part-type';
+import { VesselPartUpdate } from '../model/vessel-part-update';
+import { VesselPart } from '../model/vessel-part';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FreecompanyWorkshopFacade {
   public readonly workshops$ = this.store.pipe(
-    select(FreecompanyWorkshopSelectors.selectWorkshops),
-    shareReplay(1)
+    select(FreecompanyWorkshopSelectors.selectWorkshops)
   );
 
   public readonly currentWorkshop$ = this.store.pipe(
-    select(FreecompanyWorkshopSelectors.selectCurrentWorkshop),
-    shareReplay(1)
+    select(FreecompanyWorkshopSelectors.selectCurrentWorkshop)
   );
 
   public readonly vesselTimers$ = merge(
@@ -72,30 +80,33 @@ export class FreecompanyWorkshopFacade {
   );
 
   public readonly currentFreecompany$ = this.store.pipe(
-    select((state) => state.currentFreecompanyId),
-    filter((fcId) => fcId !== null),
-    shareReplay(1)
+    select(FreecompanyWorkshopSelectors.selectCurrentFreeCompanyId)
   );
+
+  public readonly vesselParts = new BehaviorSubject<Record<VesselType, Record<string, keyof Pick<Airship, 'parts'>>> | Record<VesselType, keyof Record<string, Pick<Submarine, 'parts'>>>>({
+    [VesselType.AIRSHIP]: {},
+    [VesselType.SUBMARINE]: {}
+  });
 
   public readonly airshipStatusList$ = this.ipc.airshipStatusListPackets$.pipe(
     withLatestFrom(this.currentFreecompany$),
-    map(([airshipStatusList, fcId]): Airship[] => airshipStatusList.statusList.map((airship) => ({
+    map(([airshipStatusList, fcId]): Airship[] => airshipStatusList.statusList.map((airship, i) => ({
+      vesselType: VesselType.AIRSHIP,
       rank: airship.rank,
       status: airship.status,
       name: airship.name,
       birthdate: airship.birthdate,
       returnTime: airship.returnTime,
-      freecompanyId: fcId
-    }))),
-    shareReplay(1)
+      freecompanyId: fcId,
+      parts: this.vesselParts.getValue()[VesselType.AIRSHIP][i]
+    })))
   );
 
   public readonly airshipPartialStatusFromList$ = this.ipc.eventPlay8Packets$.pipe(
     filter((event) => event.eventId === 0xB0102),
     map((event) => event.param1),
     withLatestFrom(this.airshipStatusList$),
-    map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] })),
-    shareReplay(1)
+    map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] }))
   );
 
   public readonly airshipStatus$ = this.ipc.airshipStatusPackets$.pipe(
@@ -113,50 +124,23 @@ export class FreecompanyWorkshopFacade {
           airship.dest3,
           airship.dest4,
           airship.dest5
-        ].filter((dest) => dest > -1),
-        parts: {
-          hull: {
-            partId: airship.hull
-          },
-          rigging: {
-            partId: airship.rigging
-          },
-          forecastle: {
-            partId: airship.forecastle
-          },
-          aftcastle: {
-            partId: airship.aftcastle
-          }
-        }
+        ].filter((dest) => dest > -1)
       }
-    })),
-    shareReplay(1)
+    }))
   );
 
   public readonly submarineStatusList$ = this.ipc.submarinesStatusListPackets$.pipe(
     withLatestFrom(this.currentFreecompany$),
-    map(([submarineStatusList, fcId]): Submarine[] => submarineStatusList.statusList.map((submarine) => {
+    map(([submarineStatusList, fcId]): Submarine[] => submarineStatusList.statusList.map((submarine, i) => {
       return {
+        vesselType: VesselType.SUBMARINE,
         rank: submarine.rank,
         status: submarine.status,
         name: submarine.name,
         freecompanyId: fcId,
         birthdate: submarine.birthdate,
         returnTime: submarine.returnTime,
-        parts: {
-          hull: {
-            partId: submarine.hull
-          },
-          stern: {
-            partId: submarine.stern
-          },
-          bow: {
-            partId: submarine.bow
-          },
-          bridge: {
-            partId: submarine.bridge
-          }
-        },
+        parts: { ...this.vesselParts.getValue()[VesselType.SUBMARINE][i] },
         capacity: submarine.capacity,
         currentExperience: submarine.currentExp,
         totalExperienceForNextRank: submarine.totalExpForNextRank,
@@ -168,12 +152,12 @@ export class FreecompanyWorkshopFacade {
           submarine.dest5
         ].filter((dest) => dest > 0)
       };
-    })),
-    shareReplay(1)
+    }))
   );
 
   constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
-              private readonly store: Store<fromFreecompanyWorkshop.State>) {
+              private readonly store: Store<fromFreecompanyWorkshop.State>, private readonly translate: TranslateService,
+              private i18n: I18nToolsService, private l12n: LocalizedDataService) {
   }
 
   public isSubmarineItemInfo(itemInfo: ItemInfo | UpdateInventorySlot): boolean {
@@ -196,45 +180,27 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.importFromPcap());
   }
 
-  public getVesselPartCondition(itemInfo: ItemInfo | UpdateInventorySlot): { type: VesselType, vesselSlot: number, partSlot: number, condition: number } {
-    const partCondition: any = {
+  public getVesselPartCondition(itemInfo: ItemInfo | UpdateInventorySlot): VesselPartUpdate {
+    const partUpdate: VesselPartUpdate = {
+      type: null,
+      partId: null,
+      partSlot: null,
+      vesselSlot: null,
       condition: itemInfo.condition
     };
 
-    const airshipSlots = [
-      [30, 31, 32, 33], // hull
-      [35, 36, 37, 38], // rigging
-      [40, 41, 42, 43], // forecastle
-      [45, 46, 47, 48] // aftcastle
-    ];
-    const submarineSlots = [
-      [0, 1, 2, 3], // hull
-      [5, 6, 7, 8], // stern
-      [10, 11, 12, 13], // bow
-      [15, 16, 17, 18] // bridge
-    ];
-
     if (itemInfo.containerId === 25003) {
-      partCondition.type = VesselType.AIRSHIP;
-      for (let i = 0; i < 4; i++) {
-        if (airshipSlots[i].includes(itemInfo.slot)) {
-          partCondition.vesselSlot = i;
-          partCondition.partSlot = airshipSlots[i].indexOf(itemInfo.slot);
-          break;
-        }
-      }
+      partUpdate.type = VesselType.AIRSHIP;
+      partUpdate.partId = +Object.keys(this.lazyData.data.airshipParts).find((id) => this.lazyData.data.airshipParts[id].itemId === itemInfo.catalogId);
     } else if (itemInfo.containerId === 25004) {
-      partCondition.type = VesselType.SUBMARINE;
-      for (let i = 0; i < 4; i++) {
-        if (submarineSlots[i].includes(itemInfo.slot)) {
-          partCondition.vesselSlot = i;
-          partCondition.partSlot = submarineSlots[i].indexOf(itemInfo.slot);
-          break;
-        }
-      }
+      partUpdate.type = VesselType.SUBMARINE;
+      partUpdate.partId = +Object.keys(this.lazyData.data.submarineParts).find((id) => this.lazyData.data.submarineParts[id].itemId === itemInfo.catalogId);
     }
 
-    return partCondition.type !== undefined ? partCondition : null;
+    partUpdate.vesselSlot = this.getVesselSlotByContainerSlot(itemInfo.slot);
+    partUpdate.partSlot = this.getVesselPartSlotByContainerSlot(itemInfo.slot);
+
+    return partUpdate.type !== null ? partUpdate : null;
   }
 
   public updateAirshipStatus(slot: number, vessel: Airship): void {
@@ -249,9 +215,22 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.updateSubmarineStatusList({ vessels }));
   }
 
-  public updateVesselPartCondition(packet: ItemInfo | UpdateInventorySlot): void {
+  public updateVesselParts(packet: ItemInfo | UpdateInventorySlot): void {
     const partUpdate = this.getVesselPartCondition(packet);
+    const newState = { ...this.vesselParts.getValue() };
+    if (!newState[partUpdate.type][partUpdate.vesselSlot]) {
+      newState[partUpdate.type][partUpdate.vesselSlot] = {};
+    }
+    if (!newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot]) {
+      newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = {};
+    }
+    newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = { partId: partUpdate.partId, condition: partUpdate.condition };
+    this.vesselParts.next(newState);
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
+  }
+
+  public updateCurrentFreeCompanyVesselParts(packet: ItemInfo | UpdateInventorySlot): void {
+
   }
 
   public updateVesselTimers(data: VesselTimersUpdate): void {
@@ -267,77 +246,149 @@ export class FreecompanyWorkshopFacade {
     return unixTimestamp - Math.floor(Date.now() / 1000);
   }
 
-  public getSubmarineBuild(submarine: Submarine) {
-    return {
-      hull: this.lazyData.data.submarineParts[submarine.parts.hull.partId],
-      stern: this.lazyData.data.submarineParts[submarine.parts.stern.partId],
-      bow: this.lazyData.data.submarineParts[submarine.parts.bow.partId],
-      bridge: this.lazyData.data.submarineParts[submarine.parts.bridge.partId]
+  getVesselBuild(type: VesselType, rank: number, parts: Record<string, VesselPart>): { abbreviation: string, stats: VesselStats } {
+    if (!parts) {
+      return null;
+    }
+    const rankBonus: VesselStats = type === VesselType.AIRSHIP ? {
+      surveillance: 0,
+      retrieval: 0,
+      speed: 0,
+      range: 0,
+      favor: 0
+    } : {
+      surveillance: +this.lazyData.data.submarineRanks[rank]?.surveillanceBonus,
+      retrieval: +this.lazyData.data.submarineRanks[rank]?.retrievalBonus,
+      speed: +this.lazyData.data.submarineRanks[rank]?.speedBonus,
+      range: +this.lazyData.data.submarineRanks[rank]?.rangeBonus,
+      favor: +this.lazyData.data.submarineRanks[rank]?.favorBonus
     };
+    return Object.keys(parts).map((slot) => {
+      const vesselPart = type === VesselType.AIRSHIP ? this.lazyData.data.airshipParts[parts[slot].partId] : this.lazyData.data.submarineParts[parts[slot].partId];
+      const partClass = type === VesselType.AIRSHIP ? AirshipPartClass[vesselPart.class] : SubmarinePartClass[vesselPart.class];
+      return {
+        abbreviation: this.translate.instant(`${VesselType[type]}.CLASS.${partClass}.Abbreviation`),
+        stats: {
+          surveillance: vesselPart.surveillance,
+          retrieval: vesselPart.retrieval,
+          speed: vesselPart.speed,
+          range: vesselPart.range,
+          favor: vesselPart.favor
+        }
+      };
+    }).reduce((a, b) => ({
+      abbreviation: `${a.abbreviation}${b.abbreviation}`,
+      stats: {
+        surveillance: +a.stats.surveillance + +b.stats.surveillance,
+        retrieval: +a.stats.retrieval + +b.stats.retrieval,
+        speed: +a.stats.speed + +b.stats.speed,
+        range: +a.stats.range + +b.stats.range,
+        favor: +a.stats.favor + +b.stats.favor
+      }
+    }), { abbreviation: '', stats: rankBonus });
   }
 
-  public getSubmarineStats(submarine: Submarine): VesselStats {
-    const hull = this.lazyData.data.submarineParts[submarine.parts.hull.partId];
-    const stern = this.lazyData.data.submarineParts[submarine.parts.stern.partId];
-    const bow = this.lazyData.data.submarineParts[submarine.parts.bow.partId];
-    const bridge = this.lazyData.data.submarineParts[submarine.parts.bridge.partId];
-    return {
-      surveillance: this.sumStat('surveillance', submarine.rank, hull, stern, bow, bridge),
-      retrieval: this.sumStat('retrieval', submarine.rank, hull, stern, bow, bridge),
-      speed: this.sumStat('speed', submarine.rank, hull, stern, bow, bridge),
-      range: this.sumStat('range', submarine.rank, hull, stern, bow, bridge),
-      favor: this.sumStat('favor', submarine.rank, hull, stern, bow, bridge)
-    };
+  public getVesselPartName(vesselType: VesselType, partId: number) {
+    if (vesselType === VesselType.AIRSHIP) {
+      return this.i18n.getName(this.l12n.getItem(this.lazyData.data.airshipParts[partId].itemId));
+    }
+    return this.i18n.getName(this.l12n.getItem(this.lazyData.data.submarineParts[partId].itemId));
   }
 
-  public sumStat(statName: 'surveillance' | 'retrieval' | 'speed' | 'range' | 'favor', rank, ...parts) {
-    return rank[statName] + parts.reduce((a, b) => a[statName] + b[statName]);
-  }
-
-  public getVesselPartSlotName(slot: number): string {
-    switch (slot) {
+  @Memoized()
+  public getVesselPartSlotByContainerSlot(containerSlot: number): AirshipPartType | SubmarinePartType {
+    switch (containerSlot) {
       // Submersible
       case 0:
       case 5:
       case 10:
       case 15:
-        return 'hull';
+        return SubmarinePartType.HULL;
       case 1:
       case 6:
       case 11:
       case 16:
-        return 'stern';
+        return SubmarinePartType.STERN;
       case 2:
       case 7:
       case 12:
       case 17:
-        return 'bow';
+        return SubmarinePartType.BOW;
       case 3:
       case 8:
       case 13:
       case 18:
-        return 'bow';
+        return SubmarinePartType.BRIDGE;
       // Airship
       case 30:
       case 35:
       case 40:
       case 45:
-        return 'hull';
+        return AirshipPartType.HULL;
       case 31:
       case 36:
       case 41:
       case 46:
-        return 'rigging';
+        return AirshipPartType.RIGGING;
       case 32:
       case 37:
       case 42:
       case 47:
-        return 'forecastle';
+        return AirshipPartType.FORECASTLE;
       case 33:
       case 38:
       case 43:
       case 48:
-        return 'aftcastle';
+        return AirshipPartType.AFTCASTLE;
+    }
+    return null;
+  }
+
+  @Memoized()
+  public getVesselSlotByContainerSlot(containerSlot: number): string {
+    switch (containerSlot) {
+      // Submersible
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+        return '0';
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+        return '1';
+      case 10:
+      case 11:
+      case 12:
+      case 13:
+        return '2';
+      case 15:
+      case 16:
+      case 17:
+      case 18:
+        return '3';
+      // Airship
+      case 30:
+      case 31:
+      case 32:
+      case 33:
+        return '0';
+      case 35:
+      case 36:
+      case 37:
+      case 38:
+        return '1';
+      case 40:
+      case 41:
+      case 42:
+      case 43:
+        return '2';
+      case 45:
+      case 46:
+      case 47:
+      case 48:
+        return '3';
     }
     return null;
   }

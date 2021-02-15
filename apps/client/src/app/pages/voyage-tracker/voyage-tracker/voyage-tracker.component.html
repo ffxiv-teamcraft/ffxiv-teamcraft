@@ -5,29 +5,16 @@
 </div>
 <app-page-loader [loading]="isLoading$ | async">
   <div fxLayout="column" fxLayoutGap="20px">
-    <nz-collapse *ngFor="let world of display$ | async | keyvalue; trackBy:trackByWorldKey">
-      <nz-collapse-panel [nzHeader]="world.key">
+    <nz-collapse *ngFor="let server of display$ | async | keyvalue; trackBy:trackByServerKey">
+      <nz-collapse-panel [nzHeader]="server.key">
         <div fxLayout="column" fxLayoutGap="20px">
-          <nz-collapse *ngFor="let freecompany of world.value; trackBy:trackById">
+          <nz-collapse *ngFor="let freecompany of server.value; trackBy:trackById">
             <nz-collapse-panel [nzHeader]="freecompany.name + ' <' + freecompany.tag + '>'" #panel>
-              <div fxLayout="column">
-                <div fxLayout="row">
-                  <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">Name</div>
-                  <div fxFlex="0 0 20%" fxLayoutAlign="center center">Return time</div>
-                  <div fxFlex="0 0 20%" fxLayoutAlign="center center">Remaining time</div>
-                  <div fxFlex="0 0 90px" fxLayoutAlign="center center">Rank</div>
-                  <div fxFlex="0 0 120px" fxLayoutAlign="center center">Build</div>
-                  <div fxFlex="0" fxLayoutAlign="center center">Voyage</div>
-                </div>
-              </div>
-              <div class="separator"></div>
-              <ng-container
-                *ngTemplateOutlet="vesselsList;context:{vesselType: 0, vessels: freecompany.airships?.slots}"
-              ></ng-container>
-              <div class="separator"></div>
-              <ng-container
-                *ngTemplateOutlet="vesselsList;context:{vesselType: 1, vessels: freecompany.submarines.slots}"
-              ></ng-container>
+              <app-vessel-list [airships]="freecompany.airships.slots"
+                               [submarines]="freecompany.submarines.slots"
+                               [airshipMaxRank]="airshipMaxRank$ | async"
+                               [submarineMaxRank]="submarineMaxRank$ | async"
+              ></app-vessel-list>
             </nz-collapse-panel>
           </nz-collapse>
         </div>
@@ -36,52 +23,4 @@
   </div>
 </app-page-loader>
 
-<ng-template #vesselsList let-vesselType="vesselType" let-vessels="vessels">
-  <ng-container *ngIf="vessels; else noVessel">
-    <div class="vessels-list" fxLayout="column" *ngFor="let vessel of vessels">
-      <div fxLayout="row">
-        <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">{{ vessel?.name }}</div>
-        <div fxFlex="0 0 20%" fxLayoutAlign="center center">
-          <ng-container *ngIf="vessel?.returnTime > 0; else noReturnTime">
-            {{ vessel?.returnTime * 1000 | date:'short':null:translate.currentLang }}
-          </ng-container>
-          <ng-template #noReturnTime>
-            -
-          </ng-template>
-        </div>
-        <div fxFlex="0 0 20%" fxLayoutAlign="center center">
-          <ng-container *ngIf="!isVesselBack(vessel); else isBack">
-            <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i>
-            {{ getRemainingTime(vessel?.returnTime) | timer:true }}
-          </ng-container>
-          <ng-template #isBack>
-            <ng-container *ngIf="isVesselCompleted(vessel); else isIdle">
-              <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i>
-              {{'VOYAGE_TRACKER.Voyage_complete' | translate}}
-            </ng-container>
-            <ng-template #isIdle>
-              -
-            </ng-template>
-          </ng-template>
-        </div>
-        <div fxFlex="0 0 90px" fxLayoutAlign="center center">{{ vessel?.rank }} / {{ getMaxRankByVesselType(vesselType) | async }}</div>
-        <div fxFlex="0 0 120px" fxLayoutAlign="center center">
-          SSSS
-        </div>
-        <div fxFlex="0" fxLayoutAlign="center center" style="text-align: center">
-          <nz-breadcrumb [nzSeparator]="iconTemplate">
-            <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
-              {{ sector }}
-            </nz-breadcrumb-item>
-          </nz-breadcrumb>
-          <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
-        </div>
-      </div>
-    </div>
-  </ng-container>
-  <ng-template #noVessel>
-    <div class="no-vessel" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-      {{ getNoVesselMessageByVesselType(vesselType) }}
-    </div>
-  </ng-template>
-</ng-template>
+

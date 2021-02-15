@@ -15,6 +15,7 @@ import { select, Store } from '@ngrx/store';
 import { VesselType } from '../model/vessel-type';
 import { FreecompanyWorkshopFacade } from './freecompany-workshop.facade';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
+import { cloneDeep } from 'lodash';
 
 @Injectable()
 export class FreecompanyWorkshopEffects {
@@ -71,7 +72,7 @@ export class FreecompanyWorkshopEffects {
       withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ slot, vessel }, state]) => {
-      const vesselState = { ...state.airships };
+      const vesselState = cloneDeep(state.airships);
       vesselState.slots[slot] = vessel;
       this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
         freecompanyWorkshop: {
@@ -91,13 +92,15 @@ export class FreecompanyWorkshopEffects {
       withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ vessels }, state]) => {
-      const vesselState = { ...state.airships };
+      const vesselState = cloneDeep(state.airships);
       vesselState.slots = vesselState.slots.map((vessel, i) => {
-        vessel.rank = vessels[i].rank;
-        vessel.status = vessels[i].status;
-        vessel.name = vessels[i].name;
-        vessel.birthdate = vessels[i].birthdate;
-        vessel.returnTime = vessels[i].returnTime;
+        if (vessel) {
+          vessel.rank = vessels[i].rank;
+          vessel.status = vessels[i].status;
+          vessel.name = vessels[i].name;
+          vessel.birthdate = vessels[i].birthdate;
+          vessel.returnTime = vessels[i].returnTime;
+        }
         return vessel;
       });
       this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
@@ -118,7 +121,7 @@ export class FreecompanyWorkshopEffects {
       withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ vessels }, state]) => {
-      const vesselState = { ...state.submarines };
+      const vesselState = cloneDeep(state.submarines);
       vesselState.slots = vessels;
       this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
         freecompanyWorkshop: {
@@ -142,11 +145,11 @@ export class FreecompanyWorkshopEffects {
 
       if (vesselTimersUpdate.type === VesselType.AIRSHIP && state.airships?.slots) {
         changes = {
-          airships: this.updateVesselTimers({ ...state.airships }, vesselTimersUpdate)
+          airships: this.updateVesselTimers(cloneDeep(state.airships), vesselTimersUpdate)
         };
       } else if (vesselTimersUpdate.type === VesselType.SUBMARINE && state.submarines?.slots) {
         changes = {
-          submarines: this.updateVesselTimers({ ...state.submarines }, vesselTimersUpdate)
+          submarines: this.updateVesselTimers(cloneDeep(state.submarines), vesselTimersUpdate)
         };
       } else {
         console.log('VesselType NOT FOUND', vesselTimersUpdate.type);
@@ -168,29 +171,27 @@ export class FreecompanyWorkshopEffects {
     concatMap((action) => of(action).pipe(
       withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
     )),
+    filter(([, state]) => state !== undefined),
     map(([{ vesselPartUpdate }, state]) => {
       const vesselSlot = vesselPartUpdate.vesselSlot;
-      const partSlotName = this.freecompanyWorkshopFacade.getVesselPartSlotName(vesselPartUpdate.partSlot);
+      const partSlot = vesselPartUpdate.partSlot;
       let changes;
-
       if (vesselPartUpdate.type === VesselType.AIRSHIP && state.airships?.slots) {
-        const airshipsState = { ...state.airships };
-        if (airshipsState.slots[vesselSlot]) {
-          airshipsState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
+        const airshipsState = cloneDeep(state.airships);
+        if (airshipsState.slots[vesselSlot]?.parts[partSlot]) {
+          airshipsState.slots[vesselSlot].parts[partSlot].partId = vesselPartUpdate.partId;
+          airshipsState.slots[vesselSlot].parts[partSlot].condition = vesselPartUpdate.condition;
           changes = {
-            airships: {
-              ...airshipsState
-            }
+            airships: airshipsState
           };
         }
       } else if (vesselPartUpdate.type === VesselType.SUBMARINE && state.submarines?.slots) {
-        const submarinesState = { ...state.submarines };
-        if (submarinesState.slots[vesselSlot]) {
-          submarinesState.slots[vesselSlot].parts[partSlotName].condition = vesselPartUpdate.condition;
+        const submarinesState = cloneDeep(state.submarines);
+        if (submarinesState.slots[vesselSlot]?.parts[partSlot]) {
+          submarinesState.slots[vesselSlot].parts[partSlot].partId = vesselPartUpdate.partId;
+          submarinesState.slots[vesselSlot].parts[partSlot].condition = vesselPartUpdate.condition;
           changes = {
-            submarines: {
-              ...submarinesState
-            }
+            submarines: submarinesState
           };
         }
       } else {

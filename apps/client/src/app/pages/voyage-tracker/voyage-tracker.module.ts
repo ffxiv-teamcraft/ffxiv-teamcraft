@@ -11,6 +11,10 @@ import { CoreModule } from '../../core/core.module';
 import { FreecompanyWorkshopsModule } from '../../modules/freecompany-workshops/freecompany-workshops.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { VesselRowComponent } from './voyage-tracker/vessel-row/vessel-row.component';
+import { VesselListComponent } from './voyage-tracker/vessel-list/vessel-list.component';
+import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-build-column/vessel-build-column.component';
 
 const routes: Routes = [
   {
@@ -21,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [VoyageTrackerComponent],
+  declarations: [VoyageTrackerComponent, VesselRowComponent, VesselListComponent, VesselBuildColumnComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -34,7 +38,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes),
     PageLoaderModule,
-    NzBreadCrumbModule
+    NzBreadCrumbModule,
+    NzPopoverModule
   ]
 })
 export class VoyageTrackerModule {

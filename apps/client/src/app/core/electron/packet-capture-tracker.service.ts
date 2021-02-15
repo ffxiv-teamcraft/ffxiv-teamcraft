@@ -344,16 +344,22 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.freeCompanyId$.pipe(
-      distinctUntilChanged(),
+      distinctUntilChanged()
     ).subscribe((freeCompanyId) => {
       this.freecompanyWorkshopFacade.setCurrentFreecompanyId(freeCompanyId);
     });
 
     this.freecompanyWorkshopFacade.vesselPartUpdate$.pipe(
+      debounceBufferTime(2500),
+      tap((packets) => {
+        packets.forEach((packet) => {
+          this.freecompanyWorkshopFacade.updateVesselParts(packet);
+        });
+      }),
       withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
-    ).subscribe(([packet]) => {
-      this.freecompanyWorkshopFacade.updateVesselPartCondition(packet);
+    ).subscribe((packets  ) => {
+      console.log('Vessel parts updated');
     });
 
     this.freecompanyWorkshopFacade.vesselTimers$.pipe(

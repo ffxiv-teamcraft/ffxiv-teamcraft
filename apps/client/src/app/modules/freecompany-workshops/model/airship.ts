@@ -1,11 +1,7 @@
 import { Vessel } from './vessel';
 import { VesselPart } from './vessel-part';
+import { AirshipPartType } from './airship-part-type';
 
 export interface Airship extends Vessel {
-  parts?: {
-    hull: VesselPart;
-    rigging: VesselPart;
-    forecastle: VesselPart;
-    aftcastle: VesselPart;
-  }
+  parts?: Record<AirshipPartType, VesselPart>
 }

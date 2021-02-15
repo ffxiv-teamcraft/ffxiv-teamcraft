@@ -5,7 +5,7 @@ export class FreecompanyWorkshop {
   id: string;
   name: string;
   tag: string;
-  world: string;
+  server: string;
   airships?: FreecompanyAirships;
   submarines?: FreecompanySubmarines;
 }

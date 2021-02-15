@@ -1,0 +1,23 @@
+<div *ngIf="rank > 0" nz-popover
+     [nzPopoverTitle]="name"
+     [nzPopoverContent]="vesselBuildDetails"
+>
+  {{ vesselBuild.abbreviation }}
+</div>
+
+<ng-template #vesselBuildDetails>
+  <div fxLayout="column">
+    <div><h4>Build</h4></div>
+    <div *ngFor="let item of fullnameParts">{{ item }}</div>
+    <div>Condition: {{ condition }}</div>
+  </div>
+  <hr>
+  <div fxLayout="column">
+    <div><h4>Stats</h4></div>
+    <div>Surveillance: {{ vesselBuild.stats.surveillance }}</div>
+    <div>Retrieval: {{ vesselBuild.stats.retrieval }}</div>
+    <div>Speed: {{ vesselBuild.stats.speed }}</div>
+    <div>Range: {{ vesselBuild.stats.range }}</div>
+    <div>Favor: {{ vesselBuild.stats.favor }}</div>
+  </div>
+</ng-template>

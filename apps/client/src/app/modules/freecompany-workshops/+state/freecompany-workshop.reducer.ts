@@ -8,20 +8,21 @@ export const freecompanyWorkshopsFeatureKey = 'freecompanyWorkshops';
 
 export interface State extends EntityState<FreecompanyWorkshop> {
   // additional entities state properties
-  currentFreecompanyId?: string;
+  currentFreecompanyId: string;
 }
 
 export const adapter: EntityAdapter<FreecompanyWorkshop> = createEntityAdapter<FreecompanyWorkshop>();
 
 export const initialState: State = adapter.getInitialState({
   // additional entity state properties
+  currentFreecompanyId: null
 });
 
 
 export const freecompanyWorkshopReducer = createReducer(
   initialState,
   on(FreecompanyWorkshopActions.setFreecompanyId,
-    (state, action) =>({
+    (state, action) => ({
       ...state,
       currentFreecompanyId: action.id
     })
@@ -55,7 +56,7 @@ export const freecompanyWorkshopReducer = createReducer(
   ),
   on(FreecompanyWorkshopActions.clearFreecompanyWorkshops,
     state => adapter.removeAll(state)
-  ),
+  )
 );
 
 
@@ -63,7 +64,7 @@ export const {
   selectIds,
   selectEntities,
   selectAll,
-  selectTotal,
+  selectTotal
 } = adapter.getSelectors();
 
 export function reducer(state: State | undefined, action: Action) {
