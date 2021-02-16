@@ -56,6 +56,7 @@ import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
 import { UpdaterStatus } from './model/other/updater-status';
+import { RemoveAdsPopupComponent } from './modules/ads/remove-ads-popup/remove-ads-popup.component';
 
 declare const gtag: Function;
 
@@ -153,6 +154,12 @@ export class AppComponent implements OnInit {
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
       return !(user.admin || user.moderator || user.patron);
+    })
+  );
+
+  public showPatreonButton$ = this.authFacade.user$.pipe(
+    map(user => {
+      return !user.patron;
     })
   );
 
@@ -457,6 +464,14 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  public openSupportPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('COMMON.Support_us_remove_ads'),
+      nzContent: RemoveAdsPopupComponent,
+      nzFooter: null
+    });
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {

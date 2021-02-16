@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { PatreonService } from '../../../core/patreon/patreon.service';
 
 @Component({
   selector: 'app-remove-ads-popup',
@@ -6,11 +7,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./remove-ads-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RemoveAdsPopupComponent implements OnInit {
+export class RemoveAdsPopupComponent {
 
-  constructor() { }
+  constructor(private patreonService: PatreonService) {
+  }
 
-  ngOnInit(): void {
+  patreonOauth(): void {
+    this.patreonService.patreonOauth();
   }
 
 }

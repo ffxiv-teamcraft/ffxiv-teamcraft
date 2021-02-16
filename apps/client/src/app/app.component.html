@@ -204,22 +204,20 @@
                 [nzCollapsedWidth]="80 | ifMobile: 0"
                 class="sider"
                 nzCollapsible>
-        <div class="sidebar-scroll-box" fxLayout="column" fxLayoutAlign="space-between">
-          <div fxLayout="column" fxFlex="1 1 auto">
+        <div class="sidebar-container" fxLayout="column" fxLayoutAlign="space-between">
+          <div fxLayout="column" fxFlex="1 1 auto" class="menu-categories-container">
+            <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop()">
+              <i nz-icon nzType="left" nzTheme="outline"></i>
+              {{'COMMON.Back' | translate}}
+            </button>
             <div class="menu-categories" fxFlex="1 1 auto">
-              <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop()">
-                <i nz-icon nzType="left" nzTheme="outline"></i>
-                {{'COMMON.Back' | translate}}
-              </button>
-              <ul [nzInlineCollapsed]="settings.compactSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
-                <app-navigation-sidebar
-                  [desktop]="platformService.isDesktop()"
-                  [collapsed]="settings.compactSidebar"
-                  [mappyEnabled]="mappy.available"
-                  [version]="version"
-                  (showPatchNotes)="showPatchNotes()">
-                </app-navigation-sidebar>
-              </ul>
+              <app-navigation-sidebar
+                [desktop]="platformService.isDesktop()"
+                [collapsed]="settings.compactSidebar"
+                [mappyEnabled]="mappy.available"
+                [version]="version"
+                (showPatchNotes)="showPatchNotes()">
+              </app-navigation-sidebar>
             </div>
 
             <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
@@ -252,16 +250,14 @@
               </button>
             </div>
 
-            <div class="patreon-button">
-              <a href="https://www.patreon.com/bePatron?u=702160" target="_blank" class="patreon-button-anchor">
-                <img
-                  alt="patreon logo" class="patreon-logo"
-                  src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
-                <br>
-                <span *ngIf="settings.compactSidebar">{{'COMMON.Support_us' | translate}}</span>
-                <span *ngIf="!settings.compactSidebar">{{'COMMON.Support_us_remove_ads' | translate}}</span>
-              </a>
-            </div>
+            <button class="patreon-button" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
+              <img
+                alt="patreon logo" class="patreon-logo"
+                src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
+              <br>
+              <span *ngIf="settings.compactSidebar">{{'COMMON.Support_us' | translate}}</span>
+              <span *ngIf="!settings.compactSidebar">{{'COMMON.Support_us_remove_ads' | translate}}</span>
+            </button>
           </div>
         </div>
       </nz-sider>

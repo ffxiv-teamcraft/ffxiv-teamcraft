@@ -12,8 +12,16 @@
   }
 }
 
-.sidebar-scroll-box {
+.sidebar-container {
   height: calc(~"100vh - @{layout-header-height} - 48px");
+
+  .menu-categories-container {
+    overflow: hidden;
+
+    .menu-categories {
+      overflow-y: auto;
+    }
+  }
 }
 
 .back-button {
@@ -31,23 +39,20 @@
   width: 100%;
   background-color: #F96854;
   text-align: center;
+  max-height: 67px;
+  color: var(--topbar-color);
+  padding: 5px 3px;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
 
-  .patreon-button-anchor {
-    color: var(--topbar-color);
-    padding: 5px 3px;
-    width: 100%;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    font-weight: 600;
+  img.patreon-logo {
+    width: 24px;
+  }
 
-    img.patreon-logo {
-      width: 24px;
-    }
-
-    &:focus {
-      outline: 0;
-    }
+  &:focus {
+    outline: 0;
   }
 }
 
@@ -151,7 +156,7 @@
 
   .sider {
     .ant-layout-sider-children {
-      overflow-y: auto;
+      overflow: hidden;
     }
   }
 

@@ -2472,5 +2472,28 @@
     "Total_per_venture": "Total per venture",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "Pick one of your retainers"
+  },
+  "PATREON": {
+    "By_supporting_us": "By supporting us on patreon, you get:",
+    "No_ads": "No more ads inside the topbar",
+    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
+    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
+    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
+    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
+    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
+    "Already_supporter": "Already a supporter?",
+    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+  },
+  "SUPPORT_US": {
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
+    "PATREON_BENEFITS": {
+      "No_ads": "Ads-free Teamcraft experience",
+      "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
+      "Custom_theme": "Better theme customization, with custom color input (${{price}})",
+      "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+    }
   }
 }
