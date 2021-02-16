@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.13"></a>
+## [8.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.12...v8.0.13) (2021-02-16)
+
+
+### Bug Fixes
+
+* **desktop:** fixed zoom key bindings ([4157401](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4157401))
+
+
+### Features
+
+* **db:** support for korean v5.31 update ([9b1d15d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b1d15d))
+
+
+
 <a name="8.0.12"></a>
 ## [8.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.11...v8.0.12) (2021-02-11)
 

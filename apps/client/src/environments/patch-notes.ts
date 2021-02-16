@@ -1,10 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **inventory-view:** fixed double tooltip on item icons.
-* **notifications:** fixed an issue with notifications affecting autofill system.
+* **desktop:** fixed zoom key bindings.
 
 
 ### Features
 
-* **db:** new data sources for various items.
-* **log-tracker:** "hide completed" is now persisted inside settings.`;
+* **db:** support for korean v5.31 update.`;
