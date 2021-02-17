@@ -1,5 +1,4 @@
 import { AbstractExtractor } from './abstract-extractor';
-import get = Reflect.get;
 
 export class I18nExtractor extends AbstractExtractor {
 
@@ -11,7 +10,7 @@ export class I18nExtractor extends AbstractExtractor {
     const entites = {};
     let source = this.aggregateAllPages(`https://xivapi.com/${this.contentName}?columns=ID,${this.nameColumn}*,${Object.keys(this.additionalColumns).join(',')}`);
     if (this.startsAt0) {
-      source = this.getAllEntries(`https://xivapi.com/${this.contentName}?columns=ID,${this.nameColumn}*,${Object.keys(this.additionalColumns).join(',')}`, true);
+      source = this.getAllEntries(`https://xivapi.com/${this.contentName}`, true);
     }
     source.subscribe({
       next: rows => {
@@ -26,7 +25,7 @@ export class I18nExtractor extends AbstractExtractor {
             .forEach(key => {
               entites[entity.ID] = {
                 ...entites[entity.ID],
-                [this.additionalColumns[key]]: get(entity, key)
+                [this.additionalColumns[key]]: this.get(entity, key)
               };
             });
         });
