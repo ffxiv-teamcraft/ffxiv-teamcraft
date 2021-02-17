@@ -1,17 +1,16 @@
 import { Observable } from 'rxjs';
-import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
 import { map } from 'rxjs/operators';
-import { BasePacket, ReductionResult } from '../../model/pcap';
+import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { ofMessageType } from '../rxjs/of-message-type';
+import { toIpcData } from '../rxjs/to-ipc-data';
 
 export class ReductionResultReporter implements DataReporter {
 
-  getDataReports(packets$: Observable<BasePacket>): Observable<any[]> {
-    const reductionResults$ = packets$.pipe(
-      ofPacketSubType<ReductionResult>('reductionResult')
-    );
-
-    return reductionResults$.pipe(
+  getDataReports(packets$: Observable<Message>): Observable<any[]> {
+    return packets$.pipe(
+      ofMessageType('resultDialog', 'reductionResult'),
+      toIpcData(),
       map((packet) => {
         return packet.result.map(item => {
           return {

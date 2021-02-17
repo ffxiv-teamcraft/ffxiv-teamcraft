@@ -2,7 +2,7 @@ import { merge, Observable } from 'rxjs';
 import { ProbeReport } from '../model/probe-report';
 import { InjectionToken } from '@angular/core';
 import { ProbeSource } from '../model/probe-source';
-import { ofPacketType } from '../../../core/rxjs/of-packet-type';
+import { ofMessageType } from '../../../core/rxjs/of-message-type';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { EventHandlerType } from '../../../core/electron/event-handler-type';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -12,14 +12,14 @@ export const PLAYER_METRICS_PROBES = new InjectionToken('player-metrics:probes')
 export abstract class PlayerMetricProbe {
 
   protected eventSource$: Observable<ProbeSource> = merge(
-    this.ipc.packets$.pipe(ofPacketType('eventStart')),
-    this.ipc.packets$.pipe(ofPacketType('eventFinish'))
+    this.ipc.packets$.pipe(ofMessageType('eventStart')),
+    this.ipc.packets$.pipe(ofMessageType('eventFinish'))
   ).pipe(
     map(packet => {
       if (packet.type === 'eventFinish') {
         return ProbeSource.UNKNOWN;
       }
-      const eventType = packet.eventId >> 16;
+      const eventType = packet.parsedIpcData.eventId >> 16;
       switch (eventType) {
         case EventHandlerType.Fishing:
           return ProbeSource.FISHING;
@@ -30,7 +30,7 @@ export abstract class PlayerMetricProbe {
         case EventHandlerType.Shop:
           return ProbeSource.VENDOR;
         case EventHandlerType.CustomTalk:
-          switch (packet.eventId & 0xFFFF) {
+          switch (packet.parsedIpcData.eventId & 0xFFFF) {
             case 0x27:
               return ProbeSource.MARKETBOARD;
             case 0x220:
@@ -47,15 +47,15 @@ export abstract class PlayerMetricProbe {
 
   protected teleportSource$ = merge(
     this.ipc.packets$.pipe(
-      ofPacketType('actorCast'),
-      filter(packet => packet.actioniD === 5)
+      ofMessageType('actorCast'),
+      filter(message => message.parsedIpcData.actionId === 5)
     ),
     this.ipc.packets$.pipe(
-      ofPacketType('initZone')
+      ofMessageType('initZone')
     ),
     this.ipc.packets$.pipe(
-      ofPacketType('actorControl'),
-      filter(packet => packet.category === 0x0F)
+      ofMessageType('actorControl'),
+      filter(message => message.parsedIpcData.category === 0x0F)
     )
   ).pipe(
     map(packet => {

@@ -82,14 +82,14 @@ export class RetainersService {
   init(): void {
     this.ipc.retainerInformationPackets$.subscribe(packet => {
       const retainers = this.retainers;
-      retainers[packet.retainerID.toString(16)] = {
+      retainers[packet.retainerId.toString(16)] = {
         name: packet.name,
         order: packet.hireOrder,
         itemCount: packet.itemCount,
-        itemSellingCount: packet.itemSellingCount,
+        itemSellingCount: packet.sellingCount,
         level: packet.level,
-        job: packet.classJobID,
-        task: packet.ventureID,
+        job: packet.classJob,
+        task: packet.ventureId,
         taskComplete: packet.ventureComplete,
         gil: packet.gil
       };

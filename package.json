@@ -18,7 +18,7 @@
     ],
     "extraResources": [
       {
-        "from": "./node_modules/node-machina-ffxiv/MachinaWrapper",
+        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/MachinaWrapper",
         "to": "MachinaWrapper",
         "filter": [
           "**/*"
@@ -116,6 +116,7 @@
   },
   "private": true,
   "dependencies": {
+    "@ffxiv-teamcraft/pcap-ffxiv": "^0.1.4",
     "buffer-reader": "^0.1.0",
     "electron-edge-js": "^12.18.5",
     "electron-is-dev": "^1.1.0",
@@ -126,7 +127,6 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.42.12",
     "request": "^2.88.2",
     "rxjs": "^6.6.3",
     "tslib": "^1.10.0"
