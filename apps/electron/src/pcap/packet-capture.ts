@@ -47,6 +47,7 @@ export class PacketCapture {
     'retainerInformation',
     'someDirectorUnk4',
     'submarineExplorationResult',
+    'submarineProgressionStatus',
     'submarineStatusList',
     'submarineTimers',
     'updateClassInfo',

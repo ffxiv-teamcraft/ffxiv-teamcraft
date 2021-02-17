@@ -15,6 +15,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { VesselRowComponent } from './voyage-tracker/vessel-row/vessel-row.component';
 import { VesselListComponent } from './voyage-tracker/vessel-list/vessel-list.component';
 import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-build-column/vessel-build-column.component';
+import { VesselVoyageColumnComponent } from './voyage-tracker/vessel-row/vessel-voyage-column/vessel-voyage-column.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [VoyageTrackerComponent, VesselRowComponent, VesselListComponent, VesselBuildColumnComponent],
+  declarations: [
+    VoyageTrackerComponent,
+    VesselRowComponent,
+    VesselListComponent,
+    VesselBuildColumnComponent,
+    VesselVoyageColumnComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,

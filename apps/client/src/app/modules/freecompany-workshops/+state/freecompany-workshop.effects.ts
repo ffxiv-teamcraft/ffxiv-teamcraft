@@ -48,6 +48,11 @@ export class FreecompanyWorkshopEffects {
     })
   ), { dispatch: false });
 
+  deleteFreecompanyWorkshop$ = createEffect(() => this.actions$.pipe(
+    ofType(FreecompanyWorkshopActions.deleteFreecompanyWorkshop),
+    map(() => FreecompanyWorkshopActions.saveToFile())
+  ));
+
   importFromPcap$ = createEffect(() => this.actions$.pipe(
     ofType(FreecompanyWorkshopActions.importFromPcap),
     switchMap(() => {
@@ -196,6 +201,45 @@ export class FreecompanyWorkshopEffects {
         }
       } else {
         console.log('VesselType NOT FOUND', vesselPartUpdate.type);
+      }
+
+      if (changes !== undefined) {
+        this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
+          freecompanyWorkshop: {
+            id: state.id,
+            changes: changes
+          }
+        }));
+      }
+
+      return FreecompanyWorkshopActions.saveToFile();
+    })
+  ));
+
+  updateVesselProgressionStatus$ = createEffect(() => this.actions$.pipe(
+    ofType(FreecompanyWorkshopActions.updateVesselProgressionStatus),
+    concatMap((action) => of(action).pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+    )),
+    filter(([, state]) => state !== undefined),
+    map(([{ vesselProgressionStatusUpdate }, state]) => {
+      const newState = cloneDeep(state);
+      let changes;
+
+      if(vesselProgressionStatusUpdate.type === VesselType.AIRSHIP) {
+        changes = {
+          airships: {
+            ...newState.airships,
+            sectors: vesselProgressionStatusUpdate.sectorsProgression
+          }
+        };
+      } else if(vesselProgressionStatusUpdate.type === VesselType.SUBMARINE) {
+        changes = {
+          submarines: {
+            ...newState.submarines,
+            sectors: vesselProgressionStatusUpdate.sectorsProgression
+          }
+        };
       }
 
       if (changes !== undefined) {

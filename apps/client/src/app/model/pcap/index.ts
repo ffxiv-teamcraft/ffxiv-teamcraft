@@ -32,6 +32,7 @@ export * from './PlayerStats';
 export * from './PrepareZoning';
 export * from './RetainerInformation';
 export * from './SubmarineExplorationResult';
+export * from './SubmarineProgressionStatus';
 export * from './SubmarineStatusList';
 export * from './SubmarineTimers';
 export * from './UpdateClassInfo';

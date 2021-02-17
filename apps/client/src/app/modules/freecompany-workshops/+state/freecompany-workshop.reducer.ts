@@ -2,7 +2,6 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { FreecompanyWorkshop } from '../model/freecompany-workshop';
 import * as FreecompanyWorkshopActions from './freecompany-workshop.actions';
-import { VesselType } from '../model/vessel-type';
 
 export const freecompanyWorkshopsFeatureKey = 'freecompanyWorkshops';
 

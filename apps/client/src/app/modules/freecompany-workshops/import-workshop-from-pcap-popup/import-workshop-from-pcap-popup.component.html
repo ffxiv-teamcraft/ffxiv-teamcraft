@@ -1,6 +1,6 @@
 <nz-spin [nzSpinning]="(dataLoaded$ | async) && (isLoading$ | async)">
   <div fxLayout="column" fxLayoutGap="10px">
-    <div fxLayoutGap="10px" *ngIf="freecompany$ | async as freecompanyData">
+    <div fxLayoutGap="10px" *ngIf="freeCompany$ | async as freecompanyData">
       <div>
         <h3>{{ 'FC' | translate }}</h3>
         <ng-container *ngTemplateOutlet="freecompanyTpl;context:{fc: freecompanyData}"></ng-container>

@@ -32,11 +32,6 @@
     ></app-vessel-build-column>
   </div>
   <div fxFlex="0" fxLayoutAlign="center center" style="text-align: center">
-    <nz-breadcrumb [nzSeparator]="iconTemplate">
-      <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
-        {{ sector }}
-      </nz-breadcrumb-item>
-    </nz-breadcrumb>
-    <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
+    <app-vessel-voyage-column [vessel]="vessel"></app-vessel-voyage-column>
   </div>
 </div>

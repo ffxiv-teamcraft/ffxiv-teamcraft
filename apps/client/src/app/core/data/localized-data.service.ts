@@ -303,6 +303,14 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getAirshipSectorName(id: number): I18nName {
+    return this.getRow(this.lazyData.data.airshipVoyages, id);
+  }
+
+  public getSubmarineSectorName(id: number): I18nName {
+    return this.getRow(this.lazyData.data.submarineVoyages, id);
+  }
+
   public getExpansions(): { exVersion: number; majorVersion: number; name: I18nName }[] {
     return Object.entries(this.lazyData.data.exVersions).map(([exVersion, name]) => {
       this.tryFillExtendedLanguage(name as I18nName, exVersion, { zhKey: 'zhExVersions', koKey: 'koExVersions' });

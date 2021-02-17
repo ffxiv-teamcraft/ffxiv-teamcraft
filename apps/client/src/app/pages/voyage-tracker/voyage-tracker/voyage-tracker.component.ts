@@ -7,6 +7,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { SectorExploration } from '../../../modules/freecompany-workshops/model/sector-exploration';
 
 @Component({
   selector: 'app-voyage-tracker',
@@ -23,10 +24,22 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     return this._airshipMaxRank.asObservable();
   }
 
-  public _submarineMaxRank = new BehaviorSubject(null);
+  private _submarineMaxRank = new BehaviorSubject(null);
 
   public get submarineMaxRank$() {
     return this._submarineMaxRank.asObservable();
+  }
+
+  private _airshipSectorsTotal = new BehaviorSubject(null);
+
+  public get airshipSectorsTotal$() {
+    return this._airshipSectorsTotal.asObservable();
+  }
+
+  private _submarineSectorsTotal = new BehaviorSubject(null);
+
+  public get submarineSectorsTotal$() {
+    return this._submarineSectorsTotal.asObservable();
   }
 
   public display$ = this.freecompanyWorkshopFacade.workshops$.pipe(
@@ -59,10 +72,20 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
   ngOnInit(): void {
     this._submarineMaxRank.next(Object.keys(this.lazyData.data.submarineRanks).pop());
     this._airshipMaxRank.next(Object.keys(this.lazyData.data.airshipRanks).pop());
+    this._airshipSectorsTotal.next(Object.keys(this.lazyData.data.airshipVoyages).filter((id) => this.lazyData.data.airshipVoyages[id].en).length);
+    this._submarineSectorsTotal.next(Object.keys(this.lazyData.data.submarineVoyages).filter((id) => this.lazyData.data.submarineVoyages[id].en).length);
+  }
+
+  getSectorsProgression(sectors: Record<string, SectorExploration>): number {
+    return Object.keys(sectors).filter(id => sectors[id].unlocked).length;
   }
 
   importFromPcap(): void {
     this.freecompanyWorkshopFacade.importFromPcap();
+  }
+
+  deleteWorkshop(id): void {
+    this.freecompanyWorkshopFacade.deleteWorkshop(id);
   }
 
   trackByServerKey(index, value) {

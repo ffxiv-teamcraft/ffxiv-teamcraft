@@ -6,6 +6,8 @@ import { VesselPartUpdate } from '../model/vessel-part-update';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
 import { Submarine } from '../model/submarine';
 import { Airship } from '../model/airship';
+import { SectorExploration } from '../model/sector-exploration';
+import { VesselProgressionStatusUpdate } from '../model/vessel-progression-status-update';
 
 export const readFromFile = createAction(
   '[FreecompanyWorkshop/API] Read from file'
@@ -42,6 +44,11 @@ export const updateSubmarineStatusList = createAction(
 export const updateVesselTimers = createAction(
   '[FreecompanyWorkshop/API] Update vessel timers',
   props<{ vesselTimersUpdate: VesselTimersUpdate }>()
+);
+
+export const updateVesselProgressionStatus = createAction(
+  '[FreecompanyWorkshop/API] Update vessel progression',
+  props<{ vesselProgressionStatusUpdate: VesselProgressionStatusUpdate }>()
 );
 
 export const setFreecompanyId = createAction(

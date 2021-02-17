@@ -1,7 +1,7 @@
 import { FreecompanyAirships } from './freecompany-airships';
 import { FreecompanySubmarines } from './freecompany-submarines';
 
-export class FreecompanyWorkshop {
+export interface FreecompanyWorkshop {
   id: string;
   name: string;
   tag: string;

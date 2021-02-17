@@ -94,6 +94,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
   }
 
+  public get submarineProgressionStatusPackets$(): Observable<pcap.SubmarineProgressionStatus> {
+    return this.packets$.pipe(ofPacketType('submarineProgressionStatus'));
+  }
+
   public get submarinesStatusListPackets$(): Observable<pcap.SubmarineStatusList> {
     return this.packets$.pipe(ofPacketType('submarineStatusList'));
   }

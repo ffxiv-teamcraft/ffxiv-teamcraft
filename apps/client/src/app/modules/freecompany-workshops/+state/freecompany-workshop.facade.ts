@@ -7,7 +7,7 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
 import { BehaviorSubject, merge } from 'rxjs';
@@ -24,6 +24,8 @@ import { AirshipPartType } from '../model/airship-part-type';
 import { SubmarinePartType } from '../model/submarine-part-type';
 import { VesselPartUpdate } from '../model/vessel-part-update';
 import { VesselPart } from '../model/vessel-part';
+import { SectorExploration } from '../model/sector-exploration';
+import { VesselProgressionStatusUpdate } from '../model/vessel-progression-status-update';
 
 @Injectable({
   providedIn: 'root'
@@ -129,6 +131,27 @@ export class FreecompanyWorkshopFacade {
     }))
   );
 
+  public readonly vesselProgressionStatus$ = merge(
+    this.ipc.airshipStatusListPackets$.pipe(
+      map((packet) => ({
+        type: VesselType.AIRSHIP,
+        sectorsProgression: FreecompanyWorkshopFacade.toSectorsProgression(packet.unlockedSectors, packet.exploredSectors)
+      }))
+    ),
+    this.ipc.airshipStatusPackets$.pipe(
+      map((packet) => ({
+        type: VesselType.AIRSHIP,
+        sectorsProgression: FreecompanyWorkshopFacade.toSectorsProgression(packet.unlockedSectors, packet.exploredSectors)
+      }))
+    ),
+    this.ipc.submarineProgressionStatusPackets$.pipe(
+      map((packet) => ({
+        type: VesselType.SUBMARINE,
+        sectorsProgression: FreecompanyWorkshopFacade.toSectorsProgression(packet.unlockedSectors, packet.exploredSectors)
+      }))
+    )
+  );
+
   public readonly submarineStatusList$ = this.ipc.submarinesStatusListPackets$.pipe(
     withLatestFrom(this.currentFreecompany$),
     map(([submarineStatusList, fcId]): Submarine[] => submarineStatusList.statusList.map((submarine, i) => {
@@ -158,6 +181,18 @@ export class FreecompanyWorkshopFacade {
   constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
               private readonly store: Store<fromFreecompanyWorkshop.State>, private readonly translate: TranslateService,
               private i18n: I18nToolsService, private l12n: LocalizedDataService) {
+  }
+
+  private static toSectorsProgression(unlockedSectors: boolean[], exploredSectors: boolean[]): Record<string, SectorExploration> {
+    const sectorsProgression: Record<string, SectorExploration> = {};
+    for (let i = 0; i < unlockedSectors.length; i++) {
+      sectorsProgression[i] = {
+        id: i,
+        unlocked: unlockedSectors[i],
+        explored: exploredSectors[i]
+      };
+    }
+    return sectorsProgression;
   }
 
   public isSubmarineItemInfo(itemInfo: ItemInfo | UpdateInventorySlot): boolean {
@@ -215,6 +250,10 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.updateSubmarineStatusList({ vessels }));
   }
 
+  public deleteWorkshop(id: string): void {
+    this.store.dispatch(FreecompanyWorkshopActions.deleteFreecompanyWorkshop({id}));
+  }
+
   public updateVesselParts(packet: ItemInfo | UpdateInventorySlot): void {
     const partUpdate = this.getVesselPartCondition(packet);
     const newState = { ...this.vesselParts.getValue() };
@@ -229,15 +268,20 @@ export class FreecompanyWorkshopFacade {
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
   }
 
-  public updateCurrentFreeCompanyVesselParts(packet: ItemInfo | UpdateInventorySlot): void {
-
-  }
-
   public updateVesselTimers(data: VesselTimersUpdate): void {
     this.store.dispatch(FreecompanyWorkshopActions.updateVesselTimers({
       vesselTimersUpdate: {
         type: data.type,
         timers: data.timers
+      }
+    }));
+  }
+
+  public updateVesselProgressionStatus(data: VesselProgressionStatusUpdate): void {
+    this.store.dispatch(FreecompanyWorkshopActions.updateVesselProgressionStatus({
+      vesselProgressionStatusUpdate: {
+        type: data.type,
+        sectorsProgression: data.sectorsProgression
       }
     }));
   }
@@ -293,6 +337,13 @@ export class FreecompanyWorkshopFacade {
       return this.i18n.getName(this.l12n.getItem(this.lazyData.data.airshipParts[partId].itemId));
     }
     return this.i18n.getName(this.l12n.getItem(this.lazyData.data.submarineParts[partId].itemId));
+  }
+
+  public toDestinationNames(vesselType: VesselType, destinations: number[]): string[] {
+    if (vesselType === VesselType.AIRSHIP) {
+      return destinations.map((id) => this.i18n.getName(this.l12n.getAirshipSectorName(id)));
+    }
+    return destinations.map((id) => this.i18n.getName(this.l12n.getSubmarineSectorName(id)));
   }
 
   @Memoized()

@@ -389,6 +389,13 @@ export class PacketCaptureTrackerService {
     ).subscribe(([vessels]) => {
       this.freecompanyWorkshopFacade.updateSubmarineStatusList(vessels);
     });
+
+    this.freecompanyWorkshopFacade.vesselProgressionStatus$.pipe(
+      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([progression]) => {
+      this.freecompanyWorkshopFacade.updateVesselProgressionStatus(progression);
+    });
   }
 
   private resetInventoryForItemInfo(inventory: UserInventory, containerKey: number): UserInventory {
