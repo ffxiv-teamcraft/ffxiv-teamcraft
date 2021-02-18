@@ -93,8 +93,7 @@ export class LogTrackerComponent extends TrackerComponent {
       });
     });
     this.dolTabs = [...this.lazyData.data.gatheringLogPages];
-    this.authFacade.logTracking$.pipe(
-    ).subscribe(logTracking => {
+    this.authFacade.logTracking$.subscribe(logTracking => {
       this.userCompletion = {};
       this.userGatheringCompletion = {};
       logTracking.crafting.forEach(recipeId => {
