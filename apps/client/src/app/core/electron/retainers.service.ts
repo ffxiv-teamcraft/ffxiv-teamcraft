@@ -43,7 +43,7 @@ export class RetainersService {
           return EMPTY;
         } else {
           return combineLatest([
-            interval(1000).pipe(mapTo(Math.floor(Date.now() / 1000))),
+            interval(1000).pipe(map(() => Math.floor(Date.now() / 1000))),
             this.retainers$
           ]);
         }

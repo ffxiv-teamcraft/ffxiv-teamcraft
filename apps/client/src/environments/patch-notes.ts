@@ -5,4 +5,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** support for korean v5.31 update.`;
+* **db:** support for korean v5.31 update.`;
