@@ -1,5 +1,9 @@
-<nz-spin [nzSpinning]="(dataLoaded$ | async) && (isLoading$ | async)">
+<nz-spin [nzSpinning]="isLoading$ | async">
   <div fxLayout="column" fxLayoutGap="10px">
+    <nz-alert nzType="info" [nzMessage]="noticeTpl"></nz-alert>
+    <ng-template #noticeTpl>
+      <div [innerHTML]="'FREE_COMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></div>
+    </ng-template>
     <div fxLayoutGap="10px" *ngIf="freeCompany$ | async as freecompanyData">
       <div>
         <h3>{{ 'FC' | translate }}</h3>
@@ -18,8 +22,7 @@
         </ng-container>
       </div>
     </div>
-    <nz-alert nzType="info" *ngIf="!(dataLoaded$ | async)" [nzMessage]="'FREE_COMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></nz-alert>
-    <button *ngIf="(dataLoaded$ | async) && !(isLoading$ | async)" (click)="save()" nz-button nzType="primary">
+    <button *ngIf="freeCompany$ | async" (click)="save()" nz-button nzType="primary">
       {{ 'COMMON.Save' | translate }}
     </button>
   </div>

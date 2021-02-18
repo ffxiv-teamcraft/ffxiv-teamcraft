@@ -1,7 +1,7 @@
+import { Submarine } from './submarine';
 import { SectorExploration } from './sector-exploration';
-import { Airship } from './airship';
 
-export interface FreecompanyAirships {
+export interface FreeCompanySubmarines {
   sectors: Record<string, SectorExploration>;
-  slots: Airship[];
+  slots: Submarine[];
 }

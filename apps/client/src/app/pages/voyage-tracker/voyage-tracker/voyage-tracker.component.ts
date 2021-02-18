@@ -1,13 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { FreecompanyWorkshopFacade } from '../../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
+import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { SectorExploration } from '../../../modules/freecompany-workshops/model/sector-exploration';
+import { SectorExploration } from '../../../modules/free-company-workshops/model/sector-exploration';
 
 @Component({
   selector: 'app-voyage-tracker',
@@ -16,7 +16,7 @@ import { SectorExploration } from '../../../modules/freecompany-workshops/model/
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit {
-  isLoading$ = new BehaviorSubject(true);
+  isLoading$ = new BehaviorSubject(false);
 
   private _airshipMaxRank = new BehaviorSubject(null);
 
@@ -42,7 +42,7 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     return this._submarineSectorsTotal.asObservable();
   }
 
-  public display$ = this.freecompanyWorkshopFacade.workshops$.pipe(
+  public display$ = this.freeCompanyWorkshopFacade.workshops$.pipe(
     map((results) => {
       this.isLoading$.next(true);
       const worlds = {};
@@ -65,15 +65,15 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
 
   constructor(private dialog: NzModalService, public ipc: IpcService,
               private lazyData: LazyDataService, public translate: TranslateService,
-              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade, private cd: ChangeDetectorRef) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
     super();
   }
 
   ngOnInit(): void {
-    this._submarineMaxRank.next(Object.keys(this.lazyData.data.submarineRanks).pop());
-    this._airshipMaxRank.next(Object.keys(this.lazyData.data.airshipRanks).pop());
-    this._airshipSectorsTotal.next(Object.keys(this.lazyData.data.airshipVoyages).filter((id) => this.lazyData.data.airshipVoyages[id].en).length);
-    this._submarineSectorsTotal.next(Object.keys(this.lazyData.data.submarineVoyages).filter((id) => this.lazyData.data.submarineVoyages[id].en).length);
+    this._airshipMaxRank.next(this.freeCompanyWorkshopFacade.getAirshipMaxRank());
+    this._submarineMaxRank.next(this.freeCompanyWorkshopFacade.getSubmarineMaxRank());
+    this._airshipSectorsTotal.next(this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount());
+    this._submarineSectorsTotal.next(this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount());
   }
 
   getSectorsProgression(sectors: Record<string, SectorExploration>): number {
@@ -81,11 +81,11 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
   }
 
   importFromPcap(): void {
-    this.freecompanyWorkshopFacade.importFromPcap();
+    this.freeCompanyWorkshopFacade.importFromPcap();
   }
 
   deleteWorkshop(id): void {
-    this.freecompanyWorkshopFacade.deleteWorkshop(id);
+    this.freeCompanyWorkshopFacade.deleteWorkshop(id);
   }
 
   trackByServerKey(index, value) {

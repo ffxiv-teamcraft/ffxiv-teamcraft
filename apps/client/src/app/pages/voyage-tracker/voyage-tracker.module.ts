@@ -8,7 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
-import { FreecompanyWorkshopsModule } from '../../modules/freecompany-workshops/freecompany-workshops.module';
+import { FreeCompanyWorkshopsModule } from '../../modules/free-company-workshops/free-company-workshops.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
@@ -40,7 +40,7 @@ const routes: Routes = [
     CoreModule,
     PipesModule,
 
-    FreecompanyWorkshopsModule,
+    FreeCompanyWorkshopsModule,
 
     RouterModule.forChild(routes),
     PageLoaderModule,

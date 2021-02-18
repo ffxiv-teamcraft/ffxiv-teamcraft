@@ -23,7 +23,7 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 import { ActorControl, EffectResult, FishingBaitMsg, InitZone, UpdateClassInfo, WeatherChange } from '../../model/pcap';
 import { HttpClient } from '@angular/common/http';
-import { FreecompanyWorkshopFacade } from '../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
+import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
 
 @Injectable({
   providedIn: 'root'
@@ -84,7 +84,7 @@ export class PacketCaptureTrackerService {
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataService,
-              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade, private http: HttpClient) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private http: HttpClient) {
     this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>('https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json')
       .subscribe(constants => this.constants = constants);
     this.inventory$ = this.userInventoryService.inventory$.pipe(
@@ -346,55 +346,55 @@ export class PacketCaptureTrackerService {
     this.ipc.freeCompanyId$.pipe(
       distinctUntilChanged()
     ).subscribe((freeCompanyId) => {
-      this.freecompanyWorkshopFacade.setCurrentFreecompanyId(freeCompanyId);
+      this.freeCompanyWorkshopFacade.setCurrentFreeCompanyId(freeCompanyId);
     });
 
-    this.freecompanyWorkshopFacade.vesselPartUpdate$.pipe(
+    this.freeCompanyWorkshopFacade.vesselPartUpdate$.pipe(
       debounceBufferTime(2500),
       tap((packets) => {
         packets.forEach((packet) => {
-          this.freecompanyWorkshopFacade.updateVesselParts(packet);
+          this.freeCompanyWorkshopFacade.updateVesselParts(packet);
         });
       }),
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe((packets  ) => {
       console.log('Vessel parts updated');
     });
 
-    this.freecompanyWorkshopFacade.vesselTimers$.pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+    this.freeCompanyWorkshopFacade.vesselTimers$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe(([data]) => {
-      this.freecompanyWorkshopFacade.updateVesselTimers(data);
+      this.freeCompanyWorkshopFacade.updateVesselTimers(data);
     });
 
-    this.freecompanyWorkshopFacade.airshipStatus$.pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+    this.freeCompanyWorkshopFacade.airshipStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe(([{ slot, vessel }]) => {
-      this.freecompanyWorkshopFacade.updateAirshipStatus(slot, vessel);
+      this.freeCompanyWorkshopFacade.updateAirshipStatus(slot, vessel);
     });
 
-    this.freecompanyWorkshopFacade.airshipStatusList$.pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+    this.freeCompanyWorkshopFacade.airshipStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe(([vessels]) => {
-      this.freecompanyWorkshopFacade.updateAirshipStatusList(vessels);
+      this.freeCompanyWorkshopFacade.updateAirshipStatusList(vessels);
     });
 
-    this.freecompanyWorkshopFacade.submarineStatusList$.pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+    this.freeCompanyWorkshopFacade.submarineStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe(([vessels]) => {
-      this.freecompanyWorkshopFacade.updateSubmarineStatusList(vessels);
+      this.freeCompanyWorkshopFacade.updateSubmarineStatusList(vessels);
     });
 
-    this.freecompanyWorkshopFacade.vesselProgressionStatus$.pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$),
+    this.freeCompanyWorkshopFacade.vesselProgressionStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
     ).subscribe(([progression]) => {
-      this.freecompanyWorkshopFacade.updateVesselProgressionStatus(progression);
+      this.freeCompanyWorkshopFacade.updateVesselProgressionStatus(progression);
     });
   }
 

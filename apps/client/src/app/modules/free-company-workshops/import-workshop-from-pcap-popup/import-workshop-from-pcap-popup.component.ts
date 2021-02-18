@@ -5,8 +5,8 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { finalize, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
-import { FreecompanyWorkshopFacade } from '../+state/freecompany-workshop.facade';
-import { FreecompanyWorkshop } from '../model/freecompany-workshop';
+import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
 
 @Component({
@@ -16,14 +16,16 @@ import { VesselType } from '../model/vessel-type';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
-  public dataLoaded$ = new BehaviorSubject<boolean>(false);
-  public isLoading$ = new BehaviorSubject<boolean>(false);
-
+  private _isLoading = new BehaviorSubject<boolean>(false);
   private _freeCompany = new BehaviorSubject(null);
   private _airshipList = new BehaviorSubject(Array(4));
   private _submarineList = new BehaviorSubject(Array(4));
   private _airshipSectorProgression = new BehaviorSubject(null);
   private _submarineSectorProgression = new BehaviorSubject(null);
+
+  public get isLoading$() {
+    return this._isLoading.asObservable();
+  };
 
   public get freeCompany$() {
     return this._freeCompany.asObservable();
@@ -46,13 +48,13 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
   }
 
   constructor(private modalRef: NzModalRef, private ipc: IpcService,
-              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade,
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
               private xivapiService: XivapiService) {
     super();
   }
 
   ngOnInit(): void {
-    this.freecompanyWorkshopFacade.airshipStatus$.pipe(
+    this.freeCompanyWorkshopFacade.airshipStatus$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(({ slot, vessel }) => {
       const newAirshipList = this._airshipList.getValue().slice();
@@ -60,13 +62,13 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       this._airshipList.next(newAirshipList);
     });
 
-    this.freecompanyWorkshopFacade.submarineStatusList$.pipe(
+    this.freeCompanyWorkshopFacade.submarineStatusList$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe((submarines) => {
       this._submarineList.next(submarines);
     });
 
-    this.freecompanyWorkshopFacade.vesselProgressionStatus$.pipe(
+    this.freeCompanyWorkshopFacade.vesselProgressionStatus$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(({ type, sectorsProgression }) => {
       switch (type) {
@@ -80,21 +82,20 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
     });
 
     this.ipc.freeCompanyId$.pipe(
-      switchMap((freecompanyId) => {
-        this.dataLoaded$.next(freecompanyId !== null);
-        return this.xivapiService.getFreeCompany(freecompanyId)
+      switchMap((freeCompanyId) => {
+        return this.xivapiService.getFreeCompany(freeCompanyId)
           .pipe(
             tap(() => {
-              this.isLoading$.next(true);
+              this._isLoading.next(true);
             }),
             map((result: any) => ({
-              id: freecompanyId,
+              id: freeCompanyId,
               name: result.FreeCompany.Name,
               tag: result.FreeCompany.Tag,
               rank: result.FreeCompany.Rank,
               server: result.FreeCompany.Server
             })),
-            finalize(() => this.hideLoading()));
+            finalize(() => this._isLoading.next(false)));
       }),
       takeUntil(this.onDestroy$)
     ).subscribe((data) => {
@@ -103,7 +104,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
   }
 
   save(): void {
-    const workshop: FreecompanyWorkshop = {
+    const workshop: FreeCompanyWorkshop = {
       ...this._freeCompany.getValue(),
       airships: {
         sectors: this._airshipSectorProgression.getValue(),
@@ -115,9 +116,5 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       }
     };
     this.modalRef.close(workshop);
-  }
-
-  private hideLoading() {
-    this.isLoading$.next(false);
   }
 }

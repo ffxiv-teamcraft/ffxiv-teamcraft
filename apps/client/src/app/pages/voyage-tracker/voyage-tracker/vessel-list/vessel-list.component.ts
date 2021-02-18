@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { VesselType } from '../../../../modules/freecompany-workshops/model/vessel-type';
+import { VesselType } from '../../../../modules/free-company-workshops/model/vessel-type';
 import { TranslateService } from '@ngx-translate/core';
-import { Submarine } from '../../../../modules/freecompany-workshops/model/submarine';
-import { Airship } from '../../../../modules/freecompany-workshops/model/airship';
+import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
+import { Airship } from '../../../../modules/free-company-workshops/model/airship';
 
 @Component({
   selector: 'app-vessel-list',

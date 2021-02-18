@@ -2499,7 +2499,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "Load into the Workshop and check your submarines and airships to import them.",
+    "Import_from_pcap_notice": "1. Load into the Workshop<br>2. In order for the data to import, you must interact with each submarine or airship using the management interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },

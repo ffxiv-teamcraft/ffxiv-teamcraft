@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Vessel } from '../../../../../modules/freecompany-workshops/model/vessel';
-import { FreecompanyWorkshopFacade } from '../../../../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
+import { Vessel } from '../../../../../modules/free-company-workshops/model/vessel';
+import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
 
 @Component({
   selector: 'app-vessel-voyage-column',
@@ -11,12 +11,12 @@ import { FreecompanyWorkshopFacade } from '../../../../../modules/freecompany-wo
 export class VesselVoyageColumnComponent {
   @Input() vessel: Vessel;
 
-  constructor(private freecompanyWorkshopFacade: FreecompanyWorkshopFacade) { }
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) { }
 
   toDestinationNames(): string[] {
     if (!this.vessel) {
       return null;
     }
-    return this.freecompanyWorkshopFacade.toDestinationNames(this.vessel.vesselType, this.vessel.destinations);
+    return this.freeCompanyWorkshopFacade.toDestinationNames(this.vessel.vesselType, this.vessel.destinations);
   }
 }

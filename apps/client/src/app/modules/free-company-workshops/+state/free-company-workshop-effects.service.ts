@@ -1,60 +1,61 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import * as FreecompanyWorkshopActions from './freecompany-workshop.actions';
-import * as FreecompanyWorkshopSelectors from './freecompany-workshop.selectors';
+import * as FreeCompanyWorkshopActions from './free-company-workshop.actions';
+import * as FreeCompanyWorkshopSelectors from './freecompany-workshop.selectors';
 import { concatMap, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
-import { FreecompanyWorkshop } from '../model/freecompany-workshop';
+import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { ImportWorkshopFromPcapPopupComponent } from '../import-workshop-from-pcap-popup/import-workshop-from-pcap-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY, of, Subject } from 'rxjs';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { FreecompanyWorkshops } from '../model/freecompany-workshops';
+import { FreeCompanyWorkshops } from '../model/free-company-workshops';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { select, Store } from '@ngrx/store';
 import { VesselType } from '../model/vessel-type';
-import { FreecompanyWorkshopFacade } from './freecompany-workshop.facade';
+import { FreeCompanyWorkshopFacade } from './free-company-workshop-facade.service';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
 import { cloneDeep } from 'lodash';
+import { VesselPart } from '../model/vessel-part';
 
 @Injectable()
-export class FreecompanyWorkshopEffects {
+export class FreeCompanyWorkshopEffects {
 
   readFromFile$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.readFromFile),
+    ofType(FreeCompanyWorkshopActions.readFromFile),
     switchMap(() => {
-      const result$ = new Subject<FreecompanyWorkshop[]>();
-      this.ipc.once('freecompany-workshops:value', (e, workshops) => {
-        const data = this.serializer.deserialize<FreecompanyWorkshops>(workshops, FreecompanyWorkshops);
-        result$.next(data.freecompanyWorkshops);
+      const result$ = new Subject<FreeCompanyWorkshop[]>();
+      this.ipc.once('free-company-workshops:value', (e, workshops) => {
+        const data = this.serializer.deserialize<FreeCompanyWorkshops>(workshops, FreeCompanyWorkshops);
+        result$.next(data.freeCompanyWorkshops);
       });
       setTimeout(() => {
-        this.ipc.send('freecompany-workshops:get');
+        this.ipc.send('free-company-workshops:get');
       }, 200);
       return result$;
     }),
-    map(freecompanyWorkshops => FreecompanyWorkshopActions.loadFreecompanyWorkshops({ freecompanyWorkshops }))
+    map(freeCompanyWorkshops => FreeCompanyWorkshopActions.loadFreeCompanyWorkshops({ freeCompanyWorkshops }))
   ));
 
   saveToFile$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.saveToFile),
+    ofType(FreeCompanyWorkshopActions.saveToFile),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.store.pipe(select(FreecompanyWorkshopSelectors.selectWorkshops)))
+      withLatestFrom(this.store.pipe(select(FreeCompanyWorkshopSelectors.selectWorkshops)))
     )),
     switchMap(([, state]) => {
-      const savePayload = JSON.parse(JSON.stringify({ freecompanyWorkshops: state }));
-      this.ipc.send('freecompany-workshops:set', savePayload);
+      const savePayload = JSON.parse(JSON.stringify({ freeCompanyWorkshops: state }));
+      this.ipc.send('free-company-workshops:set', savePayload);
       return EMPTY;
     })
   ), { dispatch: false });
 
-  deleteFreecompanyWorkshop$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.deleteFreecompanyWorkshop),
-    map(() => FreecompanyWorkshopActions.saveToFile())
+  deleteFreeCompanyWorkshop$ = createEffect(() => this.actions$.pipe(
+    ofType(FreeCompanyWorkshopActions.deleteFreeCompanyWorkshop),
+    map(() => FreeCompanyWorkshopActions.saveToFile())
   ));
 
   importFromPcap$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.importFromPcap),
+    ofType(FreeCompanyWorkshopActions.importFromPcap),
     switchMap(() => {
         return this.dialog.create({
           nzContent: ImportWorkshopFromPcapPopupComponent,
@@ -65,36 +66,36 @@ export class FreecompanyWorkshopEffects {
         );
       }
     ),
-    map((workshop: FreecompanyWorkshop) => {
-      this.store.dispatch(FreecompanyWorkshopActions.upsertFreecompanyWorkshop({ freecompanyWorkshop: workshop }));
-      return FreecompanyWorkshopActions.saveToFile();
+    map((workshop: FreeCompanyWorkshop) => {
+      this.store.dispatch(FreeCompanyWorkshopActions.upsertFreeCompanyWorkshop({ freeCompanyWorkshop: workshop }));
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateAirshipStatus$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateAirshipStatus),
+    ofType(FreeCompanyWorkshopActions.updateAirshipStatus),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ slot, vessel }, state]) => {
       const vesselState = cloneDeep(state.airships);
       vesselState.slots[slot] = vessel;
-      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-        freecompanyWorkshop: {
+      this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+        freeCompanyWorkshop: {
           id: state.id,
           changes: {
             airships: vesselState
           }
         }
       }));
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateAirshipStatusList$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateAirshipStatusList),
+    ofType(FreeCompanyWorkshopActions.updateAirshipStatusList),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ vessels }, state]) => {
       const vesselState = cloneDeep(state.airships);
@@ -108,42 +109,42 @@ export class FreecompanyWorkshopEffects {
         }
         return vessel;
       });
-      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-        freecompanyWorkshop: {
+      this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+        freeCompanyWorkshop: {
           id: state.id,
           changes: {
             airships: vesselState
           }
         }
       }));
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateSubmarineStatusList$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateSubmarineStatusList),
+    ofType(FreeCompanyWorkshopActions.updateSubmarineStatusList),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ vessels }, state]) => {
       const vesselState = cloneDeep(state.submarines);
       vesselState.slots = vessels;
-      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-        freecompanyWorkshop: {
+      this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+        freeCompanyWorkshop: {
           id: state.id,
           changes: {
             submarines: vesselState
           }
         }
       }));
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateVesselTimers$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateVesselTimers),
+    ofType(FreeCompanyWorkshopActions.updateVesselTimers),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     map(([{ vesselTimersUpdate }, state]) => {
       let changes;
@@ -160,43 +161,46 @@ export class FreecompanyWorkshopEffects {
         console.log('VesselType NOT FOUND', vesselTimersUpdate.type);
       }
 
-      this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-        freecompanyWorkshop: {
+      this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+        freeCompanyWorkshop: {
           id: state.id,
           changes: changes
         }
       }));
 
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateVesselPart$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateVesselPart),
+    ofType(FreeCompanyWorkshopActions.updateVesselPart),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     filter(([, state]) => state !== undefined),
     map(([{ vesselPartUpdate }, state]) => {
       const vesselSlot = vesselPartUpdate.vesselSlot;
       const partSlot = vesselPartUpdate.partSlot;
+      const vesselPart: VesselPart = {
+        partId: vesselPartUpdate.partId,
+        condition: vesselPartUpdate.condition
+      };
+
+      const newState = cloneDeep(state);
       let changes;
+
       if (vesselPartUpdate.type === VesselType.AIRSHIP && state.airships?.slots) {
-        const airshipsState = cloneDeep(state.airships);
-        if (airshipsState.slots[vesselSlot]?.parts[partSlot]) {
-          airshipsState.slots[vesselSlot].parts[partSlot].partId = vesselPartUpdate.partId;
-          airshipsState.slots[vesselSlot].parts[partSlot].condition = vesselPartUpdate.condition;
+        if (newState.airships.slots[vesselSlot]?.parts[partSlot]) {
+          newState.airships.slots[vesselSlot].parts[partSlot] = vesselPart;
           changes = {
-            airships: airshipsState
+            airships: newState.airships
           };
         }
       } else if (vesselPartUpdate.type === VesselType.SUBMARINE && state.submarines?.slots) {
-        const submarinesState = cloneDeep(state.submarines);
-        if (submarinesState.slots[vesselSlot]?.parts[partSlot]) {
-          submarinesState.slots[vesselSlot].parts[partSlot].partId = vesselPartUpdate.partId;
-          submarinesState.slots[vesselSlot].parts[partSlot].condition = vesselPartUpdate.condition;
+        if (newState.submarines.slots[vesselSlot]?.parts[partSlot]) {
+          newState.submarines.slots[vesselSlot].parts[partSlot] = vesselPart;
           changes = {
-            submarines: submarinesState
+            submarines: newState.submarines
           };
         }
       } else {
@@ -204,36 +208,36 @@ export class FreecompanyWorkshopEffects {
       }
 
       if (changes !== undefined) {
-        this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-          freecompanyWorkshop: {
+        this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+          freeCompanyWorkshop: {
             id: state.id,
             changes: changes
           }
         }));
       }
 
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   updateVesselProgressionStatus$ = createEffect(() => this.actions$.pipe(
-    ofType(FreecompanyWorkshopActions.updateVesselProgressionStatus),
+    ofType(FreeCompanyWorkshopActions.updateVesselProgressionStatus),
     concatMap((action) => of(action).pipe(
-      withLatestFrom(this.freecompanyWorkshopFacade.currentWorkshop$)
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$)
     )),
     filter(([, state]) => state !== undefined),
     map(([{ vesselProgressionStatusUpdate }, state]) => {
       const newState = cloneDeep(state);
       let changes;
 
-      if(vesselProgressionStatusUpdate.type === VesselType.AIRSHIP) {
+      if (vesselProgressionStatusUpdate.type === VesselType.AIRSHIP) {
         changes = {
           airships: {
             ...newState.airships,
             sectors: vesselProgressionStatusUpdate.sectorsProgression
           }
         };
-      } else if(vesselProgressionStatusUpdate.type === VesselType.SUBMARINE) {
+      } else if (vesselProgressionStatusUpdate.type === VesselType.SUBMARINE) {
         changes = {
           submarines: {
             ...newState.submarines,
@@ -243,21 +247,21 @@ export class FreecompanyWorkshopEffects {
       }
 
       if (changes !== undefined) {
-        this.store.dispatch(FreecompanyWorkshopActions.updateFreecompanyWorkshop({
-          freecompanyWorkshop: {
+        this.store.dispatch(FreeCompanyWorkshopActions.updateFreeCompanyWorkshop({
+          freeCompanyWorkshop: {
             id: state.id,
             changes: changes
           }
         }));
       }
 
-      return FreecompanyWorkshopActions.saveToFile();
+      return FreeCompanyWorkshopActions.saveToFile();
     })
   ));
 
   constructor(private actions$: Actions, private dialog: NzModalService,
               private ipc: IpcService, private translate: TranslateService,
-              private freecompanyWorkshopFacade: FreecompanyWorkshopFacade,
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
               private store: Store, private serializer: NgSerializerService) {
   }
 

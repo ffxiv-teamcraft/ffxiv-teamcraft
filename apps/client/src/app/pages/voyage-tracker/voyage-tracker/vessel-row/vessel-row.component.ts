@@ -1,11 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Vessel } from '../../../../modules/freecompany-workshops/model/vessel';
+import { Vessel } from '../../../../modules/free-company-workshops/model/vessel';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
-import { FreecompanyWorkshopFacade } from '../../../../modules/freecompany-workshops/+state/freecompany-workshop.facade';
-import { Submarine } from '../../../../modules/freecompany-workshops/model/submarine';
+import { FreeCompanyWorkshopFacade } from '../../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
 import { timer } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
+import { Airship } from '../../../../modules/free-company-workshops/model/airship';
 
 @Component({
   selector: 'app-vessel-row',
@@ -18,14 +19,14 @@ export class VesselRowComponent extends TeamcraftComponent {
   maxRank: number;
 
   @Input()
-  vessel: Submarine;
+  vessel: Airship | Submarine;
 
   remainingTime$ = timer(0, 1000).pipe(
-    map(() => this.getRemainingTime()),
-    takeUntil(this.onDestroy$),
+    map(() => this.freeCompanyWorkshopFacade.getRemainingTime(this.vessel.returnTime)),
+    takeUntil(this.onDestroy$)
   );
 
-  constructor(private freecompanyWorkshopFacade: FreecompanyWorkshopFacade, public translate: TranslateService) {
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public translate: TranslateService) {
     super();
   }
 
@@ -41,9 +42,5 @@ export class VesselRowComponent extends TeamcraftComponent {
       return false;
     }
     return vessel.status === 2 && this.isVesselBack(vessel);
-  }
-
-  getRemainingTime(): number {
-    return this.freecompanyWorkshopFacade.getRemainingTime(this.vessel.returnTime);
   }
 }

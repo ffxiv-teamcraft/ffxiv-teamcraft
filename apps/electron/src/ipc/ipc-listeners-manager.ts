@@ -46,7 +46,7 @@ export class IpcListenersManager {
     this.setupToolingListeners();
     this.setupProxyManagerListeners();
     this.setupInventoryListeners();
-    this.setupFreecompanyWorkshopsListeners();
+    this.setupFreeCompanyWorkshopsListeners();
   }
 
   private setupOauthListeners(): void {
@@ -375,23 +375,25 @@ export class IpcListenersManager {
 
   }
 
-  private setupFreecompanyWorkshopsListeners(): void {
-    const freecompanyWorkshopsPath = join(app.getPath('userData'), 'freecompany-workshops.json');
+  private setupFreeCompanyWorkshopsListeners(): void {
+    const freeCompanyWorkshopsPath = join(app.getPath('userData'), 'free-company-workshops.json');
 
-    ipcMain.on('freecompany-workshops:set', (event, inventory) => {
-      writeFileSync(freecompanyWorkshopsPath, JSON.stringify(inventory));
+    ipcMain.on('free-company-workshops:set', (event, workshops) => {
+      writeFileSync(freeCompanyWorkshopsPath, JSON.stringify(workshops));
     });
 
-    ipcMain.on('freecompany-workshops:get', (event, inventory) => {
-      readFile(freecompanyWorkshopsPath, 'utf8', (err, content) => {
+    ipcMain.on('free-company-workshops:get', (event, inventory) => {
+      readFile(freeCompanyWorkshopsPath, 'utf8', (err, content) => {
         if (err) {
-          event.sender.send('freecompany-workshops:value', {});
+          event.sender.send('free-company-workshops:value', { freeCompanyWorkshops: [] });
         } else {
-          event.sender.send('freecompany-workshops:value', JSON.parse(content) || {});
+          try {
+            event.sender.send('free-company-workshops:value', JSON.parse(content));
+          } catch (e) {
+            event.sender.send('free-company-workshops:value', { freeCompanyWorkshops: [] });
+          }
         }
       });
     });
-
-
   }
 }
