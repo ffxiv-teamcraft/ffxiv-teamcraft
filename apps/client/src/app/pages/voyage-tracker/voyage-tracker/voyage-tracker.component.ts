@@ -77,6 +77,9 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
   }
 
   getSectorsProgression(sectors: Record<string, SectorExploration>): number {
+    if (!sectors) {
+      return 0;
+    }
     return Object.keys(sectors).filter(id => sectors[id].unlocked).length;
   }
 
