@@ -7,7 +7,7 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, mapTo, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
 import { BehaviorSubject, combineLatest, EMPTY, interval, merge } from 'rxjs';
@@ -27,7 +27,6 @@ import { VesselPart } from '../model/vessel-part';
 import { SectorExploration } from '../model/sector-exploration';
 import { VesselProgressionStatusUpdate } from '../model/vessel-progression-status-update';
 import { SettingsService } from '../../settings/settings.service';
-import { Retainer } from '../../../core/electron/retainers.service';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 
 @Injectable({
@@ -197,8 +196,18 @@ export class FreeCompanyWorkshopFacade {
     map(({ now, workshops }) => {
       return Object.values<FreeCompanyWorkshop>(workshops)
         .map((workshop) => ([
-          ...workshop.airships.slots.filter((vessel) => vessel),
-          ...workshop.submarines.slots.filter((vessel) => vessel)
+          ...workshop.airships.slots.filter((vessel) => vessel).map((vessel) => ({
+            ...vessel,
+            server: workshop.server,
+            fcName: workshop.name,
+            fcTag: workshop.tag
+          })),
+          ...workshop.submarines.slots.filter((vessel) => vessel).map((vessel) => ({
+            ...vessel,
+            server: workshop.server,
+            fcName: workshop.name,
+            fcTag: workshop.tag
+          }))
         ]))
         .reduce((a, b) => a.concat(b))
         .filter((vessel) => vessel.returnTime === now);
@@ -245,9 +254,13 @@ export class FreeCompanyWorkshopFacade {
       }
       vessels.forEach(vessel => {
         this.ipc.send('notification', {
-          title: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_title', { name: vessel.name }),
-          content: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_content', {
+          title: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_title', {
             name: vessel.name
+          }),
+          content: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_content', {
+            server: vessel.server,
+            freeCompanyTag: vessel.fcTag,
+            freeCompanyName: vessel.fcName
           })
         });
       });
