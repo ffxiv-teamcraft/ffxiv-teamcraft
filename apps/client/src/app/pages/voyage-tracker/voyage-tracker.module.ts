@@ -16,6 +16,7 @@ import { VesselRowComponent } from './voyage-tracker/vessel-row/vessel-row.compo
 import { VesselListComponent } from './voyage-tracker/vessel-list/vessel-list.component';
 import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-build-column/vessel-build-column.component';
 import { VesselVoyageColumnComponent } from './voyage-tracker/vessel-row/vessel-voyage-column/vessel-voyage-column.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
     VesselVoyageColumnComponent],
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     AntdSharedModule,
 

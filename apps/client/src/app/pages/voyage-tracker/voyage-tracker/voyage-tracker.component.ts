@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SectorExploration } from '../../../modules/free-company-workshops/model/sector-exploration';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-voyage-tracker',
@@ -65,7 +66,7 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
 
   constructor(private dialog: NzModalService, public ipc: IpcService,
               private lazyData: LazyDataService, public translate: TranslateService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
     super();
   }
 

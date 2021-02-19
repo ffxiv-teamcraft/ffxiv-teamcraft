@@ -2506,6 +2506,9 @@
   "VOYAGE_TRACKER": {
     "Title": "Voyage tracker",
     "Import_using_pcap": "Import using packet capture",
+    "Voyage_completion_alarm": "Voyage completion alarm",
+    "Voyage_completed_notification_title": "{{name}} has finished its exploration",
+    "Voyage_completed_notification_content": "{{name}} has returned from its voyage",
     "Voyage_complete": "Voyage complete",
     "No_airship": "No airship",
     "No_submersible": "No submersible",

@@ -2,6 +2,10 @@
   <div>
     <button *ngIf="ipc.machinaToggle$ | async" nz-button (click)="importFromPcap()">{{'VOYAGE_TRACKER.Import_using_pcap' | translate}}</button>
   </div>
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+    <nz-switch [(ngModel)]="settings.vesselVoyageAlarms"></nz-switch>
+    <div>{{'VOYAGE_TRACKER.Voyage_completion_alarm' | translate}}</div>
+  </div>
 </div>
 <app-page-loader [loading]="isLoading$ | async">
   <div fxLayout="column" fxLayoutGap="20px">

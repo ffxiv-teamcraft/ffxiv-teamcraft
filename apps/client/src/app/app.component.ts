@@ -222,7 +222,7 @@ export class AppComponent implements OnInit {
         this.universalis.initCapture();
       }
       this.inventoryService.load();
-      this.freeCompanyWorkshopFacade.load();
+      this.freeCompanyWorkshopFacade.init();
 
       this.firebase.object<boolean>('maintenance')
         .valueChanges()

@@ -7,10 +7,10 @@ import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, withLatestFrom } from 'rxjs/operators';
+import { filter, map, mapTo, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
-import { BehaviorSubject, merge } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, interval, merge } from 'rxjs';
 import { ofPacketType } from '../../../core/rxjs/of-packet-type';
 import { Airship } from '../model/airship';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
@@ -26,6 +26,9 @@ import { VesselPartUpdate } from '../model/vessel-part-update';
 import { VesselPart } from '../model/vessel-part';
 import { SectorExploration } from '../model/sector-exploration';
 import { VesselProgressionStatusUpdate } from '../model/vessel-progression-status-update';
+import { SettingsService } from '../../settings/settings.service';
+import { Retainer } from '../../../core/electron/retainers.service';
+import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 
 @Injectable({
   providedIn: 'root'
@@ -178,9 +181,34 @@ export class FreeCompanyWorkshopFacade {
     }))
   );
 
+  public vesselVoyageAlarms$ = this.settings.settingsChange$.pipe(
+    filter(change => change === 'vesselVoyageAlarms'),
+    startWith(this.settings.vesselVoyageAlarms),
+    switchMap(() => {
+      if (!this.settings.vesselVoyageAlarms) {
+        return EMPTY;
+      } else {
+        return combineLatest([
+          interval(1000),
+          this.workshops$
+        ]).pipe(map(([, workshops]) => ({ now: Math.floor(Date.now() / 1000), workshops })));
+      }
+    }),
+    map(({ now, workshops }) => {
+      return Object.values<FreeCompanyWorkshop>(workshops)
+        .map((workshop) => ([
+          ...workshop.airships.slots.filter((vessel) => vessel),
+          ...workshop.submarines.slots.filter((vessel) => vessel)
+        ]))
+        .reduce((a, b) => a.concat(b))
+        .filter((vessel) => vessel.returnTime === now);
+    })
+  );
+
   constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
-              private i18n: I18nToolsService, private l12n: LocalizedDataService) {
+              private readonly i18n: I18nToolsService, private readonly l12n: LocalizedDataService,
+              private readonly settings: SettingsService) {
   }
 
   private static toSectorsProgression(unlockedSectors: boolean[], exploredSectors: boolean[]): Record<string, SectorExploration> {
@@ -193,6 +221,37 @@ export class FreeCompanyWorkshopFacade {
       };
     }
     return sectorsProgression;
+  }
+
+  public init() {
+    this.load();
+    this.setupVoyageAlarms();
+  }
+
+  public setupVoyageAlarms() {
+    this.vesselVoyageAlarms$.subscribe((vessels) => {
+      if (vessels.length > 0) {
+        // Let's ring the alarm !
+        let audio: HTMLAudioElement;
+        // If this isn't a file path (desktop app), then take it inside the assets folder.
+        if (this.settings.alarmSound.indexOf(':') === -1) {
+          audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
+        } else {
+          audio = new Audio(this.settings.alarmSound);
+        }
+        audio.loop = false;
+        audio.volume = this.settings.alarmVolume;
+        audio.play();
+      }
+      vessels.forEach(vessel => {
+        this.ipc.send('notification', {
+          title: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_title', { name: vessel.name }),
+          content: this.translate.instant('VOYAGE_TRACKER.Voyage_completed_notification_content', {
+            name: vessel.name
+          })
+        });
+      });
+    });
   }
 
   public isSubmarineItemInfo(itemInfo: ItemInfo | UpdateInventorySlot): boolean {
