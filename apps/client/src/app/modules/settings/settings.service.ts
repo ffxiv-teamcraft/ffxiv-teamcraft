@@ -167,6 +167,14 @@ export class SettingsService {
     return JSON.parse(this.getSetting('commissions:tags', '[]'));
   }
 
+  public set foldersOpened(folders: Record<string, 1>) {
+    this.setSetting('folders:opened', JSON.stringify(folders));
+  }
+
+  public get foldersOpened(): Record<string, 1> {
+    return JSON.parse(this.getSetting('folders:opened', '{}'));
+  }
+
   public set ignoredContentIds(ids: string[]) {
     this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
   }
