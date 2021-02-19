@@ -7,17 +7,17 @@
 
 <ng-template #vesselBuildDetails>
   <div fxLayout="column">
-    <div><h4>Build</h4></div>
+    <div><h4>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Title' | translate }}</h4></div>
     <div *ngFor="let item of fullnameParts">{{ item }}</div>
-    <div>Condition: {{ condition }}</div>
+    <div>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Condition' | translate }}: {{ condition }}</div>
   </div>
   <hr>
   <div fxLayout="column">
-    <div><h4>Stats</h4></div>
-    <div>Surveillance: {{ vesselBuild.stats.surveillance }}</div>
-    <div>Retrieval: {{ vesselBuild.stats.retrieval }}</div>
-    <div>Speed: {{ vesselBuild.stats.speed }}</div>
-    <div>Range: {{ vesselBuild.stats.range }}</div>
-    <div>Favor: {{ vesselBuild.stats.favor }}</div>
+    <div><h4>{{ 'VOYAGE_TRACKER.STATS_DETAILS.Title' | translate }}</h4></div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Surveillance' | translate }}: {{ vesselBuild.stats.surveillance }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Retrieval' | translate }}: {{ vesselBuild.stats.retrieval }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Speed' | translate }}: {{ vesselBuild.stats.speed }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Range' | translate }}: {{ vesselBuild.stats.range }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Favor' | translate }}: {{ vesselBuild.stats.favor }}</div>
   </div>
 </ng-template>

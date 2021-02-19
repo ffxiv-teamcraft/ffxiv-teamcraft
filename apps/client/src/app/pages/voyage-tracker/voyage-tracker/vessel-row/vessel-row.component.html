@@ -1,5 +1,7 @@
 <div fxLayout="row">
-  <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">{{ vessel?.name }}</div>
+  <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">
+    <div>{{ vessel?.name }}</div>
+  </div>
   <div fxFlex="0 0 20%" fxLayoutAlign="center center">
     <ng-container *ngIf="vessel?.returnTime > 0; else noReturnTime">
       {{ vessel?.returnTime * 1000 | date:'short':null:translate.currentLang }}

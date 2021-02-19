@@ -2508,7 +2508,36 @@
     "Import_using_pcap": "Import using packet capture",
     "Voyage_complete": "Voyage complete",
     "No_airship": "No airship",
-    "No_submersible": "No submersible"
+    "No_submersible": "No submersible",
+    "Sectors_discovered": "Sectors discovered",
+    "Delete_free_company": "Delete the Free Company",
+    "Name_column": "Name",
+    "Return_time_column": "Return time",
+    "Remaining_time_column": "Remaining time",
+    "Rank_column": "Rank",
+    "Build_column": "Build",
+    "Voyage_column": "Voyage",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Airship",
+      "Submersible": "Submersible"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Voyage"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Condition"
+    },
+    "STATS_DETAILS": {
+      "Title": "Stats"
+    },
+    "STATS": {
+      "Surveillance": "Surveillance",
+      "Retrieval": "Retrieval",
+      "Speed": "Speed",
+      "Range": "Range",
+      "Favor": "Favor"
+    }
   },
   "AIRSHIP": {
     "CLASS": {
