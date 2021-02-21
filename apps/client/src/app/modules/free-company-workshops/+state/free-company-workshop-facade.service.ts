@@ -111,7 +111,7 @@ export class FreeCompanyWorkshopFacade {
 
   public readonly airshipPartialStatusFromList$ = this.ipc.eventPlay8Packets$.pipe(
     filter((event) => event.eventId === 0xB0102),
-    map((event) => event.param1),
+    map((event) => event.params[0]),
     withLatestFrom(this.airshipStatusList$),
     map(([slot, statusList]) => ({ slot: slot, partialStatus: statusList[slot] }))
   );
