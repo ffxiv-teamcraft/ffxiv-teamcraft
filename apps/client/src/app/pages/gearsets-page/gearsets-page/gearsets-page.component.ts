@@ -11,7 +11,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
-import { switchMap, takeUntil, map } from 'rxjs/operators';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({

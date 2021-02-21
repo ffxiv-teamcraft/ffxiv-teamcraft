@@ -187,7 +187,7 @@ export class DataService {
       })
       .map(f => {
         if (f.minMax) {
-          if (f.canExclude && f.value.min < 0) {
+          if (f.value.exclude) {
             return [
               {
                 column: f.name,

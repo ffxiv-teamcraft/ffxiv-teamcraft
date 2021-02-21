@@ -5,7 +5,7 @@ import { join } from 'path';
 import { app } from 'electron';
 import * as isDev from 'electron-is-dev';
 import * as log from 'electron-log';
-import * as MachinaFFXIV from 'node-machina-ffxiv';
+import { CaptureInterface, CaptureInterfaceOptions } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class PacketCapture {
 
@@ -74,7 +74,7 @@ export class PacketCapture {
 
   private static readonly MACHINA_EXE_PATH = join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
-  private machina: any;
+  private captureInterface: CaptureInterface;
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
@@ -93,8 +93,8 @@ export class PacketCapture {
   }
 
   stop(): void {
-    if (this.machina) {
-      this.machina.stop();
+    if (this.captureInterface) {
+      this.captureInterface.stop();
     }
   }
 
@@ -103,14 +103,9 @@ export class PacketCapture {
   }
 
   sendToRenderer(packet: any): void {
-    if (this.mainWindow) {
+    if (this.mainWindow?.win) {
       this.mainWindow.win.webContents.send('packet', packet);
     }
-  }
-
-  private filterPacketSessionID(packet: any): boolean {
-    return PacketCapture.PACKETS_FROM_OTHERS.indexOf(packet.type) > -1
-      || packet.sourceActorSessionID === packet.targetActorSessionID;
   }
 
   private async startMachina(): Promise<void> {
@@ -134,26 +129,21 @@ export class PacketCapture {
       });
     }
 
-    const options: any = isDev ?
-      {
-        monitorType: rawsock ? 'RawSocket' : 'WinPCap',
-        parseAlgorithm: 'PacketSpecific',
-        region: region
-      } : {
-        monitorType: rawsock ? 'RawSocket' : 'WinPCap',
-        parseAlgorithm: 'PacketSpecific',
-        region: region,
-        noData: true,
-        machinaExePath: PacketCapture.MACHINA_EXE_PATH,
-        remoteDataPath: join(app.getAppPath(), '../../resources/remote-data'),
-        definitionsDir: join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
-      };
-
-    options.logger = message => {
-      if (message.level === 'info' && this.options.verbose) {
-        log.info(message.message);
-      } else if (message.level !== 'info') {
-        log[message.level || 'warn'](message.message);
+    const options: Partial<CaptureInterfaceOptions> = {
+      monitorType: rawsock ? 'RawSocket' : 'WinPCap',
+      region: region,
+      filter: (header, typeName) => {
+        if (header.sourceActor === header.targetActor) {
+          return PacketCapture.ACCEPTED_PACKETS.includes(typeName);
+        }
+        return PacketCapture.PACKETS_FROM_OTHERS.includes(typeName);
+      },
+      logger: message => {
+        if (message.type === 'info' && this.options.verbose) {
+          log.info(message.message);
+        } else if (message.type !== 'info') {
+          log[message.type || 'warn'](message.message);
+        }
       }
     };
 
@@ -161,22 +151,16 @@ export class PacketCapture {
       options.pid = this.options.pid;
     }
 
-    this.machina = new MachinaFFXIV(options);
-    this.machina.filter(PacketCapture.ACCEPTED_PACKETS);
-    this.machina.start(() => {
+    this.captureInterface = new CaptureInterface(isDev ? options : { ...options, exePath: PacketCapture.MACHINA_EXE_PATH });
+    this.captureInterface.start().then(() => {
       log.info('Packet capture started');
     });
-    this.machina.setMaxListeners(0);
-    this.machina.on('any', (packet) => {
+    this.captureInterface.setMaxListeners(0);
+    this.captureInterface.on('message', (message) => {
       if (this.options.verbose) {
-        log.log(JSON.stringify(packet));
+        log.log(JSON.stringify(message));
       }
-      if (!this.filterPacketSessionID(packet)) {
-        return;
-      }
-      if (PacketCapture.ACCEPTED_PACKETS.indexOf(packet.type) > -1 || PacketCapture.ACCEPTED_PACKETS.indexOf(packet.superType) > -1) {
-        this.sendToRenderer(packet);
-      }
+      this.sendToRenderer(message);
     });
   }
 }

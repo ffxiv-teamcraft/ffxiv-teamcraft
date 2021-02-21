@@ -8,10 +8,8 @@ import { VesselStats } from '../model/vessel-stats';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
-import { AirshipTimers, ItemInfo, SubmarineTimers, UpdateInventorySlot } from '../../../model/pcap';
 import { VesselType } from '../model/vessel-type';
 import { BehaviorSubject, combineLatest, EMPTY, interval, merge } from 'rxjs';
-import { ofPacketType } from '../../../core/rxjs/of-packet-type';
 import { Airship } from '../model/airship';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
 import { Memoized } from '../../../core/decorators/memoized';
@@ -28,6 +26,9 @@ import { SectorExploration } from '../model/sector-exploration';
 import { VesselProgressionStatusUpdate } from '../model/vessel-progression-status-update';
 import { SettingsService } from '../../settings/settings.service';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
+import { ofMessageType } from '../../../core/rxjs/of-message-type';
+import { toIpcData } from '../../../core/rxjs/to-ipc-data';
+import { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Injectable({
   providedIn: 'root'
@@ -47,10 +48,11 @@ export class FreeCompanyWorkshopFacade {
 
   public readonly vesselTimers$ = merge(
     this.ipc.packets$.pipe(
-      ofPacketType<AirshipTimers>('airshipTimers'),
+      ofMessageType('airshipTimers'),
+      toIpcData(),
       map((packet) => ({
         type: VesselType.AIRSHIP,
-        timers: packet.timersList.map((vessel) => ({
+        timers: packet.timers.map((vessel) => ({
           ...vessel,
           destinations: [
             vessel.dest1,
@@ -63,10 +65,11 @@ export class FreeCompanyWorkshopFacade {
       }))
     ),
     this.ipc.packets$.pipe(
-      ofPacketType<SubmarineTimers>('submarineTimers'),
+      ofMessageType('submarineTimers'),
+      toIpcData(),
       map((packet) => ({
         type: VesselType.SUBMARINE,
-        timers: packet.timersList.map((vessel) => ({
+        timers: packet.timers.map((vessel) => ({
           ...vessel,
           destinations: [
             vessel.dest1,

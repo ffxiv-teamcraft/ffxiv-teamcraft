@@ -5,15 +5,14 @@ import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { BehaviorSubject, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
-import * as pcap from '../../model/pcap';
-import { PlayerSpawn } from '../../model/pcap';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
-import { ofPacketSubType } from '../rxjs/of-packet-subtype';
+import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { toIpcData } from '../rxjs/to-ipc-data';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -30,127 +29,218 @@ export class IpcService {
 
   private start = Date.now();
 
+  public packets$ = new Subject<Message>();
+
   public get ready(): boolean {
     return this._ipc !== undefined;
   }
 
-  public get itemInfoPackets$(): Observable<pcap.ItemInfo> {
-    return this.packets$.pipe(ofPacketType('itemInfo'));
+  public get itemInfoPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('itemInfo'),
+      toIpcData()
+    );
   }
 
-  public get updateInventorySlotPackets$(): Observable<pcap.UpdateInventorySlot> {
-    return this.packets$.pipe(ofPacketType('updateInventorySlot'));
+  public get updateInventorySlotPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('updateInventorySlot'),
+      toIpcData()
+    );
   }
 
-  public get inventoryTransactionPackets$(): Observable<pcap.InventoryTransaction> {
-    return this.packets$.pipe(ofPacketType('inventoryTransaction'));
+  public get inventoryTransactionPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('inventoryTransaction'),
+      toIpcData()
+    );
   }
 
-  public get playerSetupPackets$(): Observable<pcap.PlayerSetup> {
-    return this.packets$.pipe(ofPacketType('playerSetup'));
+  public get playerSetupPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('playerSetup'),
+      toIpcData()
+    );
   }
 
   public get worldId$(): Observable<number> {
-    return this.packets$.pipe(ofPacketType<PlayerSpawn>('playerSpawn'), map(packet => packet.currentWorldId));
+    return this.packets$.pipe(
+      ofMessageType('playerSpawn'),
+      toIpcData(),
+      map(packet => {
+        return packet.currentWorldId;
+      })
+    );
   }
 
   public get freeCompanyId$(): Observable<string> {
-    return this.packets$.pipe(ofPacketType<pcap.FreecompanyInfo>('freeCompanyInfo'), map(packet => packet.fcId));
+    return this.packets$.pipe(
+      ofMessageType('freeCompanyInfo'),
+      toIpcData(),
+      map(packet => packet.fcId)
+    );
   }
 
-  public get marketTaxRatePackets$(): Observable<pcap.MarketTaxRates> {
-    return this.packets$.pipe(ofPacketSubType('marketTaxRates'));
+  public get marketTaxRatePackets$() {
+    return this.packets$.pipe(
+      ofMessageType('resultDialog', 'marketTaxRates'),
+      toIpcData()
+    );
   }
 
-  public get marketBoardSearchResult$(): Observable<pcap.MarketBoardSearchResult> {
-    return this.packets$.pipe(ofPacketType('marketBoardSearchResult'));
+  public get marketBoardSearchResult$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardSearchResult'),
+      toIpcData()
+    );
   }
 
-  public get marketboardListingCount$(): Observable<pcap.MarketBoardItemListingCount> {
-    return this.packets$.pipe(ofPacketType('marketBoardItemListingCount'));
+  public get marketboardListingCount$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardItemListingCount'),
+      toIpcData()
+    );
   }
 
-  public get marketboardListing$(): Observable<pcap.MarketBoardItemListing> {
-    return this.packets$.pipe(ofPacketType('marketBoardItemListing'));
+  public get marketboardListing$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardItemListing'),
+      toIpcData()
+    );
   }
 
-  public get marketboardListingHistory$(): Observable<pcap.MarketBoardItemListingHistory> {
-    return this.packets$.pipe(ofPacketType('marketBoardItemListingHistory'));
+  public get marketboardListingHistory$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardItemListingHistory'),
+      toIpcData()
+    );
   }
 
-  public get inventoryModifyHandlerPackets$(): Observable<pcap.InventoryModifyHandler> {
-    return this.packets$.pipe(ofPacketType('inventoryModifyHandler'));
+  public get inventoryModifyHandlerPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('inventoryModifyHandler'),
+      toIpcData()
+    );
   }
 
-  public get npcSpawnPackets$(): Observable<pcap.NpcSpawn> {
-    return this.packets$.pipe(ofPacketType('npcSpawn'));
+  public get npcSpawnPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('npcSpawn'),
+      toIpcData()
+    );
   }
 
-  public get objectSpawnPackets$(): Observable<pcap.ObjectSpawn> {
-    return this.packets$.pipe(ofPacketType('objectSpawn'));
+  public get objectSpawnPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('objectSpawn'),
+      toIpcData()
+    );
   }
 
-  public get retainerInformationPackets$(): Observable<pcap.RetainerInformation> {
-    return this.packets$.pipe(ofPacketType('retainerInformation'));
+  public get retainerInformationPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('retainerInformation'),
+      toIpcData()
+    );
   }
 
-  public get submarineProgressionStatusPackets$(): Observable<pcap.SubmarineProgressionStatus> {
-    return this.packets$.pipe(ofPacketType('submarineProgressionStatus'));
+  public get submarineProgressionStatusPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('submarineProgressionStatus'),
+      toIpcData()
+    );
   }
 
-  public get submarinesStatusListPackets$(): Observable<pcap.SubmarineStatusList> {
-    return this.packets$.pipe(ofPacketType('submarineStatusList'));
+  public get submarinesStatusListPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('submarineStatusList'),
+      toIpcData()
+    );
   }
 
-  public get airshipStatusPackets$(): Observable<pcap.AirshipStatus> {
-    return this.packets$.pipe(ofPacketType('airshipStatus'));
+  public get airshipStatusPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('airshipStatus'),
+      toIpcData()
+    );
   }
 
-  public get airshipStatusListPackets$(): Observable<pcap.AirshipStatusList> {
-    return this.packets$.pipe(ofPacketType('airshipStatusList'));
+  public get airshipStatusListPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('airshipStatusList'),
+      toIpcData()
+    );
   }
 
-  public get updatePositionHandlerPackets$(): Observable<pcap.UpdatePositionHandler> {
-    return this.packets$.pipe(ofPacketType('updatePositionHandler'));
+  public get updatePositionHandlerPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('updatePositionHandler'),
+      toIpcData()
+    );
   }
 
-  public get updatePositionInstancePackets$(): Observable<pcap.UpdatePositionInstance> {
-    return this.packets$.pipe(ofPacketType('updatePositionInstance'));
+  public get updatePositionInstancePackets$() {
+    return this.packets$.pipe(
+      ofMessageType('updatePositionInstance'),
+      toIpcData()
+    );
   }
 
-  public get initZonePackets$(): Observable<pcap.InitZone> {
-    return this.packets$.pipe(ofPacketType('initZone'));
+  public get initZonePackets$() {
+    return this.packets$.pipe(
+      ofMessageType('initZone'),
+      toIpcData()
+    );
   }
 
-  public get playerStatsPackets$(): Observable<pcap.PlayerStats> {
-    return this.packets$.pipe(ofPacketType('playerStats'));
+  public get weatherChangePackets$() {
+    return this.packets$.pipe(
+      ofMessageType('weatherChange'),
+      toIpcData()
+    );
   }
 
-  public get updateClassInfoPackets$(): Observable<pcap.UpdateClassInfo> {
-    return this.packets$.pipe(ofPacketType('updateClassInfo'));
+  public get playerStatsPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('playerStats'),
+      toIpcData()
+    );
   }
 
-  public get currencyCrystalInfoPackets$(): Observable<pcap.CurrencyCrystalInfo> {
-    return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
+  public get updateClassInfoPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('updateClassInfo'),
+      toIpcData()
+    );
   }
 
-  public get prepareZoningPackets$(): Observable<pcap.PrepareZoning> {
-    return this.packets$.pipe(ofPacketType('prepareZoning'));
+  public get currencyCrystalInfoPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('currencyCrystalInfo'),
+      toIpcData()
+    );
   }
 
-  public get eventPlay4Packets$(): Observable<pcap.EventPlay4> {
-    return this.packets$.pipe(ofPacketType('eventPlay4'));
+  public get prepareZoningPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('prepareZoning'),
+      toIpcData()
+    );
   }
 
-  public get eventPlay8Packets$(): Observable<pcap.EventPlay8> {
-    return this.packets$.pipe(ofPacketType('eventPlay8'));
+  public get eventPlay4Packets$() {
+    return this.packets$.pipe(
+      ofMessageType('eventPlay4'),
+      toIpcData()
+    );
   }
 
-  public get eventPlay32Packets$(): Observable<pcap.EventPlay32> {
-    return this.packets$.pipe(ofPacketType('eventPlay32'));
+  public get eventPlay8Packets$() {
+    return this.packets$.pipe(
+      ofMessageType('eventPlay8'),
+      toIpcData()
+    );
   }
-
-  public packets$: Subject<pcap.BasePacket> = new Subject<pcap.BasePacket>();
 
   public get machinaToggle(): boolean {
     return this.machinaToggle$.value;
@@ -168,7 +258,7 @@ export class IpcService {
     bufferCount(100),
     first(),
     map(packets => {
-      return packets.every(packet => packet.operation === 'send');
+      return packets.every(packet => packet.header.operation === 'send');
     }),
     shareReplay(1)
   );
@@ -244,8 +334,8 @@ export class IpcService {
       this.machinaToggle$.next(value);
     });
     this.send('toggle-machina:get');
-    this.on('packet', (event, packet: pcap.BasePacket) => {
-      this.handlePacket(packet);
+    this.on('packet', (event, message: Message) => {
+      this.handleMessage(message);
     });
     this.on('navigate', (event, url: string) => {
       if (url.endsWith('/')) {
@@ -303,9 +393,8 @@ export class IpcService {
           }
         });
     });
-    // If we don't get a ping for an entire minute, something is wrong.
+    // If we don't get a packet for an entire minute, something is wrong.
     this.packets$.pipe(
-      ofPacketType('ping'),
       debounceTime(60000)
     ).subscribe(() => {
       this.send('log', {
@@ -339,7 +428,7 @@ export class IpcService {
     }
   }
 
-  private handlePacket(packet: pcap.BasePacket): void {
+  private handleMessage(packet: Message): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     if (!this.overlayUri) {
       this.totalPacketsHandled++;

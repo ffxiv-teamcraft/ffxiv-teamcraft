@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.12"></a>
+## [8.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.11...v8.0.12) (2021-02-11)
+
+
+### Bug Fixes
+
+* **inventory-view:** fixed double tooltip on item icons ([3b307d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b307d4))
+* **notifications:** fixed an issue with notifications affecting autofill system ([7262610](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7262610))
+
+
+### Features
+
+* **db:** new data sources for various items ([b74f71e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b74f71e))
+* **log-tracker:** "hide completed" is now persisted inside settings ([f7f39f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7f39f4))
+
+
+
 <a name="8.0.11"></a>
 ## [8.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.10...v8.0.11) (2021-02-10)
 
