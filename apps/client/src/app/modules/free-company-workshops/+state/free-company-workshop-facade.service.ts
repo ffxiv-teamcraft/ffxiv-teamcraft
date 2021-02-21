@@ -188,12 +188,12 @@ export class FreeCompanyWorkshopFacade {
         return EMPTY;
       } else {
         return combineLatest([
-          interval(1000),
+          interval(1000).pipe(map(() => Math.floor(Date.now() / 1000))),
           this.workshops$
-        ]).pipe(map(([, workshops]) => ({ now: Math.floor(Date.now() / 1000), workshops })));
+        ]);
       }
     }),
-    map(({ now, workshops }) => {
+    map(([now, workshops]) => {
       return Object.values<FreeCompanyWorkshop>(workshops)
         .map((workshop) => ([
           ...workshop.airships.slots.filter((vessel) => vessel).map((vessel) => ({
