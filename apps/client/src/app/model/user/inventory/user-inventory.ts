@@ -81,7 +81,7 @@ export class UserInventory extends DataModel {
     return this.searchCache.some(item => {
       return (!onlyCurrentCharacter || item.contentId === this.contentId)
         && (!onlyUserInventory || item.containerId < 10)
-        && item.itemId === itemId
+        && item.itemId === itemId;
     });
   }
 

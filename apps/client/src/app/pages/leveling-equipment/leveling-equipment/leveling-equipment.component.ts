@@ -163,7 +163,7 @@ export class LevelingEquipmentComponent {
                           materiaSlots: itemMeldingData.slots,
                           canOvermeld: itemMeldingData.overmeld,
                           baseParamModifier: itemMeldingData.modifier,
-                          isInInventory: inventory?.getItem(item.ID)
+                          isInInventory: inventory?.hasItem(item.ID, true)
                         };
                         this.gearsetsFacade.applyEquipSlotChanges(row.gearset, item.ID);
                       }
