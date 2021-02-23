@@ -21,6 +21,7 @@ import { LayoutRowOrder } from '../layout-row-order.enum';
 import { LayoutRowFilter } from '../layout-row-filter';
 import { DataType } from '../../../modules/list/data/data-type';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 
 @Injectable()
 export class LayoutsFacade {
@@ -113,16 +114,15 @@ export class LayoutsFacade {
                   const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
                   if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
                     const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
-                    const set = gearsets.find(stat => stat.jobId === gatherJob);
-                    if (set && (set.level === 0 || (set.level / 5) > (gatheredBy.level - 1) / 5)) {
+                    const requiredLevel = Math.floor((gatheredBy.level - 1) / 5) * 5;
+                    if (this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
                       acc.accepted.push(item);
                     } else {
                       acc.rejected.push(item);
                     }
                   } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
                     const match = craftedBy.some((craft) => {
-                      const set = gearsets.find(stat => stat.jobId === craft.job);
-                      return set && (set.level === 0 || set.level >= craft.lvl);
+                      return this.matchesLevel(gearsets, craft.job, craft.lvl);
                     });
                     if (match) {
                       acc.accepted.push(item);
@@ -164,8 +164,8 @@ export class LayoutsFacade {
 
   public getFinalItemsDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<LayoutRowDisplay> {
     return this.selectedLayout$.pipe(
-      withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
-      map(([layout, characterEntry]) => {
+      withLatestFrom(this.authFacade.gearSets$),
+      map(([layout, gearsets]) => {
         let rows = this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
           .filter(row => (layout.recipeHideCompleted || overrideHideCompleted) ? row.done < row.amount : true);
         if (adaptativeFilter) {
@@ -174,14 +174,12 @@ export class LayoutsFacade {
             const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
             if (gatheredBy.type !== undefined) {
               const gatherJob = [16, 16, 17, 17, 18, 18].indexOf(gatheredBy.type);
-              const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-              return set && set.level >= gatheredBy.level;
+              return this.matchesLevel(gearsets, gatherJob, gatheredBy.level);
             }
             if (craftedBy.length > 0) {
-              return craftedBy.reduce((canCraft, craft) => {
-                const set = (characterEntry.stats || []).find(stat => stat.jobId === craft.job);
-                return (set && set.level >= craft.lvl) || canCraft;
-              }, false);
+              return craftedBy.some((craft) => {
+                return this.matchesLevel(gearsets, craft.job, craft.lvl);
+              });
             }
             return true;
           });
@@ -203,6 +201,15 @@ export class LayoutsFacade {
         };
       })
     );
+  }
+
+  private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
+    const set = sets.find(s => s.jobId === job);
+    if (!set) {
+      // If we don't find a matching set, return true only if there's no real filled set.
+      return sets.every(s => s.level === 0);
+    }
+    return set.level >= level;
   }
 
   public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
