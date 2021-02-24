@@ -56,6 +56,7 @@ import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
 import { UpdaterStatus } from './model/other/updater-status';
+import { Language } from './core/data/language';
 
 declare const gtag: Function;
 
@@ -399,7 +400,7 @@ export class AppComponent implements OnInit {
           );
         })
       );
-      this.translate.onLangChange.subscribe(l => this.locale = l);
+      this.translate.onLangChange.subscribe(l => this.locale = l.lang as Language);
 
       this.translate.onLangChange.subscribe(change => {
         this.locale = change.lang;
