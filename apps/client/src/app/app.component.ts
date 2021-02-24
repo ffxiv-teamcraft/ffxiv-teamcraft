@@ -157,15 +157,8 @@ export class AppComponent implements OnInit {
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
               private cd: ChangeDetectorRef) {
 
-    fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
+    fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
-    });
-
-    // Scuff Zoom Handling
-    document.addEventListener('keydown', event => {
-      if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
-        return this.ipc.send('zoom-in', event);
-      }
     });
 
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
@@ -441,13 +434,19 @@ export class AppComponent implements OnInit {
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyF') {
+    if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
+      return this.ipc.send('zoom-in');
+    }
+    if ((event.ctrlKey || event.metaKey) && [54, 109].includes(event.keyCode)) {
+      return this.ipc.send('zoom-out');
+    }
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'F') {
       this.quickSearch.openQuickSearch();
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyQ') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'A') {
       this.router.navigateByUrl('/admin/users');
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyM') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'M') {
       this.router.navigateByUrl('/mappy');
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyC') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'C') {
       event.preventDefault();
       event.stopPropagation();
       if (this.platformService.isDesktop()) {

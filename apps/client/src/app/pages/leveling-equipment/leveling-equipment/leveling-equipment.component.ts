@@ -87,129 +87,55 @@ export class LevelingEquipmentComponent {
           first()
         );
       }),
-      switchMap((inventory: UserInventory | null) => {
+      map((inventory: UserInventory | null) => {
         const filters = this.filtersForm.value;
         this.settings.setBoolean('leveling-equipment:includeCrafting', filters.includeCrafting);
         this.settings.setBoolean('leveling-equipment:includeTrades', filters.includeTrades);
         this.settings.setBoolean('leveling-equipment:onlyInventoryContent', filters.onlyInventoryContent);
         const mainStat = this.statsService.getMainStat(filters.job);
-        const searchOptions: XivapiSearchOptions = {
-          indexes: [SearchIndex.ITEM],
-          exclude_dated: 1,
-          limit: 250,
-          columns: ['ID', 'LevelEquip', 'LevelItem', 'EquipSlotCategory'],
-          filters: [
-            {
-              column: 'LevelEquip',
-              operator: '>=',
-              value: filters.level - 6
-            },
-            {
-              column: 'LevelEquip',
-              operator: '<=',
-              value: Math.min(filters.level + 2, environment.maxLevel - 1)
-            },
-            {
-              column: 'EquipSlotCategoryTargetID',
-              operator: '>',
-              value: 0
-            },
-            {
-              column: 'Stats',
-              operator: '!'
-            },
-            {
-              column: `ClassJobCategory.${this.lazyData.data.jobAbbr[filters.job]?.en}`,
-              operator: '=',
-              value: 1
+        // Preparing base informations
+        const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel - 1);
+        const baseStruct = levels.map(level => {
+          const gearset = new TeamcraftGearset();
+          gearset.job = filters.job;
+          return {
+            level,
+            gearset
+          };
+        });
+        const results = baseStruct.map(row => {
+          // Let's check offHand first, as it's a bit specific
+          if (!row.gearset.offHand && row.gearset.job !== 18 && (!row.gearset.isCombatSet() || [1, 19].includes(row.gearset.job))) {
+            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 2, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+          }
+          this.slots
+            .filter(slot => !['ring2', 'offHand'].includes(slot.property))
+            .forEach(slot => {
+              if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
+                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+                if (row.gearset[slot.property] && this.desktop) {
+                  row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
+                }
+              }
+            });
+          // Then, once we filled everything, fix second ring :)
+          if (!row.gearset.ring2) {
+            if (row.gearset.ring1) {
+              if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
+                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+                if (row.gearset.ring2 && this.desktop) {
+                  (row.gearset.ring2 as any).isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
+                }
+              } else {
+                row.gearset.ring2 = JSON.parse(JSON.stringify(row.gearset.ring1));
+              }
             }
-          ]
-        };
-        return this.dataService.xivapiSearch(searchOptions)
-          .pipe(
-            map(searchResult => {
-              // Preparing base informations
-              const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel - 1);
-              const baseStruct = levels.map(level => {
-                const gearset = new TeamcraftGearset();
-                gearset.job = filters.job;
-                return {
-                  level,
-                  gearset
-                };
-              });
-              return searchResult.Results
-                .filter(item => this.allowItem(item.ID, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory))
-                .reduce((acc, item) => {
-                  const slotName = Object.keys(item.EquipSlotCategory)
-                    .filter(key => key !== 'ID')
-                    .find(key => item.EquipSlotCategory[key] === 1);
-                  const propertyName = this.gearsetsFacade.getPropertyNameFromCategoryName(slotName);
-                  return acc.map(row => {
-                    // If we cannot equip this item on this row, just skip it
-                    if (row.level < item.LevelEquip) {
-                      return row;
-                    }
-
-                    const currentlyEquipped: EquipmentPiece = row.gearset[propertyName] as EquipmentPiece;
-                    if (this.shouldReplaceItem(currentlyEquipped, item.ID, mainStat, slotName, item.EquipSlotCategory.ID, filters.job)) {
-                      const canBeEquipped = this.gearsetsFacade.canEquipSlot(slotName, row.gearset.chest?.itemId, row.gearset.legs?.itemId);
-                      if (canBeEquipped) {
-                        const itemMeldingData = this.lazyData.data.itemMeldingData[item.ID];
-                        row.gearset[propertyName] = {
-                          itemId: item.ID,
-                          hq: false,
-                          materias: [],
-                          materiaSlots: itemMeldingData.slots,
-                          canOvermeld: itemMeldingData.overmeld,
-                          baseParamModifier: itemMeldingData.modifier,
-                          isInInventory: inventory?.getItem(item.ID)
-                        };
-                        this.gearsetsFacade.applyEquipSlotChanges(row.gearset, item.ID);
-                      }
-                    }
-                    return row;
-                  });
-                }, baseStruct);
-            }),
-            map(result => {
-              // Let's fill empty slots, this part is more expensive so we only do it when there's missing slots somewhere
-              return result.map(row => {
-                // Let's check offHand first, as it's a bit specific
-                if (!row.gearset.offHand && row.gearset.job !== 18 && (!row.gearset.isCombatSet() || [1, 19].includes(row.gearset.job))) {
-                  row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 2, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
-                }
-                this.slots
-                  .filter(slot => !['ring2', 'offHand'].includes(slot.property))
-                  .forEach(slot => {
-                    if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
-                      row.gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
-                      if (row.gearset[slot.property] && this.desktop) {
-                        row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
-                      }
-                    }
-                  });
-                // Then, once we filled everything, fix second ring :)
-                if (!row.gearset.ring2) {
-                  if (row.gearset.ring1) {
-                    if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
-                      row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
-                      if (row.gearset.ring2 && this.desktop) {
-                        row.gearset.ring2.isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
-                      }
-                    } else {
-                      row.gearset.ring2 = JSON.parse(JSON.stringify(row.gearset.ring1));
-                    }
-                  }
-                }
-                return row;
-              });
-            }),
-            tap(results => {
-              const row = results.find(r => r.level === filters.level);
-              this.selectRow(row);
-            })
-          );
+          }
+          return row;
+        });
+        const columnToSelect = results.find(r => r.level === filters.level);
+        this.selectRow(columnToSelect);
+        return results;
       })
     );
   }
@@ -221,7 +147,9 @@ export class LevelingEquipmentComponent {
     const extract = this.lazyData.getExtract(itemId);
     // If it can be bought, no need to go further
     const vendors = getItemSource(extract, DataType.VENDORS).filter(vendor => !vendor.festival);
-    if (vendors.length > 0) {
+    // If it can be bought from calamity salvager, it's not something we want to provide as item for the leveling equipment.
+    const fromCalamitySalvager = vendors.some(v => v.npcId === 1017613);
+    if (!fromCalamitySalvager && vendors.length > 0) {
       return true;
     }
     if (includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
@@ -242,6 +170,12 @@ export class LevelingEquipmentComponent {
       .sort((a, b) => {
         const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategory, job);
         const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategory, job);
+        const mainDiff = bMainStat - aMainStat;
+        if (mainDiff === 0) {
+          const aSecondaryStat = this.getSecondaryStatValue(+a, mainStat, equipSlotCategory, job);
+          const bSecondaryStat = this.getSecondaryStatValue(+b, mainStat, equipSlotCategory, job);
+          return bSecondaryStat - aSecondaryStat;
+        }
         return bMainStat - aMainStat;
       })[0];
 
@@ -280,41 +214,34 @@ export class LevelingEquipmentComponent {
     return 0;
   }
 
-  private shouldReplaceItem(currentlyEquipped: EquipmentPiece | undefined, itemId: number, mainStat: BaseParam, slotName: string, equipSlotCategory: number, job: number): boolean {
-    const itemMainStatValue = this.lazyData.data.itemStats[itemId].find(stat => stat.ID === mainStat)?.NQ || 0;
-    if (!currentlyEquipped && itemMainStatValue > 0) {
-      return true;
-    }
-    if (currentlyEquipped && itemMainStatValue > 0) {
-      const currentlyEquippedMainStatValue = this.getMainStatValue(currentlyEquipped.itemId, mainStat, equipSlotCategory, job);
-      if (itemMainStatValue > currentlyEquippedMainStatValue) {
-        return true;
+  private getSecondaryStatValue(itemId: number, mainStat: number, equipSlotCategory: number, job: number): number {
+    let secondaryStat = BaseParam.DEFENSE;
+    if ([9, 10, 11, 12].includes(equipSlotCategory)) {
+      if ([16, 17, 18].includes(job)) {
+        secondaryStat = BaseParam.GATHERING;
       }
-      if (itemMainStatValue === currentlyEquippedMainStatValue) {
-        const itemIlvl = this.lazyData.data.ilvls[itemId];
-        const currentlyEquippedIlvl = this.lazyData.data.ilvls[currentlyEquipped.itemId];
-        if (itemIlvl > currentlyEquippedIlvl) {
-          return true;
-        }
+      if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
+        secondaryStat = BaseParam.CRAFTSMANSHIP;
       }
-      // For tanks, we want defense to be accounted too
-      if (mainStat === BaseParam.VITALITY) {
-        const itemDefense = this.lazyData.data.itemMainAttributes[itemId]?.find(stat => stat.ID === BaseParam.DEFENSE)?.NQ || 0;
-        const currentlyEquippedDefense = this.lazyData.data.itemMainAttributes[currentlyEquipped.itemId]?.find(stat => stat.ID === BaseParam.DEFENSE)?.NQ || 0;
-        if (itemDefense > currentlyEquippedDefense) {
-          return true;
-        }
-      }
-      // For weapons, attack stat before anything else
-      if (slotName === 'MainHand') {
-        const itemDamage = this.lazyData.data.itemMainAttributes[itemId]?.find(stat => [BaseParam.PHYSICAL_DAMAGE, BaseParam.MAGIC_DAMAGE].includes(stat.ID))?.NQ || 0;
-        const currentlyEquippedDamage = this.lazyData.data.itemMainAttributes[currentlyEquipped.itemId]?.find(stat => [BaseParam.PHYSICAL_DAMAGE, BaseParam.MAGIC_DAMAGE].includes(stat.ID))?.NQ || 0;
-        if (itemDamage > currentlyEquippedDamage) {
-          return true;
-        }
+    } else {
+      switch (mainStat) {
+        case BaseParam.VITALITY:
+          secondaryStat = BaseParam.TENACITY;
+          break;
+        case BaseParam.STRENGTH:
+        case BaseParam.DEXTERITY:
+          secondaryStat = BaseParam.SKILL_SPEED;
+          break;
+        case BaseParam.INTELLIGENCE:
+          secondaryStat = BaseParam.SPELL_SPEED;
+          break;
+        case BaseParam.MIND:
+          secondaryStat = BaseParam.PIETY;
+          break;
       }
     }
-    return false;
+    const secondaryStatEntry = this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === secondaryStat);
+    return secondaryStatEntry?.NQ || 0;
   }
 
   selectRow(row: { level: number, gearset: TeamcraftGearset }): void {

@@ -255,9 +255,9 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let resultIndex = this.getIndexByName(this.lazyData.data.craftActions, name, language);
+    let resultIndex = this.getIndexByName(this.lazyData.data.craftActions, name, language, true);
     if (resultIndex === -1) {
-      resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language);
+      resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language, true);
     }
     if (name === 'Scrutiny' && language === 'en') {
       resultIndex = 22185;
