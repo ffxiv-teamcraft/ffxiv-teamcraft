@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Vessel } from '../../../../../modules/free-company-workshops/model/vessel';
-import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 
 @Component({
   selector: 'app-vessel-voyage-column',

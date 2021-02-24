@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { AirshipPartType } from '../../../../../modules/free-company-workshops/model/airship-part-type';
 import { VesselPart } from '../../../../../modules/free-company-workshops/model/vessel-part';
 import { SubmarinePartType } from '../../../../../modules/free-company-workshops/model/submarine-part-type';
-import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { VesselStats } from '../../../../../modules/free-company-workshops/model/vessel-stats';
 import { VesselType } from '../../../../../modules/free-company-workshops/model/vessel-type';
 

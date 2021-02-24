@@ -13,7 +13,7 @@ import { FreeCompanyWorkshops } from '../model/free-company-workshops';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { select, Store } from '@ngrx/store';
 import { VesselType } from '../model/vessel-type';
-import { FreeCompanyWorkshopFacade } from './free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from './free-company-workshop.facade';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
 import { cloneDeep } from 'lodash';
 import { VesselPart } from '../model/vessel-part';

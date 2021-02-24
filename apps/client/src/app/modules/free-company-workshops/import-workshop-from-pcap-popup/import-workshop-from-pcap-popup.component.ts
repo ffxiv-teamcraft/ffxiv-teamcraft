@@ -5,7 +5,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { finalize, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
-import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
 

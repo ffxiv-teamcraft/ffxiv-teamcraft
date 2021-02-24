@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';

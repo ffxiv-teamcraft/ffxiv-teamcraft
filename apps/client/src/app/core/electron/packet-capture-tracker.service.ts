@@ -23,7 +23,7 @@ import { InventoryEventType } from '../../model/user/inventory/inventory-event-t
 import { HttpClient } from '@angular/common/http';
 import { ItemInfo } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
-import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop.facade';
 
 @Injectable({
   providedIn: 'root'

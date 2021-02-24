@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleCha
 import { Vessel } from '../../../../modules/free-company-workshops/model/vessel';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
-import { FreeCompanyWorkshopFacade } from '../../../../modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from '../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
 import { timer } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';

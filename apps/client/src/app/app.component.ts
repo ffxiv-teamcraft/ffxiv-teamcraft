@@ -56,7 +56,7 @@ import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
 import { UpdaterStatus } from './model/other/updater-status';
-import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop-facade.service';
+import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop.facade';
 
 declare const gtag: Function;
 
