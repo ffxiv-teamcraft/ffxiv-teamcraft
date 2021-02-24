@@ -147,7 +147,9 @@ export class LevelingEquipmentComponent {
     const extract = this.lazyData.getExtract(itemId);
     // If it can be bought, no need to go further
     const vendors = getItemSource(extract, DataType.VENDORS).filter(vendor => !vendor.festival);
-    if (vendors.length > 0) {
+    // If it can be bought from calamity salvager, it's not something we want to provide as item for the leveling equipment.
+    const fromCalamitySalvager = vendors.some(v => v.npcId === 1017613);
+    if (!fromCalamitySalvager && vendors.length > 0) {
       return true;
     }
     if (includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
