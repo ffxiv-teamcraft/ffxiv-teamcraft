@@ -1,0 +1,47 @@
+<div fxLayout="row" fxLayoutGap="20px">
+  <div class="editor-container" fxFlex="1 1 45%">
+    <app-layout-editor></app-layout-editor>
+  </div>
+  <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px" class="list-preview">
+    <nz-select [ngModel]="selectedListKey$ | async" (ngModelChange)="selectList($event)"
+               [nzPlaceHolder]="'LIST_DETAILS.LAYOUT_DIALOG.Select_preview_list' | translate">
+      <nz-option *ngFor="let list of lists$ | async" nzLabel="{{list.name}} ({{list.size}})" [nzValue]="list.key"></nz-option>
+    </nz-select>
+
+    <div *ngIf="display$ | async as display; else noSelectedList" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+      <nz-collapse *ngFor="let panel of display.rows">
+        <nz-collapse-panel [nzHeader]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign=" flex-start center">
+              <div>{{panel.title | translate}} ({{panel.rows.length}})</div>
+              <nz-tag *ngIf="panel.layoutRow.zoneBreakdown" [style.border-color]="'#108ee9'" class="custom-tag">{{'Zone_breakdown' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.npcBreakdown" [style.border-color]="'#108ee9'" class="custom-tag">{{'Npc_breakdown' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.tiers" [style.border-color]="'#108ee9'" class="custom-tag">{{'Reverse_tiers' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.reverseTiers" [style.border-color]="'#108ee9'" class="custom-tag">{{'Tier_display_toggle' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.hideCompletedRows" [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_completed' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.hideUsedRows" [style.border-color]="'#cd4aff'" class="custom-tag">{{'Hide_used' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.hideIfEmpty" [style.border-color]="'#f2b10e'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Hidden_if_empty' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.collapsedByDefault" [style.border-color]="'#d9ff00'" class="custom-tag">{{'LIST_DETAILS.LAYOUT_DIALOG.Collapsed_by_default' | translate}}</nz-tag>
+              <nz-tag *ngIf="panel.layoutRow.hasTag != null" [style.border-color]="'#002aff'" class="custom-tag">
+                <span *ngIf="panel.layoutRow.hasTag">INCLUDES</span>
+                <span *ngIf="!panel.layoutRow.hasTag">DOESN'T INCLUDE</span>
+              </nz-tag>
+            </div>
+          </ng-template>
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div *ngFor="let item of panel.rows" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <app-item-icon width="24" [itemId]="item.id"></app-item-icon>
+              <div>{{item.id | itemName | i18n}}</div>
+            </div>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </div>
+  </div>
+  <ng-template #noSelectedList>
+    <app-fullpage-message height="300px" [subtitle]="subtitle">
+      <ng-template #subtitle>{{'LIST_DETAILS.LAYOUT_DIALOG.Please_pick_list' | translate}}</ng-template>
+      {{'LIST_DETAILS.LAYOUT_DIALOG.No_preview' | translate}}
+    </app-fullpage-message>
+  </ng-template>
+</div>

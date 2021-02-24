@@ -312,6 +312,14 @@ export class NavigationSidebarService {
               link: '/retainer-ventures'
             },
             {
+              name: 'LIST_DETAILS.LAYOUT_DIALOG.Layouts',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'format-painter'
+              },
+              link: '/layouts'
+            },
+            {
               name: 'MACRO_TRANSLATION.Title',
               icon: {
                 type: SidebarIconType.ANTD,
