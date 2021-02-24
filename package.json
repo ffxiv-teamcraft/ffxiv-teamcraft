@@ -18,7 +18,7 @@
     ],
     "extraResources": [
       {
-        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/MachinaWrapper",
+        "from": "./node_modules/@ffxiv-teamcraft/pcap-ffxiv/lib/MachinaWrapper",
         "to": "MachinaWrapper",
         "filter": [
           "**/*"
@@ -95,7 +95,8 @@
     "electron:start": "yarn electron:build && yarn electron ./dist/apps/electron/src/main.js",
     "************ELECTRON SETUP BUILD************************": "",
     "electron:setup:build": "del-cli release/* && yarn electron:build && yarn build:electron-prod && electron-builder -w",
-    "electron:setup:build-dev": "electron-builder -w",
+    "electron:setup:build-dev": "yarn electron:build && electron-builder -w",
+    "electron:setup:build-dev:dir": "yarn electron:build && electron-builder -w --dir",
     "electron:setup:build-beta": "del-cli release/* && yarn electron:build && yarn build:electron-dev && electron-builder -w",
     "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
     "postinstall": "ngcc && electron-builder install-app-deps",
@@ -116,7 +117,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "^0.1.4",
+    "@ffxiv-teamcraft/pcap-ffxiv": "^0.2.0",
     "buffer-reader": "^0.1.0",
     "electron-edge-js": "^12.18.5",
     "electron-is-dev": "^1.1.0",

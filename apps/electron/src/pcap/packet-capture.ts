@@ -109,7 +109,7 @@ export class PacketCapture {
   }
 
   private async startMachina(): Promise<void> {
-    const region = this.store.get('region', null);
+    const region = this.store.get('region', 'Global');
     const rawsock = this.store.get('rawsock', false);
     const elevated = await require('is-elevated')();
 
