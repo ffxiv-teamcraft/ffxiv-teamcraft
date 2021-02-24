@@ -1,5 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { filter } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ad',
@@ -33,7 +35,13 @@ export class AdComponent implements AfterViewInit, OnDestroy {
     return this._placementId;
   }
 
-  constructor(private platform: PlatformService) {
+  constructor(private platform: PlatformService, router: Router) {
+    router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.removeAd();
+      this.addAd();
+    });
   }
 
   private addAd(): void {
