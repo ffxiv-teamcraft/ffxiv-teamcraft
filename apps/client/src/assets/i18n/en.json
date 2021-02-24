@@ -1836,7 +1836,9 @@
     "My_commissions": "My Commissions",
     "Archived_commissions": "Archives",
     "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Currencies": "Currencies",
+    "Add_to_favorites": "Add to favorites",
+    "Remove_from_favorites": "Remove from favorites"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",

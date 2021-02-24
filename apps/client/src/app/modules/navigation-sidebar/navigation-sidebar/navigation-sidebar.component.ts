@@ -3,9 +3,10 @@ import { SettingsService } from '../../settings/settings.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Character } from '@xivapi/angular-client';
 import { SidebarIconType } from '../sidebar-icon-type';
-import { SidebarEntry } from '../sidebar-entry';
+import { SidebarEntry, SidebarItem } from '../sidebar-entry';
 import { SidebarBadgeType } from '../sidebar-badge-type';
 import { NavigationSidebarService } from '../navigation-sidebar.service';
+import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
 
 @Component({
   selector: 'app-navigation-sidebar',
@@ -51,7 +52,26 @@ export class NavigationSidebarComponent {
   public content$ = this.navigationSidebarService.content$;
 
   constructor(public settings: SettingsService, private media: MediaObserver,
-              private navigationSidebarService: NavigationSidebarService) {
+              private navigationSidebarService: NavigationSidebarService, private nzContextMenuService: NzContextMenuService) {
+  }
+
+  contextMenu($event: MouseEvent, menu: NzDropdownMenuComponent): void {
+    this.nzContextMenuService.create($event, menu);
+  }
+
+  closeMenu(): void {
+    this.nzContextMenuService.close();
+  }
+
+  addToFavorites(entry: SidebarItem): void {
+    this.settings.sidebarFavorites = [
+      ...this.settings.sidebarFavorites,
+      entry.link
+    ];
+  }
+
+  removeFromFavorites(entry: SidebarItem): void {
+    this.settings.sidebarFavorites = this.settings.sidebarFavorites.filter(e => e !== entry.link);
   }
 
   public onNavLinkClick(): void {
