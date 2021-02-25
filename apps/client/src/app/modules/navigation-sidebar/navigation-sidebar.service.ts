@@ -317,7 +317,8 @@ export class NavigationSidebarService {
                 type: SidebarIconType.CUSTOM_FONT,
                 content: this.sanitizer.bypassSecurityTrustHtml('&#xE905;')
               },
-              link: '/voyage-tracker'
+              link: '/voyage-tracker',
+              hidden: !this.platformService.isDesktop()
             },
             {
               name: 'MACRO_TRANSLATION.Title',

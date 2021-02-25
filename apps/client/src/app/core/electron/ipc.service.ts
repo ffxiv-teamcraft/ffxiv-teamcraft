@@ -77,7 +77,7 @@ export class IpcService {
     return this.packets$.pipe(
       ofMessageType('freeCompanyInfo'),
       toIpcData(),
-      map(packet => packet.freeCompanyId)
+      map(packet => packet.freeCompanyId.toString())
     );
   }
 

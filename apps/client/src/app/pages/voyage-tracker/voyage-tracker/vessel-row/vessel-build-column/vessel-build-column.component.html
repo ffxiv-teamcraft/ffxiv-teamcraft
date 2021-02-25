@@ -2,7 +2,7 @@
      [nzPopoverTitle]="name"
      [nzPopoverContent]="vesselBuildDetails"
 >
-  {{ vesselBuild.abbreviation }}
+  {{ vesselBuild?.abbreviation }}
 </div>
 
 <ng-template #vesselBuildDetails>
@@ -14,10 +14,10 @@
   <hr>
   <div fxLayout="column">
     <div><h4>{{ 'VOYAGE_TRACKER.STATS_DETAILS.Title' | translate }}</h4></div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Surveillance' | translate }}: {{ vesselBuild.stats.surveillance }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Retrieval' | translate }}: {{ vesselBuild.stats.retrieval }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Speed' | translate }}: {{ vesselBuild.stats.speed }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Range' | translate }}: {{ vesselBuild.stats.range }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Favor' | translate }}: {{ vesselBuild.stats.favor }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Surveillance' | translate }}: {{ vesselBuild?.stats.surveillance }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Retrieval' | translate }}: {{ vesselBuild?.stats.retrieval }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Speed' | translate }}: {{ vesselBuild?.stats.speed }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Range' | translate }}: {{ vesselBuild?.stats.range }}</div>
+    <div>{{ 'VOYAGE_TRACKER.STATS.Favor' | translate }}: {{ vesselBuild?.stats.favor }}</div>
   </div>
 </ng-template>

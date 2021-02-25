@@ -366,7 +366,7 @@ export class FreeCompanyWorkshopFacade {
   }
 
   getVesselBuild(type: VesselType, rank: number, parts: Record<string, VesselPart>): { abbreviation: string, stats: VesselStats } {
-    if (!parts) {
+    if (!parts || Object.keys(parts).length === 0) {
       return null;
     }
     const rankBonus: VesselStats = type === VesselType.AIRSHIP ? {
