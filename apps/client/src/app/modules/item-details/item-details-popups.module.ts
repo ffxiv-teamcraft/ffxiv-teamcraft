@@ -27,6 +27,7 @@ import { TooltipModule } from '../tooltip/tooltip.module';
 import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../node-details/node-details.module';
+import { InventoryModule } from '../inventory/inventory.module';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { NodeDetailsModule } from '../node-details/node-details.module';
 
     TranslateModule,
     AntdSharedModule,
-    NodeDetailsModule
+    NodeDetailsModule,
+    InventoryModule
   ],
   declarations: [
     GatheredByComponent,

@@ -13,11 +13,8 @@
         <!-- Inventory informations -->
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
           <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
-            <nz-tag *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry">
-              {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
-              : {{entry.amount}}
-              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-            </nz-tag>
+            <app-inventory-position  *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry"
+                                     [item]="entry.item"></app-inventory-position>
           </div>
         </div>
       </div>
