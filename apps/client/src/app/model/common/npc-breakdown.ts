@@ -14,7 +14,7 @@ export class NpcBreakdown {
     return this._rows;
   }
 
-  constructor(rows: ListRow[], private lazyData: LazyDataService) {
+  constructor(rows: ListRow[], private lazyData: LazyDataService, private prioritizeHousingSupplier: boolean) {
     // You can skip an item if there's another item requiring it inside the same array
     this.canSkip = rows.reduce((registry, row) => {
       return {
@@ -92,6 +92,10 @@ export class NpcBreakdown {
     // Hardcoded fix for Anna, has a wrong map for some reason.
     if (npcId === 1033785) {
       return 0;
+    }
+    // If it's sold by material supplier and setting is enabled, favor this over anything else.
+    if(this.prioritizeHousingSupplier && npcId === 1008837){
+      return 100;
     }
     const sameNpc = this._rows.find(r => r.npcId === npcId);
     if (sameNpc) {
