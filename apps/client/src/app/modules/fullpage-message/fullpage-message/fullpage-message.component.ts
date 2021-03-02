@@ -7,7 +7,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 })
 export class FullpageMessageComponent {
   @Input()
-  height = 'calc(100vh - 64px)';
+  height = 'calc(100vh - 90px)';
 
   @Input()
   fontSize = '4rem';

@@ -33,15 +33,25 @@
       <a *ngIf="!entry.hidden" (click)="(entry.preventDefault ? $event.preventDefault() : null);onNavLinkClick()"
          [routerLink]="entry.link" [routerLinkActiveOptions]="{exact: true}"
          class="menu-link" nz-menu-item
+         (contextmenu)="contextMenu($event, menu)"
          routerLinkActive="ant-menu-item-selected">
-                  <span>
-                    <ng-container *ngTemplateOutlet="icon;context:{$implicit: entry.icon}"></ng-container>
-                    <span>{{entry.name | translate}}</span>
-                    <ng-container *ngIf="entry.badge">
-                      <ng-container *ngTemplateOutlet="badge;context:{$implicit: entry.badge}"></ng-container>
-                    </ng-container>
-                  </span>
+            <span>
+              <ng-container *ngTemplateOutlet="icon;context:{$implicit: entry.icon}"></ng-container>
+              <span>{{entry.name | translate}}</span>
+              <ng-container *ngIf="entry.badge">
+                <ng-container *ngTemplateOutlet="badge;context:{$implicit: entry.badge}"></ng-container>
+              </ng-container>
+            </span>
       </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item *ngIf="category.name !== 'SIDEBAR.Favorites'; else removeFavorite"
+              (click)="addToFavorites(entry)">{{'SIDEBAR.Add_to_favorites' | translate}}</li>
+          <ng-template #removeFavorite>
+            <li nz-menu-item (click)="removeFromFavorites(entry)">{{'SIDEBAR.Remove_from_favorites' | translate}}</li>
+          </ng-template>
+        </ul>
+      </nz-dropdown-menu>
     </ng-container>
   </li>
 

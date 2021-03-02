@@ -311,6 +311,14 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
+  public get hasAccessToHousingVendors(): boolean {
+    return this.getBoolean('hasAccessToHousingVendors', false);
+  }
+
+  public set hasAccessToHousingVendors(enabled: boolean) {
+    this.setBoolean('hasAccessToHousingVendors', enabled);
+  }
+
   public get ignoredInventories(): string[] {
     return JSON.parse(this.getSetting('ignored-inventories', '[]'));
   }
@@ -477,7 +485,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return+this.getSetting('alarm:volume', '0.5');
+    return +this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {

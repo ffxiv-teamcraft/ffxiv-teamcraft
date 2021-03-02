@@ -16,7 +16,7 @@
   "Edit_amount": "Edit amount",
   "List_fork_in_progress": "Copying the list to your account...",
   "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
-  "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "{{version}} changes",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
@@ -462,6 +462,8 @@
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
     "Import_error": "Error while trying to import settings",
+    "Has_access_to_housing_vendor": "Prioritize housing vendor",
+    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -708,6 +710,14 @@
       "Menu": "Menu",
       "Edit_row_buttons_display": "Edit row buttons display",
       "Reorder_panels": "Reorder panels",
+      "Select_preview_list": "Select list to preview layout",
+      "Hidden_if_empty": "Hidden if empty",
+      "Collapsed_by_default": "Collapsed by default",
+      "No_preview": "No list preview",
+      "Please_pick_list": "Please pick a list using the select box above",
+      "Layouts": "Layouts",
+      "Want_to_learn_more": "Want to learn more about layouts and how they work?",
+      "Open_wiki_page": "Open the layouts system wiki page",
       "ITEMS": {
         "COMMENTS": "Comments",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
@@ -1838,7 +1848,9 @@
     "My_commissions": "My Commissions",
     "Archived_commissions": "Archives",
     "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Currencies": "Currencies",
+    "Add_to_favorites": "Add to favorites",
+    "Remove_from_favorites": "Remove from favorites"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",

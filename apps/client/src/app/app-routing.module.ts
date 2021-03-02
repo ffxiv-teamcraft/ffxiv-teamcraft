@@ -236,6 +236,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
   },
   {
+    path: 'layouts',
+    loadChildren: () => import('./pages/layout-editor-page/layout-editor-page.module').then(m => m.LayoutEditorPageModule)
+  },
+  {
     path: 'extractor',
     loadChildren: () => import('./pages/extractor/extractor.module').then(m => m.ExtractorModule),
     canLoad: [DevGuard]

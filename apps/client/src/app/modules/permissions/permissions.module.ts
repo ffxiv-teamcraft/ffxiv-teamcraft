@@ -11,6 +11,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { UserPickerModule } from '../user-picker/user-picker.module';
 import { FreecompanyPickerModule } from '../freecompany-picker/freecompany-picker.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     TranslateModule,
     AntdSharedModule,
     NzListModule,
+    NzAvatarModule,
     FormsModule,
 
     PipesModule,

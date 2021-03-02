@@ -86,7 +86,7 @@ export class LazyDataService {
       this.load(translate.currentLang as Language);
       if (translate.onLangChange) {
         translate.onLangChange.subscribe((change) => {
-          this.load(change.lang);
+          this.load(change.lang as Language);
         });
       }
 

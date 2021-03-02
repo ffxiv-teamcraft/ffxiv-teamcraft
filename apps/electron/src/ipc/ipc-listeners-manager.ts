@@ -293,6 +293,11 @@ export class IpcListenersManager {
       this.mainWindow.win.webContents.setZoomLevel(currentzoom + 1);
     });
 
+    ipcMain.on('zoom-out', () => {
+      const currentzoom = this.mainWindow.win.webContents.getZoomLevel();
+      this.mainWindow.win.webContents.setZoomLevel(currentzoom - 1);
+    });
+
     ipcMain.on('install-npcap', () => {
       const postInstallCallback = (err) => {
         if (err) {

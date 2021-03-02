@@ -321,6 +321,14 @@ export class NavigationSidebarService {
               hidden: !this.platformService.isDesktop()
             },
             {
+              name: 'LIST_DETAILS.LAYOUT_DIALOG.Layouts',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'format-painter'
+              },
+              link: '/layouts'
+            },
+            {
               name: 'MACRO_TRANSLATION.Title',
               icon: {
                 type: SidebarIconType.ANTD,

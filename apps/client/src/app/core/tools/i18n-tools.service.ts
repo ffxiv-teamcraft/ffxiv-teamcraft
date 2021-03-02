@@ -17,7 +17,7 @@ export class I18nToolsService {
   constructor(private translator: TranslateService) {
     // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
     // No memory leaks :)
-    this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang));
+    this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));
   }
 
   public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {
