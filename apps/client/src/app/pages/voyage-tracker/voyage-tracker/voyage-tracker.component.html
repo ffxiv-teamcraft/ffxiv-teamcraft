@@ -8,15 +8,15 @@
   </div>
 </div>
 <app-page-loader [loading]="isLoading$ | async">
-  <div fxLayout="column" fxLayoutGap="20px">
-    <nz-collapse *ngFor="let server of display$ | async | keyvalue; trackBy:trackByServerKey">
-      <nz-collapse-panel [nzHeader]="serverHeaderTpl">
+  <div fxLayout="column" fxLayoutGap="20px" *ngIf="display$ | async | keyvalue as servers; else noData">
+    <nz-collapse *ngFor="let server of servers; trackBy:trackByServerKey">
+      <nz-collapse-panel [nzHeader]="serverHeaderTpl" [nzActive]="servers.length === 1">
         <ng-template #serverHeaderTpl>
           {{ server.key }}
         </ng-template>
         <div fxLayout="column" fxLayoutGap="20px">
           <nz-collapse *ngFor="let freecompany of server.value; trackBy:trackById">
-            <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="freecompany.active">
+            <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="server.value.length === 1 || freecompany.active">
               <ng-template #freeCompanyHeaderTpl>
                 <div fxLayout="row" fxLayoutAlign="space-between center">
                   <div nz-col nzMd="7">
@@ -56,4 +56,7 @@
       </nz-collapse-panel>
     </nz-collapse>
   </div>
+  <ng-template #noData>
+    <app-fullpage-message height="300px" [subtitle]="'VOYAGE_TRACKER.Please_import_pcap' | translate">{{'VOYAGE_TRACKER.Nothing_to_show' | translate}}</app-fullpage-message>
+  </ng-template>
 </app-page-loader>

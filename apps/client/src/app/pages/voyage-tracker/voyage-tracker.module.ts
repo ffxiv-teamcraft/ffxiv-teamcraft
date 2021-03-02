@@ -17,6 +17,7 @@ import { VesselListComponent } from './voyage-tracker/vessel-list/vessel-list.co
 import { VesselBuildColumnComponent } from './voyage-tracker/vessel-row/vessel-build-column/vessel-build-column.component';
 import { VesselVoyageColumnComponent } from './voyage-tracker/vessel-row/vessel-voyage-column/vessel-voyage-column.component';
 import { FormsModule } from '@angular/forms';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PageLoaderModule,
     NzBreadCrumbModule,
-    NzPopoverModule
+    NzPopoverModule,
+    FullpageMessageModule
   ]
 })
 export class VoyageTrackerModule {

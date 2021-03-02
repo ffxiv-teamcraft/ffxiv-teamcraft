@@ -19,16 +19,16 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit {
   isLoading$ = new BehaviorSubject(false);
 
-  private _airshipMaxRank = new BehaviorSubject(null);
+  private _airshipMaxRank$ = new BehaviorSubject(null);
 
   public get airshipMaxRank$() {
-    return this._airshipMaxRank.asObservable();
+    return this._airshipMaxRank$.asObservable();
   }
 
-  private _submarineMaxRank = new BehaviorSubject(null);
+  private _submarineMaxRank$ = new BehaviorSubject(null);
 
   public get submarineMaxRank$() {
-    return this._submarineMaxRank.asObservable();
+    return this._submarineMaxRank$.asObservable();
   }
 
   private _airshipSectorsTotal = new BehaviorSubject(null);
@@ -37,10 +37,10 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     return this._airshipSectorsTotal.asObservable();
   }
 
-  private _submarineSectorsTotal = new BehaviorSubject(null);
+  private _submarineSectorsTotal$ = new BehaviorSubject(null);
 
   public get submarineSectorsTotal$() {
-    return this._submarineSectorsTotal.asObservable();
+    return this._submarineSectorsTotal$.asObservable();
   }
 
   public display$ = this.freeCompanyWorkshopFacade.workshops$.pipe(
@@ -71,10 +71,10 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
   }
 
   ngOnInit(): void {
-    this._airshipMaxRank.next(this.freeCompanyWorkshopFacade.getAirshipMaxRank());
-    this._submarineMaxRank.next(this.freeCompanyWorkshopFacade.getSubmarineMaxRank());
+    this._airshipMaxRank$.next(this.freeCompanyWorkshopFacade.getAirshipMaxRank());
+    this._submarineMaxRank$.next(this.freeCompanyWorkshopFacade.getSubmarineMaxRank());
     this._airshipSectorsTotal.next(this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount());
-    this._submarineSectorsTotal.next(this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount());
+    this._submarineSectorsTotal$.next(this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount());
   }
 
   getSectorsProgression(sectors: Record<string, SectorExploration>): number {

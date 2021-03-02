@@ -2526,7 +2526,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "1. Load into the Workshop<br>2. In order for the data to import, you must interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },
@@ -2547,6 +2547,8 @@
     "Rank_column": "Rank",
     "Build_column": "Build",
     "Voyage_column": "Voyage",
+    "Nothing_to_show": "Nothing to show",
+    "Please_import_pcap": "Please import your airships and submarines using packet capture",
     "SECTOR_PROGRESSION": {
       "Airship": "Airship",
       "Submersible": "Submersible"

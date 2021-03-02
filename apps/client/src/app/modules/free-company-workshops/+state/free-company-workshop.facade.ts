@@ -101,7 +101,7 @@ export class FreeCompanyWorkshopFacade {
       vesselType: VesselType.AIRSHIP,
       rank: airship.rank,
       status: airship.status,
-      name: airship.name,
+      name: FreeCompanyWorkshopFacade.ISOtoUTF8(airship.name),
       birthdate: airship.birthdate,
       returnTime: airship.returnTime,
       freeCompanyId: fcId,
@@ -164,7 +164,7 @@ export class FreeCompanyWorkshopFacade {
         vesselType: VesselType.SUBMARINE,
         rank: submarine.rank,
         status: submarine.status,
-        name: submarine.name,
+        name: FreeCompanyWorkshopFacade.ISOtoUTF8(submarine.name),
         freeCompanyId: fcId,
         birthdate: submarine.birthdate,
         returnTime: submarine.returnTime,
@@ -221,6 +221,26 @@ export class FreeCompanyWorkshopFacade {
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
               private readonly i18n: I18nToolsService, private readonly l12n: LocalizedDataService,
               private readonly settings: SettingsService) {
+  }
+
+  private static ISOtoUTF8(input: string): string {
+    return input.replace(/Ã©/gmi, 'é')
+      .replace(/Ã©/gmi, 'é')
+      .replace(/Ã¨/gmi, 'è')
+      .replace(/Ã /gmi, 'à')
+      .replace(/Ã¯/gmi, 'ï')
+      .replace(/Ã´/gmi, 'ô')
+      .replace(/Ã§/gmi, 'ç')
+      .replace(/Ãª/gmi, 'ê')
+      .replace(/Ã¹/gmi, 'ù')
+      .replace(/Ã¦/gmi, 'æ')
+      .replace(/Å/gmi, 'œ')
+      .replace(/Ã«/gmi, 'ë')
+      .replace(/Ã¼/gmi, 'ü')
+      .replace(/Ã¢/gmi, 'â')
+      .replace(/â¬/gmi, '€')
+      .replace(/Â©/gmi, '©')
+      .replace(/Â¤/gmi, '¤');
   }
 
   private static toSectorsProgression(unlockedSectors: boolean[], exploredSectors: boolean[]): Record<string, SectorExploration> {
