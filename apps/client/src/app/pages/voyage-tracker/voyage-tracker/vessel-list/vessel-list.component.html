@@ -1,0 +1,32 @@
+<div fxLayout="column">
+  <div fxLayout="row">
+    <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">Name</div>
+    <div fxFlex="0 0 20%" fxLayoutAlign="center center">Return time</div>
+    <div fxFlex="0 0 20%" fxLayoutAlign="center center">Remaining time</div>
+    <div fxFlex="0 0 90px" fxLayoutAlign="center center">Rank</div>
+    <div fxFlex="0 0 120px" fxLayoutAlign="center center">Build</div>
+    <div fxFlex="0" fxLayoutAlign="center center">Voyage</div>
+  </div>
+</div>
+<div class="separator"></div>
+
+<ng-container *ngTemplateOutlet="isAirshipsEmpty ? noVessel : airshipsTpl; context: {$implicit: vesselTypeEnum.AIRSHIP}"></ng-container>
+<ng-template #airshipsTpl>
+  <div class="vessels-list" fxLayout="column" *ngFor="let vessel of airships">
+    <app-vessel-row [vessel]="vessel" [maxRank]="airshipMaxRank"></app-vessel-row>
+  </div>
+</ng-template>
+
+<div class="separator"></div>
+<ng-container *ngTemplateOutlet="isSubmarinesEmpty ? noVessel : submarinesTpl; context: {$implicit: vesselTypeEnum.SUBMARINE}"></ng-container>
+<ng-template #submarinesTpl>
+  <div class="vessels-list" fxLayout="column" *ngFor="let vessel of submarines">
+    <app-vessel-row [vessel]="vessel" [maxRank]="submarineMaxRank"></app-vessel-row>
+  </div>
+</ng-template>
+
+<ng-template #noVessel let-type>
+  <div class="no-vessel" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    {{ getNoVesselMessageByVesselType(type) }}
+  </div>
+</ng-template>

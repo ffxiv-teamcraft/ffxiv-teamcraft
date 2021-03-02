@@ -7,7 +7,9 @@
   "Pick_a_rotation": "Pick a rotation",
   "Pick_a_recipe": "Pick a recipe",
   "Pick_an_item": "Pick an item",
+  "FC": "Free Company",
   "FC_name": "Free Company Name",
+  "FC_rank": "Free Company Rank",
   "Saving_in_database": "Saving data on server",
   "See_on_map": "See on map",
   "No_known_coordinates": "No known coordinates",
@@ -2521,5 +2523,109 @@
     "Total_per_venture": "Total per venture",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "Pick one of your retainers"
+  },
+  "FREE_COMPANY_WORKSHOPS": {
+    "Import_using_pcap": "Import using packet capture",
+    "Import_from_pcap_notice": "1. Load into the Workshop<br>2. In order for the data to import, you must interact with each submarine or airship using the management interface",
+    "Airships": "Airships",
+    "Submersibles": "Submersibles"
+  },
+  "VOYAGE_TRACKER": {
+    "Title": "Voyage tracker",
+    "Import_using_pcap": "Import using packet capture",
+    "Voyage_completion_alarm": "Voyage completion alarm",
+    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
+    "Voyage_complete": "Voyage complete",
+    "No_airship": "No airship",
+    "No_submersible": "No submersible",
+    "Sectors_discovered": "Sectors discovered",
+    "Delete_free_company": "Delete the Free Company",
+    "Name_column": "Name",
+    "Return_time_column": "Return time",
+    "Remaining_time_column": "Remaining time",
+    "Rank_column": "Rank",
+    "Build_column": "Build",
+    "Voyage_column": "Voyage",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Airship",
+      "Submersible": "Submersible"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Voyage"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Condition"
+    },
+    "STATS_DETAILS": {
+      "Title": "Stats"
+    },
+    "STATS": {
+      "Surveillance": "Surveillance",
+      "Retrieval": "Retrieval",
+      "Speed": "Speed",
+      "Range": "Range",
+      "Favor": "Favor"
+    }
+  },
+  "AIRSHIP": {
+    "CLASS": {
+      "BRONCO": {
+        "Abbreviation": "B"
+      },
+      "INVINCIBLE": {
+        "Abbreviation": "i"
+      },
+      "ENTERPRISE": {
+        "Abbreviation": "E"
+      },
+      "INVINCIBLE_II": {
+        "Abbreviation": "i2"
+      },
+      "ODYSSEY": {
+        "Abbreviation": "O"
+      },
+      "TATANORA": {
+        "Abbreviation": "T"
+      },
+      "VILTGANCE": {
+        "Abbreviation": "V"
+      }
+    }
+  },
+  "SUBMARINE": {
+    "CLASS": {
+      "SHARK": {
+        "Abbreviation": "S"
+      },
+      "UNKIU": {
+        "Abbreviation": "U"
+      },
+      "WHALE": {
+        "Abbreviation": "W"
+      },
+      "COELACANTH": {
+        "Abbreviation": "C"
+      },
+      "SYLDRA": {
+        "Abbreviation": "Y"
+      },
+      "MODIFIED_SHARK": {
+        "Abbreviation": "S+"
+      },
+      "MODIFIED_UNKIU": {
+        "Abbreviation": "U+"
+      },
+      "MODIFIED_WHALE": {
+        "Abbreviation": "W+"
+      },
+      "MODIFIED_COELACANTH": {
+        "Abbreviation": "C+"
+      },
+      "MODIFIED_SYLDRA": {
+        "Abbreviation": "Y+"
+      }
+    }
   }
 }

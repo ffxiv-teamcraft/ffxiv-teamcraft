@@ -792,6 +792,14 @@ export class SettingsService {
     this.setBoolean('retainerTaskAlarms', enabled);
   }
 
+  public get vesselVoyageAlarms(): boolean {
+    return this.getBoolean('vesselVoyageAlarms', false);
+  }
+
+  public set vesselVoyageAlarms(enabled: boolean) {
+    this.setBoolean('vesselVoyageAlarms', enabled);
+  }
+
   public get hideCompletedLogEntries(): boolean {
     return this.getBoolean('hideCompletedLogEntries', false);
   }

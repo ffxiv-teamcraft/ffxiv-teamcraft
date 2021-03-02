@@ -23,6 +23,7 @@ import { InventoryEventType } from '../../model/user/inventory/inventory-event-t
 import { HttpClient } from '@angular/common/http';
 import { ItemInfo } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -83,7 +84,7 @@ export class PacketCaptureTrackerService {
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataService,
-              private http: HttpClient) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private http: HttpClient) {
     this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>('https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json')
       .subscribe(constants => this.constants = constants);
     this.inventory$ = this.userInventoryService.inventory$.pipe(
@@ -338,6 +339,60 @@ export class PacketCaptureTrackerService {
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
       this.userInventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
+    });
+
+    this.ipc.freeCompanyId$.pipe(
+      distinctUntilChanged()
+    ).subscribe((freeCompanyId) => {
+      this.freeCompanyWorkshopFacade.setCurrentFreeCompanyId(freeCompanyId);
+    });
+
+    this.freeCompanyWorkshopFacade.vesselPartUpdate$.pipe(
+      debounceBufferTime(2500),
+      tap((packets) => {
+        packets.forEach((packet) => {
+          this.freeCompanyWorkshopFacade.updateVesselParts(packet);
+        });
+      }),
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe((packets  ) => {
+      console.log('Vessel parts updated');
+    });
+
+    this.freeCompanyWorkshopFacade.vesselTimers$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([data]) => {
+      this.freeCompanyWorkshopFacade.updateVesselTimers(data);
+    });
+
+    this.freeCompanyWorkshopFacade.airshipStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([{ slot, vessel }]) => {
+      this.freeCompanyWorkshopFacade.updateAirshipStatus(slot, vessel);
+    });
+
+    this.freeCompanyWorkshopFacade.airshipStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freeCompanyWorkshopFacade.updateAirshipStatusList(vessels);
+    });
+
+    this.freeCompanyWorkshopFacade.submarineStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freeCompanyWorkshopFacade.updateSubmarineStatusList(vessels);
+    });
+
+    this.freeCompanyWorkshopFacade.vesselProgressionStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([progression]) => {
+      this.freeCompanyWorkshopFacade.updateVesselProgressionStatus(progression);
     });
   }
 

@@ -73,6 +73,14 @@ export class IpcService {
     );
   }
 
+  public get freeCompanyId$(): Observable<string> {
+    return this.packets$.pipe(
+      ofMessageType('freeCompanyInfo'),
+      toIpcData(),
+      map(packet => packet.freeCompanyId.toString())
+    );
+  }
+
   public get marketTaxRatePackets$() {
     return this.packets$.pipe(
       ofMessageType('resultDialog', 'marketTaxRates'),
@@ -136,6 +144,34 @@ export class IpcService {
     );
   }
 
+  public get submarineProgressionStatusPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('submarineProgressionStatus'),
+      toIpcData()
+    );
+  }
+
+  public get submarinesStatusListPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('submarineStatusList'),
+      toIpcData()
+    );
+  }
+
+  public get airshipStatusPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('airshipStatus'),
+      toIpcData()
+    );
+  }
+
+  public get airshipStatusListPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('airshipStatusList'),
+      toIpcData()
+    );
+  }
+
   public get updatePositionHandlerPackets$() {
     return this.packets$.pipe(
       ofMessageType('updatePositionHandler'),
@@ -195,6 +231,13 @@ export class IpcService {
   public get eventPlay4Packets$() {
     return this.packets$.pipe(
       ofMessageType('eventPlay4'),
+      toIpcData()
+    );
+  }
+
+  public get eventPlay8Packets$() {
+    return this.packets$.pipe(
+      ofMessageType('eventPlay8'),
       toIpcData()
     );
   }

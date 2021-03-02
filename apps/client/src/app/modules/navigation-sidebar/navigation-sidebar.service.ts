@@ -312,6 +312,15 @@ export class NavigationSidebarService {
               link: '/retainer-ventures'
             },
             {
+              name: 'VOYAGE_TRACKER.Title',
+              icon: {
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE905;')
+              },
+              link: '/voyage-tracker',
+              hidden: !this.platformService.isDesktop()
+            },
+            {
               name: 'LIST_DETAILS.LAYOUT_DIALOG.Layouts',
               icon: {
                 type: SidebarIconType.ANTD,

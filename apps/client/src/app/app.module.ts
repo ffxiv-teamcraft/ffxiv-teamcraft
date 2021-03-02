@@ -114,6 +114,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
 import { APP_INITIALIZERS } from './app-initializers';
+import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -243,6 +244,7 @@ const nzConfig: NzConfig = {
 
     InventoryModule,
     EorzeaModule,
+    FreeCompanyWorkshopsModule,
 
     HttpClientModule,
 
