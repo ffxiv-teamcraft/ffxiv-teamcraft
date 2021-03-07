@@ -32,7 +32,8 @@
                         fxLayoutAlign="space-between center"
                         nz-menu-item>
                       <div>{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})</div>
-                      <app-db-button type="fishing-spot" [id]="spot.id"></app-db-button>
+                      <app-db-button type="fishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 0"></app-db-button>
+                      <app-db-button type="spearfishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 1"></app-db-button>
                     </li>
                   </ng-container>
                 </ul>
