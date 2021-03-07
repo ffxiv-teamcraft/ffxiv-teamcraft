@@ -1,21 +1,22 @@
 {
   "Quests": "任务",
   "Facebook_notice": "Facebook登录已不可用，您可以通过\"重置密码\"系统添加密码到您的帐户，也可以通过在 Discord 上询问Miu 。",
-  "Search_placeholder": "{{type}}名",
   "Pick_a_list": "选择清单",
   "Pick_a_user": "选择用户",
   "Pick_a_fc": "选择部队",
   "Pick_a_rotation": "选择手法",
   "Pick_a_recipe": "选择配方",
   "Pick_an_item": "选择物品",
+  "FC": "Free Company",
   "FC_name": "部队名称",
+  "FC_rank": "Free Company Rank",
   "Saving_in_database": "正在保存数据到服务器",
   "See_on_map": "查看地图",
   "No_known_coordinates": "没有已知坐标",
   "Edit_amount": "编辑数量",
   "List_fork_in_progress": "正在将清单复制到你的账户",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
-  "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
+  "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "{{version}} 更新",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
   "Selection": "Selection",
@@ -50,7 +51,7 @@
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
   "Find_us_on_twitter": "在 Twitter 上关注我们",
-  "Join_discord_server": "加入 Discord 服务器",
+  "Join_discord_server": "Join our discord server",
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
@@ -172,7 +173,10 @@
     "Change": "修改",
     "Dirty_changes": "有尚未保存的修改",
     "Never": "从不",
-    "Festival": "季节活动期间限定"
+    "Festival": "季节活动期间限定",
+    "Back": "Back",
+    "Support_us_remove_ads": "Support us on patreon to remove ads",
+    "Support_us": "Support us"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -311,14 +315,6 @@
   "Import": "导入",
   "Favorites": "收藏",
   "Favorite": "收藏",
-  "filters/ilvl": "物品等级",
-  "filters/lvl": "等级要求",
-  "filters/craft_lvl": "配方等级",
-  "filters/worn_by": "装备职业",
-  "filters/crafted_by": "制作职业",
-  "filters/item_category": "物品类型",
-  "filters/stats": "属性过滤器",
-  "filters/bonuses": "属性奖励过滤器",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
   "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
@@ -469,6 +465,8 @@
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
     "Import_error": "Error while trying to import settings",
+    "Has_access_to_housing_vendor": "Prioritize housing vendor",
+    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -715,6 +713,14 @@
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
       "Reorder_panels": "重排面板",
+      "Select_preview_list": "Select list to preview layout",
+      "Hidden_if_empty": "Hidden if empty",
+      "Collapsed_by_default": "Collapsed by default",
+      "No_preview": "No list preview",
+      "Please_pick_list": "Please pick a list using the select box above",
+      "Layouts": "Layouts",
+      "Want_to_learn_more": "Want to learn more about layouts and how they work?",
+      "Open_wiki_page": "Open the layouts system wiki page",
       "ITEMS": {
         "COMMENTS": "注释",
         "COPY_NAME_NOT_FAVORITE": "非默认的复制模式",
@@ -1256,7 +1262,6 @@
   "SEARCH_INTRO": {
     "Slogan": "制作，分享，贡献",
     "Lists_created_counter": "FFXIV Teamcraft 上现有 {{amount}} 个清单",
-    "Support_patreon": "在 Patreon 上支持我们",
     "Donation_button": "进行一次性捐赠",
     "Buy_merch": "购买 Teamcraft 周边",
     "Features_header": "开始吧！",
@@ -1308,12 +1313,6 @@
   },
   "LOADING_SCREEN": {
     "Loading_data": "正在载入物品、技能和其它信息"
-  },
-  "GIVEAWAY": {
-    "Discord_1K": {
-      "Title": "庆祝 1000 Discord 成员！",
-      "Description": "点击这里前往注册庆祝 Discord 1000 成员的抽奖，赢取《FINAL FANTASY XIV: Shadowbringers Collector's Edition》"
-    }
   },
   "CUSTOM_ITEMS": {
     "Title": "自定义物品",
@@ -1409,24 +1408,6 @@
       "Very_common": "非常常见",
       "Common": "常见",
       "Rare": "稀有"
-    }
-  },
-  "SUPPORT_US": {
-    "Title": "帮助我们！",
-    "Communication_title": "宣传本项目",
-    "Communication_description": "通过做视频、论坛发帖、发微博等等让大家都知道这个工具并来这里分享手法、清单，能够极大地帮助Teamcraft发展。\n\n我们甚至为你准备了一个宏，所以您可以到处去喊你有多爱这个工具！\n",
-    "Contribute_title": "为项目出一份力",
-    "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
-    "Patreon_title": "在 Patreon 上支持我们",
-    "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
-    "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
-    "Already_supporting": "已经是一个patreon赞助者？请确保您将您的帐户在设置中链接到怕patreon",
-    "PATREON_BENEFITS": {
-      "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
-      "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
-      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
-      "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
-      "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     }
   },
   "DB": {
@@ -1797,10 +1778,34 @@
     "Sort_asc": "升序",
     "Sort_desc": "降序",
     "Add_stat_filter": "添加属性过滤器",
-    "Add_bonus_stat_filter": "添加奖励属性过滤器",
-    "Search_tip": "在输入框中输入：“patch:xx” 可以查看某个版本的更新内容，如：patch:5.01",
-    "Stats_exclude_tip": "设置最小值为 -1 可以搜索没有该值的物品",
-    "Bonuses_exclude_tip": "设置最小值为 -1 可以搜索没有该值的物品",
+    "Job": "Job",
+    "Class": "Class",
+    "Land": "DoL",
+    "Hand": "DoH",
+    "Type": "Type",
+    "Any": "Any",
+    "Item_type": "Item Type",
+    "Patch": "Patch",
+    "Language": "Language",
+    "Share": "Share",
+    "Placeholder": "Search for something awesome",
+    "Hide_filters": "Hide Additional Filters",
+    "Show_filters": "Show Additional Filters",
+    "Item_type_placeholder": "Select Item Type",
+    "Item_level": "Item Level",
+    "Required_level": "Required Level",
+    "Recipe_level": "Recipe Level",
+    "Crafted_by": "Crafted by",
+    "Worn_by": "Worn by",
+    "Gear_stats": "Gear Stats",
+    "Consumable_stats": "Consumable Stats",
+    "No_stats_filters": "Woops, nothing's here",
+    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Stat": "Stat",
+    "Range": "Range",
+    "Exclude": "Exclude",
+    "Select_stat": "Select a stat",
+    "Level": "Level",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
@@ -1821,7 +1826,9 @@
     "My_commissions": "我的委托",
     "Archived_commissions": "归档",
     "Leveling": "升级",
-    "Currencies": "货币"
+    "Currencies": "货币",
+    "Add_to_favorites": "Add to favorites",
+    "Remove_from_favorites": "Remove from favorites"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -2004,6 +2011,8 @@
     "Create_commission": "为此配装创建委托",
     "Value_for_next": "下一临界值",
     "Value_for_previous": "上一临界值",
+    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -2494,5 +2503,135 @@
     "Total_per_venture": "Total per venture",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "选择一名雇员"
+  },
+  "PATREON": {
+    "By_supporting_us": "By supporting us on patreon, you get:",
+    "No_ads": "No more ads inside the topbar",
+    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
+    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
+    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
+    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
+    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
+    "Already_supporter": "Already a supporter?",
+    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+  },
+  "SUPPORT_US": {
+    "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
+    "Already_supporting": "已经是一个patreon赞助者？请确保您将您的帐户在设置中链接到怕patreon",
+    "PATREON_BENEFITS": {
+      "No_ads": "Ads-free Teamcraft experience",
+      "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
+      "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
+      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
+      "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
+      "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
+    },
+    "Select_retainer": "Pick one of your retainers"
+  },
+  "FREE_COMPANY_WORKSHOPS": {
+    "Import_using_pcap": "Import using packet capture",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Airships": "Airships",
+    "Submersibles": "Submersibles"
+  },
+  "VOYAGE_TRACKER": {
+    "Title": "Voyage tracker",
+    "Import_using_pcap": "Import using packet capture",
+    "Voyage_completion_alarm": "Voyage completion alarm",
+    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
+    "Voyage_complete": "Voyage complete",
+    "No_airship": "No airship",
+    "No_submersible": "No submersible",
+    "Sectors_discovered": "Sectors discovered",
+    "Delete_free_company": "Delete the Free Company",
+    "Name_column": "Name",
+    "Return_time_column": "Return time",
+    "Remaining_time_column": "Remaining time",
+    "Rank_column": "Rank",
+    "Build_column": "Build",
+    "Voyage_column": "Voyage",
+    "Nothing_to_show": "Nothing to show",
+    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Airship",
+      "Submersible": "Submersible"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Voyage"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Condition"
+    },
+    "STATS_DETAILS": {
+      "Title": "Stats"
+    },
+    "STATS": {
+      "Surveillance": "Surveillance",
+      "Retrieval": "Retrieval",
+      "Speed": "Speed",
+      "Range": "Range",
+      "Favor": "Favor"
+    }
+  },
+  "AIRSHIP": {
+    "CLASS": {
+      "BRONCO": {
+        "Abbreviation": "B"
+      },
+      "INVINCIBLE": {
+        "Abbreviation": "i"
+      },
+      "ENTERPRISE": {
+        "Abbreviation": "E"
+      },
+      "INVINCIBLE_II": {
+        "Abbreviation": "i2"
+      },
+      "ODYSSEY": {
+        "Abbreviation": "O"
+      },
+      "TATANORA": {
+        "Abbreviation": "T"
+      },
+      "VILTGANCE": {
+        "Abbreviation": "V"
+      }
+    }
+  },
+  "SUBMARINE": {
+    "CLASS": {
+      "SHARK": {
+        "Abbreviation": "S"
+      },
+      "UNKIU": {
+        "Abbreviation": "U"
+      },
+      "WHALE": {
+        "Abbreviation": "W"
+      },
+      "COELACANTH": {
+        "Abbreviation": "C"
+      },
+      "SYLDRA": {
+        "Abbreviation": "Y"
+      },
+      "MODIFIED_SHARK": {
+        "Abbreviation": "S+"
+      },
+      "MODIFIED_UNKIU": {
+        "Abbreviation": "U+"
+      },
+      "MODIFIED_WHALE": {
+        "Abbreviation": "W+"
+      },
+      "MODIFIED_COELACANTH": {
+        "Abbreviation": "C+"
+      },
+      "MODIFIED_SYLDRA": {
+        "Abbreviation": "Y+"
+      }
+    }
   }
 }
