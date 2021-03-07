@@ -5,7 +5,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 import { CommentTargetType } from './comment-target-type';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Injectable()

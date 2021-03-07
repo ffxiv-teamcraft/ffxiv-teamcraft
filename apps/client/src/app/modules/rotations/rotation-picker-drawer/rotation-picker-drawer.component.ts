@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RotationsFacade } from '../+state/rotations.facade';
 import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { RotationFoldersFacade } from '../../rotation-folders/+state/rotation-folders.facade';

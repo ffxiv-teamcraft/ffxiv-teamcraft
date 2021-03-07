@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionDisplayRow } from '../permission-display-row';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { filter, first, map, switchMap } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import { combineLatest, of, ReplaySubject, Subject } from 'rxjs';

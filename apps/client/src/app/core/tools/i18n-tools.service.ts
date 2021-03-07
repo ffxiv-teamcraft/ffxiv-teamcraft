@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';

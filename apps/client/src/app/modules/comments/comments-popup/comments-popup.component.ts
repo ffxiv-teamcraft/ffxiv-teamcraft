@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommentTargetType } from '../comment-target-type';
 import { CommentsService } from '../comments.service';
 import { ResourceComment } from '../resource-comment';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { shareReplay } from 'rxjs/operators';
 import { AbstractNotification } from '../../../core/notification/abstract-notification';

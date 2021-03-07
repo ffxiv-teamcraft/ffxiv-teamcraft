@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { Favorites } from '../../../model/other/favorites';

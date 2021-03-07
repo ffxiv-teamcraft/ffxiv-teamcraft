@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
 import { filter, first, map, shareReplay, takeUntil } from 'rxjs/operators';

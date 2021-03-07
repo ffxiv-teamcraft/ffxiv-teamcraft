@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';

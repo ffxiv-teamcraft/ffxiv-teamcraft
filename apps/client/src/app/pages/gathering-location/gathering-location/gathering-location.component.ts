@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';

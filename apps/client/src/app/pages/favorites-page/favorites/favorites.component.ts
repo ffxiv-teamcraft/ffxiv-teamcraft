@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';

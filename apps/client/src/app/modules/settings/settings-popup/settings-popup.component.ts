@@ -22,7 +22,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
 import { from, Subscription } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
 import { PatreonService } from '../../../core/patreon/patreon.service';
