@@ -164,10 +164,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/voyage-tracker/voyage-tracker.module').then(m => m.VoyageTrackerModule)
   },
   {
-    path: 'support-us',
-    loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
-  },
-  {
     path: 'db',
     loadChildren: () => import('./pages/db/db.module').then(m => m.DbModule)
   },

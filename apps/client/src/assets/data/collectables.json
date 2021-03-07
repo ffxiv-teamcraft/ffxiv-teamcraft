@@ -32671,6 +32671,166 @@
       "scrip": 63
     }
   },
+  "31224": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31225": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31226": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31227": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31228": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31229": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31230": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31231": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7700,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
   "31652": {
     "collectable": 1,
     "level": 80,
@@ -33149,6 +33309,966 @@
       "rating": 152,
       "exp": 39,
       "scrip": 16
+    }
+  },
+  "31913": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31914": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31915": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31916": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31917": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31918": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31919": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31920": {
+    "hwd": true,
+    "level": 20,
+    "reward": 28063,
+    "base": {
+      "rating": 50,
+      "exp": 60480,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 107430,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 153534,
+      "scrip": 5
+    }
+  },
+  "31921": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31922": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31923": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31924": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31925": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31926": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31927": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31928": {
+    "hwd": true,
+    "level": 40,
+    "reward": 28063,
+    "base": {
+      "rating": 90,
+      "exp": 233729,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 459534,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 928236,
+      "scrip": 9
+    }
+  },
+  "31929": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31930": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31931": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31932": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31933": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31934": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31935": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31936": {
+    "hwd": true,
+    "level": 60,
+    "reward": 28063,
+    "base": {
+      "rating": 300,
+      "exp": 1285456,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1420821,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1771387,
+      "scrip": 15
+    }
+  },
+  "31937": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31938": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31939": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31940": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31941": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31942": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31943": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31944": {
+    "hwd": true,
+    "level": 70,
+    "reward": 28063,
+    "base": {
+      "rating": 480,
+      "exp": 2263139,
+      "scrip": 18
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 3123696,
+      "scrip": 20
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4466794,
+      "scrip": 22
+    }
+  },
+  "31945": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31946": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31947": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31948": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31949": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31950": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31951": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31952": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 1350,
+      "exp": 4877967,
+      "scrip": 31
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5365763,
+      "scrip": 47
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5853560,
+      "scrip": 63
+    }
+  },
+  "31953": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31954": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31955": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31956": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31957": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31958": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31959": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
+    }
+  },
+  "31960": {
+    "hwd": true,
+    "level": 80,
+    "reward": 28063,
+    "base": {
+      "rating": 5800,
+      "exp": 4877967,
+      "scrip": 66
+    },
+    "mid": {
+      "rating": 6500,
+      "exp": 5365763,
+      "scrip": 72
+    },
+    "high": {
+      "rating": 7400,
+      "exp": 5853560,
+      "scrip": 80
     }
   },
   "32970": {

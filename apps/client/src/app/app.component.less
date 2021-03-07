@@ -13,11 +13,48 @@
   }
 }
 
-.nav-buttons {
-  position: absolute;
-  top: 32px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.sidebar-container {
+  height: calc(~"100vh - @{layout-header-height} - 48px");
+
+  .menu-categories-container {
+    overflow: hidden;
+
+    .menu-categories {
+      overflow-y: auto;
+    }
+  }
+}
+
+.back-button {
+  width: 100%;
+  padding: 8px 5px;
+  background: var(--primary-color);
+  border: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.patreon-button {
+  width: 100%;
+  background-color: #F96854;
+  text-align: center;
+  max-height: 67px;
+  color: var(--topbar-color);
+  padding: 5px 3px;
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+
+  img.patreon-logo {
+    width: 24px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .svg-icon {
@@ -75,6 +112,9 @@
     cursor: pointer;
     text-decoration: none;
     color: white;
+    min-width: 40px;
+    line-height: 14px;
+    text-align: center;
   }
 
   .language-swap {
@@ -83,7 +123,7 @@
 
   .tutorial-start {
     cursor: pointer;
-    margin-right: 10px;
+    margin: 0 10px;
   }
 }
 
@@ -93,9 +133,13 @@
 
 .user-menu {
   min-width: 140px;
-  @media @mobile {
+  @media screen and (max-width: 960px) {
     min-width: 0;
   }
+}
+
+.clock {
+  margin-right: 5px;
 }
 
 :host ::ng-deep {
@@ -113,7 +157,7 @@
 
   .sider {
     .ant-layout-sider-children {
-      overflow-y: auto;
+      overflow: hidden;
     }
   }
 
@@ -133,6 +177,7 @@
 .content-container {
   margin-top: @layout-header-height;
   height: 100%;
+  position: relative;
 
   &.overlay {
     margin-top: 0;
@@ -153,10 +198,6 @@
       content: '\e64e';
     }
   }
-}
-
-.flex-container {
-  min-height: 100%;
 }
 
 .bottom-buttons {

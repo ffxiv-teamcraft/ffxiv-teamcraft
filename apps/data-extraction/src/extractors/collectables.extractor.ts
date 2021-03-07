@@ -72,7 +72,7 @@ export class CollectablesExtractor extends AbstractExtractor {
     ])
       .subscribe(([hwdCompleteFetch, collectablesCompleteFetch]) => {
         hwdCompleteFetch.forEach(supply => {
-          for (let i = 0; i < 16; i++) {
+          for (let i = 0; i < 32; i++) {
             if (!supply[`ItemTradeIn${i}TargetID`]) {
               continue;
             }

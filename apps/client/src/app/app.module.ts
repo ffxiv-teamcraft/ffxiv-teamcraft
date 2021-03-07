@@ -115,6 +115,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
 import { APP_INITIALIZERS } from './app-initializers';
 import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
+import { AdsModule } from './modules/ads/ads.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -288,7 +289,8 @@ const nzConfig: NzConfig = {
     NzAvatarModule,
     NzSpinModule,
     NzAlertModule,
-    NavigationSidebarModule
+    NavigationSidebarModule,
+    AdsModule
   ],
   bootstrap: [AppComponent]
 })

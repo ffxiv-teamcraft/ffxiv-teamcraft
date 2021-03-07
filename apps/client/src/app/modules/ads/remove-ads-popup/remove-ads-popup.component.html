@@ -1,0 +1,30 @@
+<p>
+  <b>{{'PATREON.By_supporting_us' | translate}}</b>
+</p>
+<ul>
+  <li>{{'PATREON.No_ads' | translate}}.<br>
+    <i>{{'PATREON.Starting_at_X' | translate: {monthly: 1, yearly: 10.8} }}</i></li>
+  <li>{{'PATREON.Exclusive_discord_role' | translate}}.<br>
+    <i>{{'PATREON.Starting_at_X' | translate: {monthly: 1, yearly: 10.8} }}</i></li>
+  <li>{{'PATREON.Your_name_in_loading_screen' | translate}}.<br>
+    <i>{{'PATREON.Starting_at_X' | translate: {monthly: 10, yearly: 108} }}</i></li>
+  <li>{{'PATREON.Goodies' | translate}}.<br>
+    <i>{{'PATREON.Starting_at_X' | translate: {monthly: 5, yearly: 54} }}</i></li>
+</ul>
+
+<p>{{'PATREON.Footer_text' | translate}}</p>
+
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <a href="https://www.patreon.com/bePatron?u=702160" class="patreon-widget" target="_blank">
+    <img src="./assets/become_a_patron_button@2x.png" alt="Become a patron">
+  </a>
+
+  <nz-divider [nzText]="'PATREON.Already_supporter' | translate"></nz-divider>
+
+  <p>{{'PATREON.Disable_ads_explanation' | translate}}</p>
+
+  <button (click)="patreonOauth()" nz-button  nzType="primary">
+    {{'SETTINGS.Connect_with_patreon' | translate}}
+  </button>
+</div>

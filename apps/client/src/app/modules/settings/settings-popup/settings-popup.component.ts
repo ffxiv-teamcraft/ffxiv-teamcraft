@@ -25,6 +25,7 @@ import { NavigationSidebarService } from '../../navigation-sidebar/navigation-si
 import { Observable } from 'rxjs/Observable';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
+import { PatreonService } from '../../../core/patreon/patreon.service';
 
 @Component({
   selector: 'app-settings-popup',
@@ -147,7 +148,7 @@ export class SettingsPopupComponent {
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryFacade,
               private lazyData: LazyDataService, private mappy: MappyReporterService,
-              private navigationSidebarService: NavigationSidebarService) {
+              private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService) {
 
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
@@ -355,33 +356,7 @@ export class SettingsPopupComponent {
   }
 
   patreonOauth(): void {
-    if (this.platform.isDesktop()) {
-      this.ipc.once('oauth-reply', (event, code) => {
-        this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-oauth?code=${code}&redirect_uri=http://localhost`)
-          .pipe(
-            switchMap((response: any) => {
-              return this.authFacade.user$.pipe(
-                first(),
-                map(user => {
-                  user.patreonToken = response.access_token;
-                  user.patreonRefreshToken = response.refresh_token;
-                  user.lastPatreonRefresh = Date.now();
-                  return user;
-                }),
-                tap(updatedUser => {
-                  this.authFacade.updateUser(updatedUser);
-                  this.message.success(this.translate.instant('Patreon_login_success'));
-                  this.router.navigate(['/']);
-                })
-              );
-            })
-          ).subscribe();
-      });
-      this.ipc.send('oauth', 'patreon.com');
-    } else {
-      window.open(`https://www.patreon.com/oauth2/authorize?response_type=code&client_id=MMmud8pCDGgQkhd8H2g_SpRWgzvCYwyawjSqmvjl_pjOA7Yco6Cp-Ljv8InmGMUE&redirect_uri=${
-        window.location.protocol}//${window.location.host}/patreon-redirect&scope=identity`);
-    }
+    this.patreonService.patreonOauth();
   }
 
   resetPassword(): void {
