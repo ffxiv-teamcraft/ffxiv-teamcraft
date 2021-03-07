@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="display-container">
+<div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px" class="display-container">
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
     <ng-container *ngIf="equipmentPiece; else emptySlot">
       <app-item-icon [itemId]="equipmentPiece.itemId" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
@@ -26,7 +26,7 @@
       </ng-container>
       <ng-template #emptySlotName>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
     </div>
-    <div fxLayout="row" class="materias" *ngIf="equipmentPiece">
+    <div fxLayout="row" class="materias" *ngIf="equipmentPiece && propertyName !== 'crystal'">
       <ng-container *ngIf="verbose; else compactSlots">
         <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let materia of equipmentPiece.materias; let i = index;">
