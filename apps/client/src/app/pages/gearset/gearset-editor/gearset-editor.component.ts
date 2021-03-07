@@ -17,7 +17,6 @@ import { MateriasPopupComponent } from '../materias-popup/materias-popup.compone
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -40,7 +39,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     ilvlMin: [460],
     ilvlMax: [999],
     elvlMin: [1],
-    elvlMax: [80]
+    elvlMax: [environment.maxLevel]
   });
 
   categoriesOrder: string[] = [
@@ -222,7 +221,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                   equipmentPiece: {
                     itemId: item.ID,
                     hq: item.CanBeHq === 1,
-                    materias: this.getMaterias(gearset, item, propertyName),
+                    materias: this.getMaterias(item, propertyName),
                     materiaSlots: item.MateriaSlotCount,
                     canOvermeld: item.IsAdvancedMeldingPermitted === 1
                   }
@@ -406,8 +405,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }
     const cacheClone = { ...this.materiaCache };
     Object.entries<any>(cacheClone).forEach(([key, entry]) => {
-      // Delete all cache entries older than one month.
-      if (Date.now() - entry.date > 30 * 24 * 3600 * 100) {
+      // Delete all cache entries older than one week.
+      if (Date.now() - entry.date > 7 * 24 * 3600 * 100) {
         delete cacheClone[key];
       }
     });
@@ -419,9 +418,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
-  private getMaterias(gearset: TeamcraftGearset, item: any, propertyName: string): number[] {
-    if (this.materiaCache[`${gearset.$key}:${item.ID}:${propertyName}`]) {
-      return this.materiaCache[`${gearset.$key}:${item.ID}:${propertyName}`].materias;
+  private getMaterias(item: any, propertyName: string): number[] {
+    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
+      return this.materiaCache[`${item.ID}:${propertyName}`].materias;
     }
     if (item.MateriaSlotCount > 0) {
       if (item.IsAdvancedMeldingPermitted === 1) {
