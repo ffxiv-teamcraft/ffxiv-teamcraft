@@ -16,10 +16,10 @@ import {
   LoadGearsetProgression,
   LoadGearsets,
   PureUpdateGearset,
-  UpdateGearset,
-  UpdateGearsetIndexes,
   SaveGearsetProgression,
-  SyncFromPcap
+  SyncFromPcap,
+  UpdateGearset,
+  UpdateGearsetIndexes
 } from './gearsets.actions';
 import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, mergeMap, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -259,6 +259,7 @@ export class GearsetsEffects {
   updateGearset$ = this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
     debounceTime(500),
+    filter(action => !action.isReadonly),
     switchMap(action => {
       return this.gearsetService.update(action.key, action.gearset);
     })

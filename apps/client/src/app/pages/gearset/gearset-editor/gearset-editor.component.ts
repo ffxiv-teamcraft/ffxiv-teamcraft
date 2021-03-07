@@ -65,6 +65,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
 
+  public isReadonly$ = this.gearsetsFacade.selectedGearsetPermissionLevel$.pipe(
+    map(permissionLevel => permissionLevel < PermissionLevel.WRITE)
+  );
+
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
       return gearset && !gearset.notFound;
@@ -327,8 +331,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     localStorage.setItem('materias', JSON.stringify(cache));
   }
 
-  permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
-
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
@@ -376,13 +378,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         this.submitFilters();
       }
     });
-    this.permissionLevel$.pipe(
-      takeUntil(this.onDestroy$)
-    ).subscribe(level => {
-      if (level < PermissionLevel.WRITE) {
-        this.router.navigate(['/gearsets']);
-      }
-    });
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
@@ -418,6 +413,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
+  saveAsNew(gearset: TeamcraftGearset): void {
+    gearset.fromSync = false;
+    this.gearsetsFacade.createGearset(gearset);
+  }
+
   private getMaterias(item: any, propertyName: string): number[] {
     if (this.materiaCache[`${item.ID}:${propertyName}`]) {
       return this.materiaCache[`${item.ID}:${propertyName}`].materias;
@@ -432,8 +432,27 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
+    if (gearset[property]) {
+      this.materiaCache = {
+        ...this.materiaCache,
+        [`${gearset.$key}:${gearset[property].itemId}:${property}`]: {
+          materias: gearset[property].materias,
+          date: Date.now()
+        }
+      };
+    }
     gearset[property] = equipmentPiece;
-    this.gearsetsFacade.update(gearset.$key, equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+    this.saveChanges(equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+  }
+
+  saveChanges(gearset: TeamcraftGearset): void {
+    this.isReadonly$.pipe(
+      first()
+    ).subscribe(isReadonly => {
+      const clone = new TeamcraftGearset();
+      Object.assign(clone, gearset);
+      this.gearsetsFacade.update(clone.$key, clone, isReadonly);
+    });
   }
 
   canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
@@ -488,7 +507,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         if (res) {
           this.materiaCache = {
             ...this.materiaCache,
-            [`${gearset.$key}:${res.itemId}:${propertyName}`]: {
+            [`${res.itemId}:${propertyName}`]: {
               materias: res.materias,
               date: Date.now()
             }
@@ -540,7 +559,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       first()
     ).subscribe(res => {
       Object.assign(gearset, res);
-      this.gearsetsFacade.update(gearset.$key, gearset);
+      this.saveChanges(gearset);
     });
   }
 
@@ -560,7 +579,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         delete res.offHand;
         delete res.mainHand;
       }
-      this.gearsetsFacade.update(gearset.$key, res);
+      this.saveChanges(res);
     });
   }
 

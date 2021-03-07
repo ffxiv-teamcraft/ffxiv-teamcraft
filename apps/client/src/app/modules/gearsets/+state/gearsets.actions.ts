@@ -112,7 +112,7 @@ export class SelectGearset implements Action {
 export class UpdateGearset implements Action {
   readonly type = GearsetsActionTypes.UpdateGearset;
 
-  constructor(public key: string, public gearset: TeamcraftGearset) {
+  constructor(public key: string, public gearset: TeamcraftGearset, public isReadonly: boolean) {
   }
 }
 

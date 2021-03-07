@@ -35,7 +35,9 @@ export class MateriaSlotIconComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.meldingChances = this.materiaService.getMeldingChances(this.equipmentPiece, this.equipmentPiece.materias[this.index], this.index);
+    if (this.equipmentPiece.materias[this.index]) {
+      this.meldingChances = this.materiaService.getMeldingChances(this.equipmentPiece, this.equipmentPiece.materias[this.index], this.index);
+    }
   }
 
 }
