@@ -22,7 +22,7 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
 
   public getComments(resourceId: string): Observable<DbComment[]> {
     return this.firestore
-      .collection(this.getBaseUri(), (ref) => ref.where('resourceId', '==', resourceId))
+      .collection(this.getBaseUri(), (ref) => ref.where('resourceId', '==', resourceId).orderBy('date', 'desc'))
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<DbComment>[]) => {

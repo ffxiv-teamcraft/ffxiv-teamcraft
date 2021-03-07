@@ -469,7 +469,6 @@ export class StatsService {
   }
 
   public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] {
-    const stats = this.getStats(set, level, tribe, food);
     const display: { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] = [
       {
         baseParamIds: [0],
@@ -479,6 +478,7 @@ export class StatsService {
     ];
 
     if (set.isCombatSet()) {
+      const stats = this.getStats(set, level, tribe, food);
       display.push(...[
         {
           baseParamIds: [BaseParam.VITALITY],

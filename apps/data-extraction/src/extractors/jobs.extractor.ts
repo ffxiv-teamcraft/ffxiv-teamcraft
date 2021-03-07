@@ -4,7 +4,8 @@ export class JobsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const jobAbbrs = {};
     const jobNames = {};
-    this.getAllPages('https://xivapi.com/ClassJob?columns=ID,Abbreviation_*,Name_*').subscribe(page => {
+    const indexes = {};
+    this.getAllPages('https://xivapi.com/ClassJob?columns=ID,Abbreviation_*,Name_*,JobIndex,DohDolJobIndex,BattleClassIndex').subscribe(page => {
       page.Results.forEach(job => {
         jobNames[job.ID] = {
           en: job.Name_en,
@@ -18,9 +19,11 @@ export class JobsExtractor extends AbstractExtractor {
           de: job.Abbreviation_de,
           fr: job.Abbreviation_fr
         };
+        indexes[job.ID] = +job.DohDolJobIndex > -1 ? job.DohDolJobIndex : +job.JobIndex || +job.BattleClassIndex;
       });
     }, null, () => {
       this.persistToJsonAsset('job-name', jobNames);
+      this.persistToJsonAsset('job-sort-index', indexes);
       this.persistToJsonAsset('job-abbr', jobAbbrs);
       this.done();
     });

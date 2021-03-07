@@ -1,13 +1,11 @@
 import { Observable } from 'rxjs/Observable';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
-import { UpdateInventorySlot } from '../../model/pcap';
-import { AirshipStatus } from '../../model/pcap';
-import { AirshipExplorationResult } from '../../model/pcap';
+import { toIpcData } from '../rxjs/to-ipc-data';
 
 export class AirshipExplorationResultReporter extends ExplorationResultReporter {
 
@@ -17,10 +15,10 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const isAirshipMenuOpen$: Observable<boolean> = merge(
-      packets$.pipe(ofPacketType('eventStart')),
-      packets$.pipe(ofPacketType('eventFinish'))
+      packets$.pipe(ofMessageType('eventStart')),
+      packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter((packet) => packet.eventId === 0xB0102),
+      filter((packet) => packet.parsedIpcData.eventId === 0xB0102),
       map((packet) => {
         return packet.type === 'eventStart';
       }),
@@ -29,16 +27,19 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
     );
 
     const resultLog$ = packets$.pipe(
-      ofPacketType<AirshipExplorationResult>('airshipExplorationResult'),
+      ofMessageType('airshipExplorationResult'),
+      toIpcData(),
       map((packet) => packet.explorationResult)
     );
 
     const status$ = packets$.pipe(
-      ofPacketType<AirshipStatus>('airshipStatus')
+      ofMessageType('airshipStatus'),
+      toIpcData(),
     );
 
     const updateHullCondition$ = packets$.pipe(
-      ofPacketType<UpdateInventorySlot>('updateInventorySlot'),
+      ofMessageType('updateInventorySlot'),
+      toIpcData(),
       withLatestFrom(isAirshipMenuOpen$),
       filter(([updateInventory, isOpen]) => {
         return isOpen && updateInventory.containerId === 25003 && [30, 35, 40, 45].includes(updateInventory.slot) && updateInventory.condition < 30000;

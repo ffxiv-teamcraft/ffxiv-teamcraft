@@ -21,7 +21,7 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
       switchMap((itemResults) => {
         return this.get(this.getResourceEndpointWithQuery(XivapiEndpoint.SubmarinePart, {
           ids: itemResults.map((r) => r.additionalData).join(','),
-          columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,RepairMaterials'
+          columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,Class,RepairMaterials'
         }))
           .pipe(
             map((page) => page.Results),
@@ -37,6 +37,7 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
                   speed: part.Speed,
                   range: part.Range,
                   favor: part.Favor,
+                  class: part.Class,
                   repairMaterials: part.RepairMaterials,
                   itemId: itemResults.filter((r) => r.additionalData === part.ID)[0]['itemId']
                 };

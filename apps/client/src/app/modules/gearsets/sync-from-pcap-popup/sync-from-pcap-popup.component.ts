@@ -60,7 +60,7 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
           }
           gearset[this.gearsetsFacade.getPropertyName(packet.slot)] = {
             itemId: packet.catalogId,
-            hq: packet.hqFlag === 1,
+            hq: packet.hqFlag,
             materias: materias,
             canOvermeld: itemMeldingData.overmeld,
             materiaSlots: itemMeldingData.slots,

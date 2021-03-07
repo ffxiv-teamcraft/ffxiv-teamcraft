@@ -13,6 +13,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FormsModule } from '@angular/forms';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 const routes: Routes = [
   {
@@ -36,7 +38,9 @@ const routes: Routes = [
     NzGridModule,
     PipesModule,
     ItemIconModule,
-    NzSwitchModule
+    NzSwitchModule,
+    PageLoaderModule,
+    NzDividerModule
   ]
 })
 export class RetainersModule {

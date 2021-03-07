@@ -1,0 +1,36 @@
+<ng-template #jobsRow let-jobs let-color="color">
+  <div fxLayout="row wrap" fxLayoutGap="5px">
+    <div *ngFor="let job of jobs" class="job-box"
+         [class.selected]="job.selected"
+         [style.background-color]="job.selected ? color : ''"
+         (click)="toggleJob(job.id, !job.selected)">
+      <span class="companion-svg" [innerHTML]="job.id | jobUnicode"></span>
+    </div>
+  </div>
+</ng-template>
+
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between flex-start" *ngIf="display$ | async as display">
+  <div fxLayout="column" fxLayoutGap="5px">
+    <h3>{{'SEARCH.Job' | translate}}</h3>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.tank, color: '#445BC7'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.healer, color: '#427134'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.melee, color: '#813B3C'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.ranged, color: '#813B3C'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.caster, color: '#813B3C'}"></ng-container>
+  </div>
+  <div fxLayout="column" fxLayoutGap="5px">
+    <h3>{{'SEARCH.Class' | translate}}</h3>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.tankClass, color: '#445BC7'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.healerClass, color: '#427134'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.meleeClass, color: '#813B3C'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.rangedClass, color: '#813B3C'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.casterClass, color: '#813B3C'}"></ng-container>
+  </div>
+  <div fxLayout="column" fxLayoutGap="5px">
+    <h3>{{'SEARCH.Land' | translate}}</h3>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.land, color: '#434343'}"></ng-container>
+    <h3>{{'SEARCH.Hand' | translate}}</h3>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.hand1, color: '#434343'}"></ng-container>
+    <ng-container *ngTemplateOutlet="jobsRow; context:{$implicit: display.hand2, color: '#434343'}"></ng-container>
+  </div>
+</div>

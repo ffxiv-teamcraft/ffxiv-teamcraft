@@ -634,7 +634,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     combineLatest([slug$, itemId$, correctSlug$])
       .pipe(
         takeUntil(this.onDestroy$),
-        map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug }))
+        map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug: encodeURIComponent(correctSlug) }))
       )
       .subscribe(this.onRouteParams);
   }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -56,6 +56,9 @@ import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
 import { UpdaterStatus } from './model/other/updater-status';
+import { RemoveAdsPopupComponent } from './modules/ads/remove-ads-popup/remove-ads-popup.component';
+import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop.facade';
+import { Language } from './core/data/language';
 
 declare const gtag: Function;
 
@@ -71,6 +74,17 @@ export class AppComponent implements OnInit {
   locale: string;
 
   version = environment.version;
+
+  public adsPlacementBreakpoints = {
+    475: null,
+    1350: '601845b9cf90756a43f6c4f8',
+    default: '601845ad7730eb16d35ec25a'
+  };
+
+  public titleBreakpoints = {
+    785: `TC\nv${this.version}`,
+    default: `FFXIV&nbsp;Teamcraft&nbsp;v${this.version}`
+  };
 
   public get overlay() {
     return window.location.href.indexOf('?overlay') > -1;
@@ -139,6 +153,21 @@ export class AppComponent implements OnInit {
 
   public firewallRuleApplied = false;
 
+  public showAd$ = this.authFacade.user$.pipe(
+    map(user => {
+      return !(user.admin || user.moderator || user.patron);
+    })
+  );
+
+  public showPatreonButton$ = this.authFacade.user$.pipe(
+    map(user => {
+      return !user.patron;
+    })
+  );
+
+  @ViewChild('vmAdRef')
+  public vmAdRef: ElementRef;
+
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
@@ -154,7 +183,7 @@ export class AppComponent implements OnInit {
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private cd: ChangeDetectorRef) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef) {
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
@@ -214,6 +243,7 @@ export class AppComponent implements OnInit {
         this.universalis.initCapture();
       }
       this.inventoryService.load();
+      this.freeCompanyWorkshopFacade.init();
 
       this.firebase.object<boolean>('maintenance')
         .valueChanges()
@@ -392,7 +422,7 @@ export class AppComponent implements OnInit {
           );
         })
       );
-      this.translate.onLangChange.subscribe(l => this.locale = l);
+      this.translate.onLangChange.subscribe(l => this.locale = l.lang as Language);
 
       this.translate.onLangChange.subscribe(change => {
         this.locale = change.lang;
@@ -430,6 +460,14 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  public openSupportPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('COMMON.Support_us_remove_ads'),
+      nzContent: RemoveAdsPopupComponent,
+      nzFooter: null
+    });
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {
@@ -569,7 +607,6 @@ export class AppComponent implements OnInit {
       this.settings.themeChange$.subscribe((change => {
         this.applyTheme(change.next);
       }));
-
     } else {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);

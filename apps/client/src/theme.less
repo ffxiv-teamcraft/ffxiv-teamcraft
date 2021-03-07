@@ -10,6 +10,7 @@
   --background-color: #2f3237;
   --text-color: @text-color;
   --topbar-color: #191e25;
+  --interact-color: #202630;
   --sider-trigger-color: #747d8a;
   --zero-width-sider-trigger-color: #747d8a;
   --sider-trigger-hover-color: #1e88e5;
@@ -112,6 +113,14 @@ span.ant-radio + * {
   border-color: var(--primary-color) !important;
 }
 
+.ant-select-selector {
+  background-color: var(--interact-color) !important;
+
+  .ant-select-selection-search-input {
+    background-color: var(--interact-color) !important;
+  }
+}
+
 .ant-picker:hover, .ant-picker-focused {
   border-color: var(--primary-color) !important;
 }
@@ -195,17 +204,19 @@ span.ant-radio + * {
   }
 }
 
-.ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
-  color: var(--primary-color) !important;
-  text-decoration-color: var(--primary-color) !important;
-}
+.ant-tabs:not(.custom-tabs) {
+  .ant-tabs-tab-active, .ant-tabs-tab:hover, .ant-tabs-tab:focus {
+    color: var(--primary-color) !important;
+    text-decoration-color: var(--primary-color) !important;
+  }
 
-.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: var(--primary-color) !important;
-}
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--primary-color) !important;
+  }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  color: var(--primary-color) !important;
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: var(--primary-color) !important;
+  }
 }
 
 
@@ -337,6 +348,12 @@ a, .ant-table-filter-dropdown-link {
 
 .ant-layout-header {
   background: var(--topbar-color);
+
+  padding: 0 12px;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item, .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
+  padding: 0 5px;
 }
 
 .ant-layout-sider-zero-width-trigger:hover {

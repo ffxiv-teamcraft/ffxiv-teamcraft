@@ -17,7 +17,6 @@ import { MateriasPopupComponent } from '../materias-popup/materias-popup.compone
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -40,7 +39,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     ilvlMin: [460],
     ilvlMax: [999],
     elvlMin: [1],
-    elvlMax: [80]
+    elvlMax: [environment.maxLevel]
   });
 
   categoriesOrder: string[] = [
@@ -65,6 +64,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
+
+  public isReadonly$ = this.gearsetsFacade.selectedGearsetPermissionLevel$.pipe(
+    map(permissionLevel => permissionLevel < PermissionLevel.WRITE)
+  );
 
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
@@ -222,7 +225,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                   equipmentPiece: {
                     itemId: item.ID,
                     hq: item.CanBeHq === 1,
-                    materias: this.getMaterias(gearset, item, propertyName),
+                    materias: this.getMaterias(item, propertyName),
                     materiaSlots: item.MateriaSlotCount,
                     canOvermeld: item.IsAdvancedMeldingPermitted === 1
                   }
@@ -328,8 +331,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     localStorage.setItem('materias', JSON.stringify(cache));
   }
 
-  permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
-
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
@@ -377,13 +378,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         this.submitFilters();
       }
     });
-    this.permissionLevel$.pipe(
-      takeUntil(this.onDestroy$)
-    ).subscribe(level => {
-      if (level < PermissionLevel.WRITE) {
-        this.router.navigate(['/gearsets']);
-      }
-    });
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
@@ -406,8 +400,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }
     const cacheClone = { ...this.materiaCache };
     Object.entries<any>(cacheClone).forEach(([key, entry]) => {
-      // Delete all cache entries older than one month.
-      if (Date.now() - entry.date > 30 * 24 * 3600 * 100) {
+      // Delete all cache entries older than one week.
+      if (Date.now() - entry.date > 7 * 24 * 3600 * 100) {
         delete cacheClone[key];
       }
     });
@@ -419,9 +413,14 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
-  private getMaterias(gearset: TeamcraftGearset, item: any, propertyName: string): number[] {
-    if (this.materiaCache[`${gearset.$key}:${item.ID}:${propertyName}`]) {
-      return this.materiaCache[`${gearset.$key}:${item.ID}:${propertyName}`].materias;
+  saveAsNew(gearset: TeamcraftGearset): void {
+    gearset.fromSync = false;
+    this.gearsetsFacade.createGearset(gearset);
+  }
+
+  private getMaterias(item: any, propertyName: string): number[] {
+    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
+      return this.materiaCache[`${item.ID}:${propertyName}`].materias;
     }
     if (item.MateriaSlotCount > 0) {
       if (item.IsAdvancedMeldingPermitted === 1) {
@@ -433,8 +432,27 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
+    if (gearset[property]) {
+      this.materiaCache = {
+        ...this.materiaCache,
+        [`${gearset.$key}:${gearset[property].itemId}:${property}`]: {
+          materias: gearset[property].materias,
+          date: Date.now()
+        }
+      };
+    }
     gearset[property] = equipmentPiece;
-    this.gearsetsFacade.update(gearset.$key, equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+    this.saveChanges(equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+  }
+
+  saveChanges(gearset: TeamcraftGearset): void {
+    this.isReadonly$.pipe(
+      first()
+    ).subscribe(isReadonly => {
+      const clone = new TeamcraftGearset();
+      Object.assign(clone, gearset);
+      this.gearsetsFacade.update(clone.$key, clone, isReadonly);
+    });
   }
 
   canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
@@ -489,7 +507,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         if (res) {
           this.materiaCache = {
             ...this.materiaCache,
-            [`${gearset.$key}:${res.itemId}:${propertyName}`]: {
+            [`${res.itemId}:${propertyName}`]: {
               materias: res.materias,
               date: Date.now()
             }
@@ -541,7 +559,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       first()
     ).subscribe(res => {
       Object.assign(gearset, res);
-      this.gearsetsFacade.update(gearset.$key, gearset);
+      this.saveChanges(gearset);
     });
   }
 
@@ -561,7 +579,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         delete res.offHand;
         delete res.mainHand;
       }
-      this.gearsetsFacade.update(gearset.$key, res);
+      this.saveChanges(res);
     });
   }
 

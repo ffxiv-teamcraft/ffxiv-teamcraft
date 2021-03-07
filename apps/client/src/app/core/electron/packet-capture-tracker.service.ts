@@ -12,17 +12,18 @@ import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { ContainerType } from '../../model/user/inventory/container-type';
 import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { ofMessageType } from '../rxjs/of-message-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
-import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
-import { ActorControl, EffectResult, FishingBaitMsg, InitZone, UpdateClassInfo, WeatherChange } from '../../model/pcap';
 import { HttpClient } from '@angular/common/http';
+import { ItemInfo } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { toIpcData } from '../rxjs/to-ipc-data';
+import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -54,7 +55,7 @@ export class PacketCaptureTrackerService {
 
   private retainerInformations$ = this.ipc.retainerInformationPackets$.pipe(
     map(packet => {
-      this.retainerInformationsSync[packet.retainerID] = packet;
+      this.retainerInformationsSync[packet.retainerId.toString()] = packet;
       return Object.values<any>(this.retainerInformationsSync);
     })
   );
@@ -83,7 +84,7 @@ export class PacketCaptureTrackerService {
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataService,
-              private http: HttpClient) {
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private http: HttpClient) {
     this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>('https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json')
       .subscribe(constants => this.constants = constants);
     this.inventory$ = this.userInventoryService.inventory$.pipe(
@@ -107,10 +108,10 @@ export class PacketCaptureTrackerService {
 
   public init(): void {
     const isCrafting$ = merge(
-      this.ipc.packets$.pipe(ofPacketType('eventStart')),
-      this.ipc.packets$.pipe(ofPacketType('eventFinish'))
+      this.ipc.packets$.pipe(ofMessageType('eventStart')),
+      this.ipc.packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter(packet => packet.eventId === 0xA0001),
+      filter(packet => packet.parsedIpcData.eventId === 0xA0001),
       map(packet => {
         return packet.type === 'eventStart';
       }),
@@ -164,9 +165,9 @@ export class PacketCaptureTrackerService {
               containerId: +packet.containerId,
               slot: +packet.slot,
               quantity: +packet.quantity,
-              hq: packet.hqFlag === 1,
-              spiritBond: +packet.spiritBond,
-              materias: packet.materia || []
+              hq: (packet as ItemInfo).hqFlag,
+              spiritBond: +(packet as ItemInfo).spiritBond,
+              materias: (packet as ItemInfo).materia || []
             };
             if (isRetainer) {
               item.retainerName = lastRetainerSpawned;
@@ -213,7 +214,7 @@ export class PacketCaptureTrackerService {
     });
 
     const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
-      filter(packet => packet.flag === this.getInventoryTransactionFlag())
+      filter(packet => packet.type === this.getInventoryTransactionFlag())
     );
 
     merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(
@@ -265,81 +266,133 @@ export class PacketCaptureTrackerService {
       });
 
     combineLatest([
-      this.ipc.packets$.pipe(
-        ofPacketType<InitZone>('initZone')
-      ),
+      this.ipc.initZonePackets$,
       this.lazyData.data$
     ]).subscribe(([packet, data]) => {
-      const mapId = territories[packet.zoneID.toString()];
+      const mapId = territories[packet.zoneId.toString()];
       this.eorzeaFacade.setZone(this.lazyData.data.maps[mapId].placename_id);
-      this.eorzeaFacade.setPcapWeather(packet.weatherID, true);
+      this.eorzeaFacade.setPcapWeather(packet.weatherId, true);
       this.eorzeaFacade.setMap(mapId);
     });
 
-    this.ipc.packets$.pipe(
-      ofPacketType<WeatherChange>('weatherChange')
-    ).subscribe(packet => {
-      this.eorzeaFacade.setPcapWeather(packet.weatherID);
+    this.ipc.weatherChangePackets$.subscribe(packet => {
+      this.eorzeaFacade.setPcapWeather(packet.weatherId);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketSubType<FishingBaitMsg>('fishingBaitMsg')
+      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
+      toIpcData()
     ).subscribe(packet => {
-      if (this.lazyData.data.baitItems.includes(packet.baitID)) {
-        this.eorzeaFacade.setBait(packet.baitID);
+      if (this.lazyData.data.baitItems.includes(packet.baitId)) {
+        this.eorzeaFacade.setBait(packet.baitId);
       }
     });
 
     this.ipc.packets$.pipe(
-      ofPacketSubType<ActorControl>('statusEffectLose'),
-      filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
+      ofMessageType('actorControl', 'statusEffectLose'),
+      filter(message => message.header.sourceActor === message.header.targetActor),
+      toIpcData()
+    ).subscribe(packet => {
+      this.eorzeaFacade.removeStatus(packet.effectId);
+    });
+
+    this.ipc.packets$.pipe(
+      ofMessageType('actorControl'),
+      filter(message => message.parsedIpcData.category === 21 && message.header.sourceActor === message.header.targetActor),
+      toIpcData()
     ).subscribe(packet => {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
-    this.ipc.packets$.pipe(
-      ofPacketType<ActorControl>('actorControl'),
-      filter(packet => packet.category === 21 && packet.sourceActorSessionID === packet.targetActorSessionID)
-    ).subscribe(packet => {
-      this.eorzeaFacade.removeStatus(packet.param1);
-    });
-
-    this.ipc.packets$.pipe(
-      ofPacketType<UpdateClassInfo>('updateClassInfo'),
+    this.ipc.updateClassInfoPackets$.pipe(
       distinctUntilChanged((a, b) => a.classId === b.classId)
-    ).subscribe(packet => {
+    ).subscribe(() => {
       this.eorzeaFacade.resetStatuses();
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('addStatusEffect')
+      ofMessageType('addStatusEffect'),
+      toIpcData()
     ).subscribe(packet => {
-      // TODO use packet struct once moved to pcap-ffxiv
-      const statusId = Buffer.from(packet.data).readUInt16LE(0x1A);
-      this.eorzeaFacade.addStatus(statusId);
+      this.eorzeaFacade.addStatus(packet.effectId);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType<EffectResult>('effectResult'),
-      filter(packet => {
-        return packet.sourceActorSessionID === packet.targetActorSessionID;
-      })
+      ofMessageType('effectResult'),
+      filter(message => {
+        return message.header.sourceActor === message.header.targetActor;
+      }),
+      toIpcData()
     ).subscribe(packet => {
       for (let i = 0; i < packet.entryCount; i++) {
-        if (packet.statusEntries[i].sourceActorID === packet.actorID) {
+        if (packet.statusEntries[i].sourceActorId === packet.actorId) {
           this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
         }
       }
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('logout')
+      ofMessageType('logout')
     ).subscribe(() => {
       this.userInventoryService.setContentId(null);
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
-      this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, '0').toUpperCase());
+      this.userInventoryService.setContentId(packet.contentId.toString(16).padStart(16, '0').toUpperCase());
+    });
+
+    this.ipc.freeCompanyId$.pipe(
+      distinctUntilChanged()
+    ).subscribe((freeCompanyId) => {
+      this.freeCompanyWorkshopFacade.setCurrentFreeCompanyId(freeCompanyId);
+    });
+
+    this.freeCompanyWorkshopFacade.vesselPartUpdate$.pipe(
+      debounceBufferTime(2500),
+      tap((packets) => {
+        packets.forEach((packet) => {
+          this.freeCompanyWorkshopFacade.updateVesselParts(packet);
+        });
+      }),
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe((packets  ) => {
+      console.log('Vessel parts updated');
+    });
+
+    this.freeCompanyWorkshopFacade.vesselTimers$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([data]) => {
+      this.freeCompanyWorkshopFacade.updateVesselTimers(data);
+    });
+
+    this.freeCompanyWorkshopFacade.airshipStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([{ slot, vessel }]) => {
+      this.freeCompanyWorkshopFacade.updateAirshipStatus(slot, vessel);
+    });
+
+    this.freeCompanyWorkshopFacade.airshipStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freeCompanyWorkshopFacade.updateAirshipStatusList(vessels);
+    });
+
+    this.freeCompanyWorkshopFacade.submarineStatusList$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([vessels]) => {
+      this.freeCompanyWorkshopFacade.updateSubmarineStatusList(vessels);
+    });
+
+    this.freeCompanyWorkshopFacade.vesselProgressionStatus$.pipe(
+      withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
+      filter(([, workshop]) => workshop?.id !== undefined)
+    ).subscribe(([progression]) => {
+      this.freeCompanyWorkshopFacade.updateVesselProgressionStatus(progression);
     });
   }
 

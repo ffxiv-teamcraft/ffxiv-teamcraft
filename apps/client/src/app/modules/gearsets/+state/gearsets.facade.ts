@@ -124,8 +124,8 @@ export class GearsetsFacade {
     this.createGearset(clone);
   }
 
-  update(key: string, gearset: TeamcraftGearset): void {
-    this.store.dispatch(new UpdateGearset(key, gearset));
+  update(key: string, gearset: TeamcraftGearset, isReadonly = false): void {
+    this.store.dispatch(new UpdateGearset(key, gearset, isReadonly));
   }
 
   pureUpdate(key: string, gearset: Partial<TeamcraftGearset>): void {

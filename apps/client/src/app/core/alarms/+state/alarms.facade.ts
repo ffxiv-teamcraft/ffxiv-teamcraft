@@ -108,7 +108,7 @@ export class AlarmsFacade {
         .map(alarm => {
           const alarmGroups = groups.filter(g => g.alarms.some(key => key === alarm.$key));
           alarm.groupNames = alarmGroups.map(g => g.name).join(', ');
-          if (!alarm.enabled || (alarmGroups.length > 0 && alarmGroups.every(g => !g.enabled))) {
+          if (!alarm.enabled || (alarmGroups?.length > 0 && alarmGroups.every(g => !g.enabled))) {
             return null;
           }
           return alarm;
@@ -308,7 +308,7 @@ export class AlarmsFacade {
         // Else just compare remaining time.
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
-      if (alarm.weathers && alarm.weathers.length > 0) {
+      if (alarm.weathers && alarm.weathers?.length > 0) {
         this.nextSpawnCache[cacheKey] = {
           spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
           expires: this.etime.toEarthDate(time)
@@ -402,7 +402,7 @@ export class AlarmsFacade {
         }
       }
     }
-    if (sortedSpawns.length === 0) {
+    if (sortedSpawns?.length === 0) {
       const weatherSpawn = weatherSpawns[0];
       const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
       return {

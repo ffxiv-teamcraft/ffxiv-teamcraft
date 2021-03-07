@@ -4,21 +4,37 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
-        <button nz-button nzShape="circle" (click)="edit(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
+        <button nz-button nzShape="circle" *ngIf="!(isReadonly$ | async)" (click)="edit(gearset)" nz-tooltip
+                [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
           <i nz-icon nzType="edit"></i>
         </button>
         <div fxFlex="1 1 auto"></div>
+        <button nz-button nzShape="circle"
+                nzType="primary"
+                *ngIf="isReadonly$ | async"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
+                (click)="saveAsNew(gearset)">
+          <i nz-icon nzType="save" nzTheme="outline"></i>
+        </button>
         <button nz-button nzShape="circle" nzType="primary"
                 *ngIf="machinaToggle"
                 (click)="updateFromPcap(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Update_from_pcap' | translate">
           <i nz-icon nzType="api"></i>
         </button>
-        <a nz-button nzShape="circle" nzType="primary"
+        <a nz-button nzShape="circle"
            nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}">
           <i nz-icon nzType="eye"></i>
         </a>
       </div>
+
+      <nz-alert *ngIf="isReadonly$ | async"
+                nzType="warning"
+                nzShowIcon
+                nzBanner
+                class="readonly-warning"
+                [nzMessage]="'GEARSETS.Editing_others_gearset' | translate"
+                [nzDescription]="'GEARSETS.Editing_others_gearset_description' | translate"></nz-alert>
 
       <nz-collapse>
         <nz-collapse-panel [nzHeader]="'GEARSETS.Filters' | translate" class="filters">
@@ -132,7 +148,7 @@
         </button>
       </div>
       <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
-        : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0).value}}</div>
+        : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0)[0].value}}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
         <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
           <b>{{stat.value | number:'1.0-0':translate.currentLang}}
