@@ -1828,7 +1828,7 @@
     "Leveling": "Leveling",
     "Currencies": "Devises",
     "Add_to_favorites": "Ajouter aux favoris",
-    "Remove_from_favorites": "Remove from favorites"
+    "Remove_from_favorites": "Retirer des favoris"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1837,7 +1837,7 @@
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Le suivi de l'inventaire ne peut pas fonctionner sans savoir quel personnage vous jouez actuellement, veuillez trier/annuler de tri de votre inventaire ou connectez-vous avec votre personnage pour que Teamcraft détecte votre personnage actuel.",
     "Unknown_character": "Personnage en jeu inconnu",
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
@@ -1875,7 +1875,7 @@
     "Filter_by_expansion": "Filtrer par extension",
     "In_x_containers": "Dans {{amount}} inventaires",
     "New_character_detected": "Nouveau personnage détecté",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "Position inconnue",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -2011,8 +2011,8 @@
     "Create_commission": "Créer une commission pour cette tenue",
     "Value_for_next": "Prochain palier",
     "Value_for_previous": "Palier précédent",
-    "Editing_others_gearset": "Local editing mode",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset": "Mode d'édition locale",
+    "Editing_others_gearset_description": "Vous éditez actuellement la tenue de quelqu'un d'autre, rien ne sera sauvegardé si vous ne cliquez pas sur le bouton Enregistrer ci-dessus pour créer votre propre copie.",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2505,10 +2505,10 @@
     "Select_retainer": "Choisissez l'un de vos servants"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
-    "No_ads": "No more ads inside the topbar",
-    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
-    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
+    "By_supporting_us": "En nous soutenant sur patreon, vous obtenez :",
+    "No_ads": "Plus de pubs dans la barre de titre",
+    "Exclusive_discord_role": "Un rôle de discorde exclusif et l'accès à un canal réservé aux supporters",
+    "Your_name_in_loading_screen": "Votre nom dans l'écran de chargement (doit être demandé à Miu sur Discord)",
     "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
