@@ -2546,33 +2546,33 @@
     "Sectors_discovered": "Secteurs découverts",
     "Delete_free_company": "Supprimer la Compagnie Libre",
     "Name_column": "Nom",
-    "Return_time_column": "Return time",
-    "Remaining_time_column": "Remaining time",
-    "Rank_column": "Rank",
+    "Return_time_column": "Heure de retour",
+    "Remaining_time_column": "Temps restant",
+    "Rank_column": "Rang",
     "Build_column": "Build",
     "Voyage_column": "Voyage",
-    "Nothing_to_show": "Nothing to show",
-    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "Nothing_to_show": "Rien à afficher",
+    "Please_import_pcap": "Veuillez importer vos aéronefs et sous-marins à l'aide de la capture de paquets",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "Aéronef",
+      "Submersible": "Sous-marins"
     },
     "VOYAGE_DETAILS": {
       "Title": "Voyage"
     },
     "BUILD_DETAILS": {
       "Title": "Build",
-      "Condition": "Condition"
+      "Condition": "État"
     },
     "STATS_DETAILS": {
       "Title": "Stats"
     },
     "STATS": {
       "Surveillance": "Surveillance",
-      "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Retrieval": "Récupération",
+      "Speed": "Vitesse",
+      "Range": "Portée",
+      "Favor": "Faveur"
     }
   },
   "AIRSHIP": {
@@ -2603,13 +2603,13 @@
   "SUBMARINE": {
     "CLASS": {
       "SHARK": {
-        "Abbreviation": "S"
+        "Abbreviation": "R"
       },
       "UNKIU": {
         "Abbreviation": "U"
       },
       "WHALE": {
-        "Abbreviation": "W"
+        "Abbreviation": "Ba"
       },
       "COELACANTH": {
         "Abbreviation": "C"
@@ -2618,13 +2618,13 @@
         "Abbreviation": "Y"
       },
       "MODIFIED_SHARK": {
-        "Abbreviation": "S+"
+        "Abbreviation": "R+"
       },
       "MODIFIED_UNKIU": {
         "Abbreviation": "U+"
       },
       "MODIFIED_WHALE": {
-        "Abbreviation": "W+"
+        "Abbreviation": "Ba+"
       },
       "MODIFIED_COELACANTH": {
         "Abbreviation": "C+"
