@@ -1788,7 +1788,7 @@
     "Patch": "패치",
     "Language": "언어",
     "Share": "공유하기",
-    "Placeholder": "Search for something awesome",
+    "Placeholder": "뭔가 굉장한 걸 찾아보기",
     "Hide_filters": "추가 필터 숨기기",
     "Show_filters": "추가 필터 보기",
     "Item_type_placeholder": "아이템 유형 선택",
@@ -1801,11 +1801,11 @@
     "Consumable_stats": "소모품 능력치",
     "No_stats_filters": "호곡! 아무 것도 없어용",
     "Add_stat_using_button": "To add a stat filter, click the button below",
-    "Stat": "Stat",
-    "Range": "Range",
-    "Exclude": "Exclude",
-    "Select_stat": "Select a stat",
-    "Level": "Level",
+    "Stat": "능력치",
+    "Range": "범위",
+    "Exclude": "제외",
+    "Select_stat": "능력치 선택",
+    "Level": "레벨",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1827,8 +1827,8 @@
     "Archived_commissions": "의뢰 기록",
     "Leveling": "레벨링",
     "Currencies": "화폐",
-    "Add_to_favorites": "Add to favorites",
-    "Remove_from_favorites": "Remove from favorites"
+    "Add_to_favorites": "즐겨찾기에 추가",
+    "Remove_from_favorites": "즐겨찾기에서 제거"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
@@ -1875,7 +1875,7 @@
     "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "New_character_detected": "새로운 캐릭터가 감지됨",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "알 수 없는 위치",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -2506,7 +2506,7 @@
   },
   "PATREON": {
     "By_supporting_us": "By supporting us on patreon, you get:",
-    "No_ads": "No more ads inside the topbar",
+    "No_ads": "상단에 더 이상 광고가 표시되지 않습니다",
     "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
     "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
     "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
@@ -2568,11 +2568,11 @@
       "Title": "Stats"
     },
     "STATS": {
-      "Surveillance": "Surveillance",
-      "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Surveillance": "탐사 성능",
+      "Retrieval": "수집 성능",
+      "Speed": "순항 속도",
+      "Range": "항속 거리",
+      "Favor": "운"
     }
   },
   "AIRSHIP": {
