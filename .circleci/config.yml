@@ -160,7 +160,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:mgvFHs/dR5oukxDRkktL2KhZWfPYxK9Ng7CcMGv5BEc"
+            - "mgvFHs/dR5oukxDRkktL2KhZWfPYxK9Ng7CcMGv5BEc"
       - attach_workspace:
           at: ~/
       - run:
