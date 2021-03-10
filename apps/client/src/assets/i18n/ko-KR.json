@@ -1800,7 +1800,7 @@
     "Gear_stats": "장비 능력치",
     "Consumable_stats": "소모품 능력치",
     "No_stats_filters": "호곡! 아무 것도 없어용",
-    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Add_stat_using_button": "능력치 필터를 추가하고 싶다면, 아래 버튼을 클릭하세요",
     "Stat": "능력치",
     "Range": "범위",
     "Exclude": "제외",
@@ -2012,7 +2012,7 @@
     "Value_for_next": "다음 중단점",
     "Value_for_previous": "이전 중단점",
     "Editing_others_gearset": "Local editing mode",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -2505,7 +2505,7 @@
     "Select_retainer": "집사를 선택하세요"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
+    "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
     "No_ads": "상단에 더 이상 광고가 표시되지 않습니다",
     "Exclusive_discord_role": "디스코드에서의 특별한 역할과 #supporters 채널 입장 가능",
     "Your_name_in_loading_screen": "내 닉네임을 로딩 화면에 표시(요청해야함)",
@@ -2532,40 +2532,40 @@
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
     "Import_from_pcap_notice": "1. 부대 공방으로 이동<br>2. 관리 인터페이스로 이동하여 잠수정 또는 비공정과 상호 작용",
     "Airships": "비공정",
-    "Submersibles": "잠수정"
+    "Submersibles": "Submersibles"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
-    "Import_using_pcap": "Import using packet capture",
-    "Voyage_completion_alarm": "Voyage completion alarm",
-    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Title": "탐사 트래커",
+    "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
+    "Voyage_completion_alarm": "탐사 완료 알람",
+    "Voyage_completed_notification_title": "{{name}} 가 탐사를 완료했습니다",
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
-    "Voyage_complete": "Voyage complete",
+    "Voyage_complete": "탐사 완료",
     "No_airship": "비공정 없음",
     "No_submersible": "잠수정 없음",
     "Sectors_discovered": "Sectors discovered",
-    "Delete_free_company": "Delete the Free Company",
+    "Delete_free_company": "자유부대 삭제",
     "Name_column": "이름",
-    "Return_time_column": "Return time",
-    "Remaining_time_column": "Remaining time",
+    "Return_time_column": "귀환 예정 시간",
+    "Remaining_time_column": "남은 시간",
     "Rank_column": "Rank",
     "Build_column": "Build",
-    "Voyage_column": "Voyage",
+    "Voyage_column": "탐사",
     "Nothing_to_show": "Nothing to show",
-    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "비공정",
+      "Submersible": "잠수정"
     },
     "VOYAGE_DETAILS": {
-      "Title": "Voyage"
+      "Title": "탐사"
     },
     "BUILD_DETAILS": {
       "Title": "Build",
-      "Condition": "Condition"
+      "Condition": "상태"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "능력치"
     },
     "STATS": {
       "Surveillance": "탐사 성능",
