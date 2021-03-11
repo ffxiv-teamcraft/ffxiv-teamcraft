@@ -93,6 +93,7 @@ export class AppComponent implements OnInit {
   public overlayOpacity = 1;
 
   collapsedAlarmsBar = true;
+  collapsedSiderBar = true;
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
