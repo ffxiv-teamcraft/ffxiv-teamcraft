@@ -56,7 +56,7 @@
                 <ng-container *ngTemplateOutlet="searchTypeTpl"></ng-container>
               </nz-input-group>
               <nz-input-group [nzAddOnBefore]="'SEARCH.Item_type' | translate"
-                *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
+                *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" class="search-item-type">
                 <nz-select class="filter-select-compact with-addon-before" formControlName="itemCategories"
                   nzMode="multiple" nzShowSearch [nzPlaceHolder]="'SEARCH.Item_type_placeholder' | translate">
                   <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="null"></nz-option>
