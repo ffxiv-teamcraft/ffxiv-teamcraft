@@ -62,8 +62,7 @@
     .ant-list-item-meta {
       align-items: center;
       @media @mobile {
-        flex: 0 0 auto;
-        margin-bottom: 5px;
+        margin: 0 10px 8px 0;
       }
 
       .ant-list-item-meta-title {
@@ -114,6 +113,21 @@
 
   .search-box {
     padding: 24px 32px 20px;
+
+    .search-language {
+      @media @mobile {
+        width: 150px;
+      }
+
+    }
+    .header {
+      @media @mobile, @tablet {
+        row-gap: 10px;
+      }
+      @media @mobile{
+        flex-wrap: wrap;
+      }
+    }
 
     .input {
 
@@ -188,6 +202,10 @@ nz-form-item {
 
 .filter-select-compact {
   width: 150px !important;
+
+  @media @tablet {
+    width: 205px !important;
+  }
 }
 
 .stat-selector {
