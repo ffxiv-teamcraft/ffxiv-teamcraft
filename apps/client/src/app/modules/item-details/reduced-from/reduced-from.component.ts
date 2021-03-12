@@ -4,6 +4,8 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-reduced-from',
@@ -13,7 +15,18 @@ import { GatheringNode } from '../../../core/data/model/gathering-node';
 })
 export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements OnInit {
 
+  showEverything$ = new BehaviorSubject(false);
+
   nodes: Record<number, { node: GatheringNode, alarms: Alarm[] }[]> = {};
+
+  detailsDisplay$ = this.showEverything$.pipe(
+    map(showEverything => {
+      if (showEverything) {
+        return this.details;
+      }
+      return this.details.slice(0, 5);
+    })
+  );
 
   constructor(private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
     super();
@@ -27,7 +40,7 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
           alarms: this.alarmsFacade.generateAlarms(node)
         };
       });
-    })
+    });
   }
 
 }
