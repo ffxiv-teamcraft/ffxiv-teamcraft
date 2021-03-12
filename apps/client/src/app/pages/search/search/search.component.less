@@ -61,6 +61,7 @@
 
     .ant-list-item-meta {
       align-items: center;
+
       @media @mobile {
         margin: 0 10px 8px 0;
       }
@@ -91,6 +92,7 @@
 
 .patch-banner {
   max-width: 600px;
+
   @media @mobile {
     max-width: 80vw;
   }
@@ -112,20 +114,49 @@
   }
 
   .search-box {
-    padding: 24px 32px 20px;
+    padding: 10px 32px 20px;
 
-    .search-language {
-      @media @mobile {
-        width: 150px;
-      }
-
-    }
     .header {
-      @media @mobile, @tablet {
+
+      @media @mobile,
+      @tablet,
+      @tablet-wide {
         row-gap: 10px;
+        column-gap: 5em;
       }
-      @media @mobile{
-        flex-wrap: wrap;
+
+      >div {
+        margin-bottom: 10px;
+      }
+
+      .search-types {
+        margin-bottom: 10px;
+        column-gap: 30em;
+        row-gap: 10px;
+
+        @media @mobile,
+        @tablet,
+        @tablet-wide {
+          column-gap: 5em;
+        }
+
+        >div {
+          flex: 2;
+        }
+
+        :first-child {
+          >:nth-child(n+1) {
+            flex: 1;
+          }
+
+          >:nth-child(2) {
+            flex: 2;
+          }
+        }
+
+        >div:last-child {
+          flex: 1;
+        }
       }
     }
 
@@ -178,13 +209,9 @@ app-search-job-picker {
 .order-boxes {
   padding: 10px;
 
-  > nz-select {
+  >nz-select {
     min-width: 200px;
   }
-}
-
-.search-type {
-  min-width: 100px;
 }
 
 nz-form-item {
@@ -200,13 +227,7 @@ nz-form-item {
   min-width: 85px !important;
 }
 
-.filter-select-compact {
-  width: 150px !important;
-
-  @media @tablet {
-    width: 205px !important;
-  }
-}
+.filter-select-compact {}
 
 .stat-selector {
   width: 100%;
@@ -224,6 +245,7 @@ nz-form-item {
   @media @mobile {
     width: 100%;
   }
+
   @media @tablet {
     width: 100%;
   }
@@ -315,9 +337,11 @@ nz-form-item {
 .results {
   width: 100%;
   padding: 20px 50px;
+
   @media @mobile {
     padding: 20px 10px;
   }
+
   @media @large-desktop {
     width: 1450px;
   }
@@ -325,6 +349,7 @@ nz-form-item {
 
 .selection {
   padding: 0 50px;
+
   @media @mobile {
     padding: 0 10px;
   }
@@ -346,7 +371,7 @@ nz-form-item {
   .selection-buttons {
     width: 100%;
 
-    > button:first-child {
+    >button:first-child {
       margin-right: 10px;
     }
   }
