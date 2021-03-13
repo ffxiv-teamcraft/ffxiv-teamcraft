@@ -177,7 +177,7 @@
     "Back": "뒤로 가기",
     "Support_us_remove_ads": "Patreon 후원하고 광고 없애기",
     "Support_us": "후원하기",
-    "Show_more": "Show more"
+    "Show_more": "더 보기"
   },
   "ALARMS": {
     "Title": "알람",
@@ -2549,7 +2549,7 @@
     "Name_column": "이름",
     "Return_time_column": "귀환 예정 시간",
     "Remaining_time_column": "남은 시간",
-    "Rank_column": "Rank",
+    "Rank_column": "랭크",
     "Build_column": "Build",
     "Voyage_column": "탐사",
     "Nothing_to_show": "Nothing to show",
