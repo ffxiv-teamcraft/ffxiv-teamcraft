@@ -2533,7 +2533,7 @@
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
     "Import_from_pcap_notice": "1. 부대 공방으로 이동<br>2. 관리 인터페이스로 이동하여 잠수정 또는 비공정과 상호 작용",
     "Airships": "비공정",
-    "Submersibles": "Submersibles"
+    "Submersibles": "잠수함"
   },
   "VOYAGE_TRACKER": {
     "Title": "탐사 트래커",
@@ -2543,7 +2543,7 @@
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
     "Voyage_complete": "탐사 완료",
     "No_airship": "비공정 없음",
-    "No_submersible": "잠수정 없음",
+    "No_submersible": "잠수함 없음",
     "Sectors_discovered": "Sectors discovered",
     "Delete_free_company": "자유부대 삭제",
     "Name_column": "이름",
@@ -2556,7 +2556,7 @@
     "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
     "SECTOR_PROGRESSION": {
       "Airship": "비공정",
-      "Submersible": "잠수정"
+      "Submersible": "잠수함"
     },
     "VOYAGE_DETAILS": {
       "Title": "탐사"
