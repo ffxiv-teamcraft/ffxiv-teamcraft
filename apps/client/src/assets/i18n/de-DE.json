@@ -2506,32 +2506,32 @@
     "Select_retainer": "Wähle einen Gehilfen"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
-    "No_ads": "No more ads inside the topbar",
-    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
-    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
-    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
-    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
-    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
-    "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "By_supporting_us": "Durch Unterstützung auf Patreon erhältst du:",
+    "No_ads": "Keine Werbung mehr in der Titelleiste",
+    "Exclusive_discord_role": "Eine exklusive Rolle im Discord und Zugriff auf den Unterstützer-Kanal",
+    "Your_name_in_loading_screen": "Dein Name im Ladebild (muss angefordert werden)",
+    "Goodies": "Kostenloser Aufkleber, kostenloses T-Shirt, kostenloses Plakat (je nach Stufe)",
+    "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
+    "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
+    "Already_supporter": "Du bist bereits ein Unterstützer?",
+    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
     "Already_supporting": "Bereits Patreon Unterstützer? Stelle sicher, dass du dein Profil in den Einstellungen mit Patreon verknüpfst",
     "PATREON_BENEFITS": {
-      "No_ads": "Ads-free Teamcraft experience",
+      "No_ads": "Werbefreies Teamcraft-Erlebnis",
       "Discord_rank": "Spezieller Rang auf dem Discord-Server mit Zugang zu den Unterstützer-Bereichen, in denen du sehen kannst, an was wir grade arbeiten (${{price}})",
       "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
       "Custom_theme": "Benutzerdefinierte Farbeingabe für das Design der Website (${{price}})",
       "Pins_badge": "Exklusive Teamcraft-Anstecknadel, die dir zugeschickt wird (${{price}}) (Erfordert das Ausfüllen der Versanddetails auf Patreon)",
       "Loading_screen_message": "Neuer Eintrag in der \"Brought to you by ...\"-Nachricht, die beim Starten von Teamcraft erscheint. Dieseenthält deinen Namen, den deiner FG, deiner LS und was auch immer du sonst noch sagen möchtest! (${{price}})"
     },
-    "Select_retainer": "Pick one of your retainers"
+    "Select_retainer": "Wähle einen Gehilfen"
   },
   "FREE_COMPANY_WORKSHOPS": {
-    "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Import_from_pcap_notice": "1. Gehe in die Gesellschaftswerkstatt<br>2. Interagiere mit jedem U-Boot oder Luftschiff über das Verwaltungs-Interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },
