@@ -2329,7 +2329,7 @@
       "Name": "Name",
       "Name_placeholder": "Name deines Inserates",
       "Name_required_error": "Bitte gib einen Namen ein",
-      "Tags": "Tags",
+      "Tags": "Markierungen",
       "Price": "Preis, den du bezahlen möchtest",
       "Price_tip": "Gib 0 ein, wenn andere dir vorschlagen sollen, wie viel sie stattdessen wollen",
       "Only_crafting": "Nur herstellen",
@@ -2346,20 +2346,20 @@
       "Warning_description": "Die Erstellung von Troll/Spam-Inseraten führt dazu, dass das Inserat gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
       "Copy_link": "Importcode kopieren",
       "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Link_copied": "Importcode für Inserat kopiert"
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
+      "Title": "Schwarzes Brett",
+      "Filter_with_tags": "Nach Markierungen filtern",
+      "No_matching_commissions": "Keine passenden Inserate",
       "Min_price": "Min. Preis",
-      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+      "Tracking_tip": "Du kannst Benachrichtigungen für neue Inserate deines Datenzentrums über den Inseratebereich des offiziellen Discord-Servers erhalten"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
+      "Created_by": "Erstellt von {{name}}",
       "Details": "Details",
-      "Price": "Payment",
-      "Tags": "Tags",
+      "Price": "Zahlung",
+      "Tags": "Markierungen",
       "No_tags": "No tags",
       "Server": "Welt",
       "Content": "Inhalt",
@@ -2437,13 +2437,13 @@
       "Please_pick_reason": "Why are you firing this contractor?",
       "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "NO_LONGER_NEED_JOB_DONE": "Das Inserat wird nicht mehr benötigt.",
+      "FOUND_SOMEONE_ELSE": "Weiterer Auftragnehmer für dieses Inserat gefunden.",
+      "CANNOT_AFFORD": "Ich kann mir dieses Inserat nicht leisten."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
+      "Please_pick_reason": "Warum trittst du von diesem Inserat zurück?",
+      "NO_ACTIVE_SUB": "Ich habe kein aktives Abonnement mehr.",
       "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
       "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
       "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
@@ -2463,11 +2463,11 @@
     "Last_node_update": "Last node position uploaded",
     "Clear_map": "Clear this map",
     "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Open_details": "Detailseite öffnen",
+    "X_Missing_nodes": "{{amount}} fehlende Abbaustelle(n)",
+    "Missing_nodes": "Fehlende Abbausstellen",
+    "No_missing_nodes": "Keine fehlenden Abbausstellen",
+    "Only_missing_nodes": "Zeige nur Karten mit fehlenden Abbaustellen"
   },
   "WORKSHOP_TREE": {
     "Title": "Workshop recipe tree",
@@ -2499,7 +2499,7 @@
     "Title": "Gehilfenunternehmungen",
     "Description": "Gib die Klasse, Stufe, Gegenstandsstufe und Sammelgeschick (falls benötigt) deines Gehilfen ein, um die ideale Unternehmung für den besten Gewinn zu finden. Dies kann bis zu einer Minute dauern, wenn dein Gehilfe ein hohes Level hat, weil es jeden Gegenstand berücksichtigt, den er gewinnbringend abbauen kann.",
     "Retainer_ilvl": "G.-Stufe",
-    "Gathering": "Gathering",
+    "Gathering": "Sammeln",
     "Task_level": "Stufe der Unternehmung",
     "Total_per_venture": "Gesamt für Unternehmung",
     "Use_retainer": "Fülle mit Gehilfe aus",
