@@ -2579,59 +2579,59 @@
   "AIRSHIP": {
     "CLASS": {
       "BRONCO": {
-        "Abbreviation": "B"
+        "Abbreviation": "야"
       },
       "INVINCIBLE": {
-        "Abbreviation": "i"
+        "Abbreviation": "무"
       },
       "ENTERPRISE": {
-        "Abbreviation": "E"
+        "Abbreviation": "엔"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "i2"
+        "Abbreviation": "무+"
       },
       "ODYSSEY": {
-        "Abbreviation": "O"
+        "Abbreviation": "오"
       },
       "TATANORA": {
-        "Abbreviation": "T"
+        "Abbreviation": "타"
       },
       "VILTGANCE": {
-        "Abbreviation": "V"
+        "Abbreviation": "빌"
       }
     }
   },
   "SUBMARINE": {
     "CLASS": {
       "SHARK": {
-        "Abbreviation": "S"
+        "Abbreviation": "상"
       },
       "UNKIU": {
-        "Abbreviation": "U"
+        "Abbreviation": "철"
       },
       "WHALE": {
-        "Abbreviation": "W"
+        "Abbreviation": "고"
       },
       "COELACANTH": {
-        "Abbreviation": "C"
+        "Abbreviation": "실"
       },
       "SYLDRA": {
-        "Abbreviation": "Y"
+        "Abbreviation": "드"
       },
       "MODIFIED_SHARK": {
-        "Abbreviation": "S+"
+        "Abbreviation": "상+"
       },
       "MODIFIED_UNKIU": {
-        "Abbreviation": "U+"
+        "Abbreviation": "철+"
       },
       "MODIFIED_WHALE": {
-        "Abbreviation": "W+"
+        "Abbreviation": "고+"
       },
       "MODIFIED_COELACANTH": {
-        "Abbreviation": "C+"
+        "Abbreviation": "실+"
       },
       "MODIFIED_SYLDRA": {
-        "Abbreviation": "Y+"
+        "Abbreviation": "드+"
       }
     }
   }
