@@ -2425,18 +2425,18 @@
       "Details": "Auftragsprofil",
       "View_details": "Profildetails öffnen",
       "Ratings": "Bewertungen",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
+      "Incidents": "Ereignisse",
+      "No_incidents": "Keine Ereignisse",
+      "Fired": "Aus einem Auftrag entlassen",
+      "Resigned": "Rücktritt von einem Auftrag",
       "No_ratings": "Noch keine Bewertungen",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Fired_X_times": "{{amount}} mal gefeuert",
+      "Resigned_X_times": "{{amount}} mal zurückgetreten"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
+      "Please_pick_reason": "Warum feuerst du diesen Auftragnehmer?",
+      "NO_ACTIVE_SUB": "Auftragnehmer hat kein aktives Abonnement mehr.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "Die Arbeit mit diesem Auftragnehmer ist nicht mehr angenehm.",
       "NO_LONGER_NEED_JOB_DONE": "Der Auftrag wird nicht mehr benötigt.",
       "FOUND_SOMEONE_ELSE": "Anderen Auftragnehmer für diesen Auftrag gefunden.",
       "CANNOT_AFFORD": "Ich kann mir diesen Auftrag nicht leisten."
@@ -2444,13 +2444,13 @@
     "RESIGNED": {
       "Please_pick_reason": "Warum trittst du von diesem Auftrag zurück?",
       "NO_ACTIVE_SUB": "Ich habe kein aktives Abonnement mehr.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
+      "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
+      "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
+      "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
       "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
     },
     "IMPORT": {
-      "Title": "Commission import",
+      "Title": "Auftragsimport",
       "Description": "Bitte überprüfe, dass diese Artikel die sind, für die du einen Auftrag erstellen möchtest. Hinweis: Artikel, die nicht gehandelt werden können, werden automatisch von der Liste unten entfernt.",
       "Create_commission": "Auftrag erstellen",
       "No_items": "Keine Einträge"
@@ -2532,16 +2532,16 @@
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "Import_from_pcap_notice": "1. Gehe in die Gesellschaftswerkstatt<br>2. Interagiere mit jedem U-Boot oder Luftschiff über das Verwaltungs-Interface",
-    "Airships": "Airships",
-    "Submersibles": "Submersibles"
+    "Airships": "Luftschiffe",
+    "Submersibles": "Tauchboote"
   },
   "VOYAGE_TRACKER": {
     "Title": "Voyage tracker",
-    "Import_using_pcap": "Import using packet capture",
-    "Voyage_completion_alarm": "Voyage completion alarm",
-    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Voyage_completion_alarm": "Alarm bei Abschluss der Erkundung",
+    "Voyage_completed_notification_title": "{{name}} hat seine Erkundung abgeschlossen",
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
-    "Voyage_complete": "Voyage complete",
+    "Voyage_complete": "Erkundung abgeschlossen",
     "No_airship": "Kein Luftschiff",
     "No_submersible": "Kein Tauchboot",
     "Sectors_discovered": "Sektoren entdeckt",
