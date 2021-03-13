@@ -695,8 +695,8 @@
     "Leave_list": "Diese Liste verlassen",
     "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
     "Split_list": "Diese Liste aufteilen",
-    "Create_commission": "Erstelle ein Inserat für diese Liste",
-    "Commission_list": "Inseratenliste",
+    "Create_commission": "Erstelle einen Auftrag für diese Liste",
+    "Commission_list": "Auftragsliste",
     "Inventory_cleanup": "Inventar bereinigen",
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "LAYOUT_DIALOG": {
@@ -1822,9 +1822,9 @@
     "Gathering": "Sammler",
     "Helpers": "Hilfen",
     "Other": "Anderes",
-    "Commissions": "Inserate",
+    "Commissions": "Aufträge",
     "Commission_board": "Board",
-    "My_commissions": "Meine Inserate",
+    "My_commissions": "Meine Aufträge",
     "Archived_commissions": "Archive",
     "Leveling": "Leveln",
     "Currencies": "Währungen",
@@ -2009,7 +2009,7 @@
     "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
     "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
     "Mark_as_done": "Als erledigt markieren",
-    "Create_commission": "Ein Inserat für dieses Ausrüstungsset erstellen",
+    "Create_commission": "Einen Auftrag für dieses Ausrüstungsset erstellen",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
@@ -2295,20 +2295,20 @@
     "Replay_result": "Ergebnis"
   },
   "COMMISSIONS": {
-    "New_commission": "Neues Inserat",
+    "New_commission": "Neuer Auftrag",
     "Price_tbd": "To be discussed",
     "X_items": "{{amount}} Gegenstände",
-    "Open_commission_details": "Öffne Inseratdetails",
-    "Your_commissions_as_client": "Deine Inserate als Auftraggeber",
-    "No_commissions_as_client": "Du hast keine Inserate als Auftraggeber",
+    "Open_commission_details": "Öffne Auftragdetails",
+    "Your_commissions_as_client": "Deine Aufträge als Auftraggeber",
+    "No_commissions_as_client": "Du hast keine Aufträge als Auftraggeber",
     "Your_commissions_as_crafter": "Aufträge an denen du arbeitest",
     "No_commissions_as_crafter": "Du arbeitest an keinen Aufträgen",
-    "Delete_commission": "Lösche dieses Inserat",
+    "Delete_commission": "Lösche diesen Auftrag",
     "Delete_list_too": "Liste ebenfalls löschen",
-    "Delete_commission_only": "Nur Inserat löschen",
-    "Your_archived_commissions_as_client": "Inserate als Auftraggeber",
-    "No_archived_commissions_as_client": "Du hast keine Inserate als Auftraggeber im Archiv",
-    "Your_archived_commissions_as_crafter": "Inserate als Auftragnehmer",
+    "Delete_commission_only": "Nur Auftrag löschen",
+    "Your_archived_commissions_as_client": "Aufträge als Auftraggeber",
+    "No_archived_commissions_as_client": "Du hast keine Aufträge als Auftraggeber im Archiv",
+    "Your_archived_commissions_as_crafter": "Aufträge als Auftragnehmer",
     "No_archived_commissions_as_crafter": "Du hast keine Inserate als Auftragnehmer im Archiv",
     "Updates": "Updates",
     "Clear_notifications": "Clear notifications",
@@ -2327,7 +2327,7 @@
     },
     "CREATION": {
       "Name": "Name",
-      "Name_placeholder": "Name deines Inserates",
+      "Name_placeholder": "Name deines Auftrages",
       "Name_required_error": "Bitte gib einen Namen ein",
       "Tags": "Markierungen",
       "Price": "Preis, den du bezahlen möchtest",
@@ -2337,23 +2337,23 @@
       "Only_materials": "Nur Material",
       "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "Kontaktinformationen",
-      "Contact_info_placeholder": "Wie können dich die Auftragnehmer kontaktieren, sobald sie für das Inserat angenommen wurden? Discord, Ingame, E-Mail, wie du möchtest.",
+      "Contact_info_placeholder": "Wie können dich die Auftragnehmer kontaktieren, sobald sie für den Auftrag angenommen wurden? Discord, Ingame, E-Mail, wie du möchtest.",
       "Contact_info_required_error": "Bitte gib Kontaktinformationen ein",
       "Description": "Beschreibung",
       "Description_placeholder": "Falls du mehr Details über deinen Auftrag angeben möchtest, kannst du das hier tun",
       "Description_max_length_error": "Beschreibung muss kürzer als 1000 Zeichen sein",
       "Warning": "Warnung",
-      "Warning_description": "Die Erstellung von Troll/Spam-Inseraten führt dazu, dass das Inserat gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
+      "Warning_description": "Die Erstellung von Troll/Spam-Aufträgen führt dazu, dass der Auftrag gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
       "Copy_link": "Importcode kopieren",
       "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Importcode für Inserat kopiert"
+      "Link_copied": "Importcode für Auftrag kopiert"
     },
     "BOARD": {
       "Title": "Schwarzes Brett",
       "Filter_with_tags": "Nach Markierungen filtern",
-      "No_matching_commissions": "Keine passenden Inserate",
+      "No_matching_commissions": "Keine passenden Aufträge",
       "Min_price": "Min. Preis",
-      "Tracking_tip": "Du kannst Benachrichtigungen für neue Inserate deines Datenzentrums über den Inseratebereich des offiziellen Discord-Servers erhalten"
+      "Tracking_tip": "Du kannst Benachrichtigungen für neue Aufträge deines Datenzentrums über den Auftragsbereich des offiziellen Discord-Servers erhalten"
     },
     "DETAILS": {
       "Created_by": "Erstellt von {{name}}",
@@ -2367,7 +2367,7 @@
       "Candidates": "Bewerber ({{amount}})",
       "Candidates_public_display": "Bewerber: {{amount}}",
       "Apply": "Übernehmen",
-      "Edit": "Dieses Inserat bearbeiten",
+      "Edit": "Diesen Auftrag bearbeiten",
       "No_candidates": "Keine Bewerber verfügbar",
       "Your_offer": "Dein Angebot",
       "Remove_offer": "Dein Angebot entfernen",
@@ -2376,15 +2376,15 @@
       "Contractor": "Auftragnehmer",
       "Open_list": "Öffne die Liste",
       "List": "Liste",
-      "Mark_as_completed": "Kommission als erledigt markieren",
+      "Mark_as_completed": "Auftrag als erledigt markieren",
       "Hire": "Diesen Auftragnehmer feuern",
-      "Progression_Tip": "Sobald die Liste abgeschlossen ist, kannst du dieses Inserat als abgeschlossen markieren",
+      "Progression_Tip": "Sobald die Liste abgeschlossen ist, kannst du diesen Auftrag als abgeschlossen markieren",
       "Ratings": "Bewertungen",
       "Waiting_for_rating": "Warte auf Bewertung",
       "Rate_commission": "Bewertung hinzufügen",
-      "Bump": "Dieses Inserat zurück nach oben bringen, nur einmal pro 24 Stunden",
+      "Bump": "Diesen Auftrag zurück nach oben bringen, nur einmal pro 24 Stunden",
       "Copy_share_link": "Link zum Teilen kopieren",
-      "Share_link_copied": "Link zum Inserat in die Zwischenablage kopiert",
+      "Share_link_copied": "Link zum Auftrag in die Zwischenablage kopiert",
       "No_description": "Keine Beschreibung",
       "Items_count": "Anzahl der Elemente",
       "Creation_date": "Erstellungsdatum",
@@ -2399,22 +2399,22 @@
       "Contact_info_placeholder": "Wie kann der Auftragnehmer dich kontaktieren, um über deine Bewerbung zu sprechen, falls du möchtest? Discord, Ingame, E-Mail, wie du möchtest."
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Klicken, um das Inserat zu öffnen",
+      "Click_to_open": "Klicken, um den Auftrag zu öffnen",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Vertrag beendet",
-        "Content": "Du bist nicht mehr der Auftragnehmer für das Inserat {{name}}"
+        "Title": "Auftragsvertrag beendet",
+        "Content": "Du bist nicht mehr der Auftragnehmer für den Auftrag {{name}}"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Vertrag beendet",
-        "Content": "Auftragnehmer für Inserat {{name}} ist nicht mehr zugewiesen"
+        "Title": "Auftragsvertrag beendet",
+        "Content": "Auftragnehmer für Auftrag {{name}} ist nicht mehr zugewiesen"
       },
       "HIRED": {
-        "Title": "Vertrag gestartet",
-        "Content": "Du wurdest für dieses Inserat {{name}} eingestellt"
+        "Title": "Auftragsvertrag gestartet",
+        "Content": "Du wurdest für diesen Auftrag {{name}} eingestellt"
       },
       "CANDIDATE": {
         "Title": "Neuer Bewerber",
-        "Content": "Neuer Kandidat für Inserat {{name}}"
+        "Content": "Neuer Bewerber für Auftrag {{name}}"
       },
       "DONE": {
         "Title": "Auftragsliste abgeschlossen",
