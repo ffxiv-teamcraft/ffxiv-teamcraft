@@ -439,7 +439,7 @@
     "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
     "Ignored_inventories": "Inventare ignorieren",
     "Enable_tutorials": "Tutorialsystem aktivieren",
-    "Show_patch_notes_on_update": "Show patch notes on new updates",
+    "Show_patch_notes_on_update": "Patchnotes bei neuen Updates anzeigen",
     "Scrolling_behavior": "Scrollverhalten",
     "Scrolling_behavior_explain": "Legt fest, wann in Listen-Elementen eine Scrollbar erscheint. \"Standard\" bedeutet, dass nach 12 Gegenständen eine Scrollbar erscheint.",
     "Enable_auto_log_check": "Gegenstände automatisch im Notizbuch als erledigt markieren, sobald sie gesammelt/hergestellt wurden",
@@ -460,7 +460,7 @@
     "Reset_contentid_characters": "Verlinkte Charaktere zurücksetzen",
     "Show_other_characters_inventories_in_list": "Zeige Inventare anderer Charaktere in Listen",
     "Alarm_panels_collapsed_by_default": "Alarmgruppen-Panels standardmäßig eingeklappt",
-    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "Export_settings": "Einstellungen exportieren",
     "Import_settings": "Einstellungen importieren",
@@ -608,7 +608,7 @@
     "Final_item": "Endprodukt",
     "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
     "Can_skip_buying_X": "Kann {{amount}} überspringen",
-    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "SCROLLING": {
       "Default": "Standard",
@@ -1488,7 +1488,7 @@
       "Required_craftsmanship": "benötigte Kunstfertigkeit",
       "Required_control": "benötigte Kontrolle",
       "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
-      "X_Equipped": "{{amount}} Equipped:",
+      "X_Equipped": "{{amount}} Ausgerüstet:",
       "Item_series": "Set-Details"
     },
     "FISH": {
@@ -1752,7 +1752,7 @@
     "Shown_only_craftable": "Nur wo ich das Level für habe",
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "Nur im Log nicht erledigt"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1763,8 +1763,8 @@
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix."
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Title": "Essens-Wähler",
+    "Description": "Du möchtest wissen, welches Essen dir die Werte gibt, die du möchtest? Such nicht weiter, du bist dort, wo du sein musst!",
     "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
@@ -1796,17 +1796,17 @@
     "Item_level": "Gegenstandsstufe",
     "Required_level": "Benötigte Stufe",
     "Recipe_level": "Rezeptstufe",
-    "Crafted_by": "Crafted by",
-    "Worn_by": "Worn by",
-    "Gear_stats": "Gear Stats",
-    "Consumable_stats": "Consumable Stats",
-    "No_stats_filters": "Woops, nothing's here",
+    "Crafted_by": "Hergestellt von",
+    "Worn_by": "Getragen von",
+    "Gear_stats": "Ausrüstungswerte",
+    "Consumable_stats": "Werte Konsumierbares",
+    "No_stats_filters": "Ups, hier ist nichts",
     "Add_stat_using_button": "To add a stat filter, click the button below",
-    "Stat": "Stat",
+    "Stat": "Attribut",
     "Range": "Range",
-    "Exclude": "Exclude",
+    "Exclude": "Ausschließen",
     "Select_stat": "Select a stat",
-    "Level": "Level",
+    "Level": "Stufe",
     "SORT_BY": {
       "Relevance": "Relevanz",
       "ID": "ID",
@@ -1823,7 +1823,7 @@
     "Helpers": "Hilfen",
     "Other": "Anderes",
     "Commissions": "Aufträge",
-    "Commission_board": "Board",
+    "Commission_board": "Schwarzes Brett",
     "My_commissions": "Meine Aufträge",
     "Archived_commissions": "Archive",
     "Leveling": "Leveln",
@@ -1876,7 +1876,7 @@
     "Filter_by_expansion": "Nach Erweiterung filtern",
     "In_x_containers": "In {{amount}} Inventaren",
     "New_character_detected": "Neuer Charakter erkannt",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "Unbekannte Position",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
@@ -1888,8 +1888,8 @@
     },
     "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
+      "Linked": "Verknüpft",
+      "Linked_tooltip": "Dieser Charakter ist bereits mit einem anderen Ingame-Charakter verknüpft. Auswählen führt zur Löschung des anderen Charakters",
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
       "You_can_reset_ignore": "Du kannst ignorierte Charakter auf der Einstellungsseite im Desktop-Bereich zurücksetzen",
