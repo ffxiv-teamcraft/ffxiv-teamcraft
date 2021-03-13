@@ -2313,7 +2313,7 @@
     "Updates": "Updates",
     "Clear_notifications": "Clear notifications",
     "TAGS": {
-      "CRAFTING": "Crafting",
+      "CRAFTING": "Herstellung",
       "GATHERING": "Sammeln",
       "HUNTING": "Monsterjagd",
       "FISHING": "Fischen",
@@ -2360,64 +2360,64 @@
       "Details": "Details",
       "Price": "Zahlung",
       "Tags": "Markierungen",
-      "No_tags": "No tags",
+      "No_tags": "Keine Markierungen",
       "Server": "Welt",
       "Content": "Inhalt",
       "Progression": "Fortschritt",
-      "Candidates": "Candidates ({{amount}})",
-      "Candidates_public_display": "Candidates : {{amount}}",
+      "Candidates": "Bewerber ({{amount}})",
+      "Candidates_public_display": "Bewerber: {{amount}}",
       "Apply": "Übernehmen",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
+      "Edit": "Dieses Inserat bearbeiten",
+      "No_candidates": "Keine Bewerber verfügbar",
       "Your_offer": "Dein Angebot",
       "Remove_offer": "Dein Angebot entfernen",
-      "Fire_contractor": "Fire the contractor",
+      "Fire_contractor": "Auftragnehmer feuern",
       "Resign": "Resign",
-      "Contractor": "Contractor",
+      "Contractor": "Auftragnehmer",
       "Open_list": "Öffne die Liste",
       "List": "Liste",
       "Mark_as_completed": "Kommission als erledigt markieren",
-      "Hire": "Hire this contractor",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
+      "Hire": "Diesen Auftragnehmer feuern",
+      "Progression_Tip": "Sobald die Liste abgeschlossen ist, kannst du dieses Inserat als abgeschlossen markieren",
       "Ratings": "Bewertungen",
       "Waiting_for_rating": "Warte auf Bewertung",
       "Rate_commission": "Bewertung hinzufügen",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard",
+      "Bump": "Dieses Inserat zurück nach oben bringen, nur einmal pro 24 Stunden",
+      "Copy_share_link": "Link zum Teilen kopieren",
+      "Share_link_copied": "Link zum Inserat in die Zwischenablage kopiert",
       "No_description": "Keine Beschreibung",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags",
+      "Items_count": "Anzahl der Elemente",
+      "Creation_date": "Erstellungsdatum",
+      "Server_&_tags": "Server & Markierungen",
       "Add_items": "Items hinzufügen",
       "Rating": "Bewertung",
       "Comment": "Dein Kommentar",
-      "Comment_placeholder": "Add more details about your rating here"
+      "Comment_placeholder": "Füge hier weitere Details zu deiner Bewertung hinzu"
     },
     "APPLY": {
-      "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Price": "Dein Preis",
+      "Contact_info_placeholder": "Wie kann der Auftragnehmer dich kontaktieren, um über deine Bewerbung zu sprechen, falls du möchtest? Discord, Ingame, E-Mail, wie du möchtest."
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "Klicken, um das Inserat zu öffnen",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "Vertrag beendet",
+        "Content": "Du bist nicht mehr der Auftragnehmer für das Inserat {{name}}"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "Vertrag beendet",
+        "Content": "Auftragnehmer für Inserat {{name}} ist nicht mehr zugewiesen"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "Vertrag gestartet",
+        "Content": "Du wurdest für dieses Inserat {{name}} eingestellt"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "Neuer Bewerber",
+        "Content": "Neuer Kandidat für Inserat {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
+        "Title": "Auftragsliste abgeschlossen",
         "Content": "List associated with commission {{name}} has been completed"
       }
     },
@@ -2570,7 +2570,7 @@
     },
     "STATS": {
       "Surveillance": "Detektion",
-      "Retrieval": "Retrieval",
+      "Retrieval": "Effizienz",
       "Speed": "Geschwindigkeit",
       "Range": "Reichweite",
       "Favor": "Gunst"
