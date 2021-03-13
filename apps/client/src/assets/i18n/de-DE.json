@@ -2320,7 +2320,7 @@
       "GEAR": "Ausrüstung"
     },
     "STATUS": {
-      "Label": "Statuseffekt",
+      "Label": "Status",
       "OPENED": "Opened",
       "IN_PROGRESS": "In Bearbeitung",
       "ARCHIVED": "Archiviert"
@@ -2335,7 +2335,7 @@
       "Only_crafting": "Nur herstellen",
       "Includes_materials_label": "Dieser Auftrag umfasst alle Basismaterialien und benötigt nur die Herstellung",
       "Only_materials": "Nur Material",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_requires_materials": "Dieser Auftrag benötigt nur Materialien für diese Liste",
       "Contact_info": "Kontaktinformationen",
       "Contact_info_placeholder": "Wie können dich die Auftragnehmer kontaktieren, sobald sie für den Auftrag angenommen wurden? Discord, Ingame, E-Mail, wie du möchtest.",
       "Contact_info_required_error": "Bitte gib Kontaktinformationen ein",
@@ -2345,7 +2345,7 @@
       "Warning": "Warnung",
       "Warning_description": "Die Erstellung von Troll/Spam-Aufträgen führt dazu, dass der Auftrag gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
       "Copy_link": "Importcode kopieren",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Copy_link_tooltip": "Gibt dir die URL zum Öffnen, um diesen genauen Auftrag zu erstellen, nützlich für das Schreiben von Anleitungen.",
       "Link_copied": "Importcode für Auftrag kopiert"
     },
     "BOARD": {
@@ -2372,7 +2372,7 @@
       "Your_offer": "Dein Angebot",
       "Remove_offer": "Dein Angebot entfernen",
       "Fire_contractor": "Auftragnehmer feuern",
-      "Resign": "Resign",
+      "Resign": "Zurücktreten",
       "Contractor": "Auftragnehmer",
       "Open_list": "Öffne die Liste",
       "List": "Liste",
@@ -2418,13 +2418,13 @@
       },
       "DONE": {
         "Title": "Auftragsliste abgeschlossen",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Content": "Liste für den Auftrag {{name}} wurde abgeschlossen"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
+      "Details": "Auftragsprofil",
+      "View_details": "Profildetails öffnen",
+      "Ratings": "Bewertungen",
       "Incidents": "Incidents",
       "No_incidents": "No incidents",
       "Fired": "Fired from a commission",
@@ -2437,12 +2437,12 @@
       "Please_pick_reason": "Why are you firing this contractor?",
       "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "Das Inserat wird nicht mehr benötigt.",
-      "FOUND_SOMEONE_ELSE": "Weiterer Auftragnehmer für dieses Inserat gefunden.",
-      "CANNOT_AFFORD": "Ich kann mir dieses Inserat nicht leisten."
+      "NO_LONGER_NEED_JOB_DONE": "Der Auftrag wird nicht mehr benötigt.",
+      "FOUND_SOMEONE_ELSE": "Anderen Auftragnehmer für diesen Auftrag gefunden.",
+      "CANNOT_AFFORD": "Ich kann mir diesen Auftrag nicht leisten."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Warum trittst du von diesem Inserat zurück?",
+      "Please_pick_reason": "Warum trittst du von diesem Auftrag zurück?",
       "NO_ACTIVE_SUB": "Ich habe kein aktives Abonnement mehr.",
       "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
       "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
@@ -2451,8 +2451,8 @@
     },
     "IMPORT": {
       "Title": "Commission import",
-      "Description": "Bitte überprüfe, dass diese Artikel die sind, für die du ein Inserat erstellen möchtest. Hinweis: Artikel, die nicht gehandelt werden können, werden automatisch von der Liste unten entfernt.",
-      "Create_commission": "Inserat erstellen",
+      "Description": "Bitte überprüfe, dass diese Artikel die sind, für die du einen Auftrag erstellen möchtest. Hinweis: Artikel, die nicht gehandelt werden können, werden automatisch von der Liste unten entfernt.",
+      "Create_commission": "Auftrag erstellen",
       "No_items": "Keine Einträge"
     }
   },
