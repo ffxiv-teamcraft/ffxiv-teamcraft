@@ -187,7 +187,7 @@
     "Alarms_created": "{{amount}} Alarme erstellt",
     "Alarm_already_created": "Benachrichtigung bereits vorhanden",
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "Negativer Wert = später als der Spawn",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
     "Delete_group": "Gruppe löschen",
@@ -334,7 +334,7 @@
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
-  "Npc_breakdown": "Npc breakdown",
+  "Npc_breakdown": "NPC Übersicht",
   "Reverse_tiers": "Zeige umgedrehte Meilensteine",
   "Timer_options": "Alarm-Optionen",
   "Early_by": "Frühzeitig (in Eorzäischen Stunden)",
@@ -453,7 +453,7 @@
     "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "Favorite_features": "Lieblingsfunktionen",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
+    "Favorite_features_explain": "Die Funktionen, die du im Favoritenbereich der Seitenleiste angezeigt werden.",
     "Clear_inventory_on_startup": "Inventar beim Start bereinigen",
     "Switch_tc_when_switch_ingame_character": "Wechsle Teamcraft-Charakter beim Ingame Wechsel",
     "Reset_ignored_characters": "Ignorierte Charaktere zurücksetzen",
@@ -466,8 +466,8 @@
     "Import_settings": "Einstellungen importieren",
     "Import_successful": "Einstellungen importiert",
     "Import_error": "Fehler beim Importieren der Einstellungen",
-    "Has_access_to_housing_vendor": "Prioritize housing vendor",
-    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Has_access_to_housing_vendor": "Haushändler bevorzugen",
+    "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -490,10 +490,10 @@
       "Lists": "Listen",
       "Alarms": "Alarme",
       "Other": "Anderes",
-      "Inventory_tracking": "Inventory tracking",
+      "Inventory_tracking": "Inventarerfassung",
       "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
-      "Import_export": "Import/export",
+      "Import_export": "Importieren/Exportieren",
       "Sekrit": "Geheim"
     },
     "REGIONS": {
@@ -607,7 +607,7 @@
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
     "Final_item": "Endprodukt",
     "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
-    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_X": "Kann {{amount}} überspringen",
     "Can_skip_buying_entirely": "Can skip entirely",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
@@ -1828,8 +1828,8 @@
     "Archived_commissions": "Archive",
     "Leveling": "Leveln",
     "Currencies": "Währungen",
-    "Add_to_favorites": "Add to favorites",
-    "Remove_from_favorites": "Remove from favorites"
+    "Add_to_favorites": "Zu Favoriten hinzufügen",
+    "Remove_from_favorites": "Aus Favoriten entfernen"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
