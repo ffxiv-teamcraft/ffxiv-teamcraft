@@ -2451,17 +2451,17 @@
     },
     "IMPORT": {
       "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Description": "Bitte überprüfe, dass diese Artikel die sind, für die du ein Inserat erstellen möchtest. Hinweis: Artikel, die nicht gehandelt werden können, werden automatisch von der Liste unten entfernt.",
+      "Create_commission": "Inserat erstellen",
+      "No_items": "Keine Einträge"
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
+    "Total_entries": "Gesamte Einträge",
+    "Last_updated": "Letzte Aktualisierung",
+    "Last_bnpc_update": "Letzte hochgeladene Monsterposition",
+    "Last_node_update": "Letzte hochgeladene Abbaustellenposition",
+    "Clear_map": "Diese Karte bereinigen",
     "Dashboard": "Mappy Dashboard",
     "Open_details": "Detailseite öffnen",
     "X_Missing_nodes": "{{amount}} fehlende Abbaustelle(n)",
@@ -2542,38 +2542,38 @@
     "Voyage_completed_notification_title": "{{name}} has completed its voyage",
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
     "Voyage_complete": "Voyage complete",
-    "No_airship": "No airship",
-    "No_submersible": "No submersible",
-    "Sectors_discovered": "Sectors discovered",
-    "Delete_free_company": "Delete the Free Company",
+    "No_airship": "Kein Luftschiff",
+    "No_submersible": "Kein Tauchboot",
+    "Sectors_discovered": "Sektoren entdeckt",
+    "Delete_free_company": "Die Freie Gesellschaft löschen",
     "Name_column": "Name",
-    "Return_time_column": "Return time",
-    "Remaining_time_column": "Remaining time",
-    "Rank_column": "Rank",
+    "Return_time_column": "Rückkehrzeit",
+    "Remaining_time_column": "Verbleibende Zeit",
+    "Rank_column": "Rang",
     "Build_column": "Build",
-    "Voyage_column": "Voyage",
-    "Nothing_to_show": "Nothing to show",
-    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "Voyage_column": "Erkundung",
+    "Nothing_to_show": "Nichts zum Anzeigen",
+    "Please_import_pcap": "Bitte importiere deine Luftschiffe und Tauchboote mit Paketerfassung",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "Luftschiff",
+      "Submersible": "Tauchboot"
     },
     "VOYAGE_DETAILS": {
-      "Title": "Voyage"
+      "Title": "Erkundung"
     },
     "BUILD_DETAILS": {
       "Title": "Build",
-      "Condition": "Condition"
+      "Condition": "Zustand"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "Attribute"
     },
     "STATS": {
-      "Surveillance": "Surveillance",
+      "Surveillance": "Detektion",
       "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Speed": "Geschwindigkeit",
+      "Range": "Reichweite",
+      "Favor": "Gunst"
     }
   },
   "AIRSHIP": {
