@@ -1893,7 +1893,7 @@
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
       "You_can_reset_ignore": "Du kannst ignorierte Charakter auf der Einstellungsseite im Desktop-Bereich zurücksetzen",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Wenn du den Charakter bereits verlinkt hast, mit dem du gerade spielst, kannst du diesen Charakter sicher ignorieren, Teamcraft liest Dateiänderungen und einige Dateien könnten sich aus irgendeinem Grund ändern, was dies auslöst, wenn die Datei noch nicht verknüpft ist."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1943,7 +1943,7 @@
     },
     "USELESS_HQ": {
       "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
     }
   },
   "VERSION_LOCK": {
@@ -1973,7 +1973,7 @@
     "Cost": "Kosten",
     "Modal_editor": "Materia für {{itemName}}",
     "Unavailable_slot": "Platz nicht verfügbar",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "Beim Umschalten des Jobs werden Kristall, Haupthand und Nebenhand, einschließlich Materia, entfernt. Bitte beachten dies vor dem Umschalten, wenn du die gleichen Melds nutzen möchtest.",
     "Pick_a_job": "Job auswählen",
     "New_gearset": "Neues Ausrüstungsset",
     "Please_input_ariyala_link": "Bitte Ariyala-Link eingeben",
@@ -2012,8 +2012,8 @@
     "Create_commission": "Einen Auftrag für dieses Ausrüstungsset erstellen",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
-    "Editing_others_gearset": "Local editing mode",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
+    "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers und es wird nichts gespeichert, wenn du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2059,8 +2059,8 @@
       "Title": "Synchronisiere Ausrüstungssets",
       "Tag": "Synchronisieren",
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "Importiere Set für {{name}}",
+      "Imported_gearset": "Importierte Gruppe für {{name}}",
       "Syncing_gearsets": "Synchronisiere Ausrüstungssets..."
     }
   },
@@ -2296,7 +2296,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "Neuer Auftrag",
-    "Price_tbd": "To be discussed",
+    "Price_tbd": "Zu besprechen",
     "X_items": "{{amount}} Gegenstände",
     "Open_commission_details": "Öffne Auftragdetails",
     "Your_commissions_as_client": "Deine Aufträge als Auftraggeber",
@@ -2310,8 +2310,8 @@
     "No_archived_commissions_as_client": "Du hast keine Aufträge als Auftraggeber im Archiv",
     "Your_archived_commissions_as_crafter": "Aufträge als Auftragnehmer",
     "No_archived_commissions_as_crafter": "Du hast keine Inserate als Auftragnehmer im Archiv",
-    "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "Updates": "Aktualisierungen",
+    "Clear_notifications": "Benachrichtigungen löschen",
     "TAGS": {
       "CRAFTING": "Herstellung",
       "GATHERING": "Sammeln",
@@ -2321,7 +2321,7 @@
     },
     "STATUS": {
       "Label": "Status",
-      "OPENED": "Opened",
+      "OPENED": "Geöffnet",
       "IN_PROGRESS": "In Bearbeitung",
       "ARCHIVED": "Archiviert"
     },
