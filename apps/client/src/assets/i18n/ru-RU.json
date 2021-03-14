@@ -629,7 +629,8 @@
     "ROTATION": {
       "Attach": "Прикрепить ротацию",
       "Detach": "Открепить ротацию",
-      "Click_to_copy_macro": "Нажмите, чтобы открыть всплывающее окно копирования макроса"
+      "Click_to_copy_macro": "Нажмите, чтобы открыть всплывающее окно копирования макроса",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
