@@ -206,7 +206,7 @@
               [forceCopyMode]="notFavoriteCopyMode"
               [disableTooltip]="true"
               nz-menu-item>
-            {{(notFavoriteCopyMode === 'isearch' ? 'Copy_isearch': 'Copy_item_name_to_clipboard') | translate}}
+            {{(notFavoriteCopyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard') | translate}}
           </li>
         </ng-container>
 
@@ -350,11 +350,19 @@
   <ng-container *ngIf="attachedRotation">
     <ng-container *ngIf="recipe$ | async as recipe">
       <ng-container *ngIf="rotation$ | async as rotation">
-        <nz-tag (click)="openRotationMacroPopup.emit(rotation)"
-                [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
-                nz-tooltip>
-          {{rotation.getName()}}
-        </nz-tag>
+        <nz-button-group>
+          <button nz-button nzSize="small" (click)="openRotationMacroPopup.emit(rotation)"
+                  [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
+                  nz-tooltip>
+            {{rotation.getName()}}
+          </button>
+          <button nz-button nzSize="small" (click)="openRotationOverlay(rotation)"
+                  *ngIf="platform.isDesktop()"
+                  [nzTooltipTitle]="'LIST.ROTATION.Open_in_overlay' | translate"
+                  nz-tooltip>
+            <i nz-icon nzType="desktop"></i>
+          </button>
+        </nz-button-group>
         <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe"></app-rotation-result-tag>
       </ng-container>
     </ng-container>
