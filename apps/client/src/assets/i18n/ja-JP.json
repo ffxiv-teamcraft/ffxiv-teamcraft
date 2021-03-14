@@ -629,7 +629,8 @@
     "ROTATION": {
       "Attach": "製作ローテーション連動",
       "Detach": "製作ローテーション連動",
-      "Click_to_copy_macro": "マクロのコピーポップアップページを開く"
+      "Click_to_copy_macro": "マクロのコピーポップアップページを開く",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
