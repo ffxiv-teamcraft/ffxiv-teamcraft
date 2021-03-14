@@ -629,7 +629,8 @@
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
-      "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen"
+      "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
