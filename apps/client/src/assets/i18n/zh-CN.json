@@ -629,7 +629,8 @@
     "ROTATION": {
       "Attach": "附加手法",
       "Detach": "删去手法",
-      "Click_to_copy_macro": "点击打开“复制宏”弹出框"
+      "Click_to_copy_macro": "点击打开“复制宏”弹出框",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
