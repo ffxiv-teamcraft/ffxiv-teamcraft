@@ -629,7 +629,8 @@
     "ROTATION": {
       "Attach": "Adjuntar rotación",
       "Detach": "Desligar rotación",
-      "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro"
+      "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
