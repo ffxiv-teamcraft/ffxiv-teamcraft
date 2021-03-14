@@ -14,6 +14,7 @@ export interface ListsState {
   connectedTeams: string[];
   deleted: string[];
   pinned: string;
+  showArchived: boolean;
 }
 
 export const initialState: ListsState = {
@@ -22,7 +23,8 @@ export const initialState: ListsState = {
   needsVerification: false,
   deleted: [],
   connectedTeams: [],
-  pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none'
+  pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
+  showArchived: false
 };
 
 export function listsReducer(
@@ -63,6 +65,22 @@ export function listsReducer(
           ...action.payload
         ],
         listsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.LoadArchivedLists: {
+      state = {
+        ...state,
+        showArchived: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.UnLoadArchivedLists: {
+      state = {
+        ...state,
+        showArchived: false
       };
       break;
     }

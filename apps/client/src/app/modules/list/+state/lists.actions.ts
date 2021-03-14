@@ -6,6 +6,7 @@ export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
   LoadTeamLists = '[Lists] Load Team Lists',
   LoadArchivedLists = '[Lists] Load Archived Lists',
+  UnLoadArchivedLists = '[Lists] Unload Archived Lists',
 
   LoadSharedLists = '[Lists] Load Shared Lists',
 
@@ -62,6 +63,10 @@ export class LoadTeamLists implements Action {
 
 export class LoadArchivedLists implements Action {
   readonly type = ListsActionTypes.LoadArchivedLists;
+}
+
+export class UnLoadArchivedLists implements Action {
+  readonly type = ListsActionTypes.UnLoadArchivedLists;
 }
 
 export class TeamListsLoaded implements Action {
@@ -257,4 +262,5 @@ export type ListsAction =
   | UnPinList
   | LoadArchivedLists
   | ArchivedListsLoaded
+  | UnLoadArchivedLists
   | PureUpdateList;
