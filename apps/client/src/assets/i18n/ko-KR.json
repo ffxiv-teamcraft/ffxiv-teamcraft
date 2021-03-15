@@ -16,7 +16,7 @@
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
-  "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
+  "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "Patch_notes": "{{version}} 변경점",
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
@@ -466,8 +466,8 @@
     "Import_settings": "설정 가져오기",
     "Import_successful": "설정을 불러왔습니다",
     "Import_error": "설정을 가져오는 중 오류 발생",
-    "Has_access_to_housing_vendor": "Prioritize housing vendor",
-    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Has_access_to_housing_vendor": "하우징 상인 우선순위",
+    "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -630,7 +630,7 @@
       "Attach": "제작 로테이션 연동",
       "Detach": "제작 로테이션 연동해제",
       "Click_to_copy_macro": "매크로 복사 팝업 페이지 열기",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "로테이션 오버레이 열기"
     },
     "INVENTORY": {
       "Show_final_items": "최종 아이템 표시",
@@ -2013,7 +2013,7 @@
     "Create_commission": "해당 장비 세트를 유저 의뢰로 만들기",
     "Value_for_next": "다음 중단점",
     "Value_for_previous": "이전 중단점",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "SLOT": {
       "Body": "몸통",
@@ -2553,7 +2553,7 @@
     "Rank_column": "랭크",
     "Build_column": "Build",
     "Voyage_column": "탐사",
-    "Nothing_to_show": "Nothing to show",
+    "Nothing_to_show": "표시 할 내용 없음",
     "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
     "SECTOR_PROGRESSION": {
       "Airship": "비공정",
