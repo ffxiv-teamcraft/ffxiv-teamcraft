@@ -90,8 +90,8 @@
         </div>
         <div class="input">
           <nz-input-group [nzPrefix]="clearInput">
-            <input #searchInput (input)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
-                   (keydown.enter)="query$.next(searchInput.value)"
+            <input #searchInput (input)="!settings.disableSearchDebounce?queryChange(searchInput.value):null"
+                   (keydown.enter)="queryChange(searchInput.value)"
                    [ngModelOptions]="{standalone: true}"
                    (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
                    [nzAutocomplete]="settings.disableSearchHistory||settings.disableSearchDebounce?emptyFill:auto"

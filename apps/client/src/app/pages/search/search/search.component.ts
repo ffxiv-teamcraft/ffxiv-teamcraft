@@ -247,6 +247,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
+  queryChange(value: string): void {
+    this.query$.next(value);
+    this.submitFilters();
+  }
+
   ngOnInit(): void {
     this.translate.onLangChange.pipe(
       startWith({ lang: this.translate.currentLang }),
@@ -426,7 +431,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     const formRawValue: any = {};
     (filters || []).forEach(f => {
       const formFieldName = this.getFormFieldName(f.name);
-      if (f.value !== null) {
+      if (!!f.value) {
         if (f.formArray) {
           if (form.get(f.formArray) === null) {
             form.setControl(f.formArray, this.fb.array([]));
