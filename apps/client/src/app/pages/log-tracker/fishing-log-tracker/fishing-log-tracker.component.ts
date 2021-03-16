@@ -56,4 +56,10 @@ export class FishingLogTrackerComponent extends TrackerComponent {
     this.authFacade.markAsDoneInLog('gathering', itemId, done);
   }
 
+  public markSpotAsDone(spot: any): void {
+    for (const fish of spot.fishes) {
+      this.authFacade.markAsDoneInLog('gathering', fish.itemId, true);
+    }
+  }
+
 }

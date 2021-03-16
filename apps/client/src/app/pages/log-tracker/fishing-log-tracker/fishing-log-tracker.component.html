@@ -48,6 +48,12 @@
                 <app-map [mapId]="spot.mapId" [markers]="[spot.coords]"></app-map>
               </div>
               <div fxFlex="1 1 auto" fxLayout="column" class="fish-list">
+                <div>
+                  <button (nzOnConfirm)="markSpotAsDone(spot)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+                          nz-popconfirm>
+                    <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
+                  </button>
+                </div>
                 <ng-container *ngFor="let item of spot.fishes; let last = last">
                   <div *ngIf="!item.done || !hideCompleted">
                     <div fxLayoutAlign="flex-start center" nz-row>
