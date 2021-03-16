@@ -2635,5 +2635,13 @@
         "Abbreviation": "Y+"
       }
     }
+  },
+  "TREASURE_FINDER": {
+    "Title": "Treasure finder",
+    "Description": "Pick a map and find the treasure you're looking for",
+    "Select_map": "Pick a map",
+    "Select_item": "Select treasure map item",
+    "Select_treasure_map": "Select your treasure map",
+    "Find_another": "Find another treasure"
   }
 }
