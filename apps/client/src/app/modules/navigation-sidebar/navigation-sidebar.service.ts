@@ -321,6 +321,14 @@ export class NavigationSidebarService {
               hidden: !this.platformService.isDesktop()
             },
             {
+              name: 'TREASURE_FINDERTitle',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'format-painter'
+              },
+              link: '/treasure-finder'
+            },
+            {
               name: 'LIST_DETAILS.LAYOUT_DIALOG.Layouts',
               icon: {
                 type: SidebarIconType.ANTD,

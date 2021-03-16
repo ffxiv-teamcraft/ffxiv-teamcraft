@@ -1,0 +1,61 @@
+<h2>{{'TREASURE_FINDER.Title' | translate}}</h2>
+<p>{{'TREASURE_FINDER.Description' | translate}}</p>
+
+<div fxLayout="column" fxLayoutGap="10px">
+
+  <div *ngIf="selectedTreasure$ | async as selectedTreasure; else form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div>
+      <button nz-button nzType="primary" (click)="selectedTreasure$.next(null)">{{'TREASURE_FINDER.Find_another' | translate}}</button>
+    </div>
+    <app-map *ngIf="markers$ | async as markers" [mapId]="selectedTreasure.map" [markers]="markers"></app-map>
+  </div>
+
+  <ng-template #form>
+    <nz-form-item *ngIf="maps$ | async as maps">
+      <nz-form-label [nzSpan]="3">{{'TREASURE_FINDER.Select_map' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="4">
+        <nz-select [nzPlaceHolder]="'TREASURE_FINDER.Select_map' | translate"
+                   [ngModel]="map$ | async"
+                   (ngModelChange)="map$.next($event)"
+                   nzShowSearch class="select-box">
+          <nz-option *ngFor="let map of maps" [nzLabel]="map.placename_id | placeName | i18n"
+                     [nzValue]="map.id"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item *ngIf="treasureItemIds$ | async as itemIds">
+      <nz-form-label [nzSpan]="3">{{'TREASURE_FINDER.Select_item' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="4">
+        <nz-select [ngModel]="treasureItemId$ | async" (ngModelChange)="treasureItemId$.next($event)"
+                   [nzPlaceHolder]="'TREASURE_FINDER.Select_item' | translate" class="select-box">
+          <nz-option [nzValue]="-1" [nzLabel]="'COMMON.Unknown' | translate"></nz-option>
+          <nz-option *ngFor="let itemId of itemIds" [nzValue]="itemId" [nzLabel]="itemId | itemName | i18n"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item *ngIf="possibleTreasureMaps$ | async as possibleTreasureMaps">
+      <nz-form-label [nzSpan]="3">{{'TREASURE_FINDER.Select_treasure_map' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="21">
+        <div fxLayout="row wrap" fxLayoutGap="10px">
+          <div *ngFor="let treasure of possibleTreasureMaps" class="treasure-map" (click)="selectedTreasure$.next(treasure)">
+            <div class="map-background-container">
+              <img [src]="treasure.mapImage" alt="" class="map-background" style.top="-{{treasure.display.y}}px" style.left="-{{treasure.display.x}}px">
+            </div>
+            <img src="./assets/icons/treasure_map.png" alt="" class="map-foreground">
+            <img src="./assets/icons/treasure_marker.png" alt="" class="treasure-marker">
+            <div class="position shadow-text">X: {{treasure.coords.x}} - Y: {{treasure.coords.y}}</div>
+            <div class="player-count" fxLayout="row">
+              <div class="player-icon">
+                <img class="player-icon-part" src="./assets/icons/treasuremap_circle.png" alt="">
+                <img class="player-icon-part" src="./assets/icons/treasuremap_player.png" alt="">
+              </div>
+              <div class="party-size shadow-text">{{treasure.partySize}}</div>
+            </div>
+          </div>
+        </div>
+      </nz-form-control>
+    </nz-form-item>
+  </ng-template>
+</div>

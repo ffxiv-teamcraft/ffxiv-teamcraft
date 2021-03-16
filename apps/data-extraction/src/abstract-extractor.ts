@@ -53,6 +53,10 @@ export abstract class AbstractExtractor {
     );
   }
 
+  protected requireLazyFile(name: string): any {
+    return require(join(AbstractExtractor.assetOutputFolder, `${name}.json`));
+  }
+
   protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {
     if (url.indexOf('?') > -1) {
       return `${url}&${paramName}=${paramValue}`;

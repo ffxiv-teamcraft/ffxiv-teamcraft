@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gc-supply/gc-supply.module').then(m => m.GcSupplyModule)
   },
   {
+    path: 'treasure-finder',
+    loadChildren: () => import('./pages/treasure-finder/treasure-finder.module').then(m => m.TreasureFinderModule)
+  },
+  {
     path: 'levequests',
     loadChildren: () => import('./pages/levequests/levequests.module').then(m => m.LevequestsModule)
   },

@@ -89,6 +89,7 @@ export interface LazyData {
   territoryLayers: any;
   tradeFlags: any;
   traits: any;
+  treasures: any;
   tribes: any;
   tripleTriadRules: any;
   ventures: any;
