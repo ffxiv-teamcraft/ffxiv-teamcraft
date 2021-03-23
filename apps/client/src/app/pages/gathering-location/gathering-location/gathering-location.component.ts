@@ -85,6 +85,7 @@ export class GatheringLocationComponent {
   public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {
     return alarms.find(alarm => {
       return node.matchingItemId === alarm.itemId
+        && Math.floor(node.x) === Math.floor(alarm.coords.x)
         && node.zoneId === alarm.zoneId
         && node.type === alarm.type;
     }) === undefined;
@@ -93,6 +94,7 @@ export class GatheringLocationComponent {
   public canCreateAlarm(alarms: Alarm[], alarm: Alarm): boolean {
     return alarms.find(a => {
       return alarm.itemId === a.itemId
+        && Math.floor(alarm.coords.x) === Math.floor(a.coords.x)
         && alarm.zoneId === a.zoneId
         && alarm.type === a.type
         && alarm.fishEyes === a.fishEyes;
