@@ -321,10 +321,10 @@ export class NavigationSidebarService {
               hidden: !this.platformService.isDesktop()
             },
             {
-              name: 'TREASURE_FINDERTitle',
+              name: 'TREASURE_FINDER.Title',
               icon: {
-                type: SidebarIconType.ANTD,
-                content: 'format-painter'
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE906;')
               },
               link: '/treasure-finder'
             },
