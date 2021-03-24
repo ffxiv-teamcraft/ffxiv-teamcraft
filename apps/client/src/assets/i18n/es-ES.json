@@ -1,21 +1,22 @@
 {
   "Quests": "Misiones",
   "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
-  "Search_placeholder": "Nombre de {{type}}",
   "Pick_a_list": "Escoja una lista",
   "Pick_a_user": "Escoja un usuario",
   "Pick_a_fc": "Escoja un Gremio Independiente (FC)",
   "Pick_a_rotation": "Elegir una rotación",
   "Pick_a_recipe": "Elegir una receta",
   "Pick_an_item": "Seleccione un artículo",
+  "FC": "Free Company",
   "FC_name": "Nombre de Gremio Independiente (FC)",
+  "FC_rank": "Free Company Rank",
   "Saving_in_database": "Guardando datos en el servidor",
   "See_on_map": "Ver en mapa",
   "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Editar cantidad",
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
-  "Hide_zone_duplicates": "Ocultar zonas duplicadas (artículos que se encuentran en varias zonas se muestran sólo una vez)",
+  "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "Cambios en {{version}}",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
@@ -50,7 +51,7 @@
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
   "Find_us_on_twitter": "Síganos en Twitter",
-  "Join_discord_server": "Únase a nuestro servidor de Discord",
+  "Join_discord_server": "Join our discord server",
   "See_code_github": "Vea el código en github",
   "Support_on_patreon": "Apoye el proyecto en patreon",
   "Access_patreon_page": "Visita nuestro Patreon",
@@ -172,7 +173,11 @@
     "Change": "Cambio",
     "Dirty_changes": "You have unapplied changes",
     "Never": "Never",
-    "Festival": "Only during a festival"
+    "Festival": "Only during a festival",
+    "Back": "Back",
+    "Support_us_remove_ads": "Support us on patreon to remove ads",
+    "Support_us": "Support us",
+    "Show_more": "Show more"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -311,14 +316,6 @@
   "Import": "Importar",
   "Favorites": "Favoritos",
   "Favorite": "Favorito",
-  "filters/ilvl": "Nivel del artículo",
-  "filters/lvl": "Nivel requerido",
-  "filters/craft_lvl": "Nivel de la receta",
-  "filters/worn_by": "Usado por",
-  "filters/crafted_by": "Creado por:",
-  "filters/item_category": "Tipo de artículo",
-  "filters/stats": "Filtros de atributos",
-  "filters/bonuses": "Filtros de bonos de atributo",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
   "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
@@ -469,6 +466,8 @@
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
     "Import_error": "Error while trying to import settings",
+    "Has_access_to_housing_vendor": "Prioritize housing vendor",
+    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -630,7 +629,8 @@
     "ROTATION": {
       "Attach": "Adjuntar rotación",
       "Detach": "Desligar rotación",
-      "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro"
+      "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
@@ -715,6 +715,14 @@
       "Menu": "Menú",
       "Edit_row_buttons_display": "Editar botones a mostrar",
       "Reorder_panels": "Reordenar paneles",
+      "Select_preview_list": "Select list to preview layout",
+      "Hidden_if_empty": "Hidden if empty",
+      "Collapsed_by_default": "Collapsed by default",
+      "No_preview": "No list preview",
+      "Please_pick_list": "Please pick a list using the select box above",
+      "Layouts": "Layouts",
+      "Want_to_learn_more": "Want to learn more about layouts and how they work?",
+      "Open_wiki_page": "Open the layouts system wiki page",
       "ITEMS": {
         "COMMENTS": "Comentarios",
         "COPY_NAME_NOT_FAVORITE": "Modo de copia no favorito",
@@ -1256,7 +1264,6 @@
   "SEARCH_INTRO": {
     "Slogan": "Elabore, comparta, contribuya",
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
-    "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
     "Buy_merch": "Obtener mercancía de Teamcraft",
     "Features_header": "¡Comience!",
@@ -1308,12 +1315,6 @@
   },
   "LOADING_SCREEN": {
     "Loading_data": "¡Cargando artículos, acciones y más!"
-  },
-  "GIVEAWAY": {
-    "Discord_1K": {
-      "Title": "¡Sorteo por 1000 miembros de Discord!",
-      "Description": "Haga clic en este banner para ir a la página de registro para el sorteo de la edición de colección de FINAL FANTASY XIV: Shadowbringers creada para celebrar la meta de 1000 miembros alcanzada en el servidor de Discord."
-    }
   },
   "CUSTOM_ITEMS": {
     "Title": "Artículos personalizados",
@@ -1409,24 +1410,6 @@
       "Very_common": "Muy común",
       "Common": "Común",
       "Rare": "Raro"
-    }
-  },
-  "SUPPORT_US": {
-    "Title": "¡Ayúdanos a crecer!",
-    "Communication_title": "Hablar sobre el proyecto",
-    "Communication_description": "Deje que la gente conozca la herramienta, comparta rotaciones, listas. Cree videos, entradas de blog, tweets, todo lo que permita a más gente saber sobre Teamcraft realmente ayuda al proyecto más de lo que cree.\n\n¡Incluso preparamos una macro para usted para que pueda gritar su amor en todas partes!\n",
-    "Contribute_title": "Contribuir al proyecto",
-    "Contribute_description": "Puede encontrarnos en github para contribuir al proyecto, incluso si es principiante, ¡todo el mundo es bienvenido!\n\nPero contribuir no es sólo acerca del código, las peticiones de características y los informes de fallos ayudan mucho a la herramienta proporcionando la mejor calidad de contenido posible para todos, gracias a las personas que se toman un tiempo para hacer pruebas de estrés y encontrar errores.",
-    "Patreon_title": "Apóyenos en patreon",
-    "Patreon_description": "Patreon es una plataforma donde puede dar dinero para apoyar un proyecto cada mes. Este dinero se utiliza para pagar por servidores, certificados, regalos y para liberar más y más tiempo para que el desarrollador trabaje en el proyecto.\n\nDependiendo de la cantidad que prometa, puede obtener algunos beneficios para agradecer su contribución:",
-    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
-    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
-    "PATREON_BENEFITS": {
-      "Discord_rank": "Rango especial en el servidor discord, dándole acceso al canal de patrocinadores para ver en qué estamos trabajando (${{price}})",
-      "Profile_badge": "Insignia especial en su perfil de Teamcraft (${{price}})",
-      "Custom_theme": "Mejor personalización del tema, con entrada de color personalizada (${{price}})",
-      "Pins_badge": "Botón de pin de Teamcraft exclusivo enviado a usted (${{price}}) (require que rellene los detalles del envío en Patreon)",
-      "Loading_screen_message": "Añade una nueva entrada al mensaje de carga de \"Traído a usted por ...\", con su nombre, el nombre de su FC, nombre de LS, ¡lo que quiera añadir! (${{price}})"
     }
   },
   "DB": {
@@ -1797,10 +1780,34 @@
     "Sort_asc": "Ascendente",
     "Sort_desc": "Descendente",
     "Add_stat_filter": "Añadir filtro de atributo",
-    "Add_bonus_stat_filter": "Añadir filtro de atributo de bono",
-    "Search_tip": "Puede escribir patch:<# de parche> para filtrar en un parche dado, por ejemplo: patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Job": "Job",
+    "Class": "Class",
+    "Land": "DoL",
+    "Hand": "DoH",
+    "Type": "Type",
+    "Any": "Any",
+    "Item_type": "Item Type",
+    "Patch": "Patch",
+    "Language": "Language",
+    "Share": "Share",
+    "Placeholder": "Search for something awesome",
+    "Hide_filters": "Hide Additional Filters",
+    "Show_filters": "Show Additional Filters",
+    "Item_type_placeholder": "Select Item Type",
+    "Item_level": "Item Level",
+    "Required_level": "Required Level",
+    "Recipe_level": "Recipe Level",
+    "Crafted_by": "Crafted by",
+    "Worn_by": "Worn by",
+    "Gear_stats": "Gear Stats",
+    "Consumable_stats": "Consumable Stats",
+    "No_stats_filters": "Woops, nothing's here",
+    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Stat": "Stat",
+    "Range": "Range",
+    "Exclude": "Exclude",
+    "Select_stat": "Select a stat",
+    "Level": "Level",
     "SORT_BY": {
       "Relevance": "Relevancia",
       "ID": "ID",
@@ -1821,7 +1828,9 @@
     "My_commissions": "My Commissions",
     "Archived_commissions": "Archives",
     "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Currencies": "Currencies",
+    "Add_to_favorites": "Add to favorites",
+    "Remove_from_favorites": "Remove from favorites"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Captura de paquetes disponible",
@@ -2004,6 +2013,8 @@
     "Create_commission": "Create a commission for this gearset",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
+    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
@@ -2494,5 +2505,143 @@
     "Total_per_venture": "Total per venture",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "Pick one of your retainers"
+  },
+  "PATREON": {
+    "By_supporting_us": "By supporting us on patreon, you get:",
+    "No_ads": "No more ads inside the topbar",
+    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
+    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
+    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
+    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
+    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
+    "Already_supporter": "Already a supporter?",
+    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+  },
+  "SUPPORT_US": {
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
+    "PATREON_BENEFITS": {
+      "No_ads": "Ads-free Teamcraft experience",
+      "Discord_rank": "Rango especial en el servidor discord, dándole acceso al canal de patrocinadores para ver en qué estamos trabajando (${{price}})",
+      "Profile_badge": "Insignia especial en su perfil de Teamcraft (${{price}})",
+      "Custom_theme": "Mejor personalización del tema, con entrada de color personalizada (${{price}})",
+      "Pins_badge": "Botón de pin de Teamcraft exclusivo enviado a usted (${{price}}) (require que rellene los detalles del envío en Patreon)",
+      "Loading_screen_message": "Añade una nueva entrada al mensaje de carga de \"Traído a usted por ...\", con su nombre, el nombre de su FC, nombre de LS, ¡lo que quiera añadir! (${{price}})"
+    },
+    "Select_retainer": "Pick one of your retainers"
+  },
+  "FREE_COMPANY_WORKSHOPS": {
+    "Import_using_pcap": "Import using packet capture",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Airships": "Airships",
+    "Submersibles": "Submersibles"
+  },
+  "VOYAGE_TRACKER": {
+    "Title": "Voyage tracker",
+    "Import_using_pcap": "Import using packet capture",
+    "Voyage_completion_alarm": "Voyage completion alarm",
+    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
+    "Voyage_complete": "Voyage complete",
+    "No_airship": "No airship",
+    "No_submersible": "No submersible",
+    "Sectors_discovered": "Sectors discovered",
+    "Delete_free_company": "Delete the Free Company",
+    "Name_column": "Name",
+    "Return_time_column": "Return time",
+    "Remaining_time_column": "Remaining time",
+    "Rank_column": "Rank",
+    "Build_column": "Build",
+    "Voyage_column": "Voyage",
+    "Nothing_to_show": "Nothing to show",
+    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Airship",
+      "Submersible": "Submersible"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Voyage"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Condition"
+    },
+    "STATS_DETAILS": {
+      "Title": "Stats"
+    },
+    "STATS": {
+      "Surveillance": "Surveillance",
+      "Retrieval": "Retrieval",
+      "Speed": "Speed",
+      "Range": "Range",
+      "Favor": "Favor"
+    }
+  },
+  "AIRSHIP": {
+    "CLASS": {
+      "BRONCO": {
+        "Abbreviation": "B"
+      },
+      "INVINCIBLE": {
+        "Abbreviation": "i"
+      },
+      "ENTERPRISE": {
+        "Abbreviation": "E"
+      },
+      "INVINCIBLE_II": {
+        "Abbreviation": "i2"
+      },
+      "ODYSSEY": {
+        "Abbreviation": "O"
+      },
+      "TATANORA": {
+        "Abbreviation": "T"
+      },
+      "VILTGANCE": {
+        "Abbreviation": "V"
+      }
+    }
+  },
+  "SUBMARINE": {
+    "CLASS": {
+      "SHARK": {
+        "Abbreviation": "S"
+      },
+      "UNKIU": {
+        "Abbreviation": "U"
+      },
+      "WHALE": {
+        "Abbreviation": "W"
+      },
+      "COELACANTH": {
+        "Abbreviation": "C"
+      },
+      "SYLDRA": {
+        "Abbreviation": "Y"
+      },
+      "MODIFIED_SHARK": {
+        "Abbreviation": "S+"
+      },
+      "MODIFIED_UNKIU": {
+        "Abbreviation": "U+"
+      },
+      "MODIFIED_WHALE": {
+        "Abbreviation": "W+"
+      },
+      "MODIFIED_COELACANTH": {
+        "Abbreviation": "C+"
+      },
+      "MODIFIED_SYLDRA": {
+        "Abbreviation": "Y+"
+      }
+    }
+  },
+  "TREASURE_FINDER": {
+    "Title": "Treasure finder",
+    "Description": "Pick a map and find the treasure you're looking for",
+    "Select_map": "Pick a map",
+    "Select_item": "Select treasure map item",
+    "Select_treasure_map": "Select your treasure map",
+    "Find_another": "Find another treasure"
   }
 }

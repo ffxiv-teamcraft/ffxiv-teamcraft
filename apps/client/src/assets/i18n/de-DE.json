@@ -1,14 +1,15 @@
 {
   "Quests": "Aufträge",
   "Facebook_notice": "Facebook-Login ist nicht länger verfügbar. Du kannst entweder deinem Konto durch \"Passwort zurücksetzen\" ein Passwort hinzufügen oder Miu auf Discord fragen.",
-  "Search_placeholder": "Name von {{type}} eingeben",
   "Pick_a_list": "Wähle eine Liste",
   "Pick_a_user": "Wähle einen Benutzer",
   "Pick_a_fc": "Wähle eine freie Gesellschaft",
   "Pick_a_rotation": "Wähle eine Rotation",
   "Pick_a_recipe": "Wähle ein Rezept",
   "Pick_an_item": "Wähle ein Item",
+  "FC": "Freie Gesellschaft",
   "FC_name": "Name der freien Gesellschaft",
+  "FC_rank": "Rang der Freien Gesellschaft",
   "Saving_in_database": "Speichere Daten auf dem Server",
   "See_on_map": "Auf der Karte anzeigen",
   "No_known_coordinates": "Keine bekannten Koordinaten",
@@ -172,7 +173,11 @@
     "Change": "Ändern",
     "Dirty_changes": "Du hast nicht gespeicherte Änderungen",
     "Never": "Nie",
-    "Festival": "Nur während eines Festivals"
+    "Festival": "Nur während eines Festivals",
+    "Back": "Zurück",
+    "Support_us_remove_ads": "Unterstütze uns auf Patreon um Werbung zu entfernen",
+    "Support_us": "Unterstütze uns",
+    "Show_more": "Mehr anzeigen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -182,7 +187,7 @@
     "Alarms_created": "{{amount}} Alarme erstellt",
     "Alarm_already_created": "Benachrichtigung bereits vorhanden",
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "Negativer Wert = später als der Spawn",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
     "Delete_group": "Gruppe löschen",
@@ -202,9 +207,9 @@
     "Add_group_and_alarms": "Diese Gruppe und alle darin enthaltenen Alarme zu den eigenen Alarmen hinzufügen",
     "Delete_all": "Lösche alle Alarme",
     "Delete_alarm": "Diesen Wecker löschen",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
+    "Regenerating_alarms": "Alarme werden neu generiert...",
+    "Regenerate": "Alle Alarme neu generieren",
+    "Group_outdated": "Diese Gruppe ist veraltet, bitte den Besitzer, sich mit einem neuen Update anzumelden und es wird aktualisiert",
     "Remove_from_group": "Von dieser Gruppe entfernen",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
@@ -311,14 +316,6 @@
   "Import": "Importieren",
   "Favorites": "Favoriten",
   "Favorite": "Favorit",
-  "filters/ilvl": "Gegenstandsstufe",
-  "filters/lvl": "Benötigte Stufe",
-  "filters/craft_lvl": "Rezeptstufe",
-  "filters/worn_by": "Getragen von",
-  "filters/crafted_by": "Hergestellt von ",
-  "filters/item_category": "Item-Kategorie",
-  "filters/stats": "Attribute-Filter",
-  "filters/bonuses": "Bonuswerte-Filter",
   "Adding_recipes": "Füge {{amount}} Rezepte zur Liste {{listname}} hinzu",
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
   "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
@@ -337,7 +334,7 @@
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
-  "Npc_breakdown": "Npc breakdown",
+  "Npc_breakdown": "NPC Übersicht",
   "Reverse_tiers": "Zeige umgedrehte Meilensteine",
   "Timer_options": "Alarm-Optionen",
   "Early_by": "Frühzeitig (in Eorzäischen Stunden)",
@@ -406,7 +403,7 @@
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Add_firewall_rule": "Firewall-Regel für Paketerfassung hinzufügen",
-    "Installing_npcap": "Npcap installation in progress",
+    "Installing_npcap": "Npcap Installation läuft",
     "Installing_npcap_description": "Damit die Paketerfassung funktioniert, muss npcap installiert werden. Vergewissern Sie sich, dass Sie die Standardeinstellungen beibehalten (deaktivieren Sie nicht die Winpcap api Kompatibilität). Teamcraft wird neu gestartet, sobald dies erledigt ist.",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
@@ -428,7 +425,7 @@
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
     "Disable_search_debounce": "Automatische Suche deaktivieren (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
-    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
+    "Enable_packet_capture": "Paketerfassung aktivieren (für Echtzeit Inventar-Funktionen)",
     "Packet_capture_info": "Die Paketerfassung ist aus dem gleichen Grund wie ACT gegen die Nutzungsbedinungen von FFXIV. Square Enix toleriert es allerdings, solange du es nicht jedem im Spiel unter die Nase reibst. Solange du nichts erzählst, riskierst du nichts.",
     "Enable_autofill_by_default": "Auto-Vervollständigung standardmäßig aktivieren",
     "Enable_autofill_notification_by_default": "Autovervollständigungsbenachrichtigung standardmäßig aktivieren",
@@ -442,7 +439,7 @@
     "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
     "Ignored_inventories": "Inventare ignorieren",
     "Enable_tutorials": "Tutorialsystem aktivieren",
-    "Show_patch_notes_on_update": "Show patch notes on new updates",
+    "Show_patch_notes_on_update": "Patchnotes bei neuen Updates anzeigen",
     "Scrolling_behavior": "Scrollverhalten",
     "Scrolling_behavior_explain": "Legt fest, wann in Listen-Elementen eine Scrollbar erscheint. \"Standard\" bedeutet, dass nach 12 Gegenständen eine Scrollbar erscheint.",
     "Enable_auto_log_check": "Gegenstände automatisch im Notizbuch als erledigt markieren, sobald sie gesammelt/hergestellt wurden",
@@ -450,25 +447,27 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
-    "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
+    "Char_data_folder": "Charakterdatenordner (wo sich die CHRXXXXXXX-Ordner befinden)",
     "Maximum_vendor_price": "Maximaler Händlerpreis",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price_explain": "Maximaler Preis für einen Artikel, der vom Layoutfilter CAN_BE_BOUGHT berücksichtigt werden soll (0 = kein maximaler Preis)",
     "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "Favorite_features": "Lieblingsfunktionen",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
-    "Clear_inventory_on_startup": "Clear inventory on startup",
-    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
-    "Reset_ignored_characters": "Reset ignored characters",
-    "Reset_contentid_characters": "Reset linked characters",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
-    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
-    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Favorite_features_explain": "Die Funktionen, die du im Favoritenbereich der Seitenleiste angezeigt werden.",
+    "Clear_inventory_on_startup": "Inventar beim Start bereinigen",
+    "Switch_tc_when_switch_ingame_character": "Wechsle Teamcraft-Charakter beim Ingame Wechsel",
+    "Reset_ignored_characters": "Ignorierte Charaktere zurücksetzen",
+    "Reset_contentid_characters": "Verlinkte Charaktere zurücksetzen",
+    "Show_other_characters_inventories_in_list": "Zeige Inventare anderer Charaktere in Listen",
+    "Alarm_panels_collapsed_by_default": "Alarmgruppen-Panels standardmäßig eingeklappt",
+    "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
-    "Export_settings": "Export settings",
-    "Import_settings": "Import settings",
-    "Import_successful": "Settings imported",
-    "Import_error": "Error while trying to import settings",
+    "Export_settings": "Einstellungen exportieren",
+    "Import_settings": "Einstellungen importieren",
+    "Import_successful": "Einstellungen importiert",
+    "Import_error": "Fehler beim Importieren der Einstellungen",
+    "Has_access_to_housing_vendor": "Haushändler bevorzugen",
+    "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -491,10 +490,10 @@
       "Lists": "Listen",
       "Alarms": "Alarme",
       "Other": "Anderes",
-      "Inventory_tracking": "Inventory tracking",
-      "Character_tracking": "Character tracking",
+      "Inventory_tracking": "Inventarerfassung",
+      "Character_tracking": "Charaktererfassung",
       "Tooling": "Tooling",
-      "Import_export": "Import/export",
+      "Import_export": "Importieren/Exportieren",
       "Sekrit": "Geheim"
     },
     "REGIONS": {
@@ -608,9 +607,9 @@
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
     "Final_item": "Endprodukt",
     "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
-    "Can_skip_buying_X": "Can skip {{amount}}",
-    "Can_skip_buying_entirely": "Can skip entirely",
-    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Can_skip_buying_X": "Kann {{amount}} überspringen",
+    "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
+    "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
@@ -630,7 +629,8 @@
     "ROTATION": {
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
-      "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen"
+      "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
@@ -696,8 +696,8 @@
     "Leave_list": "Diese Liste verlassen",
     "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
     "Split_list": "Diese Liste aufteilen",
-    "Create_commission": "Create a commission for this list",
-    "Commission_list": "Commission list",
+    "Create_commission": "Erstelle einen Auftrag für diese Liste",
+    "Commission_list": "Auftragsliste",
     "Inventory_cleanup": "Inventar bereinigen",
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "LAYOUT_DIALOG": {
@@ -706,7 +706,7 @@
       "Import_layout": "Ein Layout importieren",
       "Export_layout": "Exportiere dieses Layout",
       "Import_string": "Einen Text importieren",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "Layoutcode kopiert!",
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
@@ -715,6 +715,14 @@
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
       "Reorder_panels": "Bereiche neu anordnen",
+      "Select_preview_list": "Select list to preview layout",
+      "Hidden_if_empty": "Versteckt, wenn leer",
+      "Collapsed_by_default": "Standardmäßig zusammengeklappt",
+      "No_preview": "Keine Listenvorschau",
+      "Please_pick_list": "Bitte wähle eine Liste mit dem Auswahlfeld darüber",
+      "Layouts": "Layouts",
+      "Want_to_learn_more": "Möchtest du mehr über Layouts erfahren und wie sie funktionieren?",
+      "Open_wiki_page": "Öffne die Layout-System Wiki-Seite",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -844,13 +852,13 @@
     "Hidden_item": "Versteckt",
     "Fish_eyes": "Requires fish eyes to only care about weather requirement",
     "Add_alarm": "Benachrichtigung hinzufügen",
-    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
+    "Add_alarm_fish_eyes": "Alarm mit Fischaugen hinzufügen",
     "Snagging": "Benötigt Reißen",
     "Predators": "Zunächst diese Fische angeln",
     "Fish_eyes_duration": "Deine Fischaugen müssen diese Dauer haben, um den Fisch zu bekommen. Klicke um das Format zu ändern.",
     "Spawned_for": "Verschwindet in {{timer}}",
     "Will_spawn_in": "Taucht in {{timer}} auf",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
+    "Ephemeral_warning": "Vergängliche Abbaustellen haben verschiedene Positionen, Position ist eine Annäherung.",
     "Legendary": "Legendär",
     "GIG_HEAD": {
       "Small": "Kleine Speerspitze",
@@ -1256,7 +1264,6 @@
   "SEARCH_INTRO": {
     "Slogan": "Herstellen, Teilen, Mitwirken",
     "Lists_created_counter": "{{amount}} Listen wurden mit FFXIV Teamcraft erstellt",
-    "Support_patreon": "Unterstütze uns auf Patreon",
     "Donation_button": "Mach eine einmalige Spende",
     "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Lege los!",
@@ -1308,12 +1315,6 @@
   },
   "LOADING_SCREEN": {
     "Loading_data": "Lade Gegenstände, Kommandos, und mehr!"
-  },
-  "GIVEAWAY": {
-    "Discord_1K": {
-      "Title": "1000 Discord-Mitglieder-Verlosung!",
-      "Description": "Klicke auf dieses Banner, um zur Verlosung für die FINAL FANTASY XIV: Shadowbringers-Collector's Edition zu gelangen, mit der wir die 1000 Mitglieder auf dem Discordserver feiern."
-    }
   },
   "CUSTOM_ITEMS": {
     "Title": "Benutzerdefinierte Gegenstände",
@@ -1411,24 +1412,6 @@
       "Rare": "Selten"
     }
   },
-  "SUPPORT_US": {
-    "Title": "Hilf uns, zu wachsen!",
-    "Communication_title": "Mach das Projekt bekannter",
-    "Communication_description": "Lass Leute über die Seite wissen, indem du deine Rotationen und Listen teilst. Auch Videos, Blogposts, Tweets und alles, was das Aufsehen der Leute erregt, hilft dem Teamcraft-Projekt mehr, als du denkst.\n\nWir haben sogar ein Makro vorbereitet, damit du deine Liebe überall verbreiten kannst!\n",
-    "Contribute_title": "Beteilige dich am Projekt",
-    "Contribute_description": "Du findest uns auf GitHub um dich am Projekt zu beteiligen. Auch Anfänger sind willkommen!\n\nIhr könnt aber nicht nur mit Code beitragen. Ideen für neue Features und Fehlermeldungen helfen ebenso um den bestmöglichen Inhalt für jeden zu liefern. Ein Danke an alle, welche sich Zeit zum testen und Fehler-finden nehmen.",
-    "Patreon_title": "Unterstütze uns auf Patreon",
-    "Patreon_description": "Patreon ist eine Plattform, auf der du monatlich Geld spenden kannst, um ein Projekt zu unterstützen. Dieses Geld für für die Bezahlung von Servern, Zertifikaten und Geschenken benutzt und ermöglicht es dem Entwickler mehr Zeit in das Projekt zu investieren.\n\nBasierend an dem Betrag den du gespendet hast, erhältst du einige nette Boni als Dank für deine Unterstützung:",
-    "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
-    "Already_supporting": "Bereits Patreon Unterstützer? Stelle sicher, dass du dein Profil in den Einstellungen mit Patreon verknüpfst",
-    "PATREON_BENEFITS": {
-      "Discord_rank": "Spezieller Rang auf dem Discord-Server mit Zugang zu den Unterstützer-Bereichen, in denen du sehen kannst, an was wir grade arbeiten (${{price}})",
-      "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
-      "Custom_theme": "Benutzerdefinierte Farbeingabe für das Design der Website (${{price}})",
-      "Pins_badge": "Exklusive Teamcraft-Anstecknadel, die dir zugeschickt wird (${{price}}) (Erfordert das Ausfüllen der Versanddetails auf Patreon)",
-      "Loading_screen_message": "Neuer Eintrag in der \"Brought to you by ...\"-Nachricht, die beim Starten von Teamcraft erscheint. Dieseenthält deinen Namen, den deiner FG, deiner LS und was auch immer du sonst noch sagen möchtest! (${{price}})"
-    }
-  },
   "DB": {
     "How_to_obtain": "Fundort",
     "Used_for": "Verwendungszweck",
@@ -1506,8 +1489,8 @@
       "Required_craftsmanship": "benötigte Kunstfertigkeit",
       "Required_control": "benötigte Kontrolle",
       "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
-      "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "X_Equipped": "{{amount}} Ausgerüstet:",
+      "Item_series": "Set-Details"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -1539,7 +1522,7 @@
       "Ranking": "Rangliste",
       "Top_users": "Bestplatzierte",
       "Your_ranking": "Dein Rang",
-      "Include_fisheyes_data": "Include reports using Fish Eyes",
+      "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1770,7 +1753,7 @@
     "Shown_only_craftable": "Nur wo ich das Level für habe",
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "Nur im Log nicht erledigt"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1781,8 +1764,8 @@
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix."
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Title": "Essens-Wähler",
+    "Description": "Du möchtest wissen, welches Essen dir die Werte gibt, die du möchtest? Such nicht weiter, du bist dort, wo du sein musst!",
     "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
@@ -1797,10 +1780,34 @@
     "Sort_asc": "Aufsteigend",
     "Sort_desc": "Absteigend",
     "Add_stat_filter": "Filter hinzufügen",
-    "Add_bonus_stat_filter": "Zusätzlichen Filter hinzufügen",
-    "Search_tip": "Durch die Eingabe von patch:<patch #> (z. B: patch:5.01) kannst du die Ergebnisse nach einem bestimmten Patch filtern.",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Job": "Job",
+    "Class": "Klasse",
+    "Land": "Sammler",
+    "Hand": "Handwerker",
+    "Type": "Typ",
+    "Any": "Beliebig",
+    "Item_type": "Item-Kategorie",
+    "Patch": "Patch",
+    "Language": "Sprache",
+    "Share": "Teilen",
+    "Placeholder": "Suche etwas tolles",
+    "Hide_filters": "Zusätzliche Filter verbergen",
+    "Show_filters": "Zusätzliche Filter anzeigen",
+    "Item_type_placeholder": "Item-Kategorie auswählen",
+    "Item_level": "Gegenstandsstufe",
+    "Required_level": "Benötigte Stufe",
+    "Recipe_level": "Rezeptstufe",
+    "Crafted_by": "Hergestellt von",
+    "Worn_by": "Getragen von",
+    "Gear_stats": "Ausrüstungswerte",
+    "Consumable_stats": "Werte Konsumierbares",
+    "No_stats_filters": "Ups, hier ist nichts",
+    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Stat": "Attribut",
+    "Range": "Range",
+    "Exclude": "Ausschließen",
+    "Select_stat": "Select a stat",
+    "Level": "Stufe",
     "SORT_BY": {
       "Relevance": "Relevanz",
       "ID": "ID",
@@ -1816,12 +1823,14 @@
     "Gathering": "Sammler",
     "Helpers": "Hilfen",
     "Other": "Anderes",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
+    "Commissions": "Aufträge",
+    "Commission_board": "Schwarzes Brett",
+    "My_commissions": "Meine Aufträge",
     "Archived_commissions": "Archive",
     "Leveling": "Leveln",
-    "Currencies": "Währungen"
+    "Currencies": "Währungen",
+    "Add_to_favorites": "Zu Favoriten hinzufügen",
+    "Remove_from_favorites": "Aus Favoriten entfernen"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
@@ -1868,7 +1877,7 @@
     "Filter_by_expansion": "Nach Erweiterung filtern",
     "In_x_containers": "In {{amount}} Inventaren",
     "New_character_detected": "Neuer Charakter erkannt",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "Unbekannte Position",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
@@ -1880,12 +1889,12 @@
     },
     "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
+      "Linked": "Verknüpft",
+      "Linked_tooltip": "Dieser Charakter ist bereits mit einem anderen Ingame-Charakter verknüpft. Auswählen führt zur Löschung des anderen Charakters",
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
       "You_can_reset_ignore": "Du kannst ignorierte Charakter auf der Einstellungsseite im Desktop-Bereich zurücksetzen",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Wenn du den Charakter bereits verlinkt hast, mit dem du gerade spielst, kannst du diesen Charakter sicher ignorieren, Teamcraft liest Dateiänderungen und einige Dateien könnten sich aus irgendeinem Grund ändern, was dies auslöst, wenn die Datei noch nicht verknüpft ist."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1935,7 +1944,7 @@
     },
     "USELESS_HQ": {
       "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
     }
   },
   "VERSION_LOCK": {
@@ -1965,7 +1974,7 @@
     "Cost": "Kosten",
     "Modal_editor": "Materia für {{itemName}}",
     "Unavailable_slot": "Platz nicht verfügbar",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "Beim Umschalten des Jobs werden Kristall, Haupthand und Nebenhand, einschließlich Materia, entfernt. Bitte beachten dies vor dem Umschalten, wenn du die gleichen Melds nutzen möchtest.",
     "Pick_a_job": "Job auswählen",
     "New_gearset": "Neues Ausrüstungsset",
     "Please_input_ariyala_link": "Bitte Ariyala-Link eingeben",
@@ -2001,9 +2010,11 @@
     "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
     "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
     "Mark_as_done": "Als erledigt markieren",
-    "Create_commission": "Create a commission for this gearset",
+    "Create_commission": "Einen Auftrag für dieses Ausrüstungsset erstellen",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
+    "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
+    "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers und es wird nichts gespeichert, wenn du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2049,8 +2060,8 @@
       "Title": "Synchronisiere Ausrüstungssets",
       "Tag": "Synchronisieren",
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "Importiere Set für {{name}}",
+      "Imported_gearset": "Importierte Gruppe für {{name}}",
       "Syncing_gearsets": "Synchronisiere Ausrüstungssets..."
     }
   },
@@ -2285,179 +2296,179 @@
     "Replay_result": "Ergebnis"
   },
   "COMMISSIONS": {
-    "New_commission": "New commission",
-    "Price_tbd": "To be discussed",
+    "New_commission": "Neuer Auftrag",
+    "Price_tbd": "Zu besprechen",
     "X_items": "{{amount}} Gegenstände",
-    "Open_commission_details": "Open commission details",
-    "Your_commissions_as_client": "Your commissions as client",
-    "No_commissions_as_client": "You don't have any commission as client",
-    "Your_commissions_as_crafter": "Commissions you're working on",
-    "No_commissions_as_crafter": "You're not working on any commission",
-    "Delete_commission": "Delete this commission",
+    "Open_commission_details": "Öffne Auftragdetails",
+    "Your_commissions_as_client": "Deine Aufträge als Auftraggeber",
+    "No_commissions_as_client": "Du hast keine Aufträge als Auftraggeber",
+    "Your_commissions_as_crafter": "Aufträge an denen du arbeitest",
+    "No_commissions_as_crafter": "Du arbeitest an keinen Aufträgen",
+    "Delete_commission": "Lösche diesen Auftrag",
     "Delete_list_too": "Liste ebenfalls löschen",
-    "Delete_commission_only": "Delete commission only",
-    "Your_archived_commissions_as_client": "Commissions as client",
-    "No_archived_commissions_as_client": "You have no archived commission as client",
-    "Your_archived_commissions_as_crafter": "Commissions as contractor",
-    "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
-    "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "Delete_commission_only": "Nur Auftrag löschen",
+    "Your_archived_commissions_as_client": "Aufträge als Auftraggeber",
+    "No_archived_commissions_as_client": "Du hast keine Aufträge als Auftraggeber im Archiv",
+    "Your_archived_commissions_as_crafter": "Aufträge als Auftragnehmer",
+    "No_archived_commissions_as_crafter": "Du hast keine Inserate als Auftragnehmer im Archiv",
+    "Updates": "Aktualisierungen",
+    "Clear_notifications": "Benachrichtigungen löschen",
     "TAGS": {
-      "CRAFTING": "Crafting",
-      "GATHERING": "Gathering",
-      "HUNTING": "Hunting",
-      "FISHING": "Fishing",
-      "GEAR": "Gear"
+      "CRAFTING": "Herstellung",
+      "GATHERING": "Sammeln",
+      "HUNTING": "Monsterjagd",
+      "FISHING": "Fischen",
+      "GEAR": "Ausrüstung"
     },
     "STATUS": {
       "Label": "Status",
-      "OPENED": "Opened",
-      "IN_PROGRESS": "In progress",
-      "ARCHIVED": "Archived"
+      "OPENED": "Geöffnet",
+      "IN_PROGRESS": "In Bearbeitung",
+      "ARCHIVED": "Archiviert"
     },
     "CREATION": {
       "Name": "Name",
-      "Name_placeholder": "Name of your commission",
-      "Name_required_error": "Please input a name",
-      "Tags": "Tags",
-      "Price": "Price you're willing to pay",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
-      "Only_crafting": "Only crafting",
-      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
-      "Only_materials": "Only materials",
-      "Only_requires_materials": "This commission only requires materials for this list",
-      "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations",
+      "Name_placeholder": "Name deines Auftrages",
+      "Name_required_error": "Bitte gib einen Namen ein",
+      "Tags": "Markierungen",
+      "Price": "Preis, den du bezahlen möchtest",
+      "Price_tip": "Gib 0 ein, wenn andere dir vorschlagen sollen, wie viel sie stattdessen wollen",
+      "Only_crafting": "Nur herstellen",
+      "Includes_materials_label": "Dieser Auftrag umfasst alle Basismaterialien und benötigt nur die Herstellung",
+      "Only_materials": "Nur Material",
+      "Only_requires_materials": "Dieser Auftrag benötigt nur Materialien für diese Liste",
+      "Contact_info": "Kontaktinformationen",
+      "Contact_info_placeholder": "Wie können dich die Auftragnehmer kontaktieren, sobald sie für den Auftrag angenommen wurden? Discord, Ingame, E-Mail, wie du möchtest.",
+      "Contact_info_required_error": "Bitte gib Kontaktinformationen ein",
       "Description": "Beschreibung",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
+      "Description_placeholder": "Falls du mehr Details über deinen Auftrag angeben möchtest, kannst du das hier tun",
+      "Description_max_length_error": "Beschreibung muss kürzer als 1000 Zeichen sein",
       "Warning": "Warnung",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Warning_description": "Die Erstellung von Troll/Spam-Aufträgen führt dazu, dass der Auftrag gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
+      "Copy_link": "Importcode kopieren",
+      "Copy_link_tooltip": "Gibt dir die URL zum Öffnen, um diesen genauen Auftrag zu erstellen, nützlich für das Schreiben von Anleitungen.",
+      "Link_copied": "Importcode für Auftrag kopiert"
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
+      "Title": "Schwarzes Brett",
+      "Filter_with_tags": "Nach Markierungen filtern",
+      "No_matching_commissions": "Keine passenden Aufträge",
       "Min_price": "Min. Preis",
-      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+      "Tracking_tip": "Du kannst Benachrichtigungen für neue Aufträge deines Datenzentrums über den Auftragsbereich des offiziellen Discord-Servers erhalten"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
+      "Created_by": "Erstellt von {{name}}",
       "Details": "Details",
-      "Price": "Payment",
-      "Tags": "Tags",
-      "No_tags": "No tags",
+      "Price": "Zahlung",
+      "Tags": "Markierungen",
+      "No_tags": "Keine Markierungen",
       "Server": "Welt",
       "Content": "Inhalt",
       "Progression": "Fortschritt",
-      "Candidates": "Candidates ({{amount}})",
-      "Candidates_public_display": "Candidates : {{amount}}",
+      "Candidates": "Bewerber ({{amount}})",
+      "Candidates_public_display": "Bewerber: {{amount}}",
       "Apply": "Übernehmen",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
+      "Edit": "Diesen Auftrag bearbeiten",
+      "No_candidates": "Keine Bewerber verfügbar",
       "Your_offer": "Dein Angebot",
       "Remove_offer": "Dein Angebot entfernen",
-      "Fire_contractor": "Fire the contractor",
-      "Resign": "Resign",
-      "Contractor": "Contractor",
+      "Fire_contractor": "Auftragnehmer feuern",
+      "Resign": "Zurücktreten",
+      "Contractor": "Auftragnehmer",
       "Open_list": "Öffne die Liste",
       "List": "Liste",
-      "Mark_as_completed": "Kommission als erledigt markieren",
-      "Hire": "Hire this contractor",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
+      "Mark_as_completed": "Auftrag als erledigt markieren",
+      "Hire": "Diesen Auftragnehmer feuern",
+      "Progression_Tip": "Sobald die Liste abgeschlossen ist, kannst du diesen Auftrag als abgeschlossen markieren",
       "Ratings": "Bewertungen",
       "Waiting_for_rating": "Warte auf Bewertung",
       "Rate_commission": "Bewertung hinzufügen",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard",
+      "Bump": "Diesen Auftrag zurück nach oben bringen, nur einmal pro 24 Stunden",
+      "Copy_share_link": "Link zum Teilen kopieren",
+      "Share_link_copied": "Link zum Auftrag in die Zwischenablage kopiert",
       "No_description": "Keine Beschreibung",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags",
+      "Items_count": "Anzahl der Elemente",
+      "Creation_date": "Erstellungsdatum",
+      "Server_&_tags": "Server & Markierungen",
       "Add_items": "Items hinzufügen",
       "Rating": "Bewertung",
       "Comment": "Dein Kommentar",
-      "Comment_placeholder": "Add more details about your rating here"
+      "Comment_placeholder": "Füge hier weitere Details zu deiner Bewertung hinzu"
     },
     "APPLY": {
-      "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Price": "Dein Preis",
+      "Contact_info_placeholder": "Wie kann der Auftragnehmer dich kontaktieren, um über deine Bewerbung zu sprechen, falls du möchtest? Discord, Ingame, E-Mail, wie du möchtest."
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "Klicken, um den Auftrag zu öffnen",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "Auftragsvertrag beendet",
+        "Content": "Du bist nicht mehr der Auftragnehmer für den Auftrag {{name}}"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "Auftragsvertrag beendet",
+        "Content": "Auftragnehmer für Auftrag {{name}} ist nicht mehr zugewiesen"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "Auftragsvertrag gestartet",
+        "Content": "Du wurdest für diesen Auftrag {{name}} eingestellt"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "Neuer Bewerber",
+        "Content": "Neuer Bewerber für Auftrag {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "Auftragsliste abgeschlossen",
+        "Content": "Liste für den Auftrag {{name}} wurde abgeschlossen"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
+      "Details": "Auftragsprofil",
+      "View_details": "Profildetails öffnen",
+      "Ratings": "Bewertungen",
+      "Incidents": "Ereignisse",
+      "No_incidents": "Keine Ereignisse",
+      "Fired": "Aus einem Auftrag entlassen",
+      "Resigned": "Rücktritt von einem Auftrag",
       "No_ratings": "Noch keine Bewertungen",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Fired_X_times": "{{amount}} mal gefeuert",
+      "Resigned_X_times": "{{amount}} mal zurückgetreten"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "Warum feuerst du diesen Auftragnehmer?",
+      "NO_ACTIVE_SUB": "Auftragnehmer hat kein aktives Abonnement mehr.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "Die Arbeit mit diesem Auftragnehmer ist nicht mehr angenehm.",
+      "NO_LONGER_NEED_JOB_DONE": "Der Auftrag wird nicht mehr benötigt.",
+      "FOUND_SOMEONE_ELSE": "Anderen Auftragnehmer für diesen Auftrag gefunden.",
+      "CANNOT_AFFORD": "Ich kann mir diesen Auftrag nicht leisten."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
+      "Please_pick_reason": "Warum trittst du von diesem Auftrag zurück?",
+      "NO_ACTIVE_SUB": "Ich habe kein aktives Abonnement mehr.",
+      "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
+      "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
+      "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
       "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "Auftragsimport",
+      "Description": "Bitte überprüfe, dass diese Artikel die sind, für die du einen Auftrag erstellen möchtest. Hinweis: Artikel, die nicht gehandelt werden können, werden automatisch von der Liste unten entfernt.",
+      "Create_commission": "Auftrag erstellen",
+      "No_items": "Keine Einträge"
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
+    "Total_entries": "Gesamte Einträge",
+    "Last_updated": "Letzte Aktualisierung",
+    "Last_bnpc_update": "Letzte hochgeladene Monsterposition",
+    "Last_node_update": "Letzte hochgeladene Abbaustellenposition",
+    "Clear_map": "Diese Karte bereinigen",
     "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Open_details": "Detailseite öffnen",
+    "X_Missing_nodes": "{{amount}} fehlende Abbaustelle(n)",
+    "Missing_nodes": "Fehlende Abbausstellen",
+    "No_missing_nodes": "Keine fehlenden Abbausstellen",
+    "Only_missing_nodes": "Zeige nur Karten mit fehlenden Abbaustellen"
   },
   "WORKSHOP_TREE": {
     "Title": "Workshop recipe tree",
@@ -2489,10 +2500,148 @@
     "Title": "Gehilfenunternehmungen",
     "Description": "Gib die Klasse, Stufe, Gegenstandsstufe und Sammelgeschick (falls benötigt) deines Gehilfen ein, um die ideale Unternehmung für den besten Gewinn zu finden. Dies kann bis zu einer Minute dauern, wenn dein Gehilfe ein hohes Level hat, weil es jeden Gegenstand berücksichtigt, den er gewinnbringend abbauen kann.",
     "Retainer_ilvl": "G.-Stufe",
-    "Gathering": "Gathering",
+    "Gathering": "Sammeln",
     "Task_level": "Stufe der Unternehmung",
     "Total_per_venture": "Gesamt für Unternehmung",
     "Use_retainer": "Fülle mit Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen"
+  },
+  "PATREON": {
+    "By_supporting_us": "Durch Unterstützung auf Patreon erhältst du:",
+    "No_ads": "Keine Werbung mehr in der Titelleiste",
+    "Exclusive_discord_role": "Eine exklusive Rolle im Discord und Zugriff auf den Unterstützer-Kanal",
+    "Your_name_in_loading_screen": "Dein Name im Ladebild (muss angefordert werden)",
+    "Goodies": "Kostenloser Aufkleber, kostenloses T-Shirt, kostenloses Plakat (je nach Stufe)",
+    "Starting_at_X": "Ab ${{monthly}} pro Monat oder ${{yearly}} pro Jahr",
+    "Footer_text": "Auch schon $1 pro Monat hat einen erheblichen Einfluss auf die Entwicklung von Teamcraft und bringt mich meinem Traum näher, ein Vollzeit-Entwickler bei diesem Projekt zu werden und es mehr als ein bloßes Werkzeug für FFXIV werden zu lassen.",
+    "Already_supporter": "Du bist bereits ein Unterstützer?",
+    "Disable_ads_explanation": "Um Werbung zu deaktivieren, verbinde dich mit deinem Patreon Konto, damit Teamcraft deine Unterstützung verifizieren und Werbung automatisch deaktivieren kann"
+  },
+  "SUPPORT_US": {
+    "Popup_introduction": "Hallo, ich bin Miu, Entwickler jenes Programmes, dass du gerade verwendest.<br/> Teamcraft ist seit einigen Jahren ein Hobby für mich und mein Traum ist es, dieses Hobby zu meinem Vollzeitjob zu machen. <br/><br/>Mit deiner Hilfe könnte dieser Traum Wirklichkeit werden. Hierfür kannst du mich auf Patreon unterstützen. Jeder einzelne Euro zählt und wird mir helfen, dieses Ziel zu erreichen. <br/><br/> Die Unterstützung des Projekts auf Patreon bietet dir außerdem einige coole Vorteile:",
+    "Already_supporting": "Bereits Patreon Unterstützer? Stelle sicher, dass du dein Profil in den Einstellungen mit Patreon verknüpfst",
+    "PATREON_BENEFITS": {
+      "No_ads": "Werbefreies Teamcraft-Erlebnis",
+      "Discord_rank": "Spezieller Rang auf dem Discord-Server mit Zugang zu den Unterstützer-Bereichen, in denen du sehen kannst, an was wir grade arbeiten (${{price}})",
+      "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
+      "Custom_theme": "Benutzerdefinierte Farbeingabe für das Design der Website (${{price}})",
+      "Pins_badge": "Exklusive Teamcraft-Anstecknadel, die dir zugeschickt wird (${{price}}) (Erfordert das Ausfüllen der Versanddetails auf Patreon)",
+      "Loading_screen_message": "Neuer Eintrag in der \"Brought to you by ...\"-Nachricht, die beim Starten von Teamcraft erscheint. Dieseenthält deinen Namen, den deiner FG, deiner LS und was auch immer du sonst noch sagen möchtest! (${{price}})"
+    },
+    "Select_retainer": "Wähle einen Gehilfen"
+  },
+  "FREE_COMPANY_WORKSHOPS": {
+    "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Import_from_pcap_notice": "1. Gehe in die Gesellschaftswerkstatt<br>2. Interagiere mit jedem U-Boot oder Luftschiff über das Verwaltungs-Interface",
+    "Airships": "Luftschiffe",
+    "Submersibles": "Tauchboote"
+  },
+  "VOYAGE_TRACKER": {
+    "Title": "Voyage tracker",
+    "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Voyage_completion_alarm": "Alarm bei Abschluss der Erkundung",
+    "Voyage_completed_notification_title": "{{name}} hat seine Erkundung abgeschlossen",
+    "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
+    "Voyage_complete": "Erkundung abgeschlossen",
+    "No_airship": "Kein Luftschiff",
+    "No_submersible": "Kein Tauchboot",
+    "Sectors_discovered": "Sektoren entdeckt",
+    "Delete_free_company": "Die Freie Gesellschaft löschen",
+    "Name_column": "Name",
+    "Return_time_column": "Rückkehrzeit",
+    "Remaining_time_column": "Verbleibende Zeit",
+    "Rank_column": "Rang",
+    "Build_column": "Build",
+    "Voyage_column": "Erkundung",
+    "Nothing_to_show": "Nichts zum Anzeigen",
+    "Please_import_pcap": "Bitte importiere deine Luftschiffe und Tauchboote mit Paketerfassung",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Luftschiff",
+      "Submersible": "Tauchboot"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Erkundung"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Zustand"
+    },
+    "STATS_DETAILS": {
+      "Title": "Attribute"
+    },
+    "STATS": {
+      "Surveillance": "Detektion",
+      "Retrieval": "Effizienz",
+      "Speed": "Geschwindigkeit",
+      "Range": "Reichweite",
+      "Favor": "Gunst"
+    }
+  },
+  "AIRSHIP": {
+    "CLASS": {
+      "BRONCO": {
+        "Abbreviation": "B"
+      },
+      "INVINCIBLE": {
+        "Abbreviation": "i"
+      },
+      "ENTERPRISE": {
+        "Abbreviation": "E"
+      },
+      "INVINCIBLE_II": {
+        "Abbreviation": "i2"
+      },
+      "ODYSSEY": {
+        "Abbreviation": "O"
+      },
+      "TATANORA": {
+        "Abbreviation": "T"
+      },
+      "VILTGANCE": {
+        "Abbreviation": "V"
+      }
+    }
+  },
+  "SUBMARINE": {
+    "CLASS": {
+      "SHARK": {
+        "Abbreviation": "S"
+      },
+      "UNKIU": {
+        "Abbreviation": "U"
+      },
+      "WHALE": {
+        "Abbreviation": "W"
+      },
+      "COELACANTH": {
+        "Abbreviation": "C"
+      },
+      "SYLDRA": {
+        "Abbreviation": "Y"
+      },
+      "MODIFIED_SHARK": {
+        "Abbreviation": "S+"
+      },
+      "MODIFIED_UNKIU": {
+        "Abbreviation": "U+"
+      },
+      "MODIFIED_WHALE": {
+        "Abbreviation": "W+"
+      },
+      "MODIFIED_COELACANTH": {
+        "Abbreviation": "C+"
+      },
+      "MODIFIED_SYLDRA": {
+        "Abbreviation": "Y+"
+      }
+    }
+  },
+  "TREASURE_FINDER": {
+    "Title": "Treasure finder",
+    "Description": "Pick a map and find the treasure you're looking for",
+    "Select_map": "Pick a map",
+    "Select_item": "Select treasure map item",
+    "Select_treasure_map": "Select your treasure map",
+    "Find_another": "Find another treasure"
   }
 }
