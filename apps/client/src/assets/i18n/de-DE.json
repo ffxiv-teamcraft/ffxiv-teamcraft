@@ -925,7 +925,7 @@
     "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
-    "Completion_message": "Completion message",
+    "Completion_message": "Fertigstellungsnachricht",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
@@ -2537,7 +2537,7 @@
     "Submersibles": "Tauchboote"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
+    "Title": "Erkundungs-Tracker",
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "Voyage_completion_alarm": "Alarm bei Abschluss der Erkundung",
     "Voyage_completed_notification_title": "{{name}} hat seine Erkundung abgeschlossen",
@@ -2637,11 +2637,11 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
-    "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Title": "Schatzsucher",
+    "Description": "Wähle eine Karte und finde den Schatz, den du suchst",
+    "Select_map": "Wähle eine Karte",
+    "Select_item": "Wähle Schatzkarten-Typ",
+    "Select_treasure_map": "Wähle deine Schatzkarte",
+    "Find_another": "Finde einen anderen Schatz"
   }
 }
