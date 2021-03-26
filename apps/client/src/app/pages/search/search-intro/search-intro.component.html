@@ -3,7 +3,7 @@
     <i class="fab fa-discord"></i>
     {{"Join_discord_server" | translate}}
   </a>
-  <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank">
+  <a class="button" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest" nz-button nzType="primary" target="_blank" *ngIf="!platform.isDesktop()">
     <i nz-icon nzType="download" nzTheme="outline"></i>
     {{"Download_desktop_app" | translate}}
   </a>

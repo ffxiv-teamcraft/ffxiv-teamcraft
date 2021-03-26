@@ -13,6 +13,12 @@
   }
 }
 
+::ng-deep {
+  .user-menu-content {
+    margin-left: -35px;
+  }
+}
+
 .sidebar-container {
   height: calc(~"100vh - @{layout-header-height} - 48px");
 
@@ -30,6 +36,10 @@
   padding: 8px 5px;
   background: var(--primary-color);
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &:focus {
     outline: 0;
@@ -161,6 +171,7 @@
       z-index: 4;
       height: 100%;
     }
+
     .ant-layout-sider-children {
       overflow: hidden;
     }
