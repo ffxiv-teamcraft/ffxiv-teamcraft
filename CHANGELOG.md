@@ -2,6 +2,62 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.0"></a>
+# [8.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.13...v8.1.0) (2021-03-26)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarm cards never showing weather requirements ([f71a948](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f71a948))
+* **alarms:** fixed an issue with some alarms being accounted as created while they are not ([d500b0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d500b0d))
+* **crafting-replay:** fixed crafting replay page not opening for some users ([ba176ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba176ba))
+* **db:** fixed gathering source for old diadem items ([438a4da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/438a4da))
+* **db:** fixed item pages containing "/" in their name not loading at all ([443e4f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/443e4f8))
+* **db:** fixed loading time issue on crystal pages ([1caadc0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1caadc0))
+* **desktop:** fixed overlay clickthrough toggle not applied properly ([85352da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85352da)), closes [#1851](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1851)
+* **layout:** fixed level filter not working as expected with jobs that are not unlocked ([8ea5d1d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ea5d1d)), closes [#1849](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1849)
+* **leveling-equipment:** don't consider items from calamity salvager anymore ([80d4ca0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80d4ca0))
+* **leveling-equipment:** fixed an issue with inventory icon showing while it shouldn't ([09047e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09047e6))
+* **leveling-equipment:** fixed an issue with wrong suggestions at lower level ([4419a3f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4419a3f))
+* **list:** fixed ishgard inpection items not listing their unapproved items ([c0c6410](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0c6410))
+* **log-tracker:** fixed an issue with spearfishing node buttons leading to fishing spots instead ([10e5528](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10e5528))
+* **macro-translator:** fixed an issue with waste not II's Japanese translation ([352b8f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/352b8f3))
+* **recipe-finder:** fixed recipe finder only finding one recipe per item ([c933d5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c933d5a))
+* **retainers:** fixed an issue with task completion alarm not ringing at all ([e610b3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e610b3a))
+* **search:** fixed an issue with item type filter not being applied properly ([7891b90](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7891b90)), closes [#1857](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1857)
+* **simulator:** fixed an issue with some skybuilders' recipes not showing thresholds ([fc2dca2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc2dca2))
+
+
+### Features
+
+* **alarms:** custom alarms are now properly supported in groups sharing ([b86d20f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b86d20f))
+* **fishing-log:** added a button to mark entire page as done ([cd4b89e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd4b89e))
+* new treasure finder page ([987fd04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/987fd04))
+* **ads:** disabled ads for patreon supporters ([578485c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/578485c))
+* **db:** support for korean v5.35 update ([a2d64af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2d64af))
+* **desktop:** new page for company voyages tracking ([6406597](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6406597))
+* **gearset:** added melding chances for materia slots ([d380807](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d380807))
+* **gearset-folders:** folders state (opened or closed) is now saved inside settings ([a9c70c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9c70c7))
+* **gearsets:** materia assignments are now persisted across gearsets for unselected items ([9b5f6a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b5f6a4))
+* **gearsets:** you can now edit any gearset locally without making a copy of it ([05f16f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05f16f3))
+* **layout:** new setting to prioritize material supplier in Npc Breakdown ([8386e82](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8386e82))
+* **layouts:** new layout editor page under helpers ([1194b8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1194b8c))
+* **list:** added an icon in rotation link tag to open in overlay ([80312a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80312a3))
+* **lists:** archived lists loading is now a toggle to make it possible to unload them ([04332fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/04332fc))
+* **navigation-map:** you can now use arrow keys to navigate through maps ([024b43c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/024b43c))
+* **requirements-popup:** added inventory position to inventory tags ([7983574](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7983574))
+* **retainers:** retainers are now grouped by character ([aa9a0a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa9a0a4))
+* **sidebar:** you can now add a navigation entry to favorites with right click ([1729612](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1729612))
+* **ux:** complete search filters revamp ([6d08c64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d08c64)), closes [#1843](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1843)
+* added a responsive ad banner in the topbar ([1882152](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1882152))
+
+
+### Performance Improvements
+
+* **log-tracker:** lazy tabs loading for better loading times ([70c7861](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70c7861))
+
+
+
 <a name="8.0.13"></a>
 ## [8.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.12...v8.0.13) (2021-02-16)
 
