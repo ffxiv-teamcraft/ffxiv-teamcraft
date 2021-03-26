@@ -2537,7 +2537,7 @@
     "Submersibles": "Tauchboote"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
+    "Title": "Erkundungs-Tracker",
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "Voyage_completion_alarm": "Alarm bei Abschluss der Erkundung",
     "Voyage_completed_notification_title": "{{name}} hat seine Erkundung abgeschlossen",
