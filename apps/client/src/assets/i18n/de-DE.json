@@ -925,7 +925,7 @@
     "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
-    "Completion_message": "Completion message",
+    "Completion_message": "Fertigstellungsnachricht",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
@@ -2639,9 +2639,9 @@
   "TREASURE_FINDER": {
     "Title": "Treasure finder",
     "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
+    "Select_map": "Wähle eine Karte",
     "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Select_treasure_map": "Wähle deine Schatzkarte",
+    "Find_another": "Finde einen anderen Schatz"
   }
 }
