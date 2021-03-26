@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -85,6 +85,7 @@ export class GatheringLocationComponent {
   public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {
     return alarms.find(alarm => {
       return node.matchingItemId === alarm.itemId
+        && Math.floor(node.x) === Math.floor(alarm.coords.x)
         && node.zoneId === alarm.zoneId
         && node.type === alarm.type;
     }) === undefined;
@@ -93,6 +94,7 @@ export class GatheringLocationComponent {
   public canCreateAlarm(alarms: Alarm[], alarm: Alarm): boolean {
     return alarms.find(a => {
       return alarm.itemId === a.itemId
+        && Math.floor(alarm.coords.x) === Math.floor(a.coords.x)
         && alarm.zoneId === a.zoneId
         && alarm.type === a.type
         && alarm.fishEyes === a.fishEyes;

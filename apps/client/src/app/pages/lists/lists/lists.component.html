@@ -23,12 +23,10 @@
       </button>
       <div class="spacer">
       </div>
-      <button (click)="loadArchivedLists()" [nzTooltipTitle]="'LISTS.Load_archived' | translate" nz-button
-              nz-tooltip
-              nzShape="circle"
-              nzType="primary">
-        <i nz-icon nzType="file-zip" nzTheme="outline"></i>
-      </button>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <nz-switch [ngModel]="false" (ngModelChange)="$event?loadArchivedLists():unLoadArchivedLists()"></nz-switch>
+        <div>{{'LISTS.Load_archived' | translate}}</div>
+      </div>
       <button (click)="deleteMultipleLists()"
               nz-button
               nz-tooltip nzShape="circle"

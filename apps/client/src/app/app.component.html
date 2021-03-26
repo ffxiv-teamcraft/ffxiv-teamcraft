@@ -4,11 +4,9 @@
              class="app-container">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
-        <a class="logo" routerLink="/">
-          {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
-        </a>
-        <div class="language-swap">
-          <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+        <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
+        <div class="language-swap" *ngIf="true | ifMobile: false">
+          <nz-select (ngModelChange)="use($event)" [ngModel]="translate.currentLang"
                      fxFlex="0 0 auto"
                      fxLayout="row">
             <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
@@ -49,32 +47,8 @@
             </div>
           </ng-container>
         </div>
-        <div *ngIf="platformService.isDesktop()" class="nav-buttons">
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-            <div>
-              <button (click)="back()" nz-button nzShape="circle">
-                <i nz-icon nzType="arrow-left"></i>
-              </button>
-            </div>
-            <div>
-              <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}" nz-button
-                      (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
-                      nzShape="circle">
-                <i nz-icon nzTheme="outline" nzType="share-alt"></i>
-              </button>
-            </div>
-            <div>
-              <button (click)="forward()" nz-button nzShape="circle">
-                <i nz-icon nzType="arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <!--          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">-->
-          <!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
-          <!--            TODO ad banner here? -->
-          <!--          </div>-->
+          <app-ad *ngIf="showAd$ | async" [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
@@ -87,10 +61,6 @@
               <i nz-icon nzType="pushpin" nzTheme="outline"></i>
             </li>
           </ng-container>
-          <li class="ant-menu-item" fxFlex fxHide.lt-xl fxLayout="column" fxShow routerLink="/support-us"
-              routerLinkActive="ant-menu-item-selected">
-            {{'SUPPORT_US.Title' | translate}}
-          </li>
           <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
             {{time$ | async}}
           </li>
@@ -232,20 +202,23 @@
                 *ngIf="!overlay"
                 [(nzCollapsed)]="settings.compactSidebar"
                 [nzCollapsedWidth]="80 | ifMobile: 0"
+                [nzWidth]="255 | ifMobile: 200"
                 class="sider"
                 nzCollapsible>
-        <div class="flex-container" fxLayout="column" fxLayoutAlign="space-between">
-          <div fxLayout="column" fxFlex="1 1 auto" class="sidebar-scroll-box">
+        <div class="sidebar-container" fxLayout="column" fxLayoutAlign="space-between">
+          <div fxLayout="column" fxFlex="1 1 auto" class="menu-categories-container">
+            <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop()">
+              <i nz-icon nzType="left" nzTheme="outline"></i>
+              {{'COMMON.Back' | translate}}
+            </button>
             <div class="menu-categories" fxFlex="1 1 auto">
-              <ul [nzInlineCollapsed]="settings.compactSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
-                <app-navigation-sidebar
-                  [desktop]="platformService.isDesktop()"
-                  [collapsed]="settings.compactSidebar"
-                  [mappyEnabled]="mappy.available"
-                  [version]="version"
-                  (showPatchNotes)="showPatchNotes()">
-                </app-navigation-sidebar>
-              </ul>
+              <app-navigation-sidebar
+                [desktop]="platformService.isDesktop()"
+                [collapsed]="settings.compactSidebar"
+                [mappyEnabled]="mappy.available"
+                [version]="version"
+                (showPatchNotes)="showPatchNotes()">
+              </app-navigation-sidebar>
             </div>
 
             <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
@@ -278,40 +251,14 @@
               </button>
             </div>
 
-            <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"
-                 fxLayoutGap="5px">
-              <a *ngIf="!settings.compactSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Find_us_on_twitter' | translate}}" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab discord" href="https://discord.gg/r6qxt6P" nz-button nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Join_discord_server' | translate}}"
-                 target="_blank">
-                <i class="fab fa-discord"></i>
-              </a>
-              <a *ngIf="!desktop && !settings.compactSidebar" href="https://ffxivteamcraft.com/desktop" nz-button nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Download_desktop_app' | translate}}"
-                 target="_blank">
-                <i nz-icon nzType="desktop"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab github" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'See_code_github' | translate}}"
-                 target="_blank"><i class="fab fa-github"></i>
-              </a>
-              <a *ngIf="!settings.compactSidebar" class="social-fab patreon" href="https://www.patreon.com/ffxivteamcraft" nz-button
-                 nz-tooltip
-                 nzShape="circle"
-                 nzTooltipTitle="{{'Support_on_patreon' | translate}}"
-                 target="_blank">
-                <i class="fab fa-patreon"></i>
-              </a>
-            </div>
+            <button class="patreon-button" *ngIf="showPatreonButton$ | async" (click)="openSupportPopup()">
+              <img
+                alt="patreon logo" class="patreon-logo"
+                src="https://c5.patreon.com/external/logo/downloads_logomark_color_on_coral.png">
+              <br>
+              <span *ngIf="settings.compactSidebar">{{'COMMON.Support_us' | translate}}</span>
+              <span *ngIf="!settings.compactSidebar">{{'COMMON.Support_us_remove_ads' | translate}}</span>
+            </button>
           </div>
         </div>
       </nz-sider>

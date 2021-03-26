@@ -9,6 +9,7 @@
     "speed": 0,
     "range": 80,
     "favor": "-10",
+    "class": 1,
     "repairMaterials": 1,
     "itemId": 10156
   },
@@ -22,6 +23,7 @@
     "speed": 0,
     "range": 94,
     "favor": "-14",
+    "class": 4,
     "repairMaterials": 2,
     "itemId": 10157
   },
@@ -35,6 +37,7 @@
     "speed": 0,
     "range": 108,
     "favor": "-18",
+    "class": 2,
     "repairMaterials": 3,
     "itemId": 10158
   },
@@ -48,6 +51,7 @@
     "speed": 0,
     "range": 122,
     "favor": "-22",
+    "class": 5,
     "repairMaterials": 4,
     "itemId": 10159
   },
@@ -61,6 +65,7 @@
     "speed": 0,
     "range": 136,
     "favor": "-26",
+    "class": 3,
     "repairMaterials": 5,
     "itemId": 10160
   },
@@ -74,6 +79,7 @@
     "speed": 0,
     "range": 150,
     "favor": "-30",
+    "class": 6,
     "repairMaterials": 6,
     "itemId": 10161
   },
@@ -87,6 +93,7 @@
     "speed": 80,
     "range": "-10",
     "favor": 0,
+    "class": 1,
     "repairMaterials": 1,
     "itemId": 10162
   },
@@ -100,6 +107,7 @@
     "speed": 94,
     "range": "-14",
     "favor": 0,
+    "class": 4,
     "repairMaterials": 2,
     "itemId": 10163
   },
@@ -113,6 +121,7 @@
     "speed": 108,
     "range": "-18",
     "favor": 0,
+    "class": 2,
     "repairMaterials": 3,
     "itemId": 10164
   },
@@ -126,6 +135,7 @@
     "speed": 122,
     "range": "-22",
     "favor": 0,
+    "class": 5,
     "repairMaterials": 4,
     "itemId": 10165
   },
@@ -139,6 +149,7 @@
     "speed": 136,
     "range": "-26",
     "favor": 0,
+    "class": 3,
     "repairMaterials": 5,
     "itemId": 10166
   },
@@ -152,6 +163,7 @@
     "speed": 150,
     "range": "-30",
     "favor": 0,
+    "class": 6,
     "repairMaterials": 6,
     "itemId": 10167
   },
@@ -165,6 +177,7 @@
     "speed": 0,
     "range": 0,
     "favor": 80,
+    "class": 1,
     "repairMaterials": 1,
     "itemId": 10168
   },
@@ -178,6 +191,7 @@
     "speed": 0,
     "range": 0,
     "favor": 94,
+    "class": 4,
     "repairMaterials": 2,
     "itemId": 10169
   },
@@ -191,6 +205,7 @@
     "speed": 0,
     "range": 0,
     "favor": 108,
+    "class": 2,
     "repairMaterials": 3,
     "itemId": 10170
   },
@@ -204,6 +219,7 @@
     "speed": 0,
     "range": 0,
     "favor": 122,
+    "class": 5,
     "repairMaterials": 4,
     "itemId": 10171
   },
@@ -217,6 +233,7 @@
     "speed": 0,
     "range": 0,
     "favor": 136,
+    "class": 3,
     "repairMaterials": 5,
     "itemId": 10172
   },
@@ -230,6 +247,7 @@
     "speed": 0,
     "range": 0,
     "favor": 150,
+    "class": 6,
     "repairMaterials": 6,
     "itemId": 10173
   },
@@ -243,6 +261,7 @@
     "speed": "-10",
     "range": 0,
     "favor": 0,
+    "class": 1,
     "repairMaterials": 1,
     "itemId": 10174
   },
@@ -256,6 +275,7 @@
     "speed": "-14",
     "range": 0,
     "favor": 0,
+    "class": 4,
     "repairMaterials": 2,
     "itemId": 10175
   },
@@ -269,6 +289,7 @@
     "speed": "-18",
     "range": 0,
     "favor": 0,
+    "class": 2,
     "repairMaterials": 3,
     "itemId": 10176
   },
@@ -282,6 +303,7 @@
     "speed": "-22",
     "range": 0,
     "favor": 0,
+    "class": 5,
     "repairMaterials": 4,
     "itemId": 10177
   },
@@ -295,6 +317,7 @@
     "speed": "-26",
     "range": 0,
     "favor": 0,
+    "class": 3,
     "repairMaterials": 5,
     "itemId": 10178
   },
@@ -308,6 +331,7 @@
     "speed": "-30",
     "range": 0,
     "favor": 0,
+    "class": 6,
     "repairMaterials": 6,
     "itemId": 10179
   },
@@ -321,6 +345,7 @@
     "speed": 0,
     "range": 164,
     "favor": "-34",
+    "class": 7,
     "repairMaterials": 7,
     "itemId": 14003
   },
@@ -334,6 +359,7 @@
     "speed": 164,
     "range": "-34",
     "favor": 0,
+    "class": 7,
     "repairMaterials": 7,
     "itemId": 14004
   },
@@ -347,6 +373,7 @@
     "speed": 0,
     "range": 0,
     "favor": 164,
+    "class": 7,
     "repairMaterials": 7,
     "itemId": 14005
   },
@@ -360,6 +387,7 @@
     "speed": "-34",
     "range": 0,
     "favor": 0,
+    "class": 7,
     "repairMaterials": 7,
     "itemId": 14006
   }

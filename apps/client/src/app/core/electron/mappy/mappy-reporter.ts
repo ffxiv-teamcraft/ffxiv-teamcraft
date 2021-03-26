@@ -17,6 +17,7 @@ import { uniqBy } from 'lodash';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { XivapiReportEntry } from './xivapi-report-entry';
+import { UpdatePositionHandler } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export interface MappyMarker {
   position: Vector3;
@@ -259,7 +260,7 @@ export class MappyReporterService {
       this.setState({
         playerCoords: playerCoords,
         player: this.getPosition(pos),
-        playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`
+        playerRotationTransform: `rotate(${((position as UpdatePositionHandler).rotation - Math.PI) * -1}rad)`
       });
     });
 
@@ -270,8 +271,8 @@ export class MappyReporterService {
         return this.state.zoning ? interval(2000) : interval(0);
       })
     ).subscribe(packet => {
-      const isPet = packet.bNPCName >= 1398 && packet.bNPCName <= 1404;
-      const isChocobo = packet.bNPCName === 780;
+      const isPet = packet.bNpcName >= 1398 && packet.bNpcName <= 1404;
+      const isChocobo = packet.bNpcName === 780;
       if (isPet || isChocobo) {
         return;
       }
@@ -282,22 +283,22 @@ export class MappyReporterService {
         z: packet.pos.y
       };
       const coords = this.getCoords(position);
-      const uniqId = `${packet.bNPCName}-${coords.x}/${coords.y}`;
+      const uniqId = `${packet.bNpcName}-${coords.x}/${coords.y}`;
       if (this.state.bnpcs.some(row => row.uniqId === uniqId)
         || this.state.outOfBoundsBnpcs.some(row => row.uniqId === uniqId)) {
         return;
       }
 
       const newEntry: BNpcEntry = {
-        nameId: packet.bNPCName,
-        baseId: packet.bNPCBase,
+        nameId: packet.bNpcName,
+        baseId: packet.bNpcBase,
         position: position,
         ingameCoords: coords,
         displayPosition: this.getPosition(position),
         uniqId: uniqId,
         level: packet.level,
         HP: packet.hPMax,
-        fateId: packet.fateID,
+        fateId: packet.fateId,
         timestamp: Date.now()
       };
 

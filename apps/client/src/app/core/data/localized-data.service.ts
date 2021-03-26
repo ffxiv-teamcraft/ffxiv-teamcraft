@@ -255,9 +255,9 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let resultIndex = this.getIndexByName(this.lazyData.data.craftActions, name, language);
+    let resultIndex = this.getIndexByName(this.lazyData.data.craftActions, name, language, true);
     if (resultIndex === -1) {
-      resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language);
+      resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language, true);
     }
     if (name === 'Scrutiny' && language === 'en') {
       resultIndex = 22185;
@@ -301,6 +301,14 @@ export class LocalizedDataService {
     const row = this.getRow<{ name: I18nName; divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
     this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
     return row;
+  }
+
+  public getAirshipSectorName(id: number): I18nName {
+    return this.getRow(this.lazyData.data.airshipVoyages, id);
+  }
+
+  public getSubmarineSectorName(id: number): I18nName {
+    return this.getRow(this.lazyData.data.submarineVoyages, id);
   }
 
   public getExpansions(): { exVersion: number; majorVersion: number; name: I18nName }[] {

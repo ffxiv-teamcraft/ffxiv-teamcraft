@@ -8,7 +8,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import * as _ from 'lodash';
-import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '../../model/pcap';
+import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -167,8 +167,8 @@ export class UniversalisService {
           worldID: worldId,
           uploaderID: cid,
           itemIDs: _.compact(packet.items.map((item) => {
-            if (item.itemCatalogID && !item.quantity) {
-              return item.itemCatalogID;
+            if (item.itemCatalogId && !item.quantity) {
+              return item.itemCatalogId;
             }
           })),
           op: {
@@ -188,32 +188,33 @@ export class UniversalisService {
       switchMap(([cid, worldId]) => {
         const data = {
           worldID: worldId,
-          itemID: packets[0].itemID,
+          itemID: packets[0]?.listings[0]?.itemId,
           uploaderID: cid,
           listings: packets.reduce((listings, packet) => {
             return [
               ...listings,
               ...packet.listings.map(item => {
                 return {
-                  listingID: item.listingID,
-                  hq: item.hq === 1,
+                  listingID: item.listingId,
+                  hq: item.hq,
                   materia: item.materia.map((materia, index) => {
+                    const materiaItemId = this.lazyData.data.materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
                     return {
-                      materiaId: materia,
+                      materiaId: materiaItemId,
                       slotId: index
                     };
-                  }),
+                  }).filter(entry => entry.materiaId > 0),
                   pricePerUnit: item.pricePerUnit,
                   quantity: item.quantity,
-                  total: item.total,
-                  retainerID: item.retainerID,
+                  total: item.quantity * item.pricePerUnit,
+                  retainerID: item.retainerId,
                   retainerName: item.retainerName,
                   retainerCity: item.city,
                   creatorName: item.playerName,
-                  creatorID: item.artisanID,
-                  sellerID: item.retainerOwnerID,
+                  creatorID: item.artisanId,
+                  sellerID: item.retainerOwnerId,
                   lastReviewTime: item.lastReviewTime,
-                  stainID: item.dyeID
+                  stainID: item.dyeId
                 };
               })];
           }, [])
@@ -231,11 +232,11 @@ export class UniversalisService {
       switchMap(([cid, worldId]) => {
         const data = {
           worldID: worldId,
-          itemID: packet.itemID,
+          itemID: packet.itemCatalogId,
           uploaderID: cid,
           entries: packet.listings.map((entry) => {
             return {
-              hq: entry.hq,
+              hq: entry.isHq,
               pricePerUnit: entry.salePrice,
               quantity: entry.quantity,
               buyerName: entry.buyerName,
@@ -258,13 +259,12 @@ export class UniversalisService {
      * but will hopefully reduce incidences of bad tax rate data getting
      * through in the future.
      */
-    if (packet.packetSize !== 72 ||
-        packet.limsaLominsa > 7 ||
-        packet.gridania > 7 ||
-        packet.uldah > 7 ||
-        packet.ishgard > 7 ||
-        packet.kugane > 7 ||
-        packet.crystarium > 7)
+    if (packet.limsaLominsa > 7 ||
+      packet.gridania > 7 ||
+      packet.uldah > 7 ||
+      packet.ishgard > 7 ||
+      packet.kugane > 7 ||
+      packet.crystarium > 7)
       return;
 
     combineLatest([this.cid$, this.worldId$]).pipe(
@@ -291,7 +291,7 @@ export class UniversalisService {
 
   public uploadCid(packet: PlayerSetup): void {
     const data = {
-      contentID: packet.contentID,
+      contentID: packet.contentId.toString(),
       characterName: packet.name
     };
     this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {

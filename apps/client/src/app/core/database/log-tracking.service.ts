@@ -29,25 +29,27 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
           entries
             .filter(entry => !!entry.itemId)
             .forEach(entry => {
-            if (!doc.exists && entry.done) {
-              const newLog = {
-                crafting: [],
-                gathering: []
-              };
-              newLog[entry.log].push(entry.itemId);
-              transaction.set(docRef, newLog);
-            } else {
-              if (entry.done && (doc.get(entry.log) || []).indexOf(entry.itemId) === -1) {
-                transaction.update(docRef, {
-                  [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
-                });
-              } else if (!entry.done) {
-                transaction.update(docRef, {
-                  [entry.log]: firebase.firestore.FieldValue.arrayRemove(entry.itemId)
-                });
+              if (!doc.exists && entry.done) {
+                const newLog = {
+                  crafting: [],
+                  gathering: []
+                };
+                newLog[entry.log].push(entry.itemId);
+                transaction.set(docRef, newLog);
+              } else {
+                if (entry.done && (doc.get(entry.log) || []).indexOf(entry.itemId) === -1) {
+                  transaction.update(docRef, {
+                    [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
+                  });
+                } else if (!entry.done) {
+                  transaction.update(docRef, {
+                    [entry.log]: firebase.firestore.FieldValue.arrayRemove(entry.itemId)
+                  });
+                } else {
+                  Promise.resolve();
+                }
               }
-            }
-          });
+            });
         });
     }));
   }

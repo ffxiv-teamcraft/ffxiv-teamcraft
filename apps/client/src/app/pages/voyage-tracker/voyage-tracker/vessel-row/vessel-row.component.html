@@ -1,0 +1,39 @@
+<div fxLayout="row">
+  <div fxFlex="0 0 20%" fxLayoutAlign="flex-start center">
+    <div>{{ vessel?.name }}</div>
+  </div>
+  <div fxFlex="0 0 20%" fxLayoutAlign="center center">
+    <ng-container *ngIf="vessel?.returnTime > 0; else noReturnTime">
+      {{ vessel?.returnTime * 1000 | date:'short':null:translate.currentLang }}
+    </ng-container>
+    <ng-template #noReturnTime>
+      -
+    </ng-template>
+  </div>
+  <div fxFlex="0 0 20%" fxLayoutAlign="center center">
+    <ng-container *ngIf="!isVesselBack(vessel); else isBack">
+      <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i>
+      {{ remainingTime$ | async | timer:true }}
+    </ng-container>
+    <ng-template #isBack>
+      <ng-container *ngIf="isVesselCompleted(vessel); else isIdle">
+        <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i>
+        {{'VOYAGE_TRACKER.Voyage_complete' | translate}}
+      </ng-container>
+      <ng-template #isIdle>
+        -
+      </ng-template>
+    </ng-template>
+  </div>
+  <div fxFlex="0 0 90px" fxLayoutAlign="center center">{{ vessel?.rank }} / {{ maxRank }}</div>
+  <div fxFlex="0 0 120px" fxLayoutAlign="center center">
+    <app-vessel-build-column [type]="vessel?.vesselType"
+                             [name]="vessel?.name"
+                             [rank]="vessel?.rank"
+                             [parts]="vessel?.parts"
+    ></app-vessel-build-column>
+  </div>
+  <div fxFlex="0" fxLayoutAlign="center center" style="text-align: center">
+    <app-vessel-voyage-column [vessel]="vessel"></app-vessel-voyage-column>
+  </div>
+</div>

@@ -21,6 +21,7 @@ import {
   SetItemDone,
   ToggleAutocompletion,
   ToggleCompletionNotification,
+  UnLoadArchivedLists,
   UnPinList,
   UpdateItem,
   UpdateList,
@@ -221,6 +222,10 @@ export class ListsFacade {
 
   loadArchivedLists(): void {
     this.store.dispatch(new LoadArchivedLists());
+  }
+
+  unLoadArchivedLists(): void {
+    this.store.dispatch(new UnLoadArchivedLists());
   }
 
   deleteLists(keys: string[]): void {

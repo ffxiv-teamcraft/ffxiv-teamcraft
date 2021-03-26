@@ -237,16 +237,18 @@
             </div>
           </div>
           <br>
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="row.alarm.weathersFrom && row.alarm.weathersFrom.length > 0">
-            <div fxLayout="row wrap" fxLayoutGap="5px">
-              <div *ngFor="let weather of row.alarm.weathersFrom">
-                <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
-                     nz-tooltip>
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <ng-container *ngIf="row.alarm.weathersFrom && row.alarm.weathersFrom.length > 0">
+              <div fxLayout="row wrap" fxLayoutGap="5px">
+                <div *ngFor="let weather of row.alarm.weathersFrom">
+                  <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                       nz-tooltip>
+                </div>
               </div>
-            </div>
-            <div>
-              <i nz-icon nzType="right" theme="outline"></i>
-            </div>
+              <div>
+                <i nz-icon nzType="right" theme="outline"></i>
+              </div>
+            </ng-container>
             <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathers">
                 <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
@@ -300,7 +302,8 @@
         </ng-template>
         <ng-template #removeFromGroup>
           <span [nzTooltipTitle]="'ALARMS.Remove_from_group' | translate" nz-tooltip>
-              <i nz-icon nzType="close" (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"></i>
+              <i nz-icon nzType="close" (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" nz-popconfirm
+                 [nzPopconfirmTitle]="'Confirmation' | translate"></i>
           </span>
         </ng-template>
         <ng-template #copyMacro>

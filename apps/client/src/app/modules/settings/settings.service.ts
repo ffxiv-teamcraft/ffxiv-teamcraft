@@ -167,6 +167,14 @@ export class SettingsService {
     return JSON.parse(this.getSetting('commissions:tags', '[]'));
   }
 
+  public set foldersOpened(folders: Record<string, 1>) {
+    this.setSetting('folders:opened', JSON.stringify(folders));
+  }
+
+  public get foldersOpened(): Record<string, 1> {
+    return JSON.parse(this.getSetting('folders:opened', '{}'));
+  }
+
   public set ignoredContentIds(ids: string[]) {
     this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
   }
@@ -301,6 +309,14 @@ export class SettingsService {
 
   public set compactSidebar(compact: boolean) {
     this.setSetting('compact-sidebar', compact.toString());
+  }
+
+  public get hasAccessToHousingVendors(): boolean {
+    return this.getBoolean('hasAccessToHousingVendors', false);
+  }
+
+  public set hasAccessToHousingVendors(enabled: boolean) {
+    this.setBoolean('hasAccessToHousingVendors', enabled);
   }
 
   public get ignoredInventories(): string[] {
@@ -469,7 +485,7 @@ export class SettingsService {
   }
 
   public get alarmVolume(): number {
-    return+this.getSetting('alarm:volume', '0.5');
+    return +this.getSetting('alarm:volume', '0.5');
   }
 
   public set alarmVolume(volume: number) {
@@ -776,12 +792,28 @@ export class SettingsService {
     this.setBoolean('retainerTaskAlarms', enabled);
   }
 
+  public get vesselVoyageAlarms(): boolean {
+    return this.getBoolean('vesselVoyageAlarms', false);
+  }
+
+  public set vesselVoyageAlarms(enabled: boolean) {
+    this.setBoolean('vesselVoyageAlarms', enabled);
+  }
+
   public get hideCompletedLogEntries(): boolean {
     return this.getBoolean('hideCompletedLogEntries', false);
   }
 
   public set hideCompletedLogEntries(enabled: boolean) {
     this.setBoolean('hideCompletedLogEntries', enabled);
+  }
+
+  public get showSearchFilters(): boolean {
+    return this.getBoolean('showSearchFilters', false);
+  }
+
+  public set showSearchFilters(enabled: boolean) {
+    this.setBoolean('showSearchFilters', enabled);
   }
 
   public setOverlayClockDisplay(overlay: string, show: boolean): void {

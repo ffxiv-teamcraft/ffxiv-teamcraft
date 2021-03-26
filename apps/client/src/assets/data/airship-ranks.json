@@ -1,0 +1,252 @@
+{
+  "1": {
+    "id": 1,
+    "capacity": 12,
+    "expToNext": 6180
+  },
+  "2": {
+    "id": 2,
+    "capacity": 13,
+    "expToNext": 12504
+  },
+  "3": {
+    "id": 3,
+    "capacity": 14,
+    "expToNext": 18972
+  },
+  "4": {
+    "id": 4,
+    "capacity": 15,
+    "expToNext": 25581
+  },
+  "5": {
+    "id": 5,
+    "capacity": 16,
+    "expToNext": 32331
+  },
+  "6": {
+    "id": 6,
+    "capacity": 17,
+    "expToNext": 39221
+  },
+  "7": {
+    "id": 7,
+    "capacity": 18,
+    "expToNext": 46251
+  },
+  "8": {
+    "id": 8,
+    "capacity": 19,
+    "expToNext": 53418
+  },
+  "9": {
+    "id": 9,
+    "capacity": 20,
+    "expToNext": 60721
+  },
+  "10": {
+    "id": 10,
+    "capacity": 21,
+    "expToNext": 68161
+  },
+  "11": {
+    "id": 11,
+    "capacity": 22,
+    "expToNext": 75735
+  },
+  "12": {
+    "id": 12,
+    "capacity": 23,
+    "expToNext": 83443
+  },
+  "13": {
+    "id": 13,
+    "capacity": 24,
+    "expToNext": 91283
+  },
+  "14": {
+    "id": 14,
+    "capacity": 25,
+    "expToNext": 99256
+  },
+  "15": {
+    "id": 15,
+    "capacity": 26,
+    "expToNext": 107359
+  },
+  "16": {
+    "id": 16,
+    "capacity": 27,
+    "expToNext": 115591
+  },
+  "17": {
+    "id": 17,
+    "capacity": 28,
+    "expToNext": 123953
+  },
+  "18": {
+    "id": 18,
+    "capacity": 29,
+    "expToNext": 132442
+  },
+  "19": {
+    "id": 19,
+    "capacity": 30,
+    "expToNext": 141058
+  },
+  "20": {
+    "id": 20,
+    "capacity": 31,
+    "expToNext": 149799
+  },
+  "21": {
+    "id": 21,
+    "capacity": 32,
+    "expToNext": 158666
+  },
+  "22": {
+    "id": 22,
+    "capacity": 33,
+    "expToNext": 167656
+  },
+  "23": {
+    "id": 23,
+    "capacity": 34,
+    "expToNext": 176770
+  },
+  "24": {
+    "id": 24,
+    "capacity": 35,
+    "expToNext": 186005
+  },
+  "25": {
+    "id": 25,
+    "capacity": 36,
+    "expToNext": 195361
+  },
+  "26": {
+    "id": 26,
+    "capacity": 37,
+    "expToNext": 204838
+  },
+  "27": {
+    "id": 27,
+    "capacity": 38,
+    "expToNext": 214434
+  },
+  "28": {
+    "id": 28,
+    "capacity": 39,
+    "expToNext": 224148
+  },
+  "29": {
+    "id": 29,
+    "capacity": 40,
+    "expToNext": 233979
+  },
+  "30": {
+    "id": 30,
+    "capacity": 41,
+    "expToNext": 243927
+  },
+  "31": {
+    "id": 31,
+    "capacity": 42,
+    "expToNext": 253991
+  },
+  "32": {
+    "id": 32,
+    "capacity": 43,
+    "expToNext": 264169
+  },
+  "33": {
+    "id": 33,
+    "capacity": 44,
+    "expToNext": 274462
+  },
+  "34": {
+    "id": 34,
+    "capacity": 45,
+    "expToNext": 284867
+  },
+  "35": {
+    "id": 35,
+    "capacity": 46,
+    "expToNext": 295384
+  },
+  "36": {
+    "id": 36,
+    "capacity": 47,
+    "expToNext": 306012
+  },
+  "37": {
+    "id": 37,
+    "capacity": 48,
+    "expToNext": 316751
+  },
+  "38": {
+    "id": 38,
+    "capacity": 49,
+    "expToNext": 327599
+  },
+  "39": {
+    "id": 39,
+    "capacity": 50,
+    "expToNext": 338556
+  },
+  "40": {
+    "id": 40,
+    "capacity": 51,
+    "expToNext": 349621
+  },
+  "41": {
+    "id": 41,
+    "capacity": 52,
+    "expToNext": 360793
+  },
+  "42": {
+    "id": 42,
+    "capacity": 53,
+    "expToNext": 372071
+  },
+  "43": {
+    "id": 43,
+    "capacity": 54,
+    "expToNext": 383454
+  },
+  "44": {
+    "id": 44,
+    "capacity": 55,
+    "expToNext": 394941
+  },
+  "45": {
+    "id": 45,
+    "capacity": 56,
+    "expToNext": 406533
+  },
+  "46": {
+    "id": 46,
+    "capacity": 57,
+    "expToNext": 418227
+  },
+  "47": {
+    "id": 47,
+    "capacity": 58,
+    "expToNext": 430023
+  },
+  "48": {
+    "id": 48,
+    "capacity": 59,
+    "expToNext": 441921
+  },
+  "49": {
+    "id": 49,
+    "capacity": 60,
+    "expToNext": 453919
+  },
+  "50": {
+    "id": 50,
+    "capacity": 61,
+    "expToNext": 0
+  }
+}

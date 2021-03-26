@@ -64,7 +64,7 @@ export class RecipesExtractor extends AbstractExtractor {
 
       recipes.forEach(recipe => {
         recipe.ingredients.forEach(ingredient => {
-          rlookup.searchIndex[ingredient.id] = rlookup[ingredient.id] || [];
+          rlookup.searchIndex[ingredient.id] = rlookup.searchIndex[ingredient.id] || [];
           rlookup.searchIndex[ingredient.id].push(recipe.id);
           rlookup.recipes[recipe.id] = {
             itemId: recipe.result,

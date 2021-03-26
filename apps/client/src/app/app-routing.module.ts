@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gc-supply/gc-supply.module').then(m => m.GcSupplyModule)
   },
   {
+    path: 'treasure-finder',
+    loadChildren: () => import('./pages/treasure-finder/treasure-finder.module').then(m => m.TreasureFinderModule)
+  },
+  {
     path: 'levequests',
     loadChildren: () => import('./pages/levequests/levequests.module').then(m => m.LevequestsModule)
   },
@@ -160,8 +164,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/retainer-ventures/retainer-ventures.module').then(m => m.RetainerVenturesModule)
   },
   {
-    path: 'support-us',
-    loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
+    path: 'voyage-tracker',
+    loadChildren: () => import('./pages/voyage-tracker/voyage-tracker.module').then(m => m.VoyageTrackerModule)
   },
   {
     path: 'db',
@@ -230,6 +234,10 @@ const routes: Routes = [
   {
     path: 'collectables',
     loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
+  },
+  {
+    path: 'layouts',
+    loadChildren: () => import('./pages/layout-editor-page/layout-editor-page.module').then(m => m.LayoutEditorPageModule)
   },
   {
     path: 'extractor',

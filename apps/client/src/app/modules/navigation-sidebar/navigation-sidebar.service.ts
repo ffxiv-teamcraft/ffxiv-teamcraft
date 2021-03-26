@@ -312,6 +312,31 @@ export class NavigationSidebarService {
               link: '/retainer-ventures'
             },
             {
+              name: 'VOYAGE_TRACKER.Title',
+              icon: {
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE905;')
+              },
+              link: '/voyage-tracker',
+              hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'TREASURE_FINDER.Title',
+              icon: {
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE906;')
+              },
+              link: '/treasure-finder'
+            },
+            {
+              name: 'LIST_DETAILS.LAYOUT_DIALOG.Layouts',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'format-painter'
+              },
+              link: '/layouts'
+            },
+            {
               name: 'MACRO_TRANSLATION.Title',
               icon: {
                 type: SidebarIconType.ANTD,

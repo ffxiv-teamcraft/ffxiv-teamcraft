@@ -1,0 +1,39 @@
+<nz-spin [nzSpinning]="isLoading$ | async">
+  <div fxLayout="column" fxLayoutGap="10px">
+    <nz-alert nzType="info" [nzMessage]="noticeTpl"></nz-alert>
+    <ng-template #noticeTpl>
+      <div [innerHTML]="'FREE_COMPANY_WORKSHOPS.Import_from_pcap_notice' | translate"></div>
+    </ng-template>
+    <div fxLayoutGap="10px" *ngIf="freeCompany$ | async as freecompanyData">
+      <div>
+        <h3>{{ 'FC' | translate }}</h3>
+        <ng-container *ngTemplateOutlet="freecompanyTpl;context:{fc: freecompanyData}"></ng-container>
+      </div>
+      <div>
+        <ng-container *ngIf="airshipList$ | async as airshipsData">
+          <h3>{{ 'FREE_COMPANY_WORKSHOPS.Airships' | translate }}</h3>
+          <ng-container *ngTemplateOutlet="vesselTpl;context:{vessels: airshipsData}"></ng-container>
+        </ng-container>
+      </div>
+      <div>
+        <ng-container *ngIf="submarineList$ | async as submarinesData">
+          <h3>{{ 'FREE_COMPANY_WORKSHOPS.Submersibles' | translate }}</h3>
+          <ng-container *ngTemplateOutlet="vesselTpl;context:{vessels: submarinesData}"></ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <button *ngIf="freeCompany$ | async" (click)="save()" nz-button nzType="primary">
+      {{ 'COMMON.Save' | translate }}
+    </button>
+  </div>
+</nz-spin>
+<ng-template #freecompanyTpl let-fc="fc">
+  <div>{{ 'Server_name' | translate }}: {{ fc?.server }}</div>
+  <div>{{ 'FC_name' | translate }}: {{ fc?.name }}</div>
+  <div>{{ 'FC_rank' | translate }}: {{ fc?.rank }}</div>
+</ng-template>
+<ng-template #vesselTpl let-vessels="vessels">
+  <ol>
+    <li *ngFor="let vessel of vessels">{{ vessel?.name }}</li>
+  </ol>
+</ng-template>

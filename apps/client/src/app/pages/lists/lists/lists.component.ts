@@ -185,6 +185,10 @@ export class ListsComponent {
     this.listsFacade.loadArchivedLists();
   }
 
+  unLoadArchivedLists(): void {
+    this.listsFacade.unLoadArchivedLists();
+  }
+
   deleteMultipleLists(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LISTS.Delete_multiple_lists'),

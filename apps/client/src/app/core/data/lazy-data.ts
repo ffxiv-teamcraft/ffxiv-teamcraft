@@ -8,6 +8,7 @@ export interface LazyData {
   actions: any;
   aetherytes: any;
   airshipParts: any;
+  airshipRanks: any;
   airshipVoyages: any;
   baitItems: any;
   baseParams: any;
@@ -55,6 +56,7 @@ export interface LazyData {
   jobAbbr: any;
   jobCategories: any;
   jobName: any;
+  jobSortIndex: any;
   leves: any;
   maps: any;
   marketItems: any;
@@ -87,6 +89,7 @@ export interface LazyData {
   territoryLayers: any;
   tradeFlags: any;
   traits: any;
+  treasures: any;
   tribes: any;
   tripleTriadRules: any;
   ventures: any;

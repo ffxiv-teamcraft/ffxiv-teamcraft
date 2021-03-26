@@ -1,5 +1,5 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="header">
+  <nz-collapse-panel [nzHeader]="header" [nzActive]="expanded" (nzActiveChange)="expandedChange($event)">
     <ng-template #header>
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="header">
         <div>{{display.folder.name}} ({{display.content.length}})</div>

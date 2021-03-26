@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, of } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';
@@ -17,7 +17,7 @@ export class I18nToolsService {
   constructor(private translator: TranslateService) {
     // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
     // No memory leaks :)
-    this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang));
+    this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));
   }
 
   public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {

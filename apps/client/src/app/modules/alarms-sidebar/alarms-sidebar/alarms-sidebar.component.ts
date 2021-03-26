@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { NzModalService } from 'ng-zorro-antd/modal';

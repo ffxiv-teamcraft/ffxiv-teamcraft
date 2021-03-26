@@ -1,6 +1,6 @@
 import { AbstractExtractor } from '../abstract-extractor';
 
-export class CombosExtractor extends AbstractExtractor {
+export class TraitsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const traits = {};
     this.getAllPages('https://xivapi.com/Trait?columns=ID,Name_*,Description_*,Icon').subscribe(page => {

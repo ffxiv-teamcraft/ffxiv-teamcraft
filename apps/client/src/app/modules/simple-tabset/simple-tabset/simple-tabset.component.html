@@ -1,0 +1,10 @@
+<div class="tabset-container" fxLayout="column">
+  <div class="tabs-header" fxLayout="row">
+    <div *ngFor="let tab of tabs" fxFlex="1 1 auto" class="tab-header" [class.active]="tab.active" (click)="selectTab(tab)">
+      {{tab.title}}
+    </div>
+  </div>
+  <div class="tab-content-container" fxFlex="1 1 auto">
+    <ng-content></ng-content>
+  </div>
+</div>

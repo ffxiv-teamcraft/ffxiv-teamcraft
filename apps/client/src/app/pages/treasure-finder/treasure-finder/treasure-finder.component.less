@@ -1,0 +1,82 @@
+
+.select-box {
+  width: 300px;
+}
+
+.treasure-map {
+  position: relative;
+  width: 218px;
+  height: 189px;
+  overflow: hidden;
+  cursor: pointer;
+
+  .map-background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    height: 90%;
+    width: 90%;
+    transform: translateX(5%) translateY(5%);
+  }
+
+  .map-background {
+    position: absolute;
+  }
+
+  .map-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .treasure-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+  }
+
+  .shadow-text {
+    text-shadow: 0 0 5px black;
+  }
+
+  .position {
+    position: absolute;
+    z-index: 5;
+    top: 12px;
+    right: 16px;
+  }
+
+  .player-count {
+    position: absolute;
+    z-index: 5;
+    bottom: 12px;
+    left: 16px;
+    height: 32px;
+    width: 130px;
+    border-radius: 4px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 50%);
+
+    .player-icon {
+      position: relative;
+      top: 16px;
+      left: 16px;
+
+      .player-icon-part {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    .party-size {
+      margin-left: 34px;
+      margin-top: 6px;
+    }
+  }
+}

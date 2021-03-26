@@ -8,6 +8,7 @@ import { Folder } from '../../../model/folder/folder';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-folder',
@@ -44,8 +45,11 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   @Input()
   canDropElement: (drag: CdkDrag) => boolean;
 
+  expanded = false;
+
   constructor(private foldersFacade: FoldersFacade, private translate: TranslateService,
-              private message: NzMessageService, private linkTools: LinkToolsService) {
+              private message: NzMessageService, private linkTools: LinkToolsService,
+              private settings: SettingsService) {
   }
 
   getLink = () => {
@@ -116,7 +120,22 @@ export class FolderComponent<T extends DataModel> implements OnInit {
     return data.$key;
   }
 
+  expandedChange(expanded: boolean): void {
+    this.expanded = expanded;
+    if (expanded) {
+      this.settings.foldersOpened = {
+        ...this.settings.foldersOpened,
+        [this.id]: 1
+      };
+    } else {
+      const foldersOpened = this.settings.foldersOpened;
+      delete foldersOpened[this.id];
+      this.settings.foldersOpened = foldersOpened;
+    }
+  }
+
   ngOnInit(): void {
+    this.expanded = this.settings.foldersOpened[this.id] === 1;
     setTimeout(() => {
       this.connectDnD.emit(this.id);
       this.connectDnD.emit(`${this.id}-subfolders`);

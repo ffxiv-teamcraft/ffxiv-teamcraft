@@ -1,10 +1,13 @@
 <div *ngIf="selectedLayout$ | async as layout">
   <div *ngIf="allLayouts$ | async as allLayouts" class="topbar" fxLayout="row" fxLayout.lt-md="column"
        fxLayoutGap="5px">
-    <nz-select (ngModelChange)="select($event)" [compareWith]="layoutComparator" [ngModel]="layout" fxFlex="1 1 auto">
-      <nz-option *ngFor="let availableLayout of allLayouts" [nzLabel]="availableLayout.name"
-                 [nzValue]="availableLayout"></nz-option>
-    </nz-select>
+    <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 auto">
+      <nz-select (ngModelChange)="select($event)" [compareWith]="layoutComparator" [ngModel]="layout" fxFlex="1 1 auto">
+        <nz-option *ngFor="let availableLayout of allLayouts" [nzLabel]="availableLayout.name"
+                   [nzValue]="availableLayout"></nz-option>
+      </nz-select>
+      <div>{{'LIST_DETAILS.LAYOUT_DIALOG.Want_to_learn_more' | translate}}&nbsp;<a href="https://wiki.ffxivteamcraft.com/base-features/layout-system" target="_blank">{{'LIST_DETAILS.LAYOUT_DIALOG.Open_wiki_page' | translate}}</a>.</div>
+    </div>
     <div class="buttons" fxLayout="row" fxLayoutGap="5px">
       <button (click)="addLayout()" nz-button nzType="primary">
         <i nz-icon nzType="plus"></i>

@@ -32,7 +32,10 @@ const getCompletionNotificationEnabled = createSelector(
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
-    return state.listDetails.filter(d => state.deleted.indexOf(d.$key) === -1);
+    return state.listDetails.filter(d => {
+      return state.deleted.indexOf(d.$key) === -1
+        && (state.showArchived || !d.archived);
+    });
   }
 );
 
@@ -52,7 +55,7 @@ const getSelectedList = () => createSelector(
 const getPinnedListKey = () => createSelector(
   getListsState,
   (state) => {
-    return state.pinned
+    return state.pinned;
   }
 );
 

@@ -1,0 +1,12 @@
+export enum SubmarinePartClass {
+  SHARK = 3,
+  UNKIU = 2,
+  WHALE = 1,
+  COELACANTH = 4,
+  SYLDRA = 5,
+  MODIFIED_SHARK = 8,
+  MODIFIED_UNKIU = 7,
+  MODIFIED_WHALE = 6,
+  MODIFIED_COELACANTH = 9,
+  MODIFIED_SYLDRA = 10
+}

@@ -6,7 +6,7 @@ import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
 import {
   AddAlarms,
-  AddAlarmsAndGroup,
+  AddAlarmsAndGroup, AlarmsActionTypes, AlarmsCreated,
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
@@ -39,6 +39,7 @@ import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { environment } from 'apps/client/src/environments/environment';
+import { Actions, ofType } from '@ngrx/effects';
 
 @Injectable({
   providedIn: 'root'
@@ -108,7 +109,7 @@ export class AlarmsFacade {
         .map(alarm => {
           const alarmGroups = groups.filter(g => g.alarms.some(key => key === alarm.$key));
           alarm.groupNames = alarmGroups.map(g => g.name).join(', ');
-          if (!alarm.enabled || (alarmGroups.length > 0 && alarmGroups.every(g => !g.enabled))) {
+          if (!alarm.enabled || (alarmGroups?.length > 0 && alarmGroups.every(g => !g.enabled))) {
             return null;
           }
           return alarm;
@@ -124,7 +125,7 @@ export class AlarmsFacade {
 
   private nextSpawnCache: any = {};
 
-  constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
+  constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
               private lazyData: LazyDataService, private mapService: MapService,
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
@@ -149,8 +150,8 @@ export class AlarmsFacade {
     }
   }
 
-  public addAlarmsAndGroup(alarms: Alarm[], groupName: string): void {
-    this.store.dispatch(new AddAlarmsAndGroup(alarms, groupName));
+  public addAlarmsAndGroup(alarms: Alarm[], groupName: string, redirect = false): void {
+    this.store.dispatch(new AddAlarmsAndGroup(alarms, groupName, redirect));
   }
 
   public updateAlarm(alarm: Alarm): void {
@@ -196,10 +197,15 @@ export class AlarmsFacade {
   public getRegisteredAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
     return this.allAlarms$.pipe(
       map(alarms => alarms.find(a => {
-        return a.itemId === alarm.itemId
-          && a.zoneId === alarm.zoneId
-          && a.type === alarm.type
-          && a.fishEyes === alarm.fishEyes;
+        if (alarm.itemId) {
+          return a.itemId === alarm.itemId
+            && a.zoneId === alarm.zoneId
+            && a.type === alarm.type
+            && a.fishEyes === alarm.fishEyes;
+        } else {
+          // If it's a custom alarm
+          return a.name === alarm.name && a.duration === alarm.duration && a.type === alarm.type;
+        }
       }))
     );
   }
@@ -308,7 +314,7 @@ export class AlarmsFacade {
         // Else just compare remaining time.
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
-      if (alarm.weathers && alarm.weathers.length > 0) {
+      if (alarm.weathers && alarm.weathers?.length > 0) {
         this.nextSpawnCache[cacheKey] = {
           spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
           expires: this.etime.toEarthDate(time)
@@ -402,7 +408,7 @@ export class AlarmsFacade {
         }
       }
     }
-    if (sortedSpawns.length === 0) {
+    if (sortedSpawns?.length === 0) {
       const weatherSpawn = weatherSpawns[0];
       const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
       return {

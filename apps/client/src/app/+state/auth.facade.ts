@@ -252,7 +252,7 @@ export class AuthFacade {
               private oauthService: OauthService, private fns: AngularFireFunctions,
               private logTrackingService: LogTrackingService, private characterService: LodestoneService) {
     this.ipc.playerSetupPackets$.subscribe(packet => {
-      this.setCID(packet.contentID);
+      this.setCID(packet.contentId.toString());
     });
 
     this.ipc.worldId$.subscribe(worldId => {

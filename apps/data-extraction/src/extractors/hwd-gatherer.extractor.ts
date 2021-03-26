@@ -5,9 +5,9 @@ export class HwdGathererExtractor extends AbstractExtractor {
     const inspections = [];
     this.getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
       completeFetch.forEach(inspection => {
-        for (let i = 0; i < 52; i++) {
+        for (let i = 0; i < 78; i++) {
           if (inspection[`ItemRequired${i}`] === null) {
-            return;
+            continue;
           }
           inspections.push({
             requiredItem: inspection[`ItemRequired${i}`].ItemTargetID,

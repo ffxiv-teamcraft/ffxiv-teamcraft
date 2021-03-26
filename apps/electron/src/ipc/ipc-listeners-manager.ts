@@ -46,6 +46,7 @@ export class IpcListenersManager {
     this.setupToolingListeners();
     this.setupProxyManagerListeners();
     this.setupInventoryListeners();
+    this.setupFreeCompanyWorkshopsListeners();
   }
 
   private setupOauthListeners(): void {
@@ -377,5 +378,27 @@ export class IpcListenersManager {
     });
 
 
+  }
+
+  private setupFreeCompanyWorkshopsListeners(): void {
+    const freeCompanyWorkshopsPath = join(app.getPath('userData'), 'free-company-workshops.json');
+
+    ipcMain.on('free-company-workshops:set', (event, workshops) => {
+      writeFileSync(freeCompanyWorkshopsPath, JSON.stringify(workshops));
+    });
+
+    ipcMain.on('free-company-workshops:get', (event, inventory) => {
+      readFile(freeCompanyWorkshopsPath, 'utf8', (err, content) => {
+        if (err) {
+          event.sender.send('free-company-workshops:value', { freeCompanyWorkshops: [] });
+        } else {
+          try {
+            event.sender.send('free-company-workshops:value', JSON.parse(content));
+          } catch (e) {
+            event.sender.send('free-company-workshops:value', { freeCompanyWorkshops: [] });
+          }
+        }
+      });
+    });
   }
 }

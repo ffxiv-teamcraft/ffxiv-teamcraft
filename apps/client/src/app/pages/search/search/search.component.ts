@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, pairwise, startWith, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, pairwise, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -75,7 +75,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   allSelected = false;
 
-  itemFiltersform: FormGroup = this.fb.group({
+  filtersForm: FormGroup = this.fb.group({
+    Patch: [-1],
     ilvlMin: [0],
     ilvlMax: [999],
     elvlMin: [0],
@@ -86,31 +87,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     craftJob: [null],
     itemCategories: [[]],
     stats: this.fb.array([]),
-    bonuses: this.fb.array([])
-  });
-
-  instanceFiltersForm: FormGroup = this.fb.group({
+    bonuses: this.fb.array([]),
+    // Instances, leves and actions
     lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
-    maxPlayers: [24]
-  });
-
-  leveFiltersForm: FormGroup = this.fb.group({
-    lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
-    jobCategory: [1]
-  });
-
-  actionFilterForm: FormGroup = this.fb.group({
-    lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
-    jobCategory: [1]
-  });
-
-  traitFilterForm: FormGroup = this.fb.group({
-    lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
-    jobCategory: [1]
+    lvlMax: [this.curMaxLevel]
   });
 
   availableStats = stats;
@@ -124,6 +104,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   availableJobCategories = [30, 31, 32, 33];
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
+
+  patches: XivapiPatch[] = this.lazyData.patches.reverse();
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
     map(([query, type]) => {
@@ -207,17 +189,19 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  patch$: Observable<XivapiPatch> = this.query$.pipe(
-    map(query => {
-      const matches = /patch:\s?([\d.]+)/.exec(query);
-      if (matches && matches[1]) {
+  patch$: Observable<XivapiPatch> = this.filters$.pipe(
+    map(filters => {
+      const patchFilter = filters.find(f => f.name === 'Patch');
+      if (patchFilter) {
         return this.lazyData.patches.find(p => {
-          return p.Version === matches[1];
+          return p.ID === patchFilter.value;
         });
       }
       return null;
     })
   );
+
+  showFilters = this.settings.showSearchFilters;
 
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
@@ -263,6 +247,11 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
+  queryChange(value: string): void {
+    this.query$.next(value);
+    this.submitFilters();
+  }
+
   ngOnInit(): void {
     this.translate.onLangChange.pipe(
       startWith({ lang: this.translate.currentLang }),
@@ -299,8 +288,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           queryParams.sort = sortBy;
           queryParams.order = sortOrder;
         }
-        if (filters.filter(f => f.name !== 'Patch').length > 0) {
-          queryParams.filters = btoa(JSON.stringify(filters.filter(f => f.name !== 'Patch')));
+        if (filters.length > 0) {
+          queryParams.filters = btoa(JSON.stringify(filters));
         } else {
           queryParams.filters = null;
         }
@@ -316,23 +305,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      mergeMap(([query, type, filters, sort]) => {
-        let processedQuery = query;
-        const matches = /patch:\s?([\d.]+)/.exec(query);
-        if (matches && matches[1]) {
-          processedQuery = query.replace(/patch:\s?([\d.]+)/, '');
-          const patch = this.lazyData.patches.find(p => {
-            return p.Version === matches[1];
-          });
-          if (patch) {
-            filters = filters.filter(f => f.name !== 'Patch');
-            filters.push({
-              name: 'Patch',
-              value: patch.ID
-            });
-          }
-        }
-        return this.data.search(processedQuery, type, filters, sort);
+      switchMap(([query, type, filters, sort]) => {
+        return this.data.search(query, type, filters, sort);
       }),
       tap(() => {
         this.loading = false;
@@ -350,11 +324,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       if (params.filters !== undefined) {
         const filters = JSON.parse(atob(params.filters));
         this.filters$.next(filters);
-        this.itemFiltersform.patchValue(this.filtersToForm(filters, this.itemFiltersform));
-        this.leveFiltersForm.patchValue(this.filtersToForm(filters, this.leveFiltersForm));
-        this.actionFilterForm.patchValue(this.filtersToForm(filters, this.actionFilterForm));
-        this.instanceFiltersForm.patchValue(this.filtersToForm(filters, this.instanceFiltersForm));
-        this.traitFilterForm.patchValue(this.filtersToForm(filters, this.traitFilterForm));
+        this.filtersForm.patchValue(this.filtersToForm(filters, this.filtersForm));
       }
       if (params.sort !== undefined) {
         this.sortBy$.next(params.sort);
@@ -363,23 +333,48 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
+  shouldShowJobPicker(searchType: SearchType): boolean {
+    return [SearchType.RECIPE, SearchType.ITEM, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
+  }
+
+  shouldShowLvlFilter(searchType: SearchType): boolean {
+    return [SearchType.INSTANCE, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
+  }
+
+  hasAdditionalFilters(searchType: SearchType): boolean {
+    return [SearchType.RECIPE, SearchType.ITEM, SearchType.INSTANCE, SearchType.ACTION, SearchType.LEVE, SearchType.TRAIT].includes(searchType);
+  }
+
   addFilter(type: 'stats' | 'bonuses'): void {
-    (this.itemFiltersform.get(type) as FormArray).push(this.fb.group({
-      name: '',
-      min: 0,
-      max: 9999
+    (this.filtersForm.get(type) as FormArray).push(this.fb.group({
+      name: ['Strength'],
+      min: [0],
+      max: [9999],
+      exclude: [false]
     }));
   }
 
   removeFilter(type: 'stats' | 'bonuses', i: number): void {
-    (this.itemFiltersform.get(type) as FormArray).removeAt(i);
+    (this.filtersForm.get(type) as FormArray).removeAt(i);
+  }
+
+  setSearchType(type: SearchType): void {
+    this.searchType$.next(type);
+    this.router.navigate([], {
+      queryParams: {
+        type: SearchType[type]
+      },
+      queryParamsHandling: 'merge'
+    });
+    this.resetFilters();
   }
 
   resetFilters(): void {
     this.sortBy$.next('');
     this.sortOrder$.next('desc');
-
-    this.itemFiltersform.reset({
+    this.filters$.next([]);
+    this.filtersForm.reset({
+      Patch: -1,
       ilvlMin: 0,
       ilvlMax: 999,
       elvlMin: 0,
@@ -390,44 +385,24 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       craftJob: null,
       itemCategories: [],
       stats: [],
-      bonuses: []
-    });
-
-    this.instanceFiltersForm.reset({
+      bonuses: [],
+      // Instances, leves and actions
       lvlMin: 0,
       lvlMax: this.curMaxLevel
     });
 
-    this.leveFiltersForm.reset({
-      lvlMin: 0,
-      lvlMax: this.curMaxLevel,
-      jobCategory: 1
-    });
-
-    this.actionFilterForm.reset({
-      lvlMin: 0,
-      lvlMax: this.curMaxLevel,
-      jobCategory: 0
-    });
-
-    this.traitFilterForm.reset({
-      lvlMin: 0,
-      lvlMax: this.curMaxLevel,
-      jobCategory: 0
-    });
-
-    this.submitFilters();
+    (this.filtersForm.get('bonuses') as FormArray).clear();
+    (this.filtersForm.get('stats') as FormArray).clear();
 
     const params = this.route.snapshot.queryParams;
 
-    this.router.navigate(['.'], {
+    this.router.navigate([], {
       queryParamsHandling: 'merge',
       queryParams: {
         query: params.query,
         type: params.type,
         filters: null
-      },
-      relativeTo: this.route
+      }
     });
   }
 
@@ -435,19 +410,19 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     switch (this.searchType$.value) {
       case SearchType.ITEM:
       case SearchType.RECIPE:
-        this.filters$.next(this.getItemFilters(this.itemFiltersform.controls));
+        this.filters$.next(this.getItemFilters(this.filtersForm.controls));
         break;
       case SearchType.INSTANCE:
-        this.filters$.next(this.getInstanceFilters(this.instanceFiltersForm.controls));
+        this.filters$.next(this.getInstanceFilters(this.filtersForm.controls));
         break;
       case SearchType.LEVE:
-        this.filters$.next(this.getLeveFilters(this.leveFiltersForm.controls));
+        this.filters$.next(this.getLeveFilters(this.filtersForm.controls));
         break;
       case SearchType.ACTION:
-        this.filters$.next(this.getActionFilters(this.actionFilterForm.controls));
+        this.filters$.next(this.getActionFilters(this.filtersForm.controls));
         break;
       case SearchType.TRAIT:
-        this.filters$.next(this.getTraitFilters(this.traitFilterForm.controls));
+        this.filters$.next(this.getTraitFilters(this.filtersForm.controls));
         break;
     }
   }
@@ -456,7 +431,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     const formRawValue: any = {};
     (filters || []).forEach(f => {
       const formFieldName = this.getFormFieldName(f.name);
-      if (f.value !== null) {
+      if (!!f.value) {
         if (f.formArray) {
           if (form.get(f.formArray) === null) {
             form.setControl(f.formArray, this.fb.array([]));
@@ -466,7 +441,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               this.fb.group({
                 name: f.entryName,
                 min: f.value.min,
-                max: f.value.max
+                max: f.value.max,
+                exclude: f.value.exclude
               })
             );
           }
@@ -510,13 +486,15 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         return 'craftJob';
       case 'ItemUICategoryTargetID':
         return 'itemCategories';
+      case 'ContentFinderCondition.ClassJobLevelRequired':
+        return 'lvl';
       default:
         return filterName;
     }
   }
 
   private getItemFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
-    const filters = [];
+    const filters = this.getCommonFilters(controls);
     if (controls.ilvlMax.value < 999 || controls.ilvlMin.value > 0) {
       filters.push({
         minMax: true,
@@ -557,10 +535,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           formArray: 'stats',
           name: fieldName,
           entryName: entry.name,
-          canExclude: true,
           value: {
             min: (+entry.min * valueMultiplier),
-            max: (+entry.max * valueMultiplier)
+            max: (+entry.max * valueMultiplier),
+            exclude: entry.exclude
           }
         };
       }));
@@ -572,10 +550,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           formArray: 'bonuses',
           name: `Bonuses.${entry.name}.Max`,
           entryName: entry.name,
-          canExclude: true,
           value: {
             min: entry.min,
-            max: entry.max
+            max: entry.max,
+            exclude: entry.exclude
           }
         };
       }));
@@ -602,18 +580,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
-          if (jobId > 1000) {
-            //This is a category, not a jobId
-            return {
-              name: `ClassJobCategory.ID`,
-              value: jobId - 1000
-            };
-          } else {
-            return {
-              name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-              value: 1
-            };
-          }
+          return {
+            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            value: 1
+          };
         })
       );
     }
@@ -633,8 +603,19 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     return filters;
   }
 
-  private getInstanceFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+  private getCommonFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
     const filters = [];
+    if (controls.Patch.value > -1) {
+      filters.push({
+        name: 'Patch',
+        value: controls.Patch.value
+      });
+    }
+    return filters;
+  }
+
+  private getInstanceFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
+    const filters = this.getCommonFilters(controls);
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
@@ -649,7 +630,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   private getLeveFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
-    const filters = [];
+    const filters = this.getCommonFilters(controls);
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
@@ -660,17 +641,20 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategory.value !== 1) {
-      filters.push({
-        name: 'ClassJobCategoryTargetID',
-        value: controls.jobCategory.value
-      });
+    if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
+      filters.push(...controls.jobCategories.value.map(jobId => {
+          return {
+            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            value: 1
+          };
+        })
+      );
     }
     return filters;
   }
 
   private getActionFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
-    const filters = [];
+    const filters = this.getCommonFilters(controls);
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
@@ -681,17 +665,20 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategory.value !== 0) {
-      filters.push({
-        name: 'ClassJobTargetID',
-        value: controls.jobCategory.value
-      });
+    if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
+      filters.push(...controls.jobCategories.value.map(jobId => {
+          return {
+            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            value: 1
+          };
+        })
+      );
     }
     return filters;
   }
 
   private getTraitFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
-    const filters = [];
+    const filters = this.getCommonFilters(controls);
     if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
@@ -702,11 +689,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         }
       });
     }
-    if (controls.jobCategory.value !== 0) {
-      filters.push({
-        name: 'ClassJobTargetID',
-        value: controls.jobCategory.value
-      });
+    if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
+      filters.push(...controls.jobCategories.value.map(jobId => {
+          return {
+            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+            value: 1
+          };
+        })
+      );
     }
     return filters;
   }

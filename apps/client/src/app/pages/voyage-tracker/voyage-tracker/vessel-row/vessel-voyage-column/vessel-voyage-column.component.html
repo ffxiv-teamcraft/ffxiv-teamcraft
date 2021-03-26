@@ -1,0 +1,23 @@
+<div nz-popover
+     [nzPopoverTitle]="voyageDetailsTitle"
+     nzPopoverPlacement="topRight"
+     [nzPopoverContent]="voyageDetailsContent">
+  <nz-breadcrumb [nzSeparator]="iconTemplate">
+    <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
+      {{ sector }}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+  <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
+</div>
+
+<ng-template #voyageDetailsTitle>
+  <div style="text-align: center">{{ 'VOYAGE_TRACKER.VOYAGE_DETAILS.Title' | translate }}</div>
+</ng-template>
+
+<ng-template #voyageDetailsContent>
+  <nz-breadcrumb [nzSeparator]="iconTemplate">
+    <nz-breadcrumb-item *ngFor="let sector of toDestinationNames()">
+      {{ sector }}
+    </nz-breadcrumb-item>
+  </nz-breadcrumb>
+</ng-template>

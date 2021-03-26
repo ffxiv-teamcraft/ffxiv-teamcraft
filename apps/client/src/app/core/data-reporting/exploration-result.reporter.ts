@@ -1,6 +1,6 @@
 import { ExplorationType } from '../../model/other/exploration-type';
 import { DataReporter } from './data-reporter';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ExplorationResult } from './exploration-result';
 
 export abstract class ExplorationResultReporter implements DataReporter{

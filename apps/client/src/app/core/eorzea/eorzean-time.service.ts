@@ -12,6 +12,9 @@ export class EorzeanTimeService {
 
   private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
 
+  // Only used for mocks in dev mode
+  private mockTicks = 0;
+
   constructor(@Inject(PLATFORM_ID) private platform: Object, private ngZone: NgZone) {
     if (isPlatformBrowser(this.platform)) {
       this.ngZone.runOutsideAngular(() => {
@@ -58,7 +61,8 @@ export class EorzeanTimeService {
 
   private tick(): void {
     // How to mock time:
-    // const mockDate = new Date('Sun, May 5, 2019 17:37:49 UTC');
+    // const mockDate = new Date(new Date('Sun, May 26, 2020 8:51 EST').getTime() + this.mockTicks);
+    // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
     // mockDate.setUTCHours(0);
     // mockDate.setUTCMinutes(0);
     // this._timerObservable.next(this.toEorzeanDate(mockDate));

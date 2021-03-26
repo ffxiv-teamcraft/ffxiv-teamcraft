@@ -111,6 +111,11 @@ export class TrayMenu {
                 click: (menuItem) => {
                   settings.clickthrough = menuItem.checked.toString();
                   this.store.set('clickthrough', settings.clickthrough === 'true');
+                  this.overlayManager.forEachOverlay(overlay => {
+                    overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
+                    overlay.webContents.send('update-settings', settings);
+                  });
+                  this.mainWindow.win.webContents.send('update-settings', settings);
                 }
               }
             ]

@@ -1,21 +1,22 @@
 {
   "Quests": "クエスト",
   "Facebook_notice": "Facebookからのログインは利用できなくなりました。「パスワードのリセット」システムを使用してアカウントにパスワードを追加するか、miuにdiscordで問い合わせてください。",
-  "Search_placeholder": "{{type}} 検索",
   "Pick_a_list": "リストを選択する",
   "Pick_a_user": "ユーザーを選択する",
   "Pick_a_fc": "フリーカンパニーを選択する",
   "Pick_a_rotation": "制作スキル回しを選ぶ",
   "Pick_a_recipe": "制作レシピを選ぶ",
   "Pick_an_item": "アイテムを選択する",
+  "FC": "Free Company",
   "FC_name": "フリーカンパニー名",
+  "FC_rank": "Free Company Rank",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
   "No_known_coordinates": "知られた座標なし",
   "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
-  "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
+  "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "{{version}} の変更",
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
@@ -50,7 +51,7 @@
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
   "Find_us_on_twitter": "公式ツイッター",
-  "Join_discord_server": "ディスコードサーバーに参加する",
+  "Join_discord_server": "Join our discord server",
   "See_code_github": "Githubでコードを見る",
   "Support_on_patreon": "Patreonでサポートする",
   "Access_patreon_page": "Patreon ページへ移動",
@@ -172,7 +173,11 @@
     "Change": "変更",
     "Dirty_changes": "保存されていない変更があります",
     "Never": "しない",
-    "Festival": "フェスティバルの間のみ"
+    "Festival": "フェスティバルの間のみ",
+    "Back": "Back",
+    "Support_us_remove_ads": "Support us on patreon to remove ads",
+    "Support_us": "Support us",
+    "Show_more": "Show more"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -311,14 +316,6 @@
   "Import": "取り込む",
   "Favorites": "お気に入り",
   "Favorite": "お気に入り",
-  "filters/ilvl": "アイテムレベル",
-  "filters/lvl": "装備レベル",
-  "filters/craft_lvl": "レシピレベル",
-  "filters/worn_by": "装備できるジョブ",
-  "filters/crafted_by": "クラフター",
-  "filters/item_category": "アイテム種類",
-  "filters/stats": "ステータスフィルタ",
-  "filters/bonuses": "ボーナスステータスフィルタ",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
   "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
@@ -469,6 +466,8 @@
     "Import_settings": "Import settings",
     "Import_successful": "Settings imported",
     "Import_error": "Error while trying to import settings",
+    "Has_access_to_housing_vendor": "Prioritize housing vendor",
+    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -630,7 +629,8 @@
     "ROTATION": {
       "Attach": "製作ローテーション連動",
       "Detach": "製作ローテーション連動",
-      "Click_to_copy_macro": "マクロのコピーポップアップページを開く"
+      "Click_to_copy_macro": "マクロのコピーポップアップページを開く",
+      "Open_in_overlay": "Open in rotation overlay"
     },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
@@ -715,6 +715,14 @@
       "Menu": "メニュー",
       "Edit_row_buttons_display": "行ボタンの編集画面",
       "Reorder_panels": "パネルの並べ替え",
+      "Select_preview_list": "Select list to preview layout",
+      "Hidden_if_empty": "Hidden if empty",
+      "Collapsed_by_default": "Collapsed by default",
+      "No_preview": "No list preview",
+      "Please_pick_list": "Please pick a list using the select box above",
+      "Layouts": "Layouts",
+      "Want_to_learn_more": "Want to learn more about layouts and how they work?",
+      "Open_wiki_page": "Open the layouts system wiki page",
       "ITEMS": {
         "COMMENTS": "コメント",
         "COPY_NAME_NOT_FAVORITE": "お気に入りでないコピーモード",
@@ -1256,7 +1264,6 @@
   "SEARCH_INTRO": {
     "Slogan": "制作、シェア、貢献",
     "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
-    "Support_patreon": "Patreonでサポートする",
     "Donation_button": "寄付する（1回）",
     "Buy_merch": "Teamcraftのグッズを買う",
     "Features_header": "始める！",
@@ -1308,12 +1315,6 @@
   },
   "LOADING_SCREEN": {
     "Loading_data": "アイテム、スキル、詳細を読み込み中"
-  },
-  "GIVEAWAY": {
-    "Discord_1K": {
-      "Title": "ディスコードメンバー1000名達成イベント!",
-      "Description": "このバナーをクリックして、Final Fantasy XIV: 漆黑の反逆者の所蔵版の贈呈イベントに登録してください！ このイベントは、TC discord サーバーのメンバー数が限界値の1000名を達成したのを祝うためのものです。"
-    }
   },
   "CUSTOM_ITEMS": {
     "Title": "カスタムアイテム",
@@ -1409,24 +1410,6 @@
       "Very_common": "一般",
       "Common": "高級",
       "Rare": "レア"
-    }
-  },
-  "SUPPORT_US": {
-    "Title": "我々が成長するように助けてください",
-    "Communication_title": "プロジェクトに関する話",
-    "Communication_description": "このツールを知らせ、スキル回しやリストをシェアしてください。大勢の人々にTeamcraftについて大勢の人々に知らせるようにビデオ、ブログ投稿、ツイートをする、全ては皆さんが考えてるより、プロジェクトに役に立ちます。\n\n皆さんのためにマクロを用意しています。皆さんの愛を何処に居ても叫べます!",
-    "Contribute_title": "プロジェクトに貢献する",
-    "Contribute_description": "Githubでこのプロジェクトに貢献することができます。初心者もいつでも歓迎です!\n\nコードの貢献のみならず、機能要請とバグ報告は皆に最上の機能を提供するのに、役に立ちます。時間をかけてテストし、バグを探してくださる皆さんに感謝しております。",
-    "Patreon_title": "Patreonにサポートする",
-    "Patreon_description": "Patreonは毎月プロジェクトを寄付できるプラットフォームです。この寄付金はサーバー、認証書、分かち合いに使用され、プロジェクトを作業する開発者たちがもっと多くの時間を割くところに使われます。\n\n寄付金に応じて、寄付金に対する謝礼として、いくつかの素晴らしい特典が得られます。",
-    "Popup_introduction": "おはようございます、私はTeamcraft開発者Miuです。<br/>Teamcraftはここ数年前から私の趣味であり現在は趣味ではない私の職業にするための夢として、その夢を叶えるために頑張っています。<br/><br/>もし皆さんがpatreonでサポートしてくれるなら、Teamcraftをもっと改善して私は私の夢を現実にする事ができます。<br/><br/>patreonでプロジェクトにサポートしてくれるなら次のような素敵な特典を得る事ができます。",
-    "Already_supporting": "すでにPatreonのサポーターですか？設定でアカウントをPatreonにリンクしてください",
-    "PATREON_BENEFITS": {
-      "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
-      "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
-      "Custom_theme": "カスタマーカラーが含んで改善されたテーマカスタマイズ (${{price}})",
-      "Pins_badge": "限定版 Teamcraft バッジ配送 (${{price}}) (Patreonに配送情報の入力必須)",
-      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加! (${{price}})"
     }
   },
   "DB": {
@@ -1797,10 +1780,34 @@
     "Sort_asc": "昇順",
     "Sort_desc": "降順",
     "Add_stat_filter": "ステータスフィルタの追加",
-    "Add_bonus_stat_filter": "ボーナスステータスフィルタの追加",
-    "Search_tip": "<patch＃>を入力して、該当するバージョンでフィルタが可能です。例：patch：5.01",
-    "Stats_exclude_tip": "該当能力値がないアイテムの検索を望なら能力値最小値は-1で設定",
-    "Bonuses_exclude_tip": "該当ボーナス能力値がないアイテムの検索を望ならボーナス最小値は-1で設定",
+    "Job": "Job",
+    "Class": "Class",
+    "Land": "DoL",
+    "Hand": "DoH",
+    "Type": "Type",
+    "Any": "Any",
+    "Item_type": "Item Type",
+    "Patch": "Patch",
+    "Language": "Language",
+    "Share": "Share",
+    "Placeholder": "Search for something awesome",
+    "Hide_filters": "Hide Additional Filters",
+    "Show_filters": "Show Additional Filters",
+    "Item_type_placeholder": "Select Item Type",
+    "Item_level": "Item Level",
+    "Required_level": "Required Level",
+    "Recipe_level": "Recipe Level",
+    "Crafted_by": "Crafted by",
+    "Worn_by": "Worn by",
+    "Gear_stats": "Gear Stats",
+    "Consumable_stats": "Consumable Stats",
+    "No_stats_filters": "Woops, nothing's here",
+    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Stat": "Stat",
+    "Range": "Range",
+    "Exclude": "Exclude",
+    "Select_stat": "Select a stat",
+    "Level": "Level",
     "SORT_BY": {
       "Relevance": "関連性",
       "ID": "ID",
@@ -1821,7 +1828,9 @@
     "My_commissions": "私の依頼",
     "Archived_commissions": "アーカイブ",
     "Leveling": "レベリング",
-    "Currencies": "Currencies"
+    "Currencies": "Currencies",
+    "Add_to_favorites": "Add to favorites",
+    "Remove_from_favorites": "Remove from favorites"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
@@ -2004,6 +2013,8 @@
     "Create_commission": "このギアセットから依頼する",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
+    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2494,5 +2505,143 @@
     "Total_per_venture": "ベンチャーあたりの合計",
     "Use_retainer": "Fill with retainer",
     "Select_retainer": "Pick one of your retainers"
+  },
+  "PATREON": {
+    "By_supporting_us": "By supporting us on patreon, you get:",
+    "No_ads": "No more ads inside the topbar",
+    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
+    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
+    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
+    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
+    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
+    "Already_supporter": "Already a supporter?",
+    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+  },
+  "SUPPORT_US": {
+    "Popup_introduction": "おはようございます、私はTeamcraft開発者Miuです。<br/>Teamcraftはここ数年前から私の趣味であり現在は趣味ではない私の職業にするための夢として、その夢を叶えるために頑張っています。<br/><br/>もし皆さんがpatreonでサポートしてくれるなら、Teamcraftをもっと改善して私は私の夢を現実にする事ができます。<br/><br/>patreonでプロジェクトにサポートしてくれるなら次のような素敵な特典を得る事ができます。",
+    "Already_supporting": "すでにPatreonのサポーターですか？設定でアカウントをPatreonにリンクしてください",
+    "PATREON_BENEFITS": {
+      "No_ads": "Ads-free Teamcraft experience",
+      "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
+      "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
+      "Custom_theme": "カスタマーカラーが含んで改善されたテーマカスタマイズ (${{price}})",
+      "Pins_badge": "限定版 Teamcraft バッジ配送 (${{price}}) (Patreonに配送情報の入力必須)",
+      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加! (${{price}})"
+    },
+    "Select_retainer": "Pick one of your retainers"
+  },
+  "FREE_COMPANY_WORKSHOPS": {
+    "Import_using_pcap": "Import using packet capture",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Airships": "Airships",
+    "Submersibles": "Submersibles"
+  },
+  "VOYAGE_TRACKER": {
+    "Title": "Voyage tracker",
+    "Import_using_pcap": "Import using packet capture",
+    "Voyage_completion_alarm": "Voyage completion alarm",
+    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
+    "Voyage_complete": "Voyage complete",
+    "No_airship": "No airship",
+    "No_submersible": "No submersible",
+    "Sectors_discovered": "Sectors discovered",
+    "Delete_free_company": "Delete the Free Company",
+    "Name_column": "Name",
+    "Return_time_column": "Return time",
+    "Remaining_time_column": "Remaining time",
+    "Rank_column": "Rank",
+    "Build_column": "Build",
+    "Voyage_column": "Voyage",
+    "Nothing_to_show": "Nothing to show",
+    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "SECTOR_PROGRESSION": {
+      "Airship": "Airship",
+      "Submersible": "Submersible"
+    },
+    "VOYAGE_DETAILS": {
+      "Title": "Voyage"
+    },
+    "BUILD_DETAILS": {
+      "Title": "Build",
+      "Condition": "Condition"
+    },
+    "STATS_DETAILS": {
+      "Title": "Stats"
+    },
+    "STATS": {
+      "Surveillance": "Surveillance",
+      "Retrieval": "Retrieval",
+      "Speed": "Speed",
+      "Range": "Range",
+      "Favor": "Favor"
+    }
+  },
+  "AIRSHIP": {
+    "CLASS": {
+      "BRONCO": {
+        "Abbreviation": "B"
+      },
+      "INVINCIBLE": {
+        "Abbreviation": "i"
+      },
+      "ENTERPRISE": {
+        "Abbreviation": "E"
+      },
+      "INVINCIBLE_II": {
+        "Abbreviation": "i2"
+      },
+      "ODYSSEY": {
+        "Abbreviation": "O"
+      },
+      "TATANORA": {
+        "Abbreviation": "T"
+      },
+      "VILTGANCE": {
+        "Abbreviation": "V"
+      }
+    }
+  },
+  "SUBMARINE": {
+    "CLASS": {
+      "SHARK": {
+        "Abbreviation": "S"
+      },
+      "UNKIU": {
+        "Abbreviation": "U"
+      },
+      "WHALE": {
+        "Abbreviation": "W"
+      },
+      "COELACANTH": {
+        "Abbreviation": "C"
+      },
+      "SYLDRA": {
+        "Abbreviation": "Y"
+      },
+      "MODIFIED_SHARK": {
+        "Abbreviation": "S+"
+      },
+      "MODIFIED_UNKIU": {
+        "Abbreviation": "U+"
+      },
+      "MODIFIED_WHALE": {
+        "Abbreviation": "W+"
+      },
+      "MODIFIED_COELACANTH": {
+        "Abbreviation": "C+"
+      },
+      "MODIFIED_SYLDRA": {
+        "Abbreviation": "Y+"
+      }
+    }
+  },
+  "TREASURE_FINDER": {
+    "Title": "Treasure finder",
+    "Description": "Pick a map and find the treasure you're looking for",
+    "Select_map": "Pick a map",
+    "Select_item": "Select treasure map item",
+    "Select_treasure_map": "Select your treasure map",
+    "Find_another": "Find another treasure"
   }
 }

@@ -12,6 +12,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     NzBadgeModule,
     NzButtonModule,
     NzMenuModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzDropDownModule
   ]
 })
 export class NavigationSidebarModule {

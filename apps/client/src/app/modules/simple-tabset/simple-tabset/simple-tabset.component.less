@@ -1,0 +1,28 @@
+.tabset-container {
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .tab-content-container {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #444;
+    border-top: 0;
+    padding: 8px;
+  }
+
+  .tab-header {
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-bottom-color: #444;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid #444;
+      border-bottom-color: rgba(255, 255, 255, 0);
+    }
+  }
+}

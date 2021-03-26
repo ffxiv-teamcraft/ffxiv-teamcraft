@@ -1,13 +1,11 @@
-import { Observable } from 'rxjs/Observable';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { Observable } from 'rxjs';
+import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
-import { UpdateInventorySlot } from '../../model/pcap';
-import { SubmarineStatusList } from '../../model/pcap';
-import { SubmarineExplorationResult } from '../../model/pcap';
+import { toIpcData } from '../rxjs/to-ipc-data';
 
 export class SubmarineExplorationResultReporter extends ExplorationResultReporter {
 
@@ -17,10 +15,10 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const isSubmarineMenuOpen$: Observable<boolean> = merge(
-      packets$.pipe(ofPacketType('eventStart')),
-      packets$.pipe(ofPacketType('eventFinish'))
+      packets$.pipe(ofMessageType('eventStart')),
+      packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter((packet) => packet.eventId === 0xB01BF),
+      filter((packet) => packet.parsedIpcData.eventId === 0xB01BF),
       map((packet) => {
         return packet.type === 'eventStart';
       }),
@@ -29,17 +27,20 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
     );
 
     const resultLog$ = packets$.pipe(
-      ofPacketType<SubmarineExplorationResult>('submarineExplorationResult'),
+      ofMessageType('submarineExplorationResult'),
+      toIpcData(),
       map((packet) => packet.explorationResult)
     );
 
     const statusList$ = packets$.pipe(
-      ofPacketType<SubmarineStatusList>('submarineStatusList'),
+      ofMessageType('submarineStatusList'),
+      toIpcData(),
       map((packet) => packet.statusList)
     );
 
     const updateHullCondition$ = packets$.pipe(
-      ofPacketType<UpdateInventorySlot>('updateInventorySlot'),
+      ofMessageType('updateInventorySlot'),
+      toIpcData(),
       withLatestFrom(isSubmarineMenuOpen$),
       filter(([updateInventory, isOpen]) => {
         return isOpen && updateInventory.containerId === 25004 && [0, 5, 10, 15].includes(updateInventory.slot) && updateInventory.condition < 30000;

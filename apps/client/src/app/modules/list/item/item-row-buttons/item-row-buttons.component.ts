@@ -11,6 +11,8 @@ import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { RotationsFacade } from '../../../rotations/+state/rotations.facade';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { IpcService } from '../../../../core/electron/ipc.service';
+import { PlatformService } from '../../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-item-row-buttons',
@@ -166,7 +168,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   constructor(private messageService: NzMessageService, private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
-              private rotationsFacade: RotationsFacade, private lazyData: LazyDataService) {
+              private rotationsFacade: RotationsFacade, private lazyData: LazyDataService,
+              private ipc: IpcService, public platform: PlatformService) {
     super();
     this.settings.settingsChange$.pipe(
       takeUntil(this.onDestroy$)
@@ -180,6 +183,10 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   public isButton(element: ItemRowMenuElement): boolean {
     return this.buttonsCache[element];
+  }
+
+  openRotationOverlay(rotation: CraftingRotation): void {
+    this.ipc.openOverlay(`/rotation-overlay/${rotation.$key}`, '/rotation-overlay', IpcService.ROTATION_DEFAULT_DIMENSIONS);
   }
 
   success(key: string, args?: any): void {

@@ -11,7 +11,7 @@ export class StatDisplayPipe implements PipeTransform {
   }
 
   transform(value: TeamcraftGearset, level: number, tribe: number, food: any, baseParamId: number): { name: string, value: number, suffix?: string }[] {
-    return this.statsService.getStatsDisplay(value, level, tribe, food).filter(row => row.baseParamIds.indexOf(baseParamId) > -1);
+    return this.statsService.getStatsDisplay(value, level, tribe, food).filter(row => row.baseParamIds.includes(baseParamId));
   }
 
 }

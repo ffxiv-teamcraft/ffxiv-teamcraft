@@ -2,54 +2,69 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
-import { first, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, takeUntil } from 'rxjs/operators';
 import { WorldNavigationStep } from '../world-navigation-step';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, Subject } from 'rxjs';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-world-navigation-map',
   templateUrl: './world-navigation-map.component.html',
   styleUrls: ['./world-navigation-map.component.less']
 })
-export class WorldNavigationMapComponent implements OnInit {
+export class WorldNavigationMapComponent extends TeamcraftComponent implements OnInit {
 
   @Input()
-  points: NavigationObjective[] = [];
+  public points: NavigationObjective[] = [];
 
-  optimizedPath$: Observable<WorldNavigationStep[]>;
+  public optimizedPath$: Observable<WorldNavigationStep[]>;
 
   public containerRef: ElementRef;
 
-  @ViewChild('container')
+  @ViewChild('container', { static: false })
   public set _containerRef(ref: ElementRef) {
     setTimeout(() => {
       this.containerRef = ref;
-    });
+    }, 500);
   }
 
-  public currentPath: WorldNavigationStep;
+  public currentPathIndex$ = new BehaviorSubject(0);
 
-  markedAsDone = [];
+  public currentPath$: Observable<WorldNavigationStep>;
+
+  public markedAsDone = [];
 
   public markAsDone$: Subject<NavigationStep> = new Subject<NavigationStep>();
 
   constructor(private mapService: MapService) {
+    super();
+    fromEvent(window, 'keydown').pipe(
+      filter((event: KeyboardEvent) => event.key === 'ArrowRight' || event.key === 'ArrowLeft'),
+      takeUntil(this.onDestroy$)
+    ).subscribe(event => {
+      const direction = event.key === 'ArrowRight' ? 1 : -1;
+      this.currentPathIndex$.next(this.currentPathIndex$.value - direction);
+    });
   }
 
   ngOnInit() {
     this.optimizedPath$ = this.mapService.getOptimizedPathInWorld(this.points).pipe(
       first(),
-      tap(path => {
-        this.currentPath = path[0];
+      shareReplay(1)
+    );
+
+    this.currentPath$ = combineLatest([this.optimizedPath$, this.currentPathIndex$]).pipe(
+      map(([path, index]) => {
+        return path[index];
       })
     );
   }
 
-  getPositionPercent(map: MapData, coords: Vector2): Vector2 {
-    const positionPercents = this.mapService.getPositionOnMap(map, coords);
+  getPositionPercent(mapData: MapData, coords: Vector2): Vector2 {
+    const positionPercents = this.mapService.getPositionOnMap(mapData, coords);
     return {
       x: positionPercents.x * this.containerRef.nativeElement.offsetWidth / 100,
       y: positionPercents.y * this.containerRef.nativeElement.offsetHeight / 100
