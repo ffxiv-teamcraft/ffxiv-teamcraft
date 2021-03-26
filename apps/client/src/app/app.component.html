@@ -109,7 +109,7 @@
               </nz-list>
             </ng-template>
           </li>
-          <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu>
+          <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu nzMenuClassName="user-menu-content">
             <span title class="user-menu-title">
               <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
               <ng-template #authDetails>
