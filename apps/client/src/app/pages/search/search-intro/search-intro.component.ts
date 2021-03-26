@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { TranslateService } from '@ngx-translate/core';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 interface FeatureEntry {
   link: string;
@@ -55,7 +56,8 @@ export class SearchIntroComponent {
     }
   ];
 
-  constructor(private firebase: AngularFireDatabase, public translate: TranslateService) {
+  constructor(private firebase: AngularFireDatabase, public translate: TranslateService,
+              public platform: PlatformService) {
   }
 
 }
