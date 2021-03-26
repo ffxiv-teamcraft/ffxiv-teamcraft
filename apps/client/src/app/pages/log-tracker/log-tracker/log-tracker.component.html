@@ -11,82 +11,80 @@
           </ng-template>
           <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left">
             <ng-container *ngFor="let page of tab">
-              <nz-tab *ngIf="!hideCompleted || !isDoHPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dohSelectedPage = page.id">
-                <ng-template #titleTemplate>
+              <nz-tab *ngIf="!hideCompleted || !isDoHPageDone(page)" [nzTitle]="dohTitleTemplate" (nzSelect)="dohSelectedPage = page.id">
+                <ng-template #dohTitleTemplate>
                     <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohDivisionId(page.id) | notebookDivisionName | i18n }}<span
                       *ngIf="isRequiredForAchievement(page)" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
                       nz-tooltip>*</span>
                       ({{getDohPageCompletion(page)}})
                     </span>
                 </ng-template>
-                <ng-template nz-tab>
-                  <nz-spin [nzSpinning]="userCompletion === {}">
-                    <div *ngIf="dohSelectedPage === page.id" fxLayout="column">
-                      <div class="toolbar" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                        <button (nzOnConfirm)="markDohPageAsDone(page)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-                                nz-popconfirm>
-                          <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
-                        </button>
-                        <button (click)="createListForPage(page)" nz-button>
-                          <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list' | translate}}
-                        </button>
-                        <button (click)="createListForPage(page, 50)" nz-button>
-                          <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
-                        </button>
-                        <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
-                          <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
-                        </button>
-                        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-                          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
-                          <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+                <nz-spin [nzSpinning]="userCompletion === {}">
+                  <div *ngIf="dohSelectedPage === page.id" fxLayout="column">
+                    <div class="toolbar" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                      <button (nzOnConfirm)="markDohPageAsDone(page)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+                              nz-popconfirm>
+                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
+                      </button>
+                      <button (click)="createListForPage(page)" nz-button>
+                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list' | translate}}
+                      </button>
+                      <button (click)="createListForPage(page, 50)" nz-button>
+                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
+                      </button>
+                      <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
+                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
+                      </button>
+                      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+                        <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
+                        <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+                      </div>
+                    </div>
+                    <ng-container *ngFor="let recipe of page.recipes">
+                      <div *ngIf="!userCompletion[recipe.recipeId] || !hideCompleted" fxLayout="row"
+                           fxLayoutAlign="flex-start center"
+                           fxLayoutGap="5px">
+                        <label nz-checkbox [(ngModel)]="recipe.selected" (ngModelChange)="setSelection(recipe, $event)"></label>
+                        <app-item-icon *ngIf="true | ifMobile: false"
+                                       [icon]="recipe.itemId | lazyIcon"
+                                       [itemId]="recipe.itemId"
+                                       [width]="32"></app-item-icon>
+                        <div fxLayout="column">
+                          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                            <div [appItemRarity]="recipe.itemId">
+                              {{recipe.itemId | itemName | i18n}}
+                              <img *ngFor="let leve of recipe.leves"
+                                   src="./assets/icons/leve.png" alt="leves"
+                                   class="leve-icon"
+                                   nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
+                            </div>
+                            <i *ngIf="userCompletion[recipe.recipeId]" nz-icon nzType="check"></i>
+                          </div>
+                          <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
+                        </div>
+                        <div>
+                          <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]"
+                                  [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                                  nz-button
+                                  nz-tooltip
+                                  nzShape="circle"
+                                  nzSize="small">
+                            <i nz-icon nzType="check"></i>
+                          </button>
+                          <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]"
+                                  [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                                  nz-button
+                                  nz-tooltip
+                                  nzShape="circle"
+                                  nzSize="small"
+                                  nzType="danger">
+                            <i nz-icon nzType="close"></i>
+                          </button>
                         </div>
                       </div>
-                      <ng-container *ngFor="let recipe of page.recipes">
-                        <div *ngIf="!userCompletion[recipe.recipeId] || !hideCompleted" fxLayout="row"
-                             fxLayoutAlign="flex-start center"
-                             fxLayoutGap="5px">
-                          <label nz-checkbox [(ngModel)]="recipe.selected" (ngModelChange)="setSelection(recipe, $event)"></label>
-                          <app-item-icon *ngIf="true | ifMobile: false"
-                                         [icon]="recipe.itemId | lazyIcon"
-                                         [itemId]="recipe.itemId"
-                                         [width]="32"></app-item-icon>
-                          <div fxLayout="column">
-                            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                              <div [appItemRarity]="recipe.itemId">
-                                {{recipe.itemId | itemName | i18n}}
-                                <img *ngFor="let leve of recipe.leves"
-                                     src="./assets/icons/leve.png" alt="leves"
-                                     class="leve-icon"
-                                     nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
-                              </div>
-                              <i *ngIf="userCompletion[recipe.recipeId]" nz-icon nzType="check"></i>
-                            </div>
-                            <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
-                          </div>
-                          <div>
-                            <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]"
-                                    [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
-                                    nz-button
-                                    nz-tooltip
-                                    nzShape="circle"
-                                    nzSize="small">
-                              <i nz-icon nzType="check"></i>
-                            </button>
-                            <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]"
-                                    [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
-                                    nz-button
-                                    nz-tooltip
-                                    nzShape="circle"
-                                    nzSize="small"
-                                    nzType="danger">
-                              <i nz-icon nzType="close"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </ng-container>
-                    </div>
-                  </nz-spin>
-                </ng-template>
+                    </ng-container>
+                  </div>
+                </nz-spin>
               </nz-tab>
             </ng-container>
           </nz-tabset>
