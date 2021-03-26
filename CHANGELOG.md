@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.1"></a>
+## [8.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.0...v8.1.1) (2021-03-26)
+
+
+### Bug Fixes
+
+* **ad:** disabled ad banner on desktop entirely ([5770b6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5770b6a))
+* **desktop:** fixed retainer tracking and item HQ flags ([ba9d356](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba9d356))
+* **search:** fixed desktop app download button always showing ([585fab8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/585fab8))
+* **user-menu:** fixed padding for user submenu in topbar ([50f0643](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50f0643))
+* **ux:** proper hover icon on mouse pointer for back button ([d3d0b62](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3d0b62))
+
+
+
 <a name="8.1.0"></a>
 # [8.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.13...v8.1.0) (2021-03-26)
 
