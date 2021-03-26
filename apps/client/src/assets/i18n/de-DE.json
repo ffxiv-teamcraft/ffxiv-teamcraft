@@ -2637,10 +2637,10 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
+    "Title": "Schatzsucher",
+    "Description": "Wähle eine Karte und finde den Schatz, den du suchst",
     "Select_map": "Wähle eine Karte",
-    "Select_item": "Select treasure map item",
+    "Select_item": "Wähle Schatzkarten-Typ",
     "Select_treasure_map": "Wähle deine Schatzkarte",
     "Find_another": "Finde einen anderen Schatz"
   }
