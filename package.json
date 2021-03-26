@@ -138,7 +138,7 @@
     "@angular-devkit/core": "^11.0.2",
     "@angular-devkit/schematics": "^11.0.2",
     "@angular/animations": "^11.0.2",
-    "@angular/cdk": "^9.2.1",
+    "@angular/cdk": "^11.2.6",
     "@angular/cli": "^11.0.2",
     "@angular/common": "^11.0.2",
     "@angular/compiler": "^11.0.2",

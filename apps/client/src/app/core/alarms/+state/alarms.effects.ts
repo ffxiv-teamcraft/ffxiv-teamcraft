@@ -1,7 +1,8 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
-  AddAlarms, AddAlarmsAndGroup,
+  AddAlarms,
+  AddAlarmsAndGroup,
   AlarmGroupLoaded,
   AlarmsActionTypes,
   AlarmsCreated,
@@ -28,6 +29,7 @@ import { AlarmGroup } from '../alarm-group';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -108,14 +110,14 @@ export class AlarmsEffects {
     .pipe(
       ofType<AddAlarmsAndGroup>(AlarmsActionTypes.AddAlarmsAndGroup),
       withLatestFrom(this.authFacade.userId$, this.alarmsFacade.allAlarms$),
-      switchMap(([{ payload, groupName }, userId, allAlarms]) => {
+      switchMap(([{ payload, groupName, redirect }, userId, allAlarms]) => {
         const alreadyCreated = payload
           .map(alarm => allAlarms.find(a => a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes))
           .filter(a => !!a);
         const alarms = payload
           .filter(alarm => !allAlarms.some(a => a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes))
           .map(alarm => {
-            return new Alarm({ ...alarm, userId: userId });
+            return new Alarm({ ...alarm, userId: userId, enabled: true });
           });
         let res = combineLatest(
           alarms.map(alarm => {
@@ -133,10 +135,15 @@ export class AlarmsEffects {
             return this.alarmGroupsService.add(newGroup).pipe(
               mapTo(alarmKeys)
             );
+          }),
+          map((alarmsCreated) => new AlarmsCreated(alarmsCreated.length)),
+          tap(() => {
+            if (redirect) {
+              this.router.navigate(['/alarms']);
+            }
           })
         );
-      }),
-      map((alarms) => new AlarmsCreated(alarms.length))
+      })
     );
 
 
@@ -252,7 +259,8 @@ export class AlarmsEffects {
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,
               private alarmGroupsService: AlarmGroupService, private message: NzMessageService,
-              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: Object) {
+              private translate: TranslateService, @Inject(PLATFORM_ID) private platform: Object,
+              private router: Router) {
   }
 
 }

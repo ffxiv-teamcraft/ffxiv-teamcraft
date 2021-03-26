@@ -3,8 +3,12 @@
           [nzType]="display.spawned?'primary':'default'"
           nz-button
           nz-tooltip
-          nzTooltipTitle="{{display.alarm.aetheryte?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}
-{{display.alarm.fishEyes?('GATHERING_LOCATIONS.Fish_eyes' | translate):''}}">
+          [nzTooltipTitle]="tooltip">
+    <ng-template #tooltip>
+      <span *ngIf="display.itemId">{{display.alarm.aetheryte?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}</span>
+      <span *ngIf="!alarm.itemId">{{display.alarm.name}}</span>
+      <span *ngIf="display.alarm.fishEyes">{{'GATHERING_LOCATIONS.Fish_eyes' | translate}}</span>
+    </ng-template>
     <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
     <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
     {{display.remainingTime | timer}}

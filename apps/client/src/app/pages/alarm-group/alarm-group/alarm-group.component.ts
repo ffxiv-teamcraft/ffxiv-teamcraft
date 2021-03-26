@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { map } from 'rxjs/operators';
+import { distinctUntilChanged, first, map } from 'rxjs/operators';
 import { ltr } from 'semver';
 
 @Component({
@@ -21,13 +21,18 @@ export class AlarmGroupComponent {
     map(group => {
       return !group.notFound && ltr(group.appVersion, '8.0.0');
     })
-  )
+  );
 
-  public alarms$ = this.alarmsFacade.externalGroupAlarms$;
+  public alarms$ = this.alarmsFacade.externalGroupAlarms$.pipe(
+    distinctUntilChanged()
+  );
 
   public alarmGroups$ = this.alarmsFacade.allGroups$;
 
-  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade) {
+  public addingGroupAndAlarms = false;
+
+  constructor(route: ActivatedRoute, private alarmsFacade: AlarmsFacade,
+              private router: Router) {
     route.paramMap.subscribe(paramMap => {
       this.alarmsFacade.loadExternalGroup(paramMap.get('key'));
     });
@@ -46,10 +51,11 @@ export class AlarmGroupComponent {
   }
 
   cloneGroup(group: AlarmGroup, alarms: Alarm[]): void {
+    this.addingGroupAndAlarms = true;
     this.alarmsFacade.addAlarmsAndGroup(alarms.map(a => {
       delete a.$key;
       return a;
-    }), group.name);
+    }), group.name, true);
   }
 
 }

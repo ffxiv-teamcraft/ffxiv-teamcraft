@@ -48,7 +48,7 @@ export class AddAlarms implements Action {
 export class AddAlarmsAndGroup implements Action {
   readonly type = AlarmsActionTypes.AddAlarmsAndGroup;
 
-  constructor(public payload: Alarm[], public groupName: string) {
+  constructor(public payload: Alarm[], public groupName: string, public redirect = false) {
   }
 }
 
