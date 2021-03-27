@@ -468,6 +468,7 @@
     "Import_error": "Fehler beim Importieren der Einstellungen",
     "Has_access_to_housing_vendor": "Haushändler bevorzugen",
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
+    "Hide_back_button": "Hide back button in sidebar",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
