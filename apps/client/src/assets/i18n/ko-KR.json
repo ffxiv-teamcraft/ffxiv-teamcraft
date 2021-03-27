@@ -468,6 +468,7 @@
     "Import_error": "설정을 가져오는 중 오류 발생",
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
     "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
+    "Hide_back_button": "Hide back button in sidebar",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
