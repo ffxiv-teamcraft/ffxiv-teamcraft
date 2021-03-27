@@ -117,7 +117,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "^0.2.3",
+    "@ffxiv-teamcraft/pcap-ffxiv": "^0.2.4",
     "buffer-reader": "^0.1.0",
     "electron-edge-js": "^12.18.5",
     "electron-is-dev": "^1.1.0",
