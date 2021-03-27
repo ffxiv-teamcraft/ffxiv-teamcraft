@@ -468,6 +468,7 @@
     "Import_error": "Error while trying to import settings",
     "Has_access_to_housing_vendor": "Prioritize housing vendor",
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Hide_back_button": "Hide back button in sidebar",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
