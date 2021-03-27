@@ -207,7 +207,7 @@
                 nzCollapsible>
         <div class="sidebar-container" fxLayout="column" fxLayoutAlign="space-between">
           <div fxLayout="column" fxFlex="1 1 auto" class="menu-categories-container">
-            <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop()">
+            <button class="back-button" (click)="back()" *ngIf="platformService.isDesktop() && !settings.hideBackButton">
               <i nz-icon nzType="left" nzTheme="outline"></i>
               {{'COMMON.Back' | translate}}
             </button>

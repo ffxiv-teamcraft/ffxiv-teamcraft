@@ -432,6 +432,11 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="settings.hideBackButton" nz-checkbox>
+          {{'SETTINGS.Hide_back_button' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="settings.autoDownloadUpdate" nz-checkbox>
           {{'SETTINGS.Auto_download_update' | translate}}
         </label>

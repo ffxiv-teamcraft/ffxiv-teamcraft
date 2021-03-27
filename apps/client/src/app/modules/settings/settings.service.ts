@@ -215,6 +215,14 @@ export class SettingsService {
     this.setSetting('auto-download-update', dl.toString());
   }
 
+  public get hideBackButton(): boolean {
+    return this.getBoolean('hideBackButton', true);
+  }
+
+  public set hideBackButton(hide: boolean) {
+    this.setBoolean('hideBackButton', hide);
+  }
+
   public get hideOverlayCompleted(): boolean {
     return this.getBoolean('hideOverlayCompleted', false);
   }
