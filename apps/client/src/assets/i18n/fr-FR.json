@@ -468,6 +468,7 @@
     "Import_error": "Erreur lors de la tentative d'import des paramètres",
     "Has_access_to_housing_vendor": "Utiliser le vendeur de la maison en priorité",
     "Has_access_to_housing_vendor_explain": "Utiliser le vendeur de la maison en priorité dans le système de regroupement par PNJ, utile si vous avez accès à un.",
+    "Hide_back_button": "Hide back button in sidebar",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
