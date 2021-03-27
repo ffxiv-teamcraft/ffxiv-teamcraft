@@ -2551,7 +2551,7 @@
     "Return_time_column": "Rückkehrzeit",
     "Remaining_time_column": "Verbleibende Zeit",
     "Rank_column": "Rang",
-    "Build_column": "Build",
+    "Build_column": "Aufbau",
     "Voyage_column": "Erkundung",
     "Nothing_to_show": "Nichts zum Anzeigen",
     "Please_import_pcap": "Bitte importiere deine Luftschiffe und Tauchboote mit Paketerfassung",
@@ -2563,7 +2563,7 @@
       "Title": "Erkundung"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
+      "Title": "Aufbau",
       "Condition": "Zustand"
     },
     "STATS_DETAILS": {
