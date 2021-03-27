@@ -30,6 +30,9 @@ export class MateriaSlotIconComponent implements OnInit {
 
   getMateriaGrade(): string {
     const materia = this.materiaService.getMateria(this.equipmentPiece.materias[this.index]);
+    if (!materia) {
+      return '0';
+    }
     const grade = materia.tier - 1;
     return `${grade < 10 ? '0' : ''}${grade}`;
   }

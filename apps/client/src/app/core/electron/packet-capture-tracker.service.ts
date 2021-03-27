@@ -395,7 +395,6 @@ export class PacketCaptureTrackerService {
   }
 
   private resetInventoryForItemInfo(inventory: UserInventory, containerKey: number): UserInventory {
-    console.log('RESET', containerKey);
     const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]));
     if (containerKey >= ContainerType.FreeCompanyBag0 && containerKey <= ContainerType.FreeCompanyBag10) {
       itemsClone[containerKey] = {};

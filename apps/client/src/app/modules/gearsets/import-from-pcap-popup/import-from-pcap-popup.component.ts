@@ -10,6 +10,7 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Memoized } from '../../../core/decorators/memoized';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { GearsetsFacade } from '../+state/gearsets.facade';
+import { MateriaService } from '../materia.service';
 
 @Component({
   selector: 'app-import-from-pcap-popup',
@@ -28,7 +29,7 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 
   constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
               private ipc: IpcService, private lazyData: LazyDataService,
-              private gearsetsFacade: GearsetsFacade) {
+              private gearsetsFacade: GearsetsFacade, private materiaService: MateriaService) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),
@@ -42,7 +43,9 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
           const itemMeldingData = this.lazyData.data.itemMeldingData[packet.catalogId];
-          const materias = (packet.materia || <number[]>[]).map(m => +m);
+          const materias = (packet.materia || <number[]>[]).map((materia, index) => {
+            return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index]) || 0;
+          });
           while (materias.length < itemMeldingData.slots) {
             materias.push(0);
           }

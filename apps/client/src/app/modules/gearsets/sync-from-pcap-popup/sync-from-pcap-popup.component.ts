@@ -12,6 +12,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { TranslateService } from '@ngx-translate/core';
+import { MateriaService } from '../materia.service';
 
 @Component({
   selector: 'app-sync-from-pcap-popup',
@@ -25,7 +26,8 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
   constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
               private ipc: IpcService, private lazyData: LazyDataService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private gearsetsFacade: GearsetsFacade, private translate: TranslateService) {
+              private gearsetsFacade: GearsetsFacade, private translate: TranslateService,
+              private materiaService: MateriaService) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),
@@ -49,7 +51,9 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
           const itemMeldingData = this.lazyData.data.itemMeldingData[packet.catalogId];
-          const materias = (packet.materia || <number[]>[]).map(m => +m);
+          const materias = (packet.materia || <number[]>[]).map((materia, index) => {
+            return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index]) || 0;
+          });
           while (materias.length < itemMeldingData.slots) {
             materias.push(0);
           }
