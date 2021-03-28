@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable, Subject } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { environment } from 'apps/client/src/environments/environment';
 import { debounceTime, first, map, startWith, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -69,13 +69,20 @@ export class LevelingEquipmentComponent {
         return Object.keys(data.jobName).map(key => +key);
       })
     );
-
     this.filtersForm = this.fb.group({
       job: [null, Validators.required],
       level: [null, [Validators.required, Validators.min(3), Validators.max(environment.maxLevel - 1)]],
       includeCrafting: [this.settings.getBoolean('leveling-equipment:includeCrafting', true)],
       includeTrades: [this.settings.getBoolean('leveling-equipment:includeTrades', true)],
+      includePurchases: [this.settings.getBoolean('leveling-equipment:includePurchases', true)],
       onlyInventoryContent: [this.desktop ? this.settings.getBoolean('leveling-equipment:onlyInventoryContent', false) : false]
+    }, {
+      validators: (control: AbstractControl) => {
+        if (control.value.includeCrafting || control.value.includeTrades || control.value.includePurchases) {
+          return null;
+        }
+        return { noInclude: true };
+      }
     });
 
     this.results$ = this.search$.pipe(
@@ -90,6 +97,7 @@ export class LevelingEquipmentComponent {
         const filters = this.filtersForm.value;
         this.settings.setBoolean('leveling-equipment:includeCrafting', filters.includeCrafting);
         this.settings.setBoolean('leveling-equipment:includeTrades', filters.includeTrades);
+        this.settings.setBoolean('leveling-equipment:includePurchases', filters.includePurchases);
         this.settings.setBoolean('leveling-equipment:onlyInventoryContent', filters.onlyInventoryContent);
         const mainStat = this.statsService.getMainStat(filters.job);
         // Preparing base informations
@@ -105,13 +113,13 @@ export class LevelingEquipmentComponent {
         const results = baseStruct.map(row => {
           // Let's check offHand first, as it's a bit specific
           if (!row.gearset.offHand && row.gearset.job !== 18 && (!row.gearset.isCombatSet() || [1, 19].includes(row.gearset.job))) {
-            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 2, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 2, filters, inventory, filters.job);
           }
           this.slots
             .filter(slot => !['ring2', 'offHand'].includes(slot.property))
             .forEach(slot => {
               if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
-                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters, inventory, filters.job);
                 if (row.gearset[slot.property] && this.desktop) {
                   row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                 }
@@ -121,7 +129,7 @@ export class LevelingEquipmentComponent {
           if (!row.gearset.ring2) {
             if (row.gearset.ring1) {
               if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
-                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory, filters.job);
+                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters, inventory, filters.job);
                 if (row.gearset.ring2 && this.desktop) {
                   (row.gearset.ring2 as any).isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
                 }
@@ -139,8 +147,8 @@ export class LevelingEquipmentComponent {
     );
   }
 
-  private allowItem(itemId: number, includeCrafting: boolean, includeTrades: boolean, onlyInventory: boolean, inventory: UserInventory): boolean {
-    if (onlyInventory && inventory) {
+  private allowItem(itemId: number, filters: any, inventory: UserInventory): boolean {
+    if (filters.onlyInventory && inventory) {
       return inventory.hasItem(itemId, true);
     }
     const extract = this.lazyData.getExtract(itemId);
@@ -151,21 +159,24 @@ export class LevelingEquipmentComponent {
     if (!fromCalamitySalvager && vendors.length > 0) {
       return true;
     }
-    if (includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
+    if (filters.includePurchases && extract.sources.some(source => source.type === DataType.VENDORS)) {
+      return true;
+    }
+    if (filters.includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
       return true;
     }
     const trades = getItemSource(extract, DataType.TRADE_SOURCES).filter(trade => trade.npcs.some(npc => !npc.festival));
-    return includeTrades && trades.length > 0;
+    return filters.includeTrades && trades.length > 0;
   }
 
-  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategory: number, includeCrafting: boolean, includeTrades: boolean, onlyInventory: boolean, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {
+  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategory: number, filters: any, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {
     const itemId = Object.keys(this.lazyData.data.equipment)
       .filter(key => {
         return this.lazyData.data.equipment[key].equipSlotCategory === equipSlotCategory
           && this.lazyData.data.equipment[key].level <= level
           && this.lazyData.data.equipment[key].jobs.includes(this.lazyData.data.jobAbbr[job]?.en.toUpperCase());
       })
-      .filter(key => this.allowItem(+key, includeCrafting, includeTrades, onlyInventory, inventory))
+      .filter(key => this.allowItem(+key, filters, inventory))
       .sort((a, b) => {
         const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategory, job);
         const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategory, job);
