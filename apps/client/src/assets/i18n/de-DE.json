@@ -493,7 +493,7 @@
       "Other": "Anderes",
       "Inventory_tracking": "Inventarerfassung",
       "Character_tracking": "Charaktererfassung",
-      "Tooling": "Tooling",
+      "Tooling": "Werkzeuge",
       "Import_export": "Importieren/Exportieren",
       "Sekrit": "Geheim"
     },
@@ -631,7 +631,7 @@
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
       "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "Im Rotations-Overlay öffnen"
     },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
@@ -716,7 +716,7 @@
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
       "Reorder_panels": "Bereiche neu anordnen",
-      "Select_preview_list": "Select list to preview layout",
+      "Select_preview_list": "Liste auswählen für Layoutvorschau",
       "Hidden_if_empty": "Versteckt, wenn leer",
       "Collapsed_by_default": "Standardmäßig zusammengeklappt",
       "No_preview": "Keine Listenvorschau",
@@ -1807,7 +1807,7 @@
     "Stat": "Attribut",
     "Range": "Bereich",
     "Exclude": "Ausschließen",
-    "Select_stat": "Select a stat",
+    "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
     "SORT_BY": {
       "Relevance": "Relevanz",
