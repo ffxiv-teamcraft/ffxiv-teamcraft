@@ -147,6 +147,8 @@ export class LayoutRowFilter {
 
   static IS_VENTURE = new LayoutRowFilter(row => getItemSource(row, DataType.VENTURES).length > 0, 'IS_VENTURE');
 
+  static IS_VOYAGE = new LayoutRowFilter(row => getItemSource(row, DataType.VOYAGES).length > 0, 'IS_VOYAGE');
+
   static IS_MASTERCRAFT = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter(row => getItemSource(row, DataType.CRAFTED_BY).find(craft => craft.masterbook !== undefined) !== undefined,
       'IS_MASTERCRAFT'));
