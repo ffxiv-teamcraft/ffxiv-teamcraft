@@ -468,7 +468,7 @@
     "Import_error": "설정을 가져오는 중 오류 발생",
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
     "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
-    "Hide_back_button": "Hide back button in sidebar",
+    "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -2638,11 +2638,11 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "지도 선택",
-    "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Title": "보물 찾기",
+    "Description": "지역을 선택하고 원하는 보물 지도를 찾으세요",
+    "Select_map": "지역 선택",
+    "Select_item": "오래된 지도 선택",
+    "Select_treasure_map": "보물 지도 선택",
+    "Find_another": "다른 보물 지도 찾기"
   }
 }
