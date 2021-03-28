@@ -205,11 +205,8 @@ export class LayoutsFacade {
 
   private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
     const set = sets.find(s => s.jobId === job);
-    if (!set) {
-      // If we don't find a matching set, return true only if there's no real filled set.
-      return sets.every(s => s.level === 0);
-    }
-    return set.level >= level;
+    // If we don't find a matching set, return true, they just didn't fill this one.
+    return !set || set.level >= level;
   }
 
   public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
