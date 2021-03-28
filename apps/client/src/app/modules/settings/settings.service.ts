@@ -216,7 +216,7 @@ export class SettingsService {
   }
 
   public get hideBackButton(): boolean {
-    return this.getBoolean('hideBackButton', true);
+    return this.getBoolean('hideBackButton', false);
   }
 
   public set hideBackButton(hide: boolean) {
