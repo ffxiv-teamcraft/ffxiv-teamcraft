@@ -1805,7 +1805,7 @@
     "No_stats_filters": "Ups, hier ist nichts",
     "Add_stat_using_button": "To add a stat filter, click the button below",
     "Stat": "Attribut",
-    "Range": "Range",
+    "Range": "Bereich",
     "Exclude": "Ausschließen",
     "Select_stat": "Select a stat",
     "Level": "Stufe",
@@ -2449,7 +2449,7 @@
       "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
       "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
       "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "CANNOT_GATHER": "Ich bin nicht in der Lage, benötigte Gegenstände zu sammeln. Der Auftraggeber wird keine Gegenstände sammeln."
     },
     "IMPORT": {
       "Title": "Auftragsimport",
@@ -2472,15 +2472,15 @@
     "Only_missing_nodes": "Zeige nur Karten mit fehlenden Abbaustellen"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "Werkstatt-Rezeptbaum",
+    "View_tree": "Öffne Rezeptbaum der Werkstatt",
     "Phase": "Phase {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
+    "Title": "Fortschrittsausrüstung",
     "Include_crafting": "Herstellung einbeziehen",
     "Include_trades": "Käufe einbeziehen",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Description": "Wähle den auszustattenden Job und das Level aus, um Filter zu setzen und damit passende Ausrüstung zu finden",
     "Generate_list": "Liste erstellen",
     "Empty_slot": "Leerer Platz",
     "In_inventory": "Du hast diesen Gegenstand innerhalb eines deiner Inventare",
