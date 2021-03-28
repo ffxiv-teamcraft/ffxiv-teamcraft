@@ -2479,6 +2479,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "Equipement de leveling",
     "Include_crafting": "Inclure le craft",
+    "Include_purchases": "Include purchases",
     "Include_trades": "Inclure les échanges",
     "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
     "Generate_list": "Générer une liste",
