@@ -468,7 +468,7 @@
     "Import_error": "Fehler beim Importieren der Einstellungen",
     "Has_access_to_housing_vendor": "Haushändler bevorzugen",
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
-    "Hide_back_button": "Hide back button in sidebar",
+    "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -2485,7 +2485,7 @@
     "Empty_slot": "Leerer Platz",
     "In_inventory": "Du hast diesen Gegenstand innerhalb eines deiner Inventare",
     "Only_inventory": "Nur Gegenstände im Inventar berücksichtigen",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Interactions_description": "Klicke auf eine Stufe um die gesamte Spalte auszuwählen, klicke auf ein Gegenstandsfeld um ihn auszuwählen und klicke auf das Löschsymbol, um ein Gegenstand zu entfernen, ohne ihn zu ersetzen."
   },
   "RETAINERS": {
     "Title": "Gehilfen",
@@ -2504,7 +2504,7 @@
     "Gathering": "Sammeln",
     "Task_level": "Stufe der Unternehmung",
     "Total_per_venture": "Gesamt für Unternehmung",
-    "Use_retainer": "Fülle mit Gehilfe aus",
+    "Use_retainer": "Wähle Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen"
   },
   "PATREON": {
