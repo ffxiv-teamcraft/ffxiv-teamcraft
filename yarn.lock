@@ -2380,10 +2380,10 @@
   resolved "https://registry.npmjs.org/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/pcap-ffxiv@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.2.3.tgz#6de4b80db4695563e1003b1c67c81d67e6001e94"
-  integrity sha512-cYq+t/xtGXNmWEfNERC2t7pxLDg8s2fQGOABcgMdlGzz1WbI94G3ptj/2zyHG5Lq6fmhOjFt/P4EVz8bm2Voow==
+"@ffxiv-teamcraft/pcap-ffxiv@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.2.4.tgz#5fd4c01af28112e742074f34ec4a49b92de592ef"
+  integrity sha512-/VMOYufAl4pkh7X0dAlrroG0xrvOa6Ru5z2ihAByGLyrn1sDDaH06g8jJAlQKGIz8eJT3nJT0J8ASW7l2WK8MA==
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1":
   version "2.7.1"

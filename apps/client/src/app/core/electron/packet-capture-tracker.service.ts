@@ -123,7 +123,7 @@ export class PacketCaptureTrackerService {
       filter(packet => {
         return packet.slot >= 0
           && packet.slot < 32000
-          && packet.catalogId < 40000;
+          && packet.catalogId < 50000;
       }),
       debounceBufferTime(1000),
       filter(packets => packets.length > 0),
@@ -145,12 +145,10 @@ export class PacketCaptureTrackerService {
           })
           .value();
 
-        if (inventory.items[inventory.contentId]) {
-          if (isRetainer) {
-            Object.keys(inventory.items[inventory.contentId])
-              .filter(key => key.startsWith(lastRetainerSpawned))
-              .forEach(key => inventory.items[inventory.contentId][key] = {});
-          }
+        if (isRetainer && inventory.items[inventory.contentId] && updatedContainerIds.includes(10000)) {
+          Object.keys(inventory.items[inventory.contentId])
+            .filter(key => key.startsWith(lastRetainerSpawned))
+            .forEach(key => inventory.items[inventory.contentId][key] = {});
         }
 
         groupedInfos.forEach(group => {
@@ -356,7 +354,7 @@ export class PacketCaptureTrackerService {
       }),
       withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
-    ).subscribe((packets  ) => {
+    ).subscribe((packets) => {
       console.log('Vessel parts updated');
     });
 

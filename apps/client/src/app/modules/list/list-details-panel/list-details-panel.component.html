@@ -2,7 +2,7 @@
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
     <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems" let-skip="skip">
-    <app-lazy-scroll [data]="items" [noScroll]="noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow" [trackBy]="trackByItem">
+    <app-lazy-scroll [data]="items" [noScroll]="overlay || noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow" [trackBy]="trackByItem">
       <ng-template #itemRow let-item let-odd="odd">
         <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
                       [overlay]="overlay"

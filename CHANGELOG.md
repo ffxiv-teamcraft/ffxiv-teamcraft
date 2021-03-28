@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.2"></a>
+## [8.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.1...v8.1.2) (2021-03-28)
+
+
+### Bug Fixes
+
+* **desktop:** fixed retainer inventories being reset when getting gil from them ([b8a28e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8a28e2))
+* **desktop:** fixed string conversion in CN packet capture ([0d557ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d557ac))
+* **gearset:** fixed gearset import from packet capture ([831e6ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/831e6ed))
+* **layout-editor:** fixed a bug with tiers display not shown properly in preview ([15f43ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/15f43ff))
+* **list:** layouts now only consider level if it's > 0 ([4824747](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4824747))
+* **log-tracker:** fixed an issue with page selector not being displayed properly ([f067a78](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f067a78)), closes [#1864](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1864)
+* **overlay:** fixed missing scrollbar in overlays ([e627d83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e627d83))
+* **ux:** fix empty tooltip for alarm button ([a9493db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9493db))
+
+
+### Features
+
+* **desktop:** new setting to hide back button in the sidebar ([bc2c861](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc2c861))
+* **layout:** new filter: IS_VOYAGE ([012dc11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/012dc11))
+
+
+
 <a name="8.1.1"></a>
 ## [8.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.0...v8.1.1) (2021-03-26)
 

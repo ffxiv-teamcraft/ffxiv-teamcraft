@@ -468,6 +468,7 @@
     "Import_error": "Fehler beim Importieren der Einstellungen",
     "Has_access_to_housing_vendor": "Haushändler bevorzugen",
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
+    "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -492,7 +493,7 @@
       "Other": "Anderes",
       "Inventory_tracking": "Inventarerfassung",
       "Character_tracking": "Charaktererfassung",
-      "Tooling": "Tooling",
+      "Tooling": "Werkzeuge",
       "Import_export": "Importieren/Exportieren",
       "Sekrit": "Geheim"
     },
@@ -630,7 +631,7 @@
       "Attach": "Rotation hinzufügen",
       "Detach": "Rotation entfernen",
       "Click_to_copy_macro": "Klicken, um das Makro-Kopier-Popup zu öffnen",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "Im Rotations-Overlay öffnen"
     },
     "INVENTORY": {
       "Show_final_items": "Resultate zeigen",
@@ -715,7 +716,7 @@
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
       "Reorder_panels": "Bereiche neu anordnen",
-      "Select_preview_list": "Select list to preview layout",
+      "Select_preview_list": "Liste auswählen für Layoutvorschau",
       "Hidden_if_empty": "Versteckt, wenn leer",
       "Collapsed_by_default": "Standardmäßig zusammengeklappt",
       "No_preview": "Keine Listenvorschau",
@@ -922,7 +923,7 @@
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
     "Break_before_byregots_blessing": "Makros vor Byregots Benediktion teilen",
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
-    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
+    "Include_consumables_notification_wait_time": "Wartezeit nach Benachrichtigung für Verzehrbares",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
     "Completion_message": "Fertigstellungsnachricht",
@@ -954,7 +955,7 @@
     "No_rotations": "Keine Rotationen",
     "Create_a_custom_rotation": "Erstelle eine benutzerdefinierte Rotation",
     "Reset": "Rotation zurücksetzen",
-    "Reset_saved": "Revert unsaved changes",
+    "Reset_saved": "Ungespeicherte Änderungen zurücksetzen",
     "Import_from_crafting_optimizer": "Von Handwerks Optimierung importieren",
     "Export_crafting_optimizer": "Exportiere im Format der Handwerks-Optimierer",
     "Export_copied": "Export-Code für Handwerks-Optimierer in die Zwischenablage kopiert",
@@ -1282,7 +1283,7 @@
     "New_update_available_desktop": "Eine neue Version ist verfügbar!\nKlicke hier, um sie herunterzuladen und zu installieren.",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden.",
     "Downloading_update": "Das Update wird heruntergeladen. Sobald es abgeschlossen ist, erhaltet Ihr eine Benachrichtigung.",
-    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
+    "Possible_update_issue": "Es sieht aus, als hätte der Download ein Problem. Bitte klicke auf dieses Symbol um das neueste Setup herunterzuladen."
   },
   "LOG_TRACKER": {
     "Title": "Notizbuch-Tracker",
@@ -1292,7 +1293,7 @@
     "Mark_as_not_done": "Als nicht erledigt markieren",
     "Create_list": "Erstelle eine List um diese Seite vervollständigen",
     "Create_list_limited": "Liste erstellen, um Seite zu vervollständigen (bis zu 50 Gegenstände)",
-    "Create_list_selection": "Create a list from selection ({{amount}})",
+    "Create_list_selection": "Erstelle eine Liste aus Auswahl ({{amount}})",
     "Folklore": "Regionale Folklore",
     "Timed": "Zeitgebunden",
     "Weather_dependant": "Nur zu bestimmten Wetterverhältnissen",
@@ -1802,11 +1803,11 @@
     "Gear_stats": "Ausrüstungswerte",
     "Consumable_stats": "Werte Konsumierbares",
     "No_stats_filters": "Ups, hier ist nichts",
-    "Add_stat_using_button": "To add a stat filter, click the button below",
+    "Add_stat_using_button": "Um ein Attribut-Filter hinzuzufügen, klicke die Schaltfläche unten",
     "Stat": "Attribut",
-    "Range": "Range",
+    "Range": "Bereich",
     "Exclude": "Ausschließen",
-    "Select_stat": "Select a stat",
+    "Select_stat": "Attribut auswählen",
     "Level": "Stufe",
     "SORT_BY": {
       "Relevance": "Relevanz",
@@ -2448,7 +2449,7 @@
       "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
       "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
       "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "CANNOT_GATHER": "Ich bin nicht in der Lage, benötigte Gegenstände zu sammeln. Der Auftraggeber wird keine Gegenstände sammeln."
     },
     "IMPORT": {
       "Title": "Auftragsimport",
@@ -2471,20 +2472,20 @@
     "Only_missing_nodes": "Zeige nur Karten mit fehlenden Abbaustellen"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "Werkstatt-Rezeptbaum",
+    "View_tree": "Öffne Rezeptbaum der Werkstatt",
     "Phase": "Phase {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
+    "Title": "Fortschrittsausrüstung",
     "Include_crafting": "Herstellung einbeziehen",
     "Include_trades": "Käufe einbeziehen",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Description": "Wähle den auszustattenden Job und das Level aus, um Filter zu setzen und damit passende Ausrüstung zu finden",
     "Generate_list": "Liste erstellen",
     "Empty_slot": "Leerer Platz",
     "In_inventory": "Du hast diesen Gegenstand innerhalb eines deiner Inventare",
     "Only_inventory": "Nur Gegenstände im Inventar berücksichtigen",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Interactions_description": "Klicke auf eine Stufe um die gesamte Spalte auszuwählen, klicke auf ein Gegenstandsfeld um ihn auszuwählen und klicke auf das Löschsymbol, um ein Gegenstand zu entfernen, ohne ihn zu ersetzen."
   },
   "RETAINERS": {
     "Title": "Gehilfen",
@@ -2503,7 +2504,7 @@
     "Gathering": "Sammeln",
     "Task_level": "Stufe der Unternehmung",
     "Total_per_venture": "Gesamt für Unternehmung",
-    "Use_retainer": "Fülle mit Gehilfe aus",
+    "Use_retainer": "Wähle Gehilfe aus",
     "Select_retainer": "Wähle einen Gehilfen"
   },
   "PATREON": {
@@ -2551,7 +2552,7 @@
     "Return_time_column": "Rückkehrzeit",
     "Remaining_time_column": "Verbleibende Zeit",
     "Rank_column": "Rang",
-    "Build_column": "Build",
+    "Build_column": "Aufbau",
     "Voyage_column": "Erkundung",
     "Nothing_to_show": "Nichts zum Anzeigen",
     "Please_import_pcap": "Bitte importiere deine Luftschiffe und Tauchboote mit Paketerfassung",
@@ -2563,7 +2564,7 @@
       "Title": "Erkundung"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
+      "Title": "Aufbau",
       "Condition": "Zustand"
     },
     "STATS_DETAILS": {
