@@ -1,4 +1,4 @@
-<nz-badge [nzColor]="getColor(state)">
+<nz-badge [nzColor]="getColor(state)" *ngIf="action">
   <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
        (contextmenu)="showStateMenu?contextMenu($event, template):null"
        class="action-container">
