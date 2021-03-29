@@ -2479,6 +2479,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "Fortschrittsausrüstung",
     "Include_crafting": "Herstellung einbeziehen",
+    "Include_purchases": "Include purchases",
     "Include_trades": "Käufe einbeziehen",
     "Description": "Wähle den auszustattenden Job und das Level aus, um Filter zu setzen und damit passende Ausrüstung zu finden",
     "Generate_list": "Liste erstellen",

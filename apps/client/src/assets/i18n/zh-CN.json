@@ -2479,6 +2479,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "Leveling Equipment",
     "Include_crafting": "Include crafting",
+    "Include_purchases": "Include purchases",
     "Include_trades": "Include trades",
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
     "Generate_list": "生成清单",

@@ -2479,6 +2479,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "레벨링 장비",
     "Include_crafting": "제작템 포함",
+    "Include_purchases": "Include purchases",
     "Include_trades": "교환/구매템 포함",
     "Description": "직업과 레벨을 선택하고, 필터를 설정하여 검색을 클릭하여 직업 레벨에 맞는 장비를 찾을 수 있습니다",
     "Generate_list": "목록 생성",
