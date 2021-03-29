@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.3"></a>
+## [8.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.2...v8.1.3) (2021-03-29)
+
+
+### Bug Fixes
+
+* **crafting-replays:** fixed crafting replays page not loading at all and reports not saved properly ([dcb22ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dcb22ca))
+* **gearsets:** fixed pcap import linking wrong materias ([b00a806](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b00a806))
+* **layout:** better set level filters for unfilled levels ([5edec95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5edec95))
+
+
+### Features
+
+* **leveling-equipment:** added a new checkbox to include/exclude purchases ([3032e7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3032e7d))
+
+
+
 <a name="8.1.2"></a>
 ## [8.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.1...v8.1.2) (2021-03-28)
 
