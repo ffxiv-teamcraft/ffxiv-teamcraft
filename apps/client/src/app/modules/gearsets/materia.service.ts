@@ -22,7 +22,7 @@ export class MateriaService {
   };
 
   getMateriaItemIdFromPacketMateria(packetMateria: number, tier: number): number {
-    return this.lazyData.data.materias.find(m => m.id === packetMateria && m.tier === tier)?.itemId;
+    return this.lazyData.data.materias.find(m => m.id === packetMateria && m.tier === tier + 1)?.itemId;
   }
 
   getMateriaBonus(equipmentPiece: EquipmentPiece, materiaId: number, index: number): { overcapped: boolean, value: number } {
