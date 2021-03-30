@@ -40,8 +40,8 @@ export class TreasureFinderComponent {
             mapImage: mapData.image,
             coordsPercent,
             display: {
-              x: coordsPercent.x * 2048 / 100 * (mapData.size_factor / 100) - 109,
-              y: coordsPercent.y * 2048 / 100 * (mapData.size_factor / 100) - 94.5
+              x: coordsPercent.x * 2048 / 100 * (mapData.size_factor / 100) - 94,
+              y: coordsPercent.y * 2048 / 100 * (mapData.size_factor / 100) - 79.5
             }
           };
         });
