@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable, Subject } from 'rxjs';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'apps/client/src/environments/environment';
 import { debounceTime, first, map, startWith, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -39,20 +39,20 @@ export class LevelingEquipmentComponent {
 
   filtersForm: FormGroup;
 
-  slots: Array<{ property: keyof TeamcraftGearset, name: string, equipSlotCategoryId: number }> = [
-    { property: 'mainHand', name: 'MainHand', equipSlotCategoryId: 1 },
-    { property: 'offHand', name: 'OffHand', equipSlotCategoryId: 2 },
-    { property: 'head', name: 'Head', equipSlotCategoryId: 3 },
-    { property: 'chest', name: 'Body', equipSlotCategoryId: 4 },
-    { property: 'gloves', name: 'Gloves', equipSlotCategoryId: 5 },
-    { property: 'belt', name: 'Waist', equipSlotCategoryId: 6 },
-    { property: 'legs', name: 'Legs', equipSlotCategoryId: 7 },
-    { property: 'feet', name: 'Feet', equipSlotCategoryId: 8 },
-    { property: 'earRings', name: 'Ears', equipSlotCategoryId: 9 },
-    { property: 'necklace', name: 'Neck', equipSlotCategoryId: 10 },
-    { property: 'bracelet', name: 'Wrists', equipSlotCategoryId: 11 },
-    { property: 'ring1', name: 'FingerL', equipSlotCategoryId: 12 },
-    { property: 'ring2', name: 'FingerR', equipSlotCategoryId: 12 }
+  slots: Array<{ property: keyof TeamcraftGearset, name: string, equipSlotCategoryIds: number[] }> = [
+    { property: 'mainHand', name: 'MainHand', equipSlotCategoryIds: [1, 13] },
+    { property: 'offHand', name: 'OffHand', equipSlotCategoryIds: [2] },
+    { property: 'head', name: 'Head', equipSlotCategoryIds: [3] },
+    { property: 'chest', name: 'Body', equipSlotCategoryIds: [4] },
+    { property: 'gloves', name: 'Gloves', equipSlotCategoryIds: [5] },
+    { property: 'belt', name: 'Waist', equipSlotCategoryIds: [6] },
+    { property: 'legs', name: 'Legs', equipSlotCategoryIds: [7] },
+    { property: 'feet', name: 'Feet', equipSlotCategoryIds: [8] },
+    { property: 'earRings', name: 'Ears', equipSlotCategoryIds: [9] },
+    { property: 'necklace', name: 'Neck', equipSlotCategoryIds: [10] },
+    { property: 'bracelet', name: 'Wrists', equipSlotCategoryIds: [11] },
+    { property: 'ring1', name: 'FingerL', equipSlotCategoryIds: [12] },
+    { property: 'ring2', name: 'FingerR', equipSlotCategoryIds: [12] }
   ];
 
   selectedItems: Partial<Record<keyof TeamcraftGearset, number>> = {};
@@ -101,7 +101,7 @@ export class LevelingEquipmentComponent {
         this.settings.setBoolean('leveling-equipment:onlyInventoryContent', filters.onlyInventoryContent);
         const mainStat = this.statsService.getMainStat(filters.job);
         // Preparing base informations
-        const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel - 1);
+        const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel);
         const baseStruct = levels.map(level => {
           const gearset = new TeamcraftGearset();
           gearset.job = filters.job;
@@ -113,13 +113,13 @@ export class LevelingEquipmentComponent {
         const results = baseStruct.map(row => {
           // Let's check offHand first, as it's a bit specific
           if (!row.gearset.offHand && row.gearset.job !== 18 && (!row.gearset.isCombatSet() || [1, 19].includes(row.gearset.job))) {
-            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 2, filters, inventory, filters.job);
+            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, [2], filters, inventory, filters.job);
           }
           this.slots
             .filter(slot => !['ring2', 'offHand'].includes(slot.property))
             .forEach(slot => {
               if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
-                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters, inventory, filters.job);
+                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryIds, filters, inventory, filters.job);
                 if (row.gearset[slot.property] && this.desktop) {
                   row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                 }
@@ -129,7 +129,7 @@ export class LevelingEquipmentComponent {
           if (!row.gearset.ring2) {
             if (row.gearset.ring1) {
               if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
-                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters, inventory, filters.job);
+                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, [12], filters, inventory, filters.job);
                 if (row.gearset.ring2 && this.desktop) {
                   (row.gearset.ring2 as any).isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
                 }
@@ -141,7 +141,11 @@ export class LevelingEquipmentComponent {
           return row;
         });
         const columnToSelect = results.find(r => r.level === filters.level);
-        this.selectRow(columnToSelect);
+        if (columnToSelect) {
+          this.selectRow(columnToSelect);
+        } else {
+          this.selectRow(results[results.length - 1]);
+        }
         return results;
       })
     );
@@ -156,10 +160,10 @@ export class LevelingEquipmentComponent {
     const vendors = getItemSource(extract, DataType.VENDORS).filter(vendor => !vendor.festival);
     // If it can be bought from calamity salvager, it's not something we want to provide as item for the leveling equipment.
     const fromCalamitySalvager = vendors.some(v => v.npcId === 1017613);
-    if (!fromCalamitySalvager && vendors.length > 0) {
-      return true;
+    if (fromCalamitySalvager) {
+      return false;
     }
-    if (filters.includePurchases && extract.sources.some(source => source.type === DataType.VENDORS)) {
+    if (filters.includePurchases && vendors.length > 0) {
       return true;
     }
     if (filters.includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
@@ -169,24 +173,24 @@ export class LevelingEquipmentComponent {
     return filters.includeTrades && trades.length > 0;
   }
 
-  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategory: number, filters: any, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {
-    const itemId = Object.keys(this.lazyData.data.equipment)
+  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategories: number[], filters: any, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {
+    const itemId = +Object.keys(this.lazyData.data.equipment)
       .filter(key => {
-        return this.lazyData.data.equipment[key].equipSlotCategory === equipSlotCategory
+        return equipSlotCategories.includes(this.lazyData.data.equipment[key].equipSlotCategory)
           && this.lazyData.data.equipment[key].level <= level
           && this.lazyData.data.equipment[key].jobs.includes(this.lazyData.data.jobAbbr[job]?.en.toUpperCase());
       })
       .filter(key => this.allowItem(+key, filters, inventory))
       .sort((a, b) => {
-        const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategory, job);
-        const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategory, job);
+        const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job);
+        const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job);
         const mainDiff = bMainStat - aMainStat;
         if (mainDiff === 0) {
-          const aSecondaryStat = this.getSecondaryStatValue(+a, mainStat, equipSlotCategory, job);
-          const bSecondaryStat = this.getSecondaryStatValue(+b, mainStat, equipSlotCategory, job);
+          const aSecondaryStat = this.getSecondaryStatValue(+a, mainStat, equipSlotCategories, job);
+          const bSecondaryStat = this.getSecondaryStatValue(+b, mainStat, equipSlotCategories, job);
           return bSecondaryStat - aSecondaryStat;
         }
-        return bMainStat - aMainStat;
+        return mainDiff;
       })[0];
 
     if (!itemId) {
@@ -204,8 +208,8 @@ export class LevelingEquipmentComponent {
     };
   }
 
-  private getMainStatValue(itemId: number, mainStat: number, equipSlotCategory: number, job: number): number {
-    if ([9, 10, 11, 12].includes(equipSlotCategory)) {
+  private getMainStatValue(itemId: number, mainStat: number, equipSlotCategories: number[], job: number): number {
+    if ([9, 10, 11, 12].some(category => equipSlotCategories.includes(category))) {
       if ([16, 17, 18].includes(job)) {
         mainStat = BaseParam.GP;
       }
@@ -214,7 +218,10 @@ export class LevelingEquipmentComponent {
       }
     }
     const mainStatEntry = this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat);
-    if (mainStatEntry > 0) {
+    if (mainStat === BaseParam.INTELLIGENCE && itemId === 25637) {
+      console.log(mainStatEntry);
+    }
+    if (mainStatEntry) {
       return mainStatEntry?.NQ || 0;
     } else if ([16, 17, 18].includes(job)) {
       return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.PERCEPTION)?.NQ || 0;
@@ -224,9 +231,9 @@ export class LevelingEquipmentComponent {
     return 0;
   }
 
-  private getSecondaryStatValue(itemId: number, mainStat: number, equipSlotCategory: number, job: number): number {
+  private getSecondaryStatValue(itemId: number, mainStat: number, equipSlotCategories: number[], job: number): number {
     let secondaryStat = BaseParam.DEFENSE;
-    if ([9, 10, 11, 12].includes(equipSlotCategory)) {
+    if ([9, 10, 11, 12].some(category => equipSlotCategories.includes(category))) {
       if ([16, 17, 18].includes(job)) {
         secondaryStat = BaseParam.GATHERING;
       }
