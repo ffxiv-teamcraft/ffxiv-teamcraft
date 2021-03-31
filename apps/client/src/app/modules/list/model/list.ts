@@ -220,7 +220,7 @@ export class List extends DataWithPermissions {
   }
 
   public requiredAsHQ(item: ListRow): number {
-    if (!item) {
+    if (!item || item.id < 20) {
       return 0;
     }
     const recipesNeedingItem = this.finalItems
