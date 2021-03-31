@@ -51,7 +51,7 @@
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
   "Find_us_on_twitter": "在 Twitter 上关注我们",
-  "Join_discord_server": "Join our discord server",
+  "Join_discord_server": "加入我们的 Discord 服务器",
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
@@ -174,10 +174,10 @@
     "Dirty_changes": "有尚未保存的修改",
     "Never": "从不",
     "Festival": "季节活动期间限定",
-    "Back": "Back",
-    "Support_us_remove_ads": "Support us on patreon to remove ads",
-    "Support_us": "Support us",
-    "Show_more": "Show more"
+    "Back": "返回",
+    "Support_us_remove_ads": "在patreon上支持我们以移除广告",
+    "Support_us": "支持我们",
+    "Show_more": "显示更多"
   },
   "ALARMS": {
     "Title": "闹钟",
