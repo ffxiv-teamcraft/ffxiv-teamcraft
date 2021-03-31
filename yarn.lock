@@ -2380,10 +2380,10 @@
   resolved "https://registry.npmjs.org/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/pcap-ffxiv@^0.2.5":
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.2.5.tgz#e55134b05ca7418c50fcedeb8fffd43eb59be201"
-  integrity sha512-jktDehSs0Gc3cqikOSaMmMiR8/EQSEA3ml0svEUCkqMeb5wwoPXF0ZGORRDLgaDlpeFVTpWen2F43PdpYM96cA==
+"@ffxiv-teamcraft/pcap-ffxiv@^0.2.6":
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.2.6.tgz#b0e7a28a87f820ba338bff2355d02839aefc2973"
+  integrity sha512-Fc9ZLMGmM0/bZHHu1qKHLtwJvdF6X8lDgvyg+//UHs6SEORwWDOwoGiMzI19UsmYzLTEFZpdoFpwlawqXP3gLA==
 
 "@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1":
   version "2.7.1"
@@ -7805,11 +7805,6 @@ ecdsa-sig-formatter@1.0.11, ecdsa-sig-formatter@^1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
-edge-cs@1.2.1:
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/edge-cs/-/edge-cs-1.2.1.tgz"
-  integrity sha1-vRqezblO8O1AyJRYIEZ0nlcEXlo=
-
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -7860,14 +7855,6 @@ electron-builder@^22.9.1:
     sanitize-filename "^1.6.3"
     update-notifier "^4.1.1"
     yargs "^16.0.3"
-
-electron-edge-js@^12.18.5:
-  version "12.18.5"
-  resolved "https://registry.npmjs.org/electron-edge-js/-/electron-edge-js-12.18.5.tgz"
-  integrity sha512-7AEui4n4ag4VvqoMfnkuAD83PAgFUoNl0fSWAHJUtykytQ98jY6J+SLY/+ydiZIAmGHYLuyL/uy4rdkQ/aqX7g==
-  dependencies:
-    edge-cs "1.2.1"
-    nan "^2.14.0"
 
 electron-is-dev@^1.1.0:
   version "1.2.0"
@@ -13042,7 +13029,7 @@ mute-stream@0.0.8:
   resolved "https://registry.npmjs.org/mute-stream/-/mute-stream-0.0.8.tgz"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-nan@^2.12.1, nan@^2.14.0, nan@^2.14.2:
+nan@^2.12.1, nan@^2.14.2:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
