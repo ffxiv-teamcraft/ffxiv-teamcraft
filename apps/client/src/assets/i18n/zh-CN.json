@@ -2639,11 +2639,11 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
-    "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Title": "藏宝点查询",
+    "Description": "选择一个地图并找到你正在寻找的宝藏",
+    "Select_map": "选择地图",
+    "Select_item": "选择藏宝图类型",
+    "Select_treasure_map": "选择你的藏宝图",
+    "Find_another": "寻找另一个藏宝图"
   }
 }
