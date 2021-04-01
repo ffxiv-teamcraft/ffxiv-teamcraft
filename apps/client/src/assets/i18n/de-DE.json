@@ -1856,7 +1856,7 @@
     "Switch_to_winpcap": "Zum winpcap-Modus wechseln",
     "Disable_pcap": "Paketerfassung deaktivieren",
     "Install_npcap": "Npcap fehlt auf dem System",
-    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_description": "Um Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu"
   },
   "SUGGESTED_REGION": {
@@ -1889,7 +1889,7 @@
       "RetainerMarket": "Im Verkauf bei Gehilfen"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
+      "Description": "Um mehrere Charaktere und andere nützliche Funktionen zu unterstützen, muss Teamcraft wissen, welchen Charakter du momentan spielst oder zumindest welcher Charakter mit dem aktuellem Ingame Charakter verknüpft werden soll.",
       "Linked": "Verknüpft",
       "Linked_tooltip": "Dieser Charakter ist bereits mit einem anderen Ingame-Charakter verknüpft. Auswählen führt zur Löschung des anderen Charakters",
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
