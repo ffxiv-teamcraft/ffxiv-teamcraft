@@ -4,6 +4,7 @@ import { NpcBreakdownRow } from './npc-breakdown-row';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TradeSource } from '../../modules/list/model/trade-source';
 import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
+import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
 
 export class NpcBreakdown {
   private readonly _rows: NpcBreakdownRow[] = [];
@@ -94,7 +95,7 @@ export class NpcBreakdown {
       return 0;
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
-    if(this.prioritizeHousingSupplier && npcId === 1008837){
+    if (this.prioritizeHousingSupplier && npcId === 1008837) {
       return 100;
     }
     const sameNpc = this._rows.find(r => r.npcId === npcId);
@@ -106,6 +107,9 @@ export class NpcBreakdown {
     }
     if (this.lazyData.data.npcs[npcId]?.position) {
       return 5;
+    }
+    if (beastTribeNpcs.includes(npcId)) {
+      return 3;
     }
     return 0;
   }
