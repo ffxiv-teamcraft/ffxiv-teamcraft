@@ -1852,11 +1852,11 @@
     "Possible_missing_firewall_rule_description": "Teamcraft sieht nur einige der Pakete und kann die Pakete, die im Zusammenhang mit dem Inventar, Statistiken, Ausrüstung, etc. stehen, nicht einsehen. Dies kann auf eine fehlende Firewall-Regel auf deinem PC zurückzuführen sein.",
     "Possible_missing_firewall_rule_check": "Wenn diese Nachricht nicht verschwindet, nachdem du dich in einen neuen Bereich teleportiert hast , fehlt eventuell eine Firewall-Regel oder die Paketerfassung funktioniert aus einem anderen Grund nicht (falls dies der Fall ist, tritt bitte dem Discord Server bei und besuche den Channel #troubleshooting).",
     "Rawsock_needs_admin": "RawSocket-Aufnahmemodus benötigt Administratorrechte",
-    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
+    "Rawsock_needs_admin_description": "Um Firewall-Regeln richtig zu steuern und den Datenverkehr vom Spiel erfassen zu können, benötigt der RawSocket-Modus die Ausführung von TC mit Administratorenrechten. Du kannst es schließen und erneut als Admin ausführen, um dieses Problem zu beheben oder wähle eine der folgenden Optionen.",
     "Switch_to_winpcap": "Zum winpcap-Modus wechseln",
     "Disable_pcap": "Paketerfassung deaktivieren",
     "Install_npcap": "Npcap fehlt auf dem System",
-    "Install_npcap_description": "Um Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
+    "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu"
   },
   "SUGGESTED_REGION": {
