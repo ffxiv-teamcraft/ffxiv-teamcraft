@@ -451,7 +451,7 @@
     "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximaler Preis für einen Artikel, der vom Layoutfilter CAN_BE_BOUGHT berücksichtigt werden soll (0 = kein maximaler Preis)",
     "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
-    "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
+    "Rawsock_details": "RawSocket Nutzung, die die Aktivität ohne npcap erfasst, kann bei VPNs helfen. Allerdings ist es weniger zuverlässig und du musst TC jedes mal manuell als Admin ausführen",
     "Favorite_features": "Lieblingsfunktionen",
     "Favorite_features_explain": "Die Funktionen, die du im Favoritenbereich der Seitenleiste angezeigt werden.",
     "Clear_inventory_on_startup": "Inventar beim Start bereinigen",
@@ -2479,7 +2479,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "Fortschrittsausrüstung",
     "Include_crafting": "Herstellung einbeziehen",
-    "Include_purchases": "Include purchases",
+    "Include_purchases": "Käufe einbeziehen",
     "Include_trades": "Käufe einbeziehen",
     "Description": "Wähle den auszustattenden Job und das Level aus, um Filter zu setzen und damit passende Ausrüstung zu finden",
     "Generate_list": "Liste erstellen",
