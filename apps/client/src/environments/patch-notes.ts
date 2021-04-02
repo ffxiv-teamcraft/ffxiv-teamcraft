@@ -1,10 +1,13 @@
 export const patchNotes = `### Bug Fixes
 
-* **crafting-replays:** fixed crafting replays page not loading at all and reports not saved properly.
-* **gearsets:** fixed pcap import linking wrong materias.
-* **layout:** better set level filters for unfilled levels.
+* **desktop:** fixed random inventory resets for some items.
+* **layout:** lowered npc breakdown priority for beast tribe npcs.
+* **leveling-equipment:** fixed multiple issues with gear search system.
+* **list:** crystals cannot be suggested as HQ anymore.
+* **simulator:** fixed Observe combo being broken by skipped actions.
+* **treasure-finder:** fixed wrong mini checkmark position.
 
 
-### Features
+### Performance Improvements
 
-* **leveling-equipment:** added a new checkbox to include/exclude purchases.`;
+* **collectables:** tabs are now lazy loaded for better page loading perfs.`;

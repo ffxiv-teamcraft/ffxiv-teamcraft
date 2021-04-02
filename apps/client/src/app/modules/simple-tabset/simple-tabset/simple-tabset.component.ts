@@ -1,4 +1,4 @@
-import { AfterContentInit, ChangeDetectionStrategy, Component, ContentChildren, QueryList } from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ContentChildren, QueryList } from '@angular/core';
 import { SimpleTabComponent } from '../simple-tab/simple-tab.component';
 
 @Component({
@@ -12,7 +12,7 @@ export class SimpleTabsetComponent implements AfterContentInit {
   @ContentChildren(SimpleTabComponent)
   tabs: QueryList<SimpleTabComponent>;
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
   }
 
   selectTab(tab: SimpleTabComponent): void {
@@ -28,6 +28,8 @@ export class SimpleTabsetComponent implements AfterContentInit {
     if (activeTabs.length === 0) {
       this.selectTab(this.tabs.first);
     }
+
+    this.cd.detectChanges();
   }
 
 }

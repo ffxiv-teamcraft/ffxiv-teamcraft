@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.4"></a>
+## [8.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.3...v8.1.4) (2021-04-02)
+
+
+### Bug Fixes
+
+* **desktop:** fixed random inventory resets for some items ([904d666](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/904d666))
+* **layout:** lowered npc breakdown priority for beast tribe npcs ([373f1b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/373f1b4))
+* **leveling-equipment:** fixed multiple issues with gear search system ([244ce34](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/244ce34))
+* **list:** crystals cannot be suggested as HQ anymore ([b630a95](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b630a95))
+* **simulator:** fixed Observe combo being broken by skipped actions ([ee6c3da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee6c3da))
+* **treasure-finder:** fixed wrong mini checkmark position ([636b7dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/636b7dc))
+
+
+### Performance Improvements
+
+* **collectables:** tabs are now lazy loaded for better page loading perfs ([76a7d81](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76a7d81))
+
+
+
 <a name="8.1.3"></a>
 ## [8.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.2...v8.1.3) (2021-03-29)
 
