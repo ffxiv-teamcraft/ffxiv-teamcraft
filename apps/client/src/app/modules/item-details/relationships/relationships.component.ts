@@ -45,7 +45,7 @@ export class RelationshipsComponent implements OnInit {
                   return inventory.getItem(item.id).map(entry => {
                     return {
                       isRetainer: entry.retainerName !== undefined,
-                      containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
+                      containerName: this.inventoryService.getContainerDisplayName(entry),
                       amount: entry.quantity,
                       hq: entry.hq
                     };

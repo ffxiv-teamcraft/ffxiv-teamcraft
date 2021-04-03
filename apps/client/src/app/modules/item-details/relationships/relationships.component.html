@@ -8,13 +8,20 @@
       <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
       <div fxLayout="column" fxLayoutGap="5px">
         <div>
-          {{req.id | itemName | i18n}}&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
+          {{req.id | itemName | i18n}}&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
+          x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
         </div>
         <!-- Inventory informations -->
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
           <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
-            <app-inventory-position  *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry"
-                                     [item]="entry.item"></app-inventory-position>
+            <nz-tag class="inventory-tag" [nzTooltipTitle]="positionTooltip" nz-tooltip
+                    *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry" [item]="entry">
+              <ng-template #positionTooltip>
+                <app-inventory-position [item]="entry"></app-inventory-position>
+              </ng-template>
+              {{entry.containerName}}: {{entry.amount}}
+              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+            </nz-tag>
           </div>
         </div>
       </div>

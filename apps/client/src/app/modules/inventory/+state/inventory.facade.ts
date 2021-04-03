@@ -6,7 +6,7 @@ import { LoadInventory, ResetInventory, SetContentId, UpdateInventory } from './
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { SettingsService } from '../../settings/settings.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -55,6 +55,9 @@ export class InventoryFacade {
   }
 
   public getPosition(item: ItemSearchResult): Observable<number> {
+    if (!item) {
+      return of(-1);
+    }
     return combineLatest([this.odr$, this.retainersService.retainers$]).pipe(
       map(([odr, retainers]) => {
         const itemOdr = odr[item.contentId];

@@ -3,7 +3,7 @@ import { ItemSearchResult } from '../../../model/user/inventory/item-search-resu
 import { InventoryFacade } from '../+state/inventory.facade';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ReplaySubject } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-inventory-position',
@@ -21,6 +21,7 @@ export class InventoryPositionComponent {
   }
 
   public display$ = this.item$.pipe(
+    filter(item => !!item),
     switchMap(item => {
       return this.inventoryFacade.getPosition(item).pipe(
         map(position => {
