@@ -402,29 +402,35 @@ export class FreeCompanyWorkshopFacade {
       range: +this.lazyData.data.submarineRanks[rank]?.rangeBonus,
       favor: +this.lazyData.data.submarineRanks[rank]?.favorBonus
     };
-    return Object.keys(parts).map((slot) => {
-      const vesselPart = type === VesselType.AIRSHIP ? this.lazyData.data.airshipParts[parts[slot].partId] : this.lazyData.data.submarineParts[parts[slot].partId];
-      const partClass = type === VesselType.AIRSHIP ? AirshipPartClass[vesselPart.class] : SubmarinePartClass[vesselPart.class];
-      return {
-        abbreviation: this.translate.instant(`${VesselType[type]}.CLASS.${partClass}.Abbreviation`),
-        stats: {
-          surveillance: vesselPart.surveillance,
-          retrieval: vesselPart.retrieval,
-          speed: vesselPart.speed,
-          range: vesselPart.range,
-          favor: vesselPart.favor
+    return Object.keys(parts)
+      .map((slot) => {
+        const vesselPart = type === VesselType.AIRSHIP ? this.lazyData.data.airshipParts[parts[slot].partId] : this.lazyData.data.submarineParts[parts[slot].partId];
+        if (!vesselPart) {
+          return null;
         }
-      };
-    }).reduce((a, b) => ({
-      abbreviation: `${a.abbreviation}${b.abbreviation}`,
-      stats: {
-        surveillance: +a.stats.surveillance + +b.stats.surveillance,
-        retrieval: +a.stats.retrieval + +b.stats.retrieval,
-        speed: +a.stats.speed + +b.stats.speed,
-        range: +a.stats.range + +b.stats.range,
-        favor: +a.stats.favor + +b.stats.favor
-      }
-    }), { abbreviation: '', stats: rankBonus });
+        const partClass = type === VesselType.AIRSHIP ? AirshipPartClass[vesselPart.class] : SubmarinePartClass[vesselPart.class];
+        return {
+          abbreviation: this.translate.instant(`${VesselType[type]}.CLASS.${partClass}.Abbreviation`),
+          stats: {
+            surveillance: vesselPart.surveillance,
+            retrieval: vesselPart.retrieval,
+            speed: vesselPart.speed,
+            range: vesselPart.range,
+            favor: vesselPart.favor
+          }
+        };
+      })
+      .filter(part => !!part)
+      .reduce((a, b) => ({
+        abbreviation: `${a.abbreviation}${b.abbreviation}`,
+        stats: {
+          surveillance: +a.stats.surveillance + +b.stats.surveillance,
+          retrieval: +a.stats.retrieval + +b.stats.retrieval,
+          speed: +a.stats.speed + +b.stats.speed,
+          range: +a.stats.range + +b.stats.range,
+          favor: +a.stats.favor + +b.stats.favor
+        }
+      }), { abbreviation: '', stats: rankBonus });
   }
 
   public getVesselPartName(vesselType: VesselType, partId: number) {
