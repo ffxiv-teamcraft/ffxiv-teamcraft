@@ -156,6 +156,10 @@ export class LevelingEquipmentComponent {
       return inventory.hasItem(itemId, true);
     }
     const extract = this.lazyData.getExtract(itemId);
+    // If the item has a masterbook requirement, it's not worth getting it for leveling.
+    if (getItemSource(extract, DataType.MASTERBOOKS).length > 0) {
+      return false;
+    }
     // If it can be bought, no need to go further
     const vendors = getItemSource(extract, DataType.VENDORS).filter(vendor => !vendor.festival);
     // If it can be bought from calamity salvager, it's not something we want to provide as item for the leveling equipment.
@@ -218,9 +222,6 @@ export class LevelingEquipmentComponent {
       }
     }
     const mainStatEntry = this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat);
-    if (mainStat === BaseParam.INTELLIGENCE && itemId === 25637) {
-      console.log(mainStatEntry);
-    }
     if (mainStatEntry) {
       return mainStatEntry?.NQ || 0;
     } else if ([16, 17, 18].includes(job)) {
