@@ -28,6 +28,7 @@ import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { environment } from 'apps/client/src/environments/environment';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -124,7 +125,8 @@ export class RotationPanelComponent implements OnInit {
           stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
           stats.specialist,
           stats.level,
-          gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [70, 70, 70, 70, 70, 70, 70, 70]);
+          gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] :
+            [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
         const recipe = this.lazyData.data.recipes.find(r => r.id === rotation.recipe.id);
         return new this.simulator.Simulation(recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
@@ -197,16 +199,18 @@ export class RotationPanelComponent implements OnInit {
     }
   }
 
-  openMacroPopup(simulation: Simulation): void {
+  openRotationMacroPopup(rotation: CraftingRotation): void {
+    const foodsData = this.consumablesService.fromLazyData(this.lazyData.data.foods);
+    const medicinesData = this.consumablesService.fromData(medicines);
+    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
     this.dialog.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: this.registry.deserializeRotation(this.rotation.rotation),
-        job: this.rotation.recipe.job,
-        simulation: simulation.clone(),
-        food: this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq),
-        medicine: this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq),
-        freeCompanyActions: this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+        rotation: this.registry.deserializeRotation(rotation.rotation),
+        job: rotation.recipe?.job,
+        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
       },
       nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
       nzFooter: null
