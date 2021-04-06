@@ -477,7 +477,7 @@
     "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>暗血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>嗜血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中发动战技或魔法命中时"
   },
   "160": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时（发动几率50%）"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时（发动几率80%）"
   },
   "161": {
     "zh": "罗刹冲变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
@@ -582,7 +582,7 @@
     "zh": "采集力的自动恢复量基本值提高1点"
   },
   "195": {
-    "zh": "摇荡变为震荡\n将赤闪雷和赤疾风的威力提高到370\n将赤火炎和赤飞石的威力提高到300"
+    "zh": "摇荡变为震荡\n将赤闪雷和赤疾风的威力提高到370\n将赤火炎和赤飞石的威力提高到310"
   },
   "196": {
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>治疗百合<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到3档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身进入战斗状态后每经过30秒"
@@ -714,7 +714,7 @@
     "zh": "采集力的自动恢复量基本值提高2点"
   },
   "245": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率上升到70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率上升到100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时"
   },
   "246": {
     "zh": "暴乱剑与深奥之灵可恢复魔力"
@@ -741,7 +741,7 @@
     "zh": "前冲步变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "255": {
-    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n效果时间内，自身或队员的战技或魔法攻击命中时，可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n伶俐量值的获得数量与发动几率会根据各特职产生变化"
+    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n效果时间内，自身或队员使用战技或魔法时，可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n伶俐量值的获得数量与发动几率会根据各特职产生变化"
   },
   "256": {
     "zh": "前冲步最多可积蓄3次"
@@ -1057,5 +1057,17 @@
   },
   "363": {
     "zh": "可以使用制作练习"
+  },
+  "364": {
+    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短5%"
+  },
+  "365": {
+    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短10%"
+  },
+  "366": {
+    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短15%"
+  },
+  "367": {
+    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短20%"
   }
 }
