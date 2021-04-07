@@ -161,9 +161,7 @@ export class PacketCaptureTrackerService {
       }),
       withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),
       filter(([, workshop]) => workshop?.id !== undefined)
-    ).subscribe((packets) => {
-      console.log('Vessel parts updated');
-    });
+    ).subscribe();
 
     this.freeCompanyWorkshopFacade.vesselTimers$.pipe(
       withLatestFrom(this.freeCompanyWorkshopFacade.currentWorkshop$),

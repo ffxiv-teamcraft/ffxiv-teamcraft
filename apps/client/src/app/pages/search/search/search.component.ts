@@ -32,6 +32,7 @@ import { environment } from '../../../../environments/environment';
 import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-search',
@@ -210,7 +211,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
-              @Inject(PLATFORM_ID) private platform: Object) {
+              private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
     super();
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
@@ -777,6 +778,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   public getShareUrl = () => {
     if (isPlatformServer(this.platform)) {
       return 'https://ffxivteamcraft.com/search';
+    }
+    if (this.platformService.isDesktop()) {
+      return `https://ffxivteamcraft.com${location.hash.substr(1)}`;
     }
     return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
   };

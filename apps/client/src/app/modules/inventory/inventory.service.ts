@@ -194,7 +194,6 @@ export class InventoryService {
 
   public init(): void {
     this.inventory$.subscribe(inventory => {
-      console.log('Save');
       this.ipc.send('inventory:set', inventory);
     });
     this.inventory$.pipe(
