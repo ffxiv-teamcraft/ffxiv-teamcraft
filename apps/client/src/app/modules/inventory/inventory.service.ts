@@ -139,6 +139,9 @@ export class InventoryService {
         const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
         return merge(packetActions$, customActions$).pipe(
           scan((state: InventoryState, action) => {
+            if (!action) {
+              return state;
+            }
             switch (action.type) {
               case 'SetContentId':
                 state.inventory.contentId = action.contentId;
