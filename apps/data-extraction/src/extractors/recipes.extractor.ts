@@ -69,7 +69,6 @@ export class RecipesExtractor extends AbstractExtractor {
           rlookup.recipes[recipe.id] = {
             itemId: recipe.result,
             recipeId: recipe.id,
-            amount: ingredient.amount,
             ingredients: recipe.ingredients,
             yields: recipe.yields,
             lvl: recipe.lvl,

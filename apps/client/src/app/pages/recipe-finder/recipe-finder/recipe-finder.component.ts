@@ -131,7 +131,8 @@ export class RecipeFinderComponent implements OnDestroy {
               if (onlyNotCompleted) {
                 canBeAdded = !logTracking || !logTracking.crafting.includes(entry.recipeId);
               }
-              return canBeAdded && entry.amount <= item.amount;
+              const ingredientEntry = entry.ingredients.find(ingredient => ingredient.id === item.id);
+              return canBeAdded && ingredientEntry.amount <= item.amount;
             }));
         }
         const uniquified = _.uniqBy(possibleEntries, 'recipeId');
