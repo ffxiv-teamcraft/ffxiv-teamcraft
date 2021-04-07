@@ -3,19 +3,19 @@ import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { ProbeReport } from '../model/probe-report';
 import { Observable } from 'rxjs';
 import { MetricType } from '../model/metric-type';
-import { PacketCaptureTrackerService } from '../../../core/electron/packet-capture-tracker.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ProbeSource } from '../model/probe-source';
 import { InventoryEventType } from '../../../model/user/inventory/inventory-event-type';
+import { InventoryService } from '../../inventory/inventory.service';
 
 export class CurrenciesProbe extends PlayerMetricProbe {
-  constructor(protected ipc: IpcService, private machina: PacketCaptureTrackerService) {
+  constructor(protected ipc: IpcService, private inventoryService: InventoryService) {
     super(ipc);
   }
 
   getReports(): Observable<ProbeReport> {
-    return this.machina.inventoryEvents$.pipe(
+    return this.inventoryService.inventoryEvents$.pipe(
       filter(patch => {
         return patch.type !== InventoryEventType.MOVED
           && patch.containerId === ContainerType.Currency;

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { PLAYER_METRICS_PROBES } from './probes/player-metric-probe';
 import { CurrenciesProbe } from './probes/currencies-probe';
 import { ItemsProbe } from './probes/items-probe';
-import { PacketCaptureTrackerService } from '../../core/electron/packet-capture-tracker.service';
 import { IpcService } from '../../core/electron/ipc.service';
 import { TotalComponent } from './display/total/total.component';
 import { METRICS_DISPLAY_FILTERS } from './filters/metrics-display-filter';
@@ -45,18 +44,19 @@ import * as fromMetricsDashboards from './+state/metrics-dashboards.reducer';
 import { MetricsDashboardsEffects } from './+state/metrics-dashboards.effects';
 import { MetricsDashboardsFacade } from './+state/metrics-dashboards.facade';
 import { GilFilter } from './filters/gil-filter';
+import { InventoryService } from '../inventory/inventory.service';
 
 const probes: Provider[] = [
   {
     provide: PLAYER_METRICS_PROBES,
     useClass: CurrenciesProbe,
-    deps: [IpcService, PacketCaptureTrackerService],
+    deps: [IpcService, InventoryService],
     multi: true
   },
   {
     provide: PLAYER_METRICS_PROBES,
     useClass: ItemsProbe,
-    deps: [IpcService, PacketCaptureTrackerService],
+    deps: [IpcService, InventoryService],
     multi: true
   }
 ];

@@ -49,13 +49,6 @@ export class IpcService {
     );
   }
 
-  public get inventoryTransactionPackets$() {
-    return this.packets$.pipe(
-      ofMessageType('inventoryTransaction'),
-      toIpcData()
-    );
-  }
-
   public get playerSetupPackets$() {
     return this.packets$.pipe(
       ofMessageType('playerSetup'),
@@ -112,13 +105,6 @@ export class IpcService {
   public get marketboardListingHistory$() {
     return this.packets$.pipe(
       ofMessageType('marketBoardItemListingHistory'),
-      toIpcData()
-    );
-  }
-
-  public get inventoryModifyHandlerPackets$() {
-    return this.packets$.pipe(
-      ofMessageType('inventoryModifyHandler'),
       toIpcData()
     );
   }
@@ -210,13 +196,6 @@ export class IpcService {
   public get updateClassInfoPackets$() {
     return this.packets$.pipe(
       ofMessageType('updateClassInfo'),
-      toIpcData()
-    );
-  }
-
-  public get currencyCrystalInfoPackets$() {
-    return this.packets$.pipe(
-      ofMessageType('currencyCrystalInfo'),
       toIpcData()
     );
   }

@@ -4,6 +4,7 @@ import { MessagingService } from './core/messaging/messaging.service';
 import { PacketCaptureTrackerService } from './core/electron/packet-capture-tracker.service';
 import { GubalService } from './core/api/gubal.service';
 import { RetainersService } from './core/electron/retainers.service';
+import { InventoryService } from './modules/inventory/inventory.service';
 
 export const APP_INITIALIZERS = [
   {
@@ -55,5 +56,15 @@ export const APP_INITIALIZERS = [
     },
     deps: [RetainersService],
     multi: true
-  }
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: (service: InventoryService) => {
+      return () => {
+        service.init();
+      };
+    },
+    deps: [InventoryService],
+    multi: true
+  },
 ];

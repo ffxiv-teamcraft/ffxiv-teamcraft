@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable, Subject } from 'rxjs';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -18,6 +17,7 @@ import { Router } from '@angular/router';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-leveling-equipment',
@@ -59,7 +59,7 @@ export class LevelingEquipmentComponent {
 
   desktop = this.platformService.isDesktop();
 
-  constructor(private inventoryFacade: InventoryFacade, private lazyData: LazyDataService,
+  constructor(private inventoryFacade: InventoryService, private lazyData: LazyDataService,
               private fb: FormBuilder, private dataService: DataService,
               private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
               private listPicker: ListPickerService, private router: Router,

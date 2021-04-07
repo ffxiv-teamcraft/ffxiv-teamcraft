@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { List } from '../../../modules/list/model/list';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-inventory-synthesis-popup',
@@ -20,7 +19,7 @@ export class InventorySynthesisPopupComponent implements OnInit {
 
   removeDone$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.removeDoneInInventorSynthesis);
 
-  constructor(private inventoryFacade: InventoryFacade, private settings: SettingsService) {
+  constructor(private inventoryFacade: InventoryService, private settings: SettingsService) {
   }
 
   setRemoveDone(remove: boolean): void {

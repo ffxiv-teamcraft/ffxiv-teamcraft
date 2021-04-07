@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
@@ -18,6 +17,7 @@ import { UnwantedMaterials } from '../optimizations/unwanted-materials';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { CanBeBought } from '../optimizations/can-be-bought';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -149,7 +149,7 @@ export class InventoryOptimizerComponent {
     }
   }
 
-  constructor(private inventoryFacade: InventoryFacade, private settings: SettingsService, private l12n: LocalizedDataService,
+  constructor(private inventoryFacade: InventoryService, private settings: SettingsService, private l12n: LocalizedDataService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
               private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
   }

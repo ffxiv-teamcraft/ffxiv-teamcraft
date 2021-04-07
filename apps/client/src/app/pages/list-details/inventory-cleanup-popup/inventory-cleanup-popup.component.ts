@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { List } from '../../../modules/list/model/list';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-inventory-cleanup-popup',
@@ -19,7 +19,7 @@ export class InventoryCleanupPopupComponent implements OnInit {
   // items are InventoryItem + needed:number
   cleanup$: Observable<InventoryItem[]>;
 
-  constructor(private inventoryFacade: InventoryFacade) {
+  constructor(private inventoryFacade: InventoryService) {
   }
 
   ngOnInit() {

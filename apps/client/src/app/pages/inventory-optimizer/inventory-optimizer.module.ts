@@ -13,7 +13,6 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
-import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
 import { Duplicates } from './optimizations/duplicates';
 import { FormsModule } from '@angular/forms';
 
@@ -29,6 +28,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { InventoryModule } from '../../modules/inventory/inventory.module';
 import { UselessHq } from './optimizations/useless-hq';
 import { AuthFacade } from '../../+state/auth.facade';
+import { InventoryService } from '../../modules/inventory/inventory.service';
 
 const optimisations: Provider[] = [
   {
@@ -40,7 +40,7 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: Duplicates,
     multi: true,
-    deps: [TranslateService, InventoryFacade, LazyDataService]
+    deps: [TranslateService, InventoryService, LazyDataService]
   },
   {
     provide: INVENTORY_OPTIMIZER,
@@ -52,7 +52,7 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: ConsolidateStacks,
     multi: true,
-    deps: [TranslateService, InventoryFacade, LazyDataService]
+    deps: [TranslateService, InventoryService, LazyDataService]
   },
   {
     provide: INVENTORY_OPTIMIZER,

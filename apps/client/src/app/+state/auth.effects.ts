@@ -15,6 +15,7 @@ import {
   MarkAsDoneInLog,
   NoLinkedCharacter,
   RegisterUser,
+  SetContentId,
   SetDefaultCharacter,
   UpdateUser,
   UserFetched,
@@ -36,7 +37,6 @@ import { LogTrackingService } from '../core/database/log-tracking.service';
 import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
-import { ApplyContentId, InventoryActionTypes } from '../modules/inventory/+state/inventory.actions';
 import { SettingsService } from '../modules/settings/settings.service';
 
 @Injectable()
@@ -182,7 +182,7 @@ export class AuthEffects {
 
   @Effect()
   selectContentId$ = this.actions$.pipe(
-    ofType<ApplyContentId>(InventoryActionTypes.ApplyContentId),
+    ofType<SetContentId>(AuthActionTypes.SetContentId),
     filter(() => this.settings.followIngameCharacterSwitches),
     withLatestFrom(this.authFacade.user$),
     map(([action, user]) => {

@@ -51,7 +51,7 @@ export enum AuthActionTypes {
 
   MarkAsDoneInLog = '[Auth] Mark as done in log',
   CommissionProfileLoaded = '[Auth] Commission Profile Loaded',
-  SetContentId = '[Auth] Set Content Id',
+  SetContentId = '[Auth] Set Content Id'
 }
 
 /// Get User AuthState

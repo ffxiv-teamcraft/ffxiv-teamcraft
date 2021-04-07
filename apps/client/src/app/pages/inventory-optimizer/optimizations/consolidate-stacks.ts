@@ -3,15 +3,15 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Memoized } from '../../../core/decorators/memoized';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 export class ConsolidateStacks extends InventoryOptimizer {
 
   static SELECTION_KEY = 'optimizer:consolidate-stacks:selection';
 
-  constructor(private translate: TranslateService, private inventoryFacade: InventoryFacade, private lazyData: LazyDataService) {
+  constructor(private translate: TranslateService, private inventoryFacade: InventoryService, private lazyData: LazyDataService) {
     super();
   }
 

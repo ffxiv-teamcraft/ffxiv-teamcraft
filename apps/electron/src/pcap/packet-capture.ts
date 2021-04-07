@@ -32,6 +32,7 @@ export class PacketCapture {
     'inventoryModifyHandler',
     'inventoryTransaction',
     'itemInfo',
+    'containerInfo',
     'logout',
     'marketBoardItemListing',
     'marketBoardItemListingCount',

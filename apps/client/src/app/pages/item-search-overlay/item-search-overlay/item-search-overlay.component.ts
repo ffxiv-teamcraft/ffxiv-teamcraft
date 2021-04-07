@@ -5,12 +5,12 @@ import { debounceTime, filter, map, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 interface Display {
   data: ListRow,
@@ -79,7 +79,7 @@ export class ItemSearchOverlayComponent {
   );
 
   constructor(private i18n: I18nToolsService, private lazyData: LazyDataService,
-              private inventoryFacade: InventoryFacade, private universalisService: UniversalisService,
+              private inventoryFacade: InventoryService, private universalisService: UniversalisService,
               private authFacade: AuthFacade, private ipc: IpcService, private translate: TranslateService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)

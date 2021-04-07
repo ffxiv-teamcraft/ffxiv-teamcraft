@@ -6,7 +6,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -16,16 +16,15 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
-import { from, Subscription } from 'rxjs';
+import { from, Observable, Subscription } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
-import { Observable } from 'rxjs';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
 import { PatreonService } from '../../../core/patreon/patreon.service';
+import { InventoryService } from '../../inventory/inventory.service';
 
 @Component({
   selector: 'app-settings-popup',
@@ -146,7 +145,7 @@ export class SettingsPopupComponent {
               private af: AngularFireAuth, private message: NzMessageService,
               public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
-              private dialog: NzModalService, private inventoryFacade: InventoryFacade,
+              private dialog: NzModalService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataService, private mappy: MappyReporterService,
               private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService) {
 

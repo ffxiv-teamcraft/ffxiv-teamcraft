@@ -3,9 +3,9 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ListRow } from '../../list/model/list-row';
 import { List } from '../../list/model/list';
-import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { InventoryService } from '../../inventory/inventory.service';
 
 @Component({
   selector: 'app-relationships',
@@ -26,7 +26,7 @@ export class RelationshipsComponent implements OnInit {
 
   public markedAsDone: { [index: number]: boolean } = {};
 
-  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryFacade,
+  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryService,
               private platform: PlatformService) {
     this.list$ = this.listsFacade.selectedList$;
   }

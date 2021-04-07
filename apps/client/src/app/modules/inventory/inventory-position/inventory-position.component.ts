@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
-import { InventoryFacade } from '../+state/inventory.facade';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ReplaySubject } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
+import { InventoryService } from '../inventory.service';
 
 @Component({
   selector: 'app-inventory-position',
@@ -44,7 +44,7 @@ export class InventoryPositionComponent {
     })
   );
 
-  constructor(private inventoryFacade: InventoryFacade) {
+  constructor(private inventoryFacade: InventoryService) {
   }
 
   private getEmptyInventory(item: ItemSearchResult): { size: [number, number, number], array: boolean[][][] } {

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { first, map } from 'rxjs/operators';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { NzModalRef } from 'ng-zorro-antd/modal';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-inventory-import-popup',
@@ -32,7 +32,7 @@ export class InventoryImportPopupComponent {
 
   public selectedContainers: string[] = [];
 
-  constructor(private inventoryFacade: InventoryFacade, private translate: TranslateService,
+  constructor(private inventoryFacade: InventoryService, private translate: TranslateService,
               private ref: NzModalRef) {
   }
 
