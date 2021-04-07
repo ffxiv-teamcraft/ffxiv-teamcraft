@@ -2380,22 +2380,31 @@
   resolved "https://registry.npmjs.org/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/pcap-ffxiv@^0.2.6":
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.2.6.tgz#b0e7a28a87f820ba338bff2355d02839aefc2973"
-  integrity sha512-Fc9ZLMGmM0/bZHHu1qKHLtwJvdF6X8lDgvyg+//UHs6SEORwWDOwoGiMzI19UsmYzLTEFZpdoFpwlawqXP3gLA==
+"@ffxiv-teamcraft/pcap-ffxiv@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.3.2.tgz#265d1a1ffb6b0109d32bf6aabc78233a76bdc11e"
+  integrity sha512-OOROvPQHPh9kEZ7xf/3AEJeSsgGlPYNxWDTK3gNS+QuW2dk8OA/sXJsuzCmH1gnOsFt/c8bEZ7dEQSh4rcBNRw==
+  dependencies:
+    heap-js "^2.1.5"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1":
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.9.2":
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.9.2.tgz#061b0a12d4f8b84c18e5b7c081b19225ebea97c7"
+  integrity sha512-DYjY7jYsVwHGOkrxViNXd5pLWbkTQ0g2oeReTlbsddEw6f4IkagkltJOgpmfyA/DLYy8EFduzNJthWQG4prTSA==
+  dependencies:
+    "@kaiu/serializer" "^1.4.0"
+
+"@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1":
   version "2.7.1"
   resolved "https://registry.npmjs.org/@ffxiv-teamcraft/simulator/-/simulator-2.7.1.tgz"
   integrity sha512-lOUAhHLAmNnYkTTLN57MKuBL0PwewIIEMRAB291VP2xigpfFg6XWMx6kykPb6KAux2z0h0Ho/hc2nbQo65iXiQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^2.10.5":
-  version "2.10.5"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.5.tgz#9f317cb38cffa66f032036c84ddff1616281428c"
-  integrity sha512-HET7DGNL9lOBo1ooBtP6K4Lxb/xdcVxEr1OB4DyCmvipwfanTadTMev3+vfM5Qd9uYiF4B/BDOcGW3I9m2KHhg==
+"@ffxiv-teamcraft/simulator@^2.10.6":
+  version "2.10.6"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.6.tgz#86cc71510561c54b463d484e93bc3c6f85cfe827"
+  integrity sha512-ZMrWTuk3gQvrRFaRAEl8VFDPMInsqBINBaWVfvNCKaaZdfnDgzw0W/GIbpIkgFLshul4TVI/pvlSmaoXRjeyrQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
@@ -9991,6 +10000,11 @@ hawk@~3.1.3:
     cryptiles "2.x.x"
     hoek "2.x.x"
     sntp "1.x.x"
+
+heap-js@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/heap-js/-/heap-js-2.1.5.tgz#43251ecdd23c632653fe783bc8bdc2b7da4baf4c"
+  integrity sha512-zJeFH1ZxUHuYG6x9+a8Dy+5kjqbKk1K8yPI1KZEdsi18VCd0UjTyJ2u9PfuIoj7t3+saMmI132rJGV33tP52VQ==
 
 hex-color-regex@^1.1.0:
   version "1.1.0"

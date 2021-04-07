@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
-import { BehaviorSubject, combineLatest, EMPTY, interval, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, interval, Observable, ReplaySubject } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { filter, map, mapTo, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { UserInventory } from '../../model/user/inventory/user-inventory';
-import { select, Store } from '@ngrx/store';
-import { inventoryQuery } from '../../modules/inventory/+state/inventory.selectors';
-import { InventoryPartialState } from '../../modules/inventory/+state/inventory.reducer';
+import { InventoryService } from '../../modules/inventory/inventory.service';
 
 export interface Retainer {
   name: string;
@@ -33,11 +30,11 @@ export class RetainersService {
 
   public retainers$ = new BehaviorSubject(JSON.parse(localStorage.getItem(RetainersService.LS_KEY) || '{}'));
 
-  private contentId$: Observable<string> = this.store.pipe(
-    select(inventoryQuery.getInventory),
-    filter(inventory => inventory !== null),
-    map((inventory: UserInventory) => inventory.contentId)
-  );
+  private contentId$ = new ReplaySubject<string>();
+
+  public set contentId(cid: string) {
+    this.contentId$.next(cid);
+  }
 
   public get retainers(): Record<string, Retainer> {
     return this.retainers$.value;
@@ -45,7 +42,7 @@ export class RetainersService {
 
   constructor(private ipc: IpcService, private settings: SettingsService,
               private translate: TranslateService, private i18n: I18nToolsService,
-              private lazyData: LazyDataService, private store: Store<InventoryPartialState>) {
+              private lazyData: LazyDataService) {
     this.settings.settingsChange$.pipe(
       filter(change => change === 'retainerTaskAlarms'),
       startWith(this.settings.retainerTaskAlarms),

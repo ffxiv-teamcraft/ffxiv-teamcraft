@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.5"></a>
+## [8.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.4...v8.1.5) (2021-04-07)
+
+
+### Bug Fixes
+
+* **desktop:** fixed search sharing button not giving the right url ([13a3441](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13a3441))
+* **leveling-equipment:** masterbook items are no longer being considered ([d19865b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d19865b))
+* **recipe-finder:** fixed an issue with some recipes not being found properly ([afefee6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/afefee6))
+* **requirements:** fixed inventory position tag not showing properly ([7128e33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7128e33))
+* **simulator:** fixed observe combo skipping with standard touch ([68f7ff8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68f7ff8))
+* **voyage-tracker:** fixed a issue with voyage tracker not loading in some cases ([046363b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/046363b))
+
+
+### Features
+
+* **data:** update for cn patch-5.4 ([4c361f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c361f0))
+* **desktop:** complete refactor of inventory tracking for better reliability ([6969332](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6969332))
+* **rotation:** added a button to generate macro in the rotation panel ([78c4892](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78c4892))
+* **simulator:** support for CN 5.4 ([e1766e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1766e7))
+
+
+
 <a name="8.1.4"></a>
 ## [8.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.3...v8.1.4) (2021-04-02)
 

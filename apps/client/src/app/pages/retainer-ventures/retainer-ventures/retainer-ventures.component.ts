@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -18,6 +17,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
 import { TranslateService } from '@ngx-translate/core';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -157,7 +157,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     tap(() => this.loading = false)
   );
 
-  constructor(private retainersService: RetainersService, private inventoryFacade: InventoryFacade,
+  constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataService, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,

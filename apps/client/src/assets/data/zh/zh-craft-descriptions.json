@@ -9,7 +9,7 @@
     "zh": "恢复30点耐久"
   },
   "100004": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100005": {
     "zh": "恢复60点耐久"
@@ -39,7 +39,7 @@
     "zh": "恢复30点耐久"
   },
   "100018": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100019": {
     "zh": "恢复60点耐久"
@@ -69,7 +69,7 @@
     "zh": "消耗耐久以推动作业进展\n效率：250\n成功率：50%"
   },
   "100034": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100035": {
     "zh": "恢复60点耐久"
@@ -99,7 +99,7 @@
     "zh": "恢复30点耐久"
   },
   "100048": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100049": {
     "zh": "恢复60点耐久"
@@ -129,7 +129,7 @@
     "zh": "消耗耐久以推动作业进展\n一定会成功\n效率：90\n成功率：100%"
   },
   "100064": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100065": {
     "zh": "恢复60点耐久"
@@ -159,7 +159,7 @@
     "zh": "恢复30点耐久"
   },
   "100078": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100079": {
     "zh": "恢复60点耐久"
@@ -186,7 +186,7 @@
     "zh": "恢复30点耐久"
   },
   "100093": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100094": {
     "zh": "恢复60点耐久"
@@ -216,10 +216,10 @@
     "zh": "恢复30点耐久"
   },
   "100108": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：50%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：50%"
   },
   "100109": {
-    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%"
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"
   },
   "100110": {
     "zh": "恢复60点耐久"
@@ -816,28 +816,28 @@
     "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
   },
   "100315": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100316": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100317": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100318": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100319": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100320": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100321": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100322": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：100%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：400\n成功率：100%"
   },
   "100323": {
     "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
@@ -912,28 +912,28 @@
     "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：100%"
   },
   "100355": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100356": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100357": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100358": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100359": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100360": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100361": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100362": {
-    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
+    "zh": "消耗耐久以提高制品品质\n不会消耗制作力，但是成功率比较低\n效率：100\n成功率：60%"
   },
   "100363": {
     "zh": "消耗耐久以推动作业进展\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),63))>500<Else/>250</If><Else/>250</If>\n成功率：50%"

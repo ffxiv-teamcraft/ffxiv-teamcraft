@@ -6,7 +6,8 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList, DeleteLists,
+  DeleteList,
+  DeleteLists,
   ListDetailsLoaded,
   LoadArchivedLists,
   LoadListDetails,
@@ -40,12 +41,12 @@ import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
 import { environment } from '../../../../environments/environment';
-import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { NavigationEnd, Router } from '@angular/router';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
+import { InventoryService } from '../../inventory/inventory.service';
 
 declare const gtag: Function;
 
@@ -186,7 +187,7 @@ export class ListsFacade {
   private overlay: boolean;
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade,
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
               private listManager: ListManagerService, private progress: ProgressPopupService) {
     router.events
@@ -229,7 +230,7 @@ export class ListsFacade {
   }
 
   deleteLists(keys: string[]): void {
-    this.store.dispatch(new DeleteLists(keys))
+    this.store.dispatch(new DeleteLists(keys));
   }
 
   newList(): Observable<List> {

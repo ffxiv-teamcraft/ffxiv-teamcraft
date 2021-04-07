@@ -43,11 +43,11 @@ import { freeCompanyActions } from '../../../../core/data/sources/free-company-a
 import { ConsumablesService } from '../../../../pages/simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../../../pages/simulator/model/free-company-actions.service';
 import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popup/marketboard-popup.component';
-import { InventoryFacade } from '../../../inventory/+state/inventory.facade';
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { InventoryService } from '../../../inventory/inventory.service';
 
 @Component({
   selector: 'app-item-row',
@@ -261,7 +261,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private notificationService: NzNotificationService,
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
-              private inventoryService: InventoryFacade,
+              private inventoryService: InventoryService,
               private simulationService: SimulationService,
               private lazyData: LazyDataService) {
     super();

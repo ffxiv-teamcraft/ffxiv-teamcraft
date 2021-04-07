@@ -44,13 +44,13 @@
                    nzType="exclamation-circle" theme="twotone"></i>
               </div>
               <app-rotation-result-tag [rotation]="rotation" [simulationSet]="simulationSet$ | async"></app-rotation-result-tag>
-              <button (click)="openMacroPopup(result.simulation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
-                      nzShape="circle"
-                      nzType="primary">
-                <span class="text-icon">XIV</span>
-              </button>
             </div>
           </ng-container>
+          <button (click)="$event.stopPropagation();openRotationMacroPopup(rotation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
+                  nzShape="circle"
+                  nzType="primary">
+            <span class="text-icon">XIV</span>
+          </button>
           <button (click)="$event.stopPropagation();renameRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 40"
                   [nzTooltipTitle]="'SIMULATOR.Rename_rotation' | translate" nz-button
                   nz-tooltip
@@ -88,7 +88,7 @@
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
               <ng-container *ngIf="user.patron || user.admin">
-                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
+                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzDropdownMenu]="menu"
                         [nzPlacement]="'bottomRight'"
                         [nzShape]="'circle'" [nzTrigger]="'click'"
                         nz-button

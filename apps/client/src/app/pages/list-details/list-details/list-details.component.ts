@@ -37,7 +37,6 @@ import { MediaObserver } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
 import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -45,6 +44,7 @@ import { DataType } from '../../../modules/list/data/data-type';
 import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-list-details',
@@ -110,7 +110,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
+              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryService,
               public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {

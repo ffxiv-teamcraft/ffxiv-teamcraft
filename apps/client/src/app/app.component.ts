@@ -42,7 +42,6 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
 import { UniversalisService } from './core/api/universalis.service';
-import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
@@ -59,6 +58,7 @@ import { UpdaterStatus } from './model/other/updater-status';
 import { RemoveAdsPopupComponent } from './modules/ads/remove-ads-popup/remove-ads-popup.component';
 import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop.facade';
 import { Language } from './core/data/language';
+import { InventoryService } from './modules/inventory/inventory.service';
 
 declare const gtag: Function;
 
@@ -179,7 +179,7 @@ export class AppComponent implements OnInit {
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryFacade, @Inject(PLATFORM_ID) private platform: Object,
+              private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
@@ -242,7 +242,6 @@ export class AppComponent implements OnInit {
         );
         this.universalis.initCapture();
       }
-      this.inventoryService.load();
       this.freeCompanyWorkshopFacade.init();
 
       this.firebase.object<boolean>('maintenance')
@@ -444,7 +443,8 @@ export class AppComponent implements OnInit {
         this.lazyData.data$
           .pipe(
             filter(data => data !== undefined),
-            first()
+            first(),
+            delay(5000)
           )
           .subscribe(() => {
             if (this.settings.xivapiKey && this.settings.enableMappy) {

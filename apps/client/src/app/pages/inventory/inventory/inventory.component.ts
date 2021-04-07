@@ -7,13 +7,13 @@ import { UniversalisService } from '../../../core/api/universalis.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
+import { InventoryService } from '../../../modules/inventory/inventory.service';
 
 @Component({
   selector: 'app-inventory',
@@ -127,7 +127,7 @@ export class InventoryComponent {
     })
   );
 
-  constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
+  constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private lazyData: LazyDataService) {
@@ -174,7 +174,7 @@ export class InventoryComponent {
         return inventory;
       })
     ).subscribe(inventory => {
-      this.inventoryService.updateInventory(inventory, true);
+      this.inventoryService.setInventory(inventory);
     });
   }
 

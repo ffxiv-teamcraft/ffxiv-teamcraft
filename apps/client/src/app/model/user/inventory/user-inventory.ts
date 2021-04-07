@@ -67,10 +67,10 @@ export class UserInventory extends DataModel {
     if (!this.items[contentId] && contentId) {
       this.items[contentId] = {};
     }
-    delete this.searchCache;
+    this.resetSearchCache();
   }
 
-  private searchCache: ItemSearchResult[];
+  private searchCache: ItemSearchResult[] = [];
 
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
@@ -98,7 +98,7 @@ export class UserInventory extends DataModel {
   }
 
   updateInventorySlot(packet: UpdateInventorySlot | InventoryTransaction, lastSpawnedRetainer: string): InventoryPatch | null {
-    delete this.searchCache;
+    this.resetSearchCache();
     if (!this.items[this.contentId]) {
       return null;
     }
@@ -156,7 +156,7 @@ export class UserInventory extends DataModel {
   }
 
   operateTransaction(packet: InventoryModifyHandler, lastSpawnedRetainer: string): InventoryPatch | null {
-    delete this.searchCache;
+    this.resetSearchCache();
     if (!this.items[this.contentId]) {
       return null;
     }
@@ -269,6 +269,10 @@ export class UserInventory extends DataModel {
     });
   }
 
+  resetSearchCache(): void {
+    this.searchCache = [];
+  }
+
   clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
@@ -279,7 +283,7 @@ export class UserInventory extends DataModel {
   }
 
   private generateSearchCacheIfNeeded(): void {
-    if (!this.searchCache) {
+    if (!this.searchCache || this.searchCache.length === 0) {
       this.searchCache = Object.keys(this.items)
         .filter(key => key !== 'ignored')
         .map(key => {
