@@ -402,6 +402,9 @@ export class InventoryService {
     if (isRetainer && !retainer) {
       return inventory;
     }
+    if (!inventory.items[inventory.contentId]) {
+      inventory.items[inventory.contentId] = {};
+    }
     inventory.items[inventory.contentId][containerKey] = {};
 
     itemInfos.forEach(itemInfo => {
