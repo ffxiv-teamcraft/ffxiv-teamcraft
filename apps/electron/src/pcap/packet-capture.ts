@@ -5,7 +5,7 @@ import { join } from 'path';
 import { app } from 'electron';
 import * as isDev from 'electron-is-dev';
 import * as log from 'electron-log';
-import { CaptureInterface, CaptureInterfaceOptions } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { CaptureInterface, CaptureInterfaceOptions, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class PacketCapture {
 
@@ -103,9 +103,14 @@ export class PacketCapture {
     exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${PacketCapture.MACHINA_EXE_PATH}" enable=yes`);
   }
 
-  sendToRenderer(packet: any): void {
+  sendToRenderer(packet: Message): void {
     if (this.mainWindow?.win) {
-      this.mainWindow.win.webContents.send('packet', packet);
+      try {
+        this.mainWindow.win.webContents.send('packet', packet);
+      } catch (e) {
+        log.error(packet);
+        log.error(e);
+      }
     }
   }
 

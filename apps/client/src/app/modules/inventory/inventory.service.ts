@@ -139,6 +139,9 @@ export class InventoryService {
         const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
         return merge(packetActions$, customActions$).pipe(
           scan((state: InventoryState, action) => {
+            if (!action) {
+              return state;
+            }
             switch (action.type) {
               case 'SetContentId':
                 state.inventory.contentId = action.contentId;
@@ -378,7 +381,7 @@ export class InventoryService {
       }),
       first()
     ).subscribe(result => {
-      this.contentId$.next(result);
+      this.contentId$.next({ type: 'SetContentId', contentId: result });
     });
   }
 
@@ -398,6 +401,9 @@ export class InventoryService {
     }
     if (isRetainer && !retainer) {
       return inventory;
+    }
+    if (!inventory.items[inventory.contentId]) {
+      inventory.items[inventory.contentId] = {};
     }
     inventory.items[inventory.contentId][containerKey] = {};
 

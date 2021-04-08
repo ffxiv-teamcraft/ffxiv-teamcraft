@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.6"></a>
+## [8.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.5...v8.1.6) (2021-04-08)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an error popup that could happen during some fights ([61f189b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61f189b))
+* **desktop:** fixed an error with new contentId inventory tracking ([b41d610](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b41d610))
+* **desktop:** fixed character detection ([8cc645f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8cc645f))
+* **desktop:** fixed inventory tracking issues with skipped containers and missing items ([f7d178e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7d178e))
+* **simulator:** fixed standard touch combo ([0e288c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e288c6))
+
+
+
 <a name="8.1.5"></a>
 ## [8.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.4...v8.1.5) (2021-04-07)
 
