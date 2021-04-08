@@ -381,7 +381,7 @@ export class InventoryService {
       }),
       first()
     ).subscribe(result => {
-      this.contentId$.next(result);
+      this.contentId$.next({ type: 'SetContentId', contentId: result });
     });
   }
 
