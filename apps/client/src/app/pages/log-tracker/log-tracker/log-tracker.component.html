@@ -2,8 +2,14 @@
            nzAnimated="false">
   <nz-tab [nzTitle]="'Game_Term/DoH' | translate">
     <ng-template nz-tab>
+      <ng-template #hideCompletedToggle>
+        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
+          <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+        </div>
+      </ng-template>
       <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id" nzAnimated="false"
-                 nzSize="small">
+                 nzSize="small" [nzTabBarExtraContent]="hideCompletedToggle">
         <nz-tab *ngFor="let tab of dohTabs; let index = index" [nzTitle]="titleTemplate">
           <ng-template #titleTemplate>
             <img [class.small-icon]="false | ifMobile: true" [src]="getDohIcon(index)" alt=""
@@ -35,10 +41,6 @@
                       <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
                         <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
                       </button>
-                      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-                        <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
-                        <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
-                      </div>
                     </div>
                     <ng-container *ngFor="let recipe of page.recipes">
                       <div *ngIf="!userCompletion[recipe.recipeId] || !hideCompleted" fxLayout="row"
