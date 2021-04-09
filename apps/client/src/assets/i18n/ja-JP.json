@@ -175,9 +175,9 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Support us on patreon to remove ads",
-    "Support_us": "Support us",
-    "Show_more": "Show more"
+    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
+    "Support_us": "サポート",
+    "Show_more": "詳細を表示"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -462,10 +462,10 @@
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "グループ指定ができてないアラーム前にグループアラームを表示",
     "Disconnect_patreon": "Patreon連結を切る",
-    "Export_settings": "Export settings",
-    "Import_settings": "Import settings",
-    "Import_successful": "Settings imported",
-    "Import_error": "Error while trying to import settings",
+    "Export_settings": "設定をエクスポート(取り出す)",
+    "Import_settings": "設定をインポート(持ってくる)",
+    "Import_successful": "設定を呼び出しました。",
+    "Import_error": "設定を呼び出す途中で、エラーが起こされました。",
     "Has_access_to_housing_vendor": "Prioritize housing vendor",
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Hide back button in sidebar",
