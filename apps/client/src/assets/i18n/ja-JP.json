@@ -718,7 +718,7 @@
       "Reorder_panels": "パネルの並べ替え",
       "Select_preview_list": "プレビューするレイアウトをリストから選択",
       "Hidden_if_empty": "空欄の場合は隠す",
-      "Collapsed_by_default": "Collapsed by default",
+      "Collapsed_by_default": "リスト隠しをデフォルトとして設定",
       "No_preview": "No list preview",
       "Please_pick_list": "Please pick a list using the select box above",
       "Layouts": "Layouts",
