@@ -494,7 +494,7 @@
       "Inventory_tracking": "所持品同期化",
       "Character_tracking": "キャラクター同期化",
       "Tooling": "高級",
-      "Import_export": "Import/export",
+      "Import_export": "インポート/エクスポート(持ってくる/取り出す)",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -506,7 +506,7 @@
   "PROFILE": {
     "Account": "アカウント",
     "Add_character": "キャラクターを追加する",
-    "Remove_character": "Remove this character",
+    "Remove_character": "このキャラクターを削除",
     "Jobs": "ジョブ",
     "Stats": "サブステ",
     "View_on_apkallu_falls": "アプカル・フォールズに開く",
@@ -631,7 +631,7 @@
       "Attach": "製作ローテーション連動",
       "Detach": "製作ローテーション連動",
       "Click_to_copy_macro": "マクロのコピーポップアップページを開く",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "ローテーションオーバーレイを開く"
     },
     "INVENTORY": {
       "Show_final_items": "最終アイテムの表示",
@@ -716,8 +716,8 @@
       "Menu": "メニュー",
       "Edit_row_buttons_display": "行ボタンの編集画面",
       "Reorder_panels": "パネルの並べ替え",
-      "Select_preview_list": "Select list to preview layout",
-      "Hidden_if_empty": "Hidden if empty",
+      "Select_preview_list": "プレビューするレイアウトをリストから選択",
+      "Hidden_if_empty": "空欄の場合は隠す",
       "Collapsed_by_default": "Collapsed by default",
       "No_preview": "No list preview",
       "Please_pick_list": "Please pick a list using the select box above",
