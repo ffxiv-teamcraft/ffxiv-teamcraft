@@ -1924,20 +1924,20 @@
       "Threshold_amount": "限界値"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Title": "品質下げを利用して整理出来るHQアイテム",
+      "Message": "NQ素材と合わせる:{{containers}}",
+      "Filter": "該当バージョン素材のみ表示: ",
+      "Placeholder": "ゲームバージョン選択"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
-      "Company_workshop": "Company Workshop"
+      "Title": "低いilvl(アイテムレベル)アイテムだけを作られる古い素材",
+      "Message": "この素材を使って作られるアイテムの最大アイテムレベルは{{ilvl}} です",
+      "Recipe_ilvl": "最低ilvl(アイテムレベル) 結果",
+      "Company_workshop": "フリーカンパニー製作設備"
     },
     "CAN_BE_GATHERED_EASILY": {
       "Title": "簡単に採集できるアイテム",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Message": "{{level}} レベル一般採集ノードで採集できます"
     },
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
