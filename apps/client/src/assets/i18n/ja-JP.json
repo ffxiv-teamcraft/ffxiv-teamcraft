@@ -1889,9 +1889,9 @@
       "RetainerMarket": "リテイナーが出品中"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
+      "Description": "マルチキャラクター同期化と他の素敵な機能を使いたいのでしたら、TCは現在プレイ中のキャラクターまたは同期化を望むキャラクターがどれかを知る必要があります",
+      "Linked": "連結済み",
+      "Linked_tooltip": "このキャラクターは既に別のゲーム内キャラクターと連結されています。選択すれば他のキャラクターとの連結が解除されます",
       "Override_link_confirmation": "Are you sure you want to override this link?",
       "Ignore": "Ignore this ingame character",
       "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
