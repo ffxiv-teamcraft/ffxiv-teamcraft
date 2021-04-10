@@ -1940,8 +1940,8 @@
       "Message": "{{level}} レベル一般採集ノードで採集できます"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
-      "Message": "You can extract a materia from this gear piece"
+      "Title": "錬精度が100%の装備からマテリアを精製できます",
+      "Message": "この装備からマテリアを精製できます"
     },
     "USELESS_HQ": {
       "Title": "Items you don't need HQ because you can use Trained Eye",
