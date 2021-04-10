@@ -1861,7 +1861,7 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}}に変更することをおすすめします",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "地域を正しく変更すると、データベース、シミュレーター、パケットキャプチャなどの機能をもっと便利に使用できます",
     "Button_label": "地域を変更"
   },
   "INVENTORY": {
