@@ -1944,8 +1944,8 @@
       "Message": "この装備からマテリアを精製できます"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Title": "このアイテムは「匠の早業」を使用できますのでHQ素材を要求しません",
+      "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
     }
   },
   "VERSION_LOCK": {
@@ -1958,23 +1958,23 @@
     "View_gearset": "ギアセットを見る",
     "Edit_gearset": "ギアセットを編集",
     "generate_list": "リストを生成",
-    "Content": "Content",
+    "Content": "詳細内容",
     "Stat_name": "サブステ名",
-    "Current_value": "Current",
-    "Cap_value": "Cap",
+    "Current_value": "現在",
+    "Cap_value": "禁断最大値",
     "Add_materia": "マテリアを装着する",
-    "No_materia": "No materia",
-    "Value": "Value",
+    "No_materia": "マテリアなし",
+    "Value": "合計",
     "Empty_slot": "空のスロット",
     "Filters": "フィルター",
-    "Total_stats": "Total stats",
-    "Total_materias_needed": "Total materias needed",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_stats": "最終ステータス",
+    "Total_materias_needed": "必要なマテリアの合計",
+    "Total_cost": "コスト合計(スクリップ、ギル等々)",
     "Materia": "マテリア",
     "Amount_needed": "数量",
     "Cost": "価格",
     "Modal_editor": "{{itemName}} のマテリア",
-    "Unavailable_slot": "Slot not available",
+    "Unavailable_slot": "このスロットに使用できません",
     "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Pick a job",
     "New_gearset": "新しいギアセット",
