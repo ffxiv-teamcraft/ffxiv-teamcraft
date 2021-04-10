@@ -467,7 +467,7 @@
     "Import_successful": "設定を呼び出しました。",
     "Import_error": "設定を呼び出す途中で、エラーが起こされました。",
     "Has_access_to_housing_vendor": "ハウジングNPC優先順位",
-    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Has_access_to_housing_vendor_explain": "NPCグループ化システムのハウジングNPC優先順位は利用が可能ならば便利です。",
     "Hide_back_button": "サイドバーの戻るボタンを隠す",
     "COLORS": {
       "Background": "背景色",
@@ -719,11 +719,11 @@
       "Select_preview_list": "プレビューするレイアウトをリストから選択",
       "Hidden_if_empty": "空欄の場合は隠す",
       "Collapsed_by_default": "リスト隠しをデフォルトとして設定",
-      "No_preview": "No list preview",
-      "Please_pick_list": "Please pick a list using the select box above",
-      "Layouts": "Layouts",
-      "Want_to_learn_more": "Want to learn more about layouts and how they work?",
-      "Open_wiki_page": "Open the layouts system wiki page",
+      "No_preview": "プレビューするリストがありません",
+      "Please_pick_list": "上の選択ボックスを使ってリストを選択してください",
+      "Layouts": "レイアウト",
+      "Want_to_learn_more": "レイアウトとその使い方に関してもっと知りたいですか？",
+      "Open_wiki_page": "レイアウトシステムWikiページを開く",
       "ITEMS": {
         "COMMENTS": "コメント",
         "COPY_NAME_NOT_FAVORITE": "お気に入りでないコピーモード",
@@ -1283,7 +1283,7 @@
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
     "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
-    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
+    "Possible_update_issue": "ダウンロードに問題があります。このアイコンをクリックして最新バージョンを設置してください"
   },
   "LOG_TRACKER": {
     "Title": "制作/採集手帳トラッカー",
@@ -1548,7 +1548,7 @@
         "Last_report": "最近報告",
         "Fish": "魚",
         "Size": "サイズ",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "キャスティング使用後時間",
         "ERRORS": {
           "No_bait": "餌が確認されません。修正の為に餌を一度変えてください",
           "No_stats": "能力値を確認できませんでした。漁師にまた変更してこれを解決してください。"
@@ -1781,8 +1781,8 @@
     "Sort_asc": "昇順",
     "Sort_desc": "降順",
     "Add_stat_filter": "ステータスフィルタの追加",
-    "Job": "Job",
-    "Class": "Class",
+    "Job": "ジョブ",
+    "Class": "クラス",
     "Land": "DoL",
     "Hand": "DoH",
     "Type": "Type",
