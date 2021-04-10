@@ -1876,7 +1876,7 @@
     "Clean_all": "全所持品の初期化",
     "Search_for_an_item": "所持状況を確認",
     "Filter_by_expansion": "拡張パッケージで絞り込む",
-    "In_x_containers": "In {{amount}} containers",
+    "In_x_containers": "リテイナー内で{{amount}}個あります",
     "New_character_detected": "新しいキャラクターが検出されました",
     "Unknown_position": "不明な位置",
     "BAG": {
@@ -1892,27 +1892,27 @@
       "Description": "マルチキャラクター同期化と他の素敵な機能を使いたいのでしたら、TCは現在プレイ中のキャラクターまたは同期化を望むキャラクターがどれかを知る必要があります",
       "Linked": "連結済み",
       "Linked_tooltip": "このキャラクターは既に別のゲーム内キャラクターと連結されています。選択すれば他のキャラクターとの連結が解除されます",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Override_link_confirmation": "本当に連結を解除しますか？",
+      "Ignore": "このゲーム内キャラクターを無視",
+      "You_can_reset_ignore": "デスクトップアプリの設定で無視されたキャラクターを初期化できます",
+      "Tip": "現在プレイ中のキャラクターが既に連結されたなら検出されたキャラクターを安全に無視できます。どんな理由であれキャラクターファイルが修正される可能性がありTCはこのようなファイル変更を検出します。まだ設定してないキャラクターファイルの変更が検出されました。"
     }
   },
   "INVENTORY_OPTIMIZER": {
     "Title": "所持品せいとん",
     "Ignore_item": "このアイテムではこのヒントは無視する",
     "Remove_ignore_item": "このアイテムではこのヒントは無視しない",
-    "Ignore_container": "Ignore this tip for this container",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
-    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
+    "Ignore_container": "このリテイナーはこのヒントを無視する",
+    "Hide_optimizer": "隠す",
+    "Unhide_optimizer": "隠し解除",
+    "Remove_ignore_container": "このリテイナーはこのヒントを無視しない",
     "Show_ignored": "無視された項目を示す",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "隠してる項目表示",
     "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation.",
-      "Max_price": "Maximum price"
+      "Message": "購入可能: ギル / 購入条件: 蛮族クエスト解放",
+      "Max_price": "最高価格"
     },
     "DUPLICATES": {
       "Title": "アイテムが複数の場所に分散されています",
