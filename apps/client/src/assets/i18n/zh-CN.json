@@ -2509,21 +2509,21 @@
     "Select_retainer": "选择一名雇员"
   },
   "PATREON": {
-    "By_supporting_us": "在 Patreon 支持我们后可以获得：",
-    "No_ads": "No more ads inside the topbar",
-    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
-    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
-    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
-    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
-    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
+    "By_supporting_us": "在 Patreon 赞助我们后可以获得：",
+    "No_ads": "不再显示顶栏中的广告",
+    "Exclusive_discord_role": "专属的 Discord 角色和仅供赞助者使用的频道",
+    "Your_name_in_loading_screen": "在加载过程中显示你的名字（需要申请）",
+    "Goodies": "免费的贴纸、T恤和海报（取决于赞助级别）",
+    "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
+    "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
     "Already_supporter": "已经成为支持者？",
-    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 账号，以验证赞助情况并自动禁用广告。"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
     "Already_supporting": "已经是一个patreon赞助者？请确保您将您的帐户在设置中链接到怕patreon",
     "PATREON_BENEFITS": {
-      "No_ads": "Ads-free Teamcraft experience",
+      "No_ads": "无广告的 Teamcraft 界面",
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
       "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
@@ -2569,14 +2569,14 @@
       "Condition": "Condition"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "性能"
     },
     "STATS": {
       "Surveillance": "Surveillance",
-      "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Retrieval": "收集性能",
+      "Speed": "巡航速度",
+      "Range": "航行距离",
+      "Favor": "恩惠"
     }
   },
   "AIRSHIP": {
