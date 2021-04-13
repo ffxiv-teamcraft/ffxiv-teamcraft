@@ -1,7 +1,13 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed an error popup that could happen during some fights.
-* **desktop:** fixed an error with new contentId inventory tracking.
-* **desktop:** fixed character detection.
-* **desktop:** fixed inventory tracking issues with skipped containers and missing items.
-* **simulator:** fixed standard touch combo.`;
+* **desktop:** fixed a possible issue with packet transmission.
+* **desktop:** fixed automated character switching following ingame switched.
+* **desktop:** fixed high CPU usage from MachinaWrapper process.
+* **log-tracker:** fixed wrong label for hookset in fishing log.
+* **log-tracker:** moved "hide completed" toggle to the tabs header for DoH section.
+
+
+### Features
+
+* **db:** added 5.5 content.
+* **leveling-equipment:** now displays full job name instead of abbreviation.`;
