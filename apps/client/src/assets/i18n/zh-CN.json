@@ -19,7 +19,7 @@
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
-  "Selection": "Selection",
+  "Selection": "已选中",
   "Change_character": "角色",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
@@ -207,8 +207,8 @@
     "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟",
     "Delete_all": "删除所有闹钟",
     "Delete_alarm": "删除闹钟",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
+    "Regenerating_alarms": "正在重新生成闹钟 ...",
+    "Regenerate": "重新生成闹钟",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
     "REALTIME": {
@@ -608,9 +608,9 @@
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
     "Final_item": "终产物",
     "Include_final_items_in_main_layout": "在主布局中包含终产物",
-    "Can_skip_buying_X": "Can skip {{amount}}",
-    "Can_skip_buying_entirely": "Can skip entirely",
-    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Can_skip_buying_X": "可以跳过 {{amount}} 个",
+    "Can_skip_buying_entirely": "可以全部跳过",
+    "Can_skip_tooltip": "其他可以购买的物品需要此物品。这意味着如果你计划购买面板中所有的其他物品，就可以少购买或直接忽略此物品。",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -631,7 +631,7 @@
       "Attach": "附加手法",
       "Detach": "删去手法",
       "Click_to_copy_macro": "点击打开“复制宏”弹出框",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "在手法悬浮窗中打开"
     },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
@@ -699,8 +699,8 @@
     "Split_list": "拆分此清单",
     "Create_commission": "为此清单创建委托",
     "Commission_list": "委托列表",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Inventory_cleanup": "清理物品栏",
+    "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -718,9 +718,9 @@
       "Reorder_panels": "重排面板",
       "Select_preview_list": "Select list to preview layout",
       "Hidden_if_empty": "隐藏空栏",
-      "Collapsed_by_default": "Collapsed by default",
-      "No_preview": "No list preview",
-      "Please_pick_list": "Please pick a list using the select box above",
+      "Collapsed_by_default": "默认折叠",
+      "No_preview": "没有清单预览",
+      "Please_pick_list": "请在上方选择框选择一个清单",
       "Layouts": "布局",
       "Want_to_learn_more": "想了解更多关于布局和它们如何工作的信息？",
       "Open_wiki_page": "打开布局系统的wiki页面",
@@ -860,7 +860,7 @@
     "Spawned_for": "在 {{timer}} 后消失",
     "Will_spawn_in": "在 {{timer}} 后出现",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
+    "Legendary": "传奇",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -923,10 +923,10 @@
     "Break_on_reclaim": "在无法使用回收前拆分宏",
     "Break_before_byregots_blessing": "在“比尔格的祝福”前拆分宏",
     "Include_consumables_notification": "添加消耗品提示",
-    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
+    "Include_consumables_notification_wait_time": "消耗品提示后的等待时间",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
-    "Completion_message": "Completion message",
+    "Completion_message": "执行完成提示信息",
     "Import_macro": "从用户宏导入",
     "Ingame_macro": "用户宏",
     "Min_stats": "最低面板属性",
@@ -1283,7 +1283,7 @@
     "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。",
     "Downloading_update": "正在下载更新，完成后会提醒您进行安装",
-    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
+    "Possible_update_issue": "下载过程中遇到问题，请点击此图标下载最新的安装包。"
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "分解指南",
     "Job": "职业",
-    "Level": "Desynth level",
+    "Level": "分解技能",
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
@@ -1491,7 +1491,7 @@
       "Required_control": "需要加工精度",
       "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
       "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "Item_series": "套装详情"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1878,7 +1878,7 @@
     "Filter_by_expansion": "按版本筛选",
     "In_x_containers": "在 {{amount}} 个物品栏中",
     "New_character_detected": "检测到新角色",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "未知位置",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "部队储物柜",
@@ -1895,7 +1895,7 @@
       "Override_link_confirmation": "确定要覆盖关联吗？",
       "Ignore": "忽略此游戏角色",
       "You_can_reset_ignore": "在客户端设置中可以重置被忽略的角色",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "如果你已经关联了正在游玩的角色，则可以放心忽略此角色。Teamcraft 会监测文件变化。某些尚未关联的文件会因未知原因改变并触发此设置。"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1964,7 +1964,7 @@
     "Cap_value": "上限",
     "Add_materia": "添加魔晶石",
     "No_materia": "无魔晶石",
-    "Value": "值",
+    "Value": "数值",
     "Empty_slot": "空栏位",
     "Filters": "筛选",
     "Total_stats": "总属性",
@@ -1972,7 +1972,7 @@
     "Total_cost": "总成本 (兑换、金币等)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
-    "Cost": "Cost",
+    "Cost": "消耗",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
     "Warning_job_switch": "切换职业将会卸下灵魂水晶、主副手武器和魔晶石。如果你想使用相同的镶嵌方案，请在切换前做好记录。",
@@ -2014,7 +2014,7 @@
     "Create_commission": "为此配装创建委托",
     "Value_for_next": "下一临界值",
     "Value_for_previous": "上一临界值",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "本地编辑模式",
     "Editing_others_gearset_description": "您目前正在编辑他人的配装。除非您点击上面的保存按钮来创建您自己的副本，否则任何东西都不会被保存。",
     "SLOT": {
       "Body": "身体",
@@ -2173,7 +2173,7 @@
   "ADMIN": {
     "Autofix_error": "自动修复此错误",
     "USERS": {
-      "Title": "Users",
+      "Title": "用户",
       "X_characters_linked": "已关联 {{amount}} 个角色",
       "Email": "电子邮箱",
       "Uid": "UID",
@@ -2227,7 +2227,7 @@
     "TABLE": {
       "Type": "类型",
       "Entry_label": "标签",
-      "Value": "Value",
+      "Value": "数值",
       "Source": "来源",
       "Timestamp": "时间信息"
     },
@@ -2464,8 +2464,8 @@
     "Last_bnpc_update": "最后上传的怪物位置",
     "Last_node_update": "最后上传的节点位置",
     "Clear_map": "清空此地图",
-    "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
+    "Dashboard": "Mappy 仪表盘",
+    "Open_details": "打开详情页",
     "X_Missing_nodes": "{{amount}} 缺失的节点",
     "Missing_nodes": "缺失节点",
     "No_missing_nodes": "无缺失节点",
@@ -2481,11 +2481,11 @@
     "Include_crafting": "包含制作装备",
     "Include_purchases": "包含购买装备",
     "Include_trades": "包含交换装备",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Description": "选择希望装备的职业和等级，设置过滤条件并点击搜索来找到合适的练级装备",
     "Generate_list": "生成清单",
     "Empty_slot": "空栏位",
     "In_inventory": "已拥有",
-    "Only_inventory": "仅考虑物品栏中的物品",
+    "Only_inventory": "仅考虑已有物品",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
