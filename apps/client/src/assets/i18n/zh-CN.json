@@ -461,13 +461,13 @@
     "Show_other_characters_inventories_in_list": "在清单中显示其他角色的物品栏",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
-    "Disconnect_patreon": "Disconnect from patreon",
+    "Disconnect_patreon": "取消与 Patreon 的连接",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
     "Import_successful": "设置已导入！",
     "Import_error": "尝试导入设置时出错",
     "Has_access_to_housing_vendor": "优先使用房屋专属商人",
-    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Has_access_to_housing_vendor_explain": "在 “按 NPC 显示” 时优先使用房屋专属商人。在拥有房屋时非常有用。",
     "Hide_back_button": "在侧边栏隐藏返回按钮",
     "COLORS": {
       "Background": "背景颜色",
@@ -491,9 +491,9 @@
       "Lists": "清单",
       "Alarms": "闹钟",
       "Other": "其他",
-      "Inventory_tracking": "Inventory tracking",
-      "Character_tracking": "Character tracking",
-      "Tooling": "Tooling",
+      "Inventory_tracking": "任务栏追踪",
+      "Character_tracking": "角色追踪",
+      "Tooling": "工具",
       "Import_export": "导入/导出",
       "Sekrit": "Sekrit"
     },
@@ -2509,14 +2509,14 @@
     "Select_retainer": "选择一名雇员"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
+    "By_supporting_us": "在 Patreon 支持我们后可以获得：",
     "No_ads": "No more ads inside the topbar",
     "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
     "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
     "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
     "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
     "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
-    "Already_supporter": "Already a supporter?",
+    "Already_supporter": "已经成为支持者？",
     "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
