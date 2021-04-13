@@ -453,7 +453,7 @@
     "Rawsock_flag": "使用 RawSocket 抓包",
     "Rawsock_details": "不使用 npcap 的话，可以使用 RawSocket 抓包，可能对 VPN 的网络连接有所帮助。但用 RawSocket 抓包会更不稳定一些，而且你需要用管理员权限启动 TC。",
     "Favorite_features": "收藏功能",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
+    "Favorite_features_explain": "希望在侧边栏收藏部分显示的功能",
     "Clear_inventory_on_startup": "启动时清空物品栏",
     "Switch_tc_when_switch_ingame_character": "在切换游戏角色时自动切换 Teamcraft 角色",
     "Reset_ignored_characters": "重置已忽略的角色",
@@ -461,13 +461,13 @@
     "Show_other_characters_inventories_in_list": "在清单中显示其他角色的物品栏",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
-    "Disconnect_patreon": "Disconnect from patreon",
+    "Disconnect_patreon": "取消与 Patreon 的连接",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
     "Import_successful": "设置已导入！",
     "Import_error": "尝试导入设置时出错",
-    "Has_access_to_housing_vendor": "Prioritize housing vendor",
-    "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
+    "Has_access_to_housing_vendor": "优先使用房屋专属商人",
+    "Has_access_to_housing_vendor_explain": "在 “按 NPC 显示” 时优先使用房屋专属商人。在拥有房屋时非常有用。",
     "Hide_back_button": "在侧边栏隐藏返回按钮",
     "COLORS": {
       "Background": "背景颜色",
@@ -491,9 +491,9 @@
       "Lists": "清单",
       "Alarms": "闹钟",
       "Other": "其他",
-      "Inventory_tracking": "Inventory tracking",
-      "Character_tracking": "Character tracking",
-      "Tooling": "Tooling",
+      "Inventory_tracking": "任务栏追踪",
+      "Character_tracking": "角色追踪",
+      "Tooling": "工具",
       "Import_export": "导入/导出",
       "Sekrit": "Sekrit"
     },
@@ -2509,21 +2509,21 @@
     "Select_retainer": "选择一名雇员"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
-    "No_ads": "No more ads inside the topbar",
-    "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
-    "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
-    "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
-    "Starting_at_X": "Starting at ${{monthly}} per month or ${{yearly}} per year",
-    "Footer_text": "As little as $1 a month has a significant impact on Teamcraft's development and brings me closer to my dream of becoming a full-time developer on this project and expanding it beyond just being a tool for FFXIV.",
-    "Already_supporter": "Already a supporter?",
-    "Disable_ads_explanation": "To disable ads, connect with your patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "By_supporting_us": "在 Patreon 赞助我们后可以获得：",
+    "No_ads": "不再显示顶栏中的广告",
+    "Exclusive_discord_role": "专属的 Discord 角色和仅供赞助者使用的频道",
+    "Your_name_in_loading_screen": "在加载过程中显示你的名字（需要申请）",
+    "Goodies": "免费的贴纸、T恤和海报（取决于赞助级别）",
+    "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
+    "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
+    "Already_supporter": "已经成为支持者？",
+    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 账号，以验证赞助情况并自动禁用广告。"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
     "Already_supporting": "已经是一个patreon赞助者？请确保您将您的帐户在设置中链接到怕patreon",
     "PATREON_BENEFITS": {
-      "No_ads": "Ads-free Teamcraft experience",
+      "No_ads": "无广告的 Teamcraft 界面",
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
       "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
@@ -2534,7 +2534,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "使用数据包捕获导入",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. 前往部队工坊<br>2. 通过航行管制面板与每艘飞空艇/潜水艇互动",
     "Airships": "飞空艇",
     "Submersibles": "潜水艇"
   },
@@ -2547,12 +2547,12 @@
     "Voyage_complete": "探索完成",
     "No_airship": "无飞空艇",
     "No_submersible": "无潜水艇",
-    "Sectors_discovered": "Sectors discovered",
+    "Sectors_discovered": "已开放的区域",
     "Delete_free_company": "删除部队",
     "Name_column": "Name",
-    "Return_time_column": "Return time",
-    "Remaining_time_column": "Remaining time",
-    "Rank_column": "Rank",
+    "Return_time_column": "返航时间",
+    "Remaining_time_column": "剩余时间",
+    "Rank_column": "等级",
     "Build_column": "Build",
     "Voyage_column": "Voyage",
     "Nothing_to_show": "Nothing to show",
@@ -2569,14 +2569,14 @@
       "Condition": "Condition"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "性能"
     },
     "STATS": {
       "Surveillance": "Surveillance",
-      "Retrieval": "Retrieval",
-      "Speed": "Speed",
-      "Range": "Range",
-      "Favor": "Favor"
+      "Retrieval": "收集性能",
+      "Speed": "巡航速度",
+      "Range": "航行距离",
+      "Favor": "恩惠"
     }
   },
   "AIRSHIP": {
