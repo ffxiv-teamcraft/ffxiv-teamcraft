@@ -2261,7 +2261,7 @@
         "GilFilter": "Accepts only Gil entries"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
+        "total": "汇总数据",
         "histogram": "Evolution over time",
         "pie-chart": "饼图",
         "table": "Table of all matching entries"
@@ -2337,7 +2337,7 @@
       "Only_crafting": "仅限制作",
       "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
       "Only_materials": "只看材料",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_requires_materials": "此委托只需要清单中的材料",
       "Contact_info": "联系方式",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
       "Contact_info_required_error": "请填写联系方式",
@@ -2459,28 +2459,28 @@
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
+    "Total_entries": "总项目",
+    "Last_updated": "最新更新",
+    "Last_bnpc_update": "最后上传的怪物位置",
+    "Last_node_update": "最后上传的节点位置",
+    "Clear_map": "清空此地图",
     "Dashboard": "Mappy Dashboard",
     "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "X_Missing_nodes": "{{amount}} 缺失的节点",
+    "Missing_nodes": "缺失节点",
+    "No_missing_nodes": "无缺失节点",
+    "Only_missing_nodes": "只显示有缺失节点的地图"
   },
   "WORKSHOP_TREE": {
     "Title": "Workshop recipe tree",
     "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
+    "Phase": "第 {{phase}} 阶段"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_purchases": "Include purchases",
-    "Include_trades": "Include trades",
+    "Title": "练级装备",
+    "Include_crafting": "包含制作装备",
+    "Include_purchases": "包含购买装备",
+    "Include_trades": "包含交换装备",
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
     "Generate_list": "生成清单",
     "Empty_slot": "空栏位",
@@ -2549,13 +2549,13 @@
     "No_submersible": "无潜水艇",
     "Sectors_discovered": "已开放的区域",
     "Delete_free_company": "删除部队",
-    "Name_column": "Name",
+    "Name_column": "名称",
     "Return_time_column": "返航时间",
     "Remaining_time_column": "剩余时间",
     "Rank_column": "等级",
     "Build_column": "Build",
     "Voyage_column": "Voyage",
-    "Nothing_to_show": "Nothing to show",
+    "Nothing_to_show": "无可用的内容",
     "Please_import_pcap": "请使用数据包捕获来导入飞空艇和潜水艇。",
     "SECTOR_PROGRESSION": {
       "Airship": "飞空艇",
@@ -2572,7 +2572,7 @@
       "Title": "性能"
     },
     "STATS": {
-      "Surveillance": "Surveillance",
+      "Surveillance": "探索性能",
       "Retrieval": "收集性能",
       "Speed": "巡航速度",
       "Range": "航行距离",
