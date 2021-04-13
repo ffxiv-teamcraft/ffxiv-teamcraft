@@ -16654,5 +16654,276 @@
       "ja": "沖合",
       "fr": "Pleine mer"
     }
+  },
+  "33219": {
+    "id": 1006,
+    "itemId": 33219,
+    "level": 71,
+    "icon": "/i/029000/029916.png",
+    "mapId": 213,
+    "zoneId": 2001,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33220": {
+    "id": 1007,
+    "itemId": 33220,
+    "level": 72,
+    "icon": "/i/029000/029169.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33221": {
+    "id": 1008,
+    "itemId": 33221,
+    "level": 73,
+    "icon": "/i/029000/029228.png",
+    "mapId": 367,
+    "zoneId": 2406,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33222": {
+    "id": 1009,
+    "itemId": 33222,
+    "level": 75,
+    "icon": "/i/028000/028437.png",
+    "mapId": 354,
+    "zoneId": 2410,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33223": {
+    "id": 1010,
+    "itemId": 33223,
+    "level": 77,
+    "icon": "/i/029000/029395.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33316": {
+    "id": 995,
+    "itemId": 33316,
+    "level": 80,
+    "icon": "/i/028000/028491.png",
+    "mapId": 497,
+    "zoneId": 2951,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33317": {
+    "id": 996,
+    "itemId": 33317,
+    "level": 80,
+    "icon": "/i/028000/028494.png",
+    "mapId": 491,
+    "zoneId": 2953,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33318": {
+    "id": 997,
+    "itemId": 33318,
+    "level": 80,
+    "icon": "/i/028000/028037.png",
+    "mapId": 492,
+    "zoneId": 2954,
+    "timed": 1,
+    "weathered": 0,
+    "stars": 3,
+    "folklore": 26810
+  },
+  "33319": {
+    "id": 998,
+    "itemId": 33319,
+    "level": 80,
+    "icon": "/i/028000/028036.png",
+    "mapId": 492,
+    "zoneId": 2954,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810
+  },
+  "33320": {
+    "id": 999,
+    "itemId": 33320,
+    "level": 80,
+    "icon": "/i/029000/029623.png",
+    "mapId": 493,
+    "zoneId": 2955,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Sands",
+      "de": "Dünen",
+      "ja": "砂海",
+      "fr": "Oasis"
+    }
+  },
+  "33321": {
+    "id": 1000,
+    "itemId": 33321,
+    "level": 80,
+    "icon": "/i/028000/028493.png",
+    "mapId": 494,
+    "zoneId": 2956,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33322": {
+    "id": 1001,
+    "itemId": 33322,
+    "level": 80,
+    "icon": "/i/028000/028498.png",
+    "mapId": 494,
+    "zoneId": 2956,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "33323": {
+    "id": 1002,
+    "itemId": 33323,
+    "level": 80,
+    "icon": "/i/028000/028496.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33324": {
+    "id": 1003,
+    "itemId": 33324,
+    "level": 80,
+    "icon": "/i/028000/028492.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 1,
+    "weathered": 0,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33325": {
+    "id": 1004,
+    "itemId": 33325,
+    "level": 80,
+    "icon": "/i/028000/028035.png",
+    "mapId": 496,
+    "zoneId": 2958,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Deep Sea",
+      "de": "Hochsee",
+      "ja": "沖合",
+      "fr": "Pleine mer"
+    }
+  },
+  "33326": {
+    "id": 1005,
+    "itemId": 33326,
+    "level": 80,
+    "icon": "/i/028000/028034.png",
+    "mapId": 496,
+    "zoneId": 2958,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Deep Sea",
+      "de": "Hochsee",
+      "ja": "沖合",
+      "fr": "Pleine mer"
+    }
   }
 }

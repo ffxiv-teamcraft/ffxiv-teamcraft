@@ -7778,7 +7778,7 @@
   "1297": {
     "en": "Wondrous Tails",
     "ja": "クロの空想帳",
-    "de": "Khloe Aliapoh",
+    "de": "Khloes Abenteueralbum",
     "fr": "Comptoir des Aventures imaginaires de Khloe"
   },
   "1298": {
@@ -17610,64 +17610,64 @@
     "fr": "Gangos"
   },
   "2936": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Paglth'an",
+    "ja": "パガルザン",
+    "de": "Paglth'an",
+    "fr": "Paglth'an"
   },
   "2937": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zolm'ak",
+    "ja": "ゾレマク",
+    "de": "Zolm'ak",
+    "fr": "Zolm'ak"
   },
   "2938": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Boundless Plains",
+    "ja": "大平原",
+    "de": "Die Große Ebene",
+    "fr": "Grande prairie"
   },
   "2939": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gathering Ring",
+    "ja": "ゾレマク祭場",
+    "de": "Festplatz von Zolm'ak",
+    "fr": "Autel de Zolm'ak"
   },
   "2940": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Scalekin Pen",
+    "ja": "トカゲの囲い場",
+    "de": "Echsen-Gatter",
+    "fr": "Enclos à lézards"
   },
   "2941": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sunseat",
+    "ja": "黄昏の庭",
+    "de": "Dämmergarten",
+    "fr": "Clos du Crépuscule"
   },
   "2942": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Valley of No One",
+    "ja": "境界の谷",
+    "de": "Tal der Prüfungen",
+    "fr": "Gorge des Confins"
   },
   "2943": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zolm'ak Citadel",
+    "ja": "ゾレマク市街",
+    "de": "Festungsstadt Zolm'ak",
+    "fr": "Camp fortifié de Zolm'ak"
   },
   "2944": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Gilded Sea",
+    "ja": "黄金の平原",
+    "de": "Goldene Ebene",
+    "fr": "Prairie mordorée"
   },
   "2945": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Drifting Encampment",
+    "ja": "アマルジャの移動集落",
+    "de": "Amalj'aa Nomadenlager",
+    "fr": "Campement annexe"
   },
   "2946": {
     "en": "",
@@ -20037,7 +20037,7 @@
     "en": "The Glory Gate",
     "ja": "栄光の門",
     "de": "Tor der Herrlichkeit",
-    "fr": "Porte de la gloire"
+    "fr": "Porte de la Gloire"
   },
   "3341": {
     "en": "Northeast Source",
@@ -21876,24 +21876,258 @@
     "fr": "Ouest du Nouveau Refrain"
   },
   "3647": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Tower at Paradigm's Breach",
+    "ja": "希望ノ砲台：「塔」",
+    "de": "Der Turm, Paradigmenbrecher",
+    "fr": "Tour de la Contingence"
   },
   "3648": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lower Section",
+    "ja": "最下層",
+    "de": "Untergeschoss",
+    "fr": "Niveau inférieur"
   },
   "3649": {
+    "en": "Ego Collective A",
+    "ja": "電脳空間A",
+    "de": "Egokollektiv A",
+    "fr": "Cyberespace A"
+  },
+  "3650": {
+    "en": "Ego Collective B",
+    "ja": "電脳空間B",
+    "de": "Egokollektiv B",
+    "fr": "Cyberespace B"
+  },
+  "3651": {
+    "en": "Monorail System",
+    "ja": "モノレール",
+    "de": "Einschienenbahn",
+    "fr": "Monorail"
+  },
+  "3652": {
+    "en": "Upper Section",
+    "ja": "最上層",
+    "de": "Dachgeschoss",
+    "fr": "Niveau supérieur"
+  },
+  "3653": {
+    "en": "Ego Collective C",
+    "ja": "電脳空間C",
+    "de": "Egokollektiv C",
+    "fr": "Cyberespace C"
+  },
+  "3654": {
+    "en": "Closed Area A",
+    "ja": "封鎖区画A",
+    "de": "Sperrgebiet A",
+    "fr": "Secteur cloisonné A"
+  },
+  "3655": {
+    "en": "Closed Area B",
+    "ja": "封鎖区画B",
+    "de": "Sperrgebiet B",
+    "fr": "Secteur cloisonné B"
+  },
+  "3656": {
+    "en": "Staging Node A",
+    "ja": "迎撃区画A",
+    "de": "Sammelknoten A",
+    "fr": "Pare-feu A"
+  },
+  "3657": {
+    "en": "Staging Node B",
+    "ja": "迎撃区画B",
+    "de": "Sammelknoten B",
+    "fr": "Pare-feu B"
+  },
+  "3658": {
+    "en": "Staging Node C",
+    "ja": "迎撃区画C",
+    "de": "Sammelknoten C",
+    "fr": "Pare-feu C"
+  },
+  "3659": {
+    "en": "Staging Node D",
+    "ja": "迎撃区画D",
+    "de": "Sammelknoten D",
+    "fr": "Pare-feu D"
+  },
+  "3660": {
+    "en": "Ascension Platform",
+    "ja": "昇降機",
+    "de": "Aufzug",
+    "fr": "Plateforme élévatrice"
+  },
+  "3661": {
+    "en": "Beyond",
+    "ja": "頂上",
+    "de": "Zenit",
+    "fr": "Sommet"
+  },
+  "3662": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "3650": {
+  "3663": {
+    "en": "G-Savior Deck",
+    "ja": "Gセイヴァー戦闘甲板",
+    "de": "Gefechtsplattform des G-Retters",
+    "fr": "Ponton du Gardien-G"
+  },
+  "3664": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3665": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3666": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3667": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3668": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3669": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3670": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3671": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3672": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3673": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3674": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3675": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3676": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3677": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3678": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3679": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3680": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3681": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3682": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3683": {
+    "en": "The Dreamer's Run",
+    "ja": "エッグドリーム鶏舎",
+    "de": "Hühnerstall der Träumerin ",
+    "fr": "Poulailler des rêvœufs"
+  },
+  "3684": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3685": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3687": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3688": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3689": {
     "en": "",
     "ja": "",
     "de": "",

@@ -5748,7 +5748,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "422": {
@@ -5764,7 +5764,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "423": {
@@ -5780,7 +5780,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "424": {
@@ -5796,7 +5796,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "425": {
@@ -5998,13 +5998,13 @@
       "en": "<If(IntegerParameter(2))> Collectable Available<Else/> Collectable Unavailable</If>",
       "de": "<If(IntegerParameter(2))>Sammlerstück<Else/>Kein Sammlerstück</If>",
       "ja": "<If(IntegerParameter(2))>収集品採集可能<Else/>収集品採集不可</If>",
-      "fr": "<If(IntegerParameter(2))>Collectionnable<Else/>Non collectionnable</If>"
+      "fr": "<If(IntegerParameter(2))> Collectionnable<Else/> Non collectionnable</If>"
     },
     "condition": {
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "438": {
@@ -6014,13 +6014,13 @@
       "en": "<If(IntegerParameter(2))> Collectable Available<Else/> Collectable Unavailable</If>",
       "de": "<If(IntegerParameter(2))>Sammlerstück<Else/>Kein Sammlerstück</If>",
       "ja": "<If(IntegerParameter(2))>収集品採集可能<Else/>収集品採集不可</If>",
-      "fr": "<If(IntegerParameter(2))>Collectionnable<Else/>Non collectionnable</If>"
+      "fr": "<If(IntegerParameter(2))> Collectionnable<Else/> Non collectionnable</If>"
     },
     "condition": {
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "439": {
@@ -6132,7 +6132,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "446": {
@@ -6148,7 +6148,7 @@
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
       "de": "<Clickable(<Sheet(Item,IntegerParameter(1),9)/>)/> <If(IntegerParameter(2))>ausgerüstet<Else/>nicht ausgerüstet</If>",
       "ja": "<Sheet(Item,IntegerParameter(1),0)/><If(IntegerParameter(2))>装備時<Else/>非装備時</If>",
-      "fr": "<Sheet(Item,IntegerParameter(1),0)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
+      "fr": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))><If(<Sheet(Item,IntegerParameter(1),6)/>)>équipée<Else/>équipé</If><Else/><If(<Sheet(Item,IntegerParameter(1),6)/>)>non équipée<Else/>non équipé</If></If>"
     }
   },
   "447": {

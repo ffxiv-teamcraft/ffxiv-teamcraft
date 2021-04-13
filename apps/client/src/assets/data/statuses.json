@@ -7606,7 +7606,7 @@
     "ja": "呪詛",
     "de": "Verwünschung",
     "fr": "Maléfice",
-    "icon": "/i/016000/016701.png"
+    "icon": "/i/016000/016821.png"
   },
   "1088": {
     "en": "Blind",
@@ -7655,28 +7655,28 @@
     "ja": "アイテム禁止",
     "de": "Gegenstände verboten",
     "fr": "Objets désactivés",
-    "icon": "/i/016000/016702.png"
+    "icon": "/i/016000/016822.png"
   },
   "1095": {
     "en": "Sprint Penalty",
     "ja": "スプリント禁止",
     "de": "Sprint verboten",
     "fr": "Sprint désactivé",
-    "icon": "/i/016000/016703.png"
+    "icon": "/i/016000/016823.png"
   },
   "1096": {
     "en": "Knockback Penalty",
     "ja": "ノックバック無効",
     "de": "Rückstoß unwirksam",
     "fr": "Projections désactivées",
-    "icon": "/i/016000/016704.png"
+    "icon": "/i/016000/016824.png"
   },
   "1097": {
     "en": "Auto-heal Penalty",
     "ja": "ＨＰ自然回復無効",
     "de": "LP-Regeneration unwirksam",
     "fr": "Auto-récupération des PV désactivée",
-    "icon": "/i/016000/016705.png"
+    "icon": "/i/016000/016825.png"
   },
   "1098": {
     "en": "Aetherial Surge",
@@ -8250,7 +8250,7 @@
     "ja": "金剛の極意",
     "de": "Steinernes Enigma",
     "fr": "Énigme de la terre",
-    "icon": "/i/012000/012527.png"
+    "icon": "/i/017000/017271.png"
   },
   "1180": {
     "en": "Earth's Reply",
@@ -9646,10 +9646,10 @@
     "icon": "/i/015000/015779.png"
   },
   "1379": {
-    "en": "Almagest",
-    "ja": "アルマゲスト",
-    "de": "Almagest",
-    "fr": "Almageste",
+    "en": "_rsv_1379_-1_1_C0_0Status",
+    "ja": "_rsv_1379_-1_0_C0_0Status",
+    "de": "_rsv_1379_-1_2_C0_0Status",
+    "fr": "_rsv_1379_-1_3_C0_0Status",
     "icon": "/i/015000/015781.png"
   },
   "1380": {
@@ -10469,7 +10469,7 @@
     "ja": "バニシュ",
     "de": "Verschwunden",
     "fr": "Invisibilité",
-    "icon": "/i/016000/016706.png"
+    "icon": "/i/016000/016826.png"
   },
   "1497": {
     "en": "Fetters",
@@ -10581,7 +10581,7 @@
     "ja": "ノックバック無効",
     "de": "Rückstoß unwirksam",
     "fr": "Résistance aux projections/attractions",
-    "icon": "/i/016000/016704.png"
+    "icon": "/i/016000/016824.png"
   },
   "1513": {
     "en": "Stun",
@@ -10819,7 +10819,7 @@
     "ja": "ウソウソ",
     "de": "Geottert",
     "fr": "Loutre choute",
-    "icon": "/i/016000/016707.png"
+    "icon": "/i/016000/016827.png"
   },
   "1547": {
     "en": "True Self",
@@ -10840,7 +10840,7 @@
     "ja": "魔石使用禁止",
     "de": "Entzaubert",
     "fr": "Magilithes inutilisables",
-    "icon": "/i/016000/016708.png"
+    "icon": "/i/016000/016828.png"
   },
   "1550": {
     "en": "Magnetic Lysis +",
@@ -10966,7 +10966,7 @@
     "ja": "召喚獣の加護",
     "de": "Primae-Wahn",
     "fr": "Patronage primordial",
-    "icon": "/i/016000/016709.png"
+    "icon": "/i/016000/016829.png"
   },
   "1568": {
     "en": "Slow+",
@@ -11085,21 +11085,21 @@
     "ja": "コマイヌの神通力",
     "de": "Komainus Gunst",
     "fr": "Grâce de Koma-inu",
-    "icon": "/i/016000/016710.png"
+    "icon": "/i/016000/016830.png"
   },
   "1585": {
     "en": "Inugami's Favor",
     "ja": "イヌガミの神通力",
     "de": "Inugamis Gunst",
     "fr": "Grâce d'Inugami",
-    "icon": "/i/016000/016711.png"
+    "icon": "/i/016000/016831.png"
   },
   "1586": {
     "en": "Senri's Favor",
     "ja": "センリの神通力",
     "de": "Senris Gunst",
     "fr": "Grâce de Senri",
-    "icon": "/i/016000/016712.png"
+    "icon": "/i/016000/016832.png"
   },
   "1587": {
     "en": "Elemental Harmony",
@@ -11557,10 +11557,10 @@
     "icon": "/i/016000/016647.png"
   },
   "1652": {
-    "en": "Magic Burst L",
-    "ja": "ロゴス・マジックバースト",
-    "de": "Logos-Magieexplosion",
-    "fr": "Évocation Logos: Explosion magique",
+    "en": "Magic Burst",
+    "ja": "マジックバースト",
+    "de": "Magieexplosion",
+    "fr": "Explosion magique",
     "icon": "/i/016000/016648.png"
   },
   "1653": {
@@ -15880,7 +15880,7 @@
     "ja": "F.A.T.E.参加",
     "de": "In FATE",
     "fr": "En ALÉA",
-    "icon": "/i/016000/016214.png"
+    "icon": "/i/016000/016241.png"
   },
   "2270": {
     "en": "",
@@ -16264,7 +16264,7 @@
     "en": "Spirit of the Beast",
     "ja": "人狼の薬",
     "de": "Trank der Wolfsleute",
-    "fr": "Breuvage de Lupin",
+    "fr": "Breuvage d'homme-loup",
     "icon": "/i/016000/016673.png"
   },
   "2325": {
@@ -16478,10 +16478,10 @@
     "icon": "/i/016000/016694.png"
   },
   "2355": {
-    "en": "Resistance Reraiser",
-    "ja": "レジスタンスリレイザー",
-    "de": "Lebensfeder des Widerstands",
-    "fr": "Vitaplume de la résistance",
+    "en": "Reraise",
+    "ja": "リレイズ",
+    "de": "Rückkehr aus dem Jenseits",
+    "fr": "Auréole",
     "icon": "/i/016000/016695.png"
   },
   "2356": {
@@ -16615,7 +16615,7 @@
     "ja": "ＥＰ自然回復無効",
     "de": "EP-Regeneration unwirksam",
     "fr": "Auto-récupération des PE désactivée",
-    "icon": "/i/016000/016705.png"
+    "icon": "/i/016000/016825.png"
   },
   "2375": {
     "en": "Feelin' Hot",
@@ -17091,7 +17091,7 @@
     "ja": "ロスト・ウェポンブレイク",
     "de": "Verschollenes Zerlegen",
     "fr": "ロスト・ウェポンブレイク",
-    "icon": "/i/016000/016619.png"
+    "icon": "/i/010000/010404.png"
   },
   "2443": {
     "en": "Lost Aethershield",
@@ -17738,11 +17738,11 @@
     "icon": "/i/019000/019861.png"
   },
   "2535": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Distorted",
+    "ja": "汚染",
+    "de": "Kontaminierung",
+    "fr": "Corruption",
+    "icon": "/i/015000/015354.png"
   },
   "2536": {
     "en": "",
@@ -17752,25 +17752,25 @@
     "icon": ""
   },
   "2537": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Strong of Spear",
+    "ja": "槍強化",
+    "de": "Upgrade: Lanze",
+    "fr": "Lance renforcée",
+    "icon": "/i/015000/015360.png"
   },
   "2538": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Strong of Shield",
+    "ja": "盾強化",
+    "de": "Upgrade: Schild",
+    "fr": "Bouclier renforcé",
+    "icon": "/i/015000/015361.png"
   },
   "2539": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Stronger Together",
+    "ja": "槍盾強化",
+    "de": "Upgrade: Lanze & Schild",
+    "fr": "Lance et bouclier renforcés",
+    "icon": "/i/015000/015362.png"
   },
   "2540": {
     "en": "",
@@ -17969,25 +17969,25 @@
     "icon": ""
   },
   "2568": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Gullstorm",
+    "ja": "鴎嵐",
+    "de": "Möwensturm",
+    "fr": "Mouette rieuse",
+    "icon": "/i/016000/016238.png"
   },
   "2569": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Cetaceous Speed",
+    "ja": "スピーディング・ドルフィン",
+    "de": "Delphinhatz",
+    "fr": "L'Écho des dauphins",
+    "icon": "/i/016000/016239.png"
   },
   "2570": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Auroral Flipper",
+    "ja": "オーロラル・ドルフィン",
+    "de": "Aurora-Flipper",
+    "fr": "Aurora dalphinus",
+    "icon": "/i/016000/016240.png"
   },
   "2571": {
     "en": "",
@@ -18011,11 +18011,11 @@
     "icon": ""
   },
   "2574": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lightning Rod",
+    "ja": "誘雷",
+    "de": "Blitzmagnet",
+    "fr": "Aimant à foudre",
+    "icon": "/i/015000/015351.png"
   },
   "2575": {
     "en": "",
@@ -18032,18 +18032,18 @@
     "icon": ""
   },
   "2577": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "FATE Participant",
+    "ja": "F.A.T.E.参加",
+    "de": "In FATE",
+    "fr": "En ALÉA",
+    "icon": "/i/016000/016241.png"
   },
   "2578": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Immobile Suit",
+    "ja": "転移装置利用不可",
+    "de": "Teleporter überlastet",
+    "fr": "Téléportation impossible",
+    "icon": "/i/015000/015370.png"
   },
   "2579": {
     "en": "",
@@ -18193,6 +18193,706 @@
     "icon": ""
   },
   "2600": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2601": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2602": {
+    "en": "Just Chilling",
+    "ja": "冷気充填",
+    "de": "Eis-Aufladung",
+    "fr": "Charge givrée",
+    "icon": "/i/015000/015510.png"
+  },
+  "2603": {
+    "en": "Hubris",
+    "ja": "油断",
+    "de": "Unvorsichtig",
+    "fr": "Imprudence",
+    "icon": "/i/019000/019881.png"
+  },
+  "2604": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2605": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2606": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2607": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2610": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2611": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2612": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2613": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2614": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2615": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2616": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2617": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2618": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2619": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2620": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2621": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2622": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2623": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2624": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2625": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2626": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2627": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2628": {
+    "en": "Adamant Purged",
+    "ja": "装甲パージ",
+    "de": "Leichte Panzerung",
+    "fr": "Dislocation adamantine",
+    "icon": "/i/015000/015371.png"
+  },
+  "2629": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2630": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2631": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2632": {
+    "en": "Program: #FFFFFFF",
+    "ja": "プログラム化：白",
+    "de": "Weißes Programm",
+    "fr": "Blanc: numérisation",
+    "icon": "/i/015000/015356.png"
+  },
+  "2633": {
+    "en": "Program: #000000",
+    "ja": "プログラム化：黒",
+    "de": "Schwarzes Programm",
+    "fr": "Noir: numérisation",
+    "icon": "/i/015000/015357.png"
+  },
+  "2634": {
+    "en": "Null White",
+    "ja": "白攻撃無効",
+    "de": "Weiße Firewall",
+    "fr": "Résistance blanche",
+    "icon": "/i/015000/015358.png"
+  },
+  "2635": {
+    "en": "Null Black",
+    "ja": "黒攻撃無効",
+    "de": "Schwarze Firewall",
+    "fr": "Résistance noire",
+    "icon": "/i/015000/015359.png"
+  },
+  "2636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2637": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2638": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2639": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2641": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2642": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2643": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2644": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2645": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2646": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2647": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2648": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2649": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2650": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2651": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2652": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2653": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2654": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2655": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2656": {
+    "en": "Stun",
+    "ja": "スタン",
+    "de": "Betäubung",
+    "fr": "Étourdissement",
+    "icon": "/i/015000/015004.png"
+  },
+  "2657": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2658": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2659": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2660": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2661": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2662": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2663": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2664": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2665": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2666": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2667": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2668": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2669": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2670": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2671": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2672": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2673": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2674": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2675": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2676": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2677": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2678": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2679": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2680": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2681": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2682": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2683": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2684": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2685": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2687": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2688": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2689": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2690": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2691": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2692": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2693": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2694": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2695": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2696": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2697": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2698": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2699": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2700": {
     "en": "",
     "ja": "",
     "de": "",

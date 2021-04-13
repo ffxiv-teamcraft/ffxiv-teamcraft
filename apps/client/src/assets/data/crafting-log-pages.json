@@ -1596,6 +1596,7 @@
           "GrandCompany": 0,
           "ID": 7778,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -1643,8 +1644,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte I",
           "Singular_ja": "木工秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7778,
@@ -1812,6 +1812,7 @@
           "GrandCompany": 0,
           "ID": 9336,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -1859,8 +1860,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte II",
           "Singular_ja": "木工秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9336,
@@ -1988,6 +1988,7 @@
           "GrandCompany": 0,
           "ID": 12244,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -2035,8 +2036,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte III",
           "Singular_ja": "木工秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12244,
@@ -2279,6 +2279,7 @@
           "GrandCompany": 0,
           "ID": 14126,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -2326,8 +2327,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte IV",
           "Singular_ja": "木工秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14126,
@@ -2725,6 +2725,7 @@
           "GrandCompany": 0,
           "ID": 17869,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -2772,8 +2773,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte V",
           "Singular_ja": "木工秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17869,
@@ -2941,6 +2941,7 @@
           "GrandCompany": 0,
           "ID": 22309,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -2988,8 +2989,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte VI",
           "Singular_ja": "木工秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22309,
@@ -3017,6 +3017,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34670,
+          "itemId": 33600,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33997,
           "itemId": 30815,
           "rlvl": 320
@@ -3024,6 +3029,11 @@
         {
           "recipeId": 34029,
           "itemId": 30847,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34671,
+          "itemId": 33601,
           "rlvl": 320
         },
         {
@@ -3342,6 +3352,7 @@
           "GrandCompany": 0,
           "ID": 24266,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -3389,8 +3400,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte VII",
           "Singular_ja": "木工秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24266,
@@ -3435,6 +3445,11 @@
         {
           "recipeId": 33369,
           "itemId": 26437,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34703,
+          "itemId": 33896,
           "rlvl": 450
         },
         {
@@ -3518,6 +3533,7 @@
           "GrandCompany": 0,
           "ID": 29484,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -3565,8 +3581,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte VIII",
           "Singular_ja": "木工秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29484,
@@ -3752,6 +3767,21 @@
           "recipeId": 34554,
           "itemId": 31886,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34603,
+          "itemId": 33162,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34611,
+          "itemId": 33170,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34619,
+          "itemId": 33178,
+          "rlvl": 516
         }
       ]
     },
@@ -3814,6 +3844,7 @@
           "GrandCompany": 0,
           "ID": 7786,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -3861,8 +3892,7 @@
           "Singular_fr": "exemplaire de Menuiserie experte: mirages",
           "Singular_ja": "木工秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7786,
@@ -5114,6 +5144,16 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4703,
+          "itemId": 33267,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4704,
+          "itemId": 33268,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4618,
           "itemId": 29680,
           "rlvl": 430
@@ -5134,6 +5174,11 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4707,
+          "itemId": 33273,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4602,
           "itemId": 28974,
           "rlvl": 430
@@ -5144,8 +5189,18 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4700,
+          "itemId": 33263,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4628,
           "itemId": 30393,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4726,
+          "itemId": 33275,
           "rlvl": 430
         },
         {
@@ -5156,6 +5211,21 @@
         {
           "recipeId": 4623,
           "itemId": 30387,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4717,
+          "itemId": 33286,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4710,
+          "itemId": 33279,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4701,
+          "itemId": 33264,
           "rlvl": 430
         }
       ]
@@ -6608,6 +6678,48 @@
           "recipeId": 34473,
           "itemId": 31953,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1296,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34627,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34628,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34629,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34630,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34631,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -9699,6 +9811,7 @@
           "GrandCompany": 0,
           "ID": 7779,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -9746,8 +9859,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte I",
           "Singular_ja": "鍛冶秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7779,
@@ -9905,6 +10017,7 @@
           "GrandCompany": 0,
           "ID": 9337,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -9952,8 +10065,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte II",
           "Singular_ja": "鍛冶秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9337,
@@ -10106,6 +10218,7 @@
           "GrandCompany": 0,
           "ID": 12245,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -10153,8 +10266,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte III",
           "Singular_ja": "鍛冶秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12245,
@@ -10392,6 +10504,7 @@
           "GrandCompany": 0,
           "ID": 14127,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -10439,8 +10552,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte IV",
           "Singular_ja": "鍛冶秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14127,
@@ -10993,6 +11105,7 @@
           "GrandCompany": 0,
           "ID": 17870,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -11040,8 +11153,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte V",
           "Singular_ja": "鍛冶秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17870,
@@ -11199,6 +11311,7 @@
           "GrandCompany": 0,
           "ID": 22310,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -11246,8 +11359,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte VI",
           "Singular_ja": "鍛冶秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22310,
@@ -11290,6 +11402,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34667,
+          "itemId": 33597,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33779,
           "itemId": 30070,
           "rlvl": 320
@@ -11310,6 +11427,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34669,
+          "itemId": 33599,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33783,
           "itemId": 30074,
           "rlvl": 320
@@ -11327,6 +11449,11 @@
         {
           "recipeId": 34031,
           "itemId": 30849,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34673,
+          "itemId": 33603,
           "rlvl": 320
         },
         {
@@ -11370,6 +11497,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34668,
+          "itemId": 33598,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33790,
           "itemId": 30081,
           "rlvl": 320
@@ -11390,6 +11522,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34680,
+          "itemId": 33610,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33782,
           "itemId": 30073,
           "rlvl": 320
@@ -11407,6 +11544,11 @@
         {
           "recipeId": 34030,
           "itemId": 30848,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34672,
+          "itemId": 33602,
           "rlvl": 320
         },
         {
@@ -11432,6 +11574,11 @@
         {
           "recipeId": 34032,
           "itemId": 30850,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34674,
+          "itemId": 33604,
           "rlvl": 320
         },
         {
@@ -11675,6 +11822,7 @@
           "GrandCompany": 0,
           "ID": 24267,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -11722,8 +11870,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte VII",
           "Singular_ja": "鍛冶秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24267,
@@ -11756,8 +11903,18 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34694,
+          "itemId": 33887,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33362,
           "itemId": 26430,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34696,
+          "itemId": 33889,
           "rlvl": 450
         },
         {
@@ -11766,8 +11923,23 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34700,
+          "itemId": 33893,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33375,
           "itemId": 26443,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34709,
+          "itemId": 33902,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34697,
+          "itemId": 33890,
           "rlvl": 450
         },
         {
@@ -11776,8 +11948,18 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34695,
+          "itemId": 33888,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33373,
           "itemId": 26441,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34707,
+          "itemId": 33900,
           "rlvl": 450
         },
         {
@@ -11786,13 +11968,28 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34699,
+          "itemId": 33892,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33367,
           "itemId": 26435,
           "rlvl": 450
         },
         {
+          "recipeId": 34701,
+          "itemId": 33894,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33376,
           "itemId": 26444,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34710,
+          "itemId": 33903,
           "rlvl": 450
         },
         {
@@ -11931,6 +12128,7 @@
           "GrandCompany": 0,
           "ID": 29485,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -11978,8 +12176,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte VIII",
           "Singular_ja": "鍛冶秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29485,
@@ -12185,6 +12382,21 @@
           "recipeId": 34497,
           "itemId": 31829,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34604,
+          "itemId": 33163,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34612,
+          "itemId": 33171,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34620,
+          "itemId": 33179,
+          "rlvl": 516
         }
       ]
     },
@@ -12247,6 +12459,7 @@
           "GrandCompany": 0,
           "ID": 7787,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -12294,8 +12507,7 @@
           "Singular_fr": "exemplaire de Métallurgie experte: mirages",
           "Singular_ja": "鍛冶秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7787,
@@ -12600,8 +12812,18 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4722,
+          "itemId": 33300,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4672,
           "itemId": 32244,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4723,
+          "itemId": 33301,
           "rlvl": 430
         }
       ]
@@ -12799,6 +13021,11 @@
         {
           "recipeId": 4634,
           "itemId": 30402,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4702,
+          "itemId": 33266,
           "rlvl": 430
         },
         {
@@ -14266,6 +14493,48 @@
           "recipeId": 34474,
           "itemId": 31954,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1297,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34632,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34633,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34634,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34635,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34636,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -16722,6 +16991,7 @@
           "GrandCompany": 0,
           "ID": 7780,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -16769,8 +17039,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte I",
           "Singular_ja": "板金秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7780,
@@ -16943,6 +17212,7 @@
           "GrandCompany": 0,
           "ID": 9338,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -16990,8 +17260,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte II",
           "Singular_ja": "板金秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9338,
@@ -17129,6 +17398,7 @@
           "GrandCompany": 0,
           "ID": 12246,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -17176,8 +17446,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte III",
           "Singular_ja": "板金秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12246,
@@ -17460,6 +17729,7 @@
           "GrandCompany": 0,
           "ID": 14128,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -17507,8 +17777,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte IV",
           "Singular_ja": "板金秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14128,
@@ -18051,6 +18320,7 @@
           "GrandCompany": 0,
           "ID": 17871,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -18098,8 +18368,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte V",
           "Singular_ja": "板金秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17871,
@@ -18242,6 +18511,7 @@
           "GrandCompany": 0,
           "ID": 22311,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -18289,8 +18559,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte VI",
           "Singular_ja": "板金秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22311,
@@ -18350,6 +18619,11 @@
         {
           "recipeId": 34040,
           "itemId": 30858,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34682,
+          "itemId": 33612,
           "rlvl": 320
         },
         {
@@ -18533,6 +18807,7 @@
           "GrandCompany": 0,
           "ID": 24268,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -18580,8 +18855,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte VII",
           "Singular_ja": "板金秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24268,
@@ -18621,6 +18895,11 @@
         {
           "recipeId": 33377,
           "itemId": 26445,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34711,
+          "itemId": 33904,
           "rlvl": 450
         },
         {
@@ -18759,6 +19038,7 @@
           "GrandCompany": 0,
           "ID": 29486,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -18806,8 +19086,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte VIII",
           "Singular_ja": "板金秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29486,
@@ -19015,9 +19294,34 @@
           "rlvl": 510
         },
         {
+          "recipeId": 34684,
+          "itemId": 33673,
+          "rlvl": 510
+        },
+        {
           "recipeId": 34595,
           "itemId": 32206,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34683,
+          "itemId": 33253,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34605,
+          "itemId": 33164,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34613,
+          "itemId": 33172,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34621,
+          "itemId": 33180,
+          "rlvl": 516
         }
       ]
     },
@@ -19080,6 +19384,7 @@
           "GrandCompany": 0,
           "ID": 7788,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -19127,8 +19432,7 @@
           "Singular_fr": "exemplaire d'Armurerie experte: mirages",
           "Singular_ja": "板金秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7788,
@@ -19341,6 +19645,11 @@
           "recipeId": 4620,
           "itemId": 30379,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4721,
+          "itemId": 33299,
+          "rlvl": 430
         }
       ]
     },
@@ -19512,6 +19821,11 @@
         {
           "recipeId": 4639,
           "itemId": 30407,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4725,
+          "itemId": 33292,
           "rlvl": 430
         },
         {
@@ -21071,6 +21385,48 @@
           "recipeId": 34475,
           "itemId": 31955,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1298,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34637,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34638,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34639,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34640,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34641,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -25117,6 +25473,7 @@
           "GrandCompany": 0,
           "ID": 7781,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -25164,8 +25521,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte I",
           "Singular_ja": "彫金秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7781,
@@ -25328,6 +25684,7 @@
           "GrandCompany": 0,
           "ID": 9339,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -25375,8 +25732,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte II",
           "Singular_ja": "彫金秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9339,
@@ -25594,6 +25950,7 @@
           "GrandCompany": 0,
           "ID": 12247,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -25641,8 +25998,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte III",
           "Singular_ja": "彫金秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12247,
@@ -25955,6 +26311,7 @@
           "GrandCompany": 0,
           "ID": 14129,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -26002,8 +26359,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte IV",
           "Singular_ja": "彫金秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14129,
@@ -26541,6 +26897,7 @@
           "GrandCompany": 0,
           "ID": 17872,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -26588,8 +26945,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte V",
           "Singular_ja": "彫金秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17872,
@@ -26772,6 +27128,7 @@
           "GrandCompany": 0,
           "ID": 22312,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -26819,8 +27176,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VI",
           "Singular_ja": "彫金秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22312,
@@ -26863,6 +27219,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34676,
+          "itemId": 33606,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33791,
           "itemId": 30082,
           "rlvl": 320
@@ -26883,8 +27244,18 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34681,
+          "itemId": 33611,
+          "rlvl": 320
+        },
+        {
           "recipeId": 34033,
           "itemId": 30851,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34675,
+          "itemId": 33605,
           "rlvl": 320
         },
         {
@@ -26905,6 +27276,11 @@
         {
           "recipeId": 34037,
           "itemId": 30855,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34679,
+          "itemId": 33609,
           "rlvl": 320
         },
         {
@@ -27233,6 +27609,7 @@
           "GrandCompany": 0,
           "ID": 24269,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -27280,8 +27657,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VII",
           "Singular_ja": "彫金秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24269,
@@ -27314,13 +27690,33 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34698,
+          "itemId": 33891,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33374,
           "itemId": 26442,
           "rlvl": 450
         },
         {
+          "recipeId": 34708,
+          "itemId": 33901,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34702,
+          "itemId": 33895,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33372,
           "itemId": 26440,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34706,
+          "itemId": 33899,
           "rlvl": 450
         },
         {
@@ -27509,6 +27905,7 @@
           "GrandCompany": 0,
           "ID": 29487,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -27556,8 +27953,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VIII",
           "Singular_ja": "彫金秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29487,
@@ -27748,6 +28144,21 @@
           "recipeId": 34559,
           "itemId": 31891,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34606,
+          "itemId": 33165,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34614,
+          "itemId": 33173,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34622,
+          "itemId": 33181,
+          "rlvl": 516
         }
       ]
     },
@@ -27810,6 +28221,7 @@
           "GrandCompany": 0,
           "ID": 7789,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -27857,8 +28269,7 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte: mirages",
           "Singular_ja": "彫金秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7789,
@@ -28802,6 +29213,11 @@
         {
           "recipeId": 4650,
           "itemId": 30410,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4724,
+          "itemId": 33293,
           "rlvl": 430
         }
       ]
@@ -30316,6 +30732,48 @@
           "recipeId": 34476,
           "itemId": 31956,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1299,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34642,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34643,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34644,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34645,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34646,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -33952,6 +34410,7 @@
           "GrandCompany": 0,
           "ID": 7782,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -33999,8 +34458,7 @@
           "Singular_fr": "exemplaire de Tannerie experte I",
           "Singular_ja": "革細工秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7782,
@@ -34208,6 +34666,7 @@
           "GrandCompany": 0,
           "ID": 9340,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -34255,8 +34714,7 @@
           "Singular_fr": "exemplaire de Tannerie experte II",
           "Singular_ja": "革細工秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9340,
@@ -34449,6 +34907,7 @@
           "GrandCompany": 0,
           "ID": 12248,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -34496,8 +34955,7 @@
           "Singular_fr": "exemplaire de Tannerie experte III",
           "Singular_ja": "革細工秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12248,
@@ -35140,6 +35598,7 @@
           "GrandCompany": 0,
           "ID": 14130,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -35187,8 +35646,7 @@
           "Singular_fr": "exemplaire de Tannerie experte IV",
           "Singular_ja": "革細工秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14130,
@@ -35796,6 +36254,7 @@
           "GrandCompany": 0,
           "ID": 17873,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -35843,8 +36302,7 @@
           "Singular_fr": "exemplaire de Tannerie experte V",
           "Singular_ja": "革細工秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17873,
@@ -36042,6 +36500,7 @@
           "GrandCompany": 0,
           "ID": 22313,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -36089,8 +36548,7 @@
           "Singular_fr": "exemplaire de Tannerie experte VI",
           "Singular_ja": "革細工秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22313,
@@ -36403,6 +36861,7 @@
           "GrandCompany": 0,
           "ID": 24270,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -36450,8 +36909,7 @@
           "Singular_fr": "exemplaire de Tannerie experte VII",
           "Singular_ja": "革細工秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24270,
@@ -36649,6 +37107,7 @@
           "GrandCompany": 0,
           "ID": 29488,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -36696,8 +37155,7 @@
           "Singular_fr": "exemplaire de Tannerie experte VIII",
           "Singular_ja": "革細工秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29488,
@@ -36860,6 +37318,11 @@
           "rlvl": 510
         },
         {
+          "recipeId": 34687,
+          "itemId": 33656,
+          "rlvl": 510
+        },
+        {
           "recipeId": 34513,
           "itemId": 31845,
           "rlvl": 510
@@ -36933,6 +37396,31 @@
           "recipeId": 34601,
           "itemId": 32802,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34689,
+          "itemId": 33658,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34693,
+          "itemId": 33662,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34607,
+          "itemId": 33166,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34615,
+          "itemId": 33174,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34623,
+          "itemId": 33182,
+          "rlvl": 516
         }
       ]
     },
@@ -36995,6 +37483,7 @@
           "GrandCompany": 0,
           "ID": 7790,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -37042,8 +37531,7 @@
           "Singular_fr": "exemplaire de Tannerie experte: mirages",
           "Singular_ja": "革細工秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7790,
@@ -38961,6 +39449,48 @@
           "recipeId": 34477,
           "itemId": 31957,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1300,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34647,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34648,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34649,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34650,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34651,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -42537,6 +43067,7 @@
           "GrandCompany": 0,
           "ID": 7783,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -42584,8 +43115,7 @@
           "Singular_fr": "exemplaire de Couture experte I",
           "Singular_ja": "裁縫秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7783,
@@ -42763,6 +43293,7 @@
           "GrandCompany": 0,
           "ID": 9341,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -42810,8 +43341,7 @@
           "Singular_fr": "exemplaire de Couture experte II",
           "Singular_ja": "裁縫秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9341,
@@ -42984,6 +43514,7 @@
           "GrandCompany": 0,
           "ID": 12249,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -43031,8 +43562,7 @@
           "Singular_fr": "exemplaire de Couture experte III",
           "Singular_ja": "裁縫秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12249,
@@ -43580,6 +44110,7 @@
           "GrandCompany": 0,
           "ID": 14131,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -43627,8 +44158,7 @@
           "Singular_fr": "exemplaire de Couture experte IV",
           "Singular_ja": "裁縫秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14131,
@@ -44156,6 +44686,7 @@
           "GrandCompany": 0,
           "ID": 17874,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -44203,8 +44734,7 @@
           "Singular_fr": "exemplaire de Couture experte V",
           "Singular_ja": "裁縫秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17874,
@@ -44417,6 +44947,7 @@
           "GrandCompany": 0,
           "ID": 22314,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -44464,8 +44995,7 @@
           "Singular_fr": "exemplaire de Couture experte VI",
           "Singular_ja": "裁縫秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22314,
@@ -44893,6 +45423,7 @@
           "GrandCompany": 0,
           "ID": 24271,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -44940,8 +45471,7 @@
           "Singular_fr": "exemplaire de Couture experte VII",
           "Singular_ja": "裁縫秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24271,
@@ -45149,6 +45679,7 @@
           "GrandCompany": 0,
           "ID": 29489,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -45196,8 +45727,7 @@
           "Singular_fr": "exemplaire de Couture experte VIII",
           "Singular_ja": "裁縫秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29489,
@@ -45360,6 +45890,16 @@
           "rlvl": 510
         },
         {
+          "recipeId": 34686,
+          "itemId": 33655,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34690,
+          "itemId": 33659,
+          "rlvl": 510
+        },
+        {
           "recipeId": 34512,
           "itemId": 31844,
           "rlvl": 510
@@ -45380,8 +45920,18 @@
           "rlvl": 510
         },
         {
+          "recipeId": 34691,
+          "itemId": 33660,
+          "rlvl": 510
+        },
+        {
           "recipeId": 34531,
           "itemId": 31863,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34692,
+          "itemId": 33661,
           "rlvl": 510
         },
         {
@@ -45415,9 +45965,29 @@
           "rlvl": 510
         },
         {
+          "recipeId": 34688,
+          "itemId": 33657,
+          "rlvl": 510
+        },
+        {
           "recipeId": 34533,
           "itemId": 31865,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34608,
+          "itemId": 33167,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34616,
+          "itemId": 33175,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34624,
+          "itemId": 33183,
+          "rlvl": 516
         }
       ]
     },
@@ -45480,6 +46050,7 @@
           "GrandCompany": 0,
           "ID": 7791,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -45527,8 +46098,7 @@
           "Singular_fr": "exemplaire de Couture experte: mirages",
           "Singular_ja": "裁縫秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7791,
@@ -45771,6 +46341,11 @@
           "recipeId": 4561,
           "itemId": 28126,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4696,
+          "itemId": 33249,
+          "rlvl": 430
         },
         {
           "recipeId": 4624,
@@ -47648,6 +48223,48 @@
           "rlvl": 513
         }
       ]
+    },
+    {
+      "id": 1301,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34652,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34653,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34654,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34655,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34656,
+          "itemId": 33228,
+          "rlvl": 412
+        }
+      ]
     }
   ],
   [
@@ -49165,6 +49782,11 @@
           "recipeId": 3871,
           "itemId": 27789,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4727,
+          "itemId": 33696,
+          "rlvl": 430
         }
       ]
     },
@@ -49227,6 +49849,7 @@
           "GrandCompany": 0,
           "ID": 7784,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -49274,8 +49897,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte I",
           "Singular_ja": "錬成秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7784,
@@ -49593,6 +50215,7 @@
           "GrandCompany": 0,
           "ID": 9342,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -49640,8 +50263,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte II",
           "Singular_ja": "錬成秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9342,
@@ -49814,6 +50436,7 @@
           "GrandCompany": 0,
           "ID": 12250,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -49861,8 +50484,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte III",
           "Singular_ja": "錬成秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12250,
@@ -50130,6 +50752,7 @@
           "GrandCompany": 0,
           "ID": 14132,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -50177,8 +50800,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte IV",
           "Singular_ja": "錬成秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14132,
@@ -50506,6 +51128,7 @@
           "GrandCompany": 0,
           "ID": 17875,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -50553,8 +51176,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte V",
           "Singular_ja": "錬成秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17875,
@@ -50702,6 +51324,7 @@
           "GrandCompany": 0,
           "ID": 22315,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -50749,8 +51372,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte VI",
           "Singular_ja": "錬成秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22315,
@@ -50793,6 +51415,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34677,
+          "itemId": 33607,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33788,
           "itemId": 30079,
           "rlvl": 320
@@ -50810,6 +51437,11 @@
         {
           "recipeId": 34036,
           "itemId": 30854,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 34678,
+          "itemId": 33608,
           "rlvl": 320
         },
         {
@@ -51068,6 +51700,7 @@
           "GrandCompany": 0,
           "ID": 24272,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -51115,8 +51748,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte VII",
           "Singular_ja": "錬成秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24272,
@@ -51174,8 +51806,18 @@
           "rlvl": 450
         },
         {
+          "recipeId": 34704,
+          "itemId": 33897,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33371,
           "itemId": 26439,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 34705,
+          "itemId": 33898,
           "rlvl": 450
         },
         {
@@ -51269,6 +51911,7 @@
           "GrandCompany": 0,
           "ID": 29490,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -51316,8 +51959,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte VIII",
           "Singular_ja": "錬成秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29490,
@@ -51483,6 +52125,26 @@
           "recipeId": 34565,
           "itemId": 31897,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34685,
+          "itemId": 33839,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34609,
+          "itemId": 33168,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34617,
+          "itemId": 33176,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34625,
+          "itemId": 33184,
+          "rlvl": 516
         }
       ]
     },
@@ -51545,6 +52207,7 @@
           "GrandCompany": 0,
           "ID": 7792,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -51592,8 +52255,7 @@
           "Singular_fr": "exemplaire d'Alchimie experte: mirages",
           "Singular_ja": "錬成秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7792,
@@ -52093,6 +52755,16 @@
           "rlvl": 415
         },
         {
+          "recipeId": 4695,
+          "itemId": 33248,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4697,
+          "itemId": 33250,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4614,
           "itemId": 29687,
           "rlvl": 430
@@ -52282,6 +52954,11 @@
         {
           "recipeId": 4656,
           "itemId": 32221,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4708,
+          "itemId": 33276,
           "rlvl": 430
         },
         {
@@ -54344,6 +55021,51 @@
           "recipeId": 4685,
           "itemId": 33036,
           "rlvl": 400
+        },
+        {
+          "recipeId": 4686,
+          "itemId": 33874,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4687,
+          "itemId": 33875,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4688,
+          "itemId": 33876,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4689,
+          "itemId": 33877,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4690,
+          "itemId": 33878,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4691,
+          "itemId": 33879,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4692,
+          "itemId": 33880,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4693,
+          "itemId": 33881,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4694,
+          "itemId": 33882,
+          "rlvl": 400
         }
       ]
     },
@@ -54391,6 +55113,48 @@
           "recipeId": 34479,
           "itemId": 31959,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1302,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34657,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34658,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34659,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34660,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34661,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }
@@ -55952,6 +56716,7 @@
           "GrandCompany": 0,
           "ID": 7785,
           "Icon": "/i/026000/026002.png",
+          "IconHD": "/i/026000/026002/_hr1.png",
           "IconID": 26002,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -55999,8 +56764,7 @@
           "Singular_fr": "exemplaire de Cuisine experte I",
           "Singular_ja": "調理秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7785,
@@ -56138,6 +56902,7 @@
           "GrandCompany": 0,
           "ID": 9343,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -56185,8 +56950,7 @@
           "Singular_fr": "exemplaire de Cuisine experte II",
           "Singular_ja": "調理秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9343,
@@ -56289,6 +57053,7 @@
           "GrandCompany": 0,
           "ID": 12251,
           "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156/_hr1.png",
           "IconID": 26156,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -56336,8 +57101,7 @@
           "Singular_fr": "exemplaire de Cuisine experte III",
           "Singular_ja": "調理秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12251,
@@ -56475,6 +57239,7 @@
           "GrandCompany": 0,
           "ID": 14133,
           "Icon": "/i/026000/026157.png",
+          "IconHD": "/i/026000/026157/_hr1.png",
           "IconID": 26157,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -56522,8 +57287,7 @@
           "Singular_fr": "exemplaire de Cuisine experte IV",
           "Singular_ja": "調理秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14133,
@@ -56691,6 +57455,7 @@
           "GrandCompany": 0,
           "ID": 17876,
           "Icon": "/i/026000/026158.png",
+          "IconHD": "/i/026000/026158/_hr1.png",
           "IconID": 26158,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -56738,8 +57503,7 @@
           "Singular_fr": "exemplaire de Cuisine experte V",
           "Singular_ja": "調理秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17876,
@@ -56847,6 +57611,7 @@
           "GrandCompany": 0,
           "ID": 22316,
           "Icon": "/i/026000/026155.png",
+          "IconHD": "/i/026000/026155/_hr1.png",
           "IconID": 26155,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -56894,8 +57659,7 @@
           "Singular_fr": "exemplaire de Cuisine experte VI",
           "Singular_ja": "調理秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22316,
@@ -57068,6 +57832,7 @@
           "GrandCompany": 0,
           "ID": 24273,
           "Icon": "/i/026000/026160.png",
+          "IconHD": "/i/026000/026160/_hr1.png",
           "IconID": 26160,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -57115,8 +57880,7 @@
           "Singular_fr": "exemplaire de Cuisine experte VII",
           "Singular_ja": "調理秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24273,
@@ -57259,6 +58023,7 @@
           "GrandCompany": 0,
           "ID": 29491,
           "Icon": "/i/026000/026159.png",
+          "IconHD": "/i/026000/026159/_hr1.png",
           "IconID": 26159,
           "IsAdvancedMeldingPermitted": 0,
           "IsCollectable": 0,
@@ -57306,8 +58071,7 @@
           "Singular_fr": "exemplaire de Cuisine experte VIII",
           "Singular_ja": "調理秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0,
-          "Unknown5-4": 0
+          "StartsWithVowel": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29491,
@@ -57438,6 +58202,21 @@
           "recipeId": 34575,
           "itemId": 31907,
           "rlvl": 510
+        },
+        {
+          "recipeId": 34610,
+          "itemId": 33169,
+          "rlvl": 514
+        },
+        {
+          "recipeId": 34618,
+          "itemId": 33177,
+          "rlvl": 515
+        },
+        {
+          "recipeId": 34626,
+          "itemId": 33185,
+          "rlvl": 516
         }
       ]
     },
@@ -57676,6 +58455,21 @@
         {
           "recipeId": 4615,
           "itemId": 28978,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4706,
+          "itemId": 33272,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4709,
+          "itemId": 33278,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4711,
+          "itemId": 33280,
           "rlvl": 430
         },
         {
@@ -59158,6 +59952,48 @@
           "recipeId": 34480,
           "itemId": 31960,
           "rlvl": 513
+        }
+      ]
+    },
+    {
+      "id": 1303,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
+        "Difficulty": 3149,
+        "Durability": 80,
+        "ID": 390,
+        "Quality": 13086,
+        "Stars": 0,
+        "SuggestedControl": 1220,
+        "SuggestedCraftsmanship": 1320
+      },
+      "recipes": [
+        {
+          "recipeId": 34662,
+          "itemId": 33224,
+          "rlvl": 390
+        },
+        {
+          "recipeId": 34663,
+          "itemId": 33225,
+          "rlvl": 395
+        },
+        {
+          "recipeId": 34664,
+          "itemId": 33226,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 34665,
+          "itemId": 33227,
+          "rlvl": 406
+        },
+        {
+          "recipeId": 34666,
+          "itemId": 33228,
+          "rlvl": 412
         }
       ]
     }

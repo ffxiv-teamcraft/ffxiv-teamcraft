@@ -844,6 +844,17 @@
     ]
   },
   "77": {
+    "en": "Paglth'an",
+    "ja": "黄金平原 パガルザン",
+    "de": "Die Goldene Ebene von Paglth'an",
+    "fr": "La grande prairie de Paglth'an",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      25129,
+      25100
+    ]
+  },
+  "78": {
     "en": null,
     "ja": null,
     "de": null,
@@ -1331,6 +1342,13 @@
     ]
   },
   "5044": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "5045": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2497,6 +2515,28 @@
     ]
   },
   "20075": {
+    "en": "The Cloud Deck",
+    "ja": "ダイヤウェポン捕獲作戦",
+    "de": "Diamantblitz - Entfesselung",
+    "fr": "Le Tillac des Cirrus",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      26928,
+      26900
+    ]
+  },
+  "20076": {
+    "en": "The Cloud Deck (Extreme)",
+    "ja": "極ダイヤウェポン捕獲作戦",
+    "de": "Diamantblitz - Trauma",
+    "fr": "Le Tillac des Cirrus (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      26928,
+      26900
+    ]
+  },
+  "20077": {
     "en": null,
     "ja": null,
     "de": null,
@@ -3695,6 +3735,17 @@
     ]
   },
   "30105": {
+    "en": "The Tower at Paradigm's Breach",
+    "ja": "希望ノ砲台：「塔」",
+    "de": "Der Turm, Paradigmenbrecher",
+    "fr": "La tour de la Contingence",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      26780,
+      26700
+    ]
+  },
+  "30106": {
     "en": null,
     "ja": null,
     "de": null,
@@ -4652,7 +4703,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4663,7 +4714,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4674,7 +4725,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4685,7 +4736,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4696,7 +4747,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4707,7 +4758,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24914,
+      24940,
       24900
     ]
   },
@@ -4718,7 +4769,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4729,7 +4780,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4740,7 +4791,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4751,7 +4802,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4762,7 +4813,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4773,7 +4824,7 @@
     "fr": "Pêche en mer",
     "icon": "/i/061000/061815.png",
     "contentText": [
-      24920,
+      24940,
       24900
     ]
   },
@@ -4792,17 +4843,24 @@
     "icon": null
   },
   "64002": {
-    "en": "the Navel (Unreal)",
-    "ja": "幻タイタン討滅戦",
-    "de": "Traumprüfung - Titan",
-    "fr": "Le Nombril (irréel)",
-    "icon": "/i/061000/061804.png",
-    "contentText": [
-      3805,
-      3800
-    ]
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "64003": {
+    "en": "The Whorleater (Unreal)",
+    "ja": "幻リヴァイアサン討滅戦",
+    "de": "Traumprüfung - Leviathan",
+    "fr": "le Briseur de marées (irréel)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      5207,
+      5200
+    ]
+  },
+  "64004": {
     "en": null,
     "ja": null,
     "de": null,
