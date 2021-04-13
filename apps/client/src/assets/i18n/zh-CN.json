@@ -2489,23 +2489,23 @@
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
-    "Title": "Retainers",
+    "Title": "雇员",
     "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Selling": "出售中（{{amount}} 件）",
+    "X_items": "{{amount}} 个物品",
+    "Task_complete": "委托完成",
+    "Task_completed_notification_title": "{{name}} 完成了探险",
+    "Task_completed_notification_content": "{{name}} 完成了探险委托 {{taskName}}",
+    "Task_completion_alarm": "探险完成提醒"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer",
+    "Title": "雇员探险",
+    "Description": "输入你的雇员职业、等级、装等和获得力（如需）以找到收益最高的探险委托。此功能会考虑所有能获得收益的物品。当雇员等级较高时，查询时间可能长达一分钟。",
+    "Retainer_ilvl": "装等",
+    "Gathering": "采集",
+    "Task_level": "探险等级",
+    "Total_per_venture": "单次探险总计",
+    "Use_retainer": "选择雇员",
     "Select_retainer": "选择一名雇员"
   },
   "PATREON": {
@@ -2530,7 +2530,7 @@
       "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
       "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     },
-    "Select_retainer": "Pick one of your retainers"
+    "Select_retainer": "选择一名雇员"
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "使用数据包捕获导入",
