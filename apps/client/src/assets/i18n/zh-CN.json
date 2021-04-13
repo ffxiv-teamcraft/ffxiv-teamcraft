@@ -1004,8 +1004,8 @@
       "Pliant": "高效",
       "Sturdy": "结实",
       "Centered": "居中对齐",
-      "Malleable": "Malleable",
-      "Primed": "Primed",
+      "Malleable": "大进展",
+      "Primed": "长持续",
       "Normal": "通常"
     },
     "SOLVER": {
@@ -1785,10 +1785,10 @@
     "Class": "职业",
     "Land": "采集",
     "Hand": "制作",
-    "Type": "Type",
+    "Type": "类型",
     "Any": "任意",
     "Item_type": "物品分类",
-    "Patch": "Patch",
+    "Patch": "版本",
     "Language": "语言",
     "Share": "分享",
     "Placeholder": "Search for something awesome",
@@ -1802,12 +1802,12 @@
     "Worn_by": "装备职业",
     "Gear_stats": "装备属性",
     "Consumable_stats": "Consumable Stats",
-    "No_stats_filters": "Woops, nothing's here",
+    "No_stats_filters": "这里空空如也",
     "Add_stat_using_button": "要添加统计过滤器，请点击下面的按钮",
     "Stat": "属性",
     "Range": "范围",
     "Exclude": "反选",
-    "Select_stat": "Select a stat",
+    "Select_stat": "选择属性",
     "Level": "等级",
     "SORT_BY": {
       "Relevance": "相关性",
@@ -1830,8 +1830,8 @@
     "Archived_commissions": "归档",
     "Leveling": "升级",
     "Currencies": "货币",
-    "Add_to_favorites": "Add to favorites",
-    "Remove_from_favorites": "Remove from favorites"
+    "Add_to_favorites": "添加至收藏",
+    "Remove_from_favorites": "从收藏中删除"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1840,7 +1840,7 @@
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "TeamCraft 需要扫描你当前的角色才能使用背包相关功能。请在游戏中整理你的背包或者返回标题界面再登录游戏。",
     "Unknown_character": "未知游戏角色",
     "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
