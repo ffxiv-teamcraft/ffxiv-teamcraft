@@ -1,5 +1,6 @@
 export const patchNotes = `### Bug Fixes
 
+* **db:** fixed new items not being added to lists at all.
 * **desktop:** fixed a possible issue with packet transmission.
 * **desktop:** fixed automated character switching following ingame switched.
 * **desktop:** fixed high CPU usage from MachinaWrapper process.
