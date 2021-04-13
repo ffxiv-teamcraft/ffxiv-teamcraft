@@ -40,9 +40,21 @@ export class InventoryService {
 
   private retainerSpawn$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     withLatestFrom(this.retainerInformations$),
-    filter(([npcSpawn, retainers]) => npcSpawn.name.length > 0 && retainers.some(retainer => retainer.name === npcSpawn.name)),
-    map(([npcSpawn]) => {
-      return npcSpawn.name;
+    map(([npcSpawn, retainers]) => {
+      // TODO change this logic once one of the CN/KR regions updated to 5.5
+      let name;
+      if (this.settings.region === Region.Global) {
+        name = npcSpawn.name.slice(2);
+      } else {
+        name = npcSpawn.name;
+      }
+      if (name.length > 0 && retainers.some(retainer => retainer.name === name)) {
+        return name;
+      }
+      return null;
+    }),
+    filter((npcSpawnName) => {
+      return !!npcSpawnName;
     }),
     tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')

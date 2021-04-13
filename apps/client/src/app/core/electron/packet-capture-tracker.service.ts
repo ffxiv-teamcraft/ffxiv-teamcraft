@@ -116,13 +116,6 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofMessageType('addStatusEffect'),
-      toIpcData()
-    ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.effectId);
-    });
-
-    this.ipc.packets$.pipe(
       ofMessageType('effectResult'),
       filter(message => {
         return message.header.sourceActor === message.header.targetActor;
