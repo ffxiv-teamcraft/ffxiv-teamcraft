@@ -2472,8 +2472,8 @@
     "Only_missing_nodes": "只显示有缺失节点的地图"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "合建配方流程",
+    "View_tree": "打开合建配方流程",
     "Phase": "第 {{phase}} 阶段"
   },
   "LEVELING_EQUIPMENT": {
@@ -2553,8 +2553,8 @@
     "Return_time_column": "返航时间",
     "Remaining_time_column": "剩余时间",
     "Rank_column": "等级",
-    "Build_column": "Build",
-    "Voyage_column": "Voyage",
+    "Build_column": "配件",
+    "Voyage_column": "探索",
     "Nothing_to_show": "无可用的内容",
     "Please_import_pcap": "请使用数据包捕获来导入飞空艇和潜水艇。",
     "SECTOR_PROGRESSION": {
@@ -2565,8 +2565,8 @@
       "Title": "远航探索"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
-      "Condition": "状况"
+      "Title": "配件",
+      "Condition": "耐久度"
     },
     "STATS_DETAILS": {
       "Title": "性能"
