@@ -2490,7 +2490,7 @@
   },
   "RETAINERS": {
     "Title": "雇员",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
+    "No_retainers": "未检测到雇员。请使用雇员铃以捕获雇员信息。",
     "Selling": "出售中（{{amount}} 件）",
     "X_items": "{{amount}} 个物品",
     "Task_complete": "委托完成",
@@ -2539,14 +2539,14 @@
     "Submersibles": "潜水艇"
   },
   "VOYAGE_TRACKER": {
-    "Title": "Voyage tracker",
-    "Import_using_pcap": "Import using packet capture",
-    "Voyage_completion_alarm": "Voyage completion alarm",
-    "Voyage_completed_notification_title": "{{name}} has completed its voyage",
+    "Title": "远航探索",
+    "Import_using_pcap": "使用数据包捕获导入",
+    "Voyage_completion_alarm": "探索完成提醒",
+    "Voyage_completed_notification_title": "{{name}} 已完成探索",
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
-    "Voyage_complete": "Voyage complete",
-    "No_airship": "No airship",
-    "No_submersible": "No submersible",
+    "Voyage_complete": "探索完成",
+    "No_airship": "无飞空艇",
+    "No_submersible": "无潜水艇",
     "Sectors_discovered": "Sectors discovered",
     "Delete_free_company": "删除部队",
     "Name_column": "Name",
@@ -2556,10 +2556,10 @@
     "Build_column": "Build",
     "Voyage_column": "Voyage",
     "Nothing_to_show": "Nothing to show",
-    "Please_import_pcap": "Please import your airships and submarines using packet capture",
+    "Please_import_pcap": "请使用数据包捕获来导入飞空艇和潜水艇。",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "飞空艇",
+      "Submersible": "潜水艇"
     },
     "VOYAGE_DETAILS": {
       "Title": "Voyage"
