@@ -187,7 +187,7 @@
     "Alarms_created": "已创建 {{amount}} 个闹钟",
     "Alarm_already_created": "闹钟已设置",
     "Custom_sound": "自定义闹钟声音",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "负值 = 在刷新之后提示",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
     "Delete_group": "删除分组",
@@ -234,7 +234,7 @@
       "Type": "采集类型",
       "Map": "地图",
       "Weather": "天气",
-      "Weather_from": "变化从",
+      "Weather_from": "上一个天气",
       "TYPE": {
         "Mineral": "矿脉",
         "Rocky": "石场",
@@ -716,7 +716,7 @@
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
       "Reorder_panels": "重排面板",
-      "Select_preview_list": "Select list to preview layout",
+      "Select_preview_list": "选择一个清单来预览此布局",
       "Hidden_if_empty": "隐藏空栏",
       "Collapsed_by_default": "默认折叠",
       "No_preview": "没有清单预览",
@@ -859,7 +859,7 @@
     "Fish_eyes_duration": "你的鱼眼需要持续这个时间才能钓上该鱼。点击改变显示格式。",
     "Spawned_for": "在 {{timer}} 后消失",
     "Will_spawn_in": "在 {{timer}} 后出现",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
+    "Ephemeral_warning": "限时采集点有多个位置，坐标为近似值。",
     "Legendary": "传奇",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
@@ -2566,7 +2566,7 @@
     },
     "BUILD_DETAILS": {
       "Title": "Build",
-      "Condition": "Condition"
+      "Condition": "状况"
     },
     "STATS_DETAILS": {
       "Title": "性能"
@@ -2582,59 +2582,59 @@
   "AIRSHIP": {
     "CLASS": {
       "BRONCO": {
-        "Abbreviation": "B"
+        "Abbreviation": "野马"
       },
       "INVINCIBLE": {
-        "Abbreviation": "i"
+        "Abbreviation": "无敌"
       },
       "ENTERPRISE": {
-        "Abbreviation": "E"
+        "Abbreviation": "企业"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "i2"
+        "Abbreviation": "无敌改"
       },
       "ODYSSEY": {
-        "Abbreviation": "O"
+        "Abbreviation": "奥德赛"
       },
       "TATANORA": {
-        "Abbreviation": "T"
+        "Abbreviation": "塔塔"
       },
       "VILTGANCE": {
-        "Abbreviation": "V"
+        "Abbreviation": "威尔"
       }
     }
   },
   "SUBMARINE": {
     "CLASS": {
       "SHARK": {
-        "Abbreviation": "S"
+        "Abbreviation": "1"
       },
       "UNKIU": {
-        "Abbreviation": "U"
+        "Abbreviation": "2"
       },
       "WHALE": {
-        "Abbreviation": "W"
+        "Abbreviation": "3"
       },
       "COELACANTH": {
-        "Abbreviation": "C"
+        "Abbreviation": "4"
       },
       "SYLDRA": {
-        "Abbreviation": "Y"
+        "Abbreviation": "5"
       },
       "MODIFIED_SHARK": {
-        "Abbreviation": "S+"
+        "Abbreviation": "1改"
       },
       "MODIFIED_UNKIU": {
-        "Abbreviation": "U+"
+        "Abbreviation": "2改"
       },
       "MODIFIED_WHALE": {
-        "Abbreviation": "W+"
+        "Abbreviation": "3改"
       },
       "MODIFIED_COELACANTH": {
-        "Abbreviation": "C+"
+        "Abbreviation": "4改"
       },
       "MODIFIED_SYLDRA": {
-        "Abbreviation": "Y+"
+        "Abbreviation": "5改"
       }
     }
   },
