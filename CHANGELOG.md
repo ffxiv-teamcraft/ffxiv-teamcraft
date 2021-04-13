@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.8"></a>
+## [8.1.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.6...v8.1.8) (2021-04-13)
+
+
+### Bug Fixes
+
+* **db:** fixed new items not being added to lists at all ([6fe4a14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fe4a14))
+* **desktop:** fixed a possible issue with packet transmission ([7ebae27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ebae27))
+* **desktop:** fixed automated character switching following ingame switched ([6de41ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6de41ac))
+* **desktop:** fixed high CPU usage from MachinaWrapper process ([b483349](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b483349))
+* **log-tracker:** fixed wrong label for hookset in fishing log ([733d5e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/733d5e3))
+* **log-tracker:** moved "hide completed" toggle to the tabs header for DoH section ([d62a90d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d62a90d)), closes [#1881](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1881)
+
+
+### Features
+
+* **db:** added 5.5 content ([513ab4a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/513ab4a))
+* **leveling-equipment:** now displays full job name instead of abbreviation ([95a2876](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95a2876))
+
+
+
 <a name="8.1.7"></a>
 ## [8.1.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.6...v8.1.7) (2021-04-13)
 
