@@ -7113,7 +7113,7 @@
     "en": "infernal nail",
     "ja": "炎獄の楔",
     "de": "infernalisch[a] Fessel",
-    "fr": "clou infernal"
+    "fr": "pal infernal"
   },
   "1187": {
     "en": "damantus",
@@ -22856,7 +22856,7 @@
   "3810": {
     "en": "cryodragon",
     "ja": "クライオドラゴン",
-    "de": "Cyro-Drache",
+    "de": "Cryo-Drache",
     "fr": "cryodragon"
   },
   "3811": {
@@ -22892,7 +22892,7 @@
   "3816": {
     "en": "wounded cryodragon",
     "ja": "ウーンデッド・クライオドラゴン",
-    "de": "verletzt[a] Cyro-Drache",
+    "de": "verletzt[a] Cryo-Drache",
     "fr": "cryodragon blessé"
   },
   "3817": {
@@ -36324,10 +36324,10 @@
     "fr": "trou noir"
   },
   "6055": {
-    "en": "Neo Exdeath",
-    "ja": "ネオエクスデス",
-    "de": "Neo Exdeath",
-    "fr": "Néo-Exdeath"
+    "en": "_rsv_6055_-1_1_C0_0BNpcName",
+    "ja": "_rsv_6055_-1_0_C0_0BNpcName",
+    "de": "_rsv_6055_-1_2_C0_0BNpcName",
+    "fr": "_rsv_6055_-1_3_C0_0BNpcName"
   },
   "6056": {
     "en": "apanda",
@@ -44847,7 +44847,7 @@
     "en": "wyvern's tail",
     "ja": "リオレウスの尻尾",
     "de": "Schwanz[p] des Rathalos",
-    "fr": "queue de Rathalos"
+    "fr": "queue du Rathalos"
   },
   "7476": {
     "en": "specter of Asahi",
@@ -46716,7 +46716,7 @@
     "fr": "spriggan pancratiaste"
   },
   "7787": {
-    "en": "Pyros soblyn",
+    "en": "Pyros zoblyn",
     "ja": "ピューロス・ゾブラン",
     "de": "Pyros-Zobalos",
     "fr": "zoblyn Pyros"
@@ -57193,7 +57193,7 @@
   },
   "9533": {
     "en": "water sprite",
-    "ja": "ウォーター・スプライト",
+    "ja": "ウォータースプライト",
     "de": "Wasser-Exergon",
     "fr": "élémentaire d'eau"
   },
@@ -57211,19 +57211,19 @@
   },
   "9536": {
     "en": "lightning sprite",
-    "ja": "ライトニング・スプライト",
+    "ja": "ライトニングスプライト",
     "de": "Blitz-Exergon",
     "fr": "élémentaire de foudre"
   },
   "9537": {
     "en": "wind sprite",
-    "ja": "ウィンド・スプライト",
+    "ja": "ウィンドスプライト",
     "de": "Wind-Exergon",
     "fr": "élémentaire de vent"
   },
   "9538": {
     "en": "earth sprite",
-    "ja": "アース・スプライト",
+    "ja": "アーススプライト",
     "de": "Erd-Exergon",
     "fr": "élémentaire de terre"
   },
@@ -59328,7 +59328,7 @@
     "fr": "bombo de glace"
   },
   "9889": {
-    "en": "Diadem biast",
+    "en": "Diadem beast",
     "ja": "ディアデム・ビースト",
     "de": "Diadem-Bestie",
     "fr": "bête du Diadème"
@@ -59502,40 +59502,40 @@
     "fr": "caillot terrifiant"
   },
   "9918": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "2P",
+    "ja": "２Ｐ",
+    "de": "2P",
+    "fr": "2P"
   },
   "9919": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "2P-operated flight unit",
+    "ja": "２Ｐ：飛行ユニット装備",
+    "de": "2Ps Flugeinheit",
+    "fr": "2P : module de vol équipé"
   },
   "9920": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Red Girl",
+    "ja": "赤い少女",
+    "de": "Rot[a] Mädchen",
+    "fr": "fille en rouge"
   },
   "9921": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Xun-Zi",
+    "ja": "ジュンシ",
+    "de": "Xun-Zi",
+    "fr": "Xun-Zi"
   },
   "9922": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Meng-Zi",
+    "ja": "モウシ",
+    "de": "Meng-Zi",
+    "fr": "Meng-Zi"
   },
   "9923": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "serial-jointed model",
+    "ja": "多関節型",
+    "de": "Modell[p] mit Omnigelenk",
+    "fr": "modèle multiarticulé"
   },
   "9924": {
     "en": "",
@@ -59682,18 +59682,1878 @@
     "fr": ""
   },
   "9948": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "False Idol",
+    "ja": "偽造サレタ神",
+    "de": "Ihre Abgöttlichkeit",
+    "fr": "déesse factice"
   },
   "9949": {
+    "en": "Her Inflorescence",
+    "ja": "開花シタ神",
+    "de": "Ihre Infloreszenz",
+    "fr": "déesse éclose"
+  },
+  "9950": {
+    "en": "Red Girl",
+    "ja": "赤い少女",
+    "de": "Rot[a] Mädchen",
+    "fr": "fille en rouge"
+  },
+  "9951": {
+    "en": "energy",
+    "ja": "エネルギー弾",
+    "de": "energetisch[a] Geschoss",
+    "fr": "balle d'énergie"
+  },
+  "9952": {
+    "en": "766f696365",
+    "ja": "e5a3b0",
+    "de": "5374696d6d65",
+    "fr": "766F6978"
+  },
+  "9953": {
+    "en": "the Diamond Weapon",
+    "ja": "ダイヤウェポン",
+    "de": "Diamant-Waffe",
+    "fr": "Arme Diamant"
+  },
+  "9954": {
+    "en": "articulated bit",
+    "ja": "アームビット",
+    "de": "Satellitenarm",
+    "fr": "bras autonome"
+  },
+  "9955": {
+    "en": "Knave of Hearts",
+    "ja": "ジャック",
+    "de": "Herzbube",
+    "fr": "Jack"
+  },
+  "9956": {
+    "en": "spheroid",
+    "ja": "球体",
+    "de": "Sphäre",
+    "fr": "sphère"
+  },
+  "9957": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "9950": {
+  "9958": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9959": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9960": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9961": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9962": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9963": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9964": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9965": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9966": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9967": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9968": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9969": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9970": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9971": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9972": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9973": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9974": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9975": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9976": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9977": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9978": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9979": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9980": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9981": {
+    "en": "white lance",
+    "ja": "白槍",
+    "de": "weiß[a] Lanze",
+    "fr": "lance blanche"
+  },
+  "9982": {
+    "en": "black lance",
+    "ja": "黒槍",
+    "de": "schwarz[a] Lanze",
+    "fr": "lance noire"
+  },
+  "9983": {
+    "en": "black pylon",
+    "ja": "黒柱",
+    "de": "schwarz[a] Turm",
+    "fr": "pilier noir"
+  },
+  "9984": {
+    "en": "white pylon",
+    "ja": "白柱",
+    "de": "weiß[a] Turm",
+    "fr": "pilier blanc"
+  },
+  "9985": {
+    "en": "red sphere",
+    "ja": "赤球",
+    "de": "rot[a] Sphäre",
+    "fr": "noyau orange"
+  },
+  "9986": {
+    "en": "white wall",
+    "ja": "白壁",
+    "de": "weiß[a] Barriere",
+    "fr": "mur blanc"
+  },
+  "9987": {
+    "en": "black wall",
+    "ja": "黒壁",
+    "de": "schwarz[a] Barriere",
+    "fr": "mur noir"
+  },
+  "9988": {
+    "en": "Hansel",
+    "ja": "ヘンゼル",
+    "de": "Hänsel",
+    "fr": "Hansel"
+  },
+  "9989": {
+    "en": "Gretel",
+    "ja": "グレーテル",
+    "de": "Gretel",
+    "fr": "Gretel"
+  },
+  "9990": {
+    "en": "Hansel & Gretel",
+    "ja": "ヘンゼル&グレーテル",
+    "de": "Hänsel & Gretel",
+    "fr": "duo d'armures"
+  },
+  "9991": {
+    "en": "901P",
+    "ja": "901P",
+    "de": "901P",
+    "fr": "901P"
+  },
+  "9992": {
+    "en": "magical confluence",
+    "ja": "魔力奔流",
+    "de": "Magiestrom",
+    "fr": "flux d'énergie magique"
+  },
+  "9993": {
+    "en": "magic bullet",
+    "ja": "魔力弾",
+    "de": "Magiekugel",
+    "fr": "balle magique"
+  },
+  "9994": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9997": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9998": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9999": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10000": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10001": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10002": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10003": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10004": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10005": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10006": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10007": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10008": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10009": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10010": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10011": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10014": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10015": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10017": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10018": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10019": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10020": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10021": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10022": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10023": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10024": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10025": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10026": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10027": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10028": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10029": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10030": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10033": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10034": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10040": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10041": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10042": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10043": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10044": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10045": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10046": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10048": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10049": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10050": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10051": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10052": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10053": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10054": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10055": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10056": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10057": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10058": {
+    "en": "copied knave",
+    "ja": "複製サレタジャック",
+    "de": "Kopiert[a] Herzbube",
+    "fr": "réplique de Jack"
+  },
+  "10059": {
+    "en": "9S",
+    "ja": "９Ｓ",
+    "de": "9S",
+    "fr": "9S"
+  },
+  "10060": {
+    "en": "901P",
+    "ja": "９０１Ｐ",
+    "de": "901P",
+    "fr": "901P"
+  },
+  "10061": {
+    "en": "875P",
+    "ja": "８７５Ｐ",
+    "de": "875P",
+    "fr": "875P"
+  },
+  "10062": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10064": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10065": {
+    "en": "ball of levin",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
+  },
+  "10066": {
+    "en": "supercharged levin",
+    "ja": "大雷球",
+    "de": "groß[a] Elektrosphäre",
+    "fr": "grand orbe de foudre"
+  },
+  "10067": {
+    "en": "magitek fortress",
+    "ja": "魔導フォートレス",
+    "de": "Magitek-Festung",
+    "fr": "forteresse magitek"
+  },
+  "10068": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Garlear",
+    "fr": "soldat impérial envoûté"
+  },
+  "10069": {
+    "en": "Mark II telotek colossus",
+    "ja": "テロフォロイ・コロッサスII",
+    "de": "Colossus[p] II der Telophoroi",
+    "fr": "colosse magitek II des Télophores"
+  },
+  "10070": {
+    "en": "telotek predator",
+    "ja": "テロフォロイ・プレデター",
+    "de": "Prädator[p] der Telophoroi",
+    "fr": "prédatrice des Télophores"
+  },
+  "10071": {
+    "en": "telotek sky armor",
+    "ja": "テロフォロイ・スカイアーマー",
+    "de": "Himmelspanzer[p] der Telophoroi",
+    "fr": "armure aérienne des Télophores"
+  },
+  "10072": {
+    "en": "Paglth'an flamekeeper",
+    "ja": "パガルザン・フレイムキーパー",
+    "de": "Paglth'an-Flammenhüter",
+    "fr": "garde-flammes de Paglth'an"
+  },
+  "10073": {
+    "en": "magitek missile",
+    "ja": "魔導ミサイル",
+    "de": "Magitek-Rakete",
+    "fr": "missile magitek"
+  },
+  "10074": {
+    "en": "lunar nail",
+    "ja": "異形の楔",
+    "de": "dunkl[a] Fessel",
+    "fr": "pal grotesque"
+  },
+  "10075": {
+    "en": "amhuluk",
+    "ja": "アムルック",
+    "de": "Amhuluk",
+    "fr": "Amhuluk"
+  },
+  "10076": {
+    "en": "magitek core",
+    "ja": "魔導コア",
+    "de": "Magitek-Reaktor",
+    "fr": "réacteur magitek"
+  },
+  "10077": {
+    "en": "Lunar Bahamut",
+    "ja": "ルナバハムート",
+    "de": "Luna-Bahamut",
+    "fr": "Luna-Bahamut"
+  },
+  "10078": {
+    "en": "fortress praesidium",
+    "ja": "魔導フォートレスの指揮官",
+    "de": "Magitek-Festungskommandant",
+    "fr": "commandant de la forteresse magitek"
+  },
+  "10079": {
+    "en": "celebration guide",
+    "ja": "祝祭の案内人",
+    "de": "Himmelsfest-Führer",
+    "fr": "guide de la Grande Célébration"
+  },
+  "10080": {
+    "en": "Mighty Moogle",
+    "ja": "ムキムキモーグリ",
+    "de": "Muskelmacker-Mogry",
+    "fr": "Mog musculeux"
+  },
+  "10081": {
+    "en": "Chirpy Chocobo",
+    "ja": "モフモフチョコボ",
+    "de": "Plüschpuschel-Chocobo",
+    "fr": "chocobo chatoyant"
+  },
+  "10082": {
+    "en": "Perky Piggy",
+    "ja": "クルクルポーキー",
+    "de": "Kullerkringel-Grunzi",
+    "fr": "porcelet polisson"
+  },
+  "10083": {
+    "en": "sprightly swineling",
+    "ja": "陽気な子分ポーキー",
+    "de": "glücklich[a] Ferkel",
+    "fr": "pourceau pimpant"
+  },
+  "10084": {
+    "en": "somber swineling",
+    "ja": "陰気な子分ポーキー",
+    "de": "nervös[a] Ferkel",
+    "fr": "pourceau peiné"
+  },
+  "10085": {
+    "en": "solitary swineling",
+    "ja": "内気な子分ポーキー",
+    "de": "aufgeregt[a] Ferkel",
+    "fr": "pourceau pudique"
+  },
+  "10086": {
+    "en": "Skysteel engineer",
+    "ja": "スカイスチール機工房の職人",
+    "de": "Himmelsstahl-Handwerkerin",
+    "fr": "ingénieure de Cielacier"
+  },
+  "10087": {
+    "en": "House Dzemael stonemason",
+    "ja": "ゼーメル家の石工職人",
+    "de": "Steinhauerin[p] von Haus Dzemael",
+    "fr": "maçonne des Dzemael"
+  },
+  "10088": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10089": {
+    "en": "Ishgardian merchant",
+    "ja": "皇都出身の商人",
+    "de": "Händler[p] aus Ishgard",
+    "fr": "commerçant ishgardais"
+  },
+  "10090": {
+    "en": "foreign merchant",
+    "ja": "異国出身の商人",
+    "de": "reisend[a] Händlerin",
+    "fr": "négociante étrangère"
+  },
+  "10091": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10092": {
+    "en": "Firmament boy",
+    "ja": "蒼天街の男の子",
+    "de": "Junge[p] aus der Himmelsstadt",
+    "fr": "garçonnet d'Azurée"
+  },
+  "10093": {
+    "en": "Firmament girl",
+    "ja": "蒼天街の女の子",
+    "de": "Mädchen[p] aus der Himmelsstadt",
+    "fr": "fillette d'Azurée"
+  },
+  "10094": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10095": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10096": {
+    "en": "Estinien Wyrmblood",
+    "ja": "エスティニアン",
+    "de": "Estinien Drachenblut",
+    "fr": "Estinien"
+  },
+  "10097": {
+    "en": "Aymeric the Blue",
+    "ja": "蒼剣のアイメリク",
+    "de": "Aymeric Himmelsklinge",
+    "fr": "Aymeric la lame céleste"
+  },
+  "10098": {
+    "en": "Lucia the Radiant",
+    "ja": "極光のルキア",
+    "de": "Lucia Nordlicht",
+    "fr": "Lucia l'éclatante"
+  },
+  "10099": {
+    "en": "Tiamat",
+    "ja": "ティアマット",
+    "de": "Tiamat",
+    "fr": "Tiamat"
+  },
+  "10100": {
+    "en": "Tiamat",
+    "ja": "ティアマット",
+    "de": "Tiamat",
+    "fr": "Tiamat"
+  },
+  "10101": {
+    "en": "telodragon",
+    "ja": "テロフォロイ・ドラゴン",
+    "de": "Drache[p] der Telophoroi",
+    "fr": "dragon des Télophores"
+  },
+  "10102": {
+    "en": "telodragon",
+    "ja": "テロフォロイ・ドラゴン",
+    "de": "Drache[p] der Telophoroi",
+    "fr": "dragon des Télophores"
+  },
+  "10103": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Garlear",
+    "fr": "soldat impérial envoûté"
+  },
+  "10104": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Garlear",
+    "fr": "soldat impérial envoûté"
+  },
+  "10105": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Garlear",
+    "fr": "soldat impérial envoûté"
+  },
+  "10106": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Garlear",
+    "fr": "soldat impérial envoûté"
+  },
+  "10107": {
+    "en": "telotek sky armor",
+    "ja": "テロフォロイ・スカイアーマー",
+    "de": "Himmelspanzer[p] der Telophoroi",
+    "fr": "armure aérienne des Télophores"
+  },
+  "10108": {
+    "en": "telotek predator",
+    "ja": "テロフォロイ・プレデター",
+    "de": "Prädator[p] der Telophoroi",
+    "fr": "prédatrice des Télophores"
+  },
+  "10109": {
+    "en": "Lunar Bahamut",
+    "ja": "ルナバハムート",
+    "de": "Luna-Bahamut",
+    "fr": "Luna-Bahamut"
+  },
+  "10110": {
+    "en": "telodragonet",
+    "ja": "テロフォロイ・ドラゴネット",
+    "de": "Telophoroi-Drachenjung[a]",
+    "fr": "dragonnet des Télophores"
+  },
+  "10111": {
+    "en": "telotulihand",
+    "ja": "テロフォロイ・トゥリヘンド",
+    "de": "Tulihand[p] der Telophoroi",
+    "fr": "tulihänd des Télophores"
+  },
+  "10112": {
+    "en": "telovouivre",
+    "ja": "テロフォロイ・ヴィーヴル",
+    "de": "Vivel[p] der Telophoroi",
+    "fr": "vouivre des Télophores"
+  },
+  "10113": {
+    "en": "lesser telodragon",
+    "ja": "テロフォロイ・レッサードラゴン",
+    "de": "Nestdrache[p] der Telophoroi",
+    "fr": "dragon inférieur des Télophores"
+  },
+  "10114": {
+    "en": "teloclaw",
+    "ja": "テロフォロイ・デスクロー",
+    "de": "Todesklaue[p] der Telophoroi",
+    "fr": "griffe de mort des Télophores"
+  },
+  "10115": {
+    "en": "telobrobinyak",
+    "ja": "テロフォロイ・ブロビニャク",
+    "de": "Brobinyak[p] der Telophoroi",
+    "fr": "brobinyak des Télophores"
+  },
+  "10116": {
+    "en": "telotek reaper",
+    "ja": "テロフォロイ・リーパー",
+    "de": "Schnitter[p] der Telophoroi",
+    "fr": "faucheuse des Télophores"
+  },
+  "10117": {
+    "en": "telotek vanguard",
+    "ja": "テロフォロイ・ヴァンガード",
+    "de": "Frontbrecher[p] der Telophoroi",
+    "fr": "avant-garde des Télophores"
+  },
+  "10118": {
+    "en": "armored telodragon",
+    "ja": "テロフォロイ・アーマードラゴン",
+    "de": "Panzerdrache[p] der Telophoroi",
+    "fr": "dragon cuirassé des Télophores"
+  },
+  "10119": {
+    "en": "debris",
+    "ja": "瓦礫",
+    "de": "Opinicus",
+    "fr": "tas de gravats"
+  },
+  "10120": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10121": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10122": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10123": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10124": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10125": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10130": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10131": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10132": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10133": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10134": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10136": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10137": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10138": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10139": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10140": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10142": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10143": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10146": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10147": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10148": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10149": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10150": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10151": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10152": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10153": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10169": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10178": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10179": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10181": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10183": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10184": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10186": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10187": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10188": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10189": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10190": {
+    "en": "rambunctious rooster",
+    "ja": "オンドリ",
+    "de": "Zankhahn",
+    "fr": "coq combatif"
+  },
+  "10191": {
+    "en": "high-strung hen",
+    "ja": "メンドリ",
+    "de": "Kampfhenne",
+    "fr": "poule pernicieuse"
+  },
+  "10192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10193": {
+    "en": "Ice Bombard",
+    "ja": "アイスボンバード",
+    "de": "Eis-Knallomat",
+    "fr": "bombardo givré"
+  },
+  "10194": {
+    "en": "Bombardier",
+    "ja": "ASU隊員",
+    "de": "Aquadeur",
+    "fr": "membre de la B.A.R."
+  },
+  "10195": {
+    "en": "Bombardier researcher",
+    "ja": "匿名のボム研究者",
+    "de": "anonym[a] Bombenforscher",
+    "fr": "spécialiste des bombos incognito"
+  },
+  "10196": {
+    "en": "Thracie",
+    "ja": "ASU研究員スレイシー",
+    "de": "Thracie",
+    "fr": "Thracie"
+  },
+  "10197": {
+    "en": "R'majha",
+    "ja": "ル・マージャ",
+    "de": "R'majha",
+    "fr": "R'majha"
+  },
+  "10198": {
+    "en": "R'fhul Tia",
+    "ja": "ル・フル・ティア",
+    "de": "R'fhul Tia",
+    "fr": "R'fhul Tia"
+  },
+  "10199": {
+    "en": "familiar male voice",
+    "ja": "聞き覚えのある青年の声",
+    "de": "männlich[a] Stimme",
+    "fr": "voix familière d'un jeune homme"
+  },
+  "10200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10201": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10203": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10204": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10205": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10206": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10209": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10210": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10211": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10212": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10213": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10214": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10215": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10216": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10217": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10218": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10219": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10220": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10222": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10223": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10230": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10231": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10232": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10235": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10236": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10237": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10239": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10240": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10241": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10242": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10243": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10244": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10245": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10246": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10247": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10248": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10249": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10250": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10251": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10252": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10253": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10254": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10255": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10257": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10258": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10260": {
     "en": "",
     "ja": "",
     "de": "",

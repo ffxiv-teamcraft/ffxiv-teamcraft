@@ -1,4 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
+import get = Reflect.get;
 
 export class I18nExtractor extends AbstractExtractor {
 
@@ -25,7 +26,7 @@ export class I18nExtractor extends AbstractExtractor {
             .forEach(key => {
               entites[entity.ID] = {
                 ...entites[entity.ID],
-                [this.additionalColumns[key]]: this.get(entity, key)
+                [this.additionalColumns[key]]: get(entity, key)
               };
             });
         });

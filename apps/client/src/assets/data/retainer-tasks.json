@@ -19072,5 +19072,80 @@
       }
     ],
     "category": 18
+  },
+  {
+    "exp": 4330000,
+    "reqGathering": 1584,
+    "reqIlvl": 0,
+    "lvl": 80,
+    "cost": 1,
+    "item": 30486,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "gathering"
+      },
+      {
+        "quantity": 5,
+        "stat": "gathering",
+        "value": 1312
+      },
+      {
+        "quantity": 7,
+        "stat": "gathering",
+        "value": 1920
+      }
+    ],
+    "category": 17
+  },
+  {
+    "exp": 4330000,
+    "reqGathering": 1584,
+    "reqIlvl": 0,
+    "lvl": 80,
+    "cost": 1,
+    "item": 30485,
+    "quantities": [
+      {
+        "quantity": 3,
+        "stat": "gathering"
+      },
+      {
+        "quantity": 5,
+        "stat": "gathering",
+        "value": 1640
+      },
+      {
+        "quantity": 7,
+        "stat": "gathering",
+        "value": 2400
+      }
+    ],
+    "category": 18
+  },
+  {
+    "exp": 4330000,
+    "reqGathering": 1267,
+    "reqIlvl": 0,
+    "lvl": 80,
+    "cost": 1,
+    "item": 30487,
+    "quantities": [
+      {
+        "quantity": 1,
+        "stat": "gathering"
+      },
+      {
+        "quantity": 2,
+        "stat": "gathering",
+        "value": 1640
+      },
+      {
+        "quantity": 3,
+        "stat": "gathering",
+        "value": 2400
+      }
+    ],
+    "category": 19
   }
 ]

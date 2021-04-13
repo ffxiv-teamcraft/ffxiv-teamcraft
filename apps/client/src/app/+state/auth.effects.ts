@@ -6,6 +6,7 @@ import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
+  ApplyContentId,
   AuthActionTypes,
   Authenticated,
   CommissionProfileLoaded,
@@ -15,7 +16,6 @@ import {
   MarkAsDoneInLog,
   NoLinkedCharacter,
   RegisterUser,
-  SetContentId,
   SetDefaultCharacter,
   UpdateUser,
   UserFetched,
@@ -182,7 +182,7 @@ export class AuthEffects {
 
   @Effect()
   selectContentId$ = this.actions$.pipe(
-    ofType<SetContentId>(AuthActionTypes.SetContentId),
+    ofType<ApplyContentId>(AuthActionTypes.ApplyContentId),
     filter(() => this.settings.followIngameCharacterSwitches),
     withLatestFrom(this.authFacade.user$),
     map(([action, user]) => {

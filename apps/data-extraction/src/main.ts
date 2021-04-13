@@ -68,7 +68,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
   new I18nExtractor('Race', 'races'),
   new I18nExtractor('SpecialShop', 'shops'),
-  new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_'),
+  new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
   new WorldsExtractor(),
   new TerritoriesExtractor(),

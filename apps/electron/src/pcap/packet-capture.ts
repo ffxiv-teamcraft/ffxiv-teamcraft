@@ -13,7 +13,6 @@ export class PacketCapture {
     'actorCast',
     'actorControl',
     'actorControlSelf',
-    'addStatusEffect',
     'airshipExplorationResult',
     'airshipStatus',
     'airshipStatusList',

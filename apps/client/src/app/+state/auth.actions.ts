@@ -51,7 +51,8 @@ export enum AuthActionTypes {
 
   MarkAsDoneInLog = '[Auth] Mark as done in log',
   CommissionProfileLoaded = '[Auth] Commission Profile Loaded',
-  SetContentId = '[Auth] Set Content Id'
+  SetContentId = '[Auth] Set Content Id',
+  ApplyContentId = '[Auth] Apply Content Id',
 }
 
 /// Get User AuthState
@@ -267,6 +268,13 @@ export class SetContentId implements Action {
   }
 }
 
+export class ApplyContentId implements Action {
+  readonly type = AuthActionTypes.ApplyContentId;
+
+  constructor( public readonly contentId: string) {
+  }
+}
+
 // Just an action to be sent once user is persisted properly
 export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
@@ -309,4 +317,5 @@ export type AuthActions = GetUser
   | SetWorld
   | MarkAsDoneInLog
   | CommissionProfileLoaded
-  | SetContentId;
+  | SetContentId
+  | ApplyContentId;

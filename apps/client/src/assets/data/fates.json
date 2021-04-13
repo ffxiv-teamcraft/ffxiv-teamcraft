@@ -29483,7 +29483,7 @@
       "en": "Cairn Blight 451",
       "ja": "腐れる読書家「タキシム」",
       "de": "Die Leserotte",
-      "fr": "Défi: zombie-bliophile"
+      "fr": "Défi: zombi-bliophile"
     },
     "description": {
       "en": "A voracious collector of eldritch tomes in life, Taxim appears loath to let his current less-than-fresh state impede him in continuing to wrest ancient and forbidden manuscripts from their hiding places, no matter the consequences.",
@@ -36571,6 +36571,735 @@
     "location": 8426999
   },
   "1710": {
+    "name": {
+      "en": "A Blizzard of Bombards",
+      "ja": "紅蓮祭「襲来 アイスボンバード！」",
+      "de": "Angriff der Eis-Knallomaten",
+      "fr": "Des bombardos complètement givrés"
+    },
+    "description": {
+      "en": "Having taken extreme umbrage at being forcefully evicted from their icy home and dragged to the balmy climes of Costa del Sol, a pack of blustery ice Bombards is determined to crash the Moonfire Faire festivities. Take up arms with your fellow adventurers, that revelry and merriment might return to the Isle of Endless Summer.",
+      "ja": "氷の冷気を求めて、アイスボンバードが襲来した\n\n浜辺に集った協力者たちとともに\n\nアイスボンバードを撃退せよ",
+      "de": "Eis-Knallomaten, die nach einer Abkühlung lechzen, gefährden die geplante Eis-Aktion des Feuermond-Reigens. Vertreibe die hitzigen Biester gemeinsam mit den Helfern, die sich am Strand versammelt haben!",
+      "fr": "Des bombardos nés dans la glace éternelle des régions polaires sont venus gâcher les réjouissances sur l'île de l'Éternel été. Réduisez-les à l'état liquide en compagnie des autres estivaliers!"
+    },
+    "icon": "/i/060000/060502.png",
+    "level": 30,
+    "location": 8663647,
+    "position": {
+      "map": 17,
+      "zoneid": 32,
+      "x": 36.72,
+      "y": 27.44,
+      "z": 0.03
+    }
+  },
+  "1711": {
+    "name": {
+      "en": "An Eggsistential Threat",
+      "ja": "エッグハント「ニワトリの卵は誰のもの」",
+      "de": "Im Hühnerstall der Albträume",
+      "fr": "Marcher sur des œufs"
+    },
+    "description": {
+      "en": "The hens in the Dreamer's Run have finally begun laying their eggs. Collect these freshly laid treasures from the nests while steering clear of the rambunctious roosters.",
+      "ja": "メンドリたちが産卵の準備をはじめた\n\n興奮状態のオンドリたちの猛攻をかわして\n\n「産みたて卵」を集めろ",
+      "de": "Die Hennen im Hühnerstall der Träumerin sind legebereit. Sammel ihre nestwarmen Eier ein, aber halte dich von den Hähnen fern!",
+      "fr": "Les poules de Pawlin ont enfin accepté de pondre. Cependant elles ne comptent pas vous laisser chaparder leurs œufs sans se laisser faire. À vous d'en ramasser le plus possible tout en évitant les assauts des gallinacés."
+    },
+    "icon": "/i/060000/060508.png",
+    "level": 10,
+    "location": 8678154,
+    "position": {
+      "map": 3,
+      "zoneid": 53,
+      "x": 2.11,
+      "y": 7.65,
+      "z": 0
+    }
+  },
+  "1712": {
+    "name": {
+      "en": "A Twist of Fête",
+      "ja": "蒼天街復興祝祭「Fêteへようこそ！」",
+      "de": "Feste, Fêtes und Feierlaune",
+      "fr": "Les poseurs à la feste"
+    },
+    "description": {
+      "en": "Indicate your participation in the fêtes by performing the mascots' poses back at them.\n\n[You must be a Disciple of the Hand or the Land to play.]",
+      "ja": "Fêteへの参加表明を示すため\n\nマスコットをターゲットし、同じポーズをとれ\n\n[クラフター・ギャザラーで参加可能]",
+      "de": "Zeig deine unbedingte Feierlaune, indem du das Maskottchen anvisierst und die geforderte Pose ausführst.\n\n(Teilnahme nur als Handwerker oder Sammler)",
+      "fr": "Ciblez les mascottes prenant la pose et choisissez la bonne action pour les imiter.\n\n* Participation réservée aux récolteurs et artisans"
+    },
+    "icon": "/i/063000/063926.png",
+    "level": 1,
+    "location": 8729852,
+    "position": {
+      "map": 574,
+      "zoneid": 3435,
+      "x": 12.25,
+      "y": 11.25,
+      "z": 0.01
+    }
+  },
+  "1713": {
+    "name": {
+      "en": "Made of Softer Stuff",
+      "ja": "蒼天街復興祝祭「ぬいぐるみ組立競争」",
+      "de": "Der Stoff der Träume",
+      "fr": "La fabrique à peluches"
+    },
+    "description": {
+      "en": "Craft stuffed toys using the materials provided, and load them up in the wains at the plaza.\n\n[You must be a Disciple of the Hand or the Land to play.]",
+      "ja": "箱に入った素材でぬいぐるみを組み立て\n\n中央の広場の荷車まで運べ\n\n[クラフター・ギャザラーで参加可能]",
+      "de": "Stelle aus den Materialien Plüsch-Mogrys her und liefere sie zum Wagen am Platz des Kreuzkarst-Spaliers.\n\n(Teilnahme nur als Handwerker oder Sammler)",
+      "fr": "Servez-vous des matériaux pour fabriquer des peluches et chargez-les dans une charrette sur la place centrale.\n\n* Participation réservée aux récolteurs et artisans"
+    },
+    "icon": "/i/063000/063926.png",
+    "level": 1,
+    "location": 8729879,
+    "position": {
+      "map": 574,
+      "zoneid": 3435,
+      "x": 12.25,
+      "y": 11.25,
+      "z": 0
+    }
+  },
+  "1714": {
+    "name": {
+      "en": "Shear-a-Yak",
+      "ja": "蒼天街復興祝祭「ヤクの毛刈り競争」",
+      "de": "Yak-o-matik",
+      "fr": "Y a qu'à tondre!"
+    },
+    "description": {
+      "en": "Fire the aetheromatic clipper at the wooly yak, and gather up and deliver three sacks of fleece to Chirpy Chocobo.\n\n[You must be a Disciple of the Hand or the Land to play.]",
+      "ja": "ウーリーヤクにエーテルクリッパーを撃ち\n\n刈りとった「ヤクの毛」を3つ拾い、納品せよ\n\n[クラフター・ギャザラーで参加可能]",
+      "de": "Zück die Ätherschere beim Woll-Yak und fülle drei Körbe mit Yak-Wolle!\n\n(Teilnahme nur als Handwerker oder Sammler)",
+      "fr": "Tirez sur le yak avec l'éthérotondeuse puis ramassez trois paniers de laine et apportez-les au chocobo chatoyant.\n\n* Participation réservée aux récolteurs et artisans"
+    },
+    "icon": "/i/063000/063926.png",
+    "level": 1,
+    "location": 8729925,
+    "position": {
+      "map": 574,
+      "zoneid": 3435,
+      "x": 11.49,
+      "y": 11.25,
+      "z": 0.01
+    }
+  },
+  "1715": {
+    "name": {
+      "en": "Toy Hunter",
+      "ja": "蒼天街復興祝祭「ぬいぐるみ集め競争」",
+      "de": "Jäger des versteckten Mogrys",
+      "fr": "La chasse au jouet"
+    },
+    "description": {
+      "en": "Open present boxes to find the lucky toy, and deliver it to Perky Piggy.\n\n[You must be a Disciple of the Hand or the Land to play.]",
+      "ja": "プレゼントボックスを開けて\n\nアタリのぬいぐるみが出たら、納品せよ\n\n[クラフター・ギャザラーで参加可能]",
+      "de": "Öffne Geschenkpäckchen, bis du einen Glücksmogry entdeckst und liefere ihn anschließend ab!\n\n(Teilnahme nur als Handwerker oder Sammler)",
+      "fr": "Ouvrez les paquets cadeaux pour trouver la peluche gagnante et apportez-la au porcelet polisson.\n\n* Participation réservée aux récolteurs et artisans"
+    },
+    "icon": "/i/063000/063926.png",
+    "level": 1,
+    "location": 8729926,
+    "position": {
+      "map": 574,
+      "zoneid": 3435,
+      "x": 12.25,
+      "y": 11.25,
+      "z": 0
+    }
+  },
+  "1716": {
+    "name": {
+      "en": "Presents of Mind",
+      "ja": "蒼天街復興祝祭「プレゼント配り競争」",
+      "de": "Bote der Glückseligkeit",
+      "fr": "À chacun son cadeau"
+    },
+    "description": {
+      "en": "Distribute presents according to the mascots' instructions.\n\n[You must be a Disciple of the Hand or the Land to play.]",
+      "ja": "マスコットたちの指示に従い\n\n街の人たちにプレゼントボックスを配れ\n\n[クラフター・ギャザラーで参加可能]",
+      "de": "Folge den Anweisungen der Maskottchen und verteile Geschenke in der Himmelsstadt!\n\n(Teilnahme nur als Handwerker oder Sammler)",
+      "fr": "Suivez les instructions des mascottes pour distribuer les cadeaux à leurs destinataires.\n\n* Participation réservée aux récolteurs et artisans"
+    },
+    "icon": "/i/063000/063926.png",
+    "level": 1,
+    "location": 8729929,
+    "position": {
+      "map": 574,
+      "zoneid": 3435,
+      "x": 12.25,
+      "y": 11.25,
+      "z": 0
+    }
+  },
+  "1717": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1718": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1719": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1720": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1721": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1722": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1723": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1724": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1725": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1726": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1727": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1728": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1729": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1730": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1731": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1732": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1733": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1734": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1735": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1736": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1737": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1738": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1739": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1740": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1741": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1742": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1743": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1744": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1745": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1746": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1747": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1748": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1749": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1750": {
     "name": {
       "en": "",
       "ja": "",

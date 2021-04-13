@@ -5262,5 +5262,181 @@ export const mapIds = [
     "territory": 965,
     "scale": 400,
     "weatherRate": 0
+  },
+  {
+    "id": 659,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 660,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 661,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 662,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 663,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 664,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 665,
+    "zone": 3662,
+    "name": "",
+    "territory": 975,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 666,
+    "zone": 2936,
+    "name": "Paglth'an",
+    "territory": 938,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 667,
+    "zone": 2936,
+    "name": "Paglth'an",
+    "territory": 938,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 668,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 669,
+    "zone": 3647,
+    "name": "The Tower at Paradigm's Breach",
+    "territory": 966,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 670,
+    "zone": 3663,
+    "name": "G-Savior Deck",
+    "territory": 950,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 671,
+    "zone": 3663,
+    "name": "G-Savior Deck",
+    "territory": 991,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 672,
+    "zone": 3662,
+    "name": "",
+    "territory": 975,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 673,
+    "zone": 3682,
+    "name": "",
+    "territory": 975,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 674,
+    "zone": 3682,
+    "name": "",
+    "territory": 975,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 675,
+    "zone": 3682,
+    "name": "",
+    "territory": 975,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 676,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 677,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 678,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 679,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 680,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
   }
 ];

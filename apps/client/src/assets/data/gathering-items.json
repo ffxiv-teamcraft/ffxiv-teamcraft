@@ -107,6 +107,12 @@
     "itemId": 19,
     "hidden": 0
   },
+  "19": {
+    "level": 77,
+    "stars": 0,
+    "itemId": 33233,
+    "hidden": 0
+  },
   "24": {
     "level": 20,
     "stars": 0,
@@ -3753,6 +3759,30 @@
     "level": 70,
     "stars": 1,
     "itemId": 33153,
+    "hidden": 0
+  },
+  "636": {
+    "level": 71,
+    "stars": 0,
+    "itemId": 33229,
+    "hidden": 0
+  },
+  "637": {
+    "level": 72,
+    "stars": 0,
+    "itemId": 33230,
+    "hidden": 0
+  },
+  "638": {
+    "level": 73,
+    "stars": 0,
+    "itemId": 33231,
+    "hidden": 0
+  },
+  "639": {
+    "level": 75,
+    "stars": 0,
+    "itemId": 33232,
     "hidden": 0
   },
   "10001": {

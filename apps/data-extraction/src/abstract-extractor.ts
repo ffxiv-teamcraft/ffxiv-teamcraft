@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
-import { map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import * as request from 'request';
 import * as querystring from 'querystring';
@@ -213,7 +213,8 @@ export abstract class AbstractExtractor {
         );
       }),
       skip(allIds.length - 1),
-      map(() => completeFetch)
+      map(() => completeFetch),
+      first()
     );
   };
 

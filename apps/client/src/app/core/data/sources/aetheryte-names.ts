@@ -549,7 +549,7 @@ export const aetheryteNames = {
     "en": "The Glory Gate",
     "de": "Tor der Herrlichkeit",
     "ja": "栄光の門",
-    "fr": "Porte de la gloire"
+    "fr": "Porte de la Gloire"
   },
   "160": {
     "en": "The Path to Glory (Kholusia)",

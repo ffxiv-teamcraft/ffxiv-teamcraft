@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
 import { authQuery } from './auth.selectors';
 import {
+  ApplyContentId,
   GetUser,
   LinkingCharacter,
   Logout,
@@ -363,6 +364,10 @@ export class AuthFacade {
 
   public setContentId(lodestoneId: number, contentId: string): void {
     this.store.dispatch(new SetContentId(lodestoneId, contentId));
+  }
+
+  public applyContentId(contentId: string): void {
+    this.store.dispatch(new ApplyContentId(contentId));
   }
 
   public setWorld(world: number): void {

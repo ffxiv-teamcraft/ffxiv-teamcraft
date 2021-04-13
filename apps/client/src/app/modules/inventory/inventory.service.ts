@@ -382,6 +382,7 @@ export class InventoryService {
       first()
     ).subscribe(result => {
       this.contentId$.next({ type: 'SetContentId', contentId: result });
+      this.authFacade.applyContentId(result);
     });
   }
 

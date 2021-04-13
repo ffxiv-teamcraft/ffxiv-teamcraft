@@ -28959,7 +28959,7 @@
       "de": "Bedenken eines Beschwörers",
       "fr": "La dubitation d'un invocateur"
     },
-    "icon": "/i/062000/062408.png"
+    "icon": "/i/071000/071221.png"
   },
   "68754": {
     "name": {
@@ -29773,7 +29773,7 @@
   },
   "68844": {
     "name": {
-      "en": "Ys Iala’s Errand",
+      "en": "Ys Iala's Errand",
       "ja": "イス＝ヤラの呻き",
       "de": "Die Leichtigkeit des Seins",
       "fr": "Un appétit pour la farce"
@@ -29782,7 +29782,7 @@
   },
   "68845": {
     "name": {
-      "en": "Oul Sigun’s Plea",
+      "en": "Oul Sigun's Plea",
       "ja": "オール＝シグンのお仕事",
       "de": "Stumme Spielgefährten",
       "fr": "Les enfeuillés"
@@ -30781,7 +30781,7 @@
   },
   "68956": {
     "name": {
-      "en": " In His Mistress’s Memory",
+      "en": " In His Mistress's Memory",
       "ja": " 主人を悼んで",
       "de": " Eine Blume im Gedenken",
       "fr": " Une fleur en souvenir"
@@ -30826,7 +30826,7 @@
   },
   "68961": {
     "name": {
-      "en": " In His Mistress’s Name",
+      "en": " In His Mistress's Name",
       "ja": " 主人の贈るメダル",
       "de": " Nimbus' Anhänger",
       "fr": " La médaille de Nimbus"
@@ -35038,7 +35038,7 @@
   },
   "69429": {
     "name": {
-      "en": " Ever Skyward",
+      "en": " Ever Skyward",
       "ja": " 道具改良のススメ",
       "de": " Neues Werkzeug aus Himmelsstahl",
       "fr": " Des outils tels des étoiles"
@@ -35047,7 +35047,7 @@
   },
   "69430": {
     "name": {
-      "en": " The Tools of Tomorrow",
+      "en": " The Tools of Tomorrow",
       "ja": " 磨き上がる職人道具",
       "de": " Mit neuem Werkzeug frisch ans Werk",
       "fr": " Un ciel nouveau à l'horizon"
@@ -35805,7 +35805,7 @@
     "name": {
       "en": "Voice of the Soul",
       "ja": "騎士の誓い",
-      "de": "Die Stimme der Seele",
+      "de": "Ein Versprechen für die Ewigkeit",
       "fr": "Une promesse pour l'éternité"
     },
     "icon": "/i/071000/071221.png"
@@ -35859,7 +35859,7 @@
     "name": {
       "en": " Greater Heights",
       "ja": " 技師たちの夢の先",
-      "de": "Vorbild aller Ingenieure",
+      "de": " Vorbild aller Ingenieure",
       "fr": " Vers de nouveaux cieux d'acier"
     },
     "icon": "/i/071000/071221.png"
@@ -36280,55 +36280,55 @@
   },
   "69567": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Duty in the Sky with Diamond",
+      "ja": "輝く命たち",
+      "de": "Gleißendes Leben",
+      "fr": "Les diamants sont immuables"
     },
     "icon": "/i/071000/071221.png"
   },
   "69568": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Forever at Your Side",
+      "ja": "いつも、いつまでも",
+      "de": "Leben für die Freiheit",
+      "fr": "Toujours près de toi"
     },
     "icon": "/i/071000/071221.png"
   },
   "69569": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "To Be Second Best",
+      "ja": "二番目の召喚士",
+      "de": "Bedenken eines Beschwörers",
+      "fr": "La dubitation d'un invocateur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/062000/062408.png"
   },
   "69570": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Konogg, Alone",
+      "ja": "孤独なコノッグ",
+      "de": "Kummerkrank",
+      "fr": "Au chevet de Konogg"
     },
     "icon": "/i/071000/071221.png"
   },
   "69571": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Brave New World",
+      "ja": "顕現する敵",
+      "de": "Des Schicksals grausam Ränke",
+      "fr": "Créatures ennemies"
     },
     "icon": "/i/071000/071221.png"
   },
   "69572": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It Takes a Village",
+      "ja": "村人達の心",
+      "de": "Komras kaltes Herz",
+      "fr": "Tous coupables?"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -36388,91 +36388,91 @@
   },
   "69579": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Komra Wasn't Built in a Day",
+      "ja": "コメラの村の復興",
+      "de": "Zart blüht die Hoffnung",
+      "fr": "Projet d'avenir"
     },
     "icon": "/i/071000/071221.png"
   },
   "69580": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Message from Konogg",
+      "ja": "コノッグからのメッセージ",
+      "de": "Ein Lebenszeichen",
+      "fr": "Courrier électronique"
     },
     "icon": "/i/071000/071221.png"
   },
   "69581": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dwarves of a Beard",
+      "ja": "新しい協力者",
+      "de": "Helfende Hände",
+      "fr": "Un Nain volontaire"
     },
     "icon": "/i/071000/071221.png"
   },
   "69582": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Strange Glagg",
+      "ja": "グラッグの異変",
+      "de": "Des Papas Paradoxie",
+      "fr": "Le doyen dérape"
     },
     "icon": "/i/071000/071221.png"
   },
   "69583": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dwarves of a Beard Freshened",
+      "ja": "さらなる協力者",
+      "de": "Ausgefuchste Assistenz",
+      "fr": "Un Nain volontaire (bis)"
     },
     "icon": "/i/071000/071221.png"
   },
   "69584": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Stranger Glagg",
+      "ja": "おかしなグラッグ",
+      "de": "Des Papas persistente Paradoxie",
+      "fr": "Le doyen déraille"
     },
     "icon": "/i/071000/071221.png"
   },
   "69585": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "All's Well That Ends with Ale",
+      "ja": "万事解決",
+      "de": "Glück auf für Komra",
+      "fr": "Komra retrouvé!"
     },
     "icon": "/i/071000/071221.png"
   },
   "69586": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "All That Grinds Is Not Gloom",
+      "ja": "弱気な村人と未知の技術",
+      "de": "Des einen Tand ...",
+      "fr": "Formes de vie recyclables"
     },
     "icon": "/i/071000/071221.png"
   },
   "69587": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Merchant of Komra",
+      "ja": "利口な村人の営業作戦",
+      "de": "Meisterhafter Merkantilismus",
+      "fr": "Bon débarras"
     },
     "icon": "/i/071000/071221.png"
   },
   "69588": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "How to Catch an Automaton",
+      "ja": "勇ましい村人の発見",
+      "de": "Tapfere Taten und kühne Kämpfe",
+      "fr": "Chasse à la grenouille"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -36487,93 +36487,93 @@
   },
   "69590": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Great Horn Heist",
+      "ja": "ゴールドソーサーに隠された真実",
+      "de": "Lügen haben kurze Beine",
+      "fr": "Le mystérieux vol du Gold Saucer"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080116.png"
   },
   "69591": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Token of Thanks",
+      "ja": "ゴールドソーサーの感謝の印",
+      "de": "Eine Geste der Dankbarkeit",
+      "fr": "Le sceau du détective"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080116.png"
   },
   "69592": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Great Horn Heist Redux",
+      "ja": "ゴールドソーサーで再捜査",
+      "de": "Neu aufgerollt",
+      "fr": "L'autre version de l'histoire"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080116.png"
   },
   "69593": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Dragon Made",
+      "ja": "漆黒の機竜、現世に咆哮す",
+      "de": "Drache aus Feuer und Eisen",
+      "fr": "Les ailes sombres d'Allag"
     },
     "icon": "/i/071000/071221.png"
   },
   "69594": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Unto the Breach",
+      "ja": "決意の旅路へ",
+      "de": "Silberharnisch",
+      "fr": "Réunion de crise"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69595": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Here Be Dragons",
+      "ja": "竜への追想",
+      "de": "Auf den Spuren eines Drachen",
+      "fr": "L'empathie du chevalier dragon"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69596": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Righteous Indignation",
+      "ja": "嘆きの咆哮",
+      "de": "Gefängnis der Trauer",
+      "fr": "Un sursaut d'orgueil"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69597": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For Vengeance",
+      "ja": "解き放ち、空へ",
+      "de": "Flügelschlag in die Freiheit",
+      "fr": "Vers une envolée nouvelle"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69598": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Flames of War",
+      "ja": "草原に燃ゆる",
+      "de": "Goldene Flammen",
+      "fr": "Et soudain, l'embrasement"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69599": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "When the Dust Settles",
+      "ja": "戦いと犠牲",
+      "de": "Blutzoll",
+      "fr": "Le coût de la guerre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69600": {
     "name": {
@@ -36702,6 +36702,483 @@
     "icon": "/i/071000/071221.png"
   },
   "69614": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69615": {
+    "name": {
+      "en": "You Can Count on It",
+      "ja": "お得意様デュランデル伯爵",
+      "de": "Ein verlässliches Duo",
+      "fr": "Le comte de Durendaire et ses commandes spéciales"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69616": {
+    "name": {
+      "en": "Those Who Serve",
+      "ja": "皇都の未来を担うため",
+      "de": "Dienst am Volk",
+      "fr": "Un futur main dans la main"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69617": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69618": {
+    "name": {
+      "en": "Unseasonable Chills",
+      "ja": "紅蓮祭と常夏の大氷獣",
+      "de": "Sommer, Sonne, Eis-Knallomaten",
+      "fr": "Ils sont givrés, ces bombardos!"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69619": {
+    "name": {
+      "en": "A Treat to Beat the Heat",
+      "ja": "紅蓮祭とスペシャルな氷菓",
+      "de": "Ein ganz besonderes Eis",
+      "fr": "Un sorbet fait avec le cœur"
+    },
+    "icon": "/i/080000/080101.png"
+  },
+  "69620": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69621": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69622": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69623": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69624": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69625": {
+    "name": {
+      "en": "Fowl Demands",
+      "ja": "エッグハントと不機嫌なニワトリ",
+      "de": "Heldentat im Hühnerstall",
+      "fr": "Des cocottes pas commodes"
+    },
+    "icon": "/i/080000/080110.png"
+  },
+  "69626": {
+    "name": {
+      "en": "A Poultry Sum",
+      "ja": "エッグハントに彩りを添えて",
+      "de": "Für die freundlichen Helfer",
+      "fr": "Prœufusion de cadeaux"
+    },
+    "icon": "/i/080000/080110.png"
+  },
+  "69627": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69628": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69629": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69630": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69631": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69632": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69633": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69634": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69635": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69636": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69637": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69638": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69639": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69640": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69641": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69642": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69643": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69644": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69645": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69646": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69647": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69648": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69649": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69650": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69651": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69652": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69653": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69654": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69655": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69656": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69657": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69658": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69659": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69660": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69661": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69662": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69663": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69664": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69665": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69666": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69667": {
     "name": {
       "en": "",
       "ja": "",

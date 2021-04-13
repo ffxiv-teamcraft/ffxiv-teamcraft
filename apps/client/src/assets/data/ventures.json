@@ -5176,5 +5176,23 @@
     "ja": "レガリスゼンマイ",
     "de": "Kaiserfarn",
     "fr": "Osmonde royale"
+  },
+  "870": {
+    "en": "Brashgold Ore",
+    "ja": "金錫鉱",
+    "de": "Goldzinn",
+    "fr": "Minerai d'étain argenté"
+  },
+  "871": {
+    "en": "Tender Dill",
+    "ja": "テンダーイノンド",
+    "de": "Milder Nebeldill",
+    "fr": "Aneth souple"
+  },
+  "872": {
+    "en": "Blue Crab",
+    "ja": "ブルークラブ",
+    "de": "Blaukrabbe",
+    "fr": "Crabe bleu"
   }
 }

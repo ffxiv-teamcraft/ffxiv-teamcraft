@@ -11029,35 +11029,35 @@
     "ja": "死者の宮殿の探索者：ランク1",
     "de": "Tiefenstürmer I",
     "fr": "Descente mortelle I",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1577": {
     "en": "In Too Deep II",
     "ja": "死者の宮殿の探索者：ランク2",
     "de": "Tiefenstürmer II",
     "fr": "Descente mortelle II",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1578": {
     "en": "In Too Deep III",
     "ja": "死者の宮殿の探索者：ランク3",
     "de": "Tiefenstürmer III",
     "fr": "Descente mortelle III",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1579": {
     "en": "In Too Deep IV",
     "ja": "死者の宮殿の探索者：ランク4",
     "de": "Tiefenstürmer IV",
     "fr": "Descente mortelle IV",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1580": {
     "en": "In Too Deep V",
     "ja": "死者の宮殿の探索者：ランク5",
     "de": "Tiefenstürmer V",
     "fr": "Descente mortelle V",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1581": {
     "en": "Aetherpool Party: Sword and Shield",
@@ -11368,7 +11368,7 @@
     "icon": "/i/042000/042532.png"
   },
   "1625": {
-    "en": "Beautiful Youngling Too Good for this World, Too Pure",
+    "en": "Beautiful Youngling Too Good for This World, Too Pure",
     "ja": "小児病棟の星芒祭",
     "de": "Helferlein der Kinder",
     "fr": "Disciple du saint intérimaire",
@@ -11582,21 +11582,21 @@
     "ja": "死者の宮殿の探索者：ランク6",
     "de": "Tiefenstürmer VI",
     "fr": "Descente mortelle VI",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1656": {
     "en": "In Too Deep VII",
     "ja": "死者の宮殿の探索者：ランク7",
     "de": "Tiefenstürmer VII",
     "fr": "Descente mortelle VII",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1657": {
     "en": "In Too Deep VIII",
     "ja": "死者の宮殿の探索者：ランク8",
     "de": "Tiefenstürmer VIII",
     "fr": "Descente mortelle VIII",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003284.png"
   },
   "1658": {
     "en": "Some Kinna Wonderful",
@@ -11610,14 +11610,14 @@
     "ja": "孤独なる挑戦者：ランク1",
     "de": "Einsamer Tiefenstürmer I",
     "fr": "Au fin fond de la solitude I",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003321.png"
   },
   "1660": {
     "en": "Pal-less Palace II",
     "ja": "孤独なる挑戦者：ランク2",
     "de": "Einsamer Tiefenstürmer II",
     "fr": "Au fin fond de la solitude II",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003321.png"
   },
   "1661": {
     "en": "For the Hoard I",
@@ -13661,7 +13661,7 @@
     "ja": "孤独なる挑戦者：ランク3",
     "de": "Einsamer Tiefenstürmer III",
     "fr": "Au fin fond de la solitude III",
-    "icon": "/i/027000/027977.png"
+    "icon": "/i/003000/003321.png"
   },
   "1953": {
     "en": "Tank You, Paladin I",
@@ -14326,35 +14326,35 @@
     "ja": "アメノミハシラの探索者：ランク1",
     "de": "Himmelssäulenstürmer I",
     "fr": "Gratter les Cieux I",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/002000/002533.png"
   },
   "2048": {
     "en": "She's So High II",
     "ja": "アメノミハシラの探索者：ランク2",
     "de": "Himmelssäulenstürmer II",
     "fr": "Gratter les Cieux II",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/002000/002533.png"
   },
   "2049": {
     "en": "She's So High III",
     "ja": "アメノミハシラの探索者：ランク3",
     "de": "Himmelssäulenstürmer III",
     "fr": "Gratter les Cieux III",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/002000/002533.png"
   },
   "2050": {
     "en": "She's So High IV",
     "ja": "アメノミハシラの探索者：ランク4",
     "de": "Himmelssäulenstürmer IV",
     "fr": "Gratter les Cieux IV",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/002000/002533.png"
   },
   "2051": {
     "en": "She's So High V",
     "ja": "アメノミハシラの探索者：ランク5",
     "de": "Himmelssäulenstürmer V",
     "fr": "Gratter les Cieux V",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/002000/002533.png"
   },
   "2052": {
     "en": "Empyrean Dreams",
@@ -14375,14 +14375,14 @@
     "ja": "孤高なる挑戦者：ランク1",
     "de": "Einsamer Himmelssäulenstürmer I",
     "fr": "Des sommets de solitude I",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/003000/003321.png"
   },
   "2055": {
     "en": "Heaven Is a Lonely Place II",
     "ja": "孤高なる挑戦者：ランク2",
     "de": "Einsamer Himmelssäulenstürmer II",
     "fr": "Des sommets de solitude II",
-    "icon": "/i/027000/027994.png"
+    "icon": "/i/003000/003321.png"
   },
   "2056": {
     "en": "For the Hoard V",
@@ -18193,7 +18193,7 @@
     "icon": "/i/062000/062971.png"
   },
   "2600": {
-    "en": "With My Compliments IV",
+    "en": "History's No Mystery",
     "ja": "ロンカの書記官",
     "de": "Vertrauter der Grabenden Pfoten",
     "fr": "Scribe de Ronka",
@@ -18328,7 +18328,7 @@
   "2619": {
     "en": "Mapping the Realm: The Puppets' Bunker",
     "ja": "人形タチノ軍事基地を踏破せし者",
-    "de": "Kartograph: Puppenfestung ",
+    "de": "Kartograph: Puppenfestung",
     "fr": "Cartographe du continent : base militaire des Pantins",
     "icon": "/i/001000/001001.png"
   },
@@ -19322,7 +19322,7 @@
   "2761": {
     "en": "Annals of Archaeology",
     "ja": "グンヒルド・ディルーブラムの記録員",
-    "de": "Neues aus dem Delubrum ",
+    "de": "Neues aus dem Delubrum",
     "fr": "Historiographie",
     "icon": "/i/026000/026184.png"
   },
@@ -19716,7 +19716,7 @@
     "ja": "リズンソング文化区の漁師",
     "de": "Fischer von Himmelsang",
     "fr": "Pêcheur du Nouveau Refrain",
-    "icon": "/i/029000/029749.png"
+    "icon": "/i/029000/029748.png"
   },
   "2818": {
     "en": "Solid Ground",
@@ -19724,5 +19724,516 @@
     "de": "Himmlische Ode",
     "fr": "Avenir couleur azur",
     "icon": "/i/026000/026002.png"
+  },
+  "2819": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2820": {
+    "en": "Fast and Flurry-ous",
+    "ja": "ずっと速い",
+    "de": "Mechamander",
+    "fr": "Les ailes sombres d'Allag",
+    "icon": "/i/000000/000104.png"
+  },
+  "2821": {
+    "en": "Retooled: Resplendent Millfiend's Saw",
+    "ja": "リスプレンデントツール：リスプレンデント・ミルフィーンドソー",
+    "de": "Prachtwerkzeug: Prächtige Schreinerkoryphäen-Säge",
+    "fr": "Menuiserie resplendissante",
+    "icon": "/i/035000/035042.png"
+  },
+  "2822": {
+    "en": "Retooled: Resplendent Forgefiend's Hammer",
+    "ja": "リスプレンデントツール：リスプレンデント・フォージフィーンドハンマー",
+    "de": "Prachtwerkzeug: Prächtiger Waffenschmiedekoryphäen-Hammer",
+    "fr": "Métallurgie resplendissante",
+    "icon": "/i/035000/035141.png"
+  },
+  "2823": {
+    "en": "Retooled: Resplendent Hammerfiend's Beetle",
+    "ja": "リスプレンデントツール：リスプレンデント・ハンマーフィーンドハンマー",
+    "de": "Prachtwerkzeug: Prächtiger Rüstungsschmiedekoryphäen-Treibhammer",
+    "fr": "Armurerie resplendissante",
+    "icon": "/i/035000/035241.png"
+  },
+  "2824": {
+    "en": "Retooled: Resplendent Gemfiend's Mallet",
+    "ja": "リスプレンデントツール：リスプレンデント・ジェムフィーンドマレット",
+    "de": "Prachtwerkzeug: Prächtiger Kunstschmiedekoryphäen-Fäustel",
+    "fr": "Orfèvrerie resplendissante",
+    "icon": "/i/035000/035340.png"
+  },
+  "2825": {
+    "en": "Retooled: Resplendent Boltfiend's Needle",
+    "ja": "リスプレンデントツール：リスプレンデント・ボルトフィーンドニードル",
+    "de": "Prachtwerkzeug: Prächtige Schneiderkoryphäen-Nadel",
+    "fr": "Couture resplendissante",
+    "icon": "/i/035000/035541.png"
+  },
+  "2826": {
+    "en": "Retooled: Resplendent Hidefiend's Knife",
+    "ja": "リスプレンデントツール：リスプレンデント・ハイドフィーンドナイフ",
+    "de": "Prachtwerkzeug: Prächtiges Ledererkoryphäen-Messer",
+    "fr": "Tannerie resplendissante",
+    "icon": "/i/035000/035441.png"
+  },
+  "2827": {
+    "en": "Retooled: Resplendent Cauldronfiend's Alembic",
+    "ja": "リスプレンデントツール：リスプレンデント・コルドロンフィーンドアレンビック",
+    "de": "Prachtwerkzeug: Prächtiger Laborkoryphäen-Destillierkolben",
+    "fr": "Alchimie resplendissante",
+    "icon": "/i/035000/035640.png"
+  },
+  "2828": {
+    "en": "Retooled: Resplendent Galleyfiend's Frypan",
+    "ja": "リスプレンデントツール：リスプレンデント・ガリーフィーンドフライパン",
+    "de": "Prachtwerkzeug: Prächtige Feinschmeckerkoryphäen-Bratpfanne",
+    "fr": "Cuisine resplendissante",
+    "icon": "/i/035000/035743.png"
+  },
+  "2829": {
+    "en": "Blameless Tools",
+    "ja": "良工は材を厳選す",
+    "de": "Pracht-Handwerker",
+    "fr": "Resplendissement total",
+    "icon": "/i/001000/001982.png"
+  },
+  "2830": {
+    "en": "I Found That: Miner VII",
+    "ja": "手帳好きの採掘師：ランク７",
+    "de": "Ich hab's gefunden: Minenarbeiter VII",
+    "fr": "Carnet de notes : mineur VII",
+    "icon": "/i/001000/001015.png"
+  },
+  "2831": {
+    "en": "I Found That: Botanist VII",
+    "ja": "手帳好きの園芸師：ランク７",
+    "de": "Ich hab's gefunden: Gärtner VII",
+    "fr": "Carnet de notes : botaniste VII",
+    "icon": "/i/001000/001065.png"
+  },
+  "2832": {
+    "en": "I Caught That VII",
+    "ja": "手帳好きの漁師：ランク7",
+    "de": "Dicker Fang VII",
+    "fr": "Carnet de notes : pêcheur VII",
+    "icon": "/i/001000/001104.png"
+  },
+  "2833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2835": {
+    "en": "Satisfaction Guaranteed: Charlemend I",
+    "ja": "デュランデル伯爵：ランク1",
+    "de": "Dem Grafen zu Diensten: Charlemend I",
+    "fr": "Le comte est bon I",
+    "icon": "/i/025000/025507.png"
+  },
+  "2836": {
+    "en": "Satisfaction Guaranteed: Charlemend II",
+    "ja": "デュランデル伯爵：ランク2",
+    "de": "Dem Grafen zu Diensten: Charlemend II",
+    "fr": "Le comte est bon II",
+    "icon": "/i/025000/025507.png"
+  },
+  "2837": {
+    "en": "Satisfaction Guaranteed: Charlemend III",
+    "ja": "デュランデル伯爵：ランク3",
+    "de": "Dem Grafen zu Diensten: Charlemend III",
+    "fr": "Le comte est bon III",
+    "icon": "/i/025000/025507.png"
+  },
+  "2838": {
+    "en": "Satisfaction Guaranteed: Charlemend IV",
+    "ja": "デュランデル伯爵：ランク4",
+    "de": "Dem Grafen zu Diensten: Charlemend IV",
+    "fr": "Le comte est bon IV",
+    "icon": "/i/025000/025507.png"
+  },
+  "2839": {
+    "en": "Satisfaction Guaranteed: Charlemend V",
+    "ja": "デュランデル伯爵：ランク5",
+    "de": "Dem Grafen zu Diensten: Charlemend V",
+    "fr": "Le comte est bon V",
+    "icon": "/i/025000/025507.png"
+  },
+  "2840": {
+    "en": "The Customer Is Always Right: Charlemend I",
+    "ja": "デュランデル伯爵の得意先：ランク1",
+    "de": "Der Kunde ist Graf I",
+    "fr": "Fournisseur officiel du comte de Durendaire I",
+    "icon": "/i/026000/026551.png"
+  },
+  "2841": {
+    "en": "The Customer Is Always Right: Charlemend II",
+    "ja": "デュランデル伯爵の得意先：ランク2",
+    "de": "Der Kunde ist Graf II",
+    "fr": "Fournisseur officiel du comte de Durendaire II",
+    "icon": "/i/026000/026551.png"
+  },
+  "2842": {
+    "en": "The Customer Is Always Right: Charlemend III",
+    "ja": "デュランデル伯爵の得意先：ランク3",
+    "de": "Der Kunde ist Graf III",
+    "fr": "Fournisseur officiel du comte de Durendaire III",
+    "icon": "/i/026000/026551.png"
+  },
+  "2843": {
+    "en": "The Customer Is Always Right: Charlemend IV",
+    "ja": "デュランデル伯爵の得意先：ランク4",
+    "de": "Der Kunde ist Graf IV",
+    "fr": "Fournisseur officiel du comte de Durendaire IV",
+    "icon": "/i/026000/026551.png"
+  },
+  "2844": {
+    "en": "The Customer Is Always Right: Charlemend V",
+    "ja": "デュランデル伯爵の得意先：ランク5",
+    "de": "Der Kunde ist Graf V",
+    "fr": "Fournisseur officiel du comte de Durendaire V",
+    "icon": "/i/026000/026551.png"
+  },
+  "2845": {
+    "en": "The Customer Is Always Right: Charlemend VI",
+    "ja": "デュランデル伯爵の得意先：ランク6",
+    "de": "Der Kunde ist Graf VI",
+    "fr": "Fournisseur officiel du comte de Durendaire VI",
+    "icon": "/i/026000/026551.png"
+  },
+  "2846": {
+    "en": "Shine Bright",
+    "ja": "ダイヤウェポンを捕獲せし者",
+    "de": "Diamantschleifer",
+    "fr": "Défi dans le ciel avec Diamant",
+    "icon": "/i/000000/000317.png"
+  },
+  "2847": {
+    "en": "Deus et Machina",
+    "ja": "希望ノ砲台を制覇せし者",
+    "de": "Sturm des Turms",
+    "fr": "Réalité virtuelle",
+    "icon": "/i/003000/003501.png"
+  },
+  "2848": {
+    "en": "Mapping the Realm: The Tower at Paradigm's Breach",
+    "ja": "希望ノ砲台を踏破せし者",
+    "de": "Kartograph: Der Turm, Paradigmenbrecher",
+    "fr": "Cartographe du continent : tour de la Contingence",
+    "icon": "/i/001000/001001.png"
+  },
+  "2849": {
+    "en": "Mapping the Realm: Paglth'an",
+    "ja": "パガルザンを踏破せし者",
+    "de": "Kartograph: Paglth'an",
+    "fr": "Cartographe du continent : grande prairie de Paglth'an",
+    "icon": "/i/001000/001001.png"
+  },
+  "2850": {
+    "en": "Not for Naught",
+    "ja": "戦いと犠牲",
+    "de": "Blutzoll des Krieges",
+    "fr": "Le coût de la guerre",
+    "icon": "/i/026000/026002.png"
+  },
+  "2851": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2852": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2853": {
+    "en": "You Say Goodbye, I Say Hielo...",
+    "ja": "氷菓",
+    "de": "Schabeeiskonditor",
+    "fr": "Un sorbet fait avec le cœur",
+    "icon": "/i/053000/053506.png"
+  },
+  "2854": {
+    "en": "A Fowl Temper",
+    "ja": "チキン！",
+    "de": "Ga-Gack!",
+    "fr": "Personne ne me traite de mauviette !",
+    "icon": "/i/041000/041583.png"
+  },
+  "2855": {
+    "en": "Objection!",
+    "ja": "それでもアイツはやってない",
+    "de": "Und er war es doch nicht",
+    "fr": "Il n'y a qu'une seule vérité",
+    "icon": "/i/026000/026435.png"
+  },
+  "2856": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2858": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2859": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2860": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2861": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2862": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2863": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2864": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2865": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2866": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2867": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2868": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2869": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2870": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2871": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2872": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2873": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2874": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2875": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2876": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2877": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2878": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2879": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2880": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2881": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2882": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2883": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2885": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2886": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2887": {
+    "en": "Mass Destruction of Weapons",
+    "ja": "いつも、いつまでも",
+    "de": "Das Ende des Waffenprojekts",
+    "fr": "Werlyt brisé, Werlyt martyrisé, mais Werlyt libéré !",
+    "icon": "/i/026000/026002.png"
+  },
+  "2888": {
+    "en": "Mine, Mine, Mine",
+    "ja": "カモメ",
+    "de": "Kreischende Bande",
+    "fr": "Mouette mouette avec les mouettes",
+    "icon": "/i/001000/001133.png"
+  },
+  "2889": {
+    "en": "Double-backwards Somersault",
+    "ja": "魚をくれてありがとう",
+    "de": "Schnatterndes Pack",
+    "fr": "Salut, et encore merci pour le poisson",
+    "icon": "/i/001000/001133.png"
+  },
+  "2890": {
+    "en": "Work Hard, Play Hard",
+    "ja": "蒼天街のお祭り好き",
+    "de": "Ranklotzen und abfeiern",
+    "fr": "C'est la feste au village",
+    "icon": "/i/001000/001902.png"
+  },
+  "2891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": ""
   }
 }

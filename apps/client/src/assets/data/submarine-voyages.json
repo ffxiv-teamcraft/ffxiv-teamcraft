@@ -1,11 +1,4 @@
 {
-  "0": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "id": 0
-  },
   "1": {
     "en": "the Ivory Shoals",
     "ja": "A　白の浅瀬",
@@ -462,52 +455,52 @@
     "id": 65
   },
   "66": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Forest of Kelp",
+    "ja": "N　海藻樹林",
+    "de": "Seegrashain (N)",
+    "fr": "Forêt d'algues (N)",
     "id": 66
   },
   "67": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Sea of Jade 5",
+    "ja": "O　翠浪海05",
+    "de": "Jademeer 5 (O)",
+    "fr": "Mer de Jade 5 (O)",
     "id": 67
   },
   "68": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Bladefall Chasm",
+    "ja": "P　なまくら切岸",
+    "de": "Schwertklippe (P)",
+    "fr": "Abîme émoussé (P)",
     "id": 68
   },
   "69": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Stormport",
+    "ja": "Q　風の休所",
+    "de": "Sturmruh (Q)",
+    "fr": "Port-tempête (Q)",
     "id": 69
   },
   "70": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Wyrm's Rest",
+    "ja": "R　竜骨溜まり",
+    "de": "Drachengebeinsanger (R)",
+    "fr": "Repos du dragon (R)",
     "id": 70
   },
   "71": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "Sea of Jade 6",
+    "ja": "S　翠浪海06",
+    "de": "Jademeer 5 (S)",
+    "fr": "Mer de Jade 6 (S)",
     "id": 71
   },
   "72": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
+    "en": "the Devil's Crypt",
+    "ja": "T　海獣の霊園",
+    "de": "Gruft des Seeungeheuers (T)",
+    "fr": "Crypte du diable (T)",
     "id": 72
   },
   "73": {
