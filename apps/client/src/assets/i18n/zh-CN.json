@@ -1791,7 +1791,7 @@
     "Patch": "版本",
     "Language": "语言",
     "Share": "分享",
-    "Placeholder": "Search for something awesome",
+    "Placeholder": "开启今天的探险吧！",
     "Hide_filters": "隐藏高级选项",
     "Show_filters": "显示高级选项",
     "Item_type_placeholder": "选择物品分类",
@@ -2253,12 +2253,12 @@
       "Cannot_delete_default": "您无法删除默认布局",
       "FILTER_TIPS": {
         "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "ItemFilter": "只接受指定的物品",
+        "NoFilter": "接受所有内容",
+        "ObtentionFilter": "只接受 > 0 的值",
+        "SourceFilter": "只接受指定的来源",
+        "SpendingFilter": "只接受 < 0 的值",
+        "GilFilter": "只接受金币"
       },
       "DISPLAY_TYPES": {
         "total": "汇总数据",
