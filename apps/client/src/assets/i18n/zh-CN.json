@@ -945,9 +945,9 @@
     "Level": "等级",
     "Reliability": "成功率",
     "Average_hq": "平均 HQ",
-    "Median_HQ": "Median HQ",
-    "Min_HQ": "Min. HQ",
-    "Max_HQ": "Max. HQ",
+    "Median_HQ": "中位 HQ",
+    "Min_HQ": "最低 HQ",
+    "Max_HQ": "最高 HQ",
     "Specialist": "专家",
     "New_rotation": "新建手法",
     "Rotations": "生产手法",
@@ -1293,7 +1293,7 @@
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "新建本页未完成项目的清单",
     "Create_list_limited": "新建本页未完成项目的清单(前 50 个)",
-    "Create_list_selection": "Create a list from selection ({{amount}})",
+    "Create_list_selection": "将选中的物品 ({{amount}}) 创建为清单",
     "Folklore": "传承录",
     "Timed": "限时",
     "Weather_dependant": "需要天气",
@@ -1490,7 +1490,7 @@
       "Required_craftsmanship": "需要作业精度",
       "Required_control": "需要加工精度",
       "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
-      "X_Equipped": "{{amount}} Equipped:",
+      "X_Equipped": "已装备 {{amount}}：",
       "Item_series": "套装详情"
     },
     "FISH": {
@@ -2486,7 +2486,7 @@
     "Empty_slot": "空栏位",
     "In_inventory": "已拥有",
     "Only_inventory": "仅考虑已有物品",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Interactions_description": "点击等级以选中整列物品；点击物品所在方格算则；点击删除图标在不替换的情况下取消选择。"
   },
   "RETAINERS": {
     "Title": "雇员",
@@ -2562,7 +2562,7 @@
       "Submersible": "潜水艇"
     },
     "VOYAGE_DETAILS": {
-      "Title": "Voyage"
+      "Title": "远航探索"
     },
     "BUILD_DETAILS": {
       "Title": "Build",
