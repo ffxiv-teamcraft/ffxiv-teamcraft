@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "分解指南",
     "Job": "职业",
-    "Level": "分解品级",
+    "Level": "Desynth level",
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
@@ -2485,7 +2485,7 @@
     "Generate_list": "生成清单",
     "Empty_slot": "空栏位",
     "In_inventory": "已拥有",
-    "Only_inventory": "Only consider items in inventory",
+    "Only_inventory": "仅考虑物品栏中的物品",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
