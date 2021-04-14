@@ -19,7 +19,7 @@
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
-  "Selection": "Selection",
+  "Selection": "已选中",
   "Change_character": "角色",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
@@ -187,7 +187,7 @@
     "Alarms_created": "已创建 {{amount}} 个闹钟",
     "Alarm_already_created": "闹钟已设置",
     "Custom_sound": "自定义闹钟声音",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "负值 = 在刷新之后提示",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
     "Delete_group": "删除分组",
@@ -204,13 +204,13 @@
     "Add_alarms_to_group": "增加闹钟到本组",
     "Group_link_copied": "已复制闹钟组链接",
     "Group_not_found": "未找到闹钟组",
-    "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟",
+    "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟列表",
     "Delete_all": "删除所有闹钟",
     "Delete_alarm": "删除闹钟",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
-    "Remove_from_group": "Remove from this group",
+    "Regenerating_alarms": "正在重新生成闹钟 ...",
+    "Regenerate": "重新生成闹钟",
+    "Group_outdated": "此分组已过期。请联系所有人在新版本中登录以进行更新。",
+    "Remove_from_group": "从此分组中移除",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
@@ -234,7 +234,7 @@
       "Type": "采集类型",
       "Map": "地图",
       "Weather": "天气",
-      "Weather_from": "变化从",
+      "Weather_from": "上一个天气",
       "TYPE": {
         "Mineral": "矿脉",
         "Rocky": "石场",
@@ -459,8 +459,8 @@
     "Reset_ignored_characters": "重置已忽略的角色",
     "Reset_contentid_characters": "重置已连接的角色",
     "Show_other_characters_inventories_in_list": "在清单中显示其他角色的物品栏",
-    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
-    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Alarm_panels_collapsed_by_default": "默认折叠闹钟分组面板",
+    "Alarm_groups_before_no_group": "将分组闹钟显示在未分组闹钟之前",
     "Disconnect_patreon": "取消与 Patreon 的连接",
     "Export_settings": "导出设置",
     "Import_settings": "导入设置",
@@ -527,7 +527,7 @@
     "Total_rankings": "总排名",
     "Loading_fish_rankings": "正在加载垂钓排行",
     "Gearset_priority": "优先级",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
+    "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "VERIFICATION": {
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
@@ -608,9 +608,9 @@
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
     "Final_item": "终产物",
     "Include_final_items_in_main_layout": "在主布局中包含终产物",
-    "Can_skip_buying_X": "Can skip {{amount}}",
-    "Can_skip_buying_entirely": "Can skip entirely",
-    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Can_skip_buying_X": "可以跳过 {{amount}} 个",
+    "Can_skip_buying_entirely": "可以全部跳过",
+    "Can_skip_tooltip": "其他可以购买的物品需要此物品。这意味着如果你计划购买面板中所有的其他物品，就可以少购买或直接忽略此物品。",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -631,7 +631,7 @@
       "Attach": "附加手法",
       "Detach": "删去手法",
       "Click_to_copy_macro": "点击打开“复制宏”弹出框",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "在手法悬浮窗中打开"
     },
     "INVENTORY": {
       "Show_final_items": "显示最终物品",
@@ -699,8 +699,8 @@
     "Split_list": "拆分此清单",
     "Create_commission": "为此清单创建委托",
     "Commission_list": "委托列表",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Inventory_cleanup": "清理物品栏",
+    "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -716,11 +716,11 @@
       "Menu": "菜单",
       "Edit_row_buttons_display": "修改物品次级菜单",
       "Reorder_panels": "重排面板",
-      "Select_preview_list": "Select list to preview layout",
+      "Select_preview_list": "选择一个清单来预览此布局",
       "Hidden_if_empty": "隐藏空栏",
-      "Collapsed_by_default": "Collapsed by default",
-      "No_preview": "No list preview",
-      "Please_pick_list": "Please pick a list using the select box above",
+      "Collapsed_by_default": "默认折叠",
+      "No_preview": "没有清单预览",
+      "Please_pick_list": "请在上方选择框选择一个清单",
       "Layouts": "布局",
       "Want_to_learn_more": "想了解更多关于布局和它们如何工作的信息？",
       "Open_wiki_page": "打开布局系统的wiki页面",
@@ -851,16 +851,16 @@
     "Ephemeral_node": "限时采集点，可以刷新",
     "Intro": "采集地点用于快速搜索可采集物品，并查看其详情，并为节点设置采集闹钟。在上面的输入框中输入物品名字，它会找到你要找的物品！",
     "Hidden_item": "隐藏资源",
-    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Fish_eyes": "通过鱼眼忽略天气以外的条件",
     "Add_alarm": "添加闹钟",
-    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
+    "Add_alarm_fish_eyes": "添加使用鱼眼的闹钟",
     "Snagging": "需要钓组",
     "Predators": "需要前置鱼",
     "Fish_eyes_duration": "你的鱼眼需要持续这个时间才能钓上该鱼。点击改变显示格式。",
     "Spawned_for": "在 {{timer}} 后消失",
     "Will_spawn_in": "在 {{timer}} 后出现",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
+    "Ephemeral_warning": "限时采集点有多个位置，坐标为近似值。",
+    "Legendary": "传奇",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -923,10 +923,10 @@
     "Break_on_reclaim": "在无法使用回收前拆分宏",
     "Break_before_byregots_blessing": "在“比尔格的祝福”前拆分宏",
     "Include_consumables_notification": "添加消耗品提示",
-    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
+    "Include_consumables_notification_wait_time": "消耗品提示后的等待时间",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
-    "Completion_message": "Completion message",
+    "Completion_message": "执行完成提示信息",
     "Import_macro": "从用户宏导入",
     "Ingame_macro": "用户宏",
     "Min_stats": "最低面板属性",
@@ -945,9 +945,9 @@
     "Level": "等级",
     "Reliability": "成功率",
     "Average_hq": "平均 HQ",
-    "Median_HQ": "Median HQ",
-    "Min_HQ": "Min. HQ",
-    "Max_HQ": "Max. HQ",
+    "Median_HQ": "中位 HQ",
+    "Min_HQ": "最低 HQ",
+    "Max_HQ": "最高 HQ",
     "Specialist": "专家",
     "New_rotation": "新建手法",
     "Rotations": "生产手法",
@@ -1283,7 +1283,7 @@
     "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。",
     "Downloading_update": "正在下载更新，完成后会提醒您进行安装",
-    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
+    "Possible_update_issue": "下载过程中遇到问题，请点击此图标下载最新的安装包。"
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
@@ -1293,7 +1293,7 @@
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "新建本页未完成项目的清单",
     "Create_list_limited": "新建本页未完成项目的清单(前 50 个)",
-    "Create_list_selection": "Create a list from selection ({{amount}})",
+    "Create_list_selection": "将选中的物品 ({{amount}}) 创建为清单",
     "Folklore": "传承录",
     "Timed": "限时",
     "Weather_dependant": "需要天气",
@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "分解指南",
     "Job": "职业",
-    "Level": "分解品级",
+    "Level": "分解技能",
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
@@ -1490,8 +1490,8 @@
       "Required_craftsmanship": "需要作业精度",
       "Required_control": "需要加工精度",
       "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
-      "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "X_Equipped": "已装备 {{amount}}：",
+      "Item_series": "套装详情"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1791,7 +1791,7 @@
     "Patch": "版本",
     "Language": "语言",
     "Share": "分享",
-    "Placeholder": "Search for something awesome",
+    "Placeholder": "开启今天的探险吧！",
     "Hide_filters": "隐藏高级选项",
     "Show_filters": "显示高级选项",
     "Item_type_placeholder": "选择物品分类",
@@ -1801,7 +1801,7 @@
     "Crafted_by": "制作职业",
     "Worn_by": "装备职业",
     "Gear_stats": "装备属性",
-    "Consumable_stats": "Consumable Stats",
+    "Consumable_stats": "消耗品属性",
     "No_stats_filters": "这里空空如也",
     "Add_stat_using_button": "要添加统计过滤器，请点击下面的按钮",
     "Stat": "属性",
@@ -1878,7 +1878,7 @@
     "Filter_by_expansion": "按版本筛选",
     "In_x_containers": "在 {{amount}} 个物品栏中",
     "New_character_detected": "检测到新角色",
-    "Unknown_position": "Unknown position",
+    "Unknown_position": "未知位置",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "部队储物柜",
@@ -1895,7 +1895,7 @@
       "Override_link_confirmation": "确定要覆盖关联吗？",
       "Ignore": "忽略此游戏角色",
       "You_can_reset_ignore": "在客户端设置中可以重置被忽略的角色",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "如果你已经关联了正在游玩的角色，则可以放心忽略此角色。Teamcraft 会监测文件变化。某些尚未关联的文件会因未知原因改变并触发此设置。"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1964,7 +1964,7 @@
     "Cap_value": "上限",
     "Add_materia": "添加魔晶石",
     "No_materia": "无魔晶石",
-    "Value": "值",
+    "Value": "数值",
     "Empty_slot": "空栏位",
     "Filters": "筛选",
     "Total_stats": "总属性",
@@ -1972,7 +1972,7 @@
     "Total_cost": "总成本 (兑换、金币等)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
-    "Cost": "Cost",
+    "Cost": "消耗",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
     "Warning_job_switch": "切换职业将会卸下灵魂水晶、主副手武器和魔晶石。如果你想使用相同的镶嵌方案，请在切换前做好记录。",
@@ -2014,7 +2014,7 @@
     "Create_commission": "为此配装创建委托",
     "Value_for_next": "下一临界值",
     "Value_for_previous": "上一临界值",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "本地编辑模式",
     "Editing_others_gearset_description": "您目前正在编辑他人的配装。除非您点击上面的保存按钮来创建您自己的副本，否则任何东西都不会被保存。",
     "SLOT": {
       "Body": "身体",
@@ -2173,7 +2173,7 @@
   "ADMIN": {
     "Autofix_error": "自动修复此错误",
     "USERS": {
-      "Title": "Users",
+      "Title": "用户",
       "X_characters_linked": "已关联 {{amount}} 个角色",
       "Email": "电子邮箱",
       "Uid": "UID",
@@ -2227,7 +2227,7 @@
     "TABLE": {
       "Type": "类型",
       "Entry_label": "标签",
-      "Value": "Value",
+      "Value": "数值",
       "Source": "来源",
       "Timestamp": "时间信息"
     },
@@ -2239,32 +2239,32 @@
       "Data": "数据",
       "Data_type": "类型",
       "Filter": "筛选",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
+      "Accepted_items": "接受的物品",
+      "Accepted_sources": "接受的来源",
       "Display": "显示",
       "Display_type": "显示组件",
       "Title": "标题",
       "Font_size": "字体大小",
-      "Value_label": "Value label",
+      "Value_label": "数值标签",
       "Pie_metric": "计量",
       "Add_filter": "添加筛选器",
       "Operator": "操作员",
       "Cannot_edit_default": "您不能编辑默认布局，请创建一个新的布局来自定义内容",
       "Cannot_delete_default": "您无法删除默认布局",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "FishFilter": "只接受来自钓场的鱼",
+        "ItemFilter": "只接受指定的物品",
+        "NoFilter": "接受所有内容",
+        "ObtentionFilter": "只接受 > 0 的值",
+        "SourceFilter": "只接受指定的来源",
+        "SpendingFilter": "只接受 < 0 的值",
+        "GilFilter": "只接受金币"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
-        "histogram": "Evolution over time",
+        "total": "汇总数据",
+        "histogram": "随时间的演化情况",
         "pie-chart": "饼图",
-        "table": "Table of all matching entries"
+        "table": "匹配条目的表格"
       }
     }
   },
@@ -2337,7 +2337,7 @@
       "Only_crafting": "仅限制作",
       "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
       "Only_materials": "只看材料",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_requires_materials": "此委托只需要清单中的材料",
       "Contact_info": "联系方式",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
       "Contact_info_required_error": "请填写联系方式",
@@ -2459,34 +2459,34 @@
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
-    "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Total_entries": "总项目",
+    "Last_updated": "最新更新",
+    "Last_bnpc_update": "最后上传的怪物位置",
+    "Last_node_update": "最后上传的节点位置",
+    "Clear_map": "清空此地图",
+    "Dashboard": "Mappy 仪表盘",
+    "Open_details": "打开详情页",
+    "X_Missing_nodes": "{{amount}} 缺失的节点",
+    "Missing_nodes": "缺失节点",
+    "No_missing_nodes": "无缺失节点",
+    "Only_missing_nodes": "只显示有缺失节点的地图"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
+    "Title": "合建配方流程",
+    "View_tree": "打开合建配方流程",
+    "Phase": "第 {{phase}} 阶段"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_purchases": "Include purchases",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Title": "练级装备",
+    "Include_crafting": "包含制作装备",
+    "Include_purchases": "包含购买装备",
+    "Include_trades": "包含交换装备",
+    "Description": "选择希望装备的职业和等级，设置过滤条件并点击搜索来找到合适的练级装备",
     "Generate_list": "生成清单",
     "Empty_slot": "空栏位",
     "In_inventory": "已拥有",
-    "Only_inventory": "Only consider items in inventory",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Only_inventory": "仅考虑已有物品",
+    "Interactions_description": "点击等级以选中整列物品；点击物品所在方格算则；点击删除图标在不替换的情况下取消选择。"
   },
   "RETAINERS": {
     "Title": "雇员",
@@ -2549,30 +2549,30 @@
     "No_submersible": "无潜水艇",
     "Sectors_discovered": "已开放的区域",
     "Delete_free_company": "删除部队",
-    "Name_column": "Name",
+    "Name_column": "名称",
     "Return_time_column": "返航时间",
     "Remaining_time_column": "剩余时间",
     "Rank_column": "等级",
-    "Build_column": "Build",
-    "Voyage_column": "Voyage",
-    "Nothing_to_show": "Nothing to show",
+    "Build_column": "配件",
+    "Voyage_column": "探索",
+    "Nothing_to_show": "无可用的内容",
     "Please_import_pcap": "请使用数据包捕获来导入飞空艇和潜水艇。",
     "SECTOR_PROGRESSION": {
       "Airship": "飞空艇",
       "Submersible": "潜水艇"
     },
     "VOYAGE_DETAILS": {
-      "Title": "Voyage"
+      "Title": "远航探索"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
-      "Condition": "Condition"
+      "Title": "配件",
+      "Condition": "耐久度"
     },
     "STATS_DETAILS": {
       "Title": "性能"
     },
     "STATS": {
-      "Surveillance": "Surveillance",
+      "Surveillance": "探索性能",
       "Retrieval": "收集性能",
       "Speed": "巡航速度",
       "Range": "航行距离",
@@ -2582,59 +2582,59 @@
   "AIRSHIP": {
     "CLASS": {
       "BRONCO": {
-        "Abbreviation": "B"
+        "Abbreviation": "野马"
       },
       "INVINCIBLE": {
-        "Abbreviation": "i"
+        "Abbreviation": "无敌"
       },
       "ENTERPRISE": {
-        "Abbreviation": "E"
+        "Abbreviation": "企业"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "i2"
+        "Abbreviation": "无敌改"
       },
       "ODYSSEY": {
-        "Abbreviation": "O"
+        "Abbreviation": "奥德赛"
       },
       "TATANORA": {
-        "Abbreviation": "T"
+        "Abbreviation": "塔塔"
       },
       "VILTGANCE": {
-        "Abbreviation": "V"
+        "Abbreviation": "威尔"
       }
     }
   },
   "SUBMARINE": {
     "CLASS": {
       "SHARK": {
-        "Abbreviation": "S"
+        "Abbreviation": "1"
       },
       "UNKIU": {
-        "Abbreviation": "U"
+        "Abbreviation": "2"
       },
       "WHALE": {
-        "Abbreviation": "W"
+        "Abbreviation": "3"
       },
       "COELACANTH": {
-        "Abbreviation": "C"
+        "Abbreviation": "4"
       },
       "SYLDRA": {
-        "Abbreviation": "Y"
+        "Abbreviation": "5"
       },
       "MODIFIED_SHARK": {
-        "Abbreviation": "S+"
+        "Abbreviation": "1改"
       },
       "MODIFIED_UNKIU": {
-        "Abbreviation": "U+"
+        "Abbreviation": "2改"
       },
       "MODIFIED_WHALE": {
-        "Abbreviation": "W+"
+        "Abbreviation": "3改"
       },
       "MODIFIED_COELACANTH": {
-        "Abbreviation": "C+"
+        "Abbreviation": "4改"
       },
       "MODIFIED_SYLDRA": {
-        "Abbreviation": "Y+"
+        "Abbreviation": "5改"
       }
     }
   },

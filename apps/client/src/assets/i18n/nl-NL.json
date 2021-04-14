@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "Desynth guide",
     "Job": "Job",
-    "Level": "Level",
+    "Level": "Desynth level",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
     "Loading_message": "Loading...",
     "TAGS": {

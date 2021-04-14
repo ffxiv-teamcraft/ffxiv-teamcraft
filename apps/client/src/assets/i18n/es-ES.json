@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "Guía de desíntesis",
     "Job": "Profesión",
-    "Level": "Nivel",
+    "Level": "Desynth level",
     "Intro": "Seleccione una profesión e introduzca un nivel para encontrar los mejores artículos para subir el nivel de su desíntesis",
     "Loading_message": "Cargando...",
     "TAGS": {

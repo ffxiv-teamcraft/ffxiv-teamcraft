@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "分解ガイド",
     "Job": "ジョブ",
-    "Level": "レベル",
+    "Level": "Desynth level",
     "Intro": "ジョブを選択し、分解レベルを入力して分解レベリングに最適化されたアイテムを探して下さい",
     "Loading_message": "読み込み中です...",
     "TAGS": {

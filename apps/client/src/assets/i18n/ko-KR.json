@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "분해 가이드",
     "Job": "직업",
-    "Level": "레벨",
+    "Level": "Desynth level",
     "Intro": "직업을 선택하고 분해 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
