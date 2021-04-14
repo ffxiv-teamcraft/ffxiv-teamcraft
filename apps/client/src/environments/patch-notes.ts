@@ -11,4 +11,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **db:** added 5.5 content.
-* **leveling-equipment:** now displays full job name instead of abbreviation.`;
+* **leveling-equipment:** now displays full job name instead of abbreviation.`;
