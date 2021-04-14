@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs';
+import { merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
-import { merge } from 'rxjs';
+import { filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
@@ -29,12 +28,13 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
     const resultLog$ = packets$.pipe(
       ofMessageType('airshipExplorationResult'),
       toIpcData(),
-      map((packet) => packet.explorationResult)
+      map((packet) => packet.explorationResult),
+      shareReplay(1)
     );
 
     const status$ = packets$.pipe(
       ofMessageType('airshipStatus'),
-      toIpcData(),
+      toIpcData()
     );
 
     const updateHullCondition$ = packets$.pipe(
@@ -51,8 +51,11 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
       map(([, status]) => {
         return this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
       }),
-      withLatestFrom(resultLog$),
-      map(([stats, resultLog]): any[] => this.createReportsList(stats, resultLog))
+      switchMap(stats => {
+        return resultLog$.pipe(
+          map(resultLog => this.createReportsList(stats, resultLog))
+        );
+      })
     );
   }
 
