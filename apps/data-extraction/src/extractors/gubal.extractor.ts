@@ -10,6 +10,15 @@ export class GubalExtractor extends AbstractExtractor {
     }, {});
   }
 
+  gubalVoyageAggregatorToObject(rows) {
+    return rows.reduce((res, row) => {
+      return {
+        ...res,
+        [row.itemId]: [...(res[row.itemId] || []), { type: row.type, id: row.voyageId }]
+      };
+    }, {});
+  }
+
   protected doExtract(): any {
     this.gubalRequest(`query desynthAndReductionStats {
   desynthresults_stats(where: {occurences: {_gte: 10}}) {
@@ -20,10 +29,16 @@ export class GubalExtractor extends AbstractExtractor {
     itemId
     resultItemId
   }
+  exploration_per_item(where: {occurences: {_gte: 10}}) {
+    itemId
+    voyageId
+    type
+  }
 }
 `).subscribe(res => {
       this.persistToJsonAsset('desynth', this.gubalToObject(res.data.desynthresults_stats));
       this.persistToJsonAsset('reduction', this.gubalToObject(res.data.reductionresults_stats));
+      this.persistToJsonAsset('voyage-sources', this.gubalVoyageAggregatorToObject(res.data.exploration_per_item));
       this.done();
     });
   }
