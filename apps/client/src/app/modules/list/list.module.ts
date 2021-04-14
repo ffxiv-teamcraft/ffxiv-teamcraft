@@ -80,7 +80,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, GatheringNodesService, AlarmsFacade], multi: true },

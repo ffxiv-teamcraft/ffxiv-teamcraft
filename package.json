@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "8.1.8",
+  "version": "8.1.9",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -117,7 +117,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "^0.4.0",
+    "@ffxiv-teamcraft/pcap-ffxiv": "^0.5.0",
     "buffer-reader": "^0.1.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",

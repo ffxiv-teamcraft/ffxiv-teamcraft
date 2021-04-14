@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import { app } from 'electron';
 import * as isDev from 'electron-is-dev';
 import * as log from 'electron-log';
@@ -113,6 +113,24 @@ export class PacketCapture {
     }
   }
 
+  private getLocalOpcodesPath(): string | null {
+    // --localOpcodes [path]
+
+    const argv = process.argv.slice(1);
+    const index = argv.indexOf('--localOpcodes')
+
+    if (index === -1) {
+      return null;
+    }
+
+    const value = argv[index + 1]
+    if (value && value[0] !== '-') {
+      return resolve(value);
+    } else {
+      return resolve('opcodes');
+    }
+  }
+
   private async startMachina(): Promise<void> {
     const region = this.store.get('region', 'Global');
     const rawsock = this.store.get('rawsock', false);
@@ -156,7 +174,17 @@ export class PacketCapture {
       options.pid = this.options.pid;
     }
 
-    this.captureInterface = new CaptureInterface(isDev ? options : { ...options, exePath: PacketCapture.MACHINA_EXE_PATH });
+    if (isDev) {
+      const localOpcodesPath = this.getLocalOpcodesPath();
+      if (localOpcodesPath) {
+        options.localOpcodesPath = localOpcodesPath;
+        log.info('[pcap] Using localOpcodes:', localOpcodesPath);
+      }
+    } else {
+      options.exePath = PacketCapture.MACHINA_EXE_PATH;
+    }
+
+    this.captureInterface = new CaptureInterface(options);
     this.captureInterface.start().then(() => {
       log.info('Packet capture started');
     });

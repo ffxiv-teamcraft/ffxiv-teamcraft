@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "Guide de recyclage",
     "Job": "Job",
-    "Level": "Niveau",
+    "Level": "Desynth level",
     "Intro": "Sélectionnez un job et saisissez un niveau pour trouver les meilleurs objets pour monter votre recyclage",
     "Loading_message": "Chargement en cours...",
     "TAGS": {

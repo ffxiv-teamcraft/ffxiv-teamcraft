@@ -212,7 +212,7 @@ export class FreeCompanyWorkshopFacade {
             fcTag: workshop.tag
           }))
         ]))
-        .reduce((a, b) => a.concat(b))
+        .reduce((a, b) => a.concat(b), [])
         .filter((vessel) => vessel.returnTime === now);
     })
   );

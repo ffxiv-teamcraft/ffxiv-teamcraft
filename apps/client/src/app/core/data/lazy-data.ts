@@ -93,6 +93,7 @@ export interface LazyData {
   tribes: any;
   tripleTriadRules: any;
   ventures: any;
+  voyageSources: any;
   weathers: any;
   koAchievementDescriptions: any;
   koAchievements: any;

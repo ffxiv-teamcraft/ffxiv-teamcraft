@@ -1398,7 +1398,7 @@
   "DESYNTH": {
     "Title": "Desynthese-Leitfaden",
     "Job": "Job",
-    "Level": "Stufe",
+    "Level": "Desynth level",
     "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
     "Loading_message": "Lade...",
     "TAGS": {

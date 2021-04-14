@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
-import { BehaviorSubject, combineLatest, EMPTY, interval, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, interval, ReplaySubject } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { InventoryService } from '../../modules/inventory/inventory.service';
 
 export interface Retainer {
   name: string;
@@ -52,15 +51,19 @@ export class RetainersService {
         } else {
           return combineLatest([
             interval(1000).pipe(map(() => Math.floor(Date.now() / 1000))),
-            this.retainers$
+            this.retainers$,
+            this.lazyData.data$
           ]);
         }
       }),
-      map(([now, retainers]) => {
-        return Object.values<Retainer>(retainers)
-          .filter(retainer => retainer.taskComplete === now);
+      map(([now, retainers, data]) => {
+        return {
+          retainers: Object.values<Retainer>(retainers)
+            .filter(retainer => retainer.taskComplete === now),
+          data
+        };
       })
-    ).subscribe(retainers => {
+    ).subscribe(({ retainers, data }) => {
       if (retainers.length > 0) {
         // Let's ring the alarm !
         let audio: HTMLAudioElement;
@@ -79,7 +82,7 @@ export class RetainersService {
           title: this.translate.instant('RETAINERS.Task_completed_notification_title', { name: retainer.name }),
           content: this.translate.instant('RETAINERS.Task_completed_notification_content', {
             name: retainer.name,
-            taskName: this.i18n.getName(this.lazyData.data.ventures[retainer.task])
+            taskName: this.i18n.getName(data.ventures[retainer.task])
           })
         });
       });

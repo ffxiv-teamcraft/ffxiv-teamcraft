@@ -1,14 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed new items not being added to lists at all.
-* **desktop:** fixed a possible issue with packet transmission.
-* **desktop:** fixed automated character switching following ingame switched.
-* **desktop:** fixed high CPU usage from MachinaWrapper process.
-* **log-tracker:** fixed wrong label for hookset in fishing log.
-* **log-tracker:** moved "hide completed" toggle to the tabs header for DoH section.
+* **core:** fixed an error than could occur with reduce.
+* **retainers:** possible fix for task completion alarm not ringing.
+* **voyage-tracker:** possible fix for a duplicate report bug.
 
 
 ### Features
 
-* **db:** added 5.5 content.
-* **leveling-equipment:** now displays full job name instead of abbreviation.`;
+* **db:** HD icons everywhere !.
+* **db:** new voyage sources using voyage reporter data.
+* **desktop:** allow loading local opcodes for testing (+1 squashed commits).`;

@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.9"></a>
+## [8.1.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.8...v8.1.9) (2021-04-14)
+
+
+### Bug Fixes
+
+* **core:** fixed an error than could occur with reduce ([b49fea8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b49fea8))
+* **retainers:** possible fix for task completion alarm not ringing ([9a65899](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a65899))
+* **voyage-tracker:** possible fix for a duplicate report bug ([ff2e5ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff2e5ff))
+
+
+### Features
+
+* **db:** HD icons everywhere ! ([89b2822](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89b2822))
+* **db:** new voyage sources using voyage reporter data ([2d7ca75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d7ca75))
+* **desktop:** allow loading local opcodes for testing (+1 squashed commits) ([e0ce859](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0ce859))
+
+
+
 <a name="8.1.8"></a>
 ## [8.1.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.6...v8.1.8) (2021-04-13)
 

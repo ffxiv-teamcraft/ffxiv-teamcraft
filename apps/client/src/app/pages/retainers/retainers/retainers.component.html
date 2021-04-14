@@ -1,48 +1,49 @@
 <h2>{{'RETAINERS.Title' | translate}}</h2>
 
-<div>
-  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-    <nz-switch [(ngModel)]="settings.retainerTaskAlarms"></nz-switch>
-    <div>{{'RETAINERS.Task_completion_alarm' | translate}}</div>
-  </div>
-</div>
-
-<ng-container *ngIf="display$ | async as display;else noRetainers">
-  <ng-container *ngFor="let row of display">
-    <nz-divider nzOrientation="left" [nzText]="row.characterName"></nz-divider>
-    <div nz-row *ngFor="let retainer of row.retainers; odd as odd" [class.odd]="odd" class="retainer-row">
-      <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
-        {{retainer.name}}
-      </div>
-      <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-        {{'RETAINERS.Selling' | translate:{ amount: retainer.itemSellingCount } }}
-      </div>
-      <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-        <span class="companion-svg" [innerHTML]="retainer.job | jobUnicode"></span>
-        {{retainer.level}}
-      </div>
-      <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-        <app-item-icon [disableClick]="true" [itemId]="1" width="32"></app-item-icon>
-        {{retainer.gil | number:'1.0-0':translate.currentLang}}
-      </div>
-      <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-        {{'RETAINERS.X_items' | translate:{ amount: retainer.itemCount } }}
-      </div>
-      <div nz-col nzMd="8" fxLayout="row" fxLayoutAlign="flex-start center">
-        {{retainer.task | ventureName | i18n}}
-      </div>
-      <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
-        <ng-container *ngIf="retainer.taskDone; else taskCompleteDate">
-          <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i> {{'RETAINERS.Task_complete' | translate}}
-        </ng-container>
-        <ng-template #taskCompleteDate>
-          <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.remainingTime | timer}}
-        </ng-template>
-      </div>
+<app-page-loader [loading]="loading">
+  <div>
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <nz-switch [(ngModel)]="settings.retainerTaskAlarms"></nz-switch>
+      <div>{{'RETAINERS.Task_completion_alarm' | translate}}</div>
     </div>
+  </div>
+
+  <ng-container *ngIf="display$ | async as display;else noRetainers">
+    <ng-container *ngFor="let row of display">
+      <nz-divider nzOrientation="left" [nzText]="row.characterName"></nz-divider>
+      <div nz-row *ngFor="let retainer of row.retainers; odd as odd" [class.odd]="odd" class="retainer-row">
+        <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
+          {{retainer.name}}
+        </div>
+        <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+          {{'RETAINERS.Selling' | translate:{ amount: retainer.itemSellingCount } }}
+        </div>
+        <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+          <span class="companion-svg" [innerHTML]="retainer.job | jobUnicode"></span>
+          {{retainer.level}}
+        </div>
+        <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+          <app-item-icon [disableClick]="true" [itemId]="1" width="32"></app-item-icon>
+          {{retainer.gil | number:'1.0-0':translate.currentLang}}
+        </div>
+        <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+          {{'RETAINERS.X_items' | translate:{ amount: retainer.itemCount } }}
+        </div>
+        <div nz-col nzMd="8" fxLayout="row" fxLayoutAlign="flex-start center">
+          {{retainer.task | ventureName | i18n}}
+        </div>
+        <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
+          <ng-container *ngIf="retainer.taskDone; else taskCompleteDate">
+            <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i> {{'RETAINERS.Task_complete' | translate}}
+          </ng-container>
+          <ng-template #taskCompleteDate>
+            <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.remainingTime | timer}}
+          </ng-template>
+        </div>
+      </div>
+    </ng-container>
   </ng-container>
-</ng-container>
-<ng-template #noRetainers>
-  <app-page-loader *ngIf="loading"></app-page-loader>
-  <app-fullpage-message *ngIf="!loading">{{'RETAINERS.No_retainers' | translate}}</app-fullpage-message>
-</ng-template>
+  <ng-template #noRetainers>
+    <app-fullpage-message *ngIf="!loading">{{'RETAINERS.No_retainers' | translate}}</app-fullpage-message>
+  </ng-template>
+</app-page-loader>
