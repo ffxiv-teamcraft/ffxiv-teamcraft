@@ -1,6 +1,6 @@
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
@@ -44,18 +44,25 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
       withLatestFrom(isSubmarineMenuOpen$),
       filter(([updateInventory, isOpen]) => {
         return isOpen && updateInventory.containerId === 25004 && [0, 5, 10, 15].includes(updateInventory.slot) && updateInventory.condition < 30000;
-      })
+      }),
+      map(([updateInventory]) => updateInventory.slot / 5)
     );
 
-    return updateHullCondition$.pipe(
-      map(([updateInventory]) => updateInventory.slot / 5),
-      withLatestFrom(statusList$),
-      map(([submarineSlot, statusList]) => {
-        const submarine = statusList[submarineSlot];
-        return this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
-      }),
-      withLatestFrom(resultLog$),
-      map(([stats, resultLog]): any[] => this.createReportsList(stats, resultLog))
+
+    return resultLog$.pipe(
+      withLatestFrom(isSubmarineMenuOpen$),
+      filter(([, isOpen]) => isOpen),
+      switchMap(([resultLog]) => {
+        return combineLatest([updateHullCondition$, statusList$]).pipe(
+          map(([submarineSlot, statusList]) => {
+            const submarine = statusList[submarineSlot];
+            const stats = this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
+            return this.createReportsList(stats, resultLog);
+          }),
+          // Once the report is sent, dispose this Observable so the next emission of stats won't trigger a new report
+          first()
+        );
+      })
     );
   }
 

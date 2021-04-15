@@ -37,16 +37,6 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
       toIpcData()
     );
 
-    // Undefined usage for now, will keep in here just in case
-    // const updateHullCondition$ = packets$.pipe(
-    //   ofMessageType('updateInventorySlot'),
-    //   toIpcData(),
-    //   withLatestFrom(isAirshipMenuOpen$),
-    //   filter(([updateInventory, isOpen]) => {
-    //     return isOpen && updateInventory.containerId === 25003 && [30, 35, 40, 45].includes(updateInventory.slot) && updateInventory.condition < 30000;
-    //   })
-    // );
-
     return resultLog$.pipe(
       withLatestFrom(isAirshipMenuOpen$),
       filter(([, isOpen]) => isOpen),
@@ -56,6 +46,7 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
             const stats = this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
             return this.createReportsList(stats, resultLog);
           }),
+          // Once the report is sent, dispose this Observable so the next emission of stats won't trigger a new report
           first()
         )
       })
