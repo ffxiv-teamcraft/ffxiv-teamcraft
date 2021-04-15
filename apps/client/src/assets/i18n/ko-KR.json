@@ -459,6 +459,7 @@
     "Reset_ignored_characters": "무시된 캐릭터 초기화",
     "Reset_contentid_characters": "캐릭터 연결 초기화",
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
+    "Show_other_characters_inventories_in_inventory_page": "Show other characters inventories in inventory page",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
     "Alarm_groups_before_no_group": "그룹지정이 안된 알람 앞에 그룹 알람을 표시",
     "Disconnect_patreon": "Patreon 연결 끊기",
