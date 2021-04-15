@@ -792,6 +792,14 @@ export class SettingsService {
     this.setBoolean('showOthercharacterInventoriesInList', show);
   }
 
+  public get showOthercharacterInventoriesInInventoryPage(): boolean {
+    return this.getBoolean('showOthercharacterInventoriesInInventoryPage', true);
+  }
+
+  public set showOthercharacterInventoriesInInventoryPage(show: boolean) {
+    this.setBoolean('showOthercharacterInventoriesInInventoryPage', show);
+  }
+
   public get retainerTaskAlarms(): boolean {
     return this.getBoolean('retainerTaskAlarms', false);
   }

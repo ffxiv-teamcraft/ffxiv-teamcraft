@@ -14,6 +14,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-inventory',
@@ -49,6 +50,9 @@ export class InventoryComponent {
           let matches = true;
           if (!inventory.trackItemsOnSale) {
             matches = matches && item.containerId !== ContainerType.RetainerMarket;
+          }
+          if (!this.settings.showOthercharacterInventoriesInInventoryPage) {
+            matches = matches && item.contentId === inventory.contentId;
           }
           return matches && UserInventory.DISPLAYED_CONTAINERS.includes(item.containerId);
         })
@@ -130,7 +134,8 @@ export class InventoryComponent {
   constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService,
+              private settings: SettingsService) {
   }
 
   public getExpansions() {
