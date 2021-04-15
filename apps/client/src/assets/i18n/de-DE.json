@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
     "Compact": "Kompakt",
     "Detailed": "Detailliert",
