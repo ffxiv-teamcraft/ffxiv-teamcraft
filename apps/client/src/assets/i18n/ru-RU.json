@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
     "Compact": "Компактный",
     "Detailed": "Подробный",
