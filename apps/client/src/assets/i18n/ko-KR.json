@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
     "Compact": "간소화",
     "Detailed": "세부 정보",
