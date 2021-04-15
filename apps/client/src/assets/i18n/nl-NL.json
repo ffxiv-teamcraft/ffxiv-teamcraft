@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Detailed",
