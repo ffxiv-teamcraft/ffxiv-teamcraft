@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Détaillé",
