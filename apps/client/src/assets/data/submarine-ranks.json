@@ -798,5 +798,105 @@
     "speedBonus": 25,
     "rangeBonus": 35,
     "favorBonus": 30
+  },
+  "81": {
+    "id": 81,
+    "capacity": 80,
+    "expToNext": 2267053,
+    "surveillanceBonus": 40,
+    "retrievalBonus": 50,
+    "speedBonus": 30,
+    "rangeBonus": 37,
+    "favorBonus": 32
+  },
+  "82": {
+    "id": 82,
+    "capacity": 80,
+    "expToNext": 2492899,
+    "surveillanceBonus": 42,
+    "retrievalBonus": 50,
+    "speedBonus": 32,
+    "rangeBonus": 40,
+    "favorBonus": 34
+  },
+  "83": {
+    "id": 83,
+    "capacity": 80,
+    "expToNext": 2741330,
+    "surveillanceBonus": 43,
+    "retrievalBonus": 53,
+    "speedBonus": 32,
+    "rangeBonus": 44,
+    "favorBonus": 35
+  },
+  "84": {
+    "id": 84,
+    "capacity": 80,
+    "expToNext": 8223989,
+    "surveillanceBonus": 44,
+    "retrievalBonus": 53,
+    "speedBonus": 32,
+    "rangeBonus": 49,
+    "favorBonus": 38
+  },
+  "85": {
+    "id": 85,
+    "capacity": 80,
+    "expToNext": 3041931,
+    "surveillanceBonus": 48,
+    "retrievalBonus": 58,
+    "speedBonus": 33,
+    "rangeBonus": 49,
+    "favorBonus": 39
+  },
+  "86": {
+    "id": 86,
+    "capacity": 80,
+    "expToNext": 3372592,
+    "surveillanceBonus": 50,
+    "retrievalBonus": 58,
+    "speedBonus": 36,
+    "rangeBonus": 49,
+    "favorBonus": 43
+  },
+  "87": {
+    "id": 87,
+    "capacity": 80,
+    "expToNext": 3736319,
+    "surveillanceBonus": 50,
+    "retrievalBonus": 60,
+    "speedBonus": 36,
+    "rangeBonus": 53,
+    "favorBonus": 46
+  },
+  "88": {
+    "id": 88,
+    "capacity": 80,
+    "expToNext": 4136419,
+    "surveillanceBonus": 50,
+    "retrievalBonus": 64,
+    "speedBonus": 36,
+    "rangeBonus": 56,
+    "favorBonus": 48
+  },
+  "89": {
+    "id": 89,
+    "capacity": 80,
+    "expToNext": 12409258,
+    "surveillanceBonus": 50,
+    "retrievalBonus": 64,
+    "speedBonus": 40,
+    "rangeBonus": 60,
+    "favorBonus": 49
+  },
+  "90": {
+    "id": 90,
+    "capacity": 80,
+    "expToNext": 4620540,
+    "surveillanceBonus": 55,
+    "retrievalBonus": 70,
+    "speedBonus": 40,
+    "rangeBonus": 60,
+    "favorBonus": 50
   }
 }
