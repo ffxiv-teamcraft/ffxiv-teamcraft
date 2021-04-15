@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "Remove_final_appraisal": "Remover el beneficio de Final Appraisal",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "Duración total de la macro: {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Detailed",
