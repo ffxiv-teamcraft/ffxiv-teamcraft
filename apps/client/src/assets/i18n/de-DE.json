@@ -459,6 +459,7 @@
     "Reset_ignored_characters": "Ignorierte Charaktere zurücksetzen",
     "Reset_contentid_characters": "Verlinkte Charaktere zurücksetzen",
     "Show_other_characters_inventories_in_list": "Zeige Inventare anderer Charaktere in Listen",
+    "Show_other_characters_inventories_in_inventory_page": "Show other characters inventories in inventory page",
     "Alarm_panels_collapsed_by_default": "Alarmgruppen-Panels standardmäßig eingeklappt",
     "Alarm_groups_before_no_group": "Zeige Alarmgruppen vor ungruppierten Alarmen",
     "Disconnect_patreon": "Verbindung zu Patreon trennen",
