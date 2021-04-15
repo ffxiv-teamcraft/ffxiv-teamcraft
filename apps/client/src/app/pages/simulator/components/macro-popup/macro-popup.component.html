@@ -41,12 +41,15 @@
   </div>
 </div>
 <div class="macro">
-  <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-    <button [clipboard]="getText(macroFragment)" class="copy-macro" nz-button nzShape="circle"
-            nzSize="small">
-        <i nz-icon nzType="copy"></i>
-    </button>
-    <span *ngFor="let line of macroFragment" class="macro-line">{{line}}<br></span>
-  </pre>
+  <div *ngFor="let macroFragment of macro; index as i">
+    <pre class="macro-fragment">
+      <button [clipboard]="getText(macroFragment)" class="copy-macro" nz-button nzShape="circle"
+              nzSize="small">
+          <i nz-icon nzType="copy"></i>
+      </button>
+      <span *ngFor="let line of macroFragment" class="macro-line">{{line}}<br></span>
+    </pre>
+    <div class="macro-duration">{{'SIMULATOR.Macro_duration' | translate:{ duration: durationPerFragment[i] } }}</div>
+  </div>
   <span>{{'SIMULATOR.Total_macro_duration' | translate:{ duration: totalDuration } }}</span>
 </div>
