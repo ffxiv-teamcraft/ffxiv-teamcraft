@@ -1,6 +1,6 @@
-import { merge, Observable } from 'rxjs';
+import { combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
@@ -37,26 +37,29 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
       toIpcData()
     );
 
-    const updateHullCondition$ = packets$.pipe(
-      ofMessageType('updateInventorySlot'),
-      toIpcData(),
-      withLatestFrom(isAirshipMenuOpen$),
-      filter(([updateInventory, isOpen]) => {
-        return isOpen && updateInventory.containerId === 25003 && [30, 35, 40, 45].includes(updateInventory.slot) && updateInventory.condition < 30000;
-      })
-    );
+    // Undefined usage for now, will keep in here just in case
+    // const updateHullCondition$ = packets$.pipe(
+    //   ofMessageType('updateInventorySlot'),
+    //   toIpcData(),
+    //   withLatestFrom(isAirshipMenuOpen$),
+    //   filter(([updateInventory, isOpen]) => {
+    //     return isOpen && updateInventory.containerId === 25003 && [30, 35, 40, 45].includes(updateInventory.slot) && updateInventory.condition < 30000;
+    //   })
+    // );
 
-    return updateHullCondition$.pipe(
-      withLatestFrom(status$),
-      map(([, status]) => {
-        return this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
-      }),
-      switchMap(stats => {
-        return resultLog$.pipe(
-          map(resultLog => this.createReportsList(stats, resultLog))
-        );
+    return resultLog$.pipe(
+      withLatestFrom(isAirshipMenuOpen$),
+      filter(([, isOpen]) => isOpen),
+      switchMap(([resultLog]) => {
+        return status$.pipe(
+          map(status => {
+            const stats = this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
+            return this.createReportsList(stats, resultLog);
+          }),
+          first()
+        )
       })
-    );
+    )
   }
 
   getExplorationType(): ExplorationType {
