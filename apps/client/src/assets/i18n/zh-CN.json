@@ -994,6 +994,7 @@
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
+    "Macro_duration": "Macro duration: {{duration}}s.",
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
     "Compact": "简洁",
     "Detailed": "详细",
