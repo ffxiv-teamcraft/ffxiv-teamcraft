@@ -368,6 +368,7 @@ export class AuthFacade {
 
   public applyContentId(contentId: string): void {
     this.store.dispatch(new ApplyContentId(contentId));
+    this.store.dispatch(new SetCID(contentId));
   }
 
   public setWorld(world: number): void {
