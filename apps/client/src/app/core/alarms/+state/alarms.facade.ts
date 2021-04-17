@@ -221,12 +221,15 @@ export class AlarmsFacade {
     display.played = this.isPlayed(alarm, date);
     display.groupNames = alarm.groupNames || '';
     if (display.spawned) {
-      if (alarm.duration === null) {
-        nextSpawn.hours = nextSpawn.despawn;
+      const despawn = {
+        ...nextSpawn
+      };
+      if (!alarm.duration) {
+        despawn.hours = nextSpawn.despawn;
       } else {
-        nextSpawn.hours = (nextSpawn.hours + alarm.duration) % 24;
+        despawn.hours = (nextSpawn.hours + alarm.duration) % 24;
       }
-      display.remainingTime = this.getMinutesBefore(date, nextSpawn);
+      display.remainingTime = this.getMinutesBefore(date, despawn);
     } else {
       display.remainingTime = this.getMinutesBefore(date, nextSpawn);
     }
