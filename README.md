@@ -13,7 +13,6 @@ Discord for support, bugs discussion and contributors: https://discord.gg/r6qxt6
 
 ## Development
 
-[![Codecov](https://img.shields.io/codecov/c/github/ffxiv-teamcraft/ffxiv-teamcraft.svg?branch=staging)](https://codecov.io/github/ffxiv-teamcraft/ffxiv-teamcraft?branch=staging)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![GitHub license](https://img.shields.io/github/license/ffxiv-teamcraft/ffxiv-teamcraft.svg)](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/blob/staging/LICENSE)
 
