@@ -54,6 +54,10 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
       filter(([, isOpen]) => isOpen),
       switchMap(([resultLog]) => {
         return combineLatest([updateHullCondition$, statusList$]).pipe(
+          filter(([submarineSlot, statusList]) => {
+            const status = statusList[submarineSlot];
+            return this.shouldSendReport(status.returnTime, status.birthdate, resultLog.explorationResult);
+          }),
           map(([submarineSlot, statusList]) => {
             const submarine = statusList[submarineSlot];
             const stats = this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);

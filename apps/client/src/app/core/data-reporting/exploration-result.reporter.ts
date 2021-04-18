@@ -3,9 +3,41 @@ import { DataReporter } from './data-reporter';
 import { Observable } from 'rxjs';
 import { ExplorationResult } from './exploration-result';
 
-export abstract class ExplorationResultReporter implements DataReporter{
+export abstract class ExplorationResultReporter implements DataReporter {
+  private static ALREADY_SENT_HASHES = JSON.parse(localStorage.getItem(`exploration-reporter:hashes`) || '[]');
+
   abstract getDataReports(packets$: Observable<any>): Observable<any[]>;
+
   abstract getExplorationType(): ExplorationType;
+
+  /**
+   * Checks if a report has not already been sent.
+   *
+   * If it has never been sent, it'll add it to the hashes, meaning that calling this method twice will always return false.
+   *
+   * @param returnTime
+   * @param birthDate
+   * @param log
+   * @protected
+   */
+  protected shouldSendReport(returnTime: number, birthDate: number, log: any[]): boolean {
+    if (returnTime < 0 || returnTime > Math.floor(Date.now() / 1000)) {
+      return false;
+    }
+    const hash = this.hash(`${returnTime}:${birthDate}:${JSON.stringify(log)}`);
+    const reportSent = ExplorationResultReporter.ALREADY_SENT_HASHES.includes(hash);
+    if (reportSent) {
+      return false;
+    } else {
+      this.addToHashes(hash);
+      return true;
+    }
+  }
+
+  private addToHashes(hash: number): void {
+    ExplorationResultReporter.ALREADY_SENT_HASHES.push(hash);
+    localStorage.setItem(`exploration-reporter:hashes`, JSON.stringify(ExplorationResultReporter.ALREADY_SENT_HASHES));
+  }
 
   createReportsList(stats, resultLog) {
     const reports: ExplorationResult[] = [];
@@ -59,5 +91,16 @@ export abstract class ExplorationResultReporter implements DataReporter{
 
   getDataType(): string {
     return 'explorationresults';
+  }
+
+  private hash(str: string): number {
+    let hash = 0;
+    if (str.length === 0) return hash;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
   }
 }
