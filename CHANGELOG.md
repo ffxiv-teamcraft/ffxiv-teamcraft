@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.10"></a>
+## [8.1.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.9...v8.1.10) (2021-04-18)
+
+
+### Bug Fixes
+
+* **alarms:** fixed weather alarm timers going derp once spawned ([19a89e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19a89e9))
+* **desktop:** better character detection for Universalis ([3a8896c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a8896c))
+* **desktop:** fixed retainer tracking with long CN/KO names ([5b57d08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b57d08))
+* **treasure-finder:** fixed missing treasure maps ([4cfeeda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cfeeda))
+* **voyage-tracker:** fixed maximum submarine rank ([eda8505](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eda8505))
+
+
+### Features
+
+* **desktop:** new setting to show other characters inventories in inventory page ([25f2a65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25f2a65))
+* **desktop:** no more character id reset on logout with only one linked character ([f212eca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f212eca))
+* **simulator:** added macro duration below each macro fragment ([2af8438](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2af8438))
+
+
+
 <a name="8.1.9"></a>
 ## [8.1.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.8...v8.1.9) (2021-04-14)
 
