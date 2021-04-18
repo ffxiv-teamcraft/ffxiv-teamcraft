@@ -11,4 +11,4 @@ export const patchNotes = `### Bug Fixes
 
 * **desktop:** new setting to show other characters inventories in inventory page.
 * **desktop:** no more character id reset on logout with only one linked character.
-* **simulator:** added macro duration below each macro fragment.`;
+* **simulator:** added macro duration below each macro fragment.`;

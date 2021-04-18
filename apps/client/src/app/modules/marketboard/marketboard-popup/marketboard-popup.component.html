@@ -4,13 +4,13 @@
   <div *ngIf="lastUpdated$ | async as lastUpdated" class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium'}}</i></div>
   <div fxLayout="column" fxLayoutGap="15px">
     <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
-      <thead (nzSortChange)="sort($event)" nzSingleSort>
+      <thead (nzSortOrderChange)="sort($event)">
       <tr>
-        <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
-        <th nzShowSort *ngIf="!settings.disableCrossWorld" nzSortKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
-        <th nzShowSort nzSortKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
-        <th nzShowSort nzSortKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
-        <th nzShowSort nzSortKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
+        <th nzShowSort [nzSortFn]="true" nzColumnKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
+        <th nzShowSort [nzSortFn]="true" *ngIf="!settings.disableCrossWorld" nzColumnKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
+        <th nzShowSort [nzSortFn]="true" nzColumnKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
+        <th nzShowSort [nzSortFn]="true" nzColumnKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
+        <th nzShowSort [nzSortFn]="true" nzColumnKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
       </tr>
       </thead>
       <tbody>

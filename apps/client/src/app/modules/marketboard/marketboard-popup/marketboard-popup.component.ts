@@ -76,19 +76,20 @@ export class MarketboardPopupComponent implements OnInit {
     );
 
     this.prices$ = combineLatest([data$
-        .pipe(
-          map(item => item.Prices),
-          tap(() => this.loading = false),
-          catchError((err) => {
-            console.error(err);
-            this.error = true;
-            return of([]);
-          }),
-          shareReplay(1)
-        ),
-      this.sort$]
-    ).pipe(
+      .pipe(
+        map(item => item.Prices),
+        tap(() => this.loading = false),
+        catchError((err) => {
+          console.error(err);
+          this.error = true;
+          return of([]);
+        }),
+        shareReplay(1)
+      ),
+      this.sort$
+    ]).pipe(
       map(([prices, sort]) => {
+        console.log('SORT');
         return [...prices.sort((a, b) => {
           if (sort.value === 'ascend') {
             if (a[sort.key] === b[sort.key]) {
