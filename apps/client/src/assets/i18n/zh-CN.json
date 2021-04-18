@@ -2536,7 +2536,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "使用数据包捕获导入",
-    "Import_from_pcap_notice": "1. 前往部队工坊<br>2. 通过航行管制面板与每艘飞空艇/潜水艇互动",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "飞空艇",
     "Submersibles": "潜水艇"
   },
