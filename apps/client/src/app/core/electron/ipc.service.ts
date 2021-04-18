@@ -11,7 +11,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
-import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
@@ -71,6 +71,13 @@ export class IpcService {
       ofMessageType('freeCompanyInfo'),
       toIpcData(),
       map(packet => packet.freeCompanyId.toString())
+    );
+  }
+
+  public get freeCompanyDetails(): Observable<FreeCompanyDialog> {
+    return this.packets$.pipe(
+      ofMessageType('freeCompanyDialog'),
+      toIpcData(),
     );
   }
 

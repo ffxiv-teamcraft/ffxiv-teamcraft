@@ -3,11 +3,15 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { BehaviorSubject } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { finalize, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { finalize, first, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
 import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
+import { FreeCompanyDialog } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-import-workshop-from-pcap-popup',
@@ -49,7 +53,8 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
   constructor(private modalRef: NzModalRef, private ipc: IpcService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private xivapiService: XivapiService) {
+              private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private authFacade: AuthFacade) {
     super();
   }
 
@@ -81,23 +86,31 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       }
     });
 
+    const server$ = this.authFacade.user$.pipe(
+      map((user) => this.i18n.getName(this.l12n.getWorldName(String(user.world)))),
+      takeUntil(this.onDestroy$),
+    );
+
+    const freeCompanyDetails$ = this.ipc.freeCompanyDetails.pipe(
+      withLatestFrom(server$),
+      map(([packet, server]) => {
+        return {
+          id: packet.freeCompanyId,
+          name: packet.fcName,
+          tag: packet.fcTag,
+          rank: packet.fcRank,
+          server,
+        };
+      })
+    );
+
     this.ipc.freeCompanyId$.pipe(
-      switchMap((freeCompanyId) => {
-        return this.xivapiService.getFreeCompany(freeCompanyId)
-          .pipe(
-            tap(() => {
-              this._isLoading.next(true);
-            }),
-            map((result: any) => ({
-              id: freeCompanyId,
-              name: result.FreeCompany.Name,
-              tag: result.FreeCompany.Tag,
-              rank: result.FreeCompany.Rank,
-              server: result.FreeCompany.Server
-            })),
-            finalize(() => this._isLoading.next(false)));
+      tap(() => {
+        this._isLoading.next(true);
       }),
-      takeUntil(this.onDestroy$)
+      switchMap(() => freeCompanyDetails$.pipe(first())),
+      finalize(() => this._isLoading.next(false)),
+      takeUntil(this.onDestroy$),
     ).subscribe((data) => {
       this._freeCompany.next(data);
     });
