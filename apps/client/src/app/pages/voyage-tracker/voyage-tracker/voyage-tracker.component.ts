@@ -77,11 +77,16 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     this._submarineSectorsTotal$.next(this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount());
   }
 
-  getSectorsProgression(sectors: Record<string, SectorExploration>): number {
-    if (!sectors) {
-      return 0;
+  getAirshipSectorsProgression(sectors: Record<string, SectorExploration>): number {
+    // Exclude Diadem sector
+    if (sectors && sectors[22]) {
+      delete sectors[22];
     }
-    return Object.keys(sectors).filter(id => sectors[id].unlocked).length;
+    return this.getSectorsProgression(sectors);
+  }
+
+  getSubmarineSectorsProgression(sectors: Record<string, SectorExploration>): number {
+    return this.getSectorsProgression(sectors);
   }
 
   importFromPcap(): void {
@@ -98,5 +103,12 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
 
   trackById(index, value) {
     return value.id;
+  }
+
+  private getSectorsProgression(sectors: Record<string, SectorExploration>): number {
+    if (!sectors) {
+      return 0;
+    }
+    return Object.keys(sectors).filter(id => sectors[id].unlocked).length;
   }
 }

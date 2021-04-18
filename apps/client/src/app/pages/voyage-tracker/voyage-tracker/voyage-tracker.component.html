@@ -26,12 +26,12 @@
                     <div>{{ 'VOYAGE_TRACKER.Sectors_discovered' | translate }}:&nbsp;</div>
                     <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Airship' | translate">
                       <i class="fa fa-plane"></i>
-                      {{ getSectorsProgression(freecompany.airships?.sectors) }}/{{ airshipSectorsTotal$ | async }}
+                      {{ getAirshipSectorsProgression(freecompany.airships?.sectors) }}/{{ airshipSectorsTotal$ | async }}
                     </div>
                     <div>&nbsp; | &nbsp;</div>
                     <div nz-tooltip nzTooltipPlacement="top" [nzTooltipTitle]="'VOYAGE_TRACKER.SECTOR_PROGRESSION.Submersible' | translate" >
                       <i class="fa fa-anchor"></i>
-                      {{ getSectorsProgression(freecompany.submarines?.sectors) }}/{{ submarineSectorsTotal$ | async }}
+                      {{ getSubmarineSectorsProgression(freecompany.submarines?.sectors) }}/{{ submarineSectorsTotal$ | async }}
                     </div>
                   </div>
                   <div nz-col nzMd="3" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end" style="padding-right: 5px;">
