@@ -2536,7 +2536,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
