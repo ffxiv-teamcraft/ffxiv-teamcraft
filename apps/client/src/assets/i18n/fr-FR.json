@@ -2536,7 +2536,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
-    "Import_from_pcap_notice": "1. Allez à l'Atelier de votre Compagnie Libre<br>2. Interagissez avec chaque sous-marin ou Aéronef en utilisant l'interface de gestion",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Aéronefs",
     "Submersibles": "Sous-marins"
   },
