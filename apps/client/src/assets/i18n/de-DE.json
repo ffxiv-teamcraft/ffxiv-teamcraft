@@ -2536,7 +2536,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Durch Paketerfassung importieren",
-    "Import_from_pcap_notice": "1. Gehe in die Gesellschaftswerkstatt<br>2. Interagiere mit jedem U-Boot oder Luftschiff über das Verwaltungs-Interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Luftschiffe",
     "Submersibles": "Tauchboote"
   },
