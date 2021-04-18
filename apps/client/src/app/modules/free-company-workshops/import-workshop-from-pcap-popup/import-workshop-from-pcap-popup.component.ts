@@ -4,11 +4,9 @@ import { BehaviorSubject } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { finalize, first, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
-import { XivapiService } from '@xivapi/angular-client';
 import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
-import { FreeCompanyDialog } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -88,7 +86,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
     const server$ = this.authFacade.user$.pipe(
       map((user) => this.i18n.getName(this.l12n.getWorldName(String(user.world)))),
-      takeUntil(this.onDestroy$),
+      takeUntil(this.onDestroy$)
     );
 
     const freeCompanyDetails$ = this.ipc.freeCompanyDetails.pipe(
@@ -99,7 +97,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
           name: packet.fcName,
           tag: packet.fcTag,
           rank: packet.fcRank,
-          server,
+          server
         };
       })
     );
@@ -110,7 +108,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
       }),
       switchMap(() => freeCompanyDetails$.pipe(first())),
       finalize(() => this._isLoading.next(false)),
-      takeUntil(this.onDestroy$),
+      takeUntil(this.onDestroy$)
     ).subscribe((data) => {
       this._freeCompany.next(data);
     });
