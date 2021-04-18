@@ -1,12 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **core:** fixed an error than could occur with reduce.
-* **retainers:** possible fix for task completion alarm not ringing.
-* **voyage-tracker:** possible fix for a duplicate report bug.
+* **alarms:** fixed weather alarm timers going derp once spawned.
+* **desktop:** better character detection for Universalis.
+* **desktop:** fixed retainer tracking with long CN/KO names.
+* **treasure-finder:** fixed missing treasure maps.
+* **voyage-tracker:** fixed maximum submarine rank.
 
 
 ### Features
 
-* **db:** HD icons everywhere !.
-* **db:** new voyage sources using voyage reporter data.
-* **desktop:** allow loading local opcodes for testing (+1 squashed commits).`;
+* **desktop:** new setting to show other characters inventories in inventory page.
+* **desktop:** no more character id reset on logout with only one linked character.
+* **simulator:** added macro duration below each macro fragment.`;

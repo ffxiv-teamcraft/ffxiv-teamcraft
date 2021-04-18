@@ -18,6 +18,8 @@ export class MacroPopupComponent implements OnInit {
 
   public totalDuration: number;
 
+  public durationPerFragment: number[] = [];
+
   private readonly maxMacroLines = 15;
 
   public addEcho = this.settings.macroEcho;
@@ -107,6 +109,8 @@ export class MacroPopupComponent implements OnInit {
         }
         macroFragment.push(`/ac ${actionName} <wait.${action.getWaitDuration() + this.extraWait}>`);
         this.totalDuration += action.getWaitDuration() + this.extraWait;
+        this.durationPerFragment[this.macro.length - 1] = this.durationPerFragment[this.macro.length - 1] || 0;
+        this.durationPerFragment[this.macro.length - 1] += action.getWaitDuration() + this.extraWait;
         totalLength++;
       }
 

@@ -130,9 +130,12 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofMessageType('logout')
-    ).subscribe(() => {
-      this.inventoryService.setContentId(null);
+      ofMessageType('logout'),
+      withLatestFrom(this.authFacade.user$)
+    ).subscribe(([, user]) => {
+      if (user.lodestoneIds.length > 1) {
+        this.inventoryService.setContentId(null);
+      }
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {

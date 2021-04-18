@@ -560,6 +560,11 @@
           {{'SETTINGS.Show_other_characters_inventories_in_list' | translate}}
         </label>
       </div>
+      <div>
+        <label [(ngModel)]="settings.showOthercharacterInventoriesInInventoryPage" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Show_other_characters_inventories_in_inventory_page' | translate}}
+        </label>
+      </div>
 
       <button (click)="settings.ignoredContentIds = []" nz-button>
         {{'SETTINGS.Reset_ignored_characters' | translate}}
