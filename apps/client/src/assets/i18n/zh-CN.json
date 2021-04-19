@@ -2647,5 +2647,9 @@
     "Select_item": "选择藏宝图类型",
     "Select_treasure_map": "选择你的藏宝图",
     "Find_another": "寻找另一个藏宝图"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }
