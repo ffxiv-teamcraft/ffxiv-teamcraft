@@ -28,6 +28,7 @@ import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../node-details/node-details.module';
 import { InventoryModule } from '../inventory/inventory.module';
+import { GardeningComponent } from './gardening/gardening.component';
 
 @NgModule({
   imports: [
@@ -65,7 +66,8 @@ import { InventoryModule } from '../inventory/inventory.module';
     TreasuresComponent,
     FatesComponent,
     DesynthsComponent,
-    RelationshipsComponent
+    RelationshipsComponent,
+    GardeningComponent
   ],
   exports: [
     GatheredByComponent,
@@ -79,7 +81,8 @@ import { InventoryModule } from '../inventory/inventory.module';
     TreasuresComponent,
     FatesComponent,
     DesynthsComponent,
-    RelationshipsComponent
+    RelationshipsComponent,
+    GardeningComponent
   ]
 })
 export class ItemDetailsPopupsModule {

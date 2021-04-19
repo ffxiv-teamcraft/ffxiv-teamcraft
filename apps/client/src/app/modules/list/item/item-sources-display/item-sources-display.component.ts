@@ -21,6 +21,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { RotationPickerService } from '../../../rotations/rotation-picker.service';
+import { GardeningComponent } from '../../../item-details/gardening/gardening.component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -52,6 +53,10 @@ export class ItemSourcesDisplayComponent {
 
   public openGatheredByPopup(item: ListRow): void {
     this.openDetailsPopup(GatheredByComponent, item, DataType.GATHERED_BY);
+  }
+
+  public openGardeningPopup(item: ListRow): void {
+    this.openDetailsPopup(GardeningComponent, item, DataType.GARDENING);
   }
 
   public openHuntingPopup(item: ListRow): void {

@@ -8,8 +8,4 @@ import { ItemDetailsPopup } from '../item-details-popup';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FatesComponent extends ItemDetailsPopup {
-
-  constructor() {
-    super();
-  }
 }

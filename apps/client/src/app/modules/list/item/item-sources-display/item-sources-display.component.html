@@ -1,13 +1,11 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
   <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
     <ng-container [ngSwitch]="source.type">
-      <a *ngSwitchCase="dataTypes.GARDENING"
-         href="{{source.data | ffxivgardening | i18n}}"
-         nz-tooltip
-         nzTooltipTitle="{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}"
-         target="_blank">
+      <button (click)="openGardeningPopup(item)" *ngSwitchCase="dataTypes.GARDENING" nz-button
+              nz-tooltip
+              nzShape="circle" nzTooltipTitle="{{'Gardening' | translate}}">
         <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
-      </a>
+      </button>
       <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">

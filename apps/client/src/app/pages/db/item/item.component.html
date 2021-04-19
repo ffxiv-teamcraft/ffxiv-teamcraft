@@ -448,6 +448,18 @@
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
             <ng-container *ngFor="let source of data.sources">
               <ng-container [ngSwitch]="source.type">
+                <nz-card *ngSwitchCase="dataTypes.GARDENING" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+                         nzBordered="false">
+                  <ng-template #title>
+                    <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img class="img-icon" src="./assets/icons/Gardening.png">
+                      <div>
+                        {{'Gardening' | translate}}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-gardening [item]="data" [details]="source.data"></app-gardening>
+                </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.DROPS" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
                          nzBordered="false">
                   <ng-template #title>

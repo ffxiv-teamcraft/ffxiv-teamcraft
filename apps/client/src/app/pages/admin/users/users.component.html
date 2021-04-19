@@ -4,7 +4,8 @@
       <nz-form-label nzFor="searchMode">{{'ADMIN.USERS.SEARCH_MODE.Label' | translate}}
       </nz-form-label>
       <nz-select [(ngModel)]="searchMode">
-        <nz-option *ngFor="let mode of userSearchModes" [nzValue]="mode" id="searchMode" [nzLabel]="('ADMIN.USERS.SEARCH_MODE.' + mode) | translate"></nz-option>
+        <nz-option *ngFor="let mode of userSearchModes" [nzValue]="mode" id="searchMode"
+                   [nzLabel]="('ADMIN.USERS.SEARCH_MODE.' + mode) | translate"></nz-option>
       </nz-select>
     </nz-form-item>
     <form nz-form [ngSwitch]="searchMode">
@@ -48,7 +49,7 @@
 </div>
 
 <nz-list [nzLoading]="loadingResults" *ngIf="results$ | async as results">
-  <app-fullpage-message *ngIf="results.length === 0">
+  <app-fullpage-message *ngIf="results.length === 0" height="300px">
     {{'ADMIN.USERS.No_users_found' | translate}}
   </app-fullpage-message>
   <nz-list-item *ngFor="let user of results">
@@ -60,7 +61,7 @@
         {{user.$key | characterName | async}}
       </nz-list-item-meta-title>
     </nz-list-item-meta>
-    <div>{{'ADMIN.USERS.X_characters_linked' | translate:{amount: user.lodestoneIds.length} }}</div>
+    <div>{{'ADMIN.USERS.X_characters_linked' | translate:{ amount: user.lodestoneIds.length } }}</div>
     <ul nz-list-item-actions>
       <nz-list-item-action>
         <a routerLink="/profile/{{user.$key}}">{{'ADMIN.USERS.ACTIONS.Profile' | translate}}</a>
