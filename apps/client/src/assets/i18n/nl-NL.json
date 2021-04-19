@@ -2647,5 +2647,9 @@
     "Select_item": "Select treasure map item",
     "Select_treasure_map": "Select your treasure map",
     "Find_another": "Find another treasure"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }
