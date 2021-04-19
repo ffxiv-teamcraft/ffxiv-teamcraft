@@ -2647,5 +2647,9 @@
     "Select_item": "Wähle Schatzkarten-Typ",
     "Select_treasure_map": "Wähle deine Schatzkarte",
     "Find_another": "Finde einen anderen Schatz"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }
