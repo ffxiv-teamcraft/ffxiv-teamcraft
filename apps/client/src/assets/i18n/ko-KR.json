@@ -2647,5 +2647,9 @@
     "Select_item": "오래된 지도 선택",
     "Select_treasure_map": "보물 지도 선택",
     "Find_another": "다른 보물 지도 찾기"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }
