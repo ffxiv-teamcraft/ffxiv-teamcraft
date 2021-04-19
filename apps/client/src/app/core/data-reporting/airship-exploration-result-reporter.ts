@@ -1,10 +1,11 @@
 import { merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { AirshipStatus } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class AirshipExplorationResultReporter extends ExplorationResultReporter {
 
@@ -37,23 +38,20 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
       toIpcData()
     );
 
-    const updateHullCondition$ = packets$.pipe(
-      ofMessageType('updateInventorySlot'),
-      toIpcData(),
+    return resultLog$.pipe(
       withLatestFrom(isAirshipMenuOpen$),
-      filter(([updateInventory, isOpen]) => {
-        return isOpen && updateInventory.containerId === 25003 && [30, 35, 40, 45].includes(updateInventory.slot) && updateInventory.condition < 30000;
-      })
-    );
-
-    return updateHullCondition$.pipe(
-      withLatestFrom(status$),
-      map(([, status]) => {
-        return this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
-      }),
-      switchMap(stats => {
-        return resultLog$.pipe(
-          map(resultLog => this.createReportsList(stats, resultLog))
+      filter(([, isOpen]) => isOpen),
+      switchMap(([resultLog]) => {
+        return status$.pipe(
+          filter((status: AirshipStatus) => {
+            return this.shouldSendReport(status.returnTime, resultLog.airshipSpeed, resultLog.explorationResult);
+          }),
+          map(status => {
+            const stats = this.getBuildStats(status.hull, status.rigging, status.forecastle, status.aftcastle);
+            return this.createReportsList(stats, resultLog);
+          }),
+          // Once the report is sent, dispose this Observable so the next emission of stats won't trigger a new report
+          first()
         );
       })
     );
