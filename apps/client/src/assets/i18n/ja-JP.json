@@ -1977,7 +1977,7 @@
     "Cost": "価格",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "このスロットに使用できません",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "ジョブ変更はマイスターの証、武器に含まれるマテリアを削除します。同じスペックで禁断をする予定でしたらその部分を参考にしてください。",
     "Pick_a_job": "Pick a job",
     "New_gearset": "新しいギアセット",
     "Please_input_ariyala_link": "Ariyalaのリンクを入力してください",
