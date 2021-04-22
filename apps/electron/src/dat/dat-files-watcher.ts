@@ -98,7 +98,7 @@ export class DatFilesWatcher {
   }
 
   private shouldTriggerContentIdChange(watchDir: string, filename: string): boolean {
-    if (!filename.endsWith('ITEMODR.DAT') && !filename.endsWith('GS.DAT')) {
+    if (!filename.endsWith('ITEMODR.DAT')) {
       return false;
     }
     log.log(`File change detected: ${filename}`);
