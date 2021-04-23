@@ -59,7 +59,8 @@ export class NodeDetailsComponent implements OnInit {
         return !alarms.some(alarm => {
           return alarm.itemId === generatedAlarm.itemId
             && alarm.zoneId === generatedAlarm.zoneId
-            && alarm.fishEyes === generatedAlarm.fishEyes;
+            && alarm.fishEyes === generatedAlarm.fishEyes
+            && alarm.nodeId == generatedAlarm.nodeId;
         });
       })
     );
