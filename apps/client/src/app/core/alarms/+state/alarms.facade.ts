@@ -202,7 +202,7 @@ export class AlarmsFacade {
             && a.zoneId === alarm.zoneId
             && a.type === alarm.type
             && a.fishEyes === alarm.fishEyes
-            && a.nodeId == alarm.nodeId;
+            && a.nodeId === alarm.nodeId;
         } else {
           // If it's a custom alarm
           return a.name === alarm.name && a.duration === alarm.duration && a.type === alarm.type;
