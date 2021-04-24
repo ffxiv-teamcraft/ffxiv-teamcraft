@@ -37,6 +37,12 @@ export class XivapiActionTooltipDirective implements OnDestroy {
   private _overlayRef?: OverlayRef;
   /** Create a new tooltip with the given HTML, and inject it in the overlay layout. */
   private _createTooltip = (action: any) => {
+    // Remove an existing tooltip if needed.
+    // It can be present due to a missing mouseleave event during drag and drop.
+    if (this._overlayRef) {
+      this._overlayRef.dispose();
+      delete this._overlayRef;
+    }
     // Position the tooltip at the top right of the anchor.
     const positionStrategy = this._overlay
       .position()
