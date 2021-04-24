@@ -126,9 +126,9 @@ export class AlarmsFacade {
   private nextSpawnCache: any = {};
 
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-              private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataService, private mapService: MapService,
-              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
+    private settings: SettingsService, private weatherService: WeatherService,
+    private lazyData: LazyDataService, private mapService: MapService,
+    private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -201,7 +201,8 @@ export class AlarmsFacade {
           return a.itemId === alarm.itemId
             && a.zoneId === alarm.zoneId
             && a.type === alarm.type
-            && a.fishEyes === alarm.fishEyes;
+            && a.fishEyes === alarm.fishEyes
+            && a.nodeId === alarm.nodeId;
         } else {
           // If it's a custom alarm
           return a.name === alarm.name && a.duration === alarm.duration && a.type === alarm.type;
