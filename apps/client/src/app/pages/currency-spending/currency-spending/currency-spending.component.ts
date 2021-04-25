@@ -18,7 +18,7 @@ import { UniversalisService } from '../../../core/api/universalis.service';
 })
 export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
-  public currencies$: Observable<any>;
+  public currencies$: Observable<number[]>;
 
   public currency$ = new Subject<number>();
 
@@ -57,10 +57,13 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       ]
     }).pipe(
       map(res => {
-        return res.Results.filter(item => {
-          // Remove gil, venture and outdated tomes/scrips
-          return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
-        });
+        return [
+          ...res.Results.filter(item => {
+            // Remove gil, venture and outdated tomes/scrips
+            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
+          }).map(item => item.ID as number),
+          33870
+        ];
       })
     );
 

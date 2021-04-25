@@ -11,13 +11,13 @@
       class="currency-picker"
       nzShowSearch
     >
-      <nz-option *ngFor="let currency of currencies$ | async" [nzLabel]="currency.ID | itemName | i18n"
-                 [nzValue]="currency.ID"
+      <nz-option *ngFor="let currency of currencies$ | async" [nzLabel]="currency | itemName | i18n"
+                 [nzValue]="currency"
                  nzCustomContent>
-        <div [title]="currency.ID | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="currency.Icon | xivapiIcon" alt="" class="currency-icon">
+        <div [title]="currency | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img [src]="currency | lazyIcon" alt="" class="currency-icon">
           <div>
-            {{currency.ID | itemName | i18n}}
+            {{currency | itemName | i18n}}
           </div>
         </div>
       </nz-option>
