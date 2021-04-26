@@ -220,8 +220,8 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     entities
       .filter(entity => !!entity)
       .forEach(entity => {
-      batch.set(this.firestore.collection(this.getBaseUri(uriParams)).doc(entity.$key).ref, this.prepareData(entity));
-    });
+        batch.set(this.firestore.collection(this.getBaseUri(uriParams)).doc(entity.$key).ref, this.prepareData(entity));
+      });
     return from(batch.commit());
   }
 
