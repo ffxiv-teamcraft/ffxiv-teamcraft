@@ -23,7 +23,8 @@ export class UniversalisService {
   private worldId$: Observable<number> = this.authFacade.user$.pipe(
     map(user => user.world),
     filter(world => world !== undefined),
-    distinctUntilChanged()
+    distinctUntilChanged(),
+    shareReplay(1)
   );
 
   constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
@@ -189,13 +190,13 @@ export class UniversalisService {
         const data = {
           worldID: worldId,
           itemID: packets[0]?.listings[0]?.itemId,
-          uploaderID: cid,
+          uploaderID: BigInt(`0x${cid}`).toString(10),
           listings: packets.reduce((listings, packet) => {
             return [
               ...listings,
               ...packet.listings.map(item => {
                 return {
-                  listingID: item.listingId,
+                  listingID: item.listingId.toString(10),
                   hq: item.hq,
                   materia: item.materia.map((materia, index) => {
                     const materiaItemId = this.lazyData.data.materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
@@ -207,12 +208,12 @@ export class UniversalisService {
                   pricePerUnit: item.pricePerUnit,
                   quantity: item.quantity,
                   total: item.quantity * item.pricePerUnit,
-                  retainerID: item.retainerId,
+                  retainerID: item.retainerId.toString(10),
                   retainerName: item.retainerName,
                   retainerCity: item.city,
                   creatorName: item.playerName,
-                  creatorID: item.artisanId,
-                  sellerID: item.retainerOwnerId,
+                  creatorID: item.artisanId.toString(10),
+                  sellerID: item.retainerOwnerId.toString(10),
                   lastReviewTime: item.lastReviewTime,
                   stainID: item.dyeId
                 };
