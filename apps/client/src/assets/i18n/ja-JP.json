@@ -1767,7 +1767,7 @@
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
   "FOOD_PICKER": {
-    "Title": "飲食選択機",
+    "Title": "調理品・薬品検索",
     "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
     "Pick_stat": "能力値選択"
   },
