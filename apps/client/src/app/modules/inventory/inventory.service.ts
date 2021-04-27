@@ -148,6 +148,8 @@ export class InventoryService {
             switch (action.type) {
               case 'SetContentId':
                 state.inventory.contentId = action.contentId;
+                delete state.inventory.items['null'];
+                delete state.inventory.items['undefined'];
                 return { ...state, inventory: state.inventory };
               case 'Reset':
                 const reset = new UserInventory();
