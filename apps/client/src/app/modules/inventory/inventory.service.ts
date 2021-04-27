@@ -282,7 +282,13 @@ export class InventoryService {
       return containerName;
     } else {
       const entry = this.characterEntries.find(e => e.contentId === item.contentId);
-      return `${containerName} (${entry?.character.Character.Name || this.translate.instant('COMMON.Unknown')})`;
+      const otherCharactersWithSameName = this.characterEntries.filter(e => e.character.Character.Name === entry?.character.Character.Name);
+      let characterName = entry?.character.Character.Name;
+      if (otherCharactersWithSameName.length > 1) {
+        // If we have multiple characters sharing the same name, just add server name to the character name
+        characterName = `${entry?.character.Character.Name} (${entry?.character.Character.Server})`;
+      }
+      return `${containerName} (${characterName || this.translate.instant('COMMON.Unknown')})`;
     }
   }
 
