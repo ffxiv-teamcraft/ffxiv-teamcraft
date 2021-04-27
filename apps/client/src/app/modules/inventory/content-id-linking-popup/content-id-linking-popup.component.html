@@ -5,7 +5,7 @@
       <img *ngIf="entry.character.Character.ID > 0; else custom"
            [src]="entry.character.Character.Avatar"
            nz-tooltip
-           [nzTooltipTitle]="entry.character.Character.Name"
+           nzTooltipTitle="{{entry.character.Character.Name}} ({{entry.character.Character.Server}})"
            (click)="entry.contentId ? null : selectCharacter(entry.character.Character.ID)"
            nz-popconfirm
            [nzPopconfirmTitle]="entry.contentId ? ('INVENTORY.CONTENT_ID_POPUP.Override_link_confirmation' | translate) : null"
