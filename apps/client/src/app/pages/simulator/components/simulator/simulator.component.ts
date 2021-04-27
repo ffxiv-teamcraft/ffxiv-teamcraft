@@ -1,7 +1,20 @@
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { Craft } from '../../../../model/garland-tools/craft';
-import { debounceTime, distinctUntilChanged, filter, first, map, pairwise, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
+  filter,
+  first,
+  map,
+  pairwise,
+  shareReplay,
+  startWith,
+  switchMap,
+  takeUntil,
+  tap
+} from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -271,6 +284,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       level: [0, Validators.required],
       specialist: [false]
     });
+
+    this.statsForm.valueChanges.pipe(
+      distinctUntilKeyChanged('specialist'),
+      takeUntil(this.onDestroy$)
+    ).subscribe(() => {
+      this.toggleSpecialist();
+    })
 
     this.foods = consumablesService.fromLazyData(this.lazyData.data.foods)
       .sort(this.consumablesSortFn);
