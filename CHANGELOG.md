@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.11"></a>
+## [8.1.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.10...v8.1.11) (2021-04-27)
+
+
+### Bug Fixes
+
+* **Alarms:** fix nodes to not group if on same zone ([ec6d6d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec6d6d0))
+* **Alarms:** use strict match instead normal match ([f38eef1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f38eef1))
+* **collectibles:** fixed collectibles results not loading when a level is 0 ([1423b0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1423b0f))
+* **desktop:** prevent any inventory tracking action when contentId is unknown ([b145002](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b145002))
+* **lists:** you can now load archived lists with direct links ([71e50e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71e50e9))
+* **marketboard:** fixed broken sort headers in marketboard popup ([e6fbd08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6fbd08))
+* **simulator:** Prevent tooltip leak ([f32c894](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f32c894))
+* **universalis:** fixed marketboard data publisher ([df56de2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df56de2))
+* **voyage-tracker:** clarification in the import popup process ([7a4e8d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a4e8d7))
+* **voyage-tracker:** remove diadem sector from the discovered sectors ([08337ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08337ee))
+* **voyage-tracker:** support for KR/CN. ([718fc3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/718fc3a))
+
+
+### Features
+
+* **character-linking:** added character server to the character avatar tooltip ([d25ce89](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d25ce89))
+* **currency-spending:** added fête token to the possible currencies ([b5d5399](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5d5399))
+* **db:** better details for gardening, including cross breeds ([d9705a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9705a2))
+* **desktop:** better character detection with dalamud character sync plugin ([1503ef3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1503ef3))
+
+
+
 <a name="8.1.10"></a>
 ## [8.1.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.9...v8.1.10) (2021-04-18)
 
