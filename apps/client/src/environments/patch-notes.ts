@@ -1,14 +1,21 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed weather alarm timers going derp once spawned.
-* **desktop:** better character detection for Universalis.
-* **desktop:** fixed retainer tracking with long CN/KO names.
-* **treasure-finder:** fixed missing treasure maps.
-* **voyage-tracker:** fixed maximum submarine rank.
+* **Alarms:** fix nodes to not group if on same zone.
+* **Alarms:** use strict match instead normal match.
+* **collectibles:** fixed collectibles results not loading when a level is 0.
+* **desktop:** prevent any inventory tracking action when contentId is unknown.
+* **lists:** you can now load archived lists with direct links.
+* **marketboard:** fixed broken sort headers in marketboard popup.
+* **simulator:** Prevent tooltip leak.
+* **universalis:** fixed marketboard data publisher.
+* **voyage-tracker:** clarification in the import popup process.
+* **voyage-tracker:** remove diadem sector from the discovered sectors.
+* **voyage-tracker:** support for KR/CN..
 
 
 ### Features
 
-* **desktop:** new setting to show other characters inventories in inventory page.
-* **desktop:** no more character id reset on logout with only one linked character.
-* **simulator:** added macro duration below each macro fragment.`;
+* **character-linking:** added character server to the character avatar tooltip.
+* **currency-spending:** added fête token to the possible currencies.
+* **db:** better details for gardening, including cross breeds.
+* **desktop:** better character detection with dalamud character sync plugin.`;
