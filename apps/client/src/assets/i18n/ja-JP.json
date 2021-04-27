@@ -2641,9 +2641,9 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
+    "Title": "トレジャーハント",
     "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
+    "Select_map": "エリアを選択してください",
     "Select_item": "Select treasure map item",
     "Select_treasure_map": "Select your treasure map",
     "Find_another": "Find another treasure"
