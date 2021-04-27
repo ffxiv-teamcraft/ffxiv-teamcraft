@@ -33,8 +33,17 @@ const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
     return state.listDetails.filter(d => {
-      return state.deleted.indexOf(d.$key) === -1
+      return !state.deleted.includes(d.$key)
         && (state.showArchived || !d.archived);
+    });
+  }
+);
+
+const getAllListDetailsWithArchived = createSelector(
+  getListsState,
+  (state: ListsState) => {
+    return state.listDetails.filter(d => {
+      return !state.deleted.includes(d.$key);
     });
   }
 );
@@ -45,7 +54,7 @@ const getSelectedId = createSelector(
 );
 
 const getSelectedList = () => createSelector(
-  getAllListDetails,
+  getAllListDetailsWithArchived,
   getSelectedId,
   (lists, id) => {
     return lists.find(it => it.$key === id);

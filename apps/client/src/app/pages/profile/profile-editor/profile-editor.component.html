@@ -7,7 +7,7 @@
       <div fxLayout="row" fxLayoutGap="5px">
         <nz-select (ngModelChange)="setDefaultCharacter($event)" [ngModel]="mainCharacter.character.ID">
           <nz-option *ngFor="let characterEntry of characters$ | async"
-                     [nzLabel]="characterEntry.character.Character.Name"
+                     nzLabel="{{characterEntry.character.Character.Name}} ({{characterEntry.character.Character.Server}})"
                      [nzValue]="characterEntry.character.Character.ID">
           </nz-option>
         </nz-select>

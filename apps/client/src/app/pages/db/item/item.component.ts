@@ -104,7 +104,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(
     switchMap(([data, xivapiItem, logTracking]) => {
-      let item: any = {
+      const mockRow: any = {
         id: data.item.id,
         icon: data.item.icon,
         amount: 1,
@@ -112,12 +112,15 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         used: 0,
         yield: 1
       };
-      item = this.extractor.addDataToItem(item, data);
-      item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
-      if (item.canBeGathered) {
-        item.isDoneInLog = logTracking?.gathering.includes(item.id);
-      }
-      return this.handleAdditionalData(item, data, xivapiItem);
+      return this.extractor.addDataToItem(mockRow, data).pipe(
+        switchMap((item: any) => {
+          item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+          if (item.canBeGathered) {
+            item.isDoneInLog = logTracking?.gathering.includes(item.id);
+          }
+          return this.handleAdditionalData(item, data, xivapiItem);
+        })
+      );
     }),
     map(data => {
       if (data.id > 1 && data.id < 19) {

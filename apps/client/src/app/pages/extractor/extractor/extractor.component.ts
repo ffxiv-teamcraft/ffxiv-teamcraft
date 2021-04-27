@@ -3,12 +3,12 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { HttpClient } from '@angular/common/http';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { filter, map, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { ItemData } from '../../../model/garland-tools/item-data';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
 import * as _ from 'lodash';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-extractor',
@@ -38,17 +38,25 @@ export class ExtractorComponent implements OnInit {
     requestsWithDelay(chunks.map(itemIds => {
       return this.http.get<any[]>(`https://www.garlandtools.org/db/doc/item/en/3/${itemIds.join(',')}.json`).pipe(
         map(items => this.serializer.deserialize<ItemData>(items.filter(i => !i.error).map(item => item.obj), [ItemData])),
-        map((items: ItemData[]) => {
-          return items.map(data => {
+        switchMap((items: ItemData[]) => {
+          if (items.length === 0) {
+            return of([]);
+          }
+          return combineLatest(items.map(data => {
             const item: any = {
               id: data.item.id
             };
-            const extract = this.extractor.addDataToItem(item, data);
-            delete extract.yield;
-            delete extract.requires;
-            delete extract.workingOnIt;
-            return extract;
-          });
+            return this.extractor.addDataToItem(item, data).pipe(
+              map(extract => {
+                delete extract.yield;
+                delete extract.requires;
+                delete extract.workingOnIt;
+                return extract;
+              })
+            );
+          })).pipe(
+            first()
+          );
         }),
         tap(() => {
           this.done$.next(this.done$.value + 1);

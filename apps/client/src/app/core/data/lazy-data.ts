@@ -33,6 +33,7 @@ export interface LazyData {
   fishingSpots: any;
   foods: any;
   freeCompanyActions: any;
+  gardeningSeedIds: any;
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
@@ -78,6 +79,7 @@ export interface LazyData {
   recipes: any;
   reduction: any;
   retainerTasks: any;
+  seeds: any;
   shops: any;
   spearFishingLog: any;
   spearFishingNodes: any;

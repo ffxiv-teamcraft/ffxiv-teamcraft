@@ -195,10 +195,10 @@
                   </ul>
                 </li>
               </ng-container>
-              <ng-container *ngIf="(permissionLevel$ | async)?.value >= 40">
+              <ng-container *ngIf="(permissionLevel$ | async)?.value >= 40 && !_list.ephemeral && !_list.offline">
                 <ng-container *ngIf="user$ | async as user">
                   <ng-container *ngIf="!publicDisplay && (user.patron || user.admin)">
-                    <li (click)="createTemplate(_list, user)" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"
+                    <li (click)="user.nickname ? createTemplate(_list, user) : null" *ngIf="(listTemplate$ | async) === undefined; else copyTemplate"
                         [nzDisabled]="!user.nickname"
                         nz-menu-item>
                       {{'LIST_TEMPLATE.Create_template' | translate}}
@@ -211,7 +211,7 @@
                         {{'LIST_TEMPLATE.Copy_template_url' | translate}}
                       </li>
                     </ng-template>
-                    <li (click)="createCustomLink(_list, user)" *ngIf="(customLink$ | async) === undefined; else copyLink"
+                    <li (click)="user.nickname ? createCustomLink(_list, user) : null" *ngIf="(customLink$ | async) === undefined; else copyLink"
                         [nzDisabled]="!user.nickname"
                         nz-menu-item>
                       {{'CUSTOM_LINKS.Add_link' | translate}}

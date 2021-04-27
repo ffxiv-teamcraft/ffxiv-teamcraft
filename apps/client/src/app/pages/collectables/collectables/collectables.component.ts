@@ -86,7 +86,7 @@ export class CollectablesComponent {
     this.form$ = this.levels$.pipe(
       map(levels => {
         const groupConfig = Object.keys(levels).reduce((group, key) => {
-          group[key] = [levels[key], [Validators.required, Validators.min(1)]];
+          group[key] = [levels[key], [Validators.required, Validators.min(0)]];
           return group;
         }, {});
         return fb.group(groupConfig);

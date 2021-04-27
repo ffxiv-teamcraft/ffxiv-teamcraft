@@ -35,7 +35,6 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { MediaObserver } from '@angular/flex-layout';
 import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
-import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
@@ -45,6 +44,7 @@ import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-list-details',
@@ -136,7 +136,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
     this.showContributionsButton$ = this.list$.pipe(
       map(list => {
-        return _.uniqBy(list.modificationsHistory, 'userId').length > 1;
+        return uniqBy(list.modificationsHistory, 'userId').length > 1;
       })
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;

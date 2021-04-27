@@ -142,6 +142,9 @@ export class InventoryService {
             if (!action) {
               return state;
             }
+            if (action.type !== 'SetContentId' && !state.inventory.contentId) {
+              return state;
+            }
             switch (action.type) {
               case 'SetContentId':
                 state.inventory.contentId = action.contentId;

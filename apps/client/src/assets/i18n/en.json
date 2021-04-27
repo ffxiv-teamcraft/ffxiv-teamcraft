@@ -2536,7 +2536,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },
@@ -2647,5 +2647,9 @@
     "Select_item": "Select treasure map item",
     "Select_treasure_map": "Select your treasure map",
     "Find_another": "Find another treasure"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }

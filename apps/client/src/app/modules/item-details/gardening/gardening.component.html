@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <app-item-icon [itemId]="details.seedItemId" width="24"></app-item-icon>
+    <div>{{details.seedItemId | itemName | i18n}}</div>
+  </div>
+  <div>{{'GARDENING.Growth_time' | translate}}: {{formattedDuration}}</div>
+  <div *ngIf="details.crossBreeds.length > 0">
+    <nz-divider nzOrientation="left" [nzText]="'GARDENING.Cross_breeds' | translate"></nz-divider>
+    <div  class="breed-container" fxLayout="column" fxLayoutGap="5px">
+      <div *ngFor="let crossBreed of details.crossBreeds" fxLayout="row wrap" fxLayoutGap="10px">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <app-item-icon [itemId]="crossBreed.baseSeed" width="24"></app-item-icon>
+          <div>{{crossBreed.baseSeed | itemName | i18n}}</div>
+        </div>
+        <div>X</div>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <app-item-icon [itemId]="crossBreed.adjacentSeed" width="24"></app-item-icon>
+          <div>{{crossBreed.adjacentSeed | itemName | i18n}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a [href]="seedId | ffxivgardening | i18n" target="_blank">{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}</a>
+</div>

@@ -64,6 +64,7 @@ import { RequirementsExtractor } from './data/extractor/requirements-extractor';
 import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
 import { GatheringNodesService } from '../../core/data/gathering-nodes.service';
 import { InventoryModule } from '../inventory/inventory.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -79,7 +80,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataService, HttpClient], multi: true },
   { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
@@ -124,7 +125,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     LazyScrollModule,
     SimulatorModule,
     CompanyWorkshopTreeModule,
-    InventoryModule
+    InventoryModule,
+    HttpClientModule
   ],
   providers: [
     ...DATA_EXTRACTORS,

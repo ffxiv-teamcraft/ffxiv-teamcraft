@@ -14,6 +14,7 @@ import { Drop } from './drop';
 import { Treasure } from './treasure';
 import { FateData } from './fate-data';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
+import { GardeningData } from './gardening-data';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -81,7 +82,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.VENDORS, is
 export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES, isObject?: boolean): number[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.INSTANCES, isObject?: boolean): Instance[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.GATHERED_BY, isObject?: boolean): GatheredBy
-export function getItemSource<T = any>(item: ListRow, type: DataType.GARDENING, isObject?: boolean): number
+export function getItemSource<T = any>(item: ListRow, type: DataType.GARDENING, isObject?: boolean): GardeningData
 export function getItemSource<T = any>(item: ListRow, type: DataType.VOYAGES, isObject?: boolean): I18nName[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.DROPS, isObject?: boolean): Drop[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.ALARMS, isObject?: boolean): Alarm[]

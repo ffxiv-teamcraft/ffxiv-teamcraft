@@ -19,7 +19,6 @@ import { LevesExtractor } from './extractors/leves.extractor';
 import { JobsExtractor } from './extractors/jobs.extractor';
 import { JobCategoriesExtractor } from './extractors/job-categories.extractor';
 import { FatesExtractor } from './extractors/fates.extractor';
-import { HuntsExtractor } from './extractors/hunts.extractor';
 import { GatheringBonusesExtractor } from './extractors/gathering-bonuses.extractor';
 import { CdGroupsExtractor } from './extractors/cd-groups.extractor';
 import { CombosExtractor } from './extractors/combos.extractor';
@@ -53,6 +52,7 @@ import { SubmarineRanksExtractor } from './extractors/submarine-ranks.extractor'
 import { AirshipPartsExtractor } from './extractors/airship-parts.extractor';
 import { AirshipRanksExtractor } from './extractors/airship-ranks.extractor';
 import { TreasuresExtractor } from './extractors/treasures.extractor';
+import { SeedsExtractor } from './extractors/seeds.extractor';
 
 // We have to do it like that because the lib seems to dynamically import its prompts,
 // which creates shitty typings
@@ -70,6 +70,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('SpecialShop', 'shops'),
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new SeedsExtractor(),
   new WorldsExtractor(),
   new TerritoriesExtractor(),
   new CollectablesExtractor(),

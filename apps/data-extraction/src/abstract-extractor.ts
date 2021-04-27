@@ -41,7 +41,7 @@ export abstract class AbstractExtractor {
 
   public abstract getName(): string;
 
-  protected abstract doExtract(): any;
+  protected abstract doExtract(): void;
 
   public extract(progress: any): Observable<string> {
     this.progress = progress;
@@ -94,6 +94,23 @@ export abstract class AbstractExtractor {
     return (point.z >= bounds.z.min && point.z <= bounds.z.max);
   }
 
+  protected getNonXivapiUrl<T = any>(url: string): Observable<T> {
+    const res$ = new Subject<T>();
+    request(url, { json: true }, (err, _, res) => {
+      if (err || res === '404 not found.') {
+        if (err) {
+          console.error(err);
+        }
+        res$.next(null);
+        res$.complete();
+      } else {
+        res$.next(res);
+        res$.complete();
+      }
+    });
+    return res$.asObservable();
+  }
+
   protected get<T = any>(url: string, body?: any): Observable<T> {
     const req$ = new Subject<void>();
     const queryUrl = AbstractExtractor.XIVAPI_KEY ? this.addQueryParam(url, 'private_key', AbstractExtractor.XIVAPI_KEY) : url;
@@ -136,8 +153,6 @@ export abstract class AbstractExtractor {
           });
         }
         return res$;
-      }),
-      tap(() => {
       })
     );
   }
