@@ -18,6 +18,7 @@ import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { FishingLogTrackerComponent } from './fishing-log-tracker/fishing-log-tracker.component';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-question-popup.module';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
     TooltipModule,
     FullpageMessageModule,
 
-    AntdSharedModule
+    AntdSharedModule,
+    TextQuestionPopupModule
   ]
 })
 export class LogTrackerModule {

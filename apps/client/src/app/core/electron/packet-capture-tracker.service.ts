@@ -117,9 +117,6 @@ export class PacketCaptureTrackerService {
 
     this.ipc.packets$.pipe(
       ofMessageType('effectResult'),
-      filter(message => {
-        return message.header.sourceActor === message.header.targetActor;
-      }),
       toIpcData()
     ).subscribe(packet => {
       for (let i = 0; i < packet.entryCount; i++) {
@@ -127,6 +124,18 @@ export class PacketCaptureTrackerService {
           this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
         }
       }
+    });
+
+    this.ipc.packets$.pipe(
+      ofMessageType('statusEffectList')
+    ).subscribe(message => {
+      this.eorzeaFacade.resetStatuses();
+      const packet = message.parsedIpcData;
+      packet.effects.forEach(effect => {
+        if (effect.sourceActorId === message.header.sourceActor) {
+          this.eorzeaFacade.addStatus(effect.effectId);
+        }
+      });
     });
 
     this.ipc.packets$.pipe(

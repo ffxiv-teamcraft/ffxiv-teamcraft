@@ -166,7 +166,7 @@
                                        fxLayoutAlign="flex-start center">
                                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                                       <div>
-                                        <app-map-position [mapId]="node.gatheringNode.mapId"
+                                        <app-map-position [mapId]="node.gatheringNode.map"
                                                           *ngIf="node.gatheringNode.x !== undefined"
                                                           [marker]="{x: node.gatheringNode.x, y: node.gatheringNode.y, iconType: 'img', iconImg: node.gatheringNode.type | nodeTypeIcon: node.gatheringNode.limited}"
                                                           [showZoneName]="true"
