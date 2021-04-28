@@ -1,21 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **Alarms:** fix nodes to not group if on same zone.
-* **Alarms:** use strict match instead normal match.
-* **collectibles:** fixed collectibles results not loading when a level is 0.
-* **desktop:** prevent any inventory tracking action when contentId is unknown.
-* **lists:** you can now load archived lists with direct links.
-* **marketboard:** fixed broken sort headers in marketboard popup.
-* **simulator:** Prevent tooltip leak.
-* **universalis:** fixed marketboard data publisher.
-* **voyage-tracker:** clarification in the import popup process.
-* **voyage-tracker:** remove diadem sector from the discovered sectors.
-* **voyage-tracker:** support for KR/CN..
+* **fishing-overlay:** fixed chum status tracking.
+* **fishing-spot:** uniform sorting of tug type data table.
+* **inventory:** remove remnants of unknown inventories when character is set.
+* **log-tracker:** fixed position maps not showing properly inside "see on map" popup.
+* **simulator:** failed combo actions are no longer being considered as combo enablers.
+* **simulator:** fixed specialist stats toggle sometimes not updating stats.
+* **voyage-tracker:** fix import.
 
 
 ### Features
 
-* **character-linking:** added character server to the character avatar tooltip.
-* **currency-spending:** added fête token to the possible currencies.
-* **db:** better details for gardening, including cross breeds.
-* **desktop:** better character detection with dalamud character sync plugin.`;
+* **inventory:** character inventories sharing the same name now include server name.
+* **log-tracker:** you can now import FSH progress from CarbunclePlushy.`;
