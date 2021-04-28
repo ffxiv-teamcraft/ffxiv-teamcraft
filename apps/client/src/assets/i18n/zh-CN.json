@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
