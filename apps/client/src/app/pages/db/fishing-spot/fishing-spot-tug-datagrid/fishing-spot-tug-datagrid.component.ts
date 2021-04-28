@@ -22,7 +22,7 @@ export class FishingSpotTugDatagridComponent {
       const fishes: number[] = spots.find((spot) => spot.id === spotId)?.fishes ?? [];
       return {
         ...res.data,
-        colDefs: res.data.colDefs.sort((a, b) => (b.colId === 2 ? 1 : b.colId === 1 ? -1 : 0)),
+        colDefs: res.data.colDefs.sort((a, b) => a.colId - b.colId),
         data: res.data.data.sort((a, b) => fishes.indexOf(a.rowId) - fishes.indexOf(b.rowId)),
       };
     })
