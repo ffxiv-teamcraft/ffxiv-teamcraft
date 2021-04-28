@@ -54,7 +54,8 @@ export class PacketCapture {
     'updateInventorySlot',
     'updatePositionHandler',
     'updatePositionInstance',
-    'weatherChange'
+    'weatherChange',
+    'statusEffectList'
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
@@ -62,7 +63,6 @@ export class PacketCapture {
     'actorControl',
     'updateClassInfo',
     'actorControlSelf',
-    'effectResult',
     'eventPlay',
     'eventStart',
     'eventFinish',
