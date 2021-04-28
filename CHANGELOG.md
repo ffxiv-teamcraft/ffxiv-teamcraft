@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.1.12"></a>
+## [8.1.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.11...v8.1.12) (2021-04-28)
+
+
+### Bug Fixes
+
+* **fishing-overlay:** fixed chum status tracking ([c861594](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c861594))
+* **fishing-spot:** uniform sorting of tug type data table ([5f733d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f733d5))
+* **inventory:** remove remnants of unknown inventories when character is set ([126b473](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/126b473))
+* **log-tracker:** fixed position maps not showing properly inside "see on map" popup ([e38be27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e38be27))
+* **simulator:** failed combo actions are no longer being considered as combo enablers ([5c46382](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c46382))
+* **simulator:** fixed specialist stats toggle sometimes not updating stats ([5de7a20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5de7a20))
+* **voyage-tracker:** fix import ([789623e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/789623e))
+
+
+### Features
+
+* **inventory:** character inventories sharing the same name now include server name ([6c3768f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c3768f))
+* **log-tracker:** you can now import FSH progress from CarbunclePlushy ([bc6639b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc6639b))
+
+
+
 <a name="8.1.11"></a>
 ## [8.1.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.10...v8.1.11) (2021-04-27)
 
