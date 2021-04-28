@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "Komponenten verbergen",
     "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
     "BTN_optimized_path": "Optimierter Pfad für alle GÄR-Sammelstellen",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "Meisterrezepte ({{number}})",
       "Housing_items": "Unterkunft ({{number}})",
