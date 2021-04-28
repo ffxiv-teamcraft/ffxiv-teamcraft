@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "Ocultar artículos completados",
     "MIN_optimized_path": "Ruta optimizada para todos los nodos de minería",
     "BTN_optimized_path": "Ruta optimizada para todos los nodos de botanista",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "Recetas maestras ({{number}})",
       "Housing_items": "Artículos de vivienda({{number}})",
