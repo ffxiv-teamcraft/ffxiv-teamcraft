@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
