@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "Masquer les éléments complétés",
     "MIN_optimized_path": "Chemin optimisé pour tous les nœuds MIN",
     "BTN_optimized_path": "Chemin optimisé pour tous les nœuds BTN",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
