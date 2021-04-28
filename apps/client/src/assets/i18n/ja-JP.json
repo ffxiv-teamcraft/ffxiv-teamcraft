@@ -1306,6 +1306,9 @@
     "Hide_completed_items": "完了したレシピを隠す",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
