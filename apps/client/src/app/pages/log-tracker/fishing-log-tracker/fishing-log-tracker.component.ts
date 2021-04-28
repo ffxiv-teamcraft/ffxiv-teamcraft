@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { map, tap } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { TrackerComponent } from '../tracker-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingLogCacheService } from './fishing-log-cache.service';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { TranslateService } from '@ngx-translate/core';
+import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -41,8 +45,37 @@ export class FishingLogTrackerComponent extends TrackerComponent {
   public hideCompleted = this.settings.hideCompletedLogEntries;
 
   constructor(private authFacade: AuthFacade, protected alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private fishingLogCacheService: FishingLogCacheService) {
+              public settings: SettingsService, private fishingLogCacheService: FishingLogCacheService,
+              private modal: NzModalService, private translate: TranslateService,
+              private message: NzMessageService) {
     super(alarmsFacade);
+  }
+
+  public importFromCP(): void {
+    this.modal.create({
+      nzContent: TextQuestionPopupComponent,
+      nzTitle: this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy'),
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => !!res)
+      ).subscribe((res) => {
+
+      try {
+        const parsed = JSON.parse(res);
+        if (!parsed.completed) {
+          this.message.error(this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy_failed'));
+          return;
+        } else {
+          parsed.completed.forEach(itemId => {
+            this.authFacade.markAsDoneInLog('gathering', itemId, true);
+          });
+          this.message.success(this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy_success'));
+        }
+      } catch (e) {
+        this.message.error(this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy_failed'));
+      }
+    });
   }
 
   public getFshIcon(index: number): string {

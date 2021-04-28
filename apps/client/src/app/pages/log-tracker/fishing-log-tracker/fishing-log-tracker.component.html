@@ -5,8 +5,13 @@
              nzSize="small">
     <ng-template #extraTemplate>
       <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
+        <div>
+          <button nz-button nzType="primary" (click)="importFromCP()">
+            {{'LOG_TRACKER.Import_from_carbuncleplushy' | translate}}
+          </button>
+        </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-          <nz-switch  [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
+          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
           <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
         </div>
       </div>
