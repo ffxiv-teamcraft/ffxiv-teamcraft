@@ -3,13 +3,12 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { BehaviorSubject } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { finalize, first, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { FreeCompanyWorkshopFacade } from '../+state/free-company-workshop.facade';
 import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { VesselType } from '../model/vessel-type';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { worlds } from '../../../core/data/sources/worlds';
 
 @Component({
   selector: 'app-import-workshop-from-pcap-popup',
@@ -41,17 +40,8 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
     return this._submarineList.asObservable();
   }
 
-  public get airshipSectorProgression() {
-    return this._airshipSectorProgression.asObservable();
-  }
-
-  public get submarineSectorProgression() {
-    return this._submarineSectorProgression.asObservable();
-  }
-
   constructor(private modalRef: NzModalRef, private ipc: IpcService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private authFacade: AuthFacade) {
     super();
   }
@@ -85,30 +75,37 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
     });
 
     const server$ = this.authFacade.user$.pipe(
-      map((user) => this.i18n.getName(this.l12n.getWorldName(String(user.world)))),
+      map((user) => {
+        return Object.keys(worlds).find((key) => worlds[key] === user.world);
+      }),
       takeUntil(this.onDestroy$)
     );
 
-    const freeCompanyDetails$ = this.ipc.freeCompanyDetails.pipe(
-      withLatestFrom(server$),
-      map(([packet, server]) => {
-        return {
-          id: packet.freeCompanyId,
-          name: packet.fcName,
-          tag: packet.fcTag,
-          rank: packet.fcRank,
-          server
-        };
-      })
+    const fcId$ = this.ipc.freeCompanyId$.pipe(
+      takeUntil(this.onDestroy$),
     );
 
-    this.ipc.freeCompanyId$.pipe(
+    this.ipc.freeCompanyDetails.pipe(
       tap(() => {
         this._isLoading.next(true);
       }),
-      switchMap(() => freeCompanyDetails$.pipe(first())),
-      finalize(() => this._isLoading.next(false)),
-      takeUntil(this.onDestroy$)
+      withLatestFrom(fcId$),
+      filter(([packet, fcId]) => packet.freeCompanyId.toString() === fcId),
+      map(([packet]) => packet),
+      withLatestFrom(server$),
+      map(([packet, server]) => {
+        return {
+          id: packet.freeCompanyId.toString(),
+          name: packet.fcName,
+          tag: packet.fcTag,
+          rank: packet.fcRank,
+          server,
+        };
+      }),
+      tap(() => {
+        this._isLoading.next(false);
+      }),
+      takeUntil(this.onDestroy$),
     ).subscribe((data) => {
       this._freeCompany.next(data);
     });

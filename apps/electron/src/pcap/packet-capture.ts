@@ -27,6 +27,7 @@ export class PacketCapture {
     'eventPlay8',
     'eventStart',
     'freeCompanyInfo',
+    'freeCompanyDialog',
     'initZone',
     'inventoryModifyHandler',
     'inventoryTransaction',
