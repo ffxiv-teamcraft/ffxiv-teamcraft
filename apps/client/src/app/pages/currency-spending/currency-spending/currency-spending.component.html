@@ -9,8 +9,7 @@
       [ngModel]="null"
       [nzPlaceHolder]="'CURRENCY_SPENDING.Pick_currency' | translate"
       class="currency-picker"
-      nzShowSearch
-    >
+      nzShowSearch>
       <nz-option *ngFor="let currency of currencies$ | async" [nzLabel]="currency | itemName | i18n"
                  [nzValue]="currency"
                  nzCustomContent>
