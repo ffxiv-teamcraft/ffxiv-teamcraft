@@ -101,17 +101,10 @@ export class DatFilesWatcher {
     if (!filename.endsWith('ITEMODR.DAT')) {
       return false;
     }
-    log.log(`File change detected: ${filename}`);
-    // If we had the same change less than 10s ago, we can safely assume it's from the game
-    if (this.lastChanges.filter(change => change.file === filename && Date.now() - change.timestamp < 10000).length > 0) {
-      log.log('Approved timestamp');
-      this.lastChanges = [];
-      return true;
-    }
     const fullFilePath = join(watchDir, filename);
     const newHash = hashFiles.sync({ files: [fullFilePath] });
     if (this.hashRegistry[fullFilePath] !== newHash) {
-      log.log('Approved hash');
+      log.log(`Approved hash for ${filename}`);
       this.hashRegistry[fullFilePath] = newHash;
       this.lastChanges = [];
       return true;
@@ -120,7 +113,6 @@ export class DatFilesWatcher {
       ...this.lastChanges.filter(c => Date.now() - c.timestamp < 10000),
       { timestamp: Date.now(), file: filename }
     ];
-    log.log('Ignored');
     return false;
   }
 
