@@ -1306,9 +1306,9 @@
     "Hide_completed_items": "Komponenten verbergen",
     "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
     "BTN_optimized_path": "Optimierter Pfad für alle GÄR-Sammelstellen",
-    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
-    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
-    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
+    "Import_from_carbuncleplushy": "Fortschritt von CarbunclePlushy importieren",
+    "Import_from_carbuncleplushy_failed": "Import fehlgeschlagen, falsches JSON wurde angegeben, stelle sicher, dass du den Import der vollständigen Einstellungen nutzt",
+    "Import_from_carbuncleplushy_success": "Fischer-Notizbuch-Tracker erfolgreich aktualisiert",
     "PAGE": {
       "Master_recipes": "Meisterrezepte ({{number}})",
       "Housing_items": "Unterkunft ({{number}})",
@@ -2539,7 +2539,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Durch Paketerfassung importieren",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Gehe zur Gesellschaftswerkstätte (betritt diese nachdem du diese Meldung geöffnet hast)<br>2. Öffne das Fenster für die Freie Gesellschaft<br>3. Interagiere mit jedem Tauchboot oder Flugschiff im Verwaltungsfenster",
     "Airships": "Luftschiffe",
     "Submersibles": "Tauchboote"
   },
@@ -2653,6 +2653,6 @@
   },
   "GARDENING": {
     "Growth_time": "Wachstumszeit",
-    "Cross_breeds": "Cross breeds"
+    "Cross_breeds": "Pflanzenkreuzung"
   }
 }
