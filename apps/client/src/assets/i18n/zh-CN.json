@@ -2299,7 +2299,9 @@
     "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
     "Create_folder": "新建文件夹",
     "Save_replay": "上传回放",
-    "Replay_result": "结果"
+    "Replay_result": "结果",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
