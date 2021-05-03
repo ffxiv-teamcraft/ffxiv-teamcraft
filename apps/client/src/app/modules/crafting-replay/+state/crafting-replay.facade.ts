@@ -7,6 +7,7 @@ import * as CraftingReplaySelectors from './crafting-replay.selectors';
 import { CraftingReplay } from '../model/crafting-replay';
 import {
   addCraftingReplay,
+  clearOfflineReplays,
   deleteCraftingReplay,
   loadCraftingReplay,
   loadCraftingReplays,
@@ -79,5 +80,9 @@ export class CraftingReplayFacade {
 
   public deleteReplay(key: string): void {
     this.store.dispatch(deleteCraftingReplay({ key: key }));
+  }
+
+  clearOfflineReplays(): void {
+    this.store.dispatch(clearOfflineReplays());
   }
 }

@@ -62,7 +62,20 @@
     <ng-container *ngIf="platform.isDesktop()">
       <div *ngIf="offlineReplays$ | async as offlineReplays" fxLayout="column">
         <div>
-          <nz-divider [nzText]="'CRAFTING_REPLAYS.Offline_replays' | translate" nzOrientation="left"></nz-divider>
+          <nz-divider [nzText]="offlineTitle" nzOrientation="left"></nz-divider>
+          <ng-template #offlineTitle>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <div>{{'CRAFTING_REPLAYS.Offline_replays' | translate}}</div>
+              <div>
+                <button nz-button nzDanger nzShape="circle">
+                  <i nz-icon nzType="delete"
+                     nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete_offline' | translate"
+                     nz-popconfirm [nzPopconfirmTitle]="'CRAFTING_REPLAYS.Confirm_delete_offline' | translate"
+                     (nzOnConfirm)="clearOfflineReplays()"></i>
+                </button>
+              </div>
+            </div>
+          </ng-template>
         </div>
         <app-fullpage-message *ngIf="offlineReplays.length === 0" height="100px"
                               fontSize="30px">{{'CRAFTING_REPLAYS.No_offline_replays' | translate}}</app-fullpage-message>

@@ -5,6 +5,10 @@ export const loadCraftingReplays = createAction(
   '[CraftingReplay] Load CraftingReplays'
 );
 
+export const clearOfflineReplays = createAction(
+  '[CraftingReplay] Clear Offline CraftingReplays'
+);
+
 export const loadCraftingReplaysSuccess = createAction(
   '[CraftingReplay] Load CraftingReplays Success',
   props<{ craftingReplays: CraftingReplay[] }>()

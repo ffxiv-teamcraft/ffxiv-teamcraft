@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/crafting-replay.facade';
-import { map, switchMap, startWith } from 'rxjs/operators';
+import { map, startWith, switchMap } from 'rxjs/operators';
 import { CraftingReplayService } from '../../../modules/crafting-replay/crafting-replay.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
@@ -34,7 +34,7 @@ export class CraftingReplaysComponent {
 
   public showStatWarning$ = this.craftingReplayService.stats$.pipe(
     startWith(false),
-    map(stats => !stats && this.ipc.machinaToggle),
+    map(stats => !stats && this.ipc.machinaToggle)
   );
 
   public userId$ = this.authFacade.userId$;
@@ -89,6 +89,10 @@ export class CraftingReplaysComponent {
 
   trackByKey(index: number, data: DataModel): string {
     return data.$key;
+  }
+
+  clearOfflineReplays(): void {
+    this.craftingReplayFacade.clearOfflineReplays();
   }
 
 }
