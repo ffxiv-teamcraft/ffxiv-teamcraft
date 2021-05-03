@@ -25,6 +25,9 @@ import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
 import { PatreonService } from '../../../core/patreon/patreon.service';
 import { InventoryService } from '../../inventory/inventory.service';
+import { NotificationSettings } from '../notification-settings';
+import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
+import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 
 @Component({
   selector: 'app-settings-popup',
@@ -69,7 +72,7 @@ export class SettingsPopupComponent {
 
   customTheme: Theme;
 
-  sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
+  sounds = ['Confirm', 'Feature_unlocked', 'Full_Party', 'LB_charged', 'Notification', 'Wondrous_tales'];
 
   rawsock = false;
 
@@ -140,6 +143,22 @@ export class SettingsPopupComponent {
     }
   }
 
+  public notificationSettings: Record<string, NotificationSettings> = {
+    [SoundNotificationType.ALARM]: this.settings.getNotificationSettings(SoundNotificationType.ALARM),
+    [SoundNotificationType.RESET_TIMER]: this.settings.getNotificationSettings(SoundNotificationType.RESET_TIMER),
+    [SoundNotificationType.AUTOFILL]: this.settings.getNotificationSettings(SoundNotificationType.AUTOFILL),
+    [SoundNotificationType.RETAINER]: this.settings.getNotificationSettings(SoundNotificationType.RETAINER),
+    [SoundNotificationType.VOYAGE]: this.settings.getNotificationSettings(SoundNotificationType.VOYAGE)
+  };
+
+  public enableCustomSound: Record<string, boolean> = Object.entries<NotificationSettings>(this.notificationSettings)
+    .reduce((acc, [key, entry]) => {
+      return {
+        ...acc,
+        [key]: entry.sound.includes(':')
+      };
+    }, {});
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
@@ -147,8 +166,9 @@ export class SettingsPopupComponent {
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataService, private mappy: MappyReporterService,
-              private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService) {
-
+              private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService,
+              private soundNotificationService: SoundNotificationService) {
+    console.log(this.notificationSettings);
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
@@ -422,22 +442,20 @@ export class SettingsPopupComponent {
     }
   }
 
-  public previewSound(): void {
-    let audio: HTMLAudioElement;
-    audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
-    audio.loop = false;
-    audio.volume = this.settings.autofillCompletionVolume;
-    audio.play();
+  public previewSound(type: SoundNotificationType): void {
+    this.soundNotificationService.play(type);
   }
 
-  public setVolume(volume: number): void {
-    this.settings.autofillCompletionVolume = volume;
-    this.previewSound();
+  public setNotificationVolume(type: SoundNotificationType, volume: number): void {
+    this.notificationSettings[type].volume = volume;
+    this.settings.setNotificationSettings(type, this.notificationSettings[type]);
+    this.previewSound(type);
   }
 
-  public setSound(sound: string): void {
-    this.settings.autofillCompletionSound = sound;
-    this.previewSound();
+  public setNotificationSound(type: SoundNotificationType, sound: string): void {
+    this.notificationSettings[type].sound = sound;
+    this.settings.setNotificationSettings(type, this.notificationSettings[type]);
+    this.previewSound(type);
   }
 
   public onMappyEnableChange(enabled: boolean): void {

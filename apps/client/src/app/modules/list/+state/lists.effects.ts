@@ -61,6 +61,8 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { DirtyScope } from '../../../core/dirty/dirty-scope';
 import { CommissionService } from '../../commission-board/commission.service';
+import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
+import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 
 @Injectable()
 export class ListsEffects {
@@ -405,10 +407,7 @@ export class ListsEffects {
             listName: list.name
           });
           const notificationIcon = `https://xivapi.com${this.lazyData.data.itemIcons[action.itemId]}`;
-          const audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
-          audio.loop = false;
-          audio.volume = this.settings.autofillCompletionVolume;
-          audio.play();
+          this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
               title: notificationTitle,
@@ -511,7 +510,8 @@ export class ListsEffects {
     private l12n: LocalizedDataService,
     private lazyData: LazyDataService,
     private dirtyFacade: DirtyFacade,
-    private commissionService: CommissionService
+    private commissionService: CommissionService,
+    private soundNotificationService: SoundNotificationService
   ) {
   }
 

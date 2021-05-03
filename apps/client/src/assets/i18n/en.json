@@ -502,6 +502,14 @@
       "Global": "Global",
       "CN": "China",
       "KR": "Korea"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
@@ -2301,7 +2309,7 @@
     "Save_replay": "Save replay in database",
     "Replay_result": "Result",
     "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline":  "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "New commission",

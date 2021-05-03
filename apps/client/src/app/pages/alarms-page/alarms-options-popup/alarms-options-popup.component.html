@@ -1,5 +1,5 @@
 <p>{{'ALARMS.Volume' | translate}}</p>
-<nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.alarmVolume * 100" [nzMax]="100" [nzMin]="1"
+<nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="alarmSettings.volume * 100" [nzMax]="100" [nzMin]="1"
            [nzStep]="1"></nz-slider>
 
 <div *ngIf="platform.isDesktop()">
@@ -8,7 +8,7 @@
 </div>
 
 <div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
-  <div class="sound-preview">{{settings.alarmSound}}
+  <div class="sound-preview">{{alarmSettings.sound}}
     <button (click)="previewSound()" nz-button>
       <i nz-icon nzType="play-o"></i>
     </button>
@@ -18,7 +18,7 @@
 
 <ng-template #soundSelect>
   <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
-  <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.alarmSound" class="select-box" id="sound">
+  <nz-select (ngModelChange)="setSound($event)" [ngModel]="alarmSettings.sound" class="select-box" id="sound">
     <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
     </nz-option>
   </nz-select>

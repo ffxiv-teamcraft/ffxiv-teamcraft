@@ -6,6 +6,8 @@ import { Region } from './region.enum';
 import { map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
+import { NotificationSettings } from './notification-settings';
+import { SoundNotificationType } from '../../core/sound-notification/sound-notification-type';
 
 @Injectable({
   providedIn: 'root'
@@ -484,38 +486,6 @@ export class SettingsService {
     this.setSetting('alarm:hours-before', hours.toString());
   }
 
-  public get alarmSound(): string {
-    return this.getSetting('alarm:sound', 'Notification');
-  }
-
-  public set alarmSound(sound: string) {
-    this.setSetting('alarm:sound', sound);
-  }
-
-  public get alarmVolume(): number {
-    return +this.getSetting('alarm:volume', '0.5');
-  }
-
-  public set alarmVolume(volume: number) {
-    this.setSetting('alarm:volume', volume.toString());
-  }
-
-  public get autofillCompletionSound(): string {
-    return this.getSetting('autofill:completion:sound', 'Full_Party');
-  }
-
-  public set autofillCompletionSound(sound: string) {
-    this.setSetting('autofill:completion:sound', sound);
-  }
-
-  public get autofillCompletionVolume(): number {
-    return +this.getSetting('autofill:completion:volume', '0.5');
-  }
-
-  public set autofillCompletionVolume(volume: number) {
-    this.setSetting('autofill:completion:volume', volume.toString());
-  }
-
   public get alarmsMuted(): boolean {
     return this.getBoolean('alarms:muted', false);
   }
@@ -858,6 +828,22 @@ export class SettingsService {
 
   public setString(name: string, value: string): void {
     this.setSetting(name, value);
+  }
+
+  public getNotificationSettings(type: SoundNotificationType): NotificationSettings {
+    const raw = this.getString(`alarm-settings:${type}`, '');
+    if (!!raw) {
+      return JSON.parse(raw);
+    } else {
+      return {
+        volume: 0.5,
+        sound: 'Notification'
+      };
+    }
+  }
+
+  public setNotificationSettings(type: SoundNotificationType, settings: NotificationSettings): void {
+    this.setString(`alarm-settings:${type}`, JSON.stringify(settings));
   }
 
   private setSetting(name: string, value: string): void {

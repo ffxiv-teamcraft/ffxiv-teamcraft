@@ -411,6 +411,46 @@
       </ng-container>
     </div>
   </nz-tab>
+  <nz-tab [nzTitle]="'SETTINGS.NOTIFICATIONS.Title' | translate">
+    <div fxLayout="column" fxLayoutGap="5px"></div>
+
+    <ng-template #notificationEditor let-type let-title="title">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5"><b>{{title | translate}}</b></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <div *ngIf="platform.isDesktop()" class="custom-sound-toggle">
+            <nz-switch [(ngModel)]="enableCustomSound[type]"></nz-switch>
+            {{'ALARMS.Custom_sound' | translate}}
+          </div>
+          <div *ngIf="enableCustomSound[type]; else soundSelect" class="custom-alarm">
+            <div class="sound-preview">
+              <button (click)="previewSound(type)" nz-button nzType="primary">
+                <i nz-icon nzType="caret-right" nzTheme="outline"></i>
+                {{notificationSettings[type].sound}}
+              </button>
+            </div>
+            <input (change)="setNotificationSound(type, $event.target.files[0].path)" accept="audio/*" type="file">
+          </div>
+          <ng-template #soundSelect>
+            <nz-select (ngModelChange)="setNotificationSound(type, $event)" [ngModel]="notificationSettings[type].sound" class="select-box">
+              <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound"></nz-option>
+            </nz-select>
+          </ng-template>
+          <nz-slider (nzOnAfterChange)="setNotificationVolume(type, $event/100)" [ngModel]="notificationSettings[type].volume * 100"
+                     [nzMax]="100" [nzMin]="0"
+                     [nzStep]="1"></nz-slider>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-template>
+
+    <ng-container *ngTemplateOutlet="notificationEditor; context:{$implicit: 'alarm', title:'SETTINGS.NOTIFICATIONS.Alarms'}"></ng-container>
+    <ng-container *ngTemplateOutlet="notificationEditor; context:{$implicit: 'reset_timer', title:'SETTINGS.NOTIFICATIONS.Reset_timer'}"></ng-container>
+    <ng-container *ngIf="platform.isDesktop()">
+      <ng-container *ngTemplateOutlet="notificationEditor; context:{$implicit: 'autofill', title:'SETTINGS.NOTIFICATIONS.Autofill_completion'}"></ng-container>
+      <ng-container *ngTemplateOutlet="notificationEditor; context:{$implicit: 'retainer', title:'SETTINGS.NOTIFICATIONS.Retainer_tracker'}"></ng-container>
+      <ng-container *ngTemplateOutlet="notificationEditor; context:{$implicit: 'voyage', title:'SETTINGS.NOTIFICATIONS.Voyage_tracker'}"></ng-container>
+    </ng-container>
+  </nz-tab>
   <nz-tab *ngIf="platform.isDesktop()" [nzTitle]="'SETTINGS.Desktop' | translate">
     <div fxLayout="column" fxLayoutGap="5px">
       <div>
@@ -481,21 +521,6 @@
         <nz-form-control [nzSpan]="12" nzValidateStatus="validating"
                          [nzValidatingTip]="('COMMON.Example' | translate) + ': xivapi.com,www.garlandtools.org'">
           <input nz-input [(ngModel)]="proxyBypass" (blur)="ipc.send('proxy-bypass', proxyBypass)">
-        </nz-form-control>
-      </nz-form-item>
-      <div>
-        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
-      </div>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="5">{{'Sound' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.autofillCompletionSound" class="select-box"
-                     id="sound">
-            <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound"></nz-option>
-          </nz-select>
-          <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
-                     [nzMax]="100" [nzMin]="0"
-                     [nzStep]="1"></nz-slider>
         </nz-form-control>
       </nz-form-item>
       <div>
