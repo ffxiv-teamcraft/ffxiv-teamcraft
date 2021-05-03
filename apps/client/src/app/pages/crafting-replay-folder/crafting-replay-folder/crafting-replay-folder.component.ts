@@ -38,7 +38,9 @@ export class CraftingReplayFolderComponent extends TeamcraftComponent {
 
     this.display$ = this.foldersFacade.getSelectedFolderDisplay(
       FolderContentType.CRAFTING_REPLAY,
-      this.craftingReplayFacade.userCraftingReplays$.pipe(map(replays => replays.filter(r => r.online))),
+      this.craftingReplayFacade.allCraftingReplays$.pipe(
+        map(replays => replays.filter(r => r.online))
+      ),
       key => this.craftingReplayFacade.loadReplay(key)
     ).pipe(
       tap(() => this.loading = false)

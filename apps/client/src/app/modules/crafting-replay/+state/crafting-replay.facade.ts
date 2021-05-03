@@ -25,10 +25,13 @@ export class CraftingReplayFacade {
     select(CraftingReplaySelectors.getCraftingReplayLoaded)
   );
 
+  allCraftingReplays$ = this.store.pipe(
+    select(CraftingReplaySelectors.getAllCraftingReplays)
+  );
+
   userCraftingReplays$ = this.authFacade.userId$.pipe(
     switchMap(userId => {
-      return this.store.pipe(
-        select(CraftingReplaySelectors.getAllCraftingReplays),
+      return this.allCraftingReplays$.pipe(
         map(replays => {
           return replays.filter(replay => !replay.online || replay.authorId === userId);
         })
