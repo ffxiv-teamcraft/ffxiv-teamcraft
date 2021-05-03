@@ -502,6 +502,14 @@
       "Global": "グローバル",
       "CN": "中国",
       "KR": "韓国"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
