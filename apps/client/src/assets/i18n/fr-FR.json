@@ -2299,7 +2299,9 @@
     "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
     "Create_folder": "Nouveau dossier",
     "Save_replay": "Enregistrer en ligne",
-    "Replay_result": "Résultat"
+    "Replay_result": "Résultat",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
