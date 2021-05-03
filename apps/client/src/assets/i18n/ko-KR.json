@@ -2299,7 +2299,9 @@
     "Missing_stats": "다른 제작 직업으로 변경하여 TC가 리플레이를 기록하기 전에 제작 능력치를 동기화할 수 있도록 해주세요.",
     "Create_folder": "새 폴더",
     "Save_replay": "데이터베이스에 리플레이 저장하기",
-    "Replay_result": "결과"
+    "Replay_result": "결과",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
