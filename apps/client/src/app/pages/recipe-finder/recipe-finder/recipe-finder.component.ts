@@ -184,6 +184,12 @@ export class RecipeFinderComponent implements OnDestroy {
       tap(entries => {
         this.totalItems = entries.length;
       }),
+      map(entries => {
+        return entries.map(entry => {
+          entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
+          return entry;
+        })
+      }),
       shareReplay(1)
     );
     this.results$ = combineLatest([results$, this.page$]).pipe(
