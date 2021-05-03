@@ -2299,7 +2299,9 @@
     "Missing_stats": "Пожалуйста переключитесь на любую крафтовую профессию, чтобы TC определил ваши параметры, прежде чем будет запись.",
     "Create_folder": "Новая папка",
     "Save_replay": "Сохранить повтор в базе данных",
-    "Replay_result": "Результат"
+    "Replay_result": "Результат",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "Новый заказ",
