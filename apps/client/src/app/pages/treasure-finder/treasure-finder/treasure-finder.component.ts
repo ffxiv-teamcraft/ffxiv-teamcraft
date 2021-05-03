@@ -35,13 +35,19 @@ export class TreasureFinderComponent {
         .map(treasure => {
           const mapData = this.lazyData.data.maps[treasure.map];
           const coordsPercent = this.mapService.getPositionOnMap(mapData, treasure.coords);
+          let offsetX = 94;
+          let offsetY = 79.5;
+          if ([12241, 12242, 12243].includes(treasure.item)) {
+            offsetX = 47;
+            offsetY = 30;
+          }
           return {
             ...treasure,
             mapImage: mapData.image,
             coordsPercent,
             display: {
-              x: coordsPercent.x * 2048 / 100 * (mapData.size_factor / 100) - 94,
-              y: coordsPercent.y * 2048 / 100 * (mapData.size_factor / 100) - 79.5
+              x: coordsPercent.x * 2048 / 100 * (mapData.size_factor / 100) - offsetX,
+              y: coordsPercent.y * 2048 / 100 * (mapData.size_factor / 100) - offsetY
             }
           };
         });
