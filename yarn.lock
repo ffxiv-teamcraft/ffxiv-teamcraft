@@ -3184,6 +3184,11 @@
     semver "7.3.2"
     semver-intersect "1.4.0"
 
+"@sgratzl/science@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@sgratzl/science/-/science-2.0.0.tgz#9154f6f5d55c5712f48887c25492a4dc7bc6cc99"
+  integrity sha512-LO3gArm8rVczcksg35xnZbOLEOE091VjyvvzR8mnPjP5K5+xqZEWhBi+lDcEk50dAlfPBoBHfwmu+MmiiSpXHw==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.npmjs.org/@sindresorhus/is/-/is-0.14.0.tgz"
@@ -3883,6 +3888,13 @@ angular-feather@^5.3.0:
   dependencies:
     feather-icons "4.19.0"
     tslib "^1.9.0"
+
+angular2-chartjs@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/angular2-chartjs/-/angular2-chartjs-0.5.1.tgz#147204c44bfdfe81f1fab946e1610ee0746b49e6"
+  integrity sha512-bxEVxVEv7llMcgwuc9jlc5KmuOEngT7ZlUyCddmsXwQQAahrTeNgFJ1Nc1SVQnq2fl2d8efh6m70DqF5beiA+A==
+  dependencies:
+    chart.js "^2.3.0"
 
 ansi-align@^2.0.0:
   version "2.0.0"
@@ -5541,6 +5553,37 @@ chardet@^0.7.0:
   resolved "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz"
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
+chart.js@^2.3.0, chart.js@^2.8.0, chart.js@^2.9.4:
+  version "2.9.4"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.9.4.tgz#0827f9563faffb2dc5c06562f8eb10337d5b9684"
+  integrity sha512-B07aAzxcrikjAPyV+01j7BmOpxtQETxTSlQ26BEYJ+3iUkbNKaOJ/nDbT6JjyqYxseM0ON12COHYdU2cTIjC7A==
+  dependencies:
+    chartjs-color "^2.1.0"
+    moment "^2.10.2"
+
+chartjs-chart-box-and-violin-plot@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/chartjs-chart-box-and-violin-plot/-/chartjs-chart-box-and-violin-plot-2.4.0.tgz#fa92b00752ceb8712f8892dbbd203dcd39ca0117"
+  integrity sha512-ickfiSacxkOp7wdG23Je25Gbtn8Eh7yMQH8BblriuoqlIi14V3XuX/9XaPGBenKCcYm0dINPZDUvaaXYf8pGqQ==
+  dependencies:
+    "@sgratzl/science" "^2.0.0"
+    chart.js "^2.8.0"
+
+chartjs-color-string@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz#1df096621c0e70720a64f4135ea171d051402f71"
+  integrity sha512-TIB5OKn1hPJvO7JcteW4WY/63v6KwEdt6udfnDE9iCAZgy+V4SrbSxoIbTw/xkUIapjEI4ExGtD0+6D3KyFd7A==
+  dependencies:
+    color-name "^1.0.0"
+
+chartjs-color@^2.1.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/chartjs-color/-/chartjs-color-2.4.1.tgz#6118bba202fe1ea79dd7f7c0f9da93467296c3b0"
+  integrity sha512-haqOg1+Yebys/Ts/9bLo/BqUcONQOdr/hoEr2LLTRl6C5LXctUdHxsCYfvQVg5JIxITrfCNUDr4ntqmQk9+/0w==
+  dependencies:
+    chartjs-color-string "^0.6.0"
+    color-convert "^1.9.3"
+
 check-more-types@2.24.0:
   version "2.24.0"
   resolved "https://registry.npmjs.org/check-more-types/-/check-more-types-2.24.0.tgz"
@@ -5934,7 +5977,7 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-color-convert@^1.9.0, color-convert@^1.9.1:
+color-convert@^1.9.0, color-convert@^1.9.1, color-convert@^1.9.3:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
   integrity sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
@@ -12969,6 +13012,11 @@ moment@2.24.0:
   version "2.24.0"
   resolved "https://registry.npmjs.org/moment/-/moment-2.24.0.tgz"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
+moment@^2.10.2:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
 
 morgan@^1.10.0, morgan@^1.8.2:
   version "1.10.0"

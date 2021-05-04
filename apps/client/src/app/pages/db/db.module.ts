@@ -75,6 +75,8 @@ import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot.component';
+import { ChartModule } from "angular2-chartjs";
+import "chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js";
 
 const routes: Routes = [
   {
@@ -323,7 +325,8 @@ const routes: Routes = [
     NzStatisticModule,
     NzCommentModule,
     NzAvatarModule,
-    LazyScrollModule
+    LazyScrollModule,
+    ChartModule
   ],
   providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)]
 })

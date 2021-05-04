@@ -5,18 +5,14 @@
       <nz-option *ngFor="let bait of baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
     </nz-select>
   </ng-template>
-  <div [style.height]="'400px'">
-    <ngx-charts-area-chart-stacked
-      [gradient]="true"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [showXAxisLabel]="false"
-      [showYAxisLabel]="false"
-      [activeEntries]="activeChartEntries$ | async"
-      [results]="biteTimesChartData$ | async"
-      (activate)="activeFishName$.next($event?.value?.name || undefined)"
-      (deactivate)="activeFishName$.next(undefined)"
-    ></ngx-charts-area-chart-stacked>
+  <div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" *ngFor="let color of colors; index as i">
+        <div class="legend-box" style.background-color="rgba({{color}}, 0.3)" style.border="1px solid rgba({{color}}, 0.5)"></div>
+        <div>{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][i] | translate}}</div>
+      </div>
+    </div>
+    <chart type="horizontalBoxplot" *ngIf="biteTimesChartJSData$ | async as data" [data]="data" [options]="options"></chart>
   </div>
 </nz-card>
+
