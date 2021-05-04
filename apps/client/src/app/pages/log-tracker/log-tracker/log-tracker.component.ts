@@ -278,13 +278,13 @@ export class LogTrackerComponent extends TrackerComponent {
       .map(page => {
         return page.items
           .filter(item => {
-            const nodes = this.getNodeData(item.itemId, page.id);
+            const nodes = this.getNodeData(item.itemId, page.id).filter(n => n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type));
             return !this.userGatheringCompletion[item.itemId]
               && nodes.length > 0
               && nodes.some(n => !n.gatheringNode.limited);
           })
           .map(item => {
-            const node = this.getNodeData(item.itemId, page.id)[0].gatheringNode;
+            const node = this.getNodeData(item.itemId, page.id).find(n => n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type)).gatheringNode;
             return <NavigationObjective>{
               mapId: node.map,
               zoneId: node.zoneId,
