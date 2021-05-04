@@ -11,6 +11,7 @@ import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { NzUploadModule } from 'ng-zorro-antd/upload';
     PipesModule,
     CoreModule,
     NzSliderModule,
-    NzUploadModule
+    NzUploadModule,
+    NzIconModule
   ],
   declarations: [
     SettingsPopupComponent

@@ -132,7 +132,7 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.resetStatuses();
       const packet = message.parsedIpcData;
       packet.effects.forEach(effect => {
-        if (effect.sourceActorId === message.header.sourceActor) {
+        if (effect.effectId) {
           this.eorzeaFacade.addStatus(effect.effectId);
         }
       });

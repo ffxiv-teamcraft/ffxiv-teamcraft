@@ -102,6 +102,13 @@ export class InventoryComponent {
               item.price = priceEntry ? priceEntry.price : 0;
               return item;
             })
+            .sort((a, b) => {
+              const diffPrice = b.price - a.price;
+              if (diffPrice !== 0) {
+                return diffPrice;
+              }
+              return a.slot - b.slot;
+            })
             .filter(item => {
               if (selectedExpansion !== null && selectedExpansion >= 0) {
                 // Find the patch this item was released in, and then get that patch's expansion

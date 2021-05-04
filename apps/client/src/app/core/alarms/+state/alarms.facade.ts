@@ -6,7 +6,7 @@ import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
 import {
   AddAlarms,
-  AddAlarmsAndGroup, AlarmsActionTypes, AlarmsCreated,
+  AddAlarmsAndGroup,
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
@@ -39,7 +39,7 @@ import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { environment } from 'apps/client/src/environments/environment';
-import { Actions, ofType } from '@ngrx/effects';
+import { Actions } from '@ngrx/effects';
 
 @Injectable({
   providedIn: 'root'
@@ -126,9 +126,9 @@ export class AlarmsFacade {
   private nextSpawnCache: any = {};
 
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-    private settings: SettingsService, private weatherService: WeatherService,
-    private lazyData: LazyDataService, private mapService: MapService,
-    private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
+              private settings: SettingsService, private weatherService: WeatherService,
+              private lazyData: LazyDataService, private mapService: MapService,
+              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -395,11 +395,16 @@ export class AlarmsFacade {
               weather: weatherSpawn.weather,
               date: weatherSpawn.spawn
             };
-          } else if (base48WeatherStart < base48Spawn && base48WeatherStop > base48Spawn) {
-            // If it spawns before the alarm and despawns during the alarm or after,
+          } else if (base48Spawn <= base48WeatherStop && base48WeatherStart <= base48Despawn) {
+            // If it spawns before or during the alarm uptime and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.
             const realSpawn = new Date(weatherSpawn.spawn);
-            realSpawn.setUTCHours(spawn);
+            // If spawn happens after weather start, set start time to spawn time
+            // Else just keep weather spawn as spawn time
+            if (base48Spawn >= base48WeatherStart) {
+              realSpawn.setHours(spawn);
+            }
+            realSpawn.setUTCHours(Math.max(spawn, weatherStart || 24));
             const days = Math.max(Math.floor((realSpawn.getTime() - time) / 86400000), 0);
             return {
               hours: spawn,

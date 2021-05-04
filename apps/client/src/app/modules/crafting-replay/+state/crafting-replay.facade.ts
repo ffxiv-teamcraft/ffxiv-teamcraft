@@ -7,6 +7,7 @@ import * as CraftingReplaySelectors from './crafting-replay.selectors';
 import { CraftingReplay } from '../model/crafting-replay';
 import {
   addCraftingReplay,
+  clearOfflineReplays,
   deleteCraftingReplay,
   loadCraftingReplay,
   loadCraftingReplays,
@@ -25,10 +26,13 @@ export class CraftingReplayFacade {
     select(CraftingReplaySelectors.getCraftingReplayLoaded)
   );
 
+  allCraftingReplays$ = this.store.pipe(
+    select(CraftingReplaySelectors.getAllCraftingReplays)
+  );
+
   userCraftingReplays$ = this.authFacade.userId$.pipe(
     switchMap(userId => {
-      return this.store.pipe(
-        select(CraftingReplaySelectors.getAllCraftingReplays),
+      return this.allCraftingReplays$.pipe(
         map(replays => {
           return replays.filter(replay => !replay.online || replay.authorId === userId);
         })
@@ -76,5 +80,9 @@ export class CraftingReplayFacade {
 
   public deleteReplay(key: string): void {
     this.store.dispatch(deleteCraftingReplay({ key: key }));
+  }
+
+  clearOfflineReplays(): void {
+    this.store.dispatch(clearOfflineReplays());
   }
 }

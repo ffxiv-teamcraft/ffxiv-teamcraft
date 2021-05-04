@@ -459,7 +459,7 @@
     "Reset_ignored_characters": "無視されたキャラクター初期化",
     "Reset_contentid_characters": "キャラクター連結初期化",
     "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
-    "Show_other_characters_inventories_in_inventory_page": "Show other characters inventories in inventory page",
+    "Show_other_characters_inventories_in_inventory_page": "所持品ページに他のキャラクターの所持品を表示",
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "グループ指定ができてないアラーム前にグループアラームを表示",
     "Disconnect_patreon": "Patreon連結を切る",
@@ -502,6 +502,14 @@
       "Global": "グローバル",
       "CN": "中国",
       "KR": "韓国"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
@@ -1306,6 +1314,9 @@
     "Hide_completed_items": "完了したレシピを隠す",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "秘伝書 ({{number}})",
       "Housing_items": "ハウジング ({{number}})",
@@ -1754,7 +1765,7 @@
     "Sort_alphabetically": "アルファベット順",
     "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム",
     "Shown_only_craftable": "現在レベルで制作可能な物だけ表示する",
-    "Shown_only_collectables": "所藏品だけ表示する",
+    "Shown_only_collectables": "収集品のみ表示",
     "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "手帳で完了してない項目だけ表示"
   },
@@ -1767,7 +1778,7 @@
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
   "FOOD_PICKER": {
-    "Title": "飲食選択機",
+    "Title": "調理品・薬品検索",
     "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
     "Pick_stat": "能力値選択"
   },
@@ -1977,8 +1988,8 @@
     "Cost": "価格",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "このスロットに使用できません",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
-    "Pick_a_job": "Pick a job",
+    "Warning_job_switch": "ジョブ変更はマイスターの証、武器に含まれるマテリアを削除します。同じスペックで禁断をする予定でしたらその部分を参考にしてください。",
+    "Pick_a_job": "ジョブ選択",
     "New_gearset": "新しいギアセット",
     "Please_input_ariyala_link": "Ariyalaのリンクを入力してください",
     "Link_not_supported": "リンクはサポートされていません",
@@ -1992,9 +2003,9 @@
     "Sync_with_pcap": "ギアセットとパケットキャプチャを同期",
     "Your_gearsets": "ギアセット",
     "Delete_gearset": "ギアセットを削除",
-    "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
+    "Import_from_pcap_notice": "欲しいギアセットに変更してそのギアセットを呼び出してください",
     "No_food_selected": "食べ物が選択されていません",
-    "Generate_list": "Generate a list",
+    "Generate_list": "リスト生成",
     "Clone_gearset": "Copy this on your account",
     "Clone_gearset_from_sync": "このギアセットのコピーを作成する",
     "You_have_no_gearsets": "ギアセットがありません",
@@ -2214,7 +2225,7 @@
     "SOURCES": {
       "UNKNOWN": "不明",
       "GATHERING": "採集",
-      "CRAFTING": "制作",
+      "CRAFTING": "製作",
       "FISHING": "釣り",
       "VENDOR": "Vendor",
       "TELEPORT": "テレポ",
@@ -2296,7 +2307,9 @@
     "Missing_stats": "とあるクラフタージョブに切替て、TCはあなたのステータスを記録できます。",
     "Create_folder": "新規フォルダ",
     "Save_replay": "録画をデータベースに保存",
-    "Replay_result": "結果"
+    "Replay_result": "結果",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "新しい依頼",
@@ -2536,7 +2549,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },
@@ -2641,11 +2654,15 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
+    "Title": "トレジャーハント",
     "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
+    "Select_map": "エリアを選択してください",
     "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
+    "Select_treasure_map": "宝の地図を選択してください",
     "Find_another": "Find another treasure"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }

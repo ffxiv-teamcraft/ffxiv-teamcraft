@@ -63,7 +63,8 @@ const routes: Routes = [
 
     FoldersModule,
     DragDropModule,
-    LazyScrollModule
+    LazyScrollModule,
+    NzPopconfirmModule
   ]
 })
 export class CraftingReplaysModule {

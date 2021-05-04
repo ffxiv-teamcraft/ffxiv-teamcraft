@@ -6,7 +6,7 @@ import { CreateFolder, DeleteFolder, LoadFolder, LoadFolders, PureUpdateFolder, 
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { combineLatest, Observable } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
-import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -120,8 +120,10 @@ export class FoldersFacade {
           const syncDisplay = this.getSyncFolderDisplay(folders, entities, folder);
           syncDisplay.missingEntities.forEach(loadMissing);
           syncDisplay.missingFolders.forEach($key => this.load($key));
-          return syncDisplay.display;
-        })
+          return syncDisplay;
+        }),
+        filter((display) => display.missingEntities.length === 0),
+        map(display => display.display)
       );
     }
     return this.selectedFoldersCache[type];

@@ -6,6 +6,8 @@ import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operator
 import { LazyDataService } from '../data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
+import { SoundNotificationType } from '../sound-notification/sound-notification-type';
+import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 
 export interface Retainer {
   name: string;
@@ -41,7 +43,7 @@ export class RetainersService {
 
   constructor(private ipc: IpcService, private settings: SettingsService,
               private translate: TranslateService, private i18n: I18nToolsService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private soundNotificationService: SoundNotificationService) {
     this.settings.settingsChange$.pipe(
       filter(change => change === 'retainerTaskAlarms'),
       startWith(this.settings.retainerTaskAlarms),
@@ -65,17 +67,7 @@ export class RetainersService {
       })
     ).subscribe(({ retainers, data }) => {
       if (retainers.length > 0) {
-        // Let's ring the alarm !
-        let audio: HTMLAudioElement;
-        // If this isn't a file path (desktop app), then take it inside the assets folder.
-        if (this.settings.alarmSound.indexOf(':') === -1) {
-          audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
-        } else {
-          audio = new Audio(this.settings.alarmSound);
-        }
-        audio.loop = false;
-        audio.volume = this.settings.alarmVolume;
-        audio.play();
+        this.soundNotificationService.play(SoundNotificationType.RETAINER);
       }
       retainers.forEach(retainer => {
         this.ipc.send('notification', {

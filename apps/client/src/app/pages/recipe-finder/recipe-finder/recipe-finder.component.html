@@ -199,6 +199,10 @@
                 <div>{{ entry.itemId | itemName | i18n }} x{{entry.possibleAmount}}</div>
                 <app-db-button *ngIf="true | ifMobile:false" [id]="entry.itemId" type="item"></app-db-button>
                 <app-marketboard-icon *ngIf="true | ifMobile:false" [itemId]="entry.itemId"></app-marketboard-icon>
+                <img *ngFor="let leve of entry.leves"
+                     src="./assets/icons/leve.png" alt="leves"
+                     class="leve-icon"
+                     nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
                 <nz-tag *ngIf="entry.missingLevel"
                         [style.border-color]="'#f50'"
                         class="custom-tag">{{'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate }}</nz-tag>

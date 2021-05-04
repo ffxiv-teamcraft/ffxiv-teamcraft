@@ -10,6 +10,8 @@ import { PushNotificationsService } from 'ng-push-ivy';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { SoundNotificationService } from '../sound-notification/sound-notification.service';
+import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 
 @Injectable({ providedIn: 'root' })
 export class RealtimeAlarmsService {
@@ -26,7 +28,7 @@ export class RealtimeAlarmsService {
   constructor(private etime: EorzeanTimeService, private settings: SettingsService,
               private platform: PlatformService, private ipc: IpcService,
               private pushNotificationsService: PushNotificationsService, private notificationService: NzNotificationService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private soundNotificationService: SoundNotificationService) {
     this.etime.getEorzeanTime().pipe(
       map(() => {
         const enabledAlarms: RealtimeAlarm[] = JSON.parse(localStorage.getItem('alarms:irl') || '[]')
@@ -54,17 +56,7 @@ export class RealtimeAlarmsService {
    * @param alarm
    */
   public ring(alarm: RealtimeAlarm): void {
-    // Let's ring the alarm !
-    let audio: HTMLAudioElement;
-    // If this isn't a file path (desktop app), then take it inside the assets folder.
-    if (this.settings.alarmSound.indexOf(':') === -1) {
-      audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
-    } else {
-      audio = new Audio(this.settings.alarmSound);
-    }
-    audio.loop = false;
-    audio.volume = this.settings.alarmVolume;
-    audio.play();
+    this.soundNotificationService.play(SoundNotificationType.RESET_TIMER);
     localStorage.setItem(`played:${alarm.label}`, new Date().toUTCString());
 
     if (this.platform.isDesktop()) {

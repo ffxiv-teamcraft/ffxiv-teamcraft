@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as CraftingReplayActions from './crafting-replay.actions';
+import { loadCraftingReplays } from './crafting-replay.actions';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -99,6 +100,16 @@ export class CraftingReplayEffects {
       })
     );
   }, { dispatch: false });
+
+  clearOfflineReplays$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CraftingReplayActions.clearOfflineReplays),
+      map(() => {
+        this.setLocalstore([]);
+        return loadCraftingReplays();
+      })
+    );
+  });
 
   constructor(private actions$: Actions, private authFacade: AuthFacade, private serializer: NgSerializerService,
               private craftingReplayDbService: CraftingReplayDbService, private afs: AngularFireFunctions) {

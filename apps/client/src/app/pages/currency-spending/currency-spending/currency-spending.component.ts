@@ -121,11 +121,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                   })
                   .filter(entry => entry.price)
                   .sort((a, b) => {
-                    const priceDiff = b.price - a.price;
-                    if (priceDiff === 0) {
-                      return b.rate - a.rate;
-                    }
-                    return priceDiff;
+                    return (b.price / b.rate) - (a.price / a.rate);
                   });
               })
             );

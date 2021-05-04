@@ -4,8 +4,9 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { LogTracking } from '../../model/user/log-tracking';
-import { from, Observable } from 'rxjs';
+import { concat, from, Observable } from 'rxjs';
 import firebase from 'firebase/app';
+import { chunk } from 'lodash';
 
 interface MarkAsDoneEntry {
   itemId: number;
@@ -22,36 +23,40 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
   }
 
   public markAsDone(uid: string, entries: MarkAsDoneEntry[]): Observable<any> {
-    return from(this.firestore.firestore.runTransaction(transaction => {
-      const docRef = this.firestore.firestore.doc(`${this.getBaseUri()}/${uid}`);
-      return transaction.get(docRef)
-        .then(doc => {
-          entries
-            .filter(entry => !!entry.itemId)
-            .forEach(entry => {
-              if (!doc.exists && entry.done) {
-                const newLog = {
-                  crafting: [],
-                  gathering: []
-                };
-                newLog[entry.log].push(entry.itemId);
-                transaction.set(docRef, newLog);
-              } else {
-                if (entry.done && (doc.get(entry.log) || []).indexOf(entry.itemId) === -1) {
-                  transaction.update(docRef, {
-                    [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
-                  });
-                } else if (!entry.done) {
-                  transaction.update(docRef, {
-                    [entry.log]: firebase.firestore.FieldValue.arrayRemove(entry.itemId)
-                  });
-                } else {
-                  Promise.resolve();
-                }
-              }
+    return concat(chunk(entries, 450)
+      .map(entriesChunk => {
+        return from(this.firestore.firestore.runTransaction(transaction => {
+          const docRef = this.firestore.firestore.doc(`${this.getBaseUri()}/${uid}`);
+          return transaction.get(docRef)
+            .then(doc => {
+              entriesChunk
+                .filter(entry => !!entry.itemId)
+                .forEach(entry => {
+                  if (!doc.exists && entry.done) {
+                    const newLog = {
+                      crafting: [],
+                      gathering: []
+                    };
+                    newLog[entry.log].push(entry.itemId);
+                    transaction.set(docRef, newLog);
+                  } else {
+                    if (entry.done && (doc.get(entry.log) || []).indexOf(entry.itemId) === -1) {
+                      transaction.update(docRef, {
+                        [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
+                      });
+                    } else if (!entry.done) {
+                      transaction.update(docRef, {
+                        [entry.log]: firebase.firestore.FieldValue.arrayRemove(entry.itemId)
+                      });
+                    } else {
+                      Promise.resolve();
+                    }
+                  }
+                });
             });
-        });
-    }));
+        }));
+      })
+    );
   }
 
   protected getBaseUri(): string {

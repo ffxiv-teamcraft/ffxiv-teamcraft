@@ -29,6 +29,8 @@ import { FreeCompanyWorkshop } from '../model/free-company-workshop';
 import { ofMessageType } from '../../../core/rxjs/of-message-type';
 import { toIpcData } from '../../../core/rxjs/to-ipc-data';
 import { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
+import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 
 @Injectable({
   providedIn: 'root'
@@ -220,7 +222,7 @@ export class FreeCompanyWorkshopFacade {
   constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
               private readonly i18n: I18nToolsService, private readonly l12n: LocalizedDataService,
-              private readonly settings: SettingsService) {
+              private readonly settings: SettingsService, private soundNotificationService: SoundNotificationService) {
   }
 
   private static ISOtoUTF8(input: string): string {
@@ -263,17 +265,7 @@ export class FreeCompanyWorkshopFacade {
   public setupVoyageAlarms() {
     this.vesselVoyageAlarms$.subscribe((vessels) => {
       if (vessels.length > 0) {
-        // Let's ring the alarm !
-        let audio: HTMLAudioElement;
-        // If this isn't a file path (desktop app), then take it inside the assets folder.
-        if (this.settings.alarmSound.indexOf(':') === -1) {
-          audio = new Audio(`./assets/audio/${this.settings.alarmSound}.mp3`);
-        } else {
-          audio = new Audio(this.settings.alarmSound);
-        }
-        audio.loop = false;
-        audio.volume = this.settings.alarmVolume;
-        audio.play();
+        this.soundNotificationService.play(SoundNotificationType.VOYAGE);
       }
       vessels.forEach(vessel => {
         this.ipc.send('notification', {

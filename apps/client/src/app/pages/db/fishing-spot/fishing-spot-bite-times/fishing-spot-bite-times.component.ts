@@ -5,6 +5,8 @@ import { SettingsService } from 'apps/client/src/app/modules/settings/settings.s
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
+import { TranslateService } from '@ngx-translate/core';
+import { ChartOptions } from 'chart.js';
 
 interface FishingSpotChartData {
   id: number;
@@ -16,14 +18,18 @@ interface FishingSpotChartData {
   selector: 'app-fishing-spot-bite-times',
   templateUrl: './fishing-spot-bite-times.component.html',
   styleUrls: ['./fishing-spot-bite-times.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
+  public readonly colors = ['245, 196, 110', '245, 153, 110', '184, 245, 110'];
+
   private readonly activeFish$ = new Subject<number | undefined>();
+
   @Input()
   public set activeFish(value: number | undefined) {
     this.activeFish$.next(value >= 0 ? value : undefined);
   }
+
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
@@ -46,10 +52,10 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
               series: Object.entries(entry.byTime)
                 .map(([time, value]) => ({
                   name: +time,
-                  value: value,
+                  value: value
                 }))
                 .filter((i) => i.value > 1)
-                .sort((a, b) => a.name - b.name),
+                .sort((a, b) => a.name - b.name)
             }))
             .filter((i) => i.series.length > 0);
         }),
@@ -59,6 +65,86 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
+
+  public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
+    switchMap(([res, tugs]) => {
+      if (!res.data || !tugs.data) return of([]);
+      const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
+        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(map((name) => ({ id: +id, name })))
+      );
+      return combineLatest([...fishNames]).pipe(
+        map(([...names]) => {
+          const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
+          const tugByFish = tugs.data.data.reduce((acc, row) => {
+            const bestTug = Object.entries<number>(row.valuesByColId).sort(([, a], [, b]) => b - a)[0][0];
+            const clone = [...acc];
+            clone[row.rowId] = bestTug;
+            return clone;
+          }, []);
+          const colors = sortedNames.map(el => this.colors[tugByFish[el.id]]);
+          return {
+            labels: sortedNames.map(el => el.name),
+            datasets: [{
+              borderWidth: 1,
+              itemRadius: 0,
+              data: sortedNames.map(el => {
+                return Object.entries(res.data.byFish[el.id].byTime)
+                  .map(([time, occurences]) => {
+                    return new Array(occurences).fill(+time);
+                  })
+                  .flat();
+              }),
+              backgroundColor: colors.map(color => `rgba(${color}, 0.3)`),
+              borderColor: colors.map(color => `rgba(${color}, 0.5)`),
+              barPercentage: 0.5,
+              categoryPercentage: 1.0
+            }]
+          };
+        }),
+        debounceTime(100)
+      );
+    }),
+    shareReplay(1)
+  );
+
+  gridColor = 'rgba(255,255,255,.3)';
+  fontColor = 'rgba(255,255,255,.5)';
+
+  options: ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      display: false
+    },
+    tooltipDecimals: 1,
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: this.translate.instant('DB.FISH.Bite_time'),
+          fontColor: this.fontColor
+        },
+        ticks: {
+          beginAtZero: true,
+          callback: (value) => {
+            return `${value}s`;
+          },
+          color: this.gridColor
+        },
+        gridLines: {
+          color: this.gridColor
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          fontColor: this.fontColor
+        },
+        gridLines: {
+          color: this.gridColor
+        }
+      }]
+    }
+  };
 
   public readonly baitIds$: Observable<number[] | undefined> = this.fishCtx.baitsBySpot$.pipe(
     map((res) => {
@@ -88,8 +174,10 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     private readonly l12n: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly settings: SettingsService,
-    public readonly fishCtx: FishContextService
-  ) {}
+    public readonly fishCtx: FishContextService,
+    private readonly translate: TranslateService
+  ) {
+  }
 
   ngOnInit() {
     combineLatest([this.biteTimesChartData$, this.activeFishName$])
