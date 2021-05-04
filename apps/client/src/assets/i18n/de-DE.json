@@ -502,6 +502,14 @@
       "Global": "Global",
       "CN": "China",
       "KR": "Korea"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
@@ -1306,6 +1314,9 @@
     "Hide_completed_items": "Komponenten verbergen",
     "MIN_optimized_path": "Optimierter Pfad für alle MIN-Sammelstellen",
     "BTN_optimized_path": "Optimierter Pfad für alle GÄR-Sammelstellen",
+    "Import_from_carbuncleplushy": "Fortschritt von CarbunclePlushy importieren",
+    "Import_from_carbuncleplushy_failed": "Import fehlgeschlagen, falsches JSON wurde angegeben, stelle sicher, dass du den Import der vollständigen Einstellungen nutzt",
+    "Import_from_carbuncleplushy_success": "Fischer-Notizbuch-Tracker erfolgreich aktualisiert",
     "PAGE": {
       "Master_recipes": "Meisterrezepte ({{number}})",
       "Housing_items": "Unterkunft ({{number}})",
@@ -2296,7 +2307,9 @@
     "Missing_stats": "Bitte wechsele zu einem beliebigen Handwerksberuf um TC über deine Statistiken zu informieren, bevor es irgendetwas aufzeichnen kann.",
     "Create_folder": "Neues Verzeichnis",
     "Save_replay": "Wiederholung in Datenbank speichern",
-    "Replay_result": "Ergebnis"
+    "Replay_result": "Ergebnis",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "Neuer Auftrag",
@@ -2536,7 +2549,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Durch Paketerfassung importieren",
-    "Import_from_pcap_notice": "1. Gehe in die Gesellschaftswerkstatt<br>2. Interagiere mit jedem U-Boot oder Luftschiff über das Verwaltungs-Interface",
+    "Import_from_pcap_notice": "1. Gehe zur Gesellschaftswerkstätte (betritt diese nachdem du diese Meldung geöffnet hast)<br>2. Öffne das Fenster für die Freie Gesellschaft<br>3. Interagiere mit jedem Tauchboot oder Flugschiff im Verwaltungsfenster",
     "Airships": "Luftschiffe",
     "Submersibles": "Tauchboote"
   },
@@ -2647,5 +2660,9 @@
     "Select_item": "Wähle Schatzkarten-Typ",
     "Select_treasure_map": "Wähle deine Schatzkarte",
     "Find_another": "Finde einen anderen Schatz"
+  },
+  "GARDENING": {
+    "Growth_time": "Wachstumszeit",
+    "Cross_breeds": "Pflanzenkreuzung"
   }
 }

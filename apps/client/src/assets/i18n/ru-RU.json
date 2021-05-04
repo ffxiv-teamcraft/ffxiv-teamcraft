@@ -502,6 +502,14 @@
       "Global": "Общий",
       "CN": "Китай",
       "KR": "Корея"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
@@ -1306,6 +1314,9 @@
     "Hide_completed_items": "Скрыть завершенные предметы",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
@@ -2296,7 +2307,9 @@
     "Missing_stats": "Пожалуйста переключитесь на любую крафтовую профессию, чтобы TC определил ваши параметры, прежде чем будет запись.",
     "Create_folder": "Новая папка",
     "Save_replay": "Сохранить повтор в базе данных",
-    "Replay_result": "Результат"
+    "Replay_result": "Результат",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "Новый заказ",
@@ -2536,7 +2549,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Import using packet capture",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop<br>2. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Airships",
     "Submersibles": "Submersibles"
   },
@@ -2647,5 +2660,9 @@
     "Select_item": "Select treasure map item",
     "Select_treasure_map": "Select your treasure map",
     "Find_another": "Find another treasure"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }

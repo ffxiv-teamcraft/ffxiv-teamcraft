@@ -502,6 +502,14 @@
       "Global": "글로벌서버",
       "CN": "중국서버",
       "KR": "한국서버"
+    },
+    "NOTIFICATIONS": {
+      "Title": "Notifications",
+      "Alarms": "Alarms",
+      "Autofill_completion": "Autofill completion",
+      "Retainer_tracker": "Retainer tracker",
+      "Voyage_tracker": "Voyage tracker",
+      "Reset_timer": "Reset timer"
     }
   },
   "PROFILE": {
@@ -1306,6 +1314,9 @@
     "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
+    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -2296,7 +2307,9 @@
     "Missing_stats": "다른 제작 직업으로 변경하여 TC가 리플레이를 기록하기 전에 제작 능력치를 동기화할 수 있도록 해주세요.",
     "Create_folder": "새 폴더",
     "Save_replay": "데이터베이스에 리플레이 저장하기",
-    "Replay_result": "결과"
+    "Replay_result": "결과",
+    "Delete_offline": "Delete offline replays",
+    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
@@ -2536,7 +2549,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. 부대 공방으로 이동<br>2. 관리 인터페이스로 이동하여 잠수정 또는 비공정과 상호 작용",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -2647,5 +2660,9 @@
     "Select_item": "오래된 지도 선택",
     "Select_treasure_map": "보물 지도 선택",
     "Find_another": "다른 보물 지도 찾기"
+  },
+  "GARDENING": {
+    "Growth_time": "Growth time",
+    "Cross_breeds": "Cross breeds"
   }
 }
