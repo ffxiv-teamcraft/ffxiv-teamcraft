@@ -6,6 +6,11 @@
     <ng-template #extraTemplate>
       <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
         <div>
+          <button nz-button nzType="primary" *ngIf="rawCompletion$ | async as completion" [clipboard]="completion | json" [clipboardSuccessMessage]="'LOG_TRACKER.Export_FSH_completion_copied' | translate">
+            {{'LOG_TRACKER.Export_FSH_completion' | translate}}
+          </button>
+        </div>
+        <div>
           <button nz-button nzType="primary" (click)="importFromCP()">
             {{'LOG_TRACKER.Import_from_carbuncleplushy' | translate}}
           </button>
