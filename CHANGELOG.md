@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.0"></a>
+# [8.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.12...v8.2.0) (2021-05-04)
+
+
+### Bug Fixes
+
+* **alarms:** fixed fishing alarms inaccuracies (requires alarm regeneration) ([9367dbc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9367dbc)), closes [#1483](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1483)
+* **crafting-replays:** fixed an issue with crafting replay folder not loading ([7070084](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7070084))
+* **db:** lots of new fishing data and various recommended bait fixes ([c28910e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c28910e))
+* **desktop:** more restrictive file change detection to avoid false positives ([bc224e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc224e5))
+* **fishing-reporter:** better fix for chum detection ([47a7295](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47a7295))
+* **log-tracker:** fixed big log import from carbuncleplushy not working as intended ([bee9275](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bee9275))
+* **log-tracker:** fixed optimized path popup using missing coordinates ([2431d7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2431d7d))
+* **treasure-finder:** fixed wrong miniature position for HW maps ([0e6183e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e6183e))
+
+
+### Features
+
+* **crafting-replays:** new button to delete all your offline replays at once ([5881954](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5881954))
+* **currency-spending:** items are now sorted by rentability (price per currency spent) ([154325b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/154325b))
+* **db:** changed bite times graph on fishing spot page for box plot ([d2eae4d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2eae4d)), closes [#1906](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1906)
+* **fishing-log-tracker:** you can now export completion as JSON in your clipboard ([4e6a9aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e6a9aa)), closes [#1905](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1905)
+* **inventory:** items are now sorted by price DESC when they have been filled ([f4846c1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4846c1))
+* **recipe-finder:** new leve icon next to the recipes used for a levequest ([24d4530](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24d4530))
+* **settings:** new Notifications settings section to configure each notification separately ([75d03d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75d03d4))
+
+
+
 <a name="8.1.12"></a>
 ## [8.1.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.11...v8.1.12) (2021-04-28)
 
