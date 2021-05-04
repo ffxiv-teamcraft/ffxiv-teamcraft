@@ -1317,6 +1317,8 @@
     "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
     "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
     "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
+    "Export_FSH_completion": "Export completion as JSON",
+    "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
