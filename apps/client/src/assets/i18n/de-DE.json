@@ -504,11 +504,11 @@
       "KR": "Korea"
     },
     "NOTIFICATIONS": {
-      "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
-      "Voyage_tracker": "Voyage tracker",
+      "Title": "Benachrichtigungen",
+      "Alarms": "Alarme",
+      "Autofill_completion": "Auto-Vervollständigung",
+      "Retainer_tracker": "Gehilfen-Tracker",
+      "Voyage_tracker": "Erkundungs-Tracker",
       "Reset_timer": "Reset timer"
     }
   },
@@ -2311,7 +2311,7 @@
     "Save_replay": "Wiederholung in Datenbank speichern",
     "Replay_result": "Ergebnis",
     "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Confirm_delete_offline": "Bist du dir sicher, dass all deine Offline-Wiederholungen löschen möchtest? Dies kann nicht rückgängig gemacht werden"
   },
   "COMMISSIONS": {
     "New_commission": "Neuer Auftrag",
