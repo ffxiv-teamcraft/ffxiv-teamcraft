@@ -172,7 +172,7 @@
                       class="recipe-result-row">
           <ng-template #content>
             <div fxLayout="row" fxLayoutGap="5px">
-              <button (click)="addToBasket(entry, 1)" [nzTooltipTitle]="'RECIPE_FINDER.Add_one_to_basket' | translate" nz-button nz-tooltip
+              <button (click)="addToBasket(entry, entry.yields)" [nzTooltipTitle]="'RECIPE_FINDER.Add_one_to_basket' | translate" nz-button nz-tooltip
                       nzShape="circle">
                 +1
               </button>
