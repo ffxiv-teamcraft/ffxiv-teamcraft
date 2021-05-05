@@ -21,7 +21,11 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
   }
 
   protected canExtract(item: Item): boolean {
-    return item.hasNodes() || item.isCraft();
+    return true;
+  }
+
+  public getRequirements(): DataType[] {
+    return [DataType.CRAFTED_BY];
   }
 
   protected doExtract(item: Item, itemData: ItemData, row?: ListRow): CompactMasterbook[] {
