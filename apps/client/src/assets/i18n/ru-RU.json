@@ -1769,7 +1769,8 @@
     "Shown_only_craftable": "Только то, для чего у меня есть уровень",
     "Shown_only_collectables": "Только collectables",
     "Recipe_level": "Уровень рецепта",
-    "Shown_only_not_completed": "Только не завершенные в журнале"
+    "Shown_only_not_completed": "Только не завершенные в журнале",
+    "Add_results_to_pool": "Add to pool when adding to basket"
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
