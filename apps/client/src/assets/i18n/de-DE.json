@@ -1769,7 +1769,8 @@
     "Shown_only_craftable": "Nur wo ich das Level für habe",
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
-    "Shown_only_not_completed": "Nur im Log nicht erledigt"
+    "Shown_only_not_completed": "Nur im Log nicht erledigt",
+    "Add_results_to_pool": "Add to pool when adding to basket"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
