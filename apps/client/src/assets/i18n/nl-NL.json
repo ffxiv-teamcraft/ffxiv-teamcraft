@@ -1769,7 +1769,8 @@
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
     "Recipe_level": "Recipe level",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "Only not done in log",
+    "Add_results_to_pool": "Add to pool when adding to basket"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
