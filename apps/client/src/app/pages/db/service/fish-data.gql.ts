@@ -156,7 +156,7 @@ interface FishBiteTimeResult {
 export class BiteTimesPerFishPerSpotQuery extends Query<FishBiteTimeResult, FishIdSpotIdVariable> {
   public document = gql`
     query BiteTimesPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, biteTime: { _gt: 1 }, occurences: { _gte: 3 } }) {
+      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, biteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }) {
         itemId
         spot
         biteTime
@@ -183,7 +183,7 @@ export class BiteTimesPerFishPerSpotPerBaitQuery extends Query<FishBiteTimePerBa
   public document = gql`
     query BiteTimesPerFishPerSpotPerBaitQuery($fishId: Int, $spotId: Int, $baitId: Int) {
       biteTimes: bite_time_per_fish_per_spot_per_bait(
-        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1 }, occurences: { _gt: 1 } }
+        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }
       ) {
         itemId
         spot
