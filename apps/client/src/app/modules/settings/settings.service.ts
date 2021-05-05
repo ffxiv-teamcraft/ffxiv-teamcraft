@@ -73,6 +73,14 @@ export class SettingsService {
     this.setSetting('recipe-finder:only-craftable', show.toString());
   }
 
+  public get addResultToPoolInRecipeFinder(): boolean {
+    return this.getBoolean('recipe-finder:add-results-to-pool', false);
+  }
+
+  public set addResultToPoolInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:add-results-to-pool', show.toString());
+  }
+
   public get showOnlyNotCompletedInRecipeFinder(): boolean {
     return this.getBoolean('recipe-finder:only-not-completed', false);
   }
