@@ -15,6 +15,7 @@ export interface GtFish {
   ];
   radius: number;
   zone: string;
+  spot: number;
   during?: {
     start: number;
     end: number
