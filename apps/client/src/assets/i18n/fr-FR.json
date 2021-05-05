@@ -1769,7 +1769,8 @@
     "Shown_only_craftable": "Uniquement avec niveau requis respecté",
     "Shown_only_collectables": "Collectionnables uniquement",
     "Recipe_level": "Niveau de la recette",
-    "Shown_only_not_completed": "Uniquement jamais crafté"
+    "Shown_only_not_completed": "Uniquement jamais crafté",
+    "Add_results_to_pool": "Add to pool when adding to basket"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",
