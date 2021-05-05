@@ -1769,7 +1769,8 @@
     "Shown_only_craftable": "現在レベルで制作可能な物だけ表示する",
     "Shown_only_collectables": "収集品のみ表示",
     "Recipe_level": "制作レベル",
-    "Shown_only_not_completed": "手帳で完了してない項目だけ表示"
+    "Shown_only_not_completed": "手帳で完了してない項目だけ表示",
+    "Add_results_to_pool": "Add to pool when adding to basket"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
