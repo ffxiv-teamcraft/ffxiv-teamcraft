@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.1"></a>
+## [8.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.0...v8.2.1) (2021-05-08)
+
+
+### Bug Fixes
+
+* **db:** better baits precision per spot for fishing data ([0f59667](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f59667))
+* **db:** better filters for fishing graphs data ([6eed7fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6eed7fc))
+* **fishing-reporter-overlay:** no more status flickering when game refreshes statuses ([7144744](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7144744))
+* **list:** fixed an issue with masterbook icons now showing up anymore ([c692978](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c692978))
+
+
+### Features
+
+* **recipe-finder:** adding one to basket now adds one craft instead of one item ([ae7f542](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae7f542)), closes [#1910](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1910)
+* **recipe-finder:** new setting to add item to pool when added to basket ([548b481](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/548b481)), closes [#1909](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1909)
+
+
+
 <a name="8.2.0"></a>
 # [8.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.1.12...v8.2.0) (2021-05-04)
 
