@@ -65,5 +65,8 @@ export class FishingReporterOverlayComponent {
     }
   }
 
+  trackByValue(index: number, value: number): number {
+    return value;
+  }
 
 }

@@ -32,6 +32,10 @@ export abstract class AbstractExtractor<T> {
     return this.doExtract(item, itemData, row);
   }
 
+  public getRequirements(): DataType[] {
+    return [];
+  }
+
   /**
    * Used to determine to operator that has to be used to add this data to the chain.
    * @returns {boolean}

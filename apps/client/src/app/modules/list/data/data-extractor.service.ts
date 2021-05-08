@@ -4,8 +4,8 @@ import { ItemData } from '../../../model/garland-tools/item-data';
 import { DataType } from './data-type';
 import { ListRow } from '../model/list-row';
 import { ItemSource } from '../model/item-source';
-import { combineLatest, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, Observable, of } from 'rxjs';
+import { last, map, mergeScan } from 'rxjs/operators';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
 
@@ -16,19 +16,30 @@ export class DataExtractorService {
   }
 
   addDataToItem(item: ListRow, data: ItemData, skipCraft = false): Observable<ListRow> {
-    return combineLatest(Object.values(DataType)
-      .filter(value => +value === value)
-      .map(value => {
-        if (value === DataType.CRAFTED_BY && skipCraft) {
-          return of(null);
+    return from(this.extractors
+      .sort((a, b) => {
+        if (a.getRequirements().includes(b.getDataType())) {
+          return 1;
+        } else if (b.getRequirements().includes(a.getDataType())) {
+          return -1;
         }
-        return this.extract(value as DataType, item.id, data, item);
+        return 0;
       })
     ).pipe(
-      map(sources => {
-        item.sources = sources.filter(s => s !== null);
-        return item;
-      })
+      mergeScan((acc, extractor) => {
+        if (extractor.getDataType() === DataType.CRAFTED_BY && skipCraft) {
+          return of(acc);
+        }
+        return this.extract(extractor.getDataType(), item.id, data, acc).pipe(
+          map(source => {
+            if (source) {
+              acc.sources = [...(acc.sources || []), source];
+            }
+            return acc;
+          })
+        );
+      }, item),
+      last()
     );
   }
 

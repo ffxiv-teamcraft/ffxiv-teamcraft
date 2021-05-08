@@ -95,7 +95,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
-              public platform: PlatformService, private settings: SettingsService) {
+              public platform: PlatformService, public settings: SettingsService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 19)
@@ -188,7 +188,7 @@ export class RecipeFinderComponent implements OnDestroy {
         return entries.map(entry => {
           entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
           return entry;
-        })
+        });
       }),
       shareReplay(1)
     );
@@ -428,6 +428,9 @@ export class RecipeFinderComponent implements OnDestroy {
       ...this.basket,
       newEntry
     ];
+    if (this.settings.addResultToPoolInRecipeFinder) {
+      this.addToPool(entry.itemId, amount);
+    }
     newEntry.ingredients.forEach(ingredient => {
       this.removeFromPool(ingredient.id, ingredient.amount);
     });
@@ -441,6 +444,9 @@ export class RecipeFinderComponent implements OnDestroy {
     row.ingredients.forEach(ingredient => {
       this.addToPool(ingredient.id, ingredient.amount, true);
     });
+    if (this.settings.addResultToPoolInRecipeFinder) {
+      this.removeFromPool(row.entry.itemId, row.amount);
+    }
     this.search$.next();
   }
 
