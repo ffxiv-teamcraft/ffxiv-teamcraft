@@ -459,7 +459,7 @@
     "Reset_ignored_characters": "무시된 캐릭터 초기화",
     "Reset_contentid_characters": "캐릭터 연결 초기화",
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
-    "Show_other_characters_inventories_in_inventory_page": "Show other characters inventories in inventory page",
+    "Show_other_characters_inventories_in_inventory_page": "소지품 페이지에서 다른 캐릭터의 소지품도 표시",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
     "Alarm_groups_before_no_group": "그룹지정이 안된 알람 앞에 그룹 알람을 표시",
     "Disconnect_patreon": "Patreon 연결 끊기",
@@ -504,12 +504,12 @@
       "KR": "한국서버"
     },
     "NOTIFICATIONS": {
-      "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
-      "Voyage_tracker": "Voyage tracker",
-      "Reset_timer": "Reset timer"
+      "Title": "공지",
+      "Alarms": "알람",
+      "Autofill_completion": "자동채우기 완료",
+      "Retainer_tracker": "집사 트래커",
+      "Voyage_tracker": "탐사 트래커",
+      "Reset_timer": "타이머 초기화"
     }
   },
   "PROFILE": {
@@ -1002,7 +1002,7 @@
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
-    "Macro_duration": "Macro duration: {{duration}}s.",
+    "Macro_duration": "매크로 길이: {{duration}}초",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
     "Compact": "간소화",
     "Detailed": "세부 정보",
@@ -1315,8 +1315,8 @@
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
-    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
-    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
+    "Import_from_carbuncleplushy_failed": "가져오기 실패, 잘못된 JSON이 있었습니다. 전체 설정 내보내기를 사용해야만 합니다",
+    "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
     "Export_FSH_completion": "Export completion as JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
     "PAGE": {
@@ -1413,7 +1413,7 @@
   "DESYNTH": {
     "Title": "분해 가이드",
     "Job": "직업",
-    "Level": "Desynth level",
+    "Level": "분해 레벨",
     "Intro": "직업을 선택하고 분해 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
@@ -2311,8 +2311,8 @@
     "Create_folder": "새 폴더",
     "Save_replay": "데이터베이스에 리플레이 저장하기",
     "Replay_result": "결과",
-    "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Delete_offline": "오프라인 리플레이 삭제",
+    "Confirm_delete_offline": "모든 오프라인 리플레이를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다"
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
@@ -2497,7 +2497,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "레벨링 장비",
     "Include_crafting": "제작템 포함",
-    "Include_purchases": "Include purchases",
+    "Include_purchases": "구매템 포함",
     "Include_trades": "교환/구매템 포함",
     "Description": "직업과 레벨을 선택하고, 필터를 설정하여 검색을 클릭하여 직업 레벨에 맞는 장비를 찾을 수 있습니다",
     "Generate_list": "목록 생성",
