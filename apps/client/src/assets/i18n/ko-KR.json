@@ -509,7 +509,7 @@
       "Autofill_completion": "자동채우기 완료",
       "Retainer_tracker": "집사 트래커",
       "Voyage_tracker": "탐사 트래커",
-      "Reset_timer": "타이머 초기화"
+      "Reset_timer": "초기화 타이머"
     }
   },
   "PROFILE": {
@@ -1314,7 +1314,7 @@
     "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
-    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy": "CarbunclePlushy에서 불러오기",
     "Import_from_carbuncleplushy_failed": "가져오기 실패, 잘못된 JSON이 있었습니다. 전체 설정 내보내기를 사용해야만 합니다",
     "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
     "Export_FSH_completion": "Export completion as JSON",
@@ -2552,7 +2552,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. 자유부대의 공방으로 이동(해당 팝업을 연 후에 꼭 입력하세요)<br>2. 자유부대 창을 열기<br>3. 관리 인터페이스를 사용하여 각 잠수함 또는 비공정과 상호작용",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -2665,7 +2665,7 @@
     "Find_another": "다른 보물 지도 찾기"
   },
   "GARDENING": {
-    "Growth_time": "Growth time",
-    "Cross_breeds": "Cross breeds"
+    "Growth_time": "성장 시간",
+    "Cross_breeds": "품질개량(교배)"
   }
 }
