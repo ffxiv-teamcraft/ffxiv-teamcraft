@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { EorzeaPartialState } from './eorzea.reducer';
 import { AddStatus, RemoveStatus, SetBait, SetMap, SetPcapWeather, SetStatuses, SetZone } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
-import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { WeatherService } from '../../../core/eorzea/weather.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
@@ -72,6 +72,10 @@ export class EorzeaFacade {
 
   resetStatuses() {
     this.store.dispatch(new SetStatuses([]));
+  }
+
+  setStatuses(statuses: number[]) {
+    this.store.dispatch(new SetStatuses(statuses));
   }
 
   addStatus(effect: number) {
