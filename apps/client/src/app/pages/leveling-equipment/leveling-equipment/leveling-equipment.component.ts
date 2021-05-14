@@ -170,7 +170,7 @@ export class LevelingEquipmentComponent {
     if (filters.includePurchases && vendors.length > 0) {
       return true;
     }
-    if (filters.includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
+    if (filters.includeCrafting && (extract.sources || []).some(source => source.type === DataType.CRAFTED_BY)) {
       return true;
     }
     const trades = getItemSource(extract, DataType.TRADE_SOURCES).filter(trade => trade.npcs.some(npc => !npc.festival));
