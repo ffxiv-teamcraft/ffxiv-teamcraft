@@ -1,12 +1,11 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** better baits precision per spot for fishing data.
-* **db:** better filters for fishing graphs data.
-* **fishing-reporter-overlay:** no more status flickering when game refreshes statuses.
-* **list:** fixed an issue with masterbook icons now showing up anymore.
+* **fishing-reporter-overlay:** fixed flickering with patience ending after you threw the line.
+* **leveling-equipment:** fixed an error that happened with crafting filter enabled.
+* **seo:** fixed opensearch integration.
 
 
 ### Features
 
-* **recipe-finder:** adding one to basket now adds one craft instead of one item.
-* **recipe-finder:** new setting to add item to pool when added to basket.`;
+* **data:** update for cn patch-5.41.
+* **simulator:** support for CN 5.41.`;

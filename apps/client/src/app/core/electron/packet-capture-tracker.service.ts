@@ -111,7 +111,7 @@ export class PacketCaptureTrackerService {
 
     this.ipc.updateClassInfoPackets$.pipe(
       distinctUntilChanged((a, b) => a.classId === b.classId)
-    ).subscribe(() => {
+    ).subscribe((p) => {
       this.eorzeaFacade.resetStatuses();
     });
 
@@ -129,13 +129,7 @@ export class PacketCaptureTrackerService {
     this.ipc.packets$.pipe(
       ofMessageType('statusEffectList')
     ).subscribe(message => {
-      this.eorzeaFacade.resetStatuses();
-      const packet = message.parsedIpcData;
-      packet.effects.forEach(effect => {
-        if (effect.effectId) {
-          this.eorzeaFacade.addStatus(effect.effectId);
-        }
-      });
+      this.eorzeaFacade.setStatuses(message.parsedIpcData.effects.map(e => e.effectId).filter(id => id > 0));
     });
 
     this.ipc.packets$.pipe(

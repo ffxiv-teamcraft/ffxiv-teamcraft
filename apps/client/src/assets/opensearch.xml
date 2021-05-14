@@ -4,6 +4,8 @@
   <ShortName>FFXIV Teamcraft</ShortName>
   <Description>Search on FFXIV Teamcraft</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Url method="get" type="text/html"
-       template="https://ffxivteamcraft.com/search?query={searchTerms}&type=Any"/>
+  <Url method="get" type="text/html" template="https://ffxivteamcraft.com/search">
+    <Param name="query" value="{searchTerms}"/>
+    <Param name="type" value="Any"/>
+  </Url>
 </OpenSearchDescription>

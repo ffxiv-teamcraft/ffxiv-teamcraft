@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.2"></a>
+## [8.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.1...v8.2.2) (2021-05-14)
+
+
+### Bug Fixes
+
+* **fishing-reporter-overlay:** fixed flickering with patience ending after you threw the line ([c0bcccb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0bcccb))
+* **leveling-equipment:** fixed an error that happened with crafting filter enabled ([9e72de0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e72de0))
+* **seo:** fixed opensearch integration ([6a69dba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a69dba))
+
+
+### Features
+
+* **data:** update for cn patch-5.41 ([269fcc4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/269fcc4))
+* **simulator:** support for CN 5.41 ([9873f44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9873f44))
+
+
+
 <a name="8.2.1"></a>
 ## [8.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.0...v8.2.1) (2021-05-08)
 
