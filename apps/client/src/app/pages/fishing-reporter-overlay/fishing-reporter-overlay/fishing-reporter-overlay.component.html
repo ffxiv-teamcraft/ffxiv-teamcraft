@@ -39,21 +39,21 @@
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
-        <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
-        <div *ngIf="state.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
-          <img class="fish-icon" *ngIf="state.weatherId > 0"
-               src="{{state.weatherId | weatherIcon | xivapiIcon}}"
-               alt="{{state.weatherId | weatherName | i18n}}">
-          <div>{{state.weatherId | weatherName | i18n}}</div>
-        </div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Previous_weather' | translate}}</div>
         <div *ngIf="state.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
           <img class="fish-icon" *ngIf="state.previousWeatherId > 0"
                src="{{state.previousWeatherId | weatherIcon | xivapiIcon}}"
                alt="{{state.previousWeatherId | weatherName | i18n}}">
           <div>{{state.previousWeatherId | weatherName | i18n}}</div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>
+        <div *ngIf="state.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
+          <img class="fish-icon" *ngIf="state.weatherId > 0"
+               src="{{state.weatherId | weatherIcon | xivapiIcon}}"
+               alt="{{state.weatherId | weatherName | i18n}}">
+          <div>{{state.weatherId | weatherName | i18n}}</div>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
