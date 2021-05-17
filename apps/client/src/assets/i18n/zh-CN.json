@@ -211,6 +211,7 @@
     "Regenerate": "重新生成闹钟",
     "Group_outdated": "此分组已过期。请联系所有人在新版本中登录以进行更新。",
     "Remove_from_group": "从此分组中移除",
+    "No_folder": "No folder",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
