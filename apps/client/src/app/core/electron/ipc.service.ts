@@ -327,7 +327,6 @@ export class IpcService {
       if (url.endsWith('/')) {
         url = url.substr(0, url.length - 1);
       }
-      console.log('NAVIGATE', url);
       this.router.navigate(url.split('/'));
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));

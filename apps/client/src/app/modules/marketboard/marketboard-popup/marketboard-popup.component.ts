@@ -89,7 +89,6 @@ export class MarketboardPopupComponent implements OnInit {
       this.sort$
     ]).pipe(
       map(([prices, sort]) => {
-        console.log('SORT');
         return [...prices.sort((a, b) => {
           if (sort.value === 'ascend') {
             if (a[sort.key] === b[sort.key]) {
