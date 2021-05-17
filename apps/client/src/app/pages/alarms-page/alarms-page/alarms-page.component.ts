@@ -72,7 +72,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   setAlarmGroup(alarm: Alarm, groupKey: string): void {
-    this.alarmsFacade.assignAlarmGroup(alarm, groupKey);
+    this.alarmsFacade.assignAlarmGroup(alarm.$key, groupKey);
   }
 
   removeAlarmFromGroup(alarmKey: string, group: AlarmGroup): void {

@@ -98,7 +98,11 @@ export class AlarmsEffects {
       switchMap((alarms: Alarm[]) => {
         return combineLatest(
           alarms.map(alarm => {
-            return this.alarmsService.add(alarm);
+            if (alarm.$key) {
+              return this.alarmsService.set(alarm.$key, alarm);
+            } else {
+              return this.alarmsService.add(alarm);
+            }
           })
         );
       }),

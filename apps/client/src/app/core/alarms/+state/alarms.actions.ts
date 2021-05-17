@@ -116,7 +116,7 @@ export class DeleteAlarmGroup implements Action {
 export class AssignGroupToAlarm implements Action {
   readonly type = AlarmsActionTypes.AssignGroupToAlarm;
 
-  constructor(public readonly alarm: Alarm, public readonly groupId: string) {
+  constructor(public readonly alarmId: string, public readonly groupId: string) {
   }
 }
 

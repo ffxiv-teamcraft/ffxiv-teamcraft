@@ -40,6 +40,7 @@ import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -128,7 +129,8 @@ export class AlarmsFacade {
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
               private lazyData: LazyDataService, private mapService: MapService,
-              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
+              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService,
+              private afs: AngularFirestore) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -136,18 +138,10 @@ export class AlarmsFacade {
   }
 
   public addAlarmInGroup(alarm: Alarm, group?: AlarmGroup): void {
+    const key = this.afs.createId();
+    alarm.$key = key;
     this.addAlarms(alarm);
-    if (group) {
-      this.allAlarms$.pipe(
-        map(as => as.find(a => {
-          return a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes;
-        })),
-        filter(a => !!a),
-        first()
-      ).subscribe(resultAlarm => {
-        this.assignAlarmGroup(resultAlarm, group.$key);
-      });
-    }
+    this.assignAlarmGroup(key, group.$key);
   }
 
   public addAlarmsAndGroup(alarms: Alarm[], groupName: string, redirect = false): void {
@@ -174,8 +168,8 @@ export class AlarmsFacade {
     this.store.dispatch(new DeleteAlarmGroup(key));
   }
 
-  public assignAlarmGroup(alarm: Alarm, groupKey: string): void {
-    this.store.dispatch(new AssignGroupToAlarm(alarm, groupKey));
+  public assignAlarmGroup(alarmId: string, groupKey: string): void {
+    this.store.dispatch(new AssignGroupToAlarm(alarmId, groupKey));
   }
 
   public loadExternalGroup(key: string): void {

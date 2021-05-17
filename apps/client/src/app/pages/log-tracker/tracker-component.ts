@@ -26,7 +26,6 @@ export class TrackerComponent {
   }
 
   public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarms(alarm);
-    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 }
