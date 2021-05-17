@@ -211,6 +211,7 @@
     "Regenerate": "Régénérer les alarmes",
     "Group_outdated": "Ce groupe est périmé, demandez au propriétaire de se connecter avec une nouvelle mise à jour et il sera régénéré",
     "Remove_from_group": "Retirer de ce groupe",
+    "No_folder": "No folder",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
