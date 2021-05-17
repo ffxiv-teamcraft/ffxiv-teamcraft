@@ -141,7 +141,9 @@ export class AlarmsFacade {
     const key = this.afs.createId();
     alarm.$key = key;
     this.addAlarms(alarm);
-    this.assignAlarmGroup(key, group.$key);
+    if (group) {
+      this.assignAlarmGroup(key, group.$key);
+    }
   }
 
   public addAlarmsAndGroup(alarms: Alarm[], groupName: string, redirect = false): void {
