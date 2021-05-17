@@ -211,6 +211,7 @@
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
+    "No_folder": "No folder",
     "REALTIME": {
       "Reset_timers": "Restablecer temporizadores",
       "WEEKLY_RESETS": "Semanales",
