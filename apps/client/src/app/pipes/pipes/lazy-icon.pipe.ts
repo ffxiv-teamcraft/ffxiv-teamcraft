@@ -40,6 +40,6 @@ export class LazyIconPipe implements PipeTransform, OnDestroy {
   private readonly setIconUrl = (url?: string) => {
     const didUpdate = this.iconUrl !== url;
     this.iconUrl = url;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }

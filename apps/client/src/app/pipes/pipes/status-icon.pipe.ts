@@ -32,6 +32,6 @@ export class StatusIconPipe implements PipeTransform, OnDestroy {
   private readonly onStatusIcon = (icon?: string) => {
     const didUpdate = this.statusIcon !== icon;
     this.statusIcon = icon;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }

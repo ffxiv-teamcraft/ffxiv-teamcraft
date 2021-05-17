@@ -54,7 +54,7 @@ export class XivapiItemTooltipDirective implements OnDestroy {
 
     // Set the innerHtml of our component with the html given by XivDB.
     tooltip.item = item;
-    this._detectorRef.markForCheck();
+    this._detectorRef.detectChanges();
   };
 
   constructor(private _detectorRef: ChangeDetectorRef,

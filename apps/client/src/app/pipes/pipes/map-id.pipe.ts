@@ -33,6 +33,6 @@ export class MapIdPipe implements PipeTransform, OnDestroy {
   private readonly setMapId = (mapId?: number) => {
     const didUpdate = this.mapId !== mapId;
     this.mapId = mapId;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }

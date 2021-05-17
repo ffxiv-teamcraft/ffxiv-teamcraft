@@ -12,6 +12,11 @@ export class EorzeanTimeService {
 
   private _timerObservable: BehaviorSubject<Date> = new BehaviorSubject<Date>(this.toEorzeanDate(new Date()));
 
+  private etime$ = this._timerObservable.pipe(
+    shareReplay(1),
+    isPlatformServer(this.platform) ? first() : tap()
+  );
+
   // Only used for mocks in dev mode
   private mockTicks = 0;
 
@@ -53,10 +58,7 @@ export class EorzeanTimeService {
   }
 
   public getEorzeanTime(): Observable<Date> {
-    return this._timerObservable.pipe(
-      shareReplay(1),
-      isPlatformServer(this.platform) ? first() : tap()
-    );
+    return this.etime$;
   }
 
   private tick(): void {

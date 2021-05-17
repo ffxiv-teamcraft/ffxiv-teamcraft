@@ -57,7 +57,7 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.highlightColor$.pipe(takeUntil(this.unsubscribe$)).subscribe((color) => {
       this.highlightColor = color;
-      this.cd.markForCheck();
+      this.cd.detectChanges();
     });
   }
 

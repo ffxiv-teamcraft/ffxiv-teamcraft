@@ -35,6 +35,6 @@ export class ActionIconPipe implements PipeTransform, OnDestroy {
   private setCurrentValue = (val?: string) => {
     const didUpdate = this.currentValue !== val;
     this.currentValue = val;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }
