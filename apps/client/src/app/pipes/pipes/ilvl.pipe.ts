@@ -32,6 +32,6 @@ export class IlvlPipe implements PipeTransform, OnDestroy {
   private readonly onIlvl = (val?: number) => {
     const didUpdate = val !== this.currentValue;
     this.currentValue = val;
-    if (didUpdate) this.cd.detectChanges();
+    if (didUpdate) this.cd.markForCheck();
   };
 }

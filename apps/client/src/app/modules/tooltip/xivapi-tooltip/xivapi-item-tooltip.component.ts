@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 
@@ -10,8 +10,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataService,
-              private cd: ChangeDetectorRef) {
+  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataService) {
   }
 
   @Input() item: any;
@@ -26,7 +25,6 @@ export class XivapiItemTooltipComponent implements OnInit {
   public patch: any;
 
   ngOnInit(): void {
-    this.cd.reattach();
     if (this.item === undefined) {
       return;
     }
@@ -120,8 +118,6 @@ export class XivapiItemTooltipComponent implements OnInit {
     if (this.item.ItemSpecialBonus) {
       this.item.SetBonuses = this.lazyData.data.itemSetBonuses[this.item.ID]?.bonuses;
     }
-
-    this.cd.detectChanges();
   }
 
 

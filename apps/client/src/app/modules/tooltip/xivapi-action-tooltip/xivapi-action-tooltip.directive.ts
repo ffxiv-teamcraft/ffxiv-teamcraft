@@ -78,7 +78,7 @@ export class XivapiActionTooltipDirective implements OnDestroy {
     tooltip.action = action;
     tooltip.state = this.state;
     tooltip.stateColor = this.stateColor;
-    this._detectorRef.detectChanges();
+    this._detectorRef.markForCheck();
   };
 
   constructor(private _detectorRef: ChangeDetectorRef,

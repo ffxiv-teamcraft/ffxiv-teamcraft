@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.4"></a>
+## [8.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.3...v8.2.4) (2021-05-18)
+
+
+### Bug Fixes
+
+* **core:** fixed several pages not loading properly ([1e25a83](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e25a83)), closes [#1920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1920)
+
+
+
 <a name="8.2.3"></a>
 ## [8.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.2...v8.2.3) (2021-05-18)
 
