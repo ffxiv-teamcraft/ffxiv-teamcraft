@@ -30,6 +30,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -90,18 +91,26 @@ export class AlarmsEffects {
     .pipe(
       ofType<AddAlarms>(AlarmsActionTypes.AddAlarms),
       withLatestFrom(this.authFacade.userId$),
-      map(([action, userId]) => {
-        return (<AddAlarms>action).payload.map(alarm => {
+      switchMap(([action, userId]) => {
+        const alarms = (<AddAlarms>action).payload.map(alarm => {
           return new Alarm({ ...alarm, userId: userId });
         });
-      }),
-      switchMap((alarms: Alarm[]) => {
         return combineLatest(
           alarms.map(alarm => {
-            if (alarm.$key) {
-              return this.alarmsService.set(alarm.$key, alarm);
+            return this.alarmsService.add(alarm);
+          })
+        ).pipe(
+          switchMap(ids => {
+            if (!action.group) {
+              return of(ids);
             } else {
-              return this.alarmsService.add(alarm);
+              return this.alarmGroupsService.pureUpdate(action.group.$key, {
+                alarms: firebase.firestore.FieldValue.arrayUnion(
+                  ...ids
+                )
+              }).pipe(
+                mapTo(ids)
+              );
             }
           })
         );
