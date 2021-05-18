@@ -60,8 +60,6 @@ import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+sta
 import { Language } from './core/data/language';
 import { InventoryService } from './modules/inventory/inventory.service';
 
-declare const gtag: Function;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -389,10 +387,6 @@ export class AppComponent implements OnInit {
         if (languageIndex > -1) {
           this.use(event.url.substr(languageIndex + 6, 2), false, true);
         }
-        gtag('set', 'page', event.url);
-        gtag('event', 'page_view', {
-          page_path: event.urlAfterRedirects
-        });
       });
 
       // Custom protocol detection

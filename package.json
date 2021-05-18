@@ -127,6 +127,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
+    "ngx-google-analytics": "^11.2.1",
     "request": "^2.88.2",
     "rxjs": "^6.6.3",
     "tslib": "^1.10.0"

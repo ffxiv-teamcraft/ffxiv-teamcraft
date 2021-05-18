@@ -116,6 +116,7 @@ import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation
 import { APP_INITIALIZERS } from './app-initializers';
 import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
 import { AdsModule } from './modules/ads/ads.module';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -290,7 +291,9 @@ const nzConfig: NzConfig = {
     NzSpinModule,
     NzAlertModule,
     NavigationSidebarModule,
-    AdsModule
+    AdsModule,
+    NgxGoogleAnalyticsModule.forRoot('G-RNVD9NJW4N'),
+    NgxGoogleAnalyticsRouterModule
   ],
   bootstrap: [AppComponent]
 })
