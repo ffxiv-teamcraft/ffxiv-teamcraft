@@ -391,7 +391,7 @@ export class AlarmsFacade {
               weather: weatherSpawn.weather,
               date: weatherSpawn.spawn
             };
-          } else if (base48Spawn <= base48WeatherStop && base48WeatherStart <= base48Despawn) {
+          } else if (base48Spawn < base48WeatherStop && base48WeatherStart < base48Despawn) {
             // If it spawns before or during the alarm uptime and despawns during the alarm or after,
             // set spawn day hour to spawn hour for days math.
             const realSpawn = new Date(weatherSpawn.spawn);

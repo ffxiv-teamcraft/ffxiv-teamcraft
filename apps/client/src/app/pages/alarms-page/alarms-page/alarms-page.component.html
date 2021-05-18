@@ -220,6 +220,11 @@
           <div>
             {{row.alarm.aetheryte?.nameid | placeName | i18n}}
           </div>
+          <div>
+            <span *ngFor="let spawn of row.alarm.spawns; last as last">
+              {{spawn}}:00 - {{(spawn + row.alarm.duration) % 24}}:00<span *ngIf="!last">,&nbsp;</span>
+            </span>
+          </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.remainingTime | timer}}</div>
             <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
