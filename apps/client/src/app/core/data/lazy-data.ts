@@ -102,6 +102,7 @@ export interface LazyData {
   koActionCategories: any;
   koActionDescriptions: any;
   koActions: any;
+  koAirshipVoyages: any;
   koBaseParams: any;
   koBeastReputationRanks: any;
   koContentTypes: any;
@@ -141,6 +142,7 @@ export interface LazyData {
   koShops: any;
   koStatusDescriptions: any;
   koStatuses: any;
+  koSubmarineVoyages: any;
   koTraitDescriptions: any;
   koTraits: any;
   koTribes: any;
