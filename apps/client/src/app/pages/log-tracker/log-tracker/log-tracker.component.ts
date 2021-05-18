@@ -62,6 +62,9 @@ export class LogTrackerComponent extends TrackerComponent {
     this.selectedRecipes = [];
   }
 
+  public dolSubTabIndex = 0;
+  public dohSubTabIndex = 0;
+
   public type$: Observable<number>;
 
   public hideCompleted = this.settings.hideCompletedLogEntries;
@@ -93,16 +96,6 @@ export class LogTrackerComponent extends TrackerComponent {
       });
     });
     this.dolTabs = [...this.lazyData.data.gatheringLogPages];
-    this.authFacade.logTracking$.subscribe(logTracking => {
-      this.userCompletion = {};
-      this.userGatheringCompletion = {};
-      logTracking.crafting.forEach(recipeId => {
-        this.userCompletion[recipeId] = true;
-      });
-      logTracking.gathering.forEach(itemId => {
-        this.userGatheringCompletion[itemId] = true;
-      });
-    });
     this.type$ = this.route.paramMap.pipe(
       map(params => {
         const type = params.get('type');
@@ -110,6 +103,47 @@ export class LogTrackerComponent extends TrackerComponent {
         return LogTrackerComponent.PAGE_TABS.indexOf(type) + 1;
       })
     );
+    combineLatest([this.authFacade.logTracking$, this.type$])
+      .pipe(
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe(([logTracking, type]) => {
+        this.userCompletion = {};
+        this.userGatheringCompletion = {};
+        logTracking.crafting.forEach(recipeId => {
+          this.userCompletion[recipeId] = true;
+        });
+        logTracking.gathering.forEach(itemId => {
+          this.userGatheringCompletion[itemId] = true;
+        });
+        this.updateSelectedPage(this.hideCompleted, type);
+      });
+  }
+
+  public updateSelectedPage(hideCompleted: boolean, selectedTabNumber: number): void {
+    const selectedTabIndex = selectedTabNumber - 1;
+    this.settings.hideCompletedLogEntries = hideCompleted;
+    const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
+    const pages = [this.dohTabs, this.dolTabs][selectedTabIndex][selectedSubTabIndex];
+    const selectedPageIndex = [this.dohSelectedPage, this.dolSelectedPage][selectedTabIndex];
+    const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
+    if (pages) {
+      const currentPage = pages[selectedPageIndex];
+      if (isPageDone(currentPage) && hideCompleted) {
+        const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
+        if (selectedTabIndex === 0) {
+          this.dohSelectedPage = nextUncompletedPage?.id;
+        } else {
+          this.dolSelectedPage = nextUncompletedPage?.id;
+        }
+      } else {
+        if (selectedTabIndex === 0) {
+          this.dohSelectedPage = pages[0].id;
+        } else {
+          this.dolSelectedPage = pages[0].id;
+        }
+      }
+    }
   }
 
   public setType(index: number): void {
@@ -186,13 +220,13 @@ export class LogTrackerComponent extends TrackerComponent {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
   }
 
-  public isDoLPageDone(page: any): boolean {
+  public isDoLPageDone = (page: any) => {
     return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
-  }
+  };
 
-  public isDoHPageDone(page: any): boolean {
+  public isDoHPageDone = (page: any) => {
     return page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
-  }
+  };
 
   public getDohIcon(index: number): string {
     return `./assets/icons/classjob/${this.gt.getJob(index + 8).name.toLowerCase()}.png`;
