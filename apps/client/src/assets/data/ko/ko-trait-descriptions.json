@@ -477,7 +477,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피의 칼날<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 효과 중에 무기 기술 및 마법이 명중하면 흑혈이 증가합니다."
   },
   "160": {
-    "ko": "자신의 무기 기술이 극대화되면 50% 확률로 투기가 부여됩니다."
+    "ko": "자신의 무기 기술이 극대화되면 80% 확률로 투기가 부여됩니다."
   },
   "161": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>나찰충격권<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 2회 사용 가능한 누적 기술로 변화합니다."
@@ -582,7 +582,7 @@
     "ko": "GP의 자연 회복량이 기본 수치에서 1 증가합니다."
   },
   "195": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버선더<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버에어로<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 370으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버파이어<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버스톤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 300으로 증가합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버선더<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버에어로<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 370으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버파이어<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버스톤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 310으로 증가합니다."
   },
   "196": {
     "ko": "자신이 전투 상태에 돌입하면 30초마다 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>치유의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발생합니다.\n치유의 백합은 최대 3개까지 누적됩니다."
@@ -714,7 +714,7 @@
     "ko": "GP의 자연 회복량이 기본 수치에서 2 증가합니다."
   },
   "245": {
-    "ko": "자신의 무기 기술이 극대화되면 70% 확률로 투기가 부여됩니다."
+    "ko": "자신의 무기 기술이 극대화되면 100% 확률로 투기가 부여됩니다."
   },
   "246": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>폭도의 검격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내면의 기개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 MP 회복 효과가 추가됩니다."
@@ -741,7 +741,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 2회 사용 가능한 누적 기술로 변화합니다."
   },
   "255": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정석 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>기교 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 성공하면 자신과 대상 파티원에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다.\n효과 적용 중에 대상이 무기 기술 또는 마법 공격을 명중시키면, 특정 확률로 자신의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 증가합니다.\n발동률은 직업에 따라 다릅니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>정석 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>기교 마무리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>에 성공하면 자신과 대상 파티원에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 부여됩니다.\n효과 적용 중에 대상이 무기 기술 또는 마법 공격을 실행하면, 특정 확률로 자신의 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>에스프리<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 증가합니다.\n발동률은 직업에 따라 다릅니다."
   },
   "256": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>앞걸음<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 최대 3번까지 사용할 수 있습니다."
@@ -1057,5 +1057,17 @@
   },
   "363": {
     "ko": "제작 연습을 실행할 수 있습니다."
+  },
+  "364": {
+    "ko": "자신의 자동 공격 주기와 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 5% 단축됩니다."
+  },
+  "365": {
+    "ko": "자신의 자동 공격 주기와 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 10% 단축됩니다."
+  },
+  "366": {
+    "ko": "자신의 자동 공격 주기와 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 15% 단축됩니다."
+  },
+  "367": {
+    "ko": "자신의 자동 공격 주기와 무기 기술 및 마법 시전 시간과 재사용 대기 시간이 20% 단축됩니다."
   }
 }
