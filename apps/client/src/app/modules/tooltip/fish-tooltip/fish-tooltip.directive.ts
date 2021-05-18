@@ -54,7 +54,7 @@ export class FishTooltipDirective implements OnDestroy {
 
     // Set the innerHtml of our component with the html given by XivDB.
     tooltip.fish = fish;
-    this._detectorRef.detectChanges();
+    this._detectorRef.markForCheck();
   };
 
   constructor(private _detectorRef: ChangeDetectorRef,

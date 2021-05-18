@@ -78,7 +78,7 @@
             ></app-item-row-buttons>
           </div>
         </ng-container>
-        <ng-container *ngIf="desktop && !overlay">
+        <ng-container *ngIf="!overlay">
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">
             <ng-container *ngIf="amountInInventory.length <= 3; else compactAmountInInventory">

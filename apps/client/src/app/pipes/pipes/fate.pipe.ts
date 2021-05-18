@@ -31,6 +31,6 @@ export class FatePipe implements PipeTransform, OnDestroy {
   private readonly onFate = (fate?: I18nLazy<Fate>) => {
     const didUpdate = fate !== this.currentValue;
     this.currentValue = fate;
-    if (didUpdate) this.cd.detectChanges();
+    if (didUpdate) this.cd.markForCheck();
   };
 }

@@ -81,7 +81,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
     const didUpdate = this.currentValue !== next;
     this.currentValue = next;
     if (didUpdate) {
-      this.cd.detectChanges();
+      this.cd.markForCheck();
     }
   };
 }
