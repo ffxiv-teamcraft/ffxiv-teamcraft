@@ -143,7 +143,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
       return -1;
     }
     if (a.score === b.score) {
-      return a.date - b.date;
+      return b.date - a.date;
     }
     return b.score - a.score;
   }

@@ -816,7 +816,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       nzFooter: null
     }).afterClose.subscribe(() => {
       this.cd.reattach();
-      this.cd.markForCheck();
+      this.cd.detectChanges();
       this.saveRotation(rotation);
     });
   }

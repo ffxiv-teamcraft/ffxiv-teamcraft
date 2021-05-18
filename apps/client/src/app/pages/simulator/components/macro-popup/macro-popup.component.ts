@@ -90,6 +90,7 @@ export class MacroPopupComponent implements OnInit {
       }
     }
     this.totalDuration = 0;
+    this.durationPerFragment = [];
     let totalLength = 0;
     this.rotation.forEach((action, actionIndex) => {
       let macroFragment = this.macro[this.macro.length - 1];

@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.3"></a>
+## [8.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.2...v8.2.3) (2021-05-18)
+
+
+### Bug Fixes
+
+* **alarms:** complete revamp of the "create alarm in group" system ([76eb2ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76eb2ee))
+* **alarms:** fixed fishing alarms not being accurate with weather ([95531a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95531a9))
+* **fishing-reporter:** fixed random items being detected as bait ([d056e08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d056e08))
+* **fishing-reporter-overlay:** swapped current and previous weather ([a601918](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a601918))
+* **list:** fixed an issue with some items not being added properly to a list ([3aaeebf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3aaeebf))
+* **log-tracker:** fixed an issue with hide completed tabs not selecting another tab properly ([705a6c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/705a6c2))
+* **simulator:** fixed a bug with duration per macro not refreshing properly ([accd855](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/accd855))
+
+
+### Features
+
+* **alarms:** folders names are now shown below alarms in folder addition popup ([6640ba2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6640ba2))
+* **db:** support for korean v5.4 update ([a2fee50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2fee50))
+* **simulator:** support for korean 5.4 ([ab44257](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab44257))
+
+
+### Performance Improvements
+
+* **list:** shorter loading time and overall list performance ([572c0ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/572c0ac))
+
+
+
 <a name="8.2.2"></a>
 ## [8.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.1...v8.2.2) (2021-05-14)
 

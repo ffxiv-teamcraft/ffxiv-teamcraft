@@ -33,6 +33,6 @@ export class QuestIconPipe implements PipeTransform, OnDestroy {
   private readonly onQuestIcon = (icon?: string) => {
     const didUpdate = this.questIcon !== icon;
     this.questIcon = icon;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }

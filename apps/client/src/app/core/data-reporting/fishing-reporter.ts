@@ -103,7 +103,10 @@ export class FishingReporter implements DataReporter {
 
     packets$.pipe(
       ofMessageType('inventoryTransaction'),
-      toIpcData()
+      toIpcData(),
+      withLatestFrom(isFishing$),
+      filter(([, isFishing]) => isFishing),
+      map(([packet]) => packet)
     ).subscribe(packet => {
       moochId$.next(packet.catalogId);
     });

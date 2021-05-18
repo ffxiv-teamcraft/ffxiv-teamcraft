@@ -41,7 +41,7 @@ export class AlarmsLoaded implements Action {
 export class AddAlarms implements Action {
   readonly type = AlarmsActionTypes.AddAlarms;
 
-  constructor(public payload: Alarm[]) {
+  constructor(public payload: Alarm[], public group?: AlarmGroup) {
   }
 }
 
@@ -116,7 +116,7 @@ export class DeleteAlarmGroup implements Action {
 export class AssignGroupToAlarm implements Action {
   readonly type = AlarmsActionTypes.AssignGroupToAlarm;
 
-  constructor(public readonly alarm: Alarm, public readonly groupId: string) {
+  constructor(public readonly alarmId: string, public readonly groupId: string) {
   }
 }
 

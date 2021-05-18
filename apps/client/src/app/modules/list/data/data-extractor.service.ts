@@ -32,6 +32,9 @@ export class DataExtractorService {
         }
         return this.extract(extractor.getDataType(), item.id, data, acc).pipe(
           map(source => {
+            if (!acc.sources) {
+              acc.sources = [];
+            }
             if (source) {
               acc.sources = [...(acc.sources || []), source];
             }

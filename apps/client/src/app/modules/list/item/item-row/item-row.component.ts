@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { ListsFacade } from '../../+state/lists.facade';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
@@ -12,7 +12,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, withLatestFrom } from 'rxjs/operators';
+import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../../core/database/user.service';
@@ -48,6 +48,7 @@ import { RelationshipsComponent } from '../../../item-details/relationships/rela
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { InventoryService } from '../../../inventory/inventory.service';
+import { PlatformService } from '../../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-item-row',
@@ -55,7 +56,7 @@ import { InventoryService } from '../../../inventory/inventory.service';
   styleUrls: ['./item-row.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemRowComponent extends TeamcraftComponent implements OnInit {
+export class ItemRowComponent extends TeamcraftComponent {
 
   buttonsCache = {};
 
@@ -71,7 +72,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
       return item;
     }),
-    shareReplay(1)
+    shareReplay(1),
+    tap(() => this.cdRef.detectChanges())
   );
 
   finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -89,6 +91,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()
   public set finalItem(final: boolean) {
     this.finalItem$.next(final);
+    this.cdRef.detectChanges();
   }
 
   public get finalItem(): boolean {
@@ -105,6 +108,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         .forEach(key => {
           this.buttonsCache[ItemRowMenuElement[key]] = l.rowsDisplay.buttons.indexOf(ItemRowMenuElement[key]) > -1;
         });
+      this.cdRef.detectChanges();
     }
     this._layout = l;
   }
@@ -149,7 +153,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
-  list$: Observable<List> = this.listsFacade.selectedList$;
+  list$: Observable<List> = this.listsFacade.selectedList$.pipe(
+    tap(() => this.cdRef.detectChanges())
+  );
 
   @ViewChild('inputElement') inputElement: ElementRef;
 
@@ -181,7 +187,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
             }, []);
         })
       );
-    })
+    }),
+    tap(() => this.cdRef.detectChanges())
   );
 
   totalAmountInInventory$: Observable<{ hq: number, nq: number }> = this.amountInInventory$.pipe(
@@ -209,7 +216,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       return (user.itemTags || [])
         .filter(entry => entry.id === item.id)
         .map(entry => entry.tag);
-    })
+    }),
+    tap(() => this.cdRef.detectChanges())
   );
 
   tagInput$ = new BehaviorSubject<string>('');
@@ -219,7 +227,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       return _.uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)
         .map(entry => entry.tag));
-    })
+    }),
+    tap(() => this.cdRef.detectChanges())
   );
 
   showLogCompletionButton$ = combineLatest([this.authFacade.logTracking$, this.item$]).pipe(
@@ -233,7 +242,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       }
       return false;
     }),
-    shareReplay(1)
+    shareReplay(1),
+    tap(() => this.cdRef.detectChanges())
   );
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
@@ -245,6 +255,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   private get registry() {
     return this.simulator.CraftingActionsRegistry;
   }
+
+  public desktop = this.platformService.isDesktop();
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -263,8 +275,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryService,
               private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService,
+              private platformService: PlatformService) {
     super();
+    this.cdRef.detach();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
       this.handleAlarms(item);
@@ -279,7 +293,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
           .filter(book => Number.isInteger(book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
-      })
+      }),
+      tap(() => this.cdRef.detectChanges())
     );
 
     this.userId$ = this.authFacade.userId$;
@@ -291,7 +306,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         }
         return team;
       }),
-      shareReplay(1)
+      shareReplay(1),
+      tap(() => this.cdRef.detectChanges())
     );
 
     this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
@@ -299,12 +315,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         return list.requiredAsHQ(item);
       })
     );
-  }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.cdRef.detectChanges();
-    });
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),

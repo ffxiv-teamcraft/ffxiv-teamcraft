@@ -32,6 +32,6 @@ export class TraitIconPipe implements PipeTransform, OnDestroy {
   private readonly onTraitIcon = (icon?: string) => {
     const didUpdate = this.traitIcon !== icon;
     this.traitIcon = icon;
-    if (didUpdate) this.cd.markForCheck();
+    if (didUpdate) this.cd.detectChanges();
   };
 }

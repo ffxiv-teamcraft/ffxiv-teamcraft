@@ -23,9 +23,6 @@ jobs:
       - run:
           name: Install local dependencies
           command: yarn install --immutable
-      - run:
-          name: Install functions dependencies
-          command: cd functions && npm install && cd ../
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -103,16 +100,6 @@ jobs:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
 
-
-  deploy-functions:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying functions
-          command: ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
-
   release-desktop:
     executor: win/default
     working_directory: ~/ffxiv-teamcraft
@@ -143,16 +130,6 @@ jobs:
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
-
-
-  deploy-staging-functions:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying functions
-          command: ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
 
 
   deploy-cdn:
@@ -195,12 +172,6 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-functions:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
       - release-desktop:
           requires:
             - lint
@@ -209,12 +180,6 @@ workflows:
             branches:
               only: master
       - deploy-staging:
-          requires:
-            - build
-          filters:
-            branches:
-              only: staging
-      - deploy-staging-functions:
           requires:
             - build
           filters:

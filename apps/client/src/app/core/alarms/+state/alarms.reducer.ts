@@ -90,7 +90,7 @@ export function alarmsReducer(
         ...state,
         groups: [...state.groups.map(group => {
           if (group.$key === action.groupId) {
-            group.alarms.push(action.alarm.$key);
+            group.alarms.push(action.alarmId);
           }
           return group;
         })]

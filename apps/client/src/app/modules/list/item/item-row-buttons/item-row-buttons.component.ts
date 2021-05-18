@@ -4,7 +4,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
-import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { Team } from '../../../../model/team/team';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
@@ -20,10 +20,10 @@ import { PlatformService } from '../../../../core/tools/platform.service';
   styleUrls: ['./item-row-buttons.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemRowButtonsComponent extends TeamcraftComponent implements OnInit {
+export class ItemRowButtonsComponent extends TeamcraftComponent {
 
   @Input()
-  buttonsCache: { [key: string]: boolean };
+  buttonsCache: { [key: string]: boolean } = {};
 
   @Input()
   finalItem: boolean;
@@ -49,6 +49,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   set attachedRotation(rotationKey: string) {
     this.rotationsFacade.getRotation(rotationKey);
     this._attachedRotationKey$.next(rotationKey);
+    this.cd.detectChanges();
   }
 
   get attachedRotation(): string {
@@ -142,12 +143,14 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   recipeId$: ReplaySubject<string> = new ReplaySubject<string>();
 
   recipe$ = this.recipeId$.pipe(
-    switchMap(id => this.lazyData.getRecipe(id))
+    switchMap(id => this.lazyData.getRecipe(id)),
+    tap(() => this.cd.detectChanges())
   );
 
   @Input()
   set recipeId(id: string) {
     this.recipeId$.next(id);
+    this.cd.detectChanges();
   }
 
   itemRowTypes = ItemRowMenuElement;
@@ -161,7 +164,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
         }),
         filter(rotation => rotation !== undefined && !rotation.notFound)
       );
-    })
+    }),
+    tap(() => this.cd.detectChanges())
   );
 
   notFavoriteCopyMode = this.settings.preferredCopyType === 'classic' ? 'isearch' : 'classic';
@@ -176,9 +180,6 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
     ).subscribe(() => {
       this.cd.detectChanges();
     });
-  }
-
-  ngOnInit() {
   }
 
   public isButton(element: ItemRowMenuElement): boolean {

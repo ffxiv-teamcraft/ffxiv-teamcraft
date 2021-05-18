@@ -4,7 +4,7 @@
     <ng-template nz-tab>
       <ng-template #hideCompletedToggle>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
+          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType)"></nz-switch>
           <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
         </div>
       </ng-template>
@@ -98,7 +98,7 @@
     <ng-template #extraTemplate>
       <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="settings.hideCompletedLogEntries = $event"></nz-switch>
+          <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType)"></nz-switch>
           <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
         </div>
         <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
@@ -115,7 +115,8 @@
       </div>
     </ng-template>
     <ng-template nz-tab>
-      <nz-tabset (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id" [nzTabBarExtraContent]="extraTemplate"
+      <nz-tabset (nzSelectedIndexChange)="dolSelectedPage = dolTabs[$event][0].id;dolSubTabIndex = $event"
+                 [nzTabBarExtraContent]="extraTemplate"
                  nzAnimated="false"
                  nzSize="small">
         <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">

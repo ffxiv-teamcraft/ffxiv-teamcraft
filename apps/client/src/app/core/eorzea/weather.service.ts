@@ -48,6 +48,7 @@ export class WeatherService {
       const resultDate = new Date(timestamp);
       resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
       resultDate.setUTCMinutes(0);
+      resultDate.setUTCSeconds(0);
       return resultDate;
     }
     return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate, iterations + 1);

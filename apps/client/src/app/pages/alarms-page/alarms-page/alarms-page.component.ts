@@ -24,6 +24,8 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { FolderAdditionPickerComponent } from '../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { groupBy } from 'lodash';
+import { AdditionPickerEntry } from '../../../modules/folder-addition-picker/folder-addition-picker/addition-picker-entry';
 
 @Component({
   selector: 'app-alarms-page',
@@ -72,7 +74,7 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   setAlarmGroup(alarm: Alarm, groupKey: string): void {
-    this.alarmsFacade.assignAlarmGroup(alarm, groupKey);
+    this.alarmsFacade.assignAlarmGroup(alarm.$key, groupKey);
   }
 
   removeAlarmFromGroup(alarmKey: string, group: AlarmGroup): void {
@@ -192,20 +194,39 @@ export class AlarmsPageComponent implements OnInit {
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
   };
 
-  addAlarmsToGroup(group: AlarmGroup): void {
-    this.alarmsFacade.allAlarms$.pipe(
+  addAlarmsToGroup(targetGroup: AlarmGroup): void {
+    this.display$.pipe(
       first(),
-      switchMap((alarms: Alarm[]) => {
+      switchMap((display) => {
         return this.dialog.create({
           nzTitle: this.translate.instant('ALARMS.Add_alarms_to_group'),
           nzContent: FolderAdditionPickerComponent,
           nzComponentParams: {
-            elements: alarms.map(alarm => {
-              return {
-                $key: alarm.$key,
-                name: alarm.itemId ? this.i18n.getName(this.l12n.getItem(alarm.itemId)) : alarm.name
-              };
-            })
+            elements: [
+              ...display.noGroup.map(({ alarm }) => {
+                return {
+                  $key: alarm.$key,
+                  name: alarm.itemId ? this.i18n.getName(this.l12n.getItem(alarm.itemId)) : alarm.name,
+                  description: this.translate.instant('ALARMS.No_folder')
+                };
+              }),
+              ...Object.values<AdditionPickerEntry[]>(
+                groupBy<AdditionPickerEntry>([].concat.apply([], display.groupedAlarms.map(({ group, alarms }) => {
+                  return alarms.map(({ alarm }) => {
+                    return {
+                      $key: alarm.$key,
+                      name: alarm.itemId ? this.i18n.getName(this.l12n.getItem(alarm.itemId)) : alarm.name,
+                      description: group.name
+                    };
+                  });
+                })), '$key')
+              ).map(entries => {
+                return {
+                  ...entries[0],
+                  description: entries.map(entry => entry.description).join(', ')
+                }
+              })
+            ]
           },
           nzFooter: null
         }).afterClose
@@ -214,8 +235,8 @@ export class AlarmsPageComponent implements OnInit {
           );
       })
     ).subscribe(alarms => {
-      group.alarms.push(...alarms.map(a => a.$key));
-      this.alarmsFacade.updateGroup(group);
+      targetGroup.alarms.push(...alarms.map(a => a.$key));
+      this.alarmsFacade.updateGroup(targetGroup);
     });
   }
 

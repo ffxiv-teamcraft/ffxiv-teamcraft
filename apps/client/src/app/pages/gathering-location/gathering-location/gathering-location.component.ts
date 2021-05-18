@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -8,7 +8,6 @@ import { MapService } from '../../../modules/map/map.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { TranslateService } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';

@@ -168,7 +168,6 @@ export class SettingsPopupComponent {
               private lazyData: LazyDataService, private mappy: MappyReporterService,
               private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService,
               private soundNotificationService: SoundNotificationService) {
-    console.log(this.notificationSettings);
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });

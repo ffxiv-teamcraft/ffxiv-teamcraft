@@ -3,8 +3,9 @@ import { AlarmDisplay } from '../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
+import { TeamcraftComponent } from '../../core/component/teamcraft-component';
 
-export class TrackerComponent {
+export class TrackerComponent extends TeamcraftComponent {
 
   public alarmsLoaded$: Observable<boolean>;
   public alarms$: Observable<Alarm[]>;
@@ -13,6 +14,7 @@ export class TrackerComponent {
   public alarmsCache: any = {};
 
   constructor(protected alarmsFacade: AlarmsFacade) {
+    super();
     this.alarmsLoaded$ = this.alarmsFacade.loaded$;
     this.alarms$ = this.alarmsFacade.allAlarms$;
   }
@@ -26,7 +28,6 @@ export class TrackerComponent {
   }
 
   public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarms(alarm);
-    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 }
