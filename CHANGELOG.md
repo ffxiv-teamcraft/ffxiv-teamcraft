@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.5"></a>
+## [8.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.4...v8.2.5) (2021-05-21)
+
+
+### Bug Fixes
+
+* **alarms:** refactoring of the weather+time system ([41975e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/41975e0))
+* **treasure-finder:** fixed wrong miniature positions ([e407986](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e407986))
+
+
+
 <a name="8.2.4"></a>
 ## [8.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.3...v8.2.4) (2021-05-18)
 
