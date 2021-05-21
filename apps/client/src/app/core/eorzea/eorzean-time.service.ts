@@ -49,7 +49,7 @@ export class EorzeanTimeService {
    * @param minutes
    */
   public toEarthTime(minutes: number): number {
-    return Math.round(minutes / EorzeanTimeService.EPOCH_TIME_FACTOR * 60);
+    return Math.floor(60 * minutes / EorzeanTimeService.EPOCH_TIME_FACTOR);
   }
 
   public getEorzeanTime(): Observable<Date> {
@@ -62,7 +62,7 @@ export class EorzeanTimeService {
   private tick(): void {
     // How to mock time:
     // Set date here and uncomment the next 3 lines
-    // const mockDate = new Date(new Date('Mar 25, 2021 15:33 UTC').getTime() + this.mockTicks);
+    // const mockDate = new Date(new Date('May 19, 2021 21:19:50 GMT+2').getTime() + this.mockTicks);
     // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
     // this._timerObservable.next(this.toEorzeanDate(mockDate));
 
