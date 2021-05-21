@@ -35,12 +35,8 @@ export class TreasureFinderComponent {
         .map(treasure => {
           const mapData = this.lazyData.data.maps[treasure.map];
           const coordsPercent = this.mapService.getPositionOnMap(mapData, treasure.coords);
-          let offsetX = 94;
-          let offsetY = 79.5;
-          if ([12241, 12242, 12243].includes(treasure.item)) {
-            offsetX = 47;
-            offsetY = 30;
-          }
+          const offsetX = 78;
+          const offsetY = 70;
           return {
             ...treasure,
             mapImage: mapData.image,
