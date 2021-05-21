@@ -211,6 +211,7 @@
     "Regenerate": "알람 갱신",
     "Group_outdated": "해당 그룹은 오래되었습니다. 사용자가 새 업데이트를 통해 로그인을 하면 갱신됩니다",
     "Remove_from_group": "해당 그룹 삭제",
+    "No_folder": "No folder",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",

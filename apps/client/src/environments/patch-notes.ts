@@ -1,3 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **core:** fixed several pages not loading properly.`;
+* **alarms:** refactoring of the weather+time system.
+* **treasure-finder:** fixed wrong miniature positions.`;
