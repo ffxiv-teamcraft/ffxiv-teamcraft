@@ -317,7 +317,7 @@ export class LogsExtractor extends AbstractExtractor {
                 .map(key => {
                   const c = entry.TerritoryType.Map.SizeFactor / 100.0;
                   return {
-                    id: entry.ID,
+                    id: entry.GatheringPointBaseTargetID,
                     itemId: entry.GatheringPointBase[key],
                     level: entry.GatheringLevel.GatheringLevel,
                     mapId: entry.TerritoryType.Map.ID,
