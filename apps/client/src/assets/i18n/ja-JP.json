@@ -211,6 +211,7 @@
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
+    "No_folder": "No folder",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
