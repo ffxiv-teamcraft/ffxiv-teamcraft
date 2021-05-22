@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.6"></a>
+## [8.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.5...v8.2.6) (2021-05-22)
+
+
+### Bug Fixes
+
+* **alarms:** better fix for weather + time alarms ([8307080](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8307080))
+
+
+
 <a name="8.2.5"></a>
 ## [8.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.4...v8.2.5) (2021-05-21)
 
