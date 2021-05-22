@@ -40,7 +40,7 @@ import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { TimeUtils } from '../time.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -129,8 +129,7 @@ export class AlarmsFacade {
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
               private lazyData: LazyDataService, private mapService: MapService,
-              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService,
-              private afs: AngularFirestore) {
+              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -346,21 +345,20 @@ export class AlarmsFacade {
         const despawn = (spawn + alarm.duration) % 24;
         const weatherStart = weatherSpawn.spawn.getUTCHours();
         const weatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        // We're going to work using 48h as duration, because nothing spawns for more than 24h
-        const base48Spawn = spawn || 24;
-        const base48Despawn = despawn + 24;
-        const base48WeatherStart = weatherStart || 24;
-        const base48WeatherStop = weatherStop + 24;
-        const range = this.getIntersection([base48Spawn, base48Despawn], [base48WeatherStart, base48WeatherStop]);
+        const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
         if (range) {
-          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-          return {
-            hours: range[0] % 24,
-            days: days,
-            despawn: range[1] % 24,
-            weather: weatherSpawn.weather,
-            date: weatherSpawn.spawn
-          };
+          const intersectSpawn = range[0];
+          const intersectDespawn = range[1] || 24;
+          if (intersectSpawn < intersectDespawn) {
+            const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+            return {
+              hours: intersectSpawn,
+              days: days,
+              despawn: intersectDespawn,
+              weather: weatherSpawn.weather,
+              date: weatherSpawn.spawn
+            };
+          }
         }
       }
     }
@@ -377,16 +375,6 @@ export class AlarmsFacade {
     }
     return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
   }
-
-  private getIntersection(spawnRange: [number, number], weatherSpawnRange: [number, number]): [number, number] | null {
-    const min = spawnRange[0] < weatherSpawnRange[0] ? spawnRange : weatherSpawnRange;
-    const max = min === spawnRange ? weatherSpawnRange : spawnRange;
-    if (min[1] <= max[0]) {
-      return null;
-    }
-    return [max[0], (min[1] < max[1] ? min[1] : max[1])];
-  }
-
   /**
    * Get the amount of minutes before a given hour happens.
    * @param currentTime
