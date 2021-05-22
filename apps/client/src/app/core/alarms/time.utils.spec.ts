@@ -14,8 +14,11 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getIntersection([12, 14], [8, 12])).toBeNull();
   });
 
-  it('Should return intersection for specific cases with spawn time being < despawn time', () => {
+  it('Should return intersection for complex intervals', () => {
     expect(TimeUtils.getIntersection([22, 4], [0, 8])).toEqual([0, 4]);
     expect(TimeUtils.getIntersection([22, 0], [16, 0])).toEqual([22, 0]);
+    expect(TimeUtils.getIntersection([22, 4], [16, 0])).toEqual([22, 0]);
+    expect(TimeUtils.getIntersection([22, 4], [16, 8])).toEqual([22, 4]);
+    expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
   });
 });
