@@ -118,13 +118,13 @@ export class PacketCapture {
     // --localOpcodes [path]
 
     const argv = process.argv.slice(1);
-    const index = argv.indexOf('--localOpcodes')
+    const index = argv.indexOf('--localOpcodes');
 
     if (index === -1) {
       return null;
     }
 
-    const value = argv[index + 1]
+    const value = argv[index + 1];
     if (value && value[0] !== '-') {
       return resolve(value);
     } else {
@@ -186,9 +186,14 @@ export class PacketCapture {
     }
 
     this.captureInterface = new CaptureInterface(options);
-    this.captureInterface.start().then(() => {
-      log.info('Packet capture started');
-    });
+    this.captureInterface.start()
+      .then(() => {
+        log.info('Packet capture started');
+      })
+      .catch((err) => {
+        log.error(`Couldn't start packet capture`);
+        log.error(err);
+      });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
       if (this.options.verbose) {
