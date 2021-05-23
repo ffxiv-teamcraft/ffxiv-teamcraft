@@ -1,4 +1,4 @@
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
@@ -84,13 +84,15 @@ export class PacketCapture {
   }
 
   start(): void {
-    exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
-      if (err) {
-        this.mainWindow.win.webContents.send('install-npcap-prompt', true);
-      } else {
-        this.startMachina();
-      }
-    });
+    log.info(`Starting PacketCapture with options: ${JSON.stringify(this.options)}`);
+    try {
+      const cmdOutput = execSync('Get-Service -Name Npcap', {'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore']});
+      log.debug('The Npcap service was detected, starting Machina');
+      this.startMachina();
+    } catch (err) {
+      log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
+      this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+    };
   }
 
   stop(): void {
