@@ -16,6 +16,12 @@ export class TimeUtils {
     if (!firstDay && !secondDay) {
       return null;
     }
+    if (firstDay && !secondDay) {
+      return [firstDay[0], firstDay[1] % 24];
+    }
+    if (secondDay && !firstDay) {
+      return [secondDay[0], secondDay[1] % 24];
+    }
     return [(firstDay || [0, 0])[0], (secondDay || [0, 0])[1]];
   }
 

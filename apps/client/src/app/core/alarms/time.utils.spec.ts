@@ -22,5 +22,6 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getIntersection([22, 4], [16, 0])).toEqual([22, 0]);
     expect(TimeUtils.getIntersection([22, 4], [16, 8])).toEqual([22, 4]);
     expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
+    expect(TimeUtils.getIntersection([16, 20], [16, 0])).toEqual([16, 20]);
   });
 });
