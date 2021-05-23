@@ -12,6 +12,8 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getIntersection([12, 14], [16, 18])).toBeNull();
     expect(TimeUtils.getIntersection([12, 14], [14, 16])).toBeNull();
     expect(TimeUtils.getIntersection([12, 14], [8, 12])).toBeNull();
+    expect(TimeUtils.getIntersection([10, 15], [16, 0])).toBeNull();
+    expect(TimeUtils.getIntersection([17, 0], [0, 16])).toBeNull();
   });
 
   it('Should return intersection for complex intervals', () => {

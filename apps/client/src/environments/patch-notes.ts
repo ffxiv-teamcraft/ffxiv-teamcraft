@@ -1,3 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** better fix for weather + time alarms.`;
+* **alarms:** fixed an issue with some fish under specific conditions having wrong timers.
+* **pcap:** force powershell to stop.`;

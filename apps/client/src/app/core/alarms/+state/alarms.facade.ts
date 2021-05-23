@@ -375,6 +375,7 @@ export class AlarmsFacade {
     }
     return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
   }
+
   /**
    * Get the amount of minutes before a given hour happens.
    * @param currentTime

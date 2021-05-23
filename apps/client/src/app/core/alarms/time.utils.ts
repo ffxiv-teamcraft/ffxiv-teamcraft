@@ -20,9 +20,12 @@ export class TimeUtils {
   }
 
   static splitInterval(interval: Interval): [Interval, Interval] {
-    const firstDay = this.getSimpleIntersection([0, 24], [interval[0] || 24, interval[1] + 24]) || [0, 0];
-    const secondDay = this.getSimpleIntersection([interval[0] || 24, interval[1] + 24], [24, 48]) || [0, 0];
-    return [firstDay, [secondDay[0] % 24, secondDay[1] % 24]];
+    if (interval[1] < interval[0] || interval[0] === 0) {
+      const firstDay = this.getSimpleIntersection([0, 24], [interval[0] || 24, interval[1] + 24]) || [0, 0];
+      const secondDay = this.getSimpleIntersection([interval[0] || 24, interval[1] + 24], [24, 48]) || [0, 0];
+      return [firstDay, [secondDay[0] % 24, secondDay[1] % 24]];
+    }
+    return [[...interval], [0, 0]];
   }
 
   static getSimpleIntersection(a: Interval, b: Interval): Interval | null {
@@ -31,6 +34,10 @@ export class TimeUtils {
     if (min[1] <= max[0]) {
       return null;
     }
-    return [max[0], (min[1] < max[1] ? min[1] : max[1])];
+    const result: Interval = [max[0], (min[1] < max[1] ? min[1] : max[1])];
+    if (result[0] === result[1]) {
+      return null;
+    }
+    return result;
   }
 }

@@ -1,4 +1,4 @@
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
@@ -84,13 +84,15 @@ export class PacketCapture {
   }
 
   start(): void {
-    exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
-      if (err) {
-        this.mainWindow.win.webContents.send('install-npcap-prompt', true);
-      } else {
-        this.startMachina();
-      }
-    });
+    log.info(`Starting PacketCapture with options: ${JSON.stringify(this.options)}`);
+    try {
+      const cmdOutput = execSync('Get-Service -Name Npcap', {'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore']});
+      log.debug('The Npcap service was detected, starting Machina');
+      this.startMachina();
+    } catch (err) {
+      log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
+      this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+    };
   }
 
   stop(): void {
@@ -118,13 +120,13 @@ export class PacketCapture {
     // --localOpcodes [path]
 
     const argv = process.argv.slice(1);
-    const index = argv.indexOf('--localOpcodes')
+    const index = argv.indexOf('--localOpcodes');
 
     if (index === -1) {
       return null;
     }
 
-    const value = argv[index + 1]
+    const value = argv[index + 1];
     if (value && value[0] !== '-') {
       return resolve(value);
     } else {
@@ -186,9 +188,14 @@ export class PacketCapture {
     }
 
     this.captureInterface = new CaptureInterface(options);
-    this.captureInterface.start().then(() => {
-      log.info('Packet capture started');
-    });
+    this.captureInterface.start()
+      .then(() => {
+        log.info('Packet capture started');
+      })
+      .catch((err) => {
+        log.error(`Couldn't start packet capture`);
+        log.error(err);
+      });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
       if (this.options.verbose) {
