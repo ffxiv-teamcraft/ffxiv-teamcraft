@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.7"></a>
+## [8.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.6...v8.2.7) (2021-05-23)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with some fish under specific conditions having wrong timers ([7082299](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7082299)), closes [#1483](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1483)
+* **pcap:** force powershell to stop ([fdac14a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fdac14a))
+
+
+
 <a name="8.2.6"></a>
 ## [8.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.5...v8.2.6) (2021-05-22)
 
