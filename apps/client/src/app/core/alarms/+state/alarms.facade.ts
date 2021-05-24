@@ -41,6 +41,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
+import { formatDistance } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -268,8 +269,8 @@ export class AlarmsFacade {
     }
     let spawn = nextSpawn.hours;
     let despawn = nextSpawn.despawn;
-    despawn = despawn === 0 ? 24 : despawn;
-    spawn = spawn === 0 ? 24 : spawn;
+    despawn = despawn || 24;
+    spawn = spawn || 24;
     // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
     const despawnsNextDay = spawn > despawn;
     if (!despawnsNextDay) {
@@ -349,16 +350,20 @@ export class AlarmsFacade {
         if (range) {
           const intersectSpawn = range[0];
           const intersectDespawn = range[1] || 24;
-          if (intersectSpawn < intersectDespawn) {
-            const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-            return {
-              hours: intersectSpawn,
-              days: days,
-              despawn: intersectDespawn,
-              weather: weatherSpawn.weather,
-              date: weatherSpawn.spawn
-            };
-          }
+          // Set the snapshot date to the moment at which the node will spawn for real.
+          const date = weatherSpawn.spawn;
+          date.setUTCHours(intersectSpawn);
+          date.setUTCMinutes(0);
+          date.setUTCSeconds(0);
+          date.setUTCMilliseconds(0);
+          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+          return {
+            hours: intersectSpawn,
+            days: days,
+            despawn: intersectDespawn,
+            weather: weatherSpawn.weather,
+            date
+          };
         }
       }
     }
