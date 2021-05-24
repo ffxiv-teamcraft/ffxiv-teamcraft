@@ -41,7 +41,6 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
-import { formatDistance } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -356,7 +355,8 @@ export class AlarmsFacade {
           date.setUTCMinutes(0);
           date.setUTCSeconds(0);
           date.setUTCMilliseconds(0);
-          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+          // Adding 3 seconds margin for days computation
+          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
           return {
             hours: intersectSpawn,
             days: days,
