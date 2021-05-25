@@ -84,15 +84,14 @@ export class PacketCapture {
   }
 
   start(): void {
-    log.info(`Starting PacketCapture with options: ${JSON.stringify(this.options)}`);
     try {
-      const cmdOutput = execSync('Get-Service -Name Npcap', {'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore']});
+      execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'] });
       log.debug('The Npcap service was detected, starting Machina');
       this.startMachina();
     } catch (err) {
       log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
       this.mainWindow.win.webContents.send('install-npcap-prompt', true);
-    };
+    }
   }
 
   stop(): void {
@@ -187,6 +186,7 @@ export class PacketCapture {
       options.exePath = PacketCapture.MACHINA_EXE_PATH;
     }
 
+    log.info(`Starting PacketCapture with options: ${JSON.stringify(options)}`);
     this.captureInterface = new CaptureInterface(options);
     this.captureInterface.start()
       .then(() => {

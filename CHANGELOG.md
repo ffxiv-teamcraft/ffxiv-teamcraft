@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.8"></a>
+## [8.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.7...v8.2.8) (2021-05-25)
+
+
+### Bug Fixes
+
+* **alarms:** better days computing system ([00ea82f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00ea82f))
+* **alarms:** fixed an issue with weather + time coordination in some timers ([85929fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85929fe)), closes [#1483](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1483)
+* **alarms:** fixed some timers skipping a day and jumping from "spawn" to "tomorrow" after that ([1b36ffa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b36ffa))
+
+
+### Features
+
+* **db:** 5.55 content update ([79cd749](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79cd749))
+
+
+
 <a name="8.2.7"></a>
 ## [8.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.6...v8.2.7) (2021-05-23)
 

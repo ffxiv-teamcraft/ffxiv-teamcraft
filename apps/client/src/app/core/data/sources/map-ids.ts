@@ -5314,10 +5314,10 @@ export const mapIds = [
   {
     "id": 665,
     "zone": 3662,
-    "name": "",
+    "name": "Zadnor",
     "territory": 975,
     "scale": 100,
-    "weatherRate": 0
+    "weatherRate": 130
   },
   {
     "id": 666,
@@ -5370,34 +5370,34 @@ export const mapIds = [
   {
     "id": 672,
     "zone": 3662,
-    "name": "",
+    "name": "Zadnor",
     "territory": 975,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 130
   },
   {
     "id": 673,
     "zone": 3682,
-    "name": "",
+    "name": "The Dalriada",
     "territory": 975,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 130
   },
   {
     "id": 674,
     "zone": 3682,
-    "name": "",
+    "name": "The Dalriada",
     "territory": 975,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 130
   },
   {
     "id": 675,
     "zone": 3682,
-    "name": "",
+    "name": "The Dalriada",
     "territory": 975,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 130
   },
   {
     "id": 676,

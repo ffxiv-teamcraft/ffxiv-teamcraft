@@ -16740,6 +16740,108 @@
       "fr": "Rivières"
     }
   },
+  "33239": {
+    "id": 1011,
+    "itemId": 33239,
+    "level": 80,
+    "icon": "/i/028000/028497.png",
+    "mapId": 491,
+    "zoneId": 2953,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33240": {
+    "id": 1012,
+    "itemId": 33240,
+    "level": 80,
+    "icon": "/i/028000/028038.png",
+    "mapId": 492,
+    "zoneId": 2954,
+    "timed": 1,
+    "weathered": 0,
+    "stars": 3,
+    "folklore": 26810
+  },
+  "33241": {
+    "id": 1013,
+    "itemId": 33241,
+    "level": 80,
+    "icon": "/i/029000/029622.png",
+    "mapId": 493,
+    "zoneId": 2955,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Sands",
+      "de": "Dünen",
+      "ja": "砂海",
+      "fr": "Oasis"
+    }
+  },
+  "33242": {
+    "id": 1014,
+    "itemId": 33242,
+    "level": 80,
+    "icon": "/i/028000/028495.png",
+    "mapId": 494,
+    "zoneId": 2956,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33243": {
+    "id": 1015,
+    "itemId": 33243,
+    "level": 80,
+    "icon": "/i/028000/028499.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 1,
+    "weathered": 0,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "33244": {
+    "id": 1016,
+    "itemId": 33244,
+    "level": 80,
+    "icon": "/i/028000/028033.png",
+    "mapId": 496,
+    "zoneId": 2958,
+    "timed": 1,
+    "weathered": 1,
+    "stars": 3,
+    "folklore": 26810,
+    "recordType": {
+      "en": "Deep Sea",
+      "de": "Hochsee",
+      "ja": "沖合",
+      "fr": "Pleine mer"
+    }
+  },
   "33316": {
     "id": 995,
     "itemId": 33316,
