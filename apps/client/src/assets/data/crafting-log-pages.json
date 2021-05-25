@@ -5179,8 +5179,23 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4716,
+          "itemId": 33285,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4602,
           "itemId": 28974,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4714,
+          "itemId": 33283,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4715,
+          "itemId": 33284,
           "rlvl": 430
         },
         {
@@ -5216,6 +5231,11 @@
         {
           "recipeId": 4717,
           "itemId": 33286,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4705,
+          "itemId": 33271,
           "rlvl": 430
         },
         {
@@ -29216,8 +29236,23 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4712,
+          "itemId": 33281,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4718,
+          "itemId": 33291,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4724,
           "itemId": 33293,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4698,
+          "itemId": 33258,
           "rlvl": 430
         }
       ]
@@ -52785,8 +52820,18 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4720,
+          "itemId": 33296,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4673,
           "itemId": 32245,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4719,
+          "itemId": 33295,
           "rlvl": 430
         }
       ]
@@ -52934,6 +52979,11 @@
         {
           "recipeId": 4603,
           "itemId": 28975,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4713,
+          "itemId": 33282,
           "rlvl": 430
         },
         {
@@ -58470,6 +58520,11 @@
         {
           "recipeId": 4711,
           "itemId": 33280,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4699,
+          "itemId": 33259,
           "rlvl": 430
         },
         {

@@ -4321,7 +4321,7 @@
   },
   "66016": {
     "name": {
-      "en": "Much Ado about Dodos",
+      "en": "Much Ado About Dodos",
       "ja": "とんずらドードー捕り物帖",
       "de": "Dodos auf der Flucht",
       "fr": "Le dodo est dans le sac"
@@ -20458,7 +20458,7 @@
   },
   "67809": {
     "name": {
-      "en": " All About the Eggs",
+      "en": " All about the Eggs",
       "ja": " 獲得任務：自由と個性の味",
       "de": " Glibber-Genuss vom Fluss",
       "fr": " Récupération: une question de goût"
@@ -29962,7 +29962,7 @@
   },
   "68865": {
     "name": {
-      "en": "Stirring up Trouble",
+      "en": "Stirring Up Trouble",
       "ja": "常闇に潜みて",
       "de": "Was brummt denn da?",
       "fr": "La guerre des bestioles"
@@ -36478,10 +36478,10 @@
   },
   "69589": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Whence the Heart Leads",
+      "ja": "心の在処",
+      "de": "So bittersüß wie Honigwein",
+      "fr": "Comme les deux doigts de la main"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -36577,30 +36577,30 @@
   },
   "69600": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Company We Keep",
+      "ja": "エオルゼアの名の下に",
+      "de": "Im Namen Eorzeas",
+      "fr": "Sous la bannière d'Éorzéa"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69601": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "On Official Business",
+      "ja": "知の集積者",
+      "de": "Die Lehren des Scheiterns",
+      "fr": "L'ambassadeur du savoir"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69602": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Death Unto Dawn",
+      "ja": "黎明の死闘",
+      "de": "Kampf im Morgengrauen",
+      "fr": "Aube meurtrière"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071201.png"
   },
   "69603": {
     "name": {
@@ -36730,10 +36730,10 @@
   },
   "69617": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Adventurer with All the Cards",
+      "ja": "カードコレクターへの贈り物",
+      "de": "Alle Karten in der Hand",
+      "fr": "Toutes les cartes en main"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -36757,46 +36757,46 @@
   },
   "69620": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A New Playing Field",
+      "ja": "谷間のゆり",
+      "de": "Dem Feind auf den Fersen",
+      "fr": "Les plateaux naufragés"
     },
     "icon": "/i/071000/071221.png"
   },
   "69621": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Resolve Unshaken",
+      "ja": "ミコトの覚悟",
+      "de": "Im Angesicht des Todes",
+      "fr": "Prête à tout"
     },
     "icon": "/i/071000/071221.png"
   },
   "69622": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Reaching Out",
+      "ja": "悪魔の居場所",
+      "de": "Wenn Äther und Emotionen fließen",
+      "fr": "Le nouvel antre du démon"
     },
     "icon": "/i/071000/071221.png"
   },
   "69623": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Renewed Focus",
+      "ja": "シドの切り札",
+      "de": "Cids gefährlicher Plan",
+      "fr": "Cid, trouveur de solutions"
     },
     "icon": "/i/071000/071221.png"
   },
   "69624": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "March of the Bloody Queen",
+      "ja": "マーチ・オブ・ザ・ブラッディ・クイーン",
+      "de": "Pflicht und Sühne",
+      "fr": "La marche de la reine sanglante"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -36820,100 +36820,100 @@
   },
   "69627": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Rising Calm",
+      "ja": "新生祭と鎮魂花の香",
+      "de": "Sag mir, wo die Blumen sind",
+      "fr": "Commémorez-le avec des fleurs"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080113.png"
   },
   "69628": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Where Eagles Roost",
+      "ja": "荒鷲よ、翔び上がれ",
+      "de": "Der Adler fliegt wieder",
+      "fr": "La poussée des aigles"
     },
     "icon": "/i/071000/071221.png"
   },
   "69629": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In Their Shadow",
+      "ja": "荒鷲よ、天を翔けよ",
+      "de": "Der Adler zieht seine Kreise",
+      "fr": "Le piqué des aigles"
     },
     "icon": "/i/071000/071221.png"
   },
   "69630": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An Honor to Serve",
+      "ja": "「レジスタンス勲章」をあなたに",
+      "de": "Orden für deine Brust",
+      "fr": "Tu veux une médaille?"
     },
     "icon": "/i/071000/071221.png"
   },
   "69631": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Ruined Opportunity",
+      "ja": "紛れていた白金の輝き",
+      "de": "Platinleuchten",
+      "fr": "Chamarres de platine"
     },
     "icon": "/i/071000/071221.png"
   },
   "69632": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "What Dreams Are Made Of",
+      "ja": "古代ボズヤが思い描きし姿",
+      "de": "Ein alter bozianischer Traum",
+      "fr": "Un vieux rêve de Bozjien"
     },
     "icon": "/i/071000/071221.png"
   },
   "69633": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Spare Parts",
+      "ja": "「霊薬」の特別取引",
+      "de": "Von Reagens und Kompetenz",
+      "fr": "Les concentrés de la résistance"
     },
     "icon": "/i/071000/071221.png"
   },
   "69634": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tell Me a Story",
+      "ja": "「特殊合金」の特別取引",
+      "de": "Legierungserklärung",
+      "fr": "Les alliages de la résistance"
     },
     "icon": "/i/071000/071221.png"
   },
   "69635": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Fond Memory",
+      "ja": "「術式」の特別取引",
+      "de": "Auf die Technik kommt es an",
+      "fr": "Les parchemins de la résistance"
     },
     "icon": "/i/071000/071221.png"
   },
   "69636": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Done Deal",
+      "ja": "妙な態度の商会員",
+      "de": "Auffällig abwesend",
+      "fr": "Entourloupe à la loupe"
     },
     "icon": "/i/071000/071221.png"
   },
   "69637": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Irresistible",
+      "ja": " 真の「レジスタンス・ウェポン」",
+      "de": "Wahrhaftiger Widerstand",
+      "fr": " Résiste, prouve que tu existes"
     },
     "icon": "/i/071000/071221.png"
   },

@@ -11947,7 +11947,7 @@
     "size_factor": 100,
     "territory_id": 975,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "666": {
     "id": 666,
@@ -12046,6 +12046,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 452,
     "placename_id": 3663,
     "placename_sub_id": 0,
@@ -12072,7 +12073,7 @@
     "size_factor": 200,
     "territory_id": 975,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "673": {
     "id": 673,
@@ -12090,7 +12091,7 @@
     "size_factor": 200,
     "territory_id": 975,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "674": {
     "id": 674,
@@ -12108,7 +12109,7 @@
     "size_factor": 200,
     "territory_id": 975,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "675": {
     "id": 675,
@@ -12126,7 +12127,7 @@
     "size_factor": 200,
     "territory_id": 975,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "676": {
     "id": 676,

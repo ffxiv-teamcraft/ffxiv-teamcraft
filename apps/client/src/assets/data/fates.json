@@ -7059,7 +7059,7 @@
   },
   "354": {
     "name": {
-      "en": "Tripped up by the Fruit of Another",
+      "en": "Tripped Up by the Fruit of Another",
       "ja": "負傷者を護送せよ",
       "de": "Krankentransport",
       "fr": "Attention, sol glissant"
@@ -18822,7 +18822,7 @@
   },
   "894": {
     "name": {
-      "en": "Yak it Up",
+      "en": "Yak It Up",
       "ja": "無知性化の嵐",
       "de": "Tödliche Unzurechnungsfähigkeit",
       "fr": "Yak à le faire"
@@ -31412,7 +31412,7 @@
   },
   "1453": {
     "name": {
-      "en": "Picking up the Pieces",
+      "en": "Picking Up the Pieces",
       "ja": "ピンク・フラミンゴ",
       "de": "Flamingos füttern verboten!",
       "fr": "Flamants empoisonnés"
@@ -36740,445 +36740,627 @@
   },
   "1717": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Of Beasts and Braggadocio",
+      "ja": "我執の魔獣使い",
+      "de": "Die allergrößte Bestienbändigerin aller Zeiten",
+      "fr": "Un jour, je serai la meilleure dresseuse"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The beastmaster Pagaga, whose puissance on the battlefield is surpassed only by her overweening pride, has been dispatched to the front lines. Take up arms alongside the Resistance, that you might cut her and her contingent of savage monstrosities down to size.",
+      "ja": "増援として派兵されてきた\n\n我執のパガガが前線に現れた\n\n敵部隊をせん滅せよ",
+      "de": "Pagaga, die selbsternannte allergrößte Bestienbändigerin aller Zeiten, führt ihre Lieblinge auf der Hochebene spazieren. Vermiese ihr den Ausflug.",
+      "fr": "Pagaga est arrivée en renfort au sein de la cohorte bestiale, et elle compte bien défendre l'honneur de sa famille pour montrer qui sont les meilleurs dresseurs. Montrez-lui qu'il lui reste du chemin à faire."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740135,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 24.13,
+      "y": 37.5,
+      "z": 3.05
+    }
   },
   "1718": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Parts and Parcel",
+      "ja": "忍者オボロの出陣",
+      "de": "Oboro auf der Jagd",
+      "fr": "Les astres du jour et de la nuit"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion has deployed a new type of magitek weapon. Seeking to obtain its components for intelligence purposes, the Resistance has launched an attack with the aid of its shinobi allies.",
+      "ja": "東方連合の忍者の支援を受け\n\n諜報部隊が敵兵器の情報収集を開始した\n\n「新型の魔導部品」を集め、小隊長に手渡せ",
+      "de": "Eine Ninja-Einheit der Östlichen Verbände hat eine neue Magitek-Waffe aufgespürt. Hilf dabei, Bauteile einzusammeln, um die Maschine zu studieren.",
+      "fr": "Les services de renseignement de la résistance veulent en savoir plus sur les nouvelles armes magitek qui défendent Zadnor, une mission pile dans les cordes des shinobi envoyés en renfort par la coalition orientale. Récoltez des composants magitek et livrez-les à l'officier."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060803.png",
+    "level": 80,
+    "location": 8740786,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 22.83,
+      "y": 34.33,
+      "z": 3.04
+    }
   },
   "1719": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An Immoral Dilemma",
+      "ja": "傍白の外道術士",
+      "de": "Ketzer Fabineau gibt sich die Ehre",
+      "fr": "Malheureuses retrouvailles"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Llofii's former superior officer, an unprincipled mage by the name of Fabineau, has been spotted on the fields of Zadnor. Considering his reputation for atrocities, it would be a mistake to let him operate freely in the region.",
+      "ja": "かつてのロフィーの上官である\n\n傍白のファビノーを発見した\n\n敵部隊をせん滅せよ",
+      "de": "Fabineau der Wichtigtuer, einst Vorgesetzer von Llofii der Unbefleckten, hat sich dazu herabgelassen, in den Kampf einzugreifen. Erweise ihm die Ehre.",
+      "fr": "Llofii a retrouvé Fabineau, son ancien officier supérieur, sur le champ de bataille. De toute évidence, l'homme n'a fait que s'avilir avec le temps. Mettez un terme à ses expériences abjectes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740788,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 22.83,
+      "y": 34.33,
+      "z": 3.04
+    }
   },
   "1720": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Deadly Divination",
+      "ja": "歳殺の陰陽士",
+      "de": "Mörderischer Onmyoji",
+      "fr": "Le prêtre pernicieux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mysterious Far Easterners sworn to the IVth Imperial Legion have appeared on the front. The Resistance will require aid if they are to overcome these interlopers and their strange magicks.",
+      "ja": "第IV軍団麾下の部隊に\n\n東方風の装束をまとう者が確認された\n\n敵部隊をせん滅せよ",
+      "de": "Verbündete Shinobi berichten, dass sich in den Rängen der IV. Legion ein Onmyoji befindet. Prügel etwas Yin in sein Yang.",
+      "fr": "La 4e légion ne cesse d'attirer les désabusés de tout bord. Cette fois, ce sont des prêtres onmyo qui l'ont rejoint, et bien entendu, leurs shikis et autres kojas sont de la partie. Éliminez invocateurs comme invoqués."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740789,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 24.9,
+      "y": 31.51,
+      "z": 3.01
+    }
   },
   "1721": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Wrench in the Reconnaissance Effort",
+      "ja": "偵察魔導兵器の排除",
+      "de": "Beobachten verboten",
+      "fr": "Ni vu ni connu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A detachment of warmachina has descended on the area, seemingly for the purpose of gathering vital intelligence which the Garleans may employ against their Resistance foes. See that the imperials learn nothing─or at least do not return alive to report it.",
+      "ja": "偵察を目的としていると思しき\n\n帝国軍部隊の姿が発見された\n\n敵部隊をせん滅せよ",
+      "de": "Ein Beobachtungstrupp hat sich aufs Schlachtfeld gewagt. Sollen seine Soldaten doch ihre eigenen Gliedmaßen beim Ausbluten beobachten!",
+      "fr": "Des résistants ont croisé une patrouille d'éclaireurs impériaux. Abattez ces soldats avant qu'ils ne divulguent de précieuses informations à leur commandement."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8740790,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 29.44,
+      "y": 35.48,
+      "z": 3.05
+    }
   },
   "1722": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Another Pilot Episode",
+      "ja": "再来の強化兵",
+      "de": "Rückkehr des Magitek-Soldaten",
+      "fr": "Dabog, soldat augmenté"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Enhanced beyond normal limits by experimental Garlean technology, both Dabog and his fearsome warmachina represent a threat that cannot be ignored. While Bajsaljen might prefer to capture the Bozjan pilot alive, Dabog's unrestrained hostility may not afford you that option.",
+      "ja": "機械化歩兵大隊の強化兵ダボグが駆る\n\n新型飛行型魔導アーマーが飛来した\n\nガブリエルプラスを倒せ",
+      "de": "Magitek-Soldat Dabog ist mit einem neuen fliegenden Untersatz im Kampfeinsatz. Verpasse Gabriel Plus ein ordentliches Minus, um die Rechnung auszugleichen!",
+      "fr": "Dabog errait sur le champ de bataille, mais a vite réintégré le cockpit de sa nouvelle armure magitek. Détruisez le Gabriel révisé."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740672,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 28.1,
+      "y": 29.3,
+      "z": 3
+    }
   },
   "1723": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Breaking the Ice",
+      "ja": "術士大隊の迎撃",
+      "de": "Eiskalte Begegnung",
+      "fr": "Qui s'y frotte s'y pique"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion's mage detachment has unleashed a hulking ice golem. The creature must be eliminated before it can wreak untold havoc.",
+      "ja": "術士大隊に所属する部隊が\n\n戦場に大型の使い魔を解き放った\n\nアイシクル・ファミリアを倒せ",
+      "de": "Das Spezialbatallion hat ein gigantisches Familiar unter seine Kontrolle gebracht. Heize dem Eiszapfen-Familiar ein!",
+      "fr": "Un soldat de la cohorte des incantateurs à invoquer un familier de glace plus gros et surtout plus épineux que la normale. Pulvérisez son familier de stalactites avant qu'il ne se fasse mal."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8740845,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 24.9,
+      "y": 31.21,
+      "z": 3
+    }
   },
   "1724": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Meet the Puppetmaster",
+      "ja": "人形使いとの邂逅",
+      "de": "Lass die Puppen tanzen",
+      "fr": "Celui qui tire les ficelles"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Wielding verboten arts that are fed by the lifeblood of sacrifices, a centurion by the name of Gilbrisbert has brought an army of living puppets to bear upon the realm. He must be driven back, lest more fall under his wicked spell.",
+      "ja": "生贄を用いた禁断の術を操る者\n\n人形使いジルブリスベルが現れた\n\n敵部隊をせん滅せよ",
+      "de": "Spezialmagier Gilbrisbert hat sich verbotene Künste angeeignet, die er auf dem Schlachtfeld ausprobiert. Mach dem Puppentanz ein Ende!",
+      "fr": "Gilbrisbert le marionnettiste ne se contente plus de contrôler ses victimes, maintenant, il les transforme aussi en d'abominables et puissantes créatures. Éliminez celles qu'il vient de créer pour que les âmes des résistants puissent reposer en paix."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8740791,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 24.13,
+      "y": 37.5,
+      "z": 3.05
+    }
   },
   "1725": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Challenge Accepted",
+      "ja": "立ちはだかる我執",
+      "de": "Größtmöglicher anzunehmender Unfall",
+      "fr": "Un problème de taille"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ever imperious, the beastmaster Pagaga has returned to challenge Resistance soldiers to do battle with her fearsome pets. A lesson in humility is clearly in order.",
+      "ja": "我執のパガガが堂々と身を晒して\n\nレジスタンスを挑発している\n\n敵部隊をせん滅せよ",
+      "de": "Pagaga die Allergrößte behindert den Widerstand immer noch auf größtmögliche Weise. Besiege ihre Bestienmeute.",
+      "fr": "Pour ne pas changer, Pagaga tient une nouvelle fois à démontrer sa supériorité au sein de la cohorte bestiale. Assurez-vous que ses chevilles désenflent et renvoyez ses bêtes à la niche."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740796,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 7.21,
+      "y": 28.89,
+      "z": 2.59
+    }
   },
   "1726": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Th'uban the Terrible",
+      "ja": "巨大古代獣との遭遇",
+      "de": "Bestien aus der Vorzeit",
+      "fr": "Le dernier des dinosaures"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An eldritch horror from a time long past has been set loose by the IVth Legion to do as it pleases on the battlefield. Show the monstrous Th'uban that he does not belong in this world.",
+      "ja": "魔獣大隊が解き放ったと思しき\n\n巨大古代獣が暴れまわっている\n\nシューバンを倒せ",
+      "de": "Der Bestientrupp hat eine vorzeitliche Bestie freigelassen. Lass Th'uban nun das Zeitliche segnen.",
+      "fr": "Les résistants ont été sidérés de se retrouver nez à nez avec ce grand dinosaure dont la cohorte bestiale a perdu le contrôle. Abattez le Th'uban."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740847,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 8.61,
+      "y": 34.54,
+      "z": 2.45
+    }
   },
   "1727": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An End to Atrocities",
+      "ja": "外道術士との決着",
+      "de": "Endkampf mit dem Ketzer",
+      "fr": "L'immaculée contre le malsain"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The fiendish mage Fabineau has been allowed to carry out his cruel, sadistic experiments for far too long. Join Llofii the Forthright to see that her former superior officer is served a fate befitting his heinous crimes.",
+      "ja": "戦場で非道な実験が行われようとしている\n\n迎撃に出た潔白のロフィーと協力し\n\n傍白のファビノーを倒せ",
+      "de": "Verbünde dich mit der unbefleckten Llofii und lösche den Schandfleck eines Magiers endgültig aus!",
+      "fr": "Llofii a bien l'intention de mettre fin une bonne fois pour toutes aux abominations de son ancien maître. Aidez-la à éliminer Fabineau ainsi que toutes ses invocations contre nature."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740666,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 4.88,
+      "y": 25.3,
+      "z": 2.5
+    }
   },
   "1728": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Just Pursuit",
+      "ja": "歳殺の手配犯",
+      "de": "Gesucht: Der mörderische Meister",
+      "fr": "Recherché dans deux pays"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It has been revealed that the criminals who fled Doma with one of its treasures in tow were none other than the onmyoji, and they have designs to hand it over to the imperials. They must answer for their crimes and the treasure returned to its rightful home.",
+      "ja": "帝国軍に与する陰陽士が\n\n東方を追われた手配犯だと判明した\n\n敵部隊をせん滅せよ",
+      "de": "Der Onmyoji in den Reihen der IV. Legion wird in Doma steckbrieflich gesucht. Dezimiere seine Begleiter, um ihn in Reichweite des langen Arms des Gesetzes zu bringen!",
+      "fr": "Yamatsumi était recherché en Doma, mais son statut de hors-la-loi n'a pas changé en passant la frontière ou en rejoignant la 4e légion. Vainquez-le afin qu'il réponde de ses actes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740797,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 11.67,
+      "y": 27.71,
+      "z": 2.42
+    }
   },
   "1729": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tanking Up",
+      "ja": "疑似青龍壁の生命線",
+      "de": "Energie für Seiryu Zwo",
+      "fr": "Y a qu'à se baisser"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion's magitek unit has been discovered replenishing supplies in the field. Seeking to relieve them of their ceruleum, the Bozjan Resistance has launched a raid.",
+      "ja": "ボズヤ・レジスタンスが\n\n敵の物資集積地を急襲しようとしている\n\n「軍用青燐水バレル」を集め、小隊長に手渡せ",
+      "de": "Der Widerstand überfällt die feindliche Versorgung. Hilf dabei, Erdseim-Fässer zu erbeuten!",
+      "fr": "Si la 4e légion n'a pas jugé bon de défendre correctement ses batteries au céruleum, c'est qu'elle doit pouvoir s'en passer. Elle ne remarquera rien s'il lui en manque quelques-unes, si?"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060803.png",
+    "level": 80,
+    "location": 8740798,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 8.07,
+      "y": 24.03,
+      "z": 2.52
+    }
   },
   "1730": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Supersoldier Rising",
+      "ja": "覚醒の強化兵",
+      "de": "Der Magitek-Soldat schlägt zurück",
+      "fr": "Guet-apens magitek"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Resistance soldiers have tracked down their comrade Dabog, who has returned with an enhanced flying armor. If they are to have a chance of saving their comrade, they must first destroy the weapon.",
+      "ja": "機械化歩兵大隊の強化兵ダボグが\n\n無線誘導兵器を備えて再襲来した\n\nデルタ・ガブリエルプラスを倒せ",
+      "de": "Magitek-Soldat Dabog meldet sich mit einer ferngesteuerten Kampfmaschine zurück! Mach Delta Gabriel Plus zu Altmetall!",
+      "fr": "Dabog seul sur le champ de bataille n'était qu'un piège tendu par Sicinius. Une armure magitek a rejoint le soldat augmenté, et vous devez maintenant la détruire si vous voulez avoir une chance de sauver le Bozjien."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740799,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 8.07,
+      "y": 24.03,
+      "z": 2.52
+    }
   },
   "1731": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Demented Mentor",
+      "ja": "師弟の戦い",
+      "de": "Rettende Hiebe",
+      "fr": "Magie couleur sang"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Meryall, a member of the new Gunnhildr's Blades, is confronted with a challenge no student should ever have to face─overcoming her tempered mentor. Aid the younger red mage in subduing the now-fanatical Lovro.",
+      "ja": "新生グンヒルドの剣、メリオールが\n\n師ロヴロを救うための戦いに挑む\n\n法剣のロヴロを倒し、捕縛に挑め",
+      "de": "Mitglied der neuen Königinnenwache Meryall ist ausgezogen, um ihren Meister Lovro zu retten, der von Gunnhildr besessen wurde. Versetze ihm ein paar heilende Hiebe.",
+      "fr": "Meryall a retrouvé Lovro, son maître subjugué par Gunnhildr. Aidez-la à le capturer pendant qu'il reste une chance de le guérir de ce mal."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740800,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 7.21,
+      "y": 28.89,
+      "z": 2.59
+    }
   },
   "1732": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sever the Strings",
+      "ja": "人形使いとの死闘",
+      "de": "Endkampf mit dem Puppenspieler",
+      "fr": "Ainsi font les petites marionnettes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Gilbrisbert of the IVth Legion Zealots has obtained a sacred relic, twisting its powers to his demented will and sowing chaos across Zadnor. Bring an end to the puppetmaster's reign of terror here and now before it engulfs the whole realm.",
+      "ja": "魔導僧兵大隊の一員が聖石片を悪用し\n\nザトゥノル高原に混沌を振りまいている\n\n人形使いジルブリスベルを倒せ",
+      "de": "Ein Magier des Spezialbataillons hat die Macht eines Auracitensplitters missbraucht und die Hochebene in Chaos gestürzt. Der Schuldige ist: Gilbrisbert der Puppenspieler.",
+      "fr": "Gilbrisbert sème le chaos partout où il passe grâce à son auralithe sacrée. Abattez le prêtre magitek avant qu'il ne fasse de vous sa marionnette."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740801,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 11.67,
+      "y": 27.71,
+      "z": 2.42
+    }
   },
   "1733": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Beasts Are Back",
+      "ja": "折れない我執",
+      "de": "Die Allergrößte gibt nicht auf",
+      "fr": "Des bêtes en pagagaille"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Never one to shy from the front lines, Pagaga and her fiendish menagerie once more rear their ugly heads before the Resistance forces. It falls to you to teach the blustery beastmaster a lesson in the virtue of knowing when to quit.",
+      "ja": "我執のパガガが堂々と身を晒して\n\nまたもレジスタンスの前に立ちはだかった\n\n敵部隊をせん滅せよ",
+      "de": "Pagaga die Allergrößte stört den Widerstand, wo sie nur kann. Besiege ihre Bestienmeute, um ihren übergroßen Ehrgeiz zu brechen!",
+      "fr": "Pagaga a lancé un défi à un groupe de résistants, mais dans sa fierté débordante, elle n'a pas précisé que vous ne pouvez pas les aider. Faites-lui comprendre qu'elle a péché d'orgueil, et vainquez-la."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740803,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 25.49,
+      "y": 14.33,
+      "z": 2.99
+    }
   },
   "1734": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Still Only Counts as One",
+      "ja": "華麗なるお披露目会",
+      "de": "Die Schillernde und ihr Schoßhund",
+      "fr": "Clarricie, sans défense ou presque"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Clarricie, the beastmaster centurion, has returned with a new pet of truly mammoth proportions. Topple the prehistoric pachyderm before it tramples the Resistance into dust.",
+      "ja": "魔獣大隊の百人隊長\n\nクラリシーが新たな獣を放った\n\n華麗なるクラリシーとリューバを倒せ",
+      "de": "Centurio des Bestientrupps Clarricie führt eine ihrer Lieblingsbestien aus. Besiege Clarricie die Schillernde und ihre Schoßbestie Lyuba.",
+      "fr": "La centurio Clarricie a sorti le grand jeu avec son nouvel animal de compagnie. Il répond au doux nom de Lyuba, mais ne vous y trompez pas, ce mammouth gigantesque aura tôt fait de vous écraser comme une crêpe. Mettez Clarricie et lui à terre avant que cela n'arrive."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8758578,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 14.59,
+      "y": 10.43,
+      "z": 3.09
+    }
   },
   "1735": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Seeq and You Will Find",
+      "ja": "豚面との再会",
+      "de": "Die Farbe des Blutes",
+      "fr": "Non, c'est non!"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "War Beasts captain Daguza has returned with yet another flock of red chocobos, but it appears he no longer has recruitment on his mind─only a good fight.",
+      "ja": "無骨のダグザが\n\n再び赤チョコボを伴って現れた\n\n敵部隊をせん滅せよ",
+      "de": "Daguza der Rüpelhafte ist mit seinen roten Chocobos zurück. Tränke sie in ihrem eigenen Blut.",
+      "fr": "Daguza le butor est une nouvelle fois de retour, mais apparemment pas pour vous recruter cette fois. Psychologie inversée ou pas, faites-lui comprendre que tout n'est pas forcément bon dans le cochon."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740804,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 20.37,
+      "y": 16.58,
+      "z": 2.85
+    }
   },
   "1736": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mean-spirited",
+      "ja": "歳殺の大捕物",
+      "de": "Haltet den Onmyoji!",
+      "fr": "Le trésor du clan Urabe"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Oboro and Tsubame have tracked down Yamatsumi─a notorious onmyoji who has joined forces with the imperial army. Assist the shinobi with apprehending this dangerous individual, lest they be overwhelmed by his shikigami minions.",
+      "ja": "帝国軍に与する陰陽士を追い詰めた\n\nドマの忍びたちに力を貸して\n\n歳殺のヤマツミと、シキガミ・ヨウキを討て",
+      "de": "Die Shinobi schreiten zur Tat: Der flüchtige Yamatsumi soll endlich hinter Schloss und Riegel gebracht werden. Stelle den Meister des Yin-Yang und seinen Yoki-Shikigami!",
+      "fr": "Les shinobi de Doma ont acculé le reste des prêtres onmyo de la 4e légion, mais Yamatsumi n'a pas dit son dernier mot. Vainquez-le, lui et son shikigami yôki."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8718857,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 25.49,
+      "y": 14.33,
+      "z": 2.99
+    }
   },
   "1737": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Relic Unleashed",
+      "ja": "聖石片の脅威",
+      "de": "Dunkelfürst Famfrit",
+      "fr": "Sans issue"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The imperial army has the power of a relic at its disposal, and has not scrupled to deploy it in battle. Defeat Gilbrisbert the Puppetmaster and the 4th-make Famfrit to bring an end to their inexorable assault.",
+      "ja": "帝国軍が聖石片を実戦投入した\n\n危険人物である人形使いジルブリスベルと\n\nIVレギオン・ファムフリートを倒せ",
+      "de": "Spezialmagier Gilbrisbert treibt wieder sein Unwesen, diesmal mit dem Unwesen Famfrit. Beseitige sowohl Puppenspieler als auch Dunkelfürst!",
+      "fr": "Gilbrisbert a combiné la puissance de son auralithe au désespoir de Yamatsumi pour donner naissance à un puissant Famfrit. Éliminez le marionnettiste et bannissez son invocation."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740676,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 25.49,
+      "y": 14.33,
+      "z": 2.99
+    }
   },
   "1738": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "When Mages Rage",
+      "ja": "術士大隊の反撃",
+      "de": "Was du heute kannst besorgen",
+      "fr": "Des cailloux, des cailloux, des cailloux!"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A detachment of particularly puissant mages from the IVth Legion are wreaking havoc on the front lines with an array of destructive magicks. Take up arms alongside the Resistance and snuff them out before too much damage can be done.",
+      "ja": "術士大隊に所属する部隊が\n\n猛攻撃をしかけ戦線をかき乱している\n\n敵部隊をせん滅せよ",
+      "de": "Magier des Spezialbataillons wüten auf dem Schlachtfeld, als gäbe es kein Morgen. Sorge dafür, dass dieser Tag tatsächlich der letzte für sie ist.",
+      "fr": "La cohorte des incantateurs invoque à tout va et sème le chaos. Concassez leurs familiers rocheux avant que le plateau tout entier ne se retourne contre vous."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8740849,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 20.37,
+      "y": 16.58,
+      "z": 2.85
+    }
   },
   "1739": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hypertuned Havoc",
+      "ja": "黄金の強化兵",
+      "de": "Eine goldene Gelegenheit",
+      "fr": "Une opportunité en or"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion's magitek-powered soldier Dabog has returned to the battlefield, this time in a glorious golden magitek armor as beautiful as the circumstances surrounding its pilot are terrifying. Bring down Delta Gabriel Kai before it can rain destruction from the heavens.",
+      "ja": "機械化歩兵大隊の強化兵ダボグが駆る\n\n黄金の飛行型魔導アーマーが飛来した\n\nデルタ・ガブリエルカイを倒せ",
+      "de": "Magitek-Soldat Dabog ist mit einer goldenen Flugmaschine im Kampfeinsatz. Dies ist die Gelegenheit, Delta Gabriel Kai zum Absturz zu bringen.",
+      "fr": "Dabog pilote des armures magitek toujours plus sophistiquées. Celle-ci est même dorée, et d'après un ancien général garlemaldais: si c'est doré, c'est que sa puissance est redoutable. Détruisez le Gabriel delta renforcé."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740806,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 16.69,
+      "y": 16.89,
+      "z": 3.01
+    }
   },
   "1740": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Attack of the Supersoldiers",
+      "ja": "強化兵部隊の強襲",
+      "de": "Verstärkung für die Mech-Einheit",
+      "fr": "Il est plus d'un"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bajsaljen and his company have found themselves facing off against a squadron of advanced flying armor piloted by enhanced soldiers. If they are to prevail, they will need all the help they can get.",
+      "ja": "機械化歩兵大隊が強化兵部隊を投入した\n\nレジスタンスたちと協力して\n\nデルタ・ガブリエルカイを倒せ",
+      "de": "Die mechanisierte Einheit hat sich eine mächtige Waffe geborgt: Delta Gabriel Kai. Zerlege das Fluggerät in seine Bestandteile.",
+      "fr": "Ce n'est pas un, mais cinq Dabog qui sont montés dans autant d'armes magitek cette fois. Plusieurs groupes de résistants se sont rassemblés pour les affronter. Aidez-les à détruire l'escadron de Gabriel delta renforcés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8740807,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 16.69,
+      "y": 16.89,
+      "z": 3.01
+    }
   },
   "1741": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Student Becalms the Master",
+      "ja": "師弟の絆",
+      "de": "Rettende Hiebe Teil 2",
+      "fr": "L'élève dépasse le maître"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Foiled in her first attempt, Meryall has a second chance to save her enthralled teacher. Weather the scarlet storm, and help capture the uncontrollable Lovro.",
+      "ja": "新生グンヒルドの剣、メリオールが\n\n師ロヴロを救うための戦いに再び挑む\n\n法剣のロヴロを倒し、捕縛に挑め",
+      "de": "Mitglied der neuen Königinnenwache Meryall ist erneut ausgezogen, um ihren besessenen Meister Lovro zu retten. Versetze ihm ein paar heilende Hiebe.",
+      "fr": "Cette fois, Meryall n'a pas l'intention de repartir sans avoir capturé son maître. La nouvelle lame de Gunnhildr a fait des progrès, mais aidez-la tout de même à maîtriser Lovro."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8758160,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 14.59,
+      "y": 10.43,
+      "z": 3.09
+    }
   },
   "1742": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Attack of the Machines",
+      "ja": "シシニアスの量産計画",
+      "de": "Magitek-Maschinen en masse",
+      "fr": "Fabrication en série"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sicinius has developed a new weapon, which he has produced in great numbers and sent to the battlefield. They are unmanned, so be free of guilt as you render every last one to scrap.",
+      "ja": "魔導技師シシニアスが\n\n新型無人兵器を大量に投入した\n\n敵部隊をせん滅せよ",
+      "de": "Magitechnicus Sicinius entlässt Massen an neuartigen unbemannten Kampfmaschinen ins Gelände. Schaufle ihnen ein Massengrab.",
+      "fr": "L'ingénieur magitek Sicinius a accéléré la production de ces armes autonomes. Autrement dit: un déboulonnage en règle s'impose."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8740808,
+    "position": {
+      "map": 665,
+      "zoneid": 3662,
+      "x": 12.13,
+      "y": 13.58,
+      "z": 2.94
+    }
   },
   "1743": {
     "name": {

@@ -1342,11 +1342,15 @@
     ]
   },
   "5044": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Death Unto Dawn",
+    "ja": "黎明の死闘",
+    "de": "Kampf im Morgengrauen",
+    "fr": "Aube meurtrière",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      26854,
+      26800
+    ]
   },
   "5045": {
     "en": null,
@@ -4850,7 +4854,7 @@
     "icon": null
   },
   "64003": {
-    "en": "The Whorleater (Unreal)",
+    "en": "the Whorleater (Unreal)",
     "ja": "幻リヴァイアサン討滅戦",
     "de": "Traumprüfung - Leviathan",
     "fr": "le Briseur de marées (irréel)",

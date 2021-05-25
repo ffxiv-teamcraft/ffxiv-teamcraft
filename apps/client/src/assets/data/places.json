@@ -21966,10 +21966,10 @@
     "fr": "Sommet"
   },
   "3662": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zadnor",
+    "ja": "ザトゥノル高原",
+    "de": "Zadnor-Hochebene",
+    "fr": "Hauts plateaux de Zadnor"
   },
   "3663": {
     "en": "G-Savior Deck",
@@ -21978,118 +21978,118 @@
     "fr": "Ponton du Gardien-G"
   },
   "3664": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Camp Vrdelnis",
+    "ja": "ヴァルデニス前哨地",
+    "de": "Vrdelnis-Gemarkung",
+    "fr": "Avant-poste de Vrdelnis"
   },
   "3665": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Zuprtik Point",
+    "ja": "スピタク陣地",
+    "de": "Außenposten Zuprtik",
+    "fr": "Camp avancé de Zuprtik"
   },
   "3666": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ljeban Point",
+    "ja": "イジェバン陣地",
+    "de": "Außenposten Ljeban",
+    "fr": "Camp avancé de Ljeban"
   },
   "3667": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hrmovir Point",
+    "ja": "アルマヴィル陣地",
+    "de": "Außenposten Hrmovir",
+    "fr": "Camp avancé de Hrmovir"
   },
   "3668": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Southern Plateau",
+    "ja": "高原南方台地",
+    "de": "Südliches Plateau",
+    "fr": "Plateau sud"
   },
   "3669": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Western Plateau",
+    "ja": "高原西方台地",
+    "de": "Westliches Plateau",
+    "fr": "Plateau ouest"
   },
   "3670": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Northern Plateau",
+    "ja": "高原北方台地",
+    "de": "Nördliches Plateau",
+    "fr": "Plateau nord"
   },
   "3671": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castellum Zadnori",
+    "ja": "カステッルム・ザトゥノル",
+    "de": "Castellum Zadnori",
+    "fr": "Castellum Zadnori"
   },
   "3672": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The War Bow",
+    "ja": "旗艦ダル・リアータ：前部",
+    "de": "Kriegsbug",
+    "fr": "Proue martiale"
   },
   "3673": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Founder's Deck",
+    "ja": "旗艦ダル・リアータ：中枢",
+    "de": "Flaggendeck",
+    "fr": "Pont du Fondateur"
   },
   "3674": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Allagan Pits",
+    "ja": "アラグ試掘坑",
+    "de": "Allagische Gruben",
+    "fr": "Excavation allagoise"
   },
   "3675": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Flagship Landing",
+    "ja": "旗艦停泊地",
+    "de": "Kriegsschiff-Ankerplatz",
+    "fr": "Embarcadère du Dalriada"
   },
   "3676": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Loading Dock",
+    "ja": "搬入出区画",
+    "de": "Ladebereich",
+    "fr": "Aire de chargement"
   },
   "3677": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cargo Administration",
+    "ja": "搬入出制御室",
+    "de": "Ladekontrollraum",
+    "fr": "Poste de gestion du chargement"
   },
   "3678": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Magitek Development",
+    "ja": "魔導研究区画",
+    "de": "Bereich Magitek-Forschung",
+    "fr": "Section des recherches magitek"
   },
   "3679": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dynamic Systems",
+    "ja": "動力制御区画",
+    "de": "Bereich Antriebssteuerung",
+    "fr": "Poste de contrôle des moteurs"
   },
   "3680": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Greater Hold",
+    "ja": "大型格納区画",
+    "de": "Großer Stauraum",
+    "fr": "Grande soute"
   },
   "3681": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Fallen Ring",
+    "ja": "崩落した試掘坑",
+    "de": "Eingestürzte Grube",
+    "fr": "Anneau effondré"
   },
   "3682": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Dalriada",
+    "ja": "旗艦ダル・リアータ",
+    "de": "Die Dalriada",
+    "fr": "Le Dalriada"
   },
   "3683": {
     "en": "The Dreamer's Run",
