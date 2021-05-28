@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.9"></a>
+## [8.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.8...v8.2.9) (2021-05-28)
+
+
+### Bug Fixes
+
+* **desktop:** fixed machina not starting if powershell times out for some reason ([b888134](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b888134)), closes [#1925](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1925)
+* **lists:** fixed job priority system not working as intended on some lists ([06af8f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06af8f2))
+* **pricing-mode:** fixed label overlap on some resolutions ([dd511c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd511c6))
+
+
+
 <a name="8.2.8"></a>
 ## [8.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.7...v8.2.8) (2021-05-25)
 
