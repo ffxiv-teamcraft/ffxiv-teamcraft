@@ -260,7 +260,7 @@
     "web-animations-js": "^2.3.2",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.3.2",
-    "ws": "^6.0.0",
+    "ws": "^7.4.5",
     "xhr2": "^0.1.4",
     "zone.js": "~0.10.2"
   },
