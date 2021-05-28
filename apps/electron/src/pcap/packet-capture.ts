@@ -90,7 +90,12 @@ export class PacketCapture {
       this.startMachina();
     } catch (err) {
       log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
-      this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+      if (err.includes('ETIMEDOUT')) {
+        log.log(`Starting machina since it's just a timeout`);
+        this.startMachina();
+      } else {
+        this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+      }
     }
   }
 
