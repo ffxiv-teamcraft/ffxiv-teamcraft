@@ -112,10 +112,10 @@ export function getItemSource<T = any>(item: ListRow, type: DataType, isObject =
 }
 
 export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetStats[]): CraftedBy {
-  if (crafts.length === 1) {
+  if (crafts.length <= 1) {
     return crafts[0];
   }
   return crafts.sort((a, b) => {
-    return sets.findIndex(s => s.jobId === b.job) - sets.findIndex(s => s.jobId === a.job);
+    return sets.find(s => s.jobId === b.job)?.priority - sets.find(s => s.jobId === a.job)?.priority;
   })[0];
 }
