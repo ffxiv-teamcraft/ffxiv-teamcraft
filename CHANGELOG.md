@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.10"></a>
+## [8.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.9...v8.2.10) (2021-05-29)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with npcap detection poping a Javascript error on startup ([975a65c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/975a65c)), closes [#1931](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1931)
+
+
+
 <a name="8.2.9"></a>
 ## [8.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.8...v8.2.9) (2021-05-28)
 
