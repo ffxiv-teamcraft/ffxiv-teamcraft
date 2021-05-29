@@ -33,6 +33,7 @@ import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
 
 @Component({
   selector: 'app-search',
@@ -211,6 +212,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
+              private analytics: GoogleAnalyticsService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
     super();
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
@@ -285,6 +287,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           type: type,
           filters: null
         };
+        this.analytics.event(GaActionEnum.SEARCH, SearchType[type], query);
         if (sortBy) {
           queryParams.sort = sortBy;
           queryParams.order = sortOrder;
