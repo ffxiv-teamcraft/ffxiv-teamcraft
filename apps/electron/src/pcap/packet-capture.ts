@@ -90,7 +90,7 @@ export class PacketCapture {
       this.startMachina();
     } catch (err) {
       log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
-      if (err.includes('ETIMEDOUT')) {
+      if (err.message.includes('ETIMEDOUT')) {
         log.log(`Starting machina since it's just a timeout`);
         this.startMachina();
       } else {
