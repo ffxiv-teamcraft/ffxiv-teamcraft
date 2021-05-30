@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { weatherIndex } from 'apps/client/src/app/core/data/sources/weather-index';
+import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { EorzeanTimeService } from 'apps/client/src/app/core/eorzea/eorzean-time.service';
 import { WeatherService } from 'apps/client/src/app/core/eorzea/weather.service';
 import { BehaviorSubject, combineLatest } from 'rxjs';
@@ -13,7 +13,7 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
   templateUrl: './fishing-spot-weather-transitions.component.html',
   styleUrls: ['./fishing-spot-weather-transitions.component.less', '../../common-db.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FishingSpotUtilsService],
+  providers: [FishingSpotUtilsService]
 })
 export class FishingSpotWeatherTransitionsComponent {
   private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
@@ -31,19 +31,19 @@ export class FishingSpotWeatherTransitionsComponent {
       return rates
         ?.flatMap((to) => {
           return rates?.map((from) => {
+            const nextSpawn =              this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], to.weatherId, time.getTime());
             return {
               chances:
                 100 *
                 this.utils.getWeatherChances(spot.TerritoryType.MapTargetID, to.weatherId) *
                 this.utils.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
-              next: this.etime.toEarthDate(
-                this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], to.weatherId, time.getTime())
-              ),
+              next: this.etime.toEarthDate(nextSpawn),
+              nextET: nextSpawn.getUTCHours(),
               weatherId: to.weatherId,
               previousWeatherId: from.weatherId,
               active:
                 this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === to.weatherId &&
-                this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId,
+                this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId
             };
           });
         })
@@ -59,5 +59,6 @@ export class FishingSpotWeatherTransitionsComponent {
     public readonly translate: TranslateService,
     private readonly etime: EorzeanTimeService,
     private readonly weatherService: WeatherService
-  ) {}
+  ) {
+  }
 }
