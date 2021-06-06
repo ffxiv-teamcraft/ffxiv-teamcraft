@@ -20,7 +20,7 @@ import { NZ_CONFIG, NzConfig } from 'ng-zorro-antd/core/config';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { registerLocaleData } from '@angular/common';
 import { CoreModule } from './core/core.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PipesModule } from './pipes/pipes.module';
 import { authReducer, initialState as authInitialState } from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
@@ -117,6 +117,7 @@ import { APP_INITIALIZERS } from './app-initializers';
 import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
 import { AdsModule } from './modules/ads/ads.module';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -250,7 +251,8 @@ const nzConfig: NzConfig = {
 
     HttpClientModule,
 
-    BrowserAnimationsModule,
+    window.matchMedia('(prefers-reduced-motion: reduce)') ? NoopAnimationsModule : BrowserAnimationsModule,
+    window.matchMedia('(prefers-reduced-motion: reduce)') ? NzNoAnimationModule : [],
 
     BrowserModule,
     FormsModule,
