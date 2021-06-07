@@ -154,8 +154,8 @@ export class CommentLinksPipe implements PipeTransform {
         return null;
     }
     const entries = this.lazyData.merge(...data);
-    let result = this.l12n.getIndexByName(entries, name.trim().replace(/-/, '–'), lang)
-      || this.l12n.getIndexByName(entries, name.trim().replace(/-/, '–'), 'en');
+    let result = this.l12n.getIndexByName(entries, name.trim(), lang)
+      || this.l12n.getIndexByName(entries, name.trim(), 'en');
 
     if (contentType === 'map') {
       result = this.l12n.getMapId(this.l12n.getPlace(result).en);
