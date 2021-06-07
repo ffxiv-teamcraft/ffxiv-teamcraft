@@ -290,7 +290,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       takeUntil(this.onDestroy$)
     ).subscribe(() => {
       this.toggleSpecialist();
-    })
+    });
 
     this.foods = consumablesService.fromLazyData(this.lazyData.data.foods)
       .sort(this.consumablesSortFn);
@@ -878,7 +878,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           cp: stats.cp,
           level: stats.level,
           specialist: stats.specialist
-        }, { emitEvent: false });
+        }, { emitEvent: true });
       })
     );
 
