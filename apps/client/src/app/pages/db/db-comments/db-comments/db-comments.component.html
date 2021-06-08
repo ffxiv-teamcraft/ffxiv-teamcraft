@@ -136,20 +136,26 @@
       </nz-comment>
     </ng-template>
     <div fxLayout="column" fxLayoutGap="5px">
-      <ng-container *ngIf="hasMoreComments$ | async as moreComments">
-        <button (click)="showMoreComments$.next(true)" *ngIf="!(showMoreComments$ | async) && moreComments > 0" nz-button
+      <div *ngIf="hasMoreComments$ | async as moreComments" fxLayout="row" fxLayoutGap="5px">
+        <div>
+          <button (click)="showMoreComments$.next(true)" *ngIf="!(showMoreComments$ | async) && moreComments > 0" nz-button
+                  nzBlock>
+            {{'DB.COMMENTS.Show_more' | translate:{ amount: moreComments } }}
+          </button>
+        </div>
+        <div>
+          <button (click)="showMoreComments$.next(false)" *ngIf="showMoreComments$ | async" nz-button nzBlock>
+            {{'DB.COMMENTS.Show_less' | translate }}
+          </button>
+        </div>
+      </div>
+      <div>
+        <button (click)="addRootComment = true" *ngIf="!addRootComment && !hideRootCommentButton && user.defaultLodestoneId" nz-button
                 nzBlock>
-          {{'DB.COMMENTS.Show_more' | translate:{ amount: moreComments } }}
+          <i nz-icon nzType="plus"></i>
+          {{'DB.COMMENTS.Add_comment' | translate}}
         </button>
-        <button (click)="showMoreComments$.next(false)" *ngIf="showMoreComments$ | async" nz-button nzBlock>
-          {{'DB.COMMENTS.Show_less' | translate }}
-        </button>
-      </ng-container>
-      <button (click)="addRootComment = true" *ngIf="!addRootComment && !hideRootCommentButton && user.defaultLodestoneId" nz-button
-              nzBlock>
-        <i nz-icon nzType="plus"></i>
-        {{'DB.COMMENTS.Add_comment' | translate}}
-      </button>
+      </div>
     </div>
     <ng-container *ngIf="addRootComment">
       <ng-container *ngTemplateOutlet="editor"></ng-container>
