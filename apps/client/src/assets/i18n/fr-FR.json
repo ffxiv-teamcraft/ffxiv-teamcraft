@@ -444,6 +444,7 @@
     "Scrolling_behavior": "Comportement de défilement",
     "Scrolling_behavior_explain": "Configurer comment le défilement dans les panneaux de listes se comporte, par défaut, autorise jusqu'à 12 éléments par panneau avant de faire défiler.",
     "Enable_auto_log_check": "Vérifier automatiquement les objets comme terminés dans le journal quand ils sont collectés/fabriqués",
+    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "Activer la capture des métriques",
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
