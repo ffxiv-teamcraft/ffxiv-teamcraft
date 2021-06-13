@@ -444,6 +444,7 @@
     "Scrolling_behavior": "スクロール設定",
     "Scrolling_behavior_explain": "リストパネルのスクロール方式を設定します。基本設定はパネルごとに最大12個のアイテムを表示します。",
     "Enable_auto_log_check": "採集/制作時に自動で手帳トラッカーを埋める",
+    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "この機能は今後のアップデートで追加されます。ただ、データキャプチャを有効にする状態だったら、その時点からデータが記録されます。",
