@@ -8,6 +8,7 @@ export const environment = {
   patchNotes: patchNotes,
   ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
+  noAnimations: false,
   ...gameEnv,
   firebase: {
     apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
