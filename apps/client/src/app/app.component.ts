@@ -449,6 +449,16 @@ export class AppComponent implements OnInit {
               this.ipc.send('app-ready', true);
               this.cd.detectChanges();
             }, 500);
+            // This is a super ugly fix for the app freezing on startup for some random electron reason
+            // We're just forcing the change detector to update more often even if frozen, so it'll eventually unfreeze
+            // After 10s of forcing, it should be enough to fix the issue.
+            // really looking forward to a real solution tho...
+            const interval = setInterval(() => {
+              this.cd.detectChanges();
+            }, 500);
+            setTimeout(() => {
+              clearInterval(interval);
+            }, 10000);
           });
       }
     }

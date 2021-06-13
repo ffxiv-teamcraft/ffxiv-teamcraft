@@ -3681,7 +3681,7 @@
     "zh": "对自身周围的敌人发动冰属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>冻结　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>12秒"
   },
   "11420": {
-    "zh": "对自身周围的敌人发动雷属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n无法攻击到自身周围8米以内的敌人\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>麻痹　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>9秒\n目标处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冻结<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时威力提高\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>冻结状态时威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>解除敌对目标身上的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冻结<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态"
+    "zh": "对自身周围的敌人发动雷属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n无法攻击到自身周围8米以内的敌人\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>麻痹　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>9秒\n目标处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冻结<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时威力提高，对特定敌人无效\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>冻结状态时威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>解除目标身上的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冻结<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，对特定敌人无效"
   },
   "11421": {
     "zh": "令自身周围的敌人所受到的魔法伤害提高5%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n该魔法有单独计算的复唱时间，不受其他魔法复唱时间的影响\n与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>破防<UIGlow>01</UIGlow><UIForeground>01</UIForeground>共享复唱时间"
@@ -5568,7 +5568,7 @@
     "zh": "一定时间内，以自身加重为代价，令自身所受的伤害减轻90%，同时除特定攻击之外其他所有击退与吸引效果失效　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>6秒"
   },
   "20704": {
-    "zh": "打消目标身上的一种强化状态"
+    "zh": "打消目标身上的一种强化状态\n发动之后会停止自动攻击"
   },
   "20705": {
     "zh": "隐藏自己的身形，大多数敌人都无法发现自己\n不过移动速度会降低25%\n对部分特殊怪物无效\n发动除冲刺以外的技能会取消该状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>自身处于非战斗状态<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
@@ -5804,7 +5804,130 @@
   "22189": {
     "zh": "下次使用提纯技能时，可以提高收藏价值的上升量\n获得力越高，提高的越多"
   },
+  "22344": {
+    "zh": "发现自身周围15米内隐藏的陷阱\n若周围15米内没有陷阱，则可以获知周围36米内是否存在陷阱\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22345": {
+    "zh": "复活目标并恢复其全部体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自己附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“献祭”<UIGlow>01</UIGlow><UIForeground>01</UIForeground>　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒 \n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>非<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“献祭”<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "22346": {
+    "zh": "继承英雄的记忆，令自身回避率提高11%、暴击发动率提高77%、直击发动率提高77%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22347": {
+    "zh": "继承英雄的记忆，令自身防御力提高25%、最大体力提高100%、发动攻击造成的伤害提高50%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22348": {
+    "zh": "继承英雄的记忆，令自身防御力提高60%、最大体力提高81%、发动攻击造成的伤害提高60%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22349": {
+    "zh": "继承英雄的记忆，令自身防御力提高60%、最大体力提高81%、发动攻击造成的伤害提高50%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22350": {
+    "zh": "继承英雄的记忆，令自身防御力提高40%、最大体力提高50%、发动攻击造成的伤害提高72%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22351": {
+    "zh": "继承英雄的记忆，令自身防御力提高25%、最大体力提高100%、发动攻击造成的伤害提高35%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>秘药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仙药<UIGlow>01</UIGlow><UIForeground>01</UIForeground>系药品同时使用\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n据说仙药具有不为人知的隐藏效果\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※仅可在女王古殿内使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "22352": {
+    "zh": "消耗魔力对周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>无属性持续伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>350　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒\n失传耀星的持续伤害效果只能同时附加1个"
+  },
+  "22353": {
+    "zh": "扑向目标并以目标为中心发动物理伤害　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标所受伤害提高10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n止步状态下无法发动"
+  },
+  "22354": {
+    "zh": "消耗魔力扑向目标并以目标为中心发动魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500\n止步状态下无法发动\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>目标的命中率降低10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>战姿<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>战姿效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>以自身体力恢复效果降低60%为代价，令自身发动攻击造成的伤害提高60%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "22355": {
+    "zh": "一定时间内令自己与周围队员受到的伤害减轻30%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "22356": {
+    "zh": "一定时间内，自身与周围队员的暴击发动率提高10%，攻击造成的伤害提高7%，自动攻击间隔、战技与魔法的咏唱及复唱时间缩短1%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒"
+  },
+  "23264": {
+    "zh": "对目标发动连续3次物理攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n该魔法有单独计算的复唱时间"
+  },
+  "23265": {
+    "zh": "对目标及其周围敌人发动雷属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100\n攻击复数敌人时，对目标之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果时间内自身发动的1次魔法为物理攻击时，威力提升100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "23266": {
+    "zh": "向目标所在方向发出无属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>眩晕　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3秒\n攻击复数敌人时，对目标之外的敌人威力降低50%"
+  },
+  "23267": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>彻骨雾寒<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5秒\n持续时间内如果受到敌人的攻击，则效果会变化成<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰雾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>冰雾效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>技能<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>彻骨雾寒<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变化为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰雾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n该魔法有单独计算的复唱时间\n\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰雾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n对目标发动冰属性魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>冻结　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰雾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "23268": {
+    "zh": "对目标发动冰属性魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>冻结　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰雾<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "23269": {
+    "zh": "对周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：治疗<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时效果变为\n恢复自身及周围队员的体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300"
+  },
+  "23270": {
+    "zh": "对目标及其周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100\n目标为不死系怪物时，威力提高\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>对不死系怪物的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500"
+  },
+  "23271": {
+    "zh": "向目标所在方向发出土属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对目标之外的敌人威力降低50%"
+  },
+  "23272": {
+    "zh": "恢复自身及周围队员的体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：治疗<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标体力持续恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间"
+  },
+  "23273": {
+    "zh": "展开玄结界，令自身所受的伤害减轻20%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>持续时间内如果受到超过自身最大体力30%的伤害，则对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄天武水壁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>玄天武水壁效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>技能<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄结界<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变化为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄天武水壁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效果时间内发动技能或进行移动、转身都会使玄结界立即消失\n此外当玄结界消失时，玄天武水壁也会同时消失\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间\n\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄天武水壁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n对自身周围的敌人发动水属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：防护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1000\n攻击复数敌人时，对目标之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>效果发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄天武水壁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "23274": {
+    "zh": "对自身周围的敌人发动水属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：防护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1000\n攻击复数敌人时，对目标之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>效果发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>玄天武水壁<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "23275": {
+    "zh": "对目标发动无属性魔法攻击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>击退10米\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间"
+  },
+  "23276": {
+    "zh": "此技能仅限在非单人任务中，且由自己单独进行攻略时或除自身外其他小队成员均陷入无法战斗状态时才会生效\n\n令自身的移动速度提升30%，自身攻击造成的伤害及治疗魔法的治疗量提高100%，并无视<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>强力守护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>所造成的伤害降低效果\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n此效果在小队成员回归战斗状态后立即解除"
+  },
+  "23277": {
+    "zh": "在自身周围产生超音波，令<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冻结<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>石化<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中的敌人必定陷入无法战斗状态\n对部分敌人无效\n目标等级高于自身等级时无效\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间"
+  },
+  "23278": {
+    "zh": "对目标及其周围的敌人发动冰属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对目标之外的敌人威力降低50%"
+  },
+  "23279": {
+    "zh": "对目标及其周围的敌人发动火属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对目标之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>如果目标处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>头晕<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中，则附加火属性持续伤害　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "23280": {
+    "zh": "一定时间内，将自身所受的伤害减轻20%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：防护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态下的伤害减轻变为40%\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间"
+  },
+  "23281": {
+    "zh": "向目标所在方向发出无属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>无属性持续伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "23282": {
+    "zh": "对自身周围的敌人发动水属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>把敌人吸引到身边"
+  },
+  "23283": {
+    "zh": "向自身前方发出水属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>将范围内的敌人与小队成员击退10米\n目标身中部分弱化效果或处于非战斗状态时无效"
+  },
+  "23284": {
+    "zh": "对目标及其周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n如果小队中存在自己的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>专属陆行鸟<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，则技能威力上升\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专属陆行鸟在小队时威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n攻击复数敌人时，对目标之外的敌人威力降低50%"
+  },
+  "23285": {
+    "zh": "对目标发动连续8次无属性魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：进攻<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100\n该魔法有单独计算的复唱时间，并与部分青魔法共享复唱时间"
+  },
+  "23286": {
+    "zh": "向目标所在方向发出无属性直线范围物理攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>头晕<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5秒\n在短时间内对同一对象重复附加头晕状态会造成持续时间减少，最终导致无效\n目标处于头晕状态时，威力上升\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>目标处于头晕状态时威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n攻击复数敌人时，对目标之外的敌人威力降低50%"
+  },
+  "23287": {
+    "zh": "对自身周围的敌人发动无属性范围物理攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600\n与部分青魔法共享复唱时间"
+  },
+  "23288": {
+    "zh": "持续向自身前方发出扇形范围攻击\n每秒对范围内的敌人造成伤害　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5秒\n持续时间内再次使用时，向自身前方发出无属性扇形范围攻击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n效果时间内发动鬼宿脚以外的技能或进行移动、转身都会使鬼宿脚立即消失"
+  },
+  "23289": {
+    "zh": "持续向自身前方发出扇形范围攻击\n每秒对范围内的敌人造成伤害　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5秒\n持续时间内再次使用时，向自身前方发出无属性扇形范围攻击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n效果时间内发动鬼宿脚以外的技能或进行移动、转身都会使鬼宿脚立即消失"
+  },
+  "23290": {
+    "zh": "对周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对目标附加无属性持续伤害状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>75　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>60秒\n与部分青魔法共享复唱时间"
+  },
   "23345": {
     "zh": "喷出亚永恒吐息\n演出技能，没有任何实际效果"
+  },
+  "23416": {
+    "zh": "对周围的敌人发动无属性范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n自身处于<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太复制：治疗<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时效果变为\n恢复自身及周围队员的体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300"
   }
 }

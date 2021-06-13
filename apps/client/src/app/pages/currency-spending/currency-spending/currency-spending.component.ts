@@ -10,6 +10,9 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { UniversalisService } from '../../../core/api/universalis.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { getItemSource } from '../../../modules/list/model/list-row';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-currency-spending',
@@ -33,7 +36,8 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   public loading = false;
 
   constructor(private xivapi: XivapiService, private dataService: DataService,
-              private authFacade: AuthFacade, private universalis: UniversalisService) {
+              private authFacade: AuthFacade, private universalis: UniversalisService,
+              private lazyData: LazyDataService) {
     super();
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
@@ -116,6 +120,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                       .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
                     return <SpendingEntry>{
                       ...entry,
+                      npcs: getItemSource(this.lazyData.getExtract(entry.item), DataType.TRADE_SOURCES)
+                        .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
+                        .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
                       price: price && price.PricePerUnit
                     };
                   })

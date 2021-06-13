@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
-import { map, startWith } from 'rxjs/operators';
+import { filter, map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
 import { NotificationSettings } from './notification-settings';
@@ -762,6 +762,14 @@ export class SettingsService {
     this.setBoolean('followIngameCharacterSwitches', follow);
   }
 
+  public get autoUpdateStats(): boolean {
+    return this.getBoolean('autoUpdateStats', true);
+  }
+
+  public set autoUpdateStats(update: boolean) {
+    this.setBoolean('autoUpdateStats', update);
+  }
+
   public get showOthercharacterInventoriesInList(): boolean {
     return this.getBoolean('showOthercharacterInventoriesInList', true);
   }
@@ -848,6 +856,22 @@ export class SettingsService {
         sound: 'Notification'
       };
     }
+  }
+
+  public watchSetting<T>(setting: string, defaultValue: T): Observable<T> {
+    return this.settingsChange$.pipe(
+      filter(change => change === setting),
+      map((change) => {
+        // Switch because I expect more specific types handling in the future
+        switch (typeof defaultValue) {
+          case 'string':
+            return this._cache[change];
+          default:
+            return JSON.parse(this._cache[change]);
+        }
+      }),
+      startWith(defaultValue)
+    );
   }
 
   public setNotificationSettings(type: SoundNotificationType, settings: NotificationSettings): void {

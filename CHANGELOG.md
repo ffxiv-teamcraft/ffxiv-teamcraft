@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.11"></a>
+## [8.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.10...v8.2.11) (2021-06-13)
+
+
+### Bug Fixes
+
+* **alarms:** fixed custom alarm creation with spawn at 0:00 ([5f9425b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f9425b))
+* **currency-spending-guide:** better npc indications to trade the items from ([5921d80](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5921d80))
+* **db:** fixed broken links for some instances and specific content ([05d5b79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05d5b79))
+* **desktop:** fixed wrong reports for marketboard history ([233f8eb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/233f8eb))
+* **desktop:** possible fix for freeze on startup that requires window manipulation to unfreeze ([b5956d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5956d9))
+* **simulator:** fixed stats edition sometimes toggling specialist bonus while it shouldn't ([f49c70f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f49c70f))
+* **ux:** proper implementation for prefers-reduced-motion browser setting ([b9a5591](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b9a5591)), closes [#1933](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1933)
+
+
+### Features
+
+* **data:** update for cn patch-5.45 ([#1935](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1935)) ([554a483](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/554a483))
+* **db:** added ET hour next to weather transition spawns ([765a712](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/765a712))
+* **desktop:** stats are now updated as you switch jobs ingame, can be disabled in settings ([21d11fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/21d11fc))
+* **patreon:** new supporter: Syl Varil ([594c91f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/594c91f))
+
+
+
 <a name="8.2.10"></a>
 ## [8.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.9...v8.2.10) (2021-05-29)
 

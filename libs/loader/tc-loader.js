@@ -52,7 +52,8 @@ const patrons = [
   'Mae Sorbet and Iranon Aira of Mateus',
   'Sombra\'s Scavengers on Jenova',
   'Raeanya Ashurke',
-  'G\'lek Tarssza'
+  'G\'lek Tarssza',
+  'Syl Varil'
 ];
 
 const gifs = [

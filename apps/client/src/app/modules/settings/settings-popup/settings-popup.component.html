@@ -555,6 +555,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.autoUpdateStats" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Enable_auto_stats_updating' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
                    [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
               {{'SETTINGS.Enable_metrics_capture' | translate}}

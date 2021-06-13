@@ -419,15 +419,16 @@ export class LocalizedDataService {
     if (flip) {
       keys = keys.reverse();
     }
+    const cleanupRegexp = /[^a-z\s,.]/;
     for (const key of keys) {
       if (!array[key]) {
         continue;
       }
-      if (array[key].name && array[key].name[language].toString().toLowerCase() === name.toLowerCase()) {
+      if (array[key].name && array[key].name[language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
         res = +key;
         break;
       }
-      if (array[key][language] && array[key][language].toString().toLowerCase() === name.toLowerCase()) {
+      if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
         res = +key;
         break;
       }
