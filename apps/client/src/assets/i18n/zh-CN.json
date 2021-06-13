@@ -444,6 +444,7 @@
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "Enable_auto_log_check": "采集（制作）物品后自动标记采集（制作）笔记",
+    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "启用计量捕获",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
