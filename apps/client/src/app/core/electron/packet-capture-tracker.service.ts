@@ -196,5 +196,16 @@ export class PacketCaptureTrackerService {
     ).subscribe(([progression]) => {
       this.freeCompanyWorkshopFacade.updateVesselProgressionStatus(progression);
     });
+
+    /**
+     * Stats tracking
+     */
+    combineLatest([this.settings.watchSetting('autoUpdateStats', this.settings.autoUpdateStats), this.authFacade.classJobSet$])
+      .pipe(
+        filter(([autoUpdate]) => autoUpdate)
+      )
+      .subscribe(([, set]) => {
+        this.authFacade.saveSet(set);
+      });
   }
 }

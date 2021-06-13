@@ -26,7 +26,19 @@ import {
 } from './auth.actions';
 import firebase from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import { catchError, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import {
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  distinctUntilKeyChanged,
+  filter,
+  first,
+  map,
+  shareReplay,
+  startWith,
+  switchMap,
+  tap
+} from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -114,7 +126,6 @@ export class AuthFacade {
       }));
     }),
     map(characters => characters.filter(c => c && c.Character)),
-    distinctUntilChanged((a, b) => a.length === b.length),
     shareReplay(1)
   );
 
@@ -244,7 +255,44 @@ export class AuthFacade {
         });
 
       return sets.sort((a, b) => a.jobId - b.jobId);
+    }),
+    shareReplay(1)
+  );
+
+
+  private soulCrystal$ = this.ipc.itemInfoPackets$.pipe(
+    filter(packet => {
+      return packet.catalogId >= 10337 && packet.catalogId <= 10344 && packet.slot === 13 && packet.containerId === 1000;
+    }),
+    startWith({
+      catalogId: 0
     })
+  );
+  /**
+   * Emits the current stats set mapped using the ingame packets on classjob switch, useful to update stats
+   */
+  classJobSet$ = combineLatest([this.ipc.playerStatsPackets$, this.ipc.updateClassInfoPackets$, this.soulCrystal$]).pipe(
+    debounceTime(500),
+    switchMap(([playerStats, classInfo, soulCrystal]) => {
+      return this.gearSets$.pipe(
+        first(),
+        map(sets => {
+          return sets.find(set => set.jobId === classInfo.classId);
+        }),
+        filter(set => set !== undefined),
+        map(set => {
+          return {
+            ...set,
+            level: classInfo.level,
+            cp: playerStats.cp,
+            control: playerStats.control,
+            craftsmanship: playerStats.craftsmanship,
+            specialist: soulCrystal.catalogId === set.jobId + 10329
+          };
+        })
+      );
+    }),
+    shareReplay(1)
   );
 
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
