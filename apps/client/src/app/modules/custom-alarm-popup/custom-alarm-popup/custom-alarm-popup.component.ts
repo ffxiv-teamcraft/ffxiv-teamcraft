@@ -63,7 +63,7 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public spawnsTwice = false;
 
-  public spawn = 0;
+  public spawn = null;
 
   public duration = 1;
 
@@ -89,7 +89,7 @@ export class CustomAlarmPopupComponent implements OnInit {
     const alarm: Partial<Alarm> = {
       name: data.name
     };
-    if (data.spawn) {
+    if (data.spawn !== null) {
       alarm.spawns = data.spawnsTwice ? [data.spawn, (data.spawn + 12) % 24] : [data.spawn];
       alarm.duration = data.duration;
     }
