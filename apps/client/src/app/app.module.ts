@@ -251,8 +251,8 @@ const nzConfig: NzConfig = {
 
     HttpClientModule,
 
-    window.matchMedia('(prefers-reduced-motion: reduce)') ? NoopAnimationsModule : BrowserAnimationsModule,
-    window.matchMedia('(prefers-reduced-motion: reduce)') ? NzNoAnimationModule : [],
+    environment.noAnimations ? NoopAnimationsModule : BrowserAnimationsModule,
+    environment.noAnimations ? NzNoAnimationModule : [],
 
     BrowserModule,
     FormsModule,
