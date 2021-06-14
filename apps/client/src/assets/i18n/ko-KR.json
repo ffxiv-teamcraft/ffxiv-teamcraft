@@ -2573,7 +2573,7 @@
     "Return_time_column": "귀환 예정 시간",
     "Remaining_time_column": "남은 시간",
     "Rank_column": "랭크",
-    "Build_column": "Build",
+    "Build_column": "부품",
     "Voyage_column": "탐사",
     "Nothing_to_show": "표시 할 내용 없음",
     "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
@@ -2585,7 +2585,7 @@
       "Title": "탐사"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
+      "Title": "부품",
       "Condition": "상태"
     },
     "STATS_DETAILS": {
