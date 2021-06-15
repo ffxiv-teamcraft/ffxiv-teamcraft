@@ -14,6 +14,7 @@ import { LazyDataProviderService } from './lazy-data-provider.service';
 import { lazyFilesList } from './lazy-files-list';
 import { mapIds } from './sources/map-ids';
 import { zhWorlds } from './sources/zh-worlds';
+import { koWorlds } from './sources/ko-worlds';
 
 @Injectable({ providedIn: 'root' })
 export class LocalizedLazyDataService {
@@ -87,7 +88,7 @@ export class LocalizedLazyDataService {
       de: of(world),
       ja: of(world),
       zh: of(zhWorlds[world] ?? world),
-      ko: of(world),
+      ko: of(koWorlds[world] ?? world),
       ru: of(world),
     };
 
