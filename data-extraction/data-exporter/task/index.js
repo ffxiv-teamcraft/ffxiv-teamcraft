@@ -51,6 +51,7 @@ output('item-search-categories', () => db('ItemSearchCategory').simpleObject('Na
 output('item-ui-categories', () => db('ItemUICategory').simpleObject('Name'))
 output('items', () => db('Item').simpleObject('Name'))
 output('item-descriptions', () => db('Item').simpleObject('Description'))
+output('job-abbr', () => db('ClassJob').simpleObject('Name'))
 output('job-categories', () => db('ClassJobCategory').simpleObject('Name'))
 output('job-name', () => db('ClassJob').simpleObject('Name'))
 output('journal-genre', () => db('JournalGenre').simpleObject('Name'))
@@ -146,7 +147,7 @@ output('statuses', () => db('Status').simpleObject('Name'))
 output('trait-descriptions', () => db('TraitTransient').simpleObject('Description'))
 output('traits', () => db('Trait').simpleObject('Name'))
 output('tribes', () => db('Tribe').simpleObject('Masculine'))
-output('triple-triad-rule-descriptions', () => db('TripleTriadRule').simpleObject('#2'))
+output('triple-triad-rule-descriptions', () => db('TripleTriadRule').simpleObject('Description'))
 output('triple-triad-rules', () => db('TripleTriadRule').simpleObject('Name'))
 output('ventures', () => db('RetainerTask').toObject(row => {
   if (!row.Task || +row.Task == 0) {
@@ -161,3 +162,5 @@ output('ventures', () => db('RetainerTask').toObject(row => {
   }
 }))
 output('weathers', () => db('Weather').simpleObject('Name'))
+output('airship-voyages', () => db('AirshipExplorationPoint').simpleObject('Name{Short}'))
+output('submarine-voyages', () => db('SubmarineExploration').simpleObject('Destination'))
