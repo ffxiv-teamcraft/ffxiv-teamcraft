@@ -303,11 +303,11 @@ export class LocalizedDataService {
   }
 
   public getAirshipSectorName(id: number): I18nName {
-    return this.getRow(this.lazyData.data.airshipVoyages, id);
+    return this.getRowWithExtendedLanguage('airshipVoyages', id);
   }
 
   public getSubmarineSectorName(id: number): I18nName {
-    return this.getRow(this.lazyData.data.submarineVoyages, id);
+    return this.getRowWithExtendedLanguage('submarineVoyages', id);
   }
 
   public getExpansions(): { exVersion: number; majorVersion: number; name: I18nName }[] {
