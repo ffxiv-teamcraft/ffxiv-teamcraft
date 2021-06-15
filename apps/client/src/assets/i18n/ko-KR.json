@@ -444,7 +444,7 @@
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
-    "Enable_auto_stats_updating": "잡 변경시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
+    "Enable_auto_stats_updating": "잡 변경 시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
@@ -2367,7 +2367,7 @@
       "Warning": "경고",
       "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
       "Copy_link": "불러오기 코드 복사",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Copy_link_tooltip": "가이드 작성 시 유용할, 동일한 의뢰를 만들 수 있는 URL을 제공합니다.",
       "Link_copied": "유저 의뢰 불러오기 코드가 복사되었습니다"
     },
     "BOARD": {
