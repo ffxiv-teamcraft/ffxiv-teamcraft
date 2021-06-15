@@ -13,6 +13,7 @@ import { mapIds } from './sources/map-ids';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
 import { zhWorlds } from './sources/zh-worlds';
+import { koWorlds } from './sources/ko-worlds';
 
 @Injectable({ providedIn: 'root' })
 export class LocalizedDataService {
@@ -26,12 +27,10 @@ export class LocalizedDataService {
       fr: world,
       en: world,
       de: world,
-      ja: world
+      ja: world,
+      ko: koWorlds[world] ?? world,
+      zh: zhWorlds[world] ?? world
     };
-
-    if (zhWorlds[world]) {
-      i18nName.zh = zhWorlds[world];
-    }
 
     return i18nName;
   }
