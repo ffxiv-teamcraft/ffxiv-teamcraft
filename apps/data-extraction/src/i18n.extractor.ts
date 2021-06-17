@@ -1,5 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import get = Reflect.get;
+import { get } from 'lodash';
 
 export class I18nExtractor extends AbstractExtractor {
 

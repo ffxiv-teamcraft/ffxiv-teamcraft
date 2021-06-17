@@ -444,6 +444,7 @@
     "Scrolling_behavior": "Comportamiento de desplazamiento",
     "Scrolling_behavior_explain": "Configurar cómo se comporta el desplazamiento en los paneles de la lista, por defecto es permitir hasta 12 elementos por panel antes de desplazarse.",
     "Enable_auto_log_check": "Marcar automáticamente los artículos como completados en el registro cuando sean recolectados/elaborados",
+    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "Activar captura de métricas",
     "Enable_metrics_capture_explain": "(permite capturar analíticas de su gil y los ingresos de artículos, nunca son subidos al servidor, esto es sólo para usted)",
     "Metrics_capture_tooltip": "Esta característica se añadirá en una actualización futura, pero habilitar la captura de datos ahora significa que una vez que esté aquí, tendrá datos comenzando ahora en lugar de cuando se agregue a la aplicación.",

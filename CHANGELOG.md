@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.12"></a>
+## [8.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.11...v8.2.12) (2021-06-17)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed faux leves and Bozjan clusters not working as intended ([0e6a54a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e6a54a))
+* **db:** fixed db pages for set items not loading properly ([cdeaaed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdeaaed))
+* **leveling-equipment:** fixed wrong suggestion for higher level crafters/gatherers ([9685f05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9685f05))
+* **simulator:** fixed stats not being persisted properly to the form ([eb98afe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb98afe))
+* **voyage-tracker:** fixed missing translations ([f6d68f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f6d68f7))
+
+
+### Features
+
+* **db:** support for korean v5.41 update ([4cbdc7f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cbdc7f))
+
+
+
 <a name="8.2.11"></a>
 ## [8.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.10...v8.2.11) (2021-06-13)
 

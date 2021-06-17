@@ -150,6 +150,7 @@ export interface LazyData {
   koTripleTriadRules: any;
   koVentures: any;
   koWeathers: any;
+  koWorld: any;
   zhAchievementDescriptions: any;
   zhAchievements: any;
   zhActionCategories: any;

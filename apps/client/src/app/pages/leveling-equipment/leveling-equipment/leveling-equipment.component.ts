@@ -213,7 +213,8 @@ export class LevelingEquipmentComponent {
   }
 
   private getMainStatValue(itemId: number, mainStat: number, equipSlotCategories: number[], job: number): number {
-    if ([9, 10, 11, 12].some(category => equipSlotCategories.includes(category))) {
+    const isRightHandSide = [9, 10, 11, 12].some(category => equipSlotCategories.includes(category));
+    if (isRightHandSide) {
       if ([16, 17, 18].includes(job)) {
         mainStat = BaseParam.GP;
       }
@@ -221,13 +222,19 @@ export class LevelingEquipmentComponent {
         mainStat = BaseParam.CP;
       }
     }
+
     const mainStatEntry = this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat);
+
+    let bonus = 0;
+    if (!isRightHandSide && [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].includes(job)) {
+      bonus = this.getSecondaryStatValue(itemId, mainStat, equipSlotCategories, job);
+    }
     if (mainStatEntry) {
-      return mainStatEntry?.NQ || 0;
+      return bonus + mainStatEntry?.NQ || 0;
     } else if ([16, 17, 18].includes(job)) {
-      return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.PERCEPTION)?.NQ || 0;
+      return bonus + this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.PERCEPTION)?.NQ || 0;
     } else if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
-      return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0;
+      return bonus + this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0;
     }
     return 0;
   }
@@ -255,6 +262,14 @@ export class LevelingEquipmentComponent {
           break;
         case BaseParam.MIND:
           secondaryStat = BaseParam.PIETY;
+          break;
+        case BaseParam.CP:
+        case BaseParam.CRAFTSMANSHIP:
+          secondaryStat = BaseParam.CONTROL;
+          break;
+        case BaseParam.GP:
+        case BaseParam.GATHERING:
+          secondaryStat = BaseParam.PERCEPTION;
           break;
       }
     }
