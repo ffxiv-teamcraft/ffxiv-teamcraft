@@ -76,7 +76,13 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         this.loading = true;
         return this.dataService.getItem(currency).pipe(
           map((item: ItemData) => {
-            return [].concat.apply([], item.item.tradeCurrency.filter(entry => entry.npcs.length > 0).map(entry => {
+            let entries = item.item.tradeCurrency.filter(entry => entry.npcs.length > 0);
+
+            if (entries.length === 0 && item.item.tradeCurrency.length > 0) {
+              entries = item.item.tradeCurrency;
+            }
+
+            return [].concat.apply([], entries.map(entry => {
               return entry.listings.map(listing => {
                 const currencyEntry = listing.currency.find(c => +c.id === currency);
                 return {
