@@ -836,7 +836,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.customJob$
     ).pipe(tap(job => this.job = job));
 
-    const statsFromRecipe$: Observable<CrafterStats> = combineLatest([this.recipe$, this.job$, this.authFacade.gearSets$]).pipe(
+    const statsFromRecipe$: Observable<CrafterStats> = combineLatest([this.recipe$, this.job$, this.authFacade.gearSets$.pipe(first())]).pipe(
       map(([, job, sets]) => {
         const set = sets.find(s => s.jobId === job);
         const levels = <CrafterLevels>sets.map(s => s.level);
