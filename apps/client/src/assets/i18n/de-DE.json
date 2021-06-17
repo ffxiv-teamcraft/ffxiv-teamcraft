@@ -444,7 +444,7 @@
     "Scrolling_behavior": "Scrollverhalten",
     "Scrolling_behavior_explain": "Legt fest, wann in Listen-Elementen eine Scrollbar erscheint. \"Standard\" bedeutet, dass nach 12 Gegenständen eine Scrollbar erscheint.",
     "Enable_auto_log_check": "Gegenstände automatisch im Notizbuch als erledigt markieren, sobald sie gesammelt/hergestellt wurden",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "Status/Stufen beim Jobwechsel automatisch aktualisieren",
     "Enable_metrics_capture": "Metrikerfassung aktivieren",
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
