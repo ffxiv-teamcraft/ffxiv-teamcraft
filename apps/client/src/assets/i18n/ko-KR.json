@@ -444,6 +444,7 @@
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
+    "Enable_auto_stats_updating": "잡 변경 시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
@@ -1015,8 +1016,8 @@
       "Pliant": "고효율",
       "Sturdy": "견고",
       "Centered": "안정",
-      "Malleable": "Malleable",
-      "Primed": "Primed",
+      "Malleable": "빠른 진행",
+      "Primed": "장기 지속",
       "Normal": "보통"
     },
     "SOLVER": {
@@ -1318,8 +1319,8 @@
     "Import_from_carbuncleplushy": "CarbunclePlushy에서 불러오기",
     "Import_from_carbuncleplushy_failed": "가져오기 실패, 잘못된 JSON이 있었습니다. 전체 설정 내보내기를 사용해야만 합니다",
     "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
-    "Export_FSH_completion": "Export completion as JSON",
-    "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
+    "Export_FSH_completion": "JSON 형식으로 완료 목록 내보내기",
+    "Export_FSH_completion_copied": "JSON 형식의 완료 목록이 클립보드에 복사되었습니다",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -1771,7 +1772,7 @@
     "Shown_only_collectables": "소장품만 표시하기",
     "Recipe_level": "제작법 레벨",
     "Shown_only_not_completed": "수첩에서 완료되지 않은 항목만 표시",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "제작 목록에 추가할 때 소지품 내역에도 추가하기"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -2366,7 +2367,7 @@
       "Warning": "경고",
       "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
       "Copy_link": "불러오기 코드 복사",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Copy_link_tooltip": "가이드 작성 시 유용할, 동일한 의뢰를 만들 수 있는 URL을 제공합니다.",
       "Link_copied": "유저 의뢰 불러오기 코드가 복사되었습니다"
     },
     "BOARD": {
@@ -2572,7 +2573,7 @@
     "Return_time_column": "귀환 예정 시간",
     "Remaining_time_column": "남은 시간",
     "Rank_column": "랭크",
-    "Build_column": "Build",
+    "Build_column": "부품",
     "Voyage_column": "탐사",
     "Nothing_to_show": "표시 할 내용 없음",
     "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
@@ -2584,7 +2585,7 @@
       "Title": "탐사"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
+      "Title": "부품",
       "Condition": "상태"
     },
     "STATS_DETAILS": {
