@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "仅限收藏品",
     "Recipe_level": "配方等级",
     "Shown_only_not_completed": "只显示笔记中未完成的",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "不需要保留 HQ 的物品（因为可以使用工匠的神速技巧）",
       "Message": "该物品仅在可以使用工匠的神速技巧的配方中有用，所以不需要保留 HQ"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {
