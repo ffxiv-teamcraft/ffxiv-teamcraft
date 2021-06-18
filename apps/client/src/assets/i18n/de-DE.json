@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
     "Shown_only_not_completed": "Nur im Log nicht erledigt",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
       "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {
