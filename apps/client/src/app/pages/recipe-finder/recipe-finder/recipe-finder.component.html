@@ -204,7 +204,6 @@
             <ng-template #nzTitle>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <div>{{ entry.itemId | itemName | i18n }} x{{entry.possibleAmount}}</div>
-                <app-db-button *ngIf="true | ifMobile:false" [id]="entry.itemId" type="item"></app-db-button>
                 <app-marketboard-icon *ngIf="true | ifMobile:false" [itemId]="entry.itemId"></app-marketboard-icon>
                 <img *ngFor="let leve of entry.leves"
                      src="./assets/icons/leve.png" alt="leves"
