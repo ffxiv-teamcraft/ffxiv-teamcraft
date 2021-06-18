@@ -29,6 +29,9 @@ import { InventoryModule } from '../../modules/inventory/inventory.module';
 import { UselessHq } from './optimizations/useless-hq';
 import { AuthFacade } from '../../+state/auth.facade';
 import { InventoryService } from '../../modules/inventory/inventory.service';
+import { OnlyForOneMaterial } from './optimizations/only-for-one-material';
+import { I18nToolsService } from '../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../core/data/localized-data.service';
 
 const optimisations: Provider[] = [
   {
@@ -76,6 +79,12 @@ const optimisations: Provider[] = [
     useClass: UselessHq,
     multi: true,
     deps: [AuthFacade, LazyDataService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: OnlyForOneMaterial,
+    multi: true,
+    deps: [LazyDataService, I18nToolsService, LocalizedDataService]
   }
 ];
 
