@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "収集品のみ表示",
     "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "手帳で完了してない項目だけ表示",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "このアイテムは「匠の早業」を使用できますのでHQ素材を要求しません",
       "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {
