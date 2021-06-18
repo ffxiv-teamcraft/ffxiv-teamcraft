@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "Только collectables",
     "Recipe_level": "Уровень рецепта",
     "Shown_only_not_completed": "Только не завершенные в журнале",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "Items you don't need HQ because you can use Trained Eye",
       "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {
