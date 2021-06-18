@@ -92,6 +92,10 @@
              (ngModelChange)="onlyCollectables$.next($event)">{{'RECIPE_FINDER.Shown_only_collectables' | translate}}</label>
     </div>
     <div>
+      <label nz-checkbox [ngModel]="onlyLeveItems$ | async"
+             (ngModelChange)="onlyLeveItems$.next($event)">{{'RECIPE_FINDER.Show_only_leve_items' | translate}}</label>
+    </div>
+    <div>
       <label nz-checkbox [(ngModel)]="settings.addResultToPoolInRecipeFinder">{{'RECIPE_FINDER.Add_results_to_pool' | translate}}</label>
     </div>
   </div>

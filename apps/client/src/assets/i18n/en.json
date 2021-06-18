@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "Only collectables",
     "Recipe_level": "Recipe level",
     "Shown_only_not_completed": "Only not done in log",
-    "Add_results_to_pool":  "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",

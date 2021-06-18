@@ -97,6 +97,14 @@ export class SettingsService {
     this.setSetting('recipe-finder:only-collectables', show.toString());
   }
 
+  public get showOnlyLeveItemsInRecipeFinder(): boolean {
+    return this.getBoolean('recipe-finder:only-leves', false);
+  }
+
+  public set showOnlyLeveItemsInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:only-leves', show.toString());
+  }
+
   public get configurationPanelExpanded(): boolean {
     return this.getBoolean('simulation:configuration:expanded', true);
   }
