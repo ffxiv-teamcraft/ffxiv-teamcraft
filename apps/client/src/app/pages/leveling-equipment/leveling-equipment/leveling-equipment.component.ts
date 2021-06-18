@@ -3,7 +3,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable, Subject } from 'rxjs';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'apps/client/src/environments/environment';
-import { debounceTime, first, map, startWith, switchMap } from 'rxjs/operators';
+import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
@@ -13,11 +13,12 @@ import { BaseParam } from '../../../modules/gearsets/base-param';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-leveling-equipment',
@@ -25,7 +26,7 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
   styleUrls: ['./leveling-equipment.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LevelingEquipmentComponent {
+export class LevelingEquipmentComponent extends TeamcraftComponent {
 
   jobList$: Observable<any[]>;
 
@@ -63,7 +64,9 @@ export class LevelingEquipmentComponent {
               private fb: FormBuilder, private dataService: DataService,
               private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
               private listPicker: ListPickerService, private router: Router,
-              private platformService: PlatformService, private settings: SettingsService) {
+              private platformService: PlatformService, private settings: SettingsService,
+              private route: ActivatedRoute) {
+    super();
     this.jobList$ = this.lazyData.data$.pipe(
       map(data => {
         return Object.keys(data.jobName).map(key => +key);
@@ -85,6 +88,19 @@ export class LevelingEquipmentComponent {
       }
     });
 
+    this.route.queryParamMap.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(params => {
+      this.filtersForm.patchValue({
+        job: +params.get('job'),
+        level: +params.get('level'),
+        includeCrafting: params.get('includeCrafting') === 'true',
+        includeTrades: params.get('includeTrades') === 'true',
+        includePurchases: params.get('includePurchases') === 'true',
+        onlyInventoryContent: params.get('onlyInventoryContent') === 'true'
+      });
+    });
+
     this.results$ = this.search$.pipe(
       switchMap(() => {
         return this.inventoryFacade.inventory$.pipe(
@@ -99,6 +115,16 @@ export class LevelingEquipmentComponent {
         this.settings.setBoolean('leveling-equipment:includeTrades', filters.includeTrades);
         this.settings.setBoolean('leveling-equipment:includePurchases', filters.includePurchases);
         this.settings.setBoolean('leveling-equipment:onlyInventoryContent', filters.onlyInventoryContent);
+        this.router.navigate([], {
+          queryParams: {
+            job: filters.job.toString(),
+            level: filters.level.toString(),
+            includeCrafting: filters.includeCrafting.toString(),
+            includeTrades: filters.includeTrades.toString(),
+            includePurchases: filters.includePurchases.toString(),
+            onlyInventoryContent: filters.onlyInventoryContent.toString()
+          }
+        });
         const mainStat = this.statsService.getMainStat(filters.job);
         // Preparing base informations
         const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel);
