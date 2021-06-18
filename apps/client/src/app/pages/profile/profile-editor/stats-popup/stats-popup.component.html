@@ -18,9 +18,15 @@
   <label [(ngModel)]="set.specialist" *ngIf="jobId <= 15" (ngModelChange)="applySpecChange(set, $event)"
          class="spec-checkbox" nz-checkbox>{{'SIMULATOR.CONFIGURATION.Specialist' | translate}}</label>
   <div fxLayout="row" fxLayoutGap="5px">
-    <button (click)="save(set)" nz-button nzType="primary">{{'Save' | translate}}</button>
-    <button (click)="saveForAll(set)" *ngIf="jobId <= 15" nz-button
-            nzType="primary">{{'PROFILE.Save_for_all' | translate}}</button>
-    <button (click)="cancel()" nz-button nzType="danger">{{'Cancel' | translate}}</button>
+    <div>
+      <button (click)="save(set)" nz-button nzType="primary">{{'Save' | translate}}</button>
+    </div>
+    <div>
+      <button (click)="saveForAll(set)" *ngIf="jobId <= 15" nz-button
+              nzType="primary">{{'PROFILE.Save_for_all' | translate}}</button>
+    </div>
+    <div>
+      <button (click)="cancel()" nz-button nzType="danger">{{'Cancel' | translate}}</button>
+    </div>
   </div>
 </div>
