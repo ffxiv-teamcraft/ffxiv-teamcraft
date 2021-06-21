@@ -74,8 +74,6 @@ export class ListRow extends DataModel {
   finalItem?: boolean;
 }
 
-const cache = {};
-
 export function getItemSource<T = any>(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.VENDORS, isObject?: boolean): Vendor[]
@@ -92,23 +90,16 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isOb
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
-  const key = `${item.id}:${type}`;
-  if (item.sources === undefined) {
-    return (isObject ? {} : []) as any;
-  }
-  if (!cache[key]) {
     const source = item.sources.find(s => s.type === type);
     if (source === undefined) {
       if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
-        cache[key] = item.alarms;
+        return item.alarms as any;
       } else {
-        cache[key] = isObject ? {} : [];
+        return isObject ? {} : [] as any;
       }
     } else {
-      cache[key] = source.data;
+      return source.data;
     }
-  }
-  return cache[key];
 }
 
 export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetStats[]): CraftedBy {
