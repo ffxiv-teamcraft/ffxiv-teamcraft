@@ -90,16 +90,19 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isOb
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
-    const source = item.sources.find(s => s.type === type);
-    if (source === undefined) {
-      if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
-        return item.alarms as any;
-      } else {
-        return isObject ? {} : [] as any;
-      }
+  if (item.sources === undefined) {
+    return (isObject ? {} : []) as any;
+  }
+  const source = item.sources.find(s => s.type === type);
+  if (source === undefined) {
+    if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
+      return item.alarms as any;
     } else {
-      return source.data;
+      return isObject ? {} : [] as any;
     }
+  } else {
+    return source.data;
+  }
 }
 
 export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetStats[]): CraftedBy {
