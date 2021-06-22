@@ -83,7 +83,9 @@ export class CommunityListsComponent implements OnDestroy {
       switchMap((filters) => {
         return this.listService.getCommunityLists(filters.tags, filters.name).pipe(
           map(lists => {
-            return lists.filter(list => !list.tags.some(tags => filters.exclude.includes(tags)));
+            return lists
+              .filter(list => !list.tags.some(tags => filters.exclude.includes(tags)))
+              .sort((a, b) => b.forks - a.forks);
           }),
           tap(lists => {
             this.totalLength = lists.length;

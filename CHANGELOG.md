@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.13"></a>
+## [8.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.12...v8.2.13) (2021-06-22)
+
+
+### Bug Fixes
+
+* **profile:** better tracking system for stats updates ([38508e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/38508e2))
+* **recipe-finder:** removed db button to avoid missclick ([6265bd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6265bd5))
+
+
+### Features
+
+* **community-lists:** lists are now sorted by # of copies made ([3ec62d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ec62d8))
+* **community-rotations:** automated sorting to find best rotation ([2693d1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2693d1e))
+* **crafting-replays:** you can now generate a crafting macro from a replay ([d65ffeb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d65ffeb))
+* **inventory-optimizer:** new optimizer for items only used for one material recipe ([fbb30e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbb30e8))
+* **leveling-equipment:** search params are now remembered when going back in history ([5ad20f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ad20f1))
+* **recipe-finder:** you can now filter for items that are used in leves ([c24cc72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c24cc72))
+
+
+### Performance Improvements
+
+* **lists:** lowering RAM usage over time by removing some runtime cache ([c5a3851](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5a3851))
+
+
+
 <a name="8.2.12"></a>
 ## [8.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.11...v8.2.12) (2021-06-17)
 

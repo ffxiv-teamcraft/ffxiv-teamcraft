@@ -4,9 +4,11 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
-import { ActionResult, EffectiveBuff, SimulationService } from '../../../core/simulation/simulation.service';
+import { ActionResult, EffectiveBuff, Simulation, SimulationService } from '../../../core/simulation/simulation.service';
 import { SettingsService } from '../../settings/settings.service';
-import { NzModalRef } from 'ng-zorro-antd/modal';
+import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-replay-simulation',
@@ -73,13 +75,6 @@ export class ReplaySimulationComponent {
   public report$ = this.simulation$.pipe(
     map(simulation => simulation.getReliabilityReport())
   );
-
-  public item$ = this.replay$.pipe(
-    switchMap(replay => {
-      return this.dataService.getItem(replay.itemId);
-    })
-  );
-
   public qualityPer100$ = this.result$.pipe(
     map(result => {
       const action = new this.simulator.BasicTouch();
@@ -100,7 +95,24 @@ export class ReplaySimulationComponent {
 
   constructor(private lazyData: LazyDataService, private dataService: DataService,
               private simulationService: SimulationService, private settings: SettingsService,
-              @Optional() public ref: NzModalRef) {
+              @Optional() public ref: NzModalRef, private dialog: NzModalService,
+              private translate: TranslateService) {
+  }
+
+  openMacroPopup(simulation: Simulation): void {
+    this.dialog.create({
+      nzContent: MacroPopupComponent,
+      nzComponentParams: {
+        rotation: simulation.steps.map(step => step.action),
+        job: simulation.crafterStats.jobId,
+        simulation: simulation.clone(),
+        food: null,
+        medicine: null,
+        freeCompanyActions: null
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+      nzFooter: null
+    });
   }
 
   getBuffIcon(effBuff: EffectiveBuff): string {

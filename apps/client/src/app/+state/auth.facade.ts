@@ -59,6 +59,7 @@ import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { LogTrackingService } from '../core/database/log-tracking.service';
 import { LodestoneService } from '../core/api/lodestone.service';
+import { isEqual } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -159,7 +160,10 @@ export class AuthFacade {
 
   mainCharacterEntry$ = combineLatest([
     this.user$.pipe(
-      distinctUntilKeyChanged('defaultLodestoneId')
+      distinctUntilChanged((a, b) => {
+        return a.defaultLodestoneId === b.defaultLodestoneId
+          && isEqual(a.lodestoneIds, b.lodestoneIds);
+      })
     ),
     this.characters$
   ]).pipe(
@@ -223,38 +227,22 @@ export class AuthFacade {
       if (data === null) {
         data = { stats: [] };
       }
-      const sets = data.stats || [];
-      [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-        .filter(jobId => sets.find(set => set.jobId === jobId) === undefined)
-        .forEach(jobId => {
-          let classJob;
-          if (data.character !== undefined) {
-            classJob = data.character.ClassJobs && data.character.ClassJobs[`${jobId}_${jobId}`];
-          }
-          if (classJob === undefined) {
-            sets.push({
-              jobId: jobId,
-              control: 0,
-              craftsmanship: 0,
-              cp: 180,
-              level: 0,
-              specialist: false,
-              priority: jobId - 7
-            });
-          } else {
-            sets.push({
-              jobId: jobId,
-              control: 0,
-              craftsmanship: 0,
-              cp: 180,
-              level: classJob.Level,
-              specialist: false,
-              priority: jobId - 7
-            });
-          }
-        });
-
-      return sets.sort((a, b) => a.jobId - b.jobId);
+      return [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(jobId => {
+        const set = (data.stats || []).find(stat => stat.jobId === jobId);
+        const jobEntry = (data.character.ClassJobs || [] as any).find(job => job.JobID === jobId);
+        const level = jobEntry ? jobEntry.Level : 0;
+        if (set === undefined) {
+          return {
+            jobId: jobId,
+            level: level,
+            cp: 0,
+            control: 0,
+            craftsmanship: 0,
+            specialist: false
+          };
+        }
+        return set;
+      });
     }),
     shareReplay(1)
   );

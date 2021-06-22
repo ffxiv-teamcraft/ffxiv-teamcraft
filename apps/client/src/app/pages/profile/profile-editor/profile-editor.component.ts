@@ -42,12 +42,7 @@ export class ProfileEditorComponent {
     shareReplay(1)
   );
 
-  gearSets$ = this.statsReloader$.pipe(
-    switchMapTo(this.authFacade.gearSets$),
-    tap(() => {
-      this.cdr.detectChanges();
-    })
-  );
+  gearSets$ = this.authFacade.gearSets$;
 
   now = Math.floor(Date.now() / 1000);
 

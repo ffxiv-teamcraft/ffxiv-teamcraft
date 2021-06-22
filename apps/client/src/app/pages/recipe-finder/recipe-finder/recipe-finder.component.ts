@@ -42,6 +42,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
   public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
+  public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
 
   public clvlMin$ = new BehaviorSubject(0);
   public clvlMax$ = new BehaviorSubject(environment.maxLevel);
@@ -113,15 +114,17 @@ export class RecipeFinderComponent implements OnDestroy {
           this.onlyCraftable$,
           this.onlyCollectables$,
           this.onlyNotCompleted$,
+          this.onlyLeveItems$,
           this.clvlMin$,
           this.clvlMax$
         ]);
       }),
       withLatestFrom(this.authFacade.logTracking$.pipe(startWith(<LogTracking>null))),
-      map(([[sets, onlyCraftable, onlyCollectables, onlyNotCompleted, clvlMin, clvlMax], logTracking]) => {
+      map(([[sets, onlyCraftable, onlyCollectables, onlyNotCompleted, onlyLeveItems, clvlMin, clvlMax], logTracking]: any[]) => {
         this.settings.showOnlyCraftableInRecipeFinder = onlyCraftable;
         this.settings.showOnlyCollectablesInRecipeFinder = onlyCollectables;
         this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
+        this.settings.showOnlyLeveItemsInRecipeFinder = onlyLeveItems;
         const possibleEntries = [];
         for (const item of this.pool) {
           possibleEntries.push(...(this.lazyData.data.recipesIngredientLookup.searchIndex[item.id] || [])
@@ -155,40 +158,47 @@ export class RecipeFinderComponent implements OnDestroy {
           entry.possibleAmount -= entry.yields;
           return entry;
         });
-        return finalEntries
-          .filter(entry => {
-            let match = !onlyCraftable || !entry.missingLevel;
-            if (onlyCollectables) {
-              match = match && this.lazyData.data.collectables[entry.itemId]?.collectable === 1;
-            }
-            return match && (entry.lvl >= clvlMin && entry.lvl <= clvlMax);
-          })
-          .sort((a, b) => {
-            const missingDiff = a.missing.length - b.missing.length;
-            if (missingDiff !== 0) {
-              return missingDiff;
-            }
-            if (a.missingLevel && !b.missingLevel) {
-              return 1;
-            }
-            if (b.missingLevel && !a.missingLevel) {
-              return -1;
-            }
-            const jobDiff = a.job - b.job;
-            if (jobDiff !== 0) {
-              return jobDiff;
-            }
-            return a.lvl - b.lvl;
-          });
+        return [
+          finalEntries
+            .filter(entry => {
+              let match = !onlyCraftable || !entry.missingLevel;
+              if (onlyCollectables) {
+                match = match && this.lazyData.data.collectables[entry.itemId]?.collectable === 1;
+              }
+              return match && (entry.lvl >= clvlMin && entry.lvl <= clvlMax);
+            })
+            .sort((a, b) => {
+              const missingDiff = a.missing.length - b.missing.length;
+              if (missingDiff !== 0) {
+                return missingDiff;
+              }
+              if (a.missingLevel && !b.missingLevel) {
+                return 1;
+              }
+              if (b.missingLevel && !a.missingLevel) {
+                return -1;
+              }
+              const jobDiff = a.job - b.job;
+              if (jobDiff !== 0) {
+                return jobDiff;
+              }
+              return a.lvl - b.lvl;
+            }),
+          onlyLeveItems
+        ];
       }),
-      tap(entries => {
+      tap(([entries]) => {
         this.totalItems = entries.length;
       }),
-      map(entries => {
-        return entries.map(entry => {
+      map(([entries, onlyLeveItems]) => {
+        const withLeves = entries.map(entry => {
           entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
           return entry;
         });
+        if (onlyLeveItems) {
+          return withLeves.filter(entry => entry.leves?.length > 0);
+        }
+        return withLeves;
       }),
       shareReplay(1)
     );
