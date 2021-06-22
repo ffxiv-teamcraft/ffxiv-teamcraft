@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "소장품만 표시하기",
     "Recipe_level": "제작법 레벨",
     "Shown_only_not_completed": "수첩에서 완료되지 않은 항목만 표시",
-    "Add_results_to_pool": "제작 목록에 추가할 때 소지품 내역에도 추가하기"
+    "Add_results_to_pool": "제작 목록에 추가할 때 소지품 내역에도 추가하기",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "해당 아이템은 '장인의 날랜손'을 사용할 수 있기 때문에 HQ재료가 필요하지 않습니다",
       "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {

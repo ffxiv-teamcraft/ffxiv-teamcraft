@@ -444,7 +444,7 @@
     "Scrolling_behavior": "Scrollverhalten",
     "Scrolling_behavior_explain": "Legt fest, wann in Listen-Elementen eine Scrollbar erscheint. \"Standard\" bedeutet, dass nach 12 Gegenständen eine Scrollbar erscheint.",
     "Enable_auto_log_check": "Gegenstände automatisch im Notizbuch als erledigt markieren, sobald sie gesammelt/hergestellt wurden",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "Status/Stufen beim Jobwechsel automatisch aktualisieren",
     "Enable_metrics_capture": "Metrikerfassung aktivieren",
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
@@ -1772,7 +1772,8 @@
     "Shown_only_collectables": "Nur Sammlerstücke",
     "Recipe_level": "Rezeptstufe",
     "Shown_only_not_completed": "Nur im Log nicht erledigt",
-    "Add_results_to_pool": "Add to pool when adding to basket"
+    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1964,6 +1965,10 @@
     "USELESS_HQ": {
       "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
       "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
+    },
+    "ONLY_FOR_ONE_MATERIAL": {
+      "Title": "Items that are only used for a single recipe",
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
   "VERSION_LOCK": {
