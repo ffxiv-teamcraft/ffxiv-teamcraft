@@ -1,12 +1,19 @@
 export const patchNotes = `### Bug Fixes
 
-* **currency-spending:** fixed faux leves and Bozjan clusters not working as intended.
-* **db:** fixed db pages for set items not loading properly.
-* **leveling-equipment:** fixed wrong suggestion for higher level crafters/gatherers.
-* **simulator:** fixed stats not being persisted properly to the form.
-* **voyage-tracker:** fixed missing translations.
+* **profile:** better tracking system for stats updates.
+* **recipe-finder:** removed db button to avoid missclick.
 
 
 ### Features
 
-* **db:** support for korean v5.41 update.`;
+* **community-lists:** lists are now sorted by # of copies made.
+* **community-rotations:** automated sorting to find best rotation.
+* **crafting-replays:** you can now generate a crafting macro from a replay.
+* **inventory-optimizer:** new optimizer for items only used for one material recipe.
+* **leveling-equipment:** search params are now remembered when going back in history.
+* **recipe-finder:** you can now filter for items that are used in leves.
+
+
+### Performance Improvements
+
+* **lists:** lowering RAM usage over time by removing some runtime cache.`;
