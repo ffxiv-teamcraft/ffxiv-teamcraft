@@ -229,7 +229,7 @@ export class AuthFacade {
       }
       return [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(jobId => {
         const set = (data.stats || []).find(stat => stat.jobId === jobId);
-        const jobEntry = (data.character.ClassJobs || [] as any).find(job => job.JobID === jobId);
+        const jobEntry = (data.character?.ClassJobs || [] as any).find(job => job.JobID === jobId);
         const level = jobEntry ? jobEntry.Level : 0;
         if (set === undefined) {
           return {
