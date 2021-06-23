@@ -6,7 +6,9 @@
         <nz-option *ngFor="let availableLayout of allLayouts" [nzLabel]="availableLayout.name"
                    [nzValue]="availableLayout"></nz-option>
       </nz-select>
-      <div>{{'LIST_DETAILS.LAYOUT_DIALOG.Want_to_learn_more' | translate}}&nbsp;<a href="https://wiki.ffxivteamcraft.com/base-features/layout-system" target="_blank">{{'LIST_DETAILS.LAYOUT_DIALOG.Open_wiki_page' | translate}}</a>.</div>
+      <div>{{'LIST_DETAILS.LAYOUT_DIALOG.Want_to_learn_more' | translate}}&nbsp;<a href="https://wiki.ffxivteamcraft.com/base-features/layout-system"
+                                                                                   target="_blank">{{'LIST_DETAILS.LAYOUT_DIALOG.Open_wiki_page' | translate}}</a>.
+      </div>
     </div>
     <div class="buttons" fxLayout="row" fxLayoutGap="5px">
       <button (click)="addLayout()" nz-button nzType="primary">
@@ -24,6 +26,7 @@
       <button [clipboard]="layout.base64"
               [clipboardSuccessMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied' | translate"
               [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Export_layout' | translate"
+              *ngIf="!layout.default"
               nz-button
               nz-tooltip>
         <i nz-icon nzType="upload"></i>
