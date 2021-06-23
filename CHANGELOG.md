@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.2.14"></a>
+## [8.2.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.13...v8.2.14) (2021-06-23)
+
+
+### Bug Fixes
+
+* **auth:** fixed a bug preventing anonymous users from creating lists or using the simulator ([6006eae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6006eae))
+* **desktop:** load opcodes from github if not loading from CN region ([3ec3dba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ec3dba))
+
+
+
 <a name="8.2.13"></a>
 ## [8.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.12...v8.2.13) (2021-06-22)
 
