@@ -49,6 +49,9 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
             });
           return this.serializer.deserialize<CraftingRotation>(rotations, [this.getClass()])
             .filter(rotation => {
+              if (rotation.rotation.length < 2) {
+                return false;
+              }
               let matches = rotation.getName().toLowerCase().indexOf(filters.name.toLowerCase()) > -1;
               if (filters.tags.length > 0) {
                 matches = matches && filters.tags.reduce((res, tag) => {
