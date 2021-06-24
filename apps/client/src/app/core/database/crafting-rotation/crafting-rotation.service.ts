@@ -94,7 +94,8 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
 
   private getSortScore(rotation: CraftingRotation): number {
     return rotation.community.minCraftsmanship + rotation.community.minControl + rotation.community.minCp
-      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0);
+      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0)
+      + (rotation.tags.includes(RotationTag.SPECIALIST) ? 10000 : 0);
   }
 
   public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {

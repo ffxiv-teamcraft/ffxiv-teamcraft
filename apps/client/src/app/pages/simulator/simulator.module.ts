@@ -43,7 +43,6 @@ import { DirtyModule } from '../../core/dirty/dirty.module';
 import { DirtyGuard } from '../../core/dirty/dirty-guard';
 import { CommunityRotationsPageComponent } from './components/community-rotations-page/community-rotations-page.component';
 import { CommunityRotationPopupComponent } from './components/community-rotation-popup/community-rotation-popup.component';
-import { SolverPopupComponent } from './components/solver-popup/solver-popup.component';
 import { SimulatorOpenerComponent } from './components/simulator-opener/simulator-opener.component';
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -53,6 +52,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { RotationResultTagComponent } from './components/rotation-result-tag/rotation-result-tag.component';
+import { CommunityRotationFinderPopupComponent } from './components/community-rotation-finder-popup/community-rotation-finder-popup.component';
 
 const routes: Routes = [
   {
@@ -160,11 +160,11 @@ const routes: Routes = [
     RotationTipsPopupComponent,
     CommunityRotationsPageComponent,
     CommunityRotationPopupComponent,
-    SolverPopupComponent,
     SimulatorOpenerComponent,
     SimulationSharePopupComponent,
     SimulationResultComponent,
-    RotationResultTagComponent
+    RotationResultTagComponent,
+    CommunityRotationFinderPopupComponent
   ],
   exports: [
     RotationPanelComponent,
