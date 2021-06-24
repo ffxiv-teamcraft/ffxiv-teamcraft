@@ -158,13 +158,6 @@
                  nz-checkbox>{{'SETTINGS.Disable_search_debounce' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.showAllAlarms"
-                 nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
-        </nz-form-control>
-      </nz-form-item>
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Lists' | translate"></nz-divider>
       </div>
@@ -218,6 +211,13 @@
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Has_access_to_housing_vendor_explain' | translate">
           <label [(ngModel)]="settings.hasAccessToHousingVendors"
                  nz-checkbox>{{'SETTINGS.Has_access_to_housing_vendor' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.showAllAlarms"
+                 nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
 
