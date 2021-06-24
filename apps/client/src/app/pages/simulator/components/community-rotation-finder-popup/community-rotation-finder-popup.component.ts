@@ -82,7 +82,7 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
     );
   }
 
-  select(rotation: CraftingRotation): void {
+  select(rotation: CraftingAction[]): void {
     this.modalRef.close(rotation);
   }
 

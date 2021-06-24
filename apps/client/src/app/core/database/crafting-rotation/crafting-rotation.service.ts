@@ -64,6 +64,8 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
               if (filters.rlvl) {
                 if ([150, 290, 420].indexOf(filters.rlvl) > -1) {
                   matches = matches && rotation.community.rlvl >= filters.rlvl - 30 && rotation.community.rlvl <= filters.rlvl;
+                } else if (filters.rlvl <= 50) {
+                  matches = matches && rotation.community.rlvl <= 50;
                 } else {
                   matches = matches && rotation.community.rlvl === filters.rlvl;
                 }
