@@ -1916,7 +1916,7 @@
       "Override_link_confirmation": "Вы уверены, что хотите переопределить эту ссылку?",
       "Ignore": "Игнорировать этого игрового персонажа",
       "You_can_reset_ignore": "Вы можете сбросить игнорируемых персонажей на странице настроек рабочего стола",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Если вы уже связали персонажа, на котором вы сейчас играете, вы можете спокойно проигнорировать этого персонажа, Teamcraft читает изменения файлов, некоторые файлы могут быть изменены по какой-либо причине, если файл не связан еще."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1965,12 +1965,12 @@
       "Message": "Вы можете получить материю из этого предмета снаряжения"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Title": "Предмет не нужен качества HQ, так как вы можете использовать навык Trained Eye",
+      "Message": "Этот предмет используется только в рецептах, где вы можете использовать навык Trained Eye, делая его бесполезным в HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Title": "Предметы, которые используются только для одного рецепта",
+      "Message": "Этот предмет используется только для того, чтобы сделать {{targetItem}}, подумайте о его преобразовании"
     }
   },
   "VERSION_LOCK": {
@@ -2039,7 +2039,7 @@
     "Create_commission": "Создать заказ (поручение) для этого набора снаряжения",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "Режим локального редактирования",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
     "SLOT": {
       "Body": "Броня",
@@ -2198,7 +2198,7 @@
   "ADMIN": {
     "Autofix_error": "Автоисправление этой ошибки",
     "USERS": {
-      "Title": "Users",
+      "Title": "Пользователи",
       "X_characters_linked": "{{amount}} персонажей связаны",
       "Email": "Email",
       "Uid": "UID",
@@ -2320,8 +2320,8 @@
     "Create_folder": "Новая папка",
     "Save_replay": "Сохранить повтор в базе данных",
     "Replay_result": "Результат",
-    "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Delete_offline": "Удалить оффлайн повторы",
+    "Confirm_delete_offline": "Вы уверены, что хотите удалить все ваши оффлайн повторы? Это действие не может быть отменено"
   },
   "COMMISSIONS": {
     "New_commission": "Новый заказ",
@@ -2487,10 +2487,10 @@
   },
   "MAPPY": {
     "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
+    "Last_updated": "Последнее обновление",
     "Last_bnpc_update": "Last monster position uploaded",
     "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
+    "Clear_map": "Очистить эту карту",
     "Dashboard": "Mappy Dashboard",
     "Open_details": "Open details page",
     "X_Missing_nodes": "{{amount}} missing node(s)",
@@ -2505,14 +2505,14 @@
   },
   "LEVELING_EQUIPMENT": {
     "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_purchases": "Include purchases",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory",
+    "Include_crafting": "Включая крафт",
+    "Include_purchases": "Включая покупки",
+    "Include_trades": "Включая обмен",
+    "Description": "Выберите профессию и уровень, который вы хотите одеть, установите фильтры и нажмите на поиск, чтобы найти снаряжение, чтобы повысить свой уровень",
+    "Generate_list": "Создать список",
+    "Empty_slot": "Пустой слот",
+    "In_inventory": "Этот предмет находится в одном из ваших инвентарей",
+    "Only_inventory": "Рассматривать предметы только в инвентаре",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
@@ -2585,18 +2585,18 @@
     "Nothing_to_show": "Нечего показывать",
     "Please_import_pcap": "Пожалуйста, импортируйте ваши воздушные суда и подводные лодки с помощью захвата пакетов",
     "SECTOR_PROGRESSION": {
-      "Airship": "Airship",
-      "Submersible": "Submersible"
+      "Airship": "Дирижабль",
+      "Submersible": "Подлодка"
     },
     "VOYAGE_DETAILS": {
       "Title": "Voyage"
     },
     "BUILD_DETAILS": {
-      "Title": "Build",
-      "Condition": "Condition"
+      "Title": "Сборка",
+      "Condition": "Состояние"
     },
     "STATS_DETAILS": {
-      "Title": "Stats"
+      "Title": "Статы"
     },
     "STATS": {
       "Surveillance": "Surveillance",
@@ -2666,15 +2666,15 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
-    "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Title": "Поиск сокровищ",
+    "Description": "Выберите карту и найдите сокровище, которое вы ищете",
+    "Select_map": "Выберите карту",
+    "Select_item": "Выберите тип карты сокровищ",
+    "Select_treasure_map": "Выберите карту сокровищ",
+    "Find_another": "Найти еще одно сокровище"
   },
   "GARDENING": {
-    "Growth_time": "Growth time",
-    "Cross_breeds": "Cross breeds"
+    "Growth_time": "Время роста",
+    "Cross_breeds": "Перекрестные породы"
   }
 }
