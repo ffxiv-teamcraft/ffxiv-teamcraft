@@ -48,6 +48,9 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public set dohSelectedPage(index: number) {
+    if (index === 0) {
+      debugger;
+    }
     this._dohSelectedPage = index;
     this.selectedRecipes = [];
   }
@@ -70,6 +73,8 @@ export class LogTrackerComponent extends TrackerComponent {
   public hideCompleted = this.settings.hideCompletedLogEntries;
 
   public selectedRecipes: { itemId: number, recipeId: number }[] = [];
+
+  private lastSelectedTabIndex = -1;
 
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
@@ -116,7 +121,9 @@ export class LogTrackerComponent extends TrackerComponent {
         logTracking.gathering.forEach(itemId => {
           this.userGatheringCompletion[itemId] = true;
         });
-        this.updateSelectedPage(this.hideCompleted, type);
+        if (this.hideCompleted) {
+          this.updateSelectedPage(this.hideCompleted, type);
+        }
       });
   }
 
@@ -136,7 +143,7 @@ export class LogTrackerComponent extends TrackerComponent {
         } else {
           this.dolSelectedPage = nextUncompletedPage?.id;
         }
-      } else {
+      } else if(this.lastSelectedTabIndex !== selectedTabIndex) {
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = pages[0].id;
         } else {
@@ -144,6 +151,7 @@ export class LogTrackerComponent extends TrackerComponent {
         }
       }
     }
+    this.lastSelectedTabIndex = selectedTabIndex;
   }
 
   public setType(index: number): void {
