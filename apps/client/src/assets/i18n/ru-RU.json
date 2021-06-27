@@ -19,8 +19,8 @@
   "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "{{version}} изменения",
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
-  "Selection": "Selection",
-  "Change_character": "Character",
+  "Selection": "Выбор",
+  "Change_character": "Персонаж",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -51,7 +51,7 @@
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
   "Find_us_on_twitter": "Мы в Twitter",
-  "Join_discord_server": "Join our discord server",
+  "Join_discord_server": "Присоединяйтесь к нам в Discord",
   "See_code_github": "Просмотреть код на github",
   "Support_on_patreon": "Поддержите проект в patreon",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
@@ -174,10 +174,10 @@
     "Dirty_changes": "Остались несохраненные изменения",
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
-    "Back": "Back",
-    "Support_us_remove_ads": "Support us on patreon to remove ads",
-    "Support_us": "Support us",
-    "Show_more": "Show more"
+    "Back": "Назад",
+    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
+    "Support_us": "Поддержите нас",
+    "Show_more": "Показать еще"
   },
   "ALARMS": {
     "Title": "Оповещения",
