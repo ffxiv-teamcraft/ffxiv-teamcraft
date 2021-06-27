@@ -507,9 +507,9 @@
     },
     "NOTIFICATIONS": {
       "Title": "Уведомления",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
+      "Alarms": "Оповещения",
+      "Autofill_completion": "Звук завершения автозаполнения",
+      "Retainer_tracker": "Трекер ретейнера",
       "Voyage_tracker": "Voyage tracker",
       "Reset_timer": "Сбросить таймер"
     }
@@ -642,7 +642,7 @@
       "Attach": "Прикрепить ротацию",
       "Detach": "Открепить ротацию",
       "Click_to_copy_macro": "Нажмите, чтобы открыть всплывающее окно копирования макроса",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "Открыть ротацию в оверлее"
     },
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
@@ -2363,7 +2363,7 @@
       "Price_tip": "Введите 0, если вы хотите, чтобы люди указывали сколько они хотят",
       "Only_crafting": "Только крафт",
       "Includes_materials_label": "Этот заказ включает в себя все базовые материалы и требуется только крафт",
-      "Only_materials": "Only materials",
+      "Only_materials": "Только материалы",
       "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "Контактная информация",
       "Contact_info_placeholder": "Как исполнители могут связаться с вами когда они будут приняты для заказа? Discord, ingame, email, как вы хотите.",
@@ -2492,19 +2492,19 @@
     "Last_node_update": "Last node position uploaded",
     "Clear_map": "Очистить эту карту",
     "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Open_details": "Показать детали",
+    "X_Missing_nodes": "{{amount}} отсутствующих нод",
+    "Missing_nodes": "Недостающие ноды",
+    "No_missing_nodes": "Нет отсутствующих нод",
+    "Only_missing_nodes": "Показывать только карты с отсутствующими нодами"
   },
   "WORKSHOP_TREE": {
     "Title": "Workshop recipe tree",
     "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
+    "Phase": "Этап {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
+    "Title": "Снаряжение повышения уровня",
     "Include_crafting": "Включая крафт",
     "Include_purchases": "Включая покупки",
     "Include_trades": "Включая обмен",
