@@ -1876,9 +1876,9 @@
     "Rawsock_needs_admin_description": "Чтобы правильно управлять правилами брандмауэра и иметь возможность захватывать трафик из игры, режим RawSocket требует запуск TC в правах администратора. Вы можете закрыть его и запустить снова как администратор, чтобы исправить эту проблему, или выбрать один из вариантов ниже.",
     "Switch_to_winpcap": "Переключиться в режим winpcap",
     "Disable_pcap": "Отключить захват пакетов",
-    "Install_npcap": "Npcap is missing from your system",
-    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap": "Npcap отсутствует в вашей системе",
+    "Install_npcap_description": "Для захвата Teamcraft с исходным npcap режимом, необходимо установить npcap. Teamcraft может установить его для вас и перезапустить приложение, как только оно будет завершено.",
+    "Install_npcap_button": "Установить npcap и перезапустить Teamcraft"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
@@ -2516,28 +2516,28 @@
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Title": "Ретейнеры",
+    "No_retainers": "Нет ретейнеров, пожалуйста используйте колокол призыва чтобы загрузить информацию о ваших ретейнерах.",
+    "Selling": "Продает {{amount}} товаров",
+    "X_items": "{{amount}} предметов",
+    "Task_complete": "Задание выполнено",
+    "Task_completed_notification_title": "{{name}} завершил свое задание",
+    "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
+    "Task_completion_alarm": "Сигнал выполнения задания"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer",
-    "Select_retainer": "Pick one of your retainers"
+    "Title": "Задания ретейнеров",
+    "Description": "Введите вашу работу в контейнере, уровень, ilvl и сбор (если это необходимо), чтобы найти идеальное задание для получения прибыли. Это может занять до минуты, если ваш ретейнер имеет высокий уровень, потому что он рассмотрит каждый отдельный предмет, который может принести прибыль.",
+    "Retainer_ilvl": "ilvl",
+    "Gathering": "Собирательство",
+    "Task_level": "Уровень задания",
+    "Total_per_venture": "Итого за один раз",
+    "Use_retainer": "Заполнить ретейнером",
+    "Select_retainer": "Выберите одного из ваших ретейнеров"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on patreon, you get:",
-    "No_ads": "No more ads inside the topbar",
+    "By_supporting_us": "Поддерживая нас на Patreon, вы получите:",
+    "No_ads": "Никакой рекламы на верхней панели",
     "Exclusive_discord_role": "An exclusive discord role, and access to supporters-only channel",
     "Your_name_in_loading_screen": "Your name in the loading screen (needs to be requested)",
     "Goodies": "Free sticker, free T-shirt, free poster (depending on the tier)",
