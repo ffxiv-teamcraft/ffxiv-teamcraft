@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,8 +27,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 @Component({
   selector: 'app-log-tracker',
   templateUrl: './log-tracker.component.html',
-  styleUrls: ['./log-tracker.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./log-tracker.component.less']
 })
 export class LogTrackerComponent extends TrackerComponent {
 
@@ -89,7 +88,7 @@ export class LogTrackerComponent extends TrackerComponent {
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService,
-              public settings: SettingsService) {
+              public settings: SettingsService, private cdr: ChangeDetectorRef) {
     super(alarmsFacade);
     this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
       return page.map(tab => {
@@ -124,6 +123,7 @@ export class LogTrackerComponent extends TrackerComponent {
         if (this.hideCompleted) {
           this.updateSelectedPage(this.hideCompleted, type);
         }
+        this.cdr.markForCheck();
       });
   }
 
@@ -143,7 +143,7 @@ export class LogTrackerComponent extends TrackerComponent {
         } else {
           this.dolSelectedPage = nextUncompletedPage?.id;
         }
-      } else if(currentPage && this.lastSelectedTabIndex !== selectedTabIndex) {
+      } else if (currentPage && this.lastSelectedTabIndex !== selectedTabIndex) {
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = pages[0].id;
         } else {

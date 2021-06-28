@@ -26,11 +26,7 @@
                     </span>
                 </ng-template>
                 <nz-spin [nzSpinning]="userCompletion === {}">
-                  <ng-template #nope>
-                    <h1>NOPE</h1>
-                    <pre>{{page.id | json}} !== {{dohSelectedPage | json}}</pre>
-                  </ng-template>
-                  <div *ngIf="dohSelectedPage === page.id; else nope" fxLayout="column">
+                  <div *ngIf="dohSelectedPage === page.id" fxLayout="column">
                     <div class="toolbar" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
                       <button (nzOnConfirm)="markDohPageAsDone(page)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                               nz-popconfirm>
