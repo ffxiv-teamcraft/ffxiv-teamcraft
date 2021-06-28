@@ -136,14 +136,14 @@ export class LogTrackerComponent extends TrackerComponent {
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
     if (pages) {
       const currentPage = pages[selectedPageIndex];
-      if (isPageDone(currentPage) && hideCompleted) {
+      if (currentPage && isPageDone(currentPage) && hideCompleted) {
         const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = nextUncompletedPage?.id;
         } else {
           this.dolSelectedPage = nextUncompletedPage?.id;
         }
-      } else if(this.lastSelectedTabIndex !== selectedTabIndex) {
+      } else if(currentPage && this.lastSelectedTabIndex !== selectedTabIndex) {
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = pages[0].id;
         } else {
@@ -229,11 +229,11 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isDoLPageDone = (page: any) => {
-    return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
+    return !!page && page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
   };
 
   public isDoHPageDone = (page: any) => {
-    return page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
+    return !!page && page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
   };
 
   public getDohIcon(index: number): string {
