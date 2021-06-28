@@ -12,6 +12,7 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { TranslateService } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-gathering-location',
@@ -35,14 +36,12 @@ export class GatheringLocationComponent {
 
   showIntro = true;
 
-  compactDisplay = false;
+  compactDisplay$ = new BehaviorSubject<boolean>(localStorage.getItem('gathering-location:compact') === 'true');
 
   constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
               private router: Router, private route: ActivatedRoute, public translate: TranslateService,
-              private gatheringNodesService: GatheringNodesService) {
-
-    this.compactDisplay = localStorage.getItem('gathering-location:compact') === 'true';
+              private gatheringNodesService: GatheringNodesService, private message: NzMessageService) {
 
     this.results$ = this.query$.pipe(
       debounceTime(500),
@@ -68,7 +67,13 @@ export class GatheringLocationComponent {
           });
         }).flat();
       }),
-      tap(() => this.loading = false)
+      tap((results) => {
+        this.loading = false;
+        if (results.length > 25 && !this.compactDisplay$.value) {
+          this.compactDisplay$.next(true);
+          this.message.info(this.translate.instant('GATHERING_LOCATIONS.Switched_to_compact'));
+        }
+      })
     );
 
     this.route.queryParams
@@ -102,6 +107,7 @@ export class GatheringLocationComponent {
 
   public saveCompactDisplay(value: boolean): void {
     localStorage.setItem('gathering-location:compact', value.toString());
+    this.compactDisplay$.next(value);
   }
 
   trackByAlarm(index: number, alarm: Partial<Alarm>): string {
