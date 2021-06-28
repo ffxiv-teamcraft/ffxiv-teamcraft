@@ -872,6 +872,7 @@
     "Will_spawn_in": "{{timer}} 以降現れる",
     "Ephemeral_warning": "時間制採集物は色んな場所に存在し、位置はほぼ同じになります。",
     "Legendary": "伝説",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
