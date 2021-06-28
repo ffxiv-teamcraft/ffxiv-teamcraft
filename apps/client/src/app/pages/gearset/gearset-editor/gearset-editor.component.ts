@@ -342,8 +342,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.gearset$.pipe(
       first()
     ).subscribe(gearset => {
+      const gearsetArray = this.gearsetsFacade.toArray(gearset);
       // We're removing Spearfishing gig from the lowest ilvl filter.
-      const ilvls = this.gearsetsFacade.toArray(gearset)
+      const ilvls = gearsetArray
         .filter(entry => entry.piece.itemId !== 17726)
         .map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
       let lowestIlvl = Math.min(...ilvls);
@@ -377,6 +378,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       if (didChange) {
         this.submitFilters();
       }
+      gearsetArray.forEach(row => {
+        if (row.piece?.materias?.length > 0) {
+          this.materiaCache = {
+            ...this.materiaCache,
+            [`${row.piece.itemId}:${row.slot}`]: {
+              materias: row.piece.materias,
+              date: Date.now()
+            }
+          };
+        }
+      });
     });
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -492,7 +504,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.filters$.next(filters);
   }
 
-  editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece): void {
+  editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece, category: any): void {
     const clone = JSON.parse(JSON.stringify(equipmentPiece));
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName: this.i18n.getName(this.l12n.getItem(equipmentPiece.itemId)) }),
@@ -513,13 +525,23 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             }
           };
           equipmentPiece.materias = [...res.materias];
-          this.cd.detectChanges();
         }
         if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
           this.setGearsetPiece(gearset, propertyName, { ...res });
-        } else if (!res) {
+        } else if (!!res) {
+          category.items = category.items.map(item => {
+            if (item.equipmentPiece.itemId === equipmentPiece.itemId) {
+              return {
+                ...item,
+                equipmentPiece: { ...res }
+              };
+            }
+            return item;
+          });
+        } else {
           Object.assign(equipmentPiece, clone);
         }
+        this.cd.detectChanges();
       });
   }
 
