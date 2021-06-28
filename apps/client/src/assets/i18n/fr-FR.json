@@ -872,6 +872,7 @@
     "Will_spawn_in": "Apparaît dans {{timer}}",
     "Ephemeral_warning": "Les noeuds éphémères ont plusieurs emplacements, la position est une approximation.",
     "Legendary": "Légendaire",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
