@@ -290,14 +290,14 @@ export class AlarmsFacade {
     return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
   }
 
-  public getNextSpawn(alarm: Alarm, time: Date): NextSpawn {
+  public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
     const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}`;
     if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
       const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
-        const timeBeforeA = this.getMinutesBefore(time, { hours: a, days: 0 });
-        const timeBeforeADespawns = this.getMinutesBefore(time, { hours: (a + alarm.duration) % 24, days: 0 });
-        const timeBeforeB = this.getMinutesBefore(time, { hours: b, days: 0 });
-        const timeBeforeBDespawns = this.getMinutesBefore(time, { hours: (b + alarm.duration) % 24, days: 0 });
+        const timeBeforeA = this.getMinutesBefore(etime, { hours: a, days: 0 });
+        const timeBeforeADespawns = this.getMinutesBefore(etime, { hours: (a + alarm.duration) % 24, days: 0 });
+        const timeBeforeB = this.getMinutesBefore(etime, { hours: b, days: 0 });
+        const timeBeforeBDespawns = this.getMinutesBefore(etime, { hours: (b + alarm.duration) % 24, days: 0 });
         // If time before next spawn is greater than time before next despawn, this node is spawned !
         if (timeBeforeADespawns < timeBeforeA) {
           return -1;
@@ -310,8 +310,8 @@ export class AlarmsFacade {
       });
       if (alarm.weathers && alarm.weathers?.length > 0) {
         this.nextSpawnCache[cacheKey] = {
-          spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, time.getTime()),
-          expires: this.etime.toEarthDate(time)
+          spawn: this.findWeatherSpawnCombination(alarm, sortedSpawns, etime.getTime()),
+          expires: this.etime.toEarthDate(etime)
         };
       } else {
         this.nextSpawnCache[cacheKey] = {

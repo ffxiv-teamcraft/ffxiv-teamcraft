@@ -6,6 +6,10 @@ import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { DataType } from '../../modules/list/data/data-type';
 import { LazyDataService } from '../data/lazy-data.service';
+import { AlarmsFacade } from '../alarms/+state/alarms.facade';
+import { Alarm } from '../alarms/alarm';
+import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
+import { MathTools } from '../../tools/math-tools';
 
 @Injectable()
 export class LayoutOrderService {
@@ -65,20 +69,63 @@ export class LayoutOrderService {
       } else {
         return aSlot - bSlot;
       }
+    },
+    'TIMER': (a, b) => {
+      const aAlarms = getItemSource(a, DataType.ALARMS);
+      const bAlarms = getItemSource(b, DataType.ALARMS);
+      if (aAlarms.length === 0 || bAlarms.length === 0) {
+        return this.orderFunctions['NAME'](a, b);
+      }
+      return this.getNextSpawn(aAlarms) - this.getNextSpawn(bAlarms);
     }
   };
 
+  alarmsCache: Record<number, { expire: number, score: number }> = {};
+
+  orderCache: Record<string, number[]> = {};
+
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService,
+              private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
+  }
+
+  private getNextSpawn(alarms: Alarm[]): number {
+    if (!this.alarmsCache[alarms[0].itemId] || this.alarmsCache[alarms[0].itemId].expire >= Date.now()) {
+      // Now in eorzean time
+      const eNow = this.etime.toEorzeanDate(new Date());
+      const next = alarms
+        .map(alarm => {
+          return this.alarmsFacade.createDisplay(alarm, eNow).remainingTime;
+        })
+        .sort((a, b) => {
+          return a - b;
+        })[0] || 0;
+      this.alarmsCache[alarms[0].itemId] = {
+        expire: Date.now() + next * 60000,
+        score: next
+      };
+    }
+    return this.alarmsCache[alarms[0].itemId].score;
   }
 
   public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): ListRow[] {
-    const ordering = this.orderFunctions[orderBy];
-    if (ordering === undefined) {
-      return data;
+    if (orderBy === 'TIMER') {
+      return data.sort(this.orderFunctions[orderBy]);
     }
-    const orderedASC = (data || []).sort(ordering);
-    return order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse();
+    const hash = MathTools.hashCode(JSON.stringify(data));
+    if (this.orderCache[hash] === undefined) {
+      const ordering = this.orderFunctions[orderBy];
+      if (ordering === undefined) {
+        this.orderCache[hash] = this.toIndexArray(data, data);
+      }
+      const orderedASC = (data || []).sort(ordering);
+      this.orderCache[hash] = this.toIndexArray(data, order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse());
+    }
+    return this.orderCache[hash].map(index => data[index]);
+  }
+
+  private toIndexArray(before: ListRow[], after: ListRow[]): number[] {
+    return after.map(row => before.indexOf(row));
   }
 
   private getLogIndex(row: ListRow): number {
