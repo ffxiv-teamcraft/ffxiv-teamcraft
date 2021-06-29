@@ -85,7 +85,13 @@ export class InventoryComponent {
           return a.containerName > b.containerName ? -1 : 1;
         })
         .map(inventory => {
-          inventory.items = inventory.items.sort((a, b) => a.itemId - b.itemId);
+          inventory.items = inventory.items.sort((a, b) => {
+            if (a.price === b.price) {
+              return a.itemId - b.itemId;
+            } else {
+              return b.price - a.price;
+            }
+          });
           return inventory;
         });
     })
