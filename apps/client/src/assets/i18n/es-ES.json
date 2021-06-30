@@ -319,7 +319,7 @@
   "Favorite": "Favorito",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
-  "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Nombre del Personaje",
   "Character_add_warning": "Si está viendo esto sin haber eliminado su personaje manualmente, no introduzca nada y actualize la página o reinicie la aplicación. Si el problema persiste, por favor, reporta en el servidor discord.",
   "Disconnect_and_anonymous": "Desconectar y continuar como anónimo",
