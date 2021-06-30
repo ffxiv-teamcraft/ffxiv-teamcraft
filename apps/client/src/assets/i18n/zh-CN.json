@@ -319,7 +319,7 @@
   "Favorite": "收藏",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
-  "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "角色名",
   "Character_add_warning": "如果您在没有手动删除角色的情况下看到此内容，请不要输入任何内容并刷新页面或重新启动应用程序。 如果此问题仍然存在，请反馈到discord服务器。",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
