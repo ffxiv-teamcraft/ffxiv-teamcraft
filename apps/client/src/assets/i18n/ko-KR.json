@@ -319,7 +319,7 @@
   "Favorite": "즐겨찾기",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
-  "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "캐릭터 이름",
   "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
