@@ -596,12 +596,14 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }).afterClose.pipe(
       filter(res => res !== undefined)
     ).subscribe((res: TeamcraftGearset) => {
+      gearset.name = res.name;
       if (res.job !== gearset.job) {
+        gearset.job = res.job;
         delete res.crystal;
         delete res.offHand;
         delete res.mainHand;
       }
-      this.saveChanges(res);
+      this.saveChanges(gearset);
     });
   }
 
