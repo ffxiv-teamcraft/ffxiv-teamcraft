@@ -319,7 +319,7 @@
   "Favorite": "Избранное",
   "Adding_recipes": "Добавить {{amount}} рецептов в список {{listname}}",
   "Recipe_Added": "1 предмет добавлен в список {{listname}}",
-  "Recipes_Added": "{{itemcount}} предметов добавлено в список {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Имя персонажа",
   "Character_add_warning": "Если вы это видите не удаляя персонажа вручную, ничего не вводите и обновите страницу, либо перезапустите приложение. Если проблема останется, пожалуйста, сообщите об этом на дискорд-сервере.",
   "Disconnect_and_anonymous": "Выйти и продолжить анонимно",
