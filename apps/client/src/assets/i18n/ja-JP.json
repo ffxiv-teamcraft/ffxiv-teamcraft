@@ -319,7 +319,7 @@
   "Favorite": "お気に入り",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
-  "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "キャラクター名",
   "Character_add_warning": "直接キャラクターを削除しなかった場合でも、これが見えるときは、何も入力せずにページを更新したり、アプリを再起動してください。それでもこの問題が解決しない場合はディスコードサーバに報告してください。",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
