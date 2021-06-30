@@ -319,7 +319,7 @@
   "Favorite": "Favorit",
   "Adding_recipes": "Dodavanje {{amount}} recepata za popis {{listname}}",
   "Recipe_Added": "1 predmet dodan na popis {{listname}}",
-  "Recipes_Added": "{{itemcount}} predmeta dodano na popis {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Naziv Lika",
   "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Odjavite se i nastavite anonimno",
