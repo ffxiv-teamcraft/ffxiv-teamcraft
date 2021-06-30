@@ -319,7 +319,7 @@
   "Favorite": "Favorit",
   "Adding_recipes": "Füge {{amount}} Rezepte zur Liste {{listname}} hinzu",
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
-  "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Charaktername",
   "Character_add_warning": "Wenn du dies siehst, ohne deinen Charakter manuell gelöscht zu haben, gib nichts ein und aktualisiere die Seite oder starte die App neu. Wenn dieses Problem weiterhin besteht, melde es bitte auf dem Discord-Server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
