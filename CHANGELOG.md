@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.0"></a>
+# [8.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.14...v8.3.0) (2021-07-03)
+
+
+### Bug Fixes
+
+* **community-rotations:** better sorting for rotations ([a570fd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a570fd6))
+* **db:** fixed tomestone pages being very slow to load ([ae65435](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae65435))
+* **gearset-editor:** fixed job swap not working as expected ([055e99e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/055e99e))
+* **gearsets:** fixed materias not being saved properly when switching pieces ([d8febbe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8febbe))
+* **layouts:** removed export button for default layout ([5c47d67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c47d67))
+* **log-tracker:** fixed an issue with log page sometimes becoming empty ([0b6a20a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b6a20a))
+* **log-tracker:** fixed an issue with page fill button not working as expected ([6243928](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6243928))
+* **settings:** proper category for "show all alarms" setting ([0821825](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0821825))
+
+
+### Features
+
+* **inventory:** sort items by price after they have been filled from marketboard ([53e5090](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53e5090))
+* **layout:** new TIMER order function to order by closest timer ([44d9ccb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44d9ccb))
+* **leveling-equipment:** you can now click the list notification to be redirected to it ([3a98a19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a98a19))
+* **list-details:** hunting details popup now shows all known locations for monsters ([c5b6933](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5b6933))
+* **simulator:** new community rotation finder button ([d74953f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d74953f))
+
+
+### Performance Improvements
+
+* **gathering-location:** auto switch to compact mode if there's too many results ([63a0547](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63a0547))
+
+
+
 <a name="8.2.14"></a>
 ## [8.2.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.13...v8.2.14) (2021-06-23)
 
