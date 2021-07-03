@@ -248,74 +248,75 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         });
       }
       if (data.item.tradeCurrency) {
+        const trades = data.item.tradeCurrency.map((ts) => {
+          return {
+            npcs: ts.npcs.map((npcId) => {
+              const npc: TradeNpc = { id: npcId };
+              const npcEntry = this.lazyData.data.npcs[npcId];
+              if (npcEntry.position) {
+                npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+                npc.zoneId = npcEntry.position.zoneid;
+                npc.mapId = npcEntry.position.map;
+              }
+              return npc;
+            }),
+            trades: ts.listings.map((row) => {
+              return <Trade>{
+                currencies: row.currency
+                  .map((currency) => {
+                    const partial = data.getPartial(currency.id, 'item');
+                    const currencyPartial = partial && partial.obj;
+                    if (currencyPartial) {
+                      return <TradeEntry>{
+                        id: currencyPartial.i,
+                        icon: currencyPartial.c,
+                        amount: currency.amount,
+                        hq: currency.hq === 1
+                      };
+                    } else if (+currency.id === data.item.id) {
+                      return <TradeEntry>{
+                        id: data.item.id,
+                        icon: data.item.icon,
+                        amount: currency.amount,
+                        hq: currency.hq === 1
+                      };
+                    }
+                    return undefined;
+                  })
+                  .filter((res) => res !== undefined),
+                items: row.item
+                  .map((tradeItem) => {
+                    const itemPartialFetch = data.getPartial(tradeItem.id, 'item');
+                    if (itemPartialFetch !== undefined) {
+                      const itemPartial = itemPartialFetch.obj;
+                      return <TradeEntry>{
+                        id: itemPartial.i,
+                        icon: itemPartial.c,
+                        amount: tradeItem.amount,
+                        hq: tradeItem.hq === 1
+                      };
+                    } else if (+tradeItem.id === data.item.id) {
+                      return <TradeEntry>{
+                        id: data.item.id,
+                        icon: data.item.icon,
+                        amount: tradeItem.amount,
+                        hq: tradeItem.hq === 1
+                      };
+                    }
+                    return undefined;
+                  })
+                  .filter((res) => res !== undefined)
+              };
+            }),
+            shopName: ts.shop
+          };
+        });
         usedFor.push({
           flex: '1 1 auto',
           type: UsedForType.TRADES,
           title: 'DB.Used_for_trades',
           icon: 'https://www.garlandtools.org/db/images/Shop.png',
-          trades: data.item.tradeCurrency.map((ts) => {
-            return {
-              npcs: ts.npcs.map((npcId) => {
-                const npc: TradeNpc = { id: npcId };
-                const npcEntry = this.lazyData.data.npcs[npcId];
-                if (npcEntry.position) {
-                  npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-                  npc.zoneId = npcEntry.position.zoneid;
-                  npc.mapId = npcEntry.position.map;
-                }
-                return npc;
-              }),
-              trades: ts.listings.map((row) => {
-                return <Trade>{
-                  currencies: row.currency
-                    .map((currency) => {
-                      const partial = data.getPartial(currency.id, 'item');
-                      const currencyPartial = partial && partial.obj;
-                      if (currencyPartial) {
-                        return <TradeEntry>{
-                          id: currencyPartial.i,
-                          icon: currencyPartial.c,
-                          amount: currency.amount,
-                          hq: currency.hq === 1
-                        };
-                      } else if (+currency.id === data.item.id) {
-                        return <TradeEntry>{
-                          id: data.item.id,
-                          icon: data.item.icon,
-                          amount: currency.amount,
-                          hq: currency.hq === 1
-                        };
-                      }
-                      return undefined;
-                    })
-                    .filter((res) => res !== undefined),
-                  items: row.item
-                    .map((tradeItem) => {
-                      const itemPartialFetch = data.getPartial(tradeItem.id, 'item');
-                      if (itemPartialFetch !== undefined) {
-                        const itemPartial = itemPartialFetch.obj;
-                        return <TradeEntry>{
-                          id: itemPartial.i,
-                          icon: itemPartial.c,
-                          amount: tradeItem.amount,
-                          hq: tradeItem.hq === 1
-                        };
-                      } else if (+tradeItem.id === data.item.id) {
-                        return <TradeEntry>{
-                          id: data.item.id,
-                          icon: data.item.icon,
-                          amount: tradeItem.amount,
-                          hq: tradeItem.hq === 1
-                        };
-                      }
-                      return undefined;
-                    })
-                    .filter((res) => res !== undefined)
-                };
-              }),
-              shopName: ts.shop
-            };
-          })
+          trades
         });
       }
       if (data.item.loot) {
