@@ -47,9 +47,6 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public set dohSelectedPage(index: number) {
-    if (index === 0) {
-      debugger;
-    }
     this._dohSelectedPage = index;
     this.selectedRecipes = [];
   }
