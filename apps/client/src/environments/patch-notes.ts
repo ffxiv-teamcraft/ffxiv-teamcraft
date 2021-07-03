@@ -1,6 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
 * **community-rotations:** better sorting for rotations.
+* **db:** fixed tomestone pages being very slow to load.
 * **gearset-editor:** fixed job swap not working as expected.
 * **gearsets:** fixed materias not being saved properly when switching pieces.
 * **layouts:** removed export button for default layout.
