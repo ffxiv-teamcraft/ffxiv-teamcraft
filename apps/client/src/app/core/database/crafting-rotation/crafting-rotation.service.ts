@@ -49,6 +49,9 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
             });
           return this.serializer.deserialize<CraftingRotation>(rotations, [this.getClass()])
             .filter(rotation => {
+              if (rotation.rotation.length < 2) {
+                return false;
+              }
               let matches = rotation.getName().toLowerCase().indexOf(filters.name.toLowerCase()) > -1;
               if (filters.tags.length > 0) {
                 matches = matches && filters.tags.reduce((res, tag) => {
@@ -61,6 +64,8 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
               if (filters.rlvl) {
                 if ([150, 290, 420].indexOf(filters.rlvl) > -1) {
                   matches = matches && rotation.community.rlvl >= filters.rlvl - 30 && rotation.community.rlvl <= filters.rlvl;
+                } else if (filters.rlvl <= 50) {
+                  matches = matches && rotation.community.rlvl <= 50;
                 } else {
                   matches = matches && rotation.community.rlvl === filters.rlvl;
                 }
@@ -91,7 +96,8 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
 
   private getSortScore(rotation: CraftingRotation): number {
     return rotation.community.minCraftsmanship + rotation.community.minControl + rotation.community.minCp
-      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0);
+      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0)
+      + (rotation.tags.includes(RotationTag.SPECIALIST) ? 10000 : 0);
   }
 
   public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {

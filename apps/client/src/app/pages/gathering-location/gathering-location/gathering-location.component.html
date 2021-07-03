@@ -17,17 +17,17 @@
   </nz-input-group>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-  <nz-switch [(ngModel)]="compactDisplay" (ngModelChange)="saveCompactDisplay($event)"></nz-switch>
+  <nz-switch [ngModel]="compactDisplay$ | async" (ngModelChange)="saveCompactDisplay($event)"></nz-switch>
   <div>
     {{'Compact_display' | translate}}
   </div>
 </div>
 <div *ngIf="results$ | async as results; else noResults" class="results">
-  <ng-container *ngFor="let row of results" [class.compact-node]="compactDisplay">
+  <ng-container *ngFor="let row of results" [class.compact-node]="compactDisplay$ | async">
     <nz-card [nzActions]="(row.node.spawns?.length > 0 || row.node.weathers?.length > 0)?
              (alarmGroups$ | async)?.length > 0 && canCreateAlarmFromNode(alarms$ | async, row.node)?[actionAlarm, actionAlarmToGroup]:[actionAlarm]
              :[]"
-             [nzCover]="compactDisplay?null:map">
+             [nzCover]="(compactDisplay$ | async)?null:map">
       <nz-card-meta [nzAvatar]="itemIcon" [nzDescription]="description" [nzTitle]="title">
       </nz-card-meta>
       <ng-template #itemIcon>

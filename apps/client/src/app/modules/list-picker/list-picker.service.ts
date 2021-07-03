@@ -4,12 +4,13 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { ListPickerDrawerComponent } from './list-picker-drawer/list-picker-drawer.component';
-import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, mapTo, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { ListsFacade } from '../list/+state/lists.facade';
 import { ListRow } from '../list/model/list-row';
 import { ListManagerService } from '../list/list-manager.service';
 import { ProgressPopupService } from '../progress-popup/progress-popup.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class ListPickerService {
 
   constructor(private nzDrawer: NzDrawerService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService,
-              private progressService: ProgressPopupService, private notificationService: NzNotificationService) {
+              private progressService: ProgressPopupService, private notificationService: NzNotificationService,
+              private router: Router) {
   }
 
   pickList(workshopView = false): Observable<List> {
@@ -85,12 +87,22 @@ export class ListPickerService {
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');
+      }),
+      switchMap(list => {
+        return this.notificationService.success(
+          this.translate.instant('Success'),
+          this.translate.instant('Recipes_Added', { listname: list.name, itemcount: items.length }),
+          {
+            nzStyle: {
+              cursor: 'pointer'
+            }
+          }
+        ).onClick.pipe(
+          mapTo(list)
+        );
       })
     ).subscribe((list) => {
-      this.notificationService.success(
-        this.translate.instant('Success'),
-        this.translate.instant('Recipes_Added', { listname: list.name, itemcount: items.length })
-      );
+      this.router.navigate(['/list', list.$key]);
       done$.next(list);
       done$.complete();
     });

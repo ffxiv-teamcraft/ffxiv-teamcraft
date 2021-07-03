@@ -50,7 +50,6 @@ import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips
 import { DirtyScope } from '../../../../core/dirty/dirty-scope';
 import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
 import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
-import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
@@ -72,6 +71,7 @@ import {
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -184,7 +184,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
 
-  private forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   @Input()
   public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
@@ -200,7 +200,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private job$: Observable<any>;
 
-  private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
+  public stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
   private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
@@ -209,8 +209,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
-
-  private statsFromRotationApplied = false;
 
   public qualityPer100$: Observable<number>;
 
@@ -300,19 +298,19 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       .sort(this.freeCompanyActionsSortFn);
   }
 
-  openRotationSolver(): void {
+  findRotation(): void {
     this.simulation$.pipe(
       first(),
       switchMap(simulation => {
         return this.dialog.create({
           nzFooter: null,
-          nzContent: SolverPopupComponent,
+          nzContent: CommunityRotationFinderPopupComponent,
           nzComponentParams: {
             recipe: simulation.recipe,
-            stats: simulation.crafterStats,
-            seed: simulation.actions || []
+            stats: simulation.crafterStats
           },
-          nzTitle: this.translate.instant('SIMULATOR.Rotation_solver')
+          nzWidth: '60vw',
+          nzTitle: this.translate.instant('SIMULATOR.Find_rotation')
         }).afterClose;
       }),
       filter(res => res && res.length > 0)
@@ -324,21 +322,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   openSharePopup(rotation: CraftingRotation, stats: CrafterStats): void {
-    this.simulation$.pipe(
-      first()
-    ).subscribe(simulation => {
-      this.dialog.create({
-        nzFooter: null,
-        nzContent: SimulationSharePopupComponent,
-        nzComponentParams: {
-          rotation: rotation,
-          stats: stats,
-          food: this.selectedFood,
-          medicine: this.selectedMedicine,
-          freeCompanyActions: this.selectedFreeCompanyActions
-        },
-        nzTitle: this.translate.instant('SIMULATOR.Share_button_tooltip')
-      });
+    this.dialog.create({
+      nzFooter: null,
+      nzContent: SimulationSharePopupComponent,
+      nzComponentParams: {
+        rotation: rotation,
+        stats: stats,
+        food: this.selectedFood,
+        medicine: this.selectedMedicine,
+        freeCompanyActions: this.selectedFreeCompanyActions
+      },
+      nzTitle: this.translate.instant('SIMULATOR.Share_button_tooltip')
     });
   }
 
@@ -528,7 +522,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   saveRotation(rotation: CraftingRotation): void {
     combineLatest([this.stats$, this.actions$, this.recipe$]).pipe(
       first()
-    ).subscribe(([stats, actions, recipe]) => {
+    ).subscribe(([stats, actions]) => {
       if (this.custom) {
         // custom-specific behavior goes here if we find any.
       } else {

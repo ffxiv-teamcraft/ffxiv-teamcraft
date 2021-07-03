@@ -101,13 +101,13 @@
           <i nz-icon nzType="share-alt"></i>
         </button>
       </ng-container>
-      <!--      <button (click)="openRotationSolver()" [nzShape]="'circle'"-->
-      <!--              [nzTitle]="'SIMULATOR.Rotation_solver' | translate"-->
-      <!--              [nzType]="'primary'"-->
-      <!--              nz-button-->
-      <!--              nz-tooltip>-->
-      <!--        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>-->
-      <!--      </button>-->
+            <button (click)="findRotation()" [nzShape]="'circle'"
+                    [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
+                    [nzType]="'primary'"
+                    nz-button
+                    nz-tooltip>
+              <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
+            </button>
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"

@@ -326,9 +326,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           yield: 1
         };
       });
-    this.listPicker.addToList(...items).subscribe(list => {
-      this.router.navigate(['/list', list.$key]);
-    });
+    this.listPicker.addToList(...items);
   }
 
 }

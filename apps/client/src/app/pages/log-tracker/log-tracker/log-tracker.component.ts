@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,8 +27,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 @Component({
   selector: 'app-log-tracker',
   templateUrl: './log-tracker.component.html',
-  styleUrls: ['./log-tracker.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./log-tracker.component.less']
 })
 export class LogTrackerComponent extends TrackerComponent {
 
@@ -48,6 +47,9 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public set dohSelectedPage(index: number) {
+    if (index === 0) {
+      debugger;
+    }
     this._dohSelectedPage = index;
     this.selectedRecipes = [];
   }
@@ -71,6 +73,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public selectedRecipes: { itemId: number, recipeId: number }[] = [];
 
+  private lastSelectedTabIndex = -1;
+
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
@@ -84,7 +88,7 @@ export class LogTrackerComponent extends TrackerComponent {
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
               private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService,
-              public settings: SettingsService) {
+              public settings: SettingsService, private cdr: ChangeDetectorRef) {
     super(alarmsFacade);
     this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
       return page.map(tab => {
@@ -116,7 +120,10 @@ export class LogTrackerComponent extends TrackerComponent {
         logTracking.gathering.forEach(itemId => {
           this.userGatheringCompletion[itemId] = true;
         });
-        this.updateSelectedPage(this.hideCompleted, type);
+        if (this.hideCompleted) {
+          this.updateSelectedPage(this.hideCompleted, type);
+        }
+        this.cdr.markForCheck();
       });
   }
 
@@ -129,14 +136,14 @@ export class LogTrackerComponent extends TrackerComponent {
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
     if (pages) {
       const currentPage = pages[selectedPageIndex];
-      if (isPageDone(currentPage) && hideCompleted) {
+      if (currentPage && isPageDone(currentPage) && hideCompleted) {
         const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = nextUncompletedPage?.id;
         } else {
           this.dolSelectedPage = nextUncompletedPage?.id;
         }
-      } else {
+      } else if (currentPage && this.lastSelectedTabIndex !== selectedTabIndex) {
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = pages[0].id;
         } else {
@@ -144,6 +151,7 @@ export class LogTrackerComponent extends TrackerComponent {
         }
       }
     }
+    this.lastSelectedTabIndex = selectedTabIndex;
   }
 
   public setType(index: number): void {
@@ -221,11 +229,11 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isDoLPageDone = (page: any) => {
-    return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
+    return !!page && page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
   };
 
   public isDoHPageDone = (page: any) => {
-    return page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
+    return !!page && page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
   };
 
   public getDohIcon(index: number): string {

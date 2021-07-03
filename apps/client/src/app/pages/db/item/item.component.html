@@ -298,43 +298,47 @@
                 </div>
               </div>
               <div *ngIf="row.trades" fxLayout="column" fxLayoutGap="5px">
-                <nz-card *ngFor="let source of row.trades" [nzTitle]="source.shopName | shopName | i18n">
-                  <nz-table #basicTable [nzData]="source.trades">
-                    <thead>
-                    <tr>
-                      <th>{{'DB.Currencies' | translate}}</th>
-                      <th>{{'Items' | translate}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let trade of basicTable.data">
-                      <td>
-                        <div fxLayout="row wrap" fxLayoutGap="10px">
-                          <div *ngFor="let currency of trade.currencies" class="item-container" fxLayout="row"
-                               fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                            <app-item-icon [hq]="currency.hq" [icon]="currency.icon"
-                                           [itemId]="currency.id"
-                                           [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
-                            <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
-                            <app-db-button [id]="currency.id" type="item"></app-db-button>
+
+                <app-lazy-scroll [data]="row.trades" [rowTemplate]="rowTpl" rowSize="651" displayedRows="1"></app-lazy-scroll>
+                <ng-template #rowTpl let-source>
+                  <nz-card  [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
+                    <nz-table #basicTable [nzData]="source.trades">
+                      <thead>
+                      <tr>
+                        <th>{{'DB.Currencies' | translate}}</th>
+                        <th>{{'Items' | translate}}</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let trade of basicTable.data">
+                        <td>
+                          <div fxLayout="row wrap" fxLayoutGap="10px">
+                            <div *ngFor="let currency of trade.currencies" class="item-container" fxLayout="row"
+                                 fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                              <app-item-icon [hq]="currency.hq" [icon]="currency.icon"
+                                             [itemId]="currency.id"
+                                             [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
+                              <div>{{currency.id | itemName | i18n}} <span>x{{currency.amount}}</span></div>
+                              <app-db-button [id]="currency.id" type="item"></app-db-button>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div fxLayout="row wrap" fxLayoutGap="10px">
-                          <div *ngFor="let item of trade.items" class="item-container" fxLayout="row"
-                               fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                            <app-item-icon [hq]="item.hq" [icon]="item.icon" [itemId]="item.id"
-                                           [itemName]="item.id | itemName | i18n" [width]="32"></app-item-icon>
-                            <div>{{item.id | itemName | i18n}} <span>x{{item.amount}}</span></div>
-                            <app-db-button [id]="item.id" type="item"></app-db-button>
+                        </td>
+                        <td>
+                          <div fxLayout="row wrap" fxLayoutGap="10px">
+                            <div *ngFor="let item of trade.items" class="item-container" fxLayout="row"
+                                 fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                              <app-item-icon [hq]="item.hq" [icon]="item.icon" [itemId]="item.id"
+                                             [itemName]="item.id | itemName | i18n" [width]="32"></app-item-icon>
+                              <div>{{item.id | itemName | i18n}} <span>x{{item.amount}}</span></div>
+                              <app-db-button [id]="item.id" type="item"></app-db-button>
+                            </div>
                           </div>
-                        </div>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </nz-table>
-                </nz-card>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </nz-table>
+                  </nz-card>
+                </ng-template>
               </div>
               <div *ngIf="row.leves">
                 <nz-list [nzDataSource]="row.leves" [nzItemLayout]="'horizontal'"
@@ -362,26 +366,23 @@
                 </nz-list>
               </div>
               <div *ngIf="row.quests">
-                <nz-list [nzDataSource]="row.quests" [nzItemLayout]="'horizontal'"
-                         [nzRenderItem]="questTemplate">
-                  <ng-template #questTemplate let-quest>
-                    <nz-list-item [nzContent]="more">
-                      <nz-list-item-meta
-                        [nzAvatar]="questAvatar"
-                        [nzTitle]="quest | questName | i18n">
-                        <ng-template #questAvatar>
-                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                            <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                          </a>
-                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
-                        </ng-template>
-                        <ng-template #more>
-                          <app-db-button [id]="quest" type="quest"></app-db-button>
-                        </ng-template>
-                      </nz-list-item-meta>
-                    </nz-list-item>
-                  </ng-template>
-                </nz-list>
+
+                <app-lazy-scroll [data]="row.quests" [rowTemplate]="rowTpl" rowSize="56" displayedRows="5"></app-lazy-scroll>
+                <ng-template #rowTpl let-quest>
+                  <div class="quest-row" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <div>
+                        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                          <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                        </a>
+                      </div>
+                      <div>
+                        {{quest | questName | i18n}}
+                      </div>
+                    </div>
+                    <app-db-button [id]="quest" type="quest"></app-db-button>
+                  </div>
+                </ng-template>
               </div>
               <div *ngIf="row.supply">
                 <div fxLayout="column">
@@ -810,26 +811,22 @@
                       </div>
                     </div>
                   </ng-template>
-                  <nz-list [nzDataSource]="source.data" [nzItemLayout]="'horizontal'"
-                           [nzRenderItem]="questTemplate">
-                    <ng-template #questTemplate let-quest>
-                      <nz-list-item [nzContent]="more">
-                        <nz-list-item-meta
-                          [nzAvatar]="questAvatar"
-                          [nzTitle]="quest | questName | i18n">
-                          <ng-template #questAvatar>
-                            <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                              <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                            </a>
-                            <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">{{quest | questName | i18n}}</a>
-                          </ng-template>
-                          <ng-template #more>
-                            <app-db-button [id]="quest" type="quest"></app-db-button>
-                          </ng-template>
-                        </nz-list-item-meta>
-                      </nz-list-item>
-                    </ng-template>
-                  </nz-list>
+                  <app-lazy-scroll [data]="source.data" [rowTemplate]="rowTpl" rowSize="56" displayedRows="5"></app-lazy-scroll>
+                  <ng-template #rowTpl let-quest>
+                    <div class="quest-row" fxLayout="row" fxLayoutAlign="space-between center">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <div>
+                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+                            <img class="img-icon round-icon" src="./assets/icons/quest.png">
+                          </a>
+                        </div>
+                        <div>
+                          {{quest | questName | i18n}}
+                        </div>
+                      </div>
+                      <app-db-button [id]="quest" type="quest"></app-db-button>
+                    </div>
+                  </ng-template>
                 </nz-card>
               </ng-container>
             </ng-container>

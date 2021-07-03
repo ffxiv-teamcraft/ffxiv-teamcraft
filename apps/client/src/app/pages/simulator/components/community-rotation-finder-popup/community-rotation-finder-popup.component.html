@@ -1,0 +1,53 @@
+<div fxLayout="column" fxLayoutGap="10px" *ngIf="rotations$ | async as rows; else loader">
+  <nz-empty *ngIf="rows.length === 0" [nzNotFoundContent]="'SIMULATOR.No_matching_rotations' | translate"></nz-empty>
+  <nz-divider *ngIf="rows.length > 0" [nzText]="'SIMULATOR.Click_on_rotation' | translate"></nz-divider>
+  <nz-card *ngFor="let row of rows" nzHoverable (click)="select(row.actions)">
+    <div class="rotation-row" fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <app-user-avatar [userId]="row.rotation.authorId" [width]="24"></app-user-avatar>
+        <div>{{row.rotation.name}}</div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div *ngIf="row.rotation.tags.indexOf('SPECIALIST') > -1 && !stats.specialist">
+          <i [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Specialist_rotation_warning' | translate"
+             [twoToneColor]="'#aa9400'" nz-icon nz-tooltip
+             nzType="exclamation-circle" theme="twotone"></i>
+        </div>
+        <div [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip>
+          <nz-tag *ngIf="row.result.success"
+                  [style.border-color]="'darkgreen'"
+                  class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: row.result.hqPercent } }}</nz-tag>
+          <nz-tag *ngIf="!row.result.success"
+                  [style.border-color]="'#f50'"
+                  class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
+        </div>
+        <nz-tag [style.border-color]="row.successColor">
+          {{'SIMULATOR.Reliability' | translate}}: {{row.reliability.successPercent}}%
+        </nz-tag>
+        <nz-tag [style.border-color]="row.qualityColor" nz-tooltip [nzTooltipTitle]="detailsTooltip">
+          {{'SIMULATOR.Average_hq' | translate}}: {{row.reliability.averageHQPercent}}%
+          <ng-template #detailsTooltip>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+              <div>{{'SIMULATOR.Median_HQ' | translate}}:</div>
+              <div>{{row.reliability.medianHQPercent}}%</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="row.reliability.minHQPercent !== undefined" fxLayoutGap="5px">
+              <div>{{'SIMULATOR.Min_HQ' | translate}}:</div>
+              <div>{{row.reliability.minHQPercent}}%</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="row.reliability.maxHQPercent !== undefined" fxLayoutGap="5px">
+              <div>{{'SIMULATOR.Max_HQ' | translate}}:</div>
+              <div>{{row.reliability.maxHQPercent}}%</div>
+            </div>
+          </ng-template>
+        </nz-tag>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        <app-action *ngFor="let action of row.actions" [action]="action" [hideCost]="true"></app-action>
+      </div>
+    </div>
+  </nz-card>
+</div>
+<ng-template #loader>
+  <app-page-loader [loading]="true" [message]="'SIMULATOR.Searching_for_rotation' | translate"></app-page-loader>
+</ng-template>

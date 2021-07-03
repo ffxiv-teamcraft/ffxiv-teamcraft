@@ -107,7 +107,7 @@
                                           [materias]="row.equipmentPiece.materias"
                                           [stats]="stats"
                                           (pieceChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"
-                                          (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece)"></app-gearset-editor-row>
+                                          (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece, category)"></app-gearset-editor-row>
                   <nz-divider *ngIf="!last"></nz-divider>
                 </ng-container>
               </div>
