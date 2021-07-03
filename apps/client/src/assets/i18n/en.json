@@ -1511,8 +1511,7 @@
       "Required_control": "Req. Control",
       "Mark_as_done_in_gathering_log": "Mark as done in log",
       "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details",
-      "Trades_skipped": "{{amount}} trades aren't displayed to prevent performance issues"
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Hour of the day",
