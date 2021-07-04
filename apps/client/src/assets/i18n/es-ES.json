@@ -319,7 +319,7 @@
   "Favorite": "Favorito",
   "Adding_recipes": "Agregando {{amount}} recetas a la lista {{listname}}",
   "Recipe_Added": "1 artículo agregado a la lista {{listname}}",
-  "Recipes_Added": "{{itemcount}} artículos agregados a la lista {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Nombre del Personaje",
   "Character_add_warning": "Si está viendo esto sin haber eliminado su personaje manualmente, no introduzca nada y actualize la página o reinicie la aplicación. Si el problema persiste, por favor, reporta en el servidor discord.",
   "Disconnect_and_anonymous": "Desconectar y continuar como anónimo",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "Aparecerá en {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "Legendary": "Legendary",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "Cabeza de anzuelo pequeña",
       "Normal": "Cabeza de anzuelo normal",
@@ -999,8 +1000,10 @@
     "Current_control": "Control actual: {{value}}",
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Incluir bloqueo de macro",
-    "Solve_rotation": "Solucionar esta rotación",
-    "Rotation_solver": "Resolvedor de rotación",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "Remove_final_appraisal": "Remover el beneficio de Final Appraisal",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "Elija una moneda",
     "You_can_buy": "Puede comprar {{amount}}",
     "Disabled": "La guía de gasto de monedas no está funcionando más",
-    "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
+    "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos.",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",

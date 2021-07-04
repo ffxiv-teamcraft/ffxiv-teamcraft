@@ -319,7 +319,7 @@
   "Favorite": "즐겨찾기",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
-  "Recipes_Added": "{{itemcount}} 개의 아이템이 {{listname}}  목록에 추가되었습니다",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "캐릭터 이름",
   "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -999,8 +1000,10 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Solve_rotation": "로테이션 생성",
-    "Rotation_solver": "로테이션 생성기",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
-    "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다."
+    "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다.",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "음식 선택기",
