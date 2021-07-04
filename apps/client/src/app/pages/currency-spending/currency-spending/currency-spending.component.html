@@ -37,43 +37,57 @@
   </div>
 </div>
 
-<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="item" class="results-list">
-  <ng-template #item let-item>
-    <nz-list-item [nzContent]="content" class="result-item">
-      <ng-template #content>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{item.npcs[0] | npcName | i18n}}</div>
-          <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
-        </div>
+
+<div *ngIf="loading" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" class="loader">
+  <div>{{loadedPrices}} / {{tradesCount}}</div>
+  <div>
+    <span *ngIf="tradesCount === 0">{{'CURRENCY_SPENDING.Loading_data' | translate}}</span>
+    <span *ngIf="tradesCount > 0">{{'CURRENCY_SPENDING.Loading_universalis' | translate:{ amount: tradesCount } }}</span>
+  </div>
+  <nz-progress nzStatus="active" [nzPercent]="(100 * loadedPrices / tradesCount) | floor"></nz-progress>
+</div>
+
+<ng-container *ngIf="results$ | async as results">
+  <ng-container *ngIf="!loading">
+    <nz-list [nzDataSource]="results" [nzRenderItem]="item">
+      <ng-template #item let-item>
+        <nz-list-item [nzContent]="content" class="result-item">
+          <ng-template #content>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>{{item.npcs[0] | npcName | i18n}}</div>
+              <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
+            </div>
+          </ng-template>
+          <nz-list-item-meta
+            [nzAvatar]="avatar"
+            [nzDescription]="description"
+            [nzTitle]="nzTitle"
+          >
+            <ng-template #description>
+              <div fxLayout="row" fxLayoutAlign="flex-start center">
+                <div>{{'CURRENCY_SPENDING.You_can_buy' | translate: { amount: (item.rate * (amount$ | async) | floor) } }},&nbsp;</div>
+                <div>{{'MARKETBOARD.Unit_price' | translate}}:</div>
+                <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+                <div>x {{item.price | number}},&nbsp;</div>
+                <div>{{'COMMON.Total' | translate}}:</div>
+                <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
+                <div>x {{(item.price * (item.rate * (amount$ | async) | floor)) | number}}</div>
+              </div>
+            </ng-template>
+            <ng-template #avatar>
+              <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
+                             [width]="32"></app-item-icon>
+            </ng-template>
+            <ng-template #nzTitle>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <div>{{item.item | itemName | i18n}}</div>
+                <app-db-button [id]="item.item" type="item"></app-db-button>
+                <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
+              </div>
+            </ng-template>
+          </nz-list-item-meta>
+        </nz-list-item>
       </ng-template>
-      <nz-list-item-meta
-        [nzAvatar]="avatar"
-        [nzDescription]="description"
-        [nzTitle]="nzTitle"
-      >
-        <ng-template #description>
-          <div fxLayout="row" fxLayoutAlign="flex-start center">
-            <div>{{'CURRENCY_SPENDING.You_can_buy' | translate: { amount: (item.rate * (amount$ | async) | floor) } }},&nbsp;</div>
-            <div>{{'MARKETBOARD.Unit_price' | translate}}:</div>
-            <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-            <div>x {{item.price | number}},&nbsp;</div>
-            <div>{{'COMMON.Total' | translate}}:</div>
-            <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
-            <div>x {{(item.price * (item.rate * (amount$ | async) | floor)) | number}}</div>
-          </div>
-        </ng-template>
-        <ng-template #avatar>
-          <app-item-icon [hq]="item.HQ" [icon]="item.item | lazyIcon" [itemId]="item.item"
-                         [width]="32"></app-item-icon>
-        </ng-template>
-        <ng-template #nzTitle>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{item.item | itemName | i18n}}</div>
-            <app-db-button [id]="item.item" type="item"></app-db-button>
-            <app-marketboard-icon [itemId]="item.item" [showHistory]="true"></app-marketboard-icon>
-          </div>
-        </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
-  </ng-template>
-</nz-list>
+    </nz-list>
+  </ng-container>
+</ng-container>

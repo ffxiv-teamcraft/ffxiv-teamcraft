@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
-import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { bufferCount, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
@@ -34,6 +34,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
   public server$: Subject<string> = new Subject<string>();
 
   public loading = false;
+
+  public tradesCount = 0;
+
+  public loadedPrices = 0;
 
   constructor(private xivapi: XivapiService, private dataService: DataService,
               private authFacade: AuthFacade, private universalis: UniversalisService,
@@ -102,7 +106,12 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                   ...chunk.map(entry => entry.item)
                 );
               });
-            return requestsWithDelay(batches, 250).pipe(
+            this.tradesCount = entries.length;
+            return requestsWithDelay(batches, 250, true).pipe(
+              tap(res => {
+                this.loadedPrices += res.length;
+              }),
+              bufferCount(batches.length),
               map(res => {
                 return [].concat.apply([], res)
                   .filter(mbRow => {
@@ -141,7 +150,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           })
         );
       }),
-      tap(() => this.loading = false)
+      tap(() => {
+        this.loading = false;
+        this.tradesCount = 0;
+      })
     );
   }
 
