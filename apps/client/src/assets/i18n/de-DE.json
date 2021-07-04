@@ -319,7 +319,7 @@
   "Favorite": "Favorit",
   "Adding_recipes": "Füge {{amount}} Rezepte zur Liste {{listname}} hinzu",
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
-  "Recipes_Added": "{{itemcount}} Gegenstände zu Liste {{listname}} hinzugefügt",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Charaktername",
   "Character_add_warning": "Wenn du dies siehst, ohne deinen Charakter manuell gelöscht zu haben, gib nichts ein und aktualisiere die Seite oder starte die App neu. Wenn dieses Problem weiterhin besteht, melde es bitte auf dem Discord-Server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "Taucht in {{timer}} auf",
     "Ephemeral_warning": "Vergängliche Abbaustellen haben verschiedene Positionen, Position ist eine Annäherung.",
     "Legendary": "Legendär",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "Kleine Speerspitze",
       "Normal": "Normale Speerspitze",
@@ -999,8 +1000,10 @@
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
-    "Solve_rotation": "Rotation automatisch erstellen",
-    "Rotation_solver": "Rotations-Löser",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "Währung auswählen",
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
-    "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix."
+    "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix.",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",

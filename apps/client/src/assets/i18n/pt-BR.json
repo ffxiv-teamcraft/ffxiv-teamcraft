@@ -319,7 +319,7 @@
   "Favorite": "Favorito",
   "Adding_recipes": "Adicionar {{amount}} receitas a lista {{listname}}",
   "Recipe_Added": "{{itemname}} adicionado a lista {{listname}}",
-  "Recipes_Added": "{{itemcount}} adicionado a lista {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Nome do Personagem",
   "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the discord server.",
   "Disconnect_and_anonymous": "Desconectar e continuar como anônimo",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "Will spawn in {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "Legendary": "Legendary",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
@@ -999,8 +1000,10 @@
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Include macro lock",
-    "Solve_rotation": "Solve this rotation",
-    "Rotation_solver": "Rotation solver",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}",
     "Disabled": "The currency spending guide isn't working anymore",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them.",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",

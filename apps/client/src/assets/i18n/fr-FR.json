@@ -319,7 +319,7 @@
   "Favorite": "Favoris",
   "Adding_recipes": "Ajout de {{amount}} recettes à la liste {{listname}}",
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
-  "Recipes_Added": "{{itemcount}} objets ajoutés à la liste {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "Nom complet du personnage",
   "Character_add_warning": "Si vous voyez ceci sans avoir supprimé votre personnage manuellement, ne faites rien et redémarrez l'application ou faites F5. Si ce problème persiste, veuillez le signaler sur le serveur discord.",
   "Disconnect_and_anonymous": "Se déconnecter et continuer en tant qu'anonyme",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "Apparaît dans {{timer}}",
     "Ephemeral_warning": "Les noeuds éphémères ont plusieurs emplacements, la position est une approximation.",
     "Legendary": "Légendaire",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -999,8 +1000,10 @@
     "Current_control": "Contrôle actuel : {{value}}",
     "Current_control_bonus": "Bonus actuel",
     "Macrolock": "Inclure macrolock",
-    "Solve_rotation": "Résoudre cette rotation",
-    "Rotation_solver": "Résolveur de rotations",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "Choisir une devise",
     "You_can_buy": "Vous pouvez en acheter {{amount}}",
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
-    "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
+    "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix.",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",

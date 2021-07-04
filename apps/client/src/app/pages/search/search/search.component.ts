@@ -276,7 +276,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
           return query.length > 0 || filters.length > 0;
         }
-        return query.length > 3 || (lang === 'ja' && query.length > 0) || filters.length > 0;
+        return query.length > 2 || (lang === 'ja' && query.length > 0) || filters.length > 0;
       }),
       tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
         this.allSelected = false;

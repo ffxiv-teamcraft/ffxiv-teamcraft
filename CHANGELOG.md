@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.1"></a>
+## [8.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.0...v8.3.1) (2021-07-04)
+
+
+### Bug Fixes
+
+* **currency-spending:** better loading experience ([271c70a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/271c70a))
+* **list:** fixed panel ordering jumping from a state to another whenever the list changes ([5c10dec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c10dec))
+* **search:** you can now search for items wioth shorter names (Rue for instance) ([6aa6d78](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6aa6d78))
+
+
+
 <a name="8.3.0"></a>
 # [8.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.2.14...v8.3.0) (2021-07-03)
 

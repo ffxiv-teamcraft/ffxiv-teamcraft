@@ -319,7 +319,7 @@
   "Favorite": "お気に入り",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
-  "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "キャラクター名",
   "Character_add_warning": "直接キャラクターを削除しなかった場合でも、これが見えるときは、何も入力せずにページを更新したり、アプリを再起動してください。それでもこの問題が解決しない場合はディスコードサーバに報告してください。",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "{{timer}} 以降現れる",
     "Ephemeral_warning": "時間制採集物は色んな場所に存在し、位置はほぼ同じになります。",
     "Legendary": "伝説",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -999,8 +1000,10 @@
     "Current_control": "現在加工熟練度: {{value}}",
     "Current_control_bonus": "現在のボーナス",
     "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
-    "Solve_rotation": "ローテーションの作成",
-    "Rotation_solver": "ローテーションの作成機",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "交換用アイテム追加",
     "You_can_buy": "{{amount}} 個購入可能",
     "Disabled": "通貨の消費ガイドはもう利用できません。",
-    "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
+    "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",

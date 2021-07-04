@@ -1,7 +1,9 @@
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { bufferCount, delay, map, mergeMap, tap } from 'rxjs/operators';
+import { bufferCount, delay, mergeMap, tap } from 'rxjs/operators';
 
-export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit = false): Observable<any[]> {
+export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit: true): Observable<any>
+export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit ?: false): Observable<any[]>
+export function requestsWithDelay(requests: Observable<any>[], _delay: number, emit = false): Observable<any | any[]> {
   if (requests.length === 0) {
     return of([]);
   }
@@ -17,6 +19,6 @@ export function requestsWithDelay(requests: Observable<any>[], _delay: number, e
         })
       );
     }),
-    emit ? map(a => [a]) : bufferCount(requests.length)
+    emit ? tap() : bufferCount(requests.length)
   );
 }
