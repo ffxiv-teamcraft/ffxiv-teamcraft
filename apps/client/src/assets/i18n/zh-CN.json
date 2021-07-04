@@ -319,7 +319,7 @@
   "Favorite": "收藏",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
-  "Recipes_Added": "{{itemcount}} 个物品已加入清单 {{listname}}",
+  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
   "Character_name": "角色名",
   "Character_add_warning": "如果您在没有手动删除角色的情况下看到此内容，请不要输入任何内容并刷新页面或重新启动应用程序。 如果此问题仍然存在，请反馈到discord服务器。",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
@@ -872,6 +872,7 @@
     "Will_spawn_in": "在 {{timer}} 后出现",
     "Ephemeral_warning": "限时采集点有多个位置，坐标为近似值。",
     "Legendary": "传奇",
+    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -999,8 +1000,10 @@
     "Current_control": "当前加工精度：{{value}}",
     "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
-    "Solve_rotation": "求解其手法",
-    "Rotation_solver": "手法求解器",
+    "Find_rotation": "Community rotation finder",
+    "Searching_for_rotation": "Searching for community rotations...",
+    "No_matching_rotations": "No community rotation found that match your needs",
+    "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
@@ -1781,7 +1784,9 @@
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
-    "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
+    "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。",
+    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
