@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="item">
+<nz-list [nzDataSource]="results$ | async" [nzLoading]="loading" [nzRenderItem]="item" class="results-list">
   <ng-template #item let-item>
     <nz-list-item [nzContent]="content" class="result-item">
       <ng-template #content>

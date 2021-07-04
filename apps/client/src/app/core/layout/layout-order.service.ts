@@ -14,20 +14,6 @@ import { MathTools } from '../../tools/math-tools';
 @Injectable()
 export class LayoutOrderService {
 
-  private static JOBS = [
-    'carpenter',
-    'blacksmith',
-    'armorer',
-    'goldsmith',
-    'leatherworker',
-    'weaver',
-    'alchemist',
-    'culinarian',
-    'miner',
-    'botanist',
-    'fisher'
-  ];
-
 
   private orderFunctions: { [index: string]: (rowA: ListRow, rowB: ListRow) => number } = {
     'NAME': (a, b) => {
@@ -112,14 +98,15 @@ export class LayoutOrderService {
     if (orderBy === 'TIMER') {
       return data.sort(this.orderFunctions[orderBy]);
     }
-    const hash = MathTools.hashCode(JSON.stringify(data));
+    const hash = MathTools.hashCode(`${orderBy}:${order};${data.map(d => `${d.id},${d.amount}`).join(';')}`);
     if (this.orderCache[hash] === undefined) {
       const ordering = this.orderFunctions[orderBy];
       if (ordering === undefined) {
         this.orderCache[hash] = this.toIndexArray(data, data);
+      } else {
+        const orderedASC = [...(data || [])].sort(ordering);
+        this.orderCache[hash] = this.toIndexArray(data, order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse());
       }
-      const orderedASC = (data || []).sort(ordering);
-      this.orderCache[hash] = this.toIndexArray(data, order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse());
     }
     return this.orderCache[hash].map(index => data[index]);
   }
