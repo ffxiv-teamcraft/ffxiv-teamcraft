@@ -407,7 +407,7 @@ export class DataService {
 
   /**
    * Searches for gathering items based on a given name.
-   * Will return an observable of empty array if name is shorter than 3 characters.
+   * Will return an observable of empty array if name is shorter than 2 characters.
    *
    * @param {string} name
    * @returns {Observable<number[]>}
@@ -421,7 +421,7 @@ export class DataService {
       } else {
         return of([]);
       }
-    } else if (name.length < 3 && (this.searchLang !== 'ja' && name.length === 0)) {
+    } else if (name.length < 2 && (this.searchLang !== 'ja' && name.length === 0)) {
       return of([]);
     }
 

@@ -109,7 +109,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
             this.tradesCount = entries.length;
             return requestsWithDelay(batches, 250, true).pipe(
               tap(res => {
-                this.loadedPrices += res.length;
+                this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
               }),
               bufferCount(batches.length),
               map(res => {
