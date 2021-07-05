@@ -84,8 +84,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
             if (entries.length === 0 && item.item.tradeCurrency?.length > 0) {
               entries = item.item.tradeCurrency;
-            } else {
-              return [];
             }
 
             return [].concat.apply([], entries.map(entry => {
