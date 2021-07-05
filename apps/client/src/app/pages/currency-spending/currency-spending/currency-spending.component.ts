@@ -68,7 +68,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         return [
           ...res.Results.filter(item => {
             // Remove gil, venture and outdated tomes/scrips
-            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
+            return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
           }).map(item => item.ID as number),
           33870
         ];
@@ -80,9 +80,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         this.loading = true;
         return this.dataService.getItem(currency).pipe(
           map((item: ItemData) => {
-            let entries = item.item.tradeCurrency.filter(entry => entry.npcs.length > 0);
+            let entries = item.item.tradeCurrency?.filter(entry => entry.npcs.length > 0);
 
-            if (entries.length === 0 && item.item.tradeCurrency.length > 0) {
+            if (entries.length === 0 && item.item.tradeCurrency?.length > 0) {
               entries = item.item.tradeCurrency;
             }
 
@@ -153,6 +153,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       tap(() => {
         this.loading = false;
         this.tradesCount = 0;
+        this.loadedPrices = 0;
       })
     );
   }
