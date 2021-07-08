@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   ArchivedListsLoaded,
   ConvertLists,
@@ -67,8 +67,8 @@ import { SoundNotificationType } from '../../../core/sound-notification/sound-no
 @Injectable()
 export class ListsEffects {
 
-  @Effect()
-  loadMyLists$ = this.actions$.pipe(
+
+  loadMyLists$ = createEffect(() => this.actions$.pipe(
     ofType(ListsActionTypes.LoadMyLists),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
@@ -89,10 +89,10 @@ export class ListsEffects {
           map(lists => new MyListsLoaded(lists, userId))
         );
     })
-  );
+  ));
 
-  @Effect()
-  loadArchivedLists$ = this.actions$.pipe(
+
+  loadArchivedLists$ = createEffect(() => this.actions$.pipe(
     ofType(ListsActionTypes.LoadArchivedLists),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
@@ -102,10 +102,10 @@ export class ListsEffects {
           map(lists => new ArchivedListsLoaded(lists, userId))
         );
     })
-  );
+  ));
 
-  @Effect()
-  loadTeamLists$ = this.actions$.pipe(
+
+  loadTeamLists$ = createEffect(() => this.actions$.pipe(
     ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
     withLatestFrom(this.listsFacade.connectedTeams$),
     filter(([action, teams]) => teams.indexOf(action.teamId) === -1),
@@ -116,10 +116,10 @@ export class ListsEffects {
           map(lists => new TeamListsLoaded(lists, action.teamId))
         );
     })
-  );
+  ));
 
-  @Effect()
-  loadSharedLists$ = this.actions$.pipe(
+
+  loadSharedLists$ = createEffect(() => this.actions$.pipe(
     ofType(ListsActionTypes.LoadSharedLists),
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
@@ -149,10 +149,10 @@ export class ListsEffects {
       );
     }),
     map(lists => new SharedListsLoaded(lists))
-  );
+  ));
 
-  @Effect()
-  loadListDetails$ = this.actions$.pipe(
+
+  loadListDetails$ = createEffect(() => this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
     filter(action => !/^offline\d+$/.test(action.key)),
     onlyIfNotConnected(this.listsFacade.allListDetails$, action => action.key),
@@ -195,10 +195,10 @@ export class ListsEffects {
       }
       return new ListDetailsLoaded(list);
     })
-  );
+  ));
 
-  @Effect()
-  loadOfflineListDetails$ = this.actions$.pipe(
+
+  loadOfflineListDetails$ = createEffect(() => this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
     filter(action => /^offline\d+$/.test(action.key)),
     map((action) => {
@@ -208,10 +208,10 @@ export class ListsEffects {
       }
       return new ListDetailsLoaded(list);
     })
-  );
+  ));
 
-  @Effect()
-  persistUpdateListIndexes$ = this.actions$.pipe(
+
+  persistUpdateListIndexes$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListIndexes>(ListsActionTypes.UpdateListIndexes),
     mergeMap(action => {
       const todo = action.lists.reduce((acc, list) => {
@@ -229,12 +229,11 @@ export class ListsEffects {
         return EMPTY;
       }
       return this.listService.updateIndexes(todo.online);
-    }),
-    switchMap(() => EMPTY)
-  );
+    })
+  ), { dispatch: false });
 
-  @Effect()
-  pureListUpdate$ = this.actions$.pipe(
+
+  pureListUpdate$ = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateList>(ListsActionTypes.PureUpdateList),
     mergeMap(action => {
       const localList = this.localStore.find(l => l.$key === action.$key);
@@ -244,12 +243,11 @@ export class ListsEffects {
         return EMPTY;
       }
       return this.listService.pureUpdate(action.$key, action.payload);
-    }),
-    switchMap(() => EMPTY)
-  );
+    })
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  createListInDatabase$ = this.actions$.pipe(
+
+  createListInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType(ListsActionTypes.CreateList),
     withLatestFrom(this.authFacade.userId$),
     map(([action, userId]) => {
@@ -268,16 +266,16 @@ export class ListsEffects {
         return this.listService.add(list);
       }
     )
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  updateListInDatabase$ = this.actions$.pipe(
+
+  updateListInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
-    debounceTime(2000),
     filter(action => {
       return !action.payload.isComplete();
     }),
-    switchMap(action => {
+    withLatestFrom(this.listsFacade.allListDetails$),
+    switchMap(([action, lists]) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
@@ -285,27 +283,28 @@ export class ListsEffects {
       if (action.payload.hasCommission) {
         this.updateCommission(action.payload);
       }
-      return this.listService.update(action.payload.$key, action.payload);
+      return this.listService.update(action.payload.$key, lists.find(l => l.$key === action.payload.$key), action.payload);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  atomicListUpdate = this.actions$.pipe(
+
+  atomicListUpdate$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
     tap((action) => {
       this.dirtyFacade.addEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
     }),
-    debounce(action => action.fromPacket ? timer(5000) : timer(800)),
+    debounceTime(500),
     filter(action => {
       return !(action.payload.ephemeral && action.payload.isComplete());
     }),
-    switchMap((action) => {
+    withLatestFrom(this.listsFacade.allListDetails$),
+    switchMap(([action, lists]) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
         return of(null);
       }
-      return this.listService.update(action.payload.$key, action.payload).pipe(
+      return this.listService.update(action.payload.$key, lists.find(l => l.$key === action.payload.$key), action.payload).pipe(
         catchError(e => {
           console.error('Error while saving list update');
           console.error(e);
@@ -316,24 +315,24 @@ export class ListsEffects {
         })
       );
     })
-  );
+  ), { dispatch: false });
 
-  @Effect()
-  convertListsAfterRegister$ = this.actions$.pipe(
+
+  convertListsAfterRegister$ = createEffect(() => this.actions$.pipe(
     ofType<ConvertLists>(ListsActionTypes.ConvertLists),
     withLatestFrom(this.listsFacade.myLists$),
     switchMap(([action, lists]) => {
       return from(
         lists.map(list => {
           list.authorId = action.uid;
-          return new UpdateList(list, true);
+          return new UpdateList(list);
         })
       );
     })
-  );
+  ));
 
-  @Effect({ dispatch: false })
-  deleteListFromDatabase$ = this.actions$.pipe(
+
+  deleteListFromDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteList>(ListsActionTypes.DeleteList),
     withLatestFrom(this.listsFacade.pinnedList$),
     mergeMap(([action, pin]) => {
@@ -346,18 +345,18 @@ export class ListsEffects {
       }
       return this.listService.remove(action.key);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  deleteListsFromDatabase$ = this.actions$.pipe(
+
+  deleteListsFromDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteLists>(ListsActionTypes.DeleteLists),
     switchMap(({ keys }) => {
       return this.listService.removeMany(keys);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect()
-  updateItemDone$ = this.actions$.pipe(
+
+  updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$,
       this.teamsFacade.selectedTeam$,
@@ -435,19 +434,19 @@ export class ListsEffects {
       }
       return new UpdateListAtomic(list, action.fromPacket);
     })
-  );
+  ));
 
-  @Effect()
-  deleteEphemeralListsOnComplete$ = this.actions$.pipe(
+
+  deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListAtomic),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
     tap(() => this.router.navigate(['/lists']))
-  );
+  ));
 
-  @Effect()
-  updateItem$ = this.actions$.pipe(
+
+  updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),
     withLatestFrom(this.listsFacade.selectedList$),
     map(([action, list]) => {
@@ -464,10 +463,10 @@ export class ListsEffects {
       return list;
     }),
     map(list => new UpdateList(list))
-  );
+  ));
 
-  @Effect()
-  openCompletionPopup$ = this.actions$.pipe(
+
+  openCompletionPopup$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
     filter(([action, list, userId]) => {
@@ -485,9 +484,8 @@ export class ListsEffects {
           }
         });
       }
-    }),
-    switchMap(() => EMPTY)
-  );
+    })
+  ), { dispatch: false });
 
   private localStore: List[] = [];
 

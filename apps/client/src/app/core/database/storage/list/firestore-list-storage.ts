@@ -1,7 +1,7 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, Observable, of, throwError } from 'rxjs';
+import { combineLatest, from, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -13,6 +13,7 @@ import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
 import firebase from 'firebase/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
+import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -44,8 +45,20 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     super(af, serializer, zone, pendingChangesService);
   }
 
-  public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
-    return super.set(uid, data as List);
+  public update(uid: string, localSnapshot: List, update: List, uriParams?: any): Observable<void> {
+    this.pendingChangesService.addPendingChange(`List Transaction ${uid}`);
+    return from(this.af.firestore.runTransaction(transaction => {
+      const ref = this.af.firestore.collection(this.getBaseUri()).doc(uid);
+      return transaction.get(ref).then(snap => {
+        this.recordOperation('read', uid);
+        const serverList = { $key: snap.id, ...snap.data() } as List;
+        const before = this.prepareData(localSnapshot);
+        const after = this.prepareData(update);
+        return this.runTransactionUpdate(ref, transaction, before, after, serverList);
+      });
+    }).then(() => {
+      this.pendingChangesService.removePendingChange(`List Transaction ${uid}`);
+    }));
   }
 
   protected prepareData(list: Partial<List>): List {
@@ -164,7 +177,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .snapshotChanges()
       .pipe(
         catchError(error => {
-          console.error(`GET COMMuNITY LISTS`);
+          console.error(`GET COMMUNITY LISTS`);
           console.error(error);
           return throwError(error);
         }),
@@ -267,5 +280,26 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
+  }
+
+  private runTransactionUpdate(ref: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>,
+                               transaction: firebase.firestore.Transaction,
+                               before: List, after: List, serverList: List): void {
+    // Get diff between local backup and new version
+    const diff = compare(before, after);
+    // Update the diff so the values are applied to the server list instead
+    const transactionDiff = diff.map(change => {
+      if (change.op === 'replace' && typeof change.value === 'number') {
+        const currentServerValue = getValueByPointer(serverList, change.path);
+        const currentLocalValue = getValueByPointer(before, change.path);
+        change.value = change.value - currentLocalValue + currentServerValue;
+      }
+      return change;
+    });
+    // Apply patch to the server list
+    const patched = applyPatch(serverList, transactionDiff).newDocument;
+    // Save inside Database
+    transaction.set(ref, patched);
+    this.recordOperation('write', before.$key);
   }
 }

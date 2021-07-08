@@ -151,12 +151,11 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UpdateList:
-    case ListsActionTypes.UpdateListAtomic: {
+    case ListsActionTypes.OptimisticListUpdate: {
       state = {
         ...state,
         listDetails: [
-          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload.clone(true) : list)
+          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       break;

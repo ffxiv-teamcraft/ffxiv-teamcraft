@@ -22,6 +22,7 @@ import { LazyData } from '../../../core/data/lazy-data';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CraftedBy } from './crafted-by';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
+import { deepClone } from 'fast-json-patch';
 
 declare const gtag: Function;
 
@@ -109,7 +110,7 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     if (internal) {
-      Object.assign(clone, this);
+      Object.assign(clone, deepClone(this));
     } else {
       for (const prop of Object.keys(this)) {
         if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
