@@ -109,6 +109,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return Object.assign(item, extracts[item.id]);
         });
         list.afterDeserialized();
+        if (list.modificationsHistory.length > 25) {
+          const popped = list.modificationsHistory.slice(26);
+          list.contributionStats = list.getContributionStats(popped, this.lazyData);
+          list.modificationsHistory = list.modificationsHistory.slice(0, 25);
+        }
         return list;
       })
     );

@@ -80,6 +80,8 @@ export class List extends DataWithPermissions {
 
   archived = false;
 
+  contributionStats = { entries: [], total: 0, ilvlTotal: 0 };
+
   constructor(settings?: SettingsService) {
     super();
     if (!this.createdAt) {
@@ -154,6 +156,26 @@ export class List extends DataWithPermissions {
   public forEachItemWithRequirement(method: (arg: ListRow) => void): void {
     (this.items || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
     (this.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
+  }
+
+  public getContributionStats(entries: ModificationEntry[], lazyData: LazyDataService) {
+    return entries.filter(entry => entry.amount > 0)
+      .reduce((stats, entry) => {
+        let statsRow = stats.entries.find(s => s.userId === entry.userId);
+        if (statsRow === undefined) {
+          stats.entries.push({
+            userId: entry.userId,
+            amount: 0,
+            ilvlAmount: 0
+          });
+          statsRow = stats.entries[stats.entries.length - 1];
+        }
+        statsRow.amount += entry.amount;
+        stats.total += entry.amount;
+        statsRow.ilvlAmount += entry.amount * lazyData.data.ilvls[entry.itemId];
+        stats.ilvlTotal += entry.amount * lazyData.data.ilvls[entry.itemId];
+        return stats;
+      }, this.contributionStats);
   }
 
   public addToFinalItems(data: ListRow, lazyData: LazyData): number {
@@ -717,9 +739,6 @@ export class List extends DataWithPermissions {
     }
     if ((<any>this.name)?.name) {
       this.name = (<any>this.name).name;
-    }
-    if (this.modificationsHistory.length > 25) {
-      this.modificationsHistory = this.modificationsHistory.slice(0, 25);
     }
   }
 }

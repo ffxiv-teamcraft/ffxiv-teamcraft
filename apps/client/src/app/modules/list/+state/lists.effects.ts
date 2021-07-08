@@ -271,6 +271,7 @@ export class ListsEffects {
 
   updateListInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
+    debounceTime(1000),
     filter(action => {
       return !action.payload.isComplete();
     }),
