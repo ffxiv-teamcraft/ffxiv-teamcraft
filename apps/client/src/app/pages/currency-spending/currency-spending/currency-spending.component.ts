@@ -112,6 +112,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
               }),
               bufferCount(batches.length),
+              first(),
               map(res => {
                 return [].concat.apply([], res)
                   .filter(mbRow => {
