@@ -718,5 +718,8 @@ export class List extends DataWithPermissions {
     if ((<any>this.name)?.name) {
       this.name = (<any>this.name).name;
     }
+    if (this.modificationsHistory.length > 25) {
+      this.modificationsHistory = this.modificationsHistory.slice(0, 25);
+    }
   }
 }
