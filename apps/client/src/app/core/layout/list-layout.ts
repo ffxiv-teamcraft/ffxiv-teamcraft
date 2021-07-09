@@ -5,8 +5,10 @@ import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { DataModel } from '../database/storage/data-model';
 import { ItemRowMenuElement } from '../../model/display/item-row-menu-element';
+import { AfterDeserialized } from '../database/storage/firestore/after-deserialized';
+import { BeforePrepareData } from '../database/storage/firestore/before-prepare-data';
 
-export class ListLayout extends DataModel {
+export class ListLayout extends DataModel implements AfterDeserialized, BeforePrepareData {
 
   @ForeignKey(TeamcraftUser)
   public userId: string;
@@ -61,18 +63,31 @@ export class ListLayout extends DataModel {
     ]
   };
 
+  public buttonsCache = {};
+
   base64 = () => {
     const exportLayout = { ...this as any };
     delete exportLayout.userId;
     return btoa(escape(JSON.stringify(exportLayout)));
-  }
+  };
 
-  public clone():ListLayout {
+  public clone(): ListLayout {
     const clone = new ListLayout();
     Object.assign(clone, JSON.parse(JSON.stringify(this)));
     clone.rows = this.rows.map(row => {
       return row.clone();
     });
     return clone;
+  }
+
+  public afterDeserialized(): void {
+    Object.keys(ItemRowMenuElement)
+      .forEach(key => {
+        this.buttonsCache[ItemRowMenuElement[key]] = this.rowsDisplay.buttons.indexOf(ItemRowMenuElement[key]) > -1;
+      });
+  }
+
+  onBeforePrepareData(): void {
+    delete this.buttonsCache;
   }
 }
