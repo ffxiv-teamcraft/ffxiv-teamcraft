@@ -22,6 +22,7 @@ import { LazyData } from '../../../core/data/lazy-data';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CraftedBy } from './crafted-by';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
+import { deepClone } from 'fast-json-patch';
 
 declare const gtag: Function;
 
@@ -79,6 +80,8 @@ export class List extends DataWithPermissions {
 
   archived = false;
 
+  contributionStats = { entries: [], total: 0, ilvlTotal: 0 };
+
   constructor(settings?: SettingsService) {
     super();
     if (!this.createdAt) {
@@ -109,7 +112,7 @@ export class List extends DataWithPermissions {
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
     if (internal) {
-      Object.assign(clone, this);
+      Object.assign(clone, deepClone(this));
     } else {
       for (const prop of Object.keys(this)) {
         if (['finalItems', 'items', 'note'].indexOf(prop) > -1) {
@@ -153,6 +156,26 @@ export class List extends DataWithPermissions {
   public forEachItemWithRequirement(method: (arg: ListRow) => void): void {
     (this.items || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
     (this.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
+  }
+
+  public getContributionStats(entries: ModificationEntry[], lazyData: LazyDataService) {
+    return entries.filter(entry => entry.amount > 0)
+      .reduce((stats, entry) => {
+        let statsRow = stats.entries.find(s => s.userId === entry.userId);
+        if (statsRow === undefined) {
+          stats.entries.push({
+            userId: entry.userId,
+            amount: 0,
+            ilvlAmount: 0
+          });
+          statsRow = stats.entries[stats.entries.length - 1];
+        }
+        statsRow.amount += entry.amount;
+        stats.total += entry.amount;
+        statsRow.ilvlAmount += entry.amount * lazyData.data.ilvls[entry.itemId];
+        stats.ilvlTotal += entry.amount * lazyData.data.ilvls[entry.itemId];
+        return stats;
+      }, this.contributionStats);
   }
 
   public addToFinalItems(data: ListRow, lazyData: LazyData): number {

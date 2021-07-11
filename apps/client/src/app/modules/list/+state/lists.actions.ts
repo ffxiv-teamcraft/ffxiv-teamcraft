@@ -28,6 +28,7 @@ export enum ListsActionTypes {
 
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
+  OptimisticListUpdate = '[Lists] Optimistic List Update',
   PureUpdateList = '[Lists] Pure Update List',
   UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndexes = '[Lists] Update List Indexes',
@@ -189,6 +190,13 @@ export class UpdateList implements Action {
   }
 }
 
+export class OptimisticListUpdate implements Action {
+  readonly type = ListsActionTypes.OptimisticListUpdate;
+
+  constructor(public readonly payload: List) {
+  }
+}
+
 export class PureUpdateList implements Action {
   readonly type = ListsActionTypes.PureUpdateList;
 
@@ -263,4 +271,5 @@ export type ListsAction =
   | LoadArchivedLists
   | ArchivedListsLoaded
   | UnLoadArchivedLists
-  | PureUpdateList;
+  | PureUpdateList
+  | OptimisticListUpdate;

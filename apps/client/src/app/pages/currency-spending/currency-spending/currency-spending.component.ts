@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
-import { bufferCount, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
 import { ItemData } from '../../../model/garland-tools/item-data';
@@ -112,6 +112,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 this.loadedPrices = Math.min(this.tradesCount, this.loadedPrices + res.length);
               }),
               bufferCount(batches.length),
+              first(),
               map(res => {
                 return [].concat.apply([], res)
                   .filter(mbRow => {
@@ -169,7 +170,8 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           return of(null);
         }
       }),
-      takeUntil(this.onDestroy$)
+      takeUntil(this.onDestroy$),
+      first()
     ).subscribe(server => {
       if (server !== null) {
         this.server$.next(server);

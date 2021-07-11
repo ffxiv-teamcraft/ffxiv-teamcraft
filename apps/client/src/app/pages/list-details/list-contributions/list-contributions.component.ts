@@ -18,24 +18,7 @@ export class ListContributionsComponent {
 
   public contributions$ = combineLatest([this.listsFacade.selectedList$, this.sort$]).pipe(
     map(([list, sort]) => {
-      const result = list.modificationsHistory
-        .filter(entry => entry.amount > 0)
-        .reduce((stats, entry) => {
-          let statsRow = stats.entries.find(s => s.userId === entry.userId);
-          if (statsRow === undefined) {
-            stats.entries.push({
-              userId: entry.userId,
-              amount: 0,
-              ilvlAmount: 0
-            });
-            statsRow = stats.entries[stats.entries.length - 1];
-          }
-          statsRow.amount += entry.amount;
-          stats.total += entry.amount;
-          statsRow.ilvlAmount += entry.amount * this.lazyData.data.ilvls[entry.itemId];
-          stats.ilvlTotal += entry.amount * this.lazyData.data.ilvls[entry.itemId];
-          return stats;
-        }, { entries: [], total: 0, ilvlTotal: 0 });
+      const result = list.getContributionStats(list.modificationsHistory, this.lazyData);
       result.entries.sort((a, b) => {
         return sort.value === 'ascend' ? a[sort.key] - b[sort.key] : b[sort.key] - a[sort.key];
       });

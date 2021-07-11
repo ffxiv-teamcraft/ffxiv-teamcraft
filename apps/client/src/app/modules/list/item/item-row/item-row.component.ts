@@ -33,7 +33,6 @@ import { CommentsService } from '../../../comments/comments.service';
 import { ListLayout } from '../../../../core/layout/list-layout';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { ListPickerService } from '../../../list-picker/list-picker.service';
-import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
@@ -101,10 +100,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()
   public set layout(l: ListLayout) {
     if (l) {
-      Object.keys(ItemRowMenuElement)
-        .forEach(key => {
-          this.buttonsCache[ItemRowMenuElement[key]] = l.rowsDisplay.buttons.indexOf(ItemRowMenuElement[key]) > -1;
-        });
+      this.buttonsCache = l.buttonsCache;
     }
     this._layout = l;
   }
