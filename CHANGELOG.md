@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.3"></a>
+## [8.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.2...v8.3.3) (2021-07-11)
+
+
+### Bug Fixes
+
+* **currency-spending:** possible fix for results always reloading ([b084f7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b084f7b))
+
+
+### Performance Improvements
+
+* **list:** better layout cache system for faster list details loading ([3023d4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3023d4f))
+* **list:** modifications history now only retains the last 25 changes to improve loading time ([b477d06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b477d06))
+* **list:** new progress write system for multiplayer autofill, a bit slower but way more reliable ([1aaa552](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1aaa552))
+
+
+
 <a name="8.3.2"></a>
 ## [8.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.1...v8.3.2) (2021-07-05)
 
