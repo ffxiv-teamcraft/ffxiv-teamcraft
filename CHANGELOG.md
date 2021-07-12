@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.4"></a>
+## [8.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.3...v8.3.4) (2021-07-12)
+
+
+### Bug Fixes
+
+* **list:** fixed fill from inventory not filling crafts properly ([fa805fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa805fd))
+* **list:** fixed list items not being added properly ([159e672](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/159e672))
+* **list:** fixed list panel reset not working as expected ([4cf5b26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cf5b26))
+
+
+
 <a name="8.3.3"></a>
 ## [8.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.2...v8.3.3) (2021-07-11)
 
