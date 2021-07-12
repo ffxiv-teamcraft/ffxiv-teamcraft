@@ -1,10 +1,5 @@
 export const patchNotes = `### Bug Fixes
 
-* **currency-spending:** possible fix for results always reloading.
-
-
-### Performance Improvements
-
-* **list:** better layout cache system for faster list details loading.
-* **list:** modifications history now only retains the last 25 changes to improve loading time.
-* **list:** new progress write system for multiplayer autofill, a bit slower but way more reliable.`;
+* **list:** fixed fill from inventory not filling crafts properly.
+* **list:** fixed list items not being added properly.
+* **list:** fixed list panel reset not working as expected.`;

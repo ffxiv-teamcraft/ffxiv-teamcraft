@@ -457,7 +457,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             if (item.done + totalAmount > item.amount) {
               totalAmount = item.amount - item.done;
             }
-            list.setDone(item.id, totalAmount, true);
+            list.setDone(item.id, totalAmount, true, false);
           }
         });
         list.finalItems.forEach(item => {
@@ -471,7 +471,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), false, true);
+            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
           }
         });
         list.updateAllStatuses();
