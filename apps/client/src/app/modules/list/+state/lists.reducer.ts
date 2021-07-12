@@ -160,9 +160,17 @@ export function listsReducer(
           <List>action.payload
         ]
       };
-      if (state.selectedId === action.payload.$key) {
+      if (state.selectedId === action.payload.$key && !action.payload.notFound) {
         state.selectedClone = action.payload.clone(true);
       }
+      break;
+    }
+
+    case ListsActionTypes.UpdateSelectedClone: {
+      state = {
+        ...state,
+        selectedClone: action.payload
+      };
       break;
     }
 

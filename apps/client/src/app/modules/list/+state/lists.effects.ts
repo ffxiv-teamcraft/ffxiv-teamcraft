@@ -18,7 +18,8 @@ import {
   UpdateItem,
   UpdateList,
   UpdateListIndexes,
-  UpdateListProgress
+  UpdateListProgress,
+  UpdateSelectedClone
 } from './lists.actions';
 import {
   catchError,
@@ -58,10 +59,10 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
-import { DirtyScope } from '../../../core/dirty/dirty-scope';
 import { CommissionService } from '../../commission-board/commission.service';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
+import { Action } from '@ngrx/store';
 
 @Injectable()
 export class ListsEffects {
@@ -286,6 +287,25 @@ export class ListsEffects {
       return this.listService.update(action.payload.$key, clone, action.payload);
     })
   ), { dispatch: false });
+
+
+  updateCloneList$ = createEffect(() => this.actions$.pipe(
+    ofType<Action & { payload: List[] }>(
+      ListsActionTypes.MyListsLoaded,
+      ListsActionTypes.SharedListsLoaded,
+      ListsActionTypes.ListsForTeamsLoaded,
+      ListsActionTypes.TeamListsLoaded,
+      ListsActionTypes.ArchivedListsLoaded
+    ),
+    withLatestFrom(this.listsFacade.selectedListKey$),
+    switchMap(([{ payload }, key]) => {
+      const selected = payload.find(l => l.$key === key);
+      if (selected) {
+        return of(new UpdateSelectedClone(this.listService.prepareData(selected.clone(true))));
+      }
+      return EMPTY;
+    })
+  ));
 
 
   updateListInDatabase$ = createEffect(() => this.actions$.pipe(
