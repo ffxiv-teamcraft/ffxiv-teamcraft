@@ -292,6 +292,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
                                before: List, after: List, serverList: List): void {
     // Get diff between local backup and new version
     const diff = compare(before, after);
+
+    console.log(diff);
     // Update the diff so the values are applied to the server list instead
     const transactionDiff = diff.map(change => {
       if (change.op === 'replace' && typeof change.value === 'number') {

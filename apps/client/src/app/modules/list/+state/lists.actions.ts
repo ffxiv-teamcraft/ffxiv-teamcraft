@@ -28,7 +28,7 @@ export enum ListsActionTypes {
 
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
-  OptimisticListUpdate = '[Lists] Optimistic List Update',
+  UpdateListProgress = '[Lists] Update List Progress',
   PureUpdateList = '[Lists] Pure Update List',
   UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndexes = '[Lists] Update List Indexes',
@@ -190,8 +190,8 @@ export class UpdateList implements Action {
   }
 }
 
-export class OptimisticListUpdate implements Action {
-  readonly type = ListsActionTypes.OptimisticListUpdate;
+export class UpdateListProgress implements Action {
+  readonly type = ListsActionTypes.UpdateListProgress;
 
   constructor(public readonly payload: List) {
   }
@@ -201,13 +201,6 @@ export class PureUpdateList implements Action {
   readonly type = ListsActionTypes.PureUpdateList;
 
   constructor(public readonly $key: string, public readonly payload: Partial<List>) {
-  }
-}
-
-export class UpdateListAtomic implements Action {
-  readonly type = ListsActionTypes.UpdateListAtomic;
-
-  constructor(public readonly payload: List, public readonly fromPacket = false) {
   }
 }
 
@@ -265,11 +258,10 @@ export type ListsAction =
   | OfflineListsLoaded
   | ToggleAutocompletion
   | ToggleCompletionNotification
-  | UpdateListAtomic
   | PinList
   | UnPinList
   | LoadArchivedLists
   | ArchivedListsLoaded
   | UnLoadArchivedLists
   | PureUpdateList
-  | OptimisticListUpdate;
+  | UpdateListProgress;

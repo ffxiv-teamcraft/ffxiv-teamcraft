@@ -7,6 +7,7 @@ const PINNED_LIST_LS_KEY = 'lists:pinned';
 export interface ListsState {
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
+  selectedClone?: List; // a clone of the currently selected list for diff updates
   autocompletionEnabled?: boolean;
   completionNotificationEnabled?: boolean;
   listsConnected: boolean;
@@ -151,17 +152,21 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.OptimisticListUpdate: {
+    case ListsActionTypes.ListDetailsLoaded: {
       state = {
         ...state,
         listDetails: [
-          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
+          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
+          <List>action.payload
         ]
       };
+      if (state.selectedId === action.payload.$key) {
+        state.selectedClone = action.payload.clone(true);
+      }
       break;
     }
 
-    case ListsActionTypes.ListDetailsLoaded: {
+    case ListsActionTypes.UpdateListProgress: {
       state = {
         ...state,
         listDetails: [
@@ -186,7 +191,8 @@ export function listsReducer(
     case ListsActionTypes.SelectList: {
       state = {
         ...state,
-        selectedId: action.key
+        selectedId: action.key,
+        selectedClone: state.listDetails.find(l => l.$key === action.key)?.clone(true)
       };
       break;
     }

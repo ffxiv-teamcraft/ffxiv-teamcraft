@@ -17,12 +17,11 @@ import {
   TeamListsLoaded,
   UpdateItem,
   UpdateList,
-  UpdateListAtomic,
-  UpdateListIndexes
+  UpdateListIndexes,
+  UpdateListProgress
 } from './lists.actions';
 import {
   catchError,
-  debounce,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -37,7 +36,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, from, of, timer } from 'rxjs';
+import { combineLatest, EMPTY, from, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -269,14 +268,14 @@ export class ListsEffects {
   ), { dispatch: false });
 
 
-  updateListInDatabase$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList),
+  updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
+    ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
     debounceTime(1000),
     filter(action => {
       return !action.payload.isComplete();
     }),
-    withLatestFrom(this.listsFacade.allListDetails$),
-    switchMap(([action, lists]) => {
+    withLatestFrom(this.listsFacade.selectedClone$),
+    switchMap(([action, clone]) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
@@ -284,37 +283,26 @@ export class ListsEffects {
       if (action.payload.hasCommission) {
         this.updateCommission(action.payload);
       }
-      return this.listService.update(action.payload.$key, lists.find(l => l.$key === action.payload.$key), action.payload);
+      return this.listService.update(action.payload.$key, clone, action.payload);
     })
   ), { dispatch: false });
 
 
-  atomicListUpdate$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
-    tap((action) => {
-      this.dirtyFacade.addEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
-    }),
-    debounceTime(500),
+  updateListInDatabase$ = createEffect(() => this.actions$.pipe(
+    ofType<UpdateList>(ListsActionTypes.UpdateList),
+    debounceTime(2000),
     filter(action => {
-      return !(action.payload.ephemeral && action.payload.isComplete());
+      return !action.payload.isComplete();
     }),
-    withLatestFrom(this.listsFacade.allListDetails$),
-    switchMap(([action, lists]) => {
+    switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
-        this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
         return of(null);
       }
-      return this.listService.update(action.payload.$key, lists.find(l => l.$key === action.payload.$key), action.payload).pipe(
-        catchError(e => {
-          console.error('Error while saving list update');
-          console.error(e);
-          return of(null);
-        }),
-        tap(() => {
-          this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
-        })
-      );
+      if (action.payload.hasCommission) {
+        this.updateCommission(action.payload);
+      }
+      return this.listService.set(action.payload.$key, action.payload);
     })
   ), { dispatch: false });
 
@@ -433,13 +421,13 @@ export class ListsEffects {
           this.markAsDoneInDoLLog(action.itemId);
         }
       }
-      return new UpdateListAtomic(list, action.fromPacket);
+      return new UpdateListProgress(list);
     })
   ));
 
 
   deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListAtomic),
+    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListProgress, ListsActionTypes.UpdateListAtomic),
     filter(action => action.payload.ephemeral && action.payload.isComplete()),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
@@ -463,7 +451,7 @@ export class ListsEffects {
       }
       return list;
     }),
-    map(list => new UpdateList(list))
+    map(list => new UpdateListProgress(list))
   ));
 
 
