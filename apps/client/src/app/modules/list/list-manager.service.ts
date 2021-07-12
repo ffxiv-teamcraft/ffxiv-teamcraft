@@ -112,7 +112,7 @@ export class ListManagerService {
         }
       }),
       // merge the addition list with the list we want to add items in.
-      map(addition => list.merge(addition))
+      map(addition => list.merge(addition).clean())
     );
   }
 
