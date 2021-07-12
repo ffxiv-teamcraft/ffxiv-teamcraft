@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.5"></a>
+## [8.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.4...v8.3.5) (2021-07-12)
+
+
+### Bug Fixes
+
+* **list:** fixed items tracking going into chaos mode ([4eef74e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4eef74e))
+
+
+
 <a name="8.3.4"></a>
 ## [8.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.3...v8.3.4) (2021-07-12)
 
