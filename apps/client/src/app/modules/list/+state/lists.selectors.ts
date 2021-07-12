@@ -82,5 +82,6 @@ export const listsQuery = {
   getAutocompleteEnabled,
   getCompletionNotificationEnabled,
   getListsLoading,
-  getConnectedTeams
+  getConnectedTeams,
+  getSelectedId
 };

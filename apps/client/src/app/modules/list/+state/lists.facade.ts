@@ -138,6 +138,8 @@ export class ListsFacade {
     })
   );
 
+  selectedListKey$ = this.store.select(listsQuery.getSelectedId);
+
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
     throttleTime<List>(1000),

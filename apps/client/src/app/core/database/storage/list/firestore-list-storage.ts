@@ -61,7 +61,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     }));
   }
 
-  protected prepareData(list: Partial<List>): List {
+  public prepareData(list: Partial<List>): List {
     const clone: List = JSON.parse(JSON.stringify(list));
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
