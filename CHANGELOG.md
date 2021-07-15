@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.3.6"></a>
+## [8.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.5...v8.3.6) (2021-07-15)
+
+
+### Bug Fixes
+
+* **list:** fixed autofill sometimes stopping its action entirely ([1e1024e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e1024e))
+* **list:** fixed possible rollbacks when autofilling a list ([fc411df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc411df))
+* **list:** no more transactional updates for lists over 50 final items ([88a53cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88a53cd))
+
+
+
 <a name="8.3.5"></a>
 ## [8.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.4...v8.3.5) (2021-07-12)
 

@@ -194,7 +194,7 @@ export class UpdateList implements Action {
 export class UpdateListProgress implements Action {
   readonly type = ListsActionTypes.UpdateListProgress;
 
-  constructor(public readonly payload: List) {
+  constructor(public readonly payload: List, public fromPacket: boolean) {
   }
 }
 

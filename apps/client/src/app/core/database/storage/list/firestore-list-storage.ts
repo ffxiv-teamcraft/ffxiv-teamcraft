@@ -295,9 +295,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     // Update the diff so the values are applied to the server list instead
     const transactionDiff = diff.map(change => {
       if (change.op === 'replace' && typeof change.value === 'number') {
-        const currentServerValue = getValueByPointer(serverList, change.path);
-        const currentLocalValue = getValueByPointer(before, change.path);
-        change.value = change.value - currentLocalValue + currentServerValue;
+        try {
+          const currentServerValue = getValueByPointer(serverList, change.path);
+          const currentLocalValue = getValueByPointer(before, change.path);
+          change.value = change.value - currentLocalValue + currentServerValue;
+        } catch (e) {
+          console.warn(e);
+        }
       }
       return change;
     });

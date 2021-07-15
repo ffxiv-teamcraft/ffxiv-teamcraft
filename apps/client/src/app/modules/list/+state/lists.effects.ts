@@ -23,6 +23,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  debounce,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -37,7 +38,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, from, of } from 'rxjs';
+import { combineLatest, EMPTY, from, of, timer } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -271,7 +272,7 @@ export class ListsEffects {
 
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
-    debounceTime(1000),
+    debounce(action => action.fromPacket ? timer(4000) : timer(1000)),
     filter(action => {
       return !action.payload.isComplete();
     }),
@@ -283,6 +284,9 @@ export class ListsEffects {
       }
       if (action.payload.hasCommission) {
         this.updateCommission(action.payload);
+      }
+      if (action.payload.isLarge()) {
+        return this.listService.set(action.payload.$key, action.payload);
       }
       return this.listService.update(action.payload.$key, clone, action.payload);
     })
@@ -392,7 +396,7 @@ export class ListsEffects {
       if (historyEntry !== undefined) {
         historyEntry.amount += action.doneDelta;
       } else {
-        list.modificationsHistory.push({
+        list.modificationsHistory.unshift({
           amount: action.doneDelta,
           date: Date.now(),
           itemId: action.itemId,
@@ -441,7 +445,7 @@ export class ListsEffects {
           this.markAsDoneInDoLLog(action.itemId);
         }
       }
-      return new UpdateListProgress(list);
+      return new UpdateListProgress(list, action.fromPacket);
     })
   ));
 
@@ -471,7 +475,7 @@ export class ListsEffects {
       }
       return list;
     }),
-    map(list => new UpdateListProgress(list))
+    map(list => new UpdateListProgress(list, false))
   ));
 
 
