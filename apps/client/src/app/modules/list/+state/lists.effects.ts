@@ -285,6 +285,9 @@ export class ListsEffects {
       if (action.payload.hasCommission) {
         this.updateCommission(action.payload);
       }
+      if (action.payload.isLarge()) {
+        return this.listService.set(action.payload.$key, action.payload);
+      }
       return this.listService.update(action.payload.$key, clone, action.payload);
     })
   ), { dispatch: false });
@@ -393,7 +396,7 @@ export class ListsEffects {
       if (historyEntry !== undefined) {
         historyEntry.amount += action.doneDelta;
       } else {
-        list.modificationsHistory.push({
+        list.modificationsHistory.unshift({
           amount: action.doneDelta,
           date: Date.now(),
           itemId: action.itemId,
