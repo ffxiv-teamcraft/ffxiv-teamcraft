@@ -47,7 +47,7 @@ export class FishingLogTrackerComponent extends TrackerComponent {
 
   public rawCompletion$ = this.authFacade.logTracking$.pipe(
     map(log => {
-      return log.gathering.filter(id => this.lazyData.data.fishes.includes(id));
+      return log.gathering;
     })
   );
 

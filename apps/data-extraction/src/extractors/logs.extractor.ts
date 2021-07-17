@@ -324,8 +324,8 @@ export class LogsExtractor extends AbstractExtractor {
                     placeId: entry.TerritoryType.PlaceName.ID,
                     zoneId: entry.PlaceName.ID,
                     coords: {
-                      x: (41.0 / c) * ((entry.X * c) / 2048.0) + 1,
-                      y: (41.0 / c) * ((entry.Y * c) / 2048.0) + 1
+                      x: Math.floor(10 * (41.0 / c) * ((entry.X * c) / 2048.0) + 1) / 10,
+                      y: Math.floor(10 * (41.0 / c) * ((entry.Y * c) / 2048.0) + 1) / 10
                     }
                   };
                 });
