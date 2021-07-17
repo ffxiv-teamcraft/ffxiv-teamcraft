@@ -54,27 +54,33 @@
                 {{'ITEMS.Title' | translate}}
               </div>
             </div>
-            <nz-input-group [nzAddOnBefore]="'SEARCH.Type' | translate">
-              <ng-container *ngTemplateOutlet="searchTypeTpl"></ng-container>
-            </nz-input-group>
-            <nz-input-group [nzAddOnBefore]="'SEARCH.Item_type' | translate"
-                            *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
-              <nz-select class="filter-select-compact with-addon-before" formControlName="itemCategories"
-                         nzMode="multiple" nzShowSearch [nzPlaceHolder]="'SEARCH.Item_type_placeholder' | translate">
-                <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="null"></nz-option>
-                <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzLabel]="uiCategory.name | i18n"
-                           [nzValue]="uiCategory.id">
-                </nz-option>
-              </nz-select>
-            </nz-input-group>
-            <nz-input-group [nzAddOnBefore]="'SEARCH.Patch' | translate">
-              <nz-select class="patch-select with-addon-before" formControlName="Patch" nzShowSearch>
-                <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="-1"></nz-option>
-                <nz-option *ngFor="let patch of patches" [nzLabel]="patch.Version"
-                           [nzValue]="patch.ID">
-                </nz-option>
-              </nz-select>
-            </nz-input-group>
+            <div>
+              <nz-input-group [nzAddOnBefore]="'SEARCH.Type' | translate">
+                <ng-container *ngTemplateOutlet="searchTypeTpl"></ng-container>
+              </nz-input-group>
+            </div>
+            <div>
+              <nz-input-group [nzAddOnBefore]="'SEARCH.Item_type' | translate"
+                              *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE">
+                <nz-select class="filter-select-compact with-addon-before" formControlName="itemCategories"
+                           nzMode="multiple" nzShowSearch [nzPlaceHolder]="'SEARCH.Item_type_placeholder' | translate">
+                  <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="null"></nz-option>
+                  <nz-option *ngFor="let uiCategory of uiCategories$ | async" [nzLabel]="uiCategory.name | i18n"
+                             [nzValue]="uiCategory.id">
+                  </nz-option>
+                </nz-select>
+              </nz-input-group>
+            </div>
+            <div>
+              <nz-input-group [nzAddOnBefore]="'SEARCH.Patch' | translate">
+                <nz-select class="patch-select with-addon-before" formControlName="Patch" nzShowSearch>
+                  <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="-1"></nz-option>
+                  <nz-option *ngFor="let patch of patches" [nzLabel]="patch.Version"
+                             [nzValue]="patch.ID">
+                  </nz-option>
+                </nz-select>
+              </nz-input-group>
+            </div>
           </div>
           <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="10px">
             <nz-input-group [nzAddOnBefore]="'SEARCH.Language' | translate">
@@ -189,6 +195,14 @@
                 </nz-option>
               </nz-select>
             </nz-input-group>
+            <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" fxLayout="row" fxLayoutAlign="space-around center">
+              <div>
+                {{'RECIPE_FINDER.Shown_only_collectables' | translate}}
+              </div>
+              <div>
+                <label nz-checkbox formControlName="collectable" class="with-addon-before"></label>
+              </div>
+            </div>
             <div fxFlex="1 1 auto"></div>
             <div fxLayout="row wrap" fxLayoutGap="10px">
               <div fxFlex="1 1 auto">
@@ -203,7 +217,8 @@
               </div>
             </div>
           </div>
-          <nz-card fxFlexOrder="2" fxFlexOrder.lt-lg="1" [nzTitle]="jobPickerTitle" fxFlex.lt-lg="1 1 auto" fxFlex="0 0 480px" *ngIf="shouldShowJobPicker(searchType)">
+          <nz-card fxFlexOrder="2" fxFlexOrder.lt-lg="1" [nzTitle]="jobPickerTitle" fxFlex.lt-lg="1 1 auto" fxFlex="0 0 480px"
+                   *ngIf="shouldShowJobPicker(searchType)">
             <ng-template #jobPickerTitle>
               <div fxLayout="row" fxLayoutAlign="center center" [ngSwitch]="searchType">
                 <ng-container *ngSwitchCase="searchTypes.RECIPE">
@@ -226,7 +241,7 @@
             <app-search-job-picker formControlName="jobCategories"></app-search-job-picker>
           </nz-card>
           <div fxFlexOrder="3" fxFlexOrder.lt-lg="2" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE"
-               class="stats-filters-container" fxFlex="0 1 540px"  fxFlex.lt-lg="1 1 auto">
+               class="stats-filters-container" fxFlex="0 1 540px" fxFlex.lt-lg="1 1 auto">
             <ng-template #statsForm let-formName>
               <div *ngIf="filtersForm.get(formName).controls.length === 0; else form"
                    fxLayout="column" fxLayoutAlign="center center" class="nothing-here">
