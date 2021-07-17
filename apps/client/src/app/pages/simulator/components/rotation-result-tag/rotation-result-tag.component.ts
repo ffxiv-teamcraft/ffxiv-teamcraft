@@ -50,6 +50,9 @@ export class RotationResultTagComponent implements OnInit {
     this.simulationSet$.next(set);
   }
 
+  @Input()
+  collectable = false;
+
   simulationSet$: BehaviorSubject<GearSet> = new BehaviorSubject<GearSet>(null);
 
   recipe$: BehaviorSubject<Craft> = new BehaviorSubject<Craft>(null);

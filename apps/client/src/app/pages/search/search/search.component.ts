@@ -600,7 +600,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
     if (controls.collectable.value) {
       filters.push({
-        name: 'IsCollectable',
+        name: 'AlwaysCollectable',
         value: 1
       });
     }

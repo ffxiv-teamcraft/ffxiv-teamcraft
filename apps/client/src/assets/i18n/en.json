@@ -1047,6 +1047,7 @@
       "Result_tooltip": "Result of a simulation run using this rotation and your stats",
       "Fail": "Fail",
       "Success": "Success: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
       "Steps_count": "{{count}} steps",
