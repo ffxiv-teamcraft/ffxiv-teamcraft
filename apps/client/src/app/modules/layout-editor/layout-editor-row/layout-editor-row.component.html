@@ -18,7 +18,7 @@
           </button>
         </div>
         <nz-select *ngIf="fragment.isBooleanGate" [(ngModel)]="fragment.value"
-                   [nzDisabled]="readonly"
+                   [nzDisabled]="readonly" (ngModelChange)="filterChange()"
                    fxFlex fxFlexAlign="center center">
           <nz-option nzLabel="OR" nzValue="or"></nz-option>
           <nz-option nzLabel="AND" nzValue="and"></nz-option>
