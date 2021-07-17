@@ -30,10 +30,16 @@ const getUser = createSelector(
   (state: AuthState) => state.user
 );
 
+const getLogTracking = createSelector(
+  getAuthState,
+  (state: AuthState) => state.logTracking
+);
+
 export const authQuery = {
   getLoaded,
   getLinkingCharacter,
   getLoggedIn,
   getUser,
-  getUserId
+  getUserId,
+  getLogTracking
 };

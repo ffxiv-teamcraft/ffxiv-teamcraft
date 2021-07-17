@@ -26,19 +26,7 @@ import {
 } from './auth.actions';
 import firebase from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
-import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  filter,
-  first,
-  map,
-  shareReplay,
-  startWith,
-  switchMap,
-  tap
-} from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
@@ -69,8 +57,9 @@ export class AuthFacade {
   loaded$ = this.store.select(authQuery.getLoaded);
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
-  userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
-  user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null && !u.notFound && u.$key !== undefined));
+  userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => !!uid));
+  user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
+  logTracking$ = this.store.select(authQuery.getLogTracking).pipe(filter(log => !!log));
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.af.user.pipe(
@@ -95,20 +84,6 @@ export class AuthFacade {
       return of(token);
     }),
     shareReplay(1)
-  );
-
-  logTracking$ = this.user$.pipe(
-    distinctUntilKeyChanged('defaultLodestoneId'),
-    switchMap(user => {
-      return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId?.toString()}`).pipe(
-        catchError((_) => {
-          return of({
-            crafting: [],
-            gathering: []
-          });
-        })
-      );
-    })
   );
 
   characters$ = this.user$.pipe(

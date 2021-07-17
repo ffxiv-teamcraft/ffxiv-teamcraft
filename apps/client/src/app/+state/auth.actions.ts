@@ -22,7 +22,6 @@ export enum AuthActionTypes {
   ToggleFavorite = '[Auth] Toggle Favorite',
 
   GoogleLogin = '[Auth] Google Login attempt',
-  FacebookLogin = '[Auth] Facebook Login attempt',
   ClassicLogin = '[Auth] Classic Login attempt',
   Logout = '[Auth] Logout',
 
@@ -50,6 +49,7 @@ export enum AuthActionTypes {
   AuthError = '[Auth] Error',
 
   MarkAsDoneInLog = '[Auth] Mark as done in log',
+  LogTrackingLoaded = '[Auth] Log tracking loaded',
   CommissionProfileLoaded = '[Auth] Commission Profile Loaded',
   SetContentId = '[Auth] Set Content Id',
   ApplyContentId = '[Auth] Apply Content Id',
@@ -138,13 +138,6 @@ export class AuthError implements Action {
 
 export class GoogleLogin implements Action {
   readonly type = AuthActionTypes.GoogleLogin;
-
-  constructor(public payload?: any) {
-  }
-}
-
-export class FacebookLogin implements Action {
-  readonly type = AuthActionTypes.FacebookLogin;
 
   constructor(public payload?: any) {
   }
@@ -285,6 +278,12 @@ export class AnonymousWarningShown implements Action {
   readonly type = AuthActionTypes.AnonymousWarningShown;
 }
 
+export class LogTrackingLoaded implements Action {
+  readonly type = AuthActionTypes.LogTrackingLoaded;
+  constructor(public readonly payload: LogTracking) {
+  }
+}
+
 
 export type AuthActions = GetUser
   | Authenticated
@@ -292,7 +291,7 @@ export type AuthActions = GetUser
   | LoginAsAnonymous
   | LoggedInAsAnonymous
   | GoogleLogin
-  | FacebookLogin
+  | LogTrackingLoaded
   | ClassicLogin
   | AuthError
   | Logout
