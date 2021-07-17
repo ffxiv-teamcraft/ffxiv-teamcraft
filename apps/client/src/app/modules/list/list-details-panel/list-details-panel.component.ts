@@ -284,17 +284,17 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     const drops = getItemSource<Drop[]>(row, DataType.DROPS);
     const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
     const positions = [];
-    if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
-      const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
+    if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId)) {
+      const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId);
       positions.push({
         x: vendor.coords.x,
         y: vendor.coords.y,
         type: 'Vendor'
       });
     }
-    if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))) {
-      const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
-      const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
+    if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.mapId === zoneBreakdownRow.mapId))) {
+      const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId));
+      const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId);
       positions.push({
         x: npc.coords.x,
         y: npc.coords.y,
@@ -310,16 +310,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         gatheringType: node.type
       });
     }
-    if (drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {
-      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId);
+    if (drops.some(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId)) {
+      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId);
       positions.push({
         x: drop.position.x,
         y: drop.position.y,
         type: 'Hunting'
       });
     }
-    if (alarms.some(a => a.coords && a.coords.x && a.zoneId === zoneBreakdownRow.zoneId)) {
-      const alarm = alarms.find(a => a.coords && a.coords.x && a.zoneId === zoneBreakdownRow.zoneId);
+    if (alarms.some(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId)) {
+      const alarm = alarms.find(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId);
       positions.push({
         x: alarm.coords.x,
         y: alarm.coords.y,
