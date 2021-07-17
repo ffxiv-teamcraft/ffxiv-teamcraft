@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -9,7 +9,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
   styleUrls: ['./item-icon.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemIconComponent {
+export class ItemIconComponent implements OnChanges {
 
   /**
    * The id of the icon of the item.
@@ -41,6 +41,8 @@ export class ItemIconComponent {
   @Input()
   disableClick = false;
 
+  collectable = false;
+
   constructor(private translate: TranslateService, private lazyData: LazyDataService,
               private ipc: IpcService) {
   }
@@ -61,6 +63,12 @@ export class ItemIconComponent {
       return `https://xivapi.com${this.lazyData.data.itemIcons[this.itemId]}`;
     } else {
       return 'https://xivapi.com/img-misc/code-regular.svg';
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.itemId) {
+      this.collectable = this.lazyData.data.collectables[this.itemId] !== undefined;
     }
   }
 
