@@ -112,7 +112,7 @@ export class AuthEffects {
 
   private nickNameWarningShown = false;
 
-  @Effect()
+  @Effect({ dispatch: false })
   showNicknameWarning$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     debounceTime(10000),
@@ -122,7 +122,8 @@ export class AuthEffects {
         this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
         this.nickNameWarningShown = true;
       }
-    })
+    }),
+    switchMapTo(EMPTY)
   );
 
   @Effect()
