@@ -21,6 +21,8 @@
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "능력치",
       "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
       "Steps_count": "{{count}} 공정",
