@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
   "Change_character": "Character",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Result of a simulation run using this rotation and your stats",
       "Fail": "Falha",
       "Success": "Success: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
       "Steps_count": "{{count}} steps",
