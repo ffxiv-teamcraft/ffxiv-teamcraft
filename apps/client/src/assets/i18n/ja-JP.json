@@ -21,6 +21,8 @@
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "シミュレーションの結果は現在のスキル回しと自分のサブステをもとに導出されます。",
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "サブステ",
       "Specialist_rotation_warning": "表示された結果では、非マイスターの状態でマイスター用スキル回しを使用しているため、結果的にHQ確率が予想より非常に低くなる恐れがあります。",
       "Steps_count": "{{count}} 工程",
