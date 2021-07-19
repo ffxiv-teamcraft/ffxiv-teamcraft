@@ -1605,7 +1605,8 @@
       "Rewards": "Rewards",
       "Repeatable": "Repeatable",
       "Beast_tribe_rank": "Beast tribe rank",
-      "Chain_length": "Following quests"
+      "Chain_length": "Following quests",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Other appearances",
