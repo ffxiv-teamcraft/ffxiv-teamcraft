@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur patreon",
   "Selection": "Sélection",
   "Change_character": "Personnage",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
       "Fail": "Echec",
       "Success": "Succès : {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "Le résultat affiché utilise un set non spécialiste pour une rotation spécialiste, ce qui produit un résultat bien plus faible que si le set était spécialiste.",
       "Steps_count": "{{count}} tours",
