@@ -1605,7 +1605,8 @@
       "Rewards": "奖励",
       "Repeatable": "重复",
       "Beast_tribe_rank": "蛮族关系",
-      "Chain_length": "后续任务"
+      "Chain_length": "后续任务",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "其它出现位置",
