@@ -66,6 +66,11 @@
       <i nz-icon nzType="question-circle"></i>
       <span class="nav-text">{{'WIKI.Title' | translate}}</span>
     </a>
+    <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://guides.ffxivteamcraft.com"
+       nz-tooltip target="_blank">
+      <i nz-icon nzType="file-word" nzTheme="outline"></i>
+      <span class="nav-text">{{'Guides_links' | translate}}</span>
+    </a>
     <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
        routerLinkActive="ant-menu-item-selected">
           <span>
