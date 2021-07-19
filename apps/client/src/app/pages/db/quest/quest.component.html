@@ -212,6 +212,7 @@
                          src="./assets/icons/instance.png">
                     <img *ngIf="reward.type === 'action'" [appXivdbActionTooltip]="reward.id" [src]="reward.id | actionIcon | xivapiIcon"
                          alt="">
+                    <img *ngIf="reward.type === 'rep'" src="https://www.garlandtools.org/db/images/Mob.png">
                   </ng-template>
                   <ng-template #rewardTitle>
                     <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
@@ -239,6 +240,30 @@
               </nz-list-item>
             </ng-template>
           </nz-list>
+        </nz-card>
+        <nz-card [nzTitle]="tradesTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false" *ngIf="trades$ | async as trades">
+          <ng-template #tradesTitle>
+            <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>
+                {{'DB.QUEST.Possible_trades' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <div class="trades" fxLayout="column" fxLayoutGap="5px">
+            <div class="trade" *ngFor="let trade of trades" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+              <div *ngFor="let currency of trade.currencies" class="item-container">
+                <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
+                               [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
+                <span>x{{currency.amount}}</span>
+              </div>
+              <i nz-icon nzType="arrow-right"></i>
+              <div *ngFor="let tradeItem of trade.items" class="item-container">
+                <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="tradeItem.id"
+                               [itemName]="tradeItem.id | itemName | i18n" [width]="32"></app-item-icon>
+                <span>x{{tradeItem.amount}}</span>
+              </div>
+            </div>
+          </div>
         </nz-card>
       </div>
     </div>

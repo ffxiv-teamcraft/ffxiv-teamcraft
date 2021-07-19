@@ -94,6 +94,7 @@ export interface LazyData {
   treasures: any;
   tribes: any;
   tripleTriadRules: any;
+  usedInQuests: any;
   ventures: any;
   voyageSources: any;
   weathers: any;

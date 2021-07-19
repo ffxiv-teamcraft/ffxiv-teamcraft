@@ -15,6 +15,7 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import * as _ from 'lodash';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { questChainLengths } from '../../../core/data/sources/quests-chain-lengths';
+import { Trade } from '../../../modules/list/model/trade';
 
 @Component({
   selector: 'app-quest',
@@ -37,9 +38,11 @@ export class QuestComponent extends TeamcraftPageComponent {
 
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
+  public trades$: Observable<Trade[]>;
+
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
+              private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
@@ -115,8 +118,8 @@ export class QuestComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.rewards$ = combineLatest([this.xivapiQuest$, this.gtData$]).pipe(
-      map(([quest, gtData]) => {
+    this.rewards$ = combineLatest([this.xivapiQuest$, this.gtData$, this.lazyData.data$]).pipe(
+      map(([quest, gtData, lData]) => {
         const rewards = [];
         if (quest.InstanceContentUnlockTargetID) {
           rewards.push({
@@ -156,18 +159,19 @@ export class QuestComponent extends TeamcraftPageComponent {
             type: 'rep'
           });
         }
-        for (let i = 0; i <= 14; i++) {
-          const index = i < 10 ? `0${i}` : i;
-          if (quest[`ItemReward${index}`] > 0) {
-            rewards.push({
-              id: quest[`ItemReward${index}`],
-              amount: quest[`ItemCountReward${index}`],
-              type: 'item',
-              hq: quest[`IsHQReward${index}`] === 1
-            });
-          }
-        }
+        rewards.push(...(lData.quests[quest.ID].rewards || []).map(r => {
+          return {
+            ...r,
+            type: 'item'
+          };
+        }));
         return rewards;
+      })
+    );
+
+    this.trades$ = combineLatest([this.xivapiQuest$, this.lazyData.data$]).pipe(
+      map(([quest, lData]) => {
+        return lData.quests[quest.ID].trades || [];
       })
     );
 
@@ -181,6 +185,7 @@ export class QuestComponent extends TeamcraftPageComponent {
       map(([quest, lang]) => {
         return quest[`TextData_${lang}`] || quest.TextData_en;
       }),
+      filter(textData => !!textData),
       map(textData => {
         textData.Dialogue = textData.Dialogue.filter(d => d.Text !== 'deleted');
         return textData;
@@ -188,8 +193,8 @@ export class QuestComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
-    this.links$ = combineLatest([this.xivapiQuest$, this.gtData$]).pipe(
-      map(([xivapiQuest, gtData]) => {
+    this.links$ = combineLatest([this.xivapiQuest$]).pipe(
+      map(([xivapiQuest]) => {
         return [
           {
             title: 'GarlandTools',
