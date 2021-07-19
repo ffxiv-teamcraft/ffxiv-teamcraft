@@ -21,6 +21,8 @@
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
       "Success": "成功：{{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "属性",
       "Specialist_rotation_warning": "显示的结果为使用非专家的属性模拟专家手法，是以生成的HQ率可能远低于预期。",
       "Steps_count": "{{count}} 工次",
