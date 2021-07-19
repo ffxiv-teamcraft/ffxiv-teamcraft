@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
       "Success": "Успешно: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Характеристики",
       "Specialist_rotation_warning": "Показанный результат использует характеристики не специалиста для ротации специалиста, поэтому результат HQ% может быть ниже, чем ожидается.",
       "Steps_count": "{{count}} шагов",
