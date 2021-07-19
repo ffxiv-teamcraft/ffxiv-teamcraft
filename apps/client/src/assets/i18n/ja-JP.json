@@ -1605,7 +1605,8 @@
       "Rewards": "報酬",
       "Repeatable": "繰り返し可能",
       "Beast_tribe_rank": "蛮族友好段階",
-      "Chain_length": "連携クエスト"
+      "Chain_length": "連携クエスト",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
