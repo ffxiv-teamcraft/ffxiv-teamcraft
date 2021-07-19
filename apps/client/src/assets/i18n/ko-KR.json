@@ -1605,7 +1605,8 @@
       "Rewards": "보상",
       "Repeatable": "반복가능",
       "Beast_tribe_rank": "야만족 우호 단계",
-      "Chain_length": "연계 퀘스트 수"
+      "Chain_length": "연계 퀘스트 수",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
