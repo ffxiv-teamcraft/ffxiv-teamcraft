@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen.",
   "Selection": "Auswahl",
   "Change_character": "Charakter",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
       "Success": "Erfolg: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Attribute",
       "Specialist_rotation_warning": "Das gezeigte Resultat verwendet für eine Spezialisten-Rotation die Attribute eines Nicht-Spezialisten, weshalb die resultierende HQ% wesentlich kleiner als erwartet ausfallen kann.",
       "Steps_count": "{{count}} Schritte",
