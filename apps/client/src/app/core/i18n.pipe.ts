@@ -37,7 +37,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
       } else if (this.isI18nLazy(input)) {
         this.sub = this.i18n.resolveName(input).subscribe(this.setCurrentValue);
       } else {
-        this.setCurrentValue(undefined);
+        this.setCurrentValue(input?.toString());
       }
       this.input = input;
     }
