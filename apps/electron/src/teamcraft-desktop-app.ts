@@ -94,6 +94,9 @@ export class TeamcraftDesktopApp {
 
   private sendToAlreadyOpenedTC(url: string): void {
     request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${url}`);
+    (<any>app).isQuitting = true;
+    app.quit();
+    process.exit(0);
   }
 
   private bootApp(): void {
