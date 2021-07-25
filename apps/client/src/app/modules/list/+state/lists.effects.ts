@@ -273,9 +273,11 @@ export class ListsEffects {
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
     debounce(action => action.fromPacket ? timer(4000) : timer(1000)),
-    filter(action => {
-      return !action.payload.isComplete();
+    withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
+    filter(([action, permission]) => {
+      return permission < PermissionLevel.WRITE || !action.payload.isComplete();
     }),
+    map(([action]) => action),
     withLatestFrom(this.listsFacade.selectedClone$),
     switchMap(([action, clone]) => {
       if (action.payload.offline) {
