@@ -208,6 +208,8 @@ export class UserInventory extends DataModel {
           moved: true
         } : null;
       case 'split':
+      case 'transferGil':
+      case 'transferCrystal':
         fromItem.quantity -= packet.splitCount;
         const newStack: InventoryItem = {
           quantity: packet.splitCount,
@@ -222,6 +224,12 @@ export class UserInventory extends DataModel {
           newStack.retainerName = lastSpawnedRetainer;
         }
         this.items[this.contentId][toContainerKey][packet.toSlot] = newStack;
+        if (['transferGil', 'transferCrystal'].includes(packet.action)) {
+          return {
+            ...newStack,
+            retainerName: lastSpawnedRetainer
+          };
+        }
         return null;
       case 'discard':
         delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
