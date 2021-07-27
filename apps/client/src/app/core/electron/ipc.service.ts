@@ -116,6 +116,20 @@ export class IpcService {
     );
   }
 
+  public get marketBoardPurchaseHandler$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardPurchaseHandler'),
+      toIpcData()
+    );
+  }
+
+  public get marketBoardPurchase$() {
+    return this.packets$.pipe(
+      ofMessageType('marketBoardPurchase'),
+      toIpcData()
+    );
+  }
+
   public get npcSpawnPackets$() {
     return this.packets$.pipe(
       ofMessageType('npcSpawn'),

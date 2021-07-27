@@ -9,7 +9,7 @@ import { CaptureInterface, CaptureInterfaceOptions, Message } from '@ffxiv-teamc
 
 export class PacketCapture {
 
-  private static readonly ACCEPTED_PACKETS = [
+  private static readonly ACCEPTED_PACKETS: Message['type'][] = [
     'actorCast',
     'actorControl',
     'actorControlSelf',
@@ -38,6 +38,8 @@ export class PacketCapture {
     'marketBoardItemListingCount',
     'marketBoardItemListingHistory',
     'marketBoardSearchResult',
+    'marketBoardPurchaseHandler',
+    'marketBoardPurchase',
     'npcSpawn',
     'objectSpawn',
     'playerSetup',
@@ -162,7 +164,7 @@ export class PacketCapture {
     const options: Partial<CaptureInterfaceOptions> = {
       monitorType: rawsock ? 'RawSocket' : 'WinPCap',
       region: region,
-      filter: (header, typeName) => {
+      filter: (header, typeName: Message['type']) => {
         if (header.sourceActor === header.targetActor) {
           return PacketCapture.ACCEPTED_PACKETS.includes(typeName);
         }

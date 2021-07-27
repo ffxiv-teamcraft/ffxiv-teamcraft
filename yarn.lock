@@ -2380,10 +2380,10 @@
   resolved "https://registry.npmjs.org/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/pcap-ffxiv@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.6.0.tgz#d6184a312740d954d8b76fb9dacae602aabfdade"
-  integrity sha512-luVkJRtEeiGix3iltVORbtz/RLv+cL5NmWKJc9PMLMplOfHH5IxtuuznjuoY8vpsAkNiLvJ9KQn1jVGHgKfnMg==
+"@ffxiv-teamcraft/pcap-ffxiv@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.7.0.tgz#f7bd63db1fb375d451d5ffa8664e2df7f35c74ee"
+  integrity sha512-wHFMBoOaa6Nu8B5fFnqb3j4UD7Tkl+H5VvfFMncMZuMvubSO6Fy4B568+eBvx5+2AHqjj2tCBxIL1n0G7OORbQ==
   dependencies:
     heap-js "^2.1.5"
 
