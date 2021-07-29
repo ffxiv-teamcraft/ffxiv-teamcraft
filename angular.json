@@ -49,7 +49,8 @@
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               },
-              "apps/client/src/oembed.json"
+              "apps/client/src/oembed.json",
+              "apps/client/src/ads.txt"
             ],
             "styles": [
               "apps/client/src/cdk.less",
