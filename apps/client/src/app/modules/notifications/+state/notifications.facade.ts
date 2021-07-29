@@ -20,9 +20,12 @@ export class NotificationsFacade {
   notificationsDisplay$ = this.allNotifications$.pipe(
     map(notifications => {
       return notifications.map(notification => {
+        const content = notification.getContent(this.translate, this.l12n, this.i18n);
+        const cropped = content.slice(0, 120);
+        const contentStr = content.length !== cropped.length ? `${cropped}...` : cropped;
         return {
           ...notification,
-          content: notification.getContent(this.translate, this.l12n, this.i18n),
+          content: contentStr,
           icon: notification.getIcon(),
           route: notification.getTargetRoute()
         };
