@@ -1,10 +1,13 @@
 <h2>{{'RETAINERS.Title' | translate}}</h2>
 
 <app-page-loader [loading]="loading">
-  <div>
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <nz-switch [(ngModel)]="settings.retainerTaskAlarms"></nz-switch>
       <div>{{'RETAINERS.Task_completion_alarm' | translate}}</div>
+    </div>
+    <div>
+      <button nz-button (click)="resetRetainers()"></button>
     </div>
   </div>
 

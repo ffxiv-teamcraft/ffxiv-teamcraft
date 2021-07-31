@@ -56,4 +56,8 @@ export class RetainersComponent {
               public settings: SettingsService, private auth: AuthFacade) {
   }
 
+  resetRetainers(): void {
+    this.retainersService.resetRetainers();
+  }
+
 }
