@@ -311,10 +311,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       });
     }
     if (drops.some(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId)) {
-      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId);
+      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId && d.position.fate === undefined)
+        || drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId);
       positions.push({
         x: drop.position.x,
         y: drop.position.y,
+        fate: drop.position.fate,
         type: 'Hunting'
       });
     }

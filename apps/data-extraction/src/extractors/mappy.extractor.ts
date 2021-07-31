@@ -204,6 +204,7 @@ export class MappyExtractor extends AbstractExtractor {
                 zoneid: +row.PlaceNameID,
                 level: +row.Level,
                 hp: +row.HP,
+                fate: +row.FateID,
                 x: Math.round(+row.PosX * 10) / 10,
                 y: Math.round(+row.PosY * 10) / 10,
                 z: Math.round(+row.PosZ * 10) / 10

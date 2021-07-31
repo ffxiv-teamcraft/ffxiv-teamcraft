@@ -25,7 +25,10 @@
     <ng-template #stepTemplate let-step>
       <nz-list-item [nzContent]="rowContent">
         <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
-                           nzDescription="X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}}">
+                           [nzDescription]="description">
+          <ng-template #description>
+            X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}} <span *ngIf="step.fate">({{(step.fate | fate)?.name | i18n}})</span>
+          </ng-template>
           <ng-template #stepTitle>
             {{step.name | i18n}} <img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
           </ng-template>
@@ -46,9 +49,10 @@
           </ng-template>
           <ng-template #avatar>
             <img *ngIf="step.isTeleport" alt="" src="./assets/icons/Aetheryte.png">
-            <img *ngIf="!step.isTeleport && step.itemId !== undefined" alt="" class="item-icon"
+            <img *ngIf="!step.isTeleport && step.itemId !== undefined && !step.fate" alt="" class="item-icon"
                  src="{{step.itemId | lazyIcon}}">
             <i *ngIf="!step.isTeleport && step.itemId === undefined" class="material-icons">location_on</i>
+            <img *ngIf="step.fate" [src]="(step.fate | fate)?.icon" class="item-icon">
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
