@@ -35,7 +35,7 @@ export class RetainersComponent {
         map(() => {
           return display
             .map(row => {
-              row.retainers = row.retainers.filter(retainer => !!retainer.name)
+              row.retainers = row.retainers.filter(retainer => !!retainer.name && retainer.level > 0)
                 .sort((a, b) => a.order - b.order)
                 .map(retainer => {
                   return {
