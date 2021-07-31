@@ -200,7 +200,7 @@ export class PacketCaptureTrackerService {
     /**
      * Stats tracking
      */
-    combineLatest([this.settings.watchSetting('autoUpdateStats', this.settings.autoUpdateStats), this.authFacade.classJobSet$])
+    combineLatest([this.settings.watchSetting('autoUpdateStats', this.settings.autoUpdateStats), this.eorzeaFacade.classJobSet$])
       .pipe(
         filter(([autoUpdate]) => autoUpdate)
       )

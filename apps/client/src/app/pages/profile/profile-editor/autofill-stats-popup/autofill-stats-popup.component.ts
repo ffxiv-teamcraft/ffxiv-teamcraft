@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { AuthFacade } from '../../../../+state/auth.facade';
+import { EorzeaFacade } from 'apps/client/src/app/modules/eorzea/+state/eorzea.facade';
 
 @Component({
   selector: 'app-autofill-stats-popup',
@@ -26,9 +27,10 @@ export class AutofillStatsPopupComponent extends TeamcraftComponent {
     })
   );
 
-  constructor(private ipc: IpcService, private authFacade: AuthFacade) {
+  constructor(private ipc: IpcService, private authFacade: AuthFacade,
+              private eorzeaFacade: EorzeaFacade) {
     super();
-    this.authFacade.classJobSet$.subscribe(set => {
+    this.eorzeaFacade.classJobSet$.subscribe(set => {
       this.authFacade.saveSet(set);
       this.completion$.next({
         ...this.completion$.value,

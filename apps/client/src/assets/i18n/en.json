@@ -532,7 +532,7 @@
     "User_not_verified": "User not verified, click to verify user",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
     "Open_public_profile": "Open public profile",
     "Community_contributions": "Community contributions",
@@ -1789,7 +1789,7 @@
     "You_can_buy": "You can buy {{amount}}",
     "Disabled": "The currency spending guide isn't working anymore",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them.",
-    "Loading_data":  "Loading trades data for the selected currency",
+    "Loading_data": "Loading trades data for the selected currency",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
   },
   "FOOD_PICKER": {
@@ -2530,7 +2530,8 @@
     "Task_complete": "Task complete",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Task_completion_alarm": "Task completion alarm",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Retainer ventures",
