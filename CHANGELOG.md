@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.4.1"></a>
+## [8.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.0...v8.4.1) (2021-08-01)
+
+
+### Bug Fixes
+
+* **collectables:** fixed lots of collectable items missing ([5054ee2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5054ee2))
+* **inventory-optimizer:** fixed huge performance issue with the result panels ([72df4bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72df4bf))
+* **log-tracker:** fixed list creation for entire page not working properly ([bdc60dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bdc60dc))
+
+
+
 <a name="8.4.0"></a>
 # [8.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.6...v8.4.0) (2021-08-01)
 
