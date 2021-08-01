@@ -532,7 +532,7 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
-    "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "コミュニティの貢献",
@@ -2530,7 +2530,8 @@
     "Task_complete": "ベンチャーが完了しました。",
     "Task_completed_notification_title": "{{name}} がベンチャーを終了しました",
     "Task_completed_notification_content": "{{name}} がベンチャー {{taskName}} を終了しました",
-    "Task_completion_alarm": "ベンチャー完了アラーム"
+    "Task_completion_alarm": "ベンチャー完了アラーム",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "リテイナーベンチャー",
