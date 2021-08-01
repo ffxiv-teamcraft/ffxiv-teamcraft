@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -530,7 +532,7 @@
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
-    "Autofill_from_packets": "Заполнить статы используя захват пакетов",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
     "Open_public_profile": "Открыть профиль",
     "Community_contributions": "Вклад в сообщество",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
       "Success": "Успешно: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Характеристики",
       "Specialist_rotation_warning": "Показанный результат использует характеристики не специалиста для ротации специалиста, поэтому результат HQ% может быть ниже, чем ожидается.",
       "Steps_count": "{{count}} шагов",
@@ -1602,7 +1605,8 @@
       "Rewards": "Награда",
       "Repeatable": "Повторяемый",
       "Beast_tribe_rank": "Ранг в племени зверолюдей",
-      "Chain_length": "Дальнейшие квесты"
+      "Chain_length": "Дальнейшие квесты",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Другие появления",
@@ -2526,7 +2530,8 @@
     "Task_complete": "Задание выполнено",
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
-    "Task_completion_alarm": "Сигнал выполнения задания"
+    "Task_completion_alarm": "Сигнал выполнения задания",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Задания ретейнеров",

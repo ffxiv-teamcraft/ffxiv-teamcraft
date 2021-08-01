@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur patreon",
   "Selection": "Sélection",
   "Change_character": "Personnage",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -177,7 +179,7 @@
     "Back": "Précédent",
     "Support_us_remove_ads": "Soutenez-nous sur patreon pour supprimer les publicités",
     "Support_us": "Soutenez-nous",
-    "Show_more": "Show more"
+    "Show_more": "Voir plus"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -211,7 +213,7 @@
     "Regenerate": "Régénérer les alarmes",
     "Group_outdated": "Ce groupe est périmé, demandez au propriétaire de se connecter avec une nouvelle mise à jour et il sera régénéré",
     "Remove_from_group": "Retirer de ce groupe",
-    "No_folder": "No folder",
+    "No_folder": "Aucun dossier",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -319,7 +321,7 @@
   "Favorite": "Favoris",
   "Adding_recipes": "Ajout de {{amount}} recettes à la liste {{listname}}",
   "Recipe_Added": "1 objet ajouté à la liste {{listname}}",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{itemcount}} éléments ajoutés à la liste {{listname}}, cliquez sur cette notification pour ouvrir la liste.",
   "Character_name": "Nom complet du personnage",
   "Character_add_warning": "Si vous voyez ceci sans avoir supprimé votre personnage manuellement, ne faites rien et redémarrez l'application ou faites F5. Si ce problème persiste, veuillez le signaler sur le serveur discord.",
   "Disconnect_and_anonymous": "Se déconnecter et continuer en tant qu'anonyme",
@@ -444,7 +446,7 @@
     "Scrolling_behavior": "Comportement de défilement",
     "Scrolling_behavior_explain": "Configurer comment le défilement dans les panneaux de listes se comporte, par défaut, autorise jusqu'à 12 éléments par panneau avant de faire défiler.",
     "Enable_auto_log_check": "Vérifier automatiquement les objets comme terminés dans le journal quand ils sont collectés/fabriqués",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "Mettre à jour automatiquement les statistiques/niveaux lors du changement de job",
     "Enable_metrics_capture": "Activer la capture des métriques",
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
@@ -461,7 +463,7 @@
     "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
     "Reset_contentid_characters": "Réinitialiser les caractères liés",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
-    "Show_other_characters_inventories_in_inventory_page": "Show other characters inventories in inventory page",
+    "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres personnages dans les listes",
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de patreon",
@@ -471,7 +473,7 @@
     "Import_error": "Erreur lors de la tentative d'import des paramètres",
     "Has_access_to_housing_vendor": "Utiliser le vendeur de la maison en priorité",
     "Has_access_to_housing_vendor_explain": "Utiliser le vendeur de la maison en priorité dans le système de regroupement par PNJ, utile si vous avez accès à un.",
-    "Hide_back_button": "Hide back button in sidebar",
+    "Hide_back_button": "Masquer le bouton retour dans la barre latérale",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -507,11 +509,11 @@
     },
     "NOTIFICATIONS": {
       "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
-      "Voyage_tracker": "Voyage tracker",
-      "Reset_timer": "Reset timer"
+      "Alarms": "Alarmes",
+      "Autofill_completion": "Son de notification de complétion",
+      "Retainer_tracker": "Notifications de servants",
+      "Voyage_tracker": "Notifications de voyages",
+      "Reset_timer": "Timers de reset"
     }
   },
   "PROFILE": {
@@ -530,7 +532,7 @@
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
-    "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
     "Open_public_profile": "Afficher le profil public",
     "Community_contributions": "Contributions communautaires",
@@ -642,7 +644,7 @@
       "Attach": "Attacher une rotation",
       "Detach": "Détacher la rotation",
       "Click_to_copy_macro": "Cliquez pour ouvrir la fenêtre de copie de macro",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "Ouvrir dans l'overlay de rotation"
     },
     "INVENTORY": {
       "Show_final_items": "Afficher les éléments finaux",
@@ -872,7 +874,7 @@
     "Will_spawn_in": "Apparaît dans {{timer}}",
     "Ephemeral_warning": "Les noeuds éphémères ont plusieurs emplacements, la position est une approximation.",
     "Legendary": "Légendaire",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "L'affichage a basculé en mode compact car il y a trop de résultats.",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -1000,14 +1002,14 @@
     "Current_control": "Contrôle actuel : {{value}}",
     "Current_control_bonus": "Bonus actuel",
     "Macrolock": "Inclure macrolock",
-    "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Find_rotation": "Recherche de rotation communautaire",
+    "Searching_for_rotation": "Recherche de rotation communautaire...",
+    "No_matching_rotations": "Aucune rotation communautaire trouvée correspondant à vos besoins",
+    "Click_on_rotation": "Cliquez sur une rotation pour la sélectionner",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
-    "Macro_duration": "Macro duration: {{duration}}s.",
+    "Macro_duration": "Durée de la macro : {{duration}}s.",
     "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Détaillé",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
       "Fail": "Echec",
       "Success": "Succès : {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "Le résultat affiché utilise un set non spécialiste pour une rotation spécialiste, ce qui produit un résultat bien plus faible que si le set était spécialiste.",
       "Steps_count": "{{count}} tours",
@@ -1319,11 +1322,11 @@
     "Hide_completed_items": "Masquer les éléments complétés",
     "MIN_optimized_path": "Chemin optimisé pour tous les nœuds MIN",
     "BTN_optimized_path": "Chemin optimisé pour tous les nœuds BTN",
-    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
-    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
-    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
-    "Export_FSH_completion": "Export completion as JSON",
-    "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
+    "Import_from_carbuncleplushy": "Importer la progression depuis CarbunclePlushy",
+    "Import_from_carbuncleplushy_failed": "L'import a échoué, un mauvais JSON a été fourni, assurez-vous d'utiliser l'export complet des paramètres",
+    "Import_from_carbuncleplushy_success": "Suivi du journal de pêche mis à jour avec succès",
+    "Export_FSH_completion": "Exporter la complétion en JSON",
+    "Export_FSH_completion_copied": "Complétion copiée au format JSON dans votre presse papier",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
@@ -1418,7 +1421,7 @@
   "DESYNTH": {
     "Title": "Guide de recyclage",
     "Job": "Job",
-    "Level": "Desynth level",
+    "Level": "Niveau de recyclage",
     "Intro": "Sélectionnez un job et saisissez un niveau pour trouver les meilleurs objets pour monter votre recyclage",
     "Loading_message": "Chargement en cours...",
     "TAGS": {
@@ -1602,7 +1605,8 @@
       "Rewards": "Récompenses",
       "Repeatable": "Répétable",
       "Beast_tribe_rank": "Rang de tribu",
-      "Chain_length": "Quêtes suivantes"
+      "Chain_length": "Quêtes suivantes",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Autres apparitions",
@@ -1775,8 +1779,8 @@
     "Shown_only_collectables": "Collectionnables uniquement",
     "Recipe_level": "Niveau de la recette",
     "Shown_only_not_completed": "Uniquement jamais crafté",
-    "Add_results_to_pool": "Add to pool when adding to basket",
-    "Show_only_leve_items": "Only items used in levequests"
+    "Add_results_to_pool": "Ajouter au pool lors de l'ajout au panier",
+    "Show_only_leve_items": "Uniquement les objets utilisés dans des mandats"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",
@@ -1785,8 +1789,8 @@
     "You_can_buy": "Vous pouvez en acheter {{amount}}",
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix.",
-    "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
+    "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",
@@ -1972,8 +1976,8 @@
       "Message": "Cet objet est utilisé uniquement dans les recettes sur lesquelles vous pouvez utiliser Main Preste, le rendant inutile en HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Title": "Objets qui ne sont utilisés que pour une seule recette",
+      "Message": "Cet objet n'est utilisé que pour faire {{targetItem}}, pensez à le transformer au lieu de le garder brut"
     }
   },
   "VERSION_LOCK": {
@@ -2323,8 +2327,8 @@
     "Create_folder": "Nouveau dossier",
     "Save_replay": "Enregistrer en ligne",
     "Replay_result": "Résultat",
-    "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Delete_offline": "Aucun enregistrement hors ligne",
+    "Confirm_delete_offline": "Êtes-vous sûr de vouloir supprimer tous vos enregistrements hors ligne ? Cette action est irréversible"
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
@@ -2509,7 +2513,7 @@
   "LEVELING_EQUIPMENT": {
     "Title": "Equipement de leveling",
     "Include_crafting": "Inclure le craft",
-    "Include_purchases": "Include purchases",
+    "Include_purchases": "Inclure les achats",
     "Include_trades": "Inclure les échanges",
     "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
     "Generate_list": "Générer une liste",
@@ -2526,7 +2530,8 @@
     "Task_complete": "Tâche terminée",
     "Task_completed_notification_title": "{{name}} a terminé sa tâche",
     "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
-    "Task_completion_alarm": "Alarme de complétion de tâche"
+    "Task_completion_alarm": "Alarme de complétion de tâche",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Tâches de servant",
@@ -2564,7 +2569,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop(make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. Allez à l'Atelier de votre CL (assurez-vous d'entrer après avoir ouvert ce popup)<br>2. Ouvrez la fenêtre de votre compagnie libre<br>3. Interagissez avec chaque sous-marin ou aéronef en utilisant l'interface de gestion",
     "Airships": "Aéronefs",
     "Submersibles": "Sous-marins"
   },
@@ -2669,15 +2674,15 @@
     }
   },
   "TREASURE_FINDER": {
-    "Title": "Treasure finder",
-    "Description": "Pick a map and find the treasure you're looking for",
-    "Select_map": "Pick a map",
-    "Select_item": "Select treasure map item",
-    "Select_treasure_map": "Select your treasure map",
-    "Find_another": "Find another treasure"
+    "Title": "Chercheur de trésors",
+    "Description": "Choisissez une carte et trouvez le trésor que vous cherchez",
+    "Select_map": "Choisir une carte",
+    "Select_item": "Sélectionner l'objet de la carte au trésor",
+    "Select_treasure_map": "Sélectionnez la miniature de carte qui correspond",
+    "Find_another": "Trouver un autre trésor"
   },
   "GARDENING": {
-    "Growth_time": "Growth time",
-    "Cross_breeds": "Cross breeds"
+    "Growth_time": "Temps de croissance",
+    "Cross_breeds": "Croisements"
   }
 }
