@@ -242,7 +242,7 @@
     "multi-progress": "^2.0.0",
     "ng-drag-drop": "^5.0.0",
     "ng-push-ivy": "^1.0.7",
-    "ng-zorro-antd": "^11.1.0",
+    "ng-zorro-antd": "11.1.0",
     "ngx-color-picker": "^10.1.0",
     "ngx-markdown": "^10.1.1",
     "nz-tslint-rules": "^0.901.2",

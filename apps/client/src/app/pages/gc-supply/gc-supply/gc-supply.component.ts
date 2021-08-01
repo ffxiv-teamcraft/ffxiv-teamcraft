@@ -20,7 +20,7 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 })
 export class GcSupplyComponent {
 
-  private sets$: Observable<GearSet[]> = this.authFacade.gearSets$;
+  private sets$: Observable<GearSet[]> = this.authFacade.gearSets$.pipe(first());
 
   public form$: Observable<FormGroup>;
 

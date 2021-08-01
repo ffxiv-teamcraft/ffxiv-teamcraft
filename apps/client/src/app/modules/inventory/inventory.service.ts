@@ -284,7 +284,7 @@ export class InventoryService {
 
   public getContainerDisplayName(item: ItemSearchResult): string {
     const containerName = this.getContainerTranslateKey(item);
-    if (item.isCurrentCharacter) {
+    if (item.isCurrentCharacter || !this.characterEntries) {
       return containerName;
     } else {
       const entry = this.characterEntries.find(e => e.contentId === item.contentId);
