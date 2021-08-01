@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -68,7 +68,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public hideCompleted = this.settings.hideCompletedLogEntries;
 
-  public selectedRecipes: { itemId: number, recipeId: number }[] = [];
+  public selectedRecipes: Record<number, number> = {};
+  public selectedRecipesSize = 0;
 
   private lastSelectedTabIndex = -1;
 
@@ -157,12 +158,13 @@ export class LogTrackerComponent extends TrackerComponent {
     });
   }
 
-  public setSelection(recipe: any, selected: boolean): void {
+  public setSelection(recipe: { itemId: number, recipeId: number }, selected: boolean): void {
     if (selected) {
-      this.selectedRecipes.push(recipe);
+      this.selectedRecipes[recipe.recipeId] = recipe.itemId;
     } else {
-      this.selectedRecipes = this.selectedRecipes.filter(r => r.recipeId !== recipe.recipeId);
+      delete this.selectedRecipes[recipe.recipeId];
     }
+    this.selectedRecipesSize = Object.keys(this.selectedRecipes).length;
   }
 
   public createListForPage(page: any, limit?: number): void {
@@ -173,11 +175,12 @@ export class LogTrackerComponent extends TrackerComponent {
     this.createList(recipesToAdd);
   }
 
-  public createList(recipesToAdd: { itemId: number, recipeId: number }[]): void {
+  public createList(selection: Record<number, number>): void {
+    const recipesToAdd = Object.entries(selection);
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operations = recipesToAdd.map(recipe => {
-          return this.listManager.addToList({ itemId: recipe.itemId, list: list, recipeId: recipe.recipeId, amount: 1 });
+        const operations = recipesToAdd.map(([recipeId, itemId]) => {
+          return this.listManager.addToList({ itemId: +itemId, list: list, recipeId: +recipeId, amount: 1 });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {

@@ -38,8 +38,8 @@
                       <button (click)="createListForPage(page, 50)" nz-button>
                         <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
                       </button>
-                      <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
-                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
+                      <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipesSize === 0" nzType="primary" nz-button>
+                        <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipesSize } }}
                       </button>
                     </div>
                     <ng-container *ngFor="let recipe of page.recipes">
