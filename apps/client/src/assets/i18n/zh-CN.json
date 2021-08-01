@@ -532,7 +532,7 @@
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
-    "Autofill_from_packets": "使用数据包捕获自动填充状态",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
     "Open_public_profile": "打开公开档案",
     "Community_contributions": "社区贡献",
@@ -2530,7 +2530,8 @@
     "Task_complete": "委托完成",
     "Task_completed_notification_title": "{{name}} 完成了探险",
     "Task_completed_notification_content": "{{name}} 完成了探险委托 {{taskName}}",
-    "Task_completion_alarm": "探险完成提醒"
+    "Task_completion_alarm": "探险完成提醒",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "雇员探险",
