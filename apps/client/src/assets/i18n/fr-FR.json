@@ -532,7 +532,7 @@
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
-    "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
     "Open_public_profile": "Afficher le profil public",
     "Community_contributions": "Contributions communautaires",
@@ -2530,7 +2530,8 @@
     "Task_complete": "Tâche terminée",
     "Task_completed_notification_title": "{{name}} a terminé sa tâche",
     "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
-    "Task_completion_alarm": "Alarme de complétion de tâche"
+    "Task_completion_alarm": "Alarme de complétion de tâche",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Tâches de servant",
