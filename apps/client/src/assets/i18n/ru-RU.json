@@ -532,7 +532,7 @@
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
-    "Autofill_from_packets": "Заполнить статы используя захват пакетов",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
     "Open_public_profile": "Открыть профиль",
     "Community_contributions": "Вклад в сообщество",
@@ -2530,7 +2530,8 @@
     "Task_complete": "Задание выполнено",
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
-    "Task_completion_alarm": "Сигнал выполнения задания"
+    "Task_completion_alarm": "Сигнал выполнения задания",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Задания ретейнеров",
