@@ -48,7 +48,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public set dohSelectedPage(index: number) {
     this._dohSelectedPage = index;
-    this.selectedRecipes = [];
+    this.selectedRecipes = {};
+    this.selectedRecipesSize = 0;
   }
 
   private _dolSelectedPage = 0;
@@ -58,7 +59,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public set dolSelectedPage(index: number) {
     this._dolSelectedPage = index;
-    this.selectedRecipes = [];
+    this.selectedRecipes = {};
+    this.selectedRecipesSize = 0;
   }
 
   public dolSubTabIndex = 0;
@@ -68,6 +70,7 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public hideCompleted = this.settings.hideCompletedLogEntries;
 
+  // { [recipeId]: itemId }
   public selectedRecipes: Record<number, number> = {};
   public selectedRecipesSize = 0;
 
@@ -172,7 +175,12 @@ export class LogTrackerComponent extends TrackerComponent {
     if (limit) {
       recipesToAdd = recipesToAdd.slice(0, limit);
     }
-    this.createList(recipesToAdd);
+    this.createList(recipesToAdd.reduce((acc, r) => {
+      return {
+        ...acc,
+        [r.recipeId]: r.itemId
+      };
+    }, {}));
   }
 
   public createList(selection: Record<number, number>): void {
