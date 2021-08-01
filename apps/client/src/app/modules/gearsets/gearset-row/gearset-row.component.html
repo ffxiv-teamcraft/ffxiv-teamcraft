@@ -28,7 +28,7 @@
      [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
     <i nz-icon nzType="edit" nzTheme="outline"></i>
   </a>
-  <button nz-button *ngIf="gearset.authorId === userId" nzType="danger"
+  <button nz-button *ngIf="gearset.authorId === userId" nzDanger
           nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
           nz-tooltip [nzTooltipTitle]="'GEARSETS.Delete_gearset' | translate"
           (nzOnConfirm)="deleteGearset(gearset.$key)">

@@ -1,7 +1,10 @@
 <div [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip *ngIf="result$ | async as result">
-  <nz-tag *ngIf="result.success"
+  <nz-tag *ngIf="result.success && !collectable"
           [style.border-color]="'darkgreen'"
           class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
+  <nz-tag *ngIf="result.success && collectable"
+          [style.border-color]="'darkgreen'"
+          class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success_collectable' | translate: { collectability: ((result.simulation.quality / 10) | floor) } }}</nz-tag>
   <nz-tag *ngIf="!result.success"
           [style.border-color]="'#f50'"
           class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>

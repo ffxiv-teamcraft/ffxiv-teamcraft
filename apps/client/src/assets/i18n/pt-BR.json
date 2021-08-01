@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
   "Change_character": "Character",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",
@@ -530,7 +532,7 @@
     "User_not_verified": "Usuário não verificado, clique para verificar o usuário",
     "More_than_100_lists_created": "More than 100 lists created",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Autofill stats using packet capture",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
     "Open_public_profile": "Open public profile",
     "Community_contributions": "Community contributions",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Result of a simulation run using this rotation and your stats",
       "Fail": "Fail",
       "Success": "Success: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "The result shown uses a non spec stat set for a spec rotation, which is why resulting HQ% might be way lower than expected.",
       "Steps_count": "{{count}} steps",
@@ -1602,7 +1605,8 @@
       "Rewards": "Rewards",
       "Repeatable": "Repeatable",
       "Beast_tribe_rank": "Beast tribe rank",
-      "Chain_length": "Following quests"
+      "Chain_length": "Following quests",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Other appearances",
@@ -2526,7 +2530,8 @@
     "Task_complete": "Task complete",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Task_completion_alarm": "Task completion alarm",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Retainer ventures",

@@ -109,4 +109,9 @@ export class RetainersService {
   persist(): void {
     localStorage.setItem(RetainersService.LS_KEY, JSON.stringify(this.retainers));
   }
+
+  resetRetainers(): void {
+    this.retainers$.next({});
+    this.persist();
+  }
 }

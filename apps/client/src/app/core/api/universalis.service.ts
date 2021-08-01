@@ -8,7 +8,14 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import * as _ from 'lodash';
-import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '@ffxiv-teamcraft/pcap-ffxiv';
+import {
+  MarketBoardItemListing,
+  MarketBoardItemListingHistory,
+  MarketBoardPurchaseHandler,
+  MarketBoardSearchResult,
+  MarketTaxRates,
+  PlayerSetup
+} from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -148,6 +155,16 @@ export class UniversalisService {
         this.handleMarketboardListingHistory(packet);
       }
     });
+    combineLatest([
+      this.ipc.marketBoardPurchaseHandler$,
+      this.ipc.marketBoardPurchase$
+    ]).subscribe(([packet, confirmation]) => {
+      if (this.settings.enableUniversalisSourcing
+        && packet.quantity === confirmation.quantity
+        && packet.itemId % 1000000 === confirmation.itemId % 1000000) {
+        this.handleMarketboardPurchase(packet);
+      }
+    });
     this.ipc.marketTaxRatePackets$.subscribe(packet => {
       if (this.settings.enableUniversalisSourcing) {
         this.uploadMarketTaxRates(packet);
@@ -234,7 +251,7 @@ export class UniversalisService {
         const data = {
           worldID: worldId,
           itemID: packet.itemCatalogId,
-          uploaderID: cid,
+          uploaderID: BigInt(`0x${cid}`).toString(10),
           entries: packet.listings.map((entry) => {
             return {
               hq: entry.isHq,
@@ -247,6 +264,26 @@ export class UniversalisService {
           })
         };
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+          headers: new HttpHeaders().append('Content-Type', 'application/json')
+        });
+      })
+    ).subscribe();
+  }
+
+  public handleMarketboardPurchase(packet: MarketBoardPurchaseHandler): void {
+    combineLatest([this.cid$, this.worldId$]).pipe(
+      first(),
+      switchMap(([cid, worldId]) => {
+        const data = {
+          worldID: worldId,
+          itemID: packet.itemId,
+          retainerID: packet.retainerId.toString(10),
+          listingID: packet.listingId.toString(10),
+          quantity: packet.quantity,
+          pricePerUnit: packet.pricePerUnit,
+          uploaderID: cid
+        };
+        return this.http.post(`https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-purchase`, data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
         });
       })

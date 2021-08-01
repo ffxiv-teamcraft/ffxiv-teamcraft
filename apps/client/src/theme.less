@@ -291,10 +291,17 @@ span.ant-radio + * {
   color: var(--primary-color) !important;
 }
 
-.ant-btn:not(.ant-btn-primary):not(.ant-btn-danger) {
+.ant-btn:not(.ant-btn-primary):not(.ant-btn-danger):not(.custom-button-color) {
   &:hover, &:focus {
     border-color: var(--primary-color) !important;
     color: var(--primary-color) !important;
+  }
+}
+
+.ant-btn.custom-button-color {
+  &:hover, &:focus {
+    border-color: inherit !important;
+    color: inherit !important;
   }
 }
 

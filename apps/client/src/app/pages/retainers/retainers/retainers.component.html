@@ -1,14 +1,20 @@
 <h2>{{'RETAINERS.Title' | translate}}</h2>
 
 <app-page-loader [loading]="loading">
-  <div>
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <nz-switch [(ngModel)]="settings.retainerTaskAlarms"></nz-switch>
       <div>{{'RETAINERS.Task_completion_alarm' | translate}}</div>
     </div>
+    <div>
+      <button nz-button (click)="resetRetainers()">{{'RETAINERS.Reset_retainers' | translate}}</button>
+    </div>
   </div>
 
   <ng-container *ngIf="display$ | async as display;else noRetainers">
+    <ng-container *ngIf="display.length === 0">
+      <ng-container *ngTemplateOutlet="noRetainers"></ng-container>
+    </ng-container>
     <ng-container *ngFor="let row of display">
       <nz-divider nzOrientation="left" [nzText]="row.characterName"></nz-divider>
       <div nz-row *ngFor="let retainer of row.retainers; odd as odd" [class.odd]="odd" class="retainer-row">

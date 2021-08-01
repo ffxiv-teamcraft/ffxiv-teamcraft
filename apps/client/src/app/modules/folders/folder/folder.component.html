@@ -20,7 +20,7 @@
            [nzTooltipTitle]="'FOLDERS.View_folder' | translate" nzType="primary">
           <i nz-icon nzType="folder-open"></i>
         </a>
-        <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"
+        <button nz-button *ngIf="display.folder.authorId === userId" nzDanger
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
                 nz-tooltip [nzTooltipTitle]="'FOLDERS.Delete_folder' | translate"
                 (click)="$event.stopPropagation()"

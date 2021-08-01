@@ -39,6 +39,19 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
         }];
       }
     }
+    // Collectable Rewards
+    if (tradeSources.length === 1 && tradeSources[0].npcs[0]?.id === 1032900) {
+      const collectableReward = Object.entries<any>(this.lazyDataService.data.collectables).find(([, c]) => {
+        return c.reward === item.id;
+      });
+      if (collectableReward) {
+        return [{
+          id: +collectableReward[0],
+          amount: 1,
+          batches: +collectableReward[1].mid.scrip
+        }];
+      }
+    }
     // Modified airships
     if (tradeSources.length === 1 && tradeSources[0].shopName === 'Submersible Frames') {
       const trade = tradeSources[0].trades[0];

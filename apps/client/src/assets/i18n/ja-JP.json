@@ -21,6 +21,8 @@
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -530,7 +532,7 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
-    "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "コミュニティの貢献",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "シミュレーションの結果は現在のスキル回しと自分のサブステをもとに導出されます。",
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "サブステ",
       "Specialist_rotation_warning": "表示された結果では、非マイスターの状態でマイスター用スキル回しを使用しているため、結果的にHQ確率が予想より非常に低くなる恐れがあります。",
       "Steps_count": "{{count}} 工程",
@@ -1602,7 +1605,8 @@
       "Rewards": "報酬",
       "Repeatable": "繰り返し可能",
       "Beast_tribe_rank": "蛮族友好段階",
-      "Chain_length": "連携クエスト"
+      "Chain_length": "連携クエスト",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
@@ -2526,7 +2530,8 @@
     "Task_complete": "ベンチャーが完了しました。",
     "Task_completed_notification_title": "{{name}} がベンチャーを終了しました",
     "Task_completed_notification_content": "{{name}} がベンチャー {{taskName}} を終了しました",
-    "Task_completion_alarm": "ベンチャー完了アラーム"
+    "Task_completion_alarm": "ベンチャー完了アラーム",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "リテイナーベンチャー",

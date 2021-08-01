@@ -133,8 +133,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     })
   );
 
-  public readonly usedFor$: Observable<any> = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
-    switchMap(([data, xivapiItem]) => {
+  public readonly usedFor$: Observable<any> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.lazyData.data$]).pipe(
+    switchMap(([data, xivapiItem, lData]) => {
       if (xivapiItem.ItemSearchCategoryTargetID === 30) {
         return this.apollo
           .query<any>({
@@ -149,13 +149,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           .pipe(
             map((result) => {
               xivapiItem.BaitInfo = result.data.baits_per_fish.filter((row) => row.itemId > 0);
-              return [data, xivapiItem];
+              return [data, xivapiItem, lData];
             })
           );
       }
-      return of([data, xivapiItem]);
+      return of([data, xivapiItem, lData]);
     }),
-    map(([data, xivapiItem]) => {
+    map(([data, xivapiItem, lData]) => {
       const usedFor = [];
       if (data.item.ingredient_of !== undefined) {
         usedFor.push({
@@ -355,6 +355,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           title: 'Quests',
           icon: './assets/icons/quest.png',
           quests: data.item.usedInQuest
+        });
+      } else if(lData.usedInQuests[xivapiItem.ID]) {
+        usedFor.push({
+          type: UsedForType.QUEST,
+          flex: '1 1 auto',
+          title: 'Quests',
+          icon: './assets/icons/quest.png',
+          quests: lData.usedInQuests[xivapiItem.ID]
         });
       }
       if (data.item.supply) {

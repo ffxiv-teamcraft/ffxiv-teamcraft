@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
   "Change_character": "Character",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -530,7 +532,7 @@
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
-    "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus estadísticas con la comida activa.",
     "Open_public_profile": "Abrir perfil público",
     "Community_contributions": "Contribuciones de la comunidad",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Resultado de una simulación usando esta rotación y sus atributos",
       "Fail": "Falla",
       "Success": "Éxito: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Atributos",
       "Specialist_rotation_warning": "El resultado mostrado utiliza un conjunto de atributos de no especialista para una rotación de especialista, por lo que el HQ% resultante podría ser inferior al esperado.",
       "Steps_count": "{{count}} pasos",
@@ -1602,7 +1605,8 @@
       "Rewards": "Recompensas",
       "Repeatable": "Repetible",
       "Beast_tribe_rank": "Rango de tribu de bestia",
-      "Chain_length": "Misiones siguientes"
+      "Chain_length": "Misiones siguientes",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Otras apariciones",
@@ -2526,7 +2530,8 @@
     "Task_complete": "Task complete",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Task_completion_alarm": "Task completion alarm",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Retainer ventures",

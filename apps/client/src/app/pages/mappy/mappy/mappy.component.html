@@ -55,7 +55,7 @@
           </ul>
         </li>
       </ul>
-      <button *ngIf="isAdmin$ | async" nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+      <button *ngIf="isAdmin$ | async" nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
               (nzOnConfirm)="clearMap(display.map.id)">{{'MAPPY.Clear_map' | translate}}</button>
     </div>
   </div>

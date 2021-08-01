@@ -337,6 +337,7 @@
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
+                      nzCloseable
                       nzType="warning">
             </nz-alert>
             <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_sort' | translate"

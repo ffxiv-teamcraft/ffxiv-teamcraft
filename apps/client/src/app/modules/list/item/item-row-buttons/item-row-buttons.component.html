@@ -21,7 +21,7 @@
     <ng-template #detachRotationRef>
       <button (click)="detachRotation.emit()" [nzTooltipTitle]="'LIST.ROTATION.Detach' | translate" nz-button nz-tooltip
               nzShape="circle" nzSize="small"
-              nzType="danger">
+              nzDanger>
         <i nz-icon nzType="disconnect"></i>
       </button>
     </ng-template>
@@ -152,7 +152,7 @@
             [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
             nz-tooltip
             nzShape="circle"
-            nzSize="small" nzType="danger">
+            nzSize="small" nzDanger>
       <i nz-icon nzType="highlight"></i>
     </button>
   </ng-container>
@@ -171,7 +171,7 @@
             nz-popconfirm
             nzShape="circle"
             nzSize="small"
-            nzType="danger">
+            nzDanger>
       <i nz-icon nzType="delete"></i>
     </button>
   </ng-container>
@@ -344,7 +344,7 @@
           nz-tooltip
           nzGhost
           nzShape="circle" nzSize="small"
-          nzType="danger">
+          nzDanger>
     <i nz-icon nzType="warning" nzTheme="outline"></i>
   </button>
   <ng-container *ngIf="attachedRotation">
@@ -363,7 +363,7 @@
             <i nz-icon nzType="desktop"></i>
           </button>
         </nz-button-group>
-        <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe"></app-rotation-result-tag>
+        <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe" [collectable]="collectable"></app-rotation-result-tag>
       </ng-container>
     </ng-container>
   </ng-container>

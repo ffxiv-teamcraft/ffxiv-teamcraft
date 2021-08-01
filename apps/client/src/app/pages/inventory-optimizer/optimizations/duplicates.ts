@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { uniq } from 'lodash';
 
 export class Duplicates extends InventoryOptimizer {
 
@@ -31,7 +32,7 @@ export class Duplicates extends InventoryOptimizer {
       });
     if (dupes.length > 0) {
       return {
-        containers: dupes.map(dupe => {
+        containers: uniq(dupes).map(dupe => {
           return this.inventoryFacade.getContainerDisplayName(dupe);
         }).join(', ')
       };

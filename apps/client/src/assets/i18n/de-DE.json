@@ -21,6 +21,8 @@
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen.",
   "Selection": "Auswahl",
   "Change_character": "Charakter",
+  "Check_guides": "Check our guides",
+  "Guides_links": "Teamcraft Guides",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -319,7 +321,7 @@
   "Favorite": "Favorit",
   "Adding_recipes": "Füge {{amount}} Rezepte zur Liste {{listname}} hinzu",
   "Recipe_Added": "1 Gegenstand zu Liste {{listname}} hinzugefügt",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{itemcount}} Gegenstände zur Liste {{listname}} hinzugefügt, klicke diese Benachrichtigung zum Öffnen an.",
   "Character_name": "Charaktername",
   "Character_add_warning": "Wenn du dies siehst, ohne deinen Charakter manuell gelöscht zu haben, gib nichts ein und aktualisiere die Seite oder starte die App neu. Wenn dieses Problem weiterhin besteht, melde es bitte auf dem Discord-Server.",
   "Disconnect_and_anonymous": "Abmelden und anonym weiternutzen",
@@ -530,7 +532,7 @@
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
     "Open_public_profile": "Öffentliches Profil öffnen",
     "Community_contributions": "Community-Beiträge",
@@ -872,7 +874,7 @@
     "Will_spawn_in": "Taucht in {{timer}} auf",
     "Ephemeral_warning": "Vergängliche Abbaustellen haben verschiedene Positionen, Position ist eine Annäherung.",
     "Legendary": "Legendär",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "Es wurde zur Kompaktansicht gewechselt, weil es zu viele Ergebnisse gibt.",
     "GIG_HEAD": {
       "Small": "Kleine Speerspitze",
       "Normal": "Normale Speerspitze",
@@ -1000,9 +1002,9 @@
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
-    "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
+    "Find_rotation": "Community Rotationen Finder",
+    "Searching_for_rotation": "Suche nach Community Rotationen...",
+    "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
@@ -1047,6 +1049,7 @@
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
       "Success": "Erfolg: {{HQ}}% HQ",
+      "Success_collectable": "Success: {{collectability}}",
       "Set_to_simulate": "Attribute",
       "Specialist_rotation_warning": "Das gezeigte Resultat verwendet für eine Spezialisten-Rotation die Attribute eines Nicht-Spezialisten, weshalb die resultierende HQ% wesentlich kleiner als erwartet ausfallen kann.",
       "Steps_count": "{{count}} Schritte",
@@ -1602,7 +1605,8 @@
       "Rewards": "Belohnungen",
       "Repeatable": "Wiederholbar",
       "Beast_tribe_rank": "Rang bei Wilden Stämmen",
-      "Chain_length": "Folgende Quests"
+      "Chain_length": "Folgende Quests",
+      "Possible_trades": "Possible trades"
     },
     "NPC": {
       "Other_entries": "Andere Auftritte",
@@ -2526,7 +2530,8 @@
     "Task_complete": "Unternehmung abgeschlossen",
     "Task_completed_notification_title": "{{name}} hat die Unternehmung beendet",
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
-    "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung"
+    "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Gehilfenunternehmungen",

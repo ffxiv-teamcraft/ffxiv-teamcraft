@@ -34,7 +34,7 @@
               <i nz-icon nzType="plus" nzTheme="outline"></i>
             </button>
             <div nz-tooltip [nzTooltipTitle]="display.layout.isDefault?('METRICS.EDITOR.Cannot_delete_default' | translate):null">
-              <button nz-button nzShape="circle" nzType="danger" nz-popconfirm [disabled]="display.layout.isDefault"
+              <button nz-button nzShape="circle" nzDanger nz-popconfirm [disabled]="display.layout.isDefault"
                       [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteLayout(layout.$key)"
                       tutorialStep="TUTORIAL.METRICS.Delete_layout">
                 <i nz-icon nzType="delete" nzTheme="outline"></i>
@@ -65,7 +65,7 @@
     <div *ngFor="let column of editedLayout.grid; let columnIndex = index; trackBy: trackByColumn"
          fxFlex="1 1 {{100 / editedLayout.grid.length}}%"
          class="metrics-column">
-      <button class="delete-column-button" *ngIf="editedLayout.grid.length > 1" nz-button nzType="danger" nzShape="circle" nzSize="small" nz-popconfirm
+      <button class="delete-column-button" *ngIf="editedLayout.grid.length > 1" nz-button nzDanger nzShape="circle" nzSize="small" nz-popconfirm
               [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteColumn(editedLayout, columnIndex)"
               tutorialStep="TUTORIAL.METRICS.EDITOR.Delete_column">
         <i nz-icon nzType="delete-column" nzTheme="outline"></i>

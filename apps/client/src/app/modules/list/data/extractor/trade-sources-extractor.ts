@@ -24,14 +24,21 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.tradeShops !== undefined || this.lazyData.data.hwdInspections.some(row => {
-      return row.receivedItem === item.id;
-    });
+    return item.tradeShops !== undefined
+      || this.lazyData.data.hwdInspections.some(row => {
+        return row.receivedItem === item.id;
+      })
+      || Object.entries<any>(this.lazyData.data.collectables).some(([, c]) => {
+        return c.reward === item.id;
+      });
   }
 
   protected doExtract(item: Item, itemData: ItemData): TradeSource[] {
     const inspection = this.lazyData.data.hwdInspections.find(row => {
       return row.receivedItem === item.id;
+    });
+    const collectableReward = Object.entries<any>(this.lazyData.data.collectables).find(([, c]) => {
+      return c.reward === item.id;
     });
     if (inspection) {
       const npc: TradeNpc = {
@@ -66,6 +73,40 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         }]
       }];
     }
+    if (collectableReward) {
+      return [{
+        npcs: [{
+          id: 1032900,
+          zoneId: this.lazyData.data.npcs[1032900].position.zoneid,
+          mapId: this.lazyData.data.npcs[1032900].position.map,
+          coords: {
+            x: this.lazyData.data.npcs[1032900].position.x,
+            y: this.lazyData.data.npcs[1032900].position.y
+          }
+        }],
+        shopName: this.lazyData.data.collectablesShopItemGroup[collectableReward[1].group],
+        trades: ['base', 'mid', 'high'].map(tier => {
+          return {
+            currencies: [
+              {
+                id: +collectableReward[0],
+                amount: 1,
+                hq: false,
+                icon: this.lazyData.data.itemIcons[+collectableReward[0]]
+              }
+            ],
+            items: [
+              {
+                id: collectableReward[1].reward,
+                amount: collectableReward[1][tier].scrip,
+                hq: false,
+                icon: this.lazyData.data.itemIcons[collectableReward[1].reward]
+              }
+            ]
+          };
+        })
+      }];
+    }
     return item.tradeShops.map(ts => {
       return {
         npcs: ts.npcs.map(npcId => {
@@ -78,7 +119,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
             npc.zoneId = npcEntry.position.zoneid;
             npc.mapId = npcEntry.position.map;
           }
-          if(npcEntry && npcEntry.festival){
+          if (npcEntry && npcEntry.festival) {
             npc.festival = npcEntry.festival;
           }
           return npc;

@@ -90,9 +90,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     itemCategories: [[]],
     stats: this.fb.array([]),
     bonuses: this.fb.array([]),
+    collectable: [false],
     // Instances, leves and actions
     lvlMin: [0],
-    lvlMax: [this.curMaxLevel]
+    lvlMax: [this.curMaxLevel],
   });
 
   availableStats = stats;
@@ -595,6 +596,12 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       filters.push({
         name: 'Recipes.ClassJobID',
         value: controls.craftJob.value
+      });
+    }
+    if (controls.collectable.value) {
+      filters.push({
+        name: 'AlwaysCollectable',
+        value: 1
       });
     }
     if (controls.itemCategories.value && controls.itemCategories.value.length > 0) {

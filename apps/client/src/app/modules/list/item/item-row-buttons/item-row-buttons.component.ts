@@ -166,6 +166,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   notFavoriteCopyMode = this.settings.preferredCopyType === 'classic' ? 'isearch' : 'classic';
 
+  collectable = false;
+
   constructor(private messageService: NzMessageService, private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
               private rotationsFacade: RotationsFacade, private lazyData: LazyDataService,
@@ -178,7 +180,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.collectable = this.lazyData.data.collectables[this.itemId] !== undefined;
   }
 
   public isButton(element: ItemRowMenuElement): boolean {

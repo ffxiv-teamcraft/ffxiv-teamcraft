@@ -109,7 +109,7 @@ export class InventoryComponent {
               return item;
             })
             .sort((a, b) => {
-              const diffPrice = b.price - a.price;
+              const diffPrice = b.price * b.quantity - a.price * a.quantity;
               if (diffPrice !== 0) {
                 return diffPrice;
               }

@@ -11,4 +11,5 @@ export interface NavigationObjective extends Vector2 {
   itemId?: number;
   type?: 'Gathering' | 'Hunting' | 'Vendor' | 'Trade';
   gatheringType?: number;
+  fate?: number;
 }

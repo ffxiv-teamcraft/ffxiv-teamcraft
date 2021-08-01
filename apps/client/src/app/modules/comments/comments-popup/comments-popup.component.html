@@ -12,7 +12,7 @@
           </ng-template>
           <ng-template #delete>
             <button (nzOnConfirm)="deleteComment(comment.$key)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-                    nz-popconfirm nzShape="circle" nzType="danger">
+                    nz-popconfirm nzShape="circle" nzDanger>
               <i nz-icon nzType="delete"></i>
             </button>
           </ng-template>

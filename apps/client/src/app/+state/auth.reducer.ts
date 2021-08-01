@@ -1,6 +1,7 @@
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthActions, AuthActionTypes } from './auth.actions';
 import { CommissionProfile } from '../model/user/commission-profile';
+import { LogTracking } from '../model/user/log-tracking';
 
 /**
  * Interface for the 'Auth' data used in
@@ -18,6 +19,7 @@ export interface AuthState {
   loading: boolean;
   linkingCharacter: boolean;
   commissionProfile: CommissionProfile;
+  logTracking: LogTracking;
 }
 
 export const initialState: AuthState = {
@@ -26,7 +28,8 @@ export const initialState: AuthState = {
   loggedIn: false,
   loading: false,
   linkingCharacter: false,
-  commissionProfile: null
+  commissionProfile: null,
+  logTracking: null
 };
 
 export function authReducer(state = initialState, action: AuthActions): AuthState {
@@ -245,9 +248,6 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     case AuthActionTypes.GoogleLogin:
       return { ...state, loading: true };
 
-    case AuthActionTypes.FacebookLogin:
-      return { ...state, loading: true };
-
     case AuthActionTypes.ClassicLogin:
       return { ...state, loading: true };
 
@@ -261,6 +261,24 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
       return {
         ...state,
         commissionProfile: action.payload
+      };
+
+    case AuthActionTypes.LogTrackingLoaded:
+      return {
+        ...state,
+        logTracking: action.payload
+      };
+
+    case AuthActionTypes.MarkAsDoneInLog:
+      return {
+        ...state,
+        logTracking: {
+          ...state.logTracking,
+          [action.log]: [
+            ...state.logTracking[action.log],
+            action.itemId
+          ]
+        }
       };
 
     default:

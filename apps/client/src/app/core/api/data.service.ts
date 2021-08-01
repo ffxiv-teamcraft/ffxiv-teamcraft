@@ -488,60 +488,98 @@ export class DataService {
   }
 
   searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
+    const searchLang = this.translate.currentLang;
+    const isCompatibleLocal = searchLang === 'ko' || searchLang === 'zh' && this.settings.region !== Region.China;
+    // Filter HQ and Collectable Symbols from search
+    query = query.replace(/[\ue03a-\ue03d]/g, '').toLowerCase();
+    const otherSearch$ = this.xivapiSearch({
+      indexes: [
+        SearchIndex.INSTANCECONTENT,
+        SearchIndex.QUEST,
+        SearchIndex.ACTION,
+        SearchIndex.CRAFT_ACTION,
+        SearchIndex.TRAIT,
+        SearchIndex.STATUS,
+        SearchIndex.ACHIEVEMENT,
+        SearchIndex.LEVE,
+        SearchIndex.ENPCRESIDENT,
+        SearchIndex.BNPCNAME,
+        SearchIndex.FATE,
+        SearchIndex.PLACENAME
+      ],
+      columns: ['ID', 'Name_*', 'Banner', 'Icon', 'ContentFinderCondition.ClassJobLevelRequired',
+        'ClassJobLevel', 'ClassJob', 'ClassJobCategory', 'Level', 'Description_*', 'IconIssuer',
+        'Title_*', 'IconMap', '_'],
+      // I know, it looks like it's the same, but it isn't
+      string: query.split('-').join('–'),
+      filters: [].concat.apply([], filters
+        .filter(f => f.value !== null)
+        .map(f => {
+          if (f.minMax) {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          } else {
+            return [{
+              column: f.name,
+              operator: '=',
+              value: f.value
+            }];
+          }
+        }))
+    }).pipe(
+      map(res => {
+        return res.Results.map(row => {
+          switch (row._) {
+            case SearchIndex.INSTANCECONTENT:
+              return this.mapInstance(row);
+            case SearchIndex.QUEST:
+              return this.mapQuest(row);
+            case SearchIndex.ACTION:
+            case SearchIndex.CRAFT_ACTION:
+              return this.mapAction(row);
+            case SearchIndex.TRAIT:
+              return this.mapTrait(row);
+            case SearchIndex.STATUS:
+              return this.mapStatus(row);
+            case SearchIndex.ACHIEVEMENT:
+              return this.mapAchievement(row);
+            case SearchIndex.LEVE:
+              return this.mapLeve(row);
+            case SearchIndex.ENPCRESIDENT:
+              return this.mapNpc(row);
+            case SearchIndex.BNPCNAME:
+              return this.mapMob(row);
+            case SearchIndex.FATE:
+              return this.mapFate(row);
+            case SearchIndex.PLACENAME:
+              return this.mapMap(row);
+          }
+          console.warn('No type matching for res type', row._);
+        })
+          .filter(r => !!r);
+      })
+    );
     return requestsWithDelay([
       this.searchItem(query, filters, false).pipe(map(res => res.map(row => {
         row.type = SearchType.ITEM;
         return row;
       }))),
-      this.searchInstance(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.INSTANCE;
-        return row;
-      }))),
-      this.searchQuest(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.QUEST;
-        return row;
-      }))),
-      this.searchAction(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.ACTION;
-        return row;
-      }))),
-      this.searchTrait(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.TRAIT;
-        return row;
-      }))),
-      this.searchStatus(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.STATUS;
-        return row;
-      }))),
-      this.searchLeve(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.LEVE;
-        return row;
-      }))),
-      this.searchNpc(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.NPC;
-        return row;
-      }))),
-      this.searchMob(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.MONSTER;
-        return row;
-      }))),
-      this.searchFate(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.FATE;
-        return row;
-      }))),
-      this.searchMap(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.MAP;
-        return row;
-      }))),
-      this.searchAchievement(query, filters).pipe(map(res => res.map(row => {
-        row.type = SearchType.ACHIEVEMENT;
-        return row;
-      }))),
+      otherSearch$,
       this.searchFishingSpot(query, filters).pipe(map(res => res.map(row => {
         row.type = SearchType.FISHING_SPOT;
         return row;
       })))
-    ], 150).pipe(
+    ], 100).pipe(
       map(results => [].concat.apply([], results))
     );
   }
@@ -579,12 +617,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(instance => {
-          return {
-            id: instance.ID,
-            icon: instance.Icon,
-            banner: instance.Banner,
-            level: instance.ContentFinderCondition.ClassJobLevelRequired
-          };
+          return this.mapInstance(instance);
         });
       })
     );
@@ -623,11 +656,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(quest => {
-          return {
-            id: quest.ID,
-            icon: quest.Icon,
-            banner: quest.Banner
-          };
+          return this.mapQuest(quest);
         });
       })
     );
@@ -666,12 +695,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(action => {
-          return {
-            id: action.ID,
-            icon: action.Icon,
-            job: action.ClassJob || action.ClassJobCategory,
-            level: action.ClassJobLevel
-          };
+          return this.mapAction(action);
         });
       })
     );
@@ -709,13 +733,8 @@ export class DataService {
         }))
     }).pipe(
       map(res => {
-        return res.Results.map(action => {
-          return {
-            id: action.ID,
-            icon: action.Icon,
-            job: action.ClassJob || action.ClassJobCategory,
-            level: action.Level
-          };
+        return res.Results.map(trait => {
+          return this.mapTrait(trait);
         });
       })
     );
@@ -754,11 +773,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(status => {
-          return {
-            id: status.ID,
-            icon: status.Icon,
-            data: status
-          };
+          return this.mapStatus(status);
         });
       })
     );
@@ -797,11 +812,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(achievement => {
-          return {
-            id: achievement.ID,
-            icon: achievement.Icon,
-            data: achievement
-          };
+          return this.mapAchievement(achievement);
         });
       })
     );
@@ -840,13 +851,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(leve => {
-          return {
-            id: leve.ID,
-            icon: leve.Icon,
-            level: leve.ClassJobLevel,
-            banner: leve.IconIssuer,
-            job: this.l12n.xivapiToI18n(leve.ClassJobCategory, 'jobCategories')
-          };
+          return this.mapLeve(leve);
         });
       })
     );
@@ -885,11 +890,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(npc => {
-          return {
-            id: npc.ID,
-            icon: npc.Icon,
-            title: this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title')
-          };
+          return this.mapNpc(npc);
         });
       })
     );
@@ -928,11 +929,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(mob => {
-          return {
-            id: mob.ID,
-            icon: mob.Icon,
-            zoneid: this.lazyData.data.monsters[mob.ID] && this.lazyData.data.monsters[mob.ID].positions[0] ? this.lazyData.data.monsters[mob.ID].positions[0].zoneid : null
-          };
+          return this.mapMob(mob);
         });
       })
     );
@@ -971,11 +968,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(fate => {
-          return {
-            id: fate.ID,
-            icon: fate.IconMap,
-            level: fate.ClassJobLevel
-          };
+          return this.mapFate(fate);
         });
       })
     );
@@ -1029,14 +1022,7 @@ export class DataService {
     }).pipe(
       map(res => {
         return res.Results.map(place => {
-          const entry = mapIds.find(m => m.zone === place.ID);
-          if (entry === undefined) {
-            return null;
-          }
-          return {
-            id: entry.id,
-            zoneid: place.ID
-          };
+          return this.mapMap(place);
         }).filter(r => r !== null);
       })
     );
@@ -1110,5 +1096,111 @@ export class DataService {
         });
       })
     );
+  }
+
+  private mapAchievement(achievement: any): StatusSearchResult {
+    return {
+      id: achievement.ID,
+      icon: achievement.Icon,
+      data: achievement,
+      type: SearchType.ACHIEVEMENT
+    };
+  }
+
+  private mapFate(fate: any): FateSearchResult {
+    return {
+      id: fate.ID,
+      icon: fate.IconMap,
+      level: fate.ClassJobLevel,
+      type: SearchType.FATE
+    };
+  }
+
+  private mapMob(mob: any): MobSearchResult {
+    return {
+      id: mob.ID,
+      icon: mob.Icon,
+      zoneid: this.lazyData.data.monsters[mob.ID] && this.lazyData.data.monsters[mob.ID].positions[0] ? this.lazyData.data.monsters[mob.ID].positions[0].zoneid : null,
+      type: SearchType.MONSTER
+    };
+  }
+
+  private mapNpc(npc: any): NpcSearchResult {
+    return {
+      id: npc.ID,
+      icon: npc.Icon,
+      title: this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'),
+      type: SearchType.NPC
+    };
+  }
+
+  private mapStatus(status: any): StatusSearchResult {
+    return {
+      id: status.ID,
+      icon: status.Icon,
+      data: status,
+      type: SearchType.STATUS
+    };
+  }
+
+  private mapTrait(trait: any): ActionSearchResult {
+    return {
+      id: trait.ID,
+      icon: trait.Icon,
+      job: trait.ClassJob || trait.ClassJobCategory,
+      level: trait.Level,
+      type: SearchType.TRAIT
+    };
+  }
+
+  private mapAction(action: any): ActionSearchResult {
+    return {
+      id: action.ID,
+      icon: action.Icon,
+      job: action.ClassJob || action.ClassJobCategory,
+      level: action.Level,
+      type: SearchType.ACTION
+    };
+  }
+
+  private mapQuest(quest: any): QuestSearchResult {
+    return {
+      id: quest.ID,
+      icon: quest.Icon,
+      banner: quest.Banner,
+      type: SearchType.QUEST
+    };
+  }
+
+  private mapInstance(instance: any): InstanceSearchResult {
+    return {
+      id: instance.ID,
+      icon: instance.Icon,
+      banner: instance.Banner,
+      level: instance.ContentFinderCondition.ClassJobLevelRequired,
+      type: SearchType.INSTANCE
+    };
+  }
+
+  private mapLeve(leve: any): LeveSearchResult {
+    return {
+      id: leve.ID,
+      icon: leve.Icon,
+      level: leve.ClassJobLevel,
+      banner: leve.IconIssuer,
+      job: this.l12n.xivapiToI18n(leve.ClassJobCategory, 'jobCategories')
+    };
+  }
+
+  private mapMap(place: any): MapSearchResult {
+    const entry = mapIds.find(m => m.zone === place.ID);
+    if (entry === undefined) {
+      return null;
+    }
+    return {
+      id: entry.id,
+      zoneid: place.ID,
+      type: SearchType.MAP
+    };
   }
 }

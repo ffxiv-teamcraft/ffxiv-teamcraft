@@ -35,7 +35,7 @@ export class RetainersComponent {
         map(() => {
           return display
             .map(row => {
-              row.retainers = row.retainers.filter(retainer => !!retainer.name)
+              row.retainers = row.retainers.filter(retainer => !!retainer.name && retainer.level > 0)
                 .sort((a, b) => a.order - b.order)
                 .map(retainer => {
                   return {
@@ -54,6 +54,10 @@ export class RetainersComponent {
 
   constructor(private retainersService: RetainersService, public translate: TranslateService,
               public settings: SettingsService, private auth: AuthFacade) {
+  }
+
+  resetRetainers(): void {
+    this.retainersService.resetRetainers();
   }
 
 }

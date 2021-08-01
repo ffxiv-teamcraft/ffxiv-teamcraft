@@ -1982,5 +1982,93 @@ export const weatherIndex = {
       "rate": 100,
       "weatherId": 147
     }
+  ],
+  "127": [
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 65,
+      "weatherId": 3
+    },
+    {
+      "rate": 80,
+      "weatherId": 4
+    },
+    {
+      "rate": 95,
+      "weatherId": 9
+    },
+    {
+      "rate": 100,
+      "weatherId": 10
+    }
+  ],
+  "128": [
+    {
+      "rate": 40,
+      "weatherId": 2
+    },
+    {
+      "rate": 58,
+      "weatherId": 3
+    },
+    {
+      "rate": 75,
+      "weatherId": 4
+    },
+    {
+      "rate": 93,
+      "weatherId": 7
+    },
+    {
+      "rate": 100,
+      "weatherId": 8
+    }
+  ],
+  "129": [
+    {
+      "rate": 44,
+      "weatherId": 2
+    },
+    {
+      "rate": 59,
+      "weatherId": 3
+    },
+    {
+      "rate": 73,
+      "weatherId": 4
+    },
+    {
+      "rate": 93,
+      "weatherId": 9
+    },
+    {
+      "rate": 100,
+      "weatherId": 10
+    }
+  ],
+  "130": [
+    {
+      "rate": 60,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 7
+    },
+    {
+      "rate": 80,
+      "weatherId": 5
+    },
+    {
+      "rate": 90,
+      "weatherId": 9
+    },
+    {
+      "rate": 100,
+      "weatherId": 15
+    }
   ]
 };

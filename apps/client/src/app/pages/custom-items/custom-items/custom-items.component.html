@@ -61,7 +61,7 @@
                                 nz-button
                                 nz-popconfirm
                                 nzShape="circle"
-                                nzType="danger">
+                                nzDanger>
                           <i nz-icon nzType="delete"></i>
                         </button>
                       </div>
@@ -117,7 +117,7 @@
                         nz-button
                         nz-popconfirm
                         nzShape="circle"
-                        nzType="danger">
+                        nzDanger>
                   <i nz-icon nzType="delete"></i>
                 </button>
               </div>
@@ -177,7 +177,7 @@
                     <div>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Title' | translate}}</div>
                     <button (nzOnConfirm)="deleteCraft(item)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm
                             nzShape="circle" nzSize="small"
-                            nzType="danger"><i nz-icon nzType="delete"></i></button>
+                            nzDanger><i nz-icon nzType="delete"></i></button>
                   </div>
                 </ng-template>
               </nz-divider>
@@ -256,7 +256,7 @@
                             nz-button
                             nz-popconfirm
                             nzShape="circle"
-                            nzSize="small" nzType="danger">
+                            nzSize="small" nzDanger>
                       <i nz-icon nzType="delete"></i>
                     </button>
                   </div>
@@ -273,7 +273,7 @@
                     <div>{{'CUSTOM_ITEMS.DETAILS.GATHERING.Title' | translate}}</div>
                     <button (nzOnConfirm)="deleteGathering(item)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm
                             nzShape="circle" nzSize="small"
-                            nzType="danger"><i nz-icon nzType="delete"></i></button>
+                            nzDanger><i nz-icon nzType="delete"></i></button>
                   </div>
                 </ng-template>
               </nz-divider>
@@ -388,7 +388,7 @@
                     <ng-template #deleteAlarmAction>
                       <button (nzOnConfirm)="deleteAlarm(item, alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nz-tooltip
                               nzShape="circle"
-                              nzSize="small" nzType="danger">
+                              nzSize="small" nzDanger>
                         <i nz-icon nzType="delete"></i>
                       </button>
                     </ng-template>
@@ -476,7 +476,7 @@
                       <nz-form-control>
                         <button (nzOnConfirm)="deleteVendor(item, vendor)" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nz-button
-                                nz-popconfirm nzType="danger">
+                                nz-popconfirm nzDanger>
                           <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
                         </button>
                       </nz-form-control>
@@ -536,7 +536,7 @@
                       <nz-form-control>
                         <button (nzOnConfirm)="deleteTrade(item, tradeSource)" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nz-button
-                                nz-popconfirm nzType="danger">
+                                nz-popconfirm nzDanger>
                           <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}
                         </button>
                       </nz-form-control>
@@ -570,7 +570,7 @@
                                     nz-button
                                     nz-popconfirm
                                     nzShape="circle"
-                                    nzSize="small" nzType="danger">
+                                    nzSize="small" nzDanger>
                               <i nz-icon nzType="delete"></i>
                             </button>
                           </div>
@@ -606,7 +606,7 @@
                     <ng-template #deleteReductionAction>
                       <button (nzOnConfirm)="deleteReduction(item, reduction)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nz-tooltip
                               nzShape="circle"
-                              nzSize="small" nzType="danger">
+                              nzSize="small" nzDanger>
                         <i nz-icon nzType="delete"></i>
                       </button>
                     </ng-template>
