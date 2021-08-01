@@ -2,10 +2,10 @@
   {{'LIST.COMPLETION_POPUP.Content' | translate}}
 </p>
 <div fxLayout="row wrap" fxLayoutGap="5px">
-  <button (nzOnConfirm)="clearList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="danger">
+  <button (nzOnConfirm)="clearList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzDanger>
     {{'LIST.COMPLETION_POPUP.Clear' | translate}}
   </button>
-  <button (nzOnConfirm)="deleteList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="danger">
+  <button (nzOnConfirm)="deleteList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzDanger>
     {{'LIST.COMPLETION_POPUP.Delete' | translate}}
   </button>
   <button (nzOnConfirm)="archiveList()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">

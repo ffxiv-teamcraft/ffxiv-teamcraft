@@ -13,7 +13,7 @@
           <button (click)="removeFragment()" *ngIf="last && filter.length > 1" [disabled]="readonly || isOtherRow" [nzBlock]="false | ifMobile: true"
                   nz-button
                   nzGhost
-                  nzType="danger">
+                  nzDanger>
             <i nz-icon nzType="delete"></i>
           </button>
         </div>
@@ -106,7 +106,7 @@
       <input [(ngModel)]="row.name" (ngModelChange)="rowChange.emit(row)" [disabled]="readonly  || isOtherRow" nz-input
              type="text">
     </nz-input-group>
-    <button (click)="delete.emit()" *ngIf="!readonly && !isOtherRow" nz-button nzType="danger">
+    <button (click)="delete.emit()" *ngIf="!readonly && !isOtherRow" nz-button nzDanger>
       <i nz-icon nzType="delete"></i>
     </button>
   </div>

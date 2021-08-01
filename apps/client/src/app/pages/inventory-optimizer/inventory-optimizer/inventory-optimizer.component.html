@@ -87,7 +87,7 @@
                             *ngIf="!optimization.hidden; else removeHidden"
                             (click)="$event.stopPropagation();setHideOptimizer(optimization.type, true)"
                             nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Hide_optimizer' | translate"
-                            nzType="danger">
+                            nzDanger>
                       <i nz-icon nzType="eye-invisible"></i>
                     </button>
                     <ng-template #removeHidden>
@@ -118,7 +118,7 @@
                                 *ngIf="!container.ignored; else removeIgnore"
                                 (click)="$event.stopPropagation();setIgnoreContainer(container.containerName, optimization.type, true)"
                                 nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Ignore_container' | translate"
-                                nzType="danger">
+                                nzDanger>
                           <i nz-icon nzType="eye-invisible"></i>
                         </button>
                         <ng-template #removeIgnore>
@@ -142,7 +142,7 @@
                               <button nz-button
                                       (click)="setIgnoreItemOptimization(entry.item.itemId, optimization.type, true)"
                                       nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Ignore_item' | translate"
-                                      nzType="danger">
+                                      nzDanger>
                                 <i nz-icon nzType="eye-invisible"></i>
                               </button>
                             </ng-template>

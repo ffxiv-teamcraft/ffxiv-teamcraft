@@ -32,7 +32,7 @@
         <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1" [nzTooltipTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small"
-                nzType="danger">
+                nzDanger>
           <i nz-icon nzType="delete"></i>
         </button>
         <a routerLink="/profile/{{user.$key}}">{{'PROFILE.Open_public_profile' | translate}}</a>
@@ -109,7 +109,7 @@
                                      [nzTitle]="contact | characterName | async">
                     <ng-template #delete>
                       <button (nzOnConfirm)="removeContact(user, contact)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzShape="circle"
-                              nzSize="small" nzType="danger">
+                              nzSize="small" nzDanger>
                         <i nz-icon nzType="delete"></i>
                       </button>
                     </ng-template>

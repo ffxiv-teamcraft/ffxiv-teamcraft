@@ -2,7 +2,7 @@
   <ng-template #title>
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div>{{entry.title | translate}}</div>
-      <button nz-button nzType="danger" nzShape="circle" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeEntry.emit()">
+      <button nz-button nzDanger nzShape="circle" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeEntry.emit()">
         <i nz-icon nzType="delete"></i>
       </button>
     </div>
@@ -19,7 +19,7 @@
     </nz-form-item>
     <nz-card *ngFor="let filter of entry.filters; let first = first; let i = index" tutorialStep="TUTORIAL.METRICS.EDITOR.Filters">
       <div fxLayout="row" fxLayoutAlign="flex-end center" class="delete-filter-div">
-        <button nz-button nzType="danger" nzShape="circle" nzSize="small"
+        <button nz-button nzDanger nzShape="circle" nzSize="small"
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeFilter(i)"
                 *ngIf="!first">
           <i nz-icon nzType="delete"></i>

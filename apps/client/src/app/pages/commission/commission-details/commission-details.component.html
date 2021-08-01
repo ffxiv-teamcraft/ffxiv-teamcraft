@@ -17,7 +17,7 @@
                     nz-dropdown
                     nz-tooltip
                     [nzTooltipTitle]="'COMMISSIONS.Delete_commission' | translate"
-                    nzType="danger"
+                    nzDanger
                     nzTrigger="click"
                     nzSize="small"
                     nzShape="circle">
@@ -197,7 +197,7 @@
             <div>
               {{display.userOffer.date.seconds * 1000 | date:'medium':null:translate.currentLang}}
             </div>
-            <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+            <button nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                     (nzOnConfirm)="removeOffer(display.commission, display.userId)">
               {{'COMMISSIONS.DETAILS.Remove_offer' | translate}}
             </button>
@@ -214,12 +214,12 @@
           <div *ngIf="display.commission.authorId === display.userId">
             {{display.commission.crafterContact}}
           </div>
-          <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+          <button nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                   (nzOnConfirm)="fireContractor(display.commission)"
                   *ngIf="display.commission.authorId === display.userId && display.commission.status === CommissionStatus.IN_PROGRESS">
             {{'COMMISSIONS.DETAILS.Fire_contractor' | translate}}
           </button>
-          <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+          <button nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                   (nzOnConfirm)="resignContractor(display.commission)"
                   *ngIf="display.commission.crafterId === display.userId && display.commission.status === CommissionStatus.IN_PROGRESS">
             {{'COMMISSIONS.DETAILS.Resign' | translate}}

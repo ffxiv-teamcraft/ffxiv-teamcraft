@@ -1,6 +1,6 @@
 <div class="config" fxLayout="column" fxLayoutGap="5px">
   <nz-alert *ngIf="tooManyAactions" [nzMessage]="'SIMULATOR.Too_many_aactions' | translate" nzShowIcon
-            nzType="danger"></nz-alert>
+            nzDanger></nz-alert>
   <label [(ngModel)]="addEcho" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Include_sound_end' | translate}}
   </label>

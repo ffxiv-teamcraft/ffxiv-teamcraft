@@ -19,7 +19,7 @@
         <i class="material-icons">save</i>
       </button>
       <button (nzOnConfirm)="deleteLayout(layout.$key)" [disabled]="layout.$key === undefined" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-              nz-popconfirm nzType="danger">
+              nz-popconfirm nzDanger>
         <i nz-icon nzType="delete"></i>
       </button>
       <div class="spacer"></div>

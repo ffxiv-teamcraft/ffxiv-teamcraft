@@ -26,7 +26,7 @@
         <i nz-icon nzType="share-alt" nzTheme="outline"></i>
       </button>
       <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"
-              nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+              nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
               (nzOnConfirm)="deleteReplay(replay)" *ngIf="replay.online && replay.authorId === userId">
         <i nz-icon nzType="delete" nzTheme="outline"></i>
       </button>

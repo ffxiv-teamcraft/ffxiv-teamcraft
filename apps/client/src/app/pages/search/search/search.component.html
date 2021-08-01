@@ -367,7 +367,7 @@
         </div>
         <div fxLayout="row" fxLayoutGap="10px" class="selection-buttons">
           <button (click)="addSelectedItemsToList(selection)" nz-button nzBlock>{{'LISTS.Add_selection' | translate}}</button>
-          <button (click)="selection$.next([])" nz-button nzType="danger" nzBlock>{{'LISTS.Reset_selection' | translate}}</button>
+          <button (click)="selection$.next([])" nz-button nzDanger nzBlock>{{'LISTS.Reset_selection' | translate}}</button>
         </div>
       </div>
     </ng-container>
