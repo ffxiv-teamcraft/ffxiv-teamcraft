@@ -2,6 +2,50 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.4.0"></a>
+# [8.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.6...v8.4.0) (2021-08-01)
+
+
+### Bug Fixes
+
+* **alarms:** fixed custom alarms in Zadnor not being created at all ([17d334e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/17d334e))
+* **desktop:** kill the TC process when it's opened from custom protocol ([9098fff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9098fff))
+* **fishing-log:** export now includes all the gatherable items at once ([4edd5c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4edd5c4))
+* **inventory:** sort by total price instead of unit price ([2c7580a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c7580a))
+* **inventory-optimizer:** no more duplicated container names ([cb54aed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cb54aed))
+* **layout:** fixed OR/AND change not being edited properly alone ([9ac7e64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ac7e64))
+* **layout:** fixed zone breakdown path optimizer sometimes skipping some items ([45a7f24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45a7f24))
+* **list:** fixed progression not saved when completing a list with participate permission ([829df54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/829df54))
+* **log-tracker:** fixed checkboxes stats not being saved properly ([934b7e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/934b7e1))
+* **log-tracking:** fixed log page sometimes not updating when marking something as done ([63d5beb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63d5beb))
+* **metrics:** fixed gil detection from retainers ([d68f637](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d68f637))
+* **retainers:** no more weird named retainers ([c9528f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9528f3))
+* **stats:** stats syncing is now disabled by default to avoid foods from being taken into account ([00910d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00910d0))
+
+
+### Features
+
+* **core:** collectable items now have collectable icon over their own icon ([6ac23f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ac23f4))
+* **db:** added new trades and rewards details to quests ([97b9b6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97b9b6a))
+* **db:** support for korean v5.45 update ([fbcb037](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbcb037))
+* **desktop:** you can now close the "Your inventory hasn't been loaded" warning ([c59bc56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c59bc56))
+* **list:** collectable items now show collectability in linked rotation instead of HQ% ([3926743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3926743))
+* **list:** fates now have a lower priority in monster locations system ([815dfca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/815dfca))
+* **list:** support for items obtained from collectable trades (like gobbiegoo) ([71ef9ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71ef9ae))
+* **retainers:** new button to reset retainers inside retainers page ([ffa6afb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ffa6afb))
+* **search:** new button in search intro and sidebar to open the guides website ([81fbb96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/81fbb96))
+* **search:** new filter to search for collectables only items ([9bea8df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bea8df))
+* **simulator:** support for kr 5.45 ([c4b8c30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4b8c30))
+* **universalis:** update the listing when the person uploading buys an item ([083f0c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/083f0c7)), closes [#1848](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1848)
+
+
+### Performance Improvements
+
+* **core:** fixed possible memory leak ([03638a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03638a0))
+* **search:** search with ANY type is now 8 times faster ([f838ed7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f838ed7))
+
+
+
 <a name="8.3.6"></a>
 ## [8.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.3.5...v8.3.6) (2021-07-15)
 
