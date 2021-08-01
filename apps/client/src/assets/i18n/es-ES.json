@@ -532,7 +532,7 @@
     "User_not_verified": "Usuario no verificado, haga clic para verificar",
     "More_than_100_lists_created": "Más de 100 listas creadas",
     "Veteran": "Veterano",
-    "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
+    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
     "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus estadísticas con la comida activa.",
     "Open_public_profile": "Abrir perfil público",
     "Community_contributions": "Contribuciones de la comunidad",
@@ -2530,7 +2530,8 @@
     "Task_complete": "Task complete",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Task_completion_alarm": "Task completion alarm",
+    "Reset_retainers": "Reset retainers"
   },
   "RETAINER_VENTURES": {
     "Title": "Retainer ventures",
