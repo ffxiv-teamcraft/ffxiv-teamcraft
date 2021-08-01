@@ -39,7 +39,8 @@ export class CollectablesComponent {
         res[set.jobId] = set.level;
         return res;
       }, {});
-    })
+    }),
+    first(),
   );
 
   public levelsEditor$ = new Subject<Record<number, number>>();
