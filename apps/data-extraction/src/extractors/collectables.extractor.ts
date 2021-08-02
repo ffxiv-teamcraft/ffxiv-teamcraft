@@ -69,8 +69,8 @@ export class CollectablesExtractor extends AbstractExtractor {
     combineLatest([
       this.getAllEntries('https://xivapi.com/HWDCrafterSupply'),
       this.getAllEntries('https://xivapi.com/CollectablesShop'),
-      this.aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
-      this.aggregateAllPages('https://xivapi.com/CollectablesShopRewardItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
+      this.aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,Item.IsCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
+      this.aggregateAllPages('https://xivapi.com/CollectablesShopRewardItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.AlwaysCollectable,Item.IsCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
     ])
       .subscribe(([hwdCompleteFetch, shopsCompleteFetch, collectablesCompleteFetch, collectableRewardsCompleteFetch]) => {
         // HWD supplies
@@ -115,7 +115,7 @@ export class CollectablesExtractor extends AbstractExtractor {
               collectable.CollectablesShopRefine.HighCollectability
             ].sort();
             collectables[collectable.ItemTargetID] = {
-              collectable: collectable.Item.AlwaysCollectable,
+              collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
               level: collectable.LevelMin,
               levelMin: collectable.LevelMin,
               levelMax: collectable.LevelMax,
@@ -164,7 +164,7 @@ export class CollectablesExtractor extends AbstractExtractor {
                   collectable.CollectablesShopRefine.HighCollectability
                 ].sort();
                 collectables[collectable.ItemTargetID] = {
-                  collectable: collectable.Item.AlwaysCollectable,
+                  collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
                   level: collectable.LevelMin,
                   levelMin: collectable.LevelMin,
                   levelMax: collectable.LevelMax,

@@ -67,7 +67,6 @@ export class ItemIconComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     if (changes.itemId) {
       this.collectable = this.lazyData.data.collectables[this.itemId] !== undefined;
     }
