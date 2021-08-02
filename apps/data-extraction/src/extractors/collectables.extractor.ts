@@ -113,7 +113,7 @@ export class CollectablesExtractor extends AbstractExtractor {
               collectable.CollectablesShopRefine.LowCollectability,
               collectable.CollectablesShopRefine.MidCollectability,
               collectable.CollectablesShopRefine.HighCollectability
-            ].sort();
+            ].sort((a, b) => a - b);
             collectables[collectable.ItemTargetID] = {
               collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
               level: collectable.LevelMin,
@@ -162,7 +162,7 @@ export class CollectablesExtractor extends AbstractExtractor {
                   collectable.CollectablesShopRefine.LowCollectability,
                   collectable.CollectablesShopRefine.MidCollectability,
                   collectable.CollectablesShopRefine.HighCollectability
-                ].sort();
+                ].sort((a, b) => a - b);
                 collectables[collectable.ItemTargetID] = {
                   collectable: collectable.Item.AlwaysCollectable | collectable.Item.IsCollectable,
                   level: collectable.LevelMin,
