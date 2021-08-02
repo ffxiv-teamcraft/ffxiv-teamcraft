@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.4.2"></a>
+## [8.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.1...v8.4.2) (2021-08-02)
+
+
+### Bug Fixes
+
+* **collectables:** fixed DoL collectables not listed properly ([b960b47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b960b47))
+* **db:** added missing fishing alarms ([a13ce2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a13ce2c))
+
+
+
 <a name="8.4.1"></a>
 ## [8.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.0...v8.4.1) (2021-08-01)
 
