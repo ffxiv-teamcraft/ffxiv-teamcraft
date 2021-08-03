@@ -1327,6 +1327,7 @@
     "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
     "Export_FSH_completion": "JSON 형식으로 완료 목록 내보내기",
     "Export_FSH_completion_copied": "JSON 형식의 완료 목록이 클립보드에 복사되었습니다",
+    "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
