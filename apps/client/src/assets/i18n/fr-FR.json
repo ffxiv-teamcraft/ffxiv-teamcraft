@@ -1327,6 +1327,7 @@
     "Import_from_carbuncleplushy_success": "Suivi du journal de pêche mis à jour avec succès",
     "Export_FSH_completion": "Exporter la complétion en JSON",
     "Export_FSH_completion_copied": "Complétion copiée au format JSON dans votre presse papier",
+    "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
