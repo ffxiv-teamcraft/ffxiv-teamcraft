@@ -456,7 +456,7 @@ export class ListsFacade {
             list: list,
             recipeId: item.recipe ? item.recipe.recipeId : '',
             amount: item.amount,
-            collectible: item.addCrafts
+            collectable: item.addCrafts
           });
         });
         let operation$: Observable<any>;

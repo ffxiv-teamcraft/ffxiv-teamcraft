@@ -23,7 +23,7 @@ interface ListAdditionParams {
   list: List;
   recipeId: string | number;
   amount?: number;
-  collectible?: boolean;
+  collectable?: boolean;
   ignoreHooks?: boolean;
   upgradeCustom?: boolean;
 }
@@ -56,7 +56,7 @@ export class ListManagerService {
                      list,
                      recipeId,
                      amount = 1,
-                     collectible = false,
+                     collectable = false,
                      ignoreHooks = false,
                      upgradeCustom = false
                    }: ListAdditionParams): Observable<List> {
@@ -97,11 +97,11 @@ export class ListManagerService {
         }
         // If it's a standard item, add it with the classic implementation.
         if (isListRow(data)) {
-          return this.processItemAddition(data, amount, collectible, recipeId, gearsets);
+          return this.processItemAddition(data, amount, collectable, recipeId, gearsets);
         } else {
           if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
             const itemData = this.lazyDataService.getExtract((data as CustomItem).realItemId);
-            return this.processItemAddition(itemData, amount, collectible, recipeId, gearsets).pipe(
+            return this.processItemAddition(itemData, amount, collectable, recipeId, gearsets).pipe(
               catchError(() => {
                 return this.processCustomItemAddition(data as CustomItem, amount);
               })
@@ -144,7 +144,7 @@ export class ListManagerService {
     return of(addition);
   }
 
-  private processItemAddition(data: ListRow, amount: number, collectible: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[]): Observable<List> {
+  private processItemAddition(data: ListRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[]): Observable<List> {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     const toAdd: ListRow = new ListRow();
@@ -158,7 +158,7 @@ export class ListManagerService {
       }
       const craft = crafted.find(c => c.id.toString() === recipeId.toString());
       const ingredients = this.lazyDataService.getRecipeSync(craft.id).ingredients;
-      const yields = collectible ? 1 : (craft.yield || 1);
+      const yields = collectable ? 1 : (craft.yield || 1);
       // Then we prepare the list row to add.
       Object.assign(toAdd, {
         id: data.id,
@@ -167,6 +167,7 @@ export class ListManagerService {
         done: 0,
         used: 0,
         yield: yields,
+        collectable,
         recipeId: recipeId.toString(),
         requires: ingredients.map(ing => {
           return {
@@ -257,7 +258,7 @@ export class ListManagerService {
         list: list,
         recipeId: recipe.recipeId,
         amount: recipe.amount,
-        collectible: false,
+        collectable: recipe.collectable,
         ignoreHooks: true,
         upgradeCustom: true
       }));

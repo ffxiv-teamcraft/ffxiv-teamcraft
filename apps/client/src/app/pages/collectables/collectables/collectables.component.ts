@@ -40,7 +40,7 @@ export class CollectablesComponent {
         return res;
       }, {});
     }),
-    first(),
+    first()
   );
 
   public levelsEditor$ = new Subject<Record<number, number>>();
@@ -138,7 +138,8 @@ export class CollectablesComponent {
     this.addItemsToList((this.selectedItems[panelId] || []).map(itemId => {
       return {
         itemId: itemId,
-        amount: collectables.find(c => c.itemId === itemId)?.amount || 0
+        amount: collectables.find(c => c.itemId === itemId)?.amount || 0,
+        collectable: true
       };
     }));
   }
@@ -210,7 +211,7 @@ export class CollectablesComponent {
     this.rotationPicker.openInSimulator(itemId, this.lazyData.getItemRecipeSync(itemId.toString())?.id);
   }
 
-  public addItemsToList(items: { itemId: number, amount: number }[]): void {
+  public addItemsToList(items: { itemId: number, amount: number, collectable?: boolean }[]): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
@@ -219,7 +220,8 @@ export class CollectablesComponent {
             itemId: +item.itemId,
             list: list,
             recipeId: recipeId || '',
-            amount: item.amount
+            amount: item.amount,
+            collectable: item.collectable
           });
         });
         let operation$: Observable<any>;

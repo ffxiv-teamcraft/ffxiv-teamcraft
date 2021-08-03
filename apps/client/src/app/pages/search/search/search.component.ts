@@ -723,7 +723,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       list: list,
       recipeId: item.recipe ? item.recipe.recipeId : '',
       amount: item.amount,
-      collectible: item.addCrafts
+      collectable: item.addCrafts
     })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
@@ -751,7 +751,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
             list: list,
             recipeId: item.recipe ? item.recipe.recipeId : '',
             amount: item.amount,
-            collectible: item.addCrafts
+            collectable: item.addCrafts
           });
         });
         let operation$: Observable<any>;

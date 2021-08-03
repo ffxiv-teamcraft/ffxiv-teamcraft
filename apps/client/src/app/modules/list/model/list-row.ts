@@ -35,6 +35,7 @@ export class ListRow extends DataModel {
   requires?: Ingredient[] = [];
   recipeId?: string;
   yield = 1;
+  collectable = false;
 
   /** @deprecated use getItemSource instead, with DataType.ALARMS; **/
   alarms?: Alarm[] = [];

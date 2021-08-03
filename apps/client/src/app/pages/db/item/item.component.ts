@@ -738,7 +738,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       list: list,
       recipeId: item.recipe ? item.recipe.recipeId : '',
       amount: amount,
-      collectible: item.addCrafts
+      collectable: item.addCrafts
     }).pipe(
       tap((resultList) => this.listsFacade.addList(resultList)),
       mergeMap((resultList) => {
@@ -766,7 +766,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             list: list,
             recipeId: item.recipe ? item.recipe.recipeId : '',
             amount: item.amount,
-            collectible: item.addCrafts
+            collectable: item.addCrafts
           })];
           let operation$: Observable<any>;
           if (operations.length > 0) {
