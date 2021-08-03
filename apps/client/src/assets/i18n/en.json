@@ -1327,6 +1327,7 @@
     "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "Export_FSH_completion": "Export completion as JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
+    "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
       "Master_recipes": "Master recipes ({{number}})",
       "Housing_items": "Housing({{number}})",
