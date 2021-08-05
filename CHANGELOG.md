@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.4.3"></a>
+## [8.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.2...v8.4.3) (2021-08-05)
+
+
+### Bug Fixes
+
+* **core:** fixed some item icons having collectable flag while they shouldn't ([3ad5a43](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3ad5a43))
+* **log-tracker:** completion buttons are now disabled for anonymous users ([dab98e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dab98e7))
+* **settings:** removed file preview from settings import block ([037213e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/037213e))
+
+
+
 <a name="8.4.2"></a>
 ## [8.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.1...v8.4.2) (2021-08-02)
 
