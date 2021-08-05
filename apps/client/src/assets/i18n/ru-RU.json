@@ -1327,6 +1327,7 @@
     "Import_from_carbuncleplushy_success": "Трекер логов рыбалки успешно обновлен",
     "Export_FSH_completion": "Экспорт завершен как JSON",
     "Export_FSH_completion_copied": "JSON скопирован в буфер обмена",
+    "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
