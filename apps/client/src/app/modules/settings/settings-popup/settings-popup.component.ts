@@ -19,7 +19,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
-import { from, Observable, Subscription } from 'rxjs';
+import { from, Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
@@ -325,6 +325,7 @@ export class SettingsPopupComponent {
   }
 
   public handleFile = (event: any) => {
+    const res = new Subject();
     const reader = new FileReader();
     let data = '';
     reader.onload = ((_) => {
@@ -340,14 +341,17 @@ export class SettingsPopupComponent {
         }
         this.settings.settingsChange$.next('');
         this.message.success(this.translate.instant('SETTINGS.Import_successful'));
+        res.next();
+        res.complete();
       } catch (e) {
         console.error(e);
         this.message.error(this.translate.instant('SETTINGS.Import_error'));
+        res.error(e);
       }
     };
     // Read in the image file as a data URL.
     reader.readAsText(event.file);
-    return new Subscription();
+    return res.subscribe();
   };
 
   resetLinkedChars(): void {
