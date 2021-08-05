@@ -323,7 +323,8 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           amount: 1,
           done: 0,
           used: 0,
-          yield: 1
+          yield: 1,
+          collectable: false
         };
       });
     this.listPicker.addToList(...items);

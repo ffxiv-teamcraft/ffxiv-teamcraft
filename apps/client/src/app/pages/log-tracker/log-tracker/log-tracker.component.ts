@@ -33,6 +33,8 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private static PAGE_TABS = ['DoH', 'MIN-BTN', 'FSH'];
 
+  public anonymousState$ = this.authFacade.loggedIn$.pipe(map(loggedIn => ({ isAnonymous: !loggedIn })));
+
   public dohTabs: any[];
   public dolTabs: any[];
 

@@ -1049,7 +1049,7 @@
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
       "Success": "Erfolg: {{HQ}}% HQ",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "Erfolg: {{collectability}}",
       "Set_to_simulate": "Attribute",
       "Specialist_rotation_warning": "Das gezeigte Resultat verwendet für eine Spezialisten-Rotation die Attribute eines Nicht-Spezialisten, weshalb die resultierende HQ% wesentlich kleiner als erwartet ausfallen kann.",
       "Steps_count": "{{count}} Schritte",
@@ -1327,6 +1327,7 @@
     "Import_from_carbuncleplushy_success": "Fischer-Notizbuch-Tracker erfolgreich aktualisiert",
     "Export_FSH_completion": "Export completion as JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
+    "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
       "Master_recipes": "Meisterrezepte ({{number}})",
       "Housing_items": "Unterkunft ({{number}})",
@@ -1790,7 +1791,7 @@
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",

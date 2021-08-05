@@ -192,7 +192,8 @@ export class List extends DataWithPermissions {
           done: 0,
           used: 0,
           yield: 1,
-          usePrice: true
+          usePrice: true,
+          collectable: data.collectable
         });
       });
     }
@@ -515,7 +516,8 @@ export class List extends DataWithPermissions {
           done: 0,
           used: 0,
           yield: 1,
-          usePrice: true
+          usePrice: true,
+          collectable: false
         });
         listManager.addDetails(this);
       } else {
@@ -532,7 +534,8 @@ export class List extends DataWithPermissions {
             done: 0,
             used: 0,
             yield: yields,
-            usePrice: true
+            usePrice: true,
+            collectable: false
           });
           nextIteration.push({
             item: elementDetails,
@@ -564,7 +567,8 @@ export class List extends DataWithPermissions {
                 used: 0,
                 yield: 1,
                 usePrice: true,
-                requires: reqRecipeId ? lazyDataService.getRecipeSync(reqRecipeId).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS)
+                requires: reqRecipeId ? lazyDataService.getRecipeSync(reqRecipeId).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
+                collectable: false
               });
               nextIteration.push({
                 item: lazyDataService.getExtract(+req.id),
@@ -595,7 +599,8 @@ export class List extends DataWithPermissions {
             done: 0,
             used: 0,
             yield: 1,
-            usePrice: true
+            usePrice: true,
+            collectable: false
           });
           listManager.addDetails(this);
           return of(null);
@@ -631,7 +636,8 @@ export class List extends DataWithPermissions {
                     done: 0,
                     used: 0,
                     yield: yields,
-                    usePrice: true
+                    usePrice: true,
+                    collectable: false
                   });
                   return {
                     item: elementDetails,
@@ -646,7 +652,8 @@ export class List extends DataWithPermissions {
                     done: 0,
                     used: 0,
                     yield: 1,
-                    usePrice: true
+                    usePrice: true,
+                    collectable: false
                   });
                 }
                 listManager.addDetails(this);

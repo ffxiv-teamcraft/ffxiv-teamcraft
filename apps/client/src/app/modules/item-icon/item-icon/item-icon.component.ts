@@ -41,6 +41,9 @@ export class ItemIconComponent implements OnChanges {
   @Input()
   disableClick = false;
 
+  @Input()
+  forceCollectable = false;
+
   collectable = false;
 
   constructor(private translate: TranslateService, private lazyData: LazyDataService,
@@ -67,8 +70,10 @@ export class ItemIconComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.itemId) {
-      this.collectable = this.lazyData.data.collectables[this.itemId] !== undefined;
+    if (this.forceCollectable) {
+      this.collectable = true;
+    } else if (changes.itemId) {
+      this.collectable = this.lazyData.data.collectables[this.itemId]?.collectable;
     }
   }
 

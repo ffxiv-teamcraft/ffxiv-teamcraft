@@ -380,7 +380,7 @@ export class RecipeFinderComponent implements OnDestroy {
             list: list,
             recipeId: row.entry.recipeId,
             amount: row.amount,
-            collectible: false
+            collectable: false
           });
         });
         let operation$: Observable<any>;

@@ -5,7 +5,7 @@
   <div [nzSm]="item.alarms && item.alarms.length > 0?12:6" class="block left-block" nz-col nzMd="8" [nzXs]="overlay?12:24">
     <div *ngIf="!item.custom" class="icon">
       <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
-                     [width]="24"></app-item-icon>
+                     [width]="24" [forceCollectable]="item.collectable"></app-item-icon>
     </div>
     <div fxLayout="column" fxLayoutGap="5px">
       <div fxLayout="row">
