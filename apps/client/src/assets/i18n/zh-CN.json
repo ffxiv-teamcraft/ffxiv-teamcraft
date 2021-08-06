@@ -21,8 +21,8 @@
   "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
   "Selection": "已选中",
   "Change_character": "角色",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "查阅我们的指南",
+  "Guides_links": "TC引导手册",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -213,7 +213,7 @@
     "Regenerate": "重新生成闹钟",
     "Group_outdated": "此分组已过期。请联系所有人在新版本中登录以进行更新。",
     "Remove_from_group": "从此分组中移除",
-    "No_folder": "No folder",
+    "No_folder": "无文件夹",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
@@ -321,7 +321,7 @@
   "Favorite": "收藏",
   "Adding_recipes": "正在添加 {{amount}} 个配方到清单 {{listname}}",
   "Recipe_Added": "一个物品已经被添加到清单 {{listname}}",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{itemcount}} 项添加到列表 {{listname}}，点击此通知打开列表。",
   "Character_name": "角色名",
   "Character_add_warning": "如果您在没有手动删除角色的情况下看到此内容，请不要输入任何内容并刷新页面或重新启动应用程序。 如果此问题仍然存在，请反馈到discord服务器。",
   "Disconnect_and_anonymous": "注销并返回匿名身份",
@@ -446,7 +446,7 @@
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "Enable_auto_log_check": "采集（制作）物品后自动标记采集（制作）笔记",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "游戏内切换职业时自动更新统计数据/级别",
     "Enable_metrics_capture": "启用计量捕获",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
@@ -508,9 +508,9 @@
       "KR": "韩服"
     },
     "NOTIFICATIONS": {
-      "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
+      "Title": "通知",
+      "Alarms": "闹钟",
+      "Autofill_completion": "自动填充完成",
       "Retainer_tracker": "Retainer tracker",
       "Voyage_tracker": "Voyage tracker",
       "Reset_timer": "Reset timer"
@@ -532,7 +532,7 @@
     "User_not_verified": "用户未验证，点击验证",
     "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "使用数据包捕获自动填充数据 (也会考虑食物统计)",
     "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
     "Open_public_profile": "打开公开档案",
     "Community_contributions": "社区贡献",
@@ -874,7 +874,7 @@
     "Will_spawn_in": "在 {{timer}} 后出现",
     "Ephemeral_warning": "限时采集点有多个位置，坐标为近似值。",
     "Legendary": "传奇",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "因结果太多，已切换为紧凑显示。",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -1003,9 +1003,9 @@
     "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Searching_for_rotation": "正在搜索共享手法...",
+    "No_matching_rotations": "没有找到符合您需求的共享手法",
+    "Click_on_rotation": "点击一个手法来选择它",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
@@ -1049,7 +1049,7 @@
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
       "Success": "成功：{{HQ}}% HQ",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "成功: {{collectability}}",
       "Set_to_simulate": "属性",
       "Specialist_rotation_warning": "显示的结果为使用非专家的属性模拟专家手法，是以生成的HQ率可能远低于预期。",
       "Steps_count": "{{count}} 工次",
@@ -1323,9 +1323,9 @@
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
     "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
-    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
+    "Import_from_carbuncleplushy_failed": "导入失败，提供了错误的 JSON，请确保导出完整设置",
     "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
-    "Export_FSH_completion": "Export completion as JSON",
+    "Export_FSH_completion": "导出完成为 JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
     "Log_in_to_track": "Log in to be able to track your log tracker completion",
     "PAGE": {
@@ -1790,8 +1790,8 @@
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
     "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。",
-    "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_data": "加载选定货币的交易数据",
+    "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
@@ -1977,8 +1977,8 @@
       "Message": "该物品仅在可以使用工匠的神速技巧的配方中有用，所以不需要保留 HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Title": "仅用于单个配方的项目",
+      "Message": "此物品仅用于制作 {{targetItem}}，考虑转换它而不是保留原始物品"
     }
   },
   "VERSION_LOCK": {
@@ -2328,8 +2328,8 @@
     "Create_folder": "新建文件夹",
     "Save_replay": "上传回放",
     "Replay_result": "结果",
-    "Delete_offline": "Delete offline replays",
-    "Confirm_delete_offline": "Are you sure you want to delete all your offline replays? This can't be undone"
+    "Delete_offline": "删除离线回放",
+    "Confirm_delete_offline": "是否确实要删除所有的离线回放？该操作无法撤销。"
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
