@@ -1322,7 +1322,7 @@
     "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
-    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
+    "Import_from_carbuncleplushy": "从 CarbunclePlushy 导入进度",
     "Import_from_carbuncleplushy_failed": "导入失败，提供了错误的 JSON，请确保导出完整设置",
     "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
     "Export_FSH_completion": "导出完成为 JSON",
