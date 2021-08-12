@@ -61,7 +61,7 @@ export class SquirrelEventHandler {
         if (!this.store.get('setup:noShortcut', false)) {
           spawnUpdate(['--createShortcut', exeName]);
         }
-        setTimeout(app.quit, 1000);
+        setTimeout(app.quit, 200);
         return true;
 
       case '--squirrel-uninstall':
@@ -71,7 +71,7 @@ export class SquirrelEventHandler {
         // Remove desktop and start menu shortcuts
         spawnUpdate(['--removeShortcut', exeName]);
 
-        setTimeout(app.quit, 1000);
+        setTimeout(app.quit, 200);
         return true;
 
       case '--squirrel-obsolete':
