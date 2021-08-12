@@ -254,26 +254,26 @@
       </ng-template>
     </nz-tab>
   </nz-tabset>
-  <ng-template #notificationRef let-notification>
-    <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+</ng-container>
+
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
     <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
                                                   nzType="check-circle"></i></span>
-      <div>
-        <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
-        <div class="ant-notification-notice-description">
-          <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
-          <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
-            itemcount: itemsAdded,
-            listname: modifiedList.name
-          } }}</span>
-        </div>
-        <span class="ant-notification-notice-btn">
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
+          itemcount: itemsAdded,
+          listname: modifiedList.name
+        } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
             <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
               <span>{{'Open' | translate}}</span>
             </a>
           </span>
-      </div>
     </div>
-  </ng-template>
-
-</ng-container>
+  </div>
+</ng-template>
