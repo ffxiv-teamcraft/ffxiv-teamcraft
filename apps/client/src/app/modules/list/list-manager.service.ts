@@ -156,7 +156,7 @@ export class ListManagerService {
           recipeId = firstCraft.id.toString();
         }
       }
-      const craft = crafted.find(c => c.id.toString() === recipeId.toString());
+      const craft = crafted.find(c => c.id.toString() === recipeId.toString()) || crafted[0];
       const ingredients = this.lazyDataService.getRecipeSync(craft.id).ingredients;
       const yields = collectable ? 1 : (craft.yield || 1);
       // Then we prepare the list row to add.
