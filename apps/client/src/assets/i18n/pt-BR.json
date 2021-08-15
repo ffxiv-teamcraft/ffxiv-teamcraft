@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Mais detalhes no gamerescape",
     "Deliver_to": "Entregar para {{placename}}",
     "Hide_large": "Hide large leves",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "Essa página permite que você procure por uma leve ou múltiplas leves para cria uma lista com o(s) resultado(s)",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
       "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "You can merge two lists using the merge button.",
