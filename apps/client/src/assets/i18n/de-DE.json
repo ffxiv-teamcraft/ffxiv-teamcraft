@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Mehr auf gamerescape (Englisch)",
     "Deliver_to": "Liefere nach {{placename}}",
     "Hide_large": "Groß-Freibriefe ausblenden",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers und es wird nichts gespeichert, wenn du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
       "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
       "More_actions_button": "Dies öffnet ein Menü mit vielen verschiedenen Aktionen für die aktuelle Listenzeile. Du kannst diese Aktionen mit Hilfe des Layout-Editors in Schaltflächen umwandeln.",
-      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt."
+      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Du kannst zwei Listen mit \"Zusammenfassen\" kombinieren.",
