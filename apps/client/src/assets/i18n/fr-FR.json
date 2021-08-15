@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Plus d'informations sur gamerescape",
     "Deliver_to": "Remettre à {{placename}}",
     "Hide_large": "Masquer les grands mandats",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "Palier précédent",
     "Editing_others_gearset": "Mode d'édition locale",
     "Editing_others_gearset_description": "Vous éditez actuellement la tenue de quelqu'un d'autre, rien ne sera sauvegardé si vous ne cliquez pas sur le bouton Enregistrer ci-dessus pour créer votre propre copie.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "Vous pouvez ajouter tout ce qui se trouve dans votre inventaire à cette liste.",
       "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices.",
       "More_actions_button": "Ce bouton ouvre un menu avec de nombreuses actions différentes pour la ligne courante. Vous pouvez convertir ces actions en boutons à l'aide de l'éditeur de mise en page.",
-      "Alarm_button": "Cliquez ici pour créer une alarme pour cet objet, pour être alerté lorsqu'il apparaît."
+      "Alarm_button": "Cliquez ici pour créer une alarme pour cet objet, pour être alerté lorsqu'il apparaît.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Vous pouvez fusionner deux listes en utilisant le bouton de fusion.",
