@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
     "Hide_large": "Скрыть большие ливквесты",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Режим локального редактирования",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "Вы можете добавить всё, что есть в вашем инвентаре внутри этого списка.",
       "Pricing_mode_button": "Легко подготавливать и прогнозировать свои выгоды для этого списка, используя режим ценообразования.",
       "More_actions_button": "Эта кнопка открывает меню с множеством различных действий для текущей строки списка. Вы можете преобразовать эти действия в кнопки с помощью редактора макетов.",
-      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении."
+      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Вы можете объединить два списка, используя кнопку объединения.",
