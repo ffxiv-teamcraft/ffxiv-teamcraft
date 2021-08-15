@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Gamer Escape 上的详细信息",
     "Deliver_to": "交付到 {{placename}}",
     "Hide_large": "隐藏大规模理符任务",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "理符任务",
       "First_line": "在此页面您可以搜索一个或多个理符，并将结果添加至清单",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "上一临界值",
     "Editing_others_gearset": "本地编辑模式",
     "Editing_others_gearset_description": "您目前正在编辑他人的配装。除非您点击上面的保存按钮来创建您自己的副本，否则任何东西都不会被保存。",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "你可以将物品栏中已有的物品填充至清单",
       "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
       "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
-      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知"
+      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "可以使用“合并清单”按钮合并两个清单",
