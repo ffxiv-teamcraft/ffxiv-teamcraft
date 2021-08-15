@@ -61,7 +61,14 @@ export class InventoryOptimizerComponent {
                       messageParams: optimizer.getOptimization(item, inventory, extracts)
                     };
                   })
-                  .filter(optimization => optimization.messageParams !== null);
+                  .filter(optimization => optimization.messageParams !== null)
+                  .sort((a, b) => {
+                    if (a.messageParams[Object.keys(a.messageParams)[0]] > b.messageParams[Object.keys(b.messageParams)[0]]) {
+                      return -1;
+                    } else {
+                      return 1;
+                    }
+                  });
                 return {
                   type: optimizer.getId(),
                   entries: _.chain(entries)
