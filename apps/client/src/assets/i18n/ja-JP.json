@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "Gamerescapeの詳細を見る",
     "Deliver_to": "{{placename}} に納品する",
     "Hide_large": "大量依頼を隠す",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、ギルドリーヴや様々なギルドリーヴに対するリストを作成することができます。",
@@ -2049,6 +2050,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2139,7 +2141,9 @@
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
       "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "マージボタンを使用して、2つのリストをマージできます。",
