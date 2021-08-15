@@ -146,7 +146,7 @@
                             </button>
                           </div>
                           <div *ngFor="let item of page.items; let last = last">
-                            <ng-container *ngIf="!userGatheringCompletion[item.itemId] || !hideCompleted">
+                            <ng-container *ngIf="!hideCompleted || !userGatheringCompletion[item.itemId]">
                               <div fxLayoutAlign="flex-start center" nz-row>
                                 <div [nzMd]="6" fxLayout="column" fxLayoutAlign="flex-start flex-start" nz-col>
                                   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
