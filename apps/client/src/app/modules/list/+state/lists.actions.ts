@@ -18,6 +18,7 @@ export enum ListsActionTypes {
 
   SetItemDone = '[Lists] Set Item Done',
   UpdateItem = '[Lists] Update Item',
+  MarkItemsHq = '[Lists] Mark items HQ',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
   ArchivedListsLoaded = '[Lists] Archived Lists Loaded',
@@ -132,6 +133,13 @@ export class UpdateItem implements Action {
   readonly type = ListsActionTypes.UpdateItem;
 
   constructor(public readonly item: ListRow, public readonly finalItem: boolean) {
+  }
+}
+
+export class MarkItemsHq implements Action {
+  readonly type = ListsActionTypes.MarkItemsHq;
+
+  constructor(public readonly itemIds: number[], public readonly hq: boolean) {
   }
 }
 
@@ -273,4 +281,5 @@ export type ListsAction =
   | UnLoadArchivedLists
   | PureUpdateList
   | UpdateListProgress
-  | UpdateSelectedClone;
+  | UpdateSelectedClone
+  | MarkItemsHq;

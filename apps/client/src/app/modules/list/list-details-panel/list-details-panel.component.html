@@ -2,7 +2,8 @@
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
     <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems" let-skip="skip">
-    <app-lazy-scroll [data]="items" [noScroll]="overlay || noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow" [trackBy]="trackByItem">
+    <app-lazy-scroll [data]="items" [noScroll]="overlay || noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow"
+                     [trackBy]="trackByItem">
       <ng-template #itemRow let-item let-odd="odd">
         <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
                       [overlay]="overlay"
@@ -63,7 +64,8 @@
                 <ng-template #npcTitle>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <span class="zone-title">{{getNpc(row.npcId) | i18n}}</span><div *ngIf="row.position" fxLayout="row">,&nbsp;
-                    <app-map-position [hideCoords]="true" [mapId]="row.position?.map" [showZoneName]="true" flex="row" [zoneId]="row.position?.zoneid" [marker]="row.position"></app-map-position></div>
+                    <app-map-position [hideCoords]="true" [mapId]="row.position?.map" [showZoneName]="true" flex="row" [zoneId]="row.position?.zoneid"
+                                      [marker]="row.position"></app-map-position></div>
                   </div>
                 </ng-template>
                 <nz-divider [nzText]="npcTitle" nzOrientation="left"></nz-divider>
@@ -138,6 +140,16 @@
                     nz-popconfirm
                     nzShape="circle" nzSize="small">
               <i nz-icon nzType="check"></i>
+            </button>
+          </span>
+          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_hq' | translate"
+                *ngIf="!displayRow.allHQ &&  permissionLevel >= 20" nz-tooltip>
+            <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsHQ(true)"
+                    [nzPopconfirmTitle]="'Confirmation' | translate"
+                    nz-button
+                    nz-popconfirm
+                    nzShape="circle" nzSize="small">
+              <img src="./assets/icons/HQ.png" alt="" class="hq-flag">
             </button>
           </span>
         </div>

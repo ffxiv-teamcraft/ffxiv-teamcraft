@@ -151,12 +151,13 @@ export class LayoutsFacade {
                   collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
                   collapsedByDefault: row.collapsedByDefault,
                   layoutRow: row,
-                  layout: layout
+                  layout: layout,
+                  allHQ: orderedAccepted.every(i => i.requiredAsHQ)
                 };
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
               .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
-              .sort((a, b) => a.index - b.index)
+              .sort((a, b) => a.index - b.index),
           };
         })
       );
@@ -197,7 +198,8 @@ export class LayoutsFacade {
           filterChain: '',
           collapsed: false,
           layoutRow: null,
-          layout: layout
+          layout: layout,
+          allHQ: rows.every(i => i.requiredAsHQ)
         };
       })
     );

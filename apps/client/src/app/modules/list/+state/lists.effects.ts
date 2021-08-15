@@ -9,7 +9,7 @@ import {
   ListDetailsLoaded,
   ListsActionTypes,
   LoadListDetails,
-  LoadTeamLists,
+  LoadTeamLists, MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
   SetItemDone,
@@ -369,6 +369,24 @@ export class ListsEffects {
       return this.listService.removeMany(keys);
     })
   ), { dispatch: false });
+
+
+  markItemsHq = createEffect(() => this.actions$.pipe(
+    ofType<MarkItemsHq>(ListsActionTypes.MarkItemsHq),
+    withLatestFrom(this.listsFacade.selectedList$),
+    map(([{ itemIds, hq }, list]) => {
+      list.items = list.items.map(i => {
+        if (itemIds.includes(i.id)) {
+          return {
+            ...i,
+            requiredAsHQ: hq
+          };
+        }
+        return i;
+      });
+      return new UpdateList(list);
+    })
+  ));
 
 
   updateItemDone$ = createEffect(() => this.actions$.pipe(
