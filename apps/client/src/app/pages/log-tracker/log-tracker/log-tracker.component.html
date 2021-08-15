@@ -165,7 +165,7 @@
                                   </div>
                                 </div>
                                 <div [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" nz-col>
-                                  <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage) as nodeData">
+                                  <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage, index) as nodeData">
                                     <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
                                          fxLayoutAlign="flex-start center">
                                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">

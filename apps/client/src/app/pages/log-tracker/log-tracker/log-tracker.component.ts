@@ -308,12 +308,15 @@ export class LogTrackerComponent extends TrackerComponent {
     return /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
   }
 
-  public getNodeData(itemId: number, tab: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
+  public getNodeData(itemId: number, tab: number, type?: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
     if (this.nodeDataCache[itemId] === undefined) {
       this.nodeDataCache[itemId] = [];
     }
     if (this.nodeDataCache[itemId][tab] === undefined) {
       this.nodeDataCache[itemId][tab] = this.gatheringNodesService.getItemNodes(itemId, true)
+        .filter(node => {
+          return !type || node.type === type;
+        })
         .slice(0, 3)
         .map(gatheringNode => {
           return {
