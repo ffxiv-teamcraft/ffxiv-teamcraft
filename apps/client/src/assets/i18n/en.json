@@ -2050,6 +2050,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
