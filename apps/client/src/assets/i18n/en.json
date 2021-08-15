@@ -1187,6 +1187,7 @@
     "More_on_gamerescape": "More details on gamerescape",
     "Deliver_to": "Deliver to {{placename}}",
     "Hide_large": "Hide large leves",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Levequests",
       "First_line": "This page allows you to search for a given leve or multiple leves to create a list from the result(s)",

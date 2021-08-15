@@ -674,6 +674,14 @@ export class SettingsService {
     this.setSetting('hideLargeLeves', hideLargeLeves.toString());
   }
 
+  public get roadToBuffLeves(): boolean {
+    return this.getBoolean('roadToBuffLeves', false);
+  }
+
+  public set roadToBuffLeves(roadToBuffLeves: boolean) {
+    this.setBoolean('roadToBuffLeves', roadToBuffLeves);
+  }
+
   public get macroExtraWait(): number {
     return Math.max(0, Math.floor(+this.getSetting('macroExtraWait', '0')));
   }
