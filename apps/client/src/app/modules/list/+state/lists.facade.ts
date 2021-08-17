@@ -14,6 +14,7 @@ import {
   LoadMyLists,
   LoadSharedLists,
   LoadTeamLists,
+  MarkItemsHq,
   NeedsVerification,
   OfflineListsLoaded,
   PinList,
@@ -274,6 +275,10 @@ export class ListsFacade {
 
   setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
     this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, external, fromPacket, hq));
+  }
+
+  markAsHq(itemIds: number[], hq: boolean): void {
+    this.store.dispatch(new MarkItemsHq(itemIds, hq));
   }
 
   updateItem(item: ListRow, finalItem: boolean): void {

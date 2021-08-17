@@ -8,6 +8,13 @@
                 [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
           <i nz-icon nzType="edit"></i>
         </button>
+        <button nz-button nzShape="circle" *ngIf="!(isReadonly$ | async)"
+                (nzOnConfirm)="emptyMaterias(gearset)" nz-tooltip nz-popconfirm
+                [nzTooltipTitle]="'GEARSETS.Empty_materias' | translate"
+                [nzPopconfirmTitle]="'Confirmation' | translate"
+        >
+          <i nz-icon nzType="undo" nzTheme="outline"></i>
+        </button>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle"
                 nzType="primary"

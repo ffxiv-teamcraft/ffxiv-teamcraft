@@ -157,6 +157,7 @@ export interface LazyData {
   zhActionCategories: any;
   zhActionDescriptions: any;
   zhActions: any;
+  zhAirshipVoyages: any;
   zhBaseParams: any;
   zhBeastReputationRanks: any;
   zhContentTypes: any;
@@ -196,6 +197,7 @@ export interface LazyData {
   zhShops: any;
   zhStatusDescriptions: any;
   zhStatuses: any;
+  zhSubmarineVoyages: any;
   zhTraitDescriptions: any;
   zhTraits: any;
   zhTribes: any;

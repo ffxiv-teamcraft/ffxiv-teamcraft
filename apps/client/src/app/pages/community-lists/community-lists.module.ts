@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     FullpageMessageModule,
     ListModule,
     FlexLayoutModule,
-    PageLoaderModule
+    PageLoaderModule,
+    NzPaginationModule
   ],
   declarations: [CommunityListsComponent]
 })

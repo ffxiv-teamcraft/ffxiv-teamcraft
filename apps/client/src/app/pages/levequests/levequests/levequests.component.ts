@@ -65,6 +65,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   hideLargeChange$ = new BehaviorSubject<boolean>(this.settings.hideLargeLeves);
 
+  roadToBuff = this.settings.roadToBuffLeves;
+
+  roadToBuffChange$ = new BehaviorSubject<boolean>(this.settings.roadToBuffLeves);
+
   startingExp = 0;
 
   startingLevel = 1;
@@ -127,8 +131,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.results$ = combineLatest([this.globalExpChange$, res$, this.hideLargeChange$]).pipe(
-      map(([globalExp, list, hideLarge]) => {
+    this.results$ = combineLatest([this.globalExpChange$, res$, this.hideLargeChange$, this.roadToBuffChange$]).pipe(
+      map(([globalExp, list, hideLarge, roadToBuff]) => {
         this.settings.hideLargeLeves = hideLarge;
         const results: Levequest[] = [];
         (<any>list).Results.forEach(leve => {
@@ -137,8 +141,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             level: leve.ClassJobLevel,
             jobId: leve.ClassJobCategoryTargetID - 1,
             itemId: leve.CraftLeve.Item0TargetID,
-            exp: leve.ExpReward,
-            gil: leve.GilReward,
+            exp: leve.ExpReward * (roadToBuff ? 2 : 1),
+            gil: leve.GilReward * (roadToBuff ? 2 : 1),
             hq: this.settings.alwaysHQLeves,
             allDeliveries: this.settings.alwaysAllDeliveries,
             amount: globalExp ? 0 : 1,

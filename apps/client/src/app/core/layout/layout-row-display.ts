@@ -16,4 +16,5 @@ export interface LayoutRowDisplay {
   collapsedByDefault?: boolean;
   layoutRow: LayoutRow;
   layout: ListLayout;
+  allHQ: boolean;
 }

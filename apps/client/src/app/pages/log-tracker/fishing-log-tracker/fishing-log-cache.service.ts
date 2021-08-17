@@ -164,6 +164,9 @@ export class FishingLogCacheService {
     if (this.fshDataCache[itemId] === undefined) {
       this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true)
         .map(node => {
+          if (itemId === 15627) {
+            console.log(node);
+          }
           return {
             gatheringNode: node,
             alarms: this.alarmsFacade.generateAlarms(node)

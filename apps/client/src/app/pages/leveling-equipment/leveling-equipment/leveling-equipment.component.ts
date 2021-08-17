@@ -199,7 +199,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     if (filters.includeCrafting && (extract.sources || []).some(source => source.type === DataType.CRAFTED_BY)) {
       return true;
     }
-    const trades = getItemSource(extract, DataType.TRADE_SOURCES).filter(trade => trade.npcs.some(npc => !npc.festival));
+    const trades = getItemSource(extract, DataType.TRADE_SOURCES).filter(trade => trade.npcs.some(npc => !npc.festival && npc.id !== 1006972));
     return filters.includeTrades && trades.length > 0;
   }
 

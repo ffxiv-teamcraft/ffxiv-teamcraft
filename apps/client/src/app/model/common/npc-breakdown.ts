@@ -74,7 +74,7 @@ export class NpcBreakdown {
       .sort((a, b) => {
         return this.getRowScore(b.id) - this.getRowScore(a.id);
       })[0];
-    this.addRow(bestNpc.id, row);
+    this.addRow(bestNpc?.id || -1, row);
   }
 
   private getTradeSourceScore(tradeSource: TradeSource): number {

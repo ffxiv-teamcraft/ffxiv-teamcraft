@@ -39,8 +39,6 @@ export class GatheringNodesService {
       }
     }
 
-    const fishingSpots = this.lazyData.data.fishingSpots;
-
     const results: GatheringNode[][] = idsToConsider.map(id => {
       const minBtnSpearMatches: GatheringNode[] = this.minBtnSpearNodes.filter(node => {
         return node.items.includes(id) && node.zoneId > 0;
@@ -89,7 +87,7 @@ export class GatheringNodesService {
         return node;
       });
 
-      const fishingSpotMatches: GatheringNode[] = fishingSpots.filter(spot => {
+      const fishingSpotMatches: GatheringNode[] = this.lazyData.data.fishingSpots.filter(spot => {
         return spot.fishes.includes(id);
       }).map(spot => this.fishingSpotToGatheringNode(spot, id));
 
@@ -149,6 +147,10 @@ export class GatheringNodesService {
 
       if (gtFish.hookset) {
         node.hookset = gtFish.hookset.split(' ')[0].toLowerCase() as 'powerful' | 'precision';
+      }
+
+      if (gtFish.snagging === 1) {
+        node.snagging = true;
       }
 
       node.baits = gtFish.bait.map(bait => {

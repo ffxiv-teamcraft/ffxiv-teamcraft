@@ -74,6 +74,11 @@
                    nzSize="small"></nz-switch>
         <div>{{'LEVEQUESTS.Hide_large' | translate}}</div>
       </div>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <nz-switch [(ngModel)]="roadToBuff" (ngModelChange)="roadToBuffChange$.next($event)"
+                   nzSize="small"></nz-switch>
+        <div>{{'LEVEQUESTS.Road_to_buff' | translate}}</div>
+      </div>
     </div>
   </div>
   <div class="additional-buttons">

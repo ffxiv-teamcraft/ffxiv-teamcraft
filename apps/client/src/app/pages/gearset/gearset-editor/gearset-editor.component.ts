@@ -607,6 +607,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     });
   }
 
+  emptyMaterias(gearset: TeamcraftGearset): void {
+    Object.keys(gearset)
+      .filter(key => gearset[key]?.itemId)
+      .forEach(key => {
+        gearset[key].materias = gearset[key].materias.map(() => 0);
+      });
+    this.saveChanges(gearset);
+  }
+
   trackByItemId(index: number, row: any): number {
     return row.item.ID;
   }
