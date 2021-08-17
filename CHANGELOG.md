@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.4.4"></a>
+## [8.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.3...v8.4.4) (2021-08-17)
+
+
+### Bug Fixes
+
+* **community-lists:** fixed pagination not shown anymore ([65d20f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/65d20f4))
+* **desktop:** close client faster after update for better UX ([a5e8215](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5e8215))
+* **desktop:** support for packet changes in CN 5.5 ([a684b23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a684b23))
+* **fishing:** fixed snagging flag not set properly on many fish ([2a4ca1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a4ca1a))
+* **list:** fixed some items breaking npc breakdown display ([c6c90e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6c90e4))
+* **lits:** fixed some older lists not being copied properly from community lists ([3b52c97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b52c97))
+* **log-tracker:** fixed blank notification when creating a list from a log page ([ab0820c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab0820c))
+* **log-tracker:** listed gathering nodes are now using the right gathering method ([4d9fa2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d9fa2f))
+
+
+### Features
+
+* **data:** update for cn patch-5.5 ([f85376d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f85376d))
+* **gearset:** new button to remove all materias from selected pieces ([6a49f0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a49f0a))
+* **inventory-optimizer:** sort by sub container name when it exists ([73498ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73498ff))
+* **leveling-equipment:** removed items traded with Talan (Lucis and other big tools) ([b94ef72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b94ef72))
+* **levequests:** support for "road to XX" buff ([b29840c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b29840c)), closes [#1971](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1971)
+* **list:** new button in panel headers to mark whole panel as required HQ ([5103206](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5103206))
+* support for KR new server ([bf7c416](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf7c416))
+
+
+### Performance Improvements
+
+* **KR/CN:** updated to latest simulator version ([9ea64d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ea64d6))
+
+
+
 <a name="8.4.3"></a>
 ## [8.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.2...v8.4.3) (2021-08-05)
 
