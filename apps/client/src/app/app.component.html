@@ -263,7 +263,7 @@
         </div>
       </nz-sider>
       <nz-content>
-        <div [class.overlay]="overlay" class="page-container">
+        <div [class.overlay]="overlay" [class.with-clock]="settings.getOverlayClockDisplay(ipc.overlayUri)" class="page-container">
           <nz-alert *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()" [nzMessage]="message" class="new-version-alert"
                     nzBanner
                     nzShowIcon
