@@ -16,9 +16,6 @@
           <nz-tag *ngIf="user.patron" [nzColor]="'purple'">{{'PROFILE.Patreon_supporter' | translate}}</nz-tag>
           <nz-tag *ngIf="user.stats?.listsCreated > 100"
                   [nzColor]="'orange'">{{'PROFILE.More_than_100_lists_created' | translate}}</nz-tag>
-          <!-- Yup, this is one year in seconds-->
-          <nz-tag *ngIf="now - user.createdAt?.seconds > 365.25 * 86400"
-                  [nzColor]="'geekblue'">{{'PROFILE.Veteran' | translate}}</nz-tag>
         </div>
         <app-user-rating-display [userId]="user.$key"></app-user-rating-display>
       </ng-container>
