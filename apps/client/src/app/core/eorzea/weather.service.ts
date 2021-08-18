@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { mapIds } from '../data/sources/map-ids';
 import { weatherIndex } from '../data/sources/weather-index';
 import { EorzeanTimeService } from './eorzean-time.service';
+import { add, format, sub } from 'date-fns';
 
 @Injectable()
 export class WeatherService {
@@ -44,7 +45,7 @@ export class WeatherService {
       return null;
     }
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    if (this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
+    if (this.getWeather(mapId, timestamp + 1000, weatherRate) === weatherId) {
       const resultDate = new Date(timestamp);
       resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
       resultDate.setUTCMinutes(0);
@@ -56,22 +57,25 @@ export class WeatherService {
 
   public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate?: any, iteration = 0): Date | null {
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    // 8 hours before
-    const dateForPreviousWeather = timestamp - 8 * 60 * 60 * 1000 - 1;
-    const previousWeather = this.getWeather(mapId, dateForPreviousWeather, weatherRate);
-    if (fromWeatherIds.indexOf(previousWeather) > -1 && this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
-      const resultDate = new Date(timestamp);
-      resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
-      resultDate.setUTCMinutes(0);
-      return resultDate;
+    const nextStart = this.getNextWeatherStart(mapId, weatherId, timestamp, weatherRate);
+    if (nextStart === null) {
+      return null;
     }
-    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(timestamp), weatherRate, iteration + 1);
+    // 8 hours before
+    const previousWeatherDate = sub(new Date(nextStart), { hours: 7, minutes: 59 });
+    const previousWeather = this.getWeather(mapId, previousWeatherDate.getTime(), weatherRate);
+    if (fromWeatherIds.includes(previousWeather)) {
+      return nextStart;
+    }
+    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(nextStart.getTime() + 5), weatherRate, iteration + 1);
   }
 
   public nextWeatherTime(timestamp: number): number {
     const date = new Date(timestamp);
-    const hoursPast = date.getUTCHours() % 8;
-    const difference = (((8 - hoursPast) * 60 - date.getUTCMinutes()) * 60 - date.getUTCSeconds()) * 1000 - date.getUTCMilliseconds();
-    return date.getTime() + difference;
+    const newDate = add(date, { hours: 8 });
+    newDate.setUTCHours(Math.floor(newDate.getUTCHours() / 8) * 8);
+    newDate.setUTCMinutes(0);
+    newDate.setUTCSeconds(0);
+    return newDate.getTime();
   }
 }

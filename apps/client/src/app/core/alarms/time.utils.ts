@@ -46,4 +46,11 @@ export class TimeUtils {
     }
     return result;
   }
+
+  static getDuration(i: Interval): number {
+    if (i[1] < i[0]) {
+      return this.getDuration([i[0], 24]) + this.getDuration([0, i[1]]);
+    }
+    return i[1] - i[0];
+  }
 }

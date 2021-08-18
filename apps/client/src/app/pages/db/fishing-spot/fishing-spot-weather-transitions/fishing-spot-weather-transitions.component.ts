@@ -31,7 +31,7 @@ export class FishingSpotWeatherTransitionsComponent {
       return rates
         ?.flatMap((to) => {
           return rates?.map((from) => {
-            const nextSpawn =              this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], to.weatherId, time.getTime());
+            const nextSpawn = this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], to.weatherId, time.getTime());
             return {
               chances:
                 100 *
