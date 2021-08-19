@@ -412,7 +412,7 @@ export class AlarmsFacade {
   private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
     const patch = this.lazyData.data.itemPatch[alarm.itemId];
     const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
-    const isBigFish = this.lazyData.data.bigFishes[alarm.itemId];
+    const isBigFish = this.lazyData.data.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-SB and non-legendary
     if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isBigFish) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
