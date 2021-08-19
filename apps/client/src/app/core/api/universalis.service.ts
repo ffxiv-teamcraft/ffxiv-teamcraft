@@ -22,7 +22,7 @@ export class UniversalisService {
 
   private cid$: Observable<string> = this.authFacade.user$.pipe(
     map(user => user.cid),
-    filter(cid => cid !== undefined),
+    filter(cid => !!cid),
     distinctUntilChanged(),
     shareReplay(1)
   );
