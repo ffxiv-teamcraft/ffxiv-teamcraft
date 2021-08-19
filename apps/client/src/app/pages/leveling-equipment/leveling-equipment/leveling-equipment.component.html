@@ -75,17 +75,26 @@
                   (click)="$event.stopPropagation();selectedItems[slot.property]=null">
             <i nz-icon nzType="delete"></i>
           </button>
-          <div fxLayout="row" fxLayoutAlign="center center">
-            <div *ngIf="row.gearset[slot.property] as equipmentPiece; else noItem" class="slot-icon">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" class="td-container"
+               *ngIf="row.gearset[slot.property] as equipmentPiece; else noItem">
+            <div class="slot-icon">
               <app-item-icon [itemId]="equipmentPiece.itemId" [width]="32"></app-item-icon>
-              <div class="inventory-icon" *ngIf="equipmentPiece.isInInventory" nz-tooltip [nzTooltipTitle]="'LEVELING_EQUIPMENT.In_inventory' | translate">
+              <div class="inventory-icon" *ngIf="equipmentPiece.isInInventory"
+                   nz-tooltip [nzTooltipTitle]="'LEVELING_EQUIPMENT.In_inventory' | translate">
                 <div class="companion-svg">&#xF153;</div>
               </div>
             </div>
-            <ng-template #noItem>
-              {{'LEVELING_EQUIPMENT.Empty_slot' | translate}}
-            </ng-template>
+            <div (click)="$event.stopPropagation()"
+                 class="item-name"
+                 nz-tooltip
+                 [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+                 [clipboard]="row.gearset[slot.property]?.itemId | itemName | i18n">
+              {{row.gearset[slot.property]?.itemId | itemName | i18n}}
+            </div>
           </div>
+          <ng-template #noItem>
+            {{'LEVELING_EQUIPMENT.Empty_slot' | translate}}
+          </ng-template>
         </td>
       </tr>
       </tbody>
