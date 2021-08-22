@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "{{amount}} 個スキップ可能",
     "Can_skip_buying_entirely": "全部スキップ可能",
     "Can_skip_tooltip": "他のアイテムを買うには該当アイテムが必要になります。つまり、該当パネルにある全てを買う計画でしたらアイテムを少なめに買うか、完全に飛ばされる事ができます",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "デフォルト",
       "Only_large": "超過された時のみ",
@@ -714,6 +715,8 @@
     "Commission_list": "このリストから依頼する",
     "Inventory_cleanup": "所持品整理",
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -1792,7 +1795,8 @@
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
