@@ -22,6 +22,10 @@
           nz-dropdown>
     <i nz-icon nzType="ellipsis"></i>
   </button>
+  <button [nzSize]="'small'" nz-tooltip [nzTooltipTitle]="'See_on_map' | translate"
+          (click)="openMap()" nz-button>
+    <i nz-icon nzType="environment" nzTheme="outline"></i>
+  </button>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
       <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" *ngFor="let group of alarmGroups" nz-menu-item>
