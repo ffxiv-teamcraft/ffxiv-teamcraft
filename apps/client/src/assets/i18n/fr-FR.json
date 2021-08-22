@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Peut en ignorer {{amount}}",
     "Can_skip_buying_entirely": "Peut ignorer entièrement",
     "Can_skip_tooltip": "Un autre objet que vous achetez nécessite cet objet, ce qui signifie que vous pouvez acheter moins de celui-ci ou l'ignorer entièrement si vous prévoyez d'acheter tout dans ce panneau",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
@@ -714,6 +715,8 @@
     "Commission_list": "Liée à une commission",
     "Inventory_cleanup": "Nettoyage de l'inventaire",
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -1792,7 +1795,8 @@
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix.",
     "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
-    "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets"
+    "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",
