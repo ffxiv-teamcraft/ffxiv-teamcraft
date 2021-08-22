@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "可以跳过 {{amount}} 个",
     "Can_skip_buying_entirely": "可以全部跳过",
     "Can_skip_tooltip": "其他可以购买的物品需要此物品。这意味着如果你计划购买面板中所有的其他物品，就可以少购买或直接忽略此物品。",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -714,6 +715,8 @@
     "Commission_list": "委托列表",
     "Inventory_cleanup": "清理物品栏",
     "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1792,7 +1795,8 @@
     "Disabled": "货币消费指南已失效",
     "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。",
     "Loading_data": "加载选定货币的交易数据",
-    "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格"
+    "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
