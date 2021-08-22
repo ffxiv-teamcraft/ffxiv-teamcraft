@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Can skip {{amount}}",
     "Can_skip_buying_entirely": "Can skip entirely",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
@@ -714,6 +715,8 @@
     "Commission_list": "Commission list",
     "Inventory_cleanup": "Inventory cleanup",
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1792,7 +1795,8 @@
     "Disabled": "La guía de gasto de monedas no está funcionando más",
     "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",
