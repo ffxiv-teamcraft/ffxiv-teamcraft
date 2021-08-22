@@ -72,6 +72,7 @@
                 <div>{{'COMMON.Total' | translate}}:</div>
                 <app-item-icon [icon]="1 | lazyIcon" [itemId]="1" [width]="32"></app-item-icon>
                 <div>x {{(item.price * (item.rate * (amount$ | async) | floor)) | number}}</div>
+                <div>&nbsp;({{'CURRENCY_SPENDING.X_sold_last_week' | translate:{ amount: item.amountSoldLastWeek } }})</div>
               </div>
             </ng-template>
             <ng-template #avatar>

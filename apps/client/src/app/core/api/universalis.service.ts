@@ -91,6 +91,7 @@ export class UniversalisService {
             const data = response.items || [response];
             return data.map(res => {
               const item: Partial<MarketboardItem> = {
+                ...res,
                 ID: res.worldID,
                 ItemId: res.itemID,
                 History: [],
@@ -104,7 +105,7 @@ export class UniversalisService {
                   return {
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
-                    ProceTotal: listing.total,
+                    PriceTotal: listing.total,
                     IsHQ: listing.hq,
                     Quantity: listing.quantity
                   };
@@ -117,11 +118,14 @@ export class UniversalisService {
                   return {
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
-                    ProceTotal: listing.total,
+                    PriceTotal: listing.total,
                     IsHQ: listing.hq,
-                    Quantity: listing.quantity
+                    Quantity: listing.quantity,
+                    PurchaseDate: listing.timestamp
                   };
                 });
+              delete (item as any).listings;
+              delete (item as any).recentHistory;
               return item as MarketboardItem;
             });
           })
