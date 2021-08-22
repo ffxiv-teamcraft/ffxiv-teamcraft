@@ -139,6 +139,12 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   @Output()
   requiredAsHQChange = new EventEmitter<boolean>();
 
+  @Input()
+  ignoreRequirements: boolean;
+
+  @Output()
+  ignoreRequirementsChange = new EventEmitter<boolean>();
+
   recipeId$: ReplaySubject<string> = new ReplaySubject<string>();
 
   recipe$ = this.recipeId$.pipe(
@@ -196,4 +202,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
     this.messageService.success(this.translate.instant(key, args));
   }
 
+  toggleIgnoreRequirements() {
+    this.ignoreRequirements = !this.ignoreRequirements;
+    this.ignoreRequirementsChange.emit(this.ignoreRequirements)
+  }
 }

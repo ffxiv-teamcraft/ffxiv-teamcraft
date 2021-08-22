@@ -330,6 +330,10 @@
           </li>
         </ng-container>
 
+        <li (click)="toggleIgnoreRequirements()" nz-menu-item>
+          {{(ignoreRequirements?'LIST_DETAILS.Consider_requirements':'LIST_DETAILS.Ignore_requirements') | translate}}
+        </li>
+
         <ng-container *ngIf="showLogCompletionButton">
           <li (click)="markAsDoneInLog.emit()" *ngIf="!isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)" nz-menu-item>
             {{'LOG_TRACKER.Mark_as_done_external' | translate}}

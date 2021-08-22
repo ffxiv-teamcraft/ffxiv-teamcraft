@@ -97,17 +97,17 @@ export class ListManagerService {
         }
         // If it's a standard item, add it with the classic implementation.
         if (isListRow(data)) {
-          return this.processItemAddition(data, amount, collectable, recipeId, gearsets);
+          return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
         } else {
           if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
             const itemData = this.lazyDataService.getExtract((data as CustomItem).realItemId);
-            return this.processItemAddition(itemData, amount, collectable, recipeId, gearsets).pipe(
+            return this.processItemAddition(itemData, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry).pipe(
               catchError(() => {
-                return this.processCustomItemAddition(data as CustomItem, amount);
+                return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
               })
             );
           } else {
-            return this.processCustomItemAddition(data as CustomItem, amount);
+            return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
           }
         }
       }),
@@ -116,8 +116,9 @@ export class ListManagerService {
     );
   }
 
-  private processCustomItemAddition(item: CustomItem, amount: number): Observable<List> {
+  private processCustomItemAddition(item: CustomItem, amount: number, ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
     const addition = new List();
+    addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
     const itemClone = new CustomItem();
     Object.assign(itemClone, item);
     itemClone.amount = amount;
@@ -144,9 +145,10 @@ export class ListManagerService {
     return of(addition);
   }
 
-  private processItemAddition(data: ListRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[]): Observable<List> {
+  private processItemAddition(data: ListRow, amount: number, collectable: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[], ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
+    addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
     const toAdd: ListRow = new ListRow();
     // If this is a craft
     if (crafted.length > 0) {

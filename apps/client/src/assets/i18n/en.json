@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Can skip {{amount}}",
     "Can_skip_buying_entirely": "Can skip entirely",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
@@ -714,6 +715,8 @@
     "Commission_list": "Commission list",
     "Inventory_cleanup": "Inventory cleanup",
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

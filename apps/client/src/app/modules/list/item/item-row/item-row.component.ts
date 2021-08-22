@@ -208,6 +208,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
+  ignoreRequirements$ = combineLatest([this.item$, this.list$, this.finalItem$]).pipe(
+    map(([item, list, finalItem]) => {
+      return list.shouldIgnoreRequirements(finalItem ? 'finalItems' : 'items', item.id);
+    })
+  );
+
   tagInput$ = new BehaviorSubject<string>('');
 
   availableTags$ = combineLatest([this.tagInput$, this.authFacade.user$]).pipe(
@@ -466,6 +472,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   removeWorkingOnIt(userId: string, item: ListRow): void {
     item.workingOnIt = (item.workingOnIt || []).filter(u => u !== userId);
     this.saveItem(item);
+  }
+
+  setIgnoreRequirements(ignore: boolean, itemId: number, list: List, finalItem: boolean): void {
+    list.setIgnoreRequirements(finalItem ? 'finalItems' : 'items', itemId, ignore);
+    this.listManager.upgradeList(list).subscribe(l => {
+      this.listsFacade.updateList(l);
+    });
   }
 
   openCommentsPopup(isAuthor: boolean, item: ListRow): void {
