@@ -1426,7 +1426,7 @@
   "DESYNTH": {
     "Title": "分解ガイド",
     "Job": "ジョブ",
-    "Level": "Desynth level",
+    "Level": "分解レベル",
     "Intro": "ジョブを選択し、分解レベルを入力して分解レベリングに最適化されたアイテムを探して下さい",
     "Loading_message": "読み込み中です...",
     "TAGS": {
@@ -2084,7 +2084,7 @@
       "Submit": "比較する",
       "Your_gearset": "ギアセット",
       "Other_gearset": "その他のギアセット",
-      "Diff": "Diff",
+      "Diff": "差分",
       "Avg_melding_chances": "Avg. overmeld chances"
     },
     "STAT_DISPLAY": {
@@ -2102,7 +2102,7 @@
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "ギアセットを同期中 ..."
     }
   },
   "FOLDERS": {
