@@ -511,9 +511,9 @@
       "Title": "通知",
       "Alarms": "闹钟",
       "Autofill_completion": "自动填充完成",
-      "Retainer_tracker": "Retainer tracker",
-      "Voyage_tracker": "Voyage tracker",
-      "Reset_timer": "Reset timer"
+      "Retainer_tracker": "雇员探索",
+      "Voyage_tracker": "远航探索",
+      "Reset_timer": "重置计时器"
     }
   },
   "PROFILE": {
@@ -624,7 +624,7 @@
     "Can_skip_buying_X": "可以跳过 {{amount}} 个",
     "Can_skip_buying_entirely": "可以全部跳过",
     "Can_skip_tooltip": "其他可以购买的物品需要此物品。这意味着如果你计划购买面板中所有的其他物品，就可以少购买或直接忽略此物品。",
-    "Requirements_ignored": "Requirements ignored",
+    "Requirements_ignored": "已忽略素材",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -715,8 +715,8 @@
     "Commission_list": "委托列表",
     "Inventory_cleanup": "清理物品栏",
     "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
-    "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Consider_requirements": "计算素材",
+    "Ignore_requirements": "忽略素材",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1005,7 +1005,7 @@
     "Current_control": "当前加工精度：{{value}}",
     "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
-    "Find_rotation": "Community rotation finder",
+    "Find_rotation": "共享手法搜索",
     "Searching_for_rotation": "正在搜索共享手法...",
     "No_matching_rotations": "没有找到符合您需求的共享手法",
     "Click_on_rotation": "点击一个手法来选择它",
