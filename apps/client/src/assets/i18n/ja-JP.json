@@ -21,8 +21,8 @@
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "ガイドを確認してください",
+  "Guides_links": "Teamcraft ガイド",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -213,7 +213,7 @@
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
-    "No_folder": "No folder",
+    "No_folder": "フォルダー無し",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
@@ -321,7 +321,7 @@
   "Favorite": "お気に入り",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました、この通知をクリックしてリストを開けます。",
   "Character_name": "キャラクター名",
   "Character_add_warning": "直接キャラクターを削除しなかった場合でも、これが見えるときは、何も入力せずにページを更新したり、アプリを再起動してください。それでもこの問題が解決しない場合はディスコードサーバに報告してください。",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
@@ -446,7 +446,7 @@
     "Scrolling_behavior": "スクロール設定",
     "Scrolling_behavior_explain": "リストパネルのスクロール方式を設定します。基本設定はパネルごとに最大12個のアイテムを表示します。",
     "Enable_auto_log_check": "採集/制作時に自動で手帳トラッカーを埋める",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "ジョブの切り替え時にパラメータ/レベルを自動的に更新する",
     "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "この機能は今後のアップデートで追加されます。ただ、データキャプチャを有効にする状態だったら、その時点からデータが記録されます。",
@@ -508,10 +508,10 @@
       "KR": "韓国"
     },
     "NOTIFICATIONS": {
-      "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
+      "Title": "お知らせ",
+      "Alarms": "アラーム",
+      "Autofill_completion": "オートフィル完了",
+      "Retainer_tracker": "リテイナートラッカー",
       "Voyage_tracker": "Voyage tracker",
       "Reset_timer": "Reset timer"
     }
