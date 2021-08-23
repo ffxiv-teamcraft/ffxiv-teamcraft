@@ -532,7 +532,7 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "パラメータの自動入力はパケットキャプチャを使用しています (料理バフも含まれています)",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "コミュニティの貢献",
@@ -624,7 +624,7 @@
     "Can_skip_buying_X": "{{amount}} 個スキップ可能",
     "Can_skip_buying_entirely": "全部スキップ可能",
     "Can_skip_tooltip": "他のアイテムを買うには該当アイテムが必要になります。つまり、該当パネルにある全てを買う計画でしたらアイテムを少なめに買うか、完全に飛ばされる事ができます",
-    "Requirements_ignored": "Requirements ignored",
+    "Requirements_ignored": "除外した素材",
     "SCROLLING": {
       "Default": "デフォルト",
       "Only_large": "超過された時のみ",
@@ -715,8 +715,8 @@
     "Commission_list": "このリストから依頼する",
     "Inventory_cleanup": "所持品整理",
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
-    "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Consider_requirements": "素材要求",
+    "Ignore_requirements": "素材を除外する",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
