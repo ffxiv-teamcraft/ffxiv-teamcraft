@@ -28,6 +28,9 @@ export class AlarmButtonComponent {
   @Output()
   addAlarmWithGroup = new EventEmitter<{ alarm: Alarm, group: AlarmGroup }>();
 
+  @Input()
+  showPosition = true;
+
   constructor(private dialog: NzModalService, private l12n: LocalizedLazyDataService, private i18n: I18nToolsService) {
   }
 
