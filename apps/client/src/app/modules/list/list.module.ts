@@ -65,6 +65,7 @@ import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-work
 import { GatheringNodesService } from '../../core/data/gathering-nodes.service';
 import { InventoryModule } from '../inventory/inventory.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -142,7 +143,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     AlarmButtonComponent,
     ItemRowButtonsComponent,
     ListProgressbarComponent,
-    ListSplitPopupComponent
+    ListSplitPopupComponent,
+    ItemRowMenuComponent
   ],
   exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
 })
