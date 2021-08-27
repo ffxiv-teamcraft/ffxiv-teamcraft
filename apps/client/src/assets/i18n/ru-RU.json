@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Можно пропустить {{amount}}",
     "Can_skip_buying_entirely": "Можно полностью пропустить",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "По умолчанию",
       "Only_large": "Только крупные списки",
@@ -714,6 +715,8 @@
     "Commission_list": "Список заказов (поручений)",
     "Inventory_cleanup": "Очистка инвентаря",
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -1187,6 +1190,7 @@
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
     "Hide_large": "Скрыть большие ливквесты",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
@@ -1791,7 +1795,8 @@
     "Disabled": "Гид по трате валют более не работает",
     "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
@@ -2049,6 +2054,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Режим локального редактирования",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -2139,7 +2145,9 @@
       "Fill_with_inventory": "Вы можете добавить всё, что есть в вашем инвентаре внутри этого списка.",
       "Pricing_mode_button": "Легко подготавливать и прогнозировать свои выгоды для этого списка, используя режим ценообразования.",
       "More_actions_button": "Эта кнопка открывает меню с множеством различных действий для текущей строки списка. Вы можете преобразовать эти действия в кнопки с помощью редактора макетов.",
-      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении."
+      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Вы можете объединить два списка, используя кнопку объединения.",

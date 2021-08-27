@@ -21,8 +21,8 @@
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
   "Change_character": "キャラクター",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "ガイドを確認してください",
+  "Guides_links": "Teamcraft ガイド",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -213,7 +213,7 @@
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
-    "No_folder": "No folder",
+    "No_folder": "フォルダー無し",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
@@ -321,7 +321,7 @@
   "Favorite": "お気に入り",
   "Adding_recipes": "{{amount}} 個のレシピを {{listname}} リストに追加中",
   "Recipe_Added": "１個のアイテムが {{listname}} リストに追加されました",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{itemcount}} 個のアイテムが {{listname}} リストが追加されました、この通知をクリックしてリストを開けます。",
   "Character_name": "キャラクター名",
   "Character_add_warning": "直接キャラクターを削除しなかった場合でも、これが見えるときは、何も入力せずにページを更新したり、アプリを再起動してください。それでもこの問題が解決しない場合はディスコードサーバに報告してください。",
   "Disconnect_and_anonymous": "ログアウト後匿名で続ける",
@@ -446,7 +446,7 @@
     "Scrolling_behavior": "スクロール設定",
     "Scrolling_behavior_explain": "リストパネルのスクロール方式を設定します。基本設定はパネルごとに最大12個のアイテムを表示します。",
     "Enable_auto_log_check": "採集/制作時に自動で手帳トラッカーを埋める",
-    "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
+    "Enable_auto_stats_updating": "ジョブの切り替え時にパラメータ/レベルを自動的に更新する",
     "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "この機能は今後のアップデートで追加されます。ただ、データキャプチャを有効にする状態だったら、その時点からデータが記録されます。",
@@ -508,12 +508,12 @@
       "KR": "韓国"
     },
     "NOTIFICATIONS": {
-      "Title": "Notifications",
-      "Alarms": "Alarms",
-      "Autofill_completion": "Autofill completion",
-      "Retainer_tracker": "Retainer tracker",
-      "Voyage_tracker": "Voyage tracker",
-      "Reset_timer": "Reset timer"
+      "Title": "お知らせ",
+      "Alarms": "アラーム",
+      "Autofill_completion": "オートフィル完了",
+      "Retainer_tracker": "リテイナートラッカー",
+      "Voyage_tracker": "ボイジャートラッカー",
+      "Reset_timer": "タイマーのリセット"
     }
   },
   "PROFILE": {
@@ -532,7 +532,7 @@
     "User_not_verified": "認証されてない使用者です。使用者認証を押して下さい",
     "More_than_100_lists_created": "100個以上のリストを作成",
     "Veteran": "ベテラン",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "パラメータの自動入力はパケットキャプチャを使用しています (料理バフも含まれています)",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "コミュニティの貢献",
@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "{{amount}} 個スキップ可能",
     "Can_skip_buying_entirely": "全部スキップ可能",
     "Can_skip_tooltip": "他のアイテムを買うには該当アイテムが必要になります。つまり、該当パネルにある全てを買う計画でしたらアイテムを少なめに買うか、完全に飛ばされる事ができます",
+    "Requirements_ignored": "除外した素材",
     "SCROLLING": {
       "Default": "デフォルト",
       "Only_large": "超過された時のみ",
@@ -714,6 +715,8 @@
     "Commission_list": "このリストから依頼する",
     "Inventory_cleanup": "所持品整理",
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
+    "Consider_requirements": "素材要求",
+    "Ignore_requirements": "素材を除外する",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -874,7 +877,7 @@
     "Will_spawn_in": "{{timer}} 以降現れる",
     "Ephemeral_warning": "時間制採集物は色んな場所に存在し、位置はほぼ同じになります。",
     "Legendary": "伝説",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "結果が多すぎるため、コンパクトモードに切り替えました。",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -1002,14 +1005,14 @@
     "Current_control": "現在加工熟練度: {{value}}",
     "Current_control_bonus": "現在のボーナス",
     "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
-    "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Find_rotation": "コミュニティースキル回しファイダー",
+    "Searching_for_rotation": "コミュニティースキル回しを検索...",
+    "No_matching_rotations": "要求に合致するコミュニティスキル回しが見つかりませんでした。",
+    "Click_on_rotation": "スキル回しをクリックして選択します",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
-    "Macro_duration": "Macro duration: {{duration}}s.",
+    "Macro_duration": "マクロの合計時間: {{duration}}秒。",
     "Total_macro_duration": "マクロの合計時間: {{duration}}秒。",
     "Compact": "コンパクト表示",
     "Detailed": "詳細",
@@ -1049,7 +1052,7 @@
       "Result_tooltip": "シミュレーションの結果は現在のスキル回しと自分のサブステをもとに導出されます。",
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "成功: {{collectability}}",
       "Set_to_simulate": "サブステ",
       "Specialist_rotation_warning": "表示された結果では、非マイスターの状態でマイスター用スキル回しを使用しているため、結果的にHQ確率が予想より非常に低くなる恐れがあります。",
       "Steps_count": "{{count}} 工程",
@@ -1187,6 +1190,7 @@
     "More_on_gamerescape": "Gamerescapeの詳細を見る",
     "Deliver_to": "{{placename}} に納品する",
     "Hide_large": "大量依頼を隠す",
+    "Road_to_buff": "「経験値ブースト」バフを含まれます",
     "INTRO": {
       "Title": "ギルドリーヴ",
       "First_line": "このページでは、ギルドリーヴや様々なギルドリーヴに対するリストを作成することができます。",
@@ -1322,9 +1326,9 @@
     "Hide_completed_items": "完了したレシピを隠す",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
-    "Import_from_carbuncleplushy": "Import progress from CarbunclePlushy",
-    "Import_from_carbuncleplushy_failed": "Import failed, wrong JSON was provided, make sure to use the full settings export",
-    "Import_from_carbuncleplushy_success": "Fishing log tracker updated successfully",
+    "Import_from_carbuncleplushy": "CarbunclePlushyから進捗をインポート",
+    "Import_from_carbuncleplushy_failed": "インポートに失敗しました、間違った JSON が指定されました。設定のフールエクスポートを使用してください。",
+    "Import_from_carbuncleplushy_success": "釣り手帳トラッカーが正常に更新されました。",
     "Export_FSH_completion": "Export completion as JSON",
     "Export_FSH_completion_copied": "Completion JSON copied to your clipboard",
     "Log_in_to_track": "Log in to be able to track your log tracker completion",
@@ -1422,7 +1426,7 @@
   "DESYNTH": {
     "Title": "分解ガイド",
     "Job": "ジョブ",
-    "Level": "Desynth level",
+    "Level": "分解レベル",
     "Intro": "ジョブを選択し、分解レベルを入力して分解レベリングに最適化されたアイテムを探して下さい",
     "Loading_message": "読み込み中です...",
     "TAGS": {
@@ -1791,7 +1795,8 @@
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
@@ -2049,6 +2054,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2078,7 +2084,7 @@
       "Submit": "比較する",
       "Your_gearset": "ギアセット",
       "Other_gearset": "その他のギアセット",
-      "Diff": "Diff",
+      "Diff": "差分",
       "Avg_melding_chances": "Avg. overmeld chances"
     },
     "STAT_DISPLAY": {
@@ -2096,7 +2102,7 @@
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "ギアセットを同期中 ..."
     }
   },
   "FOLDERS": {
@@ -2139,7 +2145,9 @@
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
       "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "マージボタンを使用して、2つのリストをマージできます。",

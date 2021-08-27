@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Can skip {{amount}}",
     "Can_skip_buying_entirely": "Can skip entirely",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
@@ -714,6 +715,8 @@
     "Commission_list": "Commission list",
     "Inventory_cleanup": "Inventory cleanup",
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1187,6 +1190,7 @@
     "More_on_gamerescape": "Más detalles en gamerescape",
     "Deliver_to": "Entregar a {{placename}}",
     "Hide_large": "Ocultar leves grandes",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
@@ -1791,7 +1795,8 @@
     "Disabled": "La guía de gasto de monedas no está funcionando más",
     "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items"
+    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",
@@ -2049,6 +2054,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Local editing mode",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
@@ -2139,7 +2145,9 @@
       "Fill_with_inventory": "Puede añadir todo lo que esté dentro de su inventario dentro de esta lista.",
       "Pricing_mode_button": "Prepare y prevea fácilmente sus ganancias para esta lista usando el modo de precios.",
       "More_actions_button": "Este botón abre un menú con muchas acciones diferentes para la fila actual de la lista. Puede convertir estas acciones en botones usando el editor de diseño.",
-      "Alarm_button": "Haga clic aquí para crear una alarma para este artículo, para ser alertado cuando aparezca."
+      "Alarm_button": "Haga clic aquí para crear una alarma para este artículo, para ser alertado cuando aparezca.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Puede combinar dos listas usando el botón de mezclar.",
