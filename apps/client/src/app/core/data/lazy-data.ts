@@ -12,7 +12,6 @@ export interface LazyData {
   airshipVoyages: any;
   baitItems: any;
   baseParams: any;
-  bigFishes: any;
   classJobsModifiers: any;
   collectablesShopItemGroup: any;
   collectablesShops: any;
@@ -58,6 +57,7 @@ export interface LazyData {
   jobCategories: any;
   jobName: any;
   jobSortIndex: any;
+  legendaryFish: any;
   leves: any;
   maps: any;
   marketItems: any;

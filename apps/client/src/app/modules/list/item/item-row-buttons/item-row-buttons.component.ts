@@ -1,4 +1,15 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  ComponentFactoryResolver,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,6 +24,8 @@ import { RotationsFacade } from '../../../rotations/+state/rotations.facade';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
+import { ItemRowMenuComponent } from '../item-row-menu/item-row-menu.component';
+import { NzContextMenuService } from 'ng-zorro-antd/dropdown';
 
 @Component({
   selector: 'app-item-row-buttons',
@@ -139,6 +152,12 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   @Output()
   requiredAsHQChange = new EventEmitter<boolean>();
 
+  @Input()
+  ignoreRequirements: boolean;
+
+  @Output()
+  ignoreRequirementsChange = new EventEmitter<boolean>();
+
   recipeId$: ReplaySubject<string> = new ReplaySubject<string>();
 
   recipe$ = this.recipeId$.pipe(
@@ -168,10 +187,15 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   collectable = false;
 
+  @ViewChild('menuHost', { read: ViewContainerRef })
+  contextMenuHost: ViewContainerRef;
+
   constructor(private messageService: NzMessageService, private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
               private rotationsFacade: RotationsFacade, private lazyData: LazyDataService,
-              private ipc: IpcService, public platform: PlatformService) {
+              private ipc: IpcService, public platform: PlatformService,
+              private componentFactoryResolver: ComponentFactoryResolver,
+              private nzContextMenuService: NzContextMenuService) {
     super();
     this.settings.settingsChange$.pipe(
       takeUntil(this.onDestroy$)
@@ -184,7 +208,18 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
     this.collectable = this.lazyData.data.collectables[this.itemId] !== undefined;
   }
 
-  public isButton(element: ItemRowMenuElement): boolean {
+  openMenu(event: MouseEvent): void {
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ItemRowMenuComponent);
+    const viewContainerRef = this.contextMenuHost;
+    viewContainerRef.clear();
+    const componentRef = viewContainerRef.createComponent<ItemRowMenuComponent>(componentFactory);
+    componentRef.instance.buttonsComponentRef = this;
+    componentRef.instance.menu$.subscribe(menu => {
+      this.nzContextMenuService.create(event, menu);
+    })
+  }
+
+  isButton(element: ItemRowMenuElement): boolean {
     return this.buttonsCache[element];
   }
 
@@ -196,4 +231,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
     this.messageService.success(this.translate.instant(key, args));
   }
 
+  toggleIgnoreRequirements() {
+    this.ignoreRequirements = !this.ignoreRequirements;
+    this.ignoreRequirementsChange.emit(this.ignoreRequirements);
+  }
 }

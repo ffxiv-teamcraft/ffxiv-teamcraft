@@ -226,6 +226,7 @@ nz-alert.dark {
 .ant-layout-sider-zero-width-trigger {
   opacity: .8;
 }
+
 .sider .ant-layout-sider-zero-width-trigger {
   background: var(--zero-width-sider-trigger-color) !important;
   top: 30px;
@@ -250,7 +251,11 @@ nz-alert.dark {
 
   &.overlay {
     padding: 0;
-    height: calc(100% - 21px);
+    height: 100%;
+
+    &.with-clock {
+      height: calc(100% - 21px);
+    }
   }
 }
 

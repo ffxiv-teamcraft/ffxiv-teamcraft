@@ -1,6 +1,6 @@
 export const gameEnv = {
   maxLevel: 80,
-  globalGameVersion: 5.55,
-  koreanGameVersion: 5.45,
-  chineseGameVersion: 5.45
+  globalGameVersion: 5.581,
+  koreanGameVersion: 5.5,
+  chineseGameVersion: 5.55
 };

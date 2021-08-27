@@ -357,13 +357,16 @@ export class AlarmsFacade {
           date.setUTCMilliseconds(0);
           // Adding 3 seconds margin for days computation
           const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
-          return {
-            hours: intersectSpawn,
-            days: days,
-            despawn: intersectDespawn,
-            weather: weatherSpawn.weather,
-            date
-          };
+          // If it's for today, make sure it's not already despawned
+          if (days > 0 || new Date(time).getUTCHours() < intersectDespawn) {
+            return {
+              hours: intersectSpawn,
+              days: days,
+              despawn: intersectDespawn,
+              weather: weatherSpawn.weather,
+              date
+            };
+          }
         }
       }
     }
@@ -409,9 +412,9 @@ export class AlarmsFacade {
   private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
     const patch = this.lazyData.data.itemPatch[alarm.itemId];
     const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
-    const isBigFish = this.lazyData.data.bigFishes[alarm.itemId];
+    const isLegendary = this.lazyData.data.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-SB and non-legendary
-    if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isBigFish) {
+    if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }

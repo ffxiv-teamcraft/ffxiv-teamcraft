@@ -1,26 +1,23 @@
 export const patchNotes = `### Bug Fixes
 
-* **community-lists:** fixed pagination not shown anymore.
-* **desktop:** close client faster after update for better UX.
-* **desktop:** support for packet changes in CN 5.5.
-* **fishing:** fixed snagging flag not set properly on many fish.
-* **list:** fixed some items breaking npc breakdown display.
-* **lits:** fixed some older lists not being copied properly from community lists.
-* **log-tracker:** fixed blank notification when creating a list from a log page.
-* **log-tracker:** listed gathering nodes are now using the right gathering method.
+* **alarms:** fixed weather transition timers sometimes acting up.
+* **db:** updated the list of legendary fish using japanese description matching.
+* **layout:** fixed some items not detected as housing vendor items.
+* **overlay:** fixed height not 100% when clock is disabled.
+* **profile:** removed veteran tag as it's not working as expected.
+* **universalis:** fixed possible bug with null cid.
 
 
 ### Features
 
-* **data:** update for cn patch-5.5.
-* **gearset:** new button to remove all materias from selected pieces.
-* **inventory-optimizer:** sort by sub container name when it exists.
-* **leveling-equipment:** removed items traded with Talan (Lucis and other big tools).
-* **levequests:** support for "road to XX" buff.
-* **list:** new button in panel headers to mark whole panel as required HQ.
-* support for KR new server.
+* **currency-spending:** added quantity sold last week to have better sorting.
+* **db:** log tracking integration in fishing spot pages.
+* **desktop:** updated bundled npcap installer to 1.50.
+* **leveling-equipment:** added clickable item name to be able to copy to clipboard.
+* **list:** new button on alarm button group to open map.
+* **list:** you can now ignore requirements for a given item.
 
 
 ### Performance Improvements
 
-* **KR/CN:** updated to latest simulator version.`;
+* **list:** better loading performances with new menu system.`;

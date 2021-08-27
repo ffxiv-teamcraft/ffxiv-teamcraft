@@ -82,6 +82,8 @@ export class List extends DataWithPermissions {
 
   contributionStats = { entries: [], total: 0, ilvlTotal: 0 };
 
+  ignoreRequirementsRegistry: Record<string, 1> = {};
+
   constructor(settings?: SettingsService) {
     super();
     if (!this.createdAt) {
@@ -111,6 +113,7 @@ export class List extends DataWithPermissions {
     clone.name = this.name;
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;
+    clone.ignoreRequirementsRegistry = this.ignoreRequirementsRegistry;
     if (internal) {
       Object.assign(clone, deepClone(this));
     } else {
@@ -356,6 +359,9 @@ export class List extends DataWithPermissions {
   }
 
   canBeCrafted(item: ListRow): boolean {
+    if (this.shouldIgnoreRequirements('items', item.id) || this.shouldIgnoreRequirements('finalItems', item.id)) {
+      return false;
+    }
     const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
     if (craftedBy === undefined || item.requires === undefined) {
       return false;
@@ -470,7 +476,7 @@ export class List extends DataWithPermissions {
   public addCraft({ _additions, customItems, dataService, listManager, lazyDataService, recipeId, gearsets }: CraftAdditionParams): Observable<List> {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
-      expand(additions => {
+      expand((additions, i) => {
         if (additions.length === 0) {
           done$.next();
           return EMPTY;
@@ -480,7 +486,7 @@ export class List extends DataWithPermissions {
             if (addition.data instanceof CustomItem) {
               return this.addCustomCraft(addition, customItems, dataService, listManager, lazyDataService);
             } else {
-              return of(this.addNormalCraft(addition, listManager, lazyDataService, gearsets, recipeId));
+              return of(this.addNormalCraft(addition, listManager, lazyDataService, gearsets, recipeId, i === 0));
             }
           })
         ).pipe(
@@ -496,7 +502,7 @@ export class List extends DataWithPermissions {
     );
   }
 
-  private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, gearsets: TeamcraftGearsetStats[], recipeId?: string): CraftAddition[] {
+  private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, gearsets: TeamcraftGearsetStats[], recipeId: string, finalItem: boolean): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
     let craft: CraftedBy;
     const crafts = getItemSource(addition.item, DataType.CRAFTED_BY);
@@ -506,6 +512,9 @@ export class List extends DataWithPermissions {
       craft = getCraftByPriority(crafts, gearsets);
     }
     const ingredients = craft ? lazyDataService.getRecipeSync(craft.id).ingredients : getItemSource(addition.item, DataType.REQUIREMENTS);
+    if (this.shouldIgnoreRequirements(finalItem ? 'finalItems' : 'items', addition.item.id)) {
+      return [];
+    }
     for (const element of ingredients) {
       // If this is a crystal
       if (element.id < 20 && element.id > 1) {
@@ -746,6 +755,19 @@ export class List extends DataWithPermissions {
     }
     if ((<any>this.name)?.name) {
       this.name = (<any>this.name).name;
+    }
+  }
+
+  shouldIgnoreRequirements(array: 'items' | 'finalItems', itemId: number): boolean {
+    return (this.ignoreRequirementsRegistry || {})[`${array}:${itemId}`] === 1;
+  }
+
+  setIgnoreRequirements(array: 'items' | 'finalItems', itemId: number, ignore: boolean): void {
+    this.ignoreRequirementsRegistry = this.ignoreRequirementsRegistry || {};
+    if (ignore) {
+      this.ignoreRequirementsRegistry[`${array}:${itemId}`] = 1;
+    } else {
+      delete this.ignoreRequirementsRegistry[`${array}:${itemId}`];
     }
   }
 }

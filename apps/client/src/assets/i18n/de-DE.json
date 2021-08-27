@@ -624,6 +624,7 @@
     "Can_skip_buying_X": "Kann {{amount}} überspringen",
     "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
+    "Requirements_ignored": "Requirements ignored",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
@@ -714,6 +715,8 @@
     "Commission_list": "Auftragsliste",
     "Inventory_cleanup": "Inventar bereinigen",
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
+    "Consider_requirements": "Consider requirements",
+    "Ignore_requirements": "Ignore requirements",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -1187,6 +1190,7 @@
     "More_on_gamerescape": "Mehr auf gamerescape (Englisch)",
     "Deliver_to": "Liefere nach {{placename}}",
     "Hide_large": "Groß-Freibriefe ausblenden",
+    "Road_to_buff": "Include \"road to XX\" buff",
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
@@ -1791,7 +1795,8 @@
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel"
+    "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
+    "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
@@ -2049,6 +2054,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers und es wird nichts gespeichert, wenn du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
+    "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2139,7 +2145,9 @@
       "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
       "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
       "More_actions_button": "Dies öffnet ein Menü mit vielen verschiedenen Aktionen für die aktuelle Listenzeile. Du kannst diese Aktionen mit Hilfe des Layout-Editors in Schaltflächen umwandeln.",
-      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt."
+      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt.",
+      "Mark_whole_panel_nq": "Remove manual HQ flags",
+      "Mark_whole_panel_hq": "Mark whole panel HQ"
     },
     "LISTS": {
       "Merge": "Du kannst zwei Listen mit \"Zusammenfassen\" kombinieren.",

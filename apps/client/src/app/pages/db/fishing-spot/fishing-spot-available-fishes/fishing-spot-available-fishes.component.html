@@ -1,16 +1,47 @@
 <nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 auto" [nzLoading]="!(fishes$ | async)" [class.card-with-list]="fishes$ | async">
   <div fxLayout="column" fxLayoutAlign="center center">
-    <div
-      *ngFor="let fishId of (fishes$ | async) || []; let last = last"
-      fxLayout="row"
-      fxLayoutAlign="flex-start center"
-      fxLayoutGap="5px"
-      class="list-row"
-      [class.border-bottom]="!last"
+    <div fxLayout="row"
+         fxLayoutAlign="space-between center"
+         fxLayoutGap="5px"
+         *ngFor="let entry of (fishes$ | async) || []; let last = last; trackBy: trackByEntry"
+         class="list-row"
+         [class.border-bottom]="!last"
     >
-      <app-item-icon [itemId]="fishId" [icon]="fishId | lazyIcon" width="32"></app-item-icon>
-      <span>{{ fishId | itemName | i18n }}</span>
-      <app-db-button [id]="fishId" type="item"></app-db-button>
+      <div fxLayout="column"
+           fxLayoutGap="5px">
+        <div fxLayout="row"
+             fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <app-item-icon [itemId]="entry.itemId" [icon]="entry.itemId | lazyIcon" width="32"></app-item-icon>
+          <span>{{ entry.itemId | itemName | i18n }}</span>
+          <app-db-button [id]="entry.itemId" type="item"></app-db-button>
+        </div>
+        <div fxLayout="row"
+             *ngIf="entry.alarms?.length > 0"
+             fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <app-alarm-button *ngFor="let alarm of entry.alarms"
+                            [alarm]="alarm" [alarmGroups]="alarmGroups$ | async"
+                            [showPosition]="false" (toggleAlarm)="toggleAlarm($event)"
+                            (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+        </div>
+      </div>
+      <div>
+        <button (click)="markAsDone(entry.itemId, true)" nzSize="small" *ngIf="!entry.done" [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                nz-button
+                nz-tooltip
+                nzShape="circle"
+                nzType="primary">
+          <i nz-icon nzType="check"></i>
+        </button>
+        <button (click)="markAsDone(entry.itemId, false)" nzSize="small" *ngIf="entry.done" [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                nz-button
+                nz-tooltip
+                nzShape="circle"
+                nzDanger>
+          <i nz-icon nzType="close"></i>
+        </button>
+      </div>
     </div>
   </div>
 </nz-card>

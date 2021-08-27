@@ -13,6 +13,8 @@
           <div>
             <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
                *ngIf="item.finalItem && !this.finalItem$.value"></i>
+            <i nz-icon nzType="stop" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Requirements_ignored' | translate"
+               *ngIf="ignoreRequirements$ | async"></i>
             <span [itemNameCopy]="item.id"
                   class="item-name"
                   nz-tooltip>
@@ -75,6 +77,8 @@
               (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
               [(requiredAsHQ)]="item.requiredAsHQ"
               (requiredAsHQChange)="saveItem(item)"
+              [ignoreRequirements]="ignoreRequirements$ | async"
+              (ignoreRequirementsChange)="setIgnoreRequirements($event, item.id, list, finalItem)"
             ></app-item-row-buttons>
           </div>
         </ng-container>

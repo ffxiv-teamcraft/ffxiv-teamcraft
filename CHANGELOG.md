@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.0"></a>
+# [8.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.4...v8.5.0) (2021-08-27)
+
+
+### Bug Fixes
+
+* **alarms:** fixed weather transition timers sometimes acting up ([d98d17e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d98d17e))
+* **db:** updated the list of legendary fish using japanese description matching ([69f3a2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69f3a2c))
+* **layout:** fixed some items not detected as housing vendor items ([c3c76a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3c76a1))
+* **overlay:** fixed height not 100% when clock is disabled ([db584e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db584e8))
+* **profile:** removed veteran tag as it's not working as expected ([d050a03](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d050a03))
+* **universalis:** fixed possible bug with null cid ([168e1bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/168e1bf))
+
+
+### Features
+
+* **currency-spending:** added quantity sold last week to have better sorting ([50fe7c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50fe7c4))
+* **db:** log tracking integration in fishing spot pages ([0a498cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a498cb))
+* **desktop:** updated bundled npcap installer to 1.50 ([5235a40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5235a40))
+* **leveling-equipment:** added clickable item name to be able to copy to clipboard ([3333d1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3333d1b))
+* **list:** new button on alarm button group to open map ([6607236](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6607236))
+* **list:** you can now ignore requirements for a given item ([25bebec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25bebec))
+
+
+### Performance Improvements
+
+* **list:** better loading performances with new menu system ([8ee1860](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8ee1860))
+
+
+
 <a name="8.4.4"></a>
 ## [8.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.3...v8.4.4) (2021-08-17)
 

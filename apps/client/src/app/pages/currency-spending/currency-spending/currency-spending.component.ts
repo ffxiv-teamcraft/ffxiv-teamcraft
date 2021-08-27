@@ -126,25 +126,24 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                   })
                   .map(entry => {
                     const mbRow = res.find(r => r.ItemId === entry.item);
-                    let prices = (mbRow.Prices || [])
-                      .filter(item => item.IsHQ === (entry.HQ || false));
-                    if (prices.length === 0) {
-                      prices = (mbRow.History || [])
-                        .filter(item => item.IsHQ === (entry.HQ || false));
-                    }
-                    const price = prices
-                      .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
+                    const avgPrice = (entry.HQ ? mbRow.minPriceHQ : mbRow.minPriceNQ) || mbRow.minPrice;
+                    const oneWeekInThePast = Math.floor(Date.now() / 1000) - 7 * 86400;
+                    const amountSoldLastWeek = mbRow.History
+                      .filter(hRow => hRow.PurchaseDate > oneWeekInThePast && hRow.IsHQ === entry.HQ)
+                      .reduce((acc, hRow) => acc + hRow.Quantity, 0);
                     return <SpendingEntry>{
                       ...entry,
                       npcs: getItemSource(this.lazyData.getExtract(entry.item), DataType.TRADE_SOURCES)
                         .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
                         .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
-                      price: price && price.PricePerUnit
+                      price: avgPrice,
+                      score: avgPrice * amountSoldLastWeek,
+                      amountSoldLastWeek
                     };
                   })
                   .filter(entry => entry.price)
                   .sort((a, b) => {
-                    return (b.price / b.rate) - (a.price / a.rate);
+                    return b.score - a.score;
                   });
               })
             );

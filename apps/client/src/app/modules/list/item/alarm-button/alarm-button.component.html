@@ -16,11 +16,15 @@
     <img *ngIf="!display.alarm.fishEyes" [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
     <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="node-type-icon fish-eyes">
   </button>
-  <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
+  <button *ngIf="!display.registered && alarmGroups?.length > 0" [nzDropdownMenu]="menu"
           [nzPlacement]="'bottomCenter'"
           [nzSize]="'small'" nz-button
           nz-dropdown>
     <i nz-icon nzType="ellipsis"></i>
+  </button>
+  <button [nzSize]="'small'" *ngIf="showPosition" nz-tooltip [nzTooltipTitle]="'See_on_map' | translate"
+          (click)="openMap()" nz-button>
+    <i nz-icon nzType="environment" nzTheme="outline"></i>
   </button>
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
