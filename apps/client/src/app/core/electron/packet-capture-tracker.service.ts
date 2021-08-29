@@ -139,6 +139,7 @@ export class PacketCaptureTrackerService {
       if (user.lodestoneIds.length > 1) {
         this.inventoryService.setContentId(null);
       }
+      this.eorzeaFacade.setBait(0);
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
