@@ -85,6 +85,13 @@ export class MainWindow {
       this.store.set('win:alwaysOnTop', this.win.isAlwaysOnTop());
     });
 
+    this.win.on('minimize', (event) => {
+      if (this.store.get<boolean>('enable-minimize-reduction-button', false)) {
+        event.preventDefault();
+        this.win.hide();
+      }
+    });
+
     const handleRedirect = (e, url) => {
       if (url !== this.win.webContents.getURL()) {
         e.preventDefault();

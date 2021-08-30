@@ -58,6 +58,8 @@ export class SettingsPopupComponent {
 
   alwaysQuit = true;
 
+  enableMinimizeReduceButton = false;
+
   noShortcut = false;
 
   metricsPath = '';
@@ -180,6 +182,9 @@ export class SettingsPopupComponent {
     this.ipc.once('always-quit:value', (event, value) => {
       this.alwaysQuit = value;
     });
+    this.ipc.once('enable-minimize-reduction-button:value', (event, value) => {
+      this.enableMinimizeReduceButton = value;
+    });
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
@@ -236,6 +241,7 @@ export class SettingsPopupComponent {
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('always-quit:get');
+    this.ipc.send('enable-minimize-reduction-button:get');
     this.ipc.send('proxy-rule:get');
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
@@ -296,6 +302,10 @@ export class SettingsPopupComponent {
 
   alwaysQuitChange(value: boolean): void {
     this.ipc.send('always-quit', value);
+  }
+
+  enableMinimizeReduceButtonChange(value: boolean): void {
+    this.ipc.send('enable-minimize-reduction-button', value);
   }
 
   startMappy(): void {
