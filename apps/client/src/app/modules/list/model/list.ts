@@ -332,6 +332,7 @@ export class List extends DataWithPermissions {
     if (item.done < 0) {
       item.done = 0;
     }
+    this.updateAllStatuses(item.id); //propagate changes
     const newDone = item.amount_needed - MathTools.absoluteCeil((item.amount - item.done) / item.yield);
     amount = newDone - previousDone;
     if (item.requires !== undefined && newDone !== previousDone) {
@@ -433,9 +434,10 @@ export class List extends DataWithPermissions {
     if (getItemSource(item, DataType.CRAFTED_BY).length === 0 || item.requires === undefined) {
       // Simply return the amount of the item being equal to the amount needed.
       return item.done >= amount;
+      return item.done - item.used >= amount; //subtracting item.used here probably does something???
     }
     // If we already have the precraft done, don't go further into the requirements.
-    if (item.done >= amount || item.canBeCrafted) {
+    if (item.done - item.used >= amount) {  //subtracting item.used here prevents the dotted blue line from appearing around final items which think the materials for a pre-craft exist. 
       return true;
     }
     // Don't mind crystals
