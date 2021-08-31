@@ -387,6 +387,7 @@
     "Always_on_top": "总在最上层",
     "Start_minimized": "启动时最小化到托盘",
     "Always_quit": "关闭窗口时退出 (而不是最小化)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "检查更新",
     "Downloading_update": "正在下载更新",
     "No_update_available": "已是最新版本",
