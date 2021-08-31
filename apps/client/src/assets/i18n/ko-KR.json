@@ -21,8 +21,8 @@
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "팀크래프트 가이드 보기",
+  "Guides_links": "팀크래프트 가이드",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -533,7 +533,7 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "패킷 캡처를 사용하여 능력치 자동채우기 (음식 사용시 음식도 포함됩니다)",
     "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해주시고, 완료가 되면 이 팝업창을 닫으세요.(음식효과가 포함되지않게 해주세요. 시뮬레이터 사용시 음식효과가 포함된 능력치면 사용할 때 문제가 생길 수 있습니다)",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
@@ -1053,7 +1053,7 @@
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "성공률: {{collectability}}",
       "Set_to_simulate": "능력치",
       "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
       "Steps_count": "{{count}} 공정",
@@ -2541,7 +2541,7 @@
     "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
     "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람",
-    "Reset_retainers": "Reset retainers"
+    "Reset_retainers": "집사 초기화"
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",
