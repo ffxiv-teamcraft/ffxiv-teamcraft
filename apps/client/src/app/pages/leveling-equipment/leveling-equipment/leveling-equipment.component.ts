@@ -125,7 +125,12 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
             onlyInventoryContent: filters.onlyInventoryContent.toString()
           }
         });
-        const mainStat = this.statsService.getMainStat(filters.job);
+        let mainStat = this.statsService.getMainStat(filters.job);
+
+        // Before lvl 50, don't use VIT as base param.
+        if(mainStat === BaseParam.VITALITY && filters.level < 50){
+          mainStat = BaseParam.STRENGTH;
+        }
         // Preparing base informations
         const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel);
         const baseStruct = levels.map(level => {
