@@ -10,7 +10,6 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -54,7 +53,7 @@ export class FishingLogTrackerComponent extends TrackerComponent {
   constructor(private authFacade: AuthFacade, protected alarmsFacade: AlarmsFacade,
               public settings: SettingsService, private fishingLogCacheService: FishingLogCacheService,
               private modal: NzModalService, private translate: TranslateService,
-              private message: NzMessageService, private lazyData: LazyDataService) {
+              private message: NzMessageService) {
     super(alarmsFacade);
   }
 

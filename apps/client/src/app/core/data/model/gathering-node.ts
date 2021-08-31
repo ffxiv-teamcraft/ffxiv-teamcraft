@@ -25,6 +25,7 @@ export interface GatheringNode {
   weathersFrom?: number[];
   snagging?: boolean;
   gig?: 'Small' | 'Normal' | 'Large';
+  tug?: number;
 
   /**
    * Search stuff

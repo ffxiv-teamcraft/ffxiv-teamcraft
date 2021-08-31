@@ -124,6 +124,7 @@
                                 <img *ngIf="entry.gatheringNode.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                                      src="./assets/icons/status/snagging.png">
                               </div>
+                              <nz-tag>{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][entry.gatheringNode.tug] | translate}}</nz-tag>
                               <app-fishing-bait *ngIf="entry.gatheringNode.baits !== undefined" [baits]="entry.gatheringNode.baits"
                                                 flex="row"></app-fishing-bait>
                               <img *ngIf="entry.gatheringNode.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + entry.gatheringNode.gig) | translate"
