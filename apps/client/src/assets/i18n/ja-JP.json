@@ -387,6 +387,7 @@
     "Always_on_top": "常に最前面",
     "Start_minimized": "起動時に最小化",
     "Always_quit": "閉じるボタンをクリックすると最小化せず終了します",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "アップデートを確認する",
     "Downloading_update": "アップデートがダウンロード中",
     "No_update_available": "利用可能な更新はありません",
