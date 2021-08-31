@@ -387,6 +387,7 @@
     "Always_on_top": "Immer im Vordergrund",
     "Start_minimized": "Minimiert im Tray starten",
     "Always_quit": "Beim Klicken auf den Schließen-Button beenden anstatt zu minimieren",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "Neues Update verfügbar?",
     "Downloading_update": "Lade Update herunter",
     "No_update_available": "Kein Update verfügbar",
