@@ -1612,7 +1612,7 @@
       "Repeatable": "반복가능",
       "Beast_tribe_rank": "야만족 우호 단계",
       "Chain_length": "연계 퀘스트 수",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "거래 가능 품목"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1795,9 +1795,9 @@
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다.",
-    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "X_sold_last_week": "지난 주 {{amount}} 개 판매"
   },
   "FOOD_PICKER": {
     "Title": "음식 선택기",
@@ -1983,7 +1983,7 @@
       "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
+      "Title": "단일 레시피에서만 사용되는 아이템입니다",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
