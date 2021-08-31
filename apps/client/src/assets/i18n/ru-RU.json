@@ -387,6 +387,7 @@
     "Always_on_top": "Всегда cверху",
     "Start_minimized": "Запускать в свёрнутом виде",
     "Always_quit": "Выйти при нажатии на кнопку закрытия (вместо сворачивания)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "Проверить обновления",
     "Downloading_update": "Загрузка обновления",
     "No_update_available": "Нет доступных обновлений",
