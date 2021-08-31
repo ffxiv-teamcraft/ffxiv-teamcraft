@@ -387,6 +387,7 @@
     "Always_on_top": "Toujours au premier plan",
     "Start_minimized": "Démarrer en mode réduit",
     "Always_quit": "Quitter en cliquant sur le bouton de fermeture (au lieu de minimiser)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
