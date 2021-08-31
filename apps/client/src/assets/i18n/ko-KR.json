@@ -1006,10 +1006,10 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Find_rotation": "커뮤니티 로테이션 검색기",
+    "Searching_for_rotation": "커뮤니티 로테이션 검색 중...",
+    "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
+    "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
@@ -1796,7 +1796,7 @@
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다.",
     "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
+    "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
     "X_sold_last_week": "{{amount}} sold last week"
   },
   "FOOD_PICKER": {
@@ -2055,7 +2055,7 @@
     "Value_for_previous": "이전 중단점",
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "선택된 모든 장비의 마테리아 제거",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -2148,7 +2148,7 @@
       "More_actions_button": "이 버튼으로 지금 목록에서 할 수 있는 여러 다른 액션 메뉴를 열수 있습니다. 여러분들은 레이아웃 에디터를 통해 이 액션 버튼들을 편집할 수 있습니다.",
       "Alarm_button": "여기를 눌러 이 아이템을 위한 알람을 설정하세요, 알람을 설정하시면 이 아이템이 스폰될 때 알려드립니다.",
       "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "Mark whole panel HQ"
+      "Mark_whole_panel_hq": "모든 패널에 HQ마크 표시"
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
