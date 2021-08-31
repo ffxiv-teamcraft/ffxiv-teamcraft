@@ -74,8 +74,8 @@ export class MapPositionComponent {
       };
     }
     return {
-      x: Math.round(this.marker.x),
-      y: Math.round(this.marker.y)
+      x: Math.floor(this.marker.x * 100) / 100,
+      y: Math.floor(this.marker.y * 100) / 100
     };
   }
 

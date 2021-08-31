@@ -68,22 +68,10 @@ export class MapComponent implements OnInit {
 
   getMarkerStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
     const positionPercents = this.mapService.getPositionOnMap(map, marker);
-    marker.size = marker.size || {
-      x: 32,
-      y: 32
-    };
-
-    if (!marker.iconType && !aetheryte) {
-      marker.size = {
-        x: 0,
-        y: 0
-      };
-    }
     return {
       top: `${positionPercents.y}%`,
       left: `${positionPercents.x}%`,
-      'margin-top': `-${marker.size.y / 2}px`,
-      'margin-left': `-${marker.size.x / 2}px`,
+      transform: 'translate(-50%, -50%);',
       'z-index': marker.zIndex || aetheryte ? this.aetheryteZIndex : 5,
       ...(marker.additionalStyle || {})
     };

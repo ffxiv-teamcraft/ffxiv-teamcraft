@@ -253,8 +253,8 @@ export class LogsExtractor extends AbstractExtractor {
             zoneId: spot.PlaceName.ID,
             level: spot.GatheringLevel,
             coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
-              x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
-              y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
+              x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
+              y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
             },
             fishes: Object.keys(spot)
               .filter(key => /Item\dTargetID/.test(key))
@@ -282,8 +282,8 @@ export class LogsExtractor extends AbstractExtractor {
                 spot: {
                   id: spot.ID,
                   coords: {
-                    x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
-                    y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
+                    x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100 + 1,
+                    y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100 + 1
                   }
                 }
               };
