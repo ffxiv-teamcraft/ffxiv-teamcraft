@@ -387,6 +387,7 @@
     "Always_on_top": "항상 위에 표시",
     "Start_minimized": "트레이 모드로 실행",
     "Always_quit": "닫기 버튼으로 팀크래프트 완전히 종료하기(미설정시 최소화)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
