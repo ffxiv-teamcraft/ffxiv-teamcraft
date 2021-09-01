@@ -52,4 +52,5 @@ export class TeamcraftUser extends DataModel {
 
   cid?: string;
   world?: number;
+  dbBan?: boolean;
 }
