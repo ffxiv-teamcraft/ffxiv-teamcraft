@@ -12,7 +12,7 @@
              nzType="clock-circle"></i>
         </div>
         <div class="item-icon">
-          <app-item-icon [disableClick]="overlayMode" [icon]="row.alarm.itemId | lazyIcon"
+          <app-item-icon [icon]="row.alarm.itemId | lazyIcon"
                          [itemId]="row.alarm.itemId" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n" [width]="32"></app-item-icon>
           <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
         </div>
