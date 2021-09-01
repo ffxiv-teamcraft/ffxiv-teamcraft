@@ -207,8 +207,24 @@ export class UserInventory extends DataModel {
           retainerName: isFromRetainer ? lastSpawnedRetainer : null,
           moved: true
         } : null;
-      case 'split':
       case 'transferGil':
+        const newRetainerGilCount = packet.splitCount;
+        const retainerGilRef = this.items[this.contentId][`${lastSpawnedRetainer}:${ContainerType.RetainerGil}`][0];
+        // Even if it's technically not possible that this is null, just check in case of a derpy behavior or weird user manipulation.
+        if (retainerGilRef && this.items[this.contentId][ContainerType.Currency][0]) {
+          const diff = retainerGilRef?.quantity - newRetainerGilCount;
+          retainerGilRef.quantity = newRetainerGilCount;
+          this.items[this.contentId][ContainerType.Currency][0].quantity -= diff;
+          // Emit patch for metrics system
+          return {
+            quantity: diff,
+            containerId: ContainerType.Currency,
+            hq: false,
+            itemId: 1
+          };
+        }
+        return null;
+      case 'split':
       case 'transferCrystal':
         fromItem.quantity -= packet.splitCount;
         const newStack: InventoryItem = {
@@ -224,7 +240,7 @@ export class UserInventory extends DataModel {
           newStack.retainerName = lastSpawnedRetainer;
         }
         this.items[this.contentId][toContainerKey][packet.toSlot] = newStack;
-        if (['transferGil', 'transferCrystal'].includes(packet.action)) {
+        if (packet.action === 'transferCrystal') {
           return {
             ...newStack,
             retainerName: lastSpawnedRetainer
