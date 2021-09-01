@@ -86,17 +86,21 @@ export class PacketCapture {
   }
 
   start(): void {
-    try {
-      execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'] });
-      log.debug('The Npcap service was detected, starting Machina');
+    if(this.store.get('rawsock', false)){
       this.startMachina();
-    } catch (err) {
-      log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
-      if (err.message.includes('ETIMEDOUT')) {
-        log.log(`Starting machina since it's just a timeout`);
+    } else {
+      try {
+        execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'] });
+        log.debug('The Npcap service was detected, starting Machina');
         this.startMachina();
-      } else {
-        this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+      } catch (err) {
+        log.error(`Error and/or possible timeout while detecting the Npcap windows service: ${err}`);
+        if (err.message.includes('ETIMEDOUT')) {
+          log.log(`Starting machina since it's just a timeout`);
+          this.startMachina();
+        } else {
+          this.mainWindow.win.webContents.send('install-npcap-prompt', true);
+        }
       }
     }
   }
