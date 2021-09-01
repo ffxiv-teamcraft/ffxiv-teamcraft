@@ -219,7 +219,7 @@ export class StatsService {
     possibleSetBonuses.forEach(possibleSetBonus => {
       const sameSetPieces = possibleSetBonuses.filter(b => b.itemSeriesId === possibleSetBonus.itemSeriesId).length;
       possibleSetBonus.bonuses.forEach(bonus => {
-        if (sameSetPieces > bonus.amountRequired) {
+        if (sameSetPieces >= bonus.amountRequired) {
           let statsRow = stats.find(s => s.id === bonus.baseParam);
           if (statsRow === undefined) {
             stats.push({
