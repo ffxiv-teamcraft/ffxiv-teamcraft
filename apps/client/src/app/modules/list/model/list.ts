@@ -433,7 +433,6 @@ export class List extends DataWithPermissions {
     // If it's not a craft, break recursion
     if (getItemSource(item, DataType.CRAFTED_BY).length === 0 || item.requires === undefined) {
       // Simply return the amount of the item being equal to the amount needed.
-      return item.done >= amount;
       return item.done - item.used >= amount; //subtracting item.used here probably does something???
     }
     // If we already have the precraft done, don't go further into the requirements.
