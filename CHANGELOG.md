@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.1"></a>
+## [8.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.0...v8.5.1) (2021-09-01)
+
+
+### Bug Fixes
+
+* **alarms:** fixed wrong alarm timers on last day before weather spawn at midnight ([7d96882](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d96882))
+* **core:** fixed fishing spot positions off by -1/-1 ([9d5a8c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d5a8c6))
+* **desktop:** fixed gil transfers from retainer not taken into account ([ff99e12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff99e12))
+* **desktop:** only check for npcap if capture is set to npcap mode ([43bc9a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43bc9a0))
+* **fishing-reporter:** fixed tracking state not reset properly on character change ([b6645bc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6645bc))
+* **gearset:** fixed sets requiring one more piece to activate compared to ingame ([70087e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70087e7))
+* **leveling-equipment:** fixed wrong stat priorisation on lower level gear ([a7130e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7130e3))
+
+
+### Features
+
+* **db:** added new disclaimer regarding comments content ([765c276](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/765c276))
+* **desktop:** new setting to minimize to tray bar with reduce button ([2a674fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a674fa))
+* **list:** added snagging icon to revalant fish gathering details ([fa540fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa540fb))
+* **log-tracker:** added tug to fish details ([9f2ab0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f2ab0a))
+
+
+
 <a name="8.5.0"></a>
 # [8.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.4.4...v8.5.0) (2021-08-27)
 

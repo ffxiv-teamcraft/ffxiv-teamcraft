@@ -102,38 +102,52 @@
                  [ngTemplateOutlet]="commentTemplateRef"></ng-template>
 
     <ng-template #editor let-edition="commentEdition" let-parentComment="parentComment">
-      <nz-comment *ngIf="loggedIn$ | async">
-        <nz-avatar [nzSrc]="user.$key | characterAvatar | async" nz-comment-avatar></nz-avatar>
-        <nz-comment-content>
-          <nz-form-item>
+      <ng-container *ngIf="!user.dbBan; else dbBanTpl">
+        <nz-comment *ngIf="loggedIn$ | async">
+          <nz-avatar [nzSrc]="user.$key | characterAvatar | async" nz-comment-avatar></nz-avatar>
+          <nz-comment-content>
             <nz-form-item>
-              <textarea *ngIf="!edition" [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
-              <textarea *ngIf="edition" [(ngModel)]="edition.message" nz-input rows="4"></textarea>
-              <i>{{'DB.COMMENTS.Editor_tip' | translate}}</i>
+              <nz-form-item>
+                <i class="disclaimer">{{'DB.COMMENTS.Disclaimer' | translate}}</i>
+                <textarea *ngIf="!edition" [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
+                <textarea *ngIf="edition" [(ngModel)]="edition.message" nz-input rows="4"></textarea>
+                <i>{{'DB.COMMENTS.Editor_tip' | translate}}</i>
+              </nz-form-item>
             </nz-form-item>
-          </nz-form-item>
-          <nz-form-item>
-            <div *ngIf="!edition" fxLayout="row" fxLayoutGap="5px">
-              <button (click)="postComment(user.$key, parentComment)" [disabled]="!newCommentContent" [nzLoading]="submitting" nz-button
-                      nzType="primary">
-                {{'DB.COMMENTS.Post' | translate}}
-              </button>
-              <button (click)="resetEditor()" nz-button>
-                {{'Cancel' | translate}}
-              </button>
-            </div>
-            <div *ngIf="edition" fxLayout="row" fxLayoutGap="5px">
-              <button (click)="saveCommentEdition()" [disabled]="!edition.message" [nzLoading]="submitting" nz-button
-                      nzType="primary">
-                {{'COMMON.Save' | translate}}
-              </button>
-              <button (click)="resetEditor()" nz-button>
-                {{'Cancel' | translate}}
-              </button>
-            </div>
-          </nz-form-item>
-        </nz-comment-content>
-      </nz-comment>
+            <nz-form-item>
+              <div *ngIf="!edition" fxLayout="row" fxLayoutGap="5px">
+                <div>
+                  <button (click)="postComment(user.$key, parentComment)" [disabled]="!newCommentContent" [nzLoading]="submitting" nz-button
+                             nzType="primary">
+                  {{'DB.COMMENTS.Post' | translate}}
+                </button>
+                </div>
+                <div>
+                  <button (click)="resetEditor()" nz-button>
+                    {{'Cancel' | translate}}
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="edition" fxLayout="row" fxLayoutGap="5px">
+                <div>
+                  <button (click)="saveCommentEdition()" [disabled]="!edition.message" [nzLoading]="submitting" nz-button
+                          nzType="primary">
+                    {{'COMMON.Save' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="resetEditor()" nz-button>
+                    {{'Cancel' | translate}}
+                  </button>
+                </div>
+              </div>
+            </nz-form-item>
+          </nz-comment-content>
+        </nz-comment>
+      </ng-container>
+      <ng-template #dbBanTpl>
+        <div class="db-ban">{{'Db_ban' | translate}}</div>
+      </ng-template>
     </ng-template>
     <div fxLayout="column" fxLayoutGap="5px">
       <div *ngIf="hasMoreComments$ | async as moreComments" fxLayout="row" fxLayoutGap="5px">

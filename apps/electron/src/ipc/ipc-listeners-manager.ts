@@ -227,6 +227,7 @@ export class IpcListenersManager {
     this.twoWayBinding('no-shortcut', 'setup:noShortcut');
     this.twoWayBinding('start-minimized', 'start-minimized');
     this.twoWayBinding('always-quit', 'always-quit', null, true);
+    this.twoWayBinding('enable-minimize-reduction-button', 'enable-minimize-reduction-button');
 
     ipcMain.on('fullscreen-toggle', () => {
       if (this.mainWindow.win.isMaximized()) {

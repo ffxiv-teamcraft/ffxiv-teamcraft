@@ -149,6 +149,10 @@ export class GatheringNodesService {
         node.hookset = gtFish.hookset.split(' ')[0].toLowerCase() as 'powerful' | 'precision';
       }
 
+      if (gtFish.tug) {
+        node.tug = ['Medium', 'Heavy', 'Light'].indexOf(gtFish.tug);
+      }
+
       if (gtFish.snagging === 1) {
         node.snagging = true;
       }

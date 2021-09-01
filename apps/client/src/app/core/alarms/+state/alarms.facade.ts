@@ -358,7 +358,9 @@ export class AlarmsFacade {
           // Adding 3 seconds margin for days computation
           const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
           // If it's for today, make sure it's not already despawned
-          if (days > 0 || new Date(time).getUTCHours() < intersectDespawn) {
+          const now = new Date(time);
+          const didntSpawnYet = now.getUTCDay() !== weatherSpawn.spawn.getUTCDay() || now.getUTCHours() < intersectDespawn;
+          if (days > 0 || didntSpawnYet) {
             return {
               hours: intersectSpawn,
               days: days,

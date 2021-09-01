@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -199,19 +199,24 @@ export class FishingReporter implements DataReporter {
       startWith(Hookset.NORMAL)
     );
 
-    const fisherStats$ = combineLatest([
+    const playerStats$ = merge(
       packets$.pipe(ofMessageType('playerStats'), toIpcData()),
+      packets$.pipe(ofMessageType('logout'), mapTo(null))
+    );
+
+    const fisherStats$ = combineLatest([
+      playerStats$,
       packets$.pipe(ofMessageType('updateClassInfo'), toIpcData())
     ]).pipe(
       filter(([, classInfo]) => {
         return classInfo.classId === 18;
       }),
       map(([stats]) => {
-        return {
+        return stats ? {
           gathering: stats.gathering,
           perception: stats.perception,
           gp: stats.gp
-        };
+        } : null;
       })
     );
 
@@ -219,7 +224,7 @@ export class FishingReporter implements DataReporter {
      * Reset the state when user changes character
      */
     packets$.pipe(
-      ofMessageType('playerSetup'),
+      ofMessageType('logout'),
       toIpcData()
     ).subscribe(() => {
       this.state = {};
@@ -272,8 +277,8 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , throwData, biteData, , spot, , mooch]) => {
-        return fish.id === -1
+      filter(([fish, , throwData, biteData, , spot, stats, mooch]) => {
+        return (fish.id === -1 && stats?.gp > 1)
           || (biteData.tug !== null
             && spot.fishes.indexOf(fish.id) > -1
             && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1)

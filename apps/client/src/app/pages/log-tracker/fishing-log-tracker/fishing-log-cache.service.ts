@@ -81,7 +81,8 @@ export class FishingLogCacheService {
               level: node.level,
               icon: node.icon,
               data: data,
-              timed: data[0].gatheringNode.limited
+              timed: data[0].gatheringNode.limited,
+              tug: data[0].gatheringNode.tug
             });
           }
         });

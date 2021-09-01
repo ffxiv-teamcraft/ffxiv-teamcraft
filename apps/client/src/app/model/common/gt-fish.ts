@@ -31,4 +31,5 @@ export interface GtFish {
   }[];
   snagging?: 1;
   hookset?: 'Powerful Hookset' | 'Precision Hookset';
+  tug?: 'Medium' | 'Light' | 'Heavy';
 }

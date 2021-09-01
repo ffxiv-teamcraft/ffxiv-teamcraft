@@ -23,6 +23,7 @@
   "Change_character": "Character",
   "Check_guides": "Check our guides",
   "Guides_links": "Teamcraft Guides",
+  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account already in use",
     "auth/email-already-in-use": "Email already in use",
@@ -387,6 +388,7 @@
     "Always_on_top": "Always on top",
     "Start_minimized": "Start minimized in tray",
     "Always_quit": "Quit when clicking on close button (instead of minimizing)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "Check for update",
     "Downloading_update": "Downloading update",
     "No_update_available": "No update available",
@@ -1705,7 +1707,8 @@
       "Show_more": "Show {{amount}} more comments",
       "No_comments": "No comments",
       "Post": "Post",
-      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Type <page type>:\"<Content Name>\" to create a link to another page. Examples: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\".Supported page types: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
+      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
     },
     "PATCH": {
       "Open_patch_page": "Click here to open full patch changes in database",

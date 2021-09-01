@@ -487,6 +487,11 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="enableMinimizeReduceButton" (ngModelChange)="enableMinimizeReduceButtonChange($event)" nz-checkbox>
+          {{'SETTINGS.Enable_minimize_reduction' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="settings.clickthroughOverlay" nz-checkbox>
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
