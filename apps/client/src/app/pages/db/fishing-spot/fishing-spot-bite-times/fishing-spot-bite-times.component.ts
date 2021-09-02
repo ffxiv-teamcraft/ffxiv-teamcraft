@@ -5,8 +5,26 @@ import { SettingsService } from 'apps/client/src/app/modules/settings/settings.s
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ChartOptions } from 'chart.js';
+import { Chart } from 'chart.js';
+
+const fishImageUrls = []
+
+Chart.pluginService.register({
+  afterDraw: chart => {      
+    const ctx = chart.chart.ctx; 
+    const xAxis = chart.scales['x-axis-0'];
+    const yAxis = chart.scales['y-axis-0'];
+    yAxis.ticks.forEach((value, index) => {  
+      const y = yAxis.getPixelForTick(index);      
+      const image = new Image();
+      image.src = fishImageUrls[index],
+      ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
+    });      
+  }
+});
 
 interface FishingSpotChartData {
   id: number;
@@ -87,7 +105,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
             datasets: [{
               borderWidth: 1,
               itemRadius: 0,
-              data: sortedNames.map(el => {
+              data: sortedNames.map((el, index) => {
+                fishImageUrls[index] = 'https://xivapi.com' + this.lazyData.data.itemIcons[el.id]
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
@@ -137,7 +156,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       }],
       yAxes: [{
         ticks: {
-          fontColor: this.fontColor
+          fontColor: this.fontColor,
+          padding: 30
         },
         gridLines: {
           color: this.gridColor
@@ -175,7 +195,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     private readonly i18n: I18nToolsService,
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService,
-    private readonly translate: TranslateService
+    private readonly translate: TranslateService,
+    private lazyData: LazyDataService
   ) {
   }
 
