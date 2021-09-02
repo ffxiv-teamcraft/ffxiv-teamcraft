@@ -126,7 +126,7 @@ export class PacketCapture {
     }
   }
 
-  private getLocalOpcodesPath(): string | null {
+  private getLocalDataPath(): string | null {
     // --localOpcodes [path]
 
     const argv = process.argv.slice(1);
@@ -188,10 +188,10 @@ export class PacketCapture {
     }
 
     if (isDev) {
-      const localOpcodesPath = this.getLocalOpcodesPath();
-      if (localOpcodesPath) {
-        options.localOpcodesPath = localOpcodesPath;
-        log.info('[pcap] Using localOpcodes:', localOpcodesPath);
+      const localDataPath = this.getLocalDataPath();
+      if (localDataPath) {
+        options.localDataPath = localDataPath;
+        log.info('[pcap] Using localOpcodes:', localDataPath);
       }
     } else {
       options.exePath = PacketCapture.MACHINA_EXE_PATH;
