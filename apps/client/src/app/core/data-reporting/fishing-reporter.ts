@@ -7,18 +7,9 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { Tug } from '../data/model/tug';
+import { Hookset } from '../data/model/hookset';
 
-enum Tug {
-  MEDIUM,
-  BIG,
-  LIGHT
-}
-
-enum Hookset {
-  NORMAL,
-  POWERFUL,
-  PRECISION
-}
 
 export class FishingReporter implements DataReporter {
 

@@ -11,10 +11,6 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { NzSwitchModule } from 'ng-zorro-antd/switch';
-import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { NzModalModule } from 'ng-zorro-antd/modal';
-import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
 
