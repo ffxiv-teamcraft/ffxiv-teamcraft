@@ -24,4 +24,12 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
     expect(TimeUtils.getIntersection([16, 20], [16, 0])).toEqual([16, 20]);
   });
+
+  it('Should detect if an hour is in a given interval', () => {
+    expect(TimeUtils.isInInterval([0, 8], 7)).toBeTruthy();
+    expect(TimeUtils.isInInterval([0, 8], 15)).toBeFalsy();
+    expect(TimeUtils.isInInterval([15, 23], 15)).toBeTruthy();
+    expect(TimeUtils.isInInterval([16, 8], 21)).toBeTruthy();
+    expect(TimeUtils.isInInterval([16, 8], 5)).toBeTruthy();
+  });
 });
