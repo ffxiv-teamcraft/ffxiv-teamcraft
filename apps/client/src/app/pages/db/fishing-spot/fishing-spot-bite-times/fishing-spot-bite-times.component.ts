@@ -14,12 +14,12 @@ const fishImageUrls = []
 
 Chart.pluginService.register({
   afterDraw: chart => {      
-    var ctx = chart.chart.ctx; 
-    var xAxis = chart.scales['x-axis-0'];
-    var yAxis = chart.scales['y-axis-0'];
+    const ctx = chart.chart.ctx; 
+    const xAxis = chart.scales['x-axis-0'];
+    const yAxis = chart.scales['y-axis-0'];
     yAxis.ticks.forEach((value, index) => {  
-      var y = yAxis.getPixelForTick(index);      
-      var image = new Image();
+      const y = yAxis.getPixelForTick(index);      
+      const image = new Image();
       image.src = fishImageUrls[index],
       ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
     });      
