@@ -144,7 +144,7 @@ export class HooksetTugsPerFishPerSpotQuery extends Query<FishHooksetTugResult, 
 interface FishBiteTime {
   itemId: number;
   spot: number;
-  biteTime: number;
+  flooredBiteTime: number;
   occurences: number;
 }
 
@@ -156,10 +156,10 @@ interface FishBiteTimeResult {
 export class BiteTimesPerFishPerSpotQuery extends Query<FishBiteTimeResult, FishIdSpotIdVariable> {
   public document = gql`
     query BiteTimesPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, biteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }) {
+      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, flooredBiteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }) {
         itemId
         spot
-        biteTime
+        flooredBiteTime
         occurences
       }
     }
@@ -170,11 +170,11 @@ interface FishBiteTimePerBait {
   itemId: number;
   spot: number;
   baitId: number;
-  biteTime: number;
+  flooredBiteTime: number;
   occurences: number;
 }
 
-interface FishBiteTimePerBaitResult {
+interface FishBiteTimePerBaitResult {a
   biteTimes: FishBiteTimePerBait[];
 }
 
@@ -183,12 +183,12 @@ export class BiteTimesPerFishPerSpotPerBaitQuery extends Query<FishBiteTimePerBa
   public document = gql`
     query BiteTimesPerFishPerSpotPerBaitQuery($fishId: Int, $spotId: Int, $baitId: Int) {
       biteTimes: bite_time_per_fish_per_spot_per_bait(
-        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }
+        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, flooredBiteTime: { _gt: 1, _lt: 600 }, occurences: { _gte: 3 } }
       ) {
         itemId
         spot
         baitId
-        biteTime
+        flooredBiteTime
         occurences
       }
     }
@@ -225,7 +225,7 @@ interface FishStatisticsResult {
 @Injectable()
 export class FishStatisticsPerFishPerSpotQuery extends Query<FishStatisticsResult, FishIdSpotIdVariable> {
   public document = gql`
-    query FishStatisticsPerFishPerSpotQuery($fishId: Int!, $spotId: Int) {
+    query FishStatisticsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
       snagging: snagging_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
@@ -269,7 +269,7 @@ interface FishWeatherResult {
 @Injectable()
 export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdWeathersVariable> {
   public document = gql`
-    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int!]) {
+    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int]) {
       weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot
@@ -310,7 +310,7 @@ interface FishRankingVariable extends FishIdVariable {
 @Injectable()
 export class RankingPerFishQuery extends Query<FishRankingResult, FishRankingVariable> {
   public document = gql`
-    query RankingPerFishQuery($fishId: Int!, $userId: String!) {
+    query RankingPerFishQuery($fishId: Int, $userId: String!) {
       rankings: fishingresults(where: { itemId: { _eq: $fishId }, ranking: { rank: { _lte: 3 } } }, order_by: { ranking: { rank: asc } }, limit: 10) {
         itemId
         size

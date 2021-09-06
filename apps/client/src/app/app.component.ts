@@ -187,11 +187,13 @@ export class AppComponent implements OnInit {
       this.handleKeypressShortcuts(event);
     });
 
-    const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
+    const link = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
 
     apollo.create({
       link: link,
-      cache: new InMemoryCache()
+      cache: new InMemoryCache({
+        addTypename: false
+      })
     });
 
     this.showGiveaway = false;
