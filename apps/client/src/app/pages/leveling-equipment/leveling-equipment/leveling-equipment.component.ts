@@ -128,7 +128,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
         let mainStat = this.statsService.getMainStat(filters.job);
 
         // Before lvl 50, don't use VIT as base param.
-        if(mainStat === BaseParam.VITALITY && filters.level < 50){
+        if (mainStat === BaseParam.VITALITY && filters.level < 50) {
           mainStat = BaseParam.STRENGTH;
         }
         // Preparing base informations
@@ -282,7 +282,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     } else {
       switch (mainStat) {
         case BaseParam.VITALITY:
-          secondaryStat = BaseParam.TENACITY;
+          secondaryStat = BaseParam.STRENGTH;
           break;
         case BaseParam.STRENGTH:
         case BaseParam.DEXTERITY:
