@@ -49,7 +49,7 @@ export class WeatherService {
     if (this.getWeather(mapId, timestamp + 1000, weatherRate) === weatherId) {
       if (spawns?.length > 0) {
         const spawnHour = new Date(timestamp).getUTCHours();
-        if (spawns.some(spawn => TimeUtils.isInInterval([spawn, (spawn + duration) % 24], spawnHour))) {
+        if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, (spawnHour + 8) % 24]) !== null)) {
           const resultDate = new Date(timestamp);
           resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
           resultDate.setUTCMinutes(0);

@@ -31,5 +31,6 @@ describe('TimeUtils', () => {
     expect(TimeUtils.isInInterval([15, 23], 15)).toBeTruthy();
     expect(TimeUtils.isInInterval([16, 8], 21)).toBeTruthy();
     expect(TimeUtils.isInInterval([16, 8], 5)).toBeTruthy();
+    expect(TimeUtils.isInInterval([22, 0], 22)).toBeTruthy();
   });
 });
