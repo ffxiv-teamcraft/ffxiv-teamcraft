@@ -18,6 +18,8 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 interface ExpObj {
   exp: number,
@@ -82,7 +84,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private lazyData: LazyDataService,
-              private auth: AuthFacade, private settings: SettingsService) {
+              private auth: AuthFacade, private settings: SettingsService,
+              private platformService: PlatformService, private ipc: IpcService) {
     super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
@@ -374,6 +377,12 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   public updateAllSelected(leves: Levequest[]): void {
     this.allSelected = leves.reduce((res, item) => item.selected && res, true);
+  }
+
+  public openInGE(leve: Levequest): void {
+    if (this.platformService.isDesktop()) {
+      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leve.name.en.split(' ').join('_')}`);
+    }
   }
 
   trackByLeve(index: number, leve: Levequest): number {
