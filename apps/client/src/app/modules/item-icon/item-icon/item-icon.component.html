@@ -1,5 +1,4 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
-   [queryParamsHandling]="disableClick?'preserve':'merge'"
    (mouseup)="handleClick($event)"
    class="icon-container">
   <img [src]="getIcon()" [style.width.px]="width" alt="{{itemName}}"
