@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "角色数据文件夹 （CHRXXXXXXX 所在位置）",
     "Maximum_vendor_price": "最大商店购买价格",
     "Maximum_vendor_price_explain": "单个物品可被 CAN_BE_BOUGHT 布局捕获的最大价格（0 = 无限制）",
