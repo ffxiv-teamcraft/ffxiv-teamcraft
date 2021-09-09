@@ -834,6 +834,14 @@ export class SettingsService {
     this.setBoolean('showSearchFilters', enabled);
   }
 
+  public get localFishingDataDump(): boolean {
+    return this.getBoolean('localFishingDataDump', false);
+  }
+
+  public set localFishingDataDump(enabled: boolean) {
+    this.setBoolean('localFishingDataDump', enabled);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }

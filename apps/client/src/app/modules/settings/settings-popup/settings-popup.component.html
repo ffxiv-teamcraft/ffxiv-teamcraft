@@ -560,6 +560,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.localFishingDataDump" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Enable_local_fishing_dump' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.autoUpdateStats" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_auto_stats_updating' | translate}}
             </label>

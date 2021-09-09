@@ -11,7 +11,8 @@ import { TrayMenu } from '../window/tray-menu';
 import { exec } from 'child_process';
 import * as isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
-import { readFile, writeFileSync } from 'fs';
+import { existsSync, readFile, writeFileSync } from 'fs';
+import { createFileSync, readFileSync } from 'fs-extra';
 
 export class IpcListenersManager {
 
@@ -181,6 +182,16 @@ export class IpcListenersManager {
 
     ipcMain.on('app-state:get', (event) => {
       event.sender.send('app-state', this.appState);
+    });
+
+    const fishingDumpPath = join(app.getPath('userData'), 'fishingresults.json');
+
+    ipcMain.on('fishing-report', (event, data) => {
+      if (!existsSync(fishingDumpPath)) {
+        createFileSync(fishingDumpPath);
+      }
+      const fishingDump = readFileSync(fishingDumpPath, 'utf8') || '[]';
+      writeFileSync(fishingDumpPath, JSON.stringify([...fishingDump], data));
     });
 
   }
