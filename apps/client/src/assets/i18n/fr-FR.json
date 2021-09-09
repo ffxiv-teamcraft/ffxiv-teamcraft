@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
     "Metrics_capture_folder": "Dossier de log des métriques",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Dossier des données des personnages (où se trouvent les dossiers CHRXXXXX)",
     "Maximum_vendor_price": "Prix maximum d'achat",
     "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
