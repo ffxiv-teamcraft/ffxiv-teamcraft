@@ -23,6 +23,7 @@
   "Change_character": "Character",
   "Check_guides": "Check our guides",
   "Guides_links": "Teamcraft Guides",
+  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -387,6 +388,7 @@
     "Always_on_top": "Siempre arriba",
     "Start_minimized": "Iniciar minimizado en la bandeja",
     "Always_quit": "Salir al hacer clic en el botón de cerrar (en lugar de minimizar)",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
     "No_update_available": "No hay actualización disponible",
@@ -1705,7 +1707,8 @@
       "Show_more": "Mostrar {{amount}} comentarios más",
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
-      "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
+      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
     },
     "PATCH": {
       "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
