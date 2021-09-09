@@ -65,7 +65,7 @@ export class FishingLogCacheService {
               itemId: entry.itemId,
               level: entry.level,
               icon: entry.icon,
-              data: this.getFshData(entry.itemId)
+              data: this.getFshData(entry.itemId, spot.id)
             };
             if (parameter) {
               fish.timed = parameter.timed;
@@ -74,7 +74,7 @@ export class FishingLogCacheService {
             spot.fishes.push(fish);
           } else {
             const node = this.lazyData.data.spearFishingNodes.find(n => n.id === entry.itemId);
-            const data = this.getFshData(node.itemId);
+            const data = this.getFshData(node.itemId, spot.id);
             spot.fishes.push({
               id: spot.id,
               itemId: node.itemId,
@@ -161,9 +161,10 @@ export class FishingLogCacheService {
   }
 
 
-  private getFshData(itemId: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
+  private getFshData(itemId: number, spotId: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
     if (this.fshDataCache[itemId] === undefined) {
       this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true)
+        .filter(node => node.id === spotId)
         .map(node => {
           return {
             gatheringNode: node,
