@@ -121,7 +121,7 @@
                   <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | placeName | i18n } }}</b>
                   <div>
                     <a href="https://ffxiv.gamerescape.com/wiki/{{leve.name.en.split(' ').join('_')}}"
-                       target="_blank">
+                       target="_blank" (click)="openInGE(leve)">
                       {{'LEVEQUESTS.More_on_gamerescape' | translate}}
                     </a>
                   </div>

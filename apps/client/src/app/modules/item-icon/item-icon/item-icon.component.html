@@ -1,7 +1,6 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
-   [routerLink]="disableClick?null:getLink()"
    [queryParamsHandling]="disableClick?'preserve':'merge'"
-   (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getLink()) : null"
+   (mouseup)="handleClick($event)"
    class="icon-container">
   <img [src]="getIcon()" [style.width.px]="width" alt="{{itemName}}"
        class="item-icon">

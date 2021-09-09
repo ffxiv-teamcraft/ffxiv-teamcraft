@@ -18,12 +18,15 @@ export class CurrenciesProbe extends PlayerMetricProbe {
     return this.inventoryService.inventoryEvents$.pipe(
       filter(patch => {
         return patch.type !== InventoryEventType.MOVED
-          && patch.containerId === ContainerType.Currency;
+          && [ContainerType.Currency, ContainerType.RetainerGil].includes(patch.containerId);
       }),
       withLatestFrom(this.source$),
       map(([event, source]) => {
         if (event.amount > 0 && (source === ProbeSource.TELEPORT || source === ProbeSource.MARKETBOARD)) {
           source = ProbeSource.UNKNOWN;
+        }
+        if (event.containerId === ContainerType.RetainerGil) {
+          source = ProbeSource.MARKETBOARD;
         }
         return {
           type: MetricType.CURRENCY,

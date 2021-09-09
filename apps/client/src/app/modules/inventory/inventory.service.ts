@@ -104,8 +104,8 @@ export class InventoryService {
 
     let constantsUrl = 'https://raw.githubusercontent.com/karashiiro/FFXIVOpcodes/master/constants.min.json';
 
-    if(this.settings.region === Region.China){
-       constantsUrl = 'https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json';
+    if (this.settings.region === Region.China) {
+      constantsUrl = 'https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json';
     }
 
     const inventoryTransactionMessages$ = this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>(constantsUrl).pipe(
@@ -184,19 +184,29 @@ export class InventoryService {
                 state.retainerInventoryQueue.forEach(entry => {
                   inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, action.retainer);
                 });
-                return { ...state, retainer: action.retainer, retainerInventoryQueue: [], inventory };
+                state.retainerUpdateSlotQueue.forEach(entry => {
+                  inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
+                });
+                return { ...state, retainer: action.retainer, retainerInventoryQueue: [], retainerUpdateSlotQueue: [], inventory };
               case 'inventoryModifyHandler':
                 return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
               case 'updateInventorySlot':
               case 'inventoryTransaction':
-                return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
+                if (this.isRetainer(action.parsedIpcData.containerId) && state.retainerInventoryQueue.length > 0) {
+                  return {
+                    ...state,
+                    retainerUpdateSlotQueue: [...state.retainerUpdateSlotQueue, action.parsedIpcData]
+                  };
+                } else {
+                  return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
+                }
               case 'itemInfo':
               case 'currencyCrystalInfo':
                 return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
               default:
                 return { ...state };
             }
-          }, { itemInfoQueue: [], retainerInventoryQueue: [], inventory: baseInventoryState, retainer: '' }),
+          }, { itemInfoQueue: [], retainerInventoryQueue: [], retainerUpdateSlotQueue: [], inventory: baseInventoryState, retainer: '' }),
           map(state => state.inventory),
           startWith(baseInventoryState)
         );

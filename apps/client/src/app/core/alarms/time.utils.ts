@@ -1,6 +1,15 @@
 export type Interval = [number, number];
 
 export class TimeUtils {
+  static isInInterval(interval: Interval, time: number): boolean {
+    if (interval[1] > interval[0] || interval[1] === 0) {
+      return time >= interval[0] && time <= (interval[1] || 24);
+    } else {
+      const [day1, day2] = this.splitInterval(interval);
+      return this.isInInterval(day1, time) || this.isInInterval(day2, time);
+    }
+  }
+
   static getIntersection(a: Interval, b: Interval): Interval | null {
     if (a[1] < a[0] || b[1] < b[0]) {
       return this.getComplexIntersection(a, b);

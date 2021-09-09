@@ -2,6 +2,8 @@
           nzType="error"></nz-alert>
 <ng-template #content>
   <div *ngIf="lastUpdated$ | async as lastUpdated" class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium'}}</i></div>
+  <a href="https://universalis.app/market/{{itemId}}"
+     target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
   <div fxLayout="column" fxLayoutGap="15px">
     <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
       <thead (nzSortOrderChange)="sort($event)">
@@ -49,7 +51,5 @@
         </tbody>
       </nz-table>
     </div>
-    <a href="https://universalis.app/market/{{itemId}}"
-       target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
   </div>
 </ng-template>

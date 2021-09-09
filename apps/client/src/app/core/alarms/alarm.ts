@@ -2,10 +2,8 @@ import { DataModel } from '../database/storage/data-model';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { Aetheryte } from '../data/aetheryte';
-import { AlarmGroup } from './alarm-group';
-import { CompactMasterbook } from '../../model/common/compact-masterbook';
-import { FishingBait } from '../../modules/list/model/fishing-bait';
 import { Vector3 } from '../tools/vector3';
+import { FishingBait } from '../data/model/fishing-bait';
 
 export class Alarm extends DataModel {
 
@@ -39,7 +37,7 @@ export class Alarm extends DataModel {
   fishEyes?: boolean;
 
   hookset?: string;
-  baits?: number[];
+  baits?: FishingBait[];
   gig?: string;
   weathers?: number[];
   weathersFrom?: number[];

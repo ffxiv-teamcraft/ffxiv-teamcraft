@@ -215,13 +215,7 @@ export class UserInventory extends DataModel {
           const diff = retainerGilRef?.quantity - newRetainerGilCount;
           retainerGilRef.quantity = newRetainerGilCount;
           this.items[this.contentId][ContainerType.Currency][0].quantity -= diff;
-          // Emit patch for metrics system
-          return {
-            quantity: diff,
-            containerId: ContainerType.Currency,
-            hq: false,
-            itemId: 1
-          };
+          return null;
         }
         return null;
       case 'split':

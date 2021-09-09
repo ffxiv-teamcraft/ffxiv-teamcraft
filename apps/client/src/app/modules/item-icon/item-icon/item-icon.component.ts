@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } f
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-icon',
@@ -47,15 +48,24 @@ export class ItemIconComponent implements OnChanges {
   collectable = false;
 
   constructor(private translate: TranslateService, private lazyData: LazyDataService,
-              private ipc: IpcService) {
+              private ipc: IpcService, private router: Router) {
   }
 
   getLink(): string {
     return `/db/${this.translate.currentLang}/item/${this.itemId}`;
   }
 
-  openInBrowser(url: string): void {
-    this.ipc.send('open-link', url);
+  handleClick(event: MouseEvent): void {
+    if (this.disableClick) {
+      return;
+    }
+    if (event.which === 2) {
+      this.ipc.send('open-link', 'https://ffxivteamcraft.com' + this.getLink());
+    } else if (this.ipc.overlayUri) {
+      this.ipc.send('overlay:open-page', this.getLink());
+    } else {
+      this.router.navigateByUrl(this.getLink());
+    }
   }
 
   getIcon(): string {

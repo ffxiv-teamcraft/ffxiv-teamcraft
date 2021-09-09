@@ -30,7 +30,6 @@ import { AlarmGroup } from '../alarm-group';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
-import { weatherIndex } from '../../data/sources/weather-index';
 import { mapIds } from '../../data/sources/map-ids';
 import { LazyDataService } from '../../data/lazy-data.service';
 import { GatheringNode } from '../../data/model/gathering-node';
@@ -56,7 +55,7 @@ export class AlarmsFacade {
       if (this.regenerating) {
         return [null];
       }
-      if (alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '7.999.999')) {
+      if (environment.production && alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '8.5.2')) {
         this.regenerateAlarms(alarms);
         return [null];
       }
@@ -333,10 +332,11 @@ export class AlarmsFacade {
         if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
           return {
             weather: weather,
-            spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration, weatherIndex[mapIds.find(m => m.id === alarm.mapId).weatherRate])
+            spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration,
+              alarm.spawns, alarm.duration)
           };
         }
-        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration) };
+        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, alarm.spawns, alarm.duration) };
       })
       .filter(spawn => spawn.spawn !== null)
       .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());

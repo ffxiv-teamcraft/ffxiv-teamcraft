@@ -23,6 +23,7 @@
   "Change_character": "キャラクター",
   "Check_guides": "ガイドを確認してください",
   "Guides_links": "Teamcraft ガイド",
+  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -387,6 +388,7 @@
     "Always_on_top": "常に最前面",
     "Start_minimized": "起動時に最小化",
     "Always_quit": "閉じるボタンをクリックすると最小化せず終了します",
+    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
     "Check_for_update": "アップデートを確認する",
     "Downloading_update": "アップデートがダウンロード中",
     "No_update_available": "利用可能な更新はありません",
@@ -1705,7 +1707,8 @@
       "Show_more": "{{amount}} 件のコメントを見る",
       "No_comments": "コメントなし",
       "Post": "投稿",
-      "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status"
+      "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status",
+      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",

@@ -5,6 +5,7 @@ import { GatheringNode } from './model/gathering-node';
 import { getItemSource } from '../../modules/list/model/list-row';
 import { DataType } from '../../modules/list/data/data-type';
 import { LocalizedDataService } from './localized-data.service';
+import { FishingBait } from './model/fishing-bait';
 
 @Injectable({
   providedIn: 'root'
@@ -159,7 +160,13 @@ export class GatheringNodesService {
 
       node.baits = gtFish.bait.map(bait => {
         const baitData = this.gtData.getBait(bait);
-        return baitData.id;
+        const baitModel: FishingBait = {
+          id: baitData.id
+        };
+        if (baitData.mooch) {
+          baitModel.tug = ['Medium', 'Big', 'Light'].indexOf(this.gtData.getFishingSpots(baitData.id).find(baitSpot => baitSpot.spot === gtFish.spot)?.tug);
+        }
+        return baitModel;
       });
       if (gtFish.weather) {
         node.limited = true;

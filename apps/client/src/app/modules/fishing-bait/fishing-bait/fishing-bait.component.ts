@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FishingBait } from '../../list/model/fishing-bait';
+import { FishingBait } from '../../../core/data/model/fishing-bait';
 
 @Component({
   selector: 'app-fishing-bait',
@@ -9,7 +9,7 @@ import { FishingBait } from '../../list/model/fishing-bait';
 export class FishingBaitComponent {
 
   @Input()
-  baits: number[];
+  baits: FishingBait[];
 
   @Input()
   flex = 'column';

@@ -32,7 +32,7 @@ export class FishHooksetsComponent {
       return Object.values(res.data.byId)
         .sort((a, b) => b.occurrences - a.occurrences)
         .map((entry) => ({
-          tugName: ['Medium', 'Big', 'Light'][entry.id],
+          tug: entry.id,
           percent: (100 * entry.occurrences) / res.data.total,
         }));
     }),

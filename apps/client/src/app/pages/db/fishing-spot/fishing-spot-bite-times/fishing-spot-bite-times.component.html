@@ -2,7 +2,16 @@
   <ng-template #baitSelector>
     <nz-select *ngIf="baitIds$ | async as baits" [ngModel]="baitFilter$ | async" (ngModelChange)="setBaitId($event)" nzShowSearch class="bait-selector">
       <nz-option [nzValue]="-1" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
-      <nz-option *ngFor="let bait of baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
+      <nz-option *ngFor="let bait of baits" [nzLabel]="bait | itemName | i18n"
+                 [nzValue]="bait"
+                 nzCustomContent>
+        <div [title]="bait | itemName | i18n" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img [src]="bait | lazyIcon" alt="" class="bait-icon">
+          <div>
+            {{bait | itemName | i18n}}
+          </div>
+        </div>
+      </nz-option>
     </nz-select>
   </ng-template>
   <div>

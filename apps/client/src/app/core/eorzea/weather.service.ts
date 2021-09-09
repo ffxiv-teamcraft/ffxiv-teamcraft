@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { mapIds } from '../data/sources/map-ids';
 import { weatherIndex } from '../data/sources/weather-index';
 import { EorzeanTimeService } from './eorzean-time.service';
-import { add, format, sub } from 'date-fns';
+import { add, sub } from 'date-fns';
+import { TimeUtils } from '../alarms/time.utils';
 
 @Injectable()
 export class WeatherService {
@@ -40,24 +41,35 @@ export class WeatherService {
     return 1;
   }
 
-  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, weatherRate?: any, iterations = 0): Date | null {
+  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, spawns?: number[], duration?: number, weatherRate?: any, iterations = 0): Date | null {
     if (iterations >= 500) {
       return null;
     }
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
     if (this.getWeather(mapId, timestamp + 1000, weatherRate) === weatherId) {
-      const resultDate = new Date(timestamp);
-      resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
-      resultDate.setUTCMinutes(0);
-      resultDate.setUTCSeconds(0);
-      return resultDate;
+      if (spawns?.length > 0) {
+        const spawnHour = new Date(timestamp).getUTCHours();
+        if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, (spawnHour + 8) % 24]) !== null)) {
+          const resultDate = new Date(timestamp);
+          resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
+          resultDate.setUTCMinutes(0);
+          resultDate.setUTCSeconds(0);
+          return resultDate;
+        }
+      } else {
+        const resultDate = new Date(timestamp);
+        resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
+        resultDate.setUTCMinutes(0);
+        resultDate.setUTCSeconds(0);
+        return resultDate;
+      }
     }
-    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate, iterations + 1);
+    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), spawns, duration, weatherRate, iterations + 1);
   }
 
-  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate?: any, iteration = 0): Date | null {
+  public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, spawns?: number[], duration?: number, weatherRate?: any, iteration = 0): Date | null {
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    const nextStart = this.getNextWeatherStart(mapId, weatherId, timestamp, weatherRate);
+    const nextStart = this.getNextWeatherStart(mapId, weatherId, timestamp, spawns, duration, weatherRate);
     if (nextStart === null) {
       return null;
     }
@@ -67,7 +79,7 @@ export class WeatherService {
     if (fromWeatherIds.includes(previousWeather)) {
       return nextStart;
     }
-    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(nextStart.getTime() + 5), weatherRate, iteration + 1);
+    return this.getNextWeatherTransition(mapId, fromWeatherIds, weatherId, this.nextWeatherTime(nextStart.getTime() + 5), spawns, duration, weatherRate, iteration + 1);
   }
 
   public nextWeatherTime(timestamp: number): number {

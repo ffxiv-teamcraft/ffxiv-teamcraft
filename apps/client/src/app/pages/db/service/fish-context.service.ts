@@ -174,7 +174,7 @@ export class FishContextService {
   public readonly biteTimesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getBiteTimes(fishId, spotId)),
-    map(occurrenceResultMapper('biteTimes', 'biteTime')),
+    map(occurrenceResultMapper('biteTimes', 'flooredBiteTime')),
     shareReplay(1)
   );
 
@@ -270,7 +270,7 @@ export class FishContextService {
         ({ total, byFish }, val) => {
           const fishEntry = byFish[val.itemId] ?? { total: 0, byTime: {} };
           fishEntry.total += val.occurences;
-          fishEntry.byTime[val.biteTime] = (fishEntry.byTime[val.biteTime] ?? 0) + val.occurences;
+          fishEntry.byTime[val.flooredBiteTime] = (fishEntry.byTime[val.flooredBiteTime] ?? 0) + val.occurences;
           const next = { ...byFish, [val.itemId]: fishEntry };
           return { total: total + val.occurences, byFish: next };
         },

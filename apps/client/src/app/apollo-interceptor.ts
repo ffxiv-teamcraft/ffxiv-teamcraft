@@ -10,7 +10,7 @@ export class ApolloInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    if (req.url.indexOf('/gubal') > -1) {
+    if (req.url.indexOf('gubal.') > -1) {
       return this.authFacade.idToken$
         .pipe(
           filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),

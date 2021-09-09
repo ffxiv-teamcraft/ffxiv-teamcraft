@@ -57,7 +57,7 @@
       <td>{{data.etime}}</td>
       <td>{{ (data.biteTime / 10) | number:'1.1':translate.currentLang}}s</td>
       <td>{{ (data.snagging ? 'Yes' : 'No') | translate }}</td>
-      <td>{{ ('DB.FISH.TUG.' + getTugName(data.tug)) | translate }}</td>
+      <td>{{ data.tug | tugName | translate }}</td>
       <td>{{ data.gathering }}</td>
       <td>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

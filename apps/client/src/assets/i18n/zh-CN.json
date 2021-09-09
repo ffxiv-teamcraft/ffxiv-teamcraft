@@ -23,6 +23,7 @@
   "Change_character": "角色",
   "Check_guides": "查阅我们的指南",
   "Guides_links": "TC引导手册",
+  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -387,6 +388,7 @@
     "Always_on_top": "总在最上层",
     "Start_minimized": "启动时最小化到托盘",
     "Always_quit": "关闭窗口时退出 (而不是最小化)",
+    "Enable_minimize_reduction": "点击最小化按钮时最小化到托盘 (将不会在任务栏显示)",
     "Check_for_update": "检查更新",
     "Downloading_update": "正在下载更新",
     "No_update_available": "已是最新版本",
@@ -1705,7 +1707,8 @@
       "Show_more": "查看其他{{amount}} 个评论",
       "No_comments": "暂无评论",
       "Post": "发布",
-      "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)"
+      "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)",
+      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",

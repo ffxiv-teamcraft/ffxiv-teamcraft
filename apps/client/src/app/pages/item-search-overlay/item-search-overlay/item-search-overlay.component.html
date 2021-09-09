@@ -17,7 +17,7 @@
     </nz-autocomplete>
     <div class="result-display" *ngIf="selectedItem$ | async as display; else welcome" fxLayout="column" fxLayoutGap="10px">
       <div class="item-card" fxLayout="row" fxLayoutGap="5px">
-        <app-item-icon tooltipDisabled="true" disableClick="true" [itemId]="display.data.id"></app-item-icon>
+        <app-item-icon tooltipDisabled="true" [itemId]="display.data.id"></app-item-icon>
         <div fxLayout="column" fxLayoutGap="5px">
           <div>{{display.data.id | itemName | i18n}}</div>
           <div fxLayout="row wrap" *ngIf="display.inventoryItems.length > 0; else nothingInsideInventory">

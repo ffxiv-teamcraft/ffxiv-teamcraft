@@ -21,8 +21,9 @@
   "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "팀크래프트 가이드 보기",
+  "Guides_links": "팀크래프트 가이드",
+  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -321,7 +322,7 @@
   "Favorite": "즐겨찾기",
   "Adding_recipes": "{{amount}}개의 제작법을 {{listname}} 목록에 추가 중",
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
-  "Recipes_Added": "{{itemcount}} items added to list {{listname}}, click this notification to open the list.",
+  "Recipes_Added": "{{listname}} 에 {{itemcount}} 개의 아이템이 추가되었습니다, 알림을 클릭하면 목록이 열립니다.",
   "Character_name": "캐릭터 이름",
   "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
@@ -387,6 +388,7 @@
     "Always_on_top": "항상 위에 표시",
     "Start_minimized": "트레이 모드로 실행",
     "Always_quit": "닫기 버튼으로 팀크래프트 완전히 종료하기(미설정시 최소화)",
+    "Enable_minimize_reduction": "창 최소화시 작업표시줄이 아닌 트레이로 이동시키기",
     "Check_for_update": "업데이트 확인",
     "Downloading_update": "업데이트 다운로드 중",
     "No_update_available": "사용가능한 업데이트가 없습니다.",
@@ -532,7 +534,7 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "패킷 캡처를 사용하여 능력치 자동채우기 (음식 사용시 음식도 포함됩니다)",
     "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해주시고, 완료가 되면 이 팝업창을 닫으세요.(음식효과가 포함되지않게 해주세요. 시뮬레이터 사용시 음식효과가 포함된 능력치면 사용할 때 문제가 생길 수 있습니다)",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
@@ -624,7 +626,7 @@
     "Can_skip_buying_X": "{{amount}} 개 스킵 가능",
     "Can_skip_buying_entirely": "전부 스킵 가능",
     "Can_skip_tooltip": "다른 아이템을 구매하기 위해선 해당 아이템이 필요합니다. 즉, 해당 패널에 있는 모든 것을 구매할 계획이라면 아이템을 적게 구매하거나 완전히 건너뛸 수 있습니다",
-    "Requirements_ignored": "Requirements ignored",
+    "Requirements_ignored": "무시된 재료",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -715,8 +717,8 @@
     "Commission_list": "유저 의뢰 목록",
     "Inventory_cleanup": "소지품 정리",
     "Inventory_cleanup_description": "여기는 목록에 사용되지 않는 소지품 내아이템입니다",
-    "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Consider_requirements": "재료 포함하기",
+    "Ignore_requirements": "재료 무시하기",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -1005,10 +1007,10 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
-    "No_matching_rotations": "No community rotation found that match your needs",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Find_rotation": "커뮤니티 로테이션 검색기",
+    "Searching_for_rotation": "커뮤니티 로테이션 검색 중...",
+    "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
+    "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
@@ -1052,7 +1054,7 @@
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "성공률: {{collectability}}",
       "Set_to_simulate": "능력치",
       "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
       "Steps_count": "{{count}} 공정",
@@ -1611,7 +1613,7 @@
       "Repeatable": "반복가능",
       "Beast_tribe_rank": "야만족 우호 단계",
       "Chain_length": "연계 퀘스트 수",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "거래 가능 품목"
     },
     "NPC": {
       "Other_entries": "다른 출현위치",
@@ -1705,7 +1707,8 @@
       "Show_more": "{{amount}} 개의 댓글 더 보기",
       "No_comments": "댓글 없음",
       "Post": "게시",
-      "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status"
+      "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
+      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
@@ -1785,7 +1788,7 @@
     "Recipe_level": "제작법 레벨",
     "Shown_only_not_completed": "수첩에서 완료되지 않은 항목만 표시",
     "Add_results_to_pool": "제작 목록에 추가할 때 소지품 내역에도 추가하기",
-    "Show_only_leve_items": "Only items used in levequests"
+    "Show_only_leve_items": "길드 의뢰에서 사용되는 아이템"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1794,9 +1797,9 @@
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다.",
-    "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "Loading_data": "선택된 화폐의 데이터 로딩 중",
+    "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
+    "X_sold_last_week": "지난 주 {{amount}} 개 판매"
   },
   "FOOD_PICKER": {
     "Title": "음식 선택기",
@@ -1982,7 +1985,7 @@
       "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
+      "Title": "단일 레시피에서만 사용되는 아이템입니다",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
@@ -2054,7 +2057,7 @@
     "Value_for_previous": "이전 중단점",
     "Editing_others_gearset": "로컬 편집 모드",
     "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "선택된 모든 장비의 마테리아 제거",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -2147,7 +2150,7 @@
       "More_actions_button": "이 버튼으로 지금 목록에서 할 수 있는 여러 다른 액션 메뉴를 열수 있습니다. 여러분들은 레이아웃 에디터를 통해 이 액션 버튼들을 편집할 수 있습니다.",
       "Alarm_button": "여기를 눌러 이 아이템을 위한 알람을 설정하세요, 알람을 설정하시면 이 아이템이 스폰될 때 알려드립니다.",
       "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "Mark whole panel HQ"
+      "Mark_whole_panel_hq": "모든 패널에 HQ마크 표시"
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
@@ -2540,7 +2543,7 @@
     "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
     "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람",
-    "Reset_retainers": "Reset retainers"
+    "Reset_retainers": "집사 초기화"
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",

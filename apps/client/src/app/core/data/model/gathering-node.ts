@@ -1,3 +1,5 @@
+import { FishingBait } from './fishing-bait';
+
 export interface GatheringNode {
   id: number;
   items: number[];
@@ -20,7 +22,7 @@ export interface GatheringNode {
    */
   predators?: { id: number, amount: number }[];
   hookset?: 'powerful' | 'precision';
-  baits?: number[];
+  baits?: FishingBait[];
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;
