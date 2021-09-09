@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Charakterdatenordner (wo sich die CHRXXXXXXX-Ordner befinden)",
     "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximaler Preis für einen Artikel, der vom Layoutfilter CAN_BE_BOUGHT berücksichtigt werden soll (0 = kein maximaler Preis)",
