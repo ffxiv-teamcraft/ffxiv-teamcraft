@@ -191,7 +191,7 @@ export class IpcListenersManager {
         createFileSync(fishingDumpPath);
       }
       const fishingDump = readFileSync(fishingDumpPath, 'utf8') || '[]';
-      writeFileSync(fishingDumpPath, JSON.stringify([...fishingDump], data));
+      writeFileSync(fishingDumpPath, JSON.stringify([...JSON.parse(fishingDump)], data));
     });
 
   }
