@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.2"></a>
+## [8.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.1...v8.5.2) (2021-09-09)
+
+
+### Bug Fixes
+
+* **alarms:** fixed weather transition and spawns intersection sometimes not optimal ([c1d7192](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1d7192))
+* **leveling-equipment:** fixed secondary stat not accurate with tank gear above lvl 50 ([dfc6fbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dfc6fbb))
+* **levequests:** fixed gamerescape link not working on desktop app ([ef802c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef802c2))
+* **list:** fixed list name display in half 1080p screen size ([30ae908](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30ae908))
+* **metrics:** retainer gil obtained from marketboard should now be tagged as marketboard income ([a4fced9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4fced9))
+* **simulator:** actions are now disabled even on first step if you can't use them ([f136a86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f136a86))
+* **ux:** moved universalis link to the top of the marketboard info popup ([9394bc8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9394bc8))
+
+
+### Features
+
+* **desktop:** clicking an item icon in overlay now opens db page in main window ([c867303](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c867303))
+* **fishing:** add fish, bait icons to fishing-spot-bite-times box plot ([adce65a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/adce65a))
+* **fishing:** added tug information to bait chains display when needed ([459b14a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/459b14a))
+* **fishing:** migrate to new gubal with Hasura Cloud 2.0 ([bb2f87f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bb2f87f))
+* **ux:** added tug label next to fish name in bite times chart ([0fe0891](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fe0891))
+
+
+
 <a name="8.5.1"></a>
 ## [8.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.0...v8.5.1) (2021-09-01)
 
