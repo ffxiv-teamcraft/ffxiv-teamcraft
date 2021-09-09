@@ -3,7 +3,7 @@ import { ProbeReport } from '../model/probe-report';
 import { InjectionToken } from '@angular/core';
 import { ProbeSource } from '../model/probe-source';
 import { ofMessageType } from '../../../core/rxjs/of-message-type';
-import { distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, startWith } from 'rxjs/operators';
 import { EventHandlerType } from '../../../core/electron/event-handler-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 
@@ -63,7 +63,8 @@ export abstract class PlayerMetricProbe {
         return ProbeSource.TELEPORT;
       }
       return ProbeSource.UNKNOWN;
-    })
+    }),
+    startWith(ProbeSource.UNKNOWN)
   );
 
   protected source$ = merge(this.eventSource$, this.teleportSource$);
