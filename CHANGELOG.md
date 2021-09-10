@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.3"></a>
+## [8.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.2...v8.5.3) (2021-09-10)
+
+
+### Bug Fixes
+
+* **log-tracker:** fixed duplicate displays in fishing log tracker ([99bbb8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99bbb8a))
+* **log-tracker:** fixed wrong tooltip for powerful and precision hooksets ([d051fb4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d051fb4))
+
+
+### Features
+
+* **fishing:** added local dump setting for fishing reports ([e1187ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1187ff))
+
+
+
 <a name="8.5.2"></a>
 ## [8.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.1...v8.5.2) (2021-09-09)
 
