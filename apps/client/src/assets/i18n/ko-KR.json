@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "캐릭터 데이터 폴더 (CHRXXXXXXX 폴더가 있는 곳)",
     "Maximum_vendor_price": "상점 구매가 최대치",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
