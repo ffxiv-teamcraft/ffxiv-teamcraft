@@ -516,7 +516,7 @@
       "Autofill_completion": "Auto-Vervollständigung",
       "Retainer_tracker": "Gehilfen-Tracker",
       "Voyage_tracker": "Erkundungs-Tracker",
-      "Reset_timer": "Reset timer"
+      "Reset_timer": "Timer-Zurücksetzung"
     }
   },
   "PROFILE": {
@@ -535,7 +535,7 @@
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "Werte automatisch mit Paketerfassung ausfüllen (berücksichtigt auch Nahrungseffekte)",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
     "Open_public_profile": "Öffentliches Profil öffnen",
     "Community_contributions": "Community-Beiträge",
