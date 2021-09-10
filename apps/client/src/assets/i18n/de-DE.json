@@ -21,9 +21,9 @@
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen.",
   "Selection": "Auswahl",
   "Change_character": "Charakter",
-  "Check_guides": "Check our guides",
+  "Check_guides": "Schau dir unsere Guides an",
   "Guides_links": "Teamcraft Guides",
-  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
+  "Db_ban": "Du hast aufgrund deiner vorherigen Aktivitäten keine Berechtigung, Kommentare in den Datenbank zu veröffentlichen. Wenn du die Sperre diskutieren möchtest, schreibe Miu#1568 auf Discord eine Nachricht.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -214,7 +214,7 @@
     "Regenerate": "Alle Alarme neu generieren",
     "Group_outdated": "Diese Gruppe ist veraltet, bitte den Besitzer, sich mit einem neuen Update anzumelden und es wird aktualisiert",
     "Remove_from_group": "Von dieser Gruppe entfernen",
-    "No_folder": "No folder",
+    "No_folder": "Kein Ordner",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Charakterdatenordner (wo sich die CHRXXXXXXX-Ordner befinden)",
     "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximaler Preis für einen Artikel, der vom Layoutfilter CAN_BE_BOUGHT berücksichtigt werden soll (0 = kein maximaler Preis)",
@@ -515,7 +516,7 @@
       "Autofill_completion": "Auto-Vervollständigung",
       "Retainer_tracker": "Gehilfen-Tracker",
       "Voyage_tracker": "Erkundungs-Tracker",
-      "Reset_timer": "Reset timer"
+      "Reset_timer": "Timer-Zurücksetzung"
     }
   },
   "PROFILE": {
@@ -534,7 +535,7 @@
     "User_not_verified": "Benutzer nicht verifiziert, klicke zum Verifizieren.",
     "More_than_100_lists_created": "Mehr als 100 Listen erzeugt",
     "Veteran": "Veteran",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "Werte automatisch mit Paketerfassung ausfüllen (berücksichtigt auch Nahrungseffekte)",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
     "Open_public_profile": "Öffentliches Profil öffnen",
     "Community_contributions": "Community-Beiträge",

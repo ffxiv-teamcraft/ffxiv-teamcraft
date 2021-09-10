@@ -9,6 +9,7 @@ import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { Tug } from '../data/model/tug';
 import { Hookset } from '../data/model/hookset';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 
 export class FishingReporter implements DataReporter {
@@ -16,7 +17,8 @@ export class FishingReporter implements DataReporter {
   private state: any = {};
 
   constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataService,
-              private etime: EorzeanTimeService, private ipc: IpcService) {
+              private etime: EorzeanTimeService, private ipc: IpcService,
+              private settings: SettingsService) {
   }
 
   private setState(newState: any): void {
@@ -308,6 +310,9 @@ export class FishingReporter implements DataReporter {
             ...reports
           ]
         });
+        if (this.settings.localFishingDataDump) {
+          this.ipc.send('fishing-report', reports);
+        }
       })
     );
   }

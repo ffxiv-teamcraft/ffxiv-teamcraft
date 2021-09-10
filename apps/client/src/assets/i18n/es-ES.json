@@ -453,6 +453,7 @@
     "Enable_metrics_capture_explain": "(permite capturar analíticas de su gil y los ingresos de artículos, nunca son subidos al servidor, esto es sólo para usted)",
     "Metrics_capture_tooltip": "Esta característica se añadirá en una actualización futura, pero habilitar la captura de datos ahora significa que una vez que esté aquí, tendrá datos comenzando ahora en lugar de cuando se agregue a la aplicación.",
     "Metrics_capture_folder": "Carpeta de registro de métricas",
+    "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
     "Maximum_vendor_price": "Maximum vendor price",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",

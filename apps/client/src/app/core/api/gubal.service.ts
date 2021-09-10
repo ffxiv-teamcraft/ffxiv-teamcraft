@@ -24,7 +24,7 @@ export class GubalService {
   }
 
   private submitData(dataType: string, data: any): Observable<void> {
-    const query = gql`mutation addData($data: ${dataType}_insert_input!) {
+    const query = gql`mutation add${dataType}Data($data: ${dataType}_insert_input!) {
         insert_${dataType}(objects: [$data]) {
           affected_rows
         }
