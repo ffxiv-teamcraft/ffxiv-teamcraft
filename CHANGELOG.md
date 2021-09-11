@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.4"></a>
+## [8.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.3...v8.5.4) (2021-09-11)
+
+
+### Bug Fixes
+
+* **alarms:** fixed regeneration not keeping the enabled flag on groups and alarms ([011afb5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/011afb5))
+* **db:** fixed reduction details showing a "show more" button even when not needed ([aee8480](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aee8480))
+* **fishing:** fixed local dump breaking fishing reporter entirely ([92fa781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92fa781))
+
+
+
 <a name="8.5.3"></a>
 ## [8.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.2...v8.5.3) (2021-09-10)
 
