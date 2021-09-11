@@ -159,7 +159,6 @@ workflows:
       - build:
           requires:
             - lint
-            - test
       - deploy-cdn:
           requires:
             - build
@@ -175,7 +174,6 @@ workflows:
       - release-desktop:
           requires:
             - lint
-            - test
           filters:
             branches:
               only: master
