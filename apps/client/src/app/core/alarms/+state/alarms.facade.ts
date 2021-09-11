@@ -480,6 +480,7 @@ export class AlarmsFacade {
       regenerated.userId = alarm.userId;
       regenerated.$key = alarm.$key;
       regenerated.appVersion = environment.version;
+      regenerated.enabled = alarm.enabled;
       return regenerated;
     }
   }
@@ -499,6 +500,7 @@ export class AlarmsFacade {
           clone.alarms = group.alarms;
           clone.$key = group.$key;
           clone.appVersion = environment.version;
+          clone.enabled = group.enabled;
           return clone;
         });
         const newAlarms = alarms.map(alarm => {

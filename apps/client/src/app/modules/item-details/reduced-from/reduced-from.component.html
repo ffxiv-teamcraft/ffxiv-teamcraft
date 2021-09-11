@@ -1,5 +1,5 @@
-<div fxLayout="column" fxLayoutGap="10px">
-  <nz-card *ngFor="let reduction of detailsDisplay$ | async" fxFlex="1 1 auto">
+<div fxLayout="column" fxLayoutGap="10px" *ngIf="detailsDisplay$ | async as detailsDisplay">
+  <nz-card *ngFor="let reduction of detailsDisplay.data" fxFlex="1 1 auto">
     <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
       <ng-template #title>
         <span [appItemRarity]="reduction">{{reduction | itemName | i18n}}</span>
@@ -61,6 +61,6 @@
     </nz-list>
   </nz-card>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <button nz-button *ngIf="!(showEverything$ | async)" (click)="showEverything$.next(true)">{{'COMMON.Show_more' | translate}}</button>
+    <button nz-button *ngIf="detailsDisplay.hasMore" (click)="showEverything$.next(true)">{{'COMMON.Show_more' | translate}}</button>
   </div>
 </div>

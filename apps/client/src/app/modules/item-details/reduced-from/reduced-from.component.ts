@@ -22,9 +22,15 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
   detailsDisplay$ = this.showEverything$.pipe(
     map(showEverything => {
       if (showEverything) {
-        return this.details;
+        return {
+          data: this.details,
+          hasMore: false
+        };
       }
-      return this.details.slice(0, 5);
+      return {
+        data: this.details.slice(0, 5),
+        hasMore: this.details.length > 5
+      };
     })
   );
 

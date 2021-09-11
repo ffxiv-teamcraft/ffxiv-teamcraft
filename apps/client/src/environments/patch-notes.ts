@@ -1,9 +1,5 @@
 export const patchNotes = `### Bug Fixes
 
-* **log-tracker:** fixed duplicate displays in fishing log tracker.
-* **log-tracker:** fixed wrong tooltip for powerful and precision hooksets.
-
-
-### Features
-
-* **fishing:** added local dump setting for fishing reports.`;
+* **alarms:** fixed regeneration not keeping the enabled flag on groups and alarms.
+* **db:** fixed reduction details showing a "show more" button even when not needed.
+* **fishing:** fixed local dump breaking fishing reporter entirely.`;
