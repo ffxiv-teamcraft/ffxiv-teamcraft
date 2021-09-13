@@ -120,7 +120,7 @@ export class PricingComponent implements AfterViewInit {
     const rowsToFill = rows
       .filter(row => {
         const price = this.pricingService.getPrice(row);
-        return this.lazyData.data.marketItems.indexOf(row.id) > -1 && !price.fromVendor || finalItems;
+        return this.lazyData.data.marketItems.includes(row.id) && (!price.fromVendor || finalItems);
       });
     if (rowsToFill.length === 0) {
       return;
