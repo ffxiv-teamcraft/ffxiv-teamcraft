@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { distinctUntilChanged, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, expand, filter, first, last, map, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, Observable, of, ReplaySubject, timer } from 'rxjs';
 import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
@@ -24,6 +24,7 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
+import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -87,15 +88,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           value: 1
         }
       ];
-      if (job >= 8 && job <= 18) {
-        xivapiFilters.push({
-          column: `ClassJobCategoryTargetID`,
-          operator: '>',
-          value: 1
-        });
-      }
       const requests = [
-        this.xivapi.search({
+        this.fullSearchResults({
           indexes: [SearchIndex.ITEM],
           string_algo: SearchAlgo.QUERY_STRING,
           string: '-Dated*',
@@ -394,6 +388,35 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');
+  }
+
+  private fullSearchResults(options: XivapiSearchOptions): Observable<{ Results: any[] }> {
+    return this.xivapi.search(options).pipe(
+      expand((response) => {
+        if (response.Pagination.PageNext) {
+          return timer(200).pipe(
+            first(),
+            switchMapTo(this.xivapi.search({
+                ...options,
+                page: response.Pagination.PageNext
+              }).pipe(
+              map(res => {
+                return {
+                  ...res,
+                  Results: [
+                    ...response.Results,
+                    ...res.Results
+                  ]
+                };
+              })
+              )
+            )
+          );
+        }
+        return EMPTY;
+      }),
+      last()
+    );
   }
 
   ngOnInit() {
