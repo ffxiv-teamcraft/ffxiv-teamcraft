@@ -344,7 +344,7 @@ export class AlarmsFacade {
       for (const spawn of sortedSpawns) {
         const despawn = (spawn + alarm.duration) % 24;
         const weatherStart = weatherSpawn.spawn.getUTCHours();
-        const weatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
+        const weatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
         const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
         if (range) {
           const intersectSpawn = range[0];

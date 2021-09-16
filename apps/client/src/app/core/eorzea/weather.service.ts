@@ -41,15 +41,24 @@ export class WeatherService {
     return 1;
   }
 
+  public getNextDiffWeatherTime(timestamp: number, currentWeather: number, mapId: number): number {
+    const nextWeatherTime = this.nextWeatherTime(timestamp);
+    if (this.getWeather(mapId, timestamp) !== currentWeather) {
+      return nextWeatherTime;
+    }
+    return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
+  }
+
   public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, spawns?: number[], duration?: number, weatherRate?: any, iterations = 0): Date | null {
     if (iterations >= 500) {
       return null;
     }
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    if (this.getWeather(mapId, timestamp + 1000, weatherRate) === weatherId) {
+    if (this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
       if (spawns?.length > 0) {
         const spawnHour = new Date(timestamp).getUTCHours();
-        if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, (spawnHour + 8) % 24]) !== null)) {
+        const despawnHour = new Date(this.getNextDiffWeatherTime(timestamp, weatherId, mapId)).getUTCHours();
+        if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, despawnHour]) !== null)) {
           const resultDate = new Date(timestamp);
           resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
           resultDate.setUTCMinutes(0);
