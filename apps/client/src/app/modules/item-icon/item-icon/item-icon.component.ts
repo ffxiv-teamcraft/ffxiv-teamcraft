@@ -56,11 +56,16 @@ export class ItemIconComponent implements OnChanges {
   }
 
   handleClick(event: MouseEvent): void {
+    event.preventDefault();
     if (this.disableClick) {
       return;
     }
     if (event.which === 2) {
-      this.ipc.send('open-link', 'https://ffxivteamcraft.com' + this.getLink());
+      if (this.ipc.ready) {
+        this.ipc.send('open-link', 'https://ffxivteamcraft.com' + this.getLink());
+      } else {
+        window.open('https://ffxivteamcraft.com' + this.getLink(), '_blank');
+      }
     } else if (this.ipc.overlayUri) {
       this.ipc.send('overlay:open-page', this.getLink());
     } else {
