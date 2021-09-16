@@ -23,6 +23,7 @@ describe('TimeUtils', () => {
     expect(TimeUtils.getIntersection([22, 4], [16, 8])).toEqual([22, 4]);
     expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
     expect(TimeUtils.getIntersection([16, 20], [16, 0])).toEqual([16, 20]);
+    expect(TimeUtils.getIntersection([22, 4], [1, 16])).toEqual([1, 4]);
   });
 
   it('Should detect if an hour is in a given interval', () => {

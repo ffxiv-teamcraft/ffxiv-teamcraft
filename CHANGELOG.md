@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.5"></a>
+## [8.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.4...v8.5.5) (2021-09-16)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with weather + time combination lasting more than 8 hours ([88a8c97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88a8c97))
+* **gearset:** fixed anb issue with lower level crafting and gathering items not showing ([8dfc511](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8dfc511))
+* **icons:** fixed middle click not opening the db page in new tab anymore ([3be76b9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3be76b9))
+* **pricing-mode:** fixed final items not handling unmarketable items properly ([31d1dc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31d1dc3))
+
+
+### Features
+
+* **db:** support for korean v5.5 update ([2646401](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2646401))
+
+
+
 <a name="8.5.4"></a>
 ## [8.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.3...v8.5.4) (2021-09-11)
 

@@ -22,7 +22,11 @@ export class TimeUtils {
     const [b1, b2] = this.splitInterval(b);
     const firstDay = this.getSimpleIntersection(a1, b1);
     const secondDay = this.getSimpleIntersection(a2, b2);
+    const possibleSecondDay = this.getSimpleIntersection(a2, b1);
     if (!firstDay && !secondDay) {
+      if (possibleSecondDay) {
+        return possibleSecondDay;
+      }
       return null;
     }
     if (firstDay && !secondDay) {
