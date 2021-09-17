@@ -628,6 +628,8 @@
     "Can_skip_buying_entirely": "Можно полностью пропустить",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "Requirements_ignored": "Requirements ignored",
+    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "По умолчанию",
       "Only_large": "Только крупные списки",
@@ -2149,9 +2151,7 @@
       "Fill_with_inventory": "Вы можете добавить всё, что есть в вашем инвентаре внутри этого списка.",
       "Pricing_mode_button": "Легко подготавливать и прогнозировать свои выгоды для этого списка, используя режим ценообразования.",
       "More_actions_button": "Эта кнопка открывает меню с множеством различных действий для текущей строки списка. Вы можете преобразовать эти действия в кнопки с помощью редактора макетов.",
-      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении.",
-      "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "Mark whole panel HQ"
+      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении."
     },
     "LISTS": {
       "Merge": "Вы можете объединить два списка, используя кнопку объединения.",
