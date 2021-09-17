@@ -49,15 +49,15 @@ export class WeatherService {
     return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
   }
 
-  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, spawns?: number[], duration?: number, weatherRate?: any, iterations = 0): Date | null {
-    if (iterations >= 500) {
-      return null;
-    }
+  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, transition: boolean, spawns?: number[], duration?: number, weatherRate?: any, iterations = 0): Date | null {
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    if (this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
+    const currentWeather = this.getWeather(mapId, timestamp, weatherRate);
+    if (currentWeather === weatherId) {
       if (spawns?.length > 0) {
         const spawnHour = new Date(timestamp).getUTCHours();
-        const despawnHour = new Date(this.getNextDiffWeatherTime(timestamp, weatherId, mapId)).getUTCHours();
+        const transitionDespawnHour = new Date(this.nextWeatherTime(timestamp)).getUTCHours();
+        const normalDespawnHour = new Date(this.getNextDiffWeatherTime(timestamp, weatherId, mapId)).getUTCHours();
+        const despawnHour = transition ? transitionDespawnHour : normalDespawnHour;
         if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, despawnHour]) !== null)) {
           const resultDate = new Date(timestamp);
           resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
@@ -73,12 +73,17 @@ export class WeatherService {
         return resultDate;
       }
     }
-    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), spawns, duration, weatherRate, iterations + 1);
+
+    try {
+      return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), transition, spawns, duration, weatherRate, iterations + 1);
+    } catch (maxCallStack) {
+      return null;
+    }
   }
 
   public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, spawns?: number[], duration?: number, weatherRate?: any, iteration = 0): Date | null {
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
-    const nextStart = this.getNextWeatherStart(mapId, weatherId, timestamp, spawns, duration, weatherRate);
+    const nextStart = this.getNextWeatherStart(mapId, weatherId, timestamp, true, spawns, duration, weatherRate);
     if (nextStart === null) {
       return null;
     }

@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { weatherIndex } from 'apps/client/src/app/core/data/sources/weather-index';
+import { weatherIndex } from '../../../../core/data/sources/weather-index';
 import { EorzeanTimeService } from 'apps/client/src/app/core/eorzea/eorzean-time.service';
 import { WeatherService } from 'apps/client/src/app/core/eorzea/weather.service';
 import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
@@ -13,7 +13,7 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
   templateUrl: './fishing-spot-weathers.component.html',
   styleUrls: ['./fishing-spot-weathers.component.less', '../../common-db.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FishingSpotUtilsService],
+  providers: [FishingSpotUtilsService]
 })
 export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
   private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
@@ -32,9 +32,9 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
         ?.map((row) => {
           return {
             chances: 100 * this.utils.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId),
-            next: this.etime.toEarthDate(this.weatherService.getNextWeatherStart(spot.TerritoryType.MapTargetID, row.weatherId, time.getTime())),
+            next: this.etime.toEarthDate(this.weatherService.getNextWeatherStart(spot.TerritoryType.MapTargetID, row.weatherId, time.getTime(), false)),
             weatherId: row.weatherId,
-            active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId,
+            active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId
           };
         })
         .sort((a, b) => (a.active ? -1 : b.active ? 1 : a.next - b.next));
@@ -52,7 +52,8 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
     private readonly etime: EorzeanTimeService,
     private readonly weatherService: WeatherService,
     private readonly cd: ChangeDetectorRef
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.highlightColor$.pipe(takeUntil(this.unsubscribe$)).subscribe((color) => {
