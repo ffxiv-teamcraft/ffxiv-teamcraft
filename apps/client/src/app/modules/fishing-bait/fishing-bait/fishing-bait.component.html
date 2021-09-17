@@ -6,7 +6,7 @@
                      [itemId]="bait.id" [tooltipDisabled]="true" [width]="iconWidth"></app-item-icon>
       <div *ngIf="!hideNames" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
         <div>{{bait.id | itemName | i18n}}</div>
-        <i class="tug" *ngIf="index > 0">{{bait.tug | tugName | translate}}</i>
+        <i class="tug" *ngIf="index > 0 && bait.tug">{{bait.tug | tugName | translate}}</i>
       </div>
     </div>
     <i *ngIf="!last" [nzType]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>

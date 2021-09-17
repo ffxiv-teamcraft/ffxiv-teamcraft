@@ -75,7 +75,7 @@ export class WeatherService {
     }
 
     try {
-      return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), transition, spawns, duration, weatherRate, iterations + 1);
+      return this.getNextWeatherStart(mapId, weatherId, this.getNextDiffWeatherTime(timestamp, currentWeather, mapId), transition, spawns, duration, weatherRate, iterations + 1);
     } catch (maxCallStack) {
       return null;
     }
