@@ -628,6 +628,8 @@
     "Can_skip_buying_entirely": "可以全部跳过",
     "Can_skip_tooltip": "其他可以购买的物品需要此物品。这意味着如果你计划购买面板中所有的其他物品，就可以少购买或直接忽略此物品。",
     "Requirements_ignored": "已忽略素材",
+    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -2149,9 +2151,7 @@
       "Fill_with_inventory": "你可以将物品栏中已有的物品填充至清单",
       "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
       "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
-      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知",
-      "Mark_whole_panel_nq": "移除所有手动添加的HQ标志",
-      "Mark_whole_panel_hq": "标记整个面板为HQ"
+      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知"
     },
     "LISTS": {
       "Merge": "可以使用“合并清单”按钮合并两个清单",
