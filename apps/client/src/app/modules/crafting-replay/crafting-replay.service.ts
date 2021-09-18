@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from '../../core/electron/ipc.service';
 import { combineLatest, merge, Observable } from 'rxjs';
-import { filter, map, scan, withLatestFrom, shareReplay, distinctUntilKeyChanged } from 'rxjs/operators';
+import { distinctUntilKeyChanged, filter, map, scan, shareReplay, withLatestFrom } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CraftingReplay } from './model/crafting-replay';
 import firebase from 'firebase/app';
@@ -10,6 +10,7 @@ import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
 import { EventPlay32 } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { EnvironmentService } from '../../core/environment.service';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
@@ -25,14 +26,14 @@ export class CraftingReplayService {
         playerStats.cp,
         false,
         updateClassInfo.level,
-        [80, 80, 80, 80, 80, 80, 80, 80]
+        [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]
       );
     }),
     shareReplay(1)
   );
 
   constructor(private ipc: IpcService, private afs: AngularFirestore, private craftingReplayFacade: CraftingReplayFacade,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private env: EnvironmentService) {
   }
 
   public init(): void {

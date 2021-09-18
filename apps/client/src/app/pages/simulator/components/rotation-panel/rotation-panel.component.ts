@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { CraftingAction, GearSet, Simulation, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
+import { CraftingAction, GearSet, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -28,7 +28,7 @@ import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { EnvironmentService } from '../../../../core/environment.service';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -92,7 +92,8 @@ export class RotationPanelComponent implements OnInit {
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
               public platformService: PlatformService, private simulationService: SimulationService,
-              private settings: SettingsService, private lazyData: LazyDataService) {
+              private settings: SettingsService, private lazyData: LazyDataService,
+              private env: EnvironmentService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
@@ -126,7 +127,7 @@ export class RotationPanelComponent implements OnInit {
           stats.specialist,
           stats.level,
           gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] :
-            [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
+            [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]);
         const recipe = this.lazyData.data.recipes.find(r => r.id === rotation.recipe.id);
         return new this.simulator.Simulation(recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })

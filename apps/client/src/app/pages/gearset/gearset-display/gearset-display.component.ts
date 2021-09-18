@@ -29,6 +29,7 @@ import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-gearset-display',
@@ -57,7 +58,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     ['feet', 'crystal']
   ];
 
-  public level$ = new BehaviorSubject<number>(80);
+  public level$ = new BehaviorSubject<number>(this.env.maxLevel);
 
   public tribe$ = new BehaviorSubject<number>(1);
 
@@ -85,7 +86,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   tribesMenu = this.gearsetsFacade.tribesMenu;
 
-  maxLevel = environment.maxLevel;
+  maxLevel = this.env.maxLevel;
 
   permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
 
@@ -104,7 +105,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private router: Router, private i18n: I18nToolsService,
               private l12n: LocalizedDataService, private message: NzMessageService,
               private authFacade: AuthFacade, private clipboard: Clipboard,
-              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade) {
+              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade,
+              private env: EnvironmentService) {
     super();
     this.activatedRoute.paramMap
       .pipe(

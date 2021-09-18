@@ -28,12 +28,12 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
-import { environment } from '../../../../environments/environment';
 import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-search',
@@ -43,7 +43,7 @@ import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
 export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   //Minimum and Maximum values for various nz-input-number elements
-  curMaxLevel = environment.maxLevel; //max player level
+  curMaxLevel = this.env.maxLevel; //max player level
   maxilvlFilter = 999;
   maxStatFilter = 99999;
 
@@ -93,7 +93,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     collectable: [false],
     // Instances, leves and actions
     lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
+    lvlMax: [this.curMaxLevel]
   });
 
   availableStats = stats;
@@ -213,7 +213,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
-              private analytics: GoogleAnalyticsService,
+              private analytics: GoogleAnalyticsService, private env: EnvironmentService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
     super();
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {

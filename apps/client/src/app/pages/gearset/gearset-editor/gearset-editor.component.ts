@@ -18,13 +18,13 @@ import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
-import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
 import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -40,7 +40,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     ilvlMin: [460],
     ilvlMax: [999],
     elvlMin: [1],
-    elvlMax: [environment.maxLevel]
+    elvlMax: [this.env.maxLevel]
   });
 
   categoriesOrder: string[] = [
@@ -277,7 +277,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
-  public level$ = new BehaviorSubject<number>(80);
+  public level$ = new BehaviorSubject<number>(this.env.maxLevel);
 
   public tribe$ = new BehaviorSubject<number>(1);
 
@@ -312,7 +312,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   tribesMenu = this.gearsetsFacade.tribesMenu;
 
-  maxLevel = environment.maxLevel;
+  maxLevel = this.env.maxLevel;
 
   private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
 
@@ -331,7 +331,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
               private i18n: I18nToolsService, private ipc: IpcService, private router: Router,
-              private cd: ChangeDetectorRef) {
+              private cd: ChangeDetectorRef, private env: EnvironmentService) {
     super();
     this.gearset$.pipe(
       first()

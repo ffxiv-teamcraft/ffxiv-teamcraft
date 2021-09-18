@@ -16,6 +16,7 @@ import { GearSet, SimulationService } from '../../../../core/simulation/simulati
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { BonusType } from '../../model/consumable-bonus';
 import { environment } from 'apps/client/src/environments/environment';
+import { EnvironmentService } from '../../../../core/environment.service';
 
 @Component({
   selector: 'app-rotation-result-tag',
@@ -73,7 +74,8 @@ export class RotationResultTagComponent implements OnInit {
 
   constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
               private lazyData: LazyDataService, private freeCompanyActionsService: FreeCompanyActionsService,
-              private simulationService: SimulationService, private settings: SettingsService) {
+              private simulationService: SimulationService, private settings: SettingsService,
+              private env: EnvironmentService) {
   }
 
   ngOnInit(): void {
@@ -96,7 +98,7 @@ export class RotationResultTagComponent implements OnInit {
           stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
           stats.specialist,
           stats.level,
-          gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
+          gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]);
         return new this.simulator.Simulation(recipe, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
     );

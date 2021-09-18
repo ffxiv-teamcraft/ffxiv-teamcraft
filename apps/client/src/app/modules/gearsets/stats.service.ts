@@ -4,7 +4,7 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { EnvironmentService } from '../../core/environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -115,7 +115,8 @@ export class StatsService {
     BaseParam.MIND
   ];
 
-  constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
+  constructor(private lazyData: LazyDataService, private materiasService: MateriaService,
+              private env: EnvironmentService) {
   }
 
   public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): number[][] {
@@ -569,7 +570,7 @@ export class StatsService {
   }
 
   private getMaxHp(job: number, level: number, vitality: number): number {
-    if (level > environment.maxLevel) {
+    if (level > this.env.maxLevel) {
       return 0;
     }
     const levelModHP = StatsService.LEVEL_TABLE[level][3];

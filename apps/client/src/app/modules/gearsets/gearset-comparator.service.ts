@@ -6,6 +6,7 @@ import { MateriaService } from './materia.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { EnvironmentService } from '../../core/environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 export class GearsetComparatorService {
 
   constructor(private statsService: StatsService, private materiaService: MateriaService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private env: EnvironmentService) {
   }
 
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
@@ -55,8 +56,8 @@ export class GearsetComparatorService {
   }
 
   public compare(a: TeamcraftGearset, b: TeamcraftGearset, includeAllTools: boolean): GearsetsComparison {
-    const aStats = this.statsService.getStats(a, 80, 1);
-    const bStats = this.statsService.getStats(b, 80, 1);
+    const aStats = this.statsService.getStats(a, this.env.maxLevel, 1);
+    const bStats = this.statsService.getStats(b, this.env.maxLevel, 1);
     if (this.statsService.getMainStat(a.job) !== this.statsService.getMainStat(b.job)) {
       throw new Error('Can only compare two sets with same main stat');
     }

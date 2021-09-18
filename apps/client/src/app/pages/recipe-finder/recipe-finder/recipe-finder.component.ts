@@ -23,8 +23,8 @@ import { InventoryImportPopupComponent } from '../inventory-import-popup/invento
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { environment } from '../../../../environments/environment';
 import { LogTracking } from '../../../model/user/log-tracking';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -33,7 +33,7 @@ import { LogTracking } from '../../../model/user/log-tracking';
 })
 export class RecipeFinderComponent implements OnDestroy {
 
-  public maxLevel = environment.maxLevel;
+  public maxLevel = this.env.maxLevel;
 
   private tipKey = 'recipe-finder:tip';
 
@@ -45,7 +45,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
 
   public clvlMin$ = new BehaviorSubject(0);
-  public clvlMax$ = new BehaviorSubject(environment.maxLevel);
+  public clvlMax$ = new BehaviorSubject(this.maxLevel);
 
   public input$: Subject<string> = new Subject<string>();
 
@@ -96,7 +96,8 @@ export class RecipeFinderComponent implements OnDestroy {
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
-              public platform: PlatformService, public settings: SettingsService) {
+              public platform: PlatformService, public settings: SettingsService,
+              private env: EnvironmentService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 19)

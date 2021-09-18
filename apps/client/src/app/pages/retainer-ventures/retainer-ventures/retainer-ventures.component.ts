@@ -4,7 +4,6 @@ import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from 'apps/client/src/environments/environment';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -18,6 +17,7 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -161,7 +161,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
               private lazyData: LazyDataService, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,
-              public translate: TranslateService) {
+              public translate: TranslateService, private env: EnvironmentService) {
     super();
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
@@ -177,7 +177,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     );
     this.form = this.fb.group({
       job: [null, Validators.required],
-      level: [null, [Validators.required, Validators.min(1), Validators.max(environment.maxLevel)]],
+      level: [null, [Validators.required, Validators.min(1), Validators.max(this.env.maxLevel)]],
       ilvl: [null, Validators.required],
       gathering: [null],
       server: [null, Validators.required]

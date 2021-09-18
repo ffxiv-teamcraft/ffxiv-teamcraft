@@ -20,6 +20,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { EnvironmentService } from '../../../core/environment.service';
 
 interface ExpObj {
   exp: number,
@@ -85,7 +86,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private lazyData: LazyDataService,
               private auth: AuthFacade, private settings: SettingsService,
-              private platformService: PlatformService, private ipc: IpcService) {
+              private platformService: PlatformService, private ipc: IpcService,
+              private env: EnvironmentService) {
     super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
@@ -343,9 +345,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp -= this.getMaxExp(level);
       level++;
     }
-    // Handle special case for lvl 80
-    if (exp >= this.getMaxExp(level) && level >= 79) {
-      level = 80;
+    // Handle special case for max lvl
+    if (exp >= this.getMaxExp(level) && level >= this.env.maxLevel) {
+      level = this.env.maxLevel;
       exp = 0;
     }
     return {

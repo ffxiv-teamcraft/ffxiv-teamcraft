@@ -13,6 +13,7 @@ import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { DataType } from '../../../modules/list/data/data-type';
 import { getItemSource } from '../../../modules/list/model/list-row';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-custom-items-import-popup',
@@ -72,7 +73,8 @@ export class CustomItemsImportPopupComponent {
   };
 
   constructor(private modalRef: NzModalRef, private serializer: NgSerializerService, private customItemsFacade: CustomItemsFacade,
-              private i18n: I18nToolsService, private lazyData: LazyDataService, private db: DataService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService, private db: DataService,
+              private env: EnvironmentService) {
   }
 
   public getAccept(): string {
@@ -218,7 +220,7 @@ export class CustomItemsImportPopupComponent {
             jobId: +this.craftTypes.indexOf(row[2]) + 8,
             icon: `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === getItemSource(item, DataType.CRAFTED_BY)[0].job).abbreviation}.png`,
             itemId: +row[45],
-            level: 80,
+            level: this.env.maxLevel,
             stars_tooltip: ''
           }]
         });
