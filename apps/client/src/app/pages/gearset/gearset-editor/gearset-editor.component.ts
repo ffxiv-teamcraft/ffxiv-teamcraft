@@ -259,7 +259,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         'Head',
         'Body',
         'Gloves',
-        'Waist',
+        ...this.env.gameVersion < 6 ? ['Waist'] : [],
         'Legs',
         'Feet',
         'Ears',

@@ -35,6 +35,7 @@ import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-pars
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -87,7 +88,7 @@ export class GearsetsFacade {
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
               private statsService: StatsService, private lazyData: LazyDataService,
               private materiasService: MateriaService, private http: HttpClient,
-              private xivapi: XivapiService) {
+              private xivapi: XivapiService, private env: EnvironmentService) {
   }
 
   toArray(gearset: TeamcraftGearset): { piece: EquipmentPiece, slot: string }[] {
@@ -95,7 +96,7 @@ export class GearsetsFacade {
       { piece: gearset.mainHand, slot: 'mainHand' },
       { piece: gearset.offHand, slot: 'offHand' },
       { piece: gearset.head, slot: 'head' },
-      { piece: gearset.chest, slot: 'chest' },
+      ...this.env.gameVersion < 60 ? [{ piece: gearset.chest, slot: 'chest' }] : [],
       { piece: gearset.gloves, slot: 'gloves' },
       { piece: gearset.belt, slot: 'belt' },
       { piece: gearset.legs, slot: 'legs' },
@@ -214,7 +215,9 @@ export class GearsetsFacade {
         gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head');
         gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest');
         gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands');
-        gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist');
+        if (this.env.gameVersion < 6) {
+          gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist');
+        }
         gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs');
         gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet');
         gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears');
@@ -307,7 +310,9 @@ export class GearsetsFacade {
         gearset.head = this.getLodestoneEquipmentPiece(lodestoneGear, 'Head');
         gearset.chest = this.getLodestoneEquipmentPiece(lodestoneGear, 'Body');
         gearset.gloves = this.getLodestoneEquipmentPiece(lodestoneGear, 'Hands');
-        gearset.belt = this.getLodestoneEquipmentPiece(lodestoneGear, 'Waist');
+        if (this.env.gameVersion < 6) {
+          gearset.belt = this.getLodestoneEquipmentPiece(lodestoneGear, 'Waist');
+        }
         gearset.legs = this.getLodestoneEquipmentPiece(lodestoneGear, 'Legs');
         gearset.feet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Feet');
         gearset.earRings = this.getLodestoneEquipmentPiece(lodestoneGear, 'Earrings');
