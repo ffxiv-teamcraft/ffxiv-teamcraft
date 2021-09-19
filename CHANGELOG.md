@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.7"></a>
+## [8.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.6...v8.5.7) (2021-09-19)
+
+
+### Bug Fixes
+
+* **alarms:** better fix for weather transition detection ([4aadc5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4aadc5f))
+* **profile:** hotfix for profile and marketboard popup not loading at all ([63bb72e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63bb72e))
+
+
+
 <a name="8.5.6"></a>
 ## [8.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.5...v8.5.6) (2021-09-19)
 
