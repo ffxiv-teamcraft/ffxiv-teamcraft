@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.6"></a>
+## [8.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.5...v8.5.6) (2021-09-19)
+
+
+### Bug Fixes
+
+* **alarms:** better weather and transitions system ([0d26154](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d26154))
+* **baits:** removed undefined tugs ([b74b1c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b74b1c0))
+* **db:** removed giant snagging icon that could sometimes appear on fishing maps ([700f14f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/700f14f))
+* **list-details:** fixed missing tooltip translation ([0116c9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0116c9d))
+* **log-tracker:** use correct hookset string for tooltip ([b275b5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b275b5c))
+
+
+
 <a name="8.5.5"></a>
 ## [8.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.4...v8.5.5) (2021-09-16)
 
