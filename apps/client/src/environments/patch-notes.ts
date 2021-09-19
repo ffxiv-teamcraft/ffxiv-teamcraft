@@ -1,11 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed an issue with weather + time combination lasting more than 8 hours.
-* **gearset:** fixed anb issue with lower level crafting and gathering items not showing.
-* **icons:** fixed middle click not opening the db page in new tab anymore.
-* **pricing-mode:** fixed final items not handling unmarketable items properly.
-
-
-### Features
-
-* **db:** support for korean v5.5 update.`;
+* **alarms:** better weather and transitions system.
+* **baits:** removed undefined tugs.
+* **db:** removed giant snagging icon that could sometimes appear on fishing maps.
+* **list-details:** fixed missing tooltip translation.
+* **log-tracker:** use correct hookset string for tooltip.`;
