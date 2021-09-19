@@ -3,7 +3,6 @@ import { UserService } from '../database/user.service';
 import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, Subject, Subscription } from 'rxjs';
 import { filter, map, shareReplay, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
-import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
@@ -14,8 +13,7 @@ export class LodestoneService {
 
   private static CACHE: { [index: number]: Observable<CharacterResponse> } = {};
 
-  constructor(private userService: UserService, private xivapi: XivapiService,
-              private http: HttpClient) {
+  constructor(private userService: UserService, private xivapi: XivapiService) {
     if (!LodestoneService.INTERVAL) {
       LodestoneService.INTERVAL = interval(1500).subscribe((i) => {
         const subject = LodestoneService.QUEUE.shift();
@@ -53,13 +51,8 @@ export class LodestoneService {
   public getCharacter(id: number, userCharacter = false): Observable<CharacterResponse> {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
-      const query = new HttpParams({
-        fromObject: {
-          id: id.toString()
-        }
-      });
       LodestoneService.CACHE[id] = trigger.pipe(
-        switchMapTo(this.http.get<CharacterResponse>('https://asia-northeast1-ffxivteamcraft.cloudfunctions.net/LodestoneCharacter', { params: query })),
+        switchMapTo(this.xivapi.getCharacter(id, { columns: ['Character'] })),
         tap(res => this.cacheCharacter(res, userCharacter)),
         startWith(this.getCachedCharacter(id)),
         filter(res => res !== null),

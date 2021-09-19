@@ -43,7 +43,7 @@ export class WeatherService {
 
   public getNextDiffWeatherTime(timestamp: number, currentWeather: number, mapId: number): number {
     const nextWeatherTime = this.nextWeatherTime(timestamp);
-    if (this.getWeather(mapId, timestamp) !== currentWeather) {
+    if (this.getWeather(mapId, nextWeatherTime) !== currentWeather) {
       return nextWeatherTime;
     }
     return this.getNextDiffWeatherTime(nextWeatherTime, currentWeather, mapId);
