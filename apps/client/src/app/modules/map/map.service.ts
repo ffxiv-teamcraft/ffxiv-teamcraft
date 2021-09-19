@@ -107,7 +107,7 @@ export class MapService {
 
   private getTpCost(from: Aetheryte, to: Aetheryte): number {
     if (from === undefined || to === undefined) {
-      return 999;
+      return 9999;
     }
     if (this.settings.freeAetheryte === to.nameid) {
       return 0;
@@ -115,7 +115,7 @@ export class MapService {
     const fromCoords = from.aethernetCoords;
     const toCoords = to.aethernetCoords;
     if (fromCoords === undefined || toCoords === undefined) {
-      return 999;
+      return 9999;
     }
 
     if (from.map === to.map) {
@@ -124,9 +124,9 @@ export class MapService {
 
     const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
     if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
-      return Math.floor(Math.min(base, 999) / 2);
+      return Math.floor(base / 2);
     }
-    return Math.floor(Math.min(base, 999));
+    return Math.floor(base);
   }
 
   public getOptimizedPathOnMap(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
