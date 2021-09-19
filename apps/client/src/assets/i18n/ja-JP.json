@@ -628,6 +628,8 @@
     "Can_skip_buying_entirely": "全部スキップ可能",
     "Can_skip_tooltip": "他のアイテムを買うには該当アイテムが必要になります。つまり、該当パネルにある全てを買う計画でしたらアイテムを少なめに買うか、完全に飛ばされる事ができます",
     "Requirements_ignored": "除外した素材",
+    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "デフォルト",
       "Only_large": "超過された時のみ",
@@ -2149,9 +2151,7 @@
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
       "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns.",
-      "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "Mark whole panel HQ"
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
       "Merge": "マージボタンを使用して、2つのリストをマージできます。",

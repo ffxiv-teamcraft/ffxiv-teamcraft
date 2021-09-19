@@ -16,8 +16,6 @@
       <ng-container *ngIf="node.baits !== undefined" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-fishing-bait [baits]="node.baits" flex="row"></app-fishing-bait>
       </ng-container>
-      <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-           src="./assets/icons/status/snagging.png">
       <nz-tag *ngIf="node.tug !== undefined">{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][node.tug] | translate}}</nz-tag>
       <div *ngIf="node.gig">
         <img [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon" nz-tooltip

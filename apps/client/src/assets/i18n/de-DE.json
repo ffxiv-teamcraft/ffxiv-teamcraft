@@ -628,6 +628,8 @@
     "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "Requirements_ignored": "Requirements ignored",
+    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
@@ -2149,9 +2151,7 @@
       "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
       "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
       "More_actions_button": "Dies öffnet ein Menü mit vielen verschiedenen Aktionen für die aktuelle Listenzeile. Du kannst diese Aktionen mit Hilfe des Layout-Editors in Schaltflächen umwandeln.",
-      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt.",
-      "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "Mark whole panel HQ"
+      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt."
     },
     "LISTS": {
       "Merge": "Du kannst zwei Listen mit \"Zusammenfassen\" kombinieren.",

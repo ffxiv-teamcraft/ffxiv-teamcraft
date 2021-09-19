@@ -628,6 +628,8 @@
     "Can_skip_buying_entirely": "전부 스킵 가능",
     "Can_skip_tooltip": "다른 아이템을 구매하기 위해선 해당 아이템이 필요합니다. 즉, 해당 패널에 있는 모든 것을 구매할 계획이라면 아이템을 적게 구매하거나 완전히 건너뛸 수 있습니다",
     "Requirements_ignored": "무시된 재료",
+    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -2149,9 +2151,7 @@
       "Fill_with_inventory": "가방에 들고있는 아이템을 목록에 자동으로 추가할 수 있습니다.",
       "Pricing_mode_button": "가격계산 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다.",
       "More_actions_button": "이 버튼으로 지금 목록에서 할 수 있는 여러 다른 액션 메뉴를 열수 있습니다. 여러분들은 레이아웃 에디터를 통해 이 액션 버튼들을 편집할 수 있습니다.",
-      "Alarm_button": "여기를 눌러 이 아이템을 위한 알람을 설정하세요, 알람을 설정하시면 이 아이템이 스폰될 때 알려드립니다.",
-      "Mark_whole_panel_nq": "Remove manual HQ flags",
-      "Mark_whole_panel_hq": "모든 패널에 HQ마크 표시"
+      "Alarm_button": "여기를 눌러 이 아이템을 위한 알람을 설정하세요, 알람을 설정하시면 이 아이템이 스폰될 때 알려드립니다."
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
