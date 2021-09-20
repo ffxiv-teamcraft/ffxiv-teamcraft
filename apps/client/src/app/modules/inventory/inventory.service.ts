@@ -12,7 +12,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 import { CharacterResponse } from '@xivapi/angular-client';
-import { ContainerInfo, CurrencyCrystalInfo, InventoryModifyHandler, InventoryTransaction, ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import {
+  ClientTrigger,
+  ContainerInfo,
+  CurrencyCrystalInfo,
+  InventoryModifyHandler,
+  InventoryTransaction,
+  ItemInfo,
+  ItemMarketBoardInfo,
+  UpdateInventorySlot
+} from '@ffxiv-teamcraft/pcap-ffxiv';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { InventoryItem } from '../../model/user/inventory/inventory-item';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
@@ -101,6 +110,8 @@ export class InventoryService {
     const currencyCrystalInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('currencyCrystalInfo'));
     const inventoryModifyHandlerMessages$ = this.ipc.packets$.pipe(ofMessageType('inventoryModifyHandler'));
     const updateInventorySlotMessages$ = this.ipc.packets$.pipe(ofMessageType('updateInventorySlot'));
+    const itemMarketBoardInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('itemMarketBoardInfo'));
+    const clientTriggerMbPriceMessages$ = this.ipc.packets$.pipe(ofMessageType('clientTrigger'), filter(m => m.parsedIpcData.commandId === 400));
 
     let constantsUrl = 'https://raw.githubusercontent.com/karashiiro/FFXIVOpcodes/master/constants.min.json';
 
@@ -137,13 +148,14 @@ export class InventoryService {
       switchMap(baseInventoryState => {
         const packetActions$ = merge(containerInfoMessages$, itemInfoMessages$, currencyCrystalInfoMessages$,
           inventoryModifyHandlerMessages$, updateInventorySlotMessages$, inventoryTransactionMessages$);
+        const packetActions2$ = merge(itemMarketBoardInfoMessages$, clientTriggerMbPriceMessages$);
 
         const retainerActions$: Observable<{ type: 'RetainerSpawn', retainer: string }> = this.retainerSpawn$.pipe(
           map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
         );
 
         const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
-        return merge(packetActions$, customActions$).pipe(
+        return merge(packetActions$, customActions$, packetActions2$).pipe(
           scan((state: InventoryState, action) => {
             if (!action) {
               return state;
@@ -187,7 +199,17 @@ export class InventoryService {
                 state.retainerUpdateSlotQueue.forEach(entry => {
                   inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
                 });
-                return { ...state, retainer: action.retainer, retainerInventoryQueue: [], retainerUpdateSlotQueue: [], inventory };
+                state.retainerMarketboardInfoQueue.forEach(entry => {
+                  inventory = this.handleItemMarketboardInfo(inventory, entry, action.retainer);
+                });
+                return {
+                  ...state,
+                  retainer: action.retainer,
+                  retainerInventoryQueue: [],
+                  retainerUpdateSlotQueue: [],
+                  retainerMarketboardInfoQueue: [],
+                  inventory
+                };
               case 'inventoryModifyHandler':
                 return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
               case 'updateInventorySlot':
@@ -200,13 +222,27 @@ export class InventoryService {
                 } else {
                   return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
                 }
+              case 'clientTrigger':
+                return {
+                  ...state,
+                  inventory: this.handleClientTrigger400(state.inventory, action.parsedIpcData, state.retainer)
+                };
+              case 'itemMarketBoardInfo':
+                return { ...state, retainerMarketboardInfoQueue: [...state.retainerMarketboardInfoQueue, action.parsedIpcData] };
               case 'itemInfo':
               case 'currencyCrystalInfo':
                 return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
               default:
                 return { ...state };
             }
-          }, { itemInfoQueue: [], retainerInventoryQueue: [], retainerUpdateSlotQueue: [], inventory: baseInventoryState, retainer: '' }),
+          }, {
+            itemInfoQueue: [],
+            retainerInventoryQueue: [],
+            retainerUpdateSlotQueue: [],
+            retainerMarketboardInfoQueue: [],
+            inventory: baseInventoryState,
+            retainer: ''
+          }),
           map(state => state.inventory),
           startWith(baseInventoryState)
         );
@@ -478,6 +514,31 @@ export class InventoryService {
       }
       return inventory;
     } catch (e) {
+      console.log(packet);
+      console.error(e);
+      this.ipc.log(e.message, JSON.stringify(packet));
+      return inventory;
+    }
+  }
+
+  private handleItemMarketboardInfo(inventory: UserInventory, packet: ItemMarketBoardInfo, retainer: string): UserInventory {
+    try {
+      inventory.setMarketBoardInfo(packet, retainer);
+      return inventory;
+    } catch (e) {
+      console.log(packet);
+      console.error(e);
+      this.ipc.log(e.message, JSON.stringify(packet));
+      return inventory;
+    }
+  }
+
+  private handleClientTrigger400(inventory: UserInventory, packet: ClientTrigger, retainer: string) {
+    try {
+      inventory.updateMarketboardInfo(packet, retainer);
+      return inventory;
+    } catch (e) {
+      delete packet.param6;
       console.log(packet);
       console.error(e);
       this.ipc.log(e.message, JSON.stringify(packet));
