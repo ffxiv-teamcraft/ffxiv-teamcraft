@@ -174,7 +174,7 @@ export class RetainersComponent {
   }
 
   getDiffTagColor(diff: number): string {
-    if (diff < 5 && diff > -5) {
+    if (diff <= 0) {
       return 'darkgreen';
     } else {
       return '#f50';
