@@ -2544,7 +2544,12 @@
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
     "Task_completion_alarm": "Task completion alarm",
-    "Reset_retainers": "Reset retainers"
+    "Reset_retainers": "Reset retainers",
+    "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
+    "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
+    "X%_above": "Your price is {{diff}}% above the current lowest price",
+    "X%_below": "Your price is {{diff}}% below the current lowest price",
+    "Lowest_price": "Lowest price"
   },
   "RETAINER_VENTURES": {
     "Title": "Retainer ventures",

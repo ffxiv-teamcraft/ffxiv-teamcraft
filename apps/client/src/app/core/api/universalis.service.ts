@@ -103,6 +103,7 @@ export class UniversalisService {
                 })
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,
@@ -116,6 +117,7 @@ export class UniversalisService {
                 })
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,

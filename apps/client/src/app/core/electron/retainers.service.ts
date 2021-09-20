@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
+import { InventoryItem } from '../../model/user/inventory/inventory-item';
 
 export interface Retainer {
   name: string;
@@ -20,6 +21,7 @@ export interface Retainer {
   taskComplete: number;
   gil: number;
   character: string;
+  marketItems?: InventoryItem[]
 }
 
 @Injectable({
