@@ -11,6 +11,12 @@ interface FishIdSpotIdVariable {
   spotId?: number;
 }
 
+interface FishIdSpotIdMissesVariable {
+  fishId?: number;
+  spotId?: number;
+  misses?: -2 | 1;
+}
+
 interface FishIdSpotIdWeathersVariable {
   fishId?: number;
   spotId?: number;
@@ -84,16 +90,16 @@ interface FishBaitResult {
 }
 
 @Injectable()
-export class BaitsPerFishPerSpotQuery extends Query<FishBaitResult, FishIdSpotIdVariable> {
+export class BaitsPerFishPerSpotQuery extends Query<FishBaitResult, FishIdSpotIdMissesVariable> {
   public document = gql`
-    query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+    query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int, $misses: Int) {
+      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId, _gt: $misses }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
         occurences
       }
-      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId, _gt: $misses }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
@@ -174,7 +180,7 @@ interface FishBiteTimePerBait {
   occurences: number;
 }
 
-interface FishBiteTimePerBaitResult {a
+interface FishBiteTimePerBaitResult {
   biteTimes: FishBiteTimePerBait[];
 }
 
