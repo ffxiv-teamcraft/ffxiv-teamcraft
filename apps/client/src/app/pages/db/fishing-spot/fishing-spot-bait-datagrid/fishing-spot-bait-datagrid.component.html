@@ -1,9 +1,22 @@
 <nz-card
-  [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate"
+  [nzTitle]="title"
   class="expanded mw-300"
   [nzLoading]="loading$ | async"
   [class.card-with-list]="!(loading$ | async)"
 >
+  <ng-template #title>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+      <div>{{'DB.FISHING_SPOT.Fish_per_bait' | translate}}</div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>
+          {{'DB.FISHING_SPOT.Include_misses' | translate}}
+        </div>
+        <div>
+          <nz-switch [ngModel]="showMisses$ | async" (ngModelChange)="showMisses$.next($event)"></nz-switch>
+        </div>
+      </div>
+    </div>
+  </ng-template>
   <ng-template #iconRender let-id>
     <app-item-icon [itemId]="id" width="32"></app-item-icon>
   </ng-template>

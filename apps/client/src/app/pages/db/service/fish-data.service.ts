@@ -61,10 +61,11 @@ export class FishDataService {
    *
    * @param fishId The fish id to query for.
    * @param spotId The spot id to filter by.
+   * @param showMisses should we include misses?
    * @returns An apollo result observable containing information about the baits used to catch a fish, and which fishes the given fish is (mooch) bait for.
    */
-  public getBaitMooches = (fishId?: number, spotId?: number) => {
-    return this.baitFishSpotQuery.fetch({ fishId, spotId }, qOpts);
+  public getBaitMooches = (fishId?: number, spotId?: number, showMisses?: boolean) => {
+    return this.baitFishSpotQuery.fetch({ fishId, spotId, misses: showMisses ? -2 : 1 }, qOpts);
   };
 
   /**

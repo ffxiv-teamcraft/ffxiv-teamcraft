@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApolloQueryResult } from 'apollo-client';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -102,6 +102,7 @@ export class FishContextService {
   public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
   /** The fish eyes state that is currently active and being used to filter results by. */
   public readonly fishEyes$ = new BehaviorSubject<boolean>(false);
+  public readonly showMisses$ = new BehaviorSubject<boolean>(localStorage.getItem('db:fish:show-misses') === 'true');
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
@@ -282,9 +283,10 @@ export class FishContextService {
   );
 
   /** An observable containing the baits needed and mooches possible at the active spot. */
-  private readonly baitMoochesBySpot$ = this.spotId$.pipe(
-    filter((spotId) => spotId > 0),
-    switchMap((spotId) => this.data.getBaitMooches(undefined, spotId))
+  private readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$]).pipe(
+    filter(([spotId]) => spotId > 0),
+    tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses.toString())),
+    switchMap(([spotId, showMisses]) => this.data.getBaitMooches(undefined, spotId, showMisses))
   );
 
   /** An observable containing information about the baits used to catch fish at the active spot. */
