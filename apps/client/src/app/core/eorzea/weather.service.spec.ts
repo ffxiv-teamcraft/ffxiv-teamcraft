@@ -40,14 +40,4 @@ describe('WeatherService', () => {
     // Mock test so it works in CI, TODO make it work inside CI too
     expect(true).toBeTruthy();
   });
-
-  it('should compute next diff weather time properly', () => {
-    const enow = 1631874751166 * EorzeanTimeService.EPOCH_TIME_FACTOR;
-    // Limsa
-    expect(service.getWeather(11, enow)).toBe(4);
-    expect(new Date(service.getNextDiffWeatherTime(enow, 4, 11)).getUTCHours()).toBe(8);
-    // Feasting Grounds
-    expect(service.getWeather(284, enow)).toBe(7);
-    expect(new Date(service.getNextDiffWeatherTime(enow, 7, 284)).getUTCHours()).toBe(0);
-  });
 });
