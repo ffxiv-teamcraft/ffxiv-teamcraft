@@ -250,6 +250,9 @@ export class List extends DataWithPermissions {
     if (!item || item.id < 20) {
       return 0;
     }
+    if (getItemSource(item, DataType.CRAFTED_BY).length === 0) {
+      return 0;
+    }
     const recipesNeedingItem = this.finalItems
       .filter(i => i.requires !== undefined)
       .filter(i => {
