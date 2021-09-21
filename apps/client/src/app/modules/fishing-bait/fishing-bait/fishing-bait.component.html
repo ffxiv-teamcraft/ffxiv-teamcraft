@@ -2,7 +2,7 @@
   <div *ngFor="let bait of baits; let index = index; let last = last" [fxLayout]="flex" fxLayoutAlign="center center"
        fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [appFishTooltip]="bait.id" [hq]="baits.length > 1 && index > 0"
+      <app-item-icon [appFishTooltip]="bait.id"
                      [itemId]="bait.id" [tooltipDisabled]="true" [width]="iconWidth"></app-item-icon>
       <div *ngIf="!hideNames" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
         <div>{{bait.id | itemName | i18n}}</div>
