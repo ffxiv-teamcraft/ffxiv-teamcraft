@@ -181,7 +181,13 @@
     "Support_us_remove_ads": "Support us on patreon to remove ads",
     "Support_us": "Support us",
     "Show_more": "Show more",
-    "Item": "Item"
+    "Item": "Item",
+    "Venture": "Venture",
+    "Monster": "Monster",
+    "Airship": "Airship",
+    "Submarine": "Submarine",
+    "Voyage": "Voyage",
+    "Instance": "Instance"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -2705,5 +2711,35 @@
   "GARDENING": {
     "Growth_time": "Growth time",
     "Cross_breeds": "Cross breeds"
+  },
+  "ALLAGAN_REPORTS": {
+    "Reports": "Reports",
+    "Pending_changes": "Pending changes",
+    "Add_new_source": "Add new source",
+    "Submit_new_report": "Submit new report proposal",
+    "Source": "Source",
+    "Report_added": "Report proposal submitted",
+    "Instance_placeholder": "Instance name",
+    "Venture_placeholder": "Venture name",
+    "Monster_placeholder": "Monster name",
+    "Voyage_placeholder": "Voyage name",
+    "Voyage_type": "Voyage type",
+    "SOURCE": {
+      "DESYNTH": "DESYNTH",
+      "REDUCTION": "REDUCTION",
+      "GARDENING": "GARDENING",
+      "LOOT": "LOOT",
+      "VENTURE": "VENTURE",
+      "VOYAGE": "VOYAGE",
+      "DROP": "DROP",
+      "INSTANCE": "INSTANCE",
+      "FISHING": "FISHING"
+    },
+    "STATUS": {
+      "PROPOSAL": "PROPOSAL",
+      "MODIFICATION": "MODIFICATION",
+      "DELETION": "DELETION",
+      "ACCEPTED": "ACCEPTED"
+    }
   }
 }

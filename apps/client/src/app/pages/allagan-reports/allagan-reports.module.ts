@@ -17,6 +17,9 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { AllaganReportRowComponent } from './allagan-report-row/allagan-report-row.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzTagModule } from 'ng-zorro-antd/tag';
 
 
 const routes: Routes = [
@@ -33,7 +36,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent],
+  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -46,7 +49,9 @@ const routes: Routes = [
     NzFormModule,
     NzSelectModule,
     NzAutocompleteModule,
-    NzInputModule
+    NzInputModule,
+    NzEmptyModule,
+    NzTagModule
   ],
   providers: [
     AllaganReportsService, ...Object.values(AllaganReportsGQLProviders)

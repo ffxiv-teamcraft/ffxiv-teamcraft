@@ -3,10 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { AllaganReportSource } from '../allagan-report-source';
+import { AllaganReportSource } from '../model/allagan-report-source';
 import { Observable, Subject } from 'rxjs';
 import { I18nName } from '../../../model/common/i18n-name';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { AllaganReport } from '../model/allagan-report';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { TranslateService } from '@ngx-translate/core';
+import { uniq } from 'lodash';
 
 // noinspection JSMismatchedCollectionQueryUpdate
 @Component({
@@ -30,7 +34,10 @@ export class AllaganReportDetailsComponent {
       return this.allaganReportsService.getItemReports(itemId).pipe(
         map(reports => {
           return {
-            ...reports.data,
+            reports: reports.data.allagan_reports.map(report => {
+              report.data = JSON.parse(report.data);
+              return report;
+            }),
             isFish: this.lazyData.data.fishes.includes(itemId)
           };
         })
@@ -38,16 +45,30 @@ export class AllaganReportDetailsComponent {
     })
   );
 
-  sources = Object.keys(AllaganReportSource)
-    .filter(key => !isNaN(+key))
-    .map(key => ({ key: +key, value: AllaganReportSource[key] }));
+  itemReportsQueue$ = this.itemId$.pipe(
+    switchMap(itemId => {
+      return this.allaganReportsService.getItemReportsQueue(itemId).pipe(
+        map(reports => {
+          return reports.data.allagan_reports_queue.map(report => {
+            if (typeof report.data === 'string') {
+              report.data = JSON.parse(report.data);
+            }
+            return report;
+          });
+        })
+      );
+    })
+  );
 
-  private items: { id: number, name: I18nName }[] = [];
-  private instances: { id: number, name: I18nName }[] = [];
-  private ventures: { id: number, name: I18nName }[] = [];
-  private submarineVoyages: { id: number, name: I18nName }[] = [];
-  private airshipVoyages: { id: number, name: I18nName }[] = [];
-  private mobs: { id: number, name: I18nName }[] = [];
+  sources = uniq(Object.keys(AllaganReportSource))
+    .map(key => ({ key: key, value: AllaganReportSource[key] }));
+
+  private readonly items: { id: number, name: I18nName }[] = [];
+  private readonly instances: { id: number, name: I18nName }[] = [];
+  private readonly ventures: { id: number, name: I18nName }[] = [];
+  private readonly submarineVoyages: { id: number, name: I18nName }[] = [];
+  private readonly airshipVoyages: { id: number, name: I18nName }[] = [];
+  private readonly mobs: { id: number, name: I18nName }[] = [];
 
   public itemInput$: Subject<string> = new Subject<string>();
 
@@ -79,7 +100,8 @@ export class AllaganReportDetailsComponent {
   );
 
   constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
-              private lazyData: LazyDataService, private i18n: I18nToolsService) {
+              private lazyData: LazyDataService, private i18n: I18nToolsService,
+              private message: NzMessageService, private translate: TranslateService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 1)
@@ -144,8 +166,38 @@ export class AllaganReportDetailsComponent {
     );
   }
 
-  addSource(data: any): void {
-    console.log(data);
+  addSource(itemId: number, formState: any): void {
+    const { source } = formState;
+    const report: AllaganReport = {
+      itemId,
+      source,
+      data: this.getData(source, formState)
+    };
+    this.allaganReportsService.addReportToQueue(report).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
+    });
+  }
+
+  private getData(source: AllaganReportSource, formState: any): any {
+    switch (source) {
+      case AllaganReportSource.DESYNTH:
+      case AllaganReportSource.REDUCTION:
+      case AllaganReportSource.GARDENING:
+      case AllaganReportSource.LOOT:
+        return { itemId: this.getEntryId(this.items, formState.item) };
+      case AllaganReportSource.INSTANCE:
+        return { instanceId: this.getEntryId(this.instances, formState.instance) };
+      case AllaganReportSource.VENTURE:
+        return { ventureId: this.getEntryId(this.ventures, formState.venture) };
+      case AllaganReportSource.DROP:
+        return { monsterId: this.getEntryId(this.mobs, formState.mob) };
+      case AllaganReportSource.VOYAGE:
+        return { itemId: this.getEntryId([this.airshipVoyages, this.submarineVoyages][formState.voyageType], formState.voyage) };
+    }
+  }
+
+  private getEntryId(registry: { id: number, name: I18nName }[], name: string): number {
+    return registry.find(entry => this.i18n.getName(entry.name).toLowerCase() === name.toLowerCase())?.id;
   }
 
   needsItem(source: AllaganReportSource): boolean {

@@ -1,0 +1,65 @@
+<div class="report-container" nz-row>
+  <div nz-col nzMd="4" fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
+      <div [ngSwitch]="source">
+        <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
+        <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
+        <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+        <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon round-icon">
+        <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+        <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+        <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+        <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+      </div>
+      <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
+    </div>
+    <div>
+      <nz-tag class="custom-tag" [style.border-color]="getColor(status)">{{('ALLAGAN_REPORTS.STATUS.' + status) | translate}}</nz-tag>
+    </div>
+  </div>
+  <div nz-col nzMd="8" class="details">
+    <div [ngSwitch]="source">
+      <ng-container *ngSwitchCase="AllaganReportSource.GARDENING">
+        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.DESYNTH">
+        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.LOOT">
+        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.REDUCTION">
+        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.DROP">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{data.monsterId | mobName | i18n}}</div>
+          <app-db-button [id]="data.monsterId" type="mob"></app-db-button>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.INSTANCE">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img src="{{data.instanceId | instanceIcon}}" alt="" class="round-icon">
+          <div>{{data.instanceId | instanceName | i18n}}</div>
+          <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
+        </div>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.VOYAGE">
+        TODO
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.VENTURE">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>{{data.ventureId | ventureName | i18n}}</div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #itemIdTpl let-itemId>
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <app-item-icon width="32" [itemId]="itemId"></app-item-icon>
+    <div>{{itemId | itemName | i18n}}</div>
+    <app-db-button [id]="itemId" type="item"></app-db-button>
+  </div>
+</ng-template>
