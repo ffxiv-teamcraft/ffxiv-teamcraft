@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.5.9"></a>
+## [8.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.8...v8.5.9) (2021-09-22)
+
+
+### Bug Fixes
+
+* **alarms:** fixed weather + time alarms not being accurate with twice the same weather in a row ([e19af24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e19af24))
+* **marketboard:** fixed server MB data fetching not working at all ([0f6d553](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f6d553))
+
+
+
 <a name="8.5.8"></a>
 ## [8.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.7...v8.5.8) (2021-09-21)
 

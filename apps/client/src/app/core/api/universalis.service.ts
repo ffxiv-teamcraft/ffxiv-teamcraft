@@ -95,9 +95,6 @@ export class UniversalisService {
                 Prices: []
               };
               item.Prices = (res.listings || [])
-                .filter(listing => {
-                  return listing.worldName && listing.worldName.toLowerCase() === server.toLowerCase();
-                })
                 .map(listing => {
                   return {
                     Server: listing.worldName,
@@ -108,9 +105,6 @@ export class UniversalisService {
                   };
                 });
               item.History = (res.recentHistory || [])
-                .filter(listing => {
-                  return listing.worldName && listing.worldName.toLowerCase() === server.toLowerCase();
-                })
                 .map(listing => {
                   return {
                     Server: listing.worldName,
