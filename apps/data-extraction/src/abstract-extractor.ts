@@ -235,12 +235,8 @@ export abstract class AbstractExtractor {
 
   protected gubalRequest(gql: string): Observable<any> {
     const res$ = new Subject();
-    if (process.env.HASURA_SECRET === undefined) {
-      console.error(`Missing hasura secret, skipping request`);
-      return res$;
-    }
     request.post({
-      url: 'http://35.236.87.103/v1/graphql',
+      url: 'https://gubal.hasura.app/v1/graphql',
       json: true,
       headers: {
         'content-type': 'application/json',

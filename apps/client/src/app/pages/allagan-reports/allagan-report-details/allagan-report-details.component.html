@@ -1,0 +1,130 @@
+<div class="top-bar" *ngIf="itemId$ | async as itemId">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <app-item-icon [itemId]="itemId"></app-item-icon>
+    <div class="item-name-title">{{itemId | itemName | i18n}}</div>
+  </div>
+</div>
+<nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>
+<div class="sources">
+</div>
+<div class="add-source">
+  <form nz-form #ngForm="ngForm" (ngSubmit)="addSource(ngForm.form.getRawValue())">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Source' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <nz-select name="source" [(ngModel)]="source">
+          <nz-option *ngFor="let source of sources" [nzValue]="source.key" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source.value) | translate"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item *ngIf="needsItem(source)">
+      <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Item' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <input
+          ngModel
+          name="item"
+          required
+          (input)="itemInput$.next($event.target?.value)"
+          [nzAutocomplete]="auto"
+          [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
+          nz-input
+        />
+        <nz-autocomplete #auto nzBackfill>
+          <nz-auto-option *ngFor="let option of itemCompletion$ | async" [nzValue]="option.name | i18n">
+            {{ option.name | i18n }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item *ngIf="source === AllaganReportSource.INSTANCE">
+      <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Instance' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <input
+          ngModel
+          name="instance"
+          required
+          (input)="instanceInput$.next($event.target?.value)"
+          [nzAutocomplete]="auto"
+          [placeholder]="'ALLAGAN_REPORTS.Instance_placeholder' | translate"
+          nz-input
+        />
+        <nz-autocomplete #auto nzBackfill>
+          <nz-auto-option *ngFor="let option of instanceCompletion$ | async" [nzValue]="option.name | i18n">
+            {{ option.name | i18n }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item *ngIf="source === AllaganReportSource.VENTURE">
+      <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Venture' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <input
+          ngModel
+          name="venture"
+          required
+          (input)="ventureInput$.next($event.target?.value)"
+          [nzAutocomplete]="auto"
+          [placeholder]="'ALLAGAN_REPORTS.Venture_placeholder' | translate"
+          nz-input
+        />
+        <nz-autocomplete #auto nzBackfill>
+          <nz-auto-option *ngFor="let option of ventureCompletion$ | async" [nzValue]="option.name | i18n">
+            {{ option.name | i18n }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item *ngIf="source === AllaganReportSource.DROP">
+      <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Monster' | translate}}</nz-form-label>
+      <nz-form-control [nzSpan]="10">
+        <input
+          ngModel
+          name="mob"
+          required
+          (input)="mobInput$.next($event.target?.value)"
+          [nzAutocomplete]="auto"
+          [placeholder]="'ALLAGAN_REPORTS.Monster_placeholder' | translate"
+          nz-input
+        />
+        <nz-autocomplete #auto nzBackfill>
+          <nz-auto-option *ngFor="let option of mobCompletion$ | async" [nzValue]="option.name | i18n">
+            {{ option.name | i18n }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </nz-form-control>
+    </nz-form-item>
+    <ng-container *ngIf="source === AllaganReportSource.VOYAGE">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Voyage_type' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="10">
+          <nz-select name="voyageType" [(ngModel)]="voyageType">
+            <nz-option [nzValue]="0" [nzLabel]="'COMMON.Airship' | translate"></nz-option>
+            <nz-option [nzValue]="1" [nzLabel]="'COMMON.Submarine' | translate"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Voyage' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="10">
+          <input
+            ngModel
+            name="voyage"
+            required
+            (input)="voyageInput$.next($event.target?.value)"
+            [nzAutocomplete]="auto"
+            [placeholder]="'ALLAGAN_REPORTS.Voyage_placeholder' | translate"
+            nz-input
+          />
+          <nz-autocomplete #auto nzBackfill>
+            <nz-auto-option *ngFor="let option of voyageCompletion$ | async" [nzValue]="option.name | i18n">
+              {{ option.name | i18n }}
+            </nz-auto-option>
+          </nz-autocomplete>
+        </nz-form-control>
+      </nz-form-item>
+    </ng-container>
+    <button nz-button type="submit">
+      Submit
+    </button>
+  </form>
+</div>
