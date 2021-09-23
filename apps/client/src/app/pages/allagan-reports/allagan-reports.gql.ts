@@ -10,8 +10,14 @@ export class GetItemAllaganReportsQuery extends Query<{ allagan_reports: Allagan
   public document = gql`
     query ItemAllaganReports($itemId: Int) {
       allagan_reports(where: {itemId: {_eq: $itemId}}) {
-        source,
+        source
         data
+        created_at
+        updated_at
+        itemId
+        reporter
+        reviewer
+        uid
       }
     }
   `;
@@ -22,12 +28,14 @@ export class GetItemAllaganReportsQueueQuery extends Query<{ allagan_reports_que
   public document = gql`
       query ItemAllaganReports($itemId: Int) {
         allagan_reports_queue(where: {itemId: {_eq: $itemId}}) {
+          itemId
           author
           uid
           source
           data
           type
           report
+          created_at
         }
       }
   `;

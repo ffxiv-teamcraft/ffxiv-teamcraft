@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { AllaganReportSource } from '../model/allagan-report-source';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReport } from '../model/allagan-report';
 import { AllaganReportStatus } from '../model/allagan-report-status';
+import { UserLevel } from '../../../model/other/user-level';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-allagan-report-row',
@@ -13,12 +15,47 @@ import { AllaganReportStatus } from '../model/allagan-report-status';
 export class AllaganReportRowComponent {
 
   AllaganReportSource = AllaganReportSource;
+  AllaganReportStatus = AllaganReportStatus;
+  UserLevel = UserLevel;
+
+  canSuggestDeletionOrModification = false;
 
   @Input()
   queueEntry: AllaganReportQueueEntry;
 
   @Input()
   report: AllaganReport;
+
+  @Input()
+  userIsChecker = false;
+
+  @Input()
+  userId: string;
+
+  @Input()
+  embed = false;
+
+  @Input()
+  focusId: string;
+
+  @Input()
+  set reportsQueue(queue: AllaganReportQueueEntry[]) {
+    this.canSuggestDeletionOrModification = !this.embed && queue && !queue.some(entry => entry.report === this.report?.uid && [AllaganReportStatus.DELETION, AllaganReportStatus.MODIFICATION].includes(entry.type));
+  }
+
+  @Output()
+  accept = new EventEmitter<void>();
+
+  @Output()
+  reject = new EventEmitter<void>();
+
+  @Output()
+  delete = new EventEmitter<void>();
+
+  @Output()
+  edit = new EventEmitter<void>();
+
+  applyingChange = false;
 
   get itemId(): number {
     return (this.report || this.queueEntry)?.itemId;
@@ -38,6 +75,9 @@ export class AllaganReportRowComponent {
 
   get status(): AllaganReportStatus {
     return this.queueEntry?.type || AllaganReportStatus.ACCEPTED;
+  }
+
+  constructor(public translate: TranslateService) {
   }
 
   getColor(status: AllaganReportStatus): string {

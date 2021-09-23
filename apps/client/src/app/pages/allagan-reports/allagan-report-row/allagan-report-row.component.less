@@ -1,12 +1,43 @@
 .report-container {
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #444;
   border-radius: 4px;
   background-color: var(--topbar-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .7);
+  height: 100%;
+
+  &.parent {
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .7);
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  &.focused {
+    background-color: var(--primary-color-20);
+  }
+}
+
+.last-update {
+  font-size: small;
+}
+
+.img-icon {
+  max-height: 32px;
+  max-width: 32px;
 }
 
 .round-icon {
   width: 32px;
   border-radius: 50%;
+}
+
+.patron {
+  color: #c27c0e;
+}
+
+
+.not-verified {
+  > img {
+    filter: grayscale(100%);
+  }
 }

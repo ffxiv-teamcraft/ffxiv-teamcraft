@@ -1,11 +1,11 @@
-<div class="report-container" nz-row>
+<div class="report-container" [class.parent]="!embed" [class.focused]="focusId === report?.uid" nz-row>
   <div nz-col nzMd="4" fxLayout="column" fxLayoutGap="10px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
       <div [ngSwitch]="source">
         <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
         <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
         <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
-        <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon round-icon">
+        <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon">
         <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
         <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
         <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
@@ -13,11 +13,24 @@
       </div>
       <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
     </div>
-    <div>
-      <nz-tag class="custom-tag" [style.border-color]="getColor(status)">{{('ALLAGAN_REPORTS.STATUS.' + status) | translate}}</nz-tag>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <nz-tag class="custom-tag" *ngIf="status !== AllaganReportStatus.ACCEPTED"
+              [style.border-color]="getColor(status)">{{('ALLAGAN_REPORTS.STATUS.' + status) | translate}}</nz-tag>
+      <button nz-button nzSize="small" *ngIf="canSuggestDeletionOrModification && status === AllaganReportStatus.ACCEPTED" [disabled]="applyingChange"
+              [nzLoading]="applyingChange"
+              (click)="applyingChange = true;edit.emit()">
+        <i nz-icon nzType="edit"></i>
+        {{'ALLAGAN_REPORTS.Suggest_modification' | translate}}
+      </button>
+      <button nz-button nzSize="small" *ngIf="canSuggestDeletionOrModification && status === AllaganReportStatus.ACCEPTED" nzDanger [disabled]="applyingChange"
+              [nzLoading]="applyingChange" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+              (nzOnConfirm)="applyingChange = true;delete.emit()">
+        <i nz-icon nzType="delete"></i>
+        {{'ALLAGAN_REPORTS.Suggest_deletion' | translate}}
+      </button>
     </div>
   </div>
-  <div nz-col nzMd="8" class="details">
+  <div nz-col nzMd="8" class="details" fxLayout="column" fxLayoutAlign="space-between flex-start">
     <div [ngSwitch]="source">
       <ng-container *ngSwitchCase="AllaganReportSource.GARDENING">
         <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
@@ -45,7 +58,9 @@
         </div>
       </ng-container>
       <ng-container *ngSwitchCase="AllaganReportSource.VOYAGE">
-        TODO
+        <div>
+          {{data.voyageId | voyageName: data.voyageType | i18n}}
+        </div>
       </ng-container>
       <ng-container *ngSwitchCase="AllaganReportSource.VENTURE">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -53,8 +68,56 @@
         </div>
       </ng-container>
     </div>
+    <div fxLayout="row" fxLayoutGap="10px" *ngIf="!embed">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{'ALLAGAN_REPORTS.Reported_by' | translate }}:</div>
+        <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: author}"></ng-container>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="userIsChecker && status !== AllaganReportStatus.ACCEPTED">
+        <button nz-button nzSize="small" nzType="primary" [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
+                [nzPopconfirmTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="applyingChange = true;accept.emit()">
+          {{'ALLAGAN_REPORTS.Accept' | translate}}
+        </button>
+        <button nz-button nzSize="small" nzDanger [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
+                [nzPopconfirmTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="applyingChange = true;reject.emit()">
+          {{'ALLAGAN_REPORTS.Reject' | translate}}
+        </button>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.reviewer">
+        <div>{{'ALLAGAN_REPORTS.Approved_by' | translate }}:</div>
+        <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: report?.reviewer}"></ng-container>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzMd="12" class="right-block" fxLayout="column">
+    <div fxFlex="1 1 auto"></div>
+    <div *ngIf="report?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end" class="last-update">{{'ALLAGAN_REPORTS.Last_updated' | translate}}
+      : {{report.created_at | date:'medium':translate.currentLang}}</div>
+    <div *ngIf="queueEntry?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end" class="last-update">{{'ALLAGAN_REPORTS.Submitted' | translate}}
+      : {{queueEntry.created_at | date:'medium':translate.currentLang}}</div>
   </div>
 </div>
+
+<ng-template #userDisplay let-userId>
+  <nz-avatar [class.not-verified]="userId && !(userId | isVerified | async)"
+             [nzSrc]="userId | characterAvatar | async"
+             routerLink="/profile/{{userId}}"
+             nz-comment-avatar
+             nzIcon="user"></nz-avatar>
+  <div [class.patron]="userId | isPatron | async"
+       [nzTooltipTitle]="(userId | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null"
+       nz-tooltip>
+    {{userId | characterName | async}}
+  </div>
+  <div *ngIf="userId | userLevel | async as userLvl">
+    <i *ngIf="userLvl === UserLevel.ADMIN" [nzTooltipTitle]="'COMMON.Admin' | translate" nz-icon nz-tooltip
+       nzType="crown"></i>
+    <i *ngIf="userLvl === UserLevel.MODERATOR" [nzTooltipTitle]="'COMMON.Moderator' | translate" nz-icon nz-tooltip
+       nzType="crown"></i>
+  </div>
+</ng-template>
 
 <ng-template #itemIdTpl let-itemId>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

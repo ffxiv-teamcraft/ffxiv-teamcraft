@@ -20,6 +20,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { AllaganReportRowComponent } from './allagan-report-row/allagan-report-row.component';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 
 
 const routes: Routes = [
@@ -51,7 +54,10 @@ const routes: Routes = [
     NzAutocompleteModule,
     NzInputModule,
     NzEmptyModule,
-    NzTagModule
+    NzTagModule,
+    NzAvatarModule,
+    NzPopconfirmModule,
+    LazyScrollModule
   ],
   providers: [
     AllaganReportsService, ...Object.values(AllaganReportsGQLProviders)

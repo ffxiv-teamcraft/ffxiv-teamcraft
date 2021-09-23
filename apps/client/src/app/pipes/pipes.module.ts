@@ -72,6 +72,7 @@ import { CraftingActionPipe } from './pipes/crafting-action.pipe';
 import { MateriaBonusPipe } from './pipes/materia-bonus.pipe';
 import { WidthBreakpointsPipe } from './pipes/width-breakpoints';
 import { TugNamePipe } from './pipes/tug-name.pipe';
+import { VoyageNamePipe } from './pipes/voyage-name.pipe';
 
 @NgModule({
   declarations: [
@@ -148,7 +149,8 @@ import { TugNamePipe } from './pipes/tug-name.pipe';
     CraftingActionPipe,
     MateriaBonusPipe,
     WidthBreakpointsPipe,
-    TugNamePipe
+    TugNamePipe,
+    VoyageNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -224,7 +226,8 @@ import { TugNamePipe } from './pipes/tug-name.pipe';
     CraftingActionPipe,
     MateriaBonusPipe,
     WidthBreakpointsPipe,
-    TugNamePipe
+    TugNamePipe,
+    VoyageNamePipe
   ]
 })
 export class PipesModule {

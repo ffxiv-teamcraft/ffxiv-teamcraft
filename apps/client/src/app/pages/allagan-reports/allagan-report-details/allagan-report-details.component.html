@@ -6,22 +6,42 @@
     </div>
   </div>
   <nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>
-  <div class="reports" fxLayout="column" fxLayoutGap="10px" *ngIf="itemDetails$ | async as details">
+  <div class="reports" *ngIf="itemDetails$ | async as details">
     <nz-empty *ngIf="details.reports.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_reports' | translate"></nz-empty>
-    <app-allagan-report-row *ngFor="let entry of details.reports" [queueEntry]="entry"></app-allagan-report-row>
+    <app-lazy-scroll [trackBy]="trackByUid" [displayedRows]="4" rowSize="100" [data]="details.reports" [rowTemplate]="reportTpl">
+      <ng-template #reportTpl let-entry>
+        <app-allagan-report-row [report]="entry" [userIsChecker]="isChecker$ | async"
+                                [userId]="userId$ | async" [reportsQueue]="itemReportsQueue$ | async"
+                                [focusId]="hoverId$ | async"
+                                (delete)="suggestDeletion(entry)" (edit)="startModification(entry, ngForm)"></app-allagan-report-row>
+      </ng-template>
+    </app-lazy-scroll>
   </div>
   <nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate" nzOrientation="left"></nz-divider>
-  <div class="pending-reports" fxLayout="column" fxLayoutGap="10px" *ngIf="itemReportsQueue$ | async as queue">
+  <div class="pending-reports" *ngIf="itemReportsQueue$ | async as queue">
     <nz-empty *ngIf="queue.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
-    <app-allagan-report-row *ngFor="let entry of queue" [queueEntry]="entry"></app-allagan-report-row>
+    <app-lazy-scroll [trackBy]="trackByUid" [displayedRows]="4" rowSize="100" [data]="queue" [rowTemplate]="reportQueueEntryTpl">
+      <ng-template #reportQueueEntryTpl let-entry>
+        <app-allagan-report-row [queueEntry]="entry" [userIsChecker]="isChecker$ | async"
+                                [userId]="userId$ | async"
+                                (accept)="accept(entry)" (reject)="reject(entry)"
+                                (mouseenter)="hoverQueueEntry(entry)"
+                                (mouseleave)="hoverId$.next(null)"></app-allagan-report-row>
+      </ng-template>
+    </app-lazy-scroll>
   </div>
-  <nz-divider [nzText]="'ALLAGAN_REPORTS.Add_new_source' | translate" nzOrientation="left"></nz-divider>
+  <nz-divider [nzText]="formTitle" nzOrientation="left"></nz-divider>
+  <ng-template #formTitle>
+    <span *ngIf="!modificationId">{{'ALLAGAN_REPORTS.New_report' | translate}}</span>
+    <span *ngIf="modificationId">{{'ALLAGAN_REPORTS.Suggest_modification' | translate}}</span>
+  </ng-template>
   <div class="add-source">
-    <form nz-form #ngForm="ngForm" (ngSubmit)="addSource(itemId, ngForm.form.getRawValue())">
+    <form nz-form #ngForm="ngForm"
+          (ngSubmit)="modificationId ? submitModification(itemId, ngForm.form, modificationId) :addSource(itemId, ngForm.form.getRawValue(), ngForm.form)">
       <nz-form-item>
         <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Source' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="10">
-          <nz-select name="source" [(ngModel)]="source">
+          <nz-select name="source" required [(ngModel)]="source" [nzDisabled]="!!modificationId">
             <nz-option *ngFor="let source of sources" [nzValue]="source.key" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source.value) | translate"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -132,8 +152,9 @@
           </nz-form-control>
         </nz-form-item>
       </ng-container>
-      <button nz-button type="submit">
-        {{'ALLAGAN_REPORTS.Submit_new_report' | translate}}
+      <button nz-button nzType="primary" type="submit" [disabled]="ngForm.invalid">
+        <span *ngIf="!modificationId">{{'ALLAGAN_REPORTS.Submit_new_report' | translate}}</span>
+        <span *ngIf="modificationId">{{'ALLAGAN_REPORTS.Submit_modification_suggestion' | translate}}</span>
       </button>
     </form>
   </div>

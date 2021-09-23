@@ -1,13 +1,15 @@
-import { AllaganReport } from './allagan-report';
 import { AllaganReportSource } from './allagan-report-source';
 import { AllaganReportStatus } from './allagan-report-status';
+import { AllaganReport } from './allagan-report';
 
 export interface AllaganReportQueueEntry {
   uid: string;
   itemId: number;
   author: string;
   type: AllaganReportStatus;
-  report?: AllaganReport;
+  report?: string;
+  reportData?: AllaganReport;
   source: AllaganReportSource;
   data: any;
+  created_at: number;
 }

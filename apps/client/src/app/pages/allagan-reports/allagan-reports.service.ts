@@ -5,6 +5,9 @@ import { GetItemAllaganReportsQuery, GetItemAllaganReportsQueueQuery } from './a
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
+import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
+import { AuthFacade } from '../../+state/auth.facade';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class AllaganReportsService {
@@ -12,15 +15,15 @@ export class AllaganReportsService {
 
   constructor(private getItemAllaganReportsQuery: GetItemAllaganReportsQuery,
               private getItemAllaganReportsQueueQuery: GetItemAllaganReportsQueueQuery,
-              private apollo: Apollo) {
+              private apollo: Apollo, private authFacade: AuthFacade) {
   }
 
   public getItemReports = (itemId: number) => {
-    return this.getItemAllaganReportsQuery.fetch({ itemId });
+    return this.getItemAllaganReportsQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
   };
 
   public getItemReportsQueue = (itemId: number) => {
-    return this.getItemAllaganReportsQueueQuery.watch({ itemId }).valueChanges;
+    return this.getItemAllaganReportsQueueQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
   };
 
   addReportToQueue(report: AllaganReport): Observable<any> {
@@ -38,6 +41,124 @@ export class AllaganReportsService {
           type: AllaganReportStatus.PROPOSAL,
           report: null
         }
+      }
+    });
+  }
+
+  suggestModification(reportId: string, report: AllaganReport): Observable<any> {
+    const query = gql`mutation suggestModification($data: allagan_reports_queue_insert_input!) {
+        insert_allagan_reports_queue_one(object: $data) {
+          uid
+        }
+      }`;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        data: {
+          ...report,
+          data: JSON.stringify(report.data),
+          type: AllaganReportStatus.MODIFICATION,
+          report: reportId
+        }
+      }
+    });
+  }
+
+  suggestDeletion(report: AllaganReport): Observable<any> {
+    const query = gql`mutation suggestDeletion($data: allagan_reports_queue_insert_input!) {
+        insert_allagan_reports_queue_one(object: $data) {
+          uid
+        }
+      }`;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        data: {
+          report: report.uid,
+          type: AllaganReportStatus.DELETION,
+          data: JSON.stringify(report.data),
+          itemId: report.itemId,
+          source: report.source
+        }
+      }
+    });
+  }
+
+  acceptProposal(proposal: AllaganReportQueueEntry): Observable<any> {
+    const query = gql`mutation acceptAllaganReportProposal($report: allagan_reports_insert_input!, $queueEntryId: uuid!) {
+          delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
+            uid
+          }
+          insert_allagan_reports_one(object: $report) {
+            uid
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryId: proposal.uid,
+        report: {
+          itemId: proposal.itemId,
+          source: proposal.source,
+          data: JSON.stringify(proposal.data),
+          reporter: proposal.author
+        }
+      }
+    });
+  }
+
+  acceptDeletion(proposal: AllaganReportQueueEntry): Observable<any> {
+    const query = gql`mutation acceptAllaganReportProposal($reportId: uuid!, $queueEntryId: uuid!) {
+          delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
+            uid
+          }
+          delete_allagan_reports_by_pk(uid: $reportId) {
+            uid
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryId: proposal.uid,
+        reportId: proposal.report
+      }
+    });
+  }
+
+  acceptModification(proposal: AllaganReportQueueEntry): Observable<any> {
+    const query = gql`mutation acceptAllaganReportModification($reportId: uuid!, $queueEntryId: uuid!, $data: jsonb!, $reporter: String!) {
+          delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
+            uid
+          }
+          update_allagan_reports_by_pk(pk_columns: {uid: $reportId}, _set: {data: $data, reporter:$reporter }) {
+            uid
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryId: proposal.uid,
+        reportId: proposal.report,
+        data: proposal.data,
+        reporter: proposal.author
+      }
+    });
+  }
+
+  reject(proposal: AllaganReportQueueEntry): Observable<any> {
+    const query = gql`mutation rejectAllaganReportProposal($queueEntryId: uuid!) {
+          delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
+            uid
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryId: proposal.uid
       }
     });
   }

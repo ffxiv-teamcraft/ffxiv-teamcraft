@@ -16,13 +16,13 @@ export const environment = {
   noAnimations: false,
   ...gameEnv,
   firebase: {
-    apiKey: 'AIzaSyCkrNPf7XlyuxQeqNtynvDFDnQ-XigG3WA',
-    authDomain: 'ffxiv-teamcraft-beta.firebaseapp.com',
-    databaseURL: 'https://ffxiv-teamcraft-beta.firebaseio.com',
-    projectId: 'ffxiv-teamcraft-beta',
-    storageBucket: 'ffxiv-teamcraft-beta.appspot.com',
-    messagingSenderId: '716469847404',
-    appId: '1:716469847404:web:d1716789557f9cca5e1f49'
+    apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
+    authDomain: 'ffxivteamcraft.firebaseapp.com',
+    databaseURL: 'https://ffxivteamcraft.firebaseio.com',
+    projectId: 'ffxivteamcraft',
+    storageBucket: 'ffxivteamcraft.appspot.com',
+    messagingSenderId: '1082504004791',
+    appId: '1:1082504004791:web:78e7872c937b2ce56df932'
   }
 };
 
