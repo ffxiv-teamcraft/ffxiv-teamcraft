@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AllaganReport } from './model/allagan-report';
 import { GetItemAllaganReportsQuery, GetItemAllaganReportsQueueQuery } from './allagan-reports.gql';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { AuthFacade } from '../../+state/auth.facade';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AllaganReportsService {
   [x: string]: any;
 
+  public readonly reloader$: BehaviorSubject<void> = new BehaviorSubject(void 0);
+
   constructor(private getItemAllaganReportsQuery: GetItemAllaganReportsQuery,
               private getItemAllaganReportsQueueQuery: GetItemAllaganReportsQueueQuery,
-              private apollo: Apollo, private authFacade: AuthFacade) {
+              private apollo: Apollo) {
   }
 
   public getItemReports = (itemId: number) => {
@@ -25,6 +28,27 @@ export class AllaganReportsService {
   public getItemReportsQueue = (itemId: number) => {
     return this.getItemAllaganReportsQueueQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
   };
+
+  getQueueStatus(): Observable<{ itemId: number, count: number }[]> {
+    const query = gql`query GetAllaganReportsQueueStatus {
+        allagan_reports_queue_per_item {
+          itemId
+          count
+        }
+      }`;
+    return this.reloader$.pipe(
+      switchMap(() => {
+        return this.apollo.query<any>({
+          query,
+          fetchPolicy: 'network-only'
+        }).pipe(
+          map(res => {
+            return res.data.allagan_reports_queue_per_item;
+          })
+        );
+      })
+    );
+  }
 
   addReportToQueue(report: AllaganReport): Observable<any> {
     const query = gql`mutation addAllaganReportToQueue($data: allagan_reports_queue_insert_input!) {

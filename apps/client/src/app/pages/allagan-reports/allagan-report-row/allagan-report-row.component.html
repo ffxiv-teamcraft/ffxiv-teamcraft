@@ -15,6 +15,8 @@
           <img *ngSwitchCase="AllaganReportSource.SPEARFISHING" alt="Fishing" class="img-icon round-icon" [src]="5 | nodeTypeIcon">
         </div>
         <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
+        <nz-tag *ngIf="report && !report.applied" class="custom-tag" [style.border-color]="'#f2b10e'" nz-tooltip
+                [nzTooltipTitle]="'ALLAGAN_REPORTS.Not_applied_yet_explain' | translate">{{'ALLAGAN_REPORTS.Not_applied_yet' | translate}}</nz-tag>
       </div>
 
       <div *ngIf="report?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end"
@@ -27,9 +29,8 @@
     <div fxLayout="row" fxLayoutGap="10px">
       <nz-tag class="custom-tag" *ngIf="status !== AllaganReportStatus.ACCEPTED"
               [style.border-color]="getColor(status)">{{('ALLAGAN_REPORTS.STATUS.' + status) | translate}}</nz-tag>
-      <button nz-button nzSize="small" *ngIf="canSuggestDeletionOrModification && status === AllaganReportStatus.ACCEPTED" [disabled]="applyingChange"
-              [nzLoading]="applyingChange"
-              (click)="applyingChange = true;edit.emit()">
+      <button nz-button nzSize="small" *ngIf="canSuggestDeletionOrModification && status === AllaganReportStatus.ACCEPTED"
+              (click)="edit.emit()">
         <i nz-icon nzType="edit"></i>
         {{'ALLAGAN_REPORTS.Suggest_modification' | translate}}
       </button>

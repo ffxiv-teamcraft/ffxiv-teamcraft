@@ -8,7 +8,7 @@ import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-br
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject, timer } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzIconService } from 'ng-zorro-antd/icon';
@@ -59,6 +59,7 @@ import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+sta
 import { Language } from './core/data/language';
 import { InventoryService } from './modules/inventory/inventory.service';
 import { DataService } from './core/api/data.service';
+import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
 
 @Component({
   selector: 'app-root',
@@ -166,6 +167,8 @@ export class AppComponent implements OnInit {
   @ViewChild('vmAdRef')
   public vmAdRef: ElementRef;
 
+  public allaganReportsQueueCount$: Observable<number>;
+
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
@@ -182,11 +185,7 @@ export class AppComponent implements OnInit {
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
-              private data: DataService) {
-
-    fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
-      this.handleKeypressShortcuts(event);
-    });
+              private data: DataService, private allaganReportsService: AllaganReportsService) {
 
     const link = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
 
@@ -195,6 +194,15 @@ export class AppComponent implements OnInit {
       cache: new InMemoryCache({
         addTypename: false
       })
+    });
+
+    this.allaganReportsQueueCount$ = timer(0, 300000).pipe(
+      switchMap(() => this.allaganReportsService.getQueueStatus()),
+      map(status => status.reduce((acc, row) => acc + row.count, 0))
+    );
+
+    fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
+      this.handleKeypressShortcuts(event);
     });
 
     this.showGiveaway = false;

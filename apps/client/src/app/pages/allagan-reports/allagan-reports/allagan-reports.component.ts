@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AllaganReportsService } from '../allagan-reports.service';
 
 @Component({
   selector: 'app-allagan-reports',
@@ -7,4 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AllaganReportsComponent {
+
+  public queueStatus$ = this.allaganReportsService.getQueueStatus();
+
+  constructor(public allaganReportsService: AllaganReportsService) {
+  }
 }

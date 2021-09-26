@@ -25,6 +25,13 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { PredatorsInputComponent } from './predators-input/predators-input.component';
+import { ItemContextService } from '../db/service/item-context.service';
+import { FishDataService } from '../db/service/fish-data.service';
+import { FishContextService } from '../db/service/fish-context.service';
+import * as FishGQLProviders from '../db/service/fish-data.gql';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 
 
 const routes: Routes = [
@@ -61,10 +68,17 @@ const routes: Routes = [
     NzAvatarModule,
     NzPopconfirmModule,
     LazyScrollModule,
-    NzInputNumberModule
+    NzInputNumberModule,
+    NzSpinModule,
+    NzAlertModule,
+    PageLoaderModule
   ],
   providers: [
-    AllaganReportsService, ...Object.values(AllaganReportsGQLProviders)
+    ...Object.values(AllaganReportsGQLProviders),
+    ItemContextService,
+    FishDataService,
+    FishContextService,
+    ...Object.values(FishGQLProviders)
   ]
 })
 export class AllaganReportsModule {

@@ -73,6 +73,7 @@ import { MateriaBonusPipe } from './pipes/materia-bonus.pipe';
 import { WidthBreakpointsPipe } from './pipes/width-breakpoints';
 import { TugNamePipe } from './pipes/tug-name.pipe';
 import { VoyageNamePipe } from './pipes/voyage-name.pipe';
+import { HooksetActionIdPipe } from './pipes/hookset-action-id.pipe';
 
 @NgModule({
   declarations: [
@@ -150,7 +151,8 @@ import { VoyageNamePipe } from './pipes/voyage-name.pipe';
     MateriaBonusPipe,
     WidthBreakpointsPipe,
     TugNamePipe,
-    VoyageNamePipe
+    VoyageNamePipe,
+    HooksetActionIdPipe
   ],
   exports: [
     ItemNamePipe,
@@ -227,7 +229,8 @@ import { VoyageNamePipe } from './pipes/voyage-name.pipe';
     MateriaBonusPipe,
     WidthBreakpointsPipe,
     TugNamePipe,
-    VoyageNamePipe
+    VoyageNamePipe,
+    HooksetActionIdPipe
   ]
 })
 export class PipesModule {

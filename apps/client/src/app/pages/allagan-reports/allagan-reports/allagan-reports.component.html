@@ -1,1 +1,30 @@
-<p>allagan-reports works!</p>
+<h1>{{'ALLAGAN_REPORTS.Title' | translate}}</h1>
+<nz-divider [nzText]="title" nzOrientation="left"></nz-divider>
+<ng-template #title>
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <div>{{'ALLAGAN_REPORTS.Pending_changes' | translate}}</div>
+    <div>
+      <button nz-button nzShape="circle" nzSize="small" (click)="allaganReportsService.reloader$.next()"><i nz-icon nzType="reload" nzTheme="outline"></i></button>
+    </div>
+  </div>
+</ng-template>
+<div fxLayout="column" *ngIf="queueStatus$ | async as status; else loading">
+  <div *ngFor="let row of status; let odd = odd" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd">
+    <app-item-icon [width]="32" [itemId]="row.itemId"></app-item-icon>
+    <div>{{row.itemId | itemName | i18n}}</div>
+    <div>
+      <nz-tag>{{'ALLAGAN_REPORTS.Pending_changes_count' | translate:{ amount: row.count } }}</nz-tag>
+    </div>
+    <div>
+      <a routerLink="/allagan-reports/{{row.itemId}}" nz-button nzShape="circle" nzType="primary" nz-tooltip
+         [nzTooltipTitle]="'ALLAGAN_REPORTS.Review_changes' | translate">
+        <i nz-icon nzType="security-scan" nzTheme="outline"></i>
+      </a>
+    </div>
+  </div>
+  <nz-empty *ngIf="status.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
+</div>
+
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>

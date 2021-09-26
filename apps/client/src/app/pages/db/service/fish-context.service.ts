@@ -157,7 +157,7 @@ export class FishContextService {
     shareReplay(1)
   );
 
-  private readonly hooksetTugsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+  public readonly hooksetTugsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getHooksets(fishId, spotId))
   );
@@ -179,7 +179,7 @@ export class FishContextService {
     shareReplay(1)
   );
 
-  private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+  public readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     filter(([fishId, spotId]) => fishId >= 0 || spotId > 0),
     switchMap(([fishId, spotId]) => {
       return this.data.getWeather(fishId, spotId).pipe(
@@ -283,7 +283,7 @@ export class FishContextService {
   );
 
   /** An observable containing the baits needed and mooches possible at the active spot. */
-  private readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$]).pipe(
+  public readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$]).pipe(
     filter(([spotId]) => spotId > 0),
     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses.toString())),
     switchMap(([spotId, showMisses]) => this.data.getBaitMooches(undefined, spotId, showMisses))
@@ -311,7 +311,7 @@ export class FishContextService {
   );
 
   /** An observable containing the tugs and hooksets used to catch fish at the active spot. */
-  private readonly hooksetTugsBySpot$ = this.spotId$.pipe(
+  public readonly hooksetTugsBySpot$ = this.spotId$.pipe(
     filter((spotId) => spotId > 0),
     switchMap((spotId) => this.data.getHooksets(undefined, spotId))
   );

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
@@ -22,6 +22,8 @@ import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { FishContextService } from '../../db/service/fish-context.service';
+import { ItemContextService } from '../../db/service/item-context.service';
 
 
 function durationRequired(control: AbstractControl) {
@@ -40,7 +42,9 @@ function durationRequired(control: AbstractControl) {
 })
 export class AllaganReportDetailsComponent extends TeamcraftComponent {
 
-  modificationId: string = null;
+  loadingReports = false;
+  loadingReportsQueue = false;
+  modificationId$ = new BehaviorSubject<string>(null);
   source: AllaganReportSource;
   voyageType: number;
   AllaganReportSource = AllaganReportSource;
@@ -60,10 +64,12 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
   );
 
   itemDetails$ = this.itemId$.pipe(
+    tap(() => this.loadingReports = true),
     switchMap(itemId => {
       return this.reloader$.pipe(switchMapTo(this.allaganReportsService.getItemReports(itemId).pipe(
         map(reports => {
           return {
+            itemId,
             reports: reports.data.allagan_reports.map(report => {
               return {
                 ...report,
@@ -83,10 +89,12 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
           return data;
         })
       )));
-    })
+    }),
+    tap(() => this.loadingReports = false)
   );
 
   itemReportsQueue$ = this.itemId$.pipe(
+    tap(() => this.loadingReportsQueue = true),
     switchMap(itemId => {
       return combineLatest([
         this.itemDetails$,
@@ -109,7 +117,8 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
         }
         return entry;
       });
-    })
+    }),
+    tap(() => this.loadingReportsQueue = false)
   );
 
   sources = uniq(Object.keys(AllaganReportSource))
@@ -163,6 +172,12 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     shareReplay(1)
   );
 
+  public canSuggestForThisSpot$ = combineLatest([this.fishingSpot$, this.itemDetails$, this.modificationId$]).pipe(
+    map(([spot, details, modificationId]) => {
+      return !!modificationId || !spot || !details.reports.some(report => report.source === AllaganReportSource.FISHING && report.data.spot === spot.id);
+    })
+  );
+
   public possibleFish$ = this.fishingSpot$.pipe(
     filter(spot => !!spot),
     map(spot => spot.fishes.filter(f => f > 0))
@@ -182,6 +197,45 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     map((spot) => {
       return _.uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
     }),
+    shareReplay(1)
+  );
+
+  public loadingGubal = false;
+
+  public gubalSuggestions$ = this.itemDetails$.pipe(
+    filter(details => details.isFish),
+    tap(() => this.loadingGubal = true),
+    switchMap(details => {
+      return this.form.get('spot').valueChanges
+        .pipe(
+          startWith(this.form.get('spot').value),
+          filter(spot => !!spot),
+          switchMap(spot => {
+            this.itemCtx.setItemId(details.itemId);
+            this.fishCtx.setSpotId(spot.id);
+            return combineLatest([
+              this.fishCtx.baitMoochesBySpot$,
+              this.fishCtx.hooksetTugsByFish$,
+              this.fishCtx.weatherAndTransitionsByFish$,
+              this.fishCtx.hoursByFish$,
+              this.fishCtx.statisticsByFish$
+            ]);
+          }),
+          map(([baits, hooksetTugs, weathers, hours, stats]) => {
+            return {
+              bait: +baits.data.baits.filter(row => row.itemId === details.itemId).sort((a, b) => b.occurences - a.occurences)[0]?.baitId || null,
+              tug: +hooksetTugs.data.tugs.sort((a, b) => b.occurences - a.occurences)[0]?.tug || null,
+              hookset: +hooksetTugs.data.hooksets.sort((a, b) => b.occurences - a.occurences)[0]?.hookset || null,
+              spawn: this.getSpawnHour(hours.data.byId),
+              duration: this.getDuration(hours.data.byId),
+              weathers: weathers.data.weathers.length > 4 ? [] : weathers.data.weathers.filter(w => w.occurences > 5).map(w => w.weatherId),
+              weathersFrom: weathers.data.weatherTransitions.length > 5 ? [] : weathers.data.weatherTransitions.filter(w => w.occurences > 5).map(w => w.previousWeatherId),
+              snagging: stats.data.snagging > 90
+            };
+          })
+        );
+    }),
+    tap(() => this.loadingGubal = false),
     shareReplay(1)
   );
 
@@ -229,7 +283,8 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
               private lazyData: LazyDataService, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
-              private xivapi: XivapiService, private fb: FormBuilder) {
+              private xivapi: XivapiService, private fb: FormBuilder,
+              private fishCtx: FishContextService, private itemCtx: ItemContextService) {
     super();
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
@@ -241,7 +296,7 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
       this.form.get('duration').updateValueAndValidity();
     });
     this.form.get('source').valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
-      this.form.updateValueAndValidity();
+      setTimeout(() => this.form.updateValueAndValidity());
     });
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
@@ -294,6 +349,11 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
       });
   }
 
+  reload(): void {
+    this.allaganReportsService.reloader$.next();
+    this.reloader$.next();
+  }
+
   requiredIfSource(...sources: AllaganReportSource[]) {
     return (control: AbstractControl) => {
       if (sources.includes(control.parent?.get('source').value)) {
@@ -318,9 +378,15 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     };
     this.allaganReportsService.addReportToQueue(report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
-      this.reloader$.next();
+      this.reload();
       this.form.reset();
     });
+  }
+
+  cancel(): void {
+    this.form.reset();
+    this.modificationId$.next(null);
+    this.reload();
   }
 
   submitModification(itemId: number, reportId: string): void {
@@ -333,7 +399,7 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     };
     this.allaganReportsService.suggestModification(reportId, report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_suggestion_submitted'));
-      this.reloader$.next();
+      this.reload();
       this.form.reset();
     });
   }
@@ -347,19 +413,19 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
       case AllaganReportStatus.PROPOSAL:
         this.allaganReportsService.acceptProposal(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
-          this.reloader$.next();
+          this.reload();
         });
         break;
       case AllaganReportStatus.DELETION:
         this.allaganReportsService.acceptDeletion(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_deleted'));
-          this.reloader$.next();
+          this.reload();
         });
         break;
       case AllaganReportStatus.MODIFICATION:
         this.allaganReportsService.acceptModification(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_applied'));
-          this.reloader$.next();
+          this.reload();
         });
         break;
     }
@@ -368,14 +434,14 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
   reject(entry: AllaganReportQueueEntry): void {
     this.allaganReportsService.reject(entry).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
-      this.reloader$.next();
+      this.reload();
     });
   }
 
   suggestDeletion(report: AllaganReport): void {
     this.allaganReportsService.suggestDeletion(report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Deletion_suggestion_submitted'));
-      this.reloader$.next();
+      this.reload();
     });
   }
 
@@ -388,15 +454,10 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
         this.fishingSpotPatch$.next(patch.spot);
       });
     }
-    this.modificationId = report.uid;
+    this.modificationId$.next(report.uid);
     this.cd.detectChanges();
   }
 
-  /**
-   * This will be useful once we move to proper dynamic reactive form.
-   * @param report
-   * @private
-   */
   private getFormStatePatch(report: AllaganReport): any {
     switch (report.source) {
       case AllaganReportSource.DESYNTH:
@@ -502,5 +563,23 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
 
   trackByUid(index: number, row: AllaganReport | AllaganReportQueueEntry): string {
     return row.uid;
+  }
+
+  private getSpawnHour(byId: Record<string, number>): number | null {
+    if (Object.values(byId).every(v => v === 0)) {
+      return null;
+    }
+    let spawn = null;
+    while (byId[spawn || 0] === 0) {
+      spawn = (spawn || 0) + 1;
+    }
+    if (spawn === null) {
+      return this.getDuration(byId) !== null ? 0 : null;
+    }
+    return spawn;
+  }
+
+  private getDuration(byId: Record<string, number>): number | null {
+    return Object.values(byId).filter(v => v > 0).length;
   }
 }
