@@ -111,7 +111,10 @@
       </ng-container>
     </div>
     <div fxLayout="row" fxLayoutGap="10px" *ngIf="!embed">
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.gt">
+        <div><img src="https://garlandtools.org/db/images/Garland.png" class="garland-avatar" alt="">{{'ALLAGAN_REPORTS.Imported_from_GT_data' | translate }}</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report && !report.gt">
         <div>{{'ALLAGAN_REPORTS.Reported_by' | translate }}:</div>
         <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: author}"></ng-container>
       </div>
@@ -127,7 +130,7 @@
           {{'ALLAGAN_REPORTS.Reject' | translate}}
         </button>
       </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.reviewer">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.reviewer && !report.gt">
         <div>{{'ALLAGAN_REPORTS.Approved_by' | translate }}:</div>
         <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: report?.reviewer}"></ng-container>
       </div>

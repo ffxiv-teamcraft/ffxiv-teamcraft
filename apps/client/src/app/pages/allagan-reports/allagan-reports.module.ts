@@ -11,7 +11,6 @@ import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import * as AllaganReportsGQLProviders from './allagan-reports.gql';
-import { AllaganReportsService } from './allagan-reports.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -32,6 +31,10 @@ import * as FishGQLProviders from '../db/service/fish-data.gql';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { SheetImportPopupComponent } from './sheet-import-popup/sheet-import-popup.component';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { ReportsManagementComponent } from './reports-management.component';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 
 
 const routes: Routes = [
@@ -48,7 +51,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent, PredatorsInputComponent],
+  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent, PredatorsInputComponent, SheetImportPopupComponent,
+    ReportsManagementComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -71,7 +75,9 @@ const routes: Routes = [
     NzInputNumberModule,
     NzSpinModule,
     NzAlertModule,
-    PageLoaderModule
+    PageLoaderModule,
+    NzUploadModule,
+    NzProgressModule
   ],
   providers: [
     ...Object.values(AllaganReportsGQLProviders),

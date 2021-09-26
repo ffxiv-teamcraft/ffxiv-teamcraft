@@ -6,6 +6,9 @@
     <div>
       <button nz-button nzShape="circle" nzSize="small" (click)="allaganReportsService.reloader$.next()"><i nz-icon nzType="reload" nzTheme="outline"></i></button>
     </div>
+    <div *ngIf="devEnv">
+      <button nz-button nzShape="circle" nzSize="small" (click)="importSheet()"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
+    </div>
   </div>
 </ng-template>
 <div fxLayout="column" *ngIf="queueStatus$ | async as status; else loading">

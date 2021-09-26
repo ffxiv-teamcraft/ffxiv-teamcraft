@@ -18,6 +18,8 @@ export class GetItemAllaganReportsQuery extends Query<{ allagan_reports: Allagan
         reporter
         reviewer
         uid
+        gt
+        applied
       }
     }
   `;

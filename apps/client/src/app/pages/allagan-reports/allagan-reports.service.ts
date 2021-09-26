@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { map, switchMap } from 'rxjs/operators';
+import { map, mapTo, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,23 @@ export class AllaganReportsService {
   public getItemReportsQueue = (itemId: number) => {
     return this.getItemAllaganReportsQueueQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
   };
+
+  importFromGT(queue: AllaganReport[]): Observable<void> {
+    const query = gql`mutation ImportFromGT($data: [allagan_reports_insert_input!]!) {
+        delete_allagan_reports(where: {gt: {_eq: true}}) {
+          affected_rows
+        }
+        insert_allagan_reports(objects: $data) {
+          affected_rows
+        }
+      }`;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        data: queue
+      }
+    }).pipe(mapTo(void 0));
+  }
 
   getQueueStatus(): Observable<{ itemId: number, count: number }[]> {
     const query = gql`query GetAllaganReportsQueueStatus {

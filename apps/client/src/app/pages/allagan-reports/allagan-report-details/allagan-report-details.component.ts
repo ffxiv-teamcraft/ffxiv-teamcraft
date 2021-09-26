@@ -21,9 +21,9 @@ import { Tug } from '../../../core/data/model/tug';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
+import { ReportsManagementComponent } from '../reports-management.component';
 
 
 function durationRequired(control: AbstractControl) {
@@ -40,7 +40,7 @@ function durationRequired(control: AbstractControl) {
   styleUrls: ['./allagan-report-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AllaganReportDetailsComponent extends TeamcraftComponent {
+export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   loadingReports = false;
   loadingReportsQueue = false;
@@ -239,13 +239,6 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     shareReplay(1)
   );
 
-  private readonly items: { id: number, name: I18nName }[] = [];
-  private readonly instances: { id: number, name: I18nName }[] = [];
-  private readonly ventures: { id: number, name: I18nName }[] = [];
-  private readonly submarineVoyages: { id: number, name: I18nName }[] = [];
-  private readonly airshipVoyages: { id: number, name: I18nName }[] = [];
-  private readonly mobs: { id: number, name: I18nName }[] = [];
-
   public itemInput$: Subject<string> = new Subject<string>();
 
   public itemCompletion$ = this.makeCompletionObservable(this.itemInput$, 'items');
@@ -280,12 +273,12 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
   public hoverId$ = new Subject<string>();
 
   constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
-              private lazyData: LazyDataService, private i18n: I18nToolsService,
+              protected lazyData: LazyDataService, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
               private xivapi: XivapiService, private fb: FormBuilder,
               private fishCtx: FishContextService, private itemCtx: ItemContextService) {
-    super();
+    super(lazyData);
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(value => {
@@ -298,55 +291,6 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     this.form.get('source').valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
       setTimeout(() => this.form.updateValueAndValidity());
     });
-    const allItems = this.lazyData.allItems;
-    this.items = Object.keys(this.lazyData.data.items)
-      .filter(key => +key > 1)
-      .map(key => {
-        return {
-          id: +key,
-          name: allItems[key]
-        };
-      });
-
-    this.instances = Object.keys(this.lazyData.data.instances)
-      .map(key => {
-        return {
-          id: +key,
-          name: this.lazyData.data.instances[key]
-        };
-      });
-
-    this.ventures = Object.keys(this.lazyData.data.ventures)
-      .map(key => {
-        return {
-          id: +key,
-          name: this.lazyData.data.ventures[key]
-        };
-      });
-
-    this.airshipVoyages = Object.keys(this.lazyData.data.airshipVoyages)
-      .map(key => {
-        return {
-          id: +key,
-          name: this.lazyData.data.airshipVoyages[key]
-        };
-      });
-
-    this.submarineVoyages = Object.keys(this.lazyData.data.submarineVoyages)
-      .map(key => {
-        return {
-          id: +key,
-          name: this.lazyData.data.submarineVoyages[key]
-        };
-      });
-
-    this.mobs = Object.keys(this.lazyData.data.mobs)
-      .map(key => {
-        return {
-          id: +key,
-          name: this.lazyData.data.mobs[key]
-        };
-      });
   }
 
   reload(): void {

@@ -2759,6 +2759,7 @@
     "Not_applied_yet_explain": "This source will be added to the list and database system during the next update",
     "Pending_changes_count": "{{amount}} pending changes to review",
     "Review_changes": "Review changes",
+    "Imported_from_GT_data": "Imported from Garlandtools",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

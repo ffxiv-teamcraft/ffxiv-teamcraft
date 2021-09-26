@@ -10,4 +10,5 @@ export interface AllaganReport {
   reporter?: string;
   reviewer?: string;
   applied?: boolean;
+  gt?: boolean;
 }
