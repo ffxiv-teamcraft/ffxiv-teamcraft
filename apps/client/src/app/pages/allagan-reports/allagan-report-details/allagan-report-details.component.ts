@@ -153,7 +153,8 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
     weathers: [[]],
     weathersFrom: [[]],
     predators: [[]],
-    snagging: [false]
+    snagging: [false],
+    gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -219,6 +220,8 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
       }
     })
   );
+
+  public spearFishingFishList = this.lazyData.data.spearFishingNodes.map(node => node.itemId);
 
   public hoverId$ = new Subject<string>();
 
@@ -412,6 +415,13 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
           voyageId: this.getEntryName([this.airshipVoyages, this.submarineVoyages][report.data.voyageType], report.data.voyageId),
           voyageType: report.data.voyageType
         };
+      case AllaganReportSource.SPEARFISHING:
+        return {
+          gig: report.data.gig,
+          predators: report.data.predators,
+          spawn: report.data.spawn || null,
+          duration: report.data.duration || null
+        };
       case AllaganReportSource.FISHING:
         return pickBy({
           spot: this.lazyData.data.fishingSpots.find(s => s.id === report.data.spot),
@@ -459,6 +469,13 @@ export class AllaganReportDetailsComponent extends TeamcraftComponent {
           voyageId: this.getEntryId([this.airshipVoyages, this.submarineVoyages][formState.voyageType], formState.voyage),
           voyageType: formState.voyageType
         };
+      case AllaganReportSource.SPEARFISHING:
+        return pickBy({
+          gig: formState.gig,
+          predators: formState.predators,
+          spawn: formState.spawn,
+          duration: formState.duration
+        }, value => value !== undefined && value !== null);
       case AllaganReportSource.FISHING:
         return pickBy({
           spot: formState.spot.id,

@@ -235,6 +235,41 @@
             </nz-form-item>
           </ng-container>
         </ng-container>
+        <ng-container *ngIf="source === AllaganReportSource.SPEARFISHING">
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Gig_head' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-select formControlName="gig">
+                <nz-option nzValue="Small" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Small' | translate"></nz-option>
+                <nz-option nzValue="Normal" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Normal' | translate"></nz-option>
+                <nz-option nzValue="Large" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Large' | translate"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
+              <app-predators-input formControlName="predators" [possibleFishList]="spearFishingFishList"></app-predators-input>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-input-group class="spawn-input" nzAddOnAfter=":00">
+                <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
+                                 formControlName="spawn"></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
+                               formControlName="duration">
+              </nz-input-number>
+            </nz-form-control>
+          </nz-form-item>
+        </ng-container>
         <button nz-button nzType="primary" type="submit" [disabled]="form.invalid">
           <span *ngIf="!modificationId">{{'ALLAGAN_REPORTS.Submit_new_report' | translate}}</span>
           <span *ngIf="modificationId">{{'ALLAGAN_REPORTS.Submit_modification_suggestion' | translate}}</span>

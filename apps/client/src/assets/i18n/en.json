@@ -2747,6 +2747,8 @@
     "Predator": "Predator",
     "Predator_explain": "Fish to catch before getting fisher's intuition or the fish for spearfishing",
     "Unknown_hookset": "Unknown hookset",
+    "Gig_head": "Gig head",
+    "No_predators": "No predators",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2756,7 +2758,8 @@
       "VOYAGE": "VOYAGE",
       "DROP": "DROP",
       "INSTANCE": "INSTANCE",
-      "FISHING": "FISHING"
+      "FISHING": "FISHING",
+      "SPEARFISHING": "SPEARFISHING"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

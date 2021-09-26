@@ -1,6 +1,6 @@
 <div class="input-container" fxLayout="row">
   <nz-select fxFlex="1 1 auto" class="left-element" [(ngModel)]="predatorModel.id">
-    <ng-container *ngFor="let fish of fishingSpot?.fishes">
+    <ng-container *ngFor="let fish of (fishingSpot?.fishes || possibleFishList)">
       <nz-option *ngIf="fish > 0" [nzValue]="fish" [nzLabel]="fish | itemName | i18n"></nz-option>
     </ng-container>
   </nz-select>

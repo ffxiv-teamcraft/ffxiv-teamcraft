@@ -17,6 +17,9 @@ export class PredatorsInputComponent implements ControlValueAccessor {
   @Input()
   fishingSpot: any;
 
+  @Input()
+  possibleFishList: number[];
+
   predatorModel = { id: null, amount: null };
 
   predators: { id: number, amount: number }[] = [];
