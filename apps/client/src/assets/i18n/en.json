@@ -153,6 +153,7 @@
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} seconds",
     "None": "None",
+    "Any": "Any",
     "Top": "Top",
     "Bottom": "Bottom",
     "Amount": "Amount",
@@ -2715,6 +2716,7 @@
   "ALLAGAN_REPORTS": {
     "Reports": "Reports",
     "Pending_changes": "Pending changes",
+    "No_pending_changes": "No pending changes",
     "New_report": "New report",
     "Submit_new_report": "Submit new report proposal",
     "Source": "Source",
@@ -2740,6 +2742,11 @@
     "Submit_modification_suggestion": "Submit modification suggestion",
     "Last_updated": "Last updated",
     "Submitted": "Submitted",
+    "Spawn": "Spawn",
+    "Duration": "Duration",
+    "Predator": "Predator",
+    "Predator_explain": "Fish to catch before getting fisher's intuition or the fish for spearfishing",
+    "Unknown_hookset": "Unknown hookset",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

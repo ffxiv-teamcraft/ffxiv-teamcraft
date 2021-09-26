@@ -1,17 +1,27 @@
 <div class="report-container" [class.parent]="!embed" [class.focused]="focusId === report?.uid" nz-row>
-  <div nz-col nzMd="4" fxLayout="column" fxLayoutGap="10px">
-    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
-      <div [ngSwitch]="source">
-        <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
-        <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
-        <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
-        <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon">
-        <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
-        <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
-        <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
-        <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+  <div nz-col nzMd="4" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-between flex-start">
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
+        <div [ngSwitch]="source">
+          <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
+          <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
+          <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+          <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon">
+          <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+          <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+          <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+          <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Loot" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+          <img *ngSwitchCase="AllaganReportSource.FISHING" alt="Fishing" class="img-icon round-icon" [src]="4 | nodeTypeIcon">
+        </div>
+        <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
       </div>
-      <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
+
+      <div *ngIf="report?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end"
+           class="last-update">{{'ALLAGAN_REPORTS.Last_updated' | translate}}
+        : {{report.created_at | date:'short':translate.currentLang}}</div>
+      <div *ngIf="queueEntry?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end"
+           class="last-update">{{'ALLAGAN_REPORTS.Submitted' | translate}}
+        : {{queueEntry.created_at | date:'short':translate.currentLang}}</div>
     </div>
     <div fxLayout="row" fxLayoutGap="10px">
       <nz-tag class="custom-tag" *ngIf="status !== AllaganReportStatus.ACCEPTED"
@@ -43,6 +53,17 @@
       </ng-container>
       <ng-container *ngSwitchCase="AllaganReportSource.REDUCTION">
         <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
+      </ng-container>
+      <ng-container *ngSwitchCase="AllaganReportSource.FISHING">
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div>
+            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.placeId | placeName | i18n}}
+            <app-db-button type="fishing-spot" [id]="data.spot"></app-db-button>
+          </div>
+          <div>
+            <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.bait}"></ng-container>
+          </div>
+        </div>
       </ng-container>
       <ng-container *ngSwitchCase="AllaganReportSource.DROP">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -92,11 +113,61 @@
     </div>
   </div>
   <div nz-col nzMd="12" class="right-block" fxLayout="column">
-    <div fxFlex="1 1 auto"></div>
-    <div *ngIf="report?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end" class="last-update">{{'ALLAGAN_REPORTS.Last_updated' | translate}}
-      : {{report.created_at | date:'medium':translate.currentLang}}</div>
-    <div *ngIf="queueEntry?.created_at" fxFlex="0 0 auto" fxLayoutAlign="flex-end flex-end" fxFlexAlign="flex-end flex-end" class="last-update">{{'ALLAGAN_REPORTS.Submitted' | translate}}
-      : {{queueEntry.created_at | date:'medium':translate.currentLang}}</div>
+    <ng-container *ngIf="source === AllaganReportSource.FISHING">
+      <div class="spot-name">
+      </div>
+      <div fxFlex="1 1 auto" nz-row>
+        <div nz-col nzMd="8" fxLayout="column" fxLayoutAlign="space-around flex-start">
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngIf="hookset; else noHookset">
+            <img class="hookset-icon" [src]="hookset | actionIcon | xivapiIcon" alt="">
+            <div>{{hookset | actionName | i18n}}</div>
+          </div>
+          <ng-template #noHookset>
+            {{'ALLAGAN_REPORTS.Unknown_hookset' | translate}}
+          </ng-template>
+          <div>
+            {{'DB.FISH.OVERLAY.Tug' | translate}}: {{data.tug | tugName | translate}}
+          </div>
+          <img *ngIf="data.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+               src="./assets/icons/status/snagging.png">
+        </div>
+        <div nz-col nzMd="8" fxLayout="column" fxLayoutAlign="space-around flex-start">
+          <div *ngIf="data.spawn !== undefined">
+            {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn}}:00
+          </div>
+          <div *ngIf="data.spawn !== undefined">
+            {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn}}:00
+            - {{(data.spawn + data.duration) % 24}}:00)
+          </div>
+          <div *ngIf="data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                 src="./assets/icons/status/predators.png">
+            <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
+              <div>{{predator.id | itemName | i18n}}</div>
+              <div>x {{predator.amount}}</div>
+              <app-db-button [id]="predator.id" type="item"></app-db-button>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzMd="8" fxLayout="column" fxLayoutAlign="space-around flex-start">
+          <div>
+            {{'ALARMS.CUSTOM.Weather_from' | translate}}:
+            <span *ngIf="data.weathersFrom?.length === 0">{{'COMMON.Any' | translate}}</span>
+            <ng-container *ngFor="let weather of data.weathersFrom; let last = last">
+              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n">
+            </ng-container>
+          </div>
+          <div>
+            {{'ALARMS.CUSTOM.Weather' | translate}}:
+            <span *ngIf="data.weathers?.length === 0">{{'COMMON.Any' | translate}}</span>
+            <ng-container *ngFor="let weather of data.weathers; let last = last">
+              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n">
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
 
@@ -121,7 +192,7 @@
 
 <ng-template #itemIdTpl let-itemId>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-    <app-item-icon width="32" [itemId]="itemId"></app-item-icon>
+    <app-item-icon width="24" [itemId]="itemId"></app-item-icon>
     <div>{{itemId | itemName | i18n}}</div>
     <app-db-button [id]="itemId" type="item"></app-db-button>
   </div>

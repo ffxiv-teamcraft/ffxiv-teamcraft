@@ -5,6 +5,7 @@ import { AllaganReport } from '../model/allagan-report';
 import { AllaganReportStatus } from '../model/allagan-report-status';
 import { UserLevel } from '../../../model/other/user-level';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-allagan-report-row',
@@ -77,7 +78,15 @@ export class AllaganReportRowComponent {
     return this.queueEntry?.type || AllaganReportStatus.ACCEPTED;
   }
 
-  constructor(public translate: TranslateService) {
+  get fishingSpot(): any {
+    return this.lazyData.data.fishingSpots.find(s => s.id === this.data.spot);
+  }
+
+  get hookset(): any {
+    return [0, 4103, 4179][this.data.hookset]
+  }
+
+  constructor(public translate: TranslateService, private lazyData: LazyDataService) {
   }
 
   getColor(status: AllaganReportStatus): string {

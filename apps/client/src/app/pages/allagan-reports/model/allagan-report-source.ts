@@ -1,4 +1,5 @@
 export enum AllaganReportSource {
+  FISHING = 'FISHING',
   DESYNTH = 'DESYNTH',
   REDUCTION = 'REDUCTION',
   GARDENING = 'GARDENING',
@@ -8,5 +9,4 @@ export enum AllaganReportSource {
   VOYAGE = 'VOYAGE', // Airship/Submarine voyage
   DROP = 'DROP', // Drop from monsters kill
   INSTANCE = 'INSTANCE', // Obtained inside an instance
-  FISHING = 'FISHING'
 }

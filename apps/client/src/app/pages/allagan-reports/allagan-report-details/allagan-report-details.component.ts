@@ -1,20 +1,35 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, switchMapTo, takeUntil } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
 import { I18nName } from '../../../model/common/i18n-name';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
-import { uniq } from 'lodash';
+import * as _ from 'lodash';
+import { pickBy, uniq } from 'lodash';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { AllaganReportStatus } from '../model/allagan-report-status';
-import { FormGroup, NgForm } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Hookset } from '../../../core/data/model/hookset';
+import { Tug } from '../../../core/data/model/tug';
+import { weatherIndex } from '../../../core/data/sources/weather-index';
+import { mapIds } from '../../../core/data/sources/map-ids';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+
+
+function durationRequired(control: AbstractControl) {
+  if (control.parent?.get('spawn').value !== null) {
+    return Validators.required(control);
+  }
+  return null;
+}
 
 // noinspection JSMismatchedCollectionQueryUpdate
 @Component({
@@ -23,7 +38,7 @@ import { FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./allagan-report-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AllaganReportDetailsComponent {
+export class AllaganReportDetailsComponent extends TeamcraftComponent {
 
   modificationId: string = null;
   source: AllaganReportSource;
@@ -55,8 +70,17 @@ export class AllaganReportDetailsComponent {
                 data: typeof report.data === 'string' ? JSON.parse(report.data) : report.data
               };
             }).sort((a, b) => a.created_at - b.created_at),
-            isFish: this.lazyData.data.fishes.includes(itemId)
+            isFish: this.lazyData.data.fishes.includes(itemId),
+            spots: []
           };
+        }),
+        map(data => {
+          if (data.isFish) {
+            data.spots = this.lazyData.data.fishingSpots.filter(spot => {
+              return spot.fishes.includes(itemId);
+            });
+          }
+          return data;
         })
       )));
     })
@@ -90,6 +114,75 @@ export class AllaganReportDetailsComponent {
 
   sources = uniq(Object.keys(AllaganReportSource))
     .map(key => ({ key: key, value: AllaganReportSource[key] }));
+
+  hooksets = Object.keys(Hookset)
+    .filter(key => !isNaN(+key) && +key > 0)
+    .map(key => ({ key: +key, value: [0, 4103, 4179][+key] }));
+
+  tugs = Object.keys(Tug)
+    .filter(key => !isNaN(+key))
+    .map(key => ({ key: +key, value: Tug[key] }));
+
+  /** Spawn are limited to hours (0 to 23) **/
+  public SPAWN_VALIDATOR = {
+    min: 0,
+    max: 23
+  };
+
+  /** Duration is only limited to hours (0 to 23) **/
+  public DURATION_VALIDATOR = {
+    min: 0,
+    max: 23
+  };
+
+  // tslint:disable-next-line:member-ordering
+  form: FormGroup = this.fb.group({
+    source: [null, Validators.required],
+    item: [null, this.requiredIfSource(AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT)],
+    instance: [null, this.requiredIfSource(AllaganReportSource.INSTANCE)],
+    venture: [null, this.requiredIfSource(AllaganReportSource.VENTURE)],
+    mob: [null, this.requiredIfSource(AllaganReportSource.DROP)],
+    voyageType: [null, this.requiredIfSource(AllaganReportSource.VOYAGE)],
+    voyage: [null, this.requiredIfSource(AllaganReportSource.VOYAGE)],
+    spot: [null, this.requiredIfSource(AllaganReportSource.FISHING)],
+    hookset: [null],
+    tug: [null, this.requiredIfSource(AllaganReportSource.FISHING)],
+    bait: [null, this.requiredIfSource(AllaganReportSource.FISHING)],
+    spawn: [null],
+    duration: [null, durationRequired],
+    weathers: [[]],
+    weathersFrom: [[]],
+    predators: [[]],
+    snagging: [false]
+  });
+
+  fishingSpotPatch$ = new Subject<any>();
+
+  fishingSpot$ = merge(this.form.valueChanges.pipe(pluck('spot')), this.fishingSpotPatch$).pipe(
+    shareReplay(1)
+  );
+
+  public possibleFish$ = this.fishingSpot$.pipe(
+    filter(spot => !!spot),
+    map(spot => spot.fishes.filter(f => f > 0))
+  );
+
+  public possibleBaits$ = combineLatest([this.possibleFish$, this.xivapi.get(XivapiEndpoint.ItemSearchCategory, 30, {
+    columns: ['GameContentLinks']
+  })]).pipe(
+    map(([possibleFish, fishingTackleCategory]) => {
+      return [...possibleFish, ...fishingTackleCategory.GameContentLinks.Item.ItemSearchCategory];
+    }),
+    startWith([])
+  );
+
+  public mapWeathers$ = this.fishingSpot$.pipe(
+    filter(spot => !!spot),
+    map((spot) => {
+      return _.uniq(weatherIndex[mapIds.find(m => m.id === spot.mapId).weatherRate].map(row => +row.weatherId)) as number[];
+    }),
+    shareReplay(1)
+  );
 
   private readonly items: { id: number, name: I18nName }[] = [];
   private readonly instances: { id: number, name: I18nName }[] = [];
@@ -132,7 +225,21 @@ export class AllaganReportDetailsComponent {
   constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
               private lazyData: LazyDataService, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
-              private authFacade: AuthFacade, private cd: ChangeDetectorRef) {
+              private authFacade: AuthFacade, private cd: ChangeDetectorRef,
+              private xivapi: XivapiService, private fb: FormBuilder) {
+    super();
+    this.form.valueChanges.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(value => {
+      this.source = value.source;
+      this.voyageType = value.voyageType;
+    });
+    this.form.get('spawn').valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
+      this.form.get('duration').updateValueAndValidity();
+    });
+    this.form.get('source').valueChanges.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
+      this.form.updateValueAndValidity();
+    });
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 1)
@@ -184,13 +291,22 @@ export class AllaganReportDetailsComponent {
       });
   }
 
+  requiredIfSource(...sources: AllaganReportSource[]) {
+    return (control: AbstractControl) => {
+      if (sources.includes(control.parent?.get('source').value)) {
+        return Validators.required(control);
+      }
+    };
+  }
+
   hoverQueueEntry(entry: AllaganReportQueueEntry): void {
     if (entry.report) {
       this.hoverId$.next(entry.report);
     }
   }
 
-  addSource(itemId: number, formState: any, form: FormGroup): void {
+  addSource(itemId: number): void {
+    const formState = this.form.getRawValue();
     const { source } = formState;
     const report: AllaganReport = {
       itemId,
@@ -200,12 +316,12 @@ export class AllaganReportDetailsComponent {
     this.allaganReportsService.addReportToQueue(report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
       this.reloader$.next();
-      form.reset();
+      this.form.reset();
     });
   }
 
-  submitModification(itemId: number, form: FormGroup, reportId: string): void {
-    const formState = form.getRawValue();
+  submitModification(itemId: number, reportId: string): void {
+    const formState = this.form.getRawValue();
     const { source } = formState;
     const report: AllaganReport = {
       itemId,
@@ -215,7 +331,7 @@ export class AllaganReportDetailsComponent {
     this.allaganReportsService.suggestModification(reportId, report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_suggestion_submitted'));
       this.reloader$.next();
-      form.reset();
+      this.form.reset();
     });
   }
 
@@ -260,9 +376,15 @@ export class AllaganReportDetailsComponent {
     });
   }
 
-  startModification(report: AllaganReport, ngForm: NgForm): void {
+  startModification(report: AllaganReport): void {
     const patch = this.getFormStatePatch(report);
-    ngForm.form.patchValue({ source: report.source, ...patch });
+    this.source = report.source;
+    this.form.patchValue({ source: report.source, ...patch }, { emitEvent: true });
+    if (patch.spot) {
+      setTimeout(() => {
+        this.fishingSpotPatch$.next(patch.spot);
+      });
+    }
     this.modificationId = report.uid;
     this.cd.detectChanges();
   }
@@ -290,6 +412,19 @@ export class AllaganReportDetailsComponent {
           voyageId: this.getEntryName([this.airshipVoyages, this.submarineVoyages][report.data.voyageType], report.data.voyageId),
           voyageType: report.data.voyageType
         };
+      case AllaganReportSource.FISHING:
+        return pickBy({
+          spot: this.lazyData.data.fishingSpots.find(s => s.id === report.data.spot),
+          hookset: report.data.hookset,
+          tug: report.data.tug,
+          bait: report.data.bait,
+          spawn: report.data.spawn,
+          duration: report.data.duration,
+          weathers: report.data.weathers,
+          weathersFrom: report.data.weathersFrom,
+          snagging: report.data.snagging,
+          predators: report.data.predators
+        }, value => value !== undefined && value !== null);
     }
   }
 
@@ -324,6 +459,19 @@ export class AllaganReportDetailsComponent {
           voyageId: this.getEntryId([this.airshipVoyages, this.submarineVoyages][formState.voyageType], formState.voyage),
           voyageType: formState.voyageType
         };
+      case AllaganReportSource.FISHING:
+        return pickBy({
+          spot: formState.spot.id,
+          hookset: formState.hookset,
+          tug: formState.tug,
+          bait: formState.bait,
+          spawn: formState.spawn,
+          duration: formState.duration,
+          weathers: formState.weathers,
+          weathersFrom: formState.weathersFrom,
+          snagging: formState.snagging,
+          predators: formState.predators
+        }, value => value !== undefined && value !== null);
     }
   }
 

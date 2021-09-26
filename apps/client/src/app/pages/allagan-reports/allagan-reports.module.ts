@@ -12,7 +12,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import * as AllaganReportsGQLProviders from './allagan-reports.gql';
 import { AllaganReportsService } from './allagan-reports.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
@@ -23,6 +23,8 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { PredatorsInputComponent } from './predators-input/predators-input.component';
 
 
 const routes: Routes = [
@@ -39,7 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent],
+  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent, PredatorsInputComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -49,6 +51,7 @@ const routes: Routes = [
     PipesModule,
     NzDividerModule,
     FormsModule,
+    ReactiveFormsModule,
     NzFormModule,
     NzSelectModule,
     NzAutocompleteModule,
@@ -57,7 +60,8 @@ const routes: Routes = [
     NzTagModule,
     NzAvatarModule,
     NzPopconfirmModule,
-    LazyScrollModule
+    LazyScrollModule,
+    NzInputNumberModule
   ],
   providers: [
     AllaganReportsService, ...Object.values(AllaganReportsGQLProviders)
