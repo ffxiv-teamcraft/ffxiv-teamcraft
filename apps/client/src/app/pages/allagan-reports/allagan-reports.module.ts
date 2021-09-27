@@ -35,6 +35,8 @@ import { SheetImportPopupComponent } from './sheet-import-popup/sheet-import-pop
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { ReportsManagementComponent } from './reports-management.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 
 
 const routes: Routes = [
@@ -77,7 +79,9 @@ const routes: Routes = [
     NzAlertModule,
     PageLoaderModule,
     NzUploadModule,
-    NzProgressModule
+    NzProgressModule,
+    NzCardModule,
+    NzStatisticModule
   ],
   providers: [
     ...Object.values(AllaganReportsGQLProviders),

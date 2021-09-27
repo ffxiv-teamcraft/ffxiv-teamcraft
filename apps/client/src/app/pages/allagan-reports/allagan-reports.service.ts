@@ -6,8 +6,9 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { map, mapTo, switchMap } from 'rxjs/operators';
+import { map, mapTo, shareReplay, switchMap } from 'rxjs/operators';
 import { AllaganReportSource } from './model/allagan-report-source';
+import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
 
 @Injectable({
   providedIn: 'root'
@@ -48,8 +49,43 @@ export class AllaganReportsService {
     }).pipe(mapTo(void 0));
   }
 
+  getDashboardData(): Observable<AllaganMetricsDashboardData> {
+    const query = gql`query AllaganMetricsDashboardData {
+        all_reports: allagan_reports_aggregate {
+          nodes {
+            itemId
+          }
+          aggregate {
+            count
+          }
+        }
+        applied_reports: allagan_reports_aggregate(where: {applied: {_eq: true}}) {
+          aggregate {
+            count
+          }
+        }
+      }`;
+    return this.reloader$.pipe(
+      switchMap(() => {
+        return this.apollo.query<any>({
+          query,
+          fetchPolicy: 'network-only'
+        }).pipe(
+          map(res => {
+            return {
+              itemIds: res.data.all_reports.nodes.map(node => node.itemId),
+              reportsCount: res.data.all_reports.aggregate.count,
+              appliedReportsCount: res.data.applied_reports.aggregate.count
+            };
+          }),
+          shareReplay(1)
+        );
+      })
+    );
+  }
+
   getQueueStatus(): Observable<{ itemId: number, count: number }[]> {
-    const query = gql`query GetAllaganReportsQueueStatus {
+    const query = gql`query AllaganReportsQueueStatus {
         allagan_reports_queue_per_item {
           itemId
           count
@@ -63,7 +99,8 @@ export class AllaganReportsService {
         }).pipe(
           map(res => {
             return res.data.allagan_reports_queue_per_item;
-          })
+          }),
+          shareReplay(1)
         );
       })
     );
