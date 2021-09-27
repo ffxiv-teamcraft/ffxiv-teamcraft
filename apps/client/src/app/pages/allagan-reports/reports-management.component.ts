@@ -9,6 +9,7 @@ import { I18nName } from '../../model/common/i18n-name';
 export class ReportsManagementComponent extends TeamcraftComponent {
 
   protected readonly items: { id: number, name: I18nName }[] = [];
+  protected readonly weathers: { id: number, name: I18nName }[] = [];
   protected readonly instances: { id: number, name: I18nName }[] = [];
   protected readonly ventures: { id: number, name: I18nName }[] = [];
   protected readonly submarineVoyages: { id: number, name: I18nName }[] = [];
@@ -24,6 +25,14 @@ export class ReportsManagementComponent extends TeamcraftComponent {
         return {
           id: +key,
           name: allItems[key]
+        };
+      });
+
+    this.weathers = Object.keys(this.lazyData.data.weathers)
+      .map(key => {
+        return {
+          id: +key,
+          name: this.lazyData.data.weathers[key].name
         };
       });
 

@@ -6,11 +6,13 @@ import { ReportsManagementComponent } from '../reports-management.component';
 import { I18nName } from '../../../model/common/i18n-name';
 import { AllaganReportSource } from '../model/allagan-report-source';
 import { AllaganReport } from '../model/allagan-report';
-import { first, mergeScan, scan } from 'rxjs/operators';
+import { first, mergeScan, pluck, scan } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
+import { TimeUtils } from '../../../core/alarms/time.utils';
+import { pickBy } from 'lodash';
 
 @Component({
   selector: 'app-sheet-import-popup',
@@ -106,7 +108,132 @@ export class SheetImportPopupComponent extends ReportsManagementComponent {
   }
 
   private importFish(data: string[][], userId: string): void {
+    this.dataLength = data.length - 1;
+    from(data.slice(1))
+      .pipe(
+        scan((acc, row, index) => {
+          this.done++;
+          this.cd.detectChanges();
+          // If nothing in second cell, it's a spot line
+          if (!row[1]) {
+            const fishingSpotId = this.getFishingSpotIdByName(row[0]);
+            const spearFishingSpotId = this.getSpearFishingSpotIdByName(row[0]);
+            // If we have a spot for both using this placename, check next row to see if it's a gig head or a bait
+            let spot = fishingSpotId || spearFishingSpotId;
+            let source = fishingSpotId ? AllaganReportSource.FISHING : AllaganReportSource.SPEARFISHING;
+            if (fishingSpotId && spearFishingSpotId) {
+              if (data[index + 2][1].indexOf('Gig') > -1) {
+                spot = spearFishingSpotId;
+                source = AllaganReportSource.SPEARFISHING;
+              } else {
+                spot = fishingSpotId;
+                source = AllaganReportSource.FISHING;
+              }
+            }
+            if (!fishingSpotId && !spearFishingSpotId) {
+              console.warn(`No spot found for place ${row[0]} at row #${this.done + 1}`);
+              return acc;
+            }
+            return {
+              ...acc,
+              spot,
+              source
+            };
+          } else {
+            const report: AllaganReport = {
+              itemId: this.getEntryId(this.items, row[0]),
+              source: acc.source,
+              reporter: userId,
+              gt: true,
+              data: {}
+            };
+            if (report.source === AllaganReportSource.FISHING) {
+              report.data = pickBy({
+                spot: acc.spot,
+                hookset: ['powerful', 'precision'].indexOf(row[8].toLowerCase().trim()) + 1,
+                tug: ['Medium', 'Heavy', 'Light'].indexOf(row[7]),
+                bait: this.getEntryId(this.items, row[1]),
+                spawn: row[2] === '' ? null : +row[2],
+                duration: row[2] === '' ? null : TimeUtils.getDuration([+row[2], +row[3]]),
+                weathers: row[5].trim() === '' ? [] : row[5].split(',').map(weatherName => this.getEntryId(this.weathers, weatherName.trim())),
+                weathersFrom: row[4].trim() === '' ? [] : row[4].split(',').map(weatherName => this.getEntryId(this.weathers, weatherName.trim())),
+                snagging: +row[10] === 1,
+                predators: row[6] === '' ? [] : row[6].split(',').reduce((predators, entry) => {
+                  if (isNaN(+entry)) {
+                    //if it's not a number, it's a predator name
+                    return [...predators, {
+                      id: this.getEntryId(this.items, entry),
+                      amount: 0
+                    }];
+                  }
+                  return [
+                    ...predators.slice(0, -1),
+                    {
+                      ...predators[predators.length - 1],
+                      amount: +entry
+                    }
+                  ];
+                }, [])
+              }, value => value !== undefined && value !== null);
+            } else if (report.source === AllaganReportSource.SPEARFISHING) {
+              report.data = pickBy({
+                gig: row[1].replace(' Gig Head', '').trim(),
+                predators: row[6] === '' ? [] : row[6].split(',').reduce((predators, entry) => {
+                  if (isNaN(+entry)) {
+                    //if it's not a number, it's a predator name
+                    return [...predators, {
+                      id: this.getEntryId(this.items, entry),
+                      amount: 0
+                    }];
+                  }
+                  return [
+                    ...predators.slice(0, -1),
+                    {
+                      ...predators[predators.length - 1],
+                      amount: +entry
+                    }
+                  ];
+                }, []),
+                spawn: row[2] === '' ? null : +row[2],
+                duration: row[2] === '' ? null : TimeUtils.getDuration([+row[2], +row[3]])
+              }, value => value !== undefined && value !== null);
+            }
 
+            if (!report.itemId || (report.source === AllaganReportSource.FISHING && !report.data.bait)
+              || (report.source === AllaganReportSource.SPEARFISHING && !report.data.gig)) {
+              console.log(index, row, report);
+              return acc;
+            }
+            return {
+              ...acc,
+              reports: [
+                ...acc.reports,
+                report
+              ]
+            };
+          }
+        }, { spot: -1, source: null, reports: [] }),
+        pluck('reports')
+      )
+      .subscribe((queue) => {
+        if (this.done >= this.dataLength) {
+          console.log(queue);
+          this.queue = queue;
+          this.cd.detectChanges();
+        }
+      });
+  }
+
+  getFishingSpotIdByName(name: string): number {
+    return this.lazyData.data.fishingSpots.find(spot => {
+      return this.lazyData.data.places[spot.zoneId]?.en?.toLowerCase() === name.toLowerCase();
+    })?.id;
+  }
+
+  getSpearFishingSpotIdByName(name: string): number {
+    return this.lazyData.data.spearFishingLog.find(spot => {
+      return this.lazyData.data.places[spot.zoneId]?.en?.toLowerCase() === name.toLowerCase();
+    })?.id;
   }
 
   startImport(): void {

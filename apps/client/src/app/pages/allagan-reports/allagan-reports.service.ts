@@ -7,6 +7,7 @@ import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
 import { map, mapTo, switchMap } from 'rxjs/operators';
+import { AllaganReportSource } from './model/allagan-report-source';
 
 @Injectable({
   providedIn: 'root'
@@ -30,8 +31,9 @@ export class AllaganReportsService {
   };
 
   importFromGT(queue: AllaganReport[]): Observable<void> {
+    const isFishing = queue[0].source === AllaganReportSource.FISHING;
     const query = gql`mutation ImportFromGT($data: [allagan_reports_insert_input!]!) {
-        delete_allagan_reports(where: {gt: {_eq: true}}) {
+        delete_allagan_reports(where: {gt: {_eq: true}, source: {_${isFishing ? '' : 'n'}in: ["${AllaganReportSource.FISHING}", "${AllaganReportSource.SPEARFISHING}"]}}) {
           affected_rows
         }
         insert_allagan_reports(objects: $data) {
