@@ -2716,7 +2716,7 @@
   "ALLAGAN_REPORTS": {
     "Title": "Allagan reports",
     "Reports": "Reports",
-    "Pending_changes": "Pending changes ({{amount}})",
+    "Pending_changes": "Pending changes",
     "No_pending_changes": "No pending changes",
     "New_report": "New report",
     "Submit_new_report": "Submit new report proposal",
@@ -2769,6 +2769,7 @@
     "Open_reports": "Open reports page",
     "Fishing": "Fishing",
     "Others": "Other items",
+    "Ocean_fishing_time": "Ocean fishing time",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2787,5 +2788,11 @@
       "DELETION": "DELETION",
       "ACCEPTED": "ACCEPTED"
     }
+  },
+  "OCEAN_FISHING": {
+    "ANY": "Any",
+    "SUNSET": "Sunset",
+    "DAY": "Day",
+    "NIGHT": "Night"
   }
 }

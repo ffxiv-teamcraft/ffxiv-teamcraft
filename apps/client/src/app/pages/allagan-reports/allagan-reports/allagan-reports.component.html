@@ -75,8 +75,8 @@
     </nz-card>
   </div>
 </ng-container>
+<nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate" nzOrientation="left"></nz-divider>
 <div fxLayout="column" *ngIf="queueStatus$ | async as queueStatus; else loading">
-  <nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate: {amount: queueStatus.length}" nzOrientation="left"></nz-divider>
   <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="queueStatus" [rowTemplate]="reportTpl">
     <ng-template #reportTpl let-row let-odd="odd">
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">

@@ -24,6 +24,7 @@ import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
+import { OceanFishingTime } from '../model/ocean-fishing-time';
 
 
 function durationRequired(control: AbstractControl) {
@@ -132,6 +133,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     .filter(key => !isNaN(+key))
     .map(key => ({ key: +key, value: Tug[key] }));
 
+  oceanFishingTimes = Object.keys(OceanFishingTime)
+    .filter(key => !isNaN(+key))
+    .map(key => ({ key: +key, value: OceanFishingTime[key] }));
+
   /** Spawn are limited to hours (0 to 23) **/
   public SPAWN_VALIDATOR = {
     min: 0,
@@ -163,7 +168,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     weathersFrom: [[]],
     predators: [[]],
     snagging: [false],
-    gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)]
+    gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)],
+    oceanFishingTime: [0]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -172,10 +178,15 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     shareReplay(1)
   );
 
+  isOceanFishing$ = this.fishingSpot$.pipe(
+    map(spot => this.isOceanFishingSpot(spot))
+  );
+
   public canSuggestForThisSpot$ = combineLatest([this.fishingSpot$, this.itemDetails$, this.modificationId$]).pipe(
     map(([spot, details, modificationId]) => {
       return !!modificationId || !spot || !details.reports.some(report => report.source === AllaganReportSource.FISHING && report.data.spot === spot.id);
-    })
+    }),
+    startWith(true)
   );
 
   public possibleFish$ = this.fishingSpot$.pipe(
@@ -438,7 +449,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           weathers: report.data.weathers,
           weathersFrom: report.data.weathersFrom,
           snagging: report.data.snagging,
-          predators: report.data.predators
+          predators: report.data.predators,
+          oceanFishingTime: report.data.oceanFishingTime
         }, value => value !== undefined && value !== null);
     }
   }
@@ -492,9 +504,14 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           weathers: formState.weathers,
           weathersFrom: formState.weathersFrom,
           snagging: formState.snagging,
-          predators: formState.predators
+          predators: formState.predators,
+          oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null
         }, value => value !== undefined && value !== null);
     }
+  }
+
+  private isOceanFishingSpot(spot: any): boolean {
+    return spot?.placeId === 3477;
   }
 
   private getEntryId(registry: { id: number, name: I18nName }[], name: string): number {

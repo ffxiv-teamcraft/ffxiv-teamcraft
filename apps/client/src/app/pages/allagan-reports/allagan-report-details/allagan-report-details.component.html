@@ -171,7 +171,7 @@
                         [nzDescription]="'ALLAGAN_REPORTS.Please_suggest_edit_instead' | translate"></nz-alert>
             </ng-template>
             <ng-container *ngIf="canSuggestForThisSpot$ | async; else cantSuggestForThisSpotTpl">
-              <nz-spin [nzSpinning]="loadingGubal" [nzTip]="'ALLAGAN_REPORTS.Loading_gubal_analysis'">
+              <nz-spin [nzSpinning]="loadingGubal" [nzTip]="'ALLAGAN_REPORTS.Loading_gubal_analysis' | translate">
                 <nz-form-item>
                   <nz-form-label [nzSpan]="3">{{'DB.FISH.OVERLAY.Hookset' | translate}}</nz-form-label>
                   <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisHookset">
@@ -215,34 +215,65 @@
                   </nz-form-control>
                 </nz-form-item>
                 <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSpawn">
-                    <nz-input-group class="spawn-input" nzAddOnAfter=":00">
-                      <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
-                                       formControlName="spawn"></nz-input-number>
-                    </nz-input-group>
-                    <ng-template #gubalAnalysisSpawn>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.spawn === null ? ('COMMON.None' | translate) : suggestions.spawn}}</b>
-                      </ng-container>
-                    </ng-template>
+                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
+                  <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
+                    <app-predators-input formControlName="predators" [fishingSpot]="fishingSpot"></app-predators-input>
                   </nz-form-control>
                 </nz-form-item>
-                <nz-form-item>
-                  <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
-                    <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
-                                     formControlName="duration">
-                    </nz-input-number>
-                    <ng-template #gubalAnalysisDuration>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.duration === null ? ('COMMON.None' | translate) : suggestions.duration}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
+                <ng-container *ngIf="isOceanFishing$ | async; else openWorldFishing">
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10">
+                      <nz-select formControlName="oceanFishingTime">
+                        <nz-option *ngFor="let entry of oceanFishingTimes" [nzValue]="entry.key"
+                                   [nzLabel]="('OCEAN_FISHING.' + entry.value) | translate"></nz-option>
+                      </nz-select>
+                    </nz-form-control>
+                  </nz-form-item>
+                </ng-container>
+                <ng-template #openWorldFishing>
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Spawn' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSpawn">
+                      <nz-input-group class="spawn-input" nzAddOnAfter=":00">
+                        <nz-input-number [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
+                                         formControlName="spawn"></nz-input-number>
+                      </nz-input-group>
+                      <ng-template #gubalAnalysisSpawn>
+                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                          <b>{{suggestions.spawn === null ? ('COMMON.None' | translate) : suggestions.spawn}}</b>
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
+                      <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
+                                       formControlName="duration">
+                      </nz-input-number>
+                      <ng-template #gubalAnalysisDuration>
+                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                          <b>{{suggestions.duration === null ? ('COMMON.None' | translate) : suggestions.duration}}</b>
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3">{{'GATHERING_LOCATIONS.Snagging' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSnagging">
+                      <input formControlName="snagging" type="checkbox">
+                      <ng-template #gubalAnalysisSnagging>
+                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                          <b>{{(suggestions.snagging ? 'Yes' : 'No') | translate}}</b>
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
+                </ng-template>
                 <ng-container *ngIf="mapWeathers$ | async as mapWeathers">
                   <nz-form-item>
                     <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
@@ -262,7 +293,7 @@
                       </ng-template>
                     </nz-form-control>
                   </nz-form-item>
-                  <nz-form-item>
+                  <nz-form-item *ngIf="!(isOceanFishing$ | async)">
                     <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathersFrom">
                       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
@@ -281,25 +312,6 @@
                     </nz-form-control>
                   </nz-form-item>
                 </ng-container>
-                <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
-                    <app-predators-input formControlName="predators" [fishingSpot]="fishingSpot"></app-predators-input>
-                  </nz-form-control>
-                </nz-form-item>
-
-                <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'GATHERING_LOCATIONS.Snagging' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisSnagging">
-                    <input formControlName="snagging" type="checkbox">
-                    <ng-template #gubalAnalysisSnagging>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{(suggestions.snagging ? 'Yes' : 'No') | translate}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
               </nz-spin>
             </ng-container>
           </ng-container>
