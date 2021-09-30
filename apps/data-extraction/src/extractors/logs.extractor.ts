@@ -1,9 +1,6 @@
-import { createReadStream } from 'fs-extra';
-import { join } from 'path';
 import { combineLatest, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AbstractExtractor } from '../abstract-extractor';
-import * as csv from 'csv-parser';
 
 export class LogsExtractor extends AbstractExtractor {
   private craftingLog = [
@@ -298,87 +295,50 @@ export class LogsExtractor extends AbstractExtractor {
   }
 
   private extractSpearfishingLog(): void {
-    const sheetEntries = [];
 
-    createReadStream(join(__dirname, '../../../csv/FFXIV Data - Fishing.csv'))
-      .pipe(csv())
-      .on('data', (data) => sheetEntries.push(data))
-      .on('end', () => {
+    const spearFishingLog = [];
 
-        const spearFishingLog = [];
-
-        this.getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
-          completeFetch
-            .filter(entry => entry.GatheringPointBase)
-            .forEach(entry => {
-              const entries = Object.keys(entry.GatheringPointBase)
-                .filter(key => /Item\dTargetID/.test(key))
-                .filter(key => entry.GatheringPointBase[key] !== 0)
-                .map(key => {
-                  const c = entry.TerritoryType.Map.SizeFactor / 100.0;
-                  return {
-                    id: entry.GatheringPointBaseTargetID,
-                    itemId: entry.GatheringPointBase[key],
-                    level: entry.GatheringLevel.GatheringLevel,
-                    mapId: entry.TerritoryType.Map.ID,
-                    placeId: entry.TerritoryType.PlaceName.ID,
-                    zoneId: entry.PlaceName.ID,
-                    coords: {
-                      x: Math.floor(10 * (41.0 / c) * ((entry.X * c) / 2048.0) + 1) / 10,
-                      y: Math.floor(10 * (41.0 / c) * ((entry.Y * c) / 2048.0) + 1) / 10
-                    }
-                  };
-                });
-              spearFishingLog.push(...entries);
-            });
-          this.persistToJsonAsset('spear-fishing-log', spearFishingLog);
-          this.spearFishingLogDone$.next();
-        });
-
-        const spearFishingNodes = [];
-
-        this.getAllEntries('https://xivapi.com/SpearfishingItem', true).subscribe(completeFetch => {
-          completeFetch
-            .filter(fish => fish.Item !== null)
-            .forEach(fish => {
-              const sheetEntry = sheetEntries.find(e => {
-                return e.Location === fish.Item.Name_en;
-              });
-              const entry: any = {
-                id: fish.ID,
-                itemId: fish.ItemTargetID,
-                level: fish.GatheringItemLevel.GatheringItemLevel,
-                ilvl: fish.GatheringItemLevel.ID,
-                icon: fish.Item.Icon,
-                mapId: fish.TerritoryType.Map.ID,
-                zoneId: fish.TerritoryType.PlaceName.ID
+    this.getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
+      completeFetch
+        .filter(entry => entry.GatheringPointBase)
+        .forEach(entry => {
+          const entries = Object.keys(entry.GatheringPointBase)
+            .filter(key => /Item\d/.test(key))
+            .filter(key => entry.GatheringPointBase[key] !== null)
+            .map(key => {
+              const c = entry.TerritoryType.Map.SizeFactor / 100.0;
+              return {
+                id: entry.GatheringPointBase.ID,
+                itemId: entry.GatheringPointBase[key].ItemTargetID,
+                level: entry.GatheringLevel.GatheringLevel,
+                mapId: entry.TerritoryType.Map.ID,
+                placeId: entry.TerritoryType.PlaceName.ID,
+                zoneId: entry.PlaceName.ID,
+                coords: {
+                  x: Math.floor(10 * (41.0 / c) * ((entry.X * c) / 2048.0) + 1) / 10,
+                  y: Math.floor(10 * (41.0 / c) * ((entry.Y * c) / 2048.0) + 1) / 10
+                }
               };
-              if (sheetEntry !== undefined) {
-                entry.gig = sheetEntry.Bait.split(' ')[0];
-                if (sheetEntry.Start) {
-                  entry.spawn = +sheetEntry.Start;
-                  entry.duration = +sheetEntry.End > +sheetEntry.Start ? +sheetEntry.End - +sheetEntry.Start : +sheetEntry.Start - +sheetEntry.End;
-                }
-                if (sheetEntry['Predator, Amount']) {
-                  const split = sheetEntry['Predator, Amount'].split(', ');
-                  const predatorSheetEntry = sheetEntries.find(e => {
-                    return e.Fish === split[0];
-                  });
-                  entry.predator = [{
-                    name: split[0],
-                    predatorAmount: +split[1]
-                  }];
-                  if (predatorSheetEntry && predatorSheetEntry.Start) {
-                    entry.spawn = +predatorSheetEntry.Start;
-                    entry.duration = +predatorSheetEntry.End > +predatorSheetEntry.Start ? +predatorSheetEntry.End - +predatorSheetEntry.Start : +predatorSheetEntry.Start - +predatorSheetEntry.End;
-                  }
-                }
-              }
-              spearFishingNodes.push(entry);
             });
-          this.persistToJsonAsset('spear-fishing-nodes', spearFishingNodes);
-          this.spearFishingNodesDone$.next();
+          spearFishingLog.push(...entries);
         });
+      this.persistToJsonAsset('spear-fishing-log', spearFishingLog.filter(row => !!row.itemId));
+      this.spearFishingLogDone$.next();
+    });
+
+    const spearFishingFish = [];
+
+    this.getAllPages('https://xivapi.com/SpearfishingItem?columns=ItemTargetID').subscribe(
+      {
+        next: page => {
+          page.Results.forEach(fish => {
+            spearFishingFish.push(fish.ItemTargetID);
+          });
+        },
+        complete: () => {
+          this.persistToJsonAsset('spear-fishing-fish', spearFishingFish);
+          this.spearFishingNodesDone$.next();
+        }
       });
   }
 

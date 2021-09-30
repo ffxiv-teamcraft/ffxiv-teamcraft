@@ -3,12 +3,11 @@ import { CraftedBy } from '../../model/crafted-by';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { Item } from '../../../../model/garland-tools/item';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
-  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService) {
+  constructor(protected gt: GarlandToolsService) {
     super(gt);
   }
 

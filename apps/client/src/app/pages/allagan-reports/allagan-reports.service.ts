@@ -212,7 +212,7 @@ export class AllaganReportsService {
           delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
             uid
           }
-          update_allagan_reports_by_pk(pk_columns: {uid: $reportId}, _set: {data: $data, reporter:$reporter }) {
+          update_allagan_reports_by_pk(pk_columns: {uid: $reportId}, _set: {data: $data, reporter:$reporter, applied: false }) {
             uid
           }
         }

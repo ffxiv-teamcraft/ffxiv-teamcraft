@@ -36,7 +36,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
         gatheringItem = this.lazyData.data.fishParameter[item.id];
         break;
       case 4:
-        gatheringItem = this.lazyData.data.spearFishingNodes.find(s => s.itemId === item.id);
+        gatheringItem = { stars: 0, level: nodes[0].level };
         break;
       default:
         gatheringItem = Object.values<any>(this.lazyData.data.gatheringItems).find(g => g.itemId === item.id);

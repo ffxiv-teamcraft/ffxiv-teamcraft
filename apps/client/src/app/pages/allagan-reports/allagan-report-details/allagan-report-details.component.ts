@@ -279,7 +279,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     })
   );
 
-  public spearFishingFishList = this.lazyData.data.spearFishingNodes.map(node => node.itemId);
+  public spearFishingFishList = this.lazyData.data.spearFishingFish;
 
   public hoverId$ = new Subject<string>();
 
@@ -432,12 +432,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           voyageType: report.data.voyageType
         };
       case AllaganReportSource.SPEARFISHING:
-        return {
+        return pickBy({
           gig: report.data.gig,
           predators: report.data.predators,
-          spawn: report.data.spawn || null,
-          duration: report.data.duration || null
-        };
+          spawn: report.data.spawn,
+          duration: report.data.duration
+        }, value => value !== undefined && value !== null);
       case AllaganReportSource.FISHING:
         return pickBy({
           spot: this.lazyData.data.fishingSpots.find(s => s.id === report.data.spot),

@@ -55,7 +55,7 @@ import { TreasuresExtractor } from './extractors/treasures.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { AllagExtractor } from './extractors/allag.extractor';
+import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -125,7 +125,7 @@ const extractors: AbstractExtractor[] = [
   new MappyExtractor(),
   new LgbExtractor(),
   new GubalExtractor(),
-  new AllagExtractor()
+  new AllaganReportsExtractor()
 ];
 
 if (process.env.XIVAPI_KEY) {

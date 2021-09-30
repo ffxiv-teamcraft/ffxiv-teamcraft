@@ -78,15 +78,13 @@ export class ListRow extends DataModel {
 export function getItemSource<T = any>(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.VENDORS, isObject?: boolean): Vendor[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES, isObject?: boolean): number[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.INSTANCES, isObject?: boolean): Instance[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES | DataType.TREASURES | DataType.INSTANCES, isObject?: boolean): number[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.GATHERED_BY, isObject?: boolean): GatheredBy
 export function getItemSource<T = any>(item: ListRow, type: DataType.GARDENING, isObject?: boolean): GardeningData
 export function getItemSource<T = any>(item: ListRow, type: DataType.VOYAGES, isObject?: boolean): I18nName[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.DROPS, isObject?: boolean): Drop[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.ALARMS, isObject?: boolean): Alarm[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.MASTERBOOKS, isObject?: boolean): CompactMasterbook[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.TREASURES, isObject?: boolean): Treasure[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T

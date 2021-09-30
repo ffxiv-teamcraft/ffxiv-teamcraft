@@ -1,13 +1,13 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Instance } from '../../model/instance';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
-export class InstancesExtractor extends AbstractExtractor<Instance[]> {
+export class InstancesExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -23,15 +23,8 @@ export class InstancesExtractor extends AbstractExtractor<Instance[]> {
     return item.instances !== undefined;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): Instance[] {
-    const instances: Instance[] = [];
-    item.instances.forEach(instanceId => {
-      const instance = itemData.getInstance(instanceId);
-      if (instance !== undefined) {
-        instances.push(instance);
-      }
-    });
-    return instances;
+  protected doExtract(item: Item, itemData: ItemData): number[] {
+    return this.lazyData.data.instanceSources[item.id] || [];
   }
 
 }
