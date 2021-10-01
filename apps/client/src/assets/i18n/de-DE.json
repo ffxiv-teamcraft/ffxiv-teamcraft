@@ -2527,7 +2527,7 @@
     "Title": "Fortschrittsausrüstung",
     "Include_crafting": "Herstellung einbeziehen",
     "Include_purchases": "Käufe einbeziehen",
-    "Include_trades": "Käufe einbeziehen",
+    "Include_trades": "Tausch einbeziehen",
     "Description": "Wähle den auszustattenden Job und das Level aus, um Filter zu setzen und damit passende Ausrüstung zu finden",
     "Generate_list": "Liste erstellen",
     "Empty_slot": "Leerer Platz",
