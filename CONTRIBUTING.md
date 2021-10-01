@@ -1,10 +1,24 @@
+# How to contribute
+
+## Summary
+* [Prepare your environment](#prepare-your-environment)
+* [Live Development Server](#live-development-server)
+- [Contributing](#contributing)
+  * [Branch names](#branch-names)
+  * [Commit Messages](#commit-messages)
+- [The desktop app](#the-desktop-app)
+  * [How to start desktop app](#how-to-start-desktop-app)
+- [Important note: fishing data and allagan reports](#important-note--fishing-data-and-allagan-reports)
+
+
+
 ### Prepare your environment
-* Install [Node.js](http://nodejs.org/) (>10.9) and NPM (>=5.3)
-* Install local dev dependencies: `npm install` while current directory is this repo
+* Install [Node.js](http://nodejs.org/) (>=14.17) and Yarn (`npm i -g yarn`)
+* Install local dev dependencies: `yarn` while current directory is this repo
 
 ### Live Development Server
 
-Simply run `npm start` to start a live server with file watcher.
+Simply run `yarn start` to start a live server with file watcher.
 
 ## Contributing
 
@@ -77,7 +91,7 @@ We're using gitflow for this, more information on [https://github.com/nvie/gitfl
   - layouts
   - list-picker
   - rotation-picker
-  - 
+  - etc...
  
  Examples:
  
@@ -89,26 +103,23 @@ We're using gitflow for this, more information on [https://github.com/nvie/gitfl
  For our http calls, rxjs can make us save a lot of time, it had to be updated.
  ```
 
-## Tests
 
-Teamcraft has some tests to ensure non regression, you might want to implement more tests instead of creating some features, to help with application reliability, to make sure nothing breaks with a given update.
+## The desktop app
 
-Tests are separated into two categories, Unit and End-to-End.
+Teamcraft is available as a desktop app using electron, and you might want to use it locally to implement or debug features that are specific to it (overlays, packet capture, file watchers).
 
-### Unit tests
+The source files for the desktop app are located in `apps/electron`, entry point being `main.ts`.
 
-Unit tests are used to test the simulator, as the `Simulation` class is pure typescript, with no Angular stuff at all. 
+### How to start desktop app
 
-The tests are using karma runner and [jasmine](https://jasmine.github.io/) for specs and can be found [here](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/tree/staging/apps/client/src/app/pages/simulator/test) with the mock file.
+For this you'll need two terminals opened, bash, cmd, ps, as you want.
 
-To run unit tests, use `npm test`.
+ - In the first terminal, run `yarn build:watch` and wait for it to produce at least one set of output files
+ - In the second terminal, run `yarn electron:start` to start electron using the built files.
+ - If you're modifying the electron files or the angular files and you want to see the result in the app, simply close the app or kill the `electron:start` process and restart it.
 
-### End-to-end tests
+## Important note: fishing data and allagan reports
 
-End-to-end tests (e2e) are here to make sure that the end user integration is good, they are here to reproduce user behavior and expect given results.
+Fishing data and allagan reports won't work in a dev env, this is due to the fact that dev env uses a separate firebase instance, which isn't able to produce the same oauth token that's used in production to communicate with the graphql API. 
 
-They are pretty much used as integration tests in our case, because implementing them properly is easier than doing integration tests using karma runner.
-
-E2e tests are using [cypress](https://www.cypress.io/), a nice library that has some features such as time travelling for debugging purpose, video recording, selector generator (to find quickly how to match a given element) and is way faster than most of the selenium wrappers.
-
-You can start e2e tests with a watcher to debug and create them easily, just run `npm run e2e:watch`.
+In order to use fishing data, you'll have to edit the `environment.ts` (or `environment.beta.ts` if you're using desktop app) file to replace the content of the `firebase` key by the content of the `firebase` key in the `environment.prod.ts` file.
