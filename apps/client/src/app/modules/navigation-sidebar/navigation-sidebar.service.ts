@@ -109,6 +109,14 @@ export class NavigationSidebarService {
               },
               link: '/metrics',
               hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'ALLAGAN_REPORTS.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'reconciliation'
+              },
+              link: '/allagan-reports'
             }
           ]
         },

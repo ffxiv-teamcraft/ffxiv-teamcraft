@@ -34,4 +34,9 @@ describe('TimeUtils', () => {
     expect(TimeUtils.isInInterval([16, 8], 5)).toBeTruthy();
     expect(TimeUtils.isInInterval([22, 0], 22)).toBeTruthy();
   });
+
+  it('Should compute interval duration properly', () => {
+    expect(TimeUtils.getDuration([1, 4])).toBe(3);
+    expect(TimeUtils.getDuration([4, 1])).toBe(21);
+  });
 });

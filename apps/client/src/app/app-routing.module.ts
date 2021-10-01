@@ -240,6 +240,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/layout-editor-page/layout-editor-page.module').then(m => m.LayoutEditorPageModule)
   },
   {
+    path: 'allagan-reports',
+    loadChildren: () => import('./pages/allagan-reports/allagan-reports.module').then(m => m.AllaganReportsModule)
+  },
+  {
     path: 'extractor',
     loadChildren: () => import('./pages/extractor/extractor.module').then(m => m.ExtractorModule),
     canLoad: [DevGuard]

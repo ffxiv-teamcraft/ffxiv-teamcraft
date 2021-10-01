@@ -4,10 +4,11 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { Observable } from 'rxjs';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class VenturesExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -24,7 +25,7 @@ export class VenturesExtractor extends AbstractExtractor<number[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): Observable<number[]> | number[] {
-    return item.ventures;
+    return this.lazyData.data.ventureSources[item.id];
   }
 
 }

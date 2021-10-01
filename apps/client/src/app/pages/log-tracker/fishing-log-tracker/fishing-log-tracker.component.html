@@ -6,7 +6,8 @@
     <ng-template #extraTemplate>
       <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
         <div>
-          <button nz-button nzType="primary" *ngIf="rawCompletion$ | async as completion" [clipboard]="completion | json" [clipboardSuccessMessage]="'LOG_TRACKER.Export_FSH_completion_copied' | translate">
+          <button nz-button nzType="primary" *ngIf="rawCompletion$ | async as completion" [clipboard]="completion | json"
+                  [clipboardSuccessMessage]="'LOG_TRACKER.Export_FSH_completion_copied' | translate">
             {{'LOG_TRACKER.Export_FSH_completion' | translate}}
           </button>
         </div>
@@ -130,11 +131,11 @@
                                    class="gig-icon"
                                    nz-tooltip src="./assets/icons/gig/{{entry.gatheringNode.gig}}.png">
                               <img *ngIf="entry.gatheringNode.hookset"
-                                   [nzTooltipTitle]="(entry.gatheringNode.hookset === 'precision'? 4179 : 4103) | actionName | i18n"
+                                   [nzTooltipTitle]="entry.gatheringNode.hookset | hooksetActionId | actionName | i18n"
                                    class="gig-icon"
                                    nz-tooltip
-                                   src="./assets/icons/hookset/{{entry.gatheringNode.hookset}}.png">
-                              <nz-tag>{{entry.gatheringNode.tug | tugName | translate}}</nz-tag>
+                                   [src]="entry.gatheringNode.hookset | hooksetActionId | actionIcon | xivapiIcon">
+                              <nz-tag *ngIf="entry.gatheringNode.tug !== undefined">{{entry.gatheringNode.tug | tugName | translate}}</nz-tag>
                               <div *ngIf="entry.gatheringNode.predators && entry.gatheringNode.predators.length > 0" fxLayout="row"
                                    fxLayoutAlign="flex-start center"
                                    fxLayoutGap="10px">
@@ -148,16 +149,16 @@
                                 </div>
                               </div>
                               <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                                <div *ngIf="entry.gatheringNode.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                                <div *ngIf="entry.gatheringNode.weathersFrom?.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
                                   <div *ngFor="let weather of entry.gatheringNode.weathersFrom">
                                     <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                          nz-tooltip>
                                   </div>
                                 </div>
-                                <div *ngIf="entry.gatheringNode.weathersFrom !== undefined">
+                                <div *ngIf="entry.gatheringNode.weathersFrom?.length > 0">
                                   <i nz-icon nzType="right" theme="outline"></i>
                                 </div>
-                                <div *ngIf="entry.gatheringNode.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                                <div *ngIf="entry.gatheringNode.weathers?.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
                                   <div *ngFor="let weather of entry.gatheringNode.weathers">
                                     <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                          nz-tooltip>
