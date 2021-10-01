@@ -68,6 +68,10 @@ import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.s
 })
 export class AppComponent implements OnInit {
 
+  public newFeatureName = 'allagan-reports';
+
+  public showNewFeatureBanner = localStorage.getItem(`new-feature:${name}`) !== 'true';
+
   public availableLanguages = this.settings.availableLocales;
 
   locale: string;
@@ -568,6 +572,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  hideFeatureBanner(): void {
+    localStorage.setItem(`new-feature:${this.newFeatureName}`, 'true');
+  }
+
   updateDesktopApp(): void {
     this.ipc.send('update:check');
     this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
@@ -579,6 +587,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platform)) {
+      setTimeout(() => {
+        this.hideFeatureBanner();
+      }, 2000);
       this.authFacade.loadUser();
       // Loading is !loaded
       this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));

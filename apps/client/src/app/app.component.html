@@ -54,9 +54,9 @@
           <ng-container *ngIf="user$ | async as user">
             <li *ngIf="(user.admin || user.allaganChecker) | ifMobile: false" nz-menu-item class="ant-menu-item allagan-reports">
               <nz-badge [nzCount]="allaganReportsQueueCount$ | async">
-                  <a routerLink="/allagan-reports" class="allagan-link">
-                    {{'ALLAGAN_REPORTS.Title' | translate}}
-                  </a>
+                <a routerLink="/allagan-reports" class="allagan-link">
+                  {{'ALLAGAN_REPORTS.Title' | translate}}
+                </a>
               </nz-badge>
             </li>
           </ng-container>
@@ -272,6 +272,12 @@
         </div>
       </nz-sider>
       <nz-content>
+        <nz-alert nzBanner nzType="info"
+                  [nzMessage]="'ALLAGAN_REPORTS.Feature_banner_title' | translate"
+                  [nzDescription]="'ALLAGAN_REPORTS.Feature_banner_description' | translate"
+                  nzCloseable
+                  *ngIf="showNewFeatureBanner" (nzOnClose)="hideFeatureBanner()">
+        </nz-alert>
         <div [class.overlay]="overlay" [class.with-clock]="settings.getOverlayClockDisplay(ipc.overlayUri)" class="page-container">
           <nz-alert *ngIf="(newVersionAvailable$ | async) && !platformService.isDesktop()" [nzMessage]="message" class="new-version-alert"
                     nzBanner
