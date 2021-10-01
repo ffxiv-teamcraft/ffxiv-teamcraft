@@ -49,7 +49,7 @@
         <nz-form-item>
           <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Source' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">
-            <nz-select formControlName="source" [nzDisabled]="!!modificationId$.value">
+            <nz-select formControlName="source" nzShowSearch [nzDisabled]="!!modificationId$.value">
               <nz-option *ngFor="let source of sources" [nzValue]="source.key" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source.value) | translate"></nz-option>
             </nz-select>
           </nz-form-control>
@@ -121,6 +121,23 @@
             />
             <nz-autocomplete #auto nzBackfill>
               <nz-auto-option *ngFor="let option of mobCompletion$ | async" [nzValue]="option.name | i18n">
+                {{ option.name | i18n }}
+              </nz-auto-option>
+            </nz-autocomplete>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item *ngIf="source === AllaganReportSource.FATE">
+          <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Fate' | translate}}</nz-form-label>
+          <nz-form-control [nzSpan]="10">
+            <input
+              formControlName="fate"
+              (input)="fateInput$.next($event.target?.value)"
+              [nzAutocomplete]="auto"
+              [placeholder]="'ALLAGAN_REPORTS.Fate_placeholder' | translate"
+              nz-input
+            />
+            <nz-autocomplete #auto nzBackfill>
+              <nz-auto-option *ngFor="let option of fateCompletion$ | async" [nzValue]="option.name | i18n">
                 {{ option.name | i18n }}
               </nz-auto-option>
             </nz-autocomplete>

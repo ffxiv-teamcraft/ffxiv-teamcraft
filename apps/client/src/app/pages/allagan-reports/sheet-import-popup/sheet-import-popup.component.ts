@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import * as Papa from 'papaparse';
+import { parse } from 'papaparse';
 import { from, Subject, Subscription } from 'rxjs';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -54,7 +54,7 @@ export class SheetImportPopupComponent extends ReportsManagementComponent {
 
   processSheet(content: string): void {
     this.authFacade.userId$.pipe(first()).subscribe(userId => {
-      const parsed = Papa.parse(content);
+      const parsed = parse(content);
       if (parsed.data[0][0] === 'Item') {
         this.importItems(parsed.data, userId);
       }

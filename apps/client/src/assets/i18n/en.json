@@ -188,7 +188,8 @@
     "Airship": "Airship",
     "Submarine": "Submarine",
     "Voyage": "Voyage",
-    "Instance": "Instance"
+    "Instance": "Instance",
+    "Fate": "Fate"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -2770,6 +2771,7 @@
     "Fishing": "Fishing",
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
+    "Fate_placeholder": "Enter FATE name",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2780,7 +2782,8 @@
       "DROP": "DROP",
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
-      "SPEARFISHING": "SPEARFISHING"
+      "SPEARFISHING": "SPEARFISHING",
+      "FATE": "FATE"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

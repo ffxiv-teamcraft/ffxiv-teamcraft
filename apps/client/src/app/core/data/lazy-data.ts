@@ -26,6 +26,7 @@ export interface LazyData {
   equipment: any;
   exVersions: any;
   extractableItems: any;
+  fateSources: any;
   fates: any;
   fishParameter: any;
   fishes: any;

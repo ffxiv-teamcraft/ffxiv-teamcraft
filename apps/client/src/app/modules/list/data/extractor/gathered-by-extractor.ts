@@ -24,7 +24,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.hasNodes() || (item.fishingSpots !== undefined && item.fishingSpots.length > 0);
+    return this.gatheringNodesService.getItemNodes(item.id, true)?.length > 0;
   }
 
   protected doExtract(item: Item, itemData: ItemData): GatheredBy {

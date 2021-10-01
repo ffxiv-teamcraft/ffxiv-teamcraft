@@ -1,13 +1,13 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { CraftedBy } from '../../model/crafted-by';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { Item } from '../../../../model/garland-tools/item';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
-  constructor(protected gt: GarlandToolsService) {
+  constructor(protected gt: GarlandToolsService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -20,40 +20,30 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.isCraft() && !this.isCrystal(item.id);
+    return this.lazyData.data.recipes.some(recipe => recipe.result === item.id);
   }
 
-  protected doExtract(item: Item, itemData: ItemData): CraftedBy[] {
-    const result = [];
-    for (const craft of item.craft) {
-      const craftedBy: CraftedBy = {
-        itemId: item.id,
-        icon: `./assets/icons/classjob/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
-        job: craft.job,
-        lvl: craft.lvl,
-        stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
-        id: craft.id,
-        rlvl: craft.rlvl,
-        durability: craft.durability,
-        progression: craft.progress,
-        quality: craft.quality,
-        yield: craft.yield
-      };
-      if (craft.job === 0) {
-        craftedBy.icon = '';
-      }
-      if (craft.unlockId !== undefined) {
-        const masterbookPartial = itemData.getPartial(craft.unlockId.toString(), 'item');
-        if (masterbookPartial !== undefined) {
-          craftedBy.masterbook = {
-            icon: masterbookPartial.obj.c,
-            id: craft.unlockId
-          };
+  protected doExtract(item: Item): CraftedBy[] {
+    return this.lazyData.data.recipes.filter(recipe => recipe.result === item.id)
+      .map(craft => {
+        const craftedBy: CraftedBy = {
+          itemId: item.id,
+          icon: `./assets/icons/classjob/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
+          job: craft.job,
+          lvl: craft.lvl,
+          stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
+          id: craft.id,
+          rlvl: craft.rlvl,
+          durability: craft.durability,
+          progression: craft.progress,
+          quality: craft.quality,
+          yield: craft.yields
+        };
+        if (craft.job === 0) {
+          craftedBy.icon = '';
         }
-      }
-      result.push(craftedBy);
-    }
-    return result;
+        return craftedBy;
+      });
   }
 
 }

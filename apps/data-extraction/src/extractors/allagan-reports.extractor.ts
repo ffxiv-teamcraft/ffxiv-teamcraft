@@ -14,6 +14,7 @@ enum AllaganReportSource {
   VOYAGE = 'VOYAGE', // Airship/Submarine voyage
   DROP = 'DROP', // Drop from monsters kill
   INSTANCE = 'INSTANCE', // Obtained inside an instance
+  FATE = 'FATE', // Obtained as fate reward
 }
 
 export class AllaganReportsExtractor extends AbstractExtractor {
@@ -41,6 +42,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const ventures = {};
         const drops = {};
         const instanceDrops = {};
+        const fateSources = {};
 
         res.data.allagan_reports.forEach(report => {
           switch (report.source) {
@@ -64,6 +66,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
               break;
             case AllaganReportSource.DROP:
               this.addItemAsSource(drops, report.itemId, report.data.monsterId);
+              break;
+            case AllaganReportSource.FATE:
+              this.addItemAsSource(fateSources, report.itemId, report.data.fateId);
               break;
             case AllaganReportSource.VOYAGE:
               this.addItemAsSource(voyageSources, report.itemId, { id: report.data.voyageId, type: report.data.voyageType });
@@ -102,6 +107,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('venture-sources', ventures);
         this.persistToJsonAsset('drop-sources', drops);
         this.persistToJsonAsset('instance-sources', instanceDrops);
+        this.persistToJsonAsset('fate-sources', fateSources);
       }),
       switchMap(() => {
         return this.gubalRequest(`

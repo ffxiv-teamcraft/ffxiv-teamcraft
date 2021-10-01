@@ -11,6 +11,7 @@ export class ReportsManagementComponent extends TeamcraftComponent {
   protected readonly items: { id: number, name: I18nName }[] = [];
   protected readonly weathers: { id: number, name: I18nName }[] = [];
   protected readonly instances: { id: number, name: I18nName }[] = [];
+  protected readonly fates: { id: number, name: I18nName }[] = [];
   protected readonly ventures: { id: number, name: I18nName }[] = [];
   protected readonly submarineVoyages: { id: number, name: I18nName }[] = [];
   protected readonly airshipVoyages: { id: number, name: I18nName }[] = [];
@@ -41,6 +42,14 @@ export class ReportsManagementComponent extends TeamcraftComponent {
         return {
           id: +key,
           name: this.lazyData.data.instances[key]
+        };
+      });
+
+    this.fates = Object.keys(this.lazyData.data.fates)
+      .map(key => {
+        return {
+          id: +key,
+          name: this.lazyData.data.fates[key].name
         };
       });
 

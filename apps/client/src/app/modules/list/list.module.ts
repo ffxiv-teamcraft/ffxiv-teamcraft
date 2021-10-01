@@ -69,7 +69,7 @@ import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.compone
 
 
 export const DATA_EXTRACTORS: Provider[] = [
-  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,

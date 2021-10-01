@@ -2,7 +2,7 @@
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div fxLayout="column">
       <div>
-      {{node.map | mapName | i18n}} - lvl {{node.level}}
+        {{node.map | mapName | i18n}} - lvl {{node.level}}
         <ng-container [ngSwitch]="node.type" *ngIf="!hideDbButton && node.id">
           <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
           <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>
@@ -26,6 +26,9 @@
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="5px">
+      <span *ngIf="node.oceanFishingTime !== null">
+        {{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}: {{('OCEAN_FISHING.' + OceanFishingTime[node.oceanFishingTime]) | translate}}
+      </span>
       <span *ngIf="node.spawns !== undefined">
         <i *ngFor="let time of node.spawns">
           {{time}}:00 - {{getDespawnTime(time, node.duration)}}:00

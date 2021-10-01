@@ -155,6 +155,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     item: [null, this.requiredIfSource(AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT)],
     instance: [null, this.requiredIfSource(AllaganReportSource.INSTANCE)],
     venture: [null, this.requiredIfSource(AllaganReportSource.VENTURE)],
+    fate: [null, this.requiredIfSource(AllaganReportSource.FATE)],
     mob: [null, this.requiredIfSource(AllaganReportSource.DROP)],
     voyageType: [null, this.requiredIfSource(AllaganReportSource.VOYAGE)],
     voyage: [null, this.requiredIfSource(AllaganReportSource.VOYAGE)],
@@ -265,6 +266,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   public mobInput$: Subject<string> = new Subject<string>();
 
   public mobCompletion$ = this.makeCompletionObservable(this.mobInput$, 'mobs');
+
+  public fateInput$: Subject<string> = new Subject<string>();
+
+  public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, 'fates');
 
   public voyageInput$: Subject<string> = new Subject<string>();
 
@@ -422,6 +427,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return { item: this.getEntryName(this.items, report.data.itemId) };
       case AllaganReportSource.INSTANCE:
         return { instance: this.getEntryName(this.instances, report.data.instanceId) };
+      case AllaganReportSource.FATE:
+        return { fate: this.getEntryName(this.instances, report.data.fateId) };
       case AllaganReportSource.VENTURE:
         return { venture: this.getEntryName(this.ventures, report.data.ventureId) };
       case AllaganReportSource.DROP:
@@ -477,6 +484,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         return { itemId: this.getEntryId(this.items, formState.item) };
       case AllaganReportSource.INSTANCE:
         return { instanceId: this.getEntryId(this.instances, formState.instance) };
+      case AllaganReportSource.FATE:
+        return { fateId: this.getEntryId(this.fates, formState.fate) };
       case AllaganReportSource.VENTURE:
         return { ventureId: this.getEntryId(this.ventures, formState.venture) };
       case AllaganReportSource.DROP:
