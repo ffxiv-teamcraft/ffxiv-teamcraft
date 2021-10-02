@@ -1566,6 +1566,7 @@
       "Top_users": "최고 순위",
       "Your_ranking": "당신의 순위",
       "Include_fisheyes_data": "물고기의 눈을 통계에 포함",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
