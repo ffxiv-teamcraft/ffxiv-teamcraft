@@ -183,7 +183,7 @@
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
     "Item": "Gegenstand",
-    "Venture": "Venture",
+    "Venture": "Unternehmung",
     "Monster": "Monster",
     "Airship": "Luftschiff",
     "Submarine": "Tauchboot",
@@ -1566,7 +1566,7 @@
       "Top_users": "Bestplatzierte",
       "Your_ranking": "Dein Rang",
       "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
-      "Not_enough_data_points": "Not enough data points to display this chart",
+      "Not_enough_data_points": "Nicht genügend Datenpunkte, um dieses Diagramm anzuzeigen",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1814,7 +1814,7 @@
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix.",
     "Loading_data": "Loading trades data for the selected currency",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "X_sold_last_week": "{{amount}} verkauft in der letzten Woche"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
@@ -2001,7 +2001,7 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Message": "Dieser Gegenstand wird nur verwendet, um {{targetItem}} herzustellen, wäge ab, ihn umzuwandeln statt ihn in Rohform zu behalten"
     }
   },
   "VERSION_LOCK": {
@@ -2072,7 +2072,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
     "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers und es wird nichts gespeichert, wenn du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2557,7 +2557,7 @@
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
     "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
     "Reset_retainers": "Reset retainers",
-    "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
+    "Check_prices": "Vergleiche die Verkaufspreise mit dem Marktbrett (2h Abklingzeit)",
     "Cannot_fetch": "Preischeck ist auf 2h Abklingzeit, letzte Preisüberprüfung: {{date}}",
     "X%_above": "Dein Preis liegt {{diff}}% über dem derzeit niedrigsten Preis",
     "X%_below": "Dein Preis liegt {{diff}}% unter dem derzeit niedrigsten Preis",
