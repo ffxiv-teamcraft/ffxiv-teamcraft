@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.0"></a>
+# [8.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.9...v8.6.0) (2021-10-02)
+
+
+### Bug Fixes
+
+* **db:** fixed a bug with fishing spot bite times chart and baits with few data points ([6c564d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c564d6))
+
+
+### Features
+
+* **data:** update for cn patch-5.55 ([96b68ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96b68ff))
+* **db:** added # of records for hookset and tug display in fish details ([d43a0f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d43a0f7))
+* **db:** added new misses toggle for bait datagrid in fishing spot pages ([0ed78f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ed78f0))
+* **db:** new data report system to add missing sources by hand ([84038f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84038f9))
+* **retainers:** you can now track items sold on MB ([203c804](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/203c804))
+
+
+
 <a name="8.5.9"></a>
 ## [8.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.8...v8.5.9) (2021-09-22)
 
