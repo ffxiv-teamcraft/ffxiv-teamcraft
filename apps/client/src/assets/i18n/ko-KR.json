@@ -2560,7 +2560,7 @@
     "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
     "X%_above": "Your price is {{diff}}% above the current lowest price",
     "X%_below": "Your price is {{diff}}% below the current lowest price",
-    "Lowest_price": "Lowest price"
+    "Lowest_price": "낮은 가격 순"
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",
@@ -2720,8 +2720,8 @@
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",
-    "No_pending_changes": "No pending changes",
-    "New_report": "New report",
+    "No_pending_changes": "변경 사항 없음",
+    "New_report": "새 보고서",
     "Submit_new_report": "Submit new report proposal",
     "Source": "출처",
     "Report_added": "Report proposal submitted",
@@ -2775,17 +2775,17 @@
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "Enter FATE name",
     "SOURCE": {
-      "DESYNTH": "DESYNTH",
-      "REDUCTION": "REDUCTION",
-      "GARDENING": "GARDENING",
+      "DESYNTH": "분해",
+      "REDUCTION": "정제",
+      "GARDENING": "가드닝",
       "LOOT": "LOOT",
       "VENTURE": "VENTURE",
       "VOYAGE": "VOYAGE",
       "DROP": "DROP",
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
-      "SPEARFISHING": "SPEARFISHING",
-      "FATE": "FATE"
+      "SPEARFISHING": "작살 낚시",
+      "FATE": "돌발 임무"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -2795,7 +2795,7 @@
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
+    "ANY": "모두",
     "SUNSET": "Sunset",
     "DAY": "Day",
     "NIGHT": "Night"
