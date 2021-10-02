@@ -1566,6 +1566,7 @@
       "Top_users": "最高順位",
       "Your_ranking": "あなたのランキング",
       "Include_fisheyes_data": "フィッシュアイを通計で含む",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",

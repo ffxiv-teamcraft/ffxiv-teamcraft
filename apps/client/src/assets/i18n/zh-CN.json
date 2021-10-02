@@ -1566,6 +1566,7 @@
       "Top_users": "排行榜",
       "Your_ranking": "你的排名",
       "Include_fisheyes_data": "包括使用鱼眼的数据",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
