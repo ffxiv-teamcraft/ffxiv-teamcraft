@@ -21,7 +21,12 @@
         <div>{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][i] | translate}}</div>
       </div>
     </div>
-    <chart type="horizontalBoxplot" *ngIf="biteTimesChartJSData$ | async as data" [data]="data" [options]="options"></chart>
+    <ng-container  *ngIf="biteTimesChartJSData$ | async as data">
+      <chart type="horizontalBoxplot" *ngIf="data.datasets.length > 0; else noData" [data]="data" [options]="options"></chart>
+      <ng-template #noData>
+        <nz-empty [nzNotFoundContent]="'DB.FISH.Not_enough_data_points' | translate"></nz-empty>
+      </ng-template>
+    </ng-container>
   </div>
 </nz-card>
 

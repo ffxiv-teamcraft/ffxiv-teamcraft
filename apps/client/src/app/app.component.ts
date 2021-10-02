@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
 
   public newFeatureName = 'allagan-reports';
 
-  public showNewFeatureBanner = localStorage.getItem(`new-feature:${name}`) !== 'true';
+  public showNewFeatureBanner = localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true';
 
   public availableLanguages = this.settings.availableLocales;
 
