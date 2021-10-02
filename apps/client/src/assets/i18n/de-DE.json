@@ -182,14 +182,14 @@
     "Support_us_remove_ads": "Unterstütze uns auf Patreon um Werbung zu entfernen",
     "Support_us": "Unterstütze uns",
     "Show_more": "Mehr anzeigen",
-    "Item": "Item",
+    "Item": "Gegenstand",
     "Venture": "Venture",
     "Monster": "Monster",
-    "Airship": "Airship",
-    "Submarine": "Submarine",
-    "Voyage": "Voyage",
-    "Instance": "Instance",
-    "Fate": "Fate"
+    "Airship": "Luftschiff",
+    "Submarine": "Tauchboot",
+    "Voyage": "Erkundung",
+    "Instance": "Inhalt",
+    "Fate": "FATE"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -1022,7 +1022,7 @@
     "Find_rotation": "Community Rotationen Finder",
     "Searching_for_rotation": "Suche nach Community Rotationen...",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
-    "Click_on_rotation": "Click on a rotation to select it",
+    "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
@@ -2774,31 +2774,31 @@
     "Fishing": "Fishing",
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
-    "Fate_placeholder": "Enter FATE name",
+    "Fate_placeholder": "FATE-Name eingeben",
     "SOURCE": {
-      "DESYNTH": "DESYNTH",
+      "DESYNTH": "DESYNTHESE",
       "REDUCTION": "REDUCTION",
       "GARDENING": "GARDENING",
-      "LOOT": "LOOT",
-      "VENTURE": "VENTURE",
-      "VOYAGE": "VOYAGE",
-      "DROP": "DROP",
-      "INSTANCE": "INSTANCE",
-      "FISHING": "FISHING",
-      "SPEARFISHING": "SPEARFISHING",
+      "LOOT": "BEUTE",
+      "VENTURE": "UNTERNEHMUNG",
+      "VOYAGE": "ERKUNDUNG",
+      "DROP": "BEUTE",
+      "INSTANCE": "INHALT",
+      "FISHING": "FISCHEN",
+      "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE"
     },
     "STATUS": {
-      "PROPOSAL": "PROPOSAL",
-      "MODIFICATION": "MODIFICATION",
-      "DELETION": "DELETION",
-      "ACCEPTED": "ACCEPTED"
+      "PROPOSAL": "VORSCHLAG",
+      "MODIFICATION": "ANPASSUNG",
+      "DELETION": "LÖSCHUNG",
+      "ACCEPTED": "AKZEPTIERT"
     }
   },
   "OCEAN_FISHING": {
     "ANY": "Any",
-    "SUNSET": "Sunset",
-    "DAY": "Day",
-    "NIGHT": "Night"
+    "SUNSET": "Sonnenuntergang",
+    "DAY": "Tag",
+    "NIGHT": "Nacht"
   }
 }
