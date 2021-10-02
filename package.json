@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "8.5.7",
+  "version": "8.5.9",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -88,6 +88,7 @@
     "web:copyfiles": "copyfiles ./libs/loader/tc-loader.js ./apps/client/src/assets/ -f",
     "update-lazy-files": "node ./tools/build/lazy-files-updater.js",
     "data-extractor": "tsc -p apps/data-extraction/tsconfig.json && node apps/data-extraction/build/src/main.js",
+    "data-extractor:allag": "tsc -p apps/data-extraction/tsconfig.json && node apps/data-extraction/build/src/main.js --only allag",
     "************ELECTRON STUFF*****************": "",
     "electron": "electron",
     "electron:copyfiles": "copyfiles ./apps/electron/src/loader.html ./dist/apps/electron/src/ -f && copyfiles ./libs/loader/tc-loader.js ./dist/apps/electron/src/ -f",
@@ -263,6 +264,7 @@
     "webpack-cli": "^3.3.2",
     "ws": "^6.0.0",
     "xhr2": "^0.1.4",
+    "yargs": "^17.1.1",
     "zone.js": "~0.10.2"
   },
   "resolutions": {

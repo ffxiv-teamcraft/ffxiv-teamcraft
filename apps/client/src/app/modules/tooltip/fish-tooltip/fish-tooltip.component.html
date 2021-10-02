@@ -16,7 +16,7 @@
       <app-node-details [node]="node" [showAlarmsIntegration]="false"></app-node-details>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img *ngIf="row.folklore !== undefined" [src]="row.folklore | lazyIcon" class="item-icon small-icon">
+          <img *ngIf="node.folklore !== undefined" [src]="node.folklore | lazyIcon" class="item-icon small-icon">
           <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
@@ -25,11 +25,11 @@
                fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="icon-container">
-                <img [src]="bait | lazyIcon" class="item-icon small-icon">
+                <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
                 <img *ngIf="index > 0" class="hq-overlay small-icon"
                      src="https://www.garlandtools.org/db/images/HQOverlay.png">
               </div>
-              <div>{{bait | itemName | i18n}}</div>
+              <div>{{bait.id | itemName | i18n}}</div>
             </div>
             <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
           </div>

@@ -20,14 +20,14 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.fates !== undefined;
+    return this.lazyData.data.fateSources[item.id]?.length > 0;
   }
 
   protected doExtract(item: Item, itemData: ItemData): FateData[] {
-    return item.fates.map(f => {
-      const fateData = this.lazyData.data.fates[f.toString()];
+    return this.lazyData.data.fateSources[item.id].map(fateId => {
+      const fateData = this.lazyData.data.fates[fateId.toString()];
       const fate: FateData = {
-        id: f,
+        id: fateId,
         level: fateData.level
       };
       if (fateData.position) {
@@ -37,7 +37,6 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
           y: fateData.position.y
         };
       }
-      return fate;
     });
   }
 }

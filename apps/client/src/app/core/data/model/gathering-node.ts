@@ -21,7 +21,7 @@ export interface GatheringNode {
    * Fishing stuff
    */
   predators?: { id: number, amount: number }[];
-  hookset?: 'powerful' | 'precision';
+  hookset: number;
   baits?: FishingBait[];
   weathers?: number[];
   weathersFrom?: number[];

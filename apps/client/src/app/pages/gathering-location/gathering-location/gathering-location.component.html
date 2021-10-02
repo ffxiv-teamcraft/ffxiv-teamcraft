@@ -63,8 +63,8 @@
             <app-fishing-bait *ngIf="row.node.baits !== undefined" [baits]="row.node.baits"></app-fishing-bait>
             <img *ngIf="row.node.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.node.gig) | translate" class="gig-icon" nz-tooltip
                  src="./assets/icons/gig/{{row.node.gig}}.png">
-            <img *ngIf="row.node.hookset" [nzTooltipTitle]="(row.node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon" nz-tooltip
-                 src="./assets/icons/hookset/{{row.node.hookset}}.png">
+            <img *ngIf="row.node.hookset" [nzTooltipTitle]="row.node.hookset | hooksetActionId | actionName | i18n" class="gig-icon" nz-tooltip
+                 [src]="row.node.hookset | hooksetActionId | actionIcon | xivapiIcon">
             <nz-tag *ngIf="row.node.tug !== undefined">{{row.node.tug | tugName | translate}}</nz-tag>
             <div *ngIf="row.node.predators && row.node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                  fxLayoutGap="10px">

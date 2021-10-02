@@ -3,14 +3,13 @@ import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localize
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ChartOptions } from 'chart.js';
-import { Chart } from 'chart.js';
+import { Chart, ChartOptions } from 'chart.js';
 
-const fishImageUrls = []
+const fishImageUrls = [];
 
 Chart.pluginService.register({
   afterDraw: chart => {
@@ -21,7 +20,7 @@ Chart.pluginService.register({
       const y = yAxis.getPixelForTick(index);
       const image = new Image();
       image.src = fishImageUrls[index],
-      ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
+        ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
     });
   }
 });
@@ -98,6 +97,12 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
           map((name) => ({ id: +id, name: `${name} (${['!!', '!!!', '!'][tugByFish[id]]})` }))
         )
       );
+      if (fishNames.length === 0) {
+        return of({
+          labels: [],
+          datasets: []
+        });
+      }
       return combineLatest([...fishNames]).pipe(
         map(([...names]) => {
           const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
@@ -108,7 +113,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
               borderWidth: 1,
               itemRadius: 0,
               data: sortedNames.map((el, index) => {
-                fishImageUrls[index] = 'https://xivapi.com' + this.lazyData.data.itemIcons[el.id]
+                fishImageUrls[index] = 'https://xivapi.com' + this.lazyData.data.itemIcons[el.id];
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
@@ -125,6 +130,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         debounceTime(100)
       );
     }),
+    tap(console.log),
     shareReplay(1)
   );
 

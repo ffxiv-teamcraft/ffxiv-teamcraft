@@ -21,14 +21,17 @@ export interface LazyData {
   craftingLog: any;
   desynth: any;
   diademTerritory: any;
+  dropSources: any;
   equipSlotCategories: any;
   equipment: any;
   exVersions: any;
   extractableItems: any;
+  fateSources: any;
   fates: any;
   fishParameter: any;
   fishes: any;
   fishingLog: any;
+  fishingSources: any;
   fishingSpots: any;
   foods: any;
   freeCompanyActions: any;
@@ -42,6 +45,7 @@ export interface LazyData {
   hwdInspections: any;
   hwdPhases: any;
   ilvls: any;
+  instanceSources: any;
   instances: any;
   itemEquipSlotCategory: any;
   itemIcons: any;
@@ -59,6 +63,7 @@ export interface LazyData {
   jobSortIndex: any;
   legendaryFish: any;
   leves: any;
+  lootSources: any;
   maps: any;
   marketItems: any;
   materias: any;
@@ -81,8 +86,9 @@ export interface LazyData {
   retainerTasks: any;
   seeds: any;
   shops: any;
+  spearFishingFish: any;
   spearFishingLog: any;
-  spearFishingNodes: any;
+  spearfishingSources: any;
   stackSizes: any;
   statuses: any;
   submarineParts: any;
@@ -95,6 +101,7 @@ export interface LazyData {
   tribes: any;
   tripleTriadRules: any;
   usedInQuests: any;
+  ventureSources: any;
   ventures: any;
   voyageSources: any;
   weathers: any;

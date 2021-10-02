@@ -21,7 +21,8 @@ export class LocalizedLazyDataService {
   private readonly dataKeys = new Set(Object.keys(lazyFilesList));
   private readonly indentRegexp = new RegExp('<Indent/>', 'i');
 
-  constructor(private lazyDataProvider: LazyDataProviderService) {}
+  constructor(private lazyDataProvider: LazyDataProviderService) {
+  }
 
   private getResolver(key: LazyDataKey, accessor: number | string, lang: Language): Observable<string | undefined> {
     return this.lazyDataProvider.getLazyData(key).pipe(
@@ -60,7 +61,7 @@ export class LocalizedLazyDataService {
       ja: this.getResolver(key, accessor, 'ja'),
       ko: this.getFallbackResolver(koKey, key, accessor, 'ko'),
       ru: this.getFallbackResolver(ruKey, key, accessor, 'ru'),
-      zh: this.getFallbackResolver(zhKey, key, accessor, 'zh'),
+      zh: this.getFallbackResolver(zhKey, key, accessor, 'zh')
     };
   }
 
@@ -68,7 +69,7 @@ export class LocalizedLazyDataService {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
       koKey: this.guessExtendedLanguageKey('ko', key),
-      ruKey: this.guessExtendedLanguageKey('ru', key),
+      ruKey: this.guessExtendedLanguageKey('ru', key)
     };
   }
 
@@ -89,7 +90,7 @@ export class LocalizedLazyDataService {
       ja: of(world),
       zh: of(zhWorlds[world] ?? world),
       ko: of(koWorlds[world] ?? world),
-      ru: of(world),
+      ru: of(world)
     };
 
     return i18nName;
@@ -105,6 +106,14 @@ export class LocalizedLazyDataService {
 
   public getAchievementName(id: number): I18nNameLazy {
     return this.getRow('achievements', id);
+  }
+
+  public getAirshipVoyageName(id: number): I18nNameLazy {
+    return this.getRow('airshipVoyages', id);
+  }
+
+  public getSubmarineVoyageName(id: number): I18nNameLazy {
+    return this.getRow('submarineVoyages', id);
   }
 
   public getMapByName(name: string): I18nNameLazy {
@@ -146,7 +155,7 @@ export class LocalizedLazyDataService {
           fr: of(npc?.fr),
           ko: this.getFallbackResolver(koKey, 'npcs', id, 'ko'),
           ru: this.getFallbackResolver(ruKey, 'npcs', id, 'ru'),
-          zh: this.getFallbackResolver(zhKey, 'npcs', id, 'zh'),
+          zh: this.getFallbackResolver(zhKey, 'npcs', id, 'zh')
         };
       })
     );
@@ -176,7 +185,7 @@ export class LocalizedLazyDataService {
       fr: resolver('fr'),
       ko: resolver('ko', koKey),
       ru: resolver('ru', ruKey),
-      zh: resolver('zh', zhKey),
+      zh: resolver('zh', zhKey)
     };
   }
 
@@ -210,7 +219,7 @@ export class LocalizedLazyDataService {
       ja: this.getResolver('quests', `${id}.name`, 'ja'),
       ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
       ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
-      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en
     };
   }
 
@@ -219,7 +228,7 @@ export class LocalizedLazyDataService {
       map((quests) => {
         return {
           ...quests[id],
-          name: this.getQuestName(id),
+          name: this.getQuestName(id)
         };
       })
     );
@@ -256,8 +265,8 @@ export class LocalizedLazyDataService {
             fr: of(trait?.description?.fr),
             ko: traitsDescExt.koKey ? this.getResolver(traitsDescExt.koKey, id, 'ko').pipe(switchMap((val) => (val ? of(val) : enDesc))) : enDesc,
             ru: traitsDescExt.ruKey ? this.getResolver(traitsDescExt.ruKey, id, 'ru').pipe(switchMap((val) => (val ? of(val) : enDesc))) : enDesc,
-            zh: traitsDescExt.zhKey ? this.getResolver(traitsDescExt.zhKey, id, 'zh').pipe(switchMap((val) => (val ? of(val) : enDesc))) : enDesc,
-          },
+            zh: traitsDescExt.zhKey ? this.getResolver(traitsDescExt.zhKey, id, 'zh').pipe(switchMap((val) => (val ? of(val) : enDesc))) : enDesc
+          }
         };
       })
     );
@@ -278,7 +287,7 @@ export class LocalizedLazyDataService {
       fr: data.pipe(map((d) => d['Name_fr'])),
       ko: !koKey ? en : this.lazyDataProvider.getLazyData(koKey).pipe(switchMap((p) => (p?.[id]?.['ko'] ? of(p?.[id]?.['ko']) : en))),
       ru: !ruKey ? en : this.lazyDataProvider.getLazyData(ruKey).pipe(switchMap((p) => (p?.[id]?.['ru'] ? of(p?.[id]?.['ru']) : en))),
-      zh: !zhKey ? en : this.lazyDataProvider.getLazyData(zhKey).pipe(switchMap((p) => (p?.[id]?.['zh'] ? of(p?.[id]?.['zh']) : en))),
+      zh: !zhKey ? en : this.lazyDataProvider.getLazyData(zhKey).pipe(switchMap((p) => (p?.[id]?.['zh'] ? of(p?.[id]?.['zh']) : en)))
     };
   }
 
@@ -297,7 +306,7 @@ export class LocalizedLazyDataService {
       fr: data.pipe(map((d) => d['Name_fr'])),
       ko: !koKey ? en : this.lazyDataProvider.getLazyData(koKey).pipe(switchMap((p) => (p?.[id]?.['ko'] ? of(p?.[id]?.['ko']) : en))),
       ru: !ruKey ? en : this.lazyDataProvider.getLazyData(ruKey).pipe(switchMap((p) => (p?.[id]?.['ru'] ? of(p?.[id]?.['ru']) : en))),
-      zh: !zhKey ? en : this.lazyDataProvider.getLazyData(zhKey).pipe(switchMap((p) => (p?.[id]?.['zh'] ? of(p?.[id]?.['zh']) : en))),
+      zh: !zhKey ? en : this.lazyDataProvider.getLazyData(zhKey).pipe(switchMap((p) => (p?.[id]?.['zh'] ? of(p?.[id]?.['zh']) : en)))
     };
   }
 
@@ -312,7 +321,7 @@ export class LocalizedLazyDataService {
       ja: this.getResolver('weathers', accessor, 'ja'),
       ko: !koKey ? en : this.getResolver(koKey, id, 'ko').pipe(switchMap((p) => (p ? of(p) : en))),
       ru: !ruKey ? en : this.getResolver(ruKey, id, 'ru').pipe(switchMap((p) => (p ? of(p) : en))),
-      zh: !zhKey ? en : this.getResolver(zhKey, id, 'zh').pipe(switchMap((p) => (p ? of(p) : en))),
+      zh: !zhKey ? en : this.getResolver(zhKey, id, 'zh').pipe(switchMap((p) => (p ? of(p) : en)))
     };
   }
 
@@ -350,18 +359,18 @@ export class LocalizedLazyDataService {
     const { craftActions, actions } =
       lang === 'ko'
         ? {
-            craftActions: this.lazyDataProvider.getLazyData('koCraftActions'),
-            actions: this.lazyDataProvider.getLazyData('koActions'),
-          }
+          craftActions: this.lazyDataProvider.getLazyData('koCraftActions'),
+          actions: this.lazyDataProvider.getLazyData('koActions')
+        }
         : lang === 'zh'
         ? {
-            craftActions: this.lazyDataProvider.getLazyData('zhCraftActions'),
-            actions: this.lazyDataProvider.getLazyData('zhActions'),
-          }
+          craftActions: this.lazyDataProvider.getLazyData('zhCraftActions'),
+          actions: this.lazyDataProvider.getLazyData('zhActions')
+        }
         : {
-            craftActions: this.lazyDataProvider.getLazyData('craftActions'),
-            actions: this.lazyDataProvider.getLazyData('actions'),
-          };
+          craftActions: this.lazyDataProvider.getLazyData('craftActions'),
+          actions: this.lazyDataProvider.getLazyData('actions')
+        };
     return craftActions.pipe(
       map(this.getIndexByName(name, lang, true)),
       switchMap((res) => (res !== -1 ? of(res) : actions.pipe(map(this.getIndexByName(name, lang, true)))))
@@ -386,7 +395,7 @@ export class LocalizedLazyDataService {
       ja: resolver('ja'),
       ko: resolver('ko'),
       ru: resolver('ru'),
-      zh: resolver('zh'),
+      zh: resolver('zh')
     };
   }
 
@@ -416,7 +425,7 @@ export class LocalizedLazyDataService {
       ja: this.getResolver('notebookDivision', `${id}.name`, 'ja'),
       ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
       ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
-      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en
     };
   }
 
@@ -425,7 +434,7 @@ export class LocalizedLazyDataService {
       map((divisions) => {
         return {
           ...divisions[id],
-          name: this.getNotebookDivisionName(id),
+          name: this.getNotebookDivisionName(id)
         };
       })
     );
@@ -441,7 +450,7 @@ export class LocalizedLazyDataService {
       ja: this.getResolver('notebookDivisionCategory', `${id}.name`, 'ja'),
       ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
       ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
-      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en
     };
   }
 
@@ -450,7 +459,7 @@ export class LocalizedLazyDataService {
       map((cat) => {
         return {
           ...cat[id],
-          name: this.getNotebookDivisionCategoryName(id),
+          name: this.getNotebookDivisionCategoryName(id)
         };
       })
     );
@@ -495,7 +504,7 @@ export class LocalizedLazyDataService {
       ja: of(value[`${fieldName}_ja`]),
       ko: of(value[`${fieldName}_ko`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(koKey, key, value.ID, 'ko') : en))),
       zh: of(value[`${fieldName}_chs`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(zhKey, key, value.ID, 'zh') : en))),
-      ru: of(value[`${fieldName}_ru`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(ruKey, key, value.ID, 'ru') : en))),
+      ru: of(value[`${fieldName}_ru`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(ruKey, key, value.ID, 'ru') : en)))
     };
   }
 

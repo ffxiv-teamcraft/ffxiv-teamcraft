@@ -144,13 +144,13 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
         const results = baseStruct.map(row => {
           // Let's check offHand first, as it's a bit specific
           if (!row.gearset.offHand && row.gearset.job !== 18 && (!row.gearset.isCombatSet() || [1, 19].includes(row.gearset.job))) {
-            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, [2], filters, inventory, filters.job);
+            row.gearset.offHand = this.getSlotPiece(row.level, mainStat, [2], filters, inventory, filters.job, row.gearset);
           }
           this.slots
             .filter(slot => !['ring2', 'offHand'].includes(slot.property))
             .forEach(slot => {
               if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
-                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryIds, filters, inventory, filters.job);
+                (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryIds, filters, inventory, filters.job, row.gearset);
                 if (row.gearset[slot.property] && this.desktop) {
                   row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                 }
@@ -160,7 +160,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           if (!row.gearset.ring2) {
             if (row.gearset.ring1) {
               if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
-                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, [12], filters, inventory, filters.job);
+                row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, [12], filters, inventory, filters.job, row.gearset);
                 if (row.gearset.ring2 && this.desktop) {
                   (row.gearset.ring2 as any).isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
                 }
@@ -208,14 +208,17 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     return filters.includeTrades && trades.length > 0;
   }
 
-  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategories: number[], filters: any, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {
+  private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategories: number[], filters: any, inventory: UserInventory, job: number, gearset: TeamcraftGearset): EquipmentPiece & { isInInventory: boolean } | null {
     const itemId = +Object.keys(this.lazyData.data.equipment)
       .filter(key => {
         return equipSlotCategories.includes(this.lazyData.data.equipment[key].equipSlotCategory)
           && this.lazyData.data.equipment[key].level <= level
           && this.lazyData.data.equipment[key].jobs.includes(this.lazyData.data.jobAbbr[job]?.en.toUpperCase());
       })
-      .filter(key => this.allowItem(+key, filters, inventory))
+      .filter(key => {
+        return this.allowItem(+key, filters, inventory)
+        && (equipSlotCategories[0] !== 12 || +key !== (gearset.ring1?.itemId || gearset.ring2?.itemId) || !this.lazyData.data.equipment[gearset.ring1?.itemId || gearset.ring2?.itemId]?.unique)
+      })
       .sort((a, b) => {
         const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategories, job);
         const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategories, job);
