@@ -1,0 +1,103 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h1>{{'ALLAGAN_REPORTS.Title' | translate}}</h1>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div>
+      <button nz-button nzShape="circle" nzType="primary" (click)="allaganReportsService.reloader$.next()"><i nz-icon nzType="reload" nzTheme="outline"></i>
+      </button>
+    </div>
+    <div *ngIf="devEnv">
+      <button nz-button nzShape="circle" nzType="primary" (click)="importSheet()"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
+    </div>
+  </div>
+</div>
+<nz-divider [nzText]="'ALLAGAN_REPORTS.Status' | translate" nzOrientation="left"></nz-divider>
+<ng-container *ngIf="status$ | async as status; else loading">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(status.reportsCount | number: '1.0-0': translate.currentLang)!"
+        [nzTitle]="'ALLAGAN_REPORTS.Count' | translate"
+      ></nz-statistic>
+    </nz-card>
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(status.appliedReportsCount | number: '1.0-0': translate.currentLang)!"
+        [nzTitle]="'ALLAGAN_REPORTS.Applied_count' | translate"
+      ></nz-statistic>
+    </nz-card>
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(status.fishCoverage | number: '1.0-0': translate.currentLang)!"
+        nzSuffix="%"
+        [nzTitle]="'ALLAGAN_REPORTS.Fish_coverage' | translate"
+      ></nz-statistic>
+    </nz-card>
+    <nz-card>
+      <nz-statistic
+        [nzValue]="(status.itemsWithNoSource.length | number: '1.0-0': translate.currentLang)!"
+        [nzTitle]="'ALLAGAN_REPORTS.Items_with_no_source' | translate"
+      ></nz-statistic>
+    </nz-card>
+  </div>
+  <nz-divider [nzText]="'ALLAGAN_REPORTS.Data_needs' | translate" nzOrientation="left"></nz-divider>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <nz-card fxFlex="1 1 auto" [nzTitle]="'ALLAGAN_REPORTS.Fishing' | translate">
+      <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="status.fishWithNoData" [rowTemplate]="reportTpl">
+        <ng-template #reportTpl let-itemId let-odd="odd">
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">
+            <app-item-icon [width]="32" [itemId]="itemId"></app-item-icon>
+            <div>{{itemId | itemName | i18n}}</div>
+            <div>
+              <a routerLink="/allagan-reports/{{itemId}}" nz-button nzShape="circle" nzType="primary" nz-tooltip
+                 [nzTooltipTitle]="'ALLAGAN_REPORTS.Open_reports' | translate">
+                <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </app-lazy-scroll>
+    </nz-card>
+    <nz-card fxFlex="1 1 auto" [nzTitle]="'ALLAGAN_REPORTS.Others' | translate">
+      <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="status.itemsWithNoSource" [rowTemplate]="reportTpl">
+        <ng-template #reportTpl let-itemId let-odd="odd">
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">
+            <app-item-icon [width]="32" [itemId]="itemId"></app-item-icon>
+            <div>{{itemId | itemName | i18n}}</div>
+            <div>
+              <a routerLink="/allagan-reports/{{itemId}}" nz-button nzShape="circle" nzType="primary" nz-tooltip
+                 [nzTooltipTitle]="'ALLAGAN_REPORTS.Open_reports' | translate">
+                <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </app-lazy-scroll>
+    </nz-card>
+  </div>
+</ng-container>
+<nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate" nzOrientation="left"></nz-divider>
+<div fxLayout="column" *ngIf="queueStatus$ | async as queueStatus; else loading">
+  <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="queueStatus" [rowTemplate]="reportTpl">
+    <ng-template #reportTpl let-row let-odd="odd">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">
+        <app-item-icon [width]="32" [itemId]="row.itemId"></app-item-icon>
+        <div>{{row.itemId | itemName | i18n}}</div>
+        <div>
+          <nz-tag>{{'ALLAGAN_REPORTS.Pending_changes_count' | translate:{ amount: row.count } }}</nz-tag>
+        </div>
+        <div>
+          <a routerLink="/allagan-reports/{{row.itemId}}" nz-button nzShape="circle" nzType="primary" nz-tooltip
+             [nzTooltipTitle]="'ALLAGAN_REPORTS.Review_changes' | translate">
+            <i nz-icon nzType="security-scan" nzTheme="outline"></i>
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </app-lazy-scroll>
+
+  <nz-empty *ngIf="queueStatus.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
+</div>
+
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>

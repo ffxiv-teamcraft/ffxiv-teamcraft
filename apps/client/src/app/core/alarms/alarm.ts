@@ -4,6 +4,7 @@ import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { Aetheryte } from '../data/aetheryte';
 import { Vector3 } from '../tools/vector3';
 import { FishingBait } from '../data/model/fishing-bait';
+import { Hookset } from '../data/model/hookset';
 
 export class Alarm extends DataModel {
 
@@ -36,7 +37,7 @@ export class Alarm extends DataModel {
    */
   fishEyes?: boolean;
 
-  hookset?: string;
+  hookset?: Hookset;
   baits?: FishingBait[];
   gig?: string;
   weathers?: number[];

@@ -118,6 +118,8 @@ import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/fre
 import { AdsModule } from './modules/ads/ads.module';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
+import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
+import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -187,7 +189,8 @@ const nzConfig: NzConfig = {
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true },
-    ...APP_INITIALIZERS
+    ...APP_INITIALIZERS,
+    ...Object.values(AllaganReportsGQLProviders)
   ],
   imports: [
     FlexLayoutModule,

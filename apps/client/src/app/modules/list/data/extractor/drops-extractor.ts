@@ -27,28 +27,23 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
   protected doExtract(item: Item, itemData: ItemData): Drop[] {
     const drops: Drop[] = [];
-    if (item.drops) {
-      item.drops.forEach(d => {
-        const partial = itemData.getPartial(d.toString(), 'mob');
-        if (partial !== undefined) {
-          const monsterId: string = Math.floor(d % 1000000).toString();
-          const zoneid = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? this.lazyData.data.monsters[monsterId].positions[0].zoneid : partial.obj.z;
-          const mapid = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? this.lazyData.data.monsters[monsterId].positions[0].map : this.lazyData.getMapIdByZoneId(partial.obj.z);
-          const position = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? {
-              zoneid: zoneid,
-              x: +this.lazyData.data.monsters[monsterId].positions[0].x,
-              y: +this.lazyData.data.monsters[monsterId].positions[0].y
-            } :
-            null;
-          const drop: Drop = {
-            id: d,
-            mapid: mapid,
+    const lazyDrops = this.lazyData.data.dropSources[item.id];
+    if (lazyDrops) {
+      lazyDrops.forEach(monsterId => {
+        const zoneid =  this.lazyData.data.monsters[monsterId].positions[0]?.zoneid;
+        const mapid = this.lazyData.data.monsters[monsterId].positions[0]?.map;
+        const position = {
             zoneid: zoneid,
-            lvl: partial.obj.l,
-            position: position
-          };
-          drops.push(drop);
-        }
+            x: +this.lazyData.data.monsters[monsterId].positions[0]?.x,
+            y: +this.lazyData.data.monsters[monsterId].positions[0]?.y
+          }
+        const drop: Drop = {
+          id: monsterId,
+          mapid: mapid,
+          zoneid: zoneid,
+          position: position
+        };
+        drops.push(drop);
       });
     }
     drops.push(...Object.keys(monsterDrops)

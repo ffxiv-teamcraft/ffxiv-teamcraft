@@ -18,6 +18,8 @@ import { fshLogOrder } from '../fsh-log-order';
 })
 export class FishingLogCacheService {
 
+  private minBtnSpearNodes: GatheringNode[];
+
   private completion$ = this.authFacade.logTracking$.pipe(
     map(logTracking => logTracking.gathering),
     startWith([])
@@ -29,6 +31,18 @@ export class FishingLogCacheService {
     }),
     filter(logs => logs.every(l => !!l)),
     map((logs) => {
+      if (!this.minBtnSpearNodes) {
+        this.minBtnSpearNodes = Object.entries<any>(this.lazyData.data.nodes)
+          .map(([key, value]) => {
+            const res = {
+              ...value,
+              id: +key,
+              zoneId: value.zoneid
+            };
+            delete res.zoneid;
+            return res;
+          });
+      }
       return logs.map((log: any[], type) => {
         const display = { tabs: [], total: 0, done: 0 };
         log.forEach(entry => {
@@ -73,13 +87,15 @@ export class FishingLogCacheService {
             }
             spot.fishes.push(fish);
           } else {
-            const node = this.lazyData.data.spearFishingNodes.find(n => n.id === entry.itemId);
-            const data = this.getFshData(node.itemId, spot.id);
+            const node = this.minBtnSpearNodes.find(n => n.items.includes(entry.itemId));
+            const data = this.getFshData(entry.itemId, spot.id);
+            if (!node) {
+              console.log(entry);
+            }
             spot.fishes.push({
               id: spot.id,
-              itemId: node.itemId,
+              itemId: entry.itemId,
               level: node.level,
-              icon: node.icon,
               data: data,
               timed: data[0].gatheringNode.limited,
               tug: data[0].gatheringNode.tug

@@ -16,7 +16,6 @@ export class MappyExtractor extends AbstractExtractor {
 
   doExtract(): void {
     const mapData$ = this.get('https://xivapi.com/mappy/json');
-    const spearFishingItems = require('../../../../client/src/assets/data/spear-fishing-nodes.json');
     const nodes$ = new Subject();
     const gatheringPointToBaseId$ = new Subject();
 
@@ -96,7 +95,7 @@ export class MappyExtractor extends AbstractExtractor {
 
     combineLatest([gatheringItems$, gatheringPoints$, gatheringItemPoints$]).pipe(
       switchMap(([gi, gp, gip]) => {
-        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0TargetID,Item1TargetID,Item2TargetID,Item3TargetID,Item4TargetID,Item5TargetID,Item6TargetID,Item7TargetID,IsLimited,GameContentLinks,GatheringLevel')
+        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
           .pipe(
             map((page) => [page, gi, gp, gip])
           );
@@ -120,15 +119,10 @@ export class MappyExtractor extends AbstractExtractor {
         this.nodes[node.ID] = {
           ...this.nodes[node.ID],
           items: [0, 1, 2, 3, 4, 5, 6, 7]
-            .filter(i => node[`Item${i}TargetID`] > 0)
-            .map(i => node[`Item${i}TargetID`])
-            .map(gatheringItemId => {
-              if (items[gatheringItemId]) {
-                return items[gatheringItemId].itemId;
-              } else {
-                const spearFishingItem = spearFishingItems.find(i => i.id === gatheringItemId);
-                return spearFishingItem && spearFishingItem.itemId;
-              }
+            .filter(i => node[`Item${i}`] !== null)
+            .map(i => node[`Item${i}`])
+            .map(gatheringItem => {
+              return gatheringItem.ItemTargetID;
             })
             .filter(itemId => !!itemId),
           limited: point && (point.legendary || point.ephemeral),

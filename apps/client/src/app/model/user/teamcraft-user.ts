@@ -29,6 +29,8 @@ export class TeamcraftUser extends DataModel {
 
   moderator = false;
 
+  allaganChecker = false;
+
   patron = false;
 
   // For shared benefits or one-time donations benefits.

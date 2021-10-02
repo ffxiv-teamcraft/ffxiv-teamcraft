@@ -167,8 +167,8 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
   }
 
   public getGatheringItem(itemId: number): any {
-    return this.lazyData.data.spearFishingNodes
-      .find(item => item.itemId === itemId);
+    return this.lazyData.data.nodes
+      .find(node => node.items.includes(itemId));
   }
 
   private getDescription(node: any): string {

@@ -6,6 +6,7 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fishing-time';
 
 @Component({
   selector: 'app-node-details',
@@ -14,6 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NodeDetailsComponent implements OnInit {
+
+  OceanFishingTime = OceanFishingTime;
 
   alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 

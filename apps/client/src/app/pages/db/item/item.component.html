@@ -55,6 +55,9 @@
           <div *ngIf="data.canBeGathered">
             <button nz-button *ngIf="!data.isDoneInLog" (click)="markAsDoneInLog(data.id)">{{'DB.ITEM.Mark_as_done_in_gathering_log' | translate}}</button>
           </div>
+          <div class="allagan-reports-button">
+            <a routerLink="/allagan-reports/{{itemId$ | async}}" nz-button nzType="primary">{{'ALLAGAN_REPORTS.Add_data_sources' | translate}}</a>
+          </div>
         </div>
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></p>
@@ -443,9 +446,18 @@
           <div>
             <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
           </div>
-          <app-fullpage-message *ngIf="noData" height="150px">
-            {{'DB.No_known_way_to_obtain' | translate}}
-          </app-fullpage-message>
+          <ng-container  *ngIf="noData">
+            <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+              <app-fullpage-message height="150px">
+                {{'DB.No_known_way_to_obtain' | translate}}
+              </app-fullpage-message>
+              <div>
+                <a routerLink="/allagan-reports/{{itemId$ | async}}" nz-button nzType="primary">
+                  {{'ALLAGAN_REPORTS.Add_data_sources' | translate}}
+                </a>
+              </div>
+            </div>
+          </ng-container>
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
             <ng-container *ngFor="let source of data.sources">
               <ng-container [ngSwitch]="source.type">

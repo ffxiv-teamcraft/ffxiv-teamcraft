@@ -1,5 +1,5 @@
 <div class="extractor-container" fxLayout="column" fxLayoutAlign="center center">
   <nz-progress [nzPercent]="progress$ | async" nzType="circle"></nz-progress>
-  <div>{{done$ | async}} / {{totalTodo$ | async}}</div>
+  <div id="progress-display">{{done$ | async}} / {{totalTodo$ | async}}</div>
 </div>
 

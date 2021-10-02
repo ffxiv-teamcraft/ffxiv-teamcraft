@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
 import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
@@ -9,7 +10,7 @@ import { Datagrid, FishContextService } from '../../service/fish-context.service
 @Component({
   selector: 'app-fishing-spot-bait-datagrid',
   templateUrl: './fishing-spot-bait-datagrid.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBaitDatagridComponent {
   @Input()
@@ -24,11 +25,19 @@ export class FishingSpotBaitDatagridComponent {
       const fishes: number[] = spots.find((spot) => spot.id === spotId)?.fishes ?? [];
       const data = {
         ...res.data,
-        data: res.data.data.sort((a, b) => fishes.indexOf(a.rowId) - fishes.indexOf(b.rowId)),
+        data: res.data.data.sort((a, b) => fishes.indexOf(a.rowId) - fishes.indexOf(b.rowId))
       };
       return combineLatest([
         of(data),
-        ...res.data.colDefs.map((i) => this.i18n.resolveName(this.l12n.getItem(i.colId)).pipe(map((name) => ({ id: i.colId, name })))),
+        ...res.data.colDefs.map((i) => {
+          if (i.colId === -1) {
+            return of({
+              id: i.colId,
+              name: this.translate.instant('DB.FISHING_SPOT.Miss')
+            });
+          }
+          return this.i18n.resolveName(this.l12n.getItem(i.colId)).pipe(map((name) => ({ id: i.colId, name })));
+        })
       ]);
     }),
     map(([data, ...names]: [Datagrid, ...{ id: number; name: string }[]]) => {
@@ -40,15 +49,19 @@ export class FishingSpotBaitDatagridComponent {
           if (!aName?.name) return 1;
           if (!bName?.name) return -1;
           return aName.name.localeCompare(bName.name);
-        }),
+        })
       };
     })
   );
+
+  showMisses$ = this.fishCtx.showMisses$;
 
   constructor(
     private readonly fishCtx: FishContextService,
     private readonly lazyData: LazyDataService,
     private readonly i18n: I18nToolsService,
-    private readonly l12n: LocalizedLazyDataService
-  ) {}
+    private readonly l12n: LocalizedLazyDataService,
+    private readonly translate: TranslateService
+  ) {
+  }
 }

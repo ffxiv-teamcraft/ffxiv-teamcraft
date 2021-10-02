@@ -97,6 +97,7 @@ export class UniversalisService {
               item.Prices = (res.listings || [])
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,
@@ -107,6 +108,7 @@ export class UniversalisService {
               item.History = (res.recentHistory || [])
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,

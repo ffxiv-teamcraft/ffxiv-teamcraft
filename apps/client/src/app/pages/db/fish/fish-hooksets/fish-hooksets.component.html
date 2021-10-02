@@ -9,6 +9,7 @@
         <div>
           <div>{{ row.hookset | actionName | i18n }}</div>
           <div>{{ row.percent | number: '1.0-1' }}%</div>
+          <div>({{ row.amount | number: '1.0-1' }})</div>
         </div>
       </div>
     </div>
@@ -17,6 +18,7 @@
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of tugs$ | async">
         <div>{{ row.tug | tugName | translate }}</div>
         <div>{{ row.percent | number: '1.0-1' }}%</div>
+        <div>({{ row.amount | number: '1.0-1' }})</div>
       </div>
     </div>
   </div>
