@@ -170,7 +170,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     predators: [[]],
     snagging: [false],
     gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)],
-    oceanFishingTime: [0]
+    oceanFishingTime: [0],
+    minGathering: [0]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -242,7 +243,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               duration: this.getDuration(hours.data.byId),
               weathers: weathers.data.weathers.length > 4 ? [] : weathers.data.weathers.filter(w => w.occurences > 5).map(w => w.weatherId),
               weathersFrom: weathers.data.weatherTransitions.length > 5 ? [] : weathers.data.weatherTransitions.filter(w => w.occurences > 5).map(w => w.previousWeatherId),
-              snagging: stats.data.snagging > 90
+              snagging: stats.data.snagging > 90,
+              minGathering: stats.data.stats.aggregate.min.gathering
             };
           })
         );
@@ -457,7 +459,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           weathersFrom: report.data.weathersFrom,
           snagging: report.data.snagging,
           predators: report.data.predators,
-          oceanFishingTime: report.data.oceanFishingTime
+          oceanFishingTime: report.data.oceanFishingTime,
+          minGathering: report.data.minGathering
         }, value => value !== undefined && value !== null);
     }
   }
@@ -514,7 +517,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           weathersFrom: formState.weathersFrom,
           snagging: formState.snagging,
           predators: formState.predators,
-          oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null
+          oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null,
+          minGathering: formState.minGathering
         }, value => value !== undefined && value !== null);
     }
   }

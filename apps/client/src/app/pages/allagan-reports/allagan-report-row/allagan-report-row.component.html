@@ -164,6 +164,9 @@
           </div>
           <img *ngIf="data.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
+          <div>
+            {{'DB.FISH.Min_gathering' | translate}}: {{data.minGathering || 0}}
+          </div>
         </div>
         <div nz-col nzMd="8" fxLayout="column" fxLayoutAlign="space-around flex-start">
           <div *ngIf="data.oceanFishingTime !== undefined">
