@@ -288,6 +288,10 @@ export class SettingsPopupComponent {
     }
   }
 
+  reloadGubalToken():void{
+    this.authFacade.reloadGubalToken();
+  }
+
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
   }

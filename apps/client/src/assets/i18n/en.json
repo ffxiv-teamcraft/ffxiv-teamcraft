@@ -486,6 +486,7 @@
     "Has_access_to_housing_vendor": "Prioritize housing vendor",
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Hide back button in sidebar",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
