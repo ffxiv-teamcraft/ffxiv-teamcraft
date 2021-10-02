@@ -1566,6 +1566,7 @@
       "Top_users": "Meilleurs classements",
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",

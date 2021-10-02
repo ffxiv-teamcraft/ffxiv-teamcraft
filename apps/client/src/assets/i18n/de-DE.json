@@ -1566,6 +1566,7 @@
       "Top_users": "Bestplatzierte",
       "Your_ranking": "Dein Rang",
       "Include_fisheyes_data": "Meldungen mit Fischaugen einbeziehen",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
