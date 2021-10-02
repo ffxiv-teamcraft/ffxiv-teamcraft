@@ -28,6 +28,7 @@ export interface GatheringNode {
   snagging?: boolean;
   gig?: 'Small' | 'Normal' | 'Large';
   tug?: number;
+  oceanFishingTime?: number;
 
   /**
    * Search stuff
