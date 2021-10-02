@@ -21,6 +21,7 @@ export class FishHooksetsComponent {
         .map((entry) => ({
           hookset: entry.id === 1 ? 4103 : 4179,
           percent: (100 * entry.occurrences) / res.data.total,
+          amount: entry.occurrences
         }));
     }),
     startWith([])
@@ -34,6 +35,7 @@ export class FishHooksetsComponent {
         .map((entry) => ({
           tug: entry.id,
           percent: (100 * entry.occurrences) / res.data.total,
+          amount: entry.occurrences
         }));
     }),
     startWith([])
