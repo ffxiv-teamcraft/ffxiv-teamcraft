@@ -6,6 +6,7 @@ import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { monsterDrops } from '../../../../core/data/sources/monster-drops';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { uniqBy } from 'lodash';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
@@ -22,29 +23,36 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item !== undefined;
+    return true;
   }
 
   protected doExtract(item: Item, itemData: ItemData): Drop[] {
     const drops: Drop[] = [];
     const lazyDrops = this.lazyData.data.dropSources[item.id];
     if (lazyDrops) {
-      lazyDrops.forEach(monsterId => {
-        const zoneid =  this.lazyData.data.monsters[monsterId].positions[0]?.zoneid;
-        const mapid = this.lazyData.data.monsters[monsterId].positions[0]?.map;
-        const position = {
-            zoneid: zoneid,
-            x: +this.lazyData.data.monsters[monsterId].positions[0]?.x,
-            y: +this.lazyData.data.monsters[monsterId].positions[0]?.y
+      lazyDrops
+        .forEach(monsterId => {
+          if (!this.lazyData.data.monsters[monsterId]) {
+            console.warn(`Missing monster details for ${this.lazyData.data.mobs[monsterId]?.en || monsterId}`);
+            drops.push({
+              id: monsterId
+            });
+          } else {
+            const zoneid = this.lazyData.data.monsters[monsterId].positions[0]?.zoneid;
+            const mapid = this.lazyData.data.monsters[monsterId].positions[0]?.map;
+            const position = {
+              zoneid: zoneid,
+              x: +this.lazyData.data.monsters[monsterId].positions[0]?.x,
+              y: +this.lazyData.data.monsters[monsterId].positions[0]?.y
+            };
+            drops.push({
+              id: monsterId,
+              mapid: mapid,
+              zoneid: zoneid,
+              position: position
+            });
           }
-        const drop: Drop = {
-          id: monsterId,
-          mapid: mapid,
-          zoneid: zoneid,
-          position: position
-        };
-        drops.push(drop);
-      });
+        });
     }
     drops.push(...Object.keys(monsterDrops)
       .filter(key => {
@@ -72,6 +80,6 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         };
       })
     );
-    return drops;
+    return uniqBy(drops, 'id');
   }
 }

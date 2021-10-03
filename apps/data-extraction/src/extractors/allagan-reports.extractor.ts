@@ -45,6 +45,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const fateSources = {};
 
         res.data.allagan_reports.forEach(report => {
+          if (typeof report.data === 'string') {
+            report.data = JSON.parse(report.data);
+          }
           switch (report.source) {
             case AllaganReportSource.DESYNTH:
               this.addItemAsSource(desynth, report.itemId, report.data.itemId);

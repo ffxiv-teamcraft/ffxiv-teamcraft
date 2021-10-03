@@ -171,7 +171,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     snagging: [false],
     gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)],
     oceanFishingTime: [0],
-    minGathering: [0]
+    minGathering: [0],
+    price: [0, this.requiredIfSource(AllaganReportSource.MOGSTATION)]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -414,6 +415,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
         return { item: this.getEntryName(this.items, report.data.itemId) };
+      case AllaganReportSource.MOGSTATION:
+        return { price: report.data.price };
       case AllaganReportSource.INSTANCE:
         return { instance: this.getEntryName(this.instances, report.data.instanceId) };
       case AllaganReportSource.FATE:
@@ -472,6 +475,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
         return { itemId: this.getEntryId(this.items, formState.item) };
+      case AllaganReportSource.MOGSTATION:
+        return { price: formState.price };
       case AllaganReportSource.INSTANCE:
         return { instanceId: this.getEntryId(this.instances, formState.instance) };
       case AllaganReportSource.FATE:
