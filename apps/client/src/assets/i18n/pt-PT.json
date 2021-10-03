@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "Quests",
   "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
   "Pick_a_list": "Escolha uma lista",
@@ -486,6 +487,7 @@
     "Has_access_to_housing_vendor": "Prioritize housing vendor",
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Hide back button in sidebar",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -2775,6 +2777,13 @@
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "Enter FATE name",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2786,7 +2795,8 @@
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
       "SPEARFISHING": "SPEARFISHING",
-      "FATE": "FATE"
+      "FATE": "FATE",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
