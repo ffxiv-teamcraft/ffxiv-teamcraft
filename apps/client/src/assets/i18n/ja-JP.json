@@ -261,6 +261,7 @@
   "Item_name": "アイテム名",
   "No_items_found": "検索結果なし",
   "No_instances_found": "検索結果なし",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "検索結果なし",
   "No_npcs_found": "検索結果なし",
   "No_mobs_found": "検索結果なし",
@@ -2784,6 +2785,7 @@
     "Price": "Price",
     "Product_id": "Product ID",
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
