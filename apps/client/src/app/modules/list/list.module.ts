@@ -67,11 +67,13 @@ import { InventoryModule } from '../inventory/inventory.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.component';
 import { MogstationExtractor } from './data/extractor/mogstation-extractor';
+import { QuestsExtractor } from './data/extractor/quests-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,

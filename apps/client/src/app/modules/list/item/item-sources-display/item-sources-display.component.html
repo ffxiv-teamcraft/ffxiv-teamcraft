@@ -27,6 +27,11 @@
               nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
         <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
       </button>
+      <button (click)="openQuestPopup(item)" *ngSwitchCase="dataTypes.QUESTS"
+              nz-button
+              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Quests' | translate">
+        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+      </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">

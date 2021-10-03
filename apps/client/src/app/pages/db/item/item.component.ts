@@ -857,17 +857,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         );
       }
     }
-    if (gtData.item.quests) {
-      res$ = res$.pipe(
-        map((res) => {
-          res.sources.push({
-            type: DataType.QUESTS,
-            data: gtData.item.quests
-          });
-          return res;
-        })
-      );
-    }
     return res$;
   }
 
