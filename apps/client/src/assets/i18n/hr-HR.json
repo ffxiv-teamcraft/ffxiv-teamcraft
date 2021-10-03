@@ -261,6 +261,7 @@
   "Item_name": "Naziv predmeta",
   "No_items_found": "Nije pronađena nijedna stavka",
   "No_instances_found": "No instances found",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "No quests found",
   "No_npcs_found": "No npcs found",
   "No_mobs_found": "No monsters found",
@@ -2784,6 +2785,7 @@
     "Price": "Price",
     "Product_id": "Product ID",
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
