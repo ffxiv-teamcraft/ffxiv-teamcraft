@@ -2779,6 +2779,7 @@
     "Open_details": "No space for the details, open the page to approve or reject",
     "Accept_many": "Accept selected reports ({{amount}})",
     "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

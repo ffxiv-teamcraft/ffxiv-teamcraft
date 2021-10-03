@@ -1,3 +1,6 @@
+<div class="quick-search">
+  <app-quick-search [reportsMode]="true" [searchType]="SearchType.ITEM"></app-quick-search>
+</div>
 <ng-container *ngIf="itemId$ | async as itemId">
   <ng-container *ngIf="itemDetails$ | async as details">
     <div class="top-bar">
@@ -286,19 +289,20 @@
                         </ng-container>
                       </ng-template>
                     </nz-form-control>
-                  </nz-form-item> <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
-                    <nz-input-number formControlName="minGathering">
-                    </nz-input-number>
-                    <ng-template #gubalAnalysisMinGathering>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.minGathering}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
+                      <nz-input-number formControlName="minGathering">
+                      </nz-input-number>
+                      <ng-template #gubalAnalysisMinGathering>
+                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                          <b>{{suggestions.minGathering}}</b>
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
                 </ng-template>
                 <ng-container *ngIf="mapWeathers$ | async as mapWeathers">
                   <nz-form-item>

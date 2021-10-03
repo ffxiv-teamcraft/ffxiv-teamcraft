@@ -40,6 +40,7 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { ReportSourceDisplayComponent } from './report-source-display/report-source-display.component';
 import { ReportSourceCompactDetailsComponent } from './report-source-compact-details/report-source-compact-details.component';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 
 
 const routes: Routes = [
@@ -92,7 +93,8 @@ const routes: Routes = [
     NzProgressModule,
     NzCardModule,
     NzStatisticModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    QuickSearchModule
   ],
   providers: [
     ...Object.values(AllaganReportsGQLProviders),

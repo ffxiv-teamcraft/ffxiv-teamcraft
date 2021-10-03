@@ -53,11 +53,13 @@
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
-            <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
-              <div>{{predator.id | itemName | i18n}}</div>
-              <div>x {{predator.amount}}</div>
-              <app-db-button [id]="predator.id" type="item"></app-db-button>
+            <div fxLayout="column">
+              <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
+                <div>{{predator.id | itemName | i18n}}</div>
+                <div>x {{predator.amount}}</div>
+                <app-db-button [id]="predator.id" type="item"></app-db-button>
+              </div>
             </div>
           </div>
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>
@@ -131,11 +133,13 @@
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
-            <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
-              <div>{{predator.id | itemName | i18n}}</div>
-              <div>x {{predator.amount}}</div>
-              <app-db-button [id]="predator.id" type="item"></app-db-button>
+            <div fxLayout="column">
+              <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
+                <div>{{predator.id | itemName | i18n}}</div>
+                <div>x {{predator.amount}}</div>
+                <app-db-button [id]="predator.id" type="item"></app-db-button>
+              </div>
             </div>
           </div>
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>

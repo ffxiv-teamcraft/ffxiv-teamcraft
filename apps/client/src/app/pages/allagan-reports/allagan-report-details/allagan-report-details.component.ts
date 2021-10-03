@@ -25,6 +25,7 @@ import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
+import { SearchType } from '../../search/search-type';
 
 
 function durationRequired(control: AbstractControl) {
@@ -49,6 +50,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   source: AllaganReportSource;
   voyageType: number;
   AllaganReportSource = AllaganReportSource;
+  SearchType = SearchType;
 
   itemId$ = this.route.paramMap.pipe(
     map(params => +params.get('itemId'))

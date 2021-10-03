@@ -23,7 +23,7 @@ export class VenturesExtractor extends AbstractExtractor<number[]> {
 
   protected canExtract(item: Item): boolean {
     const deterministic = this.lazyData.data.retainerTasks.filter(task => task.item === item.id).map(task => task.id);
-    return uniq([...deterministic, ...this.lazyData.data.ventureSources[item.id]]).length > 0;
+    return uniq([...deterministic, ...(this.lazyData.data.ventureSources[item.id] || [])]).length > 0;
   }
 
   protected doExtract(item: Item, itemData: ItemData): Observable<number[]> | number[] {
