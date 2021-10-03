@@ -261,6 +261,7 @@
   "Item_name": "Название предмета",
   "No_items_found": "Предметы не найдены",
   "No_instances_found": "Инстансы не найдены",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "Квесты не найдены",
   "No_npcs_found": "NPC не найдены",
   "No_mobs_found": "Монстры не найдены",
@@ -2784,6 +2785,7 @@
     "Price": "Price",
     "Product_id": "Product ID",
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
