@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "任务",
   "Facebook_notice": "Facebook登录已不可用，您可以通过\"重置密码\"系统添加密码到您的帐户，也可以通过在 Discord 上询问Miu 。",
   "Pick_a_list": "选择清单",
@@ -486,6 +487,7 @@
     "Has_access_to_housing_vendor": "优先使用房屋专属商人",
     "Has_access_to_housing_vendor_explain": "在 “按 NPC 显示” 时优先使用房屋专属商人。在拥有房屋时非常有用。",
     "Hide_back_button": "在侧边栏隐藏返回按钮",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -2775,6 +2777,13 @@
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "Enter FATE name",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2786,7 +2795,8 @@
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
       "SPEARFISHING": "SPEARFISHING",
-      "FATE": "FATE"
+      "FATE": "FATE",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
