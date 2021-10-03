@@ -20,7 +20,7 @@
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
-        <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+        <img [src]="source.data[0] | instanceIcon" class="img-icon round-icon">
       </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button

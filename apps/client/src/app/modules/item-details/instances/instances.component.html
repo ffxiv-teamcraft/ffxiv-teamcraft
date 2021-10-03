@@ -5,13 +5,13 @@
                          [nzTitle]="title">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{(instance.id | instanceName | i18n) || instance.name}}</div>
+            <div>{{instance | instanceName | i18n}}</div>
             <app-db-button [id]="instance.id" type="instance"></app-db-button>
           </div>
         </ng-template>
         <ng-template #avatar>
-          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance.id}}">
-            <img [src]="instance.icon | instanceIcon" alt="">
+          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance}}">
+            <img [src]="instance | instanceIcon" alt="">
           </a>
         </ng-template>
       </nz-list-item-meta>
