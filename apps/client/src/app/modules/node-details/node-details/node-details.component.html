@@ -26,7 +26,7 @@
     </div>
   </div>
   <div fxLayout="row wrap" fxLayoutGap="5px">
-      <span *ngIf="node.oceanFishingTime !== null">
+      <span *ngIf="node.oceanFishingTime !== undefined && node.oceanFishingTime !== null">
         {{'ALLAGAN_REPORTS.Ocean_fishing_time' | translate}}: {{('OCEAN_FISHING.' + OceanFishingTime[node.oceanFishingTime]) | translate}}
       </span>
       <span *ngIf="node.spawns !== undefined">

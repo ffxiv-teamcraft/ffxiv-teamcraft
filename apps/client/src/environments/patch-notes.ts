@@ -1,12 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed a bug with fishing spot bite times chart and baits with few data points.
+* **db:** fixed multiple predator fish not being displayed properly.
+* **db:** removed ocean fishing time details shown on every single gathering node details.
+* **list:** added missing deterministic venture sources.
+* **list:** fixed instance details not displayed properly.
+* **nodes:** fixed fishing spot db button opening spearfishing spot page instead.
 
 
 ### Features
 
-* **data:** update for cn patch-5.55.
-* **db:** added # of records for hookset and tug display in fish details.
-* **db:** added new misses toggle for bait datagrid in fishing spot pages.
-* **db:** new data report system to add missing sources by hand.
-* **retainers:** you can now track items sold on MB.`;
+* **retainers:** new button to open details in Universalis and better duplicate management.
+* new supporters: The Hoe Depot and Late Night Friendos.
+* **allagan-reports:** better review system for the checkers.
+* **db:** imported 500+ new allagan reports.
+* **db:** new data source: Mogstation, available in the allagan reports too.
+* **settings:** new button to reload you gubal auth token.`;

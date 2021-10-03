@@ -397,6 +397,8 @@
                               height="300px">{{'No_items_found' | translate}}</app-fullpage-message>
         <app-fullpage-message *ngIf="searchType === searchTypes.INSTANCE"
                               height="300px">{{'No_instances_found' | translate}}</app-fullpage-message>
+        <app-fullpage-message *ngIf="searchType === searchTypes.FISHING_SPOT"
+                              height="300px">{{'No_fishing_spot_found' | translate}}</app-fullpage-message>
         <app-fullpage-message *ngIf="searchType === searchTypes.QUEST"
                               height="300px">{{'No_quests_found' | translate}}</app-fullpage-message>
         <app-fullpage-message *ngIf="searchType === searchTypes.NPC"

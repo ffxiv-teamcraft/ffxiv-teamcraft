@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
+  <div [ngSwitch]="source">
+    <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
+    <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
+    <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+    <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon">
+    <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+    <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+    <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+    <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Loot" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+    <img *ngSwitchCase="AllaganReportSource.FISHING" alt="Fishing" class="img-icon round-icon" [src]="4 | nodeTypeIcon">
+    <img *ngSwitchCase="AllaganReportSource.SPEARFISHING" alt="Fishing" class="img-icon round-icon" [src]="5 | nodeTypeIcon">
+    <img *ngSwitchCase="AllaganReportSource.FATE" alt="FATE" class="img-icon round-icon" [src]="(397 | fate).icon | xivapiIcon">
+    <img *ngSwitchCase="AllaganReportSource.MOGSTATION" alt="MOGSTATION" class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
+  </div>
+  <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
+</div>

@@ -28,6 +28,7 @@ export class VenturesExtractor extends AbstractExtractor {
               }
             }
             retainerTasks.push({
+              id: task.ID,
               exp: task.Experience,
               reqGathering: task.RequiredGathering,
               reqIlvl: task.RequiredItemLevel,

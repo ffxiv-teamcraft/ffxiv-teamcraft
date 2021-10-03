@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { AllaganReport } from './model/allagan-report';
 import { GetItemAllaganReportsQuery, GetItemAllaganReportsQueueQuery } from './allagan-reports.gql';
 import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { map, mapTo, shareReplay, switchMap } from 'rxjs/operators';
+import { map, mapTo, shareReplay } from 'rxjs/operators';
 import { AllaganReportSource } from './model/allagan-report-source';
 import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
 
@@ -14,9 +14,6 @@ import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-d
   providedIn: 'root'
 })
 export class AllaganReportsService {
-  [x: string]: any;
-
-  public readonly reloader$: BehaviorSubject<void> = new BehaviorSubject(void 0);
 
   constructor(private getItemAllaganReportsQuery: GetItemAllaganReportsQuery,
               private getItemAllaganReportsQueueQuery: GetItemAllaganReportsQueueQuery,
@@ -24,11 +21,11 @@ export class AllaganReportsService {
   }
 
   public getItemReports = (itemId: number) => {
-    return this.getItemAllaganReportsQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
+    return this.getItemAllaganReportsQuery.subscribe({ itemId }, { fetchPolicy: 'network-only' });
   };
 
   public getItemReportsQueue = (itemId: number) => {
-    return this.getItemAllaganReportsQueueQuery.fetch({ itemId }, { fetchPolicy: 'network-only' });
+    return this.getItemAllaganReportsQueueQuery.subscribe({ itemId }, { fetchPolicy: 'network-only' });
   };
 
   importFromGT(queue: AllaganReport[]): Observable<void> {
@@ -50,7 +47,7 @@ export class AllaganReportsService {
   }
 
   getDashboardData(): Observable<AllaganMetricsDashboardData> {
-    const query = gql`query AllaganMetricsDashboardData {
+    const allReports = gql`subscription AllaganMetricsDashboardData {
         all_reports: allagan_reports_aggregate {
           nodes {
             itemId
@@ -59,50 +56,60 @@ export class AllaganReportsService {
             count
           }
         }
+      }`;
+
+    const appliedReports = gql`subscription AllaganMetricsDashboardData {
         applied_reports: allagan_reports_aggregate(where: {applied: {_eq: true}}) {
           aggregate {
             count
           }
         }
       }`;
-    return this.reloader$.pipe(
-      switchMap(() => {
-        return this.apollo.query<any>({
-          query,
-          fetchPolicy: 'network-only'
-        }).pipe(
-          map(res => {
-            return {
-              itemIds: res.data.all_reports.nodes.map(node => node.itemId),
-              reportsCount: res.data.all_reports.aggregate.count,
-              appliedReportsCount: res.data.applied_reports.aggregate.count
-            };
-          }),
-          shareReplay(1)
-        );
+    return combineLatest([
+      this.apollo.subscribe<any>({
+        query: allReports,
+        fetchPolicy: 'network-only'
+      }),
+      this.apollo.subscribe<any>({
+        query: appliedReports,
+        fetchPolicy: 'network-only'
       })
+    ]).pipe(
+      map(([resAll, resApplied]) => {
+        return {
+          itemIds: resAll.data.all_reports.nodes.map(node => node.itemId),
+          reportsCount: resAll.data.all_reports.aggregate.count,
+          appliedReportsCount: resApplied.data.applied_reports.aggregate.count
+        };
+      }),
+      shareReplay(1)
     );
   }
 
-  getQueueStatus(): Observable<{ itemId: number, count: number }[]> {
-    const query = gql`query AllaganReportsQueueStatus {
-        allagan_reports_queue_per_item {
-          itemId
-          count
-        }
-      }`;
-    return this.reloader$.pipe(
-      switchMap(() => {
-        return this.apollo.query<any>({
-          query,
-          fetchPolicy: 'network-only'
-        }).pipe(
-          map(res => {
-            return res.data.allagan_reports_queue_per_item;
-          }),
-          shareReplay(1)
-        );
-      })
+  getQueueStatus(): Observable<Partial<AllaganReportQueueEntry>[]> {
+    const query = gql`subscription AllaganReportsQueueStatus {
+      allagan_reports_queue {
+        itemId
+        author
+        uid
+        source
+        data
+        type
+      }
+    }`;
+    return this.apollo.subscribe<any>({
+      query,
+      fetchPolicy: 'network-only'
+    }).pipe(
+      map(res => {
+        return res.data.allagan_reports_queue.map(row => {
+          if (typeof row.data === 'string') {
+            row.data = JSON.parse(row.data);
+          }
+          return row;
+        });
+      }),
+      shareReplay(1)
     );
   }
 
@@ -188,6 +195,32 @@ export class AllaganReportsService {
     });
   }
 
+  acceptManyProposal(proposals: AllaganReportQueueEntry[]): Observable<any> {
+    const query = gql`mutation acceptManyAllaganReportProposal($reports: [allagan_reports_insert_input!]!, $queueEntryIds: [uuid!]!) {
+          delete_allagan_reports_queue(where: {uid: {_in: $queueEntryIds}}) {
+            affected_rows
+          }
+          insert_allagan_reports(objects: $reports) {
+            affected_rows
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryIds: proposals.map(p => p.uid),
+        reports: proposals.map(proposal => {
+          return {
+            itemId: proposal.itemId,
+            source: proposal.source,
+            data: JSON.stringify(proposal.data),
+            reporter: proposal.author
+          };
+        })
+      }
+    });
+  }
+
   acceptDeletion(proposal: AllaganReportQueueEntry): Observable<any> {
     const query = gql`mutation acceptAllaganReportProposal($reportId: uuid!, $queueEntryId: uuid!) {
           delete_allagan_reports_queue_by_pk(uid: $queueEntryId) {
@@ -239,6 +272,21 @@ export class AllaganReportsService {
       mutation: query,
       variables: {
         queueEntryId: proposal.uid
+      }
+    });
+  }
+
+  rejectMany(proposals: AllaganReportQueueEntry[]): Observable<any> {
+    const query = gql`mutation rejectAllaganReportProposal($queueEntryIds: [uuid!]!) {
+          delete_allagan_reports_queue(where: {uid: {_in: $queueEntryIds}}) {
+            affected_rows
+          }
+        }
+    `;
+    return this.apollo.mutate({
+      mutation: query,
+      variables: {
+        queueEntryIds: proposals.map(p => p.uid)
       }
     });
   }

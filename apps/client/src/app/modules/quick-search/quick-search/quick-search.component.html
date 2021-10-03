@@ -75,7 +75,9 @@
       </nz-option>
     </nz-select>
     <ng-template #searchType>
+      <span *ngIf="reportsMode">{{'ALLAGAN_REPORTS.Jump_to_item' | translate}}</span>
       <nz-select (ngModelChange)="searchType$.next($event);" [ngModel]="searchType$ | async"
+                 *ngIf="!reportsMode"
                  class="search-type"
                  nzShowSearch>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"

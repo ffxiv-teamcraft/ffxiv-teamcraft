@@ -2,20 +2,7 @@
   <div nz-col nzMd="4" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="space-between flex-start">
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
-        <div [ngSwitch]="source">
-          <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
-          <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
-          <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
-          <img *ngSwitchCase="AllaganReportSource.INSTANCE" src="./assets/icons/instance.png" class="img-icon">
-          <img *ngSwitchCase="AllaganReportSource.REDUCTION" class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
-          <img *ngSwitchCase="AllaganReportSource.VOYAGE" alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
-          <img *ngSwitchCase="AllaganReportSource.VENTURE" [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
-          <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Loot" class="img-icon round-icon" src="./assets/icons/chest_open.png">
-          <img *ngSwitchCase="AllaganReportSource.FISHING" alt="Fishing" class="img-icon round-icon" [src]="4 | nodeTypeIcon">
-          <img *ngSwitchCase="AllaganReportSource.SPEARFISHING" alt="Fishing" class="img-icon round-icon" [src]="5 | nodeTypeIcon">
-          <img *ngSwitchCase="AllaganReportSource.FATE" alt="Fishing" class="img-icon round-icon" [src]="(data.fateId | fate).icon | xivapiIcon">
-        </div>
-        <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
+        <app-report-source-display [source]="source"></app-report-source-display>
         <nz-tag *ngIf="report && !report.applied" class="custom-tag" [style.border-color]="'#f2b10e'" nz-tooltip
                 [nzTooltipTitle]="'ALLAGAN_REPORTS.Not_applied_yet_explain' | translate">{{'ALLAGAN_REPORTS.Not_applied_yet' | translate}}</nz-tag>
       </div>
@@ -45,26 +32,7 @@
   </div>
   <div nz-col nzMd="8" class="details" fxLayout="column" fxLayoutAlign="space-between flex-start">
     <div [ngSwitch]="source">
-      <ng-container *ngSwitchCase="AllaganReportSource.GARDENING">
-        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.DESYNTH">
-        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.LOOT">
-        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.REDUCTION">
-        <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.FATE">
-        <div fxLayout="column" fxLayoutGap="10px">
-          <div>
-            {{(data.fateId | fate)?.name | i18n}}
-            <app-db-button type="fate" [id]="data.fateId"></app-db-button>
-          </div>
-        </div>
-      </ng-container>
+      <app-report-source-compact-details [source]="source" [data]="data" [fullDisplayMode]="true"></app-report-source-compact-details>
       <ng-container *ngSwitchCase="AllaganReportSource.FISHING">
         <div fxLayout="column" fxLayoutGap="10px">
           <div>
@@ -85,37 +53,16 @@
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
-            <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
-              <div>{{predator.id | itemName | i18n}}</div>
-              <div>x {{predator.amount}}</div>
-              <app-db-button [id]="predator.id" type="item"></app-db-button>
+            <div fxLayout="column">
+              <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
+                <div>{{predator.id | itemName | i18n}}</div>
+                <div>x {{predator.amount}}</div>
+                <app-db-button [id]="predator.id" type="item"></app-db-button>
+              </div>
             </div>
           </div>
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.DROP">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{data.monsterId | mobName | i18n}}</div>
-          <app-db-button [id]="data.monsterId" type="mob"></app-db-button>
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.INSTANCE">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img src="{{data.instanceId | instanceIcon}}" alt="" class="round-icon">
-          <div>{{data.instanceId | instanceName | i18n}}</div>
-          <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.VOYAGE">
-        <div>
-          {{data.voyageId | voyageName: data.voyageType | i18n}}
-        </div>
-      </ng-container>
-      <ng-container *ngSwitchCase="AllaganReportSource.VENTURE">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{data.ventureId | ventureName | i18n}}</div>
         </div>
       </ng-container>
     </div>
@@ -124,21 +71,25 @@
         <div><img src="https://garlandtools.org/db/images/Garland.png" class="garland-avatar" alt="">{{'ALLAGAN_REPORTS.Imported_from_GT_data' | translate }}
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report && !report.gt">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="queueEntry || (report && !report.gt)">
         <div>{{'ALLAGAN_REPORTS.Reported_by' | translate }}:</div>
         <ng-container *ngTemplateOutlet="userDisplay; context:{$implicit: author}"></ng-container>
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="userIsChecker && status !== AllaganReportStatus.ACCEPTED">
-        <button nz-button nzSize="small" nzType="primary" [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
-                [nzPopconfirmTitle]="'Confirmation' | translate"
-                (nzOnConfirm)="applyingChange = true;accept.emit()">
-          {{'ALLAGAN_REPORTS.Accept' | translate}}
-        </button>
-        <button nz-button nzSize="small" nzDanger [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
-                [nzPopconfirmTitle]="'Confirmation' | translate"
-                (nzOnConfirm)="applyingChange = true;reject.emit()">
-          {{'ALLAGAN_REPORTS.Reject' | translate}}
-        </button>
+        <div>
+          <button nz-button nzSize="small" nzType="primary" [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
+                  [nzPopconfirmTitle]="'Confirmation' | translate"
+                  (nzOnConfirm)="applyingChange = true;accept.emit()">
+            {{'ALLAGAN_REPORTS.Accept' | translate}}
+          </button>
+        </div>
+        <div>
+          <button nz-button nzSize="small" nzDanger [disabled]="applyingChange" [nzLoading]="applyingChange" nz-popconfirm
+                  [nzPopconfirmTitle]="'Confirmation' | translate"
+                  (nzOnConfirm)="applyingChange = true;reject.emit()">
+            {{'ALLAGAN_REPORTS.Reject' | translate}}
+          </button>
+        </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="report?.reviewer && !report.gt">
         <div>{{'ALLAGAN_REPORTS.Approved_by' | translate }}:</div>
@@ -182,11 +133,13 @@
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
-            <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
-              <div>{{predator.id | itemName | i18n}}</div>
-              <div>x {{predator.amount}}</div>
-              <app-db-button [id]="predator.id" type="item"></app-db-button>
+            <div fxLayout="column">
+              <div *ngFor="let predator of data.predators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon width="24" [itemId]="predator.id"></app-item-icon>
+                <div>{{predator.id | itemName | i18n}}</div>
+                <div>x {{predator.amount}}</div>
+                <app-db-button [id]="predator.id" type="item"></app-db-button>
+              </div>
             </div>
           </div>
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>

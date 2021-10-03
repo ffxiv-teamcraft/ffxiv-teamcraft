@@ -369,6 +369,9 @@
       <button (nzOnConfirm)="resetPassword()" [nzPopconfirmTitle]="'SETTINGS.Reset_password_warning' | translate" nz-button nz-popconfirm>
         {{'SETTINGS.Reset_password' | translate}}
       </button>
+      <button (click)="reloadGubalToken()" nz-button>
+        {{'SETTINGS.Reload_auth_token' | translate}}
+      </button>
       <button (click)="updateEmail()" nz-button nz-popconfirm>
         {{'SETTINGS.Change_email' | translate}}
       </button>

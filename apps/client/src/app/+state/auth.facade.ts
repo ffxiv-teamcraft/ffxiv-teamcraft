@@ -357,4 +357,12 @@ export class AuthFacade {
   private oauthPopup(provider: any): Observable<UserCredential> {
     return this.oauthService.login(provider);
   }
+
+  reloadGubalToken(): void {
+    this.af.user.pipe(
+      first()
+    ).subscribe(user => {
+      user.getIdTokenResult(true);
+    });
+  }
 }

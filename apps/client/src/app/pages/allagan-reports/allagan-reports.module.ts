@@ -37,6 +37,10 @@ import { ReportsManagementComponent } from './reports-management.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { ReportSourceDisplayComponent } from './report-source-display/report-source-display.component';
+import { ReportSourceCompactDetailsComponent } from './report-source-compact-details/report-source-compact-details.component';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 
 
 const routes: Routes = [
@@ -53,8 +57,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AllaganReportsComponent, AllaganReportDetailsComponent, AllaganReportRowComponent, PredatorsInputComponent, SheetImportPopupComponent,
-    ReportsManagementComponent],
+  declarations: [AllaganReportsComponent,
+    AllaganReportDetailsComponent,
+    AllaganReportRowComponent,
+    PredatorsInputComponent,
+    SheetImportPopupComponent,
+    ReportsManagementComponent,
+    ReportSourceDisplayComponent,
+    ReportSourceCompactDetailsComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -81,7 +92,9 @@ const routes: Routes = [
     NzUploadModule,
     NzProgressModule,
     NzCardModule,
-    NzStatisticModule
+    NzStatisticModule,
+    NzCheckboxModule,
+    QuickSearchModule
   ],
   providers: [
     ...Object.values(AllaganReportsGQLProviders),

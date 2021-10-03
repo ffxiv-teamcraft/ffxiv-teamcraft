@@ -1,12 +1,17 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { environment } from '../../../../environments/environment';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SheetImportPopupComponent } from '../sheet-import-popup/sheet-import-popup.component';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest } from 'rxjs';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { AllaganReportStatus } from '../model/allagan-report-status';
+import { AllaganReportSource } from '../model/allagan-report-source';
 
 @Component({
   selector: 'app-allagan-reports',
@@ -16,9 +21,27 @@ import { combineLatest } from 'rxjs';
 })
 export class AllaganReportsComponent {
 
+  AllaganReportStatus = AllaganReportStatus;
+  AllaganReportSource = AllaganReportSource;
+
+  public applyingChange = false;
+
+  public dirty = false;
+  public selectCount = 0;
+
   public devEnv = !environment.production;
 
-  public queueStatus$ = this.allaganReportsService.getQueueStatus();
+  public queueStatus$ = this.allaganReportsService.getQueueStatus().pipe(
+    filter(() => !this.dirty),
+    map(rows => {
+      return rows.map(row => {
+        return {
+          ...row,
+          selected: false
+        };
+      });
+    })
+  );
 
   public status$ = combineLatest([this.lazyData.extracts$, this.allaganReportsService.getDashboardData()]).pipe(
     map(([extracts, dashboardData]) => {
@@ -41,9 +64,50 @@ export class AllaganReportsComponent {
     })
   );
 
+  isDataChecker$ = this.authFacade.user$.pipe(map(user => user.admin || user.moderator || user.allaganChecker));
+
   constructor(public allaganReportsService: AllaganReportsService,
               private dialog: NzModalService, public translate: TranslateService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private authFacade: AuthFacade,
+              private message: NzMessageService, private cd: ChangeDetectorRef) {
+  }
+
+  public onRowChecked($event: boolean): void {
+    this.dirty = true;
+    if ($event) {
+      this.selectCount++;
+    } else {
+      this.selectCount--;
+    }
+  }
+
+  public handleCheckboxClick($event: MouseEvent, rows: AllaganReportQueueEntry[], index: number): void {
+    if ($event.shiftKey) {
+      const slice = rows.slice(0, index).reverse();
+      for (const row of slice) {
+        if (row.selected) {
+          break;
+        }
+        if (row.type === AllaganReportStatus.PROPOSAL && row.source !== AllaganReportSource.FISHING && row.source !== AllaganReportSource.SPEARFISHING) {
+          row.selected = true;
+          this.selectCount++;
+        }
+      }
+      this.cd.detectChanges();
+    }
+  }
+
+  getColor(status: AllaganReportStatus): string {
+    switch (status) {
+      case AllaganReportStatus.ACCEPTED:
+        return 'darkgreen';
+      case AllaganReportStatus.DELETION:
+        return '#f50';
+      case AllaganReportStatus.MODIFICATION:
+        return '#f2b10e';
+      case AllaganReportStatus.PROPOSAL:
+        return '#108ee9';
+    }
   }
 
   importSheet(): void {
@@ -52,6 +116,50 @@ export class AllaganReportsComponent {
       nzComponentParams: {},
       nzFooter: null,
       nzTitle: this.translate.instant('CUSTOM_ITEMS.Import_items')
+    });
+  }
+
+  acceptProposal(entry: AllaganReportQueueEntry): void {
+    this.dirty = false;
+    this.allaganReportsService.acceptProposal(entry).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
+      this.applyingChange = false;
+      this.cd.detectChanges();
+    });
+  }
+
+  rejectProposal(entry: AllaganReportQueueEntry): void {
+    this.dirty = false;
+    this.allaganReportsService.reject(entry).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
+      this.applyingChange = false;
+      this.cd.detectChanges();
+    });
+  }
+
+  acceptMany(entries: AllaganReportQueueEntry[]): void {
+    this.dirty = false;
+    this.allaganReportsService.acceptManyProposal(entries.filter(e => e.selected).map(e => {
+      delete e.selected;
+      return e;
+    })).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
+      this.applyingChange = false;
+      this.selectCount = 0;
+      this.cd.detectChanges();
+    });
+  }
+
+  rejectMany(entries: AllaganReportQueueEntry[]): void {
+    this.dirty = false;
+    this.allaganReportsService.rejectMany(entries.filter(e => e.selected).map(e => {
+      delete e.selected;
+      return e;
+    })).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
+      this.applyingChange = false;
+      this.selectCount = 0;
+      this.cd.detectChanges();
     });
   }
 }

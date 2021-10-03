@@ -60,7 +60,7 @@ export class GatheringNodesService {
             id: spot.id,
             items: spot.fishes,
             level: spot.level,
-            type: 4,
+            type: -5,
             legendary: false,
             ephemeral: false,
             zoneId: spot.zoneId,

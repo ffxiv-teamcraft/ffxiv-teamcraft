@@ -60,6 +60,9 @@ import { Language } from './core/data/language';
 import { InventoryService } from './modules/inventory/inventory.service';
 import { DataService } from './core/api/data.service';
 import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
+import { WebSocketLink } from 'apollo-link-ws';
+import { split } from 'apollo-link';
+import { getMainDefinition } from 'apollo-utilities';
 
 @Component({
   selector: 'app-root',
@@ -70,7 +73,7 @@ export class AppComponent implements OnInit {
 
   public newFeatureName = 'allagan-reports';
 
-  public showNewFeatureBanner = localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true';
+  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true';
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -191,19 +194,43 @@ export class AppComponent implements OnInit {
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
               private data: DataService, private allaganReportsService: AllaganReportsService) {
 
-    const link = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
+    this.authFacade.idToken$.pipe(
+      filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),
+      first()
+    ).subscribe(token => {
+      const ws = new WebSocketLink({
+        uri: `ws://gubal.hasura.app/v1/graphql`,
+        options: {
+          reconnect: true,
+          connectionParams: () => {
+            return { headers: { Authorization: `Bearer ${token.token}` } };
+          }
+        }
+      });
 
-    apollo.create({
-      link: link,
-      cache: new InMemoryCache({
-        addTypename: false
-      })
+      const httpL = httpLink.create({ uri: 'https://gubal.hasura.app/v1/graphql' });
+
+      const link = split(
+        // split based on operation type
+        ({ query }) => {
+          const { kind, operation } = getMainDefinition(query) as any;
+          return kind === 'OperationDefinition' && operation === 'subscription';
+        },
+        ws,
+        httpL
+      );
+
+      apollo.create({
+        link: link,
+        cache: new InMemoryCache({
+          addTypename: false
+        })
+      });
+
+      this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
+        map(status => status.length)
+      );
     });
-
-    this.allaganReportsQueueCount$ = timer(0, 300000).pipe(
-      switchMap(() => this.allaganReportsService.getQueueStatus()),
-      map(status => status.reduce((acc, row) => acc + row.count, 0))
-    );
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);

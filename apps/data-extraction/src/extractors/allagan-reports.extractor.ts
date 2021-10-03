@@ -15,6 +15,7 @@ enum AllaganReportSource {
   DROP = 'DROP', // Drop from monsters kill
   INSTANCE = 'INSTANCE', // Obtained inside an instance
   FATE = 'FATE', // Obtained as fate reward
+  MOGSTATION = 'MOGSTATION'
 }
 
 export class AllaganReportsExtractor extends AbstractExtractor {
@@ -43,11 +44,18 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const drops = {};
         const instanceDrops = {};
         const fateSources = {};
+        const mogstation = {};
 
         res.data.allagan_reports.forEach(report => {
+          if (typeof report.data === 'string') {
+            report.data = JSON.parse(report.data);
+          }
           switch (report.source) {
             case AllaganReportSource.DESYNTH:
               this.addItemAsSource(desynth, report.itemId, report.data.itemId);
+              break;
+            case AllaganReportSource.MOGSTATION:
+              this.addItemAsSource(mogstation, report.itemId, { price: report.data.price, id: report.data.productId }, true);
               break;
             case AllaganReportSource.REDUCTION:
               this.addItemAsSource(reduction, report.itemId, report.data.itemId);
@@ -108,6 +116,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('drop-sources', drops);
         this.persistToJsonAsset('instance-sources', instanceDrops);
         this.persistToJsonAsset('fate-sources', fateSources);
+        this.persistToJsonAsset('mogstation-sources', mogstation);
       }),
       switchMap(() => {
         return this.gubalRequest(`
@@ -122,8 +131,15 @@ export class AllaganReportsExtractor extends AbstractExtractor {
     });
   }
 
-  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any): void {
-    targetObject[targetItem] = [...(targetObject[targetItem] || []), sourceDetails];
+  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject = false): void {
+    if (isObject) {
+      if (targetObject[targetItem] !== undefined) {
+        console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
+      }
+      targetObject[targetItem] = sourceDetails;
+    } else {
+      targetObject[targetItem] = [...(targetObject[targetItem] || []), sourceDetails];
+    }
   }
 
   getName(): string {

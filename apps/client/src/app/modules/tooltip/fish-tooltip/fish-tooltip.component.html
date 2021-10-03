@@ -12,7 +12,7 @@
     <span [innerHtml]="fish | xivapiI18n: 'Description' | xivUIText"></span>
   </div>
   <div *ngIf="getFshData(fish) as nodes" class="details">
-    <div *ngFor="let node of nodes; let last = last">
+    <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
       <app-node-details [node]="node" [showAlarmsIntegration]="false"></app-node-details>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -21,7 +21,7 @@
                src="./assets/icons/status/snagging.png">
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start">
-          <div *ngFor="let bait of node.baits; let index = index; let last = last" fxLayout="row" fxLayoutAlign="center center"
+          <div *ngFor="let bait of node.baits; let index = index; let last = last; trackBy: trackByBait" fxLayout="row" fxLayoutAlign="center center"
                fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="icon-container">

@@ -527,6 +527,20 @@
                   </ng-template>
                   <app-fates [item]="data" [details]="source.data"></app-fates>
                 </nz-card>
+                <nz-card *ngSwitchCase="dataTypes.MOGSTATION" [nzTitle]="title"
+                         class="details-card" fxFlex="1 1 60%"
+                         nzBordered="false">
+                  <ng-template #title>
+                    <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico"
+                           class="img-icon round-icon">
+                      <div>
+                        {{'Mogstation' | translate}}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-mogstation [item]="data" [details]="source.data"></app-mogstation>
+                </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.CRAFTED_BY" [nzTitle]="title"
                          class="details-card" fxFlex="1 1 30%"
                          nzBordered="false">

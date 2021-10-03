@@ -24,7 +24,9 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): FateData[] {
-    return this.lazyData.data.fateSources[item.id].map(fateId => {
+    return this.lazyData.data.fateSources[item.id]
+      .filter(fate => !!fate)
+      .map(fateId => {
       const fateData = this.lazyData.data.fates[fateId.toString()];
       const fate: FateData = {
         id: fateId,

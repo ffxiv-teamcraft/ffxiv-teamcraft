@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
@@ -25,6 +25,7 @@ import { FishContextService } from '../../db/service/fish-context.service';
 import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
+import { SearchType } from '../../search/search-type';
 
 
 function durationRequired(control: AbstractControl) {
@@ -49,8 +50,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   source: AllaganReportSource;
   voyageType: number;
   AllaganReportSource = AllaganReportSource;
-
-  reloader$ = new BehaviorSubject<void>(void 0);
+  SearchType = SearchType;
 
   itemId$ = this.route.paramMap.pipe(
     map(params => +params.get('itemId'))
@@ -67,7 +67,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   itemDetails$ = this.itemId$.pipe(
     tap(() => this.loadingReports = true),
     switchMap(itemId => {
-      return this.reloader$.pipe(switchMapTo(this.allaganReportsService.getItemReports(itemId).pipe(
+      return this.allaganReportsService.getItemReports(itemId).pipe(
         map(reports => {
           return {
             itemId,
@@ -89,7 +89,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           }
           return data;
         })
-      )));
+      );
     }),
     tap(() => this.loadingReports = false)
   );
@@ -99,7 +99,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     switchMap(itemId => {
       return combineLatest([
         this.itemDetails$,
-        this.reloader$.pipe(switchMapTo(this.allaganReportsService.getItemReportsQueue(itemId).pipe(
+        this.allaganReportsService.getItemReportsQueue(itemId).pipe(
           map(reports => {
             return reports.data.allagan_reports_queue.map(report => {
               return {
@@ -108,7 +108,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               };
             });
           })
-        )))
+        )
       ]);
     }),
     map(([details, queue]) => {
@@ -171,7 +171,9 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     snagging: [false],
     gig: [null, this.requiredIfSource(AllaganReportSource.SPEARFISHING)],
     oceanFishingTime: [0],
-    minGathering: [0]
+    minGathering: [0],
+    price: [0, this.requiredIfSource(AllaganReportSource.MOGSTATION)],
+    productId: [null, this.requiredIfSource(AllaganReportSource.MOGSTATION)]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -311,11 +313,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
-  reload(): void {
-    this.allaganReportsService.reloader$.next();
-    this.reloader$.next();
-  }
-
   requiredIfSource(...sources: AllaganReportSource[]) {
     return (control: AbstractControl) => {
       if (sources.includes(control.parent?.get('source').value)) {
@@ -340,7 +337,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     };
     this.allaganReportsService.addReportToQueue(report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
-      this.reload();
       this.form.reset();
     });
   }
@@ -348,7 +344,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   cancel(): void {
     this.form.reset();
     this.modificationId$.next(null);
-    this.reload();
   }
 
   submitModification(itemId: number, reportId: string): void {
@@ -361,7 +356,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     };
     this.allaganReportsService.suggestModification(reportId, report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_suggestion_submitted'));
-      this.reload();
       this.form.reset();
     });
   }
@@ -375,19 +369,16 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportStatus.PROPOSAL:
         this.allaganReportsService.acceptProposal(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_accepted'));
-          this.reload();
         });
         break;
       case AllaganReportStatus.DELETION:
         this.allaganReportsService.acceptDeletion(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_deleted'));
-          this.reload();
         });
         break;
       case AllaganReportStatus.MODIFICATION:
         this.allaganReportsService.acceptModification(entry).subscribe(() => {
           this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_applied'));
-          this.reload();
         });
         break;
     }
@@ -396,14 +387,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   reject(entry: AllaganReportQueueEntry): void {
     this.allaganReportsService.reject(entry).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
-      this.reload();
     });
   }
 
   suggestDeletion(report: AllaganReport): void {
     this.allaganReportsService.suggestDeletion(report).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Deletion_suggestion_submitted'));
-      this.reload();
     });
   }
 
@@ -427,6 +416,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
         return { item: this.getEntryName(this.items, report.data.itemId) };
+      case AllaganReportSource.MOGSTATION:
+        return { price: report.data.price, productId: report.data.productId };
       case AllaganReportSource.INSTANCE:
         return { instance: this.getEntryName(this.instances, report.data.instanceId) };
       case AllaganReportSource.FATE:
@@ -485,6 +476,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
         return { itemId: this.getEntryId(this.items, formState.item) };
+      case AllaganReportSource.MOGSTATION:
+        return { price: formState.price, productId: formState.productId };
       case AllaganReportSource.INSTANCE:
         return { instanceId: this.getEntryId(this.instances, formState.instance) };
       case AllaganReportSource.FATE:

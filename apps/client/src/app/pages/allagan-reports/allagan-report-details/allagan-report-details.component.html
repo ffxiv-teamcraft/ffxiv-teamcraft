@@ -1,12 +1,12 @@
+<div class="quick-search">
+  <app-quick-search [reportsMode]="true" [searchType]="SearchType.ITEM"></app-quick-search>
+</div>
 <ng-container *ngIf="itemId$ | async as itemId">
   <ng-container *ngIf="itemDetails$ | async as details">
     <div class="top-bar">
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="itemId"></app-item-icon>
         <div class="item-name-title">{{itemId | itemName | i18n}}</div>
-        <div>
-          <button nz-button nzShape="circle" (click)="reload()"><i nz-icon nzType="reload" nzTheme="outline"></i></button>
-        </div>
       </div>
     </div>
     <nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>
@@ -143,6 +143,24 @@
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
+        <ng-container *ngIf="source === AllaganReportSource.MOGSTATION">
+          <nz-form-item >
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Price' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-input-group class="spawn-input" nzAddOnBefore="$">
+                <nz-input-number class="input-number-with-addon" formControlName="price"></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item >
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Product_id' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Product_id_explain' | translate">
+              <nz-input-group class="spawn-input" nzAddOnBefore="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/">
+                <nz-input-number class="input-number-with-addon" formControlName="productId"></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </ng-container>
         <ng-container *ngIf="source === AllaganReportSource.VOYAGE">
           <nz-form-item>
             <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Voyage_type' | translate}}</nz-form-label>
@@ -289,19 +307,20 @@
                         </ng-container>
                       </ng-template>
                     </nz-form-control>
-                  </nz-form-item> <nz-form-item>
-                  <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
-                  <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
-                    <nz-input-number formControlName="minGathering">
-                    </nz-input-number>
-                    <ng-template #gubalAnalysisMinGathering>
-                      <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
-                        {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
-                        <b>{{suggestions.minGathering}}</b>
-                      </ng-container>
-                    </ng-template>
-                  </nz-form-control>
-                </nz-form-item>
+                  </nz-form-item>
+                  <nz-form-item>
+                    <nz-form-label [nzSpan]="3">{{'DB.FISH.Min_gathering' | translate}}</nz-form-label>
+                    <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisMinGathering">
+                      <nz-input-number formControlName="minGathering">
+                      </nz-input-number>
+                      <ng-template #gubalAnalysisMinGathering>
+                        <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
+                          {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
+                          <b>{{suggestions.minGathering}}</b>
+                        </ng-container>
+                      </ng-template>
+                    </nz-form-control>
+                  </nz-form-item>
                 </ng-template>
                 <ng-container *ngIf="mapWeathers$ | async as mapWeathers">
                   <nz-form-item>

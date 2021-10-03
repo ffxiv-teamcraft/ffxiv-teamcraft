@@ -2,7 +2,7 @@
   <ng-template #huntTemplate let-drop>
     <nz-list-item [nzContent]="drop?.position !== undefined?position:null">
       <nz-list-item-meta [nzTitle]="dropTitle"
-                         nzDescription="lvl{{drop.lvl}} - {{drop.zoneid | placeName | i18n}}">
+                         nzDescription="lvl{{drop.lvl || '??'}} - {{drop.zoneid | placeName | i18n}}">
       </nz-list-item-meta>
       <ng-template #dropTitle>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

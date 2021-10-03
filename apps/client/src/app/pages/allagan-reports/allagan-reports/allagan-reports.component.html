@@ -1,10 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
   <h1>{{'ALLAGAN_REPORTS.Title' | translate}}</h1>
   <div fxLayout="row" fxLayoutGap="10px">
-    <div>
-      <button nz-button nzShape="circle" nzType="primary" (click)="allaganReportsService.reloader$.next()"><i nz-icon nzType="reload" nzTheme="outline"></i>
-      </button>
-    </div>
     <div *ngIf="devEnv">
       <button nz-button nzShape="circle" nzType="primary" (click)="importSheet()"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
     </div>
@@ -75,28 +71,70 @@
     </nz-card>
   </div>
 </ng-container>
-<nz-divider [nzText]="'ALLAGAN_REPORTS.Pending_changes' | translate" nzOrientation="left"></nz-divider>
-<div fxLayout="column" *ngIf="queueStatus$ | async as queueStatus; else loading">
-  <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="queueStatus" [rowTemplate]="reportTpl">
-    <ng-template #reportTpl let-row let-odd="odd">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">
-        <app-item-icon [width]="32" [itemId]="row.itemId"></app-item-icon>
-        <div>{{row.itemId | itemName | i18n}}</div>
-        <div>
-          <nz-tag>{{'ALLAGAN_REPORTS.Pending_changes_count' | translate:{ amount: row.count } }}</nz-tag>
-        </div>
-        <div>
-          <a routerLink="/allagan-reports/{{row.itemId}}" nz-button nzShape="circle" nzType="primary" nz-tooltip
-             [nzTooltipTitle]="'ALLAGAN_REPORTS.Review_changes' | translate">
-            <i nz-icon nzType="security-scan" nzTheme="outline"></i>
-          </a>
-        </div>
+<ng-container *ngIf="isDataChecker$ | async">
+  <div fxLayout="column" *ngIf="queueStatus$ | async as queueStatus; else loading" fxLayoutGap="10px">
+    <nz-divider nzText="{{'ALLAGAN_REPORTS.Pending_changes' | translate}} ({{queueStatus.length}})" nzOrientation="left"></nz-divider>
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+      <div>
+        <button nz-button [disabled]="selectCount < 1" nzType="primary" [nzLoading]="applyingChange"
+                nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="applyingChange = true;acceptMany(queueStatus)">
+          {{'ALLAGAN_REPORTS.Accept_many' | translate:{ amount: selectCount } }}
+        </button>
       </div>
-    </ng-template>
-  </app-lazy-scroll>
+      <div>
+        <button nz-button [disabled]="selectCount < 1" nzDanger [nzLoading]="applyingChange"
+                nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+                (nzOnConfirm)="applyingChange = true;rejectMany(queueStatus)">
+          {{'ALLAGAN_REPORTS.Reject_many' | translate:{ amount: selectCount } }}
+        </button>
+      </div>
+    </div>
+    <app-lazy-scroll [displayedRows]="16" rowSize="42" [data]="queueStatus" [rowTemplate]="reportTpl">
+      <ng-template #reportTpl let-row let-odd="odd" let-index="index">
+        <div nz-row [class.odd]="odd" class="pending-change">
+          <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
+            <input type="checkbox" (click)="handleCheckboxClick($event, queueStatus, index)" [(ngModel)]="row.selected" (ngModelChange)="onRowChecked($event)"
+                   *ngIf="row.type === AllaganReportStatus.PROPOSAL && row.source !== AllaganReportSource.FISHING && row.source !== AllaganReportSource.SPEARFISHING">
+          </div>
+          <div nz-col nzMd="8" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <app-item-icon [width]="32" [itemId]="row.itemId"></app-item-icon>
+            <div>{{row.itemId | itemName | i18n}}</div>
+            <div>
+              <nz-tag class="custom-tag"
+                      [style.border-color]="getColor(row.type)">{{('ALLAGAN_REPORTS.STATUS.' + row.type) | translate}}</nz-tag>
+            </div>
+            <div>
+              <a routerLink="/allagan-reports/{{row.itemId}}" nz-button nzShape="circle" nzType="primary" nzSize="small" nz-tooltip
+                 [nzTooltipTitle]="'ALLAGAN_REPORTS.Review_changes' | translate">
+                <i nz-icon nzType="security-scan" nzTheme="outline"></i>
+              </a>
+            </div>
+          </div>
+          <app-report-source-display nz-col nzMd="3" [source]="row.source"></app-report-source-display>
 
-  <nz-empty *ngIf="queueStatus.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
-</div>
+          <app-report-source-compact-details nz-col nzMd="8" [source]="row.source" [data]="row.data"></app-report-source-compact-details>
+
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
+               *ngIf="row.type === AllaganReportStatus.PROPOSAL && row.source !== AllaganReportSource.FISHING && row.source !== AllaganReportSource.SPEARFISHING">
+            <div>
+              <button nz-button nzSize="small" nzType="primary" [nzLoading]="applyingChange" (click)="applyingChange = true;acceptProposal(row)">
+                {{'ALLAGAN_REPORTS.Accept' | translate}}
+              </button>
+            </div>
+            <div>
+              <button nz-button nzSize="small" nzDanger [nzLoading]="applyingChange" (click)="applyingChange = true;rejectProposal(row)">
+                {{'ALLAGAN_REPORTS.Reject' | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </app-lazy-scroll>
+
+    <nz-empty *ngIf="queueStatus.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
+  </div>
+</ng-container>
 
 <ng-template #loading>
   <app-page-loader></app-page-loader>
