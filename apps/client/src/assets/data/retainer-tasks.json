@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -25,6 +26,7 @@
     "category": 34
   },
   {
+    "id": 2,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -50,6 +52,7 @@
     "category": 34
   },
   {
+    "id": 3,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -75,6 +78,7 @@
     "category": 34
   },
   {
+    "id": 4,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -100,6 +104,7 @@
     "category": 34
   },
   {
+    "id": 5,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -125,6 +130,7 @@
     "category": 34
   },
   {
+    "id": 6,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -150,6 +156,7 @@
     "category": 34
   },
   {
+    "id": 7,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -175,6 +182,7 @@
     "category": 34
   },
   {
+    "id": 8,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -200,6 +208,7 @@
     "category": 34
   },
   {
+    "id": 9,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -225,6 +234,7 @@
     "category": 34
   },
   {
+    "id": 10,
     "exp": 15600,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -250,6 +260,7 @@
     "category": 34
   },
   {
+    "id": 11,
     "exp": 15600,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -275,6 +286,7 @@
     "category": 34
   },
   {
+    "id": 12,
     "exp": 15600,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -300,6 +312,7 @@
     "category": 34
   },
   {
+    "id": 13,
     "exp": 15600,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -325,6 +338,7 @@
     "category": 34
   },
   {
+    "id": 14,
     "exp": 15600,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -350,6 +364,7 @@
     "category": 34
   },
   {
+    "id": 15,
     "exp": 23700,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -375,6 +390,7 @@
     "category": 34
   },
   {
+    "id": 16,
     "exp": 23700,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -400,6 +416,7 @@
     "category": 34
   },
   {
+    "id": 17,
     "exp": 23700,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -425,6 +442,7 @@
     "category": 34
   },
   {
+    "id": 18,
     "exp": 30500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -450,6 +468,7 @@
     "category": 34
   },
   {
+    "id": 19,
     "exp": 30500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -475,6 +494,7 @@
     "category": 34
   },
   {
+    "id": 20,
     "exp": 30500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -500,6 +520,7 @@
     "category": 34
   },
   {
+    "id": 21,
     "exp": 30500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -525,6 +546,7 @@
     "category": 34
   },
   {
+    "id": 22,
     "exp": 30500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -550,6 +572,7 @@
     "category": 34
   },
   {
+    "id": 23,
     "exp": 40500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -575,6 +598,7 @@
     "category": 34
   },
   {
+    "id": 24,
     "exp": 40500,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -600,6 +624,7 @@
     "category": 34
   },
   {
+    "id": 25,
     "exp": 51000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -625,6 +650,7 @@
     "category": 34
   },
   {
+    "id": 26,
     "exp": 51000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -650,6 +676,7 @@
     "category": 34
   },
   {
+    "id": 27,
     "exp": 58100,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -675,6 +702,7 @@
     "category": 34
   },
   {
+    "id": 28,
     "exp": 58100,
     "reqGathering": 0,
     "reqIlvl": 1,
@@ -700,6 +728,7 @@
     "category": 34
   },
   {
+    "id": 29,
     "exp": 60800,
     "reqGathering": 0,
     "reqIlvl": 2,
@@ -725,6 +754,7 @@
     "category": 34
   },
   {
+    "id": 30,
     "exp": 60800,
     "reqGathering": 0,
     "reqIlvl": 3,
@@ -750,6 +780,7 @@
     "category": 34
   },
   {
+    "id": 31,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 4,
@@ -775,6 +806,7 @@
     "category": 34
   },
   {
+    "id": 32,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -800,6 +832,7 @@
     "category": 34
   },
   {
+    "id": 33,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -825,6 +858,7 @@
     "category": 34
   },
   {
+    "id": 34,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -850,6 +884,7 @@
     "category": 34
   },
   {
+    "id": 35,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -875,6 +910,7 @@
     "category": 34
   },
   {
+    "id": 36,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -900,6 +936,7 @@
     "category": 34
   },
   {
+    "id": 37,
     "exp": 63500,
     "reqGathering": 0,
     "reqIlvl": 5,
@@ -925,6 +962,7 @@
     "category": 34
   },
   {
+    "id": 38,
     "exp": 73400,
     "reqGathering": 0,
     "reqIlvl": 6,
@@ -950,6 +988,7 @@
     "category": 34
   },
   {
+    "id": 39,
     "exp": 73400,
     "reqGathering": 0,
     "reqIlvl": 6,
@@ -975,6 +1014,7 @@
     "category": 34
   },
   {
+    "id": 40,
     "exp": 73400,
     "reqGathering": 0,
     "reqIlvl": 7,
@@ -1000,6 +1040,7 @@
     "category": 34
   },
   {
+    "id": 41,
     "exp": 78900,
     "reqGathering": 0,
     "reqIlvl": 8,
@@ -1025,6 +1066,7 @@
     "category": 34
   },
   {
+    "id": 42,
     "exp": 78900,
     "reqGathering": 0,
     "reqIlvl": 8,
@@ -1050,6 +1092,7 @@
     "category": 34
   },
   {
+    "id": 43,
     "exp": 78900,
     "reqGathering": 0,
     "reqIlvl": 9,
@@ -1075,6 +1118,7 @@
     "category": 34
   },
   {
+    "id": 44,
     "exp": 78900,
     "reqGathering": 0,
     "reqIlvl": 9,
@@ -1100,6 +1144,7 @@
     "category": 34
   },
   {
+    "id": 45,
     "exp": 83800,
     "reqGathering": 0,
     "reqIlvl": 10,
@@ -1125,6 +1170,7 @@
     "category": 34
   },
   {
+    "id": 46,
     "exp": 83800,
     "reqGathering": 0,
     "reqIlvl": 10,
@@ -1150,6 +1196,7 @@
     "category": 34
   },
   {
+    "id": 47,
     "exp": 83800,
     "reqGathering": 0,
     "reqIlvl": 10,
@@ -1175,6 +1222,7 @@
     "category": 34
   },
   {
+    "id": 48,
     "exp": 83800,
     "reqGathering": 0,
     "reqIlvl": 11,
@@ -1200,6 +1248,7 @@
     "category": 34
   },
   {
+    "id": 49,
     "exp": 88500,
     "reqGathering": 0,
     "reqIlvl": 12,
@@ -1225,6 +1274,7 @@
     "category": 34
   },
   {
+    "id": 50,
     "exp": 88500,
     "reqGathering": 0,
     "reqIlvl": 12,
@@ -1250,6 +1300,7 @@
     "category": 34
   },
   {
+    "id": 51,
     "exp": 88500,
     "reqGathering": 0,
     "reqIlvl": 13,
@@ -1275,6 +1326,7 @@
     "category": 34
   },
   {
+    "id": 52,
     "exp": 92900,
     "reqGathering": 0,
     "reqIlvl": 14,
@@ -1300,6 +1352,7 @@
     "category": 34
   },
   {
+    "id": 53,
     "exp": 92900,
     "reqGathering": 0,
     "reqIlvl": 15,
@@ -1325,6 +1378,7 @@
     "category": 34
   },
   {
+    "id": 54,
     "exp": 99200,
     "reqGathering": 0,
     "reqIlvl": 16,
@@ -1350,6 +1404,7 @@
     "category": 34
   },
   {
+    "id": 55,
     "exp": 99200,
     "reqGathering": 0,
     "reqIlvl": 17,
@@ -1375,6 +1430,7 @@
     "category": 34
   },
   {
+    "id": 56,
     "exp": 105100,
     "reqGathering": 0,
     "reqIlvl": 18,
@@ -1400,6 +1456,7 @@
     "category": 34
   },
   {
+    "id": 57,
     "exp": 105100,
     "reqGathering": 0,
     "reqIlvl": 19,
@@ -1425,6 +1482,7 @@
     "category": 34
   },
   {
+    "id": 58,
     "exp": 109700,
     "reqGathering": 0,
     "reqIlvl": 20,
@@ -1450,6 +1508,7 @@
     "category": 34
   },
   {
+    "id": 59,
     "exp": 109700,
     "reqGathering": 0,
     "reqIlvl": 21,
@@ -1475,6 +1534,7 @@
     "category": 34
   },
   {
+    "id": 60,
     "exp": 113200,
     "reqGathering": 0,
     "reqIlvl": 22,
@@ -1500,6 +1560,7 @@
     "category": 34
   },
   {
+    "id": 61,
     "exp": 113200,
     "reqGathering": 0,
     "reqIlvl": 23,
@@ -1525,6 +1586,7 @@
     "category": 34
   },
   {
+    "id": 62,
     "exp": 116600,
     "reqGathering": 0,
     "reqIlvl": 24,
@@ -1550,6 +1612,7 @@
     "category": 34
   },
   {
+    "id": 63,
     "exp": 116600,
     "reqGathering": 0,
     "reqIlvl": 25,
@@ -1575,6 +1638,7 @@
     "category": 34
   },
   {
+    "id": 64,
     "exp": 126400,
     "reqGathering": 0,
     "reqIlvl": 26,
@@ -1600,6 +1664,7 @@
     "category": 34
   },
   {
+    "id": 65,
     "exp": 126400,
     "reqGathering": 0,
     "reqIlvl": 27,
@@ -1625,6 +1690,7 @@
     "category": 34
   },
   {
+    "id": 66,
     "exp": 135600,
     "reqGathering": 0,
     "reqIlvl": 28,
@@ -1650,6 +1716,7 @@
     "category": 34
   },
   {
+    "id": 67,
     "exp": 135600,
     "reqGathering": 0,
     "reqIlvl": 29,
@@ -1675,6 +1742,7 @@
     "category": 34
   },
   {
+    "id": 68,
     "exp": 135600,
     "reqGathering": 0,
     "reqIlvl": 29,
@@ -1700,6 +1768,7 @@
     "category": 34
   },
   {
+    "id": 69,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1725,6 +1794,7 @@
     "category": 17
   },
   {
+    "id": 70,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1751,6 +1821,7 @@
     "category": 17
   },
   {
+    "id": 71,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1777,6 +1848,7 @@
     "category": 17
   },
   {
+    "id": 72,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1803,6 +1875,7 @@
     "category": 17
   },
   {
+    "id": 73,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1829,6 +1902,7 @@
     "category": 17
   },
   {
+    "id": 74,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1855,6 +1929,7 @@
     "category": 17
   },
   {
+    "id": 75,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1881,6 +1956,7 @@
     "category": 17
   },
   {
+    "id": 76,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1906,6 +1982,7 @@
     "category": 17
   },
   {
+    "id": 77,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1931,6 +2008,7 @@
     "category": 17
   },
   {
+    "id": 78,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1956,6 +2034,7 @@
     "category": 17
   },
   {
+    "id": 79,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -1981,6 +2060,7 @@
     "category": 17
   },
   {
+    "id": 80,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -2006,6 +2086,7 @@
     "category": 17
   },
   {
+    "id": 81,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -2031,6 +2112,7 @@
     "category": 17
   },
   {
+    "id": 82,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -2056,6 +2138,7 @@
     "category": 17
   },
   {
+    "id": 83,
     "exp": 15600,
     "reqGathering": 30,
     "reqIlvl": 0,
@@ -2081,6 +2164,7 @@
     "category": 17
   },
   {
+    "id": 84,
     "exp": 15600,
     "reqGathering": 30,
     "reqIlvl": 0,
@@ -2106,6 +2190,7 @@
     "category": 17
   },
   {
+    "id": 85,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -2131,6 +2216,7 @@
     "category": 17
   },
   {
+    "id": 86,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -2156,6 +2242,7 @@
     "category": 17
   },
   {
+    "id": 87,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -2181,6 +2268,7 @@
     "category": 17
   },
   {
+    "id": 88,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -2206,6 +2294,7 @@
     "category": 17
   },
   {
+    "id": 89,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -2231,6 +2320,7 @@
     "category": 17
   },
   {
+    "id": 90,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -2256,6 +2346,7 @@
     "category": 17
   },
   {
+    "id": 91,
     "exp": 30500,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -2281,6 +2372,7 @@
     "category": 17
   },
   {
+    "id": 92,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -2306,6 +2398,7 @@
     "category": 17
   },
   {
+    "id": 93,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -2331,6 +2424,7 @@
     "category": 17
   },
   {
+    "id": 94,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -2356,6 +2450,7 @@
     "category": 17
   },
   {
+    "id": 95,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -2381,6 +2476,7 @@
     "category": 17
   },
   {
+    "id": 96,
     "exp": 51000,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -2406,6 +2502,7 @@
     "category": 17
   },
   {
+    "id": 97,
     "exp": 51000,
     "reqGathering": 63,
     "reqIlvl": 0,
@@ -2431,6 +2528,7 @@
     "category": 17
   },
   {
+    "id": 98,
     "exp": 51000,
     "reqGathering": 63,
     "reqIlvl": 0,
@@ -2456,6 +2554,7 @@
     "category": 17
   },
   {
+    "id": 100,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -2481,6 +2580,7 @@
     "category": 17
   },
   {
+    "id": 101,
     "exp": 58100,
     "reqGathering": 75,
     "reqIlvl": 0,
@@ -2506,6 +2606,7 @@
     "category": 17
   },
   {
+    "id": 102,
     "exp": 60800,
     "reqGathering": 78,
     "reqIlvl": 0,
@@ -2531,6 +2632,7 @@
     "category": 17
   },
   {
+    "id": 103,
     "exp": 60800,
     "reqGathering": 81,
     "reqIlvl": 0,
@@ -2556,6 +2658,7 @@
     "category": 17
   },
   {
+    "id": 104,
     "exp": 60800,
     "reqGathering": 81,
     "reqIlvl": 0,
@@ -2581,6 +2684,7 @@
     "category": 17
   },
   {
+    "id": 105,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -2606,6 +2710,7 @@
     "category": 17
   },
   {
+    "id": 106,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -2631,6 +2736,7 @@
     "category": 17
   },
   {
+    "id": 107,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -2656,6 +2762,7 @@
     "category": 17
   },
   {
+    "id": 108,
     "exp": 63500,
     "reqGathering": 87,
     "reqIlvl": 0,
@@ -2681,6 +2788,7 @@
     "category": 17
   },
   {
+    "id": 109,
     "exp": 63500,
     "reqGathering": 87,
     "reqIlvl": 0,
@@ -2706,6 +2814,7 @@
     "category": 17
   },
   {
+    "id": 110,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2731,6 +2840,7 @@
     "category": 17
   },
   {
+    "id": 111,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2757,6 +2867,7 @@
     "category": 17
   },
   {
+    "id": 112,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2783,6 +2894,7 @@
     "category": 17
   },
   {
+    "id": 113,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2809,6 +2921,7 @@
     "category": 17
   },
   {
+    "id": 114,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2835,6 +2948,7 @@
     "category": 17
   },
   {
+    "id": 115,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2861,6 +2975,7 @@
     "category": 17
   },
   {
+    "id": 116,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -2887,6 +3002,7 @@
     "category": 17
   },
   {
+    "id": 117,
     "exp": 73400,
     "reqGathering": 92,
     "reqIlvl": 0,
@@ -2912,6 +3028,7 @@
     "category": 17
   },
   {
+    "id": 118,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -2937,6 +3054,7 @@
     "category": 17
   },
   {
+    "id": 119,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -2962,6 +3080,7 @@
     "category": 17
   },
   {
+    "id": 120,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -2987,6 +3106,7 @@
     "category": 17
   },
   {
+    "id": 121,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -3012,6 +3132,7 @@
     "category": 17
   },
   {
+    "id": 122,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -3037,6 +3158,7 @@
     "category": 17
   },
   {
+    "id": 123,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -3062,6 +3184,7 @@
     "category": 17
   },
   {
+    "id": 124,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -3087,6 +3210,7 @@
     "category": 17
   },
   {
+    "id": 125,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -3112,6 +3236,7 @@
     "category": 17
   },
   {
+    "id": 126,
     "exp": 78900,
     "reqGathering": 96,
     "reqIlvl": 0,
@@ -3137,6 +3262,7 @@
     "category": 17
   },
   {
+    "id": 128,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -3162,6 +3288,7 @@
     "category": 17
   },
   {
+    "id": 129,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -3187,6 +3314,7 @@
     "category": 17
   },
   {
+    "id": 130,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -3212,6 +3340,7 @@
     "category": 17
   },
   {
+    "id": 131,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -3237,6 +3366,7 @@
     "category": 17
   },
   {
+    "id": 132,
     "exp": 83800,
     "reqGathering": 101,
     "reqIlvl": 0,
@@ -3262,6 +3392,7 @@
     "category": 17
   },
   {
+    "id": 133,
     "exp": 83800,
     "reqGathering": 101,
     "reqIlvl": 0,
@@ -3287,6 +3418,7 @@
     "category": 17
   },
   {
+    "id": 134,
     "exp": 88500,
     "reqGathering": 103,
     "reqIlvl": 0,
@@ -3312,6 +3444,7 @@
     "category": 17
   },
   {
+    "id": 135,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -3337,6 +3470,7 @@
     "category": 17
   },
   {
+    "id": 136,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -3362,6 +3496,7 @@
     "category": 17
   },
   {
+    "id": 137,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -3387,6 +3522,7 @@
     "category": 17
   },
   {
+    "id": 138,
     "exp": 92900,
     "reqGathering": 107,
     "reqIlvl": 0,
@@ -3412,6 +3548,7 @@
     "category": 17
   },
   {
+    "id": 139,
     "exp": 92900,
     "reqGathering": 107,
     "reqIlvl": 0,
@@ -3437,6 +3574,7 @@
     "category": 17
   },
   {
+    "id": 140,
     "exp": 92900,
     "reqGathering": 109,
     "reqIlvl": 0,
@@ -3462,6 +3600,7 @@
     "category": 17
   },
   {
+    "id": 141,
     "exp": 99200,
     "reqGathering": 112,
     "reqIlvl": 0,
@@ -3487,6 +3626,7 @@
     "category": 17
   },
   {
+    "id": 142,
     "exp": 99200,
     "reqGathering": 113,
     "reqIlvl": 0,
@@ -3512,6 +3652,7 @@
     "category": 17
   },
   {
+    "id": 143,
     "exp": 105100,
     "reqGathering": 116,
     "reqIlvl": 0,
@@ -3537,6 +3678,7 @@
     "category": 17
   },
   {
+    "id": 144,
     "exp": 105100,
     "reqGathering": 118,
     "reqIlvl": 0,
@@ -3562,6 +3704,7 @@
     "category": 17
   },
   {
+    "id": 145,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -3587,6 +3730,7 @@
     "category": 17
   },
   {
+    "id": 146,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -3612,6 +3756,7 @@
     "category": 17
   },
   {
+    "id": 147,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -3637,6 +3782,7 @@
     "category": 17
   },
   {
+    "id": 148,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -3662,6 +3808,7 @@
     "category": 17
   },
   {
+    "id": 149,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -3687,6 +3834,7 @@
     "category": 17
   },
   {
+    "id": 150,
     "exp": 109700,
     "reqGathering": 125,
     "reqIlvl": 0,
@@ -3712,6 +3860,7 @@
     "category": 17
   },
   {
+    "id": 151,
     "exp": 113200,
     "reqGathering": 127,
     "reqIlvl": 0,
@@ -3737,6 +3886,7 @@
     "category": 17
   },
   {
+    "id": 152,
     "exp": 113200,
     "reqGathering": 129,
     "reqIlvl": 0,
@@ -3762,6 +3912,7 @@
     "category": 17
   },
   {
+    "id": 153,
     "exp": 116600,
     "reqGathering": 131,
     "reqIlvl": 0,
@@ -3787,6 +3938,7 @@
     "category": 17
   },
   {
+    "id": 154,
     "exp": 116600,
     "reqGathering": 133,
     "reqIlvl": 0,
@@ -3812,6 +3964,7 @@
     "category": 17
   },
   {
+    "id": 155,
     "exp": 116600,
     "reqGathering": 133,
     "reqIlvl": 0,
@@ -3837,6 +3990,7 @@
     "category": 17
   },
   {
+    "id": 156,
     "exp": 126400,
     "reqGathering": 140,
     "reqIlvl": 0,
@@ -3862,6 +4016,7 @@
     "category": 17
   },
   {
+    "id": 157,
     "exp": 126400,
     "reqGathering": 142,
     "reqIlvl": 0,
@@ -3887,6 +4042,7 @@
     "category": 17
   },
   {
+    "id": 158,
     "exp": 135600,
     "reqGathering": 144,
     "reqIlvl": 0,
@@ -3912,6 +4068,7 @@
     "category": 17
   },
   {
+    "id": 159,
     "exp": 135600,
     "reqGathering": 147,
     "reqIlvl": 0,
@@ -3937,6 +4094,7 @@
     "category": 17
   },
   {
+    "id": 161,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -3962,6 +4120,7 @@
     "category": 18
   },
   {
+    "id": 162,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -3988,6 +4147,7 @@
     "category": 18
   },
   {
+    "id": 163,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4014,6 +4174,7 @@
     "category": 18
   },
   {
+    "id": 164,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4040,6 +4201,7 @@
     "category": 18
   },
   {
+    "id": 165,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4066,6 +4228,7 @@
     "category": 18
   },
   {
+    "id": 166,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4092,6 +4255,7 @@
     "category": 18
   },
   {
+    "id": 167,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4118,6 +4282,7 @@
     "category": 18
   },
   {
+    "id": 168,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4143,6 +4308,7 @@
     "category": 18
   },
   {
+    "id": 169,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4168,6 +4334,7 @@
     "category": 18
   },
   {
+    "id": 170,
     "exp": 1900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4193,6 +4360,7 @@
     "category": 18
   },
   {
+    "id": 171,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4218,6 +4386,7 @@
     "category": 18
   },
   {
+    "id": 172,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4243,6 +4412,7 @@
     "category": 18
   },
   {
+    "id": 173,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4268,6 +4438,7 @@
     "category": 18
   },
   {
+    "id": 174,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4293,6 +4464,7 @@
     "category": 18
   },
   {
+    "id": 175,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4318,6 +4490,7 @@
     "category": 18
   },
   {
+    "id": 176,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4343,6 +4516,7 @@
     "category": 18
   },
   {
+    "id": 177,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4368,6 +4542,7 @@
     "category": 18
   },
   {
+    "id": 178,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4393,6 +4568,7 @@
     "category": 18
   },
   {
+    "id": 179,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4418,6 +4594,7 @@
     "category": 18
   },
   {
+    "id": 180,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -4443,6 +4620,7 @@
     "category": 18
   },
   {
+    "id": 181,
     "exp": 15600,
     "reqGathering": 30,
     "reqIlvl": 0,
@@ -4468,6 +4646,7 @@
     "category": 18
   },
   {
+    "id": 182,
     "exp": 15600,
     "reqGathering": 30,
     "reqIlvl": 0,
@@ -4493,6 +4672,7 @@
     "category": 18
   },
   {
+    "id": 183,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4518,6 +4698,7 @@
     "category": 18
   },
   {
+    "id": 184,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4543,6 +4724,7 @@
     "category": 18
   },
   {
+    "id": 185,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4568,6 +4750,7 @@
     "category": 18
   },
   {
+    "id": 186,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4593,6 +4776,7 @@
     "category": 18
   },
   {
+    "id": 187,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4618,6 +4802,7 @@
     "category": 18
   },
   {
+    "id": 188,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4643,6 +4828,7 @@
     "category": 18
   },
   {
+    "id": 189,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -4668,6 +4854,7 @@
     "category": 18
   },
   {
+    "id": 190,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -4693,6 +4880,7 @@
     "category": 18
   },
   {
+    "id": 191,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -4718,6 +4906,7 @@
     "category": 18
   },
   {
+    "id": 192,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -4743,6 +4932,7 @@
     "category": 18
   },
   {
+    "id": 193,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -4768,6 +4958,7 @@
     "category": 18
   },
   {
+    "id": 194,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -4793,6 +4984,7 @@
     "category": 18
   },
   {
+    "id": 195,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4818,6 +5010,7 @@
     "category": 18
   },
   {
+    "id": 196,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4843,6 +5036,7 @@
     "category": 18
   },
   {
+    "id": 197,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4868,6 +5062,7 @@
     "category": 18
   },
   {
+    "id": 198,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4893,6 +5088,7 @@
     "category": 18
   },
   {
+    "id": 199,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4918,6 +5114,7 @@
     "category": 18
   },
   {
+    "id": 200,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -4943,6 +5140,7 @@
     "category": 18
   },
   {
+    "id": 201,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -4968,6 +5166,7 @@
     "category": 18
   },
   {
+    "id": 202,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -4993,6 +5192,7 @@
     "category": 18
   },
   {
+    "id": 203,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -5018,6 +5218,7 @@
     "category": 18
   },
   {
+    "id": 204,
     "exp": 30500,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -5043,6 +5244,7 @@
     "category": 18
   },
   {
+    "id": 205,
     "exp": 30500,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -5068,6 +5270,7 @@
     "category": 18
   },
   {
+    "id": 206,
     "exp": 30500,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -5093,6 +5296,7 @@
     "category": 18
   },
   {
+    "id": 207,
     "exp": 30500,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -5118,6 +5322,7 @@
     "category": 18
   },
   {
+    "id": 208,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -5143,6 +5348,7 @@
     "category": 18
   },
   {
+    "id": 209,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -5168,6 +5374,7 @@
     "category": 18
   },
   {
+    "id": 210,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -5193,6 +5400,7 @@
     "category": 18
   },
   {
+    "id": 211,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -5218,6 +5426,7 @@
     "category": 18
   },
   {
+    "id": 212,
     "exp": 40500,
     "reqGathering": 58,
     "reqIlvl": 0,
@@ -5243,6 +5452,7 @@
     "category": 18
   },
   {
+    "id": 213,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -5268,6 +5478,7 @@
     "category": 18
   },
   {
+    "id": 214,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -5293,6 +5504,7 @@
     "category": 18
   },
   {
+    "id": 215,
     "exp": 40500,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -5318,6 +5530,7 @@
     "category": 18
   },
   {
+    "id": 216,
     "exp": 51000,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -5343,6 +5556,7 @@
     "category": 18
   },
   {
+    "id": 217,
     "exp": 51000,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -5368,6 +5582,7 @@
     "category": 18
   },
   {
+    "id": 218,
     "exp": 51000,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -5393,6 +5608,7 @@
     "category": 18
   },
   {
+    "id": 219,
     "exp": 51000,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -5418,6 +5634,7 @@
     "category": 18
   },
   {
+    "id": 220,
     "exp": 51000,
     "reqGathering": 63,
     "reqIlvl": 0,
@@ -5443,6 +5660,7 @@
     "category": 18
   },
   {
+    "id": 221,
     "exp": 51000,
     "reqGathering": 63,
     "reqIlvl": 0,
@@ -5468,6 +5686,7 @@
     "category": 18
   },
   {
+    "id": 222,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -5493,6 +5712,7 @@
     "category": 18
   },
   {
+    "id": 223,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -5518,6 +5738,7 @@
     "category": 18
   },
   {
+    "id": 224,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -5543,6 +5764,7 @@
     "category": 18
   },
   {
+    "id": 225,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -5568,6 +5790,7 @@
     "category": 18
   },
   {
+    "id": 226,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -5593,6 +5816,7 @@
     "category": 18
   },
   {
+    "id": 228,
     "exp": 58100,
     "reqGathering": 75,
     "reqIlvl": 0,
@@ -5618,6 +5842,7 @@
     "category": 18
   },
   {
+    "id": 229,
     "exp": 58100,
     "reqGathering": 75,
     "reqIlvl": 0,
@@ -5643,6 +5868,7 @@
     "category": 18
   },
   {
+    "id": 230,
     "exp": 58100,
     "reqGathering": 75,
     "reqIlvl": 0,
@@ -5668,6 +5894,7 @@
     "category": 18
   },
   {
+    "id": 231,
     "exp": 60800,
     "reqGathering": 78,
     "reqIlvl": 0,
@@ -5693,6 +5920,7 @@
     "category": 18
   },
   {
+    "id": 232,
     "exp": 60800,
     "reqGathering": 78,
     "reqIlvl": 0,
@@ -5718,6 +5946,7 @@
     "category": 18
   },
   {
+    "id": 233,
     "exp": 60800,
     "reqGathering": 81,
     "reqIlvl": 0,
@@ -5743,6 +5972,7 @@
     "category": 18
   },
   {
+    "id": 234,
     "exp": 60800,
     "reqGathering": 81,
     "reqIlvl": 0,
@@ -5768,6 +5998,7 @@
     "category": 18
   },
   {
+    "id": 235,
     "exp": 60800,
     "reqGathering": 81,
     "reqIlvl": 0,
@@ -5793,6 +6024,7 @@
     "category": 18
   },
   {
+    "id": 236,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -5818,6 +6050,7 @@
     "category": 18
   },
   {
+    "id": 237,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -5843,6 +6076,7 @@
     "category": 18
   },
   {
+    "id": 238,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -5868,6 +6102,7 @@
     "category": 18
   },
   {
+    "id": 239,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -5893,6 +6128,7 @@
     "category": 18
   },
   {
+    "id": 240,
     "exp": 63500,
     "reqGathering": 84,
     "reqIlvl": 0,
@@ -5918,6 +6154,7 @@
     "category": 18
   },
   {
+    "id": 241,
     "exp": 63500,
     "reqGathering": 87,
     "reqIlvl": 0,
@@ -5943,6 +6180,7 @@
     "category": 18
   },
   {
+    "id": 242,
     "exp": 63500,
     "reqGathering": 87,
     "reqIlvl": 0,
@@ -5968,6 +6206,7 @@
     "category": 18
   },
   {
+    "id": 243,
     "exp": 63500,
     "reqGathering": 87,
     "reqIlvl": 0,
@@ -5993,6 +6232,7 @@
     "category": 18
   },
   {
+    "id": 244,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6018,6 +6258,7 @@
     "category": 18
   },
   {
+    "id": 245,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6044,6 +6285,7 @@
     "category": 18
   },
   {
+    "id": 246,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6070,6 +6312,7 @@
     "category": 18
   },
   {
+    "id": 247,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6096,6 +6339,7 @@
     "category": 18
   },
   {
+    "id": 248,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6122,6 +6366,7 @@
     "category": 18
   },
   {
+    "id": 249,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6148,6 +6393,7 @@
     "category": 18
   },
   {
+    "id": 250,
     "exp": 73400,
     "reqGathering": 90,
     "reqIlvl": 0,
@@ -6174,6 +6420,7 @@
     "category": 18
   },
   {
+    "id": 251,
     "exp": 73400,
     "reqGathering": 92,
     "reqIlvl": 0,
@@ -6199,6 +6446,7 @@
     "category": 18
   },
   {
+    "id": 252,
     "exp": 73400,
     "reqGathering": 92,
     "reqIlvl": 0,
@@ -6224,6 +6472,7 @@
     "category": 18
   },
   {
+    "id": 253,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6249,6 +6498,7 @@
     "category": 18
   },
   {
+    "id": 254,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6274,6 +6524,7 @@
     "category": 18
   },
   {
+    "id": 255,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6299,6 +6550,7 @@
     "category": 18
   },
   {
+    "id": 256,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6324,6 +6576,7 @@
     "category": 18
   },
   {
+    "id": 257,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6349,6 +6602,7 @@
     "category": 18
   },
   {
+    "id": 258,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6374,6 +6628,7 @@
     "category": 18
   },
   {
+    "id": 259,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6399,6 +6654,7 @@
     "category": 18
   },
   {
+    "id": 260,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6424,6 +6680,7 @@
     "category": 18
   },
   {
+    "id": 261,
     "exp": 78900,
     "reqGathering": 95,
     "reqIlvl": 0,
@@ -6449,6 +6706,7 @@
     "category": 18
   },
   {
+    "id": 262,
     "exp": 78900,
     "reqGathering": 96,
     "reqIlvl": 0,
@@ -6474,6 +6732,7 @@
     "category": 18
   },
   {
+    "id": 263,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -6499,6 +6758,7 @@
     "category": 18
   },
   {
+    "id": 264,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -6524,6 +6784,7 @@
     "category": 18
   },
   {
+    "id": 266,
     "exp": 83800,
     "reqGathering": 101,
     "reqIlvl": 0,
@@ -6549,6 +6810,7 @@
     "category": 18
   },
   {
+    "id": 267,
     "exp": 83800,
     "reqGathering": 101,
     "reqIlvl": 0,
@@ -6574,6 +6836,7 @@
     "category": 18
   },
   {
+    "id": 268,
     "exp": 83800,
     "reqGathering": 101,
     "reqIlvl": 0,
@@ -6599,6 +6862,7 @@
     "category": 18
   },
   {
+    "id": 269,
     "exp": 88500,
     "reqGathering": 103,
     "reqIlvl": 0,
@@ -6624,6 +6888,7 @@
     "category": 18
   },
   {
+    "id": 270,
     "exp": 88500,
     "reqGathering": 103,
     "reqIlvl": 0,
@@ -6649,6 +6914,7 @@
     "category": 18
   },
   {
+    "id": 271,
     "exp": 88500,
     "reqGathering": 103,
     "reqIlvl": 0,
@@ -6674,6 +6940,7 @@
     "category": 18
   },
   {
+    "id": 272,
     "exp": 88500,
     "reqGathering": 103,
     "reqIlvl": 0,
@@ -6699,6 +6966,7 @@
     "category": 18
   },
   {
+    "id": 273,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -6724,6 +6992,7 @@
     "category": 18
   },
   {
+    "id": 274,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -6749,6 +7018,7 @@
     "category": 18
   },
   {
+    "id": 275,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -6774,6 +7044,7 @@
     "category": 18
   },
   {
+    "id": 276,
     "exp": 88500,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -6799,6 +7070,7 @@
     "category": 18
   },
   {
+    "id": 277,
     "exp": 92900,
     "reqGathering": 107,
     "reqIlvl": 0,
@@ -6824,6 +7096,7 @@
     "category": 18
   },
   {
+    "id": 278,
     "exp": 92900,
     "reqGathering": 107,
     "reqIlvl": 0,
@@ -6849,6 +7122,7 @@
     "category": 18
   },
   {
+    "id": 279,
     "exp": 92900,
     "reqGathering": 107,
     "reqIlvl": 0,
@@ -6874,6 +7148,7 @@
     "category": 18
   },
   {
+    "id": 280,
     "exp": 92900,
     "reqGathering": 109,
     "reqIlvl": 0,
@@ -6899,6 +7174,7 @@
     "category": 18
   },
   {
+    "id": 281,
     "exp": 92900,
     "reqGathering": 109,
     "reqIlvl": 0,
@@ -6924,6 +7200,7 @@
     "category": 18
   },
   {
+    "id": 282,
     "exp": 92900,
     "reqGathering": 109,
     "reqIlvl": 0,
@@ -6949,6 +7226,7 @@
     "category": 18
   },
   {
+    "id": 283,
     "exp": 99200,
     "reqGathering": 112,
     "reqIlvl": 0,
@@ -6974,6 +7252,7 @@
     "category": 18
   },
   {
+    "id": 284,
     "exp": 99200,
     "reqGathering": 112,
     "reqIlvl": 0,
@@ -6999,6 +7278,7 @@
     "category": 18
   },
   {
+    "id": 285,
     "exp": 99200,
     "reqGathering": 112,
     "reqIlvl": 0,
@@ -7024,6 +7304,7 @@
     "category": 18
   },
   {
+    "id": 286,
     "exp": 99200,
     "reqGathering": 113,
     "reqIlvl": 0,
@@ -7049,6 +7330,7 @@
     "category": 18
   },
   {
+    "id": 287,
     "exp": 99200,
     "reqGathering": 113,
     "reqIlvl": 0,
@@ -7074,6 +7356,7 @@
     "category": 18
   },
   {
+    "id": 288,
     "exp": 105100,
     "reqGathering": 116,
     "reqIlvl": 0,
@@ -7099,6 +7382,7 @@
     "category": 18
   },
   {
+    "id": 289,
     "exp": 105100,
     "reqGathering": 118,
     "reqIlvl": 0,
@@ -7124,6 +7408,7 @@
     "category": 18
   },
   {
+    "id": 290,
     "exp": 105100,
     "reqGathering": 118,
     "reqIlvl": 0,
@@ -7149,6 +7434,7 @@
     "category": 18
   },
   {
+    "id": 291,
     "exp": 105100,
     "reqGathering": 118,
     "reqIlvl": 0,
@@ -7174,6 +7460,7 @@
     "category": 18
   },
   {
+    "id": 292,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -7199,6 +7486,7 @@
     "category": 18
   },
   {
+    "id": 293,
     "exp": 109700,
     "reqGathering": 120,
     "reqIlvl": 0,
@@ -7224,6 +7512,7 @@
     "category": 18
   },
   {
+    "id": 294,
     "exp": 109700,
     "reqGathering": 125,
     "reqIlvl": 0,
@@ -7249,6 +7538,7 @@
     "category": 18
   },
   {
+    "id": 295,
     "exp": 113200,
     "reqGathering": 127,
     "reqIlvl": 0,
@@ -7274,6 +7564,7 @@
     "category": 18
   },
   {
+    "id": 296,
     "exp": 113200,
     "reqGathering": 127,
     "reqIlvl": 0,
@@ -7299,6 +7590,7 @@
     "category": 18
   },
   {
+    "id": 297,
     "exp": 113200,
     "reqGathering": 127,
     "reqIlvl": 0,
@@ -7324,6 +7616,7 @@
     "category": 18
   },
   {
+    "id": 298,
     "exp": 113200,
     "reqGathering": 129,
     "reqIlvl": 0,
@@ -7349,6 +7642,7 @@
     "category": 18
   },
   {
+    "id": 299,
     "exp": 113200,
     "reqGathering": 129,
     "reqIlvl": 0,
@@ -7374,6 +7668,7 @@
     "category": 18
   },
   {
+    "id": 300,
     "exp": 116600,
     "reqGathering": 131,
     "reqIlvl": 0,
@@ -7399,6 +7694,7 @@
     "category": 18
   },
   {
+    "id": 301,
     "exp": 116600,
     "reqGathering": 133,
     "reqIlvl": 0,
@@ -7424,6 +7720,7 @@
     "category": 18
   },
   {
+    "id": 302,
     "exp": 126400,
     "reqGathering": 140,
     "reqIlvl": 0,
@@ -7449,6 +7746,7 @@
     "category": 18
   },
   {
+    "id": 303,
     "exp": 126400,
     "reqGathering": 142,
     "reqIlvl": 0,
@@ -7474,6 +7772,7 @@
     "category": 18
   },
   {
+    "id": 304,
     "exp": 135600,
     "reqGathering": 144,
     "reqIlvl": 0,
@@ -7499,6 +7798,7 @@
     "category": 18
   },
   {
+    "id": 305,
     "exp": 135600,
     "reqGathering": 147,
     "reqIlvl": 0,
@@ -7524,6 +7824,7 @@
     "category": 18
   },
   {
+    "id": 306,
     "exp": 135600,
     "reqGathering": 147,
     "reqIlvl": 0,
@@ -7549,6 +7850,7 @@
     "category": 18
   },
   {
+    "id": 308,
     "exp": 1300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7574,6 +7876,7 @@
     "category": 19
   },
   {
+    "id": 309,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7599,6 +7902,7 @@
     "category": 19
   },
   {
+    "id": 310,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7624,6 +7928,7 @@
     "category": 19
   },
   {
+    "id": 311,
     "exp": 2300,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7649,6 +7954,7 @@
     "category": 19
   },
   {
+    "id": 312,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7674,6 +7980,7 @@
     "category": 19
   },
   {
+    "id": 313,
     "exp": 6000,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7699,6 +8006,7 @@
     "category": 19
   },
   {
+    "id": 314,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7724,6 +8032,7 @@
     "category": 19
   },
   {
+    "id": 315,
     "exp": 9900,
     "reqGathering": 0,
     "reqIlvl": 0,
@@ -7749,6 +8058,7 @@
     "category": 19
   },
   {
+    "id": 316,
     "exp": 15600,
     "reqGathering": 21,
     "reqIlvl": 0,
@@ -7774,6 +8084,7 @@
     "category": 19
   },
   {
+    "id": 317,
     "exp": 15600,
     "reqGathering": 24,
     "reqIlvl": 0,
@@ -7799,6 +8110,7 @@
     "category": 19
   },
   {
+    "id": 318,
     "exp": 30500,
     "reqGathering": 31,
     "reqIlvl": 0,
@@ -7824,6 +8136,7 @@
     "category": 19
   },
   {
+    "id": 319,
     "exp": 40500,
     "reqGathering": 35,
     "reqIlvl": 0,
@@ -7849,6 +8162,7 @@
     "category": 19
   },
   {
+    "id": 320,
     "exp": 40500,
     "reqGathering": 38,
     "reqIlvl": 0,
@@ -7874,6 +8188,7 @@
     "category": 19
   },
   {
+    "id": 321,
     "exp": 51000,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -7899,6 +8214,7 @@
     "category": 19
   },
   {
+    "id": 322,
     "exp": 51000,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -7924,6 +8240,7 @@
     "category": 19
   },
   {
+    "id": 323,
     "exp": 58100,
     "reqGathering": 45,
     "reqIlvl": 0,
@@ -7949,6 +8266,7 @@
     "category": 19
   },
   {
+    "id": 324,
     "exp": 58100,
     "reqGathering": 56,
     "reqIlvl": 0,
@@ -7974,6 +8292,7 @@
     "category": 19
   },
   {
+    "id": 325,
     "exp": 60800,
     "reqGathering": 55,
     "reqIlvl": 0,
@@ -7999,6 +8318,7 @@
     "category": 19
   },
   {
+    "id": 326,
     "exp": 63500,
     "reqGathering": 56,
     "reqIlvl": 0,
@@ -8024,6 +8344,7 @@
     "category": 19
   },
   {
+    "id": 327,
     "exp": 63500,
     "reqGathering": 57,
     "reqIlvl": 0,
@@ -8049,6 +8370,7 @@
     "category": 19
   },
   {
+    "id": 328,
     "exp": 73400,
     "reqGathering": 59,
     "reqIlvl": 0,
@@ -8074,6 +8396,7 @@
     "category": 19
   },
   {
+    "id": 329,
     "exp": 73400,
     "reqGathering": 60,
     "reqIlvl": 0,
@@ -8099,6 +8422,7 @@
     "category": 19
   },
   {
+    "id": 330,
     "exp": 78900,
     "reqGathering": 62,
     "reqIlvl": 0,
@@ -8124,6 +8448,7 @@
     "category": 19
   },
   {
+    "id": 331,
     "exp": 78900,
     "reqGathering": 63,
     "reqIlvl": 0,
@@ -8149,6 +8474,7 @@
     "category": 19
   },
   {
+    "id": 332,
     "exp": 83800,
     "reqGathering": 71,
     "reqIlvl": 0,
@@ -8174,6 +8500,7 @@
     "category": 19
   },
   {
+    "id": 333,
     "exp": 88500,
     "reqGathering": 72,
     "reqIlvl": 0,
@@ -8199,6 +8526,7 @@
     "category": 19
   },
   {
+    "id": 334,
     "exp": 92900,
     "reqGathering": 75,
     "reqIlvl": 0,
@@ -8224,6 +8552,7 @@
     "category": 19
   },
   {
+    "id": 335,
     "exp": 99200,
     "reqGathering": 85,
     "reqIlvl": 0,
@@ -8249,6 +8578,7 @@
     "category": 19
   },
   {
+    "id": 336,
     "exp": 105100,
     "reqGathering": 89,
     "reqIlvl": 0,
@@ -8274,6 +8604,7 @@
     "category": 19
   },
   {
+    "id": 337,
     "exp": 109700,
     "reqGathering": 92,
     "reqIlvl": 0,
@@ -8299,6 +8630,7 @@
     "category": 19
   },
   {
+    "id": 338,
     "exp": 109700,
     "reqGathering": 97,
     "reqIlvl": 0,
@@ -8324,6 +8656,7 @@
     "category": 19
   },
   {
+    "id": 339,
     "exp": 113200,
     "reqGathering": 100,
     "reqIlvl": 0,
@@ -8349,6 +8682,7 @@
     "category": 19
   },
   {
+    "id": 340,
     "exp": 116600,
     "reqGathering": 102,
     "reqIlvl": 0,
@@ -8374,6 +8708,7 @@
     "category": 19
   },
   {
+    "id": 341,
     "exp": 126400,
     "reqGathering": 105,
     "reqIlvl": 0,
@@ -8399,6 +8734,7 @@
     "category": 19
   },
   {
+    "id": 342,
     "exp": 135600,
     "reqGathering": 109,
     "reqIlvl": 0,
@@ -8424,6 +8760,7 @@
     "category": 19
   },
   {
+    "id": 416,
     "exp": 258100,
     "reqGathering": 0,
     "reqIlvl": 100,
@@ -8449,6 +8786,7 @@
     "category": 34
   },
   {
+    "id": 417,
     "exp": 258100,
     "reqGathering": 0,
     "reqIlvl": 100,
@@ -8474,6 +8812,7 @@
     "category": 34
   },
   {
+    "id": 418,
     "exp": 258100,
     "reqGathering": 0,
     "reqIlvl": 100,
@@ -8499,6 +8838,7 @@
     "category": 34
   },
   {
+    "id": 419,
     "exp": 258100,
     "reqGathering": 0,
     "reqIlvl": 100,
@@ -8524,6 +8864,7 @@
     "category": 34
   },
   {
+    "id": 420,
     "exp": 258100,
     "reqGathering": 0,
     "reqIlvl": 100,
@@ -8549,6 +8890,7 @@
     "category": 34
   },
   {
+    "id": 421,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 105,
@@ -8574,6 +8916,7 @@
     "category": 34
   },
   {
+    "id": 422,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 105,
@@ -8599,6 +8942,7 @@
     "category": 34
   },
   {
+    "id": 423,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 105,
@@ -8624,6 +8968,7 @@
     "category": 34
   },
   {
+    "id": 424,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 105,
@@ -8649,6 +8994,7 @@
     "category": 34
   },
   {
+    "id": 425,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 110,
@@ -8674,6 +9020,7 @@
     "category": 34
   },
   {
+    "id": 426,
     "exp": 361700,
     "reqGathering": 0,
     "reqIlvl": 110,
@@ -8699,6 +9046,7 @@
     "category": 34
   },
   {
+    "id": 427,
     "exp": 492800,
     "reqGathering": 0,
     "reqIlvl": 116,
@@ -8724,6 +9072,7 @@
     "category": 34
   },
   {
+    "id": 428,
     "exp": 492800,
     "reqGathering": 0,
     "reqIlvl": 116,
@@ -8749,6 +9098,7 @@
     "category": 34
   },
   {
+    "id": 429,
     "exp": 637300,
     "reqGathering": 0,
     "reqIlvl": 119,
@@ -8774,6 +9124,7 @@
     "category": 34
   },
   {
+    "id": 430,
     "exp": 492800,
     "reqGathering": 0,
     "reqIlvl": 113,
@@ -8799,6 +9150,7 @@
     "category": 34
   },
   {
+    "id": 431,
     "exp": 637300,
     "reqGathering": 0,
     "reqIlvl": 119,
@@ -8824,6 +9176,7 @@
     "category": 34
   },
   {
+    "id": 432,
     "exp": 637300,
     "reqGathering": 0,
     "reqIlvl": 122,
@@ -8849,6 +9202,7 @@
     "category": 34
   },
   {
+    "id": 433,
     "exp": 637300,
     "reqGathering": 0,
     "reqIlvl": 122,
@@ -8874,6 +9228,7 @@
     "category": 34
   },
   {
+    "id": 434,
     "exp": 637300,
     "reqGathering": 0,
     "reqIlvl": 122,
@@ -8899,6 +9254,7 @@
     "category": 34
   },
   {
+    "id": 435,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 125,
@@ -8924,6 +9280,7 @@
     "category": 34
   },
   {
+    "id": 436,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 125,
@@ -8949,6 +9306,7 @@
     "category": 34
   },
   {
+    "id": 437,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 125,
@@ -8974,6 +9332,7 @@
     "category": 34
   },
   {
+    "id": 438,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 125,
@@ -8999,6 +9358,7 @@
     "category": 34
   },
   {
+    "id": 439,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 125,
@@ -9024,6 +9384,7 @@
     "category": 34
   },
   {
+    "id": 440,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 128,
@@ -9049,6 +9410,7 @@
     "category": 34
   },
   {
+    "id": 441,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 128,
@@ -9074,6 +9436,7 @@
     "category": 34
   },
   {
+    "id": 442,
     "exp": 793500,
     "reqGathering": 0,
     "reqIlvl": 128,
@@ -9099,6 +9462,7 @@
     "category": 34
   },
   {
+    "id": 443,
     "exp": 886000,
     "reqGathering": 0,
     "reqIlvl": 130,
@@ -9124,6 +9488,7 @@
     "category": 34
   },
   {
+    "id": 444,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9149,6 +9514,7 @@
     "category": 17
   },
   {
+    "id": 445,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9174,6 +9540,7 @@
     "category": 17
   },
   {
+    "id": 446,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9199,6 +9566,7 @@
     "category": 17
   },
   {
+    "id": 447,
     "exp": 361700,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -9224,6 +9592,7 @@
     "category": 17
   },
   {
+    "id": 448,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -9249,6 +9618,7 @@
     "category": 17
   },
   {
+    "id": 449,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -9274,6 +9644,7 @@
     "category": 17
   },
   {
+    "id": 450,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -9299,6 +9670,7 @@
     "category": 17
   },
   {
+    "id": 451,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -9324,6 +9696,7 @@
     "category": 17
   },
   {
+    "id": 452,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -9349,6 +9722,7 @@
     "category": 17
   },
   {
+    "id": 453,
     "exp": 637300,
     "reqGathering": 389,
     "reqIlvl": 0,
@@ -9374,6 +9748,7 @@
     "category": 17
   },
   {
+    "id": 454,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -9399,6 +9774,7 @@
     "category": 17
   },
   {
+    "id": 455,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -9424,6 +9800,7 @@
     "category": 17
   },
   {
+    "id": 456,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -9449,6 +9826,7 @@
     "category": 17
   },
   {
+    "id": 457,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -9474,6 +9852,7 @@
     "category": 17
   },
   {
+    "id": 458,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -9499,6 +9878,7 @@
     "category": 17
   },
   {
+    "id": 459,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -9524,6 +9904,7 @@
     "category": 17
   },
   {
+    "id": 460,
     "exp": 886000,
     "reqGathering": 405,
     "reqIlvl": 0,
@@ -9549,6 +9930,7 @@
     "category": 17
   },
   {
+    "id": 461,
     "exp": 886000,
     "reqGathering": 405,
     "reqIlvl": 0,
@@ -9574,6 +9956,7 @@
     "category": 17
   },
   {
+    "id": 462,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9599,6 +9982,7 @@
     "category": 18
   },
   {
+    "id": 463,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9624,6 +10008,7 @@
     "category": 18
   },
   {
+    "id": 464,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -9649,6 +10034,7 @@
     "category": 18
   },
   {
+    "id": 465,
     "exp": 361700,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -9674,6 +10060,7 @@
     "category": 18
   },
   {
+    "id": 466,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -9699,6 +10086,7 @@
     "category": 18
   },
   {
+    "id": 467,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -9724,6 +10112,7 @@
     "category": 18
   },
   {
+    "id": 468,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -9749,6 +10138,7 @@
     "category": 18
   },
   {
+    "id": 469,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -9774,6 +10164,7 @@
     "category": 18
   },
   {
+    "id": 470,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -9799,6 +10190,7 @@
     "category": 18
   },
   {
+    "id": 471,
     "exp": 637300,
     "reqGathering": 389,
     "reqIlvl": 0,
@@ -9824,6 +10216,7 @@
     "category": 18
   },
   {
+    "id": 472,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -9849,6 +10242,7 @@
     "category": 18
   },
   {
+    "id": 473,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -9874,6 +10268,7 @@
     "category": 18
   },
   {
+    "id": 474,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -9899,6 +10294,7 @@
     "category": 18
   },
   {
+    "id": 475,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -9924,6 +10320,7 @@
     "category": 18
   },
   {
+    "id": 476,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -9949,6 +10346,7 @@
     "category": 18
   },
   {
+    "id": 477,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -9974,6 +10372,7 @@
     "category": 18
   },
   {
+    "id": 478,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -9999,6 +10398,7 @@
     "category": 18
   },
   {
+    "id": 479,
     "exp": 886000,
     "reqGathering": 405,
     "reqIlvl": 0,
@@ -10024,6 +10424,7 @@
     "category": 18
   },
   {
+    "id": 480,
     "exp": 258100,
     "reqGathering": 228,
     "reqIlvl": 0,
@@ -10049,6 +10450,7 @@
     "category": 19
   },
   {
+    "id": 481,
     "exp": 361700,
     "reqGathering": 249,
     "reqIlvl": 0,
@@ -10074,6 +10476,7 @@
     "category": 19
   },
   {
+    "id": 482,
     "exp": 361700,
     "reqGathering": 249,
     "reqIlvl": 0,
@@ -10099,6 +10502,7 @@
     "category": 19
   },
   {
+    "id": 483,
     "exp": 361700,
     "reqGathering": 249,
     "reqIlvl": 0,
@@ -10124,6 +10528,7 @@
     "category": 19
   },
   {
+    "id": 484,
     "exp": 361700,
     "reqGathering": 271,
     "reqIlvl": 0,
@@ -10149,6 +10554,7 @@
     "category": 19
   },
   {
+    "id": 485,
     "exp": 361700,
     "reqGathering": 271,
     "reqIlvl": 0,
@@ -10174,6 +10580,7 @@
     "category": 19
   },
   {
+    "id": 486,
     "exp": 492800,
     "reqGathering": 291,
     "reqIlvl": 0,
@@ -10199,6 +10606,7 @@
     "category": 19
   },
   {
+    "id": 487,
     "exp": 492800,
     "reqGathering": 291,
     "reqIlvl": 0,
@@ -10224,6 +10632,7 @@
     "category": 19
   },
   {
+    "id": 488,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10249,6 +10658,7 @@
     "category": 19
   },
   {
+    "id": 489,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10274,6 +10684,7 @@
     "category": 19
   },
   {
+    "id": 490,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10299,6 +10710,7 @@
     "category": 19
   },
   {
+    "id": 491,
     "exp": 637300,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -10324,6 +10736,7 @@
     "category": 19
   },
   {
+    "id": 492,
     "exp": 637300,
     "reqGathering": 320,
     "reqIlvl": 0,
@@ -10349,6 +10762,7 @@
     "category": 19
   },
   {
+    "id": 493,
     "exp": 637300,
     "reqGathering": 320,
     "reqIlvl": 0,
@@ -10374,6 +10788,7 @@
     "category": 19
   },
   {
+    "id": 494,
     "exp": 793500,
     "reqGathering": 327,
     "reqIlvl": 0,
@@ -10399,6 +10814,7 @@
     "category": 19
   },
   {
+    "id": 495,
     "exp": 793500,
     "reqGathering": 327,
     "reqIlvl": 0,
@@ -10424,6 +10840,7 @@
     "category": 19
   },
   {
+    "id": 496,
     "exp": 793500,
     "reqGathering": 336,
     "reqIlvl": 0,
@@ -10449,6 +10866,7 @@
     "category": 19
   },
   {
+    "id": 497,
     "exp": 793500,
     "reqGathering": 336,
     "reqIlvl": 0,
@@ -10474,6 +10892,7 @@
     "category": 19
   },
   {
+    "id": 498,
     "exp": 886000,
     "reqGathering": 347,
     "reqIlvl": 0,
@@ -10499,6 +10918,7 @@
     "category": 19
   },
   {
+    "id": 499,
     "exp": 886000,
     "reqGathering": 347,
     "reqIlvl": 0,
@@ -10524,6 +10944,7 @@
     "category": 19
   },
   {
+    "id": 500,
     "exp": 83800,
     "reqGathering": 99,
     "reqIlvl": 0,
@@ -10549,6 +10970,7 @@
     "category": 17
   },
   {
+    "id": 501,
     "exp": 361700,
     "reqGathering": 249,
     "reqIlvl": 0,
@@ -10574,6 +10996,7 @@
     "category": 19
   },
   {
+    "id": 502,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10599,6 +11022,7 @@
     "category": 19
   },
   {
+    "id": 503,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10624,6 +11048,7 @@
     "category": 19
   },
   {
+    "id": 504,
     "exp": 492800,
     "reqGathering": 312,
     "reqIlvl": 0,
@@ -10649,6 +11074,7 @@
     "category": 19
   },
   {
+    "id": 505,
     "exp": 492800,
     "reqGathering": 291,
     "reqIlvl": 0,
@@ -10674,6 +11100,7 @@
     "category": 19
   },
   {
+    "id": 506,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10699,6 +11126,7 @@
     "category": 17
   },
   {
+    "id": 507,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10724,6 +11152,7 @@
     "category": 17
   },
   {
+    "id": 508,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10749,6 +11178,7 @@
     "category": 17
   },
   {
+    "id": 509,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10774,6 +11204,7 @@
     "category": 17
   },
   {
+    "id": 510,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10799,6 +11230,7 @@
     "category": 17
   },
   {
+    "id": 511,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10824,6 +11256,7 @@
     "category": 17
   },
   {
+    "id": 512,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10849,6 +11282,7 @@
     "category": 17
   },
   {
+    "id": 513,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10874,6 +11308,7 @@
     "category": 17
   },
   {
+    "id": 514,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10899,6 +11334,7 @@
     "category": 17
   },
   {
+    "id": 515,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10924,6 +11360,7 @@
     "category": 17
   },
   {
+    "id": 516,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10949,6 +11386,7 @@
     "category": 18
   },
   {
+    "id": 517,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10974,6 +11412,7 @@
     "category": 18
   },
   {
+    "id": 518,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -10999,6 +11438,7 @@
     "category": 18
   },
   {
+    "id": 519,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11024,6 +11464,7 @@
     "category": 18
   },
   {
+    "id": 520,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11049,6 +11490,7 @@
     "category": 18
   },
   {
+    "id": 521,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11074,6 +11516,7 @@
     "category": 18
   },
   {
+    "id": 522,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11099,6 +11542,7 @@
     "category": 18
   },
   {
+    "id": 523,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11124,6 +11568,7 @@
     "category": 18
   },
   {
+    "id": 524,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11149,6 +11594,7 @@
     "category": 18
   },
   {
+    "id": 525,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11174,6 +11620,7 @@
     "category": 18
   },
   {
+    "id": 526,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11199,6 +11646,7 @@
     "category": 18
   },
   {
+    "id": 527,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11224,6 +11672,7 @@
     "category": 18
   },
   {
+    "id": 528,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11249,6 +11698,7 @@
     "category": 18
   },
   {
+    "id": 529,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11274,6 +11724,7 @@
     "category": 17
   },
   {
+    "id": 530,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11299,6 +11750,7 @@
     "category": 17
   },
   {
+    "id": 531,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11324,6 +11776,7 @@
     "category": 17
   },
   {
+    "id": 532,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11349,6 +11802,7 @@
     "category": 17
   },
   {
+    "id": 533,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11374,6 +11828,7 @@
     "category": 17
   },
   {
+    "id": 534,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11399,6 +11854,7 @@
     "category": 18
   },
   {
+    "id": 535,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11424,6 +11880,7 @@
     "category": 18
   },
   {
+    "id": 536,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11449,6 +11906,7 @@
     "category": 17
   },
   {
+    "id": 537,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11474,6 +11932,7 @@
     "category": 18
   },
   {
+    "id": 538,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11499,6 +11958,7 @@
     "category": 17
   },
   {
+    "id": 539,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11524,6 +11984,7 @@
     "category": 18
   },
   {
+    "id": 540,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11549,6 +12010,7 @@
     "category": 17
   },
   {
+    "id": 541,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11574,6 +12036,7 @@
     "category": 17
   },
   {
+    "id": 542,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11599,6 +12062,7 @@
     "category": 18
   },
   {
+    "id": 543,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11624,6 +12088,7 @@
     "category": 17
   },
   {
+    "id": 544,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11649,6 +12114,7 @@
     "category": 18
   },
   {
+    "id": 545,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -11674,6 +12140,7 @@
     "category": 17
   },
   {
+    "id": 546,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -11699,6 +12166,7 @@
     "category": 17
   },
   {
+    "id": 547,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -11724,6 +12192,7 @@
     "category": 17
   },
   {
+    "id": 548,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -11749,6 +12218,7 @@
     "category": 18
   },
   {
+    "id": 549,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -11774,6 +12244,7 @@
     "category": 18
   },
   {
+    "id": 550,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -11799,6 +12270,7 @@
     "category": 18
   },
   {
+    "id": 551,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -11824,6 +12296,7 @@
     "category": 18
   },
   {
+    "id": 556,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -11849,6 +12322,7 @@
     "category": 17
   },
   {
+    "id": 557,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -11874,6 +12348,7 @@
     "category": 18
   },
   {
+    "id": 558,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -11899,6 +12374,7 @@
     "category": 18
   },
   {
+    "id": 559,
     "exp": 15600,
     "reqGathering": 40,
     "reqIlvl": 0,
@@ -11924,6 +12400,7 @@
     "category": 18
   },
   {
+    "id": 560,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -11949,6 +12426,7 @@
     "category": 18
   },
   {
+    "id": 561,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -11974,6 +12452,7 @@
     "category": 18
   },
   {
+    "id": 562,
     "exp": 23700,
     "reqGathering": 41,
     "reqIlvl": 0,
@@ -11999,6 +12478,7 @@
     "category": 18
   },
   {
+    "id": 563,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -12024,6 +12504,7 @@
     "category": 18
   },
   {
+    "id": 564,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -12049,6 +12530,7 @@
     "category": 18
   },
   {
+    "id": 565,
     "exp": 23700,
     "reqGathering": 43,
     "reqIlvl": 0,
@@ -12074,6 +12556,7 @@
     "category": 18
   },
   {
+    "id": 566,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -12099,6 +12582,7 @@
     "category": 18
   },
   {
+    "id": 567,
     "exp": 30500,
     "reqGathering": 44,
     "reqIlvl": 0,
@@ -12124,6 +12608,7 @@
     "category": 18
   },
   {
+    "id": 568,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12149,6 +12634,7 @@
     "category": 18
   },
   {
+    "id": 569,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12174,6 +12660,7 @@
     "category": 18
   },
   {
+    "id": 570,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12199,6 +12686,7 @@
     "category": 18
   },
   {
+    "id": 571,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12224,6 +12712,7 @@
     "category": 18
   },
   {
+    "id": 572,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12249,6 +12738,7 @@
     "category": 18
   },
   {
+    "id": 573,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12274,6 +12764,7 @@
     "category": 18
   },
   {
+    "id": 574,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12299,6 +12790,7 @@
     "category": 18
   },
   {
+    "id": 575,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12324,6 +12816,7 @@
     "category": 17
   },
   {
+    "id": 576,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12349,6 +12842,7 @@
     "category": 18
   },
   {
+    "id": 577,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12374,6 +12868,7 @@
     "category": 17
   },
   {
+    "id": 586,
     "exp": 886000,
     "reqGathering": 405,
     "reqIlvl": 0,
@@ -12399,6 +12894,7 @@
     "category": 17
   },
   {
+    "id": 587,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12424,6 +12920,7 @@
     "category": 17
   },
   {
+    "id": 588,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -12449,6 +12946,7 @@
     "category": 17
   },
   {
+    "id": 589,
     "exp": 361700,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -12474,6 +12972,7 @@
     "category": 17
   },
   {
+    "id": 590,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -12499,6 +12998,7 @@
     "category": 17
   },
   {
+    "id": 591,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -12524,6 +13024,7 @@
     "category": 17
   },
   {
+    "id": 592,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -12549,6 +13050,7 @@
     "category": 17
   },
   {
+    "id": 593,
     "exp": 637300,
     "reqGathering": 389,
     "reqIlvl": 0,
@@ -12574,6 +13076,7 @@
     "category": 17
   },
   {
+    "id": 594,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -12599,6 +13102,7 @@
     "category": 17
   },
   {
+    "id": 595,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -12624,6 +13128,7 @@
     "category": 17
   },
   {
+    "id": 596,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -12649,6 +13154,7 @@
     "category": 17
   },
   {
+    "id": 597,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12674,6 +13180,7 @@
     "category": 17
   },
   {
+    "id": 598,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12699,6 +13206,7 @@
     "category": 17
   },
   {
+    "id": 599,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12724,6 +13232,7 @@
     "category": 17
   },
   {
+    "id": 600,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12749,6 +13258,7 @@
     "category": 17
   },
   {
+    "id": 601,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12774,6 +13284,7 @@
     "category": 17
   },
   {
+    "id": 602,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -12799,6 +13310,7 @@
     "category": 17
   },
   {
+    "id": 603,
     "exp": 886000,
     "reqGathering": 405,
     "reqIlvl": 0,
@@ -12824,6 +13336,7 @@
     "category": 18
   },
   {
+    "id": 604,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -12849,6 +13362,7 @@
     "category": 18
   },
   {
+    "id": 605,
     "exp": 258100,
     "reqGathering": 311,
     "reqIlvl": 0,
@@ -12874,6 +13388,7 @@
     "category": 18
   },
   {
+    "id": 606,
     "exp": 361700,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -12899,6 +13414,7 @@
     "category": 18
   },
   {
+    "id": 607,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -12924,6 +13440,7 @@
     "category": 18
   },
   {
+    "id": 608,
     "exp": 492800,
     "reqGathering": 363,
     "reqIlvl": 0,
@@ -12949,6 +13466,7 @@
     "category": 18
   },
   {
+    "id": 609,
     "exp": 492800,
     "reqGathering": 388,
     "reqIlvl": 0,
@@ -12974,6 +13492,7 @@
     "category": 18
   },
   {
+    "id": 610,
     "exp": 637300,
     "reqGathering": 389,
     "reqIlvl": 0,
@@ -12999,6 +13518,7 @@
     "category": 18
   },
   {
+    "id": 611,
     "exp": 793500,
     "reqGathering": 396,
     "reqIlvl": 0,
@@ -13024,6 +13544,7 @@
     "category": 18
   },
   {
+    "id": 612,
     "exp": 637300,
     "reqGathering": 392,
     "reqIlvl": 0,
@@ -13049,6 +13570,7 @@
     "category": 18
   },
   {
+    "id": 613,
     "exp": 793500,
     "reqGathering": 401,
     "reqIlvl": 0,
@@ -13074,6 +13596,7 @@
     "category": 18
   },
   {
+    "id": 614,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13099,6 +13622,7 @@
     "category": 18
   },
   {
+    "id": 615,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13124,6 +13648,7 @@
     "category": 18
   },
   {
+    "id": 616,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13149,6 +13674,7 @@
     "category": 18
   },
   {
+    "id": 617,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13174,6 +13700,7 @@
     "category": 18
   },
   {
+    "id": 618,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13199,6 +13726,7 @@
     "category": 18
   },
   {
+    "id": 619,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13224,6 +13752,7 @@
     "category": 18
   },
   {
+    "id": 620,
     "exp": 258100,
     "reqGathering": 149,
     "reqIlvl": 0,
@@ -13249,6 +13778,7 @@
     "category": 18
   },
   {
+    "id": 621,
     "exp": 361700,
     "reqGathering": 314,
     "reqIlvl": 0,
@@ -13274,6 +13804,7 @@
     "category": 18
   },
   {
+    "id": 622,
     "exp": 361700,
     "reqGathering": 362,
     "reqIlvl": 0,
@@ -13299,6 +13830,7 @@
     "category": 18
   },
   {
+    "id": 623,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13324,6 +13856,7 @@
     "category": 18
   },
   {
+    "id": 624,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13349,6 +13882,7 @@
     "category": 18
   },
   {
+    "id": 625,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13374,6 +13908,7 @@
     "category": 18
   },
   {
+    "id": 626,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13399,6 +13934,7 @@
     "category": 18
   },
   {
+    "id": 627,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13424,6 +13960,7 @@
     "category": 18
   },
   {
+    "id": 628,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13449,6 +13986,7 @@
     "category": 17
   },
   {
+    "id": 629,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13474,6 +14012,7 @@
     "category": 17
   },
   {
+    "id": 630,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13499,6 +14038,7 @@
     "category": 17
   },
   {
+    "id": 631,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13524,6 +14064,7 @@
     "category": 17
   },
   {
+    "id": 632,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -13549,6 +14090,7 @@
     "category": 18
   },
   {
+    "id": 633,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13574,6 +14116,7 @@
     "category": 18
   },
   {
+    "id": 634,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13599,6 +14142,7 @@
     "category": 18
   },
   {
+    "id": 635,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13624,6 +14168,7 @@
     "category": 18
   },
   {
+    "id": 636,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13649,6 +14194,7 @@
     "category": 18
   },
   {
+    "id": 637,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13674,6 +14220,7 @@
     "category": 18
   },
   {
+    "id": 638,
     "exp": 58100,
     "reqGathering": 65,
     "reqIlvl": 0,
@@ -13699,6 +14246,7 @@
     "category": 18
   },
   {
+    "id": 639,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13724,6 +14272,7 @@
     "category": 18
   },
   {
+    "id": 640,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13749,6 +14298,7 @@
     "category": 18
   },
   {
+    "id": 641,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13774,6 +14324,7 @@
     "category": 18
   },
   {
+    "id": 642,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13799,6 +14350,7 @@
     "category": 18
   },
   {
+    "id": 643,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13824,6 +14376,7 @@
     "category": 17
   },
   {
+    "id": 644,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13849,6 +14402,7 @@
     "category": 17
   },
   {
+    "id": 645,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13874,6 +14428,7 @@
     "category": 17
   },
   {
+    "id": 646,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13899,6 +14454,7 @@
     "category": 17
   },
   {
+    "id": 647,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -13924,6 +14480,7 @@
     "category": 17
   },
   {
+    "id": 648,
     "exp": 886000,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -13949,6 +14506,7 @@
     "category": 17
   },
   {
+    "id": 649,
     "exp": 893700,
     "reqGathering": 714,
     "reqIlvl": 0,
@@ -13974,6 +14532,7 @@
     "category": 17
   },
   {
+    "id": 650,
     "exp": 893700,
     "reqGathering": 728,
     "reqIlvl": 0,
@@ -13999,6 +14558,7 @@
     "category": 17
   },
   {
+    "id": 651,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14024,6 +14584,7 @@
     "category": 17
   },
   {
+    "id": 652,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -14049,6 +14610,7 @@
     "category": 17
   },
   {
+    "id": 653,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -14074,6 +14636,7 @@
     "category": 17
   },
   {
+    "id": 654,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -14099,6 +14662,7 @@
     "category": 17
   },
   {
+    "id": 655,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -14124,6 +14688,7 @@
     "category": 17
   },
   {
+    "id": 656,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -14149,6 +14714,7 @@
     "category": 17
   },
   {
+    "id": 657,
     "exp": 1388100,
     "reqGathering": 805,
     "reqIlvl": 0,
@@ -14174,6 +14740,7 @@
     "category": 17
   },
   {
+    "id": 658,
     "exp": 1388100,
     "reqGathering": 805,
     "reqIlvl": 0,
@@ -14199,6 +14766,7 @@
     "category": 17
   },
   {
+    "id": 659,
     "exp": 886000,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -14224,6 +14792,7 @@
     "category": 17
   },
   {
+    "id": 660,
     "exp": 886000,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -14249,6 +14818,7 @@
     "category": 17
   },
   {
+    "id": 661,
     "exp": 893700,
     "reqGathering": 714,
     "reqIlvl": 0,
@@ -14274,6 +14844,7 @@
     "category": 17
   },
   {
+    "id": 662,
     "exp": 893700,
     "reqGathering": 728,
     "reqIlvl": 0,
@@ -14299,6 +14870,7 @@
     "category": 17
   },
   {
+    "id": 663,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -14324,6 +14896,7 @@
     "category": 17
   },
   {
+    "id": 664,
     "exp": 1008800,
     "reqGathering": 759,
     "reqIlvl": 0,
@@ -14349,6 +14922,7 @@
     "category": 17
   },
   {
+    "id": 665,
     "exp": 1139600,
     "reqGathering": 790,
     "reqIlvl": 0,
@@ -14374,6 +14948,7 @@
     "category": 17
   },
   {
+    "id": 666,
     "exp": 1139600,
     "reqGathering": 790,
     "reqIlvl": 0,
@@ -14399,6 +14974,7 @@
     "category": 17
   },
   {
+    "id": 667,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -14424,6 +15000,7 @@
     "category": 18
   },
   {
+    "id": 668,
     "exp": 886000,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -14449,6 +15026,7 @@
     "category": 18
   },
   {
+    "id": 669,
     "exp": 886000,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -14474,6 +15052,7 @@
     "category": 18
   },
   {
+    "id": 670,
     "exp": 893700,
     "reqGathering": 728,
     "reqIlvl": 0,
@@ -14499,6 +15078,7 @@
     "category": 18
   },
   {
+    "id": 671,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14524,6 +15104,7 @@
     "category": 18
   },
   {
+    "id": 672,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -14549,6 +15130,7 @@
     "category": 18
   },
   {
+    "id": 673,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -14574,6 +15156,7 @@
     "category": 18
   },
   {
+    "id": 674,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -14599,6 +15182,7 @@
     "category": 18
   },
   {
+    "id": 675,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -14624,6 +15208,7 @@
     "category": 18
   },
   {
+    "id": 676,
     "exp": 1008800,
     "reqGathering": 759,
     "reqIlvl": 0,
@@ -14649,6 +15234,7 @@
     "category": 18
   },
   {
+    "id": 677,
     "exp": 1008800,
     "reqGathering": 759,
     "reqIlvl": 0,
@@ -14674,6 +15260,7 @@
     "category": 18
   },
   {
+    "id": 678,
     "exp": 1388100,
     "reqGathering": 805,
     "reqIlvl": 0,
@@ -14699,6 +15286,7 @@
     "category": 18
   },
   {
+    "id": 679,
     "exp": 1388100,
     "reqGathering": 805,
     "reqIlvl": 0,
@@ -14724,6 +15312,7 @@
     "category": 18
   },
   {
+    "id": 680,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -14749,6 +15338,7 @@
     "category": 18
   },
   {
+    "id": 681,
     "exp": 886000,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -14774,6 +15364,7 @@
     "category": 18
   },
   {
+    "id": 682,
     "exp": 893700,
     "reqGathering": 714,
     "reqIlvl": 0,
@@ -14799,6 +15390,7 @@
     "category": 18
   },
   {
+    "id": 683,
     "exp": 893700,
     "reqGathering": 714,
     "reqIlvl": 0,
@@ -14824,6 +15416,7 @@
     "category": 18
   },
   {
+    "id": 684,
     "exp": 893700,
     "reqGathering": 714,
     "reqIlvl": 0,
@@ -14849,6 +15442,7 @@
     "category": 18
   },
   {
+    "id": 685,
     "exp": 893700,
     "reqGathering": 728,
     "reqIlvl": 0,
@@ -14874,6 +15468,7 @@
     "category": 18
   },
   {
+    "id": 686,
     "exp": 893700,
     "reqGathering": 728,
     "reqIlvl": 0,
@@ -14899,6 +15494,7 @@
     "category": 18
   },
   {
+    "id": 687,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14924,6 +15520,7 @@
     "category": 18
   },
   {
+    "id": 688,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14949,6 +15546,7 @@
     "category": 18
   },
   {
+    "id": 689,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14974,6 +15572,7 @@
     "category": 18
   },
   {
+    "id": 690,
     "exp": 932700,
     "reqGathering": 734,
     "reqIlvl": 0,
@@ -14999,6 +15598,7 @@
     "category": 18
   },
   {
+    "id": 691,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -15024,6 +15624,7 @@
     "category": 18
   },
   {
+    "id": 692,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -15049,6 +15650,7 @@
     "category": 18
   },
   {
+    "id": 693,
     "exp": 932700,
     "reqGathering": 739,
     "reqIlvl": 0,
@@ -15074,6 +15676,7 @@
     "category": 18
   },
   {
+    "id": 694,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -15099,6 +15702,7 @@
     "category": 18
   },
   {
+    "id": 695,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -15124,6 +15728,7 @@
     "category": 18
   },
   {
+    "id": 696,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -15149,6 +15754,7 @@
     "category": 18
   },
   {
+    "id": 697,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -15174,6 +15780,7 @@
     "category": 18
   },
   {
+    "id": 698,
     "exp": 1008800,
     "reqGathering": 744,
     "reqIlvl": 0,
@@ -15199,6 +15806,7 @@
     "category": 18
   },
   {
+    "id": 699,
     "exp": 1008800,
     "reqGathering": 759,
     "reqIlvl": 0,
@@ -15224,6 +15832,7 @@
     "category": 18
   },
   {
+    "id": 700,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15249,6 +15858,7 @@
     "category": 18
   },
   {
+    "id": 701,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15274,6 +15884,7 @@
     "category": 18
   },
   {
+    "id": 702,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15299,6 +15910,7 @@
     "category": 18
   },
   {
+    "id": 703,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15324,6 +15936,7 @@
     "category": 18
   },
   {
+    "id": 704,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15349,6 +15962,7 @@
     "category": 18
   },
   {
+    "id": 705,
     "exp": 1139600,
     "reqGathering": 775,
     "reqIlvl": 0,
@@ -15374,6 +15988,7 @@
     "category": 18
   },
   {
+    "id": 706,
     "exp": 1139600,
     "reqGathering": 790,
     "reqIlvl": 0,
@@ -15399,6 +16014,7 @@
     "category": 18
   },
   {
+    "id": 707,
     "exp": 1139600,
     "reqGathering": 790,
     "reqIlvl": 0,
@@ -15424,6 +16040,7 @@
     "category": 18
   },
   {
+    "id": 708,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -15449,6 +16066,7 @@
     "category": 18
   },
   {
+    "id": 709,
     "exp": 886000,
     "reqGathering": 0,
     "reqIlvl": 235,
@@ -15474,6 +16092,7 @@
     "category": 34
   },
   {
+    "id": 710,
     "exp": 886000,
     "reqGathering": 0,
     "reqIlvl": 235,
@@ -15499,6 +16118,7 @@
     "category": 34
   },
   {
+    "id": 711,
     "exp": 893700,
     "reqGathering": 0,
     "reqIlvl": 245,
@@ -15524,6 +16144,7 @@
     "category": 34
   },
   {
+    "id": 712,
     "exp": 893700,
     "reqGathering": 0,
     "reqIlvl": 245,
@@ -15549,6 +16170,7 @@
     "category": 34
   },
   {
+    "id": 713,
     "exp": 893700,
     "reqGathering": 0,
     "reqIlvl": 245,
@@ -15574,6 +16196,7 @@
     "category": 34
   },
   {
+    "id": 714,
     "exp": 893700,
     "reqGathering": 0,
     "reqIlvl": 250,
@@ -15599,6 +16222,7 @@
     "category": 34
   },
   {
+    "id": 715,
     "exp": 893700,
     "reqGathering": 0,
     "reqIlvl": 250,
@@ -15624,6 +16248,7 @@
     "category": 34
   },
   {
+    "id": 716,
     "exp": 932700,
     "reqGathering": 0,
     "reqIlvl": 253,
@@ -15649,6 +16274,7 @@
     "category": 34
   },
   {
+    "id": 717,
     "exp": 932700,
     "reqGathering": 0,
     "reqIlvl": 256,
@@ -15674,6 +16300,7 @@
     "category": 34
   },
   {
+    "id": 718,
     "exp": 1008800,
     "reqGathering": 0,
     "reqIlvl": 259,
@@ -15699,6 +16326,7 @@
     "category": 34
   },
   {
+    "id": 719,
     "exp": 1008800,
     "reqGathering": 0,
     "reqIlvl": 259,
@@ -15724,6 +16352,7 @@
     "category": 34
   },
   {
+    "id": 720,
     "exp": 1008800,
     "reqGathering": 0,
     "reqIlvl": 259,
@@ -15749,6 +16378,7 @@
     "category": 34
   },
   {
+    "id": 721,
     "exp": 1008800,
     "reqGathering": 0,
     "reqIlvl": 262,
@@ -15774,6 +16404,7 @@
     "category": 34
   },
   {
+    "id": 722,
     "exp": 1008800,
     "reqGathering": 0,
     "reqIlvl": 262,
@@ -15799,6 +16430,7 @@
     "category": 34
   },
   {
+    "id": 723,
     "exp": 1139600,
     "reqGathering": 0,
     "reqIlvl": 265,
@@ -15824,6 +16456,7 @@
     "category": 34
   },
   {
+    "id": 724,
     "exp": 1139600,
     "reqGathering": 0,
     "reqIlvl": 265,
@@ -15849,6 +16482,7 @@
     "category": 34
   },
   {
+    "id": 725,
     "exp": 1139600,
     "reqGathering": 0,
     "reqIlvl": 268,
@@ -15874,6 +16508,7 @@
     "category": 34
   },
   {
+    "id": 726,
     "exp": 1139600,
     "reqGathering": 0,
     "reqIlvl": 268,
@@ -15899,6 +16534,7 @@
     "category": 34
   },
   {
+    "id": 727,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 270,
@@ -15924,6 +16560,7 @@
     "category": 34
   },
   {
+    "id": 728,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 270,
@@ -15949,6 +16586,7 @@
     "category": 34
   },
   {
+    "id": 729,
     "exp": 886000,
     "reqGathering": 560,
     "reqIlvl": 0,
@@ -15974,6 +16612,7 @@
     "category": 19
   },
   {
+    "id": 730,
     "exp": 893700,
     "reqGathering": 571,
     "reqIlvl": 0,
@@ -15999,6 +16638,7 @@
     "category": 19
   },
   {
+    "id": 731,
     "exp": 893700,
     "reqGathering": 582,
     "reqIlvl": 0,
@@ -16024,6 +16664,7 @@
     "category": 19
   },
   {
+    "id": 732,
     "exp": 932700,
     "reqGathering": 587,
     "reqIlvl": 0,
@@ -16049,6 +16690,7 @@
     "category": 19
   },
   {
+    "id": 733,
     "exp": 932700,
     "reqGathering": 591,
     "reqIlvl": 0,
@@ -16074,6 +16716,7 @@
     "category": 19
   },
   {
+    "id": 734,
     "exp": 1008800,
     "reqGathering": 595,
     "reqIlvl": 0,
@@ -16099,6 +16742,7 @@
     "category": 19
   },
   {
+    "id": 735,
     "exp": 1008800,
     "reqGathering": 607,
     "reqIlvl": 0,
@@ -16124,6 +16768,7 @@
     "category": 19
   },
   {
+    "id": 736,
     "exp": 1139600,
     "reqGathering": 620,
     "reqIlvl": 0,
@@ -16149,6 +16794,7 @@
     "category": 19
   },
   {
+    "id": 737,
     "exp": 1139600,
     "reqGathering": 632,
     "reqIlvl": 0,
@@ -16174,6 +16820,7 @@
     "category": 19
   },
   {
+    "id": 738,
     "exp": 1388100,
     "reqGathering": 644,
     "reqIlvl": 0,
@@ -16199,6 +16846,7 @@
     "category": 19
   },
   {
+    "id": 739,
     "exp": 886000,
     "reqGathering": 602,
     "reqIlvl": 0,
@@ -16224,6 +16872,7 @@
     "category": 17
   },
   {
+    "id": 744,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16249,6 +16898,7 @@
     "category": 17
   },
   {
+    "id": 745,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16274,6 +16924,7 @@
     "category": 17
   },
   {
+    "id": 746,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16299,6 +16950,7 @@
     "category": 18
   },
   {
+    "id": 747,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16324,6 +16976,7 @@
     "category": 18
   },
   {
+    "id": 748,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16349,6 +17002,7 @@
     "category": 17
   },
   {
+    "id": 749,
     "exp": 1388100,
     "reqGathering": 875,
     "reqIlvl": 0,
@@ -16374,6 +17028,7 @@
     "category": 18
   },
   {
+    "id": 750,
     "exp": 1388100,
     "reqGathering": 700,
     "reqIlvl": 0,
@@ -16399,6 +17054,7 @@
     "category": 19
   },
   {
+    "id": 751,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16424,6 +17080,7 @@
     "category": 17
   },
   {
+    "id": 752,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16449,6 +17106,7 @@
     "category": 17
   },
   {
+    "id": 753,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16474,6 +17132,7 @@
     "category": 18
   },
   {
+    "id": 754,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16499,6 +17158,7 @@
     "category": 18
   },
   {
+    "id": 755,
     "exp": 1388100,
     "reqGathering": 812,
     "reqIlvl": 0,
@@ -16524,6 +17184,7 @@
     "category": 19
   },
   {
+    "id": 756,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16549,6 +17210,7 @@
     "category": 17
   },
   {
+    "id": 757,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16574,6 +17236,7 @@
     "category": 18
   },
   {
+    "id": 758,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -16599,6 +17262,7 @@
     "category": 17
   },
   {
+    "id": 759,
     "exp": 1388100,
     "reqGathering": 1155,
     "reqIlvl": 0,
@@ -16624,6 +17288,7 @@
     "category": 17
   },
   {
+    "id": 760,
     "exp": 1388100,
     "reqGathering": 1155,
     "reqIlvl": 0,
@@ -16649,6 +17314,7 @@
     "category": 17
   },
   {
+    "id": 761,
     "exp": 1388100,
     "reqGathering": 1155,
     "reqIlvl": 0,
@@ -16674,6 +17340,7 @@
     "category": 18
   },
   {
+    "id": 762,
     "exp": 1388100,
     "reqGathering": 1155,
     "reqIlvl": 0,
@@ -16699,6 +17366,7 @@
     "category": 18
   },
   {
+    "id": 771,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 270,
@@ -16724,6 +17392,7 @@
     "category": 34
   },
   {
+    "id": 772,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 370,
@@ -16749,6 +17418,7 @@
     "category": 34
   },
   {
+    "id": 773,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 370,
@@ -16774,6 +17444,7 @@
     "category": 34
   },
   {
+    "id": 774,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 370,
@@ -16799,6 +17470,7 @@
     "category": 34
   },
   {
+    "id": 775,
     "exp": 1388100,
     "reqGathering": 0,
     "reqIlvl": 370,
@@ -16824,6 +17496,7 @@
     "category": 34
   },
   {
+    "id": 776,
     "exp": 1749900,
     "reqGathering": 0,
     "reqIlvl": 375,
@@ -16849,6 +17522,7 @@
     "category": 34
   },
   {
+    "id": 777,
     "exp": 1749900,
     "reqGathering": 0,
     "reqIlvl": 380,
@@ -16874,6 +17548,7 @@
     "category": 34
   },
   {
+    "id": 778,
     "exp": 1749900,
     "reqGathering": 0,
     "reqIlvl": 380,
@@ -16899,6 +17574,7 @@
     "category": 34
   },
   {
+    "id": 779,
     "exp": 2233000,
     "reqGathering": 0,
     "reqIlvl": 383,
@@ -16924,6 +17600,7 @@
     "category": 34
   },
   {
+    "id": 780,
     "exp": 2233000,
     "reqGathering": 0,
     "reqIlvl": 386,
@@ -16949,6 +17626,7 @@
     "category": 34
   },
   {
+    "id": 781,
     "exp": 2233000,
     "reqGathering": 0,
     "reqIlvl": 386,
@@ -16974,6 +17652,7 @@
     "category": 34
   },
   {
+    "id": 782,
     "exp": 2865000,
     "reqGathering": 0,
     "reqIlvl": 389,
@@ -16999,6 +17678,7 @@
     "category": 34
   },
   {
+    "id": 783,
     "exp": 2865000,
     "reqGathering": 0,
     "reqIlvl": 392,
@@ -17024,6 +17704,7 @@
     "category": 34
   },
   {
+    "id": 784,
     "exp": 2865000,
     "reqGathering": 0,
     "reqIlvl": 392,
@@ -17049,6 +17730,7 @@
     "category": 34
   },
   {
+    "id": 785,
     "exp": 3765000,
     "reqGathering": 0,
     "reqIlvl": 395,
@@ -17074,6 +17756,7 @@
     "category": 34
   },
   {
+    "id": 786,
     "exp": 3765000,
     "reqGathering": 0,
     "reqIlvl": 398,
@@ -17099,6 +17782,7 @@
     "category": 34
   },
   {
+    "id": 787,
     "exp": 3765000,
     "reqGathering": 0,
     "reqIlvl": 398,
@@ -17124,6 +17808,7 @@
     "category": 34
   },
   {
+    "id": 788,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -17149,6 +17834,7 @@
     "category": 17
   },
   {
+    "id": 789,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -17174,6 +17860,7 @@
     "category": 17
   },
   {
+    "id": 790,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -17199,6 +17886,7 @@
     "category": 17
   },
   {
+    "id": 791,
     "exp": 1749900,
     "reqGathering": 1235,
     "reqIlvl": 0,
@@ -17224,6 +17912,7 @@
     "category": 17
   },
   {
+    "id": 792,
     "exp": 2233000,
     "reqGathering": 1260,
     "reqIlvl": 0,
@@ -17249,6 +17938,7 @@
     "category": 17
   },
   {
+    "id": 793,
     "exp": 2233000,
     "reqGathering": 1260,
     "reqIlvl": 0,
@@ -17274,6 +17964,7 @@
     "category": 17
   },
   {
+    "id": 794,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17299,6 +17990,7 @@
     "category": 17
   },
   {
+    "id": 795,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17324,6 +18016,7 @@
     "category": 17
   },
   {
+    "id": 796,
     "exp": 2865000,
     "reqGathering": 1360,
     "reqIlvl": 0,
@@ -17349,6 +18042,7 @@
     "category": 17
   },
   {
+    "id": 797,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -17374,6 +18068,7 @@
     "category": 17
   },
   {
+    "id": 798,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -17399,6 +18094,7 @@
     "category": 17
   },
   {
+    "id": 799,
     "exp": 4330000,
     "reqGathering": 1459,
     "reqIlvl": 0,
@@ -17424,6 +18120,7 @@
     "category": 17
   },
   {
+    "id": 800,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -17449,6 +18146,7 @@
     "category": 17
   },
   {
+    "id": 801,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -17474,6 +18172,7 @@
     "category": 17
   },
   {
+    "id": 802,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17499,6 +18198,7 @@
     "category": 17
   },
   {
+    "id": 803,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17524,6 +18224,7 @@
     "category": 17
   },
   {
+    "id": 804,
     "exp": 2233000,
     "reqGathering": 1294,
     "reqIlvl": 0,
@@ -17549,6 +18250,7 @@
     "category": 17
   },
   {
+    "id": 805,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17574,6 +18276,7 @@
     "category": 17
   },
   {
+    "id": 806,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17599,6 +18302,7 @@
     "category": 17
   },
   {
+    "id": 807,
     "exp": 3765000,
     "reqGathering": 1426,
     "reqIlvl": 0,
@@ -17624,6 +18328,7 @@
     "category": 17
   },
   {
+    "id": 808,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17649,6 +18354,7 @@
     "category": 18
   },
   {
+    "id": 809,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17674,6 +18380,7 @@
     "category": 18
   },
   {
+    "id": 810,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17699,6 +18406,7 @@
     "category": 18
   },
   {
+    "id": 811,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -17724,6 +18432,7 @@
     "category": 18
   },
   {
+    "id": 812,
     "exp": 2233000,
     "reqGathering": 1260,
     "reqIlvl": 0,
@@ -17749,6 +18458,7 @@
     "category": 18
   },
   {
+    "id": 813,
     "exp": 2233000,
     "reqGathering": 1294,
     "reqIlvl": 0,
@@ -17774,6 +18484,7 @@
     "category": 18
   },
   {
+    "id": 814,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17799,6 +18510,7 @@
     "category": 18
   },
   {
+    "id": 815,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -17824,6 +18536,7 @@
     "category": 18
   },
   {
+    "id": 816,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -17849,6 +18562,7 @@
     "category": 18
   },
   {
+    "id": 817,
     "exp": 4330000,
     "reqGathering": 1459,
     "reqIlvl": 0,
@@ -17874,6 +18588,7 @@
     "category": 18
   },
   {
+    "id": 818,
     "exp": 1388100,
     "reqGathering": 1015,
     "reqIlvl": 0,
@@ -17899,6 +18614,7 @@
     "category": 18
   },
   {
+    "id": 819,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17924,6 +18640,7 @@
     "category": 18
   },
   {
+    "id": 820,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17949,6 +18666,7 @@
     "category": 18
   },
   {
+    "id": 821,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17974,6 +18692,7 @@
     "category": 18
   },
   {
+    "id": 822,
     "exp": 1388100,
     "reqGathering": 1190,
     "reqIlvl": 0,
@@ -17999,6 +18718,7 @@
     "category": 18
   },
   {
+    "id": 823,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -18024,6 +18744,7 @@
     "category": 18
   },
   {
+    "id": 824,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -18049,6 +18770,7 @@
     "category": 18
   },
   {
+    "id": 825,
     "exp": 1749900,
     "reqGathering": 1225,
     "reqIlvl": 0,
@@ -18074,6 +18796,7 @@
     "category": 18
   },
   {
+    "id": 826,
     "exp": 1749900,
     "reqGathering": 1235,
     "reqIlvl": 0,
@@ -18099,6 +18822,7 @@
     "category": 18
   },
   {
+    "id": 827,
     "exp": 2233000,
     "reqGathering": 1260,
     "reqIlvl": 0,
@@ -18124,6 +18848,7 @@
     "category": 18
   },
   {
+    "id": 828,
     "exp": 2233000,
     "reqGathering": 1260,
     "reqIlvl": 0,
@@ -18149,6 +18874,7 @@
     "category": 18
   },
   {
+    "id": 829,
     "exp": 2233000,
     "reqGathering": 1294,
     "reqIlvl": 0,
@@ -18174,6 +18900,7 @@
     "category": 18
   },
   {
+    "id": 830,
     "exp": 2233000,
     "reqGathering": 1294,
     "reqIlvl": 0,
@@ -18199,6 +18926,7 @@
     "category": 18
   },
   {
+    "id": 831,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -18224,6 +18952,7 @@
     "category": 18
   },
   {
+    "id": 832,
     "exp": 2865000,
     "reqGathering": 1327,
     "reqIlvl": 0,
@@ -18249,6 +18978,7 @@
     "category": 18
   },
   {
+    "id": 833,
     "exp": 2865000,
     "reqGathering": 1360,
     "reqIlvl": 0,
@@ -18274,6 +19004,7 @@
     "category": 18
   },
   {
+    "id": 834,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -18299,6 +19030,7 @@
     "category": 18
   },
   {
+    "id": 835,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -18324,6 +19056,7 @@
     "category": 18
   },
   {
+    "id": 836,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -18349,6 +19082,7 @@
     "category": 18
   },
   {
+    "id": 837,
     "exp": 3765000,
     "reqGathering": 1426,
     "reqIlvl": 0,
@@ -18374,6 +19108,7 @@
     "category": 18
   },
   {
+    "id": 838,
     "exp": 3765000,
     "reqGathering": 1426,
     "reqIlvl": 0,
@@ -18399,6 +19134,7 @@
     "category": 18
   },
   {
+    "id": 839,
     "exp": 3765000,
     "reqGathering": 1393,
     "reqIlvl": 0,
@@ -18424,6 +19160,7 @@
     "category": 18
   },
   {
+    "id": 840,
     "exp": 3765000,
     "reqGathering": 1426,
     "reqIlvl": 0,
@@ -18449,6 +19186,7 @@
     "category": 18
   },
   {
+    "id": 841,
     "exp": 1388100,
     "reqGathering": 952,
     "reqIlvl": 0,
@@ -18474,6 +19212,7 @@
     "category": 19
   },
   {
+    "id": 842,
     "exp": 1749900,
     "reqGathering": 980,
     "reqIlvl": 0,
@@ -18499,6 +19238,7 @@
     "category": 19
   },
   {
+    "id": 843,
     "exp": 1749900,
     "reqGathering": 988,
     "reqIlvl": 0,
@@ -18524,6 +19264,7 @@
     "category": 19
   },
   {
+    "id": 844,
     "exp": 2233000,
     "reqGathering": 1008,
     "reqIlvl": 0,
@@ -18549,6 +19290,7 @@
     "category": 19
   },
   {
+    "id": 845,
     "exp": 2865000,
     "reqGathering": 1088,
     "reqIlvl": 0,
@@ -18574,6 +19316,7 @@
     "category": 19
   },
   {
+    "id": 846,
     "exp": 2233000,
     "reqGathering": 1008,
     "reqIlvl": 0,
@@ -18599,6 +19342,7 @@
     "category": 19
   },
   {
+    "id": 847,
     "exp": 2865000,
     "reqGathering": 1061,
     "reqIlvl": 0,
@@ -18624,6 +19368,7 @@
     "category": 19
   },
   {
+    "id": 848,
     "exp": 3765000,
     "reqGathering": 1114,
     "reqIlvl": 0,
@@ -18649,6 +19394,7 @@
     "category": 19
   },
   {
+    "id": 849,
     "exp": 3765000,
     "reqGathering": 1114,
     "reqIlvl": 0,
@@ -18674,6 +19420,7 @@
     "category": 19
   },
   {
+    "id": 850,
     "exp": 3765000,
     "reqGathering": 1140,
     "reqIlvl": 0,
@@ -18699,6 +19446,7 @@
     "category": 19
   },
   {
+    "id": 855,
     "exp": 4330000,
     "reqGathering": 1459,
     "reqIlvl": 0,
@@ -18724,6 +19472,7 @@
     "category": 17
   },
   {
+    "id": 856,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18749,6 +19498,7 @@
     "category": 17
   },
   {
+    "id": 857,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18774,6 +19524,7 @@
     "category": 17
   },
   {
+    "id": 858,
     "exp": 4330000,
     "reqGathering": 1459,
     "reqIlvl": 0,
@@ -18799,6 +19550,7 @@
     "category": 18
   },
   {
+    "id": 859,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18824,6 +19576,7 @@
     "category": 18
   },
   {
+    "id": 860,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18849,6 +19602,7 @@
     "category": 18
   },
   {
+    "id": 861,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18874,6 +19628,7 @@
     "category": 17
   },
   {
+    "id": 862,
     "exp": 4330000,
     "reqGathering": 1528,
     "reqIlvl": 0,
@@ -18899,6 +19654,7 @@
     "category": 18
   },
   {
+    "id": 863,
     "exp": 4330000,
     "reqGathering": 1222,
     "reqIlvl": 0,
@@ -18924,6 +19680,7 @@
     "category": 19
   },
   {
+    "id": 864,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -18949,6 +19706,7 @@
     "category": 17
   },
   {
+    "id": 865,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -18974,6 +19732,7 @@
     "category": 17
   },
   {
+    "id": 866,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -18999,6 +19758,7 @@
     "category": 17
   },
   {
+    "id": 867,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -19024,6 +19784,7 @@
     "category": 18
   },
   {
+    "id": 868,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -19049,6 +19810,7 @@
     "category": 18
   },
   {
+    "id": 869,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -19074,6 +19836,7 @@
     "category": 18
   },
   {
+    "id": 870,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -19099,6 +19862,7 @@
     "category": 17
   },
   {
+    "id": 871,
     "exp": 4330000,
     "reqGathering": 1584,
     "reqIlvl": 0,
@@ -19124,6 +19888,7 @@
     "category": 18
   },
   {
+    "id": 872,
     "exp": 4330000,
     "reqGathering": 1267,
     "reqIlvl": 0,

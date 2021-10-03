@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { uniq } from 'lodash';
 
 export class VenturesExtractor extends AbstractExtractor<number[]> {
 
@@ -25,7 +26,8 @@ export class VenturesExtractor extends AbstractExtractor<number[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): Observable<number[]> | number[] {
-    return this.lazyData.data.ventureSources[item.id];
+    const deterministic = this.lazyData.data.retainerTasks.filter(task => task.item === item.id).map(task => task.id);
+    return uniq([...deterministic, ...this.lazyData.data.ventureSources[item.id]]);
   }
 
 }
