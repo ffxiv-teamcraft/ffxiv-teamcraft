@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.1"></a>
+## [8.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.0...v8.6.1) (2021-10-03)
+
+
+### Bug Fixes
+
+* **db:** fixed multiple predator fish not being displayed properly ([001b61c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/001b61c))
+* **db:** removed ocean fishing time details shown on every single gathering node details ([2119c0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2119c0f))
+* **list:** added missing deterministic venture sources ([3c8b920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c8b920))
+* **list:** fixed instance details not displayed properly ([46c4f3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46c4f3a))
+* **nodes:** fixed fishing spot db button opening spearfishing spot page instead ([321b43c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/321b43c))
+
+
+### Features
+
+* **retainers:** new button to open details in Universalis and better duplicate management ([66732ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66732ef))
+* new supporters: The Hoe Depot and Late Night Friendos ([1c23fc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c23fc2))
+* **allagan-reports:** better review system for the checkers ([2269e44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2269e44))
+* **db:** imported 500+ new allagan reports ([033a375](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/033a375))
+* **db:** new data source: Mogstation, available in the allagan reports too ([44a2988](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44a2988))
+* **settings:** new button to reload you gubal auth token ([725422a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/725422a))
+
+
+
 <a name="8.6.0"></a>
 # [8.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.9...v8.6.0) (2021-10-02)
 
