@@ -199,7 +199,7 @@ export class AppComponent implements OnInit {
       first()
     ).subscribe(token => {
       const ws = new WebSocketLink({
-        uri: `ws://gubal.hasura.app/v1/graphql`,
+        uri: `wss://gubal.hasura.app/v1/graphql`,
         options: {
           reconnect: true,
           connectionParams: () => {
