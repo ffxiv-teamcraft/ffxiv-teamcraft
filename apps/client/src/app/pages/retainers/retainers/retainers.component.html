@@ -79,10 +79,12 @@
               <div nz-col nzMd="6" *ngIf="item.mbStatus">
                 <nz-tag class="custom-tag"
                         [style.border-color]="getDiffTagColor(item.mbStatus.diff)"
-                        nz-tooltip [nzTooltipTitle]="(item.mbStatus.diff > 0 ? 'RETAINERS.X%_above' : 'RETAINERS.X%_below') | translate:{diff: item.mbStatus.diff}">
+                        nz-tooltip
+                        [nzTooltipTitle]="(item.mbStatus.diff > 0 ? 'RETAINERS.X%_above' : 'RETAINERS.X%_below') | translate:{diff: item.mbStatus.diff}">
                   {{item.mbStatus.diff > 0 ? '+' : ''}}{{item.mbStatus.diff}}%
                 </nz-tag>
                 <nz-tag>{{'RETAINERS.Lowest_price' | translate}}: {{item.mbStatus.lowest | number:'1.0-0':translate.currentLang}}</nz-tag>
+                <a href="https://universalis.app/market/{{item.itemId}}" target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
               </div>
             </div>
           </div>

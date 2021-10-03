@@ -78,7 +78,7 @@ export class RetainersComponent {
                     .map(entry => {
                       return {
                         ...entry,
-                        mbStatus: retainerPrices.prices[`${row.characterName}:${retainer.name}:${entry.itemId}`]
+                        mbStatus: retainerPrices.prices[`${row.characterName}:${retainer.name}:${entry.itemId}!${entry.unitMbPrice}`]
                       };
                     })
                 };
@@ -127,13 +127,14 @@ export class RetainersComponent {
       .map(retainer => {
         return this.universalis.getServerPrices(server, ...retainer.marketItems.map(e => e.itemId)).pipe(
           map(prices => {
-            return retainer.marketItems.map(entry => {
+            return retainer.marketItems.map((entry, index) => {
               const listing = prices.find(p => p.ItemId === entry.itemId);
               const sortedPrices = listing.Prices.filter((p: any) => p.retainerName !== retainer.name)
                 .sort((a, b) => a.PricePerUnit - b.PricePerUnit);
               const lowest = sortedPrices[0]?.PricePerUnit;
               return {
                 itemId: entry.itemId,
+                unitMbPrice: entry.unitMbPrice,
                 lowestSameQuantity: sortedPrices.filter(l => {
                   return Math.abs(l.Quantity - entry.quantity) / entry.quantity <= 0.1;
                 })[0]?.PricePerUnit,
@@ -158,7 +159,7 @@ export class RetainersComponent {
       results.forEach(row => {
         row.prices.forEach(priceEntry => {
           const { itemId, ...entry } = priceEntry;
-          pricesState.prices[`${characterName}:${row.retainerName}:${itemId}`] = entry;
+          pricesState.prices[`${characterName}:${row.retainerName}:${itemId}!${entry.unitMbPrice}`] = entry;
         });
       });
       this.retainersPrices$.next({
