@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "퀘스트",
   "Facebook_notice": "페이스북 로그인은 더이상 지원하지 않습니다. '비밀번호 재설정' 을 통해 비밀번호를 변경하시거나, 팀크래프트 디스코드에서 Miu에게 비밀번호 변경을 요청할 수 있습니다.",
   "Pick_a_list": "목록 선택",
@@ -486,6 +487,7 @@
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
     "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
     "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -2775,6 +2777,13 @@
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "Enter FATE name",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "SOURCE": {
       "DESYNTH": "분해",
       "REDUCTION": "정제",
@@ -2786,7 +2795,8 @@
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
       "SPEARFISHING": "작살 낚시",
-      "FATE": "돌발 임무"
+      "FATE": "돌발 임무",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
