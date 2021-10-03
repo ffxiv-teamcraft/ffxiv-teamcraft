@@ -261,6 +261,7 @@
   "Item_name": "아이템 이름",
   "No_items_found": "검색 결과 없음",
   "No_instances_found": "검색 결과 없음",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "검색 결과 없음",
   "No_npcs_found": "검색 결과 없음",
   "No_mobs_found": "검색 결과 없음",
@@ -2784,6 +2785,7 @@
     "Price": "Price",
     "Product_id": "Product ID",
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
     "SOURCE": {
       "DESYNTH": "분해",
       "REDUCTION": "정제",
