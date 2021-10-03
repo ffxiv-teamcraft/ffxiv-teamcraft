@@ -82,7 +82,6 @@ export class AllaganReportsComponent {
   }
 
   public handleCheckboxClick($event: MouseEvent, rows: AllaganReportQueueEntry[], index: number): void {
-    console.log($event.shiftKey, index);
     if ($event.shiftKey) {
       const slice = rows.slice(0, index).reverse();
       for (const row of slice) {
