@@ -4,9 +4,6 @@
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="itemId"></app-item-icon>
         <div class="item-name-title">{{itemId | itemName | i18n}}</div>
-        <div>
-          <button nz-button nzShape="circle" (click)="reload()"><i nz-icon nzType="reload" nzTheme="outline"></i></button>
-        </div>
       </div>
     </div>
     <nz-divider [nzText]="'ALLAGAN_REPORTS.Reports' | translate" nzOrientation="left"></nz-divider>

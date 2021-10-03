@@ -12,4 +12,5 @@ export interface AllaganReportQueueEntry {
   source: AllaganReportSource;
   data: any;
   created_at: number;
+  selected?: boolean;
 }
