@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "Quests",
   "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
   "Pick_a_list": "Pick a list",
@@ -2780,6 +2781,9 @@
     "Accept_many": "Accept selected reports ({{amount}})",
     "Reject_many": "Reject selected reports ({{amount}})",
     "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2791,7 +2795,8 @@
       "INSTANCE": "INSTANCE",
       "FISHING": "FISHING",
       "SPEARFISHING": "SPEARFISHING",
-      "FATE": "FATE"
+      "FATE": "FATE",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

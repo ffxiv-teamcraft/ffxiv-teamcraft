@@ -15,6 +15,7 @@ import { Treasure } from './treasure';
 import { FateData } from './fate-data';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { GardeningData } from './gardening-data';
+import { MogstationItem } from './mogstation-item';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -87,6 +88,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.ALARMS, isO
 export function getItemSource<T = any>(item: ListRow, type: DataType.MASTERBOOKS, isObject?: boolean): CompactMasterbook[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.MOGSTATION, isObject?: boolean): MogstationItem
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
   if (item.sources === undefined) {

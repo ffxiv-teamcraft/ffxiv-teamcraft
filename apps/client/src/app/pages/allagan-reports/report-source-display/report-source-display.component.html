@@ -11,6 +11,7 @@
     <img *ngSwitchCase="AllaganReportSource.FISHING" alt="Fishing" class="img-icon round-icon" [src]="4 | nodeTypeIcon">
     <img *ngSwitchCase="AllaganReportSource.SPEARFISHING" alt="Fishing" class="img-icon round-icon" [src]="5 | nodeTypeIcon">
     <img *ngSwitchCase="AllaganReportSource.FATE" alt="FATE" class="img-icon round-icon" [src]="(397 | fate).icon | xivapiIcon">
+    <img *ngSwitchCase="AllaganReportSource.MOGSTATION" alt="MOGSTATION" class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
   </div>
   <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>
 </div>

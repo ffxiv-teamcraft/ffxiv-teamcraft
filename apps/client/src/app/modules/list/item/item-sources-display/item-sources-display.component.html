@@ -22,6 +22,11 @@
               nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
         <img [src]="source.data[0] | instanceIcon" class="img-icon round-icon">
       </button>
+      <button (click)="openMogstationPopup(item)" *ngSwitchCase="dataTypes.MOGSTATION"
+              nz-button
+              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
+        <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
+      </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">

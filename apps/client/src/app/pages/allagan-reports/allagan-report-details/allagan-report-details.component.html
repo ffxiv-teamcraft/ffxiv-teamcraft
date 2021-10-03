@@ -143,6 +143,24 @@
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
+        <ng-container *ngIf="source === AllaganReportSource.MOGSTATION">
+          <nz-form-item >
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Price' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-input-group class="spawn-input" nzAddOnBefore="$">
+                <nz-input-number class="input-number-with-addon" formControlName="price"></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item >
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Product_id' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Product_id_explain' | translate">
+              <nz-input-group class="spawn-input" nzAddOnBefore="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/">
+                <nz-input-number class="input-number-with-addon" formControlName="productId"></nz-input-number>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+        </ng-container>
         <ng-container *ngIf="source === AllaganReportSource.VOYAGE">
           <nz-form-item>
             <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Voyage_type' | translate}}</nz-form-label>

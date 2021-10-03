@@ -22,6 +22,7 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { RotationPickerService } from '../../../rotations/rotation-picker.service';
 import { GardeningComponent } from '../../../item-details/gardening/gardening.component';
+import { MogstationComponent } from '../../../item-details/mogstation/mogstation.component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -65,6 +66,10 @@ export class ItemSourcesDisplayComponent {
 
   public openInstancesPopup(item: ListRow): void {
     this.openDetailsPopup(InstancesComponent, item, DataType.INSTANCES);
+  }
+
+  public openMogstationPopup(item: ListRow): void {
+    this.openDetailsPopup(MogstationComponent, item, DataType.MOGSTATION);
   }
 
   public openReducedFromPopup(item: ListRow): void {

@@ -69,6 +69,7 @@ export interface LazyData {
   materias: any;
   medicines: any;
   mobs: any;
+  mogstationSources: any;
   monsters: any;
   nodes: any;
   notebookDivisionCategory: any;
