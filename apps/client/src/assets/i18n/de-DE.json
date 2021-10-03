@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "Aufträge",
   "Facebook_notice": "Facebook-Login ist nicht länger verfügbar. Du kannst entweder deinem Konto durch \"Passwort zurücksetzen\" ein Passwort hinzufügen oder Miu auf Discord fragen.",
   "Pick_a_list": "Wähle eine Liste",
@@ -486,6 +487,7 @@
     "Has_access_to_housing_vendor": "Haushändler bevorzugen",
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
     "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -2775,6 +2777,13 @@
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "FATE-Name eingeben",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
       "REDUCTION": "RAFFINATION",
@@ -2786,7 +2795,8 @@
       "INSTANCE": "INHALT",
       "FISHING": "FISCHEN",
       "SPEARFISHING": "SPEERFISCHEN",
-      "FATE": "FATE"
+      "FATE": "FATE",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
