@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "Quests",
   "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur discord.",
   "Pick_a_list": "Choisissez une liste",
@@ -260,6 +261,7 @@
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
   "No_instances_found": "Aucune instance trouvée",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "Aucune quête trouvée",
   "No_npcs_found": "Aucun PNJ trouvé",
   "No_mobs_found": "Aucun monstre trouvé",
@@ -486,6 +488,7 @@
     "Has_access_to_housing_vendor": "Utiliser le vendeur de la maison en priorité",
     "Has_access_to_housing_vendor_explain": "Utiliser le vendeur de la maison en priorité dans le système de regroupement par PNJ, utile si vous avez accès à un.",
     "Hide_back_button": "Masquer le bouton retour dans la barre latérale",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -2775,6 +2778,14 @@
     "Others": "Other items",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "Enter FATE name",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
@@ -2786,7 +2797,8 @@
       "INSTANCE": "Instance",
       "FISHING": "Pêche",
       "SPEARFISHING": "Pêche au harpon",
-      "FATE": "Aléa"
+      "FATE": "Aléa",
+      "MOGSTATION": "MOGSTATION"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
