@@ -56,8 +56,11 @@ export class AllaganReportsComponent {
         fishCoverage: Math.floor(1000 * (this.lazyData.data.fishes.length - fishWithNoData.length) / this.lazyData.data.fishes.length) / 10,
         fishWithNoData,
         itemsWithNoSource: Object.values(extracts).filter(e => {
-          const name = this.lazyData.data.items[e.id].en;
-          return !['Dated', 'Skybuilders'].some(ignored => name.indexOf(ignored) > -1)
+          const enName = this.lazyData.data.items[e.id].en;
+          const frName = this.lazyData.data.items[e.id].fr;
+          return !fishWithNoData.includes(e.id)
+            && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
+            && !/S\d{1,2}$/.test(frName) && enName.length > 0
             && e.sources.length === 0 && !dashboardData.itemIds.includes(e.id);
         }).map(e => e.id).sort((a, b) => b - a)
       };
