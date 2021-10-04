@@ -304,7 +304,7 @@
 
                 <app-lazy-scroll [data]="row.trades" [rowTemplate]="rowTpl" rowSize="651" displayedRows="1"></app-lazy-scroll>
                 <ng-template #rowTpl let-source>
-                  <nz-card  [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
+                  <nz-card [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
                     <nz-table #basicTable [nzData]="source.trades">
                       <thead>
                       <tr>
@@ -446,7 +446,7 @@
           <div>
             <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
           </div>
-          <ng-container  *ngIf="noData">
+          <ng-container *ngIf="noData">
             <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
               <app-fullpage-message height="150px">
                 {{'DB.No_known_way_to_obtain' | translate}}
@@ -775,21 +775,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  <nz-list [nzDataSource]="source.data" [nzItemLayout]="'horizontal'"
-                           [nzRenderItem]="achievementTemplate">
-                    <ng-template #achievementTemplate let-achievement>
-                      <nz-list-item [nzContent]="content">
-                        <nz-list-item-meta
-                          [nzAvatar]="achievement | achievementIcon | xivapiIcon"
-                          [nzDescription]="achievementDescription"
-                          [nzTitle]="achievement | achievementName | i18n">
-                          <ng-template #content>
-                            <app-db-button [id]="achievement" type="achievement"></app-db-button>
-                          </ng-template>
-                        </nz-list-item-meta>
-                      </nz-list-item>
-                    </ng-template>
-                  </nz-list>
+                  <app-achievements [item]="data" [details]="source.data"></app-achievements>
                 </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.TRIPLE_TRIAD_PACK" [nzTitle]="title"
                          class="details-card"

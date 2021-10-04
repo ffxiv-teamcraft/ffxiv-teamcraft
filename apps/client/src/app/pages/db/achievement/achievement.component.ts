@@ -24,9 +24,11 @@ export class AchievementComponent extends TeamcraftPageComponent {
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
+  public rewards$: Observable<{ type: string, id: number, amount: number }[]>
+
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
+              private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
@@ -34,7 +36,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
       const correctSlug = this.i18n.getName(this.l12n.getAchievementName(+params.get('achievementId'))).split(' ').join('-');
-      
+
       if (slug === null) {
         this.router.navigate(
           [correctSlug],
@@ -66,6 +68,26 @@ export class AchievementComponent extends TeamcraftPageComponent {
       }),
       shareReplay(1)
     );
+
+    this.rewards$ = this.achievement$.pipe(
+      map(achievement => {
+        const rewards = [];
+        if(achievement.ItemTargetID){
+          rewards.push({
+            type: 'item',
+            id: achievement.ItemTargetID
+          })
+        }
+        if(achievement.TitleTargetID){
+          rewards.push({
+            type: 'title',
+            id: achievement.TitleTargetID
+          })
+        }
+
+        return rewards;
+      })
+    )
 
     this.links$ = this.achievement$.pipe(
       map((achievement) => {

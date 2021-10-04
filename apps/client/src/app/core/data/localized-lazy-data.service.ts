@@ -209,6 +209,10 @@ export class LocalizedLazyDataService {
     return this.getRow('ventures', id);
   }
 
+  public getTitle(id: number): I18nNameLazy {
+    return this.getRow('titles', id);
+  }
+
   public getQuestName(id: number): I18nNameLazy {
     const { ruKey, koKey, zhKey } = this.guessExtendedLanguageKeys('quests');
     const en = this.getResolver('quests', `${id}.name`, 'en');

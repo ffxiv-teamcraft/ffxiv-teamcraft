@@ -32,6 +32,7 @@ import { GardeningComponent } from './gardening/gardening.component';
 import { MogstationComponent } from './mogstation/mogstation.component';
 import { QuestsComponent } from './quests/quests.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 @NgModule({
   imports: [
@@ -73,7 +74,8 @@ import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
     RelationshipsComponent,
     GardeningComponent,
     MogstationComponent,
-    QuestsComponent
+    QuestsComponent,
+    AchievementsComponent
   ],
   exports: [
     GatheredByComponent,
@@ -90,7 +92,8 @@ import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
     RelationshipsComponent,
     GardeningComponent,
     MogstationComponent,
-    QuestsComponent
+    QuestsComponent,
+    AchievementsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

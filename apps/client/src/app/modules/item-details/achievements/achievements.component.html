@@ -1,0 +1,15 @@
+<nz-list [nzDataSource]="details" [nzItemLayout]="'horizontal'"
+         [nzRenderItem]="achievementTemplate">
+  <ng-template #achievementTemplate let-achievement>
+    <nz-list-item [nzContent]="content">
+      <nz-list-item-meta
+        [nzAvatar]="achievement | achievementIcon | xivapiIcon"
+        [nzDescription]="achievementDescription"
+        [nzTitle]="achievement | achievementName | i18n">
+        <ng-template #content>
+          <app-db-button [id]="achievement" type="achievement"></app-db-button>
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+  </ng-template>
+</nz-list>
