@@ -1,5 +1,5 @@
 {
-  "Mogstation": "Mogstation",
+  "Mogstation": "모그스테이션",
   "Quests": "퀘스트",
   "Facebook_notice": "페이스북 로그인은 더이상 지원하지 않습니다. '비밀번호 재설정' 을 통해 비밀번호를 변경하시거나, 팀크래프트 디스코드에서 Miu에게 비밀번호 변경을 요청할 수 있습니다.",
   "Pick_a_list": "목록 선택",
@@ -261,7 +261,7 @@
   "Item_name": "아이템 이름",
   "No_items_found": "검색 결과 없음",
   "No_instances_found": "검색 결과 없음",
-  "No_fishing_spot_found": "No fishing spots found",
+  "No_fishing_spot_found": "낚시터를 찾지 못했습니다",
   "No_quests_found": "검색 결과 없음",
   "No_npcs_found": "검색 결과 없음",
   "No_mobs_found": "검색 결과 없음",
@@ -488,7 +488,7 @@
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
     "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
     "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
-    "Reload_auth_token": "Reload auth token",
+    "Reload_auth_token": "인증 토큰 다시 불러오기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -640,8 +640,8 @@
     "Can_skip_buying_entirely": "전부 스킵 가능",
     "Can_skip_tooltip": "다른 아이템을 구매하기 위해선 해당 아이템이 필요합니다. 즉, 해당 패널에 있는 모든 것을 구매할 계획이라면 아이템을 적게 구매하거나 완전히 건너뛸 수 있습니다",
     "Requirements_ignored": "무시된 재료",
-    "Mark_whole_panel_nq": "Remove manual HQ flags",
-    "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Mark_whole_panel_nq": "수동 HQ 마크 제거",
+    "Mark_whole_panel_hq": "전체 패널 HQ 마크",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
