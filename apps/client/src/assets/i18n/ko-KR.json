@@ -894,7 +894,7 @@
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -1207,7 +1207,7 @@
     "More_on_gamerescape": "'Gamer Escape'에서 자세한 정보 보기",
     "Deliver_to": "{{placename}}에 납품",
     "Hide_large": "대규모 길드 의뢰 숨기기",
-    "Road_to_buff": "Include \"road to XX\" buff",
+    "Road_to_buff": "우대서버 버프 포함",
     "INTRO": {
       "Title": "길드 의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
@@ -2562,8 +2562,8 @@
     "Reset_retainers": "집사 초기화",
     "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
     "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
-    "X%_above": "Your price is {{diff}}% above the current lowest price",
-    "X%_below": "Your price is {{diff}}% below the current lowest price",
+    "X%_above": "현재 최저가보다 {{diff}}% 더 높은 가격입니다",
+    "X%_below": "현재 최저가보다 {{diff}}% 더 낮은 가격입니다",
     "Lowest_price": "낮은 가격 순"
   },
   "RETAINER_VENTURES": {
@@ -2719,7 +2719,7 @@
     "Cross_breeds": "품질개량(교배)"
   },
   "ALLAGAN_REPORTS": {
-    "Feature_banner_title": "New feature: Allagan Reports",
+    "Feature_banner_title": "새로운 기능: 알라간 리포트",
     "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
     "Title": "알라간 리포트",
     "Reports": "리포트",
