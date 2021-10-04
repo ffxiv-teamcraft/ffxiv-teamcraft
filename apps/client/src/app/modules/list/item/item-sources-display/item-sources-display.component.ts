@@ -23,6 +23,8 @@ import { LocalizedDataService } from '../../../../core/data/localized-data.servi
 import { RotationPickerService } from '../../../rotations/rotation-picker.service';
 import { GardeningComponent } from '../../../item-details/gardening/gardening.component';
 import { MogstationComponent } from '../../../item-details/mogstation/mogstation.component';
+import { QuestsComponent } from '../../../item-details/quests/quests.component';
+import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -70,6 +72,14 @@ export class ItemSourcesDisplayComponent {
 
   public openMogstationPopup(item: ListRow): void {
     this.openDetailsPopup(MogstationComponent, item, DataType.MOGSTATION);
+  }
+
+  public openQuestPopup(item: ListRow): void {
+    this.openDetailsPopup(QuestsComponent, item, DataType.QUESTS);
+  }
+
+  public openAchievementsPopup(item: ListRow): void {
+    this.openDetailsPopup(AchievementsComponent, item, DataType.ACHIEVEMENTS);
   }
 
   public openReducedFromPopup(item: ListRow): void {

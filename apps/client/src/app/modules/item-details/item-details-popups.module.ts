@@ -30,6 +30,9 @@ import { NodeDetailsModule } from '../node-details/node-details.module';
 import { InventoryModule } from '../inventory/inventory.module';
 import { GardeningComponent } from './gardening/gardening.component';
 import { MogstationComponent } from './mogstation/mogstation.component';
+import { QuestsComponent } from './quests/quests.component';
+import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 @NgModule({
   imports: [
@@ -53,7 +56,8 @@ import { MogstationComponent } from './mogstation/mogstation.component';
     TranslateModule,
     AntdSharedModule,
     NodeDetailsModule,
-    InventoryModule
+    InventoryModule,
+    LazyScrollModule
   ],
   declarations: [
     GatheredByComponent,
@@ -69,7 +73,9 @@ import { MogstationComponent } from './mogstation/mogstation.component';
     DesynthsComponent,
     RelationshipsComponent,
     GardeningComponent,
-    MogstationComponent
+    MogstationComponent,
+    QuestsComponent,
+    AchievementsComponent
   ],
   exports: [
     GatheredByComponent,
@@ -85,7 +91,9 @@ import { MogstationComponent } from './mogstation/mogstation.component';
     DesynthsComponent,
     RelationshipsComponent,
     GardeningComponent,
-    MogstationComponent
+    MogstationComponent,
+    QuestsComponent,
+    AchievementsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

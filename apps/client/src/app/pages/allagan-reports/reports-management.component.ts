@@ -37,13 +37,22 @@ export class ReportsManagementComponent extends TeamcraftComponent {
         };
       });
 
-    this.instances = Object.keys(this.lazyData.data.instances)
+    this.instances = [
+      ...Object.keys(this.lazyData.data.instances)
       .map(key => {
         return {
           id: +key,
           name: this.lazyData.data.instances[key]
         };
-      });
+      }),
+      ...Object.keys(this.lazyData.data.maps)
+        .map(key => {
+          return {
+            id: -key,
+            name: this.lazyData.data.places[this.lazyData.data.maps[key].placename_id]
+          };
+        }),
+    ];
 
     this.fates = Object.keys(this.lazyData.data.fates)
       .map(key => {

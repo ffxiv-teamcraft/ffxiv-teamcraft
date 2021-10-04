@@ -79,7 +79,7 @@ export class ListRow extends DataModel {
 export function getItemSource<T = any>(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.VENDORS, isObject?: boolean): Vendor[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES | DataType.TREASURES | DataType.INSTANCES, isObject?: boolean): number[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES | DataType.TREASURES | DataType.INSTANCES | DataType.QUESTS, isObject?: boolean): number[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.GATHERED_BY, isObject?: boolean): GatheredBy
 export function getItemSource<T = any>(item: ListRow, type: DataType.GARDENING, isObject?: boolean): GardeningData
 export function getItemSource<T = any>(item: ListRow, type: DataType.VOYAGES, isObject?: boolean): I18nName[]

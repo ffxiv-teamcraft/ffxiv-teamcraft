@@ -96,6 +96,7 @@ export interface LazyData {
   submarineRanks: any;
   submarineVoyages: any;
   territoryLayers: any;
+  titles: any;
   tradeFlags: any;
   traits: any;
   treasures: any;

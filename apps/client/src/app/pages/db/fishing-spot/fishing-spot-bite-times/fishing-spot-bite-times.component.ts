@@ -130,7 +130,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         debounceTime(100)
       );
     }),
-    tap(console.log),
     shareReplay(1)
   );
 

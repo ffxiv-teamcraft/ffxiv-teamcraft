@@ -74,6 +74,7 @@ import { WidthBreakpointsPipe } from './pipes/width-breakpoints';
 import { TugNamePipe } from './pipes/tug-name.pipe';
 import { VoyageNamePipe } from './pipes/voyage-name.pipe';
 import { HooksetActionIdPipe } from './pipes/hookset-action-id.pipe';
+import { TitleNamePipe } from './pipes/title-name.pipe';
 
 @NgModule({
   declarations: [
@@ -152,7 +153,8 @@ import { HooksetActionIdPipe } from './pipes/hookset-action-id.pipe';
     WidthBreakpointsPipe,
     TugNamePipe,
     VoyageNamePipe,
-    HooksetActionIdPipe
+    HooksetActionIdPipe,
+    TitleNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -230,7 +232,8 @@ import { HooksetActionIdPipe } from './pipes/hookset-action-id.pipe';
     WidthBreakpointsPipe,
     TugNamePipe,
     VoyageNamePipe,
-    HooksetActionIdPipe
+    HooksetActionIdPipe,
+    TitleNamePipe
   ]
 })
 export class PipesModule {

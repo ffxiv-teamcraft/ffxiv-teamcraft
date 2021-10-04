@@ -18,12 +18,14 @@
     </div>
   </ng-template>
   <ng-template #iconRender let-id>
-    <app-item-icon [itemId]="id" width="32"></app-item-icon>
+    <app-item-icon *ngIf="id > 0" [itemId]="id" width="32"></app-item-icon>
+    <span *ngIf="id === -1">{{'DB.FISHING_SPOT.Miss' | translate}}</span>
   </ng-template>
   <app-fishing-spot-datagrid
     [activeFish]="activeFish"
     (activeFishChange)="activeFishChange.next($event)"
     [rowIconRender]="iconRender"
+    [colIconRender]="iconRender"
     [table]="table$ | async"
   ></app-fishing-spot-datagrid>
 </nz-card>

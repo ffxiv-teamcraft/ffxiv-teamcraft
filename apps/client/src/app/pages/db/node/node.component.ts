@@ -18,6 +18,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { Region } from '../../../modules/settings/region.enum';
 
 @Component({
   selector: 'app-node',
@@ -90,11 +91,11 @@ export class NodeComponent extends TeamcraftPageComponent {
         if (!(base.GameContentLinks && base.GameContentLinks.GatheringPoint)) {
           return of(base);
         }
-        return combineLatest([base.GameContentLinks.GatheringPoint.GatheringPointBase.map(
+        return combineLatest(base.GameContentLinks.GatheringPoint.GatheringPointBase.map(
           point => {
             return this.xivapi.get(XivapiEndpoint.GatheringPoint, point);
           }
-        )]).pipe(
+        )).pipe(
           map(points => {
             base.GatheringPoints = points;
             return base;
@@ -115,10 +116,12 @@ export class NodeComponent extends TeamcraftPageComponent {
             const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
             const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
 
-            const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
-            if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
-              bonusType.zh = zhRow.bonus.zh;
-              condition.zh = zhRow.condition.zh;
+            if (this.settings.region === Region.China) {
+              const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
+              if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
+                bonusType.zh = zhRow.bonus.zh;
+                condition.zh = zhRow.condition.zh;
+              }
             }
 
             bonuses.push({
@@ -145,10 +148,12 @@ export class NodeComponent extends TeamcraftPageComponent {
   }
 
   public bonusToText(entry: I18nName, value: number): I18nName {
-    return Object.entries(entry).reduce((obj, [key, text]) => {
-      obj[key] = text.replace('<Value>IntegerParameter(1)</Value>', value);
-      return obj;
-    }, { en: '', fr: '', de: '', ja: '' });
+    return Object.entries(entry)
+      .filter(([, text]) => text !== undefined)
+      .reduce((obj, [key, text]) => {
+        obj[key] = text.replace('<Value>IntegerParameter(1)</Value>', value);
+        return obj;
+      }, { en: '', fr: '', de: '', ja: '' });
   }
 
   public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {

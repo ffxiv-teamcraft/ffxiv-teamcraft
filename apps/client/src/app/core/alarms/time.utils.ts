@@ -20,6 +20,12 @@ export class TimeUtils {
   static getComplexIntersection(a: Interval, b: Interval): Interval | null {
     const [a1, a2] = this.splitInterval(a);
     const [b1, b2] = this.splitInterval(b);
+    if (a[0] === a[1]) {
+      return b;
+    }
+    if (b[0] === b[1]) {
+      return a;
+    }
     const firstDay = this.getSimpleIntersection(a1, b1);
     const secondDay = this.getSimpleIntersection(a2, b2);
     const possibleSecondDay = this.getSimpleIntersection(a2, b1);
@@ -43,6 +49,9 @@ export class TimeUtils {
       const firstDay = this.getSimpleIntersection([0, 24], [interval[0] || 24, interval[1] + 24]) || [0, 0];
       const secondDay = this.getSimpleIntersection([interval[0] || 24, interval[1] + 24], [24, 48]) || [0, 0];
       return [firstDay, [secondDay[0] % 24, secondDay[1] % 24]];
+    }
+    if (interval[0] === interval[1]) {
+      return [[interval[0], 0], [0, interval[1]]];
     }
     return [[...interval], [0, 0]];
   }

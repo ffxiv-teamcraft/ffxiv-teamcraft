@@ -351,7 +351,7 @@ export class AlarmsFacade {
         const weatherStart = weatherSpawn.spawn.getUTCHours();
         const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
         const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        const weatherStop = alarm.weathersFrom ? transitionWeatherStop : normalWeatherStop;
+        const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
         const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
         if (range) {
           const intersectSpawn = range[0];
@@ -367,7 +367,8 @@ export class AlarmsFacade {
           // If it's for today, make sure it's not already despawned
           const now = new Date(time);
           const didntSpawnYet = now.getUTCDay() !== weatherSpawn.spawn.getUTCDay() || now.getUTCHours() < intersectDespawn;
-          if (days > 0 || didntSpawnYet) {
+          const isSpawned = now.getUTCDay() === weatherSpawn.spawn.getUTCDay() && now.getUTCHours() >= weatherStart;
+          if (days > 0 || didntSpawnYet || isSpawned) {
             return {
               hours: intersectSpawn,
               days: days,
@@ -438,7 +439,7 @@ export class AlarmsFacade {
 
   public generateAlarms(node: GatheringNode): Alarm[] {
     // If no spawns and no weather, no alarms.
-    if (!node.spawns?.length && !node.weathers?.length) {
+    if (!node?.spawns?.length && !node?.weathers?.length) {
       return [];
     }
     const alarm: Partial<Alarm> = {

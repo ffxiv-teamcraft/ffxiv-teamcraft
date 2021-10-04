@@ -43,7 +43,7 @@
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
+    <div fxLayout="row wrap" fxLayoutGap="10px grid" fxLayoutGap.lt-md="5px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
       <app-fishing-spot-position fxFlex="nogrow" [spot]="xivapiFishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
       <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weathers>
       <app-fishing-spot-weather-transitions fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weather-transitions>

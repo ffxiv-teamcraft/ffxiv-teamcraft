@@ -1,0 +1,16 @@
+<app-lazy-scroll [data]="details" [rowTemplate]="rowTpl" rowSize="56" displayedRows="5"></app-lazy-scroll>
+<ng-template #rowTpl let-quest>
+  <div class="quest-row" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <div>
+        <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
+          <img class="img-icon round-icon" src="./assets/icons/quest.png">
+        </a>
+      </div>
+      <div>
+        {{quest | questName | i18n}}
+      </div>
+    </div>
+    <app-db-button [id]="quest" type="quest"></app-db-button>
+  </div>
+</ng-template>

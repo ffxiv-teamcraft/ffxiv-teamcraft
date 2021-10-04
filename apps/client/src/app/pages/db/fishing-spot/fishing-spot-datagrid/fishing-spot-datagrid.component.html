@@ -3,7 +3,12 @@
     <tr class="grid-header-line">
       <th class="empty-head"></th>
       <th *ngFor="let header of table.data; let last = last; let i = index" class="grid-cell grid-header" [class.last]="last">
-        <app-item-icon [itemId]="header.rowId" width="32"></app-item-icon>
+        <ng-container *ngIf="colIconRender; else itemIconRender">
+          <ng-container *ngTemplateOutlet="colIconRender; context: { $implicit: header.rowId }"></ng-container>
+        </ng-container>
+        <ng-template #itemIconRender>
+          <app-item-icon [itemId]="header.rowId" width="32"></app-item-icon>
+        </ng-template>
       </th>
     </tr>
   </thead>

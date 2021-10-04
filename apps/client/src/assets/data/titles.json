@@ -1,0 +1,3566 @@
+{
+  "1": {
+    "en": "The Insatiable",
+    "ja": "the Insatiable",
+    "de": "der Unersättliche",
+    "fr": "L'Insatiable"
+  },
+  "2": {
+    "en": "The True",
+    "ja": "the True",
+    "de": "der Aufrichtige",
+    "fr": "Chevalier intrépide"
+  },
+  "3": {
+    "en": "Coeurlfist",
+    "ja": "Coeurlfist",
+    "de": "Coeurlfaust",
+    "fr": "Maître des chakras"
+  },
+  "4": {
+    "en": "Ironeater",
+    "ja": "Ironeater",
+    "de": "Eisenfresser",
+    "fr": "Exécuteur bestial"
+  },
+  "5": {
+    "en": "Of the Vengeful Lance",
+    "ja": "of the Vengeful Lance",
+    "de": "vom rachsüchtigen Speer",
+    "fr": "Empaleur céleste"
+  },
+  "6": {
+    "en": "The Godsbow",
+    "ja": "the Godsbow",
+    "de": "Götterbogen",
+    "fr": "Virtuose des flèches"
+  },
+  "7": {
+    "en": "The White",
+    "ja": "the White",
+    "de": "der Weiße",
+    "fr": "Prêtre de la nature"
+  },
+  "8": {
+    "en": "Starcaller",
+    "ja": "Starcaller",
+    "de": "Sternenrufer",
+    "fr": "Chasseur d'étoiles"
+  },
+  "9": {
+    "en": "The Exterminator",
+    "ja": "Exterminator",
+    "de": "der Blutdürstige",
+    "fr": "Le Sanguinaire"
+  },
+  "10": {
+    "en": "Notorious Monster Hunter",
+    "ja": "Notorious Monster Hunter",
+    "de": "Notorischer Kopfgeldjäger",
+    "fr": "Chasseur célèbre"
+  },
+  "11": {
+    "en": "Honest Gillionaire",
+    "ja": "Honest Adventurer",
+    "de": "Ehrenhafter Gillionär",
+    "fr": "Journalier nanti"
+  },
+  "12": {
+    "en": "Ruthless Gillionaire",
+    "ja": "Scavenger",
+    "de": "Ruchloser Gillionär",
+    "fr": "Le Détrousseur"
+  },
+  "13": {
+    "en": "Warmonger",
+    "ja": "Master Fighter",
+    "de": "Kriegstreiber",
+    "fr": "Le Va-t-en-guerre"
+  },
+  "14": {
+    "en": "Archmage",
+    "ja": "Master Sorcerer",
+    "de": "Erzmagier",
+    "fr": "L'Archimage"
+  },
+  "15": {
+    "en": "Builder of the Realm",
+    "ja": "Master Crafter",
+    "de": "Erbauer des Reichs",
+    "fr": "Maître ouvrier"
+  },
+  "16": {
+    "en": "Provider of the Realm",
+    "ja": "Master Gatherer",
+    "de": "Erzeuger des Reichs",
+    "fr": "As des ressources"
+  },
+  "17": {
+    "en": "Of the Golden Saw",
+    "ja": "of the Golden Saw",
+    "de": "von der goldenen Säge",
+    "fr": "L'Ébéniste"
+  },
+  "18": {
+    "en": "Of the Golden Anvil",
+    "ja": "of the Golden Anvil",
+    "de": "vom goldenen Amboss",
+    "fr": "Le Forgeur"
+  },
+  "19": {
+    "en": "Of the Golden Hammer",
+    "ja": "of the Golden Hammer",
+    "de": "vom goldenen Hammer",
+    "fr": "Le Marteleur"
+  },
+  "20": {
+    "en": "Of the Golden Leaf",
+    "ja": "of the Golden Leaf",
+    "de": "vom goldenen Blatt",
+    "fr": "Le Joaillier"
+  },
+  "21": {
+    "en": "Of the Golden Hide",
+    "ja": "of the Golden Hide",
+    "de": "vom goldenen Fell",
+    "fr": "Le Mégissier"
+  },
+  "22": {
+    "en": "Of the Golden Needle",
+    "ja": "of the Golden Needle",
+    "de": "von der goldenen Nadel",
+    "fr": "Le Tailleur"
+  },
+  "23": {
+    "en": "Of the Golden Lead",
+    "ja": "of the Golden Lead",
+    "de": "vom goldenen Blei",
+    "fr": "L'Apothicaire"
+  },
+  "24": {
+    "en": "Of the Golden Ladle",
+    "ja": "of the Golden Ladle",
+    "de": "von der goldenen Kelle",
+    "fr": "Le Cordon-bleu"
+  },
+  "25": {
+    "en": "Meadowbreaker",
+    "ja": "La Noscea Digger",
+    "de": "der die Wiesen gräbt",
+    "fr": "Mineur de la prairie"
+  },
+  "26": {
+    "en": "Forestbreaker",
+    "ja": "Shroud Digger",
+    "de": "der die Wälder gräbt",
+    "fr": "Mineur de la forêt"
+  },
+  "27": {
+    "en": "Desertbreaker",
+    "ja": "Thanalan Digger",
+    "de": "der die Wüsten gräbt",
+    "fr": "Mineur du désert"
+  },
+  "28": {
+    "en": "Of the Meadow Mines",
+    "ja": "La Noscea Crusher",
+    "de": "vom Auenstein",
+    "fr": "Extracteur de la prairie"
+  },
+  "29": {
+    "en": "Of the Forest Mines",
+    "ja": "Shroud Crusher",
+    "de": "vom Tannenstein",
+    "fr": "Extracteur de la forêt"
+  },
+  "30": {
+    "en": "Of the Desert Mines",
+    "ja": "Thanalan Crusher",
+    "de": "vom Steppenstein",
+    "fr": "Extracteur du désert"
+  },
+  "31": {
+    "en": "Meadowreaper",
+    "ja": "La Noscea Logger",
+    "de": "der die Wiesen rodet",
+    "fr": "Bûcheron de la prairie"
+  },
+  "32": {
+    "en": "Forestreaper",
+    "ja": "Shroud Logger",
+    "de": "der die Wälder rodet",
+    "fr": "Bûcheron de la forêt"
+  },
+  "33": {
+    "en": "Desertreaper",
+    "ja": "Thanalan Logger",
+    "de": "der die Wüsten rodet",
+    "fr": "Bûcheron du désert"
+  },
+  "34": {
+    "en": "Of the Meadow Grasses",
+    "ja": "La Noscea Harvester",
+    "de": "vom Auengras",
+    "fr": "Faucheur de la prairie"
+  },
+  "35": {
+    "en": "Of the Forest Grasses",
+    "ja": "Shroud Harvester",
+    "de": "vom Tannengras",
+    "fr": "Faucheur de la forêt"
+  },
+  "36": {
+    "en": "Of the Desert Grasses",
+    "ja": "Thanalan Harvester",
+    "de": "vom Steppengras",
+    "fr": "Faucheur du désert"
+  },
+  "37": {
+    "en": "Meadowcaster",
+    "ja": "La Noscea Angler",
+    "de": "der die Wiesen einholt",
+    "fr": "Pêcheur de la prairie"
+  },
+  "38": {
+    "en": "Forestcaster",
+    "ja": "Shroud Angler",
+    "de": "der die Wälder einholt",
+    "fr": "Pêcheur de la forêt"
+  },
+  "39": {
+    "en": "Desertcaster",
+    "ja": "Thanalan Angler",
+    "de": "der die Wüsten einholt",
+    "fr": "Pêcheur du désert"
+  },
+  "40": {
+    "en": "Of the Meadow Pools",
+    "ja": "La Noscea Harpooner",
+    "de": "vom Auenteich",
+    "fr": "Harponneur de la prairie"
+  },
+  "41": {
+    "en": "Of the Forest Pools",
+    "ja": "Shroud Harpooner",
+    "de": "vom Tannenteich",
+    "fr": "Harponneur de la forêt"
+  },
+  "42": {
+    "en": "Of the Desert Pools",
+    "ja": "Thanalan Harpooner",
+    "de": "vom Steppenteich",
+    "fr": "Harponneur du désert"
+  },
+  "43": {
+    "en": "Carrier of the Cauldron",
+    "ja": "Carrier of the Cauldron",
+    "de": "Virtuoser Materialist",
+    "fr": "Sertisseur certifié"
+  },
+  "44": {
+    "en": "The Assimilator",
+    "ja": "the Materia Master",
+    "de": "Materia-Maestro",
+    "fr": "Maestro ès matérias"
+  },
+  "45": {
+    "en": "Seeker of Blood",
+    "ja": "Expert Fighter",
+    "de": "Kämpferseele",
+    "fr": "Combattant zélé"
+  },
+  "46": {
+    "en": "Seeker of Truth",
+    "ja": "Expert Sorcerer",
+    "de": "Magierseele",
+    "fr": "Mage zélé"
+  },
+  "47": {
+    "en": "Seeker of Skill",
+    "ja": "Expert Crafter",
+    "de": "Handwerkerseele",
+    "fr": "Artisan zélé"
+  },
+  "48": {
+    "en": "Seeker of Bounty",
+    "ja": "Expert Gatherer",
+    "de": "Sammlerseele",
+    "fr": "Récolteur zélé"
+  },
+  "49": {
+    "en": "Sidestepper",
+    "ja": "the Helping Hand",
+    "de": "die helfende Hand",
+    "fr": "La Main tendue"
+  },
+  "50": {
+    "en": "Lord Protector",
+    "ja": "Veteran Mercenary",
+    "de": "Söldnerveteran",
+    "fr": "Mandataire régional"
+  },
+  "51": {
+    "en": "Lord Creator",
+    "ja": "Master Craftsman",
+    "de": "Meister seiner Zunft",
+    "fr": "Le Sous-traitant"
+  },
+  "52": {
+    "en": "Peacemaker",
+    "ja": "Peacemaker",
+    "de": "Bewahrer des Friedens",
+    "fr": "Gardien de la paix"
+  },
+  "53": {
+    "en": "The Last Resort",
+    "ja": "the Last Resort",
+    "de": "Verbissener Verfolger",
+    "fr": "Commando"
+  },
+  "54": {
+    "en": "The Sword of La Noscea",
+    "ja": "Sword of La Noscea",
+    "de": "das Schwert von La Noscea",
+    "fr": "Lame de la prairie"
+  },
+  "55": {
+    "en": "The Sword of the Shroud",
+    "ja": "Sword of the Shroud",
+    "de": "das Schwert des Finsterwalds",
+    "fr": "Lame de la forêt"
+  },
+  "56": {
+    "en": "The Sword of Thanalan",
+    "ja": "Sword of Thanalan",
+    "de": "das Schwert von Thanalan",
+    "fr": "Lame du désert"
+  },
+  "57": {
+    "en": "The Sword of Eorzea",
+    "ja": "Sword of Eorzea",
+    "de": "das Schwert Eorzeas",
+    "fr": "Lame d'Éorzéa"
+  },
+  "58": {
+    "en": "The Shield of La Noscea",
+    "ja": "Shield of La Noscea",
+    "de": "der Schild von La Noscea",
+    "fr": "Bouclier de la prairie"
+  },
+  "59": {
+    "en": "The Shield of the Shroud",
+    "ja": "Shield of the Shroud",
+    "de": "der Schild des Finsterwalds",
+    "fr": "Bouclier de la forêt"
+  },
+  "60": {
+    "en": "The Shield of Thanalan",
+    "ja": "Shield of Thanalan",
+    "de": "der Schild von Thanalan",
+    "fr": "Bouclier du désert"
+  },
+  "61": {
+    "en": "The Shield of Eorzea",
+    "ja": "Shield of Eorzea",
+    "de": "der Schild Eorzeas",
+    "fr": "Bouclier d'éorzéa"
+  },
+  "62": {
+    "en": "Brother of the Broken Blade",
+    "ja": "Brother of the Broken Blade",
+    "de": "der Klingenbrecher",
+    "fr": "Frère des lames cassées"
+  },
+  "63": {
+    "en": "The Warden's Wall",
+    "ja": "Shield of the Warden",
+    "de": "das Ass Azeymas",
+    "fr": "Bouclier d'azeyma"
+  },
+  "64": {
+    "en": "Bearer of the Horn",
+    "ja": "Eye of the Hand",
+    "de": "der Ruhmreiche",
+    "fr": "Associé de la corne et la main"
+  },
+  "65": {
+    "en": "The Uncommitted",
+    "ja": "Hammer of Justice",
+    "de": "die Härte des Gesetzes",
+    "fr": "Agent triple"
+  },
+  "66": {
+    "en": "The Professional",
+    "ja": "the Tristar",
+    "de": "Der Profi",
+    "fr": "Le Professionnel"
+  },
+  "67": {
+    "en": "Inquisitor",
+    "ja": "Inquisitor",
+    "de": "Inquisitor",
+    "fr": "Inquisiteur du 11e ordre"
+  },
+  "68": {
+    "en": "Divine Crusher",
+    "ja": "Divine Crusher",
+    "de": "Göttlicher Scharfrichter",
+    "fr": "Iconoclaste du divin"
+  },
+  "69": {
+    "en": "Stonesplitter",
+    "ja": "Stonesplitter",
+    "de": "Steinspalter",
+    "fr": "Briseur de roche"
+  },
+  "70": {
+    "en": "A Kobold's Worst Nightmare",
+    "ja": "A Kobold's Worst Nightmare",
+    "de": "des Kobolds schlimmster Albtraum",
+    "fr": "Cauchemar des Kobolds"
+  },
+  "71": {
+    "en": "An Ixal's Worst Nightmare",
+    "ja": "An Ixal's Worst Nightmare",
+    "de": "des Ixals schlimmster Albtraum",
+    "fr": "Cauchemar des Ixali"
+  },
+  "72": {
+    "en": "An Amalj'aa's Worst Nightmare",
+    "ja": "An Amalj'aa's Worst Nightmare",
+    "de": "des Amalj'aas schlimmster Albtraum",
+    "fr": "Cauchemar des Amalj'aa"
+  },
+  "73": {
+    "en": "The Guardian of Aleport",
+    "ja": "the Guardian of Aleport",
+    "de": "der Wächter des Bierhafens",
+    "fr": "Défenseur de Port-aux-Ales"
+  },
+  "74": {
+    "en": "The Guardian of Hyrstmill",
+    "ja": "the Guardian of Hyrstmill",
+    "de": "der Wächter des Mühlenhains",
+    "fr": "Défenseur du Moulin des Bois"
+  },
+  "75": {
+    "en": "The Guardian of the Golden Bazaar",
+    "ja": "the Guardian of the Golden Bazaar",
+    "de": "der Wächter des Goldbasars",
+    "fr": "Défenseur du Bazar doré"
+  },
+  "76": {
+    "en": "The Wind of Aleport",
+    "ja": "the Wind of Aleport",
+    "de": "der frische Wind des Bierhafens",
+    "fr": "Pourvoyeur de Port-aux-Ales"
+  },
+  "77": {
+    "en": "The Wind of Hyrstmill",
+    "ja": "the Wind of Hyrstmill",
+    "de": "der frische Wind des Mühlenhains",
+    "fr": "Pourvoyeur du Moulin des Bois"
+  },
+  "78": {
+    "en": "The Wind of the Golden Bazaar",
+    "ja": "the Wind of the Golden Bazaar",
+    "de": "der frische Wind des Goldbasars",
+    "fr": "Pourvoyeur du Bazar doré"
+  },
+  "79": {
+    "en": "The Hand of Aleport",
+    "ja": "the Hand of Aleport",
+    "de": "die helfende Hand des Bierhafens",
+    "fr": "Sertisseur de Port-aux-Ales"
+  },
+  "80": {
+    "en": "The Hand of Hyrstmill",
+    "ja": "the Hand of Hyrstmill",
+    "de": "die helfende Hand des Mühlenhains",
+    "fr": "Sertisseur du Moulin des Bois"
+  },
+  "81": {
+    "en": "The Hand of the Golden Bazaar",
+    "ja": "the Hand of the Golden Bazaar",
+    "de": "die helfende Hand des Goldbasars",
+    "fr": "Sertisseur du Bazar doré"
+  },
+  "82": {
+    "en": "Wild Thing",
+    "ja": "Wild Thing",
+    "de": "Schneemann",
+    "fr": "Renne de beauté"
+  },
+  "83": {
+    "en": "The Winter Wyrm",
+    "ja": "the Winter Dragon",
+    "de": "Winterdrache",
+    "fr": "Dragon de vertu"
+  },
+  "84": {
+    "en": "Messenger of Love",
+    "ja": "Messenger of Love",
+    "de": "Herzensbrecher",
+    "fr": "Cupidon en herbe"
+  },
+  "85": {
+    "en": "Royal Seneschal",
+    "ja": "Royal Seneschal",
+    "de": "Königlicher Seneschall",
+    "fr": "Sénéchal royal"
+  },
+  "86": {
+    "en": "Dreamseeker",
+    "ja": "Egg Hunter",
+    "de": "Eiertänzer",
+    "fr": "Chasseur d'œufs"
+  },
+  "87": {
+    "en": "Cascadier",
+    "ja": "ABU Honorary Member",
+    "de": "Honorabler Kaskadeur",
+    "fr": "Recrue de la B.A.B."
+  },
+  "88": {
+    "en": "Crystal Bearer",
+    "ja": "Crystal Bearer",
+    "de": "Träger des Kristalls",
+    "fr": "Porteur du cristal"
+  },
+  "89": {
+    "en": "Stormlord",
+    "ja": "Lominsan Hero",
+    "de": "Sturmfürst",
+    "fr": "Lige du Maelstrom"
+  },
+  "90": {
+    "en": "Serpentlord",
+    "ja": "Gridanian Hero",
+    "de": "Schlangenfürst",
+    "fr": "Lige des Deux Vipères"
+  },
+  "91": {
+    "en": "Flamelord",
+    "ja": "Ul'dahn Hero",
+    "de": "Phönixfürst",
+    "fr": "Lige des Immortels"
+  },
+  "92": {
+    "en": "The Stormsworn",
+    "ja": "Lominsan Veteran",
+    "de": "der Rückhalt Limsas",
+    "fr": "Fidèle du Maelstrom"
+  },
+  "93": {
+    "en": "The Serpentsworn",
+    "ja": "Gridanian Veteran",
+    "de": "der Rückhalt Gridanias",
+    "fr": "Fidèle des Deux Vipères"
+  },
+  "94": {
+    "en": "The Flamesworn",
+    "ja": "Ul'dahn Veteran",
+    "de": "der Rückhalt Ul'dahs",
+    "fr": "Fidèle des Immortels"
+  },
+  "95": {
+    "en": "Stormcarrier",
+    "ja": "Lominsan Carrier",
+    "de": "Merlwybs Bote",
+    "fr": "Fournisseur du Maelstrom"
+  },
+  "96": {
+    "en": "Serpentcarrier",
+    "ja": "Gridanian Carrier",
+    "de": "Kan-E-Sennas Bote",
+    "fr": "Fournisseur des Deux Vipères"
+  },
+  "97": {
+    "en": "Flamecarrier",
+    "ja": "Ul'dahn Carrier",
+    "de": "Raubahns Bote",
+    "fr": "Fournisseur des Immortels"
+  },
+  "98": {
+    "en": "Stormbringer",
+    "ja": "Lominsan Builder",
+    "de": "der Versorger Limsas",
+    "fr": "Intendant du Maelstrom"
+  },
+  "99": {
+    "en": "Serpentbringer",
+    "ja": "Gridanian Builder",
+    "de": "der Versorger Gridanias",
+    "fr": "Intendant des Deux Vipères"
+  },
+  "100": {
+    "en": "Flamebringer",
+    "ja": "Ul'dahn Builder",
+    "de": "der Versorger Ul'dahs",
+    "fr": "Intendant des Immortels"
+  },
+  "101": {
+    "en": "Featherfoot",
+    "ja": "the Featherfoot",
+    "de": "Expresszusteller",
+    "fr": "Escorte express"
+  },
+  "102": {
+    "en": "A Bo's Best Friend",
+    "ja": "Caravan Driver",
+    "de": "Eskorteur",
+    "fr": "Le Convoyeur"
+  },
+  "103": {
+    "en": "Lightning",
+    "ja": "Speedster",
+    "de": "Geölter Blitz",
+    "fr": "L'Éclair"
+  },
+  "104": {
+    "en": "Cavalier",
+    "ja": "Chocobo Cavalier",
+    "de": "Chocobo-Ritter",
+    "fr": "Cavalier bardé"
+  },
+  "105": {
+    "en": "The Wanderer's Shadow",
+    "ja": "Oschon's Saint",
+    "de": "Des Wanderers Schatten",
+    "fr": "Disciple du Vagabond"
+  },
+  "106": {
+    "en": "Green Eyes",
+    "ja": "the Oeilvert",
+    "de": "Grünauge",
+    "fr": "Adjurateur primordial"
+  },
+  "107": {
+    "en": "The Strategist",
+    "ja": "Strategist",
+    "de": "der Stratege",
+    "fr": "Stratège féerique"
+  },
+  "108": {
+    "en": "The Reaper",
+    "ja": "the Reaper",
+    "de": "der Schnitter",
+    "fr": "Faucheur"
+  },
+  "109": {
+    "en": "Dungeon Master",
+    "ja": "Dungeon Explorer",
+    "de": "der Dungeon-Entdecker",
+    "fr": "Maître des donjons"
+  },
+  "110": {
+    "en": "Tempter of Fate",
+    "ja": "the Fates",
+    "de": "der Schicksalsversucher",
+    "fr": "Jouet des aléas du destin"
+  },
+  "111": {
+    "en": "Elite Cascadier",
+    "ja": "ABU Mercenary",
+    "de": "Elite-Kaskadeur",
+    "fr": "Membre honoraire de la B.A.B."
+  },
+  "112": {
+    "en": "Storm Puppy",
+    "ja": "Lominsan Puppy",
+    "de": "Mahlstrom-Welpe",
+    "fr": "Louveteau des tempêtes"
+  },
+  "113": {
+    "en": "Storm Howler",
+    "ja": "Lominsan Howler",
+    "de": "Mahlstrom-Winsler",
+    "fr": "Hurleur des tempêtes"
+  },
+  "114": {
+    "en": "Storm Growler",
+    "ja": "Lominsan Growler",
+    "de": "Mahlstrom-Knurrer",
+    "fr": "Grogneur des tempêtes"
+  },
+  "115": {
+    "en": "Storm Hound",
+    "ja": "Lominsan Hound",
+    "de": "Mahlstrom-Heuler",
+    "fr": "Harceleur des tempêtes"
+  },
+  "116": {
+    "en": "Storm Stalker",
+    "ja": "Lominsan Stalker",
+    "de": "Mahlstrom-Pirscher",
+    "fr": "Traqueur des tempêtes"
+  },
+  "117": {
+    "en": "Storm Chaser",
+    "ja": "Lominsan Chaser",
+    "de": "Mahlstrom-Hetzer",
+    "fr": "Pourchasseur des tempêtes"
+  },
+  "118": {
+    "en": "Naago's Friend",
+    "ja": "Naago's Friend",
+    "de": "M'naagos Freund",
+    "fr": "Ami de M'naago"
+  },
+  "119": {
+    "en": "Naago's Partner",
+    "ja": "Naago's Partner",
+    "de": "M'naagos bester Freund",
+    "fr": "Associé de M'naago"
+  },
+  "120": {
+    "en": "Wings of Steel",
+    "ja": "Wings of Steel",
+    "de": "Stahlschwinge",
+    "fr": "Ailes d'acier"
+  },
+  "121": {
+    "en": "Wings of Fire",
+    "ja": "Wings of Fire",
+    "de": "Feuerschwinge",
+    "fr": "Ailes de feu"
+  },
+  "122": {
+    "en": "Serpent Puppy",
+    "ja": "Gridanian Puppy",
+    "de": "Ordens-Welpe",
+    "fr": "Louveteau du serpent"
+  },
+  "123": {
+    "en": "Serpent Howler",
+    "ja": "Gridanian Howler",
+    "de": "Ordens-Winsler",
+    "fr": "Hurleur du serpent"
+  },
+  "124": {
+    "en": "Serpent Growler",
+    "ja": "Gridanian Growler",
+    "de": "Ordens-Knurrer",
+    "fr": "Grogneur du serpent"
+  },
+  "125": {
+    "en": "Serpent Hound",
+    "ja": "Gridanian Hound",
+    "de": "Ordens-Heuler",
+    "fr": "Harceleur du serpent"
+  },
+  "126": {
+    "en": "Serpent Stalker",
+    "ja": "Gridanian Stalker",
+    "de": "Ordens-Pirscher",
+    "fr": "Traqueur du serpent"
+  },
+  "127": {
+    "en": "Serpent Chaser",
+    "ja": "Gridanian Chaser",
+    "de": "Ordens-Hetzer",
+    "fr": "Pourchasseur du serpent"
+  },
+  "128": {
+    "en": "Deep Canal Raider",
+    "ja": "Deep Canal Raider",
+    "de": "Kanal-Alpharatte",
+    "fr": "Pilleur de canaux profonds"
+  },
+  "129": {
+    "en": "Deep Canal Dweller",
+    "ja": "Deep Canal Dweller",
+    "de": "Erkunder der tiefen Kanäle",
+    "fr": "Habitant des canaux profonds"
+  },
+  "130": {
+    "en": "The Luckiest of Lords",
+    "ja": "Lucky Lord",
+    "de": "Oberster Glückspilz",
+    "fr": "Maître de la chance"
+  },
+  "131": {
+    "en": "Crimson Explorer",
+    "ja": "Crimson Explorer",
+    "de": "Stürmischer Entdecker",
+    "fr": "Explorateur sanguin"
+  },
+  "132": {
+    "en": "Flame Puppy",
+    "ja": "Ul'dahn Puppy",
+    "de": "Legions-Welpe",
+    "fr": "Louveteau des sables"
+  },
+  "133": {
+    "en": "Flame Howler",
+    "ja": "Ul'dahn Howler",
+    "de": "Legions-Winsler",
+    "fr": "Hurleur des sables"
+  },
+  "134": {
+    "en": "Flame Growler",
+    "ja": "Ul'dahn Growler",
+    "de": "Legions-Knurrer",
+    "fr": "Grogneur des sables"
+  },
+  "135": {
+    "en": "Flame Hound",
+    "ja": "Ul'dahn Hound",
+    "de": "Legions-Heuler",
+    "fr": "Harceleur des sables"
+  },
+  "136": {
+    "en": "Flame Stalker",
+    "ja": "Ul'dahn Stalker",
+    "de": "Legions-Pirscher",
+    "fr": "Traqueur des sables"
+  },
+  "137": {
+    "en": "Flame Chaser",
+    "ja": "Ul'dahn Chaser",
+    "de": "Legions-Hetzer",
+    "fr": "Pourchasseur des sables"
+  },
+  "138": {
+    "en": "The Legend",
+    "ja": "the Legend",
+    "de": "die Legende",
+    "fr": "La Légende"
+  },
+  "139": {
+    "en": "Raubahn's Left Arm",
+    "ja": "Raubahn's Left Arm",
+    "de": "Raubahns linker Arm",
+    "fr": "Bras gauche de Raubahn"
+  },
+  "140": {
+    "en": "Of the Blue",
+    "ja": "the Blue",
+    "de": "vom Zirkel der Blaupanzer",
+    "fr": "Carapace verte"
+  },
+  "141": {
+    "en": "Fashion Leader",
+    "ja": "Fashion Leader",
+    "de": "Trendsetter",
+    "fr": "Styliste d'avant-garde"
+  },
+  "142": {
+    "en": "The Ravenous Wolf",
+    "ja": "Ravenous Wolf",
+    "de": "der Große Böse Wolf",
+    "fr": "Le Grand méchant loup"
+  },
+  "143": {
+    "en": "The Alpha Wolf",
+    "ja": "Alpha Wolf",
+    "de": "der Alpha-Wolf",
+    "fr": "Le Loup alpha"
+  },
+  "144": {
+    "en": "The Heart of the Party",
+    "ja": "Heart of the Party",
+    "de": "die Seele des Rudels",
+    "fr": "La Vedette de l'équipe"
+  },
+  "145": {
+    "en": "Brother of Ash",
+    "ja": "Ashen Warrior",
+    "de": "Bruder der Asche",
+    "fr": "Frère des cendres"
+  },
+  "146": {
+    "en": "Sylph-Friend",
+    "ja": "Sylph-Friend",
+    "de": "Sylphen-Freund",
+    "fr": "Ami des Sylphes"
+  },
+  "147": {
+    "en": "Treasure Hunter",
+    "ja": "Treasure Hunter",
+    "de": "Schatzjäger",
+    "fr": "Chasseur de trésors"
+  },
+  "148": {
+    "en": "789th Order Champion",
+    "ja": "789th Order Champion",
+    "de": "Vorzeigekobold des 789. Ordens",
+    "fr": "Larbin du 789e ordre"
+  },
+  "149": {
+    "en": "Novv Clutchmate",
+    "ja": "Novv Clutchmate",
+    "de": "Novvs Laichwächter",
+    "fr": "Frère du frai"
+  },
+  "150": {
+    "en": "The Ambitious Angler",
+    "ja": "the Ambitious Angler",
+    "de": "der ambitionierte Angler",
+    "fr": "As de l'hameçon"
+  },
+  "151": {
+    "en": "The Meat Shield",
+    "ja": "White Knight",
+    "de": "der lebende Schild",
+    "fr": "Le Bouclier humain"
+  },
+  "152": {
+    "en": "The Meat Axe",
+    "ja": "Bloody Warrior",
+    "de": "die lebende Axt",
+    "fr": "La Hache humaine"
+  },
+  "153": {
+    "en": "Of the Stalwart Shield",
+    "ja": "of the Stalwart Shield",
+    "de": "der tapfere Schild",
+    "fr": "Le Bouclier infaillible"
+  },
+  "154": {
+    "en": "Of the Stalwart Axe",
+    "ja": "of the Stalwart Axe",
+    "de": "die tapfere Axt",
+    "fr": "La Hache impitoyable"
+  },
+  "155": {
+    "en": "Frontline Forerunner",
+    "ja": "Frontline Forerunner",
+    "de": "Frontkämpfer",
+    "fr": "Avant-coureur du Front"
+  },
+  "156": {
+    "en": "Storm Forerunner",
+    "ja": "Lominsan Forerunner",
+    "de": "Mahlstrom-Frontkämpfer",
+    "fr": "Avant-coureur des tempêtes"
+  },
+  "157": {
+    "en": "Flame Forerunner",
+    "ja": "Ul'dahn Forerunner",
+    "de": "Legion-Frontkämpfer",
+    "fr": "Avant-coureur des sables"
+  },
+  "158": {
+    "en": "Serpent Forerunner",
+    "ja": "Gridanian Forerunner",
+    "de": "Bruderschaft-Frontkämpfer",
+    "fr": "Avant-coureur du serpent"
+  },
+  "159": {
+    "en": "Drone Sniper",
+    "ja": "Drone Sniper",
+    "de": "Drohnenjäger",
+    "fr": "Déglingueur de drones"
+  },
+  "160": {
+    "en": "Heliodrome Hero",
+    "ja": "Heliodrome Hero",
+    "de": "der Held des Heliodroms",
+    "fr": "Héros de l'Héliodrome"
+  },
+  "161": {
+    "en": "Hunter for Hire",
+    "ja": "Mob Hunter",
+    "de": "Monsterjäger",
+    "fr": "Chasseur de monstres"
+  },
+  "162": {
+    "en": "Seeker of Fortune",
+    "ja": "Mob Seeker",
+    "de": "Glückssucher",
+    "fr": "Pisteur de monstres"
+  },
+  "163": {
+    "en": "Seasoned Tracker",
+    "ja": "Mob Tracker",
+    "de": "Spurensucher",
+    "fr": "Traqueur de monstres"
+  },
+  "164": {
+    "en": "Bounty Hunter",
+    "ja": "Bounty Hunter",
+    "de": "Kopfgeldjäger",
+    "fr": "Chasseur de primes"
+  },
+  "165": {
+    "en": "Soldier of Fortune",
+    "ja": "Soldier of Fortune",
+    "de": "Glücksritter",
+    "fr": "Soldat de fortune"
+  },
+  "166": {
+    "en": "Captain of the Hunt",
+    "ja": "Captain of the Hunt",
+    "de": "Jagdaufseher",
+    "fr": "Traqueur impitoyable"
+  },
+  "167": {
+    "en": "Rafflesia Reaper",
+    "ja": "Rafflesia Reaper",
+    "de": "Rafflesia-Richter",
+    "fr": "Ravageur de la rafflesia"
+  },
+  "168": {
+    "en": "Melusine Mauler",
+    "ja": "Melusine Mauler",
+    "de": "Melusine-Mäher",
+    "fr": "Massacreur de Mélusine"
+  },
+  "169": {
+    "en": "The Avatar",
+    "ja": "the Avatar",
+    "de": "Avatar",
+    "fr": "Élagueur du bio-tréant"
+  },
+  "170": {
+    "en": "Domitor",
+    "ja": "the Conqueror",
+    "de": "Domitor",
+    "fr": "Le Dominateur"
+  },
+  "171": {
+    "en": "The Disassembler",
+    "ja": "the Disassembler",
+    "de": "der Demontierer",
+    "fr": "Le Démonteur"
+  },
+  "172": {
+    "en": "Eversharp",
+    "ja": "Eversharp",
+    "de": "der Wachsame",
+    "fr": "Combattant sur le qui-vive"
+  },
+  "173": {
+    "en": "Bearer of the Coffer",
+    "ja": "Coffer Bearer",
+    "de": "der Kistenträger",
+    "fr": "Détecteur de coffre au trésor"
+  },
+  "174": {
+    "en": "Defender of Eorzea",
+    "ja": "Defender of Eorzea",
+    "de": "der Bewahrer Eorzeas",
+    "fr": "Protecteur d'Éorzéa"
+  },
+  "175": {
+    "en": "The Postman",
+    "ja": "the Postman",
+    "de": "Postbote",
+    "fr": "Postier expérimenté"
+  },
+  "176": {
+    "en": "Ehcatl Blackguard",
+    "ja": "Ehcatl Blackguard",
+    "de": "Überflieger",
+    "fr": "Égide d'Ehcatl"
+  },
+  "177": {
+    "en": "The Negotiator",
+    "ja": "the Negotiator",
+    "de": "der Verhandlungskünstler",
+    "fr": "Le Négociateur"
+  },
+  "178": {
+    "en": "The Final Witness",
+    "ja": "the Final Witness",
+    "de": "der letzte Zeuge",
+    "fr": "L'Acheveur du Fléau"
+  },
+  "179": {
+    "en": "Of Dragons Deep",
+    "ja": "of Dragons Deep",
+    "de": "der Seedrachenbezwinger",
+    "fr": "Le Neptomane"
+  },
+  "180": {
+    "en": "Master Caster",
+    "ja": "Taikoubou",
+    "de": "Kapitalist",
+    "fr": "Pêcheur de légendes"
+  },
+  "181": {
+    "en": "The New Sun",
+    "ja": "the New Sun",
+    "de": "die neue Sonne",
+    "fr": "Le Héraut de l'aurore"
+  },
+  "182": {
+    "en": "The Shadow",
+    "ja": "the Shadow",
+    "de": "der Schatten",
+    "fr": "Protecteur de l'ombre"
+  },
+  "183": {
+    "en": "Icebreaker",
+    "ja": "Icebreaker",
+    "de": "Eisbrecher",
+    "fr": "Brise-glace"
+  },
+  "184": {
+    "en": "Of the Silver Lining",
+    "ja": "Cloud Controller",
+    "de": "Erleuchter der Dunkelheit",
+    "fr": "L'Optimiste"
+  },
+  "185": {
+    "en": "Gentleman",
+    "ja": "Gentleman",
+    "de": "Chevalier cum laude",
+    "fr": "L'Aristocrate"
+  },
+  "186": {
+    "en": "Cupid",
+    "ja": "Observer of Love",
+    "de": "Liebeshelfer",
+    "fr": "Archerot"
+  },
+  "187": {
+    "en": "Tamer of Steeds",
+    "ja": "Kirin Tamer",
+    "de": "Rosszähmer",
+    "fr": "Dompteur de Kirin"
+  },
+  "188": {
+    "en": "The Unsevered",
+    "ja": "the Unsevered",
+    "de": "der Unberührte",
+    "fr": "L'Inébranlable"
+  },
+  "189": {
+    "en": "Slaughterhouse",
+    "ja": "the Dominator",
+    "de": "der Schlächter",
+    "fr": "Tueur en série"
+  },
+  "190": {
+    "en": "The Hand of Mercy",
+    "ja": "the Hand of Mercy",
+    "de": "die barmherzige Hand",
+    "fr": "L'Abattoir"
+  },
+  "191": {
+    "en": "The Light in Hand",
+    "ja": "the Light in Hand",
+    "de": "Lichtträger",
+    "fr": "La Main de lumière"
+  },
+  "192": {
+    "en": "The Light of the Land",
+    "ja": "the Light of the Land",
+    "de": "der Erleuchtete",
+    "fr": "La Terre de lumière"
+  },
+  "193": {
+    "en": "Z",
+    "ja": "the Zeta",
+    "de": "Sternenschmied",
+    "fr": "L'Éveilleur"
+  },
+  "194": {
+    "en": "Golemancer",
+    "ja": "Doll Master",
+    "de": "der Puppenspieler",
+    "fr": "Le Marionnettiste"
+  },
+  "195": {
+    "en": "Gambler",
+    "ja": "Gambler",
+    "de": "der Spieler",
+    "fr": "Le Flambeur"
+  },
+  "196": {
+    "en": "High Roller",
+    "ja": "High Roller",
+    "de": "Glückspilz",
+    "fr": "L'As des As"
+  },
+  "197": {
+    "en": "Chocobo Breeder",
+    "ja": "Chocobo Breeder",
+    "de": "Chocobo-Züchter",
+    "fr": "Éleveur de champions"
+  },
+  "198": {
+    "en": "Chocobo Trainer",
+    "ja": "Chocobo Trainer",
+    "de": "Chocobo-Trainer",
+    "fr": "Dresseur de chocobo"
+  },
+  "199": {
+    "en": "Bug Boy",
+    "ja": "Apprentice Jockey",
+    "de": "Stalljunge",
+    "fr": "Le Poulain"
+  },
+  "200": {
+    "en": "Senior Jockey",
+    "ja": "Senior Jockey",
+    "de": "Profi-Jockey",
+    "fr": "L'Étalon"
+  },
+  "201": {
+    "en": "Veteran Jockey",
+    "ja": "Veteran Jockey",
+    "de": "Jockey-Veteran",
+    "fr": "La Bête de course"
+  },
+  "202": {
+    "en": "The First Across",
+    "ja": "Leading Jockey",
+    "de": "der schnellste Mann von Thanalan",
+    "fr": "Le Pur-sang"
+  },
+  "203": {
+    "en": "Deck Holder",
+    "ja": "Deck Holder",
+    "de": "Stolzer Kartenbesitzer",
+    "fr": "Amateur de cartes"
+  },
+  "204": {
+    "en": "Deck Hoarder",
+    "ja": "Deck Hoarder",
+    "de": "der Kartenkönig",
+    "fr": "Ludocartophile"
+  },
+  "205": {
+    "en": "The Trinity",
+    "ja": "the Trinity",
+    "de": "Seine Dreifaltigkeit",
+    "fr": "Le Trinitaire"
+  },
+  "206": {
+    "en": "Duelist",
+    "ja": "Duelist",
+    "de": "der Duellant",
+    "fr": "Le Duelliste"
+  },
+  "207": {
+    "en": "Keymaster",
+    "ja": "Gatekeeper",
+    "de": "der Schicksalsergebene",
+    "fr": "Joueur dans l'âme"
+  },
+  "208": {
+    "en": "The Fungah",
+    "ja": "the Fungah",
+    "de": "der Sturmfeste",
+    "fr": "Esquiveur de rafales"
+  },
+  "209": {
+    "en": "Moneybags",
+    "ja": "Coin Collector",
+    "de": "Magnat",
+    "fr": "Le Roi de la tombola"
+  },
+  "210": {
+    "en": "Raiser of Mountains",
+    "ja": "Millionaire",
+    "de": "Emsiger Sparer",
+    "fr": "Le Millionnaire"
+  },
+  "211": {
+    "en": "Bearer of the Torch",
+    "ja": "Bearer of the Torch",
+    "de": "Licht der Hoffnung",
+    "fr": "Porteur d'espoir"
+  },
+  "212": {
+    "en": "Postmaster",
+    "ja": "Postmaster",
+    "de": "Postmeister",
+    "fr": "Maître postier"
+  },
+  "213": {
+    "en": "Half-boiled Hero",
+    "ja": "Giant Egg Hunter",
+    "de": "Eierlegende",
+    "fr": "Chasseur de Fabulœufs"
+  },
+  "214": {
+    "en": "Unbeliever",
+    "ja": "Unbeliever",
+    "de": "Ungläubiger",
+    "fr": "L'Incroyant"
+  },
+  "215": {
+    "en": "The Redeemed",
+    "ja": "the Redeemed",
+    "de": "der Freigesprochene",
+    "fr": "Le Racheté"
+  },
+  "216": {
+    "en": "Nidhogg Slayer",
+    "ja": "Nidhogg Slayer",
+    "de": "Nidhogg-Bezwinger",
+    "fr": "Tueur de Nidhogg"
+  },
+  "217": {
+    "en": "Of the Silver Fuller",
+    "ja": "of the Silver Fuller",
+    "de": "Silberklinge",
+    "fr": "Lame d'argent"
+  },
+  "218": {
+    "en": "Imperial Nuisance",
+    "ja": "Imperial Nuisance",
+    "de": "die Geißel der Garlear",
+    "fr": "Enquiquineur impérial"
+  },
+  "219": {
+    "en": "Under-archon",
+    "ja": "Under-archon",
+    "de": "Jungexeget",
+    "fr": "Sous-Preux"
+  },
+  "220": {
+    "en": "The End of Ascalon",
+    "ja": "Ascalon Breaker",
+    "de": "Askalons Ende",
+    "fr": "Briseur d'Ascalon"
+  },
+  "221": {
+    "en": "Snake in the Grass",
+    "ja": "Snake in the Grass",
+    "de": "von der Grenzwache Velodyna",
+    "fr": "Gardien de la Velodyna"
+  },
+  "222": {
+    "en": "The Oathkeeper",
+    "ja": "the Oathkeeper",
+    "de": "der Träger der Eidklinge",
+    "fr": "Gardien du serment"
+  },
+  "223": {
+    "en": "Of the 14th Chakra",
+    "ja": "of the 14th Chakra",
+    "de": "Öffner der 14 Chakren",
+    "fr": "Ouvreur du quatorzième chakra"
+  },
+  "224": {
+    "en": "The Mythril Heart",
+    "ja": "the Mythril Heart",
+    "de": "Mithrilherz",
+    "fr": "Cœur de mithril"
+  },
+  "225": {
+    "en": "The Azure Dragoon",
+    "ja": "the Azure Dragoon",
+    "de": "Azur-Drachenreiter",
+    "fr": "Dragon céleste"
+  },
+  "226": {
+    "en": "Skysinger",
+    "ja": "Skysinger",
+    "de": "Wolkensänger",
+    "fr": "Aède des cieux"
+  },
+  "227": {
+    "en": "Pure White",
+    "ja": "Pure White",
+    "de": "der Besänftiger",
+    "fr": "Âme purificatrice"
+  },
+  "228": {
+    "en": "Annihilator",
+    "ja": "Annihilator",
+    "de": "der Vernichter",
+    "fr": "L'Annihilateur"
+  },
+  "229": {
+    "en": "Dreadspawn",
+    "ja": "Dreadspawn",
+    "de": "Herr der Trance",
+    "fr": "Maître de la Transe"
+  },
+  "230": {
+    "en": "Nymian Marine",
+    "ja": "Nymian Marine",
+    "de": "Seesoldat",
+    "fr": "Marin-soldat de la 7e ère"
+  },
+  "231": {
+    "en": "The Darkest Shadow",
+    "ja": "the Darkest Shadow",
+    "de": "der dunkelste Schatten",
+    "fr": "Vengeur de l'ombre"
+  },
+  "232": {
+    "en": "Blackblood",
+    "ja": "Blackblood",
+    "de": "Schwarzblut",
+    "fr": "Disciple des abysses"
+  },
+  "233": {
+    "en": "Liberator",
+    "ja": "Liberator",
+    "de": "der Erlöser",
+    "fr": "Le Sauveur"
+  },
+  "234": {
+    "en": "Stargazer",
+    "ja": "Stargazer",
+    "de": "Sternengucker",
+    "fr": "Béni des étoiles"
+  },
+  "235": {
+    "en": "Illuminati Quencher",
+    "ja": "Blue hands Quencher",
+    "de": "Indigodrescher",
+    "fr": "Menotteur indigo"
+  },
+  "236": {
+    "en": "Finder of False Gods",
+    "ja": "Finder of False Gods",
+    "de": "Finder falscher Götter",
+    "fr": "Déceleur de faux dieux"
+  },
+  "237": {
+    "en": "Lighter than Air",
+    "ja": "Lighter than Air",
+    "de": "Luftikus",
+    "fr": "Aventurier volatil"
+  },
+  "238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "239": {
+    "en": "Grandmaster of War",
+    "ja": "Grandmaster of War",
+    "de": "der Großmeister des Krieges",
+    "fr": "Grand maître de la guerre"
+  },
+  "240": {
+    "en": "Grandmaster of Magic",
+    "ja": "Grandmaster of Magic",
+    "de": "der Großmeister der Magie",
+    "fr": "Grand maître de la magie"
+  },
+  "241": {
+    "en": "Dark Driver",
+    "ja": "Dark Knight",
+    "de": "die dunkle Bastion",
+    "fr": "Guide des ténèbres"
+  },
+  "242": {
+    "en": "Of the Stalwart Sword",
+    "ja": "of the Stalwart Sword",
+    "de": "die unerschütterliche Klinge",
+    "fr": "L'Épée implacable"
+  },
+  "243": {
+    "en": "Keeper of Knowledge",
+    "ja": "Keeper of Knowledge",
+    "de": "der Hüter des Wissens",
+    "fr": "Gardien du savoir"
+  },
+  "244": {
+    "en": "Canal Dweller",
+    "ja": "Canal Dweller",
+    "de": "der Erkunder der Kanäle",
+    "fr": "Habitant des canaux"
+  },
+  "245": {
+    "en": "Canal Lord",
+    "ja": "Canal Lord",
+    "de": "Herr der Kanäle",
+    "fr": "Maître des canaux"
+  },
+  "246": {
+    "en": "The Necromancer",
+    "ja": "the Necromancer",
+    "de": "der Nekromant",
+    "fr": "Le Nécromancien"
+  },
+  "247": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "248": {
+    "en": "Grandmaster of the Hand",
+    "ja": "Grandmaster of the Hand",
+    "de": "der Großmeister des Handwerks",
+    "fr": "Grand maître de la main"
+  },
+  "249": {
+    "en": "Grandmaster of the Land",
+    "ja": "Grandmaster of the Land",
+    "de": "der Großmeister des Sammelns",
+    "fr": "Grand maître de la terre"
+  },
+  "250": {
+    "en": "Molder of Masterpieces",
+    "ja": "Molder of Masterpieces",
+    "de": "Schöpfer der Meisterwerke",
+    "fr": "Façonneur de merveilles"
+  },
+  "251": {
+    "en": "Amasser of Masterpieces",
+    "ja": "Amasser of Masterpieces",
+    "de": "Hüter der Meisterwerke",
+    "fr": "Amasseur de merveilles"
+  },
+  "252": {
+    "en": "Business Associate",
+    "ja": "Business Associate",
+    "de": "Geschäftspartner",
+    "fr": "Partenaire en affaire"
+  },
+  "253": {
+    "en": "Master Carpenter",
+    "ja": "Master Woodworker",
+    "de": "Meisterzimmerer",
+    "fr": "Maître menuisier"
+  },
+  "254": {
+    "en": "Master Blacksmith",
+    "ja": "Master Blacksmith",
+    "de": "Meistergrobschmied",
+    "fr": "Maître forgeron"
+  },
+  "255": {
+    "en": "Master Armorer",
+    "ja": "Master Armourer",
+    "de": "Meisterplattner",
+    "fr": "Maître armurier"
+  },
+  "256": {
+    "en": "Master Goldsmith",
+    "ja": "Master Goldsmith",
+    "de": "Meistergoldschmied",
+    "fr": "Maître orfèvre"
+  },
+  "257": {
+    "en": "Master Leatherworker",
+    "ja": "Master Tanner",
+    "de": "Meistergerber",
+    "fr": "Maître tanneur"
+  },
+  "258": {
+    "en": "Master Weaver",
+    "ja": "Master Weaver",
+    "de": "Meisterweber",
+    "fr": "Maître couturier"
+  },
+  "259": {
+    "en": "Master Alchemist",
+    "ja": "Master Alchemist",
+    "de": "Meisteralchemist",
+    "fr": "Maître alchimiste"
+  },
+  "260": {
+    "en": "Master Culinarian",
+    "ja": "Master Culinarian",
+    "de": "Meistergourmet",
+    "fr": "Maître cuisinier"
+  },
+  "261": {
+    "en": "Master Miner",
+    "ja": "Master Miner",
+    "de": "Meisterminenarbeiter",
+    "fr": "Maître mineur"
+  },
+  "262": {
+    "en": "Master Botanist",
+    "ja": "Master Harvester",
+    "de": "Meistergärtner",
+    "fr": "Maître botaniste"
+  },
+  "263": {
+    "en": "Master Fisher",
+    "ja": "Master Fisher",
+    "de": "Meisterfischer",
+    "fr": "Maître pêcheur"
+  },
+  "264": {
+    "en": "The Fortunate",
+    "ja": "the Fortunate",
+    "de": "der Glückliche",
+    "fr": "Le Chanceux"
+  },
+  "265": {
+    "en": "Good Samaritan",
+    "ja": "Good Samaritan",
+    "de": "der barmherzige Samariter",
+    "fr": "Bon Samaritain"
+  },
+  "266": {
+    "en": "Minion Collector",
+    "ja": "Minion Collector",
+    "de": "Begleitersammler",
+    "fr": "Collectionneur de mascottes"
+  },
+  "267": {
+    "en": "Minion Master",
+    "ja": "Minion Master",
+    "de": "Meister der Begleiter",
+    "fr": "Maître des mascottes"
+  },
+  "268": {
+    "en": "Mammeteer",
+    "ja": "Mammeteer",
+    "de": "der Marionettenspieler",
+    "fr": "Mascottiste"
+  },
+  "269": {
+    "en": "Prince of Verminion",
+    "ja": "Prince of Verminion",
+    "de": "Prinz der Trabanten",
+    "fr": "Capitaine des mascottes"
+  },
+  "270": {
+    "en": "Lord of Verminion",
+    "ja": "Lord of Verminion",
+    "de": "König der Trabanten",
+    "fr": "Commandant des mascottes"
+  },
+  "271": {
+    "en": "House Fortemps Knight",
+    "ja": "House Fortemps Knight",
+    "de": "Fortemps-Ritter",
+    "fr": "Chevalier des Fortemps"
+  },
+  "272": {
+    "en": "Sky Pirate",
+    "ja": "Sky Pirate",
+    "de": "Luftpirat",
+    "fr": "Pirate des cieux"
+  },
+  "273": {
+    "en": "The Noumenon",
+    "ja": "the Noumenon",
+    "de": "das Noumenon",
+    "fr": "Le Noumène"
+  },
+  "274": {
+    "en": "Sundrop Dancer",
+    "ja": "Sundrop Dancer",
+    "de": "Sonnentänzer",
+    "fr": "Danseur du soleil"
+  },
+  "275": {
+    "en": "Myth Breaker",
+    "ja": "Myth Breaker",
+    "de": "Atheist",
+    "fr": "Briseur de mythes"
+  },
+  "276": {
+    "en": "Veteran Explorer",
+    "ja": "Veteran Explorer",
+    "de": "Entdeckerveteran",
+    "fr": "Explorateur confirmé"
+  },
+  "277": {
+    "en": "Special Advisor",
+    "ja": "Special Adviser",
+    "de": "Sonderberater",
+    "fr": "Conseiller spécial"
+  },
+  "278": {
+    "en": "Notorious Monster Slayer",
+    "ja": "Notorious Monster Slayer",
+    "de": "Notorischer Diademjäger",
+    "fr": "Abatteur de monstres célèbres"
+  },
+  "279": {
+    "en": "Hungry Wolf",
+    "ja": "Hungry Wolf",
+    "de": "Rudeltier",
+    "fr": "Loup affamé"
+  },
+  "280": {
+    "en": "The Devourer",
+    "ja": "the Devourer",
+    "de": "Alpha-Wolf",
+    "fr": "Le Dévoreur"
+  },
+  "281": {
+    "en": "The Unmoving",
+    "ja": "the Unmoving",
+    "de": "der Unbeugsame",
+    "fr": "L'Inflexible"
+  },
+  "282": {
+    "en": "The Unrelenting",
+    "ja": "the Unrelenting",
+    "de": "der Unnachgiebige",
+    "fr": "L'Incoercible"
+  },
+  "283": {
+    "en": "The Unseen",
+    "ja": "the Unseen",
+    "de": "der Unnahbare",
+    "fr": "L'Indécelable"
+  },
+  "284": {
+    "en": "The Unleashed",
+    "ja": "the Unleashed",
+    "de": "der Ungezügelte",
+    "fr": "L'Impétueux"
+  },
+  "285": {
+    "en": "The Undamaged",
+    "ja": "the Undamaged",
+    "de": "der Unbeirrbare",
+    "fr": "L'Inentamable"
+  },
+  "286": {
+    "en": "Mentor",
+    "ja": "Mentor",
+    "de": "Mentor",
+    "fr": "Mentor"
+  },
+  "287": {
+    "en": "Mentor of Mentors",
+    "ja": "Mentor of Mentors",
+    "de": "Mentor der Mentoren",
+    "fr": "Mentor des mentors"
+  },
+  "288": {
+    "en": "Carrier of the Kettle",
+    "ja": "Carrier of the Kettle",
+    "de": "Träger des Kessels",
+    "fr": "Légataire de la bouilloire ultime"
+  },
+  "289": {
+    "en": "The Gear of Change",
+    "ja": "the Gears of Change",
+    "de": "das Rad der Veränderung",
+    "fr": "Messager du destin"
+  },
+  "290": {
+    "en": "Allthoughts",
+    "ja": "Allthoughts",
+    "de": "Fixdenker",
+    "fr": "Le Cerveau"
+  },
+  "291": {
+    "en": "The Newmind",
+    "ja": "the Newmind",
+    "de": "der Neuverbundene",
+    "fr": "Va-tout des Vathes"
+  },
+  "292": {
+    "en": "The Dragonsong",
+    "ja": "Revenge of the Horde",
+    "de": "Hordenrächer",
+    "fr": "Chantre des dragons"
+  },
+  "293": {
+    "en": "Polis Raider",
+    "ja": "Aquapolis Raider",
+    "de": "Entdecker der Aquapolis",
+    "fr": "Découvreur de l'Aquapole"
+  },
+  "294": {
+    "en": "Polis Dweller",
+    "ja": "Aquapolis Dweller",
+    "de": "Plünderer der Aquapolis",
+    "fr": "Explorateur de l'Aquapole"
+  },
+  "295": {
+    "en": "Polis Lord",
+    "ja": "Treasure Collector",
+    "de": "Aquapolit",
+    "fr": "Conquérant de l'Aquapole"
+  },
+  "296": {
+    "en": "Pom Friend",
+    "ja": "Mog Friend",
+    "de": "Bommelfreund",
+    "fr": "Chevalier du Pompon d'honneur"
+  },
+  "297": {
+    "en": "Leader of the Pack",
+    "ja": "the Feast Champion",
+    "de": "Rudelführer",
+    "fr": "Grand carnassier solitaire"
+  },
+  "298": {
+    "en": "Beta Wolf",
+    "ja": "the Feast Slayer",
+    "de": "Beta-Wolf",
+    "fr": "Carnassier impitoyable"
+  },
+  "299": {
+    "en": "Hunter Wolf",
+    "ja": "the Feast Ranker",
+    "de": "Jagdwolf",
+    "fr": "Jeune carnassier"
+  },
+  "300": {
+    "en": "Bronze Wolf",
+    "ja": "Bronze Wolf",
+    "de": "Bronze-Wolf",
+    "fr": "Loup de bronze"
+  },
+  "301": {
+    "en": "Silver Wolf",
+    "ja": "Silver Wolf",
+    "de": "Silber-Wolf",
+    "fr": "Loup d'argent"
+  },
+  "302": {
+    "en": "Gold Wolf",
+    "ja": "Gold Wolf",
+    "de": "Gold-Wolf",
+    "fr": "Loup d'or"
+  },
+  "303": {
+    "en": "Platinum Wolf",
+    "ja": "Platinum Wolf",
+    "de": "Platin-Wolf",
+    "fr": "Loup de platine"
+  },
+  "304": {
+    "en": "Diamond Wolf",
+    "ja": "Diamond Wolf",
+    "de": "Diamant-Wolf",
+    "fr": "Loup de diamant"
+  },
+  "305": {
+    "en": "Of the First Pack",
+    "ja": "of the Feast Champion",
+    "de": "des ersten Rudels",
+    "fr": "Loup de meute dominante"
+  },
+  "306": {
+    "en": "Of the Second Pack",
+    "ja": "of the Feast Slayer",
+    "de": "des zweiten Rudels",
+    "fr": "Loup de meute impitoyable"
+  },
+  "307": {
+    "en": "Of the Hungry Pack",
+    "ja": "of the Feast Ranker",
+    "de": "des hungrigen Rudels",
+    "fr": "Loup de jeune meute"
+  },
+  "308": {
+    "en": "Of the Bronze Pack",
+    "ja": "of the Bronze Wolf",
+    "de": "des Bronze-Rudels",
+    "fr": "Loup de meute de bronze"
+  },
+  "309": {
+    "en": "Of the Silver Pack",
+    "ja": "of the Silver Wolf",
+    "de": "des Silber-Rudels",
+    "fr": "Loup de meute d'argent"
+  },
+  "310": {
+    "en": "Of the Gold Pack",
+    "ja": "of the Gold Wolf",
+    "de": "des Gold-Rudels",
+    "fr": "Loup de meute d'or"
+  },
+  "311": {
+    "en": "Of the Platinum Pack",
+    "ja": "of the Platinum Wolf",
+    "de": "des Platinum-Rudels",
+    "fr": "Loup de meute de platine"
+  },
+  "312": {
+    "en": "Of the Diamond Pack",
+    "ja": "of the Diamond Wolf",
+    "de": "des Diamant-Rudels",
+    "fr": "Loup de meute de diamant"
+  },
+  "313": {
+    "en": "The Knight of Glory",
+    "ja": "the Knight of Glory",
+    "de": "Held der Ehre",
+    "fr": "Déglaceur de la Gloire"
+  },
+  "314": {
+    "en": "The Chief Mourner",
+    "ja": "the Chief Mourner",
+    "de": "der Trauernde",
+    "fr": "Entremetteur post-mortem"
+  },
+  "315": {
+    "en": "The Wings of Time",
+    "ja": "Wings of Time",
+    "de": "der Zeitnomade",
+    "fr": "Voyageur du temps"
+  },
+  "316": {
+    "en": "Surrenderer of Souls",
+    "ja": "Soul Surrender",
+    "de": "der Seelenerbe",
+    "fr": "Gardien des âmes"
+  },
+  "317": {
+    "en": "Khloe's Friend",
+    "ja": "Khloe's Friend",
+    "de": "Khloes Freund",
+    "fr": "Ami de Khloe"
+  },
+  "318": {
+    "en": "Khloe's Best Friend",
+    "ja": "Khloe's Best Friend",
+    "de": "Khloes bester Freund",
+    "fr": "Meilleur ami de Khloe"
+  },
+  "319": {
+    "en": "Hero of Gelmorra",
+    "ja": "the Hero of Gelmorra",
+    "de": "Held Gelmorras",
+    "fr": "Héros gelmorrain"
+  },
+  "320": {
+    "en": "Lightbringer",
+    "ja": "the Lightbringer",
+    "de": "der Lichtbringer",
+    "fr": "Porteur de la lumière"
+  },
+  "321": {
+    "en": "Lonely Explorer",
+    "ja": "Lonely Explorer",
+    "de": "Einsamer Erkunder",
+    "fr": "Explorateur solitaire"
+  },
+  "322": {
+    "en": "The Lucky",
+    "ja": "Lucky Person",
+    "de": "Heber verborgener Schätze",
+    "fr": "Grand veinard"
+  },
+  "323": {
+    "en": "Of the Sixth Sense",
+    "ja": "Sixth Sense",
+    "de": "mit dem Sechsten Sinn",
+    "fr": "Maître du sixième sens"
+  },
+  "324": {
+    "en": "Corpse Dancer",
+    "ja": "Corpse Dancer",
+    "de": "Leichentänzer",
+    "fr": "Chorégraphe pour cadavres"
+  },
+  "325": {
+    "en": "Makai Master",
+    "ja": "Master of GARO",
+    "de": "Makai-Meister",
+    "fr": "Maître Makai"
+  },
+  "326": {
+    "en": "Garo",
+    "ja": "GARO",
+    "de": "Garo",
+    "fr": "Garo"
+  },
+  "327": {
+    "en": "Makai Monk",
+    "ja": "Makai Monk",
+    "de": "Makai-Mönch",
+    "fr": "Moine Makai"
+  },
+  "328": {
+    "en": "Barago",
+    "ja": "BARAGO",
+    "de": "Barago",
+    "fr": "Barago"
+  },
+  "329": {
+    "en": "Dan",
+    "ja": "DAN",
+    "de": "Dan",
+    "fr": "Dan"
+  },
+  "330": {
+    "en": "Makai Bard",
+    "ja": "Makai Bard",
+    "de": "Makai-Barde",
+    "fr": "Barde Makai"
+  },
+  "331": {
+    "en": "Makai Black Mage",
+    "ja": "Makai Black Mage",
+    "de": "Makai-Schwarzmagier",
+    "fr": "Mage noir Makai"
+  },
+  "332": {
+    "en": "Makai White Mage",
+    "ja": "Makai White Mage",
+    "de": "Makai-Weißmagier",
+    "fr": "Mage blanc Makai"
+  },
+  "333": {
+    "en": "Zero",
+    "ja": "ZERO",
+    "de": "Zero",
+    "fr": "Zéro"
+  },
+  "334": {
+    "en": "Makai Summoner",
+    "ja": "Makai Summoner",
+    "de": "Makai-Beschwörer",
+    "fr": "Invocateur Makai"
+  },
+  "335": {
+    "en": "Makai Scholar",
+    "ja": "Makai Scholar",
+    "de": "Makai-Gelehrter",
+    "fr": "Érudit Makai"
+  },
+  "336": {
+    "en": "Kiba",
+    "ja": "KIBA",
+    "de": "Kiba",
+    "fr": "Kiba"
+  },
+  "337": {
+    "en": "Makai Machinist",
+    "ja": "Makai Machinist",
+    "de": "Makai-Maschinist",
+    "fr": "Machiniste Makai"
+  },
+  "338": {
+    "en": "Makai Astrologian",
+    "ja": "Makai Astrologian",
+    "de": "Makai-Astrologe",
+    "fr": "Astromancien Makai"
+  },
+  "339": {
+    "en": "Moonlifter",
+    "ja": "Moonlift Dancer",
+    "de": "Sonne-und-Mond-Tänzer",
+    "fr": "Danseur du soleil et de la lune"
+  },
+  "340": {
+    "en": "The Finest Pupil's Ally",
+    "ja": "the Finest Pupil",
+    "de": "der Meisterschüler",
+    "fr": "Disciple le plus doué"
+  },
+  "341": {
+    "en": "Fatewalker",
+    "ja": "the Far Edge of Fate",
+    "de": "am Horizont der Bestimmung",
+    "fr": "Pèlerin du destin"
+  },
+  "342": {
+    "en": "Of the Holy Body",
+    "ja": "Consulting Associate",
+    "de": "Sonderbeauftragter",
+    "fr": "Conseiller spécial du scolasticat"
+  },
+  "343": {
+    "en": "Gigi's Best Friend",
+    "ja": "Gigi's Best Friend",
+    "de": "Gigis Patenonkel",
+    "fr": "Meilleur ami de Gigi"
+  },
+  "344": {
+    "en": "Tamer of the Undying Flame",
+    "ja": "Phoenix Tamer",
+    "de": "Phönixbändiger",
+    "fr": "Dompteur du Hôô"
+  },
+  "345": {
+    "en": "Mortal Fist",
+    "ja": "Hard Puncher",
+    "de": "die tödliche Faust",
+    "fr": "Prédateur invétéré"
+  },
+  "346": {
+    "en": "Rhalgr's Right Fist",
+    "ja": "Rhalgr's Saint",
+    "de": "Rhalgrs rechte Faust",
+    "fr": "Limier d'Oschon"
+  },
+  "347": {
+    "en": "Tablesetter",
+    "ja": "Tablesetter",
+    "de": "Tafeldiener",
+    "fr": "Serveur de festin"
+  },
+  "348": {
+    "en": "Halone's Cup Bearer",
+    "ja": "Halone's Saint",
+    "de": "Halones Hofschenk",
+    "fr": "Échanson de Halone"
+  },
+  "349": {
+    "en": "Zhloe's Friend",
+    "ja": "Zhloe's Friend",
+    "de": "Zhloes Freund",
+    "fr": "Ami de Zhloe"
+  },
+  "350": {
+    "en": "Zhloe's Best Friend",
+    "ja": "Zhloe's Best Friend",
+    "de": "Zhloes bester Freund",
+    "fr": "Meilleur ami de Zhloe"
+  },
+  "351": {
+    "en": "Survivor of the Song",
+    "ja": "Survivor of the Song",
+    "de": "Bezwinger der Sirenen-See",
+    "fr": "Survivant du Chant"
+  },
+  "352": {
+    "en": "Ijin Traveler",
+    "ja": "Ijin Traveler",
+    "de": "der reisende Ijin",
+    "fr": "Ijin voyageur"
+  },
+  "353": {
+    "en": "Confederate",
+    "ja": "Confederate",
+    "de": "der Konföderierte",
+    "fr": "Pirate de la Confédération"
+  },
+  "354": {
+    "en": "Adversary",
+    "ja": "Adversary",
+    "de": "Jäger des Jägers",
+    "fr": "Chasseur du chasseur"
+  },
+  "355": {
+    "en": "Steppe Warrior",
+    "ja": "Steppe Warrior",
+    "de": "Steppenkrieger",
+    "fr": "Combattant de la steppe"
+  },
+  "356": {
+    "en": "The Returned",
+    "ja": "the Returned",
+    "de": "der Heimkehrer",
+    "fr": "Rentré au bercail"
+  },
+  "357": {
+    "en": "Lyse's Right Fist",
+    "ja": "Lyse's Right Fist",
+    "de": "Lyses rechte Faust",
+    "fr": "Poing droit de Lyse"
+  },
+  "358": {
+    "en": "The Liberator",
+    "ja": "the Liberator",
+    "de": "der Befreier",
+    "fr": "Le Libérateur"
+  },
+  "359": {
+    "en": "Deltascape Deleter",
+    "ja": "Deltascape Deleter",
+    "de": "der Deltametrische",
+    "fr": "Nettoyeur du Deltastice"
+  },
+  "360": {
+    "en": "Ul Cup Champion",
+    "ja": "Ul Cup Champion",
+    "de": "Sieger des Sultan-Turniers",
+    "fr": "Champion du sultanat"
+  },
+  "361": {
+    "en": "The Fistful",
+    "ja": "the Fistful",
+    "de": "die wiedergeborene Faust",
+    "fr": "Poing protecteur"
+  },
+  "362": {
+    "en": "Loved by the Axe",
+    "ja": "Loved by the Axe",
+    "de": "der Krieger der Herzen",
+    "fr": "Hache nomade"
+  },
+  "363": {
+    "en": "The Blood Dragoon",
+    "ja": "the Blood Dragoon",
+    "de": "der Blutdrache",
+    "fr": "Dragon écarlate"
+  },
+  "364": {
+    "en": "Of the True Autumn",
+    "ja": "of the True Autumn",
+    "de": "Purpurlaubkrieger",
+    "fr": "Mémoire des Érables"
+  },
+  "365": {
+    "en": "Padjal Protector",
+    "ja": "Padjali Protector",
+    "de": "Beschützer der Padjal",
+    "fr": "Chaperon de Padjal"
+  },
+  "366": {
+    "en": "Gembreaker",
+    "ja": "Gembreaker",
+    "de": "der Seelenzerstörer",
+    "fr": "Détourneur de comète"
+  },
+  "367": {
+    "en": "The First Caller",
+    "ja": "the First Caller",
+    "de": "der mächtigste Beschwörer",
+    "fr": "Grand invocateur"
+  },
+  "368": {
+    "en": "Keeper of the Lilacs",
+    "ja": "Keeper of the Lilacs",
+    "de": "der Feenfänger",
+    "fr": "Gardien de Lilas"
+  },
+  "369": {
+    "en": "Eorzean Ninja",
+    "ja": "Eorzean Ninja",
+    "de": "der eorzäische Ninja",
+    "fr": "Shinobi éorzéen"
+  },
+  "370": {
+    "en": "Of the Swirling Abyss",
+    "ja": "of the Swirling Abyss",
+    "de": "der Einsame",
+    "fr": "Dévoreur de ténèbres"
+  },
+  "371": {
+    "en": "The Howler",
+    "ja": "the Musketeer",
+    "de": "der mit den Himmelhunden heult",
+    "fr": "Franc-tirailleur"
+  },
+  "372": {
+    "en": "Of the Eastern Skies",
+    "ja": "of the Eastern Skies",
+    "de": "Hüter ferner Himmel",
+    "fr": "Apprivoiseur du Renard"
+  },
+  "373": {
+    "en": "The Red",
+    "ja": "the Red",
+    "de": "der Rote",
+    "fr": "Le Rouge"
+  },
+  "374": {
+    "en": "Muso",
+    "ja": "the Muso",
+    "de": "von der Sekiseigumi",
+    "fr": "Tenka Musô"
+  },
+  "375": {
+    "en": "God of War",
+    "ja": "God of War",
+    "de": "Gott des Krieges",
+    "fr": "Dieu de la guerre"
+  },
+  "376": {
+    "en": "God of Magic",
+    "ja": "God of Magic",
+    "de": "Gott der Magie",
+    "fr": "Dieu de la magie"
+  },
+  "377": {
+    "en": "God of the Hand",
+    "ja": "God of the Hand",
+    "de": "Gott des Handwerks",
+    "fr": "Dieu de la main"
+  },
+  "378": {
+    "en": "God of the Land",
+    "ja": "God of the Land",
+    "de": "Gott des Sammelns",
+    "fr": "Dieu de la terre"
+  },
+  "379": {
+    "en": "Of the Longest Hunt",
+    "ja": "of the Longest Hunt",
+    "de": "von der langen Jagd",
+    "fr": "Chasseur vétéran inlassable"
+  },
+  "380": {
+    "en": "Of the Endless Hunt",
+    "ja": "of the Endless Hunt",
+    "de": "von der endlosen Jagd",
+    "fr": "Chasseur vétéran au long cours"
+  },
+  "381": {
+    "en": "Thrillseeker",
+    "ja": "Thrillseeker",
+    "de": "Adrenalinjunkie",
+    "fr": "Chasseur de frissons"
+  },
+  "382": {
+    "en": "Ultimate Thrillseeker",
+    "ja": "Ultimate Thrillseeker",
+    "de": "Ultimativer Adrenalinjunkie",
+    "fr": "Chasseur de frissons ultimes"
+  },
+  "383": {
+    "en": "Canal Raider",
+    "ja": "Canal Raider",
+    "de": "Kanalratte",
+    "fr": "Pilleur de canaux"
+  },
+  "384": {
+    "en": "Hiruko Hunter",
+    "ja": "Hiruko Hunter",
+    "de": "Besieger von Hiruko",
+    "fr": "Chasseur de Hiruko"
+  },
+  "385": {
+    "en": "Heavenly Gate Crasher",
+    "ja": "Heavenly Gate Crasher",
+    "de": "Erklimmer der Himmelssäule",
+    "fr": "Tutoyeur de sommets"
+  },
+  "386": {
+    "en": "True Hero",
+    "ja": "True Hero",
+    "de": "die lebende Legende",
+    "fr": "Maître du Pilier des Cieux"
+  },
+  "387": {
+    "en": "Lone Hero",
+    "ja": "Lone Hero",
+    "de": "der himmlische Einzelgänger",
+    "fr": "Héros solitaire"
+  },
+  "388": {
+    "en": "Hoarder",
+    "ja": "Hoarder",
+    "de": "Sammler verborgener Schätze",
+    "fr": "Exhumeur de coffres"
+  },
+  "389": {
+    "en": "Vanguard",
+    "ja": "Vanguard",
+    "de": "Vorkämpfer",
+    "fr": "Avant-garde"
+  },
+  "390": {
+    "en": "Kurenai's Best Friend",
+    "ja": "Kurenai's Best Friend",
+    "de": "Kurenais Katalysator",
+    "fr": "Ami de Kurenai"
+  },
+  "391": {
+    "en": "Kurenai's Partner",
+    "ja": "Kurenai's Partner",
+    "de": "Kurenais Kompagnon",
+    "fr": "Associé de Kurenai"
+  },
+  "392": {
+    "en": "Under the Moonlight",
+    "ja": "Under the Moonlight",
+    "de": "des fahlen Mondscheins",
+    "fr": "La lune blafarde"
+  },
+  "393": {
+    "en": "Siltwater Socialite",
+    "ja": "Siltwater Socialite",
+    "de": "der mit den Flossen tanzt",
+    "fr": "Barbichu honoraire"
+  },
+  "394": {
+    "en": "Matchmaker",
+    "ja": "Matchmaker",
+    "de": "Mogry-Kuppler",
+    "fr": "Entremetteur de pompons"
+  },
+  "395": {
+    "en": "Eorzean Ninja Warrior",
+    "ja": "Eorzean Ninja Warrior",
+    "de": "Feuermond-Parkourläufer",
+    "fr": "Valeureux aventurier de Pas dans l'tas"
+  },
+  "396": {
+    "en": "Calamatologist",
+    "ja": "Calamatologist",
+    "de": "Katastrophologe",
+    "fr": "Fléaulogue"
+  },
+  "397": {
+    "en": "The Ultimate Legend",
+    "ja": "the Ultimate Legend",
+    "de": "Ultimative Legende",
+    "fr": "L'ultime Légende"
+  },
+  "398": {
+    "en": "Monster Hunter",
+    "ja": "Monster Hunter",
+    "de": "Meister-Monsterjäger",
+    "fr": "Chasseur de roi des cieux"
+  },
+  "399": {
+    "en": "FRC 2018 Champion",
+    "ja": "FRC2018 Champion",
+    "de": "FRC2018 Champion",
+    "fr": "Champion FRC2018"
+  },
+  "400": {
+    "en": "FRC 2018 Finalist",
+    "ja": "FRC2018 Finalist",
+    "de": "FRC2018 Finalist",
+    "fr": "Finaliste FRC2018"
+  },
+  "401": {
+    "en": "FRC 2018 Ranker",
+    "ja": "FRC2018 Ranker",
+    "de": "FRC2018 Rangspieler",
+    "fr": "Classé FRC2018"
+  },
+  "402": {
+    "en": "Prelude in Violet",
+    "ja": "Prelude in Violet",
+    "de": "des violetten Auftakts",
+    "fr": "Prélude pourpré"
+  },
+  "403": {
+    "en": "Philanthropist",
+    "ja": "Philanthropist",
+    "de": "Großspender",
+    "fr": "Philanthrope"
+  },
+  "404": {
+    "en": "Altar Boy",
+    "ja": "Altar Boy",
+    "de": "Messdiener des Glücks",
+    "fr": "Servant d'autel"
+  },
+  "405": {
+    "en": "The Devout",
+    "ja": "the Devout",
+    "de": "Beschwörer der Glückseligkeit",
+    "fr": "Le Dévot"
+  },
+  "406": {
+    "en": "Invoker of Gods",
+    "ja": "Invoker of Gods",
+    "de": "Hohepriester der Glückseligkeit",
+    "fr": "Invocateur de Dieux"
+  },
+  "407": {
+    "en": "Grandmaster Caster",
+    "ja": "Ebisu",
+    "de": "Großkapitalist",
+    "fr": "Grand maître de la pêche"
+  },
+  "408": {
+    "en": "Kyubi Tamer",
+    "ja": "Kyubi Tamer",
+    "de": "Kamuy-Zähmer",
+    "fr": "Dompteur de kamuy"
+  },
+  "409": {
+    "en": "Mahjong Enthusiast",
+    "ja": "Mahjong Enthusiast",
+    "de": "Mahjong-Liebhaber",
+    "fr": "Passionné de mahjong"
+  },
+  "410": {
+    "en": "Mahjong Master",
+    "ja": "Mahjong Master",
+    "de": "Mahjong-Meister",
+    "fr": "Virtuose du mahjong"
+  },
+  "411": {
+    "en": "Little Piggy",
+    "ja": "Little Piggy",
+    "de": "Schweinchen",
+    "fr": "Porcelet"
+  },
+  "412": {
+    "en": "Tough Customer",
+    "ja": "Tough Customer",
+    "de": "Stammkunde",
+    "fr": "Client exigeant"
+  },
+  "413": {
+    "en": "Blue Blood",
+    "ja": "Blue Blood",
+    "de": "Blaublut",
+    "fr": "Sang bleu"
+  },
+  "414": {
+    "en": "Mask of the Blue",
+    "ja": "Mask the Blue",
+    "de": "Blaumaske",
+    "fr": "Bleuet masqué"
+  },
+  "415": {
+    "en": "Perfect Blue",
+    "ja": "Perfect Blue",
+    "de": "der Blaue",
+    "fr": "Grand bleu"
+  },
+  "416": {
+    "en": "Eurekan Explorer",
+    "ja": "Eurekan Explorer",
+    "de": "Eureka-Forscher",
+    "fr": "Explorateur d'Eurêka"
+  },
+  "417": {
+    "en": "A Requiem For Heroes",
+    "ja": "A Requiem For Heroes",
+    "de": "Requiem der Helden",
+    "fr": "Un requiem pour les héros"
+  },
+  "418": {
+    "en": "The Soboro",
+    "ja": "the Soboro",
+    "de": "Soboro-Klinge",
+    "fr": "Justicier de Kugane"
+  },
+  "419": {
+    "en": "Kageyama Killer",
+    "ja": "Kageyama Killer",
+    "de": "Häscher von Kageyama",
+    "fr": "Diplomate oriental"
+  },
+  "420": {
+    "en": "Kingsglaive",
+    "ja": "Kingsglaive",
+    "de": "Kingsglaive",
+    "fr": "Lame royale"
+  },
+  "421": {
+    "en": "Lord of the Fetch",
+    "ja": "Lord of the Fetch",
+    "de": "Engelstöter",
+    "fr": "Pourfendeur d'anges"
+  },
+  "422": {
+    "en": "Soul of War",
+    "ja": "Soul of War",
+    "de": "Seele des Krieges",
+    "fr": "Icône de la guerre"
+  },
+  "423": {
+    "en": "Soul of Magic",
+    "ja": "Soul of Magic",
+    "de": "Seele der Magie",
+    "fr": "Icône de la magie"
+  },
+  "424": {
+    "en": "Soul of the Craft",
+    "ja": "Soul of the Craft",
+    "de": "Seele des Handwerks",
+    "fr": "Icône de la main"
+  },
+  "425": {
+    "en": "Soul of the Harvest",
+    "ja": "Soul of the Harvest",
+    "de": "Seele der Ernte",
+    "fr": "Icône de la terre"
+  },
+  "426": {
+    "en": "Outlander",
+    "ja": "Outlander",
+    "de": "Weltenwanderer",
+    "fr": "Visiteur d'outre-dimension"
+  },
+  "427": {
+    "en": "The Fae-touched",
+    "ja": "the Fae-touched",
+    "de": "der Feenfreund",
+    "fr": "Le Féérique"
+  },
+  "428": {
+    "en": "Seeker of Hidden Truths",
+    "ja": "Seeker of Hidden Truths",
+    "de": "der Sucher verborgener Wahrheiten",
+    "fr": "Chercheur de vérités cachées"
+  },
+  "429": {
+    "en": "Of the Sunless Sea",
+    "ja": "of the Sunless Sea",
+    "de": "aus dem Meer ohne Sonne",
+    "fr": "Voyageur du désert d'ocre rouge"
+  },
+  "430": {
+    "en": "Enemy of Innocence",
+    "ja": "Enemy of Innocence",
+    "de": "Bezwinger von Innozenz",
+    "fr": "Ennemi de l'innocence"
+  },
+  "431": {
+    "en": "Shadowbringer",
+    "ja": "Shadowbringer",
+    "de": "Schattenbringer",
+    "fr": "Porteur d'ombre"
+  },
+  "432": {
+    "en": "Sworn Protector",
+    "ja": "Sworn Protector",
+    "de": "Löwenherz",
+    "fr": "Protecteur dévoué"
+  },
+  "433": {
+    "en": "The Heart's Beat",
+    "ja": "the Heart's Beat",
+    "de": "der Klingentänzer",
+    "fr": "Cœur battant"
+  },
+  "434": {
+    "en": "Living Memory",
+    "ja": "Living Memory",
+    "de": "Lebendige Erinnerung",
+    "fr": "Mémoire vive"
+  },
+  "435": {
+    "en": "Bulwark between Worlds",
+    "ja": "Bulwark Between Worlds",
+    "de": "Bollwerk zwischen den Welten",
+    "fr": "Rempart entre deux mondes"
+  },
+  "436": {
+    "en": "The Transcendent",
+    "ja": "the Transcendent",
+    "de": "der Transzendent",
+    "fr": "Le Transcendantal"
+  },
+  "437": {
+    "en": "Worldcleaver",
+    "ja": "Worldcleaver",
+    "de": "Weltenspalter",
+    "fr": "Force tellurique"
+  },
+  "438": {
+    "en": "Bolt from the Black",
+    "ja": "Bolt from the Black",
+    "de": "der schwarzen Schwingen",
+    "fr": "Éclair de jais"
+  },
+  "439": {
+    "en": "The Song upon the Wind",
+    "ja": "the Song upon the Wind",
+    "de": "das Lied im Wind",
+    "fr": "Troubadour au gré du vent"
+  },
+  "440": {
+    "en": "Firstblessed",
+    "ja": "Firstblessed",
+    "de": "Erstgesegneter",
+    "fr": "Bienheureux inné"
+  },
+  "441": {
+    "en": "Of Stranger Shadow",
+    "ja": "of Stranger Shadow",
+    "de": "aus den seltsamen Schatten",
+    "fr": "Avocat des forces obscures"
+  },
+  "442": {
+    "en": "Farcaller",
+    "ja": "Farcaller",
+    "de": "Fernrufer",
+    "fr": "Convocateur du lointain"
+  },
+  "443": {
+    "en": "Knower of Twin Worlds",
+    "ja": "Knower of Twin Worlds",
+    "de": "Kenner der Zwillingswelten",
+    "fr": "Double-mondialiste"
+  },
+  "444": {
+    "en": "Shadow of the Other",
+    "ja": "Shadow of the Other",
+    "de": "der Schatten des Anderen",
+    "fr": "Ombre de l'altérité"
+  },
+  "445": {
+    "en": "The Boundless Dark",
+    "ja": "the Boundless Dark",
+    "de": "die Grenzenlose Dunkelheit",
+    "fr": "Noirceur infinie"
+  },
+  "446": {
+    "en": "The Shot Heard Across Worlds",
+    "ja": "the Shot Heard Across Worlds",
+    "de": "der Schusswaffenpoet",
+    "fr": "Rafale dimensionnelle"
+  },
+  "447": {
+    "en": "Distant Stargazer",
+    "ja": "Distant Stargazer",
+    "de": "Entdecker ferner Sterne",
+    "fr": "Observateur des étoiles"
+  },
+  "448": {
+    "en": "Dualistic Duelist",
+    "ja": "Dualistic Duelist",
+    "de": "vom roten Sturm",
+    "fr": "Duelliste dualiste"
+  },
+  "449": {
+    "en": "Samurai in a Strange Land",
+    "ja": "Samurai in a Strange Land",
+    "de": "der reisende Ronin",
+    "fr": "Sabre de l'inconnu"
+  },
+  "450": {
+    "en": "Wandering Vanguard",
+    "ja": "Wandering Vanguard",
+    "de": "die Klinge mit dem Colt",
+    "fr": "Éclaireur errant"
+  },
+  "451": {
+    "en": "Riftdancer",
+    "ja": "Riftdancer",
+    "de": "Spaltenwandler",
+    "fr": "Saltimbanque aérien"
+  },
+  "452": {
+    "en": "Otherworld Smith",
+    "ja": "Otherworld Smith",
+    "de": "Schmied der Anderswelt",
+    "fr": "Métallurgiste du premier reflet"
+  },
+  "453": {
+    "en": "Otherworld Artisan",
+    "ja": "Otherworld Artisan",
+    "de": "Künstler der Anderswelt",
+    "fr": "Façonnier du premier reflet"
+  },
+  "454": {
+    "en": "Otherworld Apothecary",
+    "ja": "Otherworld Apothecary",
+    "de": "Heiler der Anderswelt",
+    "fr": "Préparateur du premier reflet"
+  },
+  "455": {
+    "en": "Otherworld Seeker",
+    "ja": "Otherworld Seeker",
+    "de": "Sucher der Anderswelt",
+    "fr": "Naturaliste du premier reflet"
+  },
+  "456": {
+    "en": "Otherworld Angler",
+    "ja": "Otherworld Angler",
+    "de": "Angler der Anderswelt",
+    "fr": "Pêcheur du premier reflet"
+  },
+  "457": {
+    "en": "The Multifaceted",
+    "ja": "the Multifaceted",
+    "de": "Diener der Gemeinschaft",
+    "fr": "Artisan multifacettes"
+  },
+  "458": {
+    "en": "Trusted Friend",
+    "ja": "Trusted Friend",
+    "de": "Vertrauter Freund",
+    "fr": "Adjurateur d'amis"
+  },
+  "459": {
+    "en": "The Invisible Hand",
+    "ja": "the Invisible Hand",
+    "de": "die unsichtbare Hand",
+    "fr": "Main invisible"
+  },
+  "460": {
+    "en": "Charming Brute",
+    "ja": "Charming Brute",
+    "de": "Charmanter Schläger",
+    "fr": "Brute aimable"
+  },
+  "461": {
+    "en": "The Fabulously Feral",
+    "ja": "the Fabulously Feral",
+    "de": "der fantastische Wilde",
+    "fr": "Fabuleusement féroce"
+  },
+  "462": {
+    "en": "Of Unyielding Oath",
+    "ja": "of Unyielding Oath",
+    "de": "des unbeugsamen Schwurs",
+    "fr": "Serment inflexible"
+  },
+  "463": {
+    "en": "Of Unyielding Steel",
+    "ja": "of Unyielding Steel",
+    "de": "des unzerbrechlichen Stahls",
+    "fr": "Acier inflexible"
+  },
+  "464": {
+    "en": "Of Unyielding Principle",
+    "ja": "of Unyielding Principle",
+    "de": "der Getreue der schwarzen Klinge",
+    "fr": "Morale inflexible"
+  },
+  "465": {
+    "en": "Of Unyielding Lealty",
+    "ja": "of Unyielding Lealty",
+    "de": "Wackeres Herz",
+    "fr": "Loyauté inflexible"
+  },
+  "466": {
+    "en": "Dungeon Raider",
+    "ja": "Dungeon Raider",
+    "de": "Besucher der Verliese",
+    "fr": "Promeneur hypogéen"
+  },
+  "467": {
+    "en": "Dungeon Dweller",
+    "ja": "Dungeon Dweller",
+    "de": "Erkunder der Verliese",
+    "fr": "Explorateur hypogéen"
+  },
+  "468": {
+    "en": "Dungeon Lord",
+    "ja": "Dungeon Lord",
+    "de": "Oberster Verliesmeister",
+    "fr": "Seigneur hypogéen"
+  },
+  "469": {
+    "en": "Kindred Sword",
+    "ja": "Kindred Sword",
+    "de": "der Unenthauptete",
+    "fr": "Fan de Yojimbo"
+  },
+  "470": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "476": {
+    "en": "Of Virtuous Deeds",
+    "ja": "of Virtuous Deeds",
+    "de": "der Schmied des Paktes",
+    "fr": "Vœux vertueux"
+  },
+  "477": {
+    "en": "Kai-Shirr's Best Mate",
+    "ja": "Kai-Shirr's Best Mate",
+    "de": "der Mystelflüsterer",
+    "fr": "Meilleur ami de Kai-Shirr"
+  },
+  "478": {
+    "en": "Honeybee",
+    "ja": "Honeybee",
+    "de": "Honigbienchen",
+    "fr": "Associé de Kai-Shirr"
+  },
+  "479": {
+    "en": "Sweet Dreamer",
+    "ja": "Sweet Dreamer",
+    "de": "Meister der Träume",
+    "fr": "Doux rêveur"
+  },
+  "480": {
+    "en": "The Perfect Legend",
+    "ja": "the Perfect Legend",
+    "de": "die perfekte Legende",
+    "fr": "La Légende parfaite"
+  },
+  "481": {
+    "en": "Blue to the Bone",
+    "ja": "Blue to the Bone",
+    "de": "Blau bis auf die Knochen",
+    "fr": "Bleu jusqu'à l'os"
+  },
+  "482": {
+    "en": "Blue Luminary",
+    "ja": "Blue Luminary",
+    "de": "Blaue Koryphäe",
+    "fr": "Sommité bleue"
+  },
+  "483": {
+    "en": "Masked of the Round",
+    "ja": "Masked of the Round",
+    "de": "Maskierter der Runde",
+    "fr": "Masque vedette"
+  },
+  "484": {
+    "en": "Unbound Blue",
+    "ja": "Unbound Blue",
+    "de": "der entfesselte Blaue",
+    "fr": "Bleu infini"
+  },
+  "485": {
+    "en": "Blue Justice",
+    "ja": "Blue Justice",
+    "de": "Blaue Gerechtigkeit",
+    "fr": "Justicier bleu"
+  },
+  "486": {
+    "en": "The Battleforged",
+    "ja": "the Battleforged",
+    "de": "der Kampfgestählte",
+    "fr": "L'Aguerri"
+  },
+  "487": {
+    "en": "Champion of the Blue",
+    "ja": "Champion of the Blue",
+    "de": "der Blauste von Allen",
+    "fr": "Champion bleu"
+  },
+  "488": {
+    "en": "Saint of the Firmament",
+    "ja": "Saint of the Firmament",
+    "de": "Heiliger des Himmels",
+    "fr": "Saint d'Azurée"
+  },
+  "489": {
+    "en": "Beatus of the Firmament",
+    "ja": "Beatus of the Firmament",
+    "de": "Beatus des Himmels",
+    "fr": "Bienheureux d'Azurée"
+  },
+  "490": {
+    "en": "Frame of the Firmament",
+    "ja": "Frame of the Firmament",
+    "de": "Stütze des Himmels",
+    "fr": "Scie d'Azurée"
+  },
+  "491": {
+    "en": "Forge of the Firmament",
+    "ja": "Forge of the Firmament",
+    "de": "Schmiede des Himmels",
+    "fr": "Enclume d'Azurée"
+  },
+  "492": {
+    "en": "Hammer of the Firmament",
+    "ja": "Hammer of the Firmament",
+    "de": "Hammer des Himmels",
+    "fr": "Marteau d'Azurée"
+  },
+  "493": {
+    "en": "Jewel of the Firmament",
+    "ja": "Jewel of the Firmament",
+    "de": "Juwel des Himmels",
+    "fr": "Joyau d'Azurée"
+  },
+  "494": {
+    "en": "Knife of the Firmament",
+    "ja": "Knife of the Firmament",
+    "de": "Messer des Himmels",
+    "fr": "Couteau d'Azurée"
+  },
+  "495": {
+    "en": "Weave of the Firmament",
+    "ja": "Weave of the Firmament",
+    "de": "Gewebe des Himmels",
+    "fr": "Aiguille d'Azurée"
+  },
+  "496": {
+    "en": "Panacea of the Firmament",
+    "ja": "Panacea of the Firmament",
+    "de": "Erlöser des Himmels",
+    "fr": "Alambic d'Azurée"
+  },
+  "497": {
+    "en": "Pan of the Firmament",
+    "ja": "Pan of the Firmament",
+    "de": "Kessel des Himmels",
+    "fr": "Poêle d'Azurée"
+  },
+  "498": {
+    "en": "Pick of the Firmament",
+    "ja": "Pick of the Firmament",
+    "de": "Meißel des Himmels",
+    "fr": "Pioche d'Azurée"
+  },
+  "499": {
+    "en": "Hatchet of the Firmament",
+    "ja": "Hatchet of the Firmament",
+    "de": "Sichel des Himmels",
+    "fr": "Faucille d'Azurée"
+  },
+  "500": {
+    "en": "Rod of the Firmament",
+    "ja": "Rod of the Firmament",
+    "de": "Rute des Himmels",
+    "fr": "Hameçon d'Azurée"
+  },
+  "501": {
+    "en": "The Hand of Creation",
+    "ja": "the Hand of Creation",
+    "de": "die Hand der Schöpfung",
+    "fr": "Artisan en chef d'Azurée"
+  },
+  "502": {
+    "en": "Divine Provider",
+    "ja": "Divine Provider",
+    "de": "Göttlicher Ernährer",
+    "fr": "Récolteur en chef d'Azurée"
+  },
+  "503": {
+    "en": "The Nest's Own Carpenter",
+    "ja": "the Nest's Own Carpenter",
+    "de": "der Zimmerer des Genists",
+    "fr": "Menuisier du Nichoir"
+  },
+  "504": {
+    "en": "The Nest's Own Blacksmith",
+    "ja": "the Nest's Own Blacksmith",
+    "de": "der Grobschmied des Genists",
+    "fr": "Forgeron du Nichoir"
+  },
+  "505": {
+    "en": "The Nest's Own Armorer",
+    "ja": "the Nest's Own Armorer",
+    "de": "der Plattner des Genists",
+    "fr": "Armurier du Nichoir"
+  },
+  "506": {
+    "en": "The Nest's Own Goldsmith",
+    "ja": "the Nest's Own Goldsmith",
+    "de": "der Goldschmied des Genists",
+    "fr": "Orfèvre du Nichoir"
+  },
+  "507": {
+    "en": "The Nest's Own Leatherworker",
+    "ja": "the Nest's Own Leatherworker",
+    "de": "der Gerber des Genists",
+    "fr": "Tanneur du Nichoir"
+  },
+  "508": {
+    "en": "The Nest's Own Weaver",
+    "ja": "the Nest's Own Weaver",
+    "de": "der Weber des Genists",
+    "fr": "Couturier du Nichoir"
+  },
+  "509": {
+    "en": "The Nest's Own Alchemist",
+    "ja": "the Nest's Own Alchemist",
+    "de": "der Alchemist des Genists",
+    "fr": "Alchimiste du Nichoir"
+  },
+  "510": {
+    "en": "The Nest's Own Culinarian",
+    "ja": "the Nest's Own Culinarian",
+    "de": "der Gourmet des Genists",
+    "fr": "Cuisinier du Nichoir"
+  },
+  "511": {
+    "en": "The Nest's Own Miner",
+    "ja": "the Nest's Own Miner",
+    "de": "der Minenarbeiter des Genists",
+    "fr": "Mineur du Nichoir"
+  },
+  "512": {
+    "en": "The Nest's Own Botanist",
+    "ja": "the Nest's Own Botanist",
+    "de": "der Gärtner des Genists",
+    "fr": "Botaniste du Nichoir"
+  },
+  "513": {
+    "en": "The Nest's Own Fisher",
+    "ja": "the Nest's Own Fisher",
+    "de": "der Fischer des Genists",
+    "fr": "Pêcheur du Nichoir"
+  },
+  "514": {
+    "en": "Fortune's Favored Kupo",
+    "ja": "Fortune's Favored Kupo",
+    "de": "Glückskupo",
+    "fr": "Fortuné du kupo"
+  },
+  "515": {
+    "en": "Ocean Fisher",
+    "ja": "Ocean Fisher",
+    "de": "Hochseefischer",
+    "fr": "Ambitieux accompli"
+  },
+  "516": {
+    "en": "Octopus Traveler",
+    "ja": "Octopus Traveler",
+    "de": "Oktopusreisender",
+    "fr": "Poulpicide prééminent"
+  },
+  "517": {
+    "en": "Shark Hunter",
+    "ja": "Shark Hunter",
+    "de": "Haijäger",
+    "fr": "Savant ès squales"
+  },
+  "518": {
+    "en": "Jellyfish Fanatic",
+    "ja": "Jellyfish Fanatic",
+    "de": "Quallenfanatiker",
+    "fr": "Maître méduseur "
+  },
+  "519": {
+    "en": "Sea Dragoon",
+    "ja": "Sea Dragoon",
+    "de": "Meeres-Dragoon",
+    "fr": "Équarisseur équestre"
+  },
+  "520": {
+    "en": "Echo of a Fallen Star",
+    "ja": "Echo of a Fallen Star",
+    "de": "Echo eines gefallenen Sterns",
+    "fr": "Écho d'une étoile déchue"
+  },
+  "521": {
+    "en": "Ronkan Historian",
+    "ja": "Ronkan Historian",
+    "de": "Ronka-Historiker",
+    "fr": "Historien de Ronka"
+  },
+  "522": {
+    "en": "A Dragon's Best Friend",
+    "ja": "A Dragon's Best Friend",
+    "de": "Drachenflüsterer",
+    "fr": "Meilleur ami d'Ehll Tou"
+  },
+  "523": {
+    "en": "Tinker Tutor",
+    "ja": "Tinker Tutor",
+    "de": "Bastelmeister",
+    "fr": "Associé d'Ehll Tou"
+  },
+  "524": {
+    "en": "Partner in Teatime",
+    "ja": "Partner in Teatime",
+    "de": "Teetrinker",
+    "fr": "Buveur de thé"
+  },
+  "525": {
+    "en": "Vrai Ami",
+    "ja": "Vrai Ami",
+    "de": "Wahrer Freund",
+    "fr": "Maitre de thé"
+  },
+  "526": {
+    "en": "Tank Technician",
+    "ja": "Tank Technician",
+    "de": "Zwergenpanzer-Techniker",
+    "fr": "Ingénieur de char"
+  },
+  "527": {
+    "en": "Shepherd to the Stars",
+    "ja": "Shepherd to the Stars",
+    "de": "der Hüter der Sterne",
+    "fr": "Berger des étoiles"
+  },
+  "528": {
+    "en": "Featherfall's Finest Carpenter",
+    "ja": "Featherfall's Finest Carpenter",
+    "de": "Meisterzimmerer aus Federfall",
+    "fr": "Menuisier de Tombeplume"
+  },
+  "529": {
+    "en": "Featherfall's Finest Blacksmith",
+    "ja": "Featherfall's Finest Blacksmith",
+    "de": "Meistergrobschmied aus Federfall",
+    "fr": "Forgeron de Tombeplume"
+  },
+  "530": {
+    "en": "Featherfall's Finest Armorer",
+    "ja": "Featherfall's Finest Armorer",
+    "de": "Meisterplattner aus Federfall",
+    "fr": "Armurier de Tombeplume"
+  },
+  "531": {
+    "en": "Featherfall's Finest Goldsmith",
+    "ja": "Featherfall's Finest Goldsmith",
+    "de": "Meistergoldschmied aus Federfall",
+    "fr": "Orfèvre de Tombeplume"
+  },
+  "532": {
+    "en": "Featherfall's Finest Leatherworker",
+    "ja": "Featherfall's Finest Leatherworker",
+    "de": "Meistergerber aus Federfall",
+    "fr": "Tanneur de Tombeplume"
+  },
+  "533": {
+    "en": "Featherfall's Finest Weaver",
+    "ja": "Featherfall's Finest Weaver",
+    "de": "Meisterweber aus Federfall",
+    "fr": "Couturier de Tombeplume"
+  },
+  "534": {
+    "en": "Featherfall's Finest Alchemist",
+    "ja": "Featherfall's Finest Alchemist",
+    "de": "Meisteralchemist aus Federfall",
+    "fr": "Alchimiste de Tombeplume"
+  },
+  "535": {
+    "en": "Featherfall's Finest Culinarian",
+    "ja": "Featherfall's Finest Culinarian",
+    "de": "Meistergourmet aus Federfall",
+    "fr": "Cuisinier de Tombeplume"
+  },
+  "536": {
+    "en": "Featherfall's Finest Miner",
+    "ja": "Featherfall's Finest Miner",
+    "de": "Meisterminenarbeiter aus Federfall",
+    "fr": "Mineur de Tombeplume"
+  },
+  "537": {
+    "en": "Featherfall's Finest Botanist",
+    "ja": "Featherfall's Finest Botanist",
+    "de": "Meistergärtner aus Federfall",
+    "fr": "Botaniste de Tombeplume"
+  },
+  "538": {
+    "en": "Featherfall's Finest Fisher",
+    "ja": "Featherfall's Finest Fisher",
+    "de": "Meisterfischer aus Federfall",
+    "fr": "Pêcheur de Tombeplume"
+  },
+  "539": {
+    "en": "The Decisive Blow",
+    "ja": "the Decisive Blow",
+    "de": "Gefechtsveteran",
+    "fr": "La Frappe décisive"
+  },
+  "540": {
+    "en": "Skirmisher",
+    "ja": "Skirmisher",
+    "de": "Scharmützelveteran",
+    "fr": "Escarmoucheur"
+  },
+  "541": {
+    "en": "Siege Liege",
+    "ja": "Siege Liege",
+    "de": "Befreier des Adlernests",
+    "fr": "Le Bélier de Bozja"
+  },
+  "542": {
+    "en": "Gabriel's Downfall",
+    "ja": "Gabriel's Downfall",
+    "de": "Stürzer Gabriels",
+    "fr": "La Déchéance de Gabriel"
+  },
+  "543": {
+    "en": "Queller of Beasts",
+    "ja": "Queller of Beasts",
+    "de": "Bestienzähmer",
+    "fr": "Dompteur des Bêtes"
+  },
+  "544": {
+    "en": "The Death of Flame",
+    "ja": "the Death of Flame",
+    "de": "Auslöscher der Flamme",
+    "fr": "Étouffeur des Flammes"
+  },
+  "545": {
+    "en": "Sword of the South",
+    "ja": "Sword of the South",
+    "de": "Schwert des Südens",
+    "fr": "L'Épée du Sud"
+  },
+  "546": {
+    "en": "Guardian Angel",
+    "ja": "Guardian Angel",
+    "de": "Frontengel",
+    "fr": "Ange gardien"
+  },
+  "547": {
+    "en": "Saint of the Firmament",
+    "ja": "Saint of the Firmament",
+    "de": "Heiliger des Himmels",
+    "fr": "Saint d'Azurée"
+  },
+  "548": {
+    "en": "Beatus of the Firmament",
+    "ja": "Beatus of the Firmament",
+    "de": "Beatus des Himmels",
+    "fr": "Bienheureux d'Azurée"
+  },
+  "549": {
+    "en": "Writer of Histories",
+    "ja": "Writer of Histories",
+    "de": "Geschichtsschreiber",
+    "fr": "Scripteur d'Histoires"
+  },
+  "550": {
+    "en": "Of the Truest Blue",
+    "ja": "of the Truest Blue",
+    "de": "der wahrlich Blaue",
+    "fr": "Bleu véritable"
+  },
+  "551": {
+    "en": "Blue Ranger",
+    "ja": "Blue Ranger",
+    "de": "das Blaue Wunder",
+    "fr": "Ranger bleu"
+  },
+  "552": {
+    "en": "The Azure and Omega",
+    "ja": "the Azure and Omega",
+    "de": "Omega-Blau",
+    "fr": "L'Azur et l'Oméga"
+  },
+  "553": {
+    "en": "Balloon Catcher",
+    "ja": "Balloon Catcher",
+    "de": "Ballonfänger",
+    "fr": "Fou du ballon"
+  },
+  "554": {
+    "en": "Deadliest Catcher",
+    "ja": "Deadliest Catcher",
+    "de": "Gefährlichster-Job-Kandidat",
+    "fr": "Péril de la haute mer"
+  },
+  "555": {
+    "en": "Manta Maniac",
+    "ja": "Manta Maniac",
+    "de": "Manta-Maniac",
+    "fr": "Mentor des mantas"
+  },
+  "556": {
+    "en": "World-class Troller",
+    "ja": "World Class Troller",
+    "de": "Weltklassefischer",
+    "fr": "Ratisseur des mers"
+  },
+  "557": {
+    "en": "Saint of the Firmament",
+    "ja": "Saint of the Firmament",
+    "de": "Heiliger des Himmels",
+    "fr": "Saint d'Azurée"
+  },
+  "558": {
+    "en": "Beatus of the Firmament",
+    "ja": "Beatus of the Firmament",
+    "de": "Beatus des Himmels",
+    "fr": "Bienheureux d'Azurée"
+  },
+  "559": {
+    "en": "Tournament Leader",
+    "ja": "Tournament Leader",
+    "de": "Turniermeister",
+    "fr": "Champion de tournoi officiel"
+  },
+  "560": {
+    "en": "Secret Finder",
+    "ja": "Secret Finder",
+    "de": "der Sucher der geheimen Schätze",
+    "fr": "Découvreur du jardin secret"
+  },
+  "561": {
+    "en": "Secret Keeper",
+    "ja": "Secret Keeper",
+    "de": "der Hüter der geheimen Schätze",
+    "fr": "Gardien du jardin secret"
+  },
+  "562": {
+    "en": "Gaolbreaker",
+    "ja": "Gaolbreaker",
+    "de": "Karusselljockey",
+    "fr": "Échappé du jardin secret"
+  },
+  "563": {
+    "en": "Master of the Sea",
+    "ja": "Master of the Sea",
+    "de": "der Meister der Meere",
+    "fr": "Maître des mers"
+  },
+  "564": {
+    "en": "Delubrum Delver",
+    "ja": "Delubrum Delver",
+    "de": "Delubrum-Erkunder",
+    "fr": "Excavateur de Delubrum"
+  },
+  "565": {
+    "en": "The Risensung Carpenter",
+    "ja": "the Risensung Carpenter",
+    "de": "die Zimmererlegende von Himmelsang",
+    "fr": "Menuisier du Nouveau Refrain"
+  },
+  "566": {
+    "en": "The Risensung Blacksmith",
+    "ja": "the Risensung Blacksmith",
+    "de": "die Grobschmiedlegende von Himmelsang",
+    "fr": "Forgeron du Nouveau Refrain"
+  },
+  "567": {
+    "en": "The Risensung Armorer",
+    "ja": "the Risensung Armorer",
+    "de": "die Plattnerlegende von Himmelsang",
+    "fr": "Armurier du Nouveau Refrain"
+  },
+  "568": {
+    "en": "The Risensung Goldsmith",
+    "ja": "the Risensung Goldsmith",
+    "de": "die Goldschmiedlegende von Himmelsang",
+    "fr": "Orfèvre du Nouveau Refrain"
+  },
+  "569": {
+    "en": "The Risensung Leatherworker",
+    "ja": "the Risensung Leatherworker",
+    "de": "die Gerberlegende von Himmelsang",
+    "fr": "Tanneur du Nouveau Refrain"
+  },
+  "570": {
+    "en": "The Risensung Weaver",
+    "ja": "the Risensung Weaver",
+    "de": "die Weberlegende von Himmelsang",
+    "fr": "Couturier du Nouveau Refrain"
+  },
+  "571": {
+    "en": "The Risensung Alchemist",
+    "ja": "the Risensung Alchemist",
+    "de": "die Alchemistenlegende von Himmelsang",
+    "fr": "Alchimiste du Nouveau Refrain"
+  },
+  "572": {
+    "en": "The Risensung Culinarian",
+    "ja": "the Risensung Culinarian",
+    "de": "die Gourmetlegende von Himmelsang",
+    "fr": "Cuisinier du Nouveau Refrain"
+  },
+  "573": {
+    "en": "The Risensung Miner",
+    "ja": "the Risensung Miner",
+    "de": "die Minenarbeiterlegende von Himmelsang",
+    "fr": "Mineur du Nouveau Refrain"
+  },
+  "574": {
+    "en": "The Risensung Botanist",
+    "ja": "the Risensung Botanist",
+    "de": "die Gärtnerlegende von Himmelsang",
+    "fr": "Botaniste du Nouveau Refrain"
+  },
+  "575": {
+    "en": "The Risensung Fisher",
+    "ja": "the Risensung Fisher",
+    "de": "die Fischerlegende von Himmelsang",
+    "fr": "Pêcheur du Nouveau Refrain"
+  },
+  "576": {
+    "en": "Jack of All Cards",
+    "ja": "Jack of All Cards",
+    "de": "Triple-Triad-Aficionado",
+    "fr": "Collectionneur perfectionniste"
+  },
+  "577": {
+    "en": "Speed Demon",
+    "ja": "Speed Demon",
+    "de": "Tempo-Teufel",
+    "fr": "Aile sombre"
+  },
+  "578": {
+    "en": "The Indefatigable",
+    "ja": "the Indefatigable",
+    "de": "der Nimmermüde",
+    "fr": "Artisan infatigable"
+  },
+  "579": {
+    "en": "Lord of Far Waters",
+    "ja": "Lord of Far Waters",
+    "de": "der Herr fremder Gewässer",
+    "fr": "Suzerain des eaux lointaines"
+  },
+  "580": {
+    "en": "Big Fish",
+    "ja": "Big Fish",
+    "de": "der Hecht im Karpfenteich",
+    "fr": "Gros poisson"
+  },
+  "581": {
+    "en": "Charlemend's Angel",
+    "ja": "Charlemend's Angel",
+    "de": "Charlemends Engel",
+    "fr": "Ange gardien de Charlemend"
+  },
+  "582": {
+    "en": "Lifesaver",
+    "ja": "Lifesaver",
+    "de": "Lebensretter",
+    "fr": "Grossiste de Rouchemande"
+  },
+  "583": {
+    "en": "Dawn Treader",
+    "ja": "Dawn Treader",
+    "de": "Wächter des Morgengrauens",
+    "fr": "Arpenteur de l'aube"
+  },
+  "584": {
+    "en": "Witness to the Dark Apocalypse",
+    "ja": "Witness to the Dark Apocalypse",
+    "de": "Zeuge der Apokalypse",
+    "fr": "Forme de vie héroïque"
+  },
+  "585": {
+    "en": "Dalriada Raider",
+    "ja": "Dalriada Raider",
+    "de": "Dalriada-Eroberer",
+    "fr": "Écumeur du Dalriada"
+  },
+  "586": {
+    "en": "The Hypertuned",
+    "ja": "the Hypertuned",
+    "de": "der Hyperkrieger",
+    "fr": "L'hyper-renforcé"
+  },
+  "587": {
+    "en": "Commander Conqueror",
+    "ja": "Commander Conqueror",
+    "de": "Bezwinger der Legion",
+    "fr": "Commandant et conquérant"
+  },
+  "588": {
+    "en": "Lyon Tamer",
+    "ja": "Lyon Tamer",
+    "de": "König der Bestienbändiger",
+    "fr": "Dompteur de Lyon"
+  },
+  "589": {
+    "en": "Hero of Zadnor",
+    "ja": "Hero of Zadnor",
+    "de": "Held von Zadnor",
+    "fr": "Champion de Zadnor"
+  },
+  "590": {
+    "en": "Gunnhildr's Blade",
+    "ja": "Gunnhildr's Blade",
+    "de": "Königinnenwache",
+    "fr": "Lame de Gunnhildr"
+  },
+  "591": {
+    "en": "The Emblazoned",
+    "ja": "the Emblazoned",
+    "de": "Träger aller Orden",
+    "fr": "Médailliste"
+  },
+  "592": {
+    "en": "Queen's Elect",
+    "ja": "Queen's Elect",
+    "de": "Diener der Königin",
+    "fr": "Élu de la Reine"
+  },
+  "593": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "594": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  }
+}

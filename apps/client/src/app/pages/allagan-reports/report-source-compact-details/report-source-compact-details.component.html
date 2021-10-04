@@ -27,9 +27,16 @@
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.INSTANCE">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img src="{{data.instanceId | instanceIcon}}" alt="" class="round-icon">
-      <div>{{data.instanceId | instanceName | i18n}}</div>
-      <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
+      <ng-container *ngIf="data.instanceId > 0">
+        <img src="{{data.instanceId | instanceIcon}}" alt="" class="round-icon">
+        <div>{{data.instanceId | instanceName | i18n}}</div>
+        <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
+      </ng-container>
+      <ng-container *ngIf="data.instanceId < 0">
+        <i nz-icon nzType="environment-o"></i>
+        <div>{{-1 * data.instanceId | mapName | i18n}}</div>
+        <app-db-button [id]="-1 * data.instanceId" type="map"></app-db-button>
+      </ng-container>
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.VOYAGE">

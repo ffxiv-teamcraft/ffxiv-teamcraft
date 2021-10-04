@@ -65,10 +65,11 @@ const { MultiSelect } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs'),
+  new I18nExtractor('Title', 'titles'),
   new I18nExtractor('PlaceName', 'places'),
   new I18nExtractor('Status', 'statuses', { Icon: 'icon' }),
   new I18nExtractor('ItemSeries', 'item-series', { 'GameContentLinks.Item.ItemSeries': 'items' }),
-  new I18nExtractor('Achievement', 'achievements', { Icon: 'icon' }),
+  new I18nExtractor('Achievement', 'achievements', { Icon: 'icon', ItemTargetID: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
   new I18nExtractor('Race', 'races'),

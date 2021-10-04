@@ -844,30 +844,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         })
       );
     }
-    if (xivapiItem.GameContentLinks) {
-      if (xivapiItem.GameContentLinks.Achievement && xivapiItem.GameContentLinks.Achievement.Item) {
-        res$ = res$.pipe(
-          map((res) => {
-            res.sources.push({
-              type: DataType.ACHIEVEMENTS,
-              data: xivapiItem.GameContentLinks.Achievement.Item
-            });
-            return res;
-          })
-        );
-      }
-    }
-    if (gtData.item.quests) {
-      res$ = res$.pipe(
-        map((res) => {
-          res.sources.push({
-            type: DataType.QUESTS,
-            data: gtData.item.quests
-          });
-          return res;
-        })
-      );
-    }
     return res$;
   }
 
