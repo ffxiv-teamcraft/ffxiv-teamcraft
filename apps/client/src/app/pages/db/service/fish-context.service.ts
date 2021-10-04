@@ -139,9 +139,10 @@ export class FishContextService {
     shareReplay(1)
   );
 
-  private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+  private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$, this.showMisses$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
-    switchMap(([fishId, spotId]) => this.data.getBaitMooches(fishId, spotId))
+     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses.toString())),
+    switchMap(([fishId, spotId, showMisses]) => this.data.getBaitMooches(fishId, spotId, showMisses))
   );
 
   /** An observable containing information about the baits used to catch the active fish. */

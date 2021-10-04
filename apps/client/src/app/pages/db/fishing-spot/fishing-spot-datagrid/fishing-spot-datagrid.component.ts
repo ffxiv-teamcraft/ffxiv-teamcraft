@@ -26,6 +26,8 @@ export class FishingSpotDatagridComponent<T extends string | number = number> {
   public readonly activeFishChange = new EventEmitter<number | undefined>();
   @Input()
   public rowIconRender?: TemplateRef<DatagridColDef>;
+  @Input()
+  public colIconRender?: TemplateRef<DatagridColDef>;
   public readonly table$ = new ReplaySubject<Datagrid<T>>();
   @Input()
   public set table(value: Datagrid<T>) {

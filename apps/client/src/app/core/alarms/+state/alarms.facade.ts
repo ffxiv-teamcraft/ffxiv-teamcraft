@@ -438,7 +438,7 @@ export class AlarmsFacade {
 
   public generateAlarms(node: GatheringNode): Alarm[] {
     // If no spawns and no weather, no alarms.
-    if (!node.spawns?.length && !node.weathers?.length) {
+    if (!node?.spawns?.length && !node?.weathers?.length) {
       return [];
     }
     const alarm: Partial<Alarm> = {
