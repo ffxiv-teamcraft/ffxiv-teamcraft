@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.2"></a>
+## [8.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.1...v8.6.2) (2021-10-04)
+
+
+### Bug Fixes
+
+* **alarms:** fixed double weather alarms not computed properly ([f59f41e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f59f41e))
+* **allagan-reports:** filtered some outdated items from the items needing data ([570a772](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/570a772))
+* **auth:** better JWT token management ([26ed9f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/26ed9f4))
+* **db:** fixed "include misses" toggle in fishing spot pages ([78e530c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78e530c))
+* **db:** fixed gathering nodes not listing bonuses anymore ([572fd59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/572fd59))
+* **db:** fixed source for some traded materials not being extracted properly ([a7ff331](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7ff331))
+
+
+### Features
+
+* **allagan-reports:** you can now submit bozja, eureka and other maps as sources ([7800e28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7800e28))
+* **db:** new automated data source extractor: Achievements ([2f32e32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f32e32))
+* **db:** new automated data source: quests ([0bff3f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0bff3f1))
+
+
+
 <a name="8.6.1"></a>
 ## [8.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.0...v8.6.1) (2021-10-03)
 
