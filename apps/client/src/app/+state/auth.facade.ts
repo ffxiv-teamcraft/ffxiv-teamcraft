@@ -236,6 +236,11 @@ export class AuthFacade {
     });
   }
 
+  public async getIdTokenResult(forceRefresh = false) {
+    const user = await this.af.currentUser;
+    return await user.getIdTokenResult(forceRefresh);
+  }
+
   resetPassword(email: string): void {
     this.af.sendPasswordResetEmail(email);
   }
@@ -358,11 +363,18 @@ export class AuthFacade {
     return this.oauthService.login(provider);
   }
 
-  reloadGubalToken(): void {
-    this.af.user.pipe(
-      first()
-    ).subscribe(user => {
-      user.getIdTokenResult(true);
-    });
+  reloadGubalToken(): Observable<void> {
+    return this.af.user.pipe(
+      first(),
+      switchMap(user => {
+        return this.fns.httpsCallable('setCustomUserClaims')({
+          uid: user.uid
+        }).pipe(
+          tap(() => {
+            user.getIdTokenResult(true);
+          })
+        )
+      }),
+    )
   }
 }

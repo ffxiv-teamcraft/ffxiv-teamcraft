@@ -289,7 +289,9 @@ export class SettingsPopupComponent {
   }
 
   reloadGubalToken():void{
-    this.authFacade.reloadGubalToken();
+    this.authFacade.reloadGubalToken().subscribe(() => {
+      this.message.success('Gubal token reloaded successfully')
+    });
   }
 
   alwaysOnTopChange(value: boolean): void {

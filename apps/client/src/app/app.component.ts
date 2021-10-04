@@ -8,7 +8,7 @@ import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-br
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
 import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject, timer } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
 import { NzIconService } from 'ng-zorro-antd/icon';
@@ -195,15 +195,20 @@ export class AppComponent implements OnInit {
               private data: DataService, private allaganReportsService: AllaganReportsService) {
 
     this.authFacade.idToken$.pipe(
-      filter(token => token.claims['https://hasura.io/jwt/claims'] !== undefined),
       first()
-    ).subscribe(token => {
+    ).subscribe(() => {
+
       const ws = new WebSocketLink({
         uri: `wss://gubal.hasura.app/v1/graphql`,
         options: {
           reconnect: true,
-          connectionParams: () => {
-            return { headers: { Authorization: `Bearer ${token.token}` } };
+          connectionParams: async () => {
+            let idToken = await this.authFacade.getIdTokenResult();
+            // If we're at least 5 minutes from expiration, refresh token
+            if (Date.now() - new Date(idToken.expirationTime).getTime() < 60000) {
+              idToken = await this.authFacade.getIdTokenResult(true);
+            }
+            return { headers: { Authorization: `Bearer ${idToken.token}` } };
           }
         }
       });
@@ -230,6 +235,7 @@ export class AppComponent implements OnInit {
       this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
         map(status => status.length)
       );
+
     });
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
