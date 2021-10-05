@@ -55,7 +55,7 @@ export class AlarmsFacade {
       if (this.regenerating) {
         return [null];
       }
-      if (environment.production && alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '8.5.2')) {
+      if (environment.production && alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '8.6.0')) {
         this.regenerateAlarms(alarms);
         return [null];
       }
