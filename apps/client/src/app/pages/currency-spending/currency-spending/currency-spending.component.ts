@@ -137,7 +137,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                         .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
                         .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
                       price: avgPrice,
-                      score: avgPrice * amountSoldLastWeek,
+                      score: avgPrice / entry.rate * amountSoldLastWeek,
                       amountSoldLastWeek
                     };
                   })
