@@ -42,6 +42,15 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
         if (craft.job === 0) {
           craftedBy.icon = '';
         }
+        if (craft.masterbook && !craft.masterbook.id) {
+          craftedBy.masterbook = {
+            id: craft.masterbook,
+            icon: 0
+          };
+        }
+        if (craft.masterbook && craft.masterbook.id) {
+          craftedBy.masterbook = craft.masterbook;
+        }
         return craftedBy;
       });
   }
