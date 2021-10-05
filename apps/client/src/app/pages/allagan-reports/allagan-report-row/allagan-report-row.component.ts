@@ -56,6 +56,9 @@ export class AllaganReportRowComponent {
   delete = new EventEmitter<void>();
 
   @Output()
+  deleteOwn = new EventEmitter<void>();
+
+  @Output()
   edit = new EventEmitter<void>();
 
   applyingChange = false;

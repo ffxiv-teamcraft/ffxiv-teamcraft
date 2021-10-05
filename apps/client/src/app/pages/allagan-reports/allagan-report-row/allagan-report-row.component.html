@@ -28,6 +28,12 @@
         <i nz-icon nzType="delete"></i>
         {{'ALLAGAN_REPORTS.Suggest_deletion' | translate}}
       </button>
+      <button nz-button nzSize="small" *ngIf="queueEntry?.author === userId" nzDanger [disabled]="applyingChange"
+              [nzLoading]="applyingChange" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+              (nzOnConfirm)="applyingChange = true;deleteOwn.emit()">
+        <i nz-icon nzType="delete"></i>
+        {{'ALLAGAN_REPORTS.Delete' | translate}}
+      </button>
     </div>
   </div>
   <div nz-col nzMd="8" class="details" fxLayout="column" fxLayoutAlign="space-between flex-start">

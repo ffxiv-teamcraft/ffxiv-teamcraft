@@ -4,7 +4,7 @@ import { environment } from '../../../../environments/environment';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SheetImportPopupComponent } from '../sheet-import-popup/sheet-import-popup.component';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -12,6 +12,7 @@ import { AllaganReportQueueEntry } from '../model/allagan-report-queue-entry';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { AllaganReportStatus } from '../model/allagan-report-status';
 import { AllaganReportSource } from '../model/allagan-report-source';
+import { uniq } from 'lodash';
 
 @Component({
   selector: 'app-allagan-reports',
@@ -23,6 +24,8 @@ export class AllaganReportsComponent {
 
   AllaganReportStatus = AllaganReportStatus;
   AllaganReportSource = AllaganReportSource;
+
+  public reportSources = uniq(Object.keys(AllaganReportSource));
 
   public applyingChange = false;
 
@@ -67,12 +70,21 @@ export class AllaganReportsComponent {
     })
   );
 
-  isDataChecker$ = this.authFacade.user$.pipe(map(user => user.admin || user.moderator || user.allaganChecker));
+  isDataChecker$ = this.authFacade.user$.pipe(
+    map(user => user.admin || user.moderator || user.allaganChecker),
+    shareReplay(1)
+  );
+
+  public sourceFilter$ = this.allaganReportsService.filter$;
 
   constructor(public allaganReportsService: AllaganReportsService,
               private dialog: NzModalService, public translate: TranslateService,
               private lazyData: LazyDataService, private authFacade: AuthFacade,
               private message: NzMessageService, private cd: ChangeDetectorRef) {
+  }
+
+  public saveSourceFilter(filter: AllaganReportSource[]):void{
+    this.allaganReportsService.filter$.next(filter);
   }
 
   public onRowChecked($event: boolean): void {

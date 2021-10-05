@@ -18,7 +18,8 @@
             <app-allagan-report-row [report]="entry" [userIsChecker]="isChecker$ | async"
                                     [userId]="userId$ | async" [reportsQueue]="itemReportsQueue$ | async"
                                     [focusId]="hoverId$ | async"
-                                    (delete)="suggestDeletion(entry)" (edit)="startModification(entry)"></app-allagan-report-row>
+                                    (delete)="suggestDeletion(entry)"
+                                    (edit)="startModification(entry)"></app-allagan-report-row>
           </ng-template>
         </app-lazy-scroll>
       </app-page-loader>
@@ -32,6 +33,7 @@
             <app-allagan-report-row [queueEntry]="entry" [userIsChecker]="isChecker$ | async"
                                     [userId]="userId$ | async"
                                     (accept)="accept(entry)" (reject)="reject(entry)"
+                                    (deleteOwn)="deleteOwnProposal(entry)"
                                     (mouseenter)="hoverQueueEntry(entry)"
                                     (mouseleave)="hoverId$.next(null)"></app-allagan-report-row>
           </ng-template>
@@ -84,7 +86,7 @@
             />
             <nz-autocomplete #auto nzBackfill>
               <nz-auto-option *ngFor="let option of instanceCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+                {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
@@ -188,6 +190,17 @@
               </nz-autocomplete>
             </nz-form-control>
           </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Voyage_rarity' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-select formControlName="rarity">
+                <nz-option [nzValue]="0" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Common' | translate"></nz-option>
+                <nz-option [nzValue]="1" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Voyage_exclusive' | translate"></nz-option>
+                <nz-option [nzValue]="2" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Rare' | translate"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+
         </ng-container>
         <ng-container *ngIf="source === AllaganReportSource.FISHING">
           <nz-form-item>

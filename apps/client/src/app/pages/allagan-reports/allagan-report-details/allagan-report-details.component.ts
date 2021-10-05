@@ -159,6 +159,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs')],
     voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
+    rarity: [null],
     spot: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     hookset: [null],
     tug: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
@@ -406,6 +407,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
+  deleteOwnProposal(report: AllaganReportQueueEntry): void {
+    this.allaganReportsService.reject(report).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
+    });
+  }
+
   startModification(report: AllaganReport): void {
     const patch = this.getFormStatePatch(report);
     this.source = report.source;
@@ -439,7 +446,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.VOYAGE:
         return {
           voyageId: this.getEntryName([this.airshipVoyages, this.submarineVoyages][report.data.voyageType], report.data.voyageId),
-          voyageType: report.data.voyageType
+          voyageType: report.data.voyageType,
+          rarity: report.data.rarity
         };
       case AllaganReportSource.SPEARFISHING:
         return pickBy({
@@ -499,7 +507,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.VOYAGE:
         return {
           voyageId: this.getEntryId([this.airshipVoyages, this.submarineVoyages][formState.voyageType], formState.voyage),
-          voyageType: formState.voyageType
+          voyageType: formState.voyageType,
+          rarity: formState.rarity
         };
       case AllaganReportSource.SPEARFISHING:
         return pickBy({

@@ -1,15 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed double weather alarms not computed properly.
-* **allagan-reports:** filtered some outdated items from the items needing data.
-* **auth:** better JWT token management.
-* **db:** fixed "include misses" toggle in fishing spot pages.
-* **db:** fixed gathering nodes not listing bonuses anymore.
-* **db:** fixed source for some traded materials not being extracted properly.
+* **alarms:** fixed hookset icon for fishing alarms.
+* **currency-spending:** use price per currency spent for the ordering formula.
+* **db:** better ordering for tugs in bit times chart.
+* **db:** better quests parsing.
+* **db:** fixed masterbooks not shown properly on recipes.
 
 
 ### Features
 
-* **allagan-reports:** you can now submit bozja, eureka and other maps as sources.
-* **db:** new automated data source extractor: Achievements.
-* **db:** new automated data source: quests.`;
+* **allagan-reports:** better display for a distinction between instances and maps.
+* **allagan-reports:** filter system for data checkers.
+* **allagan-reports:** new details field for voyage source: rarity.
+* **db:** new data from allagan-reports.`;

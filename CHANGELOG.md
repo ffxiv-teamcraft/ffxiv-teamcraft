@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.3"></a>
+## [8.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.2...v8.6.3) (2021-10-05)
+
+
+### Bug Fixes
+
+* **alarms:** fixed hookset icon for fishing alarms ([e8657b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8657b2))
+* **currency-spending:** use price per currency spent for the ordering formula ([e1e9f07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1e9f07))
+* **db:** better ordering for tugs in bit times chart ([dc75552](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc75552))
+* **db:** better quests parsing ([258db27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/258db27))
+* **db:** fixed masterbooks not shown properly on recipes ([b5b5b8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5b5b8b))
+
+
+### Features
+
+* **allagan-reports:** better display for a distinction between instances and maps ([de7eb23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de7eb23))
+* **allagan-reports:** filter system for data checkers ([92357e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92357e0))
+* **allagan-reports:** new details field for voyage source: rarity ([23a0e7f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23a0e7f))
+* **db:** new data from allagan-reports ([146ad36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/146ad36))
+
+
+
 <a name="8.6.2"></a>
 ## [8.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.1...v8.6.2) (2021-10-04)
 

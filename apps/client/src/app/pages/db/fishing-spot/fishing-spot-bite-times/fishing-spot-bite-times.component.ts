@@ -8,6 +8,7 @@ import { FishContextService } from '../../service/fish-context.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Chart, ChartOptions } from 'chart.js';
+import { Tug } from 'apps/client/src/app/core/data/model/tug';
 
 const fishImageUrls = [];
 
@@ -38,7 +39,7 @@ interface FishingSpotChartData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
-  public readonly colors = ['245, 196, 110', '245, 153, 110', '184, 245, 110'];
+  public readonly colors = [{tug: Tug.LIGHT, color: '184, 245, 110'},{tug: Tug.MEDIUM, color: '245, 196, 110'},{tug: Tug.BIG, color: '245, 153, 110'}];
 
   private readonly activeFish$ = new Subject<number | undefined>();
 

@@ -6,14 +6,18 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { map, mapTo, shareReplay } from 'rxjs/operators';
+import { map, mapTo, shareReplay, switchMap } from 'rxjs/operators';
 import { AllaganReportSource } from './model/allagan-report-source';
 import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
+import { LocalStorageBehaviorSubject } from '../../core/rxjs/local-storage-behavior-subject';
+import { uniq } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AllaganReportsService {
+
+  public readonly filter$ = new LocalStorageBehaviorSubject<AllaganReportSource[]>('allagan-reports:filter', []);
 
   constructor(private getItemAllaganReportsQuery: GetItemAllaganReportsQuery,
               private getItemAllaganReportsQueueQuery: GetItemAllaganReportsQueueQuery,
@@ -87,29 +91,39 @@ export class AllaganReportsService {
   }
 
   getQueueStatus(): Observable<Partial<AllaganReportQueueEntry>[]> {
-    const query = gql`subscription AllaganReportsQueueStatus {
-      allagan_reports_queue {
-        itemId
-        author
-        uid
-        source
-        data
-        type
-      }
-    }`;
-    return this.apollo.subscribe<any>({
-      query,
-      fetchPolicy: 'network-only'
-    }).pipe(
-      map(res => {
-        return res.data.allagan_reports_queue.map(row => {
-          if (typeof row.data === 'string') {
-            row.data = JSON.parse(row.data);
+    return this.filter$.pipe(
+      switchMap(filter => {
+        if (filter.length === 0) {
+          filter = uniq(Object.keys(AllaganReportSource)) as AllaganReportSource[];
+        }
+        const query = gql`subscription AllaganReportsQueueStatus($sources: [String!]!) {
+          allagan_reports_queue(where: {source: {_in: $sources}}) {
+            itemId
+            author
+            uid
+            source
+            data
+            type
           }
-          return row;
-        });
-      }),
-      shareReplay(1)
+        }`;
+        return this.apollo.subscribe<any>({
+          query,
+          fetchPolicy: 'network-only',
+          variables: {
+            sources: filter
+          }
+        }).pipe(
+          map(res => {
+            return res.data.allagan_reports_queue.map(row => {
+              if (typeof row.data === 'string') {
+                row.data = JSON.parse(row.data);
+              }
+              return row;
+            });
+          }),
+          shareReplay(1)
+        );
+      })
     );
   }
 
