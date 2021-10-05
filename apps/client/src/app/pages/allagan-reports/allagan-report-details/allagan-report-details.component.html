@@ -190,6 +190,17 @@
               </nz-autocomplete>
             </nz-form-control>
           </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Voyage_rarity' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-select formControlName="rarity">
+                <nz-option [nzValue]="0" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Common' | translate"></nz-option>
+                <nz-option [nzValue]="1" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Voyage_exclusive' | translate"></nz-option>
+                <nz-option [nzValue]="2" [nzLabel]="'ALLAGAN_REPORTS.Rarity_Rare' | translate"></nz-option>
+              </nz-select>
+            </nz-form-control>
+          </nz-form-item>
+
         </ng-container>
         <ng-container *ngIf="source === AllaganReportSource.FISHING">
           <nz-form-item>
