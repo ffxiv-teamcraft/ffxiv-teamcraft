@@ -2786,6 +2786,13 @@
     "Product_id": "상품 ID",
     "Product_id_explain": "상품 URL에서 \"/product/\" 바로 옆에 있는 게 상품 ID",
     "Open_item": "알라간 리포트에서 열기",
+    "Delete": "Delete",
+    "Voyage_rarity": "Rarity",
+    "Rarity_Common": "Common",
+    "Rarity_Voyage_exclusive": "Voyage exclusive",
+    "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "No fish with missing data",
+    "Sources_filter": "Filter sources",
     "SOURCE": {
       "DESYNTH": "분해",
       "REDUCTION": "정제",
