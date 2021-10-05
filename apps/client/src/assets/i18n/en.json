@@ -2791,6 +2791,8 @@
     "Rarity_Common": "Common",
     "Rarity_Voyage_exclusive": "Voyage exclusive",
     "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "No fish with missing data",
+    "Sources_filter": "Filter sources",
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

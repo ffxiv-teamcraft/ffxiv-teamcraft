@@ -1,6 +1,13 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
   <h1>{{'ALLAGAN_REPORTS.Title' | translate}}</h1>
   <div fxLayout="row" fxLayoutGap="10px">
+    <div *ngIf="isDataChecker$ | async">
+      <nz-select [ngModel]="sourceFilter$ | async"
+                 [nzPlaceHolder]="'ALLAGAN_REPORTS.Sources_filter' | translate"
+                 (ngModelChange)="saveSourceFilter($event)" nzMode="multiple" class="sources-filter">
+        <nz-option *ngFor="let source of reportSources" [nzValue]="source" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source) | translate"></nz-option>
+      </nz-select>
+    </div>
     <div *ngIf="devEnv">
       <button nz-button nzShape="circle" nzType="primary" (click)="importSheet()"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
     </div>
@@ -38,6 +45,7 @@
   <nz-divider [nzText]="'ALLAGAN_REPORTS.Data_needs' | translate" nzOrientation="left"></nz-divider>
   <div fxLayout="row" fxLayoutGap="10px">
     <nz-card fxFlex="1 1 auto" [nzTitle]="'ALLAGAN_REPORTS.Fishing' | translate">
+      <nz-empty *ngIf="status.fishWithNoData?.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_missing_fish_data' | translate"></nz-empty>
       <app-lazy-scroll [displayedRows]="6" rowSize="42" [data]="status.fishWithNoData" [rowTemplate]="reportTpl">
         <ng-template #reportTpl let-itemId let-odd="odd">
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" [class.odd]="odd" class="pending-change">
@@ -135,7 +143,6 @@
     <nz-empty *ngIf="queueStatus.length === 0" [nzNotFoundContent]="'ALLAGAN_REPORTS.No_pending_changes' | translate"></nz-empty>
   </div>
 </ng-container>
-
 <ng-template #loading>
   <app-page-loader></app-page-loader>
 </ng-template>
