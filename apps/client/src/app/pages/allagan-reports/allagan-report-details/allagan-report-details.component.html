@@ -86,7 +86,7 @@
             />
             <nz-autocomplete #auto nzBackfill>
               <nz-auto-option *ngFor="let option of instanceCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+                {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
