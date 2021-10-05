@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.4"></a>
+## [8.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.3...v8.6.4) (2021-10-05)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed display for voyage rarity ([c1e944a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1e944a))
+
+
+### Performance Improvements
+
+* **allagan-reports:** better network performances ([6b01ddd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b01ddd))
+
+
+
 <a name="8.6.3"></a>
 ## [8.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.2...v8.6.3) (2021-10-05)
 
