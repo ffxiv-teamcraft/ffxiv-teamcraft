@@ -2786,6 +2786,13 @@
     "Product_id": "Product ID",
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "Open_item": "Open in Allagan Reports",
+    "Delete": "Delete",
+    "Voyage_rarity": "Rarity",
+    "Rarity_Common": "Common",
+    "Rarity_Voyage_exclusive": "Voyage exclusive",
+    "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "No fish with missing data",
+    "Sources_filter": "Filter sources",
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
       "REDUCTION": "RAFFINATION",
