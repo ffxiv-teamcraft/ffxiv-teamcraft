@@ -18,7 +18,8 @@
             <app-allagan-report-row [report]="entry" [userIsChecker]="isChecker$ | async"
                                     [userId]="userId$ | async" [reportsQueue]="itemReportsQueue$ | async"
                                     [focusId]="hoverId$ | async"
-                                    (delete)="suggestDeletion(entry)" (edit)="startModification(entry)"></app-allagan-report-row>
+                                    (delete)="suggestDeletion(entry)"
+                                    (edit)="startModification(entry)"></app-allagan-report-row>
           </ng-template>
         </app-lazy-scroll>
       </app-page-loader>
@@ -32,6 +33,7 @@
             <app-allagan-report-row [queueEntry]="entry" [userIsChecker]="isChecker$ | async"
                                     [userId]="userId$ | async"
                                     (accept)="accept(entry)" (reject)="reject(entry)"
+                                    (deleteOwn)="deleteOwnProposal(entry)"
                                     (mouseenter)="hoverQueueEntry(entry)"
                                     (mouseleave)="hoverId$.next(null)"></app-allagan-report-row>
           </ng-template>

@@ -406,6 +406,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
+  deleteOwnProposal(report: AllaganReportQueueEntry): void {
+    this.allaganReportsService.reject(report).subscribe(() => {
+      this.message.success(this.translate.instant('ALLAGAN_REPORTS.Proposal_rejected'));
+    });
+  }
+
   startModification(report: AllaganReport): void {
     const patch = this.getFormStatePatch(report);
     this.source = report.source;
