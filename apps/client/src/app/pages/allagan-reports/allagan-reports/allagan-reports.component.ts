@@ -4,7 +4,7 @@ import { environment } from '../../../../environments/environment';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SheetImportPopupComponent } from '../sheet-import-popup/sheet-import-popup.component';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -46,34 +46,40 @@ export class AllaganReportsComponent {
     })
   );
 
-  public status$ = combineLatest([this.lazyData.extracts$, this.allaganReportsService.getDashboardData()]).pipe(
-    map(([extracts, dashboardData]) => {
-      const fishWithNoData = this.lazyData.data.fishes
-        .filter(itemId => {
-          return !dashboardData.itemIds.includes(itemId)
-            && !this.lazyData.data.items[itemId].en.includes('Skybuilders');
-        });
-      return {
-        reportsCount: dashboardData.reportsCount,
-        appliedReportsCount: dashboardData.appliedReportsCount,
-        fishCoverage: Math.floor(1000 * (this.lazyData.data.fishes.length - fishWithNoData.length) / this.lazyData.data.fishes.length) / 10,
-        fishWithNoData,
-        itemsWithNoSource: Object.values(extracts).filter(e => {
-          const enName = this.lazyData.data.items[e.id].en;
-          const frName = this.lazyData.data.items[e.id].fr;
-          return !fishWithNoData.includes(e.id)
-            && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
-            && !/S\d{1,2}$/.test(frName) && enName.length > 0
-            && e.sources.length === 0 && !dashboardData.itemIds.includes(e.id);
-        }).map(e => e.id).sort((a, b) => b - a)
-      };
-    })
-  );
-
   isDataChecker$ = this.authFacade.user$.pipe(
     map(user => user.admin || user.moderator || user.allaganChecker),
+    distinctUntilChanged(),
     shareReplay(1)
   );
+
+  public status$ = this.isDataChecker$.pipe(
+    switchMap(dataChecker => {
+      return combineLatest([this.lazyData.extracts$, this.allaganReportsService.getDashboardData()]).pipe(
+        map(([extracts, dashboardData]) => {
+          const fishWithNoData = this.lazyData.data.fishes
+            .filter(itemId => {
+              return !this.lazyData.data.items[itemId].en.includes('Skybuilders');
+            });
+          return {
+            reportsCount: dashboardData.reportsCount,
+            appliedReportsCount: dashboardData.appliedReportsCount,
+            fishCoverage: Math.floor(1000 * (this.lazyData.data.fishes.length - fishWithNoData.length) / this.lazyData.data.fishes.length) / 10,
+            fishWithNoData,
+            itemsWithNoSource: Object.values(extracts).filter(e => {
+              const enName = this.lazyData.data.items[e.id].en;
+              const frName = this.lazyData.data.items[e.id].fr;
+              return !fishWithNoData.includes(e.id)
+                && !['Dated', 'Skybuilders'].some(ignored => enName.indexOf(ignored) > -1)
+                && !/S\d{1,2}$/.test(frName) && enName.length > 0
+                && e.sources.length === 0;
+            }).map(e => e.id).sort((a, b) => b - a)
+          };
+        })
+      );
+    })
+  )
+
+
 
   public sourceFilter$ = this.allaganReportsService.filter$;
 

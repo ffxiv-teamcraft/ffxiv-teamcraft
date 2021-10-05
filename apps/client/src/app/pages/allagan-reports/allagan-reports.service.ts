@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { Apollo } from 'apollo-angular';
 import { AllaganReportStatus } from './model/allagan-report-status';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';
-import { map, mapTo, shareReplay, switchMap } from 'rxjs/operators';
+import { first, map, mapTo, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AllaganReportSource } from './model/allagan-report-source';
 import { AllaganMetricsDashboardData } from './model/allagan-metrics-dashboard-data';
 import { LocalStorageBehaviorSubject } from '../../core/rxjs/local-storage-behavior-subject';
@@ -50,12 +50,9 @@ export class AllaganReportsService {
     }).pipe(mapTo(void 0));
   }
 
-  getDashboardData(): Observable<AllaganMetricsDashboardData> {
+  getDashboardData(subscribe = false): Observable<AllaganMetricsDashboardData> {
     const allReports = gql`subscription AllaganMetricsDashboardData {
         all_reports: allagan_reports_aggregate {
-          nodes {
-            itemId
-          }
           aggregate {
             count
           }
@@ -79,9 +76,9 @@ export class AllaganReportsService {
         fetchPolicy: 'network-only'
       })
     ]).pipe(
+      subscribe ? tap() : first(),
       map(([resAll, resApplied]) => {
         return {
-          itemIds: resAll.data.all_reports.nodes.map(node => node.itemId),
           reportsCount: resAll.data.all_reports.aggregate.count,
           appliedReportsCount: resApplied.data.applied_reports.aggregate.count
         };

@@ -44,7 +44,7 @@
       {{data.voyageId | voyageName: data.voyageType | i18n}}
     </div>
     <div *ngIf="data.rarity !== undefined">
-      {{('ALLAGAN_REPORTS' + ['Rarity_Common','Rarity_Voyage_exclusive','Rarity_Rare'][data.rarity]) | translate}}
+      {{('ALLAGAN_REPORTS.' + ['Rarity_Common','Rarity_Voyage_exclusive','Rarity_Rare'][data.rarity]) | translate}}
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.VENTURE">
