@@ -83,8 +83,8 @@ export class AllaganReportsComponent {
               private message: NzMessageService, private cd: ChangeDetectorRef) {
   }
 
-  public saveSourceFilter(filter: AllaganReportSource[]):void{
-    this.allaganReportsService.filter$.next(filter);
+  public saveSourceFilter(sources: AllaganReportSource[]):void{
+    this.allaganReportsService.filter$.next(sources);
   }
 
   public onRowChecked($event: boolean): void {
