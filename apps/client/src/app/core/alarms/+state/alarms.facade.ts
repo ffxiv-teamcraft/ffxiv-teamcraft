@@ -491,6 +491,9 @@ export class AlarmsFacade {
     if (nodeForThisAlarm) {
       const alarms = this.generateAlarms(nodeForThisAlarm);
       const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
+      if (!regenerated) {
+        return null;
+      }
       regenerated.userId = alarm.userId;
       regenerated.$key = alarm.$key;
       regenerated.appVersion = environment.version;
@@ -530,7 +533,7 @@ export class AlarmsFacade {
             return alarm;
           }
           return this.regenerateAlarm(alarm);
-        });
+        }).filter(alarm => !!alarm);
 
         this.store.dispatch(new SetAlarms(newAlarms));
         this.store.dispatch(new SetGroups(newGroups));
