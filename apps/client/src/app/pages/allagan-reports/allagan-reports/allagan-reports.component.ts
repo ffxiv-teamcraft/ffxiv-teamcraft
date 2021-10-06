@@ -58,7 +58,8 @@ export class AllaganReportsComponent {
         map(([extracts, dashboardData]) => {
           const fishWithNoData = this.lazyData.data.fishes
             .filter(itemId => {
-              return !this.lazyData.data.items[itemId].en.includes('Skybuilders');
+              return !this.lazyData.data.items[itemId].en.includes('Skybuilders')
+                && this.lazyData.getExtract(itemId).sources.length === 0;
             });
           return {
             reportsCount: dashboardData.reportsCount,
@@ -77,8 +78,7 @@ export class AllaganReportsComponent {
         })
       );
     })
-  )
-
+  );
 
 
   public sourceFilter$ = this.allaganReportsService.filter$;
@@ -89,7 +89,7 @@ export class AllaganReportsComponent {
               private message: NzMessageService, private cd: ChangeDetectorRef) {
   }
 
-  public saveSourceFilter(sources: AllaganReportSource[]):void{
+  public saveSourceFilter(sources: AllaganReportSource[]): void {
     this.allaganReportsService.filter$.next(sources);
   }
 
