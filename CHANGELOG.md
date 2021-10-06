@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.5"></a>
+## [8.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.4...v8.6.5) (2021-10-06)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms sometimes getting stuck trying to regenerate forever ([177a8da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/177a8da))
+* **allagan-reports:** fix for fishing coverage ([a23d5bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a23d5bb))
+* **db:** fixed bugged report with some intuition instructions ([0ee0c3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ee0c3e))
+* **db:** fixed wrong color scheme in fishing spot's bite times chart ([615cacf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/615cacf))
+
+
+
 <a name="8.6.4"></a>
 ## [8.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.3...v8.6.4) (2021-10-05)
 

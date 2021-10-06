@@ -71,7 +71,7 @@ export class GatheringNodesService {
 
             predators: entry.predators,
             spawns: [entry.spawn].filter(s => s !== undefined && s !== null),
-            duration: entry.duration * 60,
+            duration: (entry.duration || 0) * 60,
             weathers: entry.weathers,
             weathersFrom: entry.weathersFrom,
             limited: entry.spawn !== undefined || entry.weathers?.length > 0,
@@ -102,7 +102,7 @@ export class GatheringNodesService {
             z: spot.z,
             predators: entry.predators,
             spawns: [entry.spawn].filter(s => s !== undefined && s !== null),
-            duration: entry.duration * 60,
+            duration: (entry.duration || 0) * 60,
             weathers: entry.weathers,
             weathersFrom: entry.weathersFrom,
             limited: entry.spawns?.length > 0 || entry.weathers?.length > 0,

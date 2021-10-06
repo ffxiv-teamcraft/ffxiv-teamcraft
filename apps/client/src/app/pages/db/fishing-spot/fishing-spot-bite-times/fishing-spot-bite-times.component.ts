@@ -39,7 +39,7 @@ interface FishingSpotChartData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
-  public readonly colors = [{tug: Tug.LIGHT, color: '184, 245, 110'},{tug: Tug.MEDIUM, color: '245, 196, 110'},{tug: Tug.BIG, color: '245, 153, 110'}];
+  public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];
 
   private readonly activeFish$ = new Subject<number | undefined>();
 
@@ -107,7 +107,9 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       return combineLatest([...fishNames]).pipe(
         map(([...names]) => {
           const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
-          const colors = sortedNames.map(el => this.colors[tugByFish[el.id]]);
+          const colors = sortedNames.map(el => {
+            return this.colors.find(c => c.tug === +tugByFish[el.id]).color;
+          });
           return {
             labels: sortedNames.map(el => el.name),
             datasets: [{
