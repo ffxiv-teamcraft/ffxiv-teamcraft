@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.6"></a>
+## [8.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.5...v8.6.6) (2021-10-07)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms going into infinite regeneration loop ([0104296](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0104296))
+
+
+### Features
+
+* **db:** imports from allagan reports ([473be44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/473be44))
+
+
+
 <a name="8.6.5"></a>
 ## [8.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.4...v8.6.5) (2021-10-06)
 

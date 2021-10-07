@@ -7603,6 +7603,10 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2624,
+      "weathers": [
+        9,
+        10
+      ],
       "snagging": false,
       "predators": [
         {
@@ -15602,9 +15606,10 @@
     },
     {
       "spot": 237,
-      "hookset": 1,
+      "hookset": 2,
       "tug": 2,
       "bait": 29715,
+      "snagging": false,
       "oceanFishingTime": 0
     }
   ],
@@ -15668,13 +15673,6 @@
       "tug": 0,
       "bait": 29715,
       "oceanFishingTime": 0
-    },
-    {
-      "spot": 237,
-      "hookset": 1,
-      "tug": 0,
-      "bait": 29717,
-      "oceanFishingTime": 0
     }
   ],
   "29724": [
@@ -15721,13 +15719,6 @@
       "hookset": 1,
       "tug": 1,
       "bait": 29722,
-      "oceanFishingTime": 0
-    },
-    {
-      "spot": 239,
-      "hookset": 1,
-      "tug": 1,
-      "bait": 29717,
       "oceanFishingTime": 0
     },
     {
@@ -17340,7 +17331,6 @@
   "29785": [
     {
       "spot": 239,
-      "hookset": 1,
       "tug": 1,
       "bait": 29715,
       "snagging": false,
@@ -17348,21 +17338,18 @@
     },
     {
       "spot": 239,
-      "hookset": 1,
-      "tug": 1,
-      "bait": 29714,
-      "oceanFishingTime": 0
-    },
-    {
-      "spot": 239,
-      "hookset": 1,
       "tug": 1,
       "bait": 29716,
       "oceanFishingTime": 0
     },
     {
       "spot": 239,
-      "hookset": 1,
+      "tug": 1,
+      "bait": 29714,
+      "oceanFishingTime": 0
+    },
+    {
+      "spot": 239,
       "tug": 1,
       "bait": 29717,
       "oceanFishingTime": 0
@@ -18489,14 +18476,21 @@
       "spot": 248,
       "hookset": 1,
       "tug": 0,
-      "bait": 29714,
+      "bait": 29717,
       "oceanFishingTime": 0
     },
     {
       "spot": 248,
       "hookset": 1,
       "tug": 0,
-      "bait": 29717,
+      "bait": 29715,
+      "oceanFishingTime": 0
+    },
+    {
+      "spot": 248,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 29714,
       "oceanFishingTime": 0
     }
   ],
@@ -18891,6 +18885,13 @@
       "hookset": 1,
       "tug": 1,
       "bait": 2587,
+      "oceanFishingTime": 0
+    },
+    {
+      "spot": 249,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 29717,
       "oceanFishingTime": 0
     }
   ],

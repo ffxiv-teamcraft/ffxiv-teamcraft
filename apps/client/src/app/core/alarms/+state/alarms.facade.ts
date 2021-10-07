@@ -535,6 +535,10 @@ export class AlarmsFacade {
           return this.regenerateAlarm(alarm);
         }).filter(alarm => !!alarm);
 
+        const deletedAlarms = alarms.filter(a => !newAlarms.some(na => na.$key === a.$key));
+        deletedAlarms.forEach(da => {
+          this.store.dispatch(new RemoveAlarm(da.$key));
+        });
         this.store.dispatch(new SetAlarms(newAlarms));
         this.store.dispatch(new SetGroups(newGroups));
         this.regenerating = false;
