@@ -48,7 +48,7 @@
           <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
             <!--Ilvl filter-->
             <nz-form-item fxLayout="row" fxLayoutAlign="center center">
-              <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
+              <nz-form-label nzFor="ilvl">{{'TOOLTIP.Ilvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group fxLayout="row" class="input-min-max">
                   <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"

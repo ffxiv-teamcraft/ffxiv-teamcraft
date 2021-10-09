@@ -26,7 +26,7 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
 
     if (venture.amounts !== undefined) {
       const stats = venture.ilvl || venture.gathering;
-      const name = venture.ilvl ? 'filters/ilvl' : 'Gathering';
+      const name = venture.ilvl ? 'RETAINER_VENTURES.Retainer_ilvl' : 'Gathering';
       if (stats) {
         amounts = stats.map((stat, i) => ({ name: name, stat: stat, quantity: venture.amounts[i] }));
       }
