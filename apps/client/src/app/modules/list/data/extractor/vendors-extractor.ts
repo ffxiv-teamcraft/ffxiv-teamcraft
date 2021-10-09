@@ -74,7 +74,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
       vendors = vendorsWithoutFestivals;
     }
     return uniqBy(vendors, v => {
-      return this.lazyData.data.npcs[v.npcId].en;
+      return `${this.lazyData.data.npcs[v.npcId].en}:${v.mapId}`;
     });
   }
 
