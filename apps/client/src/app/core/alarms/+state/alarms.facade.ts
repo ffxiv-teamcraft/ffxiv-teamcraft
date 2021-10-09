@@ -308,7 +308,7 @@ export class AlarmsFacade {
         return timeBeforeA < timeBeforeB ? -1 : 1;
       });
       if (alarm.weathers && alarm.weathers?.length > 0) {
-        const spawn = this.findWeatherSpawnCombination(alarm, sortedSpawns, etime.getTime());
+        const spawn = this.findWeatherSpawnCombination({ ...alarm }, sortedSpawns, etime.getTime());
         if (spawn === null) {
           console.error('No spawn found for alarm');
           console.log(alarm);
@@ -366,8 +366,8 @@ export class AlarmsFacade {
           const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
           // If it's for today, make sure it's not already despawned
           const now = new Date(time);
-          const didntSpawnYet = now.getUTCDay() !== weatherSpawn.spawn.getUTCDay() || now.getUTCHours() < intersectDespawn;
-          const isSpawned = now.getUTCDay() === weatherSpawn.spawn.getUTCDay() && now.getUTCHours() >= weatherStart;
+          const didntSpawnYet = !TimeUtils.isSameDay(now, weatherSpawn.spawn) || now.getUTCHours() < intersectDespawn;
+          const isSpawned = TimeUtils.isSameDay(now, weatherSpawn.spawn) && now.getUTCHours() >= weatherStart;
           if (days > 0 || didntSpawnYet || isSpawned) {
             return {
               hours: intersectSpawn,

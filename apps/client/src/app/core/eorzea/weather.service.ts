@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { mapIds } from '../data/sources/map-ids';
 import { weatherIndex } from '../data/sources/weather-index';
 import { EorzeanTimeService } from './eorzean-time.service';
-import { add, sub } from 'date-fns';
+import { add, addHours, formatDistance, sub } from 'date-fns';
 import { TimeUtils } from '../alarms/time.utils';
 
 @Injectable()
@@ -56,10 +56,14 @@ export class WeatherService {
       if (spawns?.length > 0) {
         const spawnHour = new Date(timestamp).getUTCHours();
         const transitionDespawnHour = new Date(this.nextWeatherTime(timestamp)).getUTCHours();
-        const normalDespawnHour = new Date(this.getNextDiffWeatherTime(timestamp, weatherId, mapId)).getUTCHours();
+        const normalDespawnHour = new Date(this.nextWeatherTime(timestamp)).getUTCHours();
         const despawnHour = transition ? transitionDespawnHour : normalDespawnHour;
         if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, despawnHour]) !== null)) {
-          const resultDate = new Date(timestamp);
+          let resultDate = new Date(timestamp);
+          // While we're not at the real spawn, let's add hour by hour, to avoid issues with spawn only happening the next day
+          while(!spawns.some(spawn => spawn <= resultDate.getUTCHours())){
+            resultDate = addHours(resultDate, 1);
+          }
           resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
           resultDate.setUTCMinutes(0);
           resultDate.setUTCSeconds(0);
