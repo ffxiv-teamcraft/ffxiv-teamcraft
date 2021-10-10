@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.7"></a>
+## [8.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.6...v8.6.7) (2021-10-10)
+
+
+### Bug Fixes
+
+* **db:** better deduplication for material suppliers ([50d693f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50d693f))
+* **db:** fixed baits display in fish pages ([52f1a7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52f1a7c))
+* **desktop:** fixed withdrawing items from retainer with context menu not tracker properly ([d5621bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5621bf))
+* **fishing:** better handling of double weather spawns ([867a289](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/867a289))
+* **i18n:** fixed missing translation for ilvl filters ([ae843d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae843d5))
+
+
+
 <a name="8.6.6"></a>
 ## [8.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.5...v8.6.6) (2021-10-07)
 
