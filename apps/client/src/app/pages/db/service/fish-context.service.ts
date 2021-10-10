@@ -141,7 +141,7 @@ export class FishContextService {
 
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$, this.showMisses$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
-     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses.toString())),
+     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),
     switchMap(([fishId, spotId, showMisses]) => this.data.getBaitMooches(fishId, spotId, showMisses))
   );
 
@@ -286,7 +286,7 @@ export class FishContextService {
   /** An observable containing the baits needed and mooches possible at the active spot. */
   public readonly baitMoochesBySpot$ = combineLatest([this.spotId$, this.showMisses$]).pipe(
     filter(([spotId]) => spotId > 0),
-    tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses.toString())),
+    tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),
     switchMap(([spotId, showMisses]) => this.data.getBaitMooches(undefined, spotId, showMisses))
   );
 

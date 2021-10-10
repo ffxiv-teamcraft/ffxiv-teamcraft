@@ -75,4 +75,8 @@ export class TimeUtils {
     }
     return i[1] - i[0];
   }
+
+  static isSameDay(a: Date, b: Date): boolean {
+    return Math.floor(a.getTime() / 86400000) === Math.floor(b.getTime() / 86400000);
+  }
 }

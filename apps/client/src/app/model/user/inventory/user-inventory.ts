@@ -274,6 +274,7 @@ export class UserInventory extends DataModel {
           moved: true
         };
     }
+    return null;
   }
 
   toArray(): ItemSearchResult[] {
@@ -344,10 +345,14 @@ export class UserInventory extends DataModel {
   }
 
   setMarketBoardInfo(packet: ItemMarketBoardInfo, retainer: string): void {
-    this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
+    if (this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
+      this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
+    }
   }
 
   updateMarketboardInfo(packet: ClientTrigger, retainer: string): void {
-    this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1].unitMbPrice = packet.param2;
+    if (this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1]) {
+      this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1].unitMbPrice = packet.param2;
+    }
   }
 }
