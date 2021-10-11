@@ -52,7 +52,11 @@ export class AlarmBellService {
             // Ceiling on /6 so precision is 1/10
             const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
             // Irl alarm duration in ms
-            const irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
+            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
+            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
+            if (irlAlarmDuration === 0) {
+              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
+            }
             return Date.now() - lastPlayed >= irlAlarmDuration
               && timeBeforePlay <= 0;
           });
@@ -72,6 +76,7 @@ export class AlarmBellService {
    * @param alarm
    */
   public ring(alarm: Alarm): void {
+    console.log(alarm);
     this.soundNotificationService.play(SoundNotificationType.ALARM);
     localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
   }
