@@ -130,7 +130,7 @@ export class LogTrackerComponent extends TrackerComponent {
       });
   }
 
-  public updateSelectedPage(hideCompleted: boolean, selectedTabNumber: number): void {
+  public updateSelectedPage(hideCompleted: boolean, selectedTabNumber: number, resetSelection = false): void {
     const selectedTabIndex = selectedTabNumber - 1;
     this.settings.hideCompletedLogEntries = hideCompleted;
     const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
@@ -155,6 +155,9 @@ export class LogTrackerComponent extends TrackerComponent {
       }
     }
     this.lastSelectedTabIndex = selectedTabIndex;
+    if (resetSelection) {
+      this.selectedRecipes = {};
+    }
   }
 
   public setType(index: number): void {
