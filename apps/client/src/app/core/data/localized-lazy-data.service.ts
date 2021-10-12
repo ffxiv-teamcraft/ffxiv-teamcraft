@@ -83,7 +83,7 @@ export class LocalizedLazyDataService {
   }
 
   public getWorldName(world: string): I18nNameLazy {
-    const i18nName: I18nNameLazy = {
+    return {
       fr: of(world),
       en: of(world),
       de: of(world),
@@ -91,9 +91,7 @@ export class LocalizedLazyDataService {
       zh: of(zhWorlds[world] ?? world),
       ko: of(koWorlds[world] ?? world),
       ru: of(world)
-    };
-
-    return i18nName;
+    } as I18nNameLazy;
   }
 
   public getItem(id: number): I18nNameLazy {

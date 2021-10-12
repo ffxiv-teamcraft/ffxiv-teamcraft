@@ -1,0 +1,85 @@
+import { Action, createReducer, on } from '@ngrx/store';
+
+import * as LazyDataActions from './lazy-data.actions';
+import { LazyData } from '../../core/data/lazy-data';
+import { DataEntryStatus } from '../data-entry-status';
+
+export const LAZY_DATA_FEATURE_KEY = 'lazyData';
+
+export interface State {
+  data: Partial<LazyData>;
+  loadingStates: { [Property in keyof LazyData]?: DataEntryStatus }
+}
+
+const initialState: State = {
+  data: {},
+  loadingStates: {}
+};
+
+export interface LazyDataPartialState {
+  readonly [LAZY_DATA_FEATURE_KEY]: State;
+}
+
+const lazyDataReducer = createReducer(
+  initialState,
+  on(LazyDataActions.loadLazyDataEntityEntry, (state, { entity, id }) => ({
+    ...state,
+    loadingStates: {
+      ...state.loadingStates,
+      [entity]: {
+        status: 'partial',
+        record: {
+          ...(state.loadingStates[entity].record || {}),
+          [id]: 'loading'
+        }
+      }
+    }
+  })),
+  on(LazyDataActions.loadLazyDataEntityEntrySuccess, (state, { id, key, row }) => ({
+    ...state,
+    data: {
+      ...state.data,
+      [key]: {
+        ...(state[key] || {}),
+        [id]: row
+      }
+    },
+    loadingStates: {
+      ...state.loadingStates,
+      [key]: {
+        // Prevent overriding full with partial
+        status: status === 'loading' ? 'partial' : status,
+        record: {
+          ...(state.loadingStates[key].record || {}),
+          [id]: 'full'
+        }
+      }
+    }
+  })),
+  on(LazyDataActions.loadLazyDataFullEntity, (state, { entity }) => ({
+    ...state,
+    loadingStates: {
+      ...state.loadingStates,
+      [entity]: {
+        status: 'loading'
+      }
+    }
+  })),
+  on(LazyDataActions.loadLazyDataFullEntitySuccess, (state, { key, entry }) => ({
+    ...state,
+    data: {
+      ...state.data,
+      [key]: entry
+    },
+    loadingStates: {
+      ...state.loadingStates,
+      [key]: {
+        status: 'full'
+      }
+    }
+  }))
+);
+
+export function reducer(state: State | undefined, action: Action) {
+  return lazyDataReducer(state, action);
+}
