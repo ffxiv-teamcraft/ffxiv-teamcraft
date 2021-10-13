@@ -215,7 +215,7 @@
     "deep-diff": "^1.0.2",
     "del-cli": "^1.1.0",
     "dotenv": "6.2.0",
-    "electron": "11.4.10",
+    "electron": "11.5.0",
     "electron-builder": "22.9.1",
     "electron-builder-squirrel-windows": "22.10.4",
     "enquirer": "^2.3.6",
