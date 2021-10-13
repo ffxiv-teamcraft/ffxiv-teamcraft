@@ -1,4 +1,4 @@
-export interface LazyKoGatheringBonuse {
+export interface LazyKoGatheringBonus {
   value:          number;
   conditionValue: number;
   bonus:          Bonus;

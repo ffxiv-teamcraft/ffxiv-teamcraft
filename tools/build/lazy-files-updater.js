@@ -20,10 +20,10 @@ function getClassName(file) {
     .replace('/ko/', '')
     .replace('/zh/', '')
     .replace('ies.json', 'y')
+    .replace(/s?\.json/, '')
     .replace(/bonuse$/, 'bonus')
     .replace(/statuse$/, 'status')
-    .replace(/sery$/, 'series')
-    .replace(/s?\.json/, '');
+    .replace(/sery$/, 'series');
   return 'Lazy' + _.startCase(_.camelCase(baseName)).replace(/\s/g, '');
 }
 

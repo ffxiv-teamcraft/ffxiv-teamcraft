@@ -1,4 +1,4 @@
-export interface LazyStatuse {
+export interface LazyStatus {
   en:   string;
   ja:   string;
   de:   string;

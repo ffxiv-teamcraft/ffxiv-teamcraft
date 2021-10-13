@@ -1,4 +1,4 @@
-export interface LazyItemSetBonuse {
+export interface LazyItemSetBonus {
   itemSeriesId: number;
   bonuses:      Bonus[];
 }

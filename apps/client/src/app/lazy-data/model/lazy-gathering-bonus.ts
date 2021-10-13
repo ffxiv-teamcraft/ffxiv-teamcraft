@@ -1,4 +1,4 @@
-export interface LazyGatheringBonuse {
+export interface LazyGatheringBonus {
   value:          number;
   conditionValue: number;
   bonus?:         Bonus;
