@@ -360,7 +360,9 @@
             </div>
             <app-item-icon [itemId]="item.itemId" [width]="24"></app-item-icon>
             <div fxLayout="column">
-              <div>{{item.itemId | itemName | i18n}}</div>
+              <div>
+                <app-i18n-name content="items" [id]="item.itemId"></app-i18n-name>
+              </div>
               <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
             </div>
           </div>

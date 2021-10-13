@@ -1,17 +1,17 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
 import * as LazyDataActions from './lazy-data.actions';
-import { LazyData } from '../../core/data/lazy-data';
 import { DataEntryStatus } from '../data-entry-status';
+import { LazyDataWithExtracts } from '../lazy-data-types';
 
 export const LAZY_DATA_FEATURE_KEY = 'lazyData';
 
 export interface State {
-  data: Partial<LazyData>;
-  loadingStates: { [Property in keyof LazyData]?: DataEntryStatus }
+  data: Partial<LazyDataWithExtracts>;
+  loadingStates: { [Property in keyof LazyDataWithExtracts]?: DataEntryStatus }
 }
 
-const initialState: State = {
+export const initialState: State = {
   data: {},
   loadingStates: {}
 };
@@ -29,7 +29,7 @@ const lazyDataReducer = createReducer(
       [entity]: {
         status: 'partial',
         record: {
-          ...(state.loadingStates[entity].record || {}),
+          ...(state.loadingStates[entity]?.record || {}),
           [id]: 'loading'
         }
       }
@@ -50,7 +50,7 @@ const lazyDataReducer = createReducer(
         // Prevent overriding full with partial
         status: status === 'loading' ? 'partial' : status,
         record: {
-          ...(state.loadingStates[key].record || {}),
+          ...(state.loadingStates[key]?.record || {}),
           [id]: 'full'
         }
       }
@@ -80,6 +80,6 @@ const lazyDataReducer = createReducer(
   }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: State, action: Action) {
   return lazyDataReducer(state, action);
 }

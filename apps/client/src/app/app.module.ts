@@ -120,6 +120,7 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
+import { LazyDataModule } from './lazy-data/lazy-data.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -298,7 +299,8 @@ const nzConfig: NzConfig = {
     NavigationSidebarModule,
     AdsModule,
     NgxGoogleAnalyticsModule.forRoot('G-RNVD9NJW4N'),
-    NgxGoogleAnalyticsRouterModule
+    NgxGoogleAnalyticsRouterModule,
+    LazyDataModule
   ],
   bootstrap: [AppComponent]
 })

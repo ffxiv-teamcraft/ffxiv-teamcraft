@@ -55,10 +55,15 @@ import { CommissionNotification } from '../model/notification/commission-notific
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
 import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
+import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { CommonModule } from '@angular/common';
+import { I18nRowPipe } from './i18n/i18n-row.pipe';
 
 
 @NgModule({
   imports: [
+    CommonModule,
     TranslateModule,
     HttpClientModule,
     NgSerializerModule.forChild([
@@ -96,7 +101,8 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     NzToolTipModule,
     NzIconModule,
     NzDividerModule,
-    NzModalModule
+    NzModalModule,
+    NzSkeletonModule
   ],
   providers: [
     PendingChangesService,
@@ -123,7 +129,9 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     MouseWheelDirective,
     SupportUsPopupComponent,
     ClipboardDirective,
-    ItemNameClipboardDirective
+    ItemNameClipboardDirective,
+    I18nNameComponent,
+    I18nRowPipe
   ],
   exports: [
     I18nPipe,
@@ -141,10 +149,12 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     MouseWheelDirective,
     ClipboardDirective,
     ItemNameClipboardDirective,
+    I18nNameComponent,
 
     NzButtonModule,
     NzToolTipModule,
-    NzIconModule
+    NzIconModule,
+    I18nRowPipe
   ]
 })
 export class CoreModule {

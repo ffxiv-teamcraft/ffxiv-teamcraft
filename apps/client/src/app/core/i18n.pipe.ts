@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { isNil } from 'lodash';
-import { isObservable, Subscription } from 'rxjs';
+import { isObservable, Observable, Subscription } from 'rxjs';
 import { I18nName } from '../model/common/i18n-name';
 import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
 
-type I18nInput = { name: I18nName } | I18nName | I18nNameLazy;
+type I18nInput = { name: I18nName } | I18nName | I18nNameLazy | Observable<I18nName>;
 
 /**
  * A pipe that coerces an I18nName object into a string matching the user's preferred language.
@@ -14,14 +14,15 @@ type I18nInput = { name: I18nName } | I18nName | I18nNameLazy;
  */
 @Pipe({
   name: 'i18n',
-  pure: false,
+  pure: false
 })
 export class I18nPipe implements PipeTransform, OnDestroy {
   private currentValue?: string;
   private input?: I18nInput;
   private sub?: Subscription;
 
-  constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {}
+  constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {
+  }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();
@@ -36,6 +37,10 @@ export class I18nPipe implements PipeTransform, OnDestroy {
         this.setCurrentValue(this.i18n.getName(input));
       } else if (this.isI18nLazy(input)) {
         this.sub = this.i18n.resolveName(input).subscribe(this.setCurrentValue);
+      } else if (isObservable(input)) {
+        this.sub = (input as Observable<I18nName>).subscribe(i18nName => {
+          this.setCurrentValue(this.i18n.getName(i18nName));
+        });
       } else {
         this.setCurrentValue(input?.toString());
       }

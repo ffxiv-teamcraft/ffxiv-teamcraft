@@ -4,18 +4,18 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromLazyData from './+state/lazy-data.reducer';
 import { LazyDataEffects } from './+state/lazy-data.effects';
-import { LazyDataFacade } from './+state/lazy-data.facade';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     StoreModule.forFeature(
-      fromLazyData.LAZYDATA_FEATURE_KEY,
-      fromLazyData.reducer
+      fromLazyData.LAZY_DATA_FEATURE_KEY,
+      fromLazyData.reducer,
+      { initialState: fromLazyData.initialState }
     ),
-    EffectsModule.forFeature([LazyDataEffects]),
-  ],
-  providers: [LazyDataFacade],
+    EffectsModule.forFeature([LazyDataEffects])
+  ]
 })
-export class LazyDataModule {}
+export class LazyDataModule {
+}

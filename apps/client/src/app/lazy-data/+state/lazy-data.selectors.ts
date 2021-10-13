@@ -13,7 +13,7 @@ export const getEntry = createSelector(
 export const getEntryRow = createSelector(
   getLazyDataState,
   (state, { key, id }) => {
-    const entry = getEntry(state, key);
+    const entry = state.data[key];
     if (entry) {
       return entry[id];
     }
@@ -23,5 +23,5 @@ export const getEntryRow = createSelector(
 
 export const getEntryStatus = createSelector(
   getLazyDataState,
-  (state, {key}) => state.loadingStates[key]
-)
+  (state, { key }) => state.loadingStates[key]
+);

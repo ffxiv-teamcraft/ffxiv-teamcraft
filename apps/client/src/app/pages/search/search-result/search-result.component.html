@@ -14,7 +14,8 @@
       <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
     </div>
     <div fxLayout="column">
-      <div [appItemRarity]="+row.itemId" class="item-name">{{+row.itemId | itemName | i18n}}
+      <div [appItemRarity]="+row.itemId" class="item-name">
+        <app-i18n-name content="items" [id]="+row.itemId"></app-i18n-name>
         <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
         <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"></app-db-button>
         <a nz-button nzSize="small" nzShape="circle" routerLink="/allagan-reports/{{row.itemId}}" nz-tooltip [nzTooltipTitle]="'ALLAGAN_REPORTS.Open_item' | translate">
