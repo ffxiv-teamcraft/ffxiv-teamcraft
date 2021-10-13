@@ -8,7 +8,7 @@ import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
 import { DataEntryStatus } from '../data-entry-status';
-import { LazyDataKey, LazyDataWithExtracts } from '../lazy-data-key';
+import { LazyDataEntryElement, LazyDataKey, LazyDataWithExtracts } from '../lazy-data-key';
 
 @Injectable()
 export class LazyDataFacade {
@@ -35,7 +35,7 @@ export class LazyDataFacade {
    * @param propertyKey the name of the property to get the id from
    * @param id the id of the row you want to load
    */
-  public getRow<K extends LazyDataKey>(propertyKey: K, id: number): Observable<any> {
+  public getRow<K extends LazyDataKey>(propertyKey: K, id: number): Observable<LazyDataEntryElement<K>> {
     return this.store.select(LazyDataSelectors.getEntryRow, { key: propertyKey, id }).pipe(
       tap(res => {
         if (!res) {
