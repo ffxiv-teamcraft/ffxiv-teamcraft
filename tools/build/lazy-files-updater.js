@@ -30,7 +30,12 @@ function getClassName(file) {
 function getType(file) {
   const className = getClassName(file);
   const data = fs.readFileSync(path.join(__dirname, '../../apps/client/src/assets/data/', file), 'utf8');
-  const indexType = Array.isArray(JSON.parse(data)) ? 'Array<T>' : 'Record<number, T>';
+  const dataObj = JSON.parse(data);
+  let indexType = Array.isArray(dataObj) ? 'Array<T>' : 'Record<number, T>';
+  const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
+  if (valuesAreArrays) {
+    indexType = indexType.replace('T', 'T[]');
+  }
   if (fs.existsSync(path.join(__dirname, '../../apps/client/src/app/lazy-data/model/', `${_.kebabCase(className)}.ts`))) {
     return {
       type: indexType.replace('T', className),
@@ -40,10 +45,9 @@ function getType(file) {
   // If it's not a class index, let's get the data type
   let inferredType;
   if (indexType.startsWith('Array')) {
-    inferredType = typeof JSON.parse(data)[0];
+    inferredType = typeof (valuesAreArrays ? dataObj[0][0] : dataObj[0]);
   } else {
-    const parsed = JSON.parse(data);
-    const firstElement = parsed[Object.keys(parsed)[0]];
+    const firstElement = valuesAreArrays ? dataObj[Object.keys(dataObj)[0]][0] : dataObj[Object.keys(dataObj)[0]];
     if (typeof firstElement === 'object') {
       if (firstElement.ko !== undefined) {
         inferredType = '{ko: string}';
