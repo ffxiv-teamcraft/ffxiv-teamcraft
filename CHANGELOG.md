@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.8"></a>
+## [8.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.7...v8.6.8) (2021-10-14)
+
+
+### Bug Fixes
+
+* **airship:** updated abbreviations to match community ones ([e84c4bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e84c4bd))
+* **alarms:** fixed a bug with some alarms ringing multiple times for nothing ([f83b6b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f83b6b4))
+* **db:** fixed npc names not loading properly in levequest pages ([d841406](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d841406))
+* **db:** fixed spearfishing spot pages not loading ([3d65c56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d65c56))
+* **log-tracker:** fixed selection not resetting on tab change ([d5fd6cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5fd6cf))
+
+
+### Features
+
+* **db:** importing 500+ ([c6fc5ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6fc5ad))
+
+
+
 <a name="8.6.7"></a>
 ## [8.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.6...v8.6.7) (2021-10-10)
 
