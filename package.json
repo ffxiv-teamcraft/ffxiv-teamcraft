@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "8.6.7",
+  "version": "8.6.8",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -215,7 +215,7 @@
     "deep-diff": "^1.0.2",
     "del-cli": "^1.1.0",
     "dotenv": "6.2.0",
-    "electron": "11.4.10",
+    "electron": "11.5.0",
     "electron-builder": "22.9.1",
     "electron-builder-squirrel-windows": "22.10.4",
     "enquirer": "^2.3.6",

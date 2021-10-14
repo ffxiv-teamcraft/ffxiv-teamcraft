@@ -19,7 +19,7 @@ export class TreasuresExtractor extends AbstractExtractor<number[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.treasure !== undefined;
+    return true;
   }
 
   protected doExtract(item: Item, itemData: ItemData): number[] {

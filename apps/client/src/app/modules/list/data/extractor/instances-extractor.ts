@@ -20,7 +20,7 @@ export class InstancesExtractor extends AbstractExtractor<number[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.instances !== undefined;
+    return true;
   }
 
   protected doExtract(item: Item, itemData: ItemData): number[] {

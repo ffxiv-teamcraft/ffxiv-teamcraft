@@ -7,7 +7,7 @@
       <ng-template nz-tab>
         <ng-template #hideCompletedToggle>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType)"></nz-switch>
+            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, true)"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
           </div>
         </ng-template>
@@ -101,7 +101,7 @@
       <ng-template #extraTemplate>
         <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType)"></nz-switch>
+            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, true)"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
           </div>
           <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
