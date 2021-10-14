@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
@@ -43,7 +43,7 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
+              private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
               private linkTools: LinkToolsService, public settings: SettingsService,
               seo: SeoService) {
@@ -163,11 +163,11 @@ export class LeveComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.npcs$ = combineLatest([this.xivapiLeve$, this.gtData$]).pipe(
-      map(([leve, data]) => {
+    this.npcs$ = this.xivapiLeve$.pipe(
+      map((leve) => {
         const npcs: any[] = [
           {
-            id: leve.LevelLevemete.Object,
+            id: leve.LevelLevemete.Object?.ID,
             client: true
           }
         ];
@@ -182,8 +182,8 @@ export class LeveComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.links$ = combineLatest([this.xivapiLeve$, this.gtData$]).pipe(
-      map(([xivapiLeve, gtData]) => {
+    this.links$ = this.xivapiLeve$.pipe(
+      map((xivapiLeve) => {
         return [
           {
             title: 'GarlandTools',
@@ -202,12 +202,12 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'))
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'));
   }
 
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'))
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
