@@ -1,7 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** better deduplication for material suppliers.
-* **db:** fixed baits display in fish pages.
-* **desktop:** fixed withdrawing items from retainer with context menu not tracker properly.
-* **fishing:** better handling of double weather spawns.
-* **i18n:** fixed missing translation for ilvl filters.`;
+* **airship:** updated abbreviations to match community ones.
+* **alarms:** fixed a bug with some alarms ringing multiple times for nothing.
+* **db:** fixed npc names not loading properly in levequest pages.
+* **db:** fixed spearfishing spot pages not loading.
+* **log-tracker:** fixed selection not resetting on tab change.
+
+
+### Features
+
+* **db:** importing 500+.`;
