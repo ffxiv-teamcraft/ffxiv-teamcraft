@@ -7564,6 +7564,10 @@
       "weathers": [
         16
       ],
+      "weathersFrom": [
+        1,
+        2
+      ],
       "snagging": false
     }
   ],
