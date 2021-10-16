@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { HttpClient } from '@angular/common/http';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ItemData } from '../../../model/garland-tools/item-data';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
@@ -16,6 +16,9 @@ import { GatheringNodesService } from '../../../core/data/gathering-nodes.servic
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
+import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { Alarm } from '../../../core/alarms/alarm';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-extractor',
@@ -61,7 +64,7 @@ export class ExtractorComponent {
     this.running = true;
     this.currentLabel = 'Log tracking data';
     const res$ = new ReplaySubject<any>();
-    this.totalTodo$.next(12);
+    this.totalTodo$.next(14);
     this.done$.next(0);
     const dohTabs$ = combineLatest([
       this.lazyData.getEntry('craftingLogPages'),
@@ -120,16 +123,108 @@ export class ExtractorComponent {
         });
       })
     );
+
+
+    const fshTabs$ = combineLatest([
+      this.lazyData.getMinBtnSpearNodesIndex(),
+      this.lazyData.getEntry('fishingLog'),
+      this.lazyData.getEntry('spearFishingLog'),
+      this.lazyData.getEntry('fishParameter')
+    ]).pipe(
+      switchMap(([minBtnSpearNodes, fishingLog, spearFishingLog, parameters]) => {
+        const fishingLogData$ = combineLatest(fishingLog.map(entry => {
+          return this.getFshData(entry.itemId, entry.spot.id).pipe(
+            map((fshData) => {
+              const fish: any = {
+                entry,
+                id: entry.spot,
+                itemId: entry.itemId,
+                level: entry.level,
+                icon: entry.icon,
+                data: fshData
+              };
+              if (parameters[entry.itemId]) {
+                fish.timed = parameters[entry.itemId].timed;
+                fish.weathered = parameters[entry.itemId].weathered;
+              }
+              return fish;
+            })
+          );
+        }));
+
+        const spearFishingLogData$ = combineLatest(spearFishingLog.map(entry => {
+          const spot = minBtnSpearNodes.find(n => n.items.includes(entry.itemId));
+          return this.getFshData(entry.itemId, spot.id).pipe(
+            map((data) => {
+              return {
+                entry,
+                id: spot.id,
+                itemId: entry.itemId,
+                level: spot.level,
+                data: data,
+                timed: data[0].gatheringNode.limited,
+                tug: data[0].gatheringNode.tug
+              };
+            })
+          );
+        }));
+
+        return combineLatest([fishingLogData$, spearFishingLogData$]).pipe(
+          map(([fishingFish, spearFishingFish]) => {
+            return [fishingFish, spearFishingFish].map(log => {
+              this.done$.next(this.done$.value + 1);
+              return log.reduce((display, fish) => {
+                const displayCopy = { ...display };
+                let row = displayCopy.tabs.find(e => e.mapId === fish.entry.mapId);
+                if (row === undefined) {
+                  displayCopy.tabs.push({
+                    id: fish.id,
+                    mapId: fish.entry.mapId,
+                    placeId: fish.entry.placeId,
+                    done: 0,
+                    total: 0,
+                    spots: []
+                  });
+                  row = displayCopy.tabs[displayCopy.tabs.length - 1];
+                }
+                const spotId = fish.entry.spot ? fish.entry.spot.id : fish.entry.id;
+                let spot = row.spots.find(s => s.id === spotId);
+                if (spot === undefined) {
+                  const coords = fish.entry.spot ? fish.entry.spot.coords : fish.entry.coords;
+                  row.spots.push({
+                    id: spotId,
+                    placeId: fish.entry.zoneId,
+                    mapId: fish.entry.mapId,
+                    done: 0,
+                    total: 0,
+                    coords: coords,
+                    fishes: []
+                  });
+                  spot = row.spots[row.spots.length - 1];
+                }
+                const { entry, ...fishRow } = fish;
+                spot.fishes.push(fishRow);
+                return displayCopy;
+              }, { tabs: [], total: 0, done: 0 });
+            });
+          })
+        );
+      }),
+      shareReplay(1)
+    );
+
     combineLatest([
       dohTabs$,
-      dolTabs$
-    ]).subscribe(([dohTabs, dolTabs]) => {
+      dolTabs$,
+      fshTabs$
+    ]).subscribe(([dohTabs, dolTabs, fshTabs]) => {
       const finalLogTrackingData = [
         ...dohTabs,
         ...dolTabs
       ];
       this.downloadFile('log-tracker-page-data.json', finalLogTrackingData);
-      res$.next(finalLogTrackingData);
+      this.downloadFile('fishing-log-tracker-page-data.json', fshTabs);
+      res$.next();
     });
     return res$;
   }
@@ -308,6 +403,21 @@ export class ExtractorComponent {
     })).pipe(
       map(expArray => expArray.filter(v => v !== 10000))
     );
+  }
+
+  private getFshData(itemId: number, spotId: number): Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]> {
+    return this.gatheringNodesService.getItemNodes(itemId, true)
+      .pipe(
+        map(nodes => {
+          return uniqBy(nodes.filter(node => node.id === spotId)
+            .map(node => {
+              return {
+                gatheringNode: node,
+                alarms: this.alarmsFacade.generateAlarms(node)
+              };
+            }), entry => entry.gatheringNode.baits && entry.gatheringNode.baits[0]);
+        })
+      );
   }
 
   private downloadFile(filename: string, data: any): void {

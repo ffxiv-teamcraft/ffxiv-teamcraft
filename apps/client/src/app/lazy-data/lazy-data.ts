@@ -18,6 +18,7 @@ import {LazyEquipment} from './model/lazy-equipment';
 import {LazyExVersion} from './model/lazy-ex-version';
 import {LazyFate} from './model/lazy-fate';
 import {LazyFishParameter} from './model/lazy-fish-parameter';
+import {LazyFishingLogTrackerPageData} from './model/lazy-fishing-log-tracker-page-data';
 import {LazyFishingLog} from './model/lazy-fishing-log';
 import {LazyFishingSource} from './model/lazy-fishing-source';
 import {LazyFishingSpot} from './model/lazy-fishing-spot';
@@ -114,6 +115,7 @@ export interface LazyData {
   fates: Record<number, LazyFate>;
   fishParameter: Record<number, LazyFishParameter>;
   fishes: Array<number>;
+  fishingLogTrackerPageData: Array<LazyFishingLogTrackerPageData>;
   fishingLog: Array<LazyFishingLog>;
   fishingSources: Record<number, LazyFishingSource[]>;
   fishingSpots: Array<LazyFishingSpot>;

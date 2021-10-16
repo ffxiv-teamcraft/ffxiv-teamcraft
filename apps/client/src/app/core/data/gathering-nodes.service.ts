@@ -129,7 +129,7 @@ export class GatheringNodesService {
     // If it's a mooch
     if (fishingSpot.fishes.includes(baitId)) {
       const fishingSource = fishingSources[baitId].find(s => s.spot === fishingSpot.id);
-      return this.getBaitChain(fishingSource.bait, fishingSpot, [...currentChain, {
+      return this.getBaitChain(fishingSource.bait, fishingSpot, fishingSources, [...currentChain, {
         id: baitId,
         tug: fishingSource?.tug
       }]);
