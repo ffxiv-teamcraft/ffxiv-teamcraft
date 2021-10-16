@@ -7,6 +7,7 @@ import {LazyAirshipRank} from './model/lazy-airship-rank';
 import {LazyAirshipVoyage} from './model/lazy-airship-voyage';
 import {LazyBaseParam} from './model/lazy-base-param';
 import {LazyClassJobsModifier} from './model/lazy-class-jobs-modifier';
+import {LazyCollectablesPageData} from './model/lazy-collectables-page-data';
 import {LazyCollectablesShopItemGroup} from './model/lazy-collectables-shop-item-group';
 import {LazyCollectable} from './model/lazy-collectable';
 import {LazyCraftAction} from './model/lazy-craft-action';
@@ -94,6 +95,7 @@ export interface LazyData {
   baitItems: Array<number>;
   baseParams: Record<number, LazyBaseParam>;
   classJobsModifiers: Record<number, LazyClassJobsModifier>;
+  collectablesPageData: Record<number, LazyCollectablesPageData[]>;
   collectablesShopItemGroup: Record<number, LazyCollectablesShopItemGroup>;
   collectablesShops: Record<number, number[]>;
   collectables: Record<number, LazyCollectable>;

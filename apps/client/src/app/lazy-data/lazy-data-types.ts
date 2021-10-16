@@ -15,7 +15,7 @@ export interface XivapiI18nName {
 
 type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
 
-export type LazyDataEntryElement<K extends LazyDataKey> =
+type LazyDataEntryElement<K extends LazyDataKey> =
   LazyDataWithExtracts[K] extends readonly (infer ElementType)[] ? ElementType :
     LazyDataWithExtracts[K] extends Record<number, infer RecordType> ? RecordType : never;
 

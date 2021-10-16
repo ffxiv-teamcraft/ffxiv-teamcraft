@@ -8,7 +8,7 @@ import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
 import { DataEntryStatus } from '../data-entry-status';
-import { LazyDataEntries, LazyDataEntryElement, LazyDataI18nKey, LazyDataKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
+import { LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
@@ -178,7 +178,7 @@ export class LazyDataFacade {
     }
   }
 
-  public getMinBtnSpearNodesIndex(): Observable<(Omit<LazyDataEntryElement<'nodes'>, 'zoneid'> & { id: number, zoneId: number })[]> {
+  public getMinBtnSpearNodesIndex(): Observable<(Omit<LazyDataEntries['nodes'], 'zoneid'> & { id: number, zoneId: number })[]> {
     return this.getEntry('nodes').pipe(
       map(nodes => {
         return Object.entries<LazyData['nodes']>(nodes)
@@ -236,7 +236,7 @@ export class LazyDataFacade {
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
     const key = entity + (id ? `:${id}` : '');
-    this.cache[key] = observable;
+    this.cache[key] = observable.pipe(shareReplay(1));
     setTimeout(() => {
       delete this.cache[key];
     }, LazyDataFacade.CACHE_TTL);
