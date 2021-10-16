@@ -19,6 +19,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { DataType } from '../../list/data/data-type';
+import { ListController } from '../../list/list-controller';
 
 @Component({
   selector: 'app-pricing',
@@ -282,7 +283,7 @@ export class PricingComponent implements AfterViewInit {
 
   private _getCraftCost(row: ListRow, list: List): number {
     const price = (row.requires || []).reduce((total, requirement) => {
-      const requirementRow = list.getItemById(requirement.id, true);
+      const requirementRow = ListController.getItemById(list, requirement.id, true);
       if (this.settings.expectToSellEverything) {
         // If you expect to sell everything, just divide by yield.
         return total + (this.getCraftCost(requirementRow) / row.yield) * requirement.amount;

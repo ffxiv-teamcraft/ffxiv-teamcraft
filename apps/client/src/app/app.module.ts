@@ -121,6 +121,8 @@ import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
 import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
 import { LazyDataModule } from './lazy-data/lazy-data.module';
+import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
+import { ListsEffects } from './modules/list/+state/lists.effects';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -288,6 +290,10 @@ const nzConfig: NzConfig = {
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects]),
+
+    StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
+    EffectsModule.forFeature([ListsEffects]),
+
     GraphQLModule,
 
     PlayerMetricsModule,

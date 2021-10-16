@@ -11,6 +11,7 @@ import { LodestoneService } from '../api/lodestone.service';
 import { WebhookSettingType } from '../../model/team/webhook-setting-type';
 import { LazyDataService } from '../data/lazy-data.service';
 import { PermissionLevel } from '../database/permissions/permission-level.enum';
+import { ListController } from '../../modules/list/list-controller';
 
 @Injectable()
 export class DiscordWebhookService {
@@ -106,10 +107,10 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, fcId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if (list.getPermissionLevel(memberId) < PermissionLevel.PARTICIPATE && list.getPermissionLevel(fcId) < PermissionLevel.PARTICIPATE) {
+    if  (list.getPermissionLevel(memberId) < PermissionLevel.PARTICIPATE && list.getPermissionLevel(fcId) < PermissionLevel.PARTICIPATE) {
       return;
     }
-    const row = list.getItemById(itemId, !finalItem, finalItem);
+    const row = ListController.getItemById(list, itemId, !finalItem, finalItem);
     if (row.done + amount < totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_PROGRESSION)) {
       return;
     } else if (row.done + amount >= totalNeeded && !team.hasSettingEnabled(WebhookSettingType.ITEM_COMPLETION)) {

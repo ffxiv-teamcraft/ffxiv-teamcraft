@@ -6,7 +6,6 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/firestore';
-import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
@@ -14,6 +13,8 @@ import { Class } from '@kaiu/serializer';
 import firebase from 'firebase/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
 import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
+import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { ListController } from '../../../../modules/list/list-controller';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade) {
     super(af, serializer, zone, pendingChangesService);
   }
 
@@ -94,8 +95,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public completeListData(list: List): Observable<List> {
-    return this.lazyData.extracts$.pipe(
-      map(extracts => {
+    return combineLatest([
+      this.lazyData.getEntry('extracts'),
+      this.lazyData.getEntry('ilvls')
+    ]).pipe(
+      map(([extracts, ilvls]) => {
         list.items = list.items.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
@@ -108,10 +112,10 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           }
           return Object.assign(item, extracts[item.id]);
         });
-        list.afterDeserialized();
+        ListController.afterDeserialized(list);
         if (list.modificationsHistory.length > 25) {
           const popped = list.modificationsHistory.slice(26);
-          list.contributionStats = list.getContributionStats(popped, this.lazyData);
+          list.contributionStats = ListController.getContributionStats(list, popped, ilvls);
           list.modificationsHistory = list.modificationsHistory.slice(0, 25);
         }
         return list;

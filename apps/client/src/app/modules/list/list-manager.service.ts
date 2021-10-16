@@ -13,12 +13,12 @@ import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
 import { DataType } from './data/data-type';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { CraftedBy } from './model/crafted-by';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { ListController } from './list-controller';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -45,7 +45,6 @@ export class ListManagerService {
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade,
-              private lazyDataService: LazyDataService,
               private lazyData: LazyDataFacade,
               private authFacade: AuthFacade) {
 
@@ -116,7 +115,7 @@ export class ListManagerService {
         }
       }),
       // merge the addition list with the list we want to add items in.
-      map(addition => list.merge(addition).clean())
+      map(addition => ListController.clean(ListController.merge(list, addition)))
     );
   }
 
@@ -130,12 +129,12 @@ export class ListManagerService {
     itemClone.used = 0;
     itemClone.usePrice = true;
     itemClone.id = itemClone.$key;
-    const added = addition.addToFinalItems(itemClone, this.lazyDataService.data);
+    const added = ListController.addToFinalItems(addition, itemClone);
     if (itemClone.requires.length > 0) {
       return this.customItems$.pipe(
         first(),
         switchMap(customItems => {
-          return addition.addCraft({
+          return ListController.addCraft(addition, {
             _additions: [
               {
                 amount: added,
@@ -146,7 +145,7 @@ export class ListManagerService {
             customItems: customItems,
             dataService: this.db,
             listManager: this,
-            lazyDataService: this.lazyDataService
+            lazyDataFacade: this.lazyData
           });
         })
       );
@@ -158,85 +157,89 @@ export class ListManagerService {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
-    const toAdd: ListRow = new ListRow();
-    // If this is a craft
-    if (crafted.length > 0) {
-      if (!recipeId) {
-        const firstCraft = getCraftByPriority(crafted, gearsets);
-        if (firstCraft.id !== undefined) {
-          recipeId = firstCraft.id.toString();
-        }
-      }
-      const craft = crafted.find(c => c.id.toString() === recipeId.toString()) || crafted[0];
-      const ingredients = this.lazyDataService.getRecipeSync(craft.id).ingredients;
-      const yields = collectable ? 1 : (craft.yield || 1);
-      // Then we prepare the list row to add.
-      Object.assign(toAdd, {
-        id: data.id,
-        icon: this.lazyDataService.data.itemIcons[data.id],
-        amount: amount,
-        done: 0,
-        used: 0,
-        yield: yields,
-        collectable,
-        recipeId: recipeId.toString(),
-        requires: ingredients.map(ing => {
-          return {
-            id: ing.id,
-            amount: ing.amount
-          };
-        }),
-        craftedBy: crafted,
-        usePrice: true
-      });
-    } else {
-      const requirements = getItemSource(data, DataType.REQUIREMENTS);
-      if (requirements.length > 0) {
-        toAdd.requires = requirements;
-      }
-      // If it's not a recipe, add as item
-      Object.assign(toAdd, {
-        id: data.id,
-        icon: this.lazyDataService.data.itemIcons[data.id],
-        amount: amount,
-        done: 0,
-        used: 0,
-        yield: 1,
-        usePrice: true
-      });
-    }
+    return of(new ListRow()).pipe(
+      switchMap(toAdd => {
+        // If this is a craft
+        if (crafted.length > 0) {
+          if (!recipeId) {
+            const firstCraft = getCraftByPriority(crafted, gearsets);
+            if (firstCraft.id !== undefined) {
+              recipeId = firstCraft.id.toString();
+            }
+          }
+          const craft = crafted.find(c => c.id.toString() === recipeId.toString()) || crafted[0];
 
-    Object.assign(toAdd, data);
-
-    // We add the row to recipes.
-    const added = addition.addToFinalItems(toAdd, this.lazyDataService.data);
-    let addition$: Observable<List>;
-    if (toAdd.requires.length > 0) {
-      // Then we add the craft to the addition list.
-      addition$ = this.customItems$.pipe(
-        first(),
-        switchMap(customItemsSync => {
-          return addition.addCraft({
-            _additions: [{
-              item: toAdd,
-              amount: added
-            }],
-            customItems: customItemsSync,
-            dataService: this.db,
-            listManager: this,
-            lazyDataService: this.lazyDataService,
-            recipeId: recipeId?.toString(),
-            gearsets: gearsets
+          const yields = collectable ? 1 : (craft.yield || 1);
+          // Then we prepare the list row to add.
+          return this.lazyData.getRecipes().pipe(
+            map(recipes => {
+              const ingredients = recipes.find(r => r.id === craft.id).ingredients ?? [];
+              return {
+                ...toAdd,
+                id: data.id,
+                amount: amount,
+                done: 0,
+                used: 0,
+                yield: yields,
+                collectable,
+                recipeId: recipeId.toString(),
+                requires: ingredients.map(ing => {
+                  return {
+                    id: ing.id,
+                    amount: ing.amount
+                  };
+                }),
+                craftedBy: crafted,
+                usePrice: true,
+                ...data
+              };
+            })
+          );
+        } else {
+          const requirements = getItemSource(data, DataType.REQUIREMENTS);
+          if (requirements.length > 0) {
+            toAdd.requires = requirements;
+          }
+          // If it's not a recipe, add as item
+          return of({
+            ...toAdd,
+            id: data.id,
+            amount: amount,
+            done: 0,
+            used: 0,
+            yield: 1,
+            usePrice: true,
+            ...data
           });
-        })
-      );
-    } else {
-      addition$ = of(addition);
-    }
-    return addition$.pipe(
-      mergeMap(wipList => {
-        return this.addDetails(wipList, recipeId);
-      })
+        }
+      }),
+      switchMap(toAdd => {
+        // We add the row to recipes.
+        const added = ListController.addToFinalItems(addition, toAdd);
+        if (toAdd.requires.length > 0) {
+          // Then we add the craft to the addition list.
+          return this.customItems$.pipe(
+            first(),
+            switchMap(customItemsSync => {
+              return ListController.addCraft(addition, {
+                _additions: [{
+                  item: toAdd,
+                  amount: added
+                }],
+                customItems: customItemsSync,
+                dataService: this.db,
+                listManager: this,
+                lazyDataFacade: this.lazyData,
+                recipeId: recipeId?.toString(),
+                gearsets: gearsets
+              });
+            })
+          );
+        } else {
+          return of(addition);
+        }
+      }),
+      mergeMap(wipList => this.addDetails(wipList, recipeId))
     );
   }
 
@@ -322,7 +325,7 @@ export class ListManagerService {
               }
             }
           });
-          resultList.updateAllStatuses();
+          ListController.updateAllStatuses(resultList);
           resultList.registry = permissions;
           return resultList;
         })

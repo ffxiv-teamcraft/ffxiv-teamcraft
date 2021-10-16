@@ -10,6 +10,7 @@ import { concat, Observable } from 'rxjs';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { AbstractListsSelectionPopup } from '../abstract-lists-selection-popup';
+import { ListController } from '../../../modules/list/list-controller';
 
 @Component({
   selector: 'app-merge-lists-popup',
@@ -45,7 +46,7 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopup {
           );
         }),
         map(([lists, resultList]: [List[], List]) => {
-          lists.forEach(list => resultList.merge(list));
+          lists.forEach(list => ListController.merge(resultList, list));
           return resultList;
         }),
         tap(resultList => this.listsFacade.addList(resultList)),

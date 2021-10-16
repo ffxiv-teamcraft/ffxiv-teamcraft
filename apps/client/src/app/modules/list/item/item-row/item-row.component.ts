@@ -47,6 +47,7 @@ import { RelationshipsComponent } from '../../../item-details/relationships/rela
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { InventoryService } from '../../../inventory/inventory.service';
+import { ListController } from '../../list-controller';
 
 @Component({
   selector: 'app-item-row',
@@ -210,7 +211,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   ignoreRequirements$ = combineLatest([this.item$, this.list$, this.finalItem$]).pipe(
     map(([item, list, finalItem]) => {
-      return list.shouldIgnoreRequirements(finalItem ? 'finalItems' : 'items', item.id);
+      return ListController.shouldIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', item.id);
     })
   );
 
@@ -298,7 +299,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
       map(([list, item]) => {
-        return list.requiredAsHQ(item);
+        return ListController.requiredAsHQ(list, item);
       })
     );
   }
@@ -475,7 +476,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   setIgnoreRequirements(ignore: boolean, itemId: number, list: List, finalItem: boolean): void {
-    list.setIgnoreRequirements(finalItem ? 'finalItems' : 'items', itemId, ignore);
+    ListController.setIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', itemId, ignore);
     this.listManager.upgradeList(list).subscribe(l => {
       this.listsFacade.updateList(l);
     });

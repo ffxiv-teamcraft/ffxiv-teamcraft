@@ -51,9 +51,6 @@ export class LazyDataFacade {
         this.store.pipe(select(LazyDataSelectors.getEntry, { key: propertyKey })),
         this.getStatus(propertyKey)
       ]).pipe(
-        distinctUntilChanged(([, a], [, b]) => {
-          return a.status === b.status;
-        }),
         tap(([res, { status }]) => {
           const loadingOrLoaded = status === 'full' || status === 'loading';
           if (!res && !loadingOrLoaded) {

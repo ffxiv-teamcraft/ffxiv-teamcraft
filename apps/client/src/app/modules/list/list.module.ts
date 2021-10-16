@@ -126,9 +126,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     MapModule,
     ItemDetailsPopupsModule,
     ItemPickerModule,
-
-    StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
-    EffectsModule.forFeature([ListsEffects]),
     LazyScrollModule,
     SimulatorModule,
     CompanyWorkshopTreeModule,

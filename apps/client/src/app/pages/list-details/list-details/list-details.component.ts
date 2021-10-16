@@ -45,6 +45,7 @@ import { CommissionsFacade } from '../../../modules/commission-board/+state/comm
 import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { uniqBy } from 'lodash';
+import { ListController } from '../../../modules/list/list-controller';
 
 @Component({
   selector: 'app-list-details',
@@ -120,12 +121,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {
-        if (!list.notFound && list.isOutDated() && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
+        if (!list.notFound && ListController.isOutDated(list) && permissionLevel >= PermissionLevel.WRITE && !this.regeneratingList) {
           this.regenerateList(list);
         }
         if (!list.notFound) {
-          this.listIsLarge = list.isLarge();
-          if (!list.isOutDated()) {
+          this.listIsLarge = ListController.isLarge(list);
+          if (!ListController.isOutDated(list)) {
             this.regeneratingList = false;
           }
         }
@@ -149,12 +150,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
-      map(list => list.crystals.sort((a, b) => a.id - b.id))
+      map(list => ListController.getCrystals(list).sort((a, b) => a.id - b.id))
     );
 
     this.teams$ = this.teamsFacade.myTeams$;
     this.assignedTeam$ = this.teamsFacade.selectedTeam$;
-    this.outDated$ = this.list$.pipe(map(list => !list.notFound && list.isOutDated()));
+    this.outDated$ = this.list$.pipe(map(list => !list.notFound && ListController.isOutDated(list)));
     this.canRemoveTag$ = combineLatest([this.assignedTeam$, this.authFacade.userId$, this.permissionLevel$])
       .pipe(
         map(([team, userId, permissionsLevel]) => team.leader === userId || permissionsLevel >= PermissionLevel.OWNER)
@@ -275,7 +276,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       first(),
       map(alarms => {
         const listAlarms = [];
-        list.forEach(row => {
+        ListController.forEach(list, row => {
           // We don't want to create alarms for the clusters.
           if (row.id < 20) {
             return;
@@ -296,7 +297,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   cloneList(list: List): void {
     this.listsFacade.loadMyLists();
-    const clone = list.clone();
+    const clone = ListController.clone(list);
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
       first()
@@ -334,6 +335,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   };
 
+  isTooLarge(list: List): boolean {
+    return ListController.isTooLarge(list);
+  }
+
   regenerateList(list: List): void {
     this.regeneratingList = true;
     this.progressService.showProgress(this.listManager.upgradeList(list), 1, 'List_popup_title')
@@ -344,7 +349,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   resetList(list: List): void {
-    list.reset();
+    ListController.reset(list);
     this.listsFacade.updateList(list);
   }
 
@@ -445,7 +450,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(inventory => {
         list.items.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          const requiredHq = list.requiredAsHQ(item) > 0;
+          const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }
@@ -457,12 +462,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             if (item.done + totalAmount > item.amount) {
               totalAmount = item.amount - item.done;
             }
-            list.setDone(item.id, totalAmount, true, false);
+            ListController.setDone(list, item.id, totalAmount, true, false);
           }
         });
         list.finalItems.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          const requiredHq = list.requiredAsHQ(item) > 0;
+          const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }
@@ -471,10 +476,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
+            ListController.setDone(list, item.id, Math.min(item.done + totalAmount, item.amount), false, true, false, null, true);
           }
         });
-        list.updateAllStatuses();
+        ListController.updateAllStatuses(list);
         return list;
       })
     ).subscribe(res => {
@@ -490,14 +495,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           const inventoryItems = inventory.getItem(item.id, true);
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(totalAmount, item.amount), true);
+            ListController.setDone(list, item.id, Math.min(totalAmount, item.amount), true);
           }
         });
         list.finalItems.forEach(item => {
           const inventoryItems = inventory.getItem(item.id, true);
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(totalAmount, item.amount), false, true);
+            ListController.setDone(list, item.id, Math.min(totalAmount, item.amount), false, true);
           }
         });
         return list;
