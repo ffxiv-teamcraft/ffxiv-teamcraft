@@ -6,9 +6,15 @@
     <nz-tab [nzTitle]="'Game_Term/DoH' | translate" *ngIf="dohTabs$ | async as dohTabs">
       <ng-template nz-tab>
         <ng-template #hideCompletedToggle>
-          <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, dohTabs, [], true)"></nz-switch>
-            <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+              <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, dohTabs, [], true)"></nz-switch>
+              <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+              <nz-switch [(ngModel)]="showNotRequired" (ngModelChange)="updateSelectedPage(hideCompleted, $event, trackerType, dohTabs, [], true)"></nz-switch>
+              <div>{{'LOG_TRACKER.Show_not_required' | translate}}</div>
+            </div>
           </div>
         </ng-template>
         <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id" nzAnimated="false"
@@ -20,11 +26,13 @@
             </ng-template>
             <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left">
               <ng-container *ngFor="let page of tab">
-                <nz-tab *ngIf="!hideCompleted || !isDoHPageDone(page)" [nzTitle]="dohTitleTemplate" (nzSelect)="dohSelectedPage = page.id">
+                <nz-tab *ngIf="(!hideCompleted || !isDoHPageDone(page)) && (showNotRequired || page.requiredForAchievement)" [nzTitle]="dohTitleTemplate"
+                        (nzSelect)="dohSelectedPage = page.id">
                   <ng-template #dohTitleTemplate>
-                    <span [class.not-required]="page.requiredForAchievement">{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}<span
-                      *ngIf="page.requiredForAchievement" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
-                      nz-tooltip>*</span>
+                    <span [class.not-required]="!page.requiredForAchievement">
+                      <app-i18n-name content="notebookDivision" [id]="page.divisionId" width="50"></app-i18n-name>
+                      <span *ngIf="page.requiredForAchievement" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
+                            nz-tooltip>*</span>
                       ({{getDohPageCompletion(page)}})
                     </span>
                   </ng-template>
@@ -51,17 +59,16 @@
                              fxLayoutGap="5px">
                           <label nz-checkbox [(ngModel)]="recipe.selected" (ngModelChange)="setSelection(recipe, $event)"></label>
                           <app-item-icon *ngIf="true | ifMobile: false"
-                                         [icon]="recipe.itemId | lazyIcon"
                                          [itemId]="recipe.itemId"
                                          [width]="32"></app-item-icon>
                           <div fxLayout="column">
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                               <div [appItemRarity]="recipe.itemId">
-                                {{recipe.itemId | itemName | i18n}}
+                                <app-i18n-name content="items" [id]="recipe.itemId"></app-i18n-name>
                                 <img *ngFor="let leve of recipe.leves"
                                      src="./assets/icons/leve.png" alt="leves"
                                      class="leve-icon"
-                                     nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
+                                     nz-tooltip [nzTooltipTitle]="leve | i18nRow:'leves' | i18n">
                               </div>
                               <i *ngIf="userCompletion[recipe.recipeId]" nz-icon nzType="check"></i>
                             </div>
@@ -101,15 +108,15 @@
       <ng-template #extraTemplate>
         <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, dohTabs, dolTabs, true)"></nz-switch>
+            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, showNotRequired, trackerType, [], dolTabs, true)"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
           </div>
-          <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
+          <button (click)="showOptimizedMap(dolTabs, 0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
                   nz-tooltip nzType="primary" class="path-button">
             <i nzIconfont="icon-map" nz-icon></i>
             <img alt="MIN" class="job-icon" src="./assets/icons/MIN.png">
           </button>
-          <button (click)="showOptimizedMap(2)" [nzTooltipTitle]="'LOG_TRACKER.BTN_optimized_path' | translate" nz-button
+          <button (click)="showOptimizedMap(dolTabs, 2)" [nzTooltipTitle]="'LOG_TRACKER.BTN_optimized_path' | translate" nz-button
                   nz-tooltip nzType="primary" class="path-button">
             <i nzIconfont="icon-map" nz-icon></i>
             <img alt="BTN" class="job-icon" src="./assets/icons/BTN.png">
@@ -165,7 +172,7 @@
                                   </div>
                                 </div>
                                 <div [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" nz-col>
-                                  <ng-container *ngIf="getNodeData(item.itemId, dolSelectedPage, index) as nodeData">
+                                  <ng-container *ngIf="item.nodes as nodeData">
                                     <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
                                          fxLayoutAlign="flex-start center">
                                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -248,10 +255,10 @@
         </nz-tabset>
       </ng-template>
     </nz-tab>
-    <nz-tab [nzTitle]="'Game_Term/FSH' | translate">
-      <ng-template nz-tab>
-        <app-fishing-log-tracker *ngIf="trackerType === 3"></app-fishing-log-tracker>
-      </ng-template>
-    </nz-tab>
+    <!--    <nz-tab [nzTitle]="'Game_Term/FSH' | translate">-->
+    <!--      <ng-template nz-tab>-->
+    <!--        &lt;!&ndash;        <app-fishing-log-tracker *ngIf="trackerType === 3"></app-fishing-log-tracker>&ndash;&gt;-->
+    <!--      </ng-template>-->
+    <!--    </nz-tab>-->
   </nz-tabset>
 </ng-container>

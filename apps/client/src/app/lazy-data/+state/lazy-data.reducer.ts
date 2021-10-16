@@ -61,7 +61,8 @@ const lazyDataReducer = createReducer(
     loadingStates: {
       ...state.loadingStates,
       [entity]: {
-        status: 'loading'
+        status: 'loading',
+        record: {}
       }
     }
   })),
@@ -74,7 +75,8 @@ const lazyDataReducer = createReducer(
     loadingStates: {
       ...state.loadingStates,
       [key]: {
-        status: 'full'
+        status: 'full',
+        record: {}
       }
     }
   }))

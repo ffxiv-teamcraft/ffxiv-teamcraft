@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, shareReplay, startWith } from 'rxjs/operators';
+import { map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { uniqBy } from 'lodash';
@@ -28,7 +28,7 @@ export class FishingLogCacheService {
     this.lazyData.getEntry('fishingLog'),
     this.lazyData.getEntry('spearFishingLog')
   ]).pipe(
-    map(([minBtnSpearNodes, fishingLog, spearFishingLog]) => {
+    switchMap(([minBtnSpearNodes, fishingLog, spearFishingLog]) => {
       const fishingLogData$ = combineLatest(fishingLog.map(entry => {
         return combineLatest([
           this.lazyData.getRow('fishParameter', entry.itemId),
@@ -110,7 +110,7 @@ export class FishingLogCacheService {
 
   public display$ = combineLatest([this.completeDisplay$, this.completion$]).pipe(
     map(([completeDisplay, completion]: [any, number[]]) => {
-      return completeDisplay.map(display => {
+      return completeDisplay.tabs.map(display => {
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
         display.tabs.forEach(area => {

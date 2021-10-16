@@ -31,6 +31,9 @@ export class I18nNameComponent {
     this.id$.next(id);
   }
 
+  @Input()
+  width = 150;
+
   constructor(private lazyData: LazyDataFacade) {
   }
 

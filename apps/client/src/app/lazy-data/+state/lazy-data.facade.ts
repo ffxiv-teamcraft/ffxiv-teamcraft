@@ -76,6 +76,10 @@ export class LazyDataFacade {
    */
   public getRow<K extends LazyDataKey>(propertyKey: K, id: number): Observable<LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
+      // If we asked for more than 10 separate things in the same entry during the las CACHE_TTL, load the entire entry.
+      if (Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 10) {
+        this.preloadEntry(propertyKey);
+      }
       const obs$ = combineLatest([
         this.store.pipe(select(LazyDataSelectors.getEntryRow, { key: propertyKey, id })),
         this.getStatus(propertyKey)

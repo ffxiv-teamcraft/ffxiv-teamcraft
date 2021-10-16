@@ -14,6 +14,8 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { environment } from 'apps/client/src/environments/environment';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { getItemSource } from '../../../modules/list/model/list-row';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-extractor',
@@ -47,16 +49,95 @@ export class ExtractorComponent {
     this.doExtracts().pipe(
       switchMap(extracts => {
         return combineLatest([
-          this.doCollectablesData()
+          this.doCollectablesData(),
+          this.doLogTrackingData(extracts)
         ]);
       })
     ).subscribe();
   }
 
+  public doLogTrackingData(extractsInput?: LazyDataWithExtracts['extracts']): Observable<any> {
+    const extracts$ = extractsInput ? of(extractsInput) : this.lazyData.getEntry('extracts');
+    this.running = true;
+    this.currentLabel = 'Log tracking data';
+    const res$ = new ReplaySubject<any>();
+    this.totalTodo$.next(12);
+    this.done$.next(0);
+    const dohTabs$ = combineLatest([
+      this.lazyData.getEntry('craftingLogPages'),
+      this.lazyData.getEntry('leves'),
+      this.lazyData.getEntry('notebookDivision')
+    ]).pipe(
+      map(([pages, leves, notebookDivision]) => {
+        return pages.map(page => {
+          this.done$.next(this.done$.value + 1);
+          return page.map(tab => {
+            (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
+              return notebookDivision[key].pages.includes(tab.id);
+            });
+            const division = notebookDivision[(tab as any).divisionId];
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
+            tab.recipes = tab.recipes.map(entry => {
+              (entry as any).leves = Object.entries<any>(leves)
+                .filter(([, leve]) => {
+                  return leve.items.some(i => i.itemId === entry.itemId);
+                })
+                .map(([id]) => +id);
+              return entry;
+            });
+            return tab;
+          });
+        });
+      })
+    );
+    const dolTabs$ = combineLatest([
+      this.lazyData.getEntry('gatheringLogPages'),
+      this.lazyData.getEntry('notebookDivision'),
+      extracts$
+    ]).pipe(
+      map(([pages, notebookDivision, extracts]) => {
+        return pages.map(page => {
+          this.done$.next(this.done$.value + 1);
+          return page.map(tab => {
+            (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
+              return notebookDivision[key].pages.includes(tab.id);
+            });
+            const division = notebookDivision[(tab as any).divisionId];
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
+            tab.items = tab.items.map(item => {
+              (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
+                .slice(0, 3)
+                .map(node => {
+                  return {
+                    gatheringNode: node,
+                    alarms: node.limited ? this.alarmsFacade.generateAlarms(node) : []
+                  };
+                });
+              return item;
+            });
+            return tab;
+          });
+        });
+      })
+    );
+    combineLatest([
+      dohTabs$,
+      dolTabs$
+    ]).subscribe(([dohTabs, dolTabs]) => {
+      const finalLogTrackingData = [
+        ...dohTabs,
+        ...dolTabs
+      ];
+      this.downloadFile('log-tracker-page-data.json', finalLogTrackingData);
+      res$.next(finalLogTrackingData);
+    });
+    return res$;
+  }
+
   public doCollectablesData(): Observable<LazyDataWithExtracts['collectablesPageData']> {
     this.running = true;
     this.currentLabel = 'Collectables page data';
-    const res$ = new ReplaySubject<any>();
+    const res$ = new ReplaySubject<LazyDataWithExtracts['collectablesPageData']>();
     this.lazyData.preloadEntry('paramGrow');
     const jobs = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
     this.totalTodo$.next(jobs.length);

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,15 +15,12 @@ import { NavigationObjective } from '../../../modules/map/navigation-objective';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
-import { List } from '../../../modules/list/model/list';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { LazyCraftingLogPage } from '../../../lazy-data/model/lazy-crafting-log-page';
-import { LazyGatheringLogPage } from '../../../lazy-data/model/lazy-gathering-log-page';
-import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyLogTrackerPageData } from '../../../lazy-data/model/lazy-log-tracker-page-data';
 
 @Component({
   selector: 'app-log-tracker',
@@ -36,44 +33,18 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public anonymousState$ = this.authFacade.loggedIn$.pipe(map(loggedIn => ({ isAnonymous: !loggedIn })));
 
-  public dohTabs$ = combineLatest([
-    this.lazyData.getEntry('craftingLogPages'),
-    this.lazyData.getEntry('leves')
-  ]).pipe(
-    switchMap(([pages, leves]) => {
-      return combineLatest(pages.map(page => {
-          return combineLatest(page.map(tab => {
-              return this.lazyData.getEntry('notebookDivision').pipe(
-                map(notebookDivision => {
-                  (tab as any).divisionId = Object.keys(notebookDivision).find(key => {
-                    return notebookDivision[key].pages.indexOf(tab.id) > -1;
-                  });
-                  const division = notebookDivision[(tab as any).divisionId];
-                  (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
-                  tab.recipes = tab.recipes.map(entry => {
-                    (entry as any).leves = Object.entries<any>(leves)
-                      .filter(([, leve]) => {
-                        return leve.items.some(i => i.itemId === entry.itemId);
-                      })
-                      .map(([id]) => +id);
-                    return entry;
-                  });
-                  return tab;
-                })
-              );
-            })
-          );
-        })
-      );
-    })
+  public dohTabs$ = this.lazyData.getEntry('logTrackerPageData').pipe(
+    map(log => log.slice(0, 8))
   );
 
-  public dolTabs$ = this.lazyData.getEntry('gatheringLogPages');
+  public dolTabs$ = this.lazyData.getEntry('logTrackerPageData').pipe(
+    map(log => log.slice(8, 12))
+  );
 
   public userCompletion: { [index: number]: boolean } = {};
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
-  public nodeDataCache: Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>[][] = [];
+  public nodeDataCache: Record<string, Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>> = {};
 
   private _dohSelectedPage = 0;
   public get dohSelectedPage(): number {
@@ -103,6 +74,7 @@ export class LogTrackerComponent extends TrackerComponent {
   public type$: Observable<number>;
 
   public hideCompleted = this.settings.hideCompletedLogEntries;
+  public showNotRequired = this.settings.showNotRequiredLogEntries;
 
   // { [recipeId]: itemId }
   public selectedRecipes: Record<number, number> = {};
@@ -138,22 +110,23 @@ export class LogTrackerComponent extends TrackerComponent {
           this.userGatheringCompletion[itemId] = true;
         });
         if (this.hideCompleted) {
-          this.updateSelectedPage(this.hideCompleted, type, dohTabs, dolTabs);
+          this.updateSelectedPage(this.hideCompleted, this.showNotRequired, type, dohTabs, dolTabs);
         }
         this.cdr.markForCheck();
       });
   }
 
-  public updateSelectedPage(hideCompleted: boolean, selectedTabNumber: number, dohTabs: LazyCraftingLogPage[][], dolTabs: LazyGatheringLogPage[][], resetSelection = false): void {
+  public updateSelectedPage(hideCompleted: boolean, showNotRequired: boolean, selectedTabNumber: number, dohTabs: LazyLogTrackerPageData[][], dolTabs: LazyLogTrackerPageData[][], resetSelection = false): void {
     const selectedTabIndex = selectedTabNumber - 1;
     this.settings.hideCompletedLogEntries = hideCompleted;
+    this.settings.showNotRequiredLogEntries = showNotRequired;
     const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
     const pages = [dohTabs, dolTabs][selectedTabIndex][selectedSubTabIndex];
     const selectedPageIndex = [this.dohSelectedPage, this.dolSelectedPage][selectedTabIndex];
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
     if (pages) {
       const currentPage = pages[selectedPageIndex];
-      if (currentPage && isPageDone(currentPage) && hideCompleted) {
+      if ((showNotRequired || currentPage.requiredForAchievement) && currentPage && isPageDone(currentPage) && hideCompleted) {
         const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = nextUncompletedPage?.id;
@@ -268,77 +241,44 @@ export class LogTrackerComponent extends TrackerComponent {
       });
   }
 
-  public getNodeData(itemId: number, tab: number, type?: number): Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]> {
-    if (this.nodeDataCache[itemId][tab] === undefined) {
-      this.nodeDataCache[itemId][tab] = this.gatheringNodesService.getItemNodes(itemId, true).pipe(
-        map(nodes => {
-          return nodes.filter(node => {
-            return !type || node.type === type;
-          })
-            .slice(0, 3)
-            .map(gatheringNode => {
-              return {
-                gatheringNode: gatheringNode,
-                alarms: gatheringNode.limited ? this.alarmsFacade.generateAlarms(gatheringNode) : []
-              };
-            });
+  public showOptimizedMap(pages: LazyLogTrackerPageData[][], index: number): void {
+    const steps = [...pages[index], ...pages[index + 1]].map(page => {
+      return page.items
+        .filter(item => !!item && !this.userGatheringCompletion[item.itemId])
+        .map(item => {
+          const node = item.nodes.find(n => !n.gatheringNode.limited && n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type))?.gatheringNode;
+          if (node) {
+            return <NavigationObjective>{
+              mapId: node.map,
+              zoneId: node.zoneId,
+              iconid: null,
+              item_amount: 1,
+              name: this.lazyData.getI18nName('items', item.itemId),
+              itemId: item.itemId,
+              total_item_amount: 1,
+              type: 'Gathering',
+              x: node.x,
+              y: node.y,
+              gatheringType: node.type
+            };
+          }
         })
-      );
-    }
-    return this.nodeDataCache[itemId][tab];
-  }
+        .filter(step => !!step);
+    }).flat();
 
-  public showOptimizedMap(index: number): void {
-    this.lazyData.getEntry('gatheringLogPages').pipe(
-      switchMap(gatheringLogPages => {
-        return safeCombineLatest([].concat.apply([], [...gatheringLogPages[index], ...gatheringLogPages[index + 1]]
-          .map(page => {
-            return safeCombineLatest(page.items.map(item => {
-              return this.getNodeData(item.itemId, page.id).pipe(
-                map(nodes => {
-                  const node = nodes.find(n => !n.gatheringNode.limited && n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type))?.gatheringNode;
-                  return <NavigationObjective>{
-                    mapId: node.map,
-                    zoneId: node.zoneId,
-                    iconid: null,
-                    item_amount: 1,
-                    name: this.lazyData.getI18nName('items', item.itemId),
-                    itemId: item.itemId,
-                    total_item_amount: 1,
-                    type: 'Gathering',
-                    x: node.x,
-                    y: node.y,
-                    gatheringType: node.type
-                  };
-                })
-              );
-            })).pipe(
-              map(items => {
-                return items.filter(item => {
-                  return !!item && !this.userGatheringCompletion[item.itemId];
-                });
-              })
-            );
-          })
-        )).pipe(
-          switchMap(steps => {
-            const ref = this.dialog.create({
-              nzTitle: this.translate.instant('NAVIGATION.Title'),
-              nzContent: WorldNavigationMapComponent,
-              nzComponentParams: {
-                points: steps
-              },
-              nzFooter: null
-            });
-            return ref.afterOpen.pipe(
-              switchMap(() => {
-                return ref.getContentComponent().markAsDone$;
-              }),
-              takeUntil(ref.afterClose)
-            );
-          })
-        );
-      })
+    const ref = this.dialog.create({
+      nzTitle: this.translate.instant('NAVIGATION.Title'),
+      nzContent: WorldNavigationMapComponent,
+      nzComponentParams: {
+        points: steps
+      },
+      nzFooter: null
+    });
+    ref.afterOpen.pipe(
+      switchMap(() => {
+        return ref.getContentComponent().markAsDone$;
+      }),
+      takeUntil(ref.afterClose)
     ).subscribe(step => {
       this.markDolAsDone(step.itemId, true);
     });
