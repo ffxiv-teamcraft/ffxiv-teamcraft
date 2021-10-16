@@ -66,7 +66,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{collectable.expBase[row.level - 1] | number}}
+                    {{(collectable.expBase[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
@@ -77,7 +77,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{collectable.expMid[row.level - 1] | number}}
+                    {{(collectable.expMid[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
@@ -88,7 +88,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{collectable.expHigh[row.level - 1] | number}}
+                    {{(collectable.expHigh[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="6">
