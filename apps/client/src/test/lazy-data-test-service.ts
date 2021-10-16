@@ -17,7 +17,6 @@ export class LazyDataTestService extends LazyDataService {
   load(): void {
     const extracts = require('../assets/extracts/extracts.json');
     this.extracts = extracts;
-    this.extracts$.next(extracts);
     this.datacenters = {
       Aether: ['Adamantoise', 'Cactuar', 'Faerie', 'Gilgamesh', 'Jenova', 'Midgardsormr', 'Sargatanas', 'Siren'],
       Chaos: ['Cerberus', 'Louisoix', 'Moogle', 'Omega', 'Ragnarok', 'Spriggan'],

@@ -18,6 +18,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { CanBeBought } from '../optimizations/can-be-bought';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -28,8 +29,8 @@ export class InventoryOptimizerComponent {
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-  public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
-    switchMap((extracts: ListRow[]) => {
+  public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.getEntry('extracts').pipe(
+    switchMap((extracts) => {
       return combineLatest([
         this.settings.settingsChange$.pipe(
           filter(change => {
@@ -158,7 +159,7 @@ export class InventoryOptimizerComponent {
 
   constructor(private inventoryFacade: InventoryService, private settings: SettingsService, private l12n: LocalizedDataService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
+              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService) {
   }
 
   private getContainerName(item: InventoryItem): string {

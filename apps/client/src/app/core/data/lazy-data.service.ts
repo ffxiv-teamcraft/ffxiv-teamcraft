@@ -260,7 +260,6 @@ export class LazyDataService {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches;
         this.extracts = extracts;
-        this.extracts$.next(extracts);
         xivapiAndExtractsReady$.next();
         xivapiAndExtractsReady$.complete();
       }
