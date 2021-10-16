@@ -13,7 +13,6 @@ export class MateriasNeededPopupComponent implements OnInit {
   @Input()
   gearset: TeamcraftGearset;
 
-
   private _progression: GearsetProgression;
 
   @Input()

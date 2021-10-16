@@ -312,6 +312,9 @@ exports.getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, cont
 });
 
 function getTokenClaims(user) {
+  if (!user) {
+    return {};
+  }
   if (user.admin) {
     return {
       'x-hasura-default-role': 'checker',

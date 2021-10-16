@@ -10,7 +10,7 @@ import { chunk } from 'lodash';
 
 interface MarkAsDoneEntry {
   itemId: number;
-  log: keyof LogTracking;
+  log: keyof Extract<LogTracking, number[]>;
   done: boolean;
 }
 
@@ -40,7 +40,7 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
                     newLog[entry.log].push(entry.itemId);
                     transaction.set(docRef, newLog);
                   } else {
-                    if (entry.done && (doc.get(entry.log) || []).indexOf(entry.itemId) === -1) {
+                    if (entry.done && (doc.get(entry.log.toString()) || []).indexOf(entry.itemId) === -1) {
                       transaction.update(docRef, {
                         [entry.log]: firebase.firestore.FieldValue.arrayUnion(entry.itemId)
                       });

@@ -243,7 +243,7 @@ export class SaveDefaultConsumables implements Action {
 export class MarkAsDoneInLog implements Action {
   readonly type = AuthActionTypes.MarkAsDoneInLog;
 
-  constructor(public readonly log: keyof LogTracking, public readonly itemId: number, public readonly done = true) {
+  constructor(public readonly log: keyof Extract<LogTracking, number[]>, public readonly itemId: number, public readonly done = true) {
   }
 }
 

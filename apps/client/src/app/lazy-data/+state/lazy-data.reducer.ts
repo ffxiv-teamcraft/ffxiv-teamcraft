@@ -40,7 +40,7 @@ const lazyDataReducer = createReducer(
     data: {
       ...state.data,
       [key]: {
-        ...(state[key] || {}),
+        ...(state.data[key] || {}),
         [id]: row
       }
     },
@@ -48,7 +48,7 @@ const lazyDataReducer = createReducer(
       ...state.loadingStates,
       [key]: {
         // Prevent overriding full with partial
-        status: status === 'loading' ? 'partial' : status,
+        status: state.loadingStates[key]?.status === 'loading' ? 'partial' : state.loadingStates[key]?.status,
         record: {
           ...(state.loadingStates[key]?.record || {}),
           [id]: 'full'

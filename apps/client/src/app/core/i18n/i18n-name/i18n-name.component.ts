@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, ReplaySubject } from 'rxjs';
-import { LazyDataI18nEntries } from '../../../lazy-data/lazy-data-types';
+import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -12,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class I18nNameComponent {
 
-  private content$ = new ReplaySubject<keyof LazyDataI18nEntries>();
+  private content$ = new ReplaySubject<LazyDataI18nKey>();
   private id$ = new ReplaySubject<number>();
 
   public i18nName$ = combineLatest([this.content$, this.id$]).pipe(
@@ -22,7 +22,7 @@ export class I18nNameComponent {
   );
 
   @Input()
-  set content(content: keyof LazyDataI18nEntries) {
+  set content(content: LazyDataI18nKey) {
     this.content$.next(content);
   }
 

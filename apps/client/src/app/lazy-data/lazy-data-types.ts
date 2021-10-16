@@ -13,17 +13,17 @@ export interface XivapiI18nName {
   Name_fr: string
 }
 
-type LazyDataEntryElement<K extends LazyDataKey> =
+type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
+
+export type LazyDataEntryElement<K extends LazyDataKey> =
   LazyDataWithExtracts[K] extends readonly (infer ElementType)[] ? ElementType :
-    LazyDataWithExtracts[K] extends Record<string, infer RecordType> ? RecordType : never;
+    LazyDataWithExtracts[K] extends Record<number, infer RecordType> ? RecordType : never;
 
 export type LazyDataEntries = { [K in LazyDataKey]: LazyDataEntryElement<K> };
 
-//TODO: Better typing to make it fail if the key doesn't match an i18n registry
-export type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends Record<string, (I18nName | { name: I18nName } | XivapiI18nName)> ? K : never };
+type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends I18nElement ? K : never }[keyof LazyData];
 
-// Code to test the above (should trigger an error since craftingLog is a number[][])
-// const test: keyof LazyDataI18nEntries = 'craftingLog';
+export type LazyDataI18nKey = keyof Pick<LazyData, LazyDataI18nEntries>;
 
 
 

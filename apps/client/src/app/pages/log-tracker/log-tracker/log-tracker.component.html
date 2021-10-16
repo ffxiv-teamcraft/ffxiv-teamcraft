@@ -3,17 +3,17 @@
 
   <nz-tabset (nzSelectedIndexChange)="setType($event)" *ngIf="type$ | async as trackerType" [nzSelectedIndex]="trackerType - 1"
              nzAnimated="false">
-    <nz-tab [nzTitle]="'Game_Term/DoH' | translate">
+    <nz-tab [nzTitle]="'Game_Term/DoH' | translate" *ngIf="dohTabs$ | async as dohTabs">
       <ng-template nz-tab>
         <ng-template #hideCompletedToggle>
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, true)"></nz-switch>
+            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, dohTabs, [], true)"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed' | translate}}</div>
           </div>
         </ng-template>
         <nz-tabset (nzSelectedIndexChange)="dohSelectedPage = dohTabs[$event][0].id" nzAnimated="false"
                    nzSize="small" [nzTabBarExtraContent]="hideCompletedToggle">
-          <nz-tab *ngFor="let tab of dohTabs; let index = index" [nzTitle]="titleTemplate">
+          <nz-tab *ngFor="let tab of dohTabs$ | async; let index = index" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
               <img [class.small-icon]="false | ifMobile: true" [src]="getDohIcon(index)" alt=""
                    class="job-icon">{{ tab.name }}
@@ -22,8 +22,8 @@
               <ng-container *ngFor="let page of tab">
                 <nz-tab *ngIf="!hideCompleted || !isDoHPageDone(page)" [nzTitle]="dohTitleTemplate" (nzSelect)="dohSelectedPage = page.id">
                   <ng-template #dohTitleTemplate>
-                    <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohDivisionId(page.id) | notebookDivisionName | i18n }}<span
-                      *ngIf="isRequiredForAchievement(page)" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
+                    <span [class.not-required]="page.requiredForAchievement">{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}<span
+                      *ngIf="page.requiredForAchievement" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
                       nz-tooltip>*</span>
                       ({{getDohPageCompletion(page)}})
                     </span>
@@ -97,11 +97,11 @@
         </nz-tabset>
       </ng-template>
     </nz-tab>
-    <nz-tab [nzTitle]="'MIN/BTN' | translate">
+    <nz-tab [nzTitle]="'MIN/BTN' | translate" *ngIf="dolTabs$ | async as dolTabs">
       <ng-template #extraTemplate>
         <div class="dol-path-buttons" fxLayout="row" fxLayoutGap="10px">
           <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
-            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, true)"></nz-switch>
+            <nz-switch [(ngModel)]="hideCompleted" (ngModelChange)="updateSelectedPage($event, trackerType, dohTabs, dolTabs, true)"></nz-switch>
             <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
           </div>
           <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
@@ -122,7 +122,7 @@
                    [nzTabBarExtraContent]="extraTemplate"
                    nzAnimated="false"
                    nzSize="small">
-          <nz-tab *ngFor="let tab of dolTabs; let index = index" [nzTitle]="titleTemplate">
+          <nz-tab *ngFor="let tab of dolTabs$ | async; let index = index" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
               <img [class.small-icon]="false | ifMobile: true" [src]="getDolIcon(index)" alt=""
                    class="job-icon">{{ tab.name }}
@@ -132,7 +132,7 @@
                 <ng-container *ngFor="let page of tab">
                   <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
                     <ng-template #titleTemplate>
-                    <span>{{ getDolDivisionId(page.id) | notebookDivisionName | i18n }}
+                    <span>{{ page.divisionId | notebookDivisionName | i18n }}
                       ({{getDolPageCompletion(page)}})
                     </span>
                     </ng-template>
@@ -255,25 +255,3 @@
     </nz-tab>
   </nz-tabset>
 </ng-container>
-
-<ng-template #notificationRef let-notification>
-  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
-                                                  nzType="check-circle"></i></span>
-    <div>
-      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
-      <div class="ant-notification-notice-description">
-        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
-        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
-          itemcount: itemsAdded,
-          listname: modifiedList.name
-        } }}</span>
-      </div>
-      <span class="ant-notification-notice-btn">
-            <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
-              <span>{{'Open' | translate}}</span>
-            </a>
-          </span>
-    </div>
-  </div>
-</ng-template>

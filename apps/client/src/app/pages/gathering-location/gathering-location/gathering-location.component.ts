@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -55,17 +55,24 @@ export class GatheringLocationComponent {
         this.loading = true;
       }),
       filter(query => query.length > 0),
-      mergeMap(query => this.dataService.searchGathering(query)),
-      map(itemIds => {
-        return itemIds.map(itemId => {
-          return this.gatheringNodesService.getItemNodes(itemId).map(node => {
-            return {
-              originalItemId: itemId,
-              node: node,
-              alarms: this.alarmsFacade.generateAlarms(node)
-            };
-          });
-        }).flat();
+      switchMap(query => this.dataService.searchGathering(query)),
+      switchMap(itemIds => {
+        return combineLatest(itemIds.map(itemId => {
+            return this.gatheringNodesService.getItemNodes(itemId).pipe(
+              map(nodes => {
+                return nodes.map(node => {
+                  return {
+                    originalItemId: itemId,
+                    node: node,
+                    alarms: this.alarmsFacade.generateAlarms(node)
+                  };
+                });
+              })
+            );
+          })
+        ).pipe(
+          map(nodes => nodes.flat())
+        );
       }),
       tap((results) => {
         this.loading = false;

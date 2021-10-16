@@ -1,20 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  exhaustMap,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  switchMapTo,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -25,7 +12,8 @@ import {
   CommissionProfileLoaded,
   LinkingCharacter,
   LoggedInAsAnonymous,
-  LoginAsAnonymous, LogTrackingLoaded,
+  LoginAsAnonymous,
+  LogTrackingLoaded,
   MarkAsDoneInLog,
   NoLinkedCharacter,
   RegisterUser,
@@ -51,7 +39,6 @@ import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
 import { SettingsService } from '../modules/settings/settings.service';
-import firebase from 'firebase';
 
 @Injectable()
 export class AuthEffects {
@@ -270,7 +257,7 @@ export class AuthEffects {
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
       ofType<UserFetched>(AuthActionTypes.UserFetched),
-      distinctUntilChanged((a,b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
+      distinctUntilChanged((a, b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
       switchMap(action => {
         return this.logTrackingService.get(`${action.user.$key}:${action.user.defaultLodestoneId?.toString()}`).pipe(
           catchError((_) => {

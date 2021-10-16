@@ -20,7 +20,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map, skipUntil, switchMap } from 'rxjs/operators';
+import { filter, first, map, skipUntil, switchMap, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
@@ -40,6 +40,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
+import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
 
 @Injectable({
   providedIn: 'root'
@@ -480,26 +481,29 @@ export class AlarmsFacade {
     return this.applyFishEyes(alarm) as Alarm[];
   }
 
-  public regenerateAlarm(alarm: Partial<Alarm>): Alarm {
-    const nodes = this.gatheringNodesService.getItemNodes(alarm.itemId);
-    const nodeForThisAlarm = nodes.find(n => {
-      if (alarm.nodeId) {
-        return n.id === alarm.nodeId;
-      }
-      return alarm.mapId === n.map;
-    }) || nodes[0];
-    if (nodeForThisAlarm) {
-      const alarms = this.generateAlarms(nodeForThisAlarm);
-      const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
-      if (!regenerated) {
-        return null;
-      }
-      regenerated.userId = alarm.userId;
-      regenerated.$key = alarm.$key;
-      regenerated.appVersion = environment.version;
-      regenerated.enabled = alarm.enabled;
-      return regenerated;
-    }
+  public regenerateAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
+    return this.gatheringNodesService.getItemNodes(alarm.itemId).pipe(
+      map(nodes => {
+        const nodeForThisAlarm = nodes.find(n => {
+          if (alarm.nodeId) {
+            return n.id === alarm.nodeId;
+          }
+          return alarm.mapId === n.map;
+        }) || nodes[0];
+        if (nodeForThisAlarm) {
+          const alarms = this.generateAlarms(nodeForThisAlarm);
+          const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
+          if (!regenerated) {
+            return null;
+          }
+          regenerated.userId = alarm.userId;
+          regenerated.$key = alarm.$key;
+          regenerated.appVersion = environment.version;
+          regenerated.enabled = alarm.enabled;
+          return regenerated;
+        }
+      })
+    );
   }
 
   public regenerateAlarms(_alarms?: Alarm[]): void {
@@ -507,9 +511,9 @@ export class AlarmsFacade {
     if (!_alarms) {
       alarms$ = this.allAlarms$;
     }
-    const operation$ = combineLatest([alarms$, this.allGroups$]).pipe(
+    const operation$ = safeCombineLatest([alarms$, this.allGroups$]).pipe(
       first(),
-      map(([alarms, groups]) => {
+      switchMap(([alarms, groups]) => {
         this.regenerating = true;
         const newGroups = groups.map(group => {
           const clone = new AlarmGroup(group.name, group.index);
@@ -520,7 +524,7 @@ export class AlarmsFacade {
           clone.enabled = group.enabled;
           return clone;
         });
-        const newAlarms = alarms.map(alarm => {
+        return safeCombineLatest(alarms.map(alarm => {
           if ((<any>alarm).groupId) {
             const group = newGroups.find(g => g.$key === (<any>alarm).groupId);
             if (group && !group.alarms.includes(alarm.$key)) {
@@ -530,18 +534,21 @@ export class AlarmsFacade {
           // If custom alarm, return it
           if (alarm.name) {
             alarm.appVersion = environment.version;
-            return alarm;
+            return of(alarm);
           }
           return this.regenerateAlarm(alarm);
-        }).filter(alarm => !!alarm);
-
-        const deletedAlarms = alarms.filter(a => !newAlarms.some(na => na.$key === a.$key));
-        deletedAlarms.forEach(da => {
-          this.store.dispatch(new RemoveAlarm(da.$key));
-        });
-        this.store.dispatch(new SetAlarms(newAlarms));
-        this.store.dispatch(new SetGroups(newGroups));
-        this.regenerating = false;
+        })).pipe(
+          map(res => res.filter(alarm => !!alarm)),
+          tap(newAlarms => {
+            const deletedAlarms = alarms.filter(a => !newAlarms.some(na => na.$key === a.$key));
+            deletedAlarms.forEach(da => {
+              this.store.dispatch(new RemoveAlarm(da.$key));
+            });
+            this.store.dispatch(new SetAlarms(newAlarms));
+            this.store.dispatch(new SetGroups(newGroups));
+            this.regenerating = false;
+          })
+        );
       })
     );
     this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();

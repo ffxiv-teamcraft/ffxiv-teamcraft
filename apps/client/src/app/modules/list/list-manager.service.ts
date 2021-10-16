@@ -1,11 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
-import { concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { getCraftByPriority, getItemSource, isListRow, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { DataExtractorService } from './data/data-extractor.service';
-import { catchError, filter, first, map, mapTo, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, first, map, mapTo, mergeMap, shareReplay, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
@@ -17,8 +17,10 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { CraftedBy } from './model/crafted-by';
 import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 
-interface ListAdditionParams {
+export interface ListAdditionParams {
   itemId: number | string;
   list: List;
   recipeId: string | number;
@@ -33,7 +35,7 @@ interface ListAdditionParams {
 })
 export class ListManagerService {
 
-  private customItemsSync: CustomItem[] = [];
+  private customItems$: Observable<CustomItem[]>;
 
   constructor(protected db: DataService,
               private gt: GarlandToolsService,
@@ -44,10 +46,11 @@ export class ListManagerService {
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade,
               private lazyDataService: LazyDataService,
+              private lazyData: LazyDataFacade,
               private authFacade: AuthFacade) {
 
     this.customItemsFacade.loadAll();
-    this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
+    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay(1));
 
   }
 
@@ -70,26 +73,36 @@ export class ListManagerService {
           first()
         );
     }
-    const itemSource = typeof itemId === 'number' ? this.lazyDataService.getExtract(itemId) : this.customItemsSync.find(i => i.$key === itemId);
-    return team$.pipe(
-      tap((team) => {
-        if (team && team.webhook !== undefined && amount !== 0) {
-          if (+itemId === itemId) {
-            if (amount > 0) {
-              this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
-            } else {
-              this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+    const itemSource$ = typeof itemId === 'number' ? this.lazyData.getRow('extracts', itemId) : this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
+    return itemSource$.pipe(
+      switchMap(itemSource => {
+        return team$.pipe(
+          tap((team) => {
+            if (team && team.webhook !== undefined && amount !== 0) {
+              if (+itemId === itemId) {
+                if (amount > 0) {
+                  this.discordWebhookService.notifyItemAddition(itemId, amount, list, team);
+                } else {
+                  this.discordWebhookService.notifyItemDeletion(itemId, Math.abs(amount), list, team);
+                }
+              } else {
+                if (amount > 0) {
+                  this.discordWebhookService.notifyCustomItemAddition((<CustomItem>itemSource).name, amount, list, team);
+                } else {
+                  this.discordWebhookService.notifyCustomItemDeletion((<CustomItem>itemSource).name, Math.abs(amount), list, team);
+                }
+              }
             }
-          } else {
-            if (amount > 0) {
-              this.discordWebhookService.notifyCustomItemAddition((<CustomItem>itemSource).name, amount, list, team);
-            } else {
-              this.discordWebhookService.notifyCustomItemDeletion((<CustomItem>itemSource).name, Math.abs(amount), list, team);
-            }
-          }
-        }
+          }),
+          mapTo(itemSource)
+        );
       }),
-      mapTo(itemSource),
+      switchMap(data => {
+        if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
+          return this.lazyData.getRow('extracts', (data as CustomItem).realItemId);
+        }
+        return of(data);
+      }),
       withLatestFrom(this.authFacade.gearSets$),
       switchMap(([data, gearsets]) => {
         if (data === undefined) {
@@ -99,16 +112,7 @@ export class ListManagerService {
         if (isListRow(data)) {
           return this.processItemAddition(data, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry);
         } else {
-          if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
-            const itemData = this.lazyDataService.getExtract((data as CustomItem).realItemId);
-            return this.processItemAddition(itemData, amount, collectable, recipeId, gearsets, list.ignoreRequirementsRegistry).pipe(
-              catchError(() => {
-                return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
-              })
-            );
-          } else {
-            return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
-          }
+          return this.processCustomItemAddition(data as CustomItem, amount, list.ignoreRequirementsRegistry);
         }
       }),
       // merge the addition list with the list we want to add items in.
@@ -128,19 +132,24 @@ export class ListManagerService {
     itemClone.id = itemClone.$key;
     const added = addition.addToFinalItems(itemClone, this.lazyDataService.data);
     if (itemClone.requires.length > 0) {
-      return addition.addCraft({
-        _additions: [
-          {
-            amount: added,
-            data: itemClone,
-            item: null
-          }
-        ],
-        customItems: this.customItemsSync,
-        dataService: this.db,
-        listManager: this,
-        lazyDataService: this.lazyDataService
-      });
+      return this.customItems$.pipe(
+        first(),
+        switchMap(customItems => {
+          return addition.addCraft({
+            _additions: [
+              {
+                amount: added,
+                data: itemClone,
+                item: null
+              }
+            ],
+            customItems: customItems,
+            dataService: this.db,
+            listManager: this,
+            lazyDataService: this.lazyDataService
+          });
+        })
+      );
     }
     return of(addition);
   }
@@ -204,41 +213,60 @@ export class ListManagerService {
     let addition$: Observable<List>;
     if (toAdd.requires.length > 0) {
       // Then we add the craft to the addition list.
-      addition$ = addition.addCraft({
-        _additions: [{
-          item: toAdd,
-          amount: added
-        }],
-        customItems: this.customItemsSync,
-        dataService: this.db,
-        listManager: this,
-        lazyDataService: this.lazyDataService,
-        recipeId: recipeId?.toString(),
-        gearsets: gearsets
-      });
+      addition$ = this.customItems$.pipe(
+        first(),
+        switchMap(customItemsSync => {
+          return addition.addCraft({
+            _additions: [{
+              item: toAdd,
+              amount: added
+            }],
+            customItems: customItemsSync,
+            dataService: this.db,
+            listManager: this,
+            lazyDataService: this.lazyDataService,
+            recipeId: recipeId?.toString(),
+            gearsets: gearsets
+          });
+        })
+      );
     } else {
       addition$ = of(addition);
     }
     return addition$.pipe(
-      map(wipList => {
+      mergeMap(wipList => {
         return this.addDetails(wipList, recipeId);
       })
     );
   }
 
-  public addDetails(list: List, recipeId?: string | number): List {
-    list.forEach(item => {
-      Object.assign(item, this.lazyDataService.getExtract(item.id));
-      if (getItemSource<CraftedBy[]>(item, DataType.CRAFTED_BY).length > 0) {
-        const craftedBy = item.sources.find(s => s.type === DataType.CRAFTED_BY);
-        if (recipeId !== undefined && craftedBy.data.some(row => row.id.toString() === recipeId.toString())) {
-          craftedBy.data = craftedBy.data.filter(row => {
-            return row.id.toString() === recipeId.toString();
-          });
-        }
-      }
-    });
-    return list;
+  public addDetails(list: List, recipeId?: string | number): Observable<List> {
+    return combineLatest([this.addDetailsForArray(list.items, recipeId), this.addDetailsForArray(list.finalItems, recipeId)]).pipe(
+      map(([items, finalItems]) => {
+        list.items = items;
+        list.finalItems = finalItems;
+        return list;
+      })
+    );
+  }
+
+  private addDetailsForArray(array: ListRow[], recipeId?: string | number): Observable<ListRow[]> {
+    return safeCombineLatest(array.map(item => {
+      return this.lazyData.getRow('extracts', item.id).pipe(
+        map(extract => {
+          const newItem = { ...item, ...extract };
+          if (getItemSource<CraftedBy[]>(extract, DataType.CRAFTED_BY).length > 0) {
+            const craftedBy = newItem.sources.find(s => s.type === DataType.CRAFTED_BY);
+            if (recipeId !== undefined && craftedBy.data.some(row => row.id.toString() === recipeId.toString())) {
+              craftedBy.data = craftedBy.data.filter(row => {
+                return row.id.toString() === recipeId.toString();
+              });
+            }
+          }
+          return newItem;
+        })
+      );
+    }));
   }
 
   public upgradeList(list: List): Observable<List> {

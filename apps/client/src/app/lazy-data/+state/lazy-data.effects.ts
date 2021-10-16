@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../../core/tools/platform.service';
 import { extractsHash } from '../../../environments/extracts-hash';
+import { LazyDataKey } from '../lazy-data-types';
 
 @Injectable()
 export class LazyDataEffects {
@@ -19,26 +20,27 @@ export class LazyDataEffects {
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataEntityEntry),
       mergeMap(({ id, entity }) => {
-        const { contentName, hash } = this.parseFileName(lazyFilesList[entity]?.hashedFileName);
+        if (this.platformService.isDesktop()) {
+          return this.getData(this.getUrl(entity)).pipe(
+            map(entry => {
+              return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
+            })
+          );
+        }
+        const { contentName, hash } = this.parseFileName(entity);
         return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${id}`).pipe(
           map(row => {
             return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row, key: entity });
           })
         );
       })
-    )
-  );
+    ));
 
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataFullEntity),
       mergeMap(({ entity }) => {
-        const row = lazyFilesList[entity];
-        let url = `/assets/data/${environment.production ? row.hashedFileName : row.fileName}`;
-        if (entity === 'extracts') {
-          url = LazyDataEffects.EXTRACTS_PATH;
-        }
-        return this.getData(url).pipe(
+        return this.getData(this.getUrl(entity)).pipe(
           map(entry => {
             return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
           })
@@ -52,7 +54,22 @@ export class LazyDataEffects {
               @Inject(PLATFORM_ID) private platform: Object) {
   }
 
-  private parseFileName(fileName: string): { hash: string, contentName: string } {
+  private getUrl(entity: LazyDataKey): string {
+    if (entity === 'extracts') {
+      return LazyDataEffects.EXTRACTS_PATH;
+    }
+    const row = lazyFilesList[entity];
+    return `/assets/data/${environment.production ? row.hashedFileName : row.fileName}`;
+  }
+
+  private parseFileName(entity: LazyDataKey): { hash: string, contentName: string } {
+    if (entity === 'extracts') {
+      return {
+        contentName: entity,
+        hash: extractsHash
+      };
+    }
+    const fileName = lazyFilesList[entity]?.hashedFileName;
     const parsed = fileName.split('.');
     return {
       contentName: parsed[0],
