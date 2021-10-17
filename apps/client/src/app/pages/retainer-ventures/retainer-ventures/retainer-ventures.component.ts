@@ -18,6 +18,7 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -42,8 +43,8 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   jobList$: Observable<any[]>;
 
   retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$]).pipe(
-    map(([retainers, inventory]) => {
-      return retainers.map(retainer => {
+    switchMap(([retainers, inventory]) => {
+      return safeCombineLatest(retainers.map(retainer => {
         const gearset = new TeamcraftGearset();
         gearset.job = retainer.job;
         inventory.getRetainerGear(retainer.name)
@@ -67,12 +68,19 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
               baseParamModifier: itemMeldingData.modifier
             };
           });
-        return {
-          ...retainer,
-          gathering: this.statsService.getStats(gearset, retainer.level, 1).find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
-          ilvl: this.statsService.getAvgIlvl(gearset)
-        };
-      });
+        return combineLatest([
+          this.statsService.getStats(gearset, retainer.level, 1),
+          this.statsService.getAvgIlvl(gearset)
+        ]).pipe(
+          map(([stats, avgIlvl]) => {
+            return {
+              ...retainer,
+              gathering: stats.find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
+              ilvl: avgIlvl
+            };
+          })
+        );
+      }));
     })
   );
 

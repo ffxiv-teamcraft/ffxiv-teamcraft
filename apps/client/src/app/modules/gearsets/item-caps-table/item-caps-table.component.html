@@ -1,4 +1,4 @@
-<table *ngIf="getMaxValuesTable() as caps">
+<table *ngIf="maxValuesTable$ | async as caps">
   <thead>
   <tr>
     <th>{{'GEARSETS.Stat_name' | translate}}</th>

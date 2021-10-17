@@ -59,7 +59,6 @@ export class LazyDataService {
   public patches: XivapiPatch[] = [];
 
   protected extracts: Record<number, ListRow> = {};
-  public extracts$: ReplaySubject<ListRow[]> = new ReplaySubject<ListRow[]>();
 
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();

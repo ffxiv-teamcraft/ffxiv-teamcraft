@@ -77,7 +77,8 @@
                 <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
               </div>
               <nz-select [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300"
-                         [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear [compareWith]="foodComparator">
+                         [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzAllowClear [compareWith]="foodComparator">
+                <nz-option [nzValue]="null" [nzLabel]="'GEARSETS.No_food_selected' | translate"></nz-option>
                 <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
                            [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
                            nzCustomContent>

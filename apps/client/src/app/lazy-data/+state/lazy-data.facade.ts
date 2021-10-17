@@ -7,7 +7,6 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap }
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { DataEntryStatus } from '../data-entry-status';
 import { LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -27,6 +26,10 @@ export class LazyDataFacade {
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
   private cache: Record<string, Observable<any>> = {};
 
+  public isLoading$ = this.store.pipe(
+    select(LazyDataSelectors.isLoading)
+  );
+
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
               private settings: SettingsService) {
   }
@@ -34,7 +37,7 @@ export class LazyDataFacade {
   public preloadEntry<K extends LazyDataKey>(propertyKey: K): void {
     this.getStatus(propertyKey).pipe(
       first()
-    ).subscribe(({ status }) => {
+    ).subscribe((status) => {
       if (status !== 'full') {
         this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
       }
@@ -51,7 +54,7 @@ export class LazyDataFacade {
         this.store.pipe(select(LazyDataSelectors.getEntry, { key: propertyKey })),
         this.getStatus(propertyKey)
       ]).pipe(
-        tap(([res, { status }]) => {
+        tap(([res, status]) => {
           const loadingOrLoaded = status === 'full' || status === 'loading';
           if (!res && !loadingOrLoaded) {
             this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
@@ -70,8 +73,9 @@ export class LazyDataFacade {
    * Gets a single entry of a given property
    * @param propertyKey the name of the property to get the id from
    * @param id the id of the row you want to load
+   * @param fallback fallback value if nothing is found
    */
-  public getRow<K extends LazyDataKey>(propertyKey: K, id: number): Observable<LazyDataEntries[K]> {
+  public getRow<K extends LazyDataKey>(propertyKey: K, id: number, fallback?: LazyDataEntries[K]): Observable<LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
       // If we asked for more than 10 separate things in the same entry during the las CACHE_TTL, load the entire entry.
       if (Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 10) {
@@ -79,19 +83,23 @@ export class LazyDataFacade {
       }
       const obs$ = combineLatest([
         this.store.pipe(select(LazyDataSelectors.getEntryRow, { key: propertyKey, id })),
-        this.getStatus(propertyKey)
+        this.getStatus(propertyKey, id)
       ]).pipe(
-        distinctUntilChanged(([, a], [, b]) => {
-          return a.status === b.status && a.record[id] === b.record[id];
-        }),
-        tap(([res, { status, record }]) => {
-          const loadingOrLoaded = status === 'full' || status === 'loading' || record[id] === 'full' || record[id] === 'loading';
+        tap(([res, status]) => {
+          const loadingOrLoaded = status === 'full' || status === 'loading';
           if (!res && !loadingOrLoaded) {
             this.store.dispatch(loadLazyDataEntityEntry({ entity: propertyKey, id }));
           }
         }),
-        map(([res]) => res),
-        filter(res => !!res),
+        map(([res, status]) => {
+          if (status === 'full' && !res) {
+            return fallback;
+          } else if (res) {
+            return res;
+          }
+          return undefined;
+        }),
+        filter(res => res !== undefined || (fallback !== undefined && res === fallback)),
         first()
       );
       this.cacheObservable(obs$, propertyKey, id);
@@ -102,11 +110,21 @@ export class LazyDataFacade {
   /**
    * Get the status of a lazy data entry in the store
    * @param propertyKey the property to get the status from
+   * @param id id of the entry to get the status for
    */
-  public getStatus<K extends LazyDataKey>(propertyKey: K): Observable<DataEntryStatus> {
+  public getStatus<K extends LazyDataKey>(propertyKey: K, id?: number): Observable<string | null> {
     return this.store.pipe(
       select(LazyDataSelectors.getEntryStatus, { key: propertyKey }),
-      map(status => status || { status: null, record: {} })
+      map(row => {
+        if (!row) {
+          return null;
+        }
+        if (id !== undefined) {
+          return row.record[id] || row.status;
+        }
+        return row.status;
+      }),
+      distinctUntilChanged()
     );
   }
 

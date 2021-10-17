@@ -63,6 +63,7 @@ import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.s
 import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
+import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-root',
@@ -103,6 +104,8 @@ export class AppComponent implements OnInit {
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
   );
+
+  public loadingLazyData$ = this.lazyDataFacade.isLoading$;
 
   public loggedIn$: Observable<boolean>;
 
@@ -184,8 +187,8 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
-              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private lazyDataFacade: LazyDataFacade,
+              private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,

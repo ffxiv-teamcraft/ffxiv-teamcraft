@@ -288,7 +288,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   );
 
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
-    map(([set, level, tribe, food]) => {
+    switchMap(([set, level, tribe, food]) => {
       return this.statsService.getStats(set, level, tribe, food);
     })
   );

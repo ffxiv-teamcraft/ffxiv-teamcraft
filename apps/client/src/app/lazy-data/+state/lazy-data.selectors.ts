@@ -17,11 +17,16 @@ export const getEntryRow = createSelector(
     if (entry) {
       return entry[id];
     }
-    return null;
+    return undefined;
   }
 );
 
 export const getEntryStatus = createSelector(
   getLazyDataState,
   (state, { key }) => state.loadingStates[key]
+);
+
+export const isLoading = createSelector(
+  getLazyDataState,
+  state => state.loadingEntries.length > 0
 );

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
@@ -64,7 +64,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   public food$ = new BehaviorSubject<any>(null);
 
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
-    map(([set, level, tribe, food]) => {
+    switchMap(([set, level, tribe, food]) => {
       return this.statsService.getStats(set, level, tribe, food);
     })
   );
@@ -119,19 +119,25 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   }
 
   openSimulator(gearset: TeamcraftGearset): void {
-    const stats = this.statsService.getStats(gearset, this.level$.value, 11, this.food$.value);
-    const craftsmanship = stats.find(s => s.id === BaseParam.CRAFTSMANSHIP).value;
-    const control = stats.find(s => s.id === BaseParam.CONTROL).value;
-    const cp = stats.find(s => s.id === BaseParam.CP).value;
-    this.dialog.create({
-      nzFooter: null,
-      nzContent: RecipeChoicePopupComponent,
-      nzComponentParams: {
-        statsStr: `${craftsmanship}/${control}/${cp}/${this.level$.value}/${1}`,
-        pickRotation: true
-      },
-      nzTitle: this.translate.instant('Pick_a_recipe')
-    });
+    this.statsService.getStats(gearset, this.level$.value, 11, this.food$.value)
+      .pipe(
+        first()
+      )
+      .subscribe(stats => {
+        const craftsmanship = stats.find(s => s.id === BaseParam.CRAFTSMANSHIP).value;
+        const control = stats.find(s => s.id === BaseParam.CONTROL).value;
+        const cp = stats.find(s => s.id === BaseParam.CP).value;
+        this.dialog.create({
+          nzFooter: null,
+          nzContent: RecipeChoicePopupComponent,
+          nzComponentParams: {
+            statsStr: `${craftsmanship}/${control}/${cp}/${this.level$.value}/${1}`,
+            pickRotation: true
+          },
+          nzTitle: this.translate.instant('Pick_a_recipe')
+        });
+
+      });
   }
 
   compare(gearset: TeamcraftGearset): void {
@@ -155,58 +161,24 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   }
 
   generateList(gearset: TeamcraftGearset, progression: GearsetProgression): void {
-    const items = this.gearsetsFacade.toArray(gearset)
-      .filter(piece => {
-        return progression[piece.slot]?.item === false;
+    this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools, progression).pipe(
+      map(materias => {
+        return [
+          ...this.gearsetsFacade.toArray(gearset)
+            .filter(piece => {
+              return progression[piece.slot]?.item === false;
+            })
+            .map(entry => {
+              return {
+                id: entry.piece.itemId,
+                amount: 1
+              };
+            }),
+          ...materias
+        ];
       })
-      .map(entry => {
-        return {
-          id: entry.piece.itemId,
-          amount: 1
-        };
-      });
-    items.push(...this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools, progression));
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = items.map(item => {
-          const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
-          return this.listManager.addToList({
-            itemId: +item.id,
-            list: list,
-            recipeId: recipe ? recipe.id : '',
-            amount: item.amount
-          });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          items.length,
-          'Adding_recipes',
-          { amount: items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list: List) => {
-      this.notificationService.success(
-        this.translate.instant('Success'),
-        this.translate.instant('Recipes_Added', { itemcount: items.length, listname: list.name })
-      );
-      this.router.navigate(['/list', list.$key]);
+    ).subscribe(items => {
+      this.listPicker.addToList(...items);
     });
   }
 

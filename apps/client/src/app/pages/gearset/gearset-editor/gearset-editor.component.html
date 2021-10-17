@@ -159,9 +159,9 @@
         </button>
       </div>
       <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
-        : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0)[0].value}}</div>
+        : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0 | async)[0].value }}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-        <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
+        <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id | async) as statDisplays">
           <b>{{stat.value | number:'1.0-0':translate.currentLang}}
             <span *ngFor="let statDisplay of statDisplays"
                   nz-tooltip [nzTooltipTitle]="tooltip"

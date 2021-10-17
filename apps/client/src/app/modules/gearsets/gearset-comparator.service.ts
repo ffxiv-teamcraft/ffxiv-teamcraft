@@ -6,6 +6,10 @@ import { MateriaService } from './materia.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { combineLatest, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { environment } from 'apps/client/src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -54,105 +58,116 @@ export class GearsetComparatorService {
     ];
   }
 
-  public compare(a: TeamcraftGearset, b: TeamcraftGearset, includeAllTools: boolean): GearsetsComparison {
-    const aStats = this.statsService.getStats(a, 80, 1);
-    const bStats = this.statsService.getStats(b, 80, 1);
-    if (this.statsService.getMainStat(a.job) !== this.statsService.getMainStat(b.job)) {
-      throw new Error('Can only compare two sets with same main stat');
-    }
-    const statsDiff = aStats.map(aStat => {
-      const bStat = bStats.find(s => s.id === aStat.id);
-      return {
-        id: aStat.id,
-        values: {
-          a: aStat.value,
-          b: bStat.value
+  public compare(a: TeamcraftGearset, b: TeamcraftGearset, includeAllTools: boolean): Observable<GearsetsComparison> {
+    return combineLatest([
+      this.statsService.getStats(a, environment.maxLevel, 1),
+      this.statsService.getStats(b, environment.maxLevel, 1),
+      this.materiaService.getTotalNeededMaterias(a, includeAllTools),
+      this.materiaService.getTotalNeededMaterias(b, includeAllTools)
+    ]).pipe(
+      switchMap(([aStats, bStats, aMaterias, bMaterias]) => {
+        if (this.statsService.getMainStat(a.job) !== this.statsService.getMainStat(b.job)) {
+          throw new Error('Can only compare two sets with same main stat');
         }
-      };
-    });
-
-    const aMaterias = this.materiaService.getTotalNeededMaterias(a, includeAllTools);
-    const bMaterias = this.materiaService.getTotalNeededMaterias(b, includeAllTools);
-
-    const materiasDiff = aMaterias.map(aMateria => {
-      const bMateria = bMaterias.find(s => s.id === aMateria.id);
-      return {
-        id: aMateria.id,
-        amounts: {
-          a: aMateria.amount,
-          b: bMateria ? bMateria.amount : 0
-        }
-      };
-    });
-
-    materiasDiff.push(...bMaterias
-      .filter(materia => !aMaterias.some(m => m.id === materia.id))
-      .map(bMateria => {
-        return {
-          id: bMateria.id,
-          amounts: {
-            a: 0,
-            b: bMateria.amount
-          }
-        };
-      }));
-
-    const piecesDiff = this.getSlotArray().map((slot: string) => {
-      let isDifferent = (a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId);
-      if (!a.isCombatSet()) {
-        isDifferent = isDifferent && this.lazyData.data.ilvls[a[slot] && a[slot].itemId] !== this.lazyData.data.ilvls[b[slot] && b[slot].itemId];
-      }
-      if (isDifferent || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
-        const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] || [] : [];
-        const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] || [] : [];
-        const itemsStatsDiff = aItemStats.map(as => {
-          const bs = bItemStats.find(s => s.ID === as.ID);
-
-          const diff: any = {
-            id: as.ID,
-            a: a[slot].hq ? as.HQ : as.NQ,
-            b: 0
+        const statsDiff = aStats.map(aStat => {
+          const bStat = bStats.find(s => s.id === aStat.id);
+          return {
+            id: aStat.id,
+            values: {
+              a: aStat.value,
+              b: bStat.value
+            }
           };
-          if (bs) {
-            diff.b = b[slot].hq ? bs.HQ : bs.NQ;
-          }
-          return diff;
+        });
+        const materiasDiff = aMaterias.map(aMateria => {
+          const bMateria = bMaterias.find(s => s.id === aMateria.id);
+          return {
+            id: aMateria.id,
+            amounts: {
+              a: aMateria.amount,
+              b: bMateria ? bMateria.amount : 0
+            }
+          };
         });
 
-        itemsStatsDiff.push(...bItemStats
-          .filter(s => !itemsStatsDiff.some(entry => entry.id === s.ID))
-          .map(bs => {
-            const as = aItemStats.find(s => s.ID === bs.ID);
-            const diff: any = {
-              id: bs.ID,
-              a: 0,
-              b: b[slot].hq ? bs.HQ : bs.NQ
+        materiasDiff.push(...bMaterias
+          .filter(materia => !aMaterias.some(m => m.id === materia.id))
+          .map(bMateria => {
+            return {
+              id: bMateria.id,
+              amounts: {
+                a: 0,
+                b: bMateria.amount
+              }
             };
-            if (as) {
-              diff.a = a[slot].hq ? as.HQ : as.NQ;
-            }
-            return diff;
           }));
 
-        return {
-          slotName: this.getSlotName(slot as keyof TeamcraftGearset),
-          a: a[slot],
-          b: b[slot],
-          stats: itemsStatsDiff
-        };
-      }
-      return null;
-    }).filter(diff => diff !== null);
+        const piecesDiff = this.getSlotArray().map((slot: string) => {
+          let isDifferent = (a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId);
+          if (!a.isCombatSet()) {
+            isDifferent = isDifferent && this.lazyData.data.ilvls[a[slot] && a[slot].itemId] !== this.lazyData.data.ilvls[b[slot] && b[slot].itemId];
+          }
+          if (isDifferent || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
+            const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] || [] : [];
+            const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] || [] : [];
+            const itemsStatsDiff = aItemStats.map(as => {
+              const bs = bItemStats.find(s => s.ID === as.ID);
 
-    return {
-      statsDifferences: statsDiff,
-      materiasDifferences: materiasDiff,
-      piecesDiff: piecesDiff,
-      meldingChances: {
-        a: this.getAvgMeldingChances(a),
-        b: this.getAvgMeldingChances(b)
-      }
-    };
+              const diff: any = {
+                id: as.ID,
+                a: a[slot].hq ? as.HQ : as.NQ,
+                b: 0
+              };
+              if (bs) {
+                diff.b = b[slot].hq ? bs.HQ : bs.NQ;
+              }
+              return diff;
+            });
+
+            itemsStatsDiff.push(...bItemStats
+              .filter(s => !itemsStatsDiff.some(entry => entry.id === s.ID))
+              .map(bs => {
+                const as = aItemStats.find(s => s.ID === bs.ID);
+                const diff: any = {
+                  id: bs.ID,
+                  a: 0,
+                  b: b[slot].hq ? bs.HQ : bs.NQ
+                };
+                if (as) {
+                  diff.a = a[slot].hq ? as.HQ : as.NQ;
+                }
+                return diff;
+              }));
+
+            return {
+              slotName: this.getSlotName(slot as keyof TeamcraftGearset),
+              a: a[slot],
+              b: b[slot],
+              stats: itemsStatsDiff
+            };
+          }
+          return null;
+        }).filter(diff => diff !== null);
+
+        return combineLatest([
+          this.getAvgMeldingChances(a),
+          this.getAvgMeldingChances(b)
+        ]).pipe(
+          map(([aMelding, bMelding]) => {
+            return {
+              statsDifferences: statsDiff,
+              materiasDifferences: materiasDiff,
+              piecesDiff: piecesDiff,
+              meldingChances: {
+                a: aMelding,
+                b: bMelding
+              }
+            };
+          })
+        );
+
+      })
+    );
   }
 
 
@@ -190,16 +205,21 @@ export class GearsetComparatorService {
     }
   }
 
-  private getAvgMeldingChances(set: TeamcraftGearset): number {
-    const array = this.toArray(set);
-    const avgMeldingChances = array.reduce((acc, piece) => {
-      const materias = piece.materias.filter(m => m > 0);
-      acc.total += materias.reduce((macc, m, i) => {
-        return macc + this.materiaService.getMeldingChances(piece, m, i);
-      }, 0);
-      acc.materias += materias.length;
-      return acc;
-    }, { total: 0, materias: 0 });
-    return avgMeldingChances.total / avgMeldingChances.materias;
+  private getAvgMeldingChances(set: TeamcraftGearset): Observable<number> {
+    return safeCombineLatest(this.toArray(set).map(piece => {
+      return safeCombineLatest(piece.materias.filter(m => m > 0).map((m, i) => this.materiaService.getMeldingChances(piece, m, i)));
+    })).pipe(
+      map(chances => {
+        const avgMeldingChances = chances.reduce((acc, array) => {
+          acc.total += array.reduce((macc, materiaChances) => {
+            return macc + materiaChances;
+          }, 0);
+          acc.materias += array.length;
+          return acc;
+        }, { total: 0, materias: 0 });
+        return avgMeldingChances.total / avgMeldingChances.materias;
+      })
+    );
+
   }
 }

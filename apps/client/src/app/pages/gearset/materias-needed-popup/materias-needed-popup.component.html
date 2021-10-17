@@ -1,5 +1,5 @@
-<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded.length > 0">
-  <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools" (nzCheckedChange)="computeRequirements()">
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded$ | async as totalNeeded">
+  <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools">
     {{'GEARSETS.Include_all_tools' | translate}}
   </label>
   <table>

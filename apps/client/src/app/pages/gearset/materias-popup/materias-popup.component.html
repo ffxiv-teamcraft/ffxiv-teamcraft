@@ -10,7 +10,7 @@
         <ng-template #noMateria>
           <i nz-icon nzType="stop" nzTheme="outline"></i>
         </ng-template>
-        <div>{{materia > 0 ? getMeldingChances(materia, i) : ' - '}}%</div>
+        <div>{{materia > 0 ? (getMeldingChances(materia, i) | async) : ' - '}}%</div>
       </div>
       <div fxLayout="column" *ngIf="materia > 0 && mobileEdit !== i; else addMateria">
         <div fxLayout="row" fxLayoutGap="5px">
@@ -28,8 +28,8 @@
           </button>
         </div>
         <div>
-          {{materiasService.getMateria(materia)?.baseParamId | baseParamName | i18n}}
-          <span *ngIf="getBonus(materia, i) as bonus" [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
+          {{(materiasService.getMateria(materia) | async)?.baseParamId | baseParamName | i18n}}
+          <span *ngIf="getBonus(materia, i) | async as bonus" [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
         </div>
       </div>
       <ng-template #addMateria>
@@ -39,9 +39,9 @@
 
         <nz-select *ngIf="false | ifMobile: true" [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="setMateria(i, $event); mobileEdit = -1"
                    nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
-          <nz-option-group *ngFor="let row of materiaMenu" [nzLabel]="row.baseParamId | baseParamName | i18n">
+          <nz-option-group *ngFor="let row of materiaMenu$ | async" [nzLabel]="row.baseParamId | baseParamName | i18n">
             <nz-option *ngFor="let materia of row.materias" [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>
-              {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) as bonus">+{{bonus.value}}</span>)
+              {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
             </nz-option>
           </nz-option-group>
         </nz-select>
@@ -49,14 +49,14 @@
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
           <li nz-menu-item (click)="resetMaterias(i)">{{'GEARSETS.No_materia' | translate}}</li>
-          <li nz-submenu *ngFor="let row of materiaMenu" [nzTitle]="row.baseParamId | baseParamName | i18n">
+          <li nz-submenu *ngFor="let row of materiaMenu$ | async" [nzTitle]="row.baseParamId | baseParamName | i18n">
             <ul>
               <li nz-menu-item
                   (click)="setMateria(i, materia)"
                   [nzDisabled]="getMeldingChances(materia, i) === 0"
                   [nzSelected]="equipmentPiece.materias[i] === materia"
                   *ngFor="let materia of row.materias">
-                {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) as bonus">+{{bonus.value}}</span>)
+                {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) | async as bonus">+{{bonus.value}}</span>)
               </li>
             </ul>
           </li>
