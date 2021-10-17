@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreonサポーター",
     "Contributors": "サポーター"
   },
-  "Patreon_login_success": "Patreonログイン成功されました!",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -362,7 +362,7 @@
   "Email_not_found": "メールアドレスを見付け出しません",
   "Email_sent": "パスワード変更メールが発送されました",
   "ALARM": {
-    "Spawned": "{{itemName}} 出現予定",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "地図に見られます",
     "Note": "メモ"
   },
@@ -559,7 +559,7 @@
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",
-      "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
     }
@@ -571,7 +571,7 @@
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
-    "Lists_merged": "リスト併合が完了されました！",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "自分と共有されているリスト",
     "Add_selection": "選択項目をリストに追加する",
     "Reset_selection": "選択を解除",
@@ -740,7 +740,7 @@
       "Import_layout": "レイアウトを読み込む",
       "Export_layout": "このレイアウトをエクスポート",
       "Import_string": "レイアウトを読み込む",
-      "Import_string_copied": "レイアウトコードをコピーしました！",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "レイアウト名",
       "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
@@ -849,7 +849,7 @@
     "Title": "マクロ翻訳",
     "Macro_language": "マクロの言語",
     "Macro_to_translate": "マクロの原文",
-    "Do_translate": "翻訳！",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "有効でないマクロまたは、言語です。"
   },
   "CUSTOM_LINKS": {
@@ -882,7 +882,7 @@
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
-    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "隠し資源",
     "Fish_eyes": "ただ天気条件の為にフィッシュアイが必要",
     "Add_alarm": "アラームを追加する",
@@ -1306,20 +1306,20 @@
     "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Donation_button": "寄付する（1回）",
     "Buy_merch": "Teamcraftのグッズを買う",
-    "Features_header": "始める！",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "リストを作成して制作に必要な全ての素材を確認し、フレンドにシェアできます。アイテム検索でフィルターに適用して、特定アイテムを選択してから制作を開始することができます。",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "制作品やギルドリーヴの納品や制作手帳を完了、飛空艇、BIS装備など全てを貴方のコミュニティリストにコピーできます。",
       "Alarms": "アラームを作成して採集場所からの出現を見逃せず、グループに編成してゲームに取り込む事ができます。",
-      "Gathering_location": "採集物に関する情報を見つかり、アラームを作成し、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
-      "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認してリストを作成します。",
-      "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "新しいアップデートがあります! ",
-    "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
     "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
     "Possible_update_issue": "ダウンロードに問題があります。このアイコンをクリックして最新バージョンを設置してください"
@@ -1360,7 +1360,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "アイテム、スキル、詳細を読み込み中"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "カスタムアイテム",
@@ -1810,7 +1810,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
-    "Description": "[グローバルサーバ専用] 石板または通貨が多いですか？希望石板または通貨を選択して、数量を入力して、サーバーを選択してください。そうすると、現在の自分の通貨/石板に交換可能なアイテムの中で最も高価なアイテムを探してくれます！",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "交換用アイテム追加",
     "You_can_buy": "{{amount}} 個購入可能",
     "Disabled": "通貨の消費ガイドはもう利用できません。",
@@ -1821,7 +1821,7 @@
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
-    "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "能力値選択"
   },
   "BLOG": {
@@ -2178,7 +2178,7 @@
     "DESYNTH": {
       "Job": "Select the job you want to level",
       "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
@@ -2220,7 +2220,7 @@
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "ここをクリックして新しいパネルを追加します。",
         "Reorder": "ドラッグアンドドロップで、任意の場所にパネルを移動できます。",
         "Data_type": "First of all, select the metric type you want to use.",
@@ -2596,7 +2596,7 @@
       "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
       "Custom_theme": "カスタマーカラーが含んで改善されたテーマカスタマイズ (${{price}})",
       "Pins_badge": "限定版 Teamcraft バッジ配送 (${{price}}) (Patreonに配送情報の入力必須)",
-      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Pick one of your retainers"
   },
@@ -2720,7 +2720,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "New feature: Allagan Reports",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",
