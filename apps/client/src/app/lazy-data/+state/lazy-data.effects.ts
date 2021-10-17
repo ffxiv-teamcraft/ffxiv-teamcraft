@@ -1,16 +1,18 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as LazyDataActions from './lazy-data.actions';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { LazyDataFacade } from './lazy-data.facade';
 import { lazyFilesList } from '../../core/data/lazy-files-list';
-import { Observable } from 'rxjs';
+import { merge, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../../core/tools/platform.service';
 import { extractsHash } from '../../../environments/extracts-hash';
 import { LazyDataKey } from '../lazy-data-types';
+import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
+import { uniq } from 'lodash';
 
 @Injectable()
 export class LazyDataEffects {
@@ -19,20 +21,34 @@ export class LazyDataEffects {
   loadLazyDataEntityEntry$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataEntityEntry),
-      mergeMap(({ id, entity }) => {
-        if (this.platformService.isDesktop()) {
-          return this.getData(this.getUrl(entity)).pipe(
-            map(entry => {
-              return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
+      debounceBufferTime(50),
+      map(actions => {
+        return actions.reduce((acc, { id, entity }) => {
+          return {
+            ...acc,
+            [entity]: uniq([...(acc[entity] || []), id])
+          };
+        }, {});
+      }),
+      mergeMap((registry) => {
+        return merge(...Object.entries<number[]>(registry).map(([entity, ids]: [LazyDataKey, number[]]) => {
+          if (this.platformService.isDesktop()) {
+            return this.getData(this.getUrl(entity)).pipe(
+              map(entry => {
+                return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
+              })
+            );
+          }
+          const { contentName, hash } = this.parseFileName(entity);
+          return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${ids.join(',')}`).pipe(
+            switchMap(res => {
+              return Object.entries(res)
+                .map(([key, row]) => {
+                  return LazyDataActions.loadLazyDataEntityEntrySuccess({ id: +key, row, key: entity });
+                });
             })
           );
-        }
-        const { contentName, hash } = this.parseFileName(entity);
-        return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${id}`).pipe(
-          map(row => {
-            return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row, key: entity });
-          })
-        );
+        }));
       })
     ));
 
