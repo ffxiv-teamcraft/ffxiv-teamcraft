@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreon 후원자",
     "Contributors": "기여자"
   },
-  "Patreon_login_success": "Patreon 로그인 성공!",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "비어있는 경우 숨기기",
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
@@ -362,7 +362,7 @@
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 메일이 발송되었습니다.",
   "ALARM": {
-    "Spawned": "{{itemName}}  출현 예정",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "위치",
     "Note": "메모"
   },
@@ -559,7 +559,7 @@
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
-      "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
     }
@@ -571,7 +571,7 @@
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
     "Merge_lists_warning": "대규모 목록은 데이터베이스의 한계로 인해 병합이 불가능하기 때문에 여기에 표시되지 않습니다.",
-    "Lists_merged": "목록 병합이 완료되었습니다!",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "나와 공유된 목록",
     "Add_selection": "선택항목을 목록에 추가",
     "Reset_selection": "선택 초기화",
@@ -740,7 +740,7 @@
       "Import_layout": "레이아웃 불러오기",
       "Export_layout": "레이아웃 내보내기",
       "Import_string": "레이아웃 코드",
-      "Import_string_copied": "레이아웃 코드가 복사됨!",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
@@ -849,7 +849,7 @@
     "Title": "매크로 번역기",
     "Macro_language": "매크로 언어",
     "Macro_to_translate": "번역할 매크로",
-    "Do_translate": "번역하기!",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "잘못된 매크로 또는 언어입니다."
   },
   "CUSTOM_LINKS": {
@@ -882,7 +882,7 @@
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
-    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "숨은 자원",
     "Fish_eyes": "오직 날씨 조건만을 위하여 물고기의 눈 필요",
     "Add_alarm": "알람 추가",
@@ -1306,20 +1306,20 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Donation_button": "후원하기[1회]",
     "Buy_merch": "팀크래프트 상품 구매하기",
-    "Features_header": "시작하기 !",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
       "Alarms": "알람을 만들어 채집장소 출현을 놓치지 않고, 그룹으로 묶고, 인게임으로 내보내는 것과 같은 모든 것을 할 수 있습니다.",
-      "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다.",
-      "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV에 맞는 언어로 매크로를 번역할 수 있습니다."
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "새 업데이트가 있습니다! ",
-    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
     "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
     "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
@@ -1360,7 +1360,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "사용자 지정 아이템",
@@ -1810,7 +1810,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
-    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
@@ -1821,7 +1821,7 @@
   },
   "FOOD_PICKER": {
     "Title": "음식 선택기",
-    "Description": "어떤 도핑 아이템이 원하는 능력치를 올려주는지 궁금하시나요? 다른 곳에서 찾지말고 이 곳에서 전부 찾아보세요!",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "능력치 선택"
   },
   "BLOG": {
@@ -2178,7 +2178,7 @@
     "DESYNTH": {
       "Job": "원하는 직업과 분해레벨을 입력하세요.",
       "Level": "분해 레벨 입력(직업 레벨 아님)",
-      "Search": "검색을 클릭하면 끝입니다!"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "스위치를 켜서 타이머 알람을 활성화 시키세요."
@@ -2220,7 +2220,7 @@
         "Welcome_add_column": "대시보드 레이아웃 편집창에 어서오세요. 해당 버튼을 사용하여 최대 5열까지 추가할 수 있습니다.",
         "Save": "대시보드를 편집하고 저장하는 것을 잊지마세요.",
         "Revert": "만약 편집한 대시보드가 마음에 들지 않는다면, 이전 페이지로 돌아가서 편집 전 레이아웃으로 되돌리세요.",
-        "Delete_column": "추가한 열을 삭제하고 싶나요? 이걸 누르세요!",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "새 패널을 추가하고 싶다면 이걸 클릭하세요.",
         "Reorder": "드래그 앤 드롭으로 패널을 원하는 곳으로 이동시킬 수 있습니다.",
         "Data_type": "먼저, 사용할 메트릭스 유형을 선택하세요.",
@@ -2596,7 +2596,7 @@
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
-      "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "집사를 선택하세요"
   },
@@ -2720,7 +2720,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "새로운 기능: 알라간 리포트",
-    "Feature_banner_description": "누락된 데이터가 있는 아이템을 찾으셨나요? 이제 알라간 리포트 시스템 (일반 > 알라간 리포트) 에서 아이템 출처를 보고하여 다음 업데이트에 적용시킬 수 있습니다!",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "알라간 리포트",
     "Reports": "리포트",
     "Pending_changes": "보류 중인 변경 사항",
