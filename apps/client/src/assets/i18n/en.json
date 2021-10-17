@@ -2596,7 +2596,7 @@
       "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
       "Custom_theme": "Better theme customization, with custom color input (${{price}})",
       "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Pick one of your retainers"
   },
