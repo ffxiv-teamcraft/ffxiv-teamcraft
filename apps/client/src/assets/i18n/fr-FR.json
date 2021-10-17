@@ -1,5 +1,5 @@
 {
-  "Mogstation": "Mogstation",
+  "Mogstation": "Station mog",
   "Quests": "Quests",
   "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur discord.",
   "Pick_a_list": "Choisissez une liste",
@@ -105,7 +105,7 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
-  "Patreon_login_success": "Patreon login success!",
+  "Patreon_login_success": "Connexion avec Patreon réussie !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -261,7 +261,7 @@
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
   "No_instances_found": "Aucune instance trouvée",
-  "No_fishing_spot_found": "No fishing spots found",
+  "No_fishing_spot_found": "Aucun point de pêche trouvé",
   "No_quests_found": "Aucune quête trouvée",
   "No_npcs_found": "Aucun PNJ trouvé",
   "No_mobs_found": "Aucun monstre trouvé",
@@ -362,7 +362,7 @@
   "Email_not_found": "Email non trouvé",
   "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn!",
+    "Spawned": "{{itemName}} va apparaître !",
     "See_on_map": "Emplacement",
     "Note": "Note"
   },
@@ -559,7 +559,7 @@
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
-      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
+      "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est plus nécessaire.",
       "Error": "Code introuvable dans votre description, merci de vous assurer que vous l'avez bien placé dans la description et sauvegardé les changements, puis attendez 30 s ~ et réessayez.",
       "Validate": "Valider"
     }
@@ -571,7 +571,7 @@
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
     "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
-    "Lists_merged": "Lists merged with success!",
+    "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
     "Reset_selection": "Réinitialiser la sélection",
@@ -740,7 +740,7 @@
       "Import_layout": "Importer un affichage",
       "Export_layout": "Exporter ce layout",
       "Import_string": "Chaîne d'import de l'affichage",
-      "Import_string_copied": "Layout code copied!",
+      "Import_string_copied": "Code de mise en page copié !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
@@ -849,7 +849,7 @@
     "Title": "Traducteur de macro",
     "Macro_language": "Langue de la macro",
     "Macro_to_translate": "Macro à traduire",
-    "Do_translate": "Translate!",
+    "Do_translate": "Traduit !",
     "Invalid_macro_or_language": "Macro ou langue invalide."
   },
   "CUSTOM_LINKS": {
@@ -882,7 +882,7 @@
     "No_items": "Aucune récolte trouvée",
     "Gathering_name": "Nom de l'objet",
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
+    "Intro": "L'emplacement de collecte vous permet de rechercher facilement un objet récoltable et de voir les détails à ce sujet, où le trouver et créer une alarme pour un point de récolte donné. Il suffit d'entrer un nom dans le champ ci-dessus et de le laisser trouver ce que vous cherchez !",
     "Hidden_item": "Caché",
     "Fish_eyes": "Nécessite des yeux de poisson pour se soucier uniquement des conditions météorologiques",
     "Add_alarm": "Ajouter une alarme",
@@ -1306,20 +1306,20 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Donation_button": "Faites un don unique",
     "Buy_merch": "Acheter un objet Teamcraft",
-    "Features_header": "Get started!",
+    "Features_header": "Commencer !",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau de filtres pour trouver des objets précis et commencer à fabriquer des choses.",
       "Public_lists": "Clonez des listes communautaires pour vous aider à construire des kits de mandats, de complétion de carnet, des aéronefs, de l'équipement, tout peut être trouvé ici.",
       "Alarms": "Créer des alarmes pour s’assurer que vous ne manquez pas une récolte, organisez-les en groupes, importez-les en jeu, tout est possible.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
+      "Gathering_location": "Trouvez des informations sur n'importe quel objet récoltable, créez une alarme, trouvez ses coordonnées, l'éthéryte la plus proche, le livre de récolte nécessaire, et bien plus !",
+      "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
       "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue ? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available!",
-    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
+    "New_update_available": "Une nouvelle mise à jour est disponible !",
+    "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
     "Downloading_update": "Téléchargement de la mise à jour en cours, un redémarrage vous sera proposé une fois celle-ci téléchargée",
     "Possible_update_issue": "Il semble que votre téléchargement ait un problème, veuillez cliquer sur cette icône pour télécharger le dernier installateur."
