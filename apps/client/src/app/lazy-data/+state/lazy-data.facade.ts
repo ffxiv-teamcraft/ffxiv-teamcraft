@@ -15,6 +15,7 @@ import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyData } from '../../core/data/lazy-data';
+import { LoadingStatus } from '../data-entry-status';
 
 @Injectable({
   providedIn: 'root'
@@ -112,7 +113,7 @@ export class LazyDataFacade {
    * @param propertyKey the property to get the status from
    * @param id id of the entry to get the status for
    */
-  public getStatus<K extends LazyDataKey>(propertyKey: K, id?: number): Observable<string | null> {
+  public getStatus<K extends LazyDataKey>(propertyKey: K, id?: number): Observable<LoadingStatus | null> {
     return this.store.pipe(
       select(LazyDataSelectors.getEntryStatus, { key: propertyKey }),
       map(row => {

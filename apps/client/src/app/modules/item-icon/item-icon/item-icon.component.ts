@@ -1,8 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { map, switchMap } from 'rxjs/operators';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, of } from 'rxjs';
 
 @Component({
   selector: 'app-item-icon',
@@ -10,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./item-icon.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemIconComponent implements OnChanges {
+export class ItemIconComponent {
 
   /**
    * The id of the icon of the item.
@@ -45,9 +48,43 @@ export class ItemIconComponent implements OnChanges {
   @Input()
   forceCollectable = false;
 
-  collectable = false;
+  itemId$ = observeInput(this, 'itemId');
 
-  constructor(private translate: TranslateService, private lazyData: LazyDataService,
+  icon$ = combineLatest([
+    this.itemId$,
+    observeInput(this, 'icon')
+  ]).pipe(
+    switchMap(([itemId, icon]) => {
+      if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
+        return of(icon);
+      }
+      return this.lazyData.getRow('itemIcons', itemId).pipe(
+        map(xivapiIcon => {
+          if (xivapiIcon) {
+            return `https://xivapi.com${xivapiIcon}`;
+          }
+          return 'https://xivapi.com/img-misc/code-regular.svg';
+        })
+      );
+    })
+  );
+
+
+  collectable$ = combineLatest([
+    this.itemId$,
+    observeInput(this, 'forceCollectable')
+  ]).pipe(
+    switchMap(([itemId, forceCollectable]) => {
+      if (forceCollectable) {
+        return of(forceCollectable);
+      }
+      return this.lazyData.getRow('collectables', itemId).pipe(
+        map(colectableRow => colectableRow.collectable)
+      );
+    })
+  );
+
+  constructor(private translate: TranslateService, private lazyData: LazyDataFacade,
               private ipc: IpcService, private router: Router) {
   }
 
@@ -70,25 +107,6 @@ export class ItemIconComponent implements OnChanges {
       this.ipc.send('overlay:open-page', this.getLink());
     } else {
       this.router.navigateByUrl(this.getLink());
-    }
-  }
-
-  getIcon(): string {
-    if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') > -1 && !this.icon.startsWith('t/')) {
-      return this.icon;
-    }
-    if (this.lazyData.data.itemIcons[this.itemId]) {
-      return `https://xivapi.com${this.lazyData.data.itemIcons[this.itemId]}`;
-    } else {
-      return 'https://xivapi.com/img-misc/code-regular.svg';
-    }
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (this.forceCollectable) {
-      this.collectable = true;
-    } else if (changes.itemId) {
-      this.collectable = this.lazyData.data.collectables[this.itemId]?.collectable;
     }
   }
 
