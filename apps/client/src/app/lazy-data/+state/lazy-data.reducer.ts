@@ -29,7 +29,7 @@ const lazyDataReducer = createReducer(
     loadingStates: {
       ...state.loadingStates,
       [entity]: {
-        status: 'partial',
+        status: state.loadingStates[entity]?.status || 'partial',
         record: {
           ...(state.loadingStates[entity]?.record || {}),
           [id]: 'loading'
@@ -90,7 +90,7 @@ const lazyDataReducer = createReducer(
         record: {}
       }
     },
-    loadingEntries: state.loadingEntries.filter(e => e !== key)
+    loadingEntries: state.loadingEntries.filter(e => !e.startsWith(key))
   }))
 );
 

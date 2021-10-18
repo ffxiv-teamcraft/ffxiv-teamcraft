@@ -32,7 +32,7 @@ export class LazyDataEffects {
       }),
       mergeMap((registry) => {
         return merge(...Object.entries<number[]>(registry).map(([entity, ids]: [LazyDataKey, number[]]) => {
-          if (this.platformService.isDesktop()) {
+          if (this.platformService.isDesktop() || !environment.production) {
             return this.getData(this.getUrl(entity)).pipe(
               map(entry => {
                 return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });
@@ -44,6 +44,7 @@ export class LazyDataEffects {
             switchMap(res => {
               return Object.entries(res)
                 .map(([key, row]) => {
+                  console.log(key, row);
                   return LazyDataActions.loadLazyDataEntityEntrySuccess({ id: +key, row, key: entity });
                 });
             })

@@ -38,7 +38,7 @@ export class LazyDataFacade {
     this.getStatus(propertyKey).pipe(
       first()
     ).subscribe((status) => {
-      if (status !== 'full') {
+      if (status !== 'full' && status !== 'loading') {
         this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
       }
     });
@@ -77,8 +77,8 @@ export class LazyDataFacade {
    */
   public getRow<K extends LazyDataKey>(propertyKey: K, id: number, fallback?: LazyDataEntries[K]): Observable<LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
-      // If we asked for more than 10 separate things in the same entry during the las CACHE_TTL, load the entire entry.
-      if (Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 10) {
+      // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
+      if (propertyKey !== 'extracts' && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 50) {
         this.preloadEntry(propertyKey);
       }
       const obs$ = combineLatest([
