@@ -84,9 +84,6 @@ export class AlarmBellService {
   public notify(_alarm: Alarm): void {
     of(_alarm).pipe(
       switchMap(alarm => {
-        if (alarm.aetheryte) {
-          return of(alarm);
-        }
         return this.mapService.getMapById(alarm.mapId)
           .pipe(
             map((mapData) => {

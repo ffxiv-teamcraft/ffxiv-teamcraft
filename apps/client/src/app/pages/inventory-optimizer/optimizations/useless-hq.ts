@@ -4,15 +4,16 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { first } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { first, map } from 'rxjs/operators';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class UselessHq extends InventoryOptimizer {
 
   private levels: Record<number, number> = {};
 
-  constructor(private authFacade: AuthFacade, private lazyData: LazyDataService) {
+  constructor(private authFacade: AuthFacade, private lazyData: LazyDataFacade) {
     super();
     this.authFacade.gearSets$.pipe(
       first()
@@ -23,23 +24,27 @@ export class UselessHq extends InventoryOptimizer {
     });
   }
 
-  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {
+  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     if (item.hq && data) {
-      const lookupEntry = this.lazyData.data.recipesIngredientLookup.searchIndex[item.itemId];
-      if (lookupEntry) {
-        const uselessHq = lookupEntry
-          .map(recipeId => {
-            return this.lazyData.data.recipesIngredientLookup.recipes[recipeId];
-          })
-          .reduce((acc, recipe) => {
-            return acc && (this.levels[recipe.job] || 0) >= 80 && recipe.lvl <= 70;
-          }, true);
-        if (uselessHq) {
-          return {};
-        }
-      }
+      return this.lazyData.getEntry('recipesIngredientLookup').pipe(
+        map(recipesIngredientLookup => {
+          const lookupEntry = recipesIngredientLookup.searchIndex[item.itemId];
+          if (lookupEntry) {
+            const uselessHq = lookupEntry
+              .map(recipeId => {
+                return recipesIngredientLookup.recipes[recipeId];
+              })
+              .reduce((acc, recipe) => {
+                return acc && (this.levels[recipe.job] || 0) >= 80 && recipe.lvl <= 70;
+              }, true);
+            if (uselessHq) {
+              return {};
+            }
+          }
+        })
+      );
     }
-    return null;
+    return of(null);
   }
 
   getId(): string {

@@ -5,23 +5,24 @@ import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { Injectable } from '@angular/core';
 import { DataType } from '../../../modules/list/data/data-type';
 import { GatheredBy } from '../../../modules/list/model/gathered-by';
+import { Observable, of } from 'rxjs';
 
 @Injectable()
 export class CanBeGatheredEasily extends InventoryOptimizer {
 
-  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {
+  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     try {
       const gatheredBy = getItemSource<GatheredBy>(data, DataType.GATHERED_BY);
       if (gatheredBy && gatheredBy.nodes) {
         if (gatheredBy.nodes.some(node => {
           return !node.duration && !node.matchingItemIsHidden && !node.limited && (!node.spawns || node.spawns.length === 0) && !node.weathers && !node.weathersFrom;
         })) {
-          return { level: gatheredBy.level };
+          return of({ level: gatheredBy.level });
         }
       }
-      return null;
+      return of(null);
     } catch (_) {
-      return null;
+      return of(null);
     }
 
   }

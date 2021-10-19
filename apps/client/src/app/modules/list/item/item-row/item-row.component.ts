@@ -45,9 +45,9 @@ import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popu
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { InventoryService } from '../../../inventory/inventory.service';
 import { ListController } from '../../list-controller';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-item-row',
@@ -266,7 +266,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryService,
               private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -364,20 +364,22 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation, item: ListRow): void {
-    const foodsData = this.consumablesService.fromLazyData(this.lazyData.data.foods);
-    const medicinesData = this.consumablesService.fromData(medicines);
-    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
-    this.modal.create({
-      nzContent: MacroPopupComponent,
-      nzComponentParams: {
-        rotation: this.registry.deserializeRotation(rotation.rotation),
-        job: (<any>item).craftedBy[0].jobId,
-        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
-        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
-        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
-      },
-      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
-      nzFooter: null
+    this.lazyData.getEntry('foods').subscribe(foods => {
+      const foodsData = this.consumablesService.fromLazyData(foods);
+      const medicinesData = this.consumablesService.fromData(medicines);
+      const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+      this.modal.create({
+        nzContent: MacroPopupComponent,
+        nzComponentParams: {
+          rotation: this.registry.deserializeRotation(rotation.rotation),
+          job: (<any>item).craftedBy[0].jobId,
+          food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+          medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+          freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+        },
+        nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+        nzFooter: null
+      });
     });
   }
 

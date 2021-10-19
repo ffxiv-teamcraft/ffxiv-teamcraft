@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
@@ -11,7 +10,6 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
-import { ListRow } from '../../../modules/list/model/list-row';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -19,6 +17,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { CanBeBought } from '../optimizations/can-be-bought';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -41,44 +40,54 @@ export class InventoryOptimizerComponent {
         this.reloader$
       ]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
-          map(inventory => {
-            return this.optimizers
-              .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
-              .map(optimizer => {
-                const entries = inventory.toArray()
-                  .filter(item => {
-                    return item.contentId === inventory.contentId
-                      && this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
-                      && [
-                        ContainerType.RetainerMarket,
-                        ContainerType.RetainerEquippedGear
-                      ].indexOf(item.containerId) === -1;
-                  })
-                  .map(item => {
-                    return {
-                      item: item,
-                      containerName: this.getContainerName(item),
-                      isRetainer: item.retainerName !== undefined,
-                      messageParams: optimizer.getOptimization(item, inventory, extracts)
-                    };
-                  })
-                  .filter(optimization => optimization.messageParams !== null)
-                  .sort((a, b) => {
-                    if (a.messageParams[Object.keys(a.messageParams)[0]] > b.messageParams[Object.keys(b.messageParams)[0]]) {
-                      return -1;
-                    } else {
-                      return 1;
-                    }
-                  });
-                return {
-                  type: optimizer.getId(),
-                  entries: _.chain(entries)
-                    .groupBy('containerName')
-                    .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
-                    .value(),
-                  totalLength: uniqBy(entries, 'item.itemId').length
-                };
-              });
+          switchMap(inventory => {
+            return safeCombineLatest(
+              this.optimizers
+                .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
+                .map(optimizer => {
+                  return safeCombineLatest(inventory.toArray()
+                    .filter(item => {
+                      return item.contentId === inventory.contentId
+                        && this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
+                        && [
+                          ContainerType.RetainerMarket,
+                          ContainerType.RetainerEquippedGear
+                        ].indexOf(item.containerId) === -1;
+                    })
+                    .map(item => {
+                      return optimizer.getOptimization(item, inventory, extracts).pipe(
+                        map(messageParams => {
+                          return {
+                            item: item,
+                            containerName: this.getContainerName(item),
+                            isRetainer: item.retainerName !== undefined,
+                            messageParams
+                          };
+                        })
+                      );
+                    })
+                  ).pipe(
+                    map(res => {
+                      const entries = res.filter(optimization => optimization.messageParams !== null)
+                        .sort((a, b) => {
+                          if (a.messageParams[Object.keys(a.messageParams)[0]] > b.messageParams[Object.keys(b.messageParams)[0]]) {
+                            return -1;
+                          } else {
+                            return 1;
+                          }
+                        });
+                      return {
+                        type: optimizer.getId(),
+                        entries: _.chain(entries)
+                          .groupBy('containerName')
+                          .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
+                          .value(),
+                        totalLength: uniqBy(entries, 'item.itemId').length
+                      };
+                    })
+                  );
+                })
+            );
           })
         )),
         tap(() => this.loading = false)

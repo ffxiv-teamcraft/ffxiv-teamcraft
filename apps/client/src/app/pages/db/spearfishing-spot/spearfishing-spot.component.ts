@@ -7,7 +7,6 @@ import { DataService } from '../../../core/api/data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -18,6 +17,10 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { Region } from '../../../modules/settings/region.enum';
+import { LazyData } from '../../../lazy-data/lazy-data';
 
 @Component({
   selector: 'app-spearfishing-spot',
@@ -42,7 +45,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataFacade,
               private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private mapService: MapService, public settings: SettingsService, seo: SeoService) {
     super(seo);
@@ -53,14 +56,17 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
 
     this.nodeData$ = nodeId$.pipe(
       switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id);
+        return combineLatest([
+          this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id),
+          this.lazyData.getEntry('nodes')
+        ]);
       }),
-      map(node => {
-        node.mappyData = this.lazyData.data.nodes[node.ID];
+      map(([node, lazyNodes]) => {
+        node.mappyData = lazyNodes[node.ID];
         node.mappyData.items = node.mappyData.items.map(item => {
           return {
             item: item,
-            gatheringItem: this.getGatheringItem(item),
+            gatheringItem: this.getGatheringItem(item, lazyNodes),
             alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
               ...node.mappyData,
               matchingItemId: item,
@@ -72,7 +78,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
           node.mappyData.items.push(...node.mappyData.hiddenItems.map(item => {
             return {
               item: item,
-              gatheringItem: this.getGatheringItem(item),
+              gatheringItem: this.getGatheringItem(item, lazyNodes),
               alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
                 ...node.mappyData,
                 matchingItemId: item,
@@ -105,29 +111,33 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
     );
 
     this.bonuses$ = this.nodeData$.pipe(
-      map(node => {
-        const bonuses = [];
-        (node.GatheringPoints || []).forEach(point => {
-          [0, 1].forEach(index => {
-            const bonus = point[`GatheringPointBonus${index}`];
-            if (!bonus) return;
-
-            const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
-            const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
-
-            const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
-            if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
-              bonusType.zh = zhRow.bonus.zh;
-              condition.zh = zhRow.condition.zh;
-            }
-
-            bonuses.push({
-              bonus: this.bonusToText(bonusType, bonus.BonusValue),
-              condition: this.bonusToText(condition, bonus.ConditionValue)
-            });
-          });
-        });
-        return bonuses;
+      switchMap(node => {
+        return safeCombineLatest((node.GatheringPoints || []).map(point => {
+          return safeCombineLatest(
+            [0, 1].filter(index => {
+              return point[`GatheringPointBonus${index}`];
+            })
+              .map(index => {
+                const bonus = point[`GatheringPointBonus${index}`];
+                const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
+                const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
+                if (this.settings.region === Region.China) {
+                  return this.lazyData.getRow('zhGatheringBonuses', bonus.ID).pipe(
+                    map(zhRow => {
+                      if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
+                        bonusType.zh = zhRow.bonus.zh;
+                        condition.zh = zhRow.condition.zh;
+                      }
+                    })
+                  );
+                }
+                return of({
+                  bonus: this.bonusToText(bonusType, bonus.BonusValue),
+                  condition: this.bonusToText(condition, bonus.ConditionValue)
+                });
+              })
+          );
+        }));
       })
     );
 
@@ -166,8 +176,8 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
-  public getGatheringItem(itemId: number): any {
-    return Object.values<any>(this.lazyData.data.nodes)
+  public getGatheringItem(itemId: number, nodes: LazyData['nodes']): any {
+    return Object.values<any>(nodes)
       .find(node => node.items.includes(itemId));
   }
 

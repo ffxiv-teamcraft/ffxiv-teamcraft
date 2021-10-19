@@ -3,6 +3,7 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { InjectionToken } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ContainerType } from '../../../model/user/inventory/container-type';
+import { Observable, of } from 'rxjs';
 
 export const INVENTORY_OPTIMIZER: InjectionToken<InventoryOptimizer> = new InjectionToken('InventoryOptimizer');
 
@@ -40,15 +41,15 @@ export abstract class InventoryOptimizer {
     return source.slot === target.slot && source.containerId === target.containerId;
   }
 
-  public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: Record<number, ListRow>): { [p: string]: number | string } | null {
+  public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: Record<number, ListRow>): Observable<{ [p: string]: number | string } | null> {
     if (InventoryOptimizer.IGNORED_CONTAINERS.indexOf(item.containerId) > -1) {
-      return null;
+      return of(null);
     }
     const data = extracts[item.itemId];
     return this._getOptimization(item, inventory, data);
   }
 
-  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null;
+  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
 
   public abstract getId(): string;
 }

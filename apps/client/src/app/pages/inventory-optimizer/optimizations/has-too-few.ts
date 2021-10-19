@@ -2,22 +2,28 @@ import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { Observable } from 'rxjs';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { map } from 'rxjs/operators';
 
 export class HasTooFew extends InventoryOptimizer {
 
   static THRESHOLD_KEY = 'optimizer:has-few:threshold';
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
     super();
   }
 
-  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } {
-    const threshold = +(localStorage.getItem(HasTooFew.THRESHOLD_KEY) || 3);
-    if (this.lazyData.data.stackSizes[item.itemId] > 1 && item.quantity <= threshold) {
-      return { amount: item.quantity };
-    }
-    return null;
+  _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string }> {
+    return this.lazyData.getRow('stackSizes', item.itemId).pipe(
+      map(stackSize => {
+        const threshold = +(localStorage.getItem(HasTooFew.THRESHOLD_KEY) || 3);
+        if (stackSize > 1 && item.quantity <= threshold) {
+          return { amount: item.quantity };
+        }
+        return null;
+      })
+    );
   }
 
   getId(): string {

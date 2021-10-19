@@ -18,6 +18,7 @@ import { DataService } from '../../core/api/data.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
 import firebase from 'firebase/app';
 import { List } from './model/list';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 
 declare const gtag: Function;
@@ -458,7 +459,7 @@ export class ListController {
     } else {
       craft = getCraftByPriority(crafts, gearsets);
     }
-    const ingredients$ = craft ? lazyDataFacade.getRecipes().pipe(map(recipes => recipes.find(r => r.id.toString() === craft.id.toString()).ingredients)) : of(getItemSource(addition.item, DataType.REQUIREMENTS));
+    const ingredients$ = craft ? lazyDataFacade.getRecipes().pipe(map(recipes => recipes.find(r => r.id.toString() === craft.id.toString()).ingredients as Ingredient[])) : of(getItemSource(addition.item, DataType.REQUIREMENTS));
 
     return ingredients$.pipe(
       switchMap(ingredients => {
@@ -468,7 +469,7 @@ export class ListController {
         return safeCombineLatest(ingredients.map(element => {
           return combineLatest([
             lazyDataFacade.getEntry('extracts'),
-            lazyDataFacade.getRecipes()
+            lazyDataFacade.getRecipes() as unknown as Observable<Craft[]>
           ]).pipe(
             map(([extracts, recipes]) => {
               const elementDetails = extracts[element.id];

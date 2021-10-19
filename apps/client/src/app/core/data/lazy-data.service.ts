@@ -19,6 +19,9 @@ import { XivapiPatch } from './model/xivapi-patch';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * @Deprecated use LazyDataFacade instead
+ */
 export class LazyDataService {
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -85,10 +88,6 @@ export class LazyDataService {
         this.load('zh');
         break;
     }
-  }
-
-  public getMapIdByZoneId(zoneId: number): number {
-    return +Object.keys(this.data.maps).find((key) => this.data.maps[key].placename_id === zoneId);
   }
 
   public getItemLeveIds(itemId: number): number[] {

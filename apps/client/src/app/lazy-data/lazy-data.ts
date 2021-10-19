@@ -105,7 +105,7 @@ export interface LazyData {
   craftingLogPages: Array<LazyCraftingLogPage[]>;
   craftingLog: Array<number[]>;
   desynth: Record<number, number[]>;
-  diademTerritory: Record<number, LazyDiademTerritory>;
+  diademTerritory: LazyDiademTerritory;
   dropSources: Record<number, number[]>;
   equipSlotCategories: Record<number, LazyEquipSlotCategory>;
   equipment: Record<number, LazyEquipment>;
@@ -168,7 +168,7 @@ export interface LazyData {
   quests: Record<number, LazyQuest>;
   races: Record<number, LazyRace>;
   rarities: Record<number, number>;
-  recipesIngredientLookup: Record<number, LazyRecipesIngredientLookup>;
+  recipesIngredientLookup: LazyRecipesIngredientLookup;
   recipes: Array<LazyRecipe>;
   reduction: Record<number, number[]>;
   retainerTasks: Array<LazyRetainerTask>;

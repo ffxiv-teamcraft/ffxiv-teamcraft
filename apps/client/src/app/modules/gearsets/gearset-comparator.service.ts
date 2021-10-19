@@ -5,11 +5,11 @@ import { StatsService } from './stats.service';
 import { MateriaService } from './materia.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { environment } from 'apps/client/src/environments/environment';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ import { environment } from 'apps/client/src/environments/environment';
 export class GearsetComparatorService {
 
   constructor(private statsService: StatsService, private materiaService: MateriaService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
   }
 
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
@@ -63,9 +63,11 @@ export class GearsetComparatorService {
       this.statsService.getStats(a, environment.maxLevel, 1),
       this.statsService.getStats(b, environment.maxLevel, 1),
       this.materiaService.getTotalNeededMaterias(a, includeAllTools),
-      this.materiaService.getTotalNeededMaterias(b, includeAllTools)
+      this.materiaService.getTotalNeededMaterias(b, includeAllTools),
+      this.lazyData.getEntry('ilvls'),
+      this.lazyData.getEntry('itemStats')
     ]).pipe(
-      switchMap(([aStats, bStats, aMaterias, bMaterias]) => {
+      switchMap(([aStats, bStats, aMaterias, bMaterias, ilvls, itemStats]) => {
         if (this.statsService.getMainStat(a.job) !== this.statsService.getMainStat(b.job)) {
           throw new Error('Can only compare two sets with same main stat');
         }
@@ -105,11 +107,11 @@ export class GearsetComparatorService {
         const piecesDiff = this.getSlotArray().map((slot: string) => {
           let isDifferent = (a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId);
           if (!a.isCombatSet()) {
-            isDifferent = isDifferent && this.lazyData.data.ilvls[a[slot] && a[slot].itemId] !== this.lazyData.data.ilvls[b[slot] && b[slot].itemId];
+            isDifferent = isDifferent && ilvls[a[slot] && a[slot].itemId] !== ilvls[b[slot] && b[slot].itemId];
           }
           if (isDifferent || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
-            const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] || [] : [];
-            const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] || [] : [];
+            const aItemStats = a[slot] ? itemStats[a[slot].itemId] || [] : [];
+            const bItemStats = b[slot] ? itemStats[b[slot].itemId] || [] : [];
             const itemsStatsDiff = aItemStats.map(as => {
               const bs = bItemStats.find(s => s.ID === as.ID);
 

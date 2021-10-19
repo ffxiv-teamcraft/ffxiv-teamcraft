@@ -20,7 +20,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map, skipUntil, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
@@ -31,7 +31,6 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
 import { mapIds } from '../../data/sources/map-ids';
-import { LazyDataService } from '../../data/lazy-data.service';
 import { GatheringNode } from '../../data/model/gathering-node';
 import { MapService } from '../../../modules/map/map.service';
 import { GatheringNodesService } from '../../data/gathering-nodes.service';
@@ -41,6 +40,9 @@ import { environment } from 'apps/client/src/environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
 import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyData } from '../../../lazy-data/lazy-data';
+import { XivapiPatch } from '../../data/model/xivapi-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -51,7 +53,6 @@ export class AlarmsFacade {
 
   loaded$ = this.store.select(alarmsQuery.getLoaded);
   allAlarms$ = this.store.select(alarmsQuery.getAllAlarms).pipe(
-    skipUntil(this.lazyData.data$),
     map(alarms => {
       if (this.regenerating) {
         return [null];
@@ -126,9 +127,13 @@ export class AlarmsFacade {
 
   private nextSpawnCache: any = {};
 
+  private itemPatch: LazyData['itemPatch'];
+  private patches: XivapiPatch[];
+  private legendaryFish: LazyData['legendaryFish'];
+
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataService, private mapService: MapService,
+              private lazyData: LazyDataFacade, private mapService: MapService,
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
@@ -203,6 +208,17 @@ export class AlarmsFacade {
 
   public loadAlarms(): void {
     this.store.dispatch(new LoadAlarms());
+    combineLatest([
+      this.lazyData.getEntry('itemPatch'),
+      this.lazyData.patches$,
+      this.lazyData.getEntry('legendaryFish')
+    ]).pipe(
+      first()
+    ).subscribe(([itemPatch, patches, legendaryFish]) => {
+      this.itemPatch = itemPatch;
+      this.patches = patches;
+      this.legendaryFish = legendaryFish;
+    });
   }
 
   public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
@@ -427,9 +443,9 @@ export class AlarmsFacade {
   }
 
   private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
-    const patch = this.lazyData.data.itemPatch[alarm.itemId];
-    const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
-    const isLegendary = this.lazyData.data.legendaryFish[alarm.itemId];
+    const patch = this.itemPatch[alarm.itemId];
+    const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
+    const isLegendary = this.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-SB and non-legendary
     if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
@@ -477,7 +493,6 @@ export class AlarmsFacade {
     if (node.hookset) {
       alarm.hookset = node.hookset;
     }
-    alarm.aetheryte = this.mapService.getNearestAetheryte(this.lazyData.data.maps[alarm.mapId], alarm.coords);
     return this.applyFishEyes(alarm) as Alarm[];
   }
 

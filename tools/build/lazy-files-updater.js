@@ -32,6 +32,12 @@ function getType(file) {
   const data = fs.readFileSync(path.join(__dirname, '../../apps/client/src/assets/data/', file), 'utf8');
   const dataObj = JSON.parse(data);
   let indexType = Array.isArray(dataObj) ? 'Array<T>' : 'Record<number, T>';
+  if(Object.keys(dataObj).filter(k => !isNaN(k)).length === 0){
+    return {
+      type: className,
+      importStr: `import {${className}} from './model/${_.kebabCase(className)}';`
+    }
+  }
   const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
   if (valuesAreArrays) {
     indexType = indexType.replace('T', 'T[]');

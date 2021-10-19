@@ -13,9 +13,11 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
-import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyData } from '../../core/data/lazy-data';
 import { LoadingStatus } from '../data-entry-status';
+import { LazyRecipe } from '../model/lazy-recipe';
+import { XivapiPatch } from '../../core/data/model/xivapi-patch';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +33,12 @@ export class LazyDataFacade {
     select(LazyDataSelectors.isLoading)
   );
 
+  public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
+    shareReplay(1)
+  );
+
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
-              private settings: SettingsService) {
+              private settings: SettingsService, private http: HttpClient) {
   }
 
   public preloadEntry<K extends LazyDataKey>(propertyKey: K): void {
@@ -187,14 +193,14 @@ export class LazyDataFacade {
     });
   }
 
-  public getRecipes(): Observable<Craft[]> {
+  public getRecipes(): Observable<LazyRecipe[]> {
     switch (this.settings.region) {
       case Region.China:
-        return this.getEntry('zhRecipes') as unknown as Observable<Craft[]>;
+        return this.getEntry('zhRecipes');
       case Region.Korea:
-        return this.getEntry('koRecipes') as unknown as Observable<Craft[]>;
+        return this.getEntry('koRecipes');
       default:
-        return this.getEntry('recipes') as unknown as Observable<Craft[]>;
+        return this.getEntry('recipes');
     }
   }
 
@@ -216,7 +222,7 @@ export class LazyDataFacade {
     );
   }
 
-  public getRecipeForItem(id: number | string): Observable<Craft> {
+  public getRecipeForItem(id: number | string): Observable<LazyRecipe> {
     return this.getRecipes().pipe(
       map(recipes => recipes.find((r) => (r as any).result.toString() === id.toString()))
     );

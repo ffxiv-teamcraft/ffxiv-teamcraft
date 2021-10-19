@@ -10,7 +10,6 @@ import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xiv
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
@@ -25,6 +24,8 @@ import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-f
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
 import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyData } from '../../../lazy-data/lazy-data';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -179,7 +180,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }),
     switchMap(([response, crystal]) => {
       return this.gearset$.pipe(
-        map(gearset => {
+        switchMap(gearset => {
+          return this.lazyData.getEntry('ilvls')
+            .pipe(
+              map(ilvls => {
+                return [gearset, ilvls];
+              })
+            );
+        }),
+        map(([gearset, lazyIlvls]: [TeamcraftGearset, LazyData['ilvls']]) => {
           const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
           const prepared = [...response.Results, ...crystal.Results]
             .filter(item => {
@@ -238,8 +247,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           return prepared
             .map(category => {
               category.items = category.items.sort((a, b) => {
-                const aIlvl = this.lazyData.data.ilvls[a.equipmentPiece.itemId];
-                const bIlvl = this.lazyData.data.ilvls[b.equipmentPiece.itemId];
+                const aIlvl = lazyIlvls[a.equipmentPiece.itemId];
+                const bIlvl = lazyIlvls[b.equipmentPiece.itemId];
                 if (aIlvl === bIlvl) {
                   return b.item.ID - a.item.Id;
                 }
@@ -295,9 +304,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public foods$: Observable<any[]> = this.gearset$.pipe(
     first(),
-    map(gearset => {
+    switchMap(gearset => {
+      return this.lazyData.getEntry('foods')
+        .pipe(
+          map(foods => {
+            return [gearset, foods];
+          })
+        );
+    }),
+    map(([gearset, foods]: [TeamcraftGearset, LazyData['foods']]) => {
       const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
-      return [].concat.apply([], this.lazyData.data.foods
+      return [].concat.apply([], foods
         .filter(food => {
           return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
         })
@@ -327,20 +344,28 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
-              private l12n: LocalizedDataService, private lazyData: LazyDataService,
+              private l12n: LocalizedDataService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
               private i18n: I18nToolsService, private ipc: IpcService, private router: Router,
               private cd: ChangeDetectorRef) {
     super();
     this.gearset$.pipe(
-      first()
-    ).subscribe(gearset => {
+      first(),
+      switchMap(gearset => {
+        return this.lazyData.getEntry('ilvls')
+          .pipe(
+            map(ilvls => {
+              return [gearset, ilvls];
+            })
+          );
+      })
+    ).subscribe(([gearset, lazyIlvls]: [TeamcraftGearset, LazyData['ilvls']]) => {
       const gearsetArray = this.gearsetsFacade.toArray(gearset);
       // We're removing Spearfishing gig from the lowest ilvl filter.
       const ilvls = gearsetArray
         .filter(entry => entry.piece.itemId !== 17726)
-        .map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
+        .map(entry => lazyIlvls[entry.piece.itemId]);
       let lowestIlvl = Math.min(...ilvls);
       let highestIlvl = Math.max(...ilvls) + 30;
       let usedDefaultValues = false;

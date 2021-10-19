@@ -162,7 +162,7 @@ export class CollectablesComponent {
     this.lazyData.getRecipeForItem(itemId).pipe(
       first()
     ).subscribe(recipe => {
-      this.rotationPicker.openInSimulator(itemId, recipe?.id);
+      this.rotationPicker.openInSimulator(itemId, recipe?.id?.toString());
     });
   }
 
@@ -172,7 +172,7 @@ export class CollectablesComponent {
         map(recipe => {
           return {
             id: +item.itemId,
-            recipeId: recipe?.id || '',
+            recipeId: recipe?.id?.toString() || '',
             amount: item.amount,
             collectable: item.collectable
           };
