@@ -4,11 +4,11 @@
     <nz-form-control [nzValidateStatus]="gearset && gearset.job !== form.controls.job.value ? 'warning' : 'validating'"
                      [nzWarningTip]="'GEARSETS.Warning_job_switch' | translate">
       <nz-select class="filter-select" formControlName="job" nzShowSearch [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
-        <nz-option *ngFor="let job of availableJobs$ | async" [nzLabel]="job.id | jobAbbr | i18n"
+        <nz-option *ngFor="let job of availableJobs$ | async" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n"
                    [nzValue]="job.id" nzCustomContent>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div class="companion-svg" [innerHtml]="job.id | jobUnicode"></div>
-            <div>{{job.id | jobAbbr | i18n}}</div>
+            <div>{{job.id | i18nRow:'jobAbbr' | i18n}}</div>
           </div>
         </nz-option>
       </nz-select>

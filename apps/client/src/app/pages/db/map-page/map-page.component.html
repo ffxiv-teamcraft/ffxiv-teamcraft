@@ -5,10 +5,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="{{mapData.PlaceName.ID | placeName |i18n}}"
+          <img [src]="'/c/PlaceName.png' | xivapiIcon" alt="{{mapData.PlaceName.ID | i18nRow:'places' |i18n}}"
                class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{mapData.PlaceName.ID | placeName |i18n}}</h2>
+            <h2 class="item-name">{{mapData.PlaceName.ID | i18nRow:'places' |i18n}}</h2>
           </div>
         </div>
         <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"

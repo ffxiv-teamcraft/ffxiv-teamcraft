@@ -7,7 +7,6 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -50,7 +49,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
   constructor(
     private readonly route: ActivatedRoute,
     private readonly xivapi: XivapiService,
-    private readonly l12nLazy: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
@@ -70,7 +68,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     const spotId$ = this.route.paramMap.pipe(map((params) => +params.get('spotId') || undefined));
     const correctSlug$ = combineLatest([spotId$, this.lazyData.fishingSpots$]).pipe(
       map(([spotId, spots]) => spots.find((spot) => spot.id === spotId)?.zoneId),
-      switchMap((placeId) => (!placeId ? of(undefined) : this.i18n.resolveName(this.l12nLazy.getPlace(placeId)))),
+      switchMap((placeId) => (!placeId ? of(undefined) : this.i18n.getNameObservable('places', placeId))),
       map((name) => name?.split(' ').join('-'))
     );
 
@@ -102,7 +100,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiFishingSpot$.pipe(
-      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.resolveName(this.l12nLazy.xivapiToI18n(fishingSpot.PlaceName, 'places'))])),
+      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.getNameObservable('places', fishingSpot.PlaceName)])),
       map(([fishingSpot, title]) => {
         return {
           title,

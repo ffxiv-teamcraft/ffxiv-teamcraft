@@ -14,14 +14,14 @@
   <ng-container *ngSwitchCase="AllaganReportSource.FATE">
     <div fxLayout="column" fxLayoutGap="10px">
       <div>
-        {{(data.fateId | fate)?.name | i18n}}
+        {{data.fateId | i18nRow:'fates' | i18n}}
         <app-db-button type="fate" [id]="data.fateId"></app-db-button>
       </div>
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.DROP">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div>{{data.monsterId | mobName | i18n}}</div>
+      <div>{{data.monsterId | i18nRow:'mobs' | i18n}}</div>
       <app-db-button [id]="data.monsterId" type="mob"></app-db-button>
     </div>
   </ng-container>
@@ -49,7 +49,7 @@
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.VENTURE">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div>{{data.ventureId | ventureName | i18n}}</div>
+      <div>{{data.ventureId | i18nRow:'ventures' | i18n}}</div>
     </div>
   </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.MOGSTATION">

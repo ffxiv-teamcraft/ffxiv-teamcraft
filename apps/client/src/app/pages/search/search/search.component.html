@@ -186,11 +186,11 @@
             <!--CraftedBy filter-->
             <nz-input-group *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" [nzAddOnBefore]="'SEARCH.Crafted_by' | translate">
               <nz-select nzSize="large" class="with-addon-before" formControlName="craftJob" nzAllowClear nzShowSearch>
-                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
+                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n"
                            [nzValue]="job.id" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
-                    <div>{{job.id | jobAbbr | i18n}}</div>
+                    <div>{{job.id | i18nRow:'jobAbbr' | i18n}}</div>
                   </div>
                 </nz-option>
               </nz-select>

@@ -13,7 +13,7 @@
       <nz-list [nzDataSource]="nodes[reduction] || []" [nzRenderItem]="nodeTemplate">
         <ng-template #nodeTemplate let-row>
           <nz-list-item [nzActions]="[openMap]">
-            <nz-list-item-meta [nzDescription]="description" [nzTitle]="row.node.zoneId | placeName | i18n">
+            <nz-list-item-meta [nzDescription]="description" [nzTitle]="row.node.zoneId | i18nRow:'places' | i18n">
               <ng-template #description>
                 <app-node-details [node]="row.node" [showAlarmsIntegration]="true"></app-node-details>
               </ng-template>
@@ -31,7 +31,7 @@
                     *ngIf="row.node.map | closestAetheryte: { x: row.node.x, y: row.node.y } | async as aetheryte"
                     class="closest-tp">
                     <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
-                    {{aetheryte?.nameid | placeName | i18n}}
+                    {{aetheryte?.nameid | i18nRow:'places' | i18n}}
                   </div>
                   <ng-container *ngIf="row.node.baits !== undefined">
                     <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>

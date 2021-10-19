@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { LazyDataEntries, LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
@@ -12,8 +12,9 @@ export class I18nRowPipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {
   }
 
-  transform(value: number, contentName: LazyDataI18nKey): Observable<I18nName> {
-    return this.lazyData.getI18nName(contentName, value);
+  transform<K extends LazyDataI18nKey>(value: number, contentName: K, extendedProperty?: string): Observable<I18nName> {
+    // We're going to assume the second param is keyof Extract<LazyDataEntries[K], I18nName> since angular is too stupid to udnerstand it in templates
+    return this.lazyData.getI18nName(contentName, value, extendedProperty as keyof Extract<LazyDataEntries[K], I18nName>);
   }
 
 }

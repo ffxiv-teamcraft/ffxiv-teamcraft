@@ -5,7 +5,7 @@
       <i nz-icon nzType="step-backward"></i>
     </button>
     <nz-select [ngModel]="currentPathIndex$ | async" (ngModelChange)="currentPathIndex$.next($event)" fxFlex="1 1 auto" style="width: 120px;">
-      <nz-option *ngFor="let path of paths; index as i" [nzLabel]="path.map.placename_id | placeName | i18n"
+      <nz-option *ngFor="let path of paths; index as i" [nzLabel]="path.map.placename_id | i18nRow:'places' | i18n"
                  [nzValue]="i"></nz-option>
     </nz-select>
     <button (click)="currentPathIndex$.next(currentPathIndex$.value + 1)" [disabled]="(currentPathIndex$ | async) >= paths.length - 1"

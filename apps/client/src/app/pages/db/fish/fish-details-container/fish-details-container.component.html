@@ -29,8 +29,8 @@
     <div class="details-block" [class.loading]="loading$ | async">
       <div class="detail-name">
         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-          <img [src]="761 | statusIcon | xivapiIcon" alt="" />
-          <span>{{ 761 | statusName | i18n }}</span>
+          <img [src]="761 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" />
+          <span>{{ 761 | i18nRow:'statuses' | async | i18n }}</span>
         </div>
       </div>
       <div class="detail-value">
@@ -48,7 +48,7 @@
       >
         <nz-option [nzLabel]="'DB.FISH.No_spot_filter' | translate" [nzValue]="-1"></nz-option>
         <ng-container *ngIf="spots$ | async as allSpots">
-          <nz-option *ngFor="let spot of allSpots" [nzLabel]="spot.spotData.zoneId | placeName | i18n" [nzValue]="spot.spot"></nz-option>
+          <nz-option *ngFor="let spot of allSpots" [nzLabel]="spot.spotData.zoneId | i18nRow:'places' | i18n" [nzValue]="spot.spot"></nz-option>
         </ng-container>
       </nz-select>
     </div>

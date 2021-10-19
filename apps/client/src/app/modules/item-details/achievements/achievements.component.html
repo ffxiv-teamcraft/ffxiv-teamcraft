@@ -3,9 +3,8 @@
   <ng-template #achievementTemplate let-achievement>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta
-        [nzAvatar]="achievement | achievementIcon | xivapiIcon"
-        [nzDescription]="achievementDescription"
-        [nzTitle]="achievement | achievementName | i18n">
+        [nzAvatar]="achievement | lazyRow:'achievements':'icon' | async | xivapiIcon"
+        [nzTitle]="achievement | i18nRow:'achievements' | i18n">
         <ng-template #content>
           <app-db-button [id]="achievement" type="achievement"></app-db-button>
         </ng-template>

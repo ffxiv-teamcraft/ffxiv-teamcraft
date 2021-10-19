@@ -67,7 +67,7 @@
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{data.zoneid | placeName | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
+            {{data.zoneid | i18nRow:'places' | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
           </div>
         </ng-template>
         <app-map [mapId]="data.map"

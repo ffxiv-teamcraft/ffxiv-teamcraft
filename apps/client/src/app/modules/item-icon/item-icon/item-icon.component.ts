@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { map, switchMap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, of } from 'rxjs';
 
@@ -52,7 +52,7 @@ export class ItemIconComponent {
 
   icon$ = combineLatest([
     this.itemId$,
-    observeInput(this, 'icon')
+    observeInput(this, 'icon', true)
   ]).pipe(
     switchMap(([itemId, icon]) => {
       if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
@@ -66,13 +66,14 @@ export class ItemIconComponent {
           return 'https://xivapi.com/img-misc/code-regular.svg';
         })
       );
-    })
+    }),
+    shareReplay(1)
   );
 
 
   collectable$ = combineLatest([
     this.itemId$,
-    observeInput(this, 'forceCollectable')
+    observeInput(this, 'forceCollectable', true)
   ]).pipe(
     switchMap(([itemId, forceCollectable]) => {
       if (forceCollectable) {
@@ -81,11 +82,12 @@ export class ItemIconComponent {
       return this.lazyData.getRow('collectables', itemId).pipe(
         map(colectableRow => colectableRow.collectable)
       );
-    })
+    }),
+    shareReplay(1)
   );
 
   constructor(private translate: TranslateService, private lazyData: LazyDataFacade,
-              private ipc: IpcService, private router: Router) {
+              private ipc: IpcService, private router: Router, private cd: ChangeDetectorRef) {
   }
 
   getLink(): string {

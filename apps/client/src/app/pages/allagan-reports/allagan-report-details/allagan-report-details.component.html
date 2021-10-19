@@ -208,7 +208,7 @@
             <nz-form-control [nzSpan]="10">
               <nz-select formControlName="spot" [nzDisabled]="!!modificationId$.value">
                 <nz-option *ngFor="let spot of details.spots" [nzValue]="spot"
-                           nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.placeId | placeName | i18n}}"></nz-option>
+                           nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.placeId | i18nRow:'places' | i18n}}"></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>
@@ -339,14 +339,14 @@
                     <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathers">
                       <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | weatherName | i18n"
+                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | i18nRow:'weathers' | i18n"
                                    [nzValue]="weather"></nz-option>
                       </nz-select>
                       <ng-template #gubalAnalysisWeathers>
                         <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
                           {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
                           <ng-container *ngFor="let weather of suggestions.weathers; let last = last">
-                            <b>{{weather | weatherName | i18n}}</b><span *ngIf="!last">, </span>
+                            <b>{{weather | i18nRow:'weathers' | i18n}}</b><span *ngIf="!last">, </span>
                           </ng-container>
                           <b *ngIf="suggestions.weathers?.length === 0">{{'COMMON.Any' | translate}}</b>
                         </ng-container>
@@ -357,14 +357,14 @@
                     <nz-form-label [nzSpan]="3">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisWeathersFrom">
                       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | weatherName | i18n"
+                        <nz-option *ngFor="let weather of mapWeathers" [nzLabel]="weather | i18nRow:'weathers' | i18n"
                                    [nzValue]="weather"></nz-option>
                       </nz-select>
                       <ng-template #gubalAnalysisWeathersFrom>
                         <ng-container *ngIf="gubalSuggestions$ | async as suggestions">
                           {{'ALLAGAN_REPORTS.Gubal_analysis_suggestion' | translate}}:
                           <ng-container *ngFor="let weather of suggestions.weathersFrom; let last = last">
-                            <b>{{weather | weatherName | i18n}}</b><span *ngIf="!last">, </span>
+                            <b>{{weather | i18nRow:'weathers' | i18n}}</b><span *ngIf="!last">, </span>
                           </ng-container>
                           <b *ngIf="suggestions.weathersFrom?.length === 0">{{'COMMON.Any' | translate}}</b>
                         </ng-container>

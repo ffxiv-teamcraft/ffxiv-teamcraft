@@ -1,7 +1,7 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
    (mouseup)="handleClick($event)"
    class="icon-container">
-  <img [src]="icon$ | async" [style.width.px]="width" alt="{{itemName}}" class="item-icon">
+  <img *ngIf="icon$ | async as icon" [src]="icon" [style.width.px]="width" alt="{{itemName}}" class="item-icon">
   <img *ngIf="hq" [style.width.px]="width" class="hq-overlay"
        src="https://www.garlandtools.org/db/images/HQOverlay.png">
   <img *ngIf="collectable$ | async" class="bottom-right-icon" src="./assets/icons/svg/collectable.svg">

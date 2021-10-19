@@ -4,10 +4,10 @@
   <ng-template #npcTemplate let-npc>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta [nzDescription]="description"
-                         [nzTitle]="npc.id | npcName | i18n">
+                         [nzTitle]="npc.id | i18nRow:'npcs' | i18n">
         <ng-template #description>
           <div *ngIf="npc?.position !== null" fxLayout="row">
-            <div>{{npc?.position?.zoneid | placeName | i18n}}</div>
+            <div>{{npc?.position?.zoneid | i18nRow:'places' | i18n}}</div>
             <app-map-position [mapId]="npc?.position?.map" [marker]="npc?.position"
                               [zoneId]="npc?.position?.zoneid"></app-map-position>
           </div>

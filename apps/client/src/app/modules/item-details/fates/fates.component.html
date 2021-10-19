@@ -1,23 +1,21 @@
 <nz-list [nzDataSource]="details" [nzRenderItem]="fateTemplate">
   <ng-template #fateTemplate let-fate>
-    <ng-container *ngIf="fate.id | fate as fateData">
       <nz-list-item [nzContent]="fate.zoneId && fate.coords?position:null">
-        <nz-list-item-meta [nzAvatar]="fateData.icon | xivapiIcon"
-                           [nzDescription]="fateData.description | i18n"
+        <nz-list-item-meta [nzAvatar]="fate.id | lazyRow:'fates':'icon' | async | xivapiIcon"
+                           [nzDescription]="fate.id | i18nRow:'fates': 'description' | i18n"
                            [nzTitle]="title">
         </nz-list-item-meta>
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{fateData.name | i18n}} - lvl {{fate.level}}</div>
+            <div>{{fate.id | i18nRow:'fates' | i18n}} - lvl {{fate.level}}</div>
             <app-db-button [id]="fate.id" type="fate"></app-db-button>
           </div>
         </ng-template>
         <ng-template #position>
           <div>
-            {{fate.zoneId | placeName | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}
+            {{fate.zoneId | i18nRow:'places' | i18n}} X: {{fate.coords.x}} - Y: {{fate.coords.y}}
           </div>
         </ng-template>
       </nz-list-item>
-    </ng-container>
   </ng-template>
 </nz-list>

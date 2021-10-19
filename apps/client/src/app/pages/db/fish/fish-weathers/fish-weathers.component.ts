@@ -1,19 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { mapIds } from 'apps/client/src/app/core/data/sources/map-ids';
 import { weatherIndex } from 'apps/client/src/app/core/data/sources/weather-index';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
+import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { combineLatest, Observable, of } from 'rxjs';
-import { map, startWith, switchMap, debounceTime } from 'rxjs/operators';
+import { debounceTime, map, startWith, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 
 @Component({
   selector: 'app-fish-weathers',
   templateUrl: './fish-weathers.component.html',
   styleUrls: ['./fish-weathers.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishWeathersComponent {
   public readonly loading$ = this.fishCtx.weathersByFish$.pipe(map((res) => res.loading));
@@ -26,9 +25,12 @@ export class FishWeathersComponent {
   public readonly weathersChartData$ = this.fishCtx.weathersByFish$.pipe(
     switchMap((res) => {
       if (!res.data) return of(undefined);
-      const weatherNames: Array<Observable<{ id: number; name: string }>> = Object.values(res.data.byId).map((item) =>
-        this.i18n.resolveName(this.l12n.getWeather(item.id)).pipe(map((name) => ({ id: item.id, name })))
-      );
+      const weatherNames: Array<Observable<{ id: number; name: string }>> = Object.values(res.data.byId).map((item) => {
+        return this.lazyData.getRow('weathers', item.id).pipe(
+          map(weather => this.i18n.getName(weather.name)),
+          map((name) => ({ id: item.id, name }))
+        );
+      });
       return combineLatest([...weatherNames]).pipe(
         map((names) => {
           return Object.values(res.data.byId)
@@ -43,7 +45,7 @@ export class FishWeathersComponent {
     })
   );
 
-  public readonly weathersChances$ = combineLatest([this.fishCtx.weathersByFish$, this.fishCtx.spotId$, this.lazyData.fishingSpots$]).pipe(
+  public readonly weathersChances$ = combineLatest([this.fishCtx.weathersByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     map(([res, spotId, fishingSpots]) => {
       if (!res.data || spotId === undefined) return undefined;
       return Object.values(res.data.byId)
@@ -52,19 +54,19 @@ export class FishWeathersComponent {
           const spotData = fishingSpots.find((row) => row.id === spotId);
           return {
             chances: 100 * this.getWeatherChances(spotData.mapId, entry.id),
-            weatherId: entry.id,
+            weatherId: entry.id
           };
         });
     })
   );
 
   constructor(
-    private readonly l12n: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
-    private readonly lazyData: LazyDataService,
+    private readonly lazyData: LazyDataFacade,
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService
-  ) {}
+  ) {
+  }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
     const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];

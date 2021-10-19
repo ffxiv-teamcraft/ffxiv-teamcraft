@@ -13,7 +13,7 @@
       <tbody>
       <tr *ngFor="let row of result.statsDifferences">
         <td class="table-cell first">
-          {{row.id | baseParamName | i18n}}
+          {{row.id | i18nRow:'baseParams' | i18n}}
         </td>
         <td class="amount table-cell">
           {{row.values.a | number:'1.0-0':translate.currentLang}}
@@ -117,7 +117,7 @@
         <tbody>
         <tr *ngFor="let row of piece.stats">
           <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{row.id | baseParamName | i18n}}</div>
+            <div>{{row.id | i18nRow:'baseParams' | i18n}}</div>
           </td>
           <td class="amount table-cell">
             {{row.a | number:'1.0-0':translate.currentLang}}

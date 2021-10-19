@@ -95,7 +95,7 @@
                 <i (click)="addAlarm(alarm)" class="material-icons create-alarm">
                   alarm_add
                 </i>
-                <img [src]="762 | statusIcon | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
+                <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
               </div>
             </ng-container>
           </ng-container>
@@ -111,7 +111,7 @@
                  nz-dropdown nz-icon
                  nzType="folder-open"
               ></i>
-              <img [src]="762 | statusIcon | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
+              <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
               <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
                   <li (click)="addAlarm(alarm, group)" *ngFor="let group of groups" nz-menu-item>

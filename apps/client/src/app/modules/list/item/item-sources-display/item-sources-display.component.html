@@ -35,7 +35,7 @@
       <button (click)="openAchievementsPopup(item)" *ngSwitchCase="dataTypes.ACHIEVEMENTS"
               nz-button
               nz-tooltip nzShape="circle" [nzTooltipTitle]="'DB.Achievements' | translate">
-        <img class="img-icon round-icon" [src]="source.data[0] | achievementIcon | xivapiIcon">
+        <img class="img-icon round-icon" [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
       </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
@@ -70,7 +70,7 @@
       <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
               [nzTooltipTitle]="'Fates' | translate"
               nz-button nz-tooltip nzShape="circle">
-        <img [src]="(source.data[0].id | fate).icon | xivapiIcon" alt="Fates" class="img-icon round-icon">
+        <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates" class="img-icon round-icon">
       </button>
       <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
         <div *ngFor="let craft of source.data; trackBy: trackByCraft"

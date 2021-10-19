@@ -14,7 +14,7 @@
     <tr *ngFor="let row of totalNeeded">
       <td fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <app-item-icon [itemId]="row.id" width="24"></app-item-icon>
-        <div [itemNameCopy]="row.id">{{row.id | itemName | i18n}} ({{row.baseParamId | baseParamName | i18n}} +{{row.value}})</div>
+        <div [itemNameCopy]="row.id">{{row.id | itemName | i18n}} ({{row.baseParamId | i18nRow:'baseParams' | i18n}} +{{row.value}})</div>
       </td>
       <td class="amount">
         {{row.amount}}

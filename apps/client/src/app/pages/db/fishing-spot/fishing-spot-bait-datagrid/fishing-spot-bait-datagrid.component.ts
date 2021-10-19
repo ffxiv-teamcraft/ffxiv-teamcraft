@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
@@ -36,7 +35,7 @@ export class FishingSpotBaitDatagridComponent {
               name: this.translate.instant('DB.FISHING_SPOT.Miss')
             });
           }
-          return this.i18n.resolveName(this.l12n.getItem(i.colId)).pipe(map((name) => ({ id: i.colId, name })));
+          return this.i18n.getNameObservable('items', i.colId).pipe(map((name) => ({ id: i.colId, name })));
         })
       ]);
     }),
@@ -60,7 +59,6 @@ export class FishingSpotBaitDatagridComponent {
     private readonly fishCtx: FishContextService,
     private readonly lazyData: LazyDataService,
     private readonly i18n: I18nToolsService,
-    private readonly l12n: LocalizedLazyDataService,
     private readonly translate: TranslateService
   ) {
   }

@@ -2,23 +2,23 @@
   <ng-template #huntTemplate let-drop>
     <nz-list-item [nzContent]="drop?.position !== undefined?position:null">
       <nz-list-item-meta [nzTitle]="dropTitle"
-                         nzDescription="lvl{{drop.lvl || '??'}} - {{drop.zoneid | placeName | i18n}}">
+                         nzDescription="lvl{{drop.lvl || '??'}} - {{drop.zoneid | i18nRow:'places' | i18n}}">
       </nz-list-item-meta>
       <ng-template #dropTitle>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{drop.id | mobName | i18n}}</div>
+          <div>{{drop.id | i18nRow:'mobs' | i18n}}</div>
           <app-db-button [id]="drop.id % 100000" type="mob"></app-db-button>
         </div>
       </ng-template>
       <ng-template #position>
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
-          <div>{{drop.zoneid | placeName | i18n}}</div>
+          <div>{{drop.zoneid | i18nRow:'places' | i18n}}</div>
           <app-map-position *ngIf="drop?.position" [mapId]="drop.mapid" [marker]="drop?.position"
                             [zoneId]="drop.zoneid" [additionalMarkers]="getAdditionalMarkers(drop)"></app-map-position>
           <div *ngIf="drop.mapid | closestAetheryte: drop?.position | async as aetheryte"
                class="closest-tp">
             <img alt="" class="aetheryte-icon"
-                 src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | placeName | i18n}}
+                 src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | i18nRow:'places' | i18n}}
           </div>
         </div>
       </ng-template>

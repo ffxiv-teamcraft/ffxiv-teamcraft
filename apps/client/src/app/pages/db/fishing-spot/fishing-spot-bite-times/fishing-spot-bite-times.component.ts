@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -59,7 +58,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     switchMap((res) => {
       if (!res.data) return of([]);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
-        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(map((name) => ({ id: +id, name })))
+        this.i18n.getNameObservable('items', +id).pipe(map((name) => ({ id: +id, name })))
       );
       return combineLatest([...fishNames]).pipe(
         map(([...names]) => {
@@ -94,7 +93,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         return clone;
       }, []);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
-        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(
+        this.i18n.getNameObservable('items', +id).pipe(
           map((name) => ({ id: +id, name: `${name} (${['!!', '!!!', '!'][tugByFish[id]]})` }))
         )
       );
@@ -189,7 +188,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     debounceTime(100),
     switchMap((fishId) => {
       if (fishId >= 0) {
-        return this.i18n.resolveName(this.l12n.getItem(fishId)).pipe(map((name) => [{ name }]));
+        return this.i18n.getNameObservable('items', fishId).pipe(map((name) => [{ name }]));
       }
       return of([]);
     }),
@@ -201,7 +200,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(
-    private readonly l12n: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService,

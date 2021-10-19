@@ -1,23 +1,23 @@
-import { Pipe, PipeTransform, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { Subject, of, Subscription } from 'rxjs';
-import { distinctUntilChanged, switchMap, map } from 'rxjs/operators';
+import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { of, Subject, Subscription } from 'rxjs';
+import { distinctUntilChanged, map, switchMap } from 'rxjs/operators';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
   name: 'mapId',
-  pure: false,
+  pure: false
 })
 export class MapIdPipe implements PipeTransform, OnDestroy {
   private readonly placeId$ = new Subject<number | undefined>();
   private readonly mapId$ = this.placeId$.pipe(
     distinctUntilChanged(),
-    switchMap((placeId) => (placeId >= 0 ? this.data.getPlace(placeId).en : of(undefined))),
-    map((enName) => this.data.getMapId(enName))
+    switchMap((placeId) => (placeId >= 0 ? this.lazyData.getI18nName('places', placeId).pipe(map(name => name.en)) : of(undefined))),
+    map((enName) => this.lazyData.getMapId(enName))
   );
   private readonly sub: Subscription;
   private mapId?: number;
 
-  constructor(private readonly data: LocalizedLazyDataService, private readonly cd: ChangeDetectorRef) {
+  constructor(private readonly lazyData: LazyDataFacade, private readonly cd: ChangeDetectorRef) {
     this.sub = this.mapId$.subscribe(this.setMapId);
   }
 

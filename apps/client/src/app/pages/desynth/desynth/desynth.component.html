@@ -9,9 +9,9 @@
                    tutorialStep="TUTORIAL.DESYNTH.Job"
                    tutorialStepIndex="0"
                    nzShowSearch>
-          <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
+          <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n" [nzValue]="job.id" nzCustomContent>
             <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-            {{job.id | jobAbbr | i18n}}
+            {{job.id | i18nRow:'jobAbbr' | i18n}}
           </nz-option>
         </nz-select>
       </nz-form-control>

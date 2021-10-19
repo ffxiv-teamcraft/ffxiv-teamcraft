@@ -26,7 +26,7 @@
       <th nzShowFilter
           [nzFilters]="filters.snagging"
           (nzFilterChange)="filter('snagging', $event)"
-          nzSortKey="snagging">{{761 | statusName | i18n}}</th>
+          nzSortKey="snagging">{{761 | i18nRow:'statuses' | async | i18n}}</th>
       <th nzShowFilter
           [nzFilters]="filters.tug"
           (nzFilterChange)="filter('tug', $event)"
@@ -63,18 +63,18 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="{{data.weatherId | weatherIcon | xivapiIcon}}"
                nz-tooltip
-               [nzTooltipTitle]="data.weatherId | weatherName | i18n"
-               alt="{{data.weatherId | weatherName | i18n}}">
-          <div>{{data.weatherId | weatherName | i18n}}</div>
+               [nzTooltipTitle]="data.weatherId | i18nRow:'weathers' | i18n"
+               alt="{{data.weatherId | i18nRow:'weathers' | i18n}}">
+          <div>{{data.weatherId | i18nRow:'weathers' | i18n}}</div>
         </div>
       </td>
       <td>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="{{data.previousWeatherId | weatherIcon | xivapiIcon}}"
                nz-tooltip
-               [nzTooltipTitle]="data.previousWeatherId | weatherName | i18n"
-               alt="{{data.previousWeatherId | weatherName | i18n}}">
-          <div>{{data.previousWeatherId | weatherName | i18n}}</div>
+               [nzTooltipTitle]="data.previousWeatherId | i18nRow:'weathers' | i18n"
+               alt="{{data.previousWeatherId | i18nRow:'weathers' | i18n}}">
+          <div>{{data.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
         </div>
       </td>
     </tr>

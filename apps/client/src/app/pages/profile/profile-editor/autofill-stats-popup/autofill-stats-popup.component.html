@@ -14,7 +14,7 @@
               <i *ngIf="entry.done" nz-icon nzType="check"></i>
               <i *ngIf="!entry.done" nz-icon nzType="loading"></i>
             </div>
-            <div>{{entry.job | jobName | i18n}}</div>
+            <div>{{entry.job | i18nRow:'jobName' | i18n}}</div>
           </div>
         </ng-template>
       </nz-list-item>

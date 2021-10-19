@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject, of } from 'rxjs';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
 
 @Injectable({ providedIn: 'root' })
 export class I18nToolsService {
   private readonly defaultLang = 'en' as const;
   public readonly currentLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.defaultLang);
 
-  constructor(private translator: TranslateService) {
+  constructor(private translator: TranslateService, private lazyData: LazyDataFacade) {
     // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
     // No memory leaks :)
     this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));
@@ -27,6 +28,16 @@ export class I18nToolsService {
       })
     );
   };
+
+  public getNameObservable(entry: LazyDataI18nKey, id: number): Observable<string> {
+    return this.currentLang$.pipe(
+      switchMap(() => {
+        return this.lazyData.getI18nName(entry, id).pipe(
+          map(name => this.getName(name))
+        );
+      })
+    );
+  }
 
   public getName(i18nName: I18nName, item?: CustomItem): string {
     if (i18nName === undefined) {

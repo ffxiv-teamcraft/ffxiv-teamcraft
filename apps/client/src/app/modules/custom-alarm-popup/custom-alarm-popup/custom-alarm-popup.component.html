@@ -51,7 +51,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select *ngIf="maps$ | async as maps; else loading" formControlName="mapId" nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | placeName | i18n"
+        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | i18nRow:'places' | i18n"
                    [nzValue]="map.ID"></nz-option>
       </nz-select>
       <ng-template #loading>
@@ -63,7 +63,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathers" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n"
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | i18nRow:'weathers' | i18n"
                    [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>
@@ -72,7 +72,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Weather_from' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="weathersFrom" nzAllowClear nzMode="multiple">
-        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | weatherName | i18n"
+        <nz-option *ngFor="let weather of mapWeathers$ | async" [nzLabel]="weather | i18nRow:'weathers' | i18n"
                    [nzValue]="weather"></nz-option>
       </nz-select>
     </nz-form-control>

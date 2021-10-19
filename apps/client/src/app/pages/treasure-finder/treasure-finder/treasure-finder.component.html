@@ -18,7 +18,7 @@
                    [ngModel]="map$ | async"
                    (ngModelChange)="map$.next($event)"
                    nzShowSearch class="select-box">
-          <nz-option *ngFor="let map of maps" [nzLabel]="map.placename_id | placeName | i18n"
+          <nz-option *ngFor="let map of maps" [nzLabel]="map.placename_id | i18nRow:'places' | i18n"
                      [nzValue]="map.id"></nz-option>
         </nz-select>
       </nz-form-control>

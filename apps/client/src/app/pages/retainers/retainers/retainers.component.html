@@ -52,7 +52,7 @@
             {{'RETAINERS.X_items' | translate:{ amount: retainer.itemCount } }}
           </div>
           <div nz-col nzMd="8" fxLayout="row" fxLayoutAlign="flex-start center">
-            {{retainer.task | ventureName | i18n}}
+            {{retainer.task | i18nRow:'ventures' | i18n}}
           </div>
           <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
             <ng-container *ngIf="retainer.taskDone; else taskCompleteDate">

@@ -16,7 +16,7 @@
     <div fxFlex="1 1 auto">
     </div>
     <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-         [value]="patch | xivapiL12n: 'patchs'"></app-i18n-display>
+                      [value]="patch | xivapiL12n: 'patchs'"></app-i18n-display>
   </div>
 
   <nz-divider [nzText]="'DB.PATCH.CONTENT.Title' | translate" nzOrientation="left"></nz-divider>
@@ -32,9 +32,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | achievementName | i18n">
+                [nzTitle]="entry | i18nRow:'achievements' | i18n">
                 <ng-template #avatar>
-                  <img [src]="entry | achievementIcon | xivapiIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'achievements':'icon' | async | xivapiIcon" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="achievement"></app-db-button>
@@ -104,9 +104,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | fate | i18n">
+                [nzTitle]="entry | i18nRow:'fates' | i18n">
                 <ng-template #avatar>
-                  <img [src]="(entry | fate)?.icon | xivapiIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'fates':'icon' | async | xivapiIcon" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="fate"></app-db-button>
@@ -176,7 +176,7 @@
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
-                [nzTitle]="entry | leveName | i18n">
+                [nzTitle]="entry | i18nRow:'leves' | i18n">
                 <ng-template #more>
                   <app-db-button [id]="entry" type="leve"></app-db-button>
                 </ng-template>
@@ -196,7 +196,7 @@
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
-                [nzTitle]="entry | placeName | i18n">
+                [nzTitle]="entry | i18nRow:'places' | i18n">
                 <ng-template #more>
                   <app-db-button *ngIf="(entry | mapId) > 0" [id]="entry | mapId" type="map"></app-db-button>
                 </ng-template>
@@ -216,7 +216,7 @@
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
-                [nzTitle]="entry | mobName | i18n">
+                [nzTitle]="entry | i18nRow:'mobs' | i18n">
                 <ng-template #more>
                   <app-db-button [id]="entry" type="mob"></app-db-button>
                 </ng-template>
@@ -236,7 +236,7 @@
           <ng-template #template let-entry>
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
-                [nzTitle]="entry | npcName | i18n">
+                [nzTitle]="entry | i18nRow:'npcs' | i18n">
                 <ng-template #more>
                   <app-db-button [id]="entry" type="npc"></app-db-button>
                 </ng-template>
@@ -257,9 +257,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | questName | i18n">
+                [nzTitle]="entry | i18nRow:'quests' | i18n">
                 <ng-template #avatar>
-                  <img [src]="entry | questIcon | xivapiIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'quests':'icon' | async | xivapiIcon" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="quest"></app-db-button>
@@ -281,9 +281,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | statusName | i18n">
+                [nzTitle]="entry | i18nRow:'statuses' | async | i18n">
                 <ng-template #avatar>
-                  <img [src]="entry | statusIcon | xivapiIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="status"></app-db-button>
@@ -305,9 +305,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | traitName | i18n">
+                [nzTitle]="entry | i18nRow:'traits' | i18n">
                 <ng-template #avatar>
-                  <img [src]="entry | traitIcon | xivapiIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'traits':'icon' | async | xivapiIcon" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="trait"></app-db-button>

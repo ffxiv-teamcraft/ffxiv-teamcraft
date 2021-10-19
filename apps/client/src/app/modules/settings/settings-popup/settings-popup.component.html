@@ -313,7 +313,7 @@
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Starting_place' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Starting_place_explain' | translate">
           <nz-select [(ngModel)]="settings.startingPlace">
-            <nz-option *ngFor="let place of startingPlaces" [nzLabel]="place.placenameId | placeName | i18n"
+            <nz-option *ngFor="let place of startingPlaces" [nzLabel]="place.placenameId | i18nRow:'places' | i18n"
                        [nzValue]="place.id"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -326,7 +326,7 @@
                      nzShowSearch
                      style="width: 100%">
             <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -342,7 +342,7 @@
             nzMode="multiple"
             style="width: 100%">
             <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>

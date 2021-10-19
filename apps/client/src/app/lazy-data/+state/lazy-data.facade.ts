@@ -18,6 +18,7 @@ import { LoadingStatus } from '../data-entry-status';
 import { LazyRecipe } from '../model/lazy-recipe';
 import { XivapiPatch } from '../../core/data/model/xivapi-patch';
 import { HttpClient } from '@angular/common/http';
+import { mapIds } from '../../core/data/sources/map-ids';
 
 @Injectable({
   providedIn: 'root'
@@ -141,14 +142,20 @@ export class LazyDataFacade {
    * @param id the id to get the name for
    * @param extendedProperty if we want to grab data for a sub field (like "description" for instance)
    */
-  public getI18nName<K extends LazyDataI18nKey>(propertyKey: K, id: number, extendedProperty?: keyof Extract<LazyDataEntries[K], I18nName>): Observable<I18nName> {
+  public getI18nName<K extends LazyDataI18nKey>(propertyKey: K, id: number, extendedProperty?: keyof Extract<LazyDataEntries[K], I18nName>): Observable<I18nName | null> {
     return this.settings.region$.pipe(
       switchMap(region => {
         return this.getRow(propertyKey, id).pipe(
           map(row => {
+            if (!row) {
+              return null;
+            }
             return this.normalizeI18nName(extendedProperty ? row[extendedProperty as string] : row);
           }),
           switchMap(row => {
+            if (!row) {
+              return of(null);
+            }
             switch (region) {
               case Region.Global:
                 return of(row);
@@ -180,6 +187,24 @@ export class LazyDataFacade {
   /**
    * PUBLIC UTILITY METHODS
    */
+
+  public getMapId(name: string): number {
+    const result = mapIds.find((m) => m.name === name);
+    if (result === undefined) {
+      if (name === 'Gridania') {
+        return 2;
+      }
+      if (name.startsWith('Eulmore - ')) {
+        return 498;
+      }
+      // Diadem
+      if (name === 'The Diadem') {
+        return 538;
+      }
+      return -1;
+    }
+    return result.id;
+  }
 
   public getWorldName(world: string): Observable<I18nName> {
     return of({

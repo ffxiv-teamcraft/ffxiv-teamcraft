@@ -70,8 +70,8 @@
             <div fxFlexOrder="3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
                 <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150">
-                  <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
-                    <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
+                  <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | i18nRow:'races' | i18n">
+                    <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
                   </nz-option-group>
                 </nz-select>
                 <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
@@ -99,7 +99,7 @@
                   <tbody>
                   <tr *ngFor="let row of stats">
                     <td class="table-cell first">
-                      {{row.id | baseParamName | i18n}}
+                      {{row.id | i18nRow:'baseParams' | i18n}}
                     </td>
                     <td class="amount table-cell">
                       {{row.value | number:'1.0-0':translate.currentLang}}

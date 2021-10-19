@@ -100,7 +100,7 @@
                     </nz-tag>
                   </div>
                   <div nz-col [nzMd]="stats.length > 3 ? 2 : 4" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-                    <b>{{stat.id | baseParamName | i18n}}</b>
+                    <b>{{stat.id | i18nRow:'baseParams' | i18n}}</b>
                   </div>
                 </div>
               </ng-template>
@@ -143,8 +143,8 @@
         </nz-select>
         <div fxLayout="row" fxLayoutAlign="flex-start bottom" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
           <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="100" nzSize="small">
-            <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
-              <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
+            <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | i18nRow:'races' | i18n">
+              <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | i18nRow:'tribes' | i18n"></nz-option>
             </nz-option-group>
           </nz-select>
           <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>

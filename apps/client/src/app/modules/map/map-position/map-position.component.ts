@@ -3,7 +3,6 @@ import { Vector2 } from '../../../core/tools/vector2';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MapComponent } from '../map/map.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { distinctUntilChanged, filter, first, switchMap } from 'rxjs/operators';
 
@@ -45,7 +44,7 @@ export class MapPositionComponent {
   private readonly title$ = combineLatest([this.zoneId$, this.mapId$]).pipe(
     filter(([zoneId, mapId]) => zoneId >= 0 || mapId >= 0),
     distinctUntilChanged(([zoneA, mapA], [zoneB, mapB]) => zoneA === zoneB && mapA === mapB),
-    switchMap(([zoneId, mapId]) => this.i18n.resolveName(this.l12n.getPlace(zoneId >= 0 ? zoneId : mapId)))
+    switchMap(([zoneId, mapId]) => this.i18n.getNameObservable('places', zoneId >= 0 ? zoneId : mapId))
   );
 
   @Input()
@@ -63,7 +62,7 @@ export class MapPositionComponent {
   @Input()
   flexLayoutAlign = 'flex-start center';
 
-  constructor(private dialog: NzModalService, private l12n: LocalizedLazyDataService, private i18n: I18nToolsService) {
+  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
   }
 
   getMarker(): Vector2 {

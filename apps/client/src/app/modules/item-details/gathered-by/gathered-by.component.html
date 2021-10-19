@@ -5,7 +5,7 @@
   <div fxLayout="column" fxLayoutGap="10px">
     <div *ngFor="let node of details.nodes" fxLayout="column" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.id > 0">
-        <div>{{node.zoneId | placeName | i18n}}</div>
+        <div>{{node.zoneId | i18nRow:'places' | i18n}}</div>
         <div [ngSwitch]="node.type">
           <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
           <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>

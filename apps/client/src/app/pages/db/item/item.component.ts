@@ -12,7 +12,6 @@ import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUn
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -356,7 +355,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/quest.png',
           quests: data.item.usedInQuest
         });
-      } else if(lData.usedInQuests[xivapiItem.ID]) {
+      } else if (lData.usedInQuests[xivapiItem.ID]) {
         usedFor.push({
           type: UsedForType.QUEST,
           flex: '1 1 auto',
@@ -611,7 +610,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly xivapi: XivapiService,
     private readonly gt: DataService,
     private readonly l12n: LocalizedDataService,
-    private readonly l12nLazy: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
@@ -639,7 +637,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     const slug$ = this.route.paramMap.pipe(map((params) => params.get('slug') ?? undefined));
     const itemId$ = this.route.paramMap.pipe(map((params) => +params.get('itemId') || undefined));
     const correctSlug$ = itemId$.pipe(
-      switchMap((itemId) => (!itemId ? of(undefined) : this.i18n.resolveName(this.l12nLazy.getItem(itemId)))),
+      switchMap((itemId) => (!itemId ? of(undefined) : this.i18n.getNameObservable('items', itemId))),
       map((name) => name?.split(' ').join('-'))
     );
 

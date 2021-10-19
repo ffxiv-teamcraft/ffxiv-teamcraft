@@ -6,10 +6,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiNpc.Icon | xivapiIcon" alt="{{xivapiNpc.ID | npcName | i18n}}"
+          <img [src]="xivapiNpc.Icon | xivapiIcon" alt="{{xivapiNpc.ID | i18nRow:'npcs' | i18n}}"
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiNpc.ID | npcName | i18n}}</h2>
+            <h2 class="item-name">{{xivapiNpc.ID | i18nRow:'npcs' | i18n}}</h2>
             <div *ngIf="xivapiNpc.Title" class="item-kind">
               <span *ngIf="xivapiNpc.Title" [innerHTML]="xivapiNpc | xivapiL12n: 'npcTitles':'Title' | i18n | xivUIText"></span>
             </div>
@@ -29,7 +29,7 @@
       <div fxFlex="1 1 auto">
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiNpc.ID | npcName"></app-i18n-display>
+                        [value]="xivapiNpc.ID | i18nRow:'npcs'"></app-i18n-display>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiNpc.ID" type="npc"></app-db-comments>
 
@@ -37,13 +37,13 @@
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-      <nz-card *ngIf="(xivapiNpc.ID | npcName)?.position as npcPosition" [nzTitle]="title"
+      <nz-card *ngIf="(xivapiNpc.ID | i18nRow:'npcs')?.position as npcPosition" [nzTitle]="title"
                class="details-card"
                fxFlex="1 1 30%"
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{npcPosition.zoneid | placeName |i18n}} - X:{{npcPosition.x | number}} Y:{{npcPosition.y | number}}
+            {{npcPosition.zoneid | i18nRow:'places' |i18n}} - X:{{npcPosition.x | number}} Y:{{npcPosition.y | number}}
           </div>
         </ng-template>
         <app-map [mapId]="npcPosition.map" [markers]="[{x: npcPosition.x, y: npcPosition.y}]"></app-map>
@@ -63,12 +63,12 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="questAvatar"
-                [nzTitle]="quest.ID | questName | i18n">
+                [nzTitle]="quest.ID | i18nRow:'quests' | i18n">
                 <ng-template #questAvatar>
                   <a routerLink="/db/{{translate.currentLang}}/quest/{{quest.ID}}">
                     <img [src]="quest.Icon | xivapiIcon" class="img-icon round-icon">
                   </a>
-                  <a routerLink="/db/{{translate.currentLang}}/quest/{{quest.ID}}">{{quest.ID | questName | i18n}}</a>
+                  <a routerLink="/db/{{translate.currentLang}}/quest/{{quest.ID}}">{{quest.ID | i18nRow:'quests' | i18n}}</a>
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="quest.ID" type="quest"></app-db-button>
@@ -93,13 +93,13 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="leveAvatar"
-                [nzTitle]="leve | leveName | i18n"
-                nzDescription="{{(leve | leveName).job | i18n}} {{(leve | leveName).lvl}}">
+                [nzTitle]="leve | i18nRow:'leves' | i18n"
+                nzDescription="{{(leve | i18nRow:'leves').job | i18n}} {{(leve | i18nRow:'leves').lvl}}">
                 <ng-template #leveAvatar>
                   <a routerLink="/db/{{translate.currentLang}}/leve/{{leve}}">
                     <img class="img-icon round-icon" src="./assets/icons/leve.png">
                   </a>
-                  <a routerLink="/db/{{translate.currentLang}}/leve/{{leve}}">{{leve | leveName | i18n}}</a>
+                  <a routerLink="/db/{{translate.currentLang}}/leve/{{leve}}">{{leve | i18nRow:'leves' | i18n}}</a>
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="leve" type="leve"></app-db-button>
@@ -121,11 +121,11 @@
         <nz-list [nzDataSource]="gtData.npc.alts" [nzItemLayout]="'horizontal'"
                  [nzRenderItem]="npcTemplate">
           <ng-template #npcTemplate let-npc>
-            <nz-list-item *ngIf="npc | npcName" [nzContent]="more">
+            <nz-list-item *ngIf="npc | i18nRow:'npcs'" [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="npcAvatar"
-                [nzDescription]="(npc | npcName)?.position?.zoneid | placeName | i18n"
-                [nzTitle]="npc | npcName | i18n">
+                [nzDescription]="(npc | i18nRow:'npcs')?.position?.zoneid | i18nRow:'places' | i18n"
+                [nzTitle]="npc | i18nRow:'npcs' | i18n">
                 <ng-template #npcAvatar>
                   <a routerLink="/db/{{translate.currentLang}}/npc/{{npc}}">
                     <img class="img-icon round-icon" src="./assets/icons/npc.png">

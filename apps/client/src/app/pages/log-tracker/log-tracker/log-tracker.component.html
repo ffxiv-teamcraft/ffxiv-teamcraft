@@ -144,7 +144,7 @@
                   <ng-container *ngFor="let page of tab">
                     <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
                       <ng-template #titleTemplate>
-                    <span>{{ page.divisionId | notebookDivisionName | i18n }}
+                    <span>{{ page.divisionId | i18nRow:'notebookDivision' | i18n }}
                       ({{getDolPageCompletion(page)}})
                     </span>
                       </ng-template>

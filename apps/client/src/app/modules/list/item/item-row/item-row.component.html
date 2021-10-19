@@ -178,7 +178,7 @@
     </ng-container>
     <div *ngIf="layout?.showVendors && (item.vendors || []).length > 0" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <b>
-        {{item.vendors[0].npcId | npcName | i18n}},
+        {{item.vendors[0].npcId | i18nRow:'npcs' | i18n}},
       </b>
       <app-map-position [mapId]="item.vendors[0].mapId"
                         [zoneId]="item.vendors[0].zoneId"

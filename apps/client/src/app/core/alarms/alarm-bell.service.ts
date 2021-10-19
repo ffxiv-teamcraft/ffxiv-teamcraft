@@ -13,9 +13,9 @@ import { PushNotificationsService } from 'ng-push-ivy';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
-import { LazyDataService } from '../data/lazy-data.service';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class AlarmBellService {
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private localizedData: LocalizedDataService, private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
-              private lazyData: LazyDataService, private soundNotificationService: SoundNotificationService) {
+              private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
     this.initBell();
   }
 
@@ -101,10 +101,14 @@ export class AlarmBellService {
             })
           );
       }),
-      first()
-    ).subscribe(alarm => {
+      first(),
+      switchMap(alarm => {
+        return this.lazyData.getRow('itemIcons', alarm.itemId).pipe(
+          map(icon => [alarm, icon])
+        );
+      })
+    ).subscribe(([alarm, icon]: [Alarm, string]) => {
       const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
-      const icon = this.lazyData.data.itemIcons[alarm.itemId];
       const notificationIcon = `https://xivapi.com${icon}`;
       const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
       const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `

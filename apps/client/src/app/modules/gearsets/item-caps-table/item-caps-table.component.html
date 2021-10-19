@@ -8,7 +8,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let row of caps" [class.capped]="row[1] === row[2]" [class.melded]="row[1] !== row[2] && row[1] !== row[3]">
-    <td><b>{{row[0] | baseParamName | i18n}}</b></td>
+    <td><b>{{row[0] | i18nRow:'baseParams' | i18n}}</b></td>
     <td>{{row[1]}}</td>
     <td>{{row[2]}}</td>
   </tr>
