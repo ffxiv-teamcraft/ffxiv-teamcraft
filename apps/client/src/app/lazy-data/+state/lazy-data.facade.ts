@@ -7,7 +7,7 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap }
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
+import { LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
@@ -76,7 +76,7 @@ export class LazyDataFacade {
    * @param id the id of the row you want to load
    * @param fallback fallback value if nothing is found
    */
-  public getRow<K extends LazyDataKey>(propertyKey: K, id: number, fallback?: LazyDataEntries[K]): Observable<LazyDataEntries[K]> {
+  public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: LazyDataEntries[K]): Observable<LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
       // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
       if (propertyKey !== 'extracts' && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 50) {
@@ -226,6 +226,17 @@ export class LazyDataFacade {
     return this.getEntry('jobAbbr').pipe(
       map(abbrs => +Object.keys(abbrs).find(key => abbrs[key].en === abbr))
     );
+  }
+
+  public getI18nItems(): Observable<Record<number, Partial<I18nName>>> {
+    switch (this.settings.region) {
+      case Region.China:
+        return this.getEntry('zhItems');
+      case Region.Korea:
+        return this.getEntry('koItems');
+      default:
+        return this.getEntry('items');
+    }
   }
 
   /**

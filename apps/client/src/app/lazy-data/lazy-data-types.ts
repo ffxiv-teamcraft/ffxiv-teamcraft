@@ -25,5 +25,9 @@ type LazyDataI18nEntries = { [K in keyof LazyData]: LazyData[K] extends I18nElem
 
 export type LazyDataI18nKey = keyof Pick<LazyData, LazyDataI18nEntries>;
 
+type LazyDataRecordEntries = { [K in LazyDataKey]: LazyDataWithExtracts[K] extends Array<any> ? never : K }[LazyDataKey];
+
+export type LazyDataRecordKey = keyof Pick<LazyDataWithExtracts, LazyDataRecordEntries>;
+
 
 

@@ -4,4 +4,5 @@ export interface SpendingEntry {
   rate: number;
   npcs: number[];
   HQ?: boolean;
+  score?: number;
 }

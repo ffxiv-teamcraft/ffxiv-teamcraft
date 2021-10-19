@@ -6,6 +6,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { map, switchMapTo, tap } from 'rxjs/operators';
 import { subMonths } from 'date-fns';
+import { StaticData } from '../../../lazy-data/static-data';
 
 @Component({
   selector: 'app-mappy-dashboard',
@@ -38,7 +39,7 @@ export class MappyDashboardComponent {
           .map(m => {
             const mapNodes = Object.entries<any>(data.nodes)
               .map(([id, n]) => ({ id: +id, ...n }))
-              .filter(n => n.map === m.id && n.items.length > 0 && !this.lazyData.ignoredNodes.includes(n.id));
+              .filter(n => n.map === m.id && n.items.length > 0 && !StaticData.ignoredNodes.includes(n.id));
             const gatheringPoints = gatheringPointsRegistry[m.id] || [];
             return {
               ...m,

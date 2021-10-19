@@ -7,9 +7,6 @@ import { XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { filter, first, map, startWith } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
-import { extractsHash } from '../../../environments/extracts-hash';
-import { I18nName } from '../../model/common/i18n-name';
-import { ListRow } from '../../modules/list/model/list-row';
 import { Region } from '../../modules/settings/region.enum';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
@@ -23,42 +20,10 @@ import { XivapiPatch } from './model/xivapi-patch';
   providedIn: 'root'
 })
 export class LazyDataService {
-  public dohdolMeldingRates = {
-    hq: [
-      // Sockets
-      //2, 3,  4,  5    // Tier
-      [90, 48, 28, 16], // I
-      [82, 44, 26, 16], // II
-      [70, 38, 22, 14], // III
-      [58, 32, 20, 12], // IV
-      [17, 10, 7, 5], // V
-      [17, 0, 0, 0], // VI
-      [17, 10, 7, 5], // VII
-      [17, 0, 0, 0] // VIII
-    ],
-    nq: [
-      // Sockets
-      //2, 3,  4,  5    // Tier
-      [80, 40, 20, 10], // I
-      [72, 36, 18, 10], // II
-      [60, 30, 16, 8], // III
-      [48, 24, 12, 6], // IV
-      [12, 6, 3, 2], // V
-      [12, 0, 0, 0], // VI
-      [12, 6, 3, 2], // VII
-      [12, 0, 0, 0] // VIII
-    ]
-  };
-
-  // List of GatheringPointBase ids that cannot spawn anymore due to various conditions
-  public ignoredNodes = [653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680];
-
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public datacenters: Record<string, string[]> = {};
   public patches: XivapiPatch[] = [];
-
-  protected extracts: Record<number, ListRow> = {};
 
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
@@ -126,28 +91,6 @@ export class LazyDataService {
     return +Object.keys(this.data.maps).find((key) => this.data.maps[key].placename_id === zoneId);
   }
 
-  public getJobAbbrs(): Record<number, I18nName> {
-    return Object.keys(this.data.jobAbbr).reduce((acc, key) => {
-      return {
-        ...acc,
-        [key]: {
-          ...this.data.jobAbbr[key],
-          ko: this.data.koJobAbbr[key]?.ko || this.data.jobAbbr[key].en,
-          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en
-        }
-      };
-    }, {});
-  }
-
-  public getJobIdByAbbr(abbr: string): number {
-    const abbrs = this.getJobAbbrs();
-    return +(
-      Object.keys(abbrs).find((key) => {
-        return abbrs[key].en.toLowerCase() === abbr.toLowerCase();
-      }) || -1
-    );
-  }
-
   public getItemLeveIds(itemId: number): number[] {
     return Object.entries<any>(this.data.leves)
       .filter(([, leve]) => {
@@ -181,10 +124,6 @@ export class LazyDataService {
     );
   }
 
-  public getRecipeSync(id: string): Craft {
-    return this.getRecipes().find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
-  }
-
   public getItemRecipeSync(id: string): Craft {
     return this.getRecipes().find((r) => (r as any).result.toString() === id.toString());
   }
@@ -198,10 +137,6 @@ export class LazyDataService {
       default:
         return this.data.recipes;
     }
-  }
-
-  public getExtract(id: number): ListRow {
-    return this.extracts[id];
   }
 
   public get allItems(): any {
@@ -252,13 +187,10 @@ export class LazyDataService {
         this.loaded$.next(true);
       });
 
-    const extractsPath = `/assets/extracts/extracts${environment.production ? '.' + extractsHash : ''}.json`;
-
-    combineLatest([this.xivapi.getDCList(), this.getData<XivapiPatch[]>('https://xivapi.com/patchlist'), this.getData(extractsPath)]).subscribe(
-      ([dcList, patches, extracts]) => {
+    combineLatest([this.xivapi.getDCList(), this.getData<XivapiPatch[]>('https://xivapi.com/patchlist')]).subscribe(
+      ([dcList, patches]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches;
-        this.extracts = extracts;
         xivapiAndExtractsReady$.next();
         xivapiAndExtractsReady$.complete();
       }

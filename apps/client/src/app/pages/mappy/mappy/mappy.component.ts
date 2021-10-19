@@ -11,6 +11,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { StaticData } from '../../../lazy-data/static-data';
 
 @Component({
   selector: 'app-mappy',
@@ -39,7 +40,7 @@ export class MappyComponent extends TeamcraftComponent {
             const mapData = data.maps[mapId];
             const mapNodes = Object.entries<any>(data.nodes)
               .map(([id, n]) => ({ id: +id, ...n }))
-              .filter(n => n.map === mapId && n.items.length > 0 && !this.lazyData.ignoredNodes.includes(n.id));
+              .filter(n => n.map === mapId && n.items.length > 0 && !StaticData.ignoredNodes.includes(n.id));
             return {
               entries,
               updates: updates[mapId],
