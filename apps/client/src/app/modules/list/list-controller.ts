@@ -16,7 +16,7 @@ import { CraftedBy } from './model/crafted-by';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { DataService } from '../../core/api/data.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { List } from './model/list';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 

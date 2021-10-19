@@ -1,6 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { FirestoreStorage } from '../../../core/database/storage/firestore/firestore-storage';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
 import { DbComment } from './model/db-comment';

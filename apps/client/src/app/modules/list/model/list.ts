@@ -6,7 +6,7 @@ import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { ListColor } from './list-color';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { SettingsService } from '../../settings/settings.service';
 
 export class List extends DataWithPermissions {

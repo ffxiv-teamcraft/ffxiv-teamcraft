@@ -20,7 +20,7 @@
                                  type="number"></nz-input-number>
                 <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
                 <button (click)="updateAmount(item, 0)" *ngIf="permissionLevel.value > 10" [disabled]="permissionLevel.value < 30" [nzShape]="'circle'"
-                        [nzType]="'danger'" nz-button>
+                        nzDanger nz-button>
                   <i nz-icon nzType="delete"></i>
                 </button>
               </div>
@@ -121,7 +121,7 @@
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async)?.value > 10"
                   [disabled]="(permissionLevel$ | async)?.value < 40 || _list.hasCommission" [nzShape]="'circle'"
                   [nzPopconfirmTitle]="'LIST.BUTTONS.Delete_warning' | translate"
-                  [nzType]="'danger'"
+                  nzDanger
                   nz-button nz-popconfirm>
             <i nz-icon nzType="delete"></i></button>
           <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"

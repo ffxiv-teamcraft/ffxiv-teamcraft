@@ -41,8 +41,6 @@ export class I18nPipe implements PipeTransform, OnDestroy {
         this.sub = (input as Observable<I18nName>).subscribe(i18nName => {
           this.setCurrentValue(this.i18n.getName(i18nName));
         });
-      } else {
-        this.setCurrentValue(input?.toString());
       }
       this.input = input;
     }

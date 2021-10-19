@@ -1,11 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { LogTracking } from '../../model/user/log-tracking';
 import { concat, from, Observable } from 'rxjs';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { chunk } from 'lodash';
 
 interface MarkAsDoneEntry {

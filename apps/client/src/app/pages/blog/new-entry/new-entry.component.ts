@@ -11,7 +11,7 @@ import { BlogPostNotification } from '../../../model/notification/blog-post-noti
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import * as _ from 'lodash';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-new-entry',

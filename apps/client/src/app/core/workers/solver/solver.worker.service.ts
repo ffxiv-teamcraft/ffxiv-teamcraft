@@ -16,7 +16,7 @@ export class SolverWorkerService {
   constructor() {
     if (typeof Worker !== 'undefined') {
       // Create a new
-      const worker = new Worker('./solver.worker', { type: 'module' });
+      const worker = new Worker(new URL('./solver.worker', import.meta.url), { type: 'module' });
       worker.onmessage = ({ data }) => {
         this._result$.next(CraftingActionsRegistry.deserializeRotation(data));
       };

@@ -5,10 +5,10 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, map, takeUntil, tap } from 'rxjs/operators';
-import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import FieldValue = firebase.firestore.FieldValue;
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {

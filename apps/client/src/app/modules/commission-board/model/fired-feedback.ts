@@ -1,5 +1,5 @@
 import { FiredReason } from './fired-reason';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export interface FiredFeedback {
   commissionId: string;

@@ -10,7 +10,7 @@
             <h2 class="item-name">{{trait | xivapiL12n: 'traits' | i18n}}</h2>
             <div class="item-kind" fxLayout="row" fxLayoutGap="5px">
               <div>Lvl {{trait.Level}}</div>
-              <div [innerHTML]="trait.ClassJob | xivapiL12n: 'i18nRow:'jobAbbr'':'Abbreviation' | i18n"></div>
+              <div [innerHTML]="trait.ClassJob | xivapiL12n: 'jobAbbr':'Abbreviation' | i18n"></div>
             </div>
             <div *ngIf="trait.GamePatch" class="patch">
               {{trait.GamePatch | xivapiL12n: 'patchs' | i18n}}

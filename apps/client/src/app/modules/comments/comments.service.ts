@@ -1,6 +1,6 @@
 import { ResourceComment } from './resource-comment';
 import { FirestoreRelationalStorage } from '../../core/database/storage/firestore/firestore-relational-storage';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';

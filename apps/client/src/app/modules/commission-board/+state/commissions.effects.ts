@@ -9,11 +9,11 @@ import { distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatest
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest, of } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { TranslateService } from '@ngx-translate/core';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 

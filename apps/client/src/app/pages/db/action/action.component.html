@@ -10,7 +10,7 @@
             <h2 class="item-name">{{action | xivapiL12n: 'actions' | i18n}}</h2>
             <div *ngIf="action.IsPlayerAction || action.ID > 99999" class="item-kind" fxLayout="row" fxLayoutGap="5px">
               <div>Lvl {{action.ClassJobLevel}}</div>
-              <div [innerHTML]="action.ClassJob | xivapiL12n: 'i18nRow:'jobAbbr'':'Abbreviation' | i18n"></div>
+              <div [innerHTML]="action.ClassJob | xivapiL12n: 'Abbreviation' | i18n"></div>
               <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiL12n: 'actionCategories' | i18n"></div>
             </div>
             <div *ngIf="action.GamePatch" class="patch">

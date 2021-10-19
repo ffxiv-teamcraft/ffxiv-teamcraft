@@ -136,7 +136,7 @@
       </ng-container>
       <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
               [nzShape]="'circle'" [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
-              [nzType]="'danger'" nz-button
+              nzDanger nz-button
               nz-popconfirm>
         <i nz-icon nzType="desktop"></i>
       </button>

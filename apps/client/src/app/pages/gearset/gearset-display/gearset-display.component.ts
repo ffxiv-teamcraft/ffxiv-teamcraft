@@ -27,7 +27,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 
 @Component({

@@ -1,7 +1,7 @@
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { CommissionStatus } from './commission-status';
 import { CommissionTag } from './commission-tag';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { CommissionRating } from './commission-rating';
 
 export class Commission extends DataWithPermissions {

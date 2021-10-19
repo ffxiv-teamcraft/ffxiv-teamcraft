@@ -18,7 +18,7 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';

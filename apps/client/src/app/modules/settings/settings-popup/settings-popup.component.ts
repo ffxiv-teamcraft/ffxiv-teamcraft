@@ -3,7 +3,7 @@ import { SettingsService } from '../settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { filter, first, map, switchMap } from 'rxjs/operators';

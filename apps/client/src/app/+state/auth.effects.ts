@@ -30,7 +30,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User, UserCredential } from '@firebase/auth-types';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';

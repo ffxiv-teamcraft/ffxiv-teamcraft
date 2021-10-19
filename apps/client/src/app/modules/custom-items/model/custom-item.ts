@@ -1,7 +1,7 @@
 import { ListRow } from '../../list/model/list-row';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export class CustomItem extends ListRow {
 

@@ -2,11 +2,11 @@ import { Injectable, NgZone } from '@angular/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CommissionProfile } from '../../model/user/commission-profile';
 import { FiredReason } from '../../modules/commission-board/model/fired-reason';
 import { Observable } from 'rxjs';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { ResignedReason } from '../../modules/commission-board/model/resigned-reason';
 
 @Injectable({
