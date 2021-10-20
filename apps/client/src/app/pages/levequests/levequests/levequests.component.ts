@@ -14,7 +14,6 @@ import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Levequest } from '../../../model/search/levequest';
 import { DataService } from '../../../core/api/data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -83,9 +82,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private dataService: DataService, private lazyData: LazyDataService,
-              private auth: AuthFacade, private settings: SettingsService,
-              private platformService: PlatformService, private ipc: IpcService) {
+              private dataService: DataService, private auth: AuthFacade,
+              private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService) {
     super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }

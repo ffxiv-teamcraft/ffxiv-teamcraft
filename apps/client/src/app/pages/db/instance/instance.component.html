@@ -6,10 +6,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | instanceName | i18n}}"
+          <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | i18nRow:'instances' | i18n}}"
                class="item-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiInstance.ID | instanceName | i18n}}</h2>
+            <h2 class="item-name">{{xivapiInstance.ID | i18nRow:'instances' | i18n}}</h2>
             <div *ngIf="xivapiInstance.ContentType" class="item-kind">
               {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
             </div>
@@ -31,7 +31,7 @@
         <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiInstance | instanceName"></app-i18n-display>
+                        [value]="xivapiInstance | i18nRow:'instances'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">

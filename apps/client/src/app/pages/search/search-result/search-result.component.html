@@ -88,7 +88,7 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <img [src]="row.icon | xivapiIcon" alt="">
-      <div>{{row.id | instanceName | i18n}}</div>
+      <div>{{row.id | i18nRow:'instances' | i18n}}</div>
       <app-db-button [id]="row.id" type="instance"></app-db-button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">

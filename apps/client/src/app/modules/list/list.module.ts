@@ -65,33 +65,34 @@ import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.compone
 import { MogstationExtractor } from './data/extractor/mogstation-extractor';
 import { QuestsExtractor } from './data/extractor/quests-extractor';
 import { AchievementsExtractor } from './data/extractor/achievements-extractor';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
-  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: AchievementsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: AchievementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
-    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataService],
+    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataFacade],
     multi: true
   },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataService, HttpClient], multi: true },
-  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataFacade, HttpClient], multi: true },
+  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, GatheringNodesService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true }
+  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true }
 ];
 
 @NgModule({

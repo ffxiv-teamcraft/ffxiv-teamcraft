@@ -38,6 +38,8 @@ import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { environment } from '../../../../environments/environment';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-item',
@@ -111,15 +113,28 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         used: 0,
         yield: 1
       };
-      return this.extractor.addDataToItem(mockRow, data).pipe(
-        switchMap((item: any) => {
-          item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
-          if (item.canBeGathered) {
-            item.isDoneInLog = logTracking?.gathering.includes(item.id);
-          }
-          return this.handleAdditionalData(item, data, xivapiItem);
-        })
-      );
+      if (!environment.production) {
+        // Useful for debugging extractors
+        return this.extractor.addDataToItem(mockRow, data).pipe(
+          switchMap((item: any) => {
+            item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+            if (item.canBeGathered) {
+              item.isDoneInLog = logTracking?.gathering.includes(item.id);
+            }
+            return this.handleAdditionalData(item, data, xivapiItem);
+          })
+        );
+      } else {
+        return this.lazyDataFacade.getRow('extracts', data.item.id).pipe(
+          switchMap((item: any) => {
+            item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+            if (item.canBeGathered) {
+              item.isDoneInLog = logTracking?.gathering.includes(item.id);
+            }
+            return this.handleAdditionalData(item, data, xivapiItem);
+          })
+        );
+      }
     }),
     map(data => {
       if (data.id > 1 && data.id < 19) {
@@ -622,6 +637,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly rotationPicker: RotationPickerService,
     private readonly attt: ATTTService,
     private readonly lazyData: LazyDataService,
+    private readonly lazyDataFacade: LazyDataFacade,
     private readonly dialog: NzModalService,
     public readonly settings: SettingsService,
     private readonly apollo: Apollo,

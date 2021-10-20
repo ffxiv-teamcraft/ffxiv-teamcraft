@@ -222,7 +222,7 @@
                       {{'DB.Experience_points' | translate}} x{{reward.amount}}
                     </div>
                     <div *ngIf="reward.type === 'instance'">
-                      {{reward.id | instanceName | i18n}}
+                      {{reward.id | i18nRow:'instances' | i18n}}
                     </div>
                     <div *ngIf="reward.type === 'action'">
                       {{reward.id | actionName | i18n}}

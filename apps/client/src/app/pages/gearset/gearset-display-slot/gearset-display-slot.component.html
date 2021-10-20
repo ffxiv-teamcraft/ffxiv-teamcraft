@@ -42,7 +42,7 @@
                 {{'GEARSETS.No_materia' | translate}}
               </span>
               <ng-template #materiaDisplay>
-                {{materia | itemName | i18n}} <span *ngIf="materia | materiaBonus as materiaBonus">({{materiaBonus.baseParamId | i18nRow:'baseParams' | i18n}} +{{materiaBonus.value}})</span>
+                {{materia | itemName | i18n}} <span *ngIf="materia | materiaBonus | async as materiaBonus">({{materiaBonus.baseParamId | i18nRow:'baseParams' | i18n}} +{{materiaBonus.value}})</span>
               </ng-template>
             </div>
           </div>

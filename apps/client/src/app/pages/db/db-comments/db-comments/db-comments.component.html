@@ -36,7 +36,7 @@
         <nz-comment-content>
           <p (click)="$event.preventDefault(); handleClick($event)"
              *ngIf="!comment.deleted; else deletedComment"
-             [innerHTML]="comment.message | commentLinks:translate.currentLang:comment"></p>
+             [innerHTML]="comment.message | commentLinks:translate.currentLang:comment | async"></p>
           <ng-template #deletedComment>
             <p><i class="deleted">{{'DB.COMMENTS.Deleted_comment' | translate}}</i></p>
           </ng-template>

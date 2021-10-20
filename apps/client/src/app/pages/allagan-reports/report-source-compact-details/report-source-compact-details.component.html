@@ -28,8 +28,8 @@
   <ng-container *ngSwitchCase="AllaganReportSource.INSTANCE">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <ng-container *ngIf="data.instanceId > 0">
-        <img src="{{data.instanceId | instanceIcon}}" alt="" class="round-icon">
-        <div>{{data.instanceId | instanceName | i18n}}</div>
+        <img src="{{data.instanceId | lazyRow:'instances':'icon' | async}}" alt="" class="round-icon">
+        <div>{{data.instanceId | i18nRow:'instances' | i18n}}</div>
         <app-db-button [id]="data.instanceId" type="instance"></app-db-button>
       </ng-container>
       <ng-container *ngIf="data.instanceId < 0">

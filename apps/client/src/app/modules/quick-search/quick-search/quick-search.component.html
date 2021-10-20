@@ -33,7 +33,7 @@
                   {{row.itemId | itemName | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.INSTANCE">
-                  {{row.id | instanceName | i18n}}
+                  {{row.id | i18nRow:'instances' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.QUEST">
                   {{row.id | i18nRow:'quests' | i18n}}

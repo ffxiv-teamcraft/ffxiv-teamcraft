@@ -2,10 +2,12 @@ import { AbstractExtractor } from './abstract-extractor';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { Observable } from 'rxjs';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { map } from 'rxjs/operators';
 
 export class QuestsExtractor extends AbstractExtractor<number[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
@@ -14,20 +16,24 @@ export class QuestsExtractor extends AbstractExtractor<number[]> {
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   protected canExtract(item: Item): boolean {
     return true;
   }
 
-  protected doExtract(item: Item): number[] {
-    return Object.keys(this.lazyData.data.quests)
-      .filter(key => {
-        const quest = this.lazyData.data.quests[key];
-        return quest.rewards?.some(reward => reward.id === item.id)
-          || quest.trades?.some(t => t.items.some(reward => reward.id === item.id));
+  protected doExtract(item: Item): Observable<number[]> {
+    return this.lazyData.getEntry('quests').pipe(
+      map(quests => {
+        return Object.keys(quests)
+          .filter(key => {
+            const quest = quests[key];
+            return quest.rewards?.some(reward => reward.id === item.id)
+              || quest.trades?.some(t => t.items.some(reward => reward.id === item.id));
+          })
+          .map(key => +key);
       })
-      .map(key => +key);
+    );
   }
 }

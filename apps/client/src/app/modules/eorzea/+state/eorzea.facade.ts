@@ -4,7 +4,6 @@ import { EorzeaPartialState } from './eorzea.reducer';
 import { AddStatus, RemoveStatus, SetBait, SetMap, SetPcapWeather, SetStatuses, SetZone } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
 import { debounceTime, filter, first, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { WeatherService } from '../../../core/eorzea/weather.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { combineLatest, of } from 'rxjs';
@@ -87,7 +86,6 @@ export class EorzeaFacade {
   );
 
   constructor(private store: Store<EorzeaPartialState>,
-              private lazyData: LazyDataService,
               private weatherService: WeatherService,
               private etime: EorzeanTimeService,
               private ipc: IpcService,

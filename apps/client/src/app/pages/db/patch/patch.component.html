@@ -128,9 +128,9 @@
             <nz-list-item [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="avatar"
-                [nzTitle]="entry | instanceName | i18n">
+                [nzTitle]="entry | i18nRow:'instances' | i18n">
                 <ng-template #avatar>
-                  <img [src]="entry | instanceIcon" alt="" class="img-icon">
+                  <img [src]="entry | lazyRow:'instances':'icon' | async" alt="" class="img-icon">
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="entry" type="instance"></app-db-button>

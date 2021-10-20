@@ -7,7 +7,6 @@ import * as CommissionsActions from './commissions.actions';
 import { commissionLoaded, commissionsLoaded } from './commissions.actions';
 import { distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest, of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -16,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 import firebase from 'firebase/compat/app';
 import { Router } from '@angular/router';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable()
 export class CommissionsEffects {
@@ -102,14 +102,19 @@ export class CommissionsEffects {
             filter(data => !!data),
             map(partialCommission => {
               return [action, char, userId, partialCommission];
+            }),
+            switchMap(([a, c, uid, partialCommission]) => {
+              return this.lazyData.getDatacenterForServer(char.Server).pipe(
+                map(dc => [a, c, uid, partialCommission, dc])
+              );
             })
           );
       }),
-      switchMap(([{ list, name }, character, userId, partialCommission]) => {
+      switchMap(([{ list, name }, character, userId, partialCommission, dc]) => {
         const commission = new Commission();
         commission.authorId = userId;
         commission.server = character.Server;
-        commission.datacenter = this.lazyData.getDataCenter(character.Server);
+        commission.datacenter = dc;
         commission.createdAt = firebase.firestore.Timestamp.now();
         commission.bump = firebase.firestore.Timestamp.now();
         Object.assign(commission, partialCommission);
@@ -140,7 +145,7 @@ export class CommissionsEffects {
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private commissionService: CommissionService, private listsFacade: ListsFacade,
-              private lazyData: LazyDataService, private afs: AngularFirestore,
+              private lazyData: LazyDataFacade, private afs: AngularFirestore,
               private modalService: NzModalService, private translate: TranslateService,
               private router: Router) {
   }

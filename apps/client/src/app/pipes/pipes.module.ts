@@ -4,7 +4,6 @@ import { CeilPipe } from './pipes/ceil.pipe';
 import { IconPipe } from './pipes/icon.pipe';
 import { ActionIconPipe } from './pipes/action-icon.pipe';
 import { AbsolutePipe } from './pipes/absolute.pipe';
-import { InstanceIconPipe } from './pipes/instance-icon.pipe';
 import { IfMobilePipe } from './pipes/if-mobile.pipe';
 import { NodeTypeIconPipe } from './pipes/node-type-icon.pipe';
 import { ClosestAetherytePipe } from './pipes/closest-aetheryte.pipe';
@@ -24,7 +23,6 @@ import { PermissionLevelPipe } from './pipes/permission-level.pipe';
 import { ElementIconPipe } from './pipes/element-icon.pipe';
 import { FishEyesDurationPipe } from './pipes/fish-eyes-duration.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
-import { InstanceNamePipe } from './pipes/instance-name.pipe';
 import { ShopNamePipe } from './pipes/shop-name.pipe';
 import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
 import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
@@ -58,7 +56,6 @@ const pipes = [
   ActionIconPipe,
   ActionNamePipe,
   AbsolutePipe,
-  InstanceIconPipe,
   IfMobilePipe,
   NodeTypeIconPipe,
   NodeTypeNamePipe,
@@ -78,7 +75,6 @@ const pipes = [
   ElementIconPipe,
   FishEyesDurationPipe,
   KeysPipe,
-  InstanceNamePipe,
   ShopNamePipe,
   AetheryteNamePipe,
   CharacterAvatarPipe,

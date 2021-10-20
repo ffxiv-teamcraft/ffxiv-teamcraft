@@ -13,7 +13,7 @@ export interface XivapiI18nName {
   Name_fr: string
 }
 
-type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
+export type I18nElement = Record<number, (I18nName | { name: I18nName } | XivapiI18nName)>;
 
 type LazyDataEntryElement<K extends LazyDataKey> =
   LazyDataWithExtracts[K] extends readonly (infer ElementType)[] ? ElementType :

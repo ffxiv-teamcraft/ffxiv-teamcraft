@@ -647,7 +647,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+                      <img [src]="source.data[0].icon | lazyRow:'instances':'icon' | async" class="img-icon round-icon">
                       <div>
                         {{'DB.Dungeons' | translate}}
                       </div>

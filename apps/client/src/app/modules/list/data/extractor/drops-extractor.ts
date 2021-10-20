@@ -5,17 +5,19 @@ import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { monsterDrops } from '../../../../core/data/sources/monster-drops';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { uniqBy } from 'lodash';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   getDataType(): DataType {
@@ -26,60 +28,66 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
     return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): Drop[] {
-    const drops: Drop[] = [];
-    const lazyDrops = this.lazyData.data.dropSources[item.id];
-    if (lazyDrops) {
-      lazyDrops
-        .forEach(monsterId => {
-          if (!this.lazyData.data.monsters[monsterId]) {
-            console.warn(`Missing monster details for ${this.lazyData.data.mobs[monsterId]?.en || monsterId}`);
-            drops.push({
-              id: monsterId
+  protected doExtract(item: Item, itemData: ItemData): Observable<Drop[]> {
+    return combineLatest([
+      this.lazyData.getRow('dropSources', item.id),
+      this.lazyData.getEntry('monsters')
+    ]).pipe(
+      map(([lazyDrops, monsters]) => {
+        const drops: Drop[] = [];
+        if (lazyDrops) {
+          lazyDrops
+            .forEach(monsterId => {
+              if (!monsters[monsterId]) {
+                console.warn(`Missing monster details for ${monsterId}`);
+                drops.push({
+                  id: monsterId
+                });
+              } else {
+                const zoneid = monsters[monsterId].positions[0]?.zoneid;
+                const mapid = monsters[monsterId].positions[0]?.map;
+                const position = {
+                  zoneid: zoneid,
+                  x: +monsters[monsterId].positions[0]?.x,
+                  y: +monsters[monsterId].positions[0]?.y
+                };
+                drops.push({
+                  id: monsterId,
+                  mapid: mapid,
+                  zoneid: zoneid,
+                  position: position
+                });
+              }
             });
-          } else {
-            const zoneid = this.lazyData.data.monsters[monsterId].positions[0]?.zoneid;
-            const mapid = this.lazyData.data.monsters[monsterId].positions[0]?.map;
+        }
+        drops.push(...Object.keys(monsterDrops)
+          .filter(key => {
+            return monsterDrops[key].indexOf(item.id) > -1;
+          })
+          .map(monsterId => {
+            if (monsters[monsterId] === undefined || monsters[monsterId].positions[0] === undefined) {
+              return {
+                id: +monsterId
+              };
+            }
+            const zoneid = monsters[monsterId].positions[0].zoneid;
+            const mapid = monsters[monsterId].positions[0].map;
             const position = {
               zoneid: zoneid,
-              x: +this.lazyData.data.monsters[monsterId].positions[0]?.x,
-              y: +this.lazyData.data.monsters[monsterId].positions[0]?.y
+              x: +monsters[monsterId].positions[0].x,
+              y: +monsters[monsterId].positions[0].y
             };
-            drops.push({
-              id: monsterId,
+            return {
+              id: +monsterId,
               mapid: mapid,
               zoneid: zoneid,
+              lvl: monsters[monsterId].level,
               position: position
-            });
-          }
-        });
-    }
-    drops.push(...Object.keys(monsterDrops)
-      .filter(key => {
-        return monsterDrops[key].indexOf(item.id) > -1;
-      })
-      .map(monsterId => {
-        if (this.lazyData.data.monsters[monsterId] === undefined || this.lazyData.data.monsters[monsterId].positions[0] === undefined) {
-          return {
-            id: +monsterId
-          };
-        }
-        const zoneid = this.lazyData.data.monsters[monsterId].positions[0].zoneid;
-        const mapid = this.lazyData.data.monsters[monsterId].positions[0].map;
-        const position = {
-          zoneid: zoneid,
-          x: +this.lazyData.data.monsters[monsterId].positions[0].x,
-          y: +this.lazyData.data.monsters[monsterId].positions[0].y
-        };
-        return {
-          id: +monsterId,
-          mapid: mapid,
-          zoneid: zoneid,
-          lvl: this.lazyData.data.monsters[monsterId].level,
-          position: position
-        };
+            };
+          })
+        );
+        return uniqBy(drops, 'id');
       })
     );
-    return uniqBy(drops, 'id');
   }
 }

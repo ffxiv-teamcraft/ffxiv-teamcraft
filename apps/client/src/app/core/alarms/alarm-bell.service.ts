@@ -86,11 +86,11 @@ export class AlarmBellService {
       switchMap(alarm => {
         return this.mapService.getMapById(alarm.mapId)
           .pipe(
-            map((mapData) => {
+            switchMap((mapData) => {
               if (mapData !== undefined) {
                 return this.mapService.getNearestAetheryte(mapData, alarm.coords);
               } else {
-                return undefined;
+                return of(undefined);
               }
             }),
             map(aetheryte => {

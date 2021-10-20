@@ -14,7 +14,7 @@
         <div fxLayout="column" fxLayoutAlign="flex-end flex-end">
           <div>{{drop.zoneid | i18nRow:'places' | i18n}}</div>
           <app-map-position *ngIf="drop?.position" [mapId]="drop.mapid" [marker]="drop?.position"
-                            [zoneId]="drop.zoneid" [additionalMarkers]="getAdditionalMarkers(drop)"></app-map-position>
+                            [zoneId]="drop.zoneid" [additionalMarkers]="getAdditionalMarkers(drop) | async"></app-map-position>
           <div *ngIf="drop.mapid | closestAetheryte: drop?.position | async as aetheryte"
                class="closest-tp">
             <img alt="" class="aetheryte-icon"

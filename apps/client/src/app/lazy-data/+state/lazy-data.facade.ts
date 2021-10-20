@@ -7,7 +7,7 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap }
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
+import { I18nElement, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
@@ -19,6 +19,8 @@ import { LazyRecipe } from '../model/lazy-recipe';
 import { XivapiPatch } from '../../core/data/model/xivapi-patch';
 import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
+import { XivapiService } from '@xivapi/angular-client';
+import { Language } from '../../core/data/language';
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +40,13 @@ export class LazyDataFacade {
     shareReplay(1)
   );
 
+  public datacenters$ = this.xivapi.getDCList().pipe(
+    shareReplay(1)
+  );
+
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
-              private settings: SettingsService, private http: HttpClient) {
+              private settings: SettingsService, private http: HttpClient,
+              private xivapi: XivapiService) {
   }
 
   public preloadEntry<K extends LazyDataKey>(propertyKey: K): void {
@@ -229,6 +236,20 @@ export class LazyDataFacade {
     }
   }
 
+  public getDatacenterForServer(server: string): Observable<string> {
+    return this.datacenters$.pipe(
+      map(datacenters => {
+        const fromData = Object.keys(datacenters)
+          .find(dc => {
+            return datacenters[dc].some(s => s.toLowerCase() === server.toLowerCase());
+          });
+        if (!fromData && server.toLowerCase().includes('korean')) {
+          return 'Korea';
+        }
+      })
+    );
+  }
+
   public getMinBtnSpearNodesIndex(): Observable<(Omit<LazyDataEntries['nodes'], 'zoneid'> & { id: number, zoneId: number })[]> {
     return this.getEntry('nodes').pipe(
       map(nodes => {
@@ -253,6 +274,12 @@ export class LazyDataFacade {
     );
   }
 
+  public getRecipe(id: number | string): Observable<LazyRecipe> {
+    return this.getRecipes().pipe(
+      map(recipes => recipes.find((r) => (r as any).id.toString() === id.toString()))
+    );
+  }
+
   public getJobIdByAbbr(abbr: string): Observable<number> {
     return this.getEntry('jobAbbr').pipe(
       map(abbrs => +Object.keys(abbrs).find(key => abbrs[key].en === abbr))
@@ -270,9 +297,46 @@ export class LazyDataFacade {
     }
   }
 
+  public getIndexByName(property: LazyDataI18nKey, name: string, lang: Language, flip = false): Observable<number | null> {
+    // If it's Chinese
+    if (lang === 'zh' || lang === 'ko') {
+      return this.getEntry(this.findPrefixedProperty(property, lang)).pipe(
+        switchMap(entry => {
+          const result = this.getIndexByNameInEntry(entry, name, lang, flip);
+          if (result) {
+            return of(result);
+          }
+          return this.getIndexByName(property, name, 'en', flip);
+        })
+      );
+    }
+    return this.getEntry(property).pipe(
+      map(entry => {
+        return this.getIndexByNameInEntry(entry, name, lang, flip);
+      })
+    );
+  }
+
   /**
    * PRIVATE HELPERS
    */
+
+  private getIndexByNameInEntry(entry: I18nElement, name: string, lang: Language, flip = false): number {
+    let keys = Object.keys(entry);
+    if (flip) {
+      keys = keys.reverse();
+    }
+    const cleanupRegexp = /[^a-z\s,.]/;
+    for (const key of keys) {
+      if (!entry[key]) {
+        continue;
+      }
+      const normalizedEntry = this.normalizeI18nName(entry[key]);
+      if (normalizedEntry[lang].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        return +key;
+      }
+    }
+  }
 
   private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
     return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as LazyDataI18nKey;

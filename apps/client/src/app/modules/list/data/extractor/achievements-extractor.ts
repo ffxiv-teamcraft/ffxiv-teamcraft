@@ -2,10 +2,12 @@ import { AbstractExtractor } from './abstract-extractor';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { Observable } from 'rxjs';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { map } from 'rxjs/operators';
 
 export class AchievementsExtractor extends AbstractExtractor<number[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
@@ -14,19 +16,23 @@ export class AchievementsExtractor extends AbstractExtractor<number[]> {
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   protected canExtract(item: Item): boolean {
     return true;
   }
 
-  protected doExtract(item: Item): number[] {
-    return Object.keys(this.lazyData.data.achievements)
-      .filter(key => {
-        const achievement = this.lazyData.data.achievements[key];
-        return achievement.itemReward === item.id;
+  protected doExtract(item: Item): Observable<number[]> {
+    return this.lazyData.getEntry('achievements').pipe(
+      map(achievements => {
+        return Object.keys(achievements)
+          .filter(key => {
+            const achievement = achievements[key];
+            return achievement.itemReward === item.id;
+          })
+          .map(key => +key);
       })
-      .map(key => +key);
+    );
   }
 }
