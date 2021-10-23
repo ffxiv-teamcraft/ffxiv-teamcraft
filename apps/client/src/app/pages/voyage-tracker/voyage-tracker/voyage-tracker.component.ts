@@ -3,7 +3,6 @@ import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -64,8 +63,7 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     takeUntil(this.onDestroy$)
   );
 
-  constructor(private dialog: NzModalService, public ipc: IpcService,
-              private lazyData: LazyDataService, public translate: TranslateService,
+  constructor(private dialog: NzModalService, public ipc: IpcService, public translate: TranslateService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
     super();
   }

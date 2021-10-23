@@ -32,6 +32,8 @@ export class LazyDataFacade {
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
   private cache: Record<string, Observable<any>> = {};
 
+  private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
+
   public isLoading$ = this.store.pipe(
     select(LazyDataSelectors.isLoading)
   );
@@ -315,6 +317,24 @@ export class LazyDataFacade {
         return this.getIndexByNameInEntry(entry, name, lang, flip);
       })
     );
+  }
+
+  public getSearchIndex(entry: LazyDataI18nKey): Observable<{ id: number, name: I18nName }[]> {
+    if (!this.searchIndexCache[entry]) {
+      this.searchIndexCache[entry] = this.getEntry(entry).pipe(
+        map(lazyEntry => {
+          return Object.keys(lazyEntry)
+            .map(key => {
+              return {
+                id: +key,
+                name: lazyEntry[key]
+              };
+            });
+        }),
+        shareReplay(1)
+      );
+    }
+    return this.searchIndexCache[entry];
   }
 
   /**

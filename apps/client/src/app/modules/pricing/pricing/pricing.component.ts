@@ -15,11 +15,11 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { DataType } from '../../list/data/data-type';
 import { ListController } from '../../list/list-controller';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-pricing',
@@ -57,7 +57,7 @@ export class PricingComponent implements AfterViewInit {
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
               private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
               private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,
-              private lazyData: LazyDataService, private dialog: NzModalService, private universalis: UniversalisService) {
+              private lazyData: LazyDataFacade, private dialog: NzModalService, private universalis: UniversalisService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
       tap(list => {
         this.updateCosts(list);
@@ -121,7 +121,7 @@ export class PricingComponent implements AfterViewInit {
     const rowsToFill = rows
       .filter(row => {
         const price = this.pricingService.getPrice(row);
-        return this.lazyData.data.marketItems.includes(row.id) && (!price.fromVendor || finalItems);
+        return !price.fromVendor || finalItems;
       });
     if (rowsToFill.length === 0) {
       return;
@@ -132,10 +132,18 @@ export class PricingComponent implements AfterViewInit {
       mergeMap(index => {
         const row = rowsToFill[index];
         return this.server$.pipe(
-          mergeMap(server => {
-            const dc = Object.keys(this.lazyData.datacenters).find(key => {
-              return this.lazyData.datacenters[key].indexOf(server) > -1;
-            });
+          switchMap(server => {
+            return this.lazyData.datacenters$.pipe(
+              first(),
+              map(datacenters => {
+                const dc = Object.keys(datacenters).find(key => {
+                  return datacenters[key].indexOf(server) > -1;
+                });
+                return { server, dc };
+              })
+            );
+          }),
+          mergeMap(({ server, dc }) => {
             return this.universalis.getDCPrices(dc, row.id).pipe(
               map(res => {
                 const item = res[0];

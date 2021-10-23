@@ -9,9 +9,10 @@ import { LinkToolsService } from '../tools/link-tools.service';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { LodestoneService } from '../api/lodestone.service';
 import { WebhookSettingType } from '../../model/team/webhook-setting-type';
-import { LazyDataService } from '../data/lazy-data.service';
 import { PermissionLevel } from '../database/permissions/permission-level.enum';
 import { ListController } from '../../modules/list/list-controller';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable, of } from 'rxjs';
 
 @Injectable()
 export class DiscordWebhookService {
@@ -23,16 +24,19 @@ export class DiscordWebhookService {
   constructor(private http: HttpClient, private translate: TranslateService,
               private i18n: I18nToolsService, private linkTools: LinkToolsService,
               private l12n: LocalizedDataService, private characterService: LodestoneService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
   }
 
-  sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl?: string, imageUrl?: string): void {
+  sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl$: Observable<string> = of(''), imageUrl?: string): void {
     if (!team.webhook) {
       return;
     }
-    this.i18n.getTranslation(contentKey, team.language, contentParams).pipe(
+    combineLatest([
+      this.i18n.getTranslation(contentKey, team.language, contentParams),
+      iconUrl$
+    ]).pipe(
       first(),
-      switchMap(description => {
+      switchMap(([description, iconUrl]) => {
         const embed: any = {
           author: { name: team.name },
           color: DiscordWebhookService.COLOR,
@@ -43,7 +47,7 @@ export class DiscordWebhookService {
           embed.description = description;
         }
 
-        if (iconUrl !== undefined) {
+        if (iconUrl !== '') {
           embed.author.icon_url = iconUrl;
         }
 
@@ -107,7 +111,7 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, fcId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if  (list.getPermissionLevel(memberId) < PermissionLevel.PARTICIPATE && list.getPermissionLevel(fcId) < PermissionLevel.PARTICIPATE) {
+    if (list.getPermissionLevel(memberId) < PermissionLevel.PARTICIPATE && list.getPermissionLevel(fcId) < PermissionLevel.PARTICIPATE) {
       return;
     }
     const row = ListController.getItemById(list, itemId, !finalItem, finalItem);
@@ -237,8 +241,10 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
-  private getIcon(itemId: number): string {
-    return `https://xivapi.com${this.lazyData.data.itemIcons[itemId]}`;
+  private getIcon(itemId: number): Observable<string> {
+    return this.lazyData.getRow('itemIcons', itemId).pipe(
+      map(icon => `https://xivapi.com${icon}`)
+    );
   }
 
   oauthUrl(state: string, redirectUri: string): string {

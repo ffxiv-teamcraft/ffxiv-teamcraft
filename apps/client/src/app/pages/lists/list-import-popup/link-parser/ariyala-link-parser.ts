@@ -5,7 +5,6 @@ import { map, switchMap } from 'rxjs/operators';
 import { AriyalaMateria } from './aryiala-materia';
 import { AriyalaMateriaOptions } from './ariyala-materia-options';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { StaticData } from 'apps/client/src/app/lazy-data/static-data';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
@@ -15,7 +14,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
 
   private materiaOptions: AriyalaMateriaOptions;
 
-  constructor(private http: HttpClient, private xivapi: XivapiService, private lazyData: LazyDataService) {
+  constructor(private http: HttpClient, private xivapi: XivapiService) {
   }
 
   canParse(url: string): boolean {

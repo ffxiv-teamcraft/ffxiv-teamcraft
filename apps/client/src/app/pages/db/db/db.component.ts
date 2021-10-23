@@ -5,14 +5,13 @@ import { TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-db',
   templateUrl: './db.component.html',
-  styleUrls: ['./db.component.less'],
+  styleUrls: ['./db.component.less']
 })
 export class DbComponent extends TeamcraftComponent implements OnInit {
   constructor(
@@ -21,7 +20,6 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
     private translate: TranslateService,
     private router: Router,
     @Inject(PLATFORM_ID) private platform: Object,
-    private lazyData: LazyDataService,
     private readonly i18n: I18nToolsService
   ) {
     super();
@@ -42,9 +40,6 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
           this.translate.use(lang);
         }
       });
-
-    this.lazyData.load('zh');
-    this.lazyData.load('ko');
 
     combineLatest([this.route.paramMap, this.i18n.currentLang$])
       .pipe(

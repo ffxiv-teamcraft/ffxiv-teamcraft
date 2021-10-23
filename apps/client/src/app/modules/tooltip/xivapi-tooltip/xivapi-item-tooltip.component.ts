@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -10,7 +11,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataService) {
+  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataFacade) {
   }
 
   @Input() item: any;
@@ -28,7 +29,12 @@ export class XivapiItemTooltipComponent implements OnInit {
     if (this.item === undefined) {
       return;
     }
-    this.patch = this.lazyData.patches.find(patch => patch.ID === this.item.Patch);
+    this.lazyData.patches$.pipe(
+      first()
+    ).subscribe(patches => {
+      this.patch = patches.find(patch => patch.ID === this.item.Patch);
+    });
+
     this.mainAttributes.push({
       name: 'TOOLTIP.Level',
       value: this.item.LevelEquip
@@ -116,7 +122,9 @@ export class XivapiItemTooltipComponent implements OnInit {
     }
 
     if (this.item.ItemSpecialBonus) {
-      this.item.SetBonuses = this.lazyData.data.itemSetBonuses[this.item.ID]?.bonuses;
+      this.lazyData.getRow('itemSetBonuses', this.item.ID).subscribe(row => {
+        this.item.SetBonuses = row?.bonuses;
+      });
     }
   }
 

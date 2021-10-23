@@ -1,6 +1,4 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { LazyDataService } from '../../core/data/lazy-data.service';
-import { LazyDataTestService } from '../../../test/lazy-data-test-service';
 import { StatsService } from './stats.service';
 import { BaseParam } from './base-param';
 
@@ -8,7 +6,6 @@ describe('StatsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        { provide: LazyDataService, useFactory: () => new LazyDataTestService() },
         StatsService
       ]
     });

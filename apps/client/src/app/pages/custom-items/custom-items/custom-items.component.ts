@@ -10,11 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { Alarm } from '../../../core/alarms/alarm';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NpcPickerComponent } from '../npc-picker/npc-picker.component';
 import { Vendor } from '../../../modules/list/model/vendor';
 import { TradeSource } from '../../../modules/list/model/trade-source';
@@ -36,6 +34,7 @@ import { CustomItemsImportPopupComponent } from '../custom-items-import-popup/cu
 import { CustomItemsExportPopupComponent } from '../custom-items-export-popup/custom-items-export-popup.component';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-custom-items',
@@ -63,7 +62,7 @@ export class CustomItemsComponent {
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private lazyData: LazyDataService, private gt: GarlandToolsService,
+              private lazyData: LazyDataFacade, private gt: GarlandToolsService,
               private listsFacade: ListsFacade, private listPicker: ListPickerService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService) {
@@ -142,13 +141,14 @@ export class CustomItemsComponent {
   }
 
   public autoCompleteItemID(name: string, item: CustomItem): void {
-    const allItems = this.lazyData.allItems;
-    const matches = Object.keys(allItems).filter(key => {
-      return this.i18n.getName(allItems[key]).toLowerCase() === name.toLowerCase();
+    this.lazyData.getEntry('items').subscribe(allItems => {
+      const matches = Object.keys(allItems).filter(key => {
+        return this.i18n.getName(allItems[key]).toLowerCase() === name.toLowerCase();
+      });
+      if (matches.length === 1) {
+        item.realItemId = +matches[0];
+      }
     });
-    if (matches.length === 1) {
-      item.realItemId = +matches[0];
-    }
   }
 
   public setItemIndex(item: CustomItem, index: number, array: CustomItem[], folderId: string | undefined): void {

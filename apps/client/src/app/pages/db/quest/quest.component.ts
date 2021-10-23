@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -16,6 +15,8 @@ import * as _ from 'lodash';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { questChainLengths } from '../../../core/data/sources/quests-chain-lengths';
 import { Trade } from '../../../modules/list/model/trade';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyQuest } from '../../../lazy-data/model/lazy-quest';
 
 @Component({
   selector: 'app-quest',
@@ -43,7 +44,7 @@ export class QuestComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
+              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -118,7 +119,12 @@ export class QuestComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.rewards$ = combineLatest([this.xivapiQuest$, this.gtData$, this.lazyData.data$]).pipe(
+    this.rewards$ = combineLatest([this.xivapiQuest$, this.gtData$]).pipe(
+      switchMap(([quest, gtData]) => {
+        return this.lazyData.getRow('quests', quest.ID).pipe(
+          map(lData => [quest, gtData, lData] as [any, any, LazyQuest])
+        );
+      }),
       map(([quest, gtData, lData]) => {
         const rewards = [];
         if (quest.InstanceContentUnlockTargetID) {
@@ -159,7 +165,7 @@ export class QuestComponent extends TeamcraftPageComponent {
             type: 'rep'
           });
         }
-        rewards.push(...(lData.quests[quest.ID].rewards || []).map(r => {
+        rewards.push(...(lData.rewards || []).map(r => {
           return {
             ...r,
             type: 'item'
@@ -169,9 +175,11 @@ export class QuestComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.trades$ = combineLatest([this.xivapiQuest$, this.lazyData.data$]).pipe(
-      map(([quest, lData]) => {
-        return lData.quests[quest.ID].trades || [];
+    this.trades$ = this.xivapiQuest$.pipe(
+      switchMap(quest => {
+        return this.lazyData.getRow('quests', quest.ID).pipe(
+          map(res => res.trades)
+        );
       })
     );
 
@@ -211,43 +219,56 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(quest: any): string {
+  public getName(quest: any): string {
     // We might want to add more details for some specific quests, which is why this is a method.
     return this.i18n.getName(this.l12n.xivapiToI18n(quest, 'quests')).replace('', '•');
   }
 
-  private getDescription(quest: any) {
+  public getDescription(quest: any): Observable<string> {
     const lang = this.translate.currentLang;
-    let textData = quest[`TextData_${lang}`];
+    const textData = quest[`TextData_${lang}`];
     if (!textData) {
       if (lang === 'zh') {
-        const zhRow = this.lazyData.data.zhQuestDescriptions[quest.ID];
-        if (zhRow) {
-          return zhRow.zh;
-        }
+        return this.lazyData.getRow('zhQuestDescriptions', quest.ID).pipe(
+          map(zhRow => {
+            if (zhRow) {
+              return zhRow.zh;
+            }
+            return '';
+          })
+        );
       } else if (lang === 'ko') {
-        const koRow = this.lazyData.data.koQuestDescriptions[quest.ID];
-        if (koRow) {
-          return koRow.ko;
-        }
+        return this.lazyData.getRow('koQuestDescriptions', quest.ID).pipe(
+          map(koRow => {
+            if (koRow) {
+              return koRow.ko;
+            }
+            return '';
+          })
+        );
+      } else {
+        return of('quest.TextData_en');
       }
-
-      textData = quest.TextData_en;
     }
 
     if (textData && textData.Journal) {
-      return textData.Journal[0].Text;
+      return of(textData.Journal[0].Text);
     } else {
-      return '';
+      return of('');
     }
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiQuest$.pipe(
-      map(quest => {
+      switchMap(quest => {
+        return this.getDescription(quest).pipe(
+          map(description => [quest, description])
+        );
+      }),
+      map(([quest, description]) => {
         return {
           title: this.getName(quest),
-          description: this.getDescription(quest),
+          description,
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/quest/${quest.ID}/${this.getName(quest).split(' ').join('-')}`,
           image: quest.Banner ? `https://xivapi.com/${quest.Banner}` : `https://xivapi.com/${quest.Icon}`
         };

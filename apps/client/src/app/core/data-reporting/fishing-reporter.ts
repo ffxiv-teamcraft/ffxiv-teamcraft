@@ -3,20 +3,21 @@ import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
-import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { Tug } from '../data/model/tug';
 import { Hookset } from '../data/model/hookset';
 import { SettingsService } from '../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../rxjs/with-lazy-data';
 
 
 export class FishingReporter implements DataReporter {
 
   private state: any = {};
 
-  constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataService,
+  constructor(private eorzea: EorzeaFacade, private lazyData: LazyDataFacade,
               private etime: EorzeanTimeService, private ipc: IpcService,
               private settings: SettingsService) {
   }
@@ -63,8 +64,9 @@ export class FishingReporter implements DataReporter {
     const spot$ = packets$.pipe(
       ofMessageType('someDirectorUnk4'),
       toIpcData(),
-      map((packet) => {
-        return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
+      withLazyData(this.lazyData, 'fishingSpots'),
+      map(([packet, fishingSpots]) => {
+        return fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
       filter(spot => spot !== undefined),
       tap(spot => {
@@ -138,8 +140,9 @@ export class FishingReporter implements DataReporter {
     const actionTimeline$ = packets$.pipe(
       ofMessageType('eventPlay4'),
       toIpcData(),
-      map(packet => {
-        return this.lazyData.data?.actionTimeline[packet.params[0].toString()];
+      withLazyData(this.lazyData, 'actionTimeline'),
+      map(([packet, actionTimeline]) => {
+        return actionTimeline[packet.params[0].toString()];
       }),
       filter(key => key !== undefined)
     );

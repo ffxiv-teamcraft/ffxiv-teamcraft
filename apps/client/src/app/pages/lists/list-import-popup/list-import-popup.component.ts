@@ -9,7 +9,6 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-list-import-popup',
@@ -22,7 +21,7 @@ export class ListImportPopupComponent {
 
   importLinkSupported: boolean;
 
-  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi, this.lazyData), new GarlandtoolsGroupLinkParser()];
+  linkParsers: ExternalListLinkParser[] = [new FfxivCraftingLinkParser(), new AriyalaLinkParser(this.http, this.xivapi), new GarlandtoolsGroupLinkParser()];
 
   linkType: string;
 
@@ -33,7 +32,7 @@ export class ListImportPopupComponent {
   inProgress = false;
 
   constructor(private http: HttpClient, private xivapi: XivapiService, private router: Router,
-              private ref: NzModalRef, private lazyData: LazyDataService) {
+              private ref: NzModalRef) {
     this.linkTypes = this.linkParsers.map(parser => parser.getName()).join(', ');
   }
 
