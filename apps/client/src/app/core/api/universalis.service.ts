@@ -130,6 +130,45 @@ export class UniversalisService {
     );
   }
 
+  public getServerHistoryPrices(server: string, entries:number, ...itemIds: number[]): Observable<MarketboardItem[]> {
+    const chunks = _.chunk(itemIds, 100);
+    return combineLatest(chunks.map(chunk => {
+      return this.http.get<any>(`https://universalis.app/api/history/${server}/${chunk.join(',')}?entries=${entries}`)
+        .pipe(
+          catchError(() => of([])),
+          map(response => {
+            const data = response.items || [response];
+            return data.map(res => {
+              const item: Partial<MarketboardItem> = {
+                ...res,
+                ID: res.worldID,
+                ItemId: res.itemID,
+                History: [],
+              };
+              item.History = (res.entries || [])
+                .map(listing => {
+                  return {
+                    ...listing,
+                    Server: listing.worldName,
+                    PricePerUnit: listing.pricePerUnit,
+                    PriceTotal: listing.pricePerUnit * listing.quantity,
+                    IsHQ: listing.hq,
+                    Quantity: listing.quantity,
+                    PurchaseDate: listing.timestamp
+                  };
+                });
+              delete (item as any).entries;
+              return item as MarketboardItem;
+            });
+          })
+        );
+    })).pipe(
+      map(res => {
+        return [].concat.apply([], res);
+      })
+    );
+  }
+
   public initCapture(): void {
     this.ipc.marketBoardSearchResult$.subscribe((searchResults) => {
       if (this.settings.enableUniversalisSourcing) {

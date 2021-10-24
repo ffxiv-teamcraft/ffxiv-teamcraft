@@ -101,9 +101,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
               .map((chunk: any) => {
-                return this.universalis.getServerPrices(
+                return this.universalis.getServerHistoryPrices(
                   server,
-                  ...chunk.map(entry => entry.item)
+                  5,
+                  ...chunk.map(entry => entry.item),
                 );
               });
             this.tradesCount = entries.length;
@@ -126,11 +127,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                   })
                   .map(entry => {
                     const mbRow = res.find(r => r.ItemId === entry.item);
-                    const avgPrice = (entry.HQ ? mbRow.minPriceHQ : mbRow.minPriceNQ) || mbRow.minPrice;
-                    const oneWeekInThePast = Math.floor(Date.now() / 1000) - 7 * 86400;
-                    const amountSoldLastWeek = mbRow.History
-                      .filter(hRow => hRow.PurchaseDate > oneWeekInThePast && hRow.IsHQ === entry.HQ)
-                      .reduce((acc, hRow) => acc + hRow.Quantity, 0);
+                    const avgPrice = mbRow.History.reduce((prev, curr) => {
+                      return prev.pricePerUnit < curr.pricePerUnit ? prev : curr;
+                    }).pricePerUnit;
+                    const amountSoldLastWeek = Math.floor(mbRow.regularSaleVelocity * 7);
                     return <SpendingEntry>{
                       ...entry,
                       npcs: getItemSource(this.lazyData.getExtract(entry.item), DataType.TRADE_SOURCES)
