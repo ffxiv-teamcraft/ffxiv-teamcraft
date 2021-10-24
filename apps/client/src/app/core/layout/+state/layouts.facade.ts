@@ -157,7 +157,7 @@ export class LayoutsFacade {
               })
               // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
               .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
-              .sort((a, b) => a.index - b.index),
+              .sort((a, b) => a.index - b.index)
           };
         })
       );

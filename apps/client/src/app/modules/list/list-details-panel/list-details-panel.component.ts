@@ -16,7 +16,7 @@ import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { Observable } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { first, switchMap, takeUntil } from 'rxjs/operators';
+import { first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -27,7 +27,6 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
 import { Drop } from '../model/drop';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
 import { TradeSource } from '../model/trade-source';
@@ -35,6 +34,8 @@ import { Vendor } from '../model/vendor';
 import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
 import { NpcBreakdown } from '../../../model/common/npc-breakdown';
 import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -124,7 +125,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private lazyData: LazyDataService) {
+              public settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
   addItems(): void {
@@ -161,12 +162,21 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
     if (this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
-      this.hasNavigationMapForZone = this.zoneBreakdown.rows.reduce((res, zbRow) => {
-        return {
-          ...res,
-          [zbRow.zoneId]: this.hasPositionsInRows(zbRow.items, zbRow.zoneId)
-        };
-      }, {});
+      safeCombineLatest(this.zoneBreakdown.rows
+        .map(row => {
+          return this.hasPositionsInRows(row.items, row.zoneId).pipe(
+            map(hasPositions => ({ row, hasPositions }))
+          );
+        })
+      ).subscribe(registry => {
+        this.hasNavigationMapForZone = registry
+          .reduce((res, { row, hasPositions }) => {
+            return {
+              ...res,
+              [row.zoneId]: hasPositions
+            };
+          }, {});
+      });
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     if (this.displayRow.npcBreakdown) {
@@ -175,22 +185,31 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
-    this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
+    this.hasPositionsInRows(this.displayRow.rows).pipe(
+      first()
+    ).subscribe(hasPositions => {
+      this.hasNavigationMap = hasPositions;
+    });
   }
 
-  private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
-    return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
-        return d.position
-          && (d.position.x !== undefined)
-          && !this.lazyData.data.maps[d.mapid].dungeon
-          && (!zoneId || d.zoneid === zoneId);
-      });
-      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
-      const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
-      const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
-      return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
-    }, false);
+  private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {
+    return this.lazyData.getEntry('maps')
+      .pipe(
+        map(maps => {
+          return rows.reduce((hasMap, row) => {
+            const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
+              return d.position
+                && (d.position.x !== undefined)
+                && !maps[d.mapid].dungeon
+                && (!zoneId || d.zoneid === zoneId);
+            });
+            const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
+            const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
+            const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
+            return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
+          }, false);
+        })
+      );
   }
 
   private getHideZoneDuplicates(): boolean {

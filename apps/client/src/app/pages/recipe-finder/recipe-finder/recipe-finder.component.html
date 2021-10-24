@@ -33,14 +33,14 @@
       <input #amount [value]="0" class="amount-input" nz-input type="number"/>
     </nz-input-group>
     <ng-template #prefixTemplate>x</ng-template>
-    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
             class="add-to-pool"
             nz-button
             nzType="primary">
       <i nz-icon nzType="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="false | ifMobile:true"
-            [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+            [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
             nz-button
             nzBlock
             nzType="primary">

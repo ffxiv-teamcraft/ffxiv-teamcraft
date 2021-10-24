@@ -22,7 +22,6 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
@@ -34,6 +33,8 @@ import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-search',
@@ -93,7 +94,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     collectable: [false],
     // Instances, leves and actions
     lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
+    lvlMax: [this.curMaxLevel]
   });
 
   availableStats = stats;
@@ -108,7 +109,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
-  patches: XivapiPatch[] = this.lazyData.patches.reverse();
+  patches$: Observable<XivapiPatch[]> = this.lazyData.patches$.pipe(
+    map(patches => patches.reverse())
+  );
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
     map(([query, type]) => {
@@ -193,14 +196,16 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   );
 
   patch$: Observable<XivapiPatch> = this.filters$.pipe(
-    map(filters => {
+    switchMap(filters => {
       const patchFilter = filters.find(f => f.name === 'Patch');
       if (patchFilter) {
-        return this.lazyData.patches.find(p => {
-          return p.ID === patchFilter.value;
-        });
+        return this.lazyData.patches$.pipe(
+          map(patches => patches.find(p => {
+            return p.ID === patchFilter.value;
+          }))
+        );
       }
-      return null;
+      return of(null);
     })
   );
 
@@ -212,7 +217,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
+              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
               private analytics: GoogleAnalyticsService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
     super();
@@ -220,8 +225,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
     }).pipe(
-      map(contentList => {
-        return contentList.Results.map(result => {
+      switchMap(contentList => {
+        return safeCombineLatest(contentList.Results.map(result => {
           const res: any = {
             id: result.ID,
             name: {
@@ -231,14 +236,24 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               ja: result.Name_ja
             }
           };
-          if (this.lazyData.data.zhItemUiCategories) {
-            res.name.zh = this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en;
+          if (this.settings.searchLanguage === 'zh') {
+            return this.lazyData.getRow('zhItemUiCategories', result.ID).pipe(
+              map(zhRow => {
+                res.name.zh = zhRow?.zh || result.Name_en;
+                return res;
+              })
+            );
+          } else if (this.settings.searchLanguage === 'ko') {
+            return this.lazyData.getRow('koItemUiCategories', result.ID).pipe(
+              map(koRow => {
+                res.name.ko = koRow?.ko || result.Name_en;
+                return res;
+              })
+            );
+          } else {
+            return of(res);
           }
-          if (this.lazyData.data.koItemUiCategories) {
-            res.name.ko = this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en;
-          }
-          return res;
-        });
+        }));
       })
     );
     if (isPlatformBrowser(this.platform)) {
@@ -322,18 +337,24 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       filter(params => {
         return params.query !== undefined && params.type !== undefined;
       }),
-      debounceTime(100)
-    ).subscribe(params => {
-      this.searchType$.next(params.type);
-      this.query$.next(params.query);
-      if (params.filters !== undefined) {
-        const filters = JSON.parse(atob(params.filters));
-        this.filters$.next(filters);
-        this.filtersForm.patchValue(this.filtersToForm(filters, this.filtersForm));
-      }
-      if (params.sort !== undefined) {
-        this.sortBy$.next(params.sort);
-        this.sortOrder$.next(params.order);
+      debounceTime(100),
+      switchMap(params => {
+        this.searchType$.next(params.type);
+        this.query$.next(params.query);
+        if (params.filters !== undefined) {
+          const filters = JSON.parse(atob(params.filters));
+          this.filters$.next(filters);
+          return this.filtersToForm(filters, this.filtersForm);
+        }
+        if (params.sort !== undefined) {
+          this.sortBy$.next(params.sort);
+          this.sortOrder$.next(params.order);
+        }
+        return of(null);
+      })
+    ).subscribe(patch => {
+      if (patch) {
+        this.filtersForm.patchValue(patch);
       }
     });
   }
@@ -432,51 +453,55 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  private filtersToForm(filters: SearchFilter[], form: FormGroup): { [key: string]: any } {
-    const formRawValue: any = {};
-    (filters || []).forEach(f => {
-      const formFieldName = this.getFormFieldName(f.name);
-      if (!!f.value) {
-        if (f.formArray) {
-          if (form.get(f.formArray) === null) {
-            form.setControl(f.formArray, this.fb.array([]));
-          }
-          if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
-            (form.get(f.formArray) as FormArray).push(
-              this.fb.group({
-                name: f.entryName,
-                min: f.value.min,
-                max: f.value.max,
-                exclude: f.value.exclude
-              })
-            );
-          }
-          formRawValue[f.formArray] = [
-            ...(formRawValue[f.formArray] || []),
-            {
-              name: f.entryName,
-              min: f.value.min,
-              max: f.value.max
+  private filtersToForm(filters: SearchFilter[], form: FormGroup): Observable<{ [key: string]: any }> {
+    return this.lazyData.getEntry('jobAbbr').pipe(
+      map(jobAbbr => {
+        const formRawValue: any = {};
+        (filters || []).forEach(f => {
+          const formFieldName = this.getFormFieldName(f.name);
+          if (!!f.value) {
+            if (f.formArray) {
+              if (form.get(f.formArray) === null) {
+                form.setControl(f.formArray, this.fb.array([]));
+              }
+              if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
+                (form.get(f.formArray) as FormArray).push(
+                  this.fb.group({
+                    name: f.entryName,
+                    min: f.value.min,
+                    max: f.value.max,
+                    exclude: f.value.exclude
+                  })
+                );
+              }
+              formRawValue[f.formArray] = [
+                ...(formRawValue[f.formArray] || []),
+                {
+                  name: f.entryName,
+                  min: f.value.min,
+                  max: f.value.max
+                }
+              ];
+            } else if (f.value.min !== undefined) {
+              formRawValue[`${formFieldName}Min`] = f.value.min;
+              formRawValue[`${formFieldName}Max`] = f.value.max;
+            } else {
+              formRawValue[formFieldName] = f.value;
             }
-          ];
-        } else if (f.value.min !== undefined) {
-          formRawValue[`${formFieldName}Min`] = f.value.min;
-          formRawValue[`${formFieldName}Max`] = f.value.max;
-        } else {
-          formRawValue[formFieldName] = f.value;
-        }
-      }
-    });
-    formRawValue.jobCategories = filters
-      .filter(f => f.name.startsWith('ClassJobCategory'))
-      .map(f => {
-        if (f.name.endsWith('.ID')) {
-          return f.value + 1000;
-        } else {
-          return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
-        }
-      });
-    return formRawValue;
+          }
+        });
+        formRawValue.jobCategories = filters
+          .filter(f => f.name.startsWith('ClassJobCategory'))
+          .map(f => {
+            if (f.name.endsWith('.ID')) {
+              return f.value + 1000;
+            } else {
+              return +Object.keys(jobAbbr).find(k => jobAbbr[k].en === f.name.split('.')[1]);
+            }
+          });
+        return formRawValue;
+      })
+    );
   }
 
   private getFormFieldName(filterName: string): string {

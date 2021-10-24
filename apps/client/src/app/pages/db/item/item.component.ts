@@ -11,7 +11,6 @@ import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -40,6 +39,10 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { AuthFacade } from '../../../+state/auth.facade';
 import { environment } from '../../../../environments/environment';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
+import { LazyRecipesPerItem } from '../../../lazy-data/model/lazy-recipes-per-item';
 
 @Component({
   selector: 'app-item',
@@ -58,8 +61,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     switchMap((itemId) => {
       return this.xivapi.get(XivapiEndpoint.Item, itemId);
     }),
-    switchMap((item) => {
-      item.IsFish = this.lazyData.data.fishes.indexOf(item.ID) > -1;
+    withLazyData(this.lazyData, 'fishes'),
+    switchMap(([item, fishes]) => {
+      item.IsFish = fishes.indexOf(item.ID) > -1;
       // If it's a  consumable, get item action details and put it inside item action itself.
       if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
         return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
@@ -83,12 +87,20 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       item.hasMoreDetails = item.ItemSeries !== null;
 
       if (item.ItemSeries) {
-        item.ItemSeries.Content = this.lazyData.data.itemSeries[item.ItemSeries.ID].items.map(itemId => {
-          return {
-            itemId,
-            bonuses: this.lazyData.data.itemSetBonuses[itemId]?.bonuses || []
-          };
-        });
+        return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
+          switchMap(itemSeries => {
+            return safeCombineLatest(itemSeries.items.map(itemId => {
+              return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
+                map(bonuses => {
+                  return {
+                    itemId,
+                    bonuses
+                  };
+                })
+              );
+            }));
+          })
+        );
       }
 
       return of(item);
@@ -125,7 +137,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
         );
       } else {
-        return this.lazyDataFacade.getRow('extracts', data.item.id).pipe(
+        return this.lazyData.getRow('extracts', data.item.id).pipe(
           switchMap((item: any) => {
             item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
             if (item.canBeGathered) {
@@ -147,8 +159,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     })
   );
 
-  public readonly usedFor$: Observable<any> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.lazyData.data$]).pipe(
-    switchMap(([data, xivapiItem, lData]) => {
+  public readonly usedFor$: Observable<any> = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
+    switchMap(([data, xivapiItem]) => {
       if (xivapiItem.ItemSearchCategoryTargetID === 30) {
         return this.apollo
           .query<any>({
@@ -163,13 +175,15 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           .pipe(
             map((result) => {
               xivapiItem.BaitInfo = result.data.baits_per_fish.filter((row) => row.itemId > 0);
-              return [data, xivapiItem, lData];
+              return [data, xivapiItem];
             })
           );
       }
-      return of([data, xivapiItem, lData]);
+      return of([data, xivapiItem]);
     }),
-    map(([data, xivapiItem, lData]) => {
+    withLazyData(this.lazyData, 'recipes', 'reduction', 'collectables', 'desynth', 'npcs'),
+    withLazyRow(this.lazyData, 'usedInQuests', ([[, xivapiItem]]) => xivapiItem.ID),
+    switchMap(([[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs], usedInQuests]) => {
       const usedFor = [];
       if (data.item.ingredient_of !== undefined) {
         usedFor.push({
@@ -180,7 +194,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           links: Object.keys(data.item.ingredient_of).map((itemId) => {
             return {
               itemId: +itemId,
-              recipes: this.lazyData.data.recipes.filter((r) => r.result === +itemId)
+              recipes: recipes.filter((r) => r.result === +itemId)
             };
           })
         });
@@ -198,8 +212,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
         });
       }
-      const lazyReductions = Object.keys(this.lazyData.data.reduction)
-        .filter((key) => this.lazyData.data.reduction[key].indexOf(data.item.id) > -1)
+      const lazyReductions = Object.keys(reduction)
+        .filter((key) => reduction[key].indexOf(data.item.id) > -1)
         .map((key) => +key);
       const reductions = uniq([...(data.item.reducesTo || []), ...(lazyReductions || [])]);
       if (reductions.length > 0) {
@@ -215,7 +229,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
         });
       }
-      const collectable = this.lazyData.data.collectables[data.item.id];
+      const collectable = collectables[data.item.id];
       if (collectable !== undefined) {
         if (collectable.hwd) {
           usedFor.push({
@@ -223,7 +237,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             flex: '1 1 auto',
             title: 'DB.Ishgard_restoration',
             icon: './assets/icons/status/collectors_glove.png',
-            ishgardRestoration: this.lazyData.data.collectables[data.item.id]
+            ishgardRestoration: collectables[data.item.id]
           });
         } else {
           usedFor.push({
@@ -231,12 +245,12 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             flex: '1 1 auto',
             title: 'DB.Rowena_splendor',
             icon: './assets/icons/status/collectors_glove.png',
-            masterpiece: this.lazyData.data.collectables[data.item.id]
+            masterpiece: collectables[data.item.id]
           });
         }
       }
-      const lazyDesynths = Object.keys(this.lazyData.data.desynth)
-        .filter((key) => this.lazyData.data.desynth[key].indexOf(data.item.id) > -1)
+      const lazyDesynths = Object.keys(desynth)
+        .filter((key) => desynth[key].indexOf(data.item.id) > -1)
         .map((key) => +key);
       const desynths = uniq([...(data.item.desynthedTo || []), ...(lazyDesynths || [])]);
       if (desynths.length > 0) {
@@ -266,7 +280,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           return {
             npcs: ts.npcs.map((npcId) => {
               const npc: TradeNpc = { id: npcId };
-              const npcEntry = this.lazyData.data.npcs[npcId];
+              const npcEntry = npcs[npcId];
               if (npcEntry.position) {
                 npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
                 npc.zoneId = npcEntry.position.zoneid;
@@ -370,13 +384,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/quest.png',
           quests: data.item.usedInQuest
         });
-      } else if (lData.usedInQuests[xivapiItem.ID]) {
+      } else if (usedInQuests[xivapiItem.ID]) {
         usedFor.push({
           type: UsedForType.QUEST,
           flex: '1 1 auto',
           title: 'Quests',
           icon: './assets/icons/quest.png',
-          quests: lData.usedInQuests[xivapiItem.ID]
+          quests: usedInQuests[xivapiItem.ID]
         });
       }
       if (data.item.supply) {
@@ -393,24 +407,29 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         });
       }
       if (data.item.unlocks) {
-        usedFor.push({
-          type: UsedForType.UNLOCKS,
-          flex: '1 1 auto',
-          title: 'DB.Unlocks',
-          icon: './assets/icons/unlocks.png',
-          links: data.item.unlocks.map((itemId) => {
-            const recipe = this.lazyData.getItemRecipeSync(itemId);
-            const res: any = {
-              itemId: +itemId
-            };
-            if (recipe) {
-              res.recipes = [recipe];
-            }
-            return res;
+        return safeCombineLatest(
+          data.item.unlocks.map(itemId => this.lazyData.getRow('recipesPerItem', itemId, []))
+        ).pipe(
+          map(unlockedRecipes => {
+            usedFor.push({
+              type: UsedForType.UNLOCKS,
+              flex: '1 1 auto',
+              title: 'DB.Unlocks',
+              icon: './assets/icons/unlocks.png',
+              links: unlockedRecipes.flat().map((recipe: LazyRecipesPerItem) => {
+                const res: any = {
+                  itemId: recipe.result
+                };
+                if (recipe) {
+                  res.recipes = [recipe];
+                }
+                return res;
+              })
+            });
           })
-        });
+        );
       }
-      return usedFor;
+      return of(usedFor);
     })
   );
 
@@ -636,8 +655,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly notificationService: NzNotificationService,
     private readonly rotationPicker: RotationPickerService,
     private readonly attt: ATTTService,
-    private readonly lazyData: LazyDataService,
-    private readonly lazyDataFacade: LazyDataFacade,
+    private readonly lazyData: LazyDataFacade,
     private readonly dialog: NzModalService,
     public readonly settings: SettingsService,
     private readonly apollo: Apollo,
@@ -819,12 +837,11 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       res$ = res$.pipe(
         switchMap((item) => {
           return this.attt.getCard(xivapiItem.ItemAction.Data0).pipe(
-            map((card) => {
-              if (card.sources.npcs.length > 0) {
-                item.sources.push({
-                  type: DataType.TRIPLE_TRIAD_DUELS,
-                  data: card.sources.npcs.map((npc) => {
-                    const npcPosition = this.lazyData.data.npcs[npc.resident_id].position;
+            switchMap(card => {
+              return safeCombineLatest(card.sources.npcs.map(npc => {
+                return this.lazyData.getRow('npcs', npc.resident_id).pipe(
+                  map(npcData => {
+                    const npcPosition = npcData.position;
                     const duel: TripleTriadDuel = {
                       atttNpcId: npc.id,
                       npcId: npc.resident_id,
@@ -841,6 +858,16 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                     }
                     return duel;
                   })
+                );
+              })).pipe(
+                map(duels => ({ card, duels }))
+              );
+            }),
+            map(({ card, duels }) => {
+              if (duels.length > 0) {
+                item.sources.push({
+                  type: DataType.TRIPLE_TRIAD_DUELS,
+                  data: duels
                 });
               }
               if (card.sources.pack) {

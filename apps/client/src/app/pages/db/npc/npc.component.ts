@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -18,6 +17,7 @@ import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { levemetes } from '../../../core/data/sources/levemetes';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-npc',
@@ -38,8 +38,8 @@ export class NpcComponent extends TeamcraftPageComponent {
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
+              private i18n: I18nToolsService, public translate: TranslateService,
+              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -84,14 +84,18 @@ export class NpcComponent extends TeamcraftPageComponent {
     );
 
     this.trades$ = this.gtData$.pipe(
-      map(gtData => {
+      switchMap(gtData => {
+        return this.lazyData.getRow('npcs', gtData.npc.id).pipe(
+          map(npcEntry => ({ gtData, npcEntry }))
+        );
+      }),
+      map(({ gtData, npcEntry }) => {
         if (gtData.npc.shops === undefined) {
           return [];
         }
         return gtData.npc.shops
           .filter(shop => +shop.entries[0] !== shop.entries[0])
           .map(shop => {
-            const npcEntry = this.lazyData.data.npcs[gtData.npc.id];
             const npc: TradeNpc = { id: gtData.npc.id };
             if (npcEntry.position !== null) {
               npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
@@ -138,8 +142,8 @@ export class NpcComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.links$ = combineLatest([this.xivapiNpc$, this.gtData$]).pipe(
-      map(([xivapiNpc, gtData]) => {
+    this.links$ = this.xivapiNpc$.pipe(
+      map((xivapiNpc) => {
         return [
           {
             title: 'GarlandTools',

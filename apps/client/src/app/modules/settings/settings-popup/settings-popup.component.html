@@ -325,7 +325,7 @@
                      nzAllowClear
                      nzShowSearch
                      style="width: 100%">
-            <nz-option *ngFor="let aetheryte of allAetherytes"
+            <nz-option *ngFor="let aetheryte of allAetherytes$ | async"
                        [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
@@ -341,7 +341,7 @@
             nzAllowClear
             nzMode="multiple"
             style="width: 100%">
-            <nz-option *ngFor="let aetheryte of allAetherytes"
+            <nz-option *ngFor="let aetheryte of allAetherytes$ | async"
                        [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>

@@ -58,6 +58,7 @@ import {LazyPlace} from './model/lazy-place';
 import {LazyQuest} from './model/lazy-quest';
 import {LazyRace} from './model/lazy-race';
 import {LazyRecipesIngredientLookup} from './model/lazy-recipes-ingredient-lookup';
+import {LazyRecipesPerItem} from './model/lazy-recipes-per-item';
 import {LazyRecipe} from './model/lazy-recipe';
 import {LazyRetainerTask} from './model/lazy-retainer-task';
 import {LazySeed} from './model/lazy-seed';
@@ -169,6 +170,7 @@ export interface LazyData {
   races: Record<number, LazyRace>;
   rarities: Record<number, number>;
   recipesIngredientLookup: LazyRecipesIngredientLookup;
+  recipesPerItem: Record<number, LazyRecipesPerItem[]>;
   recipes: Array<LazyRecipe>;
   reduction: Record<number, number[]>;
   retainerTasks: Array<LazyRetainerTask>;

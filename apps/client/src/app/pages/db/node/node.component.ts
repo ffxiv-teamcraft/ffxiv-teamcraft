@@ -7,7 +7,6 @@ import { DataService } from '../../../core/api/data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -18,7 +17,9 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { Region } from '../../../modules/settings/region.enum';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyGatheringItem } from '../../../lazy-data/model/lazy-gathering-item';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-node',
@@ -43,7 +44,7 @@ export class NodeComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private router: Router, private lazyData: LazyDataFacade,
               private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private mapService: MapService, public settings: SettingsService, seo: SeoService) {
     super(seo);
@@ -54,38 +55,55 @@ export class NodeComponent extends TeamcraftPageComponent {
 
     this.nodeData$ = nodeId$.pipe(
       switchMap(id => {
-        return this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id);
+        return combineLatest([
+          this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id),
+          this.lazyData.getRow('nodes', +id)
+        ]);
       }),
-      map(node => {
-        node.mappyData = this.lazyData.data.nodes[node.ID];
-        node.mappyData.items = node.mappyData.items.map(item => {
-          return {
-            item: item,
-            gatheringItem: this.getGatheringItem(item),
-            alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
-              ...node.mappyData,
-              matchingItemId: item,
-              matchingItemIsHidden: false
-            }) : []
-          };
-        });
-        if (node.mappyData.hiddenItems) {
-          node.mappyData.items.push(...node.mappyData.hiddenItems.map(item => {
-            return {
-              item: item,
-              gatheringItem: this.getGatheringItem(item),
-              alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
-                ...node.mappyData,
-                matchingItemId: item,
-                matchingItemIsHidden: true
-              }) : []
-            };
-          }));
-        }
-        if (node.mappyData.limited) {
-          node.alarms = this.alarmsFacade.generateAlarms(node.mappyData);
-        }
-        return node;
+      switchMap(([node, mappyData]) => {
+        node.mappyData = mappyData;
+        const items$ = [
+          ...node.mappyData.items.map(itemId => {
+            return this.getGatheringItem(itemId).pipe(
+              map(gatheringItem => {
+                return {
+                  item: itemId,
+                  gatheringItem,
+                  alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
+                    ...node.mappyData,
+                    matchingItemId: itemId,
+                    matchingItemIsHidden: false
+                  }) : []
+                };
+              })
+            );
+          }),
+          ...node.mappyData.hiddenItems.map(itemId => {
+            return this.getGatheringItem(itemId).pipe(
+              map(gatheringItem => {
+                return {
+                  item: itemId,
+                  gatheringItem,
+                  alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
+                    ...node.mappyData,
+                    matchingItemId: itemId,
+                    matchingItemIsHidden: true
+                  }) : []
+                };
+              })
+            );
+          })
+        ];
+
+        return safeCombineLatest(items$).pipe(
+          map(items => {
+            node.mappyData.items = items;
+            if (node.mappyData.limited) {
+              node.alarms = this.alarmsFacade.generateAlarms(node.mappyData);
+            }
+            return node;
+          })
+        );
       }),
       switchMap(base => {
         if (!(base.GameContentLinks && base.GameContentLinks.GatheringPoint)) {
@@ -116,13 +134,14 @@ export class NodeComponent extends TeamcraftPageComponent {
             const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
             const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
 
-            if (this.settings.region === Region.China) {
-              const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
-              if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
-                bonusType.zh = zhRow.bonus.zh;
-                condition.zh = zhRow.condition.zh;
-              }
-            }
+            // TODO migrate once l12n is ready for better lazy I18n approach
+            // if (this.settings.region === Region.China) {
+            //   const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
+            //   if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
+            //     bonusType.zh = zhRow.bonus.zh;
+            //     condition.zh = zhRow.condition.zh;
+            //   }
+            // }
 
             bonuses.push({
               bonus: this.bonusToText(bonusType, bonus.BonusValue),
@@ -171,10 +190,14 @@ export class NodeComponent extends TeamcraftPageComponent {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
-  public getGatheringItem(itemId: number): any {
-    return Object.keys(this.lazyData.data.gatheringItems)
-      .map(key => this.lazyData.data.gatheringItems[key])
-      .find(item => item.itemId === itemId);
+  public getGatheringItem(itemId: number): Observable<LazyGatheringItem> {
+    return this.lazyData.getEntry('gatheringItems').pipe(
+      map(gatheringItems => {
+        return Object.keys(gatheringItems)
+          .map(key => gatheringItems[key])
+          .find(item => item.itemId === itemId);
+      })
+    );
   }
 
   private getDescription(node: any): string {

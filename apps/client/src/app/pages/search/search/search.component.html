@@ -75,7 +75,7 @@
               <nz-input-group [nzAddOnBefore]="'SEARCH.Patch' | translate">
                 <nz-select class="patch-select with-addon-before" formControlName="Patch" nzShowSearch>
                   <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="-1"></nz-option>
-                  <nz-option *ngFor="let patch of patches" [nzLabel]="patch.Version"
+                  <nz-option *ngFor="let patch of patches$ | async" [nzLabel]="patch.Version"
                              [nzValue]="patch.ID">
                   </nz-option>
                 </nz-select>

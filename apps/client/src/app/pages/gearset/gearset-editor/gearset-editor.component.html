@@ -94,8 +94,8 @@
                   <div nz-col [nzMd]="24 - stats.length * (stats.length > 3 ? 2 : 4)" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
                     <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
                     <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d"
-                       *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)"></i>
-                    <nz-tag *ngIf="!canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)">
+                       *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"></i>
+                    <nz-tag *ngIf="!canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async">
                       {{'GEARSETS.Unavailable_slot' | translate}}
                     </nz-tag>
                   </div>
@@ -108,7 +108,7 @@
                 <ng-container *ngFor="let row of category.items;let last=last; let odd = odd; trackBy: trackByItemId">
                   <app-gearset-editor-row [property]="category.property"
                                           [equipmentPiece]="row.equipmentPiece"
-                                          [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)"
+                                          [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"
                                           [item]="row.item"
                                           [gearset]="gearset"
                                           [materias]="row.equipmentPiece.materias"

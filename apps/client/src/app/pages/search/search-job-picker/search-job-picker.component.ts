@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { distinctUntilChanged, map, pluck, shareReplay } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-search-job-picker',
@@ -25,18 +25,26 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
 
   private selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
 
-  public jobsDisplay$ = this.lazyData.data$.pipe(
-    pluck('jobCategories'),
-    distinctUntilChanged(),
-    map(data => {
-      const doh = this.toJobIds(data[33].jobs);
+  public jobsDisplay$ = this.lazyData.getEntry('jobCategories').pipe(
+    switchMap(data => {
+      return combineLatest([
+        this.toJobIds(data[33].jobs),
+        this.toJobIds(data[156].jobs),
+        this.toJobIds(data[157].jobs),
+        this.toJobIds(data[148].jobs),
+        this.toJobIds(data[123].jobs),
+        this.toJobIds(data[124].jobs),
+        this.toJobIds(data[32].jobs)
+      ]);
+    }),
+    map(([doh, tank, healer, melee, ranged, caster, land]) => {
       return {
-        tank: this.toJobIds(data[156].jobs),
-        healer: this.toJobIds(data[157].jobs),
-        melee: this.toJobIds(data[148].jobs),
-        ranged: this.toJobIds(data[123].jobs),
-        caster: this.toJobIds(data[124].jobs),
-        land: this.toJobIds(data[32].jobs),
+        tank,
+        healer,
+        melee,
+        ranged,
+        caster,
+        land,
         hand1: doh.slice(0, 4),
         hand2: doh.slice(4),
         // Since there will be no more classes, these are just hardcoded because they don't have their own categories
@@ -63,12 +71,19 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
 
   private pristine = true;
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
   }
 
-  private toJobIds(abbrs: string[]): number[] {
-    return abbrs.map(abbr => +Object.keys(this.lazyData.data.jobAbbr).find(key => this.lazyData.data.jobAbbr[key].en === abbr))
-      .sort((a, b) => this.lazyData.data.jobSortIndex[a] - this.lazyData.data.jobSortIndex[b]);
+  private toJobIds(abbrs: string[]): Observable<number[]> {
+    return combineLatest([
+      this.lazyData.getEntry('jobAbbr'),
+      this.lazyData.getEntry('jobSortIndex')
+    ]).pipe(
+      map(([jobAbbr, jobSortIndex]) => {
+        return abbrs.map(abbr => +Object.keys(jobAbbr).find(key => jobAbbr[key].en === abbr))
+          .sort((a, b) => jobSortIndex[a] - jobSortIndex[b]);
+      })
+    );
   }
 
   private mapToEntry(jobs: number[], selected: number[]): { id: number, selected: boolean }[] {

@@ -58,7 +58,6 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { CommissionService } from '../../commission-board/commission.service';
@@ -66,6 +65,8 @@ import { SoundNotificationService } from '../../../core/sound-notification/sound
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { Action } from '@ngrx/store';
 import { ListController } from '../list-controller';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -411,7 +412,8 @@ export class ListsEffects {
       }
       return true;
     }),
-    map(([action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled]) => {
+    withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
+    map(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
@@ -441,7 +443,7 @@ export class ListsEffects {
             itemName: this.i18n.getName(this.l12n.getItem(action.itemId)),
             listName: list.name
           });
-          const notificationIcon = `https://xivapi.com${this.lazyData.data.itemIcons[action.itemId]}`;
+          const notificationIcon = `https://xivapi.com${icon}`;
           this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
           if (this.platform.isDesktop()) {
             this.ipc.send('notification', {
@@ -542,7 +544,7 @@ export class ListsEffects {
     private settings: SettingsService,
     private i18n: I18nToolsService,
     private l12n: LocalizedDataService,
-    private lazyData: LazyDataService,
+    private lazyData: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,
     private soundNotificationService: SoundNotificationService

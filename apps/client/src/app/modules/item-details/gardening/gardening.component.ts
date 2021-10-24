@@ -3,6 +3,9 @@ import { ItemDetailsPopup } from '../item-details-popup';
 import { GardeningData } from '../../list/model/gardening-data';
 import { addHours, formatDistance } from 'date-fns';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Observable } from 'rxjs';
+import { pluck } from 'rxjs/operators';
 
 // @ts-ignore
 @Component({
@@ -15,15 +18,17 @@ export class GardeningComponent extends ItemDetailsPopup<GardeningData> implemen
 
   public formattedDuration: string;
 
-  public seedId: number;
+  public seedId$: Observable<number>;
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
     super();
   }
 
   ngOnInit(): void {
     const targetDate = addHours(new Date(), this.details.duration);
     this.formattedDuration = formatDistance(new Date(), targetDate);
-    this.seedId = this.lazyData.data.seeds[this.item.id]?.ffxivgId;
+    this.seedId$ = this.lazyData.getRow('seeds', this.item.id, { ffxivgId: null, duration: 0, seed: 0 }).pipe(
+      pluck('ffxivgId')
+    );
   }
 }

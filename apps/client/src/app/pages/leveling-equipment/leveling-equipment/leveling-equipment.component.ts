@@ -158,7 +158,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           this.slots
             .filter(slot => !['ring2', 'offHand'].includes(slot.property))
             .forEach(slot => {
-              if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
+              if (!row.gearset[slot.property]) {
                 (row as any).gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryIds, filters, inventory, filters.job, row.gearset, extracts, equipment, jobAbbr, itemMeldingData, itemStats);
                 if (row.gearset[slot.property] && this.desktop) {
                   row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);

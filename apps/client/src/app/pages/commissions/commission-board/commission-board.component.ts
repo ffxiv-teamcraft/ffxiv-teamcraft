@@ -7,10 +7,10 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { CommissionBoardDisplay } from './commission-board-display';
 import { ActivatedRoute, Router } from '@angular/router';
 import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CommissionTag } from '../../../modules/commission-board/model/commission-tag';
 import { Commission } from '../../../modules/commission-board/model/commission';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-commission-board',
@@ -24,7 +24,9 @@ export class CommissionBoardComponent {
    * Static data to compute only once.
    */
 
-  public datacenters: string[] = Object.keys(this.lazyData.datacenters);
+  public datacenters$: Observable<string[]> = this.lazyData.datacenters$.pipe(
+    map(datacenters => Object.keys(datacenters))
+  );
 
   public commissionTags = Object.keys(CommissionTag).map(key => {
     return {
@@ -90,7 +92,7 @@ export class CommissionBoardComponent {
   constructor(private commissionsService: CommissionService, private notificationsService: NzNotificationService,
               private messageService: NzMessageService, private translate: TranslateService,
               private activatedRoute: ActivatedRoute, private router: Router,
-              private lazyData: LazyDataService, private settings: SettingsService) {
+              private lazyData: LazyDataFacade, private settings: SettingsService) {
   }
 
   changeDatacenter(dc: string): void {

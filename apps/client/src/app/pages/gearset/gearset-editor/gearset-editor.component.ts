@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { distinctUntilChanged, expand, filter, first, last, map, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, expand, filter, first, last, map, shareReplay, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -26,6 +26,7 @@ import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset
 import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '../../../lazy-data/lazy-data';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -502,7 +503,12 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       };
     }
     gearset[property] = equipmentPiece;
-    this.saveChanges(equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+    if (equipmentPiece) {
+      this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId)
+        .subscribe(updated => this.saveChanges(updated));
+    } else {
+      this.saveChanges(gearset);
+    }
   }
 
   saveChanges(gearset: TeamcraftGearset): void {
@@ -515,8 +521,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     });
   }
 
-  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
-    return this.gearsetsFacade.canEquipSlot(slotName, chestPieceId, legsPieceId);
+  @Memoized()
+  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): Observable<boolean> {
+    return this.gearsetsFacade.canEquipSlot(slotName, chestPieceId, legsPieceId).pipe(
+      shareReplay(1)
+    );
   }
 
   submitFilters(): void {

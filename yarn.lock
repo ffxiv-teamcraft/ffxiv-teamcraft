@@ -1609,11 +1609,6 @@
     dir-compare "^2.4.0"
     fs-extra "^9.0.1"
 
-"@ffxiv-teamcraft/crafting-solver@^1.3.2":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz#92a9ff1793e9cd3e91d1c49e1f5f2e49400920d4"
-  integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
-
 "@ffxiv-teamcraft/pcap-ffxiv@^0.9.4":
   version "0.9.4"
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.9.4.tgz#83832d681bfee83c07d946f0e550a7ddcd924496"
@@ -1621,10 +1616,10 @@
   dependencies:
     heap-js "^2.1.5"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.10.8", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.10.8", "@ffxiv-teamcraft/simulator@^2.10.8":
-  version "2.10.8"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.8.tgz#76c753bf07f8f9bb8f8ba9af619a9b17682328a2"
-  integrity sha512-Po9tmmAHvh9BsVEbBTeqQAucvvUUa6d2hvt0zcabZkN4euVnsyFwJ951b9B7OB1qcsqDaYHxDhy4CtbQ9ya6QQ==
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.10.12", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.10.12", "@ffxiv-teamcraft/simulator@^2.10.12":
+  version "2.10.12"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.12.tgz#93a71acabbcc611337021a70d55f382f0d61aa51"
+  integrity sha512-xEFI89w5LU1LemMwLWErptTyYmRLonm0AMyWNeedCEY8ZrwvMuvPC8+A27aFIcDrFwdt+bosCkEzv///b8UlzA==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

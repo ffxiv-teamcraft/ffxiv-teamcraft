@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Datagrid, FishContextService } from '../../service/fish-context.service';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-fishing-spot-bait-datagrid',
@@ -18,7 +18,7 @@ export class FishingSpotBaitDatagridComponent {
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
   public readonly loading$ = this.fishCtx.baitsBySpotByFish$.pipe(map((res) => res.loading));
-  public readonly table$ = combineLatest([this.fishCtx.baitsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.fishingSpots$]).pipe(
+  public readonly table$ = combineLatest([this.fishCtx.baitsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
     switchMap(([res, spotId, spots]) => {
       const fishes: number[] = spots.find((spot) => spot.id === spotId)?.fishes ?? [];
@@ -57,7 +57,7 @@ export class FishingSpotBaitDatagridComponent {
 
   constructor(
     private readonly fishCtx: FishContextService,
-    private readonly lazyData: LazyDataService,
+    private readonly lazyData: LazyDataFacade,
     private readonly i18n: I18nToolsService,
     private readonly translate: TranslateService
   ) {

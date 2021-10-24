@@ -6,7 +6,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { filter, first, map, switchMap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +17,6 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { uniq } from 'lodash';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
 import { from, Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
@@ -28,6 +27,7 @@ import { InventoryService } from '../../inventory/inventory.service';
 import { NotificationSettings } from '../notification-settings';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-settings-popup',
@@ -107,7 +107,10 @@ export class SettingsPopupComponent {
 
   public sidebarItems$: Observable<SidebarItem[]> = this.navigationSidebarService.allLinks$.pipe(first());
 
-  public allAetherytes = this.lazyData.data.aetherytes.filter(a => a.nameid !== 0);
+  public allAetherytes$ = this.lazyData.getEntry('aetherytes').pipe(
+    map(aetherytes => aetherytes.filter(a => a.nameid !== 0)),
+    shareReplay(1)
+  );
 
   public sidebarFavorites = [...this.settings.sidebarFavorites];
 
@@ -167,7 +170,7 @@ export class SettingsPopupComponent {
               public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataService, private mappy: MappyReporterService,
+              private lazyData: LazyDataFacade, private mappy: MappyReporterService,
               private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService,
               private soundNotificationService: SoundNotificationService) {
     this.ipc.once('always-on-top:value', (event, value) => {
@@ -288,9 +291,9 @@ export class SettingsPopupComponent {
     }
   }
 
-  reloadGubalToken():void{
+  reloadGubalToken(): void {
     this.authFacade.reloadGubalToken().subscribe(() => {
-      this.message.success('Gubal token reloaded successfully')
+      this.message.success('Gubal token reloaded successfully');
     });
   }
 
