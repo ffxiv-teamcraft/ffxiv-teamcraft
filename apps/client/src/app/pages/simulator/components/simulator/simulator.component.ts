@@ -70,8 +70,8 @@ import {
 } from '../../../../core/simulation/simulation.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
+import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-simulator',
@@ -259,7 +259,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
     this.rotationsFacade.loadMyRotations();
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
@@ -290,8 +290,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.toggleSpecialist();
     });
 
-    this.foods = consumablesService.fromLazyData(this.lazyData.data.foods)
-      .sort(this.consumablesSortFn);
+    this.lazyData.getEntry('foods').subscribe(foods => {
+      this.foods = consumablesService.fromLazyData(foods)
+        .sort(this.consumablesSortFn);
+    });
     this.medicines = consumablesService.fromData(medicines)
       .sort(this.consumablesSortFn);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)

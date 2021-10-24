@@ -249,7 +249,6 @@
     "papaparse": "^5.2.0",
     "prettier": "^2.0.5",
     "quicktype-core": "^6.0.70",
-    "rxjs-compat": "^6.6.3",
     "semver": "^5.4.1",
     "standard-version": "^4.4.0",
     "subscriptions-transport-ws": "^0.9.19",

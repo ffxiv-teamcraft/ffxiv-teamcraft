@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from './market/marketboard-item';
 import { combineLatest, Observable, of } from 'rxjs';
 import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -16,6 +15,8 @@ import {
   MarketTaxRates,
   PlayerSetup
 } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../rxjs/with-lazy-data';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -34,7 +35,7 @@ export class UniversalisService {
     shareReplay(1)
   );
 
-  constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
+  constructor(private http: HttpClient, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private ipc: IpcService, private settings: SettingsService) {
   }
 
@@ -200,7 +201,8 @@ export class UniversalisService {
   public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
-      switchMap(([cid, worldId]) => {
+      withLazyData(this.lazyData, 'materias'),
+      switchMap(([[cid, worldId], materias]) => {
         const data = {
           worldID: worldId,
           itemID: packets[0]?.listings[0]?.itemId,
@@ -213,7 +215,7 @@ export class UniversalisService {
                   listingID: item.listingId.toString(10),
                   hq: item.hq,
                   materia: item.materia.map((materia, index) => {
-                    const materiaItemId = this.lazyData.data.materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
+                    const materiaItemId = materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
                     return {
                       materiaId: materiaItemId,
                       slotId: index

@@ -4,10 +4,11 @@ import { SettingsService } from 'apps/client/src/app/modules/settings/settings.s
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Chart, ChartOptions } from 'chart.js';
 import { Tug } from 'apps/client/src/app/core/data/model/tug';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 
 const fishImageUrls = [];
 
@@ -104,7 +105,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         });
       }
       return combineLatest([...fishNames]).pipe(
-        map(([...names]) => {
+        withLazyData(this.lazyData, 'itemIcons'),
+        map(([[...names], itemIcons]) => {
           const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
           const colors = sortedNames.map(el => {
             return this.colors.find(c => c.tug === +tugByFish[el.id]).color;
@@ -115,7 +117,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
               borderWidth: 1,
               itemRadius: 0,
               data: sortedNames.map((el, index) => {
-                fishImageUrls[index] = 'https://xivapi.com' + this.lazyData.data.itemIcons[el.id];
+                fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
@@ -204,7 +206,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService,
     private readonly translate: TranslateService,
-    private lazyData: LazyDataService
+    private lazyData: LazyDataFacade
   ) {
   }
 

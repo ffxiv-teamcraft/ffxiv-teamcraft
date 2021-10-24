@@ -18,7 +18,6 @@ import { ListPickerService } from '../../../modules/list-picker/list-picker.serv
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { List } from '../../../modules/list/model/list';
 import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 import { BaseParam } from '../../../modules/gearsets/base-param';
@@ -29,6 +28,8 @@ import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-gearset-display',
@@ -71,9 +72,10 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public foods$: Observable<any[]> = this.gearset$.pipe(
     first(),
-    map(gearset => {
+    withLazyData(this.lazyData, 'foods'),
+    map(([gearset, foods]) => {
       const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
-      return [].concat.apply([], this.lazyData.data.foods
+      return [].concat.apply([], foods
         .filter(food => {
           return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
         })
@@ -100,7 +102,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private dialog: NzModalService, private materiaService: MateriaService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private notificationService: NzNotificationService, private lazyData: LazyDataService,
+              private notificationService: NzNotificationService, private lazyData: LazyDataFacade,
               private router: Router, private i18n: I18nToolsService,
               private l12n: LocalizedDataService, private message: NzMessageService,
               private authFacade: AuthFacade, private clipboard: Clipboard,
@@ -183,47 +185,50 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   }
 
   createCommission(gearset: TeamcraftGearset, progression: GearsetProgression): void {
-    const list = new List();
-    list.name = gearset.name;
-    const items = this.gearsetsFacade.toArray(gearset)
-      .filter(piece => {
-        return progression[piece.slot]?.item === false;
+    this.lazyData.getRecipes().pipe(
+      switchMap(recipes => {
+        const list = new List();
+        list.name = gearset.name;
+        const items = this.gearsetsFacade.toArray(gearset)
+          .filter(piece => {
+            return progression[piece.slot]?.item === false;
+          })
+          .map(entry => {
+            return {
+              id: entry.piece.itemId,
+              amount: 1
+            };
+          });
+        const operations = items.map(item => {
+          const recipe = recipes.find(r => r.result === item.id);
+          return this.listManager.addToList({
+            itemId: +item.id,
+            list: list,
+            recipeId: recipe ? recipe.id : '',
+            amount: item.amount
+          });
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
+        return this.progressService.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name })
+          .pipe(
+            switchMap(l => {
+              return this.listsFacade.addListAndWait(l);
+            })
+          );
       })
-      .map(entry => {
-        return {
-          id: entry.piece.itemId,
-          amount: 1
-        };
-      });
-    const operations = items.map(item => {
-      const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
-      return this.listManager.addToList({
-        itemId: +item.id,
-        list: list,
-        recipeId: recipe ? recipe.id : '',
-        amount: item.amount
-      });
+    ).subscribe(resList => {
+      this.commissionsFacade.create(resList);
     });
-    let operation$: Observable<any>;
-    if (operations.length > 0) {
-      operation$ = concat(
-        ...operations
-      );
-    } else {
-      operation$ = of(list);
-    }
-    this.progressService.showProgress(operation$,
-      items.length,
-      'Adding_recipes',
-      { amount: items.length, listname: list.name })
-      .pipe(
-        switchMap(l => {
-          return this.listsFacade.addListAndWait(l);
-        })
-      )
-      .subscribe(resList => {
-        this.commissionsFacade.create(resList);
-      });
   }
 
   copyToClipboard(gearset: TeamcraftGearset): void {

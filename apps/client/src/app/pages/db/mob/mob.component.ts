@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { MobData } from '../../../model/garland-tools/mob-data';
 import { Vector2 } from '../../../core/tools/vector2';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { monsterDrops } from '../../../core/data/sources/monster-drops';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-mob',
@@ -24,8 +24,6 @@ import { monsterDrops } from '../../../core/data/sources/monster-drops';
   styleUrls: ['./mob.component.less']
 })
 export class MobComponent extends TeamcraftPageComponent {
-
-  public gtData$: Observable<MobData | {}>;
 
   public xivapiMob$: Observable<any>;
 
@@ -38,7 +36,7 @@ export class MobComponent extends TeamcraftPageComponent {
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
+              private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
 
@@ -68,22 +66,18 @@ export class MobComponent extends TeamcraftPageComponent {
       map(params => params.get('mobId'))
     );
 
-    this.gtData$ = mobId$.pipe(
-      switchMap(id => {
-        return this.gt.getMob(this.getGTMobId(+id))
-          .pipe(
-            catchError(() => of({ mob: { id: +id } }))
-          );
-      }),
-      shareReplay(1)
-    );
-
-    this.drops$ = this.gtData$.pipe(
-      map((data: MobData) => {
-        if (data.mob && data.mob.drops) {
-          return data.mob.drops;
-        }
-        return monsterDrops[data.mob.id] || [];
+    this.drops$ = mobId$.pipe(
+      switchMap(mobId => {
+        return this.lazyData.getEntry('dropSources').pipe(
+          map(dropSources => {
+            return [
+              ...Object.keys(dropSources)
+                .filter(key => dropSources[key].includes(mobId))
+                .map(key => +key),
+              ...monsterDrops[mobId]
+            ];
+          })
+        );
       })
     );
 
@@ -91,15 +85,20 @@ export class MobComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.BNpcName, +id);
       }),
-      map(mob => {
-        mob.mappyData = this.lazyData.data.monsters[mob.ID];
-        return mob;
+      switchMap(mob => {
+        return this.lazyData.getRow('monsters', mob.ID).pipe(
+          map(monster => {
+            mob.mappyData = monster;
+            return mob;
+          })
+        );
       }),
       shareReplay(1)
     );
 
     this.spawns$ = this.xivapiMob$.pipe(
-      map(mob => {
+      withLazyData(this.lazyData, 'hunts'),
+      map(([mob, hunts]) => {
         const spawns = [];
         if (mob.mappyData !== undefined) {
           for (const position of mob.mappyData.positions) {
@@ -116,7 +115,7 @@ export class MobComponent extends TeamcraftPageComponent {
             mapRow.positions.push({ x: position.x, y: position.y });
           }
         }
-        const mobHuntSpawns = this.lazyData.data.hunts.find(h => (h.hunts || []).some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
+        const mobHuntSpawns = hunts.find(h => (h.hunts || []).some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
         if (mobHuntSpawns !== undefined) {
           const mapIdEntry = mapIds.find(entry => entry.territory === mobHuntSpawns.zoneid);
           const c = mapIdEntry.scale / 100;
@@ -124,7 +123,7 @@ export class MobComponent extends TeamcraftPageComponent {
               map: mapIdEntry.id,
               level: '??',
               zoneid: mapIdEntry.zone,
-              positions: mobHuntSpawns.hunts.find(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase())
+              positions: (mobHuntSpawns.hunts ?? []).find(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase())
                 .spawns
                 .map(hSpawn => {
                   return {
@@ -141,17 +140,7 @@ export class MobComponent extends TeamcraftPageComponent {
 
     this.links$ = combineLatest([this.xivapiMob$]).pipe(
       map(([xivapiMob]) => {
-        const gtId = this.getGTMobId(xivapiMob.ID);
-        const links = [];
-        if (gtId.length > 0) {
-          links.push({
-            title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#mob/${gtId}`,
-            icon: 'https://garlandtools.org/favicon.png'
-          });
-        }
         return [
-          ...links,
           {
             title: 'Gamer Escape',
             url: `https://ffxiv.gamerescape.com/wiki/${xivapiMob.Name_en.toString().split(' ').join('_')}`,
@@ -160,14 +149,6 @@ export class MobComponent extends TeamcraftPageComponent {
         ];
       })
     );
-  }
-
-  private getGTMobId(bnpcNameId: number): string {
-    const monsterEntry = this.lazyData.data.monsters[bnpcNameId];
-    if (monsterEntry === undefined) {
-      return '';
-    }
-    return `${monsterEntry.baseid}${bnpcNameId < 1000 ? '0000000' : '000000'}${bnpcNameId}`;
   }
 
   private getName(item: any): string {
