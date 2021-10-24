@@ -31,7 +31,6 @@ import * as FishGQLProviders from '../db/service/fish-data.gql';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
-import { SheetImportPopupComponent } from './sheet-import-popup/sheet-import-popup.component';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { ReportsManagementComponent } from './reports-management.component';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
@@ -61,7 +60,6 @@ const routes: Routes = [
     AllaganReportDetailsComponent,
     AllaganReportRowComponent,
     PredatorsInputComponent,
-    SheetImportPopupComponent,
     ReportsManagementComponent,
     ReportSourceDisplayComponent,
     ReportSourceCompactDetailsComponent,

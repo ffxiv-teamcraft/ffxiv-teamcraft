@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { environment } from '../../../../environments/environment';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { SheetImportPopupComponent } from '../sheet-import-popup/sheet-import-popup.component';
 import { distinctUntilChanged, filter, map, shareReplay } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -31,8 +29,6 @@ export class AllaganReportsComponent {
 
   public dirty = false;
   public selectCount = 0;
-
-  public devEnv = !environment.production;
 
   public queueStatus$ = this.allaganReportsService.getQueueStatus().pipe(
     filter(() => !this.dirty),
@@ -130,15 +126,6 @@ export class AllaganReportsComponent {
       case AllaganReportStatus.PROPOSAL:
         return '#108ee9';
     }
-  }
-
-  importSheet(): void {
-    this.dialog.create({
-      nzContent: SheetImportPopupComponent,
-      nzComponentParams: {},
-      nzFooter: null,
-      nzTitle: this.translate.instant('CUSTOM_ITEMS.Import_items')
-    });
   }
 
   acceptProposal(entry: AllaganReportQueueEntry): void {

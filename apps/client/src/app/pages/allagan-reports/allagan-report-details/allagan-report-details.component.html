@@ -390,7 +390,7 @@
           <nz-form-item>
             <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Predator' | translate}}</nz-form-label>
             <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Predator_explain' | translate">
-              <app-predators-input formControlName="predators" [possibleFishList]="spearFishingFishList"></app-predators-input>
+              <app-predators-input formControlName="predators" [possibleFishList]="spearFishingFishList$ | async"></app-predators-input>
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>
