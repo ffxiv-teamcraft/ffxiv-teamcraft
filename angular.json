@@ -44,10 +44,21 @@
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js"
-            ],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            ]
           },
           "configurations": {
+            "dev": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -158,6 +169,9 @@
             "browserTarget": "client:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "client:build:dev"
+            },
             "production": {
               "browserTarget": "client:build:production"
             },
@@ -167,7 +181,8 @@
             "preview": {
               "browserTarget": "client:build:preview"
             }
-          }
+          },
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

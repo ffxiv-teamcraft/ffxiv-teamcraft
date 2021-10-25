@@ -280,8 +280,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         return getItemSource(item, DataType.MASTERBOOKS)
           // Ignore string ids, as they are draft ids
           .filter(book => Number.isInteger(book.id))
-          .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
-          .map(book => book.id);
+          .filter(book => (entry.masterbooks || []).indexOf(+book.id) === -1)
+          .map(book => +book.id);
       })
     );
 

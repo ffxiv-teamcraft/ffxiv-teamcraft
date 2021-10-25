@@ -19,7 +19,6 @@ import { SpendingEntry } from '../../currency-spending/spending-entry';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -167,7 +166,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
   );
 
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataFacade, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
+              private lazyData: LazyDataService, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,
               public translate: TranslateService) {

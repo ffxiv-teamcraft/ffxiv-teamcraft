@@ -5,42 +5,47 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { DataType } from '../../modules/list/data/data-type';
-import { LazyDataService } from '../data/lazy-data.service';
 import { AlarmsFacade } from '../alarms/+state/alarms.facade';
 import { Alarm } from '../alarms/alarm';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { MathTools } from '../../tools/math-tools';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { safeCombineLatest } from '../rxjs/safe-combine-latest';
+
+interface ListRowSortComparison {
+  name: string;
+  level: number;
+  job: number;
+  slot: number;
+  timer: number;
+  log: number;
+}
 
 @Injectable()
 export class LayoutOrderService {
 
 
-  private orderFunctions: { [index: string]: (rowA: ListRow, rowB: ListRow) => number } = {
+  private orderFunctions: { [index: string]: (rowA: ListRowSortComparison, rowB: ListRowSortComparison) => number } = {
     'NAME': (a, b) => {
-      let aName: string = this.i18n.getName(this.localizedData.getItem(a.id));
-      let bName: string = this.i18n.getName(this.localizedData.getItem(b.id));
-      if (aName === bName) {
-        // If this happens, it means that they are the same item with different recipe,
-        // let's just add recipe id to distinguish them.
-        aName += a.recipeId;
-        bName += b.recipeId;
-      }
-      return aName > bName ? 1 : -1;
+      return a.name > b.name ? 1 : -1;
     },
     'LEVEL': (a, b) => {
-      const aLevel = this.getLevel(a);
-      const bLevel = this.getLevel(b);
+      const aLevel = a.level;
+      const bLevel = b.level;
       // If same level, order by name for these two
-      return aLevel === bLevel ? this.orderFunctions['NAME'](a, b) : aLevel - bLevel;
+      if (aLevel === bLevel) {
+        return this.orderFunctions['NAME'](a, b);
+      }
+      return aLevel - bLevel;
     },
     'JOB': (a, b) => {
-      const aJobId = this.getJobId(a);
-      const bJobId = this.getJobId(b);
+      const aJobId = a.job;
+      const bJobId = b.job;
       if (aJobId === bJobId) {
-        const aIndex = this.getLogIndex(a);
-        const bIndex = this.getLogIndex(b);
-        if (aIndex > -1 && bIndex > -1 && aIndex !== bIndex) {
-          return aIndex - bIndex;
+        if (a.log > -1 && b.log > -1 && a.log !== b.log) {
+          return a.log - b.log;
         }
         return this.orderFunctions['LEVEL'](a, b);
       } else {
@@ -48,30 +53,26 @@ export class LayoutOrderService {
       }
     },
     'SLOT': (a, b) => {
-      const aSlot = this.lazyData.data.itemEquipSlotCategory[a.id] || 0;
-      const bSlot = this.lazyData.data.itemEquipSlotCategory[b.id] || 0;
-      if (aSlot === bSlot) {
+      if (a.slot === b.slot) {
         return this.orderFunctions['JOB'](a, b);
       } else {
-        return aSlot - bSlot;
+        return a.slot - b.slot;
       }
     },
     'TIMER': (a, b) => {
-      const aAlarms = getItemSource(a, DataType.ALARMS);
-      const bAlarms = getItemSource(b, DataType.ALARMS);
-      if (aAlarms.length === 0 || bAlarms.length === 0) {
+      if (a.timer === 0 || b.timer === 0) {
         return this.orderFunctions['NAME'](a, b);
       }
-      return this.getNextSpawn(aAlarms) - this.getNextSpawn(bAlarms);
+      return a.timer - b.timer;
     }
   };
 
   alarmsCache: Record<number, { expire: number, score: number }> = {};
 
-  orderCache: Record<string, number[]> = {};
+  orderCache: Record<string, Observable<number[]>> = {};
 
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService,
+              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
   }
 
@@ -94,40 +95,77 @@ export class LayoutOrderService {
     return this.alarmsCache[alarms[0].itemId].score;
   }
 
-  public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): ListRow[] {
+  public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {
     if (orderBy === 'TIMER') {
-      return data.sort(this.orderFunctions[orderBy]);
+      return this.sortRows(data, orderBy, order);
     }
     const hash = MathTools.hashCode(`${orderBy}:${order};${data.map(d => `${d.id},${d.amount}`).join(';')}`);
     if (this.orderCache[hash] === undefined) {
-      const ordering = this.orderFunctions[orderBy];
-      if (ordering === undefined) {
-        this.orderCache[hash] = this.toIndexArray(data, data);
-      } else {
-        const orderedASC = [...(data || [])].sort(ordering);
-        this.orderCache[hash] = this.toIndexArray(data, order === LayoutRowOrder.ASC ? orderedASC : orderedASC.reverse());
-      }
+      this.orderCache[hash] = this.sortRows(data, orderBy, order).pipe(
+        map(ordered => this.toIndexArray(data, ordered))
+      );
     }
-    return this.orderCache[hash].map(index => data[index]);
+    return this.orderCache[hash].pipe(
+      map(cache => cache.map(index => data[index]))
+    );
+  }
+
+  private sortRows(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {
+    return safeCombineLatest(data.map(row => this.getSortComparables(row).pipe(
+      map(comparables => ({ row, comparables }))))
+    ).pipe(
+      map((rows) => {
+        return rows
+          .sort((a, b) => {
+            if (this.orderFunctions[orderBy]) {
+              return this.orderFunctions[orderBy](a.comparables, b.comparables);
+            }
+            return 0;
+          })
+          .map(({ row }) => row);
+      }),
+      map(sorted => order === LayoutRowOrder.ASC ? sorted : sorted.reverse())
+    );
+  }
+
+  private getSortComparables(row: ListRow): Observable<ListRowSortComparison> {
+    return combineLatest([
+      of(this.i18n.getName(this.localizedData.getItem(row.id))),
+      of(this.getLevel(row)),
+      of(this.getJobId(row)),
+      this.lazyData.getRow('itemEquipSlotCategory', row.id, 0),
+      of(getItemSource(row, DataType.ALARMS)).pipe(
+        map(alarms => alarms.length === 0 ? 0 : this.getNextSpawn(alarms))
+      ),
+      this.getLogIndex(row)
+    ]).pipe(
+      map(([name, level, job, slot, timer, log]) => {
+        return { name, level, job, slot, timer, log };
+      })
+    );
   }
 
   private toIndexArray(before: ListRow[], after: ListRow[]): number[] {
     return after.map(row => before.indexOf(row));
   }
 
-  private getLogIndex(row: ListRow): number {
+  private getLogIndex(row: ListRow): Observable<number> {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
     if (craftedBy.length === 0) {
-      return -1;
+      return of(-1);
     }
     const craft = craftedBy[0];
-    const logEntry = this.lazyData.data.craftingLog[craft.job - 8];
-    // Log entry is undefined if it's an airship
-    if (logEntry === undefined) {
-      return -1;
-    }
-    // We multiply index by craft.jobId because we want it to keep the job order too
-    return logEntry.indexOf(+row.recipeId) * craft.job;
+    return this.lazyData.getEntry('craftingLog').pipe(
+      map(craftingLog => {
+        const logEntry = craftingLog[craft.job - 8];
+        // Log entry is undefined if it's an airship
+        if (logEntry === undefined) {
+          return -1;
+        }
+        // We multiply index by craft.jobId because we want it to keep the job order too
+        return logEntry.indexOf(+row.recipeId) * craft.job;
+      })
+    );
   }
 
   private getJobId(row: ListRow): number {

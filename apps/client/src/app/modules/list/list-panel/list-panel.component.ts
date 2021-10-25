@@ -79,7 +79,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   public teams$: Observable<Team[]> = this.teamsFacade.myTeams$;
 
   public listContent$: Observable<ListRow[]> = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
-    map(([list, layout]) => {
+    switchMap(([list, layout]) => {
       return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
     })
   );

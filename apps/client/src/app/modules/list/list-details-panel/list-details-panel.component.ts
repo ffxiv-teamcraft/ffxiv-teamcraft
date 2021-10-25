@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -16,7 +16,7 @@ import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { Observable } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -36,40 +36,33 @@ import { NpcBreakdown } from '../../../model/common/npc-breakdown';
 import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { observeInput } from '../../../core/rxjs/observe-input';
 
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./list-details-panel.component.less']
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public LayoutRowDisplayMode = LayoutRowDisplayMode;
 
-  private _displayRow: LayoutRowDisplay;
-
   @Input()
-  public set displayRow(row: LayoutRowDisplay) {
-    this.progression = this.listsFacade.buildProgression(row.rows);
-    this._displayRow = row;
-  }
+  displayRow: LayoutRowDisplay;
 
-  public get displayRow(): LayoutRowDisplay {
-    return this._displayRow;
-  }
+  private displayRow$ = observeInput(this, 'displayRow');
 
   public get displayMode(): LayoutRowDisplayMode {
-    if (this._displayRow.zoneBreakdown) {
+    if (this.displayRow.zoneBreakdown) {
       return LayoutRowDisplayMode.ZONE_BREAKDOWN;
     }
-    if (this._displayRow.tiers) {
+    if (this.displayRow.tiers) {
       return LayoutRowDisplayMode.TIERS;
     }
-    if (this._displayRow.reverseTiers) {
+    if (this.displayRow.reverseTiers) {
       return LayoutRowDisplayMode.REVERSE_TIERS;
     }
-    if (this._displayRow.npcBreakdown) {
+    if (this.displayRow.npcBreakdown) {
       return LayoutRowDisplayMode.NPC_BREAKDOWN;
     }
     return LayoutRowDisplayMode.DEFAULT;
@@ -99,7 +92,27 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   progression: number;
 
-  tiers: ListRow[][];
+  tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
+    filter(row => row.tiers),
+    switchMap(displayRow => {
+      let tiers = [[]];
+      if (displayRow.rows !== null) {
+        this.topologicalSort(displayRow.rows).forEach(row => {
+          tiers = this.setTier(row, tiers);
+        });
+      }
+      return safeCombineLatest(tiers.map(tier => {
+        return this.layoutOrderService.order(tier, displayRow.layoutRow.orderBy, displayRow.layoutRow.order);
+      })).pipe(
+        map(orderedTiers => {
+          if (displayRow.reverseTiers) {
+            return orderedTiers.reverse();
+          }
+          return orderedTiers;
+        })
+      );
+    })
+  );
 
   zoneBreakdown: ZoneBreakdown;
 
@@ -156,9 +169,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.displayRow) {
       return;
-    }
-    if (this.displayRow.tiers || this.displayRow.reverseTiers) {
-      this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
@@ -370,21 +380,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return preferredPosition || positions[0];
   }
 
-  public generateTiers(reverse = false): void {
-    if (this.displayRow.rows !== null) {
-      this.tiers = [[]];
-      this.topologicalSort(this.displayRow.rows).forEach(row => {
-        this.tiers = this.setTier(row, this.tiers);
-      });
-    }
-    this.tiers = this.tiers.map(tier => {
-      return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
-    });
-    if (reverse) {
-      this.tiers = this.tiers.reverse();
-    }
-  }
-
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
       this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
@@ -481,10 +476,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport = () => {
+  public getTextExport = (tiers?: ListRow[][]) => {
     let rows: ListRow[];
-    if (this.tiers) {
-      rows = this.tiers.reduce((res, tier) => {
+    if (tiers) {
+      rows = tiers.reduce((res, tier) => {
         return [...res, ...tier];
       }, []);
     } else {

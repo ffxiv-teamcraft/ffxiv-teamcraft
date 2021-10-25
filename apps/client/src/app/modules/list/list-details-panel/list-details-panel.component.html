@@ -19,6 +19,7 @@
     <ng-template #display>
       <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed || overlay">
         <ng-template #tiersTpl>
+          <ng-container *ngIf="tiers$ | async as tiers">
             <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
               <ng-template #tierTitle>
                 {{'Precraft_tier' | translate}} <span
@@ -28,6 +29,7 @@
               <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
               <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: tier, displayedItems: 8}"></ng-container>
             </div>
+          </ng-container>
         </ng-template>
         <div [ngSwitch]="displayMode">
           <div *ngSwitchCase="LayoutRowDisplayMode.TIERS">
@@ -128,6 +130,7 @@
           </button>
           <button (click)="$event.stopPropagation()"
                   [clipboard]="getTextExport"
+                  [clipboardFnArgs]="tiers$ | async"
                   [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
                   [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
                   nz-button nz-tooltip nzShape="circle" nzSize="small">

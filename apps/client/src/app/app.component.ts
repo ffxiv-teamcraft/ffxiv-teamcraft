@@ -639,6 +639,7 @@ export class AppComponent implements OnInit {
       this.showPatchNotes();
     }
     this.tutorialService.applicationReady();
+    this.dataLoaded = true;
   }
 
   switchCharacter(id: number): void {

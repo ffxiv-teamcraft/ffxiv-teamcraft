@@ -1,13 +1,12 @@
-import { Directive, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
 @Directive({
   selector: '[clipboard]'
 })
-export class ClipboardDirective implements OnInit {
+export class ClipboardDirective {
 
   @Input('clipboard')
   clipboardInput: string | ((...args: any[]) => string);
@@ -43,16 +42,6 @@ export class ClipboardDirective implements OnInit {
         this.message.success(this.clipboardSuccessMessage);
       } else {
         this.message.success(this.translate.instant('Item_name_copied', { itemname: content }));
-      }
-    }
-  }
-
-  ngOnInit(): void {
-    if (!environment.production && typeof this.clipboardInput === 'function') {
-      try {
-        this.clipboardInput(...this.clipboardFnArgs);
-      } catch (e) {
-        console.error(e);
       }
     }
   }

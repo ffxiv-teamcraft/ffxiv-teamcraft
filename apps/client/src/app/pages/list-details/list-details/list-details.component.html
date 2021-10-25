@@ -266,7 +266,7 @@
           <i nz-icon nzType="edit"></i>
         </button>
       </div>
-      <div *ngIf="list.public && list.tags.length === 0" class="alert">
+      <div *ngIf="list.public && list.tags?.length === 0" class="alert">
         <nz-alert [nzMessage]="message" nzShowIcon nzType="warning">
           <ng-template #message>
             {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon nzType="tags-o"></i>
