@@ -9,12 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { UserLevel } from '../../../../model/other/user-level';
 import { Router } from '@angular/router';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { DbItemCommentNotification } from '../../../../model/notification/db-item-comment-notification';
 import { NotificationService } from '../../../../core/notification/notification.service';
 import { environment } from '../../../../../environments/environment';
 import { DbCommentReplyNotification } from '../../../../model/notification/db-comment-reply-notification';
 import { XivapiPatch } from '../../../../core/data/model/xivapi-patch';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-db-comments',
@@ -67,7 +67,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     private authFacade: AuthFacade,
     public translate: TranslateService,
     private router: Router,
-    private lazyData: LazyDataService,
+    private lazyData: LazyDataFacade,
     private notificationService: NotificationService
   ) {
     super();
@@ -112,16 +112,20 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  getPatch(comment: DbComment): XivapiPatch {
-    let version = this.lazyData.patches[0];
-    for (const patch of this.lazyData.patches) {
-      if (patch.ReleaseDate <= comment.date / 1000) {
-        version = patch;
-      } else {
-        break;
-      }
-    }
-    return version;
+  getPatch(comment: DbComment): Observable<XivapiPatch> {
+    return this.lazyData.patches$.pipe(
+      map(patches => {
+        let version = patches[0];
+        for (const patch of patches) {
+          if (patch.ReleaseDate <= comment.date / 1000) {
+            version = patch;
+          } else {
+            break;
+          }
+        }
+        return version;
+      })
+    );
   }
 
   handleClick(event: any): void {

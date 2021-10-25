@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ApolloQueryResult } from 'apollo-client';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishDataService } from './fish-data.service';
 import { ItemContextService } from './item-context.service';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 export interface Occurrence {
   id: number;
@@ -90,7 +91,7 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
 @Injectable()
 export class FishContextService {
   /** The fish id that is currently active and being used to filter results by. */
-  public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.fishes$]).pipe(
+  public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.getEntry('fishes')]).pipe(
     map(([itemId, fishes]) => (itemId > 0 && fishes.includes(itemId) ? itemId : undefined)),
     distinctUntilChanged()
   );
@@ -107,7 +108,7 @@ export class FishContextService {
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
     filter((fishId) => fishId > 0),
-    switchMap((fishId) => combineLatest([this.data.getSpotsByFishId(fishId), this.lazyData.fishingSpots$])),
+    switchMap((fishId) => combineLatest([this.data.getSpotsByFishId(fishId), this.lazyData.getEntry('fishingSpots')])),
     map(([res, spotData]) => {
       return {
         ...res,
@@ -141,7 +142,7 @@ export class FishContextService {
 
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$, this.showMisses$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
-     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),
+    tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),
     switchMap(([fishId, spotId, showMisses]) => this.data.getBaitMooches(fishId, spotId, showMisses))
   );
 
@@ -184,13 +185,25 @@ export class FishContextService {
     filter(([fishId, spotId]) => fishId >= 0 || spotId > 0),
     switchMap(([fishId, spotId]) => {
       return this.data.getWeather(fishId, spotId).pipe(
-        map(res => {
+        switchMap(res => {
           if (res.data && spotId) {
-            res.data.weathers = res.data.weathers.filter(e => {
-              return spotId >= 10000 || this.getPossibleWeathers(spotId).includes(e.weatherId);
-            });
+            return safeCombineLatest(res.data.weathers.map(e => {
+              return this.getPossibleWeathers(spotId).pipe(
+                map(possibleWeathers => {
+                  return {
+                    ...e,
+                    matches: spotId >= 10000 || possibleWeathers.includes(e.weatherId)
+                  };
+                })
+              );
+            })).pipe(
+              map(weathers => {
+                res.data.weathers = weathers.filter(w => w.matches);
+                return res;
+              })
+            );
           }
-          return res;
+          return of(res);
         })
       );
     })
@@ -341,15 +354,19 @@ export class FishContextService {
     private readonly settings: SettingsService,
     private readonly etime: EorzeanTimeService,
     private readonly data: FishDataService,
-    private readonly lazyData: LazyDataService
+    private readonly lazyData: LazyDataFacade
   ) {
   }
 
-  private getPossibleWeathers(spotId: number): number[] {
-    const spot = this.lazyData.data.fishingSpots.find(s => s.id === spotId);
-    const weatherRate = mapIds.find(m => m.id === spot.mapId).weatherRate;
-    const rates = weatherIndex[weatherRate];
-    return (rates || []).map(rate => rate.weatherId);
+  private getPossibleWeathers(spotId: number): Observable<number[]> {
+    return this.lazyData.getEntry('fishingSpots').pipe(
+      map(fishingSpots => {
+        const spot = fishingSpots.find(s => s.id === spotId);
+        const weatherRate = mapIds.find(m => m.id === spot.mapId).weatherRate;
+        const rates = weatherIndex[weatherRate];
+        return (rates || []).map(rate => rate.weatherId);
+      })
+    );
   }
 
   /** Sets the currently active spot. */

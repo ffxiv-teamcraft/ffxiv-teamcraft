@@ -8,7 +8,7 @@
       <nz-comment *ngIf="comment.$key !== editingComment?.$key; else commentEdition" [nzAuthor]="authorRef"
                   [nzDatetime]="dateRef">
         <ng-template #dateRef>
-          {{comment.date | date:'short':undefined:getLocale()}} ({{getPatch(comment) | xivapiI18n}})
+          {{comment.date | date:'short':undefined:getLocale()}} ({{getPatch(comment) | async | xivapiI18n}})
         </ng-template>
         <ng-template #authorRef>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

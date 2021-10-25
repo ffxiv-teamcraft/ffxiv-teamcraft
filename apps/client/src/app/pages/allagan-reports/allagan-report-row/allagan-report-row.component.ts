@@ -5,8 +5,11 @@ import { AllaganReport } from '../model/allagan-report';
 import { AllaganReportStatus } from '../model/allagan-report-status';
 import { UserLevel } from '../../../model/other/user-level';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { merge } from 'rxjs';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-allagan-report-row',
@@ -83,15 +86,23 @@ export class AllaganReportRowComponent {
     return this.queueEntry?.type || AllaganReportStatus.ACCEPTED;
   }
 
-  get fishingSpot(): any {
-    return this.lazyData.data.fishingSpots.find(s => s.id === this.data.spot);
-  }
+  fishingSpot$ = merge(
+    observeInput(this, 'report', true),
+    observeInput(this, 'queueEntry', true)
+  ).pipe(
+    switchMap(report => {
+      const data = report.data;
+      return this.lazyData.getEntry('fishingSpots').pipe(
+        map(fishingSpots => fishingSpots.find(s => s.id === data.spot))
+      );
+    })
+  );
 
   get hookset(): any {
     return [0, 4103, 4179][this.data.hookset];
   }
 
-  constructor(public translate: TranslateService, private lazyData: LazyDataService) {
+  constructor(public translate: TranslateService, private lazyData: LazyDataFacade) {
   }
 
   getColor(status: AllaganReportStatus): string {

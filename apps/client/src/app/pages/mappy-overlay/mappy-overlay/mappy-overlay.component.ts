@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
@@ -70,7 +69,7 @@ export class MappyOverlayComponent implements OnInit {
 
   public imageTransform: SafeStyle;
 
-  constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
+  constructor(private ipc: IpcService, private mapService: MapService,
               private sanitizer: DomSanitizer) {
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
