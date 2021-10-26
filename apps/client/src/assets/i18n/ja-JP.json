@@ -2147,12 +2147,12 @@
       "Can_be_changed_in_settings": "設定内でオンまたはオフに切り替えることができます"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "名前にマウスポインターを当てればプロフィールエディターとレベル、ステータスなどを修正できるメニューが使用できます。"
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Search_type": "ここで設定(アイテム、クエスト、マップ、ノード、NPCなど) を変更できます。",
+      "Share": "シェアできるリンクを作ろうとする場合、このボタンを押してください。",
+      "Filters": "ステータス、ボーナス、アイテムレベルなどの拡張機能を使用するにはこのパンネルを開いてください。"
     },
     "LIST_PANEL": {
       "Share": "Click here to copy a link to this list, to easily share it",
