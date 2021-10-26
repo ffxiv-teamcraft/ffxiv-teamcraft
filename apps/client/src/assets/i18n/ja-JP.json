@@ -1726,7 +1726,7 @@
       "No_comments": "コメントなし",
       "Post": "投稿",
       "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "データベースのコメントは有用な情報を含んでいます。もしコメント機能を悪用した場合、Teamcraftのご利用が制限されますので、ご注意お願いいたします。"
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
