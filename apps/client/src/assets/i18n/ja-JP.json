@@ -1821,7 +1821,7 @@
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
-    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
+    "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
     "Pick_stat": "能力値選択"
   },
   "BLOG": {
@@ -2003,7 +2003,7 @@
       "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
+      "Title": "単一のレシピにのみ使用されるアイテムです。",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
@@ -2057,7 +2057,7 @@
     "You_have_no_gearsets": "ギアセットがありません",
     "Favorite_gearsets": "お気に入りのギアセット",
     "Update_from_pcap": "パケット キャプチャを使用して更新",
-    "Copy_as_text": "Copy this gearset as text",
+    "Copy_as_text": "このギアセットをテキストとしてコピー",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
     "Please_input_lodestone_id": "Please input lodestone id",
@@ -2101,12 +2101,12 @@
       "External_gearset": "A Teamcraft gearset from someone else",
       "Personal_gearset": "One of your gearsets",
       "Paste_link_step_title": "ギアセットのリンク",
-      "Pick_your_gearset": "Pick your gearset",
+      "Pick_your_gearset": "ギアセットを選ぶ",
       "Submit": "比較する",
       "Your_gearset": "ギアセット",
       "Other_gearset": "その他のギアセット",
       "Diff": "差分",
-      "Avg_melding_chances": "Avg. overmeld chances"
+      "Avg_melding_chances": "平均的なマテリア禁断の確率"
     },
     "STAT_DISPLAY": {
       "Ilvl": "平均IL",
@@ -2114,11 +2114,11 @@
       "Direct_hit_chances": "ダイレクト発生",
       "Critical_hit_chances": "クリティカル発生",
       "Critical_hit_multiplier": "クリティカル増加",
-      "Determination_bonus": "Determination bonus",
+      "Determination_bonus": "意思力の倍率",
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "ギアセットの同期化",
       "Tag": "同期",
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
@@ -2131,7 +2131,7 @@
     "Delete_folder": "フォルダを削除",
     "Rename_folder": "フォルダ名を変更",
     "View_folder": "フォルダを開く",
-    "Content": "Content",
+    "Content": "詳細内容",
     "Folder_not_found": "フォルダが見つかりません",
     "Your_folders": "あなたのフォルダ",
     "Favorite_folders": "お気に入りフォルダ"
