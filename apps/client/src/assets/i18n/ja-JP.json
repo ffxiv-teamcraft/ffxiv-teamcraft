@@ -882,7 +882,7 @@
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
+    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細な機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
     "Fish_eyes": "ただ天気条件の為にフィッシュアイが必要",
     "Add_alarm": "アラームを追加する",
@@ -1308,17 +1308,17 @@
     "Buy_merch": "Teamcraftのグッズを買う",
     "Features_header": "始める！",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "リストを作成して制作に必要な全ての素材を確認し、フレンドにシェアできます。アイテム検索でフィルターに適用して、特定アイテムを選択してから制作を開始することができます。",
       "Public_lists": "制作品やギルドリーヴの納品や制作手帳を完了、飛空艇、BIS装備など全てを貴方のコミュニティリストにコピーできます。",
       "Alarms": "アラームを作成して採集場所からの出現を見逃せず、グループに編成してゲームに取り込む事ができます。",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
+      "Gathering_location": "採集物に関する情報を見つかり、アラームを作成し、地図の座標や一番近所のエーテライト、そして必要な伝承録と追加情報が確認できます。",
+      "Rotations": "スキル回しを作成し、シミュレーターで確認やカスタムシミュレーターを利用して理論上の制作マクロを構成することができます。",
       "Levequests": "ジョブやレベルに合わせてギルドリーヴを探し、報酬を確認してリストを作成します。",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "マクロが見つかりましたが、言語が違いますか？マクロ翻訳機では貴方のFF14の言語に合わせて翻訳することができます。"
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available!",
+    "New_update_available": "新しいアップデートがあります！",
     "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
     "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
