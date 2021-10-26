@@ -1805,7 +1805,7 @@
     "Shown_only_collectables": "収集品のみ表示",
     "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "手帳で完了してない項目だけ表示",
-    "Add_results_to_pool": "Add to pool when adding to basket",
+    "Add_results_to_pool": "制作リストに追加する時、所持状況にも追加する",
     "Show_only_leve_items": "Only items used in levequests"
   },
   "CURRENCY_SPENDING": {
