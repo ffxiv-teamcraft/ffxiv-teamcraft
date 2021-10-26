@@ -559,7 +559,7 @@
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",
-      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
+      "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
       "Error": "Bioからコードを見つかりませんでした。コードを貼り付けてから、変更されたのか、ご確認下さい。そして約30秒後にやり直して下さい",
       "Validate": "認証"
     }
@@ -571,7 +571,7 @@
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
-    "Lists_merged": "Lists merged with success!",
+    "Lists_merged": "リスト併合が完了しました！",
     "Shared_lists": "自分と共有されているリスト",
     "Add_selection": "選択項目をリストに追加する",
     "Reset_selection": "選択を解除",
@@ -740,7 +740,7 @@
       "Import_layout": "レイアウトを読み込む",
       "Export_layout": "このレイアウトをエクスポート",
       "Import_string": "レイアウトを読み込む",
-      "Import_string_copied": "Layout code copied!",
+      "Import_string_copied": "レイアウトコードをコピーしました！",
       "Layout_name": "レイアウト名",
       "Invalid_import": "無効な取り込みコードです",
       "Global_options": "一般設定",
@@ -1360,7 +1360,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more!"
+    "Loading_data": "アイテム、スキル、詳細を読み込み中"
   },
   "CUSTOM_ITEMS": {
     "Title": "カスタムアイテム",
@@ -1569,7 +1569,7 @@
       "Top_users": "最高順位",
       "Your_ranking": "あなたのランキング",
       "Include_fisheyes_data": "フィッシュアイを通計で含む",
-      "Not_enough_data_points": "Not enough data points to display this chart",
+      "Not_enough_data_points": "チャートを表示するための十分なデータがありません。",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",
@@ -1631,7 +1631,7 @@
       "Repeatable": "繰り返し可能",
       "Beast_tribe_rank": "蛮族友好段階",
       "Chain_length": "連携クエスト",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "取引可能な品目"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
