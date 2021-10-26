@@ -24,7 +24,7 @@
   "Change_character": "キャラクター",
   "Check_guides": "ガイドを確認してください",
   "Guides_links": "Teamcraft ガイド",
-  "Db_ban": "以前に作成したデータベースのコメントにより、コメントを投稿する権限が制限された状態です。もしこれに関する意義申し立てを行うにはDisocordのMiu#1568にお問い合わせください。",
+  "Db_ban": "以前に作成したデータベースのコメントにより、コメント機能が制限された状態です。もしこれに関する意義申し立てを行うにはDisocordのMiu#1568にお問い合わせください。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
