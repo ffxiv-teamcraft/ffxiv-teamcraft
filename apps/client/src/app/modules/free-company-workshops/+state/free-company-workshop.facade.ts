@@ -5,11 +5,10 @@ import * as FreeCompanyWorkshopSelectors from './freecompany-workshop.selectors'
 import { select, Store } from '@ngrx/store';
 import { Submarine } from '../model/submarine';
 import { VesselStats } from '../model/vessel-stats';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { VesselType } from '../model/vessel-type';
-import { BehaviorSubject, combineLatest, EMPTY, interval, merge } from 'rxjs';
+import { BehaviorSubject, combineLatest, EMPTY, interval, merge, Observable, of } from 'rxjs';
 import { Airship } from '../model/airship';
 import { VesselTimersUpdate } from '../model/vessel-timers-update';
 import { Memoized } from '../../../core/decorators/memoized';
@@ -31,6 +30,7 @@ import { toIpcData } from '../../../core/rxjs/to-ipc-data';
 import { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -219,7 +219,7 @@ export class FreeCompanyWorkshopFacade {
     })
   );
 
-  constructor(private readonly lazyData: LazyDataService, private readonly ipc: IpcService,
+  constructor(private readonly lazyData: LazyDataFacade, private readonly ipc: IpcService,
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
               private readonly i18n: I18nToolsService, private readonly l12n: LocalizedDataService,
               private readonly settings: SettingsService, private soundNotificationService: SoundNotificationService) {
@@ -319,17 +319,19 @@ export class FreeCompanyWorkshopFacade {
   }
 
   public updateVesselParts(packet: ItemInfo | UpdateInventorySlot): void {
-    const partUpdate = this.getVesselPartCondition(packet);
-    const newState = { ...this.vesselParts.getValue() };
-    if (!newState[partUpdate.type][partUpdate.vesselSlot]) {
-      newState[partUpdate.type][partUpdate.vesselSlot] = {};
-    }
-    if (!newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot]) {
-      newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = {};
-    }
-    newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = { partId: partUpdate.partId, condition: partUpdate.condition };
-    this.vesselParts.next(newState);
-    this.store.dispatch(FreeCompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
+    this.getVesselPartCondition(packet)
+      .subscribe(partUpdate => {
+        const newState = { ...this.vesselParts.getValue() };
+        if (!newState[partUpdate.type][partUpdate.vesselSlot]) {
+          newState[partUpdate.type][partUpdate.vesselSlot] = {};
+        }
+        if (!newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot]) {
+          newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = {};
+        }
+        newState[partUpdate.type][partUpdate.vesselSlot][partUpdate.partSlot] = { partId: partUpdate.partId, condition: partUpdate.condition };
+        this.vesselParts.next(newState);
+        this.store.dispatch(FreeCompanyWorkshopActions.updateVesselPart({ vesselPartUpdate: partUpdate }));
+      });
   }
 
   public updateVesselTimers(data: VesselTimersUpdate): void {
@@ -350,7 +352,7 @@ export class FreeCompanyWorkshopFacade {
     }));
   }
 
-  public getVesselPartCondition(itemInfo: ItemInfo | UpdateInventorySlot): VesselPartUpdate {
+  public getVesselPartCondition(itemInfo: ItemInfo | UpdateInventorySlot): Observable<VesselPartUpdate> {
     const partUpdate: VesselPartUpdate = {
       type: null,
       partId: null,
@@ -359,77 +361,96 @@ export class FreeCompanyWorkshopFacade {
       condition: itemInfo.condition
     };
 
-    if (itemInfo.containerId === 25003) {
-      partUpdate.type = VesselType.AIRSHIP;
-      partUpdate.partId = +Object.keys(this.lazyData.data.airshipParts).find((id) => this.lazyData.data.airshipParts[id].itemId === itemInfo.catalogId);
-    } else if (itemInfo.containerId === 25004) {
-      partUpdate.type = VesselType.SUBMARINE;
-      partUpdate.partId = +Object.keys(this.lazyData.data.submarineParts).find((id) => this.lazyData.data.submarineParts[id].itemId === itemInfo.catalogId);
-    }
+    return combineLatest([
+      this.lazyData.getEntry('airshipParts'),
+      this.lazyData.getEntry('submarineParts')
+    ]).pipe(
+      map(([airshipParts, submarineParts]) => {
+        if (itemInfo.containerId === 25003) {
+          partUpdate.type = VesselType.AIRSHIP;
+          partUpdate.partId = +Object.keys(airshipParts).find((id) => airshipParts[id].itemId === itemInfo.catalogId);
+        } else if (itemInfo.containerId === 25004) {
+          partUpdate.type = VesselType.SUBMARINE;
+          partUpdate.partId = +Object.keys(submarineParts).find((id) => submarineParts[id].itemId === itemInfo.catalogId);
+        }
 
-    partUpdate.vesselSlot = this.getVesselSlotByContainerSlot(itemInfo.slot);
-    partUpdate.partSlot = this.getVesselPartSlotByContainerSlot(itemInfo.slot);
+        partUpdate.vesselSlot = this.getVesselSlotByContainerSlot(itemInfo.slot);
+        partUpdate.partSlot = this.getVesselPartSlotByContainerSlot(itemInfo.slot);
 
-    return partUpdate.type !== null ? partUpdate : null;
+        return partUpdate.type !== null ? partUpdate : null;
+      })
+    );
   }
 
   public getRemainingTime(unixTimestamp): number {
     return unixTimestamp - Math.floor(Date.now() / 1000);
   }
 
-  getVesselBuild(type: VesselType, rank: number, parts: Record<string, VesselPart>): { abbreviation: string, stats: VesselStats } {
+  getVesselBuild(type: VesselType, rank: number, parts: Record<string, VesselPart>): Observable<{ abbreviation: string, stats: VesselStats }> {
     if (!parts || Object.keys(parts).length === 0) {
-      return null;
+      return of(null);
     }
-    const rankBonus: VesselStats = type === VesselType.AIRSHIP ? {
-      surveillance: 0,
-      retrieval: 0,
-      speed: 0,
-      range: 0,
-      favor: 0
-    } : {
-      surveillance: +this.lazyData.data.submarineRanks[rank]?.surveillanceBonus,
-      retrieval: +this.lazyData.data.submarineRanks[rank]?.retrievalBonus,
-      speed: +this.lazyData.data.submarineRanks[rank]?.speedBonus,
-      range: +this.lazyData.data.submarineRanks[rank]?.rangeBonus,
-      favor: +this.lazyData.data.submarineRanks[rank]?.favorBonus
-    };
-    return Object.keys(parts)
-      .map((slot) => {
-        const vesselPart = type === VesselType.AIRSHIP ? this.lazyData.data.airshipParts[parts[slot].partId] : this.lazyData.data.submarineParts[parts[slot].partId];
-        if (!vesselPart) {
-          return null;
-        }
-        const partClass = type === VesselType.AIRSHIP ? AirshipPartClass[vesselPart.class] : SubmarinePartClass[vesselPart.class];
-        return {
-          abbreviation: this.translate.instant(`${VesselType[type]}.CLASS.${partClass}.Abbreviation`),
-          stats: {
-            surveillance: vesselPart.surveillance,
-            retrieval: vesselPart.retrieval,
-            speed: vesselPart.speed,
-            range: vesselPart.range,
-            favor: vesselPart.favor
-          }
+    return combineLatest([
+      this.lazyData.getEntry('submarineRanks'),
+      this.lazyData.getEntry('airshipParts'),
+      this.lazyData.getEntry('submarineParts')
+    ]).pipe(
+      map(([submarineRanks, airshipParts, submarineParts]) => {
+        const rankBonus: VesselStats = type === VesselType.AIRSHIP ? {
+          surveillance: 0,
+          retrieval: 0,
+          speed: 0,
+          range: 0,
+          favor: 0
+        } : {
+          surveillance: +submarineRanks[rank]?.surveillanceBonus,
+          retrieval: +submarineRanks[rank]?.retrievalBonus,
+          speed: +submarineRanks[rank]?.speedBonus,
+          range: +submarineRanks[rank]?.rangeBonus,
+          favor: +submarineRanks[rank]?.favorBonus
         };
+        return Object.keys(parts)
+          .map((slot) => {
+            const vesselPart = type === VesselType.AIRSHIP ? airshipParts[parts[slot].partId] : submarineParts[parts[slot].partId];
+            if (!vesselPart) {
+              return null;
+            }
+            const partClass = type === VesselType.AIRSHIP ? AirshipPartClass[vesselPart.class] : SubmarinePartClass[vesselPart.class];
+            return {
+              abbreviation: this.translate.instant(`${VesselType[type]}.CLASS.${partClass}.Abbreviation`),
+              stats: {
+                surveillance: +vesselPart.surveillance,
+                retrieval: +vesselPart.retrieval,
+                speed: +vesselPart.speed,
+                range: +vesselPart.range,
+                favor: +vesselPart.favor
+              }
+            };
+          })
+          .filter(part => !!part)
+          .reduce((a, b) => ({
+            abbreviation: `${a.abbreviation}${b.abbreviation}`,
+            stats: {
+              surveillance: +a.stats.surveillance + +b.stats.surveillance,
+              retrieval: +a.stats.retrieval + +b.stats.retrieval,
+              speed: +a.stats.speed + +b.stats.speed,
+              range: +a.stats.range + +b.stats.range,
+              favor: +a.stats.favor + +b.stats.favor
+            }
+          }), { abbreviation: '', stats: rankBonus });
       })
-      .filter(part => !!part)
-      .reduce((a, b) => ({
-        abbreviation: `${a.abbreviation}${b.abbreviation}`,
-        stats: {
-          surveillance: +a.stats.surveillance + +b.stats.surveillance,
-          retrieval: +a.stats.retrieval + +b.stats.retrieval,
-          speed: +a.stats.speed + +b.stats.speed,
-          range: +a.stats.range + +b.stats.range,
-          favor: +a.stats.favor + +b.stats.favor
-        }
-      }), { abbreviation: '', stats: rankBonus });
+    );
   }
 
-  public getVesselPartName(vesselType: VesselType, partId: number) {
+  public getVesselPartName(vesselType: VesselType, partId: number): Observable<string> {
     if (vesselType === VesselType.AIRSHIP) {
-      return this.i18n.getName(this.l12n.getItem(this.lazyData.data.airshipParts[partId].itemId));
+      return this.lazyData.getRow('airshipParts', partId).pipe(
+        switchMap(part => this.i18n.getNameObservable('items', part.itemId))
+      );
     }
-    return this.i18n.getName(this.l12n.getItem(this.lazyData.data.submarineParts[partId].itemId));
+    return this.lazyData.getRow('submarineParts', partId).pipe(
+      switchMap(part => this.i18n.getNameObservable('items', part.itemId))
+    );
   }
 
   public toDestinationNames(vesselType: VesselType, destinations: number[]): string[] {
@@ -440,24 +461,44 @@ export class FreeCompanyWorkshopFacade {
   }
 
   @Memoized()
-  public getAirshipMaxRank(): number {
-    return +Object.keys(this.lazyData.data.airshipRanks).pop();
+  public getAirshipMaxRank(): Observable<number> {
+    return this.lazyData.getEntry('airshipRanks').pipe(
+      map((airshipRanks) => {
+        return +Object.keys(airshipRanks).pop();
+      }),
+      shareReplay(1)
+    );
   }
 
   @Memoized()
-  public getSubmarineMaxRank(): number {
-    return +Object.keys(this.lazyData.data.submarineRanks).pop();
+  public getSubmarineMaxRank(): Observable<number> {
+    return this.lazyData.getEntry('submarineRanks').pipe(
+      map((submarineRanks) => {
+        return +Object.keys(submarineRanks).pop();
+      }),
+      shareReplay(1)
+    );
   }
 
   @Memoized()
-  public getAirshipSectorTotalCount(): number {
+  public getAirshipSectorTotalCount(): Observable<number> {
     // Minus 1 because SE removed Diadem from Airship
-    return Object.keys(this.lazyData.data.airshipVoyages).filter((id) => this.lazyData.data.airshipVoyages[id].en).length - 1;
+    return this.lazyData.getEntry('airshipVoyages').pipe(
+      map(airshipVoyages => {
+        return Object.keys(airshipVoyages).filter((id) => airshipVoyages[id].en).length - 1;
+      }),
+      shareReplay(1)
+    );
   }
 
   @Memoized()
-  public getSubmarineSectorTotalCount(): number {
-    return Object.keys(this.lazyData.data.submarineVoyages).filter((id) => this.lazyData.data.submarineVoyages[id].en).length;
+  public getSubmarineSectorTotalCount(): Observable<number> {
+    return this.lazyData.getEntry('submarineVoyages').pipe(
+      map(submarineVoyages => {
+        return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].en).length - 1;
+      }),
+      shareReplay(1)
+    );
   }
 
   @Memoized()
