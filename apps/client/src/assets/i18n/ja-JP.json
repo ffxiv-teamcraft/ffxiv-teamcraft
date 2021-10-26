@@ -2098,8 +2098,8 @@
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
       "Type": "ギアセットの種類",
       "Ariyala": "An ariyala set",
-      "External_gearset": "A Teamcraft gearset from someone else",
-      "Personal_gearset": "One of your gearsets",
+      "External_gearset": "他人のTeamcraftのギアセット",
+      "Personal_gearset": "自分のギアセット",
       "Paste_link_step_title": "ギアセットのリンク",
       "Pick_your_gearset": "ギアセットを選ぶ",
       "Submit": "比較する",
@@ -2120,7 +2120,7 @@
     "SYNC": {
       "Title": "ギアセットの同期化",
       "Tag": "同期",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Tag_tooltip": "このギアセットは、パケットキャプチャを利用して同期化されました、この職業で再度同期化すると更新されます。",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
       "Syncing_gearsets": "ギアセットを同期中 ..."
@@ -2308,7 +2308,7 @@
       "Value_label": "値のラベル",
       "Pie_metric": "Metric",
       "Add_filter": "フィルターを追加",
-      "Operator": "Operator",
+      "Operator": "オペレーター",
       "Cannot_edit_default": "デフォルトのレイアウトは編集できません。代わりにカスタマイズできる新しいレイアウトを作成します。",
       "Cannot_delete_default": "デフォルトのレイアウトは削除できません",
       "FILTER_TIPS": {
