@@ -24,7 +24,7 @@
   "Change_character": "キャラクター",
   "Check_guides": "ガイドを確認してください",
   "Guides_links": "Teamcraft ガイド",
-  "Db_ban": "以前に作成したデータベースのコメントにより、コメントを投稿する権限が制限された状態です。制限に関する意義申し立てを行うにはDisocordのMiu#1568にお問い合わせください。",
+  "Db_ban": "以前に作成したデータベースのコメントにより、コメントを投稿する権限が制限された状態です。もしこれに関する意義申し立てを行うにはDisocordのMiu#1568にお問い合わせください。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -849,7 +849,7 @@
     "Title": "マクロ翻訳",
     "Macro_language": "マクロの言語",
     "Macro_to_translate": "マクロの原文",
-    "Do_translate": "Translate!",
+    "Do_translate": "翻訳！",
     "Invalid_macro_or_language": "有効でないマクロまたは、言語です。"
   },
   "CUSTOM_LINKS": {
@@ -1306,7 +1306,7 @@
     "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Donation_button": "寄付する（1回）",
     "Buy_merch": "Teamcraftのグッズを買う",
-    "Features_header": "Get started!",
+    "Features_header": "始める！",
     "DESCRIPTION": {
       "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "制作品やギルドリーヴの納品や制作手帳を完了、飛空艇、BIS装備など全てを貴方のコミュニティリストにコピーできます。",
