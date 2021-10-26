@@ -184,13 +184,13 @@
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
-    "Venture": "Venture",
-    "Monster": "Monster",
-    "Airship": "Airship",
-    "Submarine": "Submarine",
-    "Voyage": "Voyage",
-    "Instance": "Instance",
-    "Fate": "Fate"
+    "Venture": "リテイナーベンチャー",
+    "Monster": "モンスター",
+    "Airship": "飛空艇",
+    "Submarine": "潜水艦",
+    "Voyage": "ボイジャー",
+    "Instance": "ダンジョン",
+    "Fate": "F. A. T. E"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -261,7 +261,7 @@
   "Item_name": "アイテム名",
   "No_items_found": "検索結果なし",
   "No_instances_found": "検索結果なし",
-  "No_fishing_spot_found": "No fishing spots found",
+  "No_fishing_spot_found": "釣り場が見つかりません。",
   "No_quests_found": "検索結果なし",
   "No_npcs_found": "検索結果なし",
   "No_mobs_found": "検索結果なし",
@@ -362,7 +362,7 @@
   "Email_not_found": "メールアドレスを見付け出しません",
   "Email_sent": "パスワード変更メールが発送されました",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn!",
+    "Spawned": "{{itemName}} 出現予定",
     "See_on_map": "地図に見られます",
     "Note": "メモ"
   },
