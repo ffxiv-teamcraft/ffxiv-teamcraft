@@ -33,7 +33,6 @@ import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
 import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
 import { AdminGuard } from './guard/admin.guard';
-import { BlogPostNotification } from '../model/notification/blog-post-notification';
 import { ErrorInterceptor } from './interceptor/error-interceptor';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
 import { DevGuard } from './guard/dev.guard';
@@ -74,7 +73,6 @@ import { I18nRowPipe } from './i18n/i18n-row.pipe';
           LIST_ITEM_COMMENT: ListItemCommentNotification,
           DB_ITEM_COMMENT: DbItemCommentNotification,
           DB_COMMENT_REPLY: DbCommentReplyNotification,
-          BLOG_POST: BlogPostNotification,
           COMMISSION: CommissionNotification
         }
       },

@@ -9,6 +9,7 @@ import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { mapIds } from '../data/sources/map-ids';
 
 @Injectable({ providedIn: 'root' })
 export class I18nToolsService {
@@ -77,5 +78,32 @@ export class I18nToolsService {
         return this.translator.getParsedResult(translations, key, interpolationParams);
       })
     );
+  }
+
+  public i18nToXivapi(value: I18nName, fieldName = 'Name') {
+    return {
+      [`${fieldName}_en`]: value.en,
+      [`${fieldName}_fr`]: value.fr,
+      [`${fieldName}_de`]: value.de,
+      [`${fieldName}_ja`]: value.ja,
+      [`${fieldName}_ko`]: value.ko || value.en,
+      [`${fieldName}_chs`]: value.zh || value.en
+    };
+  }
+
+  public xivapiToI18n(value: any, fieldName = 'Name'): I18nName {
+    return {
+      en: value[`${fieldName}_en`],
+      fr: value[`${fieldName}_fr`],
+      de: value[`${fieldName}_de`],
+      ja: value[`${fieldName}_ja`],
+      ko: value[`${fieldName}_ko`],
+      zh: value[`${fieldName}_chs`]
+    };
+  }
+
+  public getMapName(mapId:number): Observable<string>{
+    const entry = mapIds.find((m) => m.id === mapId);
+    return this.getNameObservable('places', entry.zone ?? 1)
   }
 }

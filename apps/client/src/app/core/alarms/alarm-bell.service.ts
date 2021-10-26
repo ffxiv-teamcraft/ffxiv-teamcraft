@@ -24,7 +24,7 @@ export class AlarmBellService {
 
   constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
-              private localizedData: LocalizedDataService, private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
+              private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
               private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
     this.initBell();
@@ -76,7 +76,6 @@ export class AlarmBellService {
    * @param alarm
    */
   public ring(alarm: Alarm): void {
-    console.log(alarm);
     this.soundNotificationService.play(SoundNotificationType.ALARM);
     localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
   }
@@ -103,15 +102,18 @@ export class AlarmBellService {
       }),
       first(),
       switchMap(alarm => {
-        return this.lazyData.getRow('itemIcons', alarm.itemId).pipe(
-          map(icon => [alarm, icon])
-        );
+        return combineLatest([
+          of(alarm),
+          this.lazyData.getRow('itemIcons', alarm.itemId),
+          this.i18n.getNameObservable('items', alarm.itemId),
+          this.i18n.getNameObservable('places', alarm.aetheryte.nameid),
+          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId)
+        ]);
       })
-    ).subscribe(([alarm, icon]: [Alarm, string]) => {
-      const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
+    ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
       const notificationIcon = `https://xivapi.com${icon}`;
-      const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
-      const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `
+      const notificationTitle = alarm.itemId ? itemName : alarm.name;
+      const notificationBody = `${placeName} - `
         + `${aetheryteName ? aetheryteName : ''}`;
       if (this.platform.isDesktop()) {
         this.ipc.send('notification', {

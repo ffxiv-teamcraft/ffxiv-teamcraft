@@ -1061,7 +1061,7 @@ export class DataService {
               break;
             case 'quest': {
               const quest = this.l12n.getQuest(row.SourceID);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(quest.name));
+              Object.assign(row.Data, this.i18n.i18nToXivapi(quest.name));
               row.Data.Icon = quest.icon;
               row.Data.showButton = true;
               break;
@@ -1076,7 +1076,7 @@ export class DataService {
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
               const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(npcEntry));
+              Object.assign(row.Data, this.i18n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
@@ -1090,7 +1090,7 @@ export class DataService {
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
               const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(npcEntry));
+              Object.assign(row.Data, this.i18n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
@@ -1101,7 +1101,7 @@ export class DataService {
                 break;
               }
               const instanceEntry = this.l12n.getInstanceName(+instanceId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(instanceEntry));
+              Object.assign(row.Data, this.i18n.i18nToXivapi(instanceEntry));
               row.Source = 'instance';
               row.SourceID = +instanceId;
               row.Data.Icon = instanceEntry.icon;

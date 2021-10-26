@@ -6,6 +6,7 @@ import { I18nToolsService } from '../tools/i18n-tools.service';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { DataModel } from '../database/storage/data-model';
+import { Observable } from 'rxjs';
 
 @Parent({
   allowSelf: false,
@@ -30,7 +31,7 @@ export abstract class AbstractNotification extends DataModel {
     this.type = _type;
   }
 
-  public abstract getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string;
+  public abstract getContent(translate: TranslateService, i18nTools: I18nToolsService): Observable<string>;
 
   public abstract getTargetRoute(): string[];
 

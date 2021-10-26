@@ -10,7 +10,6 @@ import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } 
 import { XivapiService } from '@xivapi/angular-client';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -20,6 +19,7 @@ import { UniversalisService } from '../../../core/api/universalis.service';
 import { DataType } from '../../list/data/data-type';
 import { ListController } from '../../list/list-controller';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-pricing',
@@ -55,7 +55,7 @@ export class PricingComponent implements AfterViewInit {
 
   constructor(private pricingService: PricingService, private media: MediaObserver, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
-              private progressService: ProgressPopupService, private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private progressService: ProgressPopupService, private i18n: I18nToolsService,
               private translate: TranslateService, private message: NzMessageService, private cd: ChangeDetectorRef,
               private lazyData: LazyDataFacade, private dialog: NzModalService, private universalis: UniversalisService) {
     this.list$ = this.listsFacade.selectedList$.pipe(
@@ -213,39 +213,54 @@ export class PricingComponent implements AfterViewInit {
   }
 
   public getEarningText = (rows: ListRow[], list: List) => {
-    return rows.filter(row => row.usePrice !== false)
-      .reduce((total, row) => {
-        const price = this.pricingService.getEarnings(row);
-        const amount = this.pricingService.getAmount(list.$key, row, true);
-        let priceString: string;
-        if (price.hq > 0 && amount.hq > 0) {
-          priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
-          if (price.nq > 0 && amount.nq > 0) {
-            priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+    return safeCombineLatest(rows.filter(row => row.usePrice !== false).map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithName => {
+        return rowsWithName.reduce((total, { row, itemName }) => {
+          const price = this.pricingService.getEarnings(row);
+          const amount = this.pricingService.getAmount(list.$key, row, true);
+          let priceString: string;
+          if (price.hq > 0 && amount.hq > 0) {
+            priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
+            if (price.nq > 0 && amount.nq > 0) {
+              priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+            }
+          } else {
+            priceString = `${price.nq}gil x${amount.nq}(NQ)`;
           }
-        } else {
-          priceString = `${price.nq}gil x${amount.nq}(NQ)`;
-        }
-        return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
-      }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+          return `${total}\n ${itemName}: ${priceString}`;
+        }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+      })
+    );
   };
 
   public getSpendingText = (rows: ListRow[], list: List) => {
-    return rows.filter(row => row.usePrice)
-      .reduce((total, row) => {
-        const price = this.pricingService.getPrice(row);
-        const amount = this.pricingService.getAmount(list.$key, row, false);
-        let priceString: string;
-        if (price.hq > 0 && amount.hq > 0) {
-          priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ) (${this.getWorldName(price.hqServer)})`;
-          if (price.nq > 0 || amount.nq > 0) {
-            priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
-          }
-        } else {
-          priceString = `${price.nq}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
-        }
-        return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
-      }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+    return safeCombineLatest(rows.filter(row => row.usePrice).map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithName => {
+        return rowsWithName
+          .reduce((total, { row, itemName }) => {
+            const price = this.pricingService.getPrice(row);
+            const amount = this.pricingService.getAmount(list.$key, row, false);
+            let priceString: string;
+            if (price.hq > 0 && amount.hq > 0) {
+              priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ) (${this.getWorldName(price.hqServer)})`;
+              if (price.nq > 0 || amount.nq > 0) {
+                priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
+              }
+            } else {
+              priceString = `${price.nq}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
+            }
+            return `${total}\n ${itemName}: ${priceString}`;
+          }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
+      })
+    );
   };
 
   public getSpendingTotal(list: List): number {

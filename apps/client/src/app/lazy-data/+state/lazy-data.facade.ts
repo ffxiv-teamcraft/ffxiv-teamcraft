@@ -21,6 +21,7 @@ import { HttpClient } from '@angular/common/http';
 import { mapIds } from '../../core/data/sources/map-ids';
 import { XivapiService } from '@xivapi/angular-client';
 import { Language } from '../../core/data/language';
+import { normalizeI18nName } from '../../core/tools/normalize-i18n';
 
 @Injectable({
   providedIn: 'root'
@@ -159,7 +160,7 @@ export class LazyDataFacade {
             if (!row) {
               return null;
             }
-            return this.normalizeI18nName(extendedProperty ? row[extendedProperty as string] : row);
+            return normalizeI18nName(extendedProperty ? row[extendedProperty as string] : row);
           }),
           switchMap(row => {
             if (!row) {
@@ -173,7 +174,7 @@ export class LazyDataFacade {
                   map(zhRow => {
                     return {
                       ...row,
-                      ...this.normalizeI18nName(extendedProperty ? row[extendedProperty as string] : zhRow)
+                      ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : zhRow)
                     };
                   })
                 );
@@ -182,7 +183,7 @@ export class LazyDataFacade {
                   map(koRow => {
                     return {
                       ...row,
-                      ...this.normalizeI18nName(extendedProperty ? row[extendedProperty as string] : koRow)
+                      ...normalizeI18nName(extendedProperty ? row[extendedProperty as string] : koRow)
                     };
                   })
                 );
@@ -351,7 +352,7 @@ export class LazyDataFacade {
       if (!entry[key]) {
         continue;
       }
-      const normalizedEntry = this.normalizeI18nName(entry[key]);
+      const normalizedEntry = normalizeI18nName(entry[key]);
       if (normalizedEntry[lang].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
         return +key;
       }
@@ -360,24 +361,6 @@ export class LazyDataFacade {
 
   private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
     return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as LazyDataI18nKey;
-  }
-
-  private normalizeI18nName(row: I18nName | { name: I18nName } | XivapiI18nName): I18nName {
-    if ((row as I18nName).en !== undefined || (row as I18nName).zh !== undefined || (row as I18nName).ko !== undefined) {
-      return row as I18nName;
-    }
-    if ((row as { name: I18nName }).name) {
-      return (row as { name: I18nName }).name;
-    }
-    if ((row as XivapiI18nName).Name_en) {
-      return {
-        en: (row as XivapiI18nName).Name_en,
-        ja: (row as XivapiI18nName).Name_ja,
-        de: (row as XivapiI18nName).Name_de,
-        fr: (row as XivapiI18nName).Name_fr
-      };
-    }
-    throw new Error(`Trying to normalize something that's not an i18n name: ${JSON.stringify(row)}`);
   }
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {

@@ -302,17 +302,6 @@ export class LocalizedDataService {
     }
   }
 
-  public i18nToXivapi(value: I18nName, fieldName = 'Name') {
-    return {
-      [`${fieldName}_en`]: value.en,
-      [`${fieldName}_fr`]: value.fr,
-      [`${fieldName}_de`]: value.de,
-      [`${fieldName}_ja`]: value.ja,
-      [`${fieldName}_ko`]: value.ko || value.en,
-      [`${fieldName}_chs`]: value.zh || value.en
-    };
-  }
-
   public xivapiToI18n(value: any, key: any, fieldName = 'Name'): I18nName {
     const row = {
       en: value[`${fieldName}_en`],

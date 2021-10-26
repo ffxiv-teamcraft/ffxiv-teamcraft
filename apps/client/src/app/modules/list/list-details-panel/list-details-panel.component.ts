@@ -3,8 +3,6 @@ import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nName } from '../../../model/common/i18n-name';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,7 +12,7 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
@@ -132,8 +130,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
-              private message: NzMessageService, public translate: TranslateService,
+  constructor(private i18n: I18nToolsService, private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
@@ -243,7 +240,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               return <NavigationObjective>{
                 x: partial.x,
                 y: partial.y,
-                name: this.l12n.getItem(item.id),
+                name: this.i18n.getNameObservable('items', item.id),
                 iconid: item.icon,
                 itemId: item.id,
                 total_item_amount: item.amount,
@@ -272,7 +269,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   mapId: zoneBreakdownRow.mapId,
                   x: partial.x,
                   y: partial.y,
-                  name: this.l12n.getItem(item.id),
+                  name: this.i18n.getNameObservable('items', item.id),
                   itemId: item.id,
                   total_item_amount: item.amount,
                   item_amount: item.amount_needed - item.done,
@@ -451,18 +448,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return result;
   }
 
-  public getLocation(id: number): I18nName {
+  public getLocation(id: number): Observable<string> {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
+      return of({ fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' }).pipe(
+        map(i18nName => this.i18n.getName(i18nName))
+      );
     }
-    return this.l12n.getMapName(id);
+    return this.i18n.getMapName(id);
   }
 
-  public getNpc(id: number): I18nName {
+  public getNpc(id: number): Observable<string> {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
+      return of({ fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' }).pipe(
+        map(i18nName => this.i18n.getName(i18nName))
+      );
     }
-    return this.l12n.getNpc(id);
+    return this.i18n.getNameObservable('npcs', id);
   }
 
   public openTotalPricePopup(): void {
@@ -485,9 +486,17 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     } else {
       rows = this.displayRow.rows;
     }
-    return rows.reduce((exportString, row) => {
-      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
-    }, `${this.displayRow.title} :\n`);
+    return safeCombineLatest(rows.map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithNames => {
+        return rowsWithNames.reduce((exportString, { row, itemName }) => {
+          return exportString + `${row.amount}x ${itemName}\n`;
+        }, `${this.displayRow.title} :\n`);
+      })
+    );
   };
 
   trackByItem(index: number, item: ListRow): number {

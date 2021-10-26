@@ -10,7 +10,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
@@ -251,7 +250,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
-              private modal: NzModalService, private l12n: LocalizedDataService,
+              private modal: NzModalService,
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
               private userService: UserService, private xivapi: XivapiService,
               private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
@@ -324,15 +323,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openMarketboardDialog(item: ListRow): void {
-    this.modal.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(item.id))}`,
-      nzContent: MarketboardPopupComponent,
-      nzComponentParams: {
-        itemId: item.id,
-        showHistory: true
-      },
-      nzFooter: null,
-      nzWidth: '80vw'
+    this.i18n.getNameObservable('items', item.id).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.modal.create({
+        nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${itemName}`,
+        nzContent: MarketboardPopupComponent,
+        nzComponentParams: {
+          itemId: item.id,
+          showHistory: true
+        },
+        nzFooter: null,
+        nzWidth: '80vw'
+      });
     });
   }
 
@@ -488,20 +491,24 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.modal.create({
-          nzTitle: `${this.i18n.getName(this.l12n.getItem(item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
-          nzFooter: null,
-          nzContent: CommentsPopupComponent,
-          nzComponentParams: {
-            targetType: CommentTargetType.LIST,
-            targetId: list.$key,
-            targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
-            isAuthor: isAuthor,
-            notificationFactory: (comment) => {
-              return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
-            }
-          }
-        }).afterClose;
+        return this.i18n.getNameObservable('items', item.id).pipe(
+          switchMap(itemName => {
+            return this.modal.create({
+              nzTitle: `${itemName} - ${this.translate.instant('COMMENTS.Title')}`,
+              nzFooter: null,
+              nzContent: CommentsPopupComponent,
+              nzComponentParams: {
+                targetType: CommentTargetType.LIST,
+                targetId: list.$key,
+                targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
+                isAuthor: isAuthor,
+                notificationFactory: (comment) => {
+                  return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
+                }
+              }
+            }).afterClose;
+          })
+        );
       })
     ).subscribe(() => {
       this.commentBadgeReloader$.next(null);
@@ -599,26 +606,37 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   addAllAlarms(item: ListRow) {
     this.alarmsFacade.allAlarms$
-      .pipe(first())
-      .subscribe(allAlarms => {
+      .pipe(
+        first(),
+        switchMap(allAlarms => {
+          return this.i18n.getNameObservable('items', item.id).pipe(
+            map(itemName => ({ itemName, allAlarms }))
+          );
+        })
+      )
+      .subscribe(({ itemName, allAlarms }) => {
         const alarmsToAdd = getItemSource<Alarm[]>(item, DataType.ALARMS).filter(a => {
           return !allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });
         });
-        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(item.id)));
+        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, itemName);
       });
   }
 
   public openRequirementsPopup(item: ListRow): void {
-    this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
-      nzContent: RelationshipsComponent,
-      nzComponentParams: {
-        item: item,
-        finalItem: this.finalItem
-      },
-      nzFooter: null
+    this.i18n.getNameObservable('items', item.id).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.modal.create({
+        nzTitle: itemName || (item as CustomItem).name,
+        nzContent: RelationshipsComponent,
+        nzComponentParams: {
+          item: item,
+          finalItem: this.finalItem
+        },
+        nzFooter: null
+      });
     });
   }
 

@@ -57,7 +57,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { CommissionService } from '../../commission-board/commission.service';
@@ -413,7 +412,7 @@ export class ListsEffects {
       return true;
     }),
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
-    map(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
+    switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
@@ -438,24 +437,29 @@ export class ListsEffects {
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
         const itemDone = item.done + action.doneDelta >= item.amount;
         if (itemDone) {
-          const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
-          const notificationBody = this.translate.instant('LIST_DETAILS.Autofill_notification_body', {
-            itemName: this.i18n.getName(this.l12n.getItem(action.itemId)),
-            listName: list.name
-          });
-          const notificationIcon = `https://xivapi.com${icon}`;
-          this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
-          if (this.platform.isDesktop()) {
-            this.ipc.send('notification', {
-              title: notificationTitle,
-              content: notificationBody,
-              icon: notificationIcon
-            });
-          }
-          this.notificationService.info(notificationTitle, notificationBody);
+          return this.i18n.getNameObservable('items', action.itemId).pipe(
+            map(itemName => {
+              const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
+              const notificationBody = this.translate.instant('LIST_DETAILS.Autofill_notification_body', {
+                itemName,
+                listName: list.name
+              });
+              const notificationIcon = `https://xivapi.com${icon}`;
+              this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
+              if (this.platform.isDesktop()) {
+                this.ipc.send('notification', {
+                  title: notificationTitle,
+                  content: notificationBody,
+                  icon: notificationIcon
+                });
+              }
+              this.notificationService.info(notificationTitle, notificationBody);
+              return [action, list];
+            })
+          );
         }
       }
-      return [action, list];
+      return of([action, list]);
     }),
     map(([action, list]: [SetItemDone, List]) => {
       ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
@@ -543,7 +547,6 @@ export class ListsEffects {
     private ipc: IpcService,
     private settings: SettingsService,
     private i18n: I18nToolsService,
-    private l12n: LocalizedDataService,
     private lazyData: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,

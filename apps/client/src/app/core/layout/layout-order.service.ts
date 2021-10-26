@@ -2,7 +2,6 @@ import { LayoutRowOrder } from './layout-row-order.enum';
 import { Injectable } from '@angular/core';
 import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { DataType } from '../../modules/list/data/data-type';
 import { AlarmsFacade } from '../alarms/+state/alarms.facade';
@@ -71,9 +70,9 @@ export class LayoutOrderService {
 
   orderCache: Record<string, Observable<number[]>> = {};
 
-  constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
-              private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
+  constructor(private translate: TranslateService, private i18n: I18nToolsService,
+              private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade,
+              private etime: EorzeanTimeService) {
   }
 
   private getNextSpawn(alarms: Alarm[]): number {
@@ -130,7 +129,7 @@ export class LayoutOrderService {
 
   private getSortComparables(row: ListRow): Observable<ListRowSortComparison> {
     return combineLatest([
-      of(this.i18n.getName(this.localizedData.getItem(row.id))),
+      this.i18n.getNameObservable('items', row.id),
       of(this.getLevel(row)),
       of(this.getJobId(row)),
       this.lazyData.getRow('itemEquipSlotCategory', row.id, 0),

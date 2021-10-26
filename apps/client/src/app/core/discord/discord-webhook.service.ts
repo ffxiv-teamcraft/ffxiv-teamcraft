@@ -6,7 +6,6 @@ import { first, map, switchMap } from 'rxjs/operators';
 import { Team } from '../../model/team/team';
 import { List } from '../../modules/list/model/list';
 import { LinkToolsService } from '../tools/link-tools.service';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { LodestoneService } from '../api/lodestone.service';
 import { WebhookSettingType } from '../../model/team/webhook-setting-type';
 import { PermissionLevel } from '../database/permissions/permission-level.enum';
@@ -23,8 +22,7 @@ export class DiscordWebhookService {
 
   constructor(private http: HttpClient, private translate: TranslateService,
               private i18n: I18nToolsService, private linkTools: LinkToolsService,
-              private l12n: LocalizedDataService, private characterService: LodestoneService,
-              private lazyData: LazyDataFacade) {
+              private characterService: LodestoneService, private lazyData: LazyDataFacade) {
   }
 
   sendMessage(team: Team, contentKey: string, contentParams?: Object, iconUrl$: Observable<string> = of(''), imageUrl?: string): void {
@@ -86,28 +84,30 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
       return;
     }
-    const itemName = this.l12n.getItem(itemId);
-    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
-      amount: amount,
-      itemName: itemName[team.language] || itemName.en,
-      itemId: itemId,
-      listName: list.name,
-      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, this.getIcon(itemId));
+    this.i18n.getNameObservable('items', itemId).subscribe(itemName => {
+      this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_added', {
+        amount: amount,
+        itemName: itemName,
+        itemId: itemId,
+        listName: list.name,
+        listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+      }, this.getIcon(itemId));
+    });
   }
 
   notifyItemDeletion(itemId: number, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
       return;
     }
-    const itemName = this.l12n.getItem(itemId);
-    this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
-      amount: amount,
-      itemName: itemName[team.language] || itemName.en,
-      itemId: itemId,
-      listName: list.name,
-      listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, this.getIcon(itemId));
+    this.i18n.getNameObservable('items', itemId).subscribe(itemName => {
+      this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Item_removed', {
+        amount: amount,
+        itemName: itemName,
+        itemId: itemId,
+        listName: list.name,
+        listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+      }, this.getIcon(itemId));
+    });
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, fcId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
@@ -128,20 +128,23 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.FINAL_LIST_PROGRESSION) && finalItem) {
       return;
     }
-    const itemName = this.l12n.getItem(itemId);
     this.characterService.getUserCharacter(memberId).pipe(
       first(),
-      map(character => {
-        this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
-          characterName: character ? character.character.Name : this.translate.instant('COMMON.Anonymous'),
-          memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
-          amount: amount,
-          totalNeeded: totalNeeded,
-          itemName: itemName[team.language] || itemName.en,
-          itemId: itemId,
-          listName: list.name,
-          listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, this.getIcon(itemId), character ? character.character.Avatar : '');
+      switchMap(character => {
+        return this.i18n.getNameObservable('items', itemId).pipe(
+          map(itemName => {
+            this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
+              characterName: character ? character.character.Name : this.translate.instant('COMMON.Anonymous'),
+              memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
+              amount: amount,
+              totalNeeded: totalNeeded,
+              itemName: itemName,
+              itemId: itemId,
+              listName: list.name,
+              listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+            }, this.getIcon(itemId), character ? character.character.Avatar : '');
+          })
+        );
       })
     ).subscribe();
   }
@@ -225,18 +228,20 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.USER_ASSIGNMENT)) {
       return;
     }
-    const itemName = this.l12n.getItem(itemId);
     this.characterService.getUserCharacter(memberId).pipe(
       first(),
-      map(character => {
-        this.sendMessage(team, 'TEAMS.NOTIFICATIONS.User_assigned', {
-          memberName: character.character.Name,
-          memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
-          itemName: itemName[team.language] ? itemName[team.language] : itemName.en,
-          itemId: itemId,
-          listName: list.name,
-          listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-        }, this.getIcon(itemId), character.character.Avatar);
+      switchMap(character => {
+        return this.i18n.getNameObservable('items', itemId).pipe(
+          map(itemName => {
+            this.sendMessage(team, 'TEAMS.NOTIFICATIONS.User_assigned', {
+              memberName: character.character.Name,
+              memberProfileUrl: this.linkTools.getLink(`/profile/${memberId}`),
+              itemName: itemName,
+              itemId: itemId,
+              listName: list.name,
+              listUrl: this.linkTools.getLink(`/list/${list.$key}`)
+            }, this.getIcon(itemId), character.character.Avatar);
+          }));
       })
     ).subscribe();
   }
