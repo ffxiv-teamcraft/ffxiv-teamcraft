@@ -1319,7 +1319,7 @@
   },
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります！",
-    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
+    "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
     "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
     "Possible_update_issue": "ダウンロードに問題があります。このアイコンをクリックして最新バージョンを設置してください"
@@ -1806,16 +1806,16 @@
     "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "手帳で完了してない項目だけ表示",
     "Add_results_to_pool": "制作リストに追加する時、所持状況にも追加する",
-    "Show_only_leve_items": "Only items used in levequests"
+    "Show_only_leve_items": "ギルドリーヴでのみ使えるアイテム"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
+    "Description": "[グローバルサーバ専用] 石板または通貨が多いですか？希望石板または通貨を選択して、数量を入力して、サーバーを選択してください。そうすると、現在の自分の通貨/石板に交換可能なアイテムの中で最も高価なアイテムを探してくれます！",
     "Pick_currency": "交換用アイテム追加",
     "You_can_buy": "{{amount}} 個購入可能",
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。",
-    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_data": "選択した通貨の取引データを読み込み中",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
     "X_sold_last_week": "{{amount}} sold last week"
   },
@@ -2052,7 +2052,7 @@
     "Import_from_pcap_notice": "欲しいギアセットに変更してそのギアセットを呼び出してください",
     "No_food_selected": "食べ物が選択されていません",
     "Generate_list": "リスト生成",
-    "Clone_gearset": "Copy this on your account",
+    "Clone_gearset": "このギアセットリストを自分のアカウントにコピーする",
     "Clone_gearset_from_sync": "このギアセットのコピーを作成する",
     "You_have_no_gearsets": "ギアセットがありません",
     "Favorite_gearsets": "お気に入りのギアセット",
@@ -2809,15 +2809,15 @@
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
-      "MODIFICATION": "MODIFICATION",
-      "DELETION": "DELETION",
-      "ACCEPTED": "ACCEPTED"
+      "MODIFICATION": "変更",
+      "DELETION": "削除",
+      "ACCEPTED": "承認済"
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
-    "SUNSET": "Sunset",
-    "DAY": "Day",
-    "NIGHT": "Night"
+    "ANY": "全部",
+    "SUNSET": "夕暮れ",
+    "DAY": "昼",
+    "NIGHT": "夜"
   }
 }
