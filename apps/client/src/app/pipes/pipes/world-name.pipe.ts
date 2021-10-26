@@ -10,7 +10,7 @@ export class WorldNamePipe implements PipeTransform {
   constructor(private readonly lazyData: LazyDataFacade) {
   }
 
-  transform(world: string): Observable<I18nName> {
+  transform(world: string): I18nName {
     return this.lazyData.getWorldName(world);
   }
 }

@@ -378,6 +378,6 @@ export class PricingComponent implements AfterViewInit {
   }
 
   private getWorldName(world: string): string {
-    return this.i18n.getName(this.l12n.getWorldName(world));
+    return this.i18n.getName(this.lazyData.getWorldName(world));
   }
 }

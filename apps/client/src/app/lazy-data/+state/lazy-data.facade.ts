@@ -215,8 +215,8 @@ export class LazyDataFacade {
     return result.id;
   }
 
-  public getWorldName(world: string): Observable<I18nName> {
-    return of({
+  public getWorldName(world: string): I18nName {
+    return {
       fr: world,
       en: world,
       de: world,
@@ -224,7 +224,7 @@ export class LazyDataFacade {
       zh: zhWorlds[world] ?? world,
       ko: koWorlds[world] ?? world,
       ru: world
-    });
+    };
   }
 
   public getRecipes(): Observable<LazyRecipe[]> {

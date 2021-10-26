@@ -22,19 +22,6 @@ export class LocalizedDataService {
   constructor(private lazyDataProvider: LazyDataProviderService, private lazyData: LazyDataService) {
   }
 
-  public getWorldName(world: string): I18nName {
-    const i18nName: I18nName = {
-      fr: world,
-      en: world,
-      de: world,
-      ja: world,
-      ko: koWorlds[world] ?? world,
-      zh: zhWorlds[world] ?? world
-    };
-
-    return i18nName;
-  }
-
   public getItem(id: number): I18nName {
     const row = this.getRowWithExtendedLanguage('items', id);
 
@@ -84,11 +71,6 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('leves', id);
   }
 
-  public getShopName(englishName: string): I18nName {
-    const id = +Object.keys(this.lazyData.data.shops).find((k) => this.lazyData.data.shops[k].en === englishName);
-    return this.getRowWithExtendedLanguage('shops', id);
-  }
-
   public getJobName(id: number): I18nName {
     const row = this.getRow(this.lazyData.data.jobName, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobName', koKey: 'koJobName' });
@@ -111,10 +93,6 @@ export class LocalizedDataService {
     return +Object.keys(this.lazyData.data.mobs).find((k) => this.lazyData.data.mobs[k].en.toLowerCase() === name.toLowerCase());
   }
 
-  public getVenture(id: number): I18nName {
-    return this.getRow(this.lazyData.data.ventures, id);
-  }
-
   public getQuest(id: number): Quest {
     const row = this.getRow<Quest>(this.lazyData.data.quests, id);
     this.tryFillExtendedLanguage(row.name, id, this.guessExtendedLanguageKeys('quests'));
@@ -129,29 +107,6 @@ export class LocalizedDataService {
     }
 
     return row;
-  }
-
-  public getRaceName(id: number): any {
-    return this.getRowWithExtendedLanguage('races', id);
-  }
-
-  public getTribeName(id: number): any {
-    const lazyRow = this.getRow<any>(this.lazyData.data.tribes, id);
-    const row = {
-      en: lazyRow.Name_en,
-      de: lazyRow.Name_de,
-      ja: lazyRow.Name_ja,
-      fr: lazyRow.Name_fr
-    };
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhTribes', koKey: 'koTribes' });
-    return row;
-  }
-
-  public getTTRule(id: number): I18nName {
-    const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
-    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhTripleTriadRules', koKey: 'koTripleTriadRules' });
-
-    return row.name;
   }
 
   public getBaseParamName(id: number): I18nName {
@@ -171,14 +126,6 @@ export class LocalizedDataService {
     const row = this.getRow<{ name: I18nName }>(this.lazyData.data.weathers, id).name;
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhWeathers', koKey: 'koWeathers' });
     return row;
-  }
-
-  public getWeatherId(name: string): number {
-    return this.getIndexByName(this.lazyData.data.weathers, name, 'en');
-  }
-
-  public getAreaIdByENName(name: string): number {
-    return this.getIndexByName(this.lazyData.data.places, name, 'en');
   }
 
   public getFreeCompanyAction(id: number): I18nName {
@@ -290,18 +237,6 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('statuses', id);
   }
 
-  public getNotebookDivision(id: number): { name: I18nName; pages: number[] } {
-    const row = this.getRow<{ name: I18nName; pages: number[] }>(this.lazyData.data.notebookDivision, id);
-    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivision', koKey: 'koNotebookDivision' });
-    return row;
-  }
-
-  public getNotebookDivisionCategory(id: number): { name: I18nName; divisions: number[] } {
-    const row = this.getRow<{ name: I18nName; divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
-    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
-    return row;
-  }
-
   public getAirshipSectorName(id: number): I18nName {
     return this.getRowWithExtendedLanguage('airshipVoyages', id);
   }
@@ -349,10 +284,6 @@ export class LocalizedDataService {
 
   private guessExtendedLanguageKey(language: 'zh' | 'ko', key: keyof LazyData): keyof LazyData {
     const guessKey = `${language}${key.charAt(0).toUpperCase()}${key.substr(1)}`;
-    if (!this.lazyData.data.hasOwnProperty(guessKey)) {
-      return undefined;
-    }
-
     return guessKey as keyof LazyData;
   }
 
