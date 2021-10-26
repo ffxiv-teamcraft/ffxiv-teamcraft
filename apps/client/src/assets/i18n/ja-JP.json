@@ -2075,7 +2075,7 @@
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "ローカル編集モード",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "選択されたすべての装備からマテリアを削除",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2155,12 +2155,12 @@
       "Filters": "ステータス、ボーナス、アイテムレベルなどの拡張機能を使用するにはこのパンネルを開いてください。"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "ここをクリックすることでリンクをコピーし、シェアできます。",
+      "Open_list": "詳しい情報を見るにはここをクリックしてください。(ダブルクリックも可能）",
+      "More": "ここをクリックして権限を管理し、リストの名前を変更できます。"
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
+      "HQ_mark": "このアイコンは、このアイテムの最終的なレシピに必要であることを意味します。HQが必要な時もありますが必須条件ではありません。",
       "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
       "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
