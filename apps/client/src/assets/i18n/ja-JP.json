@@ -2060,20 +2060,20 @@
     "Copy_as_text": "このギアセットをテキストとしてコピー",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
-    "Please_input_lodestone_id": "Please input lodestone id",
+    "Please_input_lodestone_id": "Lodestone Idを入力してください。",
     "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
+    "Currency": "通貨",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
-    "Copied_as_string": "Gearset copied as string",
+    "Copied_as_string": "ギアセットのアイテムの名前がコピーされました。",
     "Mark_as_done": "Mark as done",
     "Create_commission": "このギアセットから依頼する",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "ローカル編集モード",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "Remove all materias from selected gear",
     "SLOT": {
@@ -2225,15 +2225,15 @@
         "Reorder": "ドラッグアンドドロップで、任意の場所にパネルを移動できます。",
         "Data_type": "First of all, select the metric type you want to use.",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Title": "パネルのタイトルを設定してください。",
+        "Display_type": "データを表現する時に使用するコンポーネントを選択した後、それに応じた数値を入力してください。"
       }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "このエラーを自動修正する",
     "USERS": {
-      "Title": "Users",
+      "Title": "ユーザー",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Eメール",
       "Uid": "UID",
@@ -2285,9 +2285,9 @@
       "ITEM": "アイテム"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
+      "Type": "タイプ",
+      "Entry_label": "ラベル",
+      "Value": "合計",
       "Source": "Source",
       "Timestamp": "日時"
     },
