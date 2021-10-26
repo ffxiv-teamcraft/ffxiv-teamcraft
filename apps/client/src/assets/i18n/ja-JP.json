@@ -2161,7 +2161,7 @@
     },
     "LIST": {
       "HQ_mark": "このアイコンは、このアイテムの最終的なレシピに必要であることを意味します。HQが必要な時もありますが必須条件ではありません。",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
+      "Layout": "レイアウトエディターを開き、全体的なデータのフィルタリング方法とパネルを変更できます。左側のバトンはレイアウトを素早くスイッチする時、使います。",
       "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
