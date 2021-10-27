@@ -31,29 +31,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
               private router: Router, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
-      const correctSlug = this.i18n.getName(this.l12n.getAchievementName(+params.get('achievementId'))).split(' ').join('-');
-
-      if (slug === null) {
-        this.router.navigate(
-          [correctSlug],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== correctSlug) {
-        this.router.navigate(
-          ['../', correctSlug],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
+    this.updateSlug(router, i18n, route, 'achievements', 'achievementId');
 
     const achievementId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),

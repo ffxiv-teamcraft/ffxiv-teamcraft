@@ -46,27 +46,7 @@ export class LeveComponent extends TeamcraftPageComponent {
               private router: Router, private linkTools: LinkToolsService,
               public settings: SettingsService, seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
-      if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
+    this.updateSlug(router, i18n, route, 'leves', 'leveId');
 
     const leveId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),

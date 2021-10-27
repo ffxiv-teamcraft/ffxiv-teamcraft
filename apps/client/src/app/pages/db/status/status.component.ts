@@ -27,36 +27,7 @@ export class StatusComponent extends TeamcraftPageComponent {
               private translate: TranslateService, private router: Router,
               public settings: SettingsService, seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.pipe(
-      switchMap(params => {
-        const slug = params.get('slug');
-        return this.i18n.getNameObservable('statuses', +params.get('statusId')).pipe(
-          map(name => {
-            const correctSlug = name.split(' ').join('-');
-            return { slug, correctSlug };
-          })
-        );
-      })
-    ).subscribe(({ slug, correctSlug }) => {
-      if (slug === null) {
-        this.router.navigate(
-          [correctSlug],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== correctSlug) {
-        this.router.navigate(
-          ['../', correctSlug],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
+    this.updateSlug(router, i18n, route, 'statuses', 'statusId');
 
     const statusId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),

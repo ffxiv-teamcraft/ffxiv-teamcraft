@@ -39,27 +39,7 @@ export class MobComponent extends TeamcraftPageComponent {
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
-      if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getMob(+params.get('mobId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== this.i18n.getName(this.l12n.getMob(+params.get('mobId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getMob(+params.get('mobId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
+    this.updateSlug(router, i18n, route, 'mobs', 'mobId');
 
     const mobId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),
