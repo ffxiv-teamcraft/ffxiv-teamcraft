@@ -16,7 +16,6 @@ import { AirshipPartClass } from '../model/airship-part-class';
 import { SubmarinePartClass } from '../model/submarine-part-class';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AirshipPartType } from '../model/airship-part-type';
 import { SubmarinePartType } from '../model/submarine-part-type';
 import { VesselPartUpdate } from '../model/vessel-part-update';
@@ -31,6 +30,7 @@ import { ItemInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Injectable({
   providedIn: 'root'
@@ -221,7 +221,7 @@ export class FreeCompanyWorkshopFacade {
 
   constructor(private readonly lazyData: LazyDataFacade, private readonly ipc: IpcService,
               private readonly store: Store<fromFreeCompanyWorkshop.State>, private readonly translate: TranslateService,
-              private readonly i18n: I18nToolsService, private readonly l12n: LocalizedDataService,
+              private readonly i18n: I18nToolsService,
               private readonly settings: SettingsService, private soundNotificationService: SoundNotificationService) {
   }
 
@@ -453,11 +453,11 @@ export class FreeCompanyWorkshopFacade {
     );
   }
 
-  public toDestinationNames(vesselType: VesselType, destinations: number[]): string[] {
+  public toDestinationNames(vesselType: VesselType, destinations: number[]): Observable<string[]> {
     if (vesselType === VesselType.AIRSHIP) {
-      return destinations.map((id) => this.i18n.getName(this.l12n.getAirshipSectorName(id)));
+      return safeCombineLatest(destinations.map((id) => this.i18n.getNameObservable('airshipVoyages', id)));
     }
-    return destinations.map((id) => this.i18n.getName(this.l12n.getSubmarineSectorName(id)));
+    return safeCombineLatest(destinations.map((id) => this.i18n.getNameObservable('submarineVoyages', id)));
   }
 
   @Memoized()

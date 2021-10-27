@@ -4,7 +4,6 @@ import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 import { Alarm } from './alarm';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
@@ -22,7 +21,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 })
 export class AlarmBellService {
 
-  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService,
+  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
