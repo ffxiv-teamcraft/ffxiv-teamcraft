@@ -2166,7 +2166,7 @@
       "Fill_with_inventory": "所持品内にあるアイテムをリストに自動的に追加できます。",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
       "More_actions_button": "このボタンは、現在のリストから行える多くのアクションメニューを開けます。皆さんはレイアウトエディターを通じてこのアクションボタンを編集できます。",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "Alarm_button": "ここをクリックしてアイテムのアラームを設定てしてください、アラームを設定することでアイテムのスポーンの時知らせます。"
     },
     "LISTS": {
       "Merge": "マージボタンを使用して、2つのリストをマージできます。",
