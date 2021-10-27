@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { Craft } from '../../../../model/garland-tools/craft';
 import {
+  catchError,
   debounceTime,
   distinctUntilChanged,
   distinctUntilKeyChanged,
@@ -25,7 +26,6 @@ import { medicines } from '../../../../core/data/sources/medicines';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { BonusType } from '../../model/consumable-bonus';
 import { DefaultConsumables } from '../../../../model/user/default-consumables';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
@@ -72,6 +72,8 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
 import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
+import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-simulator',
@@ -163,8 +165,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
-              private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
+              public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
+              private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
@@ -415,40 +417,31 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose
       .pipe(
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('/ac') > -1),
-        map(macro => {
-          const actionIds: number[] = [];
-          for (const line of macro.split('\n')) {
-            let match = this.findActionsRegex.exec(line);
-            if (match !== null && match !== undefined) {
-              const skillName = match[2].replace(/"/g, '');
+        switchMap(macro => {
+          return this.i18n.getNameObservable('actions', new this.simulator.FinalAppraisal().getIds()[0]).pipe(
+            switchMap(finalAppraisalName => {
+              return safeCombineLatest(macro.split('\n').map(
+                line => {
+                  let match = this.findActionsRegex.exec(line);
+                  if (match !== null && match !== undefined) {
+                    const skillName = match[2].replace(/"/g, '');
+                    if (line.startsWith('/statusoff') && FinalAppraisal && skillName === finalAppraisalName) {
+                      return of(-1);
+                    }
 
-              const FinalAppraisal = this.simulator.FinalAppraisal;
-              if (line.startsWith('/statusoff') && FinalAppraisal && skillName === this.i18nTools.getName(this.localizedDataService.getAction(new FinalAppraisal().getIds()[0]))) {
-                actionIds.push(-1);
-                continue;
-              }
-
-              // Get translated skill
-              try {
-                actionIds
-                  .push(this.localizedDataService.getCraftingActionIdByName(skillName,
-                    <Language>this.translate.currentLang));
-              } catch (ignored) {
-                // Ugly implementation but it's a specific case we don't want to refactor for.
-                try {
-                  // If there's no skill match with the first regex, try the second one (for auto translated skills)
-                  match = this.findActionsAutoTranslatedRegex.exec(line);
-                  if (match !== null) {
-                    actionIds
-                      .push(this.localizedDataService.getCraftingActionIdByName(match[2],
-                        <Language>this.translate.currentLang));
+                    return this.i18n.getCraftingActionIdByName(skillName, <Language>this.translate.currentLang).pipe(
+                      catchError(() => {
+                        match = this.findActionsAutoTranslatedRegex.exec(line);
+                        return this.i18n.getCraftingActionIdByName(match[2], <Language>this.translate.currentLang).pipe(
+                          catchError(() => of(''))
+                        );
+                      })
+                    );
                   }
-                } catch (ignoredAgain) {
                 }
-              }
-            }
-          }
-          return actionIds;
+              ));
+            })
+          );
         }),
         map(actionIds => this.registry.createFromIds(actionIds)),
         first()
@@ -945,11 +938,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   private consumablesSortFn = (a, b) => {
-    const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
-    const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
-    if (aName > bName) {
+    if (a > b) {
       return 1;
-    } else if (aName < bName) {
+    } else if (a < b) {
       return -1;
     } else {
       // If they're both the same item, HQ first

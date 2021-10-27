@@ -1,5 +1,5 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, Observable, of, Subject } from 'rxjs';
+import { Component } from '@angular/core';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { debounce, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
@@ -8,12 +8,10 @@ import { DesynthSearchResult } from '../desynth-search-result';
 import { SearchResult } from '../../../model/search/search-result';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { List } from '../../../modules/list/model/list';
 
 @Component({
   selector: 'app-desynth',
@@ -42,19 +40,10 @@ export class DesynthComponent {
 
   public totalLength = 0;
 
-
-  @ViewChild('notificationRef', { static: true })
-  notification: TemplateRef<any>;
-
-  // Notification data
-  itemsAdded = 0;
-
-  modifiedList: List;
-
   constructor(private gt: GarlandToolsService, private xivapi: XivapiService,
               private router: Router, route: ActivatedRoute,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
     this.jobList = this.gt.getJobs().slice(8, 16);
     const searchResults$ = combineLatest([this.job$, this.level$]).pipe(
@@ -167,72 +156,43 @@ export class DesynthComponent {
   }
 
   public createQuickList(item: SearchResult): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList({
-      itemId: +item.itemId,
-      list: list,
-      recipeId: item.recipe ? item.recipe.recipeId : '',
-      amount: item.amount,
-      collectable: item.addCrafts
-    })
-      .pipe(
-        tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
-          return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          );
+    this.i18n.getNameObservable('items', +item.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
+        const operation$ = this.listManager.addToList({
+          itemId: +item.itemId,
+          list: list,
+          recipeId: item.recipe ? item.recipe.recipeId : '',
+          amount: item.amount,
+          collectable: item.addCrafts
         })
-      );
-
-    this.progressService.showProgress(operation$, 1)
+          .pipe(
+            tap(resultList => this.listsFacade.addList(resultList)),
+            mergeMap(resultList => {
+              return this.listsFacade.myLists$.pipe(
+                map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                filter(l => l !== undefined),
+                first()
+              );
+            })
+          );
+        return this.progressService.showProgress(operation$, 1);
+      })
+    )
       .subscribe((newList) => {
         this.router.navigate(['list', newList.$key]);
       });
   }
 
   public addItemsToList(items: SearchResult[]): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList({
-            itemId: +item.itemId,
-            list: list,
-            recipeId: item.recipe ? item.recipe.recipeId : '',
-            amount: item.amount,
-            collectable: item.addCrafts
-          });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          items.length,
-          'Adding_recipes',
-          { amount: items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.itemsAdded = items.length;
-      this.modifiedList = list;
-      this.notificationService.template(this.notification);
-    });
+    this.listPicker.addToList(...items.map(item => {
+      return {
+        id: +item.itemId,
+        recipeId: item.recipe ? item.recipe.recipeId : '',
+        amount: item.amount,
+        collectable: item.addCrafts
+      };
+    }));
   }
 
 }

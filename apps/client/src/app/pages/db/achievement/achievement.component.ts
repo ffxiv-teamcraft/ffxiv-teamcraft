@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -26,7 +25,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
   public rewards$: Observable<{ type: string, id: number, amount: number }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, public settings: SettingsService,
               seo: SeoService) {
@@ -93,11 +92,11 @@ export class AchievementComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(status: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievementDescriptions', 'Description'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'Description'));
   }
 
   private getName(status: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievements'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(status));
   }
 }

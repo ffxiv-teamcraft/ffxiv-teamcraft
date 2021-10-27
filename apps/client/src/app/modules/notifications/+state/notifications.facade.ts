@@ -6,7 +6,6 @@ import { NotificationsState } from './notifications.reducer';
 import { notificationsQuery } from './notifications.selectors';
 import { LoadNotifications, RemoveNotification } from './notifications.actions';
 import { first, map } from 'rxjs/operators';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NotificationType } from '../../../core/notification/notification-type';
@@ -38,7 +37,7 @@ export class NotificationsFacade {
   );
 
   constructor(private store: Store<{ notifications: NotificationsState }>, private translate: TranslateService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService) {
+              private i18n: I18nToolsService) {
   }
 
   removeCommissionNotifications(predicate: (n: CommissionNotification) => boolean): void {

@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -37,7 +36,7 @@ export class NpcComponent extends TeamcraftPageComponent {
   public leves$: Observable<number[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
@@ -160,12 +159,12 @@ export class NpcComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(npc: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(npc, 'Title'));
   }
 
   private getName(npc: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcs'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(npc));
   }
 
 }

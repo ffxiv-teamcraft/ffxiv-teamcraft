@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { FishingBait } from '../../../core/data/model/fishing-bait';
@@ -28,7 +27,7 @@ export class FishTooltipComponent {
     return this._fish;
   }
 
-  constructor(private gt: GarlandToolsService, private l12n: LocalizedDataService,
+  constructor(private gt: GarlandToolsService,
               private gatheringNodesService: GatheringNodesService) {
   }
 

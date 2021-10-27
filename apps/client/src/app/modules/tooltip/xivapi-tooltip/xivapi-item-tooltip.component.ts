@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first } from 'rxjs/operators';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
   }
 
   @Input() item: any;
@@ -78,7 +78,7 @@ export class XivapiItemTooltipComponent implements OnInit {
       .map(key => {
         const statIndex = key.match(/(\d+)/)[0];
         const res: any = {
-          name: this.l12n.xivapiToI18n(this.item[key], 'baseParams'),
+          name: this.i18n.xivapiToI18n(this.item[key], 'baseParams'),
           value: this.item[`BaseParamValue${statIndex}`],
           requiresPipe: true
         };
@@ -108,7 +108,7 @@ export class XivapiItemTooltipComponent implements OnInit {
         const max = food[`Max${i}`];
         const maxHq = food[`MaxHQ${i}`];
         if (value > 0) {
-          statsEntry.name = this.l12n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
+          statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
           statsEntry.requiresPipe = true;
           if (isRelative) {
             statsEntry.value = `${value}% (${max})`;

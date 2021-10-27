@@ -4,7 +4,6 @@ import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -34,7 +33,7 @@ export class MobComponent extends TeamcraftPageComponent {
   public spawns$: Observable<{ map: number, zoneid: number, level: number, positions: Vector2[] }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {

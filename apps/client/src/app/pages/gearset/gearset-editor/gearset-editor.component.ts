@@ -3,11 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { distinctUntilChanged, expand, filter, first, last, map, shareReplay, switchMap, switchMapTo, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { BehaviorSubject, combineLatest, EMPTY, Observable, of, ReplaySubject, timer } from 'rxjs';
 import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,6 +26,7 @@ import { XivapiSearchOptions } from '@xivapi/angular-client/src/model';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -117,11 +117,12 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     distinctUntilChanged()
   );
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
-    switchMap(([filters, job]) => {
+    withLazyData(this.lazyData, 'jobAbbr'),
+    switchMap(([[filters, job], jobAbbr]) => {
       const xivapiFilters: XivapiSearchFilter[] = [
         ...filters,
         {
-          column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
+          column: `ClassJobCategory.${jobAbbr[job].en}`,
           operator: '=',
           value: 1
         }
@@ -164,7 +165,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               value: 62
             },
             {
-              column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
+              column: `ClassJobCategory.${jobAbbr[job].en}`,
               operator: '=',
               value: 1
             }
@@ -325,11 +326,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
-              private l12n: LocalizedDataService, private lazyData: LazyDataFacade,
+              private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
-              private i18n: I18nToolsService, private ipc: IpcService, private router: Router,
-              private cd: ChangeDetectorRef) {
+              private i18n: I18nToolsService, private ipc: IpcService) {
     super();
     this.gearset$.pipe(
       first(),
@@ -512,43 +512,46 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece, category: any): void {
     const clone = JSON.parse(JSON.stringify(equipmentPiece));
-    this.dialog.create({
-      nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName: this.i18n.getName(this.l12n.getItem(equipmentPiece.itemId)) }),
-      nzContent: MateriasPopupComponent,
-      nzComponentParams: {
-        equipmentPiece: equipmentPiece,
-        job: gearset.job
-      },
-      nzFooter: null
-    }).afterClose
-      .subscribe(res => {
-        if (res) {
-          this.materiaCache = {
-            ...this.materiaCache,
-            [`${res.itemId}:${propertyName}`]: {
-              materias: res.materias,
-              date: Date.now()
-            }
-          };
-          equipmentPiece.materias = [...res.materias];
-        }
-        if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
-          this.setGearsetPiece(gearset, propertyName, { ...res });
-        } else if (!!res) {
-          category.items = category.items.map(item => {
-            if (item.equipmentPiece.itemId === equipmentPiece.itemId) {
-              return {
-                ...item,
-                equipmentPiece: { ...res }
-              };
-            }
-            return item;
-          });
-        } else {
-          Object.assign(equipmentPiece, clone);
-        }
-        this.cd.detectChanges();
-      });
+    this.i18n.getNameObservable('items', equipmentPiece.itemId).pipe(
+      switchMap(itemName => {
+        return this.dialog.create({
+          nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName }),
+          nzContent: MateriasPopupComponent,
+          nzComponentParams: {
+            equipmentPiece: equipmentPiece,
+            job: gearset.job
+          },
+          nzFooter: null
+        }).afterClose;
+      })
+    ).subscribe(res => {
+      if (res) {
+        this.materiaCache = {
+          ...this.materiaCache,
+          [`${res.itemId}:${propertyName}`]: {
+            materias: res.materias,
+            date: Date.now()
+          }
+        };
+        equipmentPiece.materias = [...res.materias];
+      }
+      if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
+        this.setGearsetPiece(gearset, propertyName, { ...res });
+      } else if (!!res) {
+        category.items = category.items.map(item => {
+          if (item.equipmentPiece.itemId === equipmentPiece.itemId) {
+            return {
+              ...item,
+              equipmentPiece: { ...res }
+            };
+          }
+          return item;
+        });
+      } else {
+        Object.assign(equipmentPiece, clone);
+      }
+      this.cd.detectChanges();
+    });
   }
 
   openTotalNeededPopup(gearset: TeamcraftGearset): void {

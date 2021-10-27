@@ -4,7 +4,6 @@ import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -28,7 +27,7 @@ export class FateComponent extends TeamcraftPageComponent {
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, public settings: SettingsService,
               seo: SeoService) {
@@ -95,21 +94,10 @@ export class FateComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(item: any): string {
-    const fate = this.l12n.getFate(+item.ID);
-    if (!fate) {
-      return item.Description_en;
-    }
-
-    return this.i18n.getName(fate.description);
+    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Description'));
   }
 
   private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    const fate = this.l12n.getFate(+item.ID);
-    if (!fate) {
-      return item.Name_en;
-    }
-
-    return this.i18n.getName(fate.name);
+    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Name'));
   }
 }

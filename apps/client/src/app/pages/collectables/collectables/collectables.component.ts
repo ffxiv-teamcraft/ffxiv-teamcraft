@@ -10,7 +10,6 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
@@ -73,7 +72,7 @@ export class CollectablesComponent {
               private lazyData: LazyDataFacade, private rotationPicker: RotationPickerService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private progressService: ProgressPopupService, private notificationService: NzNotificationService,
-              private listsFacade: ListsFacade, private i18n: I18nToolsService, private l12n: LocalizedDataService,
+              private listsFacade: ListsFacade, private i18n: I18nToolsService,
               private router: Router, private activeRoute: ActivatedRoute, private location: Location,
               private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
 
@@ -109,9 +108,14 @@ export class CollectablesComponent {
   }
 
   selectTab(index: number): void {
-    const newLocation = this.router.createUrlTree(['..', this.l12n.getJobAbbr(index + 8).en], { relativeTo: this.activeRoute });
-    this.location.go(newLocation.toString());
-    this.selectedTabFromTabset$.next(index);
+    this.lazyData.getRow('jobAbbr', index + 8).pipe(
+      map(abbr => abbr.en),
+      first()
+    ).subscribe(jobAbbr => {
+      const newLocation = this.router.createUrlTree(['..', jobAbbr], { relativeTo: this.activeRoute });
+      this.location.go(newLocation.toString());
+      this.selectedTabFromTabset$.next(index);
+    });
   }
 
   public applyNewLevels(form: FormGroup): void {
@@ -184,26 +188,30 @@ export class CollectablesComponent {
   }
 
   public createQuickList(item: { itemId: number, amount: number }): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    this.lazyData.getRecipeForItem(item.itemId).pipe(
-      switchMap(recipe => {
-        const operation$ = this.listManager.addToList({
-          itemId: +item.itemId,
-          list: list,
-          recipeId: recipe?.id || '',
-          amount: item.amount
-        }).pipe(
-          tap(resultList => this.listsFacade.addList(resultList)),
-          mergeMap(resultList => {
-            return this.listsFacade.myLists$.pipe(
-              map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-              filter(l => l !== undefined),
-              first()
+    this.i18n.getNameObservable('items', +item.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
+        return this.lazyData.getRecipeForItem(item.itemId).pipe(
+          switchMap(recipe => {
+            const operation$ = this.listManager.addToList({
+              itemId: +item.itemId,
+              list: list,
+              recipeId: recipe?.id || '',
+              amount: item.amount
+            }).pipe(
+              tap(resultList => this.listsFacade.addList(resultList)),
+              mergeMap(resultList => {
+                return this.listsFacade.myLists$.pipe(
+                  map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                  filter(l => l !== undefined),
+                  first()
+                );
+              })
             );
+
+            return this.progressService.showProgress(operation$, 1);
           })
         );
-
-        return this.progressService.showProgress(operation$, 1);
       })
     ).subscribe((newList) => {
       this.router.navigate(['list', newList.$key]);

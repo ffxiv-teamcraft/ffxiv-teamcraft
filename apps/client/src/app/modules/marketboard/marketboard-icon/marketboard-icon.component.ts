@@ -4,8 +4,7 @@ import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TranslateService } from '@ngx-translate/core';
 import { MarketboardPopupComponent } from '../marketboard-popup/marketboard-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, switchMap } from 'rxjs/operators';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { first, map, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { observeInput } from '../../../core/rxjs/observe-input';
@@ -40,19 +39,23 @@ export class MarketboardIconComponent {
   );
 
   constructor(private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
+              private i18n: I18nToolsService, private lazyData: LazyDataFacade) {
   }
 
   openDialog(): void {
-    this.dialog.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(this.itemId))}`,
-      nzContent: MarketboardPopupComponent,
-      nzComponentParams: {
-        itemId: this.itemId,
-        showHistory: true
-      },
-      nzFooter: null,
-      nzWidth: '80vw'
+    this.i18n.getNameObservable('items', this.itemId).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.dialog.create({
+        nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${itemName}`,
+        nzContent: MarketboardPopupComponent,
+        nzComponentParams: {
+          itemId: this.itemId,
+          showHistory: true
+        },
+        nzFooter: null,
+        nzWidth: '80vw'
+      });
     });
   }
 

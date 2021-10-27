@@ -7,7 +7,7 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap }
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
 import { loadLazyDataEntityEntry, loadLazyDataFullEntity } from './lazy-data.actions';
-import { I18nElement, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts, XivapiI18nName } from '../lazy-data-types';
+import { I18nElement, LazyDataEntries, LazyDataI18nKey, LazyDataKey, LazyDataRecordKey, LazyDataWithExtracts } from '../lazy-data-types';
 import { I18nName } from '../../model/common/i18n-name';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
@@ -85,6 +85,38 @@ export class LazyDataFacade {
       this.cacheObservable(obs$, propertyKey);
     }
     return this.getCacheEntry(propertyKey);
+  }
+
+  /**
+   * Gets an entire file worth of data at once.
+   * @param propertyKey the name of the property you want to load inside the lazy data system.
+   */
+  public getI18nEntry<K extends LazyDataI18nKey>(propertyKey: K): Observable<Record<number, I18nName>> {
+    return this.settings.region$.pipe(
+      switchMap(region => {
+        return this.getEntry(propertyKey).pipe(
+          switchMap(entry => {
+            switch (region) {
+              case Region.Global:
+                // Merging entry with itself just to normalize i18n names
+                return of(this.merge(entry));
+              case Region.China:
+                return this.getEntry(this.findPrefixedProperty(propertyKey, 'zh')).pipe(
+                  map(zhEntry => {
+                    return this.merge(entry, zhEntry);
+                  })
+                );
+              case Region.Korea:
+                return this.getEntry(this.findPrefixedProperty(propertyKey, 'ko')).pipe(
+                  map(koRow => {
+                    return this.merge(entry, koRow);
+                  })
+                );
+            }
+          })
+        );
+      })
+    );
   }
 
   /**
@@ -197,7 +229,6 @@ export class LazyDataFacade {
   /**
    * PUBLIC UTILITY METHODS
    */
-
   public getMapId(name: string): number {
     const result = mapIds.find((m) => m.name === name);
     if (result === undefined) {
@@ -341,6 +372,16 @@ export class LazyDataFacade {
   /**
    * PRIVATE HELPERS
    */
+
+  private merge(...dataEntries: I18nElement[]): Record<number, I18nName> {
+    return dataEntries.reduce((acc, entry) => {
+      Object.keys(entry).forEach((key) => {
+        const normalized: I18nName = normalizeI18nName(entry[key]);
+        acc[key] = { ...normalized, ...(acc[key] || {}) };
+      });
+      return acc;
+    }, {}) as Record<number, I18nName>;
+  }
 
   private getIndexByNameInEntry(entry: I18nElement, name: string, lang: Language, flip = false): number {
     let keys = Object.keys(entry);

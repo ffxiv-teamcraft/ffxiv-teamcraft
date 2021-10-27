@@ -68,20 +68,6 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('leves', id);
   }
 
-  public getJobName(id: number): I18nName {
-    const row = this.getRow(this.lazyData.data.jobName, id);
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobName', koKey: 'koJobName' });
-
-    return row;
-  }
-
-  public getJobAbbr(id: number): I18nName {
-    const row = this.getRow(this.lazyData.data.jobAbbr, id);
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobAbbr', koKey: 'koJobAbbr' });
-
-    return row;
-  }
-
   public getMob(id: number): I18nName {
     return this.getRowWithExtendedLanguage('mobs', id);
   }
