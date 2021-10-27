@@ -2165,7 +2165,7 @@
       "Permissions": "権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCに権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCにシェアなどができます。",
       "Fill_with_inventory": "所持品内にあるアイテムをリストに自動的に追加できます。",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
+      "More_actions_button": "このボタンは、現在のリストから行える多くのアクションメニューを開けます。皆さんはレイアウトエディターを通じてこのアクションボタンを編集できます。",
       "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
