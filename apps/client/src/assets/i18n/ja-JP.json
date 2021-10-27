@@ -2067,7 +2067,7 @@
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "多数のユーザーから得た情報ですので、結果が100％ではありません。結果が正確じゃなくてもバグとして報告しないようお願いいたします",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Missing_items": "スロットに空きがあるような場合、フィルタ―が正しく設定されているかご確認ください。",
     "Copied_as_string": "ギアセットのアイテムの名前がコピーされました。",
     "Mark_as_done": "Mark as done",
     "Create_commission": "このギアセットから依頼する",
@@ -2162,8 +2162,8 @@
     "LIST": {
       "HQ_mark": "このアイコンは、このアイテムの最終的なレシピに必要であることを意味します。HQが必要な時もありますが必須条件ではありません。",
       "Layout": "レイアウトエディターを開き、全体的なデータのフィルタリング方法とパネルを変更できます。左側のバトンはレイアウトを素早くスイッチする時、使います。",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
+      "Permissions": "権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCに権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCにシェアなどができます。",
+      "Fill_with_inventory": "所持品内にあるアイテムをリストに自動的に追加できます。",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
       "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
       "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
