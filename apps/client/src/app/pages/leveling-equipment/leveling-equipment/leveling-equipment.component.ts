@@ -191,6 +191,33 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     );
   }
 
+  selectRow(row: { level: number, gearset: TeamcraftGearset }): void {
+    this.selectedItems = this.gearsetsFacade
+      .toArray(row.gearset)
+      .reduce((acc, item) => {
+        return {
+          ...acc,
+          [item.slot]: item.piece.itemId
+        };
+      }, {});
+  }
+
+  createList(): void {
+    const items: ListRow[] = Object.values(this.selectedItems)
+      .filter(id => !!id)
+      .map(itemId => {
+        return {
+          id: itemId,
+          amount: 1,
+          done: 0,
+          used: 0,
+          yield: 1,
+          collectable: false
+        };
+      });
+    this.listPicker.addToList(...items);
+  }
+
   private allowItem(itemId: number, filters: any, inventory: UserInventory, extracts: LazyDataWithExtracts['extracts']): boolean {
     if (filters.onlyInventory && inventory) {
       return inventory.hasItem(itemId, true);
@@ -321,33 +348,6 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     }
     const secondaryStatEntry = itemStats[itemId]?.find(stat => stat.ID === secondaryStat);
     return secondaryStatEntry?.NQ || 0;
-  }
-
-  selectRow(row: { level: number, gearset: TeamcraftGearset }): void {
-    this.selectedItems = this.gearsetsFacade
-      .toArray(row.gearset)
-      .reduce((acc, item) => {
-        return {
-          ...acc,
-          [item.slot]: item.piece.itemId
-        };
-      }, {});
-  }
-
-  createList(): void {
-    const items: ListRow[] = Object.values(this.selectedItems)
-      .filter(id => !!id)
-      .map(itemId => {
-        return {
-          id: itemId,
-          amount: 1,
-          done: 0,
-          used: 0,
-          yield: 1,
-          collectable: false
-        };
-      });
-    this.listPicker.addToList(...items);
   }
 
 }

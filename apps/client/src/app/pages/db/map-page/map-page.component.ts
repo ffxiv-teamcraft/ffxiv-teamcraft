@@ -32,14 +32,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   public related$: Observable<MapRelatedElement[]>;
 
   public relatedDisplay$: Observable<MapRelatedElement[]>;
-
-  private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
-
   public markers$: Observable<MapMarker[]>;
-
   public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
-
   public availableTypes = ['fate', 'mob', 'npc', 'node', 'hunt'];
+  private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -187,6 +183,19 @@ export class MapPageComponent extends TeamcraftPageComponent {
     } else {
       this.highlight$.next(null);
     }
+  }
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return this.map$.pipe(
+      map((mapData) => {
+        return {
+          title: this.getName(mapData),
+          description: '',
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
+          image: `https://xivapi.com${mapData.MapFilename}`
+        };
+      })
+    );
   }
 
   private getHunts(territoryId: number, sizeFactor: number): Observable<MapRelatedElement[]> {
@@ -434,18 +443,5 @@ export class MapPageComponent extends TeamcraftPageComponent {
   private getName(mapData: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
     return this.i18n.getName(this.l12n.getPlace(mapData.PlaceNameTargetID));
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.map$.pipe(
-      map((mapData) => {
-        return {
-          title: this.getName(mapData),
-          description: '',
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
-          image: `https://xivapi.com${mapData.MapFilename}`
-        };
-      })
-    );
   }
 }

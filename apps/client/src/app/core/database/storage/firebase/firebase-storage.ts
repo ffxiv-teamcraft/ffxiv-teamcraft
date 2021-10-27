@@ -5,7 +5,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 
 
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { debounceTime, map, shareReplay, tap, first } from 'rxjs/operators';
+import { debounceTime, map, shareReplay, tap } from 'rxjs/operators';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> {

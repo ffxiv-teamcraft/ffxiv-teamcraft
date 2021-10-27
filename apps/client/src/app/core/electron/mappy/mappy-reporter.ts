@@ -79,9 +79,8 @@ export interface MappyReporterState {
 export class MappyReporterService {
 
   private static readonly XIVAPI_URL = 'staging.xivapi.com';
-
+  public available = false;
   private reportedUntil = Date.now();
-
   private state: MappyReporterState = {
     zoning: false,
     aetherytes: [],
@@ -105,11 +104,7 @@ export class MappyReporterService {
     zoneId: 0,
     reports: 0
   };
-
   private dirty = false;
-
-  public available = false;
-
   private intervals: any[] = [];
 
   private stop$ = new Subject<void>();
@@ -117,20 +112,6 @@ export class MappyReporterService {
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService,
               private http: HttpClient, private settings: SettingsService) {
-  }
-
-  private isInLayer(coords: Vector3, layerBounds: Vector3<{ min: number, max: number }>): boolean {
-    let matches = true;
-    if (layerBounds.z.min || layerBounds.z.max) {
-      matches = matches && (coords.z >= layerBounds.z.min && coords.z <= layerBounds.z.max);
-    }
-    if (layerBounds.y.min || layerBounds.y.max) {
-      matches = matches && (coords.y >= layerBounds.y.min && coords.y <= layerBounds.y.max);
-    }
-    if (layerBounds.x.min || layerBounds.x.max) {
-      matches = matches && (coords.x >= layerBounds.x.min && coords.x <= layerBounds.x.max);
-    }
-    return matches;
   }
 
   public start(): void {
@@ -149,6 +130,20 @@ export class MappyReporterService {
     this.intervals.forEach(i => clearInterval(i));
     this.intervals = [];
     this.stop$.next();
+  }
+
+  private isInLayer(coords: Vector3, layerBounds: Vector3<{ min: number, max: number }>): boolean {
+    let matches = true;
+    if (layerBounds.z.min || layerBounds.z.max) {
+      matches = matches && (coords.z >= layerBounds.z.min && coords.z <= layerBounds.z.max);
+    }
+    if (layerBounds.y.min || layerBounds.y.max) {
+      matches = matches && (coords.y >= layerBounds.y.min && coords.y <= layerBounds.y.max);
+    }
+    if (layerBounds.x.min || layerBounds.x.max) {
+      matches = matches && (coords.x >= layerBounds.x.min && coords.x <= layerBounds.x.max);
+    }
+    return matches;
   }
 
   private initReporter(): void {

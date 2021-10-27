@@ -48,17 +48,12 @@ export class CustomItemsComponent {
   public loading$: Observable<boolean> = combineLatest([this.customItemsFacade.loaded$, this.customItemsFacade.foldersLoaded$]).pipe(
     map(([itemsLoaded, foldersLoaded]) => !itemsLoaded || !foldersLoaded)
   );
-
-  private folders$ = this.customItemsFacade.allCustomItemFolders$;
-
   public maps$: Observable<{ ID: number, PlaceName: any }[]>;
-
   public availableCraftJobs: any[] = [];
-
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
-
   public modifiedList: List;
+  private folders$ = this.customItemsFacade.allCustomItemFolders$;
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
@@ -225,50 +220,6 @@ export class CustomItemsComponent {
     return req.id;
   }
 
-
-  private beforeSave(item: CustomItem): CustomItem {
-    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
-      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneId = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].map;
-      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
-    }
-    if (getItemSource(item, DataType.VENDORS).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.VENDORS) {
-          source.data = source.data.map(
-            vendor => {
-              vendor.areaId = vendor.zoneId = vendor.mapId;
-              return vendor;
-            });
-        }
-        return source;
-      });
-    }
-    if (getItemSource(item, DataType.TRADE_SOURCES).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.TRADE_SOURCES) {
-          source.data = source.data.map(
-            tradeSource => {
-              tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
-              return tradeSource;
-            });
-        }
-        return source;
-      });
-    }
-    if (getItemSource(item, DataType.CRAFTED_BY).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.CRAFTED_BY) {
-          source.data = source.data.map(craft => {
-            craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
-            return craft;
-          });
-        }
-        return source;
-      });
-    }
-    return item;
-  }
-
   public addToList(item: CustomItem, amount: string): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
@@ -337,10 +288,6 @@ export class CustomItemsComponent {
   }
 
   /**
-   * Details writing
-   */
-
-  /**
    *
    *  CRAFTING
    *
@@ -360,6 +307,10 @@ export class CustomItemsComponent {
     });
     item.dirty = true;
   }
+
+  /**
+   * Details writing
+   */
 
   public addIngredient(item: CustomItem): void {
     this.dialog.create({
@@ -670,6 +621,49 @@ export class CustomItemsComponent {
     const tradeSourceData = item.sources.find(source => source.type === DataType.REDUCED_FROM);
     tradeSourceData.data = tradeSourceData.data.filter(r => r !== reduction);
     item.dirty = true;
+  }
+
+  private beforeSave(item: CustomItem): CustomItem {
+    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneId = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].map;
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
+    }
+    if (getItemSource(item, DataType.VENDORS).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.VENDORS) {
+          source.data = source.data.map(
+            vendor => {
+              vendor.areaId = vendor.zoneId = vendor.mapId;
+              return vendor;
+            });
+        }
+        return source;
+      });
+    }
+    if (getItemSource(item, DataType.TRADE_SOURCES).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.TRADE_SOURCES) {
+          source.data = source.data.map(
+            tradeSource => {
+              tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
+              return tradeSource;
+            });
+        }
+        return source;
+      });
+    }
+    if (getItemSource(item, DataType.CRAFTED_BY).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.CRAFTED_BY) {
+          source.data = source.data.map(craft => {
+            craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
+            return craft;
+          });
+        }
+        return source;
+      });
+    }
+    return item;
   }
 
 }

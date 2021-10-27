@@ -16,6 +16,10 @@ export class Duplicates extends InventoryOptimizer {
     super();
   }
 
+  getId(): string {
+    return 'DUPLICATES';
+  }
+
   protected _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     return this.lazyData.getEntry('stackSizes').pipe(
       map(stackSizes => {
@@ -45,10 +49,6 @@ export class Duplicates extends InventoryOptimizer {
       })
     );
 
-  }
-
-  getId(): string {
-    return 'DUPLICATES';
   }
 
 }

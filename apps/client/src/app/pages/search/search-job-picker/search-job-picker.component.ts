@@ -19,12 +19,6 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 })
 export class SearchJobPickerComponent implements ControlValueAccessor {
 
-  private onChange: (_: any) => void;
-
-  private onTouched: () => void;
-
-  private selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
-
   public jobsDisplay$ = this.lazyData.getEntry('jobCategories').pipe(
     switchMap(data => {
       return combineLatest([
@@ -57,7 +51,9 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
     }),
     shareReplay(1)
   );
-
+  private onChange: (_: any) => void;
+  private onTouched: () => void;
+  private selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
   public display$ = combineLatest([this.jobsDisplay$, this.selectedJobs$]).pipe(
     map(([display, selected]) => {
       return Object.keys(display).reduce((acc, key) => {
@@ -72,22 +68,6 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
   private pristine = true;
 
   constructor(private lazyData: LazyDataFacade) {
-  }
-
-  private toJobIds(abbrs: string[]): Observable<number[]> {
-    return combineLatest([
-      this.lazyData.getEntry('jobAbbr'),
-      this.lazyData.getEntry('jobSortIndex')
-    ]).pipe(
-      map(([jobAbbr, jobSortIndex]) => {
-        return abbrs.map(abbr => +Object.keys(jobAbbr).find(key => jobAbbr[key].en === abbr))
-          .sort((a, b) => jobSortIndex[a] - jobSortIndex[b]);
-      })
-    );
-  }
-
-  private mapToEntry(jobs: number[], selected: number[]): { id: number, selected: boolean }[] {
-    return jobs.map(id => ({ id, selected: selected.includes(id) }));
   }
 
   registerOnChange(fn: (_: any) => {}): void {
@@ -117,6 +97,22 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
     if (this.onChange) {
       this.onChange(this.selectedJobs$.value);
     }
+  }
+
+  private toJobIds(abbrs: string[]): Observable<number[]> {
+    return combineLatest([
+      this.lazyData.getEntry('jobAbbr'),
+      this.lazyData.getEntry('jobSortIndex')
+    ]).pipe(
+      map(([jobAbbr, jobSortIndex]) => {
+        return abbrs.map(abbr => +Object.keys(jobAbbr).find(key => jobAbbr[key].en === abbr))
+          .sort((a, b) => jobSortIndex[a] - jobSortIndex[b]);
+      })
+    );
+  }
+
+  private mapToEntry(jobs: number[], selected: number[]): { id: number, selected: boolean }[] {
+    return jobs.map(id => ({ id, selected: selected.includes(id) }));
   }
 
 }

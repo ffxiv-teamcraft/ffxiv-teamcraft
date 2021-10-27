@@ -3,7 +3,6 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
@@ -44,6 +43,10 @@ export class ConsolidateStacks extends InventoryOptimizer {
         return patch.ExVersion <= expansion;
       })
     );
+  }
+
+  getId(): string {
+    return 'CONSOLIDATE_STACKS';
   }
 
   protected _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
@@ -90,10 +93,6 @@ export class ConsolidateStacks extends InventoryOptimizer {
         };
       })
     );
-  }
-
-  getId(): string {
-    return 'CONSOLIDATE_STACKS';
   }
 
 }

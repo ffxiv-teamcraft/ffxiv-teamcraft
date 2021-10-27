@@ -43,28 +43,36 @@ export class AllaganReportRowComponent {
 
   @Input()
   focusId: string;
+  @Output()
+  accept = new EventEmitter<void>();
+  @Output()
+  reject = new EventEmitter<void>();
+  @Output()
+  delete = new EventEmitter<void>();
+  @Output()
+  deleteOwn = new EventEmitter<void>();
+  @Output()
+  edit = new EventEmitter<void>();
+  applyingChange = false;
+  fishingSpot$ = merge(
+    observeInput(this, 'report', true),
+    observeInput(this, 'queueEntry', true)
+  ).pipe(
+    switchMap(report => {
+      const data = report.data;
+      return this.lazyData.getEntry('fishingSpots').pipe(
+        map(fishingSpots => fishingSpots.find(s => s.id === data.spot))
+      );
+    })
+  );
+
+  constructor(public translate: TranslateService, private lazyData: LazyDataFacade) {
+  }
 
   @Input()
   set reportsQueue(queue: AllaganReportQueueEntry[]) {
     this.canSuggestDeletionOrModification = !this.embed && queue && !queue.some(entry => entry.report === this.report?.uid && [AllaganReportStatus.DELETION, AllaganReportStatus.MODIFICATION].includes(entry.type));
   }
-
-  @Output()
-  accept = new EventEmitter<void>();
-
-  @Output()
-  reject = new EventEmitter<void>();
-
-  @Output()
-  delete = new EventEmitter<void>();
-
-  @Output()
-  deleteOwn = new EventEmitter<void>();
-
-  @Output()
-  edit = new EventEmitter<void>();
-
-  applyingChange = false;
 
   get itemId(): number {
     return (this.report || this.queueEntry)?.itemId;
@@ -86,23 +94,8 @@ export class AllaganReportRowComponent {
     return this.queueEntry?.type || AllaganReportStatus.ACCEPTED;
   }
 
-  fishingSpot$ = merge(
-    observeInput(this, 'report', true),
-    observeInput(this, 'queueEntry', true)
-  ).pipe(
-    switchMap(report => {
-      const data = report.data;
-      return this.lazyData.getEntry('fishingSpots').pipe(
-        map(fishingSpots => fishingSpots.find(s => s.id === data.spot))
-      );
-    })
-  );
-
   get hookset(): any {
     return [0, 4103, 4179][this.data.hookset];
-  }
-
-  constructor(public translate: TranslateService, private lazyData: LazyDataFacade) {
   }
 
   getColor(status: AllaganReportStatus): string {

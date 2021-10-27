@@ -214,12 +214,6 @@ export class LayoutsFacade {
     );
   }
 
-  private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
-    const set = sets.find(s => s.jobId === job);
-    // If we don't find a matching set, return true, they just didn't fill this one.
-    return !set || set.level === 0 || set.level >= level;
-  }
-
   public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
     const layout = new ListLayout();
     Object.assign(layout, baseLayout);
@@ -251,5 +245,11 @@ export class LayoutsFacade {
     if (selectedKey !== null) {
       this.store.dispatch(new SelectLayout(selectedKey));
     }
+  }
+
+  private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
+    const set = sets.find(s => s.jobId === job);
+    // If we don't find a matching set, return true, they just didn't fill this one.
+    return !set || set.level === 0 || set.level >= level;
   }
 }

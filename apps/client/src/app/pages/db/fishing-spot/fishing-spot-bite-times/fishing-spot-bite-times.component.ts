@@ -40,21 +40,10 @@ interface FishingSpotChartData {
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];
-
-  private readonly activeFish$ = new Subject<number | undefined>();
-
-  @Input()
-  public set activeFish(value: number | undefined) {
-    this.activeFish$.next(value >= 0 ? value : undefined);
-  }
-
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
-
   public readonly baitFilter$ = this.fishCtx.baitId$.pipe(map((i) => (i >= 0 ? i : -1)));
-
   public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map((res) => res.loading));
-
   public readonly biteTimesChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.biteTimesBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
@@ -83,7 +72,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
-
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
     switchMap(([res, tugs]) => {
       if (!res.data || !tugs.data) return of([]);
@@ -136,10 +124,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     }),
     shareReplay(1)
   );
-
   gridColor = 'rgba(255,255,255,.3)';
   fontColor = 'rgba(255,255,255,.5)';
-
   options: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -176,7 +162,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       }]
     }
   };
-
   public readonly baitIds$: Observable<number[] | undefined> = this.fishCtx.baitsBySpot$.pipe(
     map((res) => {
       if (!res.data) return undefined;
@@ -184,7 +169,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       return [...uniq];
     })
   );
-
+  public readonly activeFishName$ = new Subject<string | undefined>();
+  private readonly activeFish$ = new Subject<number | undefined>();
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
@@ -196,9 +182,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     }),
     startWith([])
   );
-
-  public readonly activeFishName$ = new Subject<string | undefined>();
-
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(
@@ -208,6 +191,11 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     private readonly translate: TranslateService,
     private lazyData: LazyDataFacade
   ) {
+  }
+
+  @Input()
+  public set activeFish(value: number | undefined) {
+    this.activeFish$.next(value >= 0 ? value : undefined);
   }
 
   ngOnInit() {

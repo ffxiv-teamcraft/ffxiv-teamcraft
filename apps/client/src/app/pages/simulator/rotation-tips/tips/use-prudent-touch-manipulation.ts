@@ -1,6 +1,6 @@
 import { RotationTip } from '../rotation-tip';
 import { RotationTipType } from '../rotation-tip-type';
-import { PrudentTouch, SimulationResult, Manipulation, HastyTouch } from '@ffxiv-teamcraft/simulator';
+import { HastyTouch, Manipulation, PrudentTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class UsePrudentTouchManipulation extends RotationTip {
 

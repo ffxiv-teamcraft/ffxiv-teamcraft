@@ -30,47 +30,6 @@ export class AlarmBellService {
     this.initBell();
   }
 
-  private initBell(): void {
-    combineLatest([this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$])
-      .pipe(
-        map(([date, alarms, groups]) => {
-          return alarms.filter(alarm => {
-            if (alarm.spawns === undefined) {
-              return false;
-            }
-
-            const groupsForThisAlarm = groups.filter(g => g.alarms.includes(alarm.$key));
-
-            const hasOneGroupEnabled = groupsForThisAlarm.length === 0 || groupsForThisAlarm.some(group => {
-              return group.enabled && group.alarms.includes(alarm.$key);
-            });
-            // If this alarm has a group and it's muted, don't even go further
-            if ((!hasOneGroupEnabled) || !alarm.enabled) {
-              return false;
-            }
-            const lastPlayed = this.getLastPlayed(alarm);
-            // Ceiling on /6 so precision is 1/10
-            const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
-            // Irl alarm duration in ms
-            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
-            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
-            if (irlAlarmDuration === 0) {
-              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
-            }
-            return Date.now() - lastPlayed >= irlAlarmDuration
-              && timeBeforePlay <= 0;
-          });
-        })
-      ).subscribe(alarmsToPlay => {
-      alarmsToPlay.forEach(alarm => {
-        if (!this.settings.alarmsMuted) {
-          this.ring(alarm);
-          this.notify(alarm);
-        }
-      });
-    });
-  }
-
   /**
    * Plays the sound part of the alarm.
    * @param alarm
@@ -132,6 +91,47 @@ export class AlarmBellService {
         ).subscribe();
         this.notificationService.info(notificationTitle, notificationBody);
       }
+    });
+  }
+
+  private initBell(): void {
+    combineLatest([this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$])
+      .pipe(
+        map(([date, alarms, groups]) => {
+          return alarms.filter(alarm => {
+            if (alarm.spawns === undefined) {
+              return false;
+            }
+
+            const groupsForThisAlarm = groups.filter(g => g.alarms.includes(alarm.$key));
+
+            const hasOneGroupEnabled = groupsForThisAlarm.length === 0 || groupsForThisAlarm.some(group => {
+              return group.enabled && group.alarms.includes(alarm.$key);
+            });
+            // If this alarm has a group and it's muted, don't even go further
+            if ((!hasOneGroupEnabled) || !alarm.enabled) {
+              return false;
+            }
+            const lastPlayed = this.getLastPlayed(alarm);
+            // Ceiling on /6 so precision is 1/10
+            const timeBeforePlay = Math.round(this.alarmsFacade.getMinutesBefore(date, this.alarmsFacade.getNextSpawn(alarm, date)) / 6) / 10 - this.settings.alarmHoursBefore;
+            // Irl alarm duration in ms
+            let irlAlarmDuration = this.eorzeanTime.toEarthTime(alarm.duration * 60) * 1000;
+            // If the alarm has no duration, it's because it has no spawn time and only depends on weather
+            if (irlAlarmDuration === 0) {
+              irlAlarmDuration = this.eorzeanTime.toEarthTime(8 * 60) * 1000;
+            }
+            return Date.now() - lastPlayed >= irlAlarmDuration
+              && timeBeforePlay <= 0;
+          });
+        })
+      ).subscribe(alarmsToPlay => {
+      alarmsToPlay.forEach(alarm => {
+        if (!this.settings.alarmsMuted) {
+          this.ring(alarm);
+          this.notify(alarm);
+        }
+      });
     });
   }
 

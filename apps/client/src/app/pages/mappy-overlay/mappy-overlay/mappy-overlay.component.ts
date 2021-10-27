@@ -86,12 +86,6 @@ export class MappyOverlayComponent implements OnInit {
     this.ipc.send('mappy:reload');
   }
 
-  private updateImageTransform(): void {
-    this.imageTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(${this.pan['x'] + this.editedPan['x']}px,${
-      this.pan['y'] + this.editedPan['y']
-    }px) scale(${this.scale}) rotate(0deg)`);
-  }
-
   /* Method will be called on pan image */
   onPan(e: any): void {
     this.editedPan = { x: e['deltaX'], y: e['deltaY'] };
@@ -158,6 +152,12 @@ export class MappyOverlayComponent implements OnInit {
       y: -1 * (mock.y * 2048 / 100)
     };
     this.updateImageTransform();
+  }
+
+  private updateImageTransform(): void {
+    this.imageTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(${this.pan['x'] + this.editedPan['x']}px,${
+      this.pan['y'] + this.editedPan['y']
+    }px) scale(${this.scale}) rotate(0deg)`);
   }
 
 }

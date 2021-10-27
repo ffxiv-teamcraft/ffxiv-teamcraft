@@ -166,15 +166,6 @@ export class NpcComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(npc: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'));
-  }
-
-  private getName(npc: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcs'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiNpc$.pipe(
       map(npc => {
@@ -186,6 +177,15 @@ export class NpcComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(npc: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'));
+  }
+
+  private getName(npc: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcs'));
   }
 
 }

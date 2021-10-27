@@ -22,27 +22,6 @@ export class FishingReporter implements DataReporter {
               private settings: SettingsService) {
   }
 
-  private setState(newState: any): void {
-    this.state = {
-      ...this.state,
-      ...newState
-    };
-    this.ipc.send('fishing-state:set', this.state);
-  }
-
-  private getTug(value: number): Tug {
-    switch (value) {
-      case 292:
-        return Tug.LIGHT;
-      case 293:
-        return Tug.MEDIUM;
-      case 294:
-        return Tug.BIG;
-      default:
-        return null;
-    }
-  }
-
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const actorControlSelf$ = packets$.pipe(
       ofMessageType('actorControlSelf'),
@@ -322,6 +301,27 @@ export class FishingReporter implements DataReporter {
 
   getDataType(): string {
     return 'fishingresults';
+  }
+
+  private setState(newState: any): void {
+    this.state = {
+      ...this.state,
+      ...newState
+    };
+    this.ipc.send('fishing-state:set', this.state);
+  }
+
+  private getTug(value: number): Tug {
+    switch (value) {
+      case 292:
+        return Tug.LIGHT;
+      case 293:
+        return Tug.MEDIUM;
+      case 294:
+        return Tug.BIG;
+      default:
+        return null;
+    }
   }
 
 }

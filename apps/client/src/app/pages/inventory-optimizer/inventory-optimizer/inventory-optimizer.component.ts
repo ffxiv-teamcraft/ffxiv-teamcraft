@@ -27,7 +27,47 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 export class InventoryOptimizerComponent {
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
-
+  public ignoreArray: { id: string, itemId: number, containerName?: string }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
+  //hiddenArray tracks hidden optimizers
+  public hiddenArray: { optimizerId: string }[] = JSON.parse(localStorage.getItem('optimizations:hidden') || '[]');
+  public showIgnored = false;
+  public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
+    map((optimizations) => {
+      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
+        const total: number[] = [];
+        opt.entries = opt.entries.map(entry => {
+          entry.ignored = this.ignoreArray.some(ignored => {
+            return ignored.containerName === entry.containerName && ignored.id === opt.type;
+          });
+          entry.items = entry.items.map(item => {
+            item.ignored = this.ignoreArray.some(ignored => {
+              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
+            });
+            return item;
+          }).filter(item => {
+            return this.showIgnored || !item.ignored;
+          });
+          if (this.showIgnored) {
+            entry.totalLength = entry.items.length;
+          } else {
+            entry.totalLength = entry.items.filter(i => !i.ignored).length;
+          }
+          if (this.showIgnored || !entry.ignored) {
+            total.push(...entry.items.map(i => i.item.itemId));
+          }
+          return entry;
+        });
+        opt.hidden = this.hiddenArray.some(hidden => {
+          return hidden.optimizerId === opt.type;
+        });
+        opt.totalLength = uniq(total).length;
+        return opt;
+      });
+    })
+  );
+  //for showing hidden optimizers
+  public showHidden = false;
+  public loading = false;
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.getEntry('extracts').pipe(
     switchMap((extracts) => {
       return combineLatest([
@@ -95,52 +135,10 @@ export class InventoryOptimizerComponent {
     })
   );
 
-  public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
-    map((optimizations) => {
-      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
-        const total: number[] = [];
-        opt.entries = opt.entries.map(entry => {
-          entry.ignored = this.ignoreArray.some(ignored => {
-            return ignored.containerName === entry.containerName && ignored.id === opt.type;
-          });
-          entry.items = entry.items.map(item => {
-            item.ignored = this.ignoreArray.some(ignored => {
-              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
-            });
-            return item;
-          }).filter(item => {
-            return this.showIgnored || !item.ignored;
-          });
-          if (this.showIgnored) {
-            entry.totalLength = entry.items.length;
-          } else {
-            entry.totalLength = entry.items.filter(i => !i.ignored).length;
-          }
-          if (this.showIgnored || !entry.ignored) {
-            total.push(...entry.items.map(i => i.item.itemId));
-          }
-          return entry;
-        });
-        opt.hidden = this.hiddenArray.some(hidden => {
-          return hidden.optimizerId === opt.type;
-        });
-        opt.totalLength = uniq(total).length;
-        return opt;
-      });
-    })
-  );
-
-  public ignoreArray: { id: string, itemId: number, containerName?: string }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
-
-  //hiddenArray tracks hidden optimizers
-  public hiddenArray: { optimizerId: string }[] = JSON.parse(localStorage.getItem('optimizations:hidden') || '[]');
-
-  public showIgnored = false;
-
-  //for showing hidden optimizers
-  public showHidden = false;
-
-  public loading = false;
+  constructor(private inventoryFacade: InventoryService, private settings: SettingsService, private l12n: LocalizedDataService,
+              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
+              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService) {
+  }
 
   public get stackSizeThreshold(): number {
     return +(localStorage.getItem(HasTooFew.THRESHOLD_KEY) || 3);
@@ -164,23 +162,6 @@ export class InventoryOptimizerComponent {
       this.loading = true;
       this.reloader$.next();
     }
-  }
-
-  constructor(private inventoryFacade: InventoryService, private settings: SettingsService, private l12n: LocalizedDataService,
-              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService) {
-  }
-
-  private getContainerName(item: InventoryItem): string {
-    return item.retainerName || this.inventoryFacade.getContainerName(item.containerId);
-  }
-
-  public getExpansions() {
-    return this.l12n.getExpansions();
-  }
-
-  public resetInventory(): void {
-    this.inventoryFacade.resetInventory();
   }
 
   public get selectedExpansion(): number {
@@ -211,6 +192,14 @@ export class InventoryOptimizerComponent {
     }
   }
 
+  public getExpansions() {
+    return this.l12n.getExpansions();
+  }
+
+  public resetInventory(): void {
+    this.inventoryFacade.resetInventory();
+  }
+
   nameCopied(key: string, args?: any): void {
     this.message.success(this.translate.instant(key, args));
   }
@@ -228,10 +217,6 @@ export class InventoryOptimizerComponent {
     }
     this.setHiddenArray(this.hiddenArray);
     this.reloader$.next();
-  }
-
-  private setHiddenArray(array: { optimizerId: string }[]): void {
-    localStorage.setItem('optimizations:hidden', JSON.stringify(array));
   }
 
   public setIgnoreItemOptimization(itemId: number, optimization: string, ignore: boolean): void {
@@ -267,16 +252,24 @@ export class InventoryOptimizerComponent {
     this.reloader$.next();
   }
 
-  private setIgnoreArray(array: { id: string, itemId: number }[]): void {
-    localStorage.setItem(`optimizations:ignored`, JSON.stringify(array));
-  }
-
   public trackByTip(index: number, opt: InventoryOptimization): string {
     return opt.type;
   }
 
   public trackByEntry(index: number, entry: any): string {
     return entry.containerName;
+  }
+
+  private getContainerName(item: InventoryItem): string {
+    return item.retainerName || this.inventoryFacade.getContainerName(item.containerId);
+  }
+
+  private setHiddenArray(array: { optimizerId: string }[]): void {
+    localStorage.setItem('optimizations:hidden', JSON.stringify(array));
+  }
+
+  private setIgnoreArray(array: { id: string, itemId: number }[]): void {
+    localStorage.setItem(`optimizations:ignored`, JSON.stringify(array));
   }
 
 }

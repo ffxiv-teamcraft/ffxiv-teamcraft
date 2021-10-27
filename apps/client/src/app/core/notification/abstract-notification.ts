@@ -1,7 +1,6 @@
 import { NotificationType } from './notification-type';
 import { Parent } from '@kaiu/serializer';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';

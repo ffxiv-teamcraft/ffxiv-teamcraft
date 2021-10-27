@@ -3,7 +3,7 @@ import { MapService } from '../../modules/map/map.service';
 import { Aetheryte } from '../../core/data/aetheryte';
 import { Observable } from 'rxjs';
 import { Vector2 } from '../../core/tools/vector2';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { filter, switchMap } from 'rxjs/operators';
 
 @Pipe({
   name: 'closestAetheryte'

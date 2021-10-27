@@ -34,7 +34,7 @@ export class TreasureFinderComponent {
   treasures$: Observable<any[]> = combineLatest([
     this.map$,
     this.lazyData.getEntry('treasures'),
-    this.lazyData.getEntry('maps'),
+    this.lazyData.getEntry('maps')
   ]).pipe(
     map(([mapId, treasures, maps]) => {
       return treasures

@@ -94,12 +94,6 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
       );
   }
 
-  private getSortScore(rotation: CraftingRotation): number {
-    return rotation.community.minCraftsmanship + rotation.community.minControl + rotation.community.minCp
-      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0)
-      + (rotation.tags.includes(RotationTag.SPECIALIST) ? 10000 : 0);
-  }
-
   public getUserCommunityRotations(userId: string): Observable<CraftingRotation[]> {
     const query: QueryFn = ref => {
       return ref.where(`public`, '==', true).where('authorId', '==', userId);
@@ -125,6 +119,12 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
 
   protected getClass(): any {
     return CraftingRotation;
+  }
+
+  private getSortScore(rotation: CraftingRotation): number {
+    return rotation.community.minCraftsmanship + rotation.community.minControl + rotation.community.minCp
+      + (rotation.rotation.length / 15) * 1000 + (!!rotation.food ? 5000 : 0)
+      + (rotation.tags.includes(RotationTag.SPECIALIST) ? 10000 : 0);
   }
 
 }

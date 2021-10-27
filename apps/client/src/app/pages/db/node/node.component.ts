@@ -200,10 +200,6 @@ export class NodeComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(node: any): string {
-    return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.l12n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
-  }
-
   public getName(node: any): string {
     if (!node) return '';
 
@@ -228,5 +224,9 @@ export class NodeComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(node: any): string {
+    return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.l12n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
   }
 }

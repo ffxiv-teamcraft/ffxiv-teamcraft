@@ -93,15 +93,6 @@ export class TraitComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(trait: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traitDescriptions', 'Description'));
-  }
-
-  private getName(trait: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traits'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiTrait$.pipe(
       map(trait => {
@@ -113,5 +104,14 @@ export class TraitComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(trait: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traitDescriptions', 'Description'));
+  }
+
+  private getName(trait: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traits'));
   }
 }

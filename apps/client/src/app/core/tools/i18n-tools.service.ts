@@ -102,8 +102,25 @@ export class I18nToolsService {
     };
   }
 
-  public getMapName(mapId:number): Observable<string>{
+  public getMapName(mapId: number): Observable<string> {
     const entry = mapIds.find((m) => m.id === mapId);
-    return this.getNameObservable('places', entry.zone ?? 1)
+    return this.getNameObservable('places', entry.zone ?? 1);
+  }
+
+  public getActionName(id: number): Observable<string> {
+    return this.lazyData.getRow('craftActions', id).pipe(
+      switchMap(craftAction => {
+        if (craftAction) {
+          return of(craftAction);
+        }
+        return this.lazyData.getRow('actions', id);
+      }),
+      map(name => {
+        if (!name) {
+          throw new Error(`No action found for id ${id}`);
+        }
+        return this.getName(name);
+      })
+    );
   }
 }

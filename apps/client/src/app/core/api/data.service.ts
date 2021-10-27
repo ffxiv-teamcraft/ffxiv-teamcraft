@@ -40,7 +40,6 @@ import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 @Injectable()
 export class DataService {
 
-  private garlandUrl = 'https://www.garlandtools.org/db/doc';
   public garlandtoolsVersions = {
     item: 3,
     instance: 2,
@@ -50,9 +49,9 @@ export class DataService {
     mob: 2,
     fate: 2
   };
-  private garlandApiUrl = 'https://www.garlandtools.org/api';
-
   public searchLang = this.translate.currentLang;
+  private garlandUrl = 'https://www.garlandtools.org/db/doc';
+  private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,
               private i18n: I18nToolsService,
@@ -62,10 +61,6 @@ export class DataService {
               private lazyData: LazyDataFacade,
               private translate: TranslateService,
               private l12n: LocalizedDataService) {
-  }
-
-  public setSearchLang(lang: Language): void {
-    this.searchLang = lang;
   }
 
   private get isCompatible() {
@@ -78,6 +73,10 @@ export class DataService {
     }
 
     return 'https://xivapi.com';
+  }
+
+  public setSearchLang(lang: Language): void {
+    this.searchLang = lang;
   }
 
   public xivapiSearch(options: XivapiSearchOptions, forcedLang?: string) {
@@ -464,29 +463,6 @@ export class DataService {
    */
   public getGarlandData(uri: string): Observable<any> {
     return this.http.get<any>(this.garlandUrl + uri + '.json');
-  }
-
-  /**
-   * Creates a search request to garlandtools.org.
-   * @param {HttpParams} query
-   * @returns {Observable}
-   */
-  private getGarlandSearch(query: HttpParams): Observable<any> {
-    return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
-  }
-
-  private mapToItemIds(terms: string, lang: 'ko' | 'zh'): Observable<number[]> {
-    return this.lazyData.getEntry(lang === 'ko' ? 'koItems' : 'zhItems').pipe(
-      map((data) => {
-        return Object.keys(data)
-          .filter(key => {
-            return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
-          })
-          .map(key => {
-            return +key;
-          });
-      })
-    );
   }
 
   getSearchLang(): string {
@@ -1111,6 +1087,29 @@ export class DataService {
           }
           return row;
         });
+      })
+    );
+  }
+
+  /**
+   * Creates a search request to garlandtools.org.
+   * @param {HttpParams} query
+   * @returns {Observable}
+   */
+  private getGarlandSearch(query: HttpParams): Observable<any> {
+    return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
+  }
+
+  private mapToItemIds(terms: string, lang: 'ko' | 'zh'): Observable<number[]> {
+    return this.lazyData.getEntry(lang === 'ko' ? 'koItems' : 'zhItems').pipe(
+      map((data) => {
+        return Object.keys(data)
+          .filter(key => {
+            return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
+          })
+          .map(key => {
+            return +key;
+          });
       })
     );
   }

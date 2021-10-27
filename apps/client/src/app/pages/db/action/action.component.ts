@@ -130,15 +130,6 @@ export class ActionComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(action: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actionDescriptions', 'Description'));
-  }
-
-  private getName(action: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actions'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xviapiAction$.pipe(
       map(action => {
@@ -150,5 +141,14 @@ export class ActionComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(action: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actionDescriptions', 'Description'));
+  }
+
+  private getName(action: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actions'));
   }
 }

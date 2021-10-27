@@ -123,13 +123,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     );
   }
 
-  private completeLists(lists: List[]): Observable<List[]> {
-    if (lists.length === 0) {
-      return of([]);
-    }
-    return combineLatest(lists.filter(list => list.name !== undefined && list.finalItems !== undefined).map(list => this.completeListData(list)));
-  }
-
   public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<List[]> {
     return super.getByForeignKey(foreignEntityClass, foreignKeyValue, queryModifier, cacheSuffix)
       .pipe(
@@ -264,6 +257,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
 
   protected getClass(): any {
     return List;
+  }
+
+  private completeLists(lists: List[]): Observable<List[]> {
+    if (lists.length === 0) {
+      return of([]);
+    }
+    return combineLatest(lists.filter(list => list.name !== undefined && list.finalItems !== undefined).map(list => this.completeListData(list)));
   }
 
   private listsByAuthorRef(uid: string): Observable<List[]> {

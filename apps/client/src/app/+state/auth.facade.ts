@@ -359,10 +359,6 @@ export class AuthFacade {
     this.store.dispatch(new MarkAsDoneInLog(log, itemId, done));
   }
 
-  private oauthPopup(provider: any): Observable<UserCredential> {
-    return this.oauthService.login(provider);
-  }
-
   reloadGubalToken(): Observable<void> {
     return this.af.user.pipe(
       first(),
@@ -373,8 +369,12 @@ export class AuthFacade {
           tap(() => {
             user.getIdTokenResult(true);
           })
-        )
-      }),
-    )
+        );
+      })
+    );
+  }
+
+  private oauthPopup(provider: any): Observable<UserCredential> {
+    return this.oauthService.login(provider);
   }
 }

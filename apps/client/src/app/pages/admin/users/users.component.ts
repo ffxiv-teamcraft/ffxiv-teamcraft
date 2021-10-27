@@ -101,7 +101,7 @@ export class UsersComponent {
             })
           ).pipe(
             map(res => {
-              return [].concat.apply([], res)
+              return [].concat.apply([], res);
             })
           );
         }),

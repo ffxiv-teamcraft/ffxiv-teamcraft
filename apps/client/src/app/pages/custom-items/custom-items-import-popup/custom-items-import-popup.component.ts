@@ -34,6 +34,9 @@ export class CustomItemsImportPopupComponent {
 
   public savingDone = 0;
 
+  constructor(private modalRef: NzModalRef, private serializer: NgSerializerService, private customItemsFacade: CustomItemsFacade) {
+  }
+
   public handleFile = (event: any) => {
     delete this.error;
     delete this.errorDetails;
@@ -52,9 +55,6 @@ export class CustomItemsImportPopupComponent {
     this.hideUpload = true;
     return new Subscription();
   };
-
-  constructor(private modalRef: NzModalRef, private serializer: NgSerializerService, private customItemsFacade: CustomItemsFacade) {
-  }
 
   public getAccept(): string {
     switch (this.format) {

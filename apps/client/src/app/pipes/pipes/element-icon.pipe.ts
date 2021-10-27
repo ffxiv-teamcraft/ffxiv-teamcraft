@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { RecipeElement } from '../../model/garland-tools/recipe-element';
 
 @Pipe({
-  name: 'elementIcon',
+  name: 'elementIcon'
 })
 export class ElementIconPipe implements PipeTransform {
   transform(id: number): string {

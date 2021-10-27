@@ -14,10 +14,6 @@ export class NpcBreakdown {
 
   private readonly canSkip: Record<number, number> = {};
 
-  public get rows(): NpcBreakdownRow[] {
-    return this._rows;
-  }
-
   constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean) {
     // You can skip an item if there's another item requiring it inside the same array
     this.canSkip = rows.reduce((registry, row) => {
@@ -54,6 +50,10 @@ export class NpcBreakdown {
       });
       return row;
     });
+  }
+
+  public get rows(): NpcBreakdownRow[] {
+    return this._rows;
   }
 
   private handleVendors(row: ListRow): void {

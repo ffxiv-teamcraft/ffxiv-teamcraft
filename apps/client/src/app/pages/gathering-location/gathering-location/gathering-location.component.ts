@@ -5,7 +5,6 @@ import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
@@ -39,7 +38,7 @@ export class GatheringLocationComponent {
   compactDisplay$ = new BehaviorSubject<boolean>(localStorage.getItem('gathering-location:compact') === 'true');
 
   constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
+              private mapService: MapService, private gt: GarlandToolsService,
               private router: Router, private route: ActivatedRoute, public translate: TranslateService,
               private gatheringNodesService: GatheringNodesService, private message: NzMessageService) {
 

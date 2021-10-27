@@ -246,13 +246,13 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
+  oauthUrl(state: string, redirectUri: string): string {
+    return `https://discordapp.com/api/oauth2/authorize?response_type=code&client_id=${DiscordWebhookService.CLIENT_ID}&scope=webhook.incoming&state=${state}&redirect_uri=${redirectUri}`;
+  }
+
   private getIcon(itemId: number): Observable<string> {
     return this.lazyData.getRow('itemIcons', itemId).pipe(
       map(icon => `https://xivapi.com${icon}`)
     );
-  }
-
-  oauthUrl(state: string, redirectUri: string): string {
-    return `https://discordapp.com/api/oauth2/authorize?response_type=code&client_id=${DiscordWebhookService.CLIENT_ID}&scope=webhook.incoming&state=${state}&redirect_uri=${redirectUri}`;
   }
 }

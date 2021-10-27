@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Vessel } from '../../../../../modules/free-company-workshops/model/vessel';
 import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-workshops/+state/free-company-workshop.facade';
 
@@ -11,7 +11,8 @@ import { FreeCompanyWorkshopFacade } from '../../../../../modules/free-company-w
 export class VesselVoyageColumnComponent {
   @Input() vessel: Vessel;
 
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) { }
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
+  }
 
   toDestinationNames(): string[] {
     if (!this.vessel) {

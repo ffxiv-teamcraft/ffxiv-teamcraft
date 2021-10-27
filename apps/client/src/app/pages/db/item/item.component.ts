@@ -740,29 +740,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     });
   }
 
-  private getDescription(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'itemDescriptions', 'Description'));
-  }
-
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'items'));
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiItem$.pipe(
-      map((item) => {
-        return {
-          title: this.getName(item),
-          description: this.getDescription(item),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
-          image: `https://xivapi.com/i2/ls/${item.ID}.png`
-        };
-      })
-    );
-  }
-
   public createQuickList(item: SearchResult, amount: number): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
     const operation$ = this.listManager.addToList({
@@ -828,6 +805,29 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         this.modifiedList = list;
         this.notificationService.template(this.notification);
       });
+  }
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return this.xivapiItem$.pipe(
+      map((item) => {
+        return {
+          title: this.getName(item),
+          description: this.getDescription(item),
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
+          image: `https://xivapi.com/i2/ls/${item.ID}.png`
+        };
+      })
+    );
+  }
+
+  private getDescription(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'itemDescriptions', 'Description'));
+  }
+
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'items'));
   }
 
   private handleAdditionalData(_item: ListRow, gtData: ItemData, xivapiItem: any): Observable<ListRow> {

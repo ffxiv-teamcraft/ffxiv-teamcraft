@@ -5,7 +5,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { first, map, shareReplay, switchMap, withLatestFrom } from 'rxjs/operators';
 import { BlogService } from '../../../core/database/blog.service';
 import { Router } from '@angular/router';
-import { combineLatest, Observable, from } from 'rxjs';
+import { combineLatest, from, Observable } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
 import { BlogPostNotification } from '../../../model/notification/blog-post-notification';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -50,7 +50,6 @@ export class NewEntryComponent {
       shareReplay(1)
     );
   }
-
 
 
   submit(): void {

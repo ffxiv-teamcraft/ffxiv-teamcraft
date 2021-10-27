@@ -198,16 +198,6 @@ export class LeveComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'));
-  }
-
-  private getDescription(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiLeve$.pipe(
       map((leve) => {
@@ -219,6 +209,16 @@ export class LeveComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'));
+  }
+
+  private getDescription(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'));
   }
 
 }

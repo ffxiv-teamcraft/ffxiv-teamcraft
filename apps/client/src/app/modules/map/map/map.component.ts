@@ -14,48 +14,42 @@ import { Vector2 } from '../../../core/tools/vector2';
 })
 export class MapComponent implements OnInit {
 
+  public unknownPosition = false;
+  @Input()
+  hideDbButton = false;
+  @Input()
+  aetheryteZIndex = 5;
+  mapData$: Observable<MapData>;
+  position: Vector2 = { x: 0, y: 0 };
+  @Output()
+  loaded: EventEmitter<void> = new EventEmitter<void>();
+  private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
+
+  constructor(private mapService: MapService) {
+  }
+
+  private _mapId: number;
+
+  public get mapId(): number {
+    return this._mapId;
+  }
+
   @Input()
   public set mapId(id: number) {
     this._mapId = id;
     this.mapId$.next(id);
   }
 
-  public get mapId(): number {
-    return this._mapId;
-  }
-
-  private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
-
-  private _mapId: number;
-
-  public unknownPosition = false;
-
   _markers: MapMarker[] = [];
-
-  @Input()
-  set markers(markers: MapMarker[]) {
-    this._markers = markers;
-    this.unknownPosition = markers.every(marker => !marker.x && !marker.y);
-  }
 
   get markers(): MapMarker[] {
     return this._markers;
   }
 
   @Input()
-  hideDbButton = false;
-
-  @Input()
-  aetheryteZIndex = 5;
-
-  mapData$: Observable<MapData>;
-
-  position: Vector2 = { x: 0, y: 0 };
-
-  @Output()
-  loaded: EventEmitter<void> = new EventEmitter<void>();
-
-  constructor(private mapService: MapService) {
+  set markers(markers: MapMarker[]) {
+    this._markers = markers;
+    this.unknownPosition = markers.every(marker => !marker.x && !marker.y);
   }
 
   ngOnInit() {

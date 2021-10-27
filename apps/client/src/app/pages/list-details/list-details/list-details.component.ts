@@ -27,7 +27,6 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
@@ -46,6 +45,7 @@ import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inven
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { uniqBy } from 'lodash';
 import { ListController } from '../../../modules/list/list-controller';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-list-details',
@@ -80,27 +80,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public pricingMode = false;
 
   public loggedIn$ = this.authFacade.loggedIn$;
-
-  private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
-
   public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');
-
   public layouts$: Observable<ListLayout[]>;
-
   public selectedLayout$: Observable<ListLayout>;
-
   public machinaToggle = false;
-
   public pinnedList$ = this.listsFacade.pinnedList$;
-
-  public get adaptativeFilter(): boolean {
-    return this.adaptativeFilter$.value;
-  }
-
-  public set adaptativeFilter(value: boolean) {
-    this.adaptativeFilter$.next(value);
-  }
-
+  private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
   private regeneratingList = false;
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
@@ -109,8 +94,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private alarmsFacade: AlarmsFacade, private message: NzMessageService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
-              private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
-              private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
+              private discordWebhookService: DiscordWebhookService, private i18n: I18nToolsService,
+              private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryService,
               public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade) {
     super(seoService);
@@ -171,6 +156,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         this.teamsFacade.select(list.teamId);
       }
     });
+  }
+
+  public get adaptativeFilter(): boolean {
+    return this.adaptativeFilter$.value;
+  }
+
+  public set adaptativeFilter(value: boolean) {
+    this.adaptativeFilter$.next(value);
   }
 
   ngOnInit() {
@@ -318,20 +311,44 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       });
   }
 
-  appendExportStringWithRow(exportString: string, row: ListRow): string {
+  appendExportStringWithRow(exportString: string, row: ListRow, itemName: string): string {
     const remaining = row.amount - (row.done || 0);
-    return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
+    return (remaining > 0) ? (exportString + `${remaining}x ${itemName}\n`) : exportString;
   }
 
   public getListTextExport = (display: ListDisplay, list: List) => {
-    const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
-      return this.appendExportStringWithRow(exportString, row);
-    }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return display.rows.reduce((result, displayRow) => {
-      return result + displayRow.rows.reduce((exportString, row) => {
-        return this.appendExportStringWithRow(exportString, row);
-      }, `${displayRow.title} :\n`) + '\n';
-    }, seed);
+    return safeCombineLatest([
+      safeCombineLatest(list.items.filter((item) => item.id < 20).map(
+        item => {
+          return this.i18n.getNameObservable('items', item.id).pipe(
+            map(itemName => ({ item, itemName }))
+          );
+        }
+      )).pipe(
+        map(rows => ({title: this.translate.instant('Crystals'), rows}))
+      ),
+      ...display.rows.map(
+        row => {
+          return safeCombineLatest(row.rows.map(item => {
+            return this.i18n.getNameObservable('items', item.id).pipe(
+              map(itemName => ({ item, itemName }))
+            );
+          })).pipe(
+            map(rows => {
+              return { title: row.title, rows };
+            })
+          );
+        }
+      )
+    ]).pipe(
+      map((displayRows) => {
+        return displayRows.reduce((result, displayRow) => {
+          return result + displayRow.rows.reduce((exportString, { item, itemName }) => {
+            return this.appendExportStringWithRow(exportString, item, itemName);
+          }, `${displayRow.title} :\n`) + '\n';
+        }, '');
+      })
+    );
 
   };
 
@@ -528,6 +545,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     super.ngOnDestroy();
   }
 
+  public pinList(list: List): void {
+    this.listsFacade.pin(list.$key);
+  }
+
+  public unpinList(): void {
+    this.listsFacade.unpin();
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.list$.pipe(
       map(list => {
@@ -538,14 +563,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         };
       })
     );
-  }
-
-  public pinList(list: List): void {
-    this.listsFacade.pin(list.$key);
-  }
-
-  public unpinList(): void {
-    this.listsFacade.unpin();
   }
 
 }

@@ -57,7 +57,7 @@ export class GardeningExtractor extends AbstractExtractor<GardeningData> {
           })
         );
       })
-    )
+    );
   }
 
   private getScore(entry: any): number {

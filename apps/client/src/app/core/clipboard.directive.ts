@@ -51,7 +51,7 @@ export class ClipboardDirective {
           this.message.success(this.translate.instant('Item_name_copied', { itemname: content }));
         }
       }
-    })
+    });
   }
 
 }

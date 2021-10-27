@@ -23,22 +23,10 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 })
 export class InventoryComponent {
 
-  public get selectedExpansion() {
-    return this.selectedExpansion$.value;
-  }
-
-  public set selectedExpansion(value) {
-    this.selectedExpansion$.next(value);
-  }
-
   public selectedExpansion$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
   public search$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
-  private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
-
   public computingPrices: { [index: string]: boolean } = {};
-
+  private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.inventory$.pipe(
     map(inventory => {
       return inventory.toArray()
@@ -96,7 +84,6 @@ export class InventoryComponent {
         });
     })
   );
-
   public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$, this.search$, this.selectedExpansion$, this.lazyData.patches$,
     this.lazyData.getEntry('itemPatch')]).pipe(
     map(([inventories, prices, search, selectedExpansion, patches, itemPatch]) => {
@@ -150,6 +137,14 @@ export class InventoryComponent {
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private settings: SettingsService) {
+  }
+
+  public get selectedExpansion() {
+    return this.selectedExpansion$.value;
+  }
+
+  public set selectedExpansion(value) {
+    this.selectedExpansion$.next(value);
   }
 
   public getExpansions() {

@@ -253,59 +253,6 @@ export class AlarmsFacade {
       }));
   }
 
-  private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
-    return alarms.sort((a, b) => {
-      if (a.spawned && b.spawned) {
-        return a.remainingTime < b.remainingTime ? -1 : 1;
-      }
-      if (a.spawned) {
-        return -1;
-      }
-      if (b.spawned) {
-        return 1;
-      }
-      if (a.remainingTime === b.remainingTime) {
-        return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
-      }
-      return a.remainingTime < b.remainingTime ? -1 : 1;
-    });
-  }
-
-  /**
-   * Checks if a given alarm is spawned at a given time.
-   * @param alarm
-   * @param time
-   */
-  private isSpawned(alarm: Alarm, time: Date): boolean {
-    const nextSpawn = this.getNextSpawn(alarm, time);
-    if (nextSpawn.days > 0 || (nextSpawn.date && (Math.floor(time.getTime() / 86400000) !== Math.floor(nextSpawn.date.getTime() / 86400000)))) {
-      // Nothing spawns for more than a day.
-      return false;
-    }
-    let spawn = nextSpawn.hours;
-    let despawn = nextSpawn.despawn;
-    despawn = despawn || 24;
-    spawn = spawn || 24;
-    // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
-    const despawnsNextDay = spawn > despawn;
-    if (!despawnsNextDay) {
-      return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
-    } else {
-      return time.getUTCHours() >= spawn || time.getUTCHours() < despawn;
-    }
-  }
-
-  /**
-   * Checks if a given alarm is played at a given time.
-   *
-   * Being played means that the alarm has been played but the node isn't spawned yet.
-   * @param alarm
-   * @param time
-   */
-  private isPlayed(alarm: Alarm, time: Date): boolean {
-    return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
-  }
-
   public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
     const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}`;
     if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
@@ -348,75 +295,6 @@ export class AlarmsFacade {
     return this.nextSpawnCache[cacheKey].spawn;
   }
 
-  private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
-    const weatherSpawns = alarm.weathers
-      .map(weather => {
-        if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
-          return {
-            weather: weather,
-            spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration,
-              alarm.spawns, alarm.duration)
-          };
-        }
-        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, false, alarm.spawns, alarm.duration) };
-      })
-      .filter(spawn => spawn.spawn !== null)
-      .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
-    for (const weatherSpawn of weatherSpawns) {
-      for (const spawn of sortedSpawns) {
-        const despawn = (spawn + alarm.duration) % 24;
-        const weatherStart = weatherSpawn.spawn.getUTCHours();
-        const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
-        const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
-        const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
-        if (range) {
-          const intersectSpawn = range[0];
-          const intersectDespawn = range[1] || 24;
-          // Set the snapshot date to the moment at which the node will spawn for real.
-          const date = weatherSpawn.spawn;
-          date.setUTCHours(intersectSpawn);
-          date.setUTCMinutes(0);
-          date.setUTCSeconds(0);
-          date.setUTCMilliseconds(0);
-          // Adding 3 seconds margin for days computation
-          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
-          // If it's for today, make sure it's not already despawned
-          const now = new Date(time);
-          const didntSpawnYet = !TimeUtils.isSameDay(now, weatherSpawn.spawn) || now.getUTCHours() < intersectDespawn;
-          const isSpawned = TimeUtils.isSameDay(now, weatherSpawn.spawn) && now.getUTCHours() >= weatherStart;
-          if (days > 0 || didntSpawnYet || isSpawned) {
-            return {
-              hours: intersectSpawn,
-              days: days,
-              despawn: intersectDespawn,
-              weather: weatherSpawn.weather,
-              date
-            };
-          }
-        }
-      }
-    }
-    if (sortedSpawns?.length === 0) {
-      const weatherSpawn = weatherSpawns[0];
-      const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
-      return {
-        hours: weatherSpawn.spawn.getUTCHours(),
-        days: days,
-        date: weatherSpawn.spawn,
-        despawn: new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24,
-        weather: weatherSpawn.weather
-      };
-    }
-
-    try {
-      return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
-    } catch (e) {
-      console.error(e);
-      return null;
-    }
-  }
-
   /**
    * Get the amount of minutes before a given hour happens.
    * @param currentTime
@@ -440,18 +318,6 @@ export class AlarmsFacade {
     }
     resMinutes += (resSeconds % 60) / 60;
     return resMinutes + (spawn.days * 1440);
-  }
-
-  private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
-    const patch = this.itemPatch[alarm.itemId];
-    const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
-    const isLegendary = this.legendaryFish[alarm.itemId];
-    // The changes only apply to fishes pre-SB and non-legendary
-    if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
-      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
-      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
-    }
-    return [alarm];
   }
 
   public generateAlarms(node: GatheringNode): Alarm[] {
@@ -567,5 +433,139 @@ export class AlarmsFacade {
       })
     );
     this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
+  }
+
+  private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
+    return alarms.sort((a, b) => {
+      if (a.spawned && b.spawned) {
+        return a.remainingTime < b.remainingTime ? -1 : 1;
+      }
+      if (a.spawned) {
+        return -1;
+      }
+      if (b.spawned) {
+        return 1;
+      }
+      if (a.remainingTime === b.remainingTime) {
+        return a.alarm.itemId < b.alarm.itemId ? -1 : 1;
+      }
+      return a.remainingTime < b.remainingTime ? -1 : 1;
+    });
+  }
+
+  /**
+   * Checks if a given alarm is spawned at a given time.
+   * @param alarm
+   * @param time
+   */
+  private isSpawned(alarm: Alarm, time: Date): boolean {
+    const nextSpawn = this.getNextSpawn(alarm, time);
+    if (nextSpawn.days > 0 || (nextSpawn.date && (Math.floor(time.getTime() / 86400000) !== Math.floor(nextSpawn.date.getTime() / 86400000)))) {
+      // Nothing spawns for more than a day.
+      return false;
+    }
+    let spawn = nextSpawn.hours;
+    let despawn = nextSpawn.despawn;
+    despawn = despawn || 24;
+    spawn = spawn || 24;
+    // If spawn is greater than despawn, it means that it spawns before midnight and despawns after, which is during the next day.
+    const despawnsNextDay = spawn > despawn;
+    if (!despawnsNextDay) {
+      return time.getUTCHours() >= spawn && time.getUTCHours() < despawn;
+    } else {
+      return time.getUTCHours() >= spawn || time.getUTCHours() < despawn;
+    }
+  }
+
+  /**
+   * Checks if a given alarm is played at a given time.
+   *
+   * Being played means that the alarm has been played but the node isn't spawned yet.
+   * @param alarm
+   * @param time
+   */
+  private isPlayed(alarm: Alarm, time: Date): boolean {
+    return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
+  }
+
+  private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
+    const weatherSpawns = alarm.weathers
+      .map(weather => {
+        if (alarm.weathersFrom !== undefined && alarm.weathersFrom.length > 0) {
+          return {
+            weather: weather,
+            spawn: this.weatherService.getNextWeatherTransition(alarm.mapId, alarm.weathersFrom, weather, iteration,
+              alarm.spawns, alarm.duration)
+          };
+        }
+        return { weather: weather, spawn: this.weatherService.getNextWeatherStart(alarm.mapId, weather, iteration, false, alarm.spawns, alarm.duration) };
+      })
+      .filter(spawn => spawn.spawn !== null)
+      .sort((a, b) => a.spawn.getTime() - b.spawn.getTime());
+    for (const weatherSpawn of weatherSpawns) {
+      for (const spawn of sortedSpawns) {
+        const despawn = (spawn + alarm.duration) % 24;
+        const weatherStart = weatherSpawn.spawn.getUTCHours();
+        const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
+        const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
+        const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
+        const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
+        if (range) {
+          const intersectSpawn = range[0];
+          const intersectDespawn = range[1] || 24;
+          // Set the snapshot date to the moment at which the node will spawn for real.
+          const date = weatherSpawn.spawn;
+          date.setUTCHours(intersectSpawn);
+          date.setUTCMinutes(0);
+          date.setUTCSeconds(0);
+          date.setUTCMilliseconds(0);
+          // Adding 3 seconds margin for days computation
+          const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
+          // If it's for today, make sure it's not already despawned
+          const now = new Date(time);
+          const didntSpawnYet = !TimeUtils.isSameDay(now, weatherSpawn.spawn) || now.getUTCHours() < intersectDespawn;
+          const isSpawned = TimeUtils.isSameDay(now, weatherSpawn.spawn) && now.getUTCHours() >= weatherStart;
+          if (days > 0 || didntSpawnYet || isSpawned) {
+            return {
+              hours: intersectSpawn,
+              days: days,
+              despawn: intersectDespawn,
+              weather: weatherSpawn.weather,
+              date
+            };
+          }
+        }
+      }
+    }
+    if (sortedSpawns?.length === 0) {
+      const weatherSpawn = weatherSpawns[0];
+      const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time) / 86400000), 0);
+      return {
+        hours: weatherSpawn.spawn.getUTCHours(),
+        days: days,
+        date: weatherSpawn.spawn,
+        despawn: new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24,
+        weather: weatherSpawn.weather
+      };
+    }
+
+    try {
+      return this.findWeatherSpawnCombination(alarm, sortedSpawns, time, this.weatherService.nextWeatherTime(weatherSpawns[0].spawn.getTime()));
+    } catch (e) {
+      console.error(e);
+      return null;
+    }
+  }
+
+  private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
+    const patch = this.itemPatch[alarm.itemId];
+    const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
+    const isLegendary = this.legendaryFish[alarm.itemId];
+    // The changes only apply to fishes pre-SB and non-legendary
+    if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
+      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
+      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+    }
+    return [alarm];
   }
 }

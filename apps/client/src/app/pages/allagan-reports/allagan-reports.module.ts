@@ -62,7 +62,7 @@ const routes: Routes = [
     PredatorsInputComponent,
     ReportsManagementComponent,
     ReportSourceDisplayComponent,
-    ReportSourceCompactDetailsComponent,
+    ReportSourceCompactDetailsComponent
   ],
   imports: [
     CommonModule,

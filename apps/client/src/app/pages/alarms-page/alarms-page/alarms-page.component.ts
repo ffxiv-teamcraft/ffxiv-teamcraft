@@ -224,7 +224,7 @@ export class AlarmsPageComponent implements OnInit {
                 return {
                   ...entries[0],
                   description: entries.map(entry => entry.description).join(', ')
-                }
+                };
               })
             ]
           },

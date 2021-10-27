@@ -17,7 +17,7 @@ export class StatDisplayPipe implements PipeTransform {
       map(stats => {
         return stats.filter(row => row.baseParamIds.includes(baseParamId));
       })
-    )
+    );
   }
 
 }

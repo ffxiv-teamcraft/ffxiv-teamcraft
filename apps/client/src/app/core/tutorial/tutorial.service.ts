@@ -20,14 +20,6 @@ export class TutorialService {
 
   private isPlaying = false;
 
-  private get stepsDone(): string[] {
-    return JSON.parse(localStorage.getItem('tutorial') || '[]');
-  }
-
-  private set stepsDone(steps: string[]) {
-    localStorage.setItem('tutorial', JSON.stringify(steps));
-  }
-
   constructor(private settings: SettingsService, private modal: NzModalService,
               private translate: TranslateService) {
     this.play$.pipe(
@@ -36,6 +28,14 @@ export class TutorialService {
     ).subscribe(() => {
       this.play();
     });
+  }
+
+  private get stepsDone(): string[] {
+    return JSON.parse(localStorage.getItem('tutorial') || '[]');
+  }
+
+  private set stepsDone(steps: string[]) {
+    localStorage.setItem('tutorial', JSON.stringify(steps));
   }
 
   public register(step: TutorialStepEntry): boolean {
@@ -79,21 +79,6 @@ export class TutorialService {
     }
   }
 
-  private startTutorial(force: boolean): void {
-    if (this.isPlaying) {
-      return;
-    }
-    this.isPlaying = true;
-    this.steps = this.steps
-      .sort((a, b) => a.index - b.index);
-    if (force) {
-      this.nextStep(this.steps);
-    } else {
-      const done = this.stepsDone;
-      this.nextStep(this.steps.filter(step => done.indexOf(step.key) === -1));
-    }
-  }
-
   public nextStep(steps: TutorialStepEntry[], index = 0): void {
     const step = steps[index];
     if (step) {
@@ -117,5 +102,20 @@ export class TutorialService {
   public applicationReady(): void {
     this.applicationReady$.next();
     this.applicationReady$.complete();
+  }
+
+  private startTutorial(force: boolean): void {
+    if (this.isPlaying) {
+      return;
+    }
+    this.isPlaying = true;
+    this.steps = this.steps
+      .sort((a, b) => a.index - b.index);
+    if (force) {
+      this.nextStep(this.steps);
+    } else {
+      const done = this.stepsDone;
+      this.nextStep(this.steps.filter(step => done.indexOf(step.key) === -1));
+    }
   }
 }

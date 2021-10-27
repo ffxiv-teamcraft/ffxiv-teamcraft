@@ -441,6 +441,10 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
+  trackByUid(index: number, row: AllaganReport | AllaganReportQueueEntry): string {
+    return row.uid;
+  }
+
   private getFormStatePatch(report: AllaganReport): Observable<any> {
     switch (report.source) {
       case AllaganReportSource.DESYNTH:
@@ -594,10 +598,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     return registry$.pipe(
       map(registry => this.i18n.getName(registry.find(entry => entry.id === id)?.name))
     );
-  }
-
-  trackByUid(index: number, row: AllaganReport | AllaganReportQueueEntry): string {
-    return row.uid;
   }
 
   private getSpawnHour(byId: Record<string, number>): number | null {

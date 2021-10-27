@@ -26,7 +26,7 @@ const tips: Class<RotationTip>[] = [
   UseMoreQualityActions,
   UsePrudentTouchManipulation,
   DoNotUseBrandWithoutName,
-  AvoidUsingGoodActions,
+  AvoidUsingGoodActions
 ];
 
 @NgModule({

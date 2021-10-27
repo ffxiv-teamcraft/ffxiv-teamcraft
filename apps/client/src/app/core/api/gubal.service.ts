@@ -23,6 +23,25 @@ export class GubalService {
     this.version = +versionFragments[0] * 100000 + +versionFragments[1] * 100 + +versionFragments[2];
   }
 
+  public init(): void {
+    combineLatest(this.reporters.map(reporter => {
+      return reporter.getDataReports(this.ipc.packets$.pipe(
+        filter(packet => packet.header.sourceActor === packet.header.targetActor)
+        )
+      ).pipe(
+        debounceTime(500),
+        switchMap(dataReports => {
+          if (dataReports.length === 0) {
+            return of(null);
+          }
+          return combineLatest(dataReports.map(data => {
+            return this.submitData(reporter.getDataType(), data);
+          }));
+        })
+      );
+    })).subscribe();
+  }
+
   private submitData(dataType: string, data: any): Observable<void> {
     const query = gql`mutation add${dataType}Data($data: ${dataType}_insert_input!) {
         insert_${dataType}(objects: [$data]) {
@@ -46,24 +65,5 @@ export class GubalService {
       catchError(() => of(null)),
       mapTo(null)
     );
-  }
-
-  public init(): void {
-    combineLatest(this.reporters.map(reporter => {
-      return reporter.getDataReports(this.ipc.packets$.pipe(
-        filter(packet => packet.header.sourceActor === packet.header.targetActor)
-        )
-      ).pipe(
-        debounceTime(500),
-        switchMap(dataReports => {
-          if (dataReports.length === 0) {
-            return of(null);
-          }
-          return combineLatest(dataReports.map(data => {
-            return this.submitData(reporter.getDataType(), data);
-          }));
-        })
-      );
-    })).subscribe();
   }
 }

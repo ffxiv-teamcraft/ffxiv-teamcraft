@@ -24,12 +24,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
-  protected prepareData(data: any): any {
-    delete data.logProgression;
-    delete data.gatheringLogProgression;
-    return super.prepareData(data);
-  }
-
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {
     if (this.userCache[uid] === undefined) {
       if (!uid) {
@@ -132,6 +126,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
         })
       );
+  }
+
+  protected prepareData(data: any): any {
+    delete data.logProgression;
+    delete data.gatheringLogProgression;
+    return super.prepareData(data);
   }
 
   protected getBaseUri(params?: any): string {

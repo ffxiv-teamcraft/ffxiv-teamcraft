@@ -97,15 +97,6 @@ export class InstanceComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(instance: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(instance, 'instanceDescriptions', 'Description'));
-  }
-
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'instances'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiInstance$.pipe(
       map(instance => {
@@ -117,6 +108,15 @@ export class InstanceComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(instance: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(instance, 'instanceDescriptions', 'Description'));
+  }
+
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'instances'));
   }
 
 }

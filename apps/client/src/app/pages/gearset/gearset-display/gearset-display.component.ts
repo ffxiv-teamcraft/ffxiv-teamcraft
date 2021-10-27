@@ -38,16 +38,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
-  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
-    tap(gearset => {
-      if (gearset.food) {
-        this.food$.next(gearset.food);
-      }
-    })
-  );
-
   public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
-
   public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
     ['mainHand', 'offHand'],
     ['head', 'earRings'],
@@ -57,13 +48,16 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];
-
   public level$ = new BehaviorSubject<number>(80);
-
   public tribe$ = new BehaviorSubject<number>(1);
-
   public food$ = new BehaviorSubject<any>(null);
-
+  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
+    tap(gearset => {
+      if (gearset.food) {
+        this.food$.next(gearset.food);
+      }
+    })
+  );
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
     switchMap(([set, level, tribe, food]) => {
       return this.statsService.getStats(set, level, tribe, food);

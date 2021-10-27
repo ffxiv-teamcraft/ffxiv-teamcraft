@@ -71,7 +71,44 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public isReadonly$ = this.gearsetsFacade.selectedGearsetPermissionLevel$.pipe(
     map(permissionLevel => permissionLevel < PermissionLevel.WRITE)
   );
-
+  public level$ = new BehaviorSubject<number>(80);
+  public tribe$ = new BehaviorSubject<number>(1);
+  public food$ = this.gearset$.pipe(
+    map(gearset => {
+      return gearset.food;
+    })
+  );
+  public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
+    switchMap(([set, level, tribe, food]) => {
+      return this.statsService.getStats(set, level, tribe, food);
+    })
+  );
+  public foods$: Observable<any[]> = this.gearset$.pipe(
+    first(),
+    switchMap(gearset => {
+      return this.lazyData.getEntry('foods')
+        .pipe(
+          map(foods => {
+            return [gearset, foods];
+          })
+        );
+    }),
+    map(([gearset, foods]: [TeamcraftGearset, LazyData['foods']]) => {
+      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
+      return [].concat.apply([], foods
+        .filter(food => {
+          return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
+        })
+        .sort((a, b) => {
+          return b.LevelItem - a.LevelItem;
+        })
+        .map(food => {
+          return [{ ...food, HQ: true }, { ...food, HQ: false }];
+        }));
+    })
+  );
+  tribesMenu = this.gearsetsFacade.tribesMenu;
+  maxLevel = environment.maxLevel;
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
       return gearset && !gearset.notFound;
@@ -79,7 +116,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     map(gearset => gearset.job),
     distinctUntilChanged()
   );
-
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     switchMap(([filters, job]) => {
       const xivapiFilters: XivapiSearchFilter[] = [
@@ -287,62 +323,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
-  public level$ = new BehaviorSubject<number>(80);
-
-  public tribe$ = new BehaviorSubject<number>(1);
-
-  public food$ = this.gearset$.pipe(
-    map(gearset => {
-      return gearset.food;
-    })
-  );
-
-  public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
-    switchMap(([set, level, tribe, food]) => {
-      return this.statsService.getStats(set, level, tribe, food);
-    })
-  );
-
-  public foods$: Observable<any[]> = this.gearset$.pipe(
-    first(),
-    switchMap(gearset => {
-      return this.lazyData.getEntry('foods')
-        .pipe(
-          map(foods => {
-            return [gearset, foods];
-          })
-        );
-    }),
-    map(([gearset, foods]: [TeamcraftGearset, LazyData['foods']]) => {
-      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
-      return [].concat.apply([], foods
-        .filter(food => {
-          return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
-        })
-        .sort((a, b) => {
-          return b.LevelItem - a.LevelItem;
-        })
-        .map(food => {
-          return [{ ...food, HQ: true }, { ...food, HQ: false }];
-        }));
-    })
-  );
-
-  tribesMenu = this.gearsetsFacade.tribesMenu;
-
-  maxLevel = environment.maxLevel;
-
-  private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
-
-  private get materiaCache(): any {
-    return this._materiaCache;
-  }
-
-  private set materiaCache(cache: any) {
-    this._materiaCache = cache;
-    localStorage.setItem('materias', JSON.stringify(cache));
-  }
-
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataFacade,
@@ -416,33 +396,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.ipc.send('toggle-machina:get');
   }
 
-  private fullSearchResults(options: XivapiSearchOptions): Observable<{ Results: any[] }> {
-    return this.xivapi.search(options).pipe(
-      expand((response) => {
-        if (response.Pagination.PageNext) {
-          return timer(200).pipe(
-            first(),
-            switchMapTo(this.xivapi.search({
-                ...options,
-                page: response.Pagination.PageNext
-              }).pipe(
-              map(res => {
-                return {
-                  ...res,
-                  Results: [
-                    ...response.Results,
-                    ...res.Results
-                  ]
-                };
-              })
-              )
-            )
-          );
-        }
-        return EMPTY;
-      }),
-      last()
-    );
+  private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
+
+  private get materiaCache(): any {
+    return this._materiaCache;
+  }
+
+  private set materiaCache(cache: any) {
+    this._materiaCache = cache;
+    localStorage.setItem('materias', JSON.stringify(cache));
   }
 
   ngOnInit() {
@@ -477,19 +439,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   saveAsNew(gearset: TeamcraftGearset): void {
     gearset.fromSync = false;
     this.gearsetsFacade.createGearset(gearset);
-  }
-
-  private getMaterias(item: any, propertyName: string): number[] {
-    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
-      return this.materiaCache[`${item.ID}:${propertyName}`].materias;
-    }
-    if (item.MateriaSlotCount > 0) {
-      if (item.IsAdvancedMeldingPermitted === 1) {
-        return [0, 0, 0, 0, 0];
-      }
-      return new Array(item.MateriaSlotCount).fill(0);
-    }
-    return [];
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
@@ -683,5 +632,47 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   trackByChunk(index: number): number {
     return index;
+  }
+
+  private fullSearchResults(options: XivapiSearchOptions): Observable<{ Results: any[] }> {
+    return this.xivapi.search(options).pipe(
+      expand((response) => {
+        if (response.Pagination.PageNext) {
+          return timer(200).pipe(
+            first(),
+            switchMapTo(this.xivapi.search({
+                ...options,
+                page: response.Pagination.PageNext
+              }).pipe(
+              map(res => {
+                return {
+                  ...res,
+                  Results: [
+                    ...response.Results,
+                    ...res.Results
+                  ]
+                };
+              })
+              )
+            )
+          );
+        }
+        return EMPTY;
+      }),
+      last()
+    );
+  }
+
+  private getMaterias(item: any, propertyName: string): number[] {
+    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
+      return this.materiaCache[`${item.ID}:${propertyName}`].materias;
+    }
+    if (item.MateriaSlotCount > 0) {
+      if (item.IsAdvancedMeldingPermitted === 1) {
+        return [0, 0, 0, 0, 0];
+      }
+      return new Array(item.MateriaSlotCount).fill(0);
+    }
+    return [];
   }
 }

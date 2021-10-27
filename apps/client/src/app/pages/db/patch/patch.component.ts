@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -26,7 +25,7 @@ export class PatchComponent extends TeamcraftPageComponent {
   public fallbackIcon = 'https://img.finalfantasyxiv.com/lds/h/k/aL011xxU_6LyWUio1Gi2Fx7-qo.svg';
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade,
               public settings: SettingsService, seo: SeoService) {
@@ -94,15 +93,6 @@ export class PatchComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(patch: any): string {
-    return `Everything added in patch ${patch.Version}`;
-  }
-
-  private getName(patch: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return patch[`Name_${this.translate.currentLang}`] || patch.Name_en;
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.patch$.pipe(
       map(patch => {
@@ -114,5 +104,14 @@ export class PatchComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(patch: any): string {
+    return `Everything added in patch ${patch.Version}`;
+  }
+
+  private getName(patch: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return patch[`Name_${this.translate.currentLang}`] || patch.Name_en;
   }
 }

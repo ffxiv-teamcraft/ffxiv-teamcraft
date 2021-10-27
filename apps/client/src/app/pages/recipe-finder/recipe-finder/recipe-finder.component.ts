@@ -36,21 +36,31 @@ import { Memoized } from '../../../core/decorators/memoized';
 export class RecipeFinderComponent implements OnDestroy {
 
   public maxLevel = environment.maxLevel;
-
-  private tipKey = 'recipe-finder:tip';
-
   public query: string;
-
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
   public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
-
   public clvlMin$ = new BehaviorSubject(0);
   public clvlMax$ = new BehaviorSubject(environment.maxLevel);
-
   public input$: Subject<string> = new Subject<string>();
-
+  public pool: { id: number, amount: number }[] = [];
+  public search$: Subject<void> = new Subject<void>();
+  public results$: Observable<any[]>;
+  public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  public basket: { entry: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
+  public editingAmount: number;
+  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  public pageSize = 25;
+  public totalItems: number;
+  @ViewChild('notificationRef', { static: true })
+  notification: TemplateRef<any>;
+  // Notification data
+  itemsAdded = 0;
+  modifiedList: List;
+  private tipKey = 'recipe-finder:tip';
+  public showTip = localStorage.getItem(this.tipKey) === null;
+  private items$ = this.lazyData.getSearchIndex('items');
   public completion$: Observable<{ id: number, name: I18nName }[]> = this.input$.pipe(
     debounceTime(500),
     switchMap(value => {
@@ -65,36 +75,6 @@ export class RecipeFinderComponent implements OnDestroy {
       }
     })
   );
-
-  private items$ = this.lazyData.getSearchIndex('items');
-
-  public pool: { id: number, amount: number }[] = [];
-
-  public search$: Subject<void> = new Subject<void>();
-
-  public results$: Observable<any[]>;
-
-  public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-
-  public basket: { entry: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
-
-  public editingAmount: number;
-
-  public showTip = localStorage.getItem(this.tipKey) === null;
-
-  public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-
-  public pageSize = 25;
-
-  public totalItems: number;
-
-  @ViewChild('notificationRef', { static: true })
-  notification: TemplateRef<any>;
-
-  // Notification data
-  itemsAdded = 0;
-
-  modifiedList: List;
 
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
@@ -495,12 +475,12 @@ export class RecipeFinderComponent implements OnDestroy {
     }
   }
 
-  private savePool(): void {
-    localStorage.setItem('recipe-finder:pool', JSON.stringify(this.pool));
-  }
-
   ngOnDestroy(): void {
     this.savePool();
+  }
+
+  private savePool(): void {
+    localStorage.setItem('recipe-finder:pool', JSON.stringify(this.pool));
   }
 
 }

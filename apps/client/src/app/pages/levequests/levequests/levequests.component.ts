@@ -316,6 +316,37 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     };
   }
 
+  public getLeveExp(leve: Levequest, allLeves: Levequest[]): number {
+    return this.getExp(leve, allLeves).totalExp;
+  }
+
+  public getLeveGil(leve: Levequest): number {
+    const res = leve.gil * this.craftAmount(leve);
+    return leve.hq ? res * 2 : res;
+  }
+
+  public addSelectedLevesToList(leves: Levequest[]): void {
+    this.addLevesToList(leves.filter(leve => leve.selected));
+  }
+
+  public selectAll(leves: Levequest[], selected: boolean): void {
+    leves.forEach(leve => leve.selected = selected);
+  }
+
+  public updateAllSelected(leves: Levequest[]): void {
+    this.allSelected = leves.reduce((res, item) => item.selected && res, true);
+  }
+
+  public openInGE(leve: Levequest): void {
+    if (this.platformService.isDesktop()) {
+      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leve.name.en.split(' ').join('_')}`);
+    }
+  }
+
+  trackByLeve(index: number, leve: Levequest): number {
+    return leve.id;
+  }
+
   private applyLeveExp(expObj: ExpObj, leve: Levequest): ExpObj {
     for (let repeat = 0; repeat < leve.amount; repeat++) {
       for (let i = 0; i < (leve.allDeliveries ? leve.repeats + 1 : 1); i++) {
@@ -352,38 +383,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     };
   }
 
-  public getLeveExp(leve: Levequest, allLeves: Levequest[]): number {
-    return this.getExp(leve, allLeves).totalExp;
-  }
-
-  public getLeveGil(leve: Levequest): number {
-    const res = leve.gil * this.craftAmount(leve);
-    return leve.hq ? res * 2 : res;
-  }
-
   private craftAmount(leve: Levequest): number {
     return leve.amount * (leve.allDeliveries ? leve.repeats + 1 : 1);
-  }
-
-  public addSelectedLevesToList(leves: Levequest[]): void {
-    this.addLevesToList(leves.filter(leve => leve.selected));
-  }
-
-  public selectAll(leves: Levequest[], selected: boolean): void {
-    leves.forEach(leve => leve.selected = selected);
-  }
-
-  public updateAllSelected(leves: Levequest[]): void {
-    this.allSelected = leves.reduce((res, item) => item.selected && res, true);
-  }
-
-  public openInGE(leve: Levequest): void {
-    if (this.platformService.isDesktop()) {
-      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leve.name.en.split(' ').join('_')}`);
-    }
-  }
-
-  trackByLeve(index: number, leve: Levequest): number {
-    return leve.id;
   }
 }

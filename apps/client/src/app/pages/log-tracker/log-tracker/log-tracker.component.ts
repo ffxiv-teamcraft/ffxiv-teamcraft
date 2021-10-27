@@ -45,41 +45,14 @@ export class LogTrackerComponent extends TrackerComponent {
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
   public nodeDataCache: Record<string, Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>> = {};
-
-  private _dohSelectedPage = 0;
-  public get dohSelectedPage(): number {
-    return this._dohSelectedPage;
-  }
-
-  public set dohSelectedPage(index: number) {
-    this._dohSelectedPage = index;
-    this.selectedRecipes = {};
-    this.selectedRecipesSize = 0;
-  }
-
-  private _dolSelectedPage = 0;
-  public get dolSelectedPage(): number {
-    return this._dolSelectedPage;
-  }
-
-  public set dolSelectedPage(index: number) {
-    this._dolSelectedPage = index;
-    this.selectedRecipes = {};
-    this.selectedRecipesSize = 0;
-  }
-
   public dolSubTabIndex = 0;
   public dohSubTabIndex = 0;
-
   public type$: Observable<number>;
-
   public hideCompleted = this.settings.hideCompletedLogEntries;
   public showNotRequired = this.settings.showNotRequiredLogEntries;
-
   // { [recipeId]: itemId }
   public selectedRecipes: Record<number, number> = {};
   public selectedRecipesSize = 0;
-
   private lastSelectedTabIndex = -1;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
@@ -114,6 +87,30 @@ export class LogTrackerComponent extends TrackerComponent {
         }
         this.cdr.markForCheck();
       });
+  }
+
+  private _dohSelectedPage = 0;
+
+  public get dohSelectedPage(): number {
+    return this._dohSelectedPage;
+  }
+
+  public set dohSelectedPage(index: number) {
+    this._dohSelectedPage = index;
+    this.selectedRecipes = {};
+    this.selectedRecipesSize = 0;
+  }
+
+  private _dolSelectedPage = 0;
+
+  public get dolSelectedPage(): number {
+    return this._dolSelectedPage;
+  }
+
+  public set dolSelectedPage(index: number) {
+    this._dolSelectedPage = index;
+    this.selectedRecipes = {};
+    this.selectedRecipesSize = 0;
   }
 
   public updateSelectedPage(hideCompleted: boolean, showNotRequired: boolean, selectedTabNumber: number, dohTabs: LazyLogTrackerPageData[][], dolTabs: LazyLogTrackerPageData[][], resetSelection = false): void {

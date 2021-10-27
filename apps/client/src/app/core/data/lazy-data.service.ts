@@ -65,6 +65,29 @@ export class LazyDataService {
     }
   }
 
+  public get allItems(): any {
+    const res = { ...this.data.items };
+    if (this.data.koItems) {
+      Object.keys(this.data.koItems).forEach((koKey) => {
+        if (res[koKey] !== undefined) {
+          res[koKey].ko = this.data.koItems[koKey].ko;
+        } else {
+          res[koKey] = this.data.koItems[koKey];
+        }
+      });
+    }
+    if (this.data.zhItems) {
+      Object.keys(this.data.zhItems).forEach((zhKey) => {
+        if (res[zhKey] !== undefined) {
+          res[zhKey].zh = this.data.zhItems[zhKey].zh;
+        } else {
+          res[zhKey] = this.data.zhItems[zhKey];
+        }
+      });
+    }
+    return res;
+  }
+
   public getDataCenter(serverName: string): string {
     const fromData = Object.keys(this.datacenters)
       .find(dc => {
@@ -74,20 +97,6 @@ export class LazyDataService {
       return 'Korea';
     }
     return fromData;
-  }
-
-  private loadForRegion(region: Region): void {
-    switch (region) {
-      case Region.Global:
-        this.load('en');
-        break;
-      case Region.Korea:
-        this.load('ko');
-        break;
-      case Region.China:
-        this.load('zh');
-        break;
-    }
   }
 
   public getItemLeveIds(itemId: number): number[] {
@@ -136,29 +145,6 @@ export class LazyDataService {
       default:
         return this.data.recipes;
     }
-  }
-
-  public get allItems(): any {
-    const res = { ...this.data.items };
-    if (this.data.koItems) {
-      Object.keys(this.data.koItems).forEach((koKey) => {
-        if (res[koKey] !== undefined) {
-          res[koKey].ko = this.data.koItems[koKey].ko;
-        } else {
-          res[koKey] = this.data.koItems[koKey];
-        }
-      });
-    }
-    if (this.data.zhItems) {
-      Object.keys(this.data.zhItems).forEach((zhKey) => {
-        if (res[zhKey] !== undefined) {
-          res[zhKey].zh = this.data.zhItems[zhKey].zh;
-        } else {
-          res[zhKey] = this.data.zhItems[zhKey];
-        }
-      });
-    }
-    return res;
   }
 
   public merge(...dataEntries: any[]): any {
@@ -238,6 +224,20 @@ export class LazyDataService {
       lazyFilesReady$.next();
       this.loadedLangs.push(languageToLoad);
     });
+  }
+
+  private loadForRegion(region: Region): void {
+    switch (region) {
+      case Region.Global:
+        this.load('en');
+        break;
+      case Region.Korea:
+        this.load('ko');
+        break;
+      case Region.China:
+        this.load('zh');
+        break;
+    }
   }
 
   private getData<T = any>(path: string): Observable<T> {

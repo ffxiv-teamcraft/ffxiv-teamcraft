@@ -7,6 +7,7 @@ import { ItemData } from '../../../model/garland-tools/item-data';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
 import * as _ from 'lodash';
+import { uniqBy } from 'lodash';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -18,7 +19,6 @@ import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
-import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-extractor',

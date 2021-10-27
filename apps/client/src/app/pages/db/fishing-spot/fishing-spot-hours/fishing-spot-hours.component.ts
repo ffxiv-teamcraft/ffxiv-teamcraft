@@ -18,18 +18,9 @@ interface FishingSpotChartData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotHoursComponent implements OnInit, OnDestroy {
-  private readonly activeFish$ = new Subject<number | undefined>();
-
-  @Input()
-  public set activeFish(value: number | undefined) {
-    this.activeFish$.next(value >= 0 ? value : undefined);
-  }
-
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
-
   public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
-
   public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
@@ -55,7 +46,8 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
-
+  public readonly activeFishName$ = new Subject<string | undefined>();
+  private readonly activeFish$ = new Subject<number | undefined>();
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
@@ -67,9 +59,6 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     }),
     startWith([])
   );
-
-  public readonly activeFishName$ = new Subject<string | undefined>();
-
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(
@@ -77,6 +66,11 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService
   ) {
+  }
+
+  @Input()
+  public set activeFish(value: number | undefined) {
+    this.activeFish$.next(value >= 0 ? value : undefined);
   }
 
   ngOnInit() {

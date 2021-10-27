@@ -24,9 +24,9 @@ export type XivApiFishingSpot = any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
   private readonly loadingSub$ = new BehaviorSubject<boolean>(false);
   public readonly loading$ = this.loadingSub$.pipe(distinctUntilChanged());
-
   public readonly xivapiFishingSpot$: Observable<XivApiFishingSpot> = this.fishContext.spotId$.pipe(
     filter((spotId) => spotId >= 0),
     switchMap((id) => {
@@ -43,8 +43,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     tap(() => this.loadingSub$.next(false)),
     shareReplay(1)
   );
-
-  public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   constructor(
     private readonly route: ActivatedRoute,

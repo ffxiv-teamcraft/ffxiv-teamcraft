@@ -92,35 +92,6 @@ export class MateriasPopupComponent {
     });
   }
 
-  @Memoized()
-  private getMateriaScore(materiaId: number, index: number): Observable<number> {
-    return combineLatest([
-      this.getMeldingChances(materiaId, index),
-      this.materiasService.getMateria(materiaId)
-    ]).pipe(
-      map(([meldingChances, materia]) => {
-        if (meldingChances === 0) {
-          // If a materia has 0% chances of melding, nuke it.
-          return -1000;
-        }
-        switch (materia.tier) {
-          case 1:
-          case 2:
-          case 3:
-          case 4:
-            return meldingChances;
-          case 5:
-          case 7:
-            return meldingChances * 10;
-          case 6:
-          case 8:
-            return meldingChances * 30;
-        }
-      }),
-      shareReplay(1)
-    );
-  }
-
   combinations(a: number[]): number[][] {
     if (a.length < 2) return [a];
     let c, d;
@@ -156,6 +127,35 @@ export class MateriasPopupComponent {
 
   cancel(): void {
     this.modalRef.close(null);
+  }
+
+  @Memoized()
+  private getMateriaScore(materiaId: number, index: number): Observable<number> {
+    return combineLatest([
+      this.getMeldingChances(materiaId, index),
+      this.materiasService.getMateria(materiaId)
+    ]).pipe(
+      map(([meldingChances, materia]) => {
+        if (meldingChances === 0) {
+          // If a materia has 0% chances of melding, nuke it.
+          return -1000;
+        }
+        switch (materia.tier) {
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+            return meldingChances;
+          case 5:
+          case 7:
+            return meldingChances * 10;
+          case 6:
+          case 8:
+            return meldingChances * 30;
+        }
+      }),
+      shareReplay(1)
+    );
   }
 
 }

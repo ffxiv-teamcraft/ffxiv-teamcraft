@@ -8,7 +8,7 @@ export class CraftingRotationsFolder extends DataWithPermissions {
   createdAt = firebase.firestore.Timestamp.now();
   index = -1;
 
-  afterDeserialized():void{
+  afterDeserialized(): void {
     if (typeof this.createdAt !== 'object') {
       this.createdAt = firebase.firestore.Timestamp.fromDate(new Date(this.createdAt));
     } else if (!(this.createdAt instanceof firebase.firestore.Timestamp)) {

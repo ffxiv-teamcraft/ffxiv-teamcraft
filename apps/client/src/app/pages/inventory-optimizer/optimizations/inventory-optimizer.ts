@@ -49,7 +49,7 @@ export abstract class InventoryOptimizer {
     return this._getOptimization(item, inventory, data);
   }
 
-  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
-
   public abstract getId(): string;
+
+  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
 }

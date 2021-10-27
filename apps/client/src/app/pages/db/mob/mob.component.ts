@@ -151,11 +151,6 @@ export class MobComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiMob$.pipe(
       map((mob) => {
@@ -167,5 +162,10 @@ export class MobComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
   }
 }

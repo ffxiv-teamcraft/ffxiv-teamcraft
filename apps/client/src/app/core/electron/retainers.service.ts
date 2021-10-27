@@ -35,14 +35,6 @@ export class RetainersService {
 
   private contentId$ = new ReplaySubject<string>();
 
-  public set contentId(cid: string) {
-    this.contentId$.next(cid);
-  }
-
-  public get retainers(): Record<string, Retainer> {
-    return this.retainers$.value;
-  }
-
   constructor(private ipc: IpcService, private settings: SettingsService,
               private translate: TranslateService, private i18n: I18nToolsService,
               private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
@@ -82,6 +74,14 @@ export class RetainersService {
       });
 
     });
+  }
+
+  public set contentId(cid: string) {
+    this.contentId$.next(cid);
+  }
+
+  public get retainers(): Record<string, Retainer> {
+    return this.retainers$.value;
   }
 
   init(): void {

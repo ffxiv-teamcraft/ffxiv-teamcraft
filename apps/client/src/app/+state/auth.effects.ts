@@ -110,23 +110,6 @@ export class AuthEffects {
     map(user => new UserFetched(user)),
     debounceTime(250)
   );
-
-  private nickNameWarningShown = false;
-
-  @Effect({ dispatch: false })
-  showNicknameWarning$ = this.actions$.pipe(
-    ofType<UserFetched>(AuthActionTypes.UserFetched),
-    debounceTime(10000),
-    tap((action: UserFetched) => {
-      const user = action.user;
-      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
-        this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
-        this.nickNameWarningShown = true;
-      }
-    }),
-    switchMapTo(EMPTY)
-  );
-
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
@@ -142,7 +125,6 @@ export class AuthEffects {
     }),
     map(() => new NoLinkedCharacter())
   );
-
   @Effect()
   openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
@@ -153,14 +135,12 @@ export class AuthEffects {
     }),
     map(() => new LinkingCharacter())
   );
-
   @Effect()
   setAsDefaultCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.AddCharacter),
     filter((action: AddCharacter) => action.setAsDefault),
     map((action: AddCharacter) => new SetDefaultCharacter(action.lodestoneId))
   );
-
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
     ofType(
@@ -181,7 +161,6 @@ export class AuthEffects {
     withLatestFrom(this.authFacade.user$),
     map(([, user]) => new UpdateUser(user))
   );
-
   @Effect()
   selectContentId$ = this.actions$.pipe(
     ofType<ApplyContentId>(AuthActionTypes.ApplyContentId),
@@ -195,7 +174,6 @@ export class AuthEffects {
       return new UpdateUser(user);
     })
   );
-
   @Effect()
   updateUser$ = this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
@@ -205,7 +183,6 @@ export class AuthEffects {
     }),
     map(() => new UserPersisted())
   );
-
   @Effect()
   registerUser$ = this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
@@ -214,13 +191,11 @@ export class AuthEffects {
     }),
     map(() => new UserPersisted())
   );
-
   @Effect()
   fetchAlarmsOnUserAuth$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
     map(() => new LoadAlarms())
   );
-
   @Effect({ dispatch: false })
   markAsDoneInLog$ = this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
@@ -237,7 +212,6 @@ export class AuthEffects {
       }));
     })
   );
-
   @Effect()
   fetchCommissionProfile$ = this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
@@ -253,7 +227,6 @@ export class AuthEffects {
     }),
     map(cProfile => new CommissionProfileLoaded(cProfile))
   );
-
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
       ofType<UserFetched>(AuthActionTypes.UserFetched),
@@ -270,6 +243,20 @@ export class AuthEffects {
       }),
       map(logTracking => new LogTrackingLoaded(logTracking))
     ));
+  private nickNameWarningShown = false;
+  @Effect({ dispatch: false })
+  showNicknameWarning$ = this.actions$.pipe(
+    ofType<UserFetched>(AuthActionTypes.UserFetched),
+    debounceTime(10000),
+    tap((action: UserFetched) => {
+      const user = action.user;
+      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
+        this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
+        this.nickNameWarningShown = true;
+      }
+    }),
+    switchMapTo(EMPTY)
+  );
 
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,

@@ -26,20 +26,30 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 })
 export class RotationResultTagComponent implements OnInit {
 
+  rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
   @Input()
-  public set rotation(rotation: CraftingRotation) {
-    this.rotation$.next(rotation);
+  collectable = false;
+  simulationSet$: BehaviorSubject<GearSet> = new BehaviorSubject<GearSet>(null);
+  recipe$: BehaviorSubject<Craft> = new BehaviorSubject<Craft>(null);
+  result$: Observable<SimulationResult>;
+  foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
+    map(foods => this.consumablesService.fromLazyData(foods))
+  );
+  medicines: Consumable[] = [];
+  freeCompanyActions: FreeCompanyAction[] = [];
+
+  constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
+              private lazyData: LazyDataFacade, private freeCompanyActionsService: FreeCompanyActionsService,
+              private simulationService: SimulationService, private settings: SettingsService) {
   }
 
   public get rotation(): CraftingRotation {
     return this.rotation$.value;
   }
 
-  rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
-
   @Input()
-  public set recipe(recipe: Craft) {
-    this.recipe$.next(recipe);
+  public set rotation(rotation: CraftingRotation) {
+    this.rotation$.next(rotation);
   }
 
   public get recipe(): Craft {
@@ -47,24 +57,14 @@ export class RotationResultTagComponent implements OnInit {
   }
 
   @Input()
-  public set simulationSet(set: GearSet) {
-    this.simulationSet$.next(set);
+  public set recipe(recipe: Craft) {
+    this.recipe$.next(recipe);
   }
 
   @Input()
-  collectable = false;
-
-  simulationSet$: BehaviorSubject<GearSet> = new BehaviorSubject<GearSet>(null);
-
-  recipe$: BehaviorSubject<Craft> = new BehaviorSubject<Craft>(null);
-
-  result$: Observable<SimulationResult>;
-
-  foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
-    map(foods => this.consumablesService.fromLazyData(foods))
-  );
-  medicines: Consumable[] = [];
-  freeCompanyActions: FreeCompanyAction[] = [];
+  public set simulationSet(set: GearSet) {
+    this.simulationSet$.next(set);
+  }
 
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
@@ -72,11 +72,6 @@ export class RotationResultTagComponent implements OnInit {
 
   private get registry() {
     return this.simulator.CraftingActionsRegistry;
-  }
-
-  constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
-              private lazyData: LazyDataFacade, private freeCompanyActionsService: FreeCompanyActionsService,
-              private simulationService: SimulationService, private settings: SettingsService) {
   }
 
   ngOnInit(): void {
@@ -104,7 +99,7 @@ export class RotationResultTagComponent implements OnInit {
               gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
             return new this.simulator.Simulation(recipe as unknown as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
           })
-        )
+        );
       })
     );
   }

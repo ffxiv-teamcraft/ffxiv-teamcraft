@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class DbCommentsService extends FirestoreStorage<DbComment> {
   protected constructor(
@@ -60,6 +60,14 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       );
   }
 
+  protected getBaseUri(params?: any): string {
+    return 'db-comments';
+  }
+
+  protected getClass(): any {
+    return DbComment;
+  }
+
   private getCommentById(tree: DbComment[], key: string, occurences = 0): DbComment {
     const finding = tree.find((c) => c.$key === key);
     if (finding) {
@@ -75,13 +83,5 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       );
     }
     return null;
-  }
-
-  protected getBaseUri(params?: any): string {
-    return 'db-comments';
-  }
-
-  protected getClass(): any {
-    return DbComment;
   }
 }

@@ -38,55 +38,24 @@ import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.f
 })
 export class RotationPanelComponent implements OnInit {
 
-  @Input()
-  public set rotation(rotation: CraftingRotation) {
-    this.rotation$.next(rotation);
-  }
-
-  public get rotation(): CraftingRotation {
-    return this.rotation$.value;
-  }
-
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
-
-  @Input()
-  public set simulationSet(set: GearSet) {
-    this.simulationSet$.next(set);
-  }
-
   simulationSet$: ReplaySubject<GearSet> = new ReplaySubject<GearSet>();
-
   actions$: Observable<CraftingAction[]>;
-
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => rotation.getPermissionLevel(userId))
   );
-
   public user$ = this.authFacade.user$;
-
   public customLink$: Observable<CustomLink>;
-
-  private syncLinkUrl: string;
-
   @Input()
   public publicDisplay = false;
-
   public foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
     map(foods => this.consumablesService.fromLazyData(foods)),
     shareReplay(1)
   );
   public medicines: Consumable[] = [];
   public freeCompanyActions: FreeCompanyAction[] = [];
-
   public simulation$: Observable<SimulationResult>;
-
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
-  private get registry() {
-    return this.simulator.CraftingActionsRegistry;
-  }
+  private syncLinkUrl: string;
 
   constructor(private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
@@ -110,6 +79,28 @@ export class RotationPanelComponent implements OnInit {
     this.medicines = consumablesService.fromData(medicines);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions);
 
+  }
+
+  public get rotation(): CraftingRotation {
+    return this.rotation$.value;
+  }
+
+  @Input()
+  public set rotation(rotation: CraftingRotation) {
+    this.rotation$.next(rotation);
+  }
+
+  @Input()
+  public set simulationSet(set: GearSet) {
+    this.simulationSet$.next(set);
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
   }
 
   ngOnInit(): void {

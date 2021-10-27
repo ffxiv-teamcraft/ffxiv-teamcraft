@@ -27,29 +27,15 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 export class RotationFolderPanelComponent {
 
   @Input()
-  public set folder(f: CraftingRotationsFolder) {
-    this._folder = new CraftingRotationsFolder();
-    Object.assign(this._folder, f);
-    this.folder$.next(this._folder);
-  }
-
-  public _folder: CraftingRotationsFolder;
-
-  private folder$: ReplaySubject<CraftingRotationsFolder> = new ReplaySubject<CraftingRotationsFolder>();
-
-  @Input()
   rotations: CraftingRotation[] = [];
-
+  public user$ = this.authFacade.user$;
+  public customLink$: Observable<CustomLink>;
+  private folder$: ReplaySubject<CraftingRotationsFolder> = new ReplaySubject<CraftingRotationsFolder>();
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.folder$]).pipe(
     map(([userId, folder]) => folder.getPermissionLevel(userId)),
     distinctUntilChanged(),
     shareReplay(1)
   );
-
-  public user$ = this.authFacade.user$;
-
-  public customLink$: Observable<CustomLink>;
-
   private syncLinkUrl: string;
 
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,
@@ -61,6 +47,15 @@ export class RotationFolderPanelComponent {
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
+  }
+
+  public _folder: CraftingRotationsFolder;
+
+  @Input()
+  public set folder(f: CraftingRotationsFolder) {
+    this._folder = new CraftingRotationsFolder();
+    Object.assign(this._folder, f);
+    this.folder$.next(this._folder);
   }
 
   addRotations(): void {

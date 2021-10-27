@@ -21,11 +21,6 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
 
   @Input()
   disableTooltip = false;
-
-  private get copyMode() {
-    return this.forceCopyMode || this.settings.preferredCopyType;
-  }
-
   clipboardContent$ = observeInput(this, 'itemId').pipe(
     switchMap(itemId => {
       return this.i18n.getNameObservable('items', itemId).pipe(
@@ -57,6 +52,10 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
       'cursor',
       'pointer'
     );
+  }
+
+  private get copyMode() {
+    return this.forceCopyMode || this.settings.preferredCopyType;
   }
 
   @HostListener('click')

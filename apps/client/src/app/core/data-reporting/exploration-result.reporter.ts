@@ -10,35 +10,6 @@ export abstract class ExplorationResultReporter implements DataReporter {
 
   abstract getExplorationType(): ExplorationType;
 
-  /**
-   * Checks if a report has not already been sent.
-   *
-   * If it has never been sent, it'll add it to the hashes, meaning that calling this method twice will always return false.
-   *
-   * @param returnTime
-   * @param birthDate
-   * @param log
-   * @protected
-   */
-  protected shouldSendReport(returnTime: number, birthDate: number, log: any[]): boolean {
-    if (returnTime < 0 || returnTime > Math.floor(Date.now() / 1000)) {
-      return false;
-    }
-    const hash = this.hash(`${returnTime}:${birthDate}:${JSON.stringify(log)}`);
-    const reportSent = ExplorationResultReporter.ALREADY_SENT_HASHES.includes(hash);
-    if (reportSent) {
-      return false;
-    } else {
-      this.addToHashes(hash);
-      return true;
-    }
-  }
-
-  private addToHashes(hash: number): void {
-    ExplorationResultReporter.ALREADY_SENT_HASHES.push(hash);
-    localStorage.setItem(`exploration-reporter:hashes`, JSON.stringify(ExplorationResultReporter.ALREADY_SENT_HASHES));
-  }
-
   createReportsList(stats, resultLog) {
     const reports: ExplorationResult[] = [];
 
@@ -91,6 +62,35 @@ export abstract class ExplorationResultReporter implements DataReporter {
 
   getDataType(): string {
     return 'explorationresults';
+  }
+
+  /**
+   * Checks if a report has not already been sent.
+   *
+   * If it has never been sent, it'll add it to the hashes, meaning that calling this method twice will always return false.
+   *
+   * @param returnTime
+   * @param birthDate
+   * @param log
+   * @protected
+   */
+  protected shouldSendReport(returnTime: number, birthDate: number, log: any[]): boolean {
+    if (returnTime < 0 || returnTime > Math.floor(Date.now() / 1000)) {
+      return false;
+    }
+    const hash = this.hash(`${returnTime}:${birthDate}:${JSON.stringify(log)}`);
+    const reportSent = ExplorationResultReporter.ALREADY_SENT_HASHES.includes(hash);
+    if (reportSent) {
+      return false;
+    } else {
+      this.addToHashes(hash);
+      return true;
+    }
+  }
+
+  private addToHashes(hash: number): void {
+    ExplorationResultReporter.ALREADY_SENT_HASHES.push(hash);
+    localStorage.setItem(`exploration-reporter:hashes`, JSON.stringify(ExplorationResultReporter.ALREADY_SENT_HASHES));
   }
 
   private hash(str: string): number {

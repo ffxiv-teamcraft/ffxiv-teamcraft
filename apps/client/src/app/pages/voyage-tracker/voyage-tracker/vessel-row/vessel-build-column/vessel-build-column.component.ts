@@ -45,10 +45,10 @@ export class VesselBuildColumnComponent {
     })
   );
 
-  get condition(): string {
-    return Object.keys(this.parts).map((slot) => `${((this.parts[slot].condition || 0) / 300).toFixed(2)}%`).join(' - ');
+  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
   }
 
-  constructor(private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
+  get condition(): string {
+    return Object.keys(this.parts).map((slot) => `${((this.parts[slot].condition || 0) / 300).toFixed(2)}%`).join(' - ');
   }
 }

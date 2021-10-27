@@ -264,7 +264,7 @@ export class SetContentId implements Action {
 export class ApplyContentId implements Action {
   readonly type = AuthActionTypes.ApplyContentId;
 
-  constructor( public readonly contentId: string) {
+  constructor(public readonly contentId: string) {
   }
 }
 
@@ -280,6 +280,7 @@ export class AnonymousWarningShown implements Action {
 
 export class LogTrackingLoaded implements Action {
   readonly type = AuthActionTypes.LogTrackingLoaded;
+
   constructor(public readonly payload: LogTracking) {
   }
 }

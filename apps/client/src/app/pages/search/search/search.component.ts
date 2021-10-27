@@ -453,6 +453,145 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
+  public getStars(amount: number): string {
+    return this.htmlTools.generateStars(amount);
+  }
+
+  public createQuickList(item: SearchResult): void {
+    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
+    const operation$ = this.listManager.addToList({
+      itemId: +item.itemId,
+      list: list,
+      recipeId: item.recipe ? item.recipe.recipeId : '',
+      amount: item.amount,
+      collectable: item.addCrafts
+    })
+      .pipe(
+        tap(resultList => this.listsFacade.addList(resultList)),
+        mergeMap(resultList => {
+          return this.listsFacade.myLists$.pipe(
+            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          );
+        })
+      );
+
+    this.progressService.showProgress(operation$, 1)
+      .subscribe((newList) => {
+        this.router.navigate(['list', newList.$key]);
+      });
+  }
+
+  public addItemsToList(items: SearchResult[]): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operations = items.map(item => {
+          return this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: item.recipe ? item.recipe.recipeId : '',
+            amount: item.amount,
+            collectable: item.addCrafts
+          });
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
+        return this.progressService.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.itemsAdded = items.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+    });
+  }
+
+  public getShareUrl = () => {
+    if (isPlatformServer(this.platform)) {
+      return 'https://ffxivteamcraft.com/search';
+    }
+    if (this.platformService.isDesktop()) {
+      return `https://ffxivteamcraft.com${location.hash.substr(1)}`;
+    }
+    return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
+  };
+
+  public addSelectedItemsToList(items: SearchResult[]): void {
+    this.addItemsToList(items);
+  }
+
+  public removeSelection(row: SearchResult, items: SearchResult[]): void {
+    row.selected = false;
+    this.rowSelectionChange(row);
+    items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
+  }
+
+  public selectAll(items: SearchResult[], selected: boolean): void {
+    if (selected) {
+      this.selection$.next([...this.selection$.value, ...items]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => !items.some(item => item.itemId === i.itemId)));
+    }
+    (items || []).forEach(item => item.selected = selected);
+    this.allSelected = selected;
+  }
+
+  public rowSelectionChange(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next([...this.selection$.value, row]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => i.itemId !== row.itemId));
+    }
+  }
+
+  public afterAmountChanged(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next(this.selection$.value.map(item => item.itemId === row.itemId ? row : item));
+    }
+  }
+
+  public openInSimulator(itemId: number, recipeId: string): void {
+    this.rotationPicker.openInSimulator(itemId, recipeId);
+  }
+
+  trackByItem(index: number, item: SearchResult): number {
+    return +item.itemId;
+  }
+
+  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+    //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
+    //If we aren't given an arrayIndex, (we assume) it isn't necessary
+    if (arrayName === undefined || arrayIndex === undefined) {
+      const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
+      this[form].patchValue({ [prop]: newValue });
+    } else {
+      const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
+      const newArray: any = this[form].value[arrayName].slice();
+      newArray[arrayIndex][prop] = newValue;
+      this[form].patchValue({ [arrayName]: newArray });
+    }
+  }
+
   private filtersToForm(filters: SearchFilter[], form: FormGroup): Observable<{ [key: string]: any }> {
     return this.lazyData.getEntry('jobAbbr').pipe(
       map(jobAbbr => {
@@ -735,144 +874,5 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       );
     }
     return filters;
-  }
-
-  public getStars(amount: number): string {
-    return this.htmlTools.generateStars(amount);
-  }
-
-  public createQuickList(item: SearchResult): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList({
-      itemId: +item.itemId,
-      list: list,
-      recipeId: item.recipe ? item.recipe.recipeId : '',
-      amount: item.amount,
-      collectable: item.addCrafts
-    })
-      .pipe(
-        tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
-          return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          );
-        })
-      );
-
-    this.progressService.showProgress(operation$, 1)
-      .subscribe((newList) => {
-        this.router.navigate(['list', newList.$key]);
-      });
-  }
-
-  public addItemsToList(items: SearchResult[]): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList({
-            itemId: +item.itemId,
-            list: list,
-            recipeId: item.recipe ? item.recipe.recipeId : '',
-            amount: item.amount,
-            collectable: item.addCrafts
-          });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          items.length,
-          'Adding_recipes',
-          { amount: items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.itemsAdded = items.length;
-      this.modifiedList = list;
-      this.notificationService.template(this.notification);
-    });
-  }
-
-  public getShareUrl = () => {
-    if (isPlatformServer(this.platform)) {
-      return 'https://ffxivteamcraft.com/search';
-    }
-    if (this.platformService.isDesktop()) {
-      return `https://ffxivteamcraft.com${location.hash.substr(1)}`;
-    }
-    return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
-  };
-
-  public addSelectedItemsToList(items: SearchResult[]): void {
-    this.addItemsToList(items);
-  }
-
-  public removeSelection(row: SearchResult, items: SearchResult[]): void {
-    row.selected = false;
-    this.rowSelectionChange(row);
-    items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
-  }
-
-  public selectAll(items: SearchResult[], selected: boolean): void {
-    if (selected) {
-      this.selection$.next([...this.selection$.value, ...items]);
-    } else {
-      this.selection$.next(this.selection$.value.filter(i => !items.some(item => item.itemId === i.itemId)));
-    }
-    (items || []).forEach(item => item.selected = selected);
-    this.allSelected = selected;
-  }
-
-  public rowSelectionChange(row: SearchResult): void {
-    if (row.selected) {
-      this.selection$.next([...this.selection$.value, row]);
-    } else {
-      this.selection$.next(this.selection$.value.filter(i => i.itemId !== row.itemId));
-    }
-  }
-
-  public afterAmountChanged(row: SearchResult): void {
-    if (row.selected) {
-      this.selection$.next(this.selection$.value.map(item => item.itemId === row.itemId ? row : item));
-    }
-  }
-
-  public openInSimulator(itemId: number, recipeId: string): void {
-    this.rotationPicker.openInSimulator(itemId, recipeId);
-  }
-
-  trackByItem(index: number, item: SearchResult): number {
-    return +item.itemId;
-  }
-
-  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
-    //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
-    //If we aren't given an arrayIndex, (we assume) it isn't necessary
-    if (arrayName === undefined || arrayIndex === undefined) {
-      const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
-      this[form].patchValue({ [prop]: newValue });
-    } else {
-      const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
-      const newArray: any = this[form].value[arrayName].slice();
-      newArray[arrayIndex][prop] = newValue;
-      this[form].patchValue({ [arrayName]: newArray });
-    }
   }
 }

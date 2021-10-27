@@ -28,18 +28,8 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 
-  private sortedRetainers$ = this.retainersService.retainers$.pipe(
-    map(retainers => {
-      return Object.values<Retainer>(retainers)
-        .filter(retainer => !!retainer.name)
-        .sort((a, b) => a.order - b.order);
-    })
-  );
-
   loading = false;
-
   filters$: Subject<any> = new Subject<any>();
-
   jobList$ = this.lazyData.getEntry('jobName').pipe(
     map(jobName => {
       return Object.keys(jobName)
@@ -47,53 +37,8 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
         .filter(key => key < 8 || key > 15);
     })
   );
-
-  retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$, this.lazyData.getEntry('itemMeldingData')]).pipe(
-    switchMap(([retainers, inventory, lzeyItemMeldingData]) => {
-      return safeCombineLatest(retainers.map(retainer => {
-        const gearset = new TeamcraftGearset();
-        gearset.job = retainer.job;
-        inventory.getRetainerGear(retainer.name)
-          .forEach(item => {
-            const itemMeldingData = lzeyItemMeldingData[item.itemId];
-            const materias = item.materias || [];
-            while (materias.length < itemMeldingData.slots) {
-              materias.push(0);
-            }
-            if (itemMeldingData.overmeld) {
-              while (materias.length < 5) {
-                materias.push(0);
-              }
-            }
-            gearset[this.gearsetsFacade.getPropertyName(item.slot)] = {
-              itemId: item.itemId,
-              hq: item.hq,
-              materias: materias,
-              canOvermeld: itemMeldingData.overmeld,
-              materiaSlots: itemMeldingData.slots,
-              baseParamModifier: itemMeldingData.modifier
-            };
-          });
-        return combineLatest([
-          this.statsService.getStats(gearset, retainer.level, 1),
-          this.statsService.getAvgIlvl(gearset)
-        ]).pipe(
-          map(([stats, avgIlvl]) => {
-            return {
-              ...retainer,
-              gathering: stats.find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
-              ilvl: avgIlvl
-            };
-          })
-        );
-      }));
-    })
-  );
-
   servers$: Observable<string[]>;
-
   form: FormGroup;
-
   results$: Observable<SpendingEntry[]> = this.filters$.pipe(
     tap(() => this.loading = true),
     switchMap(filters => {
@@ -173,6 +118,54 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
       );
     }),
     tap(() => this.loading = false)
+  );
+  private sortedRetainers$ = this.retainersService.retainers$.pipe(
+    map(retainers => {
+      return Object.values<Retainer>(retainers)
+        .filter(retainer => !!retainer.name)
+        .sort((a, b) => a.order - b.order);
+    })
+  );
+  retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$, this.lazyData.getEntry('itemMeldingData')]).pipe(
+    switchMap(([retainers, inventory, lzeyItemMeldingData]) => {
+      return safeCombineLatest(retainers.map(retainer => {
+        const gearset = new TeamcraftGearset();
+        gearset.job = retainer.job;
+        inventory.getRetainerGear(retainer.name)
+          .forEach(item => {
+            const itemMeldingData = lzeyItemMeldingData[item.itemId];
+            const materias = item.materias || [];
+            while (materias.length < itemMeldingData.slots) {
+              materias.push(0);
+            }
+            if (itemMeldingData.overmeld) {
+              while (materias.length < 5) {
+                materias.push(0);
+              }
+            }
+            gearset[this.gearsetsFacade.getPropertyName(item.slot)] = {
+              itemId: item.itemId,
+              hq: item.hq,
+              materias: materias,
+              canOvermeld: itemMeldingData.overmeld,
+              materiaSlots: itemMeldingData.slots,
+              baseParamModifier: itemMeldingData.modifier
+            };
+          });
+        return combineLatest([
+          this.statsService.getStats(gearset, retainer.level, 1),
+          this.statsService.getAvgIlvl(gearset)
+        ]).pipe(
+          map(([stats, avgIlvl]) => {
+            return {
+              ...retainer,
+              gathering: stats.find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
+              ilvl: avgIlvl
+            };
+          })
+        );
+      }));
+    })
   );
 
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,

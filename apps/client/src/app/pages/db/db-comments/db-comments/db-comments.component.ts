@@ -22,45 +22,21 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
   styleUrls: ['./db-comments.component.less']
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
-  @Input()
-  public set type(t: string) {
-    this.type$.next(t || undefined);
-  }
-
-  private readonly lang$ = new BehaviorSubject<string>(this.translate.currentLang);
-
-  private readonly type$ = new BehaviorSubject<string | undefined>(undefined);
-
-  @Input()
-  public set id(i: number) {
-    this.id$.next(i || undefined);
-  }
-
-  private readonly id$ = new BehaviorSubject<number | undefined>(undefined);
-
   userLevels = UserLevel;
-
   readonly comments$: Observable<DbComment[]>;
-
   readonly user$: Observable<TeamcraftUser> = this.authFacade.user$;
-
   readonly loggedIn$: Observable<boolean> = this.authFacade.loggedIn$;
-
   newCommentContent: string;
-
   addRootComment = false;
-
   hideRootCommentButton = false;
-
   editingComment: DbComment;
-
   parentComment: DbComment;
-
   submitting = false;
-
   readonly showMoreComments$ = new BehaviorSubject<boolean>(false);
-
   readonly hasMoreComments$: Observable<number>;
+  private readonly lang$ = new BehaviorSubject<string>(this.translate.currentLang);
+  private readonly type$ = new BehaviorSubject<string | undefined>(undefined);
+  private readonly id$ = new BehaviorSubject<number | undefined>(undefined);
 
   constructor(
     private commentsService: DbCommentsService,
@@ -104,6 +80,16 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     );
 
     this.hasMoreComments$ = comments$.pipe(map((comments) => Math.max(0, comments.length - 3)));
+  }
+
+  @Input()
+  public set type(t: string) {
+    this.type$.next(t || undefined);
+  }
+
+  @Input()
+  public set id(i: number) {
+    this.id$.next(i || undefined);
   }
 
   ngOnInit() {

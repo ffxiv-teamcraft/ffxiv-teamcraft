@@ -101,15 +101,6 @@ export class AchievementComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(status: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievementDescriptions', 'Description'));
-  }
-
-  private getName(status: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievements'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.achievement$.pipe(
       map(achievement => {
@@ -121,5 +112,14 @@ export class AchievementComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(status: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievementDescriptions', 'Description'));
+  }
+
+  private getName(status: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievements'));
   }
 }

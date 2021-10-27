@@ -26,6 +26,8 @@ interface ListRowSortComparison {
 export class LayoutOrderService {
 
 
+  alarmsCache: Record<number, { expire: number, score: number }> = {};
+  orderCache: Record<string, Observable<number[]>> = {};
   private orderFunctions: { [index: string]: (rowA: ListRowSortComparison, rowB: ListRowSortComparison) => number } = {
     'NAME': (a, b) => {
       return a.name > b.name ? 1 : -1;
@@ -66,13 +68,24 @@ export class LayoutOrderService {
     }
   };
 
-  alarmsCache: Record<number, { expire: number, score: number }> = {};
-
-  orderCache: Record<string, Observable<number[]>> = {};
-
   constructor(private translate: TranslateService, private i18n: I18nToolsService,
               private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade,
               private etime: EorzeanTimeService) {
+  }
+
+  public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {
+    if (orderBy === 'TIMER') {
+      return this.sortRows(data, orderBy, order);
+    }
+    const hash = MathTools.hashCode(`${orderBy}:${order};${data.map(d => `${d.id},${d.amount}`).join(';')}`);
+    if (this.orderCache[hash] === undefined) {
+      this.orderCache[hash] = this.sortRows(data, orderBy, order).pipe(
+        map(ordered => this.toIndexArray(data, ordered))
+      );
+    }
+    return this.orderCache[hash].pipe(
+      map(cache => cache.map(index => data[index]))
+    );
   }
 
   private getNextSpawn(alarms: Alarm[]): number {
@@ -92,21 +105,6 @@ export class LayoutOrderService {
       };
     }
     return this.alarmsCache[alarms[0].itemId].score;
-  }
-
-  public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {
-    if (orderBy === 'TIMER') {
-      return this.sortRows(data, orderBy, order);
-    }
-    const hash = MathTools.hashCode(`${orderBy}:${order};${data.map(d => `${d.id},${d.amount}`).join(';')}`);
-    if (this.orderCache[hash] === undefined) {
-      this.orderCache[hash] = this.sortRows(data, orderBy, order).pipe(
-        map(ordered => this.toIndexArray(data, ordered))
-      );
-    }
-    return this.orderCache[hash].pipe(
-      map(cache => cache.map(index => data[index]))
-    );
   }
 
   private sortRows(data: ListRow[], orderBy: string, order: LayoutRowOrder): Observable<ListRow[]> {

@@ -1,7 +1,6 @@
 import { Inject, Pipe, PipeTransform, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { DbComment } from './model/db-comment';
@@ -26,8 +25,8 @@ export class CommentLinksPipe implements PipeTransform {
   private customSyntaxRegexp = /(item|map|mob|achievement|leve|npc|instance|quest|trait|action|status):"([^"]+)"/gmi;
 
   constructor(private sanitizer: DomSanitizer, private linkTools: LinkToolsService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private lazyData: LazyDataFacade, @Inject(PLATFORM_ID) private platform: Object) {
+              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
+              @Inject(PLATFORM_ID) private platform: Object) {
   }
 
   transform(value: string, locale: string, comment: DbComment): Observable<SafeHtml> {
@@ -82,7 +81,7 @@ export class CommentLinksPipe implements PipeTransform {
               type: groups[1],
               language: groups[0]
             };
-            return `<a href="${this.getTeamcraftLink(match, data)}" target="_blank">${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
+            return `<a href='${this.getTeamcraftLink(match, data)}' target='_blank'>${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
           });
 
           value = value.replace(this.customSyntaxRegexp, (match, ...groups) => {
@@ -92,10 +91,10 @@ export class CommentLinksPipe implements PipeTransform {
               language: comment.language
             };
             const registryEntry = registry.find(row => row.name[comment.language]?.toLowerCase() === data.id.toLowerCase() && row.type === data.type);
-            return `<a href="${this.getTeamcraftLink(match, {
+            return `<a href='${this.getTeamcraftLink(match, {
               ...registryEntry,
               language: comment.language
-            })}" target="_blank">${this.getI18nName(registryEntry?.name, locale, match)}</a>`;
+            })}' target='_blank'>${this.getI18nName(registryEntry?.name, locale, match)}</a>`;
           });
 
           value = value.replace(this.tcRegexp, (match, ...groups) => {
@@ -104,11 +103,11 @@ export class CommentLinksPipe implements PipeTransform {
               type: groups[1],
               language: groups[0]
             };
-            return `<a href="${this.getTeamcraftLink(match, data)}" target="_blank">${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
+            return `<a href='${this.getTeamcraftLink(match, data)}' target='_blank'>${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
           });
 
           value = value.replace(this.linkRegexp, (match) => {
-            return `<a href="${match}" target="_blank">${match}</a>`;
+            return `<a href='${match}' target='_blank'>${match}</a>`;
           });
 
           return this.sanitizer.bypassSecurityTrustHtml(value);

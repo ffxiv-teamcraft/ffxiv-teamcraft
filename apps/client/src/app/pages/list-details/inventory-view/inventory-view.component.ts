@@ -13,16 +13,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class InventoryViewComponent {
 
-  @Input()
-  public set list(l: List) {
-    this.list$.next(l);
-  }
-
-  private list$: ReplaySubject<List> = new ReplaySubject<List>();
-
   public display$: Observable<{ id: number, icon: number, amount: number }[][]>;
-
   public showFinalItems$ = new BehaviorSubject<boolean>(localStorage.getItem('inventory-view:show-final') !== 'false');
+  private list$: ReplaySubject<List> = new ReplaySubject<List>();
 
   public constructor(private messageService: NzMessageService, private translate: TranslateService) {
     this.display$ = combineLatest([this.list$, this.showFinalItems$]).pipe(
@@ -42,6 +35,11 @@ export class InventoryViewComponent {
         return inventory.getDisplay();
       })
     );
+  }
+
+  @Input()
+  public set list(l: List) {
+    this.list$.next(l);
   }
 
 }

@@ -78,15 +78,6 @@ export class StatusComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(status: any): string {
-    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'Description'));
-  }
-
-  private getName(status: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'statuses'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiStatus$.pipe(
       map(status => {
@@ -98,5 +89,14 @@ export class StatusComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getDescription(status: any): string {
+    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'Description'));
+  }
+
+  private getName(status: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.i18n.xivapiToI18n(status, 'statuses'));
   }
 }

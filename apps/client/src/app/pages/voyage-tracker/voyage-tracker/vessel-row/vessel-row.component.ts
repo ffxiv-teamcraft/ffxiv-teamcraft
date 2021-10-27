@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Vessel } from '../../../../modules/free-company-workshops/model/vessel';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';

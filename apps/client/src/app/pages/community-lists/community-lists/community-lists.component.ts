@@ -17,24 +17,15 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 export class CommunityListsComponent implements OnDestroy {
 
   public tags: any[];
-
-  private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
-
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-
   public excludeFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-
   public pageSize = 20;
-
   public totalLength = 0;
-
   loading = true;
-
   filteredLists$: Observable<List[]>;
+  private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
   constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
               private teamsFacade: TeamsFacade, private layoutsFacade: LayoutsFacade,

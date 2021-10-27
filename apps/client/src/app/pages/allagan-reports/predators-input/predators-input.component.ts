@@ -26,11 +26,6 @@ export class PredatorsInputComponent implements ControlValueAccessor {
 
   disabled = false;
 
-  private onChange: Function = () => {
-  };
-  private onTouched: Function = () => {
-  };
-
   addPredator(): void {
     this.predators = [...this.predators, this.predatorModel];
     this.predatorModel = { id: null, amount: null };
@@ -59,5 +54,11 @@ export class PredatorsInputComponent implements ControlValueAccessor {
       this.predators = obj;
     }
   }
+
+  private onChange: Function = () => {
+  };
+
+  private onTouched: Function = () => {
+  };
 
 }

@@ -5,7 +5,6 @@ import { Aetheryte } from '../../core/data/aetheryte';
 import { Vector2 } from '../../core/tools/vector2';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
 import { map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
@@ -17,6 +16,7 @@ import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 import { Vector3 } from '../../core/tools/vector3';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 @Injectable()
 export class MapService {
@@ -29,7 +29,7 @@ export class MapService {
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
-  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService,
+  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private i18n: I18nToolsService,
               private settings: SettingsService, private lazyData: LazyDataFacade, private eorzea: EorzeaFacade) {
   }
 
@@ -114,30 +114,6 @@ export class MapService {
       );
   }
 
-  private getTpCost(from: Aetheryte, to: Aetheryte): number {
-    if (from === undefined || to === undefined) {
-      return 999;
-    }
-    if (this.settings.freeAetheryte === to.nameid) {
-      return 0;
-    }
-    const fromCoords = from.aethernetCoords;
-    const toCoords = to.aethernetCoords;
-    if (fromCoords === undefined || toCoords === undefined) {
-      return 999;
-    }
-
-    if (from.map === to.map) {
-      return 100;
-    }
-
-    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
-    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
-      return Math.floor(Math.min(base, 999) / 2);
-    }
-    return Math.floor(Math.min(base, 999));
-  }
-
   public getOptimizedPathOnMap(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
     return this.getMapById(mapId)
       .pipe(
@@ -149,7 +125,7 @@ export class MapService {
             const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
               x: aetheryte.x,
               y: aetheryte.y,
-              name: this.l12n.getPlace(aetheryte.nameid)
+              name: this.i18n.getNameObservable('places', aetheryte.nameid)
             }, points, bigAetherytes));
             return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
           } else {
@@ -172,6 +148,30 @@ export class MapService {
       x: x,
       y: y
     };
+  }
+
+  private getTpCost(from: Aetheryte, to: Aetheryte): number {
+    if (from === undefined || to === undefined) {
+      return 999;
+    }
+    if (this.settings.freeAetheryte === to.nameid) {
+      return 0;
+    }
+    const fromCoords = from.aethernetCoords;
+    const toCoords = to.aethernetCoords;
+    if (fromCoords === undefined || toCoords === undefined) {
+      return 999;
+    }
+
+    if (from.map === to.map) {
+      return 100;
+    }
+
+    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
+    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
+      return Math.floor(Math.min(base, 999) / 2);
+    }
+    return Math.floor(Math.min(base, 999));
   }
 
   private getAetherytes(id: number, excludeMinis = false): Observable<Aetheryte[]> {
@@ -222,7 +222,7 @@ export class MapService {
       x: aetheryte.x,
       y: aetheryte.y,
       isTeleport: true,
-      name: this.l12n.getPlace(aetheryte.nameid)
+      name: this.i18n.getNameObservable('places', aetheryte.nameid)
     }));
     const steps: NavigationStep[] = [];
     steps.push({

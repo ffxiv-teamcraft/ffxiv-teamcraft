@@ -55,6 +55,7 @@ export class UserInventory extends DataModel {
   items: { [contentId: string]: CharacterInventory } = {};
 
   lastZone: number;
+  private searchCache: ItemSearchResult[] = [];
 
   private _contentId?: string;
 
@@ -69,8 +70,6 @@ export class UserInventory extends DataModel {
     }
     this.resetSearchCache();
   }
-
-  private searchCache: ItemSearchResult[] = [];
 
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
@@ -301,6 +300,18 @@ export class UserInventory extends DataModel {
     return clone;
   }
 
+  setMarketBoardInfo(packet: ItemMarketBoardInfo, retainer: string): void {
+    if (this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
+      this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
+    }
+  }
+
+  updateMarketboardInfo(packet: ClientTrigger, retainer: string): void {
+    if (this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1]) {
+      this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1].unitMbPrice = packet.param2;
+    }
+  }
+
   private generateSearchCacheIfNeeded(): void {
     if (!this.searchCache || this.searchCache.length === 0) {
       this.searchCache = Object.keys(this.items)
@@ -341,18 +352,6 @@ export class UserInventory extends DataModel {
             .flat();
         })
         .flat();
-    }
-  }
-
-  setMarketBoardInfo(packet: ItemMarketBoardInfo, retainer: string): void {
-    if (this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
-      this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
-    }
-  }
-
-  updateMarketboardInfo(packet: ClientTrigger, retainer: string): void {
-    if (this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1]) {
-      this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1].unitMbPrice = packet.param2;
     }
   }
 }

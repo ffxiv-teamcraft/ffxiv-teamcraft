@@ -101,6 +101,19 @@ export class FateComponent extends TeamcraftPageComponent {
     );
   }
 
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return this.xivapiFate$.pipe(
+      map(fate => {
+        return {
+          title: this.getName(fate),
+          description: this.getDescription(fate),
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fate/${fate.ID}/${this.getName(fate).split(' ').join('-')}`,
+          image: `https://xivapi.com${fate.IconMap}`
+        };
+      })
+    );
+  }
+
   private getDescription(item: any): string {
     const fate = this.l12n.getFate(+item.ID);
     if (!fate) {
@@ -118,18 +131,5 @@ export class FateComponent extends TeamcraftPageComponent {
     }
 
     return this.i18n.getName(fate.name);
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiFate$.pipe(
-      map(fate => {
-        return {
-          title: this.getName(fate),
-          description: this.getDescription(fate),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fate/${fate.ID}/${this.getName(fate).split(' ').join('-')}`,
-          image: `https://xivapi.com${fate.IconMap}`
-        };
-      })
-    );
   }
 }
