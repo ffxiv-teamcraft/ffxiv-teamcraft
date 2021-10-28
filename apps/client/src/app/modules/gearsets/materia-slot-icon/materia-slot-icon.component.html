@@ -1,10 +1,10 @@
 <div fxLayout="row" fxLayoutAlign="flex-start center"  class="icon-and-text">
   <div class="materia-container">
-    <img src="./assets/icons/materia/slot_{{getSlotType()}}_empty.png" alt="" class="slot">
+    <img src="./assets/icons/materia/slot_{{getSlotType(equipmentPiece, index)}}_empty.png" alt="" class="slot">
     <img *ngIf="equipmentPiece.materias[index] > 0"
-         src="./assets/icons/materia/slot_{{getSlotType()}}_grade{{getMateriaGrade()}}.png" alt="" class="materia">
+         src="./assets/icons/materia/slot_{{getSlotType(equipmentPiece, index)}}_grade{{materiaGrade$ | async}}.png" alt="" class="materia">
   </div>
   <div class="melding-chances">
-    {{meldingChances}}%
+    {{meldingChances$ | async}}%
   </div>
 </div>

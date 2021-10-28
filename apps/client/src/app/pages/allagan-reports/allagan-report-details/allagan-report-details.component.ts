@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { debounceTime, filter, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
-import { BehaviorSubject, combineLatest, merge, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
 import { I18nName } from '../../../model/common/i18n-name';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { AllaganReport } from '../model/allagan-report';
@@ -26,6 +25,8 @@ import { ItemContextService } from '../../db/service/item-context.service';
 import { ReportsManagementComponent } from '../reports-management.component';
 import { OceanFishingTime } from '../model/ocean-fishing-time';
 import { SearchType } from '../../search/search-type';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 
 function durationRequired(control: AbstractControl) {
@@ -48,7 +49,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   loadingReportsQueue = false;
   modificationId$ = new BehaviorSubject<string>(null);
   source: AllaganReportSource;
-  voyageType: number;
+  voyageType: 0 | 1;
   AllaganReportSource = AllaganReportSource;
   SearchType = SearchType;
 
@@ -66,10 +67,11 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   itemDetails$ = this.itemId$.pipe(
     tap(() => this.loadingReports = true),
-    switchMap(itemId => {
+    withLazyData(this.lazyData, 'fishes', 'fishingSpots'),
+    switchMap(([itemId, fishes, fishingSpots]) => {
       return this.allaganReportsService.getItemReports(itemId).pipe(
         map(reports => {
-          return {
+          const data = {
             itemId,
             reports: reports.data.allagan_reports.map(report => {
               return {
@@ -77,13 +79,11 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
                 data: typeof report.data === 'string' ? JSON.parse(report.data) : report.data
               };
             }).sort((a, b) => a.created_at - b.created_at),
-            isFish: this.lazyData.data.fishes.includes(itemId),
+            isFish: fishes.includes(itemId),
             spots: []
           };
-        }),
-        map(data => {
           if (data.isFish) {
-            data.spots = this.lazyData.data.fishingSpots.filter(spot => {
+            data.spots = fishingSpots.filter(spot => {
               return spot.fishes.includes(itemId);
             });
           }
@@ -258,43 +258,45 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   public itemInput$: Subject<string> = new Subject<string>();
 
-  public itemCompletion$ = this.makeCompletionObservable(this.itemInput$, 'items');
+  public itemCompletion$ = this.makeCompletionObservable(this.itemInput$, this.items$);
 
   public instanceInput$: Subject<string> = new Subject<string>();
 
-  public instanceCompletion$ = this.makeCompletionObservable(this.instanceInput$, 'instances');
+  public instanceCompletion$ = this.makeCompletionObservable(this.instanceInput$, this.instances$);
 
   public ventureInput$: Subject<string> = new Subject<string>();
 
-  public ventureCompletion$ = this.makeCompletionObservable(this.ventureInput$, 'ventures');
+  public ventureCompletion$ = this.makeCompletionObservable(this.ventureInput$, this.ventures$);
 
   public mobInput$: Subject<string> = new Subject<string>();
 
-  public mobCompletion$ = this.makeCompletionObservable(this.mobInput$, 'mobs');
+  public mobCompletion$ = this.makeCompletionObservable(this.mobInput$, this.mobs$);
 
   public fateInput$: Subject<string> = new Subject<string>();
 
-  public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, 'fates');
+  public fateCompletion$ = this.makeCompletionObservable(this.fateInput$, this.fates$);
 
   public voyageInput$: Subject<string> = new Subject<string>();
 
   public voyageCompletion$ = this.voyageInput$.pipe(
     debounceTime(500),
-    map(value => {
+    switchMap(value => {
       if (value.length < 2) {
-        return [];
+        return of([]);
       } else {
-        return [this.airshipVoyages, this.submarineVoyages][this.voyageType].filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
+        return [this.airshipVoyages$, this.submarineVoyages$][this.voyageType].pipe(
+          map(voyages => voyages.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1))
+        );
       }
     })
   );
 
-  public spearFishingFishList = this.lazyData.data.spearFishingFish;
+  public spearFishingFishList$ = this.lazyData.getEntry('spearFishingFish');
 
   public hoverId$ = new Subject<string>();
 
   constructor(private route: ActivatedRoute, private allaganReportsService: AllaganReportsService,
-              protected lazyData: LazyDataService, private i18n: I18nToolsService,
+              protected lazyData: LazyDataFacade, private i18n: I18nToolsService,
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
               private xivapi: XivapiService, private fb: FormBuilder,
@@ -341,12 +343,17 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   addSource(itemId: number): void {
     const formState = this.form.getRawValue();
     const { source } = formState;
-    const report: AllaganReport = {
-      itemId,
-      source,
-      data: this.getData(source, formState)
-    };
-    this.allaganReportsService.addReportToQueue(report).subscribe(() => {
+    this.getData(source, formState).pipe(
+      first(),
+      switchMap(data => {
+        const report: AllaganReport = {
+          itemId,
+          source,
+          data
+        };
+        return this.allaganReportsService.addReportToQueue(report);
+      })
+    ).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Report_added'));
       this.form.reset();
     });
@@ -360,12 +367,17 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   submitModification(itemId: number, reportId: string): void {
     const formState = this.form.getRawValue();
     const { source } = formState;
-    const report: AllaganReport = {
-      itemId,
-      source,
-      data: this.getData(source, formState)
-    };
-    this.allaganReportsService.suggestModification(reportId, report).subscribe(() => {
+    this.getData(source, formState).pipe(
+      first(),
+      switchMap(data => {
+        const report: AllaganReport = {
+          itemId,
+          source,
+          data
+        };
+        return this.allaganReportsService.suggestModification(reportId, report);
+      })
+    ).subscribe(() => {
       this.message.success(this.translate.instant('ALLAGAN_REPORTS.Modification_suggestion_submitted'));
       this.form.reset();
     });
@@ -414,111 +426,148 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   }
 
   startModification(report: AllaganReport): void {
-    const patch = this.getFormStatePatch(report);
-    this.source = report.source;
-    this.form.patchValue({ source: report.source, ...patch }, { emitEvent: true });
-    if (patch.spot) {
-      setTimeout(() => {
-        this.fishingSpotPatch$.next(patch.spot);
-      });
-    }
-    this.modificationId$.next(report.uid);
-    this.cd.detectChanges();
+    this.getFormStatePatch(report).pipe(
+      first()
+    ).subscribe(patch => {
+      this.source = report.source;
+      this.form.patchValue({ source: report.source, ...patch }, { emitEvent: true });
+      if (patch.spot) {
+        setTimeout(() => {
+          this.fishingSpotPatch$.next(patch.spot);
+        });
+      }
+      this.modificationId$.next(report.uid);
+      this.cd.detectChanges();
+    });
   }
 
-  private getFormStatePatch(report: AllaganReport): any {
+  trackByUid(index: number, row: AllaganReport | AllaganReportQueueEntry): string {
+    return row.uid;
+  }
+
+  private getFormStatePatch(report: AllaganReport): Observable<any> {
     switch (report.source) {
       case AllaganReportSource.DESYNTH:
       case AllaganReportSource.REDUCTION:
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
-        return { item: this.getEntryName(this.items, report.data.itemId) };
+        return this.getEntryName(this.items$, report.data.itemId).pipe(
+          map(name => ({ item: name }))
+        );
       case AllaganReportSource.MOGSTATION:
-        return { price: report.data.price, productId: report.data.productId };
+        return of({ price: report.data.price, productId: report.data.productId });
       case AllaganReportSource.INSTANCE:
-        return { instance: this.getEntryName(this.instances, report.data.instanceId) };
+        return this.getEntryName(this.instances$, report.data.instanceId).pipe(
+          map(name => ({ instance: name }))
+        );
       case AllaganReportSource.FATE:
-        return { fate: this.getEntryName(this.instances, report.data.fateId) };
+        return this.getEntryName(this.instances$, report.data.fateId).pipe(
+          map(name => ({ fate: name }))
+        );
       case AllaganReportSource.VENTURE:
-        return { venture: this.getEntryName(this.ventures, report.data.ventureId) };
+        return this.getEntryName(this.ventures$, report.data.ventureId).pipe(
+          map(name => ({ venture: name }))
+        );
       case AllaganReportSource.DROP:
-        return { mob: this.getEntryName(this.mobs, report.data.monsterId) };
+        return this.getEntryName(this.mobs$, report.data.monsterId).pipe(
+          map(name => ({ mob: name }))
+        );
       case AllaganReportSource.VOYAGE:
-        return {
-          voyageId: this.getEntryName([this.airshipVoyages, this.submarineVoyages][report.data.voyageType], report.data.voyageId),
-          voyageType: report.data.voyageType,
-          rarity: report.data.rarity
-        };
+        return this.getEntryName([this.airshipVoyages$, this.submarineVoyages$][report.data.voyageType], report.data.voyageId).pipe(
+          map(voyageName => ({
+            voyageId: voyageName,
+            voyageType: report.data.voyageType,
+            rarity: report.data.rarity
+          }))
+        );
       case AllaganReportSource.SPEARFISHING:
-        return pickBy({
+        return of(pickBy({
           gig: report.data.gig,
           predators: report.data.predators,
           spawn: report.data.spawn,
           duration: report.data.duration
-        }, value => value !== undefined && value !== null);
+        }, value => value !== undefined && value !== null));
       case AllaganReportSource.FISHING:
-        return pickBy({
-          spot: this.lazyData.data.fishingSpots.find(s => s.id === report.data.spot),
-          hookset: report.data.hookset,
-          tug: report.data.tug,
-          bait: report.data.bait,
-          spawn: report.data.spawn,
-          duration: report.data.duration,
-          weathers: report.data.weathers,
-          weathersFrom: report.data.weathersFrom,
-          snagging: report.data.snagging,
-          predators: report.data.predators,
-          oceanFishingTime: report.data.oceanFishingTime,
-          minGathering: report.data.minGathering
-        }, value => value !== undefined && value !== null);
+        return this.lazyData.getEntry('fishingSpots').pipe(
+          map(fishingSpots => {
+            pickBy({
+              spot: fishingSpots.find(s => s.id === report.data.spot),
+              hookset: report.data.hookset,
+              tug: report.data.tug,
+              bait: report.data.bait,
+              spawn: report.data.spawn,
+              duration: report.data.duration,
+              weathers: report.data.weathers,
+              weathersFrom: report.data.weathersFrom,
+              snagging: report.data.snagging,
+              predators: report.data.predators,
+              oceanFishingTime: report.data.oceanFishingTime,
+              minGathering: report.data.minGathering
+            }, value => value !== undefined && value !== null);
+          })
+        );
     }
   }
 
-  private makeCompletionObservable(subject: Subject<string>, registryKey: keyof Extract<AllaganReportDetailsComponent, { id: number, name: I18nName }[]>): Observable<{ id: number, name: I18nName }[]> {
+  private makeCompletionObservable(subject: Subject<string>, registry$: Observable<{ id: number, name: I18nName }[]>): Observable<{ id: number, name: I18nName }[]> {
     return subject.pipe(
       debounceTime(500),
-      map(value => {
+      switchMap(value => {
         if (value.length < 2) {
-          return [];
+          return of([]);
         } else {
-          return this[registryKey].filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
+          return registry$.pipe(
+            map(registry => registry.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1))
+          );
         }
       })
     );
   }
 
-  private getData(source: AllaganReportSource, formState: any): any {
+  private getData(source: AllaganReportSource, formState: any): Observable<any> {
     switch (source) {
       case AllaganReportSource.DESYNTH:
       case AllaganReportSource.REDUCTION:
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
-        return { itemId: this.getEntryId(this.items, formState.item) };
+        return this.getEntryId(this.items$, formState.item).pipe(
+          map(id => ({ itemId: id }))
+        );
       case AllaganReportSource.MOGSTATION:
-        return { price: formState.price, productId: formState.productId };
+        return of({ price: formState.price, productId: formState.productId });
       case AllaganReportSource.INSTANCE:
-        return { instanceId: this.getEntryId(this.instances, formState.instance) };
+        return this.getEntryId(this.instances$, formState.instance).pipe(
+          map(id => ({ instanceId: id }))
+        );
       case AllaganReportSource.FATE:
-        return { fateId: this.getEntryId(this.fates, formState.fate) };
+        return this.getEntryId(this.fates$, formState.fate).pipe(
+          map(id => ({ fateId: id }))
+        );
       case AllaganReportSource.VENTURE:
-        return { ventureId: this.getEntryId(this.ventures, formState.venture) };
+        return this.getEntryId(this.ventures$, formState.venture).pipe(
+          map(id => ({ ventureId: id }))
+        );
       case AllaganReportSource.DROP:
-        return { monsterId: this.getEntryId(this.mobs, formState.mob) };
+        return this.getEntryId(this.mobs$, formState.mob).pipe(
+          map(id => ({ monsterId: id }))
+        );
       case AllaganReportSource.VOYAGE:
-        return {
-          voyageId: this.getEntryId([this.airshipVoyages, this.submarineVoyages][formState.voyageType], formState.voyage),
-          voyageType: formState.voyageType,
-          rarity: formState.rarity
-        };
+        return this.getEntryId([this.airshipVoyages$, this.submarineVoyages$][formState.voyageType], formState.voyage).pipe(
+          map(id => ({
+            voyageId: id,
+            voyageType: formState.voyageType,
+            rarity: formState.rarity
+          }))
+        );
       case AllaganReportSource.SPEARFISHING:
-        return pickBy({
+        return of(pickBy({
           gig: formState.gig,
           predators: formState.predators,
           spawn: formState.spawn,
           duration: formState.duration
-        }, value => value !== undefined && value !== null);
+        }, value => value !== undefined && value !== null));
       case AllaganReportSource.FISHING:
-        return pickBy({
+        return of(pickBy({
           spot: formState.spot.id,
           hookset: formState.hookset,
           tug: formState.tug,
@@ -531,7 +580,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           predators: formState.predators,
           oceanFishingTime: this.isOceanFishingSpot(formState.spot) ? formState.oceanFishingTime : null,
           minGathering: formState.minGathering
-        }, value => value !== undefined && value !== null);
+        }, value => value !== undefined && value !== null));
     }
   }
 
@@ -539,16 +588,16 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     return spot?.placeId === 3477;
   }
 
-  private getEntryId(registry: { id: number, name: I18nName }[], name: string): number {
-    return registry.find(entry => this.i18n.getName(entry.name).toLowerCase() === name.toLowerCase())?.id;
+  private getEntryId(registry$: Observable<{ id: number, name: I18nName }[]>, name: string): Observable<number> {
+    return registry$.pipe(
+      map(registry => registry.find(entry => this.i18n.getName(entry.name).toLowerCase() === name.toLowerCase())?.id)
+    );
   }
 
-  private getEntryName(registry: { id: number, name: I18nName }[], id: number): string {
-    return this.i18n.getName(registry.find(entry => entry.id === id)?.name);
-  }
-
-  trackByUid(index: number, row: AllaganReport | AllaganReportQueueEntry): string {
-    return row.uid;
+  private getEntryName(registry$: Observable<{ id: number, name: I18nName }[]>, id: number): Observable<string> {
+    return registry$.pipe(
+      map(registry => this.i18n.getName(registry.find(entry => entry.id === id)?.name))
+    );
   }
 
   private getSpawnHour(byId: Record<string, number>): number | null {

@@ -10,7 +10,7 @@
             <h2 class="item-name">{{action | xivapiL12n: 'actions' | i18n}}</h2>
             <div *ngIf="action.IsPlayerAction || action.ID > 99999" class="item-kind" fxLayout="row" fxLayoutGap="5px">
               <div>Lvl {{action.ClassJobLevel}}</div>
-              <div [innerHTML]="action.ClassJob | xivapiL12n: 'jobAbbr':'Abbreviation' | i18n"></div>
+              <div [innerHTML]="action.ClassJob | xivapiL12n: 'Abbreviation' | i18n"></div>
               <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiL12n: 'actionCategories' | i18n"></div>
             </div>
             <div *ngIf="action.GamePatch" class="patch">
@@ -85,15 +85,15 @@
           {{'DB.ACTION.Unlocked_by_quest' | translate}}
         </ng-template>
         <div *ngIf="action.GameContentLinks?.Quest" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
-          <img [src]="action.GameContentLinks?.Quest.ActionReward[0] | questIcon | xivapiIcon" alt=""
+          <img [src]="action.GameContentLinks?.Quest.ActionReward[0] | lazyRow:'quests':'icon' | async | xivapiIcon" alt=""
                class="larger-img-icon">
-          <div>{{action.GameContentLinks?.Quest.ActionReward[0] | questName | i18n}}</div>
+          <div>{{action.GameContentLinks?.Quest.ActionReward[0] | i18nRow:'quests' | i18n}}</div>
           <app-db-button [id]="action.GameContentLinks?.Quest.ActionReward[0]" type="quest"></app-db-button>
         </div>
         <div *ngIf="action.QuestRequirementTargetID" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="10px">
-          <img [src]="action.QuestRequirementTargetID | questIcon | xivapiIcon" alt="" class="larger-img-icon">
-          <div>{{action.QuestRequirementTargetID | questName | i18n}}</div>
+          <img [src]="action.QuestRequirementTargetID | lazyRow:'quests':'icon' | async | xivapiIcon" alt="" class="larger-img-icon">
+          <div>{{action.QuestRequirementTargetID | i18nRow:'quests' | i18n}}</div>
           <app-db-button [id]="action.QuestRequirementTargetID" type="quest"></app-db-button>
         </div>
       </nz-card>
@@ -217,14 +217,14 @@
                   [nzDescription]="traitDescription"
                   [nzTitle]="traitTitle">
                   <ng-template #traitAvatar>
-                    <img [appXivdbActionTooltip]="traitId" [src]="traitId | traitIcon | xivapiIcon" alt="">
+                    <img [appXivdbActionTooltip]="traitId" [src]="traitId | lazyRow:'traits':'icon' | async | xivapiIcon" alt="">
                   </ng-template>
                   <ng-template #traitDescription>
-                    <span [innerHTML]="(traitId | traitName)?.description | i18n | xivUIText"></span>
+                    <span [innerHTML]="(traitId | i18nRow:'traits')?.description | i18n | xivUIText"></span>
                   </ng-template>
                   <ng-template #traitTitle>
                     <div>
-                      {{traitId | traitName | i18n}}
+                      {{traitId | i18nRow:'traits' | i18n}}
                     </div>
                   </ng-template>
                   <ng-template #more>

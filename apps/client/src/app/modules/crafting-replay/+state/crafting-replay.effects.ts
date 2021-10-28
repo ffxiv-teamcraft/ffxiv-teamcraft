@@ -8,7 +8,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CraftingReplay } from '../model/crafting-replay';
 import { CraftingReplayDbService } from '../../../core/database/crafting-replay-db.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 
 @Injectable()
 export class CraftingReplayEffects {

@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { MapMarker } from '../../../modules/map/map-marker';
 import { MapService } from '../../../modules/map/map.service';
 import { uniq } from 'lodash';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-treasure-finder',
@@ -20,20 +20,27 @@ export class TreasureFinderComponent {
 
   selectedTreasure$: ReplaySubject<any> = new ReplaySubject<any>();
 
-  maps$ = this.lazyData.data$.pipe(
-    map(data => {
-      return Object.values<any>(data.maps).filter(row => {
-        return data.treasures.some(t => t.map === row.id);
+  maps$ = combineLatest([
+    this.lazyData.getEntry('maps'),
+    this.lazyData.getEntry('treasures')
+  ]).pipe(
+    map(([maps, treasures]) => {
+      return Object.values(maps).filter(row => {
+        return treasures.some(t => t.map === row.id);
       });
     })
   );
 
-  treasures$: Observable<any[]> = this.map$.pipe(
-    map(mapId => {
-      return this.lazyData.data.treasures
+  treasures$: Observable<any[]> = combineLatest([
+    this.map$,
+    this.lazyData.getEntry('treasures'),
+    this.lazyData.getEntry('maps')
+  ]).pipe(
+    map(([mapId, treasures, maps]) => {
+      return treasures
         .filter(t => t.map === mapId)
         .map(treasure => {
-          const mapData = this.lazyData.data.maps[treasure.map];
+          const mapData = maps[treasure.map];
           const coordsPercent = this.mapService.getPositionOnMap(mapData, treasure.coords);
           const offsetX = 78;
           const offsetY = 70;
@@ -75,7 +82,7 @@ export class TreasureFinderComponent {
     })
   );
 
-  constructor(private lazyData: LazyDataService, private mapService: MapService) {
+  constructor(private lazyData: LazyDataFacade, private mapService: MapService) {
   }
 
 }

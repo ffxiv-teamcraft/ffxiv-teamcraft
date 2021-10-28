@@ -6,8 +6,9 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { debounceTime, filter, map, startWith, tap } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-npc-picker',
@@ -24,7 +25,7 @@ export class NpcPickerComponent {
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
-              private translate: TranslateService, private lazyData: LazyDataService,
+              private translate: TranslateService, private lazyData: LazyDataFacade,
               private i18n: I18nToolsService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
@@ -36,11 +37,12 @@ export class NpcPickerComponent {
         return query.length > 3;
       }),
       tap(() => this.loading = true),
-      map(query => {
-        return Object.keys(this.lazyData.data.npcs)
+      withLazyData(this.lazyData, 'npcs', 'koNpcs'),
+      map(([query, npcs, koNpcs]) => {
+        return Object.keys(npcs)
           .map(key => {
-            const row = this.lazyData.data.npcs[key];
-            const koRow = this.lazyData.data.koNpcs[key];
+            const row = npcs[key];
+            const koRow = koNpcs[key];
             row.ko = koRow === undefined ? row.en : koRow.ko;
             row.id = key;
             return row;

@@ -1,6 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { AuthState } from './auth.reducer';
-import { Character, CharacterResponse } from '@xivapi/angular-client';
 
 // Lookup the 'Auth' feature state managed by NgRx
 const getAuthState = createFeatureSelector<AuthState>('auth');

@@ -1,15 +1,14 @@
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
-import { merge } from 'rxjs';
-import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 export class SubmarineExplorationResultReporter extends ExplorationResultReporter {
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
     super();
   }
 
@@ -74,16 +73,23 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
     return ExplorationType.SUBMARINE;
   }
 
-  private getBuildStats(rankId: number, hullId: number, sternId: number, bowId: number, bridgeId: number): { surveillance: number, retrieval: number, favor: number } {
-    const hull = this.lazyData.data.submarineParts[hullId];
-    const stern = this.lazyData.data.submarineParts[sternId];
-    const bow = this.lazyData.data.submarineParts[bowId];
-    const bridge = this.lazyData.data.submarineParts[bridgeId];
-    const rank = this.lazyData.data.submarineRanks[rankId];
-    return {
-      surveillance: +hull.surveillance + +stern.surveillance + +bow.surveillance + +bridge.surveillance + +rank.surveillanceBonus,
-      retrieval: +hull.retrieval + +stern.retrieval + +bow.retrieval + +bridge.retrieval + +rank.retrievalBonus,
-      favor: +hull.favor + +stern.favor + bow.favor + +bridge.favor + +rank.favorBonus
-    };
+  private getBuildStats(rankId: number, hullId: number, sternId: number, bowId: number, bridgeId: number): Observable<{ surveillance: number, retrieval: number, favor: number }> {
+    return combineLatest([
+      this.lazyData.getEntry('submarineParts'),
+      this.lazyData.getEntry('submarineRanks')
+    ]).pipe(
+      map(([submarineParts, submarineRanks]) => {
+        const hull = submarineParts[hullId];
+        const stern = submarineParts[sternId];
+        const bow = submarineParts[bowId];
+        const bridge = submarineParts[bridgeId];
+        const rank = submarineRanks[rankId];
+        return {
+          surveillance: +hull.surveillance + +stern.surveillance + +bow.surveillance + +bridge.surveillance + +rank.surveillanceBonus,
+          retrieval: +hull.retrieval + +stern.retrieval + +bow.retrieval + +bridge.retrieval + +rank.retrievalBonus,
+          favor: +hull.favor + +stern.favor + bow.favor + +bridge.favor + +rank.favorBonus
+        };
+      })
+    );
   }
 }

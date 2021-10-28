@@ -5,11 +5,11 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +22,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
               protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient,
               private logTrackingService: LogTrackingService) {
     super(firestore, serializer, zone, pendingChangesService);
-  }
-
-  protected prepareData(data: any): any {
-    delete data.logProgression;
-    delete data.gatheringLogProgression;
-    return super.prepareData(data);
   }
 
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {
@@ -132,6 +126,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);
         })
       );
+  }
+
+  protected prepareData(data: any): any {
+    delete data.logProgression;
+    delete data.gatheringLogProgression;
+    return super.prepareData(data);
   }
 
   protected getBaseUri(params?: any): string {

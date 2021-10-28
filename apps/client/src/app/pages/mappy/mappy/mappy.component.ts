@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { map, mapTo, switchMap, takeUntil } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { MapService } from '../../../modules/map/map.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
@@ -11,6 +10,9 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { StaticData } from '../../../lazy-data/static-data';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Component({
   selector: 'app-mappy',
@@ -32,14 +34,15 @@ export class MappyComponent extends TeamcraftComponent {
         this.xivapi.get('mappy/map' as XivapiEndpoint, mapId),
         this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true }),
         this.xivapi.getList(`mappy/map/${mapId}/nodes` as XivapiEndpoint, { staging: true }).pipe(map(res => res as any as number[])),
-        this.lazyData.data$
+        this.lazyData.getRow('maps', mapId),
+        this.lazyData.getEntry('nodes'),
+        this.lazyData.getEntry('gatheringPointToNodeId')
       ])
         .pipe(
-          map(([entries, updates, gatheringPoints, data]) => {
-            const mapData = data.maps[mapId];
-            const mapNodes = Object.entries<any>(data.nodes)
+          map(([entries, updates, gatheringPoints, mapData, nodes, gatheringPointToNodeId]) => {
+            const mapNodes = Object.entries<any>(nodes)
               .map(([id, n]) => ({ id: +id, ...n }))
-              .filter(n => n.map === mapId && n.items.length > 0 && !this.lazyData.ignoredNodes.includes(n.id));
+              .filter(n => n.map === mapId && n.items.length > 0 && !StaticData.ignoredNodes.includes(n.id));
             return {
               entries,
               updates: updates[mapId],
@@ -57,7 +60,7 @@ export class MappyComponent extends TeamcraftComponent {
                 };
               }),
               missingNodes: mapNodes.filter((node) => {
-                return !gatheringPoints.some(gatheringPoint => data.gatheringPointToNodeId[gatheringPoint] === node.id);
+                return !gatheringPoints.some(gatheringPoint => gatheringPointToNodeId[gatheringPoint] === node.id);
               })
             };
           })
@@ -70,7 +73,7 @@ export class MappyComponent extends TeamcraftComponent {
   );
 
   constructor(private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
-              private lazyData: LazyDataService, private mapService: MapService,
+              private lazyData: LazyDataFacade, private mapService: MapService,
               public translate: TranslateService, private http: HttpClient,
               private settings: SettingsService, private authFacade: AuthFacade,
               cdr: ChangeDetectorRef) {
@@ -93,16 +96,20 @@ export class MappyComponent extends TeamcraftComponent {
     return this.http.delete<T>(`https://staging.xivapi.com/mappy/${url}`, { params: queryParams });
   }
 
-  getNodeIcon(gatheringPointBaseId: number): string {
-    const nodeId = this.lazyData.data.gatheringPointToNodeId[gatheringPointBaseId];
-    const node = this.lazyData.data.nodes[nodeId];
-    if (!node) {
-      return './assets/icons/mappy/highlight.png';
-    }
-    if (node.limited) {
-      return NodeTypeIconPipe.timed_icons[node.type];
-    }
-    return NodeTypeIconPipe.icons[node.type];
+  @Memoized()
+  getNodeIcon(gatheringPointBaseId: number): Observable<string> {
+    return this.lazyData.getRow('gatheringPointToNodeId', gatheringPointBaseId).pipe(
+      switchMap(nodeId => this.lazyData.getRow('nodes', nodeId)),
+      map(node => {
+        if (!node) {
+          return './assets/icons/mappy/highlight.png';
+        }
+        if (node.limited) {
+          return NodeTypeIconPipe.timed_icons[node.type];
+        }
+        return NodeTypeIconPipe.icons[node.type];
+      })
+    );
   }
 
   trackByID(index: number, entry: any): string {

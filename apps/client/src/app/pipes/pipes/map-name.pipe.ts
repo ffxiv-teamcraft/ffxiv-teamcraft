@@ -1,14 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
+import { Observable } from 'rxjs';
+import { I18nName } from '../../model/common/i18n-name';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { mapIds } from '../../core/data/sources/map-ids';
 
 @Pipe({
-  name: 'mapName',
+  name: 'mapName'
 })
 export class MapNamePipe implements PipeTransform {
-  constructor(private data: LocalizedLazyDataService) {}
+  constructor(private lazyData: LazyDataFacade) {
+  }
 
-  transform(id: number): I18nNameLazy {
-    return this.data.getMapName(id);
+  transform(id: number): Observable<I18nName> {
+    const placeId = mapIds.find((m) => m.id === id).zone ?? 1;
+    return this.lazyData.getRow('places', placeId);
   }
 }

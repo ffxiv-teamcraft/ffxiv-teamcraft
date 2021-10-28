@@ -5,7 +5,7 @@
   [class.card-with-list]="!(loading$ | async)"
 >
   <ng-template #iconRender let-id>
-    <img [src]="id | weatherIcon" alt="" nz-tooltip [nzTooltipTitle]="id | weatherName | i18n" />
+    <img [src]="id | weatherIcon" alt="" nz-tooltip [nzTooltipTitle]="id | i18nRow:'weathers' | i18n" />
   </ng-template>
   <app-fishing-spot-datagrid
     [activeFish]="activeFish"

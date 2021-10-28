@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject, of } from 'rxjs';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
+import { mapIds } from '../data/sources/map-ids';
+import { withLazyData } from '../rxjs/with-lazy-data';
 
 @Injectable({ providedIn: 'root' })
 export class I18nToolsService {
   private readonly defaultLang = 'en' as const;
   public readonly currentLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.defaultLang);
 
-  constructor(private translator: TranslateService) {
+  constructor(private translator: TranslateService, private lazyData: LazyDataFacade) {
     // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
     // No memory leaks :)
     this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));
@@ -28,8 +31,18 @@ export class I18nToolsService {
     );
   };
 
+  public getNameObservable(entry: LazyDataI18nKey, id: number): Observable<string> {
+    return this.currentLang$.pipe(
+      switchMap(() => {
+        return this.lazyData.getI18nName(entry, id).pipe(
+          map(name => this.getName(name))
+        );
+      })
+    );
+  }
+
   public getName(i18nName: I18nName, item?: CustomItem): string {
-    if (i18nName === undefined) {
+    if (!i18nName) {
       if (item !== undefined && item.name !== undefined) {
         return item.name;
       }
@@ -66,5 +79,122 @@ export class I18nToolsService {
         return this.translator.getParsedResult(translations, key, interpolationParams);
       })
     );
+  }
+
+  public xivapiToI18n(value: any, fieldName = 'Name'): I18nName {
+    return {
+      en: value[`${fieldName}_en`],
+      fr: value[`${fieldName}_fr`],
+      de: value[`${fieldName}_de`],
+      ja: value[`${fieldName}_ja`],
+      ko: value[`${fieldName}_ko`],
+      zh: value[`${fieldName}_chs`]
+    };
+  }
+
+  public getMapName(mapId: number): Observable<string> {
+    const entry = mapIds.find((m) => m.id === mapId);
+    return this.getNameObservable('places', entry?.zone || 1);
+  }
+
+  public getActionName(id: number): Observable<string> {
+    return this.lazyData.getRow('craftActions', id).pipe(
+      switchMap(craftAction => {
+        if (craftAction) {
+          return of(craftAction);
+        }
+        return this.lazyData.getRow('actions', id);
+      }),
+      map(name => {
+        if (!name) {
+          throw new Error(`No action found for id ${id}`);
+        }
+        return this.getName(name);
+      })
+    );
+  }
+
+  public getCraftingActionIdByName(name: string, language: Language): Observable<number> {
+    let name$ = of(name);
+    if (language === 'ko') {
+      name$ = this.getEnActionFromKoActionName(name).pipe(
+        map(koName => {
+          if (koName) {
+            language = 'en';
+            return koName.en;
+          }
+          return name;
+        })
+      );
+    }
+    return name$.pipe(
+      withLazyData(this.lazyData, 'craftActions', 'actions'),
+      map(([baseName, craftActions, actions]) => {
+        let res = this.getIndexByName(craftActions, name, language, true);
+        if (res === -1) {
+          res = this.getIndexByName(actions, name, language, true);
+        }
+        if (res === -1) {
+          throw new Error('Data row not found.');
+        }
+        return res;
+      })
+    );
+  }
+
+
+  private getEnActionFromKoActionName(name: string): Observable<I18nName | null> {
+    return combineLatest([
+      this.lazyData.getEntry('koCraftActions'),
+      this.lazyData.getEntry('koActions'),
+      this.lazyData.getEntry('craftActions'),
+      this.lazyData.getEntry('actions')
+    ]).pipe(
+      map(([koCraftActions, koActions, craftActions, actions]) => {
+        const craftActionId = Object.keys(koCraftActions).find(
+          (key) => koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
+        );
+        if (craftActionId) {
+          return craftActions[craftActionId];
+        }
+        const actionId = Object.keys(koActions).find((key) => koActions[key].ko.toLowerCase() === name.toLowerCase());
+        if (actionId) {
+          return actions[actionId];
+        }
+        return null;
+      })
+    );
+  }
+
+  public getIndexByName(array: any, name: string, language: string, flip = false): number {
+    if (array === undefined) {
+      return -1;
+    }
+    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
+      language = 'en';
+    }
+    let res = -1;
+    let keys = Object.keys(array);
+    if (flip) {
+      keys = keys.reverse();
+    }
+    const cleanupRegexp = /[^a-z\s,.]/;
+    for (const key of keys) {
+      if (!array[key]) {
+        continue;
+      }
+      if (array[key].name && array[key].name[language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        res = +key;
+        break;
+      }
+      if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        res = +key;
+        break;
+      }
+    }
+    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
+      return this.getIndexByName(array, name, 'en');
+    }
+    return res;
   }
 }

@@ -44,7 +44,7 @@
              fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
           <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
-               [src]="762 | statusIcon | xivapiIcon"
+               [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
                alt="" class="fish-eyes-alarm">
           <ng-container *ngIf="showAlarmsIntegration">
             <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
@@ -81,7 +81,7 @@
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
     <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
       <div *ngFor="let weather of node.weathersFrom">
-        <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+        <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
              nz-tooltip>
       </div>
     </div>
@@ -90,7 +90,7 @@
     </div>
     <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
       <div *ngFor="let weather of node.weathers">
-        <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+        <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
              nz-tooltip>
       </div>
     </div>

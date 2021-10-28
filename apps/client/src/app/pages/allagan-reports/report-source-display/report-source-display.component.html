@@ -10,7 +10,7 @@
     <img *ngSwitchCase="AllaganReportSource.LOOT" alt="Loot" class="img-icon round-icon" src="./assets/icons/chest_open.png">
     <img *ngSwitchCase="AllaganReportSource.FISHING" alt="Fishing" class="img-icon round-icon" [src]="4 | nodeTypeIcon">
     <img *ngSwitchCase="AllaganReportSource.SPEARFISHING" alt="Fishing" class="img-icon round-icon" [src]="5 | nodeTypeIcon">
-    <img *ngSwitchCase="AllaganReportSource.FATE" alt="FATE" class="img-icon round-icon" [src]="(397 | fate).icon | xivapiIcon">
+    <img *ngSwitchCase="AllaganReportSource.FATE" alt="FATE" class="img-icon round-icon" src="https://xivapi.com/i/060000/060501.png">
     <img *ngSwitchCase="AllaganReportSource.MOGSTATION" alt="MOGSTATION" class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
   </div>
   <div>{{('ALLAGAN_REPORTS.SOURCE.' + source) | translate}}</div>

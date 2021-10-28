@@ -1,6 +1,6 @@
 <div [fxLayout]="flex" [fxLayoutAlign]="flexLayoutAlign" class="position-container" fxLayoutGap="5px">
   <div *ngIf="showMapName">{{ mapId | mapName | i18n }}</div>
-  <div *ngIf="showZoneName">{{ zoneId | placeName | i18n }}</div>
+  <div *ngIf="showZoneName">{{ zoneId | i18nRow:'places' | i18n }}</div>
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div *ngIf="!hideCoords">X: {{ getMarker().x }} - Y: {{ getMarker().y }}</div>
     <button (click)="openMap()" [nzTooltipTitle]="'See_on_map' | translate" nz-button nz-tooltip nzShape="circle" nzSize="small">

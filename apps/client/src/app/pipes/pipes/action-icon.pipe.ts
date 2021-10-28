@@ -2,20 +2,21 @@ import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core
 import { isNil } from 'lodash';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { LazyDataProviderService } from '../../core/data/lazy-data-provider.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
   name: 'actionIcon',
-  pure: false,
+  pure: false
 })
 export class ActionIconPipe implements PipeTransform, OnDestroy {
   private static readonly DEFAULT = 'assets/icons/remove_final_appraisal.png';
-  private readonly actionIcons$ = this.lazyData.getLazyData('actionIcons');
+  private readonly actionIcons$ = this.lazyData.getEntry('actionIcons');
   private sub?: Subscription;
   private currentId?: number;
   private currentValue?: string;
 
-  constructor(private readonly cd: ChangeDetectorRef, private lazyData: LazyDataProviderService) {}
+  constructor(private readonly cd: ChangeDetectorRef, private lazyData: LazyDataFacade) {
+  }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();

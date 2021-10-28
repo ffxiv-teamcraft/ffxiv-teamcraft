@@ -1340,6 +1340,7 @@
     "Required_for_achievement": "Required for the achievements",
     "Select_spot": "Select a spot to see its details",
     "Hide_completed": "Hide completed recipes",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "Hide completed items",
     "MIN_optimized_path": "Optimized path for all MIN nodes",
     "BTN_optimized_path": "Optimized path for all BTN nodes",

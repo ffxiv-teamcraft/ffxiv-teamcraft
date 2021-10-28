@@ -33,14 +33,14 @@
       <input #amount [value]="0" class="amount-input" nz-input type="number"/>
     </nz-input-group>
     <ng-template #prefixTemplate>x</ng-template>
-    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
             class="add-to-pool"
             nz-button
             nzType="primary">
       <i nz-icon nzType="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="false | ifMobile:true"
-            [disabled]="isButtonDisabled(itemName.value, +amount.value)"
+            [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
             nz-button
             nzBlock
             nzType="primary">
@@ -194,7 +194,7 @@
             [nzDescription]="description"
             [nzTitle]="nzTitle">
             <ng-template #description>
-              <span>{{entry.job | jobAbbr | i18n}} lvl {{entry.lvl}} {{entry.stars | ingameStars}}</span>
+              <span>{{entry.job | i18nRow:'jobAbbr' | i18n}} lvl {{entry.lvl}} {{entry.stars | ingameStars}}</span>
               <span *ngIf="entry.missing.length > 0">
               {{'RECIPE_FINDER.Missing' | translate}}
                 <span *ngFor="let missing of entry.missing;let last=last">{{missing.id | itemName | i18n}}
@@ -208,7 +208,7 @@
                 <img *ngFor="let leve of entry.leves"
                      src="./assets/icons/leve.png" alt="leves"
                      class="leve-icon"
-                     nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
+                     nz-tooltip [nzTooltipTitle]="leve | i18nRow:'leves' | i18n">
                 <nz-tag *ngIf="entry.missingLevel"
                         [style.border-color]="'#f50'"
                         class="custom-tag">{{'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate }}</nz-tag>
@@ -259,7 +259,7 @@
             [nzDescription]="description"
             [nzTitle]="nzTitle">
             <ng-template #description>
-              {{row.entry.job | jobAbbr | i18n}} lvl {{row.entry.lvl}} {{row.entry.stars | ingameStars}}
+              {{row.entry.job | i18nRow:'jobAbbr' | i18n}} lvl {{row.entry.lvl}} {{row.entry.stars | ingameStars}}
             </ng-template>
             <ng-template #nzTitle>
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

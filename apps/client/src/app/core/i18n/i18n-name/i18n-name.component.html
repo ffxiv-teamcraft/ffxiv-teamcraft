@@ -1,0 +1,9 @@
+<ng-container *ngIf="i18nName$ | i18n as displayString; else loading">{{displayString}}</ng-container>
+<ng-template #loading>
+  <nz-skeleton
+    nzActive="true"
+    [nzTitle]="{width: +width}"
+    [nzParagraph]="false"
+  ></nz-skeleton>
+</ng-template>
+

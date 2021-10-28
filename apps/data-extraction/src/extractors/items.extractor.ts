@@ -86,14 +86,14 @@ export class ItemsExtractor extends AbstractExtractor {
                   {
                     ID: 12,
                     NQ: item.DamagePhys,
-                    HQ: item.DamagePhys + item.BaseParamValueSpecial0
+                    HQ: item.DamagePhys + (+item.BaseParamValueSpecial0)
                   });
               } else {
                 itemMainAttributes[item.ID].push(
                   {
                     ID: 13,
                     NQ: item.DamageMag,
-                    HQ: item.DamageMag + item.BaseParamValueSpecial1
+                    HQ: item.DamageMag + (+item.BaseParamValueSpecial1)
                   });
               }
             }
@@ -101,12 +101,12 @@ export class ItemsExtractor extends AbstractExtractor {
               itemMainAttributes[item.ID].push({
                   ID: 21,
                   NQ: item.DefensePhys,
-                  HQ: item.DefensePhys + item.BaseParamValueSpecial0
+                  HQ: item.DefensePhys + (+item.BaseParamValueSpecial0)
                 },
                 {
                   ID: 24,
                   NQ: item.DefenseMag,
-                  HQ: item.DefenseMag + item.BaseParamValueSpecial1
+                  HQ: item.DefenseMag + (+item.BaseParamValueSpecial1)
                 });
             }
             if (itemMainAttributes[item.ID].length === 0) {

@@ -3,12 +3,12 @@
     <nz-form-item *ngFor="let control of form.controls | keys">
       <nz-form-control>
         <nz-input-group [nzPrefix]="jobIcon">
-          <input [formControlName]="control" [nzTooltipTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
+          <input [formControlName]="control" [nzTooltipTitle]="+control | i18nRow:'jobName' | i18n" class="lvl-input" min="0" nz-input
                  nz-tooltip
                  required type="number"/>
         </nz-input-group>
         <ng-template #jobIcon>
-          <img *ngIf="((+control | jobAbbr).en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+          <img *ngIf="((+control | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
         </ng-template>
       </nz-form-control>
     </nz-form-item>
@@ -25,13 +25,13 @@
     <nz-tab *ngFor="let row of results" [nzTitle]="title">
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <img *ngIf="((row.job | jobAbbr).en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
-          <div>{{row.job | jobName | i18n}}</div>
+          <img *ngIf="((row.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+          <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
         </div>
       </ng-template>
       <ng-template nz-tab>
         <nz-collapse *ngIf="row.groups.length > 0; else noCollectables">
-          <nz-collapse-panel [nzHeader]="group.groupId | collectablesShopGroupName | i18n" [nzActive]="first" *ngFor="let group of row.groups; first as first">
+          <nz-collapse-panel [nzHeader]="group.groupId | i18nRow:'collectablesShopItemGroup' | i18n" [nzActive]="first" *ngFor="let group of row.groups; first as first">
             <div fxLayout="column" fxLayoutGap="10px">
               <div *ngFor="let collectable of group.collectables" nz-row>
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4">
@@ -66,7 +66,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{getExp(row.level, collectable, collectable.base.exp) | number}}
+                    {{(collectable.expBase[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
@@ -77,7 +77,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{getExp(row.level, collectable, collectable.mid.exp) | number}}
+                    {{(collectable.expMid[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
@@ -88,7 +88,7 @@
                   </div>
                   <div>
                     <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                    {{getExp(row.level, collectable, collectable.high.exp) | number}}
+                    {{(collectable.expHigh[row.level - 1] || 10000) | number}}
                   </div>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="6">
@@ -128,25 +128,3 @@
     </nz-tab>
   </nz-tabset>
 </app-page-loader>
-
-<ng-template #notificationRef let-notification>
-  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
-                                                  nzType="check-circle"></i></span>
-    <div>
-      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
-      <div class="ant-notification-notice-description">
-        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
-        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
-          itemcount: itemsAdded,
-          listname: modifiedList.name
-        } }}</span>
-      </div>
-      <span class="ant-notification-notice-btn">
-            <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
-              <span>{{'Open' | translate}}</span>
-            </a>
-          </span>
-    </div>
-  </div>
-</ng-template>

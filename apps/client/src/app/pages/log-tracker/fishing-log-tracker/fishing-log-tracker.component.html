@@ -34,7 +34,7 @@
               nzMode="inline">
             <ng-container *ngFor="let area of tabsDisplay.tabs">
               <li *ngIf="!hideCompleted || area.done < area.total" nz-submenu class="fsh-area-box">
-                <span class="fsh-area-title" title>{{area.placeId | placeName | i18n}} ({{area.done}}/{{area.total}})</span>
+                <span class="fsh-area-title" title>{{area.placeId | i18nRow:'places' | i18n}} ({{area.done}}/{{area.total}})</span>
                 <ul class="fsh-area-list">
                   <ng-container *ngFor="let spot of area.spots">
                     <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total"
@@ -42,7 +42,7 @@
                         fxLayout="row"
                         fxLayoutAlign="space-between center"
                         nz-menu-item>
-                      <div>{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})</div>
+                      <div>{{spot.placeId | i18nRow:'places' | i18n}} ({{spot.done}}/{{spot.total}})</div>
                       <app-db-button type="fishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 0"></app-db-button>
                       <app-db-button type="spearfishing-spot" [id]="spot.id" *ngIf="(type$ | async) === 1"></app-db-button>
                     </li>
@@ -53,7 +53,7 @@
           </ul>
           <div *ngIf="pageDisplay$ | async as spot; else noSelectedSpot" fxFlex="1 1 auto" fxLayout="column"
                fxLayoutGap="5px">
-            <h2 class="spot-title">{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})</h2>
+            <h2 class="spot-title">{{spot.placeId | i18nRow:'places' | i18n}} ({{spot.done}}/{{spot.total}})</h2>
             <div fxLayout="row" fxLayoutGap="5px">
               <div *ngIf="true | ifMobile: false" fxFlex="0 1 400px">
                 <app-map [mapId]="spot.mapId" [markers]="[spot.coords]"></app-map>
@@ -102,7 +102,7 @@
                                       <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
                                       {{display.remainingTime | timer}}
                                       <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
-                                      <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+                                      <img *ngIf="display.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                                            [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
                                     </button>
                                     <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
@@ -151,7 +151,7 @@
                               <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                                 <div *ngIf="entry.gatheringNode.weathersFrom?.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
                                   <div *ngFor="let weather of entry.gatheringNode.weathersFrom">
-                                    <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                    <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                                          nz-tooltip>
                                   </div>
                                 </div>
@@ -160,7 +160,7 @@
                                 </div>
                                 <div *ngIf="entry.gatheringNode.weathers?.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
                                   <div *ngFor="let weather of entry.gatheringNode.weathers">
-                                    <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                    <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                                          nz-tooltip>
                                   </div>
                                 </div>
@@ -171,7 +171,7 @@
                         </ng-container>
                         <ng-template #baseData>
                           <div>
-                            {{item.zoneId | placeName | i18n}}
+                            {{item.zoneId | i18nRow:'places' | i18n}}
                           </div>
                         </ng-template>
                       </div>

@@ -275,7 +275,7 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
         logTracking: {
           ...state.logTracking,
           [action.log]: [
-            ...state.logTracking[action.log],
+            ...(state.logTracking[action.log] || []),
             action.itemId
           ]
         }

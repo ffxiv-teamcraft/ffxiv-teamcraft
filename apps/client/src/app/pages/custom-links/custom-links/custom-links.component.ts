@@ -51,6 +51,10 @@ export class CustomLinksComponent {
     this.customLinksFacade.loadMyCustomLinks();
   }
 
+  deleteLink(key: string): void {
+    this.customLinksFacade.deleteCustomLink(key);
+  }
+
   private loadTargetName(link: CustomLink): Observable<string> {
     switch (link.getType()) {
       case 'list': {
@@ -122,10 +126,6 @@ export class CustomLinksComponent {
         );
       }
     }
-  }
-
-  deleteLink(key: string): void {
-    this.customLinksFacade.deleteCustomLink(key);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { VesselType } from '../../../../modules/free-company-workshops/model/vessel-type';
 import { TranslateService } from '@ngx-translate/core';
 import { Submarine } from '../../../../modules/free-company-workshops/model/submarine';
@@ -16,6 +16,9 @@ export class VesselListComponent {
   @Input() airshipMaxRank: number;
   @Input() submarineMaxRank: number;
 
+  constructor(public translate: TranslateService) {
+  }
+
   get isAirshipsEmpty(): boolean {
     return this.airships?.filter((vessel) => vessel?.rank > 0).length === 0;
   }
@@ -26,9 +29,6 @@ export class VesselListComponent {
 
   get vesselTypeEnum(): typeof VesselType {
     return VesselType;
-  }
-
-  constructor(public translate: TranslateService) {
   }
 
   getNoVesselMessageByVesselType(vesselType: VesselType): string {

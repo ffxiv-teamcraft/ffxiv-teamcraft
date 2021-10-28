@@ -22,14 +22,41 @@ type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
-
-  private readonly _ipc: IpcRenderer | undefined = undefined;
-
-  private totalPacketsHandled = 0;
-
-  private start = Date.now();
-
   public packets$ = new Subject<Message>();
+  public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
+  public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
+  public possibleMissingFirewallRule$ = this.packets$.pipe(
+    bufferCount(100),
+    first(),
+    map(packets => {
+      return packets.every(packet => packet.header.operation === 'send');
+    }),
+    shareReplay(1)
+  );
+  private readonly _ipc: IpcRenderer | undefined = undefined;
+  private totalPacketsHandled = 0;
+  private start = Date.now();
+  private stateSubscription: Subscription;
+
+  constructor(private platformService: PlatformService, private router: Router,
+              private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
+              private translate: TranslateService) {
+    // Only load ipc if we're running inside electron
+    if (platformService.isDesktop()) {
+      if (window.require) {
+        try {
+          this._ipc = window.require('electron').ipcRenderer;
+          this._ipc.setMaxListeners(0);
+          this.connectListeners();
+        } catch (e) {
+          throw e;
+        }
+      } else {
+        console.warn('Electron\'s IPC was not loaded');
+      }
+    }
+  }
 
   public get ready(): boolean {
     return this._ipc !== undefined;
@@ -246,42 +273,6 @@ export class IpcService {
     return this.machinaToggle$.value;
   }
 
-  public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
-  public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
-
-  public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
-
-  private stateSubscription: Subscription;
-
-  public possibleMissingFirewallRule$ = this.packets$.pipe(
-    bufferCount(100),
-    first(),
-    map(packets => {
-      return packets.every(packet => packet.header.operation === 'send');
-    }),
-    shareReplay(1)
-  );
-
-  constructor(private platformService: PlatformService, private router: Router,
-              private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
-              private translate: TranslateService) {
-    // Only load ipc if we're running inside electron
-    if (platformService.isDesktop()) {
-      if (window.require) {
-        try {
-          this._ipc = window.require('electron').ipcRenderer;
-          this._ipc.setMaxListeners(0);
-          this.connectListeners();
-        } catch (e) {
-          throw e;
-        }
-      } else {
-        console.warn('Electron\'s IPC was not loaded');
-      }
-    }
-  }
-
   private _overlayUri: string;
 
   public get overlayUri(): string {
@@ -323,6 +314,10 @@ export class IpcService {
       registrationUri: registrationUri,
       defaultDimensions: defaultDimensions
     });
+  }
+
+  public log(...args: any[]): void {
+    this.send('log', args);
   }
 
   private connectListeners(): void {
@@ -438,9 +433,5 @@ export class IpcService {
         console.info(packet.type, packet);
       }
     }
-  }
-
-  public log(...args: any[]): void {
-    this.send('log', args);
   }
 }

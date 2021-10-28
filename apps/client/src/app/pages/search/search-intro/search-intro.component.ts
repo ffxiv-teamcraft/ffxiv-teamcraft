@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 

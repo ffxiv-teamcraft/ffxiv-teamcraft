@@ -16,13 +16,8 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
   providers: [FishingSpotUtilsService]
 })
 export class FishingSpotWeatherTransitionsComponent {
+  public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
   private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
-
-  @Input()
-  public set spot(value: XivApiFishingSpot | undefined) {
-    this.spot$.next(value);
-  }
-
   private readonly time$ = this.etime.getEorzeanTime().pipe(distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8));
 
   public readonly weatherTransitions$ = combineLatest([this.spot$, this.time$]).pipe(
@@ -52,13 +47,16 @@ export class FishingSpotWeatherTransitionsComponent {
     shareReplay(1)
   );
 
-  public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
-
   constructor(
     public readonly utils: FishingSpotUtilsService,
     public readonly translate: TranslateService,
     private readonly etime: EorzeanTimeService,
     private readonly weatherService: WeatherService
   ) {
+  }
+
+  @Input()
+  public set spot(value: XivApiFishingSpot | undefined) {
+    this.spot$.next(value);
   }
 }

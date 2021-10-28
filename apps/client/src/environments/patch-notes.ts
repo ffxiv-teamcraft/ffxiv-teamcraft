@@ -9,4 +9,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** importing 500+.`;
+* **db:** importing 500+.`;

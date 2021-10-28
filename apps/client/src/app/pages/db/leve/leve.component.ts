@@ -3,10 +3,8 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
@@ -42,33 +40,12 @@ export class LeveComponent extends TeamcraftPageComponent {
   public npcs$: Observable<{ id: number, issuer?: boolean, client?: boolean }[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
-              private linkTools: LinkToolsService, public settings: SettingsService,
-              seo: SeoService) {
+              private router: Router, private linkTools: LinkToolsService,
+              public settings: SettingsService, seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
-      if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      } else if (slug !== this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getLeve(+params.get('leveId'))).split(' ').join('-')],
-          {
-            relativeTo: this.route,
-            replaceUrl: true
-          }
-        );
-      }
-    });
+    this.updateSlug(router, i18n, route, 'leves', 'leveId');
 
     const leveId$ = this.route.paramMap.pipe(
       filter(params => params.get('slug') !== null),
@@ -112,7 +89,7 @@ export class LeveComponent extends TeamcraftPageComponent {
             const item = leve.BattleLeve[`ItemsInvolved${index}`];
             return {
               id: item.ID,
-              name: this.l12n.xivapiToI18n(item, 'eventItems'),
+              name: this.i18n.xivapiToI18n(item, 'eventItems'),
               icon: item.Icon,
               amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
               dropRate: leve.BattleLeve[`ItemDropRate${index}`]
@@ -200,16 +177,6 @@ export class LeveComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'));
-  }
-
-  private getDescription(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'));
-  }
-
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiLeve$.pipe(
       map((leve) => {
@@ -221,6 +188,16 @@ export class LeveComponent extends TeamcraftPageComponent {
         };
       })
     );
+  }
+
+  private getName(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.i18n.xivapiToI18n(item));
+  }
+
+  private getDescription(item: any): string {
+    // We might want to add more details for some specific items, which is why this is a method.
+    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Description'));
   }
 
 }

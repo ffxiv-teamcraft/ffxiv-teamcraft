@@ -11,7 +11,7 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
         <div fxLayout="column">
-          <div>{{ row.weatherId | weatherName | i18n }}</div>
+          <div>{{ row.weatherId | i18nRow:'weathers' | i18n }}</div>
           <div>
             <span>{{ 'DB.FISHING_SPOT.Next' | translate }}: {{ row.next | date: 'short':undefined:translate.currentLang }}</span>
           </div>

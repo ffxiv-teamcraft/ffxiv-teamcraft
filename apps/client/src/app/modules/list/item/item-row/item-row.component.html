@@ -4,7 +4,7 @@
      fxLayout="row wrap" nz-row *ngIf="item$ | async as item">
   <div [nzSm]="item.alarms && item.alarms.length > 0?12:6" class="block left-block" nz-col nzMd="8" [nzXs]="overlay?12:24">
     <div *ngIf="!item.custom" class="icon">
-      <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+      <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
                      [width]="24" [forceCollectable]="item.collectable"></app-item-icon>
     </div>
     <div fxLayout="column" fxLayoutGap="5px">
@@ -18,7 +18,7 @@
             <span [itemNameCopy]="item.id"
                   class="item-name"
                   nz-tooltip>
-              {{item.id | itemName: item | i18n}}
+              <app-i18n-name content="items" [id]="item.id" [fallback]="item.name"></app-i18n-name>
             </span>
             <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
               <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
@@ -178,7 +178,7 @@
     </ng-container>
     <div *ngIf="layout?.showVendors && (item.vendors || []).length > 0" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <b>
-        {{item.vendors[0].npcId | npcName | i18n}},
+        {{item.vendors[0].npcId | i18nRow:'npcs' | i18n}},
       </b>
       <app-map-position [mapId]="item.vendors[0].mapId"
                         [zoneId]="item.vendors[0].zoneId"

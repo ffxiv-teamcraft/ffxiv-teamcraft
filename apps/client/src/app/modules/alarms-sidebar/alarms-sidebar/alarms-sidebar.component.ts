@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapComponent } from '../../map/map/map.component';
@@ -28,7 +27,7 @@ export class AlarmsSidebarComponent implements OnInit {
   public overlayMode = false;
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
-              private dialog: NzModalService, private l12n: LocalizedDataService,
+              private dialog: NzModalService,
               private i18n: I18nToolsService, public settings: SettingsService,
               private cd: ChangeDetectorRef) {
   }
@@ -42,19 +41,21 @@ export class AlarmsSidebarComponent implements OnInit {
   }
 
   hideAlarm(alarm: Alarm): void {
-    alarm.enabled = false
+    alarm.enabled = false;
     this.alarmsFacade.updateAlarm(alarm);
   }
 
   openMap(alarm: Alarm): void {
-    this.dialog.create({
-      nzTitle: this.i18n.getName(this.l12n.getPlace(alarm.zoneId)),
-      nzContent: MapComponent,
-      nzComponentParams: {
-        mapId: alarm.mapId,
-        markers: [alarm.coords]
-      },
-      nzFooter: null
+    this.i18n.getNameObservable('places', alarm.zoneId).subscribe(title => {
+      this.dialog.create({
+        nzTitle: title,
+        nzContent: MapComponent,
+        nzComponentParams: {
+          mapId: alarm.mapId,
+          markers: [alarm.coords]
+        },
+        nzFooter: null
+      });
     });
   }
 

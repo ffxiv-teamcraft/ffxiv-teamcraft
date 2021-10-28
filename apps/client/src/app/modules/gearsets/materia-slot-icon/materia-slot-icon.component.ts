@@ -1,6 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { MateriaService } from '../materia.service';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { map, switchMap } from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
 
 @Component({
   selector: 'app-materia-slot-icon',
@@ -8,7 +11,7 @@ import { MateriaService } from '../materia.service';
   styleUrls: ['./materia-slot-icon.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MateriaSlotIconComponent implements OnInit {
+export class MateriaSlotIconComponent {
 
   @Input()
   equipmentPiece: EquipmentPiece;
@@ -16,31 +19,47 @@ export class MateriaSlotIconComponent implements OnInit {
   @Input()
   index: number;
 
-  meldingChances = 0;
+  index$ = observeInput(this, 'index');
+  equipmentPiece$ = observeInput(this, 'equipmentPiece');
+
+  materiaGrade$ = combineLatest([
+    this.index$,
+    this.equipmentPiece$
+  ]).pipe(
+    switchMap(([index, equipmentPiece]) => {
+      return this.materiaService.getMateria(equipmentPiece.materias[index]).pipe(
+        map(materia => {
+          if (!materia) {
+            return '0';
+          }
+          const grade = materia.tier - 1;
+          return grade.toString().padStart(2, '0');
+        })
+      );
+    })
+  );
+
+  meldingChances$ = combineLatest([
+    this.index$,
+    this.equipmentPiece$
+  ]).pipe(
+    switchMap(([index, equipmentPiece]) => {
+      if (equipmentPiece.materias[index]) {
+        return this.materiaService.getMeldingChances(equipmentPiece, equipmentPiece.materias[index], index);
+      }
+      return of(0);
+    })
+  );
+
 
   constructor(private materiaService: MateriaService) {
   }
 
-  getSlotType(): string {
-    if (this.equipmentPiece.materiaSlots > this.index) {
+  getSlotType(equipmentPiece: EquipmentPiece, index: number): string {
+    if (equipmentPiece.materiaSlots > index) {
       return 'normal';
     }
     return 'overmeld';
-  }
-
-  getMateriaGrade(): string {
-    const materia = this.materiaService.getMateria(this.equipmentPiece.materias[this.index]);
-    if (!materia) {
-      return '0';
-    }
-    const grade = materia.tier - 1;
-    return `${grade < 10 ? '0' : ''}${grade}`;
-  }
-
-  ngOnInit(): void {
-    if (this.equipmentPiece.materias[this.index]) {
-      this.meldingChances = this.materiaService.getMeldingChances(this.equipmentPiece, this.equipmentPiece.materias[this.index], this.index);
-    }
   }
 
 }

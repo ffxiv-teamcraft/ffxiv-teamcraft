@@ -35,9 +35,6 @@ export class CharacterLinkPopupComponent {
   public useAsDefault = false;
 
   public mandatory = false;
-
-  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
-
   public chineseServers = [
     'HongYuHai',
     'ShenYiZhiDi',
@@ -78,6 +75,7 @@ export class CharacterLinkPopupComponent {
     'RouFengHaiWan',
     'HuPoYuan'
   ];
+  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {

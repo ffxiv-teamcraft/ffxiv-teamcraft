@@ -6,10 +6,10 @@
         <nz-select formControlName="job" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
                    class="job-filter"
                    nzShowSearch>
-          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job | jobName | i18n" [nzValue]="job" nzCustomContent>
+          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job | i18nRow:'jobName' | i18n" [nzValue]="job" nzCustomContent>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
-              <div>{{job | jobName | i18n}}</div>
+              <div>{{job | i18nRow:'jobName' | i18n}}</div>
             </div>
           </nz-option>
         </nz-select>

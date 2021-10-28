@@ -4,7 +4,7 @@
                (click)="$event.stopPropagation();"
                [nzPlaceHolder]="'INVENTORY.Filter_by_expansion' | translate"
                [(ngModel)]="selectedExpansion">
-      <nz-option *ngFor="let e of getExpansions()" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
+      <nz-option *ngFor="let e of expansions$ | async" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
     </nz-select>
     <nz-input-group [nzSuffix]="suffixIconSearch">
       <input type="text" nz-input [placeholder]="'INVENTORY.Search_for_an_item' | translate"

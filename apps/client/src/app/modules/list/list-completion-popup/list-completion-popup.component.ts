@@ -4,6 +4,7 @@ import { ListsFacade } from '../+state/lists.facade';
 import { List } from '../model/list';
 import { Router } from '@angular/router';
 import { CommissionsFacade } from '../../commission-board/+state/commissions.facade';
+import { ListController } from '../list-controller';
 
 @Component({
   selector: 'app-list-completion-popup',
@@ -33,7 +34,7 @@ export class ListCompletionPopupComponent {
   }
 
   resetList(): void {
-    this.list.reset();
+    ListController.reset(this.list);
     this.listsFacade.updateList(this.list);
     this.close();
   }

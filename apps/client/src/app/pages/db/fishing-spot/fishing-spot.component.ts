@@ -6,11 +6,10 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { FishContextService } from '../service/fish-context.service';
@@ -25,14 +24,14 @@ export type XivApiFishingSpot = any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
   private readonly loadingSub$ = new BehaviorSubject<boolean>(false);
   public readonly loading$ = this.loadingSub$.pipe(distinctUntilChanged());
-
   public readonly xivapiFishingSpot$: Observable<XivApiFishingSpot> = this.fishContext.spotId$.pipe(
     filter((spotId) => spotId >= 0),
     switchMap((id) => {
       this.loadingSub$.next(true);
-      return combineLatest([this.xivapi.get(XivapiEndpoint.FishingSpot, id), this.lazyData.fishingSpots$, this.lazyData.diademTerritory$]);
+      return combineLatest([this.xivapi.get(XivapiEndpoint.FishingSpot, id), this.lazyData.getEntry('fishingSpots'), this.lazyData.getEntry('diademTerritory')]);
     }),
     map(([spot, allSpots, diademTerritory]) => {
       spot.customData = allSpots.find((s) => s.id === spot.ID);
@@ -45,16 +44,13 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     shareReplay(1)
   );
 
-  public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
-
   constructor(
     private readonly route: ActivatedRoute,
     private readonly xivapi: XivapiService,
-    private readonly l12nLazy: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
-    private readonly lazyData: LazyDataService,
+    private readonly lazyData: LazyDataFacade,
     public readonly settings: SettingsService,
     private readonly dialog: NzModalService,
     private readonly fishContext: FishContextService,
@@ -68,9 +64,9 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
     const slug$ = this.route.paramMap.pipe(map((params) => params.get('slug') ?? undefined));
     const spotId$ = this.route.paramMap.pipe(map((params) => +params.get('spotId') || undefined));
-    const correctSlug$ = combineLatest([spotId$, this.lazyData.fishingSpots$]).pipe(
+    const correctSlug$ = combineLatest([spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
       map(([spotId, spots]) => spots.find((spot) => spot.id === spotId)?.zoneId),
-      switchMap((placeId) => (!placeId ? of(undefined) : this.i18n.resolveName(this.l12nLazy.getPlace(placeId)))),
+      switchMap((placeId) => (!placeId ? of(undefined) : this.i18n.getNameObservable('places', placeId))),
       map((name) => name?.split(' ').join('-'))
     );
 
@@ -102,7 +98,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiFishingSpot$.pipe(
-      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.resolveName(this.l12nLazy.xivapiToI18n(fishingSpot.PlaceName, 'places'))])),
+      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.getNameObservable('places', fishingSpot.PlaceName)])),
       map(([fishingSpot, title]) => {
         return {
           title,

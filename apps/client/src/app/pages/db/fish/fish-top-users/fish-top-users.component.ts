@@ -8,7 +8,7 @@ import { FishContextService } from '../../service/fish-context.service';
   selector: 'app-fish-top-users',
   templateUrl: './fish-top-users.component.html',
   styleUrls: ['./fish-top-users.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishTopUsersComponent {
   public readonly loading$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.loading));
@@ -18,7 +18,8 @@ export class FishTopUsersComponent {
     startWith([])
   );
 
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService, public readonly translate: TranslateService) {}
+  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService, public readonly translate: TranslateService) {
+  }
 
   getRankIcon(rank: number): string {
     if (rank < 1 || rank > 3) {

@@ -5,7 +5,6 @@ import { DataService } from './api/data.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { LocalizedDataService } from './data/localized-data.service';
 import { PushNotificationsModule } from 'ng-push-ivy';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
@@ -15,10 +14,10 @@ import { MathToolsService } from './tools/math-tools';
 import { EorzeanTimeService } from './eorzea/eorzean-time.service';
 import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LinkToolsService } from './tools/link-tools.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
@@ -33,7 +32,6 @@ import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
 import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
 import { AdminGuard } from './guard/admin.guard';
-import { BlogPostNotification } from '../model/notification/blog-post-notification';
 import { ErrorInterceptor } from './interceptor/error-interceptor';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
 import { DevGuard } from './guard/dev.guard';
@@ -50,15 +48,20 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
 import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
+import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { CommonModule } from '@angular/common';
+import { I18nRowPipe } from './i18n/i18n-row.pipe';
 
 
 @NgModule({
   imports: [
+    CommonModule,
     TranslateModule,
     HttpClientModule,
     NgSerializerModule.forChild([
@@ -69,7 +72,6 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
           LIST_ITEM_COMMENT: ListItemCommentNotification,
           DB_ITEM_COMMENT: DbItemCommentNotification,
           DB_COMMENT_REPLY: DbCommentReplyNotification,
-          BLOG_POST: BlogPostNotification,
           COMMISSION: CommissionNotification
         }
       },
@@ -96,7 +98,8 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     NzToolTipModule,
     NzIconModule,
     NzDividerModule,
-    NzModalModule
+    NzModalModule,
+    NzSkeletonModule
   ],
   providers: [
     PendingChangesService,
@@ -123,7 +126,9 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     MouseWheelDirective,
     SupportUsPopupComponent,
     ClipboardDirective,
-    ItemNameClipboardDirective
+    ItemNameClipboardDirective,
+    I18nNameComponent,
+    I18nRowPipe
   ],
   exports: [
     I18nPipe,
@@ -141,10 +146,12 @@ import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
     MouseWheelDirective,
     ClipboardDirective,
     ItemNameClipboardDirective,
+    I18nNameComponent,
 
     NzButtonModule,
     NzToolTipModule,
-    NzIconModule
+    NzIconModule,
+    I18nRowPipe
   ]
 })
 export class CoreModule {
@@ -154,7 +161,6 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        LocalizedDataService,
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };

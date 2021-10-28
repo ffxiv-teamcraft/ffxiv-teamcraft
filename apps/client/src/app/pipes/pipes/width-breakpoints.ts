@@ -14,7 +14,7 @@ export class WidthBreakpointsPipe<T> implements PipeTransform {
   transform(config: Record<number, T> & { default: T }): T {
     if (config !== this.input) {
       this.sub?.unsubscribe();
-      const keys = Object.keys(config).filter(key => key !== 'default').map(key => +key).sort((a,b) => a - b);
+      const keys = Object.keys(config).filter(key => key !== 'default').map(key => +key).sort((a, b) => a - b);
       this.sub = fromEvent(window, 'resize')
         .pipe(
           auditTime(100),

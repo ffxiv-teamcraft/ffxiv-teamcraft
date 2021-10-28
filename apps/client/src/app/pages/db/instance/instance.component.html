@@ -6,10 +6,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | instanceName | i18n}}"
+          <img [src]="xivapiInstance.Icon | xivapiIcon" alt="{{xivapiInstance.ID | i18nRow:'instances' | i18n}}"
                class="item-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiInstance.ID | instanceName | i18n}}</h2>
+            <h2 class="item-name">{{xivapiInstance.ID | i18nRow:'instances' | i18n}}</h2>
             <div *ngIf="xivapiInstance.ContentType" class="item-kind">
               {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
             </div>
@@ -31,7 +31,7 @@
         <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiInstance | instanceName"></app-i18n-display>
+                        [value]="xivapiInstance | i18nRow:'instances'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
@@ -82,10 +82,10 @@
           </div>
         </ng-template>
         <ng-container *ngIf="fight.mobs.length > 1">
-          <div *ngFor="let mob of fight.mobs">{{mob | mobName | i18n}}</div>
+          <div *ngFor="let mob of fight.mobs">{{mob | i18nRow:'mobs' | i18n}}</div>
         </ng-container>
         <ng-container *ngIf="fight.mobs.length === 1">
-          <h2>{{fight.mobs[0] | mobName | i18n}}</h2>
+          <h2>{{fight.mobs[0] | i18nRow:'mobs' | i18n}}</h2>
         </ng-container>
         <div *ngIf="fight.currency">
           <h3>
@@ -158,7 +158,7 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img class="img-icon round-icon"
                  src="./assets/icons/quest.png">
-            <div>{{gtData.instance.unlockedByQuest | questName | i18n}}</div>
+            <div>{{gtData.instance.unlockedByQuest | i18nRow:'quests' | i18n}}</div>
             <app-db-button [id]="gtData.instance.unlockedByQuest" type="quest"></app-db-button>
           </div>
         </div>

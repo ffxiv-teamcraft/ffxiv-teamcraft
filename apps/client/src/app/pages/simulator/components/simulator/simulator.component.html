@@ -136,7 +136,7 @@
       </ng-container>
       <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
               [nzShape]="'circle'" [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
-              [nzType]="'danger'" nz-button
+              nzDanger nz-button
               nz-popconfirm>
         <i nz-icon nzType="desktop"></i>
       </button>
@@ -179,10 +179,10 @@
               <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
               <nz-select (ngModelChange)="customJob$.next($event)" [ngModel]="(stats$ | async)?.jobId"
                          [nzDisabled]="!custom" class="job-selector">
-                <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzLabel]="job | jobAbbr | i18n"
+                <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzLabel]="job | i18nRow:'jobAbbr' | i18n"
                            [nzValue]="job" nzCustomContent>
-                  <img *ngIf="((job | jobAbbr).en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
-                  {{job | jobAbbr | i18n}}
+                  <img *ngIf="((job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+                  {{job | i18nRow:'jobAbbr' | i18n}}
                 </nz-option>
               </nz-select>
               <nz-alert *ngIf="(stats$ | async)?.craftsmanship === 0" [nzMessage]="((loggedIn$ | async)?'SIMULATOR.CONFIGURATION.Job_not_configured':
@@ -377,14 +377,14 @@
                                      [nzLabel]="('SIMULATOR.CONFIGURATION.'+type) | translate">
                       <nz-option *ngFor="let action of getFreeCompanyActions(type)"
                                  [nzDisabled]="isFreeCompanyActionOptionDisabled(type, action.actionId)"
-                                 [nzLabel]="action.actionId | freeCompanyActionName | i18n"
+                                 [nzLabel]="action.actionId | i18nRow:'freeCompanyActions' | i18n"
                                  [nzValue]="action"></nz-option>
                     </nz-option-group>
                   </nz-select>
                   <div *ngIf="selectedFreeCompanyActions.length > 0; else noFcBuffs">
                     <div *ngFor="let action of selectedFreeCompanyActions">
                       <div>
-                        <b>{{action.actionId | freeCompanyActionName | i18n}}</b>
+                        <b>{{action.actionId | i18nRow:'freeCompanyActions' | i18n}}</b>
                       </div>
                       <div>
                         {{('SIMULATOR.CONFIGURATION.STATS.' + action.type) | translate}}: {{action.value}}

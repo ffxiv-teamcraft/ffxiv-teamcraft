@@ -22,5 +22,5 @@ export const zhWorlds = {
   MengYuBaoJing: '梦羽宝境',
   HaiMaoChaWu: '海猫茶屋',
   RouFengHaiWan: '柔风海湾',
-  HuPoYuan: '琥珀原',
+  HuPoYuan: '琥珀原'
 };

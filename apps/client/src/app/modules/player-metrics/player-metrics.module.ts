@@ -36,7 +36,6 @@ import { MetricsDisplayEditorComponent } from './display/metrics-display-editor/
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishFilter } from './filters/fish-filter';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -45,6 +44,7 @@ import { MetricsDashboardsEffects } from './+state/metrics-dashboards.effects';
 import { MetricsDashboardsFacade } from './+state/metrics-dashboards.facade';
 import { GilFilter } from './filters/gil-filter';
 import { InventoryService } from '../inventory/inventory.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 const probes: Provider[] = [
   {
@@ -95,7 +95,7 @@ const filters: Provider[] = [
   {
     provide: METRICS_DISPLAY_FILTERS,
     useClass: FishFilter,
-    deps: [LazyDataService],
+    deps: [LazyDataFacade],
     multi: true
   }
 ];

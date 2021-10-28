@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { Observable } from 'rxjs';
-import { map, first } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list-history-popup',

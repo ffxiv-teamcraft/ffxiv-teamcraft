@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, merge } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
@@ -11,10 +11,10 @@ import { ofMessageType } from '../rxjs/of-message-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { LazyDataService } from '../data/lazy-data.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { InventoryService } from '../../modules/inventory/inventory.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class PacketCaptureTrackerService {
   constructor(private ipc: IpcService, private inventoryService: InventoryService,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService, private lazyData: LazyDataService,
+              private settings: SettingsService, private lazyData: LazyDataFacade,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
   }
 
@@ -72,10 +72,10 @@ export class PacketCaptureTrackerService {
 
     combineLatest([
       this.ipc.initZonePackets$,
-      this.lazyData.data$
-    ]).subscribe(([packet, data]) => {
+      this.lazyData.getEntry('maps')
+    ]).subscribe(([packet, maps]) => {
       const mapId = territories[packet.zoneId.toString()];
-      this.eorzeaFacade.setZone(this.lazyData.data.maps[mapId].placename_id);
+      this.eorzeaFacade.setZone(maps[mapId].placename_id);
       this.eorzeaFacade.setPcapWeather(packet.weatherId, true);
       this.eorzeaFacade.setMap(mapId);
     });
@@ -84,13 +84,16 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.setPcapWeather(packet.weatherId);
     });
 
-    this.ipc.packets$.pipe(
-      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
-      toIpcData()
+    this.lazyData.getEntry('baitItems').pipe(
+      switchMap(baitItems => {
+        return this.ipc.packets$.pipe(
+          ofMessageType('actorControlSelf', 'fishingBaitMsg'),
+          toIpcData(),
+          filter(packet => baitItems.includes(packet.baitId))
+        );
+      })
     ).subscribe(packet => {
-      if (this.lazyData.data.baitItems.includes(packet.baitId)) {
-        this.eorzeaFacade.setBait(packet.baitId);
-      }
+      this.eorzeaFacade.setBait(packet.baitId);
     });
 
     this.ipc.packets$.pipe(

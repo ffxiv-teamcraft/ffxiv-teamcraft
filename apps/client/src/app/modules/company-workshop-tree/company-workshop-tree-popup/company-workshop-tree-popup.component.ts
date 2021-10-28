@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable } from 'rxjs';
 import { Ingredient } from '@ffxiv-teamcraft/simulator';
 import { map } from 'rxjs/operators';
 import { groupBy } from 'lodash';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 interface WorkshopTreeNode {
   index: number,
@@ -23,7 +23,7 @@ export class CompanyWorkshopTreePopupComponent implements OnInit {
 
   display$: Observable<WorkshopTreeNode[]>;
 
-  constructor(private modalRef: NzModalRef, private lazyData: LazyDataService) {
+  constructor(private modalRef: NzModalRef, private lazyData: LazyDataFacade) {
   }
 
   ngOnInit(): void {

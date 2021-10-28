@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
@@ -16,24 +15,17 @@ interface FishingSpotChartData {
   selector: 'app-fishing-spot-hours',
   templateUrl: './fishing-spot-hours.component.html',
   styleUrls: ['./fishing-spot-hours.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotHoursComponent implements OnInit, OnDestroy {
-  private readonly activeFish$ = new Subject<number | undefined>();
-  @Input()
-  public set activeFish(value: number | undefined) {
-    this.activeFish$.next(value >= 0 ? value : undefined);
-  }
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
-
   public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
-
   public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
-        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(map((name) => ({ id: +id, name })))
+        this.i18n.getNameObservable('items', +id).pipe(map((name) => ({ id: +id, name })))
       );
       return combineLatest([...fishNames]).pipe(
         map((names) => {
@@ -44,8 +36,8 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
               .sort(([a], [b]) => +a - +b)
               .map(([hour, value]) => ({
                 name: `${hour.padStart(2, '0')}:00`,
-                value: value ?? 0,
-              })),
+                value: value ?? 0
+              }))
           }));
         }),
         debounceTime(100)
@@ -54,29 +46,32 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
-
+  public readonly activeFishName$ = new Subject<string | undefined>();
+  private readonly activeFish$ = new Subject<number | undefined>();
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
     switchMap((fishId) => {
       if (fishId >= 0) {
-        return this.i18n.resolveName(this.l12n.getItem(fishId)).pipe(map((name) => [{ name }]));
+        return this.i18n.getNameObservable('items', fishId).pipe(map((name) => [{ name }]));
       }
       return of([]);
     }),
     startWith([])
   );
-
-  public readonly activeFishName$ = new Subject<string | undefined>();
-
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(
-    private readonly l12n: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService
-  ) {}
+  ) {
+  }
+
+  @Input()
+  public set activeFish(value: number | undefined) {
+    this.activeFish$.next(value >= 0 ? value : undefined);
+  }
 
   ngOnInit() {
     combineLatest([this.hoursChartData$, this.activeFishName$])

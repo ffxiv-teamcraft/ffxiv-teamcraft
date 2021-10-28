@@ -11,12 +11,12 @@
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <div>
           <img src="{{ row.fromId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.fromId | weatherName | i18n }}</span>
+          <span>{{ row.fromId | i18nRow:'weathers' | i18n }}</span>
         </div>
         <i nz-icon nzType="right" nzTheme="outline"></i>
         <div>
           <img src="{{ row.toId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.toId | weatherName | i18n }}</span>
+          <span>{{ row.toId | i18nRow:'weathers' | i18n }}</span>
         </div>
         <div fxFlex="1 1 auto"></div>
         <div>{{ row.percent | number: '1.0-1' }} %</div>

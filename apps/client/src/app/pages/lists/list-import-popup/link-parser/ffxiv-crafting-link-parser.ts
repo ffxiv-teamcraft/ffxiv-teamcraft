@@ -9,7 +9,7 @@ export class FfxivCraftingLinkParser implements ExternalListLinkParser {
 
   parse(url: string): Observable<string> {
     return of(btoa(url
-    // Split with character '/'
+      // Split with character '/'
       .split('/')
       // Take the last element (everything after the last '/'
       .pop()

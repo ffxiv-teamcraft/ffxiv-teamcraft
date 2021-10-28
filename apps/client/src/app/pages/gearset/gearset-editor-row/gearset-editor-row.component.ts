@@ -5,7 +5,8 @@ import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 @Component({
   selector: 'app-gearset-editor-row',
   templateUrl: './gearset-editor-row.component.html',
-  styleUrls: ['./gearset-editor-row.component.less']
+  styleUrls: ['./gearset-editor-row.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearsetEditorRowComponent {
 

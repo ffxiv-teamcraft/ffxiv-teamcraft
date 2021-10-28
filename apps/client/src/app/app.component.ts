@@ -18,7 +18,7 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
@@ -32,7 +32,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
@@ -63,6 +62,7 @@ import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.s
 import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
+import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-root',
@@ -103,6 +103,8 @@ export class AppComponent implements OnInit {
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
   );
+
+  public loadingLazyData$ = this.lazyDataFacade.isLoading$;
 
   public loggedIn$: Observable<boolean>;
 
@@ -184,8 +186,8 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
-              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
+              private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
@@ -309,27 +311,6 @@ export class AppComponent implements OnInit {
         .subscribe(v => {
           if (semver.ltr(environment.version, v)) {
             this.router.navigate(['version-lock']);
-          }
-        });
-
-      this.lazyData.loaded$
-        .pipe(
-          switchMap((loaded) => {
-            this.dataLoaded = loaded;
-            if (!loaded) {
-              return of(false);
-            }
-            const lastChangesSeen = this.settings.lastChangesSeen;
-            if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay) {
-              return this.showPatchNotes();
-            } else {
-              return of(null);
-            }
-          })
-        )
-        .subscribe((loaded) => {
-          if (loaded) {
-            this.tutorialService.applicationReady();
           }
         });
 
@@ -482,32 +463,15 @@ export class AppComponent implements OnInit {
         this.use(newLang, true);
       });
       if (!this.overlay) {
-        this.lazyData.data$
-          .pipe(
-            filter(d => d !== undefined),
-            first(),
-            delay(5000)
-          )
-          .subscribe(() => {
-            if (this.settings.xivapiKey && this.settings.enableMappy) {
-              this.mappy.start();
-            }
-            this.playerMetricsService.start();
-            setTimeout(() => {
-              this.ipc.send('app-ready', true);
-              this.cd.detectChanges();
-            }, 500);
-            // This is a super ugly fix for the app freezing on startup for some random electron reason
-            // We're just forcing the change detector to update more often even if frozen, so it'll eventually unfreeze
-            // After 10s of forcing, it should be enough to fix the issue.
-            // really looking forward to a real solution tho...
-            const interval = setInterval(() => {
-              this.cd.detectChanges();
-            }, 500);
-            setTimeout(() => {
-              clearInterval(interval);
-            }, 10000);
-          });
+        if (this.settings.xivapiKey && this.settings.enableMappy) {
+          this.mappy.start();
+        }
+        this.playerMetricsService.start();
+        setTimeout(() => {
+          this.ipc.send('app-ready', true);
+          this.dataLoaded = true;
+          this.cd.detectChanges();
+        }, 500);
       }
     }
 
@@ -629,11 +593,10 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        map(character => {
-          return {
-            ...character,
-            Datacenter: this.lazyData.getDataCenter(character.Server)
-          };
+        switchMap(character => {
+          return this.lazyDataFacade.getDatacenterForServer(character.Server).pipe(
+            map(Datacenter => ({ ...character, Datacenter }))
+          );
         }),
         shareReplay(1)
       );
@@ -670,6 +633,13 @@ export class AppComponent implements OnInit {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
     }
+
+    const lastChangesSeen = this.settings.lastChangesSeen;
+    if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay) {
+      this.showPatchNotes();
+    }
+    this.tutorialService.applicationReady();
+    this.dataLoaded = true;
   }
 
   switchCharacter(id: number): void {

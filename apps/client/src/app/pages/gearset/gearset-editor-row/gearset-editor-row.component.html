@@ -28,7 +28,7 @@
     </div>
   </div>
   <div nz-col [nzMd]="statColsSize" *ngFor="let stat of stats;let lastStat = last; trackBy: trackByStat" class="item-stat-row" [class.last]="lastStat">
-    <span *ngIf="equipmentPiece | stat:stat.id:gearset as statValue"
+    <span *ngIf="equipmentPiece | stat:stat.id:gearset | async as statValue"
           nz-tooltip
           [nzTooltipTitle]="statValue.bonus === 0 ? null :  statValue.value + ' + ' + statValue.bonus"
           [class.has-bonus]="statValue.bonus > 0">

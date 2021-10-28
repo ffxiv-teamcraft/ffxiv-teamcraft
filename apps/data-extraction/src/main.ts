@@ -144,8 +144,8 @@ const operationsSelection = new MultiSelect({
   ]
 });
 
-if (argv.only) {
-  const only = argv.only.split(',');
+if (argv['only']) {
+  const only = argv['only'].split(',');
   startExtractors(extractors.filter(e => {
     return only.includes(e.getName());
   }));

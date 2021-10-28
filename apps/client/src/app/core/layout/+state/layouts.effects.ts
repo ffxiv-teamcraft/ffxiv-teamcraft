@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import {
-  CreateLayout,
-  DeleteLayout,
-  LayoutsActionTypes,
-  LayoutsLoaded,
-  SelectLayout,
-  UpdateLayout
-} from './layouts.actions';
+import { CreateLayout, DeleteLayout, LayoutsActionTypes, LayoutsLoaded, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutService } from '../layout.service';
 import { distinctUntilChanged, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';

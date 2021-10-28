@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest } from 'rxjs';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { ListController } from '../../../modules/list/list-controller';
 
 @Component({
   selector: 'app-list-contributions',
@@ -16,9 +17,9 @@ export class ListContributionsComponent {
     value: 'ascend'
   });
 
-  public contributions$ = combineLatest([this.listsFacade.selectedList$, this.sort$]).pipe(
-    map(([list, sort]) => {
-      const result = list.getContributionStats(list.modificationsHistory, this.lazyData);
+  public contributions$ = combineLatest([this.listsFacade.selectedList$, this.sort$, this.lazyData.getEntry('ilvls')]).pipe(
+    map(([list, sort, ilvls]) => {
+      const result = ListController.getContributionStats(list, list.modificationsHistory, ilvls);
       result.entries.sort((a, b) => {
         return sort.value === 'ascend' ? a[sort.key] - b[sort.key] : b[sort.key] - a[sort.key];
       });
@@ -26,7 +27,7 @@ export class ListContributionsComponent {
     })
   );
 
-  constructor(private listsFacade: ListsFacade, private lazyData: LazyDataService) {
+  constructor(private listsFacade: ListsFacade, private lazyData: LazyDataFacade) {
   }
 
   public sort(event: { key: string, value: string }): void {

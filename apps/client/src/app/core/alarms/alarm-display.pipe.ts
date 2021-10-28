@@ -4,8 +4,8 @@ import { Alarm } from './alarm';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
-import { map } from 'rxjs/operators';
-import { LazyDataService } from '../data/lazy-data.service';
+import { map, switchMap } from 'rxjs/operators';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
   name: 'alarmDisplay',
@@ -14,7 +14,7 @@ import { LazyDataService } from '../data/lazy-data.service';
 export class AlarmDisplayPipe implements PipeTransform {
 
   constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
   }
 
   transform(alarm: Partial<Alarm>): Observable<AlarmDisplay> {
@@ -26,16 +26,27 @@ export class AlarmDisplayPipe implements PipeTransform {
         this.etime.getEorzeanTime()
       ]
     ).pipe(
-      map(([registeredAlarm, date]) => {
+      switchMap(([registeredAlarm, date]) => {
+        let alarm$ = of(alarm);
         if (alarm.mapId === undefined && alarm.zoneId !== undefined) {
-          alarm.mapId = this.lazyData.getMapIdByZoneId(alarm.zoneId);
+          alarm$ = this.lazyData.getEntry('maps').pipe(
+            map(maps => {
+              alarm.mapId = +Object.keys(maps)
+                .find((key) => maps[key].placename_id === alarm.zoneId);
+              return alarm;
+            })
+          );
         }
-        const display = this.alarmsFacade.createDisplay(<Alarm>alarm, date);
-        display.registered = registeredAlarm !== undefined;
-        if (display.registered) {
-          display.alarm.$key = registeredAlarm.$key;
-        }
-        return display;
+        return alarm$.pipe(
+          map(completeAlarm => {
+            const display = this.alarmsFacade.createDisplay(<Alarm>completeAlarm, date);
+            display.registered = registeredAlarm !== undefined;
+            if (display.registered) {
+              display.alarm.$key = registeredAlarm.$key;
+            }
+            return display;
+          })
+        );
       })
     );
   }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Query, Subscription } from 'apollo-angular';
+import { Subscription } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { AllaganReport } from './model/allagan-report';
 import { AllaganReportQueueEntry } from './model/allagan-report-queue-entry';

@@ -1,14 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LazyDataService } from '../../core/data/lazy-data.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
   name: 'materiaBonus'
 })
 export class MateriaBonusPipe implements PipeTransform {
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
   }
 
-  transform(id: number): { baseParamId: number, tier: number, value: number } {
-    return this.lazyData.data.materias.find(m => m.itemId === id);
+  transform(id: number): Observable<{ baseParamId: number, tier: number, value: number }> {
+    return this.lazyData.getEntry('materias').pipe(
+      map(materias => materias.find(m => m.itemId === id))
+    );
   }
 }

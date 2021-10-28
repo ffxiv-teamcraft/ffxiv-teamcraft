@@ -10,11 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
 import { CustomItemsDisplay } from '../../../modules/custom-items/+state/custom-items-display';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/custom-alarm-popup/custom-alarm-popup.component';
 import { Alarm } from '../../../core/alarms/alarm';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { NpcPickerComponent } from '../npc-picker/npc-picker.component';
 import { Vendor } from '../../../modules/list/model/vendor';
 import { TradeSource } from '../../../modules/list/model/trade-source';
@@ -36,6 +34,7 @@ import { CustomItemsImportPopupComponent } from '../custom-items-import-popup/cu
 import { CustomItemsExportPopupComponent } from '../custom-items-export-popup/custom-items-export-popup.component';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-custom-items',
@@ -49,21 +48,16 @@ export class CustomItemsComponent {
   public loading$: Observable<boolean> = combineLatest([this.customItemsFacade.loaded$, this.customItemsFacade.foldersLoaded$]).pipe(
     map(([itemsLoaded, foldersLoaded]) => !itemsLoaded || !foldersLoaded)
   );
-
-  private folders$ = this.customItemsFacade.allCustomItemFolders$;
-
   public maps$: Observable<{ ID: number, PlaceName: any }[]>;
-
   public availableCraftJobs: any[] = [];
-
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
-
   public modifiedList: List;
+  private folders$ = this.customItemsFacade.allCustomItemFolders$;
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
-              private lazyData: LazyDataService, private gt: GarlandToolsService,
+              private lazyData: LazyDataFacade, private gt: GarlandToolsService,
               private listsFacade: ListsFacade, private listPicker: ListPickerService,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService) {
@@ -142,13 +136,14 @@ export class CustomItemsComponent {
   }
 
   public autoCompleteItemID(name: string, item: CustomItem): void {
-    const allItems = this.lazyData.allItems;
-    const matches = Object.keys(allItems).filter(key => {
-      return this.i18n.getName(allItems[key]).toLowerCase() === name.toLowerCase();
+    this.lazyData.getEntry('items').subscribe(allItems => {
+      const matches = Object.keys(allItems).filter(key => {
+        return this.i18n.getName(allItems[key]).toLowerCase() === name.toLowerCase();
+      });
+      if (matches.length === 1) {
+        item.realItemId = +matches[0];
+      }
     });
-    if (matches.length === 1) {
-      item.realItemId = +matches[0];
-    }
   }
 
   public setItemIndex(item: CustomItem, index: number, array: CustomItem[], folderId: string | undefined): void {
@@ -225,50 +220,6 @@ export class CustomItemsComponent {
     return req.id;
   }
 
-
-  private beforeSave(item: CustomItem): CustomItem {
-    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
-      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneId = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].map;
-      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
-    }
-    if (getItemSource(item, DataType.VENDORS).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.VENDORS) {
-          source.data = source.data.map(
-            vendor => {
-              vendor.areaId = vendor.zoneId = vendor.mapId;
-              return vendor;
-            });
-        }
-        return source;
-      });
-    }
-    if (getItemSource(item, DataType.TRADE_SOURCES).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.TRADE_SOURCES) {
-          source.data = source.data.map(
-            tradeSource => {
-              tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
-              return tradeSource;
-            });
-        }
-        return source;
-      });
-    }
-    if (getItemSource(item, DataType.CRAFTED_BY).length > 0) {
-      item.sources = item.sources.map(source => {
-        if (source.type === DataType.CRAFTED_BY) {
-          source.data = source.data.map(craft => {
-            craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
-            return craft;
-          });
-        }
-        return source;
-      });
-    }
-    return item;
-  }
-
   public addToList(item: CustomItem, amount: string): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
@@ -337,10 +288,6 @@ export class CustomItemsComponent {
   }
 
   /**
-   * Details writing
-   */
-
-  /**
    *
    *  CRAFTING
    *
@@ -360,6 +307,10 @@ export class CustomItemsComponent {
     });
     item.dirty = true;
   }
+
+  /**
+   * Details writing
+   */
 
   public addIngredient(item: CustomItem): void {
     this.dialog.create({
@@ -670,6 +621,49 @@ export class CustomItemsComponent {
     const tradeSourceData = item.sources.find(source => source.type === DataType.REDUCED_FROM);
     tradeSourceData.data = tradeSourceData.data.filter(r => r !== reduction);
     item.dirty = true;
+  }
+
+  private beforeSave(item: CustomItem): CustomItem {
+    if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneId = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].map;
+      getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
+    }
+    if (getItemSource(item, DataType.VENDORS).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.VENDORS) {
+          source.data = source.data.map(
+            vendor => {
+              vendor.areaId = vendor.zoneId = vendor.mapId;
+              return vendor;
+            });
+        }
+        return source;
+      });
+    }
+    if (getItemSource(item, DataType.TRADE_SOURCES).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.TRADE_SOURCES) {
+          source.data = source.data.map(
+            tradeSource => {
+              tradeSource.npcs[0].areaId = tradeSource.npcs[0].zoneId = tradeSource.npcs[0].mapId;
+              return tradeSource;
+            });
+        }
+        return source;
+      });
+    }
+    if (getItemSource(item, DataType.CRAFTED_BY).length > 0) {
+      item.sources = item.sources.map(source => {
+        if (source.type === DataType.CRAFTED_BY) {
+          source.data = source.data.map(craft => {
+            craft.icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === craft.jobId).abbreviation}.png`;
+            return craft;
+          });
+        }
+        return source;
+      });
+    }
+    return item;
   }
 
 }

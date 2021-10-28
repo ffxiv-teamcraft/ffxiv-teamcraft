@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as semver from 'semver';
-import { map, first } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-version-lock',

@@ -1,28 +1,26 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { combineLatest, concat, interval, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TrackerComponent } from '../tracker-component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
-import { List } from '../../../modules/list/model/list';
-import { Memoized } from '../../../core/decorators/memoized';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyLogTrackerPageData } from '../../../lazy-data/model/lazy-log-tracker-page-data';
 
 @Component({
   selector: 'app-log-tracker',
@@ -35,15 +33,64 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public anonymousState$ = this.authFacade.loggedIn$.pipe(map(loggedIn => ({ isAnonymous: !loggedIn })));
 
-  public dohTabs: any[];
-  public dolTabs: any[];
+  public dohTabs$ = this.lazyData.getEntry('logTrackerPageData').pipe(
+    map(log => log.slice(0, 8))
+  );
+
+  public dolTabs$ = this.lazyData.getEntry('logTrackerPageData').pipe(
+    map(log => log.slice(8, 12))
+  );
 
   public userCompletion: { [index: number]: boolean } = {};
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
-  public nodeDataCache: { gatheringNode: GatheringNode, alarms: Alarm[] }[][][] = [];
+  public nodeDataCache: Record<string, Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>> = {};
+  public dolSubTabIndex = 0;
+  public dohSubTabIndex = 0;
+  public type$: Observable<number>;
+  public hideCompleted = this.settings.hideCompletedLogEntries;
+  public showNotRequired = this.settings.showNotRequiredLogEntries;
+  // { [recipeId]: itemId }
+  public selectedRecipes: Record<number, number> = {};
+  public selectedRecipesSize = 0;
+  private lastSelectedTabIndex = -1;
+
+  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
+              private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
+              private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
+              protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
+              private lazyData: LazyDataFacade, private dialog: NzModalService, private notificationService: NzNotificationService,
+              public settings: SettingsService, private cdr: ChangeDetectorRef) {
+    super(alarmsFacade);
+    this.type$ = this.route.paramMap.pipe(
+      map(params => {
+        const type = params.get('type');
+        // We have to +1 it because javascript evaluates 0 as false and we use it inside a *ngIf
+        return LogTrackerComponent.PAGE_TABS.indexOf(type) + 1;
+      })
+    );
+    combineLatest([this.authFacade.logTracking$, this.type$, this.dohTabs$, this.dolTabs$])
+      .pipe(
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe(([logTracking, type, dohTabs, dolTabs]) => {
+        this.userCompletion = {};
+        this.userGatheringCompletion = {};
+        logTracking.crafting.forEach(recipeId => {
+          this.userCompletion[recipeId] = true;
+        });
+        logTracking.gathering.forEach(itemId => {
+          this.userGatheringCompletion[itemId] = true;
+        });
+        if (this.hideCompleted) {
+          this.updateSelectedPage(this.hideCompleted, this.showNotRequired, type, dohTabs, dolTabs);
+        }
+        this.cdr.markForCheck();
+      });
+  }
 
   private _dohSelectedPage = 0;
+
   public get dohSelectedPage(): number {
     return this._dohSelectedPage;
   }
@@ -55,6 +102,7 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   private _dolSelectedPage = 0;
+
   public get dolSelectedPage(): number {
     return this._dolSelectedPage;
   }
@@ -65,81 +113,17 @@ export class LogTrackerComponent extends TrackerComponent {
     this.selectedRecipesSize = 0;
   }
 
-  public dolSubTabIndex = 0;
-  public dohSubTabIndex = 0;
-
-  public type$: Observable<number>;
-
-  public hideCompleted = this.settings.hideCompletedLogEntries;
-
-  // { [recipeId]: itemId }
-  public selectedRecipes: Record<number, number> = {};
-  public selectedRecipesSize = 0;
-
-  private lastSelectedTabIndex = -1;
-
-  @ViewChild('notificationRef', { static: true })
-  notification: TemplateRef<any>;
-
-  // Notification data
-  itemsAdded = 0;
-
-  modifiedList: List;
-
-  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
-              private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
-              private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
-              private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService,
-              public settings: SettingsService, private cdr: ChangeDetectorRef) {
-    super(alarmsFacade);
-    this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
-      return page.map(tab => {
-        tab.recipes = tab.recipes.map(entry => {
-          entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
-          return entry;
-        });
-        return tab;
-      });
-    });
-    this.dolTabs = [...this.lazyData.data.gatheringLogPages];
-    this.type$ = this.route.paramMap.pipe(
-      map(params => {
-        const type = params.get('type');
-        // We have to +1 it because javascript evaluates 0 as false and we use it inside a *ngIf
-        return LogTrackerComponent.PAGE_TABS.indexOf(type) + 1;
-      })
-    );
-    combineLatest([this.authFacade.logTracking$, this.type$])
-      .pipe(
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe(([logTracking, type]) => {
-        this.userCompletion = {};
-        this.userGatheringCompletion = {};
-        logTracking.crafting.forEach(recipeId => {
-          this.userCompletion[recipeId] = true;
-        });
-        logTracking.gathering.forEach(itemId => {
-          this.userGatheringCompletion[itemId] = true;
-        });
-        if (this.hideCompleted) {
-          this.updateSelectedPage(this.hideCompleted, type);
-        }
-        this.cdr.markForCheck();
-      });
-  }
-
-  public updateSelectedPage(hideCompleted: boolean, selectedTabNumber: number, resetSelection = false): void {
+  public updateSelectedPage(hideCompleted: boolean, showNotRequired: boolean, selectedTabNumber: number, dohTabs: LazyLogTrackerPageData[][], dolTabs: LazyLogTrackerPageData[][], resetSelection = false): void {
     const selectedTabIndex = selectedTabNumber - 1;
     this.settings.hideCompletedLogEntries = hideCompleted;
+    this.settings.showNotRequiredLogEntries = showNotRequired;
     const selectedSubTabIndex = [this.dohSubTabIndex, this.dolSubTabIndex][selectedTabIndex];
-    const pages = [this.dohTabs, this.dolTabs][selectedTabIndex][selectedSubTabIndex];
+    const pages = [dohTabs, dolTabs][selectedTabIndex][selectedSubTabIndex];
     const selectedPageIndex = [this.dohSelectedPage, this.dolSelectedPage][selectedTabIndex];
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
     if (pages) {
       const currentPage = pages[selectedPageIndex];
-      if (currentPage && isPageDone(currentPage) && hideCompleted) {
+      if ((showNotRequired || currentPage.requiredForAchievement) && currentPage && isPageDone(currentPage) && hideCompleted) {
         const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = nextUncompletedPage?.id;
@@ -190,47 +174,9 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public createList(selection: Record<number, number>): void {
     const recipesToAdd = Object.entries(selection);
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = recipesToAdd.map(([recipeId, itemId]) => {
-          return this.listManager.addToList({ itemId: +itemId, list: list, recipeId: +recipeId, amount: 1 });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = interval(250)
-            .pipe(
-              first(),
-              switchMap(() => {
-                return concat(
-                  ...operations
-                );
-              })
-            );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          recipesToAdd.length,
-          'Adding_recipes',
-          { amount: recipesToAdd.length, listname: list.name });
-      }),
-      filter(list => list !== null),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.itemsAdded = recipesToAdd.length;
-      this.modifiedList = list;
-      this.notificationService.template(this.notification);
-    });
+    this.listPicker.addToList(...recipesToAdd.map(([recipeId, itemId]) => {
+      return { id: +itemId, recipeId: recipeId, amount: 1 };
+    }));
   }
 
   public getDohPageCompletion(page: any): string {
@@ -292,63 +238,19 @@ export class LogTrackerComponent extends TrackerComponent {
       });
   }
 
-  @Memoized()
-  public getDohDivisionId(pageId: number): number {
-    return +Object.keys(this.lazyData.data.notebookDivision).find(key => {
-      return this.lazyData.data.notebookDivision[key].pages.indexOf(pageId) > -1;
-    });
-  }
-
-  @Memoized()
-  public getDolDivisionId(pageId: number): number {
-    return +Object.keys(this.lazyData.data.notebookDivision).find(key => {
-      return this.lazyData.data.notebookDivision[key].pages.indexOf(pageId) > -1;
-    });
-  }
-
-  public isRequiredForAchievement(page: any): boolean {
-    const division = this.l12n.getNotebookDivision(this.getDohDivisionId(page.id));
-    return /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
-  }
-
-  public getNodeData(itemId: number, tab: number, type?: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
-    if (this.nodeDataCache[itemId] === undefined) {
-      this.nodeDataCache[itemId] = [];
-    }
-    if (this.nodeDataCache[itemId][tab] === undefined) {
-      this.nodeDataCache[itemId][tab] = this.gatheringNodesService.getItemNodes(itemId, true)
-        .filter(node => {
-          return !type || node.type === type;
-        })
-        .slice(0, 3)
-        .map(gatheringNode => {
-          return {
-            gatheringNode: gatheringNode,
-            alarms: gatheringNode.limited ? this.alarmsFacade.generateAlarms(gatheringNode) : []
-          };
-        });
-    }
-    return this.nodeDataCache[itemId][tab];
-  }
-
-  public showOptimizedMap(index: number): void {
-    const steps: NavigationObjective[] = [].concat.apply([], [...this.lazyData.data.gatheringLogPages[index], ...this.lazyData.data.gatheringLogPages[index + 1]]
-      .map(page => {
-        return page.items
-          .filter(item => {
-            const nodes = this.getNodeData(item.itemId, page.id).filter(n => n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type));
-            return !this.userGatheringCompletion[item.itemId]
-              && nodes.length > 0
-              && nodes.some(n => !n.gatheringNode.limited);
-          })
-          .map(item => {
-            const node = this.getNodeData(item.itemId, page.id).find(n => n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type)).gatheringNode;
+  public showOptimizedMap(pages: LazyLogTrackerPageData[][], index: number): void {
+    const steps = [...pages[index], ...pages[index + 1]].map(page => {
+      return page.items
+        .filter(item => !!item && !this.userGatheringCompletion[item.itemId])
+        .map(item => {
+          const node = item.nodes.find(n => !n.gatheringNode.limited && n.gatheringNode.x && n.gatheringNode.y && [index, index + 1].includes(n.gatheringNode.type))?.gatheringNode;
+          if (node) {
             return <NavigationObjective>{
               mapId: node.map,
               zoneId: node.zoneId,
               iconid: null,
               item_amount: 1,
-              name: this.l12n.getItem(item.itemId),
+              name: this.lazyData.getI18nName('items', item.itemId),
               itemId: item.itemId,
               total_item_amount: 1,
               type: 'Gathering',
@@ -356,9 +258,11 @@ export class LogTrackerComponent extends TrackerComponent {
               y: node.y,
               gatheringType: node.type
             };
-          });
-      })
-    );
+          }
+        })
+        .filter(step => !!step);
+    }).flat();
+
     const ref = this.dialog.create({
       nzTitle: this.translate.instant('NAVIGATION.Title'),
       nzContent: WorldNavigationMapComponent,

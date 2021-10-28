@@ -131,7 +131,7 @@
         </div>
         <div *ngIf="gtData.item.equip" class="details-block">
           <div class="detail-name">{{'DB.Repair_job' | translate}}</div>
-          <div class="detail-value">{{gtData.item.repair | jobAbbr | i18n}}</div>
+          <div class="detail-value">{{gtData.item.repair | i18nRow:'jobAbbr' | i18n}}</div>
         </div>
         <div *ngIf="xivapiItem.Salvage" class="details-block">
           <div class="detail-name">{{'DB.Salvage_level' | translate}}</div>
@@ -186,7 +186,7 @@
                         <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
                           <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
                                fxLayoutGap="5px">
-                            <img *ngIf="((recipe.job | jobAbbr).en | async) as icon" alt="" class="smaller-img-icon"
+                            <img *ngIf="((recipe.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="smaller-img-icon"
                                  src="https://garlandtools.org/db/images/{{icon}}.png">
                             <div>lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
                           </div>
@@ -350,7 +350,7 @@
                     <nz-list-item [nzContent]="more">
                       <nz-list-item-meta
                         [nzAvatar]="leveAvatar"
-                        [nzTitle]="leve.leveId | leveName | i18n"
+                        [nzTitle]="leve.leveId | i18nRow:'leves' | i18n"
                         nzDescription="lvl {{leve.level}}">
                         <ng-template #leveAvatar>
                           <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
@@ -358,7 +358,7 @@
                                  src="./assets/icons/leve.png">
                           </a>
                           <a
-                            routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
+                            routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | i18nRow:'leves' | i18n}}</a>
                         </ng-template>
                         <ng-template #more>
                           <app-db-button [id]="leve.leveId" type="leve"></app-db-button>
@@ -380,7 +380,7 @@
                         </a>
                       </div>
                       <div>
-                        {{quest | questName | i18n}}
+                        {{quest | i18nRow:'quests' | i18n}}
                       </div>
                     </div>
                     <app-db-button [id]="quest" type="quest"></app-db-button>
@@ -436,7 +436,7 @@
                     </div>
                     <ul *ngIf="item.bonuses">
                       <li *ngFor="let bonus of item.bonuses">{{'DB.ITEM.X_Equipped' | translate:{ amount: bonus.amountRequired } }}
-                        {{bonus.baseParam | baseParamName | i18n}} +{{bonus.value}}</li>
+                        {{bonus.baseParam | i18nRow:'baseParams' | i18n}} +{{bonus.value}}</li>
                     </ul>
                   </li>
                 </ng-template>
@@ -518,7 +518,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="(source.data[0].id | fate).icon | xivapiIcon"
+                      <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon"
                            class="img-icon round-icon">
                       <div>
                         {{'Fates' | translate}}
@@ -562,7 +562,7 @@
                               <div class="recipe-title" fxLayout="column">
                                 <div fxLayout="row" fxLayoutGap="5px">
                                   <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
-                                  <div>{{recipe.job | jobAbbr | i18n}}</div>
+                                  <div>{{recipe.job | i18nRow:'jobAbbr' | i18n}}</div>
                                   <div>{{recipe.lvl}}{{recipe.stars_tooltip}}</div>
                                   <div *ngIf="recipe.craftsmanshipReq > 0">{{'DB.ITEM.Required_craftsmanship' | translate}}: {{recipe.craftsmanshipReq}}</div>
                                   <div *ngIf="recipe.controlReq > 0">{{'DB.ITEM.Required_control' | translate}}: {{recipe.controlReq}}</div>
@@ -647,7 +647,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+                      <img [src]="source.data[0].icon | lazyRow:'instances':'icon' | async" class="img-icon round-icon">
                       <div>
                         {{'DB.Dungeons' | translate}}
                       </div>
@@ -741,17 +741,17 @@
                           [nzTitle]="duelTitle">
                           <ng-template #duelTitle>
                             <a [nzTooltipTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
-                               target="_blank">{{ duel.npcId | npcName | i18n }}</a>
+                               target="_blank">{{ duel.npcId | i18nRow:'npcs' | i18n }}</a>
                           </ng-template>
                           <ng-template #duelDescription>
                             <div fxLayout="column">
                               <div>
                                 {{'DB.TT_Rules' | translate}}: <span *ngFor="let rule of duel.rules; let last = last"
-                                                                     class="tt-rule">{{rule | ttRuleName | i18n}} <span
+                                                                     class="tt-rule">{{rule | i18nRow:'tripleTriadRules' | i18n}} <span
                                 *ngIf="!last">,</span></span>
                               </div>
                               <div *ngIf="duel.unlockingQuestId">{{'DB.Unlocked_by_quest' | translate}}:
-                                <b>{{duel.unlockingQuestId | questName | i18n}}</b></div>
+                                <b>{{duel.unlockingQuestId | i18nRow:'quests' | i18n}}</b></div>
                             </div>
                           </ng-template>
                           <ng-template #duelContent>

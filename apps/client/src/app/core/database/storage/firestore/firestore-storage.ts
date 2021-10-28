@@ -5,10 +5,10 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, map, takeUntil, tap } from 'rxjs/operators';
-import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import FieldValue = firebase.firestore.FieldValue;
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
@@ -46,33 +46,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       });
       console.groupEnd();
     };
-  }
-
-  protected recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
-    if ((window as any).verboseOperations) {
-      console.log('OPERATION', operation, this.getBaseUri(), debugData);
-    }
-    FirestoreStorage.OPERATIONS[this.getBaseUri()] = FirestoreStorage.OPERATIONS[this.getBaseUri()] || { read: 0, write: 0, delete: 0 };
-    FirestoreStorage.OPERATIONS[this.getBaseUri()][operation]++;
-  }
-
-  protected prepareData(data: Partial<T>): any {
-    if ((data as any).onBeforePrepareData) {
-      (data as any).onBeforePrepareData();
-    }
-    const clone: Partial<T> = JSON.parse(JSON.stringify(data));
-    delete clone.$key;
-    Object.keys(clone).forEach(key => {
-      if (clone[key] === undefined) {
-        delete clone[key];
-      }
-    });
-    clone.appVersion = environment.version;
-    return clone;
-  }
-
-  protected beforeDeserialization(data: Partial<T>): T {
-    return data as T;
   }
 
   public stopListening(key: string, cacheEntry?: string): void {
@@ -236,5 +209,32 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       return batch.update(ref, { index: row.index });
     });
     return from(batch.commit());
+  }
+
+  protected recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
+    if ((window as any).verboseOperations) {
+      console.log('OPERATION', operation, this.getBaseUri(), debugData);
+    }
+    FirestoreStorage.OPERATIONS[this.getBaseUri()] = FirestoreStorage.OPERATIONS[this.getBaseUri()] || { read: 0, write: 0, delete: 0 };
+    FirestoreStorage.OPERATIONS[this.getBaseUri()][operation]++;
+  }
+
+  protected prepareData(data: Partial<T>): any {
+    if ((data as any).onBeforePrepareData) {
+      (data as any).onBeforePrepareData();
+    }
+    const clone: Partial<T> = JSON.parse(JSON.stringify(data));
+    delete clone.$key;
+    Object.keys(clone).forEach(key => {
+      if (clone[key] === undefined) {
+        delete clone[key];
+      }
+    });
+    clone.appVersion = environment.version;
+    return clone;
+  }
+
+  protected beforeDeserialization(data: Partial<T>): T {
+    return data as T;
   }
 }

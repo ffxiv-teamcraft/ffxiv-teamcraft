@@ -1,8 +1,8 @@
 import { AbstractNotification } from '../../core/notification/abstract-notification';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { NotificationType } from '../../core/notification/notification-type';
+import { Observable } from 'rxjs';
 
 export class ListCommentNotification extends AbstractNotification {
 
@@ -10,8 +10,8 @@ export class ListCommentNotification extends AbstractNotification {
     super(NotificationType.LIST_COMMENT, target);
   }
 
-  getContent(translate: TranslateService, l12n: LocalizedDataService, i18nTools: I18nToolsService): string {
-    return translate.instant('NOTIFICATIONS.List_comment_added', {
+  getContent(translate: TranslateService, i18nTools: I18nToolsService): Observable<string> {
+    return translate.get('NOTIFICATIONS.List_comment_added', {
       content: this.comment,
       listName: this.listName
     });
