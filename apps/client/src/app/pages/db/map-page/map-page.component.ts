@@ -4,11 +4,10 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as _ from 'lodash';
 import { MapRelatedElement } from './map-related-element';
@@ -17,6 +16,7 @@ import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { mapIds } from '../../../core/data/sources/map-ids';
 
 @Component({
   selector: 'app-map-page',
@@ -38,28 +38,36 @@ export class MapPageComponent extends TeamcraftPageComponent {
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
+              private gt: DataService, private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade,
               private htmlTools: HtmlToolsService, private http: HttpClient, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
+    route.paramMap.pipe(
+      takeUntil(this.onDestroy$),
+      switchMap(params => {
+        const slug = params.get('slug');
+        return i18n.getMapName(+params.get('mapId')).pipe(
+          map(name => {
+            const correctSlug = name.split(' ').join('-');
+            return { slug, correctSlug };
+          })
+        );
+      })
+    ).subscribe(({ slug, correctSlug }) => {
       if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')],
+        router.navigate(
+          [correctSlug],
           {
-            relativeTo: this.route,
+            relativeTo: route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')],
+      } else if (slug !== correctSlug) {
+        router.navigate(
+          ['../', correctSlug],
           {
-            relativeTo: this.route,
+            relativeTo: route,
             replaceUrl: true
           }
         );
@@ -93,8 +101,8 @@ export class MapPageComponent extends TeamcraftPageComponent {
           this.getFates(mapData.ID),
           this.getMobs(mapData.ID),
           this.getNpcs(mapData.ID),
-          this.getNodes(mapData.ID),
-          this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
+          this.getNodes(mapData.ID)
+          //this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
         ]);
       }),
       map((res) => res.flat()),
@@ -165,14 +173,19 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
 
     this.links$ = this.map$.pipe(
-      map((mapData) => {
-        return [
-          {
-            title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${this.l12n.getMapName(mapData.ID).en.split(' ').join('_')}`,
-            icon: './assets/icons/ge.png'
-          }
-        ];
+      switchMap((mapData) => {
+        const entry = mapIds.find((m) => m.id === mapData.ID);
+        return this.lazyData.getRow('places', entry?.id).pipe(
+          map(place => {
+            return [
+              {
+                title: 'Gamer Escape',
+                url: `https://ffxiv.gamerescape.com/wiki/${place.en.split(' ').join('_')}`,
+                icon: './assets/icons/ge.png'
+              }
+            ];
+          })
+        );
       })
     );
   }
@@ -187,59 +200,64 @@ export class MapPageComponent extends TeamcraftPageComponent {
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.map$.pipe(
-      map((mapData) => {
-        return {
-          title: this.getName(mapData),
-          description: '',
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
-          image: `https://xivapi.com${mapData.MapFilename}`
-        };
-      })
-    );
-  }
-
-  private getHunts(territoryId: number, sizeFactor: number): Observable<MapRelatedElement[]> {
-    return this.lazyData.getEntry('hunts').pipe(
-      map(hunts => {
-        const zoneHunts = hunts.find(h => h.zoneid === territoryId);
-        if (!zoneHunts || !zoneHunts.hunts) {
-          return [];
-        }
-        const c = sizeFactor / 100;
-        return [].concat.apply([], (zoneHunts?.hunts || []).map((hunt, index) => {
-            const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
-            return hunt.spawns.map((spawn) => {
-              return <MapRelatedElement>{
-                type: 'hunt',
-                id: this.l12n.getMobId(hunt.name),
-                name: huntName,
-                coords: {
-                  x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-                  y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
-                },
-                marker: {
-                  iconType: 'img',
-                  iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
-                  x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-                  y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
-                  tooltip: this.i18n.getName(huntName)
-                },
-                link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
-              };
-            });
+      switchMap((mapData) => {
+        return this.getName(mapData).pipe(
+          map(title => {
+            return {
+              title,
+              description: '',
+              url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${title.split(' ').join('-')}`,
+              image: `https://xivapi.com${mapData.MapFilename}`
+            };
           })
         );
       })
     );
-
   }
+
+  // TODO refactor this with new data, not sure it's even used for now tho.
+  // private getHunts(territoryId: number, sizeFactor: number): Observable<MapRelatedElement[]> {
+  //   return this.lazyData.getEntry('hunts').pipe(
+  //     map(hunts => {
+  //       const zoneHunts = hunts.find(h => h.zoneid === territoryId);
+  //       if (!zoneHunts || !zoneHunts.hunts) {
+  //         return [];
+  //       }
+  //       const c = sizeFactor / 100;
+  //       return [].concat.apply([], (zoneHunts?.hunts || []).map((hunt, index) => {
+  //           const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
+  //           return hunt.spawns.map((spawn) => {
+  //             return <MapRelatedElement>{
+  //               type: 'hunt',
+  //               id: this.l12n.getMobId(hunt.name),
+  //               name: huntName,
+  //               coords: {
+  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
+  //               },
+  //               marker: {
+  //                 iconType: 'img',
+  //                 iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
+  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
+  //                 tooltip: this.i18n.getName(huntName)
+  //               },
+  //               link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
+  //             };
+  //           });
+  //         })
+  //       );
+  //     })
+  //   );
+  //
+  // }
 
   private getFates(mapId: number): Observable<MapRelatedElement[]> {
     return this.lazyData.getEntry('fates').pipe(
       map(fates => {
         return Object.keys(fates)
           .map(key => {
-            const fate = this.l12n.getFate(+key);
+            const fate = fates[+key];
             const position = fate.position;
             return position ? { ...fate, id: +key } : null;
           })
@@ -273,7 +291,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
       map(npcs => {
         return Object.keys(npcs)
           .map(key => {
-            const npc = this.l12n.getNpc(+key);
+            const npc = npcs[+key];
             const position = npc.position;
             return position ? { ...npc, id: +key } : null;
           })
@@ -337,7 +355,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
           });
         const fromBell = (window as any).gt.bell.nodes
           .filter(node => {
-            return this.l12n.getMapId(node.zone) === mapId;
+            return this.lazyData.getMapId(node.zone) === mapId;
           })
           .map(node => {
             node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
@@ -394,7 +412,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
               return <MapRelatedElement>{
                 type: 'mob',
                 id: mob.id,
-                name: this.l12n.getMob(mob.id),
+                name: this.lazyData.getI18nName('mobs', mob.id),
                 description: this.i18n.createFakeI18n(`lvl ${position.level}`),
                 coords: {
                   x: position.x,
@@ -405,8 +423,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
                   iconImg: `https://xivapi.com/c/BNpcName.png`,
                   x: position.x,
                   y: position.y,
-                  zIndex: 4,
-                  tooltip: this.i18n.getName(this.l12n.getMob(mob.id))
+                  zIndex: 4
                 },
                 link: `/db/${this.translate.currentLang}/mob/${mob.id}`
               };
@@ -440,8 +457,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
     return mapData.GameContentLinks;
   }
 
-  private getName(mapData: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.getPlace(mapData.PlaceNameTargetID));
+  private getName(mapData: any): Observable<string> {
+    return this.i18n.getMapName(mapData.PlaceNameTargetID);
   }
 }

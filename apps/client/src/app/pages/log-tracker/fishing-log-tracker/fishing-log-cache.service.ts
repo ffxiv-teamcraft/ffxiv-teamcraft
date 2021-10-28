@@ -3,7 +3,6 @@ import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { fshSpearLogOrder } from '../fsh-spear-log-order';
 import { fshLogOrder } from '../fsh-log-order';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -18,8 +17,8 @@ export class FishingLogCacheService {
     startWith([])
   );
 
-  public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$]).pipe(
-    map(([completeDisplay, completion]) => {
+  public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$, this.lazyData.getEntry('places')]).pipe(
+    map(([completeDisplay, completion, places]) => {
       return completeDisplay.map(display => {
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
@@ -58,9 +57,9 @@ export class FishingLogCacheService {
           area.spots = area.spots
             .sort((a, b) => {
               if (a.id > 20000) {
-                return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+                return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
               }
-              return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
             });
           area.total = uniqueMapTotal.length;
           area.done = uniqueMapDone.length;
@@ -68,9 +67,9 @@ export class FishingLogCacheService {
         display.tabs = display.tabs
           .sort((a, b) => {
             if (a.id > 20000) {
-              return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
             }
-            return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+            return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;
@@ -80,7 +79,7 @@ export class FishingLogCacheService {
     shareReplay(1)
   );
 
-  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private l12n: LocalizedDataService, private lazyData: LazyDataFacade) {
+  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
   }
 
 }

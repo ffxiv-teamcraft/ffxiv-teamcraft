@@ -77,9 +77,11 @@ export class CommissionBoardComponent {
         map(commissions => {
           return {
             ...data,
-            commissions: commissions.sort((a, b) => {
-              return b.bump?.seconds - a.bump?.seconds;
-            })
+            commissions: commissions
+              .filter(commission => (Date.now() - commission.createdAt.toDate().getTime() ?? 0) < 2629800000) // One month in millis
+              .sort((a, b) => {
+                return b.bump?.seconds - a.bump?.seconds;
+              })
           };
         }),
         tap(() => {

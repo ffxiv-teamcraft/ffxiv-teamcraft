@@ -22,7 +22,6 @@ import { List } from '../../../modules/list/model/list';
 import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 import { BaseParam } from '../../../modules/gearsets/base-param';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
@@ -30,6 +29,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-gearset-display',
@@ -98,7 +98,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private notificationService: NzNotificationService, private lazyData: LazyDataFacade,
               private router: Router, private i18n: I18nToolsService,
-              private l12n: LocalizedDataService, private message: NzMessageService,
+              private message: NzMessageService,
               private authFacade: AuthFacade, private clipboard: Clipboard,
               private afs: AngularFirestore, private commissionsFacade: CommissionsFacade) {
     super();
@@ -226,22 +226,41 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
   }
 
   copyToClipboard(gearset: TeamcraftGearset): void {
-    const res = this.clipboard.copy(this.getString(gearset));
-    if (res) {
-      this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
-    }
+    this.getString(gearset).subscribe(res => {
+      if (this.clipboard.copy(res)) {
+        this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
+      }
+    });
   }
 
-  getString(gearset: TeamcraftGearset): string {
-    return this.gearsetsFacade.toArray(gearset)
-      .filter(entry => entry.piece !== null)
-      .reduce((acc, entry) => {
-        acc += `**${this.i18n.getName(this.l12n.getItem(entry.piece.itemId))}${entry.piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
-        ${entry.piece.materias.filter(m => m > 0).reduce((materiaStr, materia) => {
-          return `${materiaStr}\n- ${this.i18n.getName(this.l12n.getItem(materia))}`;
-        }, '')}\n\n`;
-        return acc;
-      }, '');
+  getString(gearset: TeamcraftGearset): Observable<string> {
+    return safeCombineLatest(
+      this.gearsetsFacade.toArray(gearset)
+        .filter(entry => entry.piece !== null)
+        .map(entry => {
+          return this.i18n.getNameObservable('items', entry.piece.itemId).pipe(
+            switchMap(name => {
+              return safeCombineLatest(entry.piece.materias.filter(m => m > 0).map(materia => {
+                return this.i18n.getNameObservable('items', materia);
+              })).pipe(
+                map(materias => {
+                  return { entry, name, materias };
+                })
+              );
+            })
+          );
+        })
+    ).pipe(
+      map(entriesWithNames => {
+        return entriesWithNames.reduce((acc, { entry, name, materias }) => {
+          acc += `**${name}${entry.piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
+        ${materias.reduce((materiaStr, materia) => {
+            return `${materiaStr}\n- ${materia}`;
+          }, '')}\n\n`;
+          return acc;
+        }, '');
+      })
+    );
   }
 
   updateProgression(key: string, progression: GearsetProgression): void {

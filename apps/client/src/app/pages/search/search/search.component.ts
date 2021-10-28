@@ -11,7 +11,6 @@ import { List } from '../../../modules/list/model/list';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -214,7 +213,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
@@ -458,29 +457,32 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   public createQuickList(item: SearchResult): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList({
-      itemId: +item.itemId,
-      list: list,
-      recipeId: item.recipe ? item.recipe.recipeId : '',
-      amount: item.amount,
-      collectable: item.addCrafts
-    })
-      .pipe(
-        tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
-          return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          );
+    this.i18n.getNameObservable('items', +item.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
+        const operation$ = this.listManager.addToList({
+          itemId: +item.itemId,
+          list: list,
+          recipeId: item.recipe ? item.recipe.recipeId : '',
+          amount: item.amount,
+          collectable: item.addCrafts
         })
-      );
+          .pipe(
+            tap(resultList => this.listsFacade.addList(resultList)),
+            mergeMap(resultList => {
+              return this.listsFacade.myLists$.pipe(
+                map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                filter(l => l !== undefined),
+                first()
+              );
+            })
+          );
 
-    this.progressService.showProgress(operation$, 1)
-      .subscribe((newList) => {
-        this.router.navigate(['list', newList.$key]);
-      });
+        return this.progressService.showProgress(operation$, 1);
+      })
+    ).subscribe((newList) => {
+      this.router.navigate(['list', newList.$key]);
+    });
   }
 
   public addItemsToList(items: SearchResult[]): void {

@@ -111,7 +111,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
             })
           }];
         }
-        return item.tradeShops.map(ts => {
+        return (item.tradeShops || []).map(ts => {
           return {
             npcs: ts.npcs.map(npcId => {
               const npc: TradeNpc = {

@@ -87,7 +87,7 @@
   </a>
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img [src]="row.icon | xivapiIcon" alt="">
+      <img [src]="row.id | lazyRow:'instances':'icon' | async | xivapiIcon" alt="">
       <div>{{row.id | i18nRow:'instances' | i18n}}</div>
       <app-db-button [id]="row.id" type="instance"></app-db-button>
     </div>
@@ -109,7 +109,7 @@
   </a>
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <img [src]="row.icon | xivapiIcon" alt="" class="quest-icon">
+      <img [src]="row.id | lazyRow: 'quests':'icon' | async | xivapiIcon" alt="" class="quest-icon">
       <div>{{row.id | i18nRow:'quests' | i18n}}</div>
       <app-db-button [id]="row.id" type="quest"></app-db-button>
     </div>

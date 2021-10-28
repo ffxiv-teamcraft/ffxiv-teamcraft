@@ -4,7 +4,6 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -42,7 +41,7 @@ export class NodeComponent extends TeamcraftPageComponent {
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade,
               private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
@@ -131,8 +130,8 @@ export class NodeComponent extends TeamcraftPageComponent {
             const bonus = point[`GatheringPointBonus${index}`];
             if (!bonus) return;
 
-            const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
-            const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
+            const bonusType = this.i18n.xivapiToI18n(bonus.BonusType, 'Text');
+            const condition = this.i18n.xivapiToI18n(bonus.Condition, 'Text');
 
             // TODO migrate once l12n is ready for better lazy I18n approach
             // if (this.settings.region === Region.China) {
@@ -200,33 +199,37 @@ export class NodeComponent extends TeamcraftPageComponent {
     );
   }
 
-  public getName(node: any): string {
-    if (!node) return '';
+  public getName(node: any): Observable<string> {
+    if (!node) return of('');
 
     if (node.GatheringPoints && node.GatheringPoints.length) {
       const point = node.GatheringPoints[0];
       if (point.PlaceName) {
-        return this.i18n.getName(this.l12n.xivapiToI18n(point.PlaceName, 'places'));
+        return of(this.i18n.getName(this.i18n.xivapiToI18n(point.PlaceName, 'places')));
       }
     }
 
-    return this.i18n.getName(this.l12n.getPlace(node.mappyData.zoneid));
+    return this.i18n.getNameObservable('places', node.mappyData.zoneid);
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.nodeData$.pipe(
-      map(node => {
-        return {
-          title: this.getName(node),
-          description: this.getDescription(node),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/node/${node.ID}`,
-          image: `https://xivapi.com${node.IconMap}`
-        };
+      switchMap(node => {
+        return this.getName(node).pipe(
+          map(title => {
+            return {
+              title,
+              description: this.getDescription(node),
+              url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/node/${node.ID}`,
+              image: `https://xivapi.com${node.IconMap}`
+            };
+          })
+        );
       })
     );
   }
 
   private getDescription(node: any): string {
-    return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.l12n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
+    return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.i18n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
   }
 }

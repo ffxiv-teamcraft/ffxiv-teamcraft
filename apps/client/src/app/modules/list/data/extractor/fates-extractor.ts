@@ -27,7 +27,7 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
 
   protected doExtract(item: Item, itemData: ItemData): Observable<FateData[]> {
     return combineLatest([
-      this.lazyData.getRow('fateSources', item.id),
+      this.lazyData.getRow('fateSources', item.id, []),
       this.lazyData.getEntry('fates')
     ]).pipe(
       map(([fateSources, fates]) => {

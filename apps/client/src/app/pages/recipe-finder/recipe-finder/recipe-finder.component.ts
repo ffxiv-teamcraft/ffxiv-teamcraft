@@ -5,12 +5,10 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { LazyRecipe } from '../../../core/data/lazy-recipe';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Router } from '@angular/router';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -27,6 +25,8 @@ import { LogTracking } from '../../../model/user/log-tracking';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -79,7 +79,7 @@ export class RecipeFinderComponent implements OnDestroy {
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
+              private router: Router, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
               public platform: PlatformService, public settings: SettingsService) {
@@ -280,9 +280,16 @@ export class RecipeFinderComponent implements OnDestroy {
   };
 
   public sortPool(): void {
-    this.pool = this.pool.sort((a, b) => {
-      return this.i18n.getName(this.l12n.getItem(a.id)) > this.i18n.getName(this.l12n.getItem(b.id)) ? 1 : -1;
-    });
+    safeCombineLatest(this.pool.map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(name => ({ ...row, name }))
+      );
+    })).pipe(
+      map(poolWithNames => {
+        return poolWithNames.sort((a, b) => a.name > b.name ? 1 : -1)
+          .map(row => ({ id: row.id, amount: row.amount }));
+      })
+    ).subscribe(pool => this.pool = pool);
   }
 
   closedTip(): void {

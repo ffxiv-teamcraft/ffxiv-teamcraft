@@ -100,7 +100,7 @@
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <div>{{leve.name | i18n}}</div>
+                  <app-i18n-name content="leves" [id]="leve.id"></app-i18n-name>
                   <app-db-button [id]="leve.id" type="leve"></app-db-button>
                 </div>
                 <div>
@@ -121,7 +121,8 @@
                   <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | i18nRow:'places' | i18n } }}</b>
                   <div>
                     <a href="https://ffxiv.gamerescape.com/wiki/{{leve.name.en.split(' ').join('_')}}"
-                       target="_blank" (click)="openInGE(leve)">
+                       *ngIf="leve.id | i18nRow: 'leves' | async as leveName"
+                       target="_blank" (click)="openInGE(leveName)">
                       {{'LEVEQUESTS.More_on_gamerescape' | translate}}
                     </a>
                   </div>

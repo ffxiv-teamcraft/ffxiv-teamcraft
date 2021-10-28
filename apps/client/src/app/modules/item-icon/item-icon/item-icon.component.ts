@@ -79,7 +79,7 @@ export class ItemIconComponent {
       if (forceCollectable) {
         return of(forceCollectable);
       }
-      return this.lazyData.getRow('collectables', itemId).pipe(
+      return this.lazyData.getRow('collectables', itemId, { collectable: 0 }).pipe(
         map(colectableRow => colectableRow.collectable)
       );
     }),

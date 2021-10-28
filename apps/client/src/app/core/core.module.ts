@@ -5,7 +5,6 @@ import { DataService } from './api/data.service';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { LocalizedDataService } from './data/localized-data.service';
 import { PushNotificationsModule } from 'ng-push-ivy';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
@@ -162,7 +161,6 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        LocalizedDataService,
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };

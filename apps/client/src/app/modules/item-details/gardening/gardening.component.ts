@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { GardeningData } from '../../list/model/gardening-data';
 import { addHours, formatDistance } from 'date-fns';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';

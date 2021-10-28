@@ -95,6 +95,9 @@ export class FishContextService {
     map(([itemId, fishes]) => (itemId > 0 && fishes.includes(itemId) ? itemId : undefined)),
     distinctUntilChanged()
   );
+  private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
+  /** The spot id that is currently active and being used to filter results by. */
+  public readonly spotId$ = this.spotIdSub$.pipe(distinctUntilChanged());
   /** The fish eyes state that is currently active and being used to filter results by. */
   public readonly fishEyes$ = new BehaviorSubject<boolean>(false);
   public readonly showMisses$ = new BehaviorSubject<boolean>(localStorage.getItem('db:fish:show-misses') === 'true');
@@ -235,6 +238,9 @@ export class FishContextService {
     }),
     shareReplay(1)
   );
+  private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
+  /** The bait id that is currently active and being used to filter results by. */
+  public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
   /** An observable containing the bite times recorded to catch fishes at the active spot. */
   public readonly biteTimesBySpot$ = combineLatest([this.spotId$, this.baitId$]).pipe(
     filter(([spotId]) => spotId > 0),
@@ -292,12 +298,6 @@ export class FishContextService {
     }),
     shareReplay(1)
   );
-  private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
-  /** The spot id that is currently active and being used to filter results by. */
-  public readonly spotId$ = this.spotIdSub$.pipe(distinctUntilChanged());
-  private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
-  /** The bait id that is currently active and being used to filter results by. */
-  public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$, this.showMisses$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     tap(([, showMisses]) => localStorage.setItem('db:fish:show-misses', showMisses?.toString())),

@@ -3,7 +3,6 @@ import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { map, mergeMap, shareReplay } from 'rxjs/operators';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable()
 export class TooltipDataService {

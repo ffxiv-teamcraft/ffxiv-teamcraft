@@ -1,7 +1,6 @@
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable, OperatorFunction } from 'rxjs';
-import { LazyDataWithExtracts } from '../../lazy-data/lazy-data-types';
-import { LazyDataKey } from '../data/lazy-data';
+import { LazyDataKey, LazyDataWithExtracts } from '../../lazy-data/lazy-data-types';
 import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from './safe-combine-latest';
 

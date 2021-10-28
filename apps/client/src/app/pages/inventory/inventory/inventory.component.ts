@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
@@ -8,13 +8,13 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-inventory',
@@ -84,9 +84,16 @@ export class InventoryComponent {
         });
     })
   );
-  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$, this.search$, this.selectedExpansion$, this.lazyData.patches$,
-    this.lazyData.getEntry('itemPatch')]).pipe(
-    map(([inventories, prices, search, selectedExpansion, patches, itemPatch]) => {
+  public display$: Observable<InventoryDisplay[]> = safeCombineLatest([
+    this.inventory$,
+    this.prices$,
+    this.search$,
+    this.selectedExpansion$,
+    this.lazyData.patches$,
+    this.lazyData.getEntry('itemPatch'),
+    this.lazyData.getI18nEntry('items')
+  ]).pipe(
+    map(([inventories, prices, search, selectedExpansion, patches, itemPatch, items]) => {
       return inventories
         .map(inventory => {
           const clone = { ...inventory };
@@ -121,7 +128,7 @@ export class InventoryComponent {
               }
 
               // Return if item matches all search criteria
-              const itemName = this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase();
+              const itemName = this.i18n.getName(items[item.itemId]).toLowerCase();
               return search.split(' ').every(fragment => {
                 return itemName.includes(fragment.toLowerCase());
               });
@@ -132,9 +139,11 @@ export class InventoryComponent {
     })
   );
 
+  public expansions$ = this.lazyData.getI18nEntry('exVersions');
+
   constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
-              private translate: TranslateService, private l12n: LocalizedDataService,
+              private translate: TranslateService,
               private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private settings: SettingsService) {
   }
@@ -145,10 +154,6 @@ export class InventoryComponent {
 
   public set selectedExpansion(value) {
     this.selectedExpansion$.next(value);
-  }
-
-  public getExpansions() {
-    return this.l12n.getExpansions();
   }
 
   public computePrices(inventory: InventoryDisplay): void {

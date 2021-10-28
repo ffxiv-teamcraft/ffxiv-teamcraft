@@ -5,7 +5,6 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -19,6 +18,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { I18nName } from '../../../model/common/i18n-name';
 
 interface ExpObj {
   exp: number,
@@ -80,7 +80,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
               private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService) {
@@ -151,7 +151,6 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               + leve.CraftLeve.ItemCount1
               + leve.CraftLeve.ItemCount2
               + leve.CraftLeve.ItemCount3,
-            name: this.l12n.getLeve(leve.ID),
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats,
@@ -264,35 +263,38 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   }
 
   public createQuickList(leve: Levequest): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(leve.itemId)));
+    this.i18n.getNameObservable('items', leve.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
 
-    const operation$ = this.dataService.getItem(leve.itemId).pipe(
-      switchMap(itemData => {
-        const craft = itemData.item.craft.find(c => c.job === leve.jobId);
-        return this.listManager
-          .addToList({
-            itemId: leve.itemId,
-            list: list,
-            recipeId: craft.id,
-            amount: leve.itemQuantity * this.craftAmount(leve)
-          })
-          .pipe(
-            tap(resultList => this.listsFacade.addList(resultList)),
-            mergeMap(resultList => {
-              return this.listsFacade.myLists$.pipe(
-                map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-                filter(l => l !== undefined),
-                first()
+        const operation$ = this.dataService.getItem(leve.itemId).pipe(
+          switchMap(itemData => {
+            const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+            return this.listManager
+              .addToList({
+                itemId: leve.itemId,
+                list: list,
+                recipeId: craft.id,
+                amount: leve.itemQuantity * this.craftAmount(leve)
+              })
+              .pipe(
+                tap(resultList => this.listsFacade.addList(resultList)),
+                mergeMap(resultList => {
+                  return this.listsFacade.myLists$.pipe(
+                    map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                    filter(l => l !== undefined),
+                    first()
+                  );
+                })
               );
-            })
-          );
-      })
-    );
+          })
+        );
 
-    this.progressService.showProgress(operation$, 1)
-      .subscribe((newList) => {
-        this.router.navigate(['list', newList.$key]);
-      });
+        return this.progressService.showProgress(operation$, 1);
+      })
+    ).subscribe((newList) => {
+      this.router.navigate(['list', newList.$key]);
+    });
   }
 
   public getExp(leve: Levequest, allLeves: Levequest[]): { level: number, exp: number, expPercent: number, totalExp: number } {
@@ -337,9 +339,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     this.allSelected = leves.reduce((res, item) => item.selected && res, true);
   }
 
-  public openInGE(leve: Levequest): void {
+  public openInGE(leveName: I18nName): void {
     if (this.platformService.isDesktop()) {
-      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leve.name.en.split(' ').join('_')}`);
+      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leveName.en.split(' ').join('_')}`);
     }
   }
 

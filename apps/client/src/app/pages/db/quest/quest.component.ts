@@ -3,7 +3,6 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SeoService } from '../../../core/seo/seo.service';
@@ -17,6 +16,7 @@ import { questChainLengths } from '../../../core/data/sources/quests-chain-lengt
 import { Trade } from '../../../modules/list/model/trade';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyQuest } from '../../../lazy-data/model/lazy-quest';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-quest',
@@ -42,7 +42,7 @@ export class QuestComponent extends TeamcraftPageComponent {
   public trades$: Observable<Trade[]>;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
+              private gt: DataService,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataFacade, public settings: SettingsService,
               seo: SeoService) {
@@ -73,10 +73,10 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
 
     this.startingPoint$ = this.xivapiQuest$.pipe(
-      map(quest => {
-        return this.l12n.getNpc(quest.IssuerStart) as any;
+      switchMap(quest => {
+        return this.lazyData.getRow('npcs', quest.IssuerStart);
       }),
-      filter(npc => npc && npc.position),
+      filter(npc => npc && !!npc.position),
       map(npc => npc.position)
     );
 
@@ -162,9 +162,22 @@ export class QuestComponent extends TeamcraftPageComponent {
     );
 
     this.involvedNpcs$ = actorIds$.pipe(
-      map(ids => ids
-        .filter(id => id < 5000000)
-        .filter(id => this.l12n.getNpc(id) !== undefined))
+      switchMap(ids => {
+        return safeCombineLatest(ids
+          .filter(id => id < 5000000)
+          .map(id => {
+            return this.lazyData.getRow('npcs', id).pipe(
+              map(npc => {
+                if (!!npc) {
+                  return id;
+                }
+                return null;
+              })
+            );
+          })).pipe(
+          map(filteredIds => filteredIds.filter(id => id !== null))
+        );
+      })
     );
 
     this.textData$ = combineLatest([this.xivapiQuest$, lang$]).pipe(
@@ -199,7 +212,7 @@ export class QuestComponent extends TeamcraftPageComponent {
 
   public getName(quest: any): string {
     // We might want to add more details for some specific quests, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(quest, 'quests')).replace('', '•');
+    return this.i18n.getName(this.i18n.xivapiToI18n(quest)).replace('', '•');
   }
 
   public getDescription(quest: any): Observable<string> {

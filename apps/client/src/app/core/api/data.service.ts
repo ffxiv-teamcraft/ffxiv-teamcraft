@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
@@ -26,7 +26,6 @@ import { MobSearchResult } from '../../model/search/mob-search-result';
 import { FateSearchResult } from '../../model/search/fate-search-result';
 import { MapSearchResult } from '../../model/search/map-search-result';
 import { mapIds } from '../data/sources/map-ids';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { requestsWithDelay } from '../rxjs/requests-with-delay';
 import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-result';
 import { I18nToolsService } from '../tools/i18n-tools.service';
@@ -59,8 +58,7 @@ export class DataService {
               private xivapi: XivapiService,
               private serializer: NgSerializerService,
               private lazyData: LazyDataFacade,
-              private translate: TranslateService,
-              private l12n: LocalizedDataService) {
+              private translate: TranslateService) {
   }
 
   private get isCompatible() {
@@ -966,17 +964,29 @@ export class DataService {
 
   searchFishingSpot(query: string, filters: SearchFilter[]): Observable<FishingSpotSearchResult[]> {
     return this.lazyData.getEntry('fishingSpots').pipe(
-      map(fishingSpots => {
-        return fishingSpots.filter(spot => {
-          return this.i18n.getName(this.l12n.getPlace(spot.zoneId)).toLowerCase().indexOf(query.toLowerCase()) > -1
-            || this.i18n.getName(this.l12n.getMapName(spot.mapId)).toLowerCase().indexOf(query.toLowerCase()) > -1;
-        })
-          .map(spot => {
-            return {
-              id: spot.id,
-              spot: spot
-            };
-          });
+      switchMap(fishingSpots => {
+        return safeCombineLatest(
+          fishingSpots.map(spot => {
+            return combineLatest([
+              this.i18n.getNameObservable('places', spot.zoneId),
+              this.i18n.getMapName(spot.mapId)
+            ]).pipe(
+              map(([placeName, mapName]) => {
+                return { spot, matches: placeName.toLowerCase().includes(query.toLowerCase()) || mapName.toLowerCase().includes(query.toLowerCase()) };
+              })
+            );
+          })
+        ).pipe(
+          map(result => {
+            return result.filter(row => row.matches)
+              .map(({ spot }) => {
+                return {
+                  id: spot.id,
+                  spot: spot
+                };
+              });
+          })
+        );
       })
     );
   }
@@ -1033,12 +1043,7 @@ export class DataService {
           switch (row.Source.toLowerCase()) {
             case 'item':
             case 'leve':
-              row.Data.showButton = true;
-              break;
             case 'quest': {
-              const quest = this.l12n.getQuest(row.SourceID);
-              Object.assign(row.Data, this.i18n.i18nToXivapi(quest.name));
-              row.Data.Icon = quest.icon;
               row.Data.showButton = true;
               break;
             }
@@ -1051,8 +1056,6 @@ export class DataService {
               row.Source = 'npc';
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
-              const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.i18n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
@@ -1065,8 +1068,6 @@ export class DataService {
               row.Source = 'npc';
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
-              const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.i18n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
@@ -1076,11 +1077,8 @@ export class DataService {
               if (instanceId === undefined) {
                 break;
               }
-              const instanceEntry = this.l12n.getInstanceName(+instanceId);
-              Object.assign(row.Data, this.i18n.i18nToXivapi(instanceEntry));
               row.Source = 'instance';
               row.SourceID = +instanceId;
-              row.Data.Icon = instanceEntry.icon;
               row.Data.showButton = true;
               break;
             }
@@ -1149,7 +1147,7 @@ export class DataService {
     return {
       id: npc.ID,
       icon: npc.Icon,
-      title: this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'),
+      title: this.i18n.xivapiToI18n(npc, 'Title'),
       type: SearchType.NPC
     };
   }
@@ -1208,7 +1206,7 @@ export class DataService {
       icon: leve.Icon,
       level: leve.ClassJobLevel,
       banner: leve.IconIssuer,
-      job: this.l12n.xivapiToI18n(leve.ClassJobCategory, 'jobCategories')
+      job: this.i18n.xivapiToI18n(leve.ClassJobCategory)
     };
   }
 

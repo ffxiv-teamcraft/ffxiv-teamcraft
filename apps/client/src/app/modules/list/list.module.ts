@@ -37,7 +37,6 @@ import { ListCompletionPopupComponent } from './list-completion-popup/list-compl
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { LayoutModule } from '../../core/layout/layout.module';
 import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TreasuresExtractor } from './data/extractor/treasures-extractor';
 import { FatesExtractor } from './data/extractor/fates-extractor';
 import { ListDetailsPanelComponent } from './list-details-panel/list-details-panel.component';

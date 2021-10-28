@@ -4,8 +4,7 @@ import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { GardeningData } from '../../model/gardening-data';
-import { Observable } from 'rxjs';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -38,6 +37,9 @@ export class GardeningExtractor extends AbstractExtractor<GardeningData> {
     return this.lazyData.getRow('seeds', item.id).pipe(
       withLazyData(this.lazyData, 'gardeningSeedIds'),
       switchMap(([entry, gardeningSeedIds]) => {
+        if (!entry) {
+          return of(null);
+        }
         const params: HttpParams = new HttpParams().append('seedId', entry.ffxivgId);
         return this.http.get<any[]>('https://us-central1-ffxivteamcraft.cloudfunctions.net/ffxivgardening-api', { params }).pipe(
           map(crosses => {

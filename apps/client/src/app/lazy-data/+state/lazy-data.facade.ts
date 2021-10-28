@@ -13,7 +13,6 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { zhWorlds } from '../../core/data/sources/zh-worlds';
 import { koWorlds } from '../../core/data/sources/ko-worlds';
-import { LazyData } from '../../core/data/lazy-data';
 import { LoadingStatus } from '../data-entry-status';
 import { LazyRecipe } from '../model/lazy-recipe';
 import { XivapiPatch } from '../../core/data/model/xivapi-patch';
@@ -119,13 +118,15 @@ export class LazyDataFacade {
     );
   }
 
+  public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number): Observable<LazyDataEntries[K] | null>;
   /**
    * Gets a single entry of a given property
    * @param propertyKey the name of the property to get the id from
    * @param id the id of the row you want to load
    * @param fallback fallback value if nothing is found
    */
-  public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: LazyDataEntries[K]): Observable<LazyDataEntries[K]> {
+  public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback: Partial<LazyDataEntries[K]>): Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]>;
+  public getRow<K extends LazyDataRecordKey>(propertyKey: K, id: number, fallback?: Partial<LazyDataEntries[K]>): Observable<LazyDataEntries[K] | null> | Observable<Partial<LazyDataEntries[K]> | LazyDataEntries[K]> {
     if (this.getCacheEntry(propertyKey, id) === null) {
       // If we asked for more than 50 separate things in the same entry during the last CACHE_TTL and it's not extracts, load the entire entry.
       if (propertyKey !== 'extracts' && Object.keys(this.cache).filter(key => key.startsWith(`${propertyKey}:`)).length > 50) {
@@ -143,7 +144,7 @@ export class LazyDataFacade {
         }),
         map(([res, status]) => {
           if (status === 'full' && !res) {
-            return fallback;
+            return fallback || null;
           } else if (res) {
             return res;
           }
@@ -287,7 +288,7 @@ export class LazyDataFacade {
   public getMinBtnSpearNodesIndex(): Observable<(Omit<LazyDataEntries['nodes'], 'zoneid'> & { id: number, zoneId: number })[]> {
     return this.getEntry('nodes').pipe(
       map(nodes => {
-        return Object.entries<LazyData['nodes']>(nodes)
+        return Object.entries(nodes)
           .map(([key, value]) => {
             const res = {
               ...value,

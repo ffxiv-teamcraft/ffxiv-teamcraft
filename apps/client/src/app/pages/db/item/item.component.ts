@@ -35,7 +35,6 @@ import { UsedForType } from '../model/used-for-type';
 import { ATTTService } from '../service/attt.service';
 import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { environment } from '../../../../environments/environment';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -384,13 +383,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/quest.png',
           quests: data.item.usedInQuest
         });
-      } else if (usedInQuests[xivapiItem.ID]) {
+      } else if (usedInQuests) {
         usedFor.push({
           type: UsedForType.QUEST,
           flex: '1 1 auto',
           title: 'Quests',
           icon: './assets/icons/quest.png',
-          quests: usedInQuests[xivapiItem.ID]
+          quests: usedInQuests
         });
       }
       if (data.item.supply) {
@@ -523,7 +522,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       if (item.ClassJobUseTargetID) {
         mainAttributes.push({
           name: 'DB.Class_job',
-          value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories'))
+          value: this.i18n.getName(this.i18n.xivapiToI18n(item.ClassJobCategory))
         });
       }
       mainAttributes.push({
@@ -585,7 +584,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         .map((key) => {
           const statIndex = key.match(/(\d+)/)[0];
           const res: any = {
-            name: this.l12n.xivapiToI18n(item[key], 'baseParams'),
+            name: this.i18n.xivapiToI18n(item[key]),
             value: item[`BaseParamValue${statIndex}`],
             requiresPipe: true
           };
@@ -613,7 +612,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           const max = food[`Max${i}`];
           const maxHq = food[`MaxHQ${i}`];
           if (value > 0) {
-            statsEntry.name = this.l12n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
+            statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`]);
             statsEntry.requiresPipe = true;
             if (isRelative) {
               statsEntry.value = `${value}% (${max})`;
@@ -643,7 +642,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     private readonly route: ActivatedRoute,
     private readonly xivapi: XivapiService,
     private readonly gt: DataService,
-    private readonly l12n: LocalizedDataService,
     private readonly i18n: I18nToolsService,
     public readonly translate: TranslateService,
     private readonly router: Router,
@@ -741,25 +739,29 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   }
 
   public createQuickList(item: SearchResult, amount: number): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList({
-      itemId: +item.itemId,
-      list: list,
-      recipeId: item.recipe ? item.recipe.recipeId : '',
-      amount: amount,
-      collectable: item.addCrafts
-    }).pipe(
-      tap((resultList) => this.listsFacade.addList(resultList)),
-      mergeMap((resultList) => {
-        return this.listsFacade.myLists$.pipe(
-          map((lists) => lists.find((l) => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-          filter((l) => l !== undefined),
-          first()
+    this.i18n.getNameObservable('items', +item.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
+        const operation$ = this.listManager.addToList({
+          itemId: +item.itemId,
+          list: list,
+          recipeId: item.recipe ? item.recipe.recipeId : '',
+          amount: amount,
+          collectable: item.addCrafts
+        }).pipe(
+          tap((resultList) => this.listsFacade.addList(resultList)),
+          mergeMap((resultList) => {
+            return this.listsFacade.myLists$.pipe(
+              map((lists) => lists.find((l) => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+              filter((l) => l !== undefined),
+              first()
+            );
+          })
         );
-      })
-    );
 
-    this.progressService.showProgress(operation$, 1).subscribe((newList) => {
+        return this.progressService.showProgress(operation$, 1);
+      })
+    ).subscribe((newList) => {
       this.router.navigate(['list', newList.$key]);
     });
   }
@@ -822,12 +824,12 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'itemDescriptions', 'Description'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(item, 'Description'));
   }
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'items'));
+    return this.i18n.getName(this.i18n.xivapiToI18n(item));
   }
 
   private handleAdditionalData(_item: ListRow, gtData: ItemData, xivapiItem: any): Observable<ListRow> {

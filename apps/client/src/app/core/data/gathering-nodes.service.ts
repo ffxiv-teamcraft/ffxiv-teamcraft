@@ -7,8 +7,8 @@ import { FishingBait } from './model/fishing-bait';
 import { combineLatest, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
-import { LazyData } from './lazy-data';
 import { LazyFishingSpot } from '../../lazy-data/model/lazy-fishing-spot';
+import { LazyData } from '../../lazy-data/lazy-data';
 
 @Injectable({
   providedIn: 'root'

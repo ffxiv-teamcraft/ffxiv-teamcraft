@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { NotificationsState } from './notifications.reducer';
 import { notificationsQuery } from './notifications.selectors';
 import { LoadNotifications, RemoveNotification } from './notifications.actions';
-import { first, map } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { NotificationType } from '../../../core/notification/notification-type';
@@ -18,7 +18,7 @@ export class NotificationsFacade {
   allNotifications$ = this.store.select(notificationsQuery.getAllNotifications);
 
   notificationsDisplay$ = this.allNotifications$.pipe(
-    map(notifications => {
+    switchMap(notifications => {
       return safeCombineLatest(notifications.map(notification => {
         return notification.getContent(this.translate, this.i18n).pipe(
           map(content => {
