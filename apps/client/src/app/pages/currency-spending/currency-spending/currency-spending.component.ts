@@ -102,9 +102,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
               .map((chunk: any) => {
-                return this.universalis.getServerPrices(
+                return this.universalis.getServerHistoryPrices(
                   server,
-                  ...chunk.map(entry => entry.item)
+                  5,
+                  ...chunk.map(entry => entry.item),
                 );
               });
             this.tradesCount = entries.length;
