@@ -7,7 +7,7 @@ import { FishContextService } from '../../service/fish-context.service';
   selector: 'app-fish-bite-times',
   templateUrl: './fish-bite-times.component.html',
   styleUrls: ['./fish-bite-times.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishBiteTimesComponent {
   public readonly loading$ = this.fishCtx.biteTimesByFish$.pipe(map((res) => res.loading));
@@ -19,11 +19,12 @@ export class FishBiteTimesComponent {
       return {
         min: (sortedBiteTimes[0] || { id: 0 }).id,
         max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { id: 0 }).id,
-        avg: sortedBiteTimes.reduce((acc, entry) => entry.id * entry.occurrences + acc, 0) / res.data.total,
+        avg: sortedBiteTimes.reduce((acc, entry) => entry.id * entry.occurrences + acc, 0) / res.data.total
       };
     }),
     shareReplay(1)
   );
 
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {}
+  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
+  }
 }

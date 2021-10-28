@@ -4,13 +4,14 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { filter, map, takeUntil } from 'rxjs/operators';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Memoized } from '../../../core/decorators/memoized';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { MateriaService } from '../materia.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-import-from-pcap-popup',
@@ -28,21 +29,22 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
   public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
 
   constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
-              private ipc: IpcService, private lazyData: LazyDataService,
+              private ipc: IpcService, private lazyData: LazyDataFacade,
               private gearsetsFacade: GearsetsFacade, private materiaService: MateriaService) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),
       filter(([, updateClassInfo]) => updateClassInfo.classId === this.job),
-      map(([packets]) => packets)
-    ).subscribe((packets) => {
+      map(([packets]) => packets),
+      withLazyData(this.lazyData, 'itemMeldingData')
+    ).subscribe(([packets, lazyItemMeldingData]) => {
       const gearset = new TeamcraftGearset();
       gearset.name = this.gearsetName;
       gearset.job = this.job;
       packets
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
-          const itemMeldingData = this.lazyData.data.itemMeldingData[packet.catalogId];
+          const itemMeldingData = lazyItemMeldingData[packet.catalogId];
           const materias = (packet.materia || <number[]>[]).map((materia, index) => {
             return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index]) || 0;
           });

@@ -30,23 +30,6 @@ export class TotalPanelPricePopupComponent implements OnInit {
       })[0];
   }
 
-  private getTradeEntries(...tradeSources: TradeSource[]): TradeEntry[] {
-    return [].concat.apply([], tradeSources.map(tradeSource => {
-      return tradeSource.trades.reduce((acc, trade) => {
-        return [
-          ...acc,
-          ...this.getFilteredCurrencies(trade.currencies)
-        ];
-      }, []);
-    }));
-  }
-
-  private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
-    return currencies.filter(c => {
-      return !this.ignoredSources.includes(c.id);
-    });
-  }
-
   public computePrice(): void {
     this.totalPrice = this.panelContent.reduce((result, row) => {
       const vendors = getItemSource(row, DataType.VENDORS);
@@ -99,6 +82,23 @@ export class TotalPanelPricePopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.computePrice();
+  }
+
+  private getTradeEntries(...tradeSources: TradeSource[]): TradeEntry[] {
+    return [].concat.apply([], tradeSources.map(tradeSource => {
+      return tradeSource.trades.reduce((acc, trade) => {
+        return [
+          ...acc,
+          ...this.getFilteredCurrencies(trade.currencies)
+        ];
+      }, []);
+    }));
+  }
+
+  private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
+    return currencies.filter(c => {
+      return !this.ignoredSources.includes(c.id);
+    });
   }
 
 }

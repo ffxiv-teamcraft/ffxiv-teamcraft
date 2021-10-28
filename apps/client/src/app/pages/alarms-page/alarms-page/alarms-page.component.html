@@ -218,7 +218,7 @@
                  src="./assets/icons/status/snagging.png">
           </div>
           <div>
-            {{row.alarm.aetheryte?.nameid | placeName | i18n}}
+            {{row.alarm.aetheryte?.nameid | i18nRow:'places' | i18n}}
           </div>
           <div>
             <span *ngFor="let spawn of row.alarm.spawns; last as last">
@@ -246,7 +246,7 @@
             <ng-container *ngIf="row.alarm.weathersFrom && row.alarm.weathersFrom.length > 0">
               <div fxLayout="row wrap" fxLayoutGap="5px">
                 <div *ngFor="let weather of row.alarm.weathersFrom">
-                  <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                  <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                        nz-tooltip>
                 </div>
               </div>
@@ -256,7 +256,7 @@
             </ng-container>
             <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathers">
-                <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                      nz-tooltip>
               </div>
             </div>
@@ -365,7 +365,7 @@
                  nzTheme="outline"></i>
             </div>
           </div>
-          <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+          <img *ngIf="row.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
 
           <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="row.alarm.hookset | hooksetActionId | actionName | i18n" class="compact-gig-icon" nz-tooltip
@@ -429,7 +429,7 @@
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div>
-              {{row.alarm.aetheryte?.nameid | placeName | i18n}}
+              {{row.alarm.aetheryte?.nameid | i18nRow:'places' | i18n}}
             </div>
 
             <app-map-position [mapId]="row.alarm.mapId"

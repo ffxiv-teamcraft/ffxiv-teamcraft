@@ -1,5 +1,5 @@
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { CraftingReplayStep } from './crafting-replay-step';
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { DeserializeAs } from '@kaiu/serializer';

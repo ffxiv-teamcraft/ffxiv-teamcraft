@@ -74,7 +74,7 @@
       <b class="set-bonus">{{item.ItemSpecialBonus | xivapiI18n}}: {{item.ItemSeries | xivapiI18n}}</b>
       <ul>
         <li *ngFor="let bonus of item.SetBonuses"> {{'DB.ITEM.X_Equipped' | translate:{ amount: bonus.amountRequired } }}
-          {{bonus.baseParam | baseParamName | i18n}} +{{bonus.value}}</li>
+          {{bonus.baseParam | i18nRow:'baseParams' | i18n}} +{{bonus.value}}</li>
       </ul>
     </div>
   </div>

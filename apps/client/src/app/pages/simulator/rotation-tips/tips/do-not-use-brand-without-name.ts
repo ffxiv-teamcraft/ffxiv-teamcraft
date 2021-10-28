@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { SimulationResult, BrandOfTheElements, NameOfTheElements } from '@ffxiv-teamcraft/simulator';
+import { BrandOfTheElements, NameOfTheElements, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class DoNotUseBrandWithoutName extends RotationTip {

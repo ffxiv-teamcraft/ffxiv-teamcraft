@@ -4,12 +4,10 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as _ from 'lodash';
 import { MapRelatedElement } from './map-related-element';
@@ -17,6 +15,8 @@ import { MapMarker } from '../../../modules/map/map-marker';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { mapIds } from '../../../core/data/sources/map-ids';
 
 @Component({
   selector: 'app-map-page',
@@ -32,38 +32,42 @@ export class MapPageComponent extends TeamcraftPageComponent {
   public related$: Observable<MapRelatedElement[]>;
 
   public relatedDisplay$: Observable<MapRelatedElement[]>;
-
+  public markers$: Observable<MapMarker[]>;
+  public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
+  public availableTypes = ['fate', 'mob', 'npc', 'node', 'hunt'];
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
-  public markers$: Observable<MapMarker[]>;
-
-  public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
-
-  public availableTypes = ['fate', 'mob', 'npc', 'node', 'hunt'];
-
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService,
+              private gt: DataService, private i18n: I18nToolsService, private translate: TranslateService,
+              private router: Router, private lazyData: LazyDataFacade,
               private htmlTools: HtmlToolsService, private http: HttpClient, public settings: SettingsService,
               seo: SeoService) {
     super(seo);
-
-    this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug');
+    route.paramMap.pipe(
+      takeUntil(this.onDestroy$),
+      switchMap(params => {
+        const slug = params.get('slug');
+        return i18n.getMapName(+params.get('mapId')).pipe(
+          map(name => {
+            const correctSlug = name.split(' ').join('-');
+            return { slug, correctSlug };
+          })
+        );
+      })
+    ).subscribe(({ slug, correctSlug }) => {
       if (slug === null) {
-        this.router.navigate(
-          [this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')],
+        router.navigate(
+          [correctSlug],
           {
-            relativeTo: this.route,
+            relativeTo: route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')) {
-        this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getMapName(+params.get('mapId'))).split(' ').join('-')],
+      } else if (slug !== correctSlug) {
+        router.navigate(
+          ['../', correctSlug],
           {
-            relativeTo: this.route,
+            relativeTo: route,
             replaceUrl: true
           }
         );
@@ -92,15 +96,16 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
 
     this.related$ = this.map$.pipe(
-      map(mapData => {
-        return [
-          ...this.getFates(mapData.ID),
-          ...this.getMobs(mapData.ID),
-          ...this.getNpcs(mapData.ID),
-          ...this.getNodes(mapData.ID),
-          ...this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
-        ];
+      switchMap(mapData => {
+        return combineLatest([
+          this.getFates(mapData.ID),
+          this.getMobs(mapData.ID),
+          this.getNpcs(mapData.ID),
+          this.getNodes(mapData.ID)
+          //this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
+        ]);
       }),
+      map((res) => res.flat()),
       shareReplay(1)
     );
 
@@ -168,14 +173,19 @@ export class MapPageComponent extends TeamcraftPageComponent {
     );
 
     this.links$ = this.map$.pipe(
-      map((mapData) => {
-        return [
-          {
-            title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${this.l12n.getMapName(mapData.ID).en.split(' ').join('_')}`,
-            icon: './assets/icons/ge.png'
-          }
-        ];
+      switchMap((mapData) => {
+        const entry = mapIds.find((m) => m.id === mapData.ID);
+        return this.lazyData.getRow('places', entry?.id).pipe(
+          map(place => {
+            return [
+              {
+                title: 'Gamer Escape',
+                url: `https://ffxiv.gamerescape.com/wiki/${place.en.split(' ').join('_')}`,
+                icon: './assets/icons/ge.png'
+              }
+            ];
+          })
+        );
       })
     );
   }
@@ -188,198 +198,238 @@ export class MapPageComponent extends TeamcraftPageComponent {
     }
   }
 
-  private getHunts(territoryId: number, sizeFactor: number): MapRelatedElement[] {
-    const zoneHunts = this.lazyData.data.hunts.find(h => h.zoneid === territoryId);
-    if (!zoneHunts || !zoneHunts.hunts) {
-      return [];
-    }
-    const c = sizeFactor / 100;
-    return [].concat.apply([], zoneHunts.hunts.map((hunt, index) => {
-        const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
-        return hunt.spawns.map((spawn) => {
-          return <MapRelatedElement>{
-            type: 'hunt',
-            id: this.l12n.getMobId(hunt.name),
-            name: huntName,
-            coords: {
-              x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-              y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
-            },
-            marker: {
-              iconType: 'img',
-              iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
-              x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-              y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
-              tooltip: this.i18n.getName(huntName)
-            },
-            link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
-          };
-        });
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return this.map$.pipe(
+      switchMap((mapData) => {
+        return this.getName(mapData).pipe(
+          map(title => {
+            return {
+              title,
+              description: '',
+              url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${title.split(' ').join('-')}`,
+              image: `https://xivapi.com${mapData.MapFilename}`
+            };
+          })
+        );
       })
     );
   }
 
-  private getFates(mapId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.data.fates)
-      .map(key => {
-        const fate = this.l12n.getFate(+key);
-        const position = fate.position;
-        return position ? { ...fate, id: +key } : null;
-      })
-      .filter(fate => fate !== null && fate.position.map === mapId)
-      .map(fate => {
-        return <MapRelatedElement>{
-          type: 'fate',
-          id: fate.id,
-          name: fate.name,
-          description: fate.description,
-          coords: {
-            x: fate.position.x,
-            y: fate.position.y
-          },
-          marker: {
-            iconType: 'img',
-            iconImg: `https://xivapi.com${fate.icon}`,
-            x: fate.position.x,
-            y: fate.position.y,
-            tooltip: this.i18n.getName(fate.name)
-          },
-          link: `/db/${this.translate.currentLang}/fate/${fate.id}`
-        };
-      });
-  }
+  // TODO refactor this with new data, not sure it's even used for now tho.
+  // private getHunts(territoryId: number, sizeFactor: number): Observable<MapRelatedElement[]> {
+  //   return this.lazyData.getEntry('hunts').pipe(
+  //     map(hunts => {
+  //       const zoneHunts = hunts.find(h => h.zoneid === territoryId);
+  //       if (!zoneHunts || !zoneHunts.hunts) {
+  //         return [];
+  //       }
+  //       const c = sizeFactor / 100;
+  //       return [].concat.apply([], (zoneHunts?.hunts || []).map((hunt, index) => {
+  //           const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
+  //           return hunt.spawns.map((spawn) => {
+  //             return <MapRelatedElement>{
+  //               type: 'hunt',
+  //               id: this.l12n.getMobId(hunt.name),
+  //               name: huntName,
+  //               coords: {
+  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
+  //               },
+  //               marker: {
+  //                 iconType: 'img',
+  //                 iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
+  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
+  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
+  //                 tooltip: this.i18n.getName(huntName)
+  //               },
+  //               link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
+  //             };
+  //           });
+  //         })
+  //       );
+  //     })
+  //   );
+  //
+  // }
 
-  private getNpcs(mapId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.data.npcs)
-      .map(key => {
-        const npc = this.l12n.getNpc(+key);
-        const position = npc.position;
-        return position ? { ...npc, id: +key } : null;
-      })
-      .filter(npc => npc !== null && npc.position.map === mapId && npc.en !== '')
-      .map(npc => {
-        return <MapRelatedElement>{
-          type: 'npc',
-          id: npc.id,
-          name: npc,
-          coords: {
-            x: npc.position.x,
-            y: npc.position.y
-          },
-          marker: {
-            iconType: 'img',
-            iconImg: `https://xivapi.com/c/ENpcResident.png`,
-            x: npc.position.x,
-            y: npc.position.y,
-            tooltip: this.i18n.getName(npc),
-            link: `/db/${this.translate.currentLang}/npc/${npc.id}`
-          }
-        };
-      });
-  }
-
-  private getNodes(mapId: number): MapRelatedElement[] {
-    const fromNodePositions = Object.keys(this.lazyData.data.nodes)
-      .map(key => {
-        return { ...this.lazyData.data.nodes[key], id: +key };
-      })
-      .filter(node => node !== null && node.map === mapId && !node.items.some(i => i > 2000000))
-      .map(node => {
-        return <MapRelatedElement>{
-          type: 'node',
-          id: node.id,
-          name: this.i18n.createFakeI18n(`lvl ${node.level}`),
-          additionalData: node.items.map(i => ({ id: i })),
-          coords: {
-            x: node.x,
-            y: node.y
-          },
-          marker: {
-            iconType: 'img',
-            iconImg: [
-              './assets/icons/map/min1.png',
-              './assets/icons/map/min0.png',
-              './assets/icons/map/btn1.png',
-              './assets/icons/map/btn0.png',
-              './assets/icons/map/fsh0.png'
-            ][node.type],
-            x: node.x,
-            y: node.y,
-            link: `/db/${this.translate.currentLang}/node/${node.id}`
-          }
-        };
-      });
-    const fromBell = (window as any).gt.bell.nodes
-      .filter(node => {
-        return this.l12n.getMapId(node.zone) === mapId;
-      })
-      .map(node => {
-        node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
-        return <MapRelatedElement>{
-          type: 'node',
-          id: node.id,
-          name: this.i18n.createFakeI18n(`lvl ${node.lvl}`),
-          additionalData: node.items.map(i => {
-            return {
-              id: i.id,
-              slot: i.slot
+  private getFates(mapId: number): Observable<MapRelatedElement[]> {
+    return this.lazyData.getEntry('fates').pipe(
+      map(fates => {
+        return Object.keys(fates)
+          .map(key => {
+            const fate = fates[+key];
+            const position = fate.position;
+            return position ? { ...fate, id: +key } : null;
+          })
+          .filter(fate => fate !== null && fate.position.map === mapId)
+          .map(fate => {
+            return <MapRelatedElement>{
+              type: 'fate',
+              id: fate.id,
+              name: fate.name,
+              description: fate.description,
+              coords: {
+                x: fate.position.x,
+                y: fate.position.y
+              },
+              marker: {
+                iconType: 'img',
+                iconImg: `https://xivapi.com${fate.icon}`,
+                x: fate.position.x,
+                y: fate.position.y,
+                tooltip: this.i18n.getName(fate.name)
+              },
+              link: `/db/${this.translate.currentLang}/fate/${fate.id}`
             };
-          }),
-          coords: {
-            x: node.coords[0],
-            y: node.coords[1]
-          },
-          marker: {
-            iconType: 'img',
-            iconImg: [
-              './assets/icons/map/min4.png',
-              './assets/icons/map/min3.png',
-              './assets/icons/map/btn4.png',
-              './assets/icons/map/btn3.png',
-              './assets/icons/map/fsh2.png'
-            ][node.type],
-            x: node.coords[0],
-            y: node.coords[1],
-            link: `/db/${this.translate.currentLang}/node/${node.id}`
-          }
-        };
-      });
-
-    return _.uniqBy([...fromBell, ...fromNodePositions], 'id');
+          });
+      })
+    );
   }
 
-  private getMobs(placeNameId: number): MapRelatedElement[] {
-    return [].concat.apply([], Object.keys(this.lazyData.data.monsters)
-      .map(key => {
-        const monster = this.lazyData.data.monsters[key];
-        monster.positions = monster.positions.filter(p => p.zoneid === placeNameId);
-        return { id: +key, ...monster };
+  private getNpcs(mapId: number): Observable<MapRelatedElement[]> {
+    return this.lazyData.getEntry('npcs').pipe(
+      map(npcs => {
+        return Object.keys(npcs)
+          .map(key => {
+            const npc = npcs[+key];
+            const position = npc.position;
+            return position ? { ...npc, id: +key } : null;
+          })
+          .filter(npc => npc !== null && npc.position.map === mapId && npc.en !== '')
+          .map(npc => {
+            return <MapRelatedElement>{
+              type: 'npc',
+              id: npc.id,
+              name: npc,
+              coords: {
+                x: npc.position.x,
+                y: npc.position.y
+              },
+              marker: {
+                iconType: 'img',
+                iconImg: `https://xivapi.com/c/ENpcResident.png`,
+                x: npc.position.x,
+                y: npc.position.y,
+                tooltip: this.i18n.getName(npc),
+                link: `/db/${this.translate.currentLang}/npc/${npc.id}`
+              }
+            };
+          });
       })
-      .filter(monster => {
-        return monster.positions.length > 0;
+    );
+
+  }
+
+  private getNodes(mapId: number): Observable<MapRelatedElement[]> {
+    return this.lazyData.getEntry('nodes').pipe(
+      map(nodes => {
+        const fromNodePositions = Object.keys(nodes)
+          .map(key => {
+            return { ...nodes[key], id: +key };
+          })
+          .filter(node => node !== null && node.map === mapId && !node.items.some(i => i > 2000000))
+          .map(node => {
+            return <MapRelatedElement>{
+              type: 'node',
+              id: node.id,
+              name: this.i18n.createFakeI18n(`lvl ${node.level}`),
+              additionalData: node.items.map(i => ({ id: i })),
+              coords: {
+                x: node.x,
+                y: node.y
+              },
+              marker: {
+                iconType: 'img',
+                iconImg: [
+                  './assets/icons/map/min1.png',
+                  './assets/icons/map/min0.png',
+                  './assets/icons/map/btn1.png',
+                  './assets/icons/map/btn0.png',
+                  './assets/icons/map/fsh0.png'
+                ][node.type],
+                x: node.x,
+                y: node.y,
+                link: `/db/${this.translate.currentLang}/node/${node.id}`
+              }
+            };
+          });
+        const fromBell = (window as any).gt.bell.nodes
+          .filter(node => {
+            return this.lazyData.getMapId(node.zone) === mapId;
+          })
+          .map(node => {
+            node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(node.type);
+            return <MapRelatedElement>{
+              type: 'node',
+              id: node.id,
+              name: this.i18n.createFakeI18n(`lvl ${node.lvl}`),
+              additionalData: node.items.map(i => {
+                return {
+                  id: i.id,
+                  slot: i.slot
+                };
+              }),
+              coords: {
+                x: node.coords[0],
+                y: node.coords[1]
+              },
+              marker: {
+                iconType: 'img',
+                iconImg: [
+                  './assets/icons/map/min4.png',
+                  './assets/icons/map/min3.png',
+                  './assets/icons/map/btn4.png',
+                  './assets/icons/map/btn3.png',
+                  './assets/icons/map/fsh2.png'
+                ][node.type],
+                x: node.coords[0],
+                y: node.coords[1],
+                link: `/db/${this.translate.currentLang}/node/${node.id}`
+              }
+            };
+          });
+
+
+        return _.uniqBy([...fromBell, ...fromNodePositions], 'id');
       })
-      .map(mob => {
-        return mob.positions.map(position => {
-          return <MapRelatedElement>{
-            type: 'mob',
-            id: mob.id,
-            name: this.l12n.getMob(mob.id),
-            description: this.i18n.createFakeI18n(`lvl ${position.level}`),
-            coords: {
-              x: position.x,
-              y: position.y
-            },
-            marker: {
-              iconType: 'img',
-              iconImg: `https://xivapi.com/c/BNpcName.png`,
-              x: position.x,
-              y: position.y,
-              zIndex: 4,
-              tooltip: this.i18n.getName(this.l12n.getMob(mob.id))
-            },
-            link: `/db/${this.translate.currentLang}/mob/${mob.id}`
-          };
-        });
+    );
+  }
+
+  private getMobs(placeNameId: number): Observable<MapRelatedElement[]> {
+    return this.lazyData.getEntry('monsters').pipe(
+      map(monsters => {
+        return [].concat.apply([], Object.keys(monsters)
+          .map(key => {
+            const monster = monsters[key];
+            monster.positions = monster.positions.filter(p => p.zoneid === placeNameId);
+            return { id: +key, ...monster };
+          })
+          .filter(monster => {
+            return monster.positions.length > 0;
+          })
+          .map(mob => {
+            return mob.positions.map(position => {
+              return <MapRelatedElement>{
+                type: 'mob',
+                id: mob.id,
+                name: this.lazyData.getI18nName('mobs', mob.id),
+                description: this.i18n.createFakeI18n(`lvl ${position.level}`),
+                coords: {
+                  x: position.x,
+                  y: position.y
+                },
+                marker: {
+                  iconType: 'img',
+                  iconImg: `https://xivapi.com/c/BNpcName.png`,
+                  x: position.x,
+                  y: position.y,
+                  zIndex: 4
+                },
+                link: `/db/${this.translate.currentLang}/mob/${mob.id}`
+              };
+            });
+          })
+        );
       })
     );
   }
@@ -407,21 +457,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
     return mapData.GameContentLinks;
   }
 
-  private getName(mapData: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.getPlace(mapData.PlaceNameTargetID));
-  }
-
-  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return combineLatest([this.map$, this.lazyData.loaded$]).pipe(
-      map(([mapData]) => {
-        return {
-          title: this.getName(mapData),
-          description: '',
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/map/${mapData.ID}/${this.getName(mapData).split(' ').join('-')}`,
-          image: `https://xivapi.com${mapData.MapFilename}`
-        };
-      })
-    );
+  private getName(mapData: any): Observable<string> {
+    return this.i18n.getMapName(mapData.PlaceNameTargetID);
   }
 }

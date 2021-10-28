@@ -225,7 +225,7 @@
             <i nz-icon nzType="desktop"></i>
           </button>
         </nz-button-group>
-        <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe" [collectable]="collectable"></app-rotation-result-tag>
+        <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe" [collectable]="collectable$ | async"></app-rotation-result-tag>
       </ng-container>
     </ng-container>
   </ng-container>

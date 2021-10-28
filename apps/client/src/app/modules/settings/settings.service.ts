@@ -826,6 +826,14 @@ export class SettingsService {
     this.setBoolean('hideCompletedLogEntries', enabled);
   }
 
+  public get showNotRequiredLogEntries(): boolean {
+    return this.getBoolean('showNotRequiredLogEntries', false);
+  }
+
+  public set showNotRequiredLogEntries(enabled: boolean) {
+    this.setBoolean('showNotRequiredLogEntries', enabled);
+  }
+
   public get showSearchFilters(): boolean {
     return this.getBoolean('showSearchFilters', false);
   }

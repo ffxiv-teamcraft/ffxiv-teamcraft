@@ -11,7 +11,6 @@ import { List } from '../../../modules/list/model/list';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
@@ -22,7 +21,6 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
@@ -34,6 +32,8 @@ import { Language } from '../../../core/data/language';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-search',
@@ -93,7 +93,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     collectable: [false],
     // Instances, leves and actions
     lvlMin: [0],
-    lvlMax: [this.curMaxLevel],
+    lvlMax: [this.curMaxLevel]
   });
 
   availableStats = stats;
@@ -108,7 +108,9 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
-  patches: XivapiPatch[] = this.lazyData.patches.reverse();
+  patches$: Observable<XivapiPatch[]> = this.lazyData.patches$.pipe(
+    map(patches => patches.reverse())
+  );
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
     map(([query, type]) => {
@@ -193,14 +195,16 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   );
 
   patch$: Observable<XivapiPatch> = this.filters$.pipe(
-    map(filters => {
+    switchMap(filters => {
       const patchFilter = filters.find(f => f.name === 'Patch');
       if (patchFilter) {
-        return this.lazyData.patches.find(p => {
-          return p.ID === patchFilter.value;
-        });
+        return this.lazyData.patches$.pipe(
+          map(patches => patches.find(p => {
+            return p.ID === patchFilter.value;
+          }))
+        );
       }
-      return null;
+      return of(null);
     })
   );
 
@@ -209,10 +213,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   constructor(private gt: GarlandToolsService, private data: DataService, public settings: SettingsService,
               private router: Router, private route: ActivatedRoute, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService, private listPicker: ListPickerService,
+              private i18n: I18nToolsService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
-              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
+              private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataFacade,
               private analytics: GoogleAnalyticsService,
               private platformService: PlatformService, @Inject(PLATFORM_ID) private platform: Object) {
     super();
@@ -220,8 +224,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
     }).pipe(
-      map(contentList => {
-        return contentList.Results.map(result => {
+      switchMap(contentList => {
+        return safeCombineLatest(contentList.Results.map(result => {
           const res: any = {
             id: result.ID,
             name: {
@@ -231,14 +235,24 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
               ja: result.Name_ja
             }
           };
-          if (this.lazyData.data.zhItemUiCategories) {
-            res.name.zh = this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en;
+          if (this.settings.searchLanguage === 'zh') {
+            return this.lazyData.getRow('zhItemUiCategories', result.ID).pipe(
+              map(zhRow => {
+                res.name.zh = zhRow?.zh || result.Name_en;
+                return res;
+              })
+            );
+          } else if (this.settings.searchLanguage === 'ko') {
+            return this.lazyData.getRow('koItemUiCategories', result.ID).pipe(
+              map(koRow => {
+                res.name.ko = koRow?.ko || result.Name_en;
+                return res;
+              })
+            );
+          } else {
+            return of(res);
           }
-          if (this.lazyData.data.koItemUiCategories) {
-            res.name.ko = this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en;
-          }
-          return res;
-        });
+        }));
       })
     );
     if (isPlatformBrowser(this.platform)) {
@@ -322,18 +336,24 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       filter(params => {
         return params.query !== undefined && params.type !== undefined;
       }),
-      debounceTime(100)
-    ).subscribe(params => {
-      this.searchType$.next(params.type);
-      this.query$.next(params.query);
-      if (params.filters !== undefined) {
-        const filters = JSON.parse(atob(params.filters));
-        this.filters$.next(filters);
-        this.filtersForm.patchValue(this.filtersToForm(filters, this.filtersForm));
-      }
-      if (params.sort !== undefined) {
-        this.sortBy$.next(params.sort);
-        this.sortOrder$.next(params.order);
+      debounceTime(100),
+      switchMap(params => {
+        this.searchType$.next(params.type);
+        this.query$.next(params.query);
+        if (params.filters !== undefined) {
+          const filters = JSON.parse(atob(params.filters));
+          this.filters$.next(filters);
+          return this.filtersToForm(filters, this.filtersForm);
+        }
+        if (params.sort !== undefined) {
+          this.sortBy$.next(params.sort);
+          this.sortOrder$.next(params.order);
+        }
+        return of(null);
+      })
+    ).subscribe(patch => {
+      if (patch) {
+        this.filtersForm.patchValue(patch);
       }
     });
   }
@@ -432,51 +452,197 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  private filtersToForm(filters: SearchFilter[], form: FormGroup): { [key: string]: any } {
-    const formRawValue: any = {};
-    (filters || []).forEach(f => {
-      const formFieldName = this.getFormFieldName(f.name);
-      if (!!f.value) {
-        if (f.formArray) {
-          if (form.get(f.formArray) === null) {
-            form.setControl(f.formArray, this.fb.array([]));
-          }
-          if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
-            (form.get(f.formArray) as FormArray).push(
-              this.fb.group({
-                name: f.entryName,
-                min: f.value.min,
-                max: f.value.max,
-                exclude: f.value.exclude
-              })
-            );
-          }
-          formRawValue[f.formArray] = [
-            ...(formRawValue[f.formArray] || []),
-            {
-              name: f.entryName,
-              min: f.value.min,
-              max: f.value.max
-            }
-          ];
-        } else if (f.value.min !== undefined) {
-          formRawValue[`${formFieldName}Min`] = f.value.min;
-          formRawValue[`${formFieldName}Max`] = f.value.max;
-        } else {
-          formRawValue[formFieldName] = f.value;
-        }
-      }
+  public getStars(amount: number): string {
+    return this.htmlTools.generateStars(amount);
+  }
+
+  public createQuickList(item: SearchResult): void {
+    this.i18n.getNameObservable('items', +item.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
+        const operation$ = this.listManager.addToList({
+          itemId: +item.itemId,
+          list: list,
+          recipeId: item.recipe ? item.recipe.recipeId : '',
+          amount: item.amount,
+          collectable: item.addCrafts
+        })
+          .pipe(
+            tap(resultList => this.listsFacade.addList(resultList)),
+            mergeMap(resultList => {
+              return this.listsFacade.myLists$.pipe(
+                map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                filter(l => l !== undefined),
+                first()
+              );
+            })
+          );
+
+        return this.progressService.showProgress(operation$, 1);
+      })
+    ).subscribe((newList) => {
+      this.router.navigate(['list', newList.$key]);
     });
-    formRawValue.jobCategories = filters
-      .filter(f => f.name.startsWith('ClassJobCategory'))
-      .map(f => {
-        if (f.name.endsWith('.ID')) {
-          return f.value + 1000;
+  }
+
+  public addItemsToList(items: SearchResult[]): void {
+    this.listPicker.pickList().pipe(
+      mergeMap(list => {
+        const operations = items.map(item => {
+          return this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: item.recipe ? item.recipe.recipeId : '',
+            amount: item.amount,
+            collectable: item.addCrafts
+          });
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
         } else {
-          return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
+          operation$ = of(list);
         }
-      });
-    return formRawValue;
+        return this.progressService.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name });
+      }),
+      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
+      mergeMap(list => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progressService.showProgress(
+          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    ).subscribe((list) => {
+      this.itemsAdded = items.length;
+      this.modifiedList = list;
+      this.notificationService.template(this.notification);
+    });
+  }
+
+  public getShareUrl = () => {
+    if (isPlatformServer(this.platform)) {
+      return 'https://ffxivteamcraft.com/search';
+    }
+    if (this.platformService.isDesktop()) {
+      return `https://ffxivteamcraft.com${location.hash.substr(1)}`;
+    }
+    return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
+  };
+
+  public addSelectedItemsToList(items: SearchResult[]): void {
+    this.addItemsToList(items);
+  }
+
+  public removeSelection(row: SearchResult, items: SearchResult[]): void {
+    row.selected = false;
+    this.rowSelectionChange(row);
+    items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
+  }
+
+  public selectAll(items: SearchResult[], selected: boolean): void {
+    if (selected) {
+      this.selection$.next([...this.selection$.value, ...items]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => !items.some(item => item.itemId === i.itemId)));
+    }
+    (items || []).forEach(item => item.selected = selected);
+    this.allSelected = selected;
+  }
+
+  public rowSelectionChange(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next([...this.selection$.value, row]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => i.itemId !== row.itemId));
+    }
+  }
+
+  public afterAmountChanged(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next(this.selection$.value.map(item => item.itemId === row.itemId ? row : item));
+    }
+  }
+
+  public openInSimulator(itemId: number, recipeId: string): void {
+    this.rotationPicker.openInSimulator(itemId, recipeId);
+  }
+
+  trackByItem(index: number, item: SearchResult): number {
+    return +item.itemId;
+  }
+
+  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+    //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
+    //If we aren't given an arrayIndex, (we assume) it isn't necessary
+    if (arrayName === undefined || arrayIndex === undefined) {
+      const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
+      this[form].patchValue({ [prop]: newValue });
+    } else {
+      const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
+      const newArray: any = this[form].value[arrayName].slice();
+      newArray[arrayIndex][prop] = newValue;
+      this[form].patchValue({ [arrayName]: newArray });
+    }
+  }
+
+  private filtersToForm(filters: SearchFilter[], form: FormGroup): Observable<{ [key: string]: any }> {
+    return this.lazyData.getEntry('jobAbbr').pipe(
+      map(jobAbbr => {
+        const formRawValue: any = {};
+        (filters || []).forEach(f => {
+          const formFieldName = this.getFormFieldName(f.name);
+          if (!!f.value) {
+            if (f.formArray) {
+              if (form.get(f.formArray) === null) {
+                form.setControl(f.formArray, this.fb.array([]));
+              }
+              if (!(form.get(f.formArray) as FormArray).controls.some(control => control.value.name === f.entryName)) {
+                (form.get(f.formArray) as FormArray).push(
+                  this.fb.group({
+                    name: f.entryName,
+                    min: f.value.min,
+                    max: f.value.max,
+                    exclude: f.value.exclude
+                  })
+                );
+              }
+              formRawValue[f.formArray] = [
+                ...(formRawValue[f.formArray] || []),
+                {
+                  name: f.entryName,
+                  min: f.value.min,
+                  max: f.value.max
+                }
+              ];
+            } else if (f.value.min !== undefined) {
+              formRawValue[`${formFieldName}Min`] = f.value.min;
+              formRawValue[`${formFieldName}Max`] = f.value.max;
+            } else {
+              formRawValue[formFieldName] = f.value;
+            }
+          }
+        });
+        formRawValue.jobCategories = filters
+          .filter(f => f.name.startsWith('ClassJobCategory'))
+          .map(f => {
+            if (f.name.endsWith('.ID')) {
+              return f.value + 1000;
+            } else {
+              return +Object.keys(jobAbbr).find(k => jobAbbr[k].en === f.name.split('.')[1]);
+            }
+          });
+        return formRawValue;
+      })
+    );
   }
 
   private getFormFieldName(filterName: string): string {
@@ -710,144 +876,5 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
       );
     }
     return filters;
-  }
-
-  public getStars(amount: number): string {
-    return this.htmlTools.generateStars(amount);
-  }
-
-  public createQuickList(item: SearchResult): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList({
-      itemId: +item.itemId,
-      list: list,
-      recipeId: item.recipe ? item.recipe.recipeId : '',
-      amount: item.amount,
-      collectable: item.addCrafts
-    })
-      .pipe(
-        tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
-          return this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          );
-        })
-      );
-
-    this.progressService.showProgress(operation$, 1)
-      .subscribe((newList) => {
-        this.router.navigate(['list', newList.$key]);
-      });
-  }
-
-  public addItemsToList(items: SearchResult[]): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operations = items.map(item => {
-          return this.listManager.addToList({
-            itemId: +item.itemId,
-            list: list,
-            recipeId: item.recipe ? item.recipe.recipeId : '',
-            amount: item.amount,
-            collectable: item.addCrafts
-          });
-        });
-        let operation$: Observable<any>;
-        if (operations.length > 0) {
-          operation$ = concat(
-            ...operations
-          );
-        } else {
-          operation$ = of(list);
-        }
-        return this.progressService.showProgress(operation$,
-          items.length,
-          'Adding_recipes',
-          { amount: items.length, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.itemsAdded = items.length;
-      this.modifiedList = list;
-      this.notificationService.template(this.notification);
-    });
-  }
-
-  public getShareUrl = () => {
-    if (isPlatformServer(this.platform)) {
-      return 'https://ffxivteamcraft.com/search';
-    }
-    if (this.platformService.isDesktop()) {
-      return `https://ffxivteamcraft.com${location.hash.substr(1)}`;
-    }
-    return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
-  };
-
-  public addSelectedItemsToList(items: SearchResult[]): void {
-    this.addItemsToList(items);
-  }
-
-  public removeSelection(row: SearchResult, items: SearchResult[]): void {
-    row.selected = false;
-    this.rowSelectionChange(row);
-    items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
-  }
-
-  public selectAll(items: SearchResult[], selected: boolean): void {
-    if (selected) {
-      this.selection$.next([...this.selection$.value, ...items]);
-    } else {
-      this.selection$.next(this.selection$.value.filter(i => !items.some(item => item.itemId === i.itemId)));
-    }
-    (items || []).forEach(item => item.selected = selected);
-    this.allSelected = selected;
-  }
-
-  public rowSelectionChange(row: SearchResult): void {
-    if (row.selected) {
-      this.selection$.next([...this.selection$.value, row]);
-    } else {
-      this.selection$.next(this.selection$.value.filter(i => i.itemId !== row.itemId));
-    }
-  }
-
-  public afterAmountChanged(row: SearchResult): void {
-    if (row.selected) {
-      this.selection$.next(this.selection$.value.map(item => item.itemId === row.itemId ? row : item));
-    }
-  }
-
-  public openInSimulator(itemId: number, recipeId: string): void {
-    this.rotationPicker.openInSimulator(itemId, recipeId);
-  }
-
-  trackByItem(index: number, item: SearchResult): number {
-    return +item.itemId;
-  }
-
-  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
-    //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
-    //If we aren't given an arrayIndex, (we assume) it isn't necessary
-    if (arrayName === undefined || arrayIndex === undefined) {
-      const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
-      this[form].patchValue({ [prop]: newValue });
-    } else {
-      const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
-      const newArray: any = this[form].value[arrayName].slice();
-      newArray[arrayIndex][prop] = newValue;
-      this[form].patchValue({ [arrayName]: newArray });
-    }
   }
 }

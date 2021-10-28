@@ -3,7 +3,6 @@ import { filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { SeoPageComponent } from '../../core/seo/seo-page-component';
 import { SeoService } from '../../core/seo/seo.service';
-import { Consumable } from './model/consumable';
 import { RouteConsumables } from './model/route-consumables';
 
 export abstract class AbstractSimulationPage extends SeoPageComponent {
@@ -43,13 +42,13 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
     const food = params.get('food');
     if (food) {
       const split = food.split(',');
-      consumables.food = {id: +split[0], hq: split[1] === '1'};
+      consumables.food = { id: +split[0], hq: split[1] === '1' };
     }
 
     const med = params.get('med');
     if (med) {
       const split = med.split(',');
-      consumables.medicine = {id: +split[0], hq: split[1] === '1'};
+      consumables.medicine = { id: +split[0], hq: split[1] === '1' };
     }
 
     const fca = params.get('fca');

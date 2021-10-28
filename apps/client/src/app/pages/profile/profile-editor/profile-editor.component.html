@@ -79,8 +79,8 @@
                   </div>
                 </ng-template>
                 <nz-list-item-meta
-                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | jobName)?.en | async)?.toLowerCase()+'.png' | ifMobile: null"
-                  [nzTitle]="set.jobId | jobName | i18n"
+                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | i18nRow:'jobName')?.en | async)?.toLowerCase()+'.png' | ifMobile: null"
+                  [nzTitle]="set.jobId | i18nRow:'jobName' | i18n"
                   nzDescription="lvl {{set.level}}"></nz-list-item-meta>
                 <ng-template #masterbooks>
                   <button (click)="editMasterbooks(set.jobId)" [nzTooltipTitle]="'PROFILE.Masterbooks' | translate" nz-button nz-tooltip

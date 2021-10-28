@@ -24,30 +24,6 @@ export class LodestoneService {
     }
   }
 
-  private getCachedCharacter(id: number): CharacterResponse | null {
-    const data = localStorage.getItem(`character:${id}`);
-    if (data) {
-      return JSON.parse(data);
-    }
-    return null;
-  }
-
-  private cacheCharacter(data: CharacterResponse, userCharacter = false): void {
-    const cachedCharacter: Partial<Character> = {
-      ID: data.Character.ID,
-      Avatar: data.Character.Avatar,
-      FreeCompanyId: data.Character.FreeCompanyId,
-      Name: data.Character.Name,
-      Server: data.Character.Server,
-      Portrait: data.Character.Portrait,
-      Bio: data.Character.Bio
-    };
-    if (userCharacter) {
-      cachedCharacter.ClassJobs = data.Character.ClassJobs;
-    }
-    localStorage.setItem(`character:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
-  }
-
   public getCharacter(id: number, userCharacter = false): Observable<CharacterResponse> {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
@@ -105,6 +81,30 @@ export class LodestoneService {
         }),
         shareReplay(1)
       );
+  }
+
+  private getCachedCharacter(id: number): CharacterResponse | null {
+    const data = localStorage.getItem(`character:${id}`);
+    if (data) {
+      return JSON.parse(data);
+    }
+    return null;
+  }
+
+  private cacheCharacter(data: CharacterResponse, userCharacter = false): void {
+    const cachedCharacter: Partial<Character> = {
+      ID: data.Character.ID,
+      Avatar: data.Character.Avatar,
+      FreeCompanyId: data.Character.FreeCompanyId,
+      Name: data.Character.Name,
+      Server: data.Character.Server,
+      Portrait: data.Character.Portrait,
+      Bio: data.Character.Bio
+    };
+    if (userCharacter) {
+      cachedCharacter.ClassJobs = data.Character.ClassJobs;
+    }
+    localStorage.setItem(`character:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
   }
 
   private addToQueue(trigger: Subject<void>): void {

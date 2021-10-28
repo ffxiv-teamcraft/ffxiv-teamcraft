@@ -1,15 +1,15 @@
-import { merge, Observable } from 'rxjs';
+import { combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { filter, first, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
-import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { AirshipStatus } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 export class AirshipExplorationResultReporter extends ExplorationResultReporter {
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
     super();
   }
 
@@ -61,15 +61,20 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
     return ExplorationType.AIRSHIP;
   }
 
-  private getBuildStats(hullId: number, riggingId: number, forecastleId: number, aftcastleId: number): { surveillance: number, retrieval: number, favor: number } {
-    const hull = this.lazyData.data.airshipParts[hullId];
-    const rigging = this.lazyData.data.airshipParts[riggingId];
-    const forecastle = this.lazyData.data.airshipParts[forecastleId];
-    const aftcastle = this.lazyData.data.airshipParts[aftcastleId];
-    return {
-      surveillance: +hull.surveillance + +rigging.surveillance + +forecastle.surveillance + +aftcastle.surveillance,
-      retrieval: +hull.retrieval + +rigging.retrieval + +forecastle.retrieval + +aftcastle.retrieval,
-      favor: +hull.favor + +rigging.favor + forecastle.favor + +aftcastle.favor
-    };
+  private getBuildStats(hullId: number, riggingId: number, forecastleId: number, aftcastleId: number): Observable<{ surveillance: number, retrieval: number, favor: number }> {
+    return combineLatest([
+      this.lazyData.getRow('airshipParts', hullId),
+      this.lazyData.getRow('airshipParts', riggingId),
+      this.lazyData.getRow('airshipParts', forecastleId),
+      this.lazyData.getRow('airshipParts', aftcastleId)
+    ]).pipe(
+      map(([hull, rigging, forecastle, aftcastle]) => {
+        return {
+          surveillance: +hull.surveillance + +rigging.surveillance + +forecastle.surveillance + +aftcastle.surveillance,
+          retrieval: +hull.retrieval + +rigging.retrieval + +forecastle.retrieval + +aftcastle.retrieval,
+          favor: +hull.favor + +rigging.favor + +forecastle.favor + +aftcastle.favor
+        };
+      })
+    );
   }
 }

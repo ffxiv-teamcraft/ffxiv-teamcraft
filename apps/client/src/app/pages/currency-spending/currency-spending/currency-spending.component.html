@@ -54,7 +54,7 @@
         <nz-list-item [nzContent]="content" class="result-item">
           <ng-template #content>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div>{{item.npcs[0] | npcName | i18n}}</div>
+              <div>{{item.npcs[0] | i18nRow:'npcs' | i18n}}</div>
               <app-db-button [id]="item.npcs[0]" type="npc"></app-db-button>
             </div>
           </ng-template>

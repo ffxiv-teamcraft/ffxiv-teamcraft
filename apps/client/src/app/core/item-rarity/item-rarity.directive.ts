@@ -1,5 +1,6 @@
 import { Directive, HostBinding, Input, OnInit } from '@angular/core';
-import { LazyDataService } from '../data/lazy-data.service';
+import { first } from 'rxjs/operators';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Directive({
   selector: '[appItemRarity]'
@@ -20,11 +21,16 @@ export class ItemRarityDirective implements OnInit {
   @Input()
   appItemRarity: number;
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
   }
 
   ngOnInit(): void {
-    const rarity = this.lazyData.data.rarities[this.appItemRarity];
-    this.color = this.colors[rarity] || '#f3f3f3';
+    this.lazyData.getRow('rarities', this.appItemRarity)
+      .pipe(
+        first()
+      )
+      .subscribe(rarity => {
+        this.color = this.colors[rarity] || '#f3f3f3';
+      });
   }
 }

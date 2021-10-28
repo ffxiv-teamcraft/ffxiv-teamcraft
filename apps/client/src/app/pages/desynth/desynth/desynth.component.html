@@ -9,9 +9,9 @@
                    tutorialStep="TUTORIAL.DESYNTH.Job"
                    tutorialStepIndex="0"
                    nzShowSearch>
-          <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
+          <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n" [nzValue]="job.id" nzCustomContent>
             <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-            {{job.id | jobAbbr | i18n}}
+            {{job.id | i18nRow:'jobAbbr' | i18n}}
           </nz-option>
         </nz-select>
       </nz-form-control>
@@ -103,25 +103,3 @@
   {{'DESYNTH.Intro' | translate}}
 </app-fullpage-message>
 <app-page-loader *ngIf="loading" [message]="'DESYNTH.Loading_message' | translate"></app-page-loader>
-
-<ng-template #notificationRef let-notification>
-  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
-    <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
-                                                  nzType="check-circle"></i></span>
-    <div>
-      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
-      <div class="ant-notification-notice-description">
-        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
-        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
-          itemcount: itemsAdded,
-          listname: modifiedList.name
-        } }}</span>
-      </div>
-      <span class="ant-notification-notice-btn">
-            <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
-              <span>{{'Open' | translate}}</span>
-            </a>
-          </span>
-    </div>
-  </div>
-</ng-template>

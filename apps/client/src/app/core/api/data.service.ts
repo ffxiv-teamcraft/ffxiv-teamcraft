@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
-import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
 import { NpcData } from '../../model/garland-tools/npc-data';
@@ -27,18 +26,19 @@ import { MobSearchResult } from '../../model/search/mob-search-result';
 import { FateSearchResult } from '../../model/search/fate-search-result';
 import { MapSearchResult } from '../../model/search/map-search-result';
 import { mapIds } from '../data/sources/map-ids';
-import { LocalizedDataService } from '../data/localized-data.service';
 import { requestsWithDelay } from '../rxjs/requests-with-delay';
 import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-result';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { Language } from '../data/language';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../rxjs/with-lazy-data';
+import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 
 @Injectable()
 export class DataService {
 
-  private garlandUrl = 'https://www.garlandtools.org/db/doc';
   public garlandtoolsVersions = {
     item: 3,
     instance: 2,
@@ -48,22 +48,17 @@ export class DataService {
     mob: 2,
     fate: 2
   };
-  private garlandApiUrl = 'https://www.garlandtools.org/api';
-
   public searchLang = this.translate.currentLang;
+  private garlandUrl = 'https://www.garlandtools.org/db/doc';
+  private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,
               private i18n: I18nToolsService,
               private settings: SettingsService,
               private xivapi: XivapiService,
               private serializer: NgSerializerService,
-              private lazyData: LazyDataService,
-              private translate: TranslateService,
-              private l12n: LocalizedDataService) {
-  }
-
-  public setSearchLang(lang: Language): void {
-    this.searchLang = lang;
+              private lazyData: LazyDataFacade,
+              private translate: TranslateService) {
   }
 
   private get isCompatible() {
@@ -76,6 +71,10 @@ export class DataService {
     }
 
     return 'https://xivapi.com';
+  }
+
+  public setSearchLang(lang: Language): void {
+    this.searchLang = lang;
   }
 
   public xivapiSearch(options: XivapiSearchOptions, forcedLang?: string) {
@@ -252,38 +251,39 @@ export class DataService {
     );
 
     if (isCompatibleLocal) {
-      const ids = this.mapToItemIds(query, searchLang as 'ko' | 'zh');
-      if (ids.length > 0) {
-        results$ = this.xivapi.getList(
-          XivapiEndpoint.Item,
-          {
-            ids: ids,
-            columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
-          }
-        ).pipe(
-          map(items => {
-            return items.Results.filter(item => {
-              if (!onlyCraftable) return true;
+      results$ = this.mapToItemIds(query, searchLang as 'ko' | 'zh').pipe(
+        switchMap(ids => {
+          return this.xivapi.getList(
+            XivapiEndpoint.Item,
+            {
+              ids: ids,
+              columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
+            }
+          ).pipe(
+            map(items => {
+              return items.Results.filter(item => {
+                if (!onlyCraftable) return true;
 
-              const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
-              return matchesRecipeFilter && xivapiFilters.reduce((matches, f) => {
-                switch (f.operator) {
-                  case '>=':
-                    return matches && item[f.column] >= f.value;
-                  case '<=':
-                    return matches && item[f.column] <= f.value;
-                  case '=':
-                    return matches && item[f.column] === f.value;
-                  case '<':
-                    return matches && item[f.column] < f.value;
-                  case '>':
-                    return matches && item[f.column] > f.value;
-                }
-              }, true);
-            });
-          })
-        );
-      }
+                const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
+                return matchesRecipeFilter && xivapiFilters.reduce((matches, f) => {
+                  switch (f.operator) {
+                    case '>=':
+                      return matches && item[f.column] >= f.value;
+                    case '<=':
+                      return matches && item[f.column] <= f.value;
+                    case '=':
+                      return matches && item[f.column] === f.value;
+                    case '<':
+                      return matches && item[f.column] < f.value;
+                    case '>':
+                      return matches && item[f.column] > f.value;
+                  }
+                }, true);
+              });
+            })
+          );
+        })
+      );
     }
 
     const baseUrl = this.baseUrl;
@@ -297,10 +297,11 @@ export class DataService {
         }
         return results;
       }),
-      map(xivapiSearchResults => {
+      withLazyData(this.lazyData, 'recipes'),
+      map(([xivapiSearchResults, lazyRecipes]) => {
         const results: SearchResult[] = [];
         xivapiSearchResults.forEach(item => {
-          const recipes = this.lazyData.data.recipes.filter(recipe => recipe.result === item.ID);
+          const recipes = lazyRecipes.filter(recipe => recipe.result === item.ID);
           if (recipes.length > 0) {
             const craftedByFilter = filters.find(f => f.name === 'Recipes.ClassJobID');
             recipes
@@ -432,8 +433,16 @@ export class DataService {
 
     // If the lang is korean, handle it properly to map to item ids.
     if (isKoOrZh) {
-      const ids = this.mapToItemIds(name, this.searchLang as 'ko' | 'zh');
-      params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
+      return this.mapToItemIds(name, this.searchLang as 'ko' | 'zh').pipe(
+        switchMap(ids => {
+          params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
+          return this.getGarlandSearch(params).pipe(
+            map(results => {
+              return (results || []).map(item => item.obj.i);
+            })
+          );
+        })
+      );
     } else {
       params = params.set('text', name);
     }
@@ -448,30 +457,10 @@ export class DataService {
   /**
    * Creates a request to garlandtools.org.
    * @param {string} uri
-   * @returns {Observable<any>}
+   * @returns {Observable}
    */
   public getGarlandData(uri: string): Observable<any> {
     return this.http.get<any>(this.garlandUrl + uri + '.json');
-  }
-
-  /**
-   * Creates a search request to garlandtools.org.
-   * @param {HttpParams} query
-   * @returns {Observable<any>}
-   */
-  private getGarlandSearch(query: HttpParams): Observable<any> {
-    return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
-  }
-
-  private mapToItemIds(terms: string, lang: 'ko' | 'zh'): number[] {
-    const data = lang === 'ko' ? this.lazyData.data.koItems : this.lazyData.data.zhItems;
-    return Object.keys(data)
-      .filter(key => {
-        return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
-      })
-      .map(key => {
-        return +key;
-      });
   }
 
   getSearchLang(): string {
@@ -488,8 +477,6 @@ export class DataService {
   }
 
   searchAny(query: string, filters: SearchFilter[]): Observable<any[]> {
-    const searchLang = this.translate.currentLang;
-    const isCompatibleLocal = searchLang === 'ko' || searchLang === 'zh' && this.settings.region !== Region.China;
     // Filter HQ and Collectable Symbols from search
     query = query.replace(/[\ue03a-\ue03d]/g, '').toLowerCase();
     const otherSearch$ = this.xivapiSearch({
@@ -538,35 +525,36 @@ export class DataService {
         }))
     }).pipe(
       map(res => {
-        return res.Results.map(row => {
+        return safeCombineLatest(res.Results.map(row => {
           switch (row._) {
             case SearchIndex.INSTANCECONTENT:
-              return this.mapInstance(row);
+              return of(this.mapInstance(row));
             case SearchIndex.QUEST:
-              return this.mapQuest(row);
+              return of(this.mapQuest(row));
             case SearchIndex.ACTION:
             case SearchIndex.CRAFT_ACTION:
-              return this.mapAction(row);
+              return of(this.mapAction(row));
             case SearchIndex.TRAIT:
-              return this.mapTrait(row);
+              return of(this.mapTrait(row));
             case SearchIndex.STATUS:
-              return this.mapStatus(row);
+              return of(this.mapStatus(row));
             case SearchIndex.ACHIEVEMENT:
-              return this.mapAchievement(row);
+              return of(this.mapAchievement(row));
             case SearchIndex.LEVE:
-              return this.mapLeve(row);
+              return of(this.mapLeve(row));
             case SearchIndex.ENPCRESIDENT:
-              return this.mapNpc(row);
+              return of(this.mapNpc(row));
             case SearchIndex.BNPCNAME:
               return this.mapMob(row);
             case SearchIndex.FATE:
-              return this.mapFate(row);
+              return of(this.mapFate(row));
             case SearchIndex.PLACENAME:
-              return this.mapMap(row);
+              return of(this.mapMap(row));
           }
           console.warn('No type matching for res type', row._);
-        })
-          .filter(r => !!r);
+        })).pipe(
+          map(mapped => mapped.filter(r => !!r))
+        );
       })
     );
     return requestsWithDelay([
@@ -975,16 +963,30 @@ export class DataService {
   }
 
   searchFishingSpot(query: string, filters: SearchFilter[]): Observable<FishingSpotSearchResult[]> {
-    return of(this.lazyData.data.fishingSpots
-      .filter(spot => {
-        return this.i18n.getName(this.l12n.getPlace(spot.zoneId)).toLowerCase().indexOf(query.toLowerCase()) > -1
-          || this.i18n.getName(this.l12n.getMapName(spot.mapId)).toLowerCase().indexOf(query.toLowerCase()) > -1;
-      })
-      .map(spot => {
-        return {
-          id: spot.id,
-          spot: spot
-        };
+    return this.lazyData.getEntry('fishingSpots').pipe(
+      switchMap(fishingSpots => {
+        return safeCombineLatest(
+          fishingSpots.map(spot => {
+            return combineLatest([
+              this.i18n.getNameObservable('places', spot.zoneId),
+              this.i18n.getMapName(spot.mapId)
+            ]).pipe(
+              map(([placeName, mapName]) => {
+                return { spot, matches: placeName.toLowerCase().includes(query.toLowerCase()) || mapName.toLowerCase().includes(query.toLowerCase()) };
+              })
+            );
+          })
+        ).pipe(
+          map(result => {
+            return result.filter(row => row.matches)
+              .map(({ spot }) => {
+                return {
+                  id: spot.id,
+                  spot: spot
+                };
+              });
+          })
+        );
       })
     );
   }
@@ -1035,65 +1037,77 @@ export class DataService {
     }
 
     return this.xivapi.searchLore(query, this.getSearchLang(), true, ['Icon', 'Name_*', 'Banner'], 1, options).pipe(
-      map(searchResult => {
+      withLazyData(this.lazyData, 'npcs', 'instances'),
+      map(([searchResult, npcs, instances]) => {
         return searchResult.Results.map(row => {
           switch (row.Source.toLowerCase()) {
             case 'item':
             case 'leve':
-              row.Data.showButton = true;
-              break;
             case 'quest': {
-              const quest = this.l12n.getQuest(row.SourceID);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(quest.name));
-              row.Data.Icon = quest.icon;
               row.Data.showButton = true;
               break;
             }
             case 'defaulttalk': {
-              const npcId = Object.keys(this.lazyData.data.npcs)
-                .find(key => this.lazyData.data.npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
+              const npcId = Object.keys(npcs)
+                .find(key => npcs[key].defaultTalks.indexOf(row.SourceID) > -1);
               if (npcId === undefined) {
                 break;
               }
               row.Source = 'npc';
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
-              const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
             case 'balloon': {
-              const npcId = Object.keys(this.lazyData.data.npcs)
-                .find(key => this.lazyData.data.npcs[key].balloon === row.SourceID);
+              const npcId = Object.keys(npcs)
+                .find(key => npcs[key].balloon === row.SourceID);
               if (npcId === undefined) {
                 break;
               }
               row.Source = 'npc';
               row.SourceID = +npcId;
               row.Data.Icon = '/c/ENpcResident.png';
-              const npcEntry = this.l12n.getNpc(+npcId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(npcEntry));
               row.Data.showButton = true;
               break;
             }
             case 'instancecontenttextdata': {
-              const instanceId = Object.keys(this.lazyData.data.instances)
-                .find(key => (this.lazyData.data.instances[key].contentText || []).indexOf(row.SourceID) > -1);
+              const instanceId = Object.keys(instances)
+                .find(key => (instances[key].contentText || []).indexOf(row.SourceID) > -1);
               if (instanceId === undefined) {
                 break;
               }
-              const instanceEntry = this.l12n.getInstanceName(+instanceId);
-              Object.assign(row.Data, this.l12n.i18nToXivapi(instanceEntry));
               row.Source = 'instance';
               row.SourceID = +instanceId;
-              row.Data.Icon = instanceEntry.icon;
               row.Data.showButton = true;
               break;
             }
           }
           return row;
         });
+      })
+    );
+  }
+
+  /**
+   * Creates a search request to garlandtools.org.
+   * @param {HttpParams} query
+   * @returns {Observable}
+   */
+  private getGarlandSearch(query: HttpParams): Observable<any> {
+    return this.http.get<any>(`${this.garlandApiUrl}/search.php`, { params: query });
+  }
+
+  private mapToItemIds(terms: string, lang: 'ko' | 'zh'): Observable<number[]> {
+    return this.lazyData.getEntry(lang === 'ko' ? 'koItems' : 'zhItems').pipe(
+      map((data) => {
+        return Object.keys(data)
+          .filter(key => {
+            return data[key][lang].indexOf(terms) > -1 && !/(\D+)/.test(key);
+          })
+          .map(key => {
+            return +key;
+          });
       })
     );
   }
@@ -1116,20 +1130,24 @@ export class DataService {
     };
   }
 
-  private mapMob(mob: any): MobSearchResult {
-    return {
-      id: mob.ID,
-      icon: mob.Icon,
-      zoneid: this.lazyData.data.monsters[mob.ID] && this.lazyData.data.monsters[mob.ID].positions[0] ? this.lazyData.data.monsters[mob.ID].positions[0].zoneid : null,
-      type: SearchType.MONSTER
-    };
+  private mapMob(mob: any): Observable<MobSearchResult> {
+    return this.lazyData.getRow('monsters', mob.ID).pipe(
+      map(monster => {
+        return {
+          id: mob.ID,
+          icon: mob.Icon,
+          zoneid: monster && monster.positions[0] ? monster.positions[0].zoneid : null,
+          type: SearchType.MONSTER
+        };
+      })
+    );
   }
 
   private mapNpc(npc: any): NpcSearchResult {
     return {
       id: npc.ID,
       icon: npc.Icon,
-      title: this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'),
+      title: this.i18n.xivapiToI18n(npc, 'Title'),
       type: SearchType.NPC
     };
   }
@@ -1188,7 +1206,7 @@ export class DataService {
       icon: leve.Icon,
       level: leve.ClassJobLevel,
       banner: leve.IconIssuer,
-      job: this.l12n.xivapiToI18n(leve.ClassJobCategory, 'jobCategories')
+      job: this.i18n.xivapiToI18n(leve.ClassJobCategory)
     };
   }
 

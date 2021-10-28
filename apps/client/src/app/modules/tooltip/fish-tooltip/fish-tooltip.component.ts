@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { FishingBait } from '../../../core/data/model/fishing-bait';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fish-tooltip-component',
@@ -14,14 +13,22 @@ import { FishingBait } from '../../../core/data/model/fishing-bait';
 })
 export class FishTooltipComponent {
 
-  @Input() fish: any;
+  private _fish: any;
 
-  constructor(private gt: GarlandToolsService, private l12n: LocalizedDataService,
-              private lazyData: LazyDataService, private gatheringNodesService: GatheringNodesService) {
+  public fshData$: Observable<GatheringNode[]>;
+
+  @Input()
+  set fish(fish: any) {
+    this._fish = fish;
+    this.fshData$ = this.gatheringNodesService.getItemNodes(fish.ID);
   }
 
-  public getFshData(fish: any): GatheringNode[] {
-    return this.gatheringNodesService.getItemNodes(fish.ID);
+  get fish(): any {
+    return this._fish;
+  }
+
+  constructor(private gt: GarlandToolsService,
+              private gatheringNodesService: GatheringNodesService) {
   }
 
   public trackByNode(index: number, node: GatheringNode): number {

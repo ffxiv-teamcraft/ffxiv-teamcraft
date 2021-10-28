@@ -8,7 +8,7 @@
         </a>
       </div>
       <div>
-        {{quest | questName | i18n}}
+        {{quest | i18nRow:'quests' | i18n}}
       </div>
     </div>
     <app-db-button [id]="quest" type="quest"></app-db-button>

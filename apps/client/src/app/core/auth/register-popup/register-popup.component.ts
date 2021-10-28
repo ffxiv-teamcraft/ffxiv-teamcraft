@@ -26,26 +26,12 @@ export class RegisterPopupComponent {
     });
   }
 
-  private matchPasswords(AC: AbstractControl) {
-    const password = AC.get('password').value; // to get value in input tag
-    const confirmPassword = AC.get('confirmPassword').value; // to get value in input tag
-    if (password !== confirmPassword) {
-      AC.get('confirmPassword').setErrors({ matchPassword: true });
-    } else {
-      return null;
-    }
-  }
-
   public submit(): void {
     delete this.errorMessageCode;
     this.authFacade.register(this.form.value.email, this.form.value.password)
       .then(() => {
         this.modalRef.close();
       }).catch(err => this.onError(err));
-  }
-
-  private onError(error: any): void {
-    this.errorMessageCode = error.code;
   }
 
   public googleOauth(): void {
@@ -62,6 +48,20 @@ export class RegisterPopupComponent {
       .subscribe(() => {
         this.modalRef.close();
       });
+  }
+
+  private matchPasswords(AC: AbstractControl) {
+    const password = AC.get('password').value; // to get value in input tag
+    const confirmPassword = AC.get('confirmPassword').value; // to get value in input tag
+    if (password !== confirmPassword) {
+      AC.get('confirmPassword').setErrors({ matchPassword: true });
+    } else {
+      return null;
+    }
+  }
+
+  private onError(error: any): void {
+    this.errorMessageCode = error.code;
   }
 
 }

@@ -59,7 +59,7 @@
                       {{reward.id | itemName | i18n}}
                     </div>
                     <div *ngIf="reward.type === 'title'">
-                      {{reward.id | titleName | i18n}}
+                      {{reward.id | i18nRow:'titles' | i18n}}
                     </div>
                   </ng-template>
                   <ng-template #more>

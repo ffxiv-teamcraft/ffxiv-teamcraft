@@ -12,7 +12,6 @@ export interface Levequest {
   amount: number;
   // Quantity of item required for completion
   itemQuantity: number;
-  name: I18nName;
   repeats: number;
   deliveryPlaceId: number;
   startPlaceId: number;

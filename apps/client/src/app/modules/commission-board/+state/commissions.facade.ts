@@ -12,7 +12,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { Commission } from '../model/commission';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { ApplyPopupComponent } from '../apply-popup/apply-popup.component';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { CommissionStatus } from '../model/commission-status';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';

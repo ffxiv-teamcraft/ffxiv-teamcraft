@@ -1,14 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { I18nName } from '../../model/common/i18n-name';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Pipe({
-  name: 'actionName',
+  name: 'actionName'
 })
 export class ActionNamePipe implements PipeTransform {
-  constructor(private l12n: LocalizedLazyDataService) {}
+  constructor(private lazyData: LazyDataFacade) {
+  }
 
-  transform(id: number): I18nNameLazy {
-    return this.l12n.getAction(id);
+  transform(id: number): Observable<I18nName> {
+    return combineLatest([
+      this.lazyData.getI18nName('actions', id),
+      this.lazyData.getI18nName('craftActions', id)
+    ]).pipe(
+      map(([action, craftAction]) => {
+        return action || craftAction;
+      })
+    );
   }
 }

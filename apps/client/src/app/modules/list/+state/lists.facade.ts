@@ -48,6 +48,7 @@ import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
+import { ListController } from '../list-controller';
 
 declare const gtag: Function;
 
@@ -62,9 +63,7 @@ export class ListsFacade {
       map(lists => {
         return lists.filter(list => {
           return list.finalItems !== undefined
-            && list.items !== undefined
-            && list.isOutDated
-            && typeof list.isOutDated === 'function';
+            && list.items !== undefined;
         });
       })
     );

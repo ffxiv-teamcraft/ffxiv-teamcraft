@@ -42,7 +42,7 @@
         </ng-template>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
           <img [src]="trait.Quest.JournalGenre.Icon | xivapiIcon" alt="">
-          <div>{{trait.QuestTargetID | questName | i18n}}</div>
+          <div>{{trait.QuestTargetID | i18nRow:'quests' | i18n}}</div>
           <app-db-button [id]="trait.QuestTargetID" type="quest"></app-db-button>
         </div>
       </nz-card>

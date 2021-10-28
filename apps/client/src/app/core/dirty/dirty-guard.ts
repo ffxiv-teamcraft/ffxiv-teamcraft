@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { DirtyScope } from './dirty-scope';
-import { switchMap, tap, first } from 'rxjs/operators';
+import { first, switchMap, tap } from 'rxjs/operators';
 
 @Injectable()
 export class DirtyGuard implements CanDeactivate<any> {

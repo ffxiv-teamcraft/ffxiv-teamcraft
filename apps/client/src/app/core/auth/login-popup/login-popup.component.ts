@@ -42,15 +42,15 @@ export class LoginPopupComponent {
     this.modalRef.close(false);
   }
 
-  private onError(error: any): void {
-    this.errorMessageCode = error.code;
-  }
-
   public googleOauth(): void {
     delete this.errorMessageCode;
     this.authFacade.googleOauth().subscribe(() => {
       this.modalRef.close(true);
     });
+  }
+
+  private onError(error: any): void {
+    this.errorMessageCode = error.code;
   }
 
 }

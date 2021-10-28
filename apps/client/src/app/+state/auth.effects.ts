@@ -1,20 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  distinctUntilKeyChanged,
-  exhaustMap,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  switchMapTo,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -25,7 +12,8 @@ import {
   CommissionProfileLoaded,
   LinkingCharacter,
   LoggedInAsAnonymous,
-  LoginAsAnonymous, LogTrackingLoaded,
+  LoginAsAnonymous,
+  LogTrackingLoaded,
   MarkAsDoneInLog,
   NoLinkedCharacter,
   RegisterUser,
@@ -42,7 +30,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User, UserCredential } from '@firebase/auth-types';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
@@ -51,7 +39,6 @@ import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
 import { SettingsService } from '../modules/settings/settings.service';
-import firebase from 'firebase';
 
 @Injectable()
 export class AuthEffects {
@@ -123,23 +110,6 @@ export class AuthEffects {
     map(user => new UserFetched(user)),
     debounceTime(250)
   );
-
-  private nickNameWarningShown = false;
-
-  @Effect({ dispatch: false })
-  showNicknameWarning$ = this.actions$.pipe(
-    ofType<UserFetched>(AuthActionTypes.UserFetched),
-    debounceTime(10000),
-    tap((action: UserFetched) => {
-      const user = action.user;
-      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
-        this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
-        this.nickNameWarningShown = true;
-      }
-    }),
-    switchMapTo(EMPTY)
-  );
-
   @Effect()
   watchNoLinkedCharacter$ = this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
@@ -155,7 +125,6 @@ export class AuthEffects {
     }),
     map(() => new NoLinkedCharacter())
   );
-
   @Effect()
   openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
@@ -166,14 +135,12 @@ export class AuthEffects {
     }),
     map(() => new LinkingCharacter())
   );
-
   @Effect()
   setAsDefaultCharacter$ = this.actions$.pipe(
     ofType(AuthActionTypes.AddCharacter),
     filter((action: AddCharacter) => action.setAsDefault),
     map((action: AddCharacter) => new SetDefaultCharacter(action.lodestoneId))
   );
-
   @Effect()
   saveUserOnEdition$ = this.actions$.pipe(
     ofType(
@@ -194,7 +161,6 @@ export class AuthEffects {
     withLatestFrom(this.authFacade.user$),
     map(([, user]) => new UpdateUser(user))
   );
-
   @Effect()
   selectContentId$ = this.actions$.pipe(
     ofType<ApplyContentId>(AuthActionTypes.ApplyContentId),
@@ -208,7 +174,6 @@ export class AuthEffects {
       return new UpdateUser(user);
     })
   );
-
   @Effect()
   updateUser$ = this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
@@ -218,7 +183,6 @@ export class AuthEffects {
     }),
     map(() => new UserPersisted())
   );
-
   @Effect()
   registerUser$ = this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
@@ -227,13 +191,11 @@ export class AuthEffects {
     }),
     map(() => new UserPersisted())
   );
-
   @Effect()
   fetchAlarmsOnUserAuth$ = this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
     map(() => new LoadAlarms())
   );
-
   @Effect({ dispatch: false })
   markAsDoneInLog$ = this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
@@ -250,7 +212,6 @@ export class AuthEffects {
       }));
     })
   );
-
   @Effect()
   fetchCommissionProfile$ = this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
@@ -266,11 +227,10 @@ export class AuthEffects {
     }),
     map(cProfile => new CommissionProfileLoaded(cProfile))
   );
-
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
       ofType<UserFetched>(AuthActionTypes.UserFetched),
-      distinctUntilChanged((a,b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
+      distinctUntilChanged((a, b) => a.user.defaultLodestoneId === b.user.defaultLodestoneId),
       switchMap(action => {
         return this.logTrackingService.get(`${action.user.$key}:${action.user.defaultLodestoneId?.toString()}`).pipe(
           catchError((_) => {
@@ -283,6 +243,20 @@ export class AuthEffects {
       }),
       map(logTracking => new LogTrackingLoaded(logTracking))
     ));
+  private nickNameWarningShown = false;
+  @Effect({ dispatch: false })
+  showNicknameWarning$ = this.actions$.pipe(
+    ofType<UserFetched>(AuthActionTypes.UserFetched),
+    debounceTime(10000),
+    tap((action: UserFetched) => {
+      const user = action.user;
+      if (!this.nickNameWarningShown && user !== null && (user.patron || user.admin) && user.nickname === undefined) {
+        this.notificationService.warning(this.translate.instant('COMMON.Warning'), this.translate.instant('SETTINGS.No_nickname_warning'));
+        this.nickNameWarningShown = true;
+      }
+    }),
+    switchMapTo(EMPTY)
+  );
 
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,

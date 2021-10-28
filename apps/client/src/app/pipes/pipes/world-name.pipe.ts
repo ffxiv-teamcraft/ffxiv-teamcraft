@@ -1,14 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { I18nName } from '../../model/common/i18n-name';
 
 @Pipe({
-  name: 'worldName',
+  name: 'worldName'
 })
 export class WorldNamePipe implements PipeTransform {
-  constructor(private readonly data: LocalizedLazyDataService) {}
+  constructor(private readonly lazyData: LazyDataFacade) {
+  }
 
-  transform(world: string): I18nNameLazy {
-    return this.data.getWorldName(world);
+  transform(world: string): I18nName {
+    return this.lazyData.getWorldName(world);
   }
 }

@@ -75,7 +75,7 @@
               <nz-input-group [nzAddOnBefore]="'SEARCH.Patch' | translate">
                 <nz-select class="patch-select with-addon-before" formControlName="Patch" nzShowSearch>
                   <nz-option [nzLabel]="'SEARCH.Any' | translate" [nzValue]="-1"></nz-option>
-                  <nz-option *ngFor="let patch of patches" [nzLabel]="patch.Version"
+                  <nz-option *ngFor="let patch of patches$ | async" [nzLabel]="patch.Version"
                              [nzValue]="patch.ID">
                   </nz-option>
                 </nz-select>
@@ -186,11 +186,11 @@
             <!--CraftedBy filter-->
             <nz-input-group *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" [nzAddOnBefore]="'SEARCH.Crafted_by' | translate">
               <nz-select nzSize="large" class="with-addon-before" formControlName="craftJob" nzAllowClear nzShowSearch>
-                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
+                <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n"
                            [nzValue]="job.id" nzCustomContent>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
-                    <div>{{job.id | jobAbbr | i18n}}</div>
+                    <div>{{job.id | i18nRow:'jobAbbr' | i18n}}</div>
                   </div>
                 </nz-option>
               </nz-select>
@@ -360,7 +360,9 @@
             </div>
             <app-item-icon [itemId]="item.itemId" [width]="24"></app-item-icon>
             <div fxLayout="column">
-              <div>{{item.itemId | itemName | i18n}}</div>
+              <div>
+                <app-i18n-name content="items" [id]="item.itemId"></app-i18n-name>
+              </div>
               <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
             </div>
           </div>

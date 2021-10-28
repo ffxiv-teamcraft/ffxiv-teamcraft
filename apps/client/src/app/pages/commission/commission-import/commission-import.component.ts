@@ -11,10 +11,11 @@ import { HttpClient } from '@angular/common/http';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { CommissionImportTemplate } from './commission-import-template';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { List } from '../../../modules/list/model/list';
 import { Commission } from '../../../modules/commission-board/model/commission';
 import { CommissionTag } from '../../../modules/commission-board/model/commission-tag';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 
 @Component({
@@ -32,12 +33,13 @@ export class CommissionImportComponent {
               private dataService: DataService, private router: Router,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private listsFacade: ListsFacade, private http: HttpClient, private linkTools: LinkToolsService,
-              private commissionsFacade: CommissionsFacade, private lazyData: LazyDataService) {
+              private commissionsFacade: CommissionsFacade, private lazyData: LazyDataFacade) {
 
     // To test: http://localhost:4200/import/MjA1NDUsbnVsbCwzOzE3OTYyLDMyMzA4LDE7MjAyNDcsbnVsbCwx&url=https://example.org
     this.template$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(
       map(([params, query]) => [params.get('importString'), query.get('url')]),
-      map(([importString, url]) => {
+      withLazyData(this.lazyData, 'tradeFlags'),
+      map(([[importString, url], tradeFlags]) => {
         const parsed = decodeURIComponent(escape(atob(importString)));
         if (parsed.indexOf(',') === -1) {
           this.wrongFormat = true;
@@ -63,7 +65,7 @@ export class CommissionImportComponent {
             })
             .filter(i => {
               // Remove items that cannot be traded
-              return this.lazyData.data.tradeFlags[i.itemId];
+              return tradeFlags[i.itemId];
             }),
           description: exploded[4] || '',
           url: url

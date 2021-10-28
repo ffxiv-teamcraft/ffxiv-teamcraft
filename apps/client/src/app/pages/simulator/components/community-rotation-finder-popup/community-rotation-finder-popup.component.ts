@@ -36,13 +36,13 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
     qualityColor: string
   }>>;
 
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
   constructor(private rotationsService: CraftingRotationService,
               private modalRef: NzModalRef, private simulationService: SimulationService,
               private settings: SettingsService, public translate: TranslateService) {
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
   }
 
   ngOnInit(): void {

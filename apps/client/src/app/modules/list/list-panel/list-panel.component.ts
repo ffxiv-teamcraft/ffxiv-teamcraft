@@ -31,6 +31,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { ListColor } from '../model/list-color';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ListSplitPopupComponent } from '../list-split-popup/list-split-popup.component';
+import { ListController } from '../list-controller';
 
 @Component({
   selector: 'app-list-panel',
@@ -78,7 +79,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   public teams$: Observable<Team[]> = this.teamsFacade.myTeams$;
 
   public listContent$: Observable<ListRow[]> = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
-    map(([list, layout]) => {
+    switchMap(([list, layout]) => {
       return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
     })
   );
@@ -156,7 +157,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   public outDated(): boolean {
-    return this.list && this.list.isOutDated && typeof this.list.isOutDated === 'function';
+    return this.list && ListController.isOutDated(this.list);
   }
 
   deleteList(list: List): void {
@@ -180,7 +181,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   cloneList(list: List): void {
     this.listsFacade.loadMyLists();
-    const clone = list.clone();
+    const clone = ListController.clone(list);
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
       first(),

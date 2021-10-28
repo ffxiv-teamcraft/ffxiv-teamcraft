@@ -18,23 +18,8 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "mergeStrategies": {
-                "externals": "replace"
-              },
-              "allowedCommonJsDependencies": [
-                "lodash",
-                "graphql-tag",
-                "@kaiu/serializer",
-                "memoize",
-                "ng-push",
-                "file-saver",
-                "papaparse"
-              ]
-            },
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
             "main": "apps/client/src/main.ts",
@@ -59,10 +44,21 @@
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js"
-            ],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            ]
           },
           "configurations": {
+            "dev": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -173,6 +169,9 @@
             "browserTarget": "client:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "client:build:dev"
+            },
             "production": {
               "browserTarget": "client:build:production"
             },
@@ -182,7 +181,8 @@
             "preview": {
               "browserTarget": "client:build:preview"
             }
-          }
+          },
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -224,8 +224,11 @@
           "options": {
             "outputPath": "dist/client-server",
             "main": "apps/client/src/main.server.ts",
-            "tsConfig": "apps/client/tsconfig.server.json"
-          }
+            "tsConfig": "apps/client/tsconfig.server.json",
+            "sourceMap": true,
+            "optimization": false
+          },
+          "defaultConfiguration": ""
         }
       }
     },

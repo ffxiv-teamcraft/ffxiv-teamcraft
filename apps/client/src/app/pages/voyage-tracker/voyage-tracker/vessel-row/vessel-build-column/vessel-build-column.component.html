@@ -1,23 +1,25 @@
-<div *ngIf="rank > 0" nz-popover
-     [nzPopoverTitle]="name"
-     [nzPopoverContent]="vesselBuildDetails"
->
-  {{ vesselBuild?.abbreviation }}
-</div>
+<ng-container *ngIf="vesselBuild$ | async as vesselBuild">
+  <div *ngIf="rank > 0" nz-popover
+       [nzPopoverTitle]="name"
+       [nzPopoverContent]="vesselBuildDetails"
+  >
+    {{ vesselBuild?.abbreviation }}
+  </div>
 
-<ng-template #vesselBuildDetails>
-  <div fxLayout="column">
-    <div><h4>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Title' | translate }}</h4></div>
-    <div *ngFor="let item of fullnameParts">{{ item }}</div>
-    <div>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Condition' | translate }}: {{ condition }}</div>
-  </div>
-  <hr>
-  <div fxLayout="column">
-    <div><h4>{{ 'VOYAGE_TRACKER.STATS_DETAILS.Title' | translate }}</h4></div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Surveillance' | translate }}: {{ vesselBuild?.stats.surveillance }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Retrieval' | translate }}: {{ vesselBuild?.stats.retrieval }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Speed' | translate }}: {{ vesselBuild?.stats.speed }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Range' | translate }}: {{ vesselBuild?.stats.range }}</div>
-    <div>{{ 'VOYAGE_TRACKER.STATS.Favor' | translate }}: {{ vesselBuild?.stats.favor }}</div>
-  </div>
-</ng-template>
+  <ng-template #vesselBuildDetails>
+    <div fxLayout="column">
+      <div><h4>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Title' | translate }}</h4></div>
+      <div *ngFor="let item of fullNameParts$ | async">{{ item }}</div>
+      <div>{{ 'VOYAGE_TRACKER.BUILD_DETAILS.Condition' | translate }}: {{ condition }}</div>
+    </div>
+    <hr>
+    <div fxLayout="column">
+      <div><h4>{{ 'VOYAGE_TRACKER.STATS_DETAILS.Title' | translate }}</h4></div>
+      <div>{{ 'VOYAGE_TRACKER.STATS.Surveillance' | translate }}: {{ vesselBuild?.stats.surveillance }}</div>
+      <div>{{ 'VOYAGE_TRACKER.STATS.Retrieval' | translate }}: {{ vesselBuild?.stats.retrieval }}</div>
+      <div>{{ 'VOYAGE_TRACKER.STATS.Speed' | translate }}: {{ vesselBuild?.stats.speed }}</div>
+      <div>{{ 'VOYAGE_TRACKER.STATS.Range' | translate }}: {{ vesselBuild?.stats.range }}</div>
+      <div>{{ 'VOYAGE_TRACKER.STATS.Favor' | translate }}: {{ vesselBuild?.stats.favor }}</div>
+    </div>
+  </ng-template>
+</ng-container>

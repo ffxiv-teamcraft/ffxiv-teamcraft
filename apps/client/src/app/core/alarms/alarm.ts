@@ -47,7 +47,7 @@ export class Alarm extends DataModel {
 
   note: string;
 
-  aetheryte: Aetheryte;
+  aetheryte?: Aetheryte;
 
   folklore?: number;
 

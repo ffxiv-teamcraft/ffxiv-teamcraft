@@ -4,12 +4,12 @@ import { Class, Instantiable } from '@kaiu/serializer';
 
 export abstract class RotationTip {
 
+  protected constructor(public readonly type: RotationTipType, public readonly message: string) {
+  }
+
   public abstract matches(simulationResult: SimulationResult): boolean;
 
   public abstract canBeAppliedTo(simulationResult: SimulationResult): boolean;
-
-  protected constructor(public readonly type: RotationTipType, public readonly message: string) {
-  }
 
   public messageParams(simulationResult: SimulationResult): any {
     return {};

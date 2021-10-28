@@ -266,7 +266,7 @@
           <i nz-icon nzType="edit"></i>
         </button>
       </div>
-      <div *ngIf="list.public && list.tags.length === 0" class="alert">
+      <div *ngIf="list.public && list.tags?.length === 0" class="alert">
         <nz-alert [nzMessage]="message" nzShowIcon nzType="warning">
           <ng-template #message>
             {{'LIST_DETAILS.Missing_tags_before_button' | translate}} <i nz-icon nzType="tags-o"></i>
@@ -294,7 +294,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="!list.offline && list.isTooLarge()" class="alert">
+      <div *ngIf="!list.offline && isTooLarge(list)" class="alert">
         <nz-alert [nzDescription]="'LIST_DETAILS.List_too_large_description' | translate"
                   [nzMessage]="'LIST_DETAILS.List_too_large' | translate" nzShowIcon
                   nzType="warning">

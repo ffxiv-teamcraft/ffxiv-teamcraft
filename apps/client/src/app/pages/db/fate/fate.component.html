@@ -6,10 +6,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{(xivapiFate.ID | fate).name | i18n}}"
+          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{xivapiFate.ID | i18nRow:'fates' | i18n}}"
                class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{(xivapiFate.ID | fate).name | i18n}}</h2>
+            <h2 class="item-name">{{xivapiFate.ID | i18nRow:'fates' | i18n}}</h2>
             <div *ngIf="xivapiFate.GamePatch" class="patch">
               {{xivapiFate.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiFate.GamePatch.ID" type="patch"></app-db-button>
@@ -24,10 +24,10 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <span *ngIf="xivapiFate.Description" [innerHTML]="(xivapiFate.ID | fate).description | i18n | xivUIText"></span>
+        <span *ngIf="xivapiFate.Description" [innerHTML]="xivapiFate.ID | i18nRow:'fates':'description' | i18n | xivUIText"></span>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="(xivapiFate.ID | fate).name"></app-i18n-display>
+                        [value]="xivapiFate.ID | i18nRow:'fates'"></app-i18n-display>
     </div>
 
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
@@ -50,7 +50,7 @@
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{gtData.fate.zoneid | placeName |i18n}} - X:{{gtData.fate.coords[0]}} Y:{{gtData.fate.coords[1]}}
+            {{gtData.fate.zoneid | i18nRow:'places' |i18n}} - X:{{gtData.fate.coords[0]}} Y:{{gtData.fate.coords[1]}}
           </div>
         </ng-template>
         <app-map [mapId]="gtData.fate.mapid"

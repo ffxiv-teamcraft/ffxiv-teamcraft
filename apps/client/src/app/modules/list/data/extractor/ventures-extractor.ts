@@ -3,17 +3,19 @@ import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { uniq } from 'lodash';
+import { combineLatest, Observable } from 'rxjs';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { map } from 'rxjs/operators';
 
 export class VenturesExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   getDataType(): DataType {
@@ -24,9 +26,16 @@ export class VenturesExtractor extends AbstractExtractor<number[]> {
     return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): number[] {
-    const deterministic = this.lazyData.data.retainerTasks.filter(task => task.item === item.id).map(task => task.id);
-    return uniq([...deterministic, ...(this.lazyData.data.ventureSources[item.id] || [])]);
+  protected doExtract(item: Item, itemData: ItemData): Observable<number[]> {
+    return combineLatest([
+      this.lazyData.getEntry('retainerTasks'),
+      this.lazyData.getRow('ventureSources', item.id, [])
+    ]).pipe(
+      map(([retainerTasks, ventures]) => {
+        const deterministic = retainerTasks.filter(task => task.item === item.id).map(task => task.id);
+        return uniq([...deterministic, ...ventures]);
+      })
+    );
   }
 
 }

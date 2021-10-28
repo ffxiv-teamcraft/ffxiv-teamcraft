@@ -10,7 +10,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
@@ -45,8 +44,9 @@ import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popu
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { InventoryService } from '../../../inventory/inventory.service';
+import { ListController } from '../../list-controller';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-item-row',
@@ -210,7 +210,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   ignoreRequirements$ = combineLatest([this.item$, this.list$, this.finalItem$]).pipe(
     map(([item, list, finalItem]) => {
-      return list.shouldIgnoreRequirements(finalItem ? 'finalItems' : 'items', item.id);
+      return ListController.shouldIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', item.id);
     })
   );
 
@@ -250,7 +250,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
-              private modal: NzModalService, private l12n: LocalizedDataService,
+              private modal: NzModalService,
               private i18n: I18nToolsService, private cdRef: ChangeDetectorRef,
               private userService: UserService, private xivapi: XivapiService,
               private authFacade: AuthFacade, private teamsFacade: TeamsFacade,
@@ -265,7 +265,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryService,
               private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -279,8 +279,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         return getItemSource(item, DataType.MASTERBOOKS)
           // Ignore string ids, as they are draft ids
           .filter(book => Number.isInteger(book.id))
-          .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
-          .map(book => book.id);
+          .filter(book => (entry.masterbooks || []).indexOf(+book.id) === -1)
+          .map(book => +book.id);
       })
     );
 
@@ -298,7 +298,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(
       map(([list, item]) => {
-        return list.requiredAsHQ(item);
+        return ListController.requiredAsHQ(list, item);
       })
     );
   }
@@ -323,15 +323,19 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openMarketboardDialog(item: ListRow): void {
-    this.modal.create({
-      nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${this.i18n.getName(this.l12n.getItem(item.id))}`,
-      nzContent: MarketboardPopupComponent,
-      nzComponentParams: {
-        itemId: item.id,
-        showHistory: true
-      },
-      nzFooter: null,
-      nzWidth: '80vw'
+    this.i18n.getNameObservable('items', item.id).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.modal.create({
+        nzTitle: `${this.translate.instant('MARKETBOARD.Title')} - ${itemName}`,
+        nzContent: MarketboardPopupComponent,
+        nzComponentParams: {
+          itemId: item.id,
+          showHistory: true
+        },
+        nzFooter: null,
+        nzWidth: '80vw'
+      });
     });
   }
 
@@ -363,20 +367,22 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation, item: ListRow): void {
-    const foodsData = this.consumablesService.fromLazyData(this.lazyData.data.foods);
-    const medicinesData = this.consumablesService.fromData(medicines);
-    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
-    this.modal.create({
-      nzContent: MacroPopupComponent,
-      nzComponentParams: {
-        rotation: this.registry.deserializeRotation(rotation.rotation),
-        job: (<any>item).craftedBy[0].jobId,
-        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
-        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
-        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
-      },
-      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
-      nzFooter: null
+    this.lazyData.getEntry('foods').subscribe(foods => {
+      const foodsData = this.consumablesService.fromLazyData(foods);
+      const medicinesData = this.consumablesService.fromData(medicines);
+      const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+      this.modal.create({
+        nzContent: MacroPopupComponent,
+        nzComponentParams: {
+          rotation: this.registry.deserializeRotation(rotation.rotation),
+          job: (<any>item).craftedBy[0].jobId,
+          food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+          medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+          freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+        },
+        nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+        nzFooter: null
+      });
     });
   }
 
@@ -475,7 +481,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   setIgnoreRequirements(ignore: boolean, itemId: number, list: List, finalItem: boolean): void {
-    list.setIgnoreRequirements(finalItem ? 'finalItems' : 'items', itemId, ignore);
+    ListController.setIgnoreRequirements(list, finalItem ? 'finalItems' : 'items', itemId, ignore);
     this.listManager.upgradeList(list).subscribe(l => {
       this.listsFacade.updateList(l);
     });
@@ -485,20 +491,24 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.modal.create({
-          nzTitle: `${this.i18n.getName(this.l12n.getItem(item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
-          nzFooter: null,
-          nzContent: CommentsPopupComponent,
-          nzComponentParams: {
-            targetType: CommentTargetType.LIST,
-            targetId: list.$key,
-            targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
-            isAuthor: isAuthor,
-            notificationFactory: (comment) => {
-              return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
-            }
-          }
-        }).afterClose;
+        return this.i18n.getNameObservable('items', item.id).pipe(
+          switchMap(itemName => {
+            return this.modal.create({
+              nzTitle: `${itemName} - ${this.translate.instant('COMMENTS.Title')}`,
+              nzFooter: null,
+              nzContent: CommentsPopupComponent,
+              nzComponentParams: {
+                targetType: CommentTargetType.LIST,
+                targetId: list.$key,
+                targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
+                isAuthor: isAuthor,
+                notificationFactory: (comment) => {
+                  return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
+                }
+              }
+            }).afterClose;
+          })
+        );
       })
     ).subscribe(() => {
       this.commentBadgeReloader$.next(null);
@@ -596,26 +606,37 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   addAllAlarms(item: ListRow) {
     this.alarmsFacade.allAlarms$
-      .pipe(first())
-      .subscribe(allAlarms => {
+      .pipe(
+        first(),
+        switchMap(allAlarms => {
+          return this.i18n.getNameObservable('items', item.id).pipe(
+            map(itemName => ({ itemName, allAlarms }))
+          );
+        })
+      )
+      .subscribe(({ itemName, allAlarms }) => {
         const alarmsToAdd = getItemSource<Alarm[]>(item, DataType.ALARMS).filter(a => {
           return !allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });
         });
-        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, this.i18n.getName(this.l12n.getItem(item.id)));
+        this.alarmsFacade.addAlarmsAndGroup(alarmsToAdd, itemName);
       });
   }
 
   public openRequirementsPopup(item: ListRow): void {
-    this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
-      nzContent: RelationshipsComponent,
-      nzComponentParams: {
-        item: item,
-        finalItem: this.finalItem
-      },
-      nzFooter: null
+    this.i18n.getNameObservable('items', item.id).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.modal.create({
+        nzTitle: itemName || (item as CustomItem).name,
+        nzContent: RelationshipsComponent,
+        nzComponentParams: {
+          item: item,
+          finalItem: this.finalItem
+        },
+        nzFooter: null
+      });
     });
   }
 

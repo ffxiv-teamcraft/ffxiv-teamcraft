@@ -1,5 +1,28 @@
-<div class="extractor-container" fxLayout="column" fxLayoutAlign="center center">
-  <nz-progress [nzPercent]="progress$ | async" nzType="circle"></nz-progress>
-  <div id="progress-display">{{done$ | async}} / {{totalTodo$ | async}}</div>
+<div *ngIf="!running; else progressTpl" fxLayout="column" fxLayoutGap="10px">
+  <h2>Which extract do you want to run?</h2>
+  <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div>
+      <button nz-button nzType="primary" (click)="doExtracts()">Extracts</button>
+    </div>
+    <div>
+      <button nz-button nzType="primary" (click)="doCollectablesData()">Collectables</button>
+    </div>
+    <div>
+      <button nz-button nzType="primary" (click)="doLogTrackingData()">Log tracking</button>
+    </div>
+  </div>
+  <nz-divider nzText="Or"></nz-divider>
+  <div>
+    <button nz-button nzType="primary" nzBlock (click)="doEverything()">Everything</button>
+  </div>
+
 </div>
+
+<ng-template #progressTpl>
+  <div class="extractor-container" fxLayout="column" fxLayoutAlign="center center">
+    <h2>{{currentLabel}}</h2>
+    <nz-progress [nzPercent]="progress$ | async" nzType="circle"></nz-progress>
+    <div id="progress-display">{{done$ | async}} / {{totalTodo$ | async}}</div>
+  </div>
+</ng-template>
 

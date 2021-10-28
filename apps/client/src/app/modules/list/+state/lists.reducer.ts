@@ -1,5 +1,6 @@
 import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
+import { ListController } from '../list-controller';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -161,7 +162,7 @@ export function listsReducer(
         ]
       };
       if (state.selectedId === action.payload.$key && !action.payload.notFound) {
-        state.selectedClone = action.payload.clone(true);
+        state.selectedClone = ListController.clone(action.payload as List, true);
       }
       break;
     }
@@ -197,10 +198,11 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SelectList: {
+      const selected = state.listDetails.find(l => l.$key === action.key);
       state = {
         ...state,
         selectedId: action.key,
-        selectedClone: state.listDetails.find(l => l.$key === action.key)?.clone(true)
+        selectedClone: selected ? ListController.clone(selected, true) : null
       };
       break;
     }

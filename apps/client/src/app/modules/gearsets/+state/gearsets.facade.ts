@@ -20,13 +20,12 @@ import {
   UpdateGearset,
   UpdateGearsetIndexes
 } from './gearsets.actions';
-import { catchError, filter, map, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable, of } from 'rxjs';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../stats.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../materia.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
@@ -35,6 +34,9 @@ import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-pars
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { LazyData } from '../../../lazy-data/lazy-data';
 
 @Injectable({
   providedIn: 'root'
@@ -85,7 +87,7 @@ export class GearsetsFacade {
     );
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
-              private statsService: StatsService, private lazyData: LazyDataService,
+              private statsService: StatsService, private lazyData: LazyDataFacade,
               private materiasService: MateriaService, private http: HttpClient,
               private xivapi: XivapiService) {
   }
@@ -181,50 +183,66 @@ export class GearsetsFacade {
    * @param legsPieceId item id for legs slot
    */
   @Memoized()
-  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
-    let matchesBody = true;
-    let matchesLegs = true;
-    // Some items are full body
-    if (['Head', 'Hands', 'Legs', 'Feet'].indexOf(slotName) > -1 && chestPieceId) {
-      const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[chestPieceId]];
-      matchesBody = +equipSlotCategory[slotName] > -1;
-    }
-    // This is for legs + feet items
-    if (slotName === 'Feet' && legsPieceId) {
-      const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[legsPieceId]];
-      matchesLegs = +equipSlotCategory[slotName] > -1;
-    }
-    return matchesBody && matchesLegs;
+  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): Observable<boolean> {
+    return of([true, true]).pipe(
+      switchMap(([, matchesLegs]) => {
+        if (['Head', 'Hands', 'Legs', 'Feet'].indexOf(slotName) > -1 && chestPieceId) {
+          return this.lazyData.getRow('itemEquipSlotCategory', chestPieceId)
+            .pipe(
+              switchMap(chestPieceCategory => {
+                return this.lazyData.getRow('equipSlotCategories', chestPieceCategory);
+              }),
+              map(equipSlotCategory => [+equipSlotCategory[slotName] > -1, matchesLegs])
+            );
+        }
+        return of([true, true]);
+      }),
+      switchMap(([matchesBody]) => {
+        if (slotName === 'Feet' && legsPieceId) {
+          return this.lazyData.getRow('itemEquipSlotCategory', legsPieceId)
+            .pipe(
+              switchMap(legsPieceCategory => {
+                return this.lazyData.getRow('equipSlotCategories', legsPieceCategory);
+              }),
+              map(equipSlotCategory => [matchesBody, +equipSlotCategory[slotName] > -1])
+            );
+        }
+        return of([matchesBody, true]);
+      }),
+      map(([matchesBody, matchesLegs]) => matchesBody && matchesLegs),
+      shareReplay(1)
+    );
   }
 
   fromAriyalaLink(url: string): Observable<TeamcraftGearset> {
     const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
     return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
-      map(data => {
+      withLazyData(this.lazyData, 'jobAbbr', 'jobName', 'foods', 'itemMeldingData', 'hqFlags'),
+      map(([data, jobAbbr, jobName, foods, itemMeldingData, hqFlags]) => {
         let dataset = data.datasets[data.content];
         // for DoH/DoL
         if (dataset === undefined) {
           dataset = data.datasets[Object.keys(data.datasets)[0]];
         }
         const gearset = new TeamcraftGearset();
-        gearset.job = +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en.toLowerCase() === data.content.toLowerCase()) || +Object.keys(this.lazyData.data.jobName).find(k => this.lazyData.data.jobName[k].en.toLowerCase() === data.content.toLowerCase());
+        gearset.job = +Object.keys(jobAbbr).find(k => jobAbbr[k].en.toLowerCase() === data.content.toLowerCase()) || +Object.keys(jobName).find(k => jobName[k].en.toLowerCase() === data.content.toLowerCase());
         gearset.name = url;
-        gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand');
-        gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand');
-        gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head');
-        gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest');
-        gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands');
-        gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist');
-        gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs');
-        gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet');
-        gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears');
-        gearset.necklace = this.getAriyalaEquipmentPiece(dataset, 'neck');
-        gearset.bracelet = this.getAriyalaEquipmentPiece(dataset, 'wrist');
-        gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft');
-        gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight');
-        gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal');
+        gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand', itemMeldingData, hqFlags);
+        gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand', itemMeldingData, hqFlags);
+        gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head', itemMeldingData, hqFlags);
+        gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest', itemMeldingData, hqFlags);
+        gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands', itemMeldingData, hqFlags);
+        gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist', itemMeldingData, hqFlags);
+        gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs', itemMeldingData, hqFlags);
+        gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet', itemMeldingData, hqFlags);
+        gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears', itemMeldingData, hqFlags);
+        gearset.necklace = this.getAriyalaEquipmentPiece(dataset, 'neck', itemMeldingData, hqFlags);
+        gearset.bracelet = this.getAriyalaEquipmentPiece(dataset, 'wrist', itemMeldingData, hqFlags);
+        gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft', itemMeldingData, hqFlags);
+        gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight', itemMeldingData, hqFlags);
+        gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal', itemMeldingData, hqFlags);
         if (dataset.normal.items.food) {
-          gearset.food = this.lazyData.data.foods.find(food => food.ID === dataset.normal.items.food);
+          gearset.food = foods.find(food => food.ID === dataset.normal.items.food);
           if (gearset.food) {
             gearset.food.HQ = true;
           }
@@ -235,13 +253,13 @@ export class GearsetsFacade {
     );
   }
 
-  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string): EquipmentPiece | null {
+  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
     const itemId = dataset.normal.items[ariyalaName];
     if (itemId === undefined) {
       return null;
     }
-    const itemMeldingData = this.lazyData.data.itemMeldingData[itemId];
-    const canBeHq = this.lazyData.data.hqFlags[itemId] === 1;
+    const itemMeldingData = lazyItemMeldingData[itemId];
+    const canBeHq = hqFlags[itemId] === 1;
     const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => AriyalaMateria[row]) as number[];
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
@@ -261,14 +279,14 @@ export class GearsetsFacade {
     };
   }
 
-  private getLodestoneEquipmentPiece(gear: any, lodestoneName: string): EquipmentPiece | null {
+  private getLodestoneEquipmentPiece(gear: any, lodestoneName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
     const item = gear[lodestoneName];
     if (item === undefined) {
       return null;
     }
     const itemId = item.ID;
-    const itemMeldingData = this.lazyData.data.itemMeldingData[itemId];
-    const canBeHq = this.lazyData.data.hqFlags[itemId] === 1;
+    const itemMeldingData = lazyItemMeldingData[itemId];
+    const canBeHq = hqFlags[itemId] === 1;
     const materias = item.Materia;
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
@@ -297,41 +315,49 @@ export class GearsetsFacade {
         }
       }
     ).pipe(
-      map(data => {
+      withLazyData(this.lazyData, 'itemMeldingData', 'hqFlags'),
+      map(([data, itemMeldingData, hqFlags]) => {
         const lodestoneGear = data.Character.GearSet.Gear;
         const gearset = new TeamcraftGearset();
         gearset.job = data.Character.ActiveClassJob.JobID;
         gearset.name = data.Character.Name;
-        gearset.mainHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'MainHand');
-        gearset.offHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'OffHand');
-        gearset.head = this.getLodestoneEquipmentPiece(lodestoneGear, 'Head');
-        gearset.chest = this.getLodestoneEquipmentPiece(lodestoneGear, 'Body');
-        gearset.gloves = this.getLodestoneEquipmentPiece(lodestoneGear, 'Hands');
-        gearset.belt = this.getLodestoneEquipmentPiece(lodestoneGear, 'Waist');
-        gearset.legs = this.getLodestoneEquipmentPiece(lodestoneGear, 'Legs');
-        gearset.feet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Feet');
-        gearset.earRings = this.getLodestoneEquipmentPiece(lodestoneGear, 'Earrings');
-        gearset.necklace = this.getLodestoneEquipmentPiece(lodestoneGear, 'Necklace');
-        gearset.bracelet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Bracelets');
-        gearset.ring1 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring1');
-        gearset.ring2 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring2');
-        gearset.crystal = this.getLodestoneEquipmentPiece(lodestoneGear, 'SoulCrystal');
+        gearset.mainHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'MainHand', itemMeldingData, hqFlags);
+        gearset.offHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'OffHand', itemMeldingData, hqFlags);
+        gearset.head = this.getLodestoneEquipmentPiece(lodestoneGear, 'Head', itemMeldingData, hqFlags);
+        gearset.chest = this.getLodestoneEquipmentPiece(lodestoneGear, 'Body', itemMeldingData, hqFlags);
+        gearset.gloves = this.getLodestoneEquipmentPiece(lodestoneGear, 'Hands', itemMeldingData, hqFlags);
+        gearset.belt = this.getLodestoneEquipmentPiece(lodestoneGear, 'Waist', itemMeldingData, hqFlags);
+        gearset.legs = this.getLodestoneEquipmentPiece(lodestoneGear, 'Legs', itemMeldingData, hqFlags);
+        gearset.feet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Feet', itemMeldingData, hqFlags);
+        gearset.earRings = this.getLodestoneEquipmentPiece(lodestoneGear, 'Earrings', itemMeldingData, hqFlags);
+        gearset.necklace = this.getLodestoneEquipmentPiece(lodestoneGear, 'Necklace', itemMeldingData, hqFlags);
+        gearset.bracelet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Bracelets', itemMeldingData, hqFlags);
+        gearset.ring1 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring1', itemMeldingData, hqFlags);
+        gearset.ring2 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring2', itemMeldingData, hqFlags);
+        gearset.crystal = this.getLodestoneEquipmentPiece(lodestoneGear, 'SoulCrystal', itemMeldingData, hqFlags);
         return gearset;
       })
     );
   }
 
-  public applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): TeamcraftGearset {
-    const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[itemId]];
-    if (!equipSlotCategory) {
-      return gearset;
-    }
-    Object.keys(equipSlotCategory)
-      .filter(key => +equipSlotCategory[key] === -1)
-      .forEach(key => {
-        delete gearset[this.getPropertyNameFromCategoryName(key)];
-      });
-    return gearset;
+  public applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): Observable<TeamcraftGearset> {
+    return combineLatest([
+      this.lazyData.getEntry('equipSlotCategories'),
+      this.lazyData.getEntry('itemEquipSlotCategory')
+    ]).pipe(
+      map(([equipSlotCategories, itemEquipSlotCategory]) => {
+        const equipSlotCategory = equipSlotCategories[itemEquipSlotCategory[itemId]];
+        if (!equipSlotCategory) {
+          return gearset;
+        }
+        Object.keys(equipSlotCategory)
+          .filter(key => +equipSlotCategory[key] === -1)
+          .forEach(key => {
+            delete gearset[this.getPropertyNameFromCategoryName(key)];
+          });
+        return gearset;
+      })
+    );
   }
 
   public getPropertyName(slot: number): string {

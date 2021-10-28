@@ -1,5 +1,5 @@
 import { ResignedReason } from './resigned-reason';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export interface ResignedFeedback {
   commissionId: string;

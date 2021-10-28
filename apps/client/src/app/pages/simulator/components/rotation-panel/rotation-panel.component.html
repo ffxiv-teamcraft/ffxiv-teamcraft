@@ -81,7 +81,7 @@
           </button>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'"
                   [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
-                  [nzType]="'danger'" nz-button
+                  nzDanger nz-button
                   nz-popconfirm>
             <i nz-icon nzType="delete"></i>
           </button>

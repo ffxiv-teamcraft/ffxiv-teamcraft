@@ -16,13 +16,8 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
   providers: [FishingSpotUtilsService]
 })
 export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
+  public highlightColor?: string;
   private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
-
-  @Input()
-  public set spot(value: XivApiFishingSpot | undefined) {
-    this.spot$.next(value);
-  }
-
   private readonly time$ = this.etime.getEorzeanTime().pipe(distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8));
 
   public readonly weathers$ = combineLatest([this.spot$, this.time$]).pipe(
@@ -41,8 +36,6 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
     }),
     shareReplay(1)
   );
-
-  public highlightColor?: string;
   private readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
   private readonly unsubscribe$ = new Subject<void>();
 
@@ -53,6 +46,11 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
     private readonly weatherService: WeatherService,
     private readonly cd: ChangeDetectorRef
   ) {
+  }
+
+  @Input()
+  public set spot(value: XivApiFishingSpot | undefined) {
+    this.spot$.next(value);
   }
 
   ngOnInit() {

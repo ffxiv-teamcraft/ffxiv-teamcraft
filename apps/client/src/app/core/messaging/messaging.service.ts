@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireMessaging } from '@angular/fire/messaging';
+import { AngularFireMessaging } from '@angular/fire/compat/messaging';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { AuthFacade } from '../../+state/auth.facade';
 import { mapTo, pairwise, startWith, switchMap } from 'rxjs/operators';
 import { combineLatest, EMPTY } from 'rxjs';

@@ -7,9 +7,9 @@ import { layoutsQuery } from './layouts.selectors';
 import { CreateLayout, DeleteLayout, LoadLayouts, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { debounceTime, filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, expand, filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
@@ -69,106 +69,115 @@ export class LayoutsFacade {
     return combineLatest([this.selectedLayout$, user$, settingsChange$])
       .pipe(
         withLatestFrom(this.authFacade.gearSets$),
-        map(([[layout, user], gearsets]) => {
-          let unfilteredRows: ListRow[];
+        switchMap(([[layout, user], gearsets]) => {
+          let starter: ListRow[];
           if (!layout.considerCrystalsAsItems) {
-            unfilteredRows = (list.items || []).filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
+            starter = (list.items || []).filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
           } else {
-            unfilteredRows = (list.items || []).filter(row => row.hidden !== true);
+            starter = (list.items || []).filter(row => row.hidden !== true);
           }
           if (layout.includeRecipesInItems) {
-            unfilteredRows.push(...list.finalItems.map(i => {
+            starter.push(...list.finalItems.map(i => {
               i.finalItem = true;
               return i;
             }));
           }
-          return {
-            crystalsPanel: !layout.considerCrystalsAsItems,
-            showInventory: layout.showInventory,
-            showFinalItemsPanel: !layout.includeRecipesInItems,
-            rows: layout.rows
-              .filter(row => row !== undefined)
-              .sort((a, b) => {
-                // Other has to be last filter applied, as it rejects nothing.
-                if (a.isOtherRow()) {
-                  return 1;
-                }
-                if (b.isOtherRow()) {
-                  return -1;
-                }
-                return a.index - b.index;
-              })
-              .map((row: LayoutRow) => {
-                const result: FilterResult = row.doFilter(unfilteredRows, user?.itemTags || [], list, this.settings);
-                unfilteredRows = result.rejected;
-                // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
-                let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);
-                if (row.hideCompletedRows || overrideHideCompleted) {
-                  orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
-                }
-                if (row.hideUsedRows) {
-                  orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
-                }
-                const resultWithLevel: FilterResult = orderedAccepted.reduce((acc, item) => {
-                  const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
-                  const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-                  if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
-                    const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
-                    const requiredLevel = Math.floor((gatheredBy.level - 1) / 5) * 5;
-                    if (this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
-                      acc.accepted.push(item);
-                    } else {
-                      acc.rejected.push(item);
-                    }
-                  } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
-                    const match = craftedBy.some((craft) => {
-                      return this.matchesLevel(gearsets, craft.job, craft.lvl);
-                    });
-                    if (match) {
-                      acc.accepted.push(item);
-                    } else {
-                      acc.rejected.push(item);
-                    }
-                  } else {
-                    acc.accepted.push(item);
+          return of({ rows: [], unfilteredRows: starter, layoutRows: layout.rows }).pipe(
+            expand(({ rows, unfilteredRows, layoutRows }) => {
+              if (unfilteredRows.length === 0) {
+                return EMPTY;
+              }
+              const row = layoutRows.shift();
+              const result: FilterResult = row.doFilter(unfilteredRows, user?.itemTags || [], list, this.settings);
+              unfilteredRows = result.rejected;
+              // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
+              const orderedAccepted$ = row.tiers ? of(result.accepted) : this.layoutOrder.order(result.accepted, row.orderBy, row.order);
+              return orderedAccepted$.pipe(
+                map(orderedAccepted => {
+                  if (row.hideCompletedRows || overrideHideCompleted) {
+                    orderedAccepted = orderedAccepted.filter(item => item.done < item.amount);
                   }
-                  return acc;
-                }, { accepted: [], rejected: [] });
-                orderedAccepted = resultWithLevel.accepted;
-                if (!adaptativeFilter) {
-                  unfilteredRows.push(...resultWithLevel.rejected);
-                }
-                return {
-                  title: row.name,
-                  rows: orderedAccepted,
-                  index: row.index,
-                  zoneBreakdown: row.zoneBreakdown,
-                  npcBreakdown: row.npcBreakdown,
-                  tiers: row.tiers,
-                  reverseTiers: row.reverseTiers,
-                  filterChain: row.filter.name,
-                  hideIfEmpty: row.hideIfEmpty,
-                  collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
-                  collapsedByDefault: row.collapsedByDefault,
-                  layoutRow: row,
-                  layout: layout,
-                  allHQ: orderedAccepted.every(i => i.requiredAsHQ)
-                };
-              })
-              // row.rows.length > 0 || !row.hideIfEmpty is !(row.rows.length === 0 && row.hideIfEmpty)
-              .filter(row => row.rows.length > 0 || !row.hideIfEmpty)
-              .sort((a, b) => a.index - b.index),
-          };
+                  if (row.hideUsedRows) {
+                    orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
+                  }
+                  const resultWithLevel: FilterResult = orderedAccepted.reduce((acc, item) => {
+                    const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+                    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+                    if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
+                      const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
+                      const requiredLevel = Math.floor((gatheredBy.level - 1) / 5) * 5;
+                      if (this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
+                        acc.accepted.push(item);
+                      } else {
+                        acc.rejected.push(item);
+                      }
+                    } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
+                      const match = craftedBy.some((craft) => {
+                        return this.matchesLevel(gearsets, craft.job, craft.lvl);
+                      });
+                      if (match) {
+                        acc.accepted.push(item);
+                      } else {
+                        acc.rejected.push(item);
+                      }
+                    } else {
+                      acc.accepted.push(item);
+                    }
+                    return acc;
+                  }, { accepted: [], rejected: [] });
+                  orderedAccepted = resultWithLevel.accepted;
+                  if (!adaptativeFilter) {
+                    unfilteredRows.push(...resultWithLevel.rejected);
+                  }
+                  return {
+                    layoutRows,
+                    unfilteredRows,
+                    rows: [
+                      ...rows,
+                      {
+                        title: row.name,
+                        rows: orderedAccepted,
+                        index: row.index,
+                        zoneBreakdown: row.zoneBreakdown,
+                        npcBreakdown: row.npcBreakdown,
+                        tiers: row.tiers,
+                        reverseTiers: row.reverseTiers,
+                        filterChain: row.filter.name,
+                        hideIfEmpty: row.hideIfEmpty,
+                        collapsed: row.collapseIfDone ? orderedAccepted.reduce((collapse, r) => r.done >= r.amount && collapse, true) : false,
+                        collapsedByDefault: row.collapsedByDefault,
+                        layoutRow: row,
+                        layout: layout,
+                        allHQ: orderedAccepted.every(i => i.requiredAsHQ)
+                      }
+                    ]
+                  };
+                })
+              );
+            }),
+            map(({ rows }) => {
+              return {
+                crystalsPanel: !layout.considerCrystalsAsItems,
+                showInventory: layout.showInventory,
+                showFinalItemsPanel: !layout.includeRecipesInItems,
+                rows: rows.filter(row => row.rows.length > 0 || !row.hideIfEmpty)
+                  .sort((a, b) => a.index - b.index)
+              };
+            })
+          );
         })
       );
   }
 
   public getFinalItemsDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<LayoutRowDisplay> {
     return this.selectedLayout$.pipe(
+      switchMap(layout => {
+        return this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder).pipe(
+          map(ordered => ({ rows: ordered.filter(row => (layout.recipeHideCompleted || overrideHideCompleted) ? row.done < row.amount : true), layout }))
+        );
+      }),
       withLatestFrom(this.authFacade.gearSets$),
-      map(([layout, gearsets]) => {
-        let rows = this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
-          .filter(row => (layout.recipeHideCompleted || overrideHideCompleted) ? row.done < row.amount : true);
+      map(([{ rows, layout }, gearsets]) => {
         if (adaptativeFilter) {
           rows = rows.filter(item => {
             const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
@@ -205,12 +214,6 @@ export class LayoutsFacade {
     );
   }
 
-  private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
-    const set = sets.find(s => s.jobId === job);
-    // If we don't find a matching set, return true, they just didn't fill this one.
-    return !set || set.level === 0 || set.level >= level;
-  }
-
   public createNewLayout(name = 'New layout', baseLayout?: ListLayout): void {
     const layout = new ListLayout();
     Object.assign(layout, baseLayout);
@@ -242,5 +245,11 @@ export class LayoutsFacade {
     if (selectedKey !== null) {
       this.store.dispatch(new SelectLayout(selectedKey));
     }
+  }
+
+  private matchesLevel(sets: TeamcraftGearsetStats[], job: number, level: number): boolean {
+    const set = sets.find(s => s.jobId === job);
+    // If we don't find a matching set, return true, they just didn't fill this one.
+    return !set || set.level === 0 || set.level >= level;
   }
 }

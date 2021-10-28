@@ -3,10 +3,11 @@ import { GarlandToolsService } from '../../../../core/api/garland-tools.service'
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { Observable } from 'rxjs';
 
 export class TreasuresExtractor extends AbstractExtractor<number[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
@@ -15,14 +16,14 @@ export class TreasuresExtractor extends AbstractExtractor<number[]> {
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   protected canExtract(item: Item): boolean {
     return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): number[] {
-    return this.lazyData.data.lootSources[item.id];
+  protected doExtract(item: Item, itemData: ItemData): Observable<number[]> {
+    return this.lazyData.getRow('lootSources', item.id);
   }
 }

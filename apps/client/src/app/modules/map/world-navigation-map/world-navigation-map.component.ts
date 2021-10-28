@@ -2,12 +2,11 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationObjective } from '../navigation-objective';
 import { MapService } from '../map.service';
 import { NavigationStep } from '../navigation-step';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, Observable, Subject } from 'rxjs';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../map-data';
 import { filter, first, map, shareReplay, takeUntil } from 'rxjs/operators';
 import { WorldNavigationStep } from '../world-navigation-step';
-import { BehaviorSubject, combineLatest, fromEvent, Subject } from 'rxjs';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
@@ -23,20 +22,9 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
   public optimizedPath$: Observable<WorldNavigationStep[]>;
 
   public containerRef: ElementRef;
-
-  @ViewChild('container', { static: false })
-  public set _containerRef(ref: ElementRef) {
-    setTimeout(() => {
-      this.containerRef = ref;
-    }, 500);
-  }
-
   public currentPathIndex$ = new BehaviorSubject(0);
-
   public currentPath$: Observable<WorldNavigationStep>;
-
   public markedAsDone = [];
-
   public markAsDone$: Subject<NavigationStep> = new Subject<NavigationStep>();
 
   constructor(private mapService: MapService) {
@@ -48,6 +36,13 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
       const direction = event.key === 'ArrowRight' ? 1 : -1;
       this.currentPathIndex$.next(this.currentPathIndex$.value - direction);
     });
+  }
+
+  @ViewChild('container', { static: false })
+  public set _containerRef(ref: ElementRef) {
+    setTimeout(() => {
+      this.containerRef = ref;
+    }, 500);
   }
 
   ngOnInit() {

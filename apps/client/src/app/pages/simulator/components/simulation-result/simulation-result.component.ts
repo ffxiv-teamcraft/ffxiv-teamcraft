@@ -22,7 +22,7 @@ export class SimulationResultComponent {
   custom = false;
 
   @Input()
-  compact = false
+  compact = false;
 
   @Input()
   itemId: number;

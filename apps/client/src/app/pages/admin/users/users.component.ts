@@ -4,8 +4,8 @@ import { combineLatest, merge, Observable, of } from 'rxjs';
 import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { FormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -101,7 +101,7 @@ export class UsersComponent {
             })
           ).pipe(
             map(res => {
-              return [].concat.apply([], res)
+              return [].concat.apply([], res);
             })
           );
         }),

@@ -1,10 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nName } from '../../../model/common/i18n-name';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
@@ -14,9 +12,9 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { first, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -27,7 +25,6 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
 import { Drop } from '../model/drop';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
 import { TradeSource } from '../model/trade-source';
@@ -35,40 +32,35 @@ import { Vendor } from '../model/vendor';
 import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
 import { NpcBreakdown } from '../../../model/common/npc-breakdown';
 import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { observeInput } from '../../../core/rxjs/observe-input';
 
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./list-details-panel.component.less']
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public LayoutRowDisplayMode = LayoutRowDisplayMode;
 
-  private _displayRow: LayoutRowDisplay;
-
   @Input()
-  public set displayRow(row: LayoutRowDisplay) {
-    this.progression = this.listsFacade.buildProgression(row.rows);
-    this._displayRow = row;
-  }
+  displayRow: LayoutRowDisplay;
 
-  public get displayRow(): LayoutRowDisplay {
-    return this._displayRow;
-  }
+  private displayRow$ = observeInput(this, 'displayRow');
 
   public get displayMode(): LayoutRowDisplayMode {
-    if (this._displayRow.zoneBreakdown) {
+    if (this.displayRow.zoneBreakdown) {
       return LayoutRowDisplayMode.ZONE_BREAKDOWN;
     }
-    if (this._displayRow.tiers) {
+    if (this.displayRow.tiers) {
       return LayoutRowDisplayMode.TIERS;
     }
-    if (this._displayRow.reverseTiers) {
+    if (this.displayRow.reverseTiers) {
       return LayoutRowDisplayMode.REVERSE_TIERS;
     }
-    if (this._displayRow.npcBreakdown) {
+    if (this.displayRow.npcBreakdown) {
       return LayoutRowDisplayMode.NPC_BREAKDOWN;
     }
     return LayoutRowDisplayMode.DEFAULT;
@@ -98,7 +90,27 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   progression: number;
 
-  tiers: ListRow[][];
+  tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
+    filter(row => row.tiers),
+    switchMap(displayRow => {
+      let tiers = [[]];
+      if (displayRow.rows !== null) {
+        this.topologicalSort(displayRow.rows).forEach(row => {
+          tiers = this.setTier(row, tiers);
+        });
+      }
+      return safeCombineLatest(tiers.map(tier => {
+        return this.layoutOrderService.order(tier, displayRow.layoutRow.orderBy, displayRow.layoutRow.order);
+      })).pipe(
+        map(orderedTiers => {
+          if (displayRow.reverseTiers) {
+            return orderedTiers.reverse();
+          }
+          return orderedTiers;
+        })
+      );
+    })
+  );
 
   zoneBreakdown: ZoneBreakdown;
 
@@ -118,13 +130,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
-              private message: NzMessageService, public translate: TranslateService,
+  constructor(private i18n: I18nToolsService, private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private lazyData: LazyDataService) {
+              public settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
   addItems(): void {
@@ -156,17 +167,23 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     if (!this.displayRow) {
       return;
     }
-    if (this.displayRow.tiers || this.displayRow.reverseTiers) {
-      this.generateTiers(this.displayRow.reverseTiers);
-    }
     if (this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
-      this.hasNavigationMapForZone = this.zoneBreakdown.rows.reduce((res, zbRow) => {
-        return {
-          ...res,
-          [zbRow.zoneId]: this.hasPositionsInRows(zbRow.items, zbRow.zoneId)
-        };
-      }, {});
+      safeCombineLatest(this.zoneBreakdown.rows
+        .map(row => {
+          return this.hasPositionsInRows(row.items, row.zoneId).pipe(
+            map(hasPositions => ({ row, hasPositions }))
+          );
+        })
+      ).subscribe(registry => {
+        this.hasNavigationMapForZone = registry
+          .reduce((res, { row, hasPositions }) => {
+            return {
+              ...res,
+              [row.zoneId]: hasPositions
+            };
+          }, {});
+      });
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     if (this.displayRow.npcBreakdown) {
@@ -175,22 +192,31 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
-    this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
+    this.hasPositionsInRows(this.displayRow.rows).pipe(
+      first()
+    ).subscribe(hasPositions => {
+      this.hasNavigationMap = hasPositions;
+    });
   }
 
-  private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
-    return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
-        return d.position
-          && (d.position.x !== undefined)
-          && !this.lazyData.data.maps[d.mapid].dungeon
-          && (!zoneId || d.zoneid === zoneId);
-      });
-      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
-      const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
-      const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
-      return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
-    }, false);
+  private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {
+    return this.lazyData.getEntry('maps')
+      .pipe(
+        map(maps => {
+          return rows.reduce((hasMap, row) => {
+            const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
+              return d.position
+                && (d.position.x !== undefined)
+                && !maps[d.mapid].dungeon
+                && (!zoneId || d.zoneid === zoneId);
+            });
+            const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
+            const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
+            const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
+            return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
+          }, false);
+        })
+      );
   }
 
   private getHideZoneDuplicates(): boolean {
@@ -214,7 +240,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               return <NavigationObjective>{
                 x: partial.x,
                 y: partial.y,
-                name: this.l12n.getItem(item.id),
+                name: this.i18n.getNameObservable('items', item.id),
                 iconid: item.icon,
                 itemId: item.id,
                 total_item_amount: item.amount,
@@ -243,7 +269,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   mapId: zoneBreakdownRow.mapId,
                   x: partial.x,
                   y: partial.y,
-                  name: this.l12n.getItem(item.id),
+                  name: this.i18n.getNameObservable('items', item.id),
                   itemId: item.id,
                   total_item_amount: item.amount,
                   item_amount: item.amount_needed - item.done,
@@ -351,21 +377,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return preferredPosition || positions[0];
   }
 
-  public generateTiers(reverse = false): void {
-    if (this.displayRow.rows !== null) {
-      this.tiers = [[]];
-      this.topologicalSort(this.displayRow.rows).forEach(row => {
-        this.tiers = this.setTier(row, this.tiers);
-      });
-    }
-    this.tiers = this.tiers.map(tier => {
-      return this.layoutOrderService.order(tier, this.displayRow.layoutRow.orderBy, this.displayRow.layoutRow.order);
-    });
-    if (reverse) {
-      this.tiers = this.tiers.reverse();
-    }
-  }
-
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
       this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
@@ -437,18 +448,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return result;
   }
 
-  public getLocation(id: number): I18nName {
+  public getLocation(id: number): Observable<string> {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
+      return of({ fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' }).pipe(
+        map(i18nName => this.i18n.getName(i18nName))
+      );
     }
-    return this.l12n.getMapName(id);
+    return this.i18n.getMapName(id);
   }
 
-  public getNpc(id: number): I18nName {
+  public getNpc(id: number): Observable<string> {
     if (id === -1) {
-      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
+      return of({ fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' }).pipe(
+        map(i18nName => this.i18n.getName(i18nName))
+      );
     }
-    return this.l12n.getNpc(id);
+    return this.i18n.getNameObservable('npcs', id);
   }
 
   public openTotalPricePopup(): void {
@@ -462,18 +477,26 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport = () => {
+  public getTextExport = (tiers?: ListRow[][]) => {
     let rows: ListRow[];
-    if (this.tiers) {
-      rows = this.tiers.reduce((res, tier) => {
+    if (tiers) {
+      rows = tiers.reduce((res, tier) => {
         return [...res, ...tier];
       }, []);
     } else {
       rows = this.displayRow.rows;
     }
-    return rows.reduce((exportString, row) => {
-      return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
-    }, `${this.displayRow.title} :\n`);
+    return safeCombineLatest(rows.map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithNames => {
+        return rowsWithNames.reduce((exportString, { row, itemName }) => {
+          return exportString + `${row.amount}x ${itemName}\n`;
+        }, `${this.displayRow.title} :\n`);
+      })
+    );
   };
 
   trackByItem(index: number, item: ListRow): number {

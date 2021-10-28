@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { WeatherService } from './weather.service';
 import { EorzeanTimeService } from './eorzean-time.service';
-import { format } from 'date-fns';
 
 describe('WeatherService', () => {
   let service: WeatherService;

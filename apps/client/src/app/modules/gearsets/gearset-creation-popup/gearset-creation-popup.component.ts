@@ -3,7 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { map, switchMap } from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
 
 @Component({
   selector: 'app-gearset-creation-popup',
@@ -14,12 +17,30 @@ export class GearsetCreationPopupComponent implements OnInit {
 
   public form: FormGroup;
 
-  public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
+  public availableJobs$ = observeInput(this, 'gearset').pipe(
+    switchMap(gearset => {
+      if (!gearset) {
+        return of(this.gt.getJobs().filter(job => job.id > 0));
+      }
+      return combineLatest([
+        this.lazyData.getEntry('jobCategories'),
+        this.lazyData.getEntry('jobAbbr')
+      ]).pipe(
+        map(([jobCategories, jobAbbr]) => {
+          const jobCategoryId = [32, 33, 156, 157, 158, 159].find(categoryId => {
+            return jobCategories[categoryId.toString()].jobs.includes(jobAbbr[this.gearset.job.toString()].en);
+          });
+          const category = jobCategories[jobCategoryId.toString()];
+          return this.gt.getJobs().filter(job => job.id > 0).filter(job => category.jobs.includes(job.abbreviation));
+        })
+      );
+    })
+  );
 
   public gearset: TeamcraftGearset;
 
   constructor(private modalRef: NzModalRef, private fb: FormBuilder,
-              private gt: GarlandToolsService, private lazyData: LazyDataService) {
+              private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
   }
 
   public submit(): void {
@@ -27,13 +48,6 @@ export class GearsetCreationPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.gearset) {
-      const jobCategoryId = [32, 33, 156, 157, 158, 159].find(categoryId => {
-        return this.lazyData.data.jobCategories[categoryId.toString()].jobs.includes(this.lazyData.data.jobAbbr[this.gearset.job.toString()].en);
-      });
-      const category = this.lazyData.data.jobCategories[jobCategoryId.toString()];
-      this.availableJobs = this.availableJobs.filter(job => category.jobs.includes(job.abbreviation));
-    }
     this.form = this.fb.group({
       name: [this.gearset?.name, Validators.required],
       job: [this.gearset?.job, Validators.required]

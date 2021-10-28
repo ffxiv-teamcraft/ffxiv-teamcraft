@@ -10,11 +10,11 @@
   <nz-form-control>
     <nz-select class="job-select" [nzDisabled]="!gearsetName || updateMode" [(ngModel)]="job" nzShowSearch
                [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
-      <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | jobName | i18n"
+      <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | i18nRow:'jobName' | i18n"
                  [nzValue]="job.id" nzCustomContent>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
-          <div>{{job.id | jobName | i18n}}</div>
+          <div>{{job.id | i18nRow:'jobName' | i18n}}</div>
         </div>
       </nz-option>
     </nz-select>

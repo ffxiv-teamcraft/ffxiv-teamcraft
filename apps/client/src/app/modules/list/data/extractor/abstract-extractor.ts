@@ -53,7 +53,9 @@ export abstract class AbstractExtractor<T> {
    * @param {Item} item
    * @returns {boolean}
    */
-  protected abstract canExtract(item: Item): boolean;
+  protected canExtract(item: Item): boolean {
+    return true;
+  }
 
   /**
    * Implementation for each extractor.

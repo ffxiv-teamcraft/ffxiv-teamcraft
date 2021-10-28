@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'apps/client/src/environments/environment';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -18,6 +17,8 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { SpendingEntry } from '../../currency-spending/spending-entry';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -27,74 +28,34 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 })
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 
-  private sortedRetainers$ = this.retainersService.retainers$.pipe(
-    map(retainers => {
-      return Object.values<Retainer>(retainers)
-        .filter(retainer => !!retainer.name)
-        .sort((a, b) => a.order - b.order);
-    })
-  );
-
   loading = false;
-
   filters$: Subject<any> = new Subject<any>();
-
-  jobList$: Observable<any[]>;
-
-  retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$]).pipe(
-    map(([retainers, inventory]) => {
-      return retainers.map(retainer => {
-        const gearset = new TeamcraftGearset();
-        gearset.job = retainer.job;
-        inventory.getRetainerGear(retainer.name)
-          .forEach(item => {
-            const itemMeldingData = this.lazyData.data.itemMeldingData[item.itemId];
-            const materias = item.materias || [];
-            while (materias.length < itemMeldingData.slots) {
-              materias.push(0);
-            }
-            if (itemMeldingData.overmeld) {
-              while (materias.length < 5) {
-                materias.push(0);
-              }
-            }
-            gearset[this.gearsetsFacade.getPropertyName(item.slot)] = {
-              itemId: item.itemId,
-              hq: item.hq,
-              materias: materias,
-              canOvermeld: itemMeldingData.overmeld,
-              materiaSlots: itemMeldingData.slots,
-              baseParamModifier: itemMeldingData.modifier
-            };
-          });
-        return {
-          ...retainer,
-          gathering: this.statsService.getStats(gearset, retainer.level, 1).find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
-          ilvl: this.statsService.getAvgIlvl(gearset)
-        };
-      });
+  jobList$ = this.lazyData.getEntry('jobName').pipe(
+    map(jobName => {
+      return Object.keys(jobName)
+        .map(key => +key)
+        .filter(key => key < 8 || key > 15);
     })
   );
-
   servers$: Observable<string[]>;
-
   form: FormGroup;
-
   results$: Observable<SpendingEntry[]> = this.filters$.pipe(
     tap(() => this.loading = true),
     switchMap(filters => {
-      return this.lazyData.data$.pipe(
-        map(data => {
-          return data.retainerTasks
+      return combineLatest([
+        this.lazyData.getEntry('retainerTasks'),
+        this.lazyData.getRow('jobAbbr', filters.job),
+        this.lazyData.getEntry('jobCategories')
+      ]).pipe(
+        map(([retainerTasks, jobAbbr, jobCategories]) => {
+          return retainerTasks
             .filter(task => {
-              const jobAbbr = data.jobAbbr[filters.job].en;
-              return data.jobCategories[task.category].jobs.includes(jobAbbr)
+              return jobCategories[task.category].jobs.includes(jobAbbr.en)
                 && task.lvl <= filters.level
                 && task.reqIlvl <= filters.ilvl
                 && task.reqGathering <= filters.gathering;
             })
             .map(task => {
-
               return {
                 ...task,
                 obtainedAmount: task.quantities
@@ -126,16 +87,18 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
                 .map(entry => {
                   const mbRow = res.find(r => r.ItemId === entry.item);
                   let prices = (mbRow.Prices || [])
-                    .filter(item => item.IsHQ === (entry.HQ || false));
+                    .filter(item => item.IsHQ === false);
                   if (prices.length === 0) {
                     prices = (mbRow.History || [])
-                      .filter(item => item.IsHQ === (entry.HQ || false));
+                      .filter(item => item.IsHQ === false);
                   }
                   const price = prices
                     .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
-                  return <SpendingEntry>{
+                  return {
                     ...entry,
-                    price: price && price.PricePerUnit
+                    itemID: entry.item,
+                    price: price && price.PricePerUnit,
+                    rate: price.PricePerUnit
                   };
                 })
                 .filter(entry => entry.price)
@@ -156,9 +119,57 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     }),
     tap(() => this.loading = false)
   );
+  private sortedRetainers$ = this.retainersService.retainers$.pipe(
+    map(retainers => {
+      return Object.values<Retainer>(retainers)
+        .filter(retainer => !!retainer.name)
+        .sort((a, b) => a.order - b.order);
+    })
+  );
+  retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$, this.lazyData.getEntry('itemMeldingData')]).pipe(
+    switchMap(([retainers, inventory, lzeyItemMeldingData]) => {
+      return safeCombineLatest(retainers.map(retainer => {
+        const gearset = new TeamcraftGearset();
+        gearset.job = retainer.job;
+        inventory.getRetainerGear(retainer.name)
+          .forEach(item => {
+            const itemMeldingData = lzeyItemMeldingData[item.itemId];
+            const materias = item.materias || [];
+            while (materias.length < itemMeldingData.slots) {
+              materias.push(0);
+            }
+            if (itemMeldingData.overmeld) {
+              while (materias.length < 5) {
+                materias.push(0);
+              }
+            }
+            gearset[this.gearsetsFacade.getPropertyName(item.slot)] = {
+              itemId: item.itemId,
+              hq: item.hq,
+              materias: materias,
+              canOvermeld: itemMeldingData.overmeld,
+              materiaSlots: itemMeldingData.slots,
+              baseParamModifier: itemMeldingData.modifier
+            };
+          });
+        return combineLatest([
+          this.statsService.getStats(gearset, retainer.level, 1),
+          this.statsService.getAvgIlvl(gearset)
+        ]).pipe(
+          map(([stats, avgIlvl]) => {
+            return {
+              ...retainer,
+              gathering: stats.find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
+              ilvl: avgIlvl
+            };
+          })
+        );
+      }));
+    })
+  );
 
   constructor(private retainersService: RetainersService, private inventoryFacade: InventoryService,
-              private lazyData: LazyDataService, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
+              private lazyData: LazyDataFacade, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,
               public translate: TranslateService) {
@@ -166,13 +177,6 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
         return servers.sort();
-      })
-    );
-    this.jobList$ = this.lazyData.data$.pipe(
-      map(data => {
-        return Object.keys(data.jobName)
-          .map(key => +key)
-          .filter(key => key < 8 || key > 15);
       })
     );
     this.form = this.fb.group({

@@ -4,8 +4,9 @@ import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { stats } from '../../../core/data/sources/stats';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-food-picker',
@@ -30,7 +31,7 @@ export class FoodPickerComponent extends TeamcraftComponent {
 
   public loading = false;
 
-  constructor(private xivapi: XivapiService, private lazyData: LazyDataService,
+  constructor(private xivapi: XivapiService, private lazyData: LazyDataFacade,
               private route: ActivatedRoute, private router: Router) {
     super();
 
@@ -57,10 +58,11 @@ export class FoodPickerComponent extends TeamcraftComponent {
           map(res => ([res, pickedStats]))
         );
       }),
-      map(([searchResult, pickedStats]) => {
+      withLazyData(this.lazyData, 'foods', 'medicines'),
+      map(([[searchResult, pickedStats], foods, medicines]) => {
         return searchResult.Results
           .map(item => {
-            const itemDetails = [...this.lazyData.data.foods, ...this.lazyData.data.medicines].find(f => f.ID === item.ID);
+            const itemDetails = [...foods, ...medicines].find(f => f.ID === item.ID);
             if (!itemDetails) {
               return undefined;
             }

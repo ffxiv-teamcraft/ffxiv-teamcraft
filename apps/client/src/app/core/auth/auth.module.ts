@@ -5,7 +5,7 @@ import { LoginPopupComponent } from './login-popup/login-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CharacterLinkPopupComponent } from './character-link-popup/character-link-popup.component';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { OauthService } from './oauth.service';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMessageModule } from 'ng-zorro-antd/message';

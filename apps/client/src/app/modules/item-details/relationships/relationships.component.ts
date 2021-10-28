@@ -6,6 +6,7 @@ import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { InventoryService } from '../../inventory/inventory.service';
+import { ListController } from '../../list/list-controller';
 
 @Component({
   selector: 'app-relationships',
@@ -37,8 +38,8 @@ export class RelationshipsComponent implements OnInit {
         const items$ = (this.item.requires || [])
           .sort((a, b) => a.id < b.id ? -1 : 1)
           .map(req => {
-            let item: any = list.getItemById(req.id, true);
-            item = { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };
+            let item: any = ListController.getItemById(list, req.id, true);
+            item = { ...item, reqAmount: req.amount, canBeCrafted: ListController.canBeCrafted(list, item) };
             if (this.platform.isDesktop()) {
               return this.inventoryService.inventory$.pipe(
                 map(inventory => {
@@ -75,11 +76,11 @@ export class RelationshipsComponent implements OnInit {
     this.requiredBy$ = this.list$.pipe(
       map(list => {
         const requiredBy = [];
-        list.forEach(item => {
+        ListController.forEach(list,item => {
           if (item.requires !== undefined) {
             item.requires.forEach(req => {
               if (req.id === this.item.id) {
-                requiredBy.push({ ...item, canBeCrafted: list.canBeCrafted(item) });
+                requiredBy.push({ ...item, canBeCrafted: ListController.canBeCrafted(list, item) });
               }
             });
           }
