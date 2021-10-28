@@ -2,7 +2,7 @@ import { inject, TestBed } from '@angular/core/testing';
 import { StatsService } from './stats.service';
 import { BaseParam } from './base-param';
 
-describe('StatsService', () => {
+xdescribe('StatsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
