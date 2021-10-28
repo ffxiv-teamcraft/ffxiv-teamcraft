@@ -77,7 +77,7 @@ export class NodeComponent extends TeamcraftPageComponent {
               })
             );
           }),
-          ...node.mappyData.hiddenItems.map(itemId => {
+          ...(node.mappyData.hiddenItems || []).map(itemId => {
             return this.getGatheringItem(itemId).pipe(
               map(gatheringItem => {
                 return {
@@ -205,7 +205,7 @@ export class NodeComponent extends TeamcraftPageComponent {
     if (node.GatheringPoints && node.GatheringPoints.length) {
       const point = node.GatheringPoints[0];
       if (point.PlaceName) {
-        return of(this.i18n.getName(this.i18n.xivapiToI18n(point.PlaceName, 'places')));
+        return of(this.i18n.getName(this.i18n.xivapiToI18n(point.PlaceName)));
       }
     }
 

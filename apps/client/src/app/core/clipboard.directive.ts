@@ -27,12 +27,12 @@ export class ClipboardDirective {
   }
 
   @HostListener('click')
-  click(): void {
+  click(): boolean {
     let content$: Observable<string>;
     if (typeof this.clipboardInput === 'string') {
       content$ = of(this.clipboardInput);
     } else {
-      const fnResult = this.clipboardInput(...this.clipboardFnArgs);
+      const fnResult = this.clipboardInput(...(Array.isArray(this.clipboardFnArgs) ? this.clipboardFnArgs : [this.clipboardFnArgs]));
       if (isObservable(fnResult)) {
         content$ = fnResult;
       } else {
@@ -52,6 +52,7 @@ export class ClipboardDirective {
         }
       }
     });
+    return false;
   }
 
 }

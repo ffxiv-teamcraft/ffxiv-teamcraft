@@ -47,7 +47,7 @@
                                (click)="$event.stopPropagation();"
                                [nzPlaceHolder]="'INVENTORY_OPTIMIZER.CONSOLIDATE_STACKS.Placeholder' | translate"
                                [(ngModel)]="selectedExpansion">
-                      <nz-option *ngFor="let e of getExpansions()" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
+                      <nz-option *ngFor="let e of expansions$ | async" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
                     </nz-select>
                   </ng-container>
                   <ng-container *ngSwitchCase="'UNWANTED_MATERIALS'">

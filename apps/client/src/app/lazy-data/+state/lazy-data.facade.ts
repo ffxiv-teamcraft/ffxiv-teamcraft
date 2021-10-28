@@ -89,24 +89,40 @@ export class LazyDataFacade {
   /**
    * Gets an entire file worth of data at once.
    * @param propertyKey the name of the property you want to load inside the lazy data system.
+   * @param forceAll If you want all the languages no matter the current region.
    */
-  public getI18nEntry<K extends LazyDataI18nKey>(propertyKey: K): Observable<Record<number, I18nName>> {
+  public getI18nEntry<K extends LazyDataI18nKey>(propertyKey: K, forceAll = false): Observable<Record<number, I18nName>> {
     return this.settings.region$.pipe(
       switchMap(region => {
         return this.getEntry(propertyKey).pipe(
           switchMap(entry => {
+            const global$ = of(this.merge(entry));
+            const cn$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'zh'));
+            const kr$ = this.getEntry(this.findPrefixedProperty(propertyKey, 'ko'));
+
+            if (forceAll) {
+              return combineLatest([
+                global$,
+                cn$, kr$
+              ]).pipe(
+                map(([global, cn, kr]) => {
+                  return this.merge(global, cn, kr);
+                })
+              );
+            }
+
             switch (region) {
               case Region.Global:
                 // Merging entry with itself just to normalize i18n names
-                return of(this.merge(entry));
+                return global$;
               case Region.China:
-                return this.getEntry(this.findPrefixedProperty(propertyKey, 'zh')).pipe(
+                return cn$.pipe(
                   map(zhEntry => {
                     return this.merge(entry, zhEntry);
                   })
                 );
               case Region.Korea:
-                return this.getEntry(this.findPrefixedProperty(propertyKey, 'ko')).pipe(
+                return kr$.pipe(
                   map(koRow => {
                     return this.merge(entry, koRow);
                   })

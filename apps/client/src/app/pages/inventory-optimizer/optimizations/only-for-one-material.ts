@@ -7,6 +7,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 @Injectable()
 export class OnlyForOneMaterial extends InventoryOptimizer {
@@ -36,5 +37,9 @@ export class OnlyForOneMaterial extends InventoryOptimizer {
 
   getId(): string {
     return 'ONLY_FOR_ONE_MATERIAL';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['recipesIngredientLookup', 'items'];
   }
 }

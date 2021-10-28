@@ -4,6 +4,7 @@ import { InjectionToken } from '@angular/core';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { Observable, of } from 'rxjs';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 export const INVENTORY_OPTIMIZER: InjectionToken<InventoryOptimizer> = new InjectionToken('InventoryOptimizer');
 
@@ -52,4 +53,6 @@ export abstract class InventoryOptimizer {
   public abstract getId(): string;
 
   protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
+
+  public abstract lazyDataEntriesNeeded(): LazyDataKey[];
 }

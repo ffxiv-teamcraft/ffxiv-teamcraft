@@ -4,8 +4,6 @@ import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
 import { Subject } from 'rxjs';
 import { DataType } from '../list/data/data-type';
-import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { LazyData } from '../../lazy-data/lazy-data';
 
 @Injectable()
 export class PricingService {
@@ -27,13 +25,10 @@ export class PricingService {
 
   public priceChanged$ = new Subject<void>();
 
-  private hqFlags: LazyData['hqFlags'];
-
-  constructor(private lazyData: LazyDataFacade) {
+  constructor() {
     this.prices = this.parsePrices(localStorage.getItem('prices'));
     this.amounts = JSON.parse(localStorage.getItem('amounts')) || {};
     this.customPrices = JSON.parse(localStorage.getItem('customPrices')) || [];
-    this.lazyData.getEntry('hqFlags').subscribe(flags => this.hqFlags = flags);
   }
 
   /**
@@ -142,8 +137,7 @@ export class PricingService {
         return storedValue;
       }
     }
-    const canBeHq = !!this.hqFlags[item.id];
-    if (hq && canBeHq) {
+    if (hq) {
       return { nq: 0, hq: item.amount };
     }
     return { nq: item.amount, hq: 0 };

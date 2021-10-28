@@ -69,7 +69,7 @@ export class InventoryOptimizerComponent {
                     })
                   ).pipe(
                     map(res => {
-                      const entries = res.filter(optimization => optimization.messageParams !== null)
+                      const entries = res.filter(optimization => !!optimization.messageParams)
                         .sort((a, b) => {
                           if (a.messageParams[Object.keys(a.messageParams)[0]] > b.messageParams[Object.keys(b.messageParams)[0]]) {
                             return -1;
@@ -91,7 +91,8 @@ export class InventoryOptimizerComponent {
             );
           })
         )),
-        tap(() => this.loading = false)
+        tap(() => this.loading = false),
+        tap(console.log)
       );
     })
   );
@@ -134,9 +135,16 @@ export class InventoryOptimizerComponent {
   public showHidden = false;
   public loading = false;
 
+  public expansions$ = this.lazyData.getI18nEntry('exVersions');
+
   constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
               private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService) {
+    this.optimizers
+      .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
+      .forEach(optimizer => {
+        optimizer.lazyDataEntriesNeeded().forEach(entry => this.lazyData.preloadEntry(entry));
+      });
   }
 
   public get stackSizeThreshold(): number {
@@ -189,10 +197,6 @@ export class InventoryOptimizerComponent {
       this.loading = true;
       this.reloader$.next();
     }
-  }
-
-  public getExpansions() {
-    return this.lazyData.getI18nEntry('exVersions');
   }
 
   public resetInventory(): void {

@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { min } from 'lodash';
 import { Vendor } from '../../../modules/list/model/vendor';
 import { Observable, of } from 'rxjs';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 @Injectable()
 export class CanBeBought extends InventoryOptimizer {
@@ -29,5 +30,9 @@ export class CanBeBought extends InventoryOptimizer {
 
   getId(): string {
     return 'CAN_BE_BOUGHT';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return [];
   }
 }

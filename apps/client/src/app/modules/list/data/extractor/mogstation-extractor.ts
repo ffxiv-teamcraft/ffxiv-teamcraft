@@ -5,7 +5,6 @@ import { GarlandToolsService } from '../../../../core/api/garland-tools.service'
 import { MogstationItem } from '../../model/mogstation-item';
 import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 export class MogstationExtractor extends AbstractExtractor<MogstationItem> {
   constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
@@ -25,7 +24,7 @@ export class MogstationExtractor extends AbstractExtractor<MogstationItem> {
   }
 
   protected doExtract(item: Item): Observable<MogstationItem> {
-    return this.lazyData.getRow('mogstationSources', item.id).pipe(tap(console.log));
+    return this.lazyData.getRow('mogstationSources', item.id);
   }
 
 }

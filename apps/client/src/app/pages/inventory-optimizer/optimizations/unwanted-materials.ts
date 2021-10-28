@@ -6,6 +6,7 @@ import { environment } from '../../../../environments/environment';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 export class UnwantedMaterials extends InventoryOptimizer {
 
@@ -18,8 +19,8 @@ export class UnwantedMaterials extends InventoryOptimizer {
 
   //This just caches a list of materials used in all recipes, including ilvl, and company workshop usage
   getCache(): Observable<any> {
-    const LScache = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
-    if (!LScache || environment.version !== LScache.version) {
+    const LScache = localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY);
+    if (!LScache || environment.version !== JSON.parse(LScache).version) {
       return combineLatest([
         this.lazyData.getEntry('recipes'),
         this.lazyData.getEntry('ilvls')
@@ -60,12 +61,13 @@ export class UnwantedMaterials extends InventoryOptimizer {
               spanAllMaterials(ingredient.id, firstIlvl);
             });
           });
+          return cache;
         })
       ).pipe(
         tap(cache => localStorage.setItem(UnwantedMaterials.UNWANTED_CACHE_KEY, JSON.stringify(cache)))
       );
     }
-    return of(LScache);
+    return of(JSON.parse(LScache));
   }
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string }> {
@@ -83,5 +85,9 @@ export class UnwantedMaterials extends InventoryOptimizer {
 
   getId(): string {
     return 'UNWANTED_MATERIALS';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['recipes', 'ilvls'];
   }
 }

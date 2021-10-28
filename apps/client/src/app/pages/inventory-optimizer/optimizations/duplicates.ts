@@ -9,6 +9,7 @@ import { uniq } from 'lodash';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 export class Duplicates extends InventoryOptimizer {
 
@@ -49,6 +50,10 @@ export class Duplicates extends InventoryOptimizer {
       })
     );
 
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['stackSizes'];
   }
 
 }

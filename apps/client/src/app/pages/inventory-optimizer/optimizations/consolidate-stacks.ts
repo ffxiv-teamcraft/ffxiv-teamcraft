@@ -10,6 +10,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 export class ConsolidateStacks extends InventoryOptimizer {
 
@@ -93,6 +94,10 @@ export class ConsolidateStacks extends InventoryOptimizer {
         };
       })
     );
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['itemPatch', 'stackSizes'];
   }
 
 }

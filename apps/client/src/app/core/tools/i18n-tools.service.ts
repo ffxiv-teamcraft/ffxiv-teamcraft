@@ -42,7 +42,7 @@ export class I18nToolsService {
   }
 
   public getName(i18nName: I18nName, item?: CustomItem): string {
-    if (i18nName === undefined) {
+    if (!i18nName) {
       if (item !== undefined && item.name !== undefined) {
         return item.name;
       }
@@ -81,17 +81,6 @@ export class I18nToolsService {
     );
   }
 
-  public i18nToXivapi(value: I18nName, fieldName = 'Name') {
-    return {
-      [`${fieldName}_en`]: value.en,
-      [`${fieldName}_fr`]: value.fr,
-      [`${fieldName}_de`]: value.de,
-      [`${fieldName}_ja`]: value.ja,
-      [`${fieldName}_ko`]: value.ko || value.en,
-      [`${fieldName}_chs`]: value.zh || value.en
-    };
-  }
-
   public xivapiToI18n(value: any, fieldName = 'Name'): I18nName {
     return {
       en: value[`${fieldName}_en`],
@@ -105,7 +94,7 @@ export class I18nToolsService {
 
   public getMapName(mapId: number): Observable<string> {
     const entry = mapIds.find((m) => m.id === mapId);
-    return this.getNameObservable('places', entry.zone ?? 1);
+    return this.getNameObservable('places', entry?.zone || 1);
   }
 
   public getActionName(id: number): Observable<string> {

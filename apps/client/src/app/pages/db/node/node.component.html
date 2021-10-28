@@ -9,7 +9,7 @@
             [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(nodeData)}}</h2>
+            <h2 class="item-name">{{getName(nodeData) | async}}</h2>
             <div class="item-kind">
               Lvl {{nodeData.GatheringLevel}} <span
               [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>

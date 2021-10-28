@@ -21,7 +21,7 @@ export class LazyDataEffects {
   loadLazyDataEntityEntry$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LazyDataActions.loadLazyDataEntityEntry),
-      debounceBufferTime(50),
+      debounceBufferTime(10),
       map(actions => {
         return actions.reduce((acc, { id, entity }) => {
           return {
@@ -44,7 +44,6 @@ export class LazyDataEffects {
             switchMap(res => {
               return Object.entries(res)
                 .map(([key, row]) => {
-                  console.log(key, row);
                   return LazyDataActions.loadLazyDataEntityEntrySuccess({ id: +key, row, key: entity });
                 });
             })

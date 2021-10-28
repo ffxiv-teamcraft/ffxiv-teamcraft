@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 @Injectable()
 export class CanExtractMateria extends InventoryOptimizer {
@@ -27,5 +28,9 @@ export class CanExtractMateria extends InventoryOptimizer {
 
   getId(): string {
     return 'CAN_EXTRACT_MATERIA';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['extractableItems'];
   }
 }

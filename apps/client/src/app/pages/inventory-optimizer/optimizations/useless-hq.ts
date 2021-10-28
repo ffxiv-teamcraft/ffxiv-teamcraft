@@ -7,6 +7,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { first, map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { Observable, of } from 'rxjs';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 @Injectable()
 export class UselessHq extends InventoryOptimizer {
@@ -49,5 +50,9 @@ export class UselessHq extends InventoryOptimizer {
 
   getId(): string {
     return 'USELESS_HQ';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['recipesIngredientLookup'];
   }
 }

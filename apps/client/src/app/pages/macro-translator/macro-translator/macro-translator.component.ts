@@ -129,20 +129,10 @@ export class MacroTranslatorComponent {
 
   public getCraftingActionByName(name: string, language: Language): Observable<I18nName> {
     return combineLatest([
-      this.lazyData.getEntry('actions'),
-      this.lazyData.getEntry('craftActions'),
-      this.lazyData.getEntry('koActions'),
-      this.lazyData.getEntry('koCraftActions')
+      this.lazyData.getI18nEntry('actions', true),
+      this.lazyData.getI18nEntry('craftActions', true)
     ]).pipe(
-      map(([actions, craftActions, koActions, koCraftActions]) => {
-        const koData = Object.values({ ...koActions, ...koCraftActions });
-        if (language === 'ko') {
-          const enRow = this.getEnActionFromKoActionName(name, koCraftActions, koActions, craftActions, actions);
-          if (enRow) {
-            name = enRow.en;
-            language = 'en';
-          }
-        }
+      map(([actions, craftActions]) => {
         if (language === 'zh') {
           const zhRow = zhActions.find((a) => a.zh === name);
           if (zhRow !== undefined) {
@@ -161,10 +151,6 @@ export class MacroTranslatorComponent {
         if (resultIndex === -1) {
           throw new Error(`Data row not found for crafting action ${name}`);
         }
-        const koResultRow = koData[resultIndex];
-        if (koResultRow !== undefined) {
-          result.ko = koResultRow.ko;
-        }
         const zhResultRow = zhActions.find((a) => a.en === result.en);
         if (zhResultRow !== undefined) {
           result.zh = zhResultRow.zh;
@@ -172,22 +158,6 @@ export class MacroTranslatorComponent {
         return result;
       })
     );
-
-  }
-
-  private getEnActionFromKoActionName(name: string, koCraftActions: LazyData['koCraftActions'], koActions: LazyData['koActions'],
-                                      craftActions: LazyData['craftActions'], actions: LazyData['actions']): I18nName {
-    const craftActionId = Object.keys(koCraftActions).find(
-      (key) => koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
-    );
-    if (craftActionId) {
-      return craftActions[craftActionId];
-    }
-    const actionId = Object.keys(koActions).find((key) => koActions[key].ko.toLowerCase() === name.toLowerCase());
-    if (actionId) {
-      return actions[actionId];
-    }
-    return null;
   }
 
   public getIndexByName(array: I18nElement, name: string, language: string, flip = false): number {

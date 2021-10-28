@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { BehaviorSubject, combineLatest, EMPTY, interval, ReplaySubject } from 'rxjs';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
+import { delay, filter, map, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
@@ -38,9 +38,8 @@ export class RetainersService {
   constructor(private ipc: IpcService, private settings: SettingsService,
               private translate: TranslateService, private i18n: I18nToolsService,
               private lazyData: LazyDataFacade, private soundNotificationService: SoundNotificationService) {
-    this.settings.settingsChange$.pipe(
-      filter(change => change === 'retainerTaskAlarms'),
-      startWith(this.settings.retainerTaskAlarms),
+    this.settings.watchSetting('retainerTaskAlarms', false).pipe(
+      delay(1000),
       switchMap(() => {
         if (!this.settings.retainerTaskAlarms) {
           return EMPTY;
@@ -72,7 +71,6 @@ export class RetainersService {
           })
         });
       });
-
     });
   }
 

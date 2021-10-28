@@ -5,6 +5,7 @@ import { ListRow } from '../../../modules/list/model/list-row';
 import { Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
+import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 export class HasTooFew extends InventoryOptimizer {
 
@@ -28,5 +29,9 @@ export class HasTooFew extends InventoryOptimizer {
 
   getId(): string {
     return 'HAS_TOO_FEW';
+  }
+
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['stackSizes'];
   }
 }
