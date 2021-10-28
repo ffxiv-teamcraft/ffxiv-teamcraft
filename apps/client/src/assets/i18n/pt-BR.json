@@ -105,7 +105,7 @@
     "Patreon_supporters": "Apoiantes de Patreon",
     "Contributors": "Colaboradores"
   },
-  "Patreon_login_success": "Sucesso no login do Patreon !",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "Esconder se estiver vazio",
   "No_favorites": "Nenhum favorito",
   "Ephemeral_list": "Será eliminado assim que completo",
@@ -362,7 +362,7 @@
   "Email_not_found": "Email não encontrado",
   "Email_sent": "Um email foi enviado com as instruções para trocar sua senha.",
   "ALARM": {
-    "Spawned": "{{itemName}} vai aparecer!",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Localização",
     "Note": "Nota"
   },
@@ -559,7 +559,7 @@
     "VERIFICATION": {
       "Title": "Verificação da personagem",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
-      "Success": "Personagem verificado! Agora você pode fechar este popup. Sinta-se livre para remover o código do seu perfil, ele não é mais necessário.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Não foi possível encontrar o código na biografia da personagem, por favor certifique-se que o código foi aplicado e espere cerca de 30s para tentar novamente.",
       "Validate": "Validar"
     }
@@ -571,7 +571,7 @@
     "Regenerated_all": "Suas listas estão atualizadas",
     "Merge_lists": "Juntar listas",
     "Merge_lists_warning": "Grandes listas não são criadas aqui porque você não pode juntá-las, por conta de limitações de tamanho do banco de dados.",
-    "Lists_merged": "Listas juntadas com sucesso!",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "Lists shared with you",
     "Add_selection": "Adicionar seleção a uma lista",
     "Reset_selection": "Reset selection",
@@ -740,7 +740,7 @@
       "Import_layout": "Importar um layout",
       "Export_layout": "Export this layout",
       "Import_string": "Código de importação do layout",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "Nome do layout",
       "Invalid_import": "Código de importação inválido",
       "Global_options": "Opções gerais",
@@ -849,7 +849,7 @@
     "Title": "Tradutor de macro",
     "Macro_language": "Idioma do Macro",
     "Macro_to_translate": "Macro para traduzir",
-    "Do_translate": "Traduzir !",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "Macro ou idioma inválido."
   },
   "CUSTOM_LINKS": {
@@ -882,7 +882,7 @@
     "No_items": "Nenhum node de recolhimento encontrado",
     "Gathering_name": "Digite o nome do item",
     "Ephemeral_node": "Node ephemeral, pode reaparecer",
-    "Intro": "Itens de coleta permite que você facilmente busque por um item que pode ser coletado e veja detalhes sobre ele, onde você pode achá-lo e criar um alarme para esse node. Apenas coloque o nome no campo acima e deixe-o encontrar o que você está buscando.",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "Oculto",
     "Fish_eyes": "Requires fish eyes to only care about weather requirement",
     "Add_alarm": "Add alarm",
@@ -1306,20 +1306,20 @@
     "Lists_created_counter": "{{amount}} listas criadas usando o FFXIV Teamcraft",
     "Donation_button": "Faça uma doação de uma vez",
     "Buy_merch": "Get Teamcraft merch",
-    "Features_header": "Começar!",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "Crie listas para obter informações sobre todos os materiais, compartilhe-os com seus amigos, tudo começa aqui! Basta procurar um item, expandir filtros para obter itens específicos e começar a criar coisas.",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Listas de clones criadas pela comunidade que ajudam a construir coisas, levekits, conclusão de log, dirigíveis, equipamento BiS, tudo pode ser encontrado aqui.",
       "Alarms": "Crie alarmes para garantir que você não perca um spawn de node, organize-os em grupos, importe-os em um jogo, tudo é possível.",
-      "Gathering_location": "Encontre informações sobre qualquer item de coleta, crie um alarme, obtenha coordenadas instantâneas, aetheryte mais próximo, livro necessário para criação e muito mais!",
-      "Rotations": "Criar rotações de criação, teste-as dentro do simulador ou faça rotações de theorycraft usando o simulador personalizado !",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "Crie algumas levequests para qualquer job/nível, veja os benefícios delas e crie listas para as mesmas.",
-      "Macro_translation": "Tem algum macro que não está na sua língua? Vá para o tradutor de macro e traduza de volta a seu idioma para que funcione no seu FFXIV!"
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "Uma nova atualização está disponível",
-    "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "Por favor, recarregue a página para obter a versão mais recente.",
     "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done",
     "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
@@ -1360,7 +1360,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Carregando itens, ações e muito mais!"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "Custom items",
@@ -1810,7 +1810,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies !",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Pick a currency",
     "You_can_buy": "You can buy {{amount}}",
     "Disabled": "The currency spending guide isn't working anymore",
@@ -1821,7 +1821,7 @@
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "Choose an attribute"
   },
   "BLOG": {
@@ -2178,7 +2178,7 @@
     "DESYNTH": {
       "Job": "Select the job you want to level",
       "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
@@ -2220,7 +2220,7 @@
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "Click here to add a new panel.",
         "Reorder": "You can use drag and drop to move panels anywhere you want.",
         "Data_type": "First of all, select the metric type you want to use.",
@@ -2596,7 +2596,7 @@
       "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
       "Custom_theme": "Better theme customization, with custom color input (${{price}})",
       "Pins_badge": "Exclusive Teamcraft pins badge sent to you (${{price}}) (needs you to fill out shipment details on Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by ...\" loading message, with your name, your FC name, LS name, whatever you want to add ! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Pick one of your retainers"
   },
@@ -2720,7 +2720,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "New feature: Allagan Reports",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",
