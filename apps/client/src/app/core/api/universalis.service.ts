@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { MarketboardItem } from './market/marketboard-item';
 import { combineLatest, Observable, of } from 'rxjs';
 import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
