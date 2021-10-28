@@ -20,6 +20,21 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js",
+              "mergeStrategies": {
+                "externals": "replace"
+              },
+              "allowedCommonJsDependencies": [
+                "lodash",
+                "graphql-tag",
+                "@kaiu/serializer",
+                "memoize",
+                "ng-push",
+                "file-saver",
+                "papaparse"
+              ]
+            },
             "outputPath": "dist/apps/client",
             "index": "apps/client/src/index.html",
             "main": "apps/client/src/main.ts",
