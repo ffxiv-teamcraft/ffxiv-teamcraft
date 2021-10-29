@@ -16,7 +16,8 @@ import { uniq } from 'lodash';
 
 @Injectable()
 export class LazyDataEffects {
-  private static readonly EXTRACTS_PATH = `/assets/extracts/extracts${environment.production ? '.' + extractsHash : ''}.json`;
+
+  private static readonly EXTRACTS_PATH = `/assets/extracts/extracts${environment.production && !environment.beta ? '.' + extractsHash : ''}.json`;
 
   loadLazyDataEntityEntry$ = createEffect(() =>
     this.actions$.pipe(
@@ -75,7 +76,7 @@ export class LazyDataEffects {
       return LazyDataEffects.EXTRACTS_PATH;
     }
     const row = lazyFilesList[entity];
-    return `/assets/data/${environment.production ? row.hashedFileName : row.fileName}`;
+    return `/assets/data/${environment.production && !environment.beta ? row.hashedFileName : row.fileName}`;
   }
 
   private parseFileName(entity: LazyDataKey): { hash: string, contentName: string } {
@@ -100,6 +101,8 @@ export class LazyDataEffects {
     } else {
       if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
         url = `.${path}`;
+      } else if(environment.beta) {
+        url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;
       } else {
         url = `https://cdn.ffxivteamcraft.com${path}`;
       }

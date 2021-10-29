@@ -411,7 +411,7 @@ export class LazyDataFacade {
         continue;
       }
       const normalizedEntry = normalizeI18nName(entry[key]);
-      if (normalizedEntry[lang].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+      if (normalizedEntry[lang]?.toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
         return +key;
       }
     }

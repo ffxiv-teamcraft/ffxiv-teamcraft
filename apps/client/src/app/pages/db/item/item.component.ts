@@ -709,7 +709,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   public toSearchResult(item: ListRow): SearchResult {
     return {
       itemId: item.id,
-      icon: item.icon.toString(),
+      icon: '',
       addCrafts: false,
       amount: 1
     };
