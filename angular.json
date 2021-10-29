@@ -232,12 +232,38 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/client-server",
-            "main": "apps/client/src/main.server.ts",
+            "main": "apps/client/server.ts",
             "tsConfig": "apps/client/tsconfig.server.json",
             "sourceMap": true,
             "optimization": false
           },
           "defaultConfiguration": ""
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "client:build",
+            "serverTarget": "client:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "client:build:production",
+              "serverTarget": "client:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "client:build:production",
+            "serverTarget": "client:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     },

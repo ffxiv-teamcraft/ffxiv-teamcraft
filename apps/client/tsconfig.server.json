@@ -8,9 +8,11 @@
   "angularCompilerOptions": {
     "entryModule": "src/app/app.server.module#AppServerModule",
     "outputHashing": false
-  },
+  }
+,
   "files": [
-    "src/main.server.ts"
+    "src/main.server.ts",
+    "server.ts"
   ],
   "include": [
     "apps/client/src/**/*.d.ts"
