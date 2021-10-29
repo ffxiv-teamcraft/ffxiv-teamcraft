@@ -130,11 +130,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                     return this.lazyData.getRow('extracts', entry.item).pipe(
                       map(extract => {
                         const mbRow = res.find(r => r.ItemId === entry.item);
-                        const avgPrice = (entry.HQ ? mbRow.minPriceHQ : mbRow.minPriceNQ) || mbRow.minPrice;
-                        const oneWeekInThePast = Math.floor(Date.now() / 1000) - 7 * 86400;
-                        const amountSoldLastWeek = mbRow.History
-                          .filter(hRow => hRow.PurchaseDate > oneWeekInThePast && hRow.IsHQ === entry.HQ)
-                          .reduce((acc, hRow) => acc + hRow.Quantity, 0);
+                        const avgPrice = mbRow.History.reduce((prev, curr) => {
+                          return prev.pricePerUnit < curr.pricePerUnit ? prev : curr;
+                        }).pricePerUnit;
+                        const amountSoldLastWeek = Math.floor(mbRow.regularSaleVelocity * 7);
                         return <SpendingEntry>{
                           ...entry,
                           npcs: getItemSource(extract, DataType.TRADE_SOURCES)
