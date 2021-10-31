@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({

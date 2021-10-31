@@ -5,7 +5,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { AriyalaMateria } from './aryiala-materia';
 import { AriyalaMateriaOptions } from './ariyala-materia-options';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { StaticData } from 'apps/client/src/app/lazy-data/static-data';
+import { StaticData } from '../../../../lazy-data/static-data';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
   public static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';

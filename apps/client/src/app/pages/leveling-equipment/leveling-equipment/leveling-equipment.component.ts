@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';

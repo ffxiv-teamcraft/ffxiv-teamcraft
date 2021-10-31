@@ -235,7 +235,22 @@
             "main": "apps/client/server.ts",
             "tsConfig": "apps/client/tsconfig.server.json",
             "sourceMap": true,
-            "optimization": false
+            "optimization": false,
+            "externalDependencies": [
+              "firebase",
+              "@firebase/messaging/sw",
+              "@firebase/app",
+              "@firebase/firestore",
+              "@firebase/analytics",
+              "@firebase/auth",
+              "@firebase/functions",
+              "@firebase/installations",
+              "@firebase/messaging",
+              "@firebase/storage",
+              "@firebase/performance",
+              "@firebase/remote-config",
+              "@firebase/util"
+            ]
           },
           "defaultConfiguration": ""
         },

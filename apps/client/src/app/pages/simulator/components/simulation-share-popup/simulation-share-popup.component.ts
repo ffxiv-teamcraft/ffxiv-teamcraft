@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
-import { CraftingRotation } from 'apps/client/src/app/model/other/crafting-rotation';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';

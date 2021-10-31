@@ -36,7 +36,7 @@ import { MapService } from '../../../modules/map/map.service';
 import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
 import { safeCombineLatest } from '../../rxjs/safe-combine-latest';

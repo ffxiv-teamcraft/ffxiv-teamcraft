@@ -5,7 +5,7 @@ import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { ExplorationType } from '../../../../model/other/exploration-type';
 import { VoyageSource } from '../../model/voyage-source';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

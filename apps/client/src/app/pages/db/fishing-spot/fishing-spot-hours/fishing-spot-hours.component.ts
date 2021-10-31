@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';

@@ -3,7 +3,7 @@ import { Item } from '../../../../model/garland-tools/item';
 import { DataType } from '../data-type';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { MogstationItem } from '../../model/mogstation-item';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 
 export class MogstationExtractor extends AbstractExtractor<MogstationItem> {

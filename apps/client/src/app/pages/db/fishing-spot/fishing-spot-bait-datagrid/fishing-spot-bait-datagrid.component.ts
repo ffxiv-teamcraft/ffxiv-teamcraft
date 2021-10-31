@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { combineLatest, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Datagrid, FishContextService } from '../../service/fish-context.service';

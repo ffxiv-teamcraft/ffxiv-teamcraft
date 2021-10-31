@@ -71,7 +71,7 @@ import {
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 

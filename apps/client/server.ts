@@ -4,6 +4,7 @@ import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
 
+import { enableProdMode } from '@angular/core';
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync, readFileSync } from 'fs';
@@ -39,10 +40,17 @@ export const APP_NAME = 'client';
 };
 
 
-require('./ssr/output/gt-fish');
-require('./ssr/output/gt-nodes');
+require('../../ssr/output/gt-fish');
+require('../../ssr/output/gt-nodes');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
+
+// Polyfills required for Firebase
+(global as any).WebSocket = require('ws');
+(global as any).XMLHttpRequest = require('xhr2');
+
+// Faster renders in prod mode
+enableProdMode();
 
 // index.html template
 const template = readFileSync(join(DIST_FOLDER, APP_NAME, 'index.html')).toString();

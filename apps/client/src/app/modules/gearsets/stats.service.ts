@@ -3,7 +3,7 @@ import { BaseParam } from './base-param';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { expand, last, map, shareReplay, switchMap } from 'rxjs/operators';
