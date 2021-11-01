@@ -42,15 +42,15 @@ export class TreasureFinderComponent {
         .map(treasure => {
           const mapData = maps[treasure.map];
           const coordsPercent = this.mapService.getPositionOnMap(mapData, treasure.coords);
-          const offsetX = 78;
-          const offsetY = 70;
+          const offsetX = 109 * 0.9;
+          const offsetY = 94.5 * 0.9;
           return {
             ...treasure,
             mapImage: mapData.image,
             coordsPercent,
             display: {
-              x: coordsPercent.x * 2048 / 100 * (mapData.size_factor / 100) - offsetX,
-              y: coordsPercent.y * 2048 / 100 * (mapData.size_factor / 100) - offsetY
+              x: -(treasure.rawCoords.x + 1024) + offsetX,
+              y: -(treasure.rawCoords.y + 1024) + offsetY
             }
           };
         });
