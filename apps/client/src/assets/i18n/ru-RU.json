@@ -566,7 +566,7 @@
   },
   "LISTS": {
     "Load_archived": "Загрузить архивные списки",
-    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
@@ -1340,6 +1340,7 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "Скрыть завершенные предметы",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
