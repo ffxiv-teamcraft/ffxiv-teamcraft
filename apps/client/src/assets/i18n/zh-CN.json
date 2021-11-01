@@ -566,7 +566,7 @@
   },
   "LISTS": {
     "Load_archived": "加载已归档的清单",
-    "Needs_verification": "请验证您的角色，以确认是否有权访问共享到部队的清单",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "重新生成所有清单",
     "Regenerated_all": "您的清单已经是最新的了",
     "Merge_lists": "合并清单",
@@ -1340,6 +1340,7 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
