@@ -55,7 +55,6 @@ export class MapService {
   public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Observable<Aetheryte> {
     return this.getAetherytes(mapData.id, true).pipe(
       map(aetherytes => {
-        console.log(aetherytes);
         let nearest = aetherytes[0];
         for (const aetheryte of aetherytes) {
           if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {

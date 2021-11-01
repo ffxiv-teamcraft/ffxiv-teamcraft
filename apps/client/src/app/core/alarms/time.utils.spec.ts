@@ -17,13 +17,13 @@ describe('TimeUtils', () => {
   });
 
   it('Should return intersection for complex intervals', () => {
-    // expect(TimeUtils.getIntersection([22, 4], [0, 8])).toEqual([0, 4]);
-    // expect(TimeUtils.getIntersection([22, 0], [16, 0])).toEqual([22, 0]);
-    // expect(TimeUtils.getIntersection([22, 4], [16, 0])).toEqual([22, 0]);
-    // expect(TimeUtils.getIntersection([22, 4], [16, 8])).toEqual([22, 4]);
-    // expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
-    // expect(TimeUtils.getIntersection([16, 20], [16, 0])).toEqual([16, 20]);
-    // expect(TimeUtils.getIntersection([22, 4], [1, 16])).toEqual([1, 4]);
+    expect(TimeUtils.getIntersection([22, 4], [0, 8])).toEqual([0, 4]);
+    expect(TimeUtils.getIntersection([22, 0], [16, 0])).toEqual([22, 0]);
+    expect(TimeUtils.getIntersection([22, 4], [16, 0])).toEqual([22, 0]);
+    expect(TimeUtils.getIntersection([22, 4], [16, 8])).toEqual([22, 4]);
+    expect(TimeUtils.getIntersection([18, 2], [16, 8])).toEqual([18, 2]);
+    expect(TimeUtils.getIntersection([16, 20], [16, 0])).toEqual([16, 20]);
+    expect(TimeUtils.getIntersection([22, 4], [1, 16])).toEqual([1, 4]);
     expect(TimeUtils.getIntersection([22, 2], [16, 16])).toEqual([22, 2]);
   });
 
