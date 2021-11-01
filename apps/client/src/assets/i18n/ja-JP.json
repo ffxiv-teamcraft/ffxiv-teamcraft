@@ -2178,13 +2178,13 @@
     "DESYNTH": {
       "Job": "Select the job you want to level",
       "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done!"
+      "Search": "検索をクリックすると完了です！"
     },
     "RESET_TIMERS": {
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
+      "Character_configuration": "レベルとステータスを設定してください。",
       "HQ_ingredients": "ここでHQの材料を入力すると、初期品質を設定できます。",
       "Consumables": "Configure consumables and FC buffs here.",
       "Right_click_condition": "アクションを右クリックして、条件(高品質、最高品質、低品質、失敗など) を設定し、結果を予測します。",
