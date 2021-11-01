@@ -97,7 +97,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         map(([[...names], itemIcons]) => {
           const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
           const colors = sortedNames.map(el => {
-            return this.colors.find(c => c.tug === +tugByFish[el.id]).color;
+            return this.colors.find(c => c.tug === +tugByFish[el.id])?.color || 'white';
           });
           return {
             labels: sortedNames.map(el => el.name),
