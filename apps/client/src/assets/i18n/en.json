@@ -566,7 +566,7 @@
   },
   "LISTS": {
     "Load_archived": "Load archived lists",
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Regenerate all lists",
     "Regenerated_all": "Your lists are now up to date",
     "Merge_lists": "Merge lists",
