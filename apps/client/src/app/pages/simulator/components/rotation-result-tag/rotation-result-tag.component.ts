@@ -8,13 +8,13 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 import { ConsumablesService } from '../../model/consumables.service';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
-import { medicines } from 'apps/client/src/app/core/data/sources/medicines';
-import { freeCompanyActions } from 'apps/client/src/app/core/data/sources/free-company-actions';
+import { medicines } from '../../../../core/data/sources/medicines';
+import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { GearSet, SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { BonusType } from '../../model/consumable-bonus';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../../environments/environment';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 

@@ -13,7 +13,7 @@ import { Class } from '@kaiu/serializer';
 import firebase from 'firebase/compat/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
 import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 
 @Injectable({

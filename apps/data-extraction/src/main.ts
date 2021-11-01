@@ -144,6 +144,8 @@ const operationsSelection = new MultiSelect({
   ]
 });
 
+console.log(argv);
+
 if (argv['only']) {
   const only = argv['only'].split(',');
   startExtractors(extractors.filter(e => {

@@ -26,9 +26,9 @@ import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
-import { environment } from 'apps/client/src/environments/environment';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { SettingsService } from '../../../../modules/settings/settings.service';
+import { environment } from '../../../../../environments/environment';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-rotation-panel',

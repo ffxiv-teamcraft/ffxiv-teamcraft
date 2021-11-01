@@ -3,7 +3,7 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { LazyDataFacade } from 'apps/client/src/app/lazy-data/+state/lazy-data.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 
 export class DesynthsExtractor extends AbstractExtractor<number[]> {

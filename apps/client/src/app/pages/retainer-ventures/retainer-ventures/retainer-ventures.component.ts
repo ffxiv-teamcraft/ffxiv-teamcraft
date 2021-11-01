@@ -3,7 +3,7 @@ import { Retainer, RetainersService } from '../../../core/electron/retainers.ser
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';

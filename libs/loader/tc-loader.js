@@ -55,7 +55,8 @@ const patrons = [
   'G\'lek Tarssza',
   'Syl Varil',
   'Late Night Friendos',
-  'The Hoe Depot'
+  'The Hoe Depot',
+  '[Ultros] Nyumi Aitken'
 ];
 
 const gifs = [

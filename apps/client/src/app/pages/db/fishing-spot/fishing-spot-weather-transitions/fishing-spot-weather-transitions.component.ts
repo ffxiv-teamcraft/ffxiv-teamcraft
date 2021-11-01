@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { weatherIndex } from '../../../../core/data/sources/weather-index';
-import { EorzeanTimeService } from 'apps/client/src/app/core/eorzea/eorzean-time.service';
-import { WeatherService } from 'apps/client/src/app/core/eorzea/weather.service';
+import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
+import { WeatherService } from '../../../../core/eorzea/weather.service';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { distinctUntilChanged, map, shareReplay } from 'rxjs/operators';
 import { FishingSpotUtilsService } from '../fishing-spot-utils.service';

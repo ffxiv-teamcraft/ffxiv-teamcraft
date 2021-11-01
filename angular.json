@@ -232,12 +232,53 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/client-server",
-            "main": "apps/client/src/main.server.ts",
+            "main": "apps/client/server.ts",
             "tsConfig": "apps/client/tsconfig.server.json",
             "sourceMap": true,
-            "optimization": false
+            "optimization": false,
+            "externalDependencies": [
+              "firebase",
+              "@firebase/messaging/sw",
+              "@firebase/app",
+              "@firebase/firestore",
+              "@firebase/analytics",
+              "@firebase/auth",
+              "@firebase/functions",
+              "@firebase/installations",
+              "@firebase/messaging",
+              "@firebase/storage",
+              "@firebase/performance",
+              "@firebase/remote-config",
+              "@firebase/util"
+            ]
           },
           "defaultConfiguration": ""
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "client:build",
+            "serverTarget": "client:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "client:build:production",
+              "serverTarget": "client:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "client:build:production",
+            "serverTarget": "client:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     },

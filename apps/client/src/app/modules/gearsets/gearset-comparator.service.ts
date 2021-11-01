@@ -8,7 +8,7 @@ import { Memoized } from '../../core/decorators/memoized';
 import { combineLatest, Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, of } from 'rxjs';
 import { debounceTime, map, shareReplay, startWith, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';

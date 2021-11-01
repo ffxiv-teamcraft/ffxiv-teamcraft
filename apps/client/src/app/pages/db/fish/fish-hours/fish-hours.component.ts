@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-fish-hours',

@@ -16,6 +16,8 @@ export class LayoutRowFilter {
 
   static IS_CRYSTAL = new LayoutRowFilter(row => row.id > 1 && row.id < 20, 'IS_CRYSTAL');
 
+  static IS_FINAL_ITEM = new LayoutRowFilter(row => row.finalItem === true, 'IS_FINAL_ITEM');
+
   static IS_GATHERING = new LayoutRowFilter(row => getItemSource(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING');
 
   static IS_TRADE = new LayoutRowFilter(row => getItemSource(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');

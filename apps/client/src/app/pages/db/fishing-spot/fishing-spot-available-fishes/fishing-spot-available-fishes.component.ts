@@ -3,11 +3,11 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { GatheringNodesService } from '../../../../core/data/gathering-nodes.service';
-import { AlarmsFacade } from 'apps/client/src/app/core/alarms/+state/alarms.facade';
-import { Alarm } from 'apps/client/src/app/core/alarms/alarm';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { Alarm } from '../../../../core/alarms/alarm';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { AuthFacade } from 'apps/client/src/app/+state/auth.facade';
+import { AuthFacade } from '../../../../+state/auth.facade';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({

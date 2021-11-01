@@ -9,7 +9,7 @@ import {
   SimulationService
 } from '../../../../core/simulation/simulation.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { CraftingRotation } from 'apps/client/src/app/model/other/crafting-rotation';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../../modules/settings/settings.service';

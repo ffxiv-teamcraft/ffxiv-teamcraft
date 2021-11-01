@@ -11,11 +11,12 @@ export class TreasuresExtractor extends AbstractExtractor {
       treasureRows
         .filter(treasure => !!treasure.Location)
         .forEach(treasure => {
-          const coords = this.getCoords({
-              x: +treasure.Location.X,
-              y: +treasure.Location.Z,
-              z: +treasure.Location.Y
-            },
+          const rawCoords = {
+            x: +treasure.Location.X,
+            y: +treasure.Location.Z,
+            z: +treasure.Location.Y
+          };
+          const coords = this.getCoords(rawCoords,
             {
               size_factor: treasure.Location.Map.SizeFactor,
               offset_y: treasure.Location.Map.OffsetY,
@@ -27,6 +28,7 @@ export class TreasuresExtractor extends AbstractExtractor {
           treasures.push({
             id: treasure.ID,
             coords: coords,
+            rawCoords,
             map: treasure.Location.MapTargetID,
             partySize: rank.MaxPartySize,
             item: rank.ItemNameTargetID

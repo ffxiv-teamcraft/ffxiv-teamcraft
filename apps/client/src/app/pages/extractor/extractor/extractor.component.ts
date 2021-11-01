@@ -12,7 +12,7 @@ import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'r
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { getItemSource } from '../../../modules/list/model/list-row';
