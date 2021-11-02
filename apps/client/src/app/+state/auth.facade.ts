@@ -71,7 +71,8 @@ export class AuthFacade {
         );
     }),
     switchMap(([user, token]: [any, any]) => {
-      if (token.claims['https://hasura.io/jwt/claims'] === undefined) {
+      if (token.claims['https://hasura.io/jwt/claims'] === undefined
+      || token.claims['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] === undefined) {
         console.log('Token missing claims for hasura');
         return this.fns.httpsCallable('setCustomUserClaims')({
           uid: user.uid
