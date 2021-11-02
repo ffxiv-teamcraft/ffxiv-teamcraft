@@ -39,7 +39,7 @@ export class WeatherService {
         if (spawns.some(spawn => TimeUtils.getIntersection([spawn, (spawn + duration) % 24], [spawnHour, despawnHour]) !== null)) {
           let resultDate = new Date(timestamp);
           // While we're not at the real spawn, let's add hour by hour, to avoid issues with spawn only happening the next day
-          while (!spawns.some(spawn => spawn <= resultDate.getUTCHours())) {
+          while (!spawns.some(spawn => (spawn || 24) <= resultDate.getUTCHours() || 24)) {
             resultDate = addHours(resultDate, 1);
           }
           resultDate.setUTCHours(Math.floor(resultDate.getUTCHours() / 8) * 8);
