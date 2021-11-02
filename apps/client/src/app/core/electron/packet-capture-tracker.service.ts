@@ -92,7 +92,7 @@ export class PacketCaptureTrackerService {
         map(([patch]) => patch)
       );
 
-    const debouncedPatches$ = patches$.pipe(debounceTime(10000));
+    const debouncedPatches$ = patches$.pipe(debounceTime(8000));
     const statusIsNull$ = combineLatest([patches$, eventStatus$]).pipe(
       filter(([, status]) => status === null)
     );
