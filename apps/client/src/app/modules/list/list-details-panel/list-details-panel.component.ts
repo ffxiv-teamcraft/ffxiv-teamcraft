@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -135,7 +135,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private lazyData: LazyDataFacade) {
+              public settings: SettingsService, private lazyData: LazyDataFacade,
+              private cd: ChangeDetectorRef) {
   }
 
   addItems(): void {
@@ -183,19 +184,23 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               [row.zoneId]: hasPositions
             };
           }, {});
+        this.cd.markForCheck();
       });
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     if (this.displayRow.npcBreakdown) {
       this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors);
+      this.cd.markForCheck();
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
+    this.cd.markForCheck();
     this.hasPositionsInRows(this.displayRow.rows).pipe(
       first()
     ).subscribe(hasPositions => {
       this.hasNavigationMap = hasPositions;
+      this.cd.markForCheck();
     });
   }
 
