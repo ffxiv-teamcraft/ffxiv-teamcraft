@@ -33,7 +33,7 @@ export class LazyDataEffects {
       }),
       mergeMap((registry) => {
         return merge(...Object.entries<number[]>(registry).map(([entity, ids]: [LazyDataKey, number[]]) => {
-          if (this.platformService.isDesktop() || !environment.production) {
+          if (this.platformService.isDesktop() || !environment.production || environment.beta) {
             return this.getData(this.getUrl(entity)).pipe(
               map(entry => {
                 return LazyDataActions.loadLazyDataFullEntitySuccess({ entry, key: entity });

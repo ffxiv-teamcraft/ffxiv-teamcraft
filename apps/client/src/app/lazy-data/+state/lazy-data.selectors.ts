@@ -28,5 +28,9 @@ export const getEntryStatus = createSelector(
 
 export const isLoading = createSelector(
   getLazyDataState,
-  state => state.loadingEntries.length > 0
+  state => {
+    // If debugging loading states, uncomment the line below
+    // console.log(state.loadingEntries);
+    return state.loadingEntries.length > 0;
+  }
 );

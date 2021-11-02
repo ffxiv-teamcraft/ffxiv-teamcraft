@@ -71,12 +71,13 @@ export class LazyDataFacade {
         this.store.pipe(select(LazyDataSelectors.getEntry, { key: propertyKey })),
         this.getStatus(propertyKey)
       ]).pipe(
-        tap(([res, status]) => {
+        tap(([, status]) => {
           const loadingOrLoaded = status === 'full' || status === 'loading';
-          if (!res && !loadingOrLoaded) {
+          if (!loadingOrLoaded) {
             this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
           }
         }),
+        filter(([,status]) => status === 'full'),
         map(([res]) => res),
         filter(res => !!res),
         first()
