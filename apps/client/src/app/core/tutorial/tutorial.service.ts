@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { Subject } from 'rxjs';
-import { debounceTime, skipUntil } from 'rxjs/operators';
+import { debounceTime, first, skipUntil } from 'rxjs/operators';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.component';
@@ -61,19 +61,23 @@ export class TutorialService {
     }
     if (!this.settings.tutorialQuestionAsked) {
       this.settings.tutorialQuestionAsked = true;
-      this.modal.create({
-        nzTitle: this.translate.instant('TUTORIAL.POPUP.Title'),
-        nzContent: TutorialPopupComponent,
-        nzFooter: null,
-        nzClosable: false,
-        nzMaskClosable: false
-      }).afterClose
-        .subscribe(res => {
-          this.settings.tutorialEnabled = res;
-          if (res) {
-            this.startTutorial(false);
-          }
-        });
+      this.translate.get('TUTORIAL.POPUP.Title').pipe(
+        first()
+      ).subscribe(title => {
+        this.modal.create({
+          nzTitle: title,
+          nzContent: TutorialPopupComponent,
+          nzFooter: null,
+          nzClosable: false,
+          nzMaskClosable: false
+        }).afterClose
+          .subscribe(res => {
+            this.settings.tutorialEnabled = res;
+            if (res) {
+              this.startTutorial(false);
+            }
+          });
+      })
     } else if (this.settings.tutorialEnabled) {
       this.startTutorial(false);
     }
