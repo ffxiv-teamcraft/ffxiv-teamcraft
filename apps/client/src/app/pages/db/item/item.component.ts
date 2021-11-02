@@ -182,7 +182,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     }),
     withLazyData(this.lazyData, 'recipes', 'reduction', 'collectables', 'desynth', 'npcs'),
     withLazyRow(this.lazyData, 'usedInQuests', ([[, xivapiItem]]) => xivapiItem.ID),
-    switchMap(([[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs], usedInQuests]) => {
+    withLazyRow(this.lazyData, 'levesPerItem', ([[[, xivapiItem]]]) => xivapiItem.ID),
+    switchMap(([[[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs], usedInQuests], usedForLeves]) => {
       const usedFor = [];
       if (data.item.ingredient_of !== undefined) {
         usedFor.push({
@@ -359,18 +360,18 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
         });
       }
-      if (data.item.requiredByLeves) {
+      if (usedForLeves?.length > 0) {
         usedFor.push({
           type: UsedForType.LEVES,
           flex: '1 1 auto',
           title: 'DB.Leves',
           icon: './assets/icons/leve.png',
-          leves: data.item.requiredByLeves.map((leve) => {
-            const partial = data.getPartial(leve.toString(), 'leve');
+          leves: usedForLeves.map((leve) => {
             return {
-              leveId: leve,
-              level: partial.obj.l,
-              job: partial.obj.j
+              leveId: leve.leve,
+              amount: leve.amount,
+              level: leve.lvl,
+              job: leve.classJob - 1
             };
           })
         });

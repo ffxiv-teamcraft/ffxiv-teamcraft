@@ -351,14 +351,15 @@
                       <nz-list-item-meta
                         [nzAvatar]="leveAvatar"
                         [nzTitle]="leve.leveId | i18nRow:'leves' | i18n"
-                        nzDescription="lvl {{leve.level}}">
+                        [nzDescription]="description">
+                        <ng-template #description>
+                          <span class="companion-svg job-icon" [innerHtml]="leve.job | jobUnicode"></span> lvl {{leve.level}} (x{{leve.amount}})
+                        </ng-template>
                         <ng-template #leveAvatar>
                           <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
                             <img class="img-icon round-icon"
                                  src="./assets/icons/leve.png">
                           </a>
-                          <a
-                            routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | i18nRow:'leves' | i18n}}</a>
                         </ng-template>
                         <ng-template #more>
                           <app-db-button [id]="leve.leveId" type="leve"></app-db-button>

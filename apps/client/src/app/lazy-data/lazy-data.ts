@@ -41,6 +41,7 @@ import {LazyItem} from './model/lazy-item';
 import {LazyJobAbbr} from './model/lazy-job-abbr';
 import {LazyJobCategory} from './model/lazy-job-category';
 import {LazyJobName} from './model/lazy-job-name';
+import {LazyLevesPerItem} from './model/lazy-leves-per-item';
 import {LazyLeve} from './model/lazy-leve';
 import {LazyLogTrackerPageData} from './model/lazy-log-tracker-page-data';
 import {LazyMap} from './model/lazy-map';
@@ -149,6 +150,7 @@ export interface LazyData {
   jobName: Record<number, LazyJobName>;
   jobSortIndex: Record<number, number>;
   legendaryFish: Record<number, number>;
+  levesPerItem: Record<number, LazyLevesPerItem[]>;
   leves: Record<number, LazyLeve>;
   logTrackerPageData: Array<LazyLogTrackerPageData[]>;
   lootSources: Record<number, number[]>;
