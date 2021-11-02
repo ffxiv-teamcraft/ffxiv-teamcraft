@@ -82,7 +82,7 @@ export class LayoutsFacade {
               return i;
             }));
           }
-          return of({ rows: [], unfilteredRows: starter, layoutRows: layout.rows }).pipe(
+          return of({ rows: [], unfilteredRows: starter, layoutRows: [...layout.rows] }).pipe(
             expand(({ rows, unfilteredRows, layoutRows }) => {
               if (unfilteredRows.length === 0) {
                 return EMPTY;
