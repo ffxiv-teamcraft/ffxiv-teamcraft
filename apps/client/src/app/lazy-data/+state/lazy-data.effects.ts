@@ -13,6 +13,7 @@ import { extractsHash } from '../../../environments/extracts-hash';
 import { LazyDataKey } from '../lazy-data-types';
 import { debounceBufferTime } from '../../core/rxjs/debounce-buffer-time';
 import { uniq } from 'lodash';
+import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 
 @Injectable()
 export class LazyDataEffects {
@@ -99,7 +100,7 @@ export class LazyDataEffects {
     if (path.startsWith('http')) {
       url = path;
     } else {
-      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
+      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform) || IS_HEADLESS) {
         url = `.${path}`;
       } else if(environment.beta) {
         url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;

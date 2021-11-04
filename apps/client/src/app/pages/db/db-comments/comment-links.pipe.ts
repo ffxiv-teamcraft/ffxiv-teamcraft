@@ -11,6 +11,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { IS_HEADLESS } from '../../../../environments/is-headless';
 
 @Pipe({
   name: 'commentLinks',
@@ -30,7 +31,7 @@ export class CommentLinksPipe implements PipeTransform {
   }
 
   transform(value: string, locale: string, comment: DbComment): Observable<SafeHtml> {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       return combineLatest([
         safeCombineLatest(this.getRegexResult(this.xivdbRegexp, value).map(groups => {
           const data = {

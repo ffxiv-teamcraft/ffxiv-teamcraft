@@ -63,6 +63,7 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
+import { IS_HEADLESS } from '../environments/is-headless';
 
 @Component({
   selector: 'app-root',
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit {
 
   public newFeatureName = 'allagan-reports';
 
-  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true';
+  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true' && !IS_HEADLESS;
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -101,7 +102,7 @@ export class AppComponent implements OnInit {
   collapsedAlarmsBar = true;
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
 
   public loadingLazyData$ = this.lazyDataFacade.isLoading$;
@@ -113,11 +114,11 @@ export class AppComponent implements OnInit {
   public otherCharacters$: Observable<Character[]>;
 
   public userId$ = this.authFacade.userId$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
 
   public user$ = this.authFacade.user$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
 
   public loading$: Observable<boolean>;
@@ -132,7 +133,7 @@ export class AppComponent implements OnInit {
 
   private hasDesktopReloader$ = new BehaviorSubject<void>(null);
 
-  public navigating = true;
+  public navigating = !IS_HEADLESS;
 
   public newVersionAvailable$: Observable<boolean>;
 
@@ -267,16 +268,20 @@ export class AppComponent implements OnInit {
           })
         );
       }),
-      isPlatformServer(this.platform) ? first() : tap()
+      isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
     );
 
-    if (isPlatformServer(this.platform)) {
+    if (isPlatformServer(this.platform) || IS_HEADLESS) {
       this.dataLoaded = true;
       this.emptyInventory$ = of(false);
       this.unknownContentId$ = of(false);
     }
+    this.translate.setDefaultLang('en');
 
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
+
+      // Translation
+      this.use(this.getLang());
       if (this.platformService.isDesktop()) {
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
@@ -295,7 +300,7 @@ export class AppComponent implements OnInit {
       this.firebase.object<boolean>('maintenance')
         .valueChanges()
         .pipe(
-          isPlatformServer(this.platform) ? first() : tap()
+          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
         .subscribe(maintenance => {
           if (maintenance && environment.production) {
@@ -306,7 +311,7 @@ export class AppComponent implements OnInit {
       this.firebase.object<string>('version_lock')
         .valueChanges()
         .pipe(
-          isPlatformServer(this.platform) ? first() : tap()
+          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
         .subscribe(v => {
           if (semver.ltr(environment.version, v)) {
@@ -425,7 +430,7 @@ export class AppComponent implements OnInit {
         filter(current => current instanceof NavigationEnd),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
-          if (this.platformService.isDesktop() || isPlatformServer(this.platform)) {
+          if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
             return of(false);
           }
           if (url && url.endsWith('/')) {
@@ -453,10 +458,6 @@ export class AppComponent implements OnInit {
       this.hasDesktop$ = of(false);
       this.newVersionAvailable$ = of(false);
     }
-
-    // Translation
-    this.translate.setDefaultLang('en');
-    this.use(this.getLang());
 
     if (this.platformService.isDesktop()) {
       this.ipc.on('apply-language', (e, newLang) => {
@@ -583,7 +584,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       setTimeout(() => {
         this.hideFeatureBanner();
       }, 2000);
@@ -635,10 +636,12 @@ export class AppComponent implements OnInit {
     }
 
     const lastChangesSeen = this.settings.lastChangesSeen;
-    if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay) {
+    if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay && !IS_HEADLESS) {
       this.showPatchNotes();
     }
-    this.tutorialService.applicationReady();
+    if (!IS_HEADLESS) {
+      this.tutorialService.applicationReady();
+    }
     this.dataLoaded = true;
   }
 
@@ -719,7 +722,7 @@ export class AppComponent implements OnInit {
   }
 
   openInApp(): void {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
         mapTo(true),
         catchError(() => {

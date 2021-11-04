@@ -23,6 +23,10 @@ export class I18nToolsService {
     this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang as Language));
   }
 
+  public use(lang: Language): void {
+    this.currentLang$.next(lang);
+  }
+
   public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {
     return this.currentLang$.pipe(
       switchMap((lang) => {

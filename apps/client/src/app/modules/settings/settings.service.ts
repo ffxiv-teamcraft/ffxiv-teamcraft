@@ -8,6 +8,7 @@ import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
 import { NotificationSettings } from './notification-settings';
 import { SoundNotificationType } from '../../core/sound-notification/sound-notification-type';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 
 @Injectable({
   providedIn: 'root'
@@ -330,7 +331,7 @@ export class SettingsService {
   }
 
   public get compactSidebar(): boolean {
-    return this.getBoolean('compact-sidebar', false);
+    return IS_HEADLESS ? true : this.getBoolean('compact-sidebar', false);
   }
 
   public set compactSidebar(compact: boolean) {

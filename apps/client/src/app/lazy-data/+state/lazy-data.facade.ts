@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable, of } from 'rxjs';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, skipWhile, switchMap, tap } from 'rxjs/operators';
 
 import * as fromLazyData from './lazy-data.reducer';
 import * as LazyDataSelectors from './lazy-data.selectors';
@@ -49,6 +49,17 @@ export class LazyDataFacade {
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
               private settings: SettingsService, private http: HttpClient,
               private xivapi: XivapiService) {
+    this.isLoading$
+      .pipe(
+        skipWhile(loading => !loading),
+        debounceTime(1500),
+        filter(loading => !loading),
+        first()
+      )
+      .subscribe(() => {
+        // Indicate the headless renderer that we're done
+        (window as any).renderComplete = true;
+      });
   }
 
   public preloadEntry<K extends LazyDataKey>(propertyKey: K): void {
@@ -77,7 +88,7 @@ export class LazyDataFacade {
             this.store.dispatch(loadLazyDataFullEntity({ entity: propertyKey }));
           }
         }),
-        filter(([,status]) => status === 'full'),
+        filter(([, status]) => status === 'full'),
         map(([res]) => res),
         filter(res => !!res),
         first()

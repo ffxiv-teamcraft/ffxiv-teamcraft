@@ -2,9 +2,11 @@ import { isPlatformServer } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 import { combineLatest } from 'rxjs';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { Language } from '../../../core/data/language';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
@@ -36,21 +38,24 @@ export class DbComponent extends TeamcraftComponent implements OnInit {
           lang = 'en';
         }
         const savedLang = localStorage.getItem('locale');
-        if (!savedLang || isPlatformServer(this.platform)) {
+        if (!savedLang || isPlatformServer(this.platform) || IS_HEADLESS) {
           this.translate.use(lang);
+          this.i18n.use(lang as Language);
         }
       });
 
-    combineLatest([this.route.paramMap, this.i18n.currentLang$])
-      .pipe(
-        takeUntil(this.onDestroy$),
-        filter(([params]) => !!params.get('language'))
-      )
-      .subscribe(([params, lang]) => {
-        const urlLang = params.get('language');
-        if (urlLang !== lang) {
-          this.router.navigateByUrl(this.router.url.replace(`/${urlLang}/`, `/${lang}/`));
-        }
-      });
+    if (!IS_HEADLESS) {
+      combineLatest([this.route.paramMap, this.i18n.currentLang$])
+        .pipe(
+          takeUntil(this.onDestroy$),
+          filter(([params]) => !!params.get('language'))
+        )
+        .subscribe(([params, lang]) => {
+          const urlLang = params.get('language');
+          if (urlLang !== lang) {
+            this.router.navigateByUrl(this.router.url.replace(`/${urlLang}/`, `/${lang}/`));
+          }
+        });
+    }
   }
 }

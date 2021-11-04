@@ -34,6 +34,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { GaActionEnum, GoogleAnalyticsService } from 'ngx-google-analytics';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 
 @Component({
   selector: 'app-search',
@@ -255,7 +256,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         }));
       })
     );
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.searchType$.subscribe(value => {
         localStorage.setItem('search:type', value);
       });
@@ -529,7 +530,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   public getShareUrl = () => {
-    if (isPlatformServer(this.platform)) {
+    if (isPlatformServer(this.platform) || IS_HEADLESS) {
       return 'https://ffxivteamcraft.com/search';
     }
     if (this.platformService.isDesktop()) {

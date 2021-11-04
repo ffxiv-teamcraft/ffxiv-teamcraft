@@ -6,6 +6,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { map } from 'rxjs/operators';
 import { isPlatformServer } from '@angular/common';
 import * as semver from 'semver';
+import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 
 @Injectable()
 export class VersionLockGuard implements CanActivate {
@@ -14,7 +15,7 @@ export class VersionLockGuard implements CanActivate {
   }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    if (isPlatformServer(this.platform)) {
+    if (isPlatformServer(this.platform) || IS_HEADLESS) {
       return of(true);
     }
     // We want to block the route if the maintenance mode is on, meaning that we want to allow it if it's not.
