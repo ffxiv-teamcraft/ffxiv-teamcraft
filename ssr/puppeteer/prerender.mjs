@@ -11,11 +11,11 @@ const CHUNK_SIZE = 10;
 
 (async () => {
   const browser = await puppeteer.launch({
-    timeout: 60000
+    timeout: 120000
   });
   const browserWSEndpoint = await browser.wsEndpoint();
 
-  const itemIds = Object.keys(items);
+  const itemIds = Object.keys(items).slice(1);
   const languages = Object.keys(items[itemIds[0]]);
   const chunks = chunk(itemIds, CHUNK_SIZE);
   console.log(green(`Starting prerendering of ${itemIds.length * languages.length} item db pages in ${Math.ceil(itemIds.length / CHUNK_SIZE)} batches of ${CHUNK_SIZE * languages.length} pages`));
@@ -25,7 +25,9 @@ const CHUNK_SIZE = 10;
       console.log(`Item#${id}`);
       return Promise.all(languages.map(lang => {
         const path = `/db/${lang}/item/${id}/${items[id][lang].split(' ').join('-')}`;
-        return ssr(path, browserWSEndpoint);
+        return ssr(path, browserWSEndpoint).catch(() => {
+          return void 0;
+        });
       }));
     }));
   }

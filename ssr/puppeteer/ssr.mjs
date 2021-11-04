@@ -46,7 +46,6 @@ async function ssr(path, browserWSEndpoint, prerender = false) {
     }
     const [content] = await cacheRef.download();
     const ttRenderMs = Date.now() - start;
-    console.info(`From cache ${path} in: ${ttRenderMs}ms`);
     return { html: content.toString(), ttRenderMs };
   }
   const url = `${BASE_URL}${path}`;
