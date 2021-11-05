@@ -1,17 +1,21 @@
 import puppeteer from 'puppeteer';
 import urlModule from 'url';
 import { Storage } from '@google-cloud/storage';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const storage = new Storage();
-const bucket = storage.bucket('ssr.ffxivteamcraft.com');
+const bucket = storage.bucket('ssr.beta.ffxivteamcraft.com');
 const URL = urlModule.URL;
 
-// In-memory cache of rendered pages. Note: this will be cleared whenever the
-// server process stops. If you need true persistence, use something like
-// Google Cloud Storage (https://firebase.google.com/docs/storage/web/start).
-const RENDER_CACHE = new Map();
+const BASE_URL = 'http://localhost:8080';
 
-const BASE_URL = 'http://localhost:4200';
+const GtFish = readFileSync(join(__dirname, '../output/gt-fish.js'));
+const GtNodes = readFileSync(join(__dirname, '../output/gt-nodes.js'));
 
 function removeScripts(pageContent) {
   let matches = pageContent.match(/<script(?:.*?)>(?:[\S\s]*?)<\/script>/gi);
@@ -83,6 +87,20 @@ async function ssr(path, browserWSEndpoint, prerender = false) {
     if (req.url().endsWith('.js')) {
       return req.continue({
         url: `${BASE_URL}${new URL(req.url()).pathname}`
+      });
+    }
+
+    if (req.url() === 'https://www.garlandtools.org/bell/fish.js') {
+      return req.respond({
+        contentType: 'application/javascript',
+        body: GtFish
+      });
+    }
+
+    if (req.url() === 'https://www.garlandtools.org/bell/nodes.js') {
+      return req.respond({
+        contentType: 'application/javascript',
+        body: GtNodes
       });
     }
 

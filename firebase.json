@@ -16,7 +16,10 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "run": {
+          "serviceId": "ssr",
+          "region": "europe-west1"
+        }
       }
     ],
     "headers": [

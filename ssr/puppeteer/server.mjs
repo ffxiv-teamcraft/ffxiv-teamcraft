@@ -1,12 +1,15 @@
 import express from 'express';
 import puppeteer from 'puppeteer';
 import ssr from './ssr.mjs';
-import { join } from 'path';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 let browserWSEndpoint = null;
 const app = express();
 
-export const DIST_FOLDER = join(process.cwd(), 'dist/apps/client');
+export const DIST_FOLDER = join(__dirname, '../dist/apps/client');
 
 function detectIndexBot(userAgent) {
 
@@ -63,7 +66,8 @@ app.get('*.*', express.static(DIST_FOLDER, {
 app.get('*', async (req, res) => {
   if (!browserWSEndpoint) {
     const browser = await puppeteer.launch({
-      timeout: 60000
+      timeout: 60000,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     browserWSEndpoint = await browser.wsEndpoint();
   }

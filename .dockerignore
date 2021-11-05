@@ -1,0 +1,12 @@
+# Ignore everything, we're going to white list stuff
+**
+
+!/dist
+!/ssr
+!/Dockerfile
+!/.dockerignore
+
+/ssr/node_modules
+/ssr/dist
+/ssr/output
+

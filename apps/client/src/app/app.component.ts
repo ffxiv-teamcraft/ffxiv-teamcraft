@@ -634,9 +634,6 @@ export class AppComponent implements OnInit {
     if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay && !IS_HEADLESS) {
       this.showPatchNotes();
     }
-    if (!IS_HEADLESS) {
-      this.tutorialService.applicationReady();
-    }
     this.dataLoaded = true;
   }
 

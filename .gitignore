@@ -58,3 +58,4 @@ Thumbs.db
 /apps/data-extraction/input/*
 /apps/data-extraction/csv/*
 /apps/client/src/assets/tc-loader.js
+/ssr/dist/
