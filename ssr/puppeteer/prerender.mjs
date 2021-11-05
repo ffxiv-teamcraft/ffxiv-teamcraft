@@ -1,15 +1,16 @@
 import ssr from './ssr.mjs';
 import items from '../../apps/client/src/assets/data/items.json';
 import puppeteer from 'puppeteer';
-import _ from 'lodash';
-import colors from 'colors/safe.js';
 import cliProgress from 'cli-progress';
+import PQueue from 'p-queue';
 
-const { chunk } = _;
-const { green } = colors;
 const { SingleBar } = cliProgress;
 
-const CHUNK_SIZE = 10;
+const queue = new PQueue({ concurrency: 6 });
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -25,19 +26,20 @@ const CHUNK_SIZE = 10;
     barIncompleteChar: '\u2591'
   });
   const languages = Object.keys(items[itemIds[0]]);
-  const chunks = chunk(itemIds, CHUNK_SIZE);
   progress.start(itemIds.length * languages.length, 0);
-  for (const chunk of chunks) {
-    await Promise.all(chunk.map(id => {
-      return Promise.all(languages.map(lang => {
-        const path = `/db/${lang}/item/${id}/${items[id][lang].split(' ').join('-')}`;
-        return ssr(path, browserWSEndpoint).then(() => {
-          progress.increment();
-        }).catch(() => {
-          progress.increment();
-          return void 0;
-        });
-      }));
-    }));
-  }
+  itemIds.forEach(id => {
+    languages.forEach(lang => {
+      const path = `/db/${lang}/item/${id}/${items[id][lang].split(' ').join('-')}`;
+      queue.add(() => {
+        return delay(Math.floor(Math.random() * 4000) + 1000).then(() => {
+          return ssr(path, browserWSEndpoint).then(() => {
+            progress.increment();
+          }).catch(() => {
+            progress.increment();
+            return void 0;
+          })
+        })
+      });
+    });
+  });
 })();

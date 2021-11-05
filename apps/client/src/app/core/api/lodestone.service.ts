@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, Subject, Subscription } from 'rxjs';
-import { filter, map, shareReplay, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
@@ -11,11 +12,12 @@ export class LodestoneService {
 
   private static INTERVAL: Subscription;
 
-  private static CACHE: { [index: number]: Observable<CharacterResponse> } = {};
+  private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
-  constructor(private userService: UserService, private xivapi: XivapiService) {
+  constructor(private userService: UserService, private xivapi: XivapiService,
+              private http: HttpClient) {
     if (!LodestoneService.INTERVAL) {
-      LodestoneService.INTERVAL = interval(1500).subscribe((i) => {
+      LodestoneService.INTERVAL = interval(1000).subscribe((i) => {
         const subject = LodestoneService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
@@ -24,13 +26,37 @@ export class LodestoneService {
     }
   }
 
-  public getCharacter(id: number, userCharacter = false): Observable<CharacterResponse> {
+  public getFromLodestoneApi(endpoint: string, columns?: string[]): Observable<Partial<CharacterResponse>> {
+    let params = new HttpParams();
+    if (columns) {
+      params = params.set('columns', columns.join(','));
+    }
+    return this.http.get<any>(`https://lodestone.ffxivteamcraft.com${endpoint}`, { params }).pipe(
+      map(res => {
+        return {
+          ...res,
+          Character: {
+            ...res.Character,
+            Server: res.Character.World
+          }
+        };
+      })
+    );
+  }
+
+  public getCharacter(id: number, noCache = false): Observable<Partial<CharacterResponse>> {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
       LodestoneService.CACHE[id] = trigger.pipe(
-        switchMapTo(this.xivapi.getCharacter(id, { columns: ['Character'] })),
-        tap(res => this.cacheCharacter(res, userCharacter)),
-        startWith(this.getCachedCharacter(id)),
+        switchMap(() => {
+          if (noCache || !this.getCachedCharacter(id)) {
+            return this.getFromLodestoneApi(`/Character/${id}`).pipe(
+              tap(res => this.cacheCharacter(res))
+            );
+          } else {
+            return of(this.getCachedCharacter(id));
+          }
+        }),
         filter(res => res !== null),
         shareReplay(1)
       );
@@ -91,19 +117,17 @@ export class LodestoneService {
     return null;
   }
 
-  private cacheCharacter(data: CharacterResponse, userCharacter = false): void {
-    const cachedCharacter: Partial<Character> = {
+  private cacheCharacter(data: Partial<CharacterResponse>): void {
+    const cachedCharacter: Partial<Character> & { DC: string } = {
       ID: data.Character.ID,
       Avatar: data.Character.Avatar,
       FreeCompanyId: data.Character.FreeCompanyId,
       Name: data.Character.Name,
       Server: data.Character.Server,
+      DC: (data.Character as any).DC,
       Portrait: data.Character.Portrait,
       Bio: data.Character.Bio
     };
-    if (userCharacter) {
-      cachedCharacter.ClassJobs = data.Character.ClassJobs;
-    }
     localStorage.setItem(`character:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
   }
 

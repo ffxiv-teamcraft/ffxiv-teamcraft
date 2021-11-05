@@ -109,7 +109,7 @@ export class AppComponent implements OnInit {
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character & { Datacenter: string }>;
+  public character$: Observable<Character>;
 
   public otherCharacters$: Observable<Character[]>;
 
@@ -594,11 +594,6 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        switchMap(character => {
-          return this.lazyDataFacade.getDatacenterForServer(character.Server).pipe(
-            map(Datacenter => ({ ...character, Datacenter }))
-          );
-        }),
         shareReplay(1)
       );
 

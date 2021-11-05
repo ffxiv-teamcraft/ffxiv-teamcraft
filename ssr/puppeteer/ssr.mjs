@@ -107,6 +107,7 @@ async function ssr(path, browserWSEndpoint, prerender = false) {
           style.textContent = cssText;
           link.replaceWith(style);
         }
+        delete content[link.href];
       });
     }, stylesheetContents);
     const html = removeScripts(await page.content()); // serialized HTML of page DOM.

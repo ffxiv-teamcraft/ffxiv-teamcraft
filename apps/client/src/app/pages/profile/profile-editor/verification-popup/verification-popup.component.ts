@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
-import { XivapiService } from '@xivapi/angular-client';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
+import { LodestoneService } from '../../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-verification-popup',
@@ -21,10 +21,10 @@ export class VerificationPopupComponent implements OnDestroy {
 
   subscription: Subscription;
 
-  constructor(private xivapi: XivapiService, private authFacade: AuthFacade) {
+  constructor(private lodestone: LodestoneService, private authFacade: AuthFacade) {
     this.verificationResult$ = this.startVerify$.pipe(
       switchMap(code => {
-        return this.xivapi.getCharacter(this.lodestoneId, { columns: ['Character.Bio'] }).pipe(
+        return this.lodestone.getFromLodestoneApi(`/Character/${this.lodestoneId}`, ['Character.Bio']).pipe(
           map(res => {
             return { verified: res.Character.Bio.indexOf(code) > -1 };
           })

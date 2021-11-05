@@ -79,7 +79,7 @@
                   </div>
                 </ng-template>
                 <nz-list-item-meta
-                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | i18nRow:'jobName')?.en | async)?.toLowerCase()+'.png' | ifMobile: null"
+                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | i18nRow:'jobName' | async)?.en)?.toLowerCase()+'.png' | ifMobile: null"
                   [nzTitle]="set.jobId | i18nRow:'jobName' | i18n"
                   nzDescription="lvl {{set.level}}"></nz-list-item-meta>
                 <ng-template #masterbooks>
