@@ -32,13 +32,13 @@ function delay(ms) {
       const path = `/db/${lang}/item/${id}/${items[id][lang].split(' ').join('-')}`;
       queue.add(() => {
         return delay(Math.floor(Math.random() * 4000) + 1000).then(() => {
-          return ssr(path, browserWSEndpoint, 'http://localhost:4200').then(() => {
+          return ssr(path, browserWSEndpoint, false, 'http://localhost:4200').then(() => {
             progress.increment();
           }).catch(() => {
             progress.increment();
             return void 0;
-          })
-        })
+          });
+        });
       });
     });
   });

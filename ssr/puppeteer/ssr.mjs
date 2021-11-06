@@ -1,10 +1,8 @@
 import puppeteer from 'puppeteer';
-import urlModule from 'url';
+import urlModule, { fileURLToPath } from 'url';
 import { Storage } from '@google-cloud/storage';
 import { readFileSync } from 'fs';
-import { join } from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -36,10 +34,11 @@ function removeScripts(pageContent) {
  * @param {string} browserWSEndpoint Optional remote debugging URL. If
  *     provided, Puppeteer's reconnects to the browser instance. Otherwise,
  *     a new browser instance is launched.
+ * @param isDeepLinkBot Is this for a deep link bot (twitter, fb, discord)? changes the trigger for page to be considered as rendered.
  * @param prerender Is this for prerendering? If yes, no content will be returned if cache is hit.
  * @param baseUrl Base url for the website to SSR
  */
-async function ssr(path, browserWSEndpoint, prerender = false, baseUrl = 'http://localhost:8080') {
+async function ssr(path, browserWSEndpoint, isDeepLinkBot, prerender = false, baseUrl = 'http://localhost:8080') {
   const start = Date.now();
   const cacheRef = bucket.file(`${path.slice(1)}.html`);
   const [exists] = await cacheRef.exists();
@@ -113,9 +112,15 @@ async function ssr(path, browserWSEndpoint, prerender = false, baseUrl = 'http:/
     waitUntil: 'load'
   });
   try {
-    await page.waitForFunction(() => {
-      return window.renderComplete;
-    }, { timeout: 60000 });
+    if (isDeepLinkBot) {
+      await page.waitForFunction(() => {
+        return window.metaComplete;
+      }, { timeout: 20000 });
+    } else {
+      await page.waitForFunction(() => {
+        return window.renderComplete;
+      }, { timeout: 60000 });
+    }
     await page.$$eval('link[rel="stylesheet"]', (links, content) => {
       links.forEach(link => {
         const cssText = content[link.href];
@@ -133,9 +138,11 @@ async function ssr(path, browserWSEndpoint, prerender = false, baseUrl = 'http:/
 
     const ttRenderMs = Date.now() - start;
 
-    await cacheRef.save(html, {
-      gzip: true
-    });
+    if (!isDeepLinkBot) {
+      await cacheRef.save(html, {
+        gzip: true
+      });
+    }
 
     return { html, ttRenderMs };
   } catch (err) {

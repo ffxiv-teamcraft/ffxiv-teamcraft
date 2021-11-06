@@ -78,7 +78,7 @@ app.get('*', async (req, res) => {
     const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
 
     if (isPrerender || isDeepLinkBot || (!noSEO && isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
-      const { html } = await ssr(req.path, browserWSEndpoint);
+      const { html } = await ssr(req.path, browserWSEndpoint, isDeepLinkBot);
       return res.status(200).send(html);
     } else {
       res.sendFile(join(DIST_FOLDER, 'index.html'));
