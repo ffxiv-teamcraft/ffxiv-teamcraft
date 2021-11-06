@@ -12,8 +12,6 @@ const storage = new Storage();
 const bucket = storage.bucket('ssr.beta.ffxivteamcraft.com');
 const URL = urlModule.URL;
 
-const BASE_URL = 'http://localhost:8080';
-
 const GtFish = readFileSync(join(__dirname, '../output/gt-fish.js'));
 const GtNodes = readFileSync(join(__dirname, '../output/gt-nodes.js'));
 
@@ -39,8 +37,9 @@ function removeScripts(pageContent) {
  *     provided, Puppeteer's reconnects to the browser instance. Otherwise,
  *     a new browser instance is launched.
  * @param prerender Is this for prerendering? If yes, no content will be returned if cache is hit.
+ * @param baseUrl Base url for the website to SSR
  */
-async function ssr(path, browserWSEndpoint, prerender = false) {
+async function ssr(path, browserWSEndpoint, prerender = false, baseUrl = 'http://localhost:8080') {
   const start = Date.now();
   const cacheRef = bucket.file(`${path.slice(1)}.html`);
   const [exists] = await cacheRef.exists();
@@ -52,7 +51,7 @@ async function ssr(path, browserWSEndpoint, prerender = false) {
     const ttRenderMs = Date.now() - start;
     return { html: content.toString(), ttRenderMs };
   }
-  const url = `${BASE_URL}${path}`;
+  const url = `${baseUrl}${path}`;
 
   const browser = await puppeteer.connect({ browserWSEndpoint });
   const page = await browser.newPage();
@@ -86,7 +85,7 @@ async function ssr(path, browserWSEndpoint, prerender = false) {
 
     if (req.url().endsWith('.js')) {
       return req.continue({
-        url: `${BASE_URL}${new URL(req.url()).pathname}`
+        url: `${baseUrl}${new URL(req.url()).pathname}`
       });
     }
 
