@@ -73,7 +73,7 @@ app.get('*', async (req, res) => {
   }
   try {
     const isPrerender = req.query['prerender'];
-    const noSEO = false;//req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
+    const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
     const isIndexBot = detectIndexBot(req.headers['user-agent']);
     const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
 
