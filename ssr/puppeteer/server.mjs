@@ -76,8 +76,9 @@ app.get('*', async (req, res) => {
     const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
     const isIndexBot = detectIndexBot(req.headers['user-agent']);
     const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
+    const isAllowedPage = indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1);
 
-    if (isPrerender || isDeepLinkBot || (!noSEO && isIndexBot && indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1))) {
+    if (isPrerender || (isDeepLinkBot && isAllowedPage) || (!noSEO && isIndexBot && isAllowedPage)) {
       const { html } = await ssr(req.path, browserWSEndpoint, isDeepLinkBot);
       return res.status(200).send(html);
     } else {
