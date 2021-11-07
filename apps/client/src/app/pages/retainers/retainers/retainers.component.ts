@@ -9,6 +9,7 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UniversalisService } from '../../../core/api/universalis.service';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 interface RetainerPriceEntry {
   lowest: number,
@@ -33,6 +34,8 @@ const LS_KEY = 'retainers:prices';
 export class RetainersComponent {
 
   static FETCH_COOLDOWN = 2 * 3600 * 1000; //2h
+
+  panelsState$ = new LocalStorageBehaviorSubject('retainers:panels', {});
 
   loading = true;
 
@@ -72,9 +75,11 @@ export class RetainersComponent {
           switchMap(([inventory, retainerPrices]) => {
             const displayWithInventory = display.map(row => {
               row.retainers = row.retainers.map(retainer => {
+                const marketItems = Object.values(inventory.items[inventory.contentId][`${retainer.name}:${ContainerType.RetainerMarket}`] || {});
                 return {
                   ...retainer,
-                  marketItems: Object.values(inventory.items[inventory.contentId][`${retainer.name}:${ContainerType.RetainerMarket}`] || {})
+                  totalSellingPrice: marketItems.reduce((acc, item) => acc + item.unitMbPrice * item.quantity, 0),
+                  marketItems: marketItems
                     .map(entry => {
                       return {
                         ...entry,
@@ -180,6 +185,10 @@ export class RetainersComponent {
     } else {
       return '#f50';
     }
+  }
+
+  updatePanelsState(state: any, retainerName: string, newPanelState: boolean): void {
+    this.panelsState$.next({ ...state, [retainerName]: newPanelState });
   }
 
   trackByRow(index: number, row: any): string {

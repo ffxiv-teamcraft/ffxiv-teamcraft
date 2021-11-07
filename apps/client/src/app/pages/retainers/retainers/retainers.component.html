@@ -32,62 +32,72 @@
           </div>
         </ng-template>
       </nz-divider>
-      <div *ngFor="let retainer of row.retainers; trackBy: trackByRetainer; odd as odd" [class.odd]="odd" class="retainer-row">
-        <div nz-row>
-          <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
-            {{retainer.name}}
-          </div>
-          <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-            {{'RETAINERS.Selling' | translate:{ amount: retainer.itemSellingCount } }}
-          </div>
-          <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-            <span class="companion-svg" [innerHTML]="retainer.job | jobUnicode"></span>
-            {{retainer.level}}
-          </div>
-          <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-            <app-item-icon [disableClick]="true" [itemId]="1" width="32"></app-item-icon>
-            {{retainer.gil | number:'1.0-0':translate.currentLang}}
-          </div>
-          <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
-            {{'RETAINERS.X_items' | translate:{ amount: retainer.itemCount } }}
-          </div>
-          <div nz-col nzMd="8" fxLayout="row" fxLayoutAlign="flex-start center">
-            {{retainer.task | i18nRow:'ventures' | i18n}}
-          </div>
-          <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
-            <ng-container *ngIf="retainer.taskDone; else taskCompleteDate">
-              <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i> {{'RETAINERS.Task_complete' | translate}}
-            </ng-container>
-            <ng-template #taskCompleteDate>
-              <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.remainingTime | timer}}
-            </ng-template>
-          </div>
-        </div>
-        <div class="market-items" nz-row>
-          <div nz-col nzOffset="2" nzMd="22" *ngFor="let item of retainer.marketItems; trackBy: trackByItemId; let oddItem = odd" [class.odd]="oddItem"
-               class="market-item-row">
-            <div nz-row>
-              <div nz-col nzMd="6" fxLayoutAlign="flex-start center">
-                <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq" class="task-icon"></app-item-icon>
-                <div>{{item.itemId | itemName | i18n}}</div>
-                <div>&nbsp;x{{item.quantity}}</div>
+      <div fxLayout="column" fxLayoutGap="10px" *ngIf="panelsState$ | async as panelsState">
+        <div *ngFor="let retainer of row.retainers; trackBy: trackByRetainer">
+          <nz-collapse>
+            <nz-collapse-panel [nzHeader]="retainerHeader" [nzActive]="panelsState[retainer.name]"
+                               (nzActiveChange)="updatePanelsState(panelsState,retainer.name, $event)">
+              <ng-template #retainerHeader>
+                <div nz-row>
+                  <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
+                    {{retainer.name}}
+                  </div>
+                  <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+                    {{'RETAINERS.Selling' | translate:{ amount: retainer.itemSellingCount } }}
+                    ({{retainer.totalSellingPrice | number:'1.0-0':translate.currentLang}}gil)
+                  </div>
+                  <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <span class="companion-svg" [innerHTML]="retainer.job | jobUnicode"></span>
+                    {{retainer.level}}
+                  </div>
+                  <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <app-item-icon [disableClick]="true" [itemId]="1" width="32"></app-item-icon>
+                    {{retainer.gil | number:'1.0-0':translate.currentLang}}
+                  </div>
+                  <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="flex-start center">
+                    {{'RETAINERS.X_items' | translate:{ amount: retainer.itemCount } }}
+                  </div>
+                  <div nz-col nzMd="8" fxLayout="row" fxLayoutAlign="flex-start center">
+                    {{retainer.task | i18nRow:'ventures' | i18n}}
+                  </div>
+                  <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <ng-container *ngIf="retainer.taskDone; else taskCompleteDate">
+                      <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i> {{'RETAINERS.Task_complete' | translate}}
+                    </ng-container>
+                    <ng-template #taskCompleteDate>
+                      <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.remainingTime | timer}}
+                    </ng-template>
+                  </div>
+                </div>
+              </ng-template>
+              <div class="market-items" nz-row>
+                <div nz-col nzOffset="2" nzMd="22" *ngFor="let item of retainer.marketItems; trackBy: trackByItemId; let oddItem = odd" [class.odd]="oddItem"
+                     class="market-item-row">
+                  <div nz-row>
+                    <div nz-col nzMd="6" fxLayoutAlign="flex-start center">
+                      <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq" class="task-icon"></app-item-icon>
+                      <div>{{item.itemId | itemName | i18n}}</div>
+                      <div>&nbsp;x{{item.quantity}}</div>
+                    </div>
+                    <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="5px">
+                      <app-item-icon width="24" itemId="1"></app-item-icon>
+                      <div>{{item.unitMbPrice ? (item.unitMbPrice | number:'1.0-0':translate.currentLang) : '???'}}</div>
+                    </div>
+                    <div nz-col nzMd="6" *ngIf="item.mbStatus">
+                      <nz-tag class="custom-tag"
+                              [style.border-color]="getDiffTagColor(item.mbStatus.diff)"
+                              nz-tooltip
+                              [nzTooltipTitle]="(item.mbStatus.diff > 0 ? 'RETAINERS.X%_above' : 'RETAINERS.X%_below') | translate:{diff: item.mbStatus.diff}">
+                        {{item.mbStatus.diff > 0 ? '+' : ''}}{{item.mbStatus.diff}}%
+                      </nz-tag>
+                      <nz-tag>{{'RETAINERS.Lowest_price' | translate}}: {{item.mbStatus.lowest | number:'1.0-0':translate.currentLang}}</nz-tag>
+                      <a href="https://universalis.app/market/{{item.itemId}}" target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div nz-col nzMd="4" fxLayout="row" fxLayoutGap="5px">
-                <app-item-icon width="24" itemId="1"></app-item-icon>
-                <div>{{item.unitMbPrice ? (item.unitMbPrice | number:'1.0-0':translate.currentLang) : '???'}}</div>
-              </div>
-              <div nz-col nzMd="6" *ngIf="item.mbStatus">
-                <nz-tag class="custom-tag"
-                        [style.border-color]="getDiffTagColor(item.mbStatus.diff)"
-                        nz-tooltip
-                        [nzTooltipTitle]="(item.mbStatus.diff > 0 ? 'RETAINERS.X%_above' : 'RETAINERS.X%_below') | translate:{diff: item.mbStatus.diff}">
-                  {{item.mbStatus.diff > 0 ? '+' : ''}}{{item.mbStatus.diff}}%
-                </nz-tag>
-                <nz-tag>{{'RETAINERS.Lowest_price' | translate}}: {{item.mbStatus.lowest | number:'1.0-0':translate.currentLang}}</nz-tag>
-                <a href="https://universalis.app/market/{{item.itemId}}" target="_blank">{{'MARKETBOARD.More_on_universalis' | translate}}</a>
-              </div>
-            </div>
-          </div>
+            </nz-collapse-panel>
+          </nz-collapse>
         </div>
       </div>
     </ng-container>
