@@ -58,20 +58,9 @@ jobs:
           command: yarn run codecov
 
 
-  e2e:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Testing
-          command: yarn run e2e:ci
-
-
   build:
-    working_directory: ~/ffxiv-teamcraft
-    docker:
-      - image: supamiu/circleci-node-wine
+    <<: *defaults
+    resource_class: large
     steps:
       - attach_workspace:
           at: ~/
@@ -91,11 +80,18 @@ jobs:
             - .cache/*
 
 
-  deploy-firebase-hosting:
-    <<: *defaults
+  deploy-hosting:
+    docker:
+      - image: google/cloud-sdk
+        auth:
+          username: _json_key
+          password: $GCLOUD_SERVICE_KEY
     steps:
       - attach_workspace:
           at: ~/
+      - run:
+          name: Updating Cloud Run
+          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy --image gcr.io/ffxivteamcraft/ssr
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
@@ -165,7 +161,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-firebase-hosting:
+      - deploy-hosting:
           requires:
             - deploy-cdn
           filters:

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
-import { EMPTY, interval, Observable, of, Subject, Subscription } from 'rxjs';
+import { EMPTY, interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { IpcService } from '../electron/ipc.service';
 
 @Injectable({ providedIn: 'root' })
 export class LodestoneService {
@@ -15,7 +16,7 @@ export class LodestoneService {
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
   constructor(private userService: UserService, private xivapi: XivapiService,
-              private http: HttpClient) {
+              private http: HttpClient, private ipc: IpcService) {
     if (!LodestoneService.INTERVAL) {
       LodestoneService.INTERVAL = interval(1000).subscribe((i) => {
         const subject = LodestoneService.QUEUE.shift();
@@ -26,22 +27,30 @@ export class LodestoneService {
     }
   }
 
-  public getFromLodestoneApi(endpoint: string, columns?: string[]): Observable<Partial<CharacterResponse>> {
-    let params = new HttpParams();
-    if (columns) {
-      params = params.set('columns', columns.join(','));
+  public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
+    if (this.ipc.ready) {
+      const result$ = new ReplaySubject();
+      this.ipc.once('lodestone:character', (event, res) => {
+        result$.next(res);
+      });
+      this.ipc.send('lodestone:getCharacter', id);
+    } else {
+      let params = new HttpParams();
+      if (columns) {
+        params = params.set('columns', columns.join(','));
+      }
+      return this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params }).pipe(
+        map(res => {
+          return {
+            ...res,
+            Character: {
+              ...res.Character,
+              Server: res.Character.World
+            }
+          };
+        })
+      );
     }
-    return this.http.get<any>(`https://lodestone.ffxivteamcraft.com${endpoint}`, { params }).pipe(
-      map(res => {
-        return {
-          ...res,
-          Character: {
-            ...res.Character,
-            Server: res.Character.World
-          }
-        };
-      })
-    );
   }
 
   public getCharacter(id: number, noCache = false): Observable<Partial<CharacterResponse>> {
@@ -50,7 +59,7 @@ export class LodestoneService {
       LodestoneService.CACHE[id] = trigger.pipe(
         switchMap(() => {
           if (noCache || !this.getCachedCharacter(id)) {
-            return this.getFromLodestoneApi(`/Character/${id}`).pipe(
+            return this.getCharacterFromLodestoneApi(id).pipe(
               tap(res => this.cacheCharacter(res))
             );
           } else {

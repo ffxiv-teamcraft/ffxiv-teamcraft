@@ -24,7 +24,7 @@ export class VerificationPopupComponent implements OnDestroy {
   constructor(private lodestone: LodestoneService, private authFacade: AuthFacade) {
     this.verificationResult$ = this.startVerify$.pipe(
       switchMap(code => {
-        return this.lodestone.getFromLodestoneApi(`/Character/${this.lodestoneId}`, ['Character.Bio']).pipe(
+        return this.lodestone.getCharacterFromLodestoneApi(this.lodestoneId, ['Character.Bio']).pipe(
           map(res => {
             return { verified: res.Character.Bio.indexOf(code) > -1 };
           })
