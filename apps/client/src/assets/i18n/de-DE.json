@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreon-Unterstützer",
     "Contributors": "Mitwirkende"
   },
-  "Patreon_login_success": "Patreon login success!",
+  "Patreon_login_success": "Anmeldung mit Patreon erfolgreich!",
   "Hide_if_empty": "Verstecken, wenn leer",
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
@@ -362,7 +362,7 @@
   "Email_not_found": "E-Mail nicht gefunden",
   "Email_sent": "Eine E-Mail mit Anweisungen, wie du dein Passwort ändern kannst, wurde verschickt",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn!",
+    "Spawned": "{{itemName}} erscheint!",
     "See_on_map": "Position",
     "Note": "Notiz"
   },
@@ -488,7 +488,7 @@
     "Has_access_to_housing_vendor": "Haushändler bevorzugen",
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
     "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
-    "Reload_auth_token": "Reload auth token",
+    "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -559,19 +559,19 @@
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
-      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
+      "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus dem Profil entfernt werden.",
       "Error": "Der Code konnte nicht in deiner Biografie gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
     }
   },
   "LISTS": {
     "Load_archived": "Archivierte Listen laden",
-    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
+    "Needs_verification": "Bitte verifiziere deinen Charakter, um Zugriff auf die Listen zu haben, die mit deiner FG geteilt werden können (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
     "Merge_lists": "Listen zusammenfassen",
     "Merge_lists_warning": "Große Listen werden nicht angezeigt, da diese aufgrund von Datenbanklimitierungen nicht zusammengefügt werden können.",
-    "Lists_merged": "Lists merged with success!",
+    "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Mit dir geteilte Listen",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
     "Reset_selection": "Auswahl zurücksetzen",
@@ -640,7 +640,7 @@
     "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "Requirements_ignored": "Requirements ignored",
-    "Mark_whole_panel_nq": "Remove manual HQ flags",
+    "Mark_whole_panel_nq": "Manuelle HQ-Markierungen entfernen",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
       "Default": "Standard",
@@ -2562,7 +2562,7 @@
     "Task_completed_notification_title": "{{name}} hat die Unternehmung beendet",
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
     "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
-    "Reset_retainers": "Reset retainers",
+    "Reset_retainers": "Gehilfen zurücksetzen",
     "Check_prices": "Vergleiche die Verkaufspreise mit dem Marktbrett (2h Abklingzeit)",
     "Cannot_fetch": "Preischeck ist auf 2h Abklingzeit, letzte Preisüberprüfung: {{date}}",
     "X%_above": "Dein Preis liegt {{diff}}% über dem derzeit niedrigsten Preis",
@@ -2778,7 +2778,7 @@
     "Data_needs": "Elemente, die Daten benötigen",
     "Open_reports": "Berichtsseite öffnen",
     "Fishing": "Fischen",
-    "Others": "Other items",
+    "Others": "Andere Gegenstände",
     "Ocean_fishing_time": "Ocean fishing time",
     "Fate_placeholder": "FATE-Name eingeben",
     "Open_details": "No space for the details, open the page to approve or reject",
@@ -2790,7 +2790,7 @@
     "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
     "Open_item": "Open in Allagan Reports",
     "Delete": "Delete",
-    "Voyage_rarity": "Rarity",
+    "Voyage_rarity": "Seltenheit",
     "Rarity_Common": "Common",
     "Rarity_Voyage_exclusive": "Voyage exclusive",
     "Rarity_Rare": "Rare",
