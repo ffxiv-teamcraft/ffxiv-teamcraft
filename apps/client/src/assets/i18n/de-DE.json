@@ -2784,16 +2784,16 @@
     "Open_details": "No space for the details, open the page to approve or reject",
     "Accept_many": "Accept selected reports ({{amount}})",
     "Reject_many": "Reject selected reports ({{amount}})",
-    "Jump_to_item": "Jump to another item",
-    "Price": "Price",
-    "Product_id": "Product ID",
-    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
-    "Open_item": "Open in Allagan Reports",
-    "Delete": "Delete",
+    "Jump_to_item": "Zu einem anderen Element springen",
+    "Price": "Preis",
+    "Product_id": "Produkt-ID",
+    "Product_id_explain": "Die ID des Produkts, befindet sich in der Shop-URL direkt nach \"/product/\"",
+    "Open_item": "In Allagischen Meldungen öffnen",
+    "Delete": "Löschen",
     "Voyage_rarity": "Seltenheit",
-    "Rarity_Common": "Common",
+    "Rarity_Common": "Häufig",
     "Rarity_Voyage_exclusive": "Voyage exclusive",
-    "Rarity_Rare": "Rare",
+    "Rarity_Rare": "Selten",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
     "SOURCE": {
@@ -2808,7 +2808,7 @@
       "FISHING": "FISCHEN",
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
-      "MOGSTATION": "MOGSTATION"
+      "MOGSTATION": "Online-Shop"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
