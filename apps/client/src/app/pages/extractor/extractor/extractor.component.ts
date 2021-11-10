@@ -415,7 +415,8 @@ export class ExtractorComponent {
                 gatheringNode: node,
                 alarms: this.alarmsFacade.generateAlarms(node)
               };
-            }), entry => entry.gatheringNode.baits && entry.gatheringNode.baits[0]);
+            }), entry => entry.gatheringNode.baits && entry.gatheringNode.baits[0])
+            .slice(0, 3);
         })
       );
   }
