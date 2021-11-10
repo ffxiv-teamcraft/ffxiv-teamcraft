@@ -1,6 +1,6 @@
 import { switchMap, tap } from 'rxjs/operators';
 import { AbstractExtractor } from '../abstract-extractor';
-import { pickBy } from 'lodash';
+import { pickBy, uniq } from 'lodash';
 
 enum AllaganReportSource {
   FISHING = 'FISHING',
@@ -138,7 +138,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
       }
       targetObject[targetItem] = sourceDetails;
     } else {
-      targetObject[targetItem] = [...(targetObject[targetItem] || []), sourceDetails];
+      targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
     }
   }
 
