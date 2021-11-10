@@ -26,7 +26,8 @@ export class FishBaitsComponent {
             name: names.find((i) => i.id === bait.id)?.name ?? '--',
             value: bait.occurrences,
             baitId: bait.id
-          }));
+          }))
+            .sort((a,b) => b.value - a.value);
         }),
         debounceTime(100)
       );
