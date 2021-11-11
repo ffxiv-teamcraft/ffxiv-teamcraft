@@ -4389,7 +4389,7 @@
     "ko": "대상에게 무속성 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300"
   },
   "16534": {
-    "ko": "[MacroError]"
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>치유의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 1개 소비하여 자신과 주위 파티원의 HP를 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>회복력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 자신에게 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 부여"
   },
   "16535": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>피의 백합 3단계<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소비하여 대상과 그 주위 적에게 무속성 범위 마법 공격을 가합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>위력<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 900\n2번째 대상부터는 위력이 25% 감소합니다."
