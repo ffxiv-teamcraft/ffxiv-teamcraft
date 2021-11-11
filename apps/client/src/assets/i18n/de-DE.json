@@ -2223,7 +2223,7 @@
         "Welcome_add_column": "Willkommen beim Übersichtsseiten-Editor. Mit dieser Schaltfläche kannst du Spalten hinzufügen (bis zu 5).",
         "Save": "Vergiss nicht die Änderungen zu speichern, nachdem du deine Übersichtsseite bearbeitet hast.",
         "Revert": "Oder, sollt dir nicht gefallen, was du geändert hast, verwende diese Schaltfläche, um zum ursprünglichen Layout zurückzukehren, dass du hattest, bevor du es bearbeitet hast.",
-        "Delete_column": "Want to remove a column? Here it is!",
+        "Delete_column": "Möchtest du eine Spalte entfernen? Hier kannst du es!",
         "Add_panel": "Klicke hier, um ein neues Element zu erstellen.",
         "Reorder": "Per Drag & Drop kannst du die Elemente überall dahin schieben, wo du sie haben willst.",
         "Data_type": "Wähle zuerst den Typ der Metrik aus, den du verwenden möchtest.",
@@ -2723,7 +2723,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "Neue Funktion: Allagische Meldungen",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "Du hast ein Element mit fehlenden Daten gefunden? Du kannst nun Gegenstandsquellen im Allagischen Meldungssystem (Allgemein > Allagische Meldungen) melden und sie in das folgende Update einbinden lassen!",
     "Title": "Allagische Meldungen",
     "Reports": "Meldungen",
     "Pending_changes": "Ausstehende Änderungen",
