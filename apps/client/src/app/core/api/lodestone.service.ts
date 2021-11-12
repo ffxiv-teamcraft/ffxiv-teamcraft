@@ -27,30 +27,61 @@ export class LodestoneService {
     }
   }
 
-  public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
+  public searchCharacter(name: string, server: string): Observable<Partial<Character>[]> {
+    let dataSource$: Observable<Partial<Character>[]>;
     if (this.ipc.ready) {
-      const result$ = new ReplaySubject();
+      const result$ = new ReplaySubject<Partial<Character>[]>();
+      this.ipc.once('lodestone:character:search', (event, res) => {
+        result$.next(res.map(char => {
+          return {
+            ...char,
+            Server: char.World
+          };
+        }));
+      });
+      this.ipc.send('lodestone:searchCharacter', { name, server });
+      dataSource$ = result$.asObservable();
+    } else {
+      const params = new HttpParams().set('name', name).set('server', server);
+      dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/Search`, { params });
+    }
+    return dataSource$.pipe(
+      map(res => res.map(char => {
+        return {
+          ...char,
+          Server: (char as any).World
+        };
+      }))
+    );
+  }
+
+  public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
+    let dataSource$: Observable<Partial<CharacterResponse>>;
+    if (this.ipc.ready) {
+      const result$ = new ReplaySubject<Partial<CharacterResponse>>();
       this.ipc.once('lodestone:character', (event, res) => {
         result$.next(res);
       });
       this.ipc.send('lodestone:getCharacter', id);
+      dataSource$ = result$.asObservable();
     } else {
       let params = new HttpParams();
       if (columns) {
         params = params.set('columns', columns.join(','));
       }
-      return this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params }).pipe(
-        map(res => {
-          return {
-            ...res,
-            Character: {
-              ...res.Character,
-              Server: res.Character.World
-            }
-          };
-        })
-      );
+      dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
     }
+    return dataSource$.pipe(
+      map(res => {
+        return {
+          ...res,
+          Character: {
+            ...res.Character,
+            Server: (res.Character as any).World
+          }
+        };
+      })
+    );
   }
 
   public getCharacter(id: number, noCache = false): Observable<Partial<CharacterResponse>> {

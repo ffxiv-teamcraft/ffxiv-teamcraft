@@ -65,6 +65,8 @@ import { getMainDefinition } from 'apollo-utilities';
 import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../environments/is-headless';
 
+declare const gtag: Function;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -417,6 +419,8 @@ export class AppComponent implements OnInit {
           });
           this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
         }
+        gtag('set', 'page', event.url);
+        gtag('send', 'pageview');
         const languageIndex = event.url.indexOf('?lang=');
         if (languageIndex > -1) {
           this.use(event.url.substr(languageIndex + 6, 2), false, true);
@@ -472,7 +476,7 @@ export class AppComponent implements OnInit {
           this.ipc.send('app-ready', true);
           this.dataLoaded = true;
           this.cd.detectChanges();
-        }, 500);
+        }, 1500);
       }
     }
 

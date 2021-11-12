@@ -3116,10 +3116,10 @@
   resolved "https://registry.yarnpkg.com/@xivapi/angular-client/-/angular-client-1.8.1.tgz#e23f56540424695ffe8af6432f68323d537f0e35"
   integrity sha512-tVT0zizCHUyFzxyi8b7719lc3a/MbbAaYtBDIEyH7Tc+AjtN4hKrJQZX3VQFtzKL9lnuZiFYvGNw9903z7M5pw==
 
-"@xivapi/nodestone@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@xivapi/nodestone/-/nodestone-0.1.4.tgz#eff03181e7bc14fff32fb02a696b54c59d46fa51"
-  integrity sha512-kIZPCsmYoVeabnb5ngawz7L7sCVHecqytZvQ67+HATDzOJRNbQx3CCAo9Tv3HVXDeHvuNe9wuGWVQXCKqD8mNQ==
+"@xivapi/nodestone@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@xivapi/nodestone/-/nodestone-0.2.1.tgz#5efe72b302eac0ced537054ab5beba51f91413e1"
+  integrity sha512-Ae+RzGtBo23vMaHk7bFKqZ80TA3gUIU4IApC9upEQZmzwnrlmag7kRRUrWcUHeZP7TlELWATMxRNQ3+uo9QGmw==
   dependencies:
     "@types/express" "^4.17.13"
     axios "^0.21.0"

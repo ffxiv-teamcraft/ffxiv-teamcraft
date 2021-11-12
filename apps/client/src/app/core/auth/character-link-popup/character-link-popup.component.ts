@@ -26,7 +26,7 @@ export class CharacterLinkPopupComponent {
 
   public lodestoneId = new FormControl(null);
 
-  public result$: Observable<CharacterSearchResultRow[]>;
+  public result$: Observable<any[]>;
 
   public lodestoneIdCharacter$: Observable<Character>;
 
@@ -100,9 +100,8 @@ export class CharacterLinkPopupComponent {
         tap(() => this.loadingResults = true),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {
-          return this.xivapi.searchCharacter(characterName, selectedServer);
+          return this.lodestoneService.searchCharacter(characterName, selectedServer);
         }),
-        map((result: CharacterSearchResult) => result.Results || []),
         tap(() => this.loadingResults = false),
         startWith([])
       );

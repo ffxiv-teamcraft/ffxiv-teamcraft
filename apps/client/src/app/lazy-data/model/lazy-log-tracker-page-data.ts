@@ -41,25 +41,7 @@ export interface Alarm {
   predators:    any[];
   note:         string;
   enabled:      boolean;
-  aetheryte:    Aetheryte;
   folklore?:    number;
-}
-
-export interface Aetheryte {
-  id:              number;
-  zoneid:          number;
-  map:             number;
-  x:               number;
-  y:               number;
-  z:               number;
-  type:            number;
-  nameid:          number;
-  aethernetCoords: AethernetCoords;
-}
-
-export interface AethernetCoords {
-  x: number;
-  y: number;
 }
 
 export interface Coords {
