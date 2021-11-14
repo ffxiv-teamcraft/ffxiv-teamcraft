@@ -255,6 +255,10 @@ export class InventoryOptimizerComponent {
     this.reloader$.next();
   }
 
+  public getOptimizationJSON(optimization: InventoryOptimization): string {
+    return JSON.stringify(optimization);
+  }
+
   public trackByTip(index: number, opt: InventoryOptimization): string {
     return opt.type;
   }
