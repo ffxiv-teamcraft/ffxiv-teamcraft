@@ -173,7 +173,7 @@ export class ListManagerService {
           // Then we prepare the list row to add.
           return this.lazyData.getRecipes().pipe(
             map(recipes => {
-              const ingredients = recipes.find(r => r.id === craft.id).ingredients ?? [];
+              const ingredients = recipes.find(r => r.id.toString() === craft.id.toString())?.ingredients || [];
               return {
                 ...toAdd,
                 id: data.id,

@@ -40,6 +40,9 @@ export class ListController {
   }
 
   public static isComplete(list: List): boolean {
+    if (!list) {
+      return false;
+    }
     return list.finalItems.length > 0 && !list.finalItems.some(recipe => {
       return recipe.done < recipe.amount;
     });

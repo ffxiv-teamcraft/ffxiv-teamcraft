@@ -8,7 +8,7 @@
                required type="number"/>
       </nz-input-group>
       <ng-template #jobIcon>
-        <img *ngIf="((+control | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+        <img *ngIf="(+control | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
       </ng-template>
     </nz-form-control>
   </nz-form-item>
@@ -23,7 +23,7 @@
 <div *ngIf="items$ | async as supplies" class="results" fxLayout="column" fxLayoutGap="10px">
   <div *ngFor="let row of supplies" nz-row nzGutter="10">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="6" nzSm="24">
-      <img *ngIf="((row.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+      <img *ngIf="(row.job  | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
       <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
     </div>
     <nz-select #selectBox (ngModelChange)="select(row.job, $event.itemId, $event.count)" [ngModel]="null"
