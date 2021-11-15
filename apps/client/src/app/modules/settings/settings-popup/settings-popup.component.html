@@ -206,6 +206,12 @@
           <nz-input-number [(ngModel)]="settings.maximumVendorPrice"></nz-input-number>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Maximum_total_vendor_price' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Maximum_total_vendor_price_explain' | translate">
+          <nz-input-number [(ngModel)]="settings.maximumTotalVendorPrice"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Has_access_to_housing_vendor_explain' | translate">

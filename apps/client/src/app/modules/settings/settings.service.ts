@@ -298,6 +298,14 @@ export class SettingsService {
     this.setSetting('maximum-vendor-price', price.toString());
   }
 
+  public get maximumTotalVendorPrice(): number {
+    return +this.getSetting('maximum-total-vendor-price', '0');
+  }
+
+  public set maximumTotalVendorPrice(price: number) {
+    this.setSetting('maximum-total-vendor-price', price.toString());
+  }
+
   public get pageViews(): number {
     return +this.getSetting('page-views', '0');
   }
