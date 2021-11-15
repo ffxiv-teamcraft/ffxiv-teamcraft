@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 import { SettingsService } from '../../settings/settings.service';
 import { HttpClient } from '@angular/common/http';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-marketboard-popup',
@@ -41,7 +41,7 @@ export class MarketboardPopupComponent implements OnInit {
     value: 'ascend'
   });
 
-  constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataService,
+  constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataFacade,
               public settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
   }
 
@@ -52,10 +52,16 @@ export class MarketboardPopupComponent implements OnInit {
     );
 
     const data$: Observable<MarketboardItem> = this.server$.pipe(
-      map(server => {
-        return [Object.keys(this.lazyData.datacenters).find(dc => {
-          return this.lazyData.datacenters[dc].indexOf(server) > -1;
-        }), server];
+      switchMap(server => {
+        return this.lazyData.datacenters$.pipe(
+          first(),
+          map(datacenters => {
+            const dc = Object.keys(datacenters).find(key => {
+              return datacenters[key].indexOf(server) > -1;
+            });
+            return [dc, server];
+          })
+        );
       }),
       switchMap(([dc, server]) => {
         return this.universalis.getDCPrices(dc, this.itemId).pipe(

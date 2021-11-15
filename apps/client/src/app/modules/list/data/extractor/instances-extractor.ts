@@ -1,18 +1,19 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Instance } from '../../model/instance';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { Observable } from 'rxjs';
 
-export class InstancesExtractor extends AbstractExtractor<Instance[]> {
+export class InstancesExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   getDataType(): DataType {
@@ -20,18 +21,11 @@ export class InstancesExtractor extends AbstractExtractor<Instance[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.instances !== undefined;
+    return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): Instance[] {
-    const instances: Instance[] = [];
-    item.instances.forEach(instanceId => {
-      const instance = itemData.getInstance(instanceId);
-      if (instance !== undefined) {
-        instances.push(instance);
-      }
-    });
-    return instances;
+  protected doExtract(item: Item, itemData: ItemData): Observable<number[]> {
+    return this.lazyData.getRow('instanceSources', item.id);
   }
 
 }

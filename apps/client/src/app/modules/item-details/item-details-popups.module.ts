@@ -29,6 +29,11 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../node-details/node-details.module';
 import { InventoryModule } from '../inventory/inventory.module';
 import { GardeningComponent } from './gardening/gardening.component';
+import { MogstationComponent } from './mogstation/mogstation.component';
+import { QuestsComponent } from './quests/quests.component';
+import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { AchievementsComponent } from './achievements/achievements.component';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 @NgModule({
   imports: [
@@ -52,7 +57,9 @@ import { GardeningComponent } from './gardening/gardening.component';
     TranslateModule,
     AntdSharedModule,
     NodeDetailsModule,
-    InventoryModule
+    InventoryModule,
+    LazyScrollModule,
+    PageLoaderModule
   ],
   declarations: [
     GatheredByComponent,
@@ -67,7 +74,10 @@ import { GardeningComponent } from './gardening/gardening.component';
     FatesComponent,
     DesynthsComponent,
     RelationshipsComponent,
-    GardeningComponent
+    GardeningComponent,
+    MogstationComponent,
+    QuestsComponent,
+    AchievementsComponent
   ],
   exports: [
     GatheredByComponent,
@@ -82,7 +92,10 @@ import { GardeningComponent } from './gardening/gardening.component';
     FatesComponent,
     DesynthsComponent,
     RelationshipsComponent,
-    GardeningComponent
+    GardeningComponent,
+    MogstationComponent,
+    QuestsComponent,
+    AchievementsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

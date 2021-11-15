@@ -30,7 +30,7 @@
         <p [innerHTML]="getDescription(xivapiQuest) | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-                        [value]="xivapiQuest.ID | questName"></app-i18n-display>
+                        [value]="xivapiQuest.ID | i18nRow:'quests'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
@@ -89,7 +89,7 @@
                   </ng-template>
                   <ng-template #description>
                     <div *ngIf="xivapiQuest['ToDoMainLocation'+index]">
-                      {{xivapiQuest['ToDoMainLocation' + index].Map.PlaceName.ID | placeName | i18n}}
+                      {{xivapiQuest['ToDoMainLocation' + index].Map.PlaceName.ID | i18nRow:'places' | i18n}}
                     </div>
                   </ng-template>
                 </nz-list-item-meta>
@@ -115,10 +115,10 @@
               <nz-list-item [nzContent]="more">
                 <nz-list-item-meta
                   [nzAvatar]="questAvatar"
-                  [nzTitle]="quest | questName | i18n">
+                  [nzTitle]="quest | i18nRow:'quests' | i18n">
                   <ng-template #questAvatar>
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <img [src]="quest | questIcon | xivapiIcon" class="img-icon round-icon">
+                      <img [src]="quest | lazyRow:'quests':'icon' | async | xivapiIcon" class="img-icon round-icon">
                     </a>
                   </ng-template>
                   <ng-template #more>
@@ -143,10 +143,10 @@
               <nz-list-item [nzContent]="more">
                 <nz-list-item-meta
                   [nzAvatar]="questAvatar"
-                  [nzTitle]="quest | questName | i18n">
+                  [nzTitle]="quest | i18nRow:'quests' | i18n">
                   <ng-template #questAvatar>
                     <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                      <img [src]="quest | questIcon | xivapiIcon" class="img-icon round-icon">
+                      <img [src]="quest | lazyRow:'quests':'icon' | async | xivapiIcon" class="img-icon round-icon">
                     </a>
                   </ng-template>
                   <ng-template #more>
@@ -171,7 +171,7 @@
               <nz-list-item [nzContent]="more">
                 <nz-list-item-meta
                   [nzAvatar]="npcAvatar"
-                  [nzTitle]="npc | npcName | i18n">
+                  [nzTitle]="npc | i18nRow:'npcs' | i18n">
                   <ng-template #npcAvatar>
                     <a routerLink="/db/{{translate.currentLang}}/npc/{{npc}}">
                       <img class="img-icon round-icon" src="./assets/icons/npc.png">
@@ -222,7 +222,7 @@
                       {{'DB.Experience_points' | translate}} x{{reward.amount}}
                     </div>
                     <div *ngIf="reward.type === 'instance'">
-                      {{reward.id | instanceName | i18n}}
+                      {{reward.id | i18nRow:'instances' | i18n}}
                     </div>
                     <div *ngIf="reward.type === 'action'">
                       {{reward.id | actionName | i18n}}
@@ -315,7 +315,7 @@
                                  [nzTitle]="title">
                 <ng-template #title>
                   <a
-                    routerLink="/db/{{translate.currentLang}}/npc/{{dialogue.Npc[0]}}">{{dialogue.Npc[0] | npcName | i18n}}</a>
+                    routerLink="/db/{{translate.currentLang}}/npc/{{dialogue.Npc[0]}}">{{dialogue.Npc[0] | i18nRow:'npcs' | i18n}}</a>
                 </ng-template>
                 <ng-template #description>
                   <span [innerHtml]="dialogue.Text | xivUIText"></span>

@@ -6,8 +6,6 @@
     <nz-select [(ngModel)]="format">
       <nz-option [nzValue]="'TC'" nzLabel="Teamcraft">
       </nz-option>
-      <nz-option [nzValue]="'CSV-EM'" nzLabel="CSV-EM">
-      </nz-option>
     </nz-select>
   </div>
   <ng-container *ngIf="folders$ | async as folders">

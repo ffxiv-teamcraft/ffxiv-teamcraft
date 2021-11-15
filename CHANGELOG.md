@@ -2,6 +2,203 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.6.8"></a>
+## [8.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.7...v8.6.8) (2021-10-14)
+
+
+### Bug Fixes
+
+* **airship:** updated abbreviations to match community ones ([e84c4bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e84c4bd))
+* **alarms:** fixed a bug with some alarms ringing multiple times for nothing ([f83b6b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f83b6b4))
+* **db:** fixed npc names not loading properly in levequest pages ([d841406](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d841406))
+* **db:** fixed spearfishing spot pages not loading ([3d65c56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d65c56))
+* **log-tracker:** fixed selection not resetting on tab change ([d5fd6cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5fd6cf))
+
+
+### Features
+
+* **db:** importing 500+ ([c6fc5ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6fc5ad))
+
+
+
+<a name="8.6.7"></a>
+## [8.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.6...v8.6.7) (2021-10-10)
+
+
+### Bug Fixes
+
+* **db:** better deduplication for material suppliers ([50d693f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50d693f))
+* **db:** fixed baits display in fish pages ([52f1a7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52f1a7c))
+* **desktop:** fixed withdrawing items from retainer with context menu not tracker properly ([d5621bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5621bf))
+* **fishing:** better handling of double weather spawns ([867a289](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/867a289))
+* **i18n:** fixed missing translation for ilvl filters ([ae843d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae843d5))
+
+
+
+<a name="8.6.6"></a>
+## [8.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.5...v8.6.6) (2021-10-07)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms going into infinite regeneration loop ([0104296](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0104296))
+
+
+### Features
+
+* **db:** imports from allagan reports ([473be44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/473be44))
+
+
+
+<a name="8.6.5"></a>
+## [8.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.4...v8.6.5) (2021-10-06)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms sometimes getting stuck trying to regenerate forever ([177a8da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/177a8da))
+* **allagan-reports:** fix for fishing coverage ([a23d5bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a23d5bb))
+* **db:** fixed bugged report with some intuition instructions ([0ee0c3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ee0c3e))
+* **db:** fixed wrong color scheme in fishing spot's bite times chart ([615cacf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/615cacf))
+
+
+
+<a name="8.6.4"></a>
+## [8.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.3...v8.6.4) (2021-10-05)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed display for voyage rarity ([c1e944a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1e944a))
+
+
+### Performance Improvements
+
+* **allagan-reports:** better network performances ([6b01ddd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b01ddd))
+
+
+
+<a name="8.6.3"></a>
+## [8.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.2...v8.6.3) (2021-10-05)
+
+
+### Bug Fixes
+
+* **alarms:** fixed hookset icon for fishing alarms ([e8657b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8657b2))
+* **currency-spending:** use price per currency spent for the ordering formula ([e1e9f07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1e9f07))
+* **db:** better ordering for tugs in bit times chart ([dc75552](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc75552))
+* **db:** better quests parsing ([258db27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/258db27))
+* **db:** fixed masterbooks not shown properly on recipes ([b5b5b8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5b5b8b))
+
+
+### Features
+
+* **allagan-reports:** better display for a distinction between instances and maps ([de7eb23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de7eb23))
+* **allagan-reports:** filter system for data checkers ([92357e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92357e0))
+* **allagan-reports:** new details field for voyage source: rarity ([23a0e7f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23a0e7f))
+* **db:** new data from allagan-reports ([146ad36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/146ad36))
+
+
+
+<a name="8.6.2"></a>
+## [8.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.1...v8.6.2) (2021-10-04)
+
+
+### Bug Fixes
+
+* **alarms:** fixed double weather alarms not computed properly ([f59f41e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f59f41e))
+* **allagan-reports:** filtered some outdated items from the items needing data ([570a772](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/570a772))
+* **auth:** better JWT token management ([26ed9f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/26ed9f4))
+* **db:** fixed "include misses" toggle in fishing spot pages ([78e530c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78e530c))
+* **db:** fixed gathering nodes not listing bonuses anymore ([572fd59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/572fd59))
+* **db:** fixed source for some traded materials not being extracted properly ([a7ff331](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7ff331))
+
+
+### Features
+
+* **allagan-reports:** you can now submit bozja, eureka and other maps as sources ([7800e28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7800e28))
+* **db:** new automated data source extractor: Achievements ([2f32e32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f32e32))
+* **db:** new automated data source: quests ([0bff3f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0bff3f1))
+
+
+
+<a name="8.6.1"></a>
+## [8.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.0...v8.6.1) (2021-10-03)
+
+
+### Bug Fixes
+
+* **db:** fixed multiple predator fish not being displayed properly ([001b61c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/001b61c))
+* **db:** removed ocean fishing time details shown on every single gathering node details ([2119c0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2119c0f))
+* **list:** added missing deterministic venture sources ([3c8b920](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c8b920))
+* **list:** fixed instance details not displayed properly ([46c4f3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46c4f3a))
+* **nodes:** fixed fishing spot db button opening spearfishing spot page instead ([321b43c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/321b43c))
+
+
+### Features
+
+* **retainers:** new button to open details in Universalis and better duplicate management ([66732ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66732ef))
+* new supporters: The Hoe Depot and Late Night Friendos ([1c23fc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c23fc2))
+* **allagan-reports:** better review system for the checkers ([2269e44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2269e44))
+* **db:** imported 500+ new allagan reports ([033a375](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/033a375))
+* **db:** new data source: Mogstation, available in the allagan reports too ([44a2988](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44a2988))
+* **settings:** new button to reload you gubal auth token ([725422a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/725422a))
+
+
+
+<a name="8.6.0"></a>
+# [8.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.9...v8.6.0) (2021-10-02)
+
+
+### Bug Fixes
+
+* **db:** fixed a bug with fishing spot bite times chart and baits with few data points ([6c564d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c564d6))
+
+
+### Features
+
+* **data:** update for cn patch-5.55 ([96b68ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96b68ff))
+* **db:** added # of records for hookset and tug display in fish details ([d43a0f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d43a0f7))
+* **db:** added new misses toggle for bait datagrid in fishing spot pages ([0ed78f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ed78f0))
+* **db:** new data report system to add missing sources by hand ([84038f9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84038f9))
+* **retainers:** you can now track items sold on MB ([203c804](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/203c804))
+
+
+
+<a name="8.5.9"></a>
+## [8.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.8...v8.5.9) (2021-09-22)
+
+
+### Bug Fixes
+
+* **alarms:** fixed weather + time alarms not being accurate with twice the same weather in a row ([e19af24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e19af24))
+* **marketboard:** fixed server MB data fetching not working at all ([0f6d553](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f6d553))
+
+
+
+<a name="8.5.8"></a>
+## [8.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.7...v8.5.8) (2021-09-21)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms with same weather transition crashing the system ([dd66b45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd66b45))
+* **currency-spending:** now using server prices only for price checking ([01bb025](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01bb025))
+* **leveling-equipment:** cannot wear the same unique ring twice anymore ([1e44ccd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e44ccd))
+
+
+
+<a name="8.5.7"></a>
+## [8.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.6...v8.5.7) (2021-09-19)
+
+
+### Bug Fixes
+
+* **alarms:** better fix for weather transition detection ([4aadc5f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4aadc5f))
+* **profile:** hotfix for profile and marketboard popup not loading at all ([63bb72e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63bb72e))
+
+
+
 <a name="8.5.6"></a>
 ## [8.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.5.5...v8.5.6) (2021-09-19)
 

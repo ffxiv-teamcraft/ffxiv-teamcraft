@@ -8,6 +8,7 @@ import { CommissionTag } from '../commission-board/model/commission-tag';
 import { Language } from '../../core/data/language';
 import { NotificationSettings } from './notification-settings';
 import { SoundNotificationType } from '../../core/sound-notification/sound-notification-type';
+import { IS_HEADLESS } from '../../../environments/is-headless';
 
 @Injectable({
   providedIn: 'root'
@@ -297,6 +298,14 @@ export class SettingsService {
     this.setSetting('maximum-vendor-price', price.toString());
   }
 
+  public get maximumTotalVendorPrice(): number {
+    return +this.getSetting('maximum-total-vendor-price', '0');
+  }
+
+  public set maximumTotalVendorPrice(price: number) {
+    this.setSetting('maximum-total-vendor-price', price.toString());
+  }
+
   public get pageViews(): number {
     return +this.getSetting('page-views', '0');
   }
@@ -330,7 +339,7 @@ export class SettingsService {
   }
 
   public get compactSidebar(): boolean {
-    return this.getBoolean('compact-sidebar', false);
+    return IS_HEADLESS ? true : this.getBoolean('compact-sidebar', false);
   }
 
   public set compactSidebar(compact: boolean) {
@@ -824,6 +833,14 @@ export class SettingsService {
 
   public set hideCompletedLogEntries(enabled: boolean) {
     this.setBoolean('hideCompletedLogEntries', enabled);
+  }
+
+  public get showNotRequiredLogEntries(): boolean {
+    return this.getBoolean('showNotRequiredLogEntries', false);
+  }
+
+  public set showNotRequiredLogEntries(enabled: boolean) {
+    this.setBoolean('showNotRequiredLogEntries', enabled);
   }
 
   public get showSearchFilters(): boolean {

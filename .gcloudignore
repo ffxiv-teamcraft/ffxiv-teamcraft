@@ -1,0 +1,11 @@
+/[!.]*
+/.?*
+
+!/dist
+!/ssr
+!/Dockerfile
+!/.dockerignore
+
+/ssr/node_modules
+/ssr/dist
+/ssr/output

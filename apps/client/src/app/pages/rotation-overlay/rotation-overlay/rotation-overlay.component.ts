@@ -16,14 +16,6 @@ export class RotationOverlayComponent {
 
   public rotation$: Observable<CraftingRotation>;
 
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
-  private get registry() {
-    return this.simulator.CraftingActionsRegistry;
-  }
-
   constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute,
               private simulationService: SimulationService, private settings: SettingsService) {
     this.rotation$ = this.route.paramMap.pipe(
@@ -40,6 +32,14 @@ export class RotationOverlayComponent {
         return rotation;
       })
     );
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
   }
 
 }

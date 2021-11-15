@@ -4,13 +4,14 @@ import { combineLatest, merge, Observable, of } from 'rxjs';
 import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { FormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { IntegrityCheckPopupComponent } from './integrity-check-popup/integrity-check-popup.component';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-users',
@@ -45,7 +46,8 @@ export class UsersComponent {
 
   constructor(private userService: UserService, private xivapi: XivapiService,
               private angularFireAuth: AngularFireAuth, private gcf: AngularFireFunctions,
-              private modal: NzModalService, private translate: TranslateService) {
+              private modal: NzModalService, private translate: TranslateService,
+              private lodestone: LodestoneService) {
 
     // From UID
     const usersFromUid$ = this.uidFilter.valueChanges.pipe(
@@ -88,9 +90,8 @@ export class UsersComponent {
         tap(() => this.loadingResults = true),
         debounceTime(500),
         switchMap(([selectedServer, characterName]) => {
-          return this.xivapi.searchCharacter(characterName, selectedServer);
+          return this.lodestone.searchCharacter(characterName, selectedServer);
         }),
-        map((result: CharacterSearchResult) => result.Results || []),
         switchMap(results => {
           if (results.length === 0) {
             return of([]);
@@ -101,7 +102,7 @@ export class UsersComponent {
             })
           ).pipe(
             map(res => {
-              return [].concat.apply([], res)
+              return [].concat.apply([], res);
             })
           );
         }),

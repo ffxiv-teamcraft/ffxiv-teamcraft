@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'weatherIcon',
+  name: 'weatherIcon'
 })
 export class WeatherIconPipe implements PipeTransform {
   transform(id: number): string | undefined {

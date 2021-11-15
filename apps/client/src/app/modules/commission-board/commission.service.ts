@@ -1,15 +1,15 @@
 import { FirestoreRelationalStorage } from '../../core/database/storage/firestore/firestore-relational-storage';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
 import { catchError, map, mapTo, switchMap, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Commission } from './model/commission';
-import { QueryFn } from '@angular/fire/firestore/interfaces';
+import { QueryFn } from '@angular/fire/compat/firestore/interfaces';
 import { CommissionStatus } from './model/commission-status';
-import { AngularFireMessaging } from '@angular/fire/messaging';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireMessaging } from '@angular/fire/compat/messaging';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { CommissionTag } from './model/commission-tag';
 
 @Injectable({ providedIn: 'root' })

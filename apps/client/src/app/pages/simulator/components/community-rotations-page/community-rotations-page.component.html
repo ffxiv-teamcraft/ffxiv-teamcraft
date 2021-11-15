@@ -99,7 +99,7 @@
                      nzShowSearch>
             <nz-option *ngFor="let set of sets; let index = index"
                        [nzValue]="index"
-                       nzLabel="{{set.jobId | jobAbbr | i18n}}{{set.specialist?'★':''}} - {{set.craftsmanship}}/{{set.control}}/{{set.cp}}"></nz-option>
+                       nzLabel="{{set.jobId | i18nRow:'jobAbbr' | i18n}}{{set.specialist?'★':''}} - {{set.craftsmanship}}/{{set.control}}/{{set.cp}}"></nz-option>
           </nz-select>
         </div>
       </div>

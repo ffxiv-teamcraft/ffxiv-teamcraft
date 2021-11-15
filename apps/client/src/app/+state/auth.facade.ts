@@ -24,10 +24,10 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { UserCredential } from '@firebase/auth-types';
 import { catchError, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
@@ -41,7 +41,7 @@ import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
-import { AngularFireFunctions } from '@angular/fire/functions';
+import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
@@ -71,7 +71,8 @@ export class AuthFacade {
         );
     }),
     switchMap(([user, token]: [any, any]) => {
-      if (token.claims['https://hasura.io/jwt/claims'] === undefined) {
+      if (token.claims['https://hasura.io/jwt/claims'] === undefined
+      || token.claims['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] === undefined) {
         console.log('Token missing claims for hasura');
         return this.fns.httpsCallable('setCustomUserClaims')({
           uid: user.uid
@@ -236,6 +237,11 @@ export class AuthFacade {
     });
   }
 
+  public async getIdTokenResult(forceRefresh = false) {
+    const user = await this.af.currentUser;
+    return await user.getIdTokenResult(forceRefresh);
+  }
+
   resetPassword(email: string): void {
     this.af.sendPasswordResetEmail(email);
   }
@@ -352,6 +358,21 @@ export class AuthFacade {
 
   public markAsDoneInLog(log: keyof LogTracking, itemId: number, done: boolean): void {
     this.store.dispatch(new MarkAsDoneInLog(log, itemId, done));
+  }
+
+  reloadGubalToken(): Observable<void> {
+    return this.af.user.pipe(
+      first(),
+      switchMap(user => {
+        return this.fns.httpsCallable('setCustomUserClaims')({
+          uid: user.uid
+        }).pipe(
+          tap(() => {
+            user.getIdTokenResult(true);
+          })
+        );
+      })
+    );
   }
 
   private oauthPopup(provider: any): Observable<UserCredential> {

@@ -20,7 +20,22 @@
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
-        <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+        <img [src]="source.data[0] | lazyRow:'instances':'icon' | async" class="img-icon round-icon">
+      </button>
+      <button (click)="openMogstationPopup(item)" *ngSwitchCase="dataTypes.MOGSTATION"
+              nz-button
+              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Mogstation' | translate">
+        <img class="img-icon round-icon" src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico">
+      </button>
+      <button (click)="openQuestPopup(item)" *ngSwitchCase="dataTypes.QUESTS"
+              nz-button
+              nz-tooltip nzShape="circle" [nzTooltipTitle]="'Quests' | translate">
+        <img class="img-icon round-icon" src="./assets/icons/quest.png">
+      </button>
+      <button (click)="openAchievementsPopup(item)" *ngSwitchCase="dataTypes.ACHIEVEMENTS"
+              nz-button
+              nz-tooltip nzShape="circle" [nzTooltipTitle]="'DB.Achievements' | translate">
+        <img class="img-icon round-icon" [src]="source.data[0] | lazyRow:'achievements':'icon' | async | xivapiIcon">
       </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
@@ -55,7 +70,7 @@
       <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
               [nzTooltipTitle]="'Fates' | translate"
               nz-button nz-tooltip nzShape="circle">
-        <img [src]="(source.data[0].id | fate).icon | xivapiIcon" alt="Fates" class="img-icon round-icon">
+        <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon" alt="Fates" class="img-icon round-icon">
       </button>
       <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
         <div *ngFor="let craft of source.data; trackBy: trackByCraft"

@@ -4,7 +4,6 @@ import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { MapComponent } from '../../../map/map/map.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { LocalizedLazyDataService } from '../../../../core/data/localized-lazy-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { first } from 'rxjs/operators';
 
@@ -31,11 +30,11 @@ export class AlarmButtonComponent {
   @Input()
   showPosition = true;
 
-  constructor(private dialog: NzModalService, private l12n: LocalizedLazyDataService, private i18n: I18nToolsService) {
+  constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
   }
 
   openMap(): void {
-    this.i18n.resolveName(this.l12n.getItem(this.alarm.itemId)).pipe(
+    this.i18n.getNameObservable('items', this.alarm.itemId).pipe(
       first()
     ).subscribe(itemName => {
       this.dialog.create({

@@ -1,20 +1,20 @@
-import { Pipe, PipeTransform, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { LazyDataService } from '../../core/data/lazy-data.service';
-import { LazyDataProviderService } from '../../core/data/lazy-data-provider.service';
+import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Pipe({
   name: 'ilvl',
-  pure: false,
+  pure: false
 })
 export class IlvlPipe implements PipeTransform, OnDestroy {
-  private readonly ilvl$ = this.lazyData.getLazyData('ilvls');
+  private readonly ilvl$ = this.lazyData.getEntry('ilvls');
   private currentId?: number;
   private currentValue?: number;
   private sub?: Subscription;
 
-  constructor(private readonly lazyData: LazyDataProviderService, private readonly cd: ChangeDetectorRef) {}
+  constructor(private readonly lazyData: LazyDataFacade, private readonly cd: ChangeDetectorRef) {
+  }
 
   ngOnDestroy() {
     this.sub?.unsubscribe();

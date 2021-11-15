@@ -311,13 +311,38 @@ exports.getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, cont
     });
 });
 
-exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+function getTokenClaims(user) {
+  if (!user) {
+    return {};
+  }
+  if (user.admin) {
+    return {
+      'x-hasura-default-role': 'checker',
+      'x-hasura-role': 'checker',
+      'x-hasura-allowed-roles': ['reporter', 'checker', 'admin']
+    };
+  }
+  if (user.moderator || user.allaganChecker) {
+    return {
+      'x-hasura-default-role': 'checker',
+      'x-hasura-role': 'checker',
+      'x-hasura-allowed-roles': ['reporter', 'checker']
+    };
+  }
+  return {
+    'x-hasura-default-role': 'reporter',
+    'x-hasura-role': 'reporter',
+    'x-hasura-allowed-roles': ['reporter']
+  };
+}
+
+exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(async (data, context) => {
+  const user = await firestore.collection('users').doc(data.uid).get().then(doc => doc.data());
   // Check if user meets role criteria:
   // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
   let customClaims = {
     'https://hasura.io/jwt/claims': {
-      'x-hasura-default-role': 'reporter',
-      'x-hasura-allowed-roles': ['reporter'],
+      ...getTokenClaims(user),
       'x-hasura-user-id': data.uid
     }
   };

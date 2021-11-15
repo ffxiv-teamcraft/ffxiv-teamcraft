@@ -4,10 +4,12 @@ import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { FateData } from '../../model/fate-data';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class FatesExtractor extends AbstractExtractor<FateData[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
@@ -16,28 +18,38 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   protected canExtract(item: Item): boolean {
-    return item.fates !== undefined;
+    return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): FateData[] {
-    return item.fates.map(f => {
-      const fateData = this.lazyData.data.fates[f.toString()];
-      const fate: FateData = {
-        id: f,
-        level: fateData.level
-      };
-      if (fateData.position) {
-        fate.zoneId = fateData.position.zoneid;
-        fate.coords = {
-          x: fateData.position.x,
-          y: fateData.position.y
-        };
-      }
-      return fate;
-    });
+  protected doExtract(item: Item, itemData: ItemData): Observable<FateData[]> {
+    return combineLatest([
+      this.lazyData.getRow('fateSources', item.id, []),
+      this.lazyData.getEntry('fates')
+    ]).pipe(
+      map(([fateSources, fates]) => {
+        return fateSources
+          .filter(fate => !!fate)
+          .map(fateId => {
+            const fateData = fates[fateId];
+            const fate: FateData = {
+              id: fateId,
+              level: fateData.level
+            };
+            if (fateData.position) {
+              fate.zoneId = fateData.position.zoneid;
+              fate.coords = {
+                x: fateData.position.x,
+                y: fateData.position.y
+              };
+            }
+            return fate;
+          });
+      })
+    );
+
   }
 }

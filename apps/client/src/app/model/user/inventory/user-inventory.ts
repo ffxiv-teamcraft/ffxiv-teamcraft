@@ -4,7 +4,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
 import { CharacterInventory } from './character-inventory';
 import { ItemSearchResult } from './item-search-result';
-import { InventoryModifyHandler, InventoryTransaction, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class UserInventory extends DataModel {
 
@@ -55,6 +55,7 @@ export class UserInventory extends DataModel {
   items: { [contentId: string]: CharacterInventory } = {};
 
   lastZone: number;
+  private searchCache: ItemSearchResult[] = [];
 
   private _contentId?: string;
 
@@ -69,8 +70,6 @@ export class UserInventory extends DataModel {
     }
     this.resetSearchCache();
   }
-
-  private searchCache: ItemSearchResult[] = [];
 
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
@@ -274,6 +273,7 @@ export class UserInventory extends DataModel {
           moved: true
         };
     }
+    return null;
   }
 
   toArray(): ItemSearchResult[] {
@@ -298,6 +298,18 @@ export class UserInventory extends DataModel {
     clone.lastZone = this.lastZone;
     clone.contentId = this.contentId;
     return clone;
+  }
+
+  setMarketBoardInfo(packet: ItemMarketBoardInfo, retainer: string): void {
+    if (this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
+      this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
+    }
+  }
+
+  updateMarketboardInfo(packet: ClientTrigger, retainer: string): void {
+    if (this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1]) {
+      this.items[this.contentId][`${retainer}:${ContainerType.RetainerMarket}`][packet.param1].unitMbPrice = packet.param2;
+    }
   }
 
   private generateSearchCacheIfNeeded(): void {

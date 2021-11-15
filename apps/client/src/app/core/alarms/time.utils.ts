@@ -20,6 +20,12 @@ export class TimeUtils {
   static getComplexIntersection(a: Interval, b: Interval): Interval | null {
     const [a1, a2] = this.splitInterval(a);
     const [b1, b2] = this.splitInterval(b);
+    if (a[0] === a[1]) {
+      return b;
+    }
+    if (b[0] === b[1]) {
+      return a;
+    }
     const firstDay = this.getSimpleIntersection(a1, b1);
     const secondDay = this.getSimpleIntersection(a2, b2);
     const possibleSecondDay = this.getSimpleIntersection(a2, b1);
@@ -44,6 +50,9 @@ export class TimeUtils {
       const secondDay = this.getSimpleIntersection([interval[0] || 24, interval[1] + 24], [24, 48]) || [0, 0];
       return [firstDay, [secondDay[0] % 24, secondDay[1] % 24]];
     }
+    if (interval[0] === interval[1]) {
+      return [[interval[0], 0], [0, interval[1]]];
+    }
     return [[...interval], [0, 0]];
   }
 
@@ -65,5 +74,9 @@ export class TimeUtils {
       return this.getDuration([i[0], 24]) + this.getDuration([0, i[1]]);
     }
     return i[1] - i[0];
+  }
+
+  static isSameDay(a: Date, b: Date): boolean {
+    return Math.floor(a.getTime() / 86400000) === Math.floor(b.getTime() / 86400000);
   }
 }

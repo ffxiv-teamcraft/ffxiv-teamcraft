@@ -1,4 +1,5 @@
 {
+  "Mogstation": "모그스테이션",
   "Quests": "퀘스트",
   "Facebook_notice": "페이스북 로그인은 더이상 지원하지 않습니다. '비밀번호 재설정' 을 통해 비밀번호를 변경하시거나, 팀크래프트 디스코드에서 Miu에게 비밀번호 변경을 요청할 수 있습니다.",
   "Pick_a_list": "목록 선택",
@@ -23,7 +24,7 @@
   "Change_character": "캐릭터",
   "Check_guides": "팀크래프트 가이드 보기",
   "Guides_links": "팀크래프트 가이드",
-  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
+  "Db_ban": "이전에 작성한 데이터베이스 코멘트로 인하여 코멘트 권한이 제한된 상태입니다. 만약 제한에 대한 이의제기가 있는 경우에는 디스코드 Miu#1568 에게 DM을 주세요.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -153,6 +154,7 @@
     "Minutes_duration": "{{amount}}분",
     "Seconds_duration": "{{amount}} 초",
     "None": "없음",
+    "Any": "모두",
     "Top": "맨 위로",
     "Bottom": "맨 아래로",
     "Amount": "수량",
@@ -180,7 +182,15 @@
     "Back": "뒤로 가기",
     "Support_us_remove_ads": "Patreon 후원하고 광고 없애기",
     "Support_us": "후원하기",
-    "Show_more": "더 보기"
+    "Show_more": "더 보기",
+    "Item": "아이템",
+    "Venture": "집사 수행",
+    "Monster": "몬스터",
+    "Airship": "비공정",
+    "Submarine": "잠수정",
+    "Voyage": "탐사",
+    "Instance": "던전",
+    "Fate": "돌발 임무"
   },
   "ALARMS": {
     "Title": "알람",
@@ -251,6 +261,7 @@
   "Item_name": "아이템 이름",
   "No_items_found": "검색 결과 없음",
   "No_instances_found": "검색 결과 없음",
+  "No_fishing_spot_found": "낚시터를 찾지 못했습니다",
   "No_quests_found": "검색 결과 없음",
   "No_npcs_found": "검색 결과 없음",
   "No_mobs_found": "검색 결과 없음",
@@ -351,7 +362,7 @@
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 메일이 발송되었습니다.",
   "ALARM": {
-    "Spawned": "{{itemName}}  출현 예정",
+    "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
     "Note": "메모"
   },
@@ -477,6 +488,7 @@
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
     "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
     "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
+    "Reload_auth_token": "인증 토큰 다시 불러오기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -547,14 +559,14 @@
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
-      "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
     }
   },
   "LISTS": {
     "Load_archived": "보관된 목록 불러오기",
-    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
@@ -628,8 +640,8 @@
     "Can_skip_buying_entirely": "전부 스킵 가능",
     "Can_skip_tooltip": "다른 아이템을 구매하기 위해선 해당 아이템이 필요합니다. 즉, 해당 패널에 있는 모든 것을 구매할 계획이라면 아이템을 적게 구매하거나 완전히 건너뛸 수 있습니다",
     "Requirements_ignored": "무시된 재료",
-    "Mark_whole_panel_nq": "Remove manual HQ flags",
-    "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Mark_whole_panel_nq": "수동 HQ 마크 제거",
+    "Mark_whole_panel_hq": "전체 패널 HQ 마크",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -709,6 +721,8 @@
     "Autofill_notification": "완료 알림",
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
@@ -882,7 +896,7 @@
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -1195,7 +1209,7 @@
     "More_on_gamerescape": "'Gamer Escape'에서 자세한 정보 보기",
     "Deliver_to": "{{placename}}에 납품",
     "Hide_large": "대규모 길드 의뢰 숨기기",
-    "Road_to_buff": "Include \"road to XX\" buff",
+    "Road_to_buff": "우대서버 버프 포함",
     "INTRO": {
       "Title": "길드 의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
@@ -1294,7 +1308,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Donation_button": "후원하기[1회]",
     "Buy_merch": "팀크래프트 상품 구매하기",
-    "Features_header": "시작하기 !",
+    "Features_header": "시작하기!",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
       "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
@@ -1302,12 +1316,12 @@
       "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다.",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV에 맞는 언어로 매크로를 번역할 수 있습니다."
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로를 번역할 수 있습니다."
     }
   },
   "UPDATE": {
-    "New_update_available": "새 업데이트가 있습니다! ",
-    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
+    "New_update_available": "새 업데이트가 있습니다!",
+    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다!\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
     "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
     "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
@@ -1328,6 +1342,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
@@ -1336,7 +1351,7 @@
     "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
     "Export_FSH_completion": "JSON 형식으로 완료 목록 내보내기",
     "Export_FSH_completion_copied": "JSON 형식의 완료 목록이 클립보드에 복사되었습니다",
-    "Log_in_to_track": "Log in to be able to track your log tracker completion",
+    "Log_in_to_track": "로그 트래커 완료를 추적하기 위해 로그인",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -1348,7 +1363,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중"
+    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중!"
   },
   "CUSTOM_ITEMS": {
     "Title": "사용자 지정 아이템",
@@ -1557,10 +1572,11 @@
       "Top_users": "최고 순위",
       "Your_ranking": "당신의 순위",
       "Include_fisheyes_data": "물고기의 눈을 통계에 포함",
+      "Not_enough_data_points": "데이터가 부족하여 해당 차트로 표시할 수 없음",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
-        "Big": "대형 (!!)"
+        "Big": "대형 (!!!)"
       },
       "OVERLAY": {
         "Open": "낚시 보고용 오버레이 켜기/끄기",
@@ -1594,7 +1610,9 @@
       "Available_fishes": "낚을 수 있는 물고기",
       "Fish_per_weather": "날씨당 물고기",
       "Fish_per_bait": "미끼당 물고기",
-      "Fish_per_tug": "입질당 물고기"
+      "Fish_per_tug": "입질당 물고기",
+      "Include_misses": "Include misses",
+      "Miss": "Miss"
     },
     "NODE": {
       "Items": "아이템",
@@ -1711,7 +1729,7 @@
       "No_comments": "댓글 없음",
       "Post": "게시",
       "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한이 생길 수도 있습니다."
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
@@ -1795,7 +1813,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
-    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
@@ -1989,7 +2007,7 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Message": "해당 아이템은 오직 {{targetItem}} 을 만들 때에만 사용됩니다. 다른 형태로 가공하는 것을 고려하세요"
     }
   },
   "VERSION_LOCK": {
@@ -2544,7 +2562,12 @@
     "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
     "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람",
-    "Reset_retainers": "집사 초기화"
+    "Reset_retainers": "집사 초기화",
+    "Check_prices": "장터 게시판 판매가 확인 (쿨타임: 2시간)",
+    "Cannot_fetch": "장터 게시판 가격확인 쿨타임입니다. 마지막 가격 확인: {{date}}",
+    "X%_above": "현재 최저가보다 {{diff}}% 더 높은 가격입니다",
+    "X%_below": "현재 최저가보다 {{diff}}% 더 낮은 가격입니다",
+    "Lowest_price": "낮은 가격 순"
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",
@@ -2576,7 +2599,7 @@
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
-      "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "집사를 선택하세요"
   },
@@ -2639,7 +2662,7 @@
         "Abbreviation": "엔"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "무+"
+        "Abbreviation": "J"
       },
       "ODYSSEY": {
         "Abbreviation": "오"
@@ -2697,5 +2720,107 @@
   "GARDENING": {
     "Growth_time": "성장 시간",
     "Cross_breeds": "품질개량(교배)"
+  },
+  "ALLAGAN_REPORTS": {
+    "Feature_banner_title": "새로운 기능: 알라간 리포트",
+    "Feature_banner_description": "누락된 데이터가 있는 아이템을 찾으셨나요? 이제 알라간 리포트 시스템 (일반 > 알라간 리포트) 에서 아이템 출처를 보고하여 다음 업데이트에 적용시킬 수 있습니다!",
+    "Title": "알라간 리포트",
+    "Reports": "리포트",
+    "Pending_changes": "보류 중인 변경 사항",
+    "No_pending_changes": "변경 사항 없음",
+    "New_report": "새 보고서",
+    "Submit_new_report": "새 리포트 제안서 제출",
+    "Source": "출처",
+    "Report_added": "제출된 리포트 제안서",
+    "Instance_placeholder": "던전 이름",
+    "Venture_placeholder": "집사 수행 이름",
+    "Monster_placeholder": "몬스터 이름",
+    "Voyage_placeholder": "탐사 이름",
+    "Voyage_type": "탐사 종류",
+    "Reported_by": "보고자",
+    "Approved_by": "승인자",
+    "No_reports": "리포트 없음",
+    "Proposal_accepted": "승인된 리포트",
+    "Proposal_rejected": "거절된 리포트",
+    "Reject": "거절",
+    "Accept": "승인",
+    "Suggest_deletion": "삭제 제안",
+    "Deletion_suggestion_submitted": "삭제 제안 제출됨",
+    "Report_deleted": "삭제된 리포트",
+    "Suggest_modification": "편집",
+    "Modification_suggestion_submitted": "수정 제안 제출됨",
+    "Modification_applied": "수정사항이 적용됨",
+    "Submit_modification_suggestion": "수정 제안 제출",
+    "Last_updated": "최근 업데이트",
+    "Submitted": "제출됨",
+    "Spawn": "등장 시간",
+    "Duration": "지속/제한시간",
+    "Predator": "포식자",
+    "Predator_explain": "해당 물고기를 얻기 위해서 얻어야만 하는 '어부의 직감' 조건 또는 작살 낚시를 위한 선행 조건",
+    "Unknown_hookset": "알 수 없는 입질",
+    "Gig_head": "작살",
+    "No_predators": "포식자 없음",
+    "Loading_gubal_analysis": "구브라 분석 로딩 중",
+    "Gubal_analysis_suggestion": "데이터 분석을 기반으로 한 제안",
+    "Cannot_report_for_this_spot": "해당 물고기의 데이터는 이미 존재하기 때문에 해당 낚시터에 대한 세부정보를 리포트할 수 없습니다",
+    "Please_suggest_edit_instead": "기존에 제안했던 리포트를 편집해주세요",
+    "Add_data_sources": "해당 아이템의 데이터 출처를 추가",
+    "Not_applied_yet": "적용되지 않음",
+    "Not_applied_yet_explain": "해당 출처는 다음 업데이트에 목록과 데이터베이스 시스템에 추가됩니다",
+    "Pending_changes_count": "{{amount}} pending changes to review",
+    "Review_changes": "Review changes",
+    "Imported_from_GT_data": "Garlandtools에서 가져오기",
+    "Status": "상태",
+    "Count": "# 리포트 수",
+    "Applied_count": "# 적용된 리포트 수",
+    "Fish_coverage": "낚시 통계",
+    "Items_with_no_source": "데이터가 없는 아이템",
+    "Data_needs": "데이터가 필요한 아이템",
+    "Open_reports": "리포트 페이지 열기",
+    "Fishing": "낚시",
+    "Others": "기타 아이템",
+    "Ocean_fishing_time": "먼바다 낚시 시간",
+    "Fate_placeholder": "돌발 임무 이름",
+    "Open_details": "세부정보 공간이 부족하기 때문에, 승인/거절 페이지를 엽니다",
+    "Accept_many": "선택된 리포트 수락 ({{amount}})",
+    "Reject_many": "선택된 리포트 거절 ({{amount}})",
+    "Jump_to_item": "다른 아이템으로 이동",
+    "Price": "가격",
+    "Product_id": "상품 ID",
+    "Product_id_explain": "상품 URL에서 \"/product/\" 바로 옆에 있는 게 상품 ID",
+    "Open_item": "알라간 리포트에서 열기",
+    "Delete": "삭제",
+    "Voyage_rarity": "Rarity",
+    "Rarity_Common": "Common",
+    "Rarity_Voyage_exclusive": "Voyage exclusive",
+    "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "No fish with missing data",
+    "Sources_filter": "Filter sources",
+    "SOURCE": {
+      "DESYNTH": "분해",
+      "REDUCTION": "정제",
+      "GARDENING": "가드닝",
+      "LOOT": "보상 상자",
+      "VENTURE": "집사 수행",
+      "VOYAGE": "탐사",
+      "DROP": "드랍",
+      "INSTANCE": "던전",
+      "FISHING": "낚시",
+      "SPEARFISHING": "작살 낚시",
+      "FATE": "돌발 임무",
+      "MOGSTATION": "모그스테이션"
+    },
+    "STATUS": {
+      "PROPOSAL": "제안",
+      "MODIFICATION": "수정",
+      "DELETION": "삭제",
+      "ACCEPTED": "승인"
+    }
+  },
+  "OCEAN_FISHING": {
+    "ANY": "모두",
+    "SUNSET": "저녁",
+    "DAY": "낮",
+    "NIGHT": "밤"
   }
 }

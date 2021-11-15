@@ -1,10 +1,10 @@
-<cdk-virtual-scroll-viewport [style.height.px]="displayedRows * rowSize" [itemSize]="rowSize" *ngIf="data.length >= displayedRows && !noScroll; else noScrollRows">
-  <ng-container *cdkVirtualFor="let row of data; trackBy: trackBy; let odd = odd; let first = first; let last = last">
-    <ng-container *ngTemplateOutlet="rowTemplate;context:{$implicit: row, odd: odd, first: first, last: last}"></ng-container>
+<cdk-virtual-scroll-viewport [style.height.px]="displayedRows * rowSize" [itemSize]="rowSize" *ngIf="data?.length >= displayedRows && !noScroll; else noScrollRows">
+  <ng-container *cdkVirtualFor="let row of data; trackBy: trackBy; let odd = odd; let first = first; let last = last; let index = index">
+    <ng-container *ngTemplateOutlet="rowTemplate;context:{$implicit: row, odd: odd, first: first, last: last, index: index}"></ng-container>
   </ng-container>
 </cdk-virtual-scroll-viewport>
 <ng-template #noScrollRows>
-  <ng-container *ngFor="let row of data; trackBy: trackBy; let odd = odd; let first = first; let last = last">
-    <ng-container *ngTemplateOutlet="rowTemplate;context:{$implicit: row, odd: odd, first: first, last: last}"></ng-container>
+  <ng-container *ngFor="let row of data; trackBy: trackBy; let odd = odd; let first = first; let last = last; let index = index">
+    <ng-container *ngTemplateOutlet="rowTemplate;context:{$implicit: row, odd: odd, first: first, last: last, index: index}"></ng-container>
   </ng-container>
 </ng-template>

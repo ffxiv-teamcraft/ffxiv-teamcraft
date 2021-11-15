@@ -5,7 +5,7 @@ import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotati
 import { combineLatest, Observable } from 'rxjs';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { ActivatedRoute } from '@angular/router';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({

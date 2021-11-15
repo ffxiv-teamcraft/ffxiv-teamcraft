@@ -55,6 +55,9 @@
           <div *ngIf="data.canBeGathered">
             <button nz-button *ngIf="!data.isDoneInLog" (click)="markAsDoneInLog(data.id)">{{'DB.ITEM.Mark_as_done_in_gathering_log' | translate}}</button>
           </div>
+          <div class="allagan-reports-button">
+            <a routerLink="/allagan-reports/{{itemId$ | async}}" nz-button nzType="primary">{{'ALLAGAN_REPORTS.Add_data_sources' | translate}}</a>
+          </div>
         </div>
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></p>
@@ -128,7 +131,7 @@
         </div>
         <div *ngIf="gtData.item.equip" class="details-block">
           <div class="detail-name">{{'DB.Repair_job' | translate}}</div>
-          <div class="detail-value">{{gtData.item.repair | jobAbbr | i18n}}</div>
+          <div class="detail-value">{{gtData.item.repair | i18nRow:'jobAbbr' | i18n}}</div>
         </div>
         <div *ngIf="xivapiItem.Salvage" class="details-block">
           <div class="detail-name">{{'DB.Salvage_level' | translate}}</div>
@@ -183,7 +186,7 @@
                         <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
                           <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
                                fxLayoutGap="5px">
-                            <img *ngIf="((recipe.job | jobAbbr).en | async) as icon" alt="" class="smaller-img-icon"
+                            <img *ngIf="((recipe.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="smaller-img-icon"
                                  src="https://garlandtools.org/db/images/{{icon}}.png">
                             <div>lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
                           </div>
@@ -301,7 +304,7 @@
 
                 <app-lazy-scroll [data]="row.trades" [rowTemplate]="rowTpl" rowSize="651" displayedRows="1"></app-lazy-scroll>
                 <ng-template #rowTpl let-source>
-                  <nz-card  [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
+                  <nz-card [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
                     <nz-table #basicTable [nzData]="source.trades">
                       <thead>
                       <tr>
@@ -347,15 +350,16 @@
                     <nz-list-item [nzContent]="more">
                       <nz-list-item-meta
                         [nzAvatar]="leveAvatar"
-                        [nzTitle]="leve.leveId | leveName | i18n"
-                        nzDescription="lvl {{leve.level}}">
+                        [nzTitle]="leve.leveId | i18nRow:'leves' | i18n"
+                        [nzDescription]="description">
+                        <ng-template #description>
+                          <span class="companion-svg job-icon" [innerHtml]="leve.job | jobUnicode"></span> lvl {{leve.level}} (x{{leve.amount}})
+                        </ng-template>
                         <ng-template #leveAvatar>
                           <a routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">
                             <img class="img-icon round-icon"
                                  src="./assets/icons/leve.png">
                           </a>
-                          <a
-                            routerLink="/db/{{translate.currentLang}}/leve/{{leve.leveId}}">{{leve.leveId | leveName | i18n}}</a>
                         </ng-template>
                         <ng-template #more>
                           <app-db-button [id]="leve.leveId" type="leve"></app-db-button>
@@ -377,7 +381,7 @@
                         </a>
                       </div>
                       <div>
-                        {{quest | questName | i18n}}
+                        {{quest | i18nRow:'quests' | i18n}}
                       </div>
                     </div>
                     <app-db-button [id]="quest" type="quest"></app-db-button>
@@ -433,7 +437,7 @@
                     </div>
                     <ul *ngIf="item.bonuses">
                       <li *ngFor="let bonus of item.bonuses">{{'DB.ITEM.X_Equipped' | translate:{ amount: bonus.amountRequired } }}
-                        {{bonus.baseParam | baseParamName | i18n}} +{{bonus.value}}</li>
+                        {{bonus.baseParam | i18nRow:'baseParams' | i18n}} +{{bonus.value}}</li>
                     </ul>
                   </li>
                 </ng-template>
@@ -443,9 +447,18 @@
           <div>
             <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
           </div>
-          <app-fullpage-message *ngIf="noData" height="150px">
-            {{'DB.No_known_way_to_obtain' | translate}}
-          </app-fullpage-message>
+          <ng-container *ngIf="noData">
+            <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+              <app-fullpage-message height="150px">
+                {{'DB.No_known_way_to_obtain' | translate}}
+              </app-fullpage-message>
+              <div>
+                <a routerLink="/allagan-reports/{{itemId$ | async}}" nz-button nzType="primary">
+                  {{'ALLAGAN_REPORTS.Add_data_sources' | translate}}
+                </a>
+              </div>
+            </div>
+          </ng-container>
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
             <ng-container *ngFor="let source of data.sources">
               <ng-container [ngSwitch]="source.type">
@@ -506,7 +519,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="(source.data[0].id | fate).icon | xivapiIcon"
+                      <img [src]="source.data[0].id | lazyRow:'fates':'icon' | async | xivapiIcon"
                            class="img-icon round-icon">
                       <div>
                         {{'Fates' | translate}}
@@ -514,6 +527,20 @@
                     </div>
                   </ng-template>
                   <app-fates [item]="data" [details]="source.data"></app-fates>
+                </nz-card>
+                <nz-card *ngSwitchCase="dataTypes.MOGSTATION" [nzTitle]="title"
+                         class="details-card" fxFlex="1 1 60%"
+                         nzBordered="false">
+                  <ng-template #title>
+                    <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <img src="https://cache.secure.square-enix.com/account/content/mogstation/favicon.ico"
+                           class="img-icon round-icon">
+                      <div>
+                        {{'Mogstation' | translate}}
+                      </div>
+                    </div>
+                  </ng-template>
+                  <app-mogstation [item]="data" [details]="source.data"></app-mogstation>
                 </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.CRAFTED_BY" [nzTitle]="title"
                          class="details-card" fxFlex="1 1 30%"
@@ -536,7 +563,7 @@
                               <div class="recipe-title" fxLayout="column">
                                 <div fxLayout="row" fxLayoutGap="5px">
                                   <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
-                                  <div>{{recipe.job | jobAbbr | i18n}}</div>
+                                  <div>{{recipe.job | i18nRow:'jobAbbr' | i18n}}</div>
                                   <div>{{recipe.lvl}}{{recipe.stars_tooltip}}</div>
                                   <div *ngIf="recipe.craftsmanshipReq > 0">{{'DB.ITEM.Required_craftsmanship' | translate}}: {{recipe.craftsmanshipReq}}</div>
                                   <div *ngIf="recipe.controlReq > 0">{{'DB.ITEM.Required_control' | translate}}: {{recipe.controlReq}}</div>
@@ -621,7 +648,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+                      <img [src]="source.data[0].icon | lazyRow:'instances':'icon' | async" class="img-icon round-icon">
                       <div>
                         {{'DB.Dungeons' | translate}}
                       </div>
@@ -715,17 +742,17 @@
                           [nzTitle]="duelTitle">
                           <ng-template #duelTitle>
                             <a [nzTooltipTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
-                               target="_blank">{{ duel.npcId | npcName | i18n }}</a>
+                               target="_blank">{{ duel.npcId | i18nRow:'npcs' | i18n }}</a>
                           </ng-template>
                           <ng-template #duelDescription>
                             <div fxLayout="column">
                               <div>
                                 {{'DB.TT_Rules' | translate}}: <span *ngFor="let rule of duel.rules; let last = last"
-                                                                     class="tt-rule">{{rule | ttRuleName | i18n}} <span
+                                                                     class="tt-rule">{{rule | i18nRow:'tripleTriadRules' | i18n}} <span
                                 *ngIf="!last">,</span></span>
                               </div>
                               <div *ngIf="duel.unlockingQuestId">{{'DB.Unlocked_by_quest' | translate}}:
-                                <b>{{duel.unlockingQuestId | questName | i18n}}</b></div>
+                                <b>{{duel.unlockingQuestId | i18nRow:'quests' | i18n}}</b></div>
                             </div>
                           </ng-template>
                           <ng-template #duelContent>
@@ -749,21 +776,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  <nz-list [nzDataSource]="source.data" [nzItemLayout]="'horizontal'"
-                           [nzRenderItem]="achievementTemplate">
-                    <ng-template #achievementTemplate let-achievement>
-                      <nz-list-item [nzContent]="content">
-                        <nz-list-item-meta
-                          [nzAvatar]="achievement | achievementIcon | xivapiIcon"
-                          [nzDescription]="achievementDescription"
-                          [nzTitle]="achievement | achievementName | i18n">
-                          <ng-template #content>
-                            <app-db-button [id]="achievement" type="achievement"></app-db-button>
-                          </ng-template>
-                        </nz-list-item-meta>
-                      </nz-list-item>
-                    </ng-template>
-                  </nz-list>
+                  <app-achievements [item]="data" [details]="source.data"></app-achievements>
                 </nz-card>
                 <nz-card *ngSwitchCase="dataTypes.TRIPLE_TRIAD_PACK" [nzTitle]="title"
                          class="details-card"
@@ -811,22 +824,7 @@
                       </div>
                     </div>
                   </ng-template>
-                  <app-lazy-scroll [data]="source.data" [rowTemplate]="rowTpl" rowSize="56" displayedRows="5"></app-lazy-scroll>
-                  <ng-template #rowTpl let-quest>
-                    <div class="quest-row" fxLayout="row" fxLayoutAlign="space-between center">
-                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                        <div>
-                          <a routerLink="/db/{{translate.currentLang}}/quest/{{quest}}">
-                            <img class="img-icon round-icon" src="./assets/icons/quest.png">
-                          </a>
-                        </div>
-                        <div>
-                          {{quest | questName | i18n}}
-                        </div>
-                      </div>
-                      <app-db-button [id]="quest" type="quest"></app-db-button>
-                    </div>
-                  </ng-template>
+                  <app-quests [item]="data" [details]="source.data"></app-quests>
                 </nz-card>
               </ng-container>
             </ng-container>

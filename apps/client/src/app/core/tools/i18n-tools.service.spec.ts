@@ -3,11 +3,11 @@ import { inject, TestBed } from '@angular/core/testing';
 import { I18nToolsService } from './i18n-tools.service';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('I18nToolsService', () => {
+xdescribe('I18nToolsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CommonModule, TranslateModule.forRoot()],
-      providers: [I18nToolsService],
+      providers: [I18nToolsService]
     });
   });
 
@@ -19,23 +19,23 @@ describe('I18nToolsService', () => {
     expect(
       service.createI18nName({
         fr: {
-          name: 'FR',
+          name: 'FR'
         },
         en: {
-          name: 'EN',
+          name: 'EN'
         },
         de: {
-          name: 'DE',
+          name: 'DE'
         },
         ja: {
-          name: 'JA',
+          name: 'JA'
         },
         zh: {
-          name: 'ZH',
+          name: 'ZH'
         },
         ko: {
-          name: 'KO',
-        },
+          name: 'KO'
+        }
       })
     ).toEqual({
       fr: 'FR',
@@ -43,7 +43,7 @@ describe('I18nToolsService', () => {
       de: 'DE',
       ja: 'JA',
       zh: 'ZH',
-      ko: 'KO',
+      ko: 'KO'
     });
   }));
 
@@ -54,7 +54,7 @@ describe('I18nToolsService', () => {
       de: 'DE',
       ja: 'JA',
       zh: 'ZH',
-      ko: 'KO',
+      ko: 'KO'
     });
     expect(name).toEqual('EN');
   }));

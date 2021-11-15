@@ -25,9 +25,59 @@
         <p *ngIf="achievement.Description" [innerHTML]="achievement | xivapiL12n: 'achievementDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="achievement | xivapiL12n: 'achievements'"></app-i18n-display>
+                        [value]="achievement | xivapiL12n: 'achievements'"></app-i18n-display>
     </div>
-    <app-db-comments [id]="achievement.ID" type="achievement"></app-db-comments>
+    <div>
+      <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="achievement.ID" type="achievement"></app-db-comments>
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+        <nz-card [nzTitle]="rewardsTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
+          <ng-template #rewardsTitle>
+            <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>
+                {{'DB.QUEST.Rewards' | translate}}
+              </div>
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="rewards$ | async" [nzItemLayout]="'horizontal'"
+                   [nzRenderItem]="rewardTemplate">
+            <ng-template #rewardTemplate let-reward>
+              <nz-list-item
+                [nzContent]="reward.type==='item'?more:null">
+                <nz-list-item-meta
+                  [nzAvatar]="rewardAvatar"
+                  [nzTitle]="rewardTitle">
+                  <ng-template #rewardAvatar>
+                    <app-item-icon *ngIf="reward.type === 'item'" [hq]="reward.hq"
+                                   [icon]="reward.id | lazyIcon"
+                                   [itemId]="reward.id" [width]="32"></app-item-icon>
+                    <img *ngIf="reward.type === 'title'" src="https://xivapi.com/c/Title.png">
+                  </ng-template>
+                  <ng-template #rewardTitle>
+                    <div *ngIf="reward.type === 'item'" [appItemRarity]="reward.id">
+                      {{reward.id | itemName | i18n}}
+                    </div>
+                    <div *ngIf="reward.type === 'title'">
+                      {{reward.id | i18nRow:'titles' | i18n}}
+                    </div>
+                  </ng-template>
+                  <ng-template #more>
+                    <app-db-button *ngIf="reward.id > 1"
+                                   [id]="reward.id"
+                                   [type]="reward.type"></app-db-button>
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </div>
+      <div>
+        <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="achievement.ID"
+                         type="achievement"></app-db-comments>
+      </div>
+    </div>
   </div>
 </ng-container>
 <ng-template #loader>

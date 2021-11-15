@@ -5,7 +5,6 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, combineLatest, concat, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -14,13 +13,12 @@ import { List } from '../../../modules/list/model/list';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { Levequest } from '../../../model/search/levequest';
 import { DataService } from '../../../core/api/data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { EnvironmentService } from '../../../core/environment.service';
+import { I18nName } from '../../../model/common/i18n-name';
 
 interface ExpObj {
   exp: number,
@@ -82,12 +80,10 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
               private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
-              private dataService: DataService, private lazyData: LazyDataService,
-              private auth: AuthFacade, private settings: SettingsService,
-              private platformService: PlatformService, private ipc: IpcService,
-              private env: EnvironmentService) {
+              private dataService: DataService, private auth: AuthFacade,
+              private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService) {
     super();
     this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
@@ -155,7 +151,6 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               + leve.CraftLeve.ItemCount1
               + leve.CraftLeve.ItemCount2
               + leve.CraftLeve.ItemCount3,
-            name: this.l12n.getLeve(leve.ID),
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats,
@@ -268,35 +263,38 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   }
 
   public createQuickList(leve: Levequest): void {
-    const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(leve.itemId)));
+    this.i18n.getNameObservable('items', leve.itemId).pipe(
+      switchMap(itemName => {
+        const list = this.listsFacade.newEphemeralList(itemName);
 
-    const operation$ = this.dataService.getItem(leve.itemId).pipe(
-      switchMap(itemData => {
-        const craft = itemData.item.craft.find(c => c.job === leve.jobId);
-        return this.listManager
-          .addToList({
-            itemId: leve.itemId,
-            list: list,
-            recipeId: craft.id,
-            amount: leve.itemQuantity * this.craftAmount(leve)
-          })
-          .pipe(
-            tap(resultList => this.listsFacade.addList(resultList)),
-            mergeMap(resultList => {
-              return this.listsFacade.myLists$.pipe(
-                map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
-                filter(l => l !== undefined),
-                first()
+        const operation$ = this.dataService.getItem(leve.itemId).pipe(
+          switchMap(itemData => {
+            const craft = itemData.item.craft.find(c => c.job === leve.jobId);
+            return this.listManager
+              .addToList({
+                itemId: leve.itemId,
+                list: list,
+                recipeId: craft.id,
+                amount: leve.itemQuantity * this.craftAmount(leve)
+              })
+              .pipe(
+                tap(resultList => this.listsFacade.addList(resultList)),
+                mergeMap(resultList => {
+                  return this.listsFacade.myLists$.pipe(
+                    map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                    filter(l => l !== undefined),
+                    first()
+                  );
+                })
               );
-            })
-          );
-      })
-    );
+          })
+        );
 
-    this.progressService.showProgress(operation$, 1)
-      .subscribe((newList) => {
-        this.router.navigate(['list', newList.$key]);
-      });
+        return this.progressService.showProgress(operation$, 1);
+      })
+    ).subscribe((newList) => {
+      this.router.navigate(['list', newList.$key]);
+    });
   }
 
   public getExp(leve: Levequest, allLeves: Levequest[]): { level: number, exp: number, expPercent: number, totalExp: number } {
@@ -318,6 +316,37 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp: Math.min(expObj.exp, this.getMaxExp(expObj.level)),
       totalExp: expObj.totalExp
     };
+  }
+
+  public getLeveExp(leve: Levequest, allLeves: Levequest[]): number {
+    return this.getExp(leve, allLeves).totalExp;
+  }
+
+  public getLeveGil(leve: Levequest): number {
+    const res = leve.gil * this.craftAmount(leve);
+    return leve.hq ? res * 2 : res;
+  }
+
+  public addSelectedLevesToList(leves: Levequest[]): void {
+    this.addLevesToList(leves.filter(leve => leve.selected));
+  }
+
+  public selectAll(leves: Levequest[], selected: boolean): void {
+    leves.forEach(leve => leve.selected = selected);
+  }
+
+  public updateAllSelected(leves: Levequest[]): void {
+    this.allSelected = leves.reduce((res, item) => item.selected && res, true);
+  }
+
+  public openInGE(leveName: I18nName): void {
+    if (this.platformService.isDesktop()) {
+      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leveName.en.split(' ').join('_')}`);
+    }
+  }
+
+  trackByLeve(index: number, leve: Levequest): number {
+    return leve.id;
   }
 
   private applyLeveExp(expObj: ExpObj, leve: Levequest): ExpObj {
@@ -345,9 +374,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       exp -= this.getMaxExp(level);
       level++;
     }
-    // Handle special case for max lvl
-    if (exp >= this.getMaxExp(level) && level >= this.env.maxLevel) {
-      level = this.env.maxLevel;
+    // Handle special case for lvl 80
+    if (exp >= this.getMaxExp(level) && level >= 79) {
+      level = 80;
       exp = 0;
     }
     return {
@@ -356,38 +385,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
     };
   }
 
-  public getLeveExp(leve: Levequest, allLeves: Levequest[]): number {
-    return this.getExp(leve, allLeves).totalExp;
-  }
-
-  public getLeveGil(leve: Levequest): number {
-    const res = leve.gil * this.craftAmount(leve);
-    return leve.hq ? res * 2 : res;
-  }
-
   private craftAmount(leve: Levequest): number {
     return leve.amount * (leve.allDeliveries ? leve.repeats + 1 : 1);
-  }
-
-  public addSelectedLevesToList(leves: Levequest[]): void {
-    this.addLevesToList(leves.filter(leve => leve.selected));
-  }
-
-  public selectAll(leves: Levequest[], selected: boolean): void {
-    leves.forEach(leve => leve.selected = selected);
-  }
-
-  public updateAllSelected(leves: Levequest[]): void {
-    this.allSelected = leves.reduce((res, item) => item.selected && res, true);
-  }
-
-  public openInGE(leve: Levequest): void {
-    if (this.platformService.isDesktop()) {
-      this.ipc.send('open-link', `https://ffxiv.gamerescape.com/wiki/${leve.name.en.split(' ').join('_')}`);
-    }
-  }
-
-  trackByLeve(index: number, leve: Levequest): number {
-    return leve.id;
   }
 }

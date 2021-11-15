@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
 import { UserCredential } from '@firebase/auth-types';
 import { from, Observable, Subject } from 'rxjs';

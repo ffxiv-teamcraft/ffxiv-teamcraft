@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, Optional, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Input, OnInit, Optional, PLATFORM_ID } from '@angular/core';
 import { SearchType } from '../../../pages/search/search-type';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { SearchResult } from '../../../model/search/search-result';
@@ -35,6 +35,14 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
     tap(() => this.loading = false)
   ));
 
+  @Input()
+  public set searchType(type: SearchType) {
+    this.searchType$.next(type);
+  }
+
+  @Input()
+  public reportsMode = false;
+
   public loading = false;
 
   constructor(private route: ActivatedRoute, private settings: SettingsService,
@@ -49,18 +57,27 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
       return;
     }
     this.cleanResults$.next([]);
-    let type = row.type.toLowerCase();
-    if (row.type === SearchType.MONSTER) {
-      type = 'mob';
+    if(this.reportsMode){
+      setTimeout(() => {
+        this.router.navigate([
+          'allagan-reports',
+          row.itemId
+        ]);
+      }, 10);
+    } else {
+      let type = row.type.toLowerCase();
+      if (row.type === SearchType.MONSTER) {
+        type = 'mob';
+      }
+      setTimeout(() => {
+        this.router.navigate([
+          'db',
+          this.translate.currentLang,
+          type,
+          row.id || row.itemId
+        ]);
+      }, 10);
     }
-    setTimeout(() => {
-      this.router.navigate([
-        'db',
-        this.translate.currentLang,
-        type,
-        row.id || row.itemId
-      ]);
-    }, 10);
     if (this.modal) {
       this.modal.close();
     }

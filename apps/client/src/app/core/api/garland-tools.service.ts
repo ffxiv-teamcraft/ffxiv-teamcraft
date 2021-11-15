@@ -7,8 +7,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { filter, map } from 'rxjs/operators';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { LazyDataService } from '../data/lazy-data.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { GtFish } from '../../model/common/gt-fish';
 import { GtNode } from '../../model/common/gt-node';
 
@@ -28,7 +27,7 @@ export class GarlandToolsService {
   public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
 
   constructor(private serializer: NgSerializerService, private http: HttpClient,
-              private lazyData: LazyDataService, @Inject(PLATFORM_ID)platform: Object) {
+              @Inject(PLATFORM_ID)platform: Object) {
     this.preload();
   }
 
@@ -125,8 +124,8 @@ export class GarlandToolsService {
     return this.gt.bell.nodes.find(node => node.id === id);
   }
 
-  getBellNodesForItemId(itemId:number): GtNode[]{
-    return this.gt.bell.nodes.filter(node => node.items.some(i => i.id === itemId))
+  getBellNodesForItemId(itemId: number): GtNode[] {
+    return this.gt.bell.nodes.filter(node => node.items.some(i => i.id === itemId));
   }
 
   /**
@@ -136,18 +135,6 @@ export class GarlandToolsService {
    */
   getJobCategory(id: number): JobCategory {
     return this.gt.jobCategories[id];
-  }
-
-  /**
-   * Gets details for all job categories in garlandtools data.
-   * @returns {JobCategory[]}
-   */
-  getAllJobCategories(): number[] {
-    return Object.keys(this.lazyData.data.jobCategories)
-      .filter(key => this.lazyData.data.jobCategories[key].en !== '')
-      .map(key => {
-        return +key;
-      });
   }
 
   /**

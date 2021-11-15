@@ -2,6 +2,7 @@ import { Inject, Injectable, NgZone, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, shareReplay, tap } from 'rxjs/operators';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { IS_HEADLESS } from 'apps/client/src/environments/is-headless';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class EorzeanTimeService {
   private mockTicks = 0;
 
   constructor(@Inject(PLATFORM_ID) private platform: Object, private ngZone: NgZone) {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.ngZone.runOutsideAngular(() => {
         setInterval(() => this.tick(), 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR);
       });
@@ -55,14 +56,14 @@ export class EorzeanTimeService {
   public getEorzeanTime(): Observable<Date> {
     return this._timerObservable.pipe(
       shareReplay(1),
-      isPlatformServer(this.platform) ? first() : tap()
+      isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
     );
   }
 
   private tick(): void {
     // How to mock time:
     // Set date here and uncomment the next 3 lines
-    // const mockDate = new Date(new Date('May 24, 2021 17:04:15 GMT+0200').getTime() + this.mockTicks);
+    // const mockDate = new Date(new Date('Nov 1, 2021 23:59:45 GMT+1').getTime() + this.mockTicks);
     // this.mockTicks += 20000 / EorzeanTimeService.EPOCH_TIME_FACTOR;
     // this._timerObservable.next(this.toEorzeanDate(mockDate));
 

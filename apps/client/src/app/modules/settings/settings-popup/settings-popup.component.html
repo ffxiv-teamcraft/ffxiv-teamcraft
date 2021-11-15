@@ -206,6 +206,12 @@
           <nz-input-number [(ngModel)]="settings.maximumVendorPrice"></nz-input-number>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Maximum_total_vendor_price' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Maximum_total_vendor_price_explain' | translate">
+          <nz-input-number [(ngModel)]="settings.maximumTotalVendorPrice"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Has_access_to_housing_vendor_explain' | translate">
@@ -313,7 +319,7 @@
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Starting_place' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Starting_place_explain' | translate">
           <nz-select [(ngModel)]="settings.startingPlace">
-            <nz-option *ngFor="let place of startingPlaces" [nzLabel]="place.placenameId | placeName | i18n"
+            <nz-option *ngFor="let place of startingPlaces" [nzLabel]="place.placenameId | i18nRow:'places' | i18n"
                        [nzValue]="place.id"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -325,8 +331,8 @@
                      nzAllowClear
                      nzShowSearch
                      style="width: 100%">
-            <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+            <nz-option *ngFor="let aetheryte of allAetherytes$ | async"
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -341,8 +347,8 @@
             nzAllowClear
             nzMode="multiple"
             style="width: 100%">
-            <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+            <nz-option *ngFor="let aetheryte of allAetherytes$ | async"
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)"
                        [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -368,6 +374,9 @@
     <div class="account-buttons" fxLayout="column" fxLayoutGap="10px">
       <button (nzOnConfirm)="resetPassword()" [nzPopconfirmTitle]="'SETTINGS.Reset_password_warning' | translate" nz-button nz-popconfirm>
         {{'SETTINGS.Reset_password' | translate}}
+      </button>
+      <button (click)="reloadGubalToken()" nz-button>
+        {{'SETTINGS.Reload_auth_token' | translate}}
       </button>
       <button (click)="updateEmail()" nz-button nz-popconfirm>
         {{'SETTINGS.Change_email' | translate}}

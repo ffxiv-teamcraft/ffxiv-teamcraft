@@ -14,23 +14,28 @@ import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
   templateUrl: './fishing-spot-datagrid.component.html',
   styleUrls: ['./fishing-spot-datagrid.component.less', '../../common-db.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [FishingSpotUtilsService],
+  providers: [FishingSpotUtilsService]
 })
 export class FishingSpotDatagridComponent<T extends string | number = number> {
   public readonly activeFish$ = new BehaviorSubject<number | undefined>(undefined);
-  @Input()
-  public set activeFish(value: number | undefined) {
-    this.activeFish$.next(!isNil(value) ? value : undefined);
-  }
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
   @Input()
   public rowIconRender?: TemplateRef<DatagridColDef>;
+  @Input()
+  public colIconRender?: TemplateRef<DatagridColDef>;
   public readonly table$ = new ReplaySubject<Datagrid<T>>();
+
+  constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {
+  }
+
+  @Input()
+  public set activeFish(value: number | undefined) {
+    this.activeFish$.next(!isNil(value) ? value : undefined);
+  }
+
   @Input()
   public set table(value: Datagrid<T>) {
     this.table$.next(value);
   }
-
-  constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {}
 }

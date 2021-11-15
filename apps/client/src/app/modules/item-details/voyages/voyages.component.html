@@ -1,7 +1,7 @@
 <nz-list [nzDataSource]="details" [nzRenderItem]="voyageTemplate">
   <ng-template #voyageTemplate let-voyage>
     <nz-list-item>
-      <nz-list-item-meta [nzTitle]="voyage | i18n">
+      <nz-list-item-meta nzTitle="{{(voyage.type === ExplorationType.AIRSHIP ? 'COMMON.Airship' : 'COMMON.Submarine') | translate}} - {{voyage.name | i18n}}">
       </nz-list-item-meta>
     </nz-list-item>
   </ng-template>

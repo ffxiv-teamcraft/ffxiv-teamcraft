@@ -31,15 +31,16 @@
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer">{{row.remainingTime | timer}}</div>
-            <div
-              class="map">{{row.alarm.aetheryte?.nameid |  placeName | i18n}}</div>
+            <div class="map" *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
+              {{aetheryte.nameid | i18nRow:'places' | i18n}}
+            </div>
             <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
           </div>
           <div *ngIf="row.alarm.baits">
             <app-fishing-bait [baits]="row.alarm.baits" flex="row wrap" hideNames="true" iconWidth="24"></app-fishing-bait>
           </div>
         </div>
-        <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+        <img *ngIf="row.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
              [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
         <div *ngIf="!overlayMode" class="map-button">
           <button (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">

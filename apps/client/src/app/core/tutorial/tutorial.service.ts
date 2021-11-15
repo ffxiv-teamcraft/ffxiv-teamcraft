@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { Subject } from 'rxjs';
-import { debounceTime, skipUntil } from 'rxjs/operators';
+import { debounceTime, first, skipUntil } from 'rxjs/operators';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.component';
@@ -20,14 +20,6 @@ export class TutorialService {
 
   private isPlaying = false;
 
-  private get stepsDone(): string[] {
-    return JSON.parse(localStorage.getItem('tutorial') || '[]');
-  }
-
-  private set stepsDone(steps: string[]) {
-    localStorage.setItem('tutorial', JSON.stringify(steps));
-  }
-
   constructor(private settings: SettingsService, private modal: NzModalService,
               private translate: TranslateService) {
     this.play$.pipe(
@@ -36,6 +28,14 @@ export class TutorialService {
     ).subscribe(() => {
       this.play();
     });
+  }
+
+  private get stepsDone(): string[] {
+    return JSON.parse(localStorage.getItem('tutorial') || '[]');
+  }
+
+  private set stepsDone(steps: string[]) {
+    localStorage.setItem('tutorial', JSON.stringify(steps));
   }
 
   public register(step: TutorialStepEntry): boolean {
@@ -61,36 +61,25 @@ export class TutorialService {
     }
     if (!this.settings.tutorialQuestionAsked) {
       this.settings.tutorialQuestionAsked = true;
-      this.modal.create({
-        nzTitle: this.translate.instant('TUTORIAL.POPUP.Title'),
-        nzContent: TutorialPopupComponent,
-        nzFooter: null,
-        nzClosable: false,
-        nzMaskClosable: false
-      }).afterClose
-        .subscribe(res => {
-          this.settings.tutorialEnabled = res;
-          if (res) {
-            this.startTutorial(false);
-          }
-        });
+      this.translate.get('TUTORIAL.POPUP.Title').pipe(
+        first()
+      ).subscribe(title => {
+        this.modal.create({
+          nzTitle: title,
+          nzContent: TutorialPopupComponent,
+          nzFooter: null,
+          nzClosable: false,
+          nzMaskClosable: false
+        }).afterClose
+          .subscribe(res => {
+            this.settings.tutorialEnabled = res;
+            if (res) {
+              this.startTutorial(false);
+            }
+          });
+      })
     } else if (this.settings.tutorialEnabled) {
       this.startTutorial(false);
-    }
-  }
-
-  private startTutorial(force: boolean): void {
-    if (this.isPlaying) {
-      return;
-    }
-    this.isPlaying = true;
-    this.steps = this.steps
-      .sort((a, b) => a.index - b.index);
-    if (force) {
-      this.nextStep(this.steps);
-    } else {
-      const done = this.stepsDone;
-      this.nextStep(this.steps.filter(step => done.indexOf(step.key) === -1));
     }
   }
 
@@ -117,5 +106,20 @@ export class TutorialService {
   public applicationReady(): void {
     this.applicationReady$.next();
     this.applicationReady$.complete();
+  }
+
+  private startTutorial(force: boolean): void {
+    if (this.isPlaying) {
+      return;
+    }
+    this.isPlaying = true;
+    this.steps = this.steps
+      .sort((a, b) => a.index - b.index);
+    if (force) {
+      this.nextStep(this.steps);
+    } else {
+      const done = this.stepsDone;
+      this.nextStep(this.steps.filter(step => done.indexOf(step.key) === -1));
+    }
   }
 }

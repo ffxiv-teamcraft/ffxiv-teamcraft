@@ -13,12 +13,16 @@ import * as isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
+import { Character, CharacterSearch } from '@xivapi/nodestone';
 
 export class IpcListenersManager {
 
   private mappyState: any = {};
   private appState: any = {};
   private fishingState: any = {};
+
+  private characterParser = new Character();
+  private characterSearchParser = new CharacterSearch();
 
   constructor(private pcap: PacketCapture, private overlayManager: OverlayManager,
               private mainWindow: MainWindow, private store: Store,
@@ -40,6 +44,7 @@ export class IpcListenersManager {
   }
 
   public init(): void {
+    this.setupLodestoneListeners();
     this.setupOauthListeners();
     this.setupOverlayListeners();
     this.setupStateListeners();
@@ -410,6 +415,24 @@ export class IpcListenersManager {
             event.sender.send('free-company-workshops:value', { freeCompanyWorkshops: [] });
           }
         }
+      });
+    });
+  }
+
+  private setupLodestoneListeners(): void {
+    ipcMain.on('lodestone:getCharacter', (event, id) => {
+      this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
+        event.sender.send('lodestone:character', {
+          Character: {
+            ID: +id,
+            ...char
+          }
+        });
+      });
+    });
+    ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
+      this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
+        event.sender.send('lodestone:character:search', res.List);
       });
     });
   }

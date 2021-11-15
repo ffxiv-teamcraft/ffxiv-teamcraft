@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Station Mog",
   "Quests": "Quests",
   "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur discord.",
   "Pick_a_list": "Choisissez une liste",
@@ -21,9 +22,9 @@
   "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur patreon",
   "Selection": "Sélection",
   "Change_character": "Personnage",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
-  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
+  "Check_guides": "Consultez nos guides (en anglais)",
+  "Guides_links": "Guides Teamcraft",
+  "Db_ban": "Vous n'avez pas la permission de poster des commentaires sur la base de données en raison de votre activité précédente dans les commentaires de la base de données. Si vous souhaitez discuter de ce ban, veuillez DM Miu#1568 sur Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -104,7 +105,7 @@
     "Patreon_supporters": "Supporters Patreon",
     "Contributors": "Contributeurs"
   },
-  "Patreon_login_success": "Connexion avec Patreon effectuée !",
+  "Patreon_login_success": "Connexion avec Patreon réussie !",
   "Hide_if_empty": "Masquer si vide",
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
@@ -153,6 +154,7 @@
     "Minutes_duration": "{{amount}} minutes",
     "Seconds_duration": "{{amount}} secondes",
     "None": "Aucun",
+    "Any": "Tous",
     "Top": "Début",
     "Bottom": "Fin",
     "Amount": "Quantité",
@@ -180,7 +182,15 @@
     "Back": "Précédent",
     "Support_us_remove_ads": "Soutenez-nous sur patreon pour supprimer les publicités",
     "Support_us": "Soutenez-nous",
-    "Show_more": "Voir plus"
+    "Show_more": "Voir plus",
+    "Item": "Objet",
+    "Venture": "Tâche",
+    "Monster": "Monstre",
+    "Airship": "Aéronef",
+    "Submarine": "Sous-marin",
+    "Voyage": "Voyage",
+    "Instance": "Instance",
+    "Fate": "Aléa"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -251,6 +261,7 @@
   "Item_name": "Nom de l'objet",
   "No_items_found": "Aucun objet trouvé",
   "No_instances_found": "Aucune instance trouvée",
+  "No_fishing_spot_found": "Aucun point de pêche trouvé",
   "No_quests_found": "Aucune quête trouvée",
   "No_npcs_found": "Aucun PNJ trouvé",
   "No_mobs_found": "Aucun monstre trouvé",
@@ -388,7 +399,7 @@
     "Always_on_top": "Toujours au premier plan",
     "Start_minimized": "Démarrer en mode réduit",
     "Always_quit": "Quitter en cliquant sur le bouton de fermeture (au lieu de minimiser)",
-    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
+    "Enable_minimize_reduction": "Réduire dans la barre des tâches lorsque vous cliquez sur le bouton réduire (au lieu de réduire à la barre des tâches)",
     "Check_for_update": "Chercher une mise à jour",
     "Downloading_update": "Téléchargement en cours...",
     "No_update_available": "Pas de mise à jour disponible",
@@ -453,7 +464,7 @@
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
     "Metrics_capture_folder": "Dossier de log des métriques",
-    "Enable_local_fishing_dump": "Enable local fishing reports dump",
+    "Enable_local_fishing_dump": "Activer le dump de rapports de pêche en local",
     "Char_data_folder": "Dossier des données des personnages (où se trouvent les dossiers CHRXXXXX)",
     "Maximum_vendor_price": "Prix maximum d'achat",
     "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
@@ -477,6 +488,7 @@
     "Has_access_to_housing_vendor": "Utiliser le vendeur de la maison en priorité",
     "Has_access_to_housing_vendor_explain": "Utiliser le vendeur de la maison en priorité dans le système de regroupement par PNJ, utile si vous avez accès à un.",
     "Hide_back_button": "Masquer le bouton retour dans la barre latérale",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -535,7 +547,7 @@
     "User_not_verified": "Utilisateur non vérifié, cliquez pour vérifier",
     "More_than_100_lists_created": "Plus de 100 listes créées",
     "Veteran": "Vétéran",
-    "Autofill_from_packets": "Autofill stats using packet capture (will take food stats into account too)",
+    "Autofill_from_packets": "Remplissage automatique des statistiques en utilisant la capture de paquets (prendra également en compte les buffs de nourriture)",
     "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
     "Open_public_profile": "Afficher le profil public",
     "Community_contributions": "Contributions communautaires",
@@ -554,12 +566,12 @@
   },
   "LISTS": {
     "Load_archived": "Charger les listes archivées",
-    "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
     "Merge_lists": "Fusionner des listes",
     "Merge_lists_warning": "Les grandes listes ne sont pas listées ici car vous ne pouvez pas fusionner les listes qui sont trop grandes en raison des limitations de base de données.",
-    "Lists_merged": "Listes fusionnées avec succès !",
+    "Lists_merged": "Listes fusionnées avec succès !",
     "Shared_lists": "Listes partagées avec vous",
     "Add_selection": "Ajouter la sélection à une liste",
     "Reset_selection": "Réinitialiser la sélection",
@@ -627,9 +639,9 @@
     "Can_skip_buying_X": "Peut en ignorer {{amount}}",
     "Can_skip_buying_entirely": "Peut ignorer entièrement",
     "Can_skip_tooltip": "Un autre objet que vous achetez nécessite cet objet, ce qui signifie que vous pouvez acheter moins de celui-ci ou l'ignorer entièrement si vous prévoyez d'acheter tout dans ce panneau",
-    "Requirements_ignored": "Requirements ignored",
-    "Mark_whole_panel_nq": "Remove manual HQ flags",
-    "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Requirements_ignored": "Pré-requis ignorés",
+    "Mark_whole_panel_nq": "Supprimer les flags HQ manuels",
+    "Mark_whole_panel_hq": "Marquer tout le panneau HQ",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
@@ -709,6 +721,8 @@
     "Autofill_notification": "Notification de complétion",
     "Autofill_notification_title": "Objet complété",
     "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
@@ -720,15 +734,15 @@
     "Commission_list": "Liée à une commission",
     "Inventory_cleanup": "Nettoyage de l'inventaire",
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
-    "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Consider_requirements": "Afficher les pré-requis",
+    "Ignore_requirements": "Ignorer les pré-requis",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
       "Import_layout": "Importer un affichage",
       "Export_layout": "Exporter ce layout",
       "Import_string": "Chaîne d'import de l'affichage",
-      "Import_string_copied": "Code du layout copié !",
+      "Import_string_copied": "Code de mise en page copié !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
@@ -837,7 +851,7 @@
     "Title": "Traducteur de macro",
     "Macro_language": "Langue de la macro",
     "Macro_to_translate": "Macro à traduire",
-    "Do_translate": "Traduire !",
+    "Do_translate": "Traduit !",
     "Invalid_macro_or_language": "Macro ou langue invalide."
   },
   "CUSTOM_LINKS": {
@@ -870,7 +884,7 @@
     "No_items": "Aucune récolte trouvée",
     "Gathering_name": "Nom de l'objet",
     "Ephemeral_node": "Nœud éphémère, peut être re-déclenché",
-    "Intro": "Ici vous pouvez simplement chercher un objet récoltable et voir ses détails, incluant la position, les heures d'apparition et la possibilité de créer une alarme. Commencez à taper un nom et laissez la magie opérer !",
+    "Intro": "L'emplacement de collecte vous permet de rechercher facilement un objet récoltable et de voir les détails à ce sujet, où le trouver et créer une alarme pour un point de récolte donné. Il suffit d'entrer un nom dans le champ ci-dessus et de le laisser trouver ce que vous cherchez !",
     "Hidden_item": "Caché",
     "Fish_eyes": "Nécessite des yeux de poisson pour se soucier uniquement des conditions météorologiques",
     "Add_alarm": "Ajouter une alarme",
@@ -1057,7 +1071,7 @@
       "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
       "Fail": "Echec",
       "Success": "Succès : {{HQ}}% HQ",
-      "Success_collectable": "Success: {{collectability}}",
+      "Success_collectable": "Succès : {{collectability}}",
       "Set_to_simulate": "Stats",
       "Specialist_rotation_warning": "Le résultat affiché utilise un set non spécialiste pour une rotation spécialiste, ce qui produit un résultat bien plus faible que si le set était spécialiste.",
       "Steps_count": "{{count}} tours",
@@ -1195,7 +1209,7 @@
     "More_on_gamerescape": "Plus d'informations sur gamerescape",
     "Deliver_to": "Remettre à {{placename}}",
     "Hide_large": "Masquer les grands mandats",
-    "Road_to_buff": "Include \"road to XX\" buff",
+    "Road_to_buff": "Inclure le bonus \"En route vers XX\"",
     "INTRO": {
       "Title": "Mandats",
       "First_line": "Cette page vous permet de chercher un ou plusieurs mandat(s) pour créer une liste à partir d'un ou plusieurs résultat(s)",
@@ -1294,19 +1308,19 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Donation_button": "Faites un don unique",
     "Buy_merch": "Acheter un objet Teamcraft",
-    "Features_header": "Par où commencer !",
+    "Features_header": "Commencer !",
     "DESCRIPTION": {
-      "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
+      "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau de filtres pour trouver des objets précis et commencer à fabriquer des choses.",
       "Public_lists": "Clonez des listes communautaires pour vous aider à construire des kits de mandats, de complétion de carnet, des aéronefs, de l'équipement, tout peut être trouvé ici.",
       "Alarms": "Créer des alarmes pour s’assurer que vous ne manquez pas une récolte, organisez-les en groupes, importez-les en jeu, tout est possible.",
       "Gathering_location": "Trouvez des informations sur n'importe quel objet récoltable, créez une alarme, trouvez ses coordonnées, l'éthéryte la plus proche, le livre de récolte nécessaire, et bien plus !",
       "Rotations": "Créez des rotations pour la synthèse, testez-les dans un simulateur ou créez vos rotations en prévision des nouveaux patchs en utilisant le simulateur configurable !",
       "Levequests": "Trouvez les mandats pour une tranche de niveau donnée, calculez facilement les bénéfices en gils et expérience, puis créez rapidement une liste pour les réaliser.",
-      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
+      "Macro_translation": "Vous avez des macros mais elles ne sont pas dans votre langue ? Le traducteur de macros peut vous les traduire en un clin d’œil pour les rendre utilisables dans votre version de FFXIV !"
     }
   },
   "UPDATE": {
-    "New_update_available": "Une nouvelle mise à jour est disponible ! ",
+    "New_update_available": "Une nouvelle mise à jour est disponible !",
     "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
     "Downloading_update": "Téléchargement de la mise à jour en cours, un redémarrage vous sera proposé une fois celle-ci téléchargée",
@@ -1328,6 +1342,7 @@
     "Required_for_achievement": "Requis pour les haut faits",
     "Select_spot": "Sélectionnez un point de pêche pour en voir les détails",
     "Hide_completed": "Masquer les éléments complétés",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "Masquer les éléments complétés",
     "MIN_optimized_path": "Chemin optimisé pour tous les nœuds MIN",
     "BTN_optimized_path": "Chemin optimisé pour tous les nœuds BTN",
@@ -1336,7 +1351,7 @@
     "Import_from_carbuncleplushy_success": "Suivi du journal de pêche mis à jour avec succès",
     "Export_FSH_completion": "Exporter la complétion en JSON",
     "Export_FSH_completion_copied": "Complétion copiée au format JSON dans votre presse papier",
-    "Log_in_to_track": "Log in to be able to track your log tracker completion",
+    "Log_in_to_track": "Connectez-vous pour être en mesure de suivre la réalisation de votre carnet de recette",
     "PAGE": {
       "Master_recipes": "Expert - tome {{number}}",
       "Housing_items": "Logement ({{number}})",
@@ -1557,6 +1572,7 @@
       "Top_users": "Meilleurs classements",
       "Your_ranking": "Votre classement",
       "Include_fisheyes_data": "Inclure les rapports utilisant Yeux de poissons",
+      "Not_enough_data_points": "Données insuffisantes pour afficher le graphique",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1594,7 +1610,9 @@
       "Available_fishes": "Poissons disponibles",
       "Fish_per_weather": "Poisson par météo",
       "Fish_per_bait": "Poisson par appât",
-      "Fish_per_tug": "Poisson par touche"
+      "Fish_per_tug": "Poisson par touche",
+      "Include_misses": "Inclure les ratés",
+      "Miss": "Raté"
     },
     "NODE": {
       "Items": "Objets",
@@ -1616,7 +1634,7 @@
       "Repeatable": "Répétable",
       "Beast_tribe_rank": "Rang de tribu",
       "Chain_length": "Quêtes suivantes",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "Échanges possibles"
     },
     "NPC": {
       "Other_entries": "Autres apparitions",
@@ -1711,7 +1729,7 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "Les commentaires de la base de données sont destinés à être des informations supplémentaires utiles, les utiliser pour se plaindre du jeu ou de son contenu peut entraîner une restriction à publier des commentaires."
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
@@ -1802,11 +1820,11 @@
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix.",
     "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
     "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "X_sold_last_week": "{{amount}} vendu la semaine dernière"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",
-    "Description": "Vous voulez savoir quels aliments donneront les statistiques que vous voulez ? Ne cherchez pas plus loin, vous êtes là où vous devez être !",
+    "Description": "Vous voulez savoir quelle nourriture donne les statistiques que vous voulez ? Ne cherchez pas plus loin, vous êtes là où vous devez être !",
     "Pick_stat": "Choisissez un attribut"
   },
   "BLOG": {
@@ -2060,7 +2078,7 @@
     "Value_for_previous": "Palier précédent",
     "Editing_others_gearset": "Mode d'édition locale",
     "Editing_others_gearset_description": "Vous éditez actuellement la tenue de quelqu'un d'autre, rien ne sera sauvegardé si vous ne cliquez pas sur le bouton Enregistrer ci-dessus pour créer votre propre copie.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "Retirer toutes les matérias de l'équipement sélectionné",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2163,7 +2181,7 @@
     "DESYNTH": {
       "Job": "Sélectionnez le job que vous souhaitez pex.",
       "Level": "Entrez le niveau de recyclage du job",
-      "Search": "Cliquez sur Recherche, et c'est fait !"
+      "Search": "Cliquez sur Recherche, et c'est terminé !"
     },
     "RESET_TIMERS": {
       "Toggle": "Activer les alarmes pour un minuteur donné en réglant ce bouton sur ON."
@@ -2544,7 +2562,12 @@
     "Task_completed_notification_title": "{{name}} a terminé sa tâche",
     "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
     "Task_completion_alarm": "Alarme de complétion de tâche",
-    "Reset_retainers": "Reset retainers"
+    "Reset_retainers": "Supprimer tous les servants",
+    "Check_prices": "Vérifier les prix de vente par rapport à l'HDV (2h de recharge)",
+    "Cannot_fetch": "La vérification de prix est en recharge, (2h) , dernière vérification: {{date}}",
+    "X%_above": "Votre prix est de {{diff}}% supérieur au prix actuel le plus bas",
+    "X%_below": "Votre prix est inférieur de {{diff}}% au prix actuel le plus bas",
+    "Lowest_price": "Meilleur prix"
   },
   "RETAINER_VENTURES": {
     "Title": "Tâches de servant",
@@ -2639,7 +2662,7 @@
         "Abbreviation": "E"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "i2"
+        "Abbreviation": "J"
       },
       "ODYSSEY": {
         "Abbreviation": "O"
@@ -2697,5 +2720,107 @@
   "GARDENING": {
     "Growth_time": "Temps de croissance",
     "Cross_breeds": "Croisements"
+  },
+  "ALLAGAN_REPORTS": {
+    "Feature_banner_title": "Nouvelle fonctionnalité : Rapports Allagois",
+    "Feature_banner_description": "Vous avez trouvé un objet sans source connue ou avec des informations manquantes ? Vous pouvez maintenant les renseigner dans les rapports allagois (Général > Rapports Allagois) afin qu'ils soient ajoutés dans la prochaine mise à jour de Teamcraft !",
+    "Title": "Rapports Allagois",
+    "Reports": "Rapports",
+    "Pending_changes": "Changements en attente",
+    "No_pending_changes": "Aucun changement en attente",
+    "New_report": "Nouveau rapport",
+    "Submit_new_report": "Soumettre une nouvelle proposition de rapport",
+    "Source": "Source",
+    "Report_added": "Proposition soumise",
+    "Instance_placeholder": "Nom de l'instance",
+    "Venture_placeholder": "Nom de la tâche",
+    "Monster_placeholder": "Nom du monstre",
+    "Voyage_placeholder": "Nom du voyage",
+    "Voyage_type": "Type de voyage",
+    "Reported_by": "Signalé par",
+    "Approved_by": "Approuvé par",
+    "No_reports": "Aucun rapport",
+    "Proposal_accepted": "Rapport approuvé",
+    "Proposal_rejected": "Rapport rejeté",
+    "Reject": "Rejeter",
+    "Accept": "Approuver",
+    "Suggest_deletion": "Suggérer la suppression",
+    "Deletion_suggestion_submitted": "Demande de suppression envoyée",
+    "Report_deleted": "Rapport supprimé",
+    "Suggest_modification": "Éditer",
+    "Modification_suggestion_submitted": "Demande de modification envoyée",
+    "Modification_applied": "Modification appliquée",
+    "Submit_modification_suggestion": "Soumettre une suggestion de modification",
+    "Last_updated": "Dernière mise à jour",
+    "Submitted": "Envoyé",
+    "Spawn": "Apparition",
+    "Duration": "Durée",
+    "Predator": "Prédateur",
+    "Predator_explain": "Poissons à attraper avant d'avoir l'intuition du pêcheur ou le poisson pour la pêche à la lance",
+    "Unknown_hookset": "Appât inconnu",
+    "Gig_head": "Gig head",
+    "No_predators": "Aucun prédateur",
+    "Loading_gubal_analysis": "Loading gubal analysis",
+    "Gubal_analysis_suggestion": "Suggestion based on data analysis",
+    "Cannot_report_for_this_spot": "Vous ne pouvez pas rapporter de détails pour ce point de pêche sur ce poisson car il existe déjà",
+    "Please_suggest_edit_instead": "Veuillez suggérer une modification à celle existante",
+    "Add_data_sources": "Ajouter des sources de données pour cet élément",
+    "Not_applied_yet": "Non appliqué",
+    "Not_applied_yet_explain": "Cette source sera ajoutée à la liste et à la base de données lors de la prochaine mise à jour",
+    "Pending_changes_count": "{{amount}} modifications en attente à verifier",
+    "Review_changes": "Vérifier les changements",
+    "Imported_from_GT_data": "Importé depuis Garlandtools",
+    "Status": "Statut",
+    "Count": "# of reports",
+    "Applied_count": "# of applied reports",
+    "Fish_coverage": "Fishing coverage",
+    "Items_with_no_source": "Éléments sans données",
+    "Data_needs": "Éléments nécessitant des données",
+    "Open_reports": "Ouvrir la page des rapports",
+    "Fishing": "Pêche",
+    "Others": "Autres éléments",
+    "Ocean_fishing_time": "Temps de pêche en mer",
+    "Fate_placeholder": "Entrez le nom de l'ALEA",
+    "Open_details": "Pas d'espace pour les détails, ouvrez la page pour approuver ou rejeter",
+    "Accept_many": "Accepter les rapports sélectionnés ({{amount}})",
+    "Reject_many": "Rejeter les rapports sélectionnés ({{amount}})",
+    "Jump_to_item": "Aller à un autre élément",
+    "Price": "Prix",
+    "Product_id": "ID de produit",
+    "Product_id_explain": "L'id du produit, situé dans l'URL de la boutique juste après \"/product/\"",
+    "Open_item": "Ouvrir dans les rapports allagois",
+    "Delete": "Supprimer",
+    "Voyage_rarity": "Rareté",
+    "Rarity_Common": "Commun",
+    "Rarity_Voyage_exclusive": "Voyage exclusif",
+    "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "Aucun poisson avec des données manquantes",
+    "Sources_filter": "Filtrer les sources",
+    "SOURCE": {
+      "DESYNTH": "DESYNTH",
+      "REDUCTION": "REDUCTION",
+      "GARDENING": "GARDENING",
+      "LOOT": "LOOT",
+      "VENTURE": "VENTURE",
+      "VOYAGE": "VOYAGE",
+      "DROP": "Drop (obtenu en tuant un monstre)",
+      "INSTANCE": "Instance",
+      "FISHING": "Pêche",
+      "SPEARFISHING": "Pêche au harpon",
+      "FATE": "Aléa",
+      "MOGSTATION": "MOGSTATION"
+    },
+    "STATUS": {
+      "PROPOSAL": "Proposition",
+      "MODIFICATION": "Modification",
+      "DELETION": "Suppression",
+      "ACCEPTED": "Accepté"
+    }
+  },
+  "OCEAN_FISHING": {
+    "ANY": "Tous",
+    "SUNSET": "Ensoleillé",
+    "DAY": "Jour",
+    "NIGHT": "Nuit"
   }
 }

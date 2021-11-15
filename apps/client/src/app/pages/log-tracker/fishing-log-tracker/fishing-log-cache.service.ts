@@ -1,17 +1,11 @@
 import { Injectable } from '@angular/core';
-import { filter, map, shareReplay, startWith } from 'rxjs/operators';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
-import { Alarm } from '../../../core/alarms/alarm';
-import { uniqBy } from 'lodash';
+import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { fshSpearLogOrder } from '../fsh-spear-log-order';
 import { fshLogOrder } from '../fsh-log-order';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -23,77 +17,8 @@ export class FishingLogCacheService {
     startWith([])
   );
 
-  private completeDisplay$ = this.lazyData.data$.pipe(
-    map(data => {
-      return [data.fishingLog, data.spearFishingLog];
-    }),
-    filter(logs => logs.every(l => !!l)),
-    map((logs) => {
-      return logs.map((log: any[], type) => {
-        const display = { tabs: [], total: 0, done: 0 };
-        log.forEach(entry => {
-          let row = display.tabs.find(e => e.mapId === entry.mapId);
-          if (row === undefined) {
-            display.tabs.push({
-              mapId: entry.mapId,
-              placeId: entry.placeId,
-              done: 0,
-              total: 0,
-              spots: []
-            });
-            row = display.tabs[display.tabs.length - 1];
-          }
-          const spotId = entry.spot ? entry.spot.id : entry.id;
-          let spot = row.spots.find(s => s.id === spotId);
-          if (spot === undefined) {
-            const coords = entry.spot ? entry.spot.coords : entry.coords;
-            row.spots.push({
-              id: spotId,
-              placeId: entry.zoneId,
-              mapId: entry.mapId,
-              done: 0,
-              total: 0,
-              coords: coords,
-              fishes: []
-            });
-            spot = row.spots[row.spots.length - 1];
-          }
-          if (type === 0) {
-            const parameter = this.lazyData.data.fishParameter[entry.id];
-            const fish: any = {
-              id: spot.id,
-              itemId: entry.itemId,
-              level: entry.level,
-              icon: entry.icon,
-              data: this.getFshData(entry.itemId, spot.id)
-            };
-            if (parameter) {
-              fish.timed = parameter.timed;
-              fish.weathered = parameter.weathered;
-            }
-            spot.fishes.push(fish);
-          } else {
-            const node = this.lazyData.data.spearFishingNodes.find(n => n.id === entry.itemId);
-            const data = this.getFshData(node.itemId, spot.id);
-            spot.fishes.push({
-              id: spot.id,
-              itemId: node.itemId,
-              level: node.level,
-              icon: node.icon,
-              data: data,
-              timed: data[0].gatheringNode.limited,
-              tug: data[0].gatheringNode.tug
-            });
-          }
-        });
-        return display;
-      });
-    }),
-    shareReplay(1)
-  );
-
-  public display$ = combineLatest([this.completeDisplay$, this.completion$]).pipe(
-    map(([completeDisplay, completion]: [any, number[]]) => {
+  public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$, this.lazyData.getEntry('places')]).pipe(
+    map(([completeDisplay, completion, places]) => {
       return completeDisplay.map(display => {
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
@@ -104,7 +29,7 @@ export class FishingLogCacheService {
             const uniqueSpotDone = [];
             const uniqueSpotTotal = [];
             spot.fishes.forEach(fish => {
-              fish.done = completion.indexOf(fish.itemId) > -1;
+              (fish as any).done = completion.indexOf(fish.itemId) > -1;
               if (uniqueMapTotal.indexOf(fish.itemId) === -1) {
                 uniqueMapTotal.push(fish.itemId);
               }
@@ -114,7 +39,7 @@ export class FishingLogCacheService {
               if (uniqueSpotTotal.indexOf(fish.itemId) === -1) {
                 uniqueSpotTotal.push(fish.itemId);
               }
-              if (fish.done) {
+              if ((fish as any).done) {
                 if (uniqueDisplayDone.indexOf(fish.itemId) === -1) {
                   uniqueDisplayDone.push(fish.itemId);
                 }
@@ -132,9 +57,9 @@ export class FishingLogCacheService {
           area.spots = area.spots
             .sort((a, b) => {
               if (a.id > 20000) {
-                return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+                return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
               }
-              return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
             });
           area.total = uniqueMapTotal.length;
           area.done = uniqueMapDone.length;
@@ -142,9 +67,9 @@ export class FishingLogCacheService {
         display.tabs = display.tabs
           .sort((a, b) => {
             if (a.id > 20000) {
-              return fshSpearLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshSpearLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+              return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
             }
-            return fshLogOrder.indexOf(this.l12n.getPlace(a.placeId).en) - fshLogOrder.indexOf(this.l12n.getPlace(b.placeId).en);
+            return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;
@@ -154,27 +79,7 @@ export class FishingLogCacheService {
     shareReplay(1)
   );
 
-  private fshDataCache: Record<number, { gatheringNode: GatheringNode, alarms: Alarm[] }[]> = {};
-
-  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
-              private lazyData: LazyDataService, private gatheringNodesService: GatheringNodesService) {
-  }
-
-
-  private getFshData(itemId: number, spotId: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
-    if (this.fshDataCache[itemId] === undefined) {
-      this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true)
-        .filter(node => node.id === spotId)
-        .map(node => {
-          return {
-            gatheringNode: node,
-            alarms: this.alarmsFacade.generateAlarms(node)
-          };
-        });
-
-      this.fshDataCache[itemId] = uniqBy(this.fshDataCache[itemId], entry => entry.gatheringNode.baits && entry.gatheringNode.baits[0]);
-    }
-    return this.fshDataCache[itemId];
+  constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private lazyData: LazyDataFacade) {
   }
 
 }

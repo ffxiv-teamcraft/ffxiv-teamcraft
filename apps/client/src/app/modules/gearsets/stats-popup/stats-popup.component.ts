@@ -2,6 +2,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { StatsService } from '../stats.service';
 import { TranslateService } from '@ngx-translate/core';
+import { combineLatest } from 'rxjs';
+import { observeInput } from '../../../core/rxjs/observe-input';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-stats-popup',
@@ -23,6 +26,17 @@ export class StatsPopupComponent {
   @Input()
   food: any;
 
+  display$ = combineLatest([
+    observeInput(this, 'gearset'),
+    observeInput(this, 'level'),
+    observeInput(this, 'tribe'),
+    observeInput(this, 'food', false),
+  ]).pipe(
+    switchMap(([gearset, level, tribe, food]) => {
+      return this.statsService.getStatsDisplay(gearset, level, tribe, food);
+    })
+  )
+
   _hideDisclaimer = localStorage.getItem('gearset:hide_disclaimer') === 'true';
 
   get hideDisclaimer(): boolean {
@@ -35,10 +49,6 @@ export class StatsPopupComponent {
   }
 
   constructor(private statsService: StatsService, public translate: TranslateService) {
-  }
-
-  getDisplay(): any[] {
-    return this.statsService.getStatsDisplay(this.gearset, this.level, this.tribe, this.food);
   }
 
 }

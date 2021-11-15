@@ -8,13 +8,12 @@ import { GatheredBy } from './gathered-by';
 import { CraftedBy } from './crafted-by';
 import { TradeSource } from './trade-source';
 import { Vendor } from './vendor';
-import { Instance } from './instance';
 import { I18nName } from '../../../model/common/i18n-name';
 import { Drop } from './drop';
-import { Treasure } from './treasure';
 import { FateData } from './fate-data';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { GardeningData } from './gardening-data';
+import { MogstationItem } from './mogstation-item';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -78,17 +77,16 @@ export class ListRow extends DataModel {
 export function getItemSource<T = any>(item: ListRow, type: DataType.CRAFTED_BY, isObject?: boolean): CraftedBy[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.TRADE_SOURCES, isObject?: boolean): TradeSource[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.VENDORS, isObject?: boolean): Vendor[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES, isObject?: boolean): number[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.INSTANCES, isObject?: boolean): Instance[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.REDUCED_FROM | DataType.DESYNTHS | DataType.VENTURES | DataType.TREASURES | DataType.INSTANCES | DataType.QUESTS, isObject?: boolean): number[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.GATHERED_BY, isObject?: boolean): GatheredBy
 export function getItemSource<T = any>(item: ListRow, type: DataType.GARDENING, isObject?: boolean): GardeningData
 export function getItemSource<T = any>(item: ListRow, type: DataType.VOYAGES, isObject?: boolean): I18nName[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.DROPS, isObject?: boolean): Drop[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.ALARMS, isObject?: boolean): Alarm[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.MASTERBOOKS, isObject?: boolean): CompactMasterbook[]
-export function getItemSource<T = any>(item: ListRow, type: DataType.TREASURES, isObject?: boolean): Treasure[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.MOGSTATION, isObject?: boolean): MogstationItem
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
   if (item.sources === undefined) {

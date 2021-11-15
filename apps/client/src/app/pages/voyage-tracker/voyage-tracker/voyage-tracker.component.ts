@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { FreeCompanyWorkshopFacade } from '../../../modules/free-company-workshops/+state/free-company-workshop.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -16,32 +15,13 @@ import { SettingsService } from '../../../modules/settings/settings.service';
   styleUrls: ['./voyage-tracker.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit {
+export class VoyageTrackerComponent extends TeamcraftComponent {
   isLoading$ = new BehaviorSubject(false);
 
-  private _airshipMaxRank$ = new BehaviorSubject(null);
-
-  public get airshipMaxRank$() {
-    return this._airshipMaxRank$.asObservable();
-  }
-
-  private _submarineMaxRank$ = new BehaviorSubject(null);
-
-  public get submarineMaxRank$() {
-    return this._submarineMaxRank$.asObservable();
-  }
-
-  private _airshipSectorsTotal = new BehaviorSubject(null);
-
-  public get airshipSectorsTotal$() {
-    return this._airshipSectorsTotal.asObservable();
-  }
-
-  private _submarineSectorsTotal$ = new BehaviorSubject(null);
-
-  public get submarineSectorsTotal$() {
-    return this._submarineSectorsTotal$.asObservable();
-  }
+  airshipMaxRank$ = this.freeCompanyWorkshopFacade.getAirshipMaxRank();
+  submarineMaxRank$ = this.freeCompanyWorkshopFacade.getSubmarineMaxRank();
+  airshipSectorsTotal = this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount();
+  submarineSectorsTotal$ = this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount();
 
   public display$ = this.freeCompanyWorkshopFacade.workshops$.pipe(
     map((results) => {
@@ -64,17 +44,9 @@ export class VoyageTrackerComponent extends TeamcraftComponent implements OnInit
     takeUntil(this.onDestroy$)
   );
 
-  constructor(private dialog: NzModalService, public ipc: IpcService,
-              private lazyData: LazyDataService, public translate: TranslateService,
+  constructor(private dialog: NzModalService, public ipc: IpcService, public translate: TranslateService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, public settings: SettingsService) {
     super();
-  }
-
-  ngOnInit(): void {
-    this._airshipMaxRank$.next(this.freeCompanyWorkshopFacade.getAirshipMaxRank());
-    this._submarineMaxRank$.next(this.freeCompanyWorkshopFacade.getSubmarineMaxRank());
-    this._airshipSectorsTotal.next(this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount());
-    this._submarineSectorsTotal$.next(this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount());
   }
 
   getAirshipSectorsProgression(sectors: Record<string, SectorExploration>): number {

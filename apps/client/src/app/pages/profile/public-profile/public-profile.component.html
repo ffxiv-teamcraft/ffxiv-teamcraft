@@ -21,7 +21,7 @@
       </ng-container>
       <div *ngIf="gearSets$ | async as sets" fxLayout="row wrap" fxLayoutAlign="space-evenly">
         <div *ngFor="let set of sets" class="stat-row" fxLayout="column" fxLayoutAlign="center center">
-          <img *ngIf="((set.jobId | jobAbbr).en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+          <img *ngIf="((set.jobId | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
           <div>{{set.level}}</div>
         </div>
       </div>

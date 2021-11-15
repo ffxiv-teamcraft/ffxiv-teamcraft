@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Workshop } from '../../../model/other/workshop';
-import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap, withLatestFrom } from 'rxjs/operators';
@@ -85,7 +85,7 @@ export class WorkshopPanelComponent {
             elements: elements.map(list => {
               return {
                 $key: list.$key,
-                name: list.name,
+                name: of(list.name),
                 description: list.note
               };
             })

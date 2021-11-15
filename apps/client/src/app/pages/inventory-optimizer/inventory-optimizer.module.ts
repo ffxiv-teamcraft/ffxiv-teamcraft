@@ -17,7 +17,6 @@ import { Duplicates } from './optimizations/duplicates';
 import { FormsModule } from '@angular/forms';
 
 import { HasTooFew } from './optimizations/has-too-few';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ConsolidateStacks } from './optimizations/consolidate-stacks';
 import { UnwantedMaterials } from './optimizations/unwanted-materials';
 import { ScrollingModule } from '@angular/cdk/scrolling';
@@ -31,7 +30,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { InventoryService } from '../../modules/inventory/inventory.service';
 import { OnlyForOneMaterial } from './optimizations/only-for-one-material';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 const optimisations: Provider[] = [
   {
@@ -43,31 +42,31 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: Duplicates,
     multi: true,
-    deps: [TranslateService, InventoryService, LazyDataService]
+    deps: [TranslateService, InventoryService, LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: HasTooFew,
     multi: true,
-    deps: [LazyDataService]
+    deps: [LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: ConsolidateStacks,
     multi: true,
-    deps: [TranslateService, InventoryService, LazyDataService]
+    deps: [TranslateService, InventoryService, LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: UnwantedMaterials,
     multi: true,
-    deps: [LazyDataService]
+    deps: [LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: CanExtractMateria,
     multi: true,
-    deps: [LazyDataService]
+    deps: [LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
@@ -78,13 +77,13 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: UselessHq,
     multi: true,
-    deps: [AuthFacade, LazyDataService]
+    deps: [AuthFacade, LazyDataFacade]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: OnlyForOneMaterial,
     multi: true,
-    deps: [LazyDataService, I18nToolsService, LocalizedDataService]
+    deps: [LazyDataFacade, I18nToolsService]
   }
 ];
 

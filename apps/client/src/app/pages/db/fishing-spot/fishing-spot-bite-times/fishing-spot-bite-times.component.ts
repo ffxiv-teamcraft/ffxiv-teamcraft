@@ -1,16 +1,16 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
-import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ChartOptions } from 'chart.js';
-import { Chart } from 'chart.js';
+import { Chart, ChartOptions } from 'chart.js';
+import { Tug } from '../../../../core/data/model/tug';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 
-const fishImageUrls = []
+const fishImageUrls = [];
 
 Chart.pluginService.register({
   afterDraw: chart => {
@@ -21,7 +21,7 @@ Chart.pluginService.register({
       const y = yAxis.getPixelForTick(index);
       const image = new Image();
       image.src = fishImageUrls[index],
-      ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
+        ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
     });
   }
 });
@@ -39,27 +39,16 @@ interface FishingSpotChartData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
-  public readonly colors = ['245, 196, 110', '245, 153, 110', '184, 245, 110'];
-
-  private readonly activeFish$ = new Subject<number | undefined>();
-
-  @Input()
-  public set activeFish(value: number | undefined) {
-    this.activeFish$.next(value >= 0 ? value : undefined);
-  }
-
+  public readonly colors = [{ tug: Tug.LIGHT, color: '184, 245, 110' }, { tug: Tug.MEDIUM, color: '245, 196, 110' }, { tug: Tug.BIG, color: '245, 153, 110' }];
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
-
   public readonly baitFilter$ = this.fishCtx.baitId$.pipe(map((i) => (i >= 0 ? i : -1)));
-
   public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map((res) => res.loading));
-
   public readonly biteTimesChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.biteTimesBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
-        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(map((name) => ({ id: +id, name })))
+        this.i18n.getNameObservable('items', +id).pipe(map((name) => ({ id: +id, name })))
       );
       return combineLatest([...fishNames]).pipe(
         map(([...names]) => {
@@ -83,7 +72,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
-
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
     switchMap(([res, tugs]) => {
       if (!res.data || !tugs.data) return of([]);
@@ -94,21 +82,30 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         return clone;
       }, []);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
-        this.i18n.resolveName(this.l12n.getItem(+id)).pipe(
+        this.i18n.getNameObservable('items', +id).pipe(
           map((name) => ({ id: +id, name: `${name} (${['!!', '!!!', '!'][tugByFish[id]]})` }))
         )
       );
+      if (fishNames.length === 0) {
+        return of({
+          labels: [],
+          datasets: []
+        });
+      }
       return combineLatest([...fishNames]).pipe(
-        map(([...names]) => {
+        withLazyData(this.lazyData, 'itemIcons'),
+        map(([[...names], itemIcons]) => {
           const sortedNames = names.sort((a, b) => a.name < b.name ? 1 : -1);
-          const colors = sortedNames.map(el => this.colors[tugByFish[el.id]]);
+          const colors = sortedNames.map(el => {
+            return this.colors.find(c => c.tug === +tugByFish[el.id])?.color || 'white';
+          });
           return {
             labels: sortedNames.map(el => el.name),
             datasets: [{
               borderWidth: 1,
               itemRadius: 0,
               data: sortedNames.map((el, index) => {
-                fishImageUrls[index] = 'https://xivapi.com' + this.lazyData.data.itemIcons[el.id]
+                fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
@@ -127,10 +124,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     }),
     shareReplay(1)
   );
-
   gridColor = 'rgba(255,255,255,.3)';
   fontColor = 'rgba(255,255,255,.5)';
-
   options: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -167,7 +162,6 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       }]
     }
   };
-
   public readonly baitIds$: Observable<number[] | undefined> = this.fishCtx.baitsBySpot$.pipe(
     map((res) => {
       if (!res.data) return undefined;
@@ -175,31 +169,33 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       return [...uniq];
     })
   );
-
+  public readonly activeFishName$ = new Subject<string | undefined>();
+  private readonly activeFish$ = new Subject<number | undefined>();
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
     switchMap((fishId) => {
       if (fishId >= 0) {
-        return this.i18n.resolveName(this.l12n.getItem(fishId)).pipe(map((name) => [{ name }]));
+        return this.i18n.getNameObservable('items', fishId).pipe(map((name) => [{ name }]));
       }
       return of([]);
     }),
     startWith([])
   );
-
-  public readonly activeFishName$ = new Subject<string | undefined>();
-
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(
-    private readonly l12n: LocalizedLazyDataService,
     private readonly i18n: I18nToolsService,
     public readonly settings: SettingsService,
     public readonly fishCtx: FishContextService,
     private readonly translate: TranslateService,
-    private lazyData: LazyDataService
+    private lazyData: LazyDataFacade
   ) {
+  }
+
+  @Input()
+  public set activeFish(value: number | undefined) {
+    this.activeFish$.next(value >= 0 ? value : undefined);
   }
 
   ngOnInit() {

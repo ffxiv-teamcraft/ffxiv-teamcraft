@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { Language } from '../../../core/data/language';
+import { I18nName } from '../../../model/common/i18n-name';
+import { zhActions } from '../../../core/data/sources/zh-actions';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { LazyData } from '../../../lazy-data/lazy-data';
+import { I18nElement } from '../../../lazy-data/lazy-data-types';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 @Component({
   selector: 'app-macro-translator',
@@ -31,12 +38,10 @@ export class MacroTranslatorComponent {
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
-  constructor(private localizedDataService: LocalizedDataService, private lazyData: LazyDataService) {
-    this.lazyData.load('zh');
-    this.lazyData.load('ko');
+  constructor(private lazyData: LazyDataFacade) {
   }
 
-  translateMacro() {
+  translateMacro(): void {
     const macroTranslated: { [index: string]: string[] } = {
       fr: [],
       en: [],
@@ -48,63 +53,143 @@ export class MacroTranslatorComponent {
 
     this.translationDone = false;
     this.invalidInputs = false;
-    for (let line of this.macroToTranslate.split('\n')) {
+
+    safeCombineLatest(this.macroToTranslate.split('\n').map(line => {
       let match = this.findActionsRegex.exec(line);
       if (match !== null && match !== undefined) {
         const skillName = match[2].replace(/["”“]/g, '');
         // Get translated skill
-        try {
-          const translatedSkill = this.localizedDataService.getCraftingActionByName(skillName, this.macroLanguage);
-          // Push translated line to each language
-          Object.keys(macroTranslated).forEach(key => {
-            if (translatedSkill[key] !== undefined) {
-              // Get rid of smart quotes
-              line = line.replace(/[”“]/g, '"');
-              if (((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) || (translatedSkill[key].indexOf(' ') > -1 && line.indexOf('"') === -1)) {
-                macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
-              } else {
-                macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
-              }
-            }
-          });
-        } catch (ignored) {
-          if (skillName === 'clear') {
-            Object.keys(macroTranslated).forEach(key => {
-              macroTranslated[key].push(line);
-            });
-            continue;
-          }
-          // Ugly implementation but it's a specific case we don't want to refactor for.
-          try {
-            // If there's no skill match with the first regex, try the second one (for auto translated skills)
-            match = this.findActionsAutoTranslatedRegex.exec(line);
-            if (match !== null) {
-              const translatedSkill = this.localizedDataService.getCraftingActionByName(match[2], this.macroLanguage);
-              // Push translated line to each language
-              Object.keys(macroTranslated).forEach(key => {
-                macroTranslated[key].push(line.replace(match[2], `"${translatedSkill[key]}" `));
+        return this.getCraftingActionByName(skillName, this.macroLanguage).pipe(
+          switchMap(translatedSkill => {
+            if (translatedSkill) {
+              return of({
+                original: line,
+                skillName: skillName,
+                translated: translatedSkill,
+                replace: (name) => {
+                  if (line.indexOf('"') === -1) {
+                    return `"${name}"`;
+                  }
+                  return name;
+                }
               });
+            } else if (skillName === 'clear') {
+              return of({
+                original: line
+              });
+            } else {
+              match = this.findActionsAutoTranslatedRegex.exec(line);
+              if (match !== null) {
+                return this.getCraftingActionByName(match[2], this.macroLanguage).pipe(
+                  map(autoTranslateSkill => {
+                    return {
+                      original: match[2],
+                      translated: autoTranslateSkill,
+                      replace: (name) => `"${name}" `
+                    };
+                  })
+                );
+              }
+              this.invalidInputs = true;
+              return of(null);
             }
-          } catch (ignoredAgain) {
-            // console.log(ignored);
-            // console.log(ignoredAgain);
-            this.invalidInputs = true;
-            break;
-          }
-        }
+          })
+        );
       } else {
         // Push the line without translation
-        Object.keys(macroTranslated).map(key => macroTranslated[key]).forEach(row => row.push(line));
+        return of({
+          original: line
+        });
+      }
+    })).pipe(
+      map(lines => {
+        lines
+          .filter(line => !!line)
+          .forEach(line => {
+            Object.keys(macroTranslated)
+              .forEach(key => {
+                const row = macroTranslated[key];
+                if (line.skillName) {
+                  row.push(line.original.replace(line.skillName, line.replace(line.translated[key])))
+                } else {
+                  row.push(line);
+                }
+              });
+          });
+      })
+    ).subscribe(() => {
+      if (!this.invalidInputs) {
+        this.macroTranslatedTabs = Object.keys(macroTranslated).map((key) => {
+          return { label: key.toUpperCase(), content: macroTranslated[key] };
+        });
+      }
+      this.translationDone = true;
+    });
+  }
+
+  public getCraftingActionByName(name: string, language: Language): Observable<I18nName> {
+    return combineLatest([
+      this.lazyData.getI18nEntry('actions', true),
+      this.lazyData.getI18nEntry('craftActions', true)
+    ]).pipe(
+      map(([actions, craftActions]) => {
+        if (language === 'zh') {
+          const zhRow = zhActions.find((a) => a.zh === name);
+          if (zhRow !== undefined) {
+            name = zhRow.en;
+            language = 'en';
+          }
+        }
+        let resultIndex = this.getIndexByName(craftActions, name, language, true);
+        if (resultIndex === -1) {
+          resultIndex = this.getIndexByName(actions, name, language, true);
+        }
+        if (name === 'Scrutiny' && language === 'en') {
+          resultIndex = 22185;
+        }
+        const result: I18nName = craftActions[resultIndex] || actions[resultIndex];
+        if (resultIndex === -1) {
+          throw new Error(`Data row not found for crafting action ${name}`);
+        }
+        const zhResultRow = zhActions.find((a) => a.en === result.en);
+        if (zhResultRow !== undefined) {
+          result.zh = zhResultRow.zh;
+        }
+        return result;
+      })
+    );
+  }
+
+  public getIndexByName(array: I18nElement, name: string, language: string, flip = false): number {
+    if (array === undefined) {
+      return -1;
+    }
+    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
+      language = 'en';
+    }
+    let res = -1;
+    let keys = Object.keys(array);
+    if (flip) {
+      keys = keys.reverse();
+    }
+    const cleanupRegexp = /[^a-z\s,.]/;
+    for (const key of keys) {
+      if (!array[key]) {
+        continue;
+      }
+      if (array[key].name && array[key].name[language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        res = +key;
+        break;
+      }
+      if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        res = +key;
+        break;
       }
     }
-
-    if (!this.invalidInputs) {
-      this.macroTranslatedTabs = Object.keys(macroTranslated).map((key) => {
-        return { label: key.toUpperCase(), content: macroTranslated[key] };
-      });
+    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
+      return this.getIndexByName(array, name, 'en');
     }
-
-    this.translationDone = true;
+    return res;
   }
 
 }

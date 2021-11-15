@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 

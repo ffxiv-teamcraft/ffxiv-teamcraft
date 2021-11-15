@@ -32,7 +32,7 @@ export class NavigationSidebarComponent {
   loggedIn = false;
 
   @Input()
-  character: Character & { Datacenter: string };
+  character: Character;
 
   @Input()
   collapsed: boolean;

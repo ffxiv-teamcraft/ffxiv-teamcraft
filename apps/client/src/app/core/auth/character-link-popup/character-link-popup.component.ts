@@ -26,7 +26,7 @@ export class CharacterLinkPopupComponent {
 
   public lodestoneId = new FormControl(null);
 
-  public result$: Observable<CharacterSearchResultRow[]>;
+  public result$: Observable<any[]>;
 
   public lodestoneIdCharacter$: Observable<Character>;
 
@@ -35,9 +35,6 @@ export class CharacterLinkPopupComponent {
   public useAsDefault = false;
 
   public mandatory = false;
-
-  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
-
   public chineseServers = [
     'HongYuHai',
     'ShenYiZhiDi',
@@ -78,6 +75,7 @@ export class CharacterLinkPopupComponent {
     'RouFengHaiWan',
     'HuPoYuan'
   ];
+  private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef,
               private lodestoneService: LodestoneService) {
@@ -102,9 +100,8 @@ export class CharacterLinkPopupComponent {
         tap(() => this.loadingResults = true),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {
-          return this.xivapi.searchCharacter(characterName, selectedServer);
+          return this.lodestoneService.searchCharacter(characterName, selectedServer);
         }),
-        map((result: CharacterSearchResult) => result.Results || []),
         tap(() => this.loadingResults = false),
         startWith([])
       );

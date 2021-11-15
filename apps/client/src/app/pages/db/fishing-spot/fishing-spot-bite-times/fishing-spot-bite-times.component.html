@@ -16,12 +16,17 @@
   </ng-template>
   <div>
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" *ngFor="let color of colors; index as i">
-        <div class="legend-box" style.background-color="rgba({{color}}, 0.3)" style.border="1px solid rgba({{color}}, 0.5)"></div>
-        <div>{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][i] | translate}}</div>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" *ngFor="let row of colors">
+        <div class="legend-box" style.background-color="rgba({{row.color}}, 0.3)" style.border="1px solid rgba({{row.color}}, 0.5)"></div>
+        <div>{{row.tug | tugName | translate}}</div>
       </div>
     </div>
-    <chart type="horizontalBoxplot" *ngIf="biteTimesChartJSData$ | async as data" [data]="data" [options]="options"></chart>
+    <ng-container  *ngIf="biteTimesChartJSData$ | async as data">
+      <chart type="horizontalBoxplot" *ngIf="data.datasets.length > 0; else noData" [data]="data" [options]="options"></chart>
+      <ng-template #noData>
+        <nz-empty [nzNotFoundContent]="'DB.FISH.Not_enough_data_points' | translate"></nz-empty>
+      </ng-template>
+    </ng-container>
   </div>
 </nz-card>
 

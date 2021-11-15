@@ -1,4 +1,4 @@
-import { Directive, Output, HostListener, EventEmitter } from '@angular/core';
+import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({ selector: '[mouseWheel]' })
 export class MouseWheelDirective {
@@ -22,7 +22,7 @@ export class MouseWheelDirective {
     const delta: number = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
     if (delta > 0) {
       this.mouseWheelUp.emit(event);
-    } else if(delta < 0) {
+    } else if (delta < 0) {
       this.mouseWheelDown.emit(event);
     }
     // for IE

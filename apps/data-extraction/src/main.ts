@@ -53,6 +53,11 @@ import { AirshipPartsExtractor } from './extractors/airship-parts.extractor';
 import { AirshipRanksExtractor } from './extractors/airship-ranks.extractor';
 import { TreasuresExtractor } from './extractors/treasures.extractor';
 import { SeedsExtractor } from './extractors/seeds.extractor';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor';
+
+const argv = yargs(hideBin(process.argv)).argv;
 
 // We have to do it like that because the lib seems to dynamically import its prompts,
 // which creates shitty typings
@@ -60,10 +65,11 @@ const { MultiSelect } = require('enquirer');
 
 const extractors: AbstractExtractor[] = [
   new I18nExtractor('BNpcName', 'mobs'),
+  new I18nExtractor('Title', 'titles'),
   new I18nExtractor('PlaceName', 'places'),
   new I18nExtractor('Status', 'statuses', { Icon: 'icon' }),
   new I18nExtractor('ItemSeries', 'item-series', { 'GameContentLinks.Item.ItemSeries': 'items' }),
-  new I18nExtractor('Achievement', 'achievements', { Icon: 'icon' }),
+  new I18nExtractor('Achievement', 'achievements', { Icon: 'icon', ItemTargetID: 'itemReward' }),
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
   new I18nExtractor('Race', 'races'),
@@ -119,7 +125,8 @@ const extractors: AbstractExtractor[] = [
   new TreasuresExtractor(),
   new MappyExtractor(),
   new LgbExtractor(),
-  new GubalExtractor()
+  new GubalExtractor(),
+  new AllaganReportsExtractor()
 ];
 
 if (process.env.XIVAPI_KEY) {
@@ -137,10 +144,20 @@ const operationsSelection = new MultiSelect({
   ]
 });
 
-operationsSelection.run().then((selection: string[]) => {
-  const selectedExtractors = extractors.filter(e => {
-    return selection.includes('everything') || selection.includes(e.getName());
+if (argv['only']) {
+  const only = argv['only'].split(',');
+  startExtractors(extractors.filter(e => {
+    return only.includes(e.getName());
+  }));
+} else {
+  operationsSelection.run().then((selection: string[]) => {
+    startExtractors(extractors.filter(e => {
+      return selection.includes('everything') || selection.includes(e.getName());
+    }));
   });
+}
+
+function startExtractors(selectedExtractors: AbstractExtractor[]): void {
 
   const progress = new SingleBar({
     format: ' {bar} | {label} | {requests} requests done | {value}/{total}',
@@ -170,4 +187,5 @@ operationsSelection.run().then((selection: string[]) => {
       process.exit(0);
     }
   });
-});
+
+}

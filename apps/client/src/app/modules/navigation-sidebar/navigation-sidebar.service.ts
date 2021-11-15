@@ -109,6 +109,14 @@ export class NavigationSidebarService {
               },
               link: '/metrics',
               hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'ALLAGAN_REPORTS.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'reconciliation'
+              },
+              link: '/allagan-reports'
             }
           ]
         },
@@ -158,7 +166,7 @@ export class NavigationSidebarService {
                 content: 'project'
               },
               hidden: !character,
-              link: `/commissions/board/${character?.Datacenter || 'korea'}`
+              link: `/commissions/board/${character?.DC || 'korea'}`
             },
             {
               name: 'SIDEBAR.My_commissions',

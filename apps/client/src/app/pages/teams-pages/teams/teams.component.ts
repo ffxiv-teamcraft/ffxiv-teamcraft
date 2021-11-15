@@ -31,12 +31,9 @@ export class TeamsComponent implements OnInit {
   userId$: Observable<string> = this.authFacade.userId$;
 
   errorCode$: BehaviorSubject<string> = new BehaviorSubject(undefined);
-
-  private teamInvitesCache: { [indexx: string]: Observable<TeamInvite[]> } = {};
-
-  private redirectUri: string;
-
   public params: any;
+  private teamInvitesCache: { [indexx: string]: Observable<TeamInvite[]> } = {};
+  private redirectUri: string;
 
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
@@ -70,19 +67,6 @@ export class TeamsComponent implements OnInit {
   public removeOfficer(team: Team, member: string): void {
     team.officers = team.officers.filter(m => m !== member);
     this.updateTeam(team);
-  }
-
-  private setWebhook(key: string, hook: string): Observable<any> {
-    return this.myTeams$.pipe(
-      map(teams => teams.find(team => team.$key === key)),
-      first(team => team !== undefined),
-      map((team: Team) => {
-        team.webhook = hook;
-        this.updateTeam(team);
-        this.testHook(team);
-        this.router.navigate([]);
-      })
-    );
   }
 
   createTeam(): void {
@@ -191,5 +175,18 @@ export class TeamsComponent implements OnInit {
     } else {
       window.open(this.discordWebhook.oauthUrl(team.$key, this.redirectUri));
     }
+  }
+
+  private setWebhook(key: string, hook: string): Observable<any> {
+    return this.myTeams$.pipe(
+      map(teams => teams.find(team => team.$key === key)),
+      first(team => team !== undefined),
+      map((team: Team) => {
+        team.webhook = hook;
+        this.updateTeam(team);
+        this.testHook(team);
+        this.router.navigate([]);
+      })
+    );
   }
 }

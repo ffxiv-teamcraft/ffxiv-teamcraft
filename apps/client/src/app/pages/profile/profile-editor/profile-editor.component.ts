@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { BehaviorSubject, combineLatest } from 'rxjs';
-import { filter, first, map, shareReplay, switchMapTo, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { MasterbooksPopupComponent } from './masterbooks-popup/masterbooks-popup.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,14 +20,9 @@ import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-sta
 })
 export class ProfileEditorComponent {
 
-  private statsReloader$ = new BehaviorSubject(null);
-
   user$ = this.authFacade.user$;
-
   userId$ = this.authFacade.userId$;
-
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
-
   characters$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
     map(([chars, user]) => {
       return chars
@@ -41,10 +36,9 @@ export class ProfileEditorComponent {
     }),
     shareReplay(1)
   );
-
   gearSets$ = this.authFacade.gearSets$;
-
   now = Math.floor(Date.now() / 1000);
+  private statsReloader$ = new BehaviorSubject(null);
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
               private userPicker: UserPickerService, public ipc: IpcService, private cdr: ChangeDetectorRef) {

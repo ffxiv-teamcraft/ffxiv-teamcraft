@@ -46,7 +46,7 @@
                [style.margin-top.px]="-markerSizes.bnpc.y/2"
                [style.top.%]="bnpc.displayPosition.y"
                [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
+               nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
         </div>
         <div class="layer" [style.transform]="imageTransform" *ngIf="showMappyLayers">
           <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
@@ -58,7 +58,7 @@
                [style.margin-top.px]="-markerSizes.bnpc.y/2"
                [style.top.%]="bnpc.displayPosition.y"
                [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
+               nz-tooltip [nzTooltipTitle]="bnpc.nameId | i18nRow:'mobs' | i18n">
         </div>
         <div class="layer" [style.transform]="imageTransform" *ngIf="showLocalLayers">
           <img class="marker hover"
@@ -97,7 +97,7 @@
       </ng-container>
       <div class="debug-box" [class.hidden]="!showDebugBox">
         <div class="debug-box-content">
-          <span *ngIf="!display.layersNotConfigured">{{display.mapId}} - {{display.zoneId | placeName | i18n}}<br></span>
+          <span *ngIf="!display.layersNotConfigured">{{display.mapId}} - {{display.zoneId | i18nRow:'places' | i18n}}<br></span>
           X: {{display.playerCoords.x | number:'1.1-2'}}<br>
           Y: {{display.playerCoords.y | number:'1.1-2'}}<br>
           Z: {{display.playerCoords.z | number:'1.1-2'}}<br>
@@ -135,7 +135,7 @@
         <ng-template #possibleLayersRef>
           <h3>Maps for this territory:</h3>
           <ul>
-            <li *ngFor="let row of display.territoryMaps">{{row.mapId}} - {{row.subZoneId | placeName | i18n}}</li>
+            <li *ngFor="let row of display.territoryMaps">{{row.mapId}} - {{row.subZoneId | i18nRow:'places' | i18n}}</li>
           </ul>
         </ng-template>
       </div>

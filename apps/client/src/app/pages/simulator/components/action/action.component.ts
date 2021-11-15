@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
 
 @Component({
@@ -23,59 +23,49 @@ export class ActionComponent {
 
   @Input()
   action: CraftingAction;
+  @Input()
+  wasted = false;
+  @Input()
+  disabled = false;
+  @Input()
+  notEnoughCp = false;
+  @Input()
+  jobId: number;
+  @Input()
+  hideCost = false;
+  @Input()
+  ignoreDisabled = false;
+  @Input()
+  cpCost: number;
+  @Input()
+  failed = false;
+  @Input()
+  tooltipDisabled = false;
+  @Input()
+  safe = true;
+  @Input()
+  state: StepState = StepState.NORMAL;
+  @Input()
+  showStateMenu = false;
+  @Input()
+  readonly = false;
+  availableConditions: { condition: number, name: string }[] = [];
 
+  constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,
+              private simulationService: SimulationService) {
+  }
 
   private _simulation: Simulation;
-  @Input()
-  set simulation(simulation: Simulation) {
-    this._simulation = simulation;
-    this.computeAvailableConditions();
-  }
 
   get simulation(): Simulation {
     return this._simulation;
   }
 
   @Input()
-  wasted = false;
-
-  @Input()
-  disabled = false;
-
-  @Input()
-  notEnoughCp = false;
-
-  @Input()
-  jobId: number;
-
-  @Input()
-  hideCost = false;
-
-  @Input()
-  ignoreDisabled = false;
-
-  @Input()
-  cpCost: number;
-
-  @Input()
-  failed = false;
-
-  @Input()
-  tooltipDisabled = false;
-
-  @Input()
-  safe = true;
-
-  @Input()
-  state: StepState = StepState.NORMAL;
-
-  @Input()
-  showStateMenu = false;
-
-  @Input()
-  readonly = false;
-
-  availableConditions: { condition: number, name: string }[] = [];
+  set simulation(simulation: Simulation) {
+    this._simulation = simulation;
+    this.computeAvailableConditions();
+  }
 
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
@@ -83,19 +73,6 @@ export class ActionComponent {
 
   private get registry() {
     return this.simulator.CraftingActionsRegistry;
-  }
-
-  constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,
-              private simulationService: SimulationService) {
-  }
-
-  private computeAvailableConditions(): void {
-    this.availableConditions = (this.simulation.possibleConditions || [StepState.NORMAL, StepState.GOOD, StepState.EXCELLENT, StepState.POOR]).map(condition => {
-      return {
-        condition,
-        name: `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`
-      };
-    });
   }
 
   getAlt(): string {
@@ -137,5 +114,14 @@ export class ActionComponent {
       case StepState.PRIMED:
         return 'darkmagenta';
     }
+  }
+
+  private computeAvailableConditions(): void {
+    this.availableConditions = (this.simulation.possibleConditions || [StepState.NORMAL, StepState.GOOD, StepState.EXCELLENT, StepState.POOR]).map(condition => {
+      return {
+        condition,
+        name: `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`
+      };
+    });
   }
 }

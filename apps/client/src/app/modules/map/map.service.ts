@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { MapData } from './map-data';
 import { Aetheryte } from '../../core/data/aetheryte';
 import { Vector2 } from '../../core/tools/vector2';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { NavigationObjective } from './navigation-objective';
 import { map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { XivapiService } from '@xivapi/angular-client';
@@ -14,9 +13,10 @@ import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
 import { aetherstream } from '../../core/data/sources/aetherstream';
 import { SettingsService } from '../settings/settings.service';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 import { Vector3 } from '../../core/tools/vector3';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 
 @Injectable()
 export class MapService {
@@ -29,19 +29,22 @@ export class MapService {
 
   private cache: { [index: number]: Observable<MapData> } = {};
 
-  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private l12n: LocalizedDataService,
-              private settings: SettingsService, private lazyData: LazyDataService, private eorzea: EorzeaFacade) {
+  constructor(private xivapi: XivapiService, private mathService: MathToolsService, private i18n: I18nToolsService,
+              private settings: SettingsService, private lazyData: LazyDataFacade, private eorzea: EorzeaFacade) {
   }
 
   getMapById(mapId: number): Observable<MapData> {
     if (this.cache[mapId] === undefined) {
-      const _mapData = this.lazyData.data.maps[mapId];
-      this.cache[mapId] = of(_mapData).pipe(
-        map(mapData => {
-          return {
-            ...mapData,
-            aetherytes: this.getAetherytes(mapId)
-          };
+      this.cache[mapId] = this.lazyData.getRow('maps', mapId).pipe(
+        switchMap(mapData => {
+          return this.getAetherytes(mapId).pipe(
+            map(aetherytes => {
+              return {
+                ...mapData,
+                aetherytes
+              };
+            })
+          );
         }),
         shareReplay(1)
       );
@@ -49,15 +52,18 @@ export class MapService {
     return this.cache[mapId];
   }
 
-  public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Aetheryte {
-    const aetherytes = this.getAetherytes(mapData.id, true);
-    let nearest = aetherytes[0];
-    for (const aetheryte of aetherytes) {
-      if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
-        nearest = aetheryte;
-      }
-    }
-    return nearest;
+  public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Observable<Aetheryte> {
+    return this.getAetherytes(mapData.id, true).pipe(
+      map(aetherytes => {
+        let nearest = aetherytes[0];
+        for (const aetheryte of aetherytes) {
+          if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
+            nearest = aetheryte;
+          }
+        }
+        return nearest;
+      })
+    );
   }
 
   public getOptimizedPathInWorld(points: NavigationObjective[]): Observable<WorldNavigationStep[]> {
@@ -79,54 +85,33 @@ export class MapService {
             })
           ).pipe(
             withLatestFrom(this.eorzea.mapId$.pipe(startWith(0))),
-            map(([optimizedPaths, mapId]: [WorldNavigationStep[], number]) => {
+            switchMap(([optimizedPaths, mapId]: [WorldNavigationStep[], number]) => {
               const res: WorldNavigationStep[] = [];
               const pool = [...optimizedPaths];
-              const startingPoint = this.getAetherytes(mapId || this.settings.startingPlace)[0]
-                || this.getAetherytes(this.settings.startingPlace)[0];
-              res.push(pool.sort((a, b) => {
-                const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
-                const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
-                return aCost - bCost;
-              }).shift());
-              while (pool.length > 0) {
-                res.push(
-                  pool.sort((a, b) => {
-                    const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], a.map.aetherytes[0]);
-                    const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], b.map.aetherytes[0]);
+              return this.getAetherytes(mapId || this.settings.startingPlace).pipe(
+                map(aetherytes => {
+                  const startingPoint = aetherytes[0];
+                  res.push(pool.sort((a, b) => {
+                    const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
+                    const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
                     return aCost - bCost;
-                  }).shift()
-                );
-              }
-              return res;
+                  }).shift());
+                  while (pool.length > 0) {
+                    res.push(
+                      pool.sort((a, b) => {
+                        const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], a.map.aetherytes[0]);
+                        const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], b.map.aetherytes[0]);
+                        return aCost - bCost;
+                      }).shift()
+                    );
+                  }
+                  return res;
+                })
+              );
             })
           );
         })
       );
-  }
-
-  private getTpCost(from: Aetheryte, to: Aetheryte): number {
-    if (from === undefined || to === undefined) {
-      return 9999;
-    }
-    if (this.settings.freeAetheryte === to.nameid) {
-      return 0;
-    }
-    const fromCoords = from.aethernetCoords;
-    const toCoords = to.aethernetCoords;
-    if (fromCoords === undefined || toCoords === undefined) {
-      return 9999;
-    }
-
-    if (from.map === to.map) {
-      return 100;
-    }
-
-    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
-    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
-      return Math.floor(base / 2);
-    }
-    return Math.floor(base);
   }
 
   public getOptimizedPathOnMap(mapId: number, points: NavigationObjective[], startPoint?: NavigationObjective): Observable<NavigationStep[]> {
@@ -140,7 +125,7 @@ export class MapService {
             const paths = bigAetherytes.map(aetheryte => this.getShortestPath({
               x: aetheryte.x,
               y: aetheryte.y,
-              name: this.l12n.getPlace(aetheryte.nameid)
+              name: this.i18n.getNameObservable('places', aetheryte.nameid)
             }, points, bigAetherytes));
             return paths.sort((a, b) => this.totalDuration(a) - this.totalDuration(b))[0];
           } else {
@@ -165,19 +150,47 @@ export class MapService {
     };
   }
 
-  private getAetherytes(id: number, excludeMinis = false): Aetheryte[] {
-    // If it's dravanian forelandes, use Idyllshire id instead.
+  private getTpCost(from: Aetheryte, to: Aetheryte): number {
+    if (from === undefined || to === undefined) {
+      return 999;
+    }
+    if (this.settings.freeAetheryte === to.nameid) {
+      return 0;
+    }
+    const fromCoords = from.aethernetCoords;
+    const toCoords = to.aethernetCoords;
+    if (fromCoords === undefined || toCoords === undefined) {
+      return 999;
+    }
+
+    if (from.map === to.map) {
+      return 100;
+    }
+
+    const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
+    if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
+      return Math.floor(Math.min(base, 999) / 2);
+    }
+    return Math.floor(Math.min(base, 999));
+  }
+
+  private getAetherytes(id: number, excludeMinis = false): Observable<Aetheryte[]> {
+    // If it's dravanian forelands, use Idyllshire id instead.
     if (id === 213) {
       id = 257;
     }
-    return this.lazyData.data.aetherytes
-      .filter((aetheryte) => {
-        return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0)
+    return this.lazyData.getEntry('aetherytes').pipe(
+      map(aetherytes => {
+        return aetherytes
+          .filter((aetheryte) => {
+            return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0);
+          })
+          .map((aetheryte: Aetheryte) => {
+            aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };
+            return aetheryte;
+          });
       })
-      .map((aetheryte: Aetheryte) => {
-        aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };
-        return aetheryte;
-      });
+    );
   }
 
   private totalDuration(path: NavigationStep[]): number {
@@ -209,7 +222,7 @@ export class MapService {
       x: aetheryte.x,
       y: aetheryte.y,
       isTeleport: true,
-      name: this.l12n.getPlace(aetheryte.nameid)
+      name: this.i18n.getNameObservable('places', aetheryte.nameid)
     }));
     const steps: NavigationStep[] = [];
     steps.push({

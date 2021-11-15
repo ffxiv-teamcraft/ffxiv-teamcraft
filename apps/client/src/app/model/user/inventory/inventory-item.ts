@@ -10,4 +10,5 @@ export interface InventoryItem {
   spiritBond: number;
   price?: number;
   containerName?: string;
+  unitMbPrice?: number;
 }

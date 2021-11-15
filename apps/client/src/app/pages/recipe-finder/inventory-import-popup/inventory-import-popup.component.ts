@@ -36,10 +36,6 @@ export class InventoryImportPopupComponent {
               private ref: NzModalRef) {
   }
 
-  private getContainerName(row: InventoryItem): string {
-    return row.retainerName || this.translate.instant('INVENTORY.BAG.' + this.inventoryFacade.getContainerName(row.containerId));
-  }
-
   confirm(): void {
     this.inventoryFacade.inventory$.pipe(
       first(),
@@ -55,6 +51,10 @@ export class InventoryImportPopupComponent {
 
   cancel(): void {
     this.ref.close([]);
+  }
+
+  private getContainerName(row: InventoryItem): string {
+    return row.retainerName || this.translate.instant('INVENTORY.BAG.' + this.inventoryFacade.getContainerName(row.containerId));
   }
 
 }

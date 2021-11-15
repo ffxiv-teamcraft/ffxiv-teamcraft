@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { EorzeaFacade } from 'apps/client/src/app/modules/eorzea/+state/eorzea.facade';
+import { EorzeaFacade } from '../../../../modules/eorzea/+state/eorzea.facade';
 
 @Component({
   selector: 'app-autofill-stats-popup',

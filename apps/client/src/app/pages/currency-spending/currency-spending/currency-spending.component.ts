@@ -10,9 +10,10 @@ import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { UniversalisService } from '../../../core/api/universalis.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-currency-spending',
@@ -41,7 +42,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
 
   constructor(private xivapi: XivapiService, private dataService: DataService,
               private authFacade: AuthFacade, private universalis: UniversalisService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
     super();
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
@@ -101,9 +102,10 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
               .map((chunk: any) => {
-                return this.universalis.getServerPrices(
+                return this.universalis.getServerHistoryPrices(
                   server,
-                  ...chunk.map(entry => entry.item)
+                  5,
+                  ...chunk.map(entry => entry.item),
                 );
               });
             this.tradesCount = entries.length;
@@ -119,29 +121,35 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                     return mbRow.History && mbRow.History.length > 0 || mbRow.Prices && mbRow.Prices.length > 0;
                   });
               }),
-              map((res) => {
-                return entries
+              switchMap((res) => {
+                return safeCombineLatest(entries
                   .filter(entry => {
                     return res.some(r => r.ItemId === entry.item);
                   })
                   .map(entry => {
-                    const mbRow = res.find(r => r.ItemId === entry.item);
-                    const avgPrice = (entry.HQ ? mbRow.minPriceHQ : mbRow.minPriceNQ) || mbRow.minPrice;
-                    const oneWeekInThePast = Math.floor(Date.now() / 1000) - 7 * 86400;
-                    const amountSoldLastWeek = mbRow.History
-                      .filter(hRow => hRow.PurchaseDate > oneWeekInThePast && hRow.IsHQ === entry.HQ)
-                      .reduce((acc, hRow) => acc + hRow.Quantity, 0);
-                    return <SpendingEntry>{
-                      ...entry,
-                      npcs: getItemSource(this.lazyData.getExtract(entry.item), DataType.TRADE_SOURCES)
-                        .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
-                        .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
-                      price: avgPrice,
-                      score: avgPrice * amountSoldLastWeek,
-                      amountSoldLastWeek
-                    };
+                    return this.lazyData.getRow('extracts', entry.item).pipe(
+                      map(extract => {
+                        const mbRow = res.find(r => r.ItemId === entry.item);
+                        const avgPrice = mbRow.History.reduce((prev, curr) => {
+                          return prev.pricePerUnit < curr.pricePerUnit ? prev : curr;
+                        }).pricePerUnit;
+                        const amountSoldLastWeek = Math.floor(mbRow.regularSaleVelocity * 7);
+                        return <SpendingEntry>{
+                          ...entry,
+                          npcs: getItemSource(extract, DataType.TRADE_SOURCES)
+                            .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
+                            .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
+                          price: avgPrice,
+                          score: avgPrice / entry.rate * amountSoldLastWeek,
+                          amountSoldLastWeek
+                        };
+                      })
+                    );
                   })
-                  .filter(entry => entry.price)
+                );
+              }),
+              map((res: SpendingEntry[]) => {
+                return res.filter(entry => entry.price)
                   .sort((a, b) => {
                     return b.score - a.score;
                   });

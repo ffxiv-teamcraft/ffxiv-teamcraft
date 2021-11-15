@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { MarketboardItem } from './market/marketboard-item';
 import { combineLatest, Observable, of } from 'rxjs';
 import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -16,6 +15,8 @@ import {
   MarketTaxRates,
   PlayerSetup
 } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { withLazyData } from '../rxjs/with-lazy-data';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -34,7 +35,7 @@ export class UniversalisService {
     shareReplay(1)
   );
 
-  constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
+  constructor(private http: HttpClient, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
               private ipc: IpcService, private settings: SettingsService) {
   }
 
@@ -79,12 +80,9 @@ export class UniversalisService {
   }
 
   public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
-    const dc = Object.keys(this.lazyData.datacenters).find(key => {
-      return this.lazyData.datacenters[key].indexOf(server) > -1;
-    });
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
-      return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)
+      return this.http.get<any>(`https://universalis.app/api/${server}/${chunk.join(',')}`)
         .pipe(
           catchError(() => of([])),
           map(response => {
@@ -98,11 +96,9 @@ export class UniversalisService {
                 Prices: []
               };
               item.Prices = (res.listings || [])
-                .filter(listing => {
-                  return listing.worldName && listing.worldName.toLowerCase() === server.toLowerCase();
-                })
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,
@@ -111,11 +107,9 @@ export class UniversalisService {
                   };
                 });
               item.History = (res.recentHistory || [])
-                .filter(listing => {
-                  return listing.worldName && listing.worldName.toLowerCase() === server.toLowerCase();
-                })
                 .map(listing => {
                   return {
+                    ...listing,
                     Server: listing.worldName,
                     PricePerUnit: listing.pricePerUnit,
                     PriceTotal: listing.total,
@@ -126,6 +120,46 @@ export class UniversalisService {
                 });
               delete (item as any).listings;
               delete (item as any).recentHistory;
+              return item as MarketboardItem;
+            });
+          })
+        );
+    })).pipe(
+      map(res => {
+        return [].concat.apply([], res);
+      })
+    );
+  }
+
+  public getServerHistoryPrices(server: string, entries:number, ...itemIds: number[]): Observable<MarketboardItem[]> {
+    const chunks = _.chunk(itemIds, 100);
+    return combineLatest(chunks.map(chunk => {
+      const params = new HttpParams().set('entries', entries);
+      return this.http.get<any>(`https://universalis.app/api/history/${server}/${chunk.join(',')}`, {params})
+        .pipe(
+          catchError(() => of([])),
+          map(response => {
+            const data = response.items || [response];
+            return data.map(res => {
+              const item: Partial<MarketboardItem> = {
+                ...res,
+                ID: res.worldID,
+                ItemId: res.itemID,
+                History: [],
+              };
+              item.History = (res.entries || [])
+                .map(listing => {
+                  return {
+                    ...listing,
+                    Server: listing.worldName,
+                    PricePerUnit: listing.pricePerUnit,
+                    PriceTotal: listing.pricePerUnit * listing.quantity,
+                    IsHQ: listing.hq,
+                    Quantity: listing.quantity,
+                    PurchaseDate: listing.timestamp
+                  };
+                });
+              delete (item as any).entries;
               return item as MarketboardItem;
             });
           })
@@ -207,7 +241,8 @@ export class UniversalisService {
   public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
-      switchMap(([cid, worldId]) => {
+      withLazyData(this.lazyData, 'materias'),
+      switchMap(([[cid, worldId], materias]) => {
         const data = {
           worldID: worldId,
           itemID: packets[0]?.listings[0]?.itemId,
@@ -220,7 +255,7 @@ export class UniversalisService {
                   listingID: item.listingId.toString(10),
                   hq: item.hq,
                   materia: item.materia.map((materia, index) => {
-                    const materiaItemId = this.lazyData.data.materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
+                    const materiaItemId = materias.find(m => m.id === materia.materiaId && m.tier === materia.index + 1) || 0;
                     return {
                       materiaId: materiaItemId,
                       slotId: index

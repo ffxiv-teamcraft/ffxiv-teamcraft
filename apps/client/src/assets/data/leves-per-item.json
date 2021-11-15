@@ -1,0 +1,8818 @@
+{
+  "1602": [
+    {
+      "leve": 146,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    }
+  ],
+  "1603": [
+    {
+      "leve": 148,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "1604": [
+    {
+      "leve": 31,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "1605": [
+    {
+      "leve": 154,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "1609": [
+    {
+      "leve": 169,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "1625": [
+    {
+      "leve": 172,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "1627": [
+    {
+      "leve": 54,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    }
+  ],
+  "1633": [
+    {
+      "leve": 177,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "1637": [
+    {
+      "leve": 57,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    },
+    {
+      "leve": 65,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "1643": [
+    {
+      "leve": 183,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "1681": [
+    {
+      "leve": 444,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "1682": [
+    {
+      "leve": 88,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "1683": [
+    {
+      "leve": 448,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "1684": [
+    {
+      "leve": 155,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "1686": [
+    {
+      "leve": 162,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "1688": [
+    {
+      "leve": 109,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    }
+  ],
+  "1694": [
+    {
+      "leve": 170,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "1697": [
+    {
+      "leve": 114,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "1708": [
+    {
+      "leve": 118,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    }
+  ],
+  "1728": [
+    {
+      "leve": 137,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "1750": [
+    {
+      "leve": 144,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    }
+  ],
+  "1753": [
+    {
+      "leve": 158,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "1820": [
+    {
+      "leve": 21,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "1821": [
+    {
+      "leve": 30,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "1823": [
+    {
+      "leve": 36,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    }
+  ],
+  "1825": [
+    {
+      "leve": 39,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    },
+    {
+      "leve": 49,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    }
+  ],
+  "1827": [
+    {
+      "leve": 47,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    }
+  ],
+  "1836": [
+    {
+      "leve": 52,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    }
+  ],
+  "1838": [
+    {
+      "leve": 62,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    }
+  ],
+  "1845": [
+    {
+      "leve": 55,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    },
+    {
+      "leve": 59,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    }
+  ],
+  "1847": [
+    {
+      "leve": 61,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    }
+  ],
+  "1850": [
+    {
+      "leve": 63,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "1855": [
+    {
+      "leve": 74,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    }
+  ],
+  "1862": [
+    {
+      "leve": 69,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    }
+  ],
+  "1867": [
+    {
+      "leve": 75,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "1891": [
+    {
+      "leve": 24,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "1892": [
+    {
+      "leve": 27,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "1895": [
+    {
+      "leve": 44,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    }
+  ],
+  "1915": [
+    {
+      "leve": 58,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    },
+    {
+      "leve": 68,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "1917": [
+    {
+      "leve": 60,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 9
+    }
+  ],
+  "1920": [
+    {
+      "leve": 66,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "1925": [
+    {
+      "leve": 72,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    }
+  ],
+  "1937": [
+    {
+      "leve": 79,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "1942": [
+    {
+      "leve": 78,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "1958": [
+    {
+      "leve": 326,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "1959": [
+    {
+      "leve": 329,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "1960": [
+    {
+      "leve": 333,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "1961": [
+    {
+      "leve": 339,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "1963": [
+    {
+      "leve": 345,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "1965": [
+    {
+      "leve": 354,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "1971": [
+    {
+      "leve": 363,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "1996": [
+    {
+      "leve": 32,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "1997": [
+    {
+      "leve": 29,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "1998": [
+    {
+      "leve": 33,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    }
+  ],
+  "2000": [
+    {
+      "leve": 40,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    }
+  ],
+  "2004": [
+    {
+      "leve": 45,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    }
+  ],
+  "2011": [
+    {
+      "leve": 56,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    }
+  ],
+  "2026": [
+    {
+      "leve": 64,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "2039": [
+    {
+      "leve": 70,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    },
+    {
+      "leve": 80,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "2056": [
+    {
+      "leve": 443,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "2061": [
+    {
+      "leve": 466,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "2063": [
+    {
+      "leve": 467,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "2078": [
+    {
+      "leve": 485,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "2106": [
+    {
+      "leve": 445,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "2108": [
+    {
+      "leve": 455,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "2111": [
+    {
+      "leve": 470,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "2118": [
+    {
+      "leve": 476,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "2125": [
+    {
+      "leve": 493,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "2143": [
+    {
+      "leve": 322,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "2144": [
+    {
+      "leve": 332,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "2146": [
+    {
+      "leve": 335,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "2147": [
+    {
+      "leve": 342,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "2149": [
+    {
+      "leve": 340,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "2156": [
+    {
+      "leve": 353,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "2160": [
+    {
+      "leve": 355,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "2169": [
+    {
+      "leve": 366,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "2174": [
+    {
+      "leve": 373,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "2219": [
+    {
+      "leve": 25,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "2226": [
+    {
+      "leve": 205,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "2228": [
+    {
+      "leve": 28,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 9
+    }
+  ],
+  "2230": [
+    {
+      "leve": 211,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "2233": [
+    {
+      "leve": 38,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    },
+    {
+      "leve": 43,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    }
+  ],
+  "2236": [
+    {
+      "leve": 222,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "2239": [
+    {
+      "leve": 226,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "2241": [
+    {
+      "leve": 225,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "2246": [
+    {
+      "leve": 51,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    }
+  ],
+  "2250": [
+    {
+      "leve": 111,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "2257": [
+    {
+      "leve": 238,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "2260": [
+    {
+      "leve": 237,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "2315": [
+    {
+      "leve": 145,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    }
+  ],
+  "2318": [
+    {
+      "leve": 168,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "2320": [
+    {
+      "leve": 175,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "2321": [
+    {
+      "leve": 178,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "2331": [
+    {
+      "leve": 166,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "2337": [
+    {
+      "leve": 194,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2338": [
+    {
+      "leve": 199,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2342": [
+    {
+      "leve": 153,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "2346": [
+    {
+      "leve": 174,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "2363": [
+    {
+      "leve": 191,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2364": [
+    {
+      "leve": 196,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2370": [
+    {
+      "leve": 164,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "2375": [
+    {
+      "leve": 186,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "2376": [
+    {
+      "leve": 193,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2377": [
+    {
+      "leve": 198,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2388": [
+    {
+      "leve": 190,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2389": [
+    {
+      "leve": 197,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2392": [
+    {
+      "leve": 151,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "2393": [
+    {
+      "leve": 156,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "2397": [
+    {
+      "leve": 171,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "2406": [
+    {
+      "leve": 34,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    }
+  ],
+  "2408": [
+    {
+      "leve": 48,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    }
+  ],
+  "2413": [
+    {
+      "leve": 73,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    }
+  ],
+  "2417": [
+    {
+      "leve": 149,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "2419": [
+    {
+      "leve": 157,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 10
+    }
+  ],
+  "2420": [
+    {
+      "leve": 163,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "2421": [
+    {
+      "leve": 173,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "2424": [
+    {
+      "leve": 187,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "2427": [
+    {
+      "leve": 195,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2433": [
+    {
+      "leve": 160,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "2436": [
+    {
+      "leve": 180,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "2437": [
+    {
+      "leve": 184,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "2443": [
+    {
+      "leve": 452,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "2444": [
+    {
+      "leve": 462,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    }
+  ],
+  "2445": [
+    {
+      "leve": 456,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "2449": [
+    {
+      "leve": 480,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "2453": [
+    {
+      "leve": 498,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "2457": [
+    {
+      "leve": 37,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    }
+  ],
+  "2464": [
+    {
+      "leve": 71,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 9
+    }
+  ],
+  "2468": [
+    {
+      "leve": 206,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "2470": [
+    {
+      "leve": 217,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "2471": [
+    {
+      "leve": 224,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "2472": [
+    {
+      "leve": 230,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "2473": [
+    {
+      "leve": 234,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "2476": [
+    {
+      "leve": 251,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "2481": [
+    {
+      "leve": 150,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "2485": [
+    {
+      "leve": 176,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 10
+    }
+  ],
+  "2488": [
+    {
+      "leve": 185,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "2494": [
+    {
+      "leve": 202,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "2495": [
+    {
+      "leve": 216,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "2496": [
+    {
+      "leve": 214,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "2497": [
+    {
+      "leve": 221,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "2498": [
+    {
+      "leve": 227,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "2501": [
+    {
+      "leve": 240,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "2502": [
+    {
+      "leve": 247,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "2504": [
+    {
+      "leve": 255,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "2507": [
+    {
+      "leve": 147,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "2514": [
+    {
+      "leve": 188,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 10
+    }
+  ],
+  "2516": [
+    {
+      "leve": 192,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2520": [
+    {
+      "leve": 152,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 10
+    }
+  ],
+  "2523": [
+    {
+      "leve": 165,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "2527": [
+    {
+      "leve": 179,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "2537": [
+    {
+      "leve": 167,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 10
+    }
+  ],
+  "2539": [
+    {
+      "leve": 181,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "2542": [
+    {
+      "leve": 189,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 10
+    }
+  ],
+  "2543": [
+    {
+      "leve": 200,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 10
+    }
+  ],
+  "2546": [
+    {
+      "leve": 141,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    }
+  ],
+  "2565": [
+    {
+      "leve": 182,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 10
+    }
+  ],
+  "2629": [
+    {
+      "leve": 386,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "2631": [
+    {
+      "leve": 81,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "2654": [
+    {
+      "leve": 91,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "2656": [
+    {
+      "leve": 212,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "2658": [
+    {
+      "leve": 393,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "2662": [
+    {
+      "leve": 209,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "2664": [
+    {
+      "leve": 208,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "2665": [
+    {
+      "leve": 395,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "2666": [
+    {
+      "leve": 398,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "2668": [
+    {
+      "leve": 458,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "2670": [
+    {
+      "leve": 394,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "2672": [
+    {
+      "leve": 100,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    }
+  ],
+  "2680": [
+    {
+      "leve": 219,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "2685": [
+    {
+      "leve": 461,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    }
+  ],
+  "2687": [
+    {
+      "leve": 464,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    }
+  ],
+  "2700": [
+    {
+      "leve": 409,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "2703": [
+    {
+      "leve": 42,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    },
+    {
+      "leve": 46,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    }
+  ],
+  "2712": [
+    {
+      "leve": 229,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "2731": [
+    {
+      "leve": 473,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "2734": [
+    {
+      "leve": 412,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    },
+    {
+      "leve": 415,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    }
+  ],
+  "2737": [
+    {
+      "leve": 477,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "2765": [
+    {
+      "leve": 241,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "2779": [
+    {
+      "leve": 425,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "2802": [
+    {
+      "leve": 254,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "2805": [
+    {
+      "leve": 423,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "2814": [
+    {
+      "leve": 434,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "2816": [
+    {
+      "leve": 431,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "2817": [
+    {
+      "leve": 253,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "2827": [
+    {
+      "leve": 249,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "2852": [
+    {
+      "leve": 436,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "2854": [
+    {
+      "leve": 440,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "2876": [
+    {
+      "leve": 496,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "2996": [
+    {
+      "leve": 383,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "2999": [
+    {
+      "leve": 387,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3000": [
+    {
+      "leve": 385,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "3001": [
+    {
+      "leve": 390,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3008": [
+    {
+      "leve": 392,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3011": [
+    {
+      "leve": 207,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "3015": [
+    {
+      "leve": 388,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3017": [
+    {
+      "leve": 96,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "3023": [
+    {
+      "leve": 399,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    }
+  ],
+  "3041": [
+    {
+      "leve": 401,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    }
+  ],
+  "3043": [
+    {
+      "leve": 110,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    }
+  ],
+  "3045": [
+    {
+      "leve": 220,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "3052": [
+    {
+      "leve": 410,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "3053": [
+    {
+      "leve": 407,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "3064": [
+    {
+      "leve": 404,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    }
+  ],
+  "3066": [
+    {
+      "leve": 411,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    }
+  ],
+  "3068": [
+    {
+      "leve": 235,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "3096": [
+    {
+      "leve": 236,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "3100": [
+    {
+      "leve": 115,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "3106": [
+    {
+      "leve": 418,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3138": [
+    {
+      "leve": 126,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    },
+    {
+      "leve": 131,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "3140": [
+    {
+      "leve": 427,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "3144": [
+    {
+      "leve": 426,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "3162": [
+    {
+      "leve": 430,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "3172": [
+    {
+      "leve": 432,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "3177": [
+    {
+      "leve": 133,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "3180": [
+    {
+      "leve": 257,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "3185": [
+    {
+      "leve": 439,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "3187": [
+    {
+      "leve": 437,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "3201": [
+    {
+      "leve": 438,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "3307": [
+    {
+      "leve": 381,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "3309": [
+    {
+      "leve": 382,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "3313": [
+    {
+      "leve": 389,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3316": [
+    {
+      "leve": 391,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 14
+    }
+  ],
+  "3325": [
+    {
+      "leve": 402,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    }
+  ],
+  "3336": [
+    {
+      "leve": 406,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "3341": [
+    {
+      "leve": 400,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    },
+    {
+      "leve": 414,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    }
+  ],
+  "3349": [
+    {
+      "leve": 413,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    }
+  ],
+  "3351": [
+    {
+      "leve": 416,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 14
+    }
+  ],
+  "3352": [
+    {
+      "leve": 232,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "3372": [
+    {
+      "leve": 421,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3379": [
+    {
+      "leve": 417,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3386": [
+    {
+      "leve": 245,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "3397": [
+    {
+      "leve": 428,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "3399": [
+    {
+      "leve": 424,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 14
+    }
+  ],
+  "3413": [
+    {
+      "leve": 433,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "3421": [
+    {
+      "leve": 429,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 14
+    }
+  ],
+  "3423": [
+    {
+      "leve": 130,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "3426": [
+    {
+      "leve": 129,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "3456": [
+    {
+      "leve": 435,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 14
+    }
+  ],
+  "3515": [
+    {
+      "leve": 384,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 14
+    }
+  ],
+  "3516": [
+    {
+      "leve": 82,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "3530": [
+    {
+      "leve": 92,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "3534": [
+    {
+      "leve": 90,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "3537": [
+    {
+      "leve": 94,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "3539": [
+    {
+      "leve": 396,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "3543": [
+    {
+      "leve": 397,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 14
+    }
+  ],
+  "3544": [
+    {
+      "leve": 218,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "3547": [
+    {
+      "leve": 104,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    }
+  ],
+  "3557": [
+    {
+      "leve": 228,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 11
+    }
+  ],
+  "3559": [
+    {
+      "leve": 105,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    }
+  ],
+  "3561": [
+    {
+      "leve": 403,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 14
+    }
+  ],
+  "3563": [
+    {
+      "leve": 223,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 11
+    }
+  ],
+  "3568": [
+    {
+      "leve": 408,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "3576": [
+    {
+      "leve": 108,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    }
+  ],
+  "3601": [
+    {
+      "leve": 419,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3607": [
+    {
+      "leve": 420,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3611": [
+    {
+      "leve": 120,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    }
+  ],
+  "3616": [
+    {
+      "leve": 123,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    }
+  ],
+  "3623": [
+    {
+      "leve": 252,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "3625": [
+    {
+      "leve": 127,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    }
+  ],
+  "3740": [
+    {
+      "leve": 83,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "3742": [
+    {
+      "leve": 23,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "3763": [
+    {
+      "leve": 22,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "3765": [
+    {
+      "leve": 89,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "3767": [
+    {
+      "leve": 210,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 11
+    }
+  ],
+  "3771": [
+    {
+      "leve": 93,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "3772": [
+    {
+      "leve": 97,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "3774": [
+    {
+      "leve": 103,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    }
+  ],
+  "3775": [
+    {
+      "leve": 215,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "3788": [
+    {
+      "leve": 107,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    },
+    {
+      "leve": 116,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "3825": [
+    {
+      "leve": 242,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "3831": [
+    {
+      "leve": 422,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 14
+    }
+  ],
+  "3833": [
+    {
+      "leve": 239,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 11
+    }
+  ],
+  "3847": [
+    {
+      "leve": 248,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "3851": [
+    {
+      "leve": 124,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    }
+  ],
+  "3858": [
+    {
+      "leve": 250,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 11
+    }
+  ],
+  "3866": [
+    {
+      "leve": 132,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "3870": [
+    {
+      "leve": 67,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 9
+    }
+  ],
+  "3883": [
+    {
+      "leve": 259,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "3885": [
+    {
+      "leve": 138,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "3887": [
+    {
+      "leve": 258,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "3904": [
+    {
+      "leve": 139,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "3908": [
+    {
+      "leve": 76,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "3959": [
+    {
+      "leve": 84,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "3967": [
+    {
+      "leve": 98,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "3972": [
+    {
+      "leve": 213,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
+  "3983": [
+    {
+      "leve": 113,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "3987": [
+    {
+      "leve": 405,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
+    }
+  ],
+  "4007": [
+    {
+      "leve": 233,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "4022": [
+    {
+      "leve": 117,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    }
+  ],
+  "4034": [
+    {
+      "leve": 246,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "4051": [
+    {
+      "leve": 135,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "4091": [
+    {
+      "leve": 442,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "4092": [
+    {
+      "leve": 87,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 13
+    }
+  ],
+  "4093": [
+    {
+      "leve": 451,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "4095": [
+    {
+      "leve": 459,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    }
+  ],
+  "4097": [
+    {
+      "leve": 102,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    }
+  ],
+  "4106": [
+    {
+      "leve": 112,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
+  "4113": [
+    {
+      "leve": 479,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "4143": [
+    {
+      "leve": 483,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "4147": [
+    {
+      "leve": 491,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "4153": [
+    {
+      "leve": 136,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "4197": [
+    {
+      "leve": 447,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "4198": [
+    {
+      "leve": 453,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "4204": [
+    {
+      "leve": 454,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "4209": [
+    {
+      "leve": 468,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "4218": [
+    {
+      "leve": 482,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "4222": [
+    {
+      "leve": 475,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "4232": [
+    {
+      "leve": 488,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "4237": [
+    {
+      "leve": 494,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "4247": [
+    {
+      "leve": 490,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "4304": [
+    {
+      "leve": 85,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "4306": [
+    {
+      "leve": 449,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "4308": [
+    {
+      "leve": 99,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    }
+  ],
+  "4309": [
+    {
+      "leve": 457,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 12
+    }
+  ],
+  "4314": [
+    {
+      "leve": 122,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    }
+  ],
+  "4317": [
+    {
+      "leve": 474,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "4332": [
+    {
+      "leve": 481,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "4333": [
+    {
+      "leve": 121,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    },
+    {
+      "leve": 128,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    }
+  ],
+  "4337": [
+    {
+      "leve": 487,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "4343": [
+    {
+      "leve": 486,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "4361": [
+    {
+      "leve": 492,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "4363": [
+    {
+      "leve": 497,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "4369": [
+    {
+      "leve": 495,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "4371": [
+    {
+      "leve": 500,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "4422": [
+    {
+      "leve": 450,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 12
+    }
+  ],
+  "4430": [
+    {
+      "leve": 460,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    },
+    {
+      "leve": 469,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "4431": [
+    {
+      "leve": 463,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 12
+    }
+  ],
+  "4433": [
+    {
+      "leve": 465,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 12
+    }
+  ],
+  "4439": [
+    {
+      "leve": 471,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "4450": [
+    {
+      "leve": 472,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 12
+    }
+  ],
+  "4454": [
+    {
+      "leve": 478,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 12
+    }
+  ],
+  "4465": [
+    {
+      "leve": 484,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 12
+    }
+  ],
+  "4485": [
+    {
+      "leve": 489,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 12
+    }
+  ],
+  "4508": [
+    {
+      "leve": 499,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 12
+    }
+  ],
+  "4551": [
+    {
+      "leve": 336,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "4552": [
+    {
+      "leve": 356,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "4553": [
+    {
+      "leve": 369,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "4555": [
+    {
+      "leve": 334,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "4564": [
+    {
+      "leve": 325,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "4565": [
+    {
+      "leve": 327,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "4567": [
+    {
+      "leve": 371,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "4569": [
+    {
+      "leve": 376,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4575": [
+    {
+      "leve": 348,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "4576": [
+    {
+      "leve": 350,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "4579": [
+    {
+      "leve": 365,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "4580": [
+    {
+      "leve": 364,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "4582": [
+    {
+      "leve": 367,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "4583": [
+    {
+      "leve": 368,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 15
+    }
+  ],
+  "4584": [
+    {
+      "leve": 379,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4586": [
+    {
+      "leve": 378,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4587": [
+    {
+      "leve": 375,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4594": [
+    {
+      "leve": 344,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "4595": [
+    {
+      "leve": 349,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "4596": [
+    {
+      "leve": 341,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "4597": [
+    {
+      "leve": 346,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "4598": [
+    {
+      "leve": 343,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 15
+    }
+  ],
+  "4599": [
+    {
+      "leve": 357,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "4600": [
+    {
+      "leve": 361,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "4603": [
+    {
+      "leve": 358,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "4604": [
+    {
+      "leve": 380,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4606": [
+    {
+      "leve": 377,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 15
+    }
+  ],
+  "4639": [
+    {
+      "leve": 265,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4640": [
+    {
+      "leve": 276,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4641": [
+    {
+      "leve": 275,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4646": [
+    {
+      "leve": 310,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    }
+  ],
+  "4650": [
+    {
+      "leve": 263,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4651": [
+    {
+      "leve": 279,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    }
+  ],
+  "4655": [
+    {
+      "leve": 316,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4657": [
+    {
+      "leve": 272,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4660": [
+    {
+      "leve": 262,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4661": [
+    {
+      "leve": 274,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4662": [
+    {
+      "leve": 287,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4663": [
+    {
+      "leve": 306,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4666": [
+    {
+      "leve": 277,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4667": [
+    {
+      "leve": 280,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    }
+  ],
+  "4669": [
+    {
+      "leve": 302,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4670": [
+    {
+      "leve": 301,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4671": [
+    {
+      "leve": 313,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    }
+  ],
+  "4681": [
+    {
+      "leve": 268,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4682": [
+    {
+      "leve": 278,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4686": [
+    {
+      "leve": 304,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4689": [
+    {
+      "leve": 269,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4690": [
+    {
+      "leve": 283,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    }
+  ],
+  "4694": [
+    {
+      "leve": 318,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4697": [
+    {
+      "leve": 281,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    },
+    {
+      "leve": 286,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4698": [
+    {
+      "leve": 288,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4700": [
+    {
+      "leve": 300,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4701": [
+    {
+      "leve": 305,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4702": [
+    {
+      "leve": 303,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4703": [
+    {
+      "leve": 317,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4709": [
+    {
+      "leve": 284,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    },
+    {
+      "leve": 289,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4710": [
+    {
+      "leve": 290,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4711": [
+    {
+      "leve": 296,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4712": [
+    {
+      "leve": 298,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4713": [
+    {
+      "leve": 315,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4718": [
+    {
+      "leve": 294,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4719": [
+    {
+      "leve": 308,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4724": [
+    {
+      "leve": 307,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 16
+    }
+  ],
+  "4727": [
+    {
+      "leve": 320,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4728": [
+    {
+      "leve": 266,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4731": [
+    {
+      "leve": 291,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4732": [
+    {
+      "leve": 295,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4733": [
+    {
+      "leve": 314,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    }
+  ],
+  "4745": [
+    {
+      "leve": 270,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4746": [
+    {
+      "leve": 285,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 16
+    }
+  ],
+  "4747": [
+    {
+      "leve": 311,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    }
+  ],
+  "4749": [
+    {
+      "leve": 293,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4750": [
+    {
+      "leve": 319,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 16
+    }
+  ],
+  "4757": [
+    {
+      "leve": 309,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    },
+    {
+      "leve": 312,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 16
+    }
+  ],
+  "4776": [
+    {
+      "leve": 756,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 19
+    }
+  ],
+  "4827": [
+    {
+      "leve": 299,
+      "amount": 4,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4847": [
+    {
+      "leve": 261,
+      "amount": 6,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4849": [
+    {
+      "leve": 264,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 16
+    }
+  ],
+  "4852": [
+    {
+      "leve": 267,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4854": [
+    {
+      "leve": 271,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 16
+    }
+  ],
+  "4855": [
+    {
+      "leve": 273,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 16
+    }
+  ],
+  "4858": [
+    {
+      "leve": 282,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 16
+    }
+  ],
+  "4860": [
+    {
+      "leve": 297,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 16
+    }
+  ],
+  "4867": [
+    {
+      "leve": 292,
+      "amount": 6,
+      "lvl": 25,
+      "classJob": 16
+    }
+  ],
+  "4869": [
+    {
+      "leve": 755,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 19
+    }
+  ],
+  "4870": [
+    {
+      "leve": 754,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 19
+    }
+  ],
+  "4871": [
+    {
+      "leve": 757,
+      "amount": 3,
+      "lvl": 1,
+      "classJob": 19
+    }
+  ],
+  "4872": [
+    {
+      "leve": 758,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 19
+    }
+  ],
+  "4873": [
+    {
+      "leve": 760,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 19
+    }
+  ],
+  "4874": [
+    {
+      "leve": 761,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 19
+    },
+    {
+      "leve": 765,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 19
+    }
+  ],
+  "4876": [
+    {
+      "leve": 759,
+      "amount": 3,
+      "lvl": 5,
+      "classJob": 19
+    }
+  ],
+  "4877": [
+    {
+      "leve": 762,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 19
+    }
+  ],
+  "4878": [
+    {
+      "leve": 764,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 19
+    }
+  ],
+  "4879": [
+    {
+      "leve": 763,
+      "amount": 3,
+      "lvl": 10,
+      "classJob": 19
+    }
+  ],
+  "4880": [
+    {
+      "leve": 769,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 19
+    }
+  ],
+  "4881": [
+    {
+      "leve": 766,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 19
+    }
+  ],
+  "4884": [
+    {
+      "leve": 767,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 19
+    }
+  ],
+  "4892": [
+    {
+      "leve": 780,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 19
+    }
+  ],
+  "4894": [
+    {
+      "leve": 781,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 19
+    }
+  ],
+  "4895": [
+    {
+      "leve": 779,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 19
+    }
+  ],
+  "4896": [
+    {
+      "leve": 778,
+      "amount": 3,
+      "lvl": 30,
+      "classJob": 19
+    }
+  ],
+  "4937": [
+    {
+      "leve": 788,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 19
+    }
+  ],
+  "4943": [
+    {
+      "leve": 772,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 19
+    }
+  ],
+  "4945": [
+    {
+      "leve": 773,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 19
+    }
+  ],
+  "4948": [
+    {
+      "leve": 770,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 19
+    }
+  ],
+  "4958": [
+    {
+      "leve": 771,
+      "amount": 3,
+      "lvl": 20,
+      "classJob": 19
+    }
+  ],
+  "4959": [
+    {
+      "leve": 776,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 19
+    }
+  ],
+  "4961": [
+    {
+      "leve": 777,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 19
+    }
+  ],
+  "4964": [
+    {
+      "leve": 774,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 19
+    }
+  ],
+  "4967": [
+    {
+      "leve": 775,
+      "amount": 3,
+      "lvl": 25,
+      "classJob": 19
+    }
+  ],
+  "4976": [
+    {
+      "leve": 782,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 19
+    }
+  ],
+  "4981": [
+    {
+      "leve": 784,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 19
+    }
+  ],
+  "4984": [
+    {
+      "leve": 789,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 19
+    }
+  ],
+  "4986": [
+    {
+      "leve": 783,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 19
+    }
+  ],
+  "4988": [
+    {
+      "leve": 786,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 19
+    }
+  ],
+  "4989": [
+    {
+      "leve": 792,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 19
+    }
+  ],
+  "4997": [
+    {
+      "leve": 787,
+      "amount": 3,
+      "lvl": 40,
+      "classJob": 19
+    }
+  ],
+  "5003": [
+    {
+      "leve": 793,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 19
+    }
+  ],
+  "5004": [
+    {
+      "leve": 790,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 19
+    }
+  ],
+  "5006": [
+    {
+      "leve": 791,
+      "amount": 3,
+      "lvl": 45,
+      "classJob": 19
+    }
+  ],
+  "5056": [
+    {
+      "leve": 142,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    },
+    {
+      "leve": 201,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "5057": [
+    {
+      "leve": 159,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "5058": [
+    {
+      "leve": 231,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
+  "5059": [
+    {
+      "leve": 260,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "5062": [
+    {
+      "leve": 441,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "5065": [
+    {
+      "leve": 244,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "5071": [
+    {
+      "leve": 203,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "5074": [
+    {
+      "leve": 256,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 11
+    }
+  ],
+  "5079": [
+    {
+      "leve": 243,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
+  "5086": [
+    {
+      "leve": 446,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 12
+    }
+  ],
+  "5091": [
+    {
+      "leve": 143,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 10
+    },
+    {
+      "leve": 204,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 11
+    }
+  ],
+  "5092": [
+    {
+      "leve": 161,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 10
+    }
+  ],
+  "5275": [
+    {
+      "leve": 86,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "5276": [
+    {
+      "leve": 95,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
+  "5277": [
+    {
+      "leve": 101,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 13
+    },
+    {
+      "leve": 106,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 13
+    }
+  ],
+  "5280": [
+    {
+      "leve": 119,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
+    }
+  ],
+  "5282": [
+    {
+      "leve": 125,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 13
+    }
+  ],
+  "5284": [
+    {
+      "leve": 134,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 13
+    }
+  ],
+  "5285": [
+    {
+      "leve": 140,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
+  "5361": [
+    {
+      "leve": 26,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 9
+    }
+  ],
+  "5364": [
+    {
+      "leve": 35,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 9
+    }
+  ],
+  "5366": [
+    {
+      "leve": 908,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    },
+    {
+      "leve": 911,
+      "amount": 5,
+      "lvl": 50,
+      "classJob": 9
+    }
+  ],
+  "5367": [
+    {
+      "leve": 41,
+      "amount": 1,
+      "lvl": 15,
+      "classJob": 9
+    }
+  ],
+  "5371": [
+    {
+      "leve": 50,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 9
+    },
+    {
+      "leve": 53,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 9
+    }
+  ],
+  "5372": [
+    {
+      "leve": 1245,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 9
+    }
+  ],
+  "5374": [
+    {
+      "leve": 77,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 9
+    }
+  ],
+  "5460": [
+    {
+      "leve": 768,
+      "amount": 3,
+      "lvl": 15,
+      "classJob": 19
+    }
+  ],
+  "5470": [
+    {
+      "leve": 323,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "5471": [
+    {
+      "leve": 337,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "5472": [
+    {
+      "leve": 362,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "5477": [
+    {
+      "leve": 347,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 15
+    }
+  ],
+  "5478": [
+    {
+      "leve": 360,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "5479": [
+    {
+      "leve": 372,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "5484": [
+    {
+      "leve": 351,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "5486": [
+    {
+      "leve": 370,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "5487": [
+    {
+      "leve": 328,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "5489": [
+    {
+      "leve": 321,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "5503": [
+    {
+      "leve": 324,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 15
+    }
+  ],
+  "5505": [
+    {
+      "leve": 359,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 15
+    }
+  ],
+  "5506": [
+    {
+      "leve": 1060,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    },
+    {
+      "leve": 1063,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    }
+  ],
+  "5507": [
+    {
+      "leve": 1070,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    },
+    {
+      "leve": 1073,
+      "amount": 5,
+      "lvl": 54,
+      "classJob": 15
+    }
+  ],
+  "5510": [
+    {
+      "leve": 330,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "5512": [
+    {
+      "leve": 352,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 15
+    }
+  ],
+  "5515": [
+    {
+      "leve": 331,
+      "amount": 1,
+      "lvl": 5,
+      "classJob": 15
+    }
+  ],
+  "5517": [
+    {
+      "leve": 374,
+      "amount": 1,
+      "lvl": 40,
+      "classJob": 15
+    }
+  ],
+  "5544": [
+    {
+      "leve": 785,
+      "amount": 3,
+      "lvl": 35,
+      "classJob": 19
+    }
+  ],
+  "7015": [
+    {
+      "leve": 338,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 15
+    }
+  ],
+  "10586": [
+    {
+      "leve": 968,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 971,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 971,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 971,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    }
+  ],
+  "10592": [
+    {
+      "leve": 969,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 972,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 972,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 972,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    }
+  ],
+  "10601": [
+    {
+      "leve": 987,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    },
+    {
+      "leve": 990,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    },
+    {
+      "leve": 990,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    },
+    {
+      "leve": 990,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    }
+  ],
+  "10604": [
+    {
+      "leve": 909,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    },
+    {
+      "leve": 912,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    },
+    {
+      "leve": 912,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    },
+    {
+      "leve": 912,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    }
+  ],
+  "10608": [
+    {
+      "leve": 934,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    },
+    {
+      "leve": 937,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    }
+  ],
+  "10610": [
+    {
+      "leve": 910,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    },
+    {
+      "leve": 913,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 9
+    }
+  ],
+  "10611": [
+    {
+      "leve": 914,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 917,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 917,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 917,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    }
+  ],
+  "10613": [
+    {
+      "leve": 927,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 930,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 930,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 930,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    }
+  ],
+  "10617": [
+    {
+      "leve": 975,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 978,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 978,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 978,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    }
+  ],
+  "10623": [
+    {
+      "leve": 974,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 977,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 977,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 977,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    }
+  ],
+  "10626": [
+    {
+      "leve": 994,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    },
+    {
+      "leve": 997,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    }
+  ],
+  "10630": [
+    {
+      "leve": 982,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 985,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    }
+  ],
+  "10636": [
+    {
+      "leve": 920,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 923,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 923,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 923,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    }
+  ],
+  "10637": [
+    {
+      "leve": 1077,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 15
+    },
+    {
+      "leve": 1080,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 15
+    },
+    {
+      "leve": 1080,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 15
+    },
+    {
+      "leve": 1080,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 15
+    }
+  ],
+  "10640": [
+    {
+      "leve": 1120,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1123,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    }
+  ],
+  "10647": [
+    {
+      "leve": 1064,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 15
+    },
+    {
+      "leve": 1067,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 15
+    },
+    {
+      "leve": 1067,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 15
+    },
+    {
+      "leve": 1067,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 15
+    }
+  ],
+  "10651": [
+    {
+      "leve": 1083,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    },
+    {
+      "leve": 1086,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    },
+    {
+      "leve": 1086,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    },
+    {
+      "leve": 1086,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    }
+  ],
+  "10652": [
+    {
+      "leve": 1059,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    },
+    {
+      "leve": 1062,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    },
+    {
+      "leve": 1062,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    },
+    {
+      "leve": 1062,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    }
+  ],
+  "10654": [
+    {
+      "leve": 1071,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    },
+    {
+      "leve": 1074,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    },
+    {
+      "leve": 1074,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    },
+    {
+      "leve": 1074,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    }
+  ],
+  "10659": [
+    {
+      "leve": 1124,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1127,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1127,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1127,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    }
+  ],
+  "10661": [
+    {
+      "leve": 1138,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    },
+    {
+      "leve": 1141,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    }
+  ],
+  "10664": [
+    {
+      "leve": 1000,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1003,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    }
+  ],
+  "10665": [
+    {
+      "leve": 1004,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1007,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1007,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1007,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    }
+  ],
+  "10671": [
+    {
+      "leve": 945,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 948,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 948,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 948,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    }
+  ],
+  "10679": [
+    {
+      "leve": 1012,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    },
+    {
+      "leve": 1015,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    }
+  ],
+  "10687": [
+    {
+      "leve": 1018,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1021,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    }
+  ],
+  "10694": [
+    {
+      "leve": 1016,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    }
+  ],
+  "10702": [
+    {
+      "leve": 1022,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1025,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1025,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1025,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    }
+  ],
+  "10714": [
+    {
+      "leve": 1011,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    },
+    {
+      "leve": 1014,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    },
+    {
+      "leve": 1014,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    },
+    {
+      "leve": 1014,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    }
+  ],
+  "10731": [
+    {
+      "leve": 962,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 965,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 965,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 965,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    }
+  ],
+  "10733": [
+    {
+      "leve": 998,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    }
+  ],
+  "10742": [
+    {
+      "leve": 952,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 955,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    }
+  ],
+  "10752": [
+    {
+      "leve": 1023,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1026,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1026,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1026,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    }
+  ],
+  "10762": [
+    {
+      "leve": 1094,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1097,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1097,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1097,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    }
+  ],
+  "10775": [
+    {
+      "leve": 938,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 941,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 941,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 941,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    }
+  ],
+  "10799": [
+    {
+      "leve": 928,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 931,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    }
+  ],
+  "10806": [
+    {
+      "leve": 1108,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1111,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    }
+  ],
+  "10810": [
+    {
+      "leve": 940,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 943,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    }
+  ],
+  "10817": [
+    {
+      "leve": 1089,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    },
+    {
+      "leve": 1092,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    },
+    {
+      "leve": 1092,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    },
+    {
+      "leve": 1092,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    }
+  ],
+  "10821": [
+    {
+      "leve": 963,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    }
+  ],
+  "10833": [
+    {
+      "leve": 951,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 954,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 954,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 954,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    }
+  ],
+  "10841": [
+    {
+      "leve": 1017,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1020,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1020,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1020,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    }
+  ],
+  "10860": [
+    {
+      "leve": 946,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 949,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    }
+  ],
+  "10885": [
+    {
+      "leve": 1144,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1147,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    }
+  ],
+  "10896": [
+    {
+      "leve": 1102,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1105,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    }
+  ],
+  "10897": [
+    {
+      "leve": 957,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 960,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 960,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 960,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    }
+  ],
+  "10905": [
+    {
+      "leve": 1114,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    },
+    {
+      "leve": 1117,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    }
+  ],
+  "10924": [
+    {
+      "leve": 1132,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1135,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    }
+  ],
+  "10931": [
+    {
+      "leve": 1100,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1103,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1103,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1103,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    }
+  ],
+  "10946": [
+    {
+      "leve": 1106,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1109,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1109,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1109,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    }
+  ],
+  "10951": [
+    {
+      "leve": 1095,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1098,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1098,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1098,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    }
+  ],
+  "10961": [
+    {
+      "leve": 964,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 967,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    }
+  ],
+  "10972": [
+    {
+      "leve": 1130,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1133,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1133,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1133,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    }
+  ],
+  "11008": [
+    {
+      "leve": 1131,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1134,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1134,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    },
+    {
+      "leve": 1134,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 12
+    }
+  ],
+  "11034": [
+    {
+      "leve": 1142,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1145,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1145,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1145,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    }
+  ],
+  "11036": [
+    {
+      "leve": 1090,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    },
+    {
+      "leve": 1093,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    }
+  ],
+  "11048": [
+    {
+      "leve": 1119,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1122,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1122,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1122,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    }
+  ],
+  "11872": [
+    {
+      "leve": 981,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 984,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 984,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 984,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    }
+  ],
+  "11877": [
+    {
+      "leve": 988,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    },
+    {
+      "leve": 991,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    }
+  ],
+  "11888": [
+    {
+      "leve": 980,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 983,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 983,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    },
+    {
+      "leve": 983,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 10
+    }
+  ],
+  "11891": [
+    {
+      "leve": 1125,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1128,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1128,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1128,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    }
+  ],
+  "11894": [
+    {
+      "leve": 1143,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1146,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1146,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    },
+    {
+      "leve": 1146,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 12
+    }
+  ],
+  "11895": [
+    {
+      "leve": 1005,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1008,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1008,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1008,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    }
+  ],
+  "11899": [
+    {
+      "leve": 1006,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    },
+    {
+      "leve": 1009,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 11
+    }
+  ],
+  "11906": [
+    {
+      "leve": 993,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    },
+    {
+      "leve": 996,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    },
+    {
+      "leve": 996,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    },
+    {
+      "leve": 996,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    }
+  ],
+  "11911": [
+    {
+      "leve": 915,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 918,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 918,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 918,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    }
+  ],
+  "11929": [
+    {
+      "leve": 933,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    },
+    {
+      "leve": 936,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    },
+    {
+      "leve": 936,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    },
+    {
+      "leve": 936,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    }
+  ],
+  "11936": [
+    {
+      "leve": 921,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 924,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 924,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 924,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    }
+  ],
+  "11943": [
+    {
+      "leve": 976,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    },
+    {
+      "leve": 979,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 10
+    }
+  ],
+  "11957": [
+    {
+      "leve": 1101,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1104,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1104,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    },
+    {
+      "leve": 1104,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 14
+    }
+  ],
+  "11970": [
+    {
+      "leve": 1096,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    },
+    {
+      "leve": 1099,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 14
+    }
+  ],
+  "11983": [
+    {
+      "leve": 1118,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1121,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1121,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    },
+    {
+      "leve": 1121,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 12
+    }
+  ],
+  "11990": [
+    {
+      "leve": 950,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 953,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 953,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    },
+    {
+      "leve": 953,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 13
+    }
+  ],
+  "12005": [
+    {
+      "leve": 1113,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    },
+    {
+      "leve": 1116,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    },
+    {
+      "leve": 1116,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    },
+    {
+      "leve": 1116,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    }
+  ],
+  "12006": [
+    {
+      "leve": 939,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 942,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 942,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    },
+    {
+      "leve": 942,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 13
+    }
+  ],
+  "12011": [
+    {
+      "leve": 916,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    },
+    {
+      "leve": 919,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 9
+    }
+  ],
+  "12015": [
+    {
+      "leve": 926,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 929,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 929,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    },
+    {
+      "leve": 929,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 9
+    }
+  ],
+  "12018": [
+    {
+      "leve": 1137,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    },
+    {
+      "leve": 1140,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    },
+    {
+      "leve": 1140,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    },
+    {
+      "leve": 1140,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    }
+  ],
+  "12027": [
+    {
+      "leve": 956,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 959,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 959,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 959,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    }
+  ],
+  "12518": [
+    {
+      "leve": 970,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    },
+    {
+      "leve": 973,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 10
+    }
+  ],
+  "12519": [
+    {
+      "leve": 1126,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    },
+    {
+      "leve": 1129,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 12
+    }
+  ],
+  "12521": [
+    {
+      "leve": 1136,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 12
+    },
+    {
+      "leve": 1139,
+      "amount": 5,
+      "lvl": 56,
+      "classJob": 12
+    }
+  ],
+  "12524": [
+    {
+      "leve": 1010,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 11
+    },
+    {
+      "leve": 1013,
+      "amount": 5,
+      "lvl": 54,
+      "classJob": 11
+    }
+  ],
+  "12525": [
+    {
+      "leve": 986,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 10
+    },
+    {
+      "leve": 989,
+      "amount": 5,
+      "lvl": 56,
+      "classJob": 10
+    }
+  ],
+  "12526": [
+    {
+      "leve": 992,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 10
+    },
+    {
+      "leve": 995,
+      "amount": 5,
+      "lvl": 58,
+      "classJob": 10
+    }
+  ],
+  "12528": [
+    {
+      "leve": 999,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1002,
+      "amount": 5,
+      "lvl": 50,
+      "classJob": 11
+    }
+  ],
+  "12530": [
+    {
+      "leve": 1024,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    },
+    {
+      "leve": 1027,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 11
+    }
+  ],
+  "12563": [
+    {
+      "leve": 944,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 947,
+      "amount": 5,
+      "lvl": 52,
+      "classJob": 13
+    }
+  ],
+  "12565": [
+    {
+      "leve": 958,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    },
+    {
+      "leve": 961,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 13
+    }
+  ],
+  "12581": [
+    {
+      "leve": 922,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    },
+    {
+      "leve": 925,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 9
+    }
+  ],
+  "12583": [
+    {
+      "leve": 932,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 9
+    },
+    {
+      "leve": 935,
+      "amount": 5,
+      "lvl": 58,
+      "classJob": 9
+    }
+  ],
+  "12588": [
+    {
+      "leve": 1088,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 14
+    },
+    {
+      "leve": 1091,
+      "amount": 5,
+      "lvl": 50,
+      "classJob": 14
+    }
+  ],
+  "12592": [
+    {
+      "leve": 1112,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 14
+    },
+    {
+      "leve": 1115,
+      "amount": 5,
+      "lvl": 58,
+      "classJob": 14
+    }
+  ],
+  "12596": [
+    {
+      "leve": 1107,
+      "amount": 2,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1110,
+      "amount": 10,
+      "lvl": 56,
+      "classJob": 14
+    }
+  ],
+  "12601": [
+    {
+      "leve": 1058,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 15
+    },
+    {
+      "leve": 1061,
+      "amount": 5,
+      "lvl": 50,
+      "classJob": 15
+    }
+  ],
+  "12602": [
+    {
+      "leve": 1072,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    },
+    {
+      "leve": 1075,
+      "amount": 1,
+      "lvl": 54,
+      "classJob": 15
+    }
+  ],
+  "12603": [
+    {
+      "leve": 1082,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    },
+    {
+      "leve": 1085,
+      "amount": 5,
+      "lvl": 58,
+      "classJob": 15
+    }
+  ],
+  "12604": [
+    {
+      "leve": 1066,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 15
+    },
+    {
+      "leve": 1069,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 15
+    }
+  ],
+  "12605": [
+    {
+      "leve": 1076,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 15
+    },
+    {
+      "leve": 1079,
+      "amount": 9,
+      "lvl": 56,
+      "classJob": 15
+    }
+  ],
+  "12608": [
+    {
+      "leve": 1084,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    },
+    {
+      "leve": 1087,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 15
+    }
+  ],
+  "12616": [
+    {
+      "leve": 1065,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 15
+    },
+    {
+      "leve": 1068,
+      "amount": 9,
+      "lvl": 52,
+      "classJob": 15
+    }
+  ],
+  "12623": [
+    {
+      "leve": 1078,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 15
+    },
+    {
+      "leve": 1081,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 15
+    }
+  ],
+  "12718": [
+    {
+      "leve": 1208,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 19
+    },
+    {
+      "leve": 1211,
+      "amount": 6,
+      "lvl": 50,
+      "classJob": 19
+    }
+  ],
+  "12720": [
+    {
+      "leve": 1210,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 19
+    },
+    {
+      "leve": 1213,
+      "amount": 6,
+      "lvl": 50,
+      "classJob": 19
+    }
+  ],
+  "12722": [
+    {
+      "leve": 1209,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 19
+    },
+    {
+      "leve": 1212,
+      "amount": 6,
+      "lvl": 50,
+      "classJob": 19
+    }
+  ],
+  "12729": [
+    {
+      "leve": 1214,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 19
+    },
+    {
+      "leve": 1217,
+      "amount": 6,
+      "lvl": 52,
+      "classJob": 19
+    }
+  ],
+  "12731": [
+    {
+      "leve": 1216,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 19
+    },
+    {
+      "leve": 1219,
+      "amount": 6,
+      "lvl": 52,
+      "classJob": 19
+    }
+  ],
+  "12732": [
+    {
+      "leve": 1220,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 19
+    },
+    {
+      "leve": 1223,
+      "amount": 6,
+      "lvl": 54,
+      "classJob": 19
+    }
+  ],
+  "12734": [
+    {
+      "leve": 1221,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 19
+    },
+    {
+      "leve": 1224,
+      "amount": 6,
+      "lvl": 54,
+      "classJob": 19
+    }
+  ],
+  "12736": [
+    {
+      "leve": 1222,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 19
+    },
+    {
+      "leve": 1225,
+      "amount": 6,
+      "lvl": 54,
+      "classJob": 19
+    }
+  ],
+  "12740": [
+    {
+      "leve": 1215,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 19
+    },
+    {
+      "leve": 1218,
+      "amount": 6,
+      "lvl": 52,
+      "classJob": 19
+    }
+  ],
+  "12741": [
+    {
+      "leve": 1228,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 19
+    },
+    {
+      "leve": 1231,
+      "amount": 6,
+      "lvl": 56,
+      "classJob": 19
+    }
+  ],
+  "12773": [
+    {
+      "leve": 1234,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 19
+    },
+    {
+      "leve": 1237,
+      "amount": 6,
+      "lvl": 58,
+      "classJob": 19
+    }
+  ],
+  "12782": [
+    {
+      "leve": 1226,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 19
+    },
+    {
+      "leve": 1229,
+      "amount": 6,
+      "lvl": 56,
+      "classJob": 19
+    }
+  ],
+  "12789": [
+    {
+      "leve": 1227,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 19
+    },
+    {
+      "leve": 1230,
+      "amount": 6,
+      "lvl": 56,
+      "classJob": 19
+    }
+  ],
+  "12791": [
+    {
+      "leve": 1232,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 19
+    },
+    {
+      "leve": 1235,
+      "amount": 6,
+      "lvl": 58,
+      "classJob": 19
+    }
+  ],
+  "12818": [
+    {
+      "leve": 1233,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 19
+    },
+    {
+      "leve": 1236,
+      "amount": 6,
+      "lvl": 58,
+      "classJob": 19
+    }
+  ],
+  "12843": [
+    {
+      "leve": 1047,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 16
+    },
+    {
+      "leve": 1050,
+      "amount": 9,
+      "lvl": 56,
+      "classJob": 16
+    }
+  ],
+  "12845": [
+    {
+      "leve": 1028,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 16
+    },
+    {
+      "leve": 1031,
+      "amount": 9,
+      "lvl": 50,
+      "classJob": 16
+    }
+  ],
+  "12850": [
+    {
+      "leve": 1035,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 16
+    },
+    {
+      "leve": 1038,
+      "amount": 9,
+      "lvl": 52,
+      "classJob": 16
+    }
+  ],
+  "12851": [
+    {
+      "leve": 1054,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 16
+    },
+    {
+      "leve": 1057,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 16
+    }
+  ],
+  "12856": [
+    {
+      "leve": 1048,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 16
+    },
+    {
+      "leve": 1051,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 16
+    }
+  ],
+  "12859": [
+    {
+      "leve": 1040,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 16
+    },
+    {
+      "leve": 1043,
+      "amount": 9,
+      "lvl": 54,
+      "classJob": 16
+    }
+  ],
+  "12861": [
+    {
+      "leve": 1030,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 16
+    },
+    {
+      "leve": 1033,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 16
+    }
+  ],
+  "12863": [
+    {
+      "leve": 1041,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 16
+    },
+    {
+      "leve": 1044,
+      "amount": 9,
+      "lvl": 54,
+      "classJob": 16
+    }
+  ],
+  "12864": [
+    {
+      "leve": 1053,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 16
+    },
+    {
+      "leve": 1056,
+      "amount": 9,
+      "lvl": 58,
+      "classJob": 16
+    }
+  ],
+  "12866": [
+    {
+      "leve": 1029,
+      "amount": 3,
+      "lvl": 50,
+      "classJob": 16
+    },
+    {
+      "leve": 1032,
+      "amount": 9,
+      "lvl": 50,
+      "classJob": 16
+    }
+  ],
+  "12867": [
+    {
+      "leve": 1036,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 16
+    },
+    {
+      "leve": 1039,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 16
+    }
+  ],
+  "12869": [
+    {
+      "leve": 1042,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 16
+    },
+    {
+      "leve": 1045,
+      "amount": 3,
+      "lvl": 54,
+      "classJob": 16
+    }
+  ],
+  "12890": [
+    {
+      "leve": 1046,
+      "amount": 3,
+      "lvl": 56,
+      "classJob": 16
+    },
+    {
+      "leve": 1049,
+      "amount": 9,
+      "lvl": 56,
+      "classJob": 16
+    }
+  ],
+  "12892": [
+    {
+      "leve": 1052,
+      "amount": 3,
+      "lvl": 58,
+      "classJob": 16
+    },
+    {
+      "leve": 1055,
+      "amount": 9,
+      "lvl": 58,
+      "classJob": 16
+    }
+  ],
+  "12895": [
+    {
+      "leve": 1034,
+      "amount": 3,
+      "lvl": 52,
+      "classJob": 16
+    },
+    {
+      "leve": 1037,
+      "amount": 9,
+      "lvl": 52,
+      "classJob": 16
+    }
+  ],
+  "18033": [
+    {
+      "leve": 1268,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 10
+    }
+  ],
+  "18041": [
+    {
+      "leve": 1238,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 9
+    }
+  ],
+  "18043": [
+    {
+      "leve": 1314,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 15
+    }
+  ],
+  "18050": [
+    {
+      "leve": 1283,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 11
+    }
+  ],
+  "18055": [
+    {
+      "leve": 1285,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 11
+    }
+  ],
+  "18066": [
+    {
+      "leve": 1255,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 13
+    }
+  ],
+  "18075": [
+    {
+      "leve": 1330,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 14
+    }
+  ],
+  "18088": [
+    {
+      "leve": 1328,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 14
+    }
+  ],
+  "18094": [
+    {
+      "leve": 1343,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 12
+    }
+  ],
+  "18107": [
+    {
+      "leve": 1344,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 12
+    }
+  ],
+  "18192": [
+    {
+      "leve": 1241,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 9
+    }
+  ],
+  "18193": [
+    {
+      "leve": 1242,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 9
+    }
+  ],
+  "18194": [
+    {
+      "leve": 1271,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 10
+    }
+  ],
+  "18200": [
+    {
+      "leve": 1316,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 15
+    }
+  ],
+  "18204": [
+    {
+      "leve": 1286,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 11
+    }
+  ],
+  "18207": [
+    {
+      "leve": 1287,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 11
+    }
+  ],
+  "18220": [
+    {
+      "leve": 1333,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 14
+    }
+  ],
+  "18221": [
+    {
+      "leve": 1256,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 13
+    }
+  ],
+  "18231": [
+    {
+      "leve": 1258,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 13
+    }
+  ],
+  "18235": [
+    {
+      "leve": 1346,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 12
+    }
+  ],
+  "18240": [
+    {
+      "leve": 1331,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 14
+    }
+  ],
+  "18261": [
+    {
+      "leve": 1347,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 12
+    }
+  ],
+  "18347": [
+    {
+      "leve": 1276,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 10
+    }
+  ],
+  "18353": [
+    {
+      "leve": 1246,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 9
+    }
+  ],
+  "18359": [
+    {
+      "leve": 1349,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 12
+    }
+  ],
+  "18366": [
+    {
+      "leve": 1291,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 11
+    }
+  ],
+  "18367": [
+    {
+      "leve": 1351,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 12
+    }
+  ],
+  "18371": [
+    {
+      "leve": 1289,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 11
+    }
+  ],
+  "18374": [
+    {
+      "leve": 1334,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 14
+    }
+  ],
+  "18379": [
+    {
+      "leve": 1259,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 13
+    }
+  ],
+  "18504": [
+    {
+      "leve": 1247,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 9
+    }
+  ],
+  "18511": [
+    {
+      "leve": 1323,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 15
+    }
+  ],
+  "18513": [
+    {
+      "leve": 1352,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 12
+    }
+  ],
+  "18514": [
+    {
+      "leve": 1279,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 10
+    }
+  ],
+  "18518": [
+    {
+      "leve": 1292,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 11
+    }
+  ],
+  "18526": [
+    {
+      "leve": 1264,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 13
+    }
+  ],
+  "18533": [
+    {
+      "leve": 1294,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 11
+    }
+  ],
+  "18546": [
+    {
+      "leve": 1337,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 14
+    }
+  ],
+  "18548": [
+    {
+      "leve": 1339,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 14
+    }
+  ],
+  "18552": [
+    {
+      "leve": 1262,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 13
+    }
+  ],
+  "18574": [
+    {
+      "leve": 1354,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 12
+    }
+  ],
+  "18661": [
+    {
+      "leve": 1252,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 9
+    }
+  ],
+  "18664": [
+    {
+      "leve": 1282,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 10
+    }
+  ],
+  "18666": [
+    {
+      "leve": 1355,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 12
+    }
+  ],
+  "18668": [
+    {
+      "leve": 1326,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 15
+    }
+  ],
+  "18671": [
+    {
+      "leve": 1356,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 12
+    }
+  ],
+  "18672": [
+    {
+      "leve": 1295,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 11
+    }
+  ],
+  "18675": [
+    {
+      "leve": 1265,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 13
+    }
+  ],
+  "18679": [
+    {
+      "leve": 1297,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 11
+    }
+  ],
+  "18691": [
+    {
+      "leve": 1340,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 14
+    }
+  ],
+  "18698": [
+    {
+      "leve": 1266,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 13
+    }
+  ],
+  "18699": [
+    {
+      "leve": 1296,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 11
+    }
+  ],
+  "18710": [
+    {
+      "leve": 1341,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 14
+    }
+  ],
+  "18713": [
+    {
+      "leve": 1267,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 13
+    }
+  ],
+  "18722": [
+    {
+      "leve": 1357,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 12
+    }
+  ],
+  "19510": [
+    {
+      "leve": 1269,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 10
+    }
+  ],
+  "19511": [
+    {
+      "leve": 1345,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 12
+    }
+  ],
+  "19512": [
+    {
+      "leve": 1284,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 11
+    }
+  ],
+  "19516": [
+    {
+      "leve": 1239,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 9
+    }
+  ],
+  "19518": [
+    {
+      "leve": 1273,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 10
+    }
+  ],
+  "19525": [
+    {
+      "leve": 1272,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 10
+    }
+  ],
+  "19532": [
+    {
+      "leve": 1350,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 12
+    }
+  ],
+  "19534": [
+    {
+      "leve": 1290,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 11
+    }
+  ],
+  "19543": [
+    {
+      "leve": 1244,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 9
+    }
+  ],
+  "19545": [
+    {
+      "leve": 1274,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 10
+    }
+  ],
+  "19548": [
+    {
+      "leve": 1277,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 10
+    }
+  ],
+  "19558": [
+    {
+      "leve": 1249,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 9
+    }
+  ],
+  "19565": [
+    {
+      "leve": 1278,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 10
+    }
+  ],
+  "19571": [
+    {
+      "leve": 1280,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 10
+    }
+  ],
+  "19613": [
+    {
+      "leve": 1329,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 14
+    }
+  ],
+  "19618": [
+    {
+      "leve": 1253,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 13
+    }
+  ],
+  "19636": [
+    {
+      "leve": 1260,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 13
+    }
+  ],
+  "19640": [
+    {
+      "leve": 1335,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 14
+    }
+  ],
+  "19642": [
+    {
+      "leve": 1338,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 14
+    }
+  ],
+  "19643": [
+    {
+      "leve": 1263,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 13
+    }
+  ],
+  "19730": [
+    {
+      "leve": 1243,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 9
+    }
+  ],
+  "19735": [
+    {
+      "leve": 1257,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 13
+    }
+  ],
+  "19738": [
+    {
+      "leve": 1248,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 9
+    }
+  ],
+  "19747": [
+    {
+      "leve": 1342,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 14
+    }
+  ],
+  "19749": [
+    {
+      "leve": 1250,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 9
+    }
+  ],
+  "19807": [
+    {
+      "leve": 1310,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 16
+    }
+  ],
+  "19808": [
+    {
+      "leve": 1299,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 16
+    }
+  ],
+  "19811": [
+    {
+      "leve": 1300,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 16
+    }
+  ],
+  "19813": [
+    {
+      "leve": 1308,
+      "amount": 3,
+      "lvl": 66,
+      "classJob": 16
+    }
+  ],
+  "19814": [
+    {
+      "leve": 1311,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 16
+    }
+  ],
+  "19816": [
+    {
+      "leve": 1302,
+      "amount": 3,
+      "lvl": 62,
+      "classJob": 16
+    }
+  ],
+  "19817": [
+    {
+      "leve": 1305,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 16
+    }
+  ],
+  "19819": [
+    {
+      "leve": 1312,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 16
+    }
+  ],
+  "19820": [
+    {
+      "leve": 1307,
+      "amount": 3,
+      "lvl": 66,
+      "classJob": 16
+    }
+  ],
+  "19831": [
+    {
+      "leve": 1306,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 16
+    }
+  ],
+  "19838": [
+    {
+      "leve": 1301,
+      "amount": 3,
+      "lvl": 62,
+      "classJob": 16
+    }
+  ],
+  "19839": [
+    {
+      "leve": 1309,
+      "amount": 3,
+      "lvl": 66,
+      "classJob": 16
+    }
+  ],
+  "19841": [
+    {
+      "leve": 1298,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 16
+    }
+  ],
+  "19843": [
+    {
+      "leve": 1304,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 16
+    }
+  ],
+  "19846": [
+    {
+      "leve": 1303,
+      "amount": 3,
+      "lvl": 62,
+      "classJob": 16
+    }
+  ],
+  "19883": [
+    {
+      "leve": 1320,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 15
+    }
+  ],
+  "19884": [
+    {
+      "leve": 1322,
+      "amount": 3,
+      "lvl": 66,
+      "classJob": 15
+    }
+  ],
+  "19885": [
+    {
+      "leve": 1318,
+      "amount": 3,
+      "lvl": 62,
+      "classJob": 15
+    }
+  ],
+  "19888": [
+    {
+      "leve": 1325,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 15
+    }
+  ],
+  "19894": [
+    {
+      "leve": 1317,
+      "amount": 3,
+      "lvl": 62,
+      "classJob": 15
+    }
+  ],
+  "19901": [
+    {
+      "leve": 1313,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 15
+    }
+  ],
+  "19902": [
+    {
+      "leve": 1319,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 15
+    }
+  ],
+  "19903": [
+    {
+      "leve": 1327,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 15
+    }
+  ],
+  "19904": [
+    {
+      "leve": 1315,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 15
+    }
+  ],
+  "19906": [
+    {
+      "leve": 1321,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 15
+    }
+  ],
+  "19909": [
+    {
+      "leve": 1324,
+      "amount": 3,
+      "lvl": 66,
+      "classJob": 15
+    }
+  ],
+  "19925": [
+    {
+      "leve": 1240,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 9
+    }
+  ],
+  "19928": [
+    {
+      "leve": 1251,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 9
+    }
+  ],
+  "19939": [
+    {
+      "leve": 1270,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 10
+    }
+  ],
+  "19940": [
+    {
+      "leve": 1348,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 12
+    }
+  ],
+  "19941": [
+    {
+      "leve": 1288,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 11
+    }
+  ],
+  "19943": [
+    {
+      "leve": 1275,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 10
+    }
+  ],
+  "19944": [
+    {
+      "leve": 1353,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 12
+    }
+  ],
+  "19945": [
+    {
+      "leve": 1293,
+      "amount": 1,
+      "lvl": 66,
+      "classJob": 11
+    }
+  ],
+  "19947": [
+    {
+      "leve": 1281,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 10
+    }
+  ],
+  "19977": [
+    {
+      "leve": 1332,
+      "amount": 1,
+      "lvl": 62,
+      "classJob": 14
+    }
+  ],
+  "19981": [
+    {
+      "leve": 1336,
+      "amount": 2,
+      "lvl": 64,
+      "classJob": 14
+    }
+  ],
+  "19993": [
+    {
+      "leve": 1254,
+      "amount": 1,
+      "lvl": 60,
+      "classJob": 13
+    }
+  ],
+  "19995": [
+    {
+      "leve": 1261,
+      "amount": 1,
+      "lvl": 64,
+      "classJob": 13
+    }
+  ],
+  "20023": [
+    {
+      "leve": 1396,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 19
+    }
+  ],
+  "20034": [
+    {
+      "leve": 1401,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 19
+    }
+  ],
+  "20043": [
+    {
+      "leve": 1400,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 19
+    }
+  ],
+  "20070": [
+    {
+      "leve": 1388,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 19
+    }
+  ],
+  "20083": [
+    {
+      "leve": 1389,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 19
+    }
+  ],
+  "20090": [
+    {
+      "leve": 1390,
+      "amount": 3,
+      "lvl": 60,
+      "classJob": 19
+    }
+  ],
+  "20105": [
+    {
+      "leve": 1402,
+      "amount": 3,
+      "lvl": 68,
+      "classJob": 19
+    }
+  ],
+  "20120": [
+    {
+      "leve": 1394,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 19
+    }
+  ],
+  "20138": [
+    {
+      "leve": 1395,
+      "amount": 3,
+      "lvl": 64,
+      "classJob": 19
+    }
+  ],
+  "20146": [
+    {
+      "leve": 1391,
+      "amount": 6,
+      "lvl": 62,
+      "classJob": 19
+    }
+  ],
+  "20160": [
+    {
+      "leve": 1393,
+      "amount": 4,
+      "lvl": 62,
+      "classJob": 19
+    }
+  ],
+  "20165": [
+    {
+      "leve": 1392,
+      "amount": 6,
+      "lvl": 62,
+      "classJob": 19
+    }
+  ],
+  "20193": [
+    {
+      "leve": 1398,
+      "amount": 6,
+      "lvl": 66,
+      "classJob": 19
+    }
+  ],
+  "20198": [
+    {
+      "leve": 1397,
+      "amount": 6,
+      "lvl": 66,
+      "classJob": 19
+    }
+  ],
+  "20211": [
+    {
+      "leve": 1399,
+      "amount": 4,
+      "lvl": 66,
+      "classJob": 19
+    }
+  ],
+  "25638": [
+    {
+      "leve": 1479,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 15
+    }
+  ],
+  "25639": [
+    {
+      "leve": 1480,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 15
+    }
+  ],
+  "25643": [
+    {
+      "leve": 1434,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 10
+    }
+  ],
+  "25645": [
+    {
+      "leve": 1448,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 11
+    }
+  ],
+  "25646": [
+    {
+      "leve": 1450,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 11
+    }
+  ],
+  "25655": [
+    {
+      "leve": 1419,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 13
+    }
+  ],
+  "25661": [
+    {
+      "leve": 1494,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 14
+    }
+  ],
+  "25691": [
+    {
+      "leve": 1510,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 12
+    }
+  ],
+  "25788": [
+    {
+      "leve": 1438,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 10
+    }
+  ],
+  "25789": [
+    {
+      "leve": 1437,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 10
+    }
+  ],
+  "25790": [
+    {
+      "leve": 1436,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 10
+    }
+  ],
+  "25791": [
+    {
+      "leve": 1406,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 9
+    }
+  ],
+  "25792": [
+    {
+      "leve": 1407,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 9
+    }
+  ],
+  "25796": [
+    {
+      "leve": 1408,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 9
+    }
+  ],
+  "25798": [
+    {
+      "leve": 1481,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 15
+    }
+  ],
+  "25802": [
+    {
+      "leve": 1511,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 12
+    }
+  ],
+  "25808": [
+    {
+      "leve": 1453,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 11
+    }
+  ],
+  "25809": [
+    {
+      "leve": 1421,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 13
+    }
+  ],
+  "25813": [
+    {
+      "leve": 1452,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 11
+    }
+  ],
+  "25820": [
+    {
+      "leve": 1422,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 13
+    }
+  ],
+  "25825": [
+    {
+      "leve": 1496,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 14
+    }
+  ],
+  "25833": [
+    {
+      "leve": 1497,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 14
+    }
+  ],
+  "25836": [
+    {
+      "leve": 1498,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 14
+    }
+  ],
+  "25846": [
+    {
+      "leve": 1423,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 13
+    }
+  ],
+  "25853": [
+    {
+      "leve": 1512,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 12
+    }
+  ],
+  "25859": [
+    {
+      "leve": 1513,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 12
+    }
+  ],
+  "25957": [
+    {
+      "leve": 1515,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 12
+    }
+  ],
+  "25959": [
+    {
+      "leve": 1485,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 15
+    }
+  ],
+  "25968": [
+    {
+      "leve": 1455,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 11
+    }
+  ],
+  "25978": [
+    {
+      "leve": 1500,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 14
+    }
+  ],
+  "25990": [
+    {
+      "leve": 1425,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 13
+    }
+  ],
+  "26002": [
+    {
+      "leve": 1454,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 11
+    }
+  ],
+  "26015": [
+    {
+      "leve": 1426,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 13
+    }
+  ],
+  "26112": [
+    {
+      "leve": 1414,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 9
+    }
+  ],
+  "26113": [
+    {
+      "leve": 1442,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 10
+    }
+  ],
+  "26117": [
+    {
+      "leve": 1412,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 9
+    }
+  ],
+  "26118": [
+    {
+      "leve": 1488,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 15
+    }
+  ],
+  "26120": [
+    {
+      "leve": 1517,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 12
+    }
+  ],
+  "26124": [
+    {
+      "leve": 1443,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 10
+    }
+  ],
+  "26125": [
+    {
+      "leve": 1458,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 11
+    }
+  ],
+  "26133": [
+    {
+      "leve": 1427,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 13
+    }
+  ],
+  "26143": [
+    {
+      "leve": 1459,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 11
+    }
+  ],
+  "26145": [
+    {
+      "leve": 1502,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 14
+    }
+  ],
+  "26146": [
+    {
+      "leve": 1429,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 13
+    }
+  ],
+  "26162": [
+    {
+      "leve": 1503,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 14
+    }
+  ],
+  "26172": [
+    {
+      "leve": 1519,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 12
+    }
+  ],
+  "26185": [
+    {
+      "leve": 1518,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 12
+    }
+  ],
+  "26275": [
+    {
+      "leve": 1446,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 10
+    }
+  ],
+  "26276": [
+    {
+      "leve": 1415,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 9
+    }
+  ],
+  "26279": [
+    {
+      "leve": 1491,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 15
+    }
+  ],
+  "26281": [
+    {
+      "leve": 1445,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 10
+    }
+  ],
+  "26282": [
+    {
+      "leve": 1520,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 12
+    }
+  ],
+  "26287": [
+    {
+      "leve": 1460,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 11
+    }
+  ],
+  "26288": [
+    {
+      "leve": 1430,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 13
+    }
+  ],
+  "26289": [
+    {
+      "leve": 1505,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 14
+    }
+  ],
+  "26296": [
+    {
+      "leve": 1461,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 11
+    }
+  ],
+  "26310": [
+    {
+      "leve": 1506,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 14
+    }
+  ],
+  "26311": [
+    {
+      "leve": 1431,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 13
+    }
+  ],
+  "26316": [
+    {
+      "leve": 1507,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 14
+    }
+  ],
+  "26320": [
+    {
+      "leve": 1432,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 13
+    }
+  ],
+  "26327": [
+    {
+      "leve": 1462,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 11
+    }
+  ],
+  "26336": [
+    {
+      "leve": 1521,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 12
+    }
+  ],
+  "26338": [
+    {
+      "leve": 1522,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 12
+    }
+  ],
+  "27082": [
+    {
+      "leve": 1509,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 12
+    }
+  ],
+  "27084": [
+    {
+      "leve": 1449,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 11
+    }
+  ],
+  "27087": [
+    {
+      "leve": 1404,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 9
+    }
+  ],
+  "27096": [
+    {
+      "leve": 1435,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 10
+    }
+  ],
+  "27098": [
+    {
+      "leve": 1440,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 10
+    }
+  ],
+  "27104": [
+    {
+      "leve": 1456,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 11
+    }
+  ],
+  "27112": [
+    {
+      "leve": 1410,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 9
+    }
+  ],
+  "27118": [
+    {
+      "leve": 1441,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 10
+    }
+  ],
+  "27135": [
+    {
+      "leve": 1413,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 9
+    }
+  ],
+  "27137": [
+    {
+      "leve": 1444,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 10
+    }
+  ],
+  "27152": [
+    {
+      "leve": 1447,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 10
+    }
+  ],
+  "27161": [
+    {
+      "leve": 1495,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 14
+    }
+  ],
+  "27173": [
+    {
+      "leve": 1501,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 14
+    }
+  ],
+  "27186": [
+    {
+      "leve": 1504,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 14
+    }
+  ],
+  "27190": [
+    {
+      "leve": 1428,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 13
+    }
+  ],
+  "27203": [
+    {
+      "leve": 1405,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 9
+    }
+  ],
+  "27209": [
+    {
+      "leve": 1420,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 13
+    }
+  ],
+  "27213": [
+    {
+      "leve": 1516,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 12
+    }
+  ],
+  "27219": [
+    {
+      "leve": 1411,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 9
+    }
+  ],
+  "27227": [
+    {
+      "leve": 1417,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 9
+    }
+  ],
+  "27230": [
+    {
+      "leve": 1416,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 9
+    }
+  ],
+  "27430": [
+    {
+      "leve": 1553,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 19
+    }
+  ],
+  "27441": [
+    {
+      "leve": 1564,
+      "amount": 3,
+      "lvl": 76,
+      "classJob": 19
+    }
+  ],
+  "27447": [
+    {
+      "leve": 1556,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 19
+    }
+  ],
+  "27462": [
+    {
+      "leve": 1554,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 19
+    }
+  ],
+  "27473": [
+    {
+      "leve": 1561,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 19
+    }
+  ],
+  "27475": [
+    {
+      "leve": 1559,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 19
+    }
+  ],
+  "27483": [
+    {
+      "leve": 1565,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 19
+    }
+  ],
+  "27498": [
+    {
+      "leve": 1566,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 19
+    }
+  ],
+  "27504": [
+    {
+      "leve": 1567,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 19
+    }
+  ],
+  "27518": [
+    {
+      "leve": 1555,
+      "amount": 6,
+      "lvl": 70,
+      "classJob": 19
+    }
+  ],
+  "27527": [
+    {
+      "leve": 1558,
+      "amount": 6,
+      "lvl": 72,
+      "classJob": 19
+    }
+  ],
+  "27530": [
+    {
+      "leve": 1557,
+      "amount": 6,
+      "lvl": 72,
+      "classJob": 19
+    }
+  ],
+  "27540": [
+    {
+      "leve": 1560,
+      "amount": 6,
+      "lvl": 74,
+      "classJob": 19
+    }
+  ],
+  "27555": [
+    {
+      "leve": 1563,
+      "amount": 6,
+      "lvl": 76,
+      "classJob": 19
+    }
+  ],
+  "27571": [
+    {
+      "leve": 1562,
+      "amount": 6,
+      "lvl": 76,
+      "classJob": 19
+    }
+  ],
+  "27689": [
+    {
+      "leve": 1403,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 9
+    }
+  ],
+  "27691": [
+    {
+      "leve": 1409,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 9
+    }
+  ],
+  "27706": [
+    {
+      "leve": 1433,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 10
+    }
+  ],
+  "27708": [
+    {
+      "leve": 1451,
+      "amount": 1,
+      "lvl": 72,
+      "classJob": 11
+    }
+  ],
+  "27710": [
+    {
+      "leve": 1514,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 12
+    }
+  ],
+  "27711": [
+    {
+      "leve": 1439,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 10
+    }
+  ],
+  "27713": [
+    {
+      "leve": 1457,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 11
+    }
+  ],
+  "27738": [
+    {
+      "leve": 1418,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 13
+    }
+  ],
+  "27740": [
+    {
+      "leve": 1424,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 13
+    }
+  ],
+  "27746": [
+    {
+      "leve": 1493,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 14
+    }
+  ],
+  "27752": [
+    {
+      "leve": 1499,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 14
+    }
+  ],
+  "27766": [
+    {
+      "leve": 1478,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 15
+    }
+  ],
+  "27768": [
+    {
+      "leve": 1482,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 15
+    }
+  ],
+  "27775": [
+    {
+      "leve": 1484,
+      "amount": 1,
+      "lvl": 74,
+      "classJob": 15
+    }
+  ],
+  "27778": [
+    {
+      "leve": 1487,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 15
+    }
+  ],
+  "27788": [
+    {
+      "leve": 1490,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 15
+    }
+  ],
+  "27790": [
+    {
+      "leve": 1492,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 15
+    }
+  ],
+  "27802": [
+    {
+      "leve": 1508,
+      "amount": 1,
+      "lvl": 70,
+      "classJob": 12
+    }
+  ],
+  "27838": [
+    {
+      "leve": 1463,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 16
+    }
+  ],
+  "27843": [
+    {
+      "leve": 1469,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 16
+    }
+  ],
+  "27853": [
+    {
+      "leve": 1464,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 16
+    }
+  ],
+  "27854": [
+    {
+      "leve": 1465,
+      "amount": 3,
+      "lvl": 70,
+      "classJob": 16
+    }
+  ],
+  "27855": [
+    {
+      "leve": 1468,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 16
+    }
+  ],
+  "27856": [
+    {
+      "leve": 1467,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 16
+    }
+  ],
+  "27857": [
+    {
+      "leve": 1466,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 16
+    }
+  ],
+  "27861": [
+    {
+      "leve": 1471,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 16
+    }
+  ],
+  "27865": [
+    {
+      "leve": 1470,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 16
+    }
+  ],
+  "27866": [
+    {
+      "leve": 1472,
+      "amount": 3,
+      "lvl": 76,
+      "classJob": 16
+    }
+  ],
+  "27870": [
+    {
+      "leve": 1473,
+      "amount": 3,
+      "lvl": 76,
+      "classJob": 16
+    }
+  ],
+  "27872": [
+    {
+      "leve": 1474,
+      "amount": 3,
+      "lvl": 76,
+      "classJob": 16
+    }
+  ],
+  "27873": [
+    {
+      "leve": 1475,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 16
+    }
+  ],
+  "27877": [
+    {
+      "leve": 1476,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 16
+    }
+  ],
+  "27878": [
+    {
+      "leve": 1477,
+      "amount": 3,
+      "lvl": 78,
+      "classJob": 16
+    }
+  ],
+  "27957": [
+    {
+      "leve": 1486,
+      "amount": 3,
+      "lvl": 74,
+      "classJob": 15
+    }
+  ],
+  "27958": [
+    {
+      "leve": 1489,
+      "amount": 3,
+      "lvl": 76,
+      "classJob": 15
+    }
+  ],
+  "27960": [
+    {
+      "leve": 1483,
+      "amount": 3,
+      "lvl": 72,
+      "classJob": 15
+    }
+  ]
+}

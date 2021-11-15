@@ -15,6 +15,8 @@ import { NzSwitchModule } from 'ng-zorro-antd/switch';
 import { FormsModule } from '@angular/forms';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 
 const routes: Routes = [
   {
@@ -40,7 +42,9 @@ const routes: Routes = [
     ItemIconModule,
     NzSwitchModule,
     PageLoaderModule,
-    NzDividerModule
+    NzDividerModule,
+    NzTagModule,
+    NzCollapseModule
   ]
 })
 export class RetainersModule {

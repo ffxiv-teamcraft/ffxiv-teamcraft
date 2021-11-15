@@ -19,9 +19,12 @@ import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { RotationPickerService } from '../../../rotations/rotation-picker.service';
 import { GardeningComponent } from '../../../item-details/gardening/gardening.component';
+import { MogstationComponent } from '../../../item-details/mogstation/mogstation.component';
+import { QuestsComponent } from '../../../item-details/quests/quests.component';
+import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -48,7 +51,7 @@ export class ItemSourcesDisplayComponent {
   dataTypes = DataType;
 
   constructor(private modal: NzModalService, private i18n: I18nToolsService,
-              private l12n: LocalizedDataService, private rotationPicker: RotationPickerService) {
+              private rotationPicker: RotationPickerService) {
   }
 
   public openGatheredByPopup(item: ListRow): void {
@@ -65,6 +68,18 @@ export class ItemSourcesDisplayComponent {
 
   public openInstancesPopup(item: ListRow): void {
     this.openDetailsPopup(InstancesComponent, item, DataType.INSTANCES);
+  }
+
+  public openMogstationPopup(item: ListRow): void {
+    this.openDetailsPopup(MogstationComponent, item, DataType.MOGSTATION);
+  }
+
+  public openQuestPopup(item: ListRow): void {
+    this.openDetailsPopup(QuestsComponent, item, DataType.QUESTS);
+  }
+
+  public openAchievementsPopup(item: ListRow): void {
+    this.openDetailsPopup(AchievementsComponent, item, DataType.ACHIEVEMENTS);
   }
 
   public openReducedFromPopup(item: ListRow): void {
@@ -104,15 +119,19 @@ export class ItemSourcesDisplayComponent {
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
-    this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
-      nzContent: component,
-      nzCloseOnNavigation: true,
-      nzComponentParams: {
-        item: item,
-        details: getItemSource(item, dataType)
-      },
-      nzFooter: null
+    this.i18n.getNameObservable('items', item.id).pipe(
+      first()
+    ).subscribe(itemName => {
+      this.modal.create({
+        nzTitle: itemName || (item as CustomItem).name,
+        nzContent: component,
+        nzCloseOnNavigation: true,
+        nzComponentParams: {
+          item: item,
+          details: getItemSource(item, dataType)
+        },
+        nzFooter: null
+      });
     });
   }
 

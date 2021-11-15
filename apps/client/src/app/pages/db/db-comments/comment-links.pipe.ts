@@ -1,12 +1,17 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Inject, Pipe, PipeTransform, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { DbComment } from './model/db-comment';
 import { Language } from '../../../core/data/language';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { isPlatformBrowser } from '@angular/common';
+import { combineLatest, Observable, of } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { mapIds } from '../../../core/data/sources/map-ids';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { IS_HEADLESS } from '../../../../environments/is-headless';
 
 @Pipe({
   name: 'commentLinks',
@@ -21,46 +26,99 @@ export class CommentLinksPipe implements PipeTransform {
   private customSyntaxRegexp = /(item|map|mob|achievement|leve|npc|instance|quest|trait|action|status):"([^"]+)"/gmi;
 
   constructor(private sanitizer: DomSanitizer, private linkTools: LinkToolsService,
-              private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private lazyData: LazyDataService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
+              @Inject(PLATFORM_ID) private platform: Object) {
   }
 
-  transform(value: string, locale: string, comment: DbComment): SafeHtml {
-    value = value.replace(this.xivdbRegexp, (match, ...groups) => {
-      const data = {
-        id: +groups[2],
-        type: groups[1],
-        language: groups[0]
-      };
-      return `<a href="${this.getTeamcraftLink(match, data)}" target="_blank">${this.getI18nName(this.getName(data.type, data.id), locale, match)}</a>`;
-    });
+  transform(value: string, locale: string, comment: DbComment): Observable<SafeHtml> {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
+      return combineLatest([
+        safeCombineLatest(this.getRegexResult(this.xivdbRegexp, value).map(groups => {
+          const data = {
+            id: +groups[3],
+            type: groups[2],
+            language: groups[1]
+          };
+          return this.getName(data.type, data.id).pipe(
+            map(name => {
+              return { name, type: data.type, id: data.id };
+            })
+          );
+        })),
+        safeCombineLatest(this.getRegexResult(this.customSyntaxRegexp, value).map(groups => {
+          const data = {
+            id: groups[2],
+            type: groups[1],
+            language: comment.language
+          };
+          return this.getId(groups[1], groups[2], comment.language as Language).pipe(
+            switchMap(id => {
+              return this.getName(data.type, id).pipe(
+                map(name => {
+                  return { name, type: data.type, id: id };
+                })
+              );
+            })
+          );
+        })),
+        safeCombineLatest(this.getRegexResult(this.tcRegexp, value).map(groups => {
+          const data = {
+            id: +groups[3],
+            type: groups[2],
+            language: groups[1]
+          };
+          return this.getName(data.type, data.id).pipe(
+            map(name => {
+              return { name, type: data.type, id: data.id };
+            })
+          );
+        }))
+      ]).pipe(
+        map(res => {
+          const registry = res.flat();
+          value = value.replace(this.xivdbRegexp, (match, ...groups) => {
+            const data = {
+              id: +groups[2],
+              type: groups[1],
+              language: groups[0]
+            };
+            return `<a href='${this.getTeamcraftLink(match, data)}' target='_blank'>${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
+          });
 
-    value = value.replace(this.customSyntaxRegexp, (match, ...groups) => {
-      const data = {
-        id: this.getId(groups[0], groups[1], comment.language as Language),
-        type: groups[0],
-        language: comment.language
-      };
-      return `<a href="${this.getTeamcraftLink(match, data)}" target="_blank">${this.getI18nName(this.getName(data.type, data.id), locale, match)}</a>`;
-    });
+          value = value.replace(this.customSyntaxRegexp, (match, ...groups) => {
+            const data = {
+              id: groups[1],
+              type: groups[0],
+              language: comment.language
+            };
+            const registryEntry = registry.find(row => row.name[comment.language]?.toLowerCase() === data.id.toLowerCase() && row.type === data.type);
+            return `<a href='${this.getTeamcraftLink(match, {
+              ...registryEntry,
+              language: comment.language
+            })}' target='_blank'>${this.getI18nName(registryEntry?.name, locale, match)}</a>`;
+          });
 
-    value = value.replace(this.tcRegexp, (match, ...groups) => {
-      const data = {
-        id: +groups[2],
-        type: groups[1],
-        language: groups[0]
-      };
-      return `<a href="${this.getTeamcraftLink(match, data)}" target="_blank">${this.getI18nName(this.getName(data.type, data.id), locale, match)}</a>`;
-    });
+          value = value.replace(this.tcRegexp, (match, ...groups) => {
+            const data = {
+              id: +groups[2],
+              type: groups[1],
+              language: groups[0]
+            };
+            return `<a href='${this.getTeamcraftLink(match, data)}' target='_blank'>${this.getI18nName(registry.find(row => row.id === data.id && row.type === data.type)?.name, locale, match)}</a>`;
+          });
 
-    value = value.replace(this.linkRegexp, (match) => {
-      return `<a href="${match}" target="_blank">${match}</a>`;
-    });
+          value = value.replace(this.linkRegexp, (match) => {
+            return `<a href='${match}' target='_blank'>${match}</a>`;
+          });
 
-    return this.sanitizer.bypassSecurityTrustHtml(value);
+          return this.sanitizer.bypassSecurityTrustHtml(value);
+        })
+      );
+    }
+    return of(value);
   }
 
-  getTeamcraftLink(link: string, match: any): string {
+  getTeamcraftLink(link: string, match: { type: string, id: number, language: string }): string {
     let contentType: string;
     switch (match.type) {
       case 'placename':
@@ -76,91 +134,96 @@ export class CommentLinksPipe implements PipeTransform {
     return this.linkTools.getLink(`/db/${match.language || 'en'}/${contentType}/${match.id}`);
   }
 
-  getName(contentType: string, id: number): I18nName {
+  getRegexResult(regex: RegExp, value: string): RegExpExecArray[] {
+    const res = [];
+    let row = null;
+    while (row = regex.exec(value)) {
+      res.push(row);
+    }
+    return res;
+  }
+
+  getName(contentType: string, id: number): Observable<I18nName> {
     switch (contentType) {
       case 'item':
-        return this.l12n.getItem(id);
+        return this.lazyData.getI18nName('items', id);
       case 'fate':
-        const fate = this.l12n.getFate(id);
-        return fate && fate.name;
+        return this.lazyData.getI18nName('fates', id);
       case 'action':
-        return this.l12n.getAction(id);
+        return combineLatest([
+          this.lazyData.getI18nName('actions', id),
+          this.lazyData.getI18nName('craftActions', id)
+        ]).pipe(
+          map(([action, craftAction]) => {
+            return action || craftAction;
+          })
+        );
       case 'instance':
-        return this.l12n.getInstanceName(id);
+        return this.lazyData.getI18nName('instances', id);
       case 'leve':
-        return this.l12n.getLeve(id);
+        return this.lazyData.getI18nName('leves', id);
       case 'map':
-        return this.l12n.getMapName(id);
+        const entry = mapIds.find((m) => m.id === id);
+        return this.lazyData.getI18nName('places', entry ? entry.zone : 1);
       case 'mob':
-        return this.l12n.getMob(id);
+        return this.lazyData.getI18nName('mobs', id);
       case 'node':
-        return this.i18n.createFakeI18n(`Node #${id}`);
+        return of(this.i18n.createFakeI18n(`Node #${id}`));
       case 'npc':
-        return this.l12n.getNpc(id);
+        return this.lazyData.getI18nName('npcs', id);
       case 'quest':
-        const quest = this.l12n.getQuest(id);
-        return quest && quest.name;
+        return this.lazyData.getI18nName('quests', id);
       case 'status':
-        return this.l12n.getStatus(id);
+        return this.lazyData.getI18nName('statuses', id);
       case 'trait':
-        return this.l12n.getTrait(id);
+        return this.lazyData.getI18nName('traits', id);
       case 'achievement':
-        return this.lazyData.data.achievements[id];
+        return this.lazyData.getI18nName('achievements', id);
       default:
-        return null;
+        return of(null);
     }
   }
 
-  getId(contentType: string, name: string, lang: Language): number {
-    let data: any;
+  getId(contentType: string, name: string, lang: Language): Observable<number> {
     switch (contentType) {
       case 'item':
-        data = [this.lazyData.data.items, this.lazyData.data.koItems, this.lazyData.data.zhItems];
-        break;
+        return this.lazyData.getIndexByName('items', name, lang);
       case 'fate':
-        data = [this.lazyData.data.fates, this.lazyData.data.koFates, this.lazyData.data.zhFates];
-        break;
+        return this.lazyData.getIndexByName('fates', name, lang);
       case 'action':
-        data = [this.lazyData.data.actions, this.lazyData.data.craftActions, this.lazyData.data.koActions, this.lazyData.data.koCraftActions];
-        break;
+        return this.lazyData.getIndexByName('actions', name, lang).pipe(
+          switchMap(id => {
+            if (id) {
+              return of(id);
+            }
+            return this.lazyData.getIndexByName('craftActions', name, lang);
+          })
+        );
       case 'instance':
-        data = [this.lazyData.data.instances, this.lazyData.data.koInstances, this.lazyData.data.zhInstances];
-        break;
+        return this.lazyData.getIndexByName('instances', name, lang);
       case 'leve':
-        data = [this.lazyData.data.leves, this.lazyData.data.koLeves, this.lazyData.data.zhLeves];
-        break;
+        return this.lazyData.getIndexByName('leves', name, lang);
       case 'map':
-        data = [this.lazyData.data.places, this.lazyData.data.koPlaces, this.lazyData.data.zhPlaces];
-        break;
+        return this.lazyData.getIndexByName('places', name, lang).pipe(
+          switchMap(result => this.lazyData.getEntry('maps').pipe(
+            map(maps => +Object.keys(maps).find((key) => maps[key].placename_id === result))
+          ))
+        );
       case 'mob':
-        data = [this.lazyData.data.mobs, this.lazyData.data.koMobs, this.lazyData.data.zhMobs];
-        break;
+        return this.lazyData.getIndexByName('mobs', name, lang);
       case 'npc':
-        data = [this.lazyData.data.npcs, this.lazyData.data.koNpcs, this.lazyData.data.zhNpcs];
-        break;
+        return this.lazyData.getIndexByName('npcs', name, lang);
       case 'achievement':
-        data = [this.lazyData.data.achievements, this.lazyData.data.koAchievements, this.lazyData.data.zhAchievements];
-        break;
+        return this.lazyData.getIndexByName('achievements', name, lang);
       case 'status':
-        data = [this.lazyData.data.statuses, this.lazyData.data.koStatuses, this.lazyData.data.zhStatuses];
-        break;
+        return this.lazyData.getIndexByName('statuses', name, lang);
       case 'trait':
-        data = [this.lazyData.data.traits, this.lazyData.data.koTraits, this.lazyData.data.zhTraits];
-        break;
+        return this.lazyData.getIndexByName('traits', name, lang);
       case 'quest':
-        data = [this.lazyData.data.quests, this.lazyData.data.koQuests, this.lazyData.data.zhQuests];
-        break;
+        return this.lazyData.getIndexByName('quests', name, lang);
       default:
-        return null;
+        return of(null);
     }
-    const entries = this.lazyData.merge(...data);
-    let result = this.l12n.getIndexByName(entries, name.trim(), lang)
-      || this.l12n.getIndexByName(entries, name.trim(), 'en');
-
-    if (contentType === 'map') {
-      result = this.l12n.getMapId(this.l12n.getPlace(result).en);
-    }
-    return result;
   }
 
   private getI18nName(name: I18nName, locale: string, fallback: string): string {

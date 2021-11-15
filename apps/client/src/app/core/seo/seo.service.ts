@@ -41,7 +41,9 @@ export class SeoService {
     this.meta.updateTag({ property: 'og:description', content: this.config.description });
     this.meta.updateTag({ property: 'og:url', content: this.config.url });
     if (!isReset) {
-      (<any>window).renderComplete = true;
+      setTimeout(() => {
+        (<any>window).metaComplete = true;
+      }, 500);
     }
   }
 }

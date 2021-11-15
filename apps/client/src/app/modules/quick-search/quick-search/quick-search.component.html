@@ -33,40 +33,40 @@
                   {{row.itemId | itemName | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.INSTANCE">
-                  {{row.id | instanceName | i18n}}
+                  {{row.id | i18nRow:'instances' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.QUEST">
-                  {{row.id | questName | i18n}}
+                  {{row.id | i18nRow:'quests' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.NPC">
-                  {{row.id | npcName | i18n}}
+                  {{row.id | i18nRow:'npcs' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.LEVE">
-                  {{row.id | leveName | i18n}}
+                  {{row.id | i18nRow:'leves' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.MONSTER">
-                  {{row.id | mobName | i18n}}
+                  {{row.id | i18nRow:'mobs' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.FATE">
-                  {{(row.id | fate)?.name | i18n}}
+                  {{row.id | i18nRow:'fates' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.MAP">
-                  {{row.zoneid | placeName | i18n}}
+                  {{row.zoneid | i18nRow:'places' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.ACTION">
                   {{row.id | actionName | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.STATUS">
-                  {{row.id | statusName | i18n}}
+                  {{row.id | i18nRow:'statuses' | async | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.TRAIT">
-                  {{row.id | traitName | i18n}}
+                  {{row.id | i18nRow:'traits' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.ACHIEVEMENT">
-                  {{row.id | achievementName | i18n}}
+                  {{row.id | i18nRow:'achievements' | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.FISHING_SPOT">
-                  {{row.spot.zoneId | placeName | i18n}}
+                  {{row.spot.zoneId | i18nRow:'places' | i18n}}
                 </span>
             </div>
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
@@ -75,7 +75,9 @@
       </nz-option>
     </nz-select>
     <ng-template #searchType>
+      <span *ngIf="reportsMode">{{'ALLAGAN_REPORTS.Jump_to_item' | translate}}</span>
       <nz-select (ngModelChange)="searchType$.next($event);" [ngModel]="searchType$ | async"
+                 *ngIf="!reportsMode"
                  class="search-type"
                  nzShowSearch>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"

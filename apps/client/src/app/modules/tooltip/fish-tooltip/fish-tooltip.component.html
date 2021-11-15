@@ -11,25 +11,25 @@
   <div *ngIf="fish.Description !== undefined && fish.Description.length > 0" class="description">
     <span [innerHtml]="fish | xivapiI18n: 'Description' | xivUIText"></span>
   </div>
-  <div *ngIf="getFshData(fish) as nodes" class="details">
-    <div *ngFor="let node of nodes; let last = last">
+  <div *ngIf="fshData$ | async as nodes" class="details">
+    <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
       <app-node-details [node]="node" [showAlarmsIntegration]="false"></app-node-details>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img *ngIf="row.folklore !== undefined" [src]="row.folklore | lazyIcon" class="item-icon small-icon">
+          <img *ngIf="node.folklore !== undefined" [src]="node.folklore | lazyIcon" class="item-icon small-icon">
           <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start">
-          <div *ngFor="let bait of node.baits; let index = index; let last = last" fxLayout="row" fxLayoutAlign="center center"
+          <div *ngFor="let bait of node.baits; let index = index; let last = last; trackBy: trackByBait" fxLayout="row" fxLayoutAlign="center center"
                fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="icon-container">
-                <img [src]="bait | lazyIcon" class="item-icon small-icon">
+                <img [src]="bait.id | lazyIcon" class="item-icon small-icon">
                 <img *ngIf="index > 0" class="hq-overlay small-icon"
                      src="https://www.garlandtools.org/db/images/HQOverlay.png">
               </div>
-              <div>{{bait | itemName | i18n}}</div>
+              <div>{{bait.id | itemName | i18n}}</div>
             </div>
             <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
           </div>

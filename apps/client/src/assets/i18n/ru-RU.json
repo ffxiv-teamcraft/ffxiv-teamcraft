@@ -1,4 +1,5 @@
 {
+  "Mogstation": "Mogstation",
   "Quests": "Квесты",
   "Facebook_notice": "Facebook логин больше не доступен, вы можете добавить пароль к своей учетной записи, используя систему \"сброса пароля\" или попросив Miu в дискорде.",
   "Pick_a_list": "Выбрать список",
@@ -104,7 +105,7 @@
     "Patreon_supporters": "Patreon донатеры",
     "Contributors": "Поддержавшие проект"
   },
-  "Patreon_login_success": "Успешный вход в Patreon!",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "Скрыть, если пусто",
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
@@ -153,6 +154,7 @@
     "Minutes_duration": "{{amount}} минут",
     "Seconds_duration": "{{amount}} секунд",
     "None": "Нет",
+    "Any": "Any",
     "Top": "Вверху",
     "Bottom": "Внизу",
     "Amount": "Количество",
@@ -180,7 +182,15 @@
     "Back": "Назад",
     "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
     "Support_us": "Поддержите нас",
-    "Show_more": "Показать еще"
+    "Show_more": "Показать еще",
+    "Item": "Item",
+    "Venture": "Venture",
+    "Monster": "Monster",
+    "Airship": "Airship",
+    "Submarine": "Submarine",
+    "Voyage": "Voyage",
+    "Instance": "Instance",
+    "Fate": "Fate"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -251,6 +261,7 @@
   "Item_name": "Название предмета",
   "No_items_found": "Предметы не найдены",
   "No_instances_found": "Инстансы не найдены",
+  "No_fishing_spot_found": "No fishing spots found",
   "No_quests_found": "Квесты не найдены",
   "No_npcs_found": "NPC не найдены",
   "No_mobs_found": "Монстры не найдены",
@@ -351,7 +362,7 @@
   "Email_not_found": "Адрес эл. почты не найден",
   "Email_sent": "Вам направлено письмо со ссылкой для сброса пароля.",
   "ALARM": {
-    "Spawned": "{{itemName}} было заспавнено!",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Расположение",
     "Note": "Заметка"
   },
@@ -477,6 +488,7 @@
     "Has_access_to_housing_vendor": "Prioritize housing vendor",
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Скрыть кнопку \"Назад\" в боковой панели",
+    "Reload_auth_token": "Reload auth token",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -547,19 +559,19 @@
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
-      "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
       "Validate": "Подтвердить"
     }
   },
   "LISTS": {
     "Load_archived": "Загрузить архивные списки",
-    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
     "Merge_lists_warning": "Большие списки здесь не указаны, поскольку вы не можете объединить слишком большие списки из-за ограничений базы данных.",
-    "Lists_merged": "Списки успешно соединены!",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "Списки, которыми с вами поделились",
     "Add_selection": "Добавить выбранное в список",
     "Reset_selection": "Отменить выбор",
@@ -709,6 +721,8 @@
     "Autofill_notification": "Уведомление о завершении",
     "Autofill_notification_title": "Предмет завершен",
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
@@ -728,7 +742,7 @@
       "Import_layout": "Импорт макета",
       "Export_layout": "Экспорт этого макета",
       "Import_string": "Импорт кода макета",
-      "Import_string_copied": "Код макета скопирован!",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
@@ -837,7 +851,7 @@
     "Title": "Переводчик макросов",
     "Macro_language": "Язык макроса",
     "Macro_to_translate": "Макрос для перевода",
-    "Do_translate": "Перевести!",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "Недействительный макрос или язык."
   },
   "CUSTOM_LINKS": {
@@ -870,7 +884,7 @@
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите название предмета",
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
-    "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "Скрытый",
     "Fish_eyes": "Requires fish eyes to only care about weather requirement",
     "Add_alarm": "Добавить оповещение",
@@ -1294,20 +1308,20 @@
     "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Donation_button": "Внести пожертвование",
     "Buy_merch": "Купить мерч Teamcraft",
-    "Features_header": "Вперёд!",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Копируй списки, созданные сообществом, чтобы крафтить предметы для levequest'ов, заполнения логов, кораблей, BiS оружия и доспехов. Здесь можно найти всё что угодно.",
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
-      "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
-      "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
-      "Macro_translation": "У вас есть макросы на иностранном языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "Доступно новое обновление!",
-    "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
     "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его",
     "Possible_update_issue": "Похоже, ваша загрузка не работает. Пожалуйста, нажмите на эту иконку, чтобы загрузить последнюю настройку."
@@ -1328,6 +1342,7 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "Скрыть завершенные предметы",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
@@ -1348,7 +1363,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Загружаем предметы, действия и прочее!"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "Пользовательские предметы",
@@ -1557,6 +1572,7 @@
       "Top_users": "Топ рейтинг",
       "Your_ranking": "Ваш рейтинг",
       "Include_fisheyes_data": "Включать отчеты с помощью Fish Eyes",
+      "Not_enough_data_points": "Not enough data points to display this chart",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1594,7 +1610,9 @@
       "Available_fishes": "Доступные рыбы",
       "Fish_per_weather": "Рыба в погоду",
       "Fish_per_bait": "Рыба за наживку",
-      "Fish_per_tug": "Рыба за tug"
+      "Fish_per_tug": "Рыба за tug",
+      "Include_misses": "Include misses",
+      "Miss": "Miss"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1795,7 +1813,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
-    "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
     "Disabled": "Гид по трате валют более не работает",
@@ -1806,7 +1824,7 @@
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
-    "Description": "Ты хочешь знать какая еда даст нужные параметры? Больше не ищи — здесь то что тебе нужно!",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "Выберите параметр"
   },
   "BLOG": {
@@ -2163,7 +2181,7 @@
     "DESYNTH": {
       "Job": "Выберите профессию, которую вы хотите повысить",
       "Level": "Введите уровень десинтеза (не фактический уровень профессии)",
-      "Search": "Нажмите на поиск, и всё готово!"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "Включите оповещения для заданного таймера, установив этот переключатель."
@@ -2205,7 +2223,7 @@
         "Welcome_add_column": "Добро пожаловать в редактор макета панели, вы можете добавить столбцы с помощью этой кнопки (до 5 столбцов).",
         "Save": "Не забудьте сохранить изменения после редактирования панели.",
         "Revert": "Или, если вам не нравится то, что вы сделали, используйте это для возврата к оригинальной раскладке, которую вы использовали перед редактированием.",
-        "Delete_column": "Хотите удалить столбец? Вот здесь!",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
         "Reorder": "Вы можете использовать перетаскивание для перемещения панелей куда угодно.",
         "Data_type": "Прежде всего, выберите тип метрики, который вы хотите использовать.",
@@ -2544,7 +2562,12 @@
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
     "Task_completion_alarm": "Сигнал выполнения задания",
-    "Reset_retainers": "Reset retainers"
+    "Reset_retainers": "Reset retainers",
+    "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
+    "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
+    "X%_above": "Your price is {{diff}}% above the current lowest price",
+    "X%_below": "Your price is {{diff}}% below the current lowest price",
+    "Lowest_price": "Lowest price"
   },
   "RETAINER_VENTURES": {
     "Title": "Задания ретейнеров",
@@ -2576,7 +2599,7 @@
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
       "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
       "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
-      "Loading_screen_message": "Добавить новый текст в загрузочном сообщении \"Brought to you by ...\" с вашим именем, названием вашей FC, названием линкшелла или чего угодно другого! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Выберите одного из ваших ретейнеров"
   },
@@ -2639,7 +2662,7 @@
         "Abbreviation": "E"
       },
       "INVINCIBLE_II": {
-        "Abbreviation": "i2"
+        "Abbreviation": "J"
       },
       "ODYSSEY": {
         "Abbreviation": "O"
@@ -2697,5 +2720,107 @@
   "GARDENING": {
     "Growth_time": "Время роста",
     "Cross_breeds": "Перекрестные породы"
+  },
+  "ALLAGAN_REPORTS": {
+    "Feature_banner_title": "New feature: Allagan Reports",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Title": "Allagan reports",
+    "Reports": "Reports",
+    "Pending_changes": "Pending changes",
+    "No_pending_changes": "No pending changes",
+    "New_report": "New report",
+    "Submit_new_report": "Submit new report proposal",
+    "Source": "Source",
+    "Report_added": "Report proposal submitted",
+    "Instance_placeholder": "Instance name",
+    "Venture_placeholder": "Venture name",
+    "Monster_placeholder": "Monster name",
+    "Voyage_placeholder": "Voyage name",
+    "Voyage_type": "Voyage type",
+    "Reported_by": "Reported by",
+    "Approved_by": "Approved by",
+    "No_reports": "No reports",
+    "Proposal_accepted": "Report approved",
+    "Proposal_rejected": "Report rejected",
+    "Reject": "Reject",
+    "Accept": "Accept",
+    "Suggest_deletion": "Suggest deletion",
+    "Deletion_suggestion_submitted": "Deletion suggestion submitted",
+    "Report_deleted": "Report deleted",
+    "Suggest_modification": "Edit",
+    "Modification_suggestion_submitted": "Modification suggestion submitted",
+    "Modification_applied": "Modification applied",
+    "Submit_modification_suggestion": "Submit modification suggestion",
+    "Last_updated": "Last updated",
+    "Submitted": "Submitted",
+    "Spawn": "Spawn",
+    "Duration": "Duration",
+    "Predator": "Predator",
+    "Predator_explain": "Fish to catch before getting fisher's intuition or the fish for spearfishing",
+    "Unknown_hookset": "Unknown hookset",
+    "Gig_head": "Gig head",
+    "No_predators": "No predators",
+    "Loading_gubal_analysis": "Loading gubal analysis",
+    "Gubal_analysis_suggestion": "Suggestion based on data analysis",
+    "Cannot_report_for_this_spot": "You can't report details for this spot on this fish because it already exists",
+    "Please_suggest_edit_instead": "Please suggest an edit to the existing one instead",
+    "Add_data_sources": "Add data sources for this item",
+    "Not_applied_yet": "Not applied",
+    "Not_applied_yet_explain": "This source will be added to the list and database system during the next update",
+    "Pending_changes_count": "{{amount}} pending changes to review",
+    "Review_changes": "Review changes",
+    "Imported_from_GT_data": "Imported from Garlandtools",
+    "Status": "Status",
+    "Count": "# of reports",
+    "Applied_count": "# of applied reports",
+    "Fish_coverage": "Fishing coverage",
+    "Items_with_no_source": "Items with no data",
+    "Data_needs": "Items needing data",
+    "Open_reports": "Open reports page",
+    "Fishing": "Fishing",
+    "Others": "Other items",
+    "Ocean_fishing_time": "Ocean fishing time",
+    "Fate_placeholder": "Enter FATE name",
+    "Open_details": "No space for the details, open the page to approve or reject",
+    "Accept_many": "Accept selected reports ({{amount}})",
+    "Reject_many": "Reject selected reports ({{amount}})",
+    "Jump_to_item": "Jump to another item",
+    "Price": "Price",
+    "Product_id": "Product ID",
+    "Product_id_explain": "The id of the product, located in the store URL right after \"/product/\"",
+    "Open_item": "Open in Allagan Reports",
+    "Delete": "Delete",
+    "Voyage_rarity": "Rarity",
+    "Rarity_Common": "Common",
+    "Rarity_Voyage_exclusive": "Voyage exclusive",
+    "Rarity_Rare": "Rare",
+    "No_missing_fish_data": "No fish with missing data",
+    "Sources_filter": "Filter sources",
+    "SOURCE": {
+      "DESYNTH": "DESYNTH",
+      "REDUCTION": "REDUCTION",
+      "GARDENING": "GARDENING",
+      "LOOT": "LOOT",
+      "VENTURE": "VENTURE",
+      "VOYAGE": "VOYAGE",
+      "DROP": "DROP",
+      "INSTANCE": "INSTANCE",
+      "FISHING": "FISHING",
+      "SPEARFISHING": "SPEARFISHING",
+      "FATE": "FATE",
+      "MOGSTATION": "MOGSTATION"
+    },
+    "STATUS": {
+      "PROPOSAL": "PROPOSAL",
+      "MODIFICATION": "MODIFICATION",
+      "DELETION": "DELETION",
+      "ACCEPTED": "ACCEPTED"
+    }
+  },
+  "OCEAN_FISHING": {
+    "ANY": "Any",
+    "SUNSET": "Sunset",
+    "DAY": "Day",
+    "NIGHT": "Night"
   }
 }

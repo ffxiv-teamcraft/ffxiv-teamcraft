@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { buffer, debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, merge } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
@@ -11,21 +11,27 @@ import { ofMessageType } from '../rxjs/of-message-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { LazyDataService } from '../data/lazy-data.service';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { FreeCompanyWorkshopFacade } from '../../modules/free-company-workshops/+state/free-company-workshop.facade';
 import { InventoryService } from '../../modules/inventory/inventory.service';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EventHandlerType } from './event-handler-type';
+import { NzNotificationRef, NzNotificationService } from 'ng-zorro-antd/notification';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacketCaptureTrackerService {
 
+  private notificationRef: NzNotificationRef;
+
   constructor(private ipc: IpcService, private inventoryService: InventoryService,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService, private lazyData: LazyDataService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade) {
+              private settings: SettingsService, private lazyData: LazyDataFacade,
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
+              private nzNotification: NzNotificationService, private translate: TranslateService) {
   }
 
 
@@ -34,7 +40,7 @@ export class PacketCaptureTrackerService {
       this.ipc.packets$.pipe(ofMessageType('eventStart')),
       this.ipc.packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
-      filter(packet => packet.parsedIpcData.eventId === 0xA0001),
+      filter(packet => packet.parsedIpcData.eventId >> 16 === EventHandlerType.Craft),
       map(packet => {
         return packet.type === 'eventStart';
       }),
@@ -42,7 +48,31 @@ export class PacketCaptureTrackerService {
       shareReplay(1)
     );
 
-    this.inventoryService.inventoryPatches$
+    const isGathering$ = merge(
+      this.ipc.packets$.pipe(ofMessageType('eventStart')),
+      this.ipc.packets$.pipe(ofMessageType('eventFinish'))
+    ).pipe(
+      filter(packet => packet.parsedIpcData.eventId >> 16 === EventHandlerType.GatheringPoint),
+      map(packet => {
+        return packet.type === 'eventStart';
+      }),
+      startWith(false),
+      shareReplay(1)
+    );
+
+    const eventStatus$ = combineLatest([isCrafting$, isGathering$]).pipe(
+      map(([crafting, gathering]) => {
+        if (crafting) {
+          return 'crafting';
+        }
+        if (gathering) {
+          return 'gathering';
+        }
+        return null;
+      })
+    );
+
+    const patches$ = this.inventoryService.inventoryPatches$
       .pipe(
         filter(patch => {
           return patch.containerId < 10
@@ -55,27 +85,73 @@ export class PacketCaptureTrackerService {
             || isCrafting;
         }),
         map(([patch]) => patch),
-        withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
+        withLatestFrom(this.listsFacade.autocompleteEnabled$),
         filter(([patch, autocompleteEnabled]) => {
           return autocompleteEnabled && patch.quantity > 0;
-        })
-      )
-      .subscribe(([patch, , list]) => {
-        const itemsEntry = list.items.find(i => i.id === patch.itemId);
-        const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
-        if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
-        } else if (finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
-          this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
+        }),
+        map(([patch]) => patch)
+      );
+
+    const debouncedPatches$ = patches$.pipe(debounceTime(8000));
+    const statusIsNull$ = combineLatest([patches$, eventStatus$]).pipe(
+      filter(([, status]) => status === null)
+    );
+
+    combineLatest([eventStatus$, this.listsFacade.selectedList$])
+      .subscribe(([status, list]) => {
+        if (list && status && !this.notificationRef) {
+          this.notificationRef = this.nzNotification.info(
+            this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_title'),
+            this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_message'),
+            {
+              nzCloseIcon: null,
+              nzDuration: 0,
+              nzKey: 'autofill_gathering_crafting'
+            }
+          );
+        }
+        if (!status && this.notificationRef) {
+          this.nzNotification.remove(this.notificationRef.messageId);
+          delete this.notificationRef;
         }
       });
 
+    patches$.pipe(
+      buffer(
+        merge(
+          debouncedPatches$,
+          statusIsNull$
+        )
+      ),
+      withLatestFrom(this.listsFacade.selectedList$)
+    ).subscribe(([patches, list]) => {
+      patches
+        .reduce((acc, patch) => {
+          const row = acc.find(p => p.itemId === patch.itemId && p.hq === patch.hq);
+          if (row === undefined) {
+            acc.push(patch);
+          } else {
+            row.quantity += patch.quantity;
+          }
+          return acc;
+        }, [])
+        .forEach((patch) => {
+          const itemsEntry = list.items.find(i => i.id === patch.itemId);
+          const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
+          if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
+            this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
+          } else if (finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
+            this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
+          }
+        });
+    });
+
     combineLatest([
       this.ipc.initZonePackets$,
-      this.lazyData.data$
-    ]).subscribe(([packet, data]) => {
+      this.lazyData.getEntry('maps')
+    ]).subscribe(([packet, maps]) => {
       const mapId = territories[packet.zoneId.toString()];
-      this.eorzeaFacade.setZone(this.lazyData.data.maps[mapId].placename_id);
+      this.eorzeaFacade.setZone(maps[mapId].placename_id);
       this.eorzeaFacade.setPcapWeather(packet.weatherId, true);
       this.eorzeaFacade.setMap(mapId);
     });
@@ -84,13 +160,16 @@ export class PacketCaptureTrackerService {
       this.eorzeaFacade.setPcapWeather(packet.weatherId);
     });
 
-    this.ipc.packets$.pipe(
-      ofMessageType('actorControlSelf', 'fishingBaitMsg'),
-      toIpcData()
+    this.lazyData.getEntry('baitItems').pipe(
+      switchMap(baitItems => {
+        return this.ipc.packets$.pipe(
+          ofMessageType('actorControlSelf', 'fishingBaitMsg'),
+          toIpcData(),
+          filter(packet => baitItems.includes(packet.baitId))
+        );
+      })
     ).subscribe(packet => {
-      if (this.lazyData.data.baitItems.includes(packet.baitId)) {
-        this.eorzeaFacade.setBait(packet.baitId);
-      }
+      this.eorzeaFacade.setBait(packet.baitId);
     });
 
     this.ipc.packets$.pipe(

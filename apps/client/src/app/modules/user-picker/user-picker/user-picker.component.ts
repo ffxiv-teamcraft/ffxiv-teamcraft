@@ -6,6 +6,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { UserService } from '../../../core/database/user.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-user-picker',
@@ -34,7 +35,7 @@ export class UserPickerComponent {
     map(user => user.contacts)
   );
 
-  constructor(private xivapi: XivapiService, private modalRef: NzModalRef,
+  constructor(private xivapi: XivapiService, private lodestone: LodestoneService, private modalRef: NzModalRef,
               private userService: UserService, private authFacade: AuthFacade) {
     this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
 
@@ -50,9 +51,8 @@ export class UserPickerComponent {
         tap(() => this.loadingResults = true),
         debounceTime(500),
         switchMap(([selectedServer, characterName]) => {
-          return this.xivapi.searchCharacter(characterName, selectedServer);
+          return this.lodestone.searchCharacter(characterName, selectedServer);
         }),
-        map((result: CharacterSearchResult) => result.Results || []),
         switchMap(results => {
           if (results.length === 0) {
             return of([]);

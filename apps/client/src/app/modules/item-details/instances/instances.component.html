@@ -5,14 +5,21 @@
                          [nzTitle]="title">
         <ng-template #title>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{(instance.id | instanceName | i18n) || instance.name}}</div>
-            <app-db-button [id]="instance.id" type="instance"></app-db-button>
+            <ng-container *ngIf="instance > 0; else mapDisplay">
+              <div>{{instance | i18nRow:'instances' | i18n}}</div>
+              <app-db-button [id]="instance" type="instance"></app-db-button>
+            </ng-container>
+            <ng-template #mapDisplay>
+              <div>{{-1 * instance | mapName | i18n}}</div>
+              <app-db-button [id]="-1 * instance" type="map"></app-db-button>
+            </ng-template>
           </div>
         </ng-template>
         <ng-template #avatar>
-          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance.id}}">
-            <img [src]="instance.icon | instanceIcon" alt="">
+          <a routerLink="/db/{{translate.currentLang}}/instance/{{instance}}" *ngIf="instance > 0">
+            <img [src]="instance | lazyRow:'instances':'icon' | async" alt="">
           </a>
+          <i nz-icon nzType="environment-o" *ngIf="instance < 0"></i>
         </ng-template>
       </nz-list-item-meta>
     </nz-list-item>

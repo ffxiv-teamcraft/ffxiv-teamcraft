@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
-import { combineLatest, Observable } from 'rxjs';
-import { filter, map, shareReplay } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { GatheringNodesService } from '../../../../core/data/gathering-nodes.service';
-import { AlarmsFacade } from 'apps/client/src/app/core/alarms/+state/alarms.facade';
-import { Alarm } from 'apps/client/src/app/core/alarms/alarm';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { Alarm } from '../../../../core/alarms/alarm';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { AuthFacade } from 'apps/client/src/app/+state/auth.facade';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-fishing-spot-available-fishes',
@@ -17,26 +17,32 @@ import { AuthFacade } from 'apps/client/src/app/+state/auth.facade';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotAvailableFishesComponent {
-  public readonly fishes$: Observable<{ itemId: number, alarms: Alarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.fishingSpots$, this.authFacade.logTracking$]).pipe(
+  public readonly fishes$: Observable<{ itemId: number, alarms: Alarm[], done: boolean }[] | undefined> = combineLatest([this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots'), this.authFacade.logTracking$]).pipe(
     filter(([spotId]) => spotId >= 0),
-    map(([spotId, spots, logs]) => {
+    switchMap(([spotId, spots, logs]) => {
       const fishIds = spots.find((s) => s.id === spotId)?.fishes?.filter((f) => f > 0);
-      return fishIds.map(itemId => {
-        const nodes = this.gatheringNodesService.getItemNodes(itemId, true);
-        const spotNode = nodes.find(n => n.id === spotId);
-        return {
-          itemId,
-          alarms: this.alarmsFacade.generateAlarms(spotNode),
-          done: logs.gathering.includes(itemId)
-        };
-      });
+      if (fishIds.length === 0) {
+        return of([]);
+      }
+      return combineLatest(fishIds.map(itemId => {
+        return this.gatheringNodesService.getItemNodes(itemId, true).pipe(
+          map(nodes => {
+            const spotNode = nodes.find(n => n.id === spotId);
+            return {
+              itemId,
+              alarms: this.alarmsFacade.generateAlarms(spotNode),
+              done: logs.gathering.includes(itemId)
+            };
+          })
+        );
+      }));
     }),
     shareReplay(1)
   );
 
   public alarmGroups$ = this.alarmsFacade.allGroups$;
 
-  constructor(private readonly lazyData: LazyDataService, private readonly fishCtx: FishContextService,
+  constructor(private readonly lazyData: LazyDataFacade, private readonly fishCtx: FishContextService,
               private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private authFacade: AuthFacade) {
   }

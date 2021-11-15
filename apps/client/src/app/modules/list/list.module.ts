@@ -14,10 +14,6 @@ import { VoyagesExtractor } from './data/extractor/voyages-extractor';
 import { DropsExtractor } from './data/extractor/drops-extractor';
 import { VenturesExtractor } from './data/extractor/ventures-extractor';
 import { CoreModule } from '../../core/core.module';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { initialState as listsInitialState, listsReducer } from './+state/lists.reducer';
-import { ListsEffects } from './+state/lists.effects';
 import { DatabaseModule } from '../../core/database/database.module';
 import { ListPanelComponent } from './list-panel/list-panel.component';
 import { CommonModule } from '@angular/common';
@@ -41,7 +37,6 @@ import { ListCompletionPopupComponent } from './list-completion-popup/list-compl
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { LayoutModule } from '../../core/layout/layout.module';
 import { ProgressPopupModule } from '../progress-popup/progress-popup.module';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TreasuresExtractor } from './data/extractor/treasures-extractor';
 import { FatesExtractor } from './data/extractor/fates-extractor';
 import { ListDetailsPanelComponent } from './list-details-panel/list-details-panel.component';
@@ -66,30 +61,37 @@ import { GatheringNodesService } from '../../core/data/gathering-nodes.service';
 import { InventoryModule } from '../inventory/inventory.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ItemRowMenuComponent } from './item/item-row-menu/item-row-menu.component';
+import { MogstationExtractor } from './data/extractor/mogstation-extractor';
+import { QuestsExtractor } from './data/extractor/quests-extractor';
+import { AchievementsExtractor } from './data/extractor/achievements-extractor';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
-  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, HtmlToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: AchievementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
-    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataService],
+    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataFacade],
     multi: true
   },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataService, HttpClient], multi: true },
-  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataFacade, HttpClient], multi: true },
+  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, GatheringNodesService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true }
+  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true }
 ];
 
 @NgModule({
@@ -120,9 +122,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     MapModule,
     ItemDetailsPopupsModule,
     ItemPickerModule,
-
-    StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
-    EffectsModule.forFeature([ListsEffects]),
     LazyScrollModule,
     SimulatorModule,
     CompanyWorkshopTreeModule,

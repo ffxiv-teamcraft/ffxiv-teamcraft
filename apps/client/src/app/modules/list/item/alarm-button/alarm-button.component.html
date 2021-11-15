@@ -5,7 +5,11 @@
           nz-tooltip
           [nzTooltipTitle]="tooltip">
     <ng-template #tooltip>
-      <span *ngIf="display.alarm.itemId">{{display.alarm.aetheryte?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}</span>
+      <span *ngIf="display.alarm.itemId">
+          <span *ngIf="display.alarm.mapId | closestAetheryte:display.alarm.coords | async as aetheryte">
+            {{aetheryte.nameid | i18nRow:'places' | i18n}}
+          </span> - {{display.alarm.zoneId | i18nRow:'places' | i18n}}
+      </span>
       <span *ngIf="!display.alarm.itemId">{{display.alarm.name}}</span>
       <span *ngIf="display.alarm.fishEyes">{{'GATHERING_LOCATIONS.Fish_eyes' | translate}}</span>
     </ng-template>
@@ -14,7 +18,7 @@
     {{display.remainingTime | timer}}
     <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
     <img *ngIf="!display.alarm.fishEyes" [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
-    <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="node-type-icon fish-eyes">
+    <img *ngIf="display.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="node-type-icon fish-eyes">
   </button>
   <button *ngIf="!display.registered && alarmGroups?.length > 0" [nzDropdownMenu]="menu"
           [nzPlacement]="'bottomCenter'"

@@ -8,14 +8,16 @@ const columns = [
   'PreviousQuest1TargetID',
   'PreviousQuest2TargetID',
   'IconID',
-  ...['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'].map(i => `ItemReward${i}`),
-  ...['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'].map(i => `ItemReward${i}Target`),
-  ...['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'].map(i => `IsHQReward${i}`),
-  ...['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'].map(i => `ItemCountReward${i}`)
+  'OtherReward',
+  `ItemReward*`,
+  `IsHQReward*`,
+  `ItemCountReward*`,
+  `OptionalItemReward*`
 ];
 
 export class QuestsExtractor extends AbstractExtractor {
   protected doExtract(): any {
+    const itemNames = this.requireLazyFile('items');
     const quests = {};
     const nextQuest = {};
     const questChainLengths = {};
@@ -32,10 +34,35 @@ export class QuestsExtractor extends AbstractExtractor {
           icon: quest.Icon
         };
 
-        ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14'].forEach(i => {
-          const reward = quest[`ItemReward${i}`];
-          const rewardType = quest[`ItemReward${i}Target`];
-          if (!reward) {
+        if (quest.OtherReward) {
+          const itemId = Object.keys(itemNames).find(key => itemNames[key].en === quest.OtherReward.Name_en);
+          if (itemId) {
+            quests[quest.ID].rewards = quests[quest.ID].rewards || [];
+            quests[quest.ID].rewards.push({
+              id: +itemId,
+              amount: 1
+            });
+          }
+        }
+
+        Object.keys(quest).forEach(key => {
+          const ItemRewardResult = key.match(/^ItemReward(\d{1,3})$/);
+          let baseKey = 'Item';
+          let i = '';
+          if (ItemRewardResult) {
+            i = ItemRewardResult[1];
+          } else {
+            const OptionalItemRewardResult = key.match(/^OptionalItemReward(\d{1,3})$/);
+            if (OptionalItemRewardResult) {
+              i = OptionalItemRewardResult[1];
+              baseKey = 'OptionalItem';
+            } else {
+              return;
+            }
+          }
+          const reward = quest[`${baseKey}Reward${i}`];
+          const rewardType = quest[`${baseKey}Reward${i}Target`] || quest[`${baseKey}Reward${i.replace('0', '')}Target`];
+          if (!reward || reward.ID === 0) {
             return;
           }
           switch (rewardType) {
@@ -66,10 +93,12 @@ export class QuestsExtractor extends AbstractExtractor {
                 } else {
                   quests[quest.ID].rewards = quests[quest.ID].rewards || [];
                   [0, 1, 2, 3].forEach(rewardIndex => {
-                    quests[quest.ID].rewards.push({
-                      id: questReward[`RewardItem${rewardIndex}TargetID`],
-                      amount: questReward[`RewardAmount${rewardIndex}`]
-                    });
+                    if (questReward[`RewardItem${rewardIndex}TargetID`] > 0) {
+                      quests[quest.ID].rewards.push({
+                        id: questReward[`RewardItem${rewardIndex}TargetID`],
+                        amount: questReward[`RewardAmount${rewardIndex}`]
+                      });
+                    }
                   });
                 }
                 return [questReward];
@@ -79,9 +108,9 @@ export class QuestsExtractor extends AbstractExtractor {
               quests[quest.ID].rewards = quests[quest.ID].rewards || [];
               const entry: any = {
                 id: reward.ID,
-                amount: quest[`ItemCountReward${i}`]
+                amount: quest[`${baseKey}CountReward${i}`]
               };
-              if (quest[`IsHQReward${i}`]) {
+              if (quest[`${baseKey === 'Item' ? '' : baseKey}IsHQReward${i}`]) {
                 entry.hq = true;
               }
               quests[quest.ID].rewards.push(entry);

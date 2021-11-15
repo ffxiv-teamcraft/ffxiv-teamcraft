@@ -1,21 +1,20 @@
 import { DataType } from '../../modules/list/data/data-type';
 import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { NpcBreakdownRow } from './npc-breakdown-row';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TradeSource } from '../../modules/list/model/trade-source';
 import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
 import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { Observable, of } from 'rxjs';
+import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { map } from 'rxjs/operators';
 
 export class NpcBreakdown {
   private readonly _rows: NpcBreakdownRow[] = [];
 
   private readonly canSkip: Record<number, number> = {};
 
-  public get rows(): NpcBreakdownRow[] {
-    return this._rows;
-  }
-
-  constructor(rows: ListRow[], private lazyData: LazyDataService, private prioritizeHousingSupplier: boolean) {
+  constructor(rows: ListRow[], private lazyData: LazyDataFacade, private prioritizeHousingSupplier: boolean) {
     // You can skip an item if there's another item requiring it inside the same array
     this.canSkip = rows.reduce((registry, row) => {
       return {
@@ -53,28 +52,45 @@ export class NpcBreakdown {
     });
   }
 
+  public get rows(): NpcBreakdownRow[] {
+    return this._rows;
+  }
+
   private handleVendors(row: ListRow): void {
     const vendors = getItemSource(row, DataType.VENDORS);
-    const bestNpc = vendors.sort((a, b) => {
-      return this.getRowScore(b.npcId) - this.getRowScore(a.npcId);
-    })[0];
-    this.addRow(bestNpc.npcId, row);
+    safeCombineLatest(vendors.map(vendor => {
+      return this.getRowScore(vendor.npcId).pipe(
+        map(score => ({ vendor, score }))
+      );
+    })).subscribe(scored => {
+      const bestNpc = scored.sort((a, b) => b.score - a.score)[0];
+      this.addRow(bestNpc.vendor.npcId, row);
+    });
   }
 
   private handleTradeSources(row: ListRow): void {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
-    const bestNpc = tradeSources
+    safeCombineLatest(tradeSources
       .filter(ts => !!ts)
-      .sort((a, b) => {
-        return this.getTradeSourceScore(b) - this.getTradeSourceScore(a);
+      .map(ts => {
+        return {
+          tradeSource: ts,
+          tradeSourceScore: this.getTradeSourceScore(ts)
+        };
       })
-      .map(ts => ts.npcs)
+      .sort((a, b) => b.tradeSourceScore - a.tradeSourceScore)
+      .map(ts => ts.tradeSource.npcs)
       .flat()
       .filter(npc => !!npc)
-      .sort((a, b) => {
-        return this.getRowScore(b.id) - this.getRowScore(a.id);
-      })[0];
-    this.addRow(bestNpc?.id || -1, row);
+      .map(npc => {
+        return this.getRowScore(npc.id).pipe(
+          map(score => ({ npc, score }))
+        );
+      })
+    ).subscribe(scored => {
+      const bestNpc = scored.sort((a, b) => b.score - a.score)[0];
+      this.addRow(bestNpc.npc?.id || -1, row);
+    });
   }
 
   private getTradeSourceScore(tradeSource: TradeSource): number {
@@ -89,38 +105,53 @@ export class NpcBreakdown {
       })[0];
   }
 
-  private getRowScore(npcId: number): number {
+  private getRowScore(npcId: number): Observable<number> {
     // Hardcoded fix for Anna, has a wrong map for some reason.
     if (npcId === 1033785) {
-      return 0;
+      return of(0);
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
     if (this.prioritizeHousingSupplier && [1005633, 1008837].includes(npcId)) {
-      return 100;
+      return of(100);
     }
     const sameNpc = this._rows.find(r => r.npcId === npcId);
     if (sameNpc) {
-      return 10 + sameNpc.items.length;
+      return of(10 + sameNpc.items.length);
     }
-    if (this._rows.some(r => this.lazyData.data.npcs[r.npcId]?.position && this.lazyData.data.npcs[r.npcId]?.position?.map === this.lazyData.data.npcs[npcId]?.position?.map)) {
-      return 8;
-    }
-    if (this.lazyData.data.npcs[npcId]?.position) {
-      return 5;
-    }
-    if (beastTribeNpcs.includes(npcId)) {
-      return 3;
-    }
-    return 0;
+    return safeCombineLatest([
+      this.lazyData.getRow('npcs', npcId).pipe(
+        map(res => ({ id: npcId, ...res }))
+      ),
+      ...this._rows.map(r => {
+        return this.lazyData.getRow('npcs', r.npcId).pipe(
+          map(res => ({ id: r.npcId, ...res }))
+        );
+      })
+    ]).pipe(
+      map(([currentNpc, ...rowsNpcs]) => {
+        if (rowsNpcs.some(npc => npc.position && npc.position?.map === currentNpc?.position?.map)) {
+          return 8;
+        }
+        if (currentNpc?.position) {
+          return 5;
+        }
+        if (beastTribeNpcs.includes(npcId)) {
+          return 3;
+        }
+        return 0;
+      })
+    );
   }
 
   private addRow(npcId: number, row: ListRow): void {
-    let breakdownRow = this._rows.find(r => r.npcId === npcId);
-    if (breakdownRow === undefined) {
-      const position = this.lazyData.data.npcs[npcId]?.position;
-      this._rows.push({ npcId, position, items: [] });
-      breakdownRow = this._rows[this._rows.length - 1];
-    }
-    breakdownRow.items.push(row);
+    this.lazyData.getRow('npcs', npcId).subscribe(npc => {
+      let breakdownRow = this._rows.find(r => r.npcId === npcId);
+      if (breakdownRow === undefined) {
+        const position = npc?.position;
+        this._rows.push({ npcId, position, items: [] });
+        breakdownRow = this._rows[this._rows.length - 1];
+      }
+      breakdownRow.items.push(row);
+    });
   }
 }

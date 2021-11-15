@@ -13,10 +13,22 @@ export class AdComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('vmAdRef', { static: false })
   vmAdRef: ElementRef;
+  private loaded = false;
+
+  constructor(private platform: PlatformService, router: Router) {
+    router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.removeAd();
+      this.addAd();
+    });
+  }
 
   private _placementId: string;
 
-  private loaded = false;
+  public get placementId(): string {
+    return this._placementId;
+  }
 
   @Input()
   public set placementId(id: string) {
@@ -31,17 +43,15 @@ export class AdComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  public get placementId(): string {
-    return this._placementId;
+  ngAfterViewInit(): void {
+    if (!this.platform.isDesktop()) {
+      this.addAd();
+      this.loaded = true;
+    }
   }
 
-  constructor(private platform: PlatformService, router: Router) {
-    router.events.pipe(
-      filter(e => e instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.removeAd();
-      this.addAd();
-    });
+  ngOnDestroy(): void {
+    this.removeAd();
   }
 
   private addAd(): void {
@@ -54,17 +64,6 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   private removeAd(): void {
     (window as any).top.__vm_remove = (window as any).top.__vm_remove || [];
     (window as any).top.__vm_remove.push(this.vmAdRef.nativeElement);
-  }
-
-  ngAfterViewInit(): void {
-    if (!this.platform.isDesktop()) {
-      this.addAd();
-      this.loaded = true;
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.removeAd();
   }
 
 }

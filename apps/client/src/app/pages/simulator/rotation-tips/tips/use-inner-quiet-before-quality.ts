@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { InnerQuiet, SimulationResult, TrainedEye, Reflect } from '@ffxiv-teamcraft/simulator';
+import { InnerQuiet, Reflect, SimulationResult, TrainedEye } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class UseInnerQuietBeforeQuality extends RotationTip {

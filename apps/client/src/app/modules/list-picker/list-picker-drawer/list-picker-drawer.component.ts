@@ -7,6 +7,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { ListController } from '../../list/list-controller';
 
 @Component({
   selector: 'app-list-picker-drawer',
@@ -41,7 +42,7 @@ export class ListPickerDrawerComponent {
     });
 
     this.listsWithWriteAccess$ = combineLatest([this.listsFacade.listsWithWriteAccess$, this.query$]).pipe(
-      map(([lists, query]) => lists.filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
+      map(([lists, query]) => lists.filter(l => !l.notFound && !ListController.isTooLarge(l) && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))
     );
 
     this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$, this.query$]).pipe(
@@ -60,7 +61,7 @@ export class ListPickerDrawerComponent {
                   return list;
                 })
                 .filter(l => l !== undefined)
-                .filter(l => !l.notFound && !l.archived && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
+                .filter(l => !l.notFound && !l.archived && !ListController.isTooLarge(l) && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
             };
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
@@ -77,7 +78,7 @@ export class ListPickerDrawerComponent {
           .filter(l => {
             return !l.archived && workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
           })
-          .filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
+          .filter(l => !l.notFound && !ListController.isTooLarge(l) && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
           .map(l => {
             delete l.workshopId;
             return l;

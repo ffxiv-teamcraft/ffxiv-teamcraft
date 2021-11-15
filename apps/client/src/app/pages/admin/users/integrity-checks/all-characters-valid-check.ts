@@ -1,6 +1,6 @@
 import { IntegrityCheck } from './integrity-check';
 import { combineLatest, Observable, of } from 'rxjs';
-import { TeamcraftUser } from 'apps/client/src/app/model/user/teamcraft-user';
+import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { catchError, map, mapTo } from 'rxjs/operators';
 import { LodestoneService } from '../../../../core/api/lodestone.service';
 

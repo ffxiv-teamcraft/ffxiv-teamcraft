@@ -53,7 +53,10 @@ const patrons = [
   'Sombra\'s Scavengers on Jenova',
   'Raeanya Ashurke',
   'G\'lek Tarssza',
-  'Syl Varil'
+  'Syl Varil',
+  'Late Night Friendos',
+  'The Hoe Depot',
+  '[Ultros] Nyumi Aitken'
 ];
 
 const gifs = [

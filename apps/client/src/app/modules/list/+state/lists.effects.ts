@@ -9,7 +9,8 @@ import {
   ListDetailsLoaded,
   ListsActionTypes,
   LoadListDetails,
-  LoadTeamLists, MarkItemsHq,
+  LoadTeamLists,
+  MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
   SetItemDone,
@@ -56,15 +57,17 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { CommissionService } from '../../commission-board/commission.service';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
 import { Action } from '@ngrx/store';
+import { ListController } from '../list-controller';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 
+// noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class ListsEffects {
 
@@ -75,7 +78,7 @@ export class ListsEffects {
     distinctUntilChanged(),
     exhaustMap((userId) => {
       this.localStore = this.serializer.deserialize<List>(JSON.parse(localStorage.getItem('offline-lists') || '[]'), [List]);
-      this.localStore.forEach(list => list.afterDeserialized());
+      this.localStore.forEach(list => ListController.afterDeserialized(list));
       this.listsFacade.offlineListsLoaded(this.localStore);
       return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', false))
         .pipe(
@@ -275,7 +278,7 @@ export class ListsEffects {
     debounce(action => action.fromPacket ? timer(4000) : timer(1000)),
     withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
     filter(([action, permission]) => {
-      return permission < PermissionLevel.WRITE || !action.payload.isComplete();
+      return permission < PermissionLevel.WRITE || !ListController.isComplete(action.payload);
     }),
     map(([action]) => action),
     withLatestFrom(this.listsFacade.selectedClone$),
@@ -287,7 +290,7 @@ export class ListsEffects {
       if (action.payload.hasCommission) {
         this.updateCommission(action.payload);
       }
-      if (action.payload.isLarge()) {
+      if (ListController.isLarge(action.payload)) {
         return this.listService.set(action.payload.$key, action.payload);
       }
       return this.listService.update(action.payload.$key, clone, action.payload);
@@ -307,7 +310,7 @@ export class ListsEffects {
     switchMap(([{ payload }, key]) => {
       const selected = payload.find(l => l.$key === key);
       if (selected) {
-        return of(new UpdateSelectedClone(this.listService.prepareData(selected.clone(true))));
+        return of(new UpdateSelectedClone(this.listService.prepareData(ListController.clone(selected, true))));
       }
       return EMPTY;
     })
@@ -318,7 +321,7 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(2000),
     filter(action => {
-      return !action.payload.isComplete();
+      return !ListController.isComplete(action.payload);
     }),
     switchMap((action) => {
       if (action.payload.offline) {
@@ -398,8 +401,8 @@ export class ListsEffects {
       this.listsFacade.autocompleteEnabled$,
       this.listsFacade.completionNotificationEnabled$),
     filter(([action, list, , , , autofillEnabled, _]) => {
-      const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
-      const requiredHq = list.requiredAsHQ(item) > 0;
+      const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
+      const requiredHq = ListController.requiredAsHQ(list, item) > 0;
       if (autofillEnabled && this.settings.enableAutofillHQFilter && requiredHq) {
         return !action.fromPacket || action.hq;
       }
@@ -408,8 +411,9 @@ export class ListsEffects {
       }
       return true;
     }),
-    map(([action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled]) => {
-      const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
+    withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
+    switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
+      const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const historyEntry = list.modificationsHistory.find(entry => {
         return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
       });
@@ -433,28 +437,33 @@ export class ListsEffects {
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
         const itemDone = item.done + action.doneDelta >= item.amount;
         if (itemDone) {
-          const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
-          const notificationBody = this.translate.instant('LIST_DETAILS.Autofill_notification_body', {
-            itemName: this.i18n.getName(this.l12n.getItem(action.itemId)),
-            listName: list.name
-          });
-          const notificationIcon = `https://xivapi.com${this.lazyData.data.itemIcons[action.itemId]}`;
-          this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
-          if (this.platform.isDesktop()) {
-            this.ipc.send('notification', {
-              title: notificationTitle,
-              content: notificationBody,
-              icon: notificationIcon
-            });
-          }
-          this.notificationService.info(notificationTitle, notificationBody);
+          return this.i18n.getNameObservable('items', action.itemId).pipe(
+            map(itemName => {
+              const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
+              const notificationBody = this.translate.instant('LIST_DETAILS.Autofill_notification_body', {
+                itemName,
+                listName: list.name
+              });
+              const notificationIcon = `https://xivapi.com${icon}`;
+              this.soundNotificationService.play(SoundNotificationType.AUTOFILL);
+              if (this.platform.isDesktop()) {
+                this.ipc.send('notification', {
+                  title: notificationTitle,
+                  content: notificationBody,
+                  icon: notificationIcon
+                });
+              }
+              this.notificationService.info(notificationTitle, notificationBody);
+              return [action, list];
+            })
+          );
         }
       }
-      return [action, list];
+      return of([action, list]);
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      list.updateAllStatuses(action.itemId);
+      ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      ListController.updateAllStatuses(list, action.itemId);
       if (list.hasCommission) {
         this.updateCommission(list);
       }
@@ -472,7 +481,7 @@ export class ListsEffects {
 
   deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListProgress, ListsActionTypes.UpdateListAtomic),
-    filter(action => action.payload.ephemeral && action.payload.isComplete()),
+    filter(action => action.payload.ephemeral && ListController.isComplete(action.payload)),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
     delay(500),
     tap(() => this.router.navigate(['/lists']))
@@ -503,7 +512,7 @@ export class ListsEffects {
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
     filter(([action, list, userId]) => {
-      return !list.ephemeral && list.authorId === userId && list.isComplete();
+      return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
     debounceTime(2000),
     tap(([, list]) => {
@@ -538,8 +547,7 @@ export class ListsEffects {
     private ipc: IpcService,
     private settings: SettingsService,
     private i18n: I18nToolsService,
-    private l12n: LocalizedDataService,
-    private lazyData: LazyDataService,
+    private lazyData: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,
     private soundNotificationService: SoundNotificationService

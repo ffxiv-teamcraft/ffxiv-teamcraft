@@ -20,7 +20,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map, skipUntil, switchMap } from 'rxjs/operators';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
@@ -31,15 +31,18 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
 import { mapIds } from '../../data/sources/map-ids';
-import { LazyDataService } from '../../data/lazy-data.service';
 import { GatheringNode } from '../../data/model/gathering-node';
 import { MapService } from '../../../modules/map/map.service';
 import { GatheringNodesService } from '../../data/gathering-nodes.service';
 import * as semver from 'semver';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../../environments/environment';
 import { Actions } from '@ngrx/effects';
 import { TimeUtils } from '../time.utils';
+import { safeCombineLatest } from '../../rxjs/safe-combine-latest';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyData } from '../../../lazy-data/lazy-data';
+import { XivapiPatch } from '../../data/model/xivapi-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -50,12 +53,11 @@ export class AlarmsFacade {
 
   loaded$ = this.store.select(alarmsQuery.getLoaded);
   allAlarms$ = this.store.select(alarmsQuery.getAllAlarms).pipe(
-    skipUntil(this.lazyData.data$),
     map(alarms => {
       if (this.regenerating) {
         return [null];
       }
-      if (environment.production && alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '8.5.2')) {
+      if (environment.production && alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '8.6.0')) {
         this.regenerateAlarms(alarms);
         return [null];
       }
@@ -125,9 +127,13 @@ export class AlarmsFacade {
 
   private nextSpawnCache: any = {};
 
+  private itemPatch: LazyData['itemPatch'];
+  private patches: XivapiPatch[];
+  private legendaryFish: LazyData['legendaryFish'];
+
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataService, private mapService: MapService,
+              private lazyData: LazyDataFacade, private mapService: MapService,
               private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
@@ -202,6 +208,17 @@ export class AlarmsFacade {
 
   public loadAlarms(): void {
     this.store.dispatch(new LoadAlarms());
+    combineLatest([
+      this.lazyData.getEntry('itemPatch'),
+      this.lazyData.patches$,
+      this.lazyData.getEntry('legendaryFish')
+    ]).pipe(
+      first()
+    ).subscribe(([itemPatch, patches, legendaryFish]) => {
+      this.itemPatch = itemPatch;
+      this.patches = patches;
+      this.legendaryFish = legendaryFish;
+    });
   }
 
   public createDisplay(alarm: Alarm, date: Date): AlarmDisplay {
@@ -234,6 +251,188 @@ export class AlarmsFacade {
       .map(alarm => {
         return this.createDisplay(alarm, date);
       }));
+  }
+
+  public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
+    const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}`;
+    if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
+      const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
+        const timeBeforeA = this.getMinutesBefore(etime, { hours: a, days: 0 });
+        const timeBeforeADespawns = this.getMinutesBefore(etime, { hours: (a + alarm.duration) % 24, days: 0 });
+        const timeBeforeB = this.getMinutesBefore(etime, { hours: b, days: 0 });
+        const timeBeforeBDespawns = this.getMinutesBefore(etime, { hours: (b + alarm.duration) % 24, days: 0 });
+        // If time before next spawn is greater than time before next despawn, this node is spawned !
+        if (timeBeforeADespawns < timeBeforeA) {
+          return -1;
+        }
+        if (timeBeforeBDespawns < timeBeforeB) {
+          return 1;
+        }
+        // Else just compare remaining time.
+        return timeBeforeA < timeBeforeB ? -1 : 1;
+      });
+      if (alarm.weathers && alarm.weathers?.length > 0) {
+        const spawn = this.findWeatherSpawnCombination({ ...alarm }, sortedSpawns, etime.getTime());
+        if (spawn === null) {
+          console.error('No spawn found for alarm');
+          console.log(alarm);
+        }
+        this.nextSpawnCache[cacheKey] = {
+          spawn: spawn,
+          expires: this.etime.toEarthDate(etime)
+        };
+      } else {
+        this.nextSpawnCache[cacheKey] = {
+          spawn: {
+            hours: sortedSpawns[0],
+            days: 0,
+            despawn: (sortedSpawns[0] + alarm.duration) % 24
+          },
+          expires: new Date()
+        };
+      }
+    }
+    return this.nextSpawnCache[cacheKey].spawn;
+  }
+
+  /**
+   * Get the amount of minutes before a given hour happens.
+   * @param currentTime
+   * @param spawn
+   * @param minutes
+   */
+  public getMinutesBefore(currentTime: Date, spawn: NextSpawn, minutes = 0): number {
+    let hours = spawn.hours;
+    // Convert 0 to 24 for spawn timers
+    if (hours === 0) {
+      hours = 24;
+    }
+    const resHours = (hours - currentTime.getUTCHours()) % 24;
+    let resMinutes = resHours * 60 + minutes - currentTime.getUTCMinutes();
+    let resSeconds = resHours * 3600 + minutes * 60 - currentTime.getUTCSeconds();
+    if (resMinutes < 0) {
+      resMinutes += 1440;
+    }
+    if (resSeconds < 0) {
+      resSeconds += 360;
+    }
+    resMinutes += (resSeconds % 60) / 60;
+    return resMinutes + (spawn.days * 1440);
+  }
+
+  public generateAlarms(node: GatheringNode): Alarm[] {
+    // If no spawns and no weather, no alarms.
+    if (!node?.spawns?.length && !node?.weathers?.length) {
+      return [];
+    }
+    const alarm: Partial<Alarm> = {
+      itemId: node.matchingItemId,
+      nodeId: node.id,
+      duration: node.duration ? node.duration / 60 : 0,
+      mapId: node.map,
+      zoneId: mapIds.find((m) => m.id === node.map)?.zone || node.zoneId,
+      areaId: node.zoneId,
+      type: node.type,
+      coords: {
+        x: node.x,
+        y: node.y,
+        z: node.z || 0
+      },
+      spawns: node.spawns,
+      folklore: node?.folklore,
+      reduction: node.isReduction || false,
+      ephemeral: node.ephemeral || false,
+      nodeContent: node.items,
+      weathers: node.weathers || [],
+      weathersFrom: node.weathersFrom || [],
+      snagging: node.snagging || false,
+      predators: node.predators || [],
+      note: '',
+      enabled: true
+    };
+    if (node.gig) {
+      alarm.gig = node.gig;
+    }
+    if (node.baits) {
+      alarm.baits = node.baits;
+    }
+    if (node.hookset) {
+      alarm.hookset = node.hookset;
+    }
+    return this.applyFishEyes(alarm) as Alarm[];
+  }
+
+  public regenerateAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
+    return this.gatheringNodesService.getItemNodes(alarm.itemId).pipe(
+      map(nodes => {
+        const nodeForThisAlarm = nodes.find(n => {
+          if (alarm.nodeId) {
+            return n.id === alarm.nodeId;
+          }
+          return alarm.mapId === n.map;
+        }) || nodes[0];
+        if (nodeForThisAlarm) {
+          const alarms = this.generateAlarms(nodeForThisAlarm);
+          const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
+          if (!regenerated) {
+            return null;
+          }
+          regenerated.userId = alarm.userId;
+          regenerated.$key = alarm.$key;
+          regenerated.appVersion = environment.version;
+          regenerated.enabled = alarm.enabled;
+          return regenerated;
+        }
+      })
+    );
+  }
+
+  public regenerateAlarms(_alarms?: Alarm[]): void {
+    let alarms$ = of(_alarms);
+    if (!_alarms) {
+      alarms$ = this.allAlarms$;
+    }
+    const operation$ = safeCombineLatest([alarms$, this.allGroups$]).pipe(
+      first(),
+      switchMap(([alarms, groups]) => {
+        this.regenerating = true;
+        const newGroups = groups.map(group => {
+          const clone = new AlarmGroup(group.name, group.index);
+          clone.userId = group.userId;
+          clone.alarms = group.alarms;
+          clone.$key = group.$key;
+          clone.appVersion = environment.version;
+          clone.enabled = group.enabled;
+          return clone;
+        });
+        return safeCombineLatest(alarms.map(alarm => {
+          if ((<any>alarm).groupId) {
+            const group = newGroups.find(g => g.$key === (<any>alarm).groupId);
+            if (group && !group.alarms.includes(alarm.$key)) {
+              group.alarms.push(alarm.$key);
+            }
+          }
+          // If custom alarm, return it
+          if (alarm.name) {
+            alarm.appVersion = environment.version;
+            return of(alarm);
+          }
+          return this.regenerateAlarm(alarm);
+        })).pipe(
+          map(res => res.filter(alarm => !!alarm)),
+          tap(newAlarms => {
+            const deletedAlarms = alarms.filter(a => !newAlarms.some(na => na.$key === a.$key));
+            deletedAlarms.forEach(da => {
+              this.store.dispatch(new RemoveAlarm(da.$key));
+            });
+            this.store.dispatch(new SetAlarms(newAlarms));
+            this.store.dispatch(new SetGroups(newGroups));
+            this.regenerating = false;
+          })
+        );
+      })
+    );
+    this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
   }
 
   private sortAlarmDisplays(alarms: AlarmDisplay[]): AlarmDisplay[] {
@@ -289,48 +488,6 @@ export class AlarmsFacade {
     return this.getMinutesBefore(time, this.getNextSpawn(alarm, time)) < this.settings.alarmHoursBefore * 60;
   }
 
-  public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
-    const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}`;
-    if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
-      const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
-        const timeBeforeA = this.getMinutesBefore(etime, { hours: a, days: 0 });
-        const timeBeforeADespawns = this.getMinutesBefore(etime, { hours: (a + alarm.duration) % 24, days: 0 });
-        const timeBeforeB = this.getMinutesBefore(etime, { hours: b, days: 0 });
-        const timeBeforeBDespawns = this.getMinutesBefore(etime, { hours: (b + alarm.duration) % 24, days: 0 });
-        // If time before next spawn is greater than time before next despawn, this node is spawned !
-        if (timeBeforeADespawns < timeBeforeA) {
-          return -1;
-        }
-        if (timeBeforeBDespawns < timeBeforeB) {
-          return 1;
-        }
-        // Else just compare remaining time.
-        return timeBeforeA < timeBeforeB ? -1 : 1;
-      });
-      if (alarm.weathers && alarm.weathers?.length > 0) {
-        const spawn = this.findWeatherSpawnCombination(alarm, sortedSpawns, etime.getTime());
-        if (spawn === null) {
-          console.error('No spawn found for alarm');
-          console.log(alarm);
-        }
-        this.nextSpawnCache[cacheKey] = {
-          spawn: spawn,
-          expires: this.etime.toEarthDate(etime)
-        };
-      } else {
-        this.nextSpawnCache[cacheKey] = {
-          spawn: {
-            hours: sortedSpawns[0],
-            days: 0,
-            despawn: (sortedSpawns[0] + alarm.duration) % 24
-          },
-          expires: new Date()
-        };
-      }
-    }
-    return this.nextSpawnCache[cacheKey].spawn;
-  }
-
   private findWeatherSpawnCombination(alarm: Alarm, sortedSpawns: number[], time: number, iteration = time): NextSpawn {
     const weatherSpawns = alarm.weathers
       .map(weather => {
@@ -351,7 +508,7 @@ export class AlarmsFacade {
         const weatherStart = weatherSpawn.spawn.getUTCHours();
         const normalWeatherStop = new Date(this.weatherService.getNextDiffWeatherTime(weatherSpawn.spawn.getTime(), weatherSpawn.weather, alarm.mapId)).getUTCHours() || 24;
         const transitionWeatherStop = new Date(this.weatherService.nextWeatherTime(weatherSpawn.spawn.getTime())).getUTCHours() || 24;
-        const weatherStop = alarm.weathersFrom ? transitionWeatherStop : normalWeatherStop;
+        const weatherStop = alarm.weathersFrom?.length > 0 ? transitionWeatherStop : normalWeatherStop;
         const range = TimeUtils.getIntersection([spawn, despawn], [weatherStart, weatherStop % 24]);
         if (range) {
           const intersectSpawn = range[0];
@@ -366,8 +523,9 @@ export class AlarmsFacade {
           const days = Math.max(Math.floor((weatherSpawn.spawn.getTime() - time + 3000 * EorzeanTimeService.EPOCH_TIME_FACTOR) / 86400000), 0);
           // If it's for today, make sure it's not already despawned
           const now = new Date(time);
-          const didntSpawnYet = now.getUTCDay() !== weatherSpawn.spawn.getUTCDay() || now.getUTCHours() < intersectDespawn;
-          if (days > 0 || didntSpawnYet) {
+          const didntSpawnYet = !TimeUtils.isSameDay(now, weatherSpawn.spawn) || now.getUTCHours() < intersectDespawn;
+          const isSpawned = TimeUtils.isSameDay(now, weatherSpawn.spawn) && now.getUTCHours() >= weatherStart;
+          if (days > 0 || didntSpawnYet || isSpawned) {
             return {
               hours: intersectSpawn,
               days: days,
@@ -399,143 +557,15 @@ export class AlarmsFacade {
     }
   }
 
-  /**
-   * Get the amount of minutes before a given hour happens.
-   * @param currentTime
-   * @param spawn
-   * @param minutes
-   */
-  public getMinutesBefore(currentTime: Date, spawn: NextSpawn, minutes = 0): number {
-    let hours = spawn.hours;
-    // Convert 0 to 24 for spawn timers
-    if (hours === 0) {
-      hours = 24;
-    }
-    const resHours = (hours - currentTime.getUTCHours()) % 24;
-    let resMinutes = resHours * 60 + minutes - currentTime.getUTCMinutes();
-    let resSeconds = resHours * 3600 + minutes * 60 - currentTime.getUTCSeconds();
-    if (resMinutes < 0) {
-      resMinutes += 1440;
-    }
-    if (resSeconds < 0) {
-      resSeconds += 360;
-    }
-    resMinutes += (resSeconds % 60) / 60;
-    return resMinutes + (spawn.days * 1440);
-  }
-
   private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
-    const patch = this.lazyData.data.itemPatch[alarm.itemId];
-    const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
-    const isLegendary = this.lazyData.data.legendaryFish[alarm.itemId];
+    const patch = this.itemPatch[alarm.itemId];
+    const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
+    const isLegendary = this.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-SB and non-legendary
     if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
     return [alarm];
-  }
-
-  public generateAlarms(node: GatheringNode): Alarm[] {
-    // If no spawns and no weather, no alarms.
-    if (!node.spawns?.length && !node.weathers?.length) {
-      return [];
-    }
-    const alarm: Partial<Alarm> = {
-      itemId: node.matchingItemId,
-      nodeId: node.id,
-      duration: node.duration ? node.duration / 60 : 0,
-      mapId: node.map,
-      zoneId: mapIds.find((m) => m.id === node.map)?.zone || node.zoneId,
-      areaId: node.zoneId,
-      type: node.type,
-      coords: {
-        x: node.x,
-        y: node.y,
-        z: node.z || 0
-      },
-      spawns: node.spawns,
-      folklore: node?.folklore,
-      reduction: node.isReduction || false,
-      ephemeral: node.ephemeral || false,
-      nodeContent: node.items,
-      weathers: node.weathers || [],
-      weathersFrom: node.weathersFrom || [],
-      snagging: node.snagging || false,
-      predators: node.predators || [],
-      note: '',
-      enabled: true
-    };
-    if (node.gig) {
-      alarm.gig = node.gig;
-    }
-    if (node.baits) {
-      alarm.baits = node.baits;
-    }
-    if (node.hookset) {
-      alarm.hookset = node.hookset;
-    }
-    alarm.aetheryte = this.mapService.getNearestAetheryte(this.lazyData.data.maps[alarm.mapId], alarm.coords);
-    return this.applyFishEyes(alarm) as Alarm[];
-  }
-
-  public regenerateAlarm(alarm: Partial<Alarm>): Alarm {
-    const nodes = this.gatheringNodesService.getItemNodes(alarm.itemId);
-    const nodeForThisAlarm = nodes.find(n => {
-      if (alarm.nodeId) {
-        return n.id === alarm.nodeId;
-      }
-      return alarm.mapId === n.map;
-    }) || nodes[0];
-    if (nodeForThisAlarm) {
-      const alarms = this.generateAlarms(nodeForThisAlarm);
-      const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
-      regenerated.userId = alarm.userId;
-      regenerated.$key = alarm.$key;
-      regenerated.appVersion = environment.version;
-      regenerated.enabled = alarm.enabled;
-      return regenerated;
-    }
-  }
-
-  public regenerateAlarms(_alarms?: Alarm[]): void {
-    let alarms$ = of(_alarms);
-    if (!_alarms) {
-      alarms$ = this.allAlarms$;
-    }
-    const operation$ = combineLatest([alarms$, this.allGroups$]).pipe(
-      first(),
-      map(([alarms, groups]) => {
-        this.regenerating = true;
-        const newGroups = groups.map(group => {
-          const clone = new AlarmGroup(group.name, group.index);
-          clone.userId = group.userId;
-          clone.alarms = group.alarms;
-          clone.$key = group.$key;
-          clone.appVersion = environment.version;
-          clone.enabled = group.enabled;
-          return clone;
-        });
-        const newAlarms = alarms.map(alarm => {
-          if ((<any>alarm).groupId) {
-            const group = newGroups.find(g => g.$key === (<any>alarm).groupId);
-            if (group && !group.alarms.includes(alarm.$key)) {
-              group.alarms.push(alarm.$key);
-            }
-          }
-          // If custom alarm, return it
-          if (alarm.name) {
-            alarm.appVersion = environment.version;
-            return alarm;
-          }
-          return this.regenerateAlarm(alarm);
-        });
-
-        this.store.dispatch(new SetAlarms(newAlarms));
-        this.store.dispatch(new SetGroups(newGroups));
-        this.regenerating = false;
-      })
-    );
-    this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
   }
 }

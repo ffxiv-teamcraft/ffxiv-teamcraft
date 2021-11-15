@@ -103,6 +103,17 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
     );
   }
 
+  public adjust(prop: string, amount: number): void {
+    const oldValue = this.recipeForm.value[prop];
+    const newValue = this.recipeForm.value[prop] + amount;
+
+    this.recipeForm.patchValue({ [prop]: newValue });
+
+    if (this.recipeForm.controls[prop].invalid) {
+      this.recipeForm.patchValue({ [prop]: oldValue });
+    }
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return combineLatest([this.rotationsFacade.selectedRotation$, this.recipe$]).pipe(
       map(([rotation, recipe]) => {
@@ -113,16 +124,5 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         };
       })
     );
-  }
-
-  public adjust(prop: string, amount: number): void {
-    const oldValue = this.recipeForm.value[prop];
-    const newValue = this.recipeForm.value[prop] + amount;
-
-    this.recipeForm.patchValue({ [prop]: newValue });
-
-    if (this.recipeForm.controls[prop].invalid) {
-      this.recipeForm.patchValue({ [prop]: oldValue });
-    }
   }
 }
