@@ -557,6 +557,7 @@
     "Gearset_priority": "Priorité",
     "Gearset_priority_explain": "Utilisé pour décider quelle recette choisir pour les objets qui peuvent être fabriqués par plusieurs jobs tels que les lingots, les pépites et d'autres matériaux de réparation d'aéronefs.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
       "Success": "Personnage vérifié ! Vous pouvez maintenant fermer cette fenêtre contextuelle. N’hésitez pas à supprimer le code de votre profil, il n’est plus nécessaire.",
