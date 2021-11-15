@@ -11,7 +11,19 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, withLatestFrom } from 'rxjs/operators';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  exhaustMap,
+  filter,
+  first,
+  map,
+  shareReplay,
+  startWith,
+  switchMap,
+  switchMapTo,
+  withLatestFrom
+} from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../../core/database/user.service';
@@ -47,6 +59,7 @@ import { SimulationService } from '../../../../core/simulation/simulation.servic
 import { InventoryService } from '../../../inventory/inventory.service';
 import { ListController } from '../../list-controller';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
 
 @Component({
   selector: 'app-item-row',
@@ -78,7 +91,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()
   set item(item: ListRow) {
     this._item$.next(item);
-    this.handleAlarms(item);
   }
 
   get item(): ListRow {
@@ -113,8 +125,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   overlay = false;
 
   _layout: ListLayout;
-
-  alarms: Alarm[] = [];
 
   moreAlarmsAvailable = 0;
 
@@ -240,6 +250,45 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
 
+  showAllAlarmsOverride$ = new BehaviorSubject<boolean>(false);
+
+  public alarmsDisplay$ = combineLatest([
+    this.settings.watchSetting('showAllAlarms', false),
+    this.item$,
+    this.showAllAlarmsOverride$,
+    this.etime.getEorzeanTime().pipe(
+      distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours())
+    )
+  ]).pipe(
+    debounceTime(10),
+    map(([showAllAlarmsSetting, item, showAllAlarmsOverride, etime]) => {
+      const showEverything = showAllAlarmsSetting || showAllAlarmsOverride;
+      const alarms = getItemSource<Alarm[]>(item, DataType.ALARMS).sort((a, b) => {
+        const aDisplay = this.alarmsFacade.createDisplay(a, etime);
+        const bDisplay = this.alarmsFacade.createDisplay(b, etime);
+        if (aDisplay.spawned) {
+          return -1;
+        }
+        if (bDisplay.spawned) {
+          return 1;
+        }
+        return aDisplay.remainingTime - bDisplay.remainingTime;
+      });
+      // We don't want to display more than 6 alarms, else it becomes a large shitfest
+      if (!alarms || alarms.length < 6 || showEverything) {
+        return {
+          alarms,
+          moreAvailable: 0
+        };
+      } else {
+        return {
+          alarms: alarms.slice(0, 6),
+          moreAvailable: alarms.length - 6
+        };
+      }
+    })
+  );
+
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
   }
@@ -265,13 +314,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryService,
               private simulationService: SimulationService,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, private etime: EorzeanTimeService) {
     super();
-
-    combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
-      this.handleAlarms(item);
-      this.cdRef.detectChanges();
-    });
 
     this.missingBooks$ = this.masterbooksReloader$.pipe(
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
@@ -583,25 +627,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
-  }
-
-  private handleAlarms(item: ListRow): void {
-    const alarms = getItemSource<Alarm[]>(item, DataType.ALARMS);
-    // We don't want to display more than 6 alarms, else it becomes a large shitfest
-    if (!alarms || alarms.length < 8 || this.settings.showAllAlarms) {
-      this.alarms = (alarms || []).sort((a, b) => {
-        if (a.spawns === undefined || b.spawns === undefined) {
-          return a.zoneId - b.zoneId;
-        }
-        if (a.spawns[0] === b.spawns[0]) {
-          return a.zoneId - b.zoneId;
-        }
-        return a.spawns[0] - b.spawns[0];
-      });
-    } else {
-      this.alarms = _.uniqBy(alarms, alarm => alarm.zoneId).slice(0, 8);
-      this.moreAlarmsAvailable = alarms.length - 8;
-    }
   }
 
   addAllAlarms(item: ListRow) {
