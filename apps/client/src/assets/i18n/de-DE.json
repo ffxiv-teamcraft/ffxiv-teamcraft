@@ -557,6 +557,7 @@
     "Gearset_priority": "Priorität",
     "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
       "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus dem Profil entfernt werden.",
