@@ -97,6 +97,7 @@ export class InventoryOptimizerComponent {
     })
   );
   public showIgnored = false;
+  public hideEmpty = false;
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
     map((optimizations) => {
       return JSON.parse(JSON.stringify(optimizations)).map(opt => {

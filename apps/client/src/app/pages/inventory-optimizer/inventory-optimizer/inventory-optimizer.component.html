@@ -7,6 +7,8 @@
     <div class="switch-label">{{'INVENTORY_OPTIMIZER.Show_hidden' | translate}}</div>
     <nz-switch [(ngModel)]="showIgnored" (ngModelChange)="reloader$.next(null)"></nz-switch>
     <div>{{'INVENTORY_OPTIMIZER.Show_ignored' | translate}}</div>
+    <nz-switch [(ngModel)]="hideEmpty"></nz-switch>
+    <div>{{'INVENTORY_OPTIMIZER.Hide_empty' | translate}}</div>
   </div>
 </div>
 
@@ -18,7 +20,7 @@
     <div fxLayout="column">
       <div *ngFor="let optimization of optimizations; trackBy: trackByTip">
         <nz-collapse>
-          <nz-collapse-panel *ngIf="showHidden || !optimization.hidden" [nzHeader]="header" #globalPanelRef>
+          <nz-collapse-panel *ngIf="(!hideEmpty || optimization.entries.length > 0) && (showHidden || !optimization.hidden)" [nzHeader]="header" #globalPanelRef>
             <ng-template #header>
               <div fxLayout="row" fxLayoutAlign="space-between center">
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
