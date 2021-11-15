@@ -34,7 +34,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
   public relatedDisplay$: Observable<MapRelatedElement[]>;
   public markers$: Observable<MapMarker[]>;
   public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
-  public availableTypes = ['fate', 'mob', 'npc', 'node', 'hunt'];
+  public availableTypes = ['fate', 'mob', 'npc', 'node'];
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
@@ -214,43 +214,6 @@ export class MapPageComponent extends TeamcraftPageComponent {
       })
     );
   }
-
-  // TODO refactor this with new data, not sure it's even used for now tho.
-  // private getHunts(territoryId: number, sizeFactor: number): Observable<MapRelatedElement[]> {
-  //   return this.lazyData.getEntry('hunts').pipe(
-  //     map(hunts => {
-  //       const zoneHunts = hunts.find(h => h.zoneid === territoryId);
-  //       if (!zoneHunts || !zoneHunts.hunts) {
-  //         return [];
-  //       }
-  //       const c = sizeFactor / 100;
-  //       return [].concat.apply([], (zoneHunts?.hunts || []).map((hunt, index) => {
-  //           const huntName = this.l12n.getMob(this.l12n.getMobId(hunt.name));
-  //           return hunt.spawns.map((spawn) => {
-  //             return <MapRelatedElement>{
-  //               type: 'hunt',
-  //               id: this.l12n.getMobId(hunt.name),
-  //               name: huntName,
-  //               coords: {
-  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0)
-  //               },
-  //               marker: {
-  //                 iconType: 'img',
-  //                 iconImg: `./assets/icons/hunt${['b', 'a', 's'][index]}.png`,
-  //                 x: (41.0 / c) * ((spawn.x + 1024) / 2048.0),
-  //                 y: (41.0 / c) * ((spawn.y + 1024) / 2048.0),
-  //                 tooltip: this.i18n.getName(huntName)
-  //               },
-  //               link: `/db/${this.translate.currentLang}/mob/${this.l12n.getMobId(hunt.name)}`
-  //             };
-  //           });
-  //         })
-  //       );
-  //     })
-  //   );
-  //
-  // }
 
   private getFates(mapId: number): Observable<MapRelatedElement[]> {
     return this.lazyData.getEntry('fates').pipe(
@@ -458,6 +421,6 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getName(mapData: any): Observable<string> {
-    return this.i18n.getMapName(mapData.PlaceNameTargetID);
+    return this.i18n.getMapName(mapData.ID);
   }
 }

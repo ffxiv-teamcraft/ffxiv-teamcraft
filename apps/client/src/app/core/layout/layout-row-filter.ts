@@ -27,6 +27,9 @@ export class LayoutRowFilter {
     if (settings.maximumVendorPrice > 0) {
       vendors = vendors.filter(vendor => vendor.price <= settings.maximumVendorPrice);
     }
+    if (settings.maximumTotalVendorPrice > 0) {
+      vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumVendorPrice);
+    }
     return vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 

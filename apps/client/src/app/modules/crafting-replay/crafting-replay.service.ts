@@ -52,7 +52,7 @@ export class CraftingReplayService {
                   case 2:
                     return new CraftingReplay(
                       this.afs.createId(),
-                      recipes.find(r => r.id === packet.params[1]?.toString())?.result,
+                      recipes.find(r => r.id.toString() === packet.params[1]?.toString())?.result,
                       packet.params[1],
                       firebase.firestore.Timestamp.now(),
                       stats

@@ -46,7 +46,7 @@
           <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
                              nzDescription="X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}}">
             <ng-template #stepTitle>
-              {{step.name | i18n}} <img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
+              <span [clipboard]="step.name | i18n" nz-tooltip [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate">{{step.name | i18n}}</span>&nbsp;<img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
             </ng-template>
             <ng-template #rowContent>
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">

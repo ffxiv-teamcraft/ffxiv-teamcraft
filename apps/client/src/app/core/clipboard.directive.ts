@@ -1,4 +1,4 @@
-import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,6 +21,9 @@ export class ClipboardDirective {
 
   @Output()
   clipboardCopySuccess = new EventEmitter<{ content: string }>();
+
+  @HostBinding('style.cursor')
+  cursor = 'pointer';
 
   constructor(private clipboardService: Clipboard, private message: NzMessageService,
               private translate: TranslateService) {

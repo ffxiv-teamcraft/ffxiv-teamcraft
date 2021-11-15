@@ -97,6 +97,7 @@ export class InventoryOptimizerComponent {
     })
   );
   public showIgnored = false;
+  public hideEmpty = true;
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
     map((optimizations) => {
       return JSON.parse(JSON.stringify(optimizations)).map(opt => {
@@ -253,6 +254,10 @@ export class InventoryOptimizerComponent {
     }
     this.setIgnoreArray(this.ignoreArray);
     this.reloader$.next();
+  }
+
+  public getOptimizationJSON(optimization: InventoryOptimization): string {
+    return JSON.stringify(optimization);
   }
 
   public trackByTip(index: number, opt: InventoryOptimization): string {

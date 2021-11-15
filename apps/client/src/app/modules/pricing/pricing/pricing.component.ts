@@ -118,11 +118,7 @@ export class PricingComponent implements AfterViewInit {
 
   public fillMbCosts(rows: ListRow[], finalItems = false): void {
     const stopInterval$ = new Subject<void>();
-    const rowsToFill = rows
-      .filter(row => {
-        const price = this.pricingService.getPrice(row);
-        return !price.fromVendor || finalItems;
-      });
+    const rowsToFill = rows;
     if (rowsToFill.length === 0) {
       return;
     }
@@ -155,14 +151,20 @@ export class PricingComponent implements AfterViewInit {
                   .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
                 const cheapestNq = prices.filter(p => !p.IsHQ)
                   .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
-                return {
+                const result: any = {
                   item: row,
                   hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
                   hqServer: cheapestHq ? (<any>cheapestHq).Server : null,
-                  nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq,
-                  nqServer: cheapestNq ? (<any>cheapestNq).Server : null,
                   updated: item.Updated
                 };
+
+                const servicePrice = this.pricingService.getPrice(row);
+
+                if (!servicePrice.fromVendor) {
+                  result.nq = cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq;
+                  result.nqServer = cheapestNq ? (<any>cheapestNq).Server : null;
+                }
+                return result;
               })
             );
           })

@@ -184,23 +184,23 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               [row.zoneId]: hasPositions
             };
           }, {});
-        this.cd.markForCheck();
+        this.cd.detectChanges();
       });
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     if (this.displayRow.npcBreakdown) {
       this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors);
-      this.cd.markForCheck();
+      this.cd.detectChanges();
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
-    this.cd.markForCheck();
+    this.cd.detectChanges();
     this.hasPositionsInRows(this.displayRow.rows).pipe(
       first()
     ).subscribe(hasPositions => {
       this.hasNavigationMap = hasPositions;
-      this.cd.markForCheck();
+      this.cd.detectChanges();
     });
   }
 

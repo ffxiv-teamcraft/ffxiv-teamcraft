@@ -15,10 +15,10 @@ export interface Tab {
 
 export interface IDClass {
   id:     number;
-  coords: AethernetCoordsClass;
+  coords: IDCoords;
 }
 
-export interface AethernetCoordsClass {
+export interface IDCoords {
   x: number;
   y: number;
 }
@@ -29,7 +29,7 @@ export interface Spot {
   mapId:   number;
   done:    number;
   total:   number;
-  coords:  AethernetCoordsClass;
+  coords:  IDCoords;
   fishes:  Fish[];
 }
 
@@ -69,22 +69,9 @@ export interface Alarm {
   enabled:      boolean;
   baits?:       Bait[];
   hookset?:     number;
-  aetheryte?:   Aetheryte;
   fishEyes?:    boolean;
   folklore?:    number;
   gig?:         Gig;
-}
-
-export interface Aetheryte {
-  id:              number;
-  zoneid:          number;
-  map:             number;
-  x:               number;
-  y:               number;
-  z:               number;
-  type:            number;
-  nameid:          number;
-  aethernetCoords: AethernetCoordsClass;
 }
 
 export interface Bait {

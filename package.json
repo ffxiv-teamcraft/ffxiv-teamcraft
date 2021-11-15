@@ -1,15 +1,14 @@
 {
-  "name": "ffxiv-teamcraft",
+  "name": "ffxiv-teamcraft-beta",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
-  "author": "FFXIV Teamcraft",
-  "version": "8.6.8",
+  "author": "FFXIV Teamcraft beta",
+  "version": "9.0.0-beta.2",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
-    "appId": "ffxiv-teamcraft",
-    "forceCodeSigning": true,
-    "productName": "FFXIV Teamcraft",
+    "appId": "ffxiv-teamcraft-beta",
+    "productName": "FFXIV Teamcraft beta",
     "directories": {
       "output": "release"
     },
@@ -32,28 +31,16 @@
         ]
       }
     ],
-    "protocols": {
-      "name": "ffxiv-teamcraft",
-      "schemes": [
-        "teamcraft"
-      ]
-    },
     "mac": {
       "category": "public.app-category.games"
     },
     "win": {
       "icon": "./tools/build/icon.ico",
-      "publisherName": "FFXIV Teamcraft",
-      "target": "squirrel",
-      "sign": "./tools/build/sign-windows.js",
-      "publish": {
-        "provider": "github",
-        "releaseType": "release"
-      }
+      "publisherName": "FFXIV Teamcraft beta",
+      "target": "squirrel"
     },
     "squirrelWindows": {
-      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://update.ffxivteamcraft.com/"
+      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico"
     }
   },
   "scripts": {
@@ -119,6 +106,7 @@
   "private": true,
   "dependencies": {
     "@ffxiv-teamcraft/pcap-ffxiv": "^0.9.4",
+    "@xivapi/nodestone": "^0.2.0",
     "buffer-reader": "^0.1.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
@@ -191,7 +179,6 @@
     "@types/request": "^2.48.5",
     "@types/semver": "^5.4.0",
     "@xivapi/angular-client": "1.8.1",
-    "@xivapi/nodestone": "^0.1.4",
     "angular-feather": "^5.3.0",
     "angular2-chartjs": "^0.5.1",
     "apollo-angular": "^1.8.0",

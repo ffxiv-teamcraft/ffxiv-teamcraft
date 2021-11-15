@@ -17,11 +17,10 @@
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
         <ng-container *ngIf="userId$ | async as userId">
-          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTooltipTitle]="'PROFILE.VERIFICATION.Title' | translate"
-                  nz-button nz-tooltip
+          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button
                   nzShape="circle" nzSize="small"
                   nzType="primary">
-            <i nz-icon nzType="check"></i>
+            {{'PROFILE.VERIFICATION.Button' | translate}}
           </button>
         </ng-container>
 

@@ -6,7 +6,7 @@
           [nzTooltipTitle]="tooltip">
     <ng-template #tooltip>
       <span *ngIf="display.alarm.itemId">
-          <span *ngIf="display.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
+          <span *ngIf="display.alarm.mapId | closestAetheryte:display.alarm.coords | async as aetheryte">
             {{aetheryte.nameid | i18nRow:'places' | i18n}}
           </span> - {{display.alarm.zoneId | i18nRow:'places' | i18n}}
       </span>

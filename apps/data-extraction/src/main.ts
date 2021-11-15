@@ -159,8 +159,6 @@ if (argv['only']) {
 
 function startExtractors(selectedExtractors: AbstractExtractor[]): void {
 
-  console.log(selectedExtractors.map(e => e.getName()).join(','));
-
   const progress = new SingleBar({
     format: ' {bar} | {label} | {requests} requests done | {value}/{total}',
     hideCursor: true,
