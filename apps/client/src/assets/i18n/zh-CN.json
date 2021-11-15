@@ -557,6 +557,7 @@
     "Gearset_priority": "优先级",
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
       "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",

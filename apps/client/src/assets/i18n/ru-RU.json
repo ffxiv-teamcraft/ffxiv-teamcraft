@@ -557,6 +557,7 @@
     "Gearset_priority": "Приоритет",
     "Gearset_priority_explain": "Используется для решения какой взять рецепт, если он может быть скрафчен различными профессиями, например ingots, nuggets и другие материалы для ремонта.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
       "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
