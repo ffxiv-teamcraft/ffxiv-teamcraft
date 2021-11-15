@@ -557,6 +557,7 @@
     "Gearset_priority": "우선순위",
     "Gearset_priority_explain": "주괴나 덩어리, 혹은 그 외 비공정 수리 재료와 같이 여러 제작 직업이 제작 가능한 레시피들을 선택하는 데 사용됩니다.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
