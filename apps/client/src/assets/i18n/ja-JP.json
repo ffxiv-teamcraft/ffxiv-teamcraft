@@ -557,6 +557,7 @@
     "Gearset_priority": "優先度",
     "Gearset_priority_explain": "インゴット、ナゲット、或はその他の飛行艇の修理材料など色んな制作ジョブが制作可能なレシピを選択する事に使用します。",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "キャラクター認証",
       "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
