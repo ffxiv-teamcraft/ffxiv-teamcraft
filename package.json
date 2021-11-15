@@ -1,14 +1,15 @@
 {
-  "name": "ffxiv-teamcraft-beta",
+  "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
-  "author": "FFXIV Teamcraft beta",
-  "version": "9.0.0-beta.2",
+  "author": "FFXIV Teamcraft",
+  "version": "8.6.8",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
-    "appId": "ffxiv-teamcraft-beta",
-    "productName": "FFXIV Teamcraft beta",
+    "appId": "ffxiv-teamcraft",
+    "forceCodeSigning": true,
+    "productName": "FFXIV Teamcraft",
     "directories": {
       "output": "release"
     },
@@ -31,16 +32,28 @@
         ]
       }
     ],
+    "protocols": {
+      "name": "ffxiv-teamcraft",
+      "schemes": [
+        "teamcraft"
+      ]
+    },
     "mac": {
       "category": "public.app-category.games"
     },
     "win": {
       "icon": "./tools/build/icon.ico",
-      "publisherName": "FFXIV Teamcraft beta",
-      "target": "squirrel"
+      "publisherName": "FFXIV Teamcraft",
+      "target": "squirrel",
+      "sign": "./tools/build/sign-windows.js",
+      "publish": {
+        "provider": "github",
+        "releaseType": "release"
+      }
     },
     "squirrelWindows": {
-      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico"
+      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
+      "remoteReleases": "https://update.ffxivteamcraft.com/"
     }
   },
   "scripts": {
