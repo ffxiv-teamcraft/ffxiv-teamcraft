@@ -27,4 +27,4 @@ export const patchNotes = `### Bug Fixes
 * **pricing:** now filling HQ price for vendor items too.
 * **retainers:** market data is now collapsible.
 * **settings:** added Ishgard as possible starting point.
-* **settings:** new "maximum total vendor price" setting to set max allowed total price for a row.`;
+* **settings:** new "maximum total vendor price" setting to set max allowed total price for a row.`;

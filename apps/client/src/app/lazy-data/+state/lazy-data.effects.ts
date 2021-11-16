@@ -44,15 +44,14 @@ export class LazyDataEffects {
           const { contentName, hash } = this.parseFileName(entity);
           return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${ids.join(',')}`).pipe(
             switchMap(res => {
-              return Object.entries(res)
-                .map(([key, row]) => {
-                  return LazyDataActions.loadLazyDataEntityEntrySuccess({ id: +key, row, key: entity });
-                });
+              return ids.map(id => {
+                return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row: res[id] || null, key: entity });
+              });
             })
           );
         }));
       })
-    ));
+    ), { useEffectsErrorHandler: true });
 
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(
@@ -100,12 +99,10 @@ export class LazyDataEffects {
     if (path.startsWith('http')) {
       url = path;
     } else {
-      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform) || IS_HEADLESS) {
+      if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
         url = `.${path}`;
-      } else if(environment.beta) {
-        url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;
       } else {
-        url = `https://cdn.ffxivteamcraft.com${path}`;
+        url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;
       }
     }
     return this.http.get<T>(url);
