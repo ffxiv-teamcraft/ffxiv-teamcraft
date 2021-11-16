@@ -99,10 +99,12 @@ export class LazyDataEffects {
     if (path.startsWith('http')) {
       url = path;
     } else {
-      if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
+      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform) || IS_HEADLESS) {
         url = `.${path}`;
-      } else {
+      } else if(environment.beta) {
         url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;
+      } else {
+        url = `https://cdn.ffxivteamcraft.com${path}`;
       }
     }
     return this.http.get<T>(url);
