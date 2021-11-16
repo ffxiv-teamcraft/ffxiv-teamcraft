@@ -225,6 +225,7 @@
     "Group_outdated": "Diese Gruppe ist veraltet, bitte den Besitzer, sich mit einem neuen Update anzumelden und es wird aktualisiert",
     "Remove_from_group": "Von dieser Gruppe entfernen",
     "No_folder": "Kein Ordner",
+    "Click_to_show_all_alarms": "Click to show all alarms",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -468,6 +469,8 @@
     "Char_data_folder": "Charakterdatenordner (wo sich die CHRXXXXXXX-Ordner befinden)",
     "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximaler Preis für einen Artikel, der vom Layoutfilter CAN_BE_BOUGHT berücksichtigt werden soll (0 = kein maximaler Preis)",
+    "Maximum_total_vendor_price": "Maximum total vendor price",
+    "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
     "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
     "Rawsock_details": "RawSocket Nutzung, die die Aktivität ohne npcap erfasst, kann bei VPNs helfen. Allerdings ist es weniger zuverlässig und du musst TC jedes mal manuell als Admin ausführen",
     "Favorite_features": "Lieblingsfunktionen",
@@ -1966,8 +1969,10 @@
     "Unhide_optimizer": "Dieses Optimierer nicht länger ausblenden",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "Hide_empty": "Hide empty optimizers",
     "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
+    "Optimization_copied": "Optimization copied to clipboard as JSON",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
