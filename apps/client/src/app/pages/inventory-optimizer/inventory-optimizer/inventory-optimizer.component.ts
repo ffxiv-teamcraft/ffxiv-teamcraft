@@ -91,8 +91,7 @@ export class InventoryOptimizerComponent {
             );
           })
         )),
-        tap(() => this.loading = false),
-        tap(console.log)
+        tap(() => this.loading = false)
       );
     })
   );
@@ -136,7 +135,9 @@ export class InventoryOptimizerComponent {
   public showHidden = false;
   public loading = false;
 
-  public expansions$ = this.lazyData.getI18nEntry('exVersions');
+  public expansions$ = this.lazyData.getI18nEntry('exVersions').pipe(
+    map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
+  );
 
   constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
@@ -266,6 +267,10 @@ export class InventoryOptimizerComponent {
 
   public trackByEntry(index: number, entry: any): string {
     return entry.containerName;
+  }
+
+  public trackByEntryRow(index: number, entry: any): string {
+    return entry.item.itemId;
   }
 
   private getContainerName(item: InventoryItem): string {
