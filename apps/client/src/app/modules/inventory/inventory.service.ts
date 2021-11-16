@@ -179,7 +179,7 @@ export class InventoryService {
                 const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
                 const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
                 if (this.isRetainer(action.parsedIpcData.containerId)) {
-                  if(action.parsedIpcData.containerId === ContainerType.RetainerBag0){
+                  if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
                     state.retainerInventoryQueue = [];
                   }
                   return {

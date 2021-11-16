@@ -137,7 +137,7 @@ export class ExtractorComponent {
             map((fshData) => {
               const fish: any = {
                 entry,
-                id: entry.spot,
+                id: entry.spot.id,
                 itemId: entry.itemId,
                 level: entry.level,
                 icon: entry.icon,

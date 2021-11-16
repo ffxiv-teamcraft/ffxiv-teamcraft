@@ -301,7 +301,7 @@ export class UserInventory extends DataModel {
   }
 
   setMarketBoardInfo(packet: ItemMarketBoardInfo, retainer: string): void {
-    if (this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
+    if (this.items[this.contentId][`${retainer}:${packet.containerId}`] && this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot]) {
       this.items[this.contentId][`${retainer}:${packet.containerId}`][packet.slot].unitMbPrice = packet.unitPrice;
     }
   }
