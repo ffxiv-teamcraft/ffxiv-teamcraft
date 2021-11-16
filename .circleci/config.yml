@@ -150,8 +150,6 @@ workflows:
           requires:
             - lint
       - deploy-hosting:
-          requires:
-            - deploy-cdn
           filters:
             branches:
               only: master
