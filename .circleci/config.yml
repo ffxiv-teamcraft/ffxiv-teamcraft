@@ -81,9 +81,12 @@ jobs:
 
 
   deploy-hosting:
+    working_directory: ~/ffxiv-teamcraft
     docker:
       - image: google/cloud-sdk
     steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Authorize GCloud Command Line Tool
           command: |
@@ -91,8 +94,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
-      - attach_workspace:
-          at: ~/
       - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
