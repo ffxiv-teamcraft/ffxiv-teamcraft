@@ -4,6 +4,7 @@ import { patchNotes } from './patch-notes';
 
 export const environment = {
   production: true,
+  beta: false,
   version: version,
   patchNotes: patchNotes,
   ssrHost: 'https://ffxivteamcraft.com',
