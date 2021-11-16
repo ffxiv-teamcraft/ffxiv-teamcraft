@@ -139,7 +139,9 @@ export class InventoryComponent {
     })
   );
 
-  public expansions$ = this.lazyData.getI18nEntry('exVersions');
+  public expansions$ = this.lazyData.getI18nEntry('exVersions').pipe(
+    map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
+  );
 
   constructor(private inventoryService: InventoryService, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
