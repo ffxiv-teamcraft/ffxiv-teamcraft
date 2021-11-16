@@ -225,7 +225,7 @@
     "Group_outdated": "Ce groupe est périmé, demandez au propriétaire de se connecter avec une nouvelle mise à jour et il sera régénéré",
     "Remove_from_group": "Retirer de ce groupe",
     "No_folder": "Aucun dossier",
-    "Click_to_show_all_alarms": "Click to show all alarms",
+    "Click_to_show_all_alarms": "Cliquez pour afficher toutes les alarmes",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -1969,10 +1969,10 @@
     "Unhide_optimizer": "Ne plus masquer cet optimiseur",
     "Remove_ignore_container": "Ne plus ignorer cette astuce pour cet inventaire",
     "Show_ignored": "Afficher les objets ignorés",
-    "Hide_empty": "Hide empty optimizers",
+    "Hide_empty": "Cacher les optimisateurs vides",
     "Show_hidden": "Afficher les optimiseurs masqués",
     "No_optimizations": "Aucune optimisation disponible",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "Optimisation copiée dans le presse-papiers au format JSON",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
       "Message": "Cet objet peut être acheté aux PNJ avec des gils et n'a pas besoin de réputation de tribu.",
