@@ -99,7 +99,7 @@ jobs:
           command: bash tools/cdn/deploy.sh
       - run:
           name: Updating Cloud Run
-          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy ssr --image gcr.io/ffxivteamcraft/ssr --region europe-west1
+          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy ssr --image gcr.io/ffxivteamcraft/ssr --region europe-west1 --allow-unauthenticated
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
