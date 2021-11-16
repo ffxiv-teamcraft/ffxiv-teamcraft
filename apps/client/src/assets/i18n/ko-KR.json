@@ -225,6 +225,7 @@
     "Group_outdated": "해당 그룹은 오래되었습니다. 사용자가 새 업데이트를 통해 로그인을 하면 갱신됩니다",
     "Remove_from_group": "해당 그룹 삭제",
     "No_folder": "폴더 없음",
+    "Click_to_show_all_alarms": "Click to show all alarms",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
@@ -468,6 +469,8 @@
     "Char_data_folder": "캐릭터 데이터 폴더 (CHRXXXXXXX 폴더가 있는 곳)",
     "Maximum_vendor_price": "상점 구매가 최대치",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
+    "Maximum_total_vendor_price": "Maximum total vendor price",
+    "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
     "Rawsock_flag": "패킷 캡처를 위하여 RawSocket 사용하기",
     "Rawsock_details": "RawSocket을 사용하면 npcap 없이 트래픽을 캡처하므로 VPN 사용시에 도움이 될 수 있습니다. 하지만 전반적으로 신뢰성이 떨어지며 팀크래프트 실행시마다 수동으로 관리자권한 실행을 하셔야 합니다.",
     "Favorite_features": "즐겨찾는 기능",
@@ -1966,8 +1969,10 @@
     "Unhide_optimizer": "숨기기 해제",
     "Remove_ignore_container": "해당 집사는 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
+    "Hide_empty": "Hide empty optimizers",
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
+    "Optimization_copied": "Optimization copied to clipboard as JSON",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
