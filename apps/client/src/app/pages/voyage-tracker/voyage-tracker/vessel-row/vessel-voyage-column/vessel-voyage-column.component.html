@@ -16,7 +16,7 @@
 
 <ng-template #voyageDetailsContent>
   <nz-breadcrumb [nzSeparator]="iconTemplate">
-    <nz-breadcrumb-item *ngFor="let sector of toDestinationNames()">
+    <nz-breadcrumb-item *ngFor="let sector of destinationNames$ | async">
       {{ sector }}
     </nz-breadcrumb-item>
   </nz-breadcrumb>

@@ -9,6 +9,7 @@ export class RecipesExtractor extends AbstractExtractor {
       searchIndex: {},
       recipes: {}
     };
+    const recipesPerItem = {};
     combineLatest([
       this.getAllEntries('https://xivapi.com/CompanyCraftSequence'),
       this.aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert,SecretRecipeBook')
@@ -32,7 +33,7 @@ export class RecipesExtractor extends AbstractExtractor {
           });
         const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
         const totalIlvl = ingredients.filter(i => i.id > 19).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
-        recipes.push({
+        const lazyRecipeRow = {
           id: recipe.ID,
           job: recipe.ClassJob.ID,
           lvl: recipe.RecipeLevelTable.ClassJobLevel,
@@ -60,7 +61,10 @@ export class RecipesExtractor extends AbstractExtractor {
             }),
           expert: recipe.IsExpert === 1,
           conditionsFlag: recipe.RecipeLevelTable.ConditionsFlag
-        });
+        };
+
+        recipes.push(lazyRecipeRow);
+        recipesPerItem[lazyRecipeRow.result] = [...(recipesPerItem[lazyRecipeRow.result] || []), lazyRecipeRow];
       });
 
       recipes.forEach(recipe => {
@@ -75,7 +79,7 @@ export class RecipesExtractor extends AbstractExtractor {
             lvl: recipe.lvl,
             job: recipe.job,
             stars: recipe.stars
-          }
+          };
         });
       });
 
@@ -124,6 +128,7 @@ export class RecipesExtractor extends AbstractExtractor {
 
       this.persistToJsonAsset('recipes', recipes);
       this.persistToJsonAsset('recipes-ingredient-lookup', rlookup);
+      this.persistToJsonAsset('recipes-per-item', recipesPerItem);
       this.done();
     });
   }

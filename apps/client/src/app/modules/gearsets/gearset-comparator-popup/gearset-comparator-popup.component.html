@@ -1,51 +1,4 @@
-<div fxLayout="column" fxLayoutGap="10px" *ngIf="result === undefined; else resultTpl">
-  <nz-alert *ngIf="error" [nzCloseable]="true" [nzMessage]="'GEARSETS.COMPARISON.Error_title' | translate"
-            [nzDescription]="'GEARSETS.COMPARISON.Error_description' | translate" nzType="error"></nz-alert>
-
-  <nz-select [disabled]="loading" [(ngModel)]="comparisonType" [nzPlaceHolder]="'GEARSETS.COMPARISON.Type' | translate">
-    <nz-option *ngFor="let type of comparisonTypes" [nzValue]="type" [nzLabel]="('GEARSETS.COMPARISON.'+ type) | translate"></nz-option>
-  </nz-select>
-
-  <nz-form-item *ngIf="comparisonType === 'Ariyala'">
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraAriyala">
-      <input [disabled]="loading" [(ngModel)]="ariyalaLink" (ngModelChange)="updateLinkSupport()"
-             [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
-             type="text">
-      <ng-template #extraAriyala>
-        <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
-      </ng-template>
-    </nz-form-control>
-  </nz-form-item>
-
-  <nz-form-item *ngIf="comparisonType === 'External_gearset'">
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraExternal">
-      <input [disabled]="loading" [(ngModel)]="externalGearsetLink" (ngModelChange)="updateGearsetLinkSupported()"
-             [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
-             type="text">
-      <ng-template #extraExternal>
-        <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
-      </ng-template>
-    </nz-form-control>
-  </nz-form-item>
-
-  <nz-form-item *ngIf="comparisonType === 'Personal_gearset'">
-    <nz-select [style.width.%]="100" [disabled]="loading" [(ngModel)]="personalGearset" (ngModelChange)="importLinkSupported = true"
-               [nzPlaceHolder]="'GEARSETS.COMPARISON.Pick_your_gearset' | translate">
-      <nz-option *ngFor="let gearset of myGearsets$ | async" [nzValue]="gearset" [nzCustomContent]="true" [nzLabel]="gearset.name">
-        <span [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></span>
-        {{gearset.name}}
-      </nz-option>
-    </nz-select>
-  </nz-form-item>
-
-  <button [disabled]="loading || !importLinkSupported" [nzLoading]="loading" nz-button nzType="primary" (click)="compare()" fxLayout="row"
-          fxLayoutAlign="center center">
-    <i nz-icon nzType="diff" nzTheme="outline"></i>
-    <span>{{'GEARSETS.COMPARISON.Submit' | translate}}</span>
-  </button>
-</div>
-
-<ng-template #resultTpl>
+<ng-container *ngIf="result$ | async as result; else formTpl">
   <nz-divider [nzText]="'GEARSETS.Stats' | translate"></nz-divider>
   <div fxLayout="row" fxLayoutAlign="center center">
     <table>
@@ -60,7 +13,7 @@
       <tbody>
       <tr *ngFor="let row of result.statsDifferences">
         <td class="table-cell first">
-          {{row.id | baseParamName | i18n}}
+          {{row.id | i18nRow:'baseParams' | i18n}}
         </td>
         <td class="amount table-cell">
           {{row.values.a | number:'1.0-0':translate.currentLang}}
@@ -164,7 +117,7 @@
         <tbody>
         <tr *ngFor="let row of piece.stats">
           <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{row.id | baseParamName | i18n}}</div>
+            <div>{{row.id | i18nRow:'baseParams' | i18n}}</div>
           </td>
           <td class="amount table-cell">
             {{row.a | number:'1.0-0':translate.currentLang}}
@@ -181,4 +134,53 @@
     </div>
   </div>
 
+</ng-container>
+
+<ng-template #formTpl>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <nz-alert *ngIf="error" [nzCloseable]="true" [nzMessage]="'GEARSETS.COMPARISON.Error_title' | translate"
+              [nzDescription]="'GEARSETS.COMPARISON.Error_description' | translate" nzType="error"></nz-alert>
+
+    <nz-select [disabled]="loading" [(ngModel)]="comparisonType" [nzPlaceHolder]="'GEARSETS.COMPARISON.Type' | translate">
+      <nz-option *ngFor="let type of comparisonTypes" [nzValue]="type" [nzLabel]="('GEARSETS.COMPARISON.'+ type) | translate"></nz-option>
+    </nz-select>
+
+    <nz-form-item *ngIf="comparisonType === 'Ariyala'">
+      <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraAriyala">
+        <input [disabled]="loading" [(ngModel)]="ariyalaLink" (ngModelChange)="updateLinkSupport()"
+               [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
+               type="text">
+        <ng-template #extraAriyala>
+          <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item *ngIf="comparisonType === 'External_gearset'">
+      <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraExternal">
+        <input [disabled]="loading" [(ngModel)]="externalGearsetLink" (ngModelChange)="updateGearsetLinkSupported()"
+               [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
+               type="text">
+        <ng-template #extraExternal>
+          <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item *ngIf="comparisonType === 'Personal_gearset'">
+      <nz-select [style.width.%]="100" [disabled]="loading" [(ngModel)]="personalGearset" (ngModelChange)="importLinkSupported = true"
+                 [nzPlaceHolder]="'GEARSETS.COMPARISON.Pick_your_gearset' | translate">
+        <nz-option *ngFor="let gearset of myGearsets$ | async" [nzValue]="gearset" [nzCustomContent]="true" [nzLabel]="gearset.name">
+          <span [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></span>
+          {{gearset.name}}
+        </nz-option>
+      </nz-select>
+    </nz-form-item>
+
+    <button [disabled]="loading || !importLinkSupported" [nzLoading]="loading" nz-button nzType="primary" (click)="compare()" fxLayout="row"
+            fxLayoutAlign="center center">
+      <i nz-icon nzType="diff" nzTheme="outline"></i>
+      <span>{{'GEARSETS.COMPARISON.Submit' | translate}}</span>
+    </button>
+  </div>
 </ng-template>

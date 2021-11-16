@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -11,11 +11,10 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter, first, switchMap } from 'rxjs/operators';
+import { filter, first, map, switchMap } from 'rxjs/operators';
 import { AlarmGroupDisplay } from '../../../core/alarms/alarm-group-display';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { AlarmsOptionsPopupComponent } from '../alarms-options-popup/alarms-options-popup.component';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -43,7 +42,7 @@ export class AlarmsPageComponent implements OnInit {
 
   constructor(private alarmBell: AlarmBellService, public alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
-              private translate: TranslateService, private l12n: LocalizedDataService,
+              private translate: TranslateService,
               private i18n: I18nToolsService, private etime: EorzeanTimeService,
               private message: NzMessageService, private ipc: IpcService,
               public platform: PlatformService, private linkService: LinkToolsService) {
@@ -182,16 +181,20 @@ export class AlarmsPageComponent implements OnInit {
   }
 
   getIngameAlarmMacro = (display: AlarmDisplay) => {
-    const rp: I18nName = {
-      en: 'rp',
-      de: 'wh',
-      fr: 'rp',
-      ja: 'rp',
-      ko: '반복'
-    };
-    return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
-    }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
-      Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
+    const itemName$ = display.alarm.itemId ? this.i18n.getNameObservable('items', display.alarm.itemId) : of(display.alarm.name);
+    return itemName$.pipe(
+      map(itemName => {
+        const rp: I18nName = {
+          en: 'rp',
+          de: 'wh',
+          fr: 'rp',
+          ja: 'rp',
+          ko: '반복'
+        };
+        return `/alarm "${itemName.slice(0, 10)}" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
+          Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
+      })
+    );
   };
 
   addAlarmsToGroup(targetGroup: AlarmGroup): void {
@@ -206,7 +209,7 @@ export class AlarmsPageComponent implements OnInit {
               ...display.noGroup.map(({ alarm }) => {
                 return {
                   $key: alarm.$key,
-                  name: alarm.itemId ? this.i18n.getName(this.l12n.getItem(alarm.itemId)) : alarm.name,
+                  name: alarm.itemId ? this.i18n.getNameObservable('items', alarm.itemId) : of(alarm.name),
                   description: this.translate.instant('ALARMS.No_folder')
                 };
               }),
@@ -215,7 +218,7 @@ export class AlarmsPageComponent implements OnInit {
                   return alarms.map(({ alarm }) => {
                     return {
                       $key: alarm.$key,
-                      name: alarm.itemId ? this.i18n.getName(this.l12n.getItem(alarm.itemId)) : alarm.name,
+                      name: alarm.itemId ? this.i18n.getNameObservable('items', alarm.itemId) : of(alarm.name),
                       description: group.name
                     };
                   });
@@ -224,7 +227,7 @@ export class AlarmsPageComponent implements OnInit {
                 return {
                   ...entries[0],
                   description: entries.map(entry => entry.description).join(', ')
-                }
+                };
               })
             ]
           },

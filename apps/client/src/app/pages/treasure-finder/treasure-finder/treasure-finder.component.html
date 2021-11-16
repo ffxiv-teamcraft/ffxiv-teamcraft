@@ -18,7 +18,7 @@
                    [ngModel]="map$ | async"
                    (ngModelChange)="map$.next($event)"
                    nzShowSearch class="select-box">
-          <nz-option *ngFor="let map of maps" [nzLabel]="map.placename_id | placeName | i18n"
+          <nz-option *ngFor="let map of maps" [nzLabel]="map.placename_id | i18nRow:'places' | i18n"
                      [nzValue]="map.id"></nz-option>
         </nz-select>
       </nz-form-control>
@@ -41,7 +41,7 @@
         <div fxLayout="row wrap" fxLayoutGap="10px">
           <div *ngFor="let treasure of possibleTreasureMaps" class="treasure-map" (click)="selectedTreasure$.next(treasure)">
             <div class="map-background-container">
-              <img [src]="treasure.mapImage" alt="" class="map-background" style.top="-{{treasure.display.y}}px" style.left="-{{treasure.display.x}}px">
+              <img [src]="treasure.mapImage" alt="" class="map-background" style.top="{{treasure.display.y}}px" style.left="{{treasure.display.x}}px">
             </div>
             <img src="./assets/icons/treasure_map.png" alt="" class="map-foreground">
             <img src="./assets/icons/treasure_marker.png" alt="" class="treasure-marker">

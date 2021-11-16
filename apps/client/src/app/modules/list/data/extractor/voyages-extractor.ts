@@ -3,18 +3,20 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
 import { ExplorationType } from '../../../../model/other/exploration-type';
 import { VoyageSource } from '../../model/voyage-source';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { combineLatest, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   getDataType(): DataType {
@@ -22,16 +24,24 @@ export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return this.lazyData.data.voyageSources[item.id] !== undefined;
+    return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): VoyageSource[] {
-    return (this.lazyData.data.voyageSources[item.id] || []).map(({ type, id }) => {
-      return {
-        type,
-        name: (type === ExplorationType.AIRSHIP ? this.lazyData.data.airshipVoyages : this.lazyData.data.submarineVoyages)[id]
-      };
-    });
+  protected doExtract(item: Item, itemData: ItemData): Observable<VoyageSource[]> {
+    return combineLatest([
+      this.lazyData.getEntry('airshipVoyages'),
+      this.lazyData.getEntry('submarineVoyages'),
+      this.lazyData.getRow('voyageSources', item.id, [])
+    ]).pipe(
+      map(([airshipVoyages, submarineVoyages, voyageSource]) => {
+        return voyageSource.map(({ type, id }) => {
+          return {
+            type,
+            name: (type === ExplorationType.AIRSHIP ? airshipVoyages : submarineVoyages)[id]
+          };
+        });
+      })
+    );
   }
 
 }

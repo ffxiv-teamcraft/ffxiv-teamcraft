@@ -27,10 +27,11 @@
         <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
                            [nzDescription]="description">
           <ng-template #description>
-            X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}} <span *ngIf="step.fate">({{(step.fate | fate)?.name | i18n}})</span>
+            X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}} <span *ngIf="step.fate">({{step.fate | i18nRow:'fates' | i18n}})</span>
           </ng-template>
           <ng-template #stepTitle>
-            {{step.name | i18n}} <img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
+            <span [clipboard]="step.name | i18n" [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate">{{step.name | i18n}}</span>&nbsp;<img *ngIf="step.type === 'Gathering'" class="node-type-icon"
+                                                                                       [src]="step.gatheringType | nodeTypeIcon">
           </ng-template>
           <ng-template #rowContent>
             <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
@@ -52,7 +53,7 @@
             <img *ngIf="!step.isTeleport && step.itemId !== undefined && !step.fate" alt="" class="item-icon"
                  src="{{step.itemId | lazyIcon}}">
             <i *ngIf="!step.isTeleport && step.itemId === undefined" class="material-icons">location_on</i>
-            <img *ngIf="step.fate" [src]="(step.fate | fate)?.icon" class="item-icon">
+            <img *ngIf="step.fate" [src]="step.fate | lazyRow:'fates':'icon' | async | xivapiIcon" class="item-icon">
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

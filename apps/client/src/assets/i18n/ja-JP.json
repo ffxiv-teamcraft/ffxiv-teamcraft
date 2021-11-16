@@ -1,5 +1,5 @@
 {
-  "Mogstation": "Mogstation",
+  "Mogstation": "モグステーション",
   "Quests": "クエスト",
   "Facebook_notice": "Facebookからのログインは利用できなくなりました。「パスワードのリセット」システムを使用してアカウントにパスワードを追加するか、miuにdiscordで問い合わせてください。",
   "Pick_a_list": "リストを選択する",
@@ -24,7 +24,7 @@
   "Change_character": "キャラクター",
   "Check_guides": "ガイドを確認してください",
   "Guides_links": "Teamcraft ガイド",
-  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
+  "Db_ban": "以前に作成したデータベースのコメントにより、コメント機能が制限された状態です。もしこれに関する意義申し立てを行うにはDisocordのMiu#1568にお問い合わせください。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreonサポーター",
     "Contributors": "サポーター"
   },
-  "Patreon_login_success": "Patreonログイン成功されました!",
+  "Patreon_login_success": "Patreonのログインに成功しました！",
   "Hide_if_empty": "空欄を隠す",
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
@@ -154,7 +154,7 @@
     "Minutes_duration": "{{amount}} 分",
     "Seconds_duration": "{{amount}} 秒",
     "None": "なし",
-    "Any": "Any",
+    "Any": "全部",
     "Top": "上部",
     "Bottom": "下部",
     "Amount": "数量",
@@ -183,14 +183,14 @@
     "Support_us_remove_ads": "Patreonをサポートして広告を消す",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
-    "Item": "Item",
-    "Venture": "Venture",
-    "Monster": "Monster",
-    "Airship": "Airship",
-    "Submarine": "Submarine",
-    "Voyage": "Voyage",
-    "Instance": "Instance",
-    "Fate": "Fate"
+    "Item": "アイテム",
+    "Venture": "リテイナーベンチャー",
+    "Monster": "モンスター",
+    "Airship": "飛空艇",
+    "Submarine": "潜水艦",
+    "Voyage": "ボイジャー",
+    "Instance": "ダンジョン",
+    "Fate": "F. A. T. E"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -261,7 +261,7 @@
   "Item_name": "アイテム名",
   "No_items_found": "検索結果なし",
   "No_instances_found": "検索結果なし",
-  "No_fishing_spot_found": "No fishing spots found",
+  "No_fishing_spot_found": "釣り場が見つかりません。",
   "No_quests_found": "検索結果なし",
   "No_npcs_found": "検索結果なし",
   "No_mobs_found": "検索結果なし",
@@ -399,7 +399,7 @@
     "Always_on_top": "常に最前面",
     "Start_minimized": "起動時に最小化",
     "Always_quit": "閉じるボタンをクリックすると最小化せず終了します",
-    "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
+    "Enable_minimize_reduction": "削減ボタンをクリックした時、トレイに最小化する (タスクバーに減らす代わりに)",
     "Check_for_update": "アップデートを確認する",
     "Downloading_update": "アップデートがダウンロード中",
     "No_update_available": "利用可能な更新はありません",
@@ -488,7 +488,7 @@
     "Has_access_to_housing_vendor": "ハウジングNPC優先順位",
     "Has_access_to_housing_vendor_explain": "NPCグループ化システムのハウジングNPC優先順位は利用が可能ならば便利です。",
     "Hide_back_button": "サイドバーの戻るボタンを隠す",
-    "Reload_auth_token": "Reload auth token",
+    "Reload_auth_token": "認証トークンを再読み込みする",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -557,6 +557,7 @@
     "Gearset_priority": "優先度",
     "Gearset_priority_explain": "インゴット、ナゲット、或はその他の飛行艇の修理材料など色んな制作ジョブが制作可能なレシピを選択する事に使用します。",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "キャラクター認証",
       "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",
       "Success": "キャラクターが認証されました！このポップアップを閉じてもよろしいです。プロフィールからコードを消してもよろしいです。",
@@ -566,12 +567,12 @@
   },
   "LISTS": {
     "Load_archived": "アーカイブされたリストを読み込む",
-    "Needs_verification": "フリーカンパニーにシェアされたリストを確認するためには、あなたのキャラクターを認証してください",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
     "Merge_lists": "リストを併合する",
     "Merge_lists_warning": "大規模のリストはデータベースの制限で、まとめることはできないため、表示できません。",
-    "Lists_merged": "リスト併合が完了されました！",
+    "Lists_merged": "リスト併合が完了しました！",
     "Shared_lists": "自分と共有されているリスト",
     "Add_selection": "選択項目をリストに追加する",
     "Reset_selection": "選択を解除",
@@ -721,6 +722,8 @@
     "Autofill_notification": "完了通知",
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "所持品から埋める(アカウントに連動している所持品だけ埋めます)",
     "Filter_items_done": "完了したアイテムを無視",
     "Inventory_synthesis": "所持品統合(各所持品ごとのアイテム)",
@@ -882,7 +885,7 @@
     "No_items": "採集場所が見つかりませんでした。",
     "Gathering_name": "アイテム名を入力してください",
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
-    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
+    "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細な機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
     "Fish_eyes": "ただ天気条件の為にフィッシュアイが必要",
     "Add_alarm": "アラームを追加する",
@@ -1318,7 +1321,7 @@
     }
   },
   "UPDATE": {
-    "New_update_available": "新しいアップデートがあります! ",
+    "New_update_available": "新しいアップデートがあります！",
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
     "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
@@ -1340,6 +1343,7 @@
     "Required_for_achievement": "アチーブメントに適用された",
     "Select_spot": "表示する場所を選択して下さい。",
     "Hide_completed": "完了したレシピを隠す",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "完了したレシピを隠す",
     "MIN_optimized_path": "全ての採掘師の採集物の推奨経路",
     "BTN_optimized_path": "全ての園芸師の採集物の推奨経路",
@@ -1569,7 +1573,7 @@
       "Top_users": "最高順位",
       "Your_ranking": "あなたのランキング",
       "Include_fisheyes_data": "フィッシュアイを通計で含む",
-      "Not_enough_data_points": "Not enough data points to display this chart",
+      "Not_enough_data_points": "チャートを表示するための十分なデータがありません。",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",
@@ -1631,7 +1635,7 @@
       "Repeatable": "繰り返し可能",
       "Beast_tribe_rank": "蛮族友好段階",
       "Chain_length": "連携クエスト",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "取引可能な品目"
     },
     "NPC": {
       "Other_entries": "他の出現位置",
@@ -1726,7 +1730,7 @@
       "No_comments": "コメントなし",
       "Post": "投稿",
       "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "データベースのコメントは有用な情報を含んでいます。もしコメント機能を悪用した場合、Teamcraftのご利用が制限されますので、ご注意お願いいたします。"
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
@@ -1805,8 +1809,8 @@
     "Shown_only_collectables": "収集品のみ表示",
     "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "手帳で完了してない項目だけ表示",
-    "Add_results_to_pool": "Add to pool when adding to basket",
-    "Show_only_leve_items": "Only items used in levequests"
+    "Add_results_to_pool": "制作リストに追加する時、所持状況にも追加する",
+    "Show_only_leve_items": "ギルドリーヴでのみ使えるアイテム"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
@@ -1815,7 +1819,7 @@
     "You_can_buy": "{{amount}} 個購入可能",
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。",
-    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_data": "選択した通貨の取引データを読み込み中",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
     "X_sold_last_week": "{{amount}} sold last week"
   },
@@ -2003,7 +2007,7 @@
       "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
     },
     "ONLY_FOR_ONE_MATERIAL": {
-      "Title": "Items that are only used for a single recipe",
+      "Title": "単一のレシピにのみ使用されるアイテムです。",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
     }
   },
@@ -2052,30 +2056,30 @@
     "Import_from_pcap_notice": "欲しいギアセットに変更してそのギアセットを呼び出してください",
     "No_food_selected": "食べ物が選択されていません",
     "Generate_list": "リスト生成",
-    "Clone_gearset": "Copy this on your account",
+    "Clone_gearset": "このギアセットリストを自分のアカウントにコピーする",
     "Clone_gearset_from_sync": "このギアセットのコピーを作成する",
     "You_have_no_gearsets": "ギアセットがありません",
     "Favorite_gearsets": "お気に入りのギアセット",
     "Update_from_pcap": "パケット キャプチャを使用して更新",
-    "Copy_as_text": "Copy this gearset as text",
+    "Copy_as_text": "このギアセットをテキストとしてコピー",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
-    "Please_input_lodestone_id": "Please input lodestone id",
+    "Please_input_lodestone_id": "Lodestone Idを入力してください。",
     "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
+    "Currency": "通貨",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
-    "Copied_as_string": "Gearset copied as string",
+    "Stat_computing_diclaimer": "多数のユーザーから得た情報ですので、結果が100％ではありません。結果が正確じゃなくてもバグとして報告しないようお願いいたします",
+    "Missing_items": "スロットに空きがあるような場合、フィルタ―が正しく設定されているかご確認ください。",
+    "Copied_as_string": "ギアセットのアイテムの名前がコピーされました。",
     "Mark_as_done": "Mark as done",
     "Create_commission": "このギアセットから依頼する",
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
-    "Editing_others_gearset": "Local editing mode",
+    "Editing_others_gearset": "ローカル編集モード",
     "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Empty_materias": "選択されたすべての装備からマテリアを削除",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2098,15 +2102,15 @@
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
       "Type": "ギアセットの種類",
       "Ariyala": "An ariyala set",
-      "External_gearset": "A Teamcraft gearset from someone else",
-      "Personal_gearset": "One of your gearsets",
+      "External_gearset": "他人のTeamcraftのギアセット",
+      "Personal_gearset": "自分のギアセット",
       "Paste_link_step_title": "ギアセットのリンク",
-      "Pick_your_gearset": "Pick your gearset",
+      "Pick_your_gearset": "ギアセットを選ぶ",
       "Submit": "比較する",
       "Your_gearset": "ギアセット",
       "Other_gearset": "その他のギアセット",
       "Diff": "差分",
-      "Avg_melding_chances": "Avg. overmeld chances"
+      "Avg_melding_chances": "平均的なマテリア禁断の確率"
     },
     "STAT_DISPLAY": {
       "Ilvl": "平均IL",
@@ -2114,13 +2118,13 @@
       "Direct_hit_chances": "ダイレクト発生",
       "Critical_hit_chances": "クリティカル発生",
       "Critical_hit_multiplier": "クリティカル増加",
-      "Determination_bonus": "Determination bonus",
+      "Determination_bonus": "意思力の倍率",
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "ギアセットの同期化",
       "Tag": "同期",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Tag_tooltip": "このギアセットは、パケットキャプチャを利用して同期化されました、この職業で再度同期化すると更新されます。",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
       "Syncing_gearsets": "ギアセットを同期中 ..."
@@ -2131,7 +2135,7 @@
     "Delete_folder": "フォルダを削除",
     "Rename_folder": "フォルダ名を変更",
     "View_folder": "フォルダを開く",
-    "Content": "Content",
+    "Content": "詳細内容",
     "Folder_not_found": "フォルダが見つかりません",
     "Your_folders": "あなたのフォルダ",
     "Favorite_folders": "お気に入りフォルダ"
@@ -2147,26 +2151,26 @@
       "Can_be_changed_in_settings": "設定内でオンまたはオフに切り替えることができます"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "名前にマウスポインターを当てればプロフィールエディターとレベル、ステータスなどを修正できるメニューが使用できます。"
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Search_type": "ここで設定(アイテム、クエスト、マップ、ノード、NPCなど) を変更できます。",
+      "Share": "シェアできるリンクを作ろうとする場合、このボタンを押してください。",
+      "Filters": "ステータス、ボーナス、アイテムレベルなどの拡張機能を使用するにはこのパンネルを開いてください。"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "ここをクリックすることでリンクをコピーし、シェアできます。",
+      "Open_list": "詳しい情報を見るにはここをクリックしてください。(ダブルクリックも可能）",
+      "More": "ここをクリックして権限を管理し、リストの名前を変更できます。"
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
+      "HQ_mark": "このアイコンは、このアイテムの最終的なレシピに必要であることを意味します。HQが必要な時もありますが必須条件ではありません。",
+      "Layout": "レイアウトエディターを開き、全体的なデータのフィルタリング方法とパネルを変更できます。左側のバトンはレイアウトを素早くスイッチする時、使います。",
+      "Permissions": "権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCに権限エディターでは、使用権限の編集、他のユーザの追加、読み取り専用に変更、FCにシェアなどができます。",
+      "Fill_with_inventory": "所持品内にあるアイテムをリストに自動的に追加できます。",
       "Pricing_mode_button": "価格設定モードを使用して、このリストの利益を簡単に予測できます。",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "More_actions_button": "このボタンは、現在のリストから行える多くのアクションメニューを開けます。皆さんはレイアウトエディターを通じてこのアクションボタンを編集できます。",
+      "Alarm_button": "ここをクリックしてアイテムのアラームを設定てしてください、アラームを設定することでアイテムのスポーンの時知らせます。"
     },
     "LISTS": {
       "Merge": "マージボタンを使用して、2つのリストをマージできます。",
@@ -2178,13 +2182,13 @@
     "DESYNTH": {
       "Job": "Select the job you want to level",
       "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Search": "検索をクリックすると完了です！"
     },
     "RESET_TIMERS": {
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
+      "Character_configuration": "レベルとステータスを設定してください。",
       "HQ_ingredients": "ここでHQの材料を入力すると、初期品質を設定できます。",
       "Consumables": "Configure consumables and FC buffs here.",
       "Right_click_condition": "アクションを右クリックして、条件(高品質、最高品質、低品質、失敗など) を設定し、結果を予測します。",
@@ -2220,20 +2224,20 @@
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "ここをクリックして新しいパネルを追加します。",
         "Reorder": "ドラッグアンドドロップで、任意の場所にパネルを移動できます。",
         "Data_type": "First of all, select the metric type you want to use.",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Title": "パネルのタイトルを設定してください。",
+        "Display_type": "データを表現する時に使用するコンポーネントを選択した後、それに応じた数値を入力してください。"
       }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "このエラーを自動修正する",
     "USERS": {
-      "Title": "Users",
+      "Title": "ユーザー",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Eメール",
       "Uid": "UID",
@@ -2285,9 +2289,9 @@
       "ITEM": "アイテム"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
+      "Type": "タイプ",
+      "Entry_label": "ラベル",
+      "Value": "合計",
       "Source": "Source",
       "Timestamp": "日時"
     },
@@ -2308,7 +2312,7 @@
       "Value_label": "値のラベル",
       "Pie_metric": "Metric",
       "Add_filter": "フィルターを追加",
-      "Operator": "Operator",
+      "Operator": "オペレーター",
       "Cannot_edit_default": "デフォルトのレイアウトは編集できません。代わりにカスタマイズできる新しいレイアウトを作成します。",
       "Cannot_delete_default": "デフォルトのレイアウトは削除できません",
       "FILTER_TIPS": {
@@ -2596,7 +2600,7 @@
       "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
       "Custom_theme": "カスタマーカラーが含んで改善されたテーマカスタマイズ (${{price}})",
       "Pins_badge": "限定版 Teamcraft バッジ配送 (${{price}}) (Patreonに配送情報の入力必須)",
-      "Loading_screen_message": "\"Brought to you by ...\" ローディングメッセージに追加したい名前、フリカンパニー名、リンクシェル名など新しい項目追加! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Pick one of your retainers"
   },
@@ -2720,7 +2724,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "New feature: Allagan Reports",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",
@@ -2809,15 +2813,15 @@
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
-      "MODIFICATION": "MODIFICATION",
-      "DELETION": "DELETION",
-      "ACCEPTED": "ACCEPTED"
+      "MODIFICATION": "変更",
+      "DELETION": "削除",
+      "ACCEPTED": "承認済"
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
-    "SUNSET": "Sunset",
-    "DAY": "Day",
-    "NIGHT": "Night"
+    "ANY": "全部",
+    "SUNSET": "夕暮れ",
+    "DAY": "昼",
+    "NIGHT": "夜"
   }
 }

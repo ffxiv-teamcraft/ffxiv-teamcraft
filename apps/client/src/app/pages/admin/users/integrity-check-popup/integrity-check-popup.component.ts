@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { INTEGRITY_CHECKS, IntegrityCheck } from '../integrity-checks/integrity-check';
-import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { UserService } from '../../../../core/database/user.service';
 import { map, startWith, switchMap } from 'rxjs/operators';
 
@@ -13,15 +13,7 @@ import { map, startWith, switchMap } from 'rxjs/operators';
 })
 export class IntegrityCheckPopupComponent {
 
-  private _user: TeamcraftUser;
-
   user$: ReplaySubject<TeamcraftUser> = new ReplaySubject<TeamcraftUser>();
-
-  set user(user: TeamcraftUser) {
-    this.user$.next(user);
-    this._user = user;
-  }
-
   results$ = this.user$.pipe(
     switchMap(user => this.runChecks(user)),
     startWith(this.integrityChecks.map(check => {
@@ -35,6 +27,13 @@ export class IntegrityCheckPopupComponent {
 
   constructor(@Inject(INTEGRITY_CHECKS) private integrityChecks: IntegrityCheck[],
               private userService: UserService) {
+  }
+
+  private _user: TeamcraftUser;
+
+  set user(user: TeamcraftUser) {
+    this.user$.next(user);
+    this._user = user;
   }
 
   runChecks(user: TeamcraftUser): Observable<Array<any | null>> {

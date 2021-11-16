@@ -59,15 +59,24 @@
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js"
-            ],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            ]
           },
           "configurations": {
+            "dev": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -86,7 +95,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -104,7 +112,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -132,7 +139,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": true,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -151,7 +157,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -173,6 +178,9 @@
             "browserTarget": "client:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "client:build:dev"
+            },
             "production": {
               "browserTarget": "client:build:production"
             },
@@ -182,7 +190,8 @@
             "preview": {
               "browserTarget": "client:build:preview"
             }
-          }
+          },
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -223,8 +232,52 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/client-server",
-            "main": "apps/client/src/main.server.ts",
-            "tsConfig": "apps/client/tsconfig.server.json"
+            "main": "apps/client/server.ts",
+            "tsConfig": "apps/client/tsconfig.server.json",
+            "sourceMap": true,
+            "optimization": false,
+            "externalDependencies": [
+              "firebase",
+              "@firebase/messaging/sw",
+              "@firebase/app",
+              "@firebase/firestore",
+              "@firebase/analytics",
+              "@firebase/auth",
+              "@firebase/functions",
+              "@firebase/installations",
+              "@firebase/messaging",
+              "@firebase/storage",
+              "@firebase/performance",
+              "@firebase/remote-config",
+              "@firebase/util"
+            ]
+          },
+          "defaultConfiguration": ""
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "client:build",
+            "serverTarget": "client:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "client:build:production",
+              "serverTarget": "client:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "client:build:production",
+            "serverTarget": "client:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }

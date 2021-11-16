@@ -8,8 +8,6 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CoreModule } from '../../core/core.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
-import { NewEntryComponent } from './new-entry/new-entry.component';
-import { AdminGuard } from '../../core/guard/admin.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MarkdownModule } from 'ngx-markdown';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -26,11 +24,6 @@ const routes: Routes = [
     canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
-    path: 'new',
-    component: NewEntryComponent,
-    canActivate: [MaintenanceGuard, AdminGuard]
-  },
-  {
     path: ':slug',
     component: BlogComponent,
     canActivate: [MaintenanceGuard, VersionLockGuard]
@@ -38,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BlogComponent, NewEntryComponent, BlogPostComponent],
+  declarations: [BlogComponent, BlogPostComponent],
   imports: [
     CommonModule,
     TranslateModule,

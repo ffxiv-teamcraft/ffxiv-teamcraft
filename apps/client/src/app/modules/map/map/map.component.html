@@ -3,7 +3,7 @@
   <img (load)="loaded.emit()" alt="" class="map-image" src="{{map.image}}">
   <img *ngFor="let aetheryte of map.aetherytes" [ngStyle]="getMarkerStyle(map, aetheryte, true)"
        [src]="getIcon(aetheryte.type)" alt="" class="aetheryte"
-       nz-tooltip nzTooltipTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)}}">
+       nz-tooltip nzTooltipTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | i18nRow:'places' | i18n)}}">
   <div *ngIf="unknownPosition" class="unknown-position">
     {{'No_known_coordinates' | translate}}
   </div>

@@ -20,7 +20,7 @@
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteTeam(team)" *ngIf="team.leader === (userId$ | async)" [nzShape]="'circle'"
                       [nzPopconfirmTitle]="'TEAMS.Delete_confirmation' | translate"
-                      [nzType]="'danger'"
+                      nzDanger
                       nz-button nz-popconfirm>
                 <i nz-icon nzType="delete"></i>
               </button>
@@ -83,7 +83,7 @@
                           translate) : invite.expires | date:'short'}}
                         </div>
                         <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteInvite(invite)" [nzShape]="'circle'" [nzPopconfirmTitle]="'Confirmation' | translate"
-                                [nzType]="'danger'" nz-button
+                                nzDanger nz-button
                                 nz-popconfirm nzSize="small">
                           <i nz-icon nzType="delete"></i>
                         </button>
@@ -137,7 +137,7 @@
                         <nz-divider *ngIf="userId === team.leader && !team.notFound && !team.isOfficer(member) && member !== team.leader"
                                     nzType="vertical"></nz-divider>
                         <button (nzOnConfirm)="removeMember(team, member)" *ngIf="userId === team.leader || userId === member" [nzShape]="'circle'"
-                                [nzPopconfirmTitle]="'Confirmation' | translate" [nzType]="'danger'" nz-button
+                                [nzPopconfirmTitle]="'Confirmation' | translate" nzDanger nz-button
                                 nz-popconfirm
                                 nzSize="small">
                           <i nz-icon nzType="delete"></i>

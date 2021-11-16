@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, Input, Optional } from '@angular/core';
 import { CraftingReplay } from '../model/crafting-replay';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
-import { ActionResult, EffectiveBuff, Simulation, SimulationService } from '../../../core/simulation/simulation.service';
+import { ActionResult, Craft, EffectiveBuff, Simulation, SimulationService } from '../../../core/simulation/simulation.service';
 import { SettingsService } from '../../settings/settings.service';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-replay-simulation',
@@ -37,7 +37,7 @@ export class ReplaySimulationComponent {
       return this.lazyData.getRecipe(replay.recipeId.toString()).pipe(
         map(recipe => {
           return new this.simulator.Simulation(
-            recipe,
+            recipe as unknown as Craft,
             this.simulator.CraftingActionsRegistry.createFromIds(replay.steps.map(step => step.action)),
             replay.playerStats,
             [],
@@ -93,7 +93,7 @@ export class ReplaySimulationComponent {
     return this.simulationService.getSimulator(this.settings.region);
   }
 
-  constructor(private lazyData: LazyDataService, private dataService: DataService,
+  constructor(private lazyData: LazyDataFacade, private dataService: DataService,
               private simulationService: SimulationService, private settings: SettingsService,
               @Optional() public ref: NzModalRef, private dialog: NzModalService,
               private translate: TranslateService) {

@@ -1,7 +1,7 @@
 export class AriyalaMateriaOptions {
-    estimateOvermeldMateria: boolean;
-  
-    multiplyToolMateria: boolean;
+  estimateOvermeldMateria: boolean;
 
-    groupTogether = true;
+  multiplyToolMateria: boolean;
+
+  groupTogether = true;
 }

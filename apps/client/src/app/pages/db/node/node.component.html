@@ -9,7 +9,7 @@
             [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(nodeData)}}</h2>
+            <h2 class="item-name">{{getName(nodeData) | async}}</h2>
             <div class="item-kind">
               Lvl {{nodeData.GatheringLevel}} <span
               [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
@@ -67,7 +67,7 @@
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{data.zoneid | placeName | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
+            {{data.zoneid | i18nRow:'places' | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
           </div>
         </ng-template>
         <app-map [mapId]="data.map"

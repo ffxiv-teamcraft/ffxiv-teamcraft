@@ -3,7 +3,8 @@ import { gameEnv } from './game-env';
 import { patchNotes } from './patch-notes';
 
 export const environment = {
-  production: false,
+  production: true,
+  beta: true,
   version: version,
   patchNotes: patchNotes,
   ssrHost: 'https://beta.ffxivteamcraft.com',

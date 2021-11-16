@@ -18,7 +18,7 @@ import { RegisterPopupComponent } from './core/auth/register-popup/register-popu
 import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
 import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
 import { ListsFacade } from './modules/list/+state/lists.facade';
-import { AngularFireDatabase } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 import { SettingsService } from './modules/settings/settings.service';
 import { TeamsFacade } from './modules/teams/+state/teams.facade';
@@ -32,7 +32,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import { LazyDataService } from './core/data/lazy-data.service';
 import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
 import { DirtyFacade } from './core/dirty/+state/dirty.facade';
 import { SeoService } from './core/seo/seo.service';
@@ -63,6 +62,10 @@ import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.s
 import { WebSocketLink } from 'apollo-link-ws';
 import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
+import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
+import { IS_HEADLESS } from '../environments/is-headless';
+
+declare const gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -73,7 +76,7 @@ export class AppComponent implements OnInit {
 
   public newFeatureName = 'allagan-reports';
 
-  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true';
+  public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true' && !IS_HEADLESS;
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -101,21 +104,23 @@ export class AppComponent implements OnInit {
   collapsedAlarmsBar = true;
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
+
+  public loadingLazyData$ = this.lazyDataFacade.isLoading$;
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character & { Datacenter: string }>;
+  public character$: Observable<Character>;
 
   public otherCharacters$: Observable<Character[]>;
 
   public userId$ = this.authFacade.userId$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
 
   public user$ = this.authFacade.user$.pipe(
-    isPlatformServer(this.platform) ? first() : tap()
+    isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
   );
 
   public loading$: Observable<boolean>;
@@ -130,7 +135,7 @@ export class AppComponent implements OnInit {
 
   private hasDesktopReloader$ = new BehaviorSubject<void>(null);
 
-  public navigating = true;
+  public navigating = !IS_HEADLESS;
 
   public newVersionAvailable$: Observable<boolean>;
 
@@ -184,8 +189,8 @@ export class AppComponent implements OnInit {
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
-              private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
-              private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
+              private layoutsFacade: LayoutsFacade, private lazyDataFacade: LazyDataFacade,
+              private customItemsFacade: CustomItemsFacade, private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
@@ -265,16 +270,20 @@ export class AppComponent implements OnInit {
           })
         );
       }),
-      isPlatformServer(this.platform) ? first() : tap()
+      isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
     );
 
-    if (isPlatformServer(this.platform)) {
+    if (isPlatformServer(this.platform) || IS_HEADLESS) {
       this.dataLoaded = true;
       this.emptyInventory$ = of(false);
       this.unknownContentId$ = of(false);
     }
+    this.translate.setDefaultLang('en');
 
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
+
+      // Translation
+      this.use(this.getLang());
       if (this.platformService.isDesktop()) {
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
@@ -293,7 +302,7 @@ export class AppComponent implements OnInit {
       this.firebase.object<boolean>('maintenance')
         .valueChanges()
         .pipe(
-          isPlatformServer(this.platform) ? first() : tap()
+          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
         .subscribe(maintenance => {
           if (maintenance && environment.production) {
@@ -304,32 +313,11 @@ export class AppComponent implements OnInit {
       this.firebase.object<string>('version_lock')
         .valueChanges()
         .pipe(
-          isPlatformServer(this.platform) ? first() : tap()
+          isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
         )
         .subscribe(v => {
           if (semver.ltr(environment.version, v)) {
             this.router.navigate(['version-lock']);
-          }
-        });
-
-      this.lazyData.loaded$
-        .pipe(
-          switchMap((loaded) => {
-            this.dataLoaded = loaded;
-            if (!loaded) {
-              return of(false);
-            }
-            const lastChangesSeen = this.settings.lastChangesSeen;
-            if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay) {
-              return this.showPatchNotes();
-            } else {
-              return of(null);
-            }
-          })
-        )
-        .subscribe((loaded) => {
-          if (loaded) {
-            this.tutorialService.applicationReady();
           }
         });
 
@@ -431,6 +419,8 @@ export class AppComponent implements OnInit {
           });
           this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
         }
+        gtag('set', 'page', event.url);
+        gtag('send', 'pageview');
         const languageIndex = event.url.indexOf('?lang=');
         if (languageIndex > -1) {
           this.use(event.url.substr(languageIndex + 6, 2), false, true);
@@ -444,7 +434,7 @@ export class AppComponent implements OnInit {
         filter(current => current instanceof NavigationEnd),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
-          if (this.platformService.isDesktop() || isPlatformServer(this.platform)) {
+          if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
             return of(false);
           }
           if (url && url.endsWith('/')) {
@@ -473,41 +463,20 @@ export class AppComponent implements OnInit {
       this.newVersionAvailable$ = of(false);
     }
 
-    // Translation
-    this.translate.setDefaultLang('en');
-    this.use(this.getLang());
-
     if (this.platformService.isDesktop()) {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
       if (!this.overlay) {
-        this.lazyData.data$
-          .pipe(
-            filter(d => d !== undefined),
-            first(),
-            delay(5000)
-          )
-          .subscribe(() => {
-            if (this.settings.xivapiKey && this.settings.enableMappy) {
-              this.mappy.start();
-            }
-            this.playerMetricsService.start();
-            setTimeout(() => {
-              this.ipc.send('app-ready', true);
-              this.cd.detectChanges();
-            }, 500);
-            // This is a super ugly fix for the app freezing on startup for some random electron reason
-            // We're just forcing the change detector to update more often even if frozen, so it'll eventually unfreeze
-            // After 10s of forcing, it should be enough to fix the issue.
-            // really looking forward to a real solution tho...
-            const interval = setInterval(() => {
-              this.cd.detectChanges();
-            }, 500);
-            setTimeout(() => {
-              clearInterval(interval);
-            }, 10000);
-          });
+        if (this.settings.xivapiKey && this.settings.enableMappy) {
+          this.mappy.start();
+        }
+        this.playerMetricsService.start();
+        setTimeout(() => {
+          this.ipc.send('app-ready', true);
+          this.dataLoaded = true;
+          this.cd.detectChanges();
+        }, 1500);
       }
     }
 
@@ -619,7 +588,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       setTimeout(() => {
         this.hideFeatureBanner();
       }, 2000);
@@ -629,12 +598,6 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        map(character => {
-          return {
-            ...character,
-            Datacenter: this.lazyData.getDataCenter(character.Server)
-          };
-        }),
         shareReplay(1)
       );
 
@@ -670,6 +633,12 @@ export class AppComponent implements OnInit {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
     }
+
+    const lastChangesSeen = this.settings.lastChangesSeen;
+    if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay && !IS_HEADLESS) {
+      this.showPatchNotes();
+    }
+    this.dataLoaded = true;
   }
 
   switchCharacter(id: number): void {
@@ -749,7 +718,7 @@ export class AppComponent implements OnInit {
   }
 
   openInApp(): void {
-    if (isPlatformBrowser(this.platform)) {
+    if (isPlatformBrowser(this.platform) && !IS_HEADLESS) {
       this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
         mapTo(true),
         catchError(() => {

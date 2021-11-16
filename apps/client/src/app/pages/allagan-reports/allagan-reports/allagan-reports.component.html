@@ -8,9 +8,6 @@
         <nz-option *ngFor="let source of reportSources" [nzValue]="source" [nzLabel]="('ALLAGAN_REPORTS.SOURCE.' + source) | translate"></nz-option>
       </nz-select>
     </div>
-    <div *ngIf="devEnv">
-      <button nz-button nzShape="circle" nzType="primary" (click)="importSheet()"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
-    </div>
   </div>
 </div>
 <nz-divider [nzText]="'ALLAGAN_REPORTS.Status' | translate" nzOrientation="left"></nz-divider>

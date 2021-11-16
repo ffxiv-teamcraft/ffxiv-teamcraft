@@ -30,7 +30,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
+import { IS_HEADLESS } from '../../../../environments/is-headless';
 
 @Injectable({
   providedIn: 'root'
@@ -254,7 +255,7 @@ export class AlarmsEffects {
   @Effect({ dispatch: false })
   showAlarmsCreatedNotification$ = this.actions$.pipe(
     ofType(AlarmsActionTypes.AlarmsCreated),
-    isPlatformBrowser(this.platform) ? bufferTime(300) : map(() => []),
+    isPlatformBrowser(this.platform) && !IS_HEADLESS ? bufferTime(300) : map(() => []),
     filter(actions => actions.length > 0),
     tap((creations: AlarmsCreated[]) => {
       const amount = creations.reduce((count, c) => {

@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.8...v9.0.0) (2021-11-15)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms triggered by a weather window starting at midnight ([62aa00c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62aa00c))
+* **currency-spending:** now counts history beyond 5 sales ([3f7680c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f7680c))
+* **db:** fixed duplicates in fishing log tracker ([a6504d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6504d7))
+* **db:** fixed fishing pages sometimes not loading properly ([13db76e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13db76e))
+* **db:** fixed inconsistent spot bite times graph error ([19485df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19485df))
+* **i18n:** removed spaces before exclamation mark in english ([c46efed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c46efed))
+* **reduction:** fixed duplicate reductions from extractor ([aa2507a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa2507a))
+* **treasures:** better coords system for the treasure previews ([9a17784](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a17784))
+
+
+### Features
+
+* **autofill:** new crafting/gathering detection system for less DB stress ([e8d6956](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8d6956))
+* **data:** update for cn patch-5.57 ([9fd6117](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9fd6117))
+* **db:** fish baits are now sorted by # of catch ([0df7301](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0df7301))
+* **db:** import of 500+ allagan reports ([b46677d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b46677d))
+* **db:** leves data in item page now show amount required and job icon ([c38cdc4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c38cdc4))
+* **db:** support for korean v5.55 update ([4a6ef5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a6ef5c))
+* **inventory-optimizer:** new button to export optimization panel as JSON ([9ab3e6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ab3e6a))
+* **inventory-optimizer:** new toggle to hide empty entries ([69ddbe7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69ddbe7))
+* **inventory-synthesis:** better ordering for items, based on requirements ([ed52589](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed52589))
+* **layout:** new filter: IS_FINAL_ITEM ([3b251d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b251d1))
+* **lists:** added a wiki link to the verification warning banner ([fa695e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa695e6))
+* **navigation:** you can now copy step label as string in your clipboard by clicking on it ([3fd6c28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fd6c28))
+* **pricing:** now filling HQ price for vendor items too ([5f1d334](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f1d334))
+* **retainers:** market data is now collapsible ([e575739](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e575739))
+* **settings:** added Ishgard as possible starting point ([c985ba7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c985ba7))
+* **settings:** new "maximum total vendor price" setting to set max allowed total price for a row ([6df83e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6df83e3))
+
+
+
 <a name="8.6.8"></a>
 ## [8.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.7...v8.6.8) (2021-10-14)
 

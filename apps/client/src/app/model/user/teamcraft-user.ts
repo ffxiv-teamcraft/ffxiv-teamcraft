@@ -3,7 +3,7 @@ import { Favorites } from '../other/favorites';
 import { LodestoneIdEntry } from './lodestone-id-entry';
 import { Character } from '@xivapi/angular-client';
 import { DefaultConsumables } from './default-consumables';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export class TeamcraftUser extends DataModel {
   createdAt: firebase.firestore.Timestamp;

@@ -37,7 +37,6 @@ import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ListContributionsComponent } from './list-contributions/list-contributions.component';
 import { InventorySynthesisPopupComponent } from './inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
-import { CommissionsModule } from '../commissions/commissions.module';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { InventoryCleanupPopupComponent } from './inventory-cleanup-popup/inventory-cleanup-popup.component';
 import { InventoryModule } from '../../modules/inventory/inventory.module';

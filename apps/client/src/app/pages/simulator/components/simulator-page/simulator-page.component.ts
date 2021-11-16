@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -7,9 +7,10 @@ import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { LazyRecipe } from '../../../../lazy-data/model/lazy-recipe';
 
 @Component({
   selector: 'app-simulator-page',
@@ -18,7 +19,7 @@ import { AbstractSimulationPage } from '../../abstract-simulation-page';
 })
 export class SimulatorPageComponent extends AbstractSimulationPage {
 
-  recipe$: Observable<Craft>;
+  recipe$: Observable<Craft | LazyRecipe>;
 
   item$: Observable<Item>;
 
@@ -26,7 +27,7 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
 
   constructor(protected route: ActivatedRoute, private dataService: DataService,
               private rotationsFacade: RotationsFacade, private router: Router,
-              protected seo: SeoService, private lazyData: LazyDataService) {
+              protected seo: SeoService, private lazyData: LazyDataFacade) {
     super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
@@ -49,24 +50,29 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
     );
 
     this.thresholds$ = this.item$.pipe(
-      map(item => {
+      switchMap(item => {
         if (item.collectable === 1) {
           // If it's a delivery item
           if (item.satisfaction !== undefined) {
             // We want thresholds on quality, not collectable score.
-            return item.satisfaction[0].rating.map(r => r * 10);
+            return of(item.satisfaction[0].rating.map(r => r * 10));
           } else if (item.masterpiece !== undefined) {
-            return item.masterpiece.rating.map(r => r * 10);
-          } else if (this.lazyData.data.collectables[item.id] !== undefined) {
-            const supply = this.lazyData.data.collectables[item.id];
-            return [
-              supply.base.rating * 10,
-              supply.mid.rating * 10,
-              supply.high.rating * 10
-            ];
+            return of(item.masterpiece.rating.map(r => r * 10));
+          } else {
+            return this.lazyData.getRow('collectables', item.id).pipe(
+              map(supply => {
+                if (supply) {
+                  return [
+                    supply.base.rating * 10,
+                    supply.mid.rating * 10,
+                    supply.high.rating * 10
+                  ];
+                }
+                return [];
+              })
+            );
           }
         }
-        return [];
       })
     );
 

@@ -35,7 +35,7 @@
                   (click)="openSpotInMainWindow(state.spot)">
             <i nz-icon nzType="info"></i>
           </button>
-          <div>{{state.spot.zoneId | placeName | i18n}}</div>
+          <div>{{state.spot.zoneId | i18nRow:'places' | i18n}}</div>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -43,8 +43,8 @@
         <div *ngIf="state.previousWeatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
           <img class="fish-icon" *ngIf="state.previousWeatherId > 0"
                src="{{state.previousWeatherId | weatherIcon | xivapiIcon}}"
-               alt="{{state.previousWeatherId | weatherName | i18n}}">
-          <div>{{state.previousWeatherId | weatherName | i18n}}</div>
+               alt="{{state.previousWeatherId | i18nRow:'weathers' | i18n}}">
+          <div>{{state.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -52,8 +52,8 @@
         <div *ngIf="state.weatherId; else unknown" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-end center">
           <img class="fish-icon" *ngIf="state.weatherId > 0"
                src="{{state.weatherId | weatherIcon | xivapiIcon}}"
-               alt="{{state.weatherId | weatherName | i18n}}">
-          <div>{{state.weatherId | weatherName | i18n}}</div>
+               alt="{{state.weatherId | i18nRow:'weathers' | i18n}}">
+          <div>{{state.weatherId | i18nRow:'weathers' | i18n}}</div>
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -63,7 +63,7 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
         <div *ngIf="state.statuses; else unknown" fxLayout="row" fxLayoutGap="5px">
-          <img *ngFor="let status of state.statuses; trackBy: trackByValue" src="{{status | statusIcon | xivapiIcon}}" nz-tooltip [nzTooltipTitle]="status | statusName | i18n"
+          <img *ngFor="let status of state.statuses; trackBy: trackByValue" src="{{status | lazyRow:'statuses':'icon' | async | xivapiIcon}}" nz-tooltip [nzTooltipTitle]="status | i18nRow:'statuses' | async | i18n"
                alt="{{status}}">
           <span *ngIf="state.statuses.length === 0">
             {{'DB.FISH.OVERLAY.No_statuses' | translate}}
@@ -107,11 +107,11 @@
             </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{761 | statusName | i18n}}</div>
+            <div>{{761 | i18nRow:'statuses' | async | i18n}}</div>
             <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{763 | statusName | i18n}}</div>
+            <div>{{763 | i18nRow:'statuses' | async | i18n}}</div>
             <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -132,9 +132,9 @@
               <img class="fish-icon" *ngIf="report.weatherId > 0"
                    src="{{report.weatherId | weatherIcon | xivapiIcon}}"
                    nz-tooltip
-                   [nzTooltipTitle]="report.weatherId | weatherName | i18n"
-                   alt="{{report.weatherId | weatherName | i18n}}">
-              <div>{{report.weatherId | weatherName | i18n}}</div>
+                   [nzTooltipTitle]="report.weatherId | i18nRow:'weathers' | i18n"
+                   alt="{{report.weatherId | i18nRow:'weathers' | i18n}}">
+              <div>{{report.weatherId | i18nRow:'weathers' | i18n}}</div>
             </div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -143,9 +143,9 @@
               <img class="fish-icon" *ngIf="report.previousWeatherId > 0"
                    src="{{report.previousWeatherId | weatherIcon | xivapiIcon}}"
                    nz-tooltip
-                   [nzTooltipTitle]="report.previousWeatherId | weatherName | i18n"
-                   alt="{{report.previousWeatherId | weatherName | i18n}}">
-              <div>{{report.previousWeatherId | weatherName | i18n}}</div>
+                   [nzTooltipTitle]="report.previousWeatherId | i18nRow:'weathers' | i18n"
+                   alt="{{report.previousWeatherId | i18nRow:'weathers' | i18n}}">
+              <div>{{report.previousWeatherId | i18nRow:'weathers' | i18n}}</div>
             </div>
           </div>
         </div>

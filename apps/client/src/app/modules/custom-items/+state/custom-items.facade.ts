@@ -19,7 +19,7 @@ import { CustomItemFolder } from '../model/custom-item-folder';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CustomItemsDisplay } from './custom-items-display';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'

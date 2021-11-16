@@ -4,7 +4,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" nz-tooltip [nzTooltipTitle]="'DB.FISH.Include_fisheyes_data' | translate">
       <div>{{'DB.FISH.Hour' | translate}}</div>
       <div>
-        <img [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes">
+        <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes">
         <nz-switch [ngModel]="fishEyes$ | async" (ngModelChange)="fishEyes$.next($event)"></nz-switch>
       </div>
     </div>

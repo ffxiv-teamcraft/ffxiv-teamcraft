@@ -3,9 +3,9 @@
     <nz-select (ngModelChange)="setJob($event)" [ngModel]="job$.value" [nzAllowClear]="true"
                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
                class="job" nzShowSearch>
-      <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
+      <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n" [nzValue]="job.id" nzCustomContent>
         <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-        {{job.id | jobAbbr | i18n}}
+        {{job.id | i18nRow:'jobAbbr' | i18n}}
       </nz-option>
     </nz-select>
   </div>
@@ -100,7 +100,7 @@
               </div>
               <div fxLayout="column">
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <div>{{leve.name | i18n}}</div>
+                  <app-i18n-name content="leves" [id]="leve.id"></app-i18n-name>
                   <app-db-button [id]="leve.id" type="leve"></app-db-button>
                 </div>
                 <div>
@@ -115,13 +115,14 @@
               <div nz-row>
                 <div class="list-center" nz-col nzSm="2">
                   <b>Lvl {{leve.level}}</b><br/>
-                  <b>{{leve.jobId | jobAbbr | i18n}}</b>
+                  <b>{{leve.jobId | i18nRow:'jobAbbr' | i18n}}</b>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="flex-start center" nz-col nzSm="8">
-                  <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | placeName | i18n } }}</b>
+                  <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | i18nRow:'places' | i18n } }}</b>
                   <div>
                     <a href="https://ffxiv.gamerescape.com/wiki/{{leve.name.en.split(' ').join('_')}}"
-                       target="_blank" (click)="openInGE(leve)">
+                       *ngIf="leve.id | i18nRow: 'leves' | async as leveName"
+                       target="_blank" (click)="openInGE(leveName)">
                       {{'LEVEQUESTS.More_on_gamerescape' | translate}}
                     </a>
                   </div>

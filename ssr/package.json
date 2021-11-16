@@ -1,0 +1,21 @@
+{
+  "name": "ssr",
+  "version": "1.0.0",
+  "main": "server.mjs",
+  "license": "MIT",
+  "private": "true",
+  "scripts": {
+    "copy": "copyfiles ../dist/apps/client/** ./dist",
+    "prefetch-data": "node gt-data-fetcher.js",
+    "build": "yarn run copy && yarn run prefetch-data",
+    "start": "node puppeteer/server.mjs",
+    "docker:build": "yarn run build && gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^5.15.5",
+    "copyfiles": "^2.4.1",
+    "express": "^4.17.1",
+    "puppeteer": "^11.0.0",
+    "request": "^2.88.2"
+  }
+}

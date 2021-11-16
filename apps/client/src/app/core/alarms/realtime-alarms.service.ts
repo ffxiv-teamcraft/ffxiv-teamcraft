@@ -105,6 +105,10 @@ export class RealtimeAlarmsService {
     );
   }
 
+  public reload(): void {
+    this.reloader$.next(null);
+  }
+
   private getTimeBefore(hour: number, day?: number): Date {
     if (hour < new Date().getUTCHours() && day === undefined) {
       day = new Date().getUTCDay() + 1;
@@ -123,9 +127,5 @@ export class RealtimeAlarmsService {
       }
     }
     return new Date(nextIteration.getTime() - Date.now());
-  }
-
-  public reload(): void {
-    this.reloader$.next(null);
   }
 }

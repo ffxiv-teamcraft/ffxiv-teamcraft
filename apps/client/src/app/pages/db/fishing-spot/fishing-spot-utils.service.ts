@@ -15,7 +15,8 @@ export class FishingSpotUtilsService {
     shareReplay(1)
   );
 
-  constructor(private readonly settings: SettingsService) {}
+  constructor(private readonly settings: SettingsService) {
+  }
 
   public getHighlightColor(weight: number = 1) {
     return this.highlightColor$.pipe(

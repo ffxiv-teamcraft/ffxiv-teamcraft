@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreon 支持者",
     "Contributors": "贡献者"
   },
-  "Patreon_login_success": "Patreon 登录成功！",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
@@ -362,7 +362,7 @@
   "Email_not_found": "没有找到该电子邮件地址",
   "Email_sent": "已发送一封电子邮件，内含重置您密码的方法。",
   "ALARM": {
-    "Spawned": "{{itemName}} 即将出现",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "坐标",
     "Note": "备注"
   },
@@ -557,21 +557,22 @@
     "Gearset_priority": "优先级",
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
-      "Success": "角色已验证！你现在可以关闭该窗口。现在你可以从你的 Lodestone 资料中移除验证代码了。",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "无法在你的资料中找到代码。请确认你已经粘贴并保存，然后等待约 30 秒后重试。",
       "Validate": "验证"
     }
   },
   "LISTS": {
     "Load_archived": "加载已归档的清单",
-    "Needs_verification": "请验证您的角色，以确认是否有权访问共享到部队的清单",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "重新生成所有清单",
     "Regenerated_all": "您的清单已经是最新的了",
     "Merge_lists": "合并清单",
     "Merge_lists_warning": "此处未列出过长的清单，因为由于数据库限制，无法合并太大的清单。",
-    "Lists_merged": "清单合并成功！",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "与您共享的清单",
     "Add_selection": "添加选中物品到清单",
     "Reset_selection": "全不选",
@@ -721,6 +722,8 @@
     "Autofill_notification": "完成通知",
     "Autofill_notification_title": "物品已完成",
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
@@ -740,7 +743,7 @@
       "Import_layout": "导入布局",
       "Export_layout": "导出此布局",
       "Import_string": "导出布局",
-      "Import_string_copied": "已复制布局代码！",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入码",
       "Global_options": "通用选项",
@@ -849,7 +852,7 @@
     "Title": "宏转换器",
     "Macro_language": "源语言",
     "Macro_to_translate": "要转换的宏",
-    "Do_translate": "转换！",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "无效的宏或语言。"
   },
   "CUSTOM_LINKS": {
@@ -882,7 +885,7 @@
     "No_items": "没有找到相关采集点",
     "Gathering_name": "输入物品名称",
     "Ephemeral_node": "限时采集点，可以刷新",
-    "Intro": "采集地点用于快速搜索可采集物品，并查看其详情，并为节点设置采集闹钟。在上面的输入框中输入物品名字，它会找到你要找的物品！",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "隐藏资源",
     "Fish_eyes": "通过鱼眼忽略天气以外的条件",
     "Add_alarm": "添加闹钟",
@@ -1306,20 +1309,20 @@
     "Lists_created_counter": "FFXIV Teamcraft 上现有 {{amount}} 个清单",
     "Donation_button": "进行一次性捐赠",
     "Buy_merch": "购买 Teamcraft 周边",
-    "Features_header": "开始吧！",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
       "Alarms": "闹钟使你不会错过限时/未知/传承采集点。分文件夹管理闹钟、导入到游戏——一切皆有可能。",
-      "Gathering_location": "寻找采集点信息，创建闹钟，获得即时位置、最近传送点、所需传承录，还有更多！",
-      "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
-      "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为中文！"
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "发现新版本！ ",
-    "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "请刷新页面以使用最新版本。",
     "Downloading_update": "正在下载更新，完成后会提醒您进行安装",
     "Possible_update_issue": "下载过程中遇到问题，请点击此图标下载最新的安装包。"
@@ -1340,6 +1343,7 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
@@ -1360,7 +1364,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "正在载入物品、技能和其它信息"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "自定义物品",
@@ -1810,7 +1814,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
@@ -1821,7 +1825,7 @@
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
-    "Description": "想知道哪个食物有你需要的属性？找对地方了！",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "选择一个属性"
   },
   "BLOG": {
@@ -2178,7 +2182,7 @@
     "DESYNTH": {
       "Job": "选择你想要提升等级的职业",
       "Level": "输入分解技能值（而非职业等级）",
-      "Search": "点击搜索即可"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "打开此开关可以为对应的计时器设置闹钟"
@@ -2220,7 +2224,7 @@
         "Welcome_add_column": "欢迎来到面板布局编辑器，您可以使用此按钮添加列 (最多5列)。",
         "Save": "在您编辑面板后不要忘记保存您的修改。",
         "Revert": "又或者，如果你不喜欢这么做，请在编辑之前用这个回到原来的布局。",
-        "Delete_column": "想要删除一列吗？这里！",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "点击此处添加一个新面板。",
         "Reorder": "您可以使用拖放来移动任何您想要的面板。",
         "Data_type": "首先，请选择您想要使用的计量方式。",
@@ -2596,7 +2600,7 @@
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
       "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
       "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
-      "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "选择一名雇员"
   },
@@ -2720,7 +2724,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "New feature: Allagan Reports",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",

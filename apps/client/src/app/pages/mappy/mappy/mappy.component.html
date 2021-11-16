@@ -24,8 +24,8 @@
            [style.top.%]="+bnpc.cssCoords.y"
            [style.left.%]="+bnpc.cssCoords.x"
            nz-tooltip
-           [nzTooltipTitle]="bnpc.BNpcNameID | mobName | i18n">
-      <img [src]="getNodeIcon(node.NodeID)"
+           [nzTooltipTitle]="bnpc.BNpcNameID | i18nRow:'mobs' | i18n">
+      <img [src]="getNodeIcon(node.NodeID) | async"
            class="marker hover"
            *ngFor="let node of display.nodes; trackBy: trackByID"
            [style.width.px]="32"
@@ -35,7 +35,7 @@
            [style.top.%]="+node.cssCoords.y"
            [style.left.%]="+node.cssCoords.x"
            nz-tooltip
-           [nzTooltipTitle]="node.BNpcNameID | mobName | i18n">
+           [nzTooltipTitle]="node.BNpcNameID | i18nRow:'mobs' | i18n">
     </div>
 
     <div fxLayout="column">
@@ -49,7 +49,7 @@
       <nz-empty *ngIf="display.missingNodes.length === 0" [nzNotFoundContent]="'MAPPY.No_missing_nodes' | translate"></nz-empty>
       <ul>
         <li *ngFor="let node of display.missingNodes">
-          <span>{{node.id}} - {{node.zoneid | placeName | i18n}}</span>
+          <span>{{node.id}} - {{node.zoneid | i18nRow:'places' | i18n}}</span>
           <ul>
             <li *ngFor="let item of node.items">{{item | itemName | i18n}}</li>
           </ul>

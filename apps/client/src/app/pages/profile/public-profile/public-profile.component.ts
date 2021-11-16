@@ -109,7 +109,7 @@ export class PublicProfileComponent {
           summary: {
             1: dataDisplay.filter(row => row.ranking.rank === 1).length,
             2: dataDisplay.filter(row => row.ranking.rank === 2).length,
-            3: dataDisplay.filter(row => row.ranking.rank === 3).length,
+            3: dataDisplay.filter(row => row.ranking.rank === 3).length
           },
           data: dataDisplay
         };

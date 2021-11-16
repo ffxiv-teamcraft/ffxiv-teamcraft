@@ -4,7 +4,7 @@ import { ItemData } from '../../../model/garland-tools/item-data';
 import { DataType } from './data-type';
 import { ListRow } from '../model/list-row';
 import { ItemSource } from '../model/item-source';
-import { from, Observable, of } from 'rxjs';
+import { from, isObservable, Observable, of } from 'rxjs';
 import { last, map, mergeScan } from 'rxjs/operators';
 
 export const EXTRACTORS = new InjectionToken('EXTRACTORS');
@@ -59,10 +59,11 @@ export class DataExtractorService {
       return of(null);
     }
     let source$: Observable<any>;
-    if (!extractor.isAsync()) {
-      source$ = of(extractor.extract(id, data, row));
+    const extract$ = extractor.extract(id, data, row);
+    if (isObservable(extract$)) {
+      source$ = extract$;
     } else {
-      source$ = extractor.extract(id, data, row);
+      source$ = of(extract$);
     }
     return source$.pipe(
       map((extract: any) => {

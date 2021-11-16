@@ -9,7 +9,7 @@ import {
   SimulationService
 } from '../../../../core/simulation/simulation.service';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { CraftingRotation } from 'apps/client/src/app/model/other/crafting-rotation';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SettingsService } from '../../../../modules/settings/settings.service';
@@ -36,13 +36,13 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
     qualityColor: string
   }>>;
 
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
   constructor(private rotationsService: CraftingRotationService,
               private modalRef: NzModalRef, private simulationService: SimulationService,
               private settings: SettingsService, public translate: TranslateService) {
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
   }
 
   ngOnInit(): void {

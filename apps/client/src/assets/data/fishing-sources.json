@@ -16313,6 +16313,7 @@
   "29747": [
     {
       "spot": 243,
+      "hookset": 2,
       "tug": 1,
       "bait": 29714,
       "snagging": false,
@@ -17335,6 +17336,7 @@
   "29785": [
     {
       "spot": 239,
+      "hookset": 2,
       "tug": 1,
       "bait": 29715,
       "snagging": false,
@@ -17342,18 +17344,21 @@
     },
     {
       "spot": 239,
+      "hookset": 2,
       "tug": 1,
       "bait": 29716,
       "oceanFishingTime": 0
     },
     {
       "spot": 239,
+      "hookset": 2,
       "tug": 1,
       "bait": 29714,
       "oceanFishingTime": 0
     },
     {
       "spot": 239,
+      "hookset": 2,
       "tug": 1,
       "bait": 29717,
       "oceanFishingTime": 0
@@ -18049,6 +18054,7 @@
   "32063": [
     {
       "spot": 246,
+      "hookset": 2,
       "tug": 1,
       "bait": 29714,
       "snagging": false,
@@ -18056,18 +18062,21 @@
     },
     {
       "spot": 246,
+      "hookset": 2,
       "tug": 1,
       "bait": 29716,
       "oceanFishingTime": 0
     },
     {
       "spot": 246,
+      "hookset": 2,
       "tug": 1,
       "bait": 29717,
       "oceanFishingTime": 0
     },
     {
       "spot": 246,
+      "hookset": 2,
       "tug": 0,
       "bait": 29715,
       "oceanFishingTime": 0

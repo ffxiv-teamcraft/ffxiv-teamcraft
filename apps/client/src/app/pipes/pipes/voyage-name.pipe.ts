@@ -1,19 +1,20 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
+import { Observable } from 'rxjs';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { I18nName } from '../../model/common/i18n-name';
 
 @Pipe({
   name: 'voyageName'
 })
 export class VoyageNamePipe implements PipeTransform {
-  constructor(private data: LocalizedLazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
   }
 
-  transform(id: number, type: number): I18nNameLazy {
+  transform(id: number, type: number): Observable<I18nName> {
     if (type === 0) {
-      return this.data.getAirshipVoyageName(id);
+      return this.lazyData.getI18nName('airshipVoyages', id);
     } else if (type === 1) {
-      return this.data.getSubmarineVoyageName(id);
+      return this.lazyData.getI18nName('submarineVoyages', id);
     }
   }
 }

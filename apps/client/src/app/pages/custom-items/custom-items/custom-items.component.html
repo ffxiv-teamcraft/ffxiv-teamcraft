@@ -192,11 +192,11 @@
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.CRAFT.Job' | translate}}</nz-form-label>
                       <nz-form-control>
                         <nz-select [(ngModel)]="craft.jobId" (ngModelChange)="item.dirty = true" class="job-select">
-                          <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
+                          <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n"
                                      [nzValue]="job.id" nzCustomContent>
                             <img alt="" class="job-icon"
                                  src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-                            {{job.id | jobAbbr | i18n}}
+                            {{job.id | i18nRow:'jobAbbr' | i18n}}
                           </nz-option>
                         </nz-select>
                       </nz-form-control>
@@ -405,7 +405,7 @@
                           </div>
                           <div *ngIf="alarm.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                             <div *ngFor="let weather of alarm.weathersFrom">
-                              <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                              <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                                    nz-tooltip>
                             </div>
                           </div>
@@ -414,7 +414,7 @@
                           </div>
                           <div *ngIf="alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                             <div *ngFor="let weather of alarm.weathers">
-                              <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                              <img [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n" [src]="weather | weatherIcon" alt="{{weather | i18nRow:'weathers' | i18n}}"
                                    nz-tooltip>
                             </div>
                           </div>
@@ -433,7 +433,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.VENDORS.Npc_name' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <input [ngModel]="vendor.npcId | npcName | i18n" disabled nz-input type="text">
+                        <input [ngModel]="vendor.npcId | i18nRow:'npcs' | i18n" disabled nz-input type="text">
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>
@@ -493,7 +493,7 @@
                     <nz-form-item>
                       <nz-form-label>{{'CUSTOM_ITEMS.DETAILS.TRADES.Npc_name' | translate}}</nz-form-label>
                       <nz-form-control>
-                        <input [ngModel]="tradeSource.npcs[0].id | npcName | i18n" disabled nz-input type="text">
+                        <input [ngModel]="tradeSource.npcs[0].id | i18nRow:'npcs' | i18n" disabled nz-input type="text">
                       </nz-form-control>
                     </nz-form-item>
                     <nz-form-item>

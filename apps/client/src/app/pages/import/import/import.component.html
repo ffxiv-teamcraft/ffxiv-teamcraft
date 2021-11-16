@@ -14,7 +14,7 @@
       </div>
       <nz-radio-group *ngIf="row.itemData.isCraft()" [(ngModel)]="row.recipeId">
         <label *ngFor="let craft of row.itemData.item.craft" [nzValue]="craft.id.toString()" nz-radio-button>
-          {{craft.job | jobAbbr | i18n}} {{craft.lvl}}
+          {{craft.job | i18nRow:'jobAbbr' | i18n}} {{craft.lvl}}
         </label>
       </nz-radio-group>
     </div>

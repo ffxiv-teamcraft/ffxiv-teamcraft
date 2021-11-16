@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { SettingsService } from '../../../../modules/settings/settings.service';
 import { combineLatest } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
@@ -8,7 +8,7 @@ import { FishContextService } from '../../service/fish-context.service';
   selector: 'app-fish-hooksets',
   templateUrl: './fish-hooksets.component.html',
   styleUrls: ['./fish-hooksets.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishHooksetsComponent {
   public readonly loading$ = combineLatest([this.fishCtx.hooksetsByFish$, this.fishCtx.tugsByFish$]).pipe(map(([hook, tug]) => hook.loading || tug.loading));
@@ -41,5 +41,6 @@ export class FishHooksetsComponent {
     startWith([])
   );
 
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {}
+  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
+  }
 }

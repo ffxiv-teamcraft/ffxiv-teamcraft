@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'icon',
+  name: 'icon'
 })
 export class IconPipe implements PipeTransform {
   transform(id: number, fallback?: string): string {

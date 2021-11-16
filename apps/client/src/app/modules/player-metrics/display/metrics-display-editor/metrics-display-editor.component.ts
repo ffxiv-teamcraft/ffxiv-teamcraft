@@ -4,11 +4,11 @@ import { MetricType } from '../../model/metric-type';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../filters/metrics-display-filter';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { I18nName } from '../../../../model/common/i18n-name';
-import { debounceTime, map, startWith } from 'rxjs/operators';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { ProbeSource } from '../../model/probe-source';
 import { MetricDisplayComponent } from '../metric-display/metric-display.component';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-metrics-display-editor',
@@ -31,9 +31,6 @@ export class MetricsDisplayEditorComponent {
 
   filterNames = this.filters.map(filter => filter.getName());
 
-  // ItemFilter params
-  items: { id: number, name: I18nName }[];
-
   itemName$ = new BehaviorSubject<string>('');
 
   completionCache = {
@@ -48,15 +45,7 @@ export class MetricsDisplayEditorComponent {
   components: string[] = Object.keys(MetricDisplayComponent.COMPONENTS_REGISTRY);
 
   constructor(@Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
-              private lazyData: LazyDataService, private i18n: I18nToolsService) {
-    const allItems = this.lazyData.allItems;
-    this.items = Object.keys(this.lazyData.data.items)
-      .map(key => {
-        return {
-          id: +key,
-          name: allItems[key]
-        };
-      });
+              private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
   }
 
   getItemNameCompletion(name: string, itemIds: number[]): Observable<{ id: number, name: I18nName }[]> {
@@ -64,18 +53,19 @@ export class MetricsDisplayEditorComponent {
       this.completionCache.name = name;
       this.completionCache.completion = this.itemName$.pipe(
         debounceTime(500),
-        map(value => {
-          if (value.length < 2) {
-            return itemIds.map(id => {
-              return this.items.find(i => i.id === id);
-            });
-          } else {
-            return this.items.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
-          }
-        }),
-        startWith(itemIds.map(id => {
-          return this.items.find(i => i.id === id);
-        }))
+        switchMap(value => {
+          return this.lazyData.getSearchIndex('items').pipe(
+            map(items => {
+              if (value.length < 2) {
+                return itemIds.map(id => {
+                  return items.find(i => i.id === id);
+                });
+              } else {
+                return items.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
+              }
+            })
+          );
+        })
       );
     }
     return this.completionCache.completion;

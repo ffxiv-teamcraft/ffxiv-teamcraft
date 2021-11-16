@@ -362,7 +362,7 @@
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 메일이 발송되었습니다.",
   "ALARM": {
-    "Spawned": "{{itemName}}  출현 예정",
+    "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
     "Note": "메모"
   },
@@ -557,16 +557,17 @@
     "Gearset_priority": "우선순위",
     "Gearset_priority_explain": "주괴나 덩어리, 혹은 그 외 비공정 수리 재료와 같이 여러 제작 직업이 제작 가능한 레시피들을 선택하는 데 사용됩니다.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
-      "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 이제 프로필에서 코드를 제거하셔도 됩니다.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
     }
   },
   "LISTS": {
     "Load_archived": "보관된 목록 불러오기",
-    "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
@@ -721,6 +722,8 @@
     "Autofill_notification": "완료 알림",
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
@@ -1306,7 +1309,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Donation_button": "후원하기[1회]",
     "Buy_merch": "팀크래프트 상품 구매하기",
-    "Features_header": "시작하기 !",
+    "Features_header": "시작하기!",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
       "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
@@ -1314,12 +1317,12 @@
       "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다.",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV에 맞는 언어로 매크로를 번역할 수 있습니다."
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로를 번역할 수 있습니다."
     }
   },
   "UPDATE": {
-    "New_update_available": "새 업데이트가 있습니다! ",
-    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
+    "New_update_available": "새 업데이트가 있습니다!",
+    "New_update_available_desktop": "새로운 업데이트가 추가되었습니다!\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
     "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
     "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
@@ -1340,6 +1343,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
@@ -1360,7 +1364,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중"
+    "Loading_data": "아이템, 기술, 그 이상을 불러오는 중!"
   },
   "CUSTOM_ITEMS": {
     "Title": "사용자 지정 아이템",
@@ -1810,7 +1814,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
-    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다 !",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
@@ -2596,7 +2600,7 @@
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
-      "Loading_screen_message": "\"Brought to you by ...\" 로딩 메시지에 추가하고 싶은 이름, 자유부대명, 링크셸명 등 새 항목 추가! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "집사를 선택하세요"
   },
@@ -2770,7 +2774,7 @@
     "Status": "상태",
     "Count": "# 리포트 수",
     "Applied_count": "# 적용된 리포트 수",
-    "Fish_coverage": "Fishing coverage",
+    "Fish_coverage": "낚시 통계",
     "Items_with_no_source": "데이터가 없는 아이템",
     "Data_needs": "데이터가 필요한 아이템",
     "Open_reports": "리포트 페이지 열기",
@@ -2786,7 +2790,7 @@
     "Product_id": "상품 ID",
     "Product_id_explain": "상품 URL에서 \"/product/\" 바로 옆에 있는 게 상품 ID",
     "Open_item": "알라간 리포트에서 열기",
-    "Delete": "Delete",
+    "Delete": "삭제",
     "Voyage_rarity": "Rarity",
     "Rarity_Common": "Common",
     "Rarity_Voyage_exclusive": "Voyage exclusive",

@@ -38,7 +38,7 @@
           </nz-list-item-meta>
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div>{{npc.id | npcName | i18n}}</div>
+              <div>{{npc.id | i18nRow:'npcs' | i18n}}</div>
               <app-db-button [id]="npc.id" type="npc"></app-db-button>
             </div>
           </ng-template>
@@ -49,7 +49,7 @@
                 *ngIf="npc.mapId | closestAetheryte: npc.coords | async as aetheryte"
                 class="closest-tp">
                 <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
-                {{(aetheryte?.nameid) | placeName | i18n}}
+                {{(aetheryte?.nameid) | i18nRow:'places' | i18n}}
               </div>
             </div>
           </ng-template>

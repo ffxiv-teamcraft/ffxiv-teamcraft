@@ -1,22 +1,24 @@
-<table *ngIf="costs.length > 0">
-  <thead>
-  <tr>
-    <th class="table-cell">{{'GEARSETS.Currency' | translate}}</th>
-    <th class="table-cell">{{'GEARSETS.Amount_needed' | translate}}</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let row of costs">
-    <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <app-item-icon [itemId]="row.id" width="24"></app-item-icon>
-      <div>{{row.id | itemName | i18n}}</div>
-    </td>
-    <td class="amount table-cell">
-      {{row.amount | number:'1.0-0':translate.currentLang}}
-    </td>
-  </tr>
-  </tbody>
-</table>
-<app-fullpage-message *ngIf="costs.length === 0" fontSize="2rem" height="200px">
-  {{'GEARSETS.No_trades_needed' | translate}}
-</app-fullpage-message>
+<ng-container *ngIf="costs$ | async as costs">
+  <table *ngIf="costs.length > 0">
+    <thead>
+    <tr>
+      <th class="table-cell">{{'GEARSETS.Currency' | translate}}</th>
+      <th class="table-cell">{{'GEARSETS.Amount_needed' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of costs">
+      <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <app-item-icon [itemId]="row.id" width="24"></app-item-icon>
+        <div>{{row.id | itemName | i18n}}</div>
+      </td>
+      <td class="amount table-cell">
+        {{row.amount | number:'1.0-0':translate.currentLang}}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <app-fullpage-message *ngIf="costs.length === 0" fontSize="2rem" height="200px">
+    {{'GEARSETS.No_trades_needed' | translate}}
+  </app-fullpage-message>
+</ng-container>

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
-import { map, startWith, shareReplay } from 'rxjs/operators';
+import { SettingsService } from '../../../../modules/settings/settings.service';
+import { map, shareReplay, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { Observable } from 'rxjs';
 
@@ -16,7 +16,7 @@ interface FishDetailsStatsSummary {
   selector: 'app-fish-details-container',
   templateUrl: './fish-details-container.component.html',
   styleUrls: ['./fish-details-container.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishDetailsContainerComponent {
   public readonly loading$ = this.fishCtx.statisticsByFish$.pipe(map((res) => res.loading));
@@ -33,13 +33,14 @@ export class FishDetailsContainerComponent {
       max: res.data?.stats.aggregate.max.size / 10,
       avg: res.data?.stats.aggregate.avg.size / 10,
       gathering: res.data?.stats.aggregate.min.gathering,
-      snagging: res.data?.snagging,
+      snagging: res.data?.snagging
     })),
     startWith({}),
     shareReplay(1)
   );
 
-  constructor(public readonly settings: SettingsService, private readonly fishCtx: FishContextService) {}
+  constructor(public readonly settings: SettingsService, private readonly fishCtx: FishContextService) {
+  }
 
   public setSpotIdFilter(spotId: number) {
     this.fishCtx.setSpotId(spotId === -1 ? undefined : spotId);

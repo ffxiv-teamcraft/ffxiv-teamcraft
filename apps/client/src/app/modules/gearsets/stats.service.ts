@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BaseParam } from './base-param';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { environment } from '../../../environments/environment';
+import { combineLatest, EMPTY, Observable, of } from 'rxjs';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { expand, last, map, shareReplay, switchMap } from 'rxjs/operators';
+import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { LazyItemStat } from '../../lazy-data/model/lazy-item-stat';
+import { LazyItemSetBonus } from '../../lazy-data/model/lazy-item-set-bonus';
+import { LazyMateria } from '../../lazy-data/model/lazy-materia';
+import { Memoized } from '../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -115,195 +122,299 @@ export class StatsService {
     BaseParam.MIND
   ];
 
-  constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
+  constructor(private lazyData: LazyDataFacade, private materiasService: MateriaService) {
   }
 
-  public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): number[][] {
-    return this.getRelevantBaseStats(job)
+  public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): Observable<number[][]> {
+    return combineLatest(this.getRelevantBaseStats(job)
       .map(baseParamId => {
-        return [
-          baseParamId,
-          this.materiasService.getTotalStat(this.getStartingValue(equipmentPiece, baseParamId), equipmentPiece, baseParamId),
-          this.materiasService.getItemCapForStat(equipmentPiece.itemId, baseParamId),
-          this.getStartingValue(equipmentPiece, baseParamId)
-        ];
-      });
+        return this.getStartingValue(equipmentPiece, baseParamId).pipe(
+          switchMap(startingValue => {
+            return combineLatest([
+              of(baseParamId),
+              this.materiasService.getTotalStat(startingValue, equipmentPiece, baseParamId),
+              this.materiasService.getItemCapForStat(equipmentPiece.itemId, baseParamId),
+              of(startingValue)
+            ]);
+          })
+        );
+      })
+    );
   }
 
-  public getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): number {
-    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
-    const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
-    if (matchingStat) {
-      if (equipmentPiece.hq) {
-        return matchingStat.HQ;
-      } else {
-        return matchingStat.NQ;
-      }
-    }
-    return 0;
-  }
-
-  public getStats(set: TeamcraftGearset, level: number, tribe: number, food?: any): { id: number, value: number }[] {
-    const stats = this.getRelevantBaseStats(set.job)
-      .map(stat => {
-        return {
-          id: stat,
-          value: this.getBaseValue(stat, set.job, level, tribe)
-        };
-      });
-    const possibleSetBonuses = [];
-    Object.values(set)
-      .filter(value => value && value.itemId !== undefined)
-      .forEach((equipmentPiece: EquipmentPiece) => {
-        const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
-        const itemSetBonuses = this.lazyData.data.itemSetBonuses[equipmentPiece.itemId];
-        if (itemSetBonuses) {
-          possibleSetBonuses.push(itemSetBonuses);
-        }
-        // If this item has no stats, return !
-        if (!itemStats) {
-          return;
-        }
-        itemStats
-          .filter((stat: any) => stat.ID !== undefined)
-          .forEach((stat: any) => {
-            let statsRow = stats.find(s => s.id === stat.ID);
-            if (statsRow === undefined) {
-              stats.push({
-                id: stat.ID,
-                value: this.getBaseValue(stat.ID, set.job, level, tribe)
-              });
-              statsRow = stats[stats.length - 1];
-            }
-            if (equipmentPiece.hq) {
-              statsRow.value += stat.HQ;
-            } else {
-              statsRow.value += stat.NQ;
-            }
-          });
-        equipmentPiece.materias
-          .filter(materia => materia > 0 && this.materiasService.getMateria(materia) !== undefined)
-          .forEach((materiaId, index) => {
-            const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
-            const materia = this.materiasService.getMateria(materiaId);
-            let statsRow = stats.find(s => s.id === materia.baseParamId);
-            if (statsRow === undefined) {
-              stats.push({
-                id: materia.baseParamId,
-                value: this.getBaseValue(materia.baseParamId, set.job, level, tribe)
-              });
-              statsRow = stats[stats.length - 1];
-            }
-            statsRow.value += bonus.value;
-          });
-      });
-    if (food) {
-      Object.values<any>(food.Bonuses).forEach(bonus => {
-        let bonusValue: number;
-        const stat = stats.find(s => s.id === bonus.ID);
-        if (bonus.Relative) {
-          const baseValue = stat ? stat.value : 0;
-          const multiplier = (food.HQ ? bonus.ValueHQ : bonus.Value) / 100;
-          const max = food.HQ ? bonus.MaxHQ : bonus.Max;
-          bonusValue = Math.min(Math.floor(baseValue * multiplier), max);
-        } else {
-          bonusValue = food.HQ ? bonus.ValueHQ : bonus.Value;
-        }
-        if (stat) {
-          stat.value += bonusValue;
-        }
-      });
-    }
-
-    // Process set bonuses
-    possibleSetBonuses.forEach(possibleSetBonus => {
-      const sameSetPieces = possibleSetBonuses.filter(b => b.itemSeriesId === possibleSetBonus.itemSeriesId).length;
-      possibleSetBonus.bonuses.forEach(bonus => {
-        if (sameSetPieces >= bonus.amountRequired) {
-          let statsRow = stats.find(s => s.id === bonus.baseParam);
-          if (statsRow === undefined) {
-            stats.push({
-              id: bonus.baseParam,
-              value: this.getBaseValue(bonus.baseParamId, set.job, level, tribe)
-            });
-            statsRow = stats[stats.length - 1];
+  public getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): Observable<number> {
+    return this.lazyData.getRow('itemStats', equipmentPiece.itemId, []).pipe(
+      map(itemStats => {
+        const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
+        if (matchingStat) {
+          if (equipmentPiece.hq) {
+            return matchingStat.HQ;
+          } else {
+            return matchingStat.NQ;
           }
-          statsRow.value += bonus.value;
         }
-      });
-    });
-
-    if (set.job >= 8 && set.job <= 18) {
-      // Nobody cares about vitality for DoH/W and it lets us have more space if we take it out
-      return stats.filter(s => s.id !== BaseParam.VITALITY);
-    }
-    return stats;
+        return 0;
+      })
+    );
   }
 
-  private getNextBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): number {
-    const baseValue = this.getStatValue(displayName, level, job, stats);
-    let currentValue = 0;
-    let currentBonus = 0;
-    while (Math.abs(currentBonus) < 100 && currentValue <= baseValue) {
-      currentBonus++;
-      currentValue = this.getStatValue(displayName, level, job, stats, currentBonus);
-    }
-    return currentBonus;
+  public getStats(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{ id: number, value: number }[]> {
+    return safeCombineLatest(this.getRelevantBaseStats(set.job).map(stat => {
+      return this.getBaseValue(stat, set.job, level, tribe).pipe(
+        map(value => {
+          return { id: stat, value };
+        })
+      );
+    })).pipe(
+      switchMap(statsSeed => {
+        return safeCombineLatest(
+          Object.values(set)
+            .filter(value => value && value.itemId !== undefined)
+            .map((value: EquipmentPiece) => {
+              return combineLatest([this.lazyData.getRow('itemStats', value.itemId, []), this.lazyData.getRow('itemSetBonuses', value.itemId, null)]).pipe(
+                map(([itemStats, bonuses]) => [value, itemStats, bonuses])
+              );
+            })
+        ).pipe(
+          switchMap((pieces: Array<[EquipmentPiece, LazyItemStat[], LazyItemSetBonus]>) => {
+            return safeCombineLatest(pieces.map(([piece, ...rest]) => {
+              return safeCombineLatest(
+                piece.materias
+                  .filter(materia => materia > 0)
+                  .map((materia, index) => combineLatest([this.materiasService.getMateria(materia), this.materiasService.getMateriaBonus(piece, materia, index)]))
+              ).pipe(
+                map(materias => {
+                  return [piece, materias, ...rest];
+                })
+              );
+            }));
+          }),
+          switchMap((pieces: Array<[EquipmentPiece, [LazyMateria, { overcapped: boolean, value: number }][], LazyItemStat[], LazyItemSetBonus]>) => {
+            const statsToCompute: Record<number, Observable<number>> = {};
+            pieces.forEach(([equipmentPiece, materias, itemStats, itemSetBonuses]) => {
+              itemStats
+                .filter((stat) => stat.ID !== undefined)
+                .forEach(stat => {
+                  if (!statsToCompute[stat.ID]) {
+                    statsToCompute[stat.ID] = this.getBaseValue(stat.ID, set.job, level, tribe);
+                  }
+                });
+              materias.forEach(([materia, bonus]) => {
+                if (!statsToCompute[materia.baseParamId]) {
+                  statsToCompute[materia.baseParamId] = this.getBaseValue(materia.baseParamId, set.job, level, tribe);
+                }
+              });
+
+              if (itemSetBonuses) {
+                itemSetBonuses.bonuses.forEach((bonus) => {
+                  if (!statsToCompute[bonus.baseParam]) {
+                    statsToCompute[bonus.baseParam] = this.getBaseValue(bonus.baseParam, set.job, level, tribe);
+                  }
+                });
+              }
+            });
+
+            return safeCombineLatest(Object.entries(statsToCompute).map(([key, observable]) => {
+              return observable.pipe(
+                map(value => [key, value])
+              );
+            })).pipe(
+              map(res => {
+                const baseValues = res.reduce((acc, [key, value]) => {
+                  return {
+                    ...acc,
+                    [key]: value
+                  };
+                }, {});
+                return {
+                  pieces,
+                  baseValues
+                };
+              })
+            );
+          }),
+          map(({ pieces, baseValues }) => {
+            return pieces.reduce((acc, [equipmentPiece, materias, itemStats, itemSetBonuses]) => {
+              if (itemSetBonuses) {
+                acc.possibleSetBonuses.push(itemSetBonuses);
+              }
+              if (!itemStats) {
+                return acc;
+              }
+              itemStats
+                .filter((stat) => stat.ID !== undefined)
+                .forEach((stat) => {
+                  let statsRow = acc.stats.find(s => s.id === stat.ID);
+                  if (statsRow === undefined) {
+                    acc.stats.push({
+                      id: stat.ID,
+                      value: baseValues[stat.ID]
+                    });
+                    statsRow = acc.stats[acc.stats.length - 1];
+                  }
+                  if (equipmentPiece.hq) {
+                    statsRow.value += stat.HQ;
+                  } else {
+                    statsRow.value += stat.NQ;
+                  }
+                });
+              materias.forEach(([materia, bonus]) => {
+                let statsRow = acc.stats.find(s => s.id === materia.baseParamId);
+                if (statsRow === undefined) {
+                  acc.stats.push({
+                    id: materia.baseParamId,
+                    value: baseValues[materia.baseParamId]
+                  });
+                  statsRow = acc.stats[acc.stats.length - 1];
+                }
+                statsRow.value += bonus.value;
+              });
+              return acc;
+            }, {
+              possibleSetBonuses: [],
+              stats: statsSeed,
+              baseValues
+            });
+          }),
+          map(acc => {
+            const stats = acc.stats;
+            const baseValues = acc.baseValues;
+            if (food) {
+              Object.values<any>(food.Bonuses).forEach(bonus => {
+                let bonusValue: number;
+                const stat = stats.find(s => s.id === bonus.ID);
+                if (bonus.Relative) {
+                  const baseValue = stat ? stat.value : 0;
+                  const multiplier = (food.HQ ? bonus.ValueHQ : bonus.Value) / 100;
+                  const max = food.HQ ? bonus.MaxHQ : bonus.Max;
+                  bonusValue = Math.min(Math.floor(baseValue * multiplier), max);
+                } else {
+                  bonusValue = food.HQ ? bonus.ValueHQ : bonus.Value;
+                }
+                if (stat) {
+                  stat.value += bonusValue;
+                }
+              });
+            }
+
+            // Process set bonuses
+            acc.possibleSetBonuses.forEach(possibleSetBonus => {
+              const sameSetPieces = acc.possibleSetBonuses.filter(b => b.itemSeriesId === possibleSetBonus.itemSeriesId).length;
+              possibleSetBonus.bonuses.forEach(bonus => {
+                if (sameSetPieces >= bonus.amountRequired) {
+                  let statsRow = stats.find(s => s.id === bonus.baseParam);
+                  if (statsRow === undefined) {
+                    stats.push({
+                      id: bonus.baseParam,
+                      value: baseValues[bonus.baseParamId]
+                    });
+                    statsRow = stats[stats.length - 1];
+                  }
+                  statsRow.value += bonus.value;
+                }
+              });
+            });
+
+            if (set.job >= 8 && set.job <= 18) {
+              // Nobody cares about vitality for DoH/W and it lets us have more space if we take it out
+              return stats.filter(s => s.id !== BaseParam.VITALITY);
+            }
+            return stats;
+          })
+        );
+      })
+    );
   }
 
-
-  private getPreviousBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): number {
-    const baseValue = this.getStatValue(displayName, level, job, stats);
-    let currentValue = Infinity;
-    let currentBonus = 0;
-    while (Math.abs(currentBonus) < 500 && currentValue >= baseValue) {
-      currentBonus--;
-      currentValue = this.getStatValue(displayName, level, job, stats, currentBonus);
-    }
-    return currentBonus;
+  private getNextBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
+    return this.getStatValue(displayName, level, job, stats).pipe(
+      map(baseValue => ([baseValue, 0, 0])),
+      expand(([baseValue, currentValue, currentBonus]) => {
+        if (Math.abs(currentBonus) < 100 && currentValue <= baseValue) {
+          currentBonus++;
+          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
+            map(newValue => ([baseValue, newValue, currentBonus]))
+          );
+        }
+        return EMPTY;
+      }),
+      last(),
+      map(([, , bonus]) => bonus)
+    );
   }
 
-  public getBaseValue(baseParamId: number, job: number, level: number, tribe: number) {
-    if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job))
-        + this.getTribeBonus(baseParamId, tribe)
-        + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
-    }
-    if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job))
-        + this.getTribeBonus(baseParamId, tribe)
-        + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
-    }
+  private getPreviousBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
+    return this.getStatValue(displayName, level, job, stats).pipe(
+      map(baseValue => ([baseValue, Infinity, 0])),
+      expand(([baseValue, currentValue, currentBonus]) => {
+        if (Math.abs(currentBonus) < 100 && currentValue >= baseValue) {
+          currentBonus--;
+          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
+            map(newValue => ([baseValue, newValue, currentBonus]))
+          );
+        }
+        return EMPTY;
+      }),
+      last(),
+      map(([, , bonus]) => bonus)
+    );
+  }
+
+  @Memoized()
+  public getBaseValue(baseParamId: number, job: number, level: number, tribe: number): Observable<number> {
     if (baseParamId === BaseParam.CP) {
-      return 180;
+      return of(180);
     }
     if (baseParamId === BaseParam.GP) {
-      return 400;
+      return of(400);
     }
-    return 0;
+    return combineLatest([
+      this.getModifier(baseParamId, job),
+      this.getTribeBonus(baseParamId, tribe)
+    ]).pipe(
+      map(([modifier, tribeBonus]) => {
+        if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
+          return Math.floor(StatsService.LEVEL_TABLE[level][0] * modifier)
+            + tribeBonus
+            + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
+        }
+        if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
+          return Math.floor(StatsService.LEVEL_TABLE[level][1] * modifier)
+            + tribeBonus
+            + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
+        }
+        return 0;
+      }),
+      shareReplay(1)
+    );
+
   }
 
-  private getModifier(baseParamId: number, job: number): number {
-    switch (baseParamId) {
-      case BaseParam.DEXTERITY:
-        return this.lazyData.data.classJobsModifiers[job].ModifierDexterity / 100;
-      case BaseParam.HP:
-        return this.lazyData.data.classJobsModifiers[job].ModifierHitPoints / 100;
-      case BaseParam.INTELLIGENCE:
-        return this.lazyData.data.classJobsModifiers[job].ModifierIntelligence / 100;
-      case BaseParam.MP:
-        return this.lazyData.data.classJobsModifiers[job].ModifierManaPoints / 100;
-      case BaseParam.MIND:
-        return this.lazyData.data.classJobsModifiers[job].ModifierMind / 100;
-      case BaseParam.PIETY:
-        return this.lazyData.data.classJobsModifiers[job].ModifierPiety / 100;
-      case BaseParam.STRENGTH:
-        return this.lazyData.data.classJobsModifiers[job].ModifierStrength / 100;
-      case BaseParam.VITALITY:
-        return this.lazyData.data.classJobsModifiers[job].ModifierVitality / 100;
-      default:
-        return 1;
-    }
+  private getModifier(baseParamId: number, job: number): Observable<number> {
+    return this.lazyData.getRow('classJobsModifiers', job).pipe(
+      map(modifiers => {
+        switch (baseParamId) {
+          case BaseParam.DEXTERITY:
+            return modifiers.ModifierDexterity / 100;
+          case BaseParam.HP:
+            return modifiers.ModifierHitPoints / 100;
+          case BaseParam.INTELLIGENCE:
+            return modifiers.ModifierIntelligence / 100;
+          case BaseParam.MP:
+            return modifiers.ModifierManaPoints / 100;
+          case BaseParam.MIND:
+            return modifiers.ModifierMind / 100;
+          case BaseParam.PIETY:
+            return modifiers.ModifierPiety / 100;
+          case BaseParam.STRENGTH:
+            return modifiers.ModifierStrength / 100;
+          case BaseParam.VITALITY:
+            return modifiers.ModifierVitality / 100;
+          default:
+            return 1;
+        }
+      })
+    );
   }
 
   public getRelevantBaseStats(job: number): number[] {
@@ -438,12 +549,16 @@ export class StatsService {
     return 8;
   }
 
-  private getTribeBonus(baseParamId: number, tribe: number): number {
-    const abbr = this.getStatAbbr(baseParamId);
-    if (abbr === null) {
-      return 0;
-    }
-    return +this.lazyData.data.tribes[tribe][abbr];
+  private getTribeBonus(baseParamId: number, tribe: number): Observable<number> {
+    return this.lazyData.getRow('tribes', tribe).pipe(
+      map(tribeData => {
+        const abbr = this.getStatAbbr(baseParamId);
+        if (abbr === null) {
+          return 0;
+        }
+        return +tribeData[abbr];
+      })
+    );
   }
 
   private getStatAbbr(baseParamId: number): string | null {
@@ -468,114 +583,133 @@ export class StatsService {
     return null;
   }
 
-  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] {
-    const display: { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] = [
-      {
-        baseParamIds: [0],
-        name: 'Ilvl',
-        value: this.getAvgIlvl(set)
-      }
-    ];
+  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{ baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[]> {
+    return this.getAvgIlvl(set).pipe(
+      switchMap(avgIlvl => {
+        const display: { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] = [
+          {
+            baseParamIds: [0],
+            name: 'Ilvl',
+            value: avgIlvl
+          }
+        ];
 
-    if (set.isCombatSet()) {
-      const stats = this.getStats(set, level, tribe, food);
-      display.push(...[
-        {
-          baseParamIds: [BaseParam.VITALITY],
-          name: 'HP',
-          value: this.getStatValue('HP', level, set.job, stats),
-          next: this.getNextBreakpoint('HP', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('HP', level, set.job, stats)
-        },
-        {
-          baseParamIds: [BaseParam.DIRECT_HIT_RATE],
-          name: 'Direct_hit_chances',
-          value: this.getStatValue('Direct_hit_chances', level, set.job, stats),
-          next: this.getNextBreakpoint('Direct_hit_chances', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('Direct_hit_chances', level, set.job, stats),
-          suffix: '%'
-        },
-        {
-          baseParamIds: [BaseParam.CRITICAL_HIT],
-          name: 'Critical_hit_chances',
-          value: this.getStatValue('Critical_hit_chances', level, set.job, stats),
-          next: this.getNextBreakpoint('Critical_hit_chances', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('Critical_hit_chances', level, set.job, stats),
-          suffix: '%'
-        },
-        {
-          baseParamIds: [BaseParam.CRITICAL_HIT],
-          name: 'Critical_hit_multiplier',
-          value: this.getStatValue('Critical_hit_multiplier', level, set.job, stats),
-          next: this.getNextBreakpoint('Critical_hit_multiplier', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('Critical_hit_multiplier', level, set.job, stats),
-          suffix: '%'
-        },
-        {
-          baseParamIds: [BaseParam.DETERMINATION],
-          name: 'Determination_bonus',
-          value: this.getStatValue('Determination_bonus', level, set.job, stats),
-          next: this.getNextBreakpoint('Determination_bonus', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('Determination_bonus', level, set.job, stats),
-          suffix: '%'
-        },
-        {
-          baseParamIds: [BaseParam.SKILL_SPEED, BaseParam.SPELL_SPEED],
-          name: 'GCD',
-          value: this.getStatValue('GCD', level, set.job, stats),
-          next: this.getNextBreakpoint('GCD', level, set.job, stats),
-          previous: this.getPreviousBreakpoint('GCD', level, set.job, stats),
-          suffix: 's'
+        if (set.isCombatSet()) {
+          return this.getStats(set, level, tribe, food).pipe(
+            switchMap(stats => {
+              return combineLatest([
+                {
+                  baseParamIds: [BaseParam.VITALITY],
+                  name: 'HP'
+                },
+                {
+                  baseParamIds: [BaseParam.DIRECT_HIT_RATE],
+                  name: 'Direct_hit_chances',
+                  suffix: '%'
+                },
+                {
+                  baseParamIds: [BaseParam.CRITICAL_HIT],
+                  name: 'Critical_hit_chances',
+                  suffix: '%'
+                },
+                {
+                  baseParamIds: [BaseParam.CRITICAL_HIT],
+                  name: 'Critical_hit_multiplier',
+                  suffix: '%'
+                },
+                {
+                  baseParamIds: [BaseParam.DETERMINATION],
+                  name: 'Determination_bonus',
+                  suffix: '%'
+                },
+                {
+                  baseParamIds: [BaseParam.SKILL_SPEED, BaseParam.SPELL_SPEED],
+                  name: 'GCD',
+                  suffix: 's'
+                }
+              ].map(stat => {
+                return combineLatest([
+                  this.getStatValue(stat.name, level, set.job, stats),
+                  this.getNextBreakpoint(stat.name, level, set.job, stats),
+                  this.getPreviousBreakpoint(stat.name, level, set.job, stats)
+                ]).pipe(
+                  map(([value, next, previous]) => {
+                    return {
+                      ...stat,
+                      value,
+                      next,
+                      previous
+                    };
+                  })
+                );
+              })).pipe(
+                map(statsDisplay => {
+                  return [
+                    ...display,
+                    ...statsDisplay
+                  ];
+                })
+              );
+            })
+          );
         }
-      ]);
-    }
-    return display;
+        return of(display);
+      })
+    );
   }
 
   /**
    * Stats computing methods here, source: http://allaganstudies.akhmorning.com/guide/parameters/
    */
 
-  public getAvgIlvl(set: TeamcraftGearset): number {
-    const withoutOffHand = ['mainHand', 'head', 'earRings', 'chest', 'necklace', 'gloves', 'bracelet', 'belt', 'ring1', 'legs', 'ring2', 'feet']
-      .filter(key => set[key])
-      .reduce((acc, row) => {
-        return acc + this.lazyData.data.ilvls[set[row].itemId];
-      }, 0);
+  public getAvgIlvl(set: TeamcraftGearset): Observable<number> {
+    return this.lazyData.getEntry('ilvls').pipe(
+      map(ilvls => {
+        const withoutOffHand = ['mainHand', 'head', 'earRings', 'chest', 'necklace', 'gloves', 'bracelet', 'belt', 'ring1', 'legs', 'ring2', 'feet']
+          .filter(key => set[key])
+          .reduce((acc, row) => {
+            return acc + ilvls[set[row].itemId];
+          }, 0);
 
-    if (set.offHand) {
-      return Math.floor((withoutOffHand + this.lazyData.data.ilvls[set.offHand.itemId]) / 13);
-    }
-    return Math.floor(withoutOffHand / 12);
+        if (set.offHand) {
+          return Math.floor((withoutOffHand + ilvls[set.offHand.itemId]) / 13);
+        }
+        return Math.floor(withoutOffHand / 12);
+      })
+    );
   }
 
-  private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): number {
+  private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): Observable<number> {
     switch (displayName) {
       case 'HP':
         return this.getMaxHp(job, level, stats.find(stat => stat.id === BaseParam.VITALITY).value + statBonus);
       case 'Direct_hit_chances':
-        return Math.floor(this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value + statBonus)) / 10;
+        return of(Math.floor(this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value + statBonus)) / 10);
       case 'Critical_hit_chances':
-        return Math.floor(this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10;
+        return of(Math.floor(this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10);
       case 'Critical_hit_multiplier':
-        return Math.floor(this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10;
+        return of(Math.floor(this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10);
       case 'Determination_bonus':
-        return Math.floor(this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value + statBonus)) / 10;
+        return of(Math.floor(this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value + statBonus)) / 10);
       case 'GCD':
-        return Math.floor(this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value + statBonus)) / 1000;
+        return of(Math.floor(this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value + statBonus)) / 1000);
       default:
-        return 0;
+        return of(0);
     }
   }
 
-  private getMaxHp(job: number, level: number, vitality: number): number {
+  private getMaxHp(job: number, level: number, vitality: number): Observable<number> {
     if (level > environment.maxLevel) {
-      return 0;
+      return of(0);
     }
-    const levelModHP = StatsService.LEVEL_TABLE[level][3];
-    const levelModMain = StatsService.LEVEL_TABLE[level][0];
-    const jobMod = this.lazyData.data.classJobsModifiers[job].ModifierHitPoints;
-    return Math.floor(levelModHP * (jobMod / 100)) + Math.floor((vitality - levelModMain) * 20.5);
+    return this.lazyData.getRow('classJobsModifiers', job).pipe(
+      map(modifiers => {
+        const levelModHP = StatsService.LEVEL_TABLE[level][3];
+        const levelModMain = StatsService.LEVEL_TABLE[level][0];
+        const jobMod = modifiers.ModifierHitPoints;
+        return Math.floor(levelModHP * (jobMod / 100)) + Math.floor((vitality - levelModMain) * 20.5);
+      })
+    );
   }
 
   private getDirectHitChances(level: number, directHit: number): number {

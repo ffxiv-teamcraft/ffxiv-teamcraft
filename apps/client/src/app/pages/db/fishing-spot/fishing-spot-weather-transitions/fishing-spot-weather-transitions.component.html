@@ -16,12 +16,12 @@
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <div>
           <img src="{{ row.previousWeatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.previousWeatherId | weatherName | i18n }}</span>
+          <span>{{ row.previousWeatherId | i18nRow:'weathers' | i18n }}</span>
         </div>
         <i nz-icon nzType="right" nzTheme="outline"></i>
         <div>
           <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.weatherId | weatherName | i18n }}</span>
+          <span>{{ row.weatherId | i18nRow:'weathers' | i18n }}</span>
         </div>
       </div>
       <div>

@@ -3,15 +3,15 @@
   "compilerOptions": {
     "importHelpers": true,
     "module": "esnext",
-    "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
+    "skipLibCheck": true,
     "target": "es5",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom", "esnext.asynciterable", "esnext.array"],
+    "lib": ["es2017", "dom", "esnext.asynciterable", "esnext.array", "es2020.bigint"],
     "baseUrl": ".",
     "paths": {},
     "rootDir": "."

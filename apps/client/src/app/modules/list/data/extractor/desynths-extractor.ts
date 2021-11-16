@@ -3,16 +3,17 @@ import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { Observable } from 'rxjs';
 
 export class DesynthsExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
     super(gt);
   }
 
   isAsync(): boolean {
-    return false;
+    return true;
   }
 
   getDataType(): DataType {
@@ -20,11 +21,11 @@ export class DesynthsExtractor extends AbstractExtractor<number[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return this.lazyData.data.desynth[item.id] !== undefined;
+    return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData): number[] {
-    return this.lazyData.data.desynth[item.id];
+  protected doExtract(item: Item, itemData: ItemData): Observable<number[]> {
+    return this.lazyData.getRow('desynth', item.id);
   }
 
 }

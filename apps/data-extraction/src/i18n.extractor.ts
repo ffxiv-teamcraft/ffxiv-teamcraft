@@ -17,10 +17,10 @@ export class I18nExtractor extends AbstractExtractor {
       next: rows => {
         rows.forEach(entity => {
           entites[entity.ID] = {
-            en: entity[`${this.nameColumn}en`],
-            ja: entity[`${this.nameColumn}ja`],
-            de: entity[`${this.nameColumn}de`],
-            fr: entity[`${this.nameColumn}fr`]
+            en: entity[`${this.nameColumn}en`].toString(),
+            ja: entity[`${this.nameColumn}ja`].toString(),
+            de: entity[`${this.nameColumn}de`].toString(),
+            fr: entity[`${this.nameColumn}fr`].toString()
           };
           Object.keys(this.additionalColumns)
             .forEach(key => {

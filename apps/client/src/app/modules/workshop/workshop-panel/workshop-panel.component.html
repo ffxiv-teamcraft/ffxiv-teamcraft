@@ -30,7 +30,7 @@
         </button>
         <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
                 [nzPopconfirmTitle]="'WORKSHOP.Delete_message' | translate"
-                [nzType]="'danger'" nz-button nz-popconfirm>
+                nzDanger nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
         <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"

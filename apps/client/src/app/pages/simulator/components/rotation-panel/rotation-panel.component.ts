@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { CraftingAction, GearSet, Simulation, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
+import { CraftingAction, GearSet, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { filter, map, shareReplay, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -26,9 +26,9 @@ import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
-import { environment } from 'apps/client/src/environments/environment';
+import { SettingsService } from '../../../../modules/settings/settings.service';
+import { environment } from '../../../../../environments/environment';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -38,52 +38,24 @@ import { environment } from 'apps/client/src/environments/environment';
 })
 export class RotationPanelComponent implements OnInit {
 
-  @Input()
-  public set rotation(rotation: CraftingRotation) {
-    this.rotation$.next(rotation);
-  }
-
-  public get rotation(): CraftingRotation {
-    return this.rotation$.value;
-  }
-
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
-
-  @Input()
-  public set simulationSet(set: GearSet) {
-    this.simulationSet$.next(set);
-  }
-
   simulationSet$: ReplaySubject<GearSet> = new ReplaySubject<GearSet>();
-
   actions$: Observable<CraftingAction[]>;
-
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => rotation.getPermissionLevel(userId))
   );
-
   public user$ = this.authFacade.user$;
-
   public customLink$: Observable<CustomLink>;
-
-  private syncLinkUrl: string;
-
   @Input()
   public publicDisplay = false;
-
-  public foods: Consumable[] = [];
+  public foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
+    map(foods => this.consumablesService.fromLazyData(foods)),
+    shareReplay(1)
+  );
   public medicines: Consumable[] = [];
   public freeCompanyActions: FreeCompanyAction[] = [];
-
   public simulation$: Observable<SimulationResult>;
-
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
-  private get registry() {
-    return this.simulator.CraftingActionsRegistry;
-  }
+  private syncLinkUrl: string;
 
   constructor(private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
@@ -92,7 +64,7 @@ export class RotationPanelComponent implements OnInit {
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
               public platformService: PlatformService, private simulationService: SimulationService,
-              private settings: SettingsService, private lazyData: LazyDataService) {
+              private settings: SettingsService, private lazyData: LazyDataFacade) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
@@ -104,31 +76,55 @@ export class RotationPanelComponent implements OnInit {
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
-
-    this.foods = consumablesService.fromLazyData(this.lazyData.data.foods);
     this.medicines = consumablesService.fromData(medicines);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions);
 
   }
 
+  public get rotation(): CraftingRotation {
+    return this.rotation$.value;
+  }
+
+  @Input()
+  public set rotation(rotation: CraftingRotation) {
+    this.rotation$.next(rotation);
+  }
+
+  @Input()
+  public set simulationSet(set: GearSet) {
+    this.simulationSet$.next(set);
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
   ngOnInit(): void {
-    this.simulation$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.simulationSet$]).pipe(
+    this.simulation$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.simulationSet$, this.lazyData.getRecipes()]).pipe(
       filter(([rotation, , stats]) => rotation !== null && stats !== null),
-      map(([rotation, gearSets, stats]) => {
-        const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
-        const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
-        const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
-        const crafterStats = new this.simulator.CrafterStats(
-          stats.jobId,
-          stats.craftsmanship + this.getBonusValue('Craftsmanship', stats.craftsmanship, food, medicine, fcActions),
-          stats.control + this.getBonusValue('Control', stats.craftsmanship, food, medicine, fcActions),
-          stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
-          stats.specialist,
-          stats.level,
-          gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] :
-            [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
-        const recipe = this.lazyData.data.recipes.find(r => r.id === rotation.recipe.id);
-        return new this.simulator.Simulation(recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+      switchMap(([rotation, gearSets, stats, recipes]) => {
+        return this.foods$.pipe(
+          map(foods => {
+            const food = foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
+            const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
+            const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
+            const crafterStats = new this.simulator.CrafterStats(
+              stats.jobId,
+              stats.craftsmanship + this.getBonusValue('Craftsmanship', stats.craftsmanship, food, medicine, fcActions),
+              stats.control + this.getBonusValue('Control', stats.craftsmanship, food, medicine, fcActions),
+              stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
+              stats.specialist,
+              stats.level,
+              gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] :
+                [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
+            const recipe = recipes.find(r => r.id === rotation.recipe.id);
+            return new this.simulator.Simulation(recipe as unknown as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+          })
+        );
       })
     );
   }
@@ -200,20 +196,23 @@ export class RotationPanelComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation): void {
-    const foodsData = this.consumablesService.fromLazyData(this.lazyData.data.foods);
-    const medicinesData = this.consumablesService.fromData(medicines);
-    const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
-    this.dialog.create({
-      nzContent: MacroPopupComponent,
-      nzComponentParams: {
-        rotation: this.registry.deserializeRotation(rotation.rotation),
-        job: rotation.recipe?.job,
-        food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
-        medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
-        freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
-      },
-      nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
-      nzFooter: null
+    this.foods$.pipe(
+      first()
+    ).subscribe(foodsData => {
+      const medicinesData = this.consumablesService.fromData(medicines);
+      const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
+      this.dialog.create({
+        nzContent: MacroPopupComponent,
+        nzComponentParams: {
+          rotation: this.registry.deserializeRotation(rotation.rotation),
+          job: rotation.recipe?.job,
+          food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
+          medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
+          freeCompanyActions: freeCompanyActionsData.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1)
+        },
+        nzTitle: this.translate.instant('SIMULATOR.Generate_ingame_macro'),
+        nzFooter: null
+      });
     });
   }
 

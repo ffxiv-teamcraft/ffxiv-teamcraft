@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { Craft } from '../../../../model/garland-tools/craft';
 import {
+  catchError,
   debounceTime,
   distinctUntilChanged,
   distinctUntilKeyChanged,
@@ -25,7 +26,6 @@ import { medicines } from '../../../../core/data/sources/medicines';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { BonusType } from '../../model/consumable-bonus';
 import { DefaultConsumables } from '../../../../model/user/default-consumables';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
@@ -70,8 +70,10 @@ import {
 } from '../../../../core/simulation/simulation.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { CommunityRotationFinderPopupComponent } from '../community-rotation-finder-popup/community-rotation-finder-popup.component';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
+import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-simulator',
@@ -84,61 +86,45 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
   public custom = false;
-
-  @Input()
-  public set recipe(recipe: Craft) {
-    this.recipe$.next(recipe);
-    this._recipe = recipe;
-    if (recipe.id) {
-      this._recipeId = recipe.id;
-    }
-  }
-
   @Input()
   public itemId: number;
-
   @Input()
   public thresholds: number[] = [];
-
   @Input()
   public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number };
-
   @Input()
   public routeConsumables: RouteConsumables;
-
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
-
-  private _recipeId: string;
-  private _recipe: Craft;
-
   public snapshotMode = false;
-
   public snapshotStep$: BehaviorSubject<number> = new BehaviorSubject<number>(Infinity);
-
   public tooltipsDisabled = false;
-
   public actionFailed = false;
-
   public result$: Observable<SimulationResult>;
-
   public actions$ = new BehaviorSubject<CraftingAction[]>([]);
-
   public crafterStats$: Observable<CrafterStats>;
-
   public stats$: Observable<CrafterStats>;
-
   public loggedIn$ = this.authFacade.loggedIn$;
-
-  private recipe$ = new ReplaySubject<Craft>();
-
   public simulation$: Observable<Simulation>;
-
   public report$: Observable<SimulationReliabilityReport>;
-
   public tips$: Observable<RotationTip[]>;
-
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
-
+  // Customization forms
+  public statsForm: FormGroup;
+  //
+  public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
+  // Consumables
+  public foods: Consumable[] = [];
+  public medicines: Consumable[] = [];
+  public freeCompanyActions: FreeCompanyAction[] = [];
+  public selectedFood: Consumable;
+  public selectedMedicine: Consumable;
+  public selectedFreeCompanyActions: FreeCompanyAction[] = [];
+  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({
+    control: 0,
+    cp: 0,
+    craftsmanship: 0
+  });
+  public dirty = false;
   public rotation$ = this.rotationsFacade.selectedRotation$.pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
@@ -147,119 +133,45 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }
     })
   );
-
-  // Customization forms
-  public statsForm: FormGroup;
-  // Cache field for levels to be passed to the form validation.
-  private availableLevels: CrafterLevels;
-  //
-  public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
-
-  // Consumables
-  public foods: Consumable[] = [];
-  public medicines: Consumable[] = [];
-  public freeCompanyActions: FreeCompanyAction[] = [];
-
-  public selectedFood: Consumable;
-  public selectedMedicine: Consumable;
-  public selectedFreeCompanyActions: FreeCompanyAction[] = [];
-
-  public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({
-    control: 0,
-    cp: 0,
-    craftsmanship: 0
-  });
-
-  private onDestroy$ = new Subject<void>();
-
-  private job: CraftingJob;
-
-  public dirty = false;
-
   public savedSet = true;
-
-  private formChangesSubscription: any;
-
-  // HQ ingredients
-  private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
-    new BehaviorSubject<{ id: number, amount: number }[]>([]);
-
   public forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-
-  @Input()
-  public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
-    this.hqIngredients$.next(ingredients);
-    this.startingQuality$.next(ingredients.reduce((total, ingredient) => {
-      return total + ingredient.amount * ingredient.quality;
-    }, 0));
-  }
-
   public hqIngredientsData$: Observable<{ id: number, amount: number, max: number, quality: number }[]>;
-
   public startingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-
-  private job$: Observable<any>;
-
   public stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
-
-  private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-
-  private findActionsRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
-
-  private findActionsAutoTranslatedRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
-
   public qualityPer100$: Observable<number>;
-
   public progressPer100$: Observable<number>;
-
   public permissionLevel$ = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => {
       return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
     })
   );
-
   public dirtyConsumables = false;
-
-  private consumablesSortFn = (a, b) => {
-    const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
-    const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
-    if (aName > bName) {
-      return 1;
-    } else if (aName < bName) {
-      return -1;
-    } else {
-      // If they're both the same item, HQ first
-      return a.hq ? -1 : 1;
-    }
-  };
-
-  private freeCompanyActionsSortFn = (a, b) => {
-    if (a.actionId > b.actionId) {
-      return 1;
-    } else {
-      return -1;
-    }
-  };
-
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
-  private get registry() {
-    return this.simulator.CraftingActionsRegistry;
-  }
+  private _recipeId: string;
+  private recipe$ = new ReplaySubject<Craft>();
+  // Cache field for levels to be passed to the form validation.
+  private availableLevels: CrafterLevels;
+  private onDestroy$ = new Subject<void>();
+  private job: CraftingJob;
+  private formChangesSubscription: any;
+  // HQ ingredients
+  private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
+    new BehaviorSubject<{ id: number, amount: number }[]>([]);
+  private job$: Observable<any>;
+  private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+  private findActionsRegex: RegExp =
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
+  private findActionsAutoTranslatedRegex: RegExp =
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
-              public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
-              private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
+              public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
+              private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataFacade) {
     this.rotationsFacade.loadMyRotations();
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
@@ -290,12 +202,41 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.toggleSpecialist();
     });
 
-    this.foods = consumablesService.fromLazyData(this.lazyData.data.foods)
-      .sort(this.consumablesSortFn);
+    this.lazyData.getEntry('foods').subscribe(foods => {
+      this.foods = consumablesService.fromLazyData(foods)
+        .sort(this.consumablesSortFn);
+    });
     this.medicines = consumablesService.fromData(medicines)
       .sort(this.consumablesSortFn);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
+  }
+
+  private _recipe: Craft;
+
+  @Input()
+  public set recipe(recipe: Craft) {
+    this.recipe$.next(recipe);
+    this._recipe = recipe;
+    if (recipe.id) {
+      this._recipeId = recipe.id;
+    }
+  }
+
+  @Input()
+  public set hqIngredients(ingredients: { id: number, amount: number, quality: number }[]) {
+    this.hqIngredients$.next(ingredients);
+    this.startingQuality$.next(ingredients.reduce((total, ingredient) => {
+      return total + ingredient.amount * ingredient.quality;
+    }, 0));
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
   }
 
   findRotation(): void {
@@ -476,40 +417,31 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose
       .pipe(
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('/ac') > -1),
-        map(macro => {
-          const actionIds: number[] = [];
-          for (const line of macro.split('\n')) {
-            let match = this.findActionsRegex.exec(line);
-            if (match !== null && match !== undefined) {
-              const skillName = match[2].replace(/"/g, '');
+        switchMap(macro => {
+          return this.i18n.getNameObservable('actions', new this.simulator.FinalAppraisal().getIds()[0]).pipe(
+            switchMap(finalAppraisalName => {
+              return safeCombineLatest(macro.split('\n').map(
+                line => {
+                  let match = this.findActionsRegex.exec(line);
+                  if (match !== null && match !== undefined) {
+                    const skillName = match[2].replace(/"/g, '');
+                    if (line.startsWith('/statusoff') && FinalAppraisal && skillName === finalAppraisalName) {
+                      return of(-1);
+                    }
 
-              const FinalAppraisal = this.simulator.FinalAppraisal;
-              if (line.startsWith('/statusoff') && FinalAppraisal && skillName === this.i18nTools.getName(this.localizedDataService.getAction(new FinalAppraisal().getIds()[0]))) {
-                actionIds.push(-1);
-                continue;
-              }
-
-              // Get translated skill
-              try {
-                actionIds
-                  .push(this.localizedDataService.getCraftingActionIdByName(skillName,
-                    <Language>this.translate.currentLang));
-              } catch (ignored) {
-                // Ugly implementation but it's a specific case we don't want to refactor for.
-                try {
-                  // If there's no skill match with the first regex, try the second one (for auto translated skills)
-                  match = this.findActionsAutoTranslatedRegex.exec(line);
-                  if (match !== null) {
-                    actionIds
-                      .push(this.localizedDataService.getCraftingActionIdByName(match[2],
-                        <Language>this.translate.currentLang));
+                    return this.i18n.getCraftingActionIdByName(skillName, <Language>this.translate.currentLang).pipe(
+                      catchError(() => {
+                        match = this.findActionsAutoTranslatedRegex.exec(line);
+                        return this.i18n.getCraftingActionIdByName(match[2], <Language>this.translate.currentLang).pipe(
+                          catchError(() => of(''))
+                        );
+                      })
+                    );
                   }
-                } catch (ignoredAgain) {
                 }
-              }
-            }
-          }
-          return actionIds;
+              ));
+            })
+          );
         }),
         map(actionIds => this.registry.createFromIds(actionIds)),
         first()
@@ -742,7 +674,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   barPercent(current: number, max: number): number {
     return Math.min(100 * current / max, 100);
   }
-
 
   getStars(stars: number): string {
     return this.htmlTools.generateStars(stars);
@@ -1005,5 +936,24 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   trackByAction(index: number, step: ActionResult): number {
     return step.action.getId(8);
   }
+
+  private consumablesSortFn = (a, b) => {
+    if (a > b) {
+      return 1;
+    } else if (a < b) {
+      return -1;
+    } else {
+      // If they're both the same item, HQ first
+      return a.hq ? -1 : 1;
+    }
+  };
+
+  private freeCompanyActionsSortFn = (a, b) => {
+    if (a.actionId > b.actionId) {
+      return 1;
+    } else {
+      return -1;
+    }
+  };
 
 }

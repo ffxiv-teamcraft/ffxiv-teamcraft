@@ -5,10 +5,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiMob.Icon | xivapiIcon" alt="{{xivapiMob.ID | mobName | i18n}}"
+          <img [src]="xivapiMob.Icon | xivapiIcon" alt="{{xivapiMob.ID | i18nRow:'mobs' | i18n}}"
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiMob.ID | mobName | i18n}}</h2>
+            <h2 class="item-name">{{xivapiMob.ID | i18nRow:'mobs' | i18n}}</h2>
             <div *ngIf="xivapiMob.GamePatch" class="patch">
               {{xivapiMob.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiMob.GamePatch.ID" type="patch"></app-db-button>
@@ -25,7 +25,7 @@
       <div fxFlex="1 1 auto">
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="xivapiMob.ID | mobName"></app-i18n-display>
+           [value]="xivapiMob.ID | i18nRow:'mobs'"></app-i18n-display>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiMob.ID" type="mob"></app-db-comments>
 
@@ -37,7 +37,7 @@
                nzBordered="false">
         <ng-template #title>
           <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            {{spawn.zoneid | placeName | i18n}}<span
+            {{spawn.zoneid | i18nRow:'places' | i18n}}<span
             *ngIf="spawn.level"> - {{'DB.Level' | translate}} {{spawn.level}}</span>
           </div>
         </ng-template>

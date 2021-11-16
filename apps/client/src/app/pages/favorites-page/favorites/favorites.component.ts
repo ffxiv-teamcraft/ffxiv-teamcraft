@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { combineLatest } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';

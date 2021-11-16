@@ -122,44 +122,29 @@ export class CommunityRotationsPageComponent {
   ].sort((a, b) => a.value - b.value);
 
   public tags: any[];
-
-  private filters$: Observable<CommunityRotationFilters>;
-
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
-
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-
   public rlvlFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
   public durabilityFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
   public craftsmanshipFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public controlFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public cpFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public difficultyFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public qualityFilter$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
-
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
-
   public pageSize = 20;
-
   public totalLength = 0;
-
   public sets$ = this.authFacade.gearSets$.pipe(map(sets => sets.filter(set => set.jobId <= 15)));
   public setIndex$ = new BehaviorSubject<number>(0);
-
   public set$ = combineLatest([this.setIndex$, this.sets$]).pipe(
     filter(([, sets]) => sets !== null),
     map(([index, sets]) => sets[index])
   );
-
   loading = true;
-
   filteredRotations$: Observable<CraftingRotation[]>;
-
   public rlvls = CommunityRotationsPageComponent.RLVLS;
-
   public firstDisplay = true;
+  private filters$: Observable<CommunityRotationFilters>;
 
   constructor(private rotationsFacade: RotationsFacade, private rotationsService: CraftingRotationService,
               private authFacade: AuthFacade, route: ActivatedRoute, router: Router) {

@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { Drop } from '../../list/model/drop';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hunting',
@@ -12,12 +14,16 @@ import { Drop } from '../../list/model/drop';
 })
 export class HuntingComponent extends ItemDetailsPopup<Drop[]> {
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataFacade) {
     super();
   }
 
-  getAdditionalMarkers(drop: Drop): Vector2[] {
-    return this.lazyData.data.monsters[Math.floor(drop.id % 1000000).toString()]?.positions.slice(1);
+  getAdditionalMarkers(drop: Drop): Observable<Vector2[]> {
+    return this.lazyData.getRow('monsters', Math.floor(drop.id % 1000000)).pipe(
+      map(monster => {
+        return monster?.positions.slice(1) || [];
+      })
+    );
   }
 
 }

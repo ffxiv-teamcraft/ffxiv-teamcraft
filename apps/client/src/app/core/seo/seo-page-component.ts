@@ -14,8 +14,6 @@ export abstract class SeoPageComponent implements OnDestroy, OnInit {
   protected constructor(protected seoService: SeoService) {
   }
 
-  protected abstract getSeoMeta(): Observable<Partial<SeoMetaConfig>>;
-
   ngOnDestroy(): void {
     this.seoOnDestroy$.next();
     this.seoService.resetConfig();
@@ -28,4 +26,6 @@ export abstract class SeoPageComponent implements OnDestroy, OnInit {
       this.seoService.setConfig(config);
     });
   }
+
+  protected abstract getSeoMeta(): Observable<Partial<SeoMetaConfig>>;
 }

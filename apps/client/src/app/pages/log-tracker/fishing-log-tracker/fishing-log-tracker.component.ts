@@ -21,15 +21,12 @@ export class FishingLogTrackerComponent extends TrackerComponent {
   public type$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   public spotId$: ReplaySubject<number> = new ReplaySubject<number>();
-
   public display$: Observable<any[]> = this.fishingLogCacheService.display$.pipe(
     tap(() => this.loading = false)
   );
-
   public tabsDisplay$: Observable<any> = combineLatest([this.display$, this.type$]).pipe(
     map(([display, type]) => display[type])
   );
-
   public pageDisplay$: Observable<any[]> = combineLatest([this.tabsDisplay$, this.spotId$]).pipe(
     map(([display, spotId]) => {
       const area = display.tabs.find(a => a.spots.some(spot => spot.id === spotId));
@@ -39,9 +36,7 @@ export class FishingLogTrackerComponent extends TrackerComponent {
       return null;
     })
   );
-
   public loading = true;
-
   public hideCompleted = this.settings.hideCompletedLogEntries;
 
   public rawCompletion$ = this.authFacade.logTracking$.pipe(

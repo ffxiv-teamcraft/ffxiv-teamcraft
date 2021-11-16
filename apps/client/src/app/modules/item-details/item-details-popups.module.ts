@@ -33,6 +33,7 @@ import { MogstationComponent } from './mogstation/mogstation.component';
 import { QuestsComponent } from './quests/quests.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 @NgModule({
   imports: [
@@ -57,7 +58,8 @@ import { AchievementsComponent } from './achievements/achievements.component';
     AntdSharedModule,
     NodeDetailsModule,
     InventoryModule,
-    LazyScrollModule
+    LazyScrollModule,
+    PageLoaderModule
   ],
   declarations: [
     GatheredByComponent,

@@ -44,7 +44,7 @@
         </button>
         <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteFolder()" *ngIf="(permissionLevel$ | async) >= 40"
                 [nzShape]="'circle'"
-                [nzPopconfirmTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Delete_message' | translate" [nzType]="'danger'" nz-button
+                [nzPopconfirmTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Delete_message' | translate" nzDanger nz-button
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>

@@ -9,9 +9,9 @@ import { MetricType } from './model/metric-type';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ProbeSource } from './model/probe-source';
 import { LogTracking } from '../../model/user/log-tracking';
-import { environment } from 'apps/client/src/environments/environment';
 import { devMock } from './dev-mock';
 import { endOfDay, startOfDay } from 'date-fns';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

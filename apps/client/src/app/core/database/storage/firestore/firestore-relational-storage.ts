@@ -7,9 +7,9 @@ import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
 import { catchError, map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { Observable, throwError } from 'rxjs';
-import { Query } from '@angular/fire/firestore/interfaces';
+import { Query } from '@angular/fire/compat/firestore/interfaces';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {

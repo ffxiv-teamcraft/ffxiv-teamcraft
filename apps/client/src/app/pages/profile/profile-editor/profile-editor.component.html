@@ -17,11 +17,10 @@
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
         <ng-container *ngIf="userId$ | async as userId">
-          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTooltipTitle]="'PROFILE.VERIFICATION.Title' | translate"
-                  nz-button nz-tooltip
+          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button
                   nzShape="circle" nzSize="small"
                   nzType="primary">
-            <i nz-icon nzType="check"></i>
+            {{'PROFILE.VERIFICATION.Button' | translate}}
           </button>
         </ng-container>
 
@@ -79,8 +78,8 @@
                   </div>
                 </ng-template>
                 <nz-list-item-meta
-                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | jobName)?.en | async)?.toLowerCase()+'.png' | ifMobile: null"
-                  [nzTitle]="set.jobId | jobName | i18n"
+                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | i18nRow:'jobName' | async)?.en)?.toLowerCase()+'.png' | ifMobile: null"
+                  [nzTitle]="set.jobId | i18nRow:'jobName' | i18n"
                   nzDescription="lvl {{set.level}}"></nz-list-item-meta>
                 <ng-template #masterbooks>
                   <button (click)="editMasterbooks(set.jobId)" [nzTooltipTitle]="'PROFILE.Masterbooks' | translate" nz-button nz-tooltip

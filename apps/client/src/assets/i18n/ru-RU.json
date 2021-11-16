@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreon донатеры",
     "Contributors": "Поддержавшие проект"
   },
-  "Patreon_login_success": "Успешный вход в Patreon!",
+  "Patreon_login_success": "Patreon login success!",
   "Hide_if_empty": "Скрыть, если пусто",
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
@@ -362,7 +362,7 @@
   "Email_not_found": "Адрес эл. почты не найден",
   "Email_sent": "Вам направлено письмо со ссылкой для сброса пароля.",
   "ALARM": {
-    "Spawned": "{{itemName}} было заспавнено!",
+    "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Расположение",
     "Note": "Заметка"
   },
@@ -557,21 +557,22 @@
     "Gearset_priority": "Приоритет",
     "Gearset_priority_explain": "Используется для решения какой взять рецепт, если он может быть скрафчен различными профессиями, например ingots, nuggets и другие материалы для ремонта.",
     "VERIFICATION": {
+      "Button": "Verify",
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
-      "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, it isn't needed anymore.",
       "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
       "Validate": "Подтвердить"
     }
   },
   "LISTS": {
     "Load_archived": "Загрузить архивные списки",
-    "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
+    "Needs_verification": "Please verify your character to have access to the lists shared to your FC (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
     "Merge_lists": "Объединить списки",
     "Merge_lists_warning": "Большие списки здесь не указаны, поскольку вы не можете объединить слишком большие списки из-за ограничений базы данных.",
-    "Lists_merged": "Списки успешно соединены!",
+    "Lists_merged": "Lists merged with success!",
     "Shared_lists": "Списки, которыми с вами поделились",
     "Add_selection": "Добавить выбранное в список",
     "Reset_selection": "Отменить выбор",
@@ -721,6 +722,8 @@
     "Autofill_notification": "Уведомление о завершении",
     "Autofill_notification_title": "Предмет завершен",
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
+    "Autofill_crafting_gathering_title": "Crafting or gathering detected",
+    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
@@ -740,7 +743,7 @@
       "Import_layout": "Импорт макета",
       "Export_layout": "Экспорт этого макета",
       "Import_string": "Импорт кода макета",
-      "Import_string_copied": "Код макета скопирован!",
+      "Import_string_copied": "Layout code copied!",
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
@@ -849,7 +852,7 @@
     "Title": "Переводчик макросов",
     "Macro_language": "Язык макроса",
     "Macro_to_translate": "Макрос для перевода",
-    "Do_translate": "Перевести!",
+    "Do_translate": "Translate!",
     "Invalid_macro_or_language": "Недействительный макрос или язык."
   },
   "CUSTOM_LINKS": {
@@ -882,7 +885,7 @@
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите название предмета",
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
-    "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
+    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
     "Hidden_item": "Скрытый",
     "Fish_eyes": "Requires fish eyes to only care about weather requirement",
     "Add_alarm": "Добавить оповещение",
@@ -1306,20 +1309,20 @@
     "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Donation_button": "Внести пожертвование",
     "Buy_merch": "Купить мерч Teamcraft",
-    "Features_header": "Вперёд!",
+    "Features_header": "Get started!",
     "DESCRIPTION": {
-      "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
+      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
       "Public_lists": "Копируй списки, созданные сообществом, чтобы крафтить предметы для levequest'ов, заполнения логов, кораблей, BiS оружия и доспехов. Здесь можно найти всё что угодно.",
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
-      "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
-      "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
+      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
       "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
-      "Macro_translation": "У вас есть макросы на иностранном языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
+      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
-    "New_update_available": "Доступно новое обновление!",
-    "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
+    "New_update_available": "A new update is available!",
+    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
     "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его",
     "Possible_update_issue": "Похоже, ваша загрузка не работает. Пожалуйста, нажмите на эту иконку, чтобы загрузить последнюю настройку."
@@ -1340,6 +1343,7 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
+    "Show_not_required": "Show items not required for achievement",
     "Hide_completed_items": "Скрыть завершенные предметы",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
@@ -1360,7 +1364,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Загружаем предметы, действия и прочее!"
+    "Loading_data": "Loading items, actions, and more!"
   },
   "CUSTOM_ITEMS": {
     "Title": "Пользовательские предметы",
@@ -1810,7 +1814,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
-    "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
+    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
     "Disabled": "Гид по трате валют более не работает",
@@ -1821,7 +1825,7 @@
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
-    "Description": "Ты хочешь знать какая еда даст нужные параметры? Больше не ищи — здесь то что тебе нужно!",
+    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
     "Pick_stat": "Выберите параметр"
   },
   "BLOG": {
@@ -2178,7 +2182,7 @@
     "DESYNTH": {
       "Job": "Выберите профессию, которую вы хотите повысить",
       "Level": "Введите уровень десинтеза (не фактический уровень профессии)",
-      "Search": "Нажмите на поиск, и всё готово!"
+      "Search": "Click search, and it's done!"
     },
     "RESET_TIMERS": {
       "Toggle": "Включите оповещения для заданного таймера, установив этот переключатель."
@@ -2220,7 +2224,7 @@
         "Welcome_add_column": "Добро пожаловать в редактор макета панели, вы можете добавить столбцы с помощью этой кнопки (до 5 столбцов).",
         "Save": "Не забудьте сохранить изменения после редактирования панели.",
         "Revert": "Или, если вам не нравится то, что вы сделали, используйте это для возврата к оригинальной раскладке, которую вы использовали перед редактированием.",
-        "Delete_column": "Хотите удалить столбец? Вот здесь!",
+        "Delete_column": "Want to remove a column? Here it is!",
         "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
         "Reorder": "Вы можете использовать перетаскивание для перемещения панелей куда угодно.",
         "Data_type": "Прежде всего, выберите тип метрики, который вы хотите использовать.",
@@ -2596,7 +2600,7 @@
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
       "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
       "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
-      "Loading_screen_message": "Добавить новый текст в загрузочном сообщении \"Brought to you by ...\" с вашим именем, названием вашей FC, названием линкшелла или чего угодно другого! (${{price}})"
+      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
     },
     "Select_retainer": "Выберите одного из ваших ретейнеров"
   },
@@ -2720,7 +2724,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "New feature: Allagan Reports",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update !",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the allagan reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan reports",
     "Reports": "Reports",
     "Pending_changes": "Pending changes",

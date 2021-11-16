@@ -10,7 +10,7 @@
       <nz-input-group [nzAddOnBefore]="dcSelector" class="filter-input">
         <ng-template #dcSelector>
           <nz-select [ngModel]="display.datacenter" (ngModelChange)="changeDatacenter($event)" nzShowSearch class="dc-selector">
-            <nz-option *ngFor="let dc of datacenters" [nzValue]="dc" [nzLabel]="dc"></nz-option>
+            <nz-option *ngFor="let dc of datacenters$ | async" [nzValue]="dc" [nzLabel]="dc"></nz-option>
           </nz-select>
         </ng-template>
         <nz-select class="tags-input" [nzPlaceHolder]="'COMMISSIONS.BOARD.Filter_with_tags' | translate" [ngModel]="display.tags"

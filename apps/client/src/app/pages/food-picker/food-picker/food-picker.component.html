@@ -38,7 +38,7 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center">
             <ul class="bonuses-list">
               <li *ngFor="let bonus of item.bonuses">
-                <strong>{{ bonus.ID | baseParamName | i18n }}</strong> : {{bonus.Value}}<span *ngIf="bonus.Relative">% ({{bonus.Max}})</span>&nbsp; <span
+                <strong>{{ bonus.ID | i18nRow:'baseParams' | i18n }}</strong> : {{bonus.Value}}<span *ngIf="bonus.Relative">% ({{bonus.Max}})</span>&nbsp; <span
                 class="bonus-hq"><img alt="" src="./assets/icons/HQ.png"/> {{bonus.ValueHQ}}<span *ngIf="bonus.Relative">% ({{bonus.MaxHQ}})</span></span>
               </li>
             </ul>

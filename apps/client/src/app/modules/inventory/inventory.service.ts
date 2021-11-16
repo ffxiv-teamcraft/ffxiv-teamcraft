@@ -179,6 +179,9 @@ export class InventoryService {
                 const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
                 const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
                 if (this.isRetainer(action.parsedIpcData.containerId)) {
+                  if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
+                    state.retainerInventoryQueue = [];
+                  }
                   return {
                     ...state,
                     itemInfoQueue: newQueue,
@@ -404,9 +407,9 @@ export class InventoryService {
     }
     this.authFacade.user$.pipe(
       first(),
-      withLatestFrom(this.inventory$),
-      switchMap(([user, inventory]) => {
-        if (contentId === null) {
+      withLatestFrom(this.inventory$, this.authFacade.loggedIn$),
+      switchMap(([user, inventory, loggedIn]) => {
+        if (contentId === null || !loggedIn) {
           return of(null);
         }
         const isCustom = user.lodestoneIds.length === 0 && user.customCharacters.length > 0;

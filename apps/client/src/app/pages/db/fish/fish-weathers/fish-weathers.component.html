@@ -23,7 +23,7 @@
       >
         <div>
           <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
-          <span>{{ row.weatherId | weatherName | i18n }}</span>
+          <span>{{ row.weatherId | i18nRow:'weathers' | i18n }}</span>
         </div>
         <div>{{ row.chances | number: '1.0-1' }}%</div>
       </div>

@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Alarm } from '../../../core/alarms/alarm';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reduced-from',
@@ -17,7 +15,7 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
 
   showEverything$ = new BehaviorSubject(false);
 
-  nodes: Record<number, { node: GatheringNode, alarms: Alarm[] }[]> = {};
+  nodes$: Observable<Record<number, { node: GatheringNode }[]>>;
 
   detailsDisplay$ = this.showEverything$.pipe(
     map(showEverything => {
@@ -34,19 +32,32 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
     })
   );
 
-  constructor(private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
+  constructor(private gatheringNodesService: GatheringNodesService) {
     super();
   }
 
   ngOnInit(): void {
-    this.details.forEach(reduction => {
-      this.nodes[reduction] = this.gatheringNodesService.getItemNodes(reduction).map(node => {
-        return {
-          node,
-          alarms: this.alarmsFacade.generateAlarms(node)
-        };
-      });
-    });
+    this.nodes$ = combineLatest(this.details.map(reduction => {
+      return this.gatheringNodesService.getItemNodes(reduction).pipe(
+        map(nodes => {
+          return nodes.map(node => {
+            return {
+              reduction,
+              node
+            };
+          });
+        })
+      );
+    })).pipe(
+      map(rows => {
+        return rows.flat().reduce((acc, { reduction, ...details }) => {
+          return {
+            ...acc,
+            [reduction]: [...(acc[reduction] || []), details]
+          };
+        }, {});
+      })
+    );
   }
 
 }

@@ -41,8 +41,8 @@
       <app-report-source-compact-details [source]="source" [data]="data" [fullDisplayMode]="true"></app-report-source-compact-details>
       <ng-container *ngSwitchCase="AllaganReportSource.FISHING">
         <div fxLayout="column" fxLayoutGap="10px">
-          <div>
-            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.placeId | placeName | i18n}}
+          <div *ngIf="fishingSpot$ | async as fishingSpot">
+            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.placeId | i18nRow:'places' | i18n}}
             <app-db-button type="fishing-spot" [id]="data.spot"></app-db-button>
           </div>
           <div>
@@ -155,14 +155,14 @@
             {{'ALARMS.CUSTOM.Weather_from' | translate}}:
             <span *ngIf="data.weathersFrom?.length === 0">{{'COMMON.Any' | translate}}</span>
             <ng-container *ngFor="let weather of data.weathersFrom; let last = last">
-              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n">
+              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n">
             </ng-container>
           </div>
           <div>
             {{'ALARMS.CUSTOM.Weather' | translate}}:
             <span *ngIf="data.weathers?.length === 0">{{'COMMON.Any' | translate}}</span>
             <ng-container *ngFor="let weather of data.weathers; let last = last">
-              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n">
+              <img [src]="weather | weatherIcon | xivapiIcon" nz-tooltip [nzTooltipTitle]="weather | i18nRow:'weathers' | i18n">
             </ng-container>
           </div>
         </div>
