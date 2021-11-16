@@ -98,7 +98,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiFishingSpot$.pipe(
-      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.getNameObservable('places', fishingSpot.PlaceName)])),
+      switchMap((fishingSpot) => combineLatest([of(fishingSpot), this.i18n.getNameObservable('places', fishingSpot.PlaceNameTargetID)])),
       map(([fishingSpot, title]) => {
         return {
           title,

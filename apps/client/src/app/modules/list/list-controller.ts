@@ -534,7 +534,7 @@ export class ListController {
                         used: 0,
                         yield: 1,
                         usePrice: true,
-                        requires: reqRecipeId ? recipes.find((r) => (r as any).result.toString() === element.id.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
+                        requires: reqRecipeId ? recipes.find((r) => (r as any).id.toString() === reqRecipeId.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
                         collectable: false
                       });
                       nextIteration.push({

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, from, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -24,7 +24,6 @@ import { environment } from '../../../../environments/environment';
 import { LogTracking } from '../../../model/user/log-tracking';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
-import { Memoized } from '../../../core/decorators/memoized';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
 
@@ -74,6 +73,15 @@ export class RecipeFinderComponent implements OnDestroy {
         );
       }
     })
+  );
+
+  public amount$ = new ReplaySubject<number>();
+
+  public isButtonDisabled$ = combineLatest([this.items$, this.input$, this.amount$]).pipe(
+    map(([items, input, amount]) => {
+      return amount <= 0 || !items.some(i => this.i18n.getName(i.name).toLowerCase() === input.toLowerCase());
+    }),
+    shareReplay(1)
   );
 
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
@@ -209,19 +217,6 @@ export class RecipeFinderComponent implements OnDestroy {
       const poolItem = this.pool.find(item => item.id === i.id);
       return poolItem.amount < i.amount;
     });
-  }
-
-  @Memoized()
-  public isButtonDisabled(name: string, amount: number): Observable<boolean> {
-    if (amount <= 0) {
-      return of(true);
-    }
-    return this.items$.pipe(
-      map(items => {
-        return items.some(i => this.i18n.getName(i.name).toLowerCase() === name.toLowerCase());
-      }),
-      shareReplay(1)
-    );
   }
 
   public importFromClipboard(): void {
