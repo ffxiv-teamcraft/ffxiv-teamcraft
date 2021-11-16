@@ -30,17 +30,17 @@
     </nz-autocomplete>
     <nz-input-group [nzPrefix]="prefixTemplate" fxFlex="0 0 100px"
                     fxFlex.lt-md="0 0 auto">
-      <input #amount [value]="0" class="amount-input" nz-input type="number"/>
+      <input #amount [ngModel]="0" (ngModelChange)="amount$.next($event)" class="amount-input" nz-input type="number"/>
     </nz-input-group>
     <ng-template #prefixTemplate>x</ng-template>
-    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
+    <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="true | ifMobile:false" [disabled]="isButtonDisabled$ | async"
             class="add-to-pool"
             nz-button
             nzType="primary">
       <i nz-icon nzType="plus"></i> {{'RECIPE_FINDER.Add_item' | translate}}
     </button>
     <button (click)="addToPool(itemName.value, +amount.value)" *ngIf="false | ifMobile:true"
-            [disabled]="isButtonDisabled(itemName.value, +amount.value) | async"
+            [disabled]="isButtonDisabled$ | async"
             nz-button
             nzBlock
             nzType="primary">
