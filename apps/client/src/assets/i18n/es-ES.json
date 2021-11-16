@@ -225,6 +225,7 @@
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
     "No_folder": "No folder",
+    "Click_to_show_all_alarms": "Click to show all alarms",
     "REALTIME": {
       "Reset_timers": "Restablecer temporizadores",
       "WEEKLY_RESETS": "Semanales",
@@ -468,6 +469,8 @@
     "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
     "Maximum_vendor_price": "Maximum vendor price",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_total_vendor_price": "Maximum total vendor price",
+    "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
     "Rawsock_flag": "Use RawSocket for packet capture",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "Favorite_features": "Favorite features",
@@ -1966,8 +1969,10 @@
     "Unhide_optimizer": "No ocultar más este optimizador",
     "Remove_ignore_container": "Ya no ignorar este consejo para este contenedor",
     "Show_ignored": "Mostrar artículos ignorados",
+    "Hide_empty": "Hide empty optimizers",
     "Show_hidden": "Mostrar optimizadores ocultos",
     "No_optimizations": "No hay optimizaciones disponibles",
+    "Optimization_copied": "Optimization copied to clipboard as JSON",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
       "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias.",
