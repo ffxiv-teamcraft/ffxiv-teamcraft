@@ -83,15 +83,22 @@ jobs:
   deploy-hosting:
     docker:
       - image: google/cloud-sdk
-        auth:
-          username: _json_key
-          password: $GCLOUD_SERVICE_KEY
     steps:
+      - run:
+          name: Authorize GCloud Command Line Tool
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+      - add_ssh_keys:
+          fingerprints:
+            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
       - attach_workspace:
           at: ~/
       - run:
+          name: Deploying cdn to OVH server
+          command: bash tools/cdn/deploy.sh
+      - run:
           name: Updating Cloud Run
-          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy --image gcr.io/ffxivteamcraft/ssr
+          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy ssr --image gcr.io/ffxivteamcraft/ssr
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
@@ -126,19 +133,6 @@ jobs:
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P beta --only hosting --token "$FIREBASE_TOKEN"
-
-
-  deploy-cdn:
-    <<: *defaults
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying cdn to OVH server
-          command: bash tools/cdn/deploy.sh
 
 
 workflows:
