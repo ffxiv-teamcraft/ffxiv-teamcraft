@@ -149,12 +149,6 @@ workflows:
       - build:
           requires:
             - lint
-      - deploy-cdn:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
       - deploy-hosting:
           requires:
             - deploy-cdn
