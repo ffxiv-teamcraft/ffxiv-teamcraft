@@ -7,7 +7,7 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const storage = new Storage();
-const bucket = storage.bucket('ssr.beta.ffxivteamcraft.com');
+const bucket = storage.bucket('ssr.ffxivteamcraft.com');
 const URL = urlModule.URL;
 
 const GtFish = readFileSync(join(__dirname, '../output/gt-fish.js'));
