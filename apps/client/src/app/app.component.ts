@@ -179,7 +179,7 @@ export class AppComponent implements OnInit {
   @ViewChild('vmAdRef')
   public vmAdRef: ElementRef;
 
-  public allaganReportsQueueCount$: Observable<number>;
+  public allaganReportsQueueCount$: Observable<number> = of(0);
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -237,10 +237,11 @@ export class AppComponent implements OnInit {
         })
       });
 
-      this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
-        map(status => status.length)
-      );
-
+      setTimeout(() => {
+        this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
+          map(status => status.length)
+        );
+      }, 2000);
     });
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
