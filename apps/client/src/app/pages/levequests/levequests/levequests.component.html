@@ -120,7 +120,7 @@
                 <div fxLayout="column" fxLayoutAlign="flex-start center" nz-col nzSm="8">
                   <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | i18nRow:'places' | i18n } }}</b>
                   <div>
-                    <a href="https://ffxiv.gamerescape.com/wiki/{{leve.name.en.split(' ').join('_')}}"
+                    <a href="https://ffxiv.gamerescape.com/wiki/{{leveName.en.split(' ').join('_')}}"
                        *ngIf="leve.id | i18nRow: 'leves' | async as leveName"
                        target="_blank" (click)="openInGE(leveName)">
                       {{'LEVEQUESTS.More_on_gamerescape' | translate}}
