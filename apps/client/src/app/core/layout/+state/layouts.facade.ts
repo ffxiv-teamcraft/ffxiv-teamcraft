@@ -82,7 +82,18 @@ export class LayoutsFacade {
               return i;
             }));
           }
-          return of({ rows: [], unfilteredRows: starter, layoutRows: [...layout.rows] }).pipe(
+          return of({
+            rows: [], unfilteredRows: starter, layoutRows: [...layout.rows.sort((a, b) => {
+              // Other has to be last filter applied, as it rejects nothing.
+              if (a.isOtherRow()) {
+                return 1;
+              }
+              if (b.isOtherRow()) {
+                return -1;
+              }
+              return a.index - b.index;
+            })]
+          }).pipe(
             expand(({ rows, unfilteredRows, layoutRows }) => {
               if (unfilteredRows.length === 0) {
                 return EMPTY;
