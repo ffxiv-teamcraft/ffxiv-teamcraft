@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-apt-get install rsync
+apt-get install rsync -y
 
 PACKAGE_VERSION=$(cat package.json \
   | grep version \
