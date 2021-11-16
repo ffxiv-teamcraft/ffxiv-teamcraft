@@ -81,9 +81,12 @@ jobs:
 
 
   deploy-hosting:
+    working_directory: ~/ffxiv-teamcraft
     docker:
       - image: google/cloud-sdk
     steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Authorize GCloud Command Line Tool
           command: |
@@ -91,17 +94,23 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
-      - attach_workspace:
-          at: ~/
       - run:
           name: Deploying cdn to OVH server
           command: bash tools/cdn/deploy.sh
       - run:
           name: Updating Cloud Run
-          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy ssr --image gcr.io/ffxivteamcraft/ssr
+          command: gcloud builds submit --tag gcr.io/ffxivteamcraft/ssr && gcloud beta run deploy ssr --image gcr.io/ffxivteamcraft/ssr --region europe-west1 --allow-unauthenticated
+
+
+  deploy-firebase-hosting:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Deploying web
           command: ./node_modules/.bin/firebase deploy -P default --only hosting --token "$FIREBASE_TOKEN"
+
 
   release-desktop:
     executor: win/default
@@ -152,6 +161,12 @@ workflows:
       - deploy-hosting:
           requires:
             - build
+          filters:
+            branches:
+              only: master
+      - deploy-firebase-hosting:
+          requires:
+            - deploy-hosting
           filters:
             branches:
               only: master
