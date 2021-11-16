@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.1"></a>
+## [9.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.0...v9.0.1) (2021-11-16)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed allagan reports count not loading for data checkers ([863df4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/863df4f))
+* **db:** fixed missing meta name for fishing spots ([2035ae8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2035ae8))
+* **inventory:** better retainers tracking ([d072e02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d072e02))
+* **inventory-optimizer:** fixed item icons and names acting up when scrolling ([c12c26a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c12c26a))
+* **layout:** fixed precrafts not being rendered properly in default list layout ([a78a688](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a78a688))
+* **levequests:** fixed levequests page not loading ([e06d81e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e06d81e))
+* **list:** fixed an issue with FC crafts not being added to lists properly ([04cf0cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/04cf0cf))
+* **recipe-finder:** fixed item input not working anymore ([25e807c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25e807c))
+* **ssr:** fixed preview embeds not working properly ([cec7011](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cec7011))
+* **tooltips:** fixed item tooltips not showing stats properly ([0ceaf8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ceaf8b))
+* **voyage-tracker:** fixed airship sectors total count not displayed ([d9a60a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9a60a1))
+
+
+
 <a name="9.0.0"></a>
 # [9.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.6.8...v9.0.0) (2021-11-15)
 
