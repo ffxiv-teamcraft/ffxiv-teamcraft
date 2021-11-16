@@ -225,6 +225,7 @@
     "Group_outdated": "Эта группа устарела, попросите владельца войти с новым обновлением, и она будет обновлена",
     "Remove_from_group": "Удалить из этой группы",
     "No_folder": "Нет папки",
+    "Click_to_show_all_alarms": "Click to show all alarms",
     "REALTIME": {
       "Reset_timers": "Таймеры сброса",
       "WEEKLY_RESETS": "Еженедельное",
@@ -468,6 +469,8 @@
     "Char_data_folder": "Папка с данными персонажа (где расположены папки CHRXXXXXXX)",
     "Maximum_vendor_price": "Максимальная цена продавца",
     "Maximum_vendor_price_explain": "Максимальная цена товара для фильтра раскладки CAN_BE_BOUGHT (0 = без максимальной цены)",
+    "Maximum_total_vendor_price": "Maximum total vendor price",
+    "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
     "Rawsock_flag": "Использовать RawSocket для захвата пакетов",
     "Rawsock_details": "Использование RawSocket захватывает трафик без npcap, может помочь с VPN. Тем не менее, в целом это менее надежно, и вы должны вручную запускать TC как администратор каждый раз",
     "Favorite_features": "Избранные функции",
@@ -1966,8 +1969,10 @@
     "Unhide_optimizer": "Больше не скрывать этот оптимизатор",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
+    "Hide_empty": "Hide empty optimizers",
     "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
+    "Optimization_copied": "Optimization copied to clipboard as JSON",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
