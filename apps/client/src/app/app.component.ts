@@ -145,7 +145,7 @@ export class AppComponent implements OnInit {
 
   public dataLoaded = false;
 
-  public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop());
+  public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop() && !this.overlay);
 
   public showGiveaway = false;
 
