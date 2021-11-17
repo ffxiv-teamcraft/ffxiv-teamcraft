@@ -21,7 +21,7 @@ export class TeamcraftDesktopApp {
   }
 
   start(): void {
-    app.releaseSingleInstanceLock();
+    // app.releaseSingleInstanceLock();
     app.setAsDefaultProtocolClient('teamcraft');
     let deepLink = this.store.get('deepLink', '');
 
@@ -44,18 +44,19 @@ export class TeamcraftDesktopApp {
         deepLink = '';
       }
 
-      this.isPortTaken(TeamcraftDesktopApp.MAIN_WINDOW_PORT).then(taken => {
-        if (taken) {
-          this.sendToAlreadyOpenedTC((this.argv[0] || '').replace('teamcraft://', ''));
+      request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${(this.argv[0] || '').replace('teamcraft://', '')}`, (err, res) => {
+        if(err){
+          this.bootApp()
         } else {
-          this.bootApp();
+          (<any>app).isQuitting = true;
+          app.quit();
+          process.exit(0);
         }
       });
     });
 
     // Quit when all windows are closed.
     app.on('window-all-closed', () => {
-
       // On macOS specific close process
       if (process.platform !== 'darwin') {
         (<any>app).isQuitting = true;
@@ -73,30 +74,6 @@ export class TeamcraftDesktopApp {
     this.mainWindow.closed$.subscribe(() => {
       this.store.set('router:uri', deepLink);
     });
-  }
-
-  private isPortTaken(port: number): Promise<boolean> {
-    return new Promise((resolve, reject) => {
-      const tester = createServer()
-        .once('error', (err) => {
-          if ((<any>err).code !== 'EADDRINUSE') return reject(err);
-          resolve(true);
-        })
-        .once('listening', () => {
-          tester.once('close', () => {
-            resolve(false);
-          })
-            .close();
-        })
-        .listen(port, 'localhost');
-    });
-  }
-
-  private sendToAlreadyOpenedTC(url: string): void {
-    request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${url}`);
-    (<any>app).isQuitting = true;
-    app.quit();
-    process.exit(0);
   }
 
   private bootApp(): void {
