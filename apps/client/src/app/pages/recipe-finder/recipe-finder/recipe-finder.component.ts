@@ -333,10 +333,10 @@ export class RecipeFinderComponent implements OnDestroy {
       );
     }
     item$.pipe(
-      filter(item => {
-        return !!item && !cumulative && this.pool.some(i => i.id === item.id);
-      }),
       map(item => {
+        if(!item || (!cumulative && this.pool.some(i => i.id === item.id))){
+          return null;
+        }
         const poolEntry = this.pool.find(i => i.id === item.id);
         if (poolEntry === undefined) {
           this.pool = [
