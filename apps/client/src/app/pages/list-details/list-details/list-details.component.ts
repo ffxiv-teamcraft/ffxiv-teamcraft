@@ -335,7 +335,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
             );
           })).pipe(
             map(rows => {
-              return { title: row.title, rows };
+              return { title: this.translate.instant(row.title), rows };
             })
           );
         }
