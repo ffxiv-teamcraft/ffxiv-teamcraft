@@ -73,6 +73,9 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   private i18nEquals(current: any, next: any) {
     if (current === next) return true;
     if ((!current && !!next) || (!!current && !next)) return false;
+    if (isObservable(current) && isObservable(next)) {
+      return current === next;
+    }
     if (this.isI18nWithName(next)) {
       return (
         next?.name?.de === current?.name?.de &&
