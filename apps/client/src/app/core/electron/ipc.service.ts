@@ -3,8 +3,8 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { BehaviorSubject, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { bufferCount, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -417,11 +417,14 @@ export class IpcService {
       this._ipc.removeAllListeners('app-state');
       this.stateSubscription = this.store
         .pipe(
-          debounce(() => interval(250)),
+          debounceTime(250),
           distinctUntilChanged()
         )
         .subscribe(state => {
-          this.send('app-state:set', JSON.parse(JSON.stringify(state)));
+          this.send('app-state:set', {
+            lists: JSON.parse(JSON.stringify(state.lists)),
+            layouts: JSON.parse(JSON.stringify(state.layouts))
+          });
         });
     }
   }
