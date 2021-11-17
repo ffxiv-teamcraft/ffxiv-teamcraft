@@ -127,7 +127,9 @@ export class TeamcraftDesktopApp {
         }
         this.mainWindow.win.focus();
         this.mainWindow.win.show();
+        console.log(req.url);
         if (req.url.length > 1) {
+          console.log('SENDING URL TO MAIN');
           this.mainWindow.win.webContents.send('navigate', req.url);
         }
         res.writeHead(200);
@@ -141,6 +143,10 @@ export class TeamcraftDesktopApp {
         loaderWindow.hide();
         loaderWindow.close();
         this.mainWindow.show();
+        setTimeout(() => {
+          this.mainWindow.win.focus();
+          this.mainWindow.win.webContents.send('displayed', true);
+        }, 200);
       });
     });
 

@@ -286,6 +286,14 @@ export class AppComponent implements OnInit {
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
+        this.ipc.on('displayed', () => {
+          setTimeout(() => {
+            window.resizeBy(100, 100);
+          }, 50);
+          setTimeout(() => {
+            window.resizeBy(-100, -100);
+          }, 60);
+        });
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
             return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;

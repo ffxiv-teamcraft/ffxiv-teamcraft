@@ -333,8 +333,12 @@ export class IpcService {
       this.handleMessage(message);
     });
     this.on('navigate', (event, url: string) => {
+      console.log('NAVIGATE', url);
       if (url.endsWith('/')) {
         url = url.substr(0, url.length - 1);
+      }
+      if (url.startsWith('/')) {
+        url = url.substr(1);
       }
       this.router.navigate(url.split('/'));
     });
