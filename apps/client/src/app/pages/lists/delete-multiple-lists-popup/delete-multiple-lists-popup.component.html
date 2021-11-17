@@ -31,8 +31,6 @@
                       nz-tooltip>
                 {{'Public_list' | translate}}
               </nz-tag>
-              <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" [nzTooltipTitle]="'LIST_TAGS.Outdated' | translate"
-                      nz-tooltip></nz-tag>
               <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
             </ng-template>
           </nz-list-item-meta>

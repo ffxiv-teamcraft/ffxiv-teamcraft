@@ -23,6 +23,8 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopup {
 
   deleteAfter = false;
 
+  ListController = ListController;
+
   constructor(listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private modalRef: NzModalRef, private message: NzMessageService,
               private translate: TranslateService, workshopsFacade: WorkshopsFacade) {

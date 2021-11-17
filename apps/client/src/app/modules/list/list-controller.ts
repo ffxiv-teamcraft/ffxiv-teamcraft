@@ -148,6 +148,7 @@ export class ListController {
 
   /**
    * Merges the list with another one, used for list additions to me more efficient.
+   * @param list
    * @param {List} otherList
    * @returns {List}
    */
