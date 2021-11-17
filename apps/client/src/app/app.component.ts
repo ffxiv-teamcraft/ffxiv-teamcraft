@@ -145,6 +145,8 @@ export class AppComponent implements OnInit {
 
   public dataLoaded = false;
 
+  public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop());
+
   public showGiveaway = false;
 
   private dirty = false;
@@ -449,7 +451,7 @@ export class AppComponent implements OnInit {
           if (url && url.endsWith('/')) {
             url = url.substring(0, url.length - 1);
           }
-          return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+          return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
             tap(hasDesktop => {
               if (hasDesktop && this.settings.autoOpenInDesktop) {
@@ -484,6 +486,7 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
           this.ipc.send('app-ready', true);
           this.dataLoaded = true;
+          this.desktopLoading$.next(false);
           this.cd.detectChanges();
         }, 1500);
       }

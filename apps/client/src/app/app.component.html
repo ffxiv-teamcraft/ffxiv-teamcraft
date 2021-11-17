@@ -1,7 +1,7 @@
 <app-loading-screen *ngIf="!dataLoaded; else appLayout"></app-loading-screen>
 <ng-template #appLayout>
   <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" [class.no-panel-borders]="settings.noPanelBorders"
-             class="app-container">
+             class="app-container" [class.blur]="desktopLoading$ | async">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
         <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>

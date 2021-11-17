@@ -21,7 +21,7 @@ export class MainWindow {
   public createWindow(deepLink: string = ''): void {
     const opts: BrowserWindowConstructorOptions = {
       show: false,
-      backgroundColor: '#000',
+      backgroundColor: '#2f3237',
       autoHideMenuBar: true,
       frame: true,
       icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
@@ -45,6 +45,7 @@ export class MainWindow {
 
     this.win.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${deepLink}`);
     this.win.setAlwaysOnTop(this.store.get('win:alwaysOnTop', false), 'normal');
+    this.win.show();
     //// uncomment below to open the DevTools.
     // this.win.webContents.openDevTools();
 
