@@ -88,7 +88,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   collapsed = false;
 
-  progression: number;
+  progression$: Observable<{ progress: number }> = this.displayRow$.pipe(
+    map(displayRow => {
+      return {
+        progress: this.listsFacade.buildProgression(displayRow.rows)
+      };
+    })
+  );
 
   tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
     filter(row => row.tiers || row.reverseTiers),

@@ -104,9 +104,10 @@
         </div>
         <nz-progress nz-tooltip
                      fxFlex="1 1 auto"
-                     nzTooltipTitle="{{progression | number:'1.0-1':translate.currentLang}}%"
+                     *ngIf="progression$ | async as progression"
+                     nzTooltipTitle="{{progression.progress | number:'1.0-1':translate.currentLang}}%"
                      [nzStrokeColor]="settings.theme.primary"
-                     [nzPercent]="progression"
+                     [nzPercent]="progression.progress"
                      [nzShowInfo]="false"></nz-progress>
         <div fxLayout="row" fxLayoutGap="10px">
           <button (nzOnConfirm)="resetPanel()"
