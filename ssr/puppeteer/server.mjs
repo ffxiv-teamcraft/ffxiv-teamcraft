@@ -64,23 +64,27 @@ app.get('*.*', express.static(DIST_FOLDER, {
 }));
 
 app.get('*', async (req, res) => {
-  if (!browserWSEndpoint) {
-    const browser = await puppeteer.launch({
-      timeout: 60000,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
-    browserWSEndpoint = await browser.wsEndpoint();
-  }
   try {
     const isPrerender = req.query['prerender'];
+    if (!browserWSEndpoint && isPrerender) {
+      const browser = await puppeteer.launch({
+        timeout: 60000,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+      browserWSEndpoint = browser.wsEndpoint();
+    }
     const noSEO = req.headers.host.indexOf('beta.') > -1 || req.headers.host.indexOf('preview.') > -1;
     const isIndexBot = detectIndexBot(req.headers['user-agent']);
     const isDeepLinkBot = detectDeepLinkBot(req.headers['user-agent']);
     const isAllowedPage = indexAllowedPages.some(page => req.originalUrl.indexOf(page) > -1);
 
     if (isPrerender || (isDeepLinkBot && isAllowedPage) || (!noSEO && isIndexBot && isAllowedPage)) {
-      const { html } = await ssr(req.path, browserWSEndpoint, isDeepLinkBot);
-      return res.status(200).send(html);
+      const { html } = await ssr(req.path, browserWSEndpoint, isPrerender);
+      if (html) {
+        return res.status(200).send(html);
+      } else {
+        res.sendFile(join(DIST_FOLDER, 'index.html'));
+      }
     } else {
       res.sendFile(join(DIST_FOLDER, 'index.html'));
     }

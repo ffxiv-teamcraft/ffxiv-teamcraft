@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofMessageType } from '../rxjs/of-message-type';
-import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, mapTo, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
@@ -10,7 +10,6 @@ import { Tug } from '../data/model/tug';
 import { Hookset } from '../data/model/hookset';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { withLazyData } from '../rxjs/with-lazy-data';
 
 
 export class FishingReporter implements DataReporter {
@@ -40,19 +39,22 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const spot$ = packets$.pipe(
-      ofMessageType('someDirectorUnk4'),
-      toIpcData(),
-      withLazyData(this.lazyData, 'fishingSpots'),
-      map(([packet, fishingSpots]) => {
-        return fishingSpots.find(spot => spot.zoneId === packet.param3);
-      }),
-      filter(spot => spot !== undefined),
-      tap(spot => {
-        this.eorzea.setZone(spot.zoneId);
-        this.eorzea.setMap(spot.mapId);
-      }),
-      shareReplay(1)
+    const spot$ = this.lazyData.getEntry('fishingSpots').pipe(
+      switchMap(fishingSpots => {
+        return packets$.pipe(
+          ofMessageType('someDirectorUnk4'),
+          toIpcData(),
+          map((packet) => {
+            return fishingSpots.find(spot => spot.zoneId === packet.param3);
+          }),
+          filter(spot => spot !== undefined),
+          tap(spot => {
+            this.eorzea.setZone(spot.zoneId);
+            this.eorzea.setMap(spot.mapId);
+          }),
+          shareReplay(1)
+        );
+      })
     );
 
     const isFishing$ = merge(
@@ -116,14 +118,17 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const actionTimeline$ = packets$.pipe(
-      ofMessageType('eventPlay4'),
-      toIpcData(),
-      withLazyData(this.lazyData, 'actionTimeline'),
-      map(([packet, actionTimeline]) => {
-        return actionTimeline[packet.params[0].toString()];
-      }),
-      filter(key => key !== undefined)
+    const actionTimeline$ = this.lazyData.getEntry('actionTimeline').pipe(
+      switchMap(actionTimeline => {
+        return packets$.pipe(
+          ofMessageType('eventPlay4'),
+          toIpcData(),
+          map((packet) => {
+            return actionTimeline[packet.params[0].toString()];
+          }),
+          filter(key => key !== undefined)
+        );
+      })
     );
 
     const mooch$ = packets$.pipe(
