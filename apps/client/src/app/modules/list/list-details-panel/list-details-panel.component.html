@@ -19,7 +19,7 @@
     <ng-template #display>
       <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed || overlay">
         <ng-template #tiersTpl>
-          <ng-container *ngIf="tiers$ | async as tiers">
+          <ng-container *ngIf="tiers$ | async as tiers; else loader">
             <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
               <ng-template #tierTitle>
                 {{'Precraft_tier' | translate}} <span
@@ -161,3 +161,7 @@
   </nz-collapse>
 </ng-container>
 </span>
+
+<ng-template #loader>
+  <nz-spin [nzSpinning]="true"></nz-spin>
+</ng-template>

@@ -91,7 +91,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   progression: number;
 
   tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
-    filter(row => row.tiers),
+    filter(row => row.tiers || row.reverseTiers),
     switchMap(displayRow => {
       let tiers = [[]];
       if (displayRow.rows !== null) {
@@ -484,7 +484,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public getTextExport = (tiers?: ListRow[][]) => {
     let rows: ListRow[];
-    if (tiers) {
+    if (tiers && this.displayRow.tiers) {
       rows = tiers.flat();
     } else {
       rows = this.displayRow.rows;
@@ -497,7 +497,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       map(rowsWithNames => {
         return rowsWithNames.reduce((exportString, { row, itemName }) => {
           return exportString + `${row.amount}x ${itemName}\n`;
-        }, `${this.displayRow.title} :\n`);
+        }, `${this.translate.instant(this.displayRow.title)} :\n`);
       })
     );
   };
