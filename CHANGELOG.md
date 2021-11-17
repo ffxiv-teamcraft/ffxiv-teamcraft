@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.2"></a>
+## [9.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.1...v9.0.2) (2021-11-17)
+
+
+### Bug Fixes
+
+* **core:** fixed names not updating accordingly in a lot of pages/overlays ([9421918](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9421918))
+* **desktop:** possible fix for opening from external apps ([007bb92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/007bb92))
+* **fishing-reporter:** fixed wrong spot detection and bite time detection ([4539b64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4539b64))
+* **list:** fixed "copy panel as text" for panels with tiers display ([69697f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69697f5))
+* **list:** fixed reversed tiers panels not loading at all ([ce029d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce029d0))
+* **list-details:** fixed progress bar not updating ([4b00b04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b00b04)), closes [#2057](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2057)
+* **log-tracker:** fixed an issue with the "show not required for achievement" toggle ([d52398c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d52398c))
+
+
+
 <a name="9.0.1"></a>
 ## [9.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.0...v9.0.1) (2021-11-16)
 
