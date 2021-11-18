@@ -1,7 +1,7 @@
 <app-loading-screen *ngIf="!dataLoaded; else appLayout"></app-loading-screen>
 <ng-template #appLayout>
   <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" [class.no-panel-borders]="settings.noPanelBorders"
-             class="app-container">
+             class="app-container" [class.blur]="desktopLoading$ | async">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
         <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
@@ -405,6 +405,7 @@
     <div class="opened-in-desktop" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
       <img alt="FFXIV Teamcraft" src="./assets/logo.png">
       <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
+      <div class="desktop-message-description">{{'COMMON.Opened_in_desktop_setting' | translate}}</div>
     </div>
   </ng-template>
 </ng-template>

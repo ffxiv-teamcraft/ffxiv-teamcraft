@@ -24,7 +24,7 @@
       <nz-list-item>
         <nz-list-item-meta [nzAvatar]="checkbox" [nzDescription]="description" [nzTitle]="list.name">
           <ng-template #checkbox>
-            <label (ngModelChange)="setSelection(list, $event)" [ngModel]="false" [nzDisabled]="list.isOutDated() || list.isLarge()"
+            <label (ngModelChange)="setSelection(list, $event)" [ngModel]="false" [nzDisabled]="ListController.isOutDated(list) || ListController.isLarge(list)"
                    nz-checkbox></label>
           </ng-template>
           <ng-template #description>
@@ -35,7 +35,7 @@
                     nz-tooltip>
               {{'Public_list' | translate}}
             </nz-tag>
-            <nz-tag *ngIf="list.isOutDated()" [nzColor]="'magenta'" [nzTooltipTitle]="'LIST_TAGS.Outdated' | translate"
+            <nz-tag *ngIf="ListController.isOutDated(list)" [nzColor]="'magenta'" [nzTooltipTitle]="'LIST_TAGS.Outdated' | translate"
                     nz-tooltip></nz-tag>
             <nz-tag *ngFor="let tag of list.tags">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
           </ng-template>

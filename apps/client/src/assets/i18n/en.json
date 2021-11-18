@@ -148,6 +148,7 @@
     "Copy_to_clipboard": "Copy to clipboard",
     "Language": "Language",
     "Opened_in_desktop": "This page has been opened inside your desktop app, you can now close it.",
+    "Opened_in_desktop_setting": "You can disable this behavior inside the Settings",
     "Open_in_desktop": "Open in desktop app",
     "Admin": "Administrator",
     "Moderator": "Moderator",

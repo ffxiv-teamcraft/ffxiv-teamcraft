@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.3"></a>
+## [9.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.2...v9.0.3) (2021-11-18)
+
+
+### Bug Fixes
+
+* **desktop:** fixed fishing bite timer sometimes off ([a7aeeb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7aeeb9))
+* **desktop:** fixed teamcraft:// links not opening properly ([25c9009](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25c9009))
+* **desktop:** new startup system to avoid freezing app on launch ([e7398a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7398a5)), closes [#1966](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1966)
+* **lists:** fixed merge lists dialog box ([87bb468](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87bb468))
+* **recipe-finder:** fixed import from clipboard ([7ca1a4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ca1a4c))
+* **simulator:** fixed simulator not loading for chinese and korean users ([70f4e4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70f4e4c))
+
+
+### Features
+
+* **desktop:** tentative implementation of auto opening website links in desktop if it's started ([761f767](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/761f767))
+
+
+### Performance Improvements
+
+* **desktop:** fixed massive performance issues and FPS drops ([80a88bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80a88bb))
+
+
+
 <a name="9.0.2"></a>
 ## [9.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.1...v9.0.2) (2021-11-17)
 

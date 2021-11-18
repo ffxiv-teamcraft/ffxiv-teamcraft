@@ -145,6 +145,8 @@ export class AppComponent implements OnInit {
 
   public dataLoaded = false;
 
+  public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop() && !this.overlay);
+
   public showGiveaway = false;
 
   private dirty = false;
@@ -439,8 +441,8 @@ export class AppComponent implements OnInit {
       // Custom protocol detection
       this.hasDesktop$ = this.hasDesktopReloader$.pipe(
         switchMap(() => router.events),
-        first(),
         filter(current => current instanceof NavigationEnd),
+        first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
           if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
@@ -449,14 +451,15 @@ export class AppComponent implements OnInit {
           if (url && url.endsWith('/')) {
             url = url.substring(0, url.length - 1);
           }
-          return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+          return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
             tap(hasDesktop => {
               if (hasDesktop && this.settings.autoOpenInDesktop) {
                 window.location.assign(`teamcraft://${url}`);
               }
             }),
-            catchError(() => {
+            catchError((e) => {
+              console.log(e);
               return of(false);
             })
           );
@@ -484,6 +487,7 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
           this.ipc.send('app-ready', true);
           this.dataLoaded = true;
+          this.desktopLoading$.next(false);
           this.cd.detectChanges();
         }, 1500);
       }

@@ -196,7 +196,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
     if (this.displayRow.npcBreakdown) {
       this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors);
-      this.cd.detectChanges();
+      setTimeout(() => {
+        this.cd.detectChanges();
+      });
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
