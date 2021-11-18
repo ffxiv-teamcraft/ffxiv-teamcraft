@@ -148,6 +148,7 @@
     "Copy_to_clipboard": "Copier dans le presse-papiers",
     "Language": "Langue",
     "Opened_in_desktop": "Cette page a été ouverte dans votre application bureau, vous pouvez fermer cet onglet.",
+    "Opened_in_desktop_setting": "You can disable this behavior inside the Settings",
     "Open_in_desktop": "Ouvrir dans l'application bureau",
     "Admin": "Administrateur",
     "Moderator": "Modérateur",
