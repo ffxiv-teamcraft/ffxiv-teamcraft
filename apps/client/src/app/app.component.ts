@@ -441,8 +441,8 @@ export class AppComponent implements OnInit {
       // Custom protocol detection
       this.hasDesktop$ = this.hasDesktopReloader$.pipe(
         switchMap(() => router.events),
-        first(),
         filter(current => current instanceof NavigationEnd),
+        first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
           if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
@@ -458,7 +458,8 @@ export class AppComponent implements OnInit {
                 window.location.assign(`teamcraft://${url}`);
               }
             }),
-            catchError(() => {
+            catchError((e) => {
+              console.log(e);
               return of(false);
             })
           );
