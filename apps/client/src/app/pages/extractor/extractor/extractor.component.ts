@@ -79,7 +79,7 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing') || division.name.en.startsWith('Ornaments');
             tab.recipes = tab.recipes.map(entry => {
               (entry as any).leves = Object.entries<any>(leves)
                 .filter(([, leve]) => {
