@@ -4,7 +4,6 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { observeInput } from '../../../core/rxjs/observe-input';
 import { map, switchMap } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
 
@@ -17,25 +16,7 @@ export class GearsetCreationPopupComponent implements OnInit {
 
   public form: FormGroup;
 
-  public availableJobs$ = observeInput(this, 'gearset').pipe(
-    switchMap(gearset => {
-      if (!gearset) {
-        return of(this.gt.getJobs().filter(job => job.id > 0));
-      }
-      return combineLatest([
-        this.lazyData.getEntry('jobCategories'),
-        this.lazyData.getEntry('jobAbbr')
-      ]).pipe(
-        map(([jobCategories, jobAbbr]) => {
-          const jobCategoryId = [32, 33, 156, 157, 158, 159].find(categoryId => {
-            return jobCategories[categoryId.toString()].jobs.includes(jobAbbr[this.gearset.job.toString()].en);
-          });
-          const category = jobCategories[jobCategoryId.toString()];
-          return this.gt.getJobs().filter(job => job.id > 0).filter(job => category.jobs.includes(job.abbreviation));
-        })
-      );
-    })
-  );
+  public availableJobs$;
 
   public gearset: TeamcraftGearset;
 
@@ -52,6 +33,26 @@ export class GearsetCreationPopupComponent implements OnInit {
       name: [this.gearset?.name, Validators.required],
       job: [this.gearset?.job, Validators.required]
     });
+
+    this.availableJobs$ = of(this.gearset).pipe(
+      switchMap(gearset => {
+        if (!gearset) {
+          return of(this.gt.getJobs().filter(job => job.id > 0));
+        }
+        return combineLatest([
+          this.lazyData.getEntry('jobCategories'),
+          this.lazyData.getEntry('jobAbbr')
+        ]).pipe(
+          map(([jobCategories, jobAbbr]) => {
+            const jobCategoryId = [32, 33, 156, 157, 158, 159].find(categoryId => {
+              return jobCategories[categoryId.toString()].jobs.includes(jobAbbr[this.gearset.job.toString()].en);
+            });
+            const category = jobCategories[jobCategoryId.toString()];
+            return this.gt.getJobs().filter(job => job.id > 0).filter(job => category.jobs.includes(job.abbreviation));
+          })
+        );
+      })
+    );
   }
 
 }
