@@ -438,12 +438,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                       })
                     );
                   }
+                  return of(null)
                 }
               ));
             })
           );
         }),
-        map(actionIds => this.registry.createFromIds(actionIds)),
+        map(actionIds => this.registry.createFromIds(actionIds.filter(id => id !== null))),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
