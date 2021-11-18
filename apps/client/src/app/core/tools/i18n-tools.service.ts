@@ -102,12 +102,12 @@ export class I18nToolsService {
   }
 
   public getActionName(id: number): Observable<string> {
-    return this.lazyData.getRow('craftActions', id).pipe(
+    return this.lazyData.getI18nName('craftActions', id).pipe(
       switchMap(craftAction => {
         if (craftAction) {
           return of(craftAction);
         }
-        return this.lazyData.getRow('actions', id);
+        return this.lazyData.getI18nName('actions', id);
       }),
       map(name => {
         if (!name) {
