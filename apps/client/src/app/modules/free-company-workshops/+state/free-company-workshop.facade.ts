@@ -495,7 +495,7 @@ export class FreeCompanyWorkshopFacade {
   public getSubmarineSectorTotalCount(): Observable<number> {
     return this.lazyData.getEntry('submarineVoyages').pipe(
       map(submarineVoyages => {
-        return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].en).length - 1;
+        return Object.keys(submarineVoyages).filter((id) => submarineVoyages[id].en).length;
       }),
       shareReplay(1)
     );

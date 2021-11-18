@@ -21,6 +21,7 @@ import { mapIds } from '../../core/data/sources/map-ids';
 import { XivapiService } from '@xivapi/angular-client';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,7 @@ export class LazyDataFacade {
 
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
               private settings: SettingsService, private http: HttpClient,
-              private xivapi: XivapiService) {
+              private xivapi: XivapiService, private translate: TranslateService) {
     this.isLoading$
       .pipe(
         skipWhile(loading => !loading),
@@ -226,6 +227,12 @@ export class LazyDataFacade {
           switchMap(row => {
             if (!row) {
               return of(null);
+            }
+            if (this.translate.currentLang === 'ko') {
+              region = Region.Korea;
+            }
+            if (this.translate.currentLang === 'zh') {
+              region = Region.China;
             }
             switch (region) {
               case Region.Global:

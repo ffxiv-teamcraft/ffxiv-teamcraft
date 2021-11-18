@@ -12,6 +12,9 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (req.url.includes('//localhost')) {
+      return next.handle(req);
+    }
     return next.handle(req).pipe(
       delay(1100),
       retry(2),

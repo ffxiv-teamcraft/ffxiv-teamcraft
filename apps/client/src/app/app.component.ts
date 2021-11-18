@@ -445,6 +445,9 @@ export class AppComponent implements OnInit {
         first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
+          if (!this.settings.autoOpenInDesktop) {
+            return of(false);
+          }
           if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
             return of(false);
           }
@@ -454,7 +457,7 @@ export class AppComponent implements OnInit {
           return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
             tap(hasDesktop => {
-              if (hasDesktop && this.settings.autoOpenInDesktop) {
+              if (hasDesktop) {
                 window.location.assign(`teamcraft://${url}`);
               }
             }),
