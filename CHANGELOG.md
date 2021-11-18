@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.4"></a>
+## [9.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.3...v9.0.4) (2021-11-18)
+
+
+### Bug Fixes
+
+* **desktop:** fixed "auto open in desktop" setting not working as intended ([22c1a55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22c1a55))
+* **desktop:** fixed many packet capture inconsistencies ([002db18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/002db18))
+* **gearsets:** fixed job selection dropdown in gearset creation popup ([67b785c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/67b785c))
+* **inventory-optimizer:** fixed expansions dropdown not populating ([45a9028](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45a9028))
+* **log-tracker:** Ornaments are now accounted for achievements ([8785426](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8785426))
+* **macro-translator:** fixed wrong translation for special commands ([5d7a795](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d7a795))
+* **simulator:** fixed macro generator for korea and china ([be673bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be673bb))
+* **simulator:** fixed special commands breaking macro import ([43e4224](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43e4224))
+* **voyage-tracker:** fixed wrong count for total submarine voyages ([df40618](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df40618))
+
+
+
 <a name="9.0.3"></a>
 ## [9.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.2...v9.0.3) (2021-11-18)
 

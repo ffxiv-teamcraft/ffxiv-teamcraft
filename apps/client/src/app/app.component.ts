@@ -74,6 +74,8 @@ declare const gtag: Function;
 })
 export class AppComponent implements OnInit {
 
+  public overlay = window.location.href.indexOf('?overlay') > -1;
+
   public newFeatureName = 'allagan-reports';
 
   public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true' && !IS_HEADLESS;
@@ -94,10 +96,6 @@ export class AppComponent implements OnInit {
     785: `TC\nv${this.version}`,
     default: `FFXIV&nbsp;Teamcraft&nbsp;v${this.version}`
   };
-
-  public get overlay() {
-    return window.location.href.indexOf('?overlay') > -1;
-  }
 
   public overlayOpacity = 1;
 

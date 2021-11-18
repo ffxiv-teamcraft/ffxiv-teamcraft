@@ -1,18 +1,11 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed fishing bite timer sometimes off.
-* **desktop:** fixed teamcraft:// links not opening properly.
-* **desktop:** new startup system to avoid freezing app on launch.
-* **lists:** fixed merge lists dialog box.
-* **recipe-finder:** fixed import from clipboard.
-* **simulator:** fixed simulator not loading for chinese and korean users.
-
-
-### Features
-
-* **desktop:** tentative implementation of auto opening website links in desktop if it's started.
-
-
-### Performance Improvements
-
-* **desktop:** fixed massive performance issues and FPS drops.`;
+* **desktop:** fixed "auto open in desktop" setting not working as intended.
+* **desktop:** fixed many packet capture inconsistencies.
+* **gearsets:** fixed job selection dropdown in gearset creation popup.
+* **inventory-optimizer:** fixed expansions dropdown not populating.
+* **log-tracker:** Ornaments are now accounted for achievements.
+* **macro-translator:** fixed wrong translation for special commands.
+* **simulator:** fixed macro generator for korea and china.
+* **simulator:** fixed special commands breaking macro import.
+* **voyage-tracker:** fixed wrong count for total submarine voyages.`;
