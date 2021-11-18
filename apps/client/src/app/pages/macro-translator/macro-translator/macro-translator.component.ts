@@ -112,7 +112,7 @@ export class MacroTranslatorComponent {
                 if (line.skillName) {
                   row.push(line.original.replace(line.skillName, line.replace(line.translated[key])))
                 } else {
-                  row.push(line);
+                  row.push(line.original);
                 }
               });
           });
