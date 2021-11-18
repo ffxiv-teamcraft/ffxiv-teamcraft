@@ -1734,7 +1734,7 @@
       "No_comments": "Keine Kommentare",
       "Post": "Abschicken",
       "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekte)",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "Datenbankkommentare sind nützliche zusätzliche Informationen, nutzt du sie, um sich über das Spiel oder dessen Inhalt zu beschweren, kann dies zu einer Einschränkung führen, Kommentare zu veröffentlichen."
     },
     "PATCH": {
       "Open_patch_page": "Hier klicken, um die vollständigen Patchnotes in der Datenbank anzuzeigen",
@@ -2606,7 +2606,7 @@
       "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
       "Custom_theme": "Benutzerdefinierte Farbeingabe für das Design der Website (${{price}})",
       "Pins_badge": "Exklusive Teamcraft-Anstecknadel, die dir zugeschickt wird (${{price}}) (Erfordert das Ausfüllen der Versanddetails auf Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
+      "Loading_screen_message": "Neuer Eintrag in der \"Brought to you by...\"-Nachricht, die beim Starten von Teamcraft erscheint. Diese enthält deinen Namen, den deiner FG, Kontaktkreisname und was auch immer du sonst noch sagen möchtest! (${{price}})"
     },
     "Select_retainer": "Wähle einen Gehilfen"
   },
@@ -2801,7 +2801,7 @@
     "Rarity_Common": "Häufig",
     "Rarity_Voyage_exclusive": "Voyage exclusive",
     "Rarity_Rare": "Selten",
-    "No_missing_fish_data": "No fish with missing data",
+    "No_missing_fish_data": "Kein Fisch mit fehlenden Daten",
     "Sources_filter": "Filter sources",
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
