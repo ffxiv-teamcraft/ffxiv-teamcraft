@@ -148,6 +148,7 @@
     "Copy_to_clipboard": "Копировать в буфер обмена",
     "Language": "Язык",
     "Opened_in_desktop": "Эта страница была открыта в приложении, теперь вы можете её закрыть.",
+    "Opened_in_desktop_setting": "You can disable this behavior inside the Settings",
     "Open_in_desktop": "Открыть в приложении",
     "Admin": "Администратор",
     "Moderator": "Модератор",
