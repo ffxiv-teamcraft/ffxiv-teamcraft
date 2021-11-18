@@ -1,9 +1,18 @@
 export const patchNotes = `### Bug Fixes
 
-* **core:** fixed names not updating accordingly in a lot of pages/overlays.
-* **desktop:** possible fix for opening from external apps.
-* **fishing-reporter:** fixed wrong spot detection and bite time detection.
-* **list:** fixed "copy panel as text" for panels with tiers display.
-* **list:** fixed reversed tiers panels not loading at all.
-* **list-details:** fixed progress bar not updating.
-* **log-tracker:** fixed an issue with the "show not required for achievement" toggle.`;
+* **desktop:** fixed fishing bite timer sometimes off.
+* **desktop:** fixed teamcraft:// links not opening properly.
+* **desktop:** new startup system to avoid freezing app on launch.
+* **lists:** fixed merge lists dialog box.
+* **recipe-finder:** fixed import from clipboard.
+* **simulator:** fixed simulator not loading for chinese and korean users.
+
+
+### Features
+
+* **desktop:** tentative implementation of auto opening website links in desktop if it's started.
+
+
+### Performance Improvements
+
+* **desktop:** fixed massive performance issues and FPS drops.`;
