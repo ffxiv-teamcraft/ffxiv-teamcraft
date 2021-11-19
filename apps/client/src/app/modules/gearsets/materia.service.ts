@@ -13,6 +13,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { StaticData } from '../../lazy-data/static-data';
 import { LazyItemStat } from '../../lazy-data/model/lazy-item-stat';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
+import { LazyData } from '../../lazy-data/lazy-data';
 
 @Injectable({
   providedIn: 'root'
@@ -32,13 +33,8 @@ export class MateriaService {
     );
   };
 
-  getMateriaItemIdFromPacketMateria(packetMateria: number, tier: number): Observable<number> {
-    return this.lazyData.getEntry('materias').pipe(
-      map(materias => {
-        return materias.find(m => m.id === packetMateria && m.tier === tier + 1)?.itemId;
-      }),
-      shareReplay(1)
-    );
+  getMateriaItemIdFromPacketMateria(packetMateria: number, tier: number, materias: LazyData['materias']): number {
+    return materias.find(m => m.id === packetMateria && m.tier === tier + 1)?.itemId;
   }
 
   getMateriaBonus(equipmentPiece: EquipmentPiece, materiaId: number, index: number): Observable<{ overcapped: boolean, value: number }> {
