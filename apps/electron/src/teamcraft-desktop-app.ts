@@ -73,6 +73,14 @@ export class TeamcraftDesktopApp {
     this.mainWindow.closed$.subscribe(() => {
       this.store.set('router:uri', deepLink);
     });
+
+    app.on('before-quit', () => {
+      if (this.httpServer) {
+        this.httpServer.close(() => {
+          process.exit(0);
+        });
+      }
+    });
   }
 
   private bootApp(): void {
@@ -88,7 +96,7 @@ export class TeamcraftDesktopApp {
       }
     });
 
-    loaderWindow.once('show', () => {
+    loaderWindow.once('ready-to-show', () => {
       this.mainWindow.createWindow();
       this.tray.createTray();
       this.httpServer = createHttpServer((req, res) => {
