@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.5"></a>
+## [9.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.4...v9.0.5) (2021-11-20)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed submit button not enabling as intended ([630f9fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/630f9fb))
+* **desktop:** slow mode notification not shown anymore if autofill is disabled ([8e3926f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e3926f))
+* **gearset:** fixed page display and import using pcap ([6a52167](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a52167))
+* **log-tracker:** better fix for missing ornaments in achievement recipes ([a5bd91e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5bd91e))
+* **maps:** fixed optimized path for multiple maps not optimizing costs properly ([2fbc2f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fbc2f7))
+* **retainers:** update price button is now disabled if your server is unknown ([10cc065](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10cc065))
+* **search:** fixed monster search not displaying results properly ([ce276af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce276af))
+
+
+### Performance Improvements
+
+* **core:** global runtime performance improvements ([cc44807](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc44807))
+
+
+
 <a name="9.0.4"></a>
 ## [9.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.3...v9.0.4) (2021-11-18)
 
