@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { MapData } from './map-data';
-import { Aetheryte } from '../../core/data/aetheryte';
 import { Vector2 } from '../../core/tools/vector2';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
@@ -16,6 +15,7 @@ import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 import { Vector3 } from '../../core/tools/vector3';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
+import { LazyAetheryte } from '../../lazy-data/model/lazy-aetheryte';
 
 @Injectable()
 export class MapService {
@@ -51,7 +51,7 @@ export class MapService {
     return this.cache[mapId];
   }
 
-  public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Observable<Aetheryte> {
+  public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Observable<LazyAetheryte> {
     return this.getAetherytes(mapData.id, true).pipe(
       map(aetherytes => {
         let nearest = aetherytes[0];
@@ -91,15 +91,15 @@ export class MapService {
                 map(aetherytes => {
                   const startingPoint = aetherytes[0];
                   res.push(pool.sort((a, b) => {
-                    const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0]);
-                    const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0]);
+                    const aCost = this.getTpCost(startingPoint, a.map.aetherytes[0] as LazyAetheryte);
+                    const bCost = this.getTpCost(startingPoint, b.map.aetherytes[0] as LazyAetheryte);
                     return aCost - bCost;
                   }).shift());
                   while (pool.length > 0) {
                     res.push(
                       pool.sort((a, b) => {
-                        const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], a.map.aetherytes[0]);
-                        const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0], b.map.aetherytes[0]);
+                        const aCost = this.getTpCost(res[res.length - 1].map.aetherytes[0] as LazyAetheryte, a.map.aetherytes[0] as LazyAetheryte);
+                        const bCost = this.getTpCost(res[res.length - 1].map.aetherytes[0] as LazyAetheryte, b.map.aetherytes[0] as LazyAetheryte);
                         return aCost - bCost;
                       }).shift()
                     );
@@ -149,7 +149,7 @@ export class MapService {
     };
   }
 
-  private getTpCost(from: Aetheryte, to: Aetheryte): number {
+  private getTpCost(from: LazyAetheryte, to: LazyAetheryte): number {
     if (from === undefined || to === undefined) {
       return 999;
     }
@@ -173,7 +173,7 @@ export class MapService {
     return Math.floor(Math.min(base, 999));
   }
 
-  private getAetherytes(id: number, excludeMinis = false): Observable<Aetheryte[]> {
+  private getAetherytes(id: number, excludeMinis = false): Observable<LazyAetheryte[]> {
     // If it's dravanian forelands, use Idyllshire id instead.
     if (id === 213) {
       id = 257;
@@ -183,7 +183,7 @@ export class MapService {
         return aetherytes
           .filter((aetheryte) => {
             return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0);
-          })
+          });
       })
     );
   }
@@ -206,7 +206,7 @@ export class MapService {
   }
 
   private getShortestPath(start: NavigationObjective, objectives: NavigationObjective[],
-                          availableAetherytes: Aetheryte[]): NavigationStep[] {
+                          availableAetherytes: LazyAetheryte[]): NavigationStep[] {
     // First of all, compile all steps we have available
     let availablePoints: NavigationStep[] =
       objectives.map(point => ({

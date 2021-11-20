@@ -56,7 +56,8 @@ const patrons = [
   'Syl Varil',
   'Late Night Friendos',
   'The Hoe Depot',
-  '[Ultros] Nyumi Aitken'
+  '[Ultros] Nyumi Aitken',
+  'Syleboris Whitemaw (Phoenix)'
 ];
 
 const gifs = [
