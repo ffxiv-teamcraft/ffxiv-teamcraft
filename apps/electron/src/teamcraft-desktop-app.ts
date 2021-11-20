@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain, protocol } from 'electron';
-import { createServer } from 'net';
 import { createServer as createHttpServer, Server } from 'http';
 import * as request from 'request';
 import { MainWindow } from './window/main-window';
@@ -45,8 +44,8 @@ export class TeamcraftDesktopApp {
       }
 
       request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${(this.argv[0] || '').replace('teamcraft://', '')}`, (err, res) => {
-        if(err){
-          this.bootApp()
+        if (err) {
+          this.bootApp();
         } else {
           (<any>app).isQuitting = true;
           app.quit();

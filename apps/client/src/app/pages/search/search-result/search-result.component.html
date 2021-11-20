@@ -158,7 +158,7 @@
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
         <div fxLayout="column">
-          <div>{{row.id | i18nRow:'mobs' | i18n}}</div>
+          <app-i18n-name content="mobs" [id]="row.id"></app-i18n-name>
           <div fxLayout="row" fxLayoutGap="5px">
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
             <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>

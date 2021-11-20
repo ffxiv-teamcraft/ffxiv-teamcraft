@@ -152,29 +152,29 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   // tslint:disable-next-line:member-ordering
   form: FormGroup = this.fb.group({
     source: [null, Validators.required],
-    item: [null, this.requiredIfSource([AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT], 'items')],
-    instance: [null, this.requiredIfSource([AllaganReportSource.INSTANCE], 'instances')],
-    venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures')],
-    fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates')],
-    mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs')],
-    voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
-    voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
+    item: [null, null, this.requiredIfSource([AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT], 'items$')],
+    instance: [null, null, this.requiredIfSource([AllaganReportSource.INSTANCE], 'instances$')],
+    venture: [null, null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
+    fate: [null, null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
+    mob: [null, null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    voyageType: [null, null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
+    voyage: [null, null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     rarity: [null],
-    spot: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    spot: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
     hookset: [null],
-    tug: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
-    bait: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    tug: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    bait: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
     spawn: [null],
     duration: [null, durationRequired],
     weathers: [[]],
     weathersFrom: [[]],
     predators: [[]],
     snagging: [false],
-    gig: [null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
+    gig: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
     oceanFishingTime: [0],
     minGathering: [0],
-    price: [0, this.requiredIfSource([AllaganReportSource.MOGSTATION])],
-    productId: [null, this.requiredIfSource([AllaganReportSource.MOGSTATION])]
+    price: [0, null, this.requiredIfSource([AllaganReportSource.MOGSTATION])],
+    productId: [null, null, this.requiredIfSource([AllaganReportSource.MOGSTATION])]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -319,18 +319,23 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
-  requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, { id: number, name: I18nName }[]>): ValidationErrors | null {
+  requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, Observable<any>>): (control: AbstractControl) => Observable<ValidationErrors | null> {
     return (control: AbstractControl) => {
       if (sources.includes(control.parent?.get('source').value)) {
         const required = Validators.required(control);
         if (required || !registryKey) {
-          return required;
+          return of(required);
         }
-        if (this.getEntryId(this[registryKey], control.value) === undefined) {
-          return { invalid: true };
-        }
+        return this.getEntryId(this[registryKey] as unknown as Observable<any>, control.value).pipe(
+          map(id => {
+            if (!id) {
+              return { invalid: true };
+            }
+            return null;
+          })
+        );
       }
-      return null;
+      return of(null);
     };
   }
 

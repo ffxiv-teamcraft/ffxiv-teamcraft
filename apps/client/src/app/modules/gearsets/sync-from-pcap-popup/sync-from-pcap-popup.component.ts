@@ -28,9 +28,10 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
               private gearsetsFacade: GearsetsFacade, private translate: TranslateService
   ) {
     super();
-    combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
+    combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$,
+    this.lazyData.getEntry('materias')]).pipe(
       takeUntil(this.onDestroy$),
-      switchMap(([packets, classInfo]) => {
+      switchMap(([packets, classInfo, materiasData]) => {
         return this.lazyData.getEntry('itemMeldingData').pipe(
           switchMap(lazyItemMeldingData => {
             return this.i18n.getNameObservable('jobName', classInfo.classId).pipe(
@@ -49,7 +50,7 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
                   .forEach(packet => {
                     const itemMeldingData = lazyItemMeldingData[packet.catalogId];
                     const materias = (packet.materia || <number[]>[]).map((materia, index) => {
-                      return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index]) || 0;
+                      return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
                     });
                     while (materias.length < itemMeldingData.slots) {
                       materias.push(0);

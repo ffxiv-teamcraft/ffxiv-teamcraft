@@ -24,7 +24,7 @@
                  [nzTooltipTitle]="fetchStatus.canFetch ? null : ('RETAINERS.Cannot_fetch' | translate: {date: fetchStatus.lastFetch | date:'medium':null:translate.currentLang})">
               <button nz-button nzShape="circle" nzSize="small" nzType="primary"
                       nz-tooltip [nzTooltipTitle]="fetchStatus.canFetch? ('RETAINERS.Check_prices' | translate) : null"
-                      [disabled]="!fetchStatus.canFetch"
+                      [disabled]="!fetchStatus.canFetch || row.server === 'Unknown'"
                       (click)="checkPrices(row.characterName, row.server, row.retainers)">
                 <i nz-icon nzType="fund" nzTheme="outline"></i>
               </button>
