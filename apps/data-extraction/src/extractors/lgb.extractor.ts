@@ -56,7 +56,7 @@ export class LgbExtractor extends AbstractExtractor {
 
     // Then, let's work on lgb files
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes'),
+      this.aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID,AetherstreamX,AetherstreamY', null, 'LGB Aetherytes'),
       this.aggregateAllPages('https://xivapi.com/HousingAethernet?columns=ID,LevelTargetID,TerritoryType.MapTargetID,PlaceNameTargetID', null, 'LGB Housing Aetherytes')
     ])
       .subscribe(([xivapiAetherytes, xivapiHousingAetherytes]) => {
@@ -136,7 +136,11 @@ export class LgbExtractor extends AbstractExtractor {
                       map: mapId,
                       ...coords,
                       type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
-                      nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
+                      nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID,
+                      aethernetCoords: {
+                        x: xivapiAetheryte.AetherstreamX,
+                        y: xivapiAetheryte.AetherstreamY
+                      }
                     };
                     aetherytes.push(aetheryteEntry);
                   }

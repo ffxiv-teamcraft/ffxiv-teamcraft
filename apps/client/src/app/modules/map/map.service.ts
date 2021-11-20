@@ -11,7 +11,6 @@ import { XivapiService } from '@xivapi/angular-client';
 import * as _ from 'lodash';
 import { WorldNavigationStep } from './world-navigation-step';
 import { requestsWithDelay } from '../../core/rxjs/requests-with-delay';
-import { aetherstream } from '../../core/data/sources/aetherstream';
 import { SettingsService } from '../settings/settings.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
 import { Vector3 } from '../../core/tools/vector3';
@@ -185,10 +184,6 @@ export class MapService {
           .filter((aetheryte) => {
             return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0);
           })
-          .map((aetheryte: Aetheryte) => {
-            aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };
-            return aetheryte;
-          });
       })
     );
   }

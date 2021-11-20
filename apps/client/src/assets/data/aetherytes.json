@@ -7,7 +7,11 @@
     "y": 33.4,
     "z": 1.18,
     "type": 0,
-    "nameid": 2116
+    "nameid": 2116,
+    "aethernetCoords": {
+      "x": 1450,
+      "y": 300
+    }
   },
   {
     "id": 73,
@@ -17,7 +21,11 @@
     "y": 14.43,
     "z": 1.89,
     "type": 0,
-    "nameid": 2123
+    "nameid": 2123,
+    "aethernetCoords": {
+      "x": 1450,
+      "y": 260
+    }
   },
   {
     "id": 74,
@@ -27,7 +35,11 @@
     "y": 10.71,
     "z": 4.14,
     "type": 0,
-    "nameid": 2131
+    "nameid": 2131,
+    "aethernetCoords": {
+      "x": 1300,
+      "y": 230
+    }
   },
   {
     "id": 76,
@@ -37,7 +49,11 @@
     "y": 23.19,
     "z": 1.05,
     "type": 0,
-    "nameid": 2018
+    "nameid": 2018,
+    "aethernetCoords": {
+      "x": 700,
+      "y": 400
+    }
   },
   {
     "id": 77,
@@ -47,7 +63,11 @@
     "y": 23.24,
     "z": 1.35,
     "type": 0,
-    "nameid": 2025
+    "nameid": 2025,
+    "aethernetCoords": {
+      "x": 650,
+      "y": 400
+    }
   },
   {
     "id": 92,
@@ -57,7 +77,11 @@
     "y": 10.56,
     "z": 0.66,
     "type": 1,
-    "nameid": 1683
+    "nameid": 1683,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 91,
@@ -67,7 +91,11 @@
     "y": 12.83,
     "z": 1.14,
     "type": 1,
-    "nameid": 1682
+    "nameid": 1682,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 78,
@@ -77,7 +105,11 @@
     "y": 34.4,
     "z": 0.38,
     "type": 0,
-    "nameid": 2042
+    "nameid": 2042,
+    "aethernetCoords": {
+      "x": 600,
+      "y": 350
+    }
   },
   {
     "id": 79,
@@ -87,7 +119,11 @@
     "y": 28.81,
     "z": 1.3,
     "type": 0,
-    "nameid": 2046
+    "nameid": 2046,
+    "aethernetCoords": {
+      "x": 580,
+      "y": 340
+    }
   },
   {
     "id": 75,
@@ -97,7 +133,11 @@
     "y": 5.55,
     "z": 2.07,
     "type": 0,
-    "nameid": 2082
+    "nameid": 2082,
+    "aethernetCoords": {
+      "x": 550,
+      "y": 430
+    }
   },
   {
     "id": 90,
@@ -107,7 +147,11 @@
     "y": 5.66,
     "z": 2.08,
     "type": 1,
-    "nameid": 1681
+    "nameid": 1681,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 1966129,
@@ -117,7 +161,8 @@
     "y": 13.77,
     "z": 0.02,
     "type": 1,
-    "nameid": 1902
+    "nameid": 1902,
+    "aethernetCoords": {}
   },
   {
     "id": 1966130,
@@ -127,7 +172,8 @@
     "y": 8.88,
     "z": 0.29,
     "type": 1,
-    "nameid": 1903
+    "nameid": 1903,
+    "aethernetCoords": {}
   },
   {
     "id": 1966131,
@@ -137,7 +183,8 @@
     "y": 10.54,
     "z": 0.16,
     "type": 1,
-    "nameid": 1904
+    "nameid": 1904,
+    "aethernetCoords": {}
   },
   {
     "id": 1966132,
@@ -147,7 +194,8 @@
     "y": 10.99,
     "z": 0.25,
     "type": 1,
-    "nameid": 1905
+    "nameid": 1905,
+    "aethernetCoords": {}
   },
   {
     "id": 1966133,
@@ -157,7 +205,8 @@
     "y": 11.75,
     "z": 0.3,
     "type": 1,
-    "nameid": 1906
+    "nameid": 1906,
+    "aethernetCoords": {}
   },
   {
     "id": 1966134,
@@ -167,7 +216,8 @@
     "y": 11.3,
     "z": 0.09,
     "type": 1,
-    "nameid": 1907
+    "nameid": 1907,
+    "aethernetCoords": {}
   },
   {
     "id": 1966135,
@@ -177,7 +227,8 @@
     "y": 13.24,
     "z": 0.1,
     "type": 1,
-    "nameid": 1908
+    "nameid": 1908,
+    "aethernetCoords": {}
   },
   {
     "id": 1966136,
@@ -187,7 +238,8 @@
     "y": 13.53,
     "z": 0.1,
     "type": 1,
-    "nameid": 1909
+    "nameid": 1909,
+    "aethernetCoords": {}
   },
   {
     "id": 127,
@@ -197,7 +249,11 @@
     "y": 6.61,
     "z": 0,
     "type": 0,
-    "nameid": 2813
+    "nameid": 2813,
+    "aethernetCoords": {
+      "x": 10231,
+      "y": 460
+    }
   },
   {
     "id": 130,
@@ -207,7 +263,11 @@
     "y": 8.54,
     "z": 0,
     "type": 1,
-    "nameid": 2859
+    "nameid": 2859,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 129,
@@ -217,7 +277,11 @@
     "y": 4.75,
     "z": 0,
     "type": 1,
-    "nameid": 2860
+    "nameid": 2860,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 162,
@@ -227,7 +291,11 @@
     "y": 8.38,
     "z": -0.05,
     "type": 1,
-    "nameid": 2934
+    "nameid": 2934,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 105,
@@ -237,7 +305,11 @@
     "y": 16.04,
     "z": -1.18,
     "type": 0,
-    "nameid": 2769
+    "nameid": 2769,
+    "aethernetCoords": {
+      "x": 10501,
+      "y": 388
+    }
   },
   {
     "id": 106,
@@ -247,7 +319,11 @@
     "y": 9.7,
     "z": 0.05,
     "type": 0,
-    "nameid": 2773
+    "nameid": 2773,
+    "aethernetCoords": {
+      "x": 10463,
+      "y": 358
+    }
   },
   {
     "id": 120,
@@ -257,7 +333,11 @@
     "y": 38.44,
     "z": 0.07,
     "type": 1,
-    "nameid": 1954
+    "nameid": 1954,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 107,
@@ -267,7 +347,11 @@
     "y": 19.49,
     "z": 0.7,
     "type": 0,
-    "nameid": 2793
+    "nameid": 2793,
+    "aethernetCoords": {
+      "x": 10231,
+      "y": 460
+    }
   },
   {
     "id": 108,
@@ -277,7 +361,11 @@
     "y": 13.27,
     "z": 0.06,
     "type": 0,
-    "nameid": 2805
+    "nameid": 2805,
+    "aethernetCoords": {
+      "x": 10207,
+      "y": 420
+    }
   },
   {
     "id": 131,
@@ -287,7 +375,11 @@
     "y": 32.26,
     "z": 0.03,
     "type": 1,
-    "nameid": 2861
+    "nameid": 2861,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 109,
@@ -297,7 +389,11 @@
     "y": 28.13,
     "z": -0.21,
     "type": 0,
-    "nameid": 2814
+    "nameid": 2814,
+    "aethernetCoords": {
+      "x": 10357,
+      "y": 234
+    }
   },
   {
     "id": 110,
@@ -307,7 +403,11 @@
     "y": 22.17,
     "z": 1.13,
     "type": 0,
-    "nameid": 2822
+    "nameid": 2822,
+    "aethernetCoords": {
+      "x": 10291,
+      "y": 174
+    }
   },
   {
     "id": 128,
@@ -317,7 +417,11 @@
     "y": 23.98,
     "z": 1.26,
     "type": 0,
-    "nameid": 2850
+    "nameid": 2850,
+    "aethernetCoords": {
+      "x": 10291,
+      "y": 174
+    }
   },
   {
     "id": 111,
@@ -327,7 +431,11 @@
     "y": 10.32,
     "z": 0.04,
     "type": 0,
-    "nameid": 2404
+    "nameid": 2404,
+    "aethernetCoords": {
+      "x": 10900,
+      "y": 630
+    }
   },
   {
     "id": 113,
@@ -337,7 +445,11 @@
     "y": 14.23,
     "z": -0.05,
     "type": 1,
-    "nameid": 1947
+    "nameid": 1947,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 114,
@@ -347,7 +459,11 @@
     "y": 14.14,
     "z": 0.08,
     "type": 1,
-    "nameid": 1948
+    "nameid": 1948,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 115,
@@ -357,7 +473,11 @@
     "y": 12.62,
     "z": 0.04,
     "type": 1,
-    "nameid": 1949
+    "nameid": 1949,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 112,
@@ -367,7 +487,11 @@
     "y": 9.69,
     "z": -0.07,
     "type": 1,
-    "nameid": 1946
+    "nameid": 1946,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 116,
@@ -377,7 +501,11 @@
     "y": 7.93,
     "z": 0.18,
     "type": 1,
-    "nameid": 1950
+    "nameid": 1950,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 117,
@@ -387,7 +515,11 @@
     "y": 12.91,
     "z": 0.12,
     "type": 1,
-    "nameid": 1951
+    "nameid": 1951,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 119,
@@ -397,7 +529,11 @@
     "y": 8.25,
     "z": 0.06,
     "type": 1,
-    "nameid": 1953
+    "nameid": 1953,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 118,
@@ -407,7 +543,11 @@
     "y": 9.46,
     "z": 0.11,
     "type": 1,
-    "nameid": 1952
+    "nameid": 1952,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 126,
@@ -417,7 +557,11 @@
     "y": 12.14,
     "z": 0.79,
     "type": 1,
-    "nameid": 2353
+    "nameid": 2353,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 3,
@@ -427,7 +571,11 @@
     "y": 22.32,
     "z": 0.38,
     "type": 0,
-    "nameid": 94
+    "nameid": 94,
+    "aethernetCoords": {
+      "x": 1540,
+      "y": 820
+    }
   },
   {
     "id": 31,
@@ -437,7 +585,11 @@
     "y": 15.44,
     "z": 0.65,
     "type": 1,
-    "nameid": 597
+    "nameid": 597,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 54,
@@ -447,7 +599,11 @@
     "y": 15.91,
     "z": 1.03,
     "type": 1,
-    "nameid": 408
+    "nameid": 408,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 4,
@@ -457,7 +613,11 @@
     "y": 27.34,
     "z": 0.39,
     "type": 0,
-    "nameid": 107
+    "nameid": 107,
+    "aethernetCoords": {
+      "x": 1700,
+      "y": 820
+    }
   },
   {
     "id": 5,
@@ -467,7 +627,11 @@
     "y": 20.03,
     "z": 0.13,
     "type": 0,
-    "nameid": 129
+    "nameid": 129,
+    "aethernetCoords": {
+      "x": 1580,
+      "y": 920
+    }
   },
   {
     "id": 6,
@@ -477,7 +641,11 @@
     "y": 28.49,
     "z": 0.25,
     "type": 0,
-    "nameid": 123
+    "nameid": 123,
+    "aethernetCoords": {
+      "x": 1520,
+      "y": 980
+    }
   },
   {
     "id": 7,
@@ -487,7 +655,11 @@
     "y": 26.27,
     "z": 0.42,
     "type": 0,
-    "nameid": 140
+    "nameid": 140,
+    "aethernetCoords": {
+      "x": 1400,
+      "y": 720
+    }
   },
   {
     "id": 32,
@@ -497,7 +669,11 @@
     "y": 25.46,
     "z": 0.81,
     "type": 1,
-    "nameid": 598
+    "nameid": 598,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 1966104,
@@ -507,7 +683,8 @@
     "y": 8.9,
     "z": 0.53,
     "type": 1,
-    "nameid": 1807
+    "nameid": 1807,
+    "aethernetCoords": {}
   },
   {
     "id": 1966097,
@@ -517,7 +694,8 @@
     "y": 8.98,
     "z": 0.65,
     "type": 1,
-    "nameid": 1226
+    "nameid": 1226,
+    "aethernetCoords": {}
   },
   {
     "id": 1966098,
@@ -527,7 +705,8 @@
     "y": 10.16,
     "z": 0.31,
     "type": 1,
-    "nameid": 1223
+    "nameid": 1223,
+    "aethernetCoords": {}
   },
   {
     "id": 1966099,
@@ -537,7 +716,8 @@
     "y": 10.43,
     "z": 0.39,
     "type": 1,
-    "nameid": 1220
+    "nameid": 1220,
+    "aethernetCoords": {}
   },
   {
     "id": 1966100,
@@ -547,7 +727,8 @@
     "y": 12.98,
     "z": 0.06,
     "type": 1,
-    "nameid": 1224
+    "nameid": 1224,
+    "aethernetCoords": {}
   },
   {
     "id": 1966101,
@@ -557,7 +738,8 @@
     "y": 13.4,
     "z": 0.05,
     "type": 1,
-    "nameid": 1225
+    "nameid": 1225,
+    "aethernetCoords": {}
   },
   {
     "id": 1966102,
@@ -567,7 +749,8 @@
     "y": 10.82,
     "z": 0.33,
     "type": 1,
-    "nameid": 1151
+    "nameid": 1151,
+    "aethernetCoords": {}
   },
   {
     "id": 1966103,
@@ -577,7 +760,8 @@
     "y": 15.01,
     "z": 0.02,
     "type": 1,
-    "nameid": 1222
+    "nameid": 1222,
+    "aethernetCoords": {}
   },
   {
     "id": 2,
@@ -587,7 +771,11 @@
     "y": 11.92,
     "z": 0.01,
     "type": 0,
-    "nameid": 52
+    "nameid": 52,
+    "aethernetCoords": {
+      "x": 1560,
+      "y": 720
+    }
   },
   {
     "id": 25,
@@ -597,7 +785,11 @@
     "y": 12.91,
     "z": -0.03,
     "type": 1,
-    "nameid": 782
+    "nameid": 782,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 94,
@@ -607,7 +799,11 @@
     "y": 13.17,
     "z": -0.19,
     "type": 1,
-    "nameid": 549
+    "nameid": 549,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 26,
@@ -617,7 +813,11 @@
     "y": 9.08,
     "z": 0.08,
     "type": 1,
-    "nameid": 783
+    "nameid": 783,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 27,
@@ -627,7 +827,11 @@
     "y": 6.61,
     "z": 0.11,
     "type": 1,
-    "nameid": 784
+    "nameid": 784,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 28,
@@ -637,7 +841,11 @@
     "y": 10.97,
     "z": 0.03,
     "type": 1,
-    "nameid": 785
+    "nameid": 785,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 29,
@@ -647,7 +855,11 @@
     "y": 7.74,
     "z": 0.07,
     "type": 1,
-    "nameid": 786
+    "nameid": 786,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 30,
@@ -657,7 +869,11 @@
     "y": 8.51,
     "z": 0.06,
     "type": 1,
-    "nameid": 787
+    "nameid": 787,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 98,
@@ -667,7 +883,11 @@
     "y": 11.26,
     "z": 1.18,
     "type": 0,
-    "nameid": 2613
+    "nameid": 2613,
+    "aethernetCoords": {
+      "x": 1984,
+      "y": 777
+    }
   },
   {
     "id": 99,
@@ -677,7 +897,11 @@
     "y": 26.35,
     "z": 1.02,
     "type": 0,
-    "nameid": 2634
+    "nameid": 2634,
+    "aethernetCoords": {
+      "x": 2116,
+      "y": 870
+    }
   },
   {
     "id": 123,
@@ -687,7 +911,11 @@
     "y": 10.88,
     "z": 0.49,
     "type": 1,
-    "nameid": 1958
+    "nameid": 1958,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 100,
@@ -697,7 +925,11 @@
     "y": 6.42,
     "z": 0.72,
     "type": 0,
-    "nameid": 2646
+    "nameid": 2646,
+    "aethernetCoords": {
+      "x": 2323,
+      "y": 768
+    }
   },
   {
     "id": 101,
@@ -707,7 +939,11 @@
     "y": 36.39,
     "z": 2.11,
     "type": 0,
-    "nameid": 2660
+    "nameid": 2660,
+    "aethernetCoords": {
+      "x": 2270,
+      "y": 952
+    }
   },
   {
     "id": 124,
@@ -717,7 +953,11 @@
     "y": 5.73,
     "z": 0.04,
     "type": 1,
-    "nameid": 1959
+    "nameid": 1959,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 102,
@@ -727,7 +967,11 @@
     "y": 20.97,
     "z": 0.52,
     "type": 0,
-    "nameid": 2670
+    "nameid": 2670,
+    "aethernetCoords": {
+      "x": 2459,
+      "y": 829
+    }
   },
   {
     "id": 103,
@@ -737,7 +981,11 @@
     "y": 34.45,
     "z": 0.82,
     "type": 0,
-    "nameid": 2693
+    "nameid": 2693,
+    "aethernetCoords": {
+      "x": 2632,
+      "y": 925
+    }
   },
   {
     "id": 104,
@@ -747,7 +995,11 @@
     "y": 13.13,
     "z": 0,
     "type": 0,
-    "nameid": 2403
+    "nameid": 2403,
+    "aethernetCoords": {
+      "x": 2171,
+      "y": 745
+    }
   },
   {
     "id": 121,
@@ -757,7 +1009,11 @@
     "y": 11.41,
     "z": 0,
     "type": 1,
-    "nameid": 1956
+    "nameid": 1956,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 122,
@@ -767,7 +1023,11 @@
     "y": 9.03,
     "z": 0.03,
     "type": 1,
-    "nameid": 1957
+    "nameid": 1957,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 24,
@@ -777,7 +1037,11 @@
     "y": 8.12,
     "z": 0.5,
     "type": 0,
-    "nameid": 411
+    "nameid": 411,
+    "aethernetCoords": {
+      "x": 1240,
+      "y": 860
+    }
   },
   {
     "id": 163,
@@ -787,7 +1051,11 @@
     "y": 5.32,
     "z": 0,
     "type": 1,
-    "nameid": 2935
+    "nameid": 2935,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 132,
@@ -797,7 +1065,11 @@
     "y": 21.18,
     "z": 0.24,
     "type": 0,
-    "nameid": 3044
+    "nameid": 3044,
+    "aethernetCoords": {
+      "x": 554,
+      "y": 10487
+    }
   },
   {
     "id": 136,
@@ -807,7 +1079,11 @@
     "y": 16.76,
     "z": 0.54,
     "type": 0,
-    "nameid": 3057
+    "nameid": 3057,
+    "aethernetCoords": {
+      "x": 347,
+      "y": 10462
+    }
   },
   {
     "id": 156,
@@ -817,7 +1093,11 @@
     "y": 29.65,
     "z": 0.37,
     "type": 1,
-    "nameid": 3335
+    "nameid": 3335,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 137,
@@ -827,7 +1107,11 @@
     "y": 27.42,
     "z": 0.28,
     "type": 0,
-    "nameid": 3075
+    "nameid": 3075,
+    "aethernetCoords": {
+      "x": 254,
+      "y": 10430
+    }
   },
   {
     "id": 138,
@@ -837,7 +1121,11 @@
     "y": 29.04,
     "z": 0.19,
     "type": 0,
-    "nameid": 3094
+    "nameid": 3094,
+    "aethernetCoords": {
+      "x": 126,
+      "y": 10440
+    }
   },
   {
     "id": 139,
@@ -847,7 +1135,11 @@
     "y": 8.89,
     "z": 4.17,
     "type": 0,
-    "nameid": 3105
+    "nameid": 3105,
+    "aethernetCoords": {
+      "x": 100,
+      "y": 10303
+    }
   },
   {
     "id": 160,
@@ -857,7 +1149,11 @@
     "y": 38.54,
     "z": 0.56,
     "type": 1,
-    "nameid": 3351
+    "nameid": 3351,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 140,
@@ -867,7 +1163,11 @@
     "y": 16.86,
     "z": 1.27,
     "type": 0,
-    "nameid": 3122
+    "nameid": 3122,
+    "aethernetCoords": {
+      "x": 696,
+      "y": 10737
+    }
   },
   {
     "id": 141,
@@ -877,7 +1177,11 @@
     "y": 16.98,
     "z": 1.62,
     "type": 0,
-    "nameid": 3135
+    "nameid": 3135,
+    "aethernetCoords": {
+      "x": 589,
+      "y": 10740
+    }
   },
   {
     "id": 161,
@@ -887,7 +1191,11 @@
     "y": 27.43,
     "z": 0.88,
     "type": 0,
-    "nameid": 3129
+    "nameid": 3129,
+    "aethernetCoords": {
+      "x": 713,
+      "y": 10772
+    }
   },
   {
     "id": 144,
@@ -897,7 +1205,11 @@
     "y": 31.56,
     "z": 0.47,
     "type": 0,
-    "nameid": 3147
+    "nameid": 3147,
+    "aethernetCoords": {
+      "x": 717,
+      "y": 10344
+    }
   },
   {
     "id": 145,
@@ -907,7 +1219,11 @@
     "y": 4.19,
     "z": 1.02,
     "type": 0,
-    "nameid": 3156
+    "nameid": 3156,
+    "aethernetCoords": {
+      "x": 755,
+      "y": 10152
+    }
   },
   {
     "id": 146,
@@ -917,7 +1233,11 @@
     "y": 7.48,
     "z": 0.86,
     "type": 0,
-    "nameid": 3157
+    "nameid": 3157,
+    "aethernetCoords": {
+      "x": 818,
+      "y": 10176
+    }
   },
   {
     "id": 142,
@@ -927,7 +1247,11 @@
     "y": 27.27,
     "z": -0.2,
     "type": 0,
-    "nameid": 3170
+    "nameid": 3170,
+    "aethernetCoords": {
+      "x": 475,
+      "y": 10224
+    }
   },
   {
     "id": 143,
@@ -937,7 +1261,11 @@
     "y": 17.41,
     "z": 0.2,
     "type": 0,
-    "nameid": 3179
+    "nameid": 3179,
+    "aethernetCoords": {
+      "x": 544,
+      "y": 10157
+    }
   },
   {
     "id": 147,
@@ -947,7 +1275,11 @@
     "y": 17.27,
     "z": -2,
     "type": 0,
-    "nameid": 3195
+    "nameid": 3195,
+    "aethernetCoords": {
+      "x": 333,
+      "y": 10723
+    }
   },
   {
     "id": 148,
@@ -957,7 +1289,11 @@
     "y": 25.56,
     "z": -8.3,
     "type": 0,
-    "nameid": 3205
+    "nameid": 3205,
+    "aethernetCoords": {
+      "x": 202,
+      "y": 10776
+    }
   },
   {
     "id": 133,
@@ -967,7 +1303,11 @@
     "y": 11.37,
     "z": 0.02,
     "type": 0,
-    "nameid": 2951
+    "nameid": 2951,
+    "aethernetCoords": {
+      "x": 623,
+      "y": 10560
+    }
   },
   {
     "id": 149,
@@ -977,7 +1317,11 @@
     "y": 14.17,
     "z": -0.08,
     "type": 1,
-    "nameid": 3328
+    "nameid": 3328,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 150,
@@ -987,7 +1331,11 @@
     "y": 10.03,
     "z": 0,
     "type": 1,
-    "nameid": 3329
+    "nameid": 3329,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 151,
@@ -997,7 +1345,11 @@
     "y": 10.88,
     "z": -0.01,
     "type": 1,
-    "nameid": 3330
+    "nameid": 3330,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 152,
@@ -1007,7 +1359,11 @@
     "y": 15.63,
     "z": 0,
     "type": 1,
-    "nameid": 3331
+    "nameid": 3331,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 153,
@@ -1017,7 +1373,11 @@
     "y": 8.58,
     "z": 0.35,
     "type": 1,
-    "nameid": 3332
+    "nameid": 3332,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 154,
@@ -1027,7 +1387,11 @@
     "y": 7.82,
     "z": 0.19,
     "type": 1,
-    "nameid": 3333
+    "nameid": 3333,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 155,
@@ -1037,7 +1401,11 @@
     "y": 6.46,
     "z": -0.38,
     "type": 1,
-    "nameid": 3334
+    "nameid": 3334,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 134,
@@ -1047,7 +1415,11 @@
     "y": 11.48,
     "z": 0.82,
     "type": 0,
-    "nameid": 2952
+    "nameid": 2952,
+    "aethernetCoords": {
+      "x": 170,
+      "y": 10562
+    }
   },
   {
     "id": 135,
@@ -1057,7 +1429,11 @@
     "y": 12.55,
     "z": -0.11,
     "type": 1,
-    "nameid": 3337
+    "nameid": 3337,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 157,
@@ -1067,7 +1443,11 @@
     "y": 11.13,
     "z": 0.36,
     "type": 1,
-    "nameid": 3338
+    "nameid": 3338,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 159,
@@ -1077,7 +1457,11 @@
     "y": 10.09,
     "z": 0.05,
     "type": 1,
-    "nameid": 3340
+    "nameid": 3340,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 158,
@@ -1087,7 +1471,11 @@
     "y": 12.29,
     "z": -0.01,
     "type": 1,
-    "nameid": 3339
+    "nameid": 3339,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 23,
@@ -1097,7 +1485,11 @@
     "y": 16.72,
     "z": 1.79,
     "type": 0,
-    "nameid": 388
+    "nameid": 388,
+    "aethernetCoords": {
+      "x": 1180,
+      "y": 580
+    }
   },
   {
     "id": 88,
@@ -1107,7 +1499,11 @@
     "y": 15.05,
     "z": 1.71,
     "type": 1,
-    "nameid": 1659
+    "nameid": 1659,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 71,
@@ -1117,7 +1513,11 @@
     "y": 36.54,
     "z": 1.58,
     "type": 0,
-    "nameid": 2204
+    "nameid": 2204,
+    "aethernetCoords": {
+      "x": 1000,
+      "y": 400
+    }
   },
   {
     "id": 70,
@@ -1127,7 +1527,11 @@
     "y": 11.94,
     "z": 0.08,
     "type": 0,
-    "nameid": 2300
+    "nameid": 2300,
+    "aethernetCoords": {
+      "x": 1150,
+      "y": 450
+    }
   },
   {
     "id": 82,
@@ -1137,7 +1541,11 @@
     "y": 12.66,
     "z": -0.13,
     "type": 1,
-    "nameid": 1653
+    "nameid": 1653,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 80,
@@ -1147,7 +1555,11 @@
     "y": 11.2,
     "z": 0.23,
     "type": 1,
-    "nameid": 1651
+    "nameid": 1651,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 81,
@@ -1157,7 +1569,11 @@
     "y": 10.57,
     "z": 0.15,
     "type": 1,
-    "nameid": 1652
+    "nameid": 1652,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 87,
@@ -1167,7 +1583,11 @@
     "y": 10.5,
     "z": 0.15,
     "type": 1,
-    "nameid": 1658
+    "nameid": 1658,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 83,
@@ -1177,7 +1597,11 @@
     "y": 10.01,
     "z": -0.1,
     "type": 1,
-    "nameid": 1654
+    "nameid": 1654,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 84,
@@ -1187,7 +1611,11 @@
     "y": 10.85,
     "z": -0.13,
     "type": 1,
-    "nameid": 1655
+    "nameid": 1655,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 85,
@@ -1197,7 +1625,11 @@
     "y": 8.85,
     "z": 0.1,
     "type": 1,
-    "nameid": 1656
+    "nameid": 1656,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 86,
@@ -1207,7 +1639,11 @@
     "y": 8.85,
     "z": 0.1,
     "type": 1,
-    "nameid": 1657
+    "nameid": 1657,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 52,
@@ -1217,7 +1653,11 @@
     "y": 16.27,
     "z": 1.14,
     "type": 0,
-    "nameid": 184
+    "nameid": 184,
+    "aethernetCoords": {
+      "x": 700,
+      "y": 1170
+    }
   },
   {
     "id": 45,
@@ -1227,7 +1667,11 @@
     "y": 24.43,
     "z": 0.42,
     "type": 1,
-    "nameid": 770
+    "nameid": 770,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 10,
@@ -1237,7 +1681,11 @@
     "y": 35.13,
     "z": 0.15,
     "type": 0,
-    "nameid": 337
+    "nameid": 337,
+    "aethernetCoords": {
+      "x": 780,
+      "y": 1220
+    }
   },
   {
     "id": 46,
@@ -1247,7 +1695,11 @@
     "y": 23.55,
     "z": 0.71,
     "type": 1,
-    "nameid": 771
+    "nameid": 771,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 11,
@@ -1257,7 +1709,11 @@
     "y": 31,
     "z": 0.11,
     "type": 0,
-    "nameid": 206
+    "nameid": 206,
+    "aethernetCoords": {
+      "x": 820,
+      "y": 1120
+    }
   },
   {
     "id": 12,
@@ -1267,7 +1723,11 @@
     "y": 21.57,
     "z": 0.63,
     "type": 0,
-    "nameid": 216
+    "nameid": 216,
+    "aethernetCoords": {
+      "x": 780,
+      "y": 1040
+    }
   },
   {
     "id": 13,
@@ -1277,7 +1737,11 @@
     "y": 31.65,
     "z": 0.53,
     "type": 0,
-    "nameid": 218
+    "nameid": 218,
+    "aethernetCoords": {
+      "x": 600,
+      "y": 1100
+    }
   },
   {
     "id": 14,
@@ -1287,7 +1751,11 @@
     "y": 25.87,
     "z": 0.21,
     "type": 0,
-    "nameid": 223
+    "nameid": 223,
+    "aethernetCoords": {
+      "x": 540,
+      "y": 1100
+    }
   },
   {
     "id": 15,
@@ -1297,7 +1765,11 @@
     "y": 23.18,
     "z": 0.19,
     "type": 0,
-    "nameid": 239
+    "nameid": 239,
+    "aethernetCoords": {
+      "x": 760,
+      "y": 1000
+    }
   },
   {
     "id": 16,
@@ -1307,7 +1779,11 @@
     "y": 17.1,
     "z": 0.74,
     "type": 0,
-    "nameid": 237
+    "nameid": 237,
+    "aethernetCoords": {
+      "x": 680,
+      "y": 960
+    }
   },
   {
     "id": 1966088,
@@ -1317,7 +1793,8 @@
     "y": 10.24,
     "z": 0.29,
     "type": 1,
-    "nameid": 1805
+    "nameid": 1805,
+    "aethernetCoords": {}
   },
   {
     "id": 1966081,
@@ -1327,7 +1804,8 @@
     "y": 8.96,
     "z": 0.48,
     "type": 1,
-    "nameid": 1200
+    "nameid": 1200,
+    "aethernetCoords": {}
   },
   {
     "id": 1966082,
@@ -1337,7 +1815,8 @@
     "y": 9.51,
     "z": 0.32,
     "type": 1,
-    "nameid": 1204
+    "nameid": 1204,
+    "aethernetCoords": {}
   },
   {
     "id": 1966083,
@@ -1347,7 +1826,8 @@
     "y": 9.27,
     "z": 0.42,
     "type": 1,
-    "nameid": 1205
+    "nameid": 1205,
+    "aethernetCoords": {}
   },
   {
     "id": 1966084,
@@ -1357,7 +1837,8 @@
     "y": 11.5,
     "z": 0.06,
     "type": 1,
-    "nameid": 1206
+    "nameid": 1206,
+    "aethernetCoords": {}
   },
   {
     "id": 1966085,
@@ -1367,7 +1848,8 @@
     "y": 12.04,
     "z": 0.24,
     "type": 1,
-    "nameid": 1207
+    "nameid": 1207,
+    "aethernetCoords": {}
   },
   {
     "id": 1966086,
@@ -1377,7 +1859,8 @@
     "y": 12.01,
     "z": 0.1,
     "type": 1,
-    "nameid": 1156
+    "nameid": 1156,
+    "aethernetCoords": {}
   },
   {
     "id": 1966087,
@@ -1387,7 +1870,8 @@
     "y": 10.95,
     "z": 0.18,
     "type": 1,
-    "nameid": 1150
+    "nameid": 1150,
+    "aethernetCoords": {}
   },
   {
     "id": 55,
@@ -1397,7 +1881,11 @@
     "y": 5.65,
     "z": 0.05,
     "type": 0,
-    "nameid": 358
+    "nameid": 358,
+    "aethernetCoords": {
+      "x": 600,
+      "y": 1240
+    }
   },
   {
     "id": 42,
@@ -1407,7 +1895,11 @@
     "y": 8.65,
     "z": 0.42,
     "type": 1,
-    "nameid": 765
+    "nameid": 765,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 41,
@@ -1417,7 +1909,11 @@
     "y": 12.66,
     "z": 0.4,
     "type": 1,
-    "nameid": 764
+    "nameid": 764,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 48,
@@ -1427,7 +1923,11 @@
     "y": 6.87,
     "z": 0.44,
     "type": 1,
-    "nameid": 766
+    "nameid": 766,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 93,
@@ -1437,7 +1937,11 @@
     "y": 11.05,
     "z": 0.91,
     "type": 1,
-    "nameid": 725
+    "nameid": 725,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 8,
@@ -1447,7 +1951,11 @@
     "y": 11.25,
     "z": 0.18,
     "type": 0,
-    "nameid": 29
+    "nameid": 29,
+    "aethernetCoords": {
+      "x": 640,
+      "y": 1200
+    }
   },
   {
     "id": 43,
@@ -1457,7 +1965,11 @@
     "y": 12.34,
     "z": 0.12,
     "type": 1,
-    "nameid": 769
+    "nameid": 769,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 44,
@@ -1467,7 +1979,11 @@
     "y": 14.9,
     "z": 0.03,
     "type": 1,
-    "nameid": 768
+    "nameid": 768,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 49,
@@ -1477,7 +1993,11 @@
     "y": 12.24,
     "z": 0.16,
     "type": 1,
-    "nameid": 767
+    "nameid": 767,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 62,
@@ -1487,7 +2007,11 @@
     "y": 5.95,
     "z": 0,
     "type": 0,
-    "nameid": 1484
+    "nameid": 1484,
+    "aethernetCoords": {
+      "x": 1320,
+      "y": 1480
+    }
   },
   {
     "id": 63,
@@ -1497,7 +2021,11 @@
     "y": 7.14,
     "z": 0,
     "type": 1,
-    "nameid": 1518
+    "nameid": 1518,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 64,
@@ -1507,7 +2035,11 @@
     "y": 7.4,
     "z": 0.2,
     "type": 1,
-    "nameid": 1519
+    "nameid": 1519,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 65,
@@ -1517,7 +2049,11 @@
     "y": 7.26,
     "z": 0.2,
     "type": 1,
-    "nameid": 1520
+    "nameid": 1520,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 66,
@@ -1527,7 +2063,11 @@
     "y": 4.77,
     "z": -0.06,
     "type": 1,
-    "nameid": 1521
+    "nameid": 1521,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 67,
@@ -1537,7 +2077,11 @@
     "y": 5.39,
     "z": 0.13,
     "type": 1,
-    "nameid": 1522
+    "nameid": 1522,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 68,
@@ -1547,7 +2091,11 @@
     "y": 4.48,
     "z": 0.03,
     "type": 1,
-    "nameid": 1523
+    "nameid": 1523,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 69,
@@ -1557,7 +2105,11 @@
     "y": 5.41,
     "z": 0,
     "type": 1,
-    "nameid": 1524
+    "nameid": 1524,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 89,
@@ -1567,7 +2119,11 @@
     "y": 6.64,
     "z": 0,
     "type": 1,
-    "nameid": 1646
+    "nameid": 1646,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 17,
@@ -1577,7 +2133,11 @@
     "y": 16.85,
     "z": 0.33,
     "type": 0,
-    "nameid": 271
+    "nameid": 271,
+    "aethernetCoords": {
+      "x": 1120,
+      "y": 1260
+    }
   },
   {
     "id": 38,
@@ -1587,7 +2147,11 @@
     "y": 24.84,
     "z": 0.81,
     "type": 1,
-    "nameid": 779
+    "nameid": 779,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 53,
@@ -1597,7 +2161,11 @@
     "y": 18.23,
     "z": 0.3,
     "type": 0,
-    "nameid": 290
+    "nameid": 290,
+    "aethernetCoords": {
+      "x": 1290,
+      "y": 1230
+    }
   },
   {
     "id": 39,
@@ -1607,7 +2175,11 @@
     "y": 27.73,
     "z": 0.47,
     "type": 1,
-    "nameid": 780
+    "nameid": 780,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 40,
@@ -1617,7 +2189,11 @@
     "y": 33.05,
     "z": 0.47,
     "type": 1,
-    "nameid": 781
+    "nameid": 781,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 18,
@@ -1627,7 +2203,11 @@
     "y": 24.35,
     "z": 0.06,
     "type": 0,
-    "nameid": 300
+    "nameid": 300,
+    "aethernetCoords": {
+      "x": 1360,
+      "y": 1210
+    }
   },
   {
     "id": 19,
@@ -1637,7 +2217,11 @@
     "y": 13.11,
     "z": 0.49,
     "type": 0,
-    "nameid": 313
+    "nameid": 313,
+    "aethernetCoords": {
+      "x": 1360,
+      "y": 1340
+    }
   },
   {
     "id": 20,
@@ -1647,7 +2231,11 @@
     "y": 29.64,
     "z": 0.31,
     "type": 0,
-    "nameid": 323
+    "nameid": 323,
+    "aethernetCoords": {
+      "x": 1360,
+      "y": 1440
+    }
   },
   {
     "id": 21,
@@ -1657,7 +2245,11 @@
     "y": 30.59,
     "z": 0.45,
     "type": 0,
-    "nameid": 325
+    "nameid": 325,
+    "aethernetCoords": {
+      "x": 1280,
+      "y": 1160
+    }
   },
   {
     "id": 22,
@@ -1667,7 +2259,11 @@
     "y": 20.88,
     "z": 0.87,
     "type": 0,
-    "nameid": 331
+    "nameid": 331,
+    "aethernetCoords": {
+      "x": 1260,
+      "y": 1100
+    }
   },
   {
     "id": 1966120,
@@ -1677,7 +2273,8 @@
     "y": 12.78,
     "z": 0.19,
     "type": 1,
-    "nameid": 1809
+    "nameid": 1809,
+    "aethernetCoords": {}
   },
   {
     "id": 1966113,
@@ -1687,7 +2284,8 @@
     "y": 8.68,
     "z": -0.08,
     "type": 1,
-    "nameid": 1213
+    "nameid": 1213,
+    "aethernetCoords": {}
   },
   {
     "id": 1966114,
@@ -1697,7 +2295,8 @@
     "y": 9.7,
     "z": -0.32,
     "type": 1,
-    "nameid": 1214
+    "nameid": 1214,
+    "aethernetCoords": {}
   },
   {
     "id": 1966115,
@@ -1707,7 +2306,8 @@
     "y": 10.24,
     "z": 0.08,
     "type": 1,
-    "nameid": 1215
+    "nameid": 1215,
+    "aethernetCoords": {}
   },
   {
     "id": 1966116,
@@ -1717,7 +2317,8 @@
     "y": 11.5,
     "z": -0.24,
     "type": 1,
-    "nameid": 1210
+    "nameid": 1210,
+    "aethernetCoords": {}
   },
   {
     "id": 1966117,
@@ -1727,7 +2328,8 @@
     "y": 12.34,
     "z": -0.37,
     "type": 1,
-    "nameid": 1153
+    "nameid": 1153,
+    "aethernetCoords": {}
   },
   {
     "id": 1966118,
@@ -1737,7 +2339,8 @@
     "y": 7.42,
     "z": -0.12,
     "type": 1,
-    "nameid": 1152
+    "nameid": 1152,
+    "aethernetCoords": {}
   },
   {
     "id": 1966119,
@@ -1747,7 +2350,8 @@
     "y": 10.58,
     "z": -0.31,
     "type": 1,
-    "nameid": 1216
+    "nameid": 1216,
+    "aethernetCoords": {}
   },
   {
     "id": 9,
@@ -1757,7 +2361,11 @@
     "y": 7.98,
     "z": -0.04,
     "type": 0,
-    "nameid": 40
+    "nameid": 40,
+    "aethernetCoords": {
+      "x": 1260,
+      "y": 1380
+    }
   },
   {
     "id": 33,
@@ -1767,7 +2375,11 @@
     "y": 8.88,
     "z": 0.04,
     "type": 1,
-    "nameid": 772
+    "nameid": 772,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 34,
@@ -1777,7 +2389,11 @@
     "y": 12.67,
     "z": 0.14,
     "type": 1,
-    "nameid": 773
+    "nameid": 773,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 95,
@@ -1787,7 +2403,11 @@
     "y": 11.05,
     "z": 0.82,
     "type": 1,
-    "nameid": 654
+    "nameid": 654,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 35,
@@ -1797,7 +2417,11 @@
     "y": 11.45,
     "z": 0.09,
     "type": 1,
-    "nameid": 774
+    "nameid": 774,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 36,
@@ -1807,7 +2431,11 @@
     "y": 13.49,
     "z": 0.12,
     "type": 1,
-    "nameid": 775
+    "nameid": 775,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 37,
@@ -1817,7 +2445,11 @@
     "y": 13.06,
     "z": 0.41,
     "type": 1,
-    "nameid": 776
+    "nameid": 776,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 47,
@@ -1827,7 +2459,11 @@
     "y": 12.47,
     "z": 0.12,
     "type": 1,
-    "nameid": 777
+    "nameid": 777,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 50,
@@ -1837,7 +2473,11 @@
     "y": 12.76,
     "z": 0.14,
     "type": 1,
-    "nameid": 788
+    "nameid": 788,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 51,
@@ -1847,7 +2487,11 @@
     "y": 10.81,
     "z": 0.3,
     "type": 1,
-    "nameid": 778
+    "nameid": 778,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   },
   {
     "id": 125,
@@ -1857,6 +2501,10 @@
     "y": 10.58,
     "z": 0.04,
     "type": 1,
-    "nameid": 2283
+    "nameid": 2283,
+    "aethernetCoords": {
+      "x": 0,
+      "y": 0
+    }
   }
 ]
