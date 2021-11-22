@@ -131,13 +131,16 @@
               <ng-template #userLoggedIn>
                 <div *ngIf="character$ | async as character; else emptyCharacter"
                      tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
-                  <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
-                                   [userId]="userId$ | async"
-                                   [width]="32"></app-user-avatar>
-                  <ng-template #krAvatar>
-                    <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
-                  </ng-template>
-                  {{character.Name | ifMobile:''}}
+                  <nz-spin *ngIf="character.loading"></nz-spin>
+                  <ng-container *ngIf="!character.loading">
+                    <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
+                                     [userId]="userId$ | async"
+                                     [width]="32"></app-user-avatar>
+                    <ng-template #krAvatar>
+                      <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
+                    </ng-template>
+                      {{character.Name | ifMobile:''}}
+                  </ng-container>
                 </div>
               </ng-template>
               <ng-template #emptyCharacter>
