@@ -699,6 +699,11 @@ export class AppComponent implements OnInit {
     this.reloadTime$.next(null);
   }
 
+  public disableAutoOpen(): void {
+    this.settings.autoOpenInDesktop = false;
+    window.location.reload();
+  }
+
   deleteNotification(notification: AbstractNotification): void {
     this.notificationsFacade.removeNotification(notification.$key);
   }
