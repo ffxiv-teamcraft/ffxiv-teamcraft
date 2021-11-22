@@ -120,7 +120,7 @@
           </li>
           <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu nzMenuClassName="user-menu-content">
             <span title class="user-menu-title">
-              <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
+              <nz-spin class="user-loading" *ngIf="loading$ | async; else authDetails"></nz-spin>
               <ng-template #authDetails>
                 <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
                   <nz-avatar [nzText]="'A'">
@@ -131,7 +131,7 @@
               <ng-template #userLoggedIn>
                 <div *ngIf="character$ | async as character; else emptyCharacter"
                      tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
-                  <nz-spin *ngIf="character.loading"></nz-spin>
+                  <nz-spin class="user-loading" *ngIf="character.loading"></nz-spin>
                   <ng-container *ngIf="!character.loading">
                     <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
                                      [userId]="userId$ | async"
