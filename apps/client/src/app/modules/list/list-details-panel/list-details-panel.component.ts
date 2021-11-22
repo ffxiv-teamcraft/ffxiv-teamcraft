@@ -356,6 +356,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         x: drop.position.x,
         y: drop.position.y,
         fate: drop.position.fate,
+        monster: drop.id,
         type: 'Hunting'
       });
     }

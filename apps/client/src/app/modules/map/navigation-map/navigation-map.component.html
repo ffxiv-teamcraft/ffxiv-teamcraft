@@ -54,6 +54,7 @@
                  src="{{step.itemId | lazyIcon}}">
             <i *ngIf="!step.isTeleport && step.itemId === undefined" class="material-icons">location_on</i>
             <img *ngIf="step.fate" [src]="step.fate | lazyRow:'fates':'icon' | async | xivapiIcon" class="item-icon">
+            <img *ngIf="step.monster" [src]="step.monster | i18nRow:'mobs' | i18n" class="item-icon">
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>
