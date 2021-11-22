@@ -1313,20 +1313,20 @@
     "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Donation_button": "Внести пожертвование",
     "Buy_merch": "Купить мерч Teamcraft",
-    "Features_header": "Get started!",
+    "Features_header": "Вперёд!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get informations about all materials, share them with your friends, everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
       "Public_lists": "Копируй списки, созданные сообществом, чтобы крафтить предметы для levequest'ов, заполнения логов, кораблей, BiS оружия и доспехов. Здесь можно найти всё что угодно.",
       "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
+      "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
+      "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
       "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "У вас есть макросы но на другом языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available!",
-    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
+    "New_update_available": "Доступно новое обновление!",
+    "New_update_available_desktop": "Доступно новое обновление!\nНажмите здесь, чтобы скачать и установить его.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
     "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его",
     "Possible_update_issue": "Похоже, ваша загрузка не работает. Пожалуйста, нажмите на эту иконку, чтобы загрузить последнюю настройку."
@@ -1347,7 +1347,7 @@
     "Required_for_achievement": "Требуется для получения achievement'a",
     "Select_spot": "Выберите точку, чтобы увидеть его детали",
     "Hide_completed": "Скрыть завершенные рецепты",
-    "Show_not_required": "Show items not required for achievement",
+    "Show_not_required": "Показать элементы, не необходимые для достижения",
     "Hide_completed_items": "Скрыть завершенные предметы",
     "MIN_optimized_path": "Оптимизированный путь для всех точек MIN",
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
@@ -1356,7 +1356,7 @@
     "Import_from_carbuncleplushy_success": "Трекер логов рыбалки успешно обновлен",
     "Export_FSH_completion": "Экспорт завершен как JSON",
     "Export_FSH_completion_copied": "JSON скопирован в буфер обмена",
-    "Log_in_to_track": "Log in to be able to track your log tracker completion",
+    "Log_in_to_track": "Войдите, чтобы иметь возможность отслеживать завершенность журнала",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
@@ -1368,7 +1368,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more!"
+    "Loading_data": "Загружаем предметы, действия и прочее!"
   },
   "CUSTOM_ITEMS": {
     "Title": "Пользовательские предметы",
@@ -1577,7 +1577,7 @@
       "Top_users": "Топ рейтинг",
       "Your_ranking": "Ваш рейтинг",
       "Include_fisheyes_data": "Включать отчеты с помощью Fish Eyes",
-      "Not_enough_data_points": "Not enough data points to display this chart",
+      "Not_enough_data_points": "Недостаточно данных для отображения диаграмм",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1616,8 +1616,8 @@
       "Fish_per_weather": "Рыба в погоду",
       "Fish_per_bait": "Рыба за наживку",
       "Fish_per_tug": "Рыба за tug",
-      "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Include_misses": "Включать пропущенные",
+      "Miss": "Пропущено"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1639,7 +1639,7 @@
       "Repeatable": "Повторяемый",
       "Beast_tribe_rank": "Ранг в племени зверолюдей",
       "Chain_length": "Дальнейшие квесты",
-      "Possible_trades": "Possible trades"
+      "Possible_trades": "Возможный обмен"
     },
     "NPC": {
       "Other_entries": "Другие появления",
@@ -1734,7 +1734,7 @@
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
       "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "Комментарии базы данных предназначены для использования в качестве полезной дополнительной информации, их использование, чтобы пожаловаться на игру или ее содержание, может привести к ограничению комментирования."
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
@@ -1818,18 +1818,18 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
+    "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
     "Disabled": "Гид по трате валют более не работает",
     "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи.",
-    "Loading_data": "Loading trades data for the selected currency",
-    "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "Loading_data": "Загрузка данных о сделках для выбранной валюты",
+    "Loading_universalis": "Получение цен на рынке от Universalis для {{amount}} позиций",
+    "X_sold_last_week": "{{amount}} продано на прошлой неделе"
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",
-    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
+    "Description": "Ты хочешь знать какая еда даст нужные параметры? Больше не ищи — здесь то что тебе нужно!",
     "Pick_stat": "Выберите параметр"
   },
   "BLOG": {
@@ -1970,10 +1970,10 @@
     "Unhide_optimizer": "Больше не скрывать этот оптимизатор",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
-    "Hide_empty": "Hide empty optimizers",
+    "Hide_empty": "Скрыть пустые оптимизаторы",
     "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "Оптимизация скопирована в буфер обмена как JSON",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
@@ -2084,8 +2084,8 @@
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Режим локального редактирования",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset, nothing will be saved unless you click the save button above to create your own copy.",
-    "Empty_materias": "Remove all materias from selected gear",
+    "Editing_others_gearset_description": "Вы редактируете чужой набор снаряжения, ничего не будет сохранено пока вы не нажмете на кнопку «Сохранить», чтобы создать собственную копию.",
+    "Empty_materias": "Удалить все материалы из выбранного снаряжения",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -2188,7 +2188,7 @@
     "DESYNTH": {
       "Job": "Выберите профессию, которую вы хотите повысить",
       "Level": "Введите уровень десинтеза (не фактический уровень профессии)",
-      "Search": "Click search, and it's done!"
+      "Search": "Нажмите на поиск, и всё готово!"
     },
     "RESET_TIMERS": {
       "Toggle": "Включите оповещения для заданного таймера, установив этот переключатель."
@@ -2230,7 +2230,7 @@
         "Welcome_add_column": "Добро пожаловать в редактор макета панели, вы можете добавить столбцы с помощью этой кнопки (до 5 столбцов).",
         "Save": "Не забудьте сохранить изменения после редактирования панели.",
         "Revert": "Или, если вам не нравится то, что вы сделали, используйте это для возврата к оригинальной раскладке, которую вы использовали перед редактированием.",
-        "Delete_column": "Want to remove a column? Here it is!",
+        "Delete_column": "Хотите удалить столбец? Вот здесь!",
         "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
         "Reorder": "Вы можете использовать перетаскивание для перемещения панелей куда угодно.",
         "Data_type": "Прежде всего, выберите тип метрики, который вы хотите использовать.",
@@ -2409,7 +2409,7 @@
       "Only_crafting": "Только крафт",
       "Includes_materials_label": "Этот заказ включает в себя все базовые материалы и требуется только крафт",
       "Only_materials": "Только материалы",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_requires_materials": "Этот заказ требует материалы только этого списка",
       "Contact_info": "Контактная информация",
       "Contact_info_placeholder": "Как исполнители могут связаться с вами когда они будут приняты для заказа? Discord, ingame, email, как вы хотите.",
       "Contact_info_required_error": "Пожалуйста, включите контактную информацию",
