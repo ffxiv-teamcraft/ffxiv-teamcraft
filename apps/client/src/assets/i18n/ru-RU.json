@@ -727,7 +727,7 @@
     "Autofill_notification_title": "Предмет завершен",
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Autofill_crafting_gathering_title": "Обнаружен процесс крафта или сбора",
-    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
+    "Autofill_crafting_gathering_message": "Автозаполнение работает в медленном режиме до тех пор, пока вы не завершите крафт (встанете в игре) или сбор (закроете интерфейс), чтобы избежать проблем с автозаполнением.",
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
@@ -739,15 +739,15 @@
     "Commission_list": "Список заказов (поручений)",
     "Inventory_cleanup": "Очистка инвентаря",
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
-    "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Consider_requirements": "Рассмотреть требования",
+    "Ignore_requirements": "Игнорировать требования",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
       "Import_layout": "Импорт макета",
       "Export_layout": "Экспорт этого макета",
       "Import_string": "Импорт кода макета",
-      "Import_string_copied": "Layout code copied!",
+      "Import_string_copied": "Код макета скопирован!",
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
@@ -856,7 +856,7 @@
     "Title": "Переводчик макросов",
     "Macro_language": "Язык макроса",
     "Macro_to_translate": "Макрос для перевода",
-    "Do_translate": "Translate!",
+    "Do_translate": "Перевести!",
     "Invalid_macro_or_language": "Недействительный макрос или язык."
   },
   "CUSTOM_LINKS": {
@@ -889,9 +889,9 @@
     "No_items": "Нечего собирать",
     "Gathering_name": "Введите название предмета",
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
-    "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for!",
+    "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
     "Hidden_item": "Скрытый",
-    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Fish_eyes": "Требует скилл Fish eyes чтобы переживать только о погодных условиях",
     "Add_alarm": "Добавить оповещение",
     "Add_alarm_fish_eyes": "Добавить оповещение с fish eyes",
     "Snagging": "Требуется \"snagging\"",
@@ -901,7 +901,7 @@
     "Will_spawn_in": "Заспавнится через {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes имеют несколько мест, положение — приблизительное.",
     "Legendary": "Легендарное",
-    "Switched_to_compact": "Display has been switched to compact because there's too many results.",
+    "Switched_to_compact": "Дисплей был переключен на компактный из-за слишком большого количества результатов.",
     "GIG_HEAD": {
       "Small": "Маленькая насадка",
       "Normal": "Нормальная насадка",
@@ -2531,10 +2531,10 @@
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
+    "Total_entries": "Всего записей",
     "Last_updated": "Последнее обновление",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
+    "Last_bnpc_update": "Положение последнего монстра загружено",
+    "Last_node_update": "Положение последней ноды загружено",
     "Clear_map": "Очистить эту карту",
     "Dashboard": "Mappy Dashboard",
     "Open_details": "Показать детали",
@@ -2544,8 +2544,8 @@
     "Only_missing_nodes": "Показывать только карты с отсутствующими нодами"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "Дерево рецепта в мастерской",
+    "View_tree": "Открыть дерево рецепта",
     "Phase": "Этап {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
@@ -2558,7 +2558,7 @@
     "Empty_slot": "Пустой слот",
     "In_inventory": "Этот предмет находится в одном из ваших инвентарей",
     "Only_inventory": "Рассматривать предметы только в инвентаре",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Interactions_description": "Нажмите на уровень, чтобы выбрать весь столбец, нажмите на поле элемента, чтобы его выбрать, и нажмите на значок \"Удалить\", чтобы отменить выбор элемента без его замены."
   },
   "RETAINERS": {
     "Title": "Ретейнеры",
@@ -2569,12 +2569,12 @@
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
     "Task_completion_alarm": "Сигнал выполнения задания",
-    "Reset_retainers": "Reset retainers",
+    "Reset_retainers": "Сбросить ретейнеров",
     "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
     "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
-    "X%_above": "Your price is {{diff}}% above the current lowest price",
-    "X%_below": "Your price is {{diff}}% below the current lowest price",
-    "Lowest_price": "Lowest price"
+    "X%_above": "Ваша цена на {{diff}}% выше текущей низкой цены",
+    "X%_below": "Ваша цена на {{diff}}% ниже текущей низкой цены",
+    "Lowest_price": "Самая низкая цена"
   },
   "RETAINER_VENTURES": {
     "Title": "Задания ретейнеров",
@@ -2606,7 +2606,7 @@
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
       "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
       "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
+      "Loading_screen_message": "Добавить новый текст в загрузочном сообщении \"Brought to you by ...\" с вашим именем, названием вашей FC, названием линкшелла или чего угодно другого! (${{price}})"
     },
     "Select_retainer": "Выберите одного из ваших ретейнеров"
   },
