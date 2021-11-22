@@ -12,7 +12,7 @@
          [nzTooltipTitle]="slot?.id | itemName| i18n">
       <div *ngIf="slot !== undefined"
            [itemNameCopy]="slot?.id"
-           disableTooltip="true"
+           [disableTooltip]="true"
            class="item-container">
         <img src="{{slot.id | lazyIcon}}">
         <span class="amount">{{slot.amount}}</span>

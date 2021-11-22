@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, Directive, ElementRef, HostListener, Input, Renderer2, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, Directive, ElementRef, HostListener, Input, OnInit, Renderer2, ViewContainerRef } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { I18nToolsService } from './tools/i18n-tools.service';
@@ -11,7 +11,7 @@ import { observeInput } from './rxjs/observe-input';
 @Directive({
   selector: '[itemNameCopy]'
 })
-export class ItemNameClipboardDirective extends NzTooltipDirective {
+export class ItemNameClipboardDirective extends NzTooltipDirective implements OnInit {
 
   @Input('itemNameCopy')
   itemId: number;
@@ -21,6 +21,7 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
 
   @Input()
   disableTooltip = false;
+
   clipboardContent$ = observeInput(this, 'itemId').pipe(
     switchMap(itemId => {
       return this.i18n.getNameObservable('items', itemId).pipe(
@@ -39,14 +40,6 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
               elementRef: ElementRef, hostView: ViewContainerRef,
               resolver: ComponentFactoryResolver, renderer: Renderer2) {
     super(elementRef, hostView, resolver, renderer);
-    if (!this.disableTooltip) {
-      this.translate.get(this.copyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
-        .pipe(
-          first()
-        ).subscribe(translated => {
-        this.title = translated;
-      });
-    }
     renderer.setStyle(
       elementRef.nativeElement,
       'cursor',
@@ -67,6 +60,17 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
         this.message.success(this.translate.instant('Item_name_copied', { itemname: content }));
       }
     });
+  }
+
+  ngOnInit(): void {
+    if (!this.disableTooltip) {
+      this.translate.get(this.copyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
+        .pipe(
+          first()
+        ).subscribe(translated => {
+        this.title = translated;
+      });
+    }
   }
 
 }
