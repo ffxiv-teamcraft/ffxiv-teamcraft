@@ -12,4 +12,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **navigation-map:** added monster name when the step type is hunting.
-* **web:** new button to disable auto open in desktop from the main screen.`;
+* **web:** new button to disable auto open in desktop from the main screen.`;
