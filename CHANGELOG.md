@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.0.6"></a>
+## [9.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.5...v9.0.6) (2021-11-23)
+
+
+### Bug Fixes
+
+* **commissions:** fixed commission board not populating properly ([ec83319](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec83319))
+* **db:** fixed items being part of very large sets not loading at all ([f9acf9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9acf9a))
+* **inventory-box:** fixed copy tooltip covering item name ([6a53551](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a53551))
+* **pricing-mode:** removed auto HQ amount for items that cannot be HQ according to game files ([6f6d636](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f6d636))
+* **retainer-ventures:** fixed results not loading properly ([11d36fb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11d36fb))
+* **ux:** character name in top-right corner no longer flashes as unknown ([197277f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/197277f))
+* **ux:** character name in top-right corner no longer flashes as unknown ([4ba6afa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ba6afa))
+
+
+### Features
+
+* **navigation-map:** added monster name when the step type is hunting ([7a8727c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7a8727c))
+* **web:** new button to disable auto open in desktop from the main screen ([4fb2426](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4fb2426))
+
+
+
 <a name="9.0.5"></a>
 ## [9.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.4...v9.0.5) (2021-11-20)
 

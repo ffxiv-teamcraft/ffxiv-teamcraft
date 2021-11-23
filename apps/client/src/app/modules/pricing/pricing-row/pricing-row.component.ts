@@ -6,9 +6,10 @@ import { getItemSource, ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { first, takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';
 import { DataType } from '../../list/data/data-type';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Component({
   selector: 'app-pricing-row',
@@ -43,7 +44,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
 
   constructor(private pricingService: PricingService, private message: NzMessageService,
               public translate: TranslateService, private cd: ChangeDetectorRef,
-              public settings: SettingsService) {
+              public settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
   public _craftCost: number;
@@ -98,20 +99,24 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   }
 
   private updatePrice(): void {
-    this.vendorPrice = this.pricingService.getVendorPrice(this.item);
-    this.customPrice = this.pricingService.isCustomPrice(this.item);
-    if (this.earning) {
-      this.price = this.pricingService.getEarnings(this.item);
-    } else {
-      this.price = this.pricingService.getPrice(this.item);
-      this.setAutoCost();
-    }
-    this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning);
-    if (this.item.usePrice === undefined) {
-      this.item.usePrice = true;
-    }
-    setTimeout(() => {
-      this.cd.detectChanges();
+    this.lazyData.getRow('hqFlags', this.item.id).pipe(
+      first()
+    ).subscribe((canBeHq) => {
+      this.vendorPrice = this.pricingService.getVendorPrice(this.item);
+      this.customPrice = this.pricingService.isCustomPrice(this.item);
+      if (this.earning) {
+        this.price = this.pricingService.getEarnings(this.item);
+      } else {
+        this.price = this.pricingService.getPrice(this.item);
+        this.setAutoCost();
+      }
+      this.amount = this.pricingService.getAmount(this.listId, this.item, this.earning && canBeHq === 1);
+      if (this.item.usePrice === undefined) {
+        this.item.usePrice = true;
+      }
+      setTimeout(() => {
+        this.cd.detectChanges();
+      });
     });
   }
 

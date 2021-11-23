@@ -57,7 +57,8 @@ const patrons = [
   'Late Night Friendos',
   'The Hoe Depot',
   '[Ultros] Nyumi Aitken',
-  'Syleboris Whitemaw (Phoenix)'
+  'Syleboris Whitemaw (Phoenix)',
+  'Arimathean Industries™'
 ];
 
 const gifs = [

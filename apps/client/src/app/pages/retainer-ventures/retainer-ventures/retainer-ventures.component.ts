@@ -97,8 +97,8 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
                   return {
                     ...entry,
                     itemID: entry.item,
-                    price: price && price.PricePerUnit,
-                    rate: price.PricePerUnit
+                    price: price?.PricePerUnit || 0,
+                    rate: price?.PricePerUnit || 0
                   };
                 })
                 .filter(entry => entry.price)

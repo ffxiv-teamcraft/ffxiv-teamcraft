@@ -109,7 +109,7 @@ export class AppComponent implements OnInit {
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character>;
+  public character$: Observable<Character | { loading: boolean }>;
 
   public otherCharacters$: Observable<Character[]>;
 
@@ -612,7 +612,8 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        shareReplay(1)
+        shareReplay(1),
+        startWith({ loading: true })
       );
 
       this.otherCharacters$ = combineLatest([this.authFacade.characters$, this.authFacade.mainCharacter$]).pipe(
@@ -696,6 +697,11 @@ export class AppComponent implements OnInit {
       this.settings.timeFormat = '24H';
     }
     this.reloadTime$.next(null);
+  }
+
+  public disableAutoOpen(): void {
+    this.settings.autoOpenInDesktop = false;
+    window.location.reload();
   }
 
   deleteNotification(notification: AbstractNotification): void {
