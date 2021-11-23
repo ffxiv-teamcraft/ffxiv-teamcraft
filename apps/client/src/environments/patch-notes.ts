@@ -1,14 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **allagan-reports:** fixed submit button not enabling as intended.
-* **desktop:** slow mode notification not shown anymore if autofill is disabled.
-* **gearset:** fixed page display and import using pcap.
-* **log-tracker:** better fix for missing ornaments in achievement recipes.
-* **maps:** fixed optimized path for multiple maps not optimizing costs properly.
-* **retainers:** update price button is now disabled if your server is unknown.
-* **search:** fixed monster search not displaying results properly.
+* **commissions:** fixed commission board not populating properly.
+* **db:** fixed items being part of very large sets not loading at all.
+* **inventory-box:** fixed copy tooltip covering item name.
+* **pricing-mode:** removed auto HQ amount for items that cannot be HQ according to game files.
+* **retainer-ventures:** fixed results not loading properly.
+* **ux:** character name in top-right corner no longer flashes as unknown.
+* **ux:** character name in top-right corner no longer flashes as unknown.
 
 
-### Performance Improvements
+### Features
 
-* **core:** global runtime performance improvements.`;
+* **navigation-map:** added monster name when the step type is hunting.
+* **web:** new button to disable auto open in desktop from the main screen.`;
