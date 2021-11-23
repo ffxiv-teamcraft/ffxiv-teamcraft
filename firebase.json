@@ -17,7 +17,7 @@
       {
         "source": "**",
         "run": {
-          "serviceId": "ssr",
+          "serviceId": "tc-ssr",
           "region": "europe-west1"
         }
       }
