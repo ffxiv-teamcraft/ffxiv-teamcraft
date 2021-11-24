@@ -24,7 +24,7 @@
         <app-company-workshop-tree-button *ngIf="row.recipe?.job == 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
       <div *ngIf="row.recipe?.job > 1" class="description">
-        <img *ngIf="((row.recipe.job | i18nRow:'jobAbbr').en | async) as icon"
+        <img *ngIf="(row.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
           alt="{{row.recipe.job | i18nRow:'jobAbbr' | i18n}}"
           class="job-icon small"
           src="https://garlandtools.org/db/images/{{icon}}.png">
