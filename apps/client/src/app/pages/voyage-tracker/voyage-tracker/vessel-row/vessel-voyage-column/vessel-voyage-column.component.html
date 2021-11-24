@@ -4,7 +4,7 @@
      [nzPopoverContent]="voyageDetailsContent">
   <nz-breadcrumb [nzSeparator]="iconTemplate">
     <nz-breadcrumb-item *ngFor="let sector of vessel?.destinations">
-      {{ sector }}
+      {{ sector + 1 }}
     </nz-breadcrumb-item>
   </nz-breadcrumb>
   <ng-template #iconTemplate><i nz-icon nzType="arrow-right"></i></ng-template>
