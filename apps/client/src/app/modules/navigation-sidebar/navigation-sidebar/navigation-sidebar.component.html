@@ -66,7 +66,7 @@
       <i nz-icon nzType="question-circle"></i>
       <span class="nav-text">{{'WIKI.Title' | translate}}</span>
     </a>
-    <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://ffxivteamcraft.com/desktop"
+    <a *ngIf="!isDesktop" (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://ffxivteamcraft.com/desktop"
        nz-tooltip target="_blank">
       <i nz-icon nzType="download" nzTheme="outline"></i>
       <span class="nav-text">{{'Download_desktop_app' | translate}}</span>
