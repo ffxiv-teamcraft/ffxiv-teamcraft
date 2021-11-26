@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 export interface MapRelatedElement {
   type: 'fate' | 'mob' | 'npc' | 'node' | 'hunt';
+  linkType?: string;
   id: number;
   name: I18nName | Observable<I18nName>;
   description?: I18nName;
