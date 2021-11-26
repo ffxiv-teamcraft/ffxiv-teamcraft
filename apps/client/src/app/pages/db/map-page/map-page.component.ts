@@ -175,7 +175,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
     this.links$ = this.map$.pipe(
       switchMap((mapData) => {
         const entry = mapIds.find((m) => m.id === mapData.ID);
-        return this.lazyData.getRow('places', entry?.id).pipe(
+        return this.lazyData.getRow('places', entry?.zone).pipe(
           map(place => {
             return [
               {
