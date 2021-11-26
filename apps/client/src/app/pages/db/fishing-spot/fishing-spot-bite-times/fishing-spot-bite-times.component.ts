@@ -104,6 +104,8 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
             datasets: [{
               borderWidth: 1,
               itemRadius: 0,
+              outlierRadius: 3,
+              outlierColor: colors.map(color => `rgba(${color}, 0.5)`),
               data: sortedNames.map((el, index) => {
                 fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
                 return Object.entries(res.data.byFish[el.id].byTime)
@@ -132,19 +134,29 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
     legend: {
       display: false
     },
-    tooltipDecimals: 1,
+    tooltips: {
+      displayColors: false,
+      callbacks: {
+        boxplotLabel: (_item, _data, stats, hoveredOutlierIndex) => {
+          if (hoveredOutlierIndex === -1) {
+            // Tooltip for the box/whiskers
+            return `min: ${stats.whiskerMin}, q1: ${stats.q1}, median: ${stats.median}, q3: ${stats.q3}, max: ${stats.whiskerMax}`;
+          } else {
+            // Tooltip for the outliers
+            return `${stats.outliers[hoveredOutlierIndex]} (outlier)`;
+          }
+        }
+      }
+    },
     scales: {
       xAxes: [{
         scaleLabel: {
           display: true,
-          labelString: this.translate.instant('DB.FISH.Bite_time'),
+          labelString: `${this.translate.instant('DB.FISH.Bite_time')} (s)`,
           fontColor: this.fontColor
         },
         ticks: {
           beginAtZero: true,
-          callback: (value) => {
-            return `${value}s`;
-          },
           color: this.gridColor
         },
         gridLines: {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
-import { debounceTime, distinctUntilChanged, filter, first, map, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest, merge, Observable, of, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, first, map, publish, scan, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, ConnectableObservable, merge, Observable, of, Subject } from 'rxjs';
 import { IpcService } from '../../core/electron/ipc.service';
 import { ItemSearchResult } from '../../model/user/inventory/item-search-result';
 import { ContainerType } from '../../model/user/inventory/container-type';
@@ -20,6 +20,7 @@ import {
   InventoryTransaction,
   ItemInfo,
   ItemMarketBoardInfo,
+  RetainerInformation,
   UpdateInventorySlot
 } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -40,16 +41,17 @@ export class InventoryService {
 
   private retainerInformationsSync = {};
 
-  private retainerInformations$ = this.ipc.retainerInformationPackets$.pipe(
+  private retainerInformations$ = publish()(this.ipc.retainerInformationPackets$.pipe(
     map(packet => {
       this.retainerInformationsSync[packet.retainerId.toString()] = packet;
       return Object.values<any>(this.retainerInformationsSync);
     })
-  );
+  )) as ConnectableObservable<RetainerInformation[]>;
 
   private retainerSpawn$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
     withLatestFrom(this.retainerInformations$),
     filter(([npcSpawn, retainers]) => npcSpawn.name.length > 0 && retainers.some(retainer => retainer.name === npcSpawn.name)),
+    debounceTime(500),
     map(([npcSpawn]) => {
       return npcSpawn.name;
     }),
@@ -92,6 +94,7 @@ export class InventoryService {
               private translate: TranslateService, private retainersService: RetainersService,
               private serializer: NgSerializerService, private http: HttpClient,
               private settings: SettingsService, private modal: NzModalService) {
+    this.retainerInformations$.connect();
     this.authFacade.characterEntries$.subscribe(entries => {
       this.characterEntries = entries;
     });
@@ -179,7 +182,7 @@ export class InventoryService {
                 const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
                 const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
                 if (this.isRetainer(action.parsedIpcData.containerId)) {
-                  if(action.parsedIpcData.containerId === ContainerType.RetainerBag0){
+                  if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
                     state.retainerInventoryQueue = [];
                   }
                   return {

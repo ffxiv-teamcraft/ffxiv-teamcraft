@@ -102,18 +102,22 @@ export class DatFilesWatcher {
       return false;
     }
     const fullFilePath = join(watchDir, filename);
-    const newHash = hashFiles.sync({ files: [fullFilePath] });
-    if (this.hashRegistry[fullFilePath] !== newHash) {
-      log.log(`Approved hash for ${filename}`);
-      this.hashRegistry[fullFilePath] = newHash;
-      this.lastChanges = [];
-      return true;
+    try {
+      const newHash = hashFiles.sync({ files: [fullFilePath] });
+      if (this.hashRegistry[fullFilePath] !== newHash) {
+        log.log(`Approved hash for ${filename}`);
+        this.hashRegistry[fullFilePath] = newHash;
+        this.lastChanges = [];
+        return true;
+      }
+      this.lastChanges = [
+        ...this.lastChanges.filter(c => Date.now() - c.timestamp < 10000),
+        { timestamp: Date.now(), file: filename }
+      ];
+      return false;
+    } catch (e) {
+      return false;
     }
-    this.lastChanges = [
-      ...this.lastChanges.filter(c => Date.now() - c.timestamp < 10000),
-      { timestamp: Date.now(), file: filename }
-    ];
-    return false;
   }
 
   private parseItemODR(filePath: string, contentId): void {

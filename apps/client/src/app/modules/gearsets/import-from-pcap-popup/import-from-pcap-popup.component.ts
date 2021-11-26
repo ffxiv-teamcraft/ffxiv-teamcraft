@@ -36,8 +36,8 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
       takeUntil(this.onDestroy$),
       filter(([, updateClassInfo]) => updateClassInfo.classId === this.job),
       map(([packets]) => packets),
-      withLazyData(this.lazyData, 'itemMeldingData')
-    ).subscribe(([packets, lazyItemMeldingData]) => {
+      withLazyData(this.lazyData, 'itemMeldingData', 'materias')
+    ).subscribe(([packets, lazyItemMeldingData, materiasData]) => {
       const gearset = new TeamcraftGearset();
       gearset.name = this.gearsetName;
       gearset.job = this.job;
@@ -46,7 +46,7 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
         .forEach(packet => {
           const itemMeldingData = lazyItemMeldingData[packet.catalogId];
           const materias = (packet.materia || <number[]>[]).map((materia, index) => {
-            return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index]) || 0;
+            return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
           });
           while (materias.length < itemMeldingData.slots) {
             materias.push(0);
@@ -65,7 +65,6 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
             baseParamModifier: itemMeldingData.modifier
           };
         });
-
       this.modalRef.close(gearset);
     });
   }

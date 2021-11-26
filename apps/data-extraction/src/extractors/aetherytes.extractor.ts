@@ -3,7 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class AetherytesExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const names = {};
-    this.getAllPages('https://xivapi.com/Aetheryte?columns=ID,AethernetName.Name_*').subscribe(page => {
+    this.getAllPages('https://xivapi.com/Aetheryte?columns=ID,AethernetName.Name_*,AetherstreamX,AetherstreamY').subscribe(page => {
       page.Results.forEach(aetheryte => {
         if (aetheryte.AethernetName.Name_en === null) {
           return;

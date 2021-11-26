@@ -33,7 +33,7 @@ interface ExpObj {
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
-  jobList: any[] = [];
+  jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
 
   job$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -85,7 +85,6 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private dataService: DataService, private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService) {
     super();
-    this.jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
   }
 
   ngOnInit(): void {

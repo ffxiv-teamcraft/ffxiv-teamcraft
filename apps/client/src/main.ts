@@ -12,7 +12,7 @@ if (environment.production) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic().bootstrapModule(AppModule).then((module) => {
+  platformBrowserDynamic().bootstrapModule(AppModule, { ngZoneEventCoalescing: true, ngZoneRunCoalescing: true }).then((module) => {
     if (!environment.production) {
       const applicationRef = module.injector.get(ApplicationRef);
       const appComponent = applicationRef.components[0];

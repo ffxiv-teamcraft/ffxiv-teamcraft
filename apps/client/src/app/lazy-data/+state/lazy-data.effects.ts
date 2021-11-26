@@ -44,15 +44,14 @@ export class LazyDataEffects {
           const { contentName, hash } = this.parseFileName(entity);
           return this.http.get<any>(`https://data.ffxivteamcraft.com/${hash}/${contentName}/${ids.join(',')}`).pipe(
             switchMap(res => {
-              return Object.entries(res)
-                .map(([key, row]) => {
-                  return LazyDataActions.loadLazyDataEntityEntrySuccess({ id: +key, row, key: entity });
-                });
+              return ids.map(id => {
+                return LazyDataActions.loadLazyDataEntityEntrySuccess({ id, row: res[id] || null, key: entity });
+              });
             })
           );
         }));
       })
-    ));
+    ), { useEffectsErrorHandler: true });
 
   loadLazyDataFullEntity$ = createEffect(() =>
     this.actions$.pipe(

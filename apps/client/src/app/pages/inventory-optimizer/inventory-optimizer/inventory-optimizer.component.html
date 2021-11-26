@@ -56,7 +56,7 @@
                                (click)="$event.stopPropagation();"
                                [nzPlaceHolder]="'INVENTORY_OPTIMIZER.CONSOLIDATE_STACKS.Placeholder' | translate"
                                [(ngModel)]="selectedExpansion">
-                      <nz-option *ngFor="let e of expansions$ | async" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
+                      <nz-option *ngFor="let e of expansions$ | async" [nzValue]="e.exVersion" [nzLabel]="e | i18n"></nz-option>
                     </nz-select>
                   </ng-container>
                   <ng-container *ngSwitchCase="'UNWANTED_MATERIALS'">
@@ -143,8 +143,8 @@
                   </ng-template>
                   <ng-container *ngIf="panel.nzActive">
                     <nz-list [nzItemLayout]="'horizontal'">
-                      <app-lazy-scroll rowSize="73" [rowTemplate]="rowTemplate" [displayedRows]="6" [data]="container.items">
-                        <ng-template #rowTemplate let-entry>
+                      <div class="panel-content-scroll">
+                        <ng-container *ngFor="let entry of container.items; trackBy: trackByEntryRow">
                           <nz-list-item [nzActions]="(showIgnored && entry.ignored)?[removeIgnore]:[ignore]"
                                         *ngIf="showIgnored || !entry.ignored">
                             <ng-template #ignore>
@@ -191,8 +191,8 @@
                               </ng-template>
                             </nz-list-item-meta>
                           </nz-list-item>
-                        </ng-template>
-                      </app-lazy-scroll>
+                        </ng-container>
+                      </div>
                     </nz-list>
                   </ng-container>
                 </nz-collapse-panel>

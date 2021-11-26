@@ -1,12 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **airship:** updated abbreviations to match community ones.
-* **alarms:** fixed a bug with some alarms ringing multiple times for nothing.
-* **db:** fixed npc names not loading properly in levequest pages.
-* **db:** fixed spearfishing spot pages not loading.
-* **log-tracker:** fixed selection not resetting on tab change.
+* **commissions:** fixed commission board not populating properly.
+* **db:** fixed items being part of very large sets not loading at all.
+* **inventory-box:** fixed copy tooltip covering item name.
+* **pricing-mode:** removed auto HQ amount for items that cannot be HQ according to game files.
+* **retainer-ventures:** fixed results not loading properly.
+* **ux:** character name in top-right corner no longer flashes as unknown.
+* **ux:** character name in top-right corner no longer flashes as unknown.
 
 
 ### Features
 
-* **db:** importing 500+.`;
+* **navigation-map:** added monster name when the step type is hunting.
+* **web:** new button to disable auto open in desktop from the main screen.`;

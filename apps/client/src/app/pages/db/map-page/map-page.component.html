@@ -79,7 +79,7 @@
                 </ng-template>
               </nz-list-item-meta>
               <ng-template #more>
-                <app-db-button [id]="element.id" [type]="element.type === 'hunt' ? 'mob':element.type"></app-db-button>
+                <app-db-button [id]="element.id" [type]="element.linkType || element.type"></app-db-button>
               </ng-template>
             </nz-list-item>
           </ng-template>

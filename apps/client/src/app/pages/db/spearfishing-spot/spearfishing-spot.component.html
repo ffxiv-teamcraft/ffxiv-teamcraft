@@ -6,10 +6,10 @@
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img
-            [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
+            [src]="(nodeData.IsLimited === 1 ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(nodeData)}}</h2>
+            <h2 class="item-name">{{getName(nodeData) | async}}</h2>
             <div class="item-kind">
               Lvl {{nodeData.GatheringLevel}} <span
               [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
@@ -33,7 +33,7 @@
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.Limited' | translate}}</div>
-        <div class="detail-value">{{(nodeData.mappyData.limited === 0 ? 'No' : 'Yes') | translate}}</div>
+        <div class="detail-value">{{(nodeData.IsLimited === 0 ? 'No' : 'Yes') | translate}}</div>
       </div>
       <div *ngIf="nodeData.mappyData.limited" class="details-block">
         <div class="detail-name">{{'DB.NODE.Spawn_duration' | translate}}</div>
@@ -83,12 +83,12 @@
           </div>
         </ng-template>
         <div nz-row *ngFor="let item of data.items" class="item-row">
-          <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
+          <div nz-col nzMd="2" fxLayout="row" fxLayoutAlign="center center">
             <app-item-icon [itemId]="item.item" [width]="32"></app-item-icon>
           </div>
-          <div nz-col nzMd="4" fxLayout="column">
+          <div nz-col nzMd="6" fxLayout="column">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div [appItemRarity]="item">{{item.item | itemName | i18n}}</div>
+              <div [appItemRarity]="item" class="item-name">{{item.item | itemName | i18n}}</div>
               <nz-tag *ngIf="item.gatheringItem?.hidden" nzColor="#108ee9">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
             </div>
             <div *ngIf="item.gatheringItem as gatheringItem" class="description">
@@ -96,7 +96,7 @@
               *ngIf="gatheringItem.stars">{{gatheringItem.stars | ingameStars}}</span>
             </div>
           </div>
-          <div nz-col nzMd="9"  fxLayout="row" fxLayoutAlign="flex-start center">
+          <div nz-col nzMd="6"  fxLayout="row" fxLayoutAlign="flex-start center">
             <ng-container *ngIf="item.gatheringItem as gatheringItem">
               <img *ngIf="gatheringItem.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + gatheringItem.gig) | translate" class="gig-icon" nz-tooltip
                    src="./assets/icons/gig/{{gatheringItem.gig}}.png">
@@ -114,7 +114,7 @@
               </div>
             </ng-container>
           </div>
-          <div nz-col nzMd="8"  fxLayout="row" fxLayoutAlign="center center">
+          <div nz-col nzMd="7"  fxLayout="row" fxLayoutAlign="center center">
             <div *ngIf="data.limited">
               <ng-container *ngFor="let alarmEntry of item.alarms">
                 <ng-container *ngIf="(alarmEntry | alarmDisplay | async) as alarm">
@@ -166,6 +166,7 @@
           <nz-list [nzDataSource]="bonuses" [nzItemLayout]="'horizontal'"
                    [nzRenderItem]="bonusTemplate">
             <ng-template #bonusTemplate let-bonus>
+              {{bonus | json}}
               <nz-list-item>
                 <nz-list-item-meta
                   [nzDescription]="description"

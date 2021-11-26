@@ -123,7 +123,7 @@ export class LogTrackerComponent extends TrackerComponent {
     const isPageDone = [this.isDoHPageDone, this.isDoLPageDone][selectedTabIndex];
     if (pages) {
       const currentPage = pages[selectedPageIndex];
-      if ((showNotRequired || currentPage.requiredForAchievement) && currentPage && isPageDone(currentPage) && hideCompleted) {
+      if (currentPage && (showNotRequired || currentPage?.requiredForAchievement) && isPageDone(currentPage) && hideCompleted) {
         const nextUncompletedPage = [...pages.slice(selectedPageIndex), ...pages.slice(0, selectedPageIndex)].find(page => !isPageDone(page));
         if (selectedTabIndex === 0) {
           this.dohSelectedPage = nextUncompletedPage?.id;

@@ -8,7 +8,6 @@ import { LogsExtractor } from './extractors/logs.extractor';
 import { FishParameterExtractor } from './extractors/fish-parameter.extractor';
 import { WeatherRateExtractor } from './extractors/weather-rate.extractor';
 import { WeathersExtractor } from './extractors/weathers.extractor';
-import { AetherstreamExtractor } from './extractors/aetherstream.extractor';
 import { I18nExtractor } from './i18n.extractor';
 import { MapsExtractor } from './extractors/maps.extractor';
 import { QuestsExtractor } from './extractors/quests.extractor';
@@ -113,7 +112,6 @@ const extractors: AbstractExtractor[] = [
   new MapsExtractor(),
   new MapIdsExtractor(),
   new FishParameterExtractor(),
-  new AetherstreamExtractor(),
   new WeathersExtractor(),
   new WeatherRateExtractor(),
   new PatchContentExtractor(),

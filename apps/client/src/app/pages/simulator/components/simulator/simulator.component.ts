@@ -438,12 +438,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                       })
                     );
                   }
+                  return of(null)
                 }
               ));
             })
           );
         }),
-        map(actionIds => this.registry.createFromIds(actionIds)),
+        map(actionIds => this.registry.createFromIds(actionIds.filter(id => id !== null))),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
@@ -829,6 +830,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.fails$, this.forcedStartingQuality$]).pipe(
       map(([recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality]: any[]) => {
+        if (!recipe.conditionsFlag) {
+          recipe.conditionsFlag = 15;
+        }
         return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality);
       }),
       shareReplay(1)

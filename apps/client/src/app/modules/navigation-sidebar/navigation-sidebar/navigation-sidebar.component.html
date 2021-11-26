@@ -59,14 +59,14 @@
       (nzOpenChange)="onOpenChange('other', $event)" nz-submenu>
     <span title>
       <i nz-icon nzType="info-circle"></i>
-      <span>{{'SIDEBAR.Other' | translate}}</span>
+      <span class="nav-text">{{'SIDEBAR.Other' | translate}}</span>
     </span>
     <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
        nz-tooltip target="_blank">
       <i nz-icon nzType="question-circle"></i>
       <span class="nav-text">{{'WIKI.Title' | translate}}</span>
     </a>
-    <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://ffxivteamcraft.com/desktop"
+    <a *ngIf="!isDesktop" (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://ffxivteamcraft.com/desktop"
        nz-tooltip target="_blank">
       <i nz-icon nzType="download" nzTheme="outline"></i>
       <span class="nav-text">{{'Download_desktop_app' | translate}}</span>

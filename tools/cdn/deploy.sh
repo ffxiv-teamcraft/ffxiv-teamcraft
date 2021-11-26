@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo apt-get install rsync
+apt-get install rsync -y
 
 PACKAGE_VERSION=$(cat package.json \
   | grep version \
@@ -16,6 +16,7 @@ ssh-keyscan -H ssh.ffxivteamcraft.com >> ~/.ssh/known_hosts
 rsync -avz ./dist/apps/client/* dalamud@ssh.ffxivteamcraft.com:~/cdn.ffxivteamcraft.com/${PACKAGE_VERSION}
 
 ssh dalamud@51.83.37.191 << EOF
+  cp -rn ./cdn.ffxivteamcraft.com/latest/* ./cdn.ffxivteamcraft.com/${PACKAGE_VERSION}/
   rm ./cdn.ffxivteamcraft.com/latest
   ln -s ./${PACKAGE_VERSION} ./cdn.ffxivteamcraft.com/latest
 EOF

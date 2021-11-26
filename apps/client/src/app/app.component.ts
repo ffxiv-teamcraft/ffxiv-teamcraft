@@ -74,6 +74,8 @@ declare const gtag: Function;
 })
 export class AppComponent implements OnInit {
 
+  public overlay = window.location.href.indexOf('?overlay') > -1;
+
   public newFeatureName = 'allagan-reports';
 
   public showNewFeatureBanner = !this.overlay && localStorage.getItem(`new-feature:${this.newFeatureName}`) !== 'true' && !IS_HEADLESS;
@@ -95,10 +97,6 @@ export class AppComponent implements OnInit {
     default: `FFXIV&nbsp;Teamcraft&nbsp;v${this.version}`
   };
 
-  public get overlay() {
-    return window.location.href.indexOf('?overlay') > -1;
-  }
-
   public overlayOpacity = 1;
 
   collapsedAlarmsBar = true;
@@ -111,7 +109,7 @@ export class AppComponent implements OnInit {
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character>;
+  public character$: Observable<Character | { loading: boolean }>;
 
   public otherCharacters$: Observable<Character[]>;
 
@@ -144,6 +142,8 @@ export class AppComponent implements OnInit {
   public pcapOutDated$: Observable<boolean>;
 
   public dataLoaded = false;
+
+  public desktopLoading$ = new BehaviorSubject(this.platformService.isDesktop() && !this.overlay);
 
   public showGiveaway = false;
 
@@ -179,7 +179,7 @@ export class AppComponent implements OnInit {
   @ViewChild('vmAdRef')
   public vmAdRef: ElementRef;
 
-  public allaganReportsQueueCount$: Observable<number>;
+  public allaganReportsQueueCount$: Observable<number> = of(0);
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -237,10 +237,11 @@ export class AppComponent implements OnInit {
         })
       });
 
-      this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
-        map(status => status.length)
-      );
-
+      setTimeout(() => {
+        this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
+          map(status => status.length)
+        );
+      }, 2000);
     });
 
     fromEvent(document, 'keydown').subscribe((event: KeyboardEvent) => {
@@ -285,6 +286,14 @@ export class AppComponent implements OnInit {
       // Translation
       this.use(this.getLang());
       if (this.platformService.isDesktop()) {
+        this.ipc.on('displayed', () => {
+          setTimeout(() => {
+            window.resizeBy(100, 100);
+          }, 50);
+          setTimeout(() => {
+            window.resizeBy(-100, -100);
+          }, 60);
+        });
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
             return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;
@@ -430,24 +439,28 @@ export class AppComponent implements OnInit {
       // Custom protocol detection
       this.hasDesktop$ = this.hasDesktopReloader$.pipe(
         switchMap(() => router.events),
-        first(),
         filter(current => current instanceof NavigationEnd),
+        first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
+          if (!this.settings.autoOpenInDesktop) {
+            return of(false);
+          }
           if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {
             return of(false);
           }
           if (url && url.endsWith('/')) {
             url = url.substring(0, url.length - 1);
           }
-          return this.http.get('http://localhost:7331/', { responseType: 'text' }).pipe(
+          return this.http.get('http://localhost:14500/', { responseType: 'text' }).pipe(
             map(() => true),
             tap(hasDesktop => {
-              if (hasDesktop && this.settings.autoOpenInDesktop) {
+              if (hasDesktop) {
                 window.location.assign(`teamcraft://${url}`);
               }
             }),
-            catchError(() => {
+            catchError((e) => {
+              console.log(e);
               return of(false);
             })
           );
@@ -475,6 +488,7 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
           this.ipc.send('app-ready', true);
           this.dataLoaded = true;
+          this.desktopLoading$.next(false);
           this.cd.detectChanges();
         }, 1500);
       }
@@ -598,7 +612,8 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        shareReplay(1)
+        shareReplay(1),
+        startWith({ loading: true })
       );
 
       this.otherCharacters$ = combineLatest([this.authFacade.characters$, this.authFacade.mainCharacter$]).pipe(
@@ -682,6 +697,11 @@ export class AppComponent implements OnInit {
       this.settings.timeFormat = '24H';
     }
     this.reloadTime$.next(null);
+  }
+
+  public disableAutoOpen(): void {
+    this.settings.autoOpenInDesktop = false;
+    window.location.reload();
   }
 
   deleteNotification(notification: AbstractNotification): void {

@@ -553,7 +553,7 @@ export class DataService {
           }
           console.warn('No type matching for res type', row._);
         })).pipe(
-          map(mapped => mapped.filter(r => !!r))
+          map(mapped => mapped.filter((r: SearchResult) => !!r && !!r.type))
         );
       })
     );
@@ -915,10 +915,10 @@ export class DataService {
           }
         }))
     }).pipe(
-      map(res => {
-        return res.Results.map(mob => {
+      switchMap(res => {
+        return safeCombineLatest(res.Results.map(mob => {
           return this.mapMob(mob);
-        });
+        }));
       })
     );
   }

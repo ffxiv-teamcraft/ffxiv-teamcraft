@@ -19,9 +19,28 @@ import { LazyRecipe } from '../../../../lazy-data/model/lazy-recipe';
 })
 export class SimulatorPageComponent extends AbstractSimulationPage {
 
-  recipe$: Observable<Craft | LazyRecipe>;
+  recipe$: Observable<Craft | LazyRecipe> = this.route.paramMap.pipe(
+    switchMap(params => {
+      return this.item$.pipe(
+        switchMap(item => {
+          if (params.get('recipeId') === null && item.craft.length > 0) {
+            this.router.navigate([item.craft[0].id], { relativeTo: this.route });
+            return this.lazyData.getRecipe(params.get('recipeId'));
+          }
+          return this.lazyData.getRecipe(params.get('recipeId'));
+        })
+      );
+    }),
+    shareReplay(1)
+  );
 
-  item$: Observable<Item>;
+  item$: Observable<Item> = this.route.paramMap.pipe(
+    switchMap(params => {
+      return this.dataService.getItem(+params.get('itemId'));
+    }),
+    map(itemData => itemData.item),
+    shareReplay(1)
+  );
 
   thresholds$: Observable<number[]>;
 
@@ -40,14 +59,6 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
         this.rotationsFacade.selectRotation(id);
       }
     });
-
-    this.item$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        return this.dataService.getItem(+params.get('itemId'));
-      }),
-      map(itemData => itemData.item),
-      shareReplay(1)
-    );
 
     this.thresholds$ = this.item$.pipe(
       switchMap(item => {
@@ -74,21 +85,6 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
           }
         }
       })
-    );
-
-    this.recipe$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        return this.item$.pipe(
-          switchMap(item => {
-            if (params.get('recipeId') === null && item.craft.length > 0) {
-              this.router.navigate([item.craft[0].id], { relativeTo: this.route });
-              return this.lazyData.getRecipe(params.get('recipeId'));
-            }
-            return this.lazyData.getRecipe(params.get('recipeId'));
-          })
-        );
-      }),
-      shareReplay(1)
     );
   }
 

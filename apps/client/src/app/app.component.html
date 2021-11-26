@@ -1,7 +1,7 @@
 <app-loading-screen *ngIf="!dataLoaded; else appLayout"></app-loading-screen>
 <ng-template #appLayout>
   <nz-layout *ngIf="!(hasDesktop$ | async); else desktopOpenedMessage" [class.no-panel-borders]="settings.noPanelBorders"
-             class="app-container">
+             class="app-container" [class.blur]="desktopLoading$ | async">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
         <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
@@ -120,7 +120,7 @@
           </li>
           <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu nzMenuClassName="user-menu-content">
             <span title class="user-menu-title">
-              <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
+              <nz-spin class="user-loading" *ngIf="loading$ | async; else authDetails"></nz-spin>
               <ng-template #authDetails>
                 <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
                   <nz-avatar [nzText]="'A'">
@@ -131,13 +131,16 @@
               <ng-template #userLoggedIn>
                 <div *ngIf="character$ | async as character; else emptyCharacter"
                      tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
-                  <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
-                                   [userId]="userId$ | async"
-                                   [width]="32"></app-user-avatar>
-                  <ng-template #krAvatar>
-                    <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
-                  </ng-template>
-                  {{character.Name | ifMobile:''}}
+                  <nz-spin class="user-loading" *ngIf="character.loading"></nz-spin>
+                  <ng-container *ngIf="!character.loading">
+                    <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
+                                     [userId]="userId$ | async"
+                                     [width]="32"></app-user-avatar>
+                    <ng-template #krAvatar>
+                      <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
+                    </ng-template>
+                      {{character.Name | ifMobile:''}}
+                  </ng-container>
                 </div>
               </ng-template>
               <ng-template #emptyCharacter>
@@ -405,6 +408,8 @@
     <div class="opened-in-desktop" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
       <img alt="FFXIV Teamcraft" src="./assets/logo.png">
       <div class="desktop-message">{{'COMMON.Opened_in_desktop' | translate}}</div>
+      <div class="desktop-message-description">{{'COMMON.Opened_in_desktop_setting' | translate}}</div>
+      <div class="desktop-message-button"><button nz-button (click)="disableAutoOpen()">{{'COMMON.Opened_in_desktop_button' | translate}}</button></div>
     </div>
   </ng-template>
 </ng-template>

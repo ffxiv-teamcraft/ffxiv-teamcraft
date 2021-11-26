@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 import { catchError, delay, retry } from 'rxjs/operators';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
@@ -12,6 +12,9 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    if (req.url.includes('//localhost')) {
+      return next.handle(req).pipe(catchError(() => of(null)));
+    }
     return next.handle(req).pipe(
       delay(1100),
       retry(2),

@@ -111,6 +111,10 @@
             <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>{{735 | i18nRow:'statuses' | async | i18n}}</div>
+            <div>{{(report.intuition ? 'Yes' : 'No') | translate}}</div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{763 | i18nRow:'statuses' | async | i18n}}</div>
             <div>{{(report.chum ? 'Yes' : 'No') | translate}}</div>
           </div>

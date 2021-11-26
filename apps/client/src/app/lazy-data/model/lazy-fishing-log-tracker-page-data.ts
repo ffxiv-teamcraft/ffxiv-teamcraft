@@ -5,22 +5,12 @@ export interface LazyFishingLogTrackerPageData {
 }
 
 export interface Tab {
-  id:      IDClass | number;
+  id:      number;
   mapId:   number;
   placeId: number;
   done:    number;
   total:   number;
   spots:   Spot[];
-}
-
-export interface IDClass {
-  id:     number;
-  coords: IDCoords;
-}
-
-export interface IDCoords {
-  x: number;
-  y: number;
 }
 
 export interface Spot {
@@ -29,12 +19,17 @@ export interface Spot {
   mapId:   number;
   done:    number;
   total:   number;
-  coords:  IDCoords;
+  coords:  SpotCoords;
   fishes:  Fish[];
 }
 
+export interface SpotCoords {
+  x: number;
+  y: number;
+}
+
 export interface Fish {
-  id:         IDClass | number;
+  id:         number;
   itemId:     number;
   level:      number;
   icon?:      string;

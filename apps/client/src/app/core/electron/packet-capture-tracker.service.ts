@@ -98,8 +98,11 @@ export class PacketCaptureTrackerService {
     );
 
     combineLatest([eventStatus$, this.listsFacade.selectedList$])
-      .subscribe(([status, list]) => {
-        if (list && status && !this.notificationRef) {
+      .pipe(
+        withLatestFrom(this.listsFacade.autocompleteEnabled$)
+      )
+      .subscribe(([[status, list], autofill]) => {
+        if (list && status && !this.notificationRef && autofill) {
           this.notificationRef = this.nzNotification.info(
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_title'),
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_message'),

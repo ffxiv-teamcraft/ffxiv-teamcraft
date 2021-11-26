@@ -175,7 +175,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
     this.links$ = this.map$.pipe(
       switchMap((mapData) => {
         const entry = mapIds.find((m) => m.id === mapData.ID);
-        return this.lazyData.getRow('places', entry?.id).pipe(
+        return this.lazyData.getRow('places', entry?.zone).pipe(
           map(place => {
             return [
               {
@@ -294,6 +294,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
           .map(node => {
             return <MapRelatedElement>{
               type: 'node',
+              linkType: node.type === 4 ? 'spearfishing-spot' : 'node',
               id: node.id,
               name: this.i18n.createFakeI18n(`lvl ${node.level}`),
               additionalData: node.items.map(i => ({ id: i })),
@@ -312,7 +313,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
                 ][node.type],
                 x: node.x,
                 y: node.y,
-                link: `/db/${this.translate.currentLang}/node/${node.id}`
+                link: `/db/${this.translate.currentLang}/${node.type === 4 ? 'spearfishing-spot' : 'node'}/${node.id}`
               }
             };
           });

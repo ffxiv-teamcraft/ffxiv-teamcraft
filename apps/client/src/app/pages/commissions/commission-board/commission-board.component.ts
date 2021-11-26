@@ -78,7 +78,7 @@ export class CommissionBoardComponent {
           return {
             ...data,
             commissions: commissions
-              .filter(commission => (Date.now() - commission.createdAt.toDate().getTime() ?? 0) < 2629800000) // One month in millis
+              .filter(commission => (Date.now() - commission.createdAt.seconds * 1000 ?? 0) < 2629800000) // One month in millis
               .sort((a, b) => {
                 return b.bump?.seconds - a.bump?.seconds;
               })

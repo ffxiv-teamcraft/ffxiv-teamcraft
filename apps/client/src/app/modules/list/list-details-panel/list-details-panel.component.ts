@@ -88,10 +88,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   collapsed = false;
 
-  progression: number;
+  progression$: Observable<{ progress: number }> = this.displayRow$.pipe(
+    map(displayRow => {
+      return {
+        progress: this.listsFacade.buildProgression(displayRow.rows)
+      };
+    })
+  );
 
   tiers$: Observable<ListRow[][]> = this.displayRow$.pipe(
-    filter(row => row.tiers),
+    filter(row => row.tiers || row.reverseTiers),
     switchMap(displayRow => {
       let tiers = [[]];
       if (displayRow.rows !== null) {
@@ -190,7 +196,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
     if (this.displayRow.npcBreakdown) {
       this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData, this.settings.hasAccessToHousingVendors);
-      this.cd.detectChanges();
+      setTimeout(() => {
+        this.cd.detectChanges();
+      });
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
@@ -251,7 +259,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 total_item_amount: item.amount,
                 item_amount: item.amount_needed - item.done,
                 type: partial.type,
-                gatheringType: partial.gatheringType
+                gatheringType: partial.gatheringType,
+                monster: partial.monster
               };
             }
             return undefined;
@@ -279,7 +288,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   total_item_amount: item.amount,
                   item_amount: item.amount_needed - item.done,
                   type: partial.type,
-                  gatheringType: partial.gatheringType
+                  gatheringType: partial.gatheringType,
+                  monster: partial.monster
                 };
               }
               return undefined;
@@ -348,6 +358,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         x: drop.position.x,
         y: drop.position.y,
         fate: drop.position.fate,
+        monster: drop.id,
         type: 'Hunting'
       });
     }
@@ -484,10 +495,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public getTextExport = (tiers?: ListRow[][]) => {
     let rows: ListRow[];
-    if (tiers) {
-      rows = tiers.reduce((res, tier) => {
-        return [...res, ...tier];
-      }, []);
+    if (tiers && this.displayRow.tiers) {
+      rows = tiers.flat();
     } else {
       rows = this.displayRow.rows;
     }
@@ -499,7 +508,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       map(rowsWithNames => {
         return rowsWithNames.reduce((exportString, { row, itemName }) => {
           return exportString + `${row.amount}x ${itemName}\n`;
-        }, `${this.displayRow.title} :\n`);
+        }, `${this.translate.instant(this.displayRow.title)} :\n`);
       })
     );
   };

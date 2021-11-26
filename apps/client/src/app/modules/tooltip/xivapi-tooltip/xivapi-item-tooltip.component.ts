@@ -78,7 +78,7 @@ export class XivapiItemTooltipComponent implements OnInit {
       .map(key => {
         const statIndex = key.match(/(\d+)/)[0];
         const res: any = {
-          name: this.i18n.xivapiToI18n(this.item[key], 'baseParams'),
+          name: this.i18n.xivapiToI18n(this.item[key]),
           value: this.item[`BaseParamValue${statIndex}`],
           requiresPipe: true
         };
@@ -108,7 +108,7 @@ export class XivapiItemTooltipComponent implements OnInit {
         const max = food[`Max${i}`];
         const maxHq = food[`MaxHQ${i}`];
         if (value > 0) {
-          statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
+          statsEntry.name = this.i18n.xivapiToI18n(food[`BaseParam${i}`]);
           statsEntry.requiresPipe = true;
           if (isRelative) {
             statsEntry.value = `${value}% (${max})`;

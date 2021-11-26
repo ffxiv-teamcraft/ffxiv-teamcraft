@@ -20,7 +20,7 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
 
   airshipMaxRank$ = this.freeCompanyWorkshopFacade.getAirshipMaxRank();
   submarineMaxRank$ = this.freeCompanyWorkshopFacade.getSubmarineMaxRank();
-  airshipSectorsTotal = this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount();
+  airshipSectorsTotal$ = this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount();
   submarineSectorsTotal$ = this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount();
 
   public display$ = this.freeCompanyWorkshopFacade.workshops$.pipe(
