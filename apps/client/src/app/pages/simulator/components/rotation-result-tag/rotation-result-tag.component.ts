@@ -14,9 +14,9 @@ import { FreeCompanyActionsService } from '../../model/free-company-actions.serv
 import { GearSet, SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { BonusType } from '../../model/consumable-bonus';
-import { environment } from '../../../../../environments/environment';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
+import { EnvironmentService } from '../../../../core/environment.service';
 
 @Component({
   selector: 'app-rotation-result-tag',
@@ -40,7 +40,8 @@ export class RotationResultTagComponent implements OnInit {
 
   constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
               private lazyData: LazyDataFacade, private freeCompanyActionsService: FreeCompanyActionsService,
-              private simulationService: SimulationService, private settings: SettingsService) {
+              private simulationService: SimulationService, private settings: SettingsService,
+              private environment: EnvironmentService) {
   }
 
   public get rotation(): CraftingRotation {
@@ -96,7 +97,7 @@ export class RotationResultTagComponent implements OnInit {
               stats.cp + this.getBonusValue('CP', stats.craftsmanship, food, medicine, fcActions),
               stats.specialist,
               stats.level,
-              gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel, environment.maxLevel]);
+              gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel, this.environment.maxLevel]);
             return new this.simulator.Simulation(recipe as unknown as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
           })
         );

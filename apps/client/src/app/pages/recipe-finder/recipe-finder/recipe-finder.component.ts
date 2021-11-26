@@ -20,12 +20,12 @@ import { InventoryImportPopupComponent } from '../inventory-import-popup/invento
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { environment } from '../../../../environments/environment';
 import { LogTracking } from '../../../model/user/log-tracking';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -34,14 +34,14 @@ import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
 })
 export class RecipeFinderComponent implements OnDestroy {
 
-  public maxLevel = environment.maxLevel;
+  public maxLevel = this.environmentService.maxLevel;
   public query: string;
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
   public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
   public clvlMin$ = new BehaviorSubject(0);
-  public clvlMax$ = new BehaviorSubject(environment.maxLevel);
+  public clvlMax$ = new BehaviorSubject(this.environmentService.maxLevel);
   public input$: Subject<string> = new Subject<string>();
   public pool: { id: number, amount: number }[] = [];
   public search$: Subject<void> = new Subject<void>();
@@ -87,7 +87,7 @@ export class RecipeFinderComponent implements OnDestroy {
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private router: Router, private listPicker: ListPickerService,
+              private router: Router, private listPicker: ListPickerService, private environmentService: EnvironmentService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
               public platform: PlatformService, public settings: SettingsService) {
