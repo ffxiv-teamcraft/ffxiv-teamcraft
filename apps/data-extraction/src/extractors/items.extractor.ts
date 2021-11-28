@@ -68,7 +68,7 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.IsUntradable === 0) {
             tradeFlags[item.ID] = 1;
           }
-          if (item.ItemSearchCategoryTargetID > 9) {
+          if (item.ItemSearchCategoryTargetID >= 9) {
             marketItems.push(item.ID);
           }
           if ([30, 46].includes(item.ItemSearchCategoryTargetID)) {

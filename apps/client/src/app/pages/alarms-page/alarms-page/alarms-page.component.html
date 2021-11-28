@@ -428,8 +428,8 @@
         </div>
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
-            <div>
-              {{row.alarm.aetheryte?.nameid | i18nRow:'places' | i18n}}
+            <div *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
+              {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>
 
             <app-map-position [mapId]="row.alarm.mapId"
