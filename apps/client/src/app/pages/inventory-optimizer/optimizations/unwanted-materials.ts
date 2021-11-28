@@ -75,7 +75,7 @@ export class UnwantedMaterials extends InventoryOptimizer {
     return this.getCache().pipe(
       map(cache => {
         const materialIlvl: number = cache.materials[item.itemId];
-        if (materialIlvl && materialIlvl < wantedIlvl) {
+        if (materialIlvl && materialIlvl < wantedIlvl && materialIlvl > 1) {
           return { ilvl: materialIlvl };
         }
         return null;
