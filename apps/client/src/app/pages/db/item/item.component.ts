@@ -447,7 +447,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       const links = [
         {
           title: 'GarlandTools',
-          url: `http://www.garlandtools.org/db/#item/${xivapiItem.ID}`,
+          url: `https://www.garlandtools.org/db/#item/${xivapiItem.ID}`,
           icon: 'https://garlandtools.org/favicon.png'
         },
         {

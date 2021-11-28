@@ -197,7 +197,7 @@ export class QuestComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#instance/${xivapiQuest.ID}`,
+            url: `https://www.garlandtools.org/db/#quest/${xivapiQuest.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {

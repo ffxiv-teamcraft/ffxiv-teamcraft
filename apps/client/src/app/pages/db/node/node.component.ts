@@ -157,7 +157,7 @@ export class NodeComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#node/${xivapiNode.ID}`,
+            url: `https://www.garlandtools.org/db/#node/${xivapiNode.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           }
         ];
