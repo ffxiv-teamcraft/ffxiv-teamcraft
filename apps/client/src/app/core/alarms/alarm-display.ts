@@ -44,6 +44,8 @@ export class AlarmDisplay {
    */
   groupNames?: string;
 
+  dbType?: 'node' | 'fishing-spot' | 'spearfishing-spot';
+
   constructor(public readonly alarm: Alarm) {
   }
 }
