@@ -305,6 +305,11 @@
                     nzCloseable
                     nzType="warning">
           </nz-alert>
+          <nz-alert *ngIf="ipc.machinaToggle && !(loggedIn$ | async)"
+                    [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
+                    [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
+                    nzBanner nzShowIcon nzType="error">
+          </nz-alert>
           <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
                     [nzCloseText]="'Close' | translate"
                     [nzDescription]="description"
