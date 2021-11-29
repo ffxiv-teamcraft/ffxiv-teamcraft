@@ -97,6 +97,7 @@ export class TeamcraftDesktopApp {
     });
 
     loaderWindow.once('ready-to-show', () => {
+      loaderWindow.show();
       this.mainWindow.createWindow();
       this.tray.createTray();
       this.httpServer = createHttpServer((req, res) => {
@@ -135,6 +136,5 @@ export class TeamcraftDesktopApp {
     });
 
     loaderWindow.loadURL(join(__dirname, 'loader.html'));
-    loaderWindow.show();
   }
 }

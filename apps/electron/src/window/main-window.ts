@@ -45,7 +45,10 @@ export class MainWindow {
 
     this.win.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${deepLink}`);
     this.win.setAlwaysOnTop(this.store.get('win:alwaysOnTop', false), 'normal');
-    this.win.show();
+
+    if (!this.store.get('start-minimized', false)) {
+      this.win.show();
+    }
     //// uncomment below to open the DevTools.
     // this.win.webContents.openDevTools();
 
@@ -94,7 +97,6 @@ export class MainWindow {
     });
 
     const handleRedirect = (e, url) => {
-      console.log('URL', url);
       if (url !== this.win.webContents.getURL()) {
         e.preventDefault();
         if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
