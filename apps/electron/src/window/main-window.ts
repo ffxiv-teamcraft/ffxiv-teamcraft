@@ -94,8 +94,12 @@ export class MainWindow {
     });
 
     const handleRedirect = (e, url) => {
+      console.log('URL', url);
       if (url !== this.win.webContents.getURL()) {
         e.preventDefault();
+        if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
+          url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`
+        }
         require('electron').shell.openExternal(url);
       }
     };
