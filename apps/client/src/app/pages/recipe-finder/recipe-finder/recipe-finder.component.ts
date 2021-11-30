@@ -1,5 +1,5 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, from, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -42,7 +42,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
   public clvlMin$ = new BehaviorSubject(0);
   public clvlMax$ = new BehaviorSubject(this.environmentService.maxLevel);
-  public input$: Subject<string> = new Subject<string>();
+  public input$: Subject<string> = new BehaviorSubject<string>('');
   public pool: { id: number, amount: number }[] = [];
   public search$: Subject<void> = new Subject<void>();
   public results$: Observable<any[]>;
@@ -75,7 +75,7 @@ export class RecipeFinderComponent implements OnDestroy {
     })
   );
 
-  public amount$ = new ReplaySubject<number>();
+  public amount$ = new BehaviorSubject<number>(0);
 
   public isButtonDisabled$ = combineLatest([this.items$, this.input$, this.amount$]).pipe(
     map(([items, input, amount]) => {
