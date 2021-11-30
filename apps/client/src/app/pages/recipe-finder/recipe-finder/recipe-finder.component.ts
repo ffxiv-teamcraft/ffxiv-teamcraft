@@ -133,16 +133,24 @@ export class RecipeFinderComponent implements OnDestroy {
           entry.missing = entry.ingredients
             // Ignore crystals
             .filter(i => i.id > 19)
-            .filter(i => {
+            .map(i => {
               const poolItem = this.pool.find(item => item.id === i.id);
-              return !poolItem || poolItem.amount < i.amount;
-            });
+              if (!poolItem) {
+                return i;
+              } else {
+                return {
+                  ...i,
+                  amount: i.amount - poolItem.amount
+                };
+              }
+            })
+            .filter(e => e.amount > 0);
           entry.possibleAmount = entry.yields;
           while (this.canCraft(entry, entry.possibleAmount)) {
             entry.possibleAmount += entry.yields;
           }
           // Remove the final iteration check
-          entry.possibleAmount -= entry.yields;
+          entry.possibleAmount = Math.max(entry.possibleAmount - entry.yields, 1);
           return entry;
         });
         return [
