@@ -110,34 +110,42 @@
                      [nzPercent]="progression.progress"
                      [nzShowInfo]="false"></nz-progress>
         <div fxLayout="row" fxLayoutGap="10px">
-          <button (nzOnConfirm)="resetPanel()"
-                  (click)="$event.stopPropagation()"
-                  [nzTooltipTitle]="'LIST.Reset_panel' | translate"
-                  nz-popconfirm
-                  [nzPopconfirmTitle]="'Confirmation' | translate"
-                  nz-button nz-tooltip nzShape="circle"
-                  nzSize="small">
-            <i nz-icon nzType="reload"></i>
-          </button>
-          <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)" *ngIf="hasNavigationMap && displayRow.zoneBreakdown"
-                  [nzTooltipTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
-                  nzSize="small">
-            <i nzIconfont="icon-map" nz-icon></i>
-          </button>
-          <button (click)="$event.stopPropagation();openTotalPricePopup()" *ngIf="hasTrades"
-                  [nzTooltipTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
-                  nzSize="small">
-            <i class="material-icons">local_atm</i>
-          </button>
-          <button (click)="$event.stopPropagation()"
-                  [clipboard]="getTextExport"
-                  [clipboardFnArgs]="tiers$ | async"
+          <div>
+            <button (nzOnConfirm)="resetPanel()"
+                    (click)="$event.stopPropagation()"
+                    [nzTooltipTitle]="'LIST.Reset_panel' | translate"
+                    nz-popconfirm
+                    [nzPopconfirmTitle]="'Confirmation' | translate"
+                    nz-button nz-tooltip nzShape="circle"
+                    nzSize="small">
+              <i nz-icon nzType="reload"></i>
+            </button>
+          </div>
+          <div>
+            <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)" *ngIf="hasNavigationMap && displayRow.zoneBreakdown"
+                    [nzTooltipTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
+                    nzSize="small">
+              <i nzIconfont="icon-map" nz-icon></i>
+            </button>
+          </div>
+          <div>
+            <button (click)="$event.stopPropagation();openTotalPricePopup()" *ngIf="hasTrades"
+                    [nzTooltipTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
+                    nzSize="small">
+              <i class="material-icons">local_atm</i>
+            </button>
+          </div>
+          <div>
+            <button (click)="$event.stopPropagation()"
+                    [clipboard]="getTextExport"
+                    [clipboardFnArgs]="tiers$ | async"
                   [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
-                  [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
-                  nz-button nz-tooltip nzShape="circle" nzSize="small">
-            <i nz-icon nzType="copy"></i>
-          </button>
-          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" *ngIf="permissionLevel >= 20" nz-tooltip>
+                    [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
+                    nz-button nz-tooltip nzShape="circle" nzSize="small">
+              <i nz-icon nzType="copy"></i>
+            </button>
+          </div>
+          <div [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" *ngIf="permissionLevel >= 20" nz-tooltip>
             <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
                     [nzPopconfirmTitle]="'Confirmation' | translate"
                     nz-button
@@ -145,8 +153,8 @@
                     nzShape="circle" nzSize="small">
               <i nz-icon nzType="check"></i>
             </button>
-          </span>
-          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_hq' | translate"
+          </div>
+          <div [nzTooltipTitle]="'LIST.Mark_whole_panel_hq' | translate"
                 *ngIf="!displayRow.allHQ &&  permissionLevel >= 20" nz-tooltip>
             <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsHQ(true)"
                     [nzPopconfirmTitle]="'Confirmation' | translate"
@@ -155,7 +163,7 @@
                     nzShape="circle" nzSize="small">
               <img src="./assets/icons/HQ.png" alt="" class="hq-flag">
             </button>
-          </span>
+          </div>
         </div>
       </div>
     </ng-template>
