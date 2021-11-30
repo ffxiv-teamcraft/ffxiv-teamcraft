@@ -114,7 +114,6 @@ export class TeamcraftDesktopApp {
         this.mainWindow.win.show();
         console.log(req.url);
         if (req.url.length > 1) {
-          console.log('SENDING URL TO MAIN');
           this.mainWindow.win.webContents.send('navigate', req.url);
         }
         res.writeHead(200);
