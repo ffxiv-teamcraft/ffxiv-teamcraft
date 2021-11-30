@@ -183,8 +183,9 @@ export class CollectablesComponent {
         })
       );
     })).pipe(
-      switchMap(additions => this.listPicker.addToList(...additions))
-    );
+      switchMap(additions => this.listPicker.addToList(...additions)),
+      first()
+    ).subscribe();
   }
 
   public createQuickList(item: { itemId: number, amount: number }): void {
