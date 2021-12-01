@@ -15,7 +15,7 @@
   "See_on_map": "Ver en mapa",
   "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Editar cantidad",
-  "List_fork_in_progress": "Copiando la lista a su cuenta...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
   "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "Cambios en {{version}}",
@@ -213,7 +213,7 @@
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Alternar capa sobrepuesta",
     "Open_alarms_overlay": "Alternar capa sobrepuesta de alarmas",
-    "More_available": "y {{amount}} más...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "Delete_all": "Delete all your alarms",
     "Delete_alarm": "Delete this alarm",
-    "Regenerating_alarms": "Regenerating your alarms...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
@@ -585,7 +585,7 @@
     "Your_lists": "Sus listas",
     "Outdated_tag": "Desactualizado",
     "No_lists": "No tiene listas",
-    "Lists_search_placeholder": "Buscar una lista...",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Agregar a una lista",
     "Please_pick_recipe": "Por favor elija una receta para este artículo",
     "Import_description": "Escoja la receta que quiera usar para los artículos que pueden ser elaborados y seleccione una lista. Los artículos serán agregados a la lista y será redirigido a ella.",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Incluir bloqueo de macro",
     "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "No community rotation found that match your needs",
     "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Introduzca el nombre de la receta que desea crear",
@@ -1434,7 +1434,7 @@
       "Format": "Formato",
       "Folder": "Carpeta",
       "No_folder": "Ninguna carpeta",
-      "Parsing_file": "Procesando contenido de archivo...",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "Guardando artículos ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "Profesión",
     "Level": "Desynth level",
     "Intro": "Seleccione una profesión e introduzca un nivel para encontrar los mejores artículos para subir el nivel de su desíntesis",
-    "Loading_message": "Cargando...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Mejores probabilidades",
       "Lower_exp": "Menor exp",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "Disable packet capture",
     "Install_npcap": "Npcap is missing from your system",
     "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap_button": "Install npcap and restart Teamcraft",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Sugerir cambio de región a {{region}}",
@@ -2104,7 +2106,7 @@
       "Wrists": "Muñecas"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Comparar {{setName}} con...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "No se pudo comparar los conjuntos de equipo",
       "Error_description": "Por favor, asegúrese de que el conjunto de equipo introducido existe y es del mismo tipo que el actual (mismo atributo principal)",
       "Type": "Tipo de conjunto de equipo",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
