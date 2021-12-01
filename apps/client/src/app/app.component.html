@@ -296,7 +296,7 @@
               {{'UPDATE.Web_instructions' | translate}}
             </ng-template>
           </nz-alert>
-          <nz-alert *ngIf="ipc.machinaToggle && (pcapOutDated$ | async)"
+          <nz-alert *ngIf="ipc.machinaToggle && (pcapOutDated$ | async) && !overlay"
                     [nzMessage]="'PACKET_CAPTURE.Outdated' | translate"
                     [nzDescription]="'PACKET_CAPTURE.Outdated_description' | translate"
                     class="new-version-alert"
@@ -308,6 +308,7 @@
           <nz-alert *ngIf="ipc.machinaToggle && !(loggedIn$ | async)"
                     [nzMessage]="'PACKET_CAPTURE.Not_as_anonymous' | translate"
                     [nzDescription]="'PACKET_CAPTURE.Not_as_anonymous_description' | translate"
+                    class="new-version-alert"
                     nzBanner nzShowIcon nzType="error">
           </nz-alert>
           <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
