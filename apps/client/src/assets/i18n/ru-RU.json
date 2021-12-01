@@ -15,7 +15,7 @@
   "See_on_map": "Посмотреть на карте",
   "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
-  "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
@@ -213,7 +213,7 @@
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Включить оверлей",
     "Open_alarms_overlay": "Открыть оверлей оповещений",
-    "More_available": "добавить ещё {{amount}}...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Добавить эту группу и все оповещения в ней",
     "Delete_all": "Удалить все оповещения",
     "Delete_alarm": "Удалить оповещение",
-    "Regenerating_alarms": "Regenerating your alarms...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "Эта группа устарела, попросите владельца войти с новым обновлением, и она будет обновлена",
     "Remove_from_group": "Удалить из этой группы",
@@ -585,7 +585,7 @@
     "Your_lists": "Ваши списки",
     "Outdated_tag": "Устаревшие",
     "No_lists": "У вас нет списков",
-    "Lists_search_placeholder": "Искать список...",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
     "Import_description": "Выберите рецепт, который вы хотите использовать для предметов, которые можно создать и выберите список. Предметы будут добавлены в этот список и вы будете перенаправлены в него.",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "Текущий бонус",
     "Macrolock": "Добавить блокировку макроса",
     "Find_rotation": "Поиск ротации сообщества",
-    "Searching_for_rotation": "Поиск ротации сообщества...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "Ротация сообщества не найдена в соответствии с вашим запросом",
     "Click_on_rotation": "Нажмите на ротацию для выбора",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
@@ -1434,7 +1434,7 @@
       "Format": "Формат",
       "Folder": "Папка",
       "No_folder": "Без папки",
-      "Parsing_file": "Чтение содержимого файла...",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "Сохраняем предметы ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "Профессия",
     "Level": "Уровень десинтеза",
     "Intro": "Выберите профессию и введите уровень для поиска лучших вещей для повышения уровня десинтеза",
-    "Loading_message": "Загрузка...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Высокий шанс",
       "Lower_exp": "Низкий опыт",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "Отключить захват пакетов",
     "Install_npcap": "Npcap отсутствует в вашей системе",
     "Install_npcap_description": "Для захвата Teamcraft с исходным npcap режимом, необходимо установить npcap. Teamcraft может установить его для вас и перезапустить приложение, как только оно будет завершено.",
-    "Install_npcap_button": "Установить npcap и перезапустить Teamcraft"
+    "Install_npcap_button": "Установить npcap и перезапустить Teamcraft",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
@@ -2104,7 +2106,7 @@
       "Wrists": "Запястье"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Сравнить {{setName}} с...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "Не удалось сравнить наборы",
       "Error_description": "Пожалуйста убедитесь, что выбранный набор существует и он такого же типа как и текущий (такой же основной стат)",
       "Type": "Тип набора",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "Этот набор снаряжения создан после синхронизации с помощью захвата пакетов, он будет обновлен если вы синхронизируетесь снова для этой профессии.",
       "Importing_gearset": "Импорт набора для {{name}}",
       "Imported_gearset": "Импортированный набор для {{name}}",
-      "Syncing_gearsets": "Синхронизация набора снаряжения..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
