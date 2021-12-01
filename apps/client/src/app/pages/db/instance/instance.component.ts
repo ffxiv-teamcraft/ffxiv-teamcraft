@@ -63,7 +63,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#instance/${xivapiInstance.ID}`,
+            url: `https://www.garlandtools.org/db/#instance/${xivapiInstance.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {

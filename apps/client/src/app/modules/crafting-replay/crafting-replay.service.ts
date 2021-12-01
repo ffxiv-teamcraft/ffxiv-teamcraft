@@ -10,6 +10,7 @@ import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { ofMessageType } from '../../core/rxjs/of-message-type';
 import { EventPlay32 } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EnvironmentService } from '../../core/environment.service';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
@@ -25,14 +26,14 @@ export class CraftingReplayService {
         playerStats.cp,
         false,
         updateClassInfo.level,
-        [80, 80, 80, 80, 80, 80, 80, 80]
+        [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]
       );
     }),
     shareReplay(1)
   );
 
   constructor(private ipc: IpcService, private afs: AngularFirestore, private craftingReplayFacade: CraftingReplayFacade,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, private env: EnvironmentService) {
   }
 
   public init(): void {

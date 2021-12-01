@@ -443,7 +443,7 @@ export class AppComponent implements OnInit {
         first(),
         switchMap((current: NavigationEnd) => {
           let url = current.url;
-          if (!this.settings.autoOpenInDesktop) {
+          if (!this.settings.autoOpenInDesktop || url.indexOf('noDesktop=') > -1) {
             return of(false);
           }
           if (this.platformService.isDesktop() || isPlatformServer(this.platform) || IS_HEADLESS) {

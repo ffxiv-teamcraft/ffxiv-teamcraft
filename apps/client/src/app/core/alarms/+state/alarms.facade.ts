@@ -227,6 +227,13 @@ export class AlarmsFacade {
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
     display.groupNames = alarm.groupNames || '';
+    if (Math.abs(alarm.type) < 4) {
+      display.dbType = 'node';
+    } else if (alarm.type === 4) {
+      display.dbType = 'spearfishing-spot';
+    } else {
+      display.dbType = 'fishing-spot';
+    }
     if (display.spawned) {
       const despawn = {
         ...nextSpawn

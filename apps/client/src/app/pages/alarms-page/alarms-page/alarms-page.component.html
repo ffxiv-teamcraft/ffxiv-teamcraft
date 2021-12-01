@@ -211,6 +211,7 @@
                               [mapId]="row.alarm.mapId"
                               [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
+            <app-db-button [type]="row.dbType" [id]="row.alarm.nodeId"></app-db-button>
             <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
             <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/fish_eyes.png">
@@ -428,15 +429,20 @@
         </div>
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
-            <div>
-              {{row.alarm.aetheryte?.nameid | i18nRow:'places' | i18n}}
+            <div *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
+              {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>
 
-            <app-map-position [mapId]="row.alarm.mapId"
-                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
-                              [showZoneName]="true"
-                              [zoneId]="row.alarm.zoneId"
-                              flex="column"></app-map-position>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+              <app-map-position [mapId]="row.alarm.mapId"
+                                [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
+                                [showZoneName]="true"
+                                [zoneId]="row.alarm.zoneId"
+                                flex="column"></app-map-position>
+
+              <app-db-button [type]="row.dbType" [id]="row.alarm.nodeId"></app-db-button>
+            </div>
+
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="1">

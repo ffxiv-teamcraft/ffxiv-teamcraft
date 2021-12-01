@@ -10,6 +10,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { environment } from '../../../environments/environment';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EnvironmentService } from '../../core/environment.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 export class GearsetComparatorService {
 
   constructor(private statsService: StatsService, private materiaService: MateriaService,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, private env: EnvironmentService) {
   }
 
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
@@ -60,8 +61,8 @@ export class GearsetComparatorService {
 
   public compare(a: TeamcraftGearset, b: TeamcraftGearset, includeAllTools: boolean): Observable<GearsetsComparison> {
     return combineLatest([
-      this.statsService.getStats(a, environment.maxLevel, 1),
-      this.statsService.getStats(b, environment.maxLevel, 1),
+      this.statsService.getStats(a, this.env.maxLevel, 1),
+      this.statsService.getStats(b, this.env.maxLevel, 1),
       this.materiaService.getTotalNeededMaterias(a, includeAllTools),
       this.materiaService.getTotalNeededMaterias(b, includeAllTools),
       this.lazyData.getEntry('ilvls'),

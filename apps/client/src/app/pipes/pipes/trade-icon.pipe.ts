@@ -18,8 +18,9 @@ export class TradeIconPipe implements PipeTransform {
     // Scrips
     10309: 0, // Red crafter
     10311: 0, // Red gatherer
-    17833: 30, // Yellow crafter
-    17834: 30, // Yellow gatherer
+    17833: 0, // Yellow crafter
+    17834: 0, // Yellow gatherer
+    // TODO Purple scrips
     25199: 30, // White crafter
     25200: 30, // White gatherer
     // Tomestones
@@ -29,8 +30,10 @@ export class TradeIconPipe implements PipeTransform {
     37: 0, // Genesis
     38: 0, // Goetia
     39: 0, // Phantasmagoria
-    40: 25, // Allegory
-    41: 25, // Revelation
+    40: 0, // Allegory
+    41: 0, // Revelation
+    42: 25, // Aphorism
+    43: 25, // Astronomy
     7811: 28, // Rowena's Token (Soldiery)
     9383: 28, // Rowena's Token (Poetics)
     14298: 28, // Rowena's Token (Lore)

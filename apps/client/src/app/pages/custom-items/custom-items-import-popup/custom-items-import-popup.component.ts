@@ -6,6 +6,11 @@ import { CustomItem } from '../../../modules/custom-items/model/custom-item';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { expand, filter, first, skip, tap } from 'rxjs/operators';
 import { CustomItemFolder } from '../../../modules/custom-items/model/custom-item-folder';
+import { DataService } from '../../../core/api/data.service';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
+import { DataType } from '../../../modules/list/data/data-type';
+import { getItemSource } from '../../../modules/list/model/list-row';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-custom-items-import-popup',
@@ -34,7 +39,8 @@ export class CustomItemsImportPopupComponent {
 
   public savingDone = 0;
 
-  constructor(private modalRef: NzModalRef, private serializer: NgSerializerService, private customItemsFacade: CustomItemsFacade) {
+  constructor(private modalRef: NzModalRef, private serializer: NgSerializerService, private customItemsFacade: CustomItemsFacade,
+              private env: EnvironmentService) {
   }
 
   public handleFile = (event: any) => {

@@ -126,7 +126,7 @@ export class ActionComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#action/${xivapiAction.ID}`,
+            url: `https://www.garlandtools.org/db/#action/${xivapiAction.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {

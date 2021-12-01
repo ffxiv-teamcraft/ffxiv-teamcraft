@@ -18,7 +18,7 @@ export class TeamcraftGearset extends DataWithPermissions {
   head: EquipmentPiece;
   chest: EquipmentPiece;
   gloves: EquipmentPiece;
-  belt: EquipmentPiece;
+  belt?: EquipmentPiece;
   legs: EquipmentPiece;
   feet: EquipmentPiece;
 
