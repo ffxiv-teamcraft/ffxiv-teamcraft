@@ -15,7 +15,7 @@
   "See_on_map": "地図で見る",
   "No_known_coordinates": "知られた座標なし",
   "Edit_amount": "総量を編集する",
-  "List_fork_in_progress": "このリストをマイアカウントにコピー中",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "Hide_zone_duplicates": "重なる領域を隠す(複数領域にあるアイテムの場合1回だけ表示されます)",
   "Patch_notes": "{{version}} の変更",
@@ -213,7 +213,7 @@
     "Macro_copied": "マクロがクリップボードにコピーされました",
     "Open_overlay": "オーバーレイの切り替え",
     "Open_alarms_overlay": "アラームオーバーレイの切り替え",
-    "More_available": "{{amount}} 回 もっと",
+    "More_available": "and {{amount}} more…",
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
     "Add_alarms_to_group": "グループにアラームを追加",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
     "Delete_alarm": "このアラームを削除",
-    "Regenerating_alarms": "アラーム更新中...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
@@ -585,7 +585,7 @@
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
     "No_lists": "リストがありません",
-    "Lists_search_placeholder": "リストを検索する・・・",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "リストに追加する",
     "Please_pick_recipe": "このアイテムに対する、制作レシピを選択して下さい。",
     "Import_description": "制作しようとする、アイテムに対する制作レシピを選び、リストを選択して下さい。そうすれば、アイテムがリストに追加され、自動にリストに移動されます。",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "現在のボーナス",
     "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
     "Find_rotation": "コミュニティースキル回しファイダー",
-    "Searching_for_rotation": "コミュニティースキル回しを検索...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "要求に合致するコミュニティスキル回しが見つかりませんでした。",
     "Click_on_rotation": "スキル回しをクリックして選択します",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
@@ -1434,7 +1434,7 @@
       "Format": "形式",
       "Folder": "フォルダー",
       "No_folder": "フォルダー無し",
-      "Parsing_file": "ファイルの内容を分析中",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "({{done}}{{todo}}) を保存しました"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "ジョブ",
     "Level": "分解レベル",
     "Intro": "ジョブを選択し、分解レベルを入力して分解レベリングに最適化されたアイテムを探して下さい",
-    "Loading_message": "読み込み中です...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "高い分解確率",
       "Lower_exp": "低い分解精度",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "パケットキャプチャを無効にする",
     "Install_npcap": "Npcapがシステムから見つかりません。",
     "Install_npcap_description": "TCのパケットキャプチャをnpcapモードに使用する為にはnpcapのインストールが必要です。インストールが終わったらTCを再起動できます",
-    "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します"
+    "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}}に変更することをおすすめします",
@@ -2104,7 +2106,7 @@
       "Wrists": "腕輪"
     },
     "COMPARISON": {
-      "Compare_popup_title": "{{setName}} を比較させる",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "ギアセットを比較できさせなかった",
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
       "Type": "ギアセットの種類",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "このギアセットは、パケットキャプチャを利用して同期化されました、この職業で再度同期化すると更新されます。",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "ギアセットを同期中 ..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
