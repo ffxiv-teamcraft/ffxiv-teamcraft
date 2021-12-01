@@ -34,7 +34,7 @@
                 </div>
                 <div [ngSwitch]="optimization.type">
                   <ng-container *ngSwitchCase="'HAS_TOO_FEW'">
-                    <nz-input-group nzSearch nzSize="small" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
+                    <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
                       <input type="number" nz-input min="1" [ngModel]="stackSizeThreshold" #stackSizeInput
                              (click)="$event.stopPropagation()"/>
                     </nz-input-group>
@@ -42,7 +42,6 @@
                       <button nz-button
                               (click)="$event.stopPropagation(); stackSizeThreshold = +stackSizeInput.value"
                               nzType="primary"
-                              nzSize="small"
                               nzSearch>{{'COMMON.Apply' | translate}}</button>
                     </ng-template>
                     <ng-template #nzAddOnBefore>
@@ -51,6 +50,7 @@
                   </ng-container>
                   <ng-container *ngSwitchCase="'CONSOLIDATE_STACKS'">
                     <span>{{'INVENTORY_OPTIMIZER.CONSOLIDATE_STACKS.Filter' | translate}}</span>
+                    &nbsp;
                     <nz-select nzAllowClear
                                nzSize="small"
                                (click)="$event.stopPropagation();"
@@ -60,15 +60,14 @@
                     </nz-select>
                   </ng-container>
                   <ng-container *ngSwitchCase="'UNWANTED_MATERIALS'">
-                    <nz-input-group nzSearch nzSize="small" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
+                    <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
                       <input type="number" nz-input min="1" [ngModel]="minRecipeIlvl" #recipeIlvlInput
-                             (click)="$event.stopPropagation()"/>
+                             (click)="$event.stopPropagation()" nzSize="large"/>
                     </nz-input-group>
                     <ng-template #suffixButton>
                       <button nz-button
                               (click)="$event.stopPropagation(); minRecipeIlvl = +recipeIlvlInput.value"
                               nzType="primary"
-                              nzSize="small"
                               nzSearch>{{'COMMON.Apply' | translate}}</button>
                     </ng-template>
                     <ng-template #nzAddOnBefore>
@@ -77,14 +76,13 @@
                   </ng-container>
                   <ng-container *ngSwitchCase="'CAN_BE_BOUGHT'">
                     <nz-input-group nzSearch nzSize="small" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="maxPriceBefore">
-                      <input type="number" nz-input min="1" [ngModel]="maximumVendorPrice" #maximumPriceInput
+                      <input type="number" nz-input min="1" nzSize="large" [ngModel]="maximumVendorPrice" #maximumPriceInput
                              (click)="$event.stopPropagation()"/>
                     </nz-input-group>
                     <ng-template #suffixButton>
                       <button nz-button
                               (click)="$event.stopPropagation(); maximumVendorPrice = +maximumPriceInput.value"
                               nzType="primary"
-                              nzSize="small"
                               nzSearch>{{'COMMON.Apply' | translate}}</button>
                     </ng-template>
                     <ng-template #maxPriceBefore>
