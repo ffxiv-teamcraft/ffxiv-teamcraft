@@ -15,7 +15,7 @@
   "See_on_map": "Voir sur la carte",
   "No_known_coordinates": "Pas de coordonnées connues",
   "Edit_amount": "Modifier le montant",
-  "List_fork_in_progress": "Copie de la liste en cours...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "Patch_notes": "Patch notes de la version {{version}}",
@@ -213,7 +213,7 @@
     "Macro_copied": "Macro copiée dans votre presse-papiers",
     "Open_overlay": "Ouvrir/fermer l'overlay",
     "Open_alarms_overlay": "Ouvrir/fermer l'overlay des alarmes",
-    "More_available": "et {{amount}} autres...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Ajouter ce groupe et toutes ses alarmes à vos alarmes",
     "Delete_all": "Supprimer toutes vos alarmes",
     "Delete_alarm": "Supprimer cette alarme",
-    "Regenerating_alarms": "Régénération de vos alarmes...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "Régénérer les alarmes",
     "Group_outdated": "Ce groupe est périmé, demandez au propriétaire de se connecter avec une nouvelle mise à jour et il sera régénéré",
     "Remove_from_group": "Retirer de ce groupe",
@@ -585,7 +585,7 @@
     "Your_lists": "Vos listes",
     "Outdated_tag": "Pas à jour",
     "No_lists": "Vous n'avez pas de listes",
-    "Lists_search_placeholder": "Rechercher une liste...",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Ajouter à une liste",
     "Please_pick_recipe": "Veuillez choisir une recette pour cet objet",
     "Import_description": "Choisissez une recette pour chaque objet qui peut être fabriqué et choisissez une liste, les objets seront alors ajoutés à la liste et vous serez redirigé sur celle-ci.",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "Bonus actuel",
     "Macrolock": "Inclure macrolock",
     "Find_rotation": "Recherche de rotation communautaire",
-    "Searching_for_rotation": "Recherche de rotation communautaire...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "Aucune rotation communautaire trouvée correspondant à vos besoins",
     "Click_on_rotation": "Cliquez sur une rotation pour la sélectionner",
     "Recipe_picker_placeholder": "Entrez le nom de la recette que vous voulez simuler",
@@ -1434,7 +1434,7 @@
       "Format": "Format",
       "Folder": "Dossier",
       "No_folder": "Aucun dossier",
-      "Parsing_file": "Analyse du contenu du fichier...",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "Sauvegarde des objets ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "Job",
     "Level": "Niveau de recyclage",
     "Intro": "Sélectionnez un job et saisissez un niveau pour trouver les meilleurs objets pour monter votre recyclage",
-    "Loading_message": "Chargement en cours...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Meilleur taux de succès",
       "Lower_exp": "Moins d'exp",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "Désactiver la capture de paquets",
     "Install_npcap": "Npcap est manquant dans votre système",
     "Install_npcap_description": "Afin de capturer les paquets sur Teamcraft avec son mode npcap par défaut, vous devez installer npcap. Teamcraft peut l'installer pour vous et redémarrer l'application une fois terminé.",
-    "Install_npcap_button": "Installez npcap et redémarrez Teamcraft"
+    "Install_npcap_button": "Installez npcap et redémarrez Teamcraft",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
@@ -2104,7 +2106,7 @@
       "Wrists": "Poignets"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Comparer {{setName}} avec...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "Impossible de comparer ces deux tenues",
       "Error_description": "Merci de vérifier que la seconde tenue existe et utilise le même type d'équipement (la même stat principale)",
       "Type": "Type de tenue",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "Cette tenue est synchronisée via la capture de paquets, elle sera mise à jour si la synchronisation est lancée de nouveau.",
       "Importing_gearset": "Import en cours pour la tenue {{name}}",
       "Imported_gearset": "Tenue {{name}} importée",
-      "Syncing_gearsets": "Synchronisation des tenues..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
