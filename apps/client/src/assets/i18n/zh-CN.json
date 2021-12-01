@@ -15,7 +15,7 @@
   "See_on_map": "查看地图",
   "No_known_coordinates": "没有已知坐标",
   "Edit_amount": "编辑数量",
-  "List_fork_in_progress": "正在将清单复制到你的账户",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
@@ -213,7 +213,7 @@
     "Macro_copied": "宏已复制到剪贴板",
     "Open_overlay": "显示/隐藏悬浮窗",
     "Open_alarms_overlay": "显示/隐藏闹钟悬浮窗",
-    "More_available": "还有 {{amount}} 个…",
+    "More_available": "and {{amount}} more…",
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
     "Add_alarms_to_group": "增加闹钟到本组",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟列表",
     "Delete_all": "删除所有闹钟",
     "Delete_alarm": "删除闹钟",
-    "Regenerating_alarms": "正在重新生成闹钟 ...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "重新生成闹钟",
     "Group_outdated": "此分组已过期。请联系所有人在新版本中登录以进行更新。",
     "Remove_from_group": "从此分组中移除",
@@ -585,7 +585,7 @@
     "Your_lists": "我的清单",
     "Outdated_tag": "已过期",
     "No_lists": "没有清单",
-    "Lists_search_placeholder": "搜索清单…",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "添加到清单",
     "Please_pick_recipe": "请为该物品选择配方",
     "Import_description": "选择你想制作这个物品的配方，然后选择一个清单。这些物品将被添加到该清单，然后你会被带到清单页。",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Find_rotation": "共享手法搜索",
-    "Searching_for_rotation": "正在搜索共享手法...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "没有找到符合您需求的共享手法",
     "Click_on_rotation": "点击一个手法来选择它",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
@@ -1434,7 +1434,7 @@
       "Format": "格式",
       "Folder": "文件夹",
       "No_folder": "没有文件夹",
-      "Parsing_file": "正在解析文件内容……",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "正在保存 ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "职业",
     "Level": "分解技能",
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
-    "Loading_message": "正在加载……",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "成功率高",
       "Lower_exp": "经验少",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "停用数据包捕获",
     "Install_npcap": "您未安装 Npcap",
     "Install_npcap_description": "为在默认的 Npcap 下使用 Teamcraft 的数据包捕获功能，您需要安装 Npcap。Teamcraft 可以帮你安装并在安装完成后自动重启本应用。",
-    "Install_npcap_button": "安装 Npcap 并重启 Teamcraft"
+    "Install_npcap_button": "安装 Npcap 并重启 Teamcraft",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
@@ -2104,7 +2106,7 @@
       "Wrists": "腕部"
     },
     "COMPARISON": {
-      "Compare_popup_title": "比较 {{setName}} ...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "无法比较配装",
       "Error_description": "请确保您输入的配装存在，且与当前配装的职业主属性类型相同（即同类职业）",
       "Type": "配装类型",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
       "Importing_gearset": "正在导入 {{name}} 的配装",
       "Imported_gearset": "已导入 {{name}} 的配装",
-      "Syncing_gearsets": "正在同步配装 ……"
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
