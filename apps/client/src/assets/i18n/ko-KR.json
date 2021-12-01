@@ -15,7 +15,7 @@
   "See_on_map": "지도에서 보기",
   "No_known_coordinates": "알려진 좌표 없음",
   "Edit_amount": "수량 수정",
-  "List_fork_in_progress": "목록을 내 계정으로 복사중...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "Patch_notes": "{{version}} 변경점",
@@ -213,7 +213,7 @@
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
     "Open_overlay": "오버레이 켜기/끄기",
     "Open_alarms_overlay": "알람 오버레이 켜기/끄기",
-    "More_available": "{{amount}}번 더...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "알람에 해당 그룹과 알람을 모두 추가하기",
     "Delete_all": "모든 알람 삭제",
     "Delete_alarm": "해당 알람 삭제",
-    "Regenerating_alarms": "알람 갱신 중..",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "알람 갱신",
     "Group_outdated": "해당 그룹은 오래되었습니다. 사용자가 새 업데이트를 통해 로그인을 하면 갱신됩니다",
     "Remove_from_group": "해당 그룹 삭제",
@@ -585,7 +585,7 @@
     "Your_lists": "내 목록",
     "Outdated_tag": "만료",
     "No_lists": "목록이 없습니다",
-    "Lists_search_placeholder": "목록 검색",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "목록에 추가",
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
     "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
@@ -1031,7 +1031,7 @@
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
     "Find_rotation": "커뮤니티 로테이션 검색기",
-    "Searching_for_rotation": "커뮤니티 로테이션 검색 중...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
     "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
@@ -1434,7 +1434,7 @@
       "Format": "형식",
       "Folder": "폴더",
       "No_folder": "폴더 없음",
-      "Parsing_file": "파일 내용 분석중..",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1454,7 @@
     "Job": "직업",
     "Level": "분해 레벨",
     "Intro": "직업을 선택하고 분해 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
-    "Loading_message": "불러오는 중...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "높은 분해 확률",
       "Lower_exp": "낮은 분해 숙련도",
@@ -1921,7 +1921,9 @@
     "Disable_pcap": "패킷 캡쳐 비활성화",
     "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
     "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
-    "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행"
+    "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2104,7 +2106,7 @@
       "Wrists": "팔찌"
     },
     "COMPARISON": {
-      "Compare_popup_title": "{{setName}} 와 비교",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "장비세트를 비교할 수 없습니다",
       "Error_description": "비교할려는 장비 세트의 직업군이 현재 장비 세트의 직업군과 동일한지 확인하세요(같은 메인 능력치를 사용하는 직업)",
       "Type": "비교할 장비세트",
@@ -2134,7 +2136,7 @@
       "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트됩니다.",
       "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
       "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
-      "Syncing_gearsets": "장비 세트를 동기화 중.."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
