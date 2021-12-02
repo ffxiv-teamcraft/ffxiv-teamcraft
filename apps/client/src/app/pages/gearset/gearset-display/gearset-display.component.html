@@ -57,8 +57,11 @@
           <div fxLayout="row" fxLayoutAlign="space-evenly flex-start" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
             <div fxFlexOrder="1" fxLayout="row" fxLayoutAlign="center center">
               <div fxLayout="column">
-                <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[0]"
-                                          [verbose]="true" [progression]="progression" (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+                <ng-container *ngFor="let row of gearsetSlotProperties">
+                  <app-gearset-display-slot *ngIf="row[0]" [gearset]="gearset" [propertyName]="row[0]"
+                                            [verbose]="true" [progression]="progression"
+                                            (progressionChange)="updateProgression(gearset.$key, $event)"></app-gearset-display-slot>
+                </ng-container>
               </div>
             </div>
             <div fxFlexOrder="2" fxLayout="row" fxLayoutAlign="center center">

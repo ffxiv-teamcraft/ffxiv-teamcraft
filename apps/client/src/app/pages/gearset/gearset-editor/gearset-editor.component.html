@@ -95,7 +95,7 @@
                     <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
                     <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d"
                        *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async"></i>
-                    <nz-tag *ngIf="!canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async">
+                    <nz-tag *ngIf="!(canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId) | async)">
                       {{'GEARSETS.Unavailable_slot' | translate}}
                     </nz-tag>
                   </div>
@@ -136,7 +136,7 @@
                      [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
                      nzCustomContent>
             <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
-            <div class="food-bonus" *ngFor="let bonus of food | foodBonuses">
+            <div class="food-bonus" *ngFor="let bonus of food | foodBonuses | async">
               {{bonus}}
             </div>
           </nz-option>
@@ -158,8 +158,8 @@
           <i nzIconfont="icon-dollar" nz-icon></i>
         </button>
       </div>
-      <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
-        : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0 | async)[0].value }}</div>
+      <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl" *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0 | async) as computed">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
+        : {{computed[0].value }}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
         <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id | async) as statDisplays">
           <b>{{stat.value | number:'1.0-0':translate.currentLang}}

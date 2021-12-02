@@ -6,7 +6,6 @@ import { first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from '../../../../environments/environment';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -40,12 +39,12 @@ import { EnvironmentService } from '../../../core/environment.service';
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
-  public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
+  public gearsetSlotProperties: Array<keyof TeamcraftGearset | null>[] = [
     ['mainHand', 'offHand'],
     ['head', 'earRings'],
     ['chest', 'necklace'],
     ['gloves', 'bracelet'],
-    ['belt', 'ring1'],
+    [this.env.gameVersion > 6 ? null : 'belt', 'ring1'],
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];

@@ -230,12 +230,13 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
           const prepared = [...response.Results, ...crystal.Results]
             .filter(item => {
-              return relevantStats.some(stat => {
-                if (!gearset.isCombatSet()) {
-                  return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
-                }
-                return true;
-              });
+              return (this.environment.gameVersion < 6 || item.EquipSlotCategory.ID !== 6)
+                && relevantStats.some(stat => {
+                  if (!gearset.isCombatSet()) {
+                    return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
+                  }
+                  return true;
+                });
             })
             .reduce((resArray, item) => {
               const slotName = Object.keys(item.EquipSlotCategory)
@@ -306,7 +307,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         'Head',
         'Body',
         'Gloves',
-        'Waist',
+        ...(this.environment.gameVersion < 6 ? ['Waist'] : []),
         'Legs',
         'Feet',
         'Ears',
