@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.0"></a>
+# [9.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.6...v9.1.0) (2021-12-03)
+
+
+### Bug Fixes
+
+* **alarms:** fixed closest aetheryte not loaded properly ([91befd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91befd8)), closes [#2072](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2072)
+* **collectables:** fixed "add selection to list" not working and missing job icons in input fields ([5648005](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5648005))
+* **db:** fixed GE links for map pages ([75e514f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/75e514f))
+* **db:** fixed GT links using http instead of https ([974e3f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/974e3f3))
+* **db:** fixed missing description in quest pages ([e74d934](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e74d934))
+* **db:** fixed spearfishing spot pages ([a30e50b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a30e50b))
+* **desktop:** fixed a possible crash when hashing content id files ([32941cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32941cc))
+* **desktop:** fixed start in tray not applying properly ([c9805c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9805c6)), closes [#2074](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2074)
+* **i18n:** use ellipsis instead of "..." to fix nitpicking issues ([e278b09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e278b09)), closes [#2026](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2026)
+* **list-details:** fixed broken tooltip for the amount of crafts required ([f9c06a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9c06a1))
+* **navigation-map:** better implementaiton for monster name display ([46ebc97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46ebc97))
+* **profile:** fixed character search not working ([d001ce6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d001ce6))
+* **recipe-finder:** fixed a bug with missing ingredients misscaculation ([418a12e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/418a12e))
+* **recipe-finder:** fixed add button not properly disabled in some cases ([38672f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/38672f1))
+* **search:** fixed recipe job icon not showing anymore ([fe8d947](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe8d947))
+* **search:** fixed undefined results sometimes showing ([a345389](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a345389))
+* **settings:** possible fix for notification audio not playing ([9bb7808](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bb7808))
+* **sidebar:** removed downlaod desktop link from desktop app ([be12281](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be12281))
+* **spearfishing:** removed gig data ([948e3fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/948e3fa))
+* **ux:** possible fix for buttons moving in UI while crafting ([57dc6ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/57dc6ca))
+* **voyages:** fixed wrong index displayed for voyage sequence ([cab53df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cab53df))
+
+
+### Features
+
+* **alarms:** added db button next to coords to open node details ([6c5150e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c5150e))
+* **core:** remove belt from 6.0 game ([124fb66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/124fb66))
+* **core:** support for Endwalker changes ([bfb5fc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bfb5fc9))
+* **db:** support for korean v5.57 update ([d2b2f8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2b2f8d))
+* **desktop:** show error banner for anonymous users using packet capture ([9fec9f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9fec9f8)), closes [#2071](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2071)
+* **desktop:** tentative fix for opening in web from desktop redirecting to desktop ([fc2a903](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc2a903))
+* **fishing-reporter:** added intuition to the reported data ([0a5ed0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a5ed0f))
+* **inventory-optimizer:** exclude ilvl 1 from minimum item level for materials ([2c1390b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c1390b)), closes [#2073](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2073)
+* **simulator:** support for 6.0 update on global region ([9ad8922](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ad8922))
+
+
+
 <a name="9.0.6"></a>
 ## [9.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.5...v9.0.6) (2021-11-23)
 
