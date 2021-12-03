@@ -11,7 +11,7 @@ export interface LazyNpc {
 export interface Position {
   zoneid: number;
   map:    number;
-  x:      null;
-  y:      null;
-  z:      null;
+  x:      number | null;
+  y:      number | null;
+  z:      number | null;
 }

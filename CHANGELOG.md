@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.1"></a>
+## [9.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.0...v9.1.1) (2021-12-03)
+
+
+### Bug Fixes
+
+* **db:** fixed aetherytes, npcs and fates coords ([f01c573](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f01c573))
+* **levequests:** fixed level input not going up to lvl 90 ([930283c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/930283c))
+
+
+### Features
+
+* **db:** added coords for all the gathering nodes ([824de10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/824de10))
+
+
+
 <a name="9.1.0"></a>
 # [9.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.0.6...v9.1.0) (2021-12-03)
 
