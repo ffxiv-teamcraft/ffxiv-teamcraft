@@ -267,10 +267,6 @@
           </div>
           <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="row.alarm.hookset | hooksetActionId | actionName | i18n" class="gig-icon" nz-tooltip
                [src]="row.alarm.hookset | hooksetActionId | actionIcon | xivapiIcon">
-          <div *ngIf="row.alarm.gig">
-            <img [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate" class="gig-icon" nz-tooltip
-                 src="./assets/icons/gig/{{row.alarm.gig}}.png">
-          </div>
           <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                fxLayoutGap="10px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip

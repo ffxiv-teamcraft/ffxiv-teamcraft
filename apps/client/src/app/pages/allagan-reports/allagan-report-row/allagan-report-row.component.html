@@ -52,10 +52,6 @@
       </ng-container>
       <ng-container *ngSwitchCase="AllaganReportSource.SPEARFISHING">
         <div fxLayout="column" fxLayoutGap="10px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img *ngIf="data.gig" class="hookset-icon" src="./assets/icons/gig/{{data.gig}}.png">
-            <div>{{('GATHERING_LOCATIONS.GIG_HEAD.' + data.gig) | translate}}</div>
-          </div>
           <div *ngIf="data.predators?.length > 0; else noPredators" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">

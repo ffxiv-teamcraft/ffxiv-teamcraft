@@ -98,8 +98,6 @@
           </div>
           <div nz-col nzMd="6"  fxLayout="row" fxLayoutAlign="flex-start center">
             <ng-container *ngIf="item.gatheringItem as gatheringItem">
-              <img *ngIf="gatheringItem.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + gatheringItem.gig) | translate" class="gig-icon" nz-tooltip
-                   src="./assets/icons/gig/{{gatheringItem.gig}}.png">
               <div *ngIf="gatheringItem.predators && gatheringItem.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                    fxLayoutGap="10px">
                 <nz-divider nzType="vertical"></nz-divider>

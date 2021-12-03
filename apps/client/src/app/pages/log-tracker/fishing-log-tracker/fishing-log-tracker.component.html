@@ -127,9 +127,6 @@
                               </div>
                               <app-fishing-bait *ngIf="entry.gatheringNode.baits !== undefined" [baits]="entry.gatheringNode.baits"
                                                 flex="row"></app-fishing-bait>
-                              <img *ngIf="entry.gatheringNode.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + entry.gatheringNode.gig) | translate"
-                                   class="gig-icon"
-                                   nz-tooltip src="./assets/icons/gig/{{entry.gatheringNode.gig}}.png">
                               <img *ngIf="entry.gatheringNode.hookset"
                                    [nzTooltipTitle]="entry.gatheringNode.hookset | hooksetActionId | actionName | i18n"
                                    class="gig-icon"
