@@ -669,6 +669,14 @@
       "classJob": 9
     }
   ],
+  "2229": [
+    {
+      "leve": 98,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 13
+    }
+  ],
   "2230": [
     {
       "leve": 211,
@@ -1387,6 +1395,14 @@
       "classJob": 13
     }
   ],
+  "2673": [
+    {
+      "leve": 213,
+      "amount": 1,
+      "lvl": 10,
+      "classJob": 11
+    }
+  ],
   "2680": [
     {
       "leve": 219,
@@ -1471,12 +1487,28 @@
       "classJob": 12
     }
   ],
+  "2753": [
+    {
+      "leve": 233,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 11
+    }
+  ],
   "2765": [
     {
       "leve": 241,
       "amount": 1,
       "lvl": 30,
       "classJob": 11
+    }
+  ],
+  "2767": [
+    {
+      "leve": 117,
+      "amount": 1,
+      "lvl": 30,
+      "classJob": 13
     }
   ],
   "2779": [
@@ -1867,6 +1899,14 @@
       "classJob": 14
     }
   ],
+  "3347": [
+    {
+      "leve": 113,
+      "amount": 1,
+      "lvl": 25,
+      "classJob": 13
+    }
+  ],
   "3349": [
     {
       "leve": 413,
@@ -2123,6 +2163,14 @@
       "classJob": 13
     }
   ],
+  "3622": [
+    {
+      "leve": 246,
+      "amount": 1,
+      "lvl": 35,
+      "classJob": 11
+    }
+  ],
   "3623": [
     {
       "leve": 252,
@@ -2139,9 +2187,25 @@
       "classJob": 13
     }
   ],
+  "3668": [
+    {
+      "leve": 135,
+      "amount": 1,
+      "lvl": 45,
+      "classJob": 13
+    }
+  ],
   "3740": [
     {
       "leve": 83,
+      "amount": 1,
+      "lvl": 1,
+      "classJob": 13
+    }
+  ],
+  "3741": [
+    {
+      "leve": 84,
       "amount": 1,
       "lvl": 1,
       "classJob": 13
@@ -2223,6 +2287,14 @@
       "amount": 1,
       "lvl": 25,
       "classJob": 13
+    }
+  ],
+  "3800": [
+    {
+      "leve": 405,
+      "amount": 1,
+      "lvl": 20,
+      "classJob": 14
     }
   ],
   "3825": [
@@ -2327,78 +2399,6 @@
       "amount": 1,
       "lvl": 45,
       "classJob": 9
-    }
-  ],
-  "3959": [
-    {
-      "leve": 84,
-      "amount": 1,
-      "lvl": 1,
-      "classJob": 13
-    }
-  ],
-  "3967": [
-    {
-      "leve": 98,
-      "amount": 1,
-      "lvl": 10,
-      "classJob": 13
-    }
-  ],
-  "3972": [
-    {
-      "leve": 213,
-      "amount": 1,
-      "lvl": 10,
-      "classJob": 11
-    }
-  ],
-  "3983": [
-    {
-      "leve": 113,
-      "amount": 1,
-      "lvl": 25,
-      "classJob": 13
-    }
-  ],
-  "3987": [
-    {
-      "leve": 405,
-      "amount": 1,
-      "lvl": 20,
-      "classJob": 14
-    }
-  ],
-  "4007": [
-    {
-      "leve": 233,
-      "amount": 1,
-      "lvl": 25,
-      "classJob": 11
-    }
-  ],
-  "4022": [
-    {
-      "leve": 117,
-      "amount": 1,
-      "lvl": 30,
-      "classJob": 13
-    }
-  ],
-  "4034": [
-    {
-      "leve": 246,
-      "amount": 1,
-      "lvl": 35,
-      "classJob": 11
-    }
-  ],
-  "4051": [
-    {
-      "leve": 135,
-      "amount": 1,
-      "lvl": 45,
-      "classJob": 13
     }
   ],
   "4091": [
@@ -4681,6 +4681,32 @@
       "classJob": 11
     }
   ],
+  "10667": [
+    {
+      "leve": 1016,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    },
+    {
+      "leve": 1019,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 11
+    }
+  ],
   "10671": [
     {
       "leve": 945,
@@ -4730,32 +4756,6 @@
     },
     {
       "leve": 1021,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 11
-    }
-  ],
-  "10694": [
-    {
-      "leve": 1016,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 11
-    },
-    {
-      "leve": 1019,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 11
-    },
-    {
-      "leve": 1019,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 11
-    },
-    {
-      "leve": 1019,
       "amount": 1,
       "lvl": 56,
       "classJob": 11
@@ -4813,6 +4813,32 @@
       "classJob": 11
     }
   ],
+  "10719": [
+    {
+      "leve": 998,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    },
+    {
+      "leve": 1001,
+      "amount": 1,
+      "lvl": 50,
+      "classJob": 11
+    }
+  ],
   "10731": [
     {
       "leve": 962,
@@ -4839,30 +4865,30 @@
       "classJob": 13
     }
   ],
-  "10733": [
+  "10740": [
     {
-      "leve": 998,
+      "leve": 938,
       "amount": 1,
       "lvl": 50,
-      "classJob": 11
+      "classJob": 13
     },
     {
-      "leve": 1001,
+      "leve": 941,
       "amount": 1,
       "lvl": 50,
-      "classJob": 11
+      "classJob": 13
     },
     {
-      "leve": 1001,
+      "leve": 941,
       "amount": 1,
       "lvl": 50,
-      "classJob": 11
+      "classJob": 13
     },
     {
-      "leve": 1001,
+      "leve": 941,
       "amount": 1,
       "lvl": 50,
-      "classJob": 11
+      "classJob": 13
     }
   ],
   "10742": [
@@ -4931,32 +4957,6 @@
       "classJob": 14
     }
   ],
-  "10775": [
-    {
-      "leve": 938,
-      "amount": 1,
-      "lvl": 50,
-      "classJob": 13
-    },
-    {
-      "leve": 941,
-      "amount": 1,
-      "lvl": 50,
-      "classJob": 13
-    },
-    {
-      "leve": 941,
-      "amount": 1,
-      "lvl": 50,
-      "classJob": 13
-    },
-    {
-      "leve": 941,
-      "amount": 1,
-      "lvl": 50,
-      "classJob": 13
-    }
-  ],
   "10799": [
     {
       "leve": 928,
@@ -4999,7 +4999,21 @@
       "classJob": 13
     }
   ],
-  "10817": [
+  "10811": [
+    {
+      "leve": 946,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    },
+    {
+      "leve": 949,
+      "amount": 1,
+      "lvl": 52,
+      "classJob": 13
+    }
+  ],
+  "10824": [
     {
       "leve": 1089,
       "amount": 1,
@@ -5023,32 +5037,6 @@
       "amount": 1,
       "lvl": 50,
       "classJob": 14
-    }
-  ],
-  "10821": [
-    {
-      "leve": 963,
-      "amount": 1,
-      "lvl": 58,
-      "classJob": 13
-    },
-    {
-      "leve": 966,
-      "amount": 1,
-      "lvl": 58,
-      "classJob": 13
-    },
-    {
-      "leve": 966,
-      "amount": 1,
-      "lvl": 58,
-      "classJob": 13
-    },
-    {
-      "leve": 966,
-      "amount": 1,
-      "lvl": 58,
-      "classJob": 13
     }
   ],
   "10833": [
@@ -5103,18 +5091,18 @@
       "classJob": 11
     }
   ],
-  "10860": [
+  "10842": [
     {
-      "leve": 946,
+      "leve": 1114,
       "amount": 1,
-      "lvl": 52,
-      "classJob": 13
+      "lvl": 58,
+      "classJob": 14
     },
     {
-      "leve": 949,
+      "leve": 1117,
       "amount": 1,
-      "lvl": 52,
-      "classJob": 13
+      "lvl": 58,
+      "classJob": 14
     }
   ],
   "10885": [
@@ -5171,17 +5159,29 @@
       "classJob": 13
     }
   ],
-  "10905": [
+  "10911": [
     {
-      "leve": 1114,
+      "leve": 1106,
       "amount": 1,
-      "lvl": 58,
+      "lvl": 56,
       "classJob": 14
     },
     {
-      "leve": 1117,
+      "leve": 1109,
       "amount": 1,
-      "lvl": 58,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1109,
+      "amount": 1,
+      "lvl": 56,
+      "classJob": 14
+    },
+    {
+      "leve": 1109,
+      "amount": 1,
+      "lvl": 56,
       "classJob": 14
     }
   ],
@@ -5197,6 +5197,32 @@
       "amount": 1,
       "lvl": 54,
       "classJob": 12
+    }
+  ],
+  "10926": [
+    {
+      "leve": 963,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
+    },
+    {
+      "leve": 966,
+      "amount": 1,
+      "lvl": 58,
+      "classJob": 13
     }
   ],
   "10931": [
@@ -5222,32 +5248,6 @@
       "leve": 1103,
       "amount": 1,
       "lvl": 54,
-      "classJob": 14
-    }
-  ],
-  "10946": [
-    {
-      "leve": 1106,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 14
-    },
-    {
-      "leve": 1109,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 14
-    },
-    {
-      "leve": 1109,
-      "amount": 1,
-      "lvl": 56,
-      "classJob": 14
-    },
-    {
-      "leve": 1109,
-      "amount": 1,
-      "lvl": 56,
       "classJob": 14
     }
   ],
@@ -5711,7 +5711,7 @@
       "classJob": 14
     }
   ],
-  "11970": [
+  "11979": [
     {
       "leve": 1096,
       "amount": 1,
@@ -6703,7 +6703,7 @@
       "classJob": 11
     }
   ],
-  "18066": [
+  "18067": [
     {
       "leve": 1255,
       "amount": 1,
@@ -6823,7 +6823,7 @@
       "classJob": 12
     }
   ],
-  "18240": [
+  "18243": [
     {
       "leve": 1331,
       "amount": 1,
@@ -6863,7 +6863,7 @@
       "classJob": 12
     }
   ],
-  "18366": [
+  "18363": [
     {
       "leve": 1291,
       "amount": 1,
@@ -6959,7 +6959,7 @@
       "classJob": 11
     }
   ],
-  "18546": [
+  "18538": [
     {
       "leve": 1337,
       "amount": 1,
@@ -6975,7 +6975,7 @@
       "classJob": 14
     }
   ],
-  "18552": [
+  "18549": [
     {
       "leve": 1262,
       "amount": 1,
@@ -7263,6 +7263,14 @@
       "classJob": 13
     }
   ],
+  "19652": [
+    {
+      "leve": 1342,
+      "amount": 1,
+      "lvl": 68,
+      "classJob": 14
+    }
+  ],
   "19730": [
     {
       "leve": 1243,
@@ -7285,14 +7293,6 @@
       "amount": 1,
       "lvl": 66,
       "classJob": 9
-    }
-  ],
-  "19747": [
-    {
-      "leve": 1342,
-      "amount": 1,
-      "lvl": 68,
-      "classJob": 14
     }
   ],
   "19749": [
@@ -7690,7 +7690,7 @@
   "20146": [
     {
       "leve": 1391,
-      "amount": 6,
+      "amount": 9,
       "lvl": 62,
       "classJob": 19
     }
@@ -7698,7 +7698,7 @@
   "20160": [
     {
       "leve": 1393,
-      "amount": 4,
+      "amount": 9,
       "lvl": 62,
       "classJob": 19
     }
@@ -7706,7 +7706,7 @@
   "20165": [
     {
       "leve": 1392,
-      "amount": 6,
+      "amount": 9,
       "lvl": 62,
       "classJob": 19
     }
@@ -7714,7 +7714,7 @@
   "20193": [
     {
       "leve": 1398,
-      "amount": 6,
+      "amount": 9,
       "lvl": 66,
       "classJob": 19
     }
@@ -7722,7 +7722,7 @@
   "20198": [
     {
       "leve": 1397,
-      "amount": 6,
+      "amount": 9,
       "lvl": 66,
       "classJob": 19
     }
@@ -7730,7 +7730,7 @@
   "20211": [
     {
       "leve": 1399,
-      "amount": 4,
+      "amount": 9,
       "lvl": 66,
       "classJob": 19
     }
@@ -8063,14 +8063,6 @@
       "classJob": 13
     }
   ],
-  "26143": [
-    {
-      "leve": 1459,
-      "amount": 1,
-      "lvl": 76,
-      "classJob": 11
-    }
-  ],
   "26145": [
     {
       "leve": 1502,
@@ -8085,6 +8077,14 @@
       "amount": 1,
       "lvl": 76,
       "classJob": 13
+    }
+  ],
+  "26150": [
+    {
+      "leve": 1459,
+      "amount": 1,
+      "lvl": 76,
+      "classJob": 11
     }
   ],
   "26162": [
@@ -8151,6 +8151,14 @@
       "classJob": 12
     }
   ],
+  "26285": [
+    {
+      "leve": 1462,
+      "amount": 1,
+      "lvl": 78,
+      "classJob": 11
+    }
+  ],
   "26287": [
     {
       "leve": 1460,
@@ -8213,14 +8221,6 @@
       "amount": 1,
       "lvl": 78,
       "classJob": 13
-    }
-  ],
-  "26327": [
-    {
-      "leve": 1462,
-      "amount": 1,
-      "lvl": 78,
-      "classJob": 11
     }
   ],
   "26336": [
@@ -8482,7 +8482,7 @@
   "27518": [
     {
       "leve": 1555,
-      "amount": 6,
+      "amount": 9,
       "lvl": 70,
       "classJob": 19
     }
@@ -8490,7 +8490,7 @@
   "27527": [
     {
       "leve": 1558,
-      "amount": 6,
+      "amount": 9,
       "lvl": 72,
       "classJob": 19
     }
@@ -8498,7 +8498,7 @@
   "27530": [
     {
       "leve": 1557,
-      "amount": 6,
+      "amount": 9,
       "lvl": 72,
       "classJob": 19
     }
@@ -8506,7 +8506,7 @@
   "27540": [
     {
       "leve": 1560,
-      "amount": 6,
+      "amount": 9,
       "lvl": 74,
       "classJob": 19
     }
@@ -8514,7 +8514,7 @@
   "27555": [
     {
       "leve": 1563,
-      "amount": 6,
+      "amount": 9,
       "lvl": 76,
       "classJob": 19
     }
@@ -8522,7 +8522,7 @@
   "27571": [
     {
       "leve": 1562,
-      "amount": 6,
+      "amount": 9,
       "lvl": 76,
       "classJob": 19
     }
@@ -8813,6 +8813,726 @@
       "amount": 3,
       "lvl": 72,
       "classJob": 15
+    }
+  ],
+  "34090": [
+    {
+      "leve": 1629,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 15
+    }
+  ],
+  "34096": [
+    {
+      "leve": 1578,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 10
+    }
+  ],
+  "34107": [
+    {
+      "leve": 1589,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 11
+    }
+  ],
+  "34127": [
+    {
+      "leve": 1619,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 14
+    }
+  ],
+  "34150": [
+    {
+      "leve": 1599,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 12
+    }
+  ],
+  "34235": [
+    {
+      "leve": 1581,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 10
+    }
+  ],
+  "34241": [
+    {
+      "leve": 1630,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 15
+    }
+  ],
+  "34245": [
+    {
+      "leve": 1580,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 10
+    }
+  ],
+  "34247": [
+    {
+      "leve": 1600,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 12
+    }
+  ],
+  "34251": [
+    {
+      "leve": 1591,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 11
+    }
+  ],
+  "34252": [
+    {
+      "leve": 1590,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 11
+    }
+  ],
+  "34264": [
+    {
+      "leve": 1610,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 13
+    }
+  ],
+  "34271": [
+    {
+      "leve": 1611,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 13
+    }
+  ],
+  "34276": [
+    {
+      "leve": 1621,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 14
+    }
+  ],
+  "34280": [
+    {
+      "leve": 1620,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 14
+    }
+  ],
+  "34285": [
+    {
+      "leve": 1570,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 9
+    }
+  ],
+  "34291": [
+    {
+      "leve": 1601,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 12
+    }
+  ],
+  "34297": [
+    {
+      "leve": 1571,
+      "amount": 1,
+      "lvl": 82,
+      "classJob": 9
+    }
+  ],
+  "34391": [
+    {
+      "leve": 1632,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 15
+    }
+  ],
+  "34398": [
+    {
+      "leve": 1582,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 10
+    }
+  ],
+  "34401": [
+    {
+      "leve": 1613,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 13
+    }
+  ],
+  "34438": [
+    {
+      "leve": 1603,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 12
+    }
+  ],
+  "34533": [
+    {
+      "leve": 1574,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 9
+    }
+  ],
+  "34540": [
+    {
+      "leve": 1634,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 15
+    }
+  ],
+  "34544": [
+    {
+      "leve": 1604,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 12
+    }
+  ],
+  "34563": [
+    {
+      "leve": 1624,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 14
+    }
+  ],
+  "34570": [
+    {
+      "leve": 1594,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 11
+    }
+  ],
+  "34582": [
+    {
+      "leve": 1614,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 13
+    }
+  ],
+  "34682": [
+    {
+      "leve": 1586,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 10
+    }
+  ],
+  "34689": [
+    {
+      "leve": 1576,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 9
+    }
+  ],
+  "34691": [
+    {
+      "leve": 1636,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 15
+    }
+  ],
+  "34692": [
+    {
+      "leve": 1606,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 12
+    }
+  ],
+  "34705": [
+    {
+      "leve": 1626,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 14
+    }
+  ],
+  "34706": [
+    {
+      "leve": 1597,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 11
+    }
+  ],
+  "34723": [
+    {
+      "leve": 1627,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 14
+    }
+  ],
+  "34729": [
+    {
+      "leve": 1616,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 13
+    }
+  ],
+  "34732": [
+    {
+      "leve": 1596,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 11
+    }
+  ],
+  "34747": [
+    {
+      "leve": 1607,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 12
+    }
+  ],
+  "35320": [
+    {
+      "leve": 1579,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 10
+    }
+  ],
+  "35334": [
+    {
+      "leve": 1569,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 9
+    }
+  ],
+  "35347": [
+    {
+      "leve": 1593,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 11
+    }
+  ],
+  "35351": [
+    {
+      "leve": 1573,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 9
+    }
+  ],
+  "35358": [
+    {
+      "leve": 1583,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 10
+    }
+  ],
+  "35367": [
+    {
+      "leve": 1605,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 12
+    }
+  ],
+  "35369": [
+    {
+      "leve": 1595,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 11
+    }
+  ],
+  "35378": [
+    {
+      "leve": 1575,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 9
+    }
+  ],
+  "35382": [
+    {
+      "leve": 1585,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 10
+    }
+  ],
+  "35396": [
+    {
+      "leve": 1587,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 10
+    }
+  ],
+  "35408": [
+    {
+      "leve": 1609,
+      "amount": 1,
+      "lvl": 80,
+      "classJob": 13
+    }
+  ],
+  "35414": [
+    {
+      "leve": 1623,
+      "amount": 1,
+      "lvl": 84,
+      "classJob": 14
+    }
+  ],
+  "35429": [
+    {
+      "leve": 1625,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 14
+    }
+  ],
+  "35433": [
+    {
+      "leve": 1615,
+      "amount": 1,
+      "lvl": 86,
+      "classJob": 13
+    }
+  ],
+  "35461": [
+    {
+      "leve": 1577,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 9
+    }
+  ],
+  "35466": [
+    {
+      "leve": 1617,
+      "amount": 1,
+      "lvl": 88,
+      "classJob": 13
+    }
+  ],
+  "36037": [
+    {
+      "leve": 1639,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 16
+    }
+  ],
+  "36040": [
+    {
+      "leve": 1640,
+      "amount": 3,
+      "lvl": 82,
+      "classJob": 16
+    }
+  ],
+  "36043": [
+    {
+      "leve": 1641,
+      "amount": 3,
+      "lvl": 82,
+      "classJob": 16
+    }
+  ],
+  "36045": [
+    {
+      "leve": 1642,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 16
+    }
+  ],
+  "36047": [
+    {
+      "leve": 1643,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 16
+    }
+  ],
+  "36052": [
+    {
+      "leve": 1644,
+      "amount": 3,
+      "lvl": 86,
+      "classJob": 16
+    }
+  ],
+  "36054": [
+    {
+      "leve": 1645,
+      "amount": 3,
+      "lvl": 86,
+      "classJob": 16
+    }
+  ],
+  "36058": [
+    {
+      "leve": 1646,
+      "amount": 3,
+      "lvl": 88,
+      "classJob": 16
+    }
+  ],
+  "36060": [
+    {
+      "leve": 1647,
+      "amount": 3,
+      "lvl": 88,
+      "classJob": 16
+    }
+  ],
+  "36078": [
+    {
+      "leve": 1638,
+      "amount": 9,
+      "lvl": 80,
+      "classJob": 16
+    }
+  ],
+  "36108": [
+    {
+      "leve": 1637,
+      "amount": 3,
+      "lvl": 88,
+      "classJob": 15
+    }
+  ],
+  "36114": [
+    {
+      "leve": 1633,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 15
+    }
+  ],
+  "36115": [
+    {
+      "leve": 1635,
+      "amount": 3,
+      "lvl": 86,
+      "classJob": 15
+    }
+  ],
+  "36168": [
+    {
+      "leve": 1588,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 11
+    }
+  ],
+  "36170": [
+    {
+      "leve": 1592,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 11
+    }
+  ],
+  "36171": [
+    {
+      "leve": 1584,
+      "amount": 3,
+      "lvl": 86,
+      "classJob": 10
+    }
+  ],
+  "36182": [
+    {
+      "leve": 1598,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 12
+    }
+  ],
+  "36184": [
+    {
+      "leve": 1602,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 12
+    }
+  ],
+  "36196": [
+    {
+      "leve": 1568,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 9
+    }
+  ],
+  "36198": [
+    {
+      "leve": 1572,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 9
+    }
+  ],
+  "36208": [
+    {
+      "leve": 1618,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 14
+    }
+  ],
+  "36210": [
+    {
+      "leve": 1622,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 14
+    }
+  ],
+  "36228": [
+    {
+      "leve": 1631,
+      "amount": 9,
+      "lvl": 82,
+      "classJob": 15
+    }
+  ],
+  "36237": [
+    {
+      "leve": 1628,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 15
+    }
+  ],
+  "36247": [
+    {
+      "leve": 1608,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 13
+    }
+  ],
+  "36249": [
+    {
+      "leve": 1612,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 13
+    }
+  ],
+  "36395": [
+    {
+      "leve": 1678,
+      "amount": 3,
+      "lvl": 80,
+      "classJob": 19
+    }
+  ],
+  "36409": [
+    {
+      "leve": 1680,
+      "amount": 3,
+      "lvl": 82,
+      "classJob": 19
+    }
+  ],
+  "36434": [
+    {
+      "leve": 1682,
+      "amount": 3,
+      "lvl": 84,
+      "classJob": 19
+    }
+  ],
+  "36471": [
+    {
+      "leve": 1684,
+      "amount": 3,
+      "lvl": 86,
+      "classJob": 19
+    }
+  ],
+  "36485": [
+    {
+      "leve": 1686,
+      "amount": 3,
+      "lvl": 88,
+      "classJob": 19
+    }
+  ],
+  "36527": [
+    {
+      "leve": 1681,
+      "amount": 9,
+      "lvl": 82,
+      "classJob": 19
+    }
+  ],
+  "36541": [
+    {
+      "leve": 1687,
+      "amount": 9,
+      "lvl": 88,
+      "classJob": 19
+    }
+  ],
+  "36551": [
+    {
+      "leve": 1679,
+      "amount": 9,
+      "lvl": 80,
+      "classJob": 19
+    }
+  ],
+  "36555": [
+    {
+      "leve": 1683,
+      "amount": 9,
+      "lvl": 84,
+      "classJob": 19
+    }
+  ],
+  "36586": [
+    {
+      "leve": 1685,
+      "amount": 9,
+      "lvl": 86,
+      "classJob": 19
     }
   ]
 }

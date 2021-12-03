@@ -9585,7 +9585,7 @@
       "tug": 2,
       "bait": 12711,
       "spawn": 0,
-      "duration": 2,
+      "duration": 4,
       "weathers": [
         16
       ],
@@ -10013,8 +10013,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 12777,
-      "spawn": 22,
-      "duration": 4,
+      "spawn": 21,
+      "duration": 5,
       "weathers": [
         3
       ],

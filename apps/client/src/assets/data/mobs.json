@@ -4449,7 +4449,7 @@
     "en": "Lewein",
     "ja": "リュウイン",
     "de": "Lewein",
-    "fr": "Lewein"
+    "fr": "Lewin"
   },
   "743": {
     "en": "Miraudont",
@@ -21308,7 +21308,7 @@
   "3552": {
     "en": "adamantite claw",
     "ja": "魔導アダマンクロー",
-    "de": "Magitek-Adamantiumklaue",
+    "de": "Magitek-Adamantitklaue",
     "fr": "griffe d'adamantium magitek"
   },
   "3553": {
@@ -23145,7 +23145,7 @@
     "en": "Celie the Pursuant",
     "ja": "追尋のセリ",
     "de": "Celie",
-    "fr": "arcaniste des mers du nord"
+    "fr": "arcaniste des mers du Nord"
   },
   "3859": {
     "en": "Shroud guide",
@@ -25413,7 +25413,7 @@
     "en": "Serpent Captain Sanson Smyth",
     "ja": "サンソン大牙士",
     "de": "Sanson",
-    "fr": "Sanson"
+    "fr": "capitaine Sanson"
   },
   "4237": {
     "en": "Guydelot the Spent",
@@ -28436,7 +28436,7 @@
   "4740": {
     "en": "Pipin of the Steel Heart",
     "ja": "鋼心のピピン",
-    "de": "Pipin",
+    "de": "Pipin Stahlherz",
     "fr": "Pipin le cœur d'acier"
   },
   "4741": {
@@ -29178,7 +29178,7 @@
     "fr": "fille première"
   },
   "4864": {
-    "en": "Yafaem spider",
+    "en": "Yafaemi spider",
     "ja": "ヤフェーム・スパイダー",
     "de": "Yafaem-Spinne",
     "fr": "araignée de Yafaem"
@@ -33338,7 +33338,7 @@
   "5557": {
     "en": "adamantite claw",
     "ja": "魔導アダマンクロー",
-    "de": "Magitek-Adamantiumklaue",
+    "de": "Magitek-Adamantitklaue",
     "fr": "griffe d'adamantium magitek"
   },
   "5558": {
@@ -36324,10 +36324,10 @@
     "fr": "trou noir"
   },
   "6055": {
-    "en": "_rsv_6055_-1_1_C0_0BNpcName",
-    "ja": "_rsv_6055_-1_0_C0_0BNpcName",
-    "de": "_rsv_6055_-1_2_C0_0BNpcName",
-    "fr": "_rsv_6055_-1_3_C0_0BNpcName"
+    "en": "Neo Exdeath",
+    "ja": "ネオエクスデス",
+    "de": "Neo Exdeath",
+    "fr": "Néo-Exdeath"
   },
   "6056": {
     "en": "apanda",
@@ -41390,7 +41390,7 @@
   "6899": {
     "en": "Skalla soblyn",
     "ja": "スカラ・ソブラン",
-    "de": "Skalla-Kobaloss",
+    "de": "Skalla-Kobalos",
     "fr": "soblyn de Skalla"
   },
   "6900": {
@@ -47204,7 +47204,7 @@
   "7868": {
     "en": "Pipin of the Steel Heart",
     "ja": "鋼心のピピン",
-    "de": "Pipin",
+    "de": "Pipin Stahlherz",
     "fr": "Pipin le cœur d'acier"
   },
   "7869": {
@@ -49626,7 +49626,7 @@
     "fr": "conformisme pardonné"
   },
   "8272": {
-    "en": "marquis morbol",
+    "en": "morbol marquis",
     "ja": "マーカス・モルボル",
     "de": "Marquis-Morbol",
     "fr": "marquis morbol"
@@ -61530,30 +61530,6270 @@
     "fr": "aficionado des Feux de la Mort"
   },
   "10256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Minduruva",
+    "ja": "ラグ",
+    "de": "Rug",
+    "fr": "Anabella"
   },
   "10257": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sanduruva",
+    "ja": "ドグ",
+    "de": "Dug",
+    "fr": "Samanta"
   },
   "10258": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "berserker sphere",
+    "ja": "バーサクスフィア",
+    "de": "Tollwutssphäre",
+    "fr": "sphère berserk"
   },
   "10259": {
+    "en": "Cinduruva",
+    "ja": "マグ",
+    "de": "Mug",
+    "fr": "Maria"
+  },
+  "10260": {
+    "en": "N-7000",
+    "ja": "N-7000の通信",
+    "de": "Übertragung[p] von N-7000",
+    "fr": "N-7000"
+  },
+  "10261": {
+    "en": "Carbuncle",
+    "ja": "カーバンクル",
+    "de": "Karfunkel",
+    "fr": "Carbuncle"
+  },
+  "10262": {
+    "en": "Ruby Ifrit",
+    "ja": "イフリート・ルビー",
+    "de": "Rubin-Ifrit",
+    "fr": "Ifrit rubis"
+  },
+  "10263": {
+    "en": "Emerald Garuda",
+    "ja": "ガルーダ・エメラルド",
+    "de": "Smaragd-Garuda",
+    "fr": "Garuda émeraude"
+  },
+  "10264": {
+    "en": "Topaz Titan",
+    "ja": "タイタン・トパーズ",
+    "de": "Topas-Titan",
+    "fr": "Titan topaze"
+  },
+  "10265": {
+    "en": "the Magus Sisters",
+    "ja": "メーガス三姉妹",
+    "de": "Magus-Schwestern",
+    "fr": "sœurs Magus"
+  },
+  "10266": {
+    "en": "Fandaniel",
+    "ja": "ファダニエル",
+    "de": "Fandaniel",
+    "fr": "Fandaniel"
+  },
+  "10267": {
+    "en": "armed imperial citizen",
+    "ja": "武装した市民",
+    "de": "bewaffnet[a] Zivilist",
+    "fr": "civil garlemaldais armé"
+  },
+  "10268": {
+    "en": "armed imperial citizen",
+    "ja": "武装した市民",
+    "de": "bewaffnet[a] Zivilist",
+    "fr": "civil garlemaldais armé"
+  },
+  "10269": {
+    "en": "Daivadipa",
+    "ja": "ダイヴァディーパ",
+    "de": "Daivadipa",
+    "fr": "Daivadipa"
+  },
+  "10270": {
+    "en": "captive soul",
+    "ja": "囚われたタマシイ",
+    "de": "gefangen[a] Seele",
+    "fr": "âme emprisonnée"
+  },
+  "10271": {
+    "en": "orb of immolation",
+    "ja": "焔宝珠",
+    "de": "entflammbar[a] Sphärolith",
+    "fr": "orbe de feu"
+  },
+  "10272": {
+    "en": "orb of conflagration",
+    "ja": "爆宝珠",
+    "de": "explosiv[a] Sphärolith",
+    "fr": "orbe explosif"
+  },
+  "10273": {
+    "en": "clown wraith",
+    "ja": "クラウン・レイス",
+    "de": "Pierrot-Geist",
+    "fr": "spectre de clown"
+  },
+  "10274": {
+    "en": "captive soul",
+    "ja": "囚われたタマシイ",
+    "de": "gefangen[a] Seele",
+    "fr": "âme emprisonnée"
+  },
+  "10275": {
+    "en": "Little Gruff",
+    "ja": "ジュニア・ブルーセ",
+    "de": "Junior[p] Pierrot",
+    "fr": "Junior"
+  },
+  "10276": {
+    "en": "Papa Gruff",
+    "ja": "パパ・ブルーセ",
+    "de": "Gevatter[p] Pierrot",
+    "fr": "Paparlequin"
+  },
+  "10277": {
+    "en": "Mama Gruff",
+    "ja": "ママ・ブルーセ",
+    "de": "Mama[p] Pierrot",
+    "fr": "Mamarlequin"
+  },
+  "10278": {
+    "en": "Meteion",
+    "ja": "メーティオン",
+    "de": "Meteion",
+    "fr": "Météion"
+  },
+  "10279": {
+    "en": "Barnabas",
+    "ja": "バルナバ",
+    "de": "Barnabas",
+    "fr": "Barnabas"
+  },
+  "10280": {
+    "en": "thunderball",
+    "ja": "サンダースフィア",
+    "de": "Donnerkugel",
+    "fr": "sphère de foudre"
+  },
+  "10281": {
+    "en": "Lugae",
+    "ja": "ルゲイエ",
+    "de": "Lugae",
+    "fr": "Lugae"
+  },
+  "10282": {
+    "en": "Lugae",
+    "ja": "ルゲイエ",
+    "de": "Lugae",
+    "fr": "Lugae"
+  },
+  "10283": {
+    "en": "magitek chakram",
+    "ja": "魔導チャクラム",
+    "de": "Magitek-Chakram",
+    "fr": "chakram magitek"
+  },
+  "10284": {
+    "en": "magitek explosive",
+    "ja": "魔導爆弾",
+    "de": "Magiebombe",
+    "fr": "explosif magitek"
+  },
+  "10285": {
+    "en": "Anima",
+    "ja": "アニマ",
+    "de": "Anima",
+    "fr": "Anima"
+  },
+  "10286": {
+    "en": "lunar nail",
+    "ja": "異形の楔",
+    "de": "dunkl[a] Fessel",
+    "fr": "pal grotesque"
+  },
+  "10287": {
+    "en": "mega-graviton",
+    "ja": "メガグラビトン",
+    "de": "Mega-Graviton",
+    "fr": "méga graviton"
+  },
+  "10288": {
+    "en": "Anima",
+    "ja": "アニマ",
+    "de": "Anima",
+    "fr": "Anima"
+  },
+  "10289": {
+    "en": "iron nail",
+    "ja": "アニマの爪",
+    "de": "Animas Bosheit",
+    "fr": "griffe d'Anima"
+  },
+  "10290": {
+    "en": "Livia the Undeterred",
+    "ja": "愛執のリウィア",
+    "de": "Livia [t] Glühend[a]",
+    "fr": "Livia"
+  },
+  "10291": {
+    "en": "aethershot",
+    "ja": "エーテル弾",
+    "de": "Ätherschuss",
+    "fr": "projectile d'éther"
+  },
+  "10292": {
+    "en": "Rhitahtyn the Unshakable",
+    "ja": "宿執のリットアティン",
+    "de": "Rhitahtyn [t] Geplagt[a]",
+    "fr": "Rhitahtyn"
+  },
+  "10293": {
+    "en": "Amon the Undying",
+    "ja": "異執のアモン",
+    "de": "Amon",
+    "fr": "Amon"
+  },
+  "10294": {
+    "en": "sinking resentment",
+    "ja": "サンクン・リゼントメント",
+    "de": "versunken[a] Missgunst",
+    "fr": "ressentiment enfoui"
+  },
+  "10295": {
+    "en": "sinking arrogance",
+    "ja": "サンクン・アロガンス",
+    "de": "versunken[a] Hochmut",
+    "fr": "arrogance enfouie"
+  },
+  "10296": {
+    "en": "sinking cynicism",
+    "ja": "サンクン・シニシズム",
+    "de": "versunken[a] Hohn",
+    "fr": "cynisme enfoui"
+  },
+  "10297": {
+    "en": "sinking rivalry",
+    "ja": "サンクン・ライヴァリー",
+    "de": "versunken[a] Gegnerschaft",
+    "fr": "rivalité enfouie"
+  },
+  "10298": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "10260": {
+  "10299": {
+    "en": "sinking desire",
+    "ja": "サンクン・デザイア",
+    "de": "versunken[a] Begier",
+    "fr": "désir enfoui"
+  },
+  "10300": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10301": {
+    "en": "sinking partiality",
+    "ja": "サンクン・パーシアリティー",
+    "de": "versunken[a] Befangenheit",
+    "fr": "partialité enfouie"
+  },
+  "10302": {
+    "en": "sinking dissension",
+    "ja": "サンクン・ディセンション",
+    "de": "versunken[a] Zwietracht",
+    "fr": "dissension enfouie"
+  },
+  "10303": {
+    "en": "sinking dishonesty",
+    "ja": "サンクン・ディサニスティー",
+    "de": "versunken[a] Arglist",
+    "fr": "malhonnêteté enfouie"
+  },
+  "10304": {
+    "en": "sinking impatience",
+    "ja": "サンクン・イムペイシェンス",
+    "de": "versunken[a] Ungeduld",
+    "fr": "impatience enfouie"
+  },
+  "10305": {
+    "en": "sinking imparity",
+    "ja": "サンクン・イムパリティー",
+    "de": "versunken[a] Ungleichheit",
+    "fr": "inégalité enfouie"
+  },
+  "10306": {
+    "en": "sinking regret",
+    "ja": "サンクン・リグレト",
+    "de": "versunken[a] Reue",
+    "fr": "regret enfoui"
+  },
+  "10307": {
+    "en": "Ilberd the Unrelenting",
+    "ja": "意執のイルベルド",
+    "de": "Ilberd [t] Verbissen[a]",
+    "fr": "Ilberd"
+  },
+  "10308": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10309": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10310": {
+    "en": "perpetual war machine",
+    "ja": "自動殺傷兵器",
+    "de": "automatisiert[a] Exterminator",
+    "fr": "drone antipersonnel"
+  },
+  "10311": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10312": {
+    "en": "Minfilia's spirit",
+    "ja": "ミンフィリアの魂",
+    "de": "Minfilias Seele",
+    "fr": "âme de Minfilia"
+  },
+  "10313": {
+    "en": "caustic Grebuloff",
+    "ja": "グレビュオフ・メルター",
+    "de": "Typhoid[p] der Endzeit",
+    "fr": "Grébuloff en stade terminal"
+  },
+  "10314": {
+    "en": "weeping miasma",
+    "ja": "腐毒素",
+    "de": "Pestbeule",
+    "fr": "boule de toxine"
+  },
+  "10315": {
+    "en": "Peacekeeper",
+    "ja": "ピースキーパー",
+    "de": "Friedenswächter",
+    "fr": "Pacificateur"
+  },
+  "10316": {
+    "en": "Ra-la",
+    "ja": "ラーラー",
+    "de": "Ra-la",
+    "fr": "Ra-la"
+  },
+  "10317": {
+    "en": "golden wings",
+    "ja": "黄金蝶",
+    "de": "golden[a] Schmetterling",
+    "fr": "papillon d'or"
+  },
+  "10318": {
+    "en": "smiley supporter",
+    "ja": "スマイリー・サポーター",
+    "de": "Smile-Support",
+    "fr": "unité d'assistance tout sourire"
+  },
+  "10319": {
+    "en": "smiley scraper",
+    "ja": "スマイリー・スクレーパー",
+    "de": "Smile-Schaber",
+    "fr": "unité de recyclage tout sourire"
+  },
+  "10320": {
+    "en": "smiley lunatender",
+    "ja": "スマイリー・ルナテンダー",
+    "de": "Smile-Lunatender",
+    "fr": "pampa sélénien tout sourire"
+  },
+  "10321": {
+    "en": "smiley daphnia",
+    "ja": "スマイリー・ダフニア",
+    "de": "Smile-Daphnia",
+    "fr": "daphnie tout sourire"
+  },
+  "10322": {
+    "en": "smiley kisser",
+    "ja": "スマイリー・キッサー",
+    "de": "Smile-Küsser",
+    "fr": "bisouteur tout sourire"
+  },
+  "10323": {
+    "en": "smiley sweeper",
+    "ja": "スマイリー・スウィーパー",
+    "de": "Smile-Feger",
+    "fr": "ratisseur tout sourire"
+  },
+  "10324": {
+    "en": "smiley wanderer",
+    "ja": "スマイリー・ワンダラー",
+    "de": "Smile-Streuner",
+    "fr": "vagabond tout sourire"
+  },
+  "10325": {
+    "en": "smiley weeper",
+    "ja": "スマイリー・ウィーパー",
+    "de": "Smile-Schluchzer",
+    "fr": "lamenteur tout sourire"
+  },
+  "10326": {
+    "en": "smiley thinker",
+    "ja": "スマイリー・シンカー",
+    "de": "Smile-Denker",
+    "fr": "penseur tout sourire"
+  },
+  "10327": {
+    "en": "smiley regolith",
+    "ja": "スマイリー・レゴリス",
+    "de": "Smile-Regolith",
+    "fr": "régolithe tout sourire"
+  },
+  "10328": {
+    "en": "smiley metalloid",
+    "ja": "スマイリー・メタロイド",
+    "de": "Smile-Metalloid",
+    "fr": "métalloïde tout sourire"
+  },
+  "10329": {
+    "en": "smiley panopt",
+    "ja": "スマイリー・パノプト",
+    "de": "Smile-Panopt",
+    "fr": "panopt tout sourire"
+  },
+  "10330": {
+    "en": "smiley dynamite",
+    "ja": "スマイリー・ダイナマイト",
+    "de": "Smile-Dynamit",
+    "fr": "dynamite tout sourire"
+  },
+  "10331": {
+    "en": "face",
+    "ja": "フェイス",
+    "de": "Fratze",
+    "fr": "visage imperturbable"
+  },
+  "10332": {
+    "en": "relatively small face",
+    "ja": "リトルフェイス",
+    "de": "Klein[a] Fratze",
+    "fr": "visage changeant"
+  },
+  "10333": {
+    "en": "frameworker",
+    "ja": "フレームワーカー",
+    "de": "Rahmenwerker",
+    "fr": "ouvrier modeleur"
+  },
+  "10334": {
+    "en": "printed worker",
+    "ja": "プリンテッドワーカー",
+    "de": "Druckwerker",
+    "fr": "ouvrier manufacturé"
+  },
+  "10335": {
+    "en": "smiley supporter",
+    "ja": "スマイリー・サポーター",
+    "de": "Smile-Support",
+    "fr": "unité d'assistance tout sourire"
+  },
+  "10336": {
+    "en": "the Big Cheese",
+    "ja": "ビッグチーズ",
+    "de": "Bittelächeln",
+    "fr": "Béatotron"
+  },
+  "10337": {
+    "en": "Profane Fafnir",
+    "ja": "ファーヴニル",
+    "de": "Fafnir",
+    "fr": "Fafner"
+  },
+  "10338": {
+    "en": "the Scarlet Price",
+    "ja": "真紅の珠",
+    "de": "Scharlachkugel",
+    "fr": "gemme écarlate"
+  },
+  "10339": {
+    "en": "Aymeric the Blue",
+    "ja": "蒼剣のアイメリク",
+    "de": "Aymeric Himmelsklinge",
+    "fr": "Aymeric la lame céleste"
+  },
+  "10340": {
+    "en": "Artoirel Ironbone",
+    "ja": "硬骨のアルトアレール",
+    "de": "Artoirel Felsenfest",
+    "fr": "Artoirel le hardi"
+  },
+  "10341": {
+    "en": "Charlet",
+    "ja": "チャーレット",
+    "de": "Charlet",
+    "fr": "Charlet"
+  },
+  "10342": {
+    "en": "thunderhead",
+    "ja": "雷雲",
+    "de": "Gewitterwolke",
+    "fr": "nuage de foudre"
+  },
+  "10343": {
+    "en": "Raubahn",
+    "ja": "ラウバーン",
+    "de": "Raubahn",
+    "fr": "Raubahn"
+  },
+  "10344": {
+    "en": "Fordola Lupis",
+    "ja": "フォルドラ・ルプス",
+    "de": "Fordola",
+    "fr": "Fordola Lupus"
+  },
+  "10345": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10346": {
+    "en": "unknown imperial",
+    "ja": "名も無き帝国兵",
+    "de": "namenlos[a] Garlear",
+    "fr": "soldat impérial inconnu"
+  },
+  "10347": {
+    "en": "Loporrit",
+    "ja": "レポリット",
+    "de": "Loporrit",
+    "fr": "Loporrite"
+  },
+  "10348": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10349": {
+    "en": "liturgic bell",
+    "ja": "リタージー・オブ・ベル",
+    "de": "Glockenspiel",
+    "fr": "tintinnabule"
+  },
+  "10350": {
+    "en": "Grebuloff",
+    "ja": "グレビュオフ",
+    "de": "Typhoid",
+    "fr": "Grébuloff"
+  },
+  "10351": {
+    "en": "warped flesh",
+    "ja": "変異した腐敗者",
+    "de": "wandelnd[a] Fäulnis",
+    "fr": "putréfié"
+  },
+  "10352": {
+    "en": "warped flesh",
+    "ja": "変異した腐敗者",
+    "de": "wandelnd[a] Fäulnis",
+    "fr": "putréfié"
+  },
+  "10353": {
+    "en": "warped flesh",
+    "ja": "変異した腐敗者",
+    "de": "wandelnd[a] Fäulnis",
+    "fr": "putréfié"
+  },
+  "10354": {
+    "en": "Global Citizen",
+    "ja": "世界連邦の兵士",
+    "de": "Soldat[p] der Weltföderation",
+    "fr": "soldat de la Fédération"
+  },
+  "10355": {
+    "en": "Freedom Fighter",
+    "ja": "自由連盟の兵士",
+    "de": "Soldat[p] der Freiheitsunion",
+    "fr": "soldat du Front de libération"
+  },
+  "10356": {
+    "en": "airborne Freedom Fighter",
+    "ja": "自由連盟の飛翔兵器",
+    "de": "Kampfdrone[p] der Freiheitsunion",
+    "fr": "drone du Front de libération"
+  },
+  "10357": {
+    "en": "landed Freedom Fighter",
+    "ja": "自由連盟の陸戦兵器",
+    "de": "Erdpanzer[p] der Freiheitsunion",
+    "fr": "blindé du Front de libération"
+  },
+  "10358": {
+    "en": "golden wings",
+    "ja": "黄金蝶",
+    "de": "golden[a] Schmetterling",
+    "fr": "papillon d'or"
+  },
+  "10359": {
+    "en": "xenoflora",
+    "ja": "異星の樹状生物",
+    "de": "außereorzäisch[a] Baumwesen",
+    "fr": "créature arborescente"
+  },
+  "10360": {
+    "en": "xenoprotist",
+    "ja": "異星の浮遊生物",
+    "de": "außereorzäisch[a] Makroplankton",
+    "fr": "créature flottante"
+  },
+  "10361": {
+    "en": "xenofauna",
+    "ja": "異星の飛翔生物",
+    "de": "außereorzäisch[a] Vogelwesen",
+    "fr": "créature volante"
+  },
+  "10362": {
+    "en": "Meteion",
+    "ja": "メーティオン",
+    "de": "Meteion",
+    "fr": "Météion"
+  },
+  "10363": {
+    "en": "Hermes",
+    "ja": "ヘルメス",
+    "de": "Hermes",
+    "fr": "Hermès"
+  },
+  "10364": {
+    "en": "Terminus shriver",
+    "ja": "ターミナス・シュライヴァー",
+    "de": "Terminus-Schänder",
+    "fr": "flétrisseur de l'apocalypse"
+  },
+  "10365": {
+    "en": "Terminus howler",
+    "ja": "ターミナス・ハウラー",
+    "de": "Terminus-Heuler",
+    "fr": "hurleur de l'apocalypse"
+  },
+  "10366": {
+    "en": "Terminus pursuer",
+    "ja": "ターミナス・パースアー",
+    "de": "Terminus-Verfolger",
+    "fr": "poursuivant de l'apocalypse"
+  },
+  "10367": {
+    "en": "Terminus horror",
+    "ja": "ターミナス・トランプラー",
+    "de": "Terminus-Horror",
+    "fr": "horreur de l'apocalypse"
+  },
+  "10368": {
+    "en": "Terminus idolizer",
+    "ja": "ターミナス・アイドライザー",
+    "de": "Terminus-Anbeter",
+    "fr": "sonneur de glas de l'apocalypse"
+  },
+  "10369": {
+    "en": "Terminus sprinter",
+    "ja": "ターミナス・スプリンター",
+    "de": "Terminus-Sprinter",
+    "fr": "sprinteur de l'apocalypse"
+  },
+  "10370": {
+    "en": "Terminus bellwether",
+    "ja": "ターミナス・ベルウェザー",
+    "de": "Läuter[p] der Totenglocke",
+    "fr": "adorateur de l'apocalypse"
+  },
+  "10371": {
+    "en": "Terminus shadower",
+    "ja": "ターミナス・シャドワー",
+    "de": "Terminus-Schattenschleicher",
+    "fr": "ombrageur de l'apocalypse"
+  },
+  "10372": {
+    "en": "Terminus stalker",
+    "ja": "ターミナス・ストーカー",
+    "de": "Terminus-Schleicher",
+    "fr": "traqueur de l'apocalypse"
+  },
+  "10373": {
+    "en": "Terminus twitcher",
+    "ja": "ターミナス・ツイッチャー",
+    "de": "Terminus-Zerrer",
+    "fr": "picoreur de l'apocalypse"
+  },
+  "10374": {
+    "en": "Terminus robber",
+    "ja": "ターミナス・ローバー",
+    "de": "Terminus-Streuner",
+    "fr": "voleur de l'apocalypse"
+  },
+  "10375": {
+    "en": "Terminus trampler",
+    "ja": "ターミナス・トランプラー",
+    "de": "Terminus-Trampler",
+    "fr": "annélide de l'apocalypse"
+  },
+  "10376": {
+    "en": "Vrtra",
+    "ja": "ヴリトラ",
+    "de": "Vrtra",
+    "fr": "Vrtra"
+  },
+  "10377": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial envoûté"
+  },
+  "10378": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial envoûté"
+  },
+  "10379": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial envoûté"
+  },
+  "10380": {
+    "en": "Zot sky armor",
+    "ja": "ゾット・スカイアーマー",
+    "de": "Himmelspanzer[p] von Zot",
+    "fr": "armure aérienne de Zott"
+  },
+  "10381": {
+    "en": "Mark II Zot colossus",
+    "ja": "ゾット・コロッサスII",
+    "de": "Colossus[p] II von Zot",
+    "fr": "colosse magitek II de Zott"
+  },
+  "10382": {
+    "en": "Zot death claw",
+    "ja": "ゾット・デスクロー",
+    "de": "Todesklaue[p] von Zot",
+    "fr": "griffe de mort de Zott"
+  },
+  "10383": {
+    "en": "Zot hypertuned",
+    "ja": "ゾット・ハイパーチューンド",
+    "de": "Hyperverstärkt[a][p] von Zot",
+    "fr": "hyper-renforcé de Zott"
+  },
+  "10384": {
+    "en": "Zot umbril",
+    "ja": "ゾット・アンブリル",
+    "de": "Umbril[p] von Zot",
+    "fr": "umbril de Zott"
+  },
+  "10385": {
+    "en": "devout pilgrim",
+    "ja": "熱心な巡礼者",
+    "de": "beseelt[a] Pilger",
+    "fr": "pèlerin zélé"
+  },
+  "10386": {
+    "en": "Zot predator",
+    "ja": "ゾット・プレデター",
+    "de": "Prädator[p] von Zot",
+    "fr": "prédatrice de Zott"
+  },
+  "10387": {
+    "en": "Zot gunship",
+    "ja": "ゾット・ガンシップ",
+    "de": "Kanonenschiff[p] von Zot",
+    "fr": "vaisseau de Zott"
+  },
+  "10388": {
+    "en": "Zot armored fiend",
+    "ja": "ゾット・アームドフィーンド",
+    "de": "Panzerbestie[p] von Zot",
+    "fr": "fiélon blindé de Zott"
+  },
+  "10389": {
+    "en": "Zot roader",
+    "ja": "ゾット・マグナローダー",
+    "de": "Rotula[p] von Zot",
+    "fr": "magna rouleur de Zott"
+  },
+  "10390": {
+    "en": "Zot armored weapon",
+    "ja": "ゾット・アームドウェポン",
+    "de": "Panzerwaffe[p] von Zot",
+    "fr": "arme blindée de Zott"
+  },
+  "10391": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial envoûté"
+  },
+  "10392": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10393": {
+    "en": "Zenos viator Galvus",
+    "ja": "ゼノス・ヴェトル・ガルヴァス",
+    "de": "Zenos viator Galvus",
+    "fr": "Zenos viator Galvus"
+  },
+  "10394": {
+    "en": "Zenos's avatar",
+    "ja": "ゼノス・アヴァター",
+    "de": "Zenos' Avatar",
+    "fr": "avatar de Zenos"
+  },
+  "10395": {
+    "en": "pyric sphere",
+    "ja": "パイリックスフィア",
+    "de": "pyrisch[a] Sphäre",
+    "fr": "sphère pyrogène"
+  },
+  "10396": {
+    "en": "Lyssa",
+    "ja": "リッサ",
+    "de": "Lyssa",
+    "fr": "Lyssa"
+  },
+  "10397": {
+    "en": "ice pillar",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
+  },
+  "10398": {
+    "en": "Ladon Lord",
+    "ja": "ラドンロード",
+    "de": "Ladon-Lord",
+    "fr": "seigneur Ladon"
+  },
+  "10399": {
+    "en": "Hermes",
+    "ja": "ヘルメス",
+    "de": "Hermes",
+    "fr": "Hermès"
+  },
+  "10400": {
+    "en": "Chi",
+    "ja": "カイ",
+    "de": "Chi",
+    "fr": "Khi"
+  },
+  "10401": {
+    "en": "Proto-Omega",
+    "ja": "プロトオメガ",
+    "de": "Proto-Omega",
+    "fr": "Proto-Oméga"
+  },
+  "10402": {
+    "en": "Mark II guided missile",
+    "ja": "ガイデッドミサイルII",
+    "de": "Lenkrakete[p] II",
+    "fr": "missile autoguidé v2"
+  },
+  "10403": {
+    "en": "Arch-Lambda",
+    "ja": "アーチラムダ",
+    "de": "Erz-Lambda",
+    "fr": "Arch-Lambda"
+  },
+  "10404": {
+    "en": "Stigma-4",
+    "ja": "スティグマ・フォー",
+    "de": "Stigma-4",
+    "fr": "Stigma-4"
+  },
+  "10405": {
+    "en": "proto-rocket punch",
+    "ja": "プロトロケットパンチ",
+    "de": "Proto-Raketenschlag",
+    "fr": "proto-astéropoing"
+  },
+  "10406": {
+    "en": "Omega frame",
+    "ja": "オメガフレーム",
+    "de": "Omega-Chassis",
+    "fr": "châssis expérimental Oméga"
+  },
+  "10407": {
+    "en": "hybrid dragon",
+    "ja": "ハイブリッドドラゴン",
+    "de": "Hybrid-Drache",
+    "fr": "dragon hybride"
+  },
+  "10408": {
+    "en": "Omicron regenerator",
+    "ja": "オミクロン・リジェネレイター",
+    "de": "Omikron-Auflader",
+    "fr": "régénérateur omicron"
+  },
+  "10409": {
+    "en": "Omicron invader",
+    "ja": "オミクロン・インベーダー",
+    "de": "Omikron-Eroberer",
+    "fr": "envahisseur omicron"
+  },
+  "10410": {
+    "en": "level tricker",
+    "ja": "レベルトリッカー",
+    "de": "Schummler",
+    "fr": "piégeur de niveau"
+  },
+  "10411": {
+    "en": "Eta invader",
+    "ja": "イータ・インベーダー",
+    "de": "Eta-Eroberer",
+    "fr": "envahisseur Êta"
+  },
+  "10412": {
+    "en": "Gordhona guardian",
+    "ja": "ゴードナ・ガーディアン",
+    "de": "Gordona-Wächter",
+    "fr": "gardien gordhonien"
+  },
+  "10413": {
+    "en": "Lambda invader",
+    "ja": "ラムダ・インベーダー",
+    "de": "Lambda-Eroberer",
+    "fr": "envahisseur Lambda"
+  },
+  "10414": {
+    "en": "Delta invader",
+    "ja": "デルタ・インベーダー",
+    "de": "Delta-Eroberer",
+    "fr": "envahisseur Delta"
+  },
+  "10415": {
+    "en": "Beta invader",
+    "ja": "ベータ・インベーダー",
+    "de": "Beta-Eroberer",
+    "fr": "envahisseur Bêta"
+  },
+  "10416": {
+    "en": "stellar dragon",
+    "ja": "ステラ・ドラゴン",
+    "de": "Stellar-Drache",
+    "fr": "dragon stellaire"
+  },
+  "10417": {
+    "en": "stellar dragon",
+    "ja": "ステラ・ドラゴン",
+    "de": "Stellar-Drache",
+    "fr": "dragon stellaire"
+  },
+  "10418": {
+    "en": "stellar dragon",
+    "ja": "ステラ・ドラゴン",
+    "de": "Stellar-Drache",
+    "fr": "dragon stellaire"
+  },
+  "10419": {
+    "en": "broken Omicron",
+    "ja": "ブロークン・オミクロン",
+    "de": "defekt[a] Omikron",
+    "fr": "Omicron défectueux"
+  },
+  "10420": {
+    "en": "drifting Ea",
+    "ja": "ドリフティング・イーア",
+    "de": "treibend[a] Ea",
+    "fr": "Éa à la dérive"
+  },
+  "10421": {
+    "en": "Beta",
+    "ja": "ベータ",
+    "de": "Beta",
+    "fr": "Bêta"
+  },
+  "10422": {
+    "en": "Delta",
+    "ja": "デルタ",
+    "de": "Delta",
+    "fr": "Delta"
+  },
+  "10423": {
+    "en": "Lambda",
+    "ja": "ラムダ",
+    "de": "Lambda",
+    "fr": "Lambda"
+  },
+  "10424": {
+    "en": "level tricker",
+    "ja": "レベルトリッカー",
+    "de": "Schummler",
+    "fr": "piégeur de niveau"
+  },
+  "10425": {
+    "en": "stellar dragonfly",
+    "ja": "ステラ・ドラゴンフライ",
+    "de": "Stellar-Libelle",
+    "fr": "draguêpe stellaire"
+  },
+  "10426": {
+    "en": "stellar dragon",
+    "ja": "ステラ・ドラゴン",
+    "de": "Stellar-Drache",
+    "fr": "dragon stellaire"
+  },
+  "10427": {
+    "en": "stellar amphiptere",
+    "ja": "ステラ・アンフィプテレ",
+    "de": "Stellar-Amphitere",
+    "fr": "amphiptère stellaire"
+  },
+  "10428": {
+    "en": "stellar wyvern",
+    "ja": "ステラ・ワイバーン",
+    "de": "Stellar-Wyvern",
+    "fr": "wyverne stellaire"
+  },
+  "10429": {
+    "en": "lesser stellar dragon",
+    "ja": "ステラ・レッサードラゴン",
+    "de": "nieder[a] Stellar-Drache",
+    "fr": "dragon stellaire inférieur"
+  },
+  "10430": {
+    "en": "stellar brobinyak",
+    "ja": "ステラ・ブロビニャク",
+    "de": "Stellar-Brobinyak",
+    "fr": "brobinyak stellaire"
+  },
+  "10431": {
+    "en": "stellar shelled dragon",
+    "ja": "ステラ・カラペスドラゴン",
+    "de": "Stellar-Panzerdrache",
+    "fr": "dragon stellaire à carapace"
+  },
+  "10432": {
+    "en": "luminion",
+    "ja": "ルミニオン",
+    "de": "Luminion",
+    "fr": "luminion"
+  },
+  "10433": {
+    "en": "luminion",
+    "ja": "ルミニオン",
+    "de": "Luminion",
+    "fr": "luminion"
+  },
+  "10434": {
+    "en": "luminion",
+    "ja": "ルミニオン",
+    "de": "Luminion",
+    "fr": "luminion"
+  },
+  "10435": {
+    "en": "other one",
+    "ja": "アザーワン",
+    "de": "Ander[a]",
+    "fr": "autre"
+  },
+  "10436": {
+    "en": "Kan-E-Senna",
+    "ja": "カヌ・エ・センナ",
+    "de": "Kan-E-Senna",
+    "fr": "Kan-E-Senna"
+  },
+  "10437": {
+    "en": "Keeper of the Entwined Serpents",
+    "ja": "白蛇の守人",
+    "de": "Hüter[p] der Weißen Viper",
+    "fr": "gardien des Vipères enlacées"
+  },
+  "10438": {
+    "en": "Gleipnir",
+    "ja": "グレイプニル",
+    "de": "Gleipnir",
+    "fr": "Gleipnir"
+  },
+  "10439": {
+    "en": "creeping beast",
+    "ja": "鎖死の獣",
+    "de": "Giftbestie",
+    "fr": "bête venimeuse"
+  },
+  "10440": {
+    "en": "瘴気塊",
+    "ja": "瘴気塊",
+    "de": "瘴気塊",
+    "fr": "poche miasmatique"
+  },
+  "10441": {
+    "en": "poison cloud",
+    "ja": "毒気塊",
+    "de": "toxisch[a] Seele",
+    "fr": "boule de poison"
+  },
+  "10442": {
+    "en": "comrades",
+    "ja": "仲間たちの声",
+    "de": "Chor[p] der Freunde",
+    "fr": "chœur d'amis chers"
+  },
+  "10443": {
+    "en": "feather of despair",
+    "ja": "絶望の羽根",
+    "de": "Feder[p] der Verzweiflung",
+    "fr": "plume du désespoir"
+  },
+  "10444": {
+    "en": "dark star",
+    "ja": "暗黒天体",
+    "de": "schwarz[a] Himmelskörper",
+    "fr": "astre anthracite"
+  },
+  "10445": {
+    "en": "azure star",
+    "ja": "青色天体",
+    "de": "blau[a] Himmelskörper",
+    "fr": "astre azuré"
+  },
+  "10446": {
+    "en": "crimson star",
+    "ja": "赤色天体",
+    "de": "rot[a] Himmelskörper",
+    "fr": "astre incarnat"
+  },
+  "10447": {
+    "en": "kakodaimon",
+    "ja": "カコダイモーン",
+    "de": "Kakodæmon",
+    "fr": "cacodæmon"
+  },
+  "10448": {
+    "en": "the Endsinger",
+    "ja": "終焉を謳うもの",
+    "de": "Endsängerin",
+    "fr": "chantre de l'anéantissement"
+  },
+  "10449": {
+    "en": "mystic refulgence",
+    "ja": "幻想光",
+    "de": "Truglicht",
+    "fr": "illusion de Lumière"
+  },
+  "10450": {
+    "en": "mystic refulgence",
+    "ja": "幻想光",
+    "de": "Truglicht",
+    "fr": "illusion de Lumière"
+  },
+  "10451": {
+    "en": "parhelion",
+    "ja": "パルヘリオン",
+    "de": "Parhelion",
+    "fr": "parhélie"
+  },
+  "10452": {
+    "en": "Crystal of Light",
+    "ja": "光のクリスタル",
+    "de": "Lichtkristall",
+    "fr": "cristal de Lumière"
+  },
+  "10453": {
+    "en": "Hydaelyn",
+    "ja": "ハイデリン",
+    "de": "Hydaelyn",
+    "fr": "Hydaelyn"
+  },
+  "10454": {
+    "en": "echo of Hydaelyn",
+    "ja": "ハイデリン・エコー",
+    "de": "Echo[p] der Hydaelyn",
+    "fr": "écho d'Hydaelyn"
+  },
+  "10455": {
+    "en": "arcane sigil",
+    "ja": "秘紋",
+    "de": "Geheimzeichen",
+    "fr": "emblème secret"
+  },
+  "10456": {
+    "en": "Zodiark",
+    "ja": "ゾディアーク",
+    "de": "Zodiark",
+    "fr": "Zordiarche"
+  },
+  "10457": {
+    "en": "lunatender",
+    "ja": "ルナテンダー",
+    "de": "Lunatender",
+    "fr": "pampa sélénien"
+  },
+  "10458": {
+    "en": "daphnia",
+    "ja": "ダフニア",
+    "de": "Daphnia",
+    "fr": "daphnie"
+  },
+  "10459": {
+    "en": "osculator",
+    "ja": "オスキュレーター",
+    "de": "Küsser",
+    "fr": "poutouneur"
+  },
+  "10460": {
+    "en": "sweeper",
+    "ja": "スウィーパー",
+    "de": "Feger",
+    "fr": "ratisseur"
+  },
+  "10461": {
+    "en": "wanderer",
+    "ja": "ワンダラー",
+    "de": "Streuner",
+    "fr": "vagabond"
+  },
+  "10462": {
+    "en": "weeper",
+    "ja": "ウィーパー",
+    "de": "Schluchzer",
+    "fr": "lamenteur"
+  },
+  "10463": {
+    "en": "thinker",
+    "ja": "シンカー",
+    "de": "Denker",
+    "fr": "penseur"
+  },
+  "10464": {
+    "en": "regolith",
+    "ja": "レゴリス",
+    "de": "Regolith",
+    "fr": "régolithe"
+  },
+  "10465": {
+    "en": "trimmer",
+    "ja": "トリマー",
+    "de": "Schlitzer",
+    "fr": "sécateur"
+  },
+  "10466": {
+    "en": "metalloid",
+    "ja": "メタロイド",
+    "de": "Metalloid",
+    "fr": "métalloïde"
+  },
+  "10467": {
+    "en": "panopt",
+    "ja": "パノプト",
+    "de": "Panopt",
+    "fr": "panopt"
+  },
+  "10468": {
+    "en": "dynamite",
+    "ja": "ダイナマイト",
+    "de": "Dynamit",
+    "fr": "dynamite"
+  },
+  "10469": {
+    "en": "armalcolite",
+    "ja": "アーマルコライト",
+    "de": "Armalcolit",
+    "fr": "armalcolite"
+  },
+  "10470": {
+    "en": "caretaker",
+    "ja": "ケアテイカー",
+    "de": "Wärter",
+    "fr": "unité de soin"
+  },
+  "10471": {
+    "en": "mousse",
+    "ja": "ムース",
+    "de": "Mousse",
+    "fr": "mousse"
+  },
+  "10472": {
+    "en": "downfall bug",
+    "ja": "ダウンフォール・バグ",
+    "de": "Mimik[p] des Verderbens",
+    "fr": "insectoïde rescapé"
+  },
+  "10473": {
+    "en": "downfall alarum",
+    "ja": "ダウンフォール・アラーム",
+    "de": "Alarm[p] des Verderbens",
+    "fr": "alarum rescapé"
+  },
+  "10474": {
+    "en": "downfall droid",
+    "ja": "ダウンフォール・ドロイド",
+    "de": "Droide[p] des Verderbens",
+    "fr": "droïde rescapé"
+  },
+  "10475": {
+    "en": "downfall hunter",
+    "ja": "ダウンフォール・ハンター",
+    "de": "Jäger[p] des Verderbens",
+    "fr": "chasseur rescapé"
+  },
+  "10476": {
+    "en": "supporter",
+    "ja": "サポーター",
+    "de": "Support",
+    "fr": "unité d'assistance"
+  },
+  "10477": {
+    "en": "scraper",
+    "ja": "スクレーパー",
+    "de": "Schaber",
+    "fr": "unité de recyclage"
+  },
+  "10478": {
+    "en": "cleaner",
+    "ja": "クリーナー",
+    "de": "Reiniger",
+    "fr": "unité de nettoyage"
+  },
+  "10479": {
+    "en": "Admiral Bloefhiswyn",
+    "ja": "メルウィブ・ブルーフィスウィン",
+    "de": "Admiral Merlwyb Bloefhiswyn",
+    "fr": "Merlwyb"
+  },
+  "10480": {
+    "en": "Lorens the Eagle-eyed",
+    "ja": "海雄のロレンス",
+    "de": "Lorens",
+    "fr": "Lorens"
+  },
+  "10481": {
+    "en": "Wheiskaet, son of Saeskyf",
+    "ja": "荒波のヴェイスケート",
+    "de": "Wheiskaet",
+    "fr": "Wheiskaet"
+  },
+  "10482": {
+    "en": "Landenel the Unafraid",
+    "ja": "度胸のランドゥネル",
+    "de": "Landenel [t] Kühn[a]",
+    "fr": "Landenel"
+  },
+  "10483": {
+    "en": "U'odh Nunh, Huntmaster",
+    "ja": "美技のウ・オド・ヌン",
+    "de": "U'odh Nunh",
+    "fr": "U'odh Nunh"
+  },
+  "10484": {
+    "en": "Brayflox Alltalks",
+    "ja": "無手勝流のブレイフロクス",
+    "de": "Brüllvolx",
+    "fr": "Brayflox"
+  },
+  "10485": {
+    "en": "Crushing Tide skirmisher",
+    "ja": "海嘯派のサハギン",
+    "de": "Sturzsee-Sahagin",
+    "fr": "Fils du mascaret"
+  },
+  "10486": {
+    "en": "Crushing Tide skirmisher",
+    "ja": "海嘯派のサハギン",
+    "de": "Sturzsee-Sahagin",
+    "fr": "Fils du mascaret"
+  },
+  "10487": {
+    "en": "Crushing Tide skirmisher",
+    "ja": "海嘯派のサハギン",
+    "de": "Sturzsee-Sahagin",
+    "fr": "Fils du mascaret"
+  },
+  "10488": {
+    "en": "whelk ballista",
+    "ja": "ユミール・バリスタ",
+    "de": "Wellhorn-Balliste",
+    "fr": "baliste de bulot"
+  },
+  "10489": {
+    "en": "the Indigo Beast",
+    "ja": "蒼茫の獣",
+    "de": "Indigo-Bestie",
+    "fr": "abomination de l'Indigo"
+  },
+  "10490": {
+    "en": "turned Sahagin",
+    "ja": "海嘯の獣",
+    "de": "Sturzsee-Bestie",
+    "fr": "bête des profondeurs"
+  },
+  "10491": {
+    "en": "aetherial orb",
+    "ja": "魔力塊",
+    "de": "Magiekugel",
+    "fr": "amas d'éther élémentaire"
+  },
+  "10492": {
+    "en": "aetherial orb",
+    "ja": "魔力塊",
+    "de": "Magiekugel",
+    "fr": "amas d'éther élémentaire"
+  },
+  "10493": {
+    "en": "ice pillar",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
+  },
+  "10494": {
+    "en": "Karukeion",
+    "ja": "ケリュケイオン",
+    "de": "Kerykeion",
+    "fr": "kerykeion"
+  },
+  "10495": {
+    "en": "meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "météore"
+  },
+  "10496": {
+    "en": "ktiseos saura",
+    "ja": "キティセオス・サウラ",
+    "de": "Ktiseos-Saura",
+    "fr": "ktiséos saura"
+  },
+  "10497": {
+    "en": "ktiseos panther",
+    "ja": "キティセオス・パンセー",
+    "de": "Ktiseos-Panter",
+    "fr": "ktiséos panther"
+  },
+  "10498": {
+    "en": "annihilation flare",
+    "ja": "アナイアレイションスパイク",
+    "de": "Stachel[p] der Annihilation",
+    "fr": "pointe annihilante"
+  },
+  "10499": {
+    "en": "thelema agape",
+    "ja": "テレーマ・アガペー",
+    "de": "Thelema[p] Agape",
+    "fr": "Théléma Agapé"
+  },
+  "10500": {
+    "en": "ktiseos chione",
+    "ja": "キティセオス・キオネ",
+    "de": "Ktiseos-Chione",
+    "fr": "ktiséos chione"
+  },
+  "10501": {
+    "en": "ktiseos daidalion",
+    "ja": "キティセオス・ダイダリオン",
+    "de": "Ktiseos-Daidalion",
+    "fr": "ktiséos daidalion"
+  },
+  "10502": {
+    "en": "ktiseos okyupete",
+    "ja": "キティセオス・オキュペテ",
+    "de": "Ktiseos-Okypete",
+    "fr": "ktiséos okyupète"
+  },
+  "10503": {
+    "en": "ktiseos gryps",
+    "ja": "キティセオス・グリュプス",
+    "de": "Ktiseos-Gryps",
+    "fr": "ktiséos gryps"
+  },
+  "10504": {
+    "en": "ktiseos hippocerf",
+    "ja": "キティセオス・ヒッポセルフ",
+    "de": "Ktiseos-Hippocerf",
+    "fr": "ktiséos hippocerf"
+  },
+  "10505": {
+    "en": "ktiseos hippogryph",
+    "ja": "キティセオス・ヒッポグリフ",
+    "de": "Ktiseos-Hippogryph",
+    "fr": "ktiséos hippogryph"
+  },
+  "10506": {
+    "en": "ktiseos ophiotauros",
+    "ja": "キティセオス・オピオタウロス",
+    "de": "Ktiseos-Ophiotauros",
+    "fr": "ktiséos ophiotauros"
+  },
+  "10507": {
+    "en": "ktiseos lailaps",
+    "ja": "キティセオス・ライラプス",
+    "de": "Ktiseos-Lailaps",
+    "fr": "ktiséos lailaps"
+  },
+  "10508": {
+    "en": "ktiseos erinys",
+    "ja": "キティセオス・エリニュス",
+    "de": "Ktiseos-Erinys",
+    "fr": "ktiséos érinys"
+  },
+  "10509": {
+    "en": "ktiseos alkyone",
+    "ja": "キティセオス・アルキュオネ",
+    "de": "Ktiseos-Alkyone",
+    "fr": "ktiséos alkyone"
+  },
+  "10510": {
+    "en": "ktiseos stymphalide",
+    "ja": "キティセオス・ステュムパリデス",
+    "de": "Ktiseos-Stymphalides",
+    "fr": "ktiséos stymphalide"
+  },
+  "10511": {
+    "en": "ktiseos aello",
+    "ja": "キティセオス・アエロ",
+    "de": "Ktiseos-Aello",
+    "fr": "ktiséos aéllo"
+  },
+  "10512": {
+    "en": "ktiseos ophion",
+    "ja": "キティセオス・オピオン",
+    "de": "Ktiseos-Ophion",
+    "fr": "ktiséos ophion"
+  },
+  "10513": {
+    "en": "Emmanellain the Lofty",
+    "ja": "風流のエマネラン",
+    "de": "Emmanellain [t] Luftig[a]",
+    "fr": "Emmanellain le narcissique"
+  },
+  "10514": {
+    "en": "Lucia the Radiant",
+    "ja": "極光のルキア",
+    "de": "Lucia Nordlicht",
+    "fr": "Lucia l'éclatante"
+  },
+  "10515": {
+    "en": "Temple Knight",
+    "ja": "神殿騎士団の正騎士",
+    "de": "Tempelritter",
+    "fr": "templier chevalier"
+  },
+  "10516": {
+    "en": "Resistance fighter",
+    "ja": "ボズヤ・レジスタンス",
+    "de": "bozianisch[a] Widerstandskämpfer",
+    "fr": "résistant bozjien"
+  },
+  "10517": {
+    "en": "Lente's sword",
+    "ja": "レンテの涙の剣士",
+    "de": "Klinge[p] Lentes",
+    "fr": "épéiste des Larmes de Lenté"
+  },
+  "10518": {
+    "en": "Serpent Captain Sanson Smyth",
+    "ja": "サンソン大牙士",
+    "de": "Sanson",
+    "fr": "capitaine Sanson"
+  },
+  "10519": {
+    "en": "serpent lancer",
+    "ja": "双蛇党の槍術士",
+    "de": "Bruderschaftspikenier",
+    "fr": "lancier des Deux Vipères"
+  },
+  "10520": {
+    "en": "serpent lancer",
+    "ja": "双蛇党の槍術士",
+    "de": "Bruderschaftspikenier",
+    "fr": "lancière des Deux Vipères"
+  },
+  "10521": {
+    "en": "steppe warrior",
+    "ja": "遊牧民の戦士",
+    "de": "Nomadenkrieger",
+    "fr": "guerrier de la steppe"
+  },
+  "10522": {
+    "en": "Alberic Quickwater",
+    "ja": "早瀬のアルベリク",
+    "de": "Alberic[p] von der Stromschnelle",
+    "fr": "Alberic le fulgurant"
+  },
+  "10523": {
+    "en": "serpent archer",
+    "ja": "双蛇党の弓術士",
+    "de": "Bruderschaftsschütze",
+    "fr": "archer des Deux Vipères"
+  },
+  "10524": {
+    "en": "serpent archer",
+    "ja": "双蛇党の弓術士",
+    "de": "Bruderschaftsschütze",
+    "fr": "archer des Deux Vipères"
+  },
+  "10525": {
+    "en": "Broenbhar Rocksplitter",
+    "ja": "砕岩のブルーンバル",
+    "de": "Broenbhar Splitterfels",
+    "fr": "Broenbhar le concasseur"
+  },
+  "10526": {
+    "en": "Alka Zolka the Supreme Slayer",
+    "ja": "大海兵のアルカ・ゾルカ",
+    "de": "Alka Zolka",
+    "fr": "Alka Zolka le marin-adjudant"
+  },
+  "10527": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrommarodeur",
+    "fr": "maraudeur du Maelstrom"
+  },
+  "10528": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrommarodeur",
+    "fr": "maraudeuse du Maelstrom"
+  },
+  "10529": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrommarodeur",
+    "fr": "maraudeur du Maelstrom"
+  },
+  "10530": {
+    "en": "A-Ruhn-Senna",
+    "ja": "ア・ルン・センナ",
+    "de": "A-Ruhn-Senna",
+    "fr": "A-Ruhn-Senna"
+  },
+  "10531": {
+    "en": "serpent conjurer",
+    "ja": "双蛇党の幻術士",
+    "de": "Bruderschaftsdruide",
+    "fr": "élémentaliste des Deux Vipères"
+  },
+  "10532": {
+    "en": "serpent conjurer",
+    "ja": "双蛇党の幻術士",
+    "de": "Bruderschaftsdruide",
+    "fr": "élémentaliste des Deux Vipères"
+  },
+  "10533": {
+    "en": "Cocobuki the Curse-eyed",
+    "ja": "呪眼のココブキ",
+    "de": "Cocobuki [t] Fluchäugig[a]",
+    "fr": "Cocobuki"
+  },
+  "10534": {
+    "en": "Cocobygo the Craven",
+    "ja": "小胆のココビゴ",
+    "de": "Cocobygo [t] Hasenfüßig[a]",
+    "fr": "Cocobygo"
+  },
+  "10535": {
+    "en": "Cocobani the Cold",
+    "ja": "冷厳のココバニ",
+    "de": "Cocobani [t] Unerbittlich[a]",
+    "fr": "Cocobani"
+  },
+  "10536": {
+    "en": "Maxima the Neoteric",
+    "ja": "革新のマキシマ",
+    "de": "Maxima [t] Reformator",
+    "fr": "Maxima"
+  },
+  "10537": {
+    "en": "Lente's tear",
+    "ja": "レンテの涙の勇士",
+    "de": "Krieger[p] Lentes",
+    "fr": "guerrière des Larmes de Lenté"
+  },
+  "10538": {
+    "en": "Lente's tear",
+    "ja": "レンテの涙の勇士",
+    "de": "Krieger[p] Lentes",
+    "fr": "guerrière des Larmes de Lenté"
+  },
+  "10539": {
+    "en": "Rostik Faithsblade",
+    "ja": "護剣のロスティック",
+    "de": "Rostik [t] schützend[a] Schwert",
+    "fr": "Rostik le protecteur"
+  },
+  "10540": {
+    "en": "Resistance fighter",
+    "ja": "ボズヤ・レジスタンス",
+    "de": "bozianisch[a] Widerstandskämpfer",
+    "fr": "résistant bozjien"
+  },
+  "10541": {
+    "en": "Resistance fighter",
+    "ja": "ボズヤ・レジスタンス",
+    "de": "bozianisch[a] Widerstandskämpfer",
+    "fr": "résistant bozjien"
+  },
+  "10542": {
+    "en": "Stephanivien Brightsun",
+    "ja": "英才のステファニヴィアン",
+    "de": "Stephanivien [t] Genial[a]",
+    "fr": "Stephanivien le prodige"
+  },
+  "10543": {
+    "en": "storm blacksmith",
+    "ja": "黒渦団の鍛冶師",
+    "de": "Mahlstromschmied",
+    "fr": "forgeron du Maelstrom"
+  },
+  "10544": {
+    "en": "storm blacksmith",
+    "ja": "黒渦団の鍛冶師",
+    "de": "Mahlstromschmied",
+    "fr": "forgeronne du Maelstrom"
+  },
+  "10545": {
+    "en": "storm armorer",
+    "ja": "黒渦団の甲冑師",
+    "de": "Mahlstromplattner",
+    "fr": "armurier du Maelstrom"
+  },
+  "10546": {
+    "en": "storm armorer",
+    "ja": "黒渦団の甲冑師",
+    "de": "Mahlstromplattner",
+    "fr": "armurière du Maelstrom"
+  },
+  "10547": {
+    "en": "Skysteel machinist",
+    "ja": "イシュガルドの機工士",
+    "de": "Ishgarder Maschinist",
+    "fr": "machiniste d'Ishgard"
+  },
+  "10548": {
+    "en": "transport carriage",
+    "ja": "輜重隊のキャリッジ",
+    "de": "Transportkutscher",
+    "fr": "caravane de transport"
+  },
+  "10549": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10550": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10551": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10552": {
+    "en": "telocanis",
+    "ja": "テロフォロイ・カニス",
+    "de": "Telophoroi-Canis",
+    "fr": "canis des Télophores"
+  },
+  "10553": {
+    "en": "telotek vanguard",
+    "ja": "テロフォロイ・ヴァンガード",
+    "de": "Telophoroi-Frontbrecher",
+    "fr": "avant-garde des Télophores"
+  },
+  "10554": {
+    "en": "Alisaie",
+    "ja": "アリゼー",
+    "de": "Alisaie",
+    "fr": "Alisaie"
+  },
+  "10555": {
+    "en": "Alphinaud",
+    "ja": "アルフィノ",
+    "de": "Alphinaud",
+    "fr": "Alphinaud"
+  },
+  "10556": {
+    "en": "G'raha Tia",
+    "ja": "グ・ラハ・ティア",
+    "de": "G'raha Tia",
+    "fr": "G'raha Tia"
+  },
+  "10557": {
+    "en": "Sicard the Last Word",
+    "ja": "断罪のシカルド",
+    "de": "Sicard [t] Verurteilt[a]",
+    "fr": "Sicard des Bourreaux"
+  },
+  "10558": {
+    "en": "Guydelot the Spent",
+    "ja": "矢色のギドゥロ",
+    "de": "Guydelot Pfeilwind",
+    "fr": "Guydelot l'usé"
+  },
+  "10559": {
+    "en": "telotek hexadrone",
+    "ja": "テロフォロイ・ヘキサローラー",
+    "de": "Telophoroi-Hexadrohne",
+    "fr": "hexadrone des Télophores"
+  },
+  "10560": {
+    "en": "telotek sky armor",
+    "ja": "テロフォロイ・スカイアーマー",
+    "de": "Telophoroi-Himmelspanzer",
+    "fr": "armure aérienne des Télophores"
+  },
+  "10561": {
+    "en": "telotek reaper",
+    "ja": "テロフォロイ・リーパー",
+    "de": "Telophoroi-Schnitter",
+    "fr": "faucheuse des Télophores"
+  },
+  "10562": {
+    "en": "telotek predator",
+    "ja": "テロフォロイ・プレデター",
+    "de": "Telophoroi-Prädator",
+    "fr": "prédatrice des Télophores"
+  },
+  "10563": {
+    "en": "Lyse",
+    "ja": "リセ",
+    "de": "Lyse",
+    "fr": "Lyse"
+  },
+  "10564": {
+    "en": "Pipin of the Steel Heart",
+    "ja": "鋼心のピピン",
+    "de": "Pipin Stahlherz",
+    "fr": "Pipin le cœur d'acier"
+  },
+  "10565": {
+    "en": "Magnai the Older",
+    "ja": "長兄マグナイ",
+    "de": "Magnai [t] Älter[a]",
+    "fr": "Magnai le frère suprême"
+  },
+  "10566": {
+    "en": "Sadu Heavensflame",
+    "ja": "炎天のサドゥ",
+    "de": "Sadu Himmelsflamme",
+    "fr": "Sadu la flamme céleste"
+  },
+  "10567": {
+    "en": "Cirina of the Laughing Reeds",
+    "ja": "草風のシリナ",
+    "de": "Cirina vom Singenden Schilf",
+    "fr": "Cirina le vent des collines"
+  },
+  "10568": {
+    "en": "Chuchuto Brightstar",
+    "ja": "明星のチュチュト",
+    "de": "Chuchuto Morgenstern",
+    "fr": "Chuchuto l'Étoile brillante"
+  },
+  "10569": {
+    "en": "Estinien",
+    "ja": "エスティニアン",
+    "de": "Estinien",
+    "fr": "Estinien"
+  },
+  "10570": {
+    "en": "Y'shtola",
+    "ja": "ヤ・シュトラ",
+    "de": "Y'shtola",
+    "fr": "Y'shtola"
+  },
+  "10571": {
+    "en": "Urianger",
+    "ja": "ウリエンジェ",
+    "de": "Urianger",
+    "fr": "Urianger"
+  },
+  "10572": {
+    "en": "Vergilia van Corculum",
+    "ja": "ウェルギリア・ヴァン・コルクルム",
+    "de": "Vergilia van Corculum",
+    "fr": "Vergilia van Corculum"
+  },
+  "10573": {
+    "en": "Vergilia's image",
+    "ja": "ヴェルギリアの幻影",
+    "de": "Vergilias Trugbild",
+    "fr": "spectre de Vergilia"
+  },
+  "10574": {
+    "en": "telotek bit",
+    "ja": "テロフォロイ・ビット",
+    "de": "Telophoroi-Drohne",
+    "fr": "drone des Télophores"
+  },
+  "10575": {
+    "en": "Dotharli khun chuluu",
+    "ja": "ドタール・フン・チョロー",
+    "de": "Khun Chuluu der Dotharl",
+    "fr": "khun chuluu des Dotharl"
+  },
+  "10576": {
+    "en": "Erichthonios",
+    "ja": "エリクトニオス",
+    "de": "Erichthonios",
+    "fr": "Erichthonios"
+  },
+  "10577": {
+    "en": "Drusilla",
+    "ja": "ドルシラ",
+    "de": "Drusilla",
+    "fr": "Drusilla"
+  },
+  "10578": {
+    "en": "myrmidon marshal",
+    "ja": "ミュルミドン・マーシャル",
+    "de": "Myrmidonen-Marschall",
+    "fr": "maréchal myrmidon"
+  },
+  "10579": {
+    "en": "myrmidon soldier",
+    "ja": "ミュルミドン・ソルジャー",
+    "de": "Myrmidonen-Soldat",
+    "fr": "soldat myrmidon"
+  },
+  "10580": {
+    "en": "mired chimera",
+    "ja": "マイアド・キマイラ",
+    "de": "beschmutzt[a] Chimära",
+    "fr": "chimère fangeuse"
+  },
+  "10581": {
+    "en": "Orcus",
+    "ja": "オルクス",
+    "de": "Orcus",
+    "fr": "Orcus"
+  },
+  "10582": {
+    "en": "Drusilla",
+    "ja": "ドルシラ",
+    "de": "Drusilla",
+    "fr": "Drusilla"
+  },
+  "10583": {
+    "en": "Drusilla",
+    "ja": "ドルシラ",
+    "de": "Drusilla",
+    "fr": "Drusilla"
+  },
+  "10584": {
+    "en": "void hecteyes",
+    "ja": "ヴォイド・ヘクトアイズ",
+    "de": "Nichts-Hektokulus",
+    "fr": "hectoculus du néant"
+  },
+  "10585": {
+    "en": "void persona",
+    "ja": "ヴォイド・ペルソナ",
+    "de": "Nichts-Persona",
+    "fr": "persona du néant"
+  },
+  "10586": {
+    "en": "Venat",
+    "ja": "ヴェーネス",
+    "de": "Venat",
+    "fr": "Venat"
+  },
+  "10587": {
+    "en": "Venat's phantom",
+    "ja": "ヴェーネスの幻体",
+    "de": "Venats Phantom",
+    "fr": "illusion de Venat"
+  },
+  "10588": {
+    "en": "True Aero IV",
+    "ja": "トゥルー・エアロジャ",
+    "de": "Vollkommen[a] Windka",
+    "fr": "Giga Vent véritable"
+  },
+  "10589": {
+    "en": "thelema",
+    "ja": "テレーマ",
+    "de": "Thelema",
+    "fr": "Théléma"
+  },
+  "10590": {
+    "en": "ophion",
+    "ja": "オピオン",
+    "de": "Ophion",
+    "fr": "ophion"
+  },
+  "10591": {
+    "en": "yggdreant",
+    "ja": "イグドリア",
+    "de": "Igdrya",
+    "fr": "yggdriade"
+  },
+  "10592": {
+    "en": "okyupete",
+    "ja": "オキュペテ",
+    "de": "Okypete",
+    "fr": "ocypète"
+  },
+  "10593": {
+    "en": "keraunos",
+    "ja": "ケラウノス",
+    "de": "Keraunos",
+    "fr": "kéraunos"
+  },
+  "10594": {
+    "en": "gryps",
+    "ja": "グリュプス",
+    "de": "Gryps",
+    "fr": "grype"
+  },
+  "10595": {
+    "en": "monoceros",
+    "ja": "モノセロス",
+    "de": "Monozeros",
+    "fr": "monocéros"
+  },
+  "10596": {
+    "en": "pegasos",
+    "ja": "ペガソス",
+    "de": "Pegasos",
+    "fr": "pégasos"
+  },
+  "10597": {
+    "en": "bird of Elpis",
+    "ja": "バード・オブ・エルピス",
+    "de": "Elpisvogel",
+    "fr": "oiseau d'Elpis"
+  },
+  "10598": {
+    "en": "primordial hippocerf",
+    "ja": "オリジン・ヒッポセルフ",
+    "de": "Ur-Hippocerf",
+    "fr": "hippocerf originel"
+  },
+  "10599": {
+    "en": "hippe",
+    "ja": "ヒッペー",
+    "de": "Hippe",
+    "fr": "hippe"
+  },
+  "10600": {
+    "en": "harpuia",
+    "ja": "ハルピュイア",
+    "de": "Harpuia",
+    "fr": "harpyia"
+  },
+  "10601": {
+    "en": "morbol marquis",
+    "ja": "マーカス・モルボル",
+    "de": "Morbol-Markgraf",
+    "fr": "marquis morbol"
+  },
+  "10602": {
+    "en": "akantha",
+    "ja": "アカンサ",
+    "de": "Akantha",
+    "fr": "acanthe"
+  },
+  "10603": {
+    "en": "lykopersikon",
+    "ja": "リコペルシクム",
+    "de": "Lykopersikon",
+    "fr": "lycopersicum"
+  },
+  "10604": {
+    "en": "medusa",
+    "ja": "メデューサ",
+    "de": "Medusa",
+    "fr": "médusa"
+  },
+  "10605": {
+    "en": "ouranou medusa",
+    "ja": "ウラヌー・メデューサ",
+    "de": "Ouranou-Medusa",
+    "fr": "médusa ouranienne"
+  },
+  "10606": {
+    "en": "lotis",
+    "ja": "ロティス",
+    "de": "Lotis",
+    "fr": "lotis"
+  },
+  "10607": {
+    "en": "phanopsyche",
+    "ja": "ファノプシュケ",
+    "de": "Phanopsyche",
+    "fr": "phanopsychée"
+  },
+  "10608": {
+    "en": "melanion",
+    "ja": "メラニオン",
+    "de": "Melanion",
+    "fr": "mélanion"
+  },
+  "10609": {
+    "en": "ophiotauros",
+    "ja": "オピオタウロス",
+    "de": "Ophiotauros",
+    "fr": "ophiotauros"
+  },
+  "10610": {
+    "en": "Elpis minotaur",
+    "ja": "エルピスタウロス",
+    "de": "Elpis-Minotaurus",
+    "fr": "elpistauros"
+  },
+  "10611": {
+    "en": "remora",
+    "ja": "レモラ",
+    "de": "Remora",
+    "fr": "rémora"
+  },
+  "10612": {
+    "en": "kokkine petalouda",
+    "ja": "コーキネ・ペタルダ",
+    "de": "Kokkine-Petalouda",
+    "fr": "érythropétalouda"
+  },
+  "10613": {
+    "en": "kyane petalouda",
+    "ja": "キアネ・ペタルダ",
+    "de": "Kyane-Petalouda",
+    "fr": "cyanopétalouda"
+  },
+  "10614": {
+    "en": "ianthine petalouda",
+    "ja": "イアンティネ・ペタルダ",
+    "de": "Ianthine-Petalouda",
+    "fr": "iodopétalouda"
+  },
+  "10615": {
+    "en": "Ker",
+    "ja": "ケール",
+    "de": "Ker",
+    "fr": "Kèr"
+  },
+  "10616": {
+    "en": "Ker shroud",
+    "ja": "ケールの従者",
+    "de": "Diener[p] von Ker",
+    "fr": "serviteur de Kèr"
+  },
+  "10617": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10618": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10619": {
+    "en": "Armstrong",
+    "ja": "アームストロング",
+    "de": "Armstrong",
+    "fr": "Armstrong"
+  },
+  "10620": {
+    "en": "Ruminator",
+    "ja": "ルミネイター",
+    "de": "Grübler",
+    "fr": "ruminateur"
+  },
+  "10621": {
+    "en": "Ophioneus",
+    "ja": "オピオネウス",
+    "de": "Ophioneus",
+    "fr": "Ophion"
+  },
+  "10622": {
+    "en": "Narrow-rift",
+    "ja": "ナロー＝リフト",
+    "de": "Enger Riss",
+    "fr": "Rift-étroit"
+  },
+  "10623": {
+    "en": "Storsie",
+    "ja": "ストーシー",
+    "de": "Storsie",
+    "fr": "Storsie"
+  },
+  "10624": {
+    "en": "hulder",
+    "ja": "フルドラ",
+    "de": "Hulder",
+    "fr": "huldre"
+  },
+  "10625": {
+    "en": "Yilan",
+    "ja": "ユラン",
+    "de": "Yilan",
+    "fr": "yilan"
+  },
+  "10626": {
+    "en": "Sugriva",
+    "ja": "スグリーヴァ",
+    "de": "Sugriva",
+    "fr": "Sugriva"
+  },
+  "10627": {
+    "en": "Minerva",
+    "ja": "ミネルウァ",
+    "de": "Minerva",
+    "fr": "Minerva"
+  },
+  "10628": {
+    "en": "Aegeiros",
+    "ja": "アイゲイロス",
+    "de": "Aegeiros",
+    "fr": "ægeiros"
+  },
+  "10629": {
+    "en": "lunatender queen",
+    "ja": "ルナテンダー・クイーン",
+    "de": "Lunatender-Königin",
+    "fr": "pampa sélénienne reine"
+  },
+  "10630": {
+    "en": "mousse princess",
+    "ja": "ムースプリンセス",
+    "de": "Mousse-Prinzessin",
+    "fr": "princesse mousse"
+  },
+  "10631": {
+    "en": "Gurangatch",
+    "ja": "グランガチ",
+    "de": "Gurangatch",
+    "fr": "Gurangatch"
+  },
+  "10632": {
+    "en": "petalodus",
+    "ja": "ペタロドゥス",
+    "de": "Petalodus",
+    "fr": "petalodus"
+  },
+  "10633": {
+    "en": "Fan Ail",
+    "ja": "ファン・アイル",
+    "de": "Fan Ail",
+    "fr": "Fan Ail"
+  },
+  "10634": {
+    "en": "Arch-Eta",
+    "ja": "アーチイータ",
+    "de": "Erz-Eta",
+    "fr": "Arch-Êta"
+  },
+  "10635": {
+    "en": "green Archon",
+    "ja": "草賢人",
+    "de": "grün[a] Exeget",
+    "fr": "Preux feuillu"
+  },
+  "10636": {
+    "en": "ü-u-ü-u",
+    "ja": "ウーヴウーヴ",
+    "de": "Ü-u-ü-u",
+    "fr": "Ü-u-ü-u"
+  },
+  "10637": {
+    "en": "Vajrakumara",
+    "ja": "ヴァジュラクマーラ",
+    "de": "Vajrakumara",
+    "fr": "vajrakumara"
+  },
+  "10638": {
+    "en": "Iravati",
+    "ja": "イラーヴァティ",
+    "de": "Iravati",
+    "fr": "Iravati"
+  },
+  "10639": {
+    "en": "warmonger",
+    "ja": "ウォーモンガー",
+    "de": "Kriegstreiber",
+    "fr": "Belliciste"
+  },
+  "10640": {
+    "en": "Emperor's rose",
+    "ja": "エンペラーズローズ",
+    "de": "Rose[p] des Kaisers",
+    "fr": "rosier de l'empereur"
+  },
+  "10641": {
+    "en": "daphnia magna",
+    "ja": "ダフニアマグナ",
+    "de": "Daphnia Magna",
+    "fr": "magna daphnie"
+  },
+  "10642": {
+    "en": "genesis rock",
+    "ja": "ジェネシスロック",
+    "de": "Genesisfels",
+    "fr": "pierre de la genèse"
+  },
+  "10643": {
+    "en": "Yumcax",
+    "ja": "ユムカクス",
+    "de": "Yumcax",
+    "fr": "Yumcax"
+  },
+  "10644": {
+    "en": "Shockmaw",
+    "ja": "ショックモー",
+    "de": "Schockschlund",
+    "fr": "choc-gueule"
+  },
+  "10645": {
+    "en": "level cheater",
+    "ja": "レベルチーター",
+    "de": "Stufenschummler",
+    "fr": "tricheniveau"
+  },
+  "10646": {
+    "en": "Oskh Rhei",
+    "ja": "オスク・レイ",
+    "de": "Oskh Rhei",
+    "fr": "Oskh Rhei"
+  },
+  "10647": {
+    "en": "Izanami",
+    "ja": "イザナミ",
+    "de": "Izanami",
+    "fr": "Izanami"
+  },
+  "10648": {
+    "en": "automated satellite",
+    "ja": "オートマチック・サテライト",
+    "de": "autonom[a] Satellit",
+    "fr": "satellite autonome"
+  },
+  "10649": {
+    "en": "automated death machine",
+    "ja": "オートマチック・デスマシーン",
+    "de": "autonom[a] Todesmaschine",
+    "fr": "mécacharogne autonome"
+  },
+  "10650": {
+    "en": "automated cavalry",
+    "ja": "オートマチック・キャバルリー",
+    "de": "autonom[a] Reiter",
+    "fr": "cavalier autonome"
+  },
+  "10651": {
+    "en": "automated bit",
+    "ja": "オートマチック・ビット",
+    "de": "autonom[a] Drohne",
+    "fr": "drone autonome"
+  },
+  "10652": {
+    "en": "automated roader",
+    "ja": "オートマチック・マグナローダー",
+    "de": "autonom[a] Rotula",
+    "fr": "magna rouleur autonome"
+  },
+  "10653": {
+    "en": "automated slasher",
+    "ja": "オートマチック・スラッシャー",
+    "de": "autonom[a] Schlitzer",
+    "fr": "tailladeur autonome"
+  },
+  "10654": {
+    "en": "automated colossus",
+    "ja": "オートマチック・コロッサス",
+    "de": "autonom[a] Colossus",
+    "fr": "colosse autonome"
+  },
+  "10655": {
+    "en": "automated avenger",
+    "ja": "オートマチック・アヴェンジャー",
+    "de": "autonom[a] Rächer",
+    "fr": "vengeur autonome"
+  },
+  "10656": {
+    "en": "almasty",
+    "ja": "アルマスティ",
+    "de": "Alma",
+    "fr": "almasty"
+  },
+  "10657": {
+    "en": "Eblan bear",
+    "ja": "エブラーナベアー",
+    "de": "Eblan-Bär",
+    "fr": "ours d'Éblana"
+  },
+  "10658": {
+    "en": "Eblan icetrap",
+    "ja": "エブラーナ・アイストラップ",
+    "de": "Eblan-Eisfalle",
+    "fr": "piège-glace d'Éblana"
+  },
+  "10659": {
+    "en": "ovibos",
+    "ja": "オウヴィボス",
+    "de": "Ovibos",
+    "fr": "ovibos"
+  },
+  "10660": {
+    "en": "jotunn",
+    "ja": "ヨトゥン",
+    "de": "Jötunn",
+    "fr": "jötunn"
+  },
+  "10661": {
+    "en": "ceruleum zoblyn",
+    "ja": "セルリウムゾブラン",
+    "de": "Erdseim-Zoblyn",
+    "fr": "zoblyn de céruleum"
+  },
+  "10662": {
+    "en": "Ilsabardian tursus",
+    "ja": "イルサバード・トゥルスス",
+    "de": "Ilsabard-Tursus",
+    "fr": "tursus d'Ilsabard"
+  },
+  "10663": {
+    "en": "canis lupinus",
+    "ja": "カニスルピナス",
+    "de": "Canis Lupinus",
+    "fr": "canis lupinus"
+  },
+  "10664": {
+    "en": "overgrown rose",
+    "ja": "オーバーグロウン・ローズ",
+    "de": "überwachsen[a] Rose",
+    "fr": "rosier envahissant"
+  },
+  "10665": {
+    "en": "ceruleum sprite",
+    "ja": "セルリウムスプライト",
+    "de": "Erdseim-Exergon",
+    "fr": "élémentaire de céruleum"
+  },
+  "10666": {
+    "en": "morozko",
+    "ja": "モロズコ",
+    "de": "Morozko",
+    "fr": "morozko"
+  },
+  "10667": {
+    "en": "saiga",
+    "ja": "サイガ",
+    "de": "Saiga",
+    "fr": "saïga"
+  },
+  "10668": {
+    "en": "troll",
+    "ja": "トロル",
+    "de": "Troll",
+    "fr": "troll"
+  },
+  "10669": {
+    "en": "genomos",
+    "ja": "ゲノーモス",
+    "de": "Genomos",
+    "fr": "génomos"
+  },
+  "10670": {
+    "en": "caribou",
+    "ja": "カリブー",
+    "de": "Karibu",
+    "fr": "caribou"
+  },
+  "10671": {
+    "en": "berkanan",
+    "ja": "ベルカナ",
+    "de": "Berkanan",
+    "fr": "berkanan"
+  },
+  "10672": {
+    "en": "limascabra",
+    "ja": "リマスカブラ",
+    "de": "Lima Scabra",
+    "fr": "lima scabra"
+  },
+  "10673": {
+    "en": "luncheon toad",
+    "ja": "マウンテンチキン",
+    "de": "Bergkröte",
+    "fr": "poulet des montagnes"
+  },
+  "10674": {
+    "en": "yakow",
+    "ja": "ヤーコウ",
+    "de": "Yakuh",
+    "fr": "dzo"
+  },
+  "10675": {
+    "en": "merino",
+    "ja": "メリノ",
+    "de": "Merino",
+    "fr": "mérinos"
+  },
+  "10676": {
+    "en": "black merino",
+    "ja": "ブラックメリノ",
+    "de": "schwarz[a] Merino",
+    "fr": "mérinos noir"
+  },
+  "10677": {
+    "en": "labyrinth screamer",
+    "ja": "ラヴィリンソス・スクリーマー",
+    "de": "Labyrinthos-Schriller",
+    "fr": "piailleur du Labyrinthos"
+  },
+  "10678": {
+    "en": "northern snapweed",
+    "ja": "ノーザン・スナップウィード",
+    "de": "nördlich[a] Schnappkraut",
+    "fr": "balsamine du Nord"
+  },
+  "10679": {
+    "en": "pephredo",
+    "ja": "ペプレド",
+    "de": "Pephredo",
+    "fr": "pemphrédo"
+  },
+  "10680": {
+    "en": "labyrinth sankchinni",
+    "ja": "ラヴィリンソス・サンクチンニ",
+    "de": "Labyrinthos-Sankchinni",
+    "fr": "sankchinni du Labyrinthos"
+  },
+  "10681": {
+    "en": "labyrinth narbrooi",
+    "ja": "ラヴィリンソス・ナルブルーイ",
+    "de": "Labyrinthos-Narbrooi",
+    "fr": "narbrooi du Labyrinthos"
+  },
+  "10682": {
+    "en": "cryoconite",
+    "ja": "クリオコナイト",
+    "de": "Kryokonit",
+    "fr": "cryoconite"
+  },
+  "10683": {
+    "en": "mythrilcap",
+    "ja": "ミスリルキャップ",
+    "de": "Mithrilkappe",
+    "fr": "bolet de mithril"
+  },
+  "10684": {
+    "en": "stray mandragora",
+    "ja": "ストレイ・マンドラゴラ",
+    "de": "streunend[a] Mandragora",
+    "fr": "mandragore errant"
+  },
+  "10685": {
+    "en": "stray korrigan",
+    "ja": "ストレイ・コリガン",
+    "de": "streunend[a] Korrigane",
+    "fr": "korrigan errant"
+  },
+  "10686": {
+    "en": "stray onion",
+    "ja": "ストレイ・オニオン",
+    "de": "streunend[a] Zwiebel",
+    "fr": "oignon errant"
+  },
+  "10687": {
+    "en": "stray egg",
+    "ja": "ストレイ・エッグ",
+    "de": "streunend[a] Aubergine",
+    "fr": "aubergine errante"
+  },
+  "10688": {
+    "en": "stray garlic",
+    "ja": "ストレイ・ガーリック",
+    "de": "streunend[a] Knoblauch",
+    "fr": "ail errant"
+  },
+  "10689": {
+    "en": "stray tomato",
+    "ja": "ストレイ・トマト",
+    "de": "Irrtomate",
+    "fr": "tomate errante"
+  },
+  "10690": {
+    "en": "stray queen",
+    "ja": "ストレイ・クイーン",
+    "de": "streunend[a] Königin",
+    "fr": "reine errante"
+  },
+  "10691": {
+    "en": "center anila",
+    "ja": "セントラル・アニラ",
+    "de": "Zentral-Anila",
+    "fr": "anila du Circuit central"
+  },
+  "10692": {
+    "en": "center apa",
+    "ja": "セントラル・アーパス",
+    "de": "Zentral-Apa",
+    "fr": "apa du Circuit central"
+  },
+  "10693": {
+    "en": "center dhara",
+    "ja": "セントラル・ダラ",
+    "de": "Zentral-Dhara",
+    "fr": "dhara du Circuit central"
+  },
+  "10694": {
+    "en": "center anala",
+    "ja": "セントラル・アナラ",
+    "de": "Zentral-Anala",
+    "fr": "anala du Circuit central"
+  },
+  "10695": {
+    "en": "center prabhasa",
+    "ja": "セントラル・プラバーサ",
+    "de": "Zentral-Prabhasa",
+    "fr": "pratyusha du Circuit central"
+  },
+  "10696": {
+    "en": "center soma",
+    "ja": "セントラル・ソーマ",
+    "de": "Zentral-Soma",
+    "fr": "soma du Circuit central"
+  },
+  "10697": {
+    "en": "pisaca",
+    "ja": "ピシャーチャ",
+    "de": "Pisaca",
+    "fr": "pishacha"
+  },
+  "10698": {
+    "en": "vajralangula",
+    "ja": "ヴァジュララングラ",
+    "de": "Vajralangula",
+    "fr": "vajralangula"
+  },
+  "10699": {
+    "en": "kacchapa",
+    "ja": "カチャパ",
+    "de": "Kacchapa",
+    "fr": "kacchapa"
+  },
+  "10700": {
+    "en": "hamsa",
+    "ja": "ハンサ",
+    "de": "Hamsa",
+    "fr": "hamsa"
+  },
+  "10701": {
+    "en": "asvattha",
+    "ja": "アシュヴァッタ",
+    "de": "Asvattha",
+    "fr": "asvattha"
+  },
+  "10702": {
+    "en": "guhasaya",
+    "ja": "グハーシャヤ",
+    "de": "Guhasaya",
+    "fr": "guhasaya"
+  },
+  "10703": {
+    "en": "bhujamga",
+    "ja": "ブンジャンガ",
+    "de": "Bhujamga",
+    "fr": "bhujanga"
+  },
+  "10704": {
+    "en": "sotormurg",
+    "ja": "シュトラムルグ",
+    "de": "Sotormurg",
+    "fr": "suturmurg"
+  },
+  "10705": {
+    "en": "gaja",
+    "ja": "ガジャ",
+    "de": "Gaja",
+    "fr": "gaja"
+  },
+  "10706": {
+    "en": "Thavnairian jhammel",
+    "ja": "サベネアンジャムメル",
+    "de": "Thavnair-Jhammel",
+    "fr": "jhammel de Thavnair"
+  },
+  "10707": {
+    "en": "ufiti",
+    "ja": "バブーン",
+    "de": "Gorilla",
+    "fr": "babouin"
+  },
+  "10708": {
+    "en": "hanuman langur",
+    "ja": "ハヌマンラングール",
+    "de": "Hanuman-Langur",
+    "fr": "hanuman langur"
+  },
+  "10709": {
+    "en": "chamrosh",
+    "ja": "チャムロッシュ",
+    "de": "Chamrosh",
+    "fr": "chamrosh"
+  },
+  "10710": {
+    "en": "srngapaksi",
+    "ja": "シーングパクシー",
+    "de": "Srngapaksi",
+    "fr": "srngapaksi"
+  },
+  "10711": {
+    "en": "starmite",
+    "ja": "スターマイト",
+    "de": "Sternmilbe",
+    "fr": "starmite"
+  },
+  "10712": {
+    "en": "manjusaka",
+    "ja": "マンジュサカ",
+    "de": "Manjusaka",
+    "fr": "manjusaka"
+  },
+  "10713": {
+    "en": "odqan",
+    "ja": "オドカン",
+    "de": "Odqan",
+    "fr": "odqan"
+  },
+  "10714": {
+    "en": "kumbhira",
+    "ja": "クンビーラ",
+    "de": "Kumbhila",
+    "fr": "kumbhira"
+  },
+  "10715": {
+    "en": "Akyaali crab",
+    "ja": "アキャーリクラブ",
+    "de": "Akyaali-Krabbe",
+    "fr": "crabe d'Akyaali"
+  },
+  "10716": {
+    "en": "valras",
+    "ja": "ヴァルラス",
+    "de": "Vaalaras",
+    "fr": "vaalaras"
+  },
+  "10717": {
+    "en": "Terminus snatcher",
+    "ja": "ターミナス・スナッチャー",
+    "de": "Terminus-Häscher",
+    "fr": "pillard de l'apocalypse"
+  },
+  "10718": {
+    "en": "Terminus wrecker",
+    "ja": "ターミナス・レッカー",
+    "de": "Terminus-Verwüster",
+    "fr": "destructeur de l'apocalypse"
+  },
+  "10719": {
+    "en": "Svarbhanu",
+    "ja": "スヴァーバーヌ",
+    "de": "Svarbhanu",
+    "fr": "Svarbhanu"
+  },
+  "10720": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10721": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10722": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10723": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10724": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10725": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10726": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10727": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10728": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10729": {
+    "en": "Lalah Jinjahl the Studious",
+    "ja": "優等のララー・ジンジャル",
+    "de": "Lalah Jinjahl",
+    "fr": "Lalah Jinjahl l'élève brillante"
+  },
+  "10730": {
+    "en": "Loifa Brighteye",
+    "ja": "怜悧のロイファ",
+    "de": "Loifa",
+    "fr": "Loifa l'ingénieux"
+  },
+  "10731": {
+    "en": "Mahaud Flamehand",
+    "ja": "悪疾のマホード",
+    "de": "Mahaud",
+    "fr": "Mahaud l'aliénée"
+  },
+  "10732": {
+    "en": "Ancel Rockfist",
+    "ja": "壊裂のアンセル",
+    "de": "Ancel",
+    "fr": "Ancel le fracasseur"
+  },
+  "10733": {
+    "en": "Guildivain of the Tainted Edge",
+    "ja": "執刀のギルディヴァン",
+    "de": "Guildivain",
+    "fr": "Guildivain le practicien"
+  },
+  "10734": {
+    "en": "chi bomb",
+    "ja": "気功弾",
+    "de": "Chi-Stoß",
+    "fr": "bombe énergétique"
+  },
+  "10735": {
+    "en": "strengthened noulith",
+    "ja": "強化された賢具",
+    "de": "verstärkt[a] Instrument",
+    "fr": "noulithe renforcé"
+  },
+  "10736": {
+    "en": "Samantha seedling",
+    "ja": "サマンサ・シードリング",
+    "de": "Samantha-Keimling",
+    "fr": "pousse samanthienne"
+  },
+  "10737": {
+    "en": "Steamy Samantha",
+    "ja": "スティーミー・サマンサ",
+    "de": "Samantha [t] Bedecktsamend[a]",
+    "fr": "Samantha la Torride"
+  },
+  "10738": {
+    "en": "living crystal",
+    "ja": "リビングクリスタル",
+    "de": "lebendig[a] Kristall",
+    "fr": "cristal vivant"
+  },
+  "10739": {
+    "en": "krystallos",
+    "ja": "クリュスタロス",
+    "de": "Kristallos",
+    "fr": "krystallos"
+  },
+  "10740": {
+    "en": "Gilly",
+    "ja": "生物学者ギリー",
+    "de": "Professor Gilly",
+    "fr": "professeur Gilly"
+  },
+  "10741": {
+    "en": "Sathzant",
+    "ja": "助手のサスザント",
+    "de": "Sathzant",
+    "fr": "assistant Sathzant"
+  },
+  "10742": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10743": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10744": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10745": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10746": {
+    "en": "forgotten ovibos",
+    "ja": "フォゴットン・オウヴィボス",
+    "de": "vergessen[a] Ovibos",
+    "fr": "ovibos oublié"
+  },
+  "10747": {
+    "en": "snegovik",
+    "ja": "スニェガヴィーク",
+    "de": "Snegovik",
+    "fr": "snegovik"
+  },
+  "10748": {
+    "en": "wailing almasty",
+    "ja": "ウェイリング・アルマスティ",
+    "de": "heulend[a] Alma",
+    "fr": "almasty hurleur"
+  },
+  "10749": {
+    "en": "toxic icetrap",
+    "ja": "トキシック・アイストラップ",
+    "de": "gift[a] Eisfalle",
+    "fr": "piège-glace"
+  },
+  "10750": {
+    "en": "Heliogabalus",
+    "ja": "ヘリオガバルス",
+    "de": "Heliogabalus",
+    "fr": "Héliogabale"
+  },
+  "10751": {
+    "en": "scabrous jotunn",
+    "ja": "スカブラス・ヨトゥン",
+    "de": "schuppig[a] Jötunn",
+    "fr": "jötunn sanguinaire"
+  },
+  "10752": {
+    "en": "hardy refugee",
+    "ja": "生き残りの難民",
+    "de": "Überlebend[a]",
+    "fr": "survivant"
+  },
+  "10753": {
+    "en": "provisions crate",
+    "ja": "生活物資",
+    "de": "Lebensmittelkiste",
+    "fr": "caisse de vivres"
+  },
+  "10754": {
+    "en": "rampaging roader",
+    "ja": "レックレス・マグナローダー",
+    "de": "Rotula[p] auf Irrfahrt",
+    "fr": "magna rouleur fou"
+  },
+  "10755": {
+    "en": "stray canis pugnax",
+    "ja": "ストレイ・カニス",
+    "de": "streundend[a] Canis",
+    "fr": "chien-soldat errant"
+  },
+  "10756": {
+    "en": "overridden satellite",
+    "ja": "オーバーライド・サテライト",
+    "de": "überbrückt[a] Satellit",
+    "fr": "satellite hors de contrôle"
+  },
+  "10757": {
+    "en": "overridden armored weapon",
+    "ja": "オーバーライド・アームドウェポン",
+    "de": "überbrückt[a] Panzerwaffe",
+    "fr": "armure hors de contrôle"
+  },
+  "10758": {
+    "en": "overridden bit",
+    "ja": "オーバーライド・ビット",
+    "de": "überbrückt[a] Drohne",
+    "fr": "drone hors de contrôle"
+  },
+  "10759": {
+    "en": "Seneca",
+    "ja": "セネカ",
+    "de": "Seneca",
+    "fr": "Seneca"
+  },
+  "10760": {
+    "en": "wandering death machine",
+    "ja": "ワンダリング・デスマシーン",
+    "de": "wandernd[a] Todesmaschine",
+    "fr": "machine de mort errante"
+  },
+  "10761": {
+    "en": "displaced engineer",
+    "ja": "難民の魔導技師",
+    "de": "Magitechniker[p] der Vertriebenen",
+    "fr": "ingénieur magitek réfugié"
+  },
+  "10762": {
+    "en": "Ysayle's spirit",
+    "ja": "イゼルの魂",
+    "de": "Ysayles Seele",
+    "fr": "âme d'Ysayle"
+  },
+  "10763": {
+    "en": "Marke",
+    "ja": "マルクの声",
+    "de": "Markes Stimme",
+    "fr": "voix de Marke"
+  },
+  "10764": {
+    "en": "Alphinaud",
+    "ja": "アルフィノの声",
+    "de": "Alphinaud",
+    "fr": "voix d'Alphinaud"
+  },
+  "10765": {
+    "en": "Alisaie",
+    "ja": "アリゼーの声",
+    "de": "Alisaie",
+    "fr": "voix d'Alisaie"
+  },
+  "10766": {
+    "en": "Thancred",
+    "ja": "サンクレッドの声",
+    "de": "Thancred",
+    "fr": "voix de Thancred"
+  },
+  "10767": {
+    "en": "Urianger",
+    "ja": "ウリエンジェの声",
+    "de": "Urianger",
+    "fr": "voix d'Urianger"
+  },
+  "10768": {
+    "en": "Y'shtola",
+    "ja": "ヤ・シュトラの声",
+    "de": "Y'shtola",
+    "fr": "voix de Y'shtola"
+  },
+  "10769": {
+    "en": "Estinien",
+    "ja": "エスティニアンの声",
+    "de": "Estinien",
+    "fr": "voix d'Estinien"
+  },
+  "10770": {
+    "en": "G'raha Tia",
+    "ja": "グ・ラハ・ティアの声",
+    "de": "G'raha Tia",
+    "fr": "voix de G'raha Tia"
+  },
+  "10771": {
+    "en": "overtuned specimen",
+    "ja": "オーバーチューンド",
+    "de": "entgleist[a] Exemplar",
+    "fr": "spécimen fou"
+  },
+  "10772": {
+    "en": "Gosetsu Everfall",
+    "ja": "忠節のゴウセツ",
+    "de": "Gosetsu",
+    "fr": "Gosetsu le dévoué"
+  },
+  "10773": {
+    "en": "deadly trimmer",
+    "ja": "デッドリー・トリマー",
+    "de": "Todesschlitzer",
+    "fr": "sécateur mortel"
+  },
+  "10774": {
+    "en": "woeful weeper",
+    "ja": "ウォウフル・ウィーパー",
+    "de": "leidend[a] Schluchzer",
+    "fr": "lamenteur affligé"
+  },
+  "10775": {
+    "en": "flowering lunatender",
+    "ja": "フラワリング・ルナテンダー",
+    "de": "blühend[a] Lunatender",
+    "fr": "pampa sélénien en fleur"
+  },
+  "10776": {
+    "en": "rebooted droid",
+    "ja": "リブーテッド・ドロイド",
+    "de": "aufgeladen[a] Droide",
+    "fr": "droïde redémarré"
+  },
+  "10777": {
+    "en": "tranquillityite",
+    "ja": "トランキリティアイト",
+    "de": "Tranquillityite",
+    "fr": "Tranquillityite"
+  },
+  "10778": {
+    "en": "farside regolith",
+    "ja": "ファーサイド・レゴリス",
+    "de": "Dunkelseiten-Regolith",
+    "fr": "régolithe caché"
+  },
+  "10779": {
+    "en": "defective supporter",
+    "ja": "デフェクティブ・サポーター",
+    "de": "defekt[a] Support-Roboter",
+    "fr": "unité d'assistance défectueuse"
+  },
+  "10780": {
+    "en": "hungry daphnia",
+    "ja": "ハングリー・ダフニア",
+    "de": "ausgehungert[a] Daphnia",
+    "fr": "daphnie affamée"
+  },
+  "10781": {
+    "en": "defective scraper",
+    "ja": "デフェクティブ・スクレーパー",
+    "de": "defekt[a] Schaber",
+    "fr": "unité de recyclage défectueuse"
+  },
+  "10782": {
+    "en": "defective caretaker",
+    "ja": "デフェクティブ・ケアテイカー",
+    "de": "defekt[a] Wärter",
+    "fr": "unité de soin défectueuse"
+  },
+  "10783": {
+    "en": "cerebrator",
+    "ja": "セレブレイター",
+    "de": "Cerebrator",
+    "fr": "Cerebrator"
+  },
+  "10784": {
+    "en": "acidic mousse",
+    "ja": "アシディック・ムース",
+    "de": "Säure-Mousse",
+    "fr": "mousse acide"
+  },
+  "10785": {
+    "en": "Thrillingway",
+    "ja": "スリリングウェイ",
+    "de": "Thrillingway",
+    "fr": "Thrillingway"
+  },
+  "10786": {
+    "en": "aromatic sapling",
+    "ja": "アロマ・サップリング",
+    "de": "Aroma-Sprössling",
+    "fr": "pousse odoriférante"
+  },
+  "10787": {
+    "en": "rasayana",
+    "ja": "ラサーヤナ",
+    "de": "Rasayana",
+    "fr": "rasayana"
+  },
+  "10788": {
+    "en": "jungle lizard",
+    "ja": "ジャングル・リザード",
+    "de": "Dschungelechse",
+    "fr": "lézard des jungles"
+  },
+  "10789": {
+    "en": "apalala",
+    "ja": "アパラーラ",
+    "de": "Apalala",
+    "fr": "apalala"
+  },
+  "10790": {
+    "en": "Sajabaht",
+    "ja": "調香のサジャバート",
+    "de": "Sajabaht",
+    "fr": "Sajabaht"
+  },
+  "10791": {
+    "en": "Rashvaaz",
+    "ja": "篤信のラッシュヴァズ",
+    "de": "fromm[a] Rashvaaz",
+    "fr": "Rashvaaz le pieux"
+  },
+  "10792": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10793": {
+    "en": "spawning ophion",
+    "ja": "スポーニング・オピオン",
+    "de": "sprießend[a] Ophion",
+    "fr": "ophion indésirable"
+  },
+  "10794": {
+    "en": "alseis",
+    "ja": "アルセイス",
+    "de": "Alseis",
+    "fr": "alséide"
+  },
+  "10795": {
+    "en": "thunderhead keraunos",
+    "ja": "サンダーヘッド・ケラウノス",
+    "de": "Donnerkopf-Keraunos",
+    "fr": "kéraunos survolté"
+  },
+  "10796": {
+    "en": "bony hippocerf",
+    "ja": "ボーニー・ヒッポセルフ",
+    "de": "knochig[a] Hippocerf",
+    "fr": "hippocerf enragé"
+  },
+  "10797": {
+    "en": "first-generation monoceros",
+    "ja": "ニューブラッド・モノセロス",
+    "de": "Proto-Monozeros",
+    "fr": "monocéros expérimental"
+  },
+  "10798": {
+    "en": "hungry harpuia",
+    "ja": "ハングリー・ハルピュイア",
+    "de": "hungrig[a] Harpuia",
+    "fr": "harpyia affamée"
+  },
+  "10799": {
+    "en": "morbol marchioness",
+    "ja": "マーショネス・モルボル",
+    "de": "Morbol-Markgräfin",
+    "fr": "morbole marquise"
+  },
+  "10800": {
+    "en": "roiling Darkness",
+    "ja": "闇の奔流",
+    "de": "Strom[p] der Dunkelheit",
+    "fr": "orbe des Ténèbres"
+  },
+  "10801": {
+    "en": "lush medusa",
+    "ja": "ラッシュ・メデューサ",
+    "de": "üppig[a] Medusa",
+    "fr": "médusa baladeuse"
+  },
+  "10802": {
+    "en": "lush medusa",
+    "ja": "ラッシュ・メデューサ",
+    "de": "üppig[a] Medusa",
+    "fr": "médusa baladeuse"
+  },
+  "10803": {
+    "en": "Eurydike",
+    "ja": "エウリュディケ",
+    "de": "Eurydike",
+    "fr": "Eurydice"
+  },
+  "10804": {
+    "en": "phantom phanopsyche",
+    "ja": "ファントム・ファノプシュケ",
+    "de": "Phantom-Phanopsyche",
+    "fr": "phanopsychée fantôme"
+  },
+  "10805": {
+    "en": "delirious melanion",
+    "ja": "デリリアス・メラニオン",
+    "de": "delirisch[a] Melanion",
+    "fr": "mélanion furieux"
+  },
+  "10806": {
+    "en": "ophiotauros picker",
+    "ja": "オピオタウロス・ピッカー",
+    "de": "Ophiotauros-Pflücker",
+    "fr": "ophiotauros taquin"
+  },
+  "10807": {
+    "en": "Elpis minotaur",
+    "ja": "エルピスタウロス",
+    "de": "Elpis-Tauros",
+    "fr": "elpistauros"
+  },
+  "10808": {
+    "en": "nervous researcher",
+    "ja": "気弱そうな観察者",
+    "de": "ängstlich[a] Beobachter",
+    "fr": "observateur tremblotant"
+  },
+  "10809": {
+    "en": "monoceros monitor",
+    "ja": "モノセロスの観察者",
+    "de": "Monozeros-Beobachter",
+    "fr": "observateur des monocéros"
+  },
+  "10810": {
+    "en": "melancholic Ea",
+    "ja": "メランコリック・イーア",
+    "de": "melancholisch[a] Ea",
+    "fr": "Éa mélancolique"
+  },
+  "10811": {
+    "en": "despairing dragonfly",
+    "ja": "ディスペアリング・ドラゴンフライ",
+    "de": "verzweifelt[a] Stellar-Libelle",
+    "fr": "draguêpe en peine"
+  },
+  "10812": {
+    "en": "Ahl Ein",
+    "ja": "アル・アイン",
+    "de": "Ahl Ein",
+    "fr": "Ahl Ein"
+  },
+  "10813": {
+    "en": "Ahl Ein's kin",
+    "ja": "アル・アインの友",
+    "de": "Ahl Eins Abkömmling",
+    "fr": "compagnon d'Ahl Ein"
+  },
+  "10814": {
+    "en": "Than Oskh",
+    "ja": "サン・オスク",
+    "de": "Than Oskh",
+    "fr": "Than Oskh"
+  },
+  "10815": {
+    "en": "Than Oskh devotee",
+    "ja": "サン・オスクの従者",
+    "de": "Diener[p] von Than Oskh",
+    "fr": "suivant de Than Oskh"
+  },
+  "10816": {
+    "en": "despairing wyvern",
+    "ja": "ディスペアリング・ワイバーン",
+    "de": "verzweifelt[a] Wyvern",
+    "fr": "wyverne en peine"
+  },
+  "10817": {
+    "en": "despairing lesser dragon",
+    "ja": "ディスペアリング・レッサードラゴン",
+    "de": "verzweifelt[a] nieder[a] Drache",
+    "fr": "dragon inférieur en peine"
+  },
+  "10818": {
+    "en": "despairing brobinyak",
+    "ja": "ディスペアリング・ブロビニャク",
+    "de": "verzweifelt[a] Brobinyak",
+    "fr": "brobinyak en peine"
+  },
+  "10819": {
+    "en": "despairing shelled dragon",
+    "ja": "ディスペアリング・カラペスドラゴン",
+    "de": "verzweifelt[a] Panzerdrache",
+    "fr": "dragon stellaire en peine"
+  },
+  "10820": {
+    "en": "fallen luminion",
+    "ja": "フォールン・ルミニオン",
+    "de": "gefallen[a] Luminion",
+    "fr": "luminion déchu"
+  },
+  "10821": {
+    "en": "fallen luminion",
+    "ja": "フォールン・ルミニオン",
+    "de": "gefallen[a] Luminion",
+    "fr": "luminion déchu"
+  },
+  "10822": {
+    "en": "wandering luminion",
+    "ja": "ワンダリング・ルミニオン",
+    "de": "streunend[a] Luminion",
+    "fr": "luminion errant"
+  },
+  "10823": {
+    "en": "dark-eyed other",
+    "ja": "ダークアイ・アザーワン",
+    "de": "dunkeläugig[a] Ander[a]",
+    "fr": "autre sombrœil"
+  },
+  "10824": {
+    "en": "Poe",
+    "ja": "ポォ",
+    "de": "Poe",
+    "fr": "Poe"
+  },
+  "10825": {
+    "en": "stygian spark",
+    "ja": "スティジアンスパーク",
+    "de": "stygisch[a] Funke",
+    "fr": "étincelle stygienne"
+  },
+  "10826": {
+    "en": "stygian sphere",
+    "ja": "スティジアンスフィア",
+    "de": "stygisch[a] Kugel",
+    "fr": "sphère stygienne"
+  },
+  "10827": {
+    "en": "Myhk Nehr",
+    "ja": "ミク・ネール",
+    "de": "Myhk Nehr",
+    "fr": "Myhk Nehr"
+  },
+  "10828": {
+    "en": "Myhk Nehr's brethren",
+    "ja": "ミク・ネールの兄弟",
+    "de": "Bruder[p] von Myhk Nehr",
+    "fr": "adelphe de Myhk Nehr"
+  },
+  "10829": {
+    "en": "flora overseer",
+    "ja": "植物担当の観察者",
+    "de": "Botanik-Beobachter",
+    "fr": "observateur de végétaux"
+  },
+  "10830": {
+    "en": "venomous python",
+    "ja": "ポイゾナス・ピュトン",
+    "de": "Giftpython",
+    "fr": "python venimeux"
+  },
+  "10831": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10832": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10835": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10836": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10847": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10848": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10849": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10850": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10851": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10852": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10853": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10854": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10855": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10856": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10858": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10859": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10860": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10861": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10862": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10863": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10864": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10865": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10866": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10867": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10868": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10869": {
+    "en": "Babil slasher",
+    "ja": "バブイル・スラッシャー",
+    "de": "Babil-Schlitzer",
+    "fr": "tailladeur de Babil"
+  },
+  "10870": {
+    "en": "Babil nimrod",
+    "ja": "バブイル・ニムロッド",
+    "de": "Babil-Nimrod",
+    "fr": "nimrod de Babil"
+  },
+  "10871": {
+    "en": "Babil bit",
+    "ja": "バブイル・ビット",
+    "de": "Babil-Drohne",
+    "fr": "drone de Babil"
+  },
+  "10872": {
+    "en": "Babil satellite",
+    "ja": "バブイル・サテライト",
+    "de": "Babil-Satellit",
+    "fr": "satellite de Babil"
+  },
+  "10873": {
+    "en": "Babil canis pugnax",
+    "ja": "バブイル・カニス",
+    "de": "Babil-Canis",
+    "fr": "canis de Babil"
+  },
+  "10874": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldate impériale subjuguée"
+  },
+  "10875": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10876": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldate impériale subjuguée"
+  },
+  "10877": {
+    "en": "Babil reaper",
+    "ja": "バブイル・リーパー",
+    "de": "Babil-Schnitter",
+    "fr": "faucheuse de Babil"
+  },
+  "10878": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10879": {
+    "en": "Babil predator",
+    "ja": "バブイル・プレデター",
+    "de": "Babil-Prädator",
+    "fr": "prédatrice de Babil"
+  },
+  "10880": {
+    "en": "Babil helldiver",
+    "ja": "バブイル・ヘルダイバー",
+    "de": "Babil-Höllentaucher",
+    "fr": "plongeur infernal de Babil"
+  },
+  "10881": {
+    "en": "Babil sky armor",
+    "ja": "バブイル・スカイアーマー",
+    "de": "Babil-Himmelspanzer",
+    "fr": "armure aérienne de Babil"
+  },
+  "10882": {
+    "en": "Babil rearguard",
+    "ja": "バブイル・リアガード",
+    "de": "Babil-Rückendecker",
+    "fr": "arrière-garde de Babil"
+  },
+  "10883": {
+    "en": "Babil colossus",
+    "ja": "バブイル・コロッサス",
+    "de": "Babil-Colossus",
+    "fr": "colosse de Babil"
+  },
+  "10884": {
+    "en": "Babil avenger",
+    "ja": "バブイル・アヴェンジャー",
+    "de": "Babil-Rächer",
+    "fr": "vengeur de Babil"
+  },
+  "10885": {
+    "en": "Babil death machine",
+    "ja": "バブイル・デスマシーン",
+    "de": "Babil-Todesmaschine",
+    "fr": "mécacharogne de Babil"
+  },
+  "10886": {
+    "en": "Babil hexadrone",
+    "ja": "バブイル・ヘキサローラー",
+    "de": "Babil-Hexadrohne",
+    "fr": "hexadrone de Babil"
+  },
+  "10887": {
+    "en": "Babil roader",
+    "ja": "バブイル・マグナローダー",
+    "de": "Babil-Rotula",
+    "fr": "magna rouleur de Babil"
+  },
+  "10888": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10889": {
+    "en": "Babil gunship",
+    "ja": "バブイル・ガンシップ",
+    "de": "Babil-Kanonenschiff",
+    "fr": "vaisseau de Babil"
+  },
+  "10890": {
+    "en": "Babil armored weapon",
+    "ja": "バブイル・アームドウェポン",
+    "de": "Babil-Kriecher",
+    "fr": "arme blindée de Babil"
+  },
+  "10891": {
+    "en": "Babil hypertuned specimen",
+    "ja": "バブイル・ハイパーチューンド",
+    "de": "Babil-Hyperverstärkt[a]",
+    "fr": "hyper-renforcé de Babil"
+  },
+  "10892": {
+    "en": "magitek crane",
+    "ja": "魔導クレーン",
+    "de": "Magitek-Kran",
+    "fr": "grue magitek"
+  },
+  "10893": {
+    "en": "Sadu Heavensflame",
+    "ja": "炎天のサドゥ",
+    "de": "Sadu Himmelsflamme",
+    "fr": "Sadu la flamme céleste"
+  },
+  "10894": {
+    "en": "Magnai the Older",
+    "ja": "長兄マグナイ",
+    "de": "Magnai [t] Älter[a]",
+    "fr": "Magnai le frère suprême"
+  },
+  "10895": {
+    "en": "Lyse",
+    "ja": "リセ",
+    "de": "Lyse",
+    "fr": "Lyse"
+  },
+  "10896": {
+    "en": "Pipin of the Steel Heart",
+    "ja": "鋼心のピピン",
+    "de": "Pipin Stahlherz",
+    "fr": "Pipin le cœur d'acier"
+  },
+  "10897": {
+    "en": "Cirina of the Laughing Reeds",
+    "ja": "草風のシリナ",
+    "de": "Cirina vom Singenden Schilf",
+    "fr": "Cirina le vent des collines"
+  },
+  "10898": {
+    "en": "Emet-Selch",
+    "ja": "エメトセルク",
+    "de": "Emet-Selch",
+    "fr": "Emet-Selch"
+  },
+  "10899": {
+    "en": "Hythlodaeus",
+    "ja": "ヒュトロダエウス",
+    "de": "Hythlodaeus",
+    "fr": "Hythlodaeus"
+  },
+  "10900": {
+    "en": "devout pilgrim",
+    "ja": "熱心な巡礼者",
+    "de": "beseelt[a] Pilgerin",
+    "fr": "pèlerine zélée"
+  },
+  "10901": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "10904": {
+    "en": "Thavnairian refugee",
+    "ja": "サベネアの避難民",
+    "de": "Thavnair-Flüchtling",
+    "fr": "réfugiée thavnairoise"
+  },
+  "10905": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10906": {
+    "en": "canis pugnax",
+    "ja": "カニス",
+    "de": "Canis",
+    "fr": "canis"
+  },
+  "10907": {
+    "en": "magitek vanguard",
+    "ja": "魔導ヴァンガード",
+    "de": "Magitek-Frontbrecher",
+    "fr": "avant-garde magitek"
+  },
+  "10908": {
+    "en": "magitek slasher",
+    "ja": "魔導スラッシャー",
+    "de": "Magitek-Schlitzer",
+    "fr": "tailladeur magitek"
+  },
+  "10909": {
+    "en": "magitek colossus",
+    "ja": "魔導コロッサス",
+    "de": "Magitek-Colossus",
+    "fr": "colosse magitek"
+  },
+  "10910": {
+    "en": "magitek satellite",
+    "ja": "魔導サテライト",
+    "de": "Magitek-Satellit",
+    "fr": "satellite magitek"
+  },
+  "10911": {
+    "en": "magitek death claw",
+    "ja": "魔導デスクロー",
+    "de": "Magitek-Todesklaue",
+    "fr": "griffe de mort magitek"
+  },
+  "10912": {
+    "en": "magitek death machine",
+    "ja": "魔導デスマシーン",
+    "de": "Magitek-Todesmaschine",
+    "fr": "mécacharogne magitek"
+  },
+  "10913": {
+    "en": "morozko",
+    "ja": "モロズコ",
+    "de": "Morozko",
+    "fr": "morozko"
+  },
+  "10914": {
+    "en": "Eblan bear",
+    "ja": "エブラーナベアー",
+    "de": "Eblan-Bär",
+    "fr": "ours d'Éblana"
+  },
+  "10915": {
+    "en": "almasty",
+    "ja": "アルマスティ",
+    "de": "Alma",
+    "fr": "almasty"
+  },
+  "10916": {
+    "en": "ceruleum zoblyn",
+    "ja": "セルリウムゾブラン",
+    "de": "Erdseim-Zoblyn",
+    "fr": "zoblyn de céruleum"
+  },
+  "10917": {
+    "en": "magitek reaper",
+    "ja": "魔導リーパー",
+    "de": "Magitek-Schnitter",
+    "fr": "faucheuse magitek"
+  },
+  "10918": {
+    "en": "ceruleum tank",
+    "ja": "青燐水タンク",
+    "de": "Erdseim-Tank",
+    "fr": "réservoir de céruleum"
+  },
+  "10919": {
+    "en": "Noll of the Calming Seas",
+    "ja": "望潮のノォル",
+    "de": "Noll",
+    "fr": "Noll"
+  },
+  "10920": {
+    "en": "ktiseos leon",
+    "ja": "キティセオス・レオン",
+    "de": "Ktiseos-Leon",
+    "fr": "ktiséos léon"
+  },
+  "10921": {
+    "en": "ktiseos lykos",
+    "ja": "キティセオス・リュコス",
+    "de": "Ktiseos-Lykos",
+    "fr": "ktiséos lykos"
+  },
+  "10922": {
+    "en": "ktiseos ktenos",
+    "ja": "キティセオス・クティノス",
+    "de": "Ktiseos-Ktenos",
+    "fr": "ktiséos ktnos"
+  },
+  "10923": {
+    "en": "Terminus flesher",
+    "ja": "ターミナス・フレッシャー",
+    "de": "Terminus-Zerfleischer",
+    "fr": "boucher de l'apocalypse"
+  },
+  "10924": {
+    "en": "Terminus twitcher",
+    "ja": "ターミナス・ツイッチャー",
+    "de": "Terminus-Zerrer",
+    "fr": "picoreur de l'apocalypse"
+  },
+  "10925": {
+    "en": "Terminus crier",
+    "ja": "ターミナス・クライヤー",
+    "de": "Terminus-Schreier",
+    "fr": "crieur de l'apocalypse"
+  },
+  "10926": {
+    "en": "Terminus shriver",
+    "ja": "ターミナス・シュライヴァー",
+    "de": "Terminus-Schänder",
+    "fr": "flétrisseur de l'apocalypse"
+  },
+  "10927": {
+    "en": "Terminus sprinter",
+    "ja": "ターミナス・スプリンター",
+    "de": "Terminus-Sprinter",
+    "fr": "sprinteur de l'apocalypse"
+  },
+  "10928": {
+    "en": "Terminus detonator",
+    "ja": "ターミナス・デトネーター",
+    "de": "Terminus-Detonator",
+    "fr": "détonateur de l'apocalypse"
+  },
+  "10929": {
+    "en": "Terminus beholder",
+    "ja": "ターミナス・ビホルダー",
+    "de": "Terminus-Betrachter",
+    "fr": "tyrannœil de l'apocalypse"
+  },
+  "10930": {
+    "en": "Terminus pursuer",
+    "ja": "ターミナス・パースアー",
+    "de": "Terminus-Verfolger",
+    "fr": "poursuivant de l'apocalypse"
+  },
+  "10931": {
+    "en": "Terminus howler",
+    "ja": "ターミナス・ハウラー",
+    "de": "Terminus-Heuler",
+    "fr": "hurleur de l'apocalypse"
+  },
+  "10932": {
+    "en": "Terminus idolizer",
+    "ja": "ターミナス・アイドライザー",
+    "de": "Terminus-Anbeter",
+    "fr": "adorateur de l'apocalypse"
+  },
+  "10933": {
+    "en": "Terminus lacerator",
+    "ja": "ターミナス・ラサレーター",
+    "de": "Terminus-Schlitzer",
+    "fr": "lacérateur de l'apocalypse"
+  },
+  "10934": {
+    "en": "meteorite",
+    "ja": "隕石",
+    "de": "Meteorit",
+    "fr": "météorite"
+  },
+  "10935": {
+    "en": "Terminus vanquisher",
+    "ja": "ターミナス・ヴァンキッシャー",
+    "de": "Terminus-Bezwinger",
+    "fr": "exterminateur de l'apocalypse"
+  },
+  "10936": {
+    "en": "spark sphere",
+    "ja": "スパークスフィア",
+    "de": "Funkensphäre",
+    "fr": "sphère d'étincelles"
+  },
+  "10937": {
+    "en": "Thavnairian refugee",
+    "ja": "サベネアの避難民",
+    "de": "Thavnair-Flüchtling",
+    "fr": "réfugié thavnairois"
+  },
+  "10938": {
+    "en": "Fourchenault",
+    "ja": "フルシュノ",
+    "de": "Fourchenault",
+    "fr": "Fourchenault"
+  },
+  "10939": {
+    "en": "Estinien",
+    "ja": "エスティニアン",
+    "de": "Estinien",
+    "fr": "Estinien"
+  },
+  "10940": {
+    "en": "G'raha Tia",
+    "ja": "グ・ラハ・ティア",
+    "de": "G'raha Tia",
+    "fr": "G'raha Tia"
+  },
+  "10941": {
+    "en": "Alisaie",
+    "ja": "アリゼー",
+    "de": "Alisaie",
+    "fr": "Alisaie"
+  },
+  "10942": {
+    "en": "Alphinaud",
+    "ja": "アルフィノ",
+    "de": "Alphinaud",
+    "fr": "Alphinaud"
+  },
+  "10943": {
+    "en": "1st Legion soldier",
+    "ja": "第I軍団の軍団兵",
+    "de": "Soldat[p] der I. Legion",
+    "fr": "soldat de la 1ère légion"
+  },
+  "10944": {
+    "en": "Jullus pyr Norbanus",
+    "ja": "ユルス・ピル・ノルバヌス",
+    "de": "Jullus pyr Norbanus",
+    "fr": "Jullus pyr Norbanus"
+  },
+  "10945": {
+    "en": "magitek reaper",
+    "ja": "魔導リーパー",
+    "de": "Magitek-Schnitter",
+    "fr": "faucheuse magitek"
+  },
+  "10946": {
+    "en": "runaway coblyn",
+    "ja": "ランナウェイ・コブラン",
+    "de": "ausgerissen[a] Kobalos",
+    "fr": "coblyn fugitif"
+  },
+  "10947": {
+    "en": "blazing anala",
+    "ja": "ブレイジング・アナラ",
+    "de": "lodernd[a] Anala",
+    "fr": "anala embrasé"
+  },
+  "10948": {
+    "en": "broken viking",
+    "ja": "ブロークン・バイキング",
+    "de": "kaputt[a] Marionette",
+    "fr": "viking défectueux"
+  },
+  "10949": {
+    "en": "hungry sotormurg",
+    "ja": "ハングリー・シュトラムルグ",
+    "de": "hungrig[a] Sotormurg",
+    "fr": "suturmurg affamé"
+  },
+  "10950": {
+    "en": "suspicious swordsman",
+    "ja": "黒装束の怪しい男",
+    "de": "verdächtig[a] Mann[p] in schwarzer Kleidung",
+    "fr": "homme en robe noire"
+  },
+  "10951": {
+    "en": "suspicious bowman",
+    "ja": "怪しい弓使い",
+    "de": "verdächtig[a] Bogenschütze",
+    "fr": "sous-fifre archer"
+  },
+  "10952": {
+    "en": "young vajralangula",
+    "ja": "ヤング・ヴァジュララングラ",
+    "de": "jung[a] Vajralangula",
+    "fr": "jeune vajralangula"
+  },
+  "10953": {
+    "en": "furious pisaca",
+    "ja": "フューリアス・ピシャーチャ",
+    "de": "wütend[a] Pisaca",
+    "fr": "pishacha furieux"
+  },
+  "10954": {
+    "en": "wild chamrosh",
+    "ja": "ワイルド・チャムロッシュ",
+    "de": "wild[a] Chamrosh",
+    "fr": "chamrosh sauvage"
+  },
+  "10955": {
+    "en": "unfortunate straggler",
+    "ja": "逃げ遅れた男",
+    "de": "Überlebend[a]",
+    "fr": "homme à la traîne"
+  },
+  "10956": {
+    "en": "guhasaya ambusher",
+    "ja": "アンブッシュ・グハーシャヤ",
+    "de": "hinterhältig[a] Guhasaya",
+    "fr": "guhasaya embusqué"
+  },
+  "10957": {
+    "en": "bhujamga ambusher",
+    "ja": "アンブッシュ・ブンジャンガ",
+    "de": "hinterhältig[a] Bhujamga",
+    "fr": "bhujanga embusqué"
+  },
+  "10958": {
+    "en": "kumbhira ambusher",
+    "ja": "アンブッシュ・クンビーラ",
+    "de": "hinterhältig[a] Kumbhila",
+    "fr": "kumbhira embusqué"
+  },
+  "10959": {
+    "en": "Terminus howler",
+    "ja": "ターミナス・ハウラー",
+    "de": "Terminus-Heuler",
+    "fr": "hurleur de l'apocalypse"
+  },
+  "10960": {
+    "en": "killer kumbhira",
+    "ja": "キラー・クンビーラ",
+    "de": "Killer-Kumbhila",
+    "fr": "kumbhira tueur"
+  },
+  "10961": {
+    "en": "old pisaca",
+    "ja": "オールド・ピシャーチャ",
+    "de": "uralt[a] Pisaca",
+    "fr": "vieux pishacha"
+  },
+  "10962": {
+    "en": "cunning bhujamga",
+    "ja": "カニング・ブンジャンガ",
+    "de": "gerissen[a] Bhujamga",
+    "fr": "bhujanga rusé"
+  },
+  "10963": {
+    "en": "searching slasher",
+    "ja": "サーチング・スラッシャー",
+    "de": "suchend[a] Schlitzer",
+    "fr": "satellite de recherche"
+  },
+  "10964": {
+    "en": "hungry canis lupinus",
+    "ja": "ハングリー・カニスルピナス",
+    "de": "hungrig[a] Canis Lupinus",
+    "fr": "canis lupinus affamé"
+  },
+  "10965": {
+    "en": "hungry tursus",
+    "ja": "ハングリー・トゥルスス",
+    "de": "hungrig[a] Tursus",
+    "fr": "tursus affamé"
+  },
+  "10966": {
+    "en": "ludicrously massive bear",
+    "ja": "ビッグ・エブラーナベアー",
+    "de": "monströs[a] Eblan-Bär",
+    "fr": "ours d'Éblana affamé"
+  },
+  "10967": {
+    "en": "booted death machine",
+    "ja": "ブーテッド・デスマシーン",
+    "de": "hochgefahren[a] Todesmaschine",
+    "fr": "mécacharogne en marche"
+  },
+  "10968": {
+    "en": "imperial deserter",
+    "ja": "インペリアル・ディザーター",
+    "de": "kaiserlich[a] Deserteur",
+    "fr": "déserteur sombre"
+  },
+  "10969": {
+    "en": "searching satellite",
+    "ja": "サーチング・サテライト",
+    "de": "Spürsatellit",
+    "fr": "satellite chercheur"
+  },
+  "10970": {
+    "en": "brutal almasty",
+    "ja": "ブルータル・アルマスティ",
+    "de": "brutal[a] Alma",
+    "fr": "almasty agressif"
+  },
+  "10971": {
+    "en": "patrol droid",
+    "ja": "パトロール・ドロイド",
+    "de": "Aufklärungsdroide",
+    "fr": "droïde patrouilleur"
+  },
+  "10972": {
+    "en": "patrol hunter",
+    "ja": "パトロール・ハンター",
+    "de": "Aufklärungsjäger",
+    "fr": "chasseur patrouilleur"
+  },
+  "10973": {
+    "en": "unified Ea",
+    "ja": "統合されたイーア",
+    "de": "verschmolzen[a] Ea",
+    "fr": "amalgame"
+  },
+  "10974": {
+    "en": "flux Ea",
+    "ja": "豹変したイーア",
+    "de": "feindlich[a] Ea",
+    "fr": "Éa à la dérive"
+  },
+  "10975": {
+    "en": "ceruleum slush zoblyn",
+    "ja": "スラッシュ・セルリウムゾブラン",
+    "de": "sumpfig[a] Erdseim-Zoblyn",
+    "fr": "zoblyn de céruleum flasque"
+  },
+  "10976": {
+    "en": "riotous rose",
+    "ja": "リオタス・ローズ",
+    "de": "wild[a] Rose",
+    "fr": "rose rétive"
+  },
+  "10977": {
+    "en": "searching roader",
+    "ja": "サーチング・マグナローダー",
+    "de": "suchend[a] Rotula",
+    "fr": "magna rouleur de surveillance"
+  },
+  "10978": {
+    "en": "searching avenger",
+    "ja": "サーチング・アヴェンジャー",
+    "de": "suchend[a] Rächer",
+    "fr": "vengeur de surveillance"
+  },
+  "10979": {
+    "en": "massive berkanan",
+    "ja": "マッシブ・ベルカナ",
+    "de": "massiv[a] Berkanan",
+    "fr": "berkanan massif"
+  },
+  "10980": {
+    "en": "Radiant guard",
+    "ja": "星戦士団の守衛",
+    "de": "Himmelsheer-Wache",
+    "fr": "soldat de l'Ost rayonnant"
+  },
+  "10981": {
+    "en": "serpent soldier",
+    "ja": "双蛇党の衛士",
+    "de": "Soldat[p] der Bruderschaft",
+    "fr": "soldat des Deux Vipères"
+  },
+  "10982": {
+    "en": "storm soldier",
+    "ja": "黒渦団の衛士",
+    "de": "Soldat[p] des Mahlstroms",
+    "fr": "soldat du Maelstrom"
+  },
+  "10983": {
+    "en": "burly tapper",
+    "ja": "武装した属州民",
+    "de": "bewaffnet[a] Erdseimzapfer",
+    "fr": "garde du repaire"
+  },
+  "10984": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10985": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10986": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "10987": {
+    "en": "wild saiga",
+    "ja": "ワイルド・サイガ",
+    "de": "wild[a] Saiga",
+    "fr": "saïga sauvage"
+  },
+  "10988": {
+    "en": "lingering grief",
+    "ja": "漂う思念体",
+    "de": "schweifend[a] Gedanke",
+    "fr": "angoisse oppressante"
+  },
+  "10989": {
+    "en": "fire aether",
+    "ja": "ファイアエーテル",
+    "de": "Flammenkugel",
+    "fr": "éther de feu"
+  },
+  "10990": {
+    "en": "riotous morbol",
+    "ja": "ライオット・モルボル",
+    "de": "wild[a] Morbol",
+    "fr": "morbol turbulent"
+  },
+  "10991": {
+    "en": "riotous medusa",
+    "ja": "ライオット・メデューサ",
+    "de": "wild[a] Medusa",
+    "fr": "médusa turbulente"
+  },
+  "10992": {
+    "en": "enraged Elpis minotaur",
+    "ja": "アングリー・エルピスタウロス",
+    "de": "wütend[a] Elpis-Minotaurus",
+    "fr": "elpistauros enragé"
+  },
+  "10993": {
+    "en": "troll ruffian",
+    "ja": "ラフィアン・トロル",
+    "de": "Trollschläger",
+    "fr": "troll voyou"
+  },
+  "10994": {
+    "en": "escaped oreias",
+    "ja": "脱走したオレイアス",
+    "de": "wild geworden[a] Oreias",
+    "fr": "oréade enragée"
+  },
+  "10995": {
+    "en": "nesting daidalion",
+    "ja": "ネストリング・ダイダリオン",
+    "de": "brütend[a] Daidalion",
+    "fr": "dédalion couveur"
+  },
+  "10996": {
+    "en": "dueling gryps",
+    "ja": "デュエリング・グリュプス",
+    "de": "duellierend[a] Gryps",
+    "fr": "grype fâché"
+  },
+  "10997": {
+    "en": "dueling yggdreant",
+    "ja": "デュエリング・イグドリア",
+    "de": "duellierend[a] Igdrya",
+    "fr": "yggdriade irritée"
+  },
+  "10998": {
+    "en": "stray akantha",
+    "ja": "ストレイ・アカンサ",
+    "de": "streunend[a] Akantha",
+    "fr": "acanthe indésirable"
+  },
+  "10999": {
+    "en": "stray lotis",
+    "ja": "ストレイ・ロティス",
+    "de": "streunend[a] Lotis",
+    "fr": "lotis surexcitée"
+  },
+  "11000": {
+    "en": "familiar aficionado",
+    "ja": "使い魔の愛好家",
+    "de": "Familiar-Liebhaber",
+    "fr": "amateur de familiers"
+  },
+  "11001": {
+    "en": "man-made hippocerf",
+    "ja": "クリエイテッド・ヒッポセルフ",
+    "de": "Hippocerf-Prototyp",
+    "fr": "hippocerf envoûté"
+  },
+  "11002": {
+    "en": "man-made melanion",
+    "ja": "クリエイテッド・メラニオン",
+    "de": "Melanion-Prototyp",
+    "fr": "mélanion envoûté"
+  },
+  "11003": {
+    "en": "eidos",
+    "ja": "エイドス",
+    "de": "Eidos",
+    "fr": "eidos"
+  },
+  "11004": {
+    "en": "enraged pegasos",
+    "ja": "アングリー・ペガソス",
+    "de": "wütend[a] Pegasos",
+    "fr": "pégasos irrité"
+  },
+  "11005": {
+    "en": "enraged Elpis minotaur",
+    "ja": "アングリー・エルピスタウロス",
+    "de": "wütend[a] Elpis-Minotaurus",
+    "fr": "elpistauros irrité"
+  },
+  "11006": {
+    "en": "overgrown bryon",
+    "ja": "オーバーグロウン・ブリュオン",
+    "de": "aufgequollen[a] Bryon",
+    "fr": "bryon encombrant"
+  },
+  "11007": {
+    "en": "enraged melanion",
+    "ja": "アングリー・メラニオン",
+    "de": "wütend[a] Melanion",
+    "fr": "mélanion enragé"
+  },
+  "11008": {
+    "en": "carrot supporter",
+    "ja": "キャロット・サポーター",
+    "de": "Karotten-Support",
+    "fr": "unité d'assistance carottière"
+  },
+  "11009": {
+    "en": "mankind checker",
+    "ja": "マンカインドチェッカー",
+    "de": "Personenkontrolle",
+    "fr": "vérifihumain"
+  },
+  "11010": {
+    "en": "mankind checker",
+    "ja": "マンカインドチェッカー",
+    "de": "Personenkontrolle",
+    "fr": "vérifihumain"
+  },
+  "11011": {
+    "en": "clockwork system",
+    "ja": "アラガンワーク・システム",
+    "de": "Uhrwerk-System",
+    "fr": "sphère mécanique"
+  },
+  "11012": {
+    "en": "clockwork alarum",
+    "ja": "アラガンワーク・アラーム",
+    "de": "Uhrwerk-Alarm",
+    "fr": "alarum mécanique"
+  },
+  "11013": {
+    "en": "bellicose broodmother",
+    "ja": "悲しみの母竜",
+    "de": "trauernd[a] Drachenmutter",
+    "fr": "mère dragon endeuillée"
+  },
+  "11014": {
+    "en": "horrific hatchling",
+    "ja": "変異した子竜",
+    "de": "mutiert[a] Jungdrache",
+    "fr": "petit dragon difforme"
+  },
+  "11015": {
+    "en": "father of armored dragons",
+    "ja": "硬竜の長",
+    "de": "Anführer[p] der Steindrachen",
+    "fr": "chef des Écailles d'airain"
+  },
+  "11016": {
+    "en": "expansive one",
+    "ja": "エクスパンシヴ・ワン",
+    "de": "riesig[a] Ea",
+    "fr": "Éa trop expansif"
+  },
+  "11017": {
+    "en": "Omicron aggressor",
+    "ja": "オミクロン・アグレッサー",
+    "de": "Omikron-Aggressor",
+    "fr": "Omicron agresseur"
+  },
+  "11018": {
+    "en": "charging gaja",
+    "ja": "チャージング・ガジャ",
+    "de": "tobend[a] Gaja",
+    "fr": "gaja enragé"
+  },
+  "11019": {
+    "en": "wandering pisaca",
+    "ja": "ワンダリング・ピシャーチャ",
+    "de": "streunend[a] Pisaca",
+    "fr": "pishacha errant"
+  },
+  "11020": {
+    "en": "wild bhujamga",
+    "ja": "ワイルド・ブンジャンガ",
+    "de": "wild[a] Bhujamga",
+    "fr": "bhujanga sauvage"
+  },
+  "11021": {
+    "en": "greater asvattha",
+    "ja": "グレーター・アシュヴァッタ",
+    "de": "groß[a] Asvattha",
+    "fr": "asvattha géant"
+  },
+  "11022": {
+    "en": "wandering starmite",
+    "ja": "ワンダリング・スターマイト",
+    "de": "streunend[a] Sternmilbe",
+    "fr": "starmite errant"
+  },
+  "11023": {
+    "en": "Lost Hope antling",
+    "ja": "ロストホープ・アントリング",
+    "de": "verloren[a] Treiberameise",
+    "fr": "fourmi de Désespérance"
+  },
+  "11024": {
+    "en": "drone crawler",
+    "ja": "ドローン・クロウラー",
+    "de": "Drohnen-Kriecher",
+    "fr": "drone chenille"
+  },
+  "11025": {
+    "en": "greater colibri",
+    "ja": "グレーター・コリブリ",
+    "de": "groß[a] Kolibri",
+    "fr": "colibri géant"
+  },
+  "11026": {
+    "en": "bloodsupped voidsent",
+    "ja": "血に飢えた妖異",
+    "de": "blutrünstig[a] Nichtsgesandt[a]",
+    "fr": "créature du néant assoiffée de sang"
+  },
+  "11027": {
+    "en": "bloodsupped voidsent",
+    "ja": "血に飢えた妖異",
+    "de": "blutrünstig[a] Nichtsgesandt[a]",
+    "fr": "créature du néant assoiffée de sang"
+  },
+  "11028": {
+    "en": "fell beast",
+    "ja": "終末の獣",
+    "de": "Endzeitbestie",
+    "fr": "bête de l'apocalypse"
+  },
+  "11029": {
+    "en": "fell beast",
+    "ja": "終末の獣",
+    "de": "Endzeitbestie",
+    "fr": "bête de l'apocalypse"
+  },
+  "11030": {
+    "en": "hunting coyote",
+    "ja": "ハンティング・コヨーテ",
+    "de": "jagend[a] Kojote",
+    "fr": "coyote chasseur"
+  },
+  "11031": {
+    "en": "hunting troll",
+    "ja": "ハンティング・トロル",
+    "de": "jagend[a] Troll",
+    "fr": "troll chasseur"
+  },
+  "11032": {
+    "en": "noble mythrilcap",
+    "ja": "ハイミスリルキャップ",
+    "de": "klein[a] Mithrilkappe",
+    "fr": "bolet de mithril noble"
+  },
+  "11033": {
+    "en": "fell beast",
+    "ja": "終末の獣",
+    "de": "Endzeitbestie",
+    "fr": "bête de l'apocalypse"
+  },
+  "11034": {
+    "en": "Bloodshore colibri",
+    "ja": "ブラッドショア・コリブリ",
+    "de": "Rotgischt-Kolibri",
+    "fr": "colibri des Rives sanglantes"
+  },
+  "11035": {
+    "en": "creeping chigoe",
+    "ja": "クリーピング・チゴー",
+    "de": "kriechend[a] Stechmücke",
+    "fr": "chigoe sournois"
+  },
+  "11036": {
+    "en": "fell beast",
+    "ja": "終末の獣",
+    "de": "Endzeitbestie",
+    "fr": "bête de l'apocalypse"
+  },
+  "11037": {
+    "en": "tainted sprite",
+    "ja": "淀んだスプライト",
+    "de": "unrein[a] Exergon",
+    "fr": "élémentaire corrompu"
+  },
+  "11038": {
+    "en": "tainted sprite",
+    "ja": "淀んだスプライト",
+    "de": "unrein[a] Exergon",
+    "fr": "élémentaire corrompu"
+  },
+  "11039": {
+    "en": "tainted sprite",
+    "ja": "淀んだスプライト",
+    "de": "unrein[a] Exergon",
+    "fr": "élémentaire corrompu"
+  },
+  "11040": {
+    "en": "fell beast",
+    "ja": "終末の獣",
+    "de": "Endzeitbestie",
+    "fr": "bête de l'apocalypse"
+  },
+  "11041": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "11042": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "11043": {
+    "en": "malformed dragonet",
+    "ja": "変わり果てた子竜",
+    "de": "verändert[a] Drachenjunge",
+    "fr": "dragonnet putréfié"
+  },
+  "11044": {
+    "en": "overflow level checker",
+    "ja": "オーバーフロー・レベルトリッカー",
+    "de": "übertaktet[a] Pegler",
+    "fr": "piégeur de niveau en dépassement de pile"
+  },
+  "11045": {
+    "en": "overflow Beta",
+    "ja": "オーバーフロー・ベータ",
+    "de": "übertaktet[a] Beta",
+    "fr": "Bêta en dépassement de pile"
+  },
+  "11046": {
+    "en": "overflow Omicron",
+    "ja": "オーバーフロー・オミクロン",
+    "de": "übertaktet[a] Omikron",
+    "fr": "Omicron en dépassement de pile"
+  },
+  "11047": {
+    "en": "wandering daphnia",
+    "ja": "ワンダリング・ダフニア",
+    "de": "umherschweifend[a] Daphnia",
+    "fr": "daphnie errante"
+  },
+  "11048": {
+    "en": "Loporrit",
+    "ja": "レポリット",
+    "de": "Loporrit",
+    "fr": "Loporrite"
+  },
+  "11049": {
+    "en": "Terminus snatcher",
+    "ja": "ターミナス・スナッチャー",
+    "de": "Terminus-Häscher",
+    "fr": "pillard de l'apocalypse"
+  },
+  "11050": {
+    "en": "Terminus stalker",
+    "ja": "ターミナス・ストーカー",
+    "de": "Terminus-Schleicher",
+    "fr": "traqueur de l'apocalypse"
+  },
+  "11051": {
+    "en": "Terminus pursuer",
+    "ja": "ターミナス・パースアー",
+    "de": "Terminus-Verfolger",
+    "fr": "poursuivant de l'apocalypse"
+  },
+  "11052": {
+    "en": "Terminus wrecker",
+    "ja": "ターミナス・レッカー",
+    "de": "Terminus-Verwüster",
+    "fr": "destructeur de l'apocalypse"
+  },
+  "11053": {
+    "en": "Terminus bellwether",
+    "ja": "ターミナス・ベルウェザー",
+    "de": "Läuter[p] der Totenglocke",
+    "fr": "sonneur de glas de l'apocalypse"
+  },
+  "11054": {
+    "en": "Terminus shadower",
+    "ja": "ターミナス・シャドワー",
+    "de": "Terminus-Schattenschleicher",
+    "fr": "ombrageur de l'apocalypse"
+  },
+  "11055": {
+    "en": "burning anala",
+    "ja": "バーニング・アニラ",
+    "de": "brennend[a] Anala",
+    "fr": "anala ardent"
+  },
+  "11056": {
+    "en": "swirling apa",
+    "ja": "スワリング・アーパス",
+    "de": "wirbelnd[a] Apa",
+    "fr": "apa tourbillonnante"
+  },
+  "11057": {
+    "en": "swirling sprite",
+    "ja": "スワリング・スプライト",
+    "de": "wirbelnd[a] Exergon",
+    "fr": "élémentaire tourbillonnant"
+  },
+  "11058": {
+    "en": "執刀のギルディヴァン",
+    "ja": "執刀のギルディヴァン",
+    "de": "執刀のギルディヴァン",
+    "fr": "執刀のギルディヴァン"
+  },
+  "11059": {
+    "en": "悪疾のマホード",
+    "ja": "悪疾のマホード",
+    "de": "悪疾のマホード",
+    "fr": "悪疾のマホード"
+  },
+  "11060": {
+    "en": "壊裂のアンセル",
+    "ja": "壊裂のアンセル",
+    "de": "壊裂のアンセル",
+    "fr": "壊裂のアンセル"
+  },
+  "11061": {
+    "en": "優等のララー・ジンジャル",
+    "ja": "優等のララー・ジンジャル",
+    "de": "優等のララー・ジンジャル",
+    "fr": "優等のララー・ジンジャル"
+  },
+  "11062": {
+    "en": "悪疾のマホード",
+    "ja": "悪疾のマホード",
+    "de": "悪疾のマホード",
+    "fr": "悪疾のマホード"
+  },
+  "11063": {
+    "en": "壊裂のアンセル",
+    "ja": "壊裂のアンセル",
+    "de": "壊裂のアンセル",
+    "fr": "壊裂のアンセル"
+  },
+  "11064": {
+    "en": "怜悧のロイファ",
+    "ja": "怜悧のロイファ",
+    "de": "怜悧のロイファ",
+    "fr": "怜悧のロイファ"
+  },
+  "11065": {
+    "en": "気功弾",
+    "ja": "気功弾",
+    "de": "気功弾",
+    "fr": "気功弾"
+  },
+  "11066": {
+    "en": "強化された賢具",
+    "ja": "強化された賢具",
+    "de": "強化された賢具",
+    "fr": "強化された賢具"
+  },
+  "11067": {
+    "en": "1st Legion hoplomachus",
+    "ja": "Iレギオン・ホプロマクス",
+    "de": "Hoplomachus[p] der I. Legion",
+    "fr": "hoplomachus de la 1ère légion"
+  },
+  "11068": {
+    "en": "1st Legion eques",
+    "ja": "Iレギオン・エクエス",
+    "de": "Eques[p] der I. Legion",
+    "fr": "eques de la 4e légion"
+  },
+  "11069": {
+    "en": "1st Legion medicus",
+    "ja": "Iレギオン・メディクス",
+    "de": "Medicus[p] der I. Legion",
+    "fr": "medicus de la 4e légion"
+  },
+  "11070": {
+    "en": "corrupted imperial",
+    "ja": "異形と化した帝国兵",
+    "de": "grotesk[a] Legionär",
+    "fr": "soldat impérial difforme"
+  },
+  "11071": {
+    "en": "Growingway",
+    "ja": "グローウィングウェイ",
+    "de": "Growingway",
+    "fr": "Growingway"
+  },
+  "11072": {
+    "en": "Meletos the Inscrutable",
+    "ja": "深遠のメレトス",
+    "de": "Meletos",
+    "fr": "Mélétos"
+  },
+  "11073": {
+    "en": "aigokeros",
+    "ja": "エゴーケロス",
+    "de": "Aigokeros",
+    "fr": "aigokeros"
+  },
+  "11074": {
+    "en": "man-made ogre",
+    "ja": "クリエイテッド・イーオー",
+    "de": "Io-Prototyp",
+    "fr": "copie de l'io"
+  },
+  "11075": {
+    "en": "known unknown",
+    "ja": "真正体不明",
+    "de": "bekannt[a] Unbekannt[a]",
+    "fr": "étrange prototype"
+  },
+  "11076": {
+    "en": "primordial kyklops",
+    "ja": "オリジナル・クリュプス",
+    "de": "Ur-Kyklops",
+    "fr": "prototype de Kyklops"
+  },
+  "11077": {
+    "en": "Yafaemi spider",
+    "ja": "ヤフェーム・スパイダー",
+    "de": "Yafaem-Spinne",
+    "fr": "araignée de Yafaem"
+  },
+  "11078": {
+    "en": "agavoides ambusher",
+    "ja": "アンブッシュ・アガヴォイデス",
+    "de": "Agavoides-Räuber",
+    "fr": "agavoïde traître"
+  },
+  "11079": {
+    "en": "bio pellet",
+    "ja": "バイオペレット",
+    "de": "Bio-Pellet",
+    "fr": "agrégat biologique"
+  },
+  "11080": {
+    "en": "escaped luncheon toad",
+    "ja": "エスケープド・マウンテンチキン",
+    "de": "entlaufen[a] Bergkröte",
+    "fr": "poulet des montagnes évadé"
+  },
+  "11081": {
+    "en": "nivalis",
+    "ja": "ニウァーリス",
+    "de": "Nivalis",
+    "fr": "Nivalis"
+  },
+  "11082": {
+    "en": "frothing snapweed",
+    "ja": "フロシング・スナップウィード",
+    "de": "schäumend[a] Schnappkraut",
+    "fr": "balsamine écumeuse"
+  },
+  "11083": {
+    "en": "wooly merino",
+    "ja": "ふわふわメリノ",
+    "de": "flauschig[a] Merino",
+    "fr": "mérinos soyeux"
+  },
+  "11084": {
+    "en": "Pasturponics shepherd",
+    "ja": "種畜研究所の獣牧士",
+    "de": "Züchter[p] von Passemerrants Zoaponik",
+    "fr": "berger du laboratoire zootechnique"
+  },
+  "11085": {
+    "en": "dhruva cluster",
+    "ja": "クラスター・ドルヴァ",
+    "de": "Kristall-Dhruva",
+    "fr": "dhruva de cristal"
+  },
+  "11086": {
+    "en": "moisture soma",
+    "ja": "モイスチャー・ソーマ",
+    "de": "feucht[a] Soma",
+    "fr": "soma givré"
+  },
+  "11087": {
+    "en": "well-moisturized researcher",
+    "ja": "美肌の研究員",
+    "de": "hübsch[a] Forscherin",
+    "fr": "chercheuse à la peau de pêche"
+  },
+  "11088": {
+    "en": "aetheric gelatin",
+    "ja": "エーテリック・ゼラチン",
+    "de": "Äthergelatine",
+    "fr": "gélatine éthérée"
+  },
+  "11089": {
+    "en": "aetheric doblyn",
+    "ja": "エーテリック・ドブラン",
+    "de": "Äther-Dobalos",
+    "fr": "doblyn éthéré"
+  },
+  "11090": {
+    "en": "Fraelissa",
+    "ja": "フラエリッサ",
+    "de": "Fraelissa",
+    "fr": "Fraelissa"
+  },
+  "11091": {
+    "en": "storm anila",
+    "ja": "ストーム・アニラ",
+    "de": "Sturm-Anila",
+    "fr": "anila des tempêtes"
+  },
+  "11092": {
+    "en": "vexed researcher",
+    "ja": "困り果てた研究員",
+    "de": "beunruhigt[a] Forscher",
+    "fr": "chercheur bien embêté"
+  },
+  "11093": {
+    "en": "territorial snapweed",
+    "ja": "テリトリアル・スナップウィード",
+    "de": "hinterhältig[a] Springkraut",
+    "fr": "balsamine territoriale"
+  },
+  "11094": {
+    "en": "territorial genomos",
+    "ja": "テリトリアル・ゲノーモス",
+    "de": "hinterhältig[a] Genomos",
+    "fr": "génomos territorial"
+  },
+  "11095": {
+    "en": "territorial caribou",
+    "ja": "テリトリアル・カリブー",
+    "de": "hinterhältig[a] Karibu",
+    "fr": "caribou territorial"
+  },
+  "11096": {
+    "en": "territorial screamer",
+    "ja": "テリトリアル・スクリーマー",
+    "de": "hinterhältig[a] Schriller",
+    "fr": "piailleur territorial"
+  },
+  "11097": {
+    "en": "territorial limascabra",
+    "ja": "テリトリアル・リマスカブラ",
+    "de": "hinterhältig[a] Lima Scabra",
+    "fr": "lima scabra territorial"
+  },
+  "11098": {
+    "en": "territorial troll",
+    "ja": "テリトリアル・トロル",
+    "de": "hinterhältig[a] Troll",
+    "fr": "troll territorial"
+  },
+  "11099": {
+    "en": "territorial cryoconite",
+    "ja": "テリトリアル・クリオコナイト",
+    "de": "hinterhältig[a] Kryokonit",
+    "fr": "cryoconite territorial"
+  },
+  "11100": {
+    "en": "territorial luncheon toad",
+    "ja": "テリトリアル・マウンテンチキン",
+    "de": "hinterhältig[a] Bergkröte",
+    "fr": "poulet des montagnes territorial"
+  },
+  "11101": {
+    "en": "territorial pephredo",
+    "ja": "テリトリアル・ペプレド",
+    "de": "hinterhältig[a] Pephredo",
+    "fr": "pemphrédo territorial"
+  },
+  "11102": {
+    "en": "territorial berkanan",
+    "ja": "テリトリアル・ベルカナ",
+    "de": "hinterhältig[a] Berkanan",
+    "fr": "berkanan territorial"
+  },
+  "11103": {
+    "en": "territorial gaja",
+    "ja": "テリトリアル・ガジャ",
+    "de": "hinterhältig[a] Gaja",
+    "fr": "gaja territorial"
+  },
+  "11104": {
+    "en": "territorial chamrosh",
+    "ja": "テリトリアル・チャムロッシュ",
+    "de": "hinterhältig[a] Chamrosh",
+    "fr": "chamrosh territorial"
+  },
+  "11105": {
+    "en": "territorial ufiti",
+    "ja": "テリトリアル・バブーン",
+    "de": "hinterhältig[a] Gorilla",
+    "fr": "babouin territorial"
+  },
+  "11106": {
+    "en": "territorial hanuman langur",
+    "ja": "テリトリアル・ハヌマンラングール",
+    "de": "hinterhältig[a] Hanuman-Langur",
+    "fr": "hanuman langur territorial"
+  },
+  "11107": {
+    "en": "territorial kacchapa",
+    "ja": "テリトリアル・カチャパ",
+    "de": "hinterhältig[a] Kacchapa",
+    "fr": "kacchapa territorial"
+  },
+  "11108": {
+    "en": "territorial vajralangula",
+    "ja": "テリトリアル・ヴァジュララングラ",
+    "de": "hinterhältig[a] Vajralangula",
+    "fr": "vajralangula territorial"
+  },
+  "11109": {
+    "en": "territorial hamsa",
+    "ja": "テリトリアル・ハンサ",
+    "de": "hinterhältig[a] Hamsa",
+    "fr": "hamsa territorial"
+  },
+  "11110": {
+    "en": "territorial pisaca",
+    "ja": "テリトリアル・ピシャーチャ",
+    "de": "hinterhältig[a] Pisaca",
+    "fr": "pishacha territorial"
+  },
+  "11111": {
+    "en": "territorial bhujamga",
+    "ja": "テリトリアル・ブンジャンガ",
+    "de": "hinterhältig[a] Bhujamga",
+    "fr": "bhujanga territorial"
+  },
+  "11112": {
+    "en": "territorial asvattha",
+    "ja": "テリトリアル・アシュヴァッタ",
+    "de": "hinterhältig[a] Asvattha",
+    "fr": "asvattha territorial"
+  },
+  "11113": {
+    "en": "territorial rime tursus",
+    "ja": "テリトリアル・イルサバードトゥルスス",
+    "de": "hinterhältig[a] Ilsabard-Tursus",
+    "fr": "tursus d'Ilsabard territorial"
+  },
+  "11114": {
+    "en": "territorial Eblan icetrap",
+    "ja": "テリトリアル・エブラーナアイストラップ",
+    "de": "hinterhältig[a] Eblan-Eisfalle",
+    "fr": "piège-glace d'Éblana territorial"
+  },
+  "11115": {
+    "en": "territorial Eblan bear",
+    "ja": "テリトリアル・エブラーナベアー",
+    "de": "hinterhältig[a] Eblan-Bär",
+    "fr": "ours d'Éblana territorial"
+  },
+  "11116": {
+    "en": "territorial canis lupinus",
+    "ja": "テリトリアル・カニスルピナス",
+    "de": "hinterhältig[a] Canis Lupinus",
+    "fr": "canis lupinus territorial"
+  },
+  "11117": {
+    "en": "territorial ovibos",
+    "ja": "テリトリアル・オウヴィボス",
+    "de": "hinterhältig[a] Ovibos",
+    "fr": "ovibos territorial"
+  },
+  "11118": {
+    "en": "territorial jotunn",
+    "ja": "テリトリアル・ヨトゥン",
+    "de": "hinterhältig[a] Jötunn",
+    "fr": "jötunn territorial"
+  },
+  "11119": {
+    "en": "territorial ceruleum zoblyn",
+    "ja": "テリトリアル・セルリウムゾブラン",
+    "de": "hinterhältig[a] Erdseim-Zoblyn",
+    "fr": "zoblyn de céruleum territorial"
+  },
+  "11120": {
+    "en": "territorial almasty",
+    "ja": "テリトリアル・アルマスティ",
+    "de": "hinterhältig[a] Alma",
+    "fr": "almasty territorial"
+  },
+  "11121": {
+    "en": "territorial morozko",
+    "ja": "テリトリアル・モロズコ",
+    "de": "hinterhältig[a] Morozko",
+    "fr": "morozko territorial"
+  },
+  "11122": {
+    "en": "territorial rose",
+    "ja": "テリトリアル・ローズ",
+    "de": "hinterhältig[a] Rose",
+    "fr": "rosier territorial"
+  },
+  "11123": {
+    "en": "territorial trimmer",
+    "ja": "テリトリアル・トリマー",
+    "de": "hinterhältig[a] Schlitzer",
+    "fr": "sécateur territorial"
+  },
+  "11124": {
+    "en": "territorial dynamite",
+    "ja": "テリトリアル・ダイナマイト",
+    "de": "hinterhältig[a] Dynamit",
+    "fr": "dynamite territoriale"
+  },
+  "11125": {
+    "en": "territorial weeper",
+    "ja": "テリトリアル・ウィーパー",
+    "de": "hinterhältig[a] Schluchzer",
+    "fr": "lamenteur territorial"
+  },
+  "11126": {
+    "en": "territorial osculator",
+    "ja": "テリトリアル・オスキュレーター",
+    "de": "hinterhältig[a] Küsser",
+    "fr": "poutouneur territorial"
+  },
+  "11127": {
+    "en": "territorial regolith",
+    "ja": "テリトリアル・レゴリス",
+    "de": "hinterhältig[a] Regolith",
+    "fr": "régolithe territorial"
+  },
+  "11128": {
+    "en": "territorial thinker",
+    "ja": "テリトリアル・シンカー",
+    "de": "hinterhältig[a] Denker",
+    "fr": "penseur territorial"
+  },
+  "11129": {
+    "en": "territorial wanderer",
+    "ja": "テリトリアル・ワンダラー",
+    "de": "hinterhältig[a] Streuner",
+    "fr": "vagabond territorial"
+  },
+  "11130": {
+    "en": "territorial sweeper",
+    "ja": "テリトリアル・スウィーパー",
+    "de": "hinterhältig[a] Feger",
+    "fr": "ratisseur territorial"
+  },
+  "11131": {
+    "en": "territorial daphnia",
+    "ja": "テリトリアル・ダフニア",
+    "de": "hinterhältig[a] Daphnia",
+    "fr": "daphnie territoriale"
+  },
+  "11132": {
+    "en": "territorial lunatender",
+    "ja": "テリトリアル・ルナテンダー",
+    "de": "hinterhältig[a] Lunatender",
+    "fr": "pampa sélénien territorial"
+  },
+  "11133": {
+    "en": "territorial brobinyak",
+    "ja": "テリトリアル・ブロビニャク",
+    "de": "hinterhältig[a] Brobinyak",
+    "fr": "brobinyak territorial"
+  },
+  "11134": {
+    "en": "territorial luminion",
+    "ja": "テリトリアル・ルミニオン",
+    "de": "hinterhältig[a] Luminion",
+    "fr": "luminion territorial"
+  },
+  "11135": {
+    "en": "territorial shelled dragon",
+    "ja": "テリトリアル・カラペスドラゴン",
+    "de": "hinterhältig[a] Panzerdrache",
+    "fr": "dragon à carapace territorial"
+  },
+  "11136": {
+    "en": "territorial luminion",
+    "ja": "テリトリアル・ルミニオン",
+    "de": "hinterhältig[a] Luminion",
+    "fr": "luminion territorial"
+  },
+  "11137": {
+    "en": "territorial dragon",
+    "ja": "テリトリアル・ドラゴン",
+    "de": "hinterhältig[a] Drache",
+    "fr": "dragon territorial"
+  },
+  "11138": {
+    "en": "territorial abyss",
+    "ja": "テリトリアル・アビス",
+    "de": "hinterhältig[a] Abyssus",
+    "fr": "arabesque territoriale"
+  },
+  "11139": {
+    "en": "territorial luminion",
+    "ja": "テリトリアル・ルミニオン",
+    "de": "hinterhältig[a] Luminion",
+    "fr": "luminion territorial"
+  },
+  "11140": {
+    "en": "territorial stellar amphiptere",
+    "ja": "テリトリアル・ステラアンフィプテレ",
+    "de": "hinterhältig[a] Stellar-Libelle",
+    "fr": "amphiptère stellaire territorial"
+  },
+  "11141": {
+    "en": "territorial stellar dragonfly",
+    "ja": "テリトリアル・ステラドラゴンフライ",
+    "de": "hinterhältig[a] Stellar-Drachycera",
+    "fr": "draguêpe stellaire territorial"
+  },
+  "11142": {
+    "en": "territorial other",
+    "ja": "テリトリアル・アザーワン",
+    "de": "hinterhältig[a] Ander[a]",
+    "fr": "autre territorial"
+  },
+  "11143": {
+    "en": "N-6205",
+    "ja": "N-6205",
+    "de": "N-6205",
+    "fr": "N-6205"
+  },
+  "11144": {
+    "en": "wrathful gaja",
+    "ja": "ラースフル・ガジャ",
+    "de": "grimm[a] Gaja",
+    "fr": "gaja colérique"
+  },
+  "11145": {
+    "en": "sharptooth valras",
+    "ja": "シャープトゥース・ヴァルラス",
+    "de": "Spitzzahn-Vaalaras",
+    "fr": "vaalaras dents-de-sabre"
+  },
+  "11146": {
+    "en": "charged yumemi",
+    "ja": "シビレ・ユメミ",
+    "de": "Zitter-Yumemi",
+    "fr": "yumemi du givre"
+  },
+  "11147": {
+    "en": "glaciated yumemi",
+    "ja": "フブキ・ユメミ",
+    "de": "Fröstel-Yumemi",
+    "fr": "yumemi des neiges"
+  },
+  "11148": {
+    "en": "Vanaspati ink claw",
+    "ja": "ヴァナスパティ・インククロウ",
+    "de": "Vanaspati-Tintenstachel",
+    "fr": "scorpion pinces d'encre de Vanaspati"
+  },
+  "11149": {
+    "en": "Kanabhuti",
+    "ja": "カーナブーティ",
+    "de": "Kanabhuti",
+    "fr": "Kanabhuti"
+  },
+  "11150": {
+    "en": "wee nanka",
+    "ja": "小さなナンカ",
+    "de": "Nano-Nanka",
+    "fr": "bébé nanka"
+  },
+  "11151": {
+    "en": "fisherman's son",
+    "ja": "漁師の息子",
+    "de": "fleißig[a] Fischerssohn",
+    "fr": "fils de pêcheur"
+  },
+  "11152": {
+    "en": "wandering sotormurg",
+    "ja": "ワンダリング・シュトラムルグ",
+    "de": "streunend[a] Sotormurg",
+    "fr": "suturmurg errant"
+  },
+  "11153": {
+    "en": "poisonous bhujamga",
+    "ja": "ポイゾナス・ブンジャンガ",
+    "de": "toxisch[a] Bhujamga",
+    "fr": "bhujanga venimeux"
+  },
+  "11154": {
+    "en": "killer guhasaya",
+    "ja": "キラー・グハーシャヤ",
+    "de": "Killer-Guhasaya",
+    "fr": "guhasaya tueur"
+  },
+  "11155": {
+    "en": "Vanaspati eft",
+    "ja": "ヴァナスパティ・エフト",
+    "de": "Vanaspati-Molch",
+    "fr": "triton de Vanaspati"
+  },
+  "11156": {
+    "en": "illumoth",
+    "ja": "イルシモス",
+    "de": "Illumotte",
+    "fr": "illumite"
+  },
+  "11157": {
+    "en": "Valin",
+    "ja": "ヴァーリン",
+    "de": "Valin",
+    "fr": "Valyn"
+  },
+  "11158": {
+    "en": "salivating hanuman langur",
+    "ja": "サリベイディング・ラングール",
+    "de": "geifernd[a] Langur",
+    "fr": "langur baveux"
+  },
+  "11159": {
+    "en": "herb-picking maiden",
+    "ja": "薬草摘みの少女",
+    "de": "Kräutersammlerin",
+    "fr": "cueilleuse d'herbes médicinales"
+  },
+  "11160": {
+    "en": "overflow Beta",
+    "ja": "オーバーフロー・ベータ",
+    "de": "übertaktet[a] Beta",
+    "fr": "Bêta en dépassement de pile"
+  },
+  "11161": {
+    "en": "overflow Omicron",
+    "ja": "オーバーフロー・オミクロン",
+    "de": "übertaktet[a] Omikron",
+    "fr": "Omicron en dépassement de pile"
+  },
+  "11162": {
+    "en": "wounded imperial",
+    "ja": "負傷した帝国兵",
+    "de": "verletzt[a] Garlear",
+    "fr": "soldat impérial blessé"
+  },
+  "11163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11165": {
+    "en": "python",
+    "ja": "ピュトン",
+    "de": "Python",
+    "fr": "Python"
+  },
+  "11166": {
+    "en": "Profane Fafnir follower",
+    "ja": "ファーヴニル・フォロワー",
+    "de": "Fafnirs Gefolge[p]",
+    "fr": "suppôt de Fafner"
+  },
+  "11167": {
+    "en": "manned death machine",
+    "ja": "デスマンマシーン",
+    "de": "Todesmaschine",
+    "fr": "machine massacrante"
+  },
+  "11168": {
+    "en": "Ebrelnaux",
+    "ja": "エブレルノ",
+    "de": "Ebrelnaux",
+    "fr": "Ebrelnaux"
+  },
+  "11169": {
+    "en": "Keltlona",
+    "ja": "ケルトロナ少甲士",
+    "de": "Keltlona",
+    "fr": "Keltlona"
+  },
+  "11170": {
+    "en": "searching slasher",
+    "ja": "サーチング・スラッシャー",
+    "de": "suchend[a] Schlitzer",
+    "fr": "satellite de recherche"
+  },
+  "11171": {
+    "en": "searching bit",
+    "ja": "サーチング・ビット",
+    "de": "suchend[a] Drohne",
+    "fr": "drone de recherche"
+  },
+  "11172": {
+    "en": "automated Gabriel",
+    "ja": "オートマチック・ガブリエル",
+    "de": "Auto-Gabriel",
+    "fr": "Gabriel automatique"
+  },
+  "11173": {
+    "en": "Metatron",
+    "ja": "メタトロン",
+    "de": "Metatron",
+    "fr": "Metatron"
+  },
+  "11174": {
+    "en": "Warringway",
+    "ja": "ウォリングウェイ",
+    "de": "Warringway",
+    "fr": "Warringway"
+  },
+  "11175": {
+    "en": "Fallingway",
+    "ja": "フォリングウェイ",
+    "de": "Fallingway",
+    "fr": "Fallingway"
+  },
+  "11176": {
+    "en": "drifting dynamite",
+    "ja": "ドリフティング・ダイナマイト",
+    "de": "tobend[a] Dynamit",
+    "fr": "dynamite à la dérive"
+  },
+  "11177": {
+    "en": "boosted cleaner",
+    "ja": "ブーステッド・クリーナー",
+    "de": "randalierend[a] Reiniger",
+    "fr": "unité de nettoyage déréglée"
+  },
+  "11178": {
+    "en": "supercarrot",
+    "ja": "スーパーキャロット",
+    "de": "Superkarotte",
+    "fr": "Super-Carotte"
+  },
+  "11179": {
+    "en": "brave boy",
+    "ja": "勇敢そうな少年",
+    "de": "tapfer[a] Junge",
+    "fr": "jeune garçon courageux"
+  },
+  "11180": {
+    "en": "fearful girl",
+    "ja": "怯えた様子の少女",
+    "de": "verängstigt[a] Mädchen",
+    "fr": "jeune fille apeurée"
+  },
+  "11181": {
+    "en": "fearful boy",
+    "ja": "怯えた様子の少年",
+    "de": "verängstigt[a] Junge",
+    "fr": "jeune garçon apeuré"
+  },
+  "11182": {
+    "en": "Palaka sentry",
+    "ja": "パーラカの里の見張り",
+    "de": "Palaka-Dorfwächter",
+    "fr": "guetteuse de l'Écoute des Palaka"
+  },
+  "11183": {
+    "en": "Palaka sentry",
+    "ja": "パーラカの里の見張り",
+    "de": "Palaka-Dorfwächterin",
+    "fr": "guetteur de l'Écoute des Palaka"
+  },
+  "11184": {
+    "en": "panic-stricken researcher",
+    "ja": "慌てた様子の研究員",
+    "de": "verängstigt[a] Forscher",
+    "fr": "chercheur terrorisé"
+  },
+  "11185": {
+    "en": "ingenuous botanist",
+    "ja": "おっとりした研究員",
+    "de": "unbekümmert[a] Forscherin",
+    "fr": "chercheur insouciant"
+  },
+  "11186": {
+    "en": "unamused botanist",
+    "ja": "生真面目な研究員",
+    "de": "streng[a] Forscherin",
+    "fr": "chercheuse stricte"
+  },
+  "11187": {
+    "en": "astonished aetherologist",
+    "ja": "エーテル学の研究員",
+    "de": "Ätherologe",
+    "fr": "éthérologue"
+  },
+  "11188": {
+    "en": "merchant of Yedlihmad",
+    "ja": "イェドリマンの行商人",
+    "de": "Händler[p] aus Yedlihmad",
+    "fr": "marchand de Yedlihmad"
+  },
+  "11189": {
+    "en": "flustered fisherman",
+    "ja": "困り果てた漁師",
+    "de": "verzweifelt[a] Fischer",
+    "fr": "pêcheur dans l'embarras"
+  },
+  "11190": {
+    "en": "Zenos",
+    "ja": "ゼノスの声",
+    "de": "Zenos",
+    "fr": "voix de Zenos"
+  },
+  "11191": {
+    "en": "M'naago",
+    "ja": "メ・ナーゴ",
+    "de": "M'naago",
+    "fr": "M'naago"
+  },
+  "11192": {
+    "en": "Terminus weeper",
+    "ja": "ターミナス・ウィーパー",
+    "de": "Terminus-Schluchzer",
+    "fr": "lamenteur de l'apocalypse"
+  },
+  "11193": {
+    "en": "unconscious adventurer",
+    "ja": "昏倒した冒険者",
+    "de": "bewusstlos[a] Körper",
+    "fr": "corps inerte"
+  },
+  "11194": {
+    "en": "enhanced noulith",
+    "ja": "改良された賢具",
+    "de": "verbessert[a] Instrument",
+    "fr": "noulithe amélioré"
+  },
+  "11195": {
+    "en": "doomed stars",
+    "ja": "終の星",
+    "de": "Endzeitplanet",
+    "fr": "planète à l'agonie"
+  },
+  "11196": {
+    "en": "Scion's memory",
+    "ja": "賢人の想い",
+    "de": "Wille[p] eines Exegeten",
+    "fr": "esprit d'un Preux"
+  },
+  "11197": {
+    "en": "Archon's memory",
+    "ja": "賢人の想い",
+    "de": "Wunsch[p] einer Exegetin",
+    "fr": "esprit d'une Preuse"
+  },
+  "11198": {
+    "en": "knight's memory",
+    "ja": "騎士の想い",
+    "de": "Bestreben[p] eines Ritters",
+    "fr": "esprit d'un chevalier"
+  },
+  "11199": {
+    "en": "telotek armored weapon",
+    "ja": "テロフォロイ・アームドウェポン",
+    "de": "Panzerwaffe[p] der Telophoroi",
+    "fr": "arme blindée des Télophores"
+  },
+  "11200": {
+    "en": "Resistance fighter",
+    "ja": "ボズヤ・レジスタンス",
+    "de": "bozianisch[a] Widerstandskämpfer",
+    "fr": "résistant bozjien"
+  },
+  "11201": {
+    "en": "serpent lancer",
+    "ja": "双蛇党の槍術士",
+    "de": "Bruderschaftspikenier",
+    "fr": "lancier des Deux Vipères"
+  },
+  "11202": {
+    "en": "serpent archer",
+    "ja": "双蛇党の弓術士",
+    "de": "Bruderschaftsschütze",
+    "fr": "archer des Deux Vipères"
+  },
+  "11203": {
+    "en": "Skysteel machinist",
+    "ja": "イシュガルドの機工士",
+    "de": "Ishgarder Maschinist",
+    "fr": "machiniste d'Ishgard"
+  },
+  "11204": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrom-Marodeur",
+    "fr": "maraudeur du Maelstrom"
+  },
+  "11205": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrom-Marodeur",
+    "fr": "maraudeur du Maelstrom"
+  },
+  "11206": {
+    "en": "Alberic",
+    "ja": "アルベリク",
+    "de": "Alberic",
+    "fr": "Alberic"
+  },
+  "11207": {
+    "en": "Cocobuki",
+    "ja": "ココブキ",
+    "de": "Cocobuki",
+    "fr": "Cocobuki"
+  },
+  "11208": {
+    "en": "Cocobygo",
+    "ja": "ココビゴ",
+    "de": "Cocobygo",
+    "fr": "Cocobygo"
+  },
+  "11209": {
+    "en": "Cocobani",
+    "ja": "ココバニ",
+    "de": "Cocobani",
+    "fr": "Cocobani"
+  },
+  "11210": {
+    "en": "Chuchuto",
+    "ja": "チュチュト",
+    "de": "Chuchuto",
+    "fr": "Chuchuto"
+  },
+  "11211": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "11212": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "11213": {
+    "en": "tempered imperial",
+    "ja": "魅了された帝国兵",
+    "de": "besessen[a] Legionär",
+    "fr": "soldat impérial subjugué"
+  },
+  "11214": {
+    "en": "wooly yak",
+    "ja": "ウーリーヤク",
+    "de": "Woll-Yak",
+    "fr": "yak laineux"
+  },
+  "11215": {
+    "en": "bomb",
+    "ja": "爆弾",
+    "de": "Bombe",
+    "fr": "bombe"
+  },
+  "11216": {
+    "en": "excavation bomb",
+    "ja": "採掘爆弾",
+    "de": "Sprengladung",
+    "fr": "mine de forage"
+  },
+  "11217": {
+    "en": "levinsphere",
+    "ja": "雷球",
+    "de": "Elektrosphäre",
+    "fr": "orbe de foudre"
+  },
+  "11218": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11219": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11220": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11221": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11222": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11223": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11224": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11225": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11226": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11227": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11228": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11229": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11230": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11231": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11232": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11233": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11234": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11235": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11236": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11237": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11238": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11239": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11240": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11241": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11242": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11243": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11244": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11245": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11246": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11247": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11248": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11249": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11250": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11251": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11252": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11253": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11254": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11255": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11256": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11257": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11258": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11259": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11260": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11261": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11262": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11263": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11264": {
+    "en": "Alphinaud's avatar",
+    "ja": "アルフィノの幻体",
+    "de": "Alphinaud[p] an deiner Seite",
+    "fr": "avatar d'Alphinaud"
+  },
+  "11265": {
+    "en": "Alisaie's avatar",
+    "ja": "アリゼーの幻体",
+    "de": "Alisaie[p] an deiner Seite",
+    "fr": "avatar d'Alisaie"
+  },
+  "11266": {
+    "en": "Thancred's avatar",
+    "ja": "サンクレッドの幻体",
+    "de": "Thancred[p] an deiner Seite",
+    "fr": "avatar de Thancred"
+  },
+  "11267": {
+    "en": "Urianger's avatar",
+    "ja": "ウリエンジェの幻体",
+    "de": "Urianger[p] an deiner Seite",
+    "fr": "avatar d'Urianger"
+  },
+  "11268": {
+    "en": "Y'shtola's avatar",
+    "ja": "ヤ・シュトラの幻体",
+    "de": "Y'shtola[p] an deiner Seite",
+    "fr": "avatar de Y'shtola"
+  },
+  "11269": {
+    "en": "Ryne's avatar",
+    "ja": "リーンの幻体",
+    "de": "Ryne[p] an deiner Seite",
+    "fr": "avatar de Ryne"
+  },
+  "11270": {
+    "en": "Estinien's avatar",
+    "ja": "エスティニアンの幻体",
+    "de": "Estinien[p] an deiner Seite",
+    "fr": "avatar d'Estinien"
+  },
+  "11271": {
+    "en": "G'raha Tia's avatar",
+    "ja": "グ・ラハ・ティアの幻体",
+    "de": "G'raha Tia[p] an deiner Seite",
+    "fr": "avatar de G'raha Tia"
+  },
+  "11272": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11273": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11274": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11275": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11276": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11277": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11278": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11279": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11280": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11281": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11282": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11283": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11284": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11285": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11286": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11287": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11288": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11289": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11290": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11291": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11292": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11293": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11294": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11295": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11296": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11297": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11298": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11299": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11300": {
     "en": "",
     "ja": "",
     "de": "",

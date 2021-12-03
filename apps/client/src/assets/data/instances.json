@@ -855,6 +855,164 @@
     ]
   },
   "78": {
+    "en": "The Tower of Zot",
+    "ja": "異形楼閣 ゾットの塔",
+    "de": "Der Turm von Zot",
+    "fr": "La tour de Zott",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      27129,
+      27100
+    ]
+  },
+  "79": {
+    "en": "The Stigma Dreamscape",
+    "ja": "電脳夢想 スティグマ・フォー",
+    "de": "Stigma-Holometrie",
+    "fr": "Rêve électrique de Stigma-4",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      27032,
+      27000
+    ]
+  },
+  "80": {
+    "en": "The Tower of Babil",
+    "ja": "魔導神門 バブイルの塔",
+    "de": "Der Turm von Babil",
+    "fr": "La tour de Babil",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30536,
+      30500
+    ]
+  },
+  "81": {
+    "en": "The Aitiascope",
+    "ja": "星海潜航 アイティオン星晶鏡",
+    "de": "Das Aitiaskop",
+    "fr": "le Prisme de l'Aitia",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30127,
+      30100
+    ]
+  },
+  "82": {
+    "en": "Ktisis Hyperboreia",
+    "ja": "創造環境 ヒュペルボレア造物院",
+    "de": "Ktisis Hyperboreia",
+    "fr": "l'Hyperborée",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30316,
+      30300
+    ]
+  },
+  "83": {
+    "en": "Vanaspati",
+    "ja": "終末樹海 ヴァナスパティ",
+    "de": "Vanaspati",
+    "fr": "Vanaspati",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30212,
+      30200
+    ]
+  },
+  "84": {
+    "en": "The Dead Ends",
+    "ja": "最終幻想 レムナント",
+    "de": "Das Sternengrab",
+    "fr": "L'Issue aux Impasses",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30830,
+      30800
+    ]
+  },
+  "85": {
+    "en": "Smileton",
+    "ja": "楽園都市 スマイルトン",
+    "de": "Smileton",
+    "fr": "Risette-sur-lune",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30611,
+      30600
+    ]
+  },
+  "86": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "87": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "88": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "89": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "90": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "91": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "92": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "93": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "94": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "95": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "96": {
     "en": null,
     "ja": null,
     "de": null,
@@ -1353,6 +1511,167 @@
     ]
   },
   "5045": {
+    "en": "In from the Cold",
+    "ja": "寒夜のこと",
+    "de": "In fremder Haut",
+    "fr": "Le voleur de corps",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      30439,
+      30400
+    ]
+  },
+  "5046": {
+    "en": "Worthy of His Back",
+    "ja": "前代アゼムの手ほどき",
+    "de": " Es reimt sich auf Gebell",
+    "fr": "Le défi de l'ancienne Azem",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      32414,
+      32400
+    ]
+  },
+  "5047": {
+    "en": "Endwalker",
+    "ja": "暁月のフィナーレ",
+    "de": "Das Ende der Morgenröte",
+    "fr": "Arpenteur des finitudes",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31215,
+      31200
+    ]
+  },
+  "5048": {
+    "en": "To Calmer Seas",
+    "ja": "融和への船出",
+    "de": "Im Hafen des Friedens",
+    "fr": "Cap sur la paix",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31434,
+      31400
+    ]
+  },
+  "5049": {
+    "en": "As the Heavens Burn",
+    "ja": "拡がる終末",
+    "de": "Rote Himmel, roter Schnee",
+    "fr": "L'arène des neiges",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31530,
+      31500
+    ]
+  },
+  "5050": {
+    "en": "A Path Unveiled",
+    "ja": "開かれた道の先へ",
+    "de": "Offen für neue Wege",
+    "fr": "Des esprits et des hommes",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31334,
+      31300
+    ]
+  },
+  "5051": {
+    "en": "A Frosty Reception",
+    "ja": "霜雪を踏みしめて",
+    "de": "Ein frostiger Empfang",
+    "fr": "Un accueil glacial",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31663,
+      31600
+    ]
+  },
+  "5052": {
+    "en": "Sage's Focus",
+    "ja": "賢者の短杖",
+    "de": "Des Weisen wundersames Werkzeug",
+    "fr": "Les armes du sage",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31745,
+      31700
+    ]
+  },
+  "5053": {
+    "en": "The Harvest Begins",
+    "ja": "大鎌の意味",
+    "de": "Die Bedeutung der Sense",
+    "fr": "La vraie puissance de la faux",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31823,
+      31800
+    ]
+  },
+  "5054": {
+    "en": "Ever March Heavensward",
+    "ja": "蒼天を仰ぎ、歩み続ける",
+    "de": "Der Weg zur Erneuerung",
+    "fr": "La voie du renouveau",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31019,
+      31000
+    ]
+  },
+  "5055": {
+    "en": "The Killing Art",
+    "ja": "暗殺道",
+    "de": "Die Kunst des Tötens",
+    "fr": "La voie du néant",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31907,
+      31900
+    ]
+  },
+  "5056": {
+    "en": "Life Ephemeral, Path Eternal",
+    "ja": "人命は儚く、術のみちは永久に",
+    "de": "Das Leben ist kurz, die Kunst ist lang",
+    "fr": "Existences éphémères et savoir éternel",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      32039,
+      32000
+    ]
+  },
+  "5057": {
+    "en": "Laid to Rest",
+    "ja": "ドマの弔い",
+    "de": "Domanisches Begräbnis",
+    "fr": "Des adieux domiens",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      32320,
+      32300
+    ]
+  },
+  "5058": {
+    "en": "The Gift of Mercy",
+    "ja": "僕たちは還り、君を見送ろう",
+    "de": "Trauer und Hoffnung",
+    "fr": "Acceptation",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      31127,
+      31100
+    ]
+  },
+  "5059": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "5060": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2541,6 +2860,96 @@
     ]
   },
   "20077": {
+    "en": "The Mothercrystal",
+    "ja": "ハイデリン討滅戦",
+    "de": "Prophetie - Hydaelyn",
+    "fr": "Le Cristal-mère",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      29018,
+      29000
+    ]
+  },
+  "20078": {
+    "en": "The Minstrel's Ballad: Hydaelyn's Call",
+    "ja": "極ハイデリン討滅戦",
+    "de": "Eschatos - Hydaelyn",
+    "fr": "Le Cristal-mère (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      29018,
+      29000
+    ]
+  },
+  "20079": {
+    "en": "The Final Day",
+    "ja": "終焉の戦い",
+    "de": "Prophetie - Endsängerin",
+    "fr": "le Répons final",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      30039,
+      30000
+    ]
+  },
+  "20080": {
+    "en": "The Dark Inside",
+    "ja": "ゾディアーク討滅戦",
+    "de": "Prophetie - Zodiark",
+    "fr": "Le Cratère des Martyrs",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      28021,
+      28000
+    ]
+  },
+  "20081": {
+    "en": "The Minstrel's Ballad: Zodiark's Fall",
+    "ja": "極ゾディアーク討滅戦",
+    "de": "Eschatos - Zodiark",
+    "fr": "Le Cratère des Martyrs (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      28021,
+      28000
+    ]
+  },
+  "20082": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20083": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20084": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20085": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20086": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20087": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2577,6 +2986,17 @@
     ]
   },
   "25003": {
+    "en": "The Phantoms' Feast",
+    "ja": "道化饗宴 ホーンテッドフィースト",
+    "de": "Lustiges Bankett",
+    "fr": "Le banquet cauchemardesque",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      30739,
+      30700
+    ]
+  },
+  "25004": {
     "en": null,
     "ja": null,
     "de": null,
@@ -3756,6 +4176,69 @@
     "fr": null,
     "icon": null
   },
+  "30107": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30108": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30109": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30110": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30111": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30112": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30113": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30114": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30115": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
   "35000": {
     "en": null,
     "ja": null,
@@ -4187,6 +4670,69 @@
     "fr": null,
     "icon": null
   },
+  "40028": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40029": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40030": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40031": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40032": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40033": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40034": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40035": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "40036": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
   "50000": {
     "en": null,
     "ja": null,
@@ -4375,6 +4921,13 @@
     ]
   },
   "55009": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "55010": {
     "en": null,
     "ja": null,
     "de": null,
@@ -4854,17 +5407,20 @@
     "icon": null
   },
   "64003": {
-    "en": "the Whorleater (Unreal)",
-    "ja": "幻リヴァイアサン討滅戦",
-    "de": "Traumprüfung - Leviathan",
-    "fr": "le Briseur de marées (irréel)",
-    "icon": "/i/061000/061804.png",
-    "contentText": [
-      5207,
-      5200
-    ]
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "64004": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "64005": {
     "en": null,
     "ja": null,
     "de": null,

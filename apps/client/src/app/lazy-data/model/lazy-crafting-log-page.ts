@@ -121,6 +121,7 @@ export interface Item {
   Singular_ja:                string;
   StackSize:                  number;
   StartsWithVowel:            number;
+  SubStatCategory:            number;
 }
 
 export enum Icon {

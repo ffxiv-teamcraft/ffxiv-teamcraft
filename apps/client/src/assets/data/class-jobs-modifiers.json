@@ -2,7 +2,7 @@
   "1": {
     "ID": 1,
     "ModifierDexterity": 90,
-    "ModifierHitPoints": 110,
+    "ModifierHitPoints": 130,
     "ModifierIntelligence": 50,
     "ModifierManaPoints": 100,
     "ModifierMind": 95,
@@ -28,7 +28,7 @@
   "3": {
     "ID": 3,
     "ModifierDexterity": 90,
-    "ModifierHitPoints": 115,
+    "ModifierHitPoints": 135,
     "ModifierIntelligence": 30,
     "ModifierManaPoints": 100,
     "ModifierMind": 50,
@@ -236,7 +236,7 @@
   "19": {
     "ID": 19,
     "ModifierDexterity": 95,
-    "ModifierHitPoints": 120,
+    "ModifierHitPoints": 140,
     "ModifierIntelligence": 60,
     "ModifierManaPoints": 100,
     "ModifierMind": 100,
@@ -262,7 +262,7 @@
   "21": {
     "ID": 21,
     "ModifierDexterity": 95,
-    "ModifierHitPoints": 125,
+    "ModifierHitPoints": 145,
     "ModifierIntelligence": 40,
     "ModifierManaPoints": 100,
     "ModifierMind": 55,
@@ -405,7 +405,7 @@
   "32": {
     "ID": 32,
     "ModifierDexterity": 95,
-    "ModifierHitPoints": 120,
+    "ModifierHitPoints": 140,
     "ModifierIntelligence": 60,
     "ModifierManaPoints": 100,
     "ModifierMind": 40,
@@ -470,7 +470,7 @@
   "37": {
     "ID": 37,
     "ModifierDexterity": 95,
-    "ModifierHitPoints": 120,
+    "ModifierHitPoints": 140,
     "ModifierIntelligence": 60,
     "ModifierManaPoints": 100,
     "ModifierMind": 100,
@@ -495,28 +495,28 @@
   },
   "39": {
     "ID": 39,
-    "ModifierDexterity": 0,
-    "ModifierHitPoints": 0,
-    "ModifierIntelligence": 0,
-    "ModifierManaPoints": 0,
-    "ModifierMind": 0,
-    "ModifierPiety": 0,
-    "ModifierStrength": 0,
-    "ModifierVitality": 0,
-    "PrimaryStat": 0,
-    "Role": 0
+    "ModifierDexterity": 100,
+    "ModifierHitPoints": 115,
+    "ModifierIntelligence": 80,
+    "ModifierManaPoints": 100,
+    "ModifierMind": 40,
+    "ModifierPiety": 100,
+    "ModifierStrength": 115,
+    "ModifierVitality": 105,
+    "PrimaryStat": 1,
+    "Role": 2
   },
   "40": {
     "ID": 40,
-    "ModifierDexterity": 0,
-    "ModifierHitPoints": 0,
-    "ModifierIntelligence": 0,
-    "ModifierManaPoints": 0,
-    "ModifierMind": 0,
-    "ModifierPiety": 0,
-    "ModifierStrength": 0,
-    "ModifierVitality": 0,
-    "PrimaryStat": 0,
-    "Role": 0
+    "ModifierDexterity": 100,
+    "ModifierHitPoints": 105,
+    "ModifierIntelligence": 115,
+    "ModifierManaPoints": 100,
+    "ModifierMind": 115,
+    "ModifierPiety": 100,
+    "ModifierStrength": 60,
+    "ModifierVitality": 100,
+    "PrimaryStat": 5,
+    "Role": 4
   }
 }

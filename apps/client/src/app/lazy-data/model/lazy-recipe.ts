@@ -12,6 +12,8 @@ export interface LazyRecipe {
   progress?:               number;
   suggestedControl?:       number;
   suggestedCraftsmanship?: number;
+  progressDivider?:        number;
+  qualityDivider?:         number;
   controlReq?:             number;
   craftsmanshipReq?:       number;
   rlvl?:                   number;

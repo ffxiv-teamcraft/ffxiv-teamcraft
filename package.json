@@ -118,7 +118,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "0.9.5",
+    "@ffxiv-teamcraft/pcap-ffxiv": "0.9.6",
     "@xivapi/nodestone": "^0.2.0",
     "buffer-reader": "^0.1.0",
     "electron-is-dev": "^1.1.0",
@@ -154,7 +154,7 @@
     "@angular/platform-browser-dynamic": "^12.2.10",
     "@angular/platform-server": "^12.2.12",
     "@angular/router": "^12.2.10",
-    "@ffxiv-teamcraft/simulator": "^3.0.0-rc.3",
+    "@ffxiv-teamcraft/simulator": "^3.0.0",
     "@ffxiv-teamcraft/simulator-cn": "npm:@ffxiv-teamcraft/simulator@2.10.12",
     "@ffxiv-teamcraft/simulator-kr": "npm:@ffxiv-teamcraft/simulator@2.10.12",
     "@firebase/auth-types": "^0.10.1",

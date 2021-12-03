@@ -47,6 +47,8 @@ export class RecipesExtractor extends AbstractExtractor {
           progress: Math.floor(recipe.RecipeLevelTable.Difficulty * recipe.DifficultyFactor / 100),
           suggestedControl: recipe.RecipeLevelTable.SuggestedControl,
           suggestedCraftsmanship: recipe.RecipeLevelTable.SuggestedCraftsmanship,
+          progressDivider: recipe.RecipeLevelTable.ProgressDivider,
+          qualityDivider: recipe.RecipeLevelTable.QualityDivider,
           controlReq: recipe.RequiredControl,
           craftsmanshipReq: recipe.RequiredCraftsmanship,
           rlvl: recipe.RecipeLevelTable.ID,

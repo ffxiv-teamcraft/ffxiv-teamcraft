@@ -1643,10 +1643,10 @@
     dir-compare "^2.4.0"
     fs-extra "^9.0.1"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.9.5":
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.9.5.tgz#96293b798154f45ecf896d616169f50c47d6611a"
-  integrity sha512-CMgl3C+kRwSot26zcd2jeiEc5WJwpsHUB8+iKBwoSUiGBrDxOchCfzBbqt99fLIy1e/VpC2YQcNXr5vrw/FEVw==
+"@ffxiv-teamcraft/pcap-ffxiv@0.9.6":
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.9.6.tgz#e87be7f526e8f8799d53fbdf7ab14dc541b36bdd"
+  integrity sha512-f7SWcCTMSr666TSufnjZyAISnZcn0zRlyETe3j4AegDBxQx+3zFEO1kQQFI1L5NPHWaHev0OyH2nRmB9dZcQDw==
   dependencies:
     heap-js "^2.1.5"
 
@@ -1657,10 +1657,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^3.0.0-rc.3":
-  version "3.0.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.0.0-rc.3.tgz#66c562fe6082edaec154dddac6ff6d348ac41f63"
-  integrity sha512-0aGe/gXGmvU/Xk/qMLWQi3QVcOsyhg6Dp3Cb4FojnoQhRoAQDHogMS7/WutBaf6T9z08bdabVjaZuFTB5m+oJg==
+"@ffxiv-teamcraft/simulator@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.0.0.tgz#a0ba488e7b60c99a3a1e35544d5dbeb3a3043f08"
+  integrity sha512-YOuIAYOtsabdpXJ8D3uetuHkjpI6Ih1EUR7Fj6WeAgcmNE4tvw2hD4dTnU6+fYiT/+6k31C2VyxoqRRUz3Dygg==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

@@ -901,10 +901,10 @@
   },
   "1009": {
     "name": {
-      "en": "Housing (1)",
-      "ja": "ハウジング（その1）",
-      "de": "Unterkunft (1)",
-      "fr": "Logement (1)"
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
     },
     "pages": [
       1072,
@@ -919,10 +919,10 @@
   },
   "1010": {
     "name": {
-      "en": "Housing (2)",
-      "ja": "ハウジング（その2）",
-      "de": "Unterkunft (2)",
-      "fr": "Logement (2)"
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
     },
     "pages": [
       1080,
@@ -1439,11 +1439,227 @@
       1311
     ]
   },
+  "1039": {
+    "name": {
+      "en": "81-90",
+      "ja": "81-90",
+      "de": "81-90",
+      "fr": "81-90"
+    },
+    "pages": [
+      1312,
+      1313,
+      1314,
+      1315,
+      1316,
+      1317,
+      1318,
+      1319
+    ]
+  },
+  "1040": {
+    "name": {
+      "en": "Studium Deliveries",
+      "ja": "魔法大学取引",
+      "de": "Magieakademie von Sharlayan",
+      "fr": "Académie de magie"
+    },
+    "pages": [
+      1320,
+      1321,
+      1322,
+      1323,
+      1324,
+      1325,
+      1326,
+      1327
+    ]
+  },
+  "1041": {
+    "name": {
+      "en": "Studium Deliveries",
+      "ja": "魔法大学取引",
+      "de": "Magieakademie von Sharlayan",
+      "fr": "Académie de magie"
+    },
+    "pages": [
+      1328,
+      1329,
+      1330,
+      1331,
+      1332,
+      1333,
+      1334,
+      1335
+    ]
+  },
+  "1042": {
+    "name": {
+      "en": "Studium Deliveries",
+      "ja": "魔法大学取引",
+      "de": "Magieakademie von Sharlayan",
+      "fr": "Académie de magie"
+    },
+    "pages": [
+      1336,
+      1337,
+      1338,
+      1339,
+      1340,
+      1341,
+      1342,
+      1343
+    ]
+  },
+  "1043": {
+    "name": {
+      "en": "Fixtures",
+      "ja": "内装・外装",
+      "de": "Bauelemente",
+      "fr": "Éléments d'intérieur et d'extérieur"
+    },
+    "pages": [
+      1344,
+      1345,
+      1346,
+      1347,
+      1348,
+      1349,
+      1350,
+      1351
+    ]
+  },
+  "1044": {
+    "name": {
+      "en": "Outdoor Furnishings",
+      "ja": "庭具",
+      "de": "Gartenausstattung",
+      "fr": "Mobilier de jardin"
+    },
+    "pages": [
+      1352,
+      1353,
+      1354,
+      1355,
+      1356,
+      1357,
+      1358,
+      1359
+    ]
+  },
+  "1045": {
+    "name": {
+      "en": "Indoor Furnishings",
+      "ja": "調度品",
+      "de": "Mobiliar",
+      "fr": "Mobilier d'intérieur"
+    },
+    "pages": [
+      1360,
+      1361,
+      1362,
+      1363,
+      1364,
+      1365,
+      1366,
+      1367
+    ]
+  },
+  "1046": {
+    "name": {
+      "en": "Tables/Rugs",
+      "ja": "調度品（台座・敷物）",
+      "de": "Tisch/Ablage",
+      "fr": "Tables diverses"
+    },
+    "pages": [
+      1368,
+      1369,
+      1370,
+      1371,
+      1372,
+      1373,
+      1374,
+      1375
+    ]
+  },
+  "1047": {
+    "name": {
+      "en": "Tabletop",
+      "ja": "調度品（卓上）",
+      "de": "Tischdekoration",
+      "fr": "Mobilier de table"
+    },
+    "pages": [
+      1376,
+      1377,
+      1378,
+      1379,
+      1380,
+      1381,
+      1382,
+      1383
+    ]
+  },
+  "1048": {
+    "name": {
+      "en": "Wall-mounted",
+      "ja": "調度品（壁掛け）",
+      "de": "Wanddekoration",
+      "fr": "Décorations murales"
+    },
+    "pages": [
+      1384,
+      1385,
+      1386,
+      1387,
+      1388,
+      1389,
+      1390,
+      1391
+    ]
+  },
+  "1049": {
+    "name": {
+      "en": "Other",
+      "ja": "その他",
+      "de": "Andere",
+      "fr": "Autres"
+    },
+    "pages": [
+      1392,
+      1393,
+      1394,
+      1395,
+      1396,
+      1397,
+      1398,
+      1399
+    ]
+  },
+  "1050": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1400,
+      1401,
+      1402,
+      1403,
+      1404,
+      1405,
+      1406,
+      1407
+    ]
+  },
   "2000": {
     "name": {
-      "en": "Coerthan Folklore",
-      "ja": "伝承録:クルザス",
-      "de": "Coerthische Almanache",
+      "en": "Coerthas",
+      "ja": "クルザス",
+      "de": "Coerthas",
       "fr": "Légendes du Coerthas"
     },
     "pages": [
@@ -1455,9 +1671,9 @@
   },
   "2001": {
     "name": {
-      "en": "Dravanian Folklore",
-      "ja": "伝承録:ドラヴァニア",
-      "de": "Dravanische Almanache",
+      "en": "Dravania",
+      "ja": "ドラヴァニア",
+      "de": "Dravania",
       "fr": "Légendes de Dravania"
     },
     "pages": [
@@ -1469,9 +1685,9 @@
   },
   "2002": {
     "name": {
-      "en": "Abalathian Folklore",
-      "ja": "伝承録:アバラシア",
-      "de": "Abalathische Almanache",
+      "en": "Abalathia",
+      "ja": "アバラシア",
+      "de": "Abalathia",
       "fr": "Légendes d'Abalathia"
     },
     "pages": [
@@ -1483,10 +1699,10 @@
   },
   "2003": {
     "name": {
-      "en": "Gyr Abanian Folklore",
-      "ja": "伝承録:ギラバニア",
-      "de": "Abanische Almanache",
-      "fr": "Légendes de Gyr Ababia"
+      "en": "Gyr Abania",
+      "ja": "ギラバニア",
+      "de": "Gyr Abania",
+      "fr": "Légendes de Gyr Abania"
     },
     "pages": [
       2012,
@@ -1497,9 +1713,9 @@
   },
   "2004": {
     "name": {
-      "en": "Othardian Folklore",
-      "ja": "伝承録:オサード",
-      "de": "Othardische Almanache",
+      "en": "Othard",
+      "ja": "オサード",
+      "de": "Othard",
       "fr": "Légendes d'Othard"
     },
     "pages": [
@@ -1511,9 +1727,9 @@
   },
   "2005": {
     "name": {
-      "en": "Vrandtic Folklore",
-      "ja": "伝承録:ノルヴラント",
-      "de": "Vrandtische Almanache",
+      "en": "Norvrandt",
+      "ja": "ノルヴラント",
+      "de": "Norvrandt",
       "fr": "Légendes de Norvrandt"
     },
     "pages": [
@@ -1553,10 +1769,10 @@
   },
   "2008": {
     "name": {
-      "en": "Collectables (1)",
-      "ja": "収集品取引（その1）",
-      "de": "Sammlerstücke (1)",
-      "fr": "Collectionnables (1)"
+      "en": "50-70",
+      "ja": "50-70",
+      "de": "50-70",
+      "fr": "50-70"
     },
     "pages": [
       2032,
@@ -1567,10 +1783,10 @@
   },
   "2009": {
     "name": {
-      "en": "Collectables (2)",
-      "ja": "収集品取引（その2）",
-      "de": "Sammlerstücke (2)",
-      "fr": "Collectionnables (2)"
+      "en": "71-80",
+      "ja": "71-80",
+      "de": "71-80",
+      "fr": "71-80"
     },
     "pages": [
       2036,
@@ -1581,16 +1797,72 @@
   },
   "2010": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ilsabard/Northern Empty",
+      "ja": "北洋地域・イルサバード",
+      "de": "Nördliche Meere / Ilsabard",
+      "fr": "Légendes des mers du Nord et d'Ilsabard"
     },
     "pages": [
       2040,
       2041,
       2042,
       2043
+    ]
+  },
+  "2011": {
+    "name": {
+      "en": "Sea of Stars",
+      "ja": "星外宙域",
+      "de": "Kosmos",
+      "fr": "Légendes de l'espace intersidéral"
+    },
+    "pages": [
+      2044,
+      2045,
+      2046,
+      2047
+    ]
+  },
+  "2012": {
+    "name": {
+      "en": "World Unsundered",
+      "ja": "古代世界",
+      "de": "Unzersplitterte Welt",
+      "fr": "Légendes de l'ancien monde"
+    },
+    "pages": [
+      2048,
+      2049,
+      2050,
+      2051
+    ]
+  },
+  "2013": {
+    "name": {
+      "en": "81-90",
+      "ja": "81-90",
+      "de": "81-90",
+      "fr": "81-90"
+    },
+    "pages": [
+      2052,
+      2053,
+      2054,
+      2055
+    ]
+  },
+  "2014": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      2056,
+      2057,
+      2058,
+      2059
     ]
   }
 }

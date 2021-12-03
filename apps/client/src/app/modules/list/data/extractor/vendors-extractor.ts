@@ -8,6 +8,7 @@ import { uniqBy } from 'lodash';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Vector2 } from '../../../../core/tools/vector2';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
 
@@ -64,7 +65,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
             if (npcEntry) {
               const npcPosition = npcEntry.position;
               if (npcPosition) {
-                vendor.coords = { x: Math.floor(npcPosition.x * 10) / 10, y: Math.floor(npcPosition.y * 10) / 10 };
+                vendor.coords = { x: Math.floor((npcPosition as Vector2).x * 10) / 10, y: Math.floor((npcPosition as Vector2).y * 10) / 10 };
                 vendor.zoneId = npcPosition.zoneid;
                 vendor.mapId = npcPosition.map;
               }

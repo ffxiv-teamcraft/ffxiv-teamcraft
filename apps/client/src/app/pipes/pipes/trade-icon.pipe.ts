@@ -20,9 +20,10 @@ export class TradeIconPipe implements PipeTransform {
     10311: 0, // Red gatherer
     17833: 0, // Yellow crafter
     17834: 0, // Yellow gatherer
-    // TODO Purple scrips
     25199: 30, // White crafter
     25200: 30, // White gatherer
+    33913: 30, // Purple crafter
+    33914: 30, // Purple gatherer
     // Tomestones
     28: 28, // Poetics
     35: 0, // Creation (can't obtain them anymore)

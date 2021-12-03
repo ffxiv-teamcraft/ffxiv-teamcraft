@@ -3000,10 +3000,10 @@
     "fr": "Limsa Lominsa"
   },
   "501": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ウルヴズジェイル",
+    "ja": "ウルヴズジェイル",
+    "de": "Wolfshöhle",
+    "fr": "Antre des loups"
   },
   "502": {
     "en": "La Noscea",
@@ -3012,10 +3012,10 @@
     "fr": "Noscea"
   },
   "503": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ゴールドソーサー",
+    "ja": "ゴールドソーサー",
+    "de": "Goldsaucer",
+    "fr": "Gold Saucer"
   },
   "504": {
     "en": "Ul'dah",
@@ -4598,7 +4598,7 @@
   "767": {
     "en": "Hawkers' Alley",
     "ja": "マーケット（国際街広場）",
-    "de": "Kaufmannsplatz",
+    "de": "Kaufmannsplatz (Markt)",
     "fr": "Marché (La Camelotade)"
   },
   "768": {
@@ -4692,10 +4692,10 @@
     "fr": "Guilde des archers"
   },
   "783": {
-    "en": "Leatherworkers' Guild",
-    "ja": "革細工師ギルド前（マーケット）",
+    "en": "Leatherworkers' Guild & Shaded Bower",
+    "ja": "マーケット（革細工師ギルド前）",
     "de": "Gerbergilde (Markt)",
-    "fr": "Guilde des tanneurs (Marché)"
+    "fr": "Marché (Guilde des tanneurs)"
   },
   "784": {
     "en": "Lancers' Guild",
@@ -7761,7 +7761,7 @@
     "en": "Gatekeeper",
     "ja": "別エリアへ移動",
     "de": "Anderes Areal",
-    "fr": "Garde"
+    "fr": "Passage"
   },
   "1295": {
     "en": "Specialist Approval",
@@ -13693,9 +13693,9 @@
   },
   "2283": {
     "en": "Sapphire Avenue Exchange",
-    "ja": "サファイアアベニュー国際市場（マーケット）",
-    "de": "Saphirstraßenmarkt",
-    "fr": "Marchés de l'avenue du Saphir"
+    "ja": "マーケット（サファイアアベニュー国際市場）",
+    "de": "Saphirstraße (Markt)",
+    "fr": "Marché (Avenue du Saphir)"
   },
   "2284": {
     "en": "The Interdimensional Rift",
@@ -17768,13 +17768,13 @@
   "2962": {
     "en": "Dohn Lran",
     "ja": "幻惑の城",
-    "de": "Dohn Iran",
+    "de": "Dohn Lran",
     "fr": "Dohn Lran"
   },
   "2963": {
     "en": "Teag Gye",
     "ja": "微睡みの泉",
-    "de": "Taeg Gye",
+    "de": "Teag Gye",
     "fr": "Teag Gye"
   },
   "2964": {
@@ -19964,7 +19964,7 @@
   "3328": {
     "en": "Musica Universalis Markets",
     "ja": "マーケット（ムジカ・ユニバーサリス）",
-    "de": "Musica Universalis",
+    "de": "Musica Universalis (Markt)",
     "fr": "Marché (Musica Universalis)"
   },
   "3329": {
@@ -22098,36 +22098,2922 @@
     "fr": "Poulailler des rêvœufs"
   },
   "3684": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Dark Inside",
+    "ja": "月の底",
+    "de": "Grund des Mondes",
+    "fr": "Prison lunaire"
   },
   "3685": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Mothercrystal",
+    "ja": "マザークリスタル",
+    "de": "Urkristall",
+    "fr": "Cristal-mère"
   },
   "3686": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Final Day",
+    "ja": "果ての終焉",
+    "de": "Am Rande des Endes",
+    "fr": "Orée de la fin"
   },
   "3687": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Empyreum",
+    "ja": "エンピレアム",
+    "de": "Empyreum",
+    "fr": "Empyrée"
   },
   "3688": {
+    "en": "Empyreum Subdivision",
+    "ja": "[拡張街]エンピレアム",
+    "de": "[Erweiterung] Empyreum",
+    "fr": "Empyrée [Annexe]"
+  },
+  "3689": {
+    "en": "Private Cottage - Empyreum",
+    "ja": "エンピレアム：コテージ",
+    "de": "Privathütte (Empyreum)",
+    "fr": "Maisonnette - Empyrée"
+  },
+  "3690": {
+    "en": "Private House - Empyreum",
+    "ja": "エンピレアム：ハウス",
+    "de": "Privathaus (Empyreum)",
+    "fr": "Pavillon - Empyrée"
+  },
+  "3691": {
+    "en": "Private Mansion - Empyreum",
+    "ja": "エンピレアム：レジデンス",
+    "de": "Privatresidenz (Empyreum)",
+    "fr": "Villa - Empyrée"
+  },
+  "3692": {
+    "en": "Private Chambers - Empyreum",
+    "ja": "エンピレアム：プライベートルーム",
+    "de": "Empyreum - Zimmer",
+    "fr": "Chambre individuelle - Empyrée"
+  },
+  "3693": {
+    "en": "Company Workshop - Empyreum",
+    "ja": "エンピレアム：地下工房",
+    "de": "Gesellschaftswerkstätte: Empyreum",
+    "fr": "Atelier de compagnie - Empyrée"
+  },
+  "3694": {
+    "en": "Ingleside Apartment Lobby",
+    "ja": "イングルサイド：ロビー",
+    "de": "Adlerblick (Eingangshalle)",
+    "fr": "Le Coin de l'Âtre (hall)"
+  },
+  "3695": {
+    "en": "Ingleside Apartment",
+    "ja": "イングルサイド：部屋",
+    "de": "Adlerblick (Wohnung)",
+    "fr": "Le Coin de l'Âtre (appartement)"
+  },
+  "3696": {
+    "en": "The Phantoms' Feast",
+    "ja": "ホーンテッドフィースト",
+    "de": "Lustiges Bankett",
+    "fr": "Banquet cauchemardesque"
+  },
+  "3697": {
+    "en": "The Playroom",
+    "ja": "ジュニアの子供部屋",
+    "de": "Zimmer von Junior Pierrot",
+    "fr": "Chambre de Junior"
+  },
+  "3698": {
+    "en": "The Banquet Hall",
+    "ja": "ママのダイニング",
+    "de": "Zimmer von Mama Pierrot",
+    "fr": "Salon de Mamarlequin"
+  },
+  "3699": {
+    "en": "The Ballroom",
+    "ja": "パパのダンスホール",
+    "de": "Zimmer von Gevatter Pierrot",
+    "fr": "Salle de danse de Paparlequin"
+  },
+  "3700": {
+    "en": "The Source",
+    "ja": "原初世界",
+    "de": "Ursprungswelt",
+    "fr": "Monde primitif"
+  },
+  "3701": {
+    "en": "The First",
+    "ja": "第一世界",
+    "de": "Erste Splitterwelt",
+    "fr": "Premier reflet"
+  },
+  "3702": {
+    "en": "The Northern Empty",
+    "ja": "北洋地域",
+    "de": "Nördliche Meere",
+    "fr": "Mers du Nord"
+  },
+  "3703": {
+    "en": "Ilsabard",
+    "ja": "イルサバード",
+    "de": "Ilsabard",
+    "fr": "Ilsabard"
+  },
+  "3704": {
+    "en": "The Sea of Stars",
+    "ja": "星外宙域",
+    "de": "Kosmos",
+    "fr": "Espace intersidéral"
+  },
+  "3705": {
+    "en": "The World Unsundered",
+    "ja": "古代世界",
+    "de": "Unzersplitterte Welt",
+    "fr": "Ancien monde"
+  },
+  "3706": {
+    "en": "Old Sharlayan",
+    "ja": "オールド・シャーレアン",
+    "de": "Alt-Sharlayan",
+    "fr": "Vieille Sharlayan"
+  },
+  "3707": {
+    "en": "Radz-at-Han",
+    "ja": "ラザハン",
+    "de": "Radz-at-Han",
+    "fr": "Radz-at-Han"
+  },
+  "3708": {
+    "en": "Labyrinthos",
+    "ja": "ラヴィリンソス",
+    "de": "Labyrinthos",
+    "fr": "Le Labyrinthos"
+  },
+  "3709": {
+    "en": "Thavnair",
+    "ja": "サベネア島",
+    "de": "Thavnair",
+    "fr": "Thavnair"
+  },
+  "3710": {
+    "en": "Garlemald",
+    "ja": "ガレマルド",
+    "de": "Garlemald",
+    "fr": "Garlemald"
+  },
+  "3711": {
+    "en": "Mare Lamentorum",
+    "ja": "嘆きの海",
+    "de": "Mare Lamentorum",
+    "fr": "Mare Lamentorum"
+  },
+  "3712": {
+    "en": "Ultima Thule",
+    "ja": "ウルティマ・トゥーレ",
+    "de": "Ultima Thule",
+    "fr": "Ultima Thulé"
+  },
+  "3713": {
+    "en": "Elpis",
+    "ja": "エルピス",
+    "de": "Elpis",
+    "fr": "Elpis"
+  },
+  "3714": {
+    "en": "Highmorn's Horizon",
+    "ja": "ハイモーン広場",
+    "de": "Morgenglanz",
+    "fr": "Place du Halte-Matin"
+  },
+  "3715": {
+    "en": "Empyreum Southeast",
+    "ja": "エンピレアム南東",
+    "de": "Südost-Empyreum",
+    "fr": "Empyrée sud-est"
+  },
+  "3716": {
+    "en": "Central Empyreum",
+    "ja": "エンピレアム中央",
+    "de": "Zentral-Empyreum",
+    "fr": "Empyrée centre"
+  },
+  "3717": {
+    "en": "Empyreum Southwest",
+    "ja": "エンピレアム南西",
+    "de": "Südwest-Empyreum",
+    "fr": "Empyrée sud-ouest"
+  },
+  "3718": {
+    "en": "Ingleside",
+    "ja": "イングルサイド",
+    "de": "Adlerblick",
+    "fr": "Le Coin de l'Âtre"
+  },
+  "3719": {
+    "en": "Empyreum Northwest",
+    "ja": "エンピレアム北西",
+    "de": "Nordwest-Empyreum",
+    "fr": "Empyrée nord-ouest"
+  },
+  "3720": {
+    "en": "Empyreum East",
+    "ja": "エンピレアム東",
+    "de": "Ost-Empyreum",
+    "fr": "Empyrée est"
+  },
+  "3721": {
+    "en": "Empyreum Northeast",
+    "ja": "エンピレアム北東",
+    "de": "Nordost-Empyreum",
+    "fr": "Empyrée nord-est"
+  },
+  "3722": {
+    "en": "Highmorn's Horizon Subdivision",
+    "ja": "[拡張街]ハイモーン広場",
+    "de": "[Erweiterung] Morgenglanz",
+    "fr": "Place du Halte-Matin [Annexe]"
+  },
+  "3723": {
+    "en": "Empyreum Southwest Subdivision",
+    "ja": "[拡張街]エンピレアム南西",
+    "de": "[Erweiterung] Südwest-Empyreum",
+    "fr": "Empyrée sud-ouest [Annexe]"
+  },
+  "3724": {
+    "en": "Central Empyreum Subdivision",
+    "ja": "[拡張街]エンピレアム中央",
+    "de": "[Erweiterung] Zentral-Empyreum",
+    "fr": "Empyrée centre [Annexe]"
+  },
+  "3725": {
+    "en": "Empyreum Northwest Subdivision",
+    "ja": "[拡張街]エンピレアム北西",
+    "de": "[Erweiterung] Nordwest-Empyreum",
+    "fr": "Empyrée nord-ouest [Annexe]"
+  },
+  "3726": {
+    "en": "Ingleside Subdivision",
+    "ja": "[拡張街]イングルサイド",
+    "de": "[Erweiterung] Adlerblick",
+    "fr": "Le Coin de l'Âtre [Annexe]"
+  },
+  "3727": {
+    "en": "Empyreum Northeast Subdivision",
+    "ja": "[拡張街]エンピレアム北東",
+    "de": "[Erweiterung] Nordost-Empyreum",
+    "fr": "Empyrée nord-est [Annexe]"
+  },
+  "3728": {
+    "en": "Empyreum South Subdivision",
+    "ja": "[拡張街]エンピレアム南",
+    "de": "[Erweiterung] Süd-Empyreum",
+    "fr": "Empyrée sud [Annexe]"
+  },
+  "3729": {
+    "en": "Empyreum Southeast Subdivision",
+    "ja": "[拡張街]エンピレアム南東",
+    "de": "[Erweiterung] Südost-Empyreum",
+    "fr": "Empyrée sud-est [Annexe]"
+  },
+  "3730": {
+    "en": "Aetherial Manipulation",
+    "ja": "地脈調整区",
+    "de": "Ätherregulation",
+    "fr": "Zone d'ajustement du flux éthéré"
+  },
+  "3731": {
+    "en": "Inculcation Channel",
+    "ja": "信仰抽出区",
+    "de": "Glaubensextraktion",
+    "fr": "Zone d'extraction de la foi"
+  },
+  "3732": {
+    "en": "Fervor Enhancement",
+    "ja": "信仰増幅区",
+    "de": "Glaubensexpansion",
+    "fr": "Zone d'amplification de la foi"
+  },
+  "3733": {
+    "en": "Ingenuity's Ingress",
+    "ja": "技巧の間",
+    "de": "Gelass der Finesse",
+    "fr": "Chambre de l'habileté"
+  },
+  "3734": {
+    "en": "Prosperity's Promise",
+    "ja": "富の間",
+    "de": "Gelass des Reichtums",
+    "fr": "Chambre de la fortune"
+  },
+  "3735": {
+    "en": "Wisdom's Ward",
+    "ja": "知恵の間",
+    "de": "Gelass der Weisheit",
+    "fr": "Chambre de la sagesse"
+  },
+  "3736": {
+    "en": "The Tower of Zot",
+    "ja": "ゾットの塔",
+    "de": "Turm von Zot",
+    "fr": "Tour de Zott"
+  },
+  "3737": {
+    "en": "Tower Base",
+    "ja": "基部層",
+    "de": "Basisebene",
+    "fr": "Niveau terrestre"
+  },
+  "3738": {
+    "en": "Tower Climb",
+    "ja": "中層",
+    "de": "Zentralebene",
+    "fr": "Niveau intermédiaire"
+  },
+  "3739": {
+    "en": "Tower Top",
+    "ja": "最上層",
+    "de": "Primärebene",
+    "fr": "Niveau supérieur"
+  },
+  "3740": {
+    "en": "Labyrinthos",
+    "ja": "ラヴィリンソス",
+    "de": "Labyrinthos",
+    "fr": "Le Labyrinthos"
+  },
+  "3741": {
+    "en": "Thavnair",
+    "ja": "サベネア島",
+    "de": "Thavnair",
+    "fr": "Thavnair"
+  },
+  "3742": {
+    "en": "The Sea of Stars",
+    "ja": "星外",
+    "de": "Kosmos",
+    "fr": "Espace intersidéral"
+  },
+  "3743": {
+    "en": "The World Unsundered",
+    "ja": "古代世界",
+    "de": "Unzersplitterte Welt",
+    "fr": "Ancien monde"
+  },
+  "3744": {
+    "en": "Old Sharlayan",
+    "ja": "オールド・シャーレアン",
+    "de": "Alt-Sharlayan",
+    "fr": "Vieille Sharlayan"
+  },
+  "3745": {
+    "en": "Radz-at-Han",
+    "ja": "ラザハン",
+    "de": "Radz-at-Han",
+    "fr": "Radz-at-Han"
+  },
+  "3746": {
+    "en": "Southern Akyaali",
+    "ja": "アキャーリ南",
+    "de": "Akyaali (Süd)",
+    "fr": "Sud d'Akyaali"
+  },
+  "3747": {
+    "en": "Western Akyaali",
+    "ja": "アキャーリ西",
+    "de": "Akyaali (West)",
+    "fr": "Ouest d'Akyaali"
+  },
+  "3748": {
+    "en": "Southern Great Runoff",
+    "ja": "遺烈郷南",
+    "de": "Daemirs Werk (Süd)",
+    "fr": "Sud-ouest du Grand-Œuvre"
+  },
+  "3749": {
+    "en": "The Font of Maya",
+    "ja": "マーヤーの幻泉",
+    "de": "Mayaquell",
+    "fr": "Source de la Maya"
+  },
+  "3750": {
+    "en": "Outer Akyaali",
+    "ja": "アキャーリ沖",
+    "de": "Akyaali-See",
+    "fr": "Large d'Akyaali"
+  },
+  "3751": {
+    "en": "Northern Onokoro",
+    "ja": "オノコロ島北",
+    "de": "Onokoro (Nord)",
+    "fr": "Nord d'Onokoro"
+  },
+  "3752": {
+    "en": "Isari Slope",
+    "ja": "イサリ村周辺",
+    "de": "Isari-Hang",
+    "fr": "Est d'Isari"
+  },
+  "3753": {
+    "en": "Exile",
+    "ja": "カガミの仙窟周辺",
+    "de": "Exil",
+    "fr": "Nord-est de l'Exile"
+  },
+  "3754": {
+    "en": "Northeastern Bekko",
+    "ja": "ベッコウ島北東",
+    "de": "Bekko (Nordost)",
+    "fr": "Nord-est de l'île de Bekko"
+  },
+  "3755": {
+    "en": "Eastern Barrier Isle",
+    "ja": "境島東",
+    "de": "Grenzinsel (Ost)",
+    "fr": "Est de l'île barrière"
+  },
+  "3756": {
+    "en": "Northwestern Onokoro",
+    "ja": "オノコロ島北西",
+    "de": "Onokoro (Nordwest)",
+    "fr": "Nord-ouest d'Onokoro"
+  },
+  "3757": {
+    "en": "Eastern Bekko",
+    "ja": "ベッコウ島東",
+    "de": "Bekko (Ost)",
+    "fr": "Est de l'île de Bekko"
+  },
+  "3758": {
+    "en": "Loch Seld Northeastern Lakebed",
+    "ja": "ロッホ・セル湖北東",
+    "de": "Seldsee (Nordost)",
+    "fr": "Fond du lac Seld (nord-est)"
+  },
+  "3759": {
+    "en": "Ktisis Hyperboreia",
+    "ja": "ヒュペルボレア造物院",
+    "de": "Ktisis Hyperboreia",
+    "fr": "Hyperborée"
+  },
+  "3760": {
+    "en": "Terrestrial Artifice",
+    "ja": "創造大陸層",
+    "de": "Kontinentalebene",
+    "fr": "Étage terrestre"
+  },
+  "3761": {
+    "en": "Experimental Artifice",
+    "ja": "創造研究層",
+    "de": "Forschungsebene",
+    "fr": "Étage de recherche"
+  },
+  "3762": {
+    "en": "Lower Aerial Artifice",
+    "ja": "創造低空層",
+    "de": "Untere Aerialebene",
+    "fr": "Étage céleste"
+  },
+  "3763": {
+    "en": "Geopsis",
+    "ja": "創造大陸観察区",
+    "de": "Kontinentale Beobachtung",
+    "fr": "Plateforme d'observation céleste"
+  },
+  "3764": {
+    "en": "Ouranopsis",
+    "ja": "創造天空観察区",
+    "de": "Celestrische Beobachtung",
+    "fr": "Plateforme d'observation troposphérique"
+  },
+  "3765": {
+    "en": "Cosmopsis",
+    "ja": "創造天脈観察区",
+    "de": "Astrale Beobachtung",
+    "fr": "Plateforme d'observation stratosphérique"
+  },
+  "3766": {
+    "en": "Frozen Sphere",
+    "ja": "寒冷創造環境",
+    "de": "Kaltzone",
+    "fr": "Glacier artificiel"
+  },
+  "3767": {
+    "en": "Concept Review",
+    "ja": "創造生物評価室",
+    "de": "Konzeptbewertung",
+    "fr": "Salle d'évaluation"
+  },
+  "3768": {
+    "en": "Celestial Sphere",
+    "ja": "天脈創造環境",
+    "de": "Astralzone",
+    "fr": "Voûte céleste"
+  },
+  "3769": {
+    "en": "The Gates of Pandæmonium",
+    "ja": "パンデモニウム正門",
+    "de": "Pforten des Pandæmoniums",
+    "fr": "パンデモニウム正門"
+  },
+  "3770": {
+    "en": "Smileton",
+    "ja": "スマイルトン",
+    "de": "Smileton",
+    "fr": "Risette-sur-lune"
+  },
+  "3771": {
+    "en": "The Outsides",
+    "ja": "都市表層区",
+    "de": "Draußen",
+    "fr": "Endroit du décor"
+  },
+  "3772": {
+    "en": "The Insides",
+    "ja": "都市内層区",
+    "de": "Drinnen",
+    "fr": "Envers du décor"
+  },
+  "3773": {
+    "en": "The On-the-waysides",
+    "ja": "都市工事区",
+    "de": "Irgendwo",
+    "fr": "Décor en construction"
+  },
+  "3774": {
+    "en": "Smileport",
+    "ja": "笑顔あふれる正門",
+    "de": "Tor des Breiten Lächelns",
+    "fr": "Porte de la Gaieté"
+  },
+  "3775": {
+    "en": "The Welcome Wheel",
+    "ja": "大歓迎の玄関",
+    "de": "Herzlich-Willkommen-Halle",
+    "fr": "Place de l'Hospitalité"
+  },
+  "3776": {
+    "en": "The Frame",
+    "ja": "ビッグチーズ",
+    "de": "Hauptrahmen",
+    "fr": "Matrice du Bonheur"
+  },
+  "3777": {
+    "en": "The Many Ways",
+    "ja": "世にも素晴らしい市街地",
+    "de": "Große-Weite-Welt-Stadt",
+    "fr": "Joyopolis"
+  },
+  "3778": {
+    "en": "Block of Dreams",
+    "ja": "理想的な居住区",
+    "de": "Schöner-Wohnen-Stätte",
+    "fr": "Tranquiloupolis"
+  },
+  "3779": {
+    "en": "Recreation Room",
+    "ja": "くつろぎの居間",
+    "de": "Einfach-Entspannen-Stube",
+    "fr": "Espace de détente"
+  },
+  "3780": {
+    "en": "Moving Music Hall",
+    "ja": "感動と興奮の音楽堂",
+    "de": "Süße-Klänge-Konzerthalle",
+    "fr": "Eurythmorium"
+  },
+  "3781": {
+    "en": "Under Construction (Sorry!)",
+    "ja": "工事中：ご迷惑をおかけしております",
+    "de": "Noch-Nicht-Fertig (Tut uns leid!)",
+    "fr": "Entravauxpolis \n\n(désolé pour la gêne occasionnée!)"
+  },
+  "3782": {
+    "en": "Happy Street",
+    "ja": "幸せを運ぶ通路",
+    "de": "Straße des Glücks",
+    "fr": "Route de la Liesse"
+  },
+  "3783": {
+    "en": "The Stigma Dreamscape",
+    "ja": "スティグマ・フォー",
+    "de": "Stigma-4",
+    "fr": "Rêve électrique de Stigma-4"
+  },
+  "3784": {
+    "en": "The Alphatron Star",
+    "ja": "アルファトロン星",
+    "de": "Alphatron",
+    "fr": "Alphatron"
+  },
+  "3785": {
+    "en": "Gordhonite Asteroid Belt",
+    "ja": "小惑星帯",
+    "de": "Asteroidengürtel",
+    "fr": "Ceinture d'astéroïdes"
+  },
+  "3786": {
+    "en": "The Dragonstar",
+    "ja": "竜星",
+    "de": "Drachenstern",
+    "fr": "Planète des dragons"
+  },
+  "3787": {
+    "en": "The Alphatron Star",
+    "ja": "アルファトロン星",
+    "de": "Alphatron",
+    "fr": "Alphatron"
+  },
+  "3788": {
+    "en": "Gordhona",
+    "ja": "ゴードナ文明首都",
+    "de": "Hauptstadt der Gordona-Zivilisation",
+    "fr": "Gordhona"
+  },
+  "3789": {
+    "en": "The Dragonstar",
+    "ja": "竜星",
+    "de": "Drachenstern",
+    "fr": "Planète des dragons"
+  },
+  "3790": {
+    "en": "Weapons Manufacturing",
+    "ja": "ウェポンプラント",
+    "de": "Waffenfabrik",
+    "fr": "Usine d'armement"
+  },
+  "3791": {
+    "en": "A-4 Command",
+    "ja": "コマンドA4",
+    "de": "Kommando A4",
+    "fr": "Poste de commandement A-4"
+  },
+  "3792": {
+    "en": "A-4 Conquest",
+    "ja": "コンクエストA4",
+    "de": "Operation A4",
+    "fr": "Conquête A-4"
+  },
+  "3793": {
+    "en": "A-4 Outpost",
+    "ja": "アウトポストA4",
+    "de": "Außenposten A4",
+    "fr": "Avant-poste A-4"
+  },
+  "3794": {
+    "en": "A-4 Headquarters",
+    "ja": "ヘッドクォーターA4",
+    "de": "Hauptquartier A4",
+    "fr": "Quartier général A-4"
+  },
+  "3795": {
+    "en": "The Halberd's Head",
+    "ja": "斧槍通り",
+    "de": "Hellebardenspalier",
+    "fr": "Avenue Fer-de-hallebarde"
+  },
+  "3796": {
+    "en": "The Halberd's Head Subdivision",
+    "ja": "[拡張街]斧槍通り",
+    "de": "[Erweiterung] Hellebardenspalier",
+    "fr": "Avenue Fer-de-hallebarde [Annexe]"
+  },
+  "3797": {
+    "en": "The Fervid Limbo",
+    "ja": "パンデモニウム辺獄下層",
+    "de": "Glühender Limbus",
+    "fr": "パンデモニウム辺獄下層"
+  },
+  "3798": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "3689": {
+  "3799": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3800": {
+    "en": "The Studium",
+    "ja": "シャーレアン魔法大学",
+    "de": "Magieakademie",
+    "fr": "Académie de magie"
+  },
+  "3801": {
+    "en": "Phenomenon",
+    "ja": "フェノメノン大講堂",
+    "de": "Phänomenon",
+    "fr": "Phénomène"
+  },
+  "3802": {
+    "en": "Makers' Meet",
+    "ja": "工匠殿",
+    "de": "Schöpferkolleg",
+    "fr": "Aile des Fabricateurs"
+  },
+  "3803": {
+    "en": "Searchers' Meet",
+    "ja": "選者殿",
+    "de": "Sammlerkolleg",
+    "fr": "Aile des Collectionneurs"
+  },
+  "3804": {
+    "en": "Learners' Meet",
+    "ja": "公開講堂",
+    "de": "Auditorium",
+    "fr": "Aula"
+  },
+  "3805": {
+    "en": "Noumenon",
+    "ja": "ヌーメノン大書院",
+    "de": "Noumenon",
+    "fr": "Noumène"
+  },
+  "3806": {
+    "en": "The Speaking Monopteros",
+    "ja": "討論のモノペトロス",
+    "de": "Monopteros des Diskurses",
+    "fr": "Monoptéros des Improbateurs"
+  },
+  "3807": {
+    "en": "Tranquility",
+    "ja": "沈思の森",
+    "de": "Hain der Einkehr",
+    "fr": "Bois des Réflexions"
+  },
+  "3808": {
+    "en": "The Silent Monopteros",
+    "ja": "黙考のモノペトロス",
+    "de": "Monopteros der Denker",
+    "fr": "Monoptéros des Raisonneurs"
+  },
+  "3809": {
+    "en": "Archons' Design",
+    "ja": "七賢人の庭",
+    "de": "Garten der Exegeten",
+    "fr": "Dessein des sept Fondateurs"
+  },
+  "3810": {
+    "en": "The Rostra",
+    "ja": "哲学者の広場",
+    "de": "Forum",
+    "fr": "Les Rostres"
+  },
+  "3811": {
+    "en": "The Hall of Artifice",
+    "ja": "アルティフィスホール",
+    "de": "Halle der Kunstfertigkeit",
+    "fr": "Vestibule de l'Ingéniosité"
+  },
+  "3812": {
+    "en": "The Nymphaeum",
+    "ja": "ニンファイオン",
+    "de": "Nymphaeum",
+    "fr": "Nymphaeum"
+  },
+  "3813": {
+    "en": "The Confluence",
+    "ja": "転送魔法研究所",
+    "de": "Konfluenz",
+    "fr": "Centre d'étude des éthérites"
+  },
+  "3814": {
+    "en": "Old Sharlayan Aetheryte Plaza",
+    "ja": "エーテライト・プラザ",
+    "de": "Ätherytenplatz",
+    "fr": "Place de l'Éthérite"
+  },
+  "3815": {
+    "en": "The Agora",
+    "ja": "アゴラ",
+    "de": "Agora",
+    "fr": "Agora"
+  },
+  "3816": {
+    "en": "The Baldesion Annex",
+    "ja": "バルデシオン分館",
+    "de": "Baldesions Annex",
+    "fr": "Annexe des Élèves de Baldesion"
+  },
+  "3817": {
+    "en": "Main Hall",
+    "ja": "メインホール",
+    "de": "Hauptsaal",
+    "fr": "Salon principal"
+  },
+  "3818": {
+    "en": "Andron",
+    "ja": "ナップルーム",
+    "de": "Ruheräume",
+    "fr": "Chambre à coucher"
+  },
+  "3819": {
+    "en": "Journey's End",
+    "ja": "漂流者の丘",
+    "de": "Hügel der Gestrandeten",
+    "fr": "Colline des Naufragés"
+  },
+  "3820": {
+    "en": "The Leveilleur Estate",
+    "ja": "ルヴェユール邸",
+    "de": "Anwesen der Leveilleurs",
+    "fr": "Résidence des Leveilleur"
+  },
+  "3821": {
+    "en": "Auk's Landing",
+    "ja": "パフィン広場",
+    "de": "Platz der Papageientaucher",
+    "fr": "Nichoir des Alques"
+  },
+  "3822": {
+    "en": "Scholar's Harbor",
+    "ja": "知神の港",
+    "de": "Thaliaks Pforte",
+    "fr": "Port de l'Érudit"
+  },
+  "3823": {
+    "en": "The Last Stand",
+    "ja": "ラストスタンド",
+    "de": "Letzte Bastion",
+    "fr": "Le Dernier Rempart"
+  },
+  "3824": {
+    "en": "Nyunkrepf's Sight",
+    "ja": "ニュンクレフの岩",
+    "de": "Nyunkrepfs Blick",
+    "fr": "Récif de Nyunkrepf"
+  },
+  "3825": {
+    "en": "The Thaliak Stoa",
+    "ja": "サリャク柱廊",
+    "de": "Thaliaks Stoa",
+    "fr": "Stoa de Thaliak"
+  },
+  "3826": {
+    "en": "The Scholar",
+    "ja": "知神サリャク像",
+    "de": "Der Forscher",
+    "fr": "L'Érudit"
+  },
+  "3827": {
+    "en": "The Peristyle",
+    "ja": "ペリスタイル",
+    "de": "Peristyl",
+    "fr": "Péristyle"
+  },
+  "3828": {
+    "en": "Worldly Affairs",
+    "ja": "出入国管理所",
+    "de": "Immigration",
+    "fr": "Bureau de la douane"
+  },
+  "3829": {
+    "en": "The Outer Circuit",
+    "ja": "アウターサーキット",
+    "de": "Peripherzirkel",
+    "fr": "Circuit externe"
+  },
+  "3830": {
+    "en": "The Path of Artifice",
+    "ja": "アルティフィスパス",
+    "de": "Pfad der Kunstfertigkeit",
+    "fr": "Passage de l'Ingéniosité"
+  },
+  "3831": {
+    "en": "Upper Acrinthos",
+    "ja": "アッパー・アクリンソス",
+    "de": "Ober-Acrinthos",
+    "fr": "Acrinthos supérieur"
+  },
+  "3832": {
+    "en": "The Phreatic Conduit",
+    "ja": "地下水排出路",
+    "de": "Phreatischer Kanal",
+    "fr": "Canal de drainage"
+  },
+  "3833": {
+    "en": "The Archeion",
+    "ja": "アルケイオン保管院",
+    "de": "Archeion",
+    "fr": "Archéion"
+  },
+  "3834": {
+    "en": "The Aesthete's Tholos",
+    "ja": "恵みのトロス",
+    "de": "Tholos der Ästheten",
+    "fr": "Tholos de l'Abondance"
+  },
+  "3835": {
+    "en": "Passemerrant Pasturponics",
+    "ja": "パスメラン種畜研究所",
+    "de": "Passemerrants Zoaponik",
+    "fr": "Laboratoire zootechnique de Passemerrant"
+  },
+  "3836": {
+    "en": "Hatching Canal",
+    "ja": "試作漁場河川",
+    "de": "Der Laichgrund",
+    "fr": "Canal du Frai"
+  },
+  "3837": {
+    "en": "Troglophile's Deep",
+    "ja": "洞穴生物繁殖区",
+    "de": "Grotte der Troglophilen",
+    "fr": "Repaire des Cavernicoles"
+  },
+  "3838": {
+    "en": "The Thirty-third Facet",
+    "ja": "第三十三期拡張坑道",
+    "de": "Stollen 33",
+    "fr": "La trente-troisième Facette"
+  },
+  "3839": {
+    "en": "Mornveil Forest",
+    "ja": "朝露の森",
+    "de": "Schleierhain",
+    "fr": "Forêt de Mornevoile"
+  },
+  "3840": {
+    "en": "Mistloom",
+    "ja": "人工霧制御塔",
+    "de": "Nebelturm",
+    "fr": "Embrumante"
+  },
+  "3841": {
+    "en": "The Medial Circuit",
+    "ja": "ミディアルサーキット",
+    "de": "Medialzirkel",
+    "fr": "Circuit médian"
+  },
+  "3842": {
+    "en": "Meryall Agronomics",
+    "ja": "メリオール実験農場",
+    "de": "Meryalls Agrarbotanik",
+    "fr": "Laboratoire agronomique de Meryall"
+  },
+  "3843": {
+    "en": "Psyche",
+    "ja": "プシケ送風塔",
+    "de": "Psyche",
+    "fr": "Psyché"
+  },
+  "3844": {
+    "en": "Phoibos",
+    "ja": "ポイボス制御塔",
+    "de": "Phoibos",
+    "fr": "Phoïbos"
+  },
+  "3845": {
+    "en": "Pneuma",
+    "ja": "プネウマ送風塔",
+    "de": "Pneuma",
+    "fr": "Pneuma"
+  },
+  "3846": {
+    "en": "Lower Acrinthos",
+    "ja": "ロウアー・アクリンソス",
+    "de": "Unter-Acrinthos",
+    "fr": "Acrinthos inférieur"
+  },
+  "3847": {
+    "en": "Mitato",
+    "ja": "ミタト酪農場",
+    "de": "Mitato",
+    "fr": "Mitato"
+  },
+  "3848": {
+    "en": "The Central Circuit",
+    "ja": "セントラルサーキット",
+    "de": "Zentralzirkel",
+    "fr": "Circuit central"
+  },
+  "3849": {
+    "en": "Logistikon Alpha",
+    "ja": "ロジスティコン・アルファ",
+    "de": "Logistikon Alpha",
+    "fr": "Logistikon alpha"
+  },
+  "3850": {
+    "en": "Sharlayan Hamlet",
+    "ja": "リトルシャーレアン",
+    "de": "Klein-Sharlayan",
+    "fr": "Petite Sharlayan"
+  },
+  "3851": {
+    "en": "Logistikon Beta",
+    "ja": "ロジスティコン・ベータ",
+    "de": "Logistikon Beta",
+    "fr": "Logistikon bêta"
+  },
+  "3852": {
+    "en": "Aporia",
+    "ja": "アポリア本部",
+    "de": "Aporia",
+    "fr": "L'Aporie"
+  },
+  "3853": {
+    "en": "Logistikon Gamma",
+    "ja": "ロジスティコン・ガンマ",
+    "de": "Logistikon Gamma",
+    "fr": "Logistikon gamma"
+  },
+  "3854": {
+    "en": "Kokkol's Forge",
+    "ja": "ククロの工房",
+    "de": "Kokkols Schmiede",
+    "fr": "Forge de Kokkol"
+  },
+  "3855": {
+    "en": "Thaumazein",
+    "ja": "タウマゼイン",
+    "de": "Thaumazein",
+    "fr": "Thaumazein"
+  },
+  "3856": {
+    "en": "The Aetherial Sea",
+    "ja": "星海",
+    "de": "Sternengrund",
+    "fr": "Mer des étoiles"
+  },
+  "3857": {
+    "en": "Gajasimha Bridge",
+    "ja": "ガシャシンハ大橋",
+    "de": "Gajasimha-Brücke",
+    "fr": "Pont de Gajasimha"
+  },
+  "3858": {
+    "en": "The Gate of First Sight ",
+    "ja": "真眼門",
+    "de": "Tor des Wahrsehers",
+    "fr": "Porte de l'Œil pur"
+  },
+  "3859": {
+    "en": "The Loyal Rise",
+    "ja": "誓約の階段",
+    "de": "Eidstieg",
+    "fr": "Marches du Pacte"
+  },
+  "3860": {
+    "en": "Alzadaal's Path",
+    "ja": "アルザダール通り",
+    "de": "Alzadaals Pfad",
+    "fr": "Voie d'Alzadaal"
+  },
+  "3861": {
+    "en": "Alzadaal's Peace",
+    "ja": "アルザダール廟",
+    "de": "Alzadaals Ruh",
+    "fr": "Repos d'Alzadaal"
+  },
+  "3862": {
+    "en": "Paksa's Path",
+    "ja": "パクシャ通り",
+    "de": "Paksas Pfad",
+    "fr": "Voie de Paksa"
+  },
+  "3863": {
+    "en": "Airship Landing",
+    "ja": "ラザハン・ランディング",
+    "de": "Luftschiff-Landeplatz",
+    "fr": "Aérodrome de Radz-at-Han"
+  },
+  "3864": {
+    "en": "Dharma",
+    "ja": "ダーマ区",
+    "de": "Dharma",
+    "fr": "Dharma"
+  },
+  "3865": {
+    "en": "Meghaduta",
+    "ja": "メーガドゥータ宮",
+    "de": "Meghaduta-Tempel",
+    "fr": "Palais du Meghaduta"
+  },
+  "3866": {
+    "en": "Nilopala Nourishments",
+    "ja": "ニーローパラ畜産局",
+    "de": "Nilopalas Vielfalt ",
+    "fr": "Ferme de Nilopala"
+  },
+  "3867": {
+    "en": "Windweft",
+    "ja": "風の桑畑",
+    "de": "Haspelwind",
+    "fr": "Champ des Tramevents"
+  },
+  "3868": {
+    "en": "Ruveydah Fibers",
+    "ja": "ルヴェーダ製糸局",
+    "de": "Ruveydahs Zwirn",
+    "fr": "Soierie de Ruveydah"
+  },
+  "3869": {
+    "en": "Artha",
+    "ja": "アルタ区",
+    "de": "Artha",
+    "fr": "Artha"
+  },
+  "3870": {
+    "en": "Hall of the Radiant Host",
+    "ja": "星戦士団本営",
+    "de": "Halle des Himmelsheers",
+    "fr": "Garnison de l'Ost rayonnant"
+  },
+  "3871": {
+    "en": "Sundrop",
+    "ja": "流星の間",
+    "de": "Sternschweif",
+    "fr": "La Syzygie"
+  },
+  "3872": {
+    "en": "West Balshahn Bazaar",
+    "ja": "バルシャーン・バザール西通り",
+    "de": "Balshahn West-Basar",
+    "fr": "Bazar ouest de Balshahn"
+  },
+  "3873": {
+    "en": "East Balshahn Bazaar",
+    "ja": "バルシャーン・バザール東通り",
+    "de": "Balshahn Ost-Basar",
+    "fr": "Bazar est de Balshahn"
+  },
+  "3874": {
+    "en": "Mehryde's Meyhane",
+    "ja": "メリードズメイハネ",
+    "de": "Mehrydes Meyhane",
+    "fr": "Meyhane de Mehryde"
+  },
+  "3875": {
+    "en": "Radz-at-Han Aetheryte Plaza",
+    "ja": "エーテライト・プラザ",
+    "de": "Ätherytenplatz",
+    "fr": "Place de l'Éthérite"
+  },
+  "3876": {
+    "en": "The High Crucible of Al-Kimiya",
+    "ja": "アルキミヤ製薬堂",
+    "de": "Tiegel von Al-Kimiya",
+    "fr": "Creuset de l'Al-Kimiya"
+  },
+  "3877": {
+    "en": "Yuj",
+    "ja": "ユジュ区",
+    "de": "Yuj",
+    "fr": "Yuj"
+  },
+  "3878": {
+    "en": "Kama",
+    "ja": "カーマ区",
+    "de": "Kama",
+    "fr": "Kama"
+  },
+  "3879": {
+    "en": "Saltwind's Welcome",
+    "ja": "微風の浜",
+    "de": "Seebrisenpier",
+    "fr": "Accueil du vent salin"
+  },
+  "3880": {
+    "en": "Yedlihmad",
+    "ja": "イェドリマン",
+    "de": "Yedlihmad",
+    "fr": "Yedlihmad"
+  },
+  "3881": {
+    "en": "Ussaqeyiq",
+    "ja": "ウッサケイーク島",
+    "de": "Ussaqeyiq",
+    "fr": "Ussaqeyiq"
+  },
+  "3882": {
+    "en": "Tebqeyiq",
+    "ja": "テブケイーク島",
+    "de": "Tebqeyiq",
+    "fr": "Tebqeyiq"
+  },
+  "3883": {
+    "en": "Alnair",
+    "ja": "アルネア島",
+    "de": "Alnair",
+    "fr": "Alnair"
+  },
+  "3884": {
+    "en": "Akyaali",
+    "ja": "アキャーリ",
+    "de": "Akyaali",
+    "fr": "Akyaali"
+  },
+  "3885": {
+    "en": "The Perfumed Rise",
+    "ja": "薫香の丘",
+    "de": "Hügel der Düfte",
+    "fr": "Coteaux fragrants"
+  },
+  "3886": {
+    "en": "The Great Work",
+    "ja": "デミールの遺烈郷",
+    "de": "Daemirs Werk",
+    "fr": "Le Grand Œuvre"
+  },
+  "3887": {
+    "en": "Kadjaya's Footsteps",
+    "ja": "カジャーヤ演舞場",
+    "de": "Kadjayas Bühne",
+    "fr": "Pas de Kadjaya"
+  },
+  "3888": {
+    "en": "The Hamsa Hatchery",
+    "ja": "ハンサ牧場跡",
+    "de": "Hamsa-Weide",
+    "fr": "Couvoir des hamsa"
+  },
+  "3889": {
+    "en": "Giantsgall Grounds",
+    "ja": "ギガントガル採石場",
+    "de": "Gallenerz-Feld",
+    "fr": "Mines de fiel-de-géant"
+  },
+  "3890": {
+    "en": "The Tower of Zot",
+    "ja": "ゾットの塔",
+    "de": "Turm von Zot",
+    "fr": "Tour de Zott"
+  },
+  "3891": {
+    "en": "Narunnair",
+    "ja": "ナルネア島",
+    "de": "Narunnair",
+    "fr": "Narunnair"
+  },
+  "3892": {
+    "en": "The Shroud of the Samgha",
+    "ja": "衆園の森",
+    "de": "Schleier der Sangha",
+    "fr": "Jungle des Sangha"
+  },
+  "3893": {
+    "en": "The Wakeful Torana",
+    "ja": "トラーナ関門",
+    "de": "Wächter-Torana",
+    "fr": "Torana veilleur"
+  },
+  "3894": {
+    "en": "Palaka's Stand",
+    "ja": "パーラカの里",
+    "de": "Palakas Ruh",
+    "fr": "Écoute des Palaka"
+  },
+  "3895": {
+    "en": "Pavana's Remorse",
+    "ja": "パワナの悔悟",
+    "de": "Pavanas Reue",
+    "fr": "Résipiscence de Pavana"
+  },
+  "3896": {
+    "en": "Agama Temple",
+    "ja": "聖仙アガマの墳墓",
+    "de": "Agama-Tempel",
+    "fr": "Sépulcre d'Agama"
+  },
+  "3897": {
+    "en": "Ksiroda",
+    "ja": "クシールローダ川",
+    "de": "Ksiroda",
+    "fr": "La Ksiroda"
+  },
+  "3898": {
+    "en": "The Font of Maya",
+    "ja": "マーヤーの幻泉",
+    "de": "Mayaquell",
+    "fr": "Source de la Maya"
+  },
+  "3899": {
+    "en": "Purusa",
+    "ja": "プルシャ寺院",
+    "de": "Purusa",
+    "fr": "Temple du Purusa"
+  },
+  "3900": {
+    "en": "The Burning Field",
+    "ja": "星戦士団の調練場",
+    "de": "Schleifstein",
+    "fr": "Camp d'entraînement de l'Ost rayonnant"
+  },
+  "3901": {
+    "en": "Night's Watch",
+    "ja": "夜番の崖",
+    "de": "Nachtwache",
+    "fr": "Falaise des Noctivagues"
+  },
+  "3902": {
+    "en": "The Eblan Rime",
+    "ja": "エブラーナ氷原",
+    "de": "Eblans Reif",
+    "fr": "Champ de glace d'Éblana"
+  },
+  "3903": {
+    "en": "Camp Broken Glass",
+    "ja": "キャンプ・ブロークングラス",
+    "de": "Camp Splitterglas",
+    "fr": "Camp Bris-de-glace"
+  },
+  "3904": {
+    "en": "Horrea Campi",
+    "ja": "ホレア・カンピ",
+    "de": "Horrea Campi",
+    "fr": "Horrea Campi"
+  },
+  "3905": {
+    "en": "Monitoring Station G",
+    "ja": "管理官舎G棟",
+    "de": "Direktionsstelle G",
+    "fr": "Station d'observation G"
+  },
+  "3906": {
+    "en": "Victors' Spoils",
+    "ja": "臣の褒賞",
+    "de": "Siegers Lohn",
+    "fr": "Paix des Vainqueurs"
+  },
+  "3907": {
+    "en": "Cerulea Ingens",
+    "ja": "大セルレア湖",
+    "de": "Cerulea Ingens",
+    "fr": "Cerulea Ingens"
+  },
+  "3908": {
+    "en": "Tapper's Den",
+    "ja": "タッパーズデン",
+    "de": "Zapferhöhle",
+    "fr": "Repaire des Saigneurs"
+  },
+  "3909": {
+    "en": "Juturna Platform G",
+    "ja": "ユートゥルナG水上リグ",
+    "de": "Juturna-Plattform G",
+    "fr": "Plateforme Juturna G"
+  },
+  "3910": {
+    "en": "Regio Domorum",
+    "ja": "ガレアン・ドモルム区",
+    "de": "Regio Domorum",
+    "fr": "Regio Domorum"
+  },
+  "3911": {
+    "en": "The Enceladeum",
+    "ja": "エンセラダス魔導工廠",
+    "de": "Enceladeum",
+    "fr": "L'Enceladeum"
+  },
+  "3912": {
+    "en": "Forum Patens",
+    "ja": "フォルム・パーテンズ",
+    "de": "Forum Patens",
+    "fr": "Forum Patens"
+  },
+  "3913": {
+    "en": "Liminal Station IV",
+    "ja": "第IV市外駅",
+    "de": "Exostation IV",
+    "fr": "Gare de limes n°4"
+  },
+  "3914": {
+    "en": "The Runaway Train",
+    "ja": "脱線した列車",
+    "de": "Der entgleiste Zug",
+    "fr": "Train fuyard"
+  },
+  "3915": {
+    "en": "Tertium",
+    "ja": "テルティウム駅",
+    "de": "Tertium",
+    "fr": "Gare de Tertium"
+  },
+  "3916": {
+    "en": "The Pipe",
+    "ja": "青燐パイプライン",
+    "de": "Erdseim-Leitung",
+    "fr": "Céruleoduc"
+  },
+  "3917": {
+    "en": "Regio Urbanissima",
+    "ja": "ウルバニッシマ区",
+    "de": "Regio Urbanissima",
+    "fr": "Regio Urbanissima"
+  },
+  "3918": {
+    "en": "Senaculum Imperialis",
+    "ja": "ガレマール元老院",
+    "de": "Senaculum Imperialis",
+    "fr": "Senaculum Imperialis"
+  },
+  "3919": {
+    "en": "Palatium Novum",
+    "ja": "パラティウム・ノヴム",
+    "de": "Palatium Novum",
+    "fr": "Palatium Novum"
+  },
+  "3920": {
+    "en": "Forum Solius",
+    "ja": "フォルム・ソリウス",
+    "de": "Forum Solius",
+    "fr": "Forum Solius"
+  },
+  "3921": {
+    "en": "Alta Strata",
+    "ja": "帝都高速路",
+    "de": "Alta Strata",
+    "fr": "Alta Strata"
+  },
+  "3922": {
+    "en": "The Stainless Course",
+    "ja": "潔白の環濠",
+    "de": "Geläuterter Lauf",
+    "fr": "Canal immaculé"
+  },
+  "3923": {
+    "en": "The Tower of Babil",
+    "ja": "バブイルの塔",
+    "de": "Turm von Babil",
+    "fr": "Tour de Babil"
+  },
+  "3924": {
+    "en": "Magna Glacies",
+    "ja": "マグナ・グラキエス",
+    "de": "Magna Glacies",
+    "fr": "Magna Glacies"
+  },
+  "3925": {
+    "en": "Philomythes Notos",
+    "ja": "ノトスの感嘆",
+    "de": "Philomythes Notos",
+    "fr": "Philomythès Notos"
+  },
+  "3926": {
+    "en": "Propylaion",
+    "ja": "プロピュライオン",
+    "de": "Propylaion",
+    "fr": "Le Propylée"
+  },
+  "3927": {
+    "en": "First Bloom",
+    "ja": "芽吹の玄関",
+    "de": "Königsblüte",
+    "fr": "Le Bourgeon"
+  },
+  "3928": {
+    "en": "Anagnorisis",
+    "ja": "アナグノリシス天測園",
+    "de": "Anagnorisis",
+    "fr": "L'Anagnorisis"
+  },
+  "3929": {
+    "en": "The Twelve Wonders",
+    "ja": "十二節の園",
+    "de": "Die Zwölf Gärten",
+    "fr": "Les Douze Merveilles"
+  },
+  "3930": {
+    "en": "Noetophoreon",
+    "ja": "ノエトン万華樹",
+    "de": "Noetophoreon",
+    "fr": "Noétophore"
+  },
+  "3931": {
+    "en": "The Mourning Dew",
+    "ja": "汐沫の庭",
+    "de": "Lethes Gruß",
+    "fr": "Jardin aux Embruns"
+  },
+  "3932": {
+    "en": "The Cthonic Horns",
+    "ja": "異土の庭",
+    "de": "Schwarzmulchkuppen",
+    "fr": "Jardin chthonien"
+  },
+  "3933": {
+    "en": "Notoneus",
+    "ja": "ナビ・ノトス",
+    "de": "Notoneus",
+    "fr": "Notonaute"
+  },
+  "3934": {
+    "en": "Kallimelios Zephyros",
+    "ja": "ゼピュロスの喝采",
+    "de": "Kallimelios Zephyros",
+    "fr": "Kallimélios Zéphyros"
+  },
+  "3935": {
+    "en": "Southerly Zephyrneus",
+    "ja": "ナビ・南ゼピュロス",
+    "de": "Südlicher Zephyrneus",
+    "fr": "Zéphynaute sud"
+  },
+  "3936": {
+    "en": "Metabaseos Thalassai",
+    "ja": "メタバシス六洋院",
+    "de": "Metabaseos Thalassai",
+    "fr": "La Métabase"
+  },
+  "3937": {
+    "en": "Peripeteia Krystalline",
+    "ja": "ペリペテイア晶蔵院",
+    "de": "Peripeteia-Kristallspeicher",
+    "fr": "La Péripétie"
+  },
+  "3938": {
+    "en": "Poieten Oikos",
+    "ja": "ポイエテーン・オイコス",
+    "de": "Poieten Oikos",
+    "fr": "Poièten Oïkos"
+  },
+  "3939": {
+    "en": "Northerly Zephyrneus",
+    "ja": "ナビ・北ゼピュロス",
+    "de": "Nördlicher Zephyrneus",
+    "fr": "Zéphynaute nord"
+  },
+  "3940": {
+    "en": "Rumination's Ramble",
+    "ja": "逍遥水径",
+    "de": "Des Wandlers Wogen",
+    "fr": "Le Péripatéticien"
+  },
+  "3941": {
+    "en": "Ethoseletikos Boreas",
+    "ja": "ボレアースの黙劇",
+    "de": "Ethoseletikos Boreas",
+    "fr": "Éthosélétikos Boréas"
+  },
+  "3942": {
+    "en": "Southerly Boreneus",
+    "ja": "ナビ・南ボレアース",
+    "de": "Südlicher Boreneus",
+    "fr": "Borénaute sud"
+  },
+  "3943": {
+    "en": "Ktisis Hyperboreia",
+    "ja": "ヒュペルボレア造物院",
+    "de": "Hyperboreia",
+    "fr": "L'Hyperborée"
+  },
+  "3944": {
+    "en": "Easterly Boreneus",
+    "ja": "ナビ・東ボレアース",
+    "de": "Östlicher Boreneus",
+    "fr": "Borénaute est"
+  },
+  "3945": {
+    "en": "Misopses Euros",
+    "ja": "エウロスの冷笑",
+    "de": "Misopses Euros",
+    "fr": "Misopsès Euros"
+  },
+  "3946": {
+    "en": "The Hungering Gardens",
+    "ja": "牙の園",
+    "de": "Garten der tausend Klauen",
+    "fr": "Plantation carnassière"
+  },
+  "3947": {
+    "en": "Lethe",
+    "ja": "レーテー海",
+    "de": "Lethe",
+    "fr": "Le Léthé"
+  },
+  "3948": {
+    "en": "Euroneus",
+    "ja": "ナビ・エウロス",
+    "de": "Euroneus",
+    "fr": "Euronaute"
+  },
+  "3949": {
+    "en": "Sinus Lacrimarum",
+    "ja": "涙の入江",
+    "de": "Sinus Lacrimarum",
+    "fr": "Sinus Lacrimarum"
+  },
+  "3950": {
+    "en": "The Watcher's Palace",
+    "ja": "監視者の館",
+    "de": "Palast des Wächters",
+    "fr": "Palais du Veilleur"
+  },
+  "3951": {
+    "en": "Southern Mare Lamentorum",
+    "ja": "嘆きの海 南",
+    "de": "Südliches Mare Lamentorum",
+    "fr": "Sud de Mare Lamentorum"
+  },
+  "3952": {
+    "en": "The Drowning Brand",
+    "ja": "霊水の剣",
+    "de": "Schwert der Meere",
+    "fr": "Le glaive chavirant"
+  },
+  "3953": {
+    "en": "The Numbing Brand",
+    "ja": "霊氷の剣",
+    "de": "Schwert der Gletscher",
+    "fr": "Le glaive mordant"
+  },
+  "3954": {
+    "en": "The Crushing Brand",
+    "ja": "霊土の剣",
+    "de": "Schwert der Erde",
+    "fr": "Le glaive écrasant"
+  },
+  "3955": {
+    "en": "The Chlorophosgrot",
+    "ja": "クロロフォスグロット",
+    "de": "Chlorophos-Grotte",
+    "fr": "Grotte aux chlorophoi"
+  },
+  "3956": {
+    "en": "The Cradle of Darkness",
+    "ja": "闇の揺り籠",
+    "de": "Wiege der Dunkelheit",
+    "fr": "Berceau des Ténèbres"
+  },
+  "3957": {
+    "en": "Vallis Vulneris",
+    "ja": "痛みの峡谷",
+    "de": "Vallis Vulneris",
+    "fr": "Vallis Vulneris"
+  },
+  "3958": {
+    "en": "Northern Mare Lamentorum",
+    "ja": "嘆きの海 北",
+    "de": "Nördliches Mare Lamentorum",
+    "fr": "Nord de Mare Lamentorum"
+  },
+  "3959": {
+    "en": "The Biting Brand",
+    "ja": "霊風の剣",
+    "de": "Schwert der Stürme",
+    "fr": "Le glaive cinglant"
+  },
+  "3960": {
+    "en": "The Striking Brand",
+    "ja": "霊雷の剣",
+    "de": "Schwert der Gewitter",
+    "fr": "Le glaive fracassant"
+  },
+  "3961": {
+    "en": "The Searing Brand",
+    "ja": "霊火の剣",
+    "de": "Schwert der Flammen",
+    "fr": "Le glaive brûlant"
+  },
+  "3962": {
+    "en": "Kydonia Knolls",
+    "ja": "シドニア・ノールズ",
+    "de": "Kydonias Antlitz",
+    "fr": "Butte de Cydonia"
+  },
+  "3963": {
+    "en": "Lovingway's Darlings",
+    "ja": "ラヴィングウェイの花園",
+    "de": "Lovingways Schatz",
+    "fr": "Fleurettes de Lovingway"
+  },
+  "3964": {
+    "en": "Sinus Tormenti",
+    "ja": "苦悶の入江",
+    "de": "Sinus Tormenti",
+    "fr": "Sinus Tormenti"
+  },
+  "3965": {
+    "en": "Heimdall's Last Sight",
+    "ja": "ヘイムダル級観察艇の残骸",
+    "de": "Heimdalls letzte Ruh",
+    "fr": "Épave du Heimdall"
+  },
+  "3966": {
+    "en": "Bestways Burrow",
+    "ja": "ベストウェイ・バロー",
+    "de": "Bestways Rast",
+    "fr": "Halot de Bestway"
+  },
+  "3967": {
+    "en": "Moonsail",
+    "ja": "ムーンセイル",
+    "de": "Mondsegel",
+    "fr": "Timonerie lunaire"
+  },
+  "3968": {
+    "en": "The Carrotorium",
+    "ja": "キャロットリウム",
+    "de": "Carrotorium",
+    "fr": "Carrotorium"
+  },
+  "3969": {
+    "en": "Greatest Endsvale",
+    "ja": "グレーテスト・エンズヴィル",
+    "de": "Der schönste Wald",
+    "fr": "La Garenne sempervirente"
+  },
+  "3970": {
+    "en": "Ostrakon Deka-okto",
+    "ja": "オストラコン・デカオクト",
+    "de": "Ostrakon Deka-okto",
+    "fr": "Ostrakon Dékaokto"
+  },
+  "3971": {
+    "en": "The Ragnarok",
+    "ja": "魔導船ラグナロク",
+    "de": "Die Ragnarök",
+    "fr": "Le Ragnarok"
+  },
+  "3972": {
+    "en": "The Vitrified Fort",
+    "ja": "熔解した前哨基地",
+    "de": "Die Schmelze",
+    "fr": "Base vitrifiée"
+  },
+  "3973": {
+    "en": "Reah Tahra",
+    "ja": "リア・ターラ",
+    "de": "Reah Tahra",
+    "fr": "Reah Tahra"
+  },
+  "3974": {
+    "en": "Ahm Nohl",
+    "ja": "アーム・ノール",
+    "de": "Ahm Nohl",
+    "fr": "Ahm Nohl"
+  },
+  "3975": {
+    "en": "Ostrakon Tria",
+    "ja": "オストラコン・トゥリア",
+    "de": "Ostrakon Tria",
+    "fr": "Ostrakon Tria"
+  },
+  "3976": {
+    "en": "The Wellspring of Regret",
+    "ja": "逡巡の泉",
+    "de": "Quell der Reue",
+    "fr": "Source des Velléitaires"
+  },
+  "3977": {
+    "en": "Hollow of the Flesh",
+    "ja": "再受肉槽",
+    "de": "Sehnsucht des Fleisches",
+    "fr": "Vague de la Chair"
+  },
+  "3978": {
+    "en": "Abode of the Ea",
+    "ja": "イーアの里",
+    "de": "Domizil der Ea",
+    "fr": "Demeure des Éas"
+  },
+  "3979": {
+    "en": "Elegeia",
+    "ja": "辞世の連句碑",
+    "de": "Elegeia",
+    "fr": "Cippes élégiaques"
+  },
+  "3980": {
+    "en": "The Tube",
+    "ja": "イーアの転移陣",
+    "de": "Der Tunnel",
+    "fr": "Le Tube"
+  },
+  "3981": {
+    "en": "Ostrakon Deka-hexi",
+    "ja": "オストラコン・デカークシ",
+    "de": "Ostrakon Deka-hexi",
+    "fr": "Ostrakon Dékahexi"
+  },
+  "3982": {
+    "en": "Clouded Portal",
+    "ja": "放棄されたポータル",
+    "de": "Portal der Entsagung",
+    "fr": "Portail solitaire"
+  },
+  "3983": {
+    "en": "Base Omicron",
+    "ja": "オミクロンベース",
+    "de": "Omikron-Basis",
+    "fr": "Base des Omicrons"
+  },
+  "3984": {
+    "en": "Fallow Portal",
+    "ja": "寂れたポータル",
+    "de": "Portal der Einsamkeit",
+    "fr": "Portail désert"
+  },
+  "3985": {
+    "en": "The Tree of Life",
+    "ja": "生命の木",
+    "de": "Baum des Lebens",
+    "fr": "L'Arbre de vie"
+  },
+  "3986": {
+    "en": "Stigma-1",
+    "ja": "スティグマ・ワン",
+    "de": "Stigma-1",
+    "fr": "Stigma-1"
+  },
+  "3987": {
+    "en": "Empty Portal",
+    "ja": "見捨てられたポータル",
+    "de": "Portal der Leere",
+    "fr": "Portail abandonné"
+  },
+  "3988": {
+    "en": "Ostrakon Hena",
+    "ja": "オストラコン・エーナ",
+    "de": "Ostrakon Hena",
+    "fr": "Ostrakon Éna"
+  },
+  "3989": {
+    "en": "The Nekropolis",
+    "ja": "命なき街",
+    "de": "Nekropolis",
+    "fr": "La Cité silencieuse"
+  },
+  "3990": {
+    "en": "Absolute Horizon",
+    "ja": "最果ての中心",
+    "de": "Ende des Horizonts",
+    "fr": "Horizon absolu"
+  },
+  "3991": {
+    "en": "The Dead Ends",
+    "ja": "レムナント",
+    "de": "Sternengrab",
+    "fr": "L'Issue aux Impasses"
+  },
+  "3992": {
+    "en": "Central Observatory",
+    "ja": "主観測室",
+    "de": "Hauptwarte",
+    "fr": "Observatoire central"
+  },
+  "3993": {
+    "en": "Saltcrystal Strings",
+    "ja": "星海結晶域",
+    "de": "Kristalline Flur",
+    "fr": "Enchevêtrements cristallins"
+  },
+  "3994": {
+    "en": "Midnight Downwell",
+    "ja": "星海乱流域",
+    "de": "Wirbelstrom",
+    "fr": "Turbulences éthérées"
+  },
+  "3995": {
+    "en": "Aetherial Lens",
+    "ja": "エーテル鏡群",
+    "de": "Auge der Linse",
+    "fr": "Lentille éthéroscopique"
+  },
+  "3996": {
+    "en": "Abyssal Plane",
+    "ja": "星海深淵域",
+    "de": "Der Abyss",
+    "fr": "Abysses stellaires"
+  },
+  "3997": {
+    "en": "Aetherostatic Peak",
+    "ja": "星海中枢域",
+    "de": "Das Herz",
+    "fr": "Pic éthérostatique"
+  },
+  "3998": {
+    "en": "The Studium",
+    "ja": "シャーレアン魔法大学",
+    "de": "Magieakademie von Sharlayan",
+    "fr": "Académie de magie"
+  },
+  "3999": {
+    "en": "The Baldesion Annex",
+    "ja": "バルデシオン分館前",
+    "de": "An Baldesions Annex",
+    "fr": "Annexe des Élèves de Baldesion"
+  },
+  "4000": {
+    "en": "The Rostra",
+    "ja": "哲学者の広場",
+    "de": "Forum",
+    "fr": "Les Rostres"
+  },
+  "4001": {
+    "en": "The Leveilleur Estate",
+    "ja": "ルヴェユール邸前",
+    "de": "Am Anwesen der Leveilleurs",
+    "fr": "Résidence des Leveilleur"
+  },
+  "4002": {
+    "en": "Journey's End",
+    "ja": "漂流者の丘",
+    "de": "Hügel der Gestrandeten",
+    "fr": "Colline des Naufragés"
+  },
+  "4003": {
+    "en": "Scholar's Harbor",
+    "ja": "知神の港",
+    "de": "Thaliaks Pforte",
+    "fr": "Port de l'Érudit"
+  },
+  "4004": {
+    "en": "The Hall of Artifice (Labyrinthos)",
+    "ja": "アルティフィスホール（ラヴィリンソス方面）",
+    "de": "Halle der Kunstfertigkeit (zum Labyrinthos)",
+    "fr": "Vestibule de l'Ingéniosité (Entrée du Labyrinthos)"
+  },
+  "4005": {
+    "en": "Meghaduta",
+    "ja": "メーガドゥータ宮前",
+    "de": "Vorplatz des Meghaduta-Tempels",
+    "fr": "Palais du Meghaduta"
+  },
+  "4006": {
+    "en": "Ruveydah Fibers",
+    "ja": "ルヴェーダ製糸局前",
+    "de": "Ruveydahs Zwirn (Zugang)",
+    "fr": "Soierie de Ruveydah"
+  },
+  "4007": {
+    "en": "Airship Landing",
+    "ja": "ラザハン・ランディング",
+    "de": "Luftschiff-Landeplatz",
+    "fr": "Aérodrome de Radz-at-Han"
+  },
+  "4008": {
+    "en": "Alzadaal's Peace",
+    "ja": "アルザダール廟前",
+    "de": "Bei Alzadaals Ruh",
+    "fr": "Repos d'Alzadaal"
+  },
+  "4009": {
+    "en": "Hall of the Radiant Host",
+    "ja": "星戦士団本営前",
+    "de": "Vor der Halle des Himmelsheers",
+    "fr": "Garnison de l'Ost rayonnant"
+  },
+  "4010": {
+    "en": "Mehryde's Meyhane",
+    "ja": "メリードズメイハネ",
+    "de": "Mehrydes Meyhane",
+    "fr": "Meyhane de Mehryde"
+  },
+  "4011": {
+    "en": "The Gate of First Sight (Thavnair)",
+    "ja": "真眼門（サベネア島方面）",
+    "de": "Tor des Wahrsehers (nach Thavnair) ",
+    "fr": "Porte de l'Œil pur (Sortie de la ville)"
+  },
+  "4012": {
+    "en": "Trnakiya",
+    "ja": "樹海の空地",
+    "de": "Bucht im Meer der Bäume",
+    "fr": "Clairière de Vanaspati"
+  },
+  "4013": {
+    "en": "Insight",
+    "ja": "里長邸前",
+    "de": "Vor dem Haus des Weisen",
+    "fr": "Résidence du doyen"
+  },
+  "4014": {
+    "en": "Devatagara",
+    "ja": "デーヴァター寺院",
+    "de": "Devatagara",
+    "fr": "Temple de Devata"
+  },
+  "4015": {
+    "en": "Vanaspati",
+    "ja": "ヴァナスパティ樹海",
+    "de": "Vanaspati",
+    "fr": "Vanaspati"
+  },
+  "4016": {
+    "en": "Wandering Wellspring",
+    "ja": "祈りの水辺",
+    "de": "Der Nasse Weg des Pilgers",
+    "fr": "Rive des Prières"
+  },
+  "4017": {
+    "en": "The Chosen Path",
+    "ja": "決意の道",
+    "de": "Der Weg des Festen Willens",
+    "fr": "Chemin de la Résolution"
+  },
+  "4018": {
+    "en": "Sramana's Salve",
+    "ja": "シュラマナの里",
+    "de": "Dorf der Sramana",
+    "fr": "Village des Sramana"
+  },
+  "4019": {
+    "en": "Sun's Ascent",
+    "ja": "太陽の階段",
+    "de": "Stufen zur Sonne",
+    "fr": "Marches du Soleil"
+  },
+  "4020": {
+    "en": "The Temple Stones",
+    "ja": "石窟寺院群",
+    "de": "Höhlentempel von Vanaspati",
+    "fr": "Temples sous roche"
+  },
+  "4021": {
+    "en": "Beyond the Stars",
+    "ja": "天の最果て",
+    "de": "Äußerster Rand des Universums",
+    "fr": "Confins de l'univers"
+  },
+  "4022": {
+    "en": "Lemures Headquarters",
+    "ja": "レムレースのオフィス",
+    "de": "Hauptquartier der Lemuren",
+    "fr": "Repaire des Lémures"
+  },
+  "4023": {
+    "en": "Strategy Room",
+    "ja": "作戦立案室",
+    "de": "Strategieraum",
+    "fr": "Salle des opérations"
+  },
+  "4024": {
+    "en": "The Nethergate",
+    "ja": "神門の間",
+    "de": "Gottesportal",
+    "fr": "Porte des Dieux"
+  },
+  "4025": {
+    "en": "The Aetherial Sea",
+    "ja": "星海",
+    "de": "Sternengrund",
+    "fr": "Mer des étoiles"
+  },
+  "4026": {
+    "en": "The Lost Hydraulic",
+    "ja": "ロスト・ハイドロリック",
+    "de": "Vergessene Hydraulik",
+    "fr": "Plateforme hydraulique oubliée"
+  },
+  "4027": {
+    "en": "Jnanamandapa",
+    "ja": "ジュニャーナ洋上祭殿",
+    "de": "Jnanamandapa",
+    "fr": "Jnanamandapa"
+  },
+  "4028": {
+    "en": "The Aitiascope",
+    "ja": "アイティオン星晶鏡",
+    "de": "Aitiaskop",
+    "fr": "Prisme de l'Aitia"
+  },
+  "4029": {
+    "en": "Unmemoried Portal",
+    "ja": "忘れられたポータル",
+    "de": "Portal des Vergessens",
+    "fr": "Portail oublié"
+  },
+  "4030": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4031": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4032": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4033": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4034": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4040": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4041": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4042": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4043": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4044": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4045": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4046": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4048": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4049": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4050": {
+    "en": "Scholar's Harbor",
+    "ja": "知神の港",
+    "de": "Thaliaks Pforte",
+    "fr": "Port de l'Érudit"
+  },
+  "4051": {
+    "en": "Oinops",
+    "ja": "碧き谷",
+    "de": "Azurtal",
+    "fr": "Vallée cristalline"
+  },
+  "4052": {
+    "en": "Reflecting Pool",
+    "ja": "沈思の泉",
+    "de": "Tümpel des Tiefsinns",
+    "fr": "Étang des Réflexions"
+  },
+  "4053": {
+    "en": "Unmoved Source Alpha",
+    "ja": "一号天球口",
+    "de": "Sammelbecken Nr. 1",
+    "fr": "Pertuis aérien n°1"
+  },
+  "4054": {
+    "en": "The Mover Alpha",
+    "ja": "一号排出路",
+    "de": "Abflusskanal Nr. 1",
+    "fr": "Canal d'écoulement n°1"
+  },
+  "4055": {
+    "en": "Unmoved Source Beta",
+    "ja": "二号天球口",
+    "de": "Sammelbecken Nr. 2",
+    "fr": "Pertuis aérien n°2"
+  },
+  "4056": {
+    "en": "The Mover Beta",
+    "ja": "二号排出路",
+    "de": "Abflusskanal Nr. 2",
+    "fr": "Canal d'écoulement n°2"
+  },
+  "4057": {
+    "en": "Deepmoat",
+    "ja": "ディープモート",
+    "de": "Tiefer Graben",
+    "fr": "Douve du Circuit central"
+  },
+  "4058": {
+    "en": "Meghaduta",
+    "ja": "メーガドゥータの飛沫",
+    "de": "Kaskaden des Meghaduta",
+    "fr": "Cascatelle du Meghaduta"
+  },
+  "4059": {
+    "en": "Yedlihmad",
+    "ja": "イェドリマン沿岸",
+    "de": "Yedlihmad",
+    "fr": "Port de Yedlihmad"
+  },
+  "4060": {
+    "en": "The Thavnairian Coast",
+    "ja": "サベネア島近海",
+    "de": "Thavnair-Küste",
+    "fr": "Côtes de Thavnair"
+  },
+  "4061": {
+    "en": "The Great Runoff",
+    "ja": "デミールの遺烈郷沿岸",
+    "de": "Daemirs Bucht",
+    "fr": "Pontons du Grand Œuvre"
+  },
+  "4062": {
+    "en": "Giantsgall Grounds",
+    "ja": "ギガントガル採石場",
+    "de": "Gallenerz-Feld",
+    "fr": "Mines de fiel-de-géant"
+  },
+  "4063": {
+    "en": "The Wakeful Torana",
+    "ja": "トラーナ関門",
+    "de": "Wächter-Torana",
+    "fr": "Torana veilleur"
+  },
+  "4064": {
+    "en": "Ksiroda",
+    "ja": "クシールローダ川",
+    "de": "Ksiroda",
+    "fr": "La Ksiroda"
+  },
+  "4065": {
+    "en": "Pavana's Remorse",
+    "ja": "パワナの悔悟",
+    "de": "Pavanas Reue",
+    "fr": "Résipiscence de Pavana"
+  },
+  "4066": {
+    "en": "The Font of Maya",
+    "ja": "マーヤーの幻泉",
+    "de": "Mayaquell",
+    "fr": "Source de la Maya"
+  },
+  "4067": {
+    "en": "The Perfumed Tides",
+    "ja": "薫香の浜",
+    "de": "Duftende Wogen",
+    "fr": "Pied des Coteaux fragrants"
+  },
+  "4068": {
+    "en": "The Eblan Thaw",
+    "ja": "エブラーナ不凍池",
+    "de": "Eblana-Schmelze",
+    "fr": "Étang hardi d'Éblana"
+  },
+  "4069": {
+    "en": "The Stainless Course",
+    "ja": "潔白の環濠",
+    "de": "Geläuterter Lauf",
+    "fr": "Canal immaculé"
+  },
+  "4070": {
+    "en": "Greatest Endsvale",
+    "ja": "グレーテスト・エンズヴィル",
+    "de": "Der schönste Wald",
+    "fr": "La Garenne sempervirente"
+  },
+  "4071": {
+    "en": "The Chlorophospond",
+    "ja": "クロロフォス・ポンド",
+    "de": "Chlorophos-Weiher",
+    "fr": "Mare aux chlorophoi"
+  },
+  "4072": {
+    "en": "The Frozen Fissure",
+    "ja": "氷土の亀裂",
+    "de": "Frostkluft",
+    "fr": "Crevasses du pergélisol"
+  },
+  "4073": {
+    "en": "Rumination's Ramble",
+    "ja": "逍遥水径",
+    "de": "Des Wandlers Wogen",
+    "fr": "Le Péripatéticien"
+  },
+  "4074": {
+    "en": "The Lower Hungering Gardens",
+    "ja": "牙の園下層",
+    "de": "Garten der tausend Klauen (untere Ebene)",
+    "fr": "Contrebas de la Plantation carnassière"
+  },
+  "4075": {
+    "en": "Lethe",
+    "ja": "レーテー海",
+    "de": "Lethe",
+    "fr": "Le Léthé"
+  },
+  "4076": {
+    "en": "Apohelos 18-γ",
+    "ja": "ヘロス・デカオクトγ",
+    "de": "Apohelos 18-γ",
+    "fr": "Hélos Dékaokto γ"
+  },
+  "4077": {
+    "en": "Apohelos 18-β",
+    "ja": "ヘロス・デカオクトβ",
+    "de": "Apohelos 18-β",
+    "fr": "Hélos Dékaokto β"
+  },
+  "4078": {
+    "en": "Apohelos 18-α",
+    "ja": "ヘロス・デカオクトα",
+    "de": "Apohelos 18-α",
+    "fr": "Hélos Dékaokto α"
+  },
+  "4079": {
+    "en": "The Wellspring of Regret",
+    "ja": "逡巡の泉",
+    "de": "Quell der Reue",
+    "fr": "Source des Velléitaires"
+  },
+  "4080": {
+    "en": "Elegeia",
+    "ja": "辞世の連句碑",
+    "de": "Elegeia",
+    "fr": "Cippes élégiaques"
+  },
+  "4081": {
+    "en": "Limne 18",
+    "ja": "リムニ・デカオクト",
+    "de": "Limne 18",
+    "fr": "Limné Dékaokto"
+  },
+  "4082": {
+    "en": "Limne 3-α",
+    "ja": "リムニ・トゥリアα",
+    "de": "Limne 3-α",
+    "fr": "Limné Tria α"
+  },
+  "4083": {
+    "en": "Limne 3-β",
+    "ja": "リムニ・トゥリアβ",
+    "de": "Limne 3-β",
+    "fr": "Limné Tria β"
+  },
+  "4084": {
+    "en": "Central Aerial Artifice",
+    "ja": "創造中空層",
+    "de": "Mittlere Aerialebene",
+    "fr": "Étage troposphérique"
+  },
+  "4085": {
+    "en": "Upper Aerial Artifice",
+    "ja": "創造高空層",
+    "de": "Obere Aerialebene",
+    "fr": "Étage stratosphérique"
+  },
+  "4086": {
+    "en": "Prime Artifice",
+    "ja": "創造天空層",
+    "de": "Celestrialebene",
+    "fr": "Étage mésosphérique"
+  },
+  "4087": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4088": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4089": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4090": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4091": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4092": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4093": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4094": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4095": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4096": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4097": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4098": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4099": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4100": {
+    "en": "The Dead Ends",
+    "ja": "レムナント",
+    "de": "Das Sternengrab",
+    "fr": "L'Issue aux Impasses"
+  },
+  "4101": {
+    "en": "Ostrakon Hexi",
+    "ja": "オストラコン・エークシ",
+    "de": "Ostrakon Exi",
+    "fr": "Ostrakon Exi"
+  },
+  "4102": {
+    "en": "Ostrakon Okto",
+    "ja": "オストラコン・オクト",
+    "de": "Ostrakon Okto",
+    "fr": "Ostrakon Okto"
+  },
+  "4103": {
+    "en": "Ostrakon Deka-hepta",
+    "ja": "オストラコン・デカエプタ",
+    "de": "Ostrakon Dekaepta",
+    "fr": "Ostrakon Dékahepta"
+  },
+  "4104": {
+    "en": "Shell Mound",
+    "ja": "消えゆく貝塚",
+    "de": "Verfallenes Muschelhaus",
+    "fr": "Amas coquillier naufragé"
+  },
+  "4105": {
+    "en": "Deterrence Grounds",
+    "ja": "抑止の丘",
+    "de": "Hügel der Abschreckung",
+    "fr": "Colline des Dés jetés"
+  },
+  "4106": {
+    "en": "The World Tree",
+    "ja": "世界樹の庭",
+    "de": "Garten des Weltenbaums",
+    "fr": "Jardin de l'Arbre-Monde"
+  },
+  "4107": {
+    "en": "Pestilent Sands",
+    "ja": "穢れた渚",
+    "de": "Verseuchte Küste",
+    "fr": "Grève souillée"
+  },
+  "4108": {
+    "en": "Grebuloff Pillars",
+    "ja": "グレビュオフの集落",
+    "de": "Typhoid-Siedlung",
+    "fr": "Village grébuloff"
+  },
+  "4109": {
+    "en": "Judgment Day",
+    "ja": "ジャッジメント・デイ",
+    "de": "Tag der totalen Vernichtung",
+    "fr": "Le Jugement dernier"
+  },
+  "4110": {
+    "en": "The Plenty",
+    "ja": "満ち足りた世界",
+    "de": "Die glückliche Welt",
+    "fr": "Monde débordant de vie"
+  },
+  "4111": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4112": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4113": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4114": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4115": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4116": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4117": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4118": {
+    "en": "The Tower of Babil",
+    "ja": "バブイルの塔",
+    "de": "Turm von Babil",
+    "fr": "Tour de Babil"
+  },
+  "4119": {
+    "en": "Magitek Freight Depot E",
+    "ja": "E号魔導貨物線",
+    "de": "Magitek-Frachtroute E",
+    "fr": "Ligne E de fret magitek"
+  },
+  "4120": {
+    "en": "Subterranean Sector",
+    "ja": "地下区画",
+    "de": "Unterirdische Sektion",
+    "fr": "Secteur souterrain"
+  },
+  "4121": {
+    "en": "Conveyance Sector",
+    "ja": "昇降区画",
+    "de": "Aufzugssektion",
+    "fr": "Secteur du monte-charge"
+  },
+  "4122": {
+    "en": "Palatial Sector",
+    "ja": "宮殿区画",
+    "de": "Palastsektion",
+    "fr": "Secteur du palais"
+  },
+  "4123": {
+    "en": "Auxiliary Sector",
+    "ja": "増築区画",
+    "de": "Annex-Sektion",
+    "fr": "Secteur auxiliaire"
+  },
+  "4124": {
+    "en": "Magitek Servicing",
+    "ja": "魔導整備庫",
+    "de": "Magitek-Wartungsdepot",
+    "fr": "Entrepôt de maintenance magitek"
+  },
+  "4125": {
+    "en": "Martial Conditioning",
+    "ja": "武術訓練ホール",
+    "de": "Kampfhalle",
+    "fr": "Hall d'entraînement"
+  },
+  "4126": {
+    "en": "The Iron Womb",
+    "ja": "鉄の肚",
+    "de": "Eiserner Wanst",
+    "fr": "Cœur de Fer"
+  },
+  "4127": {
+    "en": "Mark XLIX Freighter",
+    "ja": "XLIX式貨物車",
+    "de": "Güterwagen XLIX",
+    "fr": "Transporteur de fret numéro XLIX"
+  },
+  "4128": {
+    "en": "Loading Belt",
+    "ja": "搬出通路",
+    "de": "Frachtbahnsteig",
+    "fr": "Aire de déchargement"
+  },
+  "4129": {
+    "en": "Magitek Lift A",
+    "ja": "A号昇降機",
+    "de": "Aufzug A",
+    "fr": "Monte-charge A"
+  },
+  "4130": {
+    "en": "Connecting Corridor",
+    "ja": "連絡通路",
+    "de": "Verbindungskorridor",
+    "fr": "Corridor de liaison"
+  },
+  "4131": {
+    "en": "Palatial Corridor",
+    "ja": "宮殿通路",
+    "de": "Palastkorridor",
+    "fr": "Corridor du palais"
+  },
+  "4132": {
+    "en": "The Chain",
+    "ja": "鎖環の間",
+    "de": "Halle der Ketten",
+    "fr": "Maillon"
+  },
+  "4133": {
+    "en": "Aetherial Distortion",
+    "ja": "地脈歪曲層",
+    "de": "Verzerrte Ader",
+    "fr": "Distorsion éthérée"
+  },
+  "4134": {
+    "en": "Anima's Dimension",
+    "ja": "アニマディメンション",
+    "de": "Animas Dimension",
+    "fr": "Dimension d'Anima"
+  },
+  "4135": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4136": {
+    "en": "Idyllshire",
+    "ja": "イディルシャイア",
+    "de": "Frohehalde",
+    "fr": "Idyllée"
+  },
+  "4137": {
+    "en": "Rhalgr's Reach",
+    "ja": "ラールガーズリーチ",
+    "de": "Rhalgrs Wacht",
+    "fr": "L'Étendue de Rhalgr"
+  },
+  "4138": {
+    "en": "Garlemald",
+    "ja": "ガレマルド",
+    "de": "Garlemald",
+    "fr": "Garlemald"
+  },
+  "4139": {
+    "en": "Empyreum",
+    "ja": "エンピレアム",
+    "de": "Empyreum",
+    "fr": "Empyrée"
+  },
+  "4140": {
+    "en": "Great Wyrm's Gate",
+    "ja": "聖竜門",
+    "de": "Drachentor",
+    "fr": "Porte du Dragon sacré"
+  },
+  "4141": {
+    "en": "Snowsteep Springs",
+    "ja": "スノースティープ浴場",
+    "de": "Schneehang-Quellen",
+    "fr": "Les Bains de poudreuse"
+  },
+  "4142": {
+    "en": "The Halberd's Head",
+    "ja": "斧槍通り",
+    "de": "Hellebardenspalier",
+    "fr": "Avenue Fer-de-hallebarde"
+  },
+  "4143": {
+    "en": "Kind Traveler's Gate",
+    "ja": "義勇門",
+    "de": "Tor des Heldenmuts",
+    "fr": "Porte des Altruistes"
+  },
+  "4144": {
+    "en": "Dangoulin's Devotion",
+    "ja": "ダングラン記念公園",
+    "de": "Dangoulins Hingabe",
+    "fr": "Mémorial Dangoulin"
+  },
+  "4145": {
+    "en": "Risensong Rookery",
+    "ja": "新飛竜泊",
+    "de": "Neuer Drachenkorridor",
+    "fr": "Roquerie du Nouveau Refrain"
+  },
+  "4146": {
+    "en": "The Aitiascope",
+    "ja": "アイティオン星晶鏡",
+    "de": "Aitiaskop",
+    "fr": "Prisme de l'Aitia"
+  },
+  "4147": {
+    "en": "Lower Sepulchres",
+    "ja": "下層",
+    "de": "Untere Ebene",
+    "fr": "Étages inférieurs"
+  },
+  "4148": {
+    "en": "Cairn's Hollow",
+    "ja": "深層",
+    "de": "Tiefere Ebene",
+    "fr": "Les profondeurs"
+  },
+  "4149": {
+    "en": "Great Wyrm's Gate Subdivision",
+    "ja": "[拡張街]聖竜門",
+    "de": "[Erweiterung] Drachentor",
+    "fr": "Porte du Dragon sacré [Annexe]"
+  },
+  "4150": {
+    "en": "Snowsteep Springs Subdivision",
+    "ja": "[拡張街]スノースティープ浴場",
+    "de": "[Erweiterung] Schneehang-Quellen",
+    "fr": "Les Bains de poudreuse [Annexe]"
+  },
+  "4151": {
+    "en": "Kind Traveler's Gate Subdivision",
+    "ja": "[拡張街]義勇門",
+    "de": "[Erweiterung] Tor des Heldenmuts",
+    "fr": "Porte des Altruistes [Annexe]"
+  },
+  "4152": {
+    "en": "Dangoulin's Devotion Subdivision",
+    "ja": "[拡張街]ダングラン記念公園",
+    "de": "[Erweiterung] Dangoulins Hingabe",
+    "fr": "Mémorial Dangoulin [Annexe]"
+  },
+  "4153": {
+    "en": "Risensong Rookery Subdivision",
+    "ja": "[拡張街]新飛竜泊",
+    "de": "[Erweiterung] Neuer Drachenkorridor",
+    "fr": "Roquerie du Nouveau Refrain [Annexe]"
+  },
+  "4154": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4155": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4156": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4158": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4159": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4160": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4161": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4163": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4164": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4165": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4166": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4167": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4168": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4169": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "4170": {
     "en": "",
     "ja": "",
     "de": "",

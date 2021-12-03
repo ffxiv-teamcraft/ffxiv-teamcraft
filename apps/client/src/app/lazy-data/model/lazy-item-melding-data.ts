@@ -25,5 +25,4 @@ export enum Prop {
   Ring = "Ring%",
   The1HWpn = "1HWpn%",
   The2HWpn = "2HWpn%",
-  Waist = "Waist%",
 }

@@ -24,10 +24,10 @@ export const aetheryteNames = {
     "fr": "Guilde des archers"
   },
   "26": {
-    "en": "Leatherworkers' Guild",
+    "en": "Leatherworkers' Guild & Shaded Bower",
     "de": "Gerbergilde (Markt)",
-    "ja": "革細工師ギルド前（マーケット）",
-    "fr": "Guilde des tanneurs (Marché)"
+    "ja": "マーケット（革細工師ギルド前）",
+    "fr": "Marché (Guilde des tanneurs)"
   },
   "27": {
     "en": "Lancers' Guild",
@@ -163,7 +163,7 @@ export const aetheryteNames = {
   },
   "49": {
     "en": "Hawkers' Alley",
-    "de": "Kaufmannsplatz",
+    "de": "Kaufmannsplatz (Markt)",
     "ja": "マーケット（国際街広場）",
     "fr": "Marché (La Camelotade)"
   },
@@ -433,9 +433,9 @@ export const aetheryteNames = {
   },
   "125": {
     "en": "Sapphire Avenue Exchange",
-    "de": "Saphirstraßenmarkt",
-    "ja": "サファイアアベニュー国際市場（マーケット）",
-    "fr": "Marchés de l'avenue du Saphir"
+    "de": "Saphirstraße (Markt)",
+    "ja": "マーケット（サファイアアベニュー国際市場）",
+    "fr": "Marché (Avenue du Saphir)"
   },
   "126": {
     "en": "Airship Landing",
@@ -487,7 +487,7 @@ export const aetheryteNames = {
   },
   "149": {
     "en": "Musica Universalis Markets",
-    "de": "Musica Universalis",
+    "de": "Musica Universalis (Markt)",
     "ja": "マーケット（ムジカ・ユニバーサリス）",
     "fr": "Marché (Musica Universalis)"
   },
@@ -568,5 +568,107 @@ export const aetheryteNames = {
     "de": "Gangos",
     "ja": "ガンゴッシュ",
     "fr": "Gangos"
+  },
+  "182": {
+    "en": "Old Sharlayan Aetheryte Plaza",
+    "de": "Ätherytenplatz",
+    "ja": "エーテライト・プラザ",
+    "fr": "Place de l'Éthérite"
+  },
+  "183": {
+    "en": "Radz-at-Han Aetheryte Plaza",
+    "de": "Ätherytenplatz",
+    "ja": "エーテライト・プラザ",
+    "fr": "Place de l'Éthérite"
+  },
+  "184": {
+    "en": "The Studium",
+    "de": "Magieakademie von Sharlayan",
+    "ja": "シャーレアン魔法大学",
+    "fr": "Académie de magie"
+  },
+  "185": {
+    "en": "The Baldesion Annex",
+    "de": "An Baldesions Annex",
+    "ja": "バルデシオン分館前",
+    "fr": "Annexe des Élèves de Baldesion"
+  },
+  "186": {
+    "en": "The Rostra",
+    "de": "Forum",
+    "ja": "哲学者の広場",
+    "fr": "Les Rostres"
+  },
+  "187": {
+    "en": "The Leveilleur Estate",
+    "de": "Am Anwesen der Leveilleurs",
+    "ja": "ルヴェユール邸前",
+    "fr": "Résidence des Leveilleur"
+  },
+  "188": {
+    "en": "Journey's End",
+    "de": "Hügel der Gestrandeten",
+    "ja": "漂流者の丘",
+    "fr": "Colline des Naufragés"
+  },
+  "189": {
+    "en": "Scholar's Harbor",
+    "de": "Thaliaks Pforte",
+    "ja": "知神の港",
+    "fr": "Port de l'Érudit"
+  },
+  "190": {
+    "en": "The Hall of Artifice (Labyrinthos)",
+    "de": "Halle der Kunstfertigkeit (zum Labyrinthos)",
+    "ja": "アルティフィスホール（ラヴィリンソス方面）",
+    "fr": "Vestibule de l'Ingéniosité (Entrée du Labyrinthos)"
+  },
+  "191": {
+    "en": "Meghaduta",
+    "de": "Vorplatz des Meghaduta-Tempels",
+    "ja": "メーガドゥータ宮前",
+    "fr": "Palais du Meghaduta"
+  },
+  "192": {
+    "en": "Ruveydah Fibers",
+    "de": "Ruveydahs Zwirn (Zugang)",
+    "ja": "ルヴェーダ製糸局前",
+    "fr": "Soierie de Ruveydah"
+  },
+  "193": {
+    "en": "Airship Landing",
+    "de": "Luftschiff-Landeplatz",
+    "ja": "ラザハン・ランディング",
+    "fr": "Aérodrome de Radz-at-Han"
+  },
+  "194": {
+    "en": "Alzadaal's Peace",
+    "de": "Bei Alzadaals Ruh",
+    "ja": "アルザダール廟前",
+    "fr": "Repos d'Alzadaal"
+  },
+  "195": {
+    "en": "Hall of the Radiant Host",
+    "de": "Vor der Halle des Himmelsheers",
+    "ja": "星戦士団本営前",
+    "fr": "Garnison de l'Ost rayonnant"
+  },
+  "196": {
+    "en": "Mehryde's Meyhane",
+    "de": "Mehrydes Meyhane",
+    "ja": "メリードズメイハネ",
+    "fr": "Meyhane de Mehryde"
+  },
+  "197": {
+    "en": "The Gate of First Sight (Thavnair)",
+    "de": "Tor des Wahrsehers (nach Thavnair) ",
+    "ja": "真眼門（サベネア島方面）",
+    "fr": "Porte de l'Œil pur (Sortie de la ville)"
+  },
+  "198": {
+    "en": "Kama",
+    "de": "Kama",
+    "ja": "カーマ区",
+    "fr": "Kama"
   }
 };
