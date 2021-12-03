@@ -87,9 +87,9 @@ export class LgbExtractor extends AbstractExtractor {
                 const mapLayer = territoryLayers[lgbEntry.territoryId].find(layer => {
                   const localMapEntry = mapData[layer.mapId];
                   const localCoords = this.getCoords({
-                    x: object.Transform.Translation.x,
-                    y: object.Transform.Translation.z,
-                    z: object.Transform.Translation.y
+                    x: object.Transform.Translation.X,
+                    y: object.Transform.Translation.Z,
+                    z: object.Transform.Translation.Y
                   }, localMapEntry);
                   return this.isInLayerBounds(localCoords, layer.bounds);
                 });
@@ -100,9 +100,9 @@ export class LgbExtractor extends AbstractExtractor {
                 return;
               }
               const coords = this.getCoords({
-                x: object.Transform.Translation.x,
-                y: object.Transform.Translation.z,
-                z: object.Transform.Translation.y
+                x: object.Transform.Translation.X,
+                y: object.Transform.Translation.Z,
+                z: object.Transform.Translation.Y
               }, mapEntry);
               if (coords.x < 0 || coords.y < 0) {
                 return;
