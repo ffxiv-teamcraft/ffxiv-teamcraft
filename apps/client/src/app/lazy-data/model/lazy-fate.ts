@@ -35,7 +35,7 @@ export enum Icon {
 export interface Position {
   map:    number;
   zoneid: number;
-  x:      null;
-  y:      null;
-  z:      null;
+  x:      number;
+  y:      number;
+  z:      number;
 }

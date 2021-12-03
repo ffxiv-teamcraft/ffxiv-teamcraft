@@ -7,11 +7,11 @@ export interface LazyNode {
   ephemeral?:   boolean;
   spawns?:      number[];
   duration?:    number;
-  zoneid?:      number | null;
-  map?:         number | null;
-  hiddenItems?: number[];
+  zoneid?:      number;
   x?:           number;
   y?:           number;
   z?:           number;
+  map?:         number;
+  hiddenItems?: number[];
   folklore?:    number;
 }
