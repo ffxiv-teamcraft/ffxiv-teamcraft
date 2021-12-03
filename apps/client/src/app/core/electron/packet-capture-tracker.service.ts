@@ -154,9 +154,14 @@ export class PacketCaptureTrackerService {
       this.lazyData.getEntry('maps')
     ]).subscribe(([packet, maps]) => {
       const mapId = territories[packet.zoneId.toString()];
-      this.eorzeaFacade.setZone(maps[mapId].placename_id);
-      this.eorzeaFacade.setPcapWeather(packet.weatherId, true);
-      this.eorzeaFacade.setMap(mapId);
+      if (mapId) {
+        this.eorzeaFacade.setZone(maps[mapId].placename_id);
+        this.eorzeaFacade.setPcapWeather(packet.weatherId, true);
+        this.eorzeaFacade.setMap(mapId);
+      } else {
+        console.warn(`Ignoring map switch to ${mapId} with packet:`);
+        console.warn(packet);
+      }
     });
 
     this.ipc.weatherChangePackets$.subscribe(packet => {
@@ -202,7 +207,7 @@ export class PacketCaptureTrackerService {
       toIpcData()
     ).subscribe(packet => {
       for (let i = 0; i < packet.entryCount; i++) {
-        if (packet.statusEntries[i].sourceActorId === packet.actorId) {
+        if (packet.statusEntries[i] && packet.statusEntries[i].sourceActorId === packet.actorId) {
           this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
         }
       }
