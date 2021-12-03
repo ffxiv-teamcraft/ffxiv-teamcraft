@@ -45,9 +45,9 @@ export interface Alarm {
 }
 
 export interface Coords {
-  x: number;
-  y: number;
-  z: number;
+  x?: number;
+  y?: number;
+  z:  number;
 }
 
 export interface GatheringNode {
@@ -187,6 +187,7 @@ export interface ItemClass {
   Singular_ja:                string;
   StackSize:                  number;
   StartsWithVowel:            number;
+  SubStatCategory:            number;
 }
 
 export enum Icon {

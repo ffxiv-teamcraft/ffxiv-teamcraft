@@ -553,7 +553,7 @@ export class DataService {
           }
           console.warn('No type matching for res type', row._);
         })).pipe(
-          map(mapped => mapped.filter(r => !!r))
+          map(mapped => mapped.filter((r: SearchResult) => !!r && !!r.type))
         );
       })
     );

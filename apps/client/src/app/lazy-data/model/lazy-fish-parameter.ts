@@ -27,12 +27,13 @@ export enum De {
   Salzseen = "Salzseen",
   SchwebInseln = "Schweb-Inseln",
   Seen = "Seen",
+  Sternenfischen = "Sternenfischen",
   Wolken = "Wolken",
   Ätherquellen = "Ätherquellen",
 }
 
 export enum En {
-  AetherochemicalSpills = "Aetherochemical Spills",
+  AetherochemicalPools = "Aetherochemical Pools",
   DeepSea = "Deep Sea",
   FloatingIslands = "Floating Islands",
   Lakes = "Lakes",
@@ -41,9 +42,11 @@ export enum En {
   SaltLakes = "Salt Lakes",
   Sands = "Sands",
   Skies = "Skies",
+  Space = "Space",
 }
 
 export enum Fr {
+  Espace = "Espace",
   FuitesMagismologiques = "Fuites magismologiques",
   LacSalé = "Lac salé",
   LacsEtMarais = "Lacs et marais",
@@ -57,6 +60,7 @@ export enum Fr {
 
 export enum Ja {
   塩湖 = "塩湖",
+  宙泉 = "宙泉",
   沖合 = "沖合",
   河川 = "河川",
   浮島 = "浮島",

@@ -16,7 +16,6 @@ import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
-import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
@@ -27,6 +26,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { Memoized } from '../../../core/decorators/memoized';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -42,7 +42,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     ilvlMin: [460],
     ilvlMax: [999],
     elvlMin: [1],
-    elvlMax: [environment.maxLevel]
+    elvlMax: [this.environment.maxLevel]
   });
 
   categoriesOrder: string[] = [
@@ -108,7 +108,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
   tribesMenu = this.gearsetsFacade.tribesMenu;
-  maxLevel = environment.maxLevel;
+  maxLevel = this.environment.maxLevel;
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
       return gearset && !gearset.notFound;
@@ -230,12 +230,13 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
           const prepared = [...response.Results, ...crystal.Results]
             .filter(item => {
-              return relevantStats.some(stat => {
-                if (!gearset.isCombatSet()) {
-                  return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
-                }
-                return true;
-              });
+              return (this.environment.gameVersion < 6 || item.EquipSlotCategory.ID !== 6)
+                && relevantStats.some(stat => {
+                  if (!gearset.isCombatSet()) {
+                    return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
+                  }
+                  return true;
+                });
             })
             .reduce((resArray, item) => {
               const slotName = Object.keys(item.EquipSlotCategory)
@@ -306,7 +307,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         'Head',
         'Body',
         'Gloves',
-        'Waist',
+        ...(this.environment.gameVersion < 6 ? ['Waist'] : []),
         'Legs',
         'Feet',
         'Ears',
@@ -328,8 +329,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private lazyData: LazyDataFacade, private cd: ChangeDetectorRef,
               public translate: TranslateService, private dialog: NzModalService,
-              private  materiasService: MateriaService, private statsService: StatsService,
-              private i18n: I18nToolsService, private ipc: IpcService) {
+              private materiasService: MateriaService, private statsService: StatsService,
+              private i18n: I18nToolsService, private ipc: IpcService, private environment: EnvironmentService) {
     super();
     this.gearset$.pipe(
       first(),

@@ -7,6 +7,7 @@ import { SidebarEntry, SidebarItem } from '../sidebar-entry';
 import { SidebarBadgeType } from '../sidebar-badge-type';
 import { NavigationSidebarService } from '../navigation-sidebar.service';
 import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-navigation-sidebar',
@@ -51,7 +52,9 @@ export class NavigationSidebarComponent {
 
   public content$ = this.navigationSidebarService.content$;
 
-  constructor(public settings: SettingsService, private media: MediaObserver,
+  public isDesktop = this.platformService.isDesktop();
+
+  constructor(public settings: SettingsService, private media: MediaObserver, private platformService: PlatformService,
               private navigationSidebarService: NavigationSidebarService, private nzContextMenuService: NzContextMenuService) {
   }
 

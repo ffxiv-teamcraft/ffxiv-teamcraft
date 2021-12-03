@@ -8,15 +8,20 @@
   color: var(--highlight-color);
 }
 
+.item-name {
+  font-weight: 500;
+}
+
 .item-row {
   padding: 5px;
 
-  &:not(last-child) {
+  &:not(:last-child) {
     border-bottom: 1px solid #444;
   }
 
   .description {
     color: #666;
+    font-weight: 400;
   }
 
   .gig-icon {

@@ -62,11 +62,10 @@ export interface Alarm {
   predators:    Predator[];
   note:         string;
   enabled:      boolean;
-  baits?:       Bait[];
-  hookset?:     number;
+  baits:        Bait[];
+  hookset:      number;
   fishEyes?:    boolean;
   folklore?:    number;
-  gig?:         Gig;
 }
 
 export interface Bait {
@@ -78,12 +77,6 @@ export interface AlarmCoords {
   x: number;
   y: number;
   z: number;
-}
-
-export enum Gig {
-  Large = "Large",
-  Normal = "Normal",
-  Small = "Small",
 }
 
 export interface Predator {
@@ -116,5 +109,4 @@ export interface GatheringNode {
   weathersFrom?:     number[];
   predators?:        Predator[];
   folklore?:         number;
-  gig?:              Gig;
 }

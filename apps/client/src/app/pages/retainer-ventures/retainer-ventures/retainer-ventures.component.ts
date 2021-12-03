@@ -3,7 +3,6 @@ import { Retainer, RetainersService } from '../../../core/electron/retainers.ser
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { combineLatest, Observable, of, Subject } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from '../../../../environments/environment';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { StatsService } from '../../../modules/gearsets/stats.service';
@@ -19,6 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-retainer-ventures',
@@ -172,7 +172,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
               private lazyData: LazyDataFacade, private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private statsService: StatsService, private universalis: UniversalisService,
               private xivapi: XivapiService, private authFacade: AuthFacade,
-              public translate: TranslateService) {
+              public translate: TranslateService, private environment: EnvironmentService) {
     super();
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
@@ -181,7 +181,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     );
     this.form = this.fb.group({
       job: [null, Validators.required],
-      level: [null, [Validators.required, Validators.min(1), Validators.max(environment.maxLevel)]],
+      level: [null, [Validators.required, Validators.min(1), Validators.max(this.environment.maxLevel)]],
       ilvl: [null, Validators.required],
       gathering: [null],
       server: [null, Validators.required]

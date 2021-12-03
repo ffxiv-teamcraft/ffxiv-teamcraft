@@ -6,7 +6,6 @@ import { first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from '../../../../environments/environment';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -30,6 +29,7 @@ import { CommissionsFacade } from '../../../modules/commission-board/+state/comm
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-gearset-display',
@@ -39,16 +39,16 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
-  public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
+  public gearsetSlotProperties: Array<keyof TeamcraftGearset | null>[] = [
     ['mainHand', 'offHand'],
     ['head', 'earRings'],
     ['chest', 'necklace'],
     ['gloves', 'bracelet'],
-    ['belt', 'ring1'],
+    [this.env.gameVersion > 6 ? null : 'belt', 'ring1'],
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];
-  public level$ = new BehaviorSubject<number>(80);
+  public level$ = new BehaviorSubject<number>(this.env.maxLevel);
   public tribe$ = new BehaviorSubject<number>(1);
   public food$ = new BehaviorSubject<any>(null);
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
@@ -81,7 +81,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   tribesMenu = this.gearsetsFacade.tribesMenu;
 
-  maxLevel = environment.maxLevel;
+  maxLevel = this.env.maxLevel;
 
   permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
 
@@ -100,7 +100,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private router: Router, private i18n: I18nToolsService,
               private message: NzMessageService,
               private authFacade: AuthFacade, private clipboard: Clipboard,
-              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade) {
+              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade,
+              private env: EnvironmentService) {
     super();
     this.activatedRoute.paramMap
       .pipe(

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { environment } from '../../../../environments/environment';
 import { debounceTime, first, map, startWith, switchMap, takeUntil } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -20,6 +19,7 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-leveling-equipment',
@@ -66,7 +66,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
               private gearsetsFacade: GearsetsFacade, private statsService: StatsService,
               private listPicker: ListPickerService, private router: Router,
               private platformService: PlatformService, private settings: SettingsService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute, private environment: EnvironmentService) {
     super();
     this.jobList$ = this.lazyData.getEntry('jobName').pipe(
       map(jobName => {
@@ -75,7 +75,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     );
     this.filtersForm = this.fb.group({
       job: [null, Validators.required],
-      level: [null, [Validators.required, Validators.min(3), Validators.max(environment.maxLevel - 1)]],
+      level: [null, [Validators.required, Validators.min(3), Validators.max(this.environment.maxLevel - 1)]],
       includeCrafting: [this.settings.getBoolean('leveling-equipment:includeCrafting', true)],
       includeTrades: [this.settings.getBoolean('leveling-equipment:includeTrades', true)],
       includePurchases: [this.settings.getBoolean('leveling-equipment:includePurchases', true)],
@@ -141,7 +141,7 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
           mainStat = BaseParam.STRENGTH;
         }
         // Preparing base informations
-        const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < environment.maxLevel);
+        const levels = [-2, -1, 0, 1, 2].map(diff => filters.level + diff).filter(lvl => lvl < this.environment.maxLevel);
         const baseStruct = levels.map(level => {
           const gearset = new TeamcraftGearset();
           gearset.job = filters.job;

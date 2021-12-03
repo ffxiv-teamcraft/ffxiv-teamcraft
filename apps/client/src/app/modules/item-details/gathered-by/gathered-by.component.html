@@ -17,12 +17,6 @@
         <app-fishing-bait [baits]="node.baits" flex="row"></app-fishing-bait>
       </ng-container>
       <nz-tag *ngIf="node.tug !== undefined">{{'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][node.tug] | translate}}</nz-tag>
-      <div *ngIf="node.gig">
-        <img [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon" nz-tooltip
-             src="./assets/icons/gig/{{node.gig}}.png">
-        <img *ngIf="node.hookset" [nzTooltipTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon" nz-tooltip
-             src="./assets/icons/hookset/{{node.hookset}}.png">
-      </div>
       <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
            fxLayoutGap="10px">
         <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip

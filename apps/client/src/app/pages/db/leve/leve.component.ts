@@ -164,7 +164,7 @@ export class LeveComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#leve/${xivapiLeve.ID}`,
+            url: `https://www.garlandtools.org/db/#leve/${xivapiLeve.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {

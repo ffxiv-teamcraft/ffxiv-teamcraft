@@ -28,9 +28,9 @@ export class LodestoneService {
   }
 
   public searchCharacter(name: string, server: string): Observable<Partial<Character>[]> {
-    let dataSource$: Observable<Partial<Character>[]>;
+    let dataSource$: Observable<{ List: Partial<Character>[] }>;
     if (this.ipc.ready) {
-      const result$ = new ReplaySubject<Partial<Character>[]>();
+      const result$ = new ReplaySubject<{ List: Partial<Character>[] }>();
       this.ipc.once('lodestone:character:search', (event, res) => {
         result$.next(res.map(char => {
           return {
@@ -46,7 +46,7 @@ export class LodestoneService {
       dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/Search`, { params });
     }
     return dataSource$.pipe(
-      map(res => res.map(char => {
+      map(res => res.List.map(char => {
         return {
           ...char,
           Server: (char as any).World

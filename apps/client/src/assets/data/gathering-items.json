@@ -2670,8 +2670,8 @@
     "hidden": 0
   },
   "454": {
-    "level": 60,
-    "stars": 2,
+    "level": 61,
+    "stars": 0,
     "itemId": 19936,
     "hidden": 0
   },
@@ -3288,8 +3288,8 @@
     "hidden": 0
   },
   "557": {
-    "level": 70,
-    "stars": 2,
+    "level": 71,
+    "stars": 0,
     "itemId": 27816,
     "hidden": 0
   },
@@ -3783,6 +3783,336 @@
     "level": 75,
     "stars": 0,
     "itemId": 33232,
+    "hidden": 0
+  },
+  "640": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36174,
+    "hidden": 0
+  },
+  "641": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36084,
+    "hidden": 0
+  },
+  "642": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36163,
+    "hidden": 0
+  },
+  "643": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 36164,
+    "hidden": 0
+  },
+  "644": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36165,
+    "hidden": 0
+  },
+  "645": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 36166,
+    "hidden": 0
+  },
+  "646": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36286,
+    "hidden": 0
+  },
+  "647": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36216,
+    "hidden": 0
+  },
+  "648": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36162,
+    "hidden": 0
+  },
+  "649": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36180,
+    "hidden": 0
+  },
+  "650": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36175,
+    "hidden": 0
+  },
+  "651": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 36176,
+    "hidden": 0
+  },
+  "652": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 36241,
+    "hidden": 0
+  },
+  "653": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36177,
+    "hidden": 0
+  },
+  "654": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 36181,
+    "hidden": 0
+  },
+  "655": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 36263,
+    "hidden": 0
+  },
+  "656": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36178,
+    "hidden": 0
+  },
+  "657": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36285,
+    "hidden": 0
+  },
+  "658": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36215,
+    "hidden": 0
+  },
+  "659": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36167,
+    "hidden": 0
+  },
+  "660": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36179,
+    "hidden": 0
+  },
+  "661": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36190,
+    "hidden": 0
+  },
+  "662": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36191,
+    "hidden": 0
+  },
+  "663": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36086,
+    "hidden": 0
+  },
+  "664": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36087,
+    "hidden": 0
+  },
+  "665": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 36192,
+    "hidden": 0
+  },
+  "666": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36193,
+    "hidden": 0
+  },
+  "667": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 36096,
+    "hidden": 0
+  },
+  "668": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 36095,
+    "hidden": 0
+  },
+  "669": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 36194,
+    "hidden": 0
+  },
+  "670": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36288,
+    "hidden": 0
+  },
+  "671": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36214,
+    "hidden": 0
+  },
+  "672": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36195,
+    "hidden": 0
+  },
+  "673": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36202,
+    "hidden": 0
+  },
+  "674": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36083,
+    "hidden": 0
+  },
+  "675": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36088,
+    "hidden": 0
+  },
+  "676": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36085,
+    "hidden": 0
+  },
+  "677": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 36098,
+    "hidden": 0
+  },
+  "678": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 36091,
+    "hidden": 0
+  },
+  "679": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 36092,
+    "hidden": 0
+  },
+  "680": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 36204,
+    "hidden": 0
+  },
+  "681": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 36093,
+    "hidden": 0
+  },
+  "682": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 36090,
+    "hidden": 0
+  },
+  "683": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36205,
+    "hidden": 0
+  },
+  "684": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 36089,
+    "hidden": 0
+  },
+  "685": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 36094,
+    "hidden": 0
+  },
+  "686": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 36206,
+    "hidden": 0
+  },
+  "687": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36097,
+    "hidden": 0
+  },
+  "688": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 36287,
+    "hidden": 0
+  },
+  "689": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36207,
+    "hidden": 0
+  },
+  "690": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36217,
+    "hidden": 0
+  },
+  "691": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 35600,
+    "hidden": 0
+  },
+  "692": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 35601,
+    "hidden": 0
+  },
+  "693": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 35602,
+    "hidden": 0
+  },
+  "694": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 35603,
     "hidden": 0
   },
   "10001": {
@@ -7935,6 +8265,426 @@
     "level": 80,
     "stars": 2,
     "itemId": 31319,
+    "hidden": 0
+  },
+  "10714": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003131,
+    "hidden": 0
+  },
+  "10715": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 2003132,
+    "hidden": 0
+  },
+  "10716": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003133,
+    "hidden": 0
+  },
+  "10717": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003134,
+    "hidden": 0
+  },
+  "10718": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 2003135,
+    "hidden": 0
+  },
+  "10719": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003136,
+    "hidden": 0
+  },
+  "10720": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 2003137,
+    "hidden": 0
+  },
+  "10721": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003138,
+    "hidden": 0
+  },
+  "10722": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003139,
+    "hidden": 0
+  },
+  "10723": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003140,
+    "hidden": 0
+  },
+  "10724": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 2003141,
+    "hidden": 0
+  },
+  "10725": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003142,
+    "hidden": 0
+  },
+  "10726": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003143,
+    "hidden": 0
+  },
+  "10727": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 2003144,
+    "hidden": 0
+  },
+  "10728": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003145,
+    "hidden": 0
+  },
+  "10729": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003146,
+    "hidden": 0
+  },
+  "10730": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003147,
+    "hidden": 0
+  },
+  "10731": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 2003148,
+    "hidden": 0
+  },
+  "10732": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003149,
+    "hidden": 0
+  },
+  "10733": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 2003150,
+    "hidden": 0
+  },
+  "10734": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003151,
+    "hidden": 0
+  },
+  "10735": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003152,
+    "hidden": 0
+  },
+  "10736": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 2003153,
+    "hidden": 0
+  },
+  "10737": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003154,
+    "hidden": 0
+  },
+  "10738": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 2003155,
+    "hidden": 0
+  },
+  "10739": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003156,
+    "hidden": 0
+  },
+  "10740": {
+    "level": 80,
+    "stars": 0,
+    "itemId": 2003157,
+    "hidden": 0
+  },
+  "10741": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 2003158,
+    "hidden": 0
+  },
+  "10742": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003159,
+    "hidden": 0
+  },
+  "10743": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 2003160,
+    "hidden": 0
+  },
+  "10744": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003161,
+    "hidden": 0
+  },
+  "10745": {
+    "level": 82,
+    "stars": 0,
+    "itemId": 2003162,
+    "hidden": 0
+  },
+  "10746": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003163,
+    "hidden": 0
+  },
+  "10747": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 2003164,
+    "hidden": 0
+  },
+  "10748": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003165,
+    "hidden": 0
+  },
+  "10749": {
+    "level": 84,
+    "stars": 0,
+    "itemId": 2003166,
+    "hidden": 0
+  },
+  "10750": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 2003167,
+    "hidden": 0
+  },
+  "10751": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003168,
+    "hidden": 0
+  },
+  "10752": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003169,
+    "hidden": 0
+  },
+  "10753": {
+    "level": 86,
+    "stars": 0,
+    "itemId": 2003170,
+    "hidden": 0
+  },
+  "10754": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 2003171,
+    "hidden": 0
+  },
+  "10755": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003172,
+    "hidden": 0
+  },
+  "10756": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 2003173,
+    "hidden": 0
+  },
+  "10757": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003174,
+    "hidden": 0
+  },
+  "10758": {
+    "level": 88,
+    "stars": 0,
+    "itemId": 2003175,
+    "hidden": 0
+  },
+  "10759": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 2003176,
+    "hidden": 0
+  },
+  "10760": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36291,
+    "hidden": 0
+  },
+  "10761": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36293,
+    "hidden": 0
+  },
+  "10762": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 36294,
+    "hidden": 0
+  },
+  "10763": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 36295,
+    "hidden": 0
+  },
+  "10764": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 36296,
+    "hidden": 0
+  },
+  "10765": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 36297,
+    "hidden": 0
+  },
+  "10766": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36298,
+    "hidden": 0
+  },
+  "10767": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36299,
+    "hidden": 0
+  },
+  "10768": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36300,
+    "hidden": 0
+  },
+  "10769": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36292,
+    "hidden": 0
+  },
+  "10770": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36301,
+    "hidden": 0
+  },
+  "10771": {
+    "level": 81,
+    "stars": 0,
+    "itemId": 36303,
+    "hidden": 0
+  },
+  "10772": {
+    "level": 83,
+    "stars": 0,
+    "itemId": 36304,
+    "hidden": 0
+  },
+  "10773": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 36305,
+    "hidden": 0
+  },
+  "10774": {
+    "level": 87,
+    "stars": 0,
+    "itemId": 36306,
+    "hidden": 0
+  },
+  "10775": {
+    "level": 89,
+    "stars": 0,
+    "itemId": 36307,
+    "hidden": 0
+  },
+  "10776": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36308,
+    "hidden": 0
+  },
+  "10777": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36309,
+    "hidden": 0
+  },
+  "10778": {
+    "level": 90,
+    "stars": 1,
+    "itemId": 36310,
+    "hidden": 0
+  },
+  "10779": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36302,
+    "hidden": 0
+  },
+  "10780": {
+    "level": 65,
+    "stars": 0,
+    "itemId": 35847,
+    "hidden": 0
+  },
+  "10781": {
+    "level": 85,
+    "stars": 0,
+    "itemId": 35848,
+    "hidden": 0
+  },
+  "10782": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36611,
+    "hidden": 0
+  },
+  "10783": {
+    "level": 90,
+    "stars": 0,
+    "itemId": 36612,
     "hidden": 0
   }
 }

@@ -1,5 +1,7 @@
 #V 16.11.2021 PH
 
+venatusmedia.com, 6017dadc35df310fc2d5f194, DIRECT
+
 #------------------------------------------------------------------------------------------------------
 33across.com, 0010b00001rrIFkAAM, DIRECT, bbea06d9c4d2853c                    # 33Across_0_9_6&7
 yahoo.com, 57289, RESELLER,  e1a5b5b6e3255540                                 # 33Across_0_9_6&7

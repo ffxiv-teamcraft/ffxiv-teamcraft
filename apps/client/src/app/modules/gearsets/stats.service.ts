@@ -3,6 +3,7 @@ import { BaseParam } from './base-param';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
+import { EnvironmentService } from '../../core/environment.service';
 import { environment } from '../../../environments/environment';
 import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
@@ -122,7 +123,8 @@ export class StatsService {
     BaseParam.MIND
   ];
 
-  constructor(private lazyData: LazyDataFacade, private materiasService: MateriaService) {
+  constructor(private lazyData: LazyDataFacade, private materiasService: MateriaService,
+              private env: EnvironmentService) {
   }
 
   public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): Observable<number[][]> {
@@ -699,7 +701,7 @@ export class StatsService {
   }
 
   private getMaxHp(job: number, level: number, vitality: number): Observable<number> {
-    if (level > environment.maxLevel) {
+    if (level > this.env.maxLevel) {
       return of(0);
     }
     return this.lazyData.getRow('classJobsModifiers', job).pipe(

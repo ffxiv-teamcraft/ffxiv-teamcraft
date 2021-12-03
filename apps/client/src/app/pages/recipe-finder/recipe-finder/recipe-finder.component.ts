@@ -1,5 +1,5 @@
 import { Component, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, concat, from, Observable, of, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
@@ -20,12 +20,12 @@ import { InventoryImportPopupComponent } from '../inventory-import-popup/invento
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { environment } from '../../../../environments/environment';
 import { LogTracking } from '../../../model/user/log-tracking';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -34,15 +34,15 @@ import { LazyRecipe } from '../../../lazy-data/model/lazy-recipe';
 })
 export class RecipeFinderComponent implements OnDestroy {
 
-  public maxLevel = environment.maxLevel;
+  public maxLevel = this.environmentService.maxLevel;
   public query: string;
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
   public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
   public clvlMin$ = new BehaviorSubject(0);
-  public clvlMax$ = new BehaviorSubject(environment.maxLevel);
-  public input$: Subject<string> = new Subject<string>();
+  public clvlMax$ = new BehaviorSubject(this.environmentService.maxLevel);
+  public input$: Subject<string> = new BehaviorSubject<string>('');
   public pool: { id: number, amount: number }[] = [];
   public search$: Subject<void> = new Subject<void>();
   public results$: Observable<any[]>;
@@ -75,7 +75,7 @@ export class RecipeFinderComponent implements OnDestroy {
     })
   );
 
-  public amount$ = new ReplaySubject<number>();
+  public amount$ = new BehaviorSubject<number>(0);
 
   public isButtonDisabled$ = combineLatest([this.items$, this.input$, this.amount$]).pipe(
     map(([items, input, amount]) => {
@@ -87,7 +87,7 @@ export class RecipeFinderComponent implements OnDestroy {
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
               private i18n: I18nToolsService, private listsFacade: ListsFacade,
               private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private router: Router, private listPicker: ListPickerService,
+              private router: Router, private listPicker: ListPickerService, private environmentService: EnvironmentService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
               public platform: PlatformService, public settings: SettingsService) {
@@ -133,16 +133,24 @@ export class RecipeFinderComponent implements OnDestroy {
           entry.missing = entry.ingredients
             // Ignore crystals
             .filter(i => i.id > 19)
-            .filter(i => {
+            .map(i => {
               const poolItem = this.pool.find(item => item.id === i.id);
-              return !poolItem || poolItem.amount < i.amount;
-            });
+              if (!poolItem) {
+                return i;
+              } else {
+                return {
+                  ...i,
+                  amount: i.amount - poolItem.amount
+                };
+              }
+            })
+            .filter(e => e.amount > 0);
           entry.possibleAmount = entry.yields;
           while (this.canCraft(entry, entry.possibleAmount)) {
             entry.possibleAmount += entry.yields;
           }
           // Remove the final iteration check
-          entry.possibleAmount -= entry.yields;
+          entry.possibleAmount = Math.max(entry.possibleAmount - entry.yields, 1);
           return entry;
         });
         return [

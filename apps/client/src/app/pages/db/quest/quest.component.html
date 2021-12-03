@@ -27,7 +27,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p [innerHTML]="getDescription(xivapiQuest) | xivUIText"></p>
+        <p [innerHTML]="getDescription(xivapiQuest) | async | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
                         [value]="xivapiQuest.ID | i18nRow:'quests'"></app-i18n-display>

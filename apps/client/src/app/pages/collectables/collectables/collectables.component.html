@@ -8,7 +8,7 @@
                  required type="number"/>
         </nz-input-group>
         <ng-template #jobIcon>
-          <img *ngIf="((+control | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+          <img *ngIf="(+control | i18nRow:'jobAbbr' | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
         </ng-template>
       </nz-form-control>
     </nz-form-item>

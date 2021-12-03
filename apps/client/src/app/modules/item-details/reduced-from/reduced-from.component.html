@@ -36,13 +36,6 @@
                   <ng-container *ngIf="row.node.baits !== undefined">
                     <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>
                   </ng-container>
-                  <div *ngIf="row.node.gig">
-                    <img [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.node.gig) | translate" class="gig-icon" nz-tooltip
-                         src="./assets/icons/gig/{{row.node.gig}}.png">
-                    <img *ngIf="row.node.hookset" [nzTooltipTitle]="(row.node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon"
-                         nz-tooltip
-                         src="./assets/icons/hookset/{{row.node.hookset}}.png">
-                  </div>
                   <div *ngIf="row.node.predators && row.node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                        fxLayoutGap="10px">
                     <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip

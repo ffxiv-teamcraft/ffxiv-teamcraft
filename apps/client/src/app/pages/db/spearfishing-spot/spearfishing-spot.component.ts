@@ -31,7 +31,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
 
   public nodeData$: Observable<any>;
 
-  public bonuses$: Observable<any[]>;
+  public bonuses$: Observable<Object[]>;
 
   public links$: Observable<{ title: string, icon: string, url: string }[]>;
 
@@ -135,7 +135,9 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
                 });
               })
           );
-        }));
+        })).pipe(
+          map(bonuses => bonuses.flat())
+        );
       })
     );
 
@@ -144,7 +146,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#node/${xivapiNode.ID}`,
+            url: `https://www.garlandtools.org/db/#node/${xivapiNode.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           }
         ];

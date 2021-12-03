@@ -21,9 +21,9 @@ export interface Bonuses {
   HeavyResistance?:         BindResistance;
   IncreasedSpiritbondGain?: BindResistance;
   DesynthesisSkillGain?:    BindResistance;
+  CP?:                      Cp;
   Craftsmanship?:           Cp;
   Control?:                 Cp;
-  CP?:                      Cp;
 }
 
 export interface BindResistance {

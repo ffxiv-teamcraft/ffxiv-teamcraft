@@ -436,7 +436,7 @@
     "ja": "魔を統べし者",
     "de": "Meister der Magie",
     "fr": "Maître de la magie",
-    "icon": "/i/002000/002658.png",
+    "icon": "/i/002000/002661.png",
     "itemReward": 0
   },
   "56": {
@@ -1012,7 +1012,7 @@
     "ja": "勇猛なるバッカニア",
     "de": "Verwegener Korsar",
     "fr": "Le roi de la flibuste",
-    "icon": "/i/040000/040599.png",
+    "icon": "/i/041000/041099.png",
     "itemReward": 0
   },
   "128": {
@@ -1020,7 +1020,7 @@
     "ja": "軽妙なるハーレクイン",
     "de": "Juvenalischer Joker",
     "fr": "Je fais le guignol",
-    "icon": "/i/040000/040575.png",
+    "icon": "/i/041000/041075.png",
     "itemReward": 0
   },
   "129": {
@@ -1628,7 +1628,7 @@
     "ja": "ラノシアの砕岩名人：グレード1",
     "de": "Erzengel: La Noscea I",
     "fr": "Tailler à même le roc : la Noscea I",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "205": {
@@ -1636,7 +1636,7 @@
     "ja": "ラノシアの砕岩名人：グレード2",
     "de": "Erzengel: La Noscea II",
     "fr": "Tailler à même le roc : la Noscea II",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "206": {
@@ -1644,7 +1644,7 @@
     "ja": "ラノシアの砕岩名人：グレード3",
     "de": "Erzengel: La Noscea III",
     "fr": "Tailler à même le roc : la Noscea III",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "207": {
@@ -1652,7 +1652,7 @@
     "ja": "ラノシアの砕岩名人：グレード4",
     "de": "Erzengel: La Noscea IV",
     "fr": "Tailler à même le roc : la Noscea IV",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "208": {
@@ -1660,7 +1660,7 @@
     "ja": "ラノシアの砕岩名人：グレード5",
     "de": "Erzengel: La Noscea V",
     "fr": "Tailler à même le roc : la Noscea V",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "209": {
@@ -1676,7 +1676,7 @@
     "ja": "黒衣森の砕岩名人：グレード1",
     "de": "Erzengel: Finsterwald I",
     "fr": "Tailler à même le roc : Sombrelinceul I",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "211": {
@@ -1684,7 +1684,7 @@
     "ja": "黒衣森の砕岩名人：グレード2",
     "de": "Erzengel: Finsterwald II",
     "fr": "Tailler à même le roc : Sombrelinceul II",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "212": {
@@ -1692,7 +1692,7 @@
     "ja": "黒衣森の砕岩名人：グレード3",
     "de": "Erzengel: Finsterwald III",
     "fr": "Tailler à même le roc : Sombrelinceul III",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "213": {
@@ -1700,7 +1700,7 @@
     "ja": "黒衣森の砕岩名人：グレード4",
     "de": "Erzengel: Finsterwald IV",
     "fr": "Tailler à même le roc : Sombrelinceul IV",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "214": {
@@ -1708,7 +1708,7 @@
     "ja": "黒衣森の砕岩名人：グレード5",
     "de": "Erzengel: Finsterwald V",
     "fr": "Tailler à même le roc : Sombrelinceul V",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "215": {
@@ -1724,7 +1724,7 @@
     "ja": "ザナラーンの砕岩名人：グレード1",
     "de": "Erzengel: Thanalan I",
     "fr": "Tailler à même le roc : Thanalan I",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "217": {
@@ -1732,7 +1732,7 @@
     "ja": "ザナラーンの砕岩名人：グレード2",
     "de": "Erzengel: Thanalan II",
     "fr": "Tailler à même le roc : Thanalan II",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "218": {
@@ -1740,7 +1740,7 @@
     "ja": "ザナラーンの砕岩名人：グレード3",
     "de": "Erzengel: Thanalan III",
     "fr": "Tailler à même le roc : Thanalan III",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "219": {
@@ -1748,7 +1748,7 @@
     "ja": "ザナラーンの砕岩名人：グレード4",
     "de": "Erzengel: Thanalan IV",
     "fr": "Tailler à même le roc : Thanalan IV",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "220": {
@@ -1756,7 +1756,7 @@
     "ja": "ザナラーンの砕岩名人：グレード5",
     "de": "Erzengel: Thanalan V",
     "fr": "Tailler à même le roc : Thanalan V",
-    "icon": "/i/001000/001008.png",
+    "icon": "/i/001000/001015.png",
     "itemReward": 0
   },
   "221": {
@@ -2418,7 +2418,7 @@
   "303": {
     "en": "Luck's Got Nothing to Do with It",
     "ja": "強運の持ち主",
-    "de": "Nerven aus Adamantium",
+    "de": "Nerven aus Adamantit",
     "fr": "Une chance insolente",
     "icon": "/i/020000/020208.png",
     "itemReward": 0
@@ -2524,7 +2524,7 @@
     "ja": "クラフターたちの物語",
     "de": "Ode an die Handwerker",
     "fr": "Le chant des artisans",
-    "icon": "/i/001000/001951.png",
+    "icon": "/i/001000/001997.png",
     "itemReward": 0
   },
   "317": {
@@ -2636,7 +2636,7 @@
     "ja": "リーヴ好きの職人：ランク1",
     "de": "Nachbarschaftshilfe I",
     "fr": "Ouvrier local I",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "331": {
@@ -2644,7 +2644,7 @@
     "ja": "リーヴ好きの職人：ランク2",
     "de": "Nachbarschaftshilfe II",
     "fr": "Ouvrier local II",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "332": {
@@ -2652,7 +2652,7 @@
     "ja": "リーヴ好きの職人：ランク3",
     "de": "Nachbarschaftshilfe III",
     "fr": "Ouvrier local III",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "333": {
@@ -2660,7 +2660,7 @@
     "ja": "リーヴ好きの職人：ランク4",
     "de": "Nachbarschaftshilfe IV",
     "fr": "Ouvrier local IV",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "334": {
@@ -2668,7 +2668,7 @@
     "ja": "リーヴ好きの職人：ランク5",
     "de": "Nachbarschaftshilfe V",
     "fr": "Ouvrier local V",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "335": {
@@ -2676,7 +2676,7 @@
     "ja": "リーヴ好きの職人：ランク6",
     "de": "Nachbarschaftshilfe VI",
     "fr": "Ouvrier local VI",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "336": {
@@ -4804,7 +4804,7 @@
     "ja": "リーヴ好きの収穫者：ランク1",
     "de": "Sammlerleidenschaft I",
     "fr": "Engranger la récolte I",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "602": {
@@ -4812,7 +4812,7 @@
     "ja": "リーヴ好きの収穫者：ランク2",
     "de": "Sammlerleidenschaft II",
     "fr": "Engranger la récolte II",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "603": {
@@ -4820,7 +4820,7 @@
     "ja": "リーヴ好きの収穫者：ランク3",
     "de": "Sammlerleidenschaft III",
     "fr": "Engranger la récolte III",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "604": {
@@ -4828,7 +4828,7 @@
     "ja": "リーヴ好きの収穫者：ランク4",
     "de": "Sammlerleidenschaft IV",
     "fr": "Engranger la récolte IV",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "605": {
@@ -4836,7 +4836,7 @@
     "ja": "リーヴ好きの収穫者：ランク5",
     "de": "Sammlerleidenschaft V",
     "fr": "Engranger la récolte V",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "606": {
@@ -4844,7 +4844,7 @@
     "ja": "リーヴ好きの収穫者：ランク6",
     "de": "Sammlerleidenschaft VI",
     "fr": "Engranger la récolte VI",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/001000/001903.png",
     "itemReward": 0
   },
   "607": {
@@ -6184,49 +6184,49 @@
     "itemReward": 0
   },
   "774": {
-    "en": "An Eye for Quality: Miner I",
+    "en": "An Eye for Quantity: Miner I",
     "ja": "腕利きの採掘師：ランク1",
-    "de": "Ein Auge für Qualität: Minenarbeiter I",
+    "de": "Die Menge macht's: Minenarbeiter I",
     "fr": "Bonne trouvaille : mineur I",
     "icon": "/i/038000/038016.png",
     "itemReward": 0
   },
   "775": {
-    "en": "An Eye for Quality: Miner II",
+    "en": "An Eye for Quantity: Miner II",
     "ja": "腕利きの採掘師：ランク2",
-    "de": "Ein Auge für Qualität: Minenarbeiter II",
+    "de": "Die Menge macht's: Minenarbeiter II",
     "fr": "Bonne trouvaille : mineur II",
     "icon": "/i/038000/038016.png",
     "itemReward": 0
   },
   "776": {
-    "en": "An Eye for Quality: Miner III",
+    "en": "An Eye for Quantity: Miner III",
     "ja": "腕利きの採掘師：ランク3",
-    "de": "Ein Auge für Qualität: Minenarbeiter III",
+    "de": "Die Menge macht's: Minenarbeiter III",
     "fr": "Bonne trouvaille : mineur III",
     "icon": "/i/038000/038016.png",
     "itemReward": 0
   },
   "777": {
-    "en": "An Eye for Quality: Botanist I",
+    "en": "An Eye for Quantity: Botanist I",
     "ja": "腕利きの園芸師：ランク1",
-    "de": "Ein Auge für Qualität: Gärtner I",
+    "de": "Die Menge macht's: Gärtner I",
     "fr": "Bonne trouvaille : botaniste I",
     "icon": "/i/038000/038114.png",
     "itemReward": 0
   },
   "778": {
-    "en": "An Eye for Quality: Botanist II",
+    "en": "An Eye for Quantity: Botanist II",
     "ja": "腕利きの園芸師：ランク2",
-    "de": "Ein Auge für Qualität: Gärtner II",
+    "de": "Die Menge macht's: Gärtner II",
     "fr": "Bonne trouvaille : botaniste II",
     "icon": "/i/038000/038114.png",
     "itemReward": 0
   },
   "779": {
-    "en": "An Eye for Quality: Botanist III",
+    "en": "An Eye for Quantity: Botanist III",
     "ja": "腕利きの園芸師：ランク3",
-    "de": "Ein Auge für Qualität: Gärtner III",
+    "de": "Die Menge macht's: Gärtner III",
     "fr": "Bonne trouvaille : botaniste III",
     "icon": "/i/038000/038114.png",
     "itemReward": 0
@@ -6484,7 +6484,7 @@
     "ja": "新生ABU隊員",
     "de": "Wiedergeborener Kaskadeur",
     "fr": "Renaissance de la B.A.B.",
-    "icon": "/i/047000/047530.png",
+    "icon": "/i/048000/048905.png",
     "itemReward": 0
   },
   "812": {
@@ -6492,7 +6492,7 @@
     "ja": "コンチネンタル・サーカス",
     "de": "Circus Continental",
     "fr": "Un bonbon et une farce",
-    "icon": "/i/043000/043704.png",
+    "icon": "/i/043000/043579.png",
     "itemReward": 0
   },
   "813": {
@@ -6988,7 +6988,7 @@
     "ja": "雪だるまよ永遠なれ",
     "de": "Schick wie ein Schneemann",
     "fr": "Un corps de neige",
-    "icon": "/i/040000/040684.png",
+    "icon": "/i/041000/041184.png",
     "itemReward": 0
   },
   "875": {
@@ -7216,11 +7216,11 @@
     "itemReward": 0
   },
   "903": {
-    "en": "Eggstreme Hunting",
+    "en": "Eggspert Hunter",
     "ja": "新たなるエッグハンター",
     "de": "Ei der Daus!",
     "fr": "Marcher sur des Prœufs",
-    "icon": "/i/049000/049073.png",
+    "icon": "/i/058000/058573.png",
     "itemReward": 0
   },
   "904": {
@@ -7708,7 +7708,7 @@
     "ja": "森の新鋭モブハンター",
     "de": "Beute des Waldes: B",
     "fr": "Chasseur des bois : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "965": {
@@ -7716,7 +7716,7 @@
     "ja": "砂の新鋭モブハンター",
     "de": "Beute der Wüste: B",
     "fr": "Chasseur des sables : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "966": {
@@ -7724,7 +7724,7 @@
     "ja": "海の新鋭モブハンター",
     "de": "Beute des Meeres: B",
     "fr": "Chasseur des mers : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "967": {
@@ -7732,7 +7732,7 @@
     "ja": "山の新鋭モブハンター",
     "de": "Beute des Sees: B",
     "fr": "Chasseur des lacs : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "968": {
@@ -7740,7 +7740,7 @@
     "ja": "期待の新鋭モブハンター",
     "de": "Leichte Beute: B",
     "fr": "Servir son rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "969": {
@@ -7748,7 +7748,7 @@
     "ja": "森の熟練モブハンター",
     "de": "Beute des Waldes: A",
     "fr": "Chasseur des bois : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "970": {
@@ -7756,7 +7756,7 @@
     "ja": "砂の熟練モブハンター",
     "de": "Beute der Wüste: A",
     "fr": "Chasseur des sables : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "971": {
@@ -7764,7 +7764,7 @@
     "ja": "海の熟練モブハンター",
     "de": "Beute des Meeres: A",
     "fr": "Chasseur des mers : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "972": {
@@ -7772,7 +7772,7 @@
     "ja": "山の熟練モブハンター",
     "de": "Beute des Sees: A",
     "fr": "Chasseur des lacs : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "973": {
@@ -7780,7 +7780,7 @@
     "ja": "腕利き熟練モブハンター",
     "de": "Leichte Beute: A",
     "fr": "Servir son rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "974": {
@@ -7788,7 +7788,7 @@
     "ja": "森の有名モブハンター",
     "de": "Beute des Waldes: S",
     "fr": "Chasseur des bois : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "975": {
@@ -7796,7 +7796,7 @@
     "ja": "砂の有名モブハンター",
     "de": "Beute der Wüste: S",
     "fr": "Chasseur des sables : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "976": {
@@ -7804,7 +7804,7 @@
     "ja": "海の有名モブハンター",
     "de": "Beute des Meeres: S",
     "fr": "Chasseur des mers : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "977": {
@@ -7812,7 +7812,7 @@
     "ja": "山の有名モブハンター",
     "de": "Beute des Sees: S",
     "fr": "Chasseur des lacs : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "978": {
@@ -7820,7 +7820,7 @@
     "ja": "至高の有名モブハンター",
     "de": "Leichte Beute: S",
     "fr": "Servir son rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "979": {
@@ -7828,7 +7828,7 @@
     "ja": "大物殺し：ランク1",
     "de": "Jag mir ein B I",
     "fr": "B comme boucher d'élite I",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "980": {
@@ -7836,7 +7836,7 @@
     "ja": "大物殺し：ランク2",
     "de": "Jag mir ein B II",
     "fr": "B comme boucher d'élite II",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "981": {
@@ -7844,7 +7844,7 @@
     "ja": "大物殺し：ランク3",
     "de": "Jag mir ein B III",
     "fr": "B comme boucher d'élite III",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "982": {
@@ -7852,7 +7852,7 @@
     "ja": "名うての大物ハンター",
     "de": "B-Wildjäger",
     "fr": "La crème de la crème B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "983": {
@@ -7860,7 +7860,7 @@
     "ja": "難物殺し：ランク1",
     "de": "Jag mir ein A I",
     "fr": "A comme assassin d'élite I",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "984": {
@@ -7868,7 +7868,7 @@
     "ja": "難物殺し：ランク2",
     "de": "Jag mir ein A II",
     "fr": "A comme assassin d'élite II",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "985": {
@@ -7876,7 +7876,7 @@
     "ja": "難物殺し：ランク3",
     "de": "Jag mir ein A III",
     "fr": "A comme assassin d'élite III",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "986": {
@@ -7884,7 +7884,7 @@
     "ja": "名うての難物ハンター",
     "de": "A-Wildjäger",
     "fr": "La crème de la crème A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "987": {
@@ -7892,7 +7892,7 @@
     "ja": "超大物殺し：ランク1",
     "de": "Jag mir ein S I",
     "fr": "S comme super élite I",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "988": {
@@ -7900,7 +7900,7 @@
     "ja": "超大物殺し：ランク2",
     "de": "Jag mir ein S II",
     "fr": "S comme super élite II",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "989": {
@@ -7908,7 +7908,7 @@
     "ja": "超大物殺し：ランク3",
     "de": "Jag mir ein S III",
     "fr": "S comme super élite III",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "990": {
@@ -7916,7 +7916,7 @@
     "ja": "名うての超大物ハンター",
     "de": "S-Wildjäger",
     "fr": "La crème de la crème S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "991": {
@@ -8204,7 +8204,7 @@
     "ja": "六族連盟の同志",
     "de": "Einer für alle",
     "fr": "L'ami des hommes-bêtes",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/060000/060033.png",
     "itemReward": 0
   },
   "1027": {
@@ -8212,7 +8212,7 @@
     "ja": "コンチネンタル・パレード",
     "de": "Parade-Gaukler",
     "fr": "Une parade ou une farce",
-    "icon": "/i/040000/040712.png",
+    "icon": "/i/041000/041212.png",
     "itemReward": 0
   },
   "1028": {
@@ -8444,7 +8444,7 @@
     "ja": "聖人の従者",
     "de": "Das Kleine Helferlein des Heiligen",
     "fr": "Disciple du saint",
-    "icon": "/i/040000/040720.png",
+    "icon": "/i/041000/041220.png",
     "itemReward": 0
   },
   "1057": {
@@ -8492,7 +8492,7 @@
     "ja": "伝道師の導き手",
     "de": "Kunstvolle Kuppelei",
     "fr": "Quand l'amour frappe à la porte",
-    "icon": "/i/049000/049089.png",
+    "icon": "/i/058000/058589.png",
     "itemReward": 0
   },
   "1063": {
@@ -8652,7 +8652,7 @@
     "ja": "伝統人形の再現者",
     "de": "Puppen-Panoptikum",
     "fr": "Le collectionneur",
-    "icon": "/i/048000/048411.png",
+    "icon": "/i/054000/054911.png",
     "itemReward": 0
   },
   "1083": {
@@ -9044,7 +9044,7 @@
     "ja": "ジャイアントエッグハンター",
     "de": "Gigantischer Eierschlamassel verhindert",
     "fr": "Un fabulœuf destin",
-    "icon": "/i/048000/048618.png",
+    "icon": "/i/055000/055318.png",
     "itemReward": 0
   },
   "1132": {
@@ -9508,7 +9508,7 @@
     "ja": "魔を究めし者",
     "de": "Meister der Magie II",
     "fr": "Virtuose de la magie",
-    "icon": "/i/002000/002658.png",
+    "icon": "/i/002000/002661.png",
     "itemReward": 0
   },
   "1190": {
@@ -10068,7 +10068,7 @@
     "ja": "西の新鋭モブハンター",
     "de": "Beute des Drachenreichs: B",
     "fr": "Chasseur du ponant : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "1260": {
@@ -10076,7 +10076,7 @@
     "ja": "氷と空の新鋭モブハンター",
     "de": "Beute der Wolken und des Nordens: B",
     "fr": "Chasseur des cieux et des glaces : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "1261": {
@@ -10084,7 +10084,7 @@
     "ja": "西の熟練モブハンター",
     "de": "Beute des Drachenreichs: A",
     "fr": "Chasseur du ponant : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1262": {
@@ -10092,7 +10092,7 @@
     "ja": "氷と空の熟練モブハンター",
     "de": "Beute der Wolken und Nordens: A",
     "fr": "Chasseur des cieux et des glaces : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1263": {
@@ -10100,7 +10100,7 @@
     "ja": "西の有名モブハンター",
     "de": "Beute des Drachenreichs: S",
     "fr": "Chasseur du ponant : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1264": {
@@ -10108,7 +10108,7 @@
     "ja": "氷と空の有名モブハンター",
     "de": "Beute der Wolken und des Nordens: S",
     "fr": "Chasseur des cieux et des glaces : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1265": {
@@ -10626,7 +10626,7 @@
   "1329": {
     "en": "An Eye for Quality: Miner IV",
     "ja": "腕利きの採掘師：ランク4",
-    "de": "Ein Auge für Qualität: Minenarbeiter IV",
+    "de": "Die Menge macht's: Minenarbeiter IV",
     "fr": "Bonne trouvaille : mineur IV",
     "icon": "/i/038000/038016.png",
     "itemReward": 0
@@ -10634,7 +10634,7 @@
   "1330": {
     "en": "An Eye for Quality: Botanist IV",
     "ja": "腕利きの園芸師：ランク4",
-    "de": "Ein Auge für Qualität: Gärtner IV",
+    "de": "Die Menge macht's: Gärtner IV",
     "fr": "Bonne trouvaille : botaniste IV",
     "icon": "/i/038000/038114.png",
     "itemReward": 0
@@ -11108,7 +11108,7 @@
     "ja": "イロハの師匠代行",
     "de": "Lehrmeister einer anderen Welt",
     "fr": "Maître d'Iroha par intérim",
-    "icon": "/i/042000/042894.png",
+    "icon": "/i/048000/048094.png",
     "itemReward": 0
   },
   "1390": {
@@ -11116,7 +11116,7 @@
     "ja": "伝説のベル",
     "de": "Glöckner von Limsa Lominsa",
     "fr": "Sonneur de cloches",
-    "icon": "/i/041000/041129.png",
+    "icon": "/i/040000/040704.png",
     "itemReward": 0
   },
   "1391": {
@@ -11132,7 +11132,7 @@
     "ja": "信じる者は救われる",
     "de": "Liebe lieber ungewöhnlich",
     "fr": "L'amour triomphe de tout",
-    "icon": "/i/040000/040801.png",
+    "icon": "/i/041000/041301.png",
     "itemReward": 0
   },
   "1393": {
@@ -11140,7 +11140,7 @@
     "ja": "歌姫の導き手",
     "de": "Zünglein an der Waage",
     "fr": "Idolâtrie",
-    "icon": "/i/047000/047555.png",
+    "icon": "/i/048000/048930.png",
     "itemReward": 0
   },
   "1394": {
@@ -11916,7 +11916,7 @@
     "ja": "森都のエッグハンター",
     "de": "Traumdeuter",
     "fr": "Un spectacle valant son prœusant d'or",
-    "icon": "/i/049000/049127.png",
+    "icon": "/i/058000/058627.png",
     "itemReward": 0
   },
   "1491": {
@@ -12272,7 +12272,7 @@
     "itemReward": 0
   },
   "1535": {
-    "en": "Otherworldly Whisker",
+    "en": "Otherworldly Whisker & Otherworldly Buckler",
     "ja": "妖怪武器：妖刀・猫丸＆円陣猫盾",
     "de": "Kratzstab einer fremden Welt",
     "fr": "Arme-toi d'un Yo-kai : épée et bouclier",
@@ -12640,7 +12640,7 @@
     "itemReward": 0
   },
   "1581": {
-    "en": "Aetherpool Party: Sword and Shield",
+    "en": "Aetherpool Party: Sword & Shield",
     "ja": "強化されし魔器：ブレード＆シールド",
     "de": "Waffen des Padjal: Schwert und Schild",
     "fr": "Padjale, ton arme : lame et bouclier",
@@ -12764,7 +12764,7 @@
     "ja": "火消しの戦士の熱い祭り",
     "de": "Ehren-Bombattant",
     "fr": "Les plus valeureux des héros",
-    "icon": "/i/042000/042908.png",
+    "icon": "/i/048000/048108.png",
     "itemReward": 0
   },
   "1597": {
@@ -12780,7 +12780,7 @@
     "ja": "ようこそ、妖怪ミニオン",
     "de": "Sie sind unter uns",
     "fr": "Ils sont parmi nous !",
-    "icon": "/i/048000/048950.png",
+    "icon": "/i/055000/055750.png",
     "itemReward": 0
   },
   "1599": {
@@ -13012,7 +13012,7 @@
     "ja": "導かれし盟友たち",
     "de": "Freund der Wilden",
     "fr": "Petit meurtre entre amis",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/060000/060033.png",
     "itemReward": 0
   },
   "1628": {
@@ -13452,7 +13452,7 @@
     "ja": "三歌姫の支援者",
     "de": "Eorzea sucht den Superstar",
     "fr": "Les adulées d'Ul'dah",
-    "icon": "/i/043000/043645.png",
+    "icon": "/i/043000/043745.png",
     "itemReward": 0
   },
   "1683": {
@@ -14660,7 +14660,7 @@
     "ja": "魔に選ばれし者",
     "de": "Meister der Magie III",
     "fr": "Prodige de la magie",
-    "icon": "/i/002000/002658.png",
+    "icon": "/i/002000/002661.png",
     "itemReward": 0
   },
   "1834": {
@@ -15276,7 +15276,7 @@
     "ja": "ギラバニアの新鋭モブハンター",
     "de": "Beute des Ödlands: B",
     "fr": "Chasseur des terres dévastées : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "1911": {
@@ -15284,7 +15284,7 @@
     "ja": "ギラバニアの熟練モブハンター",
     "de": "Beute des Ödlands: A",
     "fr": "Chasseur des terres dévastées : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1912": {
@@ -15292,7 +15292,7 @@
     "ja": "ギラバニアの有名モブハンター",
     "de": "Beute des Ödlands: S",
     "fr": "Chasseur des terres dévastées : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1913": {
@@ -15300,7 +15300,7 @@
     "ja": "オサードの新鋭モブハンター",
     "de": "Beute des Ostens: B",
     "fr": "Chasseur de l'est : rang B",
-    "icon": "/i/002000/002717.png",
+    "icon": "/i/002000/002684.png",
     "itemReward": 0
   },
   "1914": {
@@ -15308,7 +15308,7 @@
     "ja": "オサードの熟練モブハンター",
     "de": "Beute des Ostens: A",
     "fr": "Chasseur de l'est : rang A",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1915": {
@@ -15316,7 +15316,7 @@
     "ja": "オサードの有名モブハンター",
     "de": "Beute des Ostens: S",
     "fr": "Chasseur de l'est : rang S",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1916": {
@@ -15324,7 +15324,7 @@
     "ja": "難物殺し：ランク4",
     "de": "Jag mir ein A IV",
     "fr": "A comme assassin d'élite IV",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1917": {
@@ -15332,7 +15332,7 @@
     "ja": "難物殺し：ランク5",
     "de": "Jag mir ein A V",
     "fr": "A comme assassin d'élite V",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1918": {
@@ -15340,7 +15340,7 @@
     "ja": "難物殺し：ランク6",
     "de": "Jag mir ein A VI",
     "fr": "A comme assassin d'élite VI",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "1919": {
@@ -15348,7 +15348,7 @@
     "ja": "超大物殺し：ランク4",
     "de": "Jag mir ein S IV",
     "fr": "S comme super élite IV",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1920": {
@@ -15356,7 +15356,7 @@
     "ja": "超大物殺し：ランク5",
     "de": "Jag mir ein S V",
     "fr": "S comme super élite V",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1921": {
@@ -15364,7 +15364,7 @@
     "ja": "超大物殺し：ランク6",
     "de": "Jag mir ein S VI",
     "fr": "S comme super élite VI",
-    "icon": "/i/002000/002728.png",
+    "icon": "/i/002000/002732.png",
     "itemReward": 0
   },
   "1922": {
@@ -16828,7 +16828,7 @@
     "ja": "オールスターズ",
     "de": "Vom Parkourläufer zum Abenteurer",
     "fr": "Le combat des héros",
-    "icon": "/i/041000/041397.png",
+    "icon": "/i/040000/040972.png",
     "itemReward": 0
   },
   "2105": {
@@ -16860,7 +16860,7 @@
     "ja": "王は頂にて眠る",
     "de": "Jagd auf den König der Lüfte",
     "fr": "Le roi des cieux",
-    "icon": "/i/053000/053162.png",
+    "icon": "/i/052000/052262.png",
     "itemReward": 0
   },
   "2109": {
@@ -17132,7 +17132,7 @@
     "ja": "もちもちお餅もちもちっちゃ",
     "de": "Mochi-Bändiger",
     "fr": "La fortune sourit aux audacieux",
-    "icon": "/i/041000/041512.png",
+    "icon": "/i/040000/040312.png",
     "itemReward": 0
   },
   "2143": {
@@ -17876,7 +17876,7 @@
     "ja": "ウェスト・ミート・イースト",
     "de": "West trifft Ost",
     "fr": "D'est en ouest",
-    "icon": "/i/001000/001091.png",
+    "icon": "/i/060000/060033.png",
     "itemReward": 0
   },
   "2236": {
@@ -17892,7 +17892,7 @@
     "ja": "愛の立会人",
     "de": "Mediator",
     "fr": "L'amour dans l'âme",
-    "icon": "/i/052000/052992.png",
+    "icon": "/i/053000/053292.png",
     "itemReward": 0
   },
   "2238": {
@@ -17900,7 +17900,7 @@
     "ja": "プリンセスデーと夢追いの姫",
     "de": "Prinzessinnenmacher",
     "fr": "Toutes des princesses !",
-    "icon": "/i/047000/047925.png",
+    "icon": "/i/041000/041750.png",
     "itemReward": 0
   },
   "2239": {
@@ -18204,7 +18204,7 @@
     "ja": "魔に愛されし者",
     "de": "Meister der Magie IV",
     "fr": "Icône de la magie",
-    "icon": "/i/002000/002658.png",
+    "icon": "/i/002000/002661.png",
     "itemReward": 0
   },
   "2277": {
@@ -18604,7 +18604,7 @@
     "ja": "シムーン捜索隊の名誉隊長",
     "de": "Samiel-Suchkommando, weggetreten!",
     "fr": "Simounologue à la retraite",
-    "icon": "/i/001000/001041.png",
+    "icon": "/i/001000/001006.png",
     "itemReward": 0
   },
   "2327": {
@@ -18620,7 +18620,7 @@
     "ja": "ミーン工芸館の協力者",
     "de": "Unterstützer der Manufaktur der Gemeinschaft ",
     "fr": "Aventurier de la halle du Juste",
-    "icon": "/i/001000/001063.png",
+    "icon": "/i/001000/001901.png",
     "itemReward": 0
   },
   "2329": {
@@ -18796,7 +18796,7 @@
     "ja": "漆黒の難物殺し：ランク1",
     "de": "Jag mir ein A in Norvrandt I",
     "fr": "Chasseur des ombres I",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "2351": {
@@ -18804,7 +18804,7 @@
     "ja": "漆黒の難物殺し：ランク2",
     "de": "Jag mir ein A in Norvrandt II",
     "fr": "Chasseur des ombres II",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "2352": {
@@ -18812,7 +18812,7 @@
     "ja": "漆黒の難物殺し：ランク3",
     "de": "Jag mir ein A in Norvrandt III",
     "fr": "Chasseur des ombres III",
-    "icon": "/i/002000/002726.png",
+    "icon": "/i/002000/002680.png",
     "itemReward": 0
   },
   "2353": {
@@ -19145,7 +19145,7 @@
   },
   "2394": {
     "en": "Aetherpool Party: Gunblade",
-    "ja": "強化されし魔器：パジャルガンブレード",
+    "ja": "強化されし魔器：ガンブレード",
     "de": "Waffen des Padjal: Revolverklinge",
     "fr": "Padjale, ton arme : pistolame",
     "icon": "/i/036000/036026.png",
@@ -19153,8 +19153,8 @@
   },
   "2395": {
     "en": "Aetherpool Party: War Quoits",
-    "ja": "強化されし魔器：パジャルウォーコイト",
-    "de": "Waffen des Padjal: Gleven",
+    "ja": "強化されし魔器：ウォーコイト",
+    "de": "Waffen des Padjal: Wurfringe",
     "fr": "Padjale, ton arme : quoits de guerre",
     "icon": "/i/036000/036224.png",
     "itemReward": 0
@@ -19180,7 +19180,7 @@
     "ja": "新世代",
     "de": "Eine neue Generation",
     "fr": "Des Feux nouveaux de la Mort",
-    "icon": "/i/047000/047926.png",
+    "icon": "/i/041000/041751.png",
     "itemReward": 0
   },
   "2399": {
@@ -19860,7 +19860,7 @@
     "ja": "スターライト de チョコボ",
     "de": "Chocobo im Sternenlicht",
     "fr": "Un chocobo sachant chanter",
-    "icon": "/i/049000/049223.png",
+    "icon": "/i/058000/058723.png",
     "itemReward": 0
   },
   "2484": {
@@ -19876,7 +19876,7 @@
     "ja": "A5ランク",
     "de": "Marmorierungsstufe A5",
     "fr": "Fini les vaches maigres !",
-    "icon": "/i/041000/041556.png",
+    "icon": "/i/040000/040356.png",
     "itemReward": 0
   },
   "2486": {
@@ -20148,7 +20148,7 @@
     "ja": "蒼天街の漁師：ランク1",
     "de": "Fischer der Himmelsstadt I",
     "fr": "Hameçon d'Azurée I",
-    "icon": "/i/001000/001129.png",
+    "icon": "/i/001000/001126.png",
     "itemReward": 0
   },
   "2520": {
@@ -20156,7 +20156,7 @@
     "ja": "蒼天街の漁師：ランク2",
     "de": "Fischer der Himmelsstadt II",
     "fr": "Hameçon d'Azurée II",
-    "icon": "/i/001000/001129.png",
+    "icon": "/i/001000/001126.png",
     "itemReward": 0
   },
   "2521": {
@@ -20164,7 +20164,7 @@
     "ja": "蒼天街の漁師マスター",
     "de": "Fischer der Himmelsstadt III",
     "fr": "Hameçon d'Azurée III",
-    "icon": "/i/001000/001129.png",
+    "icon": "/i/001000/001126.png",
     "itemReward": 0
   },
   "2522": {
@@ -20260,7 +20260,7 @@
     "ja": "ニューネスト居住区の錬金術師",
     "de": "Alchemist des Genists",
     "fr": "Alchimiste du Nichoir",
-    "icon": "/i/052000/052800.png",
+    "icon": "/i/053000/053100.png",
     "itemReward": 0
   },
   "2534": {
@@ -20804,7 +20804,7 @@
     "ja": "憧れの人",
     "de": "Pfirsichsüße Freuden",
     "fr": "Les petites copines",
-    "icon": "/i/047000/047967.png",
+    "icon": "/i/041000/041792.png",
     "itemReward": 0
   },
   "2602": {
@@ -20812,7 +20812,7 @@
     "ja": "タマゴを運ぶスーツアクター",
     "de": "Auf den Hasen gekommen",
     "fr": "Candeur surprise",
-    "icon": "/i/047000/047966.png",
+    "icon": "/i/041000/041791.png",
     "itemReward": 0
   },
   "2603": {
@@ -21204,7 +21204,7 @@
     "ja": "フェザーフォール商業区の彫金師",
     "de": "Goldschmied des Federfall-Quartiers",
     "fr": "Orfèvre de Tombeplume",
-    "icon": "/i/053000/053471.png",
+    "icon": "/i/053000/053371.png",
     "itemReward": 0
   },
   "2652": {
@@ -21729,7 +21729,7 @@
   },
   "2717": {
     "en": "Mapping the Realm: Matoya's Relict",
-    "ja": "マトーヤのアトリエを踏破せしもの",
+    "ja": "マトーヤのアトリエを踏破せし者",
     "de": "Kartograph: Matoyas Atelier",
     "fr": "Cartographe du continent : Atelier abandonné de Matoya",
     "icon": "/i/001000/001001.png",
@@ -22444,7 +22444,7 @@
     "ja": "小さな冒険、大きな一歩",
     "de": "Kleine Schritte, große Sprünge",
     "fr": "Lettre à Elyne",
-    "icon": "/i/054000/054419.png",
+    "icon": "/i/041000/041519.png",
     "itemReward": 0
   },
   "2807": {
@@ -22484,7 +22484,7 @@
     "ja": "リズンソング文化区の革細工師",
     "de": "Gerber von Himmelsang",
     "fr": "Tanneur du Nouveau Refrain",
-    "icon": "/i/047000/047362.png",
+    "icon": "/i/054000/054212.png",
     "itemReward": 0
   },
   "2812": {
@@ -22820,7 +22820,7 @@
     "ja": "氷菓",
     "de": "Schabeeiskonditor",
     "fr": "Un sorbet fait avec le cœur",
-    "icon": "/i/053000/053506.png",
+    "icon": "/i/053000/053406.png",
     "itemReward": 0
   },
   "2854": {
@@ -22828,7 +22828,7 @@
     "ja": "チキン！",
     "de": "Ga-Gack!",
     "fr": "Personne ne me traite de mauviette !",
-    "icon": "/i/041000/041583.png",
+    "icon": "/i/041000/041827.png",
     "itemReward": 0
   },
   "2855": {
@@ -23125,6 +23125,1198 @@
     "de": "Kartograph: Zadnor",
     "fr": "Cartographe du continent : Hauts plateaux de Zadnor",
     "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2892": {
+    "en": "Stick Them with the Pointy End IX",
+    "ja": "剣術士：レベル90",
+    "de": "Nur dem Schwert kannst du vertrauen IX",
+    "fr": "Gladiateur légendaire",
+    "icon": "/i/030000/030408.png",
+    "itemReward": 0
+  },
+  "2893": {
+    "en": "The Sweet Science IX",
+    "ja": "格闘士：レベル90",
+    "de": "Zwei Fäuste für Eorzea IX",
+    "fr": "Pugiliste légendaire",
+    "icon": "/i/031000/031004.png",
+    "itemReward": 0
+  },
+  "2894": {
+    "en": "An Axe to Grind IX",
+    "ja": "斧術士：レベル90",
+    "de": "Das Kriegsbeil ausgraben IX",
+    "fr": "Maraudeur légendaire",
+    "icon": "/i/031000/031409.png",
+    "itemReward": 0
+  },
+  "2895": {
+    "en": "Strong Lance Arm IX",
+    "ja": "槍術士：レベル90",
+    "de": "Von der Pike auf IX",
+    "fr": "Maître d'hast légendaire",
+    "icon": "/i/031000/031816.png",
+    "itemReward": 0
+  },
+  "2896": {
+    "en": "Just Talkin' 'bout Shafts IX",
+    "ja": "弓術士：レベル90",
+    "de": "Den Bogen raus IX",
+    "fr": "Archer légendaire",
+    "icon": "/i/032000/032204.png",
+    "itemReward": 0
+  },
+  "2897": {
+    "en": "I Got the Magic Stick IX",
+    "ja": "幻術士：レベル90",
+    "de": "DAS ist mein Zauberstab IX",
+    "fr": "Élémentaliste légendaire",
+    "icon": "/i/032000/032611.png",
+    "itemReward": 0
+  },
+  "2898": {
+    "en": "Bring Out Your Dead IX",
+    "ja": "呪術士：レベル90",
+    "de": "Bringt eure Toten raus IX",
+    "fr": "Occultiste légendaire",
+    "icon": "/i/032000/032806.png",
+    "itemReward": 0
+  },
+  "2899": {
+    "en": "Through the Gate IX",
+    "ja": "巴術士：レベル90",
+    "de": "Durch die Tore IX",
+    "fr": "Arcaniste légendaire",
+    "icon": "/i/033000/033401.png",
+    "itemReward": 0
+  },
+  "2900": {
+    "en": "Come on, Rogue IX",
+    "ja": "双剣士：レベル90",
+    "de": "Auf leisen Sohlen IX",
+    "fr": "Surineur légendaire",
+    "icon": "/i/033000/033801.png",
+    "itemReward": 0
+  },
+  "2901": {
+    "en": "Are You Afraid of the Dark? VII",
+    "ja": "暗黒騎士：レベル90",
+    "de": "Im Dunkeln lässt sich gut munkeln VII",
+    "fr": "Chevalier noir légendaire",
+    "icon": "/i/034000/034203.png",
+    "itemReward": 0
+  },
+  "2902": {
+    "en": "Mean Machine VII",
+    "ja": "機工士：レベル90",
+    "de": "Läuft wie geschmiert VII",
+    "fr": "Machiniste légendaire",
+    "icon": "/i/034000/034607.png",
+    "itemReward": 0
+  },
+  "2903": {
+    "en": "Starstruck VII",
+    "ja": "占星術師：レベル90",
+    "de": "Sieg der Sterne VII",
+    "fr": "Astromancien légendaire",
+    "icon": "/i/034000/034808.png",
+    "itemReward": 0
+  },
+  "2904": {
+    "en": "How Deep the Rabbit Hole Goes V",
+    "ja": "赤魔道士：レベル90",
+    "de": "Alarmstufe Rot V",
+    "fr": "Mage rouge légendaire",
+    "icon": "/i/036000/036747.png",
+    "itemReward": 0
+  },
+  "2905": {
+    "en": "Bushido Blade V",
+    "ja": "侍：レベル90",
+    "de": "Bushido - Weg des Samurai V",
+    "fr": "Samouraï légendaire",
+    "icon": "/i/036000/036427.png",
+    "itemReward": 0
+  },
+  "2906": {
+    "en": "More Complex than You Think III",
+    "ja": "ガンブレイカー：レベル90",
+    "de": "Vielleicht bin ich ein Löwe III",
+    "fr": "Pistosabreur légendaire",
+    "icon": "/i/036000/036005.png",
+    "itemReward": 0
+  },
+  "2907": {
+    "en": "We Got the Beat III",
+    "ja": "踊り子：レベル90",
+    "de": "Tanz auf der Klinge III",
+    "fr": "Danseur légendaire",
+    "icon": "/i/036000/036205.png",
+    "itemReward": 0
+  },
+  "2908": {
+    "en": "Perchance to Dream I",
+    "ja": "リーパー：レベル80",
+    "de": "Pakt mit der Dunkelheit I",
+    "fr": "Faucheur emblématique",
+    "icon": "/i/037000/037231.png",
+    "itemReward": 0
+  },
+  "2909": {
+    "en": "Perchance to Dream II",
+    "ja": "リーパー：レベル90",
+    "de": "Pakt mit der Dunkelheit II",
+    "fr": "Faucheur légendaire",
+    "icon": "/i/037000/037231.png",
+    "itemReward": 0
+  },
+  "2910": {
+    "en": "Do No Harm I",
+    "ja": "賢者：レベル80",
+    "de": "Uraltes Wissen I",
+    "fr": "Sage emblématique",
+    "icon": "/i/037000/037030.png",
+    "itemReward": 0
+  },
+  "2911": {
+    "en": "Do No Harm II",
+    "ja": "賢者：レベル90",
+    "de": "Uraltes Wissen II",
+    "fr": "Sage légendaire",
+    "icon": "/i/037000/037030.png",
+    "itemReward": 0
+  },
+  "2912": {
+    "en": "Knock on Wood IX",
+    "ja": "木工師：レベル90",
+    "de": "Aus anderem Holz IX",
+    "fr": "Menuisier légendaire",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "2913": {
+    "en": "Temper, Temper IX",
+    "ja": "鍛冶師：レベル90",
+    "de": "Seines Glückes Schmied IX",
+    "fr": "Forgeron légendaire",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "2914": {
+    "en": "The Riddle of Steel IX",
+    "ja": "甲冑師：レベル90",
+    "de": "Das Geheimnis des Stahls IX",
+    "fr": "Armurier légendaire",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "2915": {
+    "en": "Heart of Gold IX",
+    "ja": "彫金師：レベル90",
+    "de": "Herz aus Gold IX",
+    "fr": "Orfèvre légendaire",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "2916": {
+    "en": "Tougher than Leather IX",
+    "ja": "革細工師：レベル90",
+    "de": "Ganz in Leder IX",
+    "fr": "Tanneur légendaire",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "2917": {
+    "en": "Smiling, Styling, and Textiling IX",
+    "ja": "裁縫師：レベル90",
+    "de": "Eorzeas neue Kleider IX",
+    "fr": "Couturier légendaire",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "2918": {
+    "en": "'Tis True without Lying IX",
+    "ja": "錬金術師：レベル90",
+    "de": "Gut gemischt ist halb gewonnen IX",
+    "fr": "Alchimiste légendaire",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "2919": {
+    "en": "All in Good Taste IX",
+    "ja": "調理師：レベル90",
+    "de": "Der richtige Pfiff IX",
+    "fr": "Cuisinier légendaire",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "2920": {
+    "en": "Fear the Reaper IX",
+    "ja": "園芸師：レベル90",
+    "de": "Man erntet, was man sät IX",
+    "fr": "Botaniste légendaire",
+    "icon": "/i/038000/038103.png",
+    "itemReward": 0
+  },
+  "2921": {
+    "en": "Breaking Rocks in the Hot Sun IX",
+    "ja": "採掘師：レベル90",
+    "de": "Gute Miene zur Mine IX",
+    "fr": "Mineur légendaire",
+    "icon": "/i/038000/038003.png",
+    "itemReward": 0
+  },
+  "2922": {
+    "en": "Gone Fishin' IX",
+    "ja": "漁師：レベル90",
+    "de": "Was für ein Kaventsmann IX",
+    "fr": "Pêcheur légendaire",
+    "icon": "/i/038000/038203.png",
+    "itemReward": 0
+  },
+  "2923": {
+    "en": "Mastering War V",
+    "ja": "武を超えし者",
+    "de": "Meister des Krieges V",
+    "fr": "Légende de la guerre",
+    "icon": "/i/002000/002547.png",
+    "itemReward": 0
+  },
+  "2924": {
+    "en": "Mastering Magic V",
+    "ja": "魔を超えし者",
+    "de": "Meister der Magie V",
+    "fr": "Légende de la magie",
+    "icon": "/i/002000/002661.png",
+    "itemReward": 0
+  },
+  "2925": {
+    "en": "A Life of Adventure V",
+    "ja": "十八の道を超えし者",
+    "de": "Tausendsassa V",
+    "fr": "Légende du corps et de l'esprit",
+    "icon": "/i/002000/002517.png",
+    "itemReward": 35858
+  },
+  "2926": {
+    "en": "Mastering the Hand V",
+    "ja": "職人魂を超えし冒険者",
+    "de": "Meister des Handwerks V",
+    "fr": "Légende de la main",
+    "icon": "/i/061000/061269.png",
+    "itemReward": 0
+  },
+  "2927": {
+    "en": "Mastering the Land V",
+    "ja": "暁月の恵みを我が身に",
+    "de": "Meister der Ressourcen V",
+    "fr": "Légende de la terre",
+    "icon": "/i/001000/001981.png",
+    "itemReward": 0
+  },
+  "2928": {
+    "en": "Going with the Grain: Genius",
+    "ja": "木工職人：高弟",
+    "de": "Immer mit der Faser: Genie",
+    "fr": "Toucher du bois : Prodige",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "2929": {
+    "en": "Working the Bellows: Genius",
+    "ja": "鍛冶職人：高弟",
+    "de": "Spiel mit dem Feuer: Genie",
+    "fr": "En avant, forgez : Prodige",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "2930": {
+    "en": "Pounding Out the Dents: Genius",
+    "ja": "板金職人：高弟",
+    "de": "Da bist du platt: Genie",
+    "fr": "Entre le marteau et l'enclume : Prodige",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "2931": {
+    "en": "Cutting the Carats: Genius",
+    "ja": "彫金職人：高弟",
+    "de": "Hochkarätige Höchstleistung: Genie",
+    "fr": "Tout ce qui brille : Prodige",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "2932": {
+    "en": "Hiding in Plain Sight: Genius",
+    "ja": "革細工職人：高弟",
+    "de": "Abziehen am hellichten Tage: Genie",
+    "fr": "Tourner autour des peaux : Prodige",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "2933": {
+    "en": "Threading the Needle: Genius",
+    "ja": "裁縫職人：高弟",
+    "de": "Weber wenn sie losgelassen: Genie",
+    "fr": "De fil en aiguille : Prodige",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "2934": {
+    "en": "Mixing It Up: Genius",
+    "ja": "錬成職人：高弟",
+    "de": "Opus Magnum: Genie",
+    "fr": "Alchimiste d'acier : Prodige",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "2935": {
+    "en": "Savoring the Realm: Genius",
+    "ja": "調理職人：高弟",
+    "de": "Das große Fressen: Genie",
+    "fr": "Cordon-bleu : Prodige",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "2936": {
+    "en": "Reaping the End",
+    "ja": "暁月の伐採名人",
+    "de": "Die Sense des Endes",
+    "fr": "Deux bois, deux mesures : terres des finitudes",
+    "icon": "/i/001000/001056.png",
+    "itemReward": 0
+  },
+  "2937": {
+    "en": "Mining the End",
+    "ja": "暁月の採掘名人",
+    "de": "Die Spitzhacke des Endes",
+    "fr": "Payer de mine : terres des finitudes",
+    "icon": "/i/001000/001015.png",
+    "itemReward": 0
+  },
+  "2938": {
+    "en": "Baiting the End",
+    "ja": "暁月の釣り名人",
+    "de": "Die Angel des Endes",
+    "fr": "Surveiller sa ligne : terres des finitudes",
+    "icon": "/i/001000/001101.png",
+    "itemReward": 0
+  },
+  "2939": {
+    "en": "I Made That (Worth Collecting) VI",
+    "ja": "収集品の製作者：ランク6",
+    "de": "Ich hab's sammelbar gemacht VI",
+    "fr": "Facteur de merveilles VI",
+    "icon": "/i/062000/062973.png",
+    "itemReward": 0
+  },
+  "2940": {
+    "en": "I Collected That VI",
+    "ja": "収集品の採集者：ランク6",
+    "de": "Ich hab's gesammelt VI",
+    "fr": "Chasseur de merveilles VI",
+    "icon": "/i/060000/060031.png",
+    "itemReward": 0
+  },
+  "2941": {
+    "en": "With Saw in Hand VII",
+    "ja": "製作稼業木工師：ランク7",
+    "de": "Sägende Hand VII",
+    "fr": "Féru de la scie VII",
+    "icon": "/i/035000/035001.png",
+    "itemReward": 0
+  },
+  "2942": {
+    "en": "With Hammer in Hand VII",
+    "ja": "製作稼業鍛冶師：ランク7",
+    "de": "Hämmernde Hand VII",
+    "fr": "Féru de l'enclume VII",
+    "icon": "/i/035000/035106.png",
+    "itemReward": 0
+  },
+  "2943": {
+    "en": "With Steel in Hand VII",
+    "ja": "製作稼業甲冑師：ランク7",
+    "de": "Stählerne Hand VII",
+    "fr": "Féru du marteau VII",
+    "icon": "/i/035000/035203.png",
+    "itemReward": 0
+  },
+  "2944": {
+    "en": "With Gem in Hand VII",
+    "ja": "製作稼業彫金師：ランク7",
+    "de": "Goldene Hand VII",
+    "fr": "Féru du joyau VII",
+    "icon": "/i/035000/035301.png",
+    "itemReward": 0
+  },
+  "2945": {
+    "en": "With Skin in Hand VII",
+    "ja": "製作稼業革細工師：ランク7",
+    "de": "Gerbende Hand VII",
+    "fr": "Féru du couteau VII",
+    "icon": "/i/035000/035404.png",
+    "itemReward": 0
+  },
+  "2946": {
+    "en": "With Needle in Hand VII",
+    "ja": "製作稼業裁縫師：ランク7",
+    "de": "Webende Hand VII",
+    "fr": "Féru de l'aiguille VII",
+    "icon": "/i/035000/035501.png",
+    "itemReward": 0
+  },
+  "2947": {
+    "en": "With Pestle in Hand VII",
+    "ja": "製作稼業錬金術師：ランク7",
+    "de": "Brauende Hand VII",
+    "fr": "Féru de l'alambic VII",
+    "icon": "/i/035000/035604.png",
+    "itemReward": 0
+  },
+  "2948": {
+    "en": "With Pan in Hand VII",
+    "ja": "製作稼業調理師：ランク7",
+    "de": "Brutzelnde Hand VII",
+    "fr": "Féru de la poêle VII",
+    "icon": "/i/035000/035704.png",
+    "itemReward": 0
+  },
+  "2949": {
+    "en": "With Axe in Hand VII",
+    "ja": "採集稼業園芸師：ランク7",
+    "de": "Blühende Hand VII",
+    "fr": "Féru de la hache VII",
+    "icon": "/i/038000/038103.png",
+    "itemReward": 0
+  },
+  "2950": {
+    "en": "With Pick in Hand VII",
+    "ja": "採集稼業採掘師：ランク7",
+    "de": "Hackende Hand VII",
+    "fr": "Féru de la pioche VII",
+    "icon": "/i/038000/038003.png",
+    "itemReward": 0
+  },
+  "2951": {
+    "en": "With Bait in Hand VII",
+    "ja": "採集稼業漁師：ランク7",
+    "de": "Angelnde Hand VII",
+    "fr": "Féru de l'hameçon VII",
+    "icon": "/i/038000/038203.png",
+    "itemReward": 0
+  },
+  "2952": {
+    "en": "On Wings of Hope",
+    "ja": "君が抱く歓びの色",
+    "de": "Seelenwächter",
+    "fr": "♪ De tes ailes d'espoir",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2953": {
+    "en": "Rise Up Through the Night",
+    "ja": "星を救った英雄",
+    "de": "Bewahrer des Planeten",
+    "fr": "♪ Élève-toi dans la nuit",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2954": {
+    "en": "Higher",
+    "ja": "アーテリスの明日",
+    "de": "Ætheris' Zukunft",
+    "fr": "♪ Plus haut",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2955": {
+    "en": "Oh, Higher",
+    "ja": "この世界の終末",
+    "de": "Das Ende der Welt",
+    "fr": "♪ Toujours plus haut",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2956": {
+    "en": "Carrying Our Song",
+    "ja": "生まれ死んで答を得る",
+    "de": "Lehre aus tausend Toden",
+    "fr": "♪ Porte notre chanson",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2957": {
+    "en": "Fast Within Your Arms",
+    "ja": "すべての子らよ",
+    "de": "Hydaelyns Kinder",
+    "fr": "♪ Serre-la dans tes bras",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2958": {
+    "en": "That Its Chorus Might Ring for All",
+    "ja": "暁月のフィナーレ",
+    "de": "Bis zum bitteren Ende",
+    "fr": "♪ Que son refrain résonne pour tous",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "2959": {
+    "en": "Manes Exite Paterni",
+    "ja": "異郷のリーパー",
+    "de": "Der Pfad des Sensenträgers",
+    "fr": "À faux et à sang",
+    "icon": "/i/026000/026063.png",
+    "itemReward": 0
+  },
+  "2960": {
+    "en": "Sage, Heal Thyself",
+    "ja": "叡智の賢者",
+    "de": "Auf den Schultern der Weisheit",
+    "fr": "La véritable force commence par la sagesse",
+    "icon": "/i/026000/026064.png",
+    "itemReward": 0
+  },
+  "2961": {
+    "en": "More than Death",
+    "ja": "病毒の絶望を払いし者",
+    "de": "Bezwinger des Giftes",
+    "fr": "Lénifier l'envenimement",
+    "icon": "/i/061000/061264.png",
+    "itemReward": 0
+  },
+  "2962": {
+    "en": "More than Guilt",
+    "ja": "罪悪の絶望を払いし者",
+    "de": "Bezwinger der Sünde",
+    "fr": "Lénifier la culpabilité",
+    "icon": "/i/061000/061251.png",
+    "itemReward": 0
+  },
+  "2963": {
+    "en": "More than Loss",
+    "ja": "絶滅の絶望を払いし者",
+    "de": "Bezwinger alter Feindschaft",
+    "fr": "Lénifier l'extinction",
+    "icon": "/i/061000/061265.png",
+    "itemReward": 0
+  },
+  "2964": {
+    "en": "More than Loneliness",
+    "ja": "別離の絶望を払いし者",
+    "de": "Bezwinger der Trauer",
+    "fr": "Lénifier la séparation",
+    "icon": "/i/061000/061262.png",
+    "itemReward": 0
+  },
+  "2965": {
+    "en": "More than Fear",
+    "ja": "廃教の絶望を払いし者",
+    "de": "Bezwinger der Ungleichheit",
+    "fr": "Lénifier l'abjuration",
+    "icon": "/i/061000/061253.png",
+    "itemReward": 0
+  },
+  "2966": {
+    "en": "Found in Translation",
+    "ja": "ルルシャ研究室の理解者",
+    "de": "Schatz des Archäologischen Instituts",
+    "fr": "Assistant du laboratoire de Rurusha",
+    "icon": "/i/001000/001988.png",
+    "itemReward": 0
+  },
+  "2967": {
+    "en": "Starry Night",
+    "ja": "古典天文学研究会の仲間",
+    "de": "Superstar der Forschungsgesellschaft für Klassische Astronomie",
+    "fr": "Ami du groupe d'étude d'astronomie classique",
+    "icon": "/i/001000/001987.png",
+    "itemReward": 0
+  },
+  "2968": {
+    "en": "Winning Bread",
+    "ja": "ガルヴロッシュ研究室の隠し味",
+    "de": "Nährwerte und Geschmack in Kombination",
+    "fr": "As de la fougasse et technicien du pain",
+    "icon": "/i/001000/001955.png",
+    "itemReward": 0
+  },
+  "2969": {
+    "en": "'Tis Not Hereafter",
+    "ja": "タンキン研究室の架け橋",
+    "de": "Vermittler in Herzensangelegenheiten",
+    "fr": "Conciliateur du laboratoire de Tankin",
+    "icon": "/i/001000/001006.png",
+    "itemReward": 0
+  },
+  "2970": {
+    "en": "Sufficient Data",
+    "ja": "環境エーテル研究室の共同執筆者",
+    "de": "Die Zukunft der Ätherologie",
+    "fr": "Sauveur des jeunes éthérologues",
+    "icon": "/i/001000/001116.png",
+    "itemReward": 0
+  },
+  "2971": {
+    "en": "Overeducated",
+    "ja": "シャーレアン魔法大学の協力者",
+    "de": "Helfer der Magieakademie",
+    "fr": "Aventurier de l'académie de magie",
+    "icon": "/i/001000/001901.png",
+    "itemReward": 0
+  },
+  "2972": {
+    "en": "Bound by Hope",
+    "ja": "希望の絆",
+    "de": "Das Band der Hoffnung",
+    "fr": "Unis par l'espoir",
+    "icon": "/i/003000/003139.png",
+    "itemReward": 0
+  },
+  "2973": {
+    "en": "End in Sight",
+    "ja": "暁月の探検家",
+    "de": "Ende in Sicht",
+    "fr": "Horizon des confins",
+    "icon": "/i/001000/001019.png",
+    "itemReward": 0
+  },
+  "2974": {
+    "en": "Mapping the Realm: Labyrinthos",
+    "ja": "ラヴィリンソスを踏破せし者",
+    "de": "Kartograph: Labyrinthos",
+    "fr": "Cartographe du continent : Le Labyrinthos",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2975": {
+    "en": "Mapping the Realm: Thavnair",
+    "ja": "サベネア島を踏破せし者",
+    "de": "Kartograph: Thavnair",
+    "fr": "Cartographe du continent : Thavnair",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2976": {
+    "en": "Mapping the Realm: Garlemald",
+    "ja": "ガレマルドを踏破せし者",
+    "de": "Kartograph: Garlemald",
+    "fr": "Cartographe du continent : Garlemald",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2977": {
+    "en": "Mapping the Realm: Mare Lamentorum",
+    "ja": "嘆きの海を踏破せし者",
+    "de": "Kartograph: Mare Lamentorum",
+    "fr": "Cartographe du continent : Mare Lamentorum",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2978": {
+    "en": "Mapping the Realm: Elpis",
+    "ja": "エルピスを踏破せし者",
+    "de": "Kartograph: Elpis",
+    "fr": "Cartographe du continent : Elpis",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2979": {
+    "en": "Mapping the Realm: Ultima Thule",
+    "ja": "ウルティマ・トゥーレを踏破せし者",
+    "de": "Kartograph: Ultima Thule",
+    "fr": "Cartographe du continent : Ultima Thulé",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2980": {
+    "en": "Mapping the Realm: The Tower of Zot",
+    "ja": "ゾットの塔を踏破せし者",
+    "de": "Kartograph: Turm von Zot",
+    "fr": "Cartographe du continent : Tour de Zott",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2981": {
+    "en": "Mapping the Realm: The Tower of Babil",
+    "ja": "バブイルの塔を踏破せし者",
+    "de": "Kartograph: Turm von Babil",
+    "fr": "Cartographe du continent : Tour de Babil",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2982": {
+    "en": "Mapping the Realm: Vanaspati",
+    "ja": "ヴァナスパティを踏破せし者",
+    "de": "Kartograph: Vanaspati",
+    "fr": "Cartographe du continent : Vanaspati",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2983": {
+    "en": "Mapping the Realm: Ktisis Hyperboreia",
+    "ja": "ヒュペルボレア造物院を踏破せし者",
+    "de": "Kartograph: Ktisis Hyperboreia",
+    "fr": "Cartographe du continent : L'Hyperborée",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2984": {
+    "en": "Mapping the Realm: The Aitiascope",
+    "ja": "アイティオン星晶鏡を踏破せし者",
+    "de": "Kartograph: Aitiaskop",
+    "fr": "Cartographe du continent : Prisme de l'Aitia",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2985": {
+    "en": "Mapping the Realm: The Dead Ends",
+    "ja": "レムナントを踏破せし者",
+    "de": "Kartograph: Sternengrab",
+    "fr": "Cartographe du continent : L'Issue aux Impasses",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2986": {
+    "en": "Mapping the Realm: The Stigma Dreamscape",
+    "ja": "スティグマ・フォーを踏破せし者",
+    "de": "Kartograph: Stigma-Holometrie",
+    "fr": "Cartographe du continent : Rêve électrique de Stigma-4",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2987": {
+    "en": "Mapping the Realm: Smileton",
+    "ja": "スマイルトンを踏破せし者",
+    "de": "Kartograph: Smileton",
+    "fr": "Cartographe du continent : Risette-sur-lune",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "2988": {
+    "en": "Darkness Falls",
+    "ja": "闇の神を狩りし者",
+    "de": "Einbruch der Dunkelheit",
+    "fr": "Dissiper les Ténèbres",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "2989": {
+    "en": "I Heard, I Felt, I Thought",
+    "ja": "光の神を超えし者",
+    "de": "Ich hörte zu, ich fühlte es, ich dachte nach",
+    "fr": "Entends... Ressens... Pense...",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "2990": {
+    "en": "Tank You, Paladin V",
+    "ja": "みんなのナイト：ランク5",
+    "de": "Ein Paladin für alle Fälle V",
+    "fr": "Paladin philanthrope V",
+    "icon": "/i/002000/002505.png",
+    "itemReward": 0
+  },
+  "2991": {
+    "en": "Tank You, Warrior V",
+    "ja": "みんなの戦士：ランク5",
+    "de": "Ein Krieger für alle Fälle V",
+    "fr": "Guerrier philanthrope V",
+    "icon": "/i/002000/002551.png",
+    "itemReward": 0
+  },
+  "2992": {
+    "en": "Tank You, Dark Knight V",
+    "ja": "みんなの暗黒騎士：ランク5",
+    "de": "Ein Dunkelritter für alle Fälle V",
+    "fr": "Chevalier noir philanthrope V",
+    "icon": "/i/003000/003071.png",
+    "itemReward": 0
+  },
+  "2993": {
+    "en": "Tank You, Gunbreaker V",
+    "ja": "みんなのガンブレイカー：ランク5",
+    "de": "Eine Revolverklinge für alle Fälle V",
+    "fr": "Pistosabreur philanthrope V",
+    "icon": "/i/003000/003406.png",
+    "itemReward": 0
+  },
+  "2994": {
+    "en": "Take Your A Game Further I",
+    "ja": "暁月の難物殺し：ランク1",
+    "de": "Jag mir ein A am Ende I",
+    "fr": "La fin du menu fretin I",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "2995": {
+    "en": "Take Your A Game Further II",
+    "ja": "暁月の難物殺し：ランク2",
+    "de": "Jag mir ein A am Ende II",
+    "fr": "La fin du menu fretin II",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "2996": {
+    "en": "Take Your A Game Further III",
+    "ja": "暁月の難物殺し：ランク3",
+    "de": "Jag mir ein A am Ende III",
+    "fr": "La fin du menu fretin III",
+    "icon": "/i/002000/002680.png",
+    "itemReward": 0
+  },
+  "2997": {
+    "en": "Take Your S Game Further I",
+    "ja": "暁月の超大物殺し：ランク1",
+    "de": "Jag mir ein S am Ende I",
+    "fr": "La fin du gros gibier I",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "2998": {
+    "en": "Take Your S Game Further II",
+    "ja": "暁月の超大物殺し：ランク2",
+    "de": "Jag mir ein S am Ende II",
+    "fr": "La fin du gros gibier II",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "2999": {
+    "en": "Take Your S Game Further III",
+    "ja": "暁月の超大物殺し：ランク3",
+    "de": "Jag mir ein S am Ende III",
+    "fr": "La fin du gros gibier III",
+    "icon": "/i/002000/002731.png",
+    "itemReward": 0
+  },
+  "3000": {
+    "en": "Endgame Hunter",
+    "ja": "レジェンドモブハンター",
+    "de": "Endzeit-Jäger",
+    "fr": "Chasseur de l'infini",
+    "icon": "/i/002000/002685.png",
+    "itemReward": 36004
+  },
+  "3001": {
+    "en": "Aetherpool Party: War Scythe",
+    "ja": "強化されし魔器：ウォーサイズ",
+    "de": "Waffen des Padjal: Kriegssense",
+    "fr": "Padjale, ton arme : faux de guerre",
+    "icon": "/i/037000/037232.png",
+    "itemReward": 0
+  },
+  "3002": {
+    "en": "Aetherpool Party: Milpreves",
+    "ja": "強化されし魔器：ミルプレーヴェ",
+    "de": "Waffen des Padjal: Hascherlite",
+    "fr": "Padjale, ton arme : mein gwrac'h",
+    "icon": "/i/037000/037027.png",
+    "itemReward": 0
+  },
+  "3003": {
+    "en": "Freebird: Labyrinthos",
+    "ja": "ラヴィリンソスの風を知る者",
+    "de": "Frei wie ein Vogel: Labyrinthos",
+    "fr": "Aux quatre vents : Le Labyrinthos",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3004": {
+    "en": "Freebird: Thavnair",
+    "ja": "サベネア島の風を知る者",
+    "de": "Frei wie ein Vogel: Thavnair",
+    "fr": "Aux quatre vents : Thavnair",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3005": {
+    "en": "Freebird: Garlemald",
+    "ja": "ガレマルドの風を知る者",
+    "de": "Frei wie ein Vogel: Garlemald",
+    "fr": "Aux quatre vents : Garlemald",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3006": {
+    "en": "Freebird: Mare Lamentorum",
+    "ja": "嘆きの海の風を知る者",
+    "de": "Frei wie ein Vogel: Mare Lamentorum",
+    "fr": "Aux quatre vents : Mare Lamentorum",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3007": {
+    "en": "Freebird: Elpis",
+    "ja": "エルピスの風を知る者",
+    "de": "Frei wie ein Vogel: Elpis",
+    "fr": "Aux quatre vents : Elpis",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3008": {
+    "en": "Freebird: Ultima Thule",
+    "ja": "ウルティマ・トゥーレの風を知る者",
+    "de": "Frei wie ein Vogel: Ultima Thule",
+    "fr": "Aux quatre vents : Ultima Thulé",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3009": {
+    "en": "Frequent Flyer IV",
+    "ja": "暁月の風を知る者",
+    "de": "Vielflieger III",
+    "fr": "Navigateur des cieux infinis",
+    "icon": "/i/021000/021901.png",
+    "itemReward": 0
+  },
+  "3010": {
+    "en": "I Can Dig It XII",
+    "ja": "トレジャーハンター：ランク12",
+    "de": "Wer sucht, der findet XII",
+    "fr": "Creuser son trou XII",
+    "icon": "/i/000000/000115.png",
+    "itemReward": 0
+  },
+  "3011": {
+    "en": "I Can Dig It XIII",
+    "ja": "トレジャーハンター：ランク13",
+    "de": "Wer sucht, der findet XIII",
+    "fr": "Creuser son trou XIII",
+    "icon": "/i/000000/000115.png",
+    "itemReward": 0
+  },
+  "3012": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3013": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3014": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3015": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3016": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3017": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3018": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3019": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3020": {
+    "en": "Triple-decker XI",
+    "ja": "カードコレクター：ランク11",
+    "de": "Tripledecker XI",
+    "fr": "Porte-cartes XI",
+    "icon": "/i/027000/027661.png",
+    "itemReward": 36284
+  },
+  "3021": {
+    "en": "Triple Team VIII",
+    "ja": "街角のデュエリスト：ランク8",
+    "de": "Tripleduellant VIII",
+    "fr": "En cartes et en os VIII",
+    "icon": "/i/003000/003101.png",
+    "itemReward": 36281
+  },
+  "3022": {
+    "en": "Free Market Friend: Labyrinthos",
+    "ja": "広域交易商の味方：ラヴィリンソス",
+    "de": "FATE-Händler: Labyrinthos",
+    "fr": "Héros de grand chemin : Le Labyrinthos",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3023": {
+    "en": "Free Market Friend: Thavnair",
+    "ja": "広域交易商の味方：サベネア島",
+    "de": "FATE-Händler: Thavnair",
+    "fr": "Héros de grand chemin : Thavnair",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3024": {
+    "en": "Free Market Friend: Garlemald",
+    "ja": "広域交易商の味方：ガレマルド",
+    "de": "FATE-Händler: Garlemald",
+    "fr": "Héros de grand chemin : Garlemald",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3025": {
+    "en": "Free Market Friend: Mare Lamentorum",
+    "ja": "広域交易商の味方：嘆きの海",
+    "de": "FATE-Händler: Mare Lamentorum",
+    "fr": "Héros de grand chemin : Mare Lamentorum",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3026": {
+    "en": "Free Market Friend: Elpis",
+    "ja": "広域交易商の味方：エルピス",
+    "de": "FATE-Händler: Elpis",
+    "fr": "Héros de grand chemin : Elpis",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3027": {
+    "en": "Free Market Friend: Ultima Thule",
+    "ja": "広域交易商の味方：ウルティマ・トゥーレ",
+    "de": "FATE-Händler: Ultima Thule",
+    "fr": "Héros de grand chemin : Ultima Thulé",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3028": {
+    "en": "Far Trade",
+    "ja": "広域交易商のパトロン",
+    "de": "Patron unendlicher Weiten",
+    "fr": "La fin d'un chemin",
+    "icon": "/i/002000/002645.png",
+    "itemReward": 0
+  },
+  "3029": {
+    "en": "Don't Go into the Light",
+    "ja": "ダイヴァディーパデポーザー",
+    "de": "Bezwinger von Daivadipa",
+    "fr": "Daivadipa tapé",
+    "icon": "/i/002000/002629.png",
+    "itemReward": 0
+  },
+  "3030": {
+    "en": "Prototypical",
+    "ja": "ウルティマ・セイヴァー",
+    "de": "Ultima-Retter",
+    "fr": "Protokhipique",
+    "icon": "/i/002000/002629.png",
+    "itemReward": 0
+  },
+  "3031": {
+    "en": "The Winners Club",
+    "ja": "三人のピエロのガラガラドン",
+    "de": "Die drei Clowns Brausewind",
+    "fr": "Les trois clowns bourrus",
+    "icon": "/i/053000/053408.png",
+    "itemReward": 0
+  },
+  "3032": {
+    "en": "Friend to the Furry",
+    "ja": "ルディとリッサイ",
+    "de": "Rudy und Rissai",
+    "fr": "Rudy et Rissai",
+    "icon": "/i/059000/059820.png",
+    "itemReward": 0
+  },
+  "3033": {
+    "en": "モーグリのポンポン愛",
+    "ja": "モーグリのポンポン愛",
+    "de": "Zwei Bommel für die Liebe",
+    "fr": "モーグリのポンポン愛",
+    "icon": "/i/058000/058753.png",
+    "itemReward": 0
+  },
+  "3034": {
+    "en": "モデルデビュー",
+    "ja": "モデルデビュー",
+    "de": "Gewinner des Modewettbewerbs",
+    "fr": "Premiers pas dans le mannequinat",
+    "icon": "/i/040000/040873.png",
+    "itemReward": 0
+  },
+  "3035": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3040": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
     "itemReward": 0
   }
 }

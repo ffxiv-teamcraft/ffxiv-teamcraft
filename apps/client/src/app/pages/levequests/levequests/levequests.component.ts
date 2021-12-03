@@ -19,6 +19,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { I18nName } from '../../../model/common/i18n-name';
+import { EnvironmentService } from '../../../core/environment.service';
 
 interface ExpObj {
   exp: number,
@@ -74,6 +75,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   startingLevel = 1;
 
+  maxLevel = this.environment.maxLevel;
+
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
@@ -83,7 +86,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               private i18n: I18nToolsService,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private auth: AuthFacade,
-              private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService) {
+              private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,
+              private environment: EnvironmentService) {
     super();
   }
 
@@ -358,6 +362,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
         if (leve.level < 70 && expObj.level >= 70) {
           leveExp = 3000;
         }
+        if (leve.level < 80 && expObj.level >= 80) {
+          leveExp = 1000;
+        }
         expObj = {
           ...this.applyExp(expObj.exp, expObj.level, leveExp),
           totalExp: expObj.totalExp + leveExp
@@ -369,13 +376,13 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   private applyExp(exp: number, level: number, expToAdd: number): { exp: number, level: number } {
     exp += expToAdd;
-    while (exp - this.getMaxExp(level) >= 0 && level < 79) {
+    while (exp - this.getMaxExp(level) >= 0 && level < this.maxLevel - 1) {
       exp -= this.getMaxExp(level);
       level++;
     }
-    // Handle special case for lvl 80
-    if (exp >= this.getMaxExp(level) && level >= 79) {
-      level = 80;
+    // Handle special case for max level
+    if (exp >= this.getMaxExp(level) && level >= this.maxLevel - 1) {
+      level = this.maxLevel;
       exp = 0;
     }
     return {

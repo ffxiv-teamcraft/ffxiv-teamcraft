@@ -126,7 +126,7 @@ export class NpcComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'GarlandTools',
-            url: `http://www.garlandtools.org/db/#npc/${xivapiNpc.ID}`,
+            url: `https://www.garlandtools.org/db/#npc/${xivapiNpc.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {

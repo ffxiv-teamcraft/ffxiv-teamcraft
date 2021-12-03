@@ -4,7 +4,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -14,7 +14,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -24,7 +24,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -34,7 +34,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -44,7 +44,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -54,7 +54,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -64,7 +64,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 11,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -74,7 +74,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 11,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -84,7 +84,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 8,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -94,7 +94,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -104,7 +104,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -114,7 +114,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -124,7 +124,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -134,7 +134,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 20,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -144,7 +144,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -154,7 +154,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -194,7 +194,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -204,7 +204,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -214,7 +214,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -224,7 +224,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -234,7 +234,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -244,7 +244,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -254,7 +254,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -264,7 +264,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -274,7 +274,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -284,7 +284,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -294,7 +294,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -304,7 +304,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -314,7 +314,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -324,7 +324,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -334,7 +334,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -344,7 +344,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -384,7 +384,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -394,7 +394,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -404,7 +404,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -414,7 +414,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -424,7 +424,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -434,7 +434,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -444,7 +444,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -454,7 +454,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -464,7 +464,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -474,7 +474,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -484,7 +484,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -494,7 +494,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -504,7 +504,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -514,7 +514,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -524,7 +524,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -534,7 +534,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -574,7 +574,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -584,7 +584,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -594,7 +594,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -604,7 +604,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -614,7 +614,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -624,7 +624,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -634,7 +634,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -644,7 +644,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -654,7 +654,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -664,7 +664,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -674,7 +674,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -684,7 +684,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -694,7 +694,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -704,7 +704,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -714,7 +714,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -724,7 +724,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -734,7 +734,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -744,7 +744,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -754,7 +754,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -764,7 +764,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -774,7 +774,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -784,7 +784,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -794,7 +794,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -804,7 +804,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -814,7 +814,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -824,7 +824,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -834,7 +834,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -844,7 +844,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -854,7 +854,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -864,7 +864,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -874,7 +874,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -884,7 +884,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -894,7 +894,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -904,7 +904,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -914,7 +914,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -924,7 +924,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 8,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -934,7 +934,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 9,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -944,7 +944,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -954,7 +954,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 20,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -964,7 +964,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -973,8 +973,8 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 6,
+        "baseParam": 27,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -983,8 +983,8 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 6,
+        "baseParam": 27,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -993,8 +993,8 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 6,
+        "baseParam": 27,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1003,8 +1003,8 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 10,
+        "baseParam": 27,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1013,8 +1013,8 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 10,
+        "baseParam": 27,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1023,8 +1023,8 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 10,
+        "baseParam": 27,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1033,8 +1033,8 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 16,
+        "baseParam": 27,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1044,7 +1044,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1054,7 +1054,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1064,7 +1064,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1074,7 +1074,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1084,7 +1084,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1094,7 +1094,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1104,7 +1104,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1114,7 +1114,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 7,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -1124,7 +1124,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 7,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -1134,7 +1134,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 7,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -1144,7 +1144,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 11,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -1154,7 +1154,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 11,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -1164,7 +1164,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -1174,7 +1174,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -1184,7 +1184,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 13,
+        "value": 12,
         "amountRequired": 2
       }
     ]
@@ -1194,7 +1194,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 10,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -1204,7 +1204,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 10,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -1214,7 +1214,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 10,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -1224,7 +1224,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -1234,7 +1234,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 13,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -1244,7 +1244,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 20,
+        "value": 18,
         "amountRequired": 4
       }
     ]
@@ -1254,7 +1254,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1264,7 +1264,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1274,7 +1274,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1284,7 +1284,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1294,7 +1294,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1304,7 +1304,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1314,7 +1314,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1324,7 +1324,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -1334,7 +1334,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1344,7 +1344,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1354,7 +1354,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -1364,7 +1364,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1374,7 +1374,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1384,7 +1384,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1394,7 +1394,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1404,7 +1404,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1414,7 +1414,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -1424,7 +1424,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1434,7 +1434,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1444,7 +1444,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -1454,7 +1454,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1464,7 +1464,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1474,7 +1474,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1484,7 +1484,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1494,7 +1494,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1504,7 +1504,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -1556,7 +1556,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -1656,7 +1656,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -1696,7 +1696,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -1706,7 +1706,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -1716,7 +1716,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -1736,7 +1736,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 6,
         "amountRequired": 2
       }
     ]
@@ -1766,7 +1766,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 7,
+        "value": 12,
         "amountRequired": 3
       }
     ]
@@ -1806,7 +1806,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 7,
+        "value": 12,
         "amountRequired": 3
       }
     ]
@@ -1846,7 +1846,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 7,
+        "value": 12,
         "amountRequired": 3
       }
     ]
@@ -1876,7 +1876,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1886,7 +1886,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1896,7 +1896,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -1906,7 +1906,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -1916,7 +1916,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -1926,7 +1926,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 3,
+        "value": 4,
         "amountRequired": 2
       }
     ]
@@ -2006,7 +2006,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 7,
+        "value": 11,
         "amountRequired": 2
       }
     ]
@@ -2036,7 +2036,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 4,
+        "value": 7,
         "amountRequired": 2
       }
     ]
@@ -2116,7 +2116,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2126,7 +2126,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2136,7 +2136,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2146,7 +2146,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2156,7 +2156,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2166,7 +2166,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2176,7 +2176,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2186,7 +2186,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2196,7 +2196,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2206,7 +2206,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2216,7 +2216,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 10,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2236,7 +2236,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2246,7 +2246,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2266,7 +2266,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2276,7 +2276,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2296,7 +2296,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 26,
+        "value": 24,
         "amountRequired": 2
       }
     ]
@@ -2306,7 +2306,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 26,
+        "value": 24,
         "amountRequired": 2
       }
     ]
@@ -2316,7 +2316,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 26,
+        "value": 24,
         "amountRequired": 2
       }
     ]
@@ -2386,7 +2386,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2396,7 +2396,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2506,7 +2506,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2526,7 +2526,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2536,7 +2536,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2556,7 +2556,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2576,7 +2576,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2586,7 +2586,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 20,
+        "value": 19,
         "amountRequired": 3
       }
     ]
@@ -2596,7 +2596,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2606,7 +2606,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2616,7 +2616,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2726,7 +2726,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2756,7 +2756,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2786,7 +2786,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -2806,7 +2806,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2816,7 +2816,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2826,7 +2826,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -2836,7 +2836,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2846,7 +2846,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2856,7 +2856,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 3,
         "amountRequired": 2
       }
     ]
@@ -2966,7 +2966,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 7,
+        "value": 11,
         "amountRequired": 2
       }
     ]
@@ -2996,7 +2996,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 7,
+        "value": 11,
         "amountRequired": 2
       }
     ]
@@ -3036,7 +3036,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 7,
+        "value": 11,
         "amountRequired": 2
       }
     ]
@@ -3056,7 +3056,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -3066,7 +3066,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -3076,70 +3076,34 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
   },
   "3993": {
     "itemSeriesId": 2,
-    "bonuses": [
-      {
-        "baseParam": 22,
-        "value": 3,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "3994": {
     "itemSeriesId": 1,
-    "bonuses": [
-      {
-        "baseParam": 22,
-        "value": 3,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "3995": {
     "itemSeriesId": 3,
-    "bonuses": [
-      {
-        "baseParam": 22,
-        "value": 3,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "4026": {
     "itemSeriesId": 2,
-    "bonuses": [
-      {
-        "baseParam": 27,
-        "value": 5,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "4027": {
     "itemSeriesId": 1,
-    "bonuses": [
-      {
-        "baseParam": 27,
-        "value": 5,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "4028": {
     "itemSeriesId": 3,
-    "bonuses": [
-      {
-        "baseParam": 22,
-        "value": 5,
-        "amountRequired": 2
-      }
-    ]
+    "bonuses": []
   },
   "4127": {
     "itemSeriesId": 2,
@@ -3206,7 +3170,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 9,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -3216,7 +3180,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -3226,7 +3190,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 9,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -3388,7 +3352,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 7,
+        "value": 10,
         "amountRequired": 2
       }
     ]
@@ -3422,7 +3386,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 7,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -3432,7 +3396,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3442,7 +3406,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3452,7 +3416,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3462,7 +3426,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3472,7 +3436,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3482,7 +3446,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3492,7 +3456,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3502,7 +3466,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3512,7 +3476,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 7,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -3522,7 +3486,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3532,7 +3496,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3542,7 +3506,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3552,7 +3516,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3562,7 +3526,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3572,7 +3536,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3582,7 +3546,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3592,7 +3556,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3602,7 +3566,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 7,
+        "value": 14,
         "amountRequired": 2
       }
     ]
@@ -3612,7 +3576,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3622,7 +3586,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3632,7 +3596,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3642,7 +3606,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3652,7 +3616,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3662,7 +3626,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3672,7 +3636,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3682,7 +3646,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -3692,17 +3656,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3712,17 +3676,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3732,17 +3696,17 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3752,17 +3716,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3772,17 +3736,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3792,17 +3756,17 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3812,17 +3776,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3832,17 +3796,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3852,17 +3816,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3872,17 +3836,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3892,17 +3856,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3912,17 +3876,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3932,17 +3896,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3952,17 +3916,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -3972,17 +3936,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -3992,17 +3956,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4012,17 +3976,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4032,17 +3996,17 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4052,17 +4016,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4072,17 +4036,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4092,17 +4056,17 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4112,17 +4076,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4132,17 +4096,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4152,17 +4116,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4172,17 +4136,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4192,17 +4156,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4212,17 +4176,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4232,17 +4196,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4252,17 +4216,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4272,17 +4236,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4292,17 +4256,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4312,17 +4276,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4332,17 +4296,17 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 19,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4352,17 +4316,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4372,17 +4336,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4392,17 +4356,17 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 22,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4412,17 +4376,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4432,17 +4396,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4452,17 +4416,17 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 45,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4472,17 +4436,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4492,17 +4456,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4512,17 +4476,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 3,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4532,17 +4496,17 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 46,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4552,17 +4516,17 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 1,
+        "value": 6,
         "amountRequired": 2
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 3
       },
       {
         "baseParam": 44,
-        "value": 2,
+        "value": 7,
         "amountRequired": 4
       }
     ]
@@ -4572,17 +4536,17 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 1,
+        "value": 4,
         "amountRequired": 2
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 3
       },
       {
         "baseParam": 27,
-        "value": 2,
+        "value": 4,
         "amountRequired": 4
       }
     ]
@@ -4592,7 +4556,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -4602,7 +4566,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -4612,7 +4576,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 6,
+        "value": 5,
         "amountRequired": 2
       }
     ]
@@ -4622,7 +4586,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4632,7 +4596,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4642,7 +4606,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4652,7 +4616,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4662,7 +4626,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4672,7 +4636,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4682,7 +4646,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4692,7 +4656,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4702,7 +4666,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4712,7 +4676,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4722,7 +4686,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4732,7 +4696,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4742,7 +4706,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4752,7 +4716,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4762,7 +4726,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4772,7 +4736,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4782,7 +4746,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4792,7 +4756,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 6,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4802,7 +4766,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4812,7 +4776,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4822,7 +4786,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4832,7 +4796,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4842,7 +4806,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4852,7 +4816,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -4862,7 +4826,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4872,7 +4836,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4882,7 +4846,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -4892,7 +4856,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4902,7 +4866,7 @@
     "bonuses": [
       {
         "baseParam": 19,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4912,7 +4876,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 14,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4922,7 +4886,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4932,7 +4896,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4942,7 +4906,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -4952,7 +4916,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4962,7 +4926,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4972,7 +4936,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -4982,7 +4946,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -4992,7 +4956,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -5002,7 +4966,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -5012,7 +4976,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5022,7 +4986,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 11,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5032,7 +4996,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5042,7 +5006,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5052,7 +5016,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5062,7 +5026,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5072,7 +5036,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5082,7 +5046,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5092,7 +5056,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5102,7 +5066,7 @@
     "bonuses": [
       {
         "baseParam": 22,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5112,7 +5076,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5122,7 +5086,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5132,7 +5096,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5142,7 +5106,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5152,7 +5116,7 @@
     "bonuses": [
       {
         "baseParam": 45,
-        "value": 9,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5162,7 +5126,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -5172,7 +5136,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -5182,7 +5146,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 10,
+        "value": 9,
         "amountRequired": 2
       }
     ]
@@ -5192,7 +5156,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5202,7 +5166,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5212,7 +5176,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 16,
+        "value": 15,
         "amountRequired": 2
       }
     ]
@@ -5222,7 +5186,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5232,7 +5196,7 @@
     "bonuses": [
       {
         "baseParam": 46,
-        "value": 19,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5242,7 +5206,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 12,
+        "value": 17,
         "amountRequired": 2
       }
     ]
@@ -5252,7 +5216,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5262,7 +5226,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5272,7 +5236,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 22,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5282,7 +5246,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5292,7 +5256,7 @@
     "bonuses": [
       {
         "baseParam": 27,
-        "value": 28,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5302,7 +5266,7 @@
     "bonuses": [
       {
         "baseParam": 44,
-        "value": 18,
+        "value": 25,
         "amountRequired": 4
       }
     ]
@@ -5312,7 +5276,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5322,7 +5286,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -5332,7 +5296,7 @@
     "bonuses": [
       {
         "baseParam": 6,
-        "value": 5,
+        "value": 20,
         "amountRequired": 2
       }
     ]
@@ -6400,14 +6364,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 19,
-        "value": 1,
-        "amountRequired": 3
+        "value": 25,
+        "amountRequired": 2
       }
     ]
   },
@@ -6415,14 +6374,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 19,
-        "value": 1,
-        "amountRequired": 3
+        "value": 25,
+        "amountRequired": 2
       }
     ]
   },
@@ -6430,14 +6384,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 19,
-        "value": 1,
-        "amountRequired": 3
+        "value": 25,
+        "amountRequired": 2
       }
     ]
   },
@@ -6445,14 +6394,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6460,14 +6404,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6475,14 +6414,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6490,14 +6424,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6505,14 +6434,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6520,14 +6444,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6535,14 +6454,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6550,14 +6464,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6565,14 +6474,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6580,14 +6484,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6595,14 +6494,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6610,14 +6504,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6625,14 +6514,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 22,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6640,14 +6524,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 22,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6655,14 +6534,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 22,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6670,14 +6544,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 19,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6685,14 +6554,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 19,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6700,14 +6564,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 19,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 45,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6715,14 +6574,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6730,14 +6584,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6745,14 +6594,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6760,14 +6604,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6775,14 +6614,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6790,14 +6624,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 46,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6805,14 +6634,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 46,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6820,14 +6644,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 46,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6835,14 +6654,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 46,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6850,14 +6664,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6865,14 +6674,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6880,14 +6684,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6895,14 +6694,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 6,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6910,14 +6704,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 6,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6925,14 +6714,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 27,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 6,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6940,14 +6724,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 6,
-        "value": 1,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6955,14 +6734,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 6,
-        "value": 1,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6970,14 +6744,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 6,
-        "value": 1,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -6985,14 +6754,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -7000,14 +6764,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -7015,14 +6774,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 22,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 44,
-        "value": 2,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -7030,14 +6784,9 @@
     "itemSeriesId": 2,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -7045,14 +6794,9 @@
     "itemSeriesId": 1,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },
@@ -7060,14 +6804,9 @@
     "itemSeriesId": 3,
     "bonuses": [
       {
-        "baseParam": 44,
-        "value": 2,
-        "amountRequired": 2
-      },
-      {
         "baseParam": 27,
-        "value": 1,
-        "amountRequired": 3
+        "value": 36,
+        "amountRequired": 2
       }
     ]
   },

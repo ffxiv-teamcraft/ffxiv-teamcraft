@@ -259,7 +259,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 total_item_amount: item.amount,
                 item_amount: item.amount_needed - item.done,
                 type: partial.type,
-                gatheringType: partial.gatheringType
+                gatheringType: partial.gatheringType,
+                monster: partial.monster
               };
             }
             return undefined;
@@ -287,7 +288,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   total_item_amount: item.amount,
                   item_amount: item.amount_needed - item.done,
                   type: partial.type,
-                  gatheringType: partial.gatheringType
+                  gatheringType: partial.gatheringType,
+                  monster: partial.monster
                 };
               }
               return undefined;

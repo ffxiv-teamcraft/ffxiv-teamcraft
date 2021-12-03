@@ -152,8 +152,6 @@
     <div>|</div>
     <div [class.mobile-stats]="false | ifMobile:true:compact" [nzTooltipTitle]="'SIMULATOR.Current_control_bonus' | translate" nz-tooltip>
       {{'SIMULATOR.Current_control' | translate: { value: (result.simulation.crafterStats.getControl(result.simulation) | floor) } }}
-      ({{result.simulation.crafterStats._control}} +
-      <span>{{(result.simulation.crafterStats.getControl(result.simulation) | floor) - result.simulation.crafterStats._control}}</span>)
     </div>
   </div>
 </nz-card>

@@ -102,8 +102,9 @@
 </div>
 <nz-collapse class="inventory-panel">
   <nz-collapse-panel
-    [nzActive]="true"
+    [nzActive]="false"
     [nzHeader]="header"
+    #panel
   >
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
@@ -133,7 +134,7 @@
         </div>
       </div>
     </ng-template>
-    <div class="inventory-container" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px">
+    <div class="inventory-container" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px" *ngIf="panel.nzActive">
       <div *ngFor="let item of pool" [class.highlighted]="(highlight$ | async)?.indexOf(item.id) > -1" class="inventory-element"
            fxLayout="row" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px">

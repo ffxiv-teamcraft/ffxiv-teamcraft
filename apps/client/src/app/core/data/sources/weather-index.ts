@@ -1,2074 +1,2074 @@
 export const weatherIndex = {
-  '1': [
+  "1": [
     {
-      'rate': 5,
-      'weatherId': 7
+      "rate": 5,
+      "weatherId": 7
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 55,
-      'weatherId': 2
+      "rate": 55,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 1
+      "rate": 85,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '2': [
+  "2": [
     {
-      'rate': 5,
-      'weatherId': 7
+      "rate": 5,
+      "weatherId": 7
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 55,
-      'weatherId': 2
+      "rate": 55,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 1
+      "rate": 85,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '3': [
+  "3": [
     {
-      'rate': 5,
-      'weatherId': 9
+      "rate": 5,
+      "weatherId": 9
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 55,
-      'weatherId': 2
+      "rate": 55,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 1
+      "rate": 85,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '4': [
+  "4": [
     {
-      'rate': 5,
-      'weatherId': 9
+      "rate": 5,
+      "weatherId": 9
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 55,
-      'weatherId': 2
+      "rate": 55,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 1
+      "rate": 85,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '5': [
+  "5": [
     {
-      'rate': 5,
-      'weatherId': 4
+      "rate": 5,
+      "weatherId": 4
     },
     {
-      'rate': 10,
-      'weatherId': 10
+      "rate": 10,
+      "weatherId": 10
     },
     {
-      'rate': 25,
-      'weatherId': 9
+      "rate": 25,
+      "weatherId": 9
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '6': [
+  "6": [
     {
-      'rate': 5,
-      'weatherId': 4
+      "rate": 5,
+      "weatherId": 4
     },
     {
-      'rate': 10,
-      'weatherId': 8
+      "rate": 10,
+      "weatherId": 8
     },
     {
-      'rate': 25,
-      'weatherId': 7
+      "rate": 25,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '7': [
+  "7": [
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 3
+      "rate": 85,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 4
+      "rate": 95,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '8': [
+  "8": [
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 3
+      "rate": 85,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 4
+      "rate": 95,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '9': [
+  "9": [
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 3
+      "rate": 85,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 4
+      "rate": 95,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '10': [
+  "10": [
     {
-      'rate': 15,
-      'weatherId': 11
+      "rate": 15,
+      "weatherId": 11
     },
     {
-      'rate': 55,
-      'weatherId': 1
+      "rate": 55,
+      "weatherId": 1
     },
     {
-      'rate': 75,
-      'weatherId': 2
+      "rate": 75,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 3
+      "rate": 85,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 4
+      "rate": 95,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '11': [
+  "11": [
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 3
+      "rate": 70,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 4
+      "rate": 80,
+      "weatherId": 4
     },
     {
-      'rate': 85,
-      'weatherId': 7
+      "rate": 85,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 8
+      "rate": 100,
+      "weatherId": 8
     }
   ],
-  '12': [
+  "12": [
     {
-      'rate': 20,
-      'weatherId': 14
+      "rate": 20,
+      "weatherId": 14
     },
     {
-      'rate': 60,
-      'weatherId': 1
+      "rate": 60,
+      "weatherId": 1
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '13': [
+  "13": [
     {
-      'rate': 5,
-      'weatherId': 1
+      "rate": 5,
+      "weatherId": 1
     },
     {
-      'rate': 20,
-      'weatherId': 2
+      "rate": 20,
+      "weatherId": 2
     },
     {
-      'rate': 50,
-      'weatherId': 3
+      "rate": 50,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '14': [
+  "14": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '15': [
+  "15": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '16': [
+  "16": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 5
+      "rate": 80,
+      "weatherId": 5
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '17': [
+  "17": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 5
+      "rate": 80,
+      "weatherId": 5
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '18': [
+  "18": [
     {
-      'rate': 5,
-      'weatherId': 4
+      "rate": 5,
+      "weatherId": 4
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 7
+      "rate": 95,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 8
+      "rate": 100,
+      "weatherId": 8
     }
   ],
-  '19': [
+  "19": [
     {
-      'rate': 10,
-      'weatherId': 4
+      "rate": 10,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 3
+      "rate": 80,
+      "weatherId": 3
     },
     {
-      'rate': 90,
-      'weatherId': 5
+      "rate": 90,
+      "weatherId": 5
     },
     {
-      'rate': 100,
-      'weatherId': 6
+      "rate": 100,
+      "weatherId": 6
     }
   ],
-  '20': [
+  "20": [
     {
-      'rate': 30,
-      'weatherId': 1
+      "rate": 30,
+      "weatherId": 1
     },
     {
-      'rate': 50,
-      'weatherId': 2
+      "rate": 50,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 3
+      "rate": 70,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 4
+      "rate": 80,
+      "weatherId": 4
     },
     {
-      'rate': 90,
-      'weatherId': 9
+      "rate": 90,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '21': [
+  "21": [
     {
-      'rate': 20,
-      'weatherId': 16
+      "rate": 20,
+      "weatherId": 16
     },
     {
-      'rate': 60,
-      'weatherId': 15
+      "rate": 60,
+      "weatherId": 15
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 1
+      "rate": 75,
+      "weatherId": 1
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '22': [
+  "22": [
     {
-      'rate': 15,
-      'weatherId': 3
+      "rate": 15,
+      "weatherId": 3
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 60,
-      'weatherId': 17
+      "rate": 60,
+      "weatherId": 17
     },
     {
-      'rate': 75,
-      'weatherId': 1
+      "rate": 75,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '23': [
+  "23": [
     {
-      'rate': 100,
-      'weatherId': 29
+      "rate": 100,
+      "weatherId": 29
     }
   ],
-  '24': [
+  "24": [
     {
-      'rate': 30,
-      'weatherId': 1
+      "rate": 30,
+      "weatherId": 1
     },
     {
-      'rate': 50,
-      'weatherId': 2
+      "rate": 50,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 3
+      "rate": 70,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 4
+      "rate": 85,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '25': [
+  "25": [
     {
-      'rate': 100,
-      'weatherId': 26
+      "rate": 100,
+      "weatherId": 26
     }
   ],
-  '26': [
+  "26": [
     {
-      'rate': 100,
-      'weatherId': 28
+      "rate": 100,
+      "weatherId": 28
     }
   ],
-  '27': [
+  "27": [
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ],
-  '28': [
+  "28": [
     {
-      'rate': 100,
-      'weatherId': 3
+      "rate": 100,
+      "weatherId": 3
     }
   ],
-  '29': [
+  "29": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '30': [
+  "30": [
     {
-      'rate': 100,
-      'weatherId': 27
+      "rate": 100,
+      "weatherId": 27
     }
   ],
-  '31': [
+  "31": [
     {
-      'rate': 100,
-      'weatherId': 25
+      "rate": 100,
+      "weatherId": 25
     }
   ],
-  '32': [
+  "32": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '33': [
+  "33": [
     {
-      'rate': 40,
-      'weatherId': 1
+      "rate": 40,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 3
+      "rate": 85,
+      "weatherId": 3
     },
     {
-      'rate': 95,
-      'weatherId': 4
+      "rate": 95,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '34': [
+  "34": [
     {
-      'rate': 5,
-      'weatherId': 3
+      "rate": 5,
+      "weatherId": 3
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 55,
-      'weatherId': 2
+      "rate": 55,
+      "weatherId": 2
     },
     {
-      'rate': 85,
-      'weatherId': 1
+      "rate": 85,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '35': [
+  "35": [
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ],
-  '36': [
+  "36": [
     {
-      'rate': 100,
-      'weatherId': 5
+      "rate": 100,
+      "weatherId": 5
     }
   ],
-  '37': [
+  "37": [
     {
-      'rate': 100,
-      'weatherId': 9
+      "rate": 100,
+      "weatherId": 9
     }
   ],
-  '38': [
+  "38": [
     {
-      'rate': 100,
-      'weatherId': 23
+      "rate": 100,
+      "weatherId": 23
     }
   ],
-  '39': [
+  "39": [
     {
-      'rate': 100,
-      'weatherId': 24
+      "rate": 100,
+      "weatherId": 24
     }
   ],
-  '40': [
+  "40": [
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '41': [
+  "41": [
     {
-      'rate': 100,
-      'weatherId': 11
+      "rate": 100,
+      "weatherId": 11
     }
   ],
-  '42': [
+  "42": [
     {
-      'rate': 100,
-      'weatherId': 16
+      "rate": 100,
+      "weatherId": 16
     }
   ],
-  '43': [
+  "43": [
     {
-      'rate': 100,
-      'weatherId': 22
+      "rate": 100,
+      "weatherId": 22
     }
   ],
-  '44': [
+  "44": [
     {
-      'rate': 100,
-      'weatherId': 36
+      "rate": 100,
+      "weatherId": 36
     }
   ],
-  '45': [
+  "45": [
     {
-      'rate': 100,
-      'weatherId': 20
+      "rate": 100,
+      "weatherId": 20
     }
   ],
-  '46': [
+  "46": [
     {
-      'rate': 100,
-      'weatherId': 35
+      "rate": 100,
+      "weatherId": 35
     }
   ],
-  '47': [
+  "47": [
     {
-      'rate': 60,
-      'weatherId': 15
+      "rate": 60,
+      "weatherId": 15
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 1
+      "rate": 75,
+      "weatherId": 1
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '48': [
+  "48": [
     {
-      'rate': 60,
-      'weatherId': 15
+      "rate": 60,
+      "weatherId": 15
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 1
+      "rate": 75,
+      "weatherId": 1
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '49': [
+  "49": [
     {
-      'rate': 20,
-      'weatherId': 16
+      "rate": 20,
+      "weatherId": 16
     },
     {
-      'rate': 60,
-      'weatherId': 15
+      "rate": 60,
+      "weatherId": 15
     },
     {
-      'rate': 70,
-      'weatherId': 2
+      "rate": 70,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 1
+      "rate": 75,
+      "weatherId": 1
     },
     {
-      'rate': 90,
-      'weatherId': 3
+      "rate": 90,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '50': [
+  "50": [
     {
-      'rate': 10,
-      'weatherId': 3
+      "rate": 10,
+      "weatherId": 3
     },
     {
-      'rate': 20,
-      'weatherId': 4
+      "rate": 20,
+      "weatherId": 4
     },
     {
-      'rate': 30,
-      'weatherId': 9
+      "rate": 30,
+      "weatherId": 9
     },
     {
-      'rate': 40,
-      'weatherId': 11
+      "rate": 40,
+      "weatherId": 11
     },
     {
-      'rate': 70,
-      'weatherId': 1
+      "rate": 70,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '51': [
+  "51": [
     {
-      'rate': 10,
-      'weatherId': 3
+      "rate": 10,
+      "weatherId": 3
     },
     {
-      'rate': 20,
-      'weatherId': 4
+      "rate": 20,
+      "weatherId": 4
     },
     {
-      'rate': 30,
-      'weatherId': 7
+      "rate": 30,
+      "weatherId": 7
     },
     {
-      'rate': 40,
-      'weatherId': 8
+      "rate": 40,
+      "weatherId": 8
     },
     {
-      'rate': 70,
-      'weatherId': 1
+      "rate": 70,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '52': [
+  "52": [
     {
-      'rate': 10,
-      'weatherId': 3
+      "rate": 10,
+      "weatherId": 3
     },
     {
-      'rate': 20,
-      'weatherId': 6
+      "rate": 20,
+      "weatherId": 6
     },
     {
-      'rate': 40,
-      'weatherId': 50
+      "rate": 40,
+      "weatherId": 50
     },
     {
-      'rate': 70,
-      'weatherId': 1
+      "rate": 70,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '53': [
+  "53": [
     {
-      'rate': 30,
-      'weatherId': 1
+      "rate": 30,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 3
+      "rate": 70,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 4
+      "rate": 80,
+      "weatherId": 4
     },
     {
-      'rate': 90,
-      'weatherId': 5
+      "rate": 90,
+      "weatherId": 5
     },
     {
-      'rate': 100,
-      'weatherId': 49
+      "rate": 100,
+      "weatherId": 49
     }
   ],
-  '54': [
+  "54": [
     {
-      'rate': 35,
-      'weatherId': 2
+      "rate": 35,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 3
+      "rate": 70,
+      "weatherId": 3
     },
     {
-      'rate': 100,
-      'weatherId': 9
+      "rate": 100,
+      "weatherId": 9
     }
   ],
-  '55': [
+  "55": [
     {
-      'rate': 10,
-      'weatherId': 3
+      "rate": 10,
+      "weatherId": 3
     },
     {
-      'rate': 20,
-      'weatherId': 4
+      "rate": 20,
+      "weatherId": 4
     },
     {
-      'rate': 30,
-      'weatherId': 7
+      "rate": 30,
+      "weatherId": 7
     },
     {
-      'rate': 40,
-      'weatherId': 8
+      "rate": 40,
+      "weatherId": 8
     },
     {
-      'rate': 70,
-      'weatherId': 1
+      "rate": 70,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '56': [
+  "56": [
     {
-      'rate': 100,
-      'weatherId': 44
+      "rate": 100,
+      "weatherId": 44
     }
   ],
-  '57': [
+  "57": [
     {
-      'rate': 100,
-      'weatherId': 51
+      "rate": 100,
+      "weatherId": 51
     }
   ],
-  '58': [
+  "58": [
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '59': [
+  "59": [
     {
-      'rate': 15,
-      'weatherId': 4
+      "rate": 15,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 7
+      "rate": 40,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '60': [
+  "60": [
     {
-      'rate': 40,
-      'weatherId': 2
+      "rate": 40,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 4
+      "rate": 75,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 5
+      "rate": 95,
+      "weatherId": 5
     },
     {
-      'rate': 99,
-      'weatherId': 49
+      "rate": 99,
+      "weatherId": 49
     },
     {
-      'rate': 100,
-      'weatherId': 54
+      "rate": 100,
+      "weatherId": 54
     }
   ],
-  '61': [
+  "61": [
     {
-      'rate': 40,
-      'weatherId': 2
+      "rate": 40,
+      "weatherId": 2
     },
     {
-      'rate': 60,
-      'weatherId': 4
+      "rate": 60,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 5
+      "rate": 95,
+      "weatherId": 5
     },
     {
-      'rate': 99,
-      'weatherId': 49
+      "rate": 99,
+      "weatherId": 49
     },
     {
-      'rate': 100,
-      'weatherId': 54
+      "rate": 100,
+      "weatherId": 54
     }
   ],
-  '62': [
+  "62": [
     {
-      'rate': 40,
-      'weatherId': 2
+      "rate": 40,
+      "weatherId": 2
     },
     {
-      'rate': 65,
-      'weatherId': 4
+      "rate": 65,
+      "weatherId": 4
     },
     {
-      'rate': 90,
-      'weatherId': 5
+      "rate": 90,
+      "weatherId": 5
     },
     {
-      'rate': 98,
-      'weatherId': 49
+      "rate": 98,
+      "weatherId": 49
     },
     {
-      'rate': 100,
-      'weatherId': 54
+      "rate": 100,
+      "weatherId": 54
     }
   ],
-  '63': [
+  "63": [
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '64': [
+  "64": [
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '65': [
+  "65": [
     {
-      'rate': 50,
-      'weatherId': 2
+      "rate": 50,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '66': [
+  "66": [
     {
-      'rate': 100,
-      'weatherId': 60
+      "rate": 100,
+      "weatherId": 60
     }
   ],
-  '67': [
+  "67": [
     {
-      'rate': 35,
-      'weatherId': 2
+      "rate": 35,
+      "weatherId": 2
     },
     {
-      'rate': 65,
-      'weatherId': 15
+      "rate": 65,
+      "weatherId": 15
     },
     {
-      'rate': 85,
-      'weatherId': 16
+      "rate": 85,
+      "weatherId": 16
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '68': [
+  "68": [
     {
-      'rate': 100,
-      'weatherId': 14
+      "rate": 100,
+      "weatherId": 14
     }
   ],
-  '69': [
+  "69": [
     {
-      'rate': 100,
-      'weatherId': 69
+      "rate": 100,
+      "weatherId": 69
     }
   ],
-  '70': [
+  "70": [
     {
-      'rate': 100,
-      'weatherId': 54
+      "rate": 100,
+      "weatherId": 54
     }
   ],
-  '71': [
+  "71": [
     {
-      'rate': 30,
-      'weatherId': 2
+      "rate": 30,
+      "weatherId": 2
     },
     {
-      'rate': 60,
-      'weatherId': 4
+      "rate": 60,
+      "weatherId": 4
     },
     {
-      'rate': 90,
-      'weatherId': 5
+      "rate": 90,
+      "weatherId": 5
     },
     {
-      'rate': 100,
-      'weatherId': 49
+      "rate": 100,
+      "weatherId": 49
     }
   ],
-  '72': [
+  "72": [
     {
-      'rate': 65,
-      'weatherId': 2
+      "rate": 65,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '73': [
+  "73": [
     {
-      'rate': 65,
-      'weatherId': 2
+      "rate": 65,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 7
+      "rate": 100,
+      "weatherId": 7
     }
   ],
-  '74': [
+  "74": [
     {
-      'rate': 100,
-      'weatherId': 17
+      "rate": 100,
+      "weatherId": 17
     }
   ],
-  '75': [
+  "75": [
     {
-      'rate': 100,
-      'weatherId': 74
+      "rate": 100,
+      "weatherId": 74
     }
   ],
-  '76': [
+  "76": [
     {
-      'rate': 100,
-      'weatherId': 84
+      "rate": 100,
+      "weatherId": 84
     }
   ],
-  '77': [
+  "77": [
     {
-      'rate': 100,
-      'weatherId': 80
+      "rate": 100,
+      "weatherId": 80
     }
   ],
-  '78': [
+  "78": [
     {
-      'rate': 15,
-      'weatherId': 1
+      "rate": 15,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 3
+      "rate": 80,
+      "weatherId": 3
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 9
+      "rate": 100,
+      "weatherId": 9
     }
   ],
-  '79': [
+  "79": [
     {
-      'rate': 15,
-      'weatherId': 1
+      "rate": 15,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 3
+      "rate": 80,
+      "weatherId": 3
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 9
+      "rate": 100,
+      "weatherId": 9
     }
   ],
-  '80': [
+  "80": [
     {
-      'rate': 10,
-      'weatherId': 1
+      "rate": 10,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 3
+      "rate": 75,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 4
+      "rate": 85,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 5
+      "rate": 95,
+      "weatherId": 5
     },
     {
-      'rate': 100,
-      'weatherId': 11
+      "rate": 100,
+      "weatherId": 11
     }
   ],
-  '81': [
+  "81": [
     {
-      'rate': 20,
-      'weatherId': 1
+      "rate": 20,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 3
+      "rate": 80,
+      "weatherId": 3
     },
     {
-      'rate': 90,
-      'weatherId': 4
+      "rate": 90,
+      "weatherId": 4
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '82': [
+  "82": [
     {
-      'rate': 10,
-      'weatherId': 7
+      "rate": 10,
+      "weatherId": 7
     },
     {
-      'rate': 20,
-      'weatherId': 4
+      "rate": 20,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '83': [
+  "83": [
     {
-      'rate': 10,
-      'weatherId': 9
+      "rate": 10,
+      "weatherId": 9
     },
     {
-      'rate': 20,
-      'weatherId': 5
+      "rate": 20,
+      "weatherId": 5
     },
     {
-      'rate': 35,
-      'weatherId': 3
+      "rate": 35,
+      "weatherId": 3
     },
     {
-      'rate': 75,
-      'weatherId': 2
+      "rate": 75,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '84': [
+  "84": [
     {
-      'rate': 5,
-      'weatherId': 8
+      "rate": 5,
+      "weatherId": 8
     },
     {
-      'rate': 15,
-      'weatherId': 7
+      "rate": 15,
+      "weatherId": 7
     },
     {
-      'rate': 25,
-      'weatherId': 4
+      "rate": 25,
+      "weatherId": 4
     },
     {
-      'rate': 40,
-      'weatherId': 3
+      "rate": 40,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '85': [
+  "85": [
     {
-      'rate': 5,
-      'weatherId': 6
+      "rate": 5,
+      "weatherId": 6
     },
     {
-      'rate': 10,
-      'weatherId': 5
+      "rate": 10,
+      "weatherId": 5
     },
     {
-      'rate': 17,
-      'weatherId': 7
+      "rate": 17,
+      "weatherId": 7
     },
     {
-      'rate': 25,
-      'weatherId': 4
+      "rate": 25,
+      "weatherId": 4
     },
     {
-      'rate': 35,
-      'weatherId': 3
+      "rate": 35,
+      "weatherId": 3
     },
     {
-      'rate': 75,
-      'weatherId': 2
+      "rate": 75,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '86': [
+  "86": [
     {
-      'rate': 100,
-      'weatherId': 50
+      "rate": 100,
+      "weatherId": 50
     }
   ],
-  '87': [
+  "87": [
     {
-      'rate': 100,
-      'weatherId': 82
+      "rate": 100,
+      "weatherId": 82
     }
   ],
-  '88': [
+  "88": [
     {
-      'rate': 100,
-      'weatherId': 79
+      "rate": 100,
+      "weatherId": 79
     }
   ],
-  '89': [
+  "89": [
     {
-      'rate': 100,
-      'weatherId': 88
+      "rate": 100,
+      "weatherId": 88
     }
   ],
-  '90': [
+  "90": [
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '91': [
+  "91": [
     {
-      'rate': 30,
-      'weatherId': 2
+      "rate": 30,
+      "weatherId": 2
     },
     {
-      'rate': 60,
-      'weatherId': 6
+      "rate": 60,
+      "weatherId": 6
     },
     {
-      'rate': 90,
-      'weatherId': 8
+      "rate": 90,
+      "weatherId": 8
     },
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ],
-  '92': [
+  "92": [
     {
-      'rate': 100,
-      'weatherId': 77
+      "rate": 100,
+      "weatherId": 77
     }
   ],
-  '93': [
+  "93": [
     {
-      'rate': 100,
-      'weatherId': 92
+      "rate": 100,
+      "weatherId": 92
     }
   ],
-  '94': [
+  "94": [
     {
-      'rate': 10,
-      'weatherId': 2
+      "rate": 10,
+      "weatherId": 2
     },
     {
-      'rate': 28,
-      'weatherId': 4
+      "rate": 28,
+      "weatherId": 4
     },
     {
-      'rate': 46,
-      'weatherId': 14
+      "rate": 46,
+      "weatherId": 14
     },
     {
-      'rate': 64,
-      'weatherId': 15
+      "rate": 64,
+      "weatherId": 15
     },
     {
-      'rate': 82,
-      'weatherId': 9
+      "rate": 82,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 16
+      "rate": 100,
+      "weatherId": 16
     }
   ],
-  '95': [
+  "95": [
     {
-      'rate': 100,
-      'weatherId': 101
+      "rate": 100,
+      "weatherId": 101
     }
   ],
-  '96': [
+  "96": [
     {
-      'rate': 10,
-      'weatherId': 2
+      "rate": 10,
+      "weatherId": 2
     },
     {
-      'rate': 28,
-      'weatherId': 14
+      "rate": 28,
+      "weatherId": 14
     },
     {
-      'rate': 46,
-      'weatherId': 9
+      "rate": 46,
+      "weatherId": 9
     },
     {
-      'rate': 64,
-      'weatherId': 16
+      "rate": 64,
+      "weatherId": 16
     },
     {
-      'rate': 82,
-      'weatherId': 49
+      "rate": 82,
+      "weatherId": 49
     },
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ],
-  '97': [
+  "97": [
     {
-      'rate': 100,
-      'weatherId': 12
+      "rate": 100,
+      "weatherId": 12
     }
   ],
-  '98': [
+  "98": [
     {
-      'rate': 100,
-      'weatherId': 102
+      "rate": 100,
+      "weatherId": 102
     }
   ],
-  '99': [
+  "99": [
     {
-      'rate': 100,
-      'weatherId': 113
+      "rate": 100,
+      "weatherId": 113
     }
   ],
-  '100': [
+  "100": [
     {
-      'rate': 12,
-      'weatherId': 2
+      "rate": 12,
+      "weatherId": 2
     },
     {
-      'rate': 34,
-      'weatherId': 8
+      "rate": 34,
+      "weatherId": 8
     },
     {
-      'rate': 56,
-      'weatherId': 17
+      "rate": 56,
+      "weatherId": 17
     },
     {
-      'rate': 78,
-      'weatherId': 10
+      "rate": 78,
+      "weatherId": 10
     },
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ],
-  '101': [
+  "101": [
     {
-      'rate': 100,
-      'weatherId': 119
+      "rate": 100,
+      "weatherId": 119
     }
   ],
-  '102': [
+  "102": [
     {
-      'rate': 100,
-      'weatherId': 118
+      "rate": 100,
+      "weatherId": 118
     }
   ],
-  '103': [
+  "103": [
     {
-      'rate': 100,
-      'weatherId': 122
+      "rate": 100,
+      "weatherId": 122
     }
   ],
-  '104': [
+  "104": [
     {
-      'rate': 100,
-      'weatherId': 125
+      "rate": 100,
+      "weatherId": 125
     }
   ],
-  '105': [
+  "105": [
     {
-      'rate': 100,
-      'weatherId': 120
+      "rate": 100,
+      "weatherId": 120
     }
   ],
-  '106': [
+  "106": [
     {
-      'rate': 20,
-      'weatherId': 1
+      "rate": 20,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 3
+      "rate": 75,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 4
+      "rate": 85,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 7
+      "rate": 95,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '107': [
+  "107": [
     {
-      'rate': 10,
-      'weatherId': 6
+      "rate": 10,
+      "weatherId": 6
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 45,
-      'weatherId': 3
+      "rate": 45,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 2
+      "rate": 85,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '108': [
+  "108": [
     {
-      'rate': 45,
-      'weatherId': 2
+      "rate": 45,
+      "weatherId": 2
     },
     {
-      'rate': 60,
-      'weatherId': 3
+      "rate": 60,
+      "weatherId": 3
     },
     {
-      'rate': 70,
-      'weatherId': 11
+      "rate": 70,
+      "weatherId": 11
     },
     {
-      'rate': 80,
-      'weatherId': 14
+      "rate": 80,
+      "weatherId": 14
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '109': [
+  "109": [
     {
-      'rate': 10,
-      'weatherId': 7
+      "rate": 10,
+      "weatherId": 7
     },
     {
-      'rate': 20,
-      'weatherId': 4
+      "rate": 20,
+      "weatherId": 4
     },
     {
-      'rate': 35,
-      'weatherId': 3
+      "rate": 35,
+      "weatherId": 3
     },
     {
-      'rate': 45,
-      'weatherId': 10
+      "rate": 45,
+      "weatherId": 10
     },
     {
-      'rate': 60,
-      'weatherId': 1
+      "rate": 60,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '110': [
+  "110": [
     {
-      'rate': 10,
-      'weatherId': 4
+      "rate": 10,
+      "weatherId": 4
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 49
+      "rate": 30,
+      "weatherId": 49
     },
     {
-      'rate': 45,
-      'weatherId': 1
+      "rate": 45,
+      "weatherId": 1
     },
     {
-      'rate': 85,
-      'weatherId': 2
+      "rate": 85,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 3
+      "rate": 100,
+      "weatherId": 3
     }
   ],
-  '111': [
+  "111": [
     {
-      'rate': 20,
-      'weatherId': 3
+      "rate": 20,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 2
+      "rate": 80,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '112': [
+  "112": [
     {
-      'rate': 20,
-      'weatherId': 1
+      "rate": 20,
+      "weatherId": 1
     },
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 75,
-      'weatherId': 3
+      "rate": 75,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 4
+      "rate": 85,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 7
+      "rate": 95,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '113': [
+  "113": [
     {
-      'rate': 10,
-      'weatherId': 6
+      "rate": 10,
+      "weatherId": 6
     },
     {
-      'rate': 20,
-      'weatherId': 7
+      "rate": 20,
+      "weatherId": 7
     },
     {
-      'rate': 30,
-      'weatherId': 4
+      "rate": 30,
+      "weatherId": 4
     },
     {
-      'rate': 45,
-      'weatherId': 3
+      "rate": 45,
+      "weatherId": 3
     },
     {
-      'rate': 85,
-      'weatherId': 2
+      "rate": 85,
+      "weatherId": 2
     },
     {
-      'rate': 100,
-      'weatherId': 1
+      "rate": 100,
+      "weatherId": 1
     }
   ],
-  '114': [
+  "114": [
     {
-      'rate': 100,
-      'weatherId': 105
+      "rate": 100,
+      "weatherId": 105
     }
   ],
-  '115': [
+  "115": [
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '116': [
+  "116": [
     {
-      'rate': 100,
-      'weatherId': 127
+      "rate": 100,
+      "weatherId": 127
     }
   ],
-  '117': [
+  "117": [
     {
-      'rate': 50,
-      'weatherId': 2
+      "rate": 50,
+      "weatherId": 2
     },
     {
-      'rate': 80,
-      'weatherId': 5
+      "rate": 80,
+      "weatherId": 5
     },
     {
-      'rate': 90,
-      'weatherId': 7
+      "rate": 90,
+      "weatherId": 7
     },
     {
-      'rate': 95,
-      'weatherId': 6
+      "rate": 95,
+      "weatherId": 6
     },
     {
-      'rate': 100,
-      'weatherId': 4
+      "rate": 100,
+      "weatherId": 4
     }
   ],
-  '118': [
+  "118": [
     {
-      'rate': 50,
-      'weatherId': 1
+      "rate": 50,
+      "weatherId": 1
     },
     {
-      'rate': 100,
-      'weatherId': 2
+      "rate": 100,
+      "weatherId": 2
     }
   ],
-  '119': [
+  "119": [
     {
-      'rate': 45,
-      'weatherId': 2
+      "rate": 45,
+      "weatherId": 2
     },
     {
-      'rate': 63,
-      'weatherId': 3
+      "rate": 63,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 4
+      "rate": 80,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 7
+      "rate": 95,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 8
+      "rate": 100,
+      "weatherId": 8
     }
   ],
-  '120': [
+  "120": [
     {
-      'rate': 40,
-      'weatherId': 2
+      "rate": 40,
+      "weatherId": 2
     },
     {
-      'rate': 55,
-      'weatherId': 3
+      "rate": 55,
+      "weatherId": 3
     },
     {
-      'rate': 70,
-      'weatherId': 4
+      "rate": 70,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 5
+      "rate": 95,
+      "weatherId": 5
     },
     {
-      'rate': 100,
-      'weatherId': 6
+      "rate": 100,
+      "weatherId": 6
     }
   ],
-  '121': [
+  "121": [
     {
-      'rate': 35,
-      'weatherId': 2
+      "rate": 35,
+      "weatherId": 2
     },
     {
-      'rate': 50,
-      'weatherId': 3
+      "rate": 50,
+      "weatherId": 3
     },
     {
-      'rate': 65,
-      'weatherId': 4
+      "rate": 65,
+      "weatherId": 4
     },
     {
-      'rate': 85,
-      'weatherId': 15
+      "rate": 85,
+      "weatherId": 15
     },
     {
-      'rate': 100,
-      'weatherId': 16
+      "rate": 100,
+      "weatherId": 16
     }
   ],
-  '122': [
+  "122": [
     {
-      'rate': 82,
-      'weatherId': 2
+      "rate": 82,
+      "weatherId": 2
     },
     {
-      'rate': 87,
-      'weatherId': 3
+      "rate": 87,
+      "weatherId": 3
     },
     {
-      'rate': 92,
-      'weatherId': 4
+      "rate": 92,
+      "weatherId": 4
     },
     {
-      'rate': 97,
-      'weatherId': 11
+      "rate": 97,
+      "weatherId": 11
     },
     {
-      'rate': 100,
-      'weatherId': 14
+      "rate": 100,
+      "weatherId": 14
     }
   ],
-  '123': [
+  "123": [
     {
-      'rate': 100,
-      'weatherId': 138
+      "rate": 100,
+      "weatherId": 138
     }
   ],
-  '124': [
+  "124": [
     {
-      'rate': 52,
-      'weatherId': 2
+      "rate": 52,
+      "weatherId": 2
     },
     {
-      'rate': 64,
-      'weatherId': 7
+      "rate": 64,
+      "weatherId": 7
     },
     {
-      'rate': 76,
-      'weatherId': 5
+      "rate": 76,
+      "weatherId": 5
     },
     {
-      'rate': 88,
-      'weatherId': 9
+      "rate": 88,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 11
+      "rate": 100,
+      "weatherId": 11
     }
   ],
-  '125': [
+  "125": [
     {
-      'rate': 100,
-      'weatherId': 137
+      "rate": 100,
+      "weatherId": 137
     }
   ],
-  '126': [
+  "126": [
     {
-      'rate': 100,
-      'weatherId': 147
+      "rate": 100,
+      "weatherId": 147
     }
   ],
-  '127': [
+  "127": [
     {
-      'rate': 50,
-      'weatherId': 2
+      "rate": 50,
+      "weatherId": 2
     },
     {
-      'rate': 65,
-      'weatherId': 3
+      "rate": 65,
+      "weatherId": 3
     },
     {
-      'rate': 80,
-      'weatherId': 4
+      "rate": 80,
+      "weatherId": 4
     },
     {
-      'rate': 95,
-      'weatherId': 9
+      "rate": 95,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '128': [
+  "128": [
     {
-      'rate': 40,
-      'weatherId': 2
+      "rate": 40,
+      "weatherId": 2
     },
     {
-      'rate': 58,
-      'weatherId': 3
+      "rate": 58,
+      "weatherId": 3
     },
     {
-      'rate': 75,
-      'weatherId': 4
+      "rate": 75,
+      "weatherId": 4
     },
     {
-      'rate': 93,
-      'weatherId': 7
+      "rate": 93,
+      "weatherId": 7
     },
     {
-      'rate': 100,
-      'weatherId': 8
+      "rate": 100,
+      "weatherId": 8
     }
   ],
-  '129': [
+  "129": [
     {
-      'rate': 44,
-      'weatherId': 2
+      "rate": 44,
+      "weatherId": 2
     },
     {
-      'rate': 59,
-      'weatherId': 3
+      "rate": 59,
+      "weatherId": 3
     },
     {
-      'rate': 73,
-      'weatherId': 4
+      "rate": 73,
+      "weatherId": 4
     },
     {
-      'rate': 93,
-      'weatherId': 9
+      "rate": 93,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 10
+      "rate": 100,
+      "weatherId": 10
     }
   ],
-  '130': [
+  "130": [
     {
-      'rate': 60,
-      'weatherId': 2
+      "rate": 60,
+      "weatherId": 2
     },
     {
-      'rate': 70,
-      'weatherId': 7
+      "rate": 70,
+      "weatherId": 7
     },
     {
-      'rate': 80,
-      'weatherId': 5
+      "rate": 80,
+      "weatherId": 5
     },
     {
-      'rate': 90,
-      'weatherId': 9
+      "rate": 90,
+      "weatherId": 9
     },
     {
-      'rate': 100,
-      'weatherId': 15
+      "rate": 100,
+      "weatherId": 15
     }
   ]
 };

@@ -12,13 +12,13 @@ import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'r
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
-import { environment } from '../../../../environments/environment';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-extractor',
@@ -44,7 +44,7 @@ export class ExtractorComponent {
 
   constructor(private lazyData: LazyDataFacade, private http: HttpClient, private serializer: NgSerializerService,
               private extractor: DataExtractorService, private gatheringNodesService: GatheringNodesService,
-              private alarmsFacade: AlarmsFacade) {
+              private alarmsFacade: AlarmsFacade, private environment: EnvironmentService) {
   }
 
   public doEverything(): void {
@@ -384,7 +384,7 @@ export class ExtractorComponent {
   }
 
   private getExp(collectable: any, ratio: number): Observable<number[]> {
-    return combineLatest(new Array(environment.maxLevel).fill(null).map((ignored, index) => {
+    return combineLatest(new Array(this.environment.maxLevel).fill(null).map((ignored, index) => {
       const level = index + 1;
       const firstCollectableDigit = Math.floor(collectable.levelMax / 10);
       const firstLevelDigit = Math.floor(level / 10);

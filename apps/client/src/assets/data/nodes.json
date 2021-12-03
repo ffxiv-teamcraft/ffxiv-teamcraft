@@ -272,9 +272,9 @@
     "duration": 0,
     "zoneid": 258,
     "map": 24,
-    "x": 20.8,
-    "y": 27.5,
-    "z": 0.5
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0.4
   },
   "21": {
     "items": [
@@ -449,9 +449,9 @@
     "duration": 0,
     "zoneid": 79,
     "map": 6,
-    "x": 16.1,
-    "y": 31.2,
-    "z": 0.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "29": {
     "items": [
@@ -472,8 +472,8 @@
     "hiddenItems": [
       7741
     ],
-    "x": 16.4,
-    "y": 28.9,
+    "x": 21.5,
+    "y": 21.5,
     "z": 0
   },
   "30": {
@@ -651,9 +651,9 @@
     "hiddenItems": [
       7720
     ],
-    "x": 16.4,
-    "y": 27.9,
-    "z": 0.3
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0.7
   },
   "39": {
     "items": [
@@ -1456,9 +1456,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 25.1,
-    "y": 27.7,
-    "z": 0.9
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "84": {
     "items": [
@@ -1474,9 +1474,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 20.7,
-    "y": 30.4,
-    "z": 0.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "85": {
     "items": [
@@ -1492,9 +1492,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 11.1,
-    "y": 19.3,
-    "z": 1
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "86": {
     "items": [
@@ -1509,9 +1509,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 13.2,
-    "y": 17.8,
-    "z": 0.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "87": {
     "items": [
@@ -1526,9 +1526,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 12.1,
-    "y": 14.3,
-    "z": 0.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "88": {
     "items": [
@@ -1544,9 +1544,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 18.7,
-    "y": 18.8,
-    "z": 1.6
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "89": {
     "items": [
@@ -2120,9 +2120,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 22,
-    "y": 30.6,
-    "z": 0.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "122": {
     "items": [
@@ -2137,9 +2137,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 24.6,
-    "y": 22.7,
-    "z": 1.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "123": {
     "items": [
@@ -2190,9 +2190,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 6.9,
-    "y": 23,
-    "z": 0.9
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "126": {
     "items": [
@@ -2207,9 +2207,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 7.5,
-    "y": 21.3,
-    "z": 1
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "127": {
     "items": [
@@ -2224,9 +2224,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 5.7,
-    "y": 18.3,
-    "z": 1.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "128": {
     "items": [
@@ -2242,9 +2242,9 @@
     "duration": 0,
     "zoneid": 63,
     "map": 53,
-    "x": 10.4,
-    "y": 16,
-    "z": 0.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "129": {
     "items": [
@@ -2511,9 +2511,9 @@
     "hiddenItems": [
       7731
     ],
-    "x": 22.1,
-    "y": 17.3,
-    "z": 1.6
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "143": {
     "items": [
@@ -2654,9 +2654,9 @@
     "hiddenItems": [
       7759
     ],
-    "x": 20.2,
-    "y": 35,
-    "z": 0.3
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "151": {
     "items": [
@@ -3035,9 +3035,9 @@
     "duration": 0,
     "zoneid": 383,
     "map": 53,
-    "x": 25.5,
-    "y": 19.6,
-    "z": 1.6
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "171": {
     "items": [
@@ -3226,9 +3226,9 @@
     "duration": 0,
     "zoneid": 380,
     "map": 53,
-    "x": 24.8,
-    "y": 19.7,
-    "z": 1.5
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "181": {
     "items": [
@@ -3386,9 +3386,9 @@
     "duration": 0,
     "zoneid": 258,
     "map": 24,
-    "x": 22.4,
-    "y": 23.9,
-    "z": 0.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0.4
   },
   "190": {
     "items": [
@@ -3452,9 +3452,9 @@
     "hiddenItems": [
       7759
     ],
-    "x": 22,
-    "y": 34.9,
-    "z": 0.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "194": {
     "items": [
@@ -3725,9 +3725,9 @@
     "duration": 0,
     "zoneid": 383,
     "map": 53,
-    "x": 27.5,
-    "y": 17.5,
-    "z": 1.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "209": {
     "items": [
@@ -3813,9 +3813,9 @@
       10099,
       10335
     ],
-    "x": 25.3,
-    "y": 26,
-    "z": 1.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "213": {
     "items": [
@@ -4059,9 +4059,9 @@
       10099,
       10335
     ],
-    "x": 27.6,
-    "y": 20.4,
-    "z": 1.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "223": {
     "items": [
@@ -4130,9 +4130,9 @@
       10099,
       10335
     ],
-    "x": 22.7,
-    "y": 24.8,
-    "z": 1.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": -1.3
   },
   "226": {
     "items": [
@@ -4153,9 +4153,9 @@
       10099,
       10335
     ],
-    "x": 27.1,
-    "y": 22.5,
-    "z": 0.6
+    "x": 21.5,
+    "y": 21.7,
+    "z": 0.7
   },
   "227": {
     "items": [
@@ -4475,8 +4475,8 @@
       10099,
       10335
     ],
-    "x": 18.6,
-    "y": 31.4,
+    "x": 21.5,
+    "y": 21.5,
     "z": 0
   },
   "241": {
@@ -4751,9 +4751,9 @@
     "duration": 0,
     "zoneid": 2200,
     "map": 211,
-    "x": 31.2,
-    "y": 31.9,
-    "z": 1.2
+    "x": 22.6,
+    "y": 22.6,
+    "z": -0.5
   },
   "254": {
     "items": [
@@ -4768,9 +4768,9 @@
     "duration": 0,
     "zoneid": 2200,
     "map": 211,
-    "x": 30.6,
-    "y": 33.2,
-    "z": 1.3
+    "x": 22.6,
+    "y": 22.6,
+    "z": -0.5
   },
   "255": {
     "items": [
@@ -4838,9 +4838,9 @@
     "duration": 0,
     "zoneid": 2000,
     "map": 212,
-    "x": 34.6,
-    "y": 25.9,
-    "z": 1.1
+    "x": 22.6,
+    "y": 22.6,
+    "z": 1.6
   },
   "259": {
     "items": [
@@ -5014,9 +5014,9 @@
     "duration": 0,
     "zoneid": 2200,
     "map": 211,
-    "x": 31.4,
-    "y": 33.5,
-    "z": 1.4
+    "x": 22.6,
+    "y": 22.6,
+    "z": -0.5
   },
   "269": {
     "items": [
@@ -5049,9 +5049,9 @@
     "duration": 0,
     "zoneid": 2200,
     "map": 211,
-    "x": 27.8,
-    "y": 29.9,
-    "z": 1.2
+    "x": 22.6,
+    "y": 22.6,
+    "z": -0.5
   },
   "271": {
     "items": [
@@ -5084,9 +5084,9 @@
     "duration": 0,
     "zoneid": 2000,
     "map": 212,
-    "x": 34.4,
-    "y": 27.5,
-    "z": 1.2
+    "x": 22.6,
+    "y": 22.6,
+    "z": 1.6
   },
   "273": {
     "items": [
@@ -5271,6 +5271,7 @@
   "284": {
     "items": [
       5126,
+      5108,
       9
     ],
     "limited": false,
@@ -5282,9 +5283,9 @@
     "duration": 0,
     "zoneid": 2201,
     "map": 211,
-    "x": 29.9,
-    "y": 25.6,
-    "z": 1
+    "x": 22.6,
+    "y": 21.1,
+    "z": -0.5
   },
   "285": {
     "items": [
@@ -5312,6 +5313,8 @@
     "items": [
       12554,
       12555,
+      5109,
+      12941,
       8
     ],
     "limited": false,
@@ -5335,6 +5338,7 @@
       12553,
       12552,
       12631,
+      5112,
       8
     ],
     "limited": false,
@@ -5353,6 +5357,8 @@
   "288": {
     "items": [
       12531,
+      5162,
+      5161,
       9
     ],
     "limited": false,
@@ -5488,9 +5494,9 @@
     "duration": 0,
     "zoneid": 2201,
     "map": 211,
-    "x": 31.8,
-    "y": 30.2,
-    "z": 1.1
+    "x": 22.6,
+    "y": 22.6,
+    "z": -0.5
   },
   "295": {
     "items": [
@@ -5640,20 +5646,14 @@
     "z": 1.2
   },
   "302": {
-    "items": [
-      12640,
-      11
-    ],
-    "level": 60,
-    "type": 3
+    "items": [],
+    "level": 0,
+    "type": 0
   },
   "303": {
-    "items": [
-      12887,
-      12
-    ],
-    "level": 60,
-    "type": 3
+    "items": [],
+    "level": 0,
+    "type": 0
   },
   "304": {
     "items": [
@@ -5728,9 +5728,9 @@
     "duration": 240,
     "zoneid": 2006,
     "map": 212,
-    "x": 25.9,
-    "y": 19.6,
-    "z": 1
+    "x": 22.6,
+    "y": 22.6,
+    "z": 1.6
   },
   "308": {
     "items": [
@@ -5836,9 +5836,9 @@
     "duration": 120,
     "zoneid": 2763,
     "map": 371,
-    "x": 21.2,
-    "y": 34.3,
-    "z": 0.3
+    "x": 22.6,
+    "y": 22.6,
+    "z": 1.6
   },
   "313": {
     "items": [
@@ -5881,66 +5881,51 @@
     "z": 1.6
   },
   "315": {
-    "items": [
-      5108
-    ],
+    "items": [],
     "limited": true,
-    "level": 50,
+    "level": 0,
     "type": 0,
-    "legendary": true,
-    "ephemeral": false,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      4,
-      16
+      0
     ],
-    "duration": 120,
-    "zoneid": 2201,
+    "duration": 1440,
+    "zoneid": 2200,
     "map": 211,
-    "hiddenItems": [
-      10335
-    ],
     "x": 28.9,
     "y": 22.3,
     "z": 0.5
   },
   "316": {
-    "items": [
-      5109,
-      5112,
-      12941
-    ],
+    "items": [],
     "limited": true,
-    "level": 55,
+    "level": 0,
     "type": 0,
-    "legendary": true,
-    "ephemeral": false,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      8,
-      20
+      0
     ],
-    "duration": 120,
-    "zoneid": 2004,
+    "duration": 1440,
+    "zoneid": 2000,
     "map": 212,
-    "x": 25.9,
-    "y": 18.4,
-    "z": 1.3
+    "x": 22.6,
+    "y": 22.6,
+    "z": 1.6
   },
   "317": {
-    "items": [
-      5161,
-      5162
-    ],
+    "items": [],
     "limited": true,
-    "level": 55,
-    "type": 1,
-    "legendary": true,
-    "ephemeral": false,
+    "level": 0,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      6,
-      18
+      0
     ],
-    "duration": 120,
-    "zoneid": 2013,
+    "duration": 1440,
+    "zoneid": 2002,
     "map": 214,
     "x": 33.2,
     "y": 22.9,
@@ -5968,21 +5953,17 @@
     "z": 1.5
   },
   "319": {
-    "items": [
-      5117,
-      12942
-    ],
+    "items": [],
     "limited": true,
-    "level": 60,
+    "level": 0,
     "type": 0,
-    "legendary": true,
-    "ephemeral": false,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      2,
-      14
+      0
     ],
-    "duration": 120,
-    "zoneid": 2011,
+    "duration": 1440,
+    "zoneid": 2001,
     "map": 213,
     "x": 33,
     "y": 30.6,
@@ -6208,9 +6189,9 @@
     "duration": 120,
     "zoneid": 3042,
     "map": 491,
-    "x": 26.3,
-    "y": 26.6,
-    "z": 1.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "331": {
     "items": [
@@ -6297,9 +6278,9 @@
     "duration": 120,
     "zoneid": 3192,
     "map": 496,
-    "x": 25.1,
-    "y": 4.5,
-    "z": -1
+    "x": 21.5,
+    "y": 21.5,
+    "z": -5.5
   },
   "335": {
     "items": [
@@ -6666,6 +6647,8 @@
       5127,
       13760,
       17557,
+      5117,
+      12942,
       10
     ],
     "limited": false,
@@ -8633,7 +8616,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8655,7 +8638,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8677,7 +8660,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8699,7 +8682,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8721,7 +8704,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8743,7 +8726,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8765,7 +8748,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8787,7 +8770,7 @@
     ],
     "limited": false,
     "level": 65,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8810,7 +8793,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8832,7 +8815,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8854,7 +8837,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8876,7 +8859,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8898,7 +8881,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8920,7 +8903,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8942,7 +8925,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8964,7 +8947,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -8987,7 +8970,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -9009,7 +8992,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -9031,7 +9014,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -9053,7 +9036,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -9115,6 +9098,7 @@
       19951,
       17942,
       24567,
+      35847,
       13
     ],
     "limited": false,
@@ -9475,9 +9459,9 @@
     "zoneid": 2755,
     "map": 354,
     "folklore": 17839,
-    "x": 20.6,
-    "y": 10.5,
-    "z": 1.2
+    "x": 21.5,
+    "y": 12.6,
+    "z": 0
   },
   "505": {
     "items": [
@@ -9504,6 +9488,7 @@
     "items": [
       19930,
       19851,
+      19936,
       8
     ],
     "limited": false,
@@ -9524,6 +9509,7 @@
       19931,
       19863,
       24567,
+      35847,
       13
     ],
     "limited": false,
@@ -9743,8 +9729,8 @@
     "zoneid": 2755,
     "map": 354,
     "x": 21.5,
-    "y": 14,
-    "z": 0.8
+    "y": 21.5,
+    "z": 0
   },
   "518": {
     "items": [
@@ -9786,9 +9772,9 @@
     "duration": 0,
     "zoneid": 2759,
     "map": 372,
-    "x": 13.9,
-    "y": 25.9,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "520": {
     "items": [
@@ -9812,20 +9798,17 @@
     "z": -0.1
   },
   "521": {
-    "items": [
-      19936
-    ],
+    "items": [],
     "limited": true,
-    "level": 60,
-    "type": 2,
-    "legendary": true,
-    "ephemeral": false,
+    "level": 0,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      6,
-      18
+      0
     ],
-    "duration": 120,
-    "zoneid": 2600,
+    "duration": 1440,
+    "zoneid": 2406,
     "map": 367,
     "x": 10.8,
     "y": 20.8,
@@ -10005,7 +9988,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -10581,9 +10564,9 @@
     "duration": 0,
     "zoneid": 2954,
     "map": 492,
-    "x": 16,
-    "y": 33.5,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "560": {
     "items": [
@@ -10634,9 +10617,9 @@
     "duration": 0,
     "zoneid": 2956,
     "map": 494,
-    "x": 17.5,
-    "y": 29.9,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "563": {
     "items": [
@@ -10668,9 +10651,9 @@
     "duration": 0,
     "zoneid": 2956,
     "map": 494,
-    "x": 9.4,
-    "y": 28.8,
-    "z": 0.5
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "565": {
     "items": [
@@ -10897,9 +10880,9 @@
     "duration": 0,
     "zoneid": 2956,
     "map": 494,
-    "x": 16.2,
-    "y": 16.2,
-    "z": -0.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "578": {
     "items": [
@@ -10931,9 +10914,9 @@
     "duration": 0,
     "zoneid": 2956,
     "map": 494,
-    "x": 8.7,
-    "y": 26.6,
-    "z": 0.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "580": {
     "items": [
@@ -11071,9 +11054,9 @@
     "duration": 0,
     "zoneid": 2953,
     "map": 491,
-    "x": 32.5,
-    "y": 20.7,
-    "z": 0.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "588": {
     "items": [
@@ -11142,9 +11125,9 @@
     "duration": 0,
     "zoneid": 3150,
     "map": 494,
-    "x": 6.1,
-    "y": 17.4,
-    "z": 0.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "593": {
     "items": [
@@ -11161,9 +11144,9 @@
     "duration": 0,
     "zoneid": 3060,
     "map": 491,
-    "x": 25.7,
-    "y": 37.1,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "594": {
     "items": [
@@ -11181,8 +11164,8 @@
     "zoneid": 3080,
     "map": 492,
     "x": 21.5,
-    "y": 30.1,
-    "z": 0.1
+    "y": 21.5,
+    "z": 0
   },
   "595": {
     "items": [
@@ -11298,9 +11281,9 @@
     "duration": 0,
     "zoneid": 3103,
     "map": 492,
-    "x": 21.3,
-    "y": 19.3,
-    "z": 3.4
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "601": {
     "items": [
@@ -11438,9 +11421,9 @@
     "duration": 120,
     "zoneid": 3060,
     "map": 491,
-    "x": 27.8,
-    "y": 32.8,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "608": {
     "items": [
@@ -11540,9 +11523,9 @@
     "duration": 0,
     "zoneid": 3043,
     "map": 491,
-    "x": 36.6,
-    "y": 23.4,
-    "z": 0.2
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "613": {
     "items": [
@@ -11565,6 +11548,7 @@
   },
   "614": {
     "items": [
+      27816,
       27683,
       9
     ],
@@ -11715,9 +11699,9 @@
     "duration": 0,
     "zoneid": 3056,
     "map": 491,
-    "x": 10.3,
-    "y": 11.8,
-    "z": 0.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "622": {
     "items": [
@@ -11736,9 +11720,9 @@
     "duration": 240,
     "zoneid": 3046,
     "map": 491,
-    "x": 31.3,
-    "y": 38.1,
-    "z": 0.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "623": {
     "items": [
@@ -11824,20 +11808,17 @@
     "z": 4.6
   },
   "627": {
-    "items": [
-      27816
-    ],
+    "items": [],
     "limited": true,
-    "level": 70,
-    "type": 2,
-    "legendary": true,
-    "ephemeral": false,
+    "level": 0,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": true,
     "spawns": [
-      10,
-      22
+      0
     ],
-    "duration": 120,
-    "zoneid": 3092,
+    "duration": 1440,
+    "zoneid": 2954,
     "map": 492,
     "x": 12.4,
     "y": 28.7,
@@ -11939,9 +11920,9 @@
     "duration": 120,
     "zoneid": 3100,
     "map": 492,
-    "x": 20.5,
-    "y": 27.8,
-    "z": 0.1
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "633": {
     "items": [
@@ -11997,7 +11978,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12019,7 +12000,7 @@
     ],
     "limited": false,
     "level": 75,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12041,7 +12022,7 @@
     ],
     "limited": false,
     "level": 75,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12063,16 +12044,16 @@
     ],
     "limited": false,
     "level": 75,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
     "duration": 0,
     "zoneid": 3344,
     "map": 494,
-    "x": 20.4,
-    "y": 14.9,
-    "z": -0.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "639": {
     "items": [
@@ -12085,16 +12066,16 @@
     ],
     "limited": false,
     "level": 75,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
     "duration": 0,
     "zoneid": 3345,
     "map": 494,
-    "x": 18.7,
-    "y": 20.6,
-    "z": -0.8
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "640": {
     "items": [
@@ -12107,7 +12088,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12129,7 +12110,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12151,7 +12132,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12173,7 +12154,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12195,7 +12176,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12217,7 +12198,7 @@
     ],
     "limited": false,
     "level": 75,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12239,7 +12220,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12261,7 +12242,7 @@
     ],
     "limited": false,
     "level": 80,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -12288,8 +12269,8 @@
     "duration": 0,
     "zoneid": 3060,
     "map": 491,
-    "x": 24.8,
-    "y": 28.4,
+    "x": 21.5,
+    "y": 21.5,
     "z": 0
   },
   "649": {
@@ -12307,9 +12288,9 @@
     "duration": 0,
     "zoneid": 3091,
     "map": 492,
-    "x": 16.6,
-    "y": 23.3,
-    "z": 0.7
+    "x": 21.5,
+    "y": 21.5,
+    "z": 0
   },
   "650": {
     "items": [
@@ -13087,7 +13068,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -13105,7 +13086,7 @@
     ],
     "limited": false,
     "level": 70,
-    "type": 4,
+    "type": 5,
     "legendary": false,
     "ephemeral": false,
     "spawns": [],
@@ -15288,33 +15269,1431 @@
     "type": 0
   },
   "815": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      36174,
+      36084,
+      13
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3834,
+    "map": 695
   },
   "816": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      36162,
+      36180,
+      35848,
+      13
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3846,
+    "map": 695
   },
   "817": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      36292
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3850,
+    "map": 695
   },
   "818": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      36163,
+      9
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3884,
+    "map": 696
   },
   "819": {
+    "items": [
+      36291
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3886,
+    "map": 696
+  },
+  "820": {
+    "items": [
+      36175,
+      35600,
+      9
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3888,
+    "map": 696
+  },
+  "821": {
+    "items": [
+      36164,
+      35602,
+      11
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3954,
+    "map": 698
+  },
+  "822": {
+    "items": [
+      36176,
+      36241,
+      35601,
+      12
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3905,
+    "map": 697
+  },
+  "823": {
+    "items": [
+      36165,
+      35603,
+      8
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3946,
+    "map": 700
+  },
+  "824": {
+    "items": [
+      36177,
+      36181,
+      36263,
+      8
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3939,
+    "map": 700
+  },
+  "825": {
+    "items": [
+      36166,
+      10
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3977,
+    "map": 699
+  },
+  "826": {
+    "items": [
+      36178,
+      10
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3972,
+    "map": 699
+  },
+  "827": {
+    "items": [
+      36285,
+      11
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": true,
+    "spawns": [
+      0
+    ],
+    "duration": 240,
+    "zoneid": 3953,
+    "map": 698
+  },
+  "828": {
+    "items": [
+      36286,
+      12
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": true,
+    "spawns": [
+      20
+    ],
+    "duration": 240,
+    "zoneid": 3912,
+    "map": 697
+  },
+  "829": {
+    "items": [
+      36293,
+      36295
+    ],
+    "limited": true,
+    "level": 85,
+    "type": 0,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      0,
+      12
+    ],
+    "duration": 120,
+    "zoneid": 3843,
+    "map": 695
+  },
+  "830": {
+    "items": [
+      36294
+    ],
+    "limited": true,
+    "level": 85,
+    "type": 0,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      6,
+      18
+    ],
+    "duration": 120,
+    "zoneid": 3952,
+    "map": 698
+  },
+  "831": {
+    "items": [
+      36296,
+      36298
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      2,
+      14
+    ],
+    "duration": 120,
+    "zoneid": 3904,
+    "map": 697
+  },
+  "832": {
+    "items": [
+      36297,
+      36299
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      10,
+      22
+    ],
+    "duration": 120,
+    "zoneid": 3929,
+    "map": 700
+  },
+  "833": {
+    "items": [
+      36300
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      4,
+      16
+    ],
+    "duration": 120,
+    "zoneid": 3899,
+    "map": 696
+  },
+  "834": {
+    "items": [
+      36215,
+      36216
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 0,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      0,
+      12
+    ],
+    "duration": 120,
+    "zoneid": 3909,
+    "map": 697,
+    "folklore": 36598
+  },
+  "835": {
+    "items": [
+      36215,
+      36167
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      2,
+      14
+    ],
+    "duration": 120,
+    "zoneid": 3962,
+    "map": 698,
+    "folklore": 36600
+  },
+  "836": {
+    "items": [
+      36215,
+      36179
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      4,
+      16
+    ],
+    "duration": 120,
+    "zoneid": 3943,
+    "map": 700,
+    "folklore": 36601
+  },
+  "837": {
+    "items": [
+      36190,
+      10
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3832,
+    "map": 695
+  },
+  "838": {
+    "items": [
+      36202,
+      36083,
+      36088,
+      35848,
+      10
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3842,
+    "map": 695
+  },
+  "839": {
+    "items": [
+      36191,
+      36086,
+      36087,
+      8
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3886,
+    "map": 696
+  },
+  "840": {
+    "items": [
+      36085,
+      36098,
+      35600,
+      8
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3889,
+    "map": 696
+  },
+  "841": {
+    "items": [
+      36301
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3880,
+    "map": 696
+  },
+  "842": {
+    "items": [
+      36192,
+      35601,
+      11
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3903,
+    "map": 697
+  },
+  "843": {
+    "items": [
+      36091,
+      36092,
+      36204,
+      36093,
+      11
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3913,
+    "map": 697
+  },
+  "844": {
+    "items": [
+      36193,
+      36096,
+      36095,
+      12
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3935,
+    "map": 700
+  },
+  "845": {
+    "items": [
+      36302
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3928,
+    "map": 700
+  },
+  "846": {
+    "items": [
+      36205,
+      36089,
+      36094,
+      35603,
+      12
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3928,
+    "map": 700
+  },
+  "847": {
+    "items": [
+      36194,
+      13
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3974,
+    "map": 699
+  },
+  "848": {
+    "items": [
+      36206,
+      36097,
+      13
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3973,
+    "map": 699
+  },
+  "849": {
+    "items": [
+      36287,
+      10
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": true,
+    "spawns": [
+      8
+    ],
+    "duration": 240,
+    "zoneid": 3853,
+    "map": 695
+  },
+  "850": {
+    "items": [
+      36288,
+      8
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": true,
+    "spawns": [
+      12
+    ],
+    "duration": 240,
+    "zoneid": 3895,
+    "map": 696
+  },
+  "851": {
+    "items": [
+      36303,
+      36305
+    ],
+    "limited": true,
+    "level": 85,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      2,
+      14
+    ],
+    "duration": 120,
+    "zoneid": 3888,
+    "map": 696
+  },
+  "852": {
+    "items": [
+      36304
+    ],
+    "limited": true,
+    "level": 85,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      4,
+      16
+    ],
+    "duration": 120,
+    "zoneid": 3916,
+    "map": 697
+  },
+  "853": {
+    "items": [
+      36306,
+      36308
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      0,
+      12
+    ],
+    "duration": 120,
+    "zoneid": 3946,
+    "map": 700
+  },
+  "854": {
+    "items": [
+      36307,
+      36309
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 3,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      6,
+      18
+    ],
+    "duration": 120,
+    "zoneid": 3851,
+    "map": 695
+  },
+  "855": {
+    "items": [
+      36310
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 3,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      8,
+      20
+    ],
+    "duration": 120,
+    "zoneid": 3971,
+    "map": 699
+  },
+  "856": {
+    "items": [
+      36214,
+      36195
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      6,
+      18
+    ],
+    "duration": 120,
+    "zoneid": 3947,
+    "map": 700,
+    "folklore": 36605
+  },
+  "857": {
+    "items": [
+      36214,
+      36207
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 3,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      8,
+      20
+    ],
+    "duration": 120,
+    "zoneid": 3892,
+    "map": 696,
+    "folklore": 36602
+  },
+  "858": {
+    "items": [
+      36214,
+      36217
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 3,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      10,
+      22
+    ],
+    "duration": 120,
+    "zoneid": 3980,
+    "map": 699,
+    "folklore": 36604
+  },
+  "859": {
+    "items": [
+      2003131,
+      2003132
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "860": {
+    "items": [
+      2003133
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "861": {
+    "items": [
+      2003134,
+      2003135
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "862": {
+    "items": [
+      2003136,
+      2003137
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "863": {
+    "items": [
+      2003138
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "864": {
+    "items": [
+      2003139
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "865": {
+    "items": [
+      2003140,
+      2003141
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "866": {
+    "items": [
+      2003142
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "867": {
+    "items": [
+      2003143,
+      2003144
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "868": {
+    "items": [
+      2003145
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "869": {
+    "items": [
+      2003146
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "870": {
+    "items": [
+      2003147,
+      2003148
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "871": {
+    "items": [
+      2003149,
+      2003150
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "872": {
+    "items": [
+      2003151
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "873": {
+    "items": [
+      2003152,
+      2003153
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "874": {
+    "items": [
+      2003154,
+      2003155
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "875": {
+    "items": [
+      2003156
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "876": {
+    "items": [
+      2003157,
+      2003158
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "877": {
+    "items": [
+      2003159,
+      2003160
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "878": {
+    "items": [
+      2003161
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "879": {
+    "items": [
+      2003162
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "880": {
+    "items": [
+      2003163,
+      2003164
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "881": {
+    "items": [
+      2003165
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "882": {
+    "items": [
+      2003166,
+      2003167
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "883": {
+    "items": [
+      2003168
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "884": {
+    "items": [
+      2003169
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "885": {
+    "items": [
+      2003170,
+      2003171
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "886": {
+    "items": [
+      2003172,
+      2003173
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "887": {
+    "items": [
+      2003174
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "888": {
+    "items": [
+      2003175,
+      2003176
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 0,
+    "map": 0
+  },
+  "889": {
+    "items": [
+      36522,
+      36523,
+      36524,
+      36525,
+      36526,
+      36527
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3746,
+    "map": 696
+  },
+  "890": {
+    "items": [
+      36548,
+      36549,
+      36550,
+      36551,
+      36552,
+      36553
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3751,
+    "map": 371
+  },
+  "891": {
+    "items": [
+      36554,
+      36555,
+      36556,
+      36557,
+      36558,
+      36559
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3752,
+    "map": 371
+  },
+  "892": {
+    "items": [
+      36560,
+      36561,
+      36562,
+      36563,
+      36564,
+      36565,
+      36568
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3753,
+    "map": 371
+  },
+  "893": {
+    "items": [
+      36528,
+      36529,
+      36530,
+      36531,
+      36532,
+      36533
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3747,
+    "map": 696
+  },
+  "894": {
+    "items": [
+      36534,
+      36537,
+      36536,
+      36539,
+      36538,
+      36547
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3748,
+    "map": 696
+  },
+  "895": {
+    "items": [
+      36540,
+      36541,
+      36542,
+      36543,
+      36544,
+      36545
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3749,
+    "map": 696
+  },
+  "896": {
+    "items": [
+      36566,
+      36567,
+      36571,
+      36569,
+      36570,
+      36581,
+      36580
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3754,
+    "map": 371
+  },
+  "897": {
+    "items": [
+      36572,
+      36575,
+      36574,
+      36577,
+      36576,
+      36579
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3755,
+    "map": 371
+  },
+  "898": {
+    "items": [
+      36582,
+      36583,
+      36584,
+      36585,
+      36586,
+      36587
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3758,
+    "map": 369
+  },
+  "899": {
+    "items": [
+      36551,
+      36555,
+      36557,
+      36559,
+      36578,
+      36573
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3756,
+    "map": 371
+  },
+  "900": {
+    "items": [
+      36525,
+      36537,
+      36536,
+      36547,
+      36546,
+      36535
+    ],
+    "limited": false,
+    "level": 90,
+    "type": 5,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3750,
+    "map": 696
+  },
+  "901": {
     "items": [],
     "level": 0,
     "type": 0
   },
-  "820": {
-    "items": [],
-    "level": 0,
-    "type": 0
+  "902": {
+    "items": [
+      36090,
+      35602,
+      9
+    ],
+    "limited": false,
+    "level": 85,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 3965,
+    "map": 698
   }
 }
