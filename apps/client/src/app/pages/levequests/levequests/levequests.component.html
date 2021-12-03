@@ -32,11 +32,11 @@
        nz-col>
     <nz-input-group class="levels" nzCompact>
       <div class="levels range">{{'LEVEQUESTS.Level_range' | translate}}</div>
-      <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="80"
+      <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="maxLevel"
                        [nzMin]="1"
                        [nzPrecision]="0"></nz-input-number>
       <input disabled nz-input placeholder="-" type="text">
-      <nz-input-number (ngModelChange)="setLevel(levelMax$, $event)" [ngModel]="levelMax$.value" [nzMax]="80"
+      <nz-input-number (ngModelChange)="setLevel(levelMax$, $event)" [ngModel]="levelMax$.value" [nzMax]="maxLevel"
                        [nzMin]="levelMin$.value"
                        [nzPrecision]="0"></nz-input-number>
     </nz-input-group>
