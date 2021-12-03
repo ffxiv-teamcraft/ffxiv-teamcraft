@@ -55,6 +55,7 @@ import { SeedsExtractor } from './extractors/seeds.extractor';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor';
+import { NodesExtractor } from './extractors/nodes.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -75,6 +76,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('SpecialShop', 'shops'),
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new NodesExtractor(),
   new SeedsExtractor(),
   new WorldsExtractor(),
   new TerritoriesExtractor(),
