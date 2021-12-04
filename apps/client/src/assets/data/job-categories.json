@@ -37,8 +37,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -319,6 +321,7 @@
       "PGL",
       "PLD",
       "ROG",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -336,6 +339,7 @@
       "CNJ",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WHM"
@@ -395,8 +399,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -440,6 +446,7 @@
       "PGL",
       "PLD",
       "ROG",
+      "RPR",
       "WAR"
     ]
   },
@@ -818,6 +825,7 @@
       "LNC",
       "MRD",
       "PLD",
+      "RPR",
       "WAR"
     ]
   },
@@ -874,6 +882,7 @@
       "AST",
       "CNJ",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -997,6 +1006,7 @@
       "AST",
       "CNJ",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -1038,8 +1048,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -1068,7 +1080,8 @@
     "fr": "HAS DRG FCH",
     "jobs": [
       "DRG",
-      "LNC"
+      "LNC",
+      "RPR"
     ]
   },
   "77": {
@@ -1117,6 +1130,7 @@
       "AST",
       "CNJ",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -1136,6 +1150,7 @@
       "NIN",
       "PGL",
       "ROG",
+      "RPR",
       "SAM"
     ]
   },
@@ -1152,6 +1167,7 @@
       "CNJ",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WHM"
@@ -1186,6 +1202,7 @@
       "LNC",
       "MNK",
       "PGL",
+      "RPR",
       "SAM"
     ]
   },
@@ -1207,8 +1224,10 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -1537,8 +1556,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -1582,8 +1603,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -1610,8 +1633,10 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -1661,6 +1686,7 @@
       "NIN",
       "PGL",
       "ROG",
+      "RPR",
       "SAM"
     ]
   },
@@ -1699,6 +1725,7 @@
       "AST",
       "CNJ",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -1718,6 +1745,7 @@
       "NIN",
       "PGL",
       "ROG",
+      "RPR",
       "SAM"
     ]
   },
@@ -1737,6 +1765,7 @@
       "PGL",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SMN",
       "THM"
@@ -1755,6 +1784,7 @@
       "CNJ",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WHM"
@@ -1781,6 +1811,7 @@
       "DRG",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -1815,6 +1846,7 @@
     "jobs": [
       "AST",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -1830,6 +1862,7 @@
       "MCH",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -1845,6 +1878,7 @@
       "MNK",
       "NIN",
       "RDM",
+      "RPR",
       "SAM",
       "SMN"
     ]
@@ -1860,6 +1894,7 @@
       "BLU",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -1910,8 +1945,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -1933,6 +1970,7 @@
       "MNK",
       "NIN",
       "RDM",
+      "RPR",
       "SAM",
       "SMN"
     ]
@@ -1952,8 +1990,10 @@
       "MNK",
       "NIN",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -1966,6 +2006,7 @@
     "jobs": [
       "AST",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -1998,6 +2039,7 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SMN",
       "WAR"
@@ -2014,6 +2056,7 @@
       "GNB",
       "PLD",
       "SCH",
+      "SGE",
       "WAR",
       "WHM"
     ]
@@ -2036,8 +2079,10 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -2055,6 +2100,7 @@
       "MNK",
       "NIN",
       "PLD",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2080,6 +2126,7 @@
       "BLM",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -2101,8 +2148,10 @@
       "MNK",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -2134,8 +2183,10 @@
       "PLD",
       "RDM",
       "ROG",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WAR",
@@ -2163,6 +2214,7 @@
       "PGL",
       "PLD",
       "ROG",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2179,6 +2231,7 @@
       "CNJ",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "THM",
       "WHM"
@@ -2199,6 +2252,7 @@
       "MNK",
       "NIN",
       "PLD",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2221,8 +2275,10 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -2248,6 +2304,7 @@
       "DRG",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -2340,6 +2397,7 @@
     "jobs": [
       "AST",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -2355,6 +2413,7 @@
       "MCH",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -2400,6 +2459,7 @@
       "PGL",
       "PLD",
       "ROG",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2443,6 +2503,7 @@
       "MNK",
       "NIN",
       "RDM",
+      "RPR",
       "SAM",
       "SMN"
     ]
@@ -2462,8 +2523,10 @@
       "MNK",
       "NIN",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -2476,6 +2539,7 @@
     "jobs": [
       "AST",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -2508,6 +2572,7 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SMN",
       "WAR"
@@ -2524,6 +2589,7 @@
       "GNB",
       "PLD",
       "SCH",
+      "SGE",
       "WAR",
       "WHM"
     ]
@@ -2546,8 +2612,10 @@
       "NIN",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -2565,6 +2633,7 @@
       "MNK",
       "NIN",
       "PLD",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2590,6 +2659,7 @@
       "BLM",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -2611,8 +2681,10 @@
       "MNK",
       "PLD",
       "RDM",
+      "RPR",
       "SAM",
       "SCH",
+      "SGE",
       "SMN",
       "WAR",
       "WHM"
@@ -2633,6 +2705,7 @@
       "MNK",
       "NIN",
       "PLD",
+      "RPR",
       "SAM",
       "WAR"
     ]
@@ -2657,6 +2730,7 @@
       "DRG",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -2672,6 +2746,7 @@
       "MCH",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
@@ -2699,6 +2774,7 @@
       "AST",
       "RDM",
       "SCH",
+      "SGE",
       "SMN",
       "WHM"
     ]
@@ -2708,14 +2784,18 @@
     "ja": "リーパー",
     "de": "SNT",
     "fr": "FCH",
-    "jobs": []
+    "jobs": [
+      "RPR"
+    ]
   },
   "181": {
     "en": "SGE",
     "ja": "賢者",
     "de": "WEI",
     "fr": "SAG",
-    "jobs": []
+    "jobs": [
+      "SGE"
+    ]
   },
   "182": {
     "en": "",
@@ -2740,6 +2820,7 @@
       "AST",
       "CNJ",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -2759,6 +2840,7 @@
       "NIN",
       "PGL",
       "ROG",
+      "RPR",
       "SAM"
     ]
   },
@@ -2795,6 +2877,7 @@
     "jobs": [
       "AST",
       "SCH",
+      "SGE",
       "WHM"
     ]
   },
@@ -2807,6 +2890,7 @@
       "DRG",
       "MNK",
       "NIN",
+      "RPR",
       "SAM"
     ]
   },
