@@ -3,10 +3,14 @@
     <nz-select (ngModelChange)="setJob($event)" [ngModel]="job$.value" [nzAllowClear]="true"
                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
                class="job" nzShowSearch>
-      <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | i18nRow:'jobAbbr' | i18n" [nzValue]="job.id" nzCustomContent>
-        <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-        {{job.id | i18nRow:'jobAbbr' | i18n}}
-      </nz-option>
+      <ng-container *ngFor="let job of jobList">
+        <nz-option *ngIf="job | i18nRow:'jobAbbr' | i18n as jobAbbr" [nzLabel]="jobAbbr" [nzValue]="job" nzCustomContent>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+            <div class="companion-svg" [innerHTML]="job | jobUnicode"></div>
+            <div>{{jobAbbr}}</div>
+          </div>
+        </nz-option>
+      </ng-container>
     </nz-select>
   </div>
 
