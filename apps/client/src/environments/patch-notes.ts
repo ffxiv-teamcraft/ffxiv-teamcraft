@@ -1,9 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed aetherytes, npcs and fates coords.
-* **levequests:** fixed level input not going up to lvl 90.
-
-
-### Features
-
-* **db:** added coords for all the gathering nodes.`;
+* **alarms:** possible fix for alarms not ringing.
+* **db:** added missing foods to food picker.
+* **gearsets:** fixed gearset display and editor not working.
+* **levequests:** fixed page sometimes not loading properly.
+* **levequests:** fixed up arrow on global exp calculator not working.
+* **lists:** company draft names are now shown properly.`;
