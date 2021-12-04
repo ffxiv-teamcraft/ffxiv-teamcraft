@@ -14,6 +14,8 @@ export interface LazyRecipesPerItem {
   suggestedCraftsmanship: number;
   progressDivider:        number;
   qualityDivider:         number;
+  progressModifier:       number;
+  qualityModifier:        number;
   controlReq:             number;
   craftsmanshipReq:       number;
   rlvl:                   number;

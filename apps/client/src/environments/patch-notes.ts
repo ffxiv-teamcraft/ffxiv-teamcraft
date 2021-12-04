@@ -1,8 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** possible fix for alarms not ringing.
-* **db:** added missing foods to food picker.
-* **gearsets:** fixed gearset display and editor not working.
-* **levequests:** fixed page sometimes not loading properly.
-* **levequests:** fixed up arrow on global exp calculator not working.
-* **lists:** company draft names are now shown properly.`;
+* **allagan-reports:** disabled spearfishing reports for now.
+* **collectables:** fixed alarms generated from collectables not having coords.
+* **db:** added missing RPR and SGE in search page and other filters.
+* **logs:** fixed log tracking coords sometimes being off.
+* **simulator:** fixed inaccuracies for some starred recipes.`;

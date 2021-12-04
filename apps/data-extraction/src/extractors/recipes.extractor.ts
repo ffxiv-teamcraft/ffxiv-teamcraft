@@ -49,6 +49,8 @@ export class RecipesExtractor extends AbstractExtractor {
           suggestedCraftsmanship: recipe.RecipeLevelTable.SuggestedCraftsmanship,
           progressDivider: recipe.RecipeLevelTable.ProgressDivider,
           qualityDivider: recipe.RecipeLevelTable.QualityDivider,
+          progressModifier: recipe.RecipeLevelTable.ProgressModifier,
+          qualityModifier: recipe.RecipeLevelTable.QualityModifier,
           controlReq: recipe.RequiredControl,
           craftsmanshipReq: recipe.RequiredCraftsmanship,
           rlvl: recipe.RecipeLevelTable.ID,

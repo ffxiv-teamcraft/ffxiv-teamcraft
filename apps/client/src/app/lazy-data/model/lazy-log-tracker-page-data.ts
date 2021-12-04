@@ -45,9 +45,9 @@ export interface Alarm {
 }
 
 export interface Coords {
-  x?: number;
-  y?: number;
-  z:  number;
+  x: number;
+  y: number;
+  z: number;
 }
 
 export interface GatheringNode {
@@ -59,10 +59,10 @@ export interface GatheringNode {
   ephemeral:             boolean;
   spawns:                number[];
   duration:              number;
+  x:                     number;
+  y:                     number;
+  z:                     number;
   map:                   number;
-  x?:                    number;
-  y?:                    number;
-  z?:                    number;
   id:                    number;
   zoneId:                number;
   matchingItemId:        number;
