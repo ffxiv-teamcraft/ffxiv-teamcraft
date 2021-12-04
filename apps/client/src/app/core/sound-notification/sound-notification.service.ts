@@ -22,7 +22,6 @@ export class SoundNotificationService {
     }
     audio.loop = false;
     audio.volume = notificationSettings.volume;
-    audio.click();
     audio.play()
       .then()
       .catch((err) => {
