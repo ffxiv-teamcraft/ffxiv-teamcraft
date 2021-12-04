@@ -63,7 +63,7 @@
       </div>
     </div>
     <div>Lvl</div>
-    <nz-input-number [(ngModel)]="startingLevel" [nzMax]="79" [nzMin]="1"
+    <nz-input-number [(ngModel)]="startingLevel" [nzMax]="maxLevel - 1" [nzMin]="1"
                      [nzPrecision]="0"></nz-input-number>
     <div>{{'DB.Exp' | translate}}</div>
     <nz-input-number [(ngModel)]="startingExp" [nzMax]="getMaxExp(startingLevel) - 1" [nzMin]="0"
