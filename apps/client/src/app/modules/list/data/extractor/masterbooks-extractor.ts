@@ -49,8 +49,7 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
     const gatheredBy = getItemSource(row, DataType.GATHERED_BY, true);
     if (gatheredBy.type !== undefined && gatheredBy.nodes[0] !== undefined && gatheredBy.nodes[0].folklore) {
       res.push({
-        id: gatheredBy.nodes[0].folklore,
-        icon: [7012, 7012, 7127, 7127, 7128, 7128][gatheredBy.type]
+        id: gatheredBy.nodes[0].folklore
       });
     }
     return res;

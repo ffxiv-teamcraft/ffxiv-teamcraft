@@ -44,7 +44,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     ['head', 'earRings'],
     ['chest', 'necklace'],
     ['gloves', 'bracelet'],
-    [this.env.gameVersion > 6 ? null : 'belt', 'ring1'],
+    [this.env.gameVersion < 6 ? 'belt': null, 'ring1'],
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];

@@ -20,6 +20,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { EnvironmentService } from '../../../core/environment.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 interface ExpObj {
   exp: number,
@@ -34,7 +35,7 @@ interface ExpObj {
 })
 export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
-  jobList = this.gt.getJobs().slice(8, 16).concat([this.gt.getJob(18)]);
+  jobList = [8, 9, 10, 11, 12, 13, 14, 15, 18];
 
   job$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -83,7 +84,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
   constructor(private xivapi: XivapiService, private listsFacade: ListsFacade,
               private router: Router, private route: ActivatedRoute, private listManager: ListManagerService,
               private notificationService: NzNotificationService, private gt: GarlandToolsService,
-              private i18n: I18nToolsService,
+              private i18n: I18nToolsService, private lazyData: LazyDataFacade,
               private listPicker: ListPickerService, private progressService: ProgressPopupService,
               private dataService: DataService, private auth: AuthFacade,
               private settings: SettingsService, private platformService: PlatformService, private ipc: IpcService,

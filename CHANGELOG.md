@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.2"></a>
+## [9.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.1...v9.1.2) (2021-12-04)
+
+
+### Bug Fixes
+
+* **alarms:** possible fix for alarms not ringing ([1bf63e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bf63e3))
+* **db:** added missing foods to food picker ([169ac04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/169ac04))
+* **gearsets:** fixed gearset display and editor not working ([82c251e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82c251e))
+* **levequests:** fixed page sometimes not loading properly ([12ca5d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12ca5d4))
+* **levequests:** fixed up arrow on global exp calculator not working ([0a9f3f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a9f3f8))
+* **lists:** company draft names are now shown properly ([6c354ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c354ea))
+
+
+
 <a name="9.1.1"></a>
 ## [9.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.0...v9.1.1) (2021-12-03)
 
