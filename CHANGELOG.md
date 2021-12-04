@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.3"></a>
+## [9.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.2...v9.1.3) (2021-12-04)
+
+
+### Bug Fixes
+
+* **allagan-reports:** disabled spearfishing reports for now ([8964c54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8964c54))
+* **collectables:** fixed alarms generated from collectables not having coords ([b29d4a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b29d4a7))
+* **db:** added missing RPR and SGE in search page and other filters ([ccb00de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ccb00de))
+* **logs:** fixed log tracking coords sometimes being off ([358b49d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/358b49d))
+* **simulator:** fixed inaccuracies for some starred recipes ([d88d12b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d88d12b))
+
+
+
 <a name="9.1.2"></a>
 ## [9.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.1...v9.1.2) (2021-12-04)
 
