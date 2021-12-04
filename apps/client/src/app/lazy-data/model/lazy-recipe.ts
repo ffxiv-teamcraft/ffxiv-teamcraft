@@ -32,5 +32,12 @@ export interface Ingredient {
 
 export interface MasterbookClass {
   id:   string;
-  name: string;
+  name: Name;
+}
+
+export interface Name {
+  en: string;
+  ja: string;
+  de: string;
+  fr: string;
 }

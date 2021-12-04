@@ -50,13 +50,12 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
             }
             if (craft.masterbook && typeof craft.masterbook === 'number') {
               craftedBy.masterbook = {
-                id: craft.masterbook,
-                icon: 0
+                id: craft.masterbook
               };
             } else if (craft.masterbook && (craft.masterbook as MasterbookClass).id) {
               craftedBy.masterbook = {
                 id: (craft.masterbook as MasterbookClass).id,
-                icon: 0
+                name: (craft.masterbook as MasterbookClass).name
               };
             }
             return craftedBy;

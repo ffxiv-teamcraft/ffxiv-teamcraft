@@ -100,7 +100,12 @@ export class RecipesExtractor extends AbstractExtractor {
         if (companyCraftSequence.CompanyCraftDraftTargetID > 0) {
           recipe.masterbook = {
             id: `draft${companyCraftSequence.CompanyCraftDraftTargetID}`,
-            name: companyCraftSequence.CompanyCraftDraft && companyCraftSequence.CompanyCraftDraft.Name_en
+            name: {
+              en: companyCraftSequence.CompanyCraftDraft?.Name_en || '???',
+              ja: companyCraftSequence.CompanyCraftDraft?.Name_ja || '???',
+              de: companyCraftSequence.CompanyCraftDraft?.Name_de || '???',
+              fr: companyCraftSequence.CompanyCraftDraft?.Name_fr || '???'
+            }
           };
         }
         for (let partIndex = 0; partIndex < 8; partIndex++) {

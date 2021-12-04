@@ -198,7 +198,7 @@
                      [tooltipDisabled]="+item.masterbooks[0].id !== item.masterbooks[0].id"
                      [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"
                      [itemName]="masterbook.id | itemName| i18n"
-                     [nzTooltipTitle]="masterbook.id | itemName:null:masterbook.name | i18n"
+                     [nzTooltipTitle]="(masterbook.id.toString().indexOf('draft') > -1 ? masterbook.name : (masterbook.id | itemName)) | i18n"
                      [width]="24" nz-tooltip></app-item-icon>
     </div>
     <div class="amount-input">

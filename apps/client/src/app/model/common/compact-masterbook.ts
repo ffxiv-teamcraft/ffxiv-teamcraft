@@ -1,4 +1,6 @@
+import { I18nName } from './i18n-name';
+
 export interface CompactMasterbook {
-  icon: number;
   id: number | string;
+  name?: I18nName;
 }
