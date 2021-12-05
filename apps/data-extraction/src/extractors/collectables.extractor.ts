@@ -5,12 +5,12 @@ export class CollectablesExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const currencies = {
       '1': 10309,
-      '2': 17833,
+      '2': 25199,
       '3': 10311,
-      '4': 17834,
+      '4': 25200,
       '5': 10307,
-      '6': 25199,
-      '7': 25200,
+      '6': 33913,
+      '7': 33914,
       '8': 21072,
       '9': 21073,
       '10': 21074,
