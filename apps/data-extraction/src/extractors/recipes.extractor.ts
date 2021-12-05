@@ -3,6 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 
 export class RecipesExtractor extends AbstractExtractor {
   protected doExtract(): any {
+    const hqFlags = this.requireLazyFile('hq-flags');
     // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
     const recipes = [];
     const rlookup = {
@@ -32,7 +33,7 @@ export class RecipesExtractor extends AbstractExtractor {
             };
           });
         const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
-        const totalIlvl = ingredients.filter(i => i.id > 19).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
+        const totalIlvl = ingredients.filter(i => i.id > 19 && hqFlags[i.id] === 1).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
         const lazyRecipeRow = {
           id: recipe.ID,
           job: recipe.ClassJob.ID,
@@ -56,11 +57,12 @@ export class RecipesExtractor extends AbstractExtractor {
           rlvl: recipe.RecipeLevelTable.ID,
           masterbook: recipe.SecretRecipeBook?.ItemTargetID,
           ingredients: ingredients
+            .filter(i => hqFlags[i.id] === 1)
             .map(ingredient => {
               return {
                 id: ingredient.id,
                 amount: ingredient.amount,
-                quality: ingredient.id > 19 ? (ingredient.ilvl / totalIlvl) * totalContrib : 0
+                quality: ingredient.ilvl / totalIlvl * totalContrib
               };
             }),
           expert: recipe.IsExpert === 1,
