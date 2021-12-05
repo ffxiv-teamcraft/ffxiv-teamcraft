@@ -57,12 +57,11 @@ export class RecipesExtractor extends AbstractExtractor {
           rlvl: recipe.RecipeLevelTable.ID,
           masterbook: recipe.SecretRecipeBook?.ItemTargetID,
           ingredients: ingredients
-            .filter(i => hqFlags[i.id] === 1)
             .map(ingredient => {
               return {
                 id: ingredient.id,
                 amount: ingredient.amount,
-                quality: ingredient.ilvl / totalIlvl * totalContrib
+                quality: ingredient.ilvl / totalIlvl * totalContrib * hqFlags[ingredient.id]
               };
             }),
           expert: recipe.IsExpert === 1,

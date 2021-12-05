@@ -124,7 +124,8 @@ export class LayoutsFacade {
                       }
                     } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
                       const match = craftedBy.some((craft) => {
-                        return this.matchesLevel(gearsets, craft.job, craft.lvl);
+                        const requiredLevel = Math.floor((craft.lvl - 1) / 5) * 5;
+                        return this.matchesLevel(gearsets, craft.job, requiredLevel);
                       });
                       if (match) {
                         acc.accepted.push(item);

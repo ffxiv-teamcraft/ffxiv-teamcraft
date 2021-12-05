@@ -624,10 +624,10 @@
     "fr": "Pennes de chocobo doré"
   },
   "1769610": {
-    "en": "Silver Chocobo Feather Exchange I",
-    "ja": "シルバーチョコボの羽根の取引（その1）",
-    "de": "Silberne Chocobo-Federn I",
-    "fr": "Pennes de chocobo argenté (1)"
+    "en": "Silver Chocobo Feather Exchange I ( ≤ Lv. 50 Gear)",
+    "ja": "シルバーチョコボの羽根の取引（Lv50以下向け装備）",
+    "de": "Silberne Chocobo-Federn I (bis St. 50)",
+    "fr": "Pennes de chocobo argenté (Nv ≦ 50)"
   },
   "1769612": {
     "en": "Seasonal Event Prizes (♂)",
@@ -2508,7 +2508,7 @@
     "fr": "Legs des Héros (DPS physique)"
   },
   "1769967": {
-    "en": "Journey's End Gear (Magical DPS)",
+    "en": "Journey's End Gear (Magical Ranged DPS)",
     "ja": "英魂装備の受取（DPS：ソーサラー）",
     "de": "Vermächtnis des Helden (magische Angreifer)",
     "fr": "Legs des Héros (DPS magique)"
@@ -2631,19 +2631,19 @@
     "en": "Sacks of Nuts Exchange",
     "ja": "モブハントの戦利品の取引",
     "de": "Kupo-Trophäen",
-    "fr": "Insignes Kupo"
+    "fr": "Insignes de chasse"
   },
   "1769988": {
-    "en": "Silver Chocobo Feather Exchange II",
-    "ja": "シルバーチョコボの羽根の取引（その2）",
-    "de": "Silberne Chocobo-Federn II",
-    "fr": "Pennes de chocobo argenté (2)"
+    "en": "Silver Chocobo Feather Exchange II (Lv. 60 Gear)",
+    "ja": "シルバーチョコボの羽根の取引（Lv60向け装備）",
+    "de": "Silberne Chocobo-Federn II (ab St. 60)",
+    "fr": "Pennes de chocobo argenté (Nv 60)"
   },
   "1769989": {
-    "en": "Silver Chocobo Feather Exchange III",
-    "ja": "シルバーチョコボの羽根の取引（その3）",
-    "de": "Silberne Chocobo-Federn III",
-    "fr": "Pennes de chocobo argenté (3)"
+    "en": "Silver Chocobo Feather Exchange III (Lv. 70 Gear)",
+    "ja": "シルバーチョコボの羽根の取引（Lv70向け装備）",
+    "de": "Silberne Chocobo-Federn III (ab St. 70)",
+    "fr": "Pennes de chocobo argenté (Nv 70)"
   },
   "1769990": {
     "en": "White Crafters' Scrip Exchange (Lv. 80 Gear)",
@@ -3012,22 +3012,22 @@
     "fr": "Échange d'équipements ronka (magie)"
   },
   "1770051": {
-    "en": "Allagan Tomestones of Allegory (DoW)",
-    "ja": "アラガントームストーン:奇譚の取引（ファイター）",
-    "de": "Allagische Steine der Fantastik (Krieger)",
-    "fr": "Mémoquartz allagois fabuleux (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW) I",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその1）",
+    "de": "Allagische Steine der Poesie (Krieger)",
+    "fr": "Mémoquartz allagois poétiques (guerre 1)"
   },
   "1770052": {
-    "en": "Allagan Tomestones of Allegory (DoM)",
-    "ja": "アラガントームストーン:奇譚の取引（ソーサラー）",
-    "de": "Allagische Steine der Fantastik (Magier)",
-    "fr": "Mémoquartz allagois fabuleux (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM) I",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその1）",
+    "de": "Allagische Steine der Poesie (Magier)",
+    "fr": "Mémoquartz allagois poétiques (magie 1)"
   },
   "1770053": {
-    "en": "Allagan Tomestones of Allegory (Other)",
-    "ja": "アラガントームストーン:奇譚の取引（その他）",
-    "de": "Allagische Steine der Fantastik (Anderes)",
-    "fr": "Mémoquartz allagois fabuleux (divers)"
+    "en": "Allagan Tomestones of Poetics (Other)",
+    "ja": "アラガントームストーン:詩学の取引（その他）",
+    "de": "Allagische Steine der Poesie (Anderes)",
+    "fr": "Mémoquartz allagois poétiques (divers)"
   },
   "1770054": {
     "en": "Crystarium Gear Exchange",
@@ -3879,7 +3879,7 @@
     "en": "Folklore Items",
     "ja": "伝承録",
     "de": "Almanache",
-    "fr": "Recettes expertes"
+    "fr": "Légendes locales"
   },
   "1770196": {
     "en": "Materia",
@@ -4371,7 +4371,7 @@
     "en": "Folklore Items",
     "ja": "伝承録",
     "de": "Almanache",
-    "fr": "Recettes expertes"
+    "fr": "Légendes locales"
   },
   "1770278": {
     "en": "Materia",
@@ -4620,16 +4620,16 @@
     "fr": "Échange d'équipements de la Pleine-ombre (magie)"
   },
   "1770319": {
-    "en": "Allagan Tomestones of Revelation (DoW)",
-    "ja": "アラガントームストーン:黙示の取引（ファイター）",
-    "de": "Allagische Steine der Offenbarung (Krieger)",
-    "fr": "Mémoquartz allagois révélateurs (guerre)"
+    "en": "Allagan Tomestones of Poetics (DoW) II",
+    "ja": "アラガントームストーン:詩学の取引（ファイターその2）",
+    "de": "Allagische Steine der Poesie (Krieger II)",
+    "fr": "Mémoquartz allagois poétiques (guerre 2)"
   },
   "1770320": {
-    "en": "Allagan Tomestones of Revelation (DoM)",
-    "ja": "アラガントームストーン:黙示の取引（ソーサラー）",
-    "de": "Allagische Steine der Offenbarung (Magier)",
-    "fr": "Mémoquartz allagois révélateurs (magie)"
+    "en": "Allagan Tomestones of Poetics (DoM) II",
+    "ja": "アラガントームストーン:詩学の取引（ソーサラーその2）",
+    "de": "Allagische Steine der Poesie (Magier II)",
+    "fr": "Mémoquartz allagois poétiques (magie 2)"
   },
   "1770321": {
     "en": "Allagan Tomestones of Revelation (Other)",
@@ -4770,46 +4770,46 @@
     "fr": ""
   },
   "1770344": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Blade's Gear Exchange",
+    "ja": "ブレイズ装備の交換",
+    "de": "Gunnhildr-Ausrüstung",
+    "fr": "Équipements de Gunnhildr"
   },
   "1770345": {
     "en": "Eulmoran Certificates of Grandeur (Weapons)",
     "ja": "ユールモアの手形G3との交換（武器）",
     "de": "Eulmore-Marken III (Waffen)",
-    "fr": "Avoirs d'Eulmore II (armes)"
+    "fr": "Avoirs d'Eulmore III (armes)"
   },
   "1770346": {
     "en": "Eulmoran Certificates of Grandeur (Gear)",
     "ja": "ユールモアの手形G3との交換（防具）",
     "de": "Eulmore-Marken III (Rüstungen)",
-    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+    "fr": "Avoirs d'Eulmore III (pièces d'armure)"
   },
   "1770347": {
     "en": "Eulmoran Certificates of Grandeur (Accessories)",
     "ja": "ユールモアの手形G3との交換（アクセサリー）",
     "de": "Eulmore-Marken III (Accessoires)",
-    "fr": "Avoirs d'Eulmore II (accessoires)"
+    "fr": "Avoirs d'Eulmore III (accessoires)"
   },
   "1770348": {
     "en": "Eulmoran Certificates of Grandeur (Weapons)",
     "ja": "ユールモアの手形G3との交換（武器）",
     "de": "Eulmore-Marken III (Waffen)",
-    "fr": "Avoirs d'Eulmore II (armes)"
+    "fr": "Avoirs d'Eulmore III (armes)"
   },
   "1770349": {
     "en": "Eulmoran Certificates of Grandeur (Gear)",
     "ja": "ユールモアの手形G3との交換（防具）",
     "de": "Eulmore-Marken III (Rüstungen)",
-    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+    "fr": "Avoirs d'Eulmore III (pièces d'armure)"
   },
   "1770350": {
     "en": "Eulmoran Certificates of Grandeur (Accessories)",
     "ja": "ユールモアの手形G3との交換（アクセサリー）",
     "de": "Eulmore-Marken III (Accessoires)",
-    "fr": "Avoirs d'Eulmore II (accessoires)"
+    "fr": "Avoirs d'Eulmore III (accessoires)"
   },
   "1770351": {
     "en": "Augmented Exarchic Equipment (Weapons)",
@@ -4830,21 +4830,1095 @@
     "fr": "Amélioration d'accessoires de l'exarchat"
   },
   "1770354": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
   },
   "1770355": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770356": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770357": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770358": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770359": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770360": {
+    "en": "Primal/Warden/Weapon Gear (IL 450-525)",
+    "ja": "【ILv450～525】蛮神・大罪喰い・ウェポン装備",
+    "de": "[G.-St. 450-525] Ausrüstung der Primae, Sündenvertilger und allagischen Waffen",
+    "fr": "[NvObj 450-525] Équipement des Primordiaux, des grands purgateurs et des Armes"
+  },
+  "1770361": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770362": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770363": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770364": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770365": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770366": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770367": {
+    "en": "Edengate Gear (IL 450)",
+    "ja": "【ILv450】エデンゲート装備",
+    "de": "[G.-St. 450] Edentor-Ausrüstung",
+    "fr": "[NvObj 450] Équipement des portes édéniques"
+  },
+  "1770368": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770369": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770370": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770371": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770372": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770373": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770374": {
+    "en": "Edengrace Gear (IL 470-475)",
+    "ja": "【ILv470～475】エデングレース装備",
+    "de": "[G.-St. 470-475] Edengunst-Ausrüstung",
+    "fr": "[NvObj 470-475] Équipement de grâce édénique"
+  },
+  "1770375": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770376": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770377": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770378": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770379": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770380": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770381": {
+    "en": "Edencall Gear (IL 480)",
+    "ja": "【ILv480】エデンコール装備",
+    "de": "[G.-St. 480] Edenruf-Ausrüstung",
+    "fr": "[NvObj 480] Équipement de l'appel édénique"
+  },
+  "1770382": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770383": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770384": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770385": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770386": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770387": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770388": {
+    "en": "Crystarium Gear (IL 500)",
+    "ja": "【ILv500】クリスタリウム装備",
+    "de": "[G.-St. 500] Crystarium-Ausrüstung",
+    "fr": "[NvObj 500] Équipement cristarien"
+  },
+  "1770389": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770390": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770391": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770392": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770393": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770394": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770395": {
+    "en": "Edenchoir Gear (IL 500-505)",
+    "ja": "【ILv500～505】エデンコーラス装備",
+    "de": "[G.-St. 500-505] Edenchor-Ausrüstung",
+    "fr": "[NvObj 500-505] Équipement des chœurs édéniques"
+  },
+  "1770396": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770397": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770398": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770399": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770400": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770401": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770402": {
+    "en": "Edenmete Gear (IL 510)",
+    "ja": "【ILv510】エデンマーシー装備",
+    "de": "[G.-St. 510] Edenmaß-Ausrüstung",
+    "fr": "[NvObj 510] Équipement de l'espoir édénique"
+  },
+  "1770403": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770404": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770405": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770406": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770407": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770408": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770409": {
+    "en": "Cryptlurker Gear (IL 530)",
+    "ja": "【ILv530】クリプトラーカー装備",
+    "de": "[G.-St. 530] Gruftschleicher-Ausrüstung",
+    "fr": "[NvObj 530] Équipement de rôdeur des cryptes"
+  },
+  "1770410": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770411": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770412": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770413": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770414": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770415": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770416": {
+    "en": "Edenmorn Gear (IL 530-535)",
+    "ja": "【ILv530～535】エデンモーン装備",
+    "de": "[G.-St. 530-535] Edenmorgen-Ausrüstung",
+    "fr": "[NvObj 530-535] Équipement des lendemains édéniques"
+  },
+  "1770417": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770418": {
+    "en": "Mounts/Miscellany",
+    "ja": "マウント・雑貨",
+    "de": "Reittiere & Verschiedenes",
+    "fr": "Montures et autres"
+  },
+  "1770419": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770420": {
+    "en": "Tradecraft Fiend Gear (IL 440)",
+    "ja": "【ILv440】フィーンド装備（道具・防具）",
+    "de": "[G.-St. 440] Koryphäenwerkzeug und -rüstung",
+    "fr": "[NvObj 440] Outil et équipement du fiélon"
+  },
+  "1770421": {
+    "en": "Professional Gear (IL 470)",
+    "ja": "【ILv470】フィーンド副道具・プロフィシエント装備",
+    "de": "[G.-St. 470] Koryphäenwerkzeug (Sekundär- und Spezialisten-)",
+    "fr": "[NvObj 470] Outil secondaire du fiélon et équipement de spécialiste"
+  },
+  "1770422": {
+    "en": "Handsaint Gear (IL 500)",
+    "ja": "【ILv500】セイントハンド装備",
+    "de": "[G.-St. 500] Handwerkerheiligen-Ausrüstung",
+    "fr": "[NvObj 500] Outils et équipement de saint"
+  },
+  "1770423": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "1770424": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770425": {
+    "en": "Master Recipes",
+    "ja": "秘伝書",
+    "de": "Meisterrezeptbücher",
+    "fr": "Recettes expertes"
+  },
+  "1770426": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770427": {
+    "en": "Fieldcraft Fiend Gear (IL 440)",
+    "ja": "【ILv440】フィーンド装備（道具・防具）",
+    "de": "[G.-St. 440] Koryphäenwerkzeug und -rüstung",
+    "fr": "[NvObj 440] Outil et équipement du fiélon"
+  },
+  "1770428": {
+    "en": "Professional Gear (IL 470)",
+    "ja": "【ILv470】フィーンド副道具・プロフィシエント装備",
+    "de": "[G.-St. 470] Koryphäenwerkzeug (Sekundär- und Spezialisten-)",
+    "fr": "[NvObj 470] Outil secondaire du fiélon et équipement de spécialiste"
+  },
+  "1770429": {
+    "en": "Landsaint's Gear (IL 500)",
+    "ja": "【ILv500】セイントランド装備",
+    "de": "[G.-St. 500] Sammlerheiligen-Ausrüstung",
+    "fr": "[NvObj 500] Outils et équipement de saint"
+  },
+  "1770430": {
+    "en": "Bait/Miscellany",
+    "ja": "雑貨・釣り餌",
+    "de": "Köder & Verschiedenes",
+    "fr": "Appât et autres"
+  },
+  "1770431": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770432": {
+    "en": "Folklore Items",
+    "ja": "伝承録",
+    "de": "Folklore-Almanache",
+    "fr": "Légendes locales"
+  },
+  "1770433": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770434": {
+    "en": "Allagan Tomestones of Aphorism (DoW)",
+    "ja": "アラガントームストーン:経典の取引（ファイター）",
+    "de": "Allagische Steine des Aphorismus (Krieger)",
+    "fr": "Mémoquartz allagois aphoristiques (guerre)"
+  },
+  "1770435": {
+    "en": "Allagan Tomestones of Aphorism (DoM)",
+    "ja": "アラガントームストーン:経典の取引（ソーサラー）",
+    "de": "Allagische Steine des Aphorismus (Magier)",
+    "fr": "Mémoquartz allagois aphoristiques (magie)"
+  },
+  "1770436": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "1770356": {
+  "1770437": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
+  },
+  "1770438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770439": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770440": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770441": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770443": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770444": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770445": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770446": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770447": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770448": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770449": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770450": {
+    "en": "Job Gear (Tank)",
+    "ja": "ジョブ専用装備の受取（タンク）",
+    "de": "Job-Ausrüstung (Verteidiger)",
+    "fr": "Équipement de job (Tank)"
+  },
+  "1770451": {
+    "en": "Job Gear (Physical DPS)",
+    "ja": "ジョブ専用装備の受取（DPS：ファイター）",
+    "de": "Job-Ausrüstung (physische Angreifer)",
+    "fr": "Équipement de job (DPS physique)"
+  },
+  "1770452": {
+    "en": "Job Gear (Magical Ranged DPS)",
+    "ja": "ジョブ専用装備の受取（DPS：ソーサラー）",
+    "de": "Job-Ausrüstung (magische Angreifer)",
+    "fr": "Équipement de job (DPS magique)"
+  },
+  "1770453": {
+    "en": "Job Gear (Healer)",
+    "ja": "ジョブ専用装備の受取（ヒーラー）",
+    "de": "Job-Ausrüstung (Heiler)",
+    "fr": "Équipement de job (Soigneur)"
+  },
+  "1770454": {
+    "en": "Totem Gear (Zodiark)",
+    "ja": "蛮神装備の取引(ゾディアーク)",
+    "de": "Primae-Ausrüstung (Zodiark)",
+    "fr": "Équipements totémiques (Zordiark)"
+  },
+  "1770455": {
+    "en": "Totem Gear (Hydaelyn)",
+    "ja": "蛮神装備の取引(ハイデリン)",
+    "de": "Primae-Ausrüstung (Hydaelyn)",
+    "fr": "Équipements totémiques (Hydaelyn)"
+  },
+  "1770456": {
+    "en": "Out-of-this-world Oddities",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets (divers)"
+  },
+  "1770457": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770458": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770459": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770460": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770461": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770462": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770463": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770464": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770465": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770466": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770467": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770468": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770469": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770470": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770472": {
+    "en": "Pumpkin Cookies",
+    "ja": "パンプキンクッキーの取引",
+    "de": "Kürbiskekse",
+    "fr": "Biscuits citrouille"
+  },
+  "1770473": {
+    "en": "Speed Belt Exchange",
+    "ja": "スピードベルトの回収",
+    "de": "Tempogürtel",
+    "fr": "Récupération de ceinture vitesse"
+  },
+  "1770474": {
+    "en": "Fieldcraft Items",
+    "ja": "ギャザラー向けアイテムの交換",
+    "de": "Sammler-Gegenstände",
+    "fr": "Objets de récolte"
+  },
+  "1770475": {
+    "en": "Silver Chocobo Feather Exchange IV (Lv. 80 Gear)",
+    "ja": "シルバーチョコボの羽根の取引（Lv80向け装備）",
+    "de": "Silberne Chocobo-Federn IV",
+    "fr": "Pennes de chocobo argenté (Nv 80)"
+  },
+  "1770476": {
+    "en": "Sacks of Nuts Exchange",
+    "ja": "モブハントの戦利品の取引",
+    "de": "Kupo-Trophäen",
+    "fr": "Insignes des contrats de chasse"
+  },
+  "1770477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770478": {
+    "en": "White Scrip Exchange (Lv. 60/IL 200)",
+    "ja": "白貨の取引：Lv60～向け【ILv200】",
+    "de": "Weiße Scheine (ab St. 60) [G.-St. 200]",
+    "fr": "Assignats blancs (Nv ≧ 60) [NvObj 200]"
+  },
+  "1770479": {
+    "en": "White Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "白貨の取引：Lv70～向け【ILv330】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+  },
+  "1770480": {
+    "en": "White Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "白貨の取引：Lv70～向け【ILv350】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+  },
+  "1770481": {
+    "en": "White Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "白貨の取引：Lv80～向け【ILv440】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+  },
+  "1770482": {
+    "en": "White Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "白貨の取引：Lv80～向け【ILv470】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+  },
+  "1770483": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
+    "ja": "紫貨の取引：Lv90～向け【ILv570】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 570]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
+  },
+  "1770484": {
+    "en": "White Scrip Exchange (Lv. 50 Materials)",
+    "ja": "白貨の取引：Lv50～向け素材",
+    "de": "Weiße Scheine (ab St. 50, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 50)"
+  },
+  "1770485": {
+    "en": "White Scrip Exchange (Lv. 60 Materials/Tokens)",
+    "ja": "白貨の取引：Lv60～向け素材・手形",
+    "de": "Weiße Scheine (ab St. 60, Materialien & Marken)",
+    "fr": "Assignats blancs : matériaux et avoirs (Nv ≧ 60)"
+  },
+  "1770486": {
+    "en": "White Scrip Exchange (Lv. 70 Materials)",
+    "ja": "白貨の取引：Lv70～向け素材",
+    "de": "Weiße Scheine (ab St. 70, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 70)"
+  },
+  "1770487": {
+    "en": "White Scrip Exchange (Lv. 80 Materials)",
+    "ja": "白貨の取引：Lv80～向け素材",
+    "de": "Weiße Scheine (ab St. 80, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 80)"
+  },
+  "1770488": {
+    "en": "White Scrip Exchange (Lv. 90 Materials)",
+    "ja": "白貨の取引：Lv90～向け素材",
+    "de": "Weiße Scheine (ab St. 90, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 90)"
+  },
+  "1770489": {
+    "en": "Purple Scrip Exchange (Lv. 90 Materials/Bait)",
+    "ja": "紫貨の取引：Lv90～向け釣り餌・素材",
+    "de": "Violette Scheine (ab St. 90, Materialien & Köder)",
+    "fr": "Assignats mauves : matériaux et appâts (Nv ≧ 90)"
+  },
+  "1770490": {
+    "en": "White Scrip Exchange (Lv. 60/IL 200)",
+    "ja": "白貨の取引：Lv60～向け【ILv200】",
+    "de": "Weiße Scheine (ab St. 60) [G.-St. 200]",
+    "fr": "Assignats blancs (Nv ≧ 60) [NvObj 200]"
+  },
+  "1770491": {
+    "en": "White Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "白貨の取引：Lv70～向け【ILv330】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+  },
+  "1770492": {
+    "en": "White Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "白貨の取引：Lv70～向け【ILv350】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+  },
+  "1770493": {
+    "en": "White Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "白貨の取引：Lv80～向け【ILv440】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+  },
+  "1770494": {
+    "en": "White Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "白貨の取引：Lv80～向け【ILv470】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+  },
+  "1770495": {
+    "en": "Purple Scrip Exchange (Lv. 90/IL 570)",
+    "ja": "紫貨の取引：Lv90～向け【ILv570】",
+    "de": "Violette Scheine (ab St. 80) [G.-St. 570]",
+    "fr": "Assignats mauves (Nv ≧ 90) [NvObj 570]"
+  },
+  "1770496": {
+    "en": "White Scrip Exchange (Lv. 50 Materials/Bait)",
+    "ja": "白貨の取引：Lv50～向け釣り餌・素材",
+    "de": "Weiße Scheine (ab St. 50, Materialien & Köder)",
+    "fr": "Assignats blancs : matériaux et appâts (Nv ≧ 50)"
+  },
+  "1770497": {
+    "en": "White Scrip Exchange (Lv. 60 Materials/Bait/Tokens)",
+    "ja": "白貨の取引：Lv60～向け釣り餌・素材・手形",
+    "de": "Weiße Scheine (ab St. 60, Materialien, Köder & Marken)",
+    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 60)"
+  },
+  "1770498": {
+    "en": "White Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
+    "ja": "白貨の取引：Lv70～向け釣り餌・素材・手形",
+    "de": "Weiße Scheine (ab St. 70, Materialien, Köder & Marken)",
+    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 70)"
+  },
+  "1770499": {
+    "en": "White Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
+    "ja": "白貨の取引：Lv80～向け釣り餌・素材・手形",
+    "de": "Weiße Scheine (ab St. 80, Materialien, Köder & Marken)",
+    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 80)"
+  },
+  "1770500": {
+    "en": "White Scrip Exchange (Lv. 90 Bait/Tokens)",
+    "ja": "白貨の取引：Lv90～向け釣り餌・手形",
+    "de": "Weiße Scheine (ab St. 90, Köder & Marken)",
+    "fr": "Assignats blancs : appâts et avoirs (Nv ≧ 90)"
+  },
+  "1770501": {
+    "en": "Bicolor Gemstone Vouchers",
+    "ja": "バイカラージェム納品証の取引",
+    "de": "Zweifarbige Edelsteine",
+    "fr": "Bons de livraison de gemmes bicolores"
+  },
+  "1770502": {
+    "en": "White Scrip Exchange (Master Recipes)",
+    "ja": "白貨の取引：秘伝書",
+    "de": "Weiße Scheine (Meisterrezepte)",
+    "fr": "Assignats blancs : recettes expertes"
+  },
+  "1770503": {
+    "en": "White Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "白貨の取引：Lv80～向け【ILv500】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+  },
+  "1770504": {
+    "en": "White Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "白貨の取引：Lv80～向け【ILv500】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+  },
+  "1770505": {
+    "en": "White Scrip Exchange (Music/Furnishings/Misc.)",
+    "ja": "白貨の取引：雑貨・譜面・ハウジング関連",
+    "de": "Weiße Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
+    "fr": "Assignats blancs : orchestrion, logement et autres"
+  },
+  "1770506": {
+    "en": "White Scrip Exchange (Materia)",
+    "ja": "白貨の取引：マテリア",
+    "de": "Weiße Scheine (Materia)",
+    "fr": "Assignats blancs : matérias"
+  },
+  "1770507": {
+    "en": "Purple Scrip Exchange (Materia)",
+    "ja": "紫貨の取引：マテリア",
+    "de": "Violette Scheine (Materia)",
+    "fr": "Assignats mauves : matérias"
+  },
+  "1770508": {
+    "en": "White Scrip Exchange (Music/Furnishings/Misc.)",
+    "ja": "白貨の取引：雑貨・譜面・ハウジング関連",
+    "de": "Weiße Scheine (Orchestrion, Unterkünfte & Verschiedenes)",
+    "fr": "Assignats blancs : orchestrion, logement et autres"
+  },
+  "1770509": {
+    "en": "White Scrip Exchange (Materia)",
+    "ja": "白貨の取引：マテリア",
+    "de": "Weiße Scheine (Materia)",
+    "fr": "Assignats blancs : matérias"
+  },
+  "1770510": {
+    "en": "Purple Scrip Exchange (Materia)",
+    "ja": "紫貨の取引：マテリア",
+    "de": "Violette Scheine (Materia)",
+    "fr": "Assignats mauves : matérias"
+  },
+  "1770511": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770512": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770513": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770514": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770515": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770516": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770517": {
+    "en": "Idealized Gear (IL 480)",
+    "ja": "【ILv480】アイディアル装備",
+    "de": "[G.-St. 480] Idealisierte Ausrüstung",
+    "fr": "[NvObj 480] Équipement d'idéaliste"
+  },
+  "1770518": {
+    "en": "White Scrip Exchange (Lv. 58/IL 130)",
+    "ja": "白貨の取引：Lv58～向け【ILv130】",
+    "de": "Weiße Scheine (ab St. 58) [G.-St. 130]",
+    "fr": "Assignats blancs (Nv ≧ 58) [NvObj 130]"
+  },
+  "1770519": {
+    "en": "White Scrip Exchange (Lv. 58/IL 130)",
+    "ja": "白貨の取引：Lv58～向け【ILv130】",
+    "de": "Weiße Scheine (ab St. 58) [G.-St. 130]",
+    "fr": "Assignats blancs (Nv ≧ 58) [NvObj 130]"
+  },
+  "1770520": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770521": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770522": {
+    "en": "White Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "白貨の取引：Lv70～向け【ILv330】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+  },
+  "1770523": {
+    "en": "White Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "白貨の取引：Lv70～向け【ILv350】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+  },
+  "1770524": {
+    "en": "White Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "白貨の取引：Lv80～向け【ILv440】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+  },
+  "1770525": {
+    "en": "White Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "白貨の取引：Lv80～向け【ILv470】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+  },
+  "1770526": {
+    "en": "White Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "白貨の取引：Lv80～向け【ILv500】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+  },
+  "1770527": {
+    "en": "White Scrip Exchange (Lv. 70 Materials)",
+    "ja": "白貨の取引：Lv70～向け素材",
+    "de": "Weiße Scheine (ab St. 70, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 70)"
+  },
+  "1770528": {
+    "en": "White Scrip Exchange (Lv. 80 Materials)",
+    "ja": "白貨の取引：Lv80～向け素材",
+    "de": "Weiße Scheine (ab St. 80, Materialien)",
+    "fr": "Assignats blancs : matériaux (Nv ≧ 80)"
+  },
+  "1770529": {
+    "en": "White Scrip Exchange (Lv. 70/IL 330)",
+    "ja": "白貨の取引：Lv70～向け【ILv330】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 330]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 330]"
+  },
+  "1770530": {
+    "en": "White Scrip Exchange (Lv. 70/IL 350)",
+    "ja": "白貨の取引：Lv70～向け【ILv350】",
+    "de": "Weiße Scheine (ab St. 70) [G.-St. 350]",
+    "fr": "Assignats blancs (Nv ≧ 70) [NvObj 350]"
+  },
+  "1770531": {
+    "en": "White Scrip Exchange (Lv. 80/IL 440)",
+    "ja": "白貨の取引：Lv80～向け【ILv440】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 440]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 440]"
+  },
+  "1770532": {
+    "en": "White Scrip Exchange (Lv. 80/IL 470)",
+    "ja": "白貨の取引：Lv80～向け【ILv470】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 470]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 470]"
+  },
+  "1770533": {
+    "en": "White Scrip Exchange (Lv. 80/IL 500)",
+    "ja": "白貨の取引：Lv80～向け【ILv500】",
+    "de": "Weiße Scheine (ab St. 80) [G.-St. 500]",
+    "fr": "Assignats blancs (Nv ≧ 80) [NvObj 500]"
+  },
+  "1770534": {
+    "en": "White Scrip Exchange (Lv. 70 Materials/Bait/Tokens)",
+    "ja": "白貨の取引：Lv70～向け釣り餌・素材・手形",
+    "de": "Weiße Scheine (ab St. 70, Materialien, Köder & Marken)",
+    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 70)"
+  },
+  "1770535": {
+    "en": "White Scrip Exchange (Lv. 80 Materials/Bait/Tokens)",
+    "ja": "白貨の取引：Lv80～向け釣り餌・素材・手形",
+    "de": "Weiße Scheine (ab St. 80, Materialien, Köder & Marken)",
+    "fr": "Assignats blancs : matériaux, appâts et avoirs (Nv ≧ 80)"
   }
 }
