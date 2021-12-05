@@ -801,7 +801,7 @@
   },
   "101": {
     "name": {
-      "en": "Fair Skies",
+      "en": "Red Moon",
       "ja": "紅月下",
       "de": "Roter Mond",
       "fr": "Lune rouge"
@@ -1089,18 +1089,18 @@
   },
   "137": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Starshower",
+      "ja": "流星雨",
+      "de": "Sternenregen",
+      "fr": "Pluie d'étoiles"
     }
   },
   "138": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Delirium",
+      "ja": "記憶乱流",
+      "de": "Erinnerungsturbulenzen",
+      "fr": "Tempête de souvenirs"
     }
   },
   "139": {
@@ -1171,56 +1171,120 @@
     "name": {
       "en": "Climactic",
       "ja": "決戦",
-      "de": "Endzeit",
+      "de": "Endzeitig",
       "fr": "Fatidique"
     }
   },
   "148": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Moon Dust",
+      "ja": "月砂塵",
+      "de": "Mondstaubig",
+      "fr": "Tempêtes de régolithe"
     }
   },
   "149": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Astromagnetic Storm",
+      "ja": "磁気嵐",
+      "de": "Magnetsturm",
+      "fr": "Astromagnétique"
     }
   },
   "150": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Apocalypse",
+      "ja": "終末",
+      "de": "Apokalypse",
+      "fr": "Apocalypse"
     }
   },
   "151": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Polarization",
+      "ja": "星霊",
+      "de": "Polarisierend",
+      "fr": "Polarisation"
     }
   },
   "152": {
     "name": {
+      "en": "Polarization",
+      "ja": "星霊",
+      "de": "Polarisierend",
+      "fr": "Polarisation"
+    }
+  },
+  "153": {
+    "name": {
+      "en": "Polarization",
+      "ja": "星霊",
+      "de": "Polarisierend",
+      "fr": "Polarisation"
+    }
+  },
+  "154": {
+    "name": {
+      "en": "Polarization",
+      "ja": "星霊",
+      "de": "Polarisierend",
+      "fr": "Polarisation"
+    }
+  },
+  "155": {
+    "name": {
+      "en": "Polarization",
+      "ja": "星霊",
+      "de": "Polarisierend",
+      "fr": "Polarisation"
+    }
+  },
+  "156": {
+    "name": {
+      "en": "Projection",
+      "ja": "仮想",
+      "de": "Imaginär",
+      "fr": "Virtuel"
+    }
+  },
+  "157": {
+    "name": {
       "en": "",
       "ja": "",
       "de": "",
       "fr": ""
     }
   },
-  "153": {
+  "158": {
     "name": {
       "en": "",
       "ja": "",
       "de": "",
       "fr": ""
+    }
+  },
+  "159": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "160": {
+    "name": {
+      "en": "Ultimatum",
+      "ja": "終極",
+      "de": "Eschatologie",
+      "fr": "Eschatologique"
+    }
+  },
+  "161": {
+    "name": {
+      "en": "Inevitability",
+      "ja": "絶望",
+      "de": "Verzweifelnd",
+      "fr": "Désespoir"
     }
   }
 }

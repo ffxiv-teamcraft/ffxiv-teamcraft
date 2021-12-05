@@ -2070,5 +2070,233 @@ export const weatherIndex = {
       "rate": 100,
       "weatherId": 15
     }
+  ],
+  "131": [
+    {
+      "rate": 15,
+      "weatherId": 1
+    },
+    {
+      "rate": 60,
+      "weatherId": 2
+    },
+    {
+      "rate": 85,
+      "weatherId": 3
+    },
+    {
+      "rate": 100,
+      "weatherId": 7
+    }
+  ],
+  "132": [
+    {
+      "rate": 10,
+      "weatherId": 4
+    },
+    {
+      "rate": 20,
+      "weatherId": 7
+    },
+    {
+      "rate": 25,
+      "weatherId": 8
+    },
+    {
+      "rate": 40,
+      "weatherId": 1
+    },
+    {
+      "rate": 80,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 3
+    }
+  ],
+  "133": [
+    {
+      "rate": 45,
+      "weatherId": 15
+    },
+    {
+      "rate": 50,
+      "weatherId": 9
+    },
+    {
+      "rate": 55,
+      "weatherId": 7
+    },
+    {
+      "rate": 60,
+      "weatherId": 4
+    },
+    {
+      "rate": 85,
+      "weatherId": 3
+    },
+    {
+      "rate": 95,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 1
+    }
+  ],
+  "134": [
+    {
+      "rate": 25,
+      "weatherId": 3
+    },
+    {
+      "rate": 40,
+      "weatherId": 49
+    },
+    {
+      "rate": 85,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 1
+    }
+  ],
+  "135": [
+    {
+      "rate": 15,
+      "weatherId": 49
+    },
+    {
+      "rate": 30,
+      "weatherId": 148
+    },
+    {
+      "rate": 100,
+      "weatherId": 2
+    }
+  ],
+  "136": [
+    {
+      "rate": 15,
+      "weatherId": 149
+    },
+    {
+      "rate": 85,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 49
+    }
+  ],
+  "137": [
+    {
+      "rate": 10,
+      "weatherId": 1
+    },
+    {
+      "rate": 50,
+      "weatherId": 2
+    },
+    {
+      "rate": 70,
+      "weatherId": 3
+    },
+    {
+      "rate": 85,
+      "weatherId": 4
+    },
+    {
+      "rate": 100,
+      "weatherId": 15
+    }
+  ],
+  "138": [
+    {
+      "rate": 10,
+      "weatherId": 4
+    },
+    {
+      "rate": 25,
+      "weatherId": 7
+    },
+    {
+      "rate": 40,
+      "weatherId": 1
+    },
+    {
+      "rate": 80,
+      "weatherId": 2
+    },
+    {
+      "rate": 100,
+      "weatherId": 3
+    }
+  ],
+  "139": [
+    {
+      "rate": 100,
+      "weatherId": 151
+    }
+  ],
+  "140": [
+    {
+      "rate": 100,
+      "weatherId": 156
+    }
+  ],
+  "141": [
+    {
+      "rate": 100,
+      "weatherId": 150
+    }
+  ],
+  "142": [
+    {
+      "rate": 5,
+      "weatherId": 15
+    },
+    {
+      "rate": 25,
+      "weatherId": 2
+    },
+    {
+      "rate": 65,
+      "weatherId": 1
+    },
+    {
+      "rate": 80,
+      "weatherId": 3
+    },
+    {
+      "rate": 90,
+      "weatherId": 4
+    }
+  ],
+  "143": [
+    {
+      "rate": 100,
+      "weatherId": 160
+    }
+  ],
+  "144": [
+    {
+      "rate": 100,
+      "weatherId": 161
+    }
+  ],
+  "145": [
+    {
+      "rate": 100,
+      "weatherId": 157
+    }
+  ],
+  "146": [
+    {
+      "rate": 100,
+      "weatherId": 128
+    }
   ]
 };
