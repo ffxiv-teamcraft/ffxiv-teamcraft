@@ -479,9 +479,11 @@ export class SettingsPopupComponent {
   }
 
   public setNotificationSound(type: SoundNotificationType, sound: string): void {
-    this.notificationSettings[type].sound = sound;
-    this.settings.setNotificationSettings(type, this.notificationSettings[type]);
-    this.previewSound(type);
+    if(['.mp3','.wav','.ogg','.m4a','.flac','.mp4','.wma','.aac'].some(ext => sound.endsWith(ext))){
+      this.notificationSettings[type].sound = sound;
+      this.settings.setNotificationSettings(type, this.notificationSettings[type]);
+      this.previewSound(type);
+    }
   }
 
   public onMappyEnableChange(enabled: boolean): void {

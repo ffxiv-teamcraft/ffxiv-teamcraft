@@ -15,8 +15,16 @@ export class ShopNamePipe implements PipeTransform {
     if (typeof name === 'string') {
       return this.lazyData.getEntry('shops').pipe(
         switchMap(shops => {
-          const id = +Object.keys(shops).find((k) => shops[k].en === name);
-          return this.lazyData.getI18nName('shops', id);
+          const id = Object.keys(shops).find((k) => shops[k].en === name);
+          if (id === undefined) {
+            return of({
+              en: name,
+              ja: name,
+              de: name,
+              fr: name
+            });
+          }
+          return this.lazyData.getI18nName('shops', +id);
         })
       );
     } else {
