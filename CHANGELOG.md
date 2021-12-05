@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.4"></a>
+## [9.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.3...v9.1.4) (2021-12-05)
+
+
+### Bug Fixes
+
+* **settings:** fixed custom sound selection crashing the app ([fca5df4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fca5df4))
+* **simulator:** fixed delicate synthesis not affected by inner quiet ([10cba2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/10cba2e))
+* **simulator:** fixed HQ ingredients quality contribution calc ([50a30cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50a30cd))
+* **simulator:** fixed preparatory touch managing to reach 11 stacks of IQ ([ed1c18a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed1c18a))
+* **weather:** fixed weather rates missing for new maps, causing weather prediction issues ([4ca1e7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ca1e7c))
+
+
+
 <a name="9.1.3"></a>
 ## [9.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.2...v9.1.3) (2021-12-04)
 
