@@ -438,7 +438,7 @@
                 {{notificationSettings[type].sound}}
               </button>
             </div>
-            <input (change)="setNotificationSound(type, $event.target.files[0].path)" accept="audio/*" type="file">
+            <input (change)="setNotificationSound(type, $event.target.files[0].path)" type="file">
           </div>
           <ng-template #soundSelect>
             <nz-select (ngModelChange)="setNotificationSound(type, $event)" [ngModel]="notificationSettings[type].sound" class="select-box">
