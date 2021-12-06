@@ -1,18 +1,20 @@
-<nz-list [nzDataSource]="details" [nzRenderItem]="desynthTemplate">
-  <ng-template #desynthTemplate let-desynth>
-    <nz-list-item>
-      <nz-list-item-meta [nzAvatar]="avatar"
-                         [nzTitle]="title">
-        <ng-template #title>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div [appItemRarity]="desynth">{{desynth | itemName | i18n}}</div>
-            <app-db-button [id]="desynth" type="item"></app-db-button>
-          </div>
-        </ng-template>
-        <ng-template #avatar>
-          <app-item-icon [icon]="desynth | lazyIcon" [itemId]="desynth" width="32"></app-item-icon>
-        </ng-template>
-      </nz-list-item-meta>
-    </nz-list-item>
-  </ng-template>
+<nz-list>
+  <app-lazy-scroll [data]="details" [rowTemplate]="desynthTemplate" [rowSize]="60" [displayedRows]="6">
+    <ng-template #desynthTemplate let-desynth>
+      <nz-list-item>
+        <nz-list-item-meta [nzAvatar]="avatar"
+                           [nzTitle]="title">
+          <ng-template #title>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div [appItemRarity]="desynth">{{desynth | itemName | i18n}}</div>
+              <app-db-button [id]="desynth" type="item"></app-db-button>
+            </div>
+          </ng-template>
+          <ng-template #avatar>
+            <app-item-icon [icon]="desynth | lazyIcon" [itemId]="desynth" width="32"></app-item-icon>
+          </ng-template>
+        </nz-list-item-meta>
+      </nz-list-item>
+    </ng-template>
+  </app-lazy-scroll>
 </nz-list>
