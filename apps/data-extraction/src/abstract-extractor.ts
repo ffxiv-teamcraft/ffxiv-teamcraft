@@ -1,10 +1,11 @@
-import { writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
 import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import * as request from 'request';
 import * as querystring from 'querystring';
+import { mkdirSync } from 'fs-extra';
 
 export abstract class AbstractExtractor {
 
@@ -24,7 +25,7 @@ export abstract class AbstractExtractor {
 
   public isSpecific = false;
 
-  private progress: any;
+  protected progress: any;
 
   constructor() {
     interval(AbstractExtractor.XIVAPI_KEY ? 50 : 250)
@@ -111,9 +112,34 @@ export abstract class AbstractExtractor {
     return res$.asObservable();
   }
 
+  private hashString(str: string): string {
+    let hash = 0, i, chr;
+    if (str.length === 0) return hash.toString(16);
+    for (i = 0; i < str.length; i++) {
+      chr = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash.toString(16);
+  }
+
   protected get<T = any>(url: string, body?: any): Observable<T> {
     const req$ = new Subject<void>();
     const queryUrl = AbstractExtractor.XIVAPI_KEY ? this.addQueryParam(url, 'private_key', AbstractExtractor.XIVAPI_KEY) : url;
+    const cacheFilePath = join(__dirname, 'cache', `${this.hashString(queryUrl)}.json`);
+    if (process.env.DEV_MODE) {
+      if (!existsSync(join(__dirname, 'cache'))) {
+        mkdirSync(join(__dirname, 'cache'));
+      }
+      if (existsSync(cacheFilePath)) {
+        const raw = readFileSync(cacheFilePath, 'utf-8');
+        AbstractExtractor.TOTAL_REQUESTS++;
+        this.progress.update({
+          requests: AbstractExtractor.TOTAL_REQUESTS
+        });
+        return of(JSON.parse(raw));
+      }
+    }
     this.queue.push(req$);
     return req$.pipe(
       switchMap(() => {
@@ -134,6 +160,9 @@ export abstract class AbstractExtractor {
               res$.next(null);
               res$.complete();
             } else {
+              if (process.env.DEV_MODE) {
+                writeFileSync(cacheFilePath, JSON.stringify(res));
+              }
               res$.next(res);
               res$.complete();
             }
@@ -147,6 +176,9 @@ export abstract class AbstractExtractor {
               res$.next(null);
               res$.complete();
             } else {
+              if (process.env.DEV_MODE) {
+                writeFileSync(cacheFilePath, JSON.stringify(res));
+              }
               res$.next(res);
               res$.complete();
             }

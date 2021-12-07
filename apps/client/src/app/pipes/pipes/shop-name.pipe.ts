@@ -13,7 +13,7 @@ export class ShopNamePipe implements PipeTransform {
 
   transform(name: string | I18nName): Observable<I18nName> {
     if (typeof name === 'string') {
-      return this.lazyData.getEntry('shops').pipe(
+      return this.lazyData.getEntry('shop-names').pipe(
         switchMap(shops => {
           const id = Object.keys(shops).find((k) => shops[k].en === name);
           if (id === undefined) {
@@ -24,7 +24,7 @@ export class ShopNamePipe implements PipeTransform {
               fr: name
             });
           }
-          return this.lazyData.getI18nName('shops', +id);
+          return this.lazyData.getI18nName('shop-names', +id);
         })
       );
     } else {

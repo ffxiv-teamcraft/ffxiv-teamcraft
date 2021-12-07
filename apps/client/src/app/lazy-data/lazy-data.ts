@@ -63,6 +63,7 @@ import {LazyRecipesPerItem} from './model/lazy-recipes-per-item';
 import {LazyRecipe} from './model/lazy-recipe';
 import {LazyRetainerTask} from './model/lazy-retainer-task';
 import {LazySeed} from './model/lazy-seed';
+import {LazyShopName} from './model/lazy-shop-name';
 import {LazyShop} from './model/lazy-shop';
 import {LazySpearFishingLog} from './model/lazy-spear-fishing-log';
 import {LazySpearfishingSource} from './model/lazy-spearfishing-source';
@@ -177,6 +178,7 @@ export interface LazyData {
   reduction: Record<number, number[]>;
   retainerTasks: Array<LazyRetainerTask>;
   seeds: Record<number, LazySeed>;
+  shopNames: Record<number, LazyShopName>;
   shops: Record<number, LazyShop>;
   spearFishingFish: Array<number>;
   spearFishingLog: Array<LazySpearFishingLog>;
