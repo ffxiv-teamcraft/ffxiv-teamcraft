@@ -221,10 +221,10 @@ export class MateriaService {
           const extract = extracts[materia.id];
           const trades = getItemSource<TradeSource[]>(extract, DataType.TRADE_SOURCES);
           const scripIds = [
-            17833,
-            17834,
             25199,
-            25200
+            25200,
+            33913,
+            33914
           ];
           const scripTrade = {
             id: -1,
@@ -268,7 +268,7 @@ export class MateriaService {
         const baseValue = itemLevel[baseParam.Name_en.replace(/\s/g, '')];
         const slotModifier = baseParam[meldingData.prop];
         const roleModifier = baseParam[`MeldParam${meldingData.modifier}`];
-        return Math.round(baseValue * slotModifier / roleModifier) / 10;
+        return Math.round(baseValue * slotModifier / roleModifier * 10) ;
       }),
       shareReplay(1)
     );
