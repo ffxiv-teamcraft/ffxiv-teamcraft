@@ -2,7 +2,7 @@ import { combineLatest } from 'rxjs';
 import { AbstractExtractor } from '../abstract-extractor';
 import { map } from 'rxjs/operators';
 import { StaticData } from '../static-data';
-import { uniq } from 'lodash';
+import { uniq, uniqBy } from 'lodash';
 
 interface TradeItem {
   id: number;
@@ -48,18 +48,24 @@ export class ShopsExtractor extends AbstractExtractor {
     ]).pipe(
       map(([gilShops, specialShops, gcShopItems, gcShopCategories, topicSelect, customTalk, preHandler, npcs, fateShops]) => {
         this.progress.stop();
-        const shops = [
+        const shops = uniqBy([
           ...this.handleGilShops(gilShops),
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
-        ];
-        return this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops);
+        ], 'id');
+        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops);
+        return linked.map(shop => {
+          if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
+            return null;
+          }
+          return shop;
+        }).filter(shop => !!shop);
       })
     ).subscribe((shops) => {
       this.progress.stop();
       console.log('\n');
       console.log(`Shops without NPC : ${shops.filter(s => s.npcs.length === 0).length}/${shops.length}`);
-      console.log(shops.filter(s => s.npcs.length === 0 && s.type !== 'GilShop').slice(0, 5).map(s => `${s.type}#${s.id}`));
+      console.log(shops.filter(s => s.npcs.length === 0).slice(0, 10).map(s => `${s.type}#${s.id}`));
       this.persistToJsonAsset('shops', shops);
       this.done();
     });
@@ -92,25 +98,27 @@ export class ShopsExtractor extends AbstractExtractor {
   }
 
   private handleGilShops(gilShops: any[]): Shop[] {
-    return gilShops.map(gilShop => {
-      return {
-        id: gilShop.ID,
-        type: 'GilShop',
-        npcs: [],
-        trades: gilShop.Items.map(item => {
-          return {
-            currencies: [{
-              id: 1,
-              amount: item.PriceMid
-            }],
-            items: [{
-              id: item.ID,
-              amount: 1
-            }]
-          };
-        })
-      };
-    });
+    return gilShops
+      .filter(shop => !!shop.Name_en)
+      .map(gilShop => {
+        return {
+          id: gilShop.ID,
+          type: 'GilShop',
+          npcs: [],
+          trades: gilShop.Items.map(item => {
+            return {
+              currencies: [{
+                id: 1,
+                amount: item.PriceMid
+              }].filter(c => c.amount > 0),
+              items: [{
+                id: item.ID,
+                amount: 1
+              }]
+            };
+          }).filter(c => c.currencies.length > 0)
+        };
+      }).filter(shop => shop.trades.length > 0) as Shop[];
   }
 
   private handleSpecialShops(specialShops: any[]): Shop[] {
@@ -180,6 +188,12 @@ export class ShopsExtractor extends AbstractExtractor {
       };
       return shop;
     }).filter(shop => shop.trades.length > 0);
+  }
+
+  private hashShop(shop: Shop): string {
+    return shop.trades.map(t => t.currencies.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':')
+      + '/'
+      + shop.trades.map(t => t.items.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':');
   }
 
   private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[]): Shop[] {
