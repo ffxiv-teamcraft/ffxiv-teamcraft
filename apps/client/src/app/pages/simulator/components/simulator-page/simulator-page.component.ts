@@ -19,6 +19,14 @@ import { LazyRecipe } from '../../../../lazy-data/model/lazy-recipe';
 })
 export class SimulatorPageComponent extends AbstractSimulationPage {
 
+  item$: Observable<Item> = this.route.paramMap.pipe(
+    switchMap(params => {
+      return this.dataService.getItem(+params.get('itemId'));
+    }),
+    map(itemData => itemData.item),
+    shareReplay(1)
+  );
+
   recipe$: Observable<Craft | LazyRecipe> = this.route.paramMap.pipe(
     switchMap(params => {
       return this.item$.pipe(
@@ -34,15 +42,32 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
     shareReplay(1)
   );
 
-  item$: Observable<Item> = this.route.paramMap.pipe(
-    switchMap(params => {
-      return this.dataService.getItem(+params.get('itemId'));
-    }),
-    map(itemData => itemData.item),
-    shareReplay(1)
+  thresholds$: Observable<number[]> = this.item$.pipe(
+    switchMap(item => {
+      if (item.collectable === 1) {
+        // If it's a delivery item
+        if (item.satisfaction !== undefined) {
+          // We want thresholds on quality, not collectable score.
+          return of(item.satisfaction[0].rating.map(r => r * 10));
+        } else if (item.masterpiece !== undefined) {
+          return of(item.masterpiece.rating.map(r => r * 10));
+        } else {
+          return this.lazyData.getRow('collectables', item.id).pipe(
+            map(supply => {
+              if (supply) {
+                return [
+                  supply.base.rating * 10,
+                  supply.mid.rating * 10,
+                  supply.high.rating * 10
+                ];
+              }
+              return [];
+            })
+          );
+        }
+      }
+    })
   );
-
-  thresholds$: Observable<number[]>;
 
   constructor(protected route: ActivatedRoute, private dataService: DataService,
               private rotationsFacade: RotationsFacade, private router: Router,
@@ -59,33 +84,6 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
         this.rotationsFacade.selectRotation(id);
       }
     });
-
-    this.thresholds$ = this.item$.pipe(
-      switchMap(item => {
-        if (item.collectable === 1) {
-          // If it's a delivery item
-          if (item.satisfaction !== undefined) {
-            // We want thresholds on quality, not collectable score.
-            return of(item.satisfaction[0].rating.map(r => r * 10));
-          } else if (item.masterpiece !== undefined) {
-            return of(item.masterpiece.rating.map(r => r * 10));
-          } else {
-            return this.lazyData.getRow('collectables', item.id).pipe(
-              map(supply => {
-                if (supply) {
-                  return [
-                    supply.base.rating * 10,
-                    supply.mid.rating * 10,
-                    supply.high.rating * 10
-                  ];
-                }
-                return [];
-              })
-            );
-          }
-        }
-      })
-    );
   }
 
 

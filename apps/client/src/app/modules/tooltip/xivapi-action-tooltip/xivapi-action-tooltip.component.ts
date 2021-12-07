@@ -37,11 +37,11 @@ export class XivapiActionTooltipComponent implements OnInit {
       this.details.push({ name: 'TOOLTIP.Cost', value: this.action.PrimaryCostValue.toString(), requiresPipe: false });
     }
     if (this.action.ClassJobCategory) {
-      this.details.push({ name: 'TOOLTIP.Class_job', value: this.i18n.xivapiToI18n(this.action.ClassJobCategory, 'jobCategories'), requiresPipe: true });
+      this.details.push({ name: 'TOOLTIP.Class_job', value: this.i18n.xivapiToI18n(this.action.ClassJobCategory), requiresPipe: true });
     }
   }
 
-  public getDescription(action): string {
+  public getDescription(action: any): string {
     return this.i18n.getName(this.i18n.xivapiToI18n(action, 'Description'));
   }
 }

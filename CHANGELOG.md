@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.1.6"></a>
+## [9.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.5...v9.1.6) (2021-12-07)
+
+
+### Bug Fixes
+
+* **gearsets:** fixed materia melding caps ([3f03637](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f03637))
+* **list-details:** optimized route checks all selected sources ([6aff0b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6aff0b4))
+* **pricing-mode:** fixed errors burst when opening the page ([e79df06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e79df06))
+* **simulator:** fixed inaccuracies at lvl 90 on lvl 90 recipes ([46c622c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46c622c))
+* **simulator:** fixed tooltips sometimes missing description and job ([ea4703d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea4703d))
+
+
+### Features
+
+* **list:** new list tags: ENDWALKER, SGE and RPR ([980512a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/980512a))
+* **simulator:** added missing medicines ([f06d3bc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f06d3bc))
+
+
+### Performance Improvements
+
+* **db:** desynth details popup now includes better scrolling system ([c4913cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4913cf))
+
+
+
 <a name="9.1.5"></a>
 ## [9.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.4...v9.1.5) (2021-12-05)
 

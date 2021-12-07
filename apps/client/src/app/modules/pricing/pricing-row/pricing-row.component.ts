@@ -32,7 +32,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   price: Price = { hq: 0, nq: 0, fromVendor: false, fromMB: false };
   vendorPrice: Price;
   customPrice = false;
-  amount: ItemAmount;
+  amount: ItemAmount = { nq: 0, hq: 0 };
   priceFromCrafting = false;
   @Output()
   save: EventEmitter<void> = new EventEmitter<void>();
