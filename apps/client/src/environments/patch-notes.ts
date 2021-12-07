@@ -15,4 +15,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **db:** desynth details popup now includes better scrolling system.`;
+* **db:** desynth details popup now includes better scrolling system.`;
