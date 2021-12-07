@@ -1,0 +1,602 @@
+{
+  "3276800": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276801": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276802": {
+    "en": "Purchase Gordian Items",
+    "ja": "ゴルディオン関連アイテムの取引",
+    "de": "Gordische Gegenstände",
+    "fr": "Échange d'objets gordiens"
+  },
+  "3276803": {
+    "en": "Purchase Midan Items",
+    "ja": "ミダース関連アイテムの取引",
+    "de": "Midische Gegenstände",
+    "fr": "Échange d'objets midins"
+  },
+  "3276804": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276805": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276806": {
+    "en": "Purchase Alexandrian Items",
+    "ja": "アレキサンダー関連アイテムの取引",
+    "de": "Alexandrische Gegenstände",
+    "fr": "Échange d'objets alexandrins"
+  },
+  "3276807": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276808": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276809": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276810": {
+    "en": "Purchase Artifact Gear",
+    "ja": "新生古典装備の取引",
+    "de": "Artefakt-Ausrüstung",
+    "fr": "Acheter un artefact"
+  },
+  "3276811": {
+    "en": "Purchase Doman Gear",
+    "ja": "ドマ風装備の取引",
+    "de": "Domanische Ausrüstung",
+    "fr": "Acheter un équipement domien"
+  },
+  "3276812": {
+    "en": "Improve Shire Gear",
+    "ja": "「イディルシャイア製装備」の改良",
+    "de": "Hinterländische Ausrüstung verbessern",
+    "fr": "Améliorer un équipement idylléen"
+  },
+  "3276813": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276814": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276815": {
+    "en": "Purchase Garo Gear (DoW)",
+    "ja": "守りし者の装備の取引（ファイター）",
+    "de": "Garo-Ausrüstung (Krieger)",
+    "fr": "Armures Garo (guerre)"
+  },
+  "3276816": {
+    "en": "Purchase Garo Gear (DoM)",
+    "ja": "守りし者の装備の取引（ソーサラー）",
+    "de": "Garo-Ausrüstung (Magier)",
+    "fr": "Armures Garo (magie)"
+  },
+  "3276817": {
+    "en": "Use Wolf Marks (ARR)",
+    "ja": "対人戦績の取引（新生）",
+    "de": "Wolfsmarken (A Realm Reborn)",
+    "fr": "Marques de loup (A Realm Reborn)"
+  },
+  "3276818": {
+    "en": "Use Wolf Marks (ARR)",
+    "ja": "対人戦績の取引（新生）",
+    "de": "Wolfsmarken (A Realm Reborn)",
+    "fr": "Marques de loup (A Realm Reborn)"
+  },
+  "3276819": {
+    "en": "Use Wolf Marks (ARR)",
+    "ja": "対人戦績の取引（新生）",
+    "de": "Wolfsmarken (A Realm Reborn)",
+    "fr": "Marques de loup (A Realm Reborn)"
+  },
+  "3276820": {
+    "en": "Use Wolf Marks (ARR)",
+    "ja": "対人戦績の取引（新生）",
+    "de": "Wolfsmarken (A Realm Reborn)",
+    "fr": "Marques de loup (A Realm Reborn)"
+  },
+  "3276821": {
+    "en": "Use Wolf Marks (Heavensward)",
+    "ja": "対人戦績の取引（蒼天）",
+    "de": "Wolfsmarken (Heavensward)",
+    "fr": "Marques de loup (Heavensward)"
+  },
+  "3276822": {
+    "en": "Use Wolf Marks (Heavensward)",
+    "ja": "対人戦績の取引（蒼天）",
+    "de": "Wolfsmarken (Heavensward)",
+    "fr": "Marques de loup (Heavensward)"
+  },
+  "3276823": {
+    "en": "Use Wolf Marks (Heavensward)",
+    "ja": "対人戦績の取引（蒼天）",
+    "de": "Wolfsmarken (Heavensward)",
+    "fr": "Marques de loup (Heavensward)"
+  },
+  "3276824": {
+    "en": "Use Wolf Marks (Heavensward)",
+    "ja": "対人戦績の取引（蒼天）",
+    "de": "Wolfsmarken (Heavensward)",
+    "fr": "Marques de loup (Heavensward)"
+  },
+  "3276825": {
+    "en": "Purchase Disciple of War Gear",
+    "ja": "ファイター向け防具の購入",
+    "de": "Ausrüstung (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "3276826": {
+    "en": "Purchase Disciple of Magic Gear",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Ausrüstung (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "3276827": {
+    "en": "Purchase Disciple of the Hand/Land Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Ausrüstung (Handwerker/Sammler)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "3276828": {
+    "en": "Purchase Disciple of War Arms",
+    "ja": "ファイター向け武器の購入",
+    "de": "Waffen (Krieger)",
+    "fr": "Armes (guerre)"
+  },
+  "3276829": {
+    "en": "Purchase Disciple of Magic Arms",
+    "ja": "ソーサラー向け武器の購入",
+    "de": "Waffen (Magier)",
+    "fr": "Armes (magie)"
+  },
+  "3276830": {
+    "en": "Purchase Disciple of the Hand Tools",
+    "ja": "クラフター向け道具の購入",
+    "de": "Werkzeuge (Handwerker)",
+    "fr": "Outils (artisanat)"
+  },
+  "3276831": {
+    "en": "Purchase Disciple of the Land Tools",
+    "ja": "ギャザラー向け道具の購入",
+    "de": "Werkzeuge (Sammler)",
+    "fr": "Outils (récolte)"
+  },
+  "3276832": {
+    "en": "Purchase Disciple of War Gear",
+    "ja": "ファイター向け防具の購入",
+    "de": "Ausrüstung (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "3276833": {
+    "en": "Purchase Disciple of Magic Gear",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Ausrüstung (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "3276834": {
+    "en": "Purchase Disciple of the Hand/Land Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Ausrüstung (Handwerker/Sammler)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "3276835": {
+    "en": "Purchase Disciple of War Arms",
+    "ja": "ファイター向け武器の購入",
+    "de": "Waffen (Krieger)",
+    "fr": "Armes (guerre)"
+  },
+  "3276836": {
+    "en": "Purchase Disciple of Magic Arms",
+    "ja": "ソーサラー向け武器の購入",
+    "de": "Waffen (Magier)",
+    "fr": "Armes (magie)"
+  },
+  "3276837": {
+    "en": "Purchase Disciple of the Hand Tools",
+    "ja": "クラフター向け道具の購入",
+    "de": "Werkzeuge (Handwerker)",
+    "fr": "Outils (artisanat)"
+  },
+  "3276838": {
+    "en": "Purchase Disciple of the Land Tools",
+    "ja": "ギャザラー向け道具の購入",
+    "de": "Werkzeuge (Sammler)",
+    "fr": "Outils (récolte)"
+  },
+  "3276839": {
+    "en": "Purchase Job-specific Gear",
+    "ja": "ジョブ専用装備の再購入",
+    "de": "Jobspezifische Ausrüstung",
+    "fr": "Équipement de job"
+  },
+  "3276840": {
+    "en": "Purchase Quest Rewards",
+    "ja": "報酬の再購入",
+    "de": "Auftragsvergütungen",
+    "fr": "Récompenses"
+  },
+  "3276841": {
+    "en": "Purchase Gender-specific Gear",
+    "ja": "性別専用装備の取引",
+    "de": "Ausrüstung (Mann/Frau)",
+    "fr": "Équipement hommes/femmes"
+  },
+  "3276842": {
+    "en": "Deal in Spoils",
+    "ja": "特殊品の取引",
+    "de": "Seltene Gegenstände",
+    "fr": "Articles rares"
+  },
+  "3276843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276844": {
+    "en": "Use Wolf Marks (Stormblood)",
+    "ja": "対人戦績の取引（紅蓮）",
+    "de": "Wolfsmarken (Stormblood)",
+    "fr": "Marques de loup (Stormblood)"
+  },
+  "3276845": {
+    "en": "Use Wolf Marks (Stormblood)",
+    "ja": "対人戦績の取引（紅蓮）",
+    "de": "Wolfsmarken (Stormblood)",
+    "fr": "Marques de loup (Stormblood)"
+  },
+  "3276846": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "3276847": {
+    "en": "Purchase Gear",
+    "ja": "防具の購入",
+    "de": "Ausrüstung",
+    "fr": "Équipement"
+  },
+  "3276848": {
+    "en": "Purchase Seasonal Event Items",
+    "ja": "シーズナルイベント報酬の再購入",
+    "de": "Saisonale Gegenstände",
+    "fr": "Objets (événements saisonniers)"
+  },
+  "3276849": {
+    "en": "Purchase Achievement Rewards",
+    "ja": "アチーブメント報酬の再購入",
+    "de": "Gegenstände für Errungenschaften",
+    "fr": "Récompenses de hauts faits"
+  },
+  "3276850": {
+    "en": "Earn Resistance Tokens",
+    "ja": "解放軍の手形との交換（NQ）",
+    "de": "NQ-Ausrüstung in Armeemarken umtauschen",
+    "fr": "Échanger des pièces d'équipement (QN) contre des avoirs de l'armée de libération"
+  },
+  "3276851": {
+    "en": "Earn Resistance Tokens (HQ)",
+    "ja": "解放軍の手形との交換（HQ）",
+    "de": "HQ-Ausrüstung in Armeemarken umtauschen",
+    "fr": "Échanger des pièces d'équipement (HQ) contre des avoirs de l'armée de libération"
+  },
+  "3276852": {
+    "en": "Use Resistance Tokens",
+    "ja": "解放軍の手形の取引（NQ）",
+    "de": "Armeemarken in NQ-Ausrüstung umtauschen",
+    "fr": "Échanger des objets contre des pièces d'équipement (QN)"
+  },
+  "3276853": {
+    "en": "Use Resistance Tokens (HQ)",
+    "ja": "解放軍の手形の取引（HQ）",
+    "de": "Armeemarken in HQ-Ausrüstung umtauschen",
+    "fr": "Échanger des objets contre des pièces d'équipement (HQ)"
+  },
+  "3276854": {
+    "en": "Earn Rakshasa Tokens",
+    "ja": "羅刹の手形との交換（NQ）",
+    "de": "NQ-Ausrüstung in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des pièces d'équipement (QN) contre des avoirs rakshasa"
+  },
+  "3276855": {
+    "en": "Earn Rakshasa Tokens (HQ)",
+    "ja": "羅刹の手形との交換（HQ）",
+    "de": "HQ-Ausrüstung in Rakshasa-Marken umtauschen",
+    "fr": "Échanger des pièces d'équipement (HQ) contre des avoirs rakshasa"
+  },
+  "3276856": {
+    "en": "Use Rakshasa Tokens (HQ)",
+    "ja": "羅刹の手形の取引",
+    "de": "Rakshasa-Marken in HQ-Ausrüstung umtauschen",
+    "fr": "Échanger des avoirs rakshasa contre des pièces d'équipement"
+  },
+  "3276857": {
+    "en": "Purchase Disciple of War Gear",
+    "ja": "ファイター向け防具の購入",
+    "de": "Ausrüstung (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "3276858": {
+    "en": "Purchase Disciple of Magic Gear",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Ausrüstung (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "3276859": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276860": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276861": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276862": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276863": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276864": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276865": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276866": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276867": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276868": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276869": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276870": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276871": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276872": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276873": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276874": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276875": {
+    "en": "Earn Eulmoran Certificates of Import",
+    "ja": "ユールモアの手形G1との交換（NQ）",
+    "de": "Eulmore-Marken (NQ)",
+    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore I"
+  },
+  "3276876": {
+    "en": "Earn Eulmoran Certificates of Import (HQ)",
+    "ja": "ユールモアの手形G1との交換（HQ）",
+    "de": "Eulmore-Marken (HQ)",
+    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore I"
+  },
+  "3276877": {
+    "en": "Purchase Augmented Facet Equipment",
+    "ja": "ミーン強化装備の取引",
+    "de": "Modifizierte Manufaktur-Ausrüstung",
+    "fr": "Amélioration de pièces d'équipement de la halle"
+  },
+  "3276878": {
+    "en": "Earn Eulmoran Certificates of Novelty",
+    "ja": "ユールモアの手形G2との交換（NQ）",
+    "de": "Eulmore-Marken II (NQ)",
+    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore II"
+  },
+  "3276879": {
+    "en": "Earn Eulmoran Certificates of Novelty (HQ)",
+    "ja": "ユールモアの手形G2との交換（HQ）",
+    "de": "Eulmore-Marken II (HQ)",
+    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore II"
+  },
+  "3276880": {
+    "en": "Purchase Augmented Neo-Ishgardian Equipment",
+    "ja": "ネオイシュガルディアン強化装備の取引",
+    "de": "Neo-Ishgarder Verstärkungen",
+    "fr": "Amélioration de pièces d'équipement néo-ishgardaises"
+  },
+  "3276881": {
+    "en": "Crafters' Scrip Exchange",
+    "ja": "クラフタースクリップの取引",
+    "de": "Handwerkerscheine",
+    "fr": "Échange d'assignats d'artisan"
+  },
+  "3276882": {
+    "en": "Gatherers' Scrip Exchange",
+    "ja": "ギャザラースクリップの取引",
+    "de": "Sammlerscheine",
+    "fr": "Échange d'assignats de récolteur"
+  },
+  "3276883": {
+    "en": "Earn Eulmoran Certificates of Grandeur",
+    "ja": "ユールモアの手形G3との交換（NQ）",
+    "de": "Eulmore-Marken III (NQ)",
+    "fr": "Échange de pièces d'équipement (QN) contre des avoirs d'Eulmore III"
+  },
+  "3276884": {
+    "en": "Earn Eulmoran Certificates of Grandeur (HQ)",
+    "ja": "ユールモアの手形G3との交換（HQ）",
+    "de": "Eulmore-Marken III (HQ)",
+    "fr": "Échange de pièces d'équipement (HQ) contre des avoirs d'Eulmore III"
+  },
+  "3276885": {
+    "en": "Purchase Augmented Exarchic Equipment",
+    "ja": "エクサーク強化装備の取引",
+    "de": "Modifizierte Exarchen-Ausrüstung",
+    "fr": "Amélioration de pièces d'équipement de l'exarchat"
+  },
+  "3276886": {
+    "en": "Purchase Disciple of War Gear",
+    "ja": "ファイター向け防具の購入",
+    "de": "Ausrüstung (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "3276887": {
+    "en": "Purchase Disciple of Magic Gear",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Ausrüstung (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "3276888": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276889": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276890": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276894": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276895": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276896": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276897": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276898": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3276899": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  }
+}

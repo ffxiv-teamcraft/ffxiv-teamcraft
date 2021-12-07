@@ -2,7 +2,7 @@
   <ng-template #ventureTemplate let-venture>
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta
-        [nzTitle]="venture.name ? (venture.id | i18nRow:'ventures' | i18n) : (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n)"
+        [nzTitle]="venture.name ? (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n): (venture.id | i18nRow:'ventures' | i18n)"
         nzDescription="Lv. {{venture.lvl}}">
       </nz-list-item-meta>
       <ng-template #content>

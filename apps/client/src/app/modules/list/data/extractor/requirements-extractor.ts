@@ -61,7 +61,7 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
           }
         }
         // Modified airships
-        if (tradeSources.length === 1 && tradeSources[0].shopName === 'Submersible Frames') {
+        if (tradeSources.length === 1 && tradeSources[0].shopName.en === 'Submersible Frames') {
           const trade = tradeSources[0].trades[0];
           return [{
             id: trade.currencies[0].id,

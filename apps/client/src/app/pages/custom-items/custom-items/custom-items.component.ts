@@ -523,7 +523,6 @@ export class CustomItemsComponent {
               areaId: npc.position === null ? 21 : npc.position.zoneid
             }
           ],
-          shopName: '',
           trades: [
             {
               currencies: [],

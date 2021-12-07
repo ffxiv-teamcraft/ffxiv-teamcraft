@@ -23,7 +23,6 @@ import { PermissionLevelPipe } from './pipes/permission-level.pipe';
 import { ElementIconPipe } from './pipes/element-icon.pipe';
 import { FishEyesDurationPipe } from './pipes/fish-eyes-duration.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
-import { ShopNamePipe } from './pipes/shop-name.pipe';
 import { AetheryteNamePipe } from './pipes/aetheryte-name.pipe';
 import { CharacterAvatarPipe } from './pipes/character-avatar.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
@@ -75,7 +74,6 @@ const pipes = [
   ElementIconPipe,
   FishEyesDurationPipe,
   KeysPipe,
-  ShopNamePipe,
   AetheryteNamePipe,
   CharacterAvatarPipe,
   DurationPipe,

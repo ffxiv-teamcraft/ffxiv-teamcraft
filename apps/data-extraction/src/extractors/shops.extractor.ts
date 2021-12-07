@@ -21,6 +21,7 @@ interface Trade {
 interface Shop {
   id: number;
   topicSelectId?: number;
+  gc?: number;
   type: 'SpecialShop' | 'GCShop' | 'GilShop' | 'FccShop';
   npcs: number[];
   trades: Trade[];
@@ -44,16 +45,22 @@ export class ShopsExtractor extends AbstractExtractor {
       this.aggregateAllPages('https://xivapi.com/CustomTalk?columns=ID,MainOption_*,Name_*,SpecialLinks*,ScriptInstruction*,ScriptArg*,Icon*'),
       this.aggregateAllPages('https://xivapi.com/PreHandler?columns=ID,TargetTargetID,UnlockQuestTargetID,Image'),
       this.aggregateAllPages('https://xivapi.com/EnpcResident?columns=ID,Base'),
-      this.aggregateAllPages('https://xivapi.com/FateShop?columns=ID,SpecialShop0TargetID,SpecialShop1TargetID')
+      this.aggregateAllPages('https://xivapi.com/FateShop?columns=ID,SpecialShop0TargetID,SpecialShop1TargetID'),
+      this.aggregateAllPages('https://xivapi.com/InclusionShop?columns=ID,Category*')
     ]).pipe(
-      map(([gilShops, specialShops, gcShopItems, gcShopCategories, topicSelect, customTalk, preHandler, npcs, fateShops]) => {
+      map(([gilShops,
+             specialShops,
+             gcShopItems, gcShopCategories,
+             topicSelect, customTalk, preHandler, npcs,
+             fateShops,
+             inclusionShops]) => {
         this.progress.stop();
         const shops = uniqBy([
           ...this.handleGilShops(gilShops),
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
-        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops);
+        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops);
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -76,6 +83,7 @@ export class ShopsExtractor extends AbstractExtractor {
       const shop: Shop = {
         id: category.ID,
         type: 'GCShop',
+        gc: category.GrandCompany.ID,
         npcs: [],
         trades: gcShopItems
           .filter(item => item.ID.startsWith(category.ID.toString()))
@@ -83,18 +91,20 @@ export class ShopsExtractor extends AbstractExtractor {
             return {
               requiredGCRank: item.RequiredGrandCompanyRankTargetID,
               currencies: [{
-                id: [20, 21, 22][category.GrandCompany.ID],
+                id: [20, 21, 22][category.GrandCompany.ID - 1],
                 amount: item.CostGCSeals
-              }],
+              }].filter(row => row.id > 0 && row.amount > 0),
               items: [{
                 id: item.ItemTargetID,
                 amount: 1
-              }]
+              }].filter(row => row.id > 0 && row.amount > 0)
             };
           }).flat()
+          .filter(t => t.items.length > 0 && t.currencies.length > 0)
       };
       return shop;
-    }).flat();
+    }).flat()
+      .filter(s => s.trades.length > 0);
   }
 
   private handleGilShops(gilShops: any[]): Shop[] {
@@ -133,23 +143,11 @@ export class ShopsExtractor extends AbstractExtractor {
       const shop: Shop = {
         id: specialShop.ID,
         type: 'SpecialShop',
-        npcs: [], // Handled later on
+        npcs: [],
         trades: tradeIds.map(tradeID => {
           const tradeIndexes = [`${tradeID}0`, `${tradeID}1`, `${tradeID}2`];
           return {
             currencies: tradeIndexes.map(tradeIndex => {
-              // For debugging, you'll need this
-              // if (specialShop.ID === 1770233 && specialShop[`ItemCost${tradeIndex}TargetID`] > 0) {
-              //   console.log(`ItemCost${tradeIndex}TargetID`, specialShop[`ItemCost${tradeIndex}TargetID`]);
-              //   console.log(`CountCost${tradeIndex}`, specialShop[`CountCost${tradeIndex}`]);
-              //   console.log(`HQCost${tradeIndex}`, specialShop[`HQCost${tradeIndex}`]);
-              //   console.log(`CollectabilityRatingCost${tradeIndex}`, specialShop[`CollectabilityRatingCost${tradeIndex}`]);
-              //   console.log('--------------------------');
-              //   console.log(`ItemReceive${tradeIndex}TargetID`, specialShop[`ItemReceive${tradeIndex}TargetID`]);
-              //   console.log(`CountReceive${tradeIndex}`, specialShop[`CountReceive${tradeIndex}`]);
-              //   console.log(`HQReceive${tradeIndex}`, specialShop[`HQReceive${tradeIndex}`]);
-              //   console.log('==========================');
-              // }
               const entry = {
                 id: specialShop[`ItemCost${tradeIndex}TargetID`],
                 amount: specialShop[`CountCost${tradeIndex}`],
@@ -196,8 +194,12 @@ export class ShopsExtractor extends AbstractExtractor {
       + shop.trades.map(t => t.items.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':');
   }
 
-  private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[]): Shop[] {
-    const { npcsByShopID, topicSelects, questReqs } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops);
+  private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[]): Shop[] {
+    const {
+      npcsByShopID,
+      topicSelects,
+      questReqs
+    } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops);
 
     return shops.map(shop => {
       if (questReqs[shop.id]) {
@@ -215,7 +217,10 @@ export class ShopsExtractor extends AbstractExtractor {
     return 'shops';
   }
 
-  private buildShopLinkMaps(npcData: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[]): ShopLinkMaps {
+  private buildShopLinkMaps(npcData: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[]): ShopLinkMaps {
+    const questReqs = {};
+    const topicSelects = {};
+
     let npcsByShopID = npcData.reduce((acc, npc) => {
       for (let i = 0; i < 32; i++) {
         const dataID = npc.Base[`ENpcData${i}`];
@@ -226,10 +231,8 @@ export class ShopsExtractor extends AbstractExtractor {
       }
       return acc;
     }, {});
+    // First of all, link shops from CustomTalks, since talks can also provide some PreHandler or TopicSelect entries
     npcsByShopID = this.processCustomTalkLinks(customTalk, npcsByShopID);
-
-    const questReqs = {};
-    const topicSelects = {};
 
     topicSelect.forEach((topic) => {
       for (let i = 0; i < 10; i++) {
@@ -245,8 +248,20 @@ export class ShopsExtractor extends AbstractExtractor {
     });
 
     preHandlers.forEach(preHandler => {
-      npcsByShopID[preHandler.TargetTargetID] = [...(npcsByShopID[preHandler.TargetTargetID] || []), npcsByShopID[preHandler.ID]];
-      delete npcsByShopID[preHandler.ID];
+      npcsByShopID[preHandler.TargetTargetID] = [...(npcsByShopID[preHandler.TargetTargetID] || []), ...(npcsByShopID[preHandler.ID] || [])];
+    });
+
+    // Then InclusionShops because they sometimes link from PreHandler
+    inclusionShops.forEach(inclusionShop => {
+      for (let i = 0; i < 30; i++) {
+        const category = inclusionShop[`Category${i}`];
+        if (!category) {
+          continue;
+        }
+        category.InclusionShopSeries.forEach(shopSeries => {
+          npcsByShopID[shopSeries.SpecialShopTargetID] = [...(npcsByShopID[shopSeries.SpecialShopTargetID] || []), ...(npcsByShopID[inclusionShop.ID] || [])];
+        });
+      }
     });
 
     fateShops.forEach(fateShop => {
@@ -284,7 +299,7 @@ export class ShopsExtractor extends AbstractExtractor {
           return dataIdsByCustomTalks[key].reduce((obj, dataId) => {
             return {
               ...obj,
-              [dataId]: [...(npcIdsByDataId[dataId] || []), npcIdsByDataId[key]]
+              [dataId]: [...(npcIdsByDataId[dataId] || []), ...(npcIdsByDataId[key] || [])]
             };
           }, acc);
         }
