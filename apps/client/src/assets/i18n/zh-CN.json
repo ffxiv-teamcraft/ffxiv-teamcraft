@@ -804,6 +804,7 @@
     "HEAVENSWARD": "苍穹之禁城",
     "STORMBLOOD": "红莲之狂潮",
     "SHADOWBRINGERS": "暗影之逆焰",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "已过期",
     "GEAR": "装备",
     "CONSUMABLE": "消耗品",
@@ -830,10 +831,12 @@
     "WHM": "白魔",
     "SCH": "学者",
     "AST": "占星",
+    "SGE": "SGE",
     "MNK": "武僧",
     "DRG": "龙骑",
     "NIN": "忍者",
     "SAM": "武士",
+    "RPR": "RPR",
     "BRD": "诗人",
     "MCH": "机工",
     "DNC": "舞者",
@@ -1545,7 +1548,9 @@
       "Required_control": "需要加工精度",
       "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
       "X_Equipped": "已装备 {{amount}}：",
-      "Item_series": "套装详情"
+      "Item_series": "套装详情",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "上钩时间",
