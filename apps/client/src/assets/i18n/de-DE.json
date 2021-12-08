@@ -804,6 +804,7 @@
     "HEAVENSWARD": "Heavensward",
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "veraltet",
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -830,10 +831,12 @@
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
+    "SGE": "SGE",
     "MNK": "MÖN",
     "DRG": "DRG",
     "NIN": "NIN",
     "SAM": "SAM",
+    "RPR": "RPR",
     "BRD": "BRD",
     "MCH": "MCH",
     "DNC": "TÄN",
@@ -1545,7 +1548,9 @@
       "Required_control": "benötigte Kontrolle",
       "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
       "X_Equipped": "{{amount}} Ausgerüstet:",
-      "Item_series": "Set-Details"
+      "Item_series": "Set-Details",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
