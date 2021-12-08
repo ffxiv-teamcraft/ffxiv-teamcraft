@@ -5,7 +5,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { sum } from 'lodash';
 import { Memoized } from '../../../core/decorators/memoized';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first, map, shareReplay } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
@@ -51,16 +51,34 @@ export class MateriasPopupComponent {
 
   mobileEdit: number;
 
+  bonusesCache: Record<string, Observable<{ overcapped: boolean, value: number }>> = {};
+  meldingChancesCache: Record<string, Observable<number>> = {};
+
   constructor(private lazyData: LazyDataFacade, public materiasService: MateriaService,
               private modalRef: NzModalRef, private statsService: StatsService) {
   }
 
   getBonus(materia: number, index: number): Observable<{ overcapped: boolean, value: number }> {
-    return this.materiasService.getMateriaBonus(this.equipmentPiece, materia, index);
+    const cacheKey = `${materia}:${index}`;
+    if (!this.bonusesCache[cacheKey]) {
+      this.bonusesCache[cacheKey] = this.materiasService.getMateriaBonus(this.equipmentPiece, materia, index).pipe(
+        shareReplay(1)
+      );
+    }
+    return this.bonusesCache[cacheKey];
   }
 
   getMeldingChances(materiaItemId: number, slot: number): Observable<number> {
-    return this.materiasService.getMeldingChances(this.equipmentPiece, materiaItemId, slot);
+    if (!materiaItemId || !this.equipmentPiece.materias[slot]) {
+      return of(0);
+    }
+    const cacheKey = `${materiaItemId}:${slot}`;
+    if (!this.meldingChancesCache[cacheKey]) {
+      this.meldingChancesCache[cacheKey] = this.materiasService.getMeldingChances(this.equipmentPiece, materiaItemId, slot).pipe(
+        shareReplay(1)
+      );
+    }
+    return this.meldingChancesCache[cacheKey];
   }
 
   resetMaterias(index: number): void {
@@ -111,6 +129,8 @@ export class MateriasPopupComponent {
         if (materia > 0 && meldingChances === 0) {
           return;
         }
+        this.meldingChancesCache = {};
+        this.bonusesCache = {};
         this.equipmentPiece = {
           ...this.equipmentPiece,
           materias: [

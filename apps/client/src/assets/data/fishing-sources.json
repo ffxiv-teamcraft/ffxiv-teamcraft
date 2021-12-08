@@ -19835,5 +19835,111 @@
       ],
       "snagging": false
     }
+  ],
+  "35604": [
+    {
+      "spot": 255,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588,
+      "snagging": true
+    }
+  ],
+  "36386": [
+    {
+      "spot": 252,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29717,
+      "snagging": false
+    }
+  ],
+  "36387": [
+    {
+      "spot": 252,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36592,
+      "snagging": false
+    }
+  ],
+  "36390": [
+    {
+      "spot": 253,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588,
+      "snagging": false
+    }
+  ],
+  "36392": [
+    {
+      "spot": 253,
+      "tug": 0,
+      "bait": 36588,
+      "snagging": false
+    }
+  ],
+  "36395": [
+    {
+      "spot": 254,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588
+    }
+  ],
+  "36396": [
+    {
+      "spot": 254,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36588,
+      "snagging": false
+    }
+  ],
+  "36422": [
+    {
+      "spot": 261,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36592,
+      "duration": 20,
+      "snagging": false
+    }
+  ],
+  "36454": [
+    {
+      "spot": 269,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36451,
+      "weathers": [
+        2
+      ],
+      "snagging": false
+    }
+  ],
+  "36471": [
+    {
+      "spot": 273,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36594,
+      "snagging": false
+    }
+  ],
+  "36472": [
+    {
+      "spot": 273,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36470,
+      "weathers": [
+        2
+      ],
+      "weathersFrom": [
+        49
+      ]
+    }
   ]
 }

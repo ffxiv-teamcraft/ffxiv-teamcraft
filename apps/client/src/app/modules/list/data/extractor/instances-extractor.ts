@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 
 export class InstancesExtractor extends AbstractExtractor<number[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   isAsync(): boolean {
@@ -20,12 +20,8 @@ export class InstancesExtractor extends AbstractExtractor<number[]> {
     return DataType.INSTANCES;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<number[]> {
-    return this.lazyData.getRow('instanceSources', item.id);
+  protected doExtract(itemId: number): Observable<number[]> {
+    return this.lazyData.getRow('instanceSources', itemId);
   }
 
 }

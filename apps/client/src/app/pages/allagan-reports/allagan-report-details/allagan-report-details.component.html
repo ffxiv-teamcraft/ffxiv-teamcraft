@@ -295,7 +295,7 @@
                     </nz-form-control>
                   </nz-form-item>
                   <nz-form-item>
-                    <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+                    <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
                       <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
                                        formControlName="duration">

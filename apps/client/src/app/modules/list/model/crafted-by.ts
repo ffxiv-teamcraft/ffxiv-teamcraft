@@ -4,7 +4,6 @@ import { Complexity } from '../../../model/garland-tools/complexity';
 
 export interface CraftedBy {
   itemId: number | string;
-  icon: string;
   lvl: number;
   stars_tooltip: string;
   id: string;

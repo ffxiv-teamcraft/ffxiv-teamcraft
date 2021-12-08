@@ -61,7 +61,7 @@
             </nz-form-item>
             <!--Elvl filter (equipment level)-->
             <nz-form-item fxLayout="row" fxLayoutAlign="center center">
-              <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
+              <nz-form-label nzFor="elvl">{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group fxLayout="row" class="input-min-max">
                   <nz-input-number [nzMax]="gearset.level" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
@@ -133,7 +133,7 @@
         <nz-select [ngModel]="food$ | async" (ngModelChange)="setGearsetPiece(gearset, 'food', $event)" [style.width.px]="250"
                    [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear nzSize="small" [compareWith]="foodComparator">
           <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
-                     [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
+                     [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true | async)"
                      nzCustomContent>
             <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
             <div class="food-bonus" *ngFor="let bonus of food | foodBonuses | async">

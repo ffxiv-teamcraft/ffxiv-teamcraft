@@ -1,6 +1,6 @@
 export interface LazyFishingSource {
   spot:              number;
-  hookset:           number;
+  hookset?:          number;
   tug:               number;
   bait:              number;
   snagging?:         boolean;

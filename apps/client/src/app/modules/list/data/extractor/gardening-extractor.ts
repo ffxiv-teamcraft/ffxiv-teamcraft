@@ -12,9 +12,9 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 
 export class GardeningExtractor extends AbstractExtractor<GardeningData> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade,
+  constructor( private lazyData: LazyDataFacade,
               private http: HttpClient) {
-    super(gt);
+    super();
   }
 
   isAsync(): boolean {
@@ -29,12 +29,8 @@ export class GardeningExtractor extends AbstractExtractor<GardeningData> {
     return true;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<GardeningData> {
-    return this.lazyData.getRow('seeds', item.id).pipe(
+  protected doExtract(itemId: number): Observable<GardeningData> {
+    return this.lazyData.getRow('seeds', itemId).pipe(
       withLazyData(this.lazyData, 'gardeningSeedIds'),
       switchMap(([entry, gardeningSeedIds]) => {
         if (!entry) {

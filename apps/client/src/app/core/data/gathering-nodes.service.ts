@@ -127,7 +127,7 @@ export class GatheringNodesService {
 
   private getBaitChain(baitId: number, fishingSpot: LazyFishingSpot, fishingSources: LazyData['fishingSources'], currentChain: FishingBait[] = []): FishingBait[] {
     // If it's a mooch
-    if (fishingSpot.fishes.includes(baitId)) {
+    if (fishingSpot.fishes.includes(baitId) && fishingSources[baitId]) {
       const fishingSource = fishingSources[baitId].find(s => s.spot === fishingSpot.id);
       return this.getBaitChain(fishingSource.bait, fishingSpot, fishingSources, [...currentChain, {
         id: baitId,

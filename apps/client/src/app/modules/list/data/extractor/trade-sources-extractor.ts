@@ -1,20 +1,21 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { TradeSource } from '../../model/trade-source';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Trade } from '../../model/trade';
-import { Item } from '../../../../model/garland-tools/item';
 import { TradeNpc } from '../../model/trade-npc';
-import { TradeEntry } from '../../model/trade-entry';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
+import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
+import { LazyShop } from '../../../../lazy-data/model/lazy-shop';
+import { I18nName } from '../../../../model/common/i18n-name';
+import { LazyNpc } from '../../../../lazy-data/model/lazy-npc';
+import { uniqBy } from 'lodash';
+
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   public isAsync(): boolean {
@@ -25,24 +26,31 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
     return DataType.TRADE_SOURCES;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<TradeSource[]> {
-    return combineLatest([
+  protected doExtract(itemId: number): Observable<TradeSource[]> {
+    const names$ = combineLatest([
+      this.lazyData.getEntry('specialShopNames'),
+      this.lazyData.getEntry('topicSelectNames'),
+      this.lazyData.getEntry('gilShopNames'),
+      this.lazyData.getEntry('gcNames')
+    ]).pipe(
+      map(([specialShopNames, topicSelectNames, gilShopNames, gcNames]) => {
+        return { specialShopNames, topicSelectNames, gilShopNames, gcNames };
+      })
+    );
+    return safeCombineLatest([
       this.lazyData.getEntry('hwdInspections'),
       this.lazyData.getEntry('collectables'),
       this.lazyData.getEntry('npcs'),
-      this.lazyData.getEntry('itemIcons'),
-      this.lazyData.getEntry('collectablesShopItemGroup')
+      this.lazyData.getEntry('collectablesShopItemGroup'),
+      this.lazyData.getEntry('shops'),
+      names$
     ]).pipe(
-      map(([hwdInspections, collectables, npcs, itemIcons, collectablesShopItemGroup]) => {
+      map(([hwdInspections, collectables, npcs, collectablesShopItemGroup, shops, names]) => {
         const inspection = hwdInspections.find(row => {
-          return row.receivedItem === item.id;
+          return row.receivedItem === itemId;
         });
         const collectableReward = Object.entries<any>(collectables).find(([, c]) => {
-          return c.reward === item.id;
+          return c.reward === itemId;
         });
         if (inspection) {
           const npc: TradeNpc = {
@@ -56,22 +64,17 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
           };
           return [{
             npcs: [npc],
-            shopName: '',
             trades: [{
               currencies: [
                 {
                   id: inspection.requiredItem,
-                  amount: inspection.amount,
-                  hq: false,
-                  icon: itemIcons[inspection.requiredItem]
+                  amount: inspection.amount
                 }
               ],
               items: [
                 {
                   id: inspection.receivedItem,
-                  amount: inspection.amount,
-                  hq: false,
-                  icon: itemIcons[inspection.receivedItem]
+                  amount: inspection.amount
                 }
               ]
             }]
@@ -94,26 +97,29 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
                 currencies: [
                   {
                     id: +collectableReward[0],
-                    amount: 1,
-                    hq: false,
-                    icon: itemIcons[+collectableReward[0]]
+                    amount: 1
                   }
                 ],
                 items: [
                   {
                     id: collectableReward[1].reward,
-                    amount: collectableReward[1][tier].scrip,
-                    hq: false,
-                    icon: itemIcons[collectableReward[1].reward]
+                    amount: collectableReward[1][tier].scrip
                   }
                 ]
               };
             })
           }];
         }
-        return (item.tradeShops || []).map(ts => {
+
+        const { specialShopNames, topicSelectNames, gilShopNames, gcNames } = names;
+        return uniqBy(shops.filter(shop => {
+          return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId));
+        }).map(shop => {
           return {
-            npcs: ts.npcs.map(npcId => {
+            id: shop.id,
+            type: shop.type,
+            shopName: this.getName(shop, specialShopNames, topicSelectNames, gilShopNames, gcNames, npcs),
+            npcs: shop.npcs.map(npcId => {
               const npc: TradeNpc = {
                 id: npcId
               };
@@ -128,46 +134,50 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
               }
               return npc;
             }),
-            trades: ts.listings.map(row => {
-              return <Trade>{
-                currencies: row.currency.filter(entry => {
-                  return itemData.getPartial(entry.id, 'item') !== undefined;
-                }).map(currency => {
-                  const currencyPartial = itemData.getPartial(currency.id, 'item').obj;
-                  return <TradeEntry>{
-                    id: currencyPartial.i,
-                    icon: currencyPartial.c,
-                    amount: currency.amount,
-                    hq: currency.hq === 1
-                  };
-                }),
-                items: row.item.map(tradeItem => {
-                  const itemPartialFetch = itemData.getPartial(tradeItem.id, 'item');
-                  if (itemPartialFetch !== undefined) {
-                    const itemPartial = itemPartialFetch.obj;
-                    return <TradeEntry>{
-                      id: itemPartial.i,
-                      icon: itemPartial.c,
-                      amount: tradeItem.amount,
-                      hq: tradeItem.hq === 1
-                    };
-                  } else if (+tradeItem.id === item.id) {
-                    return <TradeEntry>{
-                      id: item.id,
-                      icon: item.icon,
-                      amount: tradeItem.amount,
-                      hq: tradeItem.hq === 1
-                    };
-                  }
-                  return undefined;
-                }).filter(res => res !== undefined)
-              };
-            }),
-            shopName: ts.shop
+            trades: shop.trades.filter(trade => {
+              return trade.items.some(i => i.id === itemId);
+            })
           };
+        }), shop => {
+          return `${shop.npcs.map(npc => `${npc.id}|${npc.zoneId}`).join(':')}:${JSON.stringify(shop.trades)}`;
         });
-      })
+      }),
     );
+  }
+
+  private getName(shop: LazyShop,
+                  specialShopNames: Record<number, I18nName>,
+                  topicSelectNames: Record<number, I18nName>,
+                  gilShopNames: Record<number, I18nName>,
+                  gcNames: Record<number, I18nName>,
+                  npcs: Record<number, LazyNpc>): I18nName {
+    let name: I18nName;
+    switch (shop.type) {
+      case 'GilShop':
+        name = gilShopNames[shop.id];
+        break;
+      case 'SpecialShop':
+        if (shop.topicSelectId) {
+          name = Object.keys(specialShopNames[shop.id]).reduce((acc, key) => {
+            return {
+              ...acc,
+              [key]: `${specialShopNames[key]} - ${topicSelectNames[shop.topicSelectId]}`
+            };
+          }, {} as I18nName);
+        }
+        name = specialShopNames[shop.id];
+        break;
+      case 'GCShop':
+        name = gcNames[shop.gc];
+        break;
+    }
+    if (!name || name?.en === '' && shop.npcs.length > 0) {
+      const npcWithTitle = shop.npcs.find(npc => {
+        return npcs[npc].title?.en !== '';
+      });
+      return npcWithTitle ? npcs[npcWithTitle].title : name;
+    }
+    return name;
   }
 
 }

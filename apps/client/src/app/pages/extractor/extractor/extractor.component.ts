@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
-import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { HttpClient } from '@angular/common/http';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
-import { ItemData } from '../../../model/garland-tools/item-data';
+import { bufferCount, filter, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
-import * as _ from 'lodash';
 import { uniqBy } from 'lodash';
-import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, from, Observable, of, ReplaySubject } from 'rxjs';
 import { LazyDataWithExtracts } from '../../../lazy-data/lazy-data-types';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { getItemSource } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -79,7 +76,9 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing') || division.name.en.startsWith('Ornaments');
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Fixtures') ||
+              division.name.en.indexOf('Furnishings') > -1 || division.name.en.startsWith('Table') ||
+              division.name.en.startsWith('Wall-mounted') || division.name.en.startsWith('Ornaments');
             tab.recipes = tab.recipes.map(entry => {
               (entry as any).leves = Object.entries<any>(leves)
                 .filter(([, leve]) => {
@@ -263,36 +262,15 @@ export class ExtractorComponent {
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
     this.lazyData.getEntry('items').pipe(
       switchMap(lazyItems => {
-        const chunks = _.chunk(Object.keys(lazyItems), 100);
-        this.totalTodo$.next(chunks.length);
-        return requestsWithDelay(chunks.map(itemIds => {
-          return this.http.get<any[]>(`https://www.garlandtools.org/db/doc/item/en/3/${itemIds.join(',')}.json`).pipe(
-            map(items => this.serializer.deserialize<ItemData>(items.filter(i => !i.error).map(item => item.obj), [ItemData])),
-            switchMap((items: ItemData[]) => {
-              if (items.length === 0) {
-                return of([]);
-              }
-              return combineLatest(items.map(data => {
-                const item: any = {
-                  id: data.item.id
-                };
-                return this.extractor.addDataToItem(item, data).pipe(
-                  map(extract => {
-                    delete extract.yield;
-                    delete extract.requires;
-                    delete extract.workingOnIt;
-                    return extract;
-                  })
-                );
-              })).pipe(
-                first()
-              );
-            }),
-            tap(() => {
-              this.done$.next(this.done$.value + 1);
-            })
-          );
-        }), 200);
+        const itemIds = Object.keys(lazyItems);
+        this.totalTodo$.next(itemIds.length);
+        return from(itemIds).pipe(
+          mergeMap(itemId => {
+            return this.extractor.addDataToItem({ id: +itemId } as ListRow);
+          }, 100),
+          tap(() => this.done$.next(this.done$.value + 1)),
+          bufferCount(itemIds.length)
+        );
       })
     ).subscribe(items => {
       const extracts = [].concat.apply([], items).reduce((acc, i) => {

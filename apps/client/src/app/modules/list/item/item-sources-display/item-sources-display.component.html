@@ -14,8 +14,12 @@
       <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
-        <img [src]="source.data | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'"
-             class="img-icon round-icon">
+        <span *ngIf="source.data | tradeIcon as icon; else gtFallBack">
+          <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
+        </span>
+        <ng-template #gtFallBack>
+          <img src="https://www.garlandtools.org/db/images/Shop.png" class="img-icon round-icon">
+        </ng-template>
       </button>
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
               nz-button

@@ -1,0 +1,5642 @@
+{
+  "262144": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262145": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262151": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262152": {
+    "en": "Purchase Lalafellin Gear",
+    "ja": "服（ララフェル用）の取引",
+    "de": "Lalafell-Kleidung",
+    "fr": "Équipement lalafell"
+  },
+  "262153": {
+    "en": "Purchase Roegadyn Gear",
+    "ja": "服（ルガディン用）の取引",
+    "de": "Roegadyn-Kleidung",
+    "fr": "Équipement roegadyn"
+  },
+  "262154": {
+    "en": "Purchase Elezen Gear",
+    "ja": "服（エレゼン用）の取引",
+    "de": "Elezen-Kleidung",
+    "fr": "Équipement élézen"
+  },
+  "262155": {
+    "en": "Purchase Hyuran Gear",
+    "ja": "服（ヒューラン用）の取引",
+    "de": "Hyuran-Kleidung",
+    "fr": "Équipement hyur"
+  },
+  "262156": {
+    "en": "Purchase Miqo'te Gear",
+    "ja": "服（ミコッテ用）の取引",
+    "de": "Miqo'te-Kleidung",
+    "fr": "Équipement miqo'te"
+  },
+  "262157": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262158": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262159": {
+    "en": "Purchase Lalafellin Gear",
+    "ja": "服（ララフェル用）の取引",
+    "de": "Lalafell-Kleidung",
+    "fr": "Équipement lalafell"
+  },
+  "262160": {
+    "en": "Purchase Roegadyn Gear",
+    "ja": "服（ルガディン用）の取引",
+    "de": "Roegadyn-Kleidung",
+    "fr": "Équipement roegadyn"
+  },
+  "262161": {
+    "en": "Purchase Elezen Gear",
+    "ja": "服（エレゼン用）の取引",
+    "de": "Elezen-Kleidung",
+    "fr": "Équipement élézen"
+  },
+  "262162": {
+    "en": "Purchase Hyuran Gear",
+    "ja": "服（ヒューラン用）の取引",
+    "de": "Hyuran-Kleidung",
+    "fr": "Équipement hyur"
+  },
+  "262163": {
+    "en": "Purchase Miqo'te Gear",
+    "ja": "服（ミコッテ用）の取引",
+    "de": "Miqo'te-Kleidung",
+    "fr": "Équipement miqo'te"
+  },
+  "262164": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262165": {
+    "en": "Purchase Lalafellin Gear",
+    "ja": "服（ララフェル用）の取引",
+    "de": "Lalafell-Kleidung",
+    "fr": "Équipement lalafell"
+  },
+  "262166": {
+    "en": "Purchase Roegadyn Gear",
+    "ja": "服（ルガディン用）の取引",
+    "de": "Roegadyn-Kleidung",
+    "fr": "Équipement roegadyn"
+  },
+  "262167": {
+    "en": "Purchase Elezen Gear",
+    "ja": "服（エレゼン用）の取引",
+    "de": "Elezen-Kleidung",
+    "fr": "Équipement élézen"
+  },
+  "262168": {
+    "en": "Purchase Hyuran Gear",
+    "ja": "服（ヒューラン用）の取引",
+    "de": "Hyuran-Kleidung",
+    "fr": "Équipement hyur"
+  },
+  "262169": {
+    "en": "Purchase Miqo'te Gear",
+    "ja": "服（ミコッテ用）の取引",
+    "de": "Miqo'te-Kleidung",
+    "fr": "Équipement miqo'te"
+  },
+  "262170": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262171": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262172": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262173": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262174": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262175": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262176": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262177": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262178": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の取引",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262179": {
+    "en": "Purchase Field Accessories",
+    "ja": "アクセサリ（製作・採集）の取引",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires de travail"
+  },
+  "262180": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262181": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262182": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262183": {
+    "en": "Purchase Tools",
+    "ja": "道具の取引",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262184": {
+    "en": "Purchase Weapons",
+    "ja": "武器の取引",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262185": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262186": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の取引",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262187": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の取引",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262188": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の取引",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262189": {
+    "en": "Purchase Field Accessories",
+    "ja": "アクセサリ（製作・採集）の取引",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires de travail"
+  },
+  "262190": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262191": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262192": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262193": {
+    "en": "Purchase Tools",
+    "ja": "道具の取引",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262194": {
+    "en": "Purchase Weapons",
+    "ja": "武器の取引",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262195": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の取引",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262196": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の取引",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262197": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262198": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の取引",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262199": {
+    "en": "Purchase Field Accessories",
+    "ja": "アクセサリ（製作・採集）の取引",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires de travail"
+  },
+  "262200": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262201": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262202": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262203": {
+    "en": "Purchase Tools",
+    "ja": "道具の取引",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262204": {
+    "en": "Purchase Weapons",
+    "ja": "武器の取引",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262205": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の取引",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262206": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の取引",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262207": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262208": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262209": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262210": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262211": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262212": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262213": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262214": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262215": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262216": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262217": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262218": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262219": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262221": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262222": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262223": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262224": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262225": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262226": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262227": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262228": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262229": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262230": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262231": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262232": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262233": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262234": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262235": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262236": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262237": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262238": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262239": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262240": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262241": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262242": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262243": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262244": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262245": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262246": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262247": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262248": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262249": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262250": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262251": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262252": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262253": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262254": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262255": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262256": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262257": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262258": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262259": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262260": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262261": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262262": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262263": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262264": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262265": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262266": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262267": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262268": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262269": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262270": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262271": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262272": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262273": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262274": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262275": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262276": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262277": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262278": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262279": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262280": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262281": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262282": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262283": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262284": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262285": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262286": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262287": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262288": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262289": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262290": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262291": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262292": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262293": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262294": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262295": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262296": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262297": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262298": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262299": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262300": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262301": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262302": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262303": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262304": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262305": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262306": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262307": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262308": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262309": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262310": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262311": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262312": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262313": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262314": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262315": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262316": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262317": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262318": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262319": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262320": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262321": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262322": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262323": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262324": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262325": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262326": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262327": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262328": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262329": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262330": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262331": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262332": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262333": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262334": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262335": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262336": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262337": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262338": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262339": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262340": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262341": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262342": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262343": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262344": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262345": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262346": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262347": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262348": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262349": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262350": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262351": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262352": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262353": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262354": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262355": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262356": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262357": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262358": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262359": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262360": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262361": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262362": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262363": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262364": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262365": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262366": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262367": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262368": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262369": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262370": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262371": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262372": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262373": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262374": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262375": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262376": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262377": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262378": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262379": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262380": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262381": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262382": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262383": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262384": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262385": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262386": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262387": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262388": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262389": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262390": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262391": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262392": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262393": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262394": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262395": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262396": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262397": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262398": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262399": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262400": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262401": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262402": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262403": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262404": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262405": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262406": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262407": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262408": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262409": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262410": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262411": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262412": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262413": {
+    "en": "Purchase Battle Gear",
+    "ja": "防具（戦闘）の購入",
+    "de": "Rüstungen (Krieger/Magier)",
+    "fr": "Équipement de combat"
+  },
+  "262414": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262415": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262419": {
+    "en": "Purchase Furnishings (Exterior, Garden, Orchestrion)",
+    "ja": "アイテムの購入（外装建材・庭具・譜面）",
+    "de": "Möbel (Außenbereich, Garten, Orchestrion)",
+    "fr": "Extérieur, jardin et orchestrion"
+  },
+  "262420": {
+    "en": "Purchase Furnishings (Exterior, Garden, Orchestrion)",
+    "ja": "アイテムの購入（外装建材・庭具・譜面）",
+    "de": "Möbel (Außenbereich, Garten, Orchestrion)",
+    "fr": "Extérieur, jardin et orchestrion"
+  },
+  "262421": {
+    "en": "Purchase Furnishings (Exterior, Garden, Orchestrion)",
+    "ja": "アイテムの購入（外装建材・庭具・譜面）",
+    "de": "Möbel (Außenbereich, Garten, Orchestrion)",
+    "fr": "Extérieur, jardin et orchestrion"
+  },
+  "262422": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262423": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262426": {
+    "en": "Purchase Items (Neutral)",
+    "ja": "アイテムの取引(友好関係：中立)",
+    "de": "Waren (Neutral)",
+    "fr": "Objets (rang neutre)"
+  },
+  "262427": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定)",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262428": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262429": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262430": {
+    "en": "Purchase Items (Neutral)",
+    "ja": "アイテムの取引(友好関係：中立)",
+    "de": "Waren (Neutral)",
+    "fr": "Objets (rang neutre)"
+  },
+  "262431": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定)",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262432": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262433": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262434": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262435": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262436": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262437": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262439": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262440": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262441": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262443": {
+    "en": "Purchase Lv. 50 Gear (DoW)",
+    "ja": "Lv50向け防具の再購入（ファイター）",
+    "de": "Stufe-50-Ausrüstung (Krieger)",
+    "fr": "Armures Nv 50 (guerre)"
+  },
+  "262444": {
+    "en": "Purchase Lv. 50 Gear (DoM)",
+    "ja": "Lv50向け防具の再購入（ソーサラー）",
+    "de": "Stufe-50-Ausrüstung (Magier)",
+    "fr": "Armures Nv 50 (magie)"
+  },
+  "262445": {
+    "en": "Purchase Lv. 50 Arms & Tools",
+    "ja": "Lv50向け武器・道具の再購入",
+    "de": "Stufe-50-Ausrüstung/Waffen",
+    "fr": "Armes/Outils Nv 50"
+  },
+  "262446": {
+    "en": "Purchase Quest Rewards",
+    "ja": "クエスト報酬の再購入",
+    "de": "Auftragsvergütungen",
+    "fr": "Récompenses de quêtes"
+  },
+  "262449": {
+    "en": "Purchase Achievement Rewards I",
+    "ja": "アチーブメント報酬の再購入（その1）",
+    "de": "Gegenstände für Errungenschaften I",
+    "fr": "Récompenses de hauts faits 1"
+  },
+  "262450": {
+    "en": "Purchase Achievement Rewards II",
+    "ja": "アチーブメント報酬の再購入（その2）",
+    "de": "Gegenstände für Errungenschaften II",
+    "fr": "Récompenses de hauts faits 2"
+  },
+  "262451": {
+    "en": "Purchase Items (Neutral)",
+    "ja": "アイテムの取引(友好関係：中立)",
+    "de": "Waren (Neutral)",
+    "fr": "Objets (rang neutre)"
+  },
+  "262452": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定)",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262453": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262454": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262455": {
+    "en": "Purchase Items (Neutral)",
+    "ja": "アイテムの取引(友好関係：中立)",
+    "de": "Waren (Neutral)",
+    "fr": "Objets (rang neutre)"
+  },
+  "262456": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定)",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262457": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262458": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262459": {
+    "en": "Purchase Glamouring Items",
+    "ja": "アイテムの購入（武具投影関連）",
+    "de": "Waren (Projektion)",
+    "fr": "Objets (mirages)"
+  },
+  "262460": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262461": {
+    "en": "Purchase Items (Lumber, Metal, Stone, Bone, Leather)",
+    "ja": "アイテムの購入(木材・金属材・石材・骨材・皮革材)",
+    "de": "Waren (Nutzholz, Metall, Baustein, Knochen, Leder)",
+    "fr": "Objets (bois, métaux, pierres, os, cuirs)"
+  },
+  "262462": {
+    "en": "Purchase Items (Cloth, Reagents)",
+    "ja": "アイテムの購入(布材・錬金術材)",
+    "de": "Waren (Stoff, Reagenz, Zutat)",
+    "fr": "Objets (tissus, réactifs, ingrédients)"
+  },
+  "262463": {
+    "en": "Purchase Items (Gardening, Dyes)",
+    "ja": "アイテムの購入(畑・染料)",
+    "de": "Waren (Gartenbau, Farbstoffe)",
+    "fr": "Objets (jardinage, teinture)"
+  },
+  "262464": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262466": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262468": {
+    "en": "Purchase Gender-specific Gear (Male)",
+    "ja": "アイテムの購入(男性)",
+    "de": "Ausrüstung (Mann)",
+    "fr": "Objets (pour hommes)"
+  },
+  "262469": {
+    "en": "Purchase Gender-specific Gear (Female)",
+    "ja": "アイテムの購入(女性)",
+    "de": "Ausrüstung (Frau)",
+    "fr": "Objets (pour femmes)"
+  },
+  "262470": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262471": {
+    "en": "Purchase Items (Catalysts)",
+    "ja": "アイテムの購入(触媒)",
+    "de": "Katalysatoren",
+    "fr": "Objets (catalyseurs)"
+  },
+  "262472": {
+    "en": "Purchase (Cooking Ingredients)",
+    "ja": "アイテムの購入(食材)",
+    "de": "Zutaten",
+    "fr": "Objets (ingrédients de cuisine)"
+  },
+  "262473": {
+    "en": "Purchase Items (Neutral-Recognized)",
+    "ja": "アイテムの取引(友好関係：中立～認定)",
+    "de": "Waren (Neutral/Anerkannt)",
+    "fr": "Objets (rangs neutre à reconnu)"
+  },
+  "262474": {
+    "en": "Purchase Items (Neutral-Recognized)",
+    "ja": "アイテムの取引(友好関係：中立～認定)",
+    "de": "Waren (Neutral/Anerkannt)",
+    "fr": "Objets (rangs neutre à reconnu)"
+  },
+  "262475": {
+    "en": "Purchase Items (Friendly-Trusted)",
+    "ja": "アイテムの取引(友好関係：友好～信頼)",
+    "de": "Waren (Freundlich/Vertraut)",
+    "fr": "Objets (rangs ami à estimé)"
+  },
+  "262476": {
+    "en": "Purchase Items (Friendly-Trusted)",
+    "ja": "アイテムの取引(友好関係：友好～信頼)",
+    "de": "Waren (Freundlich/Vertraut)",
+    "fr": "Objets (rangs ami à estimé)"
+  },
+  "262477": {
+    "en": "Purchase Items (Respected-Honored)",
+    "ja": "アイテムの取引(友好関係：敬意～名誉)",
+    "de": "Waren (Respektiert/Geachtet)",
+    "fr": "Objets (rangs respecté à émérite)"
+  },
+  "262478": {
+    "en": "Purchase Items (Respected-Honored)",
+    "ja": "アイテムの取引(友好関係：敬意～名誉)",
+    "de": "Waren (Respektiert/Geachtet)",
+    "fr": "Objets (rangs respecté à émérite)"
+  },
+  "262479": {
+    "en": "Purchase Items (Sworn)",
+    "ja": "アイテムの取引(友好関係：誓約)",
+    "de": "Waren (Solidarisch)",
+    "fr": "Objets (rang assermenté)"
+  },
+  "262480": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友)",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262481": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友)",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262482": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友)",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262483": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友)",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262484": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友)",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262488": {
+    "en": "Purchase Novelty Gear",
+    "ja": "防具（その他）の購入",
+    "de": "Rüstungen (Diverse)",
+    "fr": "Équipement divers"
+  },
+  "262489": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262491": {
+    "en": "Purchase Race Chocobo Forms",
+    "ja": "レースチョコボの購入",
+    "de": "Renn-Chocobos",
+    "fr": "Chocobos de course"
+  },
+  "262492": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262493": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262494": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262495": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262496": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262497": {
+    "en": "Replicate Excalibur Zeta.",
+    "ja": "エクスカリバー・ゼータの複製",
+    "de": "Replik des Zeta-Exkalibur",
+    "fr": "Réplique d'Excalibur zêta"
+  },
+  "262498": {
+    "en": "Replicate Ragnarok Zeta.",
+    "ja": "ラグナロク・ゼータの複製",
+    "de": "Replik der Zeta-Ragnarök",
+    "fr": "Réplique de Ragnarok zêta"
+  },
+  "262499": {
+    "en": "Replicate the Kaiser Knuckles Zeta.",
+    "ja": "カイザーナックル・ゼータの複製",
+    "de": "Replik der Zeta-Kaiserklauen",
+    "fr": "Réplique des Griffes Kaiser zêta"
+  },
+  "262500": {
+    "en": "Replicate Longinus Zeta.",
+    "ja": "ロンギヌス・ゼータの複製",
+    "de": "Replik des Zeta-Longinus",
+    "fr": "Réplique de Longinus zêta"
+  },
+  "262501": {
+    "en": "Replicate the Sasuke's Blades Zeta.",
+    "ja": "佐助の刀【絶】の複製",
+    "de": "Replik der Zeta-Sasuke",
+    "fr": "Réplique des Sasuke zêta"
+  },
+  "262502": {
+    "en": "Replicate the Yoichi Bow Zeta.",
+    "ja": "与一の弓【絶】の複製",
+    "de": "Replik des Zeta-Yoichi",
+    "fr": "Réplique de l'Arc de Yoichi zêta"
+  },
+  "262503": {
+    "en": "Replicate the Lilith Rod Zeta.",
+    "ja": "リリスロッド・ゼータの複製",
+    "de": "Replik des Zeta-Lilith",
+    "fr": "Réplique du Sceptre de Lilith zêta"
+  },
+  "262504": {
+    "en": "Replicate Apocalypse Zeta.",
+    "ja": "アポカリプス・ゼータの複製",
+    "de": "Replik des Zeta-Apokalypse",
+    "fr": "Réplique d'Apocalypse zêta"
+  },
+  "262505": {
+    "en": "Replicate Nirvana Zeta.",
+    "ja": "ニルヴァーナ・ゼータの複製",
+    "de": "Replik des Zeta-Nirvana",
+    "fr": "Réplique de Nirvâna zêta"
+  },
+  "262506": {
+    "en": "Replicate Last Resort Zeta.",
+    "ja": "ラストリゾート・ゼータの複製",
+    "de": "Replik des Zeta-Letzter Trumpf",
+    "fr": "Réplique de Dernier recours zêta"
+  },
+  "262507": {
+    "en": "Replicate the Aegis Shield Zeta.",
+    "ja": "イージスシールド・ゼータの複製",
+    "de": "Replik des Zeta-Aegis",
+    "fr": "Réplique d'Aegis zêta"
+  },
+  "262508": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の取引",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262509": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262510": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の取引",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262511": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の取引",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262512": {
+    "en": "Purchase Weapons",
+    "ja": "武器の取引",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262513": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262514": {
+    "en": "Purchase Tools",
+    "ja": "道具の取引",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262515": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262516": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262517": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262518": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262519": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262520": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262521": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262522": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262523": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262524": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262525": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262526": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262527": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262528": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262529": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262530": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262531": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262532": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262533": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262534": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262536": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262537": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262538": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262539": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262540": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262541": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262542": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262543": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262544": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262545": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262546": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262547": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262548": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262549": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262550": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262551": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262552": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262553": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262554": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262555": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262556": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262557": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262558": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262559": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262560": {
+    "en": "Purchase Auri Gear",
+    "ja": "服（アウラ用）の取引",
+    "de": "Au Ra-Kleidung",
+    "fr": "Équipement aoran"
+  },
+  "262561": {
+    "en": "Purchase Auri Gear",
+    "ja": "服（アウラ用）の取引",
+    "de": "Au Ra-Kleidung",
+    "fr": "Équipement aoran"
+  },
+  "262562": {
+    "en": "Purchase Auri Gear",
+    "ja": "服（アウラ用）の取引",
+    "de": "Au Ra-Kleidung",
+    "fr": "Équipement aoran"
+  },
+  "262564": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262565": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262566": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262567": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262569": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262570": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262571": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262572": {
+    "en": "Purchase Battle Gear (DoW)",
+    "ja": "防具（ファイター）の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Équipement (guerre)"
+  },
+  "262573": {
+    "en": "Purchase Battle Gear (DoM)",
+    "ja": "防具（ソーサラー）の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Équipement (magie)"
+  },
+  "262574": {
+    "en": "Purchase Minions (Gil)",
+    "ja": "ミニオンの購入（ギル消費）",
+    "de": "Begleiter (Gil)",
+    "fr": "Mascottes (gils)"
+  },
+  "262575": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262576": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定)",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262577": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262578": {
+    "en": "Purchase Items (Trusted-Honored)",
+    "ja": "アイテムの取引(友好関係：信頼～名誉)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rangs estimé à émérite)"
+  },
+  "262579": {
+    "en": "Purchase Items (Trusted-Honored)",
+    "ja": "アイテムの取引(友好関係：信頼～名誉)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rangs estimé à émérite)"
+  },
+  "262580": {
+    "en": "Purchase Items (Trusted-Honored)",
+    "ja": "アイテムの取引(友好関係：信頼～名誉)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rangs estimé à émérite)"
+  },
+  "262581": {
+    "en": "Purchase Items (Sworn-Bloodsworn)",
+    "ja": "アイテムの取引(友好関係：誓約～誓約★)",
+    "de": "Waren (Solidarisch/Solidarisch★)",
+    "fr": "Objets (rangs assermenté à assermenté★)"
+  },
+  "262582": {
+    "en": "Purchase Items (Sworn-Bloodsworn)",
+    "ja": "アイテムの取引(友好関係：誓約～誓約★)",
+    "de": "Waren (Solidarisch/Solidarisch★)",
+    "fr": "Objets (rangs assermenté à assermenté★)"
+  },
+  "262584": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262585": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262586": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262587": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262588": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262603": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好)",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262604": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼)",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262605": {
+    "en": "Purchase Items (Respected)",
+    "ja": "アイテムの取引(友好関係：敬意)",
+    "de": "Waren (Respektiert)",
+    "fr": "Objets (rangs respecté à émérite)"
+  },
+  "262606": {
+    "en": "Purchase Items (Honored)",
+    "ja": "アイテムの取引(友好関係：名誉)",
+    "de": "Waren (Geachtet)",
+    "fr": "Objets (rang émérite)"
+  },
+  "262607": {
+    "en": "Purchase Items (Sworn)",
+    "ja": "アイテムの取引(友好関係：誓約)",
+    "de": "Waren (Solidarisch)",
+    "fr": "Objets (rang assermenté)"
+  },
+  "262608": {
+    "en": "Purchase Items (Bloodsworn)",
+    "ja": "アイテムの取引(友好関係：誓約★)",
+    "de": "Waren (Solidarisch★)",
+    "fr": "Objets (rang assermenté★)"
+  },
+  "262609": {
+    "en": "Deal in Kettles",
+    "ja": "ヤカンの取引",
+    "de": "Legendäre Kessel",
+    "fr": "Acheter des bouilloires"
+  },
+  "262610": {
+    "en": "Replicate Awoken Weapons",
+    "ja": "「アニマウェポン・アウォーク」の複製",
+    "de": "Erweckte Anima-Waffen",
+    "fr": "Armes anima éveillées"
+  },
+  "262611": {
+    "en": "Replicate Anima Weapons",
+    "ja": "「新たなアニマウェポン」の複製",
+    "de": "Neue Anima-Waffen",
+    "fr": "Nouvelles armes anima"
+  },
+  "262612": {
+    "en": "Purchase Items (Gil)",
+    "ja": "アイテムの購入（ギル消費）",
+    "de": "Waren (Gil)",
+    "fr": "Objets (gils)"
+  },
+  "262613": {
+    "en": "Purchase Items (Neutral)",
+    "ja": "アイテムの取引(友好関係：中立）",
+    "de": "Waren (Neutral)",
+    "fr": "Objets (rang neutre)"
+  },
+  "262614": {
+    "en": "Purchase Items (Recognized)",
+    "ja": "アイテムの取引(友好関係：認定）",
+    "de": "Waren (Anerkannt)",
+    "fr": "Objets (rang reconnu)"
+  },
+  "262615": {
+    "en": "Purchase Items (Friendly)",
+    "ja": "アイテムの取引(友好関係：友好）",
+    "de": "Waren (Freundlich)",
+    "fr": "Objets (rang ami)"
+  },
+  "262616": {
+    "en": "Purchase Items (Trusted)",
+    "ja": "アイテムの取引(友好関係：信頼）",
+    "de": "Waren (Vertraut)",
+    "fr": "Objets (rang estimé)"
+  },
+  "262617": {
+    "en": "Purchase Items (Respected)",
+    "ja": "アイテムの取引(友好関係：敬意）",
+    "de": "Waren (Respektiert)",
+    "fr": "Objets (rang respecté)"
+  },
+  "262618": {
+    "en": "Purchase Items (Honored)",
+    "ja": "アイテムの取引(友好関係：名誉）",
+    "de": "Waren (Geachtet)",
+    "fr": "Objets (rang émérite)"
+  },
+  "262619": {
+    "en": "Purchase Items (Sworn)",
+    "ja": "アイテムの取引(友好関係：誓約）",
+    "de": "Waren (Solidarisch)",
+    "fr": "Objets (rang assermenté)"
+  },
+  "262620": {
+    "en": "Purchase Items (Bloodsworn)",
+    "ja": "アイテムの取引(友好関係：誓約★）",
+    "de": "Waren (Solidarisch★)",
+    "fr": "Objets (rang assermenté★)"
+  },
+  "262621": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262622": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262623": {
+    "en": "Purchase Field Gear",
+    "ja": "防具（製作・採集）の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement de travail"
+  },
+  "262624": {
+    "en": "Purchase Field Accessories",
+    "ja": "アクセサリ（製作・採集）の購入",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires de travail"
+  },
+  "262625": {
+    "en": "Replicate Hyperconductive Weapons",
+    "ja": "「アニマウェポン・コンダクト」の複製",
+    "de": "Hyperleitende Anima-Waffen",
+    "fr": "Armes anima hyperconductrices"
+  },
+  "262626": {
+    "en": "Purchase Moonfire Faire Items I",
+    "ja": "シーズナルイベント報酬の再購入（紅蓮祭その1）",
+    "de": "Saisonale Gegenstände (Feuermond-Reigen I)",
+    "fr": "Achat d'objets (Feux de la Mort 1)"
+  },
+  "262627": {
+    "en": "Purchase Moonfire Faire Items II",
+    "ja": "シーズナルイベント報酬の再購入（紅蓮祭その2）",
+    "de": "Saisonale Gegenstände (Feuermond-Reigen II)",
+    "fr": "Achat d'objets (Feux de la Mort 2)"
+  },
+  "262628": {
+    "en": "Purchase All Saints' Wake Items",
+    "ja": "シーズナルイベント報酬の再購入（守護天節）",
+    "de": "Saisonale Gegenstände (Allerschutzheiligen)",
+    "fr": "Achat d'objets (Veillée des saints)"
+  },
+  "262629": {
+    "en": "Purchase Starlight Celebration Items",
+    "ja": "シーズナルイベント報酬の再購入（星芒祭）",
+    "de": "Saisonale Gegenstände (Sternenlichtfest)",
+    "fr": "Achat d'objets (Fête des étoiles)"
+  },
+  "262630": {
+    "en": "Purchase Heavensturn Items",
+    "ja": "シーズナルイベント報酬の再購入（降神祭）",
+    "de": "Saisonale Gegenstände (Himmelswende)",
+    "fr": "Achat d'objets (Fête de la transition)"
+  },
+  "262631": {
+    "en": "Purchase Valentione's Day Items",
+    "ja": "シーズナルイベント報酬の再購入（ヴァレンティオンデー）",
+    "de": "Saisonale Gegenstände (Valentiontag)",
+    "fr": "Achat d'objets (Valention)"
+  },
+  "262632": {
+    "en": "Purchase Little Ladies' Day Items",
+    "ja": "シーズナルイベント報酬の再購入（プリンセスデー）",
+    "de": "Saisonale Gegenstände (Prinzessinnenfest)",
+    "fr": "Achat d'objets (Fête des demoiselles)"
+  },
+  "262633": {
+    "en": "Purchase Hatching-tide Items",
+    "ja": "シーズナルイベント報酬の再購入（エッグハント）",
+    "de": "Saisonale Gegenstände (Wundereiersuche)",
+    "fr": "Achat d'objets (Chasse aux Prœufs)"
+  },
+  "262634": {
+    "en": "Purchase Other Seasonal Event Items",
+    "ja": "シーズナルイベント報酬の再購入（その他）",
+    "de": "Saisonale Gegenstände (Anderes)",
+    "fr": "Achat d'objets (Autres événements)"
+  },
+  "262635": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262636": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262637": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262638": {
+    "en": "Purchase Items I",
+    "ja": "アイテムの購入（その1）",
+    "de": "Waren I",
+    "fr": "Objets I"
+  },
+  "262639": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262640": {
+    "en": "Purchase Battle Accessories",
+    "ja": "アクセサリ（戦闘）の購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires de combat"
+  },
+  "262641": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262642": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262643": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262644": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262645": {
+    "en": "Replicate Anima Weapons II",
+    "ja": "「磨かれしアニマウェポン」の複製",
+    "de": "Repliken von Anima-Waffen",
+    "fr": "Armes anima épanouies"
+  },
+  "262646": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262647": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262648": {
+    "en": "Purchase Items (Gil)",
+    "ja": "アイテムの購入（ギル消費）",
+    "de": "Waren (Gil)",
+    "fr": "Objets (gils)"
+  },
+  "262649": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友）",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262650": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友）",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262651": {
+    "en": "Purchase Items (Allied)",
+    "ja": "アイテムの取引(友好関係：盟友）",
+    "de": "Waren (Verbündet)",
+    "fr": "Objets (rang allié)"
+  },
+  "262652": {
+    "en": "Replicate Sharp Anima Weapons",
+    "ja": "「アニマウェポン・シャープ」の複製",
+    "de": "Repliken von geschärften Anima-Waffen",
+    "fr": "Armes anima vivifiées"
+  },
+  "262653": {
+    "en": "Replicate Complete Anima Weapons",
+    "ja": "「真なるアニマウェポン」の複製",
+    "de": "Repliken von vollendeten Anima-Waffen",
+    "fr": "Armes anima parachevées"
+  },
+  "262654": {
+    "en": "Purchase Furnishings (Interior)",
+    "ja": "アイテムの購入（内装建材）",
+    "de": "Möbel (Innenbereich)",
+    "fr": "Tapisseries, sols et luminaires"
+  },
+  "262655": {
+    "en": "Purchase Furnishings (Chairs, Beds)",
+    "ja": "アイテムの購入（椅子・寝台）",
+    "de": "Möbel (Stühle, Betten)",
+    "fr": "Sièges et lits"
+  },
+  "262656": {
+    "en": "Purchase Furnishings (Tables, Food)",
+    "ja": "アイテムの購入（台座・料理）",
+    "de": "Möbel (Tische, Nahrung)",
+    "fr": "Tables et plats"
+  },
+  "262657": {
+    "en": "Purchase Furnishings (Shelves, Rugs, Lighting)",
+    "ja": "アイテムの購入（棚・敷物・照明）",
+    "de": "Möbel (Regale, Teppiche, Beleuchtung)",
+    "fr": "Étagères, tapis et lampes"
+  },
+  "262658": {
+    "en": "Purchase Furnishings (Other)",
+    "ja": "アイテムの購入（その他）",
+    "de": "Möbel (Anderes)",
+    "fr": "Meubles divers"
+  },
+  "262659": {
+    "en": "Purchase Paintings (La Noscea)",
+    "ja": "絵画の購入（ラノシア）",
+    "de": "Gemälde (La Noscea)",
+    "fr": "Peintures (Noscea)"
+  },
+  "262660": {
+    "en": "Purchase Paintings (The Black Shroud)",
+    "ja": "絵画の購入（黒衣森）",
+    "de": "Gemälde (Finsterwald)",
+    "fr": "Peintures (Sombrelinceul)"
+  },
+  "262661": {
+    "en": "Purchase Paintings (Thanalan)",
+    "ja": "絵画の購入（ザナラーン）",
+    "de": "Gemälde (Thanalan)",
+    "fr": "Peintures (Thanalan)"
+  },
+  "262662": {
+    "en": "Purchase Paintings (Coerthas, Mor Dhona)",
+    "ja": "絵画の購入（クルザス／モードゥナ）",
+    "de": "Gemälde (Coerthas, Mor Dhona)",
+    "fr": "Peintures (Coerthas/Mor Dhona)"
+  },
+  "262663": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262664": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262665": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262666": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262667": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262668": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262669": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262670": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262671": {
+    "en": "Purchase Lalafellin Gear",
+    "ja": "服（ララフェル用）の購入",
+    "de": "Lalafell-Kleidung",
+    "fr": "Équipement lalafell"
+  },
+  "262672": {
+    "en": "Purchase Roegadyn Gear",
+    "ja": "服（ルガディン用）の購入",
+    "de": "Roegadyn-Kleidung",
+    "fr": "Équipement roegadyn"
+  },
+  "262673": {
+    "en": "Purchase Elezen Gear",
+    "ja": "服（エレゼン用）の購入",
+    "de": "Elezen-Kleidung",
+    "fr": "Équipement élézen"
+  },
+  "262674": {
+    "en": "Purchase Hyuran Gear",
+    "ja": "服（ヒューラン用）の購入",
+    "de": "Hyuran-Kleidung",
+    "fr": "Équipement hyur"
+  },
+  "262675": {
+    "en": "Purchase Miqo'te Gear",
+    "ja": "服（ミコッテ用）の購入",
+    "de": "Miqo'te-Kleidung",
+    "fr": "Équipement miqo'te"
+  },
+  "262676": {
+    "en": "Purchase Auri Gear",
+    "ja": "服（アウラ用）の購入",
+    "de": "Au Ra-Kleidung",
+    "fr": "Équipement aoran"
+  },
+  "262677": {
+    "en": "Repurchase Paladin Gear",
+    "ja": "ナイト用装備の再購入",
+    "de": "Garo-Ausrüstung (Paladin)",
+    "fr": "Armure Garo de paladin"
+  },
+  "262678": {
+    "en": "Repurchase Warrior Gear",
+    "ja": "戦士用装備の再購入",
+    "de": "Garo-Ausrüstung (Krieger)",
+    "fr": "Armure Garo de guerrier"
+  },
+  "262679": {
+    "en": "Repurchase Dark Knight Gear",
+    "ja": "暗黒騎士用装備の再購入",
+    "de": "Garo-Ausrüstung (Dunkelritter)",
+    "fr": "Armure Garo de chevalier noir"
+  },
+  "262680": {
+    "en": "Repurchase Monk Gear",
+    "ja": "モンク用装備の再購入",
+    "de": "Garo-Ausrüstung (Mönch)",
+    "fr": "Armure Garo de moine"
+  },
+  "262681": {
+    "en": "Repurchase Dragoon Gear",
+    "ja": "竜騎士用装備の再購入",
+    "de": "Garo-Ausrüstung (Dragoon)",
+    "fr": "Armure Garo de chevalier dragon"
+  },
+  "262682": {
+    "en": "Repurchase Ninja Gear",
+    "ja": "忍者用装備の再購入",
+    "de": "Garo-Ausrüstung (Ninja)",
+    "fr": "Armure Garo de ninja"
+  },
+  "262683": {
+    "en": "Repurchase Bard Gear",
+    "ja": "吟遊詩人用装備の再購入",
+    "de": "Garo-Ausrüstung (Barde)",
+    "fr": "Armure Garo de barde"
+  },
+  "262684": {
+    "en": "Repurchase Machinist Gear",
+    "ja": "機工士用装備の再購入",
+    "de": "Garo-Ausrüstung (Maschinist)",
+    "fr": "Armure Garo de machiniste"
+  },
+  "262685": {
+    "en": "Repurchase Black Mage Gear",
+    "ja": "黒魔道士用装備の再購入",
+    "de": "Garo-Ausrüstung (Schwarzmagier)",
+    "fr": "Armure Garo de mage noir"
+  },
+  "262686": {
+    "en": "Repurchase Summoner Gear",
+    "ja": "召喚士用装備の再購入",
+    "de": "Garo-Ausrüstung (Beschwörer)",
+    "fr": "Armure Garo d'invocateur"
+  },
+  "262687": {
+    "en": "Repurchase White Mage Gear",
+    "ja": "白魔道士用装備の再購入",
+    "de": "Garo-Ausrüstung (Weißmagier)",
+    "fr": "Armure Garo de mage blanc"
+  },
+  "262688": {
+    "en": "Repurchase Scholar Gear",
+    "ja": "学者用装備の再購入",
+    "de": "Garo-Ausrüstung (Gelehrter)",
+    "fr": "Armure Garo d'érudit"
+  },
+  "262689": {
+    "en": "Repurchase Astrologian Gear",
+    "ja": "占星術師用装備の再購入",
+    "de": "Garo-Ausrüstung (Astrologe)",
+    "fr": "Armure Garo d'astromancien"
+  },
+  "262690": {
+    "en": "Purchase Furnishings (Garden, Orchestrion)",
+    "ja": "アイテムの購入（庭具・譜面）",
+    "de": "Möbel (Garten, Orchestrion)",
+    "fr": "Jardin et orchestrion"
+  },
+  "262691": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Möbel",
+    "fr": "Objets"
+  },
+  "262692": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262693": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262694": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262695": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262696": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262697": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262698": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262699": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262700": {
+    "en": "Purchase Gear (Lv. 1-9)",
+    "ja": "防具の購入（Lv1～9）",
+    "de": "Rüstungen (St. 1-9)",
+    "fr": "Armures (Nv 1-9)"
+  },
+  "262701": {
+    "en": "Purchase Gear (Lv. 10-19)",
+    "ja": "防具の購入（Lv10～19）",
+    "de": "Rüstungen (St. 10-19)",
+    "fr": "Armures (Nv 10-19)"
+  },
+  "262702": {
+    "en": "Purchase Gear (Lv. 20-29)",
+    "ja": "防具の購入（Lv20～29）",
+    "de": "Rüstungen (St. 20-29)",
+    "fr": "Armures (Nv 20-29)"
+  },
+  "262703": {
+    "en": "Purchase Gear (Lv. 30-39)",
+    "ja": "防具の購入（Lv30～39）",
+    "de": "Rüstungen (St. 30-39)",
+    "fr": "Armures (Nv 30-39)"
+  },
+  "262704": {
+    "en": "Purchase Gear (Lv. 40-49)",
+    "ja": "防具の購入（Lv40～49）",
+    "de": "Rüstungen (St. 40-49)",
+    "fr": "Armures (Nv 40-49)"
+  },
+  "262705": {
+    "en": "Purchase Gear (Lv. 1-9)",
+    "ja": "防具の購入（Lv1～9）",
+    "de": "Rüstungen (St. 1-9)",
+    "fr": "Armures (Nv 1-9)"
+  },
+  "262706": {
+    "en": "Purchase Gear (Lv. 10-19)",
+    "ja": "防具の購入（Lv10～19）",
+    "de": "Rüstungen (St. 10-19)",
+    "fr": "Armures (Nv 10-19)"
+  },
+  "262707": {
+    "en": "Purchase Gear (Lv. 20-29)",
+    "ja": "防具の購入（Lv20～29）",
+    "de": "Rüstungen (St. 20-29)",
+    "fr": "Armures (Nv 20-29)"
+  },
+  "262708": {
+    "en": "Purchase Gear (Lv. 30-39)",
+    "ja": "防具の購入（Lv30～39）",
+    "de": "Rüstungen (St. 30-39)",
+    "fr": "Armures (Nv 30-39)"
+  },
+  "262709": {
+    "en": "Purchase Gear (Lv. 40-49)",
+    "ja": "防具の購入（Lv40～49）",
+    "de": "Rüstungen (St. 40-49)",
+    "fr": "Armures (Nv 40-49)"
+  },
+  "262710": {
+    "en": "Purchase Gear (Lv. 1-9)",
+    "ja": "防具の購入（Lv1～9）",
+    "de": "Rüstungen (St. 1-9)",
+    "fr": "Armures (Nv 1-9)"
+  },
+  "262711": {
+    "en": "Purchase Gear (Lv. 10-19)",
+    "ja": "防具の購入（Lv10～19）",
+    "de": "Rüstungen (St. 10-19)",
+    "fr": "Armures (Nv 10-19)"
+  },
+  "262712": {
+    "en": "Purchase Gear (Lv. 20-29)",
+    "ja": "防具の購入（Lv20～29）",
+    "de": "Rüstungen (St. 20-29)",
+    "fr": "Armures (Nv 20-29)"
+  },
+  "262713": {
+    "en": "Purchase Gear (Lv. 30-39)",
+    "ja": "防具の購入（Lv30～39）",
+    "de": "Rüstungen (St. 30-39)",
+    "fr": "Armures (Nv 30-39)"
+  },
+  "262714": {
+    "en": "Purchase Gear (Lv. 40-49)",
+    "ja": "防具の購入（Lv40～49）",
+    "de": "Rüstungen (St. 40-49)",
+    "fr": "Armures (Nv 40-49)"
+  },
+  "262715": {
+    "en": "Purchase Weapons (Lv. 1-9)",
+    "ja": "武器の購入（Lv1～9）",
+    "de": "Waffen (St. 1-9)",
+    "fr": "Armes (Nv 1-9)"
+  },
+  "262716": {
+    "en": "Purchase Weapons (Lv. 10-19)",
+    "ja": "武器の購入（Lv10～19）",
+    "de": "Waffen (St. 10-19)",
+    "fr": "Armes (Nv 10-19)"
+  },
+  "262717": {
+    "en": "Purchase Weapons (Lv. 20-29)",
+    "ja": "武器の購入（Lv20～29）",
+    "de": "Waffen (St. 20-29)",
+    "fr": "Armes (Nv 20-29)"
+  },
+  "262718": {
+    "en": "Purchase Weapons (Lv. 30-39)",
+    "ja": "武器の購入（Lv30～39）",
+    "de": "Waffen (St. 30-39)",
+    "fr": "Armes (Nv 30-39)"
+  },
+  "262719": {
+    "en": "Purchase Weapons (Lv. 40-49)",
+    "ja": "武器の購入（Lv40～49）",
+    "de": "Waffen (St. 40-49)",
+    "fr": "Armes (Nv 40-49)"
+  },
+  "262720": {
+    "en": "Purchase Weapons (Lv. 1-9)",
+    "ja": "武器の購入（Lv1～9）",
+    "de": "Waffen (St. 1-9)",
+    "fr": "Armes (Nv 1-9)"
+  },
+  "262721": {
+    "en": "Purchase Weapons (Lv. 10-19)",
+    "ja": "武器の購入（Lv10～19）",
+    "de": "Waffen (St. 10-19)",
+    "fr": "Armes (Nv 10-19)"
+  },
+  "262722": {
+    "en": "Purchase Weapons (Lv. 20-29)",
+    "ja": "武器の購入（Lv20～29）",
+    "de": "Waffen (St. 20-29)",
+    "fr": "Armes (Nv 20-29)"
+  },
+  "262723": {
+    "en": "Purchase Weapons (Lv. 30-39)",
+    "ja": "武器の購入（Lv30～39）",
+    "de": "Waffen (St. 30-39)",
+    "fr": "Armes (Nv 30-39)"
+  },
+  "262724": {
+    "en": "Purchase Weapons (Lv. 40-49)",
+    "ja": "武器の購入（Lv40～49）",
+    "de": "Waffen (St. 40-49)",
+    "fr": "Armes (Nv 40-49)"
+  },
+  "262725": {
+    "en": "Purchase Tools (Lv. 1-9)",
+    "ja": "道具の購入（Lv1～9）",
+    "de": "Werkzeuge (St. 1-9)",
+    "fr": "Outils (Nv 1-9)"
+  },
+  "262726": {
+    "en": "Purchase Tools (Lv. 10-19)",
+    "ja": "道具の購入（Lv10～19）",
+    "de": "Werkzeuge (St. 10-19)",
+    "fr": "Outils (Nv 10-19)"
+  },
+  "262727": {
+    "en": "Purchase Tools (Lv. 20-29)",
+    "ja": "道具の購入（Lv20～29）",
+    "de": "Werkzeuge (St. 20-29)",
+    "fr": "Outils (Nv 20-29)"
+  },
+  "262728": {
+    "en": "Purchase Tools (Lv. 30-39)",
+    "ja": "道具の購入（Lv30～39）",
+    "de": "Werkzeuge (St. 30-39)",
+    "fr": "Outils (Nv 30-39)"
+  },
+  "262729": {
+    "en": "Purchase Tools (Lv. 40-49)",
+    "ja": "道具の購入（Lv40～49）",
+    "de": "Werkzeuge (St. 40-49)",
+    "fr": "Outils (Nv 40-49)"
+  },
+  "262730": {
+    "en": "Purchase Tools (Lv. 1-9)",
+    "ja": "道具の購入（Lv1～9）",
+    "de": "Werkzeuge (St. 1-9)",
+    "fr": "Outils (Nv 1-9)"
+  },
+  "262731": {
+    "en": "Purchase Tools (Lv. 10-19)",
+    "ja": "道具の購入（Lv10～19）",
+    "de": "Werkzeuge (St. 10-19)",
+    "fr": "Outils (Nv 10-19)"
+  },
+  "262732": {
+    "en": "Purchase Tools (Lv. 20-29)",
+    "ja": "道具の購入（Lv20～29）",
+    "de": "Werkzeuge (St. 20-29)",
+    "fr": "Outils (Nv 20-29)"
+  },
+  "262733": {
+    "en": "Purchase Tools (Lv. 30-39)",
+    "ja": "道具の購入（Lv30～39）",
+    "de": "Werkzeuge (St. 30-39)",
+    "fr": "Outils (Nv 30-39)"
+  },
+  "262734": {
+    "en": "Purchase Tools (Lv. 40-49)",
+    "ja": "道具の購入（Lv40～49）",
+    "de": "Werkzeuge (St. 40-49)",
+    "fr": "Outils (Nv 40-49)"
+  },
+  "262735": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262736": {
+    "en": "Purchase Fieldcraft/Tradecraft Accessories",
+    "ja": "クラフター・ギャザラー向けアクセサリの購入",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires (artisanat/récolte)"
+  },
+  "262737": {
+    "en": "Purchase Gear (Lv. 50)",
+    "ja": "防具の購入（Lv50）",
+    "de": "Rüstungen (St. 50)",
+    "fr": "Armures (Nv 50)"
+  },
+  "262738": {
+    "en": "Purchase Gear (Lv. 52)",
+    "ja": "防具の購入（Lv52）",
+    "de": "Rüstungen (St. 52)",
+    "fr": "Armures (Nv 52)"
+  },
+  "262739": {
+    "en": "Purchase Gear (Lv. 54)",
+    "ja": "防具の購入（Lv54）",
+    "de": "Rüstungen (St. 54)",
+    "fr": "Armures (Nv 54)"
+  },
+  "262740": {
+    "en": "Purchase Gear (Lv. 56)",
+    "ja": "防具の購入（Lv56）",
+    "de": "Rüstungen (St. 56)",
+    "fr": "Armures (Nv 56)"
+  },
+  "262741": {
+    "en": "Purchase Gear (Lv. 58)",
+    "ja": "防具の購入（Lv58）",
+    "de": "Rüstungen (St. 58)",
+    "fr": "Armures (Nv 58)"
+  },
+  "262743": {
+    "en": "Purchase Gear (Lv. 50)",
+    "ja": "防具の購入（Lv50）",
+    "de": "Rüstungen (St. 50)",
+    "fr": "Armures (Nv 50)"
+  },
+  "262744": {
+    "en": "Purchase Gear (Lv. 52)",
+    "ja": "防具の購入（Lv52）",
+    "de": "Rüstungen (St. 52)",
+    "fr": "Armures (Nv 52)"
+  },
+  "262745": {
+    "en": "Purchase Gear (Lv. 54)",
+    "ja": "防具の購入（Lv54）",
+    "de": "Rüstungen (St. 54)",
+    "fr": "Armures (Nv 54)"
+  },
+  "262746": {
+    "en": "Purchase Gear (Lv. 56)",
+    "ja": "防具の購入（Lv56）",
+    "de": "Rüstungen (St. 56)",
+    "fr": "Armures (Nv 56)"
+  },
+  "262747": {
+    "en": "Purchase Gear (Lv. 58)",
+    "ja": "防具の購入（Lv58）",
+    "de": "Rüstungen (St. 58)",
+    "fr": "Armures (Nv 58)"
+  },
+  "262749": {
+    "en": "Purchase Gear (Lv. 50-60)",
+    "ja": "防具の購入（Lv50～60）",
+    "de": "Rüstungen (St. 50-60)",
+    "fr": "Armures (Nv 50-60)"
+  },
+  "262750": {
+    "en": "Purchase Weapons (Lv. 50)",
+    "ja": "武器の購入（Lv50）",
+    "de": "Waffen (St. 50)",
+    "fr": "Armes (Nv 50)"
+  },
+  "262751": {
+    "en": "Purchase Weapons (Lv. 52)",
+    "ja": "武器の購入（Lv52）",
+    "de": "Waffen (St. 52)",
+    "fr": "Armes (Nv 52)"
+  },
+  "262752": {
+    "en": "Purchase Weapons (Lv. 54)",
+    "ja": "武器の購入（Lv54）",
+    "de": "Waffen (St. 54)",
+    "fr": "Armes (Nv 54)"
+  },
+  "262753": {
+    "en": "Purchase Weapons (Lv. 56)",
+    "ja": "武器の購入（Lv56）",
+    "de": "Waffen (St. 56)",
+    "fr": "Armes (Nv 56)"
+  },
+  "262754": {
+    "en": "Purchase Weapons (Lv. 58)",
+    "ja": "武器の購入（Lv58）",
+    "de": "Waffen (St. 58)",
+    "fr": "Armes (Nv 58)"
+  },
+  "262756": {
+    "en": "Purchase Weapons (Lv. 50)",
+    "ja": "武器の購入（Lv50）",
+    "de": "Waffen (St. 50)",
+    "fr": "Armes (Nv 50)"
+  },
+  "262757": {
+    "en": "Purchase Weapons (Lv. 52)",
+    "ja": "武器の購入（Lv52）",
+    "de": "Waffen (St. 52)",
+    "fr": "Armes (Nv 52)"
+  },
+  "262758": {
+    "en": "Purchase Weapons (Lv. 54)",
+    "ja": "武器の購入（Lv54）",
+    "de": "Waffen (St. 54)",
+    "fr": "Armes (Nv 54)"
+  },
+  "262759": {
+    "en": "Purchase Weapons (Lv. 56)",
+    "ja": "武器の購入（Lv56）",
+    "de": "Waffen (St. 56)",
+    "fr": "Armes (Nv 56)"
+  },
+  "262760": {
+    "en": "Purchase Weapons (Lv. 58)",
+    "ja": "武器の購入（Lv58）",
+    "de": "Waffen (St. 58)",
+    "fr": "Armes (Nv 58)"
+  },
+  "262762": {
+    "en": "Purchase Tools (Lv. 50-60)",
+    "ja": "道具の購入（Lv50～60）",
+    "de": "Werkzeuge (St. 50-60)",
+    "fr": "Outils (Nv 50-60)"
+  },
+  "262763": {
+    "en": "Purchase Tools (Lv. 50-60)",
+    "ja": "道具の購入（Lv50～60）",
+    "de": "Werkzeuge (St. 50-60)",
+    "fr": "Outils (Nv 50-60)"
+  },
+  "262764": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262765": {
+    "en": "Purchase Fieldcraft/Tradecraft Accessories",
+    "ja": "クラフター・ギャザラー向けアクセサリの購入",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires (artisanat/récolte)"
+  },
+  "262766": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262767": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262768": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262769": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262770": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262771": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262772": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262773": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262774": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262775": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262776": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262777": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262778": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262779": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262780": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262781": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262782": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262783": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262784": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262785": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262786": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262787": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262788": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262789": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262790": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262791": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262792": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262793": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262794": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262795": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262796": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262797": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262798": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262799": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262800": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262801": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262802": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262803": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262804": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262805": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262806": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262807": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262808": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262809": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262810": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262811": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262813": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262814": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262817": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262818": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262819": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262820": {
+    "en": "Purchase Battlecraft Gear (Lv. 60)",
+    "ja": "防具の購入（Lv60）",
+    "de": "Rüstungen (St. 60)",
+    "fr": "Armures (Nv 60)"
+  },
+  "262821": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262822": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262823": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262824": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262825": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262826": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262827": {
+    "en": "Purchase Battlecraft Gear (Lv. 60)",
+    "ja": "防具の購入（Lv60）",
+    "de": "Rüstungen (St. 60)",
+    "fr": "Armures (Nv 60)"
+  },
+  "262828": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262829": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262830": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262831": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262832": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262834": {
+    "en": "Purchase Tradecraft Gear",
+    "ja": "クラフター向け防具の購入",
+    "de": "Rüstungen (Handwerker)",
+    "fr": "Équipement (artisanat)"
+  },
+  "262835": {
+    "en": "Purchase Weapons (Lv. 60)",
+    "ja": "武器の購入（Lv60）",
+    "de": "Waffen (St. 60)",
+    "fr": "Armes (Nv 60)"
+  },
+  "262836": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262837": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262838": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262839": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262840": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262842": {
+    "en": "Purchase Weapons (Lv. 60)",
+    "ja": "武器の購入（Lv60）",
+    "de": "Waffen (St. 60)",
+    "fr": "Armes (Nv 60)"
+  },
+  "262843": {
+    "en": "Purchase Fieldcraft Gear",
+    "ja": "ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler)",
+    "fr": "Équipement (récolte)"
+  },
+  "262844": {
+    "en": "Purchase Tradecraft Primary Tools",
+    "ja": "クラフター向け道具の購入（主道具）",
+    "de": "Hauptwerkzeuge (Handwerker)",
+    "fr": "Outils principaux (artisanat)"
+  },
+  "262845": {
+    "en": "Purchase Tradecraft Secondary Tools",
+    "ja": "クラフター向け道具の購入（副道具）",
+    "de": "Sekundärwerkzeuge (Handwerker)",
+    "fr": "Outils secondaires (artisanat)"
+  },
+  "262846": {
+    "en": "Purchase Fieldcraft Tools",
+    "ja": "ギャザラー向け道具の購入",
+    "de": "Werkzeuge (Sammler)",
+    "fr": "Outils (récolte)"
+  },
+  "262847": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262848": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262849": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262850": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262851": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262852": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262853": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262854": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262855": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262856": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262857": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262858": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262859": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262860": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262861": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262862": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262863": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262864": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262865": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262866": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262867": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262868": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262869": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262870": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262871": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262872": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262873": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262874": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262875": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262876": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262877": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262878": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262879": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262880": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262881": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262882": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262883": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262884": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262885": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262886": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262887": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262888": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262889": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262890": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262891": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262892": {
+    "en": "Purchase Paintings (Gyr Abania)",
+    "ja": "絵画の購入（ギラバニア）",
+    "de": "Gemälde (Gyr Abania)",
+    "fr": "Peintures (Gyr Abania)"
+  },
+  "262893": {
+    "en": "Purchase Paintings (Othard)",
+    "ja": "絵画の購入（オサード）",
+    "de": "Gemälde (Othard)",
+    "fr": "Peintures (Othard)"
+  },
+  "262894": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262895": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "Récompenses d'événements saisonniers"
+  },
+  "262896": {
+    "en": "Purchase Lv. 70 Arms",
+    "ja": "Lv70向け武器の再購入",
+    "de": "Waffen (St. 70)",
+    "fr": "Armes (Nv 70)"
+  },
+  "262897": {
+    "en": "Purchase Lv. 70 Gear (DoW) I",
+    "ja": "Lv70向け防具の再購入（ファイターその1）",
+    "de": "Ausrüstung (St. 70, Krieger I)",
+    "fr": "Armures Nv 70 (guerre 1)"
+  },
+  "262898": {
+    "en": "Purchase Lv. 70 Gear (DoW) II",
+    "ja": "Lv70向け防具の再購入（ファイターその2）",
+    "de": "Ausrüstung (St. 70, Krieger II)",
+    "fr": "Armures Nv 70 (guerre 2)"
+  },
+  "262899": {
+    "en": "Purchase Lv. 70 Gear (DoM)",
+    "ja": "Lv70向け防具の再購入（ソーサラー）",
+    "de": "Ausrüstung (St. 70, Magier)",
+    "fr": "Armures Nv 70 (magie)"
+  },
+  "262900": {
+    "en": "Replicate Anima Lux Weapons",
+    "ja": "「アニマウェポン・ルクス」の複製",
+    "de": "Repliken von Lux-Anima-Waffen",
+    "fr": "Armes anima lux"
+  },
+  "262901": {
+    "en": "Purchase Glamouring Items",
+    "ja": "アイテムの購入（武具投影関連）",
+    "de": "Projektionszubehör",
+    "fr": "Objets (mirages)"
+  },
+  "262902": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262906": {
+    "en": "Purchase Paintings (Dravania)",
+    "ja": "絵画の購入（ドラヴァニア）",
+    "de": "Gemälde (Dravania)",
+    "fr": "Peintures (Dravania)"
+  },
+  "262907": {
+    "en": "Purchase Paintings (Abalathia's Spine)",
+    "ja": "絵画の購入（アバラシア）",
+    "de": "Gemälde (Abalathia)",
+    "fr": "Peintures (Abalathia)"
+  },
+  "262908": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262909": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262910": {
+    "en": "Enter Boutique",
+    "ja": "オシャレショップ",
+    "de": "Boutique",
+    "fr": "Boutique de mode"
+  },
+  "262911": {
+    "en": "Purchase Tools (Lv. 60)",
+    "ja": "Lv60向け道具の購入",
+    "de": "Werkzeuge (St. 60)",
+    "fr": "Outils (Nv 60)"
+  },
+  "262912": {
+    "en": "Purchase Tools (Lv. 63)",
+    "ja": "Lv63向け道具の購入",
+    "de": "Werkzeuge (St. 63)",
+    "fr": "Outils (Nv 63)"
+  },
+  "262913": {
+    "en": "Purchase Tools (Lv. 65)",
+    "ja": "Lv65向け道具の購入",
+    "de": "Werkzeuge (St. 65)",
+    "fr": "Outils (Nv 65)"
+  },
+  "262914": {
+    "en": "Purchase Gear (Lv. 60)",
+    "ja": "Lv60向け防具の購入",
+    "de": "Ausrüstung (St. 60)",
+    "fr": "Équipement (Nv 60)"
+  },
+  "262915": {
+    "en": "Purchase Gear (Lv. 63)",
+    "ja": "Lv63向け防具の購入",
+    "de": "Ausrüstung (St. 63)",
+    "fr": "Équipement (Nv 63)"
+  },
+  "262916": {
+    "en": "Purchase Gear (Lv. 65)",
+    "ja": "Lv65向け防具の購入",
+    "de": "Ausrüstung (St. 65)",
+    "fr": "Équipement (Nv 65)"
+  },
+  "262917": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "262918": {
+    "en": "Replicate Eureka Weapons (DoW)",
+    "ja": "「エウレカウェポン」の複製（ファイター）",
+    "de": "Repliken von Eureka-Waffen (Krieger)",
+    "fr": "Répliques d'armes Eurêka (guerre)"
+  },
+  "262919": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262920": {
+    "en": "Purchase Quest Rewards",
+    "ja": "クエスト報酬の再購入",
+    "de": "Auftragsvergütungen",
+    "fr": "Récompenses de quêtes"
+  },
+  "262921": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262922": {
+    "en": "Replicate Eureka Weapons (DoM)",
+    "ja": "「エウレカウェポン」の複製（ソーサラー）",
+    "de": "Repliken von Eureka-Waffen (Magier)",
+    "fr": "Répliques d'armes Eurêka (magie)"
+  },
+  "262923": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262926": {
+    "en": "Purchase Blue Mage Arms & Gear",
+    "ja": "青魔道士用装備の再購入",
+    "de": "Blaumagier-Ausrüstung",
+    "fr": "Équipement de mage bleu"
+  },
+  "262927": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262928": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262929": {
+    "en": "Purchase Items II",
+    "ja": "アイテムの購入（その2）",
+    "de": "Waren II",
+    "fr": "Objets II"
+  },
+  "262930": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "262933": {
+    "en": "Purchase Weapons (Lv. 62)",
+    "ja": "武器の購入（Lv62）",
+    "de": "Waffen (St. 62)",
+    "fr": "Armes (Nv 62)"
+  },
+  "262934": {
+    "en": "Purchase Weapons (Lv. 64)",
+    "ja": "武器の購入（Lv64）",
+    "de": "Waffen (St. 64)",
+    "fr": "Armes (Nv 64)"
+  },
+  "262935": {
+    "en": "Purchase Weapons (Lv. 66)",
+    "ja": "武器の購入（Lv66）",
+    "de": "Waffen (St. 66)",
+    "fr": "Armes (Nv 66)"
+  },
+  "262936": {
+    "en": "Purchase Weapons (Lv. 68)",
+    "ja": "武器の購入（Lv68）",
+    "de": "Waffen (St. 68)",
+    "fr": "Armes (Nv 68)"
+  },
+  "262937": {
+    "en": "Purchase Weapons (Lv. 70)",
+    "ja": "武器の購入（Lv70）",
+    "de": "Waffen (St. 70)",
+    "fr": "Armes (Nv 70)"
+  },
+  "262938": {
+    "en": "Purchase Gear (Lv. 62)",
+    "ja": "防具の購入（Lv62）",
+    "de": "Rüstungen (St. 62)",
+    "fr": "Armures (Nv 62)"
+  },
+  "262939": {
+    "en": "Purchase Gear (Lv. 64)",
+    "ja": "防具の購入（Lv64）",
+    "de": "Rüstungen (St. 64)",
+    "fr": "Armures (Nv 64)"
+  },
+  "262940": {
+    "en": "Purchase Gear (Lv. 66)",
+    "ja": "防具の購入（Lv66）",
+    "de": "Rüstungen (St. 66)",
+    "fr": "Armures (Nv 66)"
+  },
+  "262941": {
+    "en": "Purchase Gear (Lv. 68)",
+    "ja": "防具の購入（Lv68）",
+    "de": "Rüstungen (St. 68)",
+    "fr": "Armures (Nv 68)"
+  },
+  "262942": {
+    "en": "Purchase Gear (Lv. 70)",
+    "ja": "防具の購入（Lv70）",
+    "de": "Rüstungen (St. 70)",
+    "fr": "Armures (Nv 70)"
+  },
+  "262943": {
+    "en": "Purchase Gear (Lv. 62)",
+    "ja": "防具の購入（Lv62）",
+    "de": "Rüstungen (St. 62)",
+    "fr": "Armures (Nv 62)"
+  },
+  "262944": {
+    "en": "Purchase Gear (Lv. 64)",
+    "ja": "防具の購入（Lv64）",
+    "de": "Rüstungen (St. 64)",
+    "fr": "Armures (Nv 64)"
+  },
+  "262945": {
+    "en": "Purchase Gear (Lv. 66)",
+    "ja": "防具の購入（Lv66）",
+    "de": "Rüstungen (St. 66)",
+    "fr": "Armures (Nv 66)"
+  },
+  "262946": {
+    "en": "Purchase Gear (Lv. 68)",
+    "ja": "防具の購入（Lv68）",
+    "de": "Rüstungen (St. 68)",
+    "fr": "Armures (Nv 68)"
+  },
+  "262947": {
+    "en": "Purchase Gear (Lv. 70)",
+    "ja": "防具の購入（Lv70）",
+    "de": "Rüstungen (St. 70)",
+    "fr": "Armures (Nv 70)"
+  },
+  "262948": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262949": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262950": {
+    "en": "Purchase Fieldcraft/Tradecraft Accessories",
+    "ja": "クラフター・ギャザラー向けアクセサリの購入",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires (artisanat/récolte)"
+  },
+  "262951": {
+    "en": "Purchase Lv. 60 Gear (DoW)",
+    "ja": "Lv60向け防具の再購入（ファイター）",
+    "de": "Stufe-60-Ausrüstung (Krieger)",
+    "fr": "Armures Nv 60 (guerre)"
+  },
+  "262952": {
+    "en": "Purchase Furnishings (Partitions, Wall Decorations)",
+    "ja": "アイテムの購入（パーティション・壁掛け）",
+    "de": "Raumteiler und Wanddekorationen",
+    "fr": "Partitions et décorations murales"
+  },
+  "262953": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262954": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262955": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262956": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262957": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "262958": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262959": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262960": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262961": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262962": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "262963": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262964": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262965": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262966": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262967": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "262968": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262969": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262970": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262971": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262972": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "262973": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262974": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262975": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "262976": {
+    "en": "Purchase Tradecraft Primary Tools",
+    "ja": "クラフター向け道具の購入（主道具）",
+    "de": "Hauptwerkzeuge (Handwerker)",
+    "fr": "Outils principaux (artisanat)"
+  },
+  "262977": {
+    "en": "Purchase Tradecraft Secondary Tools",
+    "ja": "クラフター向け道具の購入（副道具）",
+    "de": "Sekundärwerkzeuge (Handwerker)",
+    "fr": "Outils secondaires (artisanat)"
+  },
+  "262978": {
+    "en": "Purchase Fieldcraft Tools",
+    "ja": "ギャザラー向け道具の購入",
+    "de": "Werkzeuge (Sammler)",
+    "fr": "Outils (récolte)"
+  },
+  "262979": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262980": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262981": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262982": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "262983": {
+    "en": "Purchase Tradecraft Gear",
+    "ja": "クラフター向け防具の購入",
+    "de": "Rüstungen (Handwerker)",
+    "fr": "Équipement (artisanat)"
+  },
+  "262984": {
+    "en": "Purchase Fieldcraft Gear",
+    "ja": "ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler)",
+    "fr": "Équipement (récolte)"
+  },
+  "262985": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262986": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262987": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262988": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262989": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262990": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262991": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262992": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262993": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262994": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262995": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262996": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262997": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262998": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "262999": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263000": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263001": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263002": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263003": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263004": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263005": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263006": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263007": {
+    "en": "Purchase Viera Gear",
+    "ja": "服（ヴィエラ用）の購入",
+    "de": "Viera-Kleidung",
+    "fr": "Équipement viéra"
+  },
+  "263008": {
+    "en": "Purchase Hrothgar Gear",
+    "ja": "服（ロスガル用）の購入",
+    "de": "Hrothgar-Kleidung",
+    "fr": "Équipement hrothgar"
+  },
+  "263009": {
+    "en": "Purchase Seasonal Event Rewards",
+    "ja": "シーズナルイベント報酬の購入",
+    "de": "Gegenstände saisonaler Ereignisse",
+    "fr": "シーズナルイベント報酬の購入"
+  },
+  "263010": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263011": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263012": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263013": {
+    "en": "Purchase Paintings (The First)",
+    "ja": "絵画の購入（第一世界）",
+    "de": "Gemälde (Erste Splitterwelt)",
+    "fr": "Peintures (premier reflet)"
+  },
+  "263014": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263015": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263016": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263017": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "263018": {
+    "en": "Purchase Gear",
+    "ja": "防具の購入",
+    "de": "Rüstungen",
+    "fr": "Armures"
+  },
+  "263019": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263020": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263021": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263022": {
+    "en": "Purchase Skysteel Prototypes",
+    "ja": "スカイスチールツールの購入",
+    "de": "Himmelsstahl-Werkzeuge",
+    "fr": "Outils de Cielacier"
+  },
+  "263023": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263024": {
+    "en": "Purchase Skysteel Replicas",
+    "ja": "スカイスチールツールの複製",
+    "de": "Repliken von Himmelsstahl-Werkzeugen",
+    "fr": "Répliques de Cielacier"
+  },
+  "263025": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263026": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "263027": {
+    "en": "Purchase Gear",
+    "ja": "防具の購入",
+    "de": "Rüstungen",
+    "fr": "Armures"
+  },
+  "263028": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263029": {
+    "en": "Purchase Scavenged Gear",
+    "ja": "古物の購入",
+    "de": "Gebrauchtwaren",
+    "fr": "Antiquités"
+  },
+  "263030": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263031": {
+    "en": "Purchase Resistance Weapon Replicas (DoW) I",
+    "ja": "「レジスタンスウェポン」の複製（ファイターその1）",
+    "de": "Repliken von Waffen des Widerstands (Krieger I)",
+    "fr": "Répliques d'armes de la résistance (guerre 1)"
+  },
+  "263032": {
+    "en": "Purchase Resistance Weapon Replicas (DoW) II",
+    "ja": "「レジスタンスウェポン」の複製（ファイターその2）",
+    "de": "Repliken von Waffen des Widerstands (Krieger II)",
+    "fr": "Répliques d'armes de la résistance (guerre 2)"
+  },
+  "263033": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入（汎用素材）",
+    "de": "Universalmaterialien",
+    "fr": "Matériaux de base"
+  },
+  "263034": {
+    "en": "Purchase Items III",
+    "ja": "アイテムの購入（汎用素材）",
+    "de": "Universalmaterialien",
+    "fr": "Matériaux de base"
+  },
+  "263035": {
+    "en": "Purchase Items II",
+    "ja": "アイテムの購入（汎用素材）",
+    "de": "Universalmaterialien",
+    "fr": "Matériaux de base"
+  },
+  "263036": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263037": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263038": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263039": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263040": {
+    "en": "Purchase Resistance Weapon Replicas (DoM)",
+    "ja": "「レジスタンスウェポン」の複製（ソーサラー）",
+    "de": "Repliken von Waffen des Widerstands (Magier)",
+    "fr": "Répliques d'armes de la résistance (magie)"
+  },
+  "263041": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263042": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263043": {
+    "en": "Purchase Luxuries",
+    "ja": "稀物の購入",
+    "de": "Raritäten",
+    "fr": "Objets rares"
+  },
+  "263044": {
+    "en": "Purchase Luxuries",
+    "ja": "稀物の購入",
+    "de": "Raritäten",
+    "fr": "Objets rares"
+  },
+  "263045": {
+    "en": "Purchase Achievement Rewards III",
+    "ja": "アチーブメント報酬の再購入（その3）",
+    "de": "Gegenstände für Errungenschaften III",
+    "fr": "Récompenses de hauts faits 3"
+  },
+  "263046": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263048": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263049": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263050": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263051": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263052": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "263053": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "263054": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "263055": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "263056": {
+    "en": "Purchase Weapons",
+    "ja": "武器の購入",
+    "de": "Waffen",
+    "fr": "Armes"
+  },
+  "263057": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "263058": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "263059": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "263060": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "263061": {
+    "en": "Purchase Battlecraft Gear (DoW)",
+    "ja": "ファイター向け防具の購入",
+    "de": "Rüstungen (Krieger)",
+    "fr": "Armures (guerre)"
+  },
+  "263062": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "263063": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "263064": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "263065": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "263066": {
+    "en": "Purchase Battlecraft Gear (DoM)",
+    "ja": "ソーサラー向け防具の購入",
+    "de": "Rüstungen (Magier)",
+    "fr": "Armures (magie)"
+  },
+  "263067": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263068": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263069": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263070": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263071": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263072": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "263073": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "263074": {
+    "en": "Purchase Tools",
+    "ja": "道具の購入",
+    "de": "Werkzeuge",
+    "fr": "Outils"
+  },
+  "263075": {
+    "en": "Purchase Tradecraft Primary Tools",
+    "ja": "クラフター向け道具の購入（主道具）",
+    "de": "Hauptwerkzeuge (Handwerker)",
+    "fr": "Outils principaux (artisanat)"
+  },
+  "263076": {
+    "en": "Purchase Tradecraft Secondary Tools",
+    "ja": "クラフター向け道具の購入（副道具）",
+    "de": "Sekundärwerkzeuge (Handwerker)",
+    "fr": "Outils secondaires (artisanat)"
+  },
+  "263077": {
+    "en": "Purchase Fieldcraft Tools",
+    "ja": "ギャザラー向け道具の購入",
+    "de": "Werkzeuge (Sammler)",
+    "fr": "Outils (récolte)"
+  },
+  "263078": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "263079": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "263080": {
+    "en": "Purchase Fieldcraft/Tradecraft Gear",
+    "ja": "クラフター・ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler/Handwerker)",
+    "fr": "Équipement (artisanat/récolte)"
+  },
+  "263081": {
+    "en": "Purchase Tradecraft Gear",
+    "ja": "クラフター向け防具の購入",
+    "de": "Rüstungen (Handwerker)",
+    "fr": "Équipement (artisanat)"
+  },
+  "263082": {
+    "en": "Purchase Fieldcraft Gear",
+    "ja": "ギャザラー向け防具の購入",
+    "de": "Rüstungen (Sammler)",
+    "fr": "Équipement (récolte)"
+  },
+  "263083": {
+    "en": "Purchase Weapons (Lv. 70)",
+    "ja": "武器の購入（Lv70）",
+    "de": "Waffen (St. 70)",
+    "fr": "Armes (Nv 70)"
+  },
+  "263084": {
+    "en": "Purchase Weapons (Lv. 72)",
+    "ja": "武器の購入（Lv72）",
+    "de": "Waffen (St. 72)",
+    "fr": "Armes (Nv 72)"
+  },
+  "263085": {
+    "en": "Purchase Weapons (Lv. 74)",
+    "ja": "武器の購入（Lv74）",
+    "de": "Waffen (St. 74)",
+    "fr": "Armes (Nv 74)"
+  },
+  "263086": {
+    "en": "Purchase Weapons (Lv. 76)",
+    "ja": "武器の購入（Lv76）",
+    "de": "Waffen (St. 76)",
+    "fr": "Armes (Nv 76)"
+  },
+  "263087": {
+    "en": "Purchase Weapons (Lv. 78)",
+    "ja": "武器の購入（Lv78）",
+    "de": "Waffen (St. 78)",
+    "fr": "Armes (Nv 78)"
+  },
+  "263088": {
+    "en": "Purchase Weapons (Lv. 80)",
+    "ja": "武器の購入（Lv80）",
+    "de": "Waffen (St. 80)",
+    "fr": "Armes (Nv 80)"
+  },
+  "263089": {
+    "en": "Purchase Gear (Lv. 70)",
+    "ja": "防具の購入（Lv70）",
+    "de": "Rüstungen (St. 70)",
+    "fr": "Armures (Nv 70)"
+  },
+  "263090": {
+    "en": "Purchase Gear (Lv. 72)",
+    "ja": "防具の購入（Lv72）",
+    "de": "Rüstungen (St. 72)",
+    "fr": "Armures (Nv 72)"
+  },
+  "263091": {
+    "en": "Purchase Gear (Lv. 74)",
+    "ja": "防具の購入（Lv74）",
+    "de": "Rüstungen (St. 74)",
+    "fr": "Armures (Nv 74)"
+  },
+  "263092": {
+    "en": "Purchase Gear (Lv. 76)",
+    "ja": "防具の購入（Lv76）",
+    "de": "Rüstungen (St. 76)",
+    "fr": "Armures (Nv 76)"
+  },
+  "263093": {
+    "en": "Purchase Gear (Lv. 78)",
+    "ja": "防具の購入（Lv78）",
+    "de": "Rüstungen (St. 78)",
+    "fr": "Armures (Nv 78)"
+  },
+  "263094": {
+    "en": "Purchase Gear (Lv. 80)",
+    "ja": "防具の購入（Lv80）",
+    "de": "Rüstungen (St. 80)",
+    "fr": "Armures (Nv 80)"
+  },
+  "263095": {
+    "en": "Purchase Gear (Lv. 70)",
+    "ja": "防具の購入（Lv70）",
+    "de": "Rüstungen (St. 70)",
+    "fr": "Armures (Nv 70)"
+  },
+  "263096": {
+    "en": "Purchase Gear (Lv. 72)",
+    "ja": "防具の購入（Lv72）",
+    "de": "Rüstungen (St. 72)",
+    "fr": "Armures (Nv 72)"
+  },
+  "263097": {
+    "en": "Purchase Gear (Lv. 74)",
+    "ja": "防具の購入（Lv74）",
+    "de": "Rüstungen (St. 74)",
+    "fr": "Armures (Nv 74)"
+  },
+  "263098": {
+    "en": "Purchase Gear (Lv. 76)",
+    "ja": "防具の購入（Lv76）",
+    "de": "Rüstungen (St. 76)",
+    "fr": "Armures (Nv 76)"
+  },
+  "263099": {
+    "en": "Purchase Gear (Lv. 78)",
+    "ja": "防具の購入（Lv78）",
+    "de": "Rüstungen (St. 78)",
+    "fr": "Armures (Nv 78)"
+  },
+  "263100": {
+    "en": "Purchase Gear (Lv. 80)",
+    "ja": "防具の購入（Lv80）",
+    "de": "Rüstungen (St. 80)",
+    "fr": "Armures (Nv 80)"
+  },
+  "263101": {
+    "en": "Purchase Battlecraft Accessories",
+    "ja": "バトル向けアクセサリの購入",
+    "de": "Accessoires (Krieger/Magier)",
+    "fr": "Accessoires (guerre/magie)"
+  },
+  "263102": {
+    "en": "Purchase Fieldcraft/Tradecraft Accessories",
+    "ja": "クラフター・ギャザラー向けアクセサリの購入",
+    "de": "Accessoires (Sammler/Handwerker)",
+    "fr": "Accessoires (artisanat/récolte)"
+  },
+  "263103": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263104": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263105": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263106": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263107": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263108": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263109": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263110": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263111": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263112": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263113": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263114": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263115": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263116": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263117": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263118": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263119": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263120": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263121": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263122": {
+    "en": "Purchase Items",
+    "ja": "アイテムの購入",
+    "de": "Waren",
+    "fr": "Objets"
+  },
+  "263123": {
+    "en": "Purchase Gardening Items",
+    "ja": "アイテムの購入（栽培用品）",
+    "de": "Waren (Gartenbau)",
+    "fr": "Objets (jardinage)"
+  }
+}
