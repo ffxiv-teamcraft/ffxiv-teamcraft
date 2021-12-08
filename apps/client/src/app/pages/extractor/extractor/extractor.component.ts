@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { bufferCount, filter, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { bufferCount, bufferTime, filter, map, mergeMap, scan, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { saveAs } from 'file-saver';
 import { DataExtractorService } from '../../../modules/list/data/data-extractor.service';
 import { uniqBy } from 'lodash';
@@ -36,6 +36,36 @@ export class ExtractorComponent {
     filter(([, todo]) => todo > 0),
     map(([done, todo]) => {
       return Math.round(done * 100 / todo);
+    })
+  );
+
+  public rate$ = this.progress$.pipe(
+    bufferTime(100),
+    scan((acc, buff) => {
+      acc = [
+        buff,
+        ...acc
+      ];
+      if (acc.length > 100) {
+        acc.pop();
+      }
+      return acc;
+    }, []),
+    map(snaps => {
+      return Math.floor(snaps.reduce((acc, snap) => {
+        return acc + snap.length;
+      }, 0) * 10 / snaps.length) / 10;
+    }),
+    startWith(1)
+  );
+
+  public eta$ = combineLatest([this.rate$, this.totalTodo$, this.done$]).pipe(
+    map(([rate, todo, done]) => {
+      const resSeconds = (todo - done) / rate;
+      return {
+        min: Math.floor(resSeconds / 60),
+        sec: Math.floor(resSeconds % 60).toString().padStart(2, '0')
+      };
     })
   );
 
