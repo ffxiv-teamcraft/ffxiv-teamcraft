@@ -804,6 +804,7 @@
     "HEAVENSWARD": "창천의 이슈가르드",
     "STORMBLOOD": "홍련의 해방자",
     "SHADOWBRINGERS": "칠흑의 반역자",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -830,10 +831,12 @@
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
+    "SGE": "SGE",
     "MNK": "몽크",
     "DRG": "용기사",
     "NIN": "닌자",
     "SAM": "사무",
+    "RPR": "RPR",
     "BRD": "음유",
     "MCH": "기공",
     "DNC": "댄서",
@@ -1545,7 +1548,9 @@
       "Required_control": "필요 가공 숙련도",
       "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시",
       "X_Equipped": "장착됨: {{amount}} 개",
-      "Item_series": "장비 세부정보"
+      "Item_series": "장비 세부정보",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "시간 통계",
