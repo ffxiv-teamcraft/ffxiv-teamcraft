@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.0"></a>
+# [9.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.6...v9.2.0) (2021-12-08)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed duration field sometimes required while it should not ([9321d47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9321d47))
+* **gearset-editor:** fixed filter labels ([fbc8e3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbc8e3a))
+* **gearsets:** fixed materias not being removed properly in popup ([aacd014](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aacd014))
+* **gearsets:** fixed RPR and SGE gearsets not being created properly ([3bf4c18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bf4c18))
+* **list:** fixed rotation link result sometimes showing as collectability while it shouldn't ([af9f933](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af9f933))
+* **list:** fixed tags translation for new list tags ([bf85544](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf85544))
+* **list:** fixed trades panel sometimes showing as empty while it's not ([61f77f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61f77f8))
+* **lists:** fixed import from Garlandtools ([6fec5e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fec5e0))
+* **materia:** fixed materia caps not being rounded properly ([9e48d7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e48d7a))
+
+
+### Features
+
+* **data:** imported ~400 allagan reports ([b47e82d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b47e82d))
+* **db:** complete refactor of the shop data extractors ([#2086](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2086)) ([54c07da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54c07da))
+* **lists:** disabled slow mode for offline lists ([4eafa69](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4eafa69))
+
+
+### Performance Improvements
+
+* **gearset:** fixed performance issue with materia editor popup ([a0aebcb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0aebcb))
+
+
+
 <a name="9.1.6"></a>
 ## [9.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.5...v9.1.6) (2021-12-07)
 
