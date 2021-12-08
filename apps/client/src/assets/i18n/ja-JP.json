@@ -804,6 +804,7 @@
     "HEAVENSWARD": "蒼天のイシュガルド",
     "STORMBLOOD": "紅蓮のリベレーター",
     "SHADOWBRINGERS": "漆黒のヴィランズ",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "古い",
     "GEAR": "装備",
     "CONSUMABLE": "薬品・調理品",
@@ -830,10 +831,12 @@
     "WHM": "白魔道士",
     "SCH": "学者",
     "AST": "占星術師",
+    "SGE": "SGE",
     "MNK": "モンク",
     "DRG": "竜騎士",
     "NIN": "忍者",
     "SAM": "侍",
+    "RPR": "RPR",
     "BRD": "吟遊詩人",
     "MCH": "機工士",
     "DNC": "踊り子",
@@ -1545,7 +1548,9 @@
       "Required_control": "必要加工精度",
       "Mark_as_done_in_gathering_log": "完了としてログにマーク",
       "X_Equipped": "装備中:{{amount}} 個",
-      "Item_series": "装備詳細情報"
+      "Item_series": "装備詳細情報",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "時間通計",
