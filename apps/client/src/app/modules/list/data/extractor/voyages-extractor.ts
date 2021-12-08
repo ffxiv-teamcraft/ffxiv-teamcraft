@@ -1,8 +1,5 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Item } from '../../../../model/garland-tools/item';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { ExplorationType } from '../../../../model/other/exploration-type';
 import { VoyageSource } from '../../model/voyage-source';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -11,8 +8,8 @@ import { map } from 'rxjs/operators';
 
 export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   isAsync(): boolean {
@@ -23,15 +20,11 @@ export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
     return DataType.VOYAGES;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<VoyageSource[]> {
+  protected doExtract(itemId: number): Observable<VoyageSource[]> {
     return combineLatest([
       this.lazyData.getEntry('airshipVoyages'),
       this.lazyData.getEntry('submarineVoyages'),
-      this.lazyData.getRow('voyageSources', item.id, [])
+      this.lazyData.getRow('voyageSources', itemId, [])
     ]).pipe(
       map(([airshipVoyages, submarineVoyages, voyageSource]) => {
         return voyageSource.map(({ type, id }) => {

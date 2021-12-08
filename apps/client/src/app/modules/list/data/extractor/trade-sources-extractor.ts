@@ -1,10 +1,7 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { TradeSource } from '../../model/trade-source';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Item } from '../../../../model/garland-tools/item';
 import { TradeNpc } from '../../model/trade-npc';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { combineLatest, Observable } from 'rxjs';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
@@ -17,8 +14,8 @@ import { uniqBy } from 'lodash';
 
 export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   public isAsync(): boolean {
@@ -29,11 +26,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
     return DataType.TRADE_SOURCES;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<TradeSource[]> {
+  protected doExtract(itemId: number): Observable<TradeSource[]> {
     const names$ = combineLatest([
       this.lazyData.getEntry('specialShopNames'),
       this.lazyData.getEntry('topicSelectNames'),
@@ -54,10 +47,10 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
     ]).pipe(
       map(([hwdInspections, collectables, npcs, collectablesShopItemGroup, shops, names]) => {
         const inspection = hwdInspections.find(row => {
-          return row.receivedItem === item.id;
+          return row.receivedItem === itemId;
         });
         const collectableReward = Object.entries<any>(collectables).find(([, c]) => {
-          return c.reward === item.id;
+          return c.reward === itemId;
         });
         if (inspection) {
           const npc: TradeNpc = {
@@ -120,7 +113,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
 
         const { specialShopNames, topicSelectNames, gilShopNames, gcNames } = names;
         return uniqBy(shops.filter(shop => {
-          return shop.trades.some(t => t.items.some(i => i.id === item.id));
+          return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId));
         }).map(shop => {
           return {
             id: shop.id,
@@ -142,7 +135,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
               return npc;
             }),
             trades: shop.trades.filter(trade => {
-              return trade.items.some(i => i.id === item.id);
+              return trade.items.some(i => i.id === itemId);
             })
           };
         }), shop => {
@@ -178,9 +171,9 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         name = gcNames[shop.gc];
         break;
     }
-    if (!name || name.en === '' && shop.npcs.length > 0) {
+    if (!name || name?.en === '' && shop.npcs.length > 0) {
       const npcWithTitle = shop.npcs.find(npc => {
-        return npcs[npc].title.en !== '';
+        return npcs[npc].title?.en !== '';
       });
       return npcWithTitle ? npcs[npcWithTitle].title : name;
     }

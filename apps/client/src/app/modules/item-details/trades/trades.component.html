@@ -19,6 +19,8 @@
           <span>x{{tradeItem.amount}}</span>
         </div>
       </div>
+      <i *ngIf="trade.requiredFateRank">{{'DB.ITEM.Requires_fate_rank' | translate:{ rank: trade.requiredFateRank } }}</i>
+      <i *ngIf="trade.requiredGCRank">{{'DB.ITEM.Requires_gc_rank' | translate:{ rank: trade.requiredGCRank } }}</i>
       <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
         <div *ngIf="totalPrice(trade) as totalTradePrice" class="total-price" fxLayout="row"
              fxLayoutAlign="center center"

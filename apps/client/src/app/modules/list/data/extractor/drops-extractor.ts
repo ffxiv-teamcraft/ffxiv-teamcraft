@@ -1,9 +1,6 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { Drop } from '../../model/drop';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Item } from '../../../../model/garland-tools/item';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { monsterDrops } from '../../../../core/data/sources/monster-drops';
 import { uniqBy } from 'lodash';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -12,8 +9,8 @@ import { map } from 'rxjs/operators';
 
 export class DropsExtractor extends AbstractExtractor<Drop[]> {
 
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   isAsync(): boolean {
@@ -24,13 +21,9 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
     return DataType.DROPS;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<Drop[]> {
+  protected doExtract(itemId: number): Observable<Drop[]> {
     return combineLatest([
-      this.lazyData.getRow('dropSources', item.id),
+      this.lazyData.getRow('dropSources', itemId),
       this.lazyData.getEntry('monsters')
     ]).pipe(
       map(([lazyDrops, monsters]) => {
@@ -62,7 +55,7 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         }
         drops.push(...Object.keys(monsterDrops)
           .filter(key => {
-            return monsterDrops[key].indexOf(item.id) > -1;
+            return monsterDrops[key].indexOf(itemId) > -1;
           })
           .map(monsterId => {
             if (monsters[monsterId] === undefined || monsters[monsterId].positions[0] === undefined) {

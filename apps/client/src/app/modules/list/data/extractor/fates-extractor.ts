@@ -9,8 +9,8 @@ import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export class FatesExtractor extends AbstractExtractor<FateData[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   getDataType(): DataType {
@@ -21,13 +21,9 @@ export class FatesExtractor extends AbstractExtractor<FateData[]> {
     return true;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData): Observable<FateData[]> {
+  protected doExtract(itemId: number): Observable<FateData[]> {
     return combineLatest([
-      this.lazyData.getRow('fateSources', item.id, []),
+      this.lazyData.getRow('fateSources', itemId, []),
       this.lazyData.getEntry('fates')
     ]).pipe(
       map(([fateSources, fates]) => {

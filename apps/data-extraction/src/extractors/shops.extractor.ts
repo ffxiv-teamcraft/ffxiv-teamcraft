@@ -15,7 +15,7 @@ interface Trade {
   currencies: TradeItem[];
   items: TradeItem[];
   requiredGCRank?: number;
-  requiredFCRank?: number;
+  requiredFateRank?: number;
 }
 
 interface Shop {
@@ -42,7 +42,7 @@ export class ShopsExtractor extends AbstractExtractor {
       this.aggregateAllPages('https://xivapi.com/GCScripShopItem?columns=ID,CostGCSeals,ItemTargetID,RequiredGrandCompanyRankTargetID'),
       this.aggregateAllPages('https://xivapi.com/GCScripShopCategory?columns=ID,GrandCompany,Tier'),
       this.aggregateAllPages('https://xivapi.com/TopicSelect?columns=ID,Name_*,Shop*,Url'),
-      this.aggregateAllPages('https://xivapi.com/CustomTalk?columns=ID,MainOption_*,Name_*,SpecialLinks*,ScriptInstruction*,ScriptArg*,Icon*'),
+      this.aggregateAllPages('https://xivapi.com/CustomTalk?columns=ID,Name_*,SpecialLinks*,ScriptInstruction*,ScriptArg*,Icon*'),
       this.aggregateAllPages('https://xivapi.com/PreHandler?columns=ID,TargetTargetID,UnlockQuestTargetID,Image'),
       this.aggregateAllPages('https://xivapi.com/EnpcResident?columns=ID,Base'),
       this.aggregateAllPages('https://xivapi.com/FateShop?columns=ID,SpecialShop0TargetID,SpecialShop1TargetID'),
@@ -60,7 +60,7 @@ export class ShopsExtractor extends AbstractExtractor {
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
-        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops);
+        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -84,7 +84,7 @@ export class ShopsExtractor extends AbstractExtractor {
         id: category.ID,
         type: 'GCShop',
         gc: category.GrandCompany.ID,
-        npcs: [],
+        npcs: [[1002387, 1002393, 1002390][category.GrandCompany.ID - 1]],
         trades: gcShopItems
           .filter(item => item.ID.startsWith(category.ID.toString()))
           .map(item => {
@@ -146,7 +146,7 @@ export class ShopsExtractor extends AbstractExtractor {
         npcs: [],
         trades: tradeIds.map(tradeID => {
           const tradeIndexes = [`${tradeID}0`, `${tradeID}1`, `${tradeID}2`];
-          return {
+          const trade: Trade = {
             currencies: tradeIndexes.map(tradeIndex => {
               const entry = {
                 id: specialShop[`ItemCost${tradeIndex}TargetID`],
@@ -168,7 +168,6 @@ export class ShopsExtractor extends AbstractExtractor {
               }
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0),
-
             items: tradeIndexes.map(tradeIndex => {
               const entry = {
                 id: specialShop[`ItemReceive${tradeIndex}TargetID`],
@@ -182,6 +181,15 @@ export class ShopsExtractor extends AbstractExtractor {
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0)
           };
+          const req = specialShop[`QuestItem${tradeID}TargetID`];
+          if (req > 0) {
+            // This cannot be a quest, it's for fate shop rank flags !
+            if (req < 120) {
+              const allRanks = uniq(tradeIds.map(id => specialShop[`QuestItem${id}TargetID`])).sort();
+              trade.requiredFateRank = allRanks.indexOf(req);
+            }
+          }
+          return trade;
         }).filter(t => t.currencies.length > 0)
       };
       return shop;
@@ -194,12 +202,12 @@ export class ShopsExtractor extends AbstractExtractor {
       + shop.trades.map(t => t.items.map(item => `${item.id}|${item.amount}|${item.hq}`).join(',')).join(':');
   }
 
-  private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[]): Shop[] {
+  private linkNpcs(shops: Shop[], npcs: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandler: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): Shop[] {
     const {
       npcsByShopID,
       topicSelects,
       questReqs
-    } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops);
+    } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
 
     return shops.map(shop => {
       if (questReqs[shop.id]) {
@@ -217,7 +225,7 @@ export class ShopsExtractor extends AbstractExtractor {
     return 'shops';
   }
 
-  private buildShopLinkMaps(npcData: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[]): ShopLinkMaps {
+  private buildShopLinkMaps(npcData: { ID: number, Base: any }[], topicSelect: any[], customTalk: any[], preHandlers: any[], fateShops: any[], inclusionShops: any[], specialShops: any[]): ShopLinkMaps {
     const questReqs = {};
     const topicSelects = {};
 
@@ -232,7 +240,7 @@ export class ShopsExtractor extends AbstractExtractor {
       return acc;
     }, {});
     // First of all, link shops from CustomTalks, since talks can also provide some PreHandler or TopicSelect entries
-    npcsByShopID = this.processCustomTalkLinks(customTalk, npcsByShopID);
+    npcsByShopID = this.processCustomTalkLinks(customTalk, npcsByShopID, specialShops);
 
     topicSelect.forEach((topic) => {
       for (let i = 0; i < 10; i++) {
@@ -276,7 +284,11 @@ export class ShopsExtractor extends AbstractExtractor {
     return { npcsByShopID, topicSelects, questReqs };
   }
 
-  private processCustomTalkLinks(customTalks: any[], npcIdsByDataId: Record<number, number[]>): Record<number, number[]> {
+  private processCustomTalkLinks(customTalks: any[], npcIdsByDataId: Record<number, number[]>, specialShops: any[]): Record<number, number[]> {
+    const preEndwalkerGemstoneShops = {
+      '1769958': [1027538],
+      '1769957': [1027998]
+    };
     const dataIdsByCustomTalks = customTalks.reduce((acc, talk) => {
       if (!acc[talk.ID]) {
         acc[talk.ID] = [];
@@ -286,8 +298,22 @@ export class ShopsExtractor extends AbstractExtractor {
       }
       for (let i = 0; i < 30; i++) {
         const scriptInstruction = talk[`ScriptInstruction${i}`];
-        if (scriptInstruction.includes('SHOP')) {
-          acc[talk.ID].push(talk[`ScriptArg${i}`]);
+        const scriptArg = talk[`ScriptArg${i}`];
+        if (talk.ID === 721479) { // local fate shops
+          if (scriptInstruction.includes('FATESHOP_REWARD')) {
+            const shop = specialShops.find(s => {
+              return Object.entries(s).some(([k, v]) => k.startsWith('QuestItem') && k.endsWith('TargetID') && v === scriptArg);
+            });
+            if (shop) {
+              const tokenizedInstruction = scriptInstruction.split('_');
+              const placeNameEngrish = tokenizedInstruction[tokenizedInstruction.length - 1].slice(0, -1).replace('LAKELAND', 'LAKERAND'); // LAKERAND lmao
+              const npcInstructionIndex = [0, 1, 2, 3, 4, 5, 6]
+                .find(j => talk[`ScriptInstruction${j}`] === `FATESHOP_ENPCID_${placeNameEngrish}`);
+              preEndwalkerGemstoneShops[shop.ID] = [talk[`ScriptArg${npcInstructionIndex}`]];
+            }
+          }
+        } else if (scriptInstruction.includes('SHOP')) {
+          acc[talk.ID].push(scriptArg);
         }
       }
       return acc;
@@ -307,6 +333,6 @@ export class ShopsExtractor extends AbstractExtractor {
           ...acc,
           [key]: npcIdsByDataId[key]
         };
-      }, {});
+      }, preEndwalkerGemstoneShops);
   }
 }
