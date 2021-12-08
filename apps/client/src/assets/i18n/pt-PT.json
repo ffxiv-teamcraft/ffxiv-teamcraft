@@ -804,6 +804,7 @@
     "HEAVENSWARD": "Heavensward",
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "Desactualizado",
     "GEAR": "Equipamento",
     "CONSUMABLE": "Consumível",
@@ -830,10 +831,12 @@
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
+    "SGE": "SGE",
     "MNK": "MNK",
     "DRG": "DRG",
     "NIN": "NIN",
     "SAM": "SAM",
+    "RPR": "RPR",
     "BRD": "BRD",
     "MCH": "MCH",
     "DNC": "DNC",
@@ -1545,7 +1548,9 @@
       "Required_control": "Req. Control",
       "Mark_as_done_in_gathering_log": "Mark as done in log",
       "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "Item_series": "Set details",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "Hour of the day",
