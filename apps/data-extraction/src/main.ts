@@ -56,6 +56,8 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor';
 import { NodesExtractor } from './extractors/nodes.extractor';
+import { ShopsExtractor } from './extractors/shops.extractor';
+import { green } from 'colors';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -73,9 +75,13 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('CollectablesShopItemGroup', 'collectables-shop-item-group'),
   new I18nExtractor('HWDGathereInspectTerm', 'hwd-phases'),
   new I18nExtractor('Race', 'races'),
-  new I18nExtractor('SpecialShop', 'shops'),
+  new I18nExtractor('SpecialShop', 'special-shop-names'),
+  new I18nExtractor('GilShop', 'gil-shop-names'),
+  new I18nExtractor('TopicSelect', 'topic-select-names'),
+  new I18nExtractor('GrandCompany', 'gc-names'),
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new ShopsExtractor(),
   new NodesExtractor(),
   new SeedsExtractor(),
   new WorldsExtractor(),
@@ -131,6 +137,11 @@ const extractors: AbstractExtractor[] = [
 
 if (process.env.XIVAPI_KEY) {
   console.log('Fast mode enabled');
+}
+
+
+if (process.env.DEV_MODE) {
+  console.log(green(`DEV MODE ENABLED, CACHE WILL BE USED`));
 }
 
 const operationsSelection = new MultiSelect({

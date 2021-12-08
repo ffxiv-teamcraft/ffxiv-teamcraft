@@ -68,30 +68,30 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
-  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: AchievementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: CraftedByExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: MogstationExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: QuestsExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: AchievementsExtractor, deps: [LazyDataFacade], multi: true },
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
-    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataFacade],
+    deps: [HtmlToolsService, GatheringNodesService, LazyDataFacade],
     multi: true
   },
-  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [GarlandToolsService, LazyDataFacade, HttpClient], multi: true },
-  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, GatheringNodesService, AlarmsFacade], multi: true },
+  { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VendorsExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: ReducedFromExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DesynthsExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: InstancesExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: GardeningExtractor, deps: [LazyDataFacade, HttpClient], multi: true },
+  { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DropsExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GatheringNodesService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataFacade], multi: true }
+  { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({

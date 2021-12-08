@@ -1,16 +1,9 @@
 import { AbstractExtractor } from './abstract-extractor';
 import { CompactMasterbook } from '../../../../model/common/compact-masterbook';
-import { Item } from '../../../../model/garland-tools/item';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { DataType } from '../data-type';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]> {
-
-  constructor(gt: GarlandToolsService) {
-    super(gt);
-  }
 
   getDataType(): DataType {
     return DataType.MASTERBOOKS;
@@ -20,15 +13,11 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
     return false;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
   public getRequirements(): DataType[] {
     return [DataType.CRAFTED_BY];
   }
 
-  protected doExtract(item: Item, itemData: ItemData, row?: ListRow): CompactMasterbook[] {
+  protected doExtract(itemId: number, row?: ListRow): CompactMasterbook[] {
     const res: CompactMasterbook[] = [];
     if (getItemSource(row, DataType.CRAFTED_BY).length > 0) {
       for (const craft of getItemSource(row, DataType.CRAFTED_BY)) {

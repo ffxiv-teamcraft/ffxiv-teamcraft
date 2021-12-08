@@ -1,17 +1,14 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { Item } from '../../../../model/garland-tools/item';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
 import { getItemSource, ListRow } from '../../model/list-row';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { Ingredient } from '../../../../model/garland-tools/ingredient';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
-  constructor(gt: GarlandToolsService, private lazyData: LazyDataFacade) {
-    super(gt);
+  constructor(private lazyData: LazyDataFacade) {
+    super();
   }
 
   getDataType(): DataType {
@@ -22,11 +19,7 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
     return true;
   }
 
-  protected canExtract(item: Item): boolean {
-    return true;
-  }
-
-  protected doExtract(item: Item, itemData: ItemData, row: ListRow): Observable<Ingredient[]> {
+  protected doExtract(itemId: number, row: ListRow): Observable<Ingredient[]> {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
     return combineLatest([
       this.lazyData.getEntry('hwdInspections'),
@@ -50,7 +43,7 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
         // Collectable Rewards
         if (tradeSources.length === 1 && tradeSources[0].npcs[0]?.id === 1032900) {
           const collectableReward = Object.entries(collectables).find(([, c]) => {
-            return c.reward === item.id;
+            return c.reward === itemId;
           });
           if (collectableReward) {
             return [{
@@ -61,7 +54,7 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
           }
         }
         // Modified airships
-        if (tradeSources.length === 1 && tradeSources[0].shopName === 'Submersible Frames') {
+        if (tradeSources.length === 1 && tradeSources[0].shopName?.en === 'Submersible Frames') {
           const trade = tradeSources[0].trades[0];
           return [{
             id: trade.currencies[0].id,

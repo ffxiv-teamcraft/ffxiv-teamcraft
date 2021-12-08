@@ -1,6 +1,9 @@
 <div fxLayout="column" fxLayoutGap="10px">
   <nz-card *ngFor="let tradeSource of tradeSources" fxFlex="1 1 auto" fxLayoutGap="5px">
-    <nz-card-meta [nzTitle]="tradeSource.shopName | shopName | i18n">
+    <nz-card-meta [nzTitle]="title">
+      <ng-template #title>
+        <span title="{{tradeSource.type}}#{{tradeSource.id}}">{{tradeSource.shopName | i18n}}</span>
+      </ng-template>
     </nz-card-meta>
     <div *ngFor="let trade of tradeSource.trades" class="trades" fxLayout="column" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -16,6 +19,8 @@
           <span>x{{tradeItem.amount}}</span>
         </div>
       </div>
+      <i *ngIf="trade.requiredFateRank">{{'DB.ITEM.Requires_fate_rank' | translate:{ rank: trade.requiredFateRank } }}</i>
+      <i *ngIf="trade.requiredGCRank">{{'DB.ITEM.Requires_gc_rank' | translate:{ rank: trade.requiredGCRank } }}</i>
       <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
         <div *ngIf="totalPrice(trade) as totalTradePrice" class="total-price" fxLayout="row"
              fxLayoutAlign="center center"
@@ -38,7 +43,7 @@
           </nz-list-item-meta>
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-              <div>{{npc.id | i18nRow:'npcs' | i18n}}</div>
+              <div>{{npc.id | i18nRow:'npcs' | i18n}} ({{npc.zoneId | i18nRow:'places' | i18n}})</div>
               <app-db-button [id]="npc.id" type="npc"></app-db-button>
             </div>
           </ng-template>

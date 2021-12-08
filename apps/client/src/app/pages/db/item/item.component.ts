@@ -135,7 +135,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       };
       if (!environment.production) {
         // Useful for debugging extractors
-        return this.extractor.addDataToItem(mockRow, data).pipe(
+        return this.extractor.addDataToItem(mockRow).pipe(
           switchMap((item: any) => {
             item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
             if (item.canBeGathered) {

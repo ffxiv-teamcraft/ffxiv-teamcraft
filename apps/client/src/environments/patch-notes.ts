@@ -1,5 +1,4 @@
 export const patchNotes = `### Bug Fixes
-
 * **gearsets:** fixed materia melding caps.
 * **list-details:** optimized route checks all selected sources.
 * **pricing-mode:** fixed errors burst when opening the page.
@@ -15,4 +14,5 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **db:** desynth details popup now includes better scrolling system.`;
+* **db:** desynth details popup now includes better scrolling system.
+`;

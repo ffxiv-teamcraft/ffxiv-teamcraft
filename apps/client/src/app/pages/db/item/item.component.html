@@ -304,7 +304,7 @@
 
                 <app-lazy-scroll [data]="row.trades" [rowTemplate]="rowTpl" rowSize="651" displayedRows="1"></app-lazy-scroll>
                 <ng-template #rowTpl let-source>
-                  <nz-card [nzTitle]="source.shopName | shopName | i18n" class="trade-card">
+                  <nz-card [nzTitle]="source.shopName | i18n" class="trade-card">
                     <nz-table #basicTable [nzData]="source.trades">
                       <thead>
                       <tr>

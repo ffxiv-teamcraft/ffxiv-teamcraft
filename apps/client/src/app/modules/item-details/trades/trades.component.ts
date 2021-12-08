@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { TradeSource } from '../../list/model/trade-source';
 import { Trade } from '../../list/model/trade';
