@@ -89,7 +89,7 @@ export class NpcBreakdown {
       })
     ).subscribe(scored => {
       const bestNpc = scored.sort((a, b) => b.score - a.score)[0];
-      this.addRow(bestNpc.npc?.id || -1, row);
+      this.addRow(bestNpc?.npc?.id || -1, row);
     });
   }
 

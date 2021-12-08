@@ -71,7 +71,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public isReadonly$ = this.gearsetsFacade.selectedGearsetPermissionLevel$.pipe(
     map(permissionLevel => permissionLevel < PermissionLevel.WRITE)
   );
-  public level$ = new BehaviorSubject<number>(80);
+  public level$ = new BehaviorSubject<number>(this.environment.maxLevel);
   public tribe$ = new BehaviorSubject<number>(1);
   public food$ = this.gearset$.pipe(
     map(gearset => {

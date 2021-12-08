@@ -376,17 +376,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     const isTrade = this.displayRow.filterChain.indexOf('TRADE') > -1;
     const isHunting = this.displayRow.filterChain.indexOf('_DROP') > -1;
     const preferredPosition = positions.find(p => {
-      if (isGathering) {
-        return p.type === 'Gathering';
-      }
-      if (isVendor) {
-        return p.type === 'Vendor';
-      }
-      if (isTrade) {
-        return p.type === 'Trade';
-      }
-      if (isHunting) {
-        return p.type === 'Hunting';
+      if (isGathering || isVendor || isTrade || isHunting) {
+        return (p.type === 'Gathering' && isGathering)  ||
+        (p.type === 'Vendor' && isVendor) ||
+        (p.type === 'Trade' && isTrade) ||
+        (p.type === 'Hunting' && isHunting);
       }
       return true;
     });
