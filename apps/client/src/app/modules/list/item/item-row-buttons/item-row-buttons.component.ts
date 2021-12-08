@@ -186,7 +186,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   notFavoriteCopyMode = this.settings.preferredCopyType === 'classic' ? 'isearch' : 'classic';
 
   collectable$ = observeInput(this, 'itemId').pipe(
-    switchMap(itemId => this.lazyData.getRow('collectables', itemId))
+    switchMap(itemId => this.lazyData.getRow('collectables', itemId)),
+    map(res => res.collectable !== 0)
   );
 
   @ViewChild('menuHost', { read: ViewContainerRef })
