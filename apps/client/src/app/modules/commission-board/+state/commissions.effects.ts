@@ -104,7 +104,7 @@ export class CommissionsEffects {
               return [action, char, userId, partialCommission];
             }),
             switchMap(([a, c, uid, partialCommission]) => {
-              return this.lazyData.getDatacenterForServer(char.Server).pipe(
+              return this.lazyData.getDatacenterForServer((char as any).DC).pipe(
                 map(dc => [a, c, uid, partialCommission, dc])
               );
             })

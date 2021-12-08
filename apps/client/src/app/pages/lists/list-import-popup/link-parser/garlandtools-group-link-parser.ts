@@ -8,7 +8,7 @@ export class GarlandtoolsGroupLinkParser implements ExternalListLinkParser {
   }
 
   parse(url: string): Observable<string> {
-    return of(btoa(url
+    return of(btoa(decodeURIComponent(url)
       .split('{')
       .pop()
       .split('}')[0]
