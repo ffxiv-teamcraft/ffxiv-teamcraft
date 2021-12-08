@@ -519,6 +519,7 @@ export class StatsService {
       case 20:
       case 22:
       case 34:
+      case 39:
         return BaseParam.STRENGTH;
       // DEX-based DPS
       case 5:
@@ -533,6 +534,7 @@ export class StatsService {
       case 24:
       case 28:
       case 33:
+      case 40:
         return BaseParam.MIND;
       // Caster DPS
       case 7:
