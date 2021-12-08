@@ -54,7 +54,6 @@ export class ShopsExtractor extends AbstractExtractor {
              topicSelect, customTalk, preHandler, npcs,
              fateShops,
              inclusionShops]) => {
-        this.progress.stop();
         const shops = uniqBy([
           ...this.handleGilShops(gilShops),
           ...this.handleSpecialShops(specialShops),
@@ -69,7 +68,6 @@ export class ShopsExtractor extends AbstractExtractor {
         }).filter(shop => !!shop);
       })
     ).subscribe((shops) => {
-      this.progress.stop();
       console.log('\n');
       console.log(`Shops without NPC : ${shops.filter(s => s.npcs.length === 0).length}/${shops.length}`);
       console.log(shops.filter(s => s.npcs.length === 0).slice(0, 10).map(s => `${s.type}#${s.id}`));

@@ -46,9 +46,9 @@ export class DataExtractorService {
         last()
       ).subscribe((res) => {
         result$.next(res);
-        result$.complete()
+        result$.complete();
       });
-    });
+    }, 1);
     return result$;
   }
 
