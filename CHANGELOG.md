@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.1"></a>
+## [9.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.0...v9.2.1) (2021-12-08)
+
+
+### Bug Fixes
+
+* **list:** fixed crafter icons not loading properly ([b532bd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b532bd6))
+
+
+
 <a name="9.2.0"></a>
 # [9.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.1.6...v9.2.0) (2021-12-08)
 
