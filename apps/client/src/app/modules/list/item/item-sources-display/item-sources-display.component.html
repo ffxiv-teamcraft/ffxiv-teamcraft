@@ -84,7 +84,7 @@
           <ng-container *ngIf="craft.job > 0">
             <button (click)="overlay?null:openSimulator(craft.id, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
                     nz-button>
-              <img [src]="craft.icon" alt="" class="img-icon">
+              <span [innerHTML]="craft.job | jobUnicode" class="craft-icon companion-svg"></span>
             </button>
             <div>{{craft.lvl}}</div>
             <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
