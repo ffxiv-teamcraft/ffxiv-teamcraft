@@ -5,7 +5,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { sum } from 'lodash';
 import { Memoized } from '../../../core/decorators/memoized';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first, map, shareReplay } from 'rxjs/operators';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
