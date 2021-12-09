@@ -72,6 +72,13 @@ export class ShopsExtractor extends AbstractExtractor {
       console.log(`Shops without NPC : ${shops.filter(s => s.npcs.length === 0).length}/${shops.length}`);
       console.log(shops.filter(s => s.npcs.length === 0).slice(0, 10).map(s => `${s.type}#${s.id}`));
       this.persistToJsonAsset('shops', shops);
+      this.persistToJsonAsset('shops-by-npc', shops.reduce((acc, shop) => {
+        shop.npcs.forEach(npc => {
+          acc[npc] = (acc[npc] || []);
+          acc[npc].push(shop);
+        });
+        return acc;
+      }, {}));
       this.done();
     });
   }
