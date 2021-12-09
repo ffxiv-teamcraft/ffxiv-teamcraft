@@ -218,6 +218,7 @@
             <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/snagging.png">
           </div>
+          <div>{{row.alarm.mapId | mapName | i18n}}</div>
           <div *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
             {{aetheryte.nameid | i18nRow:'places' | i18n}}
           </div>
