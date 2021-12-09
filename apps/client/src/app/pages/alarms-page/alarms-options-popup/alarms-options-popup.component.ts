@@ -33,9 +33,11 @@ export class AlarmsOptionsPopupComponent {
   }
 
   public setSound(sound: string): void {
-    this.alarmSettings.sound = sound;
-    this.settings.setNotificationSettings(SoundNotificationType.ALARM, this.alarmSettings);
-    this.previewSound();
+    if (['.mp3', '.wav', '.ogg', '.m4a', '.flac', '.mp4', '.wma', '.aac'].some(ext => sound.endsWith(ext))) {
+      this.alarmSettings.sound = sound;
+      this.settings.setNotificationSettings(SoundNotificationType.ALARM, this.alarmSettings);
+      this.previewSound();
+    }
   }
 
   public setHoursBefore(hours: number): void {
