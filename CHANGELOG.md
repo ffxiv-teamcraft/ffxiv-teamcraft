@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.2"></a>
+## [9.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.1...v9.2.2) (2021-12-09)
+
+
+### Bug Fixes
+
+* **alarms:** fixed custom sound input in timer settings popup ([ae9bac0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae9bac0))
+* **allagan-reports:** fixed fishing reports not being editable ([c0268d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0268d2))
+* **desktop:** fixed character search ([fe5047f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe5047f))
+* **desktop:** fixed Universalis reporter ([2f6b8b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f6b8b7)), closes [#1976](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1976)
+* **gearset:** fixed materias popup not adding materias properly ([26bc741](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/26bc741))
+* **settings:** fixed sound notification setting not being applied properly ([d0ff346](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0ff346))
+* **simulator:** added missing medicines ([4ef21ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ef21ec))
+
+
+### Features
+
+* **db:** added link from container items to possible loots ([1e7c393](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1e7c393))
+* **db:** added link from npc pages to their shop content ([d4141b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d4141b2))
+* **db:** new allagan reports import ([775a1bc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/775a1bc))
+
+
+
 <a name="9.2.1"></a>
 ## [9.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.0...v9.2.1) (2021-12-08)
 

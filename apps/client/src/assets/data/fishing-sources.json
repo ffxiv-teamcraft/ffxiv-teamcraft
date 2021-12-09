@@ -19845,6 +19845,32 @@
       "snagging": true
     }
   ],
+  "35605": [
+    {
+      "spot": 263,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36592,
+      "snagging": false
+    }
+  ],
+  "35607": [
+    {
+      "spot": 277,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36590
+    }
+  ],
+  "36385": [
+    {
+      "spot": 252,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36592,
+      "snagging": true
+    }
+  ],
   "36386": [
     {
       "spot": 252,
@@ -19940,6 +19966,34 @@
       "weathersFrom": [
         49
       ]
+    }
+  ],
+  "36480": [
+    {
+      "spot": 275,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36478,
+      "weathers": [
+        3
+      ],
+      "snagging": false
+    }
+  ],
+  "36484": [
+    {
+      "spot": 277,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 36590
+    }
+  ],
+  "36485": [
+    {
+      "spot": 276,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36589
     }
   ]
 }

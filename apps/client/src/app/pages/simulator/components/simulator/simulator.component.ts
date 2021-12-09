@@ -22,7 +22,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
-import { medicines } from '../../../../core/data/sources/medicines';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
@@ -43,7 +42,6 @@ import { NameQuestionPopupComponent } from '../../../../modules/name-question-po
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
 import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
-import { fakeHQItems } from '../../../../core/data/sources/fake-hq-items';
 import { RotationTip } from '../../rotation-tips/rotation-tip';
 import { RotationTipsService } from '../../rotation-tips/rotation-tips.service';
 import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips-popup.component';
@@ -206,8 +204,11 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.foods = consumablesService.fromLazyData(foods)
         .sort(this.consumablesSortFn);
     });
-    this.medicines = consumablesService.fromData(medicines)
-      .sort(this.consumablesSortFn);
+
+    this.lazyData.getEntry('medicines').subscribe(medicines => {
+      this.medicines = consumablesService.fromLazyData(medicines)
+        .sort(this.consumablesSortFn);
+    });
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions)
       .sort(this.freeCompanyActionsSortFn);
   }

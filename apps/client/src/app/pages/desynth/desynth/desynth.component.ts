@@ -157,6 +157,7 @@ export class DesynthComponent {
 
   public createQuickList(item: SearchResult): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
         const operation$ = this.listManager.addToList({

@@ -69,7 +69,7 @@ export class MateriasPopupComponent {
   }
 
   getMeldingChances(materiaItemId: number, slot: number): Observable<number> {
-    if (!materiaItemId || !this.equipmentPiece.materias[slot]) {
+    if (!materiaItemId) {
       return of(0);
     }
     const cacheKey = `${materiaItemId}:${slot}`;

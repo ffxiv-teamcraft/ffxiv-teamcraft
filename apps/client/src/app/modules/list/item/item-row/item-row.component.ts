@@ -48,7 +48,6 @@ import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../../../pages/simulator/model/consumables.service';
 import { FreeCompanyActionsService } from '../../../../pages/simulator/model/free-company-actions.service';
@@ -411,9 +410,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation, item: ListRow): void {
-    this.lazyData.getEntry('foods').subscribe(foods => {
+    combineLatest([
+      this.lazyData.getEntry('foods'),
+      this.lazyData.getEntry('medicines')
+    ]).subscribe(([foods, medicines]) => {
       const foodsData = this.consumablesService.fromLazyData(foods);
-      const medicinesData = this.consumablesService.fromData(medicines);
+      const medicinesData = this.consumablesService.fromLazyData(medicines);
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
       this.modal.create({
         nzContent: MacroPopupComponent,

@@ -1643,10 +1643,10 @@
     dir-compare "^2.4.0"
     fs-extra "^9.0.1"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.9.6":
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.9.6.tgz#e87be7f526e8f8799d53fbdf7ab14dc541b36bdd"
-  integrity sha512-f7SWcCTMSr666TSufnjZyAISnZcn0zRlyETe3j4AegDBxQx+3zFEO1kQQFI1L5NPHWaHev0OyH2nRmB9dZcQDw==
+"@ffxiv-teamcraft/pcap-ffxiv@0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.9.7.tgz#5d59203498cc115ef3bf1a47210d6baa1ed0841e"
+  integrity sha512-rugV1VlCvEx3S5EkuC1Ht747P0gGeHJ3+pTLcmj6JnkNnMETTlIJ6hDDj6kKXaSVQJ3hpI6jVF1JTPc05pyOrg==
   dependencies:
     heap-js "^2.1.5"
 

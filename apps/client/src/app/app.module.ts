@@ -59,6 +59,7 @@ import {
   LoginOutline,
   MessageOutline,
   NotificationOutline,
+  PlayCircleOutline,
   PlusOutline,
   ProfileOutline,
   ReloadOutline,
@@ -118,7 +119,6 @@ import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/fre
 import { AdsModule } from './modules/ads/ads.module';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { NzNoAnimationModule } from 'ng-zorro-antd/core/no-animation';
-import { AllaganReportsService } from './pages/allagan-reports/allagan-reports.service';
 import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-reports.gql';
 import { LazyDataModule } from './lazy-data/lazy-data.module';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
@@ -155,7 +155,8 @@ const icons: IconDefinition[] = [
   FileTextOutline,
   AppstoreOutline,
   HourglassOutline,
-  HomeOutline
+  HomeOutline,
+  PlayCircleOutline
 ];
 
 registerLocaleData(en);

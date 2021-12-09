@@ -268,6 +268,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   public createQuickList(leve: Levequest): void {
     this.i18n.getNameObservable('items', leve.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
 

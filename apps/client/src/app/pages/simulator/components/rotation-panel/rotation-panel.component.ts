@@ -16,7 +16,6 @@ import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 import { Router } from '@angular/router';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
-import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
@@ -52,7 +51,10 @@ export class RotationPanelComponent implements OnInit {
     map(foods => this.consumablesService.fromLazyData(foods)),
     shareReplay(1)
   );
-  public medicines: Consumable[] = [];
+  public medicines$: Observable<Consumable[]> = this.lazyData.getEntry('medicines').pipe(
+    map(medicines => this.consumablesService.fromLazyData(medicines)),
+    shareReplay(1)
+  );
   public freeCompanyActions: FreeCompanyAction[] = [];
   public simulation$: Observable<SimulationResult>;
   private syncLinkUrl: string;
@@ -76,7 +78,6 @@ export class RotationPanelComponent implements OnInit {
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
-    this.medicines = consumablesService.fromData(medicines);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions);
 
   }
@@ -107,10 +108,10 @@ export class RotationPanelComponent implements OnInit {
     this.simulation$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.simulationSet$, this.lazyData.getRecipes()]).pipe(
       filter(([rotation, , stats]) => rotation !== null && stats !== null),
       switchMap(([rotation, gearSets, stats, recipes]) => {
-        return this.foods$.pipe(
-          map(foods => {
+        return combineLatest([this.foods$, this.medicines$]).pipe(
+          map(([foods, medicines]) => {
             const food = foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
-            const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
+            const medicine = medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
             const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
             const crafterStats = new this.simulator.CrafterStats(
               stats.jobId,
@@ -196,10 +197,10 @@ export class RotationPanelComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation): void {
-    this.foods$.pipe(
+    combineLatest([this.foods$, this.medicines$]).pipe(
       first()
-    ).subscribe(foodsData => {
-      const medicinesData = this.consumablesService.fromData(medicines);
+    ).subscribe(([foodsData, medicines]) => {
+      const medicinesData = this.consumablesService.fromLazyData(medicines);
       const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
       this.dialog.create({
         nzContent: MacroPopupComponent,

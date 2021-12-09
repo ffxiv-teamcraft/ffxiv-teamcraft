@@ -190,6 +190,7 @@ export class CollectablesComponent {
 
   public createQuickList(item: { itemId: number, amount: number }): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
         return this.lazyData.getRecipeForItem(item.itemId).pipe(

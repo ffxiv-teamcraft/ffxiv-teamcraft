@@ -189,10 +189,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       }
       return of([data, xivapiItem]);
     }),
-    withLazyData(this.lazyData, 'recipes', 'reduction', 'collectables', 'desynth', 'npcs'),
+    withLazyData(this.lazyData, 'recipes', 'reduction', 'collectables', 'desynth', 'npcs', 'lootSources'),
     withLazyRow(this.lazyData, 'usedInQuests', ([[, xivapiItem]]) => xivapiItem.ID),
     withLazyRow(this.lazyData, 'levesPerItem', ([[[, xivapiItem]]]) => xivapiItem.ID),
-    switchMap(([[[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs], usedInQuests], usedForLeves]) => {
+    switchMap(([[[[data, xivapiItem], recipes, reduction, collectables, desynth, npcs, loots], usedInQuests], usedForLeves]) => {
       const usedFor = [];
       if (data.item.ingredient_of !== undefined) {
         usedFor.push({
@@ -356,13 +356,16 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           trades
         });
       }
-      if (data.item.loot) {
+      const lootEntries = Object.keys(loots).filter(key => {
+        return loots[key].includes(xivapiItem.ID);
+      });
+      if (lootEntries.length > 0) {
         usedFor.push({
           type: UsedForType.CAN_CONTAIN_ITEMS,
           flex: '1 1 auto',
           title: 'DB.Can_contain_items',
           icon: './assets/icons/chest_open.png',
-          links: data.item.loot.map((itemId) => {
+          links: lootEntries.map((itemId) => {
             return {
               itemId: +itemId
             };
@@ -750,6 +753,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   public createQuickList(item: SearchResult, amount: number): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
         const operation$ = this.listManager.addToList({

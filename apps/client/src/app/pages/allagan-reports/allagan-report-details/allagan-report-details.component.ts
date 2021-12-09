@@ -496,7 +496,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.FISHING:
         return this.lazyData.getEntry('fishingSpots').pipe(
           map(fishingSpots => {
-            pickBy({
+            return pickBy({
               spot: fishingSpots.find(s => s.id === report.data.spot),
               hookset: report.data.hookset,
               tug: report.data.tug,

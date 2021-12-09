@@ -32,12 +32,7 @@ export class LodestoneService {
     if (this.ipc.ready) {
       const result$ = new ReplaySubject<{ List: Partial<Character>[] }>();
       this.ipc.once('lodestone:character:search', (event, res) => {
-        result$.next(res.map(char => {
-          return {
-            ...char,
-            Server: char.World
-          };
-        }));
+        result$.next({ List: res });
       });
       this.ipc.send('lodestone:searchCharacter', { name, server });
       dataSource$ = result$.asObservable();

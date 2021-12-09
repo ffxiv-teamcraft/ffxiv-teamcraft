@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
@@ -12,8 +12,6 @@ import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-c
 import { NpcData } from '../../../model/garland-tools/npc-data';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
-import { Trade } from '../../../modules/list/model/trade';
-import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { levemetes } from '../../../core/data/sources/levemetes';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
@@ -62,60 +60,28 @@ export class NpcComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
-    this.trades$ = this.gtData$.pipe(
-      switchMap(gtData => {
-        return this.lazyData.getRow('npcs', gtData.npc.id).pipe(
-          map(npcEntry => ({ gtData, npcEntry }))
-        );
+    this.trades$ = npcId$.pipe(
+      switchMap(npcId => {
+        return combineLatest([
+          of(npcId),
+          this.lazyData.getRow('npcs', +npcId),
+          this.lazyData.getRow('shopsByNpc', +npcId, [])
+        ]);
       }),
-      map(({ gtData, npcEntry }) => {
-        if (gtData.npc.shops === undefined) {
-          return [];
-        }
-        return gtData.npc.shops
-          .filter(shop => +shop.entries[0] !== shop.entries[0])
+      map(([npcId, npcEntry, shops]) => {
+        return shops
           .map(shop => {
-            const npc: TradeNpc = { id: gtData.npc.id };
+            const npc: TradeNpc = { id: +npcId };
             if (npcEntry.position !== null) {
               npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
               npc.zoneId = npcEntry.position.zoneid;
               npc.mapId = npcEntry.position.map;
             }
             return {
-              shopName: shop.name,
+              ...shop,
               npcs: [
                 npc
-              ],
-              trades: shop.entries.map(row => {
-                return <Trade>{
-                  currencies: (row.currency || []).map(currency => {
-                    const partial = gtData.getPartial(currency.id, 'item');
-                    const currencyPartial = partial && partial.obj;
-                    if (currencyPartial) {
-                      return <TradeEntry>{
-                        id: currencyPartial.i,
-                        icon: currencyPartial.c,
-                        amount: currency.amount,
-                        hq: currency.hq === 1
-                      };
-                    }
-                    return undefined;
-                  }).filter(res => res !== undefined),
-                  items: (row.item || []).map(tradeItem => {
-                    const itemPartialFetch = gtData.getPartial(tradeItem.id, 'item');
-                    if (itemPartialFetch !== undefined) {
-                      const itemPartial = itemPartialFetch.obj;
-                      return <TradeEntry>{
-                        id: itemPartial.i,
-                        icon: itemPartial.c,
-                        amount: tradeItem.amount,
-                        hq: tradeItem.hq === 1
-                      };
-                    }
-                    return undefined;
-                  }).filter(res => res !== undefined)
-                };
-              })
+              ]
             };
           });
       })
