@@ -43,7 +43,7 @@ export class PlayerMetricsService {
               private settings: SettingsService, private authFacade: AuthFacade) {
     setInterval(() => {
       this.saveLogs();
-    }, 60000);
+    }, 10000);
     this.ipc.on('metrics:loaded', (e, files: string[]) => {
       const logs = [].concat.apply([], files.map(data => {
         return this.parseLogRows(data);
