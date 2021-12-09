@@ -8,7 +8,6 @@ import { AuthFacade } from '../../../../+state/auth.facade';
 import { ConsumablesService } from '../../model/consumables.service';
 import { Consumable } from '../../model/consumable';
 import { FreeCompanyAction } from '../../model/free-company-action';
-import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { GearSet, SimulationService } from '../../../../core/simulation/simulation.service';
@@ -35,7 +34,9 @@ export class RotationResultTagComponent implements OnInit {
   foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
     map(foods => this.consumablesService.fromLazyData(foods))
   );
-  medicines: Consumable[] = [];
+  medicines$: Observable<Consumable[]> = this.lazyData.getEntry('medicines').pipe(
+    map(medicines => this.consumablesService.fromLazyData(medicines))
+  );
   freeCompanyActions: FreeCompanyAction[] = [];
 
   constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,
@@ -76,19 +77,18 @@ export class RotationResultTagComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.medicines = this.consumablesService.fromData(medicines);
     this.freeCompanyActions = this.freeCompanyActionsService.fromData(freeCompanyActions);
 
     this.result$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.recipe$, this.simulationSet$]).pipe(
       filter(([rotation]) => rotation !== null),
       withLazyData(this.lazyData, 'recipes'),
       switchMap(([[rotation, gearSets, _recipe, simulationSet], recipes]) => {
-        return this.foods$.pipe(
-          map(foods => {
+        return combineLatest([this.foods$, this.medicines$]).pipe(
+          map(([foods, medicines]) => {
             const recipe = recipes.find(r => r.id === (_recipe || rotation.recipe).id);
             const stats = simulationSet || gearSets.find(g => g.jobId === recipe.job);
             const food = foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
-            const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
+            const medicine = medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
             const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
             const crafterStats = new this.simulator.CrafterStats(
               stats.jobId,
