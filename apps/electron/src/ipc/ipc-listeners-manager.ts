@@ -67,16 +67,6 @@ export class IpcListenersManager {
           event.sender.send('oauth-reply', code);
         });
       }
-      if (providerId === 'facebook.com') {
-        const provider = {
-          authorize_url: 'https://www.facebook.com/v3.0/dialog/oauth',
-          client_id: '2276769899216306',
-          redirect_uri: 'http://localhost'
-        };
-        new Oauth(provider).getCode({}).then(code => {
-          event.sender.send('oauth-reply', code);
-        });
-      }
       if (providerId === 'discordapp.com') {
         const provider = {
           authorize_url: 'https://discordapp.com/api/oauth2/authorize',
