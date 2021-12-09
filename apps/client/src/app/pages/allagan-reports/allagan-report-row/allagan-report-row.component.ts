@@ -9,7 +9,7 @@ import { OceanFishingTime } from '../model/ocean-fishing-time';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { merge } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
-import { map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-allagan-report-row',
@@ -58,6 +58,7 @@ export class AllaganReportRowComponent {
     observeInput(this, 'report', true),
     observeInput(this, 'queueEntry', true)
   ).pipe(
+    filter(report => !!report),
     switchMap(report => {
       const data = report.data;
       return this.lazyData.getEntry('fishingSpots').pipe(
