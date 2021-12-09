@@ -117,13 +117,13 @@ export class LayoutsFacade {
                     if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
                       const requiredLevel = Math.floor((gatheredBy.level - 1) / 5) * 5;
-                      if (this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
+                      if (!layout.filterBasedOnLevel || this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
                         acc.accepted.push(item);
                       } else {
                         acc.rejected.push(item);
                       }
                     } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
-                      const match = craftedBy.some((craft) => {
+                      const match = !layout.filterBasedOnLevel || craftedBy.some((craft) => {
                         const requiredLevel = Math.floor((craft.lvl - 1) / 5) * 5;
                         return this.matchesLevel(gearsets, craft.job, requiredLevel);
                       });

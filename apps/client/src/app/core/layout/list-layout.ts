@@ -40,6 +40,8 @@ export class ListLayout extends DataModel implements AfterDeserialized, BeforePr
 
   public default = false;
 
+  public filterBasedOnLevel = false;
+
   public rowsDisplay: {
     buttons: ItemRowMenuElement[];
     menu: ItemRowMenuElement[];
