@@ -750,6 +750,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   public createQuickList(item: SearchResult, amount: number): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
         const operation$ = this.listManager.addToList({

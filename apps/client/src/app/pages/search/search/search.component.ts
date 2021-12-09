@@ -459,6 +459,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   public createQuickList(item: SearchResult): void {
     this.i18n.getNameObservable('items', +item.itemId).pipe(
+      first(),
       switchMap(itemName => {
         const list = this.listsFacade.newEphemeralList(itemName);
         const operation$ = this.listManager.addToList({
