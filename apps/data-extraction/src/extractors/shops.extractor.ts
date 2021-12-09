@@ -208,6 +208,9 @@ export class ShopsExtractor extends AbstractExtractor {
     } = this.buildShopLinkMaps(npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
 
     return shops.map(shop => {
+      if (shop.type === 'GCShop') {
+        return shop;
+      }
       if (questReqs[shop.id]) {
         shop.requiredQuest = questReqs[shop.id];
       }
