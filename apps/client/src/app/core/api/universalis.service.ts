@@ -21,6 +21,16 @@ import { withLazyData } from '../rxjs/with-lazy-data';
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
 
+  // https://github.com/ffxiv-teamcraft/pcap-ffxiv/blob/83b1f5b12a8f025d0090b6436d9311955857d022/src/packet-processors/processors/marketBoardItemListing.ts
+  private static readonly CITIES = {
+    0x01: "Limsa Lominsa",
+    0x02: "Gridania",
+    0x03: "Ul'dah",
+    0x04: "Ishgard",
+    0x07: "Kugane",
+    0x0a: "Crystarium",
+  };
+
   private cid$: Observable<string> = this.authFacade.user$.pipe(
     map(user => user.cid),
     filter(cid => !!cid),
