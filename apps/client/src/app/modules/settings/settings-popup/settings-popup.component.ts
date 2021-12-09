@@ -479,7 +479,7 @@ export class SettingsPopupComponent {
   }
 
   public setNotificationSound(type: SoundNotificationType, sound: string): void {
-    if(['.mp3','.wav','.ogg','.m4a','.flac','.mp4','.wma','.aac'].some(ext => sound.endsWith(ext))){
+    if(['.mp3','.wav','.ogg','.m4a','.flac','.mp4','.wma','.aac'].some(ext => sound.endsWith(ext)) || this.sounds.includes(sound)){
       this.notificationSettings[type].sound = sound;
       this.settings.setNotificationSettings(type, this.notificationSettings[type]);
       this.previewSound(type);

@@ -33,7 +33,7 @@ export class AlarmsOptionsPopupComponent {
   }
 
   public setSound(sound: string): void {
-    if (['.mp3', '.wav', '.ogg', '.m4a', '.flac', '.mp4', '.wma', '.aac'].some(ext => sound.endsWith(ext))) {
+    if (['.mp3', '.wav', '.ogg', '.m4a', '.flac', '.mp4', '.wma', '.aac'].some(ext => sound.endsWith(ext)) || this.sounds.includes(sound)) {
       this.alarmSettings.sound = sound;
       this.settings.setNotificationSettings(SoundNotificationType.ALARM, this.alarmSettings);
       this.previewSound();
