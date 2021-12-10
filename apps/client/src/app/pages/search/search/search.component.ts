@@ -338,6 +338,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         return params.query !== undefined && params.type !== undefined;
       }),
       debounceTime(100),
+      first(),
       switchMap(params => {
         this.searchType$.next(params.type);
         this.query$.next(params.query);
