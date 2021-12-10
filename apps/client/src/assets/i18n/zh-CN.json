@@ -1077,7 +1077,7 @@
       "Min_cp_filter_placeholder": "最小制作力",
       "Difficulty_filter_placeholder": "难度",
       "Quality_filter_placeholder": "品质",
-      "Intro": "输入筛选条件",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
       "Success": "成功：{{HQ}}% HQ",
