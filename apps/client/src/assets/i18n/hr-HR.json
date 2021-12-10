@@ -15,7 +15,7 @@
   "See_on_map": "Pogledajte na karti",
   "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Odredite količinu",
-  "List_fork_in_progress": "Kopiranje popisa na vaš račun...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "Greška u mreži detektirana, odjavljeni ste. Ako se problem nastavi, molimo kontaktirajte Miu na Discord serveru.",
   "Hide_zone_duplicates": "Hide zone duplicates (items that are in multiple zones are shown only once)",
   "Patch_notes": "{{version}} changes",
@@ -213,7 +213,7 @@
     "Macro_copied": "Makronaredba kopirana u međuspremnik",
     "Open_overlay": "Toggle overlay",
     "Open_alarms_overlay": "Toggle alarms overlay",
-    "More_available": "and {{amount}} more...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
     "Add_alarms_to_group": "Add alarms to this group",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "Delete_all": "Delete all your alarms",
     "Delete_alarm": "Delete this alarm",
-    "Regenerating_alarms": "Regenerating your alarms...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
@@ -585,7 +585,7 @@
     "Your_lists": "Your lists",
     "Outdated_tag": "Outdated",
     "No_lists": "You have no lists",
-    "Lists_search_placeholder": "Search for a list...",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Add to a list",
     "Please_pick_recipe": "Please pick a recipe for this item",
     "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list, the items will be added to this list and you'll be redirected to it.",
@@ -765,6 +765,7 @@
       "Layouts": "Layouts",
       "Want_to_learn_more": "Want to learn more about layouts and how they work?",
       "Open_wiki_page": "Open the layouts system wiki page",
+      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
       "ITEMS": {
         "COMMENTS": "Comments",
         "COPY_NAME_NOT_FAVORITE": "Non-favorite copy mode",
@@ -804,6 +805,7 @@
     "HEAVENSWARD": "Heavensward",
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "Outdated",
     "GEAR": "Gear",
     "CONSUMABLE": "Consumable",
@@ -830,10 +832,12 @@
     "WHM": "WHM",
     "SCH": "SCH",
     "AST": "AST",
+    "SGE": "SGE",
     "MNK": "MNK",
     "DRG": "DRG",
     "NIN": "NIN",
     "SAM": "SAM",
+    "RPR": "RPR",
     "BRD": "BRD",
     "MCH": "MCH",
     "DNC": "DNC",
@@ -1031,7 +1035,7 @@
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Include macro lock",
     "Find_rotation": "Community rotation finder",
-    "Searching_for_rotation": "Searching for community rotations...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "No community rotation found that match your needs",
     "Click_on_rotation": "Click on a rotation to select it",
     "Recipe_picker_placeholder": "Enter the name of the recipe you want to craft",
@@ -1073,7 +1077,7 @@
       "Min_cp_filter_placeholder": "Min. CP",
       "Difficulty_filter_placeholder": "Difficulty",
       "Quality_filter_placeholder": "Quality",
-      "Intro": "Input some filters to get started",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "Result of a simulation run using this rotation and your stats",
       "Fail": "Fail",
       "Success": "Success: {{HQ}}% HQ",
@@ -1434,7 +1438,7 @@
       "Format": "Format",
       "Folder": "Folder",
       "No_folder": "No folder",
-      "Parsing_file": "Parsing file content...",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "Saving items ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1458,7 @@
     "Job": "Job",
     "Level": "Desynth level",
     "Intro": "Select a job and input a level to find best items to level up your desynth",
-    "Loading_message": "Loading...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Higher chances",
       "Lower_exp": "Lower exp",
@@ -1545,7 +1549,9 @@
       "Required_control": "Req. Control",
       "Mark_as_done_in_gathering_log": "Mark as done in log",
       "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "Item_series": "Set details",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "Hour of the day",
@@ -1921,7 +1927,9 @@
     "Disable_pcap": "Disable packet capture",
     "Install_npcap": "Npcap is missing from your system",
     "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap_button": "Install npcap and restart Teamcraft",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggest changing region to {{region}}",
@@ -2104,7 +2112,7 @@
       "Wrists": "Wrists"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "Could not compare gearsets",
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
       "Type": "Gearset type",
@@ -2134,7 +2142,7 @@
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {
