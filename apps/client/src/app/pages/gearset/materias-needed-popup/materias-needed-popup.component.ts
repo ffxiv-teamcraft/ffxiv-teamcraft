@@ -35,7 +35,7 @@ export class MateriasNeededPopupComponent {
     ]).pipe(
       switchMap(([gearset, progression, includeAllTools]) => {
         localStorage.setItem('gearsets:include-all-tools', this.includeAllTools.toString());
-        return this.materiaService.getTotalNeededMaterias(this.gearset, this.includeAllTools, this.progression);
+        return this.materiaService.getTotalNeededMaterias(gearset, includeAllTools, progression);
       })
     );
   }
