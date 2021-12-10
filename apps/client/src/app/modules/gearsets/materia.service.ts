@@ -265,10 +265,13 @@ export class MateriaService {
         const itemLevel = lazyItemLevel[ilvls[itemId]];
         const baseParam = baseParams[baseParamId];
         const meldingData = itemMeldingData[itemId];
+        if (!meldingData) {
+          return 0;
+        }
         const baseValue = itemLevel[baseParam.Name_en.replace(/\s/g, '')];
         const slotModifier = baseParam[meldingData.prop];
         const roleModifier = baseParam[`MeldParam${meldingData.modifier}`];
-        return Math.round(baseValue * slotModifier / (roleModifier * 10)) ;
+        return Math.round(baseValue * slotModifier / (roleModifier * 10));
       }),
       shareReplay(1)
     );
