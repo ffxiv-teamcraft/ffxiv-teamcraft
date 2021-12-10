@@ -765,7 +765,7 @@
       "Layouts": "Layouts",
       "Want_to_learn_more": "Möchtest du mehr über Layouts erfahren und wie sie funktionieren?",
       "Open_wiki_page": "Öffne die Layout-System Wiki-Seite",
-      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
+      "Filter_using_level": "Verwende das Handwerks- und Sammlerlevel in entsprechenden Filtern",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -1836,7 +1836,7 @@
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
-    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
+    "Description": "Du möchtest wissen, welche Nahrung dir die Werte gibt, die du möchtest? Such nicht weiter, du bist dort, wo du sein musst!",
     "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
@@ -1979,10 +1979,10 @@
     "Unhide_optimizer": "Dieses Optimierer nicht länger ausblenden",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
-    "Hide_empty": "Hide empty optimizers",
+    "Hide_empty": "Leere Optimierer ausblenden",
     "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "Optimierung als JSON in die Zwischenablage kopiert",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
@@ -2112,7 +2112,7 @@
       "Wrists": "Armreif"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with…",
+      "Compare_popup_title": "Vergleiche {{setName}} mit…",
       "Error_title": "Ausrüstungssets konnten nicht verglichen werden",
       "Error_description": "Bitte stelle sicher, dass das eingegebene Ausrüstungsset existiert und vom gleichen Typ wie das aktuelle ist (gleiches Hauptattribut)",
       "Type": "Ausrüstungsset-Typ",
@@ -2142,7 +2142,7 @@
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importiere Set für {{name}}",
       "Imported_gearset": "Importierte Gruppe für {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets…"
+      "Syncing_gearsets": "Synchronisiere Ausrüstungssets…"
     }
   },
   "FOLDERS": {
@@ -2197,7 +2197,7 @@
     "DESYNTH": {
       "Job": "Wähle einen Beruf, den du aufstufen möchtest",
       "Level": "Gib die Desynthese-Stufe ein (nicht die Stufe des Berufs)",
-      "Search": "Click search, and it's done!"
+      "Search": "Klicke Suche und fertig!"
     },
     "RESET_TIMERS": {
       "Toggle": "Aktiviere die Alarme für einen bestimmten Timer, indem du diesen Schalter auf AN setzt."
