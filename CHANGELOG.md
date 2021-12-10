@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.4"></a>
+## [9.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.3...v9.2.4) (2021-12-10)
+
+
+### Bug Fixes
+
+* **db:** fixed several broken utility icons ([e263be6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e263be6))
+* **gearset:** fix for materia count toggle not working as expected ([36ad9d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36ad9d6))
+* **gearsets:** fixed a bug preventing older gearsets from being opened ([4086a8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4086a8c))
+* **levequests:** change default max level for max available level ([a779e1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a779e1e)), closes [#2093](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2093)
+* **search:** input field no longer updated by router changes for better UX ([9d58f79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d58f79))
+
+
+### Features
+
+* **db:** allagan reports import ([c61ca74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c61ca74))
+
+
+### Performance Improvements
+
+* **community-rotations:** rotation panel performance improvements ([094c573](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/094c573))
+
+
+
 <a name="9.2.3"></a>
 ## [9.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.2...v9.2.3) (2021-12-10)
 
