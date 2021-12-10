@@ -247,7 +247,7 @@ export class LayoutRowFilter {
   static IS_CRAFTED_BY_WVR = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 8
+        return craftedByRow.job === 13
       }) !== undefined;
     }, 'IS_CRAFTED_BY_WVR'));
 
