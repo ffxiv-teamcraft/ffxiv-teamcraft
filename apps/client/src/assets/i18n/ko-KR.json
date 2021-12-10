@@ -1077,7 +1077,7 @@
       "Min_cp_filter_placeholder": "최소 CP",
       "Difficulty_filter_placeholder": "작업량",
       "Quality_filter_placeholder": "품질",
-      "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
