@@ -1,18 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **allagan-reports:** fixed edit mode not resetting on navigation.
-* **allagan-reports:** now using better place name for fishing spots selection.
-* **db:** fixed several shops linking to wrong npc id (showing as missing name).
-* **desktop:** new google auth system to avoid getting security errors.
-* **gearset:** updated average ilvl formula.
-* **layout:** fixed IS_CRAFTED_BY_WVR catching CRP crafts.
-* **rotations:** fixed macro generation popup when opened from rotation panel.
-* **simulator:** fixed Advanced Touch combo not requiring Standard Touch combo properly.
+* **db:** fixed several broken utility icons.
+* **gearset:** fix for materia count toggle not working as expected.
+* **gearsets:** fixed a bug preventing older gearsets from being opened.
+* **levequests:** change default max level for max available level.
+* **search:** input field no longer updated by router changes for better UX.
 
 
 ### Features
 
-* **alarms:** added map name to alarm panels.
-* **db:** more shops, more npc coords.
-* **gearsets:** added a button to gearset panels to toggle favorite from there.
-* **layout:** new layout checkbox to use levels in filters rather than having it by default.`;
+* **db:** allagan reports import.
+
+
+### Performance Improvements
+
+* **community-rotations:** rotation panel performance improvements.`;
