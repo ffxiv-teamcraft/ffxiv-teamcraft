@@ -1077,7 +1077,7 @@
       "Min_cp_filter_placeholder": "CP Min.",
       "Difficulty_filter_placeholder": "Difficulty",
       "Quality_filter_placeholder": "Quality",
-      "Intro": "Ingrese algunos filtros para empezar",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "Resultado de una simulación usando esta rotación y sus atributos",
       "Fail": "Falla",
       "Success": "Éxito: {{HQ}}% HQ",
