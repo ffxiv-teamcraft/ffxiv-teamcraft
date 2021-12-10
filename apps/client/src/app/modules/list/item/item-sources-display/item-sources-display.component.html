@@ -18,7 +18,7 @@
           <app-item-icon width="24" disableClick="true" tooltipDisabled="true" [itemId]="icon"></app-item-icon>
         </span>
         <ng-template #gtFallBack>
-          <img src="https://www.garlandtools.org/db/images/Shop.png" class="img-icon round-icon">
+          <img src="https://www.garlandtools.org/db/images/marker/Shop.png" class="img-icon round-icon">
         </ng-template>
       </button>
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
@@ -44,7 +44,7 @@
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
-        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/item/Reduce.png">
       </button>
       <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
               nz-button

@@ -206,7 +206,8 @@ export class AppComponent implements OnInit {
 
     combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
       filter(([, user, nav]) => {
-        return user.allaganChecker || user.admin || nav.includes('allagan-reports');
+        return user.allaganChecker || user.admin || nav.includes('allagan-reports')
+          || nav.includes('fishing-spot') || nav.includes('item');
       }),
       first()
     ).subscribe(() => {
