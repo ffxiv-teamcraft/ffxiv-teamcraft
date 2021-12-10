@@ -17,8 +17,7 @@
           <app-item-icon [icon]="recipe.icon" [itemId]="recipe.itemId" [width]="32"></app-item-icon>
         </ng-template>
         <ng-template #description>
-          <img alt="getJob(item.job)?.abbreviation"
-               class="crafted-by" src="https://www.garlandtools.org/db/images/{{getJob(recipe.job)?.abbreviation}}.png">
+          <img class="crafted-by" src="https://www.garlandtools.org/db/images/job/{{getJob(recipe.job)?.abbreviation}}.png">
           {{recipe.lvl}}
           {{getStars(recipe.stars)}}
         </ng-template>

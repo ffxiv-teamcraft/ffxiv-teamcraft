@@ -170,7 +170,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
       }
       targetObject[targetItem] = sourceDetails;
-    } else {
+    } else if (!!sourceDetails) {
       targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
     }
   }

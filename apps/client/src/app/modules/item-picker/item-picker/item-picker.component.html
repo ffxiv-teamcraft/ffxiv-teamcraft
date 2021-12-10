@@ -29,7 +29,7 @@
             <img alt="{{getJob(result.recipe.job)?.abbreviation}}"
                  *ngIf="result.recipe?.job > 1"
                  class="crafted-by"
-                 src="https://www.garlandtools.org/db/images/{{getJob(result.recipe.job)?.abbreviation}}.png">
+                 src="https://www.garlandtools.org/db/images/job/{{getJob(result.recipe.job)?.abbreviation}}.png">
             {{result.recipe.lvl}}
             {{getStars(result.recipe.stars)}}
           </ng-template>

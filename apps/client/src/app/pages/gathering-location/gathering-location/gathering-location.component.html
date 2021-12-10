@@ -55,7 +55,7 @@
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <img *ngIf="row.node.type !== undefined" alt="" class="node-type" src="{{row.node.type | nodeTypeIcon}}">
               <img *ngIf="row.node.isReduction" [nzTooltipTitle]="'Reduction' | translate" class="reduction-icon"
-                   nz-tooltip src="https://www.garlandtools.org/db/images/Reduce.png">
+                   nz-tooltip src="https://www.garlandtools.org/db/images/item/Reduce.png">
               <app-item-icon *ngIf="row.node.folklore !== undefined" [itemId]="row.node.folklore" [width]="32"></app-item-icon>
               <img *ngIf="row.node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                    src="./assets/icons/status/snagging.png">

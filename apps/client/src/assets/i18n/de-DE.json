@@ -15,7 +15,7 @@
   "See_on_map": "Auf der Karte anzeigen",
   "No_known_coordinates": "Keine bekannten Koordinaten",
   "Edit_amount": "Anzahl ändern",
-  "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
+  "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
   "Patch_notes": "{{version}} Änderungen",
@@ -213,7 +213,7 @@
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay umschalten",
     "Open_alarms_overlay": "Alarme-Overlay umschalten",
-    "More_available": "und {{amount}} mehr...",
+    "More_available": "and {{amount}} more…",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Diese Gruppe und alle darin enthaltenen Alarme zu den eigenen Alarmen hinzufügen",
     "Delete_all": "Lösche alle Alarme",
     "Delete_alarm": "Diesen Alarm löschen",
-    "Regenerating_alarms": "Alarme werden neu generiert...",
+    "Regenerating_alarms": "Regenerating your alarms…",
     "Regenerate": "Alle Alarme neu generieren",
     "Group_outdated": "Diese Gruppe ist veraltet, bitte den Besitzer, sich mit einem neuen Update anzumelden und es wird aktualisiert",
     "Remove_from_group": "Von dieser Gruppe entfernen",
@@ -585,7 +585,7 @@
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
     "No_lists": "Du hast keine Listen",
-    "Lists_search_placeholder": "Suche nach Liste...",
+    "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Einer Liste hinzufügen",
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
     "Import_description": "Wähle das Rezept, das du für den herstellbaren Gegenstand nutzen möchtest und wähle eine Liste. Die Gegenstände werden der Liste hinzugefügt und du wirst weitergeleitet.",
@@ -765,6 +765,7 @@
       "Layouts": "Layouts",
       "Want_to_learn_more": "Möchtest du mehr über Layouts erfahren und wie sie funktionieren?",
       "Open_wiki_page": "Öffne die Layout-System Wiki-Seite",
+      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -804,6 +805,7 @@
     "HEAVENSWARD": "Heavensward",
     "STORMBLOOD": "Stormblood",
     "SHADOWBRINGERS": "Shadowbringers",
+    "ENDWALKER": "Endwalker",
     "OUTDATED": "veraltet",
     "GEAR": "Ausrüstung",
     "CONSUMABLE": "Benutzbares",
@@ -830,10 +832,12 @@
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
+    "SGE": "SGE",
     "MNK": "MÖN",
     "DRG": "DRG",
     "NIN": "NIN",
     "SAM": "SAM",
+    "RPR": "RPR",
     "BRD": "BRD",
     "MCH": "MCH",
     "DNC": "TÄN",
@@ -1031,7 +1035,7 @@
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
     "Find_rotation": "Community Rotationen Finder",
-    "Searching_for_rotation": "Suche nach Community Rotationen...",
+    "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
@@ -1073,7 +1077,7 @@
       "Min_cp_filter_placeholder": "Minimum-HP",
       "Difficulty_filter_placeholder": "Schwierigkeit",
       "Quality_filter_placeholder": "Qualität",
-      "Intro": "Filter eingeben, um zu beginnen",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
       "Success": "Erfolg: {{HQ}}% HQ",
@@ -1434,7 +1438,7 @@
       "Format": "Format",
       "Folder": "Verzeichnis",
       "No_folder": "Kein Verzeichnis",
-      "Parsing_file": "Analysiere Dateiinhalt...",
+      "Parsing_file": "Parsing file content…",
       "Saving_items": "Speichere Gegenstände ({{done}}/{{todo}})"
     }
   },
@@ -1454,7 +1458,7 @@
     "Job": "Job",
     "Level": "Verwertungsstufe",
     "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
-    "Loading_message": "Lade...",
+    "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Höhere Chancen",
       "Lower_exp": "Niedrigere Erfahrung",
@@ -1545,7 +1549,9 @@
       "Required_control": "benötigte Kontrolle",
       "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
       "X_Equipped": "{{amount}} Ausgerüstet:",
-      "Item_series": "Set-Details"
+      "Item_series": "Set-Details",
+      "Requires_fate_rank": "Requires FATE rank {{rank}}",
+      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -1921,7 +1927,9 @@
     "Disable_pcap": "Paketerfassung deaktivieren",
     "Install_npcap": "Npcap fehlt auf dem System",
     "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
-    "Install_npcap_button": "Installiere npcap und starte Teamcraft neu"
+    "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
+    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
@@ -2104,7 +2112,7 @@
       "Wrists": "Armreif"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Vergleiche {{setName}} mit...",
+      "Compare_popup_title": "Compare {{setName}} with…",
       "Error_title": "Ausrüstungssets konnten nicht verglichen werden",
       "Error_description": "Bitte stelle sicher, dass das eingegebene Ausrüstungsset existiert und vom gleichen Typ wie das aktuelle ist (gleiches Hauptattribut)",
       "Type": "Ausrüstungsset-Typ",
@@ -2134,7 +2142,7 @@
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importiere Set für {{name}}",
       "Imported_gearset": "Importierte Gruppe für {{name}}",
-      "Syncing_gearsets": "Synchronisiere Ausrüstungssets..."
+      "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
   "FOLDERS": {

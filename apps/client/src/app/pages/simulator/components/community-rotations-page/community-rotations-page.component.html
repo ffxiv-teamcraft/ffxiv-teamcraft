@@ -18,8 +18,9 @@
       </nz-select>
       <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}:</div>
+          <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}*:</div>
           <nz-select (ngModelChange)="rlvlFilter$.next($event)"
+                     required="true"
                      [ngModel]="rlvlFilter$ | async"
                      tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Rlvl_filter"
                      tutorialStepIndex="2"
