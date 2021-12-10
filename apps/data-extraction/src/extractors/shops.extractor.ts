@@ -37,7 +37,7 @@ interface ShopLinkMaps {
 export class ShopsExtractor extends AbstractExtractor {
   protected doExtract(): void {
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/GilShop?columns=ID,Name_*,Items,Icon'),
+      this.aggregateAllPages('https://xivapi.com/GilShop?columns=ID,Name_*,Items'),
       this.aggregateAllPages('https://xivapi.com/SpecialShop?columns=ID,QuestItem*,SpecialShopItemCategory*,ItemReceive*,CountReceive*,HQReceive*,ItemCost*,CountCost*,HQCost*,CollectabilityRatingCost*,UseCurrencyType'),
       this.aggregateAllPages('https://xivapi.com/GCScripShopItem?columns=ID,CostGCSeals,ItemTargetID,RequiredGrandCompanyRankTargetID'),
       this.aggregateAllPages('https://xivapi.com/GCScripShopCategory?columns=ID,GrandCompany,Tier'),
@@ -111,7 +111,6 @@ export class ShopsExtractor extends AbstractExtractor {
 
   private handleGilShops(gilShops: any[]): Shop[] {
     return gilShops
-      .filter(shop => !!shop.Name_en)
       .map(gilShop => {
         return {
           id: gilShop.ID,

@@ -13,6 +13,7 @@
             <i nz-icon nzType="right"></i>
             <div>x{{threshold.quantity}}
               <span [nzTooltipTitle]="'Requires_x_ventures' | translate: {amount: (item.amount - item.done) / threshold.quantity | ceil}"
+                    *ngIf="item.amount"
                     nz-tooltip>
                 ({{((item.amount - item.done) / threshold.quantity) | ceil }})
               </span>
