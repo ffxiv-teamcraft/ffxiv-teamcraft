@@ -1077,7 +1077,7 @@
       "Min_cp_filter_placeholder": "最小CP",
       "Difficulty_filter_placeholder": "難易度",
       "Quality_filter_placeholder": "品質",
-      "Intro": "一部のフィルターを入力して開始",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "シミュレーションの結果は現在のスキル回しと自分のサブステをもとに導出されます。",
       "Fail": "失敗",
       "Success": "HQ確率: {{HQ}}%",
