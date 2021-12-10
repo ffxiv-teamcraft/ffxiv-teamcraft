@@ -24,6 +24,10 @@
   <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate">
     <i nz-icon nzType="eye" nzTheme="outline"></i>
   </a>
+  <app-favorite-button *ngIf="gearset.authorId !== userId"
+                       type="gearsets"
+                       [key]="gearset.$key"
+                       size="default"></app-favorite-button>
   <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nzType="primary" nz-tooltip
      [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate">
     <i nz-icon nzType="edit" nzTheme="outline"></i>
