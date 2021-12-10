@@ -29,7 +29,7 @@ export class ConsumablesService {
 
   fromLazyData(data: any[]): Consumable[] {
     return [].concat.call([], ...data.map(row => {
-      if (!Object.keys(row.Bonuses).some(key => ['CP', 'Craftsmanship', 'Control'].indexOf(key) > -1)) {
+      if (!row.Bonuses || !Object.keys(row.Bonuses).some(key => ['CP', 'Craftsmanship', 'Control'].indexOf(key) > -1)) {
         return [];
       }
       const consumables: Consumable[] = [new Consumable(row.ID), new Consumable(row.ID, true)];

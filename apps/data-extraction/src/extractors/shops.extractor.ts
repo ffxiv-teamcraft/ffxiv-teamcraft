@@ -37,7 +37,7 @@ interface ShopLinkMaps {
 export class ShopsExtractor extends AbstractExtractor {
   protected doExtract(): void {
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/GilShop?columns=ID,Name_*,Items,Icon'),
+      this.aggregateAllPages('https://xivapi.com/GilShop?columns=ID,Name_*,Items'),
       this.aggregateAllPages('https://xivapi.com/SpecialShop?columns=ID,QuestItem*,SpecialShopItemCategory*,ItemReceive*,CountReceive*,HQReceive*,ItemCost*,CountCost*,HQCost*,CollectabilityRatingCost*,UseCurrencyType'),
       this.aggregateAllPages('https://xivapi.com/GCScripShopItem?columns=ID,CostGCSeals,ItemTargetID,RequiredGrandCompanyRankTargetID'),
       this.aggregateAllPages('https://xivapi.com/GCScripShopCategory?columns=ID,GrandCompany,Tier'),
@@ -68,9 +68,6 @@ export class ShopsExtractor extends AbstractExtractor {
         }).filter(shop => !!shop);
       })
     ).subscribe((shops) => {
-      console.log('\n');
-      console.log(`Shops without NPC : ${shops.filter(s => s.npcs.length === 0).length}/${shops.length}`);
-      console.log(shops.filter(s => s.npcs.length === 0).slice(0, 10).map(s => `${s.type}#${s.id}`));
       this.persistToJsonAsset('shops', shops);
       this.persistToJsonAsset('shops-by-npc', shops.reduce((acc, shop) => {
         shop.npcs.forEach(npc => {
@@ -114,7 +111,6 @@ export class ShopsExtractor extends AbstractExtractor {
 
   private handleGilShops(gilShops: any[]): Shop[] {
     return gilShops
-      .filter(shop => !!shop.Name_en)
       .map(gilShop => {
         return {
           id: gilShop.ID,
@@ -256,7 +252,7 @@ export class ShopsExtractor extends AbstractExtractor {
         if (dataID > 0) {
           npcsByShopID[dataID] = [
             ...(npcsByShopID[dataID] || []),
-            topic.ID
+            ...(npcsByShopID[topic.ID] || []),
           ];
           topicSelects[dataID] = topic.ID;
         }

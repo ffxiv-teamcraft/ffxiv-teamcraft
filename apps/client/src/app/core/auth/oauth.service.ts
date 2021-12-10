@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
-import firebase from 'firebase/compat/app';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { HttpClient } from '@angular/common/http';
 import { UserCredential } from '@firebase/auth-types';
 import { from, Observable, Subject } from 'rxjs';
+import firebase from 'firebase/compat/app';
 import { switchMap } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class OauthService {
@@ -17,15 +16,21 @@ export class OauthService {
               private _ipc: IpcService, private http: HttpClient) {
   }
 
-  public login(provider: any): Observable<UserCredential> {
+  public loginWithGoogle(): Observable<UserCredential> {
     let signIn$: Observable<UserCredential>;
     // If we're running inside electron, we need a special implementation.
     if (this.platformService.isDesktop()) {
       signIn$ = new Subject<UserCredential>();
+      const provider = {
+        authorize_url: 'https://accounts.google.com/o/oauth2/auth',
+        client_id: '1082504004791-qjnubk6kj80kfvn3mg86lmu6eba16c6l.apps.googleusercontent.com',
+        redirect_uri: 'http://localhost:14500/oauth',
+        response_type: 'code',
+        scope: 'https://www.googleapis.com/auth/userinfo.profile'
+      };
+      const authUrl = `${provider.authorize_url}?response_type=${provider.response_type}&redirect_uri=${provider.redirect_uri}&client_id=${provider.client_id}&scope=${provider.scope}`;
       this._ipc.once('oauth-reply', (event, code) => {
-        const authorizationUrl = provider.providerId === 'google.com' ?
-          `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost` :
-          `https://us-central1-ffxivteamcraft.cloudfunctions.net/facebook-oauth${environment.production ? '' : '-beta'}?code=${code}&redirect_uri=http://localhost`;
+        const authorizationUrl = `https://us-central1-ffxivteamcraft.cloudfunctions.net/google-oauth?code=${code}&redirect_uri=http://localhost:14500/oauth`;
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {
@@ -34,9 +39,9 @@ export class OauthService {
           )
           .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
       });
-      this._ipc.send('oauth', provider.providerId);
+      window.open(authUrl, '_blank');
     } else {
-      signIn$ = from(this.af.signInWithPopup(provider) as Promise<any>);
+      signIn$ = from(this.af.signInWithPopup(new firebase.auth.GoogleAuthProvider()) as Promise<any>);
     }
     return signIn$;
   }

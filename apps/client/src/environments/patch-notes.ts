@@ -1,16 +1,18 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed custom sound input in timer settings popup.
-* **allagan-reports:** fixed fishing reports not being editable.
-* **desktop:** fixed character search.
-* **desktop:** fixed Universalis reporter.
-* **gearset:** fixed materias popup not adding materias properly.
-* **settings:** fixed sound notification setting not being applied properly.
-* **simulator:** added missing medicines.
+* **allagan-reports:** fixed edit mode not resetting on navigation.
+* **allagan-reports:** now using better place name for fishing spots selection.
+* **db:** fixed several shops linking to wrong npc id (showing as missing name).
+* **desktop:** new google auth system to avoid getting security errors.
+* **gearset:** updated average ilvl formula.
+* **layout:** fixed IS_CRAFTED_BY_WVR catching CRP crafts.
+* **rotations:** fixed macro generation popup when opened from rotation panel.
+* **simulator:** fixed Advanced Touch combo not requiring Standard Touch combo properly.
 
 
 ### Features
 
-* **db:** added link from container items to possible loots.
-* **db:** added link from npc pages to their shop content.
-* **db:** new allagan reports import.`;
+* **alarms:** added map name to alarm panels.
+* **db:** more shops, more npc coords.
+* **gearsets:** added a button to gearset panels to toggle favorite from there.
+* **layout:** new layout checkbox to use levels in filters rather than having it by default.`;

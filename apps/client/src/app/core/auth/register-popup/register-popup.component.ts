@@ -42,14 +42,6 @@ export class RegisterPopupComponent {
       });
   }
 
-  public facebookOauth(): void {
-    delete this.errorMessageCode;
-    this.authFacade.facebookOauth()
-      .subscribe(() => {
-        this.modalRef.close();
-      });
-  }
-
   private matchPasswords(AC: AbstractControl) {
     const password = AC.get('password').value; // to get value in input tag
     const confirmPassword = AC.get('confirmPassword').value; // to get value in input tag

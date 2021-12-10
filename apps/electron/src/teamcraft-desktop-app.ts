@@ -8,6 +8,7 @@ import { PacketCapture } from './pcap/packet-capture';
 import * as log from 'electron-log';
 import { Constants } from './constants';
 import { join } from 'path';
+import { parse } from 'url';
 
 export class TeamcraftDesktopApp {
 
@@ -113,10 +114,13 @@ export class TeamcraftDesktopApp {
         this.mainWindow.win.focus();
         this.mainWindow.win.show();
         console.log(req.url);
-        if (req.url.length > 1) {
+        res.writeHead(200);
+        if (req.url.startsWith('/oauth')) {
+          this.mainWindow.win.webContents.send('oauth-reply', parse(req.url, true).query.code);
+          res.write('<script>window.close();</script>You can now close this tab.')
+        } else if (req.url.length > 1) {
           this.mainWindow.win.webContents.send('navigate', req.url);
         }
-        res.writeHead(200);
         res.end();
       }).listen(TeamcraftDesktopApp.MAIN_WINDOW_PORT, 'localhost');
 

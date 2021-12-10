@@ -37,6 +37,7 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
 import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.component';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pcap-popup.component';
+import { FavoritesModule } from '../favorites/favorites.module';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pca
     ItemIconModule,
     FullpageMessageModule,
     NzTagModule,
-    NzTimelineModule
+    NzTimelineModule,
+    FavoritesModule
   ],
   exports: [
     MateriaSlotIconComponent,

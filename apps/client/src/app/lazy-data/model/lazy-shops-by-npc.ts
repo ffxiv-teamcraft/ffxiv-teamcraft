@@ -3,8 +3,8 @@ export interface LazyShopsByNpc {
   type:           Type;
   npcs:           number[];
   trades:         Trade[];
-  gc?:            number;
   topicSelectId?: number;
+  gc?:            number;
 }
 
 export interface Trade {

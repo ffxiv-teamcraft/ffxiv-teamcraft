@@ -208,7 +208,7 @@
             <nz-form-control [nzSpan]="10">
               <nz-select formControlName="spot" [nzDisabled]="!!modificationId$.value">
                 <nz-option *ngFor="let spot of details.spots" [nzValue]="spot"
-                           nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.placeId | i18nRow:'places' | i18n}}"></nz-option>
+                           nzLabel="{{spot.mapId | mapName | i18n}} - {{spot.zoneId | i18nRow:'places' | i18n}}"></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>

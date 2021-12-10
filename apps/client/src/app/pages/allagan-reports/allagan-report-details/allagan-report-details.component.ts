@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { debounceTime, filter, first, map, pluck, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AllaganReportsService } from '../allagan-reports.service';
 import { AllaganReportSource } from '../model/allagan-report-source';
@@ -301,7 +301,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
               private message: NzMessageService, private translate: TranslateService,
               private authFacade: AuthFacade, private cd: ChangeDetectorRef,
               private xivapi: XivapiService, private fb: FormBuilder,
-              private fishCtx: FishContextService, private itemCtx: ItemContextService) {
+              private fishCtx: FishContextService, private itemCtx: ItemContextService,
+              private router: Router) {
     super(lazyData);
     this.form.valueChanges.pipe(
       takeUntil(this.onDestroy$)
@@ -318,6 +319,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         this.cd.detectChanges();
       });
     });
+    this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+      takeUntil(this.onDestroy$)
+    ).subscribe(() => {
+      this.cancel();
+    })
   }
 
   requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, Observable<any>>): (control: AbstractControl) => Observable<ValidationErrors | null> {

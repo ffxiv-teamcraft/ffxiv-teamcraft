@@ -65,6 +65,12 @@
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
+        <label [(ngModel)]="layout.filterBasedOnLevel" (ngModelChange)="dirty = true"
+               [nzDisabled]="layout.default" nz-checkbox>
+          {{"LIST_DETAILS.LAYOUT_DIALOG.Filter_using_level" | translate}}
+        </label>
+      </div>
+      <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
                [nzDisabled]="layout.default" nz-checkbox>
           {{"LIST.Always_show_inventory" | translate}}
