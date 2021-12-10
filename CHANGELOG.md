@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.3"></a>
+## [9.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.2...v9.2.3) (2021-12-10)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed edit mode not resetting on navigation ([90d7a0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90d7a0d))
+* **allagan-reports:** now using better place name for fishing spots selection ([a4ddc32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4ddc32))
+* **db:** fixed several shops linking to wrong npc id (showing as missing name) ([4459f05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4459f05))
+* **desktop:** new google auth system to avoid getting security errors ([7f1ee7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7f1ee7b))
+* **gearset:** updated average ilvl formula ([308a254](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/308a254))
+* **layout:** fixed IS_CRAFTED_BY_WVR catching CRP crafts ([a63ad2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a63ad2f))
+* **rotations:** fixed macro generation popup when opened from rotation panel ([302dd13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/302dd13))
+* **simulator:** fixed Advanced Touch combo not requiring Standard Touch combo properly ([230b3ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/230b3ba))
+
+
+### Features
+
+* **alarms:** added map name to alarm panels ([6ae575f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ae575f))
+* **db:** more shops, more npc coords ([7fdac4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fdac4b))
+* **gearsets:** added a button to gearset panels to toggle favorite from there ([4880efb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4880efb))
+* **layout:** new layout checkbox to use levels in filters rather than having it by default ([8d5d7ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d5d7ff))
+
+
+
 <a name="9.2.2"></a>
 ## [9.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.1...v9.2.2) (2021-12-09)
 
