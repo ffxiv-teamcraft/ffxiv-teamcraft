@@ -199,10 +199,17 @@ export class AppComponent implements OnInit {
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
               private data: DataService, private allaganReportsService: AllaganReportsService) {
 
-    this.authFacade.idToken$.pipe(
+    const navigationEvents$ = this.router.events.pipe(
+      filter(e => e instanceof NavigationStart),
+      map((e: NavigationStart) => e.url)
+    );
+
+    combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
+      filter(([, user, nav]) => {
+        return user.allaganChecker || user.admin || nav.includes('allagan-reports');
+      }),
       first()
     ).subscribe(() => {
-
       const ws = new WebSocketLink({
         uri: `wss://gubal.hasura.app/v1/graphql`,
         options: {
