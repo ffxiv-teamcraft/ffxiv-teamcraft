@@ -18,20 +18,13 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
   }
 
   public getCommunityRotations(filters: CommunityRotationFilters): Observable<CraftingRotation[]> {
-    if (filters.tags.length === 0
-      && filters.name.length < 3
-      && filters.durability === null
-      && filters.rlvl === null
-      && filters.craftsmanship === null
-      && filters.control === null
-      && filters.cp === null
-      && filters.difficulty === null
-      && filters.quality === null
-    ) {
+    if (filters.rlvl === null) {
       return of([]);
     }
     const query: QueryFn = ref => {
-      return ref.where(`public`, '==', true);
+      return ref.where(`public`, '==', true)
+        .where('community.rlvl', '==', filters.rlvl)
+        .orderBy('xivVersion', 'desc');
     };
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()

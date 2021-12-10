@@ -41,7 +41,7 @@ export class CraftingRotation extends DataWithPermissions {
 
   public community: CommunityRotationData;
 
-  public xivVersion = '5.5';
+  public xivVersion = '6.0';
 
   public getName(): string {
     if (this.recipe) {

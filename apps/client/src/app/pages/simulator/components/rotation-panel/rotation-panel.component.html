@@ -1,5 +1,5 @@
 <nz-collapse *ngIf="rotation$ | async as rotation">
-  <nz-collapse-panel [nzHeader]="header">
+  <nz-collapse-panel [nzHeader]="header" #panel>
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
         <div (dblclick)="openRotation(rotation)" fxLayout="row" fxLayoutAlign="flex-start center"
@@ -118,8 +118,10 @@
         </div>
       </div>
     </ng-template>
-    <div *ngIf="actions$ | async as actions" fxLayout="row wrap" fxLayoutGap="10px">
-      <app-action *ngFor="let action of actions" [action]="action" [hideCost]="true"></app-action>
-    </div>
+    <ng-container *ngIf="panel.nzActive">
+      <div *ngIf="actions$ | async as actions" fxLayout="row wrap" fxLayoutGap="10px">
+        <app-action *ngFor="let action of actions" [action]="action" [hideCost]="true"></app-action>
+      </div>
+    </ng-container>
   </nz-collapse-panel>
 </nz-collapse>
