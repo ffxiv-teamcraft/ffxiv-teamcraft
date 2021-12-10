@@ -41,9 +41,9 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  levelMin$: BehaviorSubject<number> = new BehaviorSubject<number>(this.environment.maxLevel - 10);
 
-  levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(10);
+  levelMax$: BehaviorSubject<number> = new BehaviorSubject<number>(this.environment.maxLevel);
 
   results$: Observable<Levequest[]>;
 
