@@ -1077,7 +1077,7 @@
       "Min_cp_filter_placeholder": "Мин. CP",
       "Difficulty_filter_placeholder": "Сложность",
       "Quality_filter_placeholder": "Качество",
-      "Intro": "Добавьте фильтры, чтобы начать",
+      "Intro": "Input a recipe lvl to get started",
       "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
       "Success": "Успешно: {{HQ}}% HQ",
