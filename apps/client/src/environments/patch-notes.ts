@@ -1,17 +1,18 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed several broken utility icons.
-* **gearset:** fix for materia count toggle not working as expected.
-* **gearsets:** fixed a bug preventing older gearsets from being opened.
-* **levequests:** change default max level for max available level.
-* **search:** input field no longer updated by router changes for better UX.
+* **search:** fixed job icons not shown properly.
+* **simulator:** fixed byregot's blessing not being usable at 1 stack of Inner Quiet.
 
 
 ### Features
 
-* **db:** allagan reports import.
+* **db:** support for the new stats threshold values in retainer tasks.
+* **profile:** added EW folklore books.
+* **retainer-ventures:** add support for new yield threshold system using perception.
+* **retainer-ventures:** add support for new yield threshold system using perception.
+* **settings:** added two new EW cities as possible starting point.
 
 
 ### Performance Improvements
 
-* **community-rotations:** rotation panel performance improvements.`;
+* **inventory-optimizer:** disabled Unwanted Materials optimizer to improve performances.`;
