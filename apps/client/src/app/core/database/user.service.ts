@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -33,6 +33,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         catchError((err) => {
           return of(null);
         }),
+        distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
         switchMap(user => {
           if (user === null) {
             user = new TeamcraftUser();
