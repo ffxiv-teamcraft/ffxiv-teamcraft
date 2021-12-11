@@ -7,7 +7,7 @@
       </nz-list-item-meta>
       <ng-template #content>
         <div fxLayout="column">
-          <div *ngFor="let threshold of venture.amountsDetails" fxLayout="row" fxLayoutAlign="flex-end center"
+          <div *ngFor="let threshold of venture.quantities" fxLayout="row" fxLayoutAlign="flex-end center"
                fxLayoutGap="5px">
             <div>{{threshold.name | translate}} {{threshold.stat}}</div>
             <i nz-icon nzType="right"></i>

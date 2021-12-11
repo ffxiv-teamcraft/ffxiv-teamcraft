@@ -4,7 +4,7 @@ export class VenturesExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const ventures = {};
     const retainerTasks = [];
-    this.aggregateAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task,Experience,RequiredGathering,RequiredItemLevel,RetainerLevel,RetainerTaskParameter,VentureCost,ClassJobCategoryTargetID,Quantity0,Quantity1,Quantity2`, null, 'Ventures')
+    this.aggregateAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task,Experience,RequiredGathering,RequiredItemLevel,RetainerLevel,RetainerTaskParameter,VentureCost,ClassJobCategoryTargetID,Quantity0,Quantity1,Quantity2,Quantity3,Quantity4`)
       .subscribe(tasks => {
         tasks.forEach(task => {
           if (task.IsRandom) {
@@ -35,7 +35,7 @@ export class VenturesExtractor extends AbstractExtractor {
               lvl: task.RetainerLevel,
               cost: task.VentureCost,
               item: task.Task.Item.ID,
-              quantities: [0, 1, 2].map(index => {
+              quantities: [0, 1, 2, 3, 4].map(index => {
                 return {
                   quantity: task.Task[`Quantity${index}`],
                   stat: reqStat,
