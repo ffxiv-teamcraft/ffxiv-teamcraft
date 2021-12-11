@@ -17,6 +17,6 @@ export interface Quantity {
 }
 
 export enum Stat {
-  Gathering = "gathering",
   Ilvl = "ilvl",
+  Perception = "perception",
 }

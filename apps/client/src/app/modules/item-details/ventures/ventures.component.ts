@@ -19,25 +19,11 @@ export class VenturesComponent extends ItemDetailsPopup<LazyRetainerTask[]> impl
     super();
   }
 
-  ventureAmounts(venture: Venture): any[] {
-    let amounts = [];
-
-    if (venture.amounts !== undefined) {
-      const stats = venture.ilvl || venture.gathering;
-      const name = venture.ilvl ? 'RETAINER_VENTURES.Retainer_ilvl' : 'Gathering';
-      if (stats) {
-        amounts = stats.map((stat, i) => ({ name: name, stat: stat, quantity: venture.amounts[i] }));
-      }
-    }
-
-    return amounts;
-  }
-
   ngOnInit(): void {
     this.ventures = this.details.map(venture => {
       venture.quantities = (venture.quantities || []).map(q => {
-        if (q.stat === 'gathering') {
-          (q as any).stat = 'Gathering';
+        if (q.stat === 'perception') {
+          (q as any).stat = 'Perception';
         } else {
           (q as any).stat = 'RETAINER_VENTURES.Retainer_ilvl';
         }

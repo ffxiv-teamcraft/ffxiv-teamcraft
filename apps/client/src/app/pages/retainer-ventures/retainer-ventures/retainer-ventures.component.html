@@ -47,6 +47,12 @@
         <nz-input-number formControlName="gathering" nzMin="0"></nz-input-number>
       </nz-form-control>
     </nz-form-item>
+    <nz-form-item *ngIf="form.get('job').value >= 16 && form.get('job').value <= 18">
+      <nz-form-label>{{73 | i18nRow:'baseParams' | i18n}}</nz-form-label>
+      <nz-form-control>
+        <nz-input-number formControlName="perception" nzMin="0"></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
     <nz-form-item>
       <nz-form-label>{{'MARKETBOARD.Server' | translate}}</nz-form-label>
       <nz-form-control>

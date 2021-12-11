@@ -17,7 +17,7 @@ export class VenturesExtractor extends AbstractExtractor {
           } else if (task.Task && task.Task.Item) {
             let reqStat = 'ilvl';
             if (task.ClassJobCategoryTargetID !== 34) {
-              reqStat = 'gathering';
+              reqStat = 'perception';
             }
             let reqStatValue = 'ItemLevelDoW';
             if (task.ClassJobCategoryTargetID !== 34) {
