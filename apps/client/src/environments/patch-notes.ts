@@ -14,4 +14,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **community-rotations:** rotation panel performance improvements.`;
+* **community-rotations:** rotation panel performance improvements.`;
