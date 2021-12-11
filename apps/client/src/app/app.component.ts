@@ -204,10 +204,12 @@ export class AppComponent implements OnInit {
       map((e: NavigationStart) => e.url)
     );
 
+    this.desktop = this.platformService.isDesktop();
+
     combineLatest([this.authFacade.idToken$, this.authFacade.user$, navigationEvents$]).pipe(
       filter(([, user, nav]) => {
         return user.allaganChecker || user.admin || nav.includes('allagan-reports')
-          || nav.includes('fishing-spot') || nav.includes('item');
+          || nav.includes('fishing-spot') || nav.includes('item') || this.desktop;
       }),
       first()
     ).subscribe(() => {
@@ -259,8 +261,6 @@ export class AppComponent implements OnInit {
     this.showGiveaway = false;
 
     this.applyTheme(this.settings.theme);
-
-    this.desktop = this.platformService.isDesktop();
 
     this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/font_931253_8rqcxqh08v6.js' });
 
