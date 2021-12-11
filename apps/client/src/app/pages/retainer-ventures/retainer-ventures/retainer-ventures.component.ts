@@ -184,6 +184,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
       level: [null, [Validators.required, Validators.min(1), Validators.max(this.environment.maxLevel)]],
       ilvl: [null, Validators.required],
       gathering: [null],
+      perception: [null],
       server: [null, Validators.required]
     }, {
       validators: control => {

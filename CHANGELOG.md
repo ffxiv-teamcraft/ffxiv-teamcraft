@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.5"></a>
+## [9.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.4...v9.2.5) (2021-12-11)
+
+
+### Bug Fixes
+
+* **search:** fixed job icons not shown properly ([13f324e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/13f324e))
+* **simulator:** fixed byregot's blessing not being usable at 1 stack of Inner Quiet ([544bbc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/544bbc9))
+
+
+### Features
+
+* **db:** support for the new stats threshold values in retainer tasks ([6f6ae18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f6ae18))
+* **profile:** added EW folklore books ([6103553](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6103553))
+* **retainer-ventures:** add support for new yield threshold system using perception ([de6dd7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de6dd7b))
+* **retainer-ventures:** add support for new yield threshold system using perception ([8afd988](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8afd988))
+* **settings:** added two new EW cities as possible starting point ([60b25bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/60b25bd))
+
+
+### Performance Improvements
+
+* **inventory-optimizer:** disabled Unwanted Materials optimizer to improve performances ([8647a8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8647a8d))
+
+
+
 <a name="9.2.4"></a>
 ## [9.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.3...v9.2.4) (2021-12-10)
 

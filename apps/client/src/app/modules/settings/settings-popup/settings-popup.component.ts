@@ -106,6 +106,14 @@ export class SettingsPopupComponent {
     {
       id: 218,
       placenameId: 512
+    },
+    {
+      id: 182,
+      placenameId: 3706
+    },
+    {
+      id: 183,
+      placenameId: 3707
     }
   ];
 

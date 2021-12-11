@@ -58,12 +58,6 @@ const optimisations: Provider[] = [
   },
   {
     provide: INVENTORY_OPTIMIZER,
-    useClass: UnwantedMaterials,
-    multi: true,
-    deps: [LazyDataFacade]
-  },
-  {
-    provide: INVENTORY_OPTIMIZER,
     useClass: CanExtractMateria,
     multi: true,
     deps: [LazyDataFacade]

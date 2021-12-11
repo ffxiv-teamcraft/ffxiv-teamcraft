@@ -30,7 +30,7 @@
         <img *ngIf="(row.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
           alt="{{row.recipe.job | i18nRow:'jobAbbr' | i18n}}"
           class="job-icon small"
-          src="https://garlandtools.org/db/images/{{icon}}.png">
+          src="https://garlandtools.org/db/images/job/{{icon}}.png">
         lvl{{row.recipe.lvl}} <span
         *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
       </div>
