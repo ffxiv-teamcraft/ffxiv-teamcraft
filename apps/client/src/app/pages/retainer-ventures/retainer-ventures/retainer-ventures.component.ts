@@ -160,6 +160,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
             return {
               ...retainer,
               gathering: stats.find(stat => stat.id === BaseParam.GATHERING)?.value || 0,
+              perception: stats.find(stat => stat.id === BaseParam.PERCEPTION)?.value || 0,
               ilvl: avgIlvl
             };
           })
