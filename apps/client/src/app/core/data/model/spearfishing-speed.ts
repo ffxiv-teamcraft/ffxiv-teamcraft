@@ -3,5 +3,6 @@ export enum SpearfishingSpeed {
   SLOW,
   AVERAGE,
   FAST,
+  FASTER,
   VERY_FAST
 }

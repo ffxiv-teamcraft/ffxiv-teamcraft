@@ -381,7 +381,7 @@
             <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Speed' | translate}}</nz-form-label>
             <nz-form-control [nzSpan]="10">
               <nz-select formControlName="speed">
-                <nz-option *ngFor="let row of speeds" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
+                <nz-option *ngFor="let row of speeds" [nzValue]="row.key" nzLabel="{{row.key}}"></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>
