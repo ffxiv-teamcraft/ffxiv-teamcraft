@@ -1984,6 +1984,7 @@
     "Show_hidden": "Afficher les optimiseurs masqués",
     "No_optimizations": "Aucune optimisation disponible",
     "Optimization_copied": "Optimisation copiée dans le presse-papiers au format JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
       "Message": "Cet objet peut être acheté aux PNJ avec des gils et n'a pas besoin de réputation de tribu.",
