@@ -1984,6 +1984,7 @@
     "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
     "Optimization_copied": "Оптимизация скопирована в буфер обмена как JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
