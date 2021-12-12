@@ -1984,6 +1984,7 @@
     "Show_hidden": "Mostrar optimizadores ocultos",
     "No_optimizations": "No hay optimizaciones disponibles",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
       "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias.",
