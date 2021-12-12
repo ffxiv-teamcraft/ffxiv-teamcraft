@@ -15,4 +15,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **inventory-optimizer:** disabled Unwanted Materials optimizer to improve performances.`;
+* **inventory-optimizer:** disabled Unwanted Materials optimizer to improve performances.`;
