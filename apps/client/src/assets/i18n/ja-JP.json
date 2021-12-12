@@ -1984,6 +1984,7 @@
     "Show_hidden": "隠してる項目表示",
     "No_optimizations": "最適化ができません",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
       "Message": "購入可能: ギル / 購入条件: 蛮族クエスト解放",
