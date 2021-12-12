@@ -1984,6 +1984,7 @@
     "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "Optimization_copied": "Optimierung als JSON in die Zwischenablage kopiert",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
