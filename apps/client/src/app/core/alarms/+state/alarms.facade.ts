@@ -357,8 +357,9 @@ export class AlarmsFacade {
       note: '',
       enabled: true
     };
-    if (node.gig) {
-      alarm.gig = node.gig;
+    if (node.speed) {
+      alarm.speed = node.speed;
+      alarm.shadowSize = node.shadowSize;
     }
     if (node.baits) {
       alarm.baits = node.baits;

@@ -5,6 +5,8 @@ import { Aetheryte } from '../data/aetheryte';
 import { Vector3 } from '../tools/vector3';
 import { FishingBait } from '../data/model/fishing-bait';
 import { Hookset } from '../data/model/hookset';
+import { SpearfishingSpeed } from '../data/model/spearfishing-speed';
+import { SpearfishingShadowSize } from '../data/model/spearfishing-shadow-size';
 
 export class Alarm extends DataModel {
 
@@ -39,11 +41,12 @@ export class Alarm extends DataModel {
 
   hookset?: Hookset;
   baits?: FishingBait[];
-  gig?: string;
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;
   predators?: { id: number, amount: number }[];
+  speed?: SpearfishingSpeed;
+  shadowSize?: SpearfishingShadowSize;
 
   note: string;
 

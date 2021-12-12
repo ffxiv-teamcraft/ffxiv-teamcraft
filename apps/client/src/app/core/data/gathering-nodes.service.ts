@@ -109,7 +109,8 @@ export class GatheringNodesService {
                 weathers: (entry as any).weathers,
                 weathersFrom: (entry as any).weathersFrom,
                 limited: entry.spawn !== undefined || (entry as any).weathers?.length > 0,
-                gig: entry.gig
+                speed: entry.speed,
+                shadowSize: entry.shadowSize
               } as GatheringNode;
             }
           });

@@ -114,7 +114,8 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                   break;
                 case AllaganReportSource.SPEARFISHING:
                   this.addItemAsSource(spearFishing, report.itemId, pickBy({
-                    gig: report.data.gig,
+                    speed: report.data.speed,
+                    shadowSize: report.data.shadowSize,
                     predators: report.data.predators,
                     spawn: report.data.spawn,
                     duration: report.data.duration
