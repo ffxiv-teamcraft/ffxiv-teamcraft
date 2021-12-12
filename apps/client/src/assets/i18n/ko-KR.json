@@ -1984,6 +1984,7 @@
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
