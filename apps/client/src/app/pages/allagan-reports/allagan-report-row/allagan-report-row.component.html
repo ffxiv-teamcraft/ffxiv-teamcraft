@@ -42,7 +42,7 @@
       <ng-container *ngSwitchCase="AllaganReportSource.FISHING">
         <div fxLayout="column" fxLayoutGap="10px">
           <div *ngIf="fishingSpot$ | async as fishingSpot">
-            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.placeId | i18nRow:'places' | i18n}}
+            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.zoneId | i18nRow:'places' | i18n}}
             <app-db-button type="fishing-spot" [id]="data.spot"></app-db-button>
           </div>
           <div>

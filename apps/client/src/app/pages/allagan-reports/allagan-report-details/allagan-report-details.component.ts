@@ -67,8 +67,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   itemDetails$ = this.itemId$.pipe(
     tap(() => this.loadingReports = true),
-    withLazyData(this.lazyData, 'fishes', 'fishingSpots'),
-    switchMap(([itemId, fishes, fishingSpots]) => {
+    withLazyData(this.lazyData, 'fishes', 'fishingSpots', 'fishParameter'),
+    switchMap(([itemId, fishes, fishingSpots, fishParameter]) => {
       return this.allaganReportsService.getItemReports(itemId).pipe(
         map(reports => {
           const data = {
@@ -86,6 +86,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
             data.spots = fishingSpots.filter(spot => {
               return spot.fishes.includes(itemId);
             });
+            if (data.spots.length === 0) {
+              const param = fishParameter[itemId];
+              data.spots = fishingSpots.filter(spot => {
+                return spot.mapId === param.mapId;
+              });
+            }
           }
           return data;
         })
@@ -324,7 +330,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       takeUntil(this.onDestroy$)
     ).subscribe(() => {
       this.cancel();
-    })
+    });
   }
 
   requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, Observable<any>>): (control: AbstractControl) => Observable<ValidationErrors | null> {
