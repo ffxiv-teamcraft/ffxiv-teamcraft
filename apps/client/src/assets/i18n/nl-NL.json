@@ -1984,6 +1984,7 @@
     "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "No optimizations available",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
       "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation.",
