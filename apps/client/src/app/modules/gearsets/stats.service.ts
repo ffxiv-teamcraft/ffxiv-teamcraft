@@ -181,7 +181,9 @@ export class StatsService {
     })).pipe(
       switchMap(statsSeed => {
         return safeCombineLatest(
-          Object.values(set)
+          Object.keys(set)
+            .filter(key => this.env.gameVersion < 6 || key !== 'belt')
+            .map(key => set[key])
             .filter(value => value && value.itemId !== undefined)
             .map((value: EquipmentPiece) => {
               return combineLatest([this.lazyData.getRow('itemStats', value.itemId, []), this.lazyData.getRow('itemSetBonuses', value.itemId, null)]).pipe(
