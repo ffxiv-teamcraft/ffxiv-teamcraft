@@ -14,7 +14,7 @@ export class ClipboardDirective {
   clipboardInput: string | ((...args: any[]) => string) | ((...args: any[]) => Observable<string>);
 
   @Input()
-  clipboardFnArgs: any[] = [];
+  clipboardFnArgs: any = [];
 
   @Input()
   clipboardSuccessMessage: string;
