@@ -1984,6 +1984,7 @@
     "Show_hidden": "显示隐藏的优化器",
     "No_optimizations": "没有可用的优化",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
       "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。",
