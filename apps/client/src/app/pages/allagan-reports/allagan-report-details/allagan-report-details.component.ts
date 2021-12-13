@@ -131,7 +131,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   );
 
   sources = uniq(Object.keys(AllaganReportSource))
-    .filter(key => key !== AllaganReportSource.SPEARFISHING) // Disabling spearfishing reports for now
     .map(key => ({ key: key, value: AllaganReportSource[key] }));
 
   hooksets = Object.keys(Hookset)

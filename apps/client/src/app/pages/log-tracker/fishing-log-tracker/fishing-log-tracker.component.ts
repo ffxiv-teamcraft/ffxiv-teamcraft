@@ -10,6 +10,8 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
+import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -17,6 +19,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   styleUrls: ['./fishing-log-tracker.component.less']
 })
 export class FishingLogTrackerComponent extends TrackerComponent {
+
+  SpearfishingSpeed = SpearfishingSpeed;
+  SpearfishingShadowSize = SpearfishingShadowSize;
 
   public type$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 

@@ -5,13 +5,14 @@ import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { TranslateService } from '@ngx-translate/core';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
+import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
 
 @Component({
   selector: 'app-gathering-location',
@@ -20,6 +21,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GatheringLocationComponent {
+
+  SpearfishingSpeed = SpearfishingSpeed;
+  SpearfishingShadowSize = SpearfishingShadowSize;
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -38,8 +42,8 @@ export class GatheringLocationComponent {
   compactDisplay$ = new BehaviorSubject<boolean>(localStorage.getItem('gathering-location:compact') === 'true');
 
   constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
-              private mapService: MapService, private gt: GarlandToolsService,
-              private router: Router, private route: ActivatedRoute, public translate: TranslateService,
+              private mapService: MapService, private router: Router,
+              private route: ActivatedRoute, public translate: TranslateService,
               private gatheringNodesService: GatheringNodesService, private message: NzMessageService) {
 
     this.results$ = this.query$.pipe(

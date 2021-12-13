@@ -28,6 +28,12 @@
                          [tooltipDisabled]="true" [width]="32"></app-item-icon>
         </div>
       </div>
+      <div *ngIf="node.speed !== undefined">
+        {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[node.speed]) | translate}}
+      </div>
+      <div *ngIf="node.shadowSize !== undefined">
+        {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[node.shadowSize]) | translate}}
+      </div>
       <div fxLayout="row" fxLayoutAlign="center center">
         <app-map [mapId]="node.map"
                  *ngIf="node"
