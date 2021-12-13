@@ -16,7 +16,7 @@
         </ng-template>
         <div fxLayout="column" fxLayoutGap="20px">
           <nz-collapse *ngFor="let freecompany of server.value; trackBy:trackById">
-            <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="server.value.length === 1 || freecompany.active">
+            <nz-collapse-panel [nzHeader]="freeCompanyHeaderTpl" [nzActive]="activeState[server.key + ':' + freecompany.id]" (nzActiveChange)="setActiveState(server.key + ':' + freecompany.id, $event)">
               <ng-template #freeCompanyHeaderTpl>
                 <div fxLayout="row" fxLayoutAlign="space-between center">
                   <div nz-col nzMd="7">
