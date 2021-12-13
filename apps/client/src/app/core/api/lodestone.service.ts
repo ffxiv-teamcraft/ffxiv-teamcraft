@@ -56,6 +56,7 @@ export class LodestoneService {
       const result$ = new ReplaySubject<Partial<CharacterResponse>>();
       this.ipc.once('lodestone:character', (event, res) => {
         result$.next(res);
+        result$.complete();
       });
       this.ipc.send('lodestone:getCharacter', id);
       dataSource$ = result$.asObservable();
