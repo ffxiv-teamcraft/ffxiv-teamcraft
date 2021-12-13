@@ -167,6 +167,10 @@ export class ListController {
    * @returns {List}
    */
   public static clean(list: List): List {
+    if (this.isEmpty(list)) {
+      list.items = [];
+      return list;
+    }
     for (const prop of Object.keys(list)) {
       if (['finalItems', 'items'].indexOf(prop) > -1) {
         // We don't want to check the amount of items required for recipes, as they can't be wrong (provided by the user only).
