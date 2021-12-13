@@ -80,7 +80,7 @@
               {{_list.note}}
             </div>
           </div>
-          <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay"></app-list-progressbar>
+          <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay && (permissionLevel$ | async)?.value >= 20"></app-list-progressbar>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
           <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10"
