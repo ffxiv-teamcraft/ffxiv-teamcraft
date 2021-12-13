@@ -67,6 +67,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
     }
+    clone.createdAt = new firebase.firestore.Timestamp(clone.createdAt.seconds, 0);
     clone.items = (clone.items || [])
       .filter(item => !item.finalItem)
       .map(item => {
