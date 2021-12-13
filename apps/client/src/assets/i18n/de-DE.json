@@ -2814,6 +2814,21 @@
     "Rarity_Rare": "Selten",
     "No_missing_fish_data": "Kein Fisch mit fehlenden Daten",
     "Sources_filter": "Quellen filtern",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
       "REDUCTION": "RAFFINATION",
