@@ -45,7 +45,8 @@ export class StatsPopupComponent implements OnInit {
     this.set$ = this.allSets$.pipe(
       map(allSets => {
         return { ...allSets.find(set => set.jobId === this.jobId) };
-      })
+      }),
+      first()
     );
   }
 

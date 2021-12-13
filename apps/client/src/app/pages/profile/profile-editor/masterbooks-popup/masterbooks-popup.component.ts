@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { map } from 'rxjs/operators';
+import { first, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 
@@ -53,7 +53,8 @@ export class MasterbooksPopupComponent implements OnInit {
             checked: (entry.masterbooks || []).indexOf(book) > -1
           };
         });
-      })
+      }),
+      first()
     );
   }
 
