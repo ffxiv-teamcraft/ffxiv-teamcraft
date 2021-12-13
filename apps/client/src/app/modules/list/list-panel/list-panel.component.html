@@ -102,7 +102,7 @@
             </button>
           </nz-badge>
           <ng-template #copyNoCount>
-            <button (click)="$event.stopPropagation();cloneList(_list)" *ngIf="settings.showCopyOnOwnList" [nzShape]="'circle'"
+            <button (click)="$event.stopPropagation();cloneList(_list)" *ngIf="settings.showCopyOnOwnList || (permissionLevel$ | async)?.value < 20" [nzShape]="'circle'"
                     [nzTooltipTitle]="'List_fork' | translate"
                     nz-button nz-tooltip>
               <i nz-icon nzType="copy" theme="outline"></i>
@@ -173,7 +173,7 @@
                   </li>
                 </ng-container>
               </ng-container>
-              <ng-container *ngIf="!publicDisplay">
+              <ng-container *ngIf="!publicDisplay && (permissionLevel$ | async) >= 20">
                 <ng-container *ngIf="teams$ | async as teams">
                   <li *ngIf="_list.teamId === undefined" nz-submenu>
                     <span title>{{'TEAMS.Assign_list' | translate}}</span>

@@ -15,6 +15,7 @@ import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 const routes: Routes = [
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
     ListModule,
     PermissionsModule,
     PageLoaderModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    NzAvatarModule
   ],
   declarations: [WorkshopDetailsComponent]
 })

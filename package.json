@@ -59,7 +59,7 @@
   "scripts": {
     "ng-high-memory": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",
-    "prebuild": "node ./tools/build/prebuild.js && yarn update-lazy-files && yarn web:copyfiles",
+    "prebuild": "node ./tools/build/prebuild.js && yarn web:copyfiles",
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
     "start-high-memory": "yarn prebuild && ng-high-memory serve --project=client",
     "start": "yarn prebuild && yarn ng-high-memory serve --project=client",
