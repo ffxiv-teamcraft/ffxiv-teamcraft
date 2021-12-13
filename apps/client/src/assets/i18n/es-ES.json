@@ -282,6 +282,7 @@
   "No": "No",
   "Crystals": "Cristales",
   "Gathering": "Recolección",
+  "Perception": "Perception",
   "Drops_or_GC": "Mazmorras/Botín o GC",
   "Other": "Otros",
   "Pre_crafts": "Precursores",
@@ -1983,6 +1984,7 @@
     "Show_hidden": "Mostrar optimizadores ocultos",
     "No_optimizations": "No hay optimizaciones disponibles",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
       "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias.",
@@ -2812,6 +2814,21 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

@@ -282,6 +282,7 @@
   "No": "いいえ",
   "Crystals": "クリスタル",
   "Gathering": "採集",
+  "Perception": "Perception",
   "Drops_or_GC": "ダンジョン/戦利品またはグランドカンパニー",
   "Other": "その他",
   "Pre_crafts": "下位素材",
@@ -1983,6 +1984,7 @@
     "Show_hidden": "隠してる項目表示",
     "No_optimizations": "最適化ができません",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
       "Message": "購入可能: ギル / 購入条件: 蛮族クエスト解放",
@@ -2812,6 +2814,21 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

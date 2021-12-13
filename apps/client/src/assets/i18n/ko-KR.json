@@ -282,6 +282,7 @@
   "No": "X",
   "Crystals": "크리스탈",
   "Gathering": "채집",
+  "Perception": "Perception",
   "Drops_or_GC": "던전/전리품 또는 총사령부",
   "Other": "기타",
   "Pre_crafts": "밑재료",
@@ -1983,6 +1984,7 @@
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
@@ -2812,6 +2814,21 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "분해",
       "REDUCTION": "정제",

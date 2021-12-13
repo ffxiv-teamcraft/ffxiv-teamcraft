@@ -282,6 +282,7 @@
   "No": "Нет",
   "Crystals": "Кристаллы",
   "Gathering": "Собирательство",
+  "Perception": "Perception",
   "Drops_or_GC": "Подземелья/Монстры или GC",
   "Other": "Другое",
   "Pre_crafts": "Прекрафты",
@@ -1983,6 +1984,7 @@
     "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
     "Optimization_copied": "Оптимизация скопирована в буфер обмена как JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
@@ -2812,6 +2814,21 @@
     "Rarity_Rare": "Редкий",
     "No_missing_fish_data": "Нет рыбы с отсутствующими данными",
     "Sources_filter": "Фильтр источников",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
