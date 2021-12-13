@@ -191,8 +191,8 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       .subscribe(params => {
         this.query$.next(params.query || '');
         this.job$.next(+params.job ? +params.job : null);
-        this.levelMin$.next(+params.min || 1);
-        this.levelMax$.next(+params.max || 10);
+        this.levelMin$.next(+params.min || this.environment.maxLevel - 10);
+        this.levelMax$.next(+params.max || this.environment.maxLevel);
       });
   }
 
@@ -368,7 +368,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           leveExp = 1000;
         }
         expObj = {
-          ...this.applyExp(expObj.exp, expObj.level, leveExp),
+          ...this.applyExp(expObj.exp || 0, expObj.level, leveExp),
           totalExp: expObj.totalExp + leveExp
         };
       }
