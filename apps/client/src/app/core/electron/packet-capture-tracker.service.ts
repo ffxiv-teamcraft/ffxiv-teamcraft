@@ -18,6 +18,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EventHandlerType } from './event-handler-type';
 import { NzNotificationRef, NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -31,11 +32,17 @@ export class PacketCaptureTrackerService {
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataFacade,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private nzNotification: NzNotificationService, private translate: TranslateService) {
+              private nzNotification: NzNotificationService, private translate: TranslateService,
+              private router: Router) {
   }
 
 
   public init(): void {
+    const currentPage$ = this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd),
+      map((e: NavigationEnd) => e.urlAfterRedirects)
+    );
+
     const isCrafting$ = merge(
       this.ipc.packets$.pipe(ofMessageType('eventStart')),
       this.ipc.packets$.pipe(ofMessageType('eventFinish'))
@@ -97,12 +104,12 @@ export class PacketCaptureTrackerService {
       filter(([, status, list]) => status === null || list.offline)
     );
 
-    combineLatest([eventStatus$, this.listsFacade.selectedList$])
+    combineLatest([eventStatus$, this.listsFacade.selectedList$, currentPage$])
       .pipe(
         withLatestFrom(this.listsFacade.autocompleteEnabled$)
       )
-      .subscribe(([[status, list], autofill]) => {
-        if (list && !list.offline && status && !this.notificationRef && autofill) {
+      .subscribe(([[status, list, page], autofill]) => {
+        if (page.includes('list') && list && !list.offline && status && !this.notificationRef && autofill) {
           this.notificationRef = this.nzNotification.info(
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_title'),
             this.translate.instant('LIST_DETAILS.Autofill_crafting_gathering_message'),
