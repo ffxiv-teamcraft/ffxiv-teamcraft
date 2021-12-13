@@ -58,7 +58,8 @@ const patrons = [
   'The Hoe Depot',
   '[Ultros] Nyumi Aitken',
   'Syleboris Whitemaw (Phoenix)',
-  'Arimathean Industries™'
+  'Arimathean Industries™',
+  'MommaMiah'
 ];
 
 const gifs = [
