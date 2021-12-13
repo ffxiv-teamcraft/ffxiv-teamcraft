@@ -18,7 +18,7 @@ export class LodestoneService {
   constructor(private userService: UserService, private xivapi: XivapiService,
               private http: HttpClient, private ipc: IpcService) {
     if (!LodestoneService.INTERVAL) {
-      LodestoneService.INTERVAL = interval(1000).subscribe((i) => {
+      LodestoneService.INTERVAL = interval(100).subscribe((i) => {
         const subject = LodestoneService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
