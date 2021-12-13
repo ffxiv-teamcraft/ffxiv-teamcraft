@@ -52,7 +52,12 @@ export class GatheringNodesService {
           const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...hiddenReferences.map(node => ({
             ...node,
             matchingItemIsHidden: true
-          }))].filter(node => node.type < 4);
+          }))].map(node => {
+            if (node.type === 5) {
+              node.type = 4;
+            }
+            return node;
+          });
 
           const fishingSpotMatches: GatheringNode[] = (fishingSources[id] || []).map(entry => {
             const spot = fishingSpots.find(s => s.id === entry.spot);
