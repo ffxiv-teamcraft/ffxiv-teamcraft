@@ -2814,6 +2814,21 @@
     "Rarity_Rare": "Редкий",
     "No_missing_fish_data": "Нет рыбы с отсутствующими данными",
     "Sources_filter": "Фильтр источников",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "N0RMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",
