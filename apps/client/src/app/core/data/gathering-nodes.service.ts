@@ -52,7 +52,7 @@ export class GatheringNodesService {
           const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...hiddenReferences.map(node => ({
             ...node,
             matchingItemIsHidden: true
-          }))].filter(node => node.type !== 4);
+          }))].filter(node => node.type < 4);
 
           const fishingSpotMatches: GatheringNode[] = (fishingSources[id] || []).map(entry => {
             const spot = fishingSpots.find(s => s.id === entry.spot);
@@ -109,7 +109,8 @@ export class GatheringNodesService {
                 weathers: (entry as any).weathers,
                 weathersFrom: (entry as any).weathersFrom,
                 limited: entry.spawn !== undefined || (entry as any).weathers?.length > 0,
-                gig: entry.gig
+                speed: entry.speed,
+                shadowSize: entry.shadowSize
               } as GatheringNode;
             }
           });

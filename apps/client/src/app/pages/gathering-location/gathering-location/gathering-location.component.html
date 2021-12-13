@@ -63,6 +63,12 @@
             <app-fishing-bait *ngIf="row.node.baits !== undefined" [baits]="row.node.baits"></app-fishing-bait>
             <img *ngIf="row.node.hookset" [nzTooltipTitle]="row.node.hookset | hooksetActionId | actionName | i18n" class="gig-icon" nz-tooltip
                  [src]="row.node.hookset | hooksetActionId | actionIcon | xivapiIcon">
+            <div *ngIf="row.node.speed !== undefined">
+              {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[row.node.speed]) | translate}}
+            </div>
+            <div *ngIf="row.node.shadowSize !== undefined">
+              {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[row.node.shadowSize]) | translate}}
+            </div>
             <nz-tag *ngIf="row.node.tug !== undefined">{{row.node.tug | tugName | translate}}</nz-tag>
             <div *ngIf="row.node.predators && row.node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                  fxLayoutGap="10px">

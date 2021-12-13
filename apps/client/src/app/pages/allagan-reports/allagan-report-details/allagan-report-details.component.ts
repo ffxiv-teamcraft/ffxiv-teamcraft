@@ -27,6 +27,8 @@ import { OceanFishingTime } from '../model/ocean-fishing-time';
 import { SearchType } from '../../search/search-type';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
+import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
 
 
 function durationRequired(control: AbstractControl) {
@@ -129,7 +131,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   );
 
   sources = uniq(Object.keys(AllaganReportSource))
-    .filter(key => key !== AllaganReportSource.SPEARFISHING) // Disabling spearfishing reports for now
     .map(key => ({ key: key, value: AllaganReportSource[key] }));
 
   hooksets = Object.keys(Hookset)
@@ -139,6 +140,14 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   tugs = Object.keys(Tug)
     .filter(key => !isNaN(+key))
     .map(key => ({ key: +key, value: Tug[key] }));
+
+  speeds = Object.keys(SpearfishingSpeed)
+    .filter(key => !isNaN(+key))
+    .map(key => ({ key: +key, value: SpearfishingSpeed[key] }));
+
+  shadowSizes = Object.keys(SpearfishingShadowSize)
+    .filter(key => !isNaN(+key))
+    .map(key => ({ key: +key, value: SpearfishingShadowSize[key] }));
 
   oceanFishingTimes = Object.keys(OceanFishingTime)
     .filter(key => !isNaN(+key))
@@ -177,7 +186,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     weathersFrom: [[]],
     predators: [[]],
     snagging: [false],
-    gig: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
+    speed: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
+    shadowSize: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
     oceanFishingTime: [0],
     minGathering: [0],
     price: [0, null, this.requiredIfSource([AllaganReportSource.MOGSTATION])],
@@ -501,7 +511,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         );
       case AllaganReportSource.SPEARFISHING:
         return of(pickBy({
-          gig: report.data.gig,
+          speed: report.data.speed,
+          shadowSize: report.data.shadowSize,
           predators: report.data.predators,
           spawn: report.data.spawn,
           duration: report.data.duration
@@ -580,7 +591,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
         );
       case AllaganReportSource.SPEARFISHING:
         return of(pickBy({
-          gig: formState.gig,
+          speed: formState.speed,
+          shadowSize: formState.shadowSize,
           predators: formState.predators,
           spawn: formState.spawn,
           duration: formState.duration
