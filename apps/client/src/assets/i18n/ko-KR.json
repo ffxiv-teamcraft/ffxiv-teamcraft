@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "캐릭터의 서버 장터 가격만 사용",
     "Clear_search_history": "검색 기록 삭제",
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
     "Always_all_deliveries": "길드 의뢰 페이지에서 '총 3회 납품'을 기본값으로 설정하기",
