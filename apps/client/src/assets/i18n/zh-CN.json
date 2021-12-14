@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
     "Clear_search_history": "清除搜索记录",
     "Auto_mark_as_done_in_log": "在完成清单项时标记采集（制作）笔记",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Always_all_deliveries": "在理符任务工具中默认选中“共可交付 3 次”",
