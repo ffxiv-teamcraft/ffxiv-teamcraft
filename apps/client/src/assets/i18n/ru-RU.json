@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "Принимать в расчет только цены marketboard'а своего сервера",
     "Clear_search_history": "Очистить историю поиска",
     "Auto_mark_as_done_in_log": "Пометить предметы как выполненные в журнале, когда они сделаны в списке",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Положение комментариев в базе данных",
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
     "Always_all_deliveries": "Кнопка «Все 3 доставки» на странице «Ливквесты» отмечена по умолчанию",
@@ -2826,7 +2827,7 @@
     },
     "SHADOWS": {
       "SMALL": "Small",
-      "N0RMAL": "Normal",
+      "NORMAL": "Normal",
       "LARGE": "Large"
     },
     "SOURCE": {

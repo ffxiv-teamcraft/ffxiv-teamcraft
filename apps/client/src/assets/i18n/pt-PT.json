@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "Usar apenas o mundo próprio para preços do mercado",
     "Clear_search_history": "Limpar histórico de pesquisa",
     "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Database comments position",
     "Always_HQ_leves": "Always count leves exp with HQ items",
     "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
@@ -2826,7 +2827,7 @@
     },
     "SHADOWS": {
       "SMALL": "Small",
-      "N0RMAL": "Normal",
+      "NORMAL": "Normal",
       "LARGE": "Large"
     },
     "SOURCE": {
