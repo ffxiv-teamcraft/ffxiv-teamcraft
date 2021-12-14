@@ -120,7 +120,7 @@ export class GatheringNodesService {
             }
           });
 
-          return [...minBtnSpearHiddenMatches, ...fishingSpotMatches, ...spearFishingMatches]
+          return [...minBtnSpearHiddenMatches.filter(e => !spearFishingMatches.some(s => s.id === e.id)), ...fishingSpotMatches, ...spearFishingMatches]
             .map(node => {
               return { ...node, matchingItemId: id };
             });
