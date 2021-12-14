@@ -92,7 +92,7 @@ export class GatheringNodesService {
             }
           }).filter(node => !!node);
 
-          const spearFishingMatches = (spearfishingSources[id] || []).map(entry => {
+          const spearFishingMatches = (spearfishingSources[id] || []).map((entry: any) => {
             const spot = minBtnSpearNodes.find(n => n.items.includes(id));
             if (spot) {
               return {

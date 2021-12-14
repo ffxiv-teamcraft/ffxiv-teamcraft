@@ -1,15 +1,8 @@
-import { SpearfishingSpeed } from '../../core/data/model/spearfishing-speed';
-import { SpearfishingShadowSize } from '../../core/data/model/spearfishing-shadow-size';
-
 export interface LazySpearfishingSource {
-  predators?: Predator[];
-  spawn?: number;
-  duration?: number;
-  speed?: SpearfishingSpeed;
-  shadowSize?: SpearfishingShadowSize;
+  "36548": The36548[];
 }
 
-export interface Predator {
-  id: number;
-  amount: number;
+export interface The36548 {
+  speed:      number;
+  shadowSize: number;
 }
