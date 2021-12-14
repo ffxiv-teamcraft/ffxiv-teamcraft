@@ -2826,7 +2826,7 @@
     },
     "SHADOWS": {
       "SMALL": "Small",
-      "N0RMAL": "Normal",
+      "NORMAL": "Normal",
       "LARGE": "Large"
     },
     "SOURCE": {
