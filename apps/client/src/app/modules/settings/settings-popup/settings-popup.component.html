@@ -200,6 +200,13 @@
                  nz-checkbox>{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.makeQuickListsOffline"
+                 nz-checkbox>{{'SETTINGS.Make_quick_lists_offline' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Maximum_vendor_price' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Maximum_vendor_price_explain' | translate">
