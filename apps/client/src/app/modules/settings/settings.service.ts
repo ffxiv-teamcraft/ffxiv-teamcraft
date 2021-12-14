@@ -354,6 +354,14 @@ export class SettingsService {
     this.setBoolean('hasAccessToHousingVendors', enabled);
   }
 
+  public get makeQuickListsOffline(): boolean {
+    return this.getBoolean('makeQuickListsOffline', false);
+  }
+
+  public set makeQuickListsOffline(enabled: boolean) {
+    this.setBoolean('makeQuickListsOffline', enabled);
+  }
+
   public get ignoredInventories(): string[] {
     return JSON.parse(this.getSetting('ignored-inventories', '[]'));
   }

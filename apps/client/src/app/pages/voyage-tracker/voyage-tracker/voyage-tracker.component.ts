@@ -23,6 +23,8 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
   airshipSectorsTotal$ = this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount();
   submarineSectorsTotal$ = this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount();
 
+  activeState = JSON.parse(localStorage.getItem('voyage-tracker:panels') || '{}');
+
   public display$ = this.freeCompanyWorkshopFacade.workshops$.pipe(
     map((results) => {
       this.isLoading$.next(true);
@@ -63,6 +65,11 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
 
   importFromPcap(): void {
     this.freeCompanyWorkshopFacade.importFromPcap();
+  }
+
+  setActiveState(key: string, active: boolean): void {
+    this.activeState[key] = active;
+    localStorage.setItem('voyage-tracker:panels', JSON.stringify(this.activeState));
   }
 
   deleteWorkshop(id): void {

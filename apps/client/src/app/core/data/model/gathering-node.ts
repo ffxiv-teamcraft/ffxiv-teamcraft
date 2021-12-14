@@ -1,4 +1,6 @@
 import { FishingBait } from './fishing-bait';
+import { SpearfishingShadowSize } from './spearfishing-shadow-size';
+import { SpearfishingSpeed } from './spearfishing-speed';
 
 export interface GatheringNode {
   id: number;
@@ -26,9 +28,14 @@ export interface GatheringNode {
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;
-  gig?: 'Small' | 'Normal' | 'Large';
   tug?: number;
   oceanFishingTime?: number;
+
+  /**
+   * Spearfishing stuff
+   */
+  speed?: SpearfishingSpeed;
+  shadowSize?: SpearfishingShadowSize;
 
   /**
    * Search stuff

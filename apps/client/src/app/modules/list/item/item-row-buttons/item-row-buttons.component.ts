@@ -36,7 +36,7 @@ import { observeInput } from '../../../../core/rxjs/observe-input';
 export class ItemRowButtonsComponent extends TeamcraftComponent {
 
   @Input()
-  buttonsCache: { [key: string]: boolean };
+  buttonsCache: { [key: string]: boolean } = {};
 
   @Input()
   finalItem: boolean;

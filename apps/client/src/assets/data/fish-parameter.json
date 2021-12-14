@@ -2957,6 +2957,61 @@
       "fr": "Lacs et marais"
     }
   },
+  "6688": {
+    "id": 1137,
+    "itemId": 6688,
+    "level": 36,
+    "icon": "/i/025000/025930.png",
+    "mapId": 15,
+    "zoneId": 30,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "6689": {
+    "id": 1138,
+    "itemId": 6689,
+    "level": 41,
+    "icon": "/i/025000/025930.png",
+    "mapId": 15,
+    "zoneId": 30,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "6690": {
+    "id": 1139,
+    "itemId": 6690,
+    "level": 46,
+    "icon": "/i/025000/025930.png",
+    "mapId": 15,
+    "zoneId": 30,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "6691": {
+    "id": 1140,
+    "itemId": 6691,
+    "level": 50,
+    "icon": "/i/025000/025930.png",
+    "mapId": 15,
+    "zoneId": 30,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "6692": {
+    "id": 1141,
+    "itemId": 6692,
+    "level": 50,
+    "icon": "/i/025000/025930.png",
+    "mapId": 15,
+    "zoneId": 30,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
   "7678": {
     "id": 187,
     "itemId": 7678,
@@ -4805,6 +4860,39 @@
       "ja": "沖合",
       "fr": "Pleine mer"
     }
+  },
+  "12241": {
+    "id": 1145,
+    "itemId": 12241,
+    "level": 55,
+    "icon": "/i/025000/025930.png",
+    "mapId": 211,
+    "zoneId": 2200,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "12242": {
+    "id": 1146,
+    "itemId": 12242,
+    "level": 60,
+    "icon": "/i/025000/025930.png",
+    "mapId": 211,
+    "zoneId": 2200,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "12243": {
+    "id": 1147,
+    "itemId": 12243,
+    "level": 60,
+    "icon": "/i/025000/025930.png",
+    "mapId": 211,
+    "zoneId": 2200,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "12713": {
     "id": 300,
@@ -6921,6 +7009,17 @@
       "fr": "Lacs et marais"
     }
   },
+  "13631": {
+    "id": 1151,
+    "itemId": 13631,
+    "level": 60,
+    "icon": "/i/025000/025951.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
   "13727": {
     "id": 424,
     "itemId": 13727,
@@ -7027,6 +7126,83 @@
       "ja": "河川",
       "fr": "Rivières"
     }
+  },
+  "13733": {
+    "id": 1149,
+    "itemId": 13733,
+    "level": 60,
+    "icon": "/i/029000/029724.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "13734": {
+    "id": 1150,
+    "itemId": 13734,
+    "level": 60,
+    "icon": "/i/029000/029727.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "13736": {
+    "id": 1152,
+    "itemId": 13736,
+    "level": 60,
+    "icon": "/i/029000/029316.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "13737": {
+    "id": 1153,
+    "itemId": 13737,
+    "level": 60,
+    "icon": "/i/029000/029266.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "13738": {
+    "id": 1154,
+    "itemId": 13738,
+    "level": 60,
+    "icon": "/i/029000/029302.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "13739": {
+    "id": 1155,
+    "itemId": 13739,
+    "level": 60,
+    "icon": "/i/029000/029238.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "13740": {
+    "id": 1156,
+    "itemId": 13740,
+    "level": 60,
+    "icon": "/i/029000/029420.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "14211": {
     "id": 431,
@@ -8095,6 +8271,72 @@
       "ja": "浮島",
       "fr": "Îles célestes"
     }
+  },
+  "17594": {
+    "id": 1157,
+    "itemId": 17594,
+    "level": 60,
+    "icon": "/i/029000/029729.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2
+  },
+  "17835": {
+    "id": 1161,
+    "itemId": 17835,
+    "level": 70,
+    "icon": "/i/025000/025930.png",
+    "mapId": 367,
+    "zoneId": 2406,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "17836": {
+    "id": 1162,
+    "itemId": 17836,
+    "level": 70,
+    "icon": "/i/025000/025930.png",
+    "mapId": 367,
+    "zoneId": 2406,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "17949": {
+    "id": 1158,
+    "itemId": 17949,
+    "level": 64,
+    "icon": "/i/029000/029210.png",
+    "mapId": 367,
+    "zoneId": 2406,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "17950": {
+    "id": 1159,
+    "itemId": 17950,
+    "level": 68,
+    "icon": "/i/029000/029139.png",
+    "mapId": 371,
+    "zoneId": 2409,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "17952": {
+    "id": 1160,
+    "itemId": 17952,
+    "level": 70,
+    "icon": "/i/029000/029115.png",
+    "mapId": 371,
+    "zoneId": 2409,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "20018": {
     "id": 596,
@@ -10572,6 +10814,292 @@
       "fr": "Rivières"
     }
   },
+  "22668": {
+    "id": 1166,
+    "itemId": 22668,
+    "level": 60,
+    "icon": "/i/029000/029107.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22669": {
+    "id": 1167,
+    "itemId": 22669,
+    "level": 60,
+    "icon": "/i/029000/029495.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22670": {
+    "id": 1168,
+    "itemId": 22670,
+    "level": 60,
+    "icon": "/i/029000/029047.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22671": {
+    "id": 1169,
+    "itemId": 22671,
+    "level": 60,
+    "icon": "/i/029000/029101.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22672": {
+    "id": 1170,
+    "itemId": 22672,
+    "level": 60,
+    "icon": "/i/029000/029405.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22673": {
+    "id": 1171,
+    "itemId": 22673,
+    "level": 60,
+    "icon": "/i/029000/029235.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22674": {
+    "id": 1172,
+    "itemId": 22674,
+    "level": 60,
+    "icon": "/i/029000/029395.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22675": {
+    "id": 1173,
+    "itemId": 22675,
+    "level": 60,
+    "icon": "/i/029000/029215.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22676": {
+    "id": 1174,
+    "itemId": 22676,
+    "level": 60,
+    "icon": "/i/029000/029314.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22677": {
+    "id": 1175,
+    "itemId": 22677,
+    "level": 60,
+    "icon": "/i/029000/029310.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22678": {
+    "id": 1176,
+    "itemId": 22678,
+    "level": 60,
+    "icon": "/i/029000/029217.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22679": {
+    "id": 1177,
+    "itemId": 22679,
+    "level": 60,
+    "icon": "/i/029000/029444.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22680": {
+    "id": 1178,
+    "itemId": 22680,
+    "level": 60,
+    "icon": "/i/029000/029500.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22681": {
+    "id": 1179,
+    "itemId": 22681,
+    "level": 60,
+    "icon": "/i/029000/029205.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22682": {
+    "id": 1180,
+    "itemId": 22682,
+    "level": 60,
+    "icon": "/i/029000/029008.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22683": {
+    "id": 1181,
+    "itemId": 22683,
+    "level": 60,
+    "icon": "/i/029000/029031.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22684": {
+    "id": 1182,
+    "itemId": 22684,
+    "level": 60,
+    "icon": "/i/029000/029059.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22685": {
+    "id": 1183,
+    "itemId": 22685,
+    "level": 60,
+    "icon": "/i/029000/029475.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22686": {
+    "id": 1184,
+    "itemId": 22686,
+    "level": 60,
+    "icon": "/i/029000/029419.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22687": {
+    "id": 1185,
+    "itemId": 22687,
+    "level": 60,
+    "icon": "/i/029000/029501.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22688": {
+    "id": 1186,
+    "itemId": 22688,
+    "level": 60,
+    "icon": "/i/029000/029015.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22689": {
+    "id": 1187,
+    "itemId": 22689,
+    "level": 60,
+    "icon": "/i/029000/029418.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22690": {
+    "id": 1188,
+    "itemId": 22690,
+    "level": 60,
+    "icon": "/i/029000/029267.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22691": {
+    "id": 1189,
+    "itemId": 22691,
+    "level": 60,
+    "icon": "/i/029000/029245.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22692": {
+    "id": 1190,
+    "itemId": 22692,
+    "level": 60,
+    "icon": "/i/029000/029490.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "22693": {
+    "id": 1191,
+    "itemId": 22693,
+    "level": 60,
+    "icon": "/i/029000/029491.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
   "23054": {
     "id": 636,
     "itemId": 23054,
@@ -10956,6 +11484,17 @@
       "ja": "湖沼",
       "fr": "Lacs et marais"
     }
+  },
+  "23171": {
+    "id": 1192,
+    "itemId": 23171,
+    "level": 60,
+    "icon": "/i/029000/029239.png",
+    "mapId": 372,
+    "zoneId": 2411,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "24203": {
     "id": 658,
@@ -11666,6 +12205,28 @@
       "fr": "Lacs et marais"
     }
   },
+  "26744": {
+    "id": 1193,
+    "itemId": 26744,
+    "level": 80,
+    "icon": "/i/025000/025930.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "26745": {
+    "id": 1194,
+    "itemId": 26745,
+    "level": 80,
+    "icon": "/i/025000/025930.png",
+    "mapId": 496,
+    "zoneId": 2958,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
   "26746": {
     "id": 698,
     "itemId": 26746,
@@ -11727,6 +12288,28 @@
       "ja": "砂海",
       "fr": "Oasis"
     }
+  },
+  "26750": {
+    "id": 1164,
+    "itemId": 26750,
+    "level": 75,
+    "icon": "/i/029000/029300.png",
+    "mapId": 494,
+    "zoneId": 2956,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "26751": {
+    "id": 1165,
+    "itemId": 26751,
+    "level": 80,
+    "icon": "/i/029000/029205.png",
+    "mapId": 496,
+    "zoneId": 2958,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "27410": {
     "id": 720,
@@ -13915,6 +14498,226 @@
       "fr": "Pleine mer"
     }
   },
+  "29564": {
+    "id": 1196,
+    "itemId": 29564,
+    "level": 70,
+    "icon": "/i/029000/029726.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29565": {
+    "id": 1197,
+    "itemId": 29565,
+    "level": 70,
+    "icon": "/i/022000/022263.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29566": {
+    "id": 1198,
+    "itemId": 29566,
+    "level": 70,
+    "icon": "/i/029000/029209.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29567": {
+    "id": 1199,
+    "itemId": 29567,
+    "level": 70,
+    "icon": "/i/029000/029263.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29568": {
+    "id": 1200,
+    "itemId": 29568,
+    "level": 70,
+    "icon": "/i/029000/029231.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29569": {
+    "id": 1201,
+    "itemId": 29569,
+    "level": 70,
+    "icon": "/i/029000/029588.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29570": {
+    "id": 1202,
+    "itemId": 29570,
+    "level": 70,
+    "icon": "/i/029000/029204.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29571": {
+    "id": 1203,
+    "itemId": 29571,
+    "level": 70,
+    "icon": "/i/029000/029593.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29572": {
+    "id": 1204,
+    "itemId": 29572,
+    "level": 70,
+    "icon": "/i/029000/029590.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29575": {
+    "id": 1205,
+    "itemId": 29575,
+    "level": 70,
+    "icon": "/i/029000/029217.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29576": {
+    "id": 1206,
+    "itemId": 29576,
+    "level": 70,
+    "icon": "/i/029000/029063.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29577": {
+    "id": 1207,
+    "itemId": 29577,
+    "level": 70,
+    "icon": "/i/028000/028456.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29580": {
+    "id": 1208,
+    "itemId": 29580,
+    "level": 70,
+    "icon": "/i/029000/029595.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29582": {
+    "id": 1209,
+    "itemId": 29582,
+    "level": 70,
+    "icon": "/i/029000/029853.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29583": {
+    "id": 1210,
+    "itemId": 29583,
+    "level": 70,
+    "icon": "/i/029000/029503.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29584": {
+    "id": 1211,
+    "itemId": 29584,
+    "level": 70,
+    "icon": "/i/029000/029591.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29585": {
+    "id": 1212,
+    "itemId": 29585,
+    "level": 70,
+    "icon": "/i/022000/022253.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29586": {
+    "id": 1213,
+    "itemId": 29586,
+    "level": 70,
+    "icon": "/i/029000/029204.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29587": {
+    "id": 1214,
+    "itemId": 29587,
+    "level": 70,
+    "icon": "/i/028000/028464.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29588": {
+    "id": 1215,
+    "itemId": 29588,
+    "level": 70,
+    "icon": "/i/027000/027038.png",
+    "mapId": 495,
+    "zoneId": 2957,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
   "29673": {
     "id": 908,
     "itemId": 29673,
@@ -15207,6 +16010,226 @@
       "fr": "Pleine mer"
     }
   },
+  "29994": {
+    "id": 1218,
+    "itemId": 29994,
+    "level": 1,
+    "icon": "/i/029000/029473.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29995": {
+    "id": 1219,
+    "itemId": 29995,
+    "level": 1,
+    "icon": "/i/029000/029400.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29996": {
+    "id": 1220,
+    "itemId": 29996,
+    "level": 1,
+    "icon": "/i/029000/029261.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29997": {
+    "id": 1221,
+    "itemId": 29997,
+    "level": 1,
+    "icon": "/i/029000/029511.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29998": {
+    "id": 1222,
+    "itemId": 29998,
+    "level": 60,
+    "icon": "/i/029000/029224.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "29999": {
+    "id": 1223,
+    "itemId": 29999,
+    "level": 60,
+    "icon": "/i/029000/029232.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30000": {
+    "id": 1224,
+    "itemId": 30000,
+    "level": 70,
+    "icon": "/i/029000/029596.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30001": {
+    "id": 1225,
+    "itemId": 30001,
+    "level": 70,
+    "icon": "/i/029000/029415.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30002": {
+    "id": 1226,
+    "itemId": 30002,
+    "level": 80,
+    "icon": "/i/029000/029655.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30003": {
+    "id": 1227,
+    "itemId": 30003,
+    "level": 80,
+    "icon": "/i/029000/029701.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30004": {
+    "id": 1228,
+    "itemId": 30004,
+    "level": 80,
+    "icon": "/i/029000/029709.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30005": {
+    "id": 1229,
+    "itemId": 30005,
+    "level": 80,
+    "icon": "/i/029000/029130.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "30006": {
+    "id": 1230,
+    "itemId": 30006,
+    "level": 80,
+    "icon": "/i/029000/029116.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "30007": {
+    "id": 1231,
+    "itemId": 30007,
+    "level": 80,
+    "icon": "/i/029000/029708.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "30008": {
+    "id": 1232,
+    "itemId": 30008,
+    "level": 80,
+    "icon": "/i/029000/029724.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "30009": {
+    "id": 1233,
+    "itemId": 30009,
+    "level": 80,
+    "icon": "/i/029000/029653.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 1
+  },
+  "30010": {
+    "id": 1234,
+    "itemId": 30010,
+    "level": 80,
+    "icon": "/i/029000/029865.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 1
+  },
+  "30011": {
+    "id": 1235,
+    "itemId": 30011,
+    "level": 80,
+    "icon": "/i/029000/029658.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 1
+  },
+  "30012": {
+    "id": 1236,
+    "itemId": 30012,
+    "level": 80,
+    "icon": "/i/029000/029660.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 1
+  },
+  "30013": {
+    "id": 1237,
+    "itemId": 30013,
+    "level": 80,
+    "icon": "/i/029000/029074.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 1
+  },
   "30432": {
     "id": 912,
     "itemId": 30432,
@@ -15498,6 +16521,292 @@
       "ja": "魔泉",
       "fr": "Fuites magismologiques"
     }
+  },
+  "31578": {
+    "id": 1238,
+    "itemId": 31578,
+    "level": 10,
+    "icon": "/i/029000/029303.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31579": {
+    "id": 1239,
+    "itemId": 31579,
+    "level": 10,
+    "icon": "/i/029000/029519.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31580": {
+    "id": 1240,
+    "itemId": 31580,
+    "level": 10,
+    "icon": "/i/029000/029243.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31581": {
+    "id": 1241,
+    "itemId": 31581,
+    "level": 10,
+    "icon": "/i/029000/029493.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31582": {
+    "id": 1242,
+    "itemId": 31582,
+    "level": 60,
+    "icon": "/i/029000/029291.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31583": {
+    "id": 1243,
+    "itemId": 31583,
+    "level": 60,
+    "icon": "/i/029000/029443.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31584": {
+    "id": 1244,
+    "itemId": 31584,
+    "level": 60,
+    "icon": "/i/029000/029258.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31585": {
+    "id": 1245,
+    "itemId": 31585,
+    "level": 60,
+    "icon": "/i/029000/029268.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31586": {
+    "id": 1246,
+    "itemId": 31586,
+    "level": 60,
+    "icon": "/i/029000/029227.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31587": {
+    "id": 1247,
+    "itemId": 31587,
+    "level": 60,
+    "icon": "/i/029000/029316.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31588": {
+    "id": 1248,
+    "itemId": 31588,
+    "level": 60,
+    "icon": "/i/029000/029217.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31589": {
+    "id": 1249,
+    "itemId": 31589,
+    "level": 60,
+    "icon": "/i/029000/029484.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31590": {
+    "id": 1250,
+    "itemId": 31590,
+    "level": 80,
+    "icon": "/i/029000/029721.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31591": {
+    "id": 1251,
+    "itemId": 31591,
+    "level": 80,
+    "icon": "/i/029000/029719.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31592": {
+    "id": 1252,
+    "itemId": 31592,
+    "level": 80,
+    "icon": "/i/029000/029707.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31593": {
+    "id": 1253,
+    "itemId": 31593,
+    "level": 80,
+    "icon": "/i/029000/029910.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31594": {
+    "id": 1254,
+    "itemId": 31594,
+    "level": 80,
+    "icon": "/i/029000/029711.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31595": {
+    "id": 1255,
+    "itemId": 31595,
+    "level": 80,
+    "icon": "/i/029000/029720.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "31596": {
+    "id": 1256,
+    "itemId": 31596,
+    "level": 80,
+    "icon": "/i/029000/029403.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2
+  },
+  "31597": {
+    "id": 1257,
+    "itemId": 31597,
+    "level": 80,
+    "icon": "/i/029000/029651.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2
+  },
+  "31598": {
+    "id": 1258,
+    "itemId": 31598,
+    "level": 80,
+    "icon": "/i/029000/029904.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2
+  },
+  "31599": {
+    "id": 1259,
+    "itemId": 31599,
+    "level": 80,
+    "icon": "/i/029000/029712.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 2
+  },
+  "31600": {
+    "id": 1260,
+    "itemId": 31600,
+    "level": 80,
+    "icon": "/i/029000/029737.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 2
+  },
+  "31601": {
+    "id": 1261,
+    "itemId": 31601,
+    "level": 80,
+    "icon": "/i/029000/029738.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 2
+  },
+  "31602": {
+    "id": 1262,
+    "itemId": 31602,
+    "level": 80,
+    "icon": "/i/029000/029739.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 2
+  },
+  "31603": {
+    "id": 1263,
+    "itemId": 31603,
+    "level": 80,
+    "icon": "/i/029000/029740.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 2
   },
   "31770": {
     "id": 994,
@@ -16655,6 +17964,292 @@
       "fr": "Pleine mer"
     }
   },
+  "32882": {
+    "id": 1264,
+    "itemId": 32882,
+    "level": 10,
+    "icon": "/i/029000/029310.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32883": {
+    "id": 1265,
+    "itemId": 32883,
+    "level": 10,
+    "icon": "/i/029000/029420.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32884": {
+    "id": 1266,
+    "itemId": 32884,
+    "level": 10,
+    "icon": "/i/029000/029467.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32885": {
+    "id": 1267,
+    "itemId": 32885,
+    "level": 10,
+    "icon": "/i/029000/029501.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32886": {
+    "id": 1268,
+    "itemId": 32886,
+    "level": 60,
+    "icon": "/i/029000/029706.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32887": {
+    "id": 1269,
+    "itemId": 32887,
+    "level": 60,
+    "icon": "/i/029000/029410.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32888": {
+    "id": 1270,
+    "itemId": 32888,
+    "level": 60,
+    "icon": "/i/029000/029514.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32889": {
+    "id": 1271,
+    "itemId": 32889,
+    "level": 60,
+    "icon": "/i/029000/029704.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32890": {
+    "id": 1272,
+    "itemId": 32890,
+    "level": 60,
+    "icon": "/i/029000/029715.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32891": {
+    "id": 1273,
+    "itemId": 32891,
+    "level": 60,
+    "icon": "/i/028000/028463.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32892": {
+    "id": 1274,
+    "itemId": 32892,
+    "level": 60,
+    "icon": "/i/029000/029129.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32893": {
+    "id": 1275,
+    "itemId": 32893,
+    "level": 60,
+    "icon": "/i/029000/029758.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32894": {
+    "id": 1276,
+    "itemId": 32894,
+    "level": 80,
+    "icon": "/i/029000/029716.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32895": {
+    "id": 1277,
+    "itemId": 32895,
+    "level": 80,
+    "icon": "/i/029000/029915.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32896": {
+    "id": 1278,
+    "itemId": 32896,
+    "level": 80,
+    "icon": "/i/029000/029906.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32897": {
+    "id": 1279,
+    "itemId": 32897,
+    "level": 80,
+    "icon": "/i/029000/029005.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32898": {
+    "id": 1280,
+    "itemId": 32898,
+    "level": 80,
+    "icon": "/i/029000/029105.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32899": {
+    "id": 1281,
+    "itemId": 32899,
+    "level": 80,
+    "icon": "/i/029000/029021.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "32900": {
+    "id": 1282,
+    "itemId": 32900,
+    "level": 80,
+    "icon": "/i/029000/029447.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3
+  },
+  "32901": {
+    "id": 1283,
+    "itemId": 32901,
+    "level": 80,
+    "icon": "/i/029000/029922.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3
+  },
+  "32902": {
+    "id": 1284,
+    "itemId": 32902,
+    "level": 80,
+    "icon": "/i/029000/029054.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3
+  },
+  "32903": {
+    "id": 1285,
+    "itemId": 32903,
+    "level": 80,
+    "icon": "/i/028000/028459.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3
+  },
+  "32904": {
+    "id": 1286,
+    "itemId": 32904,
+    "level": 80,
+    "icon": "/i/029000/029748.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 3
+  },
+  "32905": {
+    "id": 1287,
+    "itemId": 32905,
+    "level": 80,
+    "icon": "/i/029000/029950.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 3
+  },
+  "32906": {
+    "id": 1288,
+    "itemId": 32906,
+    "level": 80,
+    "icon": "/i/029000/029747.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 3
+  },
+  "32907": {
+    "id": 1289,
+    "itemId": 32907,
+    "level": 80,
+    "icon": "/i/029000/029749.png",
+    "mapId": 215,
+    "zoneId": 2100,
+    "timed": 0,
+    "weathered": 1,
+    "stars": 3
+  },
   "33219": {
     "id": 1006,
     "itemId": 33219,
@@ -17089,6 +18684,28 @@
       "ja": "湖沼",
       "fr": "Lacs et marais"
     }
+  },
+  "35849": {
+    "id": 1290,
+    "itemId": 35849,
+    "level": 85,
+    "icon": "/i/029000/029282.png",
+    "mapId": 696,
+    "zoneId": 3709,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "35850": {
+    "id": 1291,
+    "itemId": 35850,
+    "level": 90,
+    "icon": "/i/029000/029767.png",
+    "mapId": 698,
+    "zoneId": 3711,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   },
   "36385": {
     "id": 1017,
@@ -18955,5 +20572,93 @@
       "ja": "宙泉",
       "fr": "Espace"
     }
+  },
+  "36611": {
+    "id": 1292,
+    "itemId": 36611,
+    "level": 90,
+    "icon": "/i/025000/025930.png",
+    "mapId": 699,
+    "zoneId": 3712,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "36612": {
+    "id": 1293,
+    "itemId": 36612,
+    "level": 90,
+    "icon": "/i/025000/025930.png",
+    "mapId": 699,
+    "zoneId": 3712,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2001398": {
+    "id": 1142,
+    "itemId": 2001398,
+    "level": 2,
+    "icon": "/i/029000/029210.png",
+    "mapId": 53,
+    "zoneId": 63,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2001410": {
+    "id": 1143,
+    "itemId": 2001410,
+    "level": 2,
+    "icon": "/i/029000/029295.png",
+    "mapId": 25,
+    "zoneId": 67,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2001422": {
+    "id": 1144,
+    "itemId": 2001422,
+    "level": 2,
+    "icon": "/i/029000/029310.png",
+    "mapId": 53,
+    "zoneId": 63,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2001889": {
+    "id": 1148,
+    "itemId": 2001889,
+    "level": 5,
+    "icon": "/i/029000/029012.png",
+    "mapId": 17,
+    "zoneId": 32,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2002390": {
+    "id": 1163,
+    "itemId": 2002390,
+    "level": 5,
+    "icon": "/i/029000/029012.png",
+    "mapId": 17,
+    "zoneId": 32,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
+  "2002869": {
+    "id": 1195,
+    "itemId": 2002869,
+    "level": 5,
+    "icon": "/i/029000/029012.png",
+    "mapId": 17,
+    "zoneId": 32,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
   }
 }

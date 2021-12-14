@@ -26,20 +26,8 @@ export class ZoneBreakdown {
             this.addToBreakdown(node.zoneId, node.map, row, hideZoneDuplicates, coords);
           }
         });
-      } else if (getItemSource<Drop[]>(row, DataType.DROPS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
-        getItemSource(row, DataType.DROPS).forEach(drop => {
-          this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates, drop.position);
-        });
-      } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
-        getItemSource<Alarm[]>(row, DataType.ALARMS).forEach(alarm => {
-          this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates, alarm.coords);
-        });
-      } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
-        getItemSource<Vendor[]>(row, DataType.VENDORS).forEach(vendor => {
-          this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates, vendor.coords);
-        });
       } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0
-        && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TRADE, LayoutRowFilter.IS_TOKEN_TRADE, LayoutRowFilter.IS_TOME_TRADE, LayoutRowFilter.IS_GC_TRADE, LayoutRowFilter.IS_SCRIPT_TRADE)
+        && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TRADE, LayoutRowFilter.IS_TOKEN_TRADE, LayoutRowFilter.IS_TOME_TRADE, LayoutRowFilter.IS_GC_TRADE, LayoutRowFilter.IS_SCRIPT_TRADE, LayoutRowFilter.IS_FATE_ITEM)
       ) {
         const allNpcs = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES)
           .reduce((acc, source) => {
@@ -54,6 +42,18 @@ export class ZoneBreakdown {
         if (allNpcs.length === 0) {
           this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
         }
+      } else if (getItemSource<Drop[]>(row, DataType.DROPS).filter(drop => drop.zoneid > 0).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
+        getItemSource(row, DataType.DROPS).forEach(drop => {
+          this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates, drop.position);
+        });
+      } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
+        getItemSource<Alarm[]>(row, DataType.ALARMS).forEach(alarm => {
+          this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates, alarm.coords);
+        });
+      } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
+        getItemSource<Vendor[]>(row, DataType.VENDORS).forEach(vendor => {
+          this.addToBreakdown(vendor.zoneId, vendor.mapId, row, hideZoneDuplicates, vendor.coords);
+        });
       } else {
         this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
       }

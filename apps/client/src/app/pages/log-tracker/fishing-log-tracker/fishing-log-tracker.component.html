@@ -145,6 +145,13 @@
                                                  [tooltipDisabled]="true" [width]="32"></app-item-icon>
                                 </div>
                               </div>
+                              <div *ngIf="entry.gatheringNode.speed !== undefined">
+                                {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[entry.gatheringNode.speed]) | translate}}
+                                <app-spearfishing-speed [speed]="entry.gatheringNode.speed"></app-spearfishing-speed>
+                              </div>
+                              <div *ngIf="entry.gatheringNode.shadowSize !== undefined">
+                                {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[entry.gatheringNode.shadowSize]) | translate}}
+                              </div>
                               <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                                 <div *ngIf="entry.gatheringNode.weathersFrom?.length > 0" fxLayout="row wrap" fxLayoutGap="5px">
                                   <div *ngFor="let weather of entry.gatheringNode.weathersFrom">

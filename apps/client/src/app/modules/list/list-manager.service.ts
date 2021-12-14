@@ -276,7 +276,7 @@ export class ListManagerService {
     const permissions = list.registry;
     const backup = [];
     if (list.finalItems.length === 0) {
-      return of(list);
+      return of(ListController.clean(list));
     }
     list.items.forEach(item => {
       backup.push({ array: 'items', item: { ...item } });

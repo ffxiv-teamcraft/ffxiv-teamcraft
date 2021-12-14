@@ -191,15 +191,19 @@ export class LogsExtractor extends AbstractExtractor {
     };
 
     const fishingLog = [];
+    const fishes = [];
 
     this.aggregateAllPages('https://xivapi.com/FishParameter?columns=ID,ItemTargetID,Item.Icon,TerritoryType.MapTargetID,TerritoryType.PlaceNameTargetID,GatheringItemLevel,TimeRestricted,WeatherRestricted,FishingRecordType,IsInLog,GatheringSubCategory').pipe(
       map(completeFetch => {
         const fishParameter = {};
         completeFetch
-          .filter(fish => fish.ItemTargetID > 0 && fish.IsInLog === 1)
+          .filter(fish => fish.ItemTargetID > 0)
           .forEach(fish => {
             if (fish.TerritoryType === null) {
               throw new Error(`No territory for FishParameter#${fish.ID}`);
+            }
+            if (fishes.indexOf(fish.ItemTargetID) === -1) {
+              fishes.push(fish.ItemTargetID);
             }
             const entry: any = {
               id: fish.ID,
@@ -229,11 +233,11 @@ export class LogsExtractor extends AbstractExtractor {
       })
     ).subscribe(fishParameter => {
       this.persistToJsonAsset('fish-parameter', fishParameter);
+      this.persistToJsonAsset('fishes', fishes);
     });
 
     this.getAllEntries('https://xivapi.com/FishingSpot', true).subscribe((completeFetch) => {
       const spots = [];
-      const fishes = [];
       completeFetch
         .filter(spot => spot.Item0 !== null && spot.PlaceName !== null && (spot.TerritoryType !== null || spot.ID >= 10000))
         .forEach(spot => {
@@ -266,9 +270,6 @@ export class LogsExtractor extends AbstractExtractor {
             })
             .forEach(key => {
               const fish = spot[key];
-              if (fishes.indexOf(fish.ID) === -1) {
-                fishes.push(fish.ID);
-              }
               const entry = {
                 itemId: fish.ID,
                 level: spot.GatheringLevel,
@@ -289,7 +290,6 @@ export class LogsExtractor extends AbstractExtractor {
         });
       this.persistToJsonAsset('fishing-log', fishingLog);
       this.persistToJsonAsset('fishing-spots', spots);
-      this.persistToJsonAsset('fishes', fishes);
       this.fishingLogDone$.next();
     });
   }

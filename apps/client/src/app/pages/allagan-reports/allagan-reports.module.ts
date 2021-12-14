@@ -41,6 +41,7 @@ import { ReportSourceCompactDetailsComponent } from './report-source-compact-det
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 import { ApolloClientResolver } from '../../core/apollo-client.resolver';
+import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
 
 
 const routes: Routes = [
@@ -99,7 +100,8 @@ const routes: Routes = [
     NzCardModule,
     NzStatisticModule,
     NzCheckboxModule,
-    QuickSearchModule
+    QuickSearchModule,
+    SpearfishingSpeedModule
   ],
   providers: [
     ...Object.values(AllaganReportsGQLProviders),

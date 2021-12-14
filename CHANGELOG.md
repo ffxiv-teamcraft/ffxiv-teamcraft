@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.6"></a>
+## [9.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.5...v9.2.6) (2021-12-14)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed some fish not showing spots at all ([a0cb8a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0cb8a7))
+* **community-lists:** added debounce to name filter input ([742761b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/742761b))
+* **desktop:** fixed character avatar sometimes loading forever ([7f35c3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7f35c3b))
+* **gearsets:** fixed stats computing on old gearsets still using belt ([b737995](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b737995))
+* **layout:** better filtering for gemstone traders ([c28e022](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c28e022))
+* **levequests:** fixed wrong exp prediction when exp field is left empty ([a21d8ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a21d8ec))
+* **lists:** fixed lists not cleaned properly in some cases ([973bb86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/973bb86))
+* **lists:** fixed slow mode notification showing up in other pages than list details ([08889b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08889b0))
+* **profile:** fixed stats and masterbook popups flickering ([870cfa6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/870cfa6))
+* **retainer-ventures:** fixed perception not applied properly from selected retainer ([84b9d2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84b9d2c))
+* **retainers:** fixed retainer ventures display ([99ecb0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99ecb0d))
+* **weathers:** fixed new weather icons not showing properly ([5beeab7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5beeab7))
+
+
+### Features
+
+* **db:** added spearfishing speed gifs thanks to FruitySnacks ([232ae39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/232ae39))
+* **db:** support for endwalker spearfishing reports and data display ([#2099](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2099)) ([9d57195](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9d57195))
+* **inventory-optimizer:** new pause toggle to stop optimizers from refreshing ([0a1e080](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a1e080))
+* **lists:** added a copy button on lists you can't open ([03acb49](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03acb49))
+* **lists:** added a new setting to make quick lists offline by default ([bbcf3b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bbcf3b7))
+* **log-tracker:** imported allagan reports data to EW fishing log ([24c9468](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24c9468))
+* **simulator:** added rlvl to the result card ([6439e3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6439e3e))
+* **voyage-tracker:** now saves panel expansion states accross sessions ([958ea9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/958ea9f))
+
+
+### Performance Improvements
+
+* **core:** updated firebase sdk ([796356d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/796356d))
+* **db:** removed some useless read operations ([0d5a58f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d5a58f))
+* **lodestone:** faster character loading ([b1f28a4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b1f28a4))
+
+
+
 <a name="9.2.5"></a>
 ## [9.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.4...v9.2.5) (2021-12-11)
 

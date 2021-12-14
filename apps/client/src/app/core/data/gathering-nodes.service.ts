@@ -52,7 +52,12 @@ export class GatheringNodesService {
           const minBtnSpearHiddenMatches: GatheringNode[] = [...minBtnSpearMatches, ...hiddenReferences.map(node => ({
             ...node,
             matchingItemIsHidden: true
-          }))].filter(node => node.type !== 4);
+          }))].map(node => {
+            if (node.type === 5) {
+              node.type = 4;
+            }
+            return node;
+          });
 
           const fishingSpotMatches: GatheringNode[] = (fishingSources[id] || []).map(entry => {
             const spot = fishingSpots.find(s => s.id === entry.spot);
@@ -109,12 +114,13 @@ export class GatheringNodesService {
                 weathers: (entry as any).weathers,
                 weathersFrom: (entry as any).weathersFrom,
                 limited: entry.spawn !== undefined || (entry as any).weathers?.length > 0,
-                gig: entry.gig
+                speed: entry.speed,
+                shadowSize: entry.shadowSize
               } as GatheringNode;
             }
           });
 
-          return [...minBtnSpearHiddenMatches, ...fishingSpotMatches, ...spearFishingMatches]
+          return [...minBtnSpearHiddenMatches.filter(e => !spearFishingMatches.some(s => s.id === e.id)), ...fishingSpotMatches, ...spearFishingMatches]
             .map(node => {
               return { ...node, matchingItemId: id };
             });

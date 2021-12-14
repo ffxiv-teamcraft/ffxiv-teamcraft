@@ -418,7 +418,7 @@ export class IpcListenersManager {
             ...char
           }
         });
-      });
+      }).catch(e => console.error(e));
     });
     ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
       this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {

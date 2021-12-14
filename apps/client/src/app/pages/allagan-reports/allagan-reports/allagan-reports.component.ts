@@ -57,7 +57,7 @@ export class AllaganReportsComponent {
     map(([extracts, fishes, items, dashboardData]) => {
       const fishWithNoData = fishes
         .filter(itemId => {
-          return !items[itemId].en.includes('Skybuilders')
+          return itemId < 200000 && !items[itemId].en.includes('Skybuilders')
             && extracts[itemId].sources.length === 0;
         });
       return {

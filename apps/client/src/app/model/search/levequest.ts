@@ -1,5 +1,3 @@
-import { I18nName } from '../common/i18n-name';
-
 export interface Levequest {
   id: number;
   level: number;

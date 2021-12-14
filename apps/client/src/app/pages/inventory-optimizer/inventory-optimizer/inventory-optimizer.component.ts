@@ -25,6 +25,7 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 })
 export class InventoryOptimizerComponent {
 
+  public pauseTracking$ = new BehaviorSubject<boolean>(false);
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
   public ignoreArray: { id: string, itemId: number, containerName?: string }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
   //hiddenArray tracks hidden optimizers
@@ -40,7 +41,9 @@ export class InventoryOptimizerComponent {
         ),
         this.reloader$
       ]).pipe(
-        switchMapTo(this.inventoryFacade.inventory$.pipe(
+        switchMapTo(combineLatest([this.inventoryFacade.inventory$, this.pauseTracking$]).pipe(
+          filter(([, pause]) => !pause),
+          map(([inventory]) => inventory),
           switchMap(inventory => {
             return safeCombineLatest(
               this.optimizers

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
-import { Venture } from '../../../model/garland-tools/venture';
 import { LazyRetainerTask } from '../../../lazy-data/model/lazy-retainer-task';
 
 @Component({
@@ -23,9 +22,9 @@ export class VenturesComponent extends ItemDetailsPopup<LazyRetainerTask[]> impl
     this.ventures = this.details.map(venture => {
       venture.quantities = (venture.quantities || []).map(q => {
         if (q.stat === 'perception') {
-          (q as any).stat = 'Perception';
+          (q as any).name = 'Perception';
         } else {
-          (q as any).stat = 'RETAINER_VENTURES.Retainer_ilvl';
+          (q as any).name = 'RETAINER_VENTURES.Retainer_ilvl';
         }
         return q;
       });

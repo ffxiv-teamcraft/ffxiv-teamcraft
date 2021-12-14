@@ -282,6 +282,7 @@
   "No": "否",
   "Crystals": "水晶",
   "Gathering": "采集中",
+  "Perception": "Perception",
   "Drops_or_GC": "副本/掉落/大国防联军",
   "Other": "其他",
   "Pre_crafts": "半成品",
@@ -438,6 +439,7 @@
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
     "Clear_search_history": "清除搜索记录",
     "Auto_mark_as_done_in_log": "在完成清单项时标记采集（制作）笔记",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Always_all_deliveries": "在理符任务工具中默认选中“共可交付 3 次”",
@@ -1983,6 +1985,7 @@
     "Show_hidden": "显示隐藏的优化器",
     "No_optimizations": "没有可用的优化",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
       "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。",
@@ -2812,6 +2815,21 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "NORMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTH",
       "REDUCTION": "REDUCTION",

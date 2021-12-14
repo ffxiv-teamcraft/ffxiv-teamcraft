@@ -10,6 +10,7 @@ export const environment = {
   ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
   noAnimations: false,
+  verboseOperations: false,
   ...gameEnv,
   firebase: {
     apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',

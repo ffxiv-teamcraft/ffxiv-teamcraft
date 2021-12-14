@@ -185,6 +185,9 @@ export class ExtractorComponent {
           const spot = minBtnSpearNodes.find(n => n.items.includes(entry.itemId));
           return this.getFshData(entry.itemId, spot.id).pipe(
             map((data) => {
+              if (!data[0]) {
+                console.log(entry.itemId, spot.id);
+              }
               return {
                 entry,
                 id: spot.id,

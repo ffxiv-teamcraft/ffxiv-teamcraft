@@ -8,8 +8,6 @@ import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { HttpClient } from '@angular/common/http';
-import { LogTrackingService } from './log-tracking.service';
-import firebase from 'firebase/compat/app';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +17,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
   userCache = {};
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient,
-              private logTrackingService: LogTrackingService) {
+              protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
@@ -33,11 +30,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         catchError((err) => {
           return of(null);
         }),
-        distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
+        distinctUntilChanged((a, b) => {
+          return JSON.stringify(a) === JSON.stringify(b);
+        }),
         switchMap(user => {
           if (user === null) {
             user = new TeamcraftUser();
-            user.createdAt = firebase.firestore.Timestamp.now();
             user.notFound = true;
             user.$key = uid;
             return of(user);
@@ -59,36 +57,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
               return user;
             })
           );
-        }),
-        switchMap(user => {
-          if (user.defaultLodestoneId && isCurrentUser) {
-            return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
-              catchError((e) => {
-                return of({
-                  crafting: [],
-                  gathering: []
-                });
-              }),
-              map(logTracking => {
-                user.logProgression = logTracking.crafting;
-                user.gatheringLogProgression = logTracking.gathering;
-                return user;
-              })
-            );
-          }
-          return of(user);
-        }),
-        map(user => {
-          if (typeof user.createdAt !== 'object') {
-            user.createdAt = firebase.firestore.Timestamp.fromDate(new Date(user.createdAt));
-          } else if (!(user.createdAt instanceof firebase.firestore.Timestamp) && user.createdAt !== null) {
-            user.createdAt = new firebase.firestore.Timestamp((user.createdAt as any).seconds, (user.createdAt as any).nanoseconds);
-          } else {
-            const probableDate = new Date();
-            probableDate.setFullYear(2019);
-            user.createdAt = firebase.firestore.Timestamp.fromDate(probableDate);
-          }
-          return user;
         }),
         shareReplay(1)
       );

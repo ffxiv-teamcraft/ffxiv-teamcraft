@@ -22,6 +22,10 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
+  get(uid: string, uriParams?: any): Observable<LogTracking> {
+    return super.get(uid, uriParams);
+  }
+
   public markAsDone(uid: string, entries: MarkAsDoneEntry[]): Observable<any> {
     return concat(chunk(entries, 450)
       .map(entriesChunk => {

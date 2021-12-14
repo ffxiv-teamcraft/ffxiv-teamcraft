@@ -38,7 +38,7 @@ export class CommunityListsComponent implements OnDestroy {
         label: `LIST_TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest([this.nameFilter$, this.tagsFilter$, this.excludeFilter$]).pipe(
+    this.filters$ = combineLatest([this.nameFilter$.pipe(debounceTime(1000)), this.tagsFilter$, this.excludeFilter$]).pipe(
       tap(([name, tags, exclude]) => {
         this.page$.next(1);
         const queryParams = {};

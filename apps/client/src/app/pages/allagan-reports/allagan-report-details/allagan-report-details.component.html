@@ -378,12 +378,19 @@
         </ng-container>
         <ng-container *ngIf="source === AllaganReportSource.SPEARFISHING">
           <nz-form-item>
-            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Gig_head' | translate}}</nz-form-label>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Speed' | translate}}</nz-form-label>
             <nz-form-control [nzSpan]="10">
-              <nz-select formControlName="gig">
-                <nz-option nzValue="Small" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Small' | translate"></nz-option>
-                <nz-option nzValue="Normal" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Normal' | translate"></nz-option>
-                <nz-option nzValue="Large" [nzLabel]="'GATHERING_LOCATIONS.GIG_HEAD.Large' | translate"></nz-option>
+              <nz-select formControlName="speed">
+                <nz-option *ngFor="let row of speeds" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
+              </nz-select>
+              <img *ngIf="form.getRawValue()?.speed !== null" src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif" style="width: 320px;margin-top:5px">
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label [nzSpan]="3" nzRequired>{{'ALLAGAN_REPORTS.Shadow_size' | translate}}</nz-form-label>
+            <nz-form-control [nzSpan]="10">
+              <nz-select formControlName="shadowSize">
+                <nz-option *ngFor="let row of shadowSizes" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SHADOWS.' + row.value) | translate"></nz-option>
               </nz-select>
             </nz-form-control>
           </nz-form-item>

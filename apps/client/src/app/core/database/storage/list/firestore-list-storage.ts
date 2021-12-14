@@ -67,6 +67,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
     }
+    clone.createdAt = new firebase.firestore.Timestamp(clone.createdAt.seconds, 0);
     clone.items = (clone.items || [])
       .filter(item => !item.finalItem)
       .map(item => {
@@ -298,7 +299,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     const diff = compare(before, after);
     // Update the diff so the values are applied to the server list instead
     const transactionDiff = diff.map(change => {
-      if (change.op === 'replace' && typeof change.value === 'number') {
+      if (change.op === 'replace' && typeof change.value === 'number' && !change.path.includes('createdAt')) {
         try {
           const currentServerValue = getValueByPointer(serverList, change.path);
           const currentLocalValue = getValueByPointer(before, change.path);

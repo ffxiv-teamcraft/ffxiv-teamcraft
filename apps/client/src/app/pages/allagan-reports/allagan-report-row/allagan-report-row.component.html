@@ -42,7 +42,7 @@
       <ng-container *ngSwitchCase="AllaganReportSource.FISHING">
         <div fxLayout="column" fxLayoutGap="10px">
           <div *ngIf="fishingSpot$ | async as fishingSpot">
-            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.placeId | i18nRow:'places' | i18n}}
+            {{fishingSpot.mapId | mapName | i18n}} - {{fishingSpot.zoneId | i18nRow:'places' | i18n}}
             <app-db-button type="fishing-spot" [id]="data.spot"></app-db-button>
           </div>
           <div>
@@ -65,6 +65,13 @@
             </div>
           </div>
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>
+          <div>
+            {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[data.speed]) | translate}}
+            <app-spearfishing-speed [speed]="data.speed"></app-spearfishing-speed>
+          </div>
+          <div>
+            {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[data.shadowSize]) | translate}}
+          </div>
         </div>
       </ng-container>
     </div>

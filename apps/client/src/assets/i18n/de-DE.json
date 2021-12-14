@@ -15,7 +15,7 @@
   "See_on_map": "Auf der Karte anzeigen",
   "No_known_coordinates": "Keine bekannten Koordinaten",
   "Edit_amount": "Anzahl ändern",
-  "List_fork_in_progress": "Copying the list to your account…",
+  "List_fork_in_progress": "Kopiere diese Liste zu deinem Account…",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
   "Patch_notes": "{{version}} Änderungen",
@@ -148,8 +148,8 @@
     "Copy_to_clipboard": "In Zwischenablage kopieren",
     "Language": "Sprache",
     "Opened_in_desktop": "Diese Seite wurde in der Desktop-App geöffnet und kann jetzt geschlossen werden.",
-    "Opened_in_desktop_setting": "You can disable this behavior inside the Settings",
-    "Opened_in_desktop_button": "Or by clicking this button",
+    "Opened_in_desktop_setting": "Du kannst dieses Verhalten in den Einstellungen ausschalten",
+    "Opened_in_desktop_button": "Oder durch Klick auf diese Schaltfläche",
     "Open_in_desktop": "In der Desktop-App öffnen",
     "Admin": "Administrator",
     "Moderator": "Moderator",
@@ -222,7 +222,7 @@
     "Add_group_and_alarms": "Diese Gruppe und alle darin enthaltenen Alarme zu den eigenen Alarmen hinzufügen",
     "Delete_all": "Lösche alle Alarme",
     "Delete_alarm": "Diesen Alarm löschen",
-    "Regenerating_alarms": "Regenerating your alarms…",
+    "Regenerating_alarms": "Alarme werden neu generiert…",
     "Regenerate": "Alle Alarme neu generieren",
     "Group_outdated": "Diese Gruppe ist veraltet, bitte den Besitzer, sich mit einem neuen Update anzumelden und es wird aktualisiert",
     "Remove_from_group": "Von dieser Gruppe entfernen",
@@ -282,6 +282,7 @@
   "No": "Nein",
   "Crystals": "Kristalle",
   "Gathering": "Sammeln",
+  "Perception": "Perception",
   "Drops_or_GC": "Inhalte/Beute oder staatliche Gesellschaft",
   "Other": "Anderes",
   "Pre_crafts": "Vorhergehende Handwerksschritte",
@@ -438,6 +439,7 @@
     "Disable_cross_world_prices": "Nur Heimatwelt für Marktbrett-Preise verwenden",
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, sobald in der Liste erledigt",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Position der Datenbank-Kommentare",
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Always_all_deliveries": "\"3x Lieferung\"-Schaltfläche auf der Freibriefe-Seite standardmäßig aktivieren",
@@ -585,7 +587,7 @@
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
     "No_lists": "Du hast keine Listen",
-    "Lists_search_placeholder": "Search for a list…",
+    "Lists_search_placeholder": "Suche nach Liste…",
     "Add_to_a_list": "Einer Liste hinzufügen",
     "Please_pick_recipe": "Bitte wähle ein Rezept für diesen Gegenstand",
     "Import_description": "Wähle das Rezept, das du für den herstellbaren Gegenstand nutzen möchtest und wähle eine Liste. Die Gegenstände werden der Liste hinzugefügt und du wirst weitergeleitet.",
@@ -645,7 +647,7 @@
     "Can_skip_buying_X": "Kann {{amount}} überspringen",
     "Can_skip_buying_entirely": "Kann vollständig übersprungen werden",
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
-    "Requirements_ignored": "Requirements ignored",
+    "Requirements_ignored": "Anforderungen ignoriert",
     "Mark_whole_panel_nq": "Manuelle HQ-Markierungen entfernen",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
     "SCROLLING": {
@@ -741,14 +743,14 @@
     "Inventory_cleanup": "Inventar bereinigen",
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "Consider_requirements": "Consider requirements",
-    "Ignore_requirements": "Ignore requirements",
+    "Ignore_requirements": "Anforderungen ignorieren",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
       "Import_layout": "Ein Layout importieren",
       "Export_layout": "Exportiere dieses Layout",
       "Import_string": "Einen Text importieren",
-      "Import_string_copied": "Layout code copied!",
+      "Import_string_copied": "Layoutcode kopiert!",
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
@@ -765,7 +767,7 @@
       "Layouts": "Layouts",
       "Want_to_learn_more": "Möchtest du mehr über Layouts erfahren und wie sie funktionieren?",
       "Open_wiki_page": "Öffne die Layout-System Wiki-Seite",
-      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
+      "Filter_using_level": "Verwende das Handwerks- und Sammlerlevel in entsprechenden Filtern",
       "ITEMS": {
         "COMMENTS": "Kommentare",
         "COPY_NAME_NOT_FAVORITE": "Nicht-bevorzugter Kopiermodus",
@@ -832,12 +834,12 @@
     "WHM": "WMA",
     "SCH": "GLT",
     "AST": "AST",
-    "SGE": "SGE",
+    "SGE": "WEI",
     "MNK": "MÖN",
     "DRG": "DRG",
     "NIN": "NIN",
     "SAM": "SAM",
-    "RPR": "RPR",
+    "RPR": "SNT",
     "BRD": "BRD",
     "MCH": "MCH",
     "DNC": "TÄN",
@@ -1035,7 +1037,7 @@
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
     "Find_rotation": "Community Rotationen Finder",
-    "Searching_for_rotation": "Searching for community rotations…",
+    "Searching_for_rotation": "Suche nach Community Rotationen…",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
@@ -1077,7 +1079,7 @@
       "Min_cp_filter_placeholder": "Minimum-HP",
       "Difficulty_filter_placeholder": "Schwierigkeit",
       "Quality_filter_placeholder": "Qualität",
-      "Intro": "Input a recipe lvl to get started",
+      "Intro": "Gib ein Rezeptlevel ein, um zu starten",
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
       "Success": "Erfolg: {{HQ}}% HQ",
@@ -1438,7 +1440,7 @@
       "Format": "Format",
       "Folder": "Verzeichnis",
       "No_folder": "Kein Verzeichnis",
-      "Parsing_file": "Parsing file content…",
+      "Parsing_file": "Analysiere Dateiinhalt…",
       "Saving_items": "Speichere Gegenstände ({{done}}/{{todo}})"
     }
   },
@@ -1458,7 +1460,7 @@
     "Job": "Job",
     "Level": "Verwertungsstufe",
     "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
-    "Loading_message": "Loading…",
+    "Loading_message": "Lädt…",
     "TAGS": {
       "Higher_chances": "Höhere Chancen",
       "Lower_exp": "Niedrigere Erfahrung",
@@ -1550,8 +1552,8 @@
       "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
       "X_Equipped": "{{amount}} Ausgerüstet:",
       "Item_series": "Set-Details",
-      "Requires_fate_rank": "Requires FATE rank {{rank}}",
-      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
+      "Requires_fate_rank": "Erfordert FATE-Rang {{rank}}",
+      "Requires_gc_rank": "Erfordert Rang {{rank}} bei der Staatlichen Gesellschaft"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -1830,13 +1832,13 @@
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix.",
-    "Loading_data": "Loading trades data for the selected currency",
+    "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
     "X_sold_last_week": "{{amount}} verkauft in der letzten Woche"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
-    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
+    "Description": "Du möchtest wissen, welche Nahrung dir die Werte gibt, die du möchtest? Such nicht weiter, du bist dort, wo du sein musst!",
     "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
@@ -1979,10 +1981,11 @@
     "Unhide_optimizer": "Dieses Optimierer nicht länger ausblenden",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
-    "Hide_empty": "Hide empty optimizers",
+    "Hide_empty": "Leere Optimierer ausblenden",
     "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "Optimierung als JSON in die Zwischenablage kopiert",
+    "Pause_tracking": "Pause inventory tracking",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
@@ -2112,7 +2115,7 @@
       "Wrists": "Armreif"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with…",
+      "Compare_popup_title": "Vergleiche {{setName}} mit…",
       "Error_title": "Ausrüstungssets konnten nicht verglichen werden",
       "Error_description": "Bitte stelle sicher, dass das eingegebene Ausrüstungsset existiert und vom gleichen Typ wie das aktuelle ist (gleiches Hauptattribut)",
       "Type": "Ausrüstungsset-Typ",
@@ -2142,7 +2145,7 @@
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importiere Set für {{name}}",
       "Imported_gearset": "Importierte Gruppe für {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets…"
+      "Syncing_gearsets": "Synchronisiere Ausrüstungssets…"
     }
   },
   "FOLDERS": {
@@ -2197,7 +2200,7 @@
     "DESYNTH": {
       "Job": "Wähle einen Beruf, den du aufstufen möchtest",
       "Level": "Gib die Desynthese-Stufe ein (nicht die Stufe des Berufs)",
-      "Search": "Click search, and it's done!"
+      "Search": "Klicke Suche und fertig!"
     },
     "RESET_TIMERS": {
       "Toggle": "Aktiviere die Alarme für einen bestimmten Timer, indem du diesen Schalter auf AN setzt."
@@ -2812,6 +2815,21 @@
     "Rarity_Rare": "Selten",
     "No_missing_fish_data": "Kein Fisch mit fehlenden Daten",
     "Sources_filter": "Quellen filtern",
+    "Speed": "Speed",
+    "Shadow_size": "Shadow size",
+    "SPEEDS": {
+      "VERY_SLOW": "Very slow",
+      "SLOW": "Slow",
+      "AVERAGE": "Average",
+      "FAST": "Fast",
+      "FASTER": "Faster",
+      "VERY_FAST": "Very fast"
+    },
+    "SHADOWS": {
+      "SMALL": "Small",
+      "NORMAL": "Normal",
+      "LARGE": "Large"
+    },
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
       "REDUCTION": "RAFFINATION",
