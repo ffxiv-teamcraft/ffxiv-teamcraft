@@ -42,7 +42,6 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           console.error(error);
           return throwError(error);
         }),
-        distinctUntilChanged((a, b) => compare(a, b).length > 0),
         tap(() => this.recordOperation('read')),
         map((snaps: DocumentChangeAction<T>[]) => {
           const rows = snaps
@@ -78,7 +77,6 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
             console.error(error);
             return throwError(error);
           }),
-          distinctUntilChanged((a, b) => compare(a, b).length > 0),
           tap(() => this.recordOperation('read')),
           map((snaps: DocumentChangeAction<T>[]) => {
             const elements = snaps

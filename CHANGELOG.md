@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.7"></a>
+## [9.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.6...v9.2.7) (2021-12-14)
+
+
+### Bug Fixes
+
+* **profile:** fixed profile page not loading properly ([31b9f51](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31b9f51))
+
+
+
 <a name="9.2.6"></a>
 ## [9.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.5...v9.2.6) (2021-12-14)
 
