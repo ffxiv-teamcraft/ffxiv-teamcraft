@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "Utiliser uniquement le serveur d'origine pour les prix à l'hôtel des ventes",
     "Clear_search_history": "Effacer l'historique de recherche",
     "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Position des commentaires de la base de données",
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
     "Always_all_deliveries": "Cocher par défaut le bouton 'Les 3 livraisons' sur la page des mandats",
