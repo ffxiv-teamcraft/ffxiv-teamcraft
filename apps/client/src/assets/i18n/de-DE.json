@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "Nur Heimatwelt für Marktbrett-Preise verwenden",
     "Clear_search_history": "Suchverlauf löschen",
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, sobald in der Liste erledigt",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Position der Datenbank-Kommentare",
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
     "Always_all_deliveries": "\"3x Lieferung\"-Schaltfläche auf der Freibriefe-Seite standardmäßig aktivieren",
