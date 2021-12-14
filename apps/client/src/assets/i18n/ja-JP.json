@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "キャラクターのサーバーマケットボード値段のみ使用",
     "Clear_search_history": "検索履歴を削除",
     "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "データベースのコメント位置",
     "Always_HQ_leves": "何時でもギルド依頼hqアイテムを納品する時の経験値を表記",
     "Always_all_deliveries": "ギルドリーヴページから「全3回納品」を基本値で設定する",
