@@ -1,7 +1,7 @@
 export interface LazyLogTrackerPageData {
   id:                     number;
   masterbook?:            Masterbook | null;
-  startLevel:             StartLevelClass | number;
+  startLevel:             number | { [key: string]: number };
   recipes?:               Recipe[];
   divisionId:             number;
   requiredForAchievement: boolean;
@@ -223,16 +223,4 @@ export interface Recipe {
   itemId:   number;
   rlvl:     number;
   leves:    number[];
-}
-
-export interface StartLevelClass {
-  ClassJobLevel:          number;
-  ConditionsFlag:         number;
-  Difficulty:             number;
-  Durability:             number;
-  ID:                     number;
-  Quality:                number;
-  Stars:                  number;
-  SuggestedControl:       number;
-  SuggestedCraftsmanship: number;
 }
