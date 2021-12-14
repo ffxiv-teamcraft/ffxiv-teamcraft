@@ -83,7 +83,7 @@ export class ListPickerService {
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis())),
+            map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

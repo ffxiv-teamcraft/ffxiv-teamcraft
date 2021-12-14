@@ -189,7 +189,7 @@ export class ListPanelComponent extends TeamcraftComponent {
         this.listsFacade.addList(upgradedClone);
         return this.listsFacade.myLists$
           .pipe(
-            filter(lists => lists.some(l => l.createdAt.toMillis() === upgradedClone.createdAt.toMillis() && l.$key !== undefined)),
+            filter(lists => lists.some(l => l.createdAt.seconds === upgradedClone.createdAt.seconds && l.$key !== undefined)),
             first()
           );
       })

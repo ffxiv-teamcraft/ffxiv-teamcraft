@@ -766,7 +766,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           tap((resultList) => this.listsFacade.addList(resultList)),
           mergeMap((resultList) => {
             return this.listsFacade.myLists$.pipe(
-              map((lists) => lists.find((l) => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+              map((lists) => lists.find((l) => l.createdAt.seconds === resultList.createdAt.seconds && l.$key !== undefined)),
               filter((l) => l !== undefined),
               first()
             );
@@ -807,7 +807,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           return this.progressService.showProgress(
             combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
               map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-              map((lists) => lists.find((l) => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
+              map((lists) => lists.find((l) => l.createdAt.seconds === list.createdAt.seconds && l.$key !== undefined)),
               filter((l) => l !== undefined),
               first()
             ),
