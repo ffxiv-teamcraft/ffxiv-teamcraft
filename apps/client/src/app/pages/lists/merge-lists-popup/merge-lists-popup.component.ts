@@ -53,7 +53,7 @@ export class MergeListsPopupComponent extends AbstractListsSelectionPopup {
         tap(resultList => this.listsFacade.addList(resultList)),
         switchMap((list) => {
           return this.progressService.showProgress(this.listsFacade.myLists$.pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

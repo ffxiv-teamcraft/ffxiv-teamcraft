@@ -486,7 +486,7 @@ export class ListsFacade {
         return this.progress.showProgress(
           combineLatest([this.myLists$, this.listsWithWriteAccess$]).pipe(
             map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === updatedList.createdAt.toMillis() && l.$key !== undefined)),
+            map(lists => lists.find(l => l.createdAt.seconds === updatedList.createdAt.seconds && l.$key !== undefined)),
             filter(l => l !== undefined),
             first()
           ), 1, 'Saving_in_database');

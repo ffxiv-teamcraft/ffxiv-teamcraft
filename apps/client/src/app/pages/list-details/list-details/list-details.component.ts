@@ -298,7 +298,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       this.listsFacade.addList(updatedClone);
     });
     this.progressService.showProgress(this.listsFacade.myLists$.pipe(
-      map(lists => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
+      map(lists => lists.find(l => l.createdAt.seconds === clone.createdAt.seconds && l.$key !== undefined)),
       filter(l => l !== undefined),
       first()
     ), 1, 'List_fork_in_progress')

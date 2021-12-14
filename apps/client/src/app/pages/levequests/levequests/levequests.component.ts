@@ -254,7 +254,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.listsFacade.myLists$.pipe(
-          map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
+          map(lists => lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.$key !== undefined)),
           filter(l => l !== undefined),
           first()
         );
@@ -286,7 +286,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
                 tap(resultList => this.listsFacade.addList(resultList)),
                 mergeMap(resultList => {
                   return this.listsFacade.myLists$.pipe(
-                    map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
+                    map(lists => lists.find(l => l.createdAt.seconds === resultList.createdAt.seconds && l.$key !== undefined)),
                     filter(l => l !== undefined),
                     first()
                   );
