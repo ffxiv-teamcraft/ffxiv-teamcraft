@@ -6,7 +6,6 @@ import { DefaultConsumables } from './default-consumables';
 import firebase from 'firebase/compat/app';
 
 export class TeamcraftUser extends DataModel {
-  createdAt: firebase.firestore.Timestamp;
   defaultLodestoneId: number;
   // FC of the character currently selected
   currentFcId: string;

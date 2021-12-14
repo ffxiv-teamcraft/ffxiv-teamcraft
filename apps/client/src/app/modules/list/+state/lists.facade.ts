@@ -24,6 +24,7 @@ import {
   ToggleAutocompletion,
   ToggleCompletionNotification,
   UnLoadArchivedLists,
+  UnloadListDetails,
   UnPinList,
   UpdateItem,
   UpdateList,
@@ -48,7 +49,6 @@ import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
-import { ListController } from '../list-controller';
 
 declare const gtag: Function;
 
@@ -57,7 +57,9 @@ declare const gtag: Function;
 })
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
+
   connectedTeams$ = this.store.select(listsQuery.getConnectedTeams);
+
   allListDetails$ = this.store.select(listsQuery.getAllListDetails)
     .pipe(
       map(lists => {
@@ -341,6 +343,7 @@ export class ListsFacade {
 
   unload(key: string): void {
     this.store.dispatch(new SelectList(undefined));
+    this.store.dispatch(new UnloadListDetails(key));
   }
 
   toggleAutocomplete(newValue: boolean): void {

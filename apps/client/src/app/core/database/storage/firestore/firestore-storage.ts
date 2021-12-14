@@ -4,11 +4,12 @@ import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, filter, map, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, finalize, map, takeUntil, tap } from 'rxjs/operators';
 import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
 import firebase from 'firebase/compat/app';
+import { compare } from 'fast-json-patch';
 import FieldValue = firebase.firestore.FieldValue;
 
 export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T> {
@@ -77,7 +78,10 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
             console.error(error);
             return throwError(error);
           }),
-          tap(() => this.recordOperation('read', uid)),
+          distinctUntilChanged((a, b) => compare(a.payload.data(), b.payload.data()).length === 0),
+          tap(() => {
+            this.recordOperation('read', uid);
+          }),
           map((snap: Action<DocumentSnapshot<T>>) => {
             const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.data(), $key: snap.payload.id });
             if (!snap.payload.exists) {
@@ -212,7 +216,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   protected recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
-    if ((window as any).verboseOperations) {
+    if ((window as any).verboseOperations || environment.verboseOperations) {
       console.log('OPERATION', operation, this.getBaseUri(), debugData);
     }
     FirestoreStorage.OPERATIONS[this.getBaseUri()] = FirestoreStorage.OPERATIONS[this.getBaseUri()] || { read: 0, write: 0, delete: 0 };
