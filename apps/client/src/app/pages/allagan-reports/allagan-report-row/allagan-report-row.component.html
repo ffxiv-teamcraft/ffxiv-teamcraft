@@ -67,6 +67,7 @@
           <ng-template #noPredators>{{'ALLAGAN_REPORTS.No_predators' | translate}}</ng-template>
           <div>
             {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[data.speed]) | translate}}
+            <app-spearfishing-speed [speed]="data.speed"></app-spearfishing-speed>
           </div>
           <div>
             {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[data.shadowSize]) | translate}}

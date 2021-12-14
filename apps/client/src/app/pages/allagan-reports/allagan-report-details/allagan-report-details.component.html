@@ -383,6 +383,7 @@
               <nz-select formControlName="speed">
                 <nz-option *ngFor="let row of speeds" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
               </nz-select>
+              <img *ngIf="form.getRawValue()?.speed !== null" src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif" style="width: 320px;margin-top:5px">
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>

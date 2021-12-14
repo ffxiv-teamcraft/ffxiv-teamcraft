@@ -34,6 +34,7 @@ import { QuestsComponent } from './quests/quests.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { AchievementsComponent } from './achievements/achievements.component';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
+import { SpearfishingSpeedModule } from '../spearfishing-speed-tooltip/spearfishing-speed.module';
 
 @NgModule({
   imports: [
@@ -59,7 +60,8 @@ import { PageLoaderModule } from '../page-loader/page-loader.module';
     NodeDetailsModule,
     InventoryModule,
     LazyScrollModule,
-    PageLoaderModule
+    PageLoaderModule,
+    SpearfishingSpeedModule
   ],
   declarations: [
     GatheredByComponent,

@@ -65,6 +65,7 @@
                  [src]="row.node.hookset | hooksetActionId | actionIcon | xivapiIcon">
             <div *ngIf="row.node.speed !== undefined">
               {{'ALLAGAN_REPORTS.Speed' | translate}}: {{('ALLAGAN_REPORTS.SPEEDS.' + SpearfishingSpeed[row.node.speed]) | translate}}
+              <app-spearfishing-speed [speed]="row.node.speed"></app-spearfishing-speed>
             </div>
             <div *ngIf="row.node.shadowSize !== undefined">
               {{'ALLAGAN_REPORTS.Shadow_size' | translate}}: {{('ALLAGAN_REPORTS.SHADOWS.' + SpearfishingShadowSize[row.node.shadowSize]) | translate}}
