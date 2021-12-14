@@ -439,6 +439,7 @@
     "Disable_cross_world_prices": "Sólo usar mi propio mundo para los precios del mercado",
     "Clear_search_history": "Limpiar el historial de búsqueda",
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
+    "Make_quick_lists_offline": "Make quick lists offline by default",
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
     "Always_all_deliveries": "Haz que el botón 'Todas las 3 entregas' de la página de levequests esté activado por defecto",
