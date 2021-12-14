@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.8"></a>
+## [9.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.7...v9.2.8) (2021-12-14)
+
+
+### Bug Fixes
+
+* **lists:** fixed list modification and creation waiting forever ([607e53e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/607e53e))
+
+
+
 <a name="9.2.7"></a>
 ## [9.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.6...v9.2.7) (2021-12-14)
 
