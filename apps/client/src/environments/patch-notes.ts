@@ -1,3 +1,3 @@
 export const patchNotes = `### Bug Fixes
 
-* **profile:** fixed profile page not loading properly.`;
+* **lists:** fixed list modification and creation waiting forever.`;
