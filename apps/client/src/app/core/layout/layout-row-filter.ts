@@ -28,7 +28,7 @@ export class LayoutRowFilter {
       vendors = vendors.filter(vendor => vendor.price <= settings.maximumVendorPrice);
     }
     if (settings.maximumTotalVendorPrice > 0) {
-      vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumVendorPrice);
+      vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumTotalVendorPrice);
     }
     return vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
@@ -198,56 +198,56 @@ export class LayoutRowFilter {
   static IS_CRAFTED_BY_ALC = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 14
+        return craftedByRow.job === 14;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_ALC'));
 
   static IS_CRAFTED_BY_ARM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 10
+        return craftedByRow.job === 10;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_ARM'));
 
   static IS_CRAFTED_BY_BSM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 9
+        return craftedByRow.job === 9;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_BSM'));
 
   static IS_CRAFTED_BY_CRP = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 8
+        return craftedByRow.job === 8;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_CRP'));
 
   static IS_CRAFTED_BY_CUL = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 15
+        return craftedByRow.job === 15;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_CUL'));
 
   static IS_CRAFTED_BY_GSM = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 11
+        return craftedByRow.job === 11;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_GSM'));
 
   static IS_CRAFTED_BY_LTW = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 12
+        return craftedByRow.job === 12;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_LTW'));
 
   static IS_CRAFTED_BY_WVR = LayoutRowFilter.IS_CRAFT
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.CRAFTED_BY).find((craftedByRow: CraftedBy) => {
-        return craftedByRow.job === 13
+        return craftedByRow.job === 13;
       }) !== undefined;
     }, 'IS_CRAFTED_BY_WVR'));
 
