@@ -20,7 +20,7 @@
           <span *ngIf="row.alarm.itemId; else customName" class="item-name">
             <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
-            {{row.alarm.itemId | itemName: row.alarm | i18n}}
+            <span [itemNameCopy]="row.alarm.itemId" [disableTooltip]="true">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
             <i *ngIf="row.alarm.note" [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
                nz-tooltip nzType="edit"></i>
           </span>
