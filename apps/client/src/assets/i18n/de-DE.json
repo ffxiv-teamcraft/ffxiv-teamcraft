@@ -129,8 +129,8 @@
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
     "Exclude_filter_placeholder": "Benutze Tags ausschließen",
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
-    "Name_filter_placeholder": "Nach Name filtern",
-    "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
+    "Name_filter_placeholder": "Filter using name (10 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 10 characters"
   },
   "COMMON": {
     "Length": "Länge",
