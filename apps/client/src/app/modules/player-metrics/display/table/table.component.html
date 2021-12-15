@@ -9,7 +9,7 @@
   <tr *ngFor="let row of dataTable.data">
     <!-- TODO: if we ever support other probes than currency and item, this will need a switch/case system -->
     <td [nzEllipsis]="true"><a routerLink="/db/{{translate.currentLang}}/item/{{row.data[0]}}"></a>{{row.data[0] | itemName | i18n}}</td>
-    <td>{{row.data[1]}}</td>
+    <td>{{row.data[1] | number:'1.0-0':translate.currentLang}}</td>
     <td>{{('METRICS.SOURCES.' + ProbeSource[row.source]) | translate}}</td>
     <td>{{(row.timestamp * 1000) | date:'medium'}}</td>
   </tr>
