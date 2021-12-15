@@ -163,7 +163,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getCommunityLists(tags: string[], name: string): Observable<List[]> {
-    if (tags.length === 0 && name.length < 3) {
+    if (tags.length === 0 && name.length < 10) {
       return of([]);
     }
     const query: QueryFn = ref => {
