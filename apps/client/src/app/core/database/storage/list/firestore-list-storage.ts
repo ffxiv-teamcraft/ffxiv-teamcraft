@@ -163,7 +163,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getCommunityLists(tags: string[], name: string): Observable<List[]> {
-    if (tags.length === 0 && name.length < 3) {
+    if (tags.length === 0 && name.length < 10) {
       return of([]);
     }
     const query: QueryFn = ref => {
@@ -297,23 +297,27 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
                                before: List, after: List, serverList: List): void {
     // Get diff between local backup and new version
     const diff = compare(before, after);
-    // Update the diff so the values are applied to the server list instead
-    const transactionDiff = diff.map(change => {
-      if (change.op === 'replace' && typeof change.value === 'number' && !change.path.includes('createdAt')) {
-        try {
-          const currentServerValue = getValueByPointer(serverList, change.path);
-          const currentLocalValue = getValueByPointer(before, change.path);
-          change.value = change.value - currentLocalValue + currentServerValue;
-        } catch (e) {
-          console.warn(e);
+    if (diff.length > 20) {
+      transaction.set(ref, after);
+    } else {
+      // Update the diff so the values are applied to the server list instead
+      const transactionDiff = diff.map(change => {
+        if (change.op === 'replace' && typeof change.value === 'number' && !change.path.includes('createdAt')) {
+          try {
+            const currentServerValue = getValueByPointer(serverList, change.path);
+            const currentLocalValue = getValueByPointer(before, change.path);
+            change.value = change.value - currentLocalValue + currentServerValue;
+          } catch (e) {
+            console.warn(e);
+          }
         }
-      }
-      return change;
-    });
-    // Apply patch to the server list
-    const patched = applyPatch(serverList, transactionDiff).newDocument;
-    // Save inside Database
-    transaction.set(ref, patched);
+        return change;
+      });
+      // Apply patch to the server list
+      const patched = applyPatch(serverList, transactionDiff).newDocument;
+      // Save inside Database
+      transaction.set(ref, patched);
+    }
     this.recordOperation('write', before.$key);
   }
 }

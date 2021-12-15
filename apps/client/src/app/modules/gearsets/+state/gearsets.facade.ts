@@ -232,7 +232,6 @@ export class GearsetsFacade {
         gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head', itemMeldingData, hqFlags);
         gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest', itemMeldingData, hqFlags);
         gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands', itemMeldingData, hqFlags);
-        gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist', itemMeldingData, hqFlags);
         gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs', itemMeldingData, hqFlags);
         gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet', itemMeldingData, hqFlags);
         gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears', itemMeldingData, hqFlags);
@@ -249,7 +248,10 @@ export class GearsetsFacade {
         }
         return gearset;
       }),
-      catchError(() => of(null))
+      catchError((e) => {
+        console.error(e);
+        return of(null);
+      })
     );
   }
 

@@ -3,7 +3,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
@@ -17,14 +17,23 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 export class CommunityListsComponent implements OnDestroy {
 
   public tags: any[];
+
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
   public excludeFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
   public pageSize = 20;
+
   public totalLength = 0;
+
   loading = true;
+
   filteredLists$: Observable<List[]>;
+
   private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
   constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
@@ -38,7 +47,9 @@ export class CommunityListsComponent implements OnDestroy {
         label: `LIST_TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest([this.nameFilter$.pipe(debounceTime(1000)), this.tagsFilter$, this.excludeFilter$]).pipe(
+    this.filters$ = combineLatest([this.nameFilter$.pipe(
+      debounceTime(1000)
+    ), this.tagsFilter$, this.excludeFilter$]).pipe(
       tap(([name, tags, exclude]) => {
         this.page$.next(1);
         const queryParams = {};
@@ -61,10 +72,10 @@ export class CommunityListsComponent implements OnDestroy {
       .pipe(first())
       .subscribe((query) => {
         this.nameFilter$.next(query.get('name') || '');
-        if (query.get('tags') !== null) {
+        if (query.get('tags') !== null && query.get('tags').length > 0) {
           this.tagsFilter$.next(query.get('tags').split(',').filter(tag => tag !== ''));
         }
-        if (query.get('exclude') !== null) {
+        if (query.get('exclude') !== null && query.get('exclude').length > 0) {
           this.excludeFilter$.next(query.get('exclude').split(',').filter(exclude => exclude !== ''));
         }
       });

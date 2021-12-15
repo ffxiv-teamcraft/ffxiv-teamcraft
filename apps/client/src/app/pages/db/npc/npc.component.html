@@ -124,7 +124,7 @@
             <nz-list-item *ngIf="npc | i18nRow:'npcs'" [nzContent]="more">
               <nz-list-item-meta
                 [nzAvatar]="npcAvatar"
-                [nzDescription]="(npc | i18nRow:'npcs')?.position?.zoneid | i18nRow:'places' | i18n"
+                [nzDescription]="(npc | lazyRow:'npcs' | async)?.position?.zoneid | i18nRow:'places' | i18n"
                 [nzTitle]="npc | i18nRow:'npcs' | i18n">
                 <ng-template #npcAvatar>
                   <a routerLink="/db/{{translate.currentLang}}/npc/{{npc}}">

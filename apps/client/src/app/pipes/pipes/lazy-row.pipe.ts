@@ -12,9 +12,11 @@ export class LazyRowPipe implements PipeTransform {
   constructor(private lazyData: LazyDataFacade) {
   }
 
-  transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field: F): Observable<LazyDataEntries[K][F]> {
+  transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K): Observable<LazyDataEntries[K]>
+  transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field: F): Observable<LazyDataEntries[K][F]>
+  transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field?: F): Observable<LazyDataEntries[K] | LazyDataEntries[K][F]> {
     return this.lazyData.getRow(entry, id).pipe(
-      map(row => row[field])
+      map(row => field ? row[field] : row)
     );
   }
 

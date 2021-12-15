@@ -22,8 +22,7 @@ import { DatabaseModule } from '../../core/database/database.module';
     }),
     EffectsModule.forFeature([TeamsEffects])
   ],
-  declarations: [],
-  providers: [TeamsFacade]
+  declarations: []
 })
 export class TeamsModule {
 }

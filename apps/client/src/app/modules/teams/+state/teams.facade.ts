@@ -12,15 +12,21 @@ import { Team } from '../../../model/team/team';
 import { TeamInviteService } from '../../../core/database/team-invite.service';
 import { TeamInvite } from '../../../model/team/team-invite';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TeamsFacade {
   loading$ = this.store.select(teamsQuery.getLoaded).pipe(map(loaded => !loaded));
+
   allTeams$ = this.store.select(teamsQuery.getAllTeams);
+
   selectedTeam$ = this.store.select(teamsQuery.getSelectedTeam);
+
   myTeams$ = combineLatest([this.allTeams$, this.authFacade.userId$]).pipe(
     map(([teams, userId]) => {
       return teams.filter(team => !team.notFound && team.members.indexOf(userId) > -1);
-    })
+    }),
+    shareReplay(1)
   );
 
   constructor(private store: Store<{ teams: TeamsState }>, private authFacade: AuthFacade, private teamInviteService: TeamInviteService) {

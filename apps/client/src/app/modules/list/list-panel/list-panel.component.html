@@ -161,7 +161,7 @@
                   nz-menu-item>
                 {{'PERMISSIONS.Title' | translate}}
               </li>
-              <li (click)="removeEphemeral(_list)" *ngIf="!publicDisplay && _list.ephemeral" [nzDisabled]="(permissionLevel$ | async) < 40"
+              <li (click)="removeEphemeral(_list)" *ngIf="!publicDisplay && _list.ephemeral" [nzDisabled]="(permissionLevel$ | async)?.value < 40"
                   nz-menu-item>
                 {{'Remove_ephemeral' | translate}}
               </li>
@@ -173,7 +173,7 @@
                   </li>
                 </ng-container>
               </ng-container>
-              <ng-container *ngIf="!publicDisplay && (permissionLevel$ | async) >= 20">
+              <ng-container *ngIf="!publicDisplay && (permissionLevel$ | async)?.value >= 20">
                 <ng-container *ngIf="teams$ | async as teams">
                   <li *ngIf="_list.teamId === undefined" nz-submenu>
                     <span title>{{'TEAMS.Assign_list' | translate}}</span>

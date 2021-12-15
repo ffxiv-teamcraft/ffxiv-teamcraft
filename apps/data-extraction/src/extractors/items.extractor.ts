@@ -156,6 +156,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('item-main-attributes', itemMainAttributes);
         this.persistToJsonAsset('item-melding-data', itemMeldingData);
         this.persistToJsonAsset('hq-flags', hqFlags);
+        this.persistToTypescript('sync-hq-flags', 'syncHqFlags', hqFlags);
         this.persistToJsonAsset('trade-flags', tradeFlags);
         this.persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
         this.persistToJsonAsset('item-patch', itemPatch);

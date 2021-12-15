@@ -6,7 +6,6 @@ import * as fromLazyData from './+state/lazy-data.reducer';
 import { LazyDataEffects } from './+state/lazy-data.effects';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     StoreModule.forFeature(

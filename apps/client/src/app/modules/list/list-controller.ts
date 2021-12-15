@@ -19,6 +19,7 @@ import { Ingredient } from '../../model/garland-tools/ingredient';
 import firebase from 'firebase/compat/app';
 import { List } from './model/list';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
 
 
 declare const gtag: Function;
@@ -195,7 +196,7 @@ export class ListController {
   }
 
   public static requiredAsHQ(list: List, item: ListRow): number {
-    if (!item || item.id < 20) {
+    if (!item || item.id < 20 || !syncHqFlags[item.id]) {
       return 0;
     }
     const recipesNeedingItem = list.finalItems

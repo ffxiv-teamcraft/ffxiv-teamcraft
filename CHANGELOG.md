@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.9"></a>
+## [9.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.8...v9.2.9) (2021-12-15)
+
+
+### Bug Fixes
+
+* **db:** better display for npc pages ([4c4b809](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c4b809))
+* **gearsets:** fixed import from ariyala sometimes breaking ([4386ebc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4386ebc))
+* **list:** possible fix for item removal ([8fcbf8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fcbf8d))
+* **lists:** automatic HQ flags won't appear on items that cannot be HQ anymore ([919da94](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/919da94))
+* **lists:** fixed lists not assignable to a team ([e2568bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2568bb))
+* **lists:** fixed vendors popup not closing properly when clicking on db link ([0337afa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0337afa))
+* **retainer-ventures:** removed venture cost from the display table ([98e1d4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98e1d4e))
+
+
+### Features
+
+* **alarms:** added copy to clipboard on item name click event in sidebar ([d8974a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8974a1))
+* **db:** new data imports and update from allagan reports ([9c93e91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c93e91))
+* **metrics:** added localized numbers formatting for amounts ([e0ed291](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0ed291))
+
+
+### Performance Improvements
+
+* **community-lists:** lists won't be searched without enough details anymore ([a82c2b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a82c2b2))
+
+
+
 <a name="9.2.8"></a>
 ## [9.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.7...v9.2.8) (2021-12-14)
 

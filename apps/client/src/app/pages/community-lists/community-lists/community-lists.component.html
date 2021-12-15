@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   <h2>{{'Public_lists' | translate}}</h2>
   <input (ngModelChange)="nameFilter$.next($event)" [ngModel]="nameFilter$ | async" [placeholder]="'COMMUNITY_LISTS.Name_filter_placeholder' | translate" autofocus
-         class="filter-input" nz-input type="text">
+         class="filter-input" nz-input type="text" minlength="10" [class.has-errors]="(nameFilter$ | async)?.length < 10 && (nameFilter$ | async)?.length > 0">
   <div class="filter-input" fxLayout="row" fxLayoutGap="5px">
     <nz-select (ngModelChange)="tagsFilter$.next($event)" [ngModel]="tagsFilter$ | async"
                [nzPlaceHolder]="'COMMUNITY_LISTS.Tags_filter_placeholder' | translate"
@@ -34,7 +34,7 @@
                      [nzPageSize]="pageSize"
                      [nzTotal]="totalLength" fxLayout="row"
                      fxLayoutAlign="center center"></nz-pagination>
-      <app-fullpage-message *ngIf="lists.length === 0">{{'COMMUNITY_LISTS.No_lists_matching' | translate}}
+      <app-fullpage-message *ngIf="lists.length === 0" height="500px">{{'COMMUNITY_LISTS.No_lists_matching' | translate}}
       </app-fullpage-message>
     </div>
   </app-page-loader>
