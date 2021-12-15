@@ -129,8 +129,8 @@
     "Tags_filter_reset": "フィルター初期化",
     "Exclude_filter_placeholder": "除外するタグ",
     "Exclude_filter_reset": "除外フィルタをリセット",
-    "Name_filter_placeholder": "名前を使用してフィルタリング",
-    "No_lists_matching": "フィルターに一致するリストがありません"
+    "Name_filter_placeholder": "Filter using name (10 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 10 characters"
   },
   "COMMON": {
     "Length": "長さ",
