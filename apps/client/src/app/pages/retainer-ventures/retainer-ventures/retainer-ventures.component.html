@@ -81,7 +81,7 @@
         <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
           <app-item-icon [itemId]="task.item" [width]="32"></app-item-icon>
         </div>
-        <div fxLayout="column" nz-col nzMd="10" fxLayoutAlign="center flex-start" fxLayoutGap="1px">
+        <div fxLayout="column" nz-col nzMd="13" fxLayoutAlign="center flex-start" fxLayoutGap="1px">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div><b>{{task.item | itemName | i18n}}</b></div>
             <app-db-button [id]="task.item" type="item"></app-db-button>
@@ -97,7 +97,6 @@
           </div>
         </div>
         <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center">{{'RETAINER_VENTURES.Task_level' | translate}}: {{task.lvl}}</div>
-        <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center"><app-item-icon width="32" [itemId]="21072"></app-item-icon>x{{task.cost}}</div>
         <div nz-col nzMd="3" fxLayout="row" fxLayoutAlign="flex-start center"><img alt="exp" class="img-icon" src="./assets/icons/exp.png">&nbsp;{{task.exp | number:'1.0-0':translate.currentLang}}</div>
       </div>
     </app-page-loader>
