@@ -129,8 +129,8 @@
     "Tags_filter_reset": "필터 초기화",
     "Exclude_filter_placeholder": "추가된 필터 제외",
     "Exclude_filter_reset": "제외된 필터 초기화",
-    "Name_filter_placeholder": "이름을 사용하여 필터링",
-    "No_lists_matching": "필터와 일치하는 내용이 없습니다"
+    "Name_filter_placeholder": "Filter using name (10 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 10 characters"
   },
   "COMMON": {
     "Length": "길이",
