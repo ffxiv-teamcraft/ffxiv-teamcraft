@@ -70,6 +70,7 @@ export class NpcComponent extends TeamcraftPageComponent {
       }),
       map(([npcId, npcEntry, shops]) => {
         return shops
+          .filter(shop => shop.type !== 'GilShop')
           .map(shop => {
             const npc: TradeNpc = { id: +npcId };
             if (npcEntry.position !== null) {
