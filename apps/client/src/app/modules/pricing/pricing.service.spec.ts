@@ -8,7 +8,7 @@ import { DataType } from '../list/data/data-type';
 xdescribe('PricingService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PricingService],
+      providers: [PricingService]
     });
   });
 

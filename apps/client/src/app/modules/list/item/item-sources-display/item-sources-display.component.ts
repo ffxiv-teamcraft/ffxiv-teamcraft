@@ -118,6 +118,14 @@ export class ItemSourcesDisplayComponent {
     this.rotationPicker.openInSimulator(item.id, recipeId);
   }
 
+  public trackByItemSource(index: number, source: ItemSource): DataType {
+    return source.type;
+  }
+
+  public trackByCraft(index: number, craft: Craft): string {
+    return craft.id;
+  }
+
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
     this.i18n.getNameObservable('items', item.id).pipe(
       first()
@@ -133,13 +141,5 @@ export class ItemSourcesDisplayComponent {
         nzFooter: null
       });
     });
-  }
-
-  public trackByItemSource(index: number, source: ItemSource): DataType {
-    return source.type;
-  }
-
-  public trackByCraft(index: number, craft: Craft): string {
-    return craft.id;
   }
 }

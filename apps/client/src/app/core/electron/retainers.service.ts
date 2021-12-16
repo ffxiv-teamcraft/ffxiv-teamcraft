@@ -21,7 +21,7 @@ export interface Retainer {
   taskComplete: number;
   gil: number;
   character: string;
-  marketItems?: InventoryItem[]
+  marketItems?: InventoryItem[];
 }
 
 @Injectable({

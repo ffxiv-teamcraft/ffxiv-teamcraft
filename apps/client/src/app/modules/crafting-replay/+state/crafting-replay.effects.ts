@@ -13,6 +13,7 @@ import { AngularFireFunctions } from '@angular/fire/compat/functions';
 @Injectable()
 export class CraftingReplayEffects {
   static readonly LOCALSTORAGE_KEY = 'crafting-replays';
+
   static readonly MAX_LOG_SIZE = 100;
 
   loadCraftingReplays$ = createEffect(() =>

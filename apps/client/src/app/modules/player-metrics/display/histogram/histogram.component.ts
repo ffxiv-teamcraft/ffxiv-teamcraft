@@ -11,10 +11,6 @@ import { SettingsService } from '../../../settings/settings.service';
 })
 export class HistogramComponent extends AbstractMetricDisplayComponent {
 
-  constructor(public settings: SettingsService) {
-    super();
-  }
-
   results$ = this.data$.pipe(
     map(reports => {
       return [{
@@ -28,4 +24,8 @@ export class HistogramComponent extends AbstractMetricDisplayComponent {
       }];
     })
   );
+
+  constructor(public settings: SettingsService) {
+    super();
+  }
 }

@@ -66,5 +66,5 @@ export const APP_INITIALIZERS = [
     },
     deps: [InventoryService],
     multi: true
-  },
+  }
 ];

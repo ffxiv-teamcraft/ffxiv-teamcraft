@@ -49,10 +49,6 @@ export class LayoutEditorRowComponent implements OnInit {
     this.rowChange.emit(this.row);
   }
 
-  private filterToName(): string {
-    return this.filter.map(fragment => `${fragment.reversed ? '!' : ''}${fragment.value}`).join(':');
-  }
-
   public getAllFilters(): string[] {
     return LayoutRowFilter.ALL_NAMES;
   }
@@ -110,6 +106,10 @@ export class LayoutEditorRowComponent implements OnInit {
       }
       return result;
     });
+  }
+
+  private filterToName(): string {
+    return this.filter.map(fragment => `${fragment.reversed ? '!' : ''}${fragment.value}`).join(':');
   }
 
 }

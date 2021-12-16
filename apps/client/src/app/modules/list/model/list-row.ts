@@ -24,16 +24,24 @@ export function isListRow(obj: any): obj is ListRow {
 
 export class ListRow extends DataModel {
   icon?: number;
+
   id: any; // can be string or number, but we use any so less refactoring is needed.
   // The amount of items needed for the craft.
   amount: number;
+
   // The amount of crafts needed to get the amount of items needed.
   amount_needed?: number;
+
   done: number;
+
   used: number;
+
   requires?: Ingredient[] = [];
+
   recipeId?: string;
+
   yield = 1;
+
   collectable = false;
 
   /** @deprecated use getItemSource instead, with DataType.ALARMS; **/
@@ -71,6 +79,7 @@ export class ListRow extends DataModel {
   hasAllBaseIngredients?: boolean;
 
   craftableAmount?: number;
+
   finalItem?: boolean;
 }
 

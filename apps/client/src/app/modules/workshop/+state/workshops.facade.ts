@@ -23,7 +23,9 @@ import { uniqBy } from 'lodash';
 @Injectable()
 export class WorkshopsFacade {
   loaded$ = this.store.select(workshopsQuery.getLoaded);
+
   allWorkshops$ = this.store.select(workshopsQuery.getAllWorkshops);
+
   selectedWorkshop$ = this.store.select(workshopsQuery.getSelectedWorkshop);
 
   myWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$])

@@ -26,17 +26,24 @@ import { EnvironmentService } from '../../../../core/environment.service';
 export class RotationResultTagComponent implements OnInit {
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
+
   @Input()
   collectable = false;
+
   simulationSet$: BehaviorSubject<GearSet> = new BehaviorSubject<GearSet>(null);
+
   recipe$: BehaviorSubject<Craft> = new BehaviorSubject<Craft>(null);
+
   result$: Observable<SimulationResult>;
+
   foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
     map(foods => this.consumablesService.fromLazyData(foods))
   );
+
   medicines$: Observable<Consumable[]> = this.lazyData.getEntry('medicines').pipe(
     map(medicines => this.consumablesService.fromLazyData(medicines))
   );
+
   freeCompanyActions: FreeCompanyAction[] = [];
 
   constructor(private authFacade: AuthFacade, private consumablesService: ConsumablesService,

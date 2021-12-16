@@ -29,7 +29,7 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
   ) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$,
-    this.lazyData.getEntry('materias')]).pipe(
+      this.lazyData.getEntry('materias')]).pipe(
       takeUntil(this.onDestroy$),
       switchMap(([packets, classInfo, materiasData]) => {
         return this.lazyData.getEntry('itemMeldingData').pipe(

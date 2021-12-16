@@ -9,6 +9,7 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
 })
 export class FishingSpotPositionComponent {
   @Input() public loading = false;
+
   @Input() public spot?: XivApiFishingSpot = undefined;
 
   constructor() {

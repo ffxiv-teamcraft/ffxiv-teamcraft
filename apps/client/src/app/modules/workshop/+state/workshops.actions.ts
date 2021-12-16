@@ -78,7 +78,7 @@ export class UpdateWorkshop implements Action {
 export class RemoveListFromWorkshop implements Action {
   readonly type = WorkshopsActionTypes.RemoveListFromWorkshop;
 
-  constructor(public readonly listKey:string, public readonly workshopKey:string) {
+  constructor(public readonly listKey: string, public readonly workshopKey: string) {
   }
 }
 

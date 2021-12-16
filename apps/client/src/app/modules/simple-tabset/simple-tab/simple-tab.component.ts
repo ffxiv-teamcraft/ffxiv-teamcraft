@@ -11,18 +11,18 @@ export class SimpleTabComponent {
   @Input()
   title: string;
 
-  private _active: boolean;
-
-  @Input()
-  set active(active: boolean) {
-    this._active = active;
-    this.cd.detectChanges();
+  constructor(private cd: ChangeDetectorRef) {
   }
+
+  private _active: boolean;
 
   get active(): boolean {
     return this._active;
   }
 
-  constructor(private cd: ChangeDetectorRef) {
+  @Input()
+  set active(active: boolean) {
+    this._active = active;
+    this.cd.detectChanges();
   }
 }

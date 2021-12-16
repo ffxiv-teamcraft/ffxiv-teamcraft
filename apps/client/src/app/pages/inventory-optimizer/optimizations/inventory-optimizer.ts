@@ -52,7 +52,7 @@ export abstract class InventoryOptimizer {
 
   public abstract getId(): string;
 
-  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
-
   public abstract lazyDataEntriesNeeded(): LazyDataKey[];
+
+  protected abstract _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null>;
 }

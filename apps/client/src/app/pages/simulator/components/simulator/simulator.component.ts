@@ -84,45 +84,74 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
   public custom = false;
+
   @Input()
   public itemId: number;
+
   @Input()
   public thresholds: number[] = [];
+
   @Input()
   public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number };
+
   @Input()
   public routeConsumables: RouteConsumables;
+
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
+
   public snapshotMode = false;
+
   public snapshotStep$: BehaviorSubject<number> = new BehaviorSubject<number>(Infinity);
+
   public tooltipsDisabled = false;
+
   public actionFailed = false;
+
   public result$: Observable<SimulationResult>;
+
   public actions$ = new BehaviorSubject<CraftingAction[]>([]);
+
   public crafterStats$: Observable<CrafterStats>;
+
   public stats$: Observable<CrafterStats>;
+
   public loggedIn$ = this.authFacade.loggedIn$;
+
   public simulation$: Observable<Simulation>;
+
   public report$: Observable<SimulationReliabilityReport>;
+
   public tips$: Observable<RotationTip[]>;
+
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
+
   // Customization forms
   public statsForm: FormGroup;
+
   //
   public customJob$: ReplaySubject<number> = new ReplaySubject<number>();
+
   // Consumables
   public foods: Consumable[] = [];
+
   public medicines: Consumable[] = [];
+
   public freeCompanyActions: FreeCompanyAction[] = [];
+
   public selectedFood: Consumable;
+
   public selectedMedicine: Consumable;
+
   public selectedFreeCompanyActions: FreeCompanyAction[] = [];
+
   public bonuses$ = new BehaviorSubject<{ control: number, cp: number, craftsmanship: number }>({
     control: 0,
     cp: 0,
     craftsmanship: 0
   });
+
   public dirty = false;
+
   public rotation$ = this.rotationsFacade.selectedRotation$.pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
@@ -131,33 +160,53 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       }
     })
   );
+
   public savedSet = true;
+
   public forcedStartingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   public hqIngredientsData$: Observable<{ id: number, amount: number, max: number, quality: number }[]>;
+
   public startingQuality$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
   public stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
+
   public qualityPer100$: Observable<number>;
+
   public progressPer100$: Observable<number>;
+
   public permissionLevel$ = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => {
       return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
     })
   );
+
   public dirtyConsumables = false;
+
   private _recipeId: string;
+
   private recipe$ = new ReplaySubject<Craft>();
+
   // Cache field for levels to be passed to the form validation.
   private availableLevels: CrafterLevels;
+
   private onDestroy$ = new Subject<void>();
+
   private job: CraftingJob;
+
   private formChangesSubscription: any;
+
   // HQ ingredients
   private hqIngredients$: BehaviorSubject<{ id: number, amount: number }[]> =
     new BehaviorSubject<{ id: number, amount: number }[]>([]);
+
   private job$: Observable<any>;
+
   private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
   private findActionsRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
+
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
@@ -439,7 +488,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
                       })
                     );
                   }
-                  return of(null)
+                  return of(null);
                 }
               ));
             })

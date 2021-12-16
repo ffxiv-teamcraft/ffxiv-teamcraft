@@ -39,6 +39,27 @@ import { InventoryState } from './sync-state/inventory-state';
 })
 export class InventoryService {
 
+  private _inventoryPatches$ = new Subject<InventoryPatch>();
+
+  public inventoryPatches$ = this._inventoryPatches$.asObservable().pipe(
+    shareReplay()
+  );
+
+  public inventory$: Observable<UserInventory>;
+
+  public readonly inventoryEvents$ = this.inventoryPatches$.pipe(
+    filter(patch => !patch.moved),
+    map(patch => {
+      return {
+        type: this.getEventType(patch),
+        itemId: patch.itemId,
+        amount: patch.quantity,
+        containerId: patch.containerId,
+        retainerName: patch.retainerName
+      };
+    })
+  );
+
   private retainerInformationsSync = {};
 
   private retainerInformations$ = publish()(this.ipc.retainerInformationPackets$.pipe(
@@ -62,27 +83,6 @@ export class InventoryService {
   private characterEntries: Array<LodestoneIdEntry & { character: CharacterResponse }>;
 
   private odr$: BehaviorSubject<Record<string, ItemOdr>> = new BehaviorSubject<Record<string, ItemOdr>>({});
-
-  private _inventoryPatches$ = new Subject<InventoryPatch>();
-
-  public inventory$: Observable<UserInventory>;
-
-  public inventoryPatches$ = this._inventoryPatches$.asObservable().pipe(
-    shareReplay()
-  );
-
-  public readonly inventoryEvents$ = this.inventoryPatches$.pipe(
-    filter(patch => !patch.moved),
-    map(patch => {
-      return {
-        type: this.getEventType(patch),
-        itemId: patch.itemId,
-        amount: patch.quantity,
-        containerId: patch.containerId,
-        retainerName: patch.retainerName
-      };
-    })
-  );
 
   private contentId$ = new Subject<{ type: 'SetContentId', contentId: string }>();
 

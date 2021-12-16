@@ -4,7 +4,6 @@ import { LazyScrollComponent } from './lazy-scroll/lazy-scroll.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
-
 @NgModule({
   declarations: [LazyScrollComponent],
   exports: [LazyScrollComponent],
@@ -13,4 +12,5 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     ScrollingModule
   ]
 })
-export class LazyScrollModule { }
+export class LazyScrollModule {
+}

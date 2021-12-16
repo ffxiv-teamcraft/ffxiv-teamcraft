@@ -30,11 +30,6 @@ export class LazyDataFacade {
 
   private static readonly CACHE_TTL = 30000;
 
-  // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
-  private cache: Record<string, Observable<any>> = {};
-
-  private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
-
   public isLoading$ = this.store.pipe(
     select(LazyDataSelectors.isLoading)
   );
@@ -46,6 +41,11 @@ export class LazyDataFacade {
   public datacenters$ = this.xivapi.getDCList().pipe(
     shareReplay(1)
   );
+
+  // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
+  private cache: Record<string, Observable<any>> = {};
+
+  private searchIndexCache: Record<string, Observable<{ id: number, name: I18nName }[]>> = {};
 
   constructor(private store: Store<fromLazyData.LazyDataPartialState>,
               private settings: SettingsService, private http: HttpClient,

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class LoadingScreenComponent {
   gif = (window as any).randomGif;
+
   patron = (window as any).randomPatron;
 }

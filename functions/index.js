@@ -11,11 +11,83 @@ const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 const pubsub = new PubSub({ projectId: process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT });
 const commissionsCreatedTopic = pubsub.topic('commissions-created');
+const algoliasearch = require('algoliasearch');
+const client = algoliasearch('7E5QY6H5LR', functions.config().algolia.key);
+const searchIndex = client.initIndex('community_lists');
 
 const runtimeOpts = {
   timeoutSeconds: 120,
   memory: '256MB'
 };
+
+function getAlgoliaEntry(snapshot) {
+  const doc = snapshot.data();
+  return {
+    objectID: snapshot.id,
+    name: doc.name,
+    description: doc.note,
+    _tags: doc.tags
+  };
+}
+
+/**
+ * SEARCH STUFF
+ */
+exports.updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((change) => {
+  if (change.after.data().public !== change.before.data().public) {
+    // If is has been added as community list
+    if (change.after.data().public) {
+      return searchIndex.saveObject(getAlgoliaEntry(change.after));
+    } else {
+      return searchIndex.deleteObject(change.before.id);
+    }
+  } else if (change.before.data().public) {
+    return searchIndex.saveObject(getAlgoliaEntry(change.after));
+  }
+});
+
+exports.updateSearchOnDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
+  if (snap.data().public) {
+    return searchIndex.deleteObject(snap.id);
+  }
+});
+
+exports.searchCommunityLists = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
+  res.set('Access-Control-Allow-Methods', 'POST');
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Headers', '*');
+  res.set('Access-Control-Max-Age', '3600');
+  if (req.method === 'OPTIONS') {
+    // Send response to OPTIONS requests
+    return res.status(204).send('');
+  }
+  const options = {};
+  if (req.query.tags) {
+    options.tagFilters = req.query.tags;
+  }
+  if (!req.query.tags && !req.query.name) {
+    return res.status(400).send();
+  }
+  searchIndex.search(decodeURIComponent(req.query.name || '').toString(), options).then(results => {
+    if (results.nbHits === 0) {
+      return res.send(results);
+    }
+    firestore.getAll(...results.hits.map(result => firestore.collection('lists').doc(result.objectID))).then(lists => {
+      res.send({
+        lists: lists.map(snap => {
+          return {
+            $key: snap.id,
+            ...snap.data()
+          };
+        })
+      });
+    });
+  });
+});
+/**
+ * END OF SEARCH STUFF
+ */
+
 
 // Firestore counts
 exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {

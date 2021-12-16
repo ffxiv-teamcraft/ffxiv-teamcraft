@@ -22,9 +22,13 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
   public optimizedPath$: Observable<WorldNavigationStep[]>;
 
   public containerRef: ElementRef;
+
   public currentPathIndex$ = new BehaviorSubject(0);
+
   public currentPath$: Observable<WorldNavigationStep>;
+
   public markedAsDone = [];
+
   public markAsDone$: Subject<NavigationStep> = new Subject<NavigationStep>();
 
   constructor(private mapService: MapService) {

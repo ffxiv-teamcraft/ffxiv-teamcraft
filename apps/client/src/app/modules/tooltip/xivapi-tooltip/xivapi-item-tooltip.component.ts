@@ -11,9 +11,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
-  }
-
   @Input() item: any;
 
   /**
@@ -24,6 +21,9 @@ export class XivapiItemTooltipComponent implements OnInit {
   public stats = [];
 
   public patch: any;
+
+  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
+  }
 
   ngOnInit(): void {
     if (this.item === undefined) {

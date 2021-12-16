@@ -163,14 +163,14 @@ export class MapService {
     }
 
     if (from.map === to.map) {
-      return 100;
+      return 70;
     }
 
     const base = (Math.sqrt(Math.pow(fromCoords.x - toCoords.x, 2) + Math.pow(fromCoords.y - toCoords.y, 2)) / 2) + 100;
     if (this.settings.favoriteAetherytes.indexOf(to.nameid) > -1) {
-      return Math.floor(Math.min(base, 999) / 2);
+      return Math.floor(base / 2);
     }
-    return Math.floor(Math.min(base, 999));
+    return Math.floor(base);
   }
 
   private getAetherytes(id: number, excludeMinis = false): Observable<LazyAetheryte[]> {

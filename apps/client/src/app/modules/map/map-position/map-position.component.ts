@@ -18,18 +18,26 @@ export class MapPositionComponent {
 
   @Input()
   additionalMarkers: Vector2[] = [];
+
   @Input()
   showZoneName = false;
+
   @Input()
   showMapName = false;
+
   @Input()
   hideCoords = false;
+
   @Input()
   flex = 'column';
+
   @Input()
   flexLayoutAlign = 'flex-start center';
+
   private readonly zoneId$ = new BehaviorSubject<number | undefined>(undefined);
+
   private readonly mapId$ = new BehaviorSubject<number | undefined>(undefined);
+
   private readonly title$ = combineLatest([this.zoneId$, this.mapId$]).pipe(
     filter(([zoneId, mapId]) => zoneId >= 0 || mapId >= 0),
     distinctUntilChanged(([zoneA, mapA], [zoneB, mapB]) => zoneA === zoneB && mapA === mapB),

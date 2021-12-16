@@ -13,6 +13,7 @@ import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsoc
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
 import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -22,10 +23,15 @@ type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
+
   public packets$ = new Subject<Message>();
+
   public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
+
   public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
+
   public possibleMissingFirewallRule$ = this.packets$.pipe(
     bufferCount(100),
     first(),
@@ -34,9 +40,13 @@ export class IpcService {
     }),
     shareReplay(1)
   );
+
   private readonly _ipc: IpcRenderer | undefined = undefined;
+
   private totalPacketsHandled = 0;
+
   private start = Date.now();
+
   private stateSubscription: Subscription;
 
   constructor(private platformService: PlatformService, private router: Router,
@@ -364,6 +374,24 @@ export class IpcService {
               this.send('toggle-machina', false);
               this.machinaToggle$.next(false);
               break;
+          }
+        });
+    });
+    this.on('update-downloaded', () => {
+      this.translate.get('UPDATE.New_update_available')
+        .pipe(
+          first(),
+          switchMap(title => {
+            return this.dialog.create({
+              nzFooter: null,
+              nzTitle: title,
+              nzContent: UpdateInstallPopupComponent
+            }).afterClose;
+          })
+        )
+        .subscribe(res => {
+          if (res) {
+            this.send('install-update');
           }
         });
     });

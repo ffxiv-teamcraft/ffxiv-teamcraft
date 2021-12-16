@@ -7,7 +7,7 @@ import { I18nNameLazy } from '../../../model/common/i18n-name-lazy';
   selector: 'app-i18n-display',
   templateUrl: './i18n-display.component.html',
   styleUrls: ['./i18n-display.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class I18nDisplayComponent implements OnChanges {
   /**
@@ -27,7 +27,7 @@ export class I18nDisplayComponent implements OnChanges {
         { key: 'fr', icon: 'french' },
         { key: 'ja', icon: 'japanese' },
         { key: 'zh', icon: 'chinese' },
-        { key: 'ko', icon: 'korean' },
+        { key: 'ko', icon: 'korean' }
       ].filter(({ key }) => value && value[key]);
     }
   }

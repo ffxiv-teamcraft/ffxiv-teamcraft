@@ -16,14 +16,14 @@ import { Injectable } from '@angular/core';
 })
 export class NavigationSidebarService {
 
-  private settingsChange$ = this.settings.settingsChange$.pipe(
-    filter(change => ['sidebar-state', 'sidebar-favorites'].includes(change)),
-    startWith('')
-  );
-
   public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
     map(notifications => notifications.length),
     shareReplay(1)
+  );
+
+  private settingsChange$ = this.settings.settingsChange$.pipe(
+    filter(change => ['sidebar-state', 'sidebar-favorites'].includes(change)),
+    startWith('')
   );
 
   public content$: Observable<SidebarCategory[]> = combineLatest([

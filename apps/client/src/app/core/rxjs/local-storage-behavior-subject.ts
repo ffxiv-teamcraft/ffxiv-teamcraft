@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 export class LocalStorageBehaviorSubject<T> extends BehaviorSubject<T> {
 
   private readonly key: string;
+
   private readonly defaultValue: T;
 
   constructor(key: string, defaultValue: T) {

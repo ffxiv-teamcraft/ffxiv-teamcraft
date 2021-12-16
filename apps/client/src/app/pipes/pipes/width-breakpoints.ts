@@ -8,7 +8,9 @@ import { auditTime, map, startWith } from 'rxjs/operators';
 })
 export class WidthBreakpointsPipe<T> implements PipeTransform {
   private currentValue?: T;
+
   private sub?: Subscription;
+
   private input?: Record<number, T> & { default: T };
 
   transform(config: Record<number, T> & { default: T }): T {

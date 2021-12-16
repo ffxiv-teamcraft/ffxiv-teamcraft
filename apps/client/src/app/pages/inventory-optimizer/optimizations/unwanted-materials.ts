@@ -11,6 +11,7 @@ import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 export class UnwantedMaterials extends InventoryOptimizer {
 
   static RECIPE_ILVL_KEY = 'optimizer:unwanted-materials:recipe-ilvl';
+
   static UNWANTED_CACHE_KEY = 'optimizer:unwanted-materials:cache';
 
   constructor(private lazyData: LazyDataFacade) {

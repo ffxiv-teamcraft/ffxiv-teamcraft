@@ -8,6 +8,9 @@ import { environment } from '../../environments/environment';
 })
 export class EnvironmentService {
 
+  constructor(private settings: SettingsService) {
+  }
+
   public get gameVersion(): number {
     switch (this.settings.region) {
       case Region.China:
@@ -24,8 +27,5 @@ export class EnvironmentService {
       return 90;
     }
     return 80;
-  }
-
-  constructor(private settings: SettingsService) {
   }
 }

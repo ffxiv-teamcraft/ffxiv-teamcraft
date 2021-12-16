@@ -24,9 +24,17 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 export class InventoryComponent {
 
   public selectedExpansion$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+
   public search$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
   public computingPrices: { [index: string]: boolean } = {};
+
+  public expansions$ = this.lazyData.getI18nEntry('exVersions').pipe(
+    map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
+  );
+
   private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
+
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.inventory$.pipe(
     map(inventory => {
       return inventory.toArray()
@@ -84,6 +92,7 @@ export class InventoryComponent {
         });
     })
   );
+
   public display$: Observable<InventoryDisplay[]> = safeCombineLatest([
     this.inventory$,
     this.prices$,
@@ -137,10 +146,6 @@ export class InventoryComponent {
           return clone;
         });
     })
-  );
-
-  public expansions$ = this.lazyData.getI18nEntry('exVersions').pipe(
-    map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))
   );
 
   constructor(private inventoryService: InventoryService, private universalis: UniversalisService,

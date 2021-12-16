@@ -141,7 +141,7 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         }), shop => {
           return `${shop.npcs.map(npc => `${npc.id}|${npc.zoneId}`).join(':')}:${JSON.stringify(shop.trades)}`;
         });
-      }),
+      })
     );
   }
 

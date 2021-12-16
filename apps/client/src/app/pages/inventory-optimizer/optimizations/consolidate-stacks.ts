@@ -50,6 +50,10 @@ export class ConsolidateStacks extends InventoryOptimizer {
     return 'CONSOLIDATE_STACKS';
   }
 
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['itemPatch', 'stackSizes'];
+  }
+
   protected _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     const expansion = localStorage.getItem(ConsolidateStacks.SELECTION_KEY);
 
@@ -94,10 +98,6 @@ export class ConsolidateStacks extends InventoryOptimizer {
         };
       })
     );
-  }
-
-  lazyDataEntriesNeeded(): LazyDataKey[] {
-    return ['itemPatch', 'stackSizes'];
   }
 
 }

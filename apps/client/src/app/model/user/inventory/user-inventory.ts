@@ -55,6 +55,7 @@ export class UserInventory extends DataModel {
   items: { [contentId: string]: CharacterInventory } = {};
 
   lastZone: number;
+
   private searchCache: ItemSearchResult[] = [];
 
   private _contentId?: string;

@@ -28,27 +28,19 @@ import { FolderAdditionPickerComponent } from '../../folder-addition-picker/fold
 export class WorkshopPanelComponent {
 
   @Input()
-  public set workshop(l: Workshop) {
-    this._workshop = l;
-    this.workshop$.next(l);
-  }
+  lists: List[] = [];
 
-  public _workshop: Workshop;
+  public user$ = this.authFacade.user$;
+
+  public customLink$: Observable<CustomLink>;
 
   private workshop$: ReplaySubject<Workshop> = new ReplaySubject<Workshop>();
-
-  @Input()
-  lists: List[] = [];
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
     distinctUntilChanged(),
     shareReplay(1)
   );
-
-  public user$ = this.authFacade.user$;
-
-  public customLink$: Observable<CustomLink>;
 
   private syncLinkUrl: string;
 
@@ -61,6 +53,14 @@ export class WorkshopPanelComponent {
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
     );
+  }
+
+  public _workshop: Workshop;
+
+  @Input()
+  public set workshop(l: Workshop) {
+    this._workshop = l;
+    this.workshop$.next(l);
   }
 
   addList(): void {

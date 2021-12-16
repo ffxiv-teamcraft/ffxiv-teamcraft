@@ -12,10 +12,12 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 export class FishingSpotTugDatagridComponent {
   @Input()
   public activeFish?: number | undefined;
+
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
   public readonly loading$ = this.fishCtx.tugsBySpotByFish$.pipe(map((res) => res.loading));
+
   public readonly table$ = combineLatest([this.fishCtx.tugsBySpotByFish$, this.fishCtx.spotId$, this.lazyData.getEntry('fishingSpots')]).pipe(
     filter(([res]) => !!res.data),
     map(([res, spotId, spots]) => {

@@ -5,7 +5,7 @@ export const FOLDERS_FEATURE_KEY = 'folders';
 
 export interface FoldersState {
   list: Folder<any>[];
-  selectedIds?: { [index: number]: string }
+  selectedIds?: { [index: number]: string };
 }
 
 export interface FoldersPartialState {

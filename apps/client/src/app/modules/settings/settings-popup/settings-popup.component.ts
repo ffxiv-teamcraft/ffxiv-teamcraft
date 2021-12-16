@@ -138,28 +138,6 @@ export class SettingsPopupComponent {
     })
   );
 
-  public get trackItemsOnSale(): boolean {
-    return localStorage.getItem('trackItemsOnSale') === 'true';
-  }
-
-  public set trackItemsOnSale(trackItemsOnSale: boolean) {
-    localStorage.setItem('trackItemsOnSale', trackItemsOnSale.toString());
-  }
-
-  public get proxyExample(): string {
-    switch (this.proxyType) {
-      case '':
-        return '';
-      case 'pac':
-        return 'http://127.0.0.1:1080/pac';
-      case 'custom':
-        const help = 'https://www.electronjs.org/docs/api/session#sessetproxyconfig';
-        return `<a href="${help}" target="_blank">${help}</a>`;
-      default:
-        return '127.0.0.1:8080';
-    }
-  }
-
   public notificationSettings: Record<string, NotificationSettings> = {
     [SoundNotificationType.ALARM]: this.settings.getNotificationSettings(SoundNotificationType.ALARM),
     [SoundNotificationType.RESET_TIMER]: this.settings.getNotificationSettings(SoundNotificationType.RESET_TIMER),
@@ -264,6 +242,28 @@ export class SettingsPopupComponent {
     this.ipc.send('dat:path:get');
     this.ipc.send('rawsock:get');
     this.customTheme = this.settings.customTheme;
+  }
+
+  public get trackItemsOnSale(): boolean {
+    return localStorage.getItem('trackItemsOnSale') === 'true';
+  }
+
+  public set trackItemsOnSale(trackItemsOnSale: boolean) {
+    localStorage.setItem('trackItemsOnSale', trackItemsOnSale.toString());
+  }
+
+  public get proxyExample(): string {
+    switch (this.proxyType) {
+      case '':
+        return '';
+      case 'pac':
+        return 'http://127.0.0.1:1080/pac';
+      case 'custom':
+        const help = 'https://www.electronjs.org/docs/api/session#sessetproxyconfig';
+        return `<a href="${help}" target="_blank">${help}</a>`;
+      default:
+        return '127.0.0.1:8080';
+    }
   }
 
   changeMetricsPath(): void {
@@ -487,7 +487,7 @@ export class SettingsPopupComponent {
   }
 
   public setNotificationSound(type: SoundNotificationType, sound: string): void {
-    if(['.mp3','.wav','.ogg','.m4a','.flac','.mp4','.wma','.aac'].some(ext => sound.endsWith(ext)) || this.sounds.includes(sound)){
+    if (['.mp3', '.wav', '.ogg', '.m4a', '.flac', '.mp4', '.wma', '.aac'].some(ext => sound.endsWith(ext)) || this.sounds.includes(sound)) {
       this.notificationSettings[type].sound = sound;
       this.settings.setNotificationSettings(type, this.notificationSettings[type]);
       this.previewSound(type);

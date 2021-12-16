@@ -21,12 +21,12 @@ export class ItemCapsTableComponent {
 
   maxValuesTable$ = combineLatest([
     observeInput(this, 'job'),
-    observeInput(this, 'equipmentPiece'),
+    observeInput(this, 'equipmentPiece')
   ]).pipe(
     switchMap(([job, equipmentPiece]) => {
       return this.statsService.getMaxValuesTable(job, equipmentPiece);
     })
-  )
+  );
 
   constructor(private statsService: StatsService) {
   }

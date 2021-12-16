@@ -23,6 +23,7 @@ import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
 export class GatheringLocationComponent {
 
   SpearfishingSpeed = SpearfishingSpeed;
+
   SpearfishingShadowSize = SpearfishingShadowSize;
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');

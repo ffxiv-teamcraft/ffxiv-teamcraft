@@ -32,9 +32,13 @@ export class MapPageComponent extends TeamcraftPageComponent {
   public related$: Observable<MapRelatedElement[]>;
 
   public relatedDisplay$: Observable<MapRelatedElement[]>;
+
   public markers$: Observable<MapMarker[]>;
+
   public enabledTypes$ = new BehaviorSubject<string[]>(JSON.parse(localStorage.getItem('map-page:selected-types') || '[]'));
+
   public availableTypes = ['fate', 'mob', 'npc', 'node'];
+
   private highlight$ = new BehaviorSubject<MapRelatedElement>(null);
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,

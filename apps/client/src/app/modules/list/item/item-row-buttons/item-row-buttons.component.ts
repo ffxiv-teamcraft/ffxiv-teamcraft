@@ -59,16 +59,6 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   _attachedRotationKey$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
   @Input()
-  set attachedRotation(rotationKey: string) {
-    this.rotationsFacade.getRotation(rotationKey);
-    this._attachedRotationKey$.next(rotationKey);
-  }
-
-  get attachedRotation(): string {
-    return this._attachedRotationKey$.value;
-  }
-
-  @Input()
   userId: string;
 
   @Input()
@@ -164,11 +154,6 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
     switchMap(id => this.lazyData.getRecipe(id))
   );
 
-  @Input()
-  set recipeId(id: string) {
-    this.recipeId$.next(id);
-  }
-
   itemRowTypes = ItemRowMenuElement;
 
   rotation$: Observable<CraftingRotation> = this._attachedRotationKey$.pipe(
@@ -205,6 +190,21 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
     ).subscribe(() => {
       this.cd.detectChanges();
     });
+  }
+
+  get attachedRotation(): string {
+    return this._attachedRotationKey$.value;
+  }
+
+  @Input()
+  set attachedRotation(rotationKey: string) {
+    this.rotationsFacade.getRotation(rotationKey);
+    this._attachedRotationKey$.next(rotationKey);
+  }
+
+  @Input()
+  set recipeId(id: string) {
+    this.recipeId$.next(id);
   }
 
   openMenu(event: MouseEvent): void {

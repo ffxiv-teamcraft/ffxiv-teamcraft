@@ -18,6 +18,10 @@ export class TradesComponent extends ItemDetailsPopup {
   @Input()
   public dbDisplay = false;
 
+  constructor() {
+    super();
+  }
+
   public get tradeSources(): TradeSource[] {
     if (this.externalTradeSources.length === 0) {
       return this.details;
@@ -27,10 +31,6 @@ export class TradesComponent extends ItemDetailsPopup {
 
   public get fromExternalTrades(): boolean {
     return this.externalTradeSources.length > 0;
-  }
-
-  constructor() {
-    super();
   }
 
   public totalPrice(trade: Trade): TradeEntry[] {

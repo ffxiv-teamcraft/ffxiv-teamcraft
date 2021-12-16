@@ -52,6 +52,7 @@ export class MateriasPopupComponent {
   mobileEdit: number;
 
   bonusesCache: Record<string, Observable<{ overcapped: boolean, value: number }>> = {};
+
   meldingChancesCache: Record<string, Observable<number>> = {};
 
   constructor(private lazyData: LazyDataFacade, public materiasService: MateriaService,

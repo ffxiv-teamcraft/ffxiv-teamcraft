@@ -6,11 +6,11 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { FlexModule } from '@angular/flex-layout';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-
+import { UpdateInstallPopupComponent } from './update-install-popup/update-install-popup.component';
 
 
 @NgModule({
-  declarations: [NpcapInstallPopupComponent, RawsockAdminErrorPopupComponent],
+  declarations: [NpcapInstallPopupComponent, RawsockAdminErrorPopupComponent, UpdateInstallPopupComponent],
   imports: [
     CommonModule,
     TranslateModule,
@@ -19,4 +19,5 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     NzDividerModule
   ]
 })
-export class IpcPopupsModule { }
+export class IpcPopupsModule {
+}

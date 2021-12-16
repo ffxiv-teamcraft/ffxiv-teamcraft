@@ -77,7 +77,7 @@ export class TutorialService {
               this.startTutorial(false);
             }
           });
-      })
+      });
     } else if (this.settings.tutorialEnabled) {
       this.startTutorial(false);
     }

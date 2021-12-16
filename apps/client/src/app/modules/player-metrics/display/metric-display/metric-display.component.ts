@@ -32,13 +32,13 @@ export class MetricDisplayComponent extends AbstractMetricDisplayComponent imple
     'table': TableComponent
   };
 
+  @Input()
+  component: string;
+
   private onDestroy$ = new Subject<void>();
 
   @ViewChild('ref', { read: ViewContainerRef })
   private ref: ViewContainerRef;
-
-  @Input()
-  component: string;
 
   constructor(private resolver: ComponentFactoryResolver, private cdRef: ChangeDetectorRef) {
     super();

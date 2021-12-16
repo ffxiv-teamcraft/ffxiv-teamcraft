@@ -42,17 +42,26 @@ export class LogTrackerComponent extends TrackerComponent {
   );
 
   public userCompletion: { [index: number]: boolean } = {};
+
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
   public nodeDataCache: Record<string, Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>> = {};
+
   public dolSubTabIndex = 0;
+
   public dohSubTabIndex = 0;
+
   public type$: Observable<number>;
+
   public hideCompleted = this.settings.hideCompletedLogEntries;
+
   public showNotRequired = this.settings.showNotRequiredLogEntries;
+
   // { [recipeId]: itemId }
   public selectedRecipes: Record<number, number> = {};
+
   public selectedRecipesSize = 0;
+
   private lastSelectedTabIndex = -1;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,

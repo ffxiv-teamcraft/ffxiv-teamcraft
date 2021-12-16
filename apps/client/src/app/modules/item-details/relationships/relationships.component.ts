@@ -76,7 +76,7 @@ export class RelationshipsComponent implements OnInit {
     this.requiredBy$ = this.list$.pipe(
       map(list => {
         const requiredBy = [];
-        ListController.forEach(list,item => {
+        ListController.forEach(list, item => {
           if (item.requires !== undefined) {
             item.requires.forEach(req => {
               if (req.id === this.item.id) {

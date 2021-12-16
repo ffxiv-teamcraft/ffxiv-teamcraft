@@ -255,59 +255,6 @@ export class GearsetsFacade {
     );
   }
 
-  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
-    const itemId = dataset.normal.items[ariyalaName];
-    if (itemId === undefined) {
-      return null;
-    }
-    const itemMeldingData = lazyItemMeldingData[itemId];
-    const canBeHq = hqFlags[itemId] === 1;
-    const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => AriyalaMateria[row]) as number[];
-    while (materias.length < itemMeldingData.slots) {
-      materias.push(0);
-    }
-    if (itemMeldingData.overmeld) {
-      while (materias.length < 5) {
-        materias.push(0);
-      }
-    }
-    return {
-      itemId: itemId,
-      materias: materias,
-      materiaSlots: itemMeldingData.slots,
-      canOvermeld: itemMeldingData.overmeld,
-      baseParamModifier: itemMeldingData.modifier,
-      hq: canBeHq
-    };
-  }
-
-  private getLodestoneEquipmentPiece(gear: any, lodestoneName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
-    const item = gear[lodestoneName];
-    if (item === undefined) {
-      return null;
-    }
-    const itemId = item.ID;
-    const itemMeldingData = lazyItemMeldingData[itemId];
-    const canBeHq = hqFlags[itemId] === 1;
-    const materias = item.Materia;
-    while (materias.length < itemMeldingData.slots) {
-      materias.push(0);
-    }
-    if (itemMeldingData.overmeld) {
-      while (materias.length < 5) {
-        materias.push(0);
-      }
-    }
-    return {
-      itemId: itemId,
-      materias: materias,
-      materiaSlots: itemMeldingData.slots,
-      canOvermeld: itemMeldingData.overmeld,
-      baseParamModifier: itemMeldingData.modifier,
-      hq: canBeHq
-    };
-  }
-
   fromLodestone(lodestoneId: number): Observable<TeamcraftGearset> {
     return this.xivapi.getCharacter(
       lodestoneId,
@@ -413,5 +360,58 @@ export class GearsetsFacade {
       case 'Wrists':
         return 'bracelet';
     }
+  }
+
+  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
+    const itemId = dataset.normal.items[ariyalaName];
+    if (itemId === undefined) {
+      return null;
+    }
+    const itemMeldingData = lazyItemMeldingData[itemId];
+    const canBeHq = hqFlags[itemId] === 1;
+    const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => AriyalaMateria[row]) as number[];
+    while (materias.length < itemMeldingData.slots) {
+      materias.push(0);
+    }
+    if (itemMeldingData.overmeld) {
+      while (materias.length < 5) {
+        materias.push(0);
+      }
+    }
+    return {
+      itemId: itemId,
+      materias: materias,
+      materiaSlots: itemMeldingData.slots,
+      canOvermeld: itemMeldingData.overmeld,
+      baseParamModifier: itemMeldingData.modifier,
+      hq: canBeHq
+    };
+  }
+
+  private getLodestoneEquipmentPiece(gear: any, lodestoneName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
+    const item = gear[lodestoneName];
+    if (item === undefined) {
+      return null;
+    }
+    const itemId = item.ID;
+    const itemMeldingData = lazyItemMeldingData[itemId];
+    const canBeHq = hqFlags[itemId] === 1;
+    const materias = item.Materia;
+    while (materias.length < itemMeldingData.slots) {
+      materias.push(0);
+    }
+    if (itemMeldingData.overmeld) {
+      while (materias.length < 5) {
+        materias.push(0);
+      }
+    }
+    return {
+      itemId: itemId,
+      materias: materias,
+      materiaSlots: itemMeldingData.slots,
+      canOvermeld: itemMeldingData.overmeld,
+      baseParamModifier: itemMeldingData.modifier,
+      hq: canBeHq
+    };
   }
 }

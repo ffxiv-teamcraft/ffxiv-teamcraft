@@ -18,7 +18,9 @@ type I18nInput = { name: I18nName } | I18nName | I18nNameLazy | Observable<I18nN
 })
 export class I18nPipe implements PipeTransform, OnDestroy {
   private currentValue?: string;
+
   private input?: I18nInput;
+
   private sub?: Subscription;
 
   constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {

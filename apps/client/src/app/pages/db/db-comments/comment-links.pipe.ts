@@ -20,7 +20,9 @@ import { IS_HEADLESS } from '../../../../environments/is-headless';
 export class CommentLinksPipe implements PipeTransform {
 
   private xivdbRegexp = /(?:^|\s)https?:\/\/(en|fr|de|ja|www)?\.?xivdb\.com\/(\w+)\/(\d+)\/(\S+)/gmi;
+
   private tcRegexp = /(?:^|\s)https:\/\/ffxivteamcraft\.com\/db\/(\w+)\/(\w+)\/(\d+)\/(\S+)/gmi;
+
   private linkRegexp = /(?:^|\s)https?:\/\/\S+/gmi;
 
   private customSyntaxRegexp = /(item|map|mob|achievement|leve|npc|instance|quest|trait|action|status):"([^"]+)"/gmi;

@@ -22,13 +22,16 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 @Injectable()
 export class CustomLinksFacade {
   loaded$ = this.store.pipe(select(customLinksQuery.getLoaded));
+
   allCustomLinks$ = this.store.pipe(
     select(customLinksQuery.getAllCustomLinks)
   );
+
   selectedCustomLink$ = this.store.pipe(
     select(customLinksQuery.getSelectedCustomLink),
     filter(rotation => rotation !== undefined)
   );
+
   myCustomLinks$ = combineLatest([this.allCustomLinks$, this.authFacade.userId$]).pipe(
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
     shareReplay(1)

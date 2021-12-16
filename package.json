@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.2.9",
+  "version": "9.2.10",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -192,7 +192,9 @@
     "@types/request": "^2.48.5",
     "@types/semver": "^5.4.0",
     "@xivapi/angular-client": "1.8.1",
+    "algoliasearch": "^4.11.0",
     "angular-feather": "^5.3.0",
+    "angular-instantsearch": "^4.0.1",
     "angular2-chartjs": "^0.5.1",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",

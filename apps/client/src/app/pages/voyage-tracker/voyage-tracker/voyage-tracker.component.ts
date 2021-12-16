@@ -19,8 +19,11 @@ export class VoyageTrackerComponent extends TeamcraftComponent {
   isLoading$ = new BehaviorSubject(false);
 
   airshipMaxRank$ = this.freeCompanyWorkshopFacade.getAirshipMaxRank();
+
   submarineMaxRank$ = this.freeCompanyWorkshopFacade.getSubmarineMaxRank();
+
   airshipSectorsTotal$ = this.freeCompanyWorkshopFacade.getAirshipSectorTotalCount();
+
   submarineSectorsTotal$ = this.freeCompanyWorkshopFacade.getSubmarineSectorTotalCount();
 
   activeState = JSON.parse(localStorage.getItem('voyage-tracker:panels') || '{}');

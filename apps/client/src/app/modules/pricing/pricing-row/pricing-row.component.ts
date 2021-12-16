@@ -23,17 +23,26 @@ export class PricingRowComponent implements OnInit, OnDestroy {
 
   @Input()
   listId: string;
+
   @Input()
   earning = false;
+
   @Input()
   preCraft = false;
+
   @Input()
   odd = false;
+
   price: Price = { hq: 0, nq: 0, fromVendor: false, fromMB: false };
+
   vendorPrice: Price;
+
   customPrice = false;
+
   amount: ItemAmount = { nq: 0, hq: 0 };
+
   priceFromCrafting = false;
+
   @Output()
   save: EventEmitter<void> = new EventEmitter<void>();
 
@@ -98,6 +107,10 @@ export class PricingRowComponent implements OnInit, OnDestroy {
     });
   }
 
+  ngOnDestroy(): void {
+    this.onDestroy$.next(null);
+  }
+
   private updatePrice(): void {
     this.lazyData.getRow('hqFlags', this.item.id).pipe(
       first()
@@ -125,9 +138,5 @@ export class PricingRowComponent implements OnInit, OnDestroy {
       this.price.nq = this.price.hq = Math.ceil(this._craftCost) || 0;
       this.priceFromCrafting = true;
     }
-  }
-
-  ngOnDestroy(): void {
-    this.onDestroy$.next(null);
   }
 }

@@ -80,12 +80,19 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public pricingMode = false;
 
   public loggedIn$ = this.authFacade.loggedIn$;
+
   public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');
+
   public layouts$: Observable<ListLayout[]>;
+
   public selectedLayout$: Observable<ListLayout>;
+
   public machinaToggle = false;
+
   public pinnedList$ = this.listsFacade.pinnedList$;
+
   private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
+
   private regeneratingList = false;
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
@@ -325,7 +332,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           );
         }
       )).pipe(
-        map(rows => ({title: this.translate.instant('Crystals'), rows}))
+        map(rows => ({ title: this.translate.instant('Crystals'), rows }))
       ),
       ...display.rows.map(
         row => {

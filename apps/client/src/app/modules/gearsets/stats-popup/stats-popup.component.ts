@@ -30,12 +30,15 @@ export class StatsPopupComponent {
     observeInput(this, 'gearset'),
     observeInput(this, 'level'),
     observeInput(this, 'tribe'),
-    observeInput(this, 'food', false),
+    observeInput(this, 'food', false)
   ]).pipe(
     switchMap(([gearset, level, tribe, food]) => {
       return this.statsService.getStatsDisplay(gearset, level, tribe, food);
     })
-  )
+  );
+
+  constructor(private statsService: StatsService, public translate: TranslateService) {
+  }
 
   _hideDisclaimer = localStorage.getItem('gearset:hide_disclaimer') === 'true';
 
@@ -46,9 +49,6 @@ export class StatsPopupComponent {
   set hideDisclaimer(hide: boolean) {
     this._hideDisclaimer = hide;
     localStorage.setItem('gearset:hide_disclaimer', hide.toString());
-  }
-
-  constructor(private statsService: StatsService, public translate: TranslateService) {
   }
 
 }

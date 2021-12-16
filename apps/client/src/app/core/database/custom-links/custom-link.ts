@@ -9,8 +9,11 @@ import { Parent } from '@kaiu/serializer';
 })
 export class CustomLink extends DataModel {
   type = 'link';
+
   authorNickname: string;
+
   uri: string;
+
   redirectTo: string;
 
   @ForeignKey(TeamcraftUser)

@@ -15,11 +15,6 @@ export class InventoryPositionComponent {
 
   private item$ = new ReplaySubject<ItemSearchResult>();
 
-  @Input()
-  set item(item: ItemSearchResult) {
-    this.item$.next(item);
-  }
-
   public display$ = this.item$.pipe(
     filter(item => !!item),
     switchMap(item => {
@@ -45,6 +40,11 @@ export class InventoryPositionComponent {
   );
 
   constructor(private inventoryFacade: InventoryService) {
+  }
+
+  @Input()
+  set item(item: ItemSearchResult) {
+    this.item$.next(item);
   }
 
   private getEmptyInventory(item: ItemSearchResult): { size: [number, number, number], array: boolean[][][] } {

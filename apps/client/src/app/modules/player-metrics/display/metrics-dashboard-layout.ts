@@ -3,6 +3,13 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 
 export class MetricsDashboardLayout extends DataWithPermissions {
 
+  constructor(public name: string, public grid: MetricsDisplayEntry[][] = [[]], public isDefault = false) {
+    super();
+    if (isDefault) {
+      this.$key = 'DEFAULT';
+    }
+  }
+
   public static get DEFAULT(): MetricsDashboardLayout {
     return new MetricsDashboardLayout('METRICS.Default_dashboard', [[{
         component: 'total',
@@ -40,13 +47,6 @@ export class MetricsDashboardLayout extends DataWithPermissions {
         params: { metric: 'amount' }
       }]]
       , true);
-  }
-
-  constructor(public name: string, public grid: MetricsDisplayEntry[][] = [[]], public isDefault = false) {
-    super();
-    if (isDefault) {
-      this.$key = 'DEFAULT';
-    }
   }
 
   public addColumn(index?: number): void {

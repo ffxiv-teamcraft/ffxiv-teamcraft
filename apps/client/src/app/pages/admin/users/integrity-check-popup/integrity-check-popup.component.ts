@@ -14,6 +14,7 @@ import { map, startWith, switchMap } from 'rxjs/operators';
 export class IntegrityCheckPopupComponent {
 
   user$: ReplaySubject<TeamcraftUser> = new ReplaySubject<TeamcraftUser>();
+
   results$ = this.user$.pipe(
     switchMap(user => this.runChecks(user)),
     startWith(this.integrityChecks.map(check => {

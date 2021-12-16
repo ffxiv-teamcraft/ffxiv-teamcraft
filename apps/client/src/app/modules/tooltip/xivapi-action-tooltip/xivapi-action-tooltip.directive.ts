@@ -28,6 +28,7 @@ export class XivapiActionTooltipDirective implements OnDestroy {
   @Input('appXivdbActionStateColor') stateColor: string;
 
   @Input('appXivdbActionTooltipDisabled') disabled = false;
+
   /* tslint:enable:no-input-rename */
 
   /** Subscription for the XivDB request. */
@@ -35,6 +36,51 @@ export class XivapiActionTooltipDirective implements OnDestroy {
 
   /** Overlay reference used to remove the tooltip. */
   private _overlayRef?: OverlayRef;
+
+  constructor(private _detectorRef: ChangeDetectorRef,
+              private _elementRef: ElementRef,
+              private _tooltipData: TooltipDataService,
+              private _viewContainerRef: ViewContainerRef,
+              private _overlay: Overlay,
+              @Optional() private _directionality: Directionality) {
+  }
+
+  ngOnDestroy(): void {
+    this.hide();
+  }
+
+  @HostListener('mouseenter')
+  show() {
+    // If the tooltip is disabled, just ignore it.
+    if (this.disabled) {
+      return;
+    }
+
+    // Unsubscribe from previous request.
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+    }
+
+    // Request information for the item on XivDB database.
+    this._subscription = this._tooltipData.getActionTooltipData(this.actionId).subscribe(this._createTooltip);
+  }
+
+  @HostListener('mousedown')
+  @HostListener('mouseleave')
+  hide() {
+    // Unsubscribe from the XivDB request if needed.
+    if (this._subscription) {
+      this._subscription.unsubscribe();
+      delete this._subscription;
+    }
+
+    // Remove the tooltip if needed.
+    if (this._overlayRef) {
+      this._overlayRef.dispose();
+      delete this._overlayRef;
+    }
+  }
+
   /** Create a new tooltip with the given HTML, and inject it in the overlay layout. */
   private _createTooltip = (action: any) => {
     // Remove an existing tooltip if needed.
@@ -80,49 +126,5 @@ export class XivapiActionTooltipDirective implements OnDestroy {
     tooltip.stateColor = this.stateColor;
     this._detectorRef.markForCheck();
   };
-
-  constructor(private _detectorRef: ChangeDetectorRef,
-              private _elementRef: ElementRef,
-              private _tooltipData: TooltipDataService,
-              private _viewContainerRef: ViewContainerRef,
-              private _overlay: Overlay,
-              @Optional() private _directionality: Directionality) {
-  }
-
-  ngOnDestroy(): void {
-    this.hide();
-  }
-
-  @HostListener('mouseenter')
-  show() {
-    // If the tooltip is disabled, just ignore it.
-    if (this.disabled) {
-      return;
-    }
-
-    // Unsubscribe from previous request.
-    if (this._subscription) {
-      this._subscription.unsubscribe();
-    }
-
-    // Request information for the item on XivDB database.
-    this._subscription = this._tooltipData.getActionTooltipData(this.actionId).subscribe(this._createTooltip);
-  }
-
-  @HostListener('mousedown')
-  @HostListener('mouseleave')
-  hide() {
-    // Unsubscribe from the XivDB request if needed.
-    if (this._subscription) {
-      this._subscription.unsubscribe();
-      delete this._subscription;
-    }
-
-    // Remove the tooltip if needed.
-    if (this._overlayRef) {
-      this._overlayRef.dispose();
-      delete this._overlayRef;
-    }
-  }
 
 }

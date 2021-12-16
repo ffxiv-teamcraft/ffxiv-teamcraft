@@ -38,25 +38,36 @@ import { EnvironmentService } from '../../../../core/environment.service';
 export class RotationPanelComponent implements OnInit {
 
   rotation$: BehaviorSubject<CraftingRotation> = new BehaviorSubject<CraftingRotation>(null);
+
   simulationSet$: ReplaySubject<GearSet> = new ReplaySubject<GearSet>();
+
   actions$: Observable<CraftingAction[]>;
+
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => rotation.getPermissionLevel(userId))
   );
+
   public user$ = this.authFacade.user$;
+
   public customLink$: Observable<CustomLink>;
+
   @Input()
   public publicDisplay = false;
+
   public foods$: Observable<Consumable[]> = this.lazyData.getEntry('foods').pipe(
     map(foods => this.consumablesService.fromLazyData(foods)),
     shareReplay(1)
   );
+
   public medicines$: Observable<Consumable[]> = this.lazyData.getEntry('medicines').pipe(
     map(medicines => this.consumablesService.fromLazyData(medicines)),
     shareReplay(1)
   );
+
   public freeCompanyActions: FreeCompanyAction[] = [];
+
   public simulation$: Observable<SimulationResult>;
+
   private syncLinkUrl: string;
 
   constructor(private linkTools: LinkToolsService,

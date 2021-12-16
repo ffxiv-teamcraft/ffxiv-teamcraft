@@ -35,31 +35,57 @@ import { EnvironmentService } from '../../../core/environment.service';
 export class RecipeFinderComponent implements OnDestroy {
 
   public maxLevel = this.environmentService.maxLevel;
+
   public query: string;
+
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
+
   public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
+
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
+
   public onlyLeveItems$ = new BehaviorSubject(this.settings.showOnlyLeveItemsInRecipeFinder);
+
   public clvlMin$ = new BehaviorSubject(0);
+
   public clvlMax$ = new BehaviorSubject(this.environmentService.maxLevel);
+
   public input$: Subject<string> = new BehaviorSubject<string>('');
+
   public pool: { id: number, amount: number }[] = [];
+
   public search$: Subject<void> = new Subject<void>();
+
   public results$: Observable<any[]>;
+
   public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
   public basket: { entry: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
+
   public editingAmount: number;
+
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+
   public pageSize = 25;
+
   public totalItems: number;
+
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
+
   // Notification data
   itemsAdded = 0;
+
   modifiedList: List;
+
+  public amount$ = new BehaviorSubject<number>(0);
+
   private tipKey = 'recipe-finder:tip';
+
   public showTip = localStorage.getItem(this.tipKey) === null;
+
   private items$ = this.lazyData.getSearchIndex('items');
+
   public completion$: Observable<{ id: number, name: I18nName }[]> = this.input$.pipe(
     debounceTime(500),
     switchMap(value => {
@@ -74,8 +100,6 @@ export class RecipeFinderComponent implements OnDestroy {
       }
     })
   );
-
-  public amount$ = new BehaviorSubject<number>(0);
 
   public isButtonDisabled$ = combineLatest([this.items$, this.input$, this.amount$]).pipe(
     map(([items, input, amount]) => {
@@ -342,7 +366,7 @@ export class RecipeFinderComponent implements OnDestroy {
     }
     item$.pipe(
       map(item => {
-        if(!item || (!cumulative && this.pool.some(i => i.id === item.id))){
+        if (!item || (!cumulative && this.pool.some(i => i.id === item.id))) {
           return null;
         }
         const poolEntry = this.pool.find(i => i.id === item.id);

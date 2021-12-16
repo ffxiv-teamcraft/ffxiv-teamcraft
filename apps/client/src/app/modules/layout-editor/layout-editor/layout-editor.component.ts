@@ -26,14 +26,14 @@ export class LayoutEditorComponent {
 
   dirty = false;
 
-  layoutComparator = (layout1, layout2) => layout1 && layout2 ? layout1.$key === layout2.$key : layout1 === layout2;
-
   constructor(private layoutsFacade: LayoutsFacade, private message: NzMessageService, private translate: TranslateService,
               private dialog: NzModalService, private serializer: NgSerializerService) {
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
     this.allLayouts$ = this.layoutsFacade.allLayouts$;
     this.layoutsFacade.loadAll();
   }
+
+  layoutComparator = (layout1, layout2) => layout1 && layout2 ? layout1.$key === layout2.$key : layout1 === layout2;
 
   openReorderPopup(layout: ListLayout): void {
     this.dialog.create({

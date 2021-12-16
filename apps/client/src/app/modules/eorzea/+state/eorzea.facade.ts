@@ -58,6 +58,7 @@ export class EorzeaFacade {
       catalogId: 0
     })
   );
+
   /**
    * Emits the current stats set mapped using the ingame packets on classjob switch, useful to update stats
    */

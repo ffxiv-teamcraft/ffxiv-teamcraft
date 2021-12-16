@@ -4,17 +4,17 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { catchError, first, map, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
-import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
 import firebase from 'firebase/compat/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
 import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade,
+              private http: HttpClient) {
     super(af, serializer, zone, pendingChangesService);
   }
 
@@ -163,45 +164,21 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getCommunityLists(tags: string[], name: string): Observable<List[]> {
-    if (tags.length === 0 && name.length < 10) {
+    if (tags.length === 0 && name.length < 5) {
       return of([]);
     }
-    const query: QueryFn = ref => {
-      let baseQuery = ref.where(`public`, '==', true);
-      if (tags.length > 0) {
-        baseQuery = baseQuery.where('tags', 'array-contains', tags[0]);
-      }
-      if (name !== undefined) {
-        baseQuery = baseQuery.where('name', '>=', name);
-      }
-      return baseQuery;
-    };
-    return this.firestore.collection(this.getBaseUri(), query)
-      .snapshotChanges()
-      .pipe(
-        catchError(error => {
-          console.error(`GET COMMUNITY LISTS`);
-          console.error(error);
-          return throwError(error);
-        }),
-        tap(() => this.recordOperation('read')),
-        takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
-        switchMap((snaps: DocumentChangeAction<List>[]) => {
-          const lists = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: List = <List>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            })
-            .filter(list => {
-              return tags.reduce((res, tag) => res && list.tags.indexOf(<ListTag>tag) > -1, true);
-            })
-            .filter(list => {
-              return list.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
-            });
-          return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
-        })
-      );
+    let params = new HttpParams();
+    if (tags.length > 0) {
+      params = params.set('tags', tags.join(','));
+    }
+    if (name) {
+      params = params.set('name', name);
+    }
+    return this.http.get<{ lists: List[] }>('https://us-central1-ffxivteamcraft.cloudfunctions.net/searchCommunityLists', { params }).pipe(
+      switchMap(res => {
+        return this.completeLists(this.serializer.deserialize<List>(res.lists, [this.getClass()]));
+      })
+    );
   }
 
   public getUserCommunityLists(userId: string): Observable<List[]> {

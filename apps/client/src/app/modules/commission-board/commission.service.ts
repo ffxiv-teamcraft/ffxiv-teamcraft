@@ -38,36 +38,6 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
       );
   }
 
-  private where(query: QueryFn): Observable<Commission[]> {
-    return this.firestore.collection(this.getBaseUri(), query)
-      .snapshotChanges()
-      .pipe(
-        tap(() => this.recordOperation('read')),
-        map((snaps: DocumentChangeAction<Commission>[]) => {
-          const elements = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: Commission = this.beforeDeserialization(<Commission>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
-              delete snap.payload;
-              return valueWithKey;
-            });
-          return this.serializer.deserialize<Commission>(elements, [this.getClass()]);
-        }),
-        map(elements => {
-          return elements.map(el => {
-            if ((el as any).afterDeserialized) {
-              (el as any).afterDeserialized();
-            }
-            return el;
-          });
-        }),
-        tap(elements => {
-          elements.forEach(el => {
-            this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
-          });
-        })
-      );
-  }
-
   public getByCrafterId(userId: string, archived = false): Observable<Commission[]> {
     return this.where(ref => {
       const base = ref.where('crafterId', '==', userId);
@@ -107,6 +77,36 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
 
   protected getClass(): any {
     return Commission;
+  }
+
+  private where(query: QueryFn): Observable<Commission[]> {
+    return this.firestore.collection(this.getBaseUri(), query)
+      .snapshotChanges()
+      .pipe(
+        tap(() => this.recordOperation('read')),
+        map((snaps: DocumentChangeAction<Commission>[]) => {
+          const elements = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: Commission = this.beforeDeserialization(<Commission>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<Commission>(elements, [this.getClass()]);
+        }),
+        map(elements => {
+          return elements.map(el => {
+            if ((el as any).afterDeserialized) {
+              (el as any).afterDeserialized();
+            }
+            return el;
+          });
+        }),
+        tap(elements => {
+          elements.forEach(el => {
+            this.syncCache[el.$key] = JSON.parse(JSON.stringify(el));
+          });
+        })
+      );
   }
 
 }

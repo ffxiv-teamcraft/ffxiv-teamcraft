@@ -13,22 +13,22 @@ import { Observable } from 'rxjs';
 })
 export class FishTooltipComponent {
 
-  private _fish: any;
-
   public fshData$: Observable<GatheringNode[]>;
 
-  @Input()
-  set fish(fish: any) {
-    this._fish = fish;
-    this.fshData$ = this.gatheringNodesService.getItemNodes(fish.ID);
+  constructor(private gt: GarlandToolsService,
+              private gatheringNodesService: GatheringNodesService) {
   }
+
+  private _fish: any;
 
   get fish(): any {
     return this._fish;
   }
 
-  constructor(private gt: GarlandToolsService,
-              private gatheringNodesService: GatheringNodesService) {
+  @Input()
+  set fish(fish: any) {
+    this._fish = fish;
+    this.fshData$ = this.gatheringNodesService.getItemNodes(fish.ID);
   }
 
   public trackByNode(index: number, node: GatheringNode): number {

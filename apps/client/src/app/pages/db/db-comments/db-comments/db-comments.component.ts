@@ -23,19 +23,33 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   userLevels = UserLevel;
+
   readonly comments$: Observable<DbComment[]>;
+
   readonly user$: Observable<TeamcraftUser> = this.authFacade.user$;
+
   readonly loggedIn$: Observable<boolean> = this.authFacade.loggedIn$;
+
   newCommentContent: string;
+
   addRootComment = false;
+
   hideRootCommentButton = false;
+
   editingComment: DbComment;
+
   parentComment: DbComment;
+
   submitting = false;
+
   readonly showMoreComments$ = new BehaviorSubject<boolean>(false);
+
   readonly hasMoreComments$: Observable<number>;
+
   private readonly lang$ = new BehaviorSubject<string>(this.translate.currentLang);
+
   private readonly type$ = new BehaviorSubject<string | undefined>(undefined);
+
   private readonly id$ = new BehaviorSubject<number | undefined>(undefined);
 
   constructor(

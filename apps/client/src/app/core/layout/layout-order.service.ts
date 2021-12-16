@@ -27,7 +27,9 @@ export class LayoutOrderService {
 
 
   alarmsCache: Record<number, { expire: number, score: number }> = {};
+
   orderCache: Record<string, Observable<number[]>> = {};
+
   private orderFunctions: { [index: string]: (rowA: ListRowSortComparison, rowB: ListRowSortComparison) => number } = {
     'NAME': (a, b) => {
       return a.name > b.name ? 1 : -1;

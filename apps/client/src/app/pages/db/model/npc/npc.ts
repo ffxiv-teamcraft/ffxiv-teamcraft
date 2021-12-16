@@ -8,5 +8,5 @@ export interface Npc extends I18nName {
     x: number;
     y: number;
     z: number;
-  }
+  };
 }

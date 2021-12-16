@@ -8,6 +8,8 @@ import { DataType } from '../list/data/data-type';
 @Injectable()
 export class PricingService {
 
+  public priceChanged$ = new Subject<void>();
+
   /**
    * Object representation of current stored prices
    */
@@ -22,8 +24,6 @@ export class PricingService {
    * Array of custom prices
    */
   private readonly customPrices: number[];
-
-  public priceChanged$ = new Subject<void>();
 
   constructor() {
     this.prices = this.parsePrices(localStorage.getItem('prices'));

@@ -119,6 +119,76 @@ export class ListManagerService {
     );
   }
 
+  public addDetails(list: List, recipeId?: string | number): Observable<List> {
+    return combineLatest([this.addDetailsForArray(list.items, recipeId), this.addDetailsForArray(list.finalItems, recipeId)]).pipe(
+      map(([items, finalItems]) => {
+        list.items = items;
+        list.finalItems = finalItems;
+        return list;
+      })
+    );
+  }
+
+  public upgradeList(list: List): Observable<List> {
+    const permissions = list.registry;
+    const backup = [];
+    if (list.finalItems.length === 0) {
+      return of(ListController.clean(list));
+    }
+    list.items.forEach(item => {
+      backup.push({ array: 'items', item: { ...item } });
+    });
+    list.finalItems.forEach(item => {
+      backup.push({ array: 'finalItems', item: { ...item } });
+    });
+    const add: Observable<List>[] = [];
+    list.finalItems.forEach((recipe) => {
+      add.push(this.addToList({
+        itemId: recipe.id,
+        list: list,
+        recipeId: recipe.recipeId,
+        amount: recipe.amount,
+        collectable: recipe.collectable,
+        ignoreHooks: true,
+        upgradeCustom: true
+      }));
+    });
+    list.items = [];
+    list.finalItems = [];
+    list.version = environment.version;
+    return concat(...add)
+      .pipe(
+        // Only apply backup at last iteration, to avoid unnecessary slow process.
+        skip(add.length - 1),
+        map((resultList: List) => {
+          backup.forEach(row => {
+            const listRow = resultList[row.array].find(item => item.id === row.item.id || item.id === row.realItemId);
+            if (listRow !== undefined) {
+              listRow.$key = row.item.$key;
+              if (row.item.comments !== undefined) {
+                listRow.comments = row.item.comments;
+              }
+              listRow.done = row.item.done || 0;
+              listRow.used = row.item.used || 0;
+              listRow.requiredAsHQ = row.item.requiredAsHQ;
+              if (getItemSource(row.item, DataType.CRAFTED_BY).length > 0) {
+                if (listRow.done > listRow.amount) {
+                  listRow.done = listRow.amount;
+                }
+              } else {
+                if (listRow.done > listRow.amount_needed) {
+                  listRow.done = listRow.amount_needed;
+                }
+              }
+            }
+          });
+          ListController.updateAllStatuses(resultList);
+          resultList.registry = permissions;
+          return resultList;
+        })
+      );
+  }
+
   private processCustomItemAddition(item: CustomItem, amount: number, ignoreRequirementsRegistry: Record<string, 1>): Observable<List> {
     const addition = new List();
     addition.ignoreRequirementsRegistry = ignoreRequirementsRegistry;
@@ -243,16 +313,6 @@ export class ListManagerService {
     );
   }
 
-  public addDetails(list: List, recipeId?: string | number): Observable<List> {
-    return combineLatest([this.addDetailsForArray(list.items, recipeId), this.addDetailsForArray(list.finalItems, recipeId)]).pipe(
-      map(([items, finalItems]) => {
-        list.items = items;
-        list.finalItems = finalItems;
-        return list;
-      })
-    );
-  }
-
   private addDetailsForArray(array: ListRow[], recipeId?: string | number): Observable<ListRow[]> {
     return safeCombineLatest(array.map(item => {
       return this.lazyData.getRow('extracts', item.id).pipe(
@@ -270,65 +330,5 @@ export class ListManagerService {
         })
       );
     }));
-  }
-
-  public upgradeList(list: List): Observable<List> {
-    const permissions = list.registry;
-    const backup = [];
-    if (list.finalItems.length === 0) {
-      return of(ListController.clean(list));
-    }
-    list.items.forEach(item => {
-      backup.push({ array: 'items', item: { ...item } });
-    });
-    list.finalItems.forEach(item => {
-      backup.push({ array: 'finalItems', item: { ...item } });
-    });
-    const add: Observable<List>[] = [];
-    list.finalItems.forEach((recipe) => {
-      add.push(this.addToList({
-        itemId: recipe.id,
-        list: list,
-        recipeId: recipe.recipeId,
-        amount: recipe.amount,
-        collectable: recipe.collectable,
-        ignoreHooks: true,
-        upgradeCustom: true
-      }));
-    });
-    list.items = [];
-    list.finalItems = [];
-    list.version = environment.version;
-    return concat(...add)
-      .pipe(
-        // Only apply backup at last iteration, to avoid unnecessary slow process.
-        skip(add.length - 1),
-        map((resultList: List) => {
-          backup.forEach(row => {
-            const listRow = resultList[row.array].find(item => item.id === row.item.id || item.id === row.realItemId);
-            if (listRow !== undefined) {
-              listRow.$key = row.item.$key;
-              if (row.item.comments !== undefined) {
-                listRow.comments = row.item.comments;
-              }
-              listRow.done = row.item.done || 0;
-              listRow.used = row.item.used || 0;
-              listRow.requiredAsHQ = row.item.requiredAsHQ;
-              if (getItemSource(row.item, DataType.CRAFTED_BY).length > 0) {
-                if (listRow.done > listRow.amount) {
-                  listRow.done = listRow.amount;
-                }
-              } else {
-                if (listRow.done > listRow.amount_needed) {
-                  listRow.done = listRow.amount_needed;
-                }
-              }
-            }
-          });
-          ListController.updateAllStatuses(resultList);
-          resultList.registry = permissions;
-          return resultList;
-        })
-      );
   }
 }

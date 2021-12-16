@@ -20,6 +20,7 @@ export class MateriaSlotIconComponent {
   index: number;
 
   index$ = observeInput(this, 'index');
+
   equipmentPiece$ = observeInput(this, 'equipmentPiece');
 
   materiaGrade$ = combineLatest([

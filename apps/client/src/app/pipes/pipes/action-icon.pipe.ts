@@ -10,9 +10,13 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 })
 export class ActionIconPipe implements PipeTransform, OnDestroy {
   private static readonly DEFAULT = 'assets/icons/remove_final_appraisal.png';
+
   private readonly actionIcons$ = this.lazyData.getEntry('actionIcons');
+
   private sub?: Subscription;
+
   private currentId?: number;
+
   private currentValue?: string;
 
   constructor(private readonly cd: ChangeDetectorRef, private lazyData: LazyDataFacade) {

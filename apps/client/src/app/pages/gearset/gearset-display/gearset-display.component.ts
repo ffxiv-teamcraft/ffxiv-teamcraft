@@ -39,18 +39,23 @@ import { EnvironmentService } from '../../../core/environment.service';
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
+
   public gearsetSlotProperties: Array<keyof TeamcraftGearset | null>[] = [
     ['mainHand', 'offHand'],
     ['head', 'earRings'],
     ['chest', 'necklace'],
     ['gloves', 'bracelet'],
-    [this.env.gameVersion < 6 ? 'belt': null, 'ring1'],
+    [this.env.gameVersion < 6 ? 'belt' : null, 'ring1'],
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];
+
   public level$ = new BehaviorSubject<number>(this.env.maxLevel);
+
   public tribe$ = new BehaviorSubject<number>(1);
+
   public food$ = new BehaviorSubject<any>(null);
+
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
     tap(gearset => {
       if (gearset.food) {
@@ -58,6 +63,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       }
     })
   );
+
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
     switchMap(([set, level, tribe, food]) => {
       return this.statsService.getStats(set, level, tribe, food);

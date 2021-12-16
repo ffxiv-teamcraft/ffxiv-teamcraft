@@ -218,17 +218,6 @@ export class CommissionsFacade {
       });
   }
 
-  private removeCrafterFromCommission(commission: Commission): void {
-    commission.status = CommissionStatus.OPENED;
-    commission.crafterId = null;
-    this.update(commission);
-    this.listsFacade.pureUpdateList(commission.$key, {
-      registry: {},
-      everyone: PermissionLevel.READ,
-      authorId: commission.authorId
-    });
-  }
-
   markAsCompleted(commission: Commission): void {
     this.listsFacade.pureUpdateList(commission.$key, {
       registry: {},
@@ -265,5 +254,16 @@ export class CommissionsFacade {
 
   delete(key: string, deleteList = false): void {
     this.store.dispatch(deleteCommission({ key, deleteList }));
+  }
+
+  private removeCrafterFromCommission(commission: Commission): void {
+    commission.status = CommissionStatus.OPENED;
+    commission.crafterId = null;
+    this.update(commission);
+    this.listsFacade.pureUpdateList(commission.$key, {
+      registry: {},
+      everyone: PermissionLevel.READ,
+      authorId: commission.authorId
+    });
   }
 }

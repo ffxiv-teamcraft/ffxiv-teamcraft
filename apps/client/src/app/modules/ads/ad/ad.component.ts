@@ -13,6 +13,7 @@ export class AdComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild('vmAdRef', { static: false })
   vmAdRef: ElementRef;
+
   private loaded = false;
 
   constructor(private platform: PlatformService, router: Router) {

@@ -7,8 +7,10 @@ import firebase from 'firebase/compat/app';
 
 export class TeamcraftUser extends DataModel {
   defaultLodestoneId: number;
+
   // FC of the character currently selected
   currentFcId: string;
+
   lodestoneIds: LodestoneIdEntry[] = [];
 
   customCharacters: Partial<Character & { contentId: string }>[] = [];
@@ -52,6 +54,8 @@ export class TeamcraftUser extends DataModel {
   stats: any = {};
 
   cid?: string;
+
   world?: number;
+
   dbBan?: boolean;
 }

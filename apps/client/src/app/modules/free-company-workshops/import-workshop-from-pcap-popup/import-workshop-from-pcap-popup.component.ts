@@ -18,11 +18,22 @@ import { worlds } from '../../../core/data/sources/worlds';
 })
 export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent implements OnInit {
   private _isLoading = new BehaviorSubject<boolean>(false);
+
   private _freeCompany = new BehaviorSubject(null);
+
   private _airshipList = new BehaviorSubject(Array(4));
+
   private _submarineList = new BehaviorSubject(Array(4));
+
   private _airshipSectorProgression = new BehaviorSubject(null);
+
   private _submarineSectorProgression = new BehaviorSubject(null);
+
+  constructor(private modalRef: NzModalRef, private ipc: IpcService,
+              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
+              private authFacade: AuthFacade) {
+    super();
+  }
 
   public get isLoading$() {
     return this._isLoading.asObservable();
@@ -38,12 +49,6 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
 
   public get submarineList$() {
     return this._submarineList.asObservable();
-  }
-
-  constructor(private modalRef: NzModalRef, private ipc: IpcService,
-              private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade,
-              private authFacade: AuthFacade) {
-    super();
   }
 
   ngOnInit(): void {
@@ -82,7 +87,7 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
     );
 
     const fcId$ = this.ipc.freeCompanyId$.pipe(
-      takeUntil(this.onDestroy$),
+      takeUntil(this.onDestroy$)
     );
 
     this.ipc.freeCompanyDetails.pipe(
@@ -99,13 +104,13 @@ export class ImportWorkshopFromPcapPopupComponent extends TeamcraftComponent imp
           name: packet.fcName,
           tag: packet.fcTag,
           rank: packet.fcRank,
-          server,
+          server
         };
       }),
       tap(() => {
         this._isLoading.next(false);
       }),
-      takeUntil(this.onDestroy$),
+      takeUntil(this.onDestroy$)
     ).subscribe((data) => {
       this._freeCompany.next(data);
     });

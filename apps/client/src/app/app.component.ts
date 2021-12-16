@@ -125,13 +125,9 @@ export class AppComponent implements OnInit {
 
   public time$: Observable<string>;
 
-  private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
-
   public desktop = false;
 
   public hasDesktop$: Observable<boolean>;
-
-  private hasDesktopReloader$ = new BehaviorSubject<void>(null);
 
   public navigating = !IS_HEADLESS;
 
@@ -147,9 +143,8 @@ export class AppComponent implements OnInit {
 
   public showGiveaway = false;
 
-  private dirty = false;
-
   UpdaterStatus = UpdaterStatus;
+
   public checkingForUpdate$ = new BehaviorSubject<number>(UpdaterStatus.NO_UPDATE);
 
   public emptyInventory$: Observable<boolean>;
@@ -180,6 +175,12 @@ export class AppComponent implements OnInit {
   public vmAdRef: ElementRef;
 
   public allaganReportsQueueCount$: Observable<number> = of(0);
+
+  private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+
+  private hasDesktopReloader$ = new BehaviorSubject<void>(null);
+
+  private dirty = false;
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -513,30 +514,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  private handleKeypressShortcuts(event: KeyboardEvent): void {
-    if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
-      return this.ipc.send('zoom-in');
-    }
-    if ((event.ctrlKey || event.metaKey) && [54, 109].includes(event.keyCode)) {
-      return this.ipc.send('zoom-out');
-    }
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'F') {
-      this.quickSearch.openQuickSearch();
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'A') {
-      this.router.navigateByUrl('/admin/users');
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'M') {
-      this.router.navigateByUrl('/mappy');
-    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'C') {
-      event.preventDefault();
-      event.stopPropagation();
-      if (this.platformService.isDesktop()) {
-        this.openLink();
-      } else {
-        this.openInApp();
-      }
-    }
-  }
-
   enablePacketCapture(): void {
     this.ipc.machinaToggle$.next(true);
     this.settings.enableUniversalisSourcing = true;
@@ -681,23 +658,6 @@ export class AppComponent implements OnInit {
     throw new Error('Bad Hex');
   }
 
-  private applyTheme(theme: Theme): void {
-    if (theme !== undefined) {
-      document.documentElement.style.setProperty('--background-color', theme.background);
-      document.documentElement.style.setProperty('--primary-color', theme.primary);
-      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.50));
-      document.documentElement.style.setProperty('--primary-color-25', this.hexToRgbA(theme.primary, 0.25));
-      document.documentElement.style.setProperty('--highlight-color', theme.highlight);
-      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.50));
-      document.documentElement.style.setProperty('--highlight-color-25', this.hexToRgbA(theme.highlight, 0.25));
-      document.documentElement.style.setProperty('--text-color', theme.text);
-      document.documentElement.style.setProperty('--topbar-color', theme.topbar);
-      document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);
-      document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
-      document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
-    }
-  }
-
   public toggleTimeFormat(): void {
     if (this.settings.timeFormat === '24H') {
       this.settings.timeFormat = '12H';
@@ -820,6 +780,47 @@ export class AppComponent implements OnInit {
   onBeforeUnload($event: Event): void {
     if (this.dirty && !this.platformService.isDesktop()) {
       $event.returnValue = true;
+    }
+  }
+
+  private handleKeypressShortcuts(event: KeyboardEvent): void {
+    if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
+      return this.ipc.send('zoom-in');
+    }
+    if ((event.ctrlKey || event.metaKey) && [54, 109].includes(event.keyCode)) {
+      return this.ipc.send('zoom-out');
+    }
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'F') {
+      this.quickSearch.openQuickSearch();
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'A') {
+      this.router.navigateByUrl('/admin/users');
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'M') {
+      this.router.navigateByUrl('/mappy');
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'C') {
+      event.preventDefault();
+      event.stopPropagation();
+      if (this.platformService.isDesktop()) {
+        this.openLink();
+      } else {
+        this.openInApp();
+      }
+    }
+  }
+
+  private applyTheme(theme: Theme): void {
+    if (theme !== undefined) {
+      document.documentElement.style.setProperty('--background-color', theme.background);
+      document.documentElement.style.setProperty('--primary-color', theme.primary);
+      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.50));
+      document.documentElement.style.setProperty('--primary-color-25', this.hexToRgbA(theme.primary, 0.25));
+      document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.50));
+      document.documentElement.style.setProperty('--highlight-color-25', this.hexToRgbA(theme.highlight, 0.25));
+      document.documentElement.style.setProperty('--text-color', theme.text);
+      document.documentElement.style.setProperty('--topbar-color', theme.topbar);
+      document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);
+      document.documentElement.style.setProperty('--sider-trigger-hover-color', theme.triggerHover);
+      document.documentElement.style.setProperty('--zero-width-sider-trigger-color', theme.trigger);
     }
   }
 }

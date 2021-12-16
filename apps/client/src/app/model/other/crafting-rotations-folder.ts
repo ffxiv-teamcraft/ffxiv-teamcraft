@@ -3,9 +3,13 @@ import firebase from 'firebase/compat/app';
 
 export class CraftingRotationsFolder extends DataWithPermissions {
   name: string;
+
   originalAuthorId: string;
+
   rotationIds: string[] = [];
+
   createdAt = firebase.firestore.Timestamp.now();
+
   index = -1;
 
   afterDeserialized(): void {

@@ -12,18 +12,28 @@ export class Alarm extends DataModel {
 
   @ForeignKey(TeamcraftUser)
   userId?: string;
+
   groupNames?: string;
 
   itemId: number;
+
   nodeId?: number;
+
   // Use for custom alarms
   name?: string;
+
   spawns: number[];
+
   duration: number;
+
   zoneId: number;
+
   areaId: number;
+
   mapId: number;
+
   coords: Vector3;
+
   /**
    * Type of the node.
    * 0,1 = MIN
@@ -40,12 +50,19 @@ export class Alarm extends DataModel {
   fishEyes?: boolean;
 
   hookset?: Hookset;
+
   baits?: FishingBait[];
+
   weathers?: number[];
+
   weathersFrom?: number[];
+
   snagging?: boolean;
+
   predators?: { id: number, amount: number }[];
+
   speed?: SpearfishingSpeed;
+
   shadowSize?: SpearfishingShadowSize;
 
   note: string;

@@ -23,6 +23,7 @@ export class FishTooltipDirective implements OnDestroy {
   @Input('appFishTooltip') fishId: number;
 
   @Input('appFishTooltipDisabled') disabled = false;
+
   /* tslint:enable:no-input-rename */
 
   /** Subscription for the XivDB request. */
@@ -30,32 +31,6 @@ export class FishTooltipDirective implements OnDestroy {
 
   /** Overlay reference used to remove the tooltip. */
   private _overlayRef?: OverlayRef;
-  /** Create a new tooltip with the given HTML, and inject it in the overlay layout. */
-  private _createTooltip = (fish: any) => {
-    // Position the tooltip at the top right of the anchor.
-    const positionStrategy = this._overlay
-      .position()
-      .flexibleConnectedTo(this._elementRef)
-      .withPositions([{ originX: 'end', originY: 'bottom', overlayX: 'start', overlayY: 'bottom' }]);
-
-    // Create the overlay that will contain the tooltip.
-    this._overlayRef = this._overlay.create({
-      positionStrategy,
-      panelClass: 'app-fish-tooltip-panel',
-      direction: this._directionality ? this._directionality.value : 'ltr'
-    });
-
-    // Create the portal that will be injected into the overlay, with our component inside.
-    // No need of the injector, because our component does not have any DI.
-    const portal = new ComponentPortal<FishTooltipComponent>(FishTooltipComponent, this._viewContainerRef);
-
-    // Inject the portal into the overlay.
-    const tooltip = this._overlayRef.attach(portal).instance;
-
-    // Set the innerHtml of our component with the html given by XivDB.
-    tooltip.fish = fish;
-    this._detectorRef.markForCheck();
-  };
 
   constructor(private _detectorRef: ChangeDetectorRef,
               private _elementRef: ElementRef,
@@ -99,5 +74,32 @@ export class FishTooltipDirective implements OnDestroy {
       delete this._overlayRef;
     }
   }
+
+  /** Create a new tooltip with the given HTML, and inject it in the overlay layout. */
+  private _createTooltip = (fish: any) => {
+    // Position the tooltip at the top right of the anchor.
+    const positionStrategy = this._overlay
+      .position()
+      .flexibleConnectedTo(this._elementRef)
+      .withPositions([{ originX: 'end', originY: 'bottom', overlayX: 'start', overlayY: 'bottom' }]);
+
+    // Create the overlay that will contain the tooltip.
+    this._overlayRef = this._overlay.create({
+      positionStrategy,
+      panelClass: 'app-fish-tooltip-panel',
+      direction: this._directionality ? this._directionality.value : 'ltr'
+    });
+
+    // Create the portal that will be injected into the overlay, with our component inside.
+    // No need of the injector, because our component does not have any DI.
+    const portal = new ComponentPortal<FishTooltipComponent>(FishTooltipComponent, this._viewContainerRef);
+
+    // Inject the portal into the overlay.
+    const tooltip = this._overlayRef.attach(portal).instance;
+
+    // Set the innerHtml of our component with the html given by XivDB.
+    tooltip.fish = fish;
+    this._detectorRef.markForCheck();
+  };
 
 }

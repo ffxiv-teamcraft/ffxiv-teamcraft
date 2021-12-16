@@ -33,7 +33,16 @@ export class NodeDetailsComponent implements OnInit {
   @Input()
   hideDbButton = false;
 
+  public alarms: Alarm[] = [];
+
+  constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
+  }
+
   private _node: GatheringNode;
+
+  get node(): GatheringNode {
+    return this._node;
+  }
 
   @Input()
   set node(node: GatheringNode) {
@@ -41,15 +50,6 @@ export class NodeDetailsComponent implements OnInit {
     if (node.limited) {
       this.alarms = this.alarmsFacade.generateAlarms(node);
     }
-  }
-
-  get node(): GatheringNode {
-    return this._node;
-  }
-
-  public alarms: Alarm[] = [];
-
-  constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {

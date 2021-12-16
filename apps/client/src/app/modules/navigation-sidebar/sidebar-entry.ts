@@ -14,7 +14,7 @@ export interface SidebarEntry {
   } | {
     type: SidebarBadgeType.COUNT,
     content: number
-  }
+  };
   preventDefault?: boolean;
   exactRouterLinkActive?: boolean;
   hidden?: boolean;

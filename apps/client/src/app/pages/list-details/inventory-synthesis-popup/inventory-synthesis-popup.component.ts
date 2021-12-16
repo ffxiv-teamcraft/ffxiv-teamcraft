@@ -82,6 +82,10 @@ export class InventorySynthesisPopupComponent implements OnInit {
     );
   }
 
+  trackByRow(index: number, row: { containerName: string, isRetainer: boolean, items: any[] }): string {
+    return row.containerName;
+  }
+
   private topologicalSort(data: ListRow[]): ListRow[] {
     const res: ListRow[] = [];
     const doneList: boolean[] = [];
@@ -114,10 +118,6 @@ export class InventorySynthesisPopupComponent implements OnInit {
       }
     }
     return res;
-  }
-
-  trackByRow(index: number, row: { containerName: string, isRetainer: boolean, items: any[] }): string {
-    return row.containerName;
   }
 
 }

@@ -11,5 +11,5 @@ export interface CardStats {
     right: string;
     bottom: string;
     left: string;
-  }
+  };
 }

@@ -21,8 +21,11 @@ import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-sta
 export class ProfileEditorComponent {
 
   user$ = this.authFacade.user$;
+
   userId$ = this.authFacade.userId$;
+
   mainCharacter$ = this.authFacade.mainCharacterEntry$;
+
   characters$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
     map(([chars, user]) => {
       return chars
@@ -36,8 +39,11 @@ export class ProfileEditorComponent {
     }),
     shareReplay(1)
   );
+
   gearSets$ = this.authFacade.gearSets$;
+
   now = Math.floor(Date.now() / 1000);
+
   private statsReloader$ = new BehaviorSubject(null);
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
