@@ -1,6 +1,6 @@
 import { MainWindow } from '../window/main-window';
 import * as log from 'electron-log';
-import { app, autoUpdater, BrowserWindow, dialog, ipcMain } from 'electron';
+import { app, autoUpdater, BrowserWindow, ipcMain } from 'electron';
 import * as isDev from 'electron-is-dev';
 
 
@@ -52,17 +52,14 @@ export class AutoUpdater {
     autoUpdater.on('update-downloaded', () => {
       log.log('Update downloaded');
       autoUpdaterRunning = false;
-      dialog.showMessageBox({
-        type: 'info',
-        title: 'FFXIV Teamcraft - Update available',
-        message: 'An update has been installed, restart now to apply it?',
-        buttons: ['Yes', 'No']
-      }).then(result => {
-        if (result.response === 0) {
-          (<any>app).isQuitting = true;
-          autoUpdater.quitAndInstall();
-        }
-      });
+      if (this.win) {
+        this.win.webContents.send('update-downloaded');
+      }
+    });
+
+    ipcMain.on('install-update', () => {
+      (<any>app).isQuitting = true;
+      autoUpdater.quitAndInstall();
     });
 
 

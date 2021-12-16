@@ -13,6 +13,7 @@ import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsoc
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
 import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
+import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -373,6 +374,24 @@ export class IpcService {
               this.send('toggle-machina', false);
               this.machinaToggle$.next(false);
               break;
+          }
+        });
+    });
+    this.on('update-downloaded', () => {
+      this.translate.get('UPDATE.New_update_available')
+        .pipe(
+          first(),
+          switchMap(title => {
+            return this.dialog.create({
+              nzFooter: null,
+              nzTitle: title,
+              nzContent: UpdateInstallPopupComponent
+            }).afterClose;
+          })
+        )
+        .subscribe(res => {
+          if (res) {
+            this.send('install-update');
           }
         });
     });

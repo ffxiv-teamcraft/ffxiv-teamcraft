@@ -1,0 +1,11 @@
+<p>{{'UPDATER.New_update_available' | translate}}</p>
+<nz-divider></nz-divider>
+<div fxLayout="row" fxLayoutGap="10px">
+  <div>
+    <button nz-button nzType="primary" (click)="install()">{{'Yes' | translate}}</button>
+  </div>
+  <div>
+    <button nz-button nzDanger (click)="close()">{{'No' | translate}}</button>
+  </div>
+</div>
+
