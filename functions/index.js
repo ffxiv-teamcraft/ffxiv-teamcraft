@@ -42,10 +42,7 @@ exports.updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.document('
       return searchIndex.deleteObject(change.before.id);
     }
   } else if (change.before.data().public) {
-    // If it has been modified as a public list, check the tags or name to update
-    if (change.before.data().tags !== change.after.data().tags) {
-      return searchIndex.saveObject(getAlgoliaEntry(change.after));
-    }
+    return searchIndex.saveObject(getAlgoliaEntry(change.after));
   }
 });
 
