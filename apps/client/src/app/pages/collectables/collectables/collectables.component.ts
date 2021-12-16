@@ -103,8 +103,10 @@ export class CollectablesComponent {
                 job,
                 level,
                 groups: pageData[job].map(group => {
-                  group.collectables = group.collectables.filter(c => c.level <= level);
-                  return group;
+                  return {
+                    ...group,
+                    collectables: group.collectables.filter(c => c.level <= level)
+                  };
                 }).filter(group => group.collectables.length > 0)
               };
             });
