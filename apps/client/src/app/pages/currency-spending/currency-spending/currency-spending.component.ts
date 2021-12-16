@@ -105,7 +105,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 return this.universalis.getServerHistoryPrices(
                   server,
                   5,
-                  ...chunk.map(entry => entry.item),
+                  ...chunk.map(entry => entry.item)
                 );
               });
             this.tradesCount = entries.length;

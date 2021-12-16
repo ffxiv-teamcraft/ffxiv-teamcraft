@@ -54,11 +54,17 @@ import { isEqual } from 'lodash';
 export class AuthFacade {
 
   loaded$ = this.store.select(authQuery.getLoaded);
+
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
+
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
+
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => !!uid));
+
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
+
   logTracking$ = this.store.select(authQuery.getLogTracking).pipe(filter(log => !!log));
+
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.af.user.pipe(
@@ -71,7 +77,7 @@ export class AuthFacade {
     }),
     switchMap(([user, token]: [any, any]) => {
       if (token.claims['https://hasura.io/jwt/claims'] === undefined
-      || token.claims['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] === undefined) {
+        || token.claims['https://hasura.io/jwt/claims']['x-hasura-allowed-roles'] === undefined) {
         console.log('Token missing claims for hasura');
         return this.fns.httpsCallable('setCustomUserClaims')({
           uid: user.uid

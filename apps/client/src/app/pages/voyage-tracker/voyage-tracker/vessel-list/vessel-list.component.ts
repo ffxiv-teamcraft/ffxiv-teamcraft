@@ -12,8 +12,11 @@ import { Airship } from '../../../../modules/free-company-workshops/model/airshi
 })
 export class VesselListComponent {
   @Input() airships: Airship[];
+
   @Input() submarines: Submarine[];
+
   @Input() airshipMaxRank: number;
+
   @Input() submarineMaxRank: number;
 
   constructor(public translate: TranslateService) {

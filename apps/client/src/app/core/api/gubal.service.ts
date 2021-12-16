@@ -26,7 +26,7 @@ export class GubalService {
   public init(): void {
     combineLatest(this.reporters.map(reporter => {
       return reporter.getDataReports(this.ipc.packets$.pipe(
-        filter(packet => packet.header.sourceActor === packet.header.targetActor)
+          filter(packet => packet.header.sourceActor === packet.header.targetActor)
         )
       ).pipe(
         debounceTime(500),

@@ -22,6 +22,7 @@ export class LayoutEditorPageComponent {
       });
     })
   );
+
   public selectedListKey$ = this.listsFacade.selectedList$.pipe(
     map(list => list.$key)
   );

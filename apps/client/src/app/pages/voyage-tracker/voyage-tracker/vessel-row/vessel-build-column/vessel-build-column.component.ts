@@ -17,12 +17,19 @@ import { switchMap } from 'rxjs/operators';
 })
 export class VesselBuildColumnComponent {
   @Input() name: string;
+
   name$ = observeInput(this, 'name');
+
   @Input() type: VesselType;
+
   type$ = observeInput(this, 'type');
+
   @Input() rank: number;
+
   rank$ = observeInput(this, 'rank');
+
   @Input() parts: Record<AirshipPartType, VesselPart> | Record<SubmarinePartType, VesselPart>;
+
   parts$ = observeInput(this, 'parts');
 
   fullNameParts$ = combineLatest([

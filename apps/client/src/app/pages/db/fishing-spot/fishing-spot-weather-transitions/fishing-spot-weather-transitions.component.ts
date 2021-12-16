@@ -17,7 +17,9 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
 })
 export class FishingSpotWeatherTransitionsComponent {
   public readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());
+
   private readonly spot$ = new BehaviorSubject<XivApiFishingSpot | undefined>(undefined);
+
   private readonly time$ = this.etime.getEorzeanTime().pipe(distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8));
 
   public readonly weatherTransitions$ = combineLatest([this.spot$, this.time$]).pipe(

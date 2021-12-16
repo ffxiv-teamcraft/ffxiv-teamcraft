@@ -112,10 +112,6 @@ export class FolderComponent<T extends DataModel> implements OnInit {
     this.foldersFacade.deleteFolder(folder);
   }
 
-  private save(): void {
-    this.foldersFacade.updateFolder(this.display.folder);
-  }
-
   trackByKey(index: number, data: DataModel): string {
     return data.$key;
   }
@@ -140,5 +136,9 @@ export class FolderComponent<T extends DataModel> implements OnInit {
       this.connectDnD.emit(this.id);
       this.connectDnD.emit(`${this.id}-subfolders`);
     });
+  }
+
+  private save(): void {
+    this.foldersFacade.updateFolder(this.display.folder);
   }
 }

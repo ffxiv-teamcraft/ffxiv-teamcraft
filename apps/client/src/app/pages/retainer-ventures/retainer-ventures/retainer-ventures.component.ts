@@ -29,7 +29,9 @@ import { EnvironmentService } from '../../../core/environment.service';
 export class RetainerVenturesComponent extends TeamcraftComponent implements OnInit {
 
   loading = false;
+
   filters$: Subject<any> = new Subject<any>();
+
   jobList$ = this.lazyData.getEntry('jobName').pipe(
     map(jobName => {
       return Object.keys(jobName)
@@ -37,8 +39,11 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
         .filter(key => key < 8 || key > 15);
     })
   );
+
   servers$: Observable<string[]>;
+
   form: FormGroup;
+
   results$: Observable<SpendingEntry[]> = this.filters$.pipe(
     tap(() => this.loading = true),
     switchMap(filters => {
@@ -119,6 +124,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     }),
     tap(() => this.loading = false)
   );
+
   private sortedRetainers$ = this.retainersService.retainers$.pipe(
     map(retainers => {
       return Object.values<Retainer>(retainers)
@@ -126,6 +132,7 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
         .sort((a, b) => a.order - b.order);
     })
   );
+
   retainersWithStats$ = combineLatest([this.sortedRetainers$, this.inventoryFacade.inventory$, this.lazyData.getEntry('itemMeldingData')]).pipe(
     switchMap(([retainers, inventory, lzeyItemMeldingData]) => {
       return safeCombineLatest(retainers.map(retainer => {

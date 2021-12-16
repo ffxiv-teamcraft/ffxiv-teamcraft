@@ -21,6 +21,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 export class AllaganReportsComponent {
 
   AllaganReportStatus = AllaganReportStatus;
+
   AllaganReportSource = AllaganReportSource;
 
   public reportSources = uniq(Object.keys(AllaganReportSource));
@@ -28,6 +29,7 @@ export class AllaganReportsComponent {
   public applyingChange = false;
 
   public dirty = false;
+
   public selectCount = 0;
 
   public queueStatus$ = this.allaganReportsService.getQueueStatus().pipe(

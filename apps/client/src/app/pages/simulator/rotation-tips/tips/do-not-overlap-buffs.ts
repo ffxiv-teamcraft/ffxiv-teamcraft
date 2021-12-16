@@ -4,6 +4,7 @@ import { Buff, BuffAction, SimulationResult } from '@ffxiv-teamcraft/simulator';
 
 export class DoNotOverlapBuffs extends RotationTip {
   private overlappedIndex: number;
+
   private overlappingIndex: number;
 
   constructor() {

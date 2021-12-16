@@ -15,14 +15,20 @@ import { Vector2 } from '../../../core/tools/vector2';
 export class MapComponent implements OnInit {
 
   public unknownPosition = false;
+
   @Input()
   hideDbButton = false;
+
   @Input()
   aetheryteZIndex = 5;
+
   mapData$: Observable<MapData>;
+
   position: Vector2 = { x: 0, y: 0 };
+
   @Output()
   loaded: EventEmitter<void> = new EventEmitter<void>();
+
   private mapId$: ReplaySubject<number> = new ReplaySubject<number>();
 
   constructor(private mapService: MapService) {

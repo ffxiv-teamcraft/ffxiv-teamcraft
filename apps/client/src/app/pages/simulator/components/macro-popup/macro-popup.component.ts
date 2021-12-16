@@ -21,22 +21,39 @@ export class MacroPopupComponent implements OnInit {
   public totalDuration: number;
 
   public durationPerFragment: number[] = [];
+
   public addEcho = this.settings.macroEcho;
+
   public echoSeNumber = this.settings.macroEchoSeNumber;
+
   public fixedEcho = this.settings.macroFixedEcho;
+
   public extraWait = this.settings.macroExtraWait;
+
   public macroCompletionMessage = this.settings.macroCompletionMessage;
+
   public breakBeforeByregotsBlessing = this.settings.macroBreakBeforeByregot;
+
   public macroLock = this.settings.macroLock;
+
   public addConsumables = this.settings.macroConsumables;
+
   public addConsumablesWaitTime = this.settings.addConsumablesWaitTime;
+
   rotation: CraftingAction[];
+
   job: CraftingJob;
+
   simulation: Simulation;
+
   food: Consumable;
+
   medicine: Consumable;
+
   freeCompanyActions: FreeCompanyAction[] = [];
+
   tooManyAactions = false;
+
   private readonly maxMacroLines = 15;
 
   constructor(private i18n: I18nToolsService, private translator: TranslateService, public settings: SettingsService) {

@@ -24,22 +24,30 @@ export class LoadCustomItems implements Action {
 
 export class CustomItemsLoaded implements Action {
   readonly type = CustomItemsActionTypes.CustomItemsLoaded;
-  constructor(public payload: CustomItem[]) {}
+
+  constructor(public payload: CustomItem[]) {
+  }
 }
 
 export class CreateCustomItem implements Action {
   readonly type = CustomItemsActionTypes.CreateCustomItem;
-  constructor(public payload: CustomItem) {}
+
+  constructor(public payload: CustomItem) {
+  }
 }
 
 export class UpdateCustomItem implements Action {
   readonly type = CustomItemsActionTypes.UpdateCustomItem;
-  constructor(public payload: CustomItem) {}
+
+  constructor(public payload: CustomItem) {
+  }
 }
 
 export class DeleteCustomItem implements Action {
   readonly type = CustomItemsActionTypes.DeleteCustomItem;
-  constructor(public key:string) {}
+
+  constructor(public key: string) {
+  }
 }
 
 export class LoadCustomItemFolders implements Action {
@@ -48,22 +56,30 @@ export class LoadCustomItemFolders implements Action {
 
 export class CustomItemFoldersLoaded implements Action {
   readonly type = CustomItemsActionTypes.CustomItemFoldersLoaded;
-  constructor(public payload: CustomItemFolder[]) {}
+
+  constructor(public payload: CustomItemFolder[]) {
+  }
 }
 
 export class CreateCustomItemFolder implements Action {
   readonly type = CustomItemsActionTypes.CreateCustomItemFolder;
-  constructor(public payload: CustomItemFolder) {}
+
+  constructor(public payload: CustomItemFolder) {
+  }
 }
 
 export class UpdateCustomItemFolder implements Action {
   readonly type = CustomItemsActionTypes.UpdateCustomItemFolder;
-  constructor(public payload: CustomItemFolder) {}
+
+  constructor(public payload: CustomItemFolder) {
+  }
 }
 
 export class DeleteCustomItemFolder implements Action {
   readonly type = CustomItemsActionTypes.DeleteCustomItemFolder;
-  constructor(public key:string) {}
+
+  constructor(public key: string) {
+  }
 }
 
 export type CustomItemsAction =

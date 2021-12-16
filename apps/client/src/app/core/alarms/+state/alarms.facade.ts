@@ -52,6 +52,7 @@ export class AlarmsFacade {
   regenerating = false;
 
   loaded$ = this.store.select(alarmsQuery.getLoaded);
+
   allAlarms$ = this.store.select(alarmsQuery.getAllAlarms).pipe(
     map(alarms => {
       if (this.regenerating) {
@@ -65,9 +66,11 @@ export class AlarmsFacade {
     }),
     filter(alarms => alarms.length === 0 || !!alarms[0])
   );
+
   allGroups$ = this.store.select(alarmsQuery.getAllGroups);
 
   externalGroup$ = this.store.select(alarmsQuery.getExternalGroup);
+
   externalGroupAlarms$ = this.store.select(alarmsQuery.getExternalGroupAlarms);
 
   alarmsPageDisplay$ = combineLatest([this.allAlarms$, this.allGroups$]).pipe(
@@ -128,7 +131,9 @@ export class AlarmsFacade {
   private nextSpawnCache: any = {};
 
   private itemPatch: LazyData['itemPatch'];
+
   private patches: XivapiPatch[];
+
   private legendaryFish: LazyData['legendaryFish'];
 
   constructor(private actions$: Actions, private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,

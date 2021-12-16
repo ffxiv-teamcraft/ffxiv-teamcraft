@@ -15,6 +15,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
   showAlarmsIntegration = false;
 
   SpearfishingSpeed = SpearfishingSpeed;
+
   SpearfishingShadowSize = SpearfishingShadowSize;
 
 }

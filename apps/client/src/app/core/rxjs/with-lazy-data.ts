@@ -11,8 +11,8 @@ type MapTuple<T> =
   T extends [infer H, ...infer _T]
     // Compute the head and recurse into tail
     ? H extends keyof LazyDataWithExtracts
-    ? [LazyDataWithExtracts[H], ...MapTuple<_T>]
-    : never
+      ? [LazyDataWithExtracts[H], ...MapTuple<_T>]
+      : never
     // base case, use a blank array so we don't consume our output into a never
     : []
 

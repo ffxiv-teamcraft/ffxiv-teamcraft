@@ -9,8 +9,11 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 })
 export class IlvlPipe implements PipeTransform, OnDestroy {
   private readonly ilvl$ = this.lazyData.getEntry('ilvls');
+
   private currentId?: number;
+
   private currentValue?: number;
+
   private sub?: Subscription;
 
   constructor(private readonly lazyData: LazyDataFacade, private readonly cd: ChangeDetectorRef) {

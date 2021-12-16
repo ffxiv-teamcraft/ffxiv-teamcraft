@@ -8,7 +8,9 @@ import { TeamcraftComponent } from '../../core/component/teamcraft-component';
 export class TrackerComponent extends TeamcraftComponent {
 
   public alarmsLoaded$: Observable<boolean>;
+
   public alarms$: Observable<Alarm[]>;
+
   public alarmGroups$: Observable<AlarmGroup[]>;
 
   public alarmsCache: any = {};

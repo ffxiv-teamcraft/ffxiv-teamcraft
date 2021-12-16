@@ -27,6 +27,7 @@ interface Display {
 export class ItemSearchOverlayComponent {
 
   public input$: Subject<string> = new Subject<string>();
+
   private items$: Observable<{ id: number, name: I18nName }[]> = this.lazyData.getI18nItems().pipe(
     map(items => {
       return Object.keys(items)
@@ -39,6 +40,7 @@ export class ItemSearchOverlayComponent {
         });
     })
   );
+
   public completion$: Observable<{ id: number, name: I18nName }[]> = combineLatest([
     this.input$,
     this.items$

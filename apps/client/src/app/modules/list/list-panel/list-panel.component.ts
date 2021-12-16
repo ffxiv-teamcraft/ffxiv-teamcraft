@@ -45,22 +45,23 @@ export class ListPanelComponent extends TeamcraftComponent {
   minAmount = 1;
 
   @Input()
-  public set list(l: List) {
-    this._list = l;
-    this.list$.next(l);
-  }
-
-  @Input()
   publicDisplay = false;
 
   @Input()
   hideAvatar = false;
 
-  public _list: List;
+  public user$ = this.authFacade.user$;
+
+  public teams$: Observable<Team[]> = this.teamsFacade.myTeams$;
+
+  public availableColors = Object.keys(ListColor).map(key => {
+    return {
+      value: ListColor[key],
+      name: key
+    };
+  });
 
   private list$: ReplaySubject<List> = new ReplaySubject<List>();
-
-  public user$ = this.authFacade.user$;
 
   public listTemplate$: Observable<ListTemplate> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
     map(([links, list]) => {
@@ -70,30 +71,11 @@ export class ListPanelComponent extends TeamcraftComponent {
     })
   );
 
-  public customLink$: Observable<CustomLink> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
-    map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
-    tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-    shareReplay(1)
-  );
-
-  public teams$: Observable<Team[]> = this.teamsFacade.myTeams$;
-
   public listContent$: Observable<ListRow[]> = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
     switchMap(([list, layout]) => {
       return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
     })
   );
-
-  private syncLinkUrl: string;
-
-  private updateAmountDebounces: { [index: number]: Subject<any> } = {};
-
-  public availableColors = Object.keys(ListColor).map(key => {
-    return {
-      value: ListColor[key],
-      name: key
-    };
-  });
 
   isFavorite$: Observable<{ value: boolean }> = combineLatest([this.authFacade.favorites$, this.list$]).pipe(
     filter(([favorites]) => favorites !== undefined),
@@ -146,6 +128,16 @@ export class ListPanelComponent extends TeamcraftComponent {
     })
   );
 
+  private syncLinkUrl: string;
+
+  public customLink$: Observable<CustomLink> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
+    map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
+    tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+    shareReplay(1)
+  );
+
+  private updateAmountDebounces: { [index: number]: Subject<any> } = {};
+
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
               public translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
@@ -154,6 +146,14 @@ export class ListPanelComponent extends TeamcraftComponent {
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
               private cd: ChangeDetectorRef, public settings: SettingsService) {
     super();
+  }
+
+  public _list: List;
+
+  @Input()
+  public set list(l: List) {
+    this._list = l;
+    this.list$.next(l);
   }
 
   public outDated(): boolean {

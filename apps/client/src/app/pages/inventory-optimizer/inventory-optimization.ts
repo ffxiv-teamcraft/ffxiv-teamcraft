@@ -12,7 +12,7 @@ export interface InventoryOptimization {
       ignored?: boolean,
       messageParams: { [index: string]: string | number }
     }[]
-  }[]
+  }[];
   totalLength?: number;
   hidden?: boolean;
 }

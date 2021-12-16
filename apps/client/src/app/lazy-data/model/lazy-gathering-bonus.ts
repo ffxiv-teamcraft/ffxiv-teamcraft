@@ -1,8 +1,8 @@
 export interface LazyGatheringBonus {
-  value:          number;
+  value: number;
   conditionValue: number;
-  bonus?:         Bonus;
-  condition?:     Bonus;
+  bonus?: Bonus;
+  condition?: Bonus;
 }
 
 export interface Bonus {

@@ -27,11 +27,6 @@ export class ReplaySimulationComponent {
 
   public actionFailed = false;
 
-  @Input()
-  set replay(replay: CraftingReplay) {
-    this.replay$.next(replay);
-  }
-
   public simulation$ = this.replay$.pipe(
     switchMap(replay => {
       return this.lazyData.getRecipe(replay.recipeId.toString()).pipe(
@@ -75,6 +70,7 @@ export class ReplaySimulationComponent {
   public report$ = this.simulation$.pipe(
     map(simulation => simulation.getReliabilityReport())
   );
+
   public qualityPer100$ = this.result$.pipe(
     map(result => {
       const action = new this.simulator.BasicTouch();
@@ -89,14 +85,19 @@ export class ReplaySimulationComponent {
     })
   );
 
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
-
   constructor(private lazyData: LazyDataFacade, private dataService: DataService,
               private simulationService: SimulationService, private settings: SettingsService,
               @Optional() public ref: NzModalRef, private dialog: NzModalService,
               private translate: TranslateService) {
+  }
+
+  @Input()
+  set replay(replay: CraftingReplay) {
+    this.replay$.next(replay);
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
   }
 
   openMacroPopup(simulation: Simulation): void {

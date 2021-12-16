@@ -22,10 +22,15 @@ import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-sh
 export class AllaganReportRowComponent {
 
   AllaganReportSource = AllaganReportSource;
+
   AllaganReportStatus = AllaganReportStatus;
+
   OceanFishingTime = OceanFishingTime;
+
   UserLevel = UserLevel;
+
   SpearfishingSpeed = SpearfishingSpeed;
+
   SpearfishingShadowSize = SpearfishingShadowSize;
 
   canSuggestDeletionOrModification = false;
@@ -47,17 +52,24 @@ export class AllaganReportRowComponent {
 
   @Input()
   focusId: string;
+
   @Output()
   accept = new EventEmitter<void>();
+
   @Output()
   reject = new EventEmitter<void>();
+
   @Output()
   delete = new EventEmitter<void>();
+
   @Output()
   deleteOwn = new EventEmitter<void>();
+
   @Output()
   edit = new EventEmitter<void>();
+
   applyingChange = false;
+
   fishingSpot$ = merge(
     observeInput(this, 'report', true),
     observeInput(this, 'queueEntry', true)

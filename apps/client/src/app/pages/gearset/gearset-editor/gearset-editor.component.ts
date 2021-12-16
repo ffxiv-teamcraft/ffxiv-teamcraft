@@ -71,18 +71,23 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public isReadonly$ = this.gearsetsFacade.selectedGearsetPermissionLevel$.pipe(
     map(permissionLevel => permissionLevel < PermissionLevel.WRITE)
   );
+
   public level$ = new BehaviorSubject<number>(this.environment.maxLevel);
+
   public tribe$ = new BehaviorSubject<number>(1);
+
   public food$ = this.gearset$.pipe(
     map(gearset => {
       return gearset.food;
     })
   );
+
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
     switchMap(([set, level, tribe, food]) => {
       return this.statsService.getStats(set, level, tribe, food);
     })
   );
+
   public foods$: Observable<any[]> = this.gearset$.pipe(
     first(),
     switchMap(gearset => {
@@ -107,8 +112,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         }));
     })
   );
+
   tribesMenu = this.gearsetsFacade.tribesMenu;
+
   maxLevel = this.environment.maxLevel;
+
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
       return gearset && !gearset.notFound;
@@ -116,6 +124,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     map(gearset => gearset.job),
     distinctUntilChanged()
   );
+
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     withLazyData(this.lazyData, 'jobAbbr'),
     switchMap(([[filters, job], jobAbbr]) => {
@@ -648,15 +657,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                 ...options,
                 page: response.Pagination.PageNext
               }).pipe(
-              map(res => {
-                return {
-                  ...res,
-                  Results: [
-                    ...response.Results,
-                    ...res.Results
-                  ]
-                };
-              })
+                map(res => {
+                  return {
+                    ...res,
+                    Results: [
+                      ...response.Results,
+                      ...res.Results
+                    ]
+                  };
+                })
               )
             )
           );

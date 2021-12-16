@@ -9,6 +9,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 })
 export class LazyIconPipe implements PipeTransform, OnDestroy {
   private readonly itemId$ = new Subject<number | undefined>();
+
   private readonly itemIcon$ = this.itemId$.pipe(
     distinctUntilChanged((idA, idB) => idA === idB),
     switchMap(itemId => {
@@ -26,7 +27,9 @@ export class LazyIconPipe implements PipeTransform, OnDestroy {
       }
     })
   );
+
   private readonly sub: Subscription;
+
   private iconUrl?: string;
 
   constructor(private readonly lazyData: LazyDataFacade, private readonly cd: ChangeDetectorRef) {

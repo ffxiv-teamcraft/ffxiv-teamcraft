@@ -16,8 +16,11 @@ import { MappyMarker, MappyReporterState } from '../../../core/electron/mappy/ma
 export class MappyOverlayComponent implements OnInit {
 
   scale = 1;
+
   pan: Vector2 = { x: -1024, y: -1024 };
+
   editedPan = { x: 0, y: 0 };
+
   showDebugBox = true;
 
   markerSizes = {
@@ -46,9 +49,13 @@ export class MappyOverlayComponent implements OnInit {
   windowSize: Vector2;
 
   trackPlayer = true;
+
   showMappyLayers = true;
+
   watchMappy = true;
+
   showLocalLayers = false;
+
   showLGBLayers = false;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();

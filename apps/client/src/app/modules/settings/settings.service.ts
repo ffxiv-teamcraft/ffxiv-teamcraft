@@ -16,19 +16,12 @@ import { IS_HEADLESS } from '../../../environments/is-headless';
 export class SettingsService {
 
   public regionChange$ = new Subject<{ previous: Region, next: Region }>();
+
   public region$: Observable<Region>;
+
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
+
   public settingsChange$ = new Subject<string>();
-  private _cache: Record<string, string>;
-
-  public get cache(): Record<string, string> {
-    return this._cache;
-  }
-
-  public set cache(cache: Record<string, string>) {
-    this._cache = cache;
-    localStorage.setItem('settings', JSON.stringify(this.cache));
-  }
 
   constructor(@Optional() private ipc: IpcService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
@@ -39,6 +32,17 @@ export class SettingsService {
       });
     }
     this.region$ = this.regionChange$.pipe(map(change => change.next), startWith(this.region));
+  }
+
+  private _cache: Record<string, string>;
+
+  public get cache(): Record<string, string> {
+    return this._cache;
+  }
+
+  public set cache(cache: Record<string, string>) {
+    this._cache = cache;
+    localStorage.setItem('settings', JSON.stringify(this.cache));
   }
 
   public get availableLocales(): string[] {
@@ -178,28 +182,28 @@ export class SettingsService {
     this.setSetting('tutorial:asked', asked.toString());
   }
 
-  public set commissionTags(tags: CommissionTag[]) {
-    this.setSetting('commissions:tags', JSON.stringify(tags));
-  }
-
   public get commissionTags(): CommissionTag[] {
     return JSON.parse(this.getSetting('commissions:tags', '[]'));
   }
 
-  public set foldersOpened(folders: Record<string, 1>) {
-    this.setSetting('folders:opened', JSON.stringify(folders));
+  public set commissionTags(tags: CommissionTag[]) {
+    this.setSetting('commissions:tags', JSON.stringify(tags));
   }
 
   public get foldersOpened(): Record<string, 1> {
     return JSON.parse(this.getSetting('folders:opened', '{}'));
   }
 
-  public set ignoredContentIds(ids: string[]) {
-    this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
+  public set foldersOpened(folders: Record<string, 1>) {
+    this.setSetting('folders:opened', JSON.stringify(folders));
   }
 
   public get ignoredContentIds(): string[] {
     return JSON.parse(this.getSetting('inventory:ignored-content-ids', '[]'));
+  }
+
+  public set ignoredContentIds(ids: string[]) {
+    this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
   }
 
   public get onlyCraftingCommissions(): boolean {
@@ -875,10 +879,6 @@ export class SettingsService {
     return this.getBoolean(`overlay:clock:${overlay}`, true);
   }
 
-  private getSetting(name: string, defaultValue: string): string {
-    return this.cache[name] || defaultValue;
-  }
-
   public getBoolean(name: string, defaultValue: boolean): boolean {
     return this.getSetting(name, defaultValue.toString()) === 'true';
   }
@@ -925,6 +925,10 @@ export class SettingsService {
 
   public setNotificationSettings(type: SoundNotificationType, settings: NotificationSettings): void {
     this.setString(`alarm-settings:${type}`, JSON.stringify(settings));
+  }
+
+  private getSetting(name: string, defaultValue: string): string {
+    return this.cache[name] || defaultValue;
   }
 
   private setSetting(name: string, value: string): void {

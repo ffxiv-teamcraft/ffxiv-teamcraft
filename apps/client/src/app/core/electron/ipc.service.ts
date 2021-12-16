@@ -22,10 +22,15 @@ type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 export class IpcService {
 
   public static readonly ROTATION_DEFAULT_DIMENSIONS = { x: 600, y: 200 };
+
   public packets$ = new Subject<Message>();
+
   public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
+
   public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
+
   public possibleMissingFirewallRule$ = this.packets$.pipe(
     bufferCount(100),
     first(),
@@ -34,9 +39,13 @@ export class IpcService {
     }),
     shareReplay(1)
   );
+
   private readonly _ipc: IpcRenderer | undefined = undefined;
+
   private totalPacketsHandled = 0;
+
   private start = Date.now();
+
   private stateSubscription: Subscription;
 
   constructor(private platformService: PlatformService, private router: Router,

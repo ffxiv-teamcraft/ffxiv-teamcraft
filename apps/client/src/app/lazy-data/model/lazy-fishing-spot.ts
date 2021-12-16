@@ -1,11 +1,11 @@
 export interface LazyFishingSpot {
-  id:      number;
-  mapId:   number;
+  id: number;
+  mapId: number;
   placeId: number;
-  zoneId:  number;
-  level:   number;
+  zoneId: number;
+  level: number;
   coords?: Coords;
-  fishes:  number[];
+  fishes: number[];
 }
 
 export interface Coords {

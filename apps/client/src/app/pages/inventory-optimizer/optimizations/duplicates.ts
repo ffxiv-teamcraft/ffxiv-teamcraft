@@ -21,6 +21,10 @@ export class Duplicates extends InventoryOptimizer {
     return 'DUPLICATES';
   }
 
+  lazyDataEntriesNeeded(): LazyDataKey[] {
+    return ['stackSizes'];
+  }
+
   protected _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     return this.lazyData.getEntry('stackSizes').pipe(
       map(stackSizes => {
@@ -50,10 +54,6 @@ export class Duplicates extends InventoryOptimizer {
       })
     );
 
-  }
-
-  lazyDataEntriesNeeded(): LazyDataKey[] {
-    return ['stackSizes'];
   }
 
 }

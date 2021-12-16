@@ -18,11 +18,11 @@ export interface GearsetsComparison {
   meldingChances: {
     a: number,
     b: number
-  }
+  };
   piecesDiff: {
     slotName: string,
     a: EquipmentPiece,
     b: EquipmentPiece,
     stats: { id: number, a: number, b: number }[],
-  }[]
+  }[];
 }

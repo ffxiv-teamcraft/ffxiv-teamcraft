@@ -8,7 +8,6 @@ import { FlexModule } from '@angular/flex-layout';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
-
 @NgModule({
   declarations: [NpcapInstallPopupComponent, RawsockAdminErrorPopupComponent],
   imports: [
@@ -19,4 +18,5 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     NzDividerModule
   ]
 })
-export class IpcPopupsModule { }
+export class IpcPopupsModule {
+}

@@ -23,32 +23,46 @@ export class ActionComponent {
 
   @Input()
   action: CraftingAction;
+
   @Input()
   wasted = false;
+
   @Input()
   disabled = false;
+
   @Input()
   notEnoughCp = false;
+
   @Input()
   jobId: number;
+
   @Input()
   hideCost = false;
+
   @Input()
   ignoreDisabled = false;
+
   @Input()
   cpCost: number;
+
   @Input()
   failed = false;
+
   @Input()
   tooltipDisabled = false;
+
   @Input()
   safe = true;
+
   @Input()
   state: StepState = StepState.NORMAL;
+
   @Input()
   showStateMenu = false;
+
   @Input()
   readonly = false;
+
   availableConditions: { condition: number, name: string }[] = [];
 
   constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,

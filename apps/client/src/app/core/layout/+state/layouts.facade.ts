@@ -26,6 +26,7 @@ import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-sta
 @Injectable()
 export class LayoutsFacade {
   loaded$ = this.store.select(layoutsQuery.getLoaded);
+
   allLayouts$ = this.store.select(layoutsQuery.getAllLayouts);
 
   selectedLayout$: Observable<ListLayout> = this.store.select(layoutsQuery.getSelectedLayout)

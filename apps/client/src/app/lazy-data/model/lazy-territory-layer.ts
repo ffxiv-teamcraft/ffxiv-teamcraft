@@ -1,9 +1,9 @@
 export interface LazyTerritoryLayer {
-  mapId:       number;
-  index:       number;
+  mapId: number;
+  index: number;
   placeNameId: number;
-  bounds:      Bounds;
-  ignored?:    boolean;
+  bounds: Bounds;
+  ignored?: boolean;
 }
 
 export interface Bounds {

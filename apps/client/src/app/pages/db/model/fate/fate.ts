@@ -11,5 +11,5 @@ export interface Fate {
     x: number;
     y: number;
     z: number;
-  }
+  };
 }

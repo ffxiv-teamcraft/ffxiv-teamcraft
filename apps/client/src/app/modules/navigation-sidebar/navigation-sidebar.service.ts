@@ -16,14 +16,20 @@ import { Injectable } from '@angular/core';
 })
 export class NavigationSidebarService {
 
-  private settingsChange$ = this.settings.settingsChange$.pipe(
-    filter(change => ['sidebar-state', 'sidebar-favorites'].includes(change)),
-    startWith('')
-  );
-
   public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
     map(notifications => notifications.length),
     shareReplay(1)
+  );
+
+  public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(
+    map(content => {
+      return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
+    })
+  );
+
+  private settingsChange$ = this.settings.settingsChange$.pipe(
+    filter(change => ['sidebar-state', 'sidebar-favorites'].includes(change)),
+    startWith('')
   );
 
   public content$: Observable<SidebarCategory[]> = combineLatest([
@@ -421,12 +427,6 @@ export class NavigationSidebarService {
       return layout;
     }),
     shareReplay(1)
-  );
-
-  public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(
-    map(content => {
-      return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
-    })
   );
 
   constructor(private settings: SettingsService, private sanitizer: DomSanitizer, private platformService: PlatformService,

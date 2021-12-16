@@ -6,7 +6,9 @@ import { CommentTargetType } from './comment-target-type';
 export class ResourceComment extends DataModel {
   @ForeignKey(TeamcraftUser)
   authorId: string;
+
   content: string;
+
   date: string;
 
   /**

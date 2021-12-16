@@ -31,8 +31,11 @@ export class TeamsComponent implements OnInit {
   userId$: Observable<string> = this.authFacade.userId$;
 
   errorCode$: BehaviorSubject<string> = new BehaviorSubject(undefined);
+
   public params: any;
+
   private teamInvitesCache: { [indexx: string]: Observable<TeamInvite[]> } = {};
+
   private redirectUri: string;
 
   constructor(private teamsFacade: TeamsFacade, private dialog: NzModalService, private translate: TranslateService,

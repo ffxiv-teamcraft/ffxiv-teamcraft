@@ -1,5 +1,5 @@
 export interface LazyAirshipRank {
-  id:        number;
-  capacity:  number;
+  id: number;
+  capacity: number;
   expToNext: number;
 }

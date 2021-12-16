@@ -20,7 +20,9 @@ interface FishingSpotChartData {
 export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
+
   public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
+
   public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
@@ -46,8 +48,11 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     startWith([]),
     shareReplay(1)
   );
+
   public readonly activeFishName$ = new Subject<string | undefined>();
+
   private readonly activeFish$ = new Subject<number | undefined>();
+
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
@@ -59,6 +64,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
     }),
     startWith([])
   );
+
   private readonly unsubscribe$ = new Subject<void>();
 
   constructor(

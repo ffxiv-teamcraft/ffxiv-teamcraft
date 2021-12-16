@@ -16,10 +16,15 @@ import { FreeCompanyAction } from '../../model/free-company-action';
 export class SimulationSharePopupComponent {
 
   rotation: CraftingRotation;
+
   stats: CrafterStats;
+
   includeStats: boolean;
+
   food: Consumable;
+
   medicine: Consumable;
+
   freeCompanyActions: FreeCompanyAction[];
 
   constructor(private linkTools: LinkToolsService, private message: NzMessageService,

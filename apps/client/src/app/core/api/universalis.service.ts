@@ -23,12 +23,12 @@ export class UniversalisService {
 
   // https://github.com/ffxiv-teamcraft/pcap-ffxiv/blob/83b1f5b12a8f025d0090b6436d9311955857d022/src/packet-processors/processors/marketBoardItemListing.ts
   private static readonly CITIES = {
-    0x01: "Limsa Lominsa",
-    0x02: "Gridania",
-    0x03: "Ul'dah",
-    0x04: "Ishgard",
-    0x07: "Kugane",
-    0x0a: "Crystarium",
+    0x01: 'Limsa Lominsa',
+    0x02: 'Gridania',
+    0x03: 'Ul\'dah',
+    0x04: 'Ishgard',
+    0x07: 'Kugane',
+    0x0a: 'Crystarium'
   };
 
   private cid$: Observable<string> = this.authFacade.user$.pipe(
@@ -141,11 +141,11 @@ export class UniversalisService {
     );
   }
 
-  public getServerHistoryPrices(server: string, entries:number, ...itemIds: number[]): Observable<MarketboardItem[]> {
+  public getServerHistoryPrices(server: string, entries: number, ...itemIds: number[]): Observable<MarketboardItem[]> {
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       const params = new HttpParams().set('entries', entries);
-      return this.http.get<any>(`https://universalis.app/api/history/${server}/${chunk.join(',')}`, {params})
+      return this.http.get<any>(`https://universalis.app/api/history/${server}/${chunk.join(',')}`, { params })
         .pipe(
           catchError(() => of([])),
           map(response => {
@@ -155,7 +155,7 @@ export class UniversalisService {
                 ...res,
                 ID: res.worldID,
                 ItemId: res.itemID,
-                History: [],
+                History: []
               };
               item.History = (res.entries || [])
                 .map(listing => {

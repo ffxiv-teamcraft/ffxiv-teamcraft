@@ -22,7 +22,7 @@ import 'core-js/es6/reflect';
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
  */
-import './zone-flags'
+import './zone-flags';
 import 'zone.js'; // Included with Angular CLI.
 import 'zone.js/plugins/zone-patch-rxjs';
 import 'zone.js/plugins/zone-error';

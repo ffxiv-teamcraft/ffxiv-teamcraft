@@ -39,19 +39,19 @@ export class PricingComponent implements AfterViewInit {
   @Output()
   close: EventEmitter<void> = new EventEmitter<void>();
 
-  private costs: { [index: number]: number } = {};
-
   public spendingTotal = 0;
 
   public discount = 0;
 
   public flatDiscount = 0;
 
+  loggedIn$ = this.authFacade.loggedIn$;
+
+  private costs: { [index: number]: number } = {};
+
   private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
     map(char => char.Server)
   );
-
-  loggedIn$ = this.authFacade.loggedIn$;
 
   constructor(private pricingService: PricingService, private media: MediaObserver, public settings: SettingsService,
               private listsFacade: ListsFacade, private xivapi: XivapiService, private authFacade: AuthFacade,
@@ -306,6 +306,29 @@ export class PricingComponent implements AfterViewInit {
     return this.costs[row.id] || 0;
   }
 
+  /**
+   * Gets the final benefits made from the whole list.
+   * @returns {number}
+   */
+  getBenefits(list: List): number {
+    return this.getTotalEarnings(list.finalItems, list) - this.spendingTotal;
+  }
+
+  public trackByItemFn(index: number, item: ListRow): number {
+    return item.id;
+  }
+
+  ngAfterViewInit(): void {
+    this.list$.pipe(
+      first()
+    ).subscribe(list => {
+      this.updateCosts(list);
+    });
+    setTimeout(() => {
+      this.cd.detectChanges();
+    }, 500);
+  }
+
   private _getCraftCost(row: ListRow, list: List): number {
     const price = (row.requires || []).reduce((total, requirement) => {
       const requirementRow = ListController.getItemById(list, requirement.id, true);
@@ -335,18 +358,6 @@ export class PricingComponent implements AfterViewInit {
       return ((prices.nq * amounts.nq) + (prices.hq * amounts.hq)) / (amounts.hq + amounts.nq);
     }
     return price;
-  }
-
-  /**
-   * Gets the final benefits made from the whole list.
-   * @returns {number}
-   */
-  getBenefits(list: List): number {
-    return this.getTotalEarnings(list.finalItems, list) - this.spendingTotal;
-  }
-
-  public trackByItemFn(index: number, item: ListRow): number {
-    return item.id;
   }
 
   private topologicalSort(data: ListRow[]): ListRow[] {
@@ -381,17 +392,6 @@ export class PricingComponent implements AfterViewInit {
       }
     }
     return res;
-  }
-
-  ngAfterViewInit(): void {
-    this.list$.pipe(
-      first()
-    ).subscribe(list => {
-      this.updateCosts(list);
-    });
-    setTimeout(() => {
-      this.cd.detectChanges();
-    }, 500);
   }
 
   private getWorldName(world: string): string {

@@ -18,13 +18,18 @@ import { environment } from '../../../environments/environment';
 })
 export class PlayerMetricsService {
 
+  public loading$ = new BehaviorSubject<boolean>(false);
+
+  loadedPeriod = {
+    from: startOfDay(new Date()),
+    to: endOfDay(new Date())
+  };
+
   private stop$ = new Subject<void>();
 
   private _logs$: BehaviorSubject<ProbeReport[]> = new BehaviorSubject<ProbeReport[]>([]);
 
   public readonly logs$: Observable<ProbeReport[]> = this._logs$.asObservable();
-
-  public loading$ = new BehaviorSubject<boolean>(false);
 
   private buffer: ProbeReport[] = [];
 
@@ -33,11 +38,6 @@ export class PlayerMetricsService {
   private _events$: ReplaySubject<ProbeReport> = new ReplaySubject<ProbeReport>();
 
   public events$: Observable<ProbeReport> = this._events$.asObservable();
-
-  loadedPeriod = {
-    from: startOfDay(new Date()),
-    to: endOfDay(new Date())
-  };
 
   constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[],
               private settings: SettingsService, private authFacade: AuthFacade) {
@@ -51,25 +51,6 @@ export class PlayerMetricsService {
       this._logs$.next(logs);
       this.loading$.next(false);
     });
-  }
-
-  private parseLogRows(data: string): ProbeReport[] {
-    return data.split('|')
-      .map(row => {
-        const parsed = row.split(';');
-        if (parsed.length === 1) {
-          return;
-        }
-        return {
-          timestamp: +parsed[0],
-          type: +parsed[1],
-          source: +parsed[2],
-          data: parsed[3].split(',').map(n => +n)
-        };
-      })
-      .filter(row => {
-        return row.source !== undefined;
-      });
   }
 
   public start(): void {
@@ -138,6 +119,25 @@ export class PlayerMetricsService {
       this.ipc.send('metrics:load', { from: this.dateToFileName(startOfDay(from)), to: this.dateToFileName(endOfDay(to)) });
       this.loading$.next(true);
     }
+  }
+
+  private parseLogRows(data: string): ProbeReport[] {
+    return data.split('|')
+      .map(row => {
+        const parsed = row.split(';');
+        if (parsed.length === 1) {
+          return;
+        }
+        return {
+          timestamp: +parsed[0],
+          type: +parsed[1],
+          source: +parsed[2],
+          data: parsed[3].split(',').map(n => +n)
+        };
+      })
+      .filter(row => {
+        return row.source !== undefined;
+      });
   }
 
   private dateToFileName(date: Date): string {

@@ -1,8 +1,8 @@
 export interface LazyHwdInspection {
   requiredItem: number;
-  amount:       number;
+  amount: number;
   receivedItem: number;
-  scrips:       number;
-  points:       number;
-  phase:        number;
+  scrips: number;
+  points: number;
+  phase: number;
 }

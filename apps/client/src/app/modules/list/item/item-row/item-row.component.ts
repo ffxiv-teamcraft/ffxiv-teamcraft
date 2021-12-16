@@ -70,60 +70,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   buttonsCache = {};
 
-  private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
-
-  public item$: Observable<ListRow> = this._item$.pipe(
-    filter(item => item !== null),
-    map(item => {
-      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-      const vendors = getItemSource(item, DataType.VENDORS);
-      (<any>item).craftedBy = craftedBy ? craftedBy : null;
-      (<any>item).vendors = vendors ? vendors : null;
-      item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
-      return item;
-    }),
-    shareReplay(1)
-  );
-
   finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
-  @Input()
-  set item(item: ListRow) {
-    this._item$.next(item);
-  }
-
-  get item(): ListRow {
-    return this._item$.value;
-  }
-
-  @Input()
-  public set finalItem(final: boolean) {
-    this.finalItem$.next(final);
-  }
-
-  public get finalItem(): boolean {
-    return this.finalItem$.value || this.item.finalItem;
-  }
 
   @Input()
   odd = false;
 
   @Input()
-  public set layout(l: ListLayout) {
-    if (l) {
-      this.buttonsCache = l.buttonsCache;
-    }
-    this._layout = l;
-  }
-
-  public get layout(): ListLayout {
-    return this._layout;
-  }
-
-  @Input()
   overlay = false;
-
-  _layout: ListLayout;
 
   moreAlarmsAvailable = 0;
 
@@ -288,13 +241,20 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  private get simulator() {
-    return this.simulationService.getSimulator(this.settings.region);
-  }
+  private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
 
-  private get registry() {
-    return this.simulator.CraftingActionsRegistry;
-  }
+  public item$: Observable<ListRow> = this._item$.pipe(
+    filter(item => item !== null),
+    map(item => {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const vendors = getItemSource(item, DataType.VENDORS);
+      (<any>item).craftedBy = craftedBy ? craftedBy : null;
+      (<any>item).vendors = vendors ? vendors : null;
+      item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
+      return item;
+    }),
+    shareReplay(1)
+  );
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -344,6 +304,46 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         return ListController.requiredAsHQ(list, item);
       })
     );
+  }
+
+  get item(): ListRow {
+    return this._item$.value;
+  }
+
+  @Input()
+  set item(item: ListRow) {
+    this._item$.next(item);
+  }
+
+  public get finalItem(): boolean {
+    return this.finalItem$.value || this.item.finalItem;
+  }
+
+  @Input()
+  public set finalItem(final: boolean) {
+    this.finalItem$.next(final);
+  }
+
+  _layout: ListLayout;
+
+  public get layout(): ListLayout {
+    return this._layout;
+  }
+
+  @Input()
+  public set layout(l: ListLayout) {
+    if (l) {
+      this.buttonsCache = l.buttonsCache;
+    }
+    this._layout = l;
+  }
+
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
   }
 
   ngOnInit(): void {

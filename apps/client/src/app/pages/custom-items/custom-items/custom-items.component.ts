@@ -48,11 +48,16 @@ export class CustomItemsComponent {
   public loading$: Observable<boolean> = combineLatest([this.customItemsFacade.loaded$, this.customItemsFacade.foldersLoaded$]).pipe(
     map(([itemsLoaded, foldersLoaded]) => !itemsLoaded || !foldersLoaded)
   );
+
   public maps$: Observable<{ ID: number, PlaceName: any }[]>;
+
   public availableCraftJobs: any[] = [];
+
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
+
   public modifiedList: List;
+
   private folders$ = this.customItemsFacade.allCustomItemFolders$;
 
   constructor(private customItemsFacade: CustomItemsFacade, private dialog: NzModalService,

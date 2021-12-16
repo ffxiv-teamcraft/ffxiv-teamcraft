@@ -20,9 +20,11 @@ export class MetricsDashboardsFacade {
   loaded$ = this.store.pipe(
     select(MetricsDashboardsSelectors.getMetricsDashboardsLoaded)
   );
+
   allMetricsDashboards$ = this.store.pipe(
     select(MetricsDashboardsSelectors.getAllMetricsDashboards)
   );
+
   selectedMetricsDashboard$ = combineLatest([
     this.store.pipe(select(MetricsDashboardsSelectors.getSelected)),
     this.store.pipe(select(MetricsDashboardsSelectors.getMetricsDashboardsLoaded))

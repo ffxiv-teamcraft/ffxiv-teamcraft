@@ -1,15 +1,15 @@
 export interface LazyFishingLog {
-  itemId:  number;
-  level:   number;
-  icon:    string;
-  mapId:   number;
+  itemId: number;
+  level: number;
+  icon: string;
+  mapId: number;
   placeId: number;
-  zoneId:  number;
-  spot:    Spot;
+  zoneId: number;
+  spot: Spot;
 }
 
 export interface Spot {
-  id:     number;
+  id: number;
   coords: Coords;
 }
 

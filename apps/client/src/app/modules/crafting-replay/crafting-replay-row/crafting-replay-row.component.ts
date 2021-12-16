@@ -21,12 +21,12 @@ export class CraftingReplayRowComponent {
   @Input()
   userId: string;
 
-  get permissionLevel(): PermissionLevel {
-    return this.replay.getPermissionLevel(this.userId);
-  }
-
   constructor(private craftingReplayFacade: CraftingReplayFacade, public translate: TranslateService,
               private message: NzMessageService, private dialog: NzModalService) {
+  }
+
+  get permissionLevel(): PermissionLevel {
+    return this.replay.getPermissionLevel(this.userId);
   }
 
   saveReplay(replay: CraftingReplay): void {

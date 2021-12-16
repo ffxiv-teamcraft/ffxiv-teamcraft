@@ -23,13 +23,16 @@ import { RotationsFacade } from '../../rotations/+state/rotations.facade';
 @Injectable()
 export class RotationFoldersFacade {
   loaded$ = this.store.pipe(select(rotationFoldersQuery.getLoaded));
+
   allRotationFolders$ = this.store.pipe(
     select(rotationFoldersQuery.getAllRotationFolders)
   );
+
   selectedRotationFolder$ = this.store.pipe(
     select(rotationFoldersQuery.getSelectedRotationFolder),
     filter(rotation => rotation !== undefined)
   );
+
   myRotationFolders$ = combineLatest([this.allRotationFolders$, this.authFacade.userId$]).pipe(
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)
       .sort((a, b) => a.index - b.index))

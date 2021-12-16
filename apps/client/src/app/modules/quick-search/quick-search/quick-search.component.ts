@@ -26,6 +26,11 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
   public searchType$: BehaviorSubject<SearchType> =
     new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
 
+  @Input()
+  public reportsMode = false;
+
+  public loading = false;
+
   public results$ = merge(this.cleanResults$, combineLatest([this.query$.pipe(debounceTime(800)), this.searchType$]).pipe(
     filter(([query]) => query.length > 1),
     switchMap(([query, searchType]) => {
@@ -35,16 +40,6 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
     tap(() => this.loading = false)
   ));
 
-  @Input()
-  public set searchType(type: SearchType) {
-    this.searchType$.next(type);
-  }
-
-  @Input()
-  public reportsMode = false;
-
-  public loading = false;
-
   constructor(private route: ActivatedRoute, private settings: SettingsService,
               private translate: TranslateService, private router: Router,
               private data: DataService, @Inject(PLATFORM_ID) private platform: Object,
@@ -52,12 +47,17 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
     super();
   }
 
+  @Input()
+  public set searchType(type: SearchType) {
+    this.searchType$.next(type);
+  }
+
   public navigateTo(row: SearchResult): void {
     if (!row) {
       return;
     }
     this.cleanResults$.next([]);
-    if(this.reportsMode){
+    if (this.reportsMode) {
       setTimeout(() => {
         this.router.navigate([
           'allagan-reports',

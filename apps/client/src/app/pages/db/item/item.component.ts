@@ -88,7 +88,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       if (item.ItemSeries) {
         return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
           switchMap(itemSeries => {
-            if(itemSeries.items.length > 20){
+            if (itemSeries.items.length > 20) {
               return of(item);
             }
             return safeCombineLatest(itemSeries.items.map(itemId => {
@@ -105,7 +105,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                 return {
                   ...item,
                   bonuses
-                }
+                };
               })
             );
           })

@@ -1,6 +1,6 @@
 export interface LazyLevesPerItem {
-  leve:     number;
-  amount:   number;
-  lvl:      number;
+  leve: number;
+  amount: number;
+  lvl: number;
   classJob: number;
 }

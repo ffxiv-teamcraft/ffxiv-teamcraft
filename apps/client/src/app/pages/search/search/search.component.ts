@@ -46,6 +46,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   //Minimum and Maximum values for various nz-input-number elements
   curMaxLevel = this.environment.maxLevel; //max player level
   maxilvlFilter = 999;
+
   maxStatFilter = 99999;
 
   searchTypes = SearchType;
@@ -53,6 +54,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   results$: Observable<SearchResult[]>;
+
   selection$: BehaviorSubject<SearchResult[]> = new BehaviorSubject<SearchResult[]>([]);
 
   filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<any>([]);

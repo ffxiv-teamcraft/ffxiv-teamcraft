@@ -79,8 +79,11 @@ export interface MappyReporterState {
 export class MappyReporterService {
 
   private static readonly XIVAPI_URL = 'staging.xivapi.com';
+
   public available = false;
+
   private reportedUntil = Date.now();
+
   private state: MappyReporterState = {
     zoning: false,
     aetherytes: [],
@@ -104,7 +107,9 @@ export class MappyReporterService {
     zoneId: 0,
     reports: 0
   };
+
   private dirty = false;
+
   private intervals: any[] = [];
 
   private stop$ = new Subject<void>();

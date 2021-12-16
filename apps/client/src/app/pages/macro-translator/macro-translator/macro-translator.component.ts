@@ -16,10 +16,13 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 })
 export class MacroTranslatorComponent {
   macroToTranslate: string;
+
   macroLanguage: 'en' | 'fr' | 'de' | 'ja' | 'ko' | 'zh';
+
   macroTranslatedTabs: { label: string, content: string[] }[];
 
   invalidInputs: boolean;
+
   translationDone: boolean;
 
   languages = [
@@ -110,7 +113,7 @@ export class MacroTranslatorComponent {
               .forEach(key => {
                 const row = macroTranslated[key];
                 if (line.skillName) {
-                  row.push(line.original.replace(line.skillName, line.replace(line.translated[key])))
+                  row.push(line.original.replace(line.skillName, line.replace(line.translated[key])));
                 } else {
                   row.push(line.original);
                 }

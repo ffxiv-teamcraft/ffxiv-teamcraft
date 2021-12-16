@@ -12,15 +12,15 @@ import { Subject } from 'rxjs';
 })
 export class ItemRowMenuComponent {
 
+  buttonsComponentRef: ItemRowButtonsComponent;
+
+  menu$ = new Subject<NzDropdownMenuComponent>();
+
   @ViewChild('menu', { read: NzDropdownMenuComponent })
   set menu(menu: NzDropdownMenuComponent) {
     this.menu$.next(menu);
     this.menu$.complete();
   }
-
-  buttonsComponentRef: ItemRowButtonsComponent;
-
-  menu$ = new Subject<NzDropdownMenuComponent>();
 
   public isButton(element: ItemRowMenuElement): boolean {
     return this.buttonsComponentRef.buttonsCache[element];

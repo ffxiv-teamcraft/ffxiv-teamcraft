@@ -101,7 +101,7 @@ export class LazyDataEffects {
     } else {
       if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform) || IS_HEADLESS) {
         url = `.${path}`;
-      } else if(environment.beta) {
+      } else if (environment.beta) {
         url = `https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src${path}`;
       } else {
         url = `https://cdn.ffxivteamcraft.com${path}`;

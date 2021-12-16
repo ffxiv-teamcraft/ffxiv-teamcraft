@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class TeamcraftErrorHandler extends ErrorHandler {
   private message: NzMessageService;
+
   private translate: TranslateService;
 
   constructor(injector: Injector) {

@@ -51,9 +51,13 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
     }),
     shareReplay(1)
   );
+
   private onChange: (_: any) => void;
+
   private onTouched: () => void;
+
   private selectedJobs$: BehaviorSubject<number[]> = new BehaviorSubject([]);
+
   public display$ = combineLatest([this.jobsDisplay$, this.selectedJobs$]).pipe(
     map(([display, selected]) => {
       return Object.keys(display).reduce((acc, key) => {

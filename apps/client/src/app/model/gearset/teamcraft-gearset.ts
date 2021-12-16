@@ -8,24 +8,35 @@ export class TeamcraftGearset extends DataWithPermissions {
    * True when it has been imported via the automated gearset sync process
    */
   fromSync = false;
+
   job: number;
 
   index = -1;
 
   mainHand: EquipmentPiece;
+
   offHand: EquipmentPiece;
 
   head: EquipmentPiece;
+
   chest: EquipmentPiece;
+
   gloves: EquipmentPiece;
+
   belt?: EquipmentPiece;
+
   legs: EquipmentPiece;
+
   feet: EquipmentPiece;
 
   necklace: EquipmentPiece;
+
   earRings: EquipmentPiece;
+
   bracelet: EquipmentPiece;
+
   ring1: EquipmentPiece;
+
   ring2: EquipmentPiece;
 
   crystal: EquipmentPiece;

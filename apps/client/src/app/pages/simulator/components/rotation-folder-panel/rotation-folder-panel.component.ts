@@ -28,14 +28,19 @@ export class RotationFolderPanelComponent {
 
   @Input()
   rotations: CraftingRotation[] = [];
+
   public user$ = this.authFacade.user$;
+
   public customLink$: Observable<CustomLink>;
+
   private folder$: ReplaySubject<CraftingRotationsFolder> = new ReplaySubject<CraftingRotationsFolder>();
+
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.folder$]).pipe(
     map(([userId, folder]) => folder.getPermissionLevel(userId)),
     distinctUntilChanged(),
     shareReplay(1)
   );
+
   private syncLinkUrl: string;
 
   constructor(private foldersFacade: RotationFoldersFacade, private authFacade: AuthFacade, private linkTools: LinkToolsService,

@@ -15,6 +15,7 @@ import { withLazyData } from '../rxjs/with-lazy-data';
 @Injectable({ providedIn: 'root' })
 export class I18nToolsService {
   private readonly defaultLang = 'en' as const;
+
   public readonly currentLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.defaultLang);
 
   constructor(private translator: TranslateService, private lazyData: LazyDataFacade) {
@@ -146,30 +147,6 @@ export class I18nToolsService {
     );
   }
 
-
-  private getEnActionFromKoActionName(name: string): Observable<I18nName | null> {
-    return combineLatest([
-      this.lazyData.getEntry('koCraftActions'),
-      this.lazyData.getEntry('koActions'),
-      this.lazyData.getEntry('craftActions'),
-      this.lazyData.getEntry('actions')
-    ]).pipe(
-      map(([koCraftActions, koActions, craftActions, actions]) => {
-        const craftActionId = Object.keys(koCraftActions).find(
-          (key) => koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
-        );
-        if (craftActionId) {
-          return craftActions[craftActionId];
-        }
-        const actionId = Object.keys(koActions).find((key) => koActions[key].ko.toLowerCase() === name.toLowerCase());
-        if (actionId) {
-          return actions[actionId];
-        }
-        return null;
-      })
-    );
-  }
-
   public getIndexByName(array: any, name: string, language: string, flip = false): number {
     if (array === undefined) {
       return -1;
@@ -200,5 +177,28 @@ export class I18nToolsService {
       return this.getIndexByName(array, name, 'en');
     }
     return res;
+  }
+
+  private getEnActionFromKoActionName(name: string): Observable<I18nName | null> {
+    return combineLatest([
+      this.lazyData.getEntry('koCraftActions'),
+      this.lazyData.getEntry('koActions'),
+      this.lazyData.getEntry('craftActions'),
+      this.lazyData.getEntry('actions')
+    ]).pipe(
+      map(([koCraftActions, koActions, craftActions, actions]) => {
+        const craftActionId = Object.keys(koCraftActions).find(
+          (key) => koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
+        );
+        if (craftActionId) {
+          return craftActions[craftActionId];
+        }
+        const actionId = Object.keys(koActions).find((key) => koActions[key].ko.toLowerCase() === name.toLowerCase());
+        if (actionId) {
+          return actions[actionId];
+        }
+        return null;
+      })
+    );
   }
 }

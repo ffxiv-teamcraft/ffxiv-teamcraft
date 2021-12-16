@@ -21,4 +21,5 @@ import { EorzeaFacade } from './+state/eorzea.facade';
   ],
   providers: [EorzeaFacade]
 })
-export class EorzeaModule {}
+export class EorzeaModule {
+}

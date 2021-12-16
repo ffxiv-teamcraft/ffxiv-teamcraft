@@ -5,6 +5,8 @@ import { DataModel } from '../../core/database/storage/data-model';
 
 export class CommissionProfile extends DataModel {
   ratings: CommissionRating[] = [];
+
   firedFeedbacks: FiredFeedback[] = [];
+
   resignedFeedback: ResignedFeedback[] = [];
 }

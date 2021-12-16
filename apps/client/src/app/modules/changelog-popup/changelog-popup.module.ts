@@ -6,7 +6,6 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { TranslateModule } from '@ngx-translate/core';
 
 
-
 @NgModule({
   declarations: [ChangelogPopupComponent],
   exports: [ChangelogPopupComponent],
@@ -17,4 +16,5 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule
   ]
 })
-export class ChangelogPopupModule { }
+export class ChangelogPopupModule {
+}

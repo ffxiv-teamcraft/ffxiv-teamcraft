@@ -71,41 +71,6 @@ export class FoldersFacade {
     );
   }
 
-  private getSyncFolderDisplay<T extends DataModel>(folders: Folder<T>[], entities: T[], folder: Folder<T>): PreprocessedDisplay<T> {
-    const display = new FolderDisplay<T>(folder);
-    const missingEntities: string[] = [];
-    const missingFolders: string[] = [];
-    const entitiesPicked: string[] = [];
-    folder.content.forEach($key => {
-      const matchingEntity = entities.find(e => e.$key === $key);
-      if (matchingEntity) {
-        entitiesPicked.push($key);
-        if (!matchingEntity.notFound) {
-          display.content.push(matchingEntity);
-        }
-      } else {
-        missingEntities.push($key);
-      }
-    });
-    folder.subFolders.forEach($key => {
-      const matchingFolder = folders.find(f => f.$key === $key);
-      if (!matchingFolder) {
-        missingFolders.push($key);
-        return;
-      }
-      const folderDisplay = this.getSyncFolderDisplay(folders, entities, matchingFolder);
-      display.subFolders.push(folderDisplay.display);
-      missingEntities.push(...folderDisplay.missingEntities);
-      entitiesPicked.push(...folderDisplay.pickedEntities);
-    });
-    return {
-      display: display,
-      missingEntities: missingEntities,
-      missingFolders: missingFolders,
-      pickedEntities: entitiesPicked
-    };
-  }
-
   getSelectedFolderDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<FolderDisplay<T>> {
     if (this.selectedFoldersCache[type] === undefined) {
       const selectedFolder$ = this.store.pipe(
@@ -208,5 +173,40 @@ export class FoldersFacade {
 
   load($key: string) {
     this.store.dispatch(new LoadFolder($key));
+  }
+
+  private getSyncFolderDisplay<T extends DataModel>(folders: Folder<T>[], entities: T[], folder: Folder<T>): PreprocessedDisplay<T> {
+    const display = new FolderDisplay<T>(folder);
+    const missingEntities: string[] = [];
+    const missingFolders: string[] = [];
+    const entitiesPicked: string[] = [];
+    folder.content.forEach($key => {
+      const matchingEntity = entities.find(e => e.$key === $key);
+      if (matchingEntity) {
+        entitiesPicked.push($key);
+        if (!matchingEntity.notFound) {
+          display.content.push(matchingEntity);
+        }
+      } else {
+        missingEntities.push($key);
+      }
+    });
+    folder.subFolders.forEach($key => {
+      const matchingFolder = folders.find(f => f.$key === $key);
+      if (!matchingFolder) {
+        missingFolders.push($key);
+        return;
+      }
+      const folderDisplay = this.getSyncFolderDisplay(folders, entities, matchingFolder);
+      display.subFolders.push(folderDisplay.display);
+      missingEntities.push(...folderDisplay.missingEntities);
+      entitiesPicked.push(...folderDisplay.pickedEntities);
+    });
+    return {
+      display: display,
+      missingEntities: missingEntities,
+      missingFolders: missingFolders,
+      pickedEntities: entitiesPicked
+    };
   }
 }

@@ -12,7 +12,7 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 
 export class GardeningExtractor extends AbstractExtractor<GardeningData> {
 
-  constructor( private lazyData: LazyDataFacade,
+  constructor(private lazyData: LazyDataFacade,
               private http: HttpClient) {
     super();
   }

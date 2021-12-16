@@ -1,20 +1,20 @@
 export interface LazyRecipesIngredientLookup {
   searchIndex: { [key: string]: number[] };
-  recipes:     { [key: string]: Recipe };
+  recipes: { [key: string]: Recipe };
 }
 
 export interface Recipe {
-  itemId:      number;
-  recipeId:    number;
+  itemId: number;
+  recipeId: number;
   ingredients: Ingredient[];
-  yields:      number;
-  lvl:         number;
-  job:         number;
-  stars:       number;
+  yields: number;
+  lvl: number;
+  job: number;
+  stars: number;
 }
 
 export interface Ingredient {
-  id:      number;
-  amount:  number;
+  id: number;
+  amount: number;
   quality: number | null;
 }

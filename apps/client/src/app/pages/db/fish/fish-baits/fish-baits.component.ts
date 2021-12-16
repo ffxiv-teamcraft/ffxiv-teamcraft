@@ -27,7 +27,7 @@ export class FishBaitsComponent {
             value: bait.occurrences,
             baitId: bait.id
           }))
-            .sort((a,b) => b.value - a.value);
+            .sort((a, b) => b.value - a.value);
         }),
         debounceTime(100)
       );

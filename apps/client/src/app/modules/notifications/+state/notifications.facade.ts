@@ -15,6 +15,7 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 @Injectable()
 export class NotificationsFacade {
   loaded$ = this.store.select(notificationsQuery.getLoaded);
+
   allNotifications$ = this.store.select(notificationsQuery.getAllNotifications);
 
   notificationsDisplay$ = this.allNotifications$.pipe(

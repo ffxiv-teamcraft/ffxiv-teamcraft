@@ -5,5 +5,5 @@ export interface TerritoryLayer {
   index: number;
   placeNameId: number;
   ignored?: boolean;
-  bounds: Vector3<{ min: number, max: number }>
+  bounds: Vector3<{ min: number, max: number }>;
 }

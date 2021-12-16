@@ -341,40 +341,6 @@ export class StatsService {
     );
   }
 
-  private getNextBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
-    return this.getStatValue(displayName, level, job, stats).pipe(
-      map(baseValue => ([baseValue, 0, 0])),
-      expand(([baseValue, currentValue, currentBonus]) => {
-        if (Math.abs(currentBonus) < 100 && currentValue <= baseValue) {
-          currentBonus++;
-          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
-            map(newValue => ([baseValue, newValue, currentBonus]))
-          );
-        }
-        return EMPTY;
-      }),
-      last(),
-      map(([, , bonus]) => bonus)
-    );
-  }
-
-  private getPreviousBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
-    return this.getStatValue(displayName, level, job, stats).pipe(
-      map(baseValue => ([baseValue, Infinity, 0])),
-      expand(([baseValue, currentValue, currentBonus]) => {
-        if (Math.abs(currentBonus) < 100 && currentValue >= baseValue) {
-          currentBonus--;
-          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
-            map(newValue => ([baseValue, newValue, currentBonus]))
-          );
-        }
-        return EMPTY;
-      }),
-      last(),
-      map(([, , bonus]) => bonus)
-    );
-  }
-
   @Memoized()
   public getBaseValue(baseParamId: number, job: number, level: number, tribe: number): Observable<number> {
     if (baseParamId === BaseParam.CP) {
@@ -403,33 +369,6 @@ export class StatsService {
       shareReplay(1)
     );
 
-  }
-
-  private getModifier(baseParamId: number, job: number): Observable<number> {
-    return this.lazyData.getRow('classJobsModifiers', job).pipe(
-      map(modifiers => {
-        switch (baseParamId) {
-          case BaseParam.DEXTERITY:
-            return modifiers.ModifierDexterity / 100;
-          case BaseParam.HP:
-            return modifiers.ModifierHitPoints / 100;
-          case BaseParam.INTELLIGENCE:
-            return modifiers.ModifierIntelligence / 100;
-          case BaseParam.MP:
-            return modifiers.ModifierManaPoints / 100;
-          case BaseParam.MIND:
-            return modifiers.ModifierMind / 100;
-          case BaseParam.PIETY:
-            return modifiers.ModifierPiety / 100;
-          case BaseParam.STRENGTH:
-            return modifiers.ModifierStrength / 100;
-          case BaseParam.VITALITY:
-            return modifiers.ModifierVitality / 100;
-          default:
-            return 1;
-        }
-      })
-    );
   }
 
   public getRelevantBaseStats(job: number): number[] {
@@ -550,56 +489,6 @@ export class StatsService {
     return 0;
   }
 
-  private getMainStatBonus(level: number): number {
-    if (level >= 70) {
-      return 48;
-    }
-    if (level >= 60) {
-      // Probably not accurate, seems like it's one value per extension
-      return 48;
-    }
-    if (level >= 50) {
-      // Probably not accurate, seems like it's one value per extension
-      return 48;
-    }
-    // Probably not accurate, seems like it's one value per extension
-    return 8;
-  }
-
-  private getTribeBonus(baseParamId: number, tribe: number): Observable<number> {
-    return this.lazyData.getRow('tribes', tribe).pipe(
-      map(tribeData => {
-        const abbr = this.getStatAbbr(baseParamId);
-        if (abbr === null) {
-          return 0;
-        }
-        return +tribeData[abbr];
-      })
-    );
-  }
-
-  private getStatAbbr(baseParamId: number): string | null {
-    switch (baseParamId) {
-      case BaseParam.HP:
-        return 'Hp';
-      case BaseParam.INTELLIGENCE:
-        return 'INT';
-      case BaseParam.MIND:
-        return 'MND';
-      case BaseParam.MP:
-        return 'Mp';
-      case BaseParam.PIETY:
-        return 'PIE';
-      case BaseParam.STRENGTH:
-        return 'STR';
-      case BaseParam.VITALITY:
-        return 'VIT';
-      case BaseParam.DEXTERITY:
-        return 'DEX';
-    }
-    return null;
-  }
-
   public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): Observable<{ baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[]> {
     return this.getAvgIlvl(set).pipe(
       switchMap(avgIlvl => {
@@ -694,6 +583,117 @@ export class StatsService {
         return Math.floor(withoutOffHand / 11);
       })
     );
+  }
+
+  private getNextBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
+    return this.getStatValue(displayName, level, job, stats).pipe(
+      map(baseValue => ([baseValue, 0, 0])),
+      expand(([baseValue, currentValue, currentBonus]) => {
+        if (Math.abs(currentBonus) < 100 && currentValue <= baseValue) {
+          currentBonus++;
+          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
+            map(newValue => ([baseValue, newValue, currentBonus]))
+          );
+        }
+        return EMPTY;
+      }),
+      last(),
+      map(([, , bonus]) => bonus)
+    );
+  }
+
+  private getPreviousBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): Observable<number> {
+    return this.getStatValue(displayName, level, job, stats).pipe(
+      map(baseValue => ([baseValue, Infinity, 0])),
+      expand(([baseValue, currentValue, currentBonus]) => {
+        if (Math.abs(currentBonus) < 100 && currentValue >= baseValue) {
+          currentBonus--;
+          return this.getStatValue(displayName, level, job, stats, currentBonus).pipe(
+            map(newValue => ([baseValue, newValue, currentBonus]))
+          );
+        }
+        return EMPTY;
+      }),
+      last(),
+      map(([, , bonus]) => bonus)
+    );
+  }
+
+  private getModifier(baseParamId: number, job: number): Observable<number> {
+    return this.lazyData.getRow('classJobsModifiers', job).pipe(
+      map(modifiers => {
+        switch (baseParamId) {
+          case BaseParam.DEXTERITY:
+            return modifiers.ModifierDexterity / 100;
+          case BaseParam.HP:
+            return modifiers.ModifierHitPoints / 100;
+          case BaseParam.INTELLIGENCE:
+            return modifiers.ModifierIntelligence / 100;
+          case BaseParam.MP:
+            return modifiers.ModifierManaPoints / 100;
+          case BaseParam.MIND:
+            return modifiers.ModifierMind / 100;
+          case BaseParam.PIETY:
+            return modifiers.ModifierPiety / 100;
+          case BaseParam.STRENGTH:
+            return modifiers.ModifierStrength / 100;
+          case BaseParam.VITALITY:
+            return modifiers.ModifierVitality / 100;
+          default:
+            return 1;
+        }
+      })
+    );
+  }
+
+  private getMainStatBonus(level: number): number {
+    if (level >= 70) {
+      return 48;
+    }
+    if (level >= 60) {
+      // Probably not accurate, seems like it's one value per extension
+      return 48;
+    }
+    if (level >= 50) {
+      // Probably not accurate, seems like it's one value per extension
+      return 48;
+    }
+    // Probably not accurate, seems like it's one value per extension
+    return 8;
+  }
+
+  private getTribeBonus(baseParamId: number, tribe: number): Observable<number> {
+    return this.lazyData.getRow('tribes', tribe).pipe(
+      map(tribeData => {
+        const abbr = this.getStatAbbr(baseParamId);
+        if (abbr === null) {
+          return 0;
+        }
+        return +tribeData[abbr];
+      })
+    );
+  }
+
+  private getStatAbbr(baseParamId: number): string | null {
+    switch (baseParamId) {
+      case BaseParam.HP:
+        return 'Hp';
+      case BaseParam.INTELLIGENCE:
+        return 'INT';
+      case BaseParam.MIND:
+        return 'MND';
+      case BaseParam.MP:
+        return 'Mp';
+      case BaseParam.PIETY:
+        return 'PIE';
+      case BaseParam.STRENGTH:
+        return 'STR';
+      case BaseParam.VITALITY:
+        return 'VIT';
+      case BaseParam.DEXTERITY:
+        return 'DEX';
+    }
+    return null;
   }
 
   private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): Observable<number> {

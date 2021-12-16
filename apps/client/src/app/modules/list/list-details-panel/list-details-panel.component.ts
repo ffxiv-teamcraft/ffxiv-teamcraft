@@ -48,35 +48,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   @Input()
   displayRow: LayoutRowDisplay;
 
-  private displayRow$ = observeInput(this, 'displayRow');
-
-  public get displayMode(): LayoutRowDisplayMode {
-    if (this.displayRow.zoneBreakdown) {
-      return LayoutRowDisplayMode.ZONE_BREAKDOWN;
-    }
-    if (this.displayRow.tiers) {
-      return LayoutRowDisplayMode.TIERS;
-    }
-    if (this.displayRow.reverseTiers) {
-      return LayoutRowDisplayMode.REVERSE_TIERS;
-    }
-    if (this.displayRow.npcBreakdown) {
-      return LayoutRowDisplayMode.NPC_BREAKDOWN;
-    }
-    return LayoutRowDisplayMode.DEFAULT;
-  }
-
-  public get noScroll(): boolean {
-    switch (this.settings.listScrollingMode) {
-      case 'default':
-        return false;
-      case 'large':
-        return !this.largeList;
-      case 'never':
-        return true;
-    }
-  }
-
   @Input()
   finalItems = false;
 
@@ -87,6 +58,26 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   largeList = false;
 
   collapsed = false;
+
+  zoneBreakdown: ZoneBreakdown;
+
+  npcBreakdown: NpcBreakdown;
+
+  hasTrades = false;
+
+  hasNavigationMap = false;
+
+  hasNavigationMapForZone: { [index: number]: boolean } = {};
+
+  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+
+  currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
+
+  hasAlreadyBeenOpened: boolean;
+
+  private displayRow$ = observeInput(this, 'displayRow');
 
   progression$: Observable<{ progress: number }> = this.displayRow$.pipe(
     map(displayRow => {
@@ -118,24 +109,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     })
   );
 
-  zoneBreakdown: ZoneBreakdown;
-
-  npcBreakdown: NpcBreakdown;
-
-  hasTrades = false;
-
-  hasNavigationMap = false;
-
-  hasNavigationMapForZone: { [index: number]: boolean } = {};
-
-  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
-
-  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
-
-  currentZoneId$: Observable<number> = this.eorzeaFacade.zoneId$;
-
-  hasAlreadyBeenOpened: boolean;
-
   constructor(private i18n: I18nToolsService, private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
@@ -143,6 +116,33 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
               public settings: SettingsService, private lazyData: LazyDataFacade,
               private cd: ChangeDetectorRef) {
+  }
+
+  public get displayMode(): LayoutRowDisplayMode {
+    if (this.displayRow.zoneBreakdown) {
+      return LayoutRowDisplayMode.ZONE_BREAKDOWN;
+    }
+    if (this.displayRow.tiers) {
+      return LayoutRowDisplayMode.TIERS;
+    }
+    if (this.displayRow.reverseTiers) {
+      return LayoutRowDisplayMode.REVERSE_TIERS;
+    }
+    if (this.displayRow.npcBreakdown) {
+      return LayoutRowDisplayMode.NPC_BREAKDOWN;
+    }
+    return LayoutRowDisplayMode.DEFAULT;
+  }
+
+  public get noScroll(): boolean {
+    switch (this.settings.listScrollingMode) {
+      case 'default':
+        return false;
+      case 'large':
+        return !this.largeList;
+      case 'never':
+        return true;
+    }
   }
 
   addItems(): void {
@@ -210,33 +210,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = hasPositions;
       this.cd.detectChanges();
     });
-  }
-
-  private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {
-    return this.lazyData.getEntry('maps')
-      .pipe(
-        map(maps => {
-          return rows.reduce((hasMap, row) => {
-            const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
-              return d.position
-                && (d.position.x !== undefined)
-                && !maps[d.mapid].dungeon
-                && (!zoneId || d.zoneid === zoneId);
-            });
-            const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
-            const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
-            const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
-            return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
-          }, false);
-        })
-      );
-  }
-
-  private getHideZoneDuplicates(): boolean {
-    if (this.displayRow.layoutRow === null) {
-      return this.displayRow.layout.recipeHideZoneDuplicates;
-    }
-    return this.displayRow.layoutRow.hideZoneDuplicates;
   }
 
   public openZoneBreakdownRowNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
@@ -318,75 +291,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    const vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
-    const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
-    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
-    const drops = getItemSource<Drop[]>(row, DataType.DROPS);
-    const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
-    const positions = [];
-    if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId)) {
-      const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId);
-      positions.push({
-        x: vendor.coords.x,
-        y: vendor.coords.y,
-        type: 'Vendor'
-      });
-    }
-    if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.mapId === zoneBreakdownRow.mapId))) {
-      const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId));
-      const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId);
-      positions.push({
-        x: npc.coords.x,
-        y: npc.coords.y,
-        type: 'Trade'
-      });
-    }
-    if ((gatheredBy.nodes || []).some(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId)) {
-      const node = gatheredBy.nodes.find(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId);
-      positions.push({
-        x: node.x,
-        y: node.y,
-        type: 'Gathering',
-        gatheringType: node.type
-      });
-    }
-    if (drops.some(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId)) {
-      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId && d.position.fate === undefined)
-        || drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId);
-      positions.push({
-        x: drop.position.x,
-        y: drop.position.y,
-        fate: drop.position.fate,
-        monster: drop.id,
-        type: 'Hunting'
-      });
-    }
-    if (alarms.some(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId)) {
-      const alarm = alarms.find(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId);
-      positions.push({
-        x: alarm.coords.x,
-        y: alarm.coords.y,
-        type: 'Gathering',
-        gatheringType: alarm.type
-      });
-    }
-    const isGathering = this.displayRow.filterChain.indexOf('IS_GATHERING') > -1;
-    const isVendor = this.displayRow.filterChain.indexOf('CAN_BE_BOUGHT') > -1;
-    const isTrade = this.displayRow.filterChain.indexOf('TRADE') > -1;
-    const isHunting = this.displayRow.filterChain.indexOf('_DROP') > -1;
-    const preferredPosition = positions.find(p => {
-      if (isGathering || isVendor || isTrade || isHunting) {
-        return (p.type === 'Gathering' && isGathering)  ||
-        (p.type === 'Vendor' && isVendor) ||
-        (p.type === 'Trade' && isTrade) ||
-        (p.type === 'Hunting' && isHunting);
-      }
-      return true;
-    });
-    return preferredPosition || positions[0];
-  }
-
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
       this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
@@ -401,61 +305,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.displayRow.rows.forEach(row => {
       this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, -row.done, row.recipeId, row.amount, false);
     });
-  }
-
-  private topologicalSort(data: ListRow[]): ListRow[] {
-    const res: ListRow[] = [];
-    const doneList: boolean[] = [];
-    while (data.length > res.length) {
-      let resolved = false;
-
-      for (const item of data) {
-        if (res.indexOf(item) > -1) {
-          // item already in resultset
-          continue;
-        }
-        resolved = true;
-
-        if (item.requires !== undefined) {
-          for (const dep of item.requires) {
-            // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
-            const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
-            if (!doneList[dep.id] && depIsInArray) {
-              // there is a dependency that is not met:
-              resolved = false;
-              break;
-            }
-          }
-        }
-        if (resolved) {
-          // All dependencies are met:
-          doneList[item.id] = true;
-          res.push(item);
-        }
-      }
-    }
-    return res;
-  }
-
-  private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {
-    if (result[0] === undefined) {
-      result[0] = [];
-    }
-    // Default tier is -1, because we want to do +1 to the last requirement tier to define the tier of the current item.
-    let requirementsTier = -1;
-    for (const requirement of (row.requires || [])) {
-      for (let tier = 0; tier < result.length; tier++) {
-        if (result[tier].find(r => r.id === requirement.id) !== undefined) {
-          requirementsTier = requirementsTier > tier ? requirementsTier : tier;
-        }
-      }
-    }
-    const itemTier = requirementsTier + 1;
-    if (result[itemTier] === undefined) {
-      result[itemTier] = [];
-    }
-    result[itemTier].push(row);
-    return result;
   }
 
   public getLocation(id: number): Observable<string> {
@@ -521,6 +370,157 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   trackByNpc(index: number, item: NpcBreakdownRow) {
     return item.npcId;
+  }
+
+  private hasPositionsInRows(rows: ListRow[], zoneId?: number): Observable<boolean> {
+    return this.lazyData.getEntry('maps')
+      .pipe(
+        map(maps => {
+          return rows.reduce((hasMap, row) => {
+            const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
+              return d.position
+                && (d.position.x !== undefined)
+                && !maps[d.mapid].dungeon
+                && (!zoneId || d.zoneid === zoneId);
+            });
+            const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
+            const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
+            const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
+            return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
+          }, false);
+        })
+      );
+  }
+
+  private getHideZoneDuplicates(): boolean {
+    if (this.displayRow.layoutRow === null) {
+      return this.displayRow.layout.recipeHideZoneDuplicates;
+    }
+    return this.displayRow.layoutRow.hideZoneDuplicates;
+  }
+
+  private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
+    const vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
+    const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
+    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
+    const drops = getItemSource<Drop[]>(row, DataType.DROPS);
+    const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
+    const positions = [];
+    if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId)) {
+      const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.mapId === zoneBreakdownRow.mapId);
+      positions.push({
+        x: vendor.coords.x,
+        y: vendor.coords.y,
+        type: 'Vendor'
+      });
+    }
+    if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.mapId === zoneBreakdownRow.mapId))) {
+      const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId));
+      const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.mapId === zoneBreakdownRow.mapId);
+      positions.push({
+        x: npc.coords.x,
+        y: npc.coords.y,
+        type: 'Trade'
+      });
+    }
+    if ((gatheredBy.nodes || []).some(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId)) {
+      const node = gatheredBy.nodes.find(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId);
+      positions.push({
+        x: node.x,
+        y: node.y,
+        type: 'Gathering',
+        gatheringType: node.type
+      });
+    }
+    if (drops.some(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId)) {
+      const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId && d.position.fate === undefined)
+        || drops.find(d => d.position && (d.position.x !== undefined) && d.mapid === zoneBreakdownRow.mapId);
+      positions.push({
+        x: drop.position.x,
+        y: drop.position.y,
+        fate: drop.position.fate,
+        monster: drop.id,
+        type: 'Hunting'
+      });
+    }
+    if (alarms.some(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId)) {
+      const alarm = alarms.find(a => a.coords && a.coords.x && a.mapId === zoneBreakdownRow.mapId);
+      positions.push({
+        x: alarm.coords.x,
+        y: alarm.coords.y,
+        type: 'Gathering',
+        gatheringType: alarm.type
+      });
+    }
+    const isGathering = this.displayRow.filterChain.indexOf('IS_GATHERING') > -1;
+    const isVendor = this.displayRow.filterChain.indexOf('CAN_BE_BOUGHT') > -1;
+    const isTrade = this.displayRow.filterChain.indexOf('TRADE') > -1;
+    const isHunting = this.displayRow.filterChain.indexOf('_DROP') > -1;
+    const preferredPosition = positions.find(p => {
+      if (isGathering || isVendor || isTrade || isHunting) {
+        return (p.type === 'Gathering' && isGathering) ||
+          (p.type === 'Vendor' && isVendor) ||
+          (p.type === 'Trade' && isTrade) ||
+          (p.type === 'Hunting' && isHunting);
+      }
+      return true;
+    });
+    return preferredPosition || positions[0];
+  }
+
+  private topologicalSort(data: ListRow[]): ListRow[] {
+    const res: ListRow[] = [];
+    const doneList: boolean[] = [];
+    while (data.length > res.length) {
+      let resolved = false;
+
+      for (const item of data) {
+        if (res.indexOf(item) > -1) {
+          // item already in resultset
+          continue;
+        }
+        resolved = true;
+
+        if (item.requires !== undefined) {
+          for (const dep of item.requires) {
+            // We have to check if it's not a precraft, as some dependencies aren't resolvable inside the current array.
+            const depIsInArray = data.find(row => row.id === dep.id) !== undefined;
+            if (!doneList[dep.id] && depIsInArray) {
+              // there is a dependency that is not met:
+              resolved = false;
+              break;
+            }
+          }
+        }
+        if (resolved) {
+          // All dependencies are met:
+          doneList[item.id] = true;
+          res.push(item);
+        }
+      }
+    }
+    return res;
+  }
+
+  private setTier(row: ListRow, result: ListRow[][]): ListRow[][] {
+    if (result[0] === undefined) {
+      result[0] = [];
+    }
+    // Default tier is -1, because we want to do +1 to the last requirement tier to define the tier of the current item.
+    let requirementsTier = -1;
+    for (const requirement of (row.requires || [])) {
+      for (let tier = 0; tier < result.length; tier++) {
+        if (result[tier].find(r => r.id === requirement.id) !== undefined) {
+          requirementsTier = requirementsTier > tier ? requirementsTier : tier;
+        }
+      }
+    }
+    const itemTier = requirementsTier + 1;
+    if (result[itemTier] === undefined) {
+      result[itemTier] = [];
+    }
+    result[itemTier].push(row);
+    return result;
   }
 
 }

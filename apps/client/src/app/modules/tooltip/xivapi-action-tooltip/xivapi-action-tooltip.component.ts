@@ -16,16 +16,16 @@ export class XivapiActionTooltipComponent implements OnInit {
 
   @Input() stateColor: string;
 
+  details: { name: string, value: any, requiresPipe: boolean }[];
+
+  constructor(private i18n: I18nToolsService) {
+  }
+
   get stateName(): string {
     if (!this.state) {
       return 'Normal';
     }
     return `${StepState[this.state].charAt(0).toUpperCase()}${StepState[this.state].slice(1).toLowerCase()}`;
-  }
-
-  details: { name: string, value: any, requiresPipe: boolean }[];
-
-  constructor(private i18n: I18nToolsService) {
   }
 
   ngOnInit(): void {

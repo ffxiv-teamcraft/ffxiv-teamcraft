@@ -18,12 +18,16 @@ import { FishingSpotUtilsService } from '../fishing-spot-utils.service';
 })
 export class FishingSpotDatagridComponent<T extends string | number = number> {
   public readonly activeFish$ = new BehaviorSubject<number | undefined>(undefined);
+
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
+
   @Input()
   public rowIconRender?: TemplateRef<DatagridColDef>;
+
   @Input()
   public colIconRender?: TemplateRef<DatagridColDef>;
+
   public readonly table$ = new ReplaySubject<Datagrid<T>>();
 
   constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {

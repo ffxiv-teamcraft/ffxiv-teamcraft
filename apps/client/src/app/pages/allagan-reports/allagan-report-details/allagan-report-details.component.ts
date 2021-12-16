@@ -48,11 +48,17 @@ function durationRequired(control: AbstractControl) {
 export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   loadingReports = false;
+
   loadingReportsQueue = false;
+
   modificationId$ = new BehaviorSubject<string>(null);
+
   source: AllaganReportSource;
+
   voyageType: 0 | 1;
+
   AllaganReportSource = AllaganReportSource;
+
   SearchType = SearchType;
 
   itemId$ = this.route.paramMap.pipe(

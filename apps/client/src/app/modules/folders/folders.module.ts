@@ -44,7 +44,6 @@ import { FavoritesModule } from '../favorites/favorites.module';
     NzIconModule,
 
 
-
     TranslateModule,
     CoreModule,
     PipesModule,

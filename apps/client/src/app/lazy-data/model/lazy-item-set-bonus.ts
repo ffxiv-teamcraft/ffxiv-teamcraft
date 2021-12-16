@@ -1,10 +1,10 @@
 export interface LazyItemSetBonus {
   itemSeriesId: number;
-  bonuses:      Bonus[];
+  bonuses: Bonus[];
 }
 
 export interface Bonus {
-  baseParam:      number;
-  value:          number;
+  baseParam: number;
+  value: number;
   amountRequired: number;
 }

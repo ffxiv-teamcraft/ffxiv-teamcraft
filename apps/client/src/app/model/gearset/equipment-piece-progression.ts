@@ -1,4 +1,4 @@
 export interface EquipmentPieceProgression {
-  item: boolean
-  materias: boolean[]
+  item: boolean;
+  materias: boolean[];
 }

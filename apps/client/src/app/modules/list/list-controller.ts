@@ -460,6 +460,42 @@ export class ListController {
     );
   }
 
+  public static isLarge(list: List): boolean {
+    return list.items && list.items.length >= 100 || list.finalItems && list.finalItems.length > 50;
+  }
+
+  public static isTooLarge(list: List): boolean {
+    return list.items.length + list.finalItems.length > 1000;
+  }
+
+  public static afterDeserialized(list: List): void {
+    if (typeof list.createdAt !== 'object') {
+      list.createdAt = firebase.firestore.Timestamp.fromDate(new Date(list.createdAt));
+    } else if (!(list.createdAt instanceof firebase.firestore.Timestamp)) {
+      list.createdAt = new firebase.firestore.Timestamp((list.createdAt as any).seconds, (list.createdAt as any).nanoseconds);
+    }
+    // lmao nice hotfix
+    if (!list.name) {
+      console.log('List has no name', list.$key);
+    }
+    if ((<any>list.name)?.name) {
+      list.name = (<any>list.name).name;
+    }
+  }
+
+  public static shouldIgnoreRequirements(list: List, array: 'items' | 'finalItems', itemId: number): boolean {
+    return (list.ignoreRequirementsRegistry || {})[`${array}:${itemId}`] === 1;
+  }
+
+  public static setIgnoreRequirements(list: List, array: 'items' | 'finalItems', itemId: number, ignore: boolean): void {
+    list.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry || {};
+    if (ignore) {
+      list.ignoreRequirementsRegistry[`${array}:${itemId}`] = 1;
+    } else {
+      delete list.ignoreRequirementsRegistry[`${array}:${itemId}`];
+    }
+  }
+
   private static addNormalCraft(list: List, addition: CraftAddition, listManager: ListManagerService, lazyDataFacade: LazyDataFacade, gearsets: TeamcraftGearsetStats[], recipeId: string, finalItem: boolean): Observable<CraftAddition[]> {
     let craft: CraftedBy;
     const crafts = getItemSource(addition.item, DataType.CRAFTED_BY);
@@ -680,14 +716,6 @@ export class ListController {
     return added;
   }
 
-  public static isLarge(list: List): boolean {
-    return list.items && list.items.length >= 100 || list.finalItems && list.finalItems.length > 50;
-  }
-
-  public static isTooLarge(list: List): boolean {
-    return list.items.length + list.finalItems.length > 1000;
-  }
-
   /**
    * Gets the total amount needed for a given item based on requirements of the crafts in the list.
    * @param list
@@ -711,33 +739,5 @@ export class ListController {
       }
     });
     return count;
-  }
-
-  public static afterDeserialized(list: List): void {
-    if (typeof list.createdAt !== 'object') {
-      list.createdAt = firebase.firestore.Timestamp.fromDate(new Date(list.createdAt));
-    } else if (!(list.createdAt instanceof firebase.firestore.Timestamp)) {
-      list.createdAt = new firebase.firestore.Timestamp((list.createdAt as any).seconds, (list.createdAt as any).nanoseconds);
-    }
-    // lmao nice hotfix
-    if (!list.name) {
-      console.log('List has no name', list.$key);
-    }
-    if ((<any>list.name)?.name) {
-      list.name = (<any>list.name).name;
-    }
-  }
-
-  public static shouldIgnoreRequirements(list: List, array: 'items' | 'finalItems', itemId: number): boolean {
-    return (list.ignoreRequirementsRegistry || {})[`${array}:${itemId}`] === 1;
-  }
-
-  public static setIgnoreRequirements(list: List, array: 'items' | 'finalItems', itemId: number, ignore: boolean): void {
-    list.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry || {};
-    if (ignore) {
-      list.ignoreRequirementsRegistry[`${array}:${itemId}`] = 1;
-    } else {
-      delete list.ignoreRequirementsRegistry[`${array}:${itemId}`];
-    }
   }
 }

@@ -26,10 +26,13 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class CustomItemsFacade {
   loaded$ = this.store.pipe(select(customItemsQuery.getLoaded));
+
   foldersLoaded$ = this.store.pipe(select(customItemsQuery.getFoldersLoaded));
+
   allCustomItems$ = this.store.pipe(select(customItemsQuery.getAllCustomItems)).pipe(
     map(items => items.sort((a, b) => a.index - b.index))
   );
+
   allCustomItemFolders$ = this.store.pipe(select(customItemsQuery.getAllCustomItemFolders)).pipe(
     map(folders => folders.sort((a, b) => a.index - b.index))
   );

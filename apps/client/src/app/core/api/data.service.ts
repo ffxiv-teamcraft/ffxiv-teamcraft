@@ -48,8 +48,11 @@ export class DataService {
     mob: 2,
     fate: 2
   };
+
   public searchLang = this.translate.currentLang;
+
   private garlandUrl = 'https://www.garlandtools.org/db/doc';
+
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
   constructor(private http: HttpClient,

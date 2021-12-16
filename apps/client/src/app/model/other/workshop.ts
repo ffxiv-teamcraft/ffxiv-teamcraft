@@ -3,8 +3,11 @@ import firebase from 'firebase/compat/app';
 
 export class Workshop extends DataWithPermissions {
   name: string;
+
   listIds: string[] = [];
+
   createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();
+
   index = -1;
 
   afterDeserialized(): void {
