@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Optional } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { Vendor } from '../../list/model/vendor';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -11,7 +11,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
 })
 export class VendorsComponent extends ItemDetailsPopup<Vendor[]> implements OnInit {
 
-  constructor(public modalRef: NzModalRef) {
+  constructor(@Optional() public modalRef: NzModalRef) {
     super();
   }
 

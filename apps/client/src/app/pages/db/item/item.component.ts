@@ -141,7 +141,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             if (item.canBeGathered) {
               item.isDoneInLog = logTracking?.gathering.includes(item.id);
             }
-            return this.handleAdditionalData(item, data, xivapiItem);
+            return this.handleAdditionalData(item, xivapiItem);
           })
         );
       } else {
@@ -151,7 +151,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             if (item.canBeGathered) {
               item.isDoneInLog = logTracking?.gathering.includes(item.id);
             }
-            return this.handleAdditionalData(item, data, xivapiItem);
+            return this.handleAdditionalData(item, xivapiItem);
           })
         );
       }
@@ -846,7 +846,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     return this.i18n.getName(this.i18n.xivapiToI18n(item));
   }
 
-  private handleAdditionalData(_item: ListRow, gtData: ItemData, xivapiItem: any): Observable<ListRow> {
+  private handleAdditionalData(_item: ListRow, xivapiItem: any): Observable<ListRow> {
     let res$: Observable<ListRow> = of(_item);
     // TT card
     if (xivapiItem.ItemActionTargetID === 1389) {
