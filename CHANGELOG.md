@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.10"></a>
+## [9.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.9...v9.2.10) (2021-12-16)
+
+
+### Bug Fixes
+
+* **collectables:** fixed level filters not being applied properly ([f2eb02e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f2eb02e))
+* **db:** fixed vendors panel not showing at all ([c9338de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9338de))
+* **layout:** fixed maximum total vendor price not being applied properly ([e61b6e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e61b6e4))
+* **teleport:** adjustments in TP cost formula ([027cfec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/027cfec))
+* **treasures:** added missing 6.0 maps to treasures finder ([58e69ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58e69ed))
+
+
+### Features
+
+* **desktop:** new update popup prompt inside the app instead of focus-hijacking popup ([0d98569](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d98569))
+
+
+### Performance Improvements
+
+* **community-lists:** brand new search engine using algolia ([807bd96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/807bd96))
+
+
+
 <a name="9.2.9"></a>
 ## [9.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.8...v9.2.9) (2021-12-15)
 
