@@ -129,8 +129,8 @@
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
     "Exclude_filter_placeholder": "Exclure les tags",
     "Exclude_filter_reset": "Réinitialiser le filtre d'exclusion",
-    "Name_filter_placeholder": "Filter using name (10 characters minimum)",
-    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 10 characters"
+    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters"
   },
   "COMMON": {
     "Length": "Longueur",
