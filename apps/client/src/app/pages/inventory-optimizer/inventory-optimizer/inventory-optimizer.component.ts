@@ -38,46 +38,6 @@ export class InventoryOptimizerComponent {
 
   public hideEmpty = true;
 
-  public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
-    map((optimizations) => {
-      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
-        const total: number[] = [];
-        opt.entries = opt.entries.map(entry => {
-          entry.ignored = this.ignoreArray.some(ignored => {
-            return ignored.containerName === entry.containerName && ignored.id === opt.type;
-          });
-          entry.items = entry.items.map(item => {
-            item.ignored = this.ignoreArray.some(ignored => {
-              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
-            });
-            return item;
-          }).filter(item => {
-            return this.showIgnored || !item.ignored;
-          });
-          if (this.showIgnored) {
-            entry.totalLength = entry.items.length;
-          } else {
-            entry.totalLength = entry.items.filter(i => !i.ignored).length;
-          }
-          if (this.showIgnored || !entry.ignored) {
-            total.push(...entry.items.map(i => i.item.itemId));
-          }
-          return entry;
-        });
-        opt.hidden = this.hiddenArray.some(hidden => {
-          return hidden.optimizerId === opt.type;
-        });
-        opt.totalLength = uniq(total).length;
-        return opt;
-      });
-    })
-  );
-
-  //for showing hidden optimizers
-  public showHidden = false;
-
-  public loading = false;
-
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.getEntry('extracts').pipe(
     switchMap((extracts) => {
       return combineLatest([
@@ -146,6 +106,46 @@ export class InventoryOptimizerComponent {
       );
     })
   );
+
+  public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
+    map((optimizations) => {
+      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
+        const total: number[] = [];
+        opt.entries = opt.entries.map(entry => {
+          entry.ignored = this.ignoreArray.some(ignored => {
+            return ignored.containerName === entry.containerName && ignored.id === opt.type;
+          });
+          entry.items = entry.items.map(item => {
+            item.ignored = this.ignoreArray.some(ignored => {
+              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
+            });
+            return item;
+          }).filter(item => {
+            return this.showIgnored || !item.ignored;
+          });
+          if (this.showIgnored) {
+            entry.totalLength = entry.items.length;
+          } else {
+            entry.totalLength = entry.items.filter(i => !i.ignored).length;
+          }
+          if (this.showIgnored || !entry.ignored) {
+            total.push(...entry.items.map(i => i.item.itemId));
+          }
+          return entry;
+        });
+        opt.hidden = this.hiddenArray.some(hidden => {
+          return hidden.optimizerId === opt.type;
+        });
+        opt.totalLength = uniq(total).length;
+        return opt;
+      });
+    })
+  );
+
+  //for showing hidden optimizers
+  public showHidden = false;
+
+  public loading = false;
 
   public expansions$ = this.lazyData.getI18nEntry('exVersions').pipe(
     map(versions => Object.keys(versions).map(key => ({ ...versions[key], exVersion: +key })))

@@ -1,4 +1,4 @@
 export interface LazyMogstationSource {
   price: number;
-  id: number;
+  id:    number;
 }

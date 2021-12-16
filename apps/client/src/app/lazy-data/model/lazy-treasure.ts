@@ -1,10 +1,10 @@
 export interface LazyTreasure {
-  id: string;
-  coords: Coords;
+  id:        string;
+  coords:    Coords;
   rawCoords: Coords;
-  map: number;
+  map:       number;
   partySize: number;
-  item: number;
+  item:      number;
 }
 
 export interface Coords {

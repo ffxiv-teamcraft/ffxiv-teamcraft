@@ -1,8 +1,8 @@
 export interface LazyQuest {
-  name: Name;
-  icon: string;
+  name:     Name;
+  icon:     string;
   rewards?: Reward[];
-  trades?: Trade[];
+  trades?:  Trade[];
 }
 
 export interface Name {
@@ -13,11 +13,11 @@ export interface Name {
 }
 
 export interface Reward {
-  id: number;
+  id:      number;
   amount?: number;
 }
 
 export interface Trade {
   currencies: Reward[];
-  items: Reward[];
+  items:      Reward[];
 }

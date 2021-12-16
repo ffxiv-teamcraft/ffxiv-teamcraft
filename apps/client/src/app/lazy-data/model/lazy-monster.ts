@@ -1,15 +1,15 @@
 export interface LazyMonster {
-  baseid: number;
+  baseid:    number;
   positions: Position[];
 }
 
 export interface Position {
-  map: number;
+  map:    number;
   zoneid: number;
-  level: number;
-  hp: number;
-  fate: number;
-  x: number;
-  y: number;
-  z: number;
+  level:  number;
+  hp:     number;
+  fate:   number;
+  x:      number;
+  y:      number;
+  z:      number;
 }

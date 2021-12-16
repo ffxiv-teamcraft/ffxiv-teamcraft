@@ -39,6 +39,12 @@ import { InventoryState } from './sync-state/inventory-state';
 })
 export class InventoryService {
 
+  private _inventoryPatches$ = new Subject<InventoryPatch>();
+
+  public inventoryPatches$ = this._inventoryPatches$.asObservable().pipe(
+    shareReplay()
+  );
+
   public inventory$: Observable<UserInventory>;
 
   public readonly inventoryEvents$ = this.inventoryPatches$.pipe(
@@ -77,12 +83,6 @@ export class InventoryService {
   private characterEntries: Array<LodestoneIdEntry & { character: CharacterResponse }>;
 
   private odr$: BehaviorSubject<Record<string, ItemOdr>> = new BehaviorSubject<Record<string, ItemOdr>>({});
-
-  private _inventoryPatches$ = new Subject<InventoryPatch>();
-
-  public inventoryPatches$ = this._inventoryPatches$.asObservable().pipe(
-    shareReplay()
-  );
 
   private contentId$ = new Subject<{ type: 'SetContentId', contentId: string }>();
 

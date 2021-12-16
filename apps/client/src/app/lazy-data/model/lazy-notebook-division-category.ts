@@ -1,5 +1,5 @@
 export interface LazyNotebookDivisionCategory {
-  name: Name;
+  name:      Name;
   divisions: number[];
 }
 

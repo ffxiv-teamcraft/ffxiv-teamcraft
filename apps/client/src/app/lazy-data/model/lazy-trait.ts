@@ -1,9 +1,9 @@
 export interface LazyTrait {
-  en: string;
-  de: string;
-  ja: string;
-  fr: string;
-  icon: string;
+  en:          string;
+  de:          string;
+  ja:          string;
+  fr:          string;
+  icon:        string;
   description: Description;
 }
 

@@ -21,12 +21,6 @@ export class NavigationSidebarService {
     shareReplay(1)
   );
 
-  public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(
-    map(content => {
-      return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
-    })
-  );
-
   private settingsChange$ = this.settings.settingsChange$.pipe(
     filter(change => ['sidebar-state', 'sidebar-favorites'].includes(change)),
     startWith('')
@@ -427,6 +421,12 @@ export class NavigationSidebarService {
       return layout;
     }),
     shareReplay(1)
+  );
+
+  public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(
+    map(content => {
+      return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
+    })
   );
 
   constructor(private settings: SettingsService, private sanitizer: DomSanitizer, private platformService: PlatformService,

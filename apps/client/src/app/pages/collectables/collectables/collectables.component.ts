@@ -99,7 +99,14 @@ export class CollectablesComponent {
         return this.lazyData.getEntry('collectablesPageData').pipe(
           map(pageData => {
             return rows.map(({ job, level }) => {
-              return { job, level, groups: pageData[job] };
+              return {
+                job,
+                level,
+                groups: pageData[job].map(group => {
+                  group.collectables = group.collectables.filter(c => c.level <= level);
+                  return group;
+                }).filter(group => group.collectables.length > 0)
+              };
             });
           })
         );

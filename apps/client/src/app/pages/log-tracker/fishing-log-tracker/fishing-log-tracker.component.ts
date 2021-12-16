@@ -24,6 +24,10 @@ export class FishingLogTrackerComponent extends TrackerComponent {
 
   SpearfishingShadowSize = SpearfishingShadowSize;
 
+  public display$: Observable<any[]> = this.fishingLogCacheService.display$.pipe(
+    tap(() => this.loading = false)
+  );
+
   public type$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   public spotId$: ReplaySubject<number> = new ReplaySubject<number>();
@@ -44,9 +48,6 @@ export class FishingLogTrackerComponent extends TrackerComponent {
 
   public loading = true;
 
-  public display$: Observable<any[]> = this.fishingLogCacheService.display$.pipe(
-    tap(() => this.loading = false)
-  );
 
   public hideCompleted = this.settings.hideCompletedLogEntries;
 

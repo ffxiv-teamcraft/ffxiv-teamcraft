@@ -1,27 +1,27 @@
 export interface LazyShop {
-  id: number;
-  type: Type;
-  npcs: number[];
-  trades: Trade[];
+  id:             number;
+  type:           Type;
+  npcs:           number[];
+  trades:         Trade[];
   topicSelectId?: number;
-  gc?: number;
+  gc?:            number;
 }
 
 export interface Trade {
-  currencies: Currency[];
-  items: Currency[];
+  currencies:        Currency[];
+  items:             Currency[];
   requiredFateRank?: number;
-  requiredGCRank?: number;
+  requiredGCRank?:   number;
 }
 
 export interface Currency {
-  id: number;
+  id:     number;
   amount: number;
-  hq?: boolean;
+  hq?:    boolean;
 }
 
 export enum Type {
-  GCShop = 'GCShop',
-  GilShop = 'GilShop',
-  SpecialShop = 'SpecialShop',
+  GCShop = "GCShop",
+  GilShop = "GilShop",
+  SpecialShop = "SpecialShop",
 }

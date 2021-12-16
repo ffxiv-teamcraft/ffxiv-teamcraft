@@ -1,4 +1,4 @@
 export interface LazySpearfishingSource {
-  speed: number;
+  speed:      number;
   shadowSize: number;
 }

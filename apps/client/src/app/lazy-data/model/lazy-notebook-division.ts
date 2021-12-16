@@ -1,5 +1,5 @@
 export interface LazyNotebookDivision {
-  name: Name;
+  name:  Name;
   pages: number[];
 }
 

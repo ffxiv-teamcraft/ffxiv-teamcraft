@@ -90,6 +90,16 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
  */
 @Injectable()
 export class FishContextService {
+
+  private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
+
+  /** The spot id that is currently active and being used to filter results by. */
+  public readonly spotId$ = this.spotIdSub$.pipe(distinctUntilChanged());
+
+  private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
+
+  /** The bait id that is currently active and being used to filter results by. */
+  public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
   /** The fish id that is currently active and being used to filter results by. */
   public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.getEntry('fishes')]).pipe(
     map(([itemId, fishes]) => (itemId > 0 && fishes.includes(itemId) ? itemId : undefined)),
@@ -313,16 +323,6 @@ export class FishContextService {
     }),
     shareReplay(1)
   );
-
-  private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
-
-  /** The spot id that is currently active and being used to filter results by. */
-  public readonly spotId$ = this.spotIdSub$.pipe(distinctUntilChanged());
-
-  private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
-
-  /** The bait id that is currently active and being used to filter results by. */
-  public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
 
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$, this.showMisses$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId > 0),

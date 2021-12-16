@@ -68,6 +68,21 @@ import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service
 })
 export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
+  private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
+
+  public item$: Observable<ListRow> = this._item$.pipe(
+    filter(item => item !== null),
+    map(item => {
+      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+      const vendors = getItemSource(item, DataType.VENDORS);
+      (<any>item).craftedBy = craftedBy ? craftedBy : null;
+      (<any>item).vendors = vendors ? vendors : null;
+      item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
+      return item;
+    }),
+    shareReplay(1)
+  );
+
   buttonsCache = {};
 
   finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -239,21 +254,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         };
       }
     })
-  );
-
-  private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
-
-  public item$: Observable<ListRow> = this._item$.pipe(
-    filter(item => item !== null),
-    map(item => {
-      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-      const vendors = getItemSource(item, DataType.VENDORS);
-      (<any>item).craftedBy = craftedBy ? craftedBy : null;
-      (<any>item).vendors = vendors ? vendors : null;
-      item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
-      return item;
-    }),
-    shareReplay(1)
   );
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
