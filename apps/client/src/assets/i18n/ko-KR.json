@@ -2856,5 +2856,9 @@
     "SUNSET": "저녁",
     "DAY": "낮",
     "NIGHT": "밤"
+  },
+  "UPDATER": {
+    "New_update_available": "A new update is available and has been downloaded",
+    "Restart_to_install": "Do you want to restart now to apply it?"
   }
 }
