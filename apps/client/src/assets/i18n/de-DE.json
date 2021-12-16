@@ -2856,5 +2856,9 @@
     "SUNSET": "Sonnenuntergang",
     "DAY": "Tag",
     "NIGHT": "Nacht"
+  },
+  "UPDATER": {
+    "New_update_available": "A new update is available and has been downloaded",
+    "Restart_to_install": "Do you want to restart now to apply it?"
   }
 }
