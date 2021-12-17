@@ -1,17 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
-* **collectables:** fixed level filters not being applied properly.
-* **db:** fixed vendors panel not showing at all.
-* **layout:** fixed maximum total vendor price not being applied properly.
-* **teleport:** adjustments in TP cost formula.
-* **treasures:** added missing 6.0 maps to treasures finder.
-
-
-### Features
-
-* **desktop:** new update popup prompt inside the app instead of focus-hijacking popup.
-
-
-### Performance Improvements
-
-* **community-lists:** brand new search engine using algolia.`;
+* **ariyala:** fixed ariyala import for both gearsets and lists.
+* **collectables:** fixed collectables not being filtered by level properly.
+* **list:** fixed recipes addition sometimes not applying recipe id properly.
+* **lists:** fixed a bug with list copy sometimes not copying properly.
+* **ventures:** fixed venture thresholds not being accurate.`;
