@@ -2463,22 +2463,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 14
+        "value": 22
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 20
+        "value": 31
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 22
+        "value": 34
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 24
+        "value": 37
       }
     ],
     "category": 17
@@ -2721,22 +2721,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 15
+        "value": 23
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 21
+        "value": 33
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 23
+        "value": 36
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 26
+        "value": 40
       }
     ],
     "category": 17
@@ -2757,22 +2757,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 16
+        "value": 25
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 23
+        "value": 36
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 26
+        "value": 40
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 28
+        "value": 43
       }
     ],
     "category": 17
@@ -2793,22 +2793,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 18
+        "value": 27
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 25
+        "value": 38
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 27
+        "value": 42
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 30
+        "value": 46
       }
     ],
     "category": 17
@@ -2829,22 +2829,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 18
+        "value": 28
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 26
+        "value": 40
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 29
+        "value": 44
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 31
+        "value": 48
       }
     ],
     "category": 17
@@ -2865,22 +2865,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 18
+        "value": 28
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 26
+        "value": 40
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 29
+        "value": 44
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 31
+        "value": 48
       }
     ],
     "category": 17
@@ -2901,22 +2901,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 19
+        "value": 29
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 27
+        "value": 42
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 30
+        "value": 46
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 33
+        "value": 50
       }
     ],
     "category": 17
@@ -2937,22 +2937,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 20
+        "value": 30
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 28
+        "value": 43
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 31
+        "value": 47
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 34
+        "value": 52
       }
     ],
     "category": 17
@@ -2973,22 +2973,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 21
+        "value": 32
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 29
+        "value": 45
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 33
+        "value": 50
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 35
+        "value": 54
       }
     ],
     "category": 17
@@ -3009,22 +3009,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 21
+        "value": 32
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 29
+        "value": 45
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 33
+        "value": 50
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 35
+        "value": 54
       }
     ],
     "category": 17
@@ -3045,22 +3045,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 27
+        "value": 41
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 38
+        "value": 58
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 42
+        "value": 64
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 46
+        "value": 70
       }
     ],
     "category": 17
@@ -3081,22 +3081,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 27
+        "value": 41
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 38
+        "value": 58
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 42
+        "value": 64
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 46
+        "value": 70
       }
     ],
     "category": 17
@@ -3117,22 +3117,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 27
+        "value": 41
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 38
+        "value": 58
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 42
+        "value": 64
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 46
+        "value": 70
       }
     ],
     "category": 17
@@ -3153,22 +3153,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 27
+        "value": 42
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 39
+        "value": 60
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 43
+        "value": 66
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 47
+        "value": 72
       }
     ],
     "category": 17
@@ -3189,22 +3189,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 29
+        "value": 44
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 41
+        "value": 63
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 45
+        "value": 69
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 49
+        "value": 76
       }
     ],
     "category": 17
@@ -3225,22 +3225,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 29
+        "value": 44
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 41
+        "value": 63
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 45
+        "value": 69
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 49
+        "value": 76
       }
     ],
     "category": 17
@@ -3261,22 +3261,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 30
+        "value": 46
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 42
+        "value": 65
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 47
+        "value": 72
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 51
+        "value": 78
       }
     ],
     "category": 17
@@ -3297,22 +3297,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 44
+        "value": 67
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 62
+        "value": 96
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 69
+        "value": 106
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 75
+        "value": 115
       }
     ],
     "category": 17
@@ -3333,22 +3333,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 45
+        "value": 69
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 64
+        "value": 99
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 71
+        "value": 109
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 77
+        "value": 119
       }
     ],
     "category": 17
@@ -3369,22 +3369,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 45
+        "value": 69
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 64
+        "value": 99
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 71
+        "value": 109
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 77
+        "value": 119
       }
     ],
     "category": 17
@@ -3405,22 +3405,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 45
+        "value": 69
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 64
+        "value": 99
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 71
+        "value": 109
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 77
+        "value": 119
       }
     ],
     "category": 17
@@ -3441,22 +3441,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 46
+        "value": 71
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 66
+        "value": 102
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 73
+        "value": 112
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 79
+        "value": 122
       }
     ],
     "category": 17
@@ -3477,22 +3477,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 48
+        "value": 74
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 68
+        "value": 105
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 82
+        "value": 126
       }
     ],
     "category": 17
@@ -3513,22 +3513,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 48
+        "value": 74
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 68
+        "value": 105
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 82
+        "value": 126
       }
     ],
     "category": 17
@@ -3549,22 +3549,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 49
+        "value": 76
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 70
+        "value": 108
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 77
+        "value": 119
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 85
+        "value": 130
       }
     ],
     "category": 17
@@ -3585,22 +3585,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 55
+        "value": 84
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 86
+        "value": 132
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 94
+        "value": 144
       }
     ],
     "category": 17
@@ -3621,22 +3621,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 56
+        "value": 86
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 80
+        "value": 123
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 88
+        "value": 135
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 96
+        "value": 148
       }
     ],
     "category": 17
@@ -3657,22 +3657,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 57
+        "value": 88
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 82
+        "value": 126
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 90
+        "value": 139
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 98
+        "value": 151
       }
     ],
     "category": 17
@@ -3693,22 +3693,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 57
+        "value": 88
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 82
+        "value": 126
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 90
+        "value": 139
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 98
+        "value": 151
       }
     ],
     "category": 17
@@ -3729,22 +3729,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 59
+        "value": 91
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 85
+        "value": 130
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 93
+        "value": 143
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 101
+        "value": 156
       }
     ],
     "category": 17
@@ -3765,22 +3765,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 59
+        "value": 91
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 85
+        "value": 130
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 93
+        "value": 143
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 101
+        "value": 156
       }
     ],
     "category": 17
@@ -3801,22 +3801,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 59
+        "value": 91
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 85
+        "value": 130
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 93
+        "value": 143
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 101
+        "value": 156
       }
     ],
     "category": 17
@@ -3837,22 +3837,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 60
+        "value": 93
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 86
+        "value": 133
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 95
+        "value": 146
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 104
+        "value": 160
       }
     ],
     "category": 17
@@ -3873,22 +3873,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 60
+        "value": 93
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 86
+        "value": 133
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 95
+        "value": 146
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 104
+        "value": 160
       }
     ],
     "category": 17
@@ -3909,22 +3909,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 72
+        "value": 110
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 102
+        "value": 157
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 112
+        "value": 173
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 122
+        "value": 188
       }
     ],
     "category": 17
@@ -4167,22 +4167,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 73
+        "value": 113
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 105
+        "value": 161
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 115
+        "value": 177
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 125
+        "value": 193
       }
     ],
     "category": 17
@@ -4203,22 +4203,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4239,22 +4239,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4275,22 +4275,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4311,22 +4311,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4347,22 +4347,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4383,22 +4383,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4419,22 +4419,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4455,22 +4455,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 75
+        "value": 116
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 107
+        "value": 165
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 118
+        "value": 182
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 129
+        "value": 198
       }
     ],
     "category": 17
@@ -4491,22 +4491,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 77
+        "value": 118
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 109
+        "value": 168
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 120
+        "value": 185
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 131
+        "value": 202
       }
     ],
     "category": 17
@@ -4527,22 +4527,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 112
+        "value": 172
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 123
+        "value": 189
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 134
+        "value": 206
       }
     ],
     "category": 17
@@ -4563,22 +4563,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 112
+        "value": 172
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 123
+        "value": 189
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 134
+        "value": 206
       }
     ],
     "category": 17
@@ -4599,22 +4599,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 112
+        "value": 172
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 123
+        "value": 189
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 134
+        "value": 206
       }
     ],
     "category": 17
@@ -4635,22 +4635,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 112
+        "value": 172
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 123
+        "value": 189
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 134
+        "value": 206
       }
     ],
     "category": 17
@@ -4671,22 +4671,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 80
+        "value": 123
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 114
+        "value": 176
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 126
+        "value": 194
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 137
+        "value": 211
       }
     ],
     "category": 17
@@ -4707,22 +4707,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 80
+        "value": 123
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 114
+        "value": 176
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 126
+        "value": 194
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 137
+        "value": 211
       }
     ],
     "category": 17
@@ -4743,22 +4743,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 82
+        "value": 126
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 117
+        "value": 180
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 129
+        "value": 198
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 140
+        "value": 216
       }
     ],
     "category": 17
@@ -4779,22 +4779,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 83
+        "value": 128
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 119
+        "value": 183
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 131
+        "value": 201
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 143
+        "value": 220
       }
     ],
     "category": 17
@@ -4815,22 +4815,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 83
+        "value": 128
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 119
+        "value": 183
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 131
+        "value": 201
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 143
+        "value": 220
       }
     ],
     "category": 17
@@ -4851,22 +4851,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 83
+        "value": 128
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 119
+        "value": 183
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 131
+        "value": 201
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 143
+        "value": 220
       }
     ],
     "category": 17
@@ -4887,22 +4887,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 85
+        "value": 131
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 122
+        "value": 187
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 134
+        "value": 206
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 146
+        "value": 224
       }
     ],
     "category": 17
@@ -4923,22 +4923,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 85
+        "value": 131
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 122
+        "value": 187
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 134
+        "value": 206
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 146
+        "value": 224
       }
     ],
     "category": 17
@@ -4959,22 +4959,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 87
+        "value": 134
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 124
+        "value": 191
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 149
+        "value": 229
       }
     ],
     "category": 17
@@ -4995,22 +4995,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 89
+        "value": 137
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 127
+        "value": 195
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 140
+        "value": 215
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 152
+        "value": 234
       }
     ],
     "category": 17
@@ -5031,22 +5031,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 90
+        "value": 139
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 129
+        "value": 198
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 142
+        "value": 218
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 155
+        "value": 238
       }
     ],
     "category": 17
@@ -5067,22 +5067,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 92
+        "value": 141
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 131
+        "value": 202
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 144
+        "value": 222
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 157
+        "value": 242
       }
     ],
     "category": 17
@@ -5103,22 +5103,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 94
+        "value": 144
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 134
+        "value": 206
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 148
+        "value": 227
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 161
+        "value": 247
       }
     ],
     "category": 17
@@ -5139,22 +5139,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 96
+        "value": 147
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 150
+        "value": 231
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 164
+        "value": 252
       }
     ],
     "category": 17
@@ -5175,22 +5175,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 96
+        "value": 147
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 150
+        "value": 231
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 164
+        "value": 252
       }
     ],
     "category": 17
@@ -5211,22 +5211,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 96
+        "value": 147
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 150
+        "value": 231
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 164
+        "value": 252
       }
     ],
     "category": 17
@@ -5247,22 +5247,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 96
+        "value": 147
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 150
+        "value": 231
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 164
+        "value": 252
       }
     ],
     "category": 17
@@ -5283,22 +5283,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 96
+        "value": 147
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 137
+        "value": 210
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 150
+        "value": 231
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 164
+        "value": 252
       }
     ],
     "category": 17
@@ -5319,22 +5319,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 97
+        "value": 149
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 138
+        "value": 213
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 152
+        "value": 234
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 166
+        "value": 256
       }
     ],
     "category": 17
@@ -5355,22 +5355,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 99
+        "value": 152
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 141
+        "value": 217
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 155
+        "value": 239
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 169
+        "value": 260
       }
     ],
     "category": 17
@@ -5391,22 +5391,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 101
+        "value": 155
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 144
+        "value": 221
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 158
+        "value": 243
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 172
+        "value": 265
       }
     ],
     "category": 17
@@ -5427,22 +5427,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 103
+        "value": 158
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 146
+        "value": 225
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 161
+        "value": 248
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 176
+        "value": 270
       }
     ],
     "category": 17
@@ -5463,22 +5463,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 104
+        "value": 160
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 148
+        "value": 228
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 163
+        "value": 251
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 178
+        "value": 274
       }
     ],
     "category": 17
@@ -5499,22 +5499,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 104
+        "value": 160
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 148
+        "value": 228
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 163
+        "value": 251
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 178
+        "value": 274
       }
     ],
     "category": 17
@@ -5535,22 +5535,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 110
+        "value": 169
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 157
+        "value": 241
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 172
+        "value": 265
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 188
+        "value": 289
       }
     ],
     "category": 17
@@ -5571,22 +5571,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 114
+        "value": 176
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 164
+        "value": 252
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 180
+        "value": 277
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 196
+        "value": 302
       }
     ],
     "category": 17
@@ -5607,22 +5607,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 119
+        "value": 183
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 170
+        "value": 262
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 187
+        "value": 288
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 204
+        "value": 314
       }
     ],
     "category": 17
@@ -5643,22 +5643,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 124
+        "value": 191
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 177
+        "value": 273
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 195
+        "value": 300
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 213
+        "value": 328
       }
     ],
     "category": 17
@@ -10875,22 +10875,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 20
+        "value": 13
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 29
+        "value": 19
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 32
+        "value": 21
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 35
+        "value": 23
       }
     ],
     "category": 19
@@ -10911,22 +10911,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 25
+        "value": 16
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 35
+        "value": 23
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 39
+        "value": 25
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 42
+        "value": 27
       }
     ],
     "category": 19
@@ -10947,22 +10947,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 25
+        "value": 16
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 36
+        "value": 23
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 40
+        "value": 26
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 43
+        "value": 28
       }
     ],
     "category": 19
@@ -10983,22 +10983,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 25
+        "value": 16
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 36
+        "value": 23
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 40
+        "value": 26
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 43
+        "value": 28
       }
     ],
     "category": 19
@@ -11019,22 +11019,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 27
+        "value": 18
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 38
+        "value": 25
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 42
+        "value": 27
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 46
+        "value": 30
       }
     ],
     "category": 19
@@ -11055,22 +11055,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 28
+        "value": 18
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 40
+        "value": 26
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 44
+        "value": 29
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 48
+        "value": 31
       }
     ],
     "category": 19
@@ -11091,22 +11091,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 29
+        "value": 19
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 42
+        "value": 27
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 46
+        "value": 30
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 50
+        "value": 33
       }
     ],
     "category": 19
@@ -11127,22 +11127,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 30
+        "value": 20
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 43
+        "value": 28
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 47
+        "value": 31
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 52
+        "value": 34
       }
     ],
     "category": 19
@@ -11163,22 +11163,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 32
+        "value": 21
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 45
+        "value": 29
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 50
+        "value": 33
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 54
+        "value": 35
       }
     ],
     "category": 19
@@ -11199,22 +11199,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 41
+        "value": 27
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 58
+        "value": 38
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 64
+        "value": 42
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 70
+        "value": 46
       }
     ],
     "category": 19
@@ -11235,22 +11235,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 44
+        "value": 29
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 63
+        "value": 41
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 69
+        "value": 45
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 76
+        "value": 49
       }
     ],
     "category": 19
@@ -11271,22 +11271,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 67
+        "value": 44
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 96
+        "value": 62
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 106
+        "value": 69
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 115
+        "value": 75
       }
     ],
     "category": 19
@@ -11307,22 +11307,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 69
+        "value": 45
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 99
+        "value": 64
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 109
+        "value": 71
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 119
+        "value": 77
       }
     ],
     "category": 19
@@ -11343,22 +11343,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 71
+        "value": 46
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 102
+        "value": 66
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 112
+        "value": 73
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 122
+        "value": 79
       }
     ],
     "category": 19
@@ -11379,22 +11379,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 74
+        "value": 48
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 105
+        "value": 68
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 116
+        "value": 75
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 126
+        "value": 82
       }
     ],
     "category": 19
@@ -11415,22 +11415,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 76
+        "value": 49
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 108
+        "value": 70
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 119
+        "value": 77
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 130
+        "value": 85
       }
     ],
     "category": 19
@@ -11451,22 +11451,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 84
+        "value": 55
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 120
+        "value": 78
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 132
+        "value": 86
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 144
+        "value": 94
       }
     ],
     "category": 19
@@ -11487,22 +11487,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 88
+        "value": 57
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 126
+        "value": 82
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 139
+        "value": 90
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 151
+        "value": 98
       }
     ],
     "category": 19
@@ -11523,22 +11523,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 91
+        "value": 59
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 130
+        "value": 85
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 143
+        "value": 93
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 156
+        "value": 101
       }
     ],
     "category": 19
@@ -11559,22 +11559,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 93
+        "value": 60
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 133
+        "value": 86
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 146
+        "value": 95
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 160
+        "value": 104
       }
     ],
     "category": 19
@@ -11595,22 +11595,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 110
+        "value": 72
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 157
+        "value": 102
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 173
+        "value": 112
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 188
+        "value": 122
       }
     ],
     "category": 19
@@ -11631,22 +11631,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 113
+        "value": 73
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 161
+        "value": 105
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 177
+        "value": 115
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 193
+        "value": 125
       }
     ],
     "category": 19
@@ -11667,22 +11667,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 116
+        "value": 75
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 165
+        "value": 107
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 182
+        "value": 118
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 198
+        "value": 129
       }
     ],
     "category": 19
@@ -11703,22 +11703,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 118
+        "value": 77
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 168
+        "value": 109
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 185
+        "value": 120
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 202
+        "value": 131
       }
     ],
     "category": 19
@@ -11739,22 +11739,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 123
+        "value": 80
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 176
+        "value": 114
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 194
+        "value": 126
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 211
+        "value": 137
       }
     ],
     "category": 19
@@ -11775,22 +11775,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 126
+        "value": 82
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 180
+        "value": 117
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 198
+        "value": 129
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 216
+        "value": 140
       }
     ],
     "category": 19
@@ -11811,22 +11811,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 131
+        "value": 85
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 187
+        "value": 122
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 206
+        "value": 134
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 224
+        "value": 146
       }
     ],
     "category": 19
@@ -11847,22 +11847,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 137
+        "value": 89
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 195
+        "value": 127
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 215
+        "value": 140
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 234
+        "value": 152
       }
     ],
     "category": 19
@@ -11883,22 +11883,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 141
+        "value": 92
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 202
+        "value": 131
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 222
+        "value": 144
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 242
+        "value": 157
       }
     ],
     "category": 19
@@ -11919,22 +11919,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 147
+        "value": 96
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 210
+        "value": 137
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 231
+        "value": 150
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 252
+        "value": 164
       }
     ],
     "category": 19
@@ -11955,22 +11955,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 149
+        "value": 97
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 213
+        "value": 138
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 234
+        "value": 152
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 256
+        "value": 166
       }
     ],
     "category": 19
@@ -11991,22 +11991,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 155
+        "value": 101
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 221
+        "value": 144
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 243
+        "value": 158
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 265
+        "value": 172
       }
     ],
     "category": 19
@@ -12027,22 +12027,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 158
+        "value": 103
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 225
+        "value": 146
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 248
+        "value": 161
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 270
+        "value": 176
       }
     ],
     "category": 19
@@ -12063,22 +12063,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 169
+        "value": 110
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 241
+        "value": 157
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 265
+        "value": 172
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 289
+        "value": 188
       }
     ],
     "category": 19
@@ -12099,22 +12099,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 183
+        "value": 119
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 262
+        "value": 170
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 288
+        "value": 187
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 314
+        "value": 204
       }
     ],
     "category": 19
@@ -13143,22 +13143,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 190
+        "value": 293
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 272
+        "value": 419
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 300
+        "value": 461
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 327
+        "value": 503
       }
     ],
     "category": 17
@@ -13179,22 +13179,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 190
+        "value": 293
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 272
+        "value": 419
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 300
+        "value": 461
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 327
+        "value": 503
       }
     ],
     "category": 17
@@ -13215,22 +13215,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 190
+        "value": 293
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 272
+        "value": 419
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 300
+        "value": 461
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 327
+        "value": 503
       }
     ],
     "category": 17
@@ -13251,22 +13251,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 207
+        "value": 318
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 295
+        "value": 454
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 324
+        "value": 499
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 354
+        "value": 545
       }
     ],
     "category": 17
@@ -13287,22 +13287,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 244
+        "value": 375
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 348
+        "value": 535
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 383
+        "value": 589
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 417
+        "value": 642
       }
     ],
     "category": 17
@@ -13323,22 +13323,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 250
+        "value": 385
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 358
+        "value": 550
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 393
+        "value": 605
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 429
+        "value": 660
       }
     ],
     "category": 17
@@ -13359,22 +13359,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 250
+        "value": 385
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 358
+        "value": 550
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 393
+        "value": 605
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 429
+        "value": 660
       }
     ],
     "category": 17
@@ -13395,22 +13395,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 267
+        "value": 410
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 380
+        "value": 585
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 456
+        "value": 702
       }
     ],
     "category": 17
@@ -13431,22 +13431,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 267
+        "value": 410
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 380
+        "value": 585
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 456
+        "value": 702
       }
     ],
     "category": 17
@@ -13467,22 +13467,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 268
+        "value": 412
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 382
+        "value": 588
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 421
+        "value": 647
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 459
+        "value": 706
       }
     ],
     "category": 17
@@ -13503,22 +13503,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 270
+        "value": 415
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 385
+        "value": 593
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 424
+        "value": 652
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 463
+        "value": 712
       }
     ],
     "category": 17
@@ -13539,22 +13539,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 270
+        "value": 415
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 385
+        "value": 593
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 424
+        "value": 652
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 463
+        "value": 712
       }
     ],
     "category": 17
@@ -13575,22 +13575,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 281
+        "value": 433
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 402
+        "value": 618
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 482
+        "value": 742
       }
     ],
     "category": 17
@@ -13611,22 +13611,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 281
+        "value": 433
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 402
+        "value": 618
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 482
+        "value": 742
       }
     ],
     "category": 17
@@ -13647,22 +13647,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 291
+        "value": 448
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 416
+        "value": 640
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 458
+        "value": 704
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 499
+        "value": 768
       }
     ],
     "category": 17
@@ -13683,22 +13683,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 291
+        "value": 448
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 416
+        "value": 640
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 458
+        "value": 704
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 499
+        "value": 768
       }
     ],
     "category": 17
@@ -13719,22 +13719,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 309
+        "value": 476
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 486
+        "value": 748
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 530
+        "value": 816
       }
     ],
     "category": 17
@@ -13755,22 +13755,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 309
+        "value": 476
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 486
+        "value": 748
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 530
+        "value": 816
       }
     ],
     "category": 17
@@ -14439,22 +14439,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 293
+        "value": 190
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 419
+        "value": 272
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 461
+        "value": 300
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 503
+        "value": 327
       }
     ],
     "category": 19
@@ -14475,22 +14475,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 318
+        "value": 207
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 454
+        "value": 295
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 499
+        "value": 324
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 545
+        "value": 354
       }
     ],
     "category": 19
@@ -14511,22 +14511,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 318
+        "value": 207
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 454
+        "value": 295
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 499
+        "value": 324
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 545
+        "value": 354
       }
     ],
     "category": 19
@@ -14547,22 +14547,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 318
+        "value": 207
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 454
+        "value": 295
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 499
+        "value": 324
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 545
+        "value": 354
       }
     ],
     "category": 19
@@ -14583,22 +14583,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 375
+        "value": 244
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 535
+        "value": 348
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 589
+        "value": 383
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 642
+        "value": 417
       }
     ],
     "category": 19
@@ -14619,22 +14619,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 375
+        "value": 244
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 535
+        "value": 348
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 589
+        "value": 383
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 642
+        "value": 417
       }
     ],
     "category": 19
@@ -14655,22 +14655,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 385
+        "value": 250
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 550
+        "value": 358
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 605
+        "value": 393
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 660
+        "value": 429
       }
     ],
     "category": 19
@@ -14691,22 +14691,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 385
+        "value": 250
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 550
+        "value": 358
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 605
+        "value": 393
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 660
+        "value": 429
       }
     ],
     "category": 19
@@ -14727,22 +14727,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -14763,22 +14763,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -14799,22 +14799,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -14835,22 +14835,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 412
+        "value": 268
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 588
+        "value": 382
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 647
+        "value": 421
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 706
+        "value": 459
       }
     ],
     "category": 19
@@ -14871,22 +14871,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 415
+        "value": 270
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 593
+        "value": 385
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 652
+        "value": 424
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 712
+        "value": 463
       }
     ],
     "category": 19
@@ -14907,22 +14907,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 415
+        "value": 270
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 593
+        "value": 385
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 652
+        "value": 424
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 712
+        "value": 463
       }
     ],
     "category": 19
@@ -14943,22 +14943,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 433
+        "value": 281
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 618
+        "value": 402
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 680
+        "value": 442
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 742
+        "value": 482
       }
     ],
     "category": 19
@@ -14979,22 +14979,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 433
+        "value": 281
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 618
+        "value": 402
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 680
+        "value": 442
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 742
+        "value": 482
       }
     ],
     "category": 19
@@ -15015,22 +15015,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 448
+        "value": 291
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 640
+        "value": 416
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 704
+        "value": 458
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 768
+        "value": 499
       }
     ],
     "category": 19
@@ -15051,22 +15051,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 448
+        "value": 291
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 640
+        "value": 416
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 704
+        "value": 458
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 768
+        "value": 499
       }
     ],
     "category": 19
@@ -15087,22 +15087,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 476
+        "value": 309
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 680
+        "value": 442
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 748
+        "value": 486
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 816
+        "value": 530
       }
     ],
     "category": 19
@@ -15123,22 +15123,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 476
+        "value": 309
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 680
+        "value": 442
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 748
+        "value": 486
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 816
+        "value": 530
       }
     ],
     "category": 19
@@ -15159,22 +15159,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 78
+        "value": 120
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 112
+        "value": 172
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 123
+        "value": 189
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 134
+        "value": 206
       }
     ],
     "category": 17
@@ -15195,22 +15195,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 318
+        "value": 207
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 454
+        "value": 295
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 499
+        "value": 324
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 545
+        "value": 354
       }
     ],
     "category": 19
@@ -15231,22 +15231,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -15267,22 +15267,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -15303,22 +15303,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 410
+        "value": 267
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 585
+        "value": 380
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 644
+        "value": 419
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 702
+        "value": 456
       }
     ],
     "category": 19
@@ -15339,22 +15339,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 385
+        "value": 250
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 550
+        "value": 358
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 605
+        "value": 393
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 660
+        "value": 429
       }
     ],
     "category": 19
@@ -15375,22 +15375,22 @@
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15411,22 +15411,22 @@
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15447,22 +15447,22 @@
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 1,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15483,22 +15483,22 @@
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15519,22 +15519,22 @@
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15555,22 +15555,22 @@
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15591,22 +15591,22 @@
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15627,22 +15627,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15663,22 +15663,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -15699,22 +15699,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16203,22 +16203,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16239,22 +16239,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16275,22 +16275,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16311,22 +16311,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16347,22 +16347,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16455,22 +16455,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16527,22 +16527,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16599,22 +16599,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16635,22 +16635,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16707,22 +16707,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -16779,22 +16779,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 244
+        "value": 375
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 348
+        "value": 535
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 383
+        "value": 589
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 417
+        "value": 642
       }
     ],
     "category": 17
@@ -16815,22 +16815,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 267
+        "value": 410
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 380
+        "value": 585
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 456
+        "value": 702
       }
     ],
     "category": 17
@@ -16851,22 +16851,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 281
+        "value": 433
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 402
+        "value": 618
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 482
+        "value": 742
       }
     ],
     "category": 17
@@ -17031,22 +17031,22 @@
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -17715,22 +17715,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 6,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -17787,22 +17787,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 127
+        "value": 196
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 182
+        "value": 280
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 200
+        "value": 308
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 218
+        "value": 336
       }
     ],
     "category": 17
@@ -17823,22 +17823,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 309
+        "value": 476
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 486
+        "value": 748
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 530
+        "value": 816
       }
     ],
     "category": 17
@@ -17859,22 +17859,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 166
+        "value": 256
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 238
+        "value": 366
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 262
+        "value": 403
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 285
+        "value": 439
       }
     ],
     "category": 17
@@ -17895,22 +17895,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 190
+        "value": 293
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 272
+        "value": 419
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 300
+        "value": 461
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 327
+        "value": 503
       }
     ],
     "category": 17
@@ -17931,22 +17931,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 207
+        "value": 318
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 295
+        "value": 454
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 324
+        "value": 499
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 354
+        "value": 545
       }
     ],
     "category": 17
@@ -17967,22 +17967,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 244
+        "value": 375
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 348
+        "value": 535
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 383
+        "value": 589
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 417
+        "value": 642
       }
     ],
     "category": 17
@@ -18003,22 +18003,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 250
+        "value": 385
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 358
+        "value": 550
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 393
+        "value": 605
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 429
+        "value": 660
       }
     ],
     "category": 17
@@ -18039,22 +18039,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 267
+        "value": 410
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 380
+        "value": 585
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 456
+        "value": 702
       }
     ],
     "category": 17
@@ -18075,22 +18075,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 268
+        "value": 412
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 382
+        "value": 588
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 421
+        "value": 647
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 459
+        "value": 706
       }
     ],
     "category": 17
@@ -18111,22 +18111,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 270
+        "value": 415
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 385
+        "value": 593
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 424
+        "value": 652
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 463
+        "value": 712
       }
     ],
     "category": 17
@@ -18147,22 +18147,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 281
+        "value": 433
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 402
+        "value": 618
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 482
+        "value": 742
       }
     ],
     "category": 17
@@ -18183,22 +18183,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 291
+        "value": 448
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 416
+        "value": 640
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 458
+        "value": 704
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 499
+        "value": 768
       }
     ],
     "category": 17
@@ -18219,22 +18219,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -18255,22 +18255,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -18291,22 +18291,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 309
+        "value": 476
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 486
+        "value": 748
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 530
+        "value": 816
       }
     ],
     "category": 17
@@ -18327,22 +18327,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -18363,22 +18363,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -18399,22 +18399,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -19335,22 +19335,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -19371,22 +19371,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -19407,22 +19407,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -19443,22 +19443,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -19875,22 +19875,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 446
+        "value": 686
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 637
+        "value": 980
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 701
+        "value": 1078
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 764
+        "value": 1176
       }
     ],
     "category": 17
@@ -19911,22 +19911,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 446
+        "value": 686
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 637
+        "value": 980
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 701
+        "value": 1078
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 764
+        "value": 1176
       }
     ],
     "category": 17
@@ -19947,22 +19947,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 446
+        "value": 686
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 637
+        "value": 980
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 701
+        "value": 1078
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 764
+        "value": 1176
       }
     ],
     "category": 17
@@ -19983,22 +19983,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 598
+        "value": 920
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 658
+        "value": 1012
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 718
+        "value": 1104
       }
     ],
     "category": 17
@@ -20019,22 +20019,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 419
+        "value": 644
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 598
+        "value": 920
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 658
+        "value": 1012
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 718
+        "value": 1104
       }
     ],
     "category": 17
@@ -20055,22 +20055,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 455
+        "value": 700
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 650
+        "value": 1000
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 715
+        "value": 1100
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 780
+        "value": 1200
       }
     ],
     "category": 17
@@ -20091,22 +20091,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 464
+        "value": 714
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 663
+        "value": 1020
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 729
+        "value": 1122
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 796
+        "value": 1224
       }
     ],
     "category": 17
@@ -20127,22 +20127,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 473
+        "value": 728
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 676
+        "value": 1040
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 744
+        "value": 1144
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 811
+        "value": 1248
       }
     ],
     "category": 17
@@ -20163,22 +20163,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 477
+        "value": 734
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 681
+        "value": 1048
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 749
+        "value": 1153
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 818
+        "value": 1258
       }
     ],
     "category": 17
@@ -20199,22 +20199,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 480
+        "value": 739
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 686
+        "value": 1055
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 755
+        "value": 1161
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 823
+        "value": 1266
       }
     ],
     "category": 17
@@ -20235,22 +20235,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 480
+        "value": 739
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 686
+        "value": 1055
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 755
+        "value": 1161
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 823
+        "value": 1266
       }
     ],
     "category": 17
@@ -20271,22 +20271,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 483
+        "value": 743
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 690
+        "value": 1062
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 759
+        "value": 1168
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 828
+        "value": 1274
       }
     ],
     "category": 17
@@ -20307,22 +20307,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 503
+        "value": 774
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 719
+        "value": 1106
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 791
+        "value": 1217
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       }
     ],
     "category": 17
@@ -20343,22 +20343,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 503
+        "value": 774
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 719
+        "value": 1106
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 791
+        "value": 1217
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       }
     ],
     "category": 17
@@ -20379,22 +20379,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 523
+        "value": 805
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 748
+        "value": 1150
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 822
+        "value": 1265
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 897
+        "value": 1380
       }
     ],
     "category": 17
@@ -20415,22 +20415,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 523
+        "value": 805
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 748
+        "value": 1150
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 822
+        "value": 1265
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 897
+        "value": 1380
       }
     ],
     "category": 17
@@ -20451,22 +20451,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 455
+        "value": 700
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 650
+        "value": 1000
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 715
+        "value": 1100
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 780
+        "value": 1200
       }
     ],
     "category": 17
@@ -20487,22 +20487,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 455
+        "value": 700
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 650
+        "value": 1000
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 715
+        "value": 1100
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 780
+        "value": 1200
       }
     ],
     "category": 17
@@ -20523,22 +20523,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 464
+        "value": 714
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 663
+        "value": 1020
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 729
+        "value": 1122
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 796
+        "value": 1224
       }
     ],
     "category": 17
@@ -20559,22 +20559,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 473
+        "value": 728
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 676
+        "value": 1040
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 744
+        "value": 1144
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 811
+        "value": 1248
       }
     ],
     "category": 17
@@ -20595,22 +20595,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 483
+        "value": 743
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 690
+        "value": 1062
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 759
+        "value": 1168
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 828
+        "value": 1274
       }
     ],
     "category": 17
@@ -20631,22 +20631,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 493
+        "value": 759
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 705
+        "value": 1084
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 775
+        "value": 1192
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 846
+        "value": 1301
       }
     ],
     "category": 17
@@ -20667,22 +20667,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 514
+        "value": 790
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 733
+        "value": 1128
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 807
+        "value": 1241
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 880
+        "value": 1354
       }
     ],
     "category": 17
@@ -20703,22 +20703,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 514
+        "value": 790
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 733
+        "value": 1128
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 807
+        "value": 1241
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 880
+        "value": 1354
       }
     ],
     "category": 17
@@ -22971,22 +22971,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 700
+        "value": 455
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1000
+        "value": 650
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1100
+        "value": 715
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1200
+        "value": 780
       }
     ],
     "category": 19
@@ -23007,22 +23007,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 714
+        "value": 464
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1020
+        "value": 663
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1122
+        "value": 729
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 1224
+        "value": 796
       }
     ],
     "category": 19
@@ -23043,22 +23043,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 728
+        "value": 473
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1040
+        "value": 676
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 1144
+        "value": 744
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 1248
+        "value": 811
       }
     ],
     "category": 19
@@ -23079,22 +23079,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 734
+        "value": 477
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1048
+        "value": 681
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 1153
+        "value": 749
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 1258
+        "value": 818
       }
     ],
     "category": 19
@@ -23115,22 +23115,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 739
+        "value": 480
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 1055
+        "value": 686
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 1161
+        "value": 755
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1266
+        "value": 823
       }
     ],
     "category": 19
@@ -23151,22 +23151,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 743
+        "value": 483
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1062
+        "value": 690
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 1168
+        "value": 759
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 1274
+        "value": 828
       }
     ],
     "category": 19
@@ -23187,22 +23187,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 759
+        "value": 493
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1084
+        "value": 705
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 1192
+        "value": 775
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 1301
+        "value": 846
       }
     ],
     "category": 19
@@ -23223,22 +23223,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 774
+        "value": 503
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1106
+        "value": 719
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1217
+        "value": 791
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 1327
+        "value": 863
       }
     ],
     "category": 19
@@ -23259,22 +23259,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 790
+        "value": 514
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1128
+        "value": 733
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1241
+        "value": 807
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1354
+        "value": 880
       }
     ],
     "category": 19
@@ -23295,22 +23295,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 805
+        "value": 523
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1150
+        "value": 748
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1265
+        "value": 822
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 1380
+        "value": 897
       }
     ],
     "category": 19
@@ -23331,22 +23331,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 391
+        "value": 602
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 559
+        "value": 860
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 615
+        "value": 946
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 671
+        "value": 1032
       }
     ],
     "category": 17
@@ -23367,22 +23367,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 569
+        "value": 875
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 813
+        "value": 1250
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 894
+        "value": 1375
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 975
+        "value": 1500
       }
     ],
     "category": 17
@@ -23403,22 +23403,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 569
+        "value": 875
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 813
+        "value": 1250
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 894
+        "value": 1375
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 975
+        "value": 1500
       }
     ],
     "category": 17
@@ -23511,22 +23511,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 569
+        "value": 875
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 813
+        "value": 1250
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 894
+        "value": 1375
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 975
+        "value": 1500
       }
     ],
     "category": 17
@@ -23583,22 +23583,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 875
+        "value": 569
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1250
+        "value": 813
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1375
+        "value": 894
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 1500
+        "value": 975
       }
     ],
     "category": 19
@@ -23619,22 +23619,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -23655,22 +23655,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -23763,22 +23763,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1015
+        "value": 660
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1450
+        "value": 943
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1595
+        "value": 1037
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1740
+        "value": 1131
       }
     ],
     "category": 19
@@ -23799,22 +23799,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -23871,22 +23871,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 796
+        "value": 1225
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1138
+        "value": 1750
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1365
+        "value": 2100
       }
     ],
     "category": 17
@@ -23907,22 +23907,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 796
+        "value": 1225
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1138
+        "value": 1750
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1365
+        "value": 2100
       }
     ],
     "category": 17
@@ -23943,22 +23943,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 802
+        "value": 1234
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1146
+        "value": 1763
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1260
+        "value": 1939
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1375
+        "value": 2116
       }
     ],
     "category": 17
@@ -24663,22 +24663,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -24699,22 +24699,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 796
+        "value": 1225
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1138
+        "value": 1750
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1365
+        "value": 2100
       }
     ],
     "category": 17
@@ -24735,22 +24735,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 796
+        "value": 1225
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1138
+        "value": 1750
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1365
+        "value": 2100
       }
     ],
     "category": 17
@@ -24771,22 +24771,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 802
+        "value": 1234
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1146
+        "value": 1763
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1260
+        "value": 1939
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1375
+        "value": 2116
       }
     ],
     "category": 17
@@ -24807,22 +24807,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 819
+        "value": 1260
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1170
+        "value": 1800
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1287
+        "value": 1980
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1404
+        "value": 2160
       }
     ],
     "category": 17
@@ -24843,22 +24843,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 819
+        "value": 1260
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1170
+        "value": 1800
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1287
+        "value": 1980
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1404
+        "value": 2160
       }
     ],
     "category": 17
@@ -24879,22 +24879,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1232
+        "value": 1895
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1355
+        "value": 2085
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1478
+        "value": 2274
       }
     ],
     "category": 17
@@ -24915,22 +24915,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1232
+        "value": 1895
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1355
+        "value": 2085
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1478
+        "value": 2274
       }
     ],
     "category": 17
@@ -24951,22 +24951,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 883
+        "value": 1359
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1262
+        "value": 1942
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1388
+        "value": 2136
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1515
+        "value": 2330
       }
     ],
     "category": 17
@@ -24987,22 +24987,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 905
+        "value": 1392
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1293
+        "value": 1989
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1422
+        "value": 2188
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1552
+        "value": 2387
       }
     ],
     "category": 17
@@ -25023,22 +25023,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 905
+        "value": 1392
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1293
+        "value": 1989
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1422
+        "value": 2188
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1552
+        "value": 2387
       }
     ],
     "category": 17
@@ -25059,22 +25059,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 948
+        "value": 1458
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1354
+        "value": 2083
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1489
+        "value": 2291
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1625
+        "value": 2500
       }
     ],
     "category": 17
@@ -25095,22 +25095,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -25131,22 +25131,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 660
+        "value": 1015
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 943
+        "value": 1450
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1037
+        "value": 1595
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1131
+        "value": 1740
       }
     ],
     "category": 17
@@ -25167,22 +25167,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 774
+        "value": 1190
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1105
+        "value": 1700
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1216
+        "value": 1870
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1326
+        "value": 2040
       }
     ],
     "category": 17
@@ -25203,22 +25203,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 774
+        "value": 1190
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1105
+        "value": 1700
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1216
+        "value": 1870
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1326
+        "value": 2040
       }
     ],
     "category": 17
@@ -25239,22 +25239,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 841
+        "value": 1294
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1201
+        "value": 1848
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1321
+        "value": 2033
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1442
+        "value": 2218
       }
     ],
     "category": 17
@@ -25275,22 +25275,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1232
+        "value": 1895
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1355
+        "value": 2085
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1478
+        "value": 2274
       }
     ],
     "category": 17
@@ -25311,22 +25311,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 863
+        "value": 1327
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1232
+        "value": 1895
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1355
+        "value": 2085
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1478
+        "value": 2274
       }
     ],
     "category": 17
@@ -25347,22 +25347,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 926
+        "value": 1425
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1323
+        "value": 2036
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1456
+        "value": 2240
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 1588
+        "value": 2443
       }
     ],
     "category": 17
@@ -26571,22 +26571,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1190
+        "value": 774
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1700
+        "value": 1105
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1870
+        "value": 1216
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2040
+        "value": 1326
       }
     ],
     "category": 19
@@ -26607,22 +26607,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1225
+        "value": 796
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1750
+        "value": 1138
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1925
+        "value": 1251
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2100
+        "value": 1365
       }
     ],
     "category": 19
@@ -26643,22 +26643,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1234
+        "value": 802
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1763
+        "value": 1146
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1939
+        "value": 1260
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2116
+        "value": 1375
       }
     ],
     "category": 19
@@ -26679,22 +26679,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1260
+        "value": 819
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1800
+        "value": 1170
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 1980
+        "value": 1287
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2160
+        "value": 1404
       }
     ],
     "category": 19
@@ -26715,22 +26715,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1359
+        "value": 883
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1942
+        "value": 1262
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 2136
+        "value": 1388
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2330
+        "value": 1515
       }
     ],
     "category": 19
@@ -26751,22 +26751,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 1260
+        "value": 819
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1800
+        "value": 1170
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 1980
+        "value": 1287
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 2160
+        "value": 1404
       }
     ],
     "category": 19
@@ -26787,22 +26787,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 1327
+        "value": 863
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1895
+        "value": 1232
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 2085
+        "value": 1355
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 2274
+        "value": 1478
       }
     ],
     "category": 19
@@ -26823,22 +26823,22 @@
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 1392
+        "value": 905
       },
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1989
+        "value": 1293
       },
       {
         "quantity": 22,
         "stat": "perception",
-        "value": 2188
+        "value": 1422
       },
       {
         "quantity": 25,
         "stat": "perception",
-        "value": 2387
+        "value": 1552
       }
     ],
     "category": 19
@@ -26859,22 +26859,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1392
+        "value": 905
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 1989
+        "value": 1293
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 2188
+        "value": 1422
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2387
+        "value": 1552
       }
     ],
     "category": 19
@@ -26895,22 +26895,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1425
+        "value": 926
       },
       {
         "quantity": 10,
         "stat": "perception",
-        "value": 2036
+        "value": 1323
       },
       {
         "quantity": 11,
         "stat": "perception",
-        "value": 2240
+        "value": 1456
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 2443
+        "value": 1588
       }
     ],
     "category": 19
@@ -26931,22 +26931,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 948
+        "value": 1458
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1354
+        "value": 2083
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1489
+        "value": 2291
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1625
+        "value": 2500
       }
     ],
     "category": 17
@@ -26967,22 +26967,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 993
+        "value": 1527
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1418
+        "value": 2182
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1702
+        "value": 2618
       }
     ],
     "category": 17
@@ -27003,22 +27003,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 993
+        "value": 1527
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1418
+        "value": 2182
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1702
+        "value": 2618
       }
     ],
     "category": 17
@@ -27147,22 +27147,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 993
+        "value": 1527
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1418
+        "value": 2182
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1702
+        "value": 2618
       }
     ],
     "category": 17
@@ -27219,22 +27219,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 1527
+        "value": 993
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 2182
+        "value": 1418
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 2400
+        "value": 1560
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 2618
+        "value": 1702
       }
     ],
     "category": 19
@@ -27255,22 +27255,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1092
+        "value": 1680
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1716
+        "value": 2640
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1872
+        "value": 2880
       }
     ],
     "category": 17
@@ -27291,22 +27291,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1092
+        "value": 1680
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1716
+        "value": 2640
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1872
+        "value": 2880
       }
     ],
     "category": 17
@@ -27327,22 +27327,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1092
+        "value": 1680
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1716
+        "value": 2640
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1872
+        "value": 2880
       }
     ],
     "category": 17
@@ -27471,22 +27471,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1092
+        "value": 1680
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1560
+        "value": 2400
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1716
+        "value": 2640
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 1872
+        "value": 2880
       }
     ],
     "category": 17
@@ -27543,22 +27543,22 @@
       {
         "quantity": 2,
         "stat": "perception",
-        "value": 1680
+        "value": 1092
       },
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 2400
+        "value": 1560
       },
       {
         "quantity": 4,
         "stat": "perception",
-        "value": 2640
+        "value": 1716
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 2880
+        "value": 1872
       }
     ],
     "category": 19
@@ -27579,22 +27579,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 291
+        "value": 448
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 416
+        "value": 640
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 458
+        "value": 704
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 499
+        "value": 768
       }
     ],
     "category": 17
@@ -27615,22 +27615,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 309
+        "value": 476
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 442
+        "value": 680
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 486
+        "value": 748
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 530
+        "value": 816
       }
     ],
     "category": 17
@@ -27651,22 +27651,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 268
+        "value": 412
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 382
+        "value": 588
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 421
+        "value": 647
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 459
+        "value": 706
       }
     ],
     "category": 17
@@ -27867,22 +27867,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1229
+        "value": 1890
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1755
+        "value": 2700
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1931
+        "value": 2970
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 2106
+        "value": 3240
       }
     ],
     "category": 17
@@ -27903,22 +27903,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1229
+        "value": 1890
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1755
+        "value": 2700
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1931
+        "value": 2970
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 2106
+        "value": 3240
       }
     ],
     "category": 17
@@ -28011,22 +28011,22 @@
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 1229
+        "value": 1890
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1755
+        "value": 2700
       },
       {
         "quantity": 8,
         "stat": "perception",
-        "value": 1931
+        "value": 2970
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 2106
+        "value": 3240
       }
     ],
     "category": 17
@@ -28047,22 +28047,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1788
+        "value": 2750
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1966
+        "value": 3025
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2145
+        "value": 3300
       }
     ],
     "category": 17
@@ -28083,22 +28083,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1788
+        "value": 2750
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1966
+        "value": 3025
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2145
+        "value": 3300
       }
     ],
     "category": 17
@@ -28119,22 +28119,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1788
+        "value": 2750
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1966
+        "value": 3025
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2145
+        "value": 3300
       }
     ],
     "category": 17
@@ -28155,22 +28155,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1251
+        "value": 1925
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1788
+        "value": 2750
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 1966
+        "value": 3025
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2145
+        "value": 3300
       }
     ],
     "category": 17
@@ -28191,22 +28191,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1274
+        "value": 1960
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1820
+        "value": 2800
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2002
+        "value": 3080
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2184
+        "value": 3360
       }
     ],
     "category": 17
@@ -28227,22 +28227,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1274
+        "value": 1960
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1820
+        "value": 2800
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2002
+        "value": 3080
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2184
+        "value": 3360
       }
     ],
     "category": 17
@@ -28263,22 +28263,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1320
+        "value": 2030
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1885
+        "value": 2900
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2074
+        "value": 3190
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2262
+        "value": 3480
       }
     ],
     "category": 17
@@ -28299,22 +28299,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1365
+        "value": 2100
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1950
+        "value": 3000
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2145
+        "value": 3300
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2340
+        "value": 3600
       }
     ],
     "category": 17
@@ -28335,22 +28335,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1397
+        "value": 2149
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 1996
+        "value": 3070
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2195
+        "value": 3377
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2395
+        "value": 3684
       }
     ],
     "category": 17
@@ -28371,22 +28371,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1429
+        "value": 2198
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2041
+        "value": 3140
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2245
+        "value": 3454
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2449
+        "value": 3768
       }
     ],
     "category": 17
@@ -28407,22 +28407,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1429
+        "value": 2198
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2041
+        "value": 3140
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2245
+        "value": 3454
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2449
+        "value": 3768
       }
     ],
     "category": 17
@@ -28443,22 +28443,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1461
+        "value": 2247
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2087
+        "value": 3210
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2295
+        "value": 3531
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2504
+        "value": 3852
       }
     ],
     "category": 17
@@ -28479,22 +28479,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1492
+        "value": 2296
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2132
+        "value": 3280
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2345
+        "value": 3608
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2558
+        "value": 3936
       }
     ],
     "category": 17
@@ -28515,22 +28515,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1524
+        "value": 2345
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2178
+        "value": 3350
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2395
+        "value": 3685
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2613
+        "value": 4020
       }
     ],
     "category": 17
@@ -28551,22 +28551,22 @@
       {
         "quantity": 20,
         "stat": "perception",
-        "value": 1556
+        "value": 2394
       },
       {
         "quantity": 30,
         "stat": "perception",
-        "value": 2223
+        "value": 3420
       },
       {
         "quantity": 40,
         "stat": "perception",
-        "value": 2445
+        "value": 3762
       },
       {
         "quantity": 50,
         "stat": "perception",
-        "value": 2668
+        "value": 4104
       }
     ],
     "category": 17
@@ -30099,22 +30099,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 1925
+        "value": 1251
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 2750
+        "value": 1788
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 3025
+        "value": 1966
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3300
+        "value": 2145
       }
     ],
     "category": 19
@@ -30135,22 +30135,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 2030
+        "value": 1320
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 2900
+        "value": 1885
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3190
+        "value": 2074
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3480
+        "value": 2262
       }
     ],
     "category": 19
@@ -30171,22 +30171,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 2030
+        "value": 1320
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 2900
+        "value": 1885
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 3190
+        "value": 2074
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3480
+        "value": 2262
       }
     ],
     "category": 19
@@ -30207,22 +30207,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 2247
+        "value": 1461
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3210
+        "value": 2087
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3531
+        "value": 2295
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3852
+        "value": 2504
       }
     ],
     "category": 19
@@ -30243,22 +30243,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 2296
+        "value": 1492
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3280
+        "value": 2132
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3608
+        "value": 2345
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3936
+        "value": 2558
       }
     ],
     "category": 19
@@ -30279,22 +30279,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 1925
+        "value": 1251
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 2750
+        "value": 1788
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3025
+        "value": 1966
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3300
+        "value": 2145
       }
     ],
     "category": 19
@@ -30315,22 +30315,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 1960
+        "value": 1274
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 2800
+        "value": 1820
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 3080
+        "value": 2002
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3360
+        "value": 2184
       }
     ],
     "category": 19
@@ -30351,22 +30351,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 2100
+        "value": 1365
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3000
+        "value": 1950
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3300
+        "value": 2145
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3600
+        "value": 2340
       }
     ],
     "category": 19
@@ -30387,22 +30387,22 @@
       {
         "quantity": 3,
         "stat": "perception",
-        "value": 2198
+        "value": 1429
       },
       {
         "quantity": 5,
         "stat": "perception",
-        "value": 3140
+        "value": 2041
       },
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 3454
+        "value": 2245
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3768
+        "value": 2449
       }
     ],
     "category": 19
@@ -30423,22 +30423,22 @@
       {
         "quantity": 7,
         "stat": "perception",
-        "value": 2296
+        "value": 1492
       },
       {
         "quantity": 9,
         "stat": "perception",
-        "value": 3280
+        "value": 2132
       },
       {
         "quantity": 12,
         "stat": "perception",
-        "value": 3608
+        "value": 2345
       },
       {
         "quantity": 15,
         "stat": "perception",
-        "value": 3936
+        "value": 2558
       }
     ],
     "category": 19
