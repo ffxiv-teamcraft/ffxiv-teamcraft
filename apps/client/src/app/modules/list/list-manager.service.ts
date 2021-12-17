@@ -319,7 +319,7 @@ export class ListManagerService {
         map(extract => {
           const newItem = { ...item, ...extract };
           if (getItemSource<CraftedBy[]>(extract, DataType.CRAFTED_BY).length > 0) {
-            const craftedBy = newItem.sources.find(s => s.type === DataType.CRAFTED_BY);
+            const craftedBy = { ...newItem.sources.find(s => s.type === DataType.CRAFTED_BY) };
             if (recipeId !== undefined && craftedBy.data.some(row => row.id.toString() === recipeId.toString())) {
               craftedBy.data = craftedBy.data.filter(row => {
                 return row.id.toString() === recipeId.toString();
