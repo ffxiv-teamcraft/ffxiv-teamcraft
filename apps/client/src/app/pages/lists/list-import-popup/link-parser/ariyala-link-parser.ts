@@ -2,10 +2,12 @@ import { ExternalListLinkParser } from './external-list-link-parser';
 import { forkJoin, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
-import { AriyalaMateria } from './aryiala-materia';
 import { AriyalaMateriaOptions } from './ariyala-materia-options';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { StaticData } from '../../../../lazy-data/static-data';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { LazyMateria } from 'apps/client/src/app/lazy-data/model/lazy-materia';
+import { AriyalaStatToBaseParamId } from './ariyala-stat-to-base-param-id';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
   public static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
@@ -14,7 +16,8 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
 
   private materiaOptions: AriyalaMateriaOptions;
 
-  constructor(private http: HttpClient, private xivapi: XivapiService) {
+  constructor(private http: HttpClient, private xivapi: XivapiService,
+              private lazyData: LazyDataFacade) {
   }
 
   canParse(url: string): boolean {
@@ -57,50 +60,61 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
           return of(gear);
         }
       }),
-      map(gear => {
-        const entries: string[] = [];
-        const materiaTotals: { [materiaId: number]: number } = {};
+      switchMap(gear => {
+        return this.lazyData.getEntry('materias').pipe(
+          map(lazyMaterias => {
+            const entries: string[] = [];
+            const materiaTotals: { [materiaId: number]: number } = {};
 
-        Object.keys(gear.items).forEach((slot, itemIndex) => {
-          const item = gear.items[slot];
-          const isTool = slot.startsWith('mainhand') || slot.startsWith('offhand');
+            Object.keys(gear.items).forEach((slot, itemIndex) => {
+              const item = gear.items[slot];
+              const isTool = slot.startsWith('mainhand') || slot.startsWith('offhand');
 
-          let quantity = 1;
-          if (slot === 'food') {
-            quantity = 30;
-          }
-          entries.push(`${item},null,${quantity}`);
+              let quantity = 1;
+              if (slot === 'food') {
+                quantity = 30;
+              }
+              entries.push(`${item},null,${quantity}`);
 
-          const materias: string[] = gear.materiaData[`${slot}-${item}`];
-          if (materias !== undefined) {
-            materias.forEach((materia, i) => {
-              const materiaQuantity = estimateOvermeldMateria
-                ? this.calcMateriaQuantity(materia, i + 1, gear.itemMateriaSlots[itemIndex], gear.job, isTool)
-                : 1;
-              if (groupTogether) {
-                if (materia in materiaTotals) {
-                  materiaTotals[materia] += materiaQuantity;
-                } else {
-                  materiaTotals[materia] = materiaQuantity;
-                }
-              } else {
-                entries.push(`${AriyalaMateria[materia]},null,${Math.ceil(materiaQuantity)}`);
+              const materias: string[] = gear.materiaData[`${slot}-${item}`];
+              if (materias !== undefined) {
+                materias.forEach((materia, i) => {
+                  const materiaQuantity = estimateOvermeldMateria
+                    ? this.calcMateriaQuantity(materia, i + 1, gear.itemMateriaSlots[itemIndex], gear.job, isTool)
+                    : 1;
+                  if (groupTogether) {
+                    if (materia in materiaTotals) {
+                      materiaTotals[materia] += materiaQuantity;
+                    } else {
+                      materiaTotals[materia] = materiaQuantity;
+                    }
+                  } else {
+                    entries.push(`${this.getMateriaItemId(lazyMaterias, materia)},null,${Math.ceil(materiaQuantity)}`);
+                  }
+                });
               }
             });
-          }
-        });
 
-        if (groupTogether) {
-          Object.keys(materiaTotals).sort().forEach(materia => {
-            const materiaId = AriyalaMateria[materia];
-            const quantity = materiaTotals[materia];
-            entries.push(`${materiaId},null,${Math.ceil(quantity)}`);
-          });
-        }
+            if (groupTogether) {
+              Object.keys(materiaTotals).sort().forEach(materia => {
+                const materiaId = this.getMateriaItemId(lazyMaterias, materia);
+                const quantity = materiaTotals[materia];
+                entries.push(`${materiaId},null,${Math.ceil(quantity)}`);
+              });
+            }
 
-        return btoa(entries.join(';'));
+            return btoa(entries.join(';'));
+          })
+        );
       })
     );
+  }
+
+  private getMateriaItemId(lazyMaterias: LazyMateria[], ariyalaMateria: string): number {
+    const [statAbbr, rank] = ariyalaMateria.split(':');
+    return lazyMaterias.find(materia => {
+      return materia.baseParamId === AriyalaStatToBaseParamId[statAbbr] && materia.tier === +rank + 1;
+    })?.itemId;
   }
 
   getName(): string {

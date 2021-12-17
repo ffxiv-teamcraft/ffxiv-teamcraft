@@ -78,6 +78,18 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       (<any>item).craftedBy = craftedBy ? craftedBy : null;
       (<any>item).vendors = vendors ? vendors : null;
       item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
+      if (item.recipeId) {
+        item.sources = item.sources.map(source => {
+          if (source.type === DataType.CRAFTED_BY) {
+            return {
+              ...source,
+              data: source.data
+                .filter(c => c.id === item.recipeId)
+            };
+          }
+          return source;
+        });
+      }
       return item;
     }),
     shareReplay(1)

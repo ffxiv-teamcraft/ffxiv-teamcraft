@@ -30,13 +30,14 @@ import { MateriaService } from '../materia.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
 import { HttpClient } from '@angular/common/http';
-import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { LazyData } from '../../../lazy-data/lazy-data';
+import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
+import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
 
 @Injectable({
   providedIn: 'root'
@@ -217,8 +218,8 @@ export class GearsetsFacade {
   fromAriyalaLink(url: string): Observable<TeamcraftGearset> {
     const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
     return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
-      withLazyData(this.lazyData, 'jobAbbr', 'jobName', 'foods', 'itemMeldingData', 'hqFlags'),
-      map(([data, jobAbbr, jobName, foods, itemMeldingData, hqFlags]) => {
+      withLazyData(this.lazyData, 'jobAbbr', 'jobName', 'foods', 'itemMeldingData', 'hqFlags', 'materias'),
+      map(([data, jobAbbr, jobName, foods, itemMeldingData, hqFlags, lazyMaterias]) => {
         let dataset = data.datasets[data.content];
         // for DoH/DoL
         if (dataset === undefined) {
@@ -227,19 +228,19 @@ export class GearsetsFacade {
         const gearset = new TeamcraftGearset();
         gearset.job = +Object.keys(jobAbbr).find(k => jobAbbr[k].en.toLowerCase() === data.content.toLowerCase()) || +Object.keys(jobName).find(k => jobName[k].en.toLowerCase() === data.content.toLowerCase());
         gearset.name = url;
-        gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand', itemMeldingData, hqFlags);
-        gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand', itemMeldingData, hqFlags);
-        gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head', itemMeldingData, hqFlags);
-        gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest', itemMeldingData, hqFlags);
-        gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands', itemMeldingData, hqFlags);
-        gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs', itemMeldingData, hqFlags);
-        gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet', itemMeldingData, hqFlags);
-        gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears', itemMeldingData, hqFlags);
-        gearset.necklace = this.getAriyalaEquipmentPiece(dataset, 'neck', itemMeldingData, hqFlags);
-        gearset.bracelet = this.getAriyalaEquipmentPiece(dataset, 'wrist', itemMeldingData, hqFlags);
-        gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft', itemMeldingData, hqFlags);
-        gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight', itemMeldingData, hqFlags);
-        gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal', itemMeldingData, hqFlags);
+        gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.necklace = this.getAriyalaEquipmentPiece(dataset, 'neck', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.bracelet = this.getAriyalaEquipmentPiece(dataset, 'wrist', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight', itemMeldingData, hqFlags, lazyMaterias);
+        gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal', itemMeldingData, hqFlags, lazyMaterias);
         if (dataset.normal.items.food) {
           gearset.food = foods.find(food => food.ID === dataset.normal.items.food);
           if (gearset.food) {
@@ -253,6 +254,13 @@ export class GearsetsFacade {
         return of(null);
       })
     );
+  }
+
+  private getMateriaItemId(lazyMaterias: LazyMateria[], ariyalaMateria: string): number {
+    const [statAbbr, rank] = ariyalaMateria.split(':');
+    return lazyMaterias.find(materia => {
+      return materia.baseParamId === AriyalaStatToBaseParamId[statAbbr] && materia.tier === +rank + 1;
+    })?.itemId;
   }
 
   fromLodestone(lodestoneId: number): Observable<TeamcraftGearset> {
@@ -362,14 +370,14 @@ export class GearsetsFacade {
     }
   }
 
-  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
+  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags'], lazyMaterias: LazyData['materias']): EquipmentPiece | null {
     const itemId = dataset.normal.items[ariyalaName];
     if (itemId === undefined) {
       return null;
     }
     const itemMeldingData = lazyItemMeldingData[itemId];
     const canBeHq = hqFlags[itemId] === 1;
-    const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => AriyalaMateria[row]) as number[];
+    const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => this.getMateriaItemId(lazyMaterias, row)) as number[];
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
     }

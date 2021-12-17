@@ -25,7 +25,8 @@
               <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
                    src="./assets/icons/HQ.png"/>
             </span>
-              <span *ngIf="item.amount > item.done" class="needed" nz-tooltip [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
+              <span *ngIf="item.amount > item.done" class="needed" nz-tooltip
+                    [nzTooltipTitle]="'Required_crafts_amount' | translate">&nbsp;x{{item.amount - item.done}}<span
                 *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
             </span>
             </div>

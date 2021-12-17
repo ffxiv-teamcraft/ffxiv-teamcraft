@@ -363,7 +363,15 @@
               <div>
                 <app-i18n-name content="items" [id]="item.itemId"></app-i18n-name>
               </div>
-              <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
+              <div fxLayout="row" fxLayoutGap="5px">
+                <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
+                <img *ngIf="(item.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
+                     alt="{{item.recipe.job | i18nRow:'jobAbbr' | i18n}}"
+                     class="job-icon small"
+                     src="https://garlandtools.org/db/images/job/{{icon}}.png">
+                lvl{{item.recipe.lvl}} <span
+                *ngIf="item.recipe.stars !== undefined">{{getStars(item.recipe.stars)}}</span>
+              </div>
             </div>
           </div>
         </div>
