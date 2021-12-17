@@ -494,7 +494,6 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
-          console.log(item.recipe.recipeId);
           return this.listManager.addToList({
             itemId: +item.itemId,
             list: list,
