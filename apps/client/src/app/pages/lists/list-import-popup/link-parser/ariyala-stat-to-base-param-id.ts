@@ -1,0 +1,20 @@
+export const AriyalaStatToBaseParamId = {
+  STR: 1,
+  DEX: 2,
+  VIT: 3,
+  INT: 4,
+  MND: 5,
+  PIE: 6,
+  DHT: 22,
+  CRT: 27,
+  DET: 44,
+  SKS: 45,
+  SPS: 46,
+  TEN: 19,
+  CRL: 71,
+  CMS: 70,
+  CP: 11,
+  PCP: 73,
+  GTH: 72,
+  GP: 10
+};
