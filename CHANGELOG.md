@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.11"></a>
+## [9.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.10...v9.2.11) (2021-12-17)
+
+
+### Bug Fixes
+
+* **ariyala:** fixed ariyala import for both gearsets and lists ([6367e5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6367e5e))
+* **collectables:** fixed collectables not being filtered by level properly ([221e1aa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/221e1aa))
+* **list:** fixed recipes addition sometimes not applying recipe id properly ([9a7ba2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a7ba2f))
+* **lists:** fixed a bug with list copy sometimes not copying properly ([ad6028e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ad6028e))
+* **ventures:** fixed venture thresholds not being accurate ([5c903e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c903e3))
+
+
+
 <a name="9.2.10"></a>
 ## [9.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.9...v9.2.10) (2021-12-16)
 
