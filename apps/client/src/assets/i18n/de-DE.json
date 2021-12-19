@@ -1930,7 +1930,7 @@
     "Install_npcap": "Npcap fehlt auf dem System",
     "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
-    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als Anonymer",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
@@ -2815,20 +2815,20 @@
     "Rarity_Rare": "Selten",
     "No_missing_fish_data": "Kein Fisch mit fehlenden Daten",
     "Sources_filter": "Quellen filtern",
-    "Speed": "Speed",
-    "Shadow_size": "Shadow size",
+    "Speed": "Geschwindigkeit",
+    "Shadow_size": "Schattengröße",
     "SPEEDS": {
-      "VERY_SLOW": "Very slow",
-      "SLOW": "Slow",
-      "AVERAGE": "Average",
-      "FAST": "Fast",
-      "FASTER": "Faster",
-      "VERY_FAST": "Very fast"
+      "VERY_SLOW": "Sehr langsam",
+      "SLOW": "Langsam",
+      "AVERAGE": "Durchschnittlich",
+      "FAST": "Schnell",
+      "FASTER": "Schneller",
+      "VERY_FAST": "Sehr schnell"
     },
     "SHADOWS": {
-      "SMALL": "Small",
+      "SMALL": "Klein",
       "NORMAL": "Normal",
-      "LARGE": "Large"
+      "LARGE": "Groß"
     },
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
@@ -2858,7 +2858,7 @@
     "NIGHT": "Nacht"
   },
   "UPDATER": {
-    "New_update_available": "A new update is available and has been downloaded",
-    "Restart_to_install": "Do you want to restart now to apply it?"
+    "New_update_available": "Ein neues Update ist verfügbar und wurde heruntergeladen",
+    "Restart_to_install": "Möchten du jetzt neu starten zum Anwenden?"
   }
 }
