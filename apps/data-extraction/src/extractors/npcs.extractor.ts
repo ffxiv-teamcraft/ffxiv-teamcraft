@@ -3,6 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class NpcsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const npcs = {};
+    const housingMaterialSuppliers = [];
     this.getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk,Title_*').subscribe(page => {
       page.Results.forEach(npc => {
         npcs[npc.ID] = {
@@ -22,9 +23,13 @@ export class NpcsExtractor extends AbstractExtractor {
         if (npc.BalloonTargetID > 0) {
           npcs[npc.ID].balloon = npc.BalloonTargetID;
         }
+        if (npc.Name_en === 'material supplier') {
+          housingMaterialSuppliers.push(npc.ID);
+        }
       });
     }, null, () => {
       this.persistToJsonAsset('npcs', npcs);
+      this.persistToTypescript('housing-material-suppliers', 'housingMaterialSuppliers', housingMaterialSuppliers);
       this.done();
     });
   }
