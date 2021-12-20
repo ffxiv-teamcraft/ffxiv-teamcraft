@@ -130,7 +130,8 @@
     "Exclude_filter_placeholder": "Exclude using tags",
     "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
-    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters"
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "Search": "Search"
   },
   "COMMON": {
     "Length": "Comprimento",
