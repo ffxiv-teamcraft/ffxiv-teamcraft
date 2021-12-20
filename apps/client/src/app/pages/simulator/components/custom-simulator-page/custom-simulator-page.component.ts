@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { combineLatest, merge, Observable } from 'rxjs';
-import { filter, map, startWith, tap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { SeoService } from '../../../../core/seo/seo.service';
@@ -10,6 +10,7 @@ import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
 import { EnvironmentService } from '../../../../core/environment.service';
+import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 
 @Component({
   selector: 'app-custom-simulator-page',
@@ -22,11 +23,11 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   public recipeForm: FormGroup;
 
-  public recipe$: Observable<Partial<Craft>>;
+  public recipe$: Observable<Craft>;
 
   constructor(private fb: FormBuilder, protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService,
-              private env: EnvironmentService) {
+              private env: EnvironmentService, private xivapi: XivapiService) {
     super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
@@ -45,8 +46,6 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       progress: [9181, [Validators.min(1), Validators.required]],
       quality: [64862, [Validators.min(1), Validators.required]],
       durability: [60, [Validators.min(1), Validators.required]],
-      suggCraft: [2484, [Validators.min(1), Validators.required]],
-      suggCtrl: [2206, [Validators.min(1), Validators.required]],
       expert: [true]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
@@ -65,8 +64,6 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         progress: 9181,
         quality: 64862,
         durability: 60,
-        suggCraft: 2484,
-        suggCtrl: 2206,
         expert: true
       }),
       map(form => {
@@ -76,8 +73,6 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           durability: form.durability,
           quality: form.quality,
           progress: form.progress,
-          suggestedCraftsmanship: form.suggCraft,
-          suggestedControl: form.suggCtrl,
           expert: form.expert
         };
       })
@@ -88,6 +83,19 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         (recipe as Craft).conditionsFlag = recipe.expert ? 511 : 15;
         return recipe;
       }),
+      switchMap(recipe => {
+        return this.xivapi.get(XivapiEndpoint.RecipeLevelTable, recipe.rlvl).pipe(
+          map(rlt => {
+            return <Craft>{
+              ...recipe,
+              progressDivider: rlt.ProgressDivider,
+              progressModifier: rlt.ProgressModifier,
+              qualityDivider: rlt.QualityDivider,
+              qualityModifier: rlt.QualityModifier,
+            }
+          })
+        )
+      }),
       tap(recipe => {
         this.recipeForm.patchValue({
           rlvl: recipe.rlvl,
@@ -95,8 +103,6 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           progress: recipe.progress,
           quality: recipe.quality,
           durability: recipe.durability,
-          suggCraft: recipe.suggestedCraftsmanship,
-          suggCtrl: recipe.suggestedControl,
           expert: recipe.expert
         }, { emitEvent: false });
       })
