@@ -5,10 +5,11 @@ import * as isDev from 'electron-is-dev';
 
 
 export class AutoUpdater {
-  private readonly win: BrowserWindow;
+  private get win(): BrowserWindow {
+    return this.mainWindow.win;
+  }
 
   constructor(private mainWindow: MainWindow) {
-    this.win = this.mainWindow.win;
   }
 
   connectListeners(): void {
