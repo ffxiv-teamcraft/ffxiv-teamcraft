@@ -16,8 +16,8 @@
   </nz-form-item>
 </div>
 
-<div *ngIf="result$ | async as results" class="results">
-  <app-page-loader [loading]="loadingResults">
+<app-page-loader [loading]="loadingResults">
+  <div *ngIf="result$ | async as results" class="results">
     <nz-list *ngIf="results.length > 0; else noResults"
              [nzDataSource]="results"
              [nzItemLayout]="'horizontal'"
@@ -41,8 +41,8 @@
     <ng-template #noResults>
       <span *ngIf="!loadingResults">{{'PERMISSIONS.User_not_found' | translate}}</span>
     </ng-template>
-  </app-page-loader>
-</div>
+  </div>
+</app-page-loader>
 
 <ng-container *ngIf="!hideContacts">
 

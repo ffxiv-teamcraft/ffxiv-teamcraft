@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { FormControl, Validators } from '@angular/forms';
-import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
+import { CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { UserService } from '../../../core/database/user.service';
