@@ -2,8 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { List } from '../../../modules/list/model/list';
 import { ListTag } from '../../../modules/list/model/list-tag.enum';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { debounceTime, filter, first, map, startWith, switchMap, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
@@ -26,11 +26,13 @@ export class CommunityListsComponent implements OnDestroy {
 
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
+  private search$ = new Subject<void>();
+
   public pageSize = 20;
 
   public totalLength = 0;
 
-  loading = true;
+  loading = false;
 
   filteredLists$: Observable<List[]>;
 
@@ -47,9 +49,12 @@ export class CommunityListsComponent implements OnDestroy {
         label: `LIST_TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest([this.nameFilter$.pipe(
-      debounceTime(1000)
-    ), this.tagsFilter$, this.excludeFilter$]).pipe(
+    this.filters$ = this.search$.pipe(
+      switchMap(() =>
+        combineLatest([this.nameFilter$, this.tagsFilter$, this.excludeFilter$]).pipe(
+          first()
+        )
+      ),
       tap(([name, tags, exclude]) => {
         this.page$.next(1);
         const queryParams = {};
@@ -102,6 +107,10 @@ export class CommunityListsComponent implements OnDestroy {
       }),
       tap(() => this.loading = false)
     );
+  }
+
+  search(): void {
+    this.search$.next();
   }
 
   trackByList(index: number, list: List): string {
