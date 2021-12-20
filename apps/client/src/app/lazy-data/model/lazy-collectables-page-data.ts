@@ -92,17 +92,4 @@ export interface GatheringNode {
   oceanFishingTime?: null;
   folklore?:         number;
   weathers?:         number[];
-  predators?:        Predator[];
-  gig?:              Gig;
-}
-
-export enum Gig {
-  Large = "Large",
-  Normal = "Normal",
-  Small = "Small",
-}
-
-export interface Predator {
-  id:     number;
-  amount: number;
 }
