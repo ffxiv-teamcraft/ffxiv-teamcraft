@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.12"></a>
+## [9.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.11...v9.2.12) (2021-12-20)
+
+
+### Bug Fixes
+
+* **db:** fixed spearfishing node positions missing icons ([b62e21a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b62e21a))
+* **gc-supply:** fixed job icons not loading properly ([f9cb78e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f9cb78e))
+* **gearsets:** fixed missing job name in gearsets sync popup ([92a6422](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92a6422))
+* **layout:** better filtering for housing vendors ([7641225](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7641225))
+* **log-tracker:** added missing spearfishing nodes ([ea81531](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea81531))
+* **log-tracker:** fixed log pages ordering in FSH tabs ([2ca1cee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2ca1cee))
+* **reset-timers:** fixed some timers displaying weird 0-X counts ([c983c5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c983c5b))
+* **search:** fixed checkboxes breaking the selection page ([de35c16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de35c16))
+* **simulator:** fixed custom simulator ([477561e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/477561e)), closes [#2112](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2112)
+* **user-picker:** proper loader display when request is running ([2c0025a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c0025a))
+
+
+### Features
+
+* **collectables:** categories are now sorted by level DESC ([6523f42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6523f42))
+* **community-lists:** added a search button to not trigger useless and broad search requests ([d79907d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d79907d))
+* **db:** allagn reports import ([91574d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91574d3))
+* **layout:** town bicolor gemstone traders are now ignored in area breakdown ([2d85de6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d85de6))
+
+
+
 <a name="9.2.11"></a>
 ## [9.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.10...v9.2.11) (2021-12-17)
 

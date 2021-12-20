@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
+import { addHours } from 'date-fns';
 
 @Injectable({ providedIn: 'root' })
 export class RealtimeAlarmsService {
@@ -110,14 +111,14 @@ export class RealtimeAlarmsService {
   }
 
   private getTimeBefore(hour: number, day?: number): Date {
-    if (hour < new Date().getUTCHours() && day === undefined) {
-      day = new Date().getUTCDay() + 1;
-    }
-    const nextIteration = new Date();
+    let nextIteration = new Date();
     nextIteration.setUTCMinutes(0);
     nextIteration.setUTCSeconds(0);
     nextIteration.setUTCMilliseconds(0);
     nextIteration.setUTCHours(hour);
+    if (new Date().getUTCHours() > hour && day === undefined) {
+      nextIteration = addHours(nextIteration, 24);
+    }
     if (day !== undefined) {
       const currentDay = nextIteration.getDay();
       const distance = day - currentDay;

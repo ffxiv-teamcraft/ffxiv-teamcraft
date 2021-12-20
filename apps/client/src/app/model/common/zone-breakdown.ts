@@ -93,7 +93,7 @@ export class ZoneBreakdown {
     // If we hide duplicates and it's bicolor gems, ignore eulmore and crystarium
     if (hideZoneDuplicates
       && getItemSource(item, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
-      && (mapId === 498 || mapId === 497)) {
+      && [497, 498, 693, 694].includes(mapId)) {
       return;
     }
     if (hideZoneDuplicates) {

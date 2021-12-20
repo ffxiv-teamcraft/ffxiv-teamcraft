@@ -66,10 +66,7 @@ export class FishingLogCacheService {
         });
         display.tabs = display.tabs
           .sort((a, b) => {
-            if (a.id > 20000) {
-              return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
-            }
-            return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
+            return b.placeId - a.placeId;
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;

@@ -176,7 +176,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     }
     return this.http.get<{ lists: List[] }>('https://us-central1-ffxivteamcraft.cloudfunctions.net/searchCommunityLists', { params }).pipe(
       switchMap(res => {
-        return this.completeLists(this.serializer.deserialize<List>(res.lists, [this.getClass()]));
+        return this.completeLists(this.serializer.deserialize<List>((res.lists || []), [this.getClass()]));
       })
     );
   }

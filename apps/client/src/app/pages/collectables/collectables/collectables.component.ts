@@ -108,6 +108,7 @@ export class CollectablesComponent {
                     collectables: group.collectables.filter(c => c.level <= level)
                   };
                 }).filter(group => group.collectables.length > 0)
+                  .reverse()
               };
             });
           })

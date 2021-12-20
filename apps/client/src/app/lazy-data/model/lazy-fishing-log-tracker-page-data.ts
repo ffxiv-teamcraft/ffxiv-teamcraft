@@ -109,4 +109,6 @@ export interface GatheringNode {
   weathersFrom?:     number[];
   predators?:        Predator[];
   folklore?:         number;
+  speed?:            number;
+  shadowSize?:       number;
 }

@@ -378,6 +378,7 @@ export class IpcService {
         });
     });
     this.on('update-downloaded', () => {
+      console.log('UPDATE DOWNLOADED');
       this.translate.get('UPDATE.New_update_available')
         .pipe(
           first(),

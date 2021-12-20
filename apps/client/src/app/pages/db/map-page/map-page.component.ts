@@ -17,6 +17,7 @@ import { HttpClient } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { mapIds } from '../../../core/data/sources/map-ids';
+import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
 
 @Component({
   selector: 'app-map-page',
@@ -106,7 +107,6 @@ export class MapPageComponent extends TeamcraftPageComponent {
           this.getMobs(mapData.ID),
           this.getNpcs(mapData.ID),
           this.getNodes(mapData.ID)
-          //this.getHunts(mapData.TerritoryTypeTargetID, mapData.SizeFactor)
         ]);
       }),
       map((res) => res.flat()),
@@ -308,13 +308,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
               },
               marker: {
                 iconType: 'img',
-                iconImg: [
-                  './assets/icons/map/min1.png',
-                  './assets/icons/map/min0.png',
-                  './assets/icons/map/btn1.png',
-                  './assets/icons/map/btn0.png',
-                  './assets/icons/map/fsh0.png'
-                ][node.type],
+                iconImg: NodeTypeIconPipe.icons[node.type],
                 x: node.x,
                 y: node.y,
                 link: `/db/${this.translate.currentLang}/${node.type === 4 ? 'spearfishing-spot' : 'node'}/${node.id}`

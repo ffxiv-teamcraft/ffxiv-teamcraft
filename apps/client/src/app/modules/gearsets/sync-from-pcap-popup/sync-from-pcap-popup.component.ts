@@ -80,9 +80,19 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
         map(gearsets => {
           return gearsets.filter(g => g.fromSync);
         })
-      ))
-    ).subscribe(([gearset, syncGearsets]) => {
-
+      )),
+      switchMap(([gearset, syncGearsets]) => {
+        return this.i18n.getNameObservable('jobName', gearset.job).pipe(
+          map(name => {
+            return [
+              gearset,
+              syncGearsets,
+              name.charAt(0).toUpperCase() + name.slice(1)
+            ]
+          })
+        )
+      })
+    ).subscribe(([gearset, syncGearsets, name]: [TeamcraftGearset, any[], string]) => {
       const syncGearset = syncGearsets.find(set => {
         return set.job === gearset.job;
       });

@@ -8,6 +8,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { Observable, of } from 'rxjs';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { map } from 'rxjs/operators';
+import { housingMaterialSuppliers } from '../../core/data/sources/housing-material-suppliers';
 
 export class NpcBreakdown {
   private readonly _rows: NpcBreakdownRow[] = [];
@@ -111,7 +112,7 @@ export class NpcBreakdown {
       return of(0);
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
-    if (this.prioritizeHousingSupplier && [1005633, 1008837].includes(npcId)) {
+    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(npcId)) {
       return of(100);
     }
     const sameNpc = this._rows.find(r => r.npcId === npcId);

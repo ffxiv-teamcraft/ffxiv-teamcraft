@@ -26,6 +26,11 @@
       <i nz-icon nzType="reload"></i>
     </button>
   </div>
+  <div>
+    <button nz-button nzType="primary" nzBlock (click)="search()">
+      {{'COMMUNITY_LISTS.Search' | translate}}
+    </button>
+  </div>
   <app-page-loader [loading]="loading" class="lists-container">
     <div *ngIf="filteredLists$ | async as lists" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="5px">
       <app-list-panel *ngFor="let list of lists; trackBy: trackByList" [list]="list"
