@@ -35841,20 +35841,27 @@
   },
   "1667": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tora! Tora! Tora!",
+      "ja": "降神祭「荒神楽で虎退治！」",
+      "de": "Hilfe, der Tiger ist los!",
+      "fr": "La chasse du tigre chimérique!"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Help the onmyoji and his apprentice carry out their ritual by slaying the apparition of Byakko.",
+      "ja": "陰陽師と弟子たちに協力し\n\n降神祭の荒神楽を成功させろ\n\n具現化した幻白虎を倒せ",
+      "de": "Der Onmyoji und sein Schüler brauchen deine Hilfe beim Himmelswende-Kagura. Schlüpf in die Rolle des Kriegers und bezwinge den zum Leben erweckten Wandschirmtiger!",
+      "fr": "Prenez part à l'Ara-kagura et aidez le prêtre onmyo et son disciple à battre l'illusion du tigre blanc."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060508.png",
+    "level": 5,
+    "location": 8525004,
+    "position": {
+      "map": 15,
+      "zoneid": 30,
+      "x": 24.04,
+      "y": 26.11,
+      "z": 0.6
+    }
   },
   "1668": {
     "name": {
@@ -39195,7 +39202,7 @@
       "fr": "Observation: io"
     },
     "description": {
-      "en": "Seeking inspiration for future concepts, Meletos the Inscrutable wishes to observe how one might wipe an Io off the face of this star. All in the name of science, of course.",
+      "en": "Seeking inspiration for future concepts, Meletos the Inscrutable wishes to observe how one might wipe an io off the face of this star. All in the name of science, of course.",
       "ja": "新たなる創造生物のイデアを生み出すため\n\n<Sheet(BNpcName,11072,0)/>が、創造生物の観察を計画している\n\n求めに応じて、<Sheet(BNpcName,11074,0)/>を倒せ",
       "de": "Ein neues Konzept von <SheetDe(BNpcName,5,11072,1,3,1)/> muss getestet werden. Unterziehe <SheetDe(BNpcName,2,11074,1,4,1)/> einer Kampfprobe!",
       "fr": "Mélétos continue de chercher des idées pour une nouvelle création. Combattez une copie de l'io afin qu'il puisse s'en inspirer."
@@ -39339,7 +39346,7 @@
       "fr": "Impitoyables serres"
     },
     "description": {
-      "en": "The first generation monocerotes appear as naught but tasty morsels to the predators of Elpis, specifically the harpuiai. Fortunately, these new creations have you on their side.",
+      "en": "The first-generation monocerotes appear as naught but tasty morsels to the predators of Elpis, specifically the harpuiai. Fortunately, these new creations have you on their side.",
       "ja": "新種の創造生物が捕食者に狙われている\n\nニューブラッド・モノセロスを守りつつ\n\nハングリー・ハルピュイアを倒せ",
       "de": "Neu entworfene Proto-Monozerosse werden von hungrigen Harpuien heimgesucht. Beschütze die neuen Leben vor ihren fliegenden Fressfeinden!",
       "fr": "Des monocéros expérimentaux sont la proie de harpyia affamées. Protégez-les de ces dangereuses prédatrices!"

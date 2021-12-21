@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.13"></a>
+## [9.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.12...v9.2.13) (2021-12-21)
+
+
+### Features
+
+* **db:** support for 6.01 content update ([fd9a04e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd9a04e))
+
+
+
 <a name="9.2.12"></a>
 ## [9.2.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.11...v9.2.12) (2021-12-20)
 

@@ -58128,28 +58128,28 @@
     "fr": "garde de Castrum Lacus Litore"
   },
   "9689": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phantom Byakko",
+    "ja": "幻白虎",
+    "de": "Phantom-Byakko",
+    "fr": "illusion de tigre blanc"
   },
   "9690": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phantom tiger",
+    "ja": "幻虎",
+    "de": "Phantomtiger",
+    "fr": "illusion de tigre"
   },
   "9691": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Far Eastern onmyoji",
+    "ja": "東方の陰陽師",
+    "de": "fernöstlich[a] Onmyoji",
+    "fr": "prêtre onmyo d'Orient"
   },
   "9692": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "apprentice onmyoji",
+    "ja": "陰陽師の弟子",
+    "de": "Schüler[p] des Onmyoji",
+    "fr": "disciple onmyo"
   },
   "9693": {
     "en": "4th-make Hashmal",
@@ -62064,10 +62064,10 @@
     "fr": "Fordola Lupus"
   },
   "10345": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Erichthonios",
+    "ja": "エリクトニオス",
+    "de": "Erichthonios",
+    "fr": "Érichthonios"
   },
   "10346": {
     "en": "unknown imperial",
@@ -62082,10 +62082,10 @@
     "fr": "Loporrite"
   },
   "10348": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "hippokampos",
+    "ja": "ヒッポカムポス",
+    "de": "Hippokampos",
+    "fr": "hippokampos"
   },
   "10349": {
     "en": "liturgic bell",
@@ -62205,7 +62205,7 @@
     "en": "Terminus idolizer",
     "ja": "ターミナス・アイドライザー",
     "de": "Terminus-Anbeter",
-    "fr": "sonneur de glas de l'apocalypse"
+    "fr": "adorateur de l'apocalypse"
   },
   "10369": {
     "en": "Terminus sprinter",
@@ -62217,7 +62217,7 @@
     "en": "Terminus bellwether",
     "ja": "ターミナス・ベルウェザー",
     "de": "Läuter[p] der Totenglocke",
-    "fr": "adorateur de l'apocalypse"
+    "fr": "sonneur de glas de l'apocalypse"
   },
   "10371": {
     "en": "Terminus shadower",
@@ -63453,7 +63453,7 @@
     "en": "Erichthonios",
     "ja": "エリクトニオス",
     "de": "Erichthonios",
-    "fr": "Erichthonios"
+    "fr": "Érichthonios"
   },
   "10577": {
     "en": "Drusilla",
@@ -64314,22 +64314,22 @@
     "fr": "Svarbhanu"
   },
   "10720": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phoinix",
+    "ja": "フェネクス",
+    "de": "Phoinix",
+    "fr": "protophénix"
   },
   "10721": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sparkfledged",
+    "ja": "火霊鳥",
+    "de": "Saat[p] des Phoinix",
+    "fr": "oiselet de feu"
   },
   "10722": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sunbird",
+    "ja": "陽炎鳥",
+    "de": "Spross[p] des Phoinix",
+    "fr": "oiselet étincelant"
   },
   "10723": {
     "en": "",
@@ -64338,10 +64338,10 @@
     "fr": ""
   },
   "10724": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sunbird",
+    "ja": "陽炎鳥",
+    "de": "Spross[p] des Phoinix",
+    "fr": "oiselet étincelant"
   },
   "10725": {
     "en": "",
@@ -64350,10 +64350,10 @@
     "fr": ""
   },
   "10726": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "darkened fire",
+    "ja": "闇の炎",
+    "de": "Schwarz[a] Lohe",
+    "fr": "flamme sombre"
   },
   "10727": {
     "en": "",
@@ -64446,16 +64446,16 @@
     "fr": "assistant Sathzant"
   },
   "10742": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hesperos",
+    "ja": "ヘスペロス",
+    "de": "Hesperos",
+    "fr": "Hespéros"
   },
   "10743": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "explosive aether",
+    "ja": "エクスプローシブエーテル",
+    "de": "explosiv[a] Statist",
+    "fr": "éther explosif"
   },
   "10744": {
     "en": "",
@@ -64490,7 +64490,7 @@
   "10749": {
     "en": "toxic icetrap",
     "ja": "トキシック・アイストラップ",
-    "de": "gift[a] Eisfalle",
+    "de": "giftig[a] Eisfalle",
     "fr": "piège-glace"
   },
   "10750": {
@@ -66254,7 +66254,7 @@
   "11043": {
     "en": "malformed dragonet",
     "ja": "変わり果てた子竜",
-    "de": "verändert[a] Drachenjunge",
+    "de": "verändert[a] Drachenjung[a]",
     "fr": "dragonnet putréfié"
   },
   "11044": {
@@ -66325,7 +66325,7 @@
   },
   "11055": {
     "en": "burning anala",
-    "ja": "バーニング・アニラ",
+    "ja": "バーニング・アナラ",
     "de": "brennend[a] Anala",
     "fr": "anala ardent"
   },
@@ -66438,7 +66438,7 @@
     "fr": "aigokeros"
   },
   "11074": {
-    "en": "man-made ogre",
+    "en": "man-made io",
     "ja": "クリエイテッド・イーオー",
     "de": "Io-Prototyp",
     "fr": "copie de l'io"

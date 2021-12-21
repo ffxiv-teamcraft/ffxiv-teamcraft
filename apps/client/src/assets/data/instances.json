@@ -1535,7 +1535,7 @@
   "5047": {
     "en": "Endwalker",
     "ja": "暁月のフィナーレ",
-    "de": "Das Ende der Morgenröte",
+    "de": "Endschreiter",
     "fr": "Arpenteur des finitudes",
     "icon": "/i/061000/061805.png",
     "contentText": [
@@ -4177,11 +4177,15 @@
     "icon": null
   },
   "30107": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Fourth Circle",
+    "ja": "万魔殿パンデモニウム：辺獄編4",
+    "de": "Asphodelos - Vierter Kreis",
+    "fr": "Les Limbes du Pandæmonium - Abîme",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32509,
+      32500
+    ]
   },
   "30108": {
     "en": null,
@@ -4191,11 +4195,15 @@
     "icon": null
   },
   "30109": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Third Circle",
+    "ja": "万魔殿パンデモニウム：辺獄編3",
+    "de": "Asphodelos - Dritter Kreis",
+    "fr": "Les Limbes du Pandæmonium - Fournaise",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32201,
+      32200
+    ]
   },
   "30110": {
     "en": null,
@@ -4205,11 +4213,15 @@
     "icon": null
   },
   "30111": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The First Circle",
+    "ja": "万魔殿パンデモニウム：辺獄編1",
+    "de": "Asphodelos - Erster Kreis",
+    "fr": "Les Limbes du Pandæmonium - Parvis",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32118,
+      32100
+    ]
   },
   "30112": {
     "en": null,
@@ -4219,11 +4231,15 @@
     "icon": null
   },
   "30113": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Second Circle",
+    "ja": "万魔殿パンデモニウム：辺獄編2",
+    "de": "Asphodelos - Zweiter Kreis",
+    "fr": "Les Limbes du Pandæmonium - Cloaque",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      30904,
+      30901
+    ]
   },
   "30114": {
     "en": null,
