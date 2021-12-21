@@ -3552,15 +3552,183 @@
     "fr": "Élu de la Reine"
   },
   "593": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "At War's Horizon",
+    "ja": "At War's Horizon",
+    "de": "am Horizont des Krieges",
+    "fr": "Prodige de la guerre"
   },
   "594": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "At Magic's Horizon",
+    "ja": "At Magic's Horizon",
+    "de": "am Horizont der Magie",
+    "fr": "Prodige de la magie"
+  },
+  "595": {
+    "en": "At Art's Horizon",
+    "ja": "At Art's Horizon",
+    "de": "am Horizont der Handwerks",
+    "fr": "Prodige de la main"
+  },
+  "596": {
+    "en": "At Land's Horizon",
+    "ja": "At Land's Horizon",
+    "de": "am Horizont des Landes",
+    "fr": "Prodige de la terre"
+  },
+  "597": {
+    "en": "Magus Resister",
+    "ja": "Magus Resister",
+    "de": "Magus-Bändiger",
+    "fr": "Pourfendeur des Magus"
+  },
+  "598": {
+    "en": "Moonwalker",
+    "ja": "Moonwalker",
+    "de": "Mondläufer",
+    "fr": "Marcheur sélénien"
+  },
+  "599": {
+    "en": "Lightingway",
+    "ja": "Lightingway",
+    "de": "Lightingway",
+    "fr": "Cuniculiculteur millénaire"
+  },
+  "600": {
+    "en": "Vrtra's Valiant",
+    "ja": "Vrtra's Valiant",
+    "de": "Mut der Vrtra",
+    "fr": "Défenseur de Thavnair"
+  },
+  "601": {
+    "en": "Elpiphoros",
+    "ja": "Elpiphoros",
+    "de": "Elpiphoros",
+    "fr": "Voyageur d'Elpis"
+  },
+  "602": {
+    "en": "Hope's Legacy",
+    "ja": "Hope's Legacy",
+    "de": "Hoffnungsvolle Hinterlassenschaft",
+    "fr": "Symbole de l'espoir"
+  },
+  "603": {
+    "en": "Endwalker",
+    "ja": "Endwalker",
+    "de": "Endwalker",
+    "fr": "Arpenteur des finitudes"
+  },
+  "604": {
+    "en": "Lemures",
+    "ja": "Lemures",
+    "de": "mit der Sense",
+    "fr": "Lémure"
+  },
+  "605": {
+    "en": "The Sagacious",
+    "ja": "the Sagacious",
+    "de": "der Weisheit",
+    "fr": "Sage"
+  },
+  "606": {
+    "en": "Erudite Smith",
+    "ja": "Erudite Smith",
+    "de": "fachkundiger Schmied",
+    "fr": "Métallurgiste érudit"
+  },
+  "607": {
+    "en": "Erudite Artisan",
+    "ja": "Erudite Artisan",
+    "de": "fachkundiger Handwerker",
+    "fr": "Façonnier érudit"
+  },
+  "608": {
+    "en": "Erudite Apothecary",
+    "ja": "Erudite Apothecary",
+    "de": "fachkundiger Kräutermischer",
+    "fr": "Préparateur érudit"
+  },
+  "609": {
+    "en": "Erudite Seeker",
+    "ja": "Erudite Seeker",
+    "de": "fachkundiger Sucher",
+    "fr": "Naturaliste érudit"
+  },
+  "610": {
+    "en": "Erudite Angler",
+    "ja": "Erudite Angler",
+    "de": "fachkundiger Fischer",
+    "fr": "Pêcheur érudit"
+  },
+  "611": {
+    "en": "Honorary Academic",
+    "ja": "Honorary Academic",
+    "de": "fachkundiger Alleskönner",
+    "fr": "Diplômé honoris causa"
+  },
+  "612": {
+    "en": "The Seventh Dawn",
+    "ja": "the Seventh Dawn",
+    "de": "der Über-Exeget",
+    "fr": "Entraîneur de la Septième Aube"
+  },
+  "613": {
+    "en": "Of Unbreakable Oath",
+    "ja": "of Unbreakable Oath",
+    "de": "der ungebrochene Eid",
+    "fr": "Serment irréductible"
+  },
+  "614": {
+    "en": "Of Unbreakable Steel",
+    "ja": "of Unbreakable Steel",
+    "de": "der ungebrochene Wille",
+    "fr": "Acier irréductible"
+  },
+  "615": {
+    "en": "Of Unbreakable Principle",
+    "ja": "of Unbreakable Principle",
+    "de": "das ungebrochene Schwarz",
+    "fr": "Morale irréductible"
+  },
+  "616": {
+    "en": "Of Unbreakable Lealty",
+    "ja": "of Unbreakable Lealty",
+    "de": "die ungebrochene Klinge",
+    "fr": "Loyauté irréductible"
+  },
+  "617": {
+    "en": "Gleaning Machine",
+    "ja": "Gleaning Machine",
+    "de": "Gefahrensucher",
+    "fr": "Glaneur hors pair"
+  },
+  "618": {
+    "en": "The Keen",
+    "ja": "the Keen",
+    "de": "Gefahrensucher par excellence",
+    "fr": "Traqueur notoire"
+  },
+  "619": {
+    "en": "The Excruciatingly Excited",
+    "ja": "the Excruciatingly Excited",
+    "de": "Ekstase 6000",
+    "fr": "Homo ludens"
+  },
+  "620": {
+    "en": "On the Hype Tron",
+    "ja": "on the Hype Tron",
+    "de": "der euphorische Glücksritter",
+    "fr": "Régulier du Ludodrome"
+  },
+  "621": {
+    "en": "Lunaire Riche",
+    "ja": "Lunaire Riche",
+    "de": "Lunarer Krösus",
+    "fr": "Champion du Ludodrome"
+  },
+  "622": {
+    "en": "Patron of the Fates",
+    "ja": "Patron of the Fates",
+    "de": "Meister der schicksalhaften Begegnungen",
+    "fr": "Maître des aléas du destin"
   }
 }

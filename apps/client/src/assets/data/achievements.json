@@ -22432,11 +22432,11 @@
     "itemReward": 0
   },
   "2805": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Feline Fun",
+    "ja": "ひとやすみ、ひとやすみ",
+    "de": "Katzenflüsterer",
+    "fr": "De tout repos",
+    "icon": "/i/041000/041807.png",
     "itemReward": 0
   },
   "2806": {
@@ -24256,7 +24256,7 @@
     "itemReward": 0
   },
   "3033": {
-    "en": "モーグリのポンポン愛",
+    "en": "Honorificabilitudinitatibus",
     "ja": "モーグリのポンポン愛",
     "de": "Zwei Bommel für die Liebe",
     "fr": "モーグリのポンポン愛",
@@ -24264,7 +24264,7 @@
     "itemReward": 0
   },
   "3034": {
-    "en": "モデルデビュー",
+    "en": "Walk the Walk",
     "ja": "モデルデビュー",
     "de": "Gewinner des Modewettbewerbs",
     "fr": "Premiers pas dans le mannequinat",
@@ -24272,27 +24272,27 @@
     "itemReward": 0
   },
   "3035": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Could Be Worse I",
+    "ja": "万魔殿の辺獄を制覇せし者：ランク1",
+    "de": "Pandæmonium Æthericum I",
+    "fr": "Vaincre ces démons I",
+    "icon": "/i/064000/064848.png",
     "itemReward": 0
   },
   "3036": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Could Be Worse II",
+    "ja": "万魔殿の辺獄を制覇せし者：ランク2",
+    "de": "Pandæmonium Æthericum II",
+    "fr": "Vaincre ces démons II",
+    "icon": "/i/064000/064848.png",
     "itemReward": 0
   },
   "3037": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": "",
+    "en": "Could Be Worse III",
+    "ja": "万魔殿の辺獄を制覇せし者：ランク3",
+    "de": "Pandæmonium Æthericum III",
+    "fr": "Vaincre ces démons III",
+    "icon": "/i/064000/064848.png",
     "itemReward": 0
   },
   "3038": {

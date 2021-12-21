@@ -12730,6 +12730,7 @@
     "image": "https://xivapi.com/m/n5r1/n5r1.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 3769,
     "placename_sub_id": 0,
@@ -12738,7 +12739,7 @@
     "size_factor": 400,
     "territory_id": 1002,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "710": {
     "id": 710,
@@ -12963,6 +12964,7 @@
     "image": "https://xivapi.com/m/n5r3/n5r3.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 3797,
     "placename_sub_id": 0,
@@ -12971,7 +12973,7 @@
     "size_factor": 400,
     "territory_id": 1006,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "723": {
     "id": 723,
@@ -13088,6 +13090,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4111,
     "placename_sub_id": 0,
@@ -13105,6 +13108,7 @@
     "image": "https://xivapi.com/m/n5r2/n5r2.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 3798,
     "placename_sub_id": 0,
@@ -13113,7 +13117,7 @@
     "size_factor": 400,
     "territory_id": 1004,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "731": {
     "id": 731,
@@ -13122,6 +13126,7 @@
     "image": "https://xivapi.com/m/n5r4/n5r4.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4135,
     "placename_sub_id": 0,
@@ -13130,7 +13135,7 @@
     "size_factor": 400,
     "territory_id": 1008,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "732": {
     "id": 732,
@@ -13351,6 +13356,7 @@
     "image": "https://xivapi.com/m/r2ea/r2ea.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
+    "offset_z": 0,
     "map_marker_range": 507,
     "placename_id": 4023,
     "placename_sub_id": 0,
@@ -13368,6 +13374,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 3924,
     "placename_sub_id": 0,
@@ -13385,6 +13392,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4021,
     "placename_sub_id": 0,
@@ -13402,6 +13410,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
+    "offset_z": 0,
     "map_marker_range": 490,
     "placename_id": 4024,
     "placename_sub_id": 0,
@@ -13419,6 +13428,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": -100,
     "offset_y": -100,
+    "offset_z": 0,
     "map_marker_range": 491,
     "placename_id": 3769,
     "placename_sub_id": 0,
@@ -13436,6 +13446,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 3926,
     "placename_sub_id": 0,
@@ -13489,6 +13500,7 @@
     "image": "https://xivapi.com/m/m5d4/m5d4.01.jpg",
     "offset_x": -15,
     "offset_y": -15,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4154,
     "placename_sub_id": 4155,
@@ -13506,6 +13518,7 @@
     "image": "https://xivapi.com/m/m5d4/m5d4.02.jpg",
     "offset_x": 0,
     "offset_y": -50,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4154,
     "placename_sub_id": 4156,
@@ -13523,6 +13536,7 @@
     "image": "https://xivapi.com/m/m5d4/m5d4.03.jpg",
     "offset_x": 0,
     "offset_y": -15,
+    "offset_z": 0,
     "map_marker_range": 0,
     "placename_id": 4154,
     "placename_sub_id": 4157,

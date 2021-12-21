@@ -108857,6 +108857,18 @@
     "slots": 0,
     "overmeld": false
   },
+  "32804": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32805": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false
+  },
   "32806": {
     "modifier": 0,
     "prop": "Chest%",
@@ -117306,6 +117318,336 @@
     "overmeld": false
   },
   "34964": {
+    "modifier": 5,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "34965": {
+    "modifier": 1,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34966": {
+    "modifier": 1,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34967": {
+    "modifier": 1,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34968": {
+    "modifier": 1,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34969": {
+    "modifier": 1,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34970": {
+    "modifier": 2,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34971": {
+    "modifier": 2,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34972": {
+    "modifier": 2,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34973": {
+    "modifier": 2,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34974": {
+    "modifier": 2,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34975": {
+    "modifier": 3,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34976": {
+    "modifier": 3,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34977": {
+    "modifier": 3,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34978": {
+    "modifier": 3,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34979": {
+    "modifier": 3,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34980": {
+    "modifier": 4,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34981": {
+    "modifier": 4,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34982": {
+    "modifier": 4,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34983": {
+    "modifier": 4,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34984": {
+    "modifier": 4,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34985": {
+    "modifier": 11,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34986": {
+    "modifier": 11,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34987": {
+    "modifier": 11,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34988": {
+    "modifier": 11,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34989": {
+    "modifier": 11,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34990": {
+    "modifier": 6,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34991": {
+    "modifier": 6,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34992": {
+    "modifier": 6,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34993": {
+    "modifier": 6,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34994": {
+    "modifier": 6,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34995": {
+    "modifier": 5,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34996": {
+    "modifier": 5,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34997": {
+    "modifier": 5,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34998": {
+    "modifier": 5,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "34999": {
+    "modifier": 5,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "35000": {
+    "modifier": 1,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35001": {
+    "modifier": 10,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35002": {
+    "modifier": 12,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35003": {
+    "modifier": 6,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35004": {
+    "modifier": 5,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35005": {
+    "modifier": 1,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35006": {
+    "modifier": 10,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35007": {
+    "modifier": 12,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35008": {
+    "modifier": 6,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35009": {
+    "modifier": 5,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35010": {
+    "modifier": 1,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35011": {
+    "modifier": 10,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35012": {
+    "modifier": 12,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35013": {
+    "modifier": 6,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35014": {
+    "modifier": 5,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35015": {
+    "modifier": 1,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35016": {
+    "modifier": 10,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35017": {
+    "modifier": 12,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35018": {
+    "modifier": 6,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "35019": {
     "modifier": 5,
     "prop": "Ring%",
     "slots": 1,

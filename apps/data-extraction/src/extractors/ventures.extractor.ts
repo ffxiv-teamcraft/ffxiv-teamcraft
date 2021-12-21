@@ -22,9 +22,9 @@ export class VenturesExtractor extends AbstractExtractor {
             let reqStatValue = 'ItemLevelDoW';
             if (task.ClassJobCategoryTargetID !== 34) {
               if (task.ClassJobCategoryTargetID === 19) {
-                reqStatValue = 'GatheringFSH';
+                reqStatValue = 'PerceptionFSH';
               } else {
-                reqStatValue = 'GatheringDoL';
+                reqStatValue = 'PerceptionDoL';
               }
             }
             retainerTasks.push({

@@ -63368,21 +63368,35 @@
   },
   "69559": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Tangle with a Tora",
+      "ja": "寅と神楽と降神祭",
+      "de": "Tatzentanz mit Tiger",
+      "fr": "Danse avec le tigre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080125.png",
+    "rewards": [
+      {
+        "id": 32804
+      },
+      {
+        "id": 32805
+      }
+    ]
   },
   "69560": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Let Them Eat Cake",
+      "ja": "寅とお餅と降神祭",
+      "de": "Mochi-Streit zur Himmelswendezeit",
+      "fr": "Un tigre couleur mochi"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080125.png",
+    "rewards": [
+      {
+        "id": 24238,
+        "amount": 10
+      }
+    ]
   },
   "69561": {
     "name": {
@@ -67076,7 +67090,7 @@
   },
   "69796": {
     "name": {
-      "en": " Treasure Hunters  ",
+      "en": " Treasure Hunters",
       "ja": " 衆園の森に眠るもの",
       "de": " Verborgen im Schleier der Sangha",
       "fr": " L'énigme de la jungle des Sangha"
@@ -69380,7 +69394,7 @@
     "name": {
       "en": "Endwalker",
       "ja": "暁月のフィナーレ",
-      "de": "Das Ende der Morgenröte",
+      "de": "Endschreiter",
       "fr": "Arpenteur des finitudes"
     },
     "icon": "/i/071000/071201.png",
@@ -69405,7 +69419,7 @@
   },
   "70001": {
     "name": {
-      "en": "ヴァレンティオンデーと新米配達士",
+      "en": "No Love Lost",
       "ja": "ヴァレンティオンデーと新米配達士",
       "de": "Ein Lehrling für den Meister",
       "fr": "L'apprentie postière du cœur"
@@ -69414,9 +69428,9 @@
   },
   "70002": {
     "name": {
-      "en": "ヴァレンティオンデーでラブに触れて",
+      "en": "Love's Labors",
       "ja": "ヴァレンティオンデーでラブに触れて",
-      "de": "Was man über die Liebe wissen sollte",
+      "de": "Was man über Liebe wissen sollte",
       "fr": "Les choses du cœur"
     },
     "icon": "/i/080000/080108.png",
@@ -69429,7 +69443,7 @@
   },
   "70003": {
     "name": {
-      "en": "ヴァレンティオンデーとお手紙相談",
+      "en": "Better Letters",
       "ja": "ヴァレンティオンデーとお手紙相談",
       "de": "Ein Brief zum Valentiontag",
       "fr": "La conseillère des lettres du cœur"
@@ -69549,48 +69563,134 @@
   },
   "70011": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Crystal from Beyond",
+      "ja": "「パンデモニウム」への警告",
+      "de": "Hinab ins Pandæmonium",
+      "fr": "“Tous les démons”"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33928,
+        "amount": 5
+      },
+      {
+        "id": 33918
+      },
+      {
+        "id": 33919
+      },
+      {
+        "id": 33920
+      }
+    ]
   },
   "70012": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Where Familiars Dare",
+      "ja": "万魔殿へと至る",
+      "de": "Die Tiefen der Tausend Teufel",
+      "fr": "Aux portes du pénitencier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33929,
+        "amount": 5
+      },
+      {
+        "id": 33918
+      },
+      {
+        "id": 33919
+      },
+      {
+        "id": 33920
+      }
+    ]
   },
   "70013": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Under the Surface",
+      "ja": "水底に潜みし創造生物",
+      "de": "Ketten, Käfig und Kanäle",
+      "fr": "En eaux troubles"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33921,
+        "amount": 5
+      },
+      {
+        "id": 33918
+      },
+      {
+        "id": 33919
+      },
+      {
+        "id": 33920
+      }
+    ]
   },
   "70014": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Fires of Creation",
+      "ja": "炎を纏いし創造生物",
+      "de": "Die Feuer von Asphodelos",
+      "fr": "Changement de décor"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33917,
+        "amount": 5
+      },
+      {
+        "id": 33918
+      },
+      {
+        "id": 33919
+      },
+      {
+        "id": 33920
+      }
+    ]
   },
   "70015": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Who Wards the Warders?",
+      "ja": "獄卒長は終の広間にて待つ",
+      "de": "Im Herzen des Hohen Wächters",
+      "fr": "L'ombre du grand geôlier"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 33918,
+        "amount": 1
+      },
+      {
+        "id": 33919,
+        "amount": 1
+      },
+      {
+        "id": 33920,
+        "amount": 1
+      },
+      {
+        "id": 33928
+      },
+      {
+        "id": 33929
+      },
+      {
+        "id": 33921
+      },
+      {
+        "id": 33917
+      }
+    ]
   },
   "70016": {
     "name": {
