@@ -22,6 +22,7 @@ import { LayoutRowFilter } from '../layout-row-filter';
 import { DataType } from '../../../modules/list/data/data-type';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable()
 export class LayoutsFacade {
@@ -49,7 +50,7 @@ export class LayoutsFacade {
     );
 
   constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService,
-              private authFacade: AuthFacade, private settings: SettingsService) {
+              private authFacade: AuthFacade, private settings: SettingsService, private lazyData: LazyDataFacade) {
   }
 
   public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
@@ -67,10 +68,10 @@ export class LayoutsFacade {
         }
       })
     );
-    return combineLatest([this.selectedLayout$, user$, settingsChange$])
+    return combineLatest([this.selectedLayout$, user$, settingsChange$, this.lazyData.getEntry('craftingLevels'), this.lazyData.getEntry('gatheringLevels')])
       .pipe(
         withLatestFrom(this.authFacade.gearSets$),
-        switchMap(([[layout, user], gearsets]) => {
+        switchMap(([[layout, user, craftingLevels, gatheringLevels], gearsets]) => {
           let starter: ListRow[];
           if (!layout.considerCrystalsAsItems) {
             starter = (list.items || []).filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
@@ -117,7 +118,7 @@ export class LayoutsFacade {
                     const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
                     if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
                       const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
-                      const requiredLevel = Math.floor((gatheredBy.level - 1) / 5) * 5;
+                      const requiredLevel = gatheringLevels[item.id] || 0;
                       if (!layout.filterBasedOnLevel || this.matchesLevel(gearsets, gatherJob, requiredLevel)) {
                         acc.accepted.push(item);
                       } else {
@@ -125,7 +126,7 @@ export class LayoutsFacade {
                       }
                     } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
                       const match = !layout.filterBasedOnLevel || craftedBy.some((craft) => {
-                        const requiredLevel = Math.floor((craft.lvl - 1) / 5) * 5;
+                        const requiredLevel = craftingLevels[craft.id] || 0;
                         return this.matchesLevel(gearsets, craft.job, requiredLevel);
                       });
                       if (match) {
