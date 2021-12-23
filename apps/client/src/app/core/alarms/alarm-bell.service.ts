@@ -64,9 +64,15 @@ export class AlarmBellService {
         return combineLatest([
           of(alarm),
           this.lazyData.getRow('itemIcons', alarm.itemId),
-          this.i18n.getNameObservable('items', alarm.itemId),
-          this.i18n.getNameObservable('places', alarm.aetheryte.nameid),
-          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId)
+          this.i18n.getNameObservable('items', alarm.itemId).pipe(
+            first()
+          ),
+          this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
+            first()
+          ),
+          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
+            first()
+          )
         ]);
       })
     ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
