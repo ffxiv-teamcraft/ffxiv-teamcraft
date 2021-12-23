@@ -25,6 +25,7 @@ import { FolderAdditionPickerComponent } from '../../../modules/folder-addition-
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { groupBy } from 'lodash';
 import { AdditionPickerEntry } from '../../../modules/folder-addition-picker/folder-addition-picker/addition-picker-entry';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-alarms-page',
@@ -38,7 +39,7 @@ export class AlarmsPageComponent implements OnInit {
 
   public loaded$: Observable<boolean>;
 
-  public expanded = !this.settings.alarmPanelsCollapsedByDefault;
+  public activePanels$ = new LocalStorageBehaviorSubject<Record<string, boolean>>('alarms:groups-collapse', {});
 
   constructor(private alarmBell: AlarmBellService, public alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,
@@ -94,6 +95,13 @@ export class AlarmsPageComponent implements OnInit {
     });
   }
 
+  setPanelActive(key: string, active: boolean): void {
+    this.activePanels$.next({
+      ...this.activePanels$.value,
+      [key]: active
+    });
+  }
+
   newCustomAlarm(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('ALARMS.CUSTOM.Title'),
@@ -108,10 +116,6 @@ export class AlarmsPageComponent implements OnInit {
 
   regenerateAlarms(): void {
     this.alarmsFacade.regenerateAlarms();
-  }
-
-  toggleCollapse(): void {
-    this.expanded = !this.expanded;
   }
 
   editNote(alarm: Alarm): void {
