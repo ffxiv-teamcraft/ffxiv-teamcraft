@@ -16,6 +16,9 @@
       #itemName
       (input)="onInput($event.target?.value)"
       [nzAutocomplete]="auto"
+      [ngModel]="''"
+      [ngModelOptions]="{standalone: true}"
+      (ngModelChange)="onInput($event)"
       [placeholder]="'RECIPE_FINDER.Placeholder' | translate"
       [style.margin-bottom]="null | ifMobile:'0'"
       class="name-input"
