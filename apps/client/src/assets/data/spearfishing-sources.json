@@ -1,8 +1,20 @@
 {
+  "36523": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
   "36536": [
     {
       "speed": 1,
       "shadowSize": 1
+    }
+  ],
+  "36545": [
+    {
+      "speed": 4,
+      "shadowSize": 2
     }
   ],
   "36548": [
