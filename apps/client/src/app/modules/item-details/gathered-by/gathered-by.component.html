@@ -3,7 +3,7 @@
     lvl {{details.level}}{{details.stars_tooltip}}
   </div>
   <div fxLayout="column" fxLayoutGap="10px">
-    <div *ngFor="let node of details.nodes" fxLayout="column" fxLayoutGap="5px">
+    <div *ngFor="let node of details.nodes; let last = last" fxLayout="column" fxLayoutGap="5px">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.id > 0">
         <div>{{node.zoneId | i18nRow:'places' | i18n}}</div>
         <div [ngSwitch]="node.type">
@@ -40,6 +40,7 @@
                  *ngIf="node"
                  [markers]="[{x:node.x,y: node.y,iconImg: node.type | nodeTypeIcon: node.limited,iconType: 'img'}]"></app-map>
       </div>
+      <nz-divider *ngIf="!last"></nz-divider>
     </div>
   </div>
 </div>
