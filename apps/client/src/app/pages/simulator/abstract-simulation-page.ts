@@ -16,7 +16,7 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
 
   consumables$: Observable<RouteConsumables>;
 
-  constructor(protected route: ActivatedRoute, protected seo: SeoService) {
+  protected constructor(protected route: ActivatedRoute, protected seo: SeoService) {
     super(seo);
 
     this.stats$ = this.route.queryParamMap.pipe(
@@ -36,26 +36,27 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
       })
     );
 
-    const consumables = new RouteConsumables;
-    const params = route.snapshot.queryParamMap;
+    this.consumables$ = route.queryParamMap.pipe(
+      map(params => {
+        const consumables = new RouteConsumables();
+        const food = params.get('food');
+        if (food) {
+          const split = food.split(',');
+          consumables.food = { id: +split[0], hq: split[1] === '1' };
+        }
 
-    const food = params.get('food');
-    if (food) {
-      const split = food.split(',');
-      consumables.food = { id: +split[0], hq: split[1] === '1' };
-    }
+        const med = params.get('med');
+        if (med) {
+          const split = med.split(',');
+          consumables.medicine = { id: +split[0], hq: split[1] === '1' };
+        }
 
-    const med = params.get('med');
-    if (med) {
-      const split = med.split(',');
-      consumables.medicine = { id: +split[0], hq: split[1] === '1' };
-    }
-
-    const fca = params.get('fca');
-    if (fca) {
-      consumables.freeCompanyActions = fca.split(',').map((n: String) => +n) as [number, number];
-    }
-
-    this.consumables$ = new Observable(observer => observer.next(consumables));
+        const fca = params.get('fca');
+        if (fca) {
+          consumables.freeCompanyActions = fca.split(',').map((n: String) => +n) as [number, number];
+        }
+        return consumables;
+      })
+    );
   }
 }
