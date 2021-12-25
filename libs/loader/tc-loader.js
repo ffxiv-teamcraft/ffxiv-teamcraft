@@ -47,7 +47,7 @@ const patrons = [
   'Incendion Valoriot',
   'mlatin',
   'Salaciousrumour',
-  'Cross Collaborative.',
+  'Lavender Pathways',
   'Jajali Jali * Gilgamesh',
   'Mae Sorbet and Iranon Aira of Mateus',
   'Sombra\'s Scavengers on Jenova',
