@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.2.14"></a>
+## [9.2.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.13...v9.2.14) (2021-12-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms being played again on language switch ([9c68554](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c68554))
+* **alarms-sidebar:** fixed coords sometimes going too far in decimal accuracy ([1570319](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1570319))
+* **alarms-sidebar:** moved gathering type icon to not conflict with collectable flag ([6e0afca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6e0afca))
+* **db:** fixed some old trade sources not filtered properly ([94fb956](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94fb956))
+* **desktop:** fixed weird padding bottom in overlays ([b39f81c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b39f81c))
+* **desktop:** tentative fix to hide startup powershell window ([3728fe8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3728fe8))
+* **gearsets:** fixed SGE and RPR sets not being created properly ([8d2f082](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d2f082))
+* **i18n:** fixed misslabel in french settings ([cfcce21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfcce21))
+* **layout:** fixed level cap for recipes unlock sometimes inaccurate ([ae2cd24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae2cd24))
+* **recipe-finder:** fixed item name input sometimes not enabling the add button properly ([cc0a832](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc0a832))
+* **simulator:** change overlay toggle button color ([2cd82b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2cd82b2))
+* **simulator:** fixed food sharing in url not working properly ([2f832ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f832ba))
+* **ux:** use proper icons for fishing and speafishing in maps ([c1c8ca5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1c8ca5))
+
+
+### Features
+
+* **alarms:** alarm panels collapse state is now persisted accross sessions ([2a31c87](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a31c87))
+* **allagan-reports:** added map name to mobs when they have a known position ([2ee6903](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2ee6903))
+* **desktop:** alarms won't ring anymore when you're in a dungeon/raid ([31a140f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31a140f))
+* **gearsets:** updated materia estimate function to be more realistic ([ddd902c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ddd902c))
+
+
+
 <a name="9.2.13"></a>
 ## [9.2.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.12...v9.2.13) (2021-12-21)
 
