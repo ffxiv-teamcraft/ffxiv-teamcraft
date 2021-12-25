@@ -12,3 +12,6 @@ max_line_length = 160
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+[*.html]
+ij_html_quote_style = double

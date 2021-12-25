@@ -132,7 +132,7 @@ export class AlarmsFacade {
 
   private itemPatch: LazyData['itemPatch'];
 
-  private patches: XivapiPatch[];
+  private patches: XivapiPatch[] = [];
 
   private legendaryFish: LazyData['legendaryFish'];
 
@@ -571,9 +571,9 @@ export class AlarmsFacade {
   }
 
   private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
-    const patch = this.itemPatch[alarm.itemId];
+    const patch = this.itemPatch && this.itemPatch[alarm.itemId];
     const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
-    const isLegendary = this.legendaryFish[alarm.itemId];
+    const isLegendary = this.legendaryFish && this.legendaryFish[alarm.itemId];
     // The changes only apply to fishes pre-SB and non-legendary
     if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, of } from 'rxjs';
-import { first, map, switchMap } from 'rxjs/operators';
+import { filter, first, map, startWith, switchMap } from 'rxjs/operators';
 import { Alarm } from './alarm';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
@@ -15,13 +15,14 @@ import { MapService } from '../../modules/map/map.service';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
 import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlarmBellService {
 
-  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade,
+  constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
               private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
@@ -63,9 +64,15 @@ export class AlarmBellService {
         return combineLatest([
           of(alarm),
           this.lazyData.getRow('itemIcons', alarm.itemId),
-          this.i18n.getNameObservable('items', alarm.itemId),
-          this.i18n.getNameObservable('places', alarm.aetheryte.nameid),
-          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId)
+          this.i18n.getNameObservable('items', alarm.itemId).pipe(
+            first()
+          ),
+          this.i18n.getNameObservable('places', alarm.aetheryte.nameid).pipe(
+            first()
+          ),
+          this.i18n.getNameObservable('places', alarm.zoneId || alarm.mapId).pipe(
+            first()
+          )
         ]);
       })
     ).subscribe(([alarm, icon, itemName, aetheryteName, placeName]) => {
@@ -94,8 +101,19 @@ export class AlarmBellService {
   }
 
   private initBell(): void {
-    combineLatest([this.eorzeanTime.getEorzeanTime(), this.alarmsFacade.allAlarms$, this.alarmsFacade.allGroups$])
+    combineLatest([
+      this.eorzeanTime.getEorzeanTime(),
+      this.alarmsFacade.allAlarms$,
+      this.alarmsFacade.allGroups$,
+      this.eorzeaFacade.mapId$.pipe(startWith(-1)),
+      this.lazyData.getEntry('maps')
+    ])
       .pipe(
+        filter(([, , , mapId, maps]) => {
+          return !this.platform.isDesktop()
+            || mapId === -1
+            || !maps[mapId].dungeon;
+        }),
         map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {
             if (alarm.spawns === undefined) {

@@ -122,7 +122,7 @@
             />
             <nz-autocomplete #auto nzBackfill>
               <nz-auto-option *ngFor="let option of mobCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+                {{ option.name | i18n }} <span *ngIf="option.details">({{option.details.zoneid | i18nRow:'places' | i18n}})</span>
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>

@@ -22,10 +22,6 @@
                 nzTooltipTitle="{{'ALARMS.CUSTOM.Title' | translate}}">
           <i nz-icon nzType="form"></i>
         </button>
-        <button (click)="toggleCollapse()" nz-button nz-tooltip nzShape="circle"
-                nzTooltipTitle="{{'ALARMS.Toggle_collapse' | translate}}">
-          <i nz-icon nzType="sliders"></i>
-        </button>
         <button (nzOnConfirm)="deleteAllAlarms()"
                 nz-button
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
@@ -58,12 +54,15 @@
       <div class="alarms-container" fxLayout="row wrap" fxLayoutGap="5px">
         <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: display.noGroup}"></ng-container>
       </div>
+      <ng-container *ngIf="activePanels$ | async as activePanels">
       <div (onDrop)="setGroupIndex(0, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
            droppable></div>
       <div *ngFor="let group of display.groupedAlarms; trackBy: trackByGroup; let i = index" class="panel-container">
         <nz-collapse>
           <nz-collapse-panel [class.empty-group]="group.alarms.length === 0" [dragData]="group"
-                             [nzActive]="!group.group.muted && this.expanded" [nzHeader]="panelTitle"
+                             [nzActive]="activePanels[group.group.$key] || (activePanels[group.group.$key] === undefined && !group.group.muted)"
+                             (nzActiveChange)="setPanelActive(group.group.$key, $event)"
+                             [nzHeader]="panelTitle"
                              class="alarm-group-panel"
                              dragScope="group"
                              draggable>
@@ -140,6 +139,7 @@
         <div (onDrop)="setGroupIndex(i, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
              droppable></div>
       </div>
+      </ng-container>
     </div>
     <app-fullpage-message *ngIf="display.noGroup.length === 0 && display.groupedAlarms.length === 0" height="300px">
       {{'ALARMS.No_alarm' | translate}}

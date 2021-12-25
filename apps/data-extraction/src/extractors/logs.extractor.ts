@@ -34,10 +34,16 @@ export class LogsExtractor extends AbstractExtractor {
 
 
   private craftingLogDone$ = new Subject<void>();
+
   private gatheringLogDone$ = new Subject<void>();
+
   private fishingLogDone$ = new Subject<void>();
+
   private spearFishingLogDone$ = new Subject<void>();
+
   private spearFishingNodesDone$ = new Subject<void>();
+
+  private notebookDivision = {};
 
   protected doExtract(): any {
     const notebookDivisionDone$ = new Subject<void>();
@@ -45,13 +51,12 @@ export class LogsExtractor extends AbstractExtractor {
     combineLatest([this.craftingLogDone$, notebookDivisionDone$, this.gatheringLogDone$,
       this.fishingLogDone$, this.spearFishingNodesDone$, this.spearFishingLogDone$])
       .subscribe(() => {
+        this.extractRequiredLevels();
         this.done();
       });
-
-    const notebookDivision = {};
     this.getAllEntries('https://xivapi.com/NotebookDivision', true).subscribe(completeFetch => {
       completeFetch.forEach(row => {
-        notebookDivision[row.ID] = {
+        this.notebookDivision[row.ID] = {
           name: {
             en: row.Name_en,
             ja: row.Name_ja,
@@ -71,10 +76,12 @@ export class LogsExtractor extends AbstractExtractor {
                 return index < 4 ? (2000 + 4 * (row.ID - 2000) + index) : -1;
               }
             })
-            .filter(id => id > -1)
+            .filter(id => id > -1),
+          craftLevel: row.CraftOpeningLevel,
+          gatheringLevel: row.GatheringOpeningLevel
         };
       });
-      this.persistToJsonAsset('notebook-division', notebookDivision);
+      this.persistToJsonAsset('notebook-division', this.notebookDivision);
       notebookDivisionDone$.next();
     });
 
@@ -387,4 +394,32 @@ export class LogsExtractor extends AbstractExtractor {
     return 'logs';
   }
 
+  private extractRequiredLevels(): void {
+    const gatheringLevels = {};
+    const craftingLevels = {};
+
+    Object.values<any>(this.notebookDivision)
+      .forEach(division => {
+        this.craftingLogPages.forEach(job => {
+          job.filter(page => division.pages.includes(page.id))
+            .forEach(page => {
+              page.recipes.forEach(item => {
+                craftingLevels[item.recipeId] = division.craftLevel;
+              });
+            });
+        });
+
+        this.gatheringLogPages.forEach(job => {
+          job.filter(page => division.pages.includes(page.id))
+            .forEach(page => {
+              page.items.forEach(item => {
+                gatheringLevels[item.itemId] = division.gatheringLevel;
+              });
+            });
+        });
+      });
+
+    this.persistToJsonAsset('gathering-levels', gatheringLevels);
+    this.persistToJsonAsset('crafting-levels', craftingLevels);
+  }
 }

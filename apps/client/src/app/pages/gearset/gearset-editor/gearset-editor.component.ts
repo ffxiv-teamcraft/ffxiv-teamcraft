@@ -39,9 +39,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public machinaToggle = false;
 
   itemFiltersform: FormGroup = this.fb.group({
-    ilvlMin: [460],
+    ilvlMin: [540],
     ilvlMax: [999],
-    elvlMin: [1],
+    elvlMin: [this.environment.maxLevel - 1],
     elvlMax: [this.environment.maxLevel]
   });
 

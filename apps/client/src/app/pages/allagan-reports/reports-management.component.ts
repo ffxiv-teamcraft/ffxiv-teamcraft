@@ -11,8 +11,6 @@ export class ReportsManagementComponent extends TeamcraftComponent {
 
   protected readonly items$ = this.lazyData.getSearchIndex('items');
 
-  protected readonly weathers$ = this.lazyData.getSearchIndex('weathers');
-
   protected readonly instances$ = combineLatest([
     this.lazyData.getSearchIndex('instances'),
     this.lazyData.getEntry('maps').pipe(

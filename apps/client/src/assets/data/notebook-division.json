@@ -15,7 +15,9 @@
       200,
       240,
       280
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "1": {
     "name": {
@@ -33,7 +35,9 @@
       201,
       241,
       281
-    ]
+    ],
+    "craftLevel": 3,
+    "gatheringLevel": 5
   },
   "2": {
     "name": {
@@ -51,7 +55,9 @@
       202,
       242,
       282
-    ]
+    ],
+    "craftLevel": 8,
+    "gatheringLevel": 10
   },
   "3": {
     "name": {
@@ -69,7 +75,9 @@
       203,
       243,
       283
-    ]
+    ],
+    "craftLevel": 13,
+    "gatheringLevel": 15
   },
   "4": {
     "name": {
@@ -87,7 +95,9 @@
       204,
       244,
       284
-    ]
+    ],
+    "craftLevel": 18,
+    "gatheringLevel": 20
   },
   "5": {
     "name": {
@@ -105,7 +115,9 @@
       205,
       245,
       285
-    ]
+    ],
+    "craftLevel": 23,
+    "gatheringLevel": 25
   },
   "6": {
     "name": {
@@ -123,7 +135,9 @@
       206,
       246,
       286
-    ]
+    ],
+    "craftLevel": 28,
+    "gatheringLevel": 30
   },
   "7": {
     "name": {
@@ -141,7 +155,9 @@
       207,
       247,
       287
-    ]
+    ],
+    "craftLevel": 33,
+    "gatheringLevel": 35
   },
   "8": {
     "name": {
@@ -159,7 +175,9 @@
       208,
       248,
       288
-    ]
+    ],
+    "craftLevel": 38,
+    "gatheringLevel": 40
   },
   "9": {
     "name": {
@@ -177,7 +195,9 @@
       209,
       249,
       289
-    ]
+    ],
+    "craftLevel": 43,
+    "gatheringLevel": 45
   },
   "10": {
     "name": {
@@ -195,7 +215,9 @@
       210,
       250,
       290
-    ]
+    ],
+    "craftLevel": 48,
+    "gatheringLevel": 50
   },
   "11": {
     "name": {
@@ -213,7 +235,9 @@
       211,
       251,
       291
-    ]
+    ],
+    "craftLevel": 53,
+    "gatheringLevel": 55
   },
   "12": {
     "name": {
@@ -231,7 +255,9 @@
       212,
       252,
       292
-    ]
+    ],
+    "craftLevel": 58,
+    "gatheringLevel": 60
   },
   "13": {
     "name": {
@@ -249,7 +275,9 @@
       213,
       253,
       293
-    ]
+    ],
+    "craftLevel": 63,
+    "gatheringLevel": 65
   },
   "14": {
     "name": {
@@ -267,7 +295,9 @@
       214,
       254,
       294
-    ]
+    ],
+    "craftLevel": 68,
+    "gatheringLevel": 70
   },
   "15": {
     "name": {
@@ -285,7 +315,9 @@
       215,
       255,
       295
-    ]
+    ],
+    "craftLevel": 73,
+    "gatheringLevel": 75
   },
   "16": {
     "name": {
@@ -303,7 +335,9 @@
       216,
       256,
       296
-    ]
+    ],
+    "craftLevel": 78,
+    "gatheringLevel": 80
   },
   "17": {
     "name": {
@@ -321,7 +355,9 @@
       217,
       257,
       297
-    ]
+    ],
+    "craftLevel": 83,
+    "gatheringLevel": 85
   },
   "18": {
     "name": {
@@ -339,7 +375,9 @@
       218,
       258,
       298
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "19": {
     "name": {
@@ -357,7 +395,9 @@
       219,
       259,
       299
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "20": {
     "name": {
@@ -375,7 +415,9 @@
       220,
       260,
       300
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "21": {
     "name": {
@@ -393,7 +435,9 @@
       221,
       261,
       301
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "22": {
     "name": {
@@ -411,7 +455,9 @@
       222,
       262,
       302
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "23": {
     "name": {
@@ -429,7 +475,9 @@
       223,
       263,
       303
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "24": {
     "name": {
@@ -447,7 +495,9 @@
       224,
       264,
       304
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "25": {
     "name": {
@@ -465,7 +515,9 @@
       225,
       265,
       305
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "26": {
     "name": {
@@ -483,7 +535,9 @@
       226,
       266,
       306
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "27": {
     "name": {
@@ -501,7 +555,9 @@
       227,
       267,
       307
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "28": {
     "name": {
@@ -519,7 +575,9 @@
       228,
       268,
       308
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "29": {
     "name": {
@@ -537,7 +595,9 @@
       229,
       269,
       309
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "30": {
     "name": {
@@ -555,7 +615,9 @@
       230,
       270,
       310
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "31": {
     "name": {
@@ -573,7 +635,9 @@
       231,
       271,
       311
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "32": {
     "name": {
@@ -591,7 +655,9 @@
       232,
       272,
       312
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "33": {
     "name": {
@@ -609,7 +675,9 @@
       233,
       273,
       313
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "34": {
     "name": {
@@ -627,7 +695,9 @@
       234,
       274,
       314
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "35": {
     "name": {
@@ -645,7 +715,9 @@
       235,
       275,
       315
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "36": {
     "name": {
@@ -663,7 +735,9 @@
       236,
       276,
       316
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "37": {
     "name": {
@@ -681,7 +755,9 @@
       237,
       277,
       317
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "38": {
     "name": {
@@ -699,7 +775,9 @@
       238,
       278,
       318
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "39": {
     "name": {
@@ -717,7 +795,9 @@
       239,
       279,
       319
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "40": {
     "name": {
@@ -735,7 +815,9 @@
       240,
       280,
       320
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   },
   "1000": {
     "name": {
@@ -753,7 +835,9 @@
       1005,
       1006,
       1007
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1001": {
     "name": {
@@ -771,7 +855,9 @@
       1013,
       1014,
       1015
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1002": {
     "name": {
@@ -789,7 +875,9 @@
       1021,
       1022,
       1023
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1003": {
     "name": {
@@ -807,7 +895,9 @@
       1029,
       1030,
       1031
-    ]
+    ],
+    "craftLevel": 60,
+    "gatheringLevel": 255
   },
   "1004": {
     "name": {
@@ -825,7 +915,9 @@
       1037,
       1038,
       1039
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1005": {
     "name": {
@@ -843,7 +935,9 @@
       1045,
       1046,
       1047
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1006": {
     "name": {
@@ -861,7 +955,9 @@
       1053,
       1054,
       1055
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1007": {
     "name": {
@@ -879,7 +975,9 @@
       1061,
       1062,
       1063
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1008": {
     "name": {
@@ -897,7 +995,9 @@
       1069,
       1070,
       1071
-    ]
+    ],
+    "craftLevel": 15,
+    "gatheringLevel": 255
   },
   "1009": {
     "name": {
@@ -915,7 +1015,9 @@
       1077,
       1078,
       1079
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "1010": {
     "name": {
@@ -933,7 +1035,9 @@
       1085,
       1086,
       1087
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "1011": {
     "name": {
@@ -951,7 +1055,9 @@
       1093,
       1094,
       1095
-    ]
+    ],
+    "craftLevel": 30,
+    "gatheringLevel": 255
   },
   "1012": {
     "name": {
@@ -969,7 +1075,9 @@
       1101,
       1102,
       1103
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "1013": {
     "name": {
@@ -987,7 +1095,9 @@
       1109,
       1110,
       1111
-    ]
+    ],
+    "craftLevel": 61,
+    "gatheringLevel": 255
   },
   "1014": {
     "name": {
@@ -1005,7 +1115,9 @@
       1117,
       1118,
       1119
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1015": {
     "name": {
@@ -1023,7 +1135,9 @@
       1125,
       1126,
       1127
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1016": {
     "name": {
@@ -1041,7 +1155,9 @@
       1133,
       1134,
       1135
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1017": {
     "name": {
@@ -1059,7 +1175,9 @@
       1141,
       1142,
       1143
-    ]
+    ],
+    "craftLevel": 1,
+    "gatheringLevel": 255
   },
   "1018": {
     "name": {
@@ -1077,7 +1195,9 @@
       1149,
       1150,
       1151
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1019": {
     "name": {
@@ -1095,7 +1215,9 @@
       1157,
       1158,
       1159
-    ]
+    ],
+    "craftLevel": 60,
+    "gatheringLevel": 255
   },
   "1020": {
     "name": {
@@ -1113,7 +1235,9 @@
       1165,
       1166,
       1167
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1021": {
     "name": {
@@ -1131,7 +1255,9 @@
       1173,
       1174,
       1175
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1022": {
     "name": {
@@ -1149,7 +1275,9 @@
       1181,
       1182,
       1183
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1023": {
     "name": {
@@ -1167,7 +1295,9 @@
       1189,
       1190,
       1191
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1024": {
     "name": {
@@ -1185,7 +1315,9 @@
       1197,
       1198,
       1199
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1025": {
     "name": {
@@ -1203,7 +1335,9 @@
       1205,
       1206,
       1207
-    ]
+    ],
+    "craftLevel": 20,
+    "gatheringLevel": 255
   },
   "1026": {
     "name": {
@@ -1221,7 +1355,9 @@
       1213,
       1214,
       1215
-    ]
+    ],
+    "craftLevel": 20,
+    "gatheringLevel": 255
   },
   "1027": {
     "name": {
@@ -1239,7 +1375,9 @@
       1221,
       1222,
       1223
-    ]
+    ],
+    "craftLevel": 20,
+    "gatheringLevel": 255
   },
   "1028": {
     "name": {
@@ -1257,7 +1395,9 @@
       1229,
       1230,
       1231
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1029": {
     "name": {
@@ -1275,7 +1415,9 @@
       1237,
       1238,
       1239
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1030": {
     "name": {
@@ -1293,7 +1435,9 @@
       1245,
       1246,
       1247
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1031": {
     "name": {
@@ -1311,7 +1455,9 @@
       1253,
       1254,
       1255
-    ]
+    ],
+    "craftLevel": 20,
+    "gatheringLevel": 255
   },
   "1032": {
     "name": {
@@ -1329,7 +1475,9 @@
       1261,
       1262,
       1263
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1033": {
     "name": {
@@ -1347,7 +1495,9 @@
       1269,
       1270,
       1271
-    ]
+    ],
+    "craftLevel": 61,
+    "gatheringLevel": 255
   },
   "1034": {
     "name": {
@@ -1365,7 +1515,9 @@
       1277,
       1278,
       1279
-    ]
+    ],
+    "craftLevel": 70,
+    "gatheringLevel": 255
   },
   "1035": {
     "name": {
@@ -1383,7 +1535,9 @@
       1285,
       1286,
       1287
-    ]
+    ],
+    "craftLevel": 50,
+    "gatheringLevel": 255
   },
   "1036": {
     "name": {
@@ -1401,7 +1555,9 @@
       1293,
       1294,
       1295
-    ]
+    ],
+    "craftLevel": 20,
+    "gatheringLevel": 255
   },
   "1037": {
     "name": {
@@ -1419,7 +1575,9 @@
       1301,
       1302,
       1303
-    ]
+    ],
+    "craftLevel": 55,
+    "gatheringLevel": 255
   },
   "1038": {
     "name": {
@@ -1437,7 +1595,9 @@
       1309,
       1310,
       1311
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "1039": {
     "name": {
@@ -1455,7 +1615,9 @@
       1317,
       1318,
       1319
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1040": {
     "name": {
@@ -1473,7 +1635,9 @@
       1325,
       1326,
       1327
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1041": {
     "name": {
@@ -1491,7 +1655,9 @@
       1333,
       1334,
       1335
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1042": {
     "name": {
@@ -1509,7 +1675,9 @@
       1341,
       1342,
       1343
-    ]
+    ],
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1043": {
     "name": {
@@ -1527,7 +1695,9 @@
       1349,
       1350,
       1351
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1044": {
     "name": {
@@ -1545,7 +1715,9 @@
       1357,
       1358,
       1359
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1045": {
     "name": {
@@ -1563,7 +1735,9 @@
       1365,
       1366,
       1367
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1046": {
     "name": {
@@ -1581,7 +1755,9 @@
       1373,
       1374,
       1375
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1047": {
     "name": {
@@ -1599,7 +1775,9 @@
       1381,
       1382,
       1383
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1048": {
     "name": {
@@ -1617,7 +1795,9 @@
       1389,
       1390,
       1391
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1049": {
     "name": {
@@ -1635,7 +1815,9 @@
       1397,
       1398,
       1399
-    ]
+    ],
+    "craftLevel": 12,
+    "gatheringLevel": 255
   },
   "1050": {
     "name": {
@@ -1653,7 +1835,9 @@
       1405,
       1406,
       1407
-    ]
+    ],
+    "craftLevel": 0,
+    "gatheringLevel": 0
   },
   "2000": {
     "name": {
@@ -1667,7 +1851,9 @@
       2001,
       2002,
       2003
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 50
   },
   "2001": {
     "name": {
@@ -1681,7 +1867,9 @@
       2005,
       2006,
       2007
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 50
   },
   "2002": {
     "name": {
@@ -1695,7 +1883,9 @@
       2009,
       2010,
       2011
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 50
   },
   "2003": {
     "name": {
@@ -1709,7 +1899,9 @@
       2013,
       2014,
       2015
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 60
   },
   "2004": {
     "name": {
@@ -1723,7 +1915,9 @@
       2017,
       2018,
       2019
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 60
   },
   "2005": {
     "name": {
@@ -1737,7 +1931,9 @@
       2021,
       2022,
       2023
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 70
   },
   "2006": {
     "name": {
@@ -1751,7 +1947,9 @@
       2025,
       2026,
       2027
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 1
   },
   "2007": {
     "name": {
@@ -1765,7 +1963,9 @@
       2029,
       2030,
       2031
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 80
   },
   "2008": {
     "name": {
@@ -1779,7 +1979,9 @@
       2033,
       2034,
       2035
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 50
   },
   "2009": {
     "name": {
@@ -1793,7 +1995,9 @@
       2037,
       2038,
       2039
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 70
   },
   "2010": {
     "name": {
@@ -1807,7 +2011,9 @@
       2041,
       2042,
       2043
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 80
   },
   "2011": {
     "name": {
@@ -1821,7 +2027,9 @@
       2045,
       2046,
       2047
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 80
   },
   "2012": {
     "name": {
@@ -1835,7 +2043,9 @@
       2049,
       2050,
       2051
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 80
   },
   "2013": {
     "name": {
@@ -1849,7 +2059,9 @@
       2053,
       2054,
       2055
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 80
   },
   "2014": {
     "name": {
@@ -1863,6 +2075,8 @@
       2057,
       2058,
       2059
-    ]
+    ],
+    "craftLevel": 255,
+    "gatheringLevel": 255
   }
 }

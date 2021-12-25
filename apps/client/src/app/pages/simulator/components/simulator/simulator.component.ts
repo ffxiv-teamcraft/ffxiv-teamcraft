@@ -72,6 +72,8 @@ import { CommunityRotationFinderPopupComponent } from '../community-rotation-fin
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
+import { observeInput } from '../../../../core/rxjs/observe-input';
+import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
 
 @Component({
   selector: 'app-simulator',
@@ -890,36 +892,39 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       shareReplay(1)
     );
 
-    combineLatest([this.rotation$, this.crafterStats$]).pipe(
+    combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables')]).pipe(
       startWith([]),
       pairwise(),
       map(([before, after]) => {
         return [...after, before[0] ? before[0].$key !== after[0].$key : true];
       }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
+      takeUntil(this.onDestroy$),
+      withLazyData(this.lazyData, 'foods', 'medicines'),
+    ).subscribe(([[rotation, stats, routeConsumables, rotationChanged], lazyFoods, lazyMedicines]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
         this.stepStates$.next({});
       }
+      const foods = this.consumablesService.fromLazyData(lazyFoods);
+      const medicines = this.consumablesService.fromLazyData(lazyMedicines);
 
       if (rotationChanged) {
 
         let food, medicine, fcActions = null;
 
-        if (this.routeConsumables) {
-          food = this.routeConsumables.food || rotation.food;
-          medicine = this.routeConsumables.medicine || rotation.medicine;
-          fcActions = this.routeConsumables.freeCompanyActions || rotation.freeCompanyActions;
+        if (routeConsumables) {
+          food = routeConsumables.food || rotation.food;
+          medicine = routeConsumables.medicine || rotation.medicine;
+          fcActions = routeConsumables.freeCompanyActions || rotation.freeCompanyActions;
         }
 
         if (food) {
-          this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
+          this.selectedFood = foods.find(f => f.itemId === food.id && f.hq === food.hq);
         } else {
           delete this.selectedFood;
         }
         if (medicine) {
-          this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
+          this.selectedMedicine = medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
         } else {
           delete this.selectedMedicine;
         }

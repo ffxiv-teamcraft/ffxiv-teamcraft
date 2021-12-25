@@ -484,7 +484,7 @@
     "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
     "Reset_contentid_characters": "Réinitialiser les caractères liés",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
-    "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres personnages dans les listes",
+    "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres personnages dans la page d'inventaires",
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de patreon",

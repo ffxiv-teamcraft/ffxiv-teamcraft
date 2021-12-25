@@ -110,6 +110,7 @@ export interface LazyData {
   collectablesShops: Record<number, number[]>;
   collectables: Record<number, LazyCollectable>;
   craftActions: Record<number, LazyCraftAction>;
+  craftingLevels: Record<number, number>;
   craftingLogPages: Array<LazyCraftingLogPage[]>;
   craftingLog: Array<number[]>;
   desynth: Record<number, number[]>;
@@ -132,6 +133,7 @@ export interface LazyData {
   gardeningSeedIds: Record<number, number>;
   gatheringBonuses: Record<number, LazyGatheringBonus>;
   gatheringItems: Record<number, LazyGatheringItem>;
+  gatheringLevels: Record<number, number>;
   gatheringLogPages: Array<LazyGatheringLogPage[]>;
   gatheringPointToNodeId: Record<number, number>;
   gcNames: Record<number, LazyGcName>;

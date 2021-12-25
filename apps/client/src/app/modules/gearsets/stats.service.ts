@@ -4,7 +4,6 @@ import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
 import { EnvironmentService } from '../../core/environment.service';
-import { environment } from '../../../environments/environment';
 import { combineLatest, EMPTY, Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { expand, last, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -402,6 +401,7 @@ export class StatsService {
       case 20:
       case 22:
       case 34:
+      case 39:
         return [BaseParam.STRENGTH, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SKILL_SPEED, BaseParam.VITALITY];
       // DEX-based DPS
       case 5:
@@ -416,6 +416,7 @@ export class StatsService {
       case 24:
       case 28:
       case 33:
+      case 40:
         return [BaseParam.MIND, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
       // Caster DPS
       case 7:
@@ -699,17 +700,17 @@ export class StatsService {
   private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): Observable<number> {
     switch (displayName) {
       case 'HP':
-        return this.getMaxHp(job, level, stats.find(stat => stat.id === BaseParam.VITALITY).value + statBonus);
+        return this.getMaxHp(job, level, (stats.find(stat => stat.id === BaseParam.VITALITY)?.value || 0) + statBonus);
       case 'Direct_hit_chances':
-        return of(Math.floor(this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value + statBonus)) / 10);
+        return of(Math.floor(this.getDirectHitChances(level, (stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE)?.value || 0) + statBonus)) / 10);
       case 'Critical_hit_chances':
-        return of(Math.floor(this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10);
+        return of(Math.floor(this.getCriticalHitChances(level, (stats.find(stat => stat.id === BaseParam.CRITICAL_HIT)?.value || 0) + statBonus)) / 10);
       case 'Critical_hit_multiplier':
-        return of(Math.floor(this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10);
+        return of(Math.floor(this.getCriticalMultiplier(level, (stats.find(stat => stat.id === BaseParam.CRITICAL_HIT)?.value || 0) + statBonus)) / 10);
       case 'Determination_bonus':
-        return of(Math.floor(this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value + statBonus)) / 10);
+        return of(Math.floor(this.getDeterminationBonus(level, (stats.find(stat => stat.id === BaseParam.DETERMINATION)?.value || 0) + statBonus)) / 10);
       case 'GCD':
-        return of(Math.floor(this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value + statBonus)) / 1000);
+        return of(Math.floor(this.getGCD(level, (stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED)?.value || 0) + statBonus)) / 1000);
       default:
         return of(0);
     }

@@ -34,7 +34,7 @@
             <div class="map" *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
               {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>
-            <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
+            <div class="coords">X:{{row.alarm.coords.x | number: '1.0-2'}} - Y: {{row.alarm.coords.y | number: '1.0-2'}}</div>
           </div>
           <div *ngIf="row.alarm.baits">
             <app-fishing-bait [baits]="row.alarm.baits" flex="row wrap" hideNames="true" iconWidth="24"></app-fishing-bait>

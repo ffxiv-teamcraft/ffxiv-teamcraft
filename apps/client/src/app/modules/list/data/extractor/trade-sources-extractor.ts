@@ -112,33 +112,38 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
         }
 
         const { specialShopNames, topicSelectNames, gilShopNames, gcNames } = names;
-        return uniqBy(shops.filter(shop => {
-          return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId));
-        }).map(shop => {
-          return {
-            id: shop.id,
-            type: shop.type,
-            shopName: this.getName(shop, specialShopNames, topicSelectNames, gilShopNames, gcNames, npcs),
-            npcs: shop.npcs.map(npcId => {
-              const npc: TradeNpc = {
-                id: npcId
-              };
-              const npcEntry = npcs[npcId];
-              if (npcEntry && npcEntry.position) {
-                npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-                npc.zoneId = npcEntry.position.zoneid;
-                npc.mapId = npcEntry.position.map;
-              }
-              if (npcEntry && npcEntry.festival) {
-                npc.festival = npcEntry.festival;
-              }
-              return npc;
-            }),
-            trades: shop.trades.filter(trade => {
-              return trade.items.some(i => i.id === itemId);
-            })
-          };
-        }), shop => {
+        return uniqBy(shops
+          .filter(shop => {
+            return shop.type !== 'GilShop' && shop.trades.some(t => t.items.some(i => i.id === itemId));
+          })
+          .filter((shop, i, array) => {
+            return shop.npcs.length > 0 || array.every(s => s.npcs.length === 0);
+          })
+          .map(shop => {
+            return {
+              id: shop.id,
+              type: shop.type,
+              shopName: this.getName(shop, specialShopNames, topicSelectNames, gilShopNames, gcNames, npcs),
+              npcs: shop.npcs.map(npcId => {
+                const npc: TradeNpc = {
+                  id: npcId
+                };
+                const npcEntry = npcs[npcId];
+                if (npcEntry && npcEntry.position) {
+                  npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+                  npc.zoneId = npcEntry.position.zoneid;
+                  npc.mapId = npcEntry.position.map;
+                }
+                if (npcEntry && npcEntry.festival) {
+                  npc.festival = npcEntry.festival;
+                }
+                return npc;
+              }),
+              trades: shop.trades.filter(trade => {
+                return trade.items.some(i => i.id === itemId);
+              })
+            };
+          }), shop => {
           return `${shop.npcs.map(npc => `${npc.id}|${npc.zoneId}`).join(':')}:${JSON.stringify(shop.trades)}`;
         });
       })

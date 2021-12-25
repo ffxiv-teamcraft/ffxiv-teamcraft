@@ -92,7 +92,7 @@ export class PacketCapture {
       this.startMachina();
     } else {
       try {
-        execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'] });
+        execSync('Get-Service -Name Npcap', { 'shell': 'powershell.exe', 'timeout': 5000, 'stdio': ['ignore', 'pipe', 'ignore'], 'windowsHide': true });
         log.debug('The Npcap service was detected, starting Machina');
         this.startMachina();
       } catch (err) {

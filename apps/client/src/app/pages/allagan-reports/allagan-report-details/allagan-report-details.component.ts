@@ -293,7 +293,15 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   public mobInput$: Subject<string> = new Subject<string>();
 
-  public mobCompletion$ = this.makeCompletionObservable(this.mobInput$, this.mobs$);
+  public mobCompletion$ = this.makeCompletionObservable(this.mobInput$, this.mobs$).pipe(
+    withLazyData(this.lazyData, 'monsters'),
+    map(([completion, monsters]) => {
+      return completion.map(row => {
+        row.details = (monsters[row.id]?.positions || [])[0];
+        return row;
+      });
+    })
+  );
 
   public fateInput$: Subject<string> = new Subject<string>();
 
@@ -545,7 +553,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     }
   }
 
-  private makeCompletionObservable(subject: Subject<string>, registry$: Observable<{ id: number, name: I18nName }[]>): Observable<{ id: number, name: I18nName }[]> {
+  private makeCompletionObservable(subject: Subject<string>, registry$: Observable<{ id: number, name: I18nName }[]>): Observable<{ id: number, name: I18nName, details?: any }[]> {
     return subject.pipe(
       debounceTime(500),
       switchMap(value => {

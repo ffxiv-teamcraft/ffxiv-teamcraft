@@ -194,7 +194,7 @@ export class MateriaService {
             if (overmeldChances === 0) {
               return;
             }
-            let amount = Math.ceil(1 / (overmeldChances / 100));
+            let amount = Math.ceil(Math.log(1 - 0.9) / Math.log(1 - (overmeldChances / 100)));
             // If we're including all tools and it's a tool
             if (includeAllTools && ['mainHand', 'offHand'].indexOf(slot) > -1) {
               // If DoH
