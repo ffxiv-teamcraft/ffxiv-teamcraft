@@ -1,10 +1,11 @@
 <ng-container *ngIf="settings.theme as theme">
-  <div class="obtain-template-container" *ngIf="obtentionTpl">
-    <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
-  </div>
 
   <app-page-loader [loading]="!(fishCtx.fishId$ | async)">
     <app-fish-details-container></app-fish-details-container>
+
+    <div class="obtain-template-container" *ngIf="obtentionTpl">
+      <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
+    </div>
 
     <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
 
