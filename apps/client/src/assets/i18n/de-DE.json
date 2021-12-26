@@ -912,11 +912,9 @@
     "Ephemeral_warning": "Vergängliche Abbaustellen haben verschiedene Positionen, Position ist eine Annäherung.",
     "Legendary": "Legendär",
     "Switched_to_compact": "Es wurde zur Kompaktansicht gewechselt, weil es zu viele Ergebnisse gibt.",
-    "GIG_HEAD": {
-      "Small": "Kleine Speerspitze",
-      "Normal": "Normale Speerspitze",
-      "Large": "Große Speerspitze"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -2863,5 +2861,13 @@
   "UPDATER": {
     "New_update_available": "Ein neues Update ist verfügbar und wurde heruntergeladen",
     "Restart_to_install": "Möchten du jetzt neu starten zum Anwenden?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }
