@@ -1,4 +1,8 @@
 <ng-container *ngIf="settings.theme as theme">
+  <div class="obtain-template-container" *ngIf="obtentionTpl">
+    <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
+  </div>
+
   <app-page-loader [loading]="!(fishCtx.fishId$ | async)">
     <app-fish-details-container></app-fish-details-container>
 
@@ -27,10 +31,6 @@
     <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
       <app-fish-top-users fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-top-users>
       <app-fish-user-ranking fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-user-ranking>
-    </div>
-
-    <div class="obtain-template-container" *ngIf="obtentionTpl">
-      <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
     </div>
 
     <ng-container *ngIf="usedForTpl">
