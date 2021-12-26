@@ -412,7 +412,7 @@ export class IpcListenersManager {
   private setupLodestoneListeners(): void {
     ipcMain.on('lodestone:getCharacter', (event, id) => {
       this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
-        event.sender.send('lodestone:character', {
+        event.sender.send(`lodestone:character:${id}`, {
           Character: {
             ID: +id,
             ...char
