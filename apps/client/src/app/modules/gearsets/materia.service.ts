@@ -170,7 +170,7 @@ export class MateriaService {
     return combineLatest([
       safeCombineLatest(materiasObsArray$),
       this.lazyData.getEntry('extracts'),
-      this.settings.watchSetting('materias:confidence', 0.9)
+      this.settings.watchSetting<number>('materias:confidence', 0.5)
     ]).pipe(
       map(([pieces, extracts, confidence]) => {
         return pieces.reduce((acc, { slot, piece, materias }) => {
@@ -196,7 +196,7 @@ export class MateriaService {
             if (overmeldChances === 0) {
               return;
             }
-            let amount = Math.max(Math.ceil(Math.log(1 - confidence) / Math.log(1 - (overmeldChances / 100))), 1);
+            let amount = Math.max(Math.ceil(Math.log(1 - this.settings.materiaConfidenceRate) / Math.log(1 - (overmeldChances / 100))), 1);
             // If we're including all tools and it's a tool
             if (includeAllTools && ['mainHand', 'offHand'].indexOf(slot) > -1) {
               // If DoH
