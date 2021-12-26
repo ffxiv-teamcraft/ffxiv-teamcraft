@@ -14,11 +14,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
 import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
   {
@@ -50,7 +51,9 @@ const routes: Routes = [
 
     AntdSharedModule,
     NodeDetailsModule,
-    SpearfishingSpeedModule
+    SpearfishingSpeedModule,
+    ReactiveFormsModule,
+    NzPaginationModule
   ],
   declarations: [GatheringLocationComponent]
 })

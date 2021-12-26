@@ -1,0 +1,37 @@
+<ng-container *ngIf="reduction$ | async as reduction">
+  <img *ngIf="reduction.length > 0" [nzPopoverTitle]="'Reduction' | translate"
+       [nzPopoverContent]="reductionsTpl"
+       nz-popover src="https://www.garlandtools.org/db/images/item/Reduce.png"
+       class="reduction-icon" [class.compact]="compact">
+  <ng-template #reductionsTpl>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <div *ngFor="let itemId of reduction">
+        <img src="{{itemId | lazyIcon | xivapiIcon}}" alt="" class="reduction-icon">
+        {{itemId | itemName | i18n}}
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
+<ng-container *ngIf="collectable$ | async as collectable">
+  <img src="{{collectable.reward | lazyIcon | xivapiIcon}}" alt="" class="scrip-icon" [class.compact]="compact"
+       [nzPopoverTitle]="collectable.reward | itemName | i18n"
+       [nzPopoverContent]="collectableTpl"
+       nz-popover>
+  <ng-template #collectableTpl>
+    <div>
+      {{collectable.base.rating}} - {{collectable.mid.rating - 1}}&nbsp;
+      <img src="{{collectable.reward | lazyIcon | xivapiIcon}}" alt="" class="scrip-icon small-icon"/>
+      x{{collectable.base.scrip}}
+    </div>
+    <div>
+      {{collectable.mid.rating}} - {{collectable.high.rating - 1}}&nbsp;
+      <img src="{{collectable.reward | lazyIcon | xivapiIcon}}" alt="" class="scrip-icon small-icon"/>
+      x{{collectable.mid.scrip}}
+    </div>
+    <div>
+      {{collectable.high.rating}}+&nbsp;
+      <img src="{{collectable.reward | lazyIcon | xivapiIcon}}" alt="" class="scrip-icon small-icon"/>
+      x{{collectable.high.scrip}}
+    </div>
+  </ng-template>
+</ng-container>

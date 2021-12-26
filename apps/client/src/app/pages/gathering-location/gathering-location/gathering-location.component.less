@@ -1,13 +1,79 @@
+@import '../../../../common';
+
 :host ::ng-deep {
   .ant-card-body {
     flex: 1 1 auto;
   }
+
+  .ant-input-clear-icon {
+    color: var(--interact-color);
+  }
+
+  .ant-input-group-addon {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .with-addon-before {
+    width: 100%;
+
+    .ant-select-selector {
+      border-bottom-left-radius: 0 !important;
+      border-top-left-radius: 0 !important;
+    }
+  }
+}
+
+.use-icon {
+  width: 32px;
+  height: 32px;
 }
 
 
-.search-box {
+.search-box-container {
+  font-weight: 600;
   width: 80%;
   margin: auto;
+  border-radius: 4px;
+  background-color: var(--topbar-color);
+
+  .search-box {
+    padding: 24px 32px 20px;
+
+    .header {
+      margin-bottom: 10px;
+      @media @mobile, @tablet {
+        row-gap: 10px;
+      }
+      @media @mobile {
+        flex-wrap: wrap;
+      }
+    }
+
+    .input {
+
+      .ant-input-affix-wrapper {
+        background-color: white !important;
+        color: var(--interact-color);
+      }
+
+      .search-input {
+        background-color: white;
+        color: var(--interact-color);
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+
+    .search-label {
+      font-size: 24px;
+    }
+  }
+
+  .apply-filters {
+    margin-top: 10px;
+    width: 300px;
+  }
 }
 
 .add-to-group {
@@ -20,6 +86,13 @@
 
 .played-timer {
   color: var(--highlight-color);
+}
+
+.paginator {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .results {

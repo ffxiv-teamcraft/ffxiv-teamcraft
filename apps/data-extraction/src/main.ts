@@ -58,6 +58,7 @@ import { AllaganReportsExtractor } from './extractors/allagan-reports.extractor'
 import { NodesExtractor } from './extractors/nodes.extractor';
 import { ShopsExtractor } from './extractors/shops.extractor';
 import { green } from 'colors';
+import { GatheringSearchIndexExtractor } from './extractors/gathering-search-index.extractor';
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -132,7 +133,8 @@ const extractors: AbstractExtractor[] = [
   new MappyExtractor(),
   new LgbExtractor(),
   new GubalExtractor(),
-  new AllaganReportsExtractor()
+  new AllaganReportsExtractor(),
+  new GatheringSearchIndexExtractor()
 ];
 
 if (process.env.XIVAPI_KEY) {

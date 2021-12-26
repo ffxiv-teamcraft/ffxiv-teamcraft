@@ -47,8 +47,9 @@ export class ItemsExtractor extends AbstractExtractor {
     const marketItems = [];
     const baitItems = [];
     const extractableItems = {};
+    const aetherialReduce = {};
     const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
-    this.getAllPages(`https://xivapi.com/Item?columns=Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
+    this.getAllPages(`https://xivapi.com/Item?columns=AetherialReduce,Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
       .subscribe(page => {
         page.Results.forEach(item => {
           itemIcons[item.ID] = item.IconHD || item.Icon;
@@ -76,6 +77,9 @@ export class ItemsExtractor extends AbstractExtractor {
           }
           if (item.MaterializeType > 0) {
             extractableItems[item.ID] = 1;
+          }
+          if(item.AetherialReduce){
+            aetherialReduce[item.ID] = item.AetherialReduce;
           }
           if (item.Stats) {
             itemStats[item.ID] = Object.values(item.Stats);
@@ -164,6 +168,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('bait-items', baitItems);
         this.persistToJsonAsset('extractable-items', extractableItems);
         this.persistToJsonAsset('item-set-bonuses', itemSetBonuses);
+        this.persistToJsonAsset('aetherial-reduce', aetherialReduce);
         this.done();
       });
   }

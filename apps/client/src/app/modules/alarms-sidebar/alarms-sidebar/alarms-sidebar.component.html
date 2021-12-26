@@ -17,10 +17,11 @@
           <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
         </div>
         <div class="center-content">
-          <span *ngIf="row.alarm.itemId; else customName" class="item-name">
+          <span *ngIf="row.alarm.itemId; else customName">
             <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
-            <span [itemNameCopy]="row.alarm.itemId" [disableTooltip]="true">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
+            <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
+            <span [itemNameCopy]="row.alarm.itemId" [disableTooltip]="true" class="item-name">{{row.alarm.itemId | itemName: row.alarm | i18n}}</span>
             <i *ngIf="row.alarm.note" [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
                nz-tooltip nzType="edit"></i>
           </span>

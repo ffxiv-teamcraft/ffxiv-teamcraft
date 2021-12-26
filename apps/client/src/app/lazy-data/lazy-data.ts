@@ -98,6 +98,7 @@ export interface LazyData {
   actionIcons: Record<number, string>;
   actionTimeline: Record<number, string>;
   actions: Record<number, LazyAction>;
+  aetherialReduce: Record<number, number>;
   aetherytes: Array<LazyAetheryte>;
   airshipParts: Record<number, LazyAirshipPart>;
   airshipRanks: Record<number, LazyAirshipRank>;
@@ -136,6 +137,7 @@ export interface LazyData {
   gatheringLevels: Record<number, number>;
   gatheringLogPages: Array<LazyGatheringLogPage[]>;
   gatheringPointToNodeId: Record<number, number>;
+  gatheringSearchIndex: Record<number, number>;
   gcNames: Record<number, LazyGcName>;
   gilShopNames: Record<number, LazyGilShopName>;
   hqFlags: Record<number, number>;
@@ -186,6 +188,8 @@ export interface LazyData {
   recipes: Array<LazyRecipe>;
   reduction: Record<number, number[]>;
   retainerTasks: Array<LazyRetainerTask>;
+  reverseReduction: Record<number, number[]>;
+  scripIndex: Record<number, number>;
   seeds: Record<number, LazySeed>;
   shopNames: Record<number, LazyShopName>;
   shopsByNpc: Record<number, LazyShopsByNpc[]>;

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
@@ -79,15 +79,22 @@ export class ItemIconComponent {
       if (forceCollectable) {
         return of(forceCollectable);
       }
-      return this.lazyData.getRow('collectables', itemId, { collectable: 0 }).pipe(
-        map(colectableRow => colectableRow.collectable)
+      return combineLatest([
+        this.lazyData.getRow('collectables', itemId, { collectable: 0 }).pipe(
+          map(colectableRow => colectableRow.collectable)
+        ),
+        this.lazyData.getRow('aetherialReduce', itemId, 0).pipe(
+          map(reduce => reduce > 0)
+        )
+      ]).pipe(
+        map(res => res.some(v => !!v))
       );
     }),
     shareReplay(1)
   );
 
   constructor(private translate: TranslateService, private lazyData: LazyDataFacade,
-              private ipc: IpcService, private router: Router, private cd: ChangeDetectorRef) {
+              private ipc: IpcService, private router: Router) {
   }
 
   getLink(): string {
