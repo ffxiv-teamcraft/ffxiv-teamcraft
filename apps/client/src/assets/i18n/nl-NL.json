@@ -912,11 +912,9 @@
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "Legendary": "Legendary",
     "Switched_to_compact": "Display has been switched to compact because there's too many results.",
-    "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Normal": "Normal Gig Head",
-      "Large": "Large Gig Head"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
@@ -2863,5 +2861,13 @@
   "UPDATER": {
     "New_update_available": "A new update is available and has been downloaded",
     "Restart_to_install": "Do you want to restart now to apply it?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }
