@@ -30,7 +30,7 @@ export class NavigationSidebarService {
     this.settingsChange$,
     this.ipc.machinaToggle$,
     this.authFacade.loggedIn$,
-    this.authFacade.characters$.pipe(startWith(null as any)),
+    this.authFacade.mainCharacter$.pipe(startWith(null as any)),
     this.commissionNotificationsCount$
   ]).pipe(
     map(([, pcapEnabled, loggedIn, character, commissionNotificationsCount]) => {
