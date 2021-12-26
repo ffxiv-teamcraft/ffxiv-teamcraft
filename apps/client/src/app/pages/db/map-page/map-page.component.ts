@@ -308,7 +308,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
               },
               marker: {
                 iconType: 'img',
-                iconImg: NodeTypeIconPipe.icons[node.type],
+                iconImg: node.limited ? NodeTypeIconPipe.timed_icons[node.type - 1] : NodeTypeIconPipe.icons[node.type - 1],
                 x: node.x,
                 y: node.y,
                 link: `/db/${this.translate.currentLang}/${node.type === 4 ? 'spearfishing-spot' : 'node'}/${node.id}`
