@@ -194,7 +194,7 @@ export class IpcListenersManager {
   private setupSettingsListeners(): void {
     ipcMain.on('apply-settings', (event, settings) => {
       try {
-        if (this.store.get('region', 'Global') !== settings.region) {
+        if (settings.region && this.store.get('region', 'Global') !== settings.region) {
           this.store.set('region', settings.region);
 
           if (this.store.get<boolean>('machina', false) === true) {
@@ -204,12 +204,13 @@ export class IpcListenersManager {
         }
 
         this.overlayManager.forEachOverlay(overlay => {
-          overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
+          overlay.setIgnoreMouseEvents(settings.clickthrough);
           overlay.webContents.send('update-settings', settings);
         });
         this.mainWindow.win.webContents.send('update-settings', settings);
       } catch (e) {
         // Window already destroyed, so we don't care :)
+        console.error(e);
       }
     });
 
