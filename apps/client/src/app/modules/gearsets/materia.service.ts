@@ -14,13 +14,14 @@ import { StaticData } from '../../lazy-data/static-data';
 import { LazyItemStat } from '../../lazy-data/model/lazy-item-stat';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { LazyData } from '../../lazy-data/lazy-data';
+import { SettingsService } from '../settings/settings.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MateriaService {
 
-  constructor(private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade, private settings: SettingsService) {
   }
 
   @Memoized()
@@ -168,9 +169,10 @@ export class MateriaService {
 
     return combineLatest([
       safeCombineLatest(materiasObsArray$),
-      this.lazyData.getEntry('extracts')
+      this.lazyData.getEntry('extracts'),
+      this.settings.watchSetting('materias:confidence', 0.9)
     ]).pipe(
-      map(([pieces, extracts]) => {
+      map(([pieces, extracts, confidence]) => {
         return pieces.reduce((acc, { slot, piece, materias }) => {
           materias.forEach((materia, index) => {
             if (materia === null) {
@@ -194,7 +196,7 @@ export class MateriaService {
             if (overmeldChances === 0) {
               return;
             }
-            let amount = Math.max(Math.ceil(Math.log(1 - 0.9) / Math.log(1 - (overmeldChances / 100))), 1);
+            let amount = Math.max(Math.ceil(Math.log(1 - confidence) / Math.log(1 - (overmeldChances / 100))), 1);
             // If we're including all tools and it's a tool
             if (includeAllTools && ['mainHand', 'offHand'].indexOf(slot) > -1) {
               // If DoH

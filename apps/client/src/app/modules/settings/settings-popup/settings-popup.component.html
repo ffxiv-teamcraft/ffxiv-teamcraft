@@ -261,6 +261,12 @@
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
       </div>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Materia_confidence_rate' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Materia_confidence_rate_explain' | translate">
+          <nz-input-number [(ngModel)]="settings.materiaConfidenceRate"></nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
