@@ -102,19 +102,14 @@ export class CommissionsEffects {
             filter(data => !!data),
             map(partialCommission => {
               return [action, char, userId, partialCommission];
-            }),
-            switchMap(([a, c, uid, partialCommission]) => {
-              return this.lazyData.getDatacenterForServer((char as any).DC).pipe(
-                map(dc => [a, c, uid, partialCommission, dc])
-              );
             })
           );
       }),
-      switchMap(([{ list, name }, character, userId, partialCommission, dc]) => {
+      switchMap(([{ list, name }, character, userId, partialCommission]) => {
         const commission = new Commission();
         commission.authorId = userId;
         commission.server = character.Server;
-        commission.datacenter = dc;
+        commission.datacenter = character.DC;
         commission.createdAt = firebase.firestore.Timestamp.now();
         commission.bump = firebase.firestore.Timestamp.now();
         Object.assign(commission, partialCommission);
