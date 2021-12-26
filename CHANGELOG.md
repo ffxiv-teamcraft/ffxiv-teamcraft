@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.0"></a>
+# [9.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.14...v9.3.0) (2021-12-26)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms not ringing anymore on desktop app ([332543b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/332543b))
+* **collectables:** better alignment for easier reading ([d4f9942](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d4f9942))
+* **db:** added dividers between each node in gathering details ([244a83d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/244a83d))
+* **db:** added limited icons to limited nodes in map display ([b9ef245](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b9ef245))
+* **db:** moved obtention details to the top of fishing db pages ([5f12241](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f12241))
+* **desktop:** fixed overlay clickthrough and other settings not being applied properly ([268886b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/268886b))
+* **gearsets:** fixed some materia estimates set to 0 ([c7c2e25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7c2e25))
+* **levequests:** removed HQ checkbox from FSH leves ([c56d348](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c56d348))
+* **lodestone:** fixed lodestone character loading acting weird on desktop app ([ec758fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec758fd))
+* **search:** fixed company workshop builds not being added to selection properly ([a711ceb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a711ceb))
+* **ux:** added < symbols next to min. filters in community rotations for clarity ([76bf349](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76bf349))
+
+
+### Features
+
+* **gathering:** complete refactor of the gathering finder and new data on alarms ([095512d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/095512d))
+* **gearset:** materia melding rate confidence is now a setting ([0b66ff2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b66ff2))
+* **gearsets:** restored default materia melding confidence rate to 50% ([6abaf4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6abaf4b))
+
+
+
 <a name="9.2.14"></a>
 ## [9.2.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.13...v9.2.14) (2021-12-25)
 
