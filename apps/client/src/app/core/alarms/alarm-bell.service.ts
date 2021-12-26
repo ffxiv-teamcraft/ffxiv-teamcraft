@@ -112,7 +112,8 @@ export class AlarmBellService {
         filter(([, , , mapId, maps]) => {
           return !this.platform.isDesktop()
             || mapId === -1
-            || !maps[mapId].dungeon;
+            || !maps[mapId]
+            || !maps[mapId]?.dungeon;
         }),
         map(([date, alarms, groups]) => {
           return alarms.filter(alarm => {

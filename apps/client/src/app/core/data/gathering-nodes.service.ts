@@ -4,11 +4,12 @@ import { GatheringNode } from './model/gathering-node';
 import { getItemSource } from '../../modules/list/model/list-row';
 import { DataType } from '../../modules/list/data/data-type';
 import { FishingBait } from './model/fishing-bait';
-import { combineLatest, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { LazyFishingSpot } from '../../lazy-data/model/lazy-fishing-spot';
 import { LazyData } from '../../lazy-data/lazy-data';
+import { safeCombineLatest } from '../rxjs/safe-combine-latest';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class GatheringNodesService {
         })
       );
     }
-    return combineLatest([
+    return safeCombineLatest([
       idsToConsider$,
       this.lazyData.getMinBtnSpearNodesIndex(),
       this.lazyData.getEntry('spearfishingSources'),

@@ -36,6 +36,7 @@ export class CollectablesExtractor extends AbstractExtractor {
       '4.3': 31749
     };
     const collectables = {};
+    const scripIndex = {};
     combineLatest([
       this.getAllEntries('https://xivapi.com/HWDCrafterSupply'),
       this.getAllEntries('https://xivapi.com/CollectablesShop'),
@@ -79,6 +80,7 @@ export class CollectablesExtractor extends AbstractExtractor {
             return collectable.CollectablesShopRewardScrip !== null;
           })
           .forEach(collectable => {
+            scripIndex[collectable.ItemTargetID] = StaticData.CURRENCIES[collectable.CollectablesShopRewardScrip.Currency];
             const [lowThreshold, midThreshold, highThreshold] = [
               collectable.CollectablesShopRefine.LowCollectability,
               collectable.CollectablesShopRefine.MidCollectability,
@@ -171,6 +173,7 @@ export class CollectablesExtractor extends AbstractExtractor {
             });
           });
         this.persistToJsonAsset('collectables', collectables);
+        this.persistToJsonAsset('scrip-index', scripIndex);
         this.done();
       });
   }

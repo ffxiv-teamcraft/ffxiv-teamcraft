@@ -3,9 +3,24 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class GubalExtractor extends AbstractExtractor {
   gubalToObject(rows) {
     return rows.reduce((res, row) => {
+      if (row.itemId < 500 || row.resultItemId < 500) {
+        return res;
+      }
       return {
         ...res,
         [row.resultItemId]: [...(res[row.resultItemId] || []), row.itemId]
+      };
+    }, {});
+  }
+
+  gubalToReverseObject(rows) {
+    return rows.reduce((res, row) => {
+      if (row.itemId < 500 || row.resultItemId < 500) {
+        return res;
+      }
+      return {
+        ...res,
+        [row.itemId]: [...(res[row.itemId] || []), row.resultItemId]
       };
     }, {});
   }
@@ -38,6 +53,7 @@ export class GubalExtractor extends AbstractExtractor {
 `).subscribe(res => {
       this.persistToJsonAsset('desynth', this.gubalToObject(res.data.desynthresults_stats));
       this.persistToJsonAsset('reduction', this.gubalToObject(res.data.reductionresults_stats));
+      this.persistToJsonAsset('reverse-reduction', this.gubalToReverseObject(res.data.reductionresults_stats));
       this.persistToJsonAsset('voyage-sources', this.gubalVoyageAggregatorToObject(res.data.exploration_per_item));
       this.done();
     });

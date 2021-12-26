@@ -497,6 +497,8 @@
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Hide back button in sidebar",
     "Reload_auth_token": "Reload auth token",
+    "Materia_confidence_rate": "Melding confidence rate",
+    "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -910,11 +912,9 @@
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "Legendary": "Legendary",
     "Switched_to_compact": "Display has been switched to compact because there's too many results.",
-    "GIG_HEAD": {
-      "Small": "Small Gig Head",
-      "Normal": "Normal Gig Head",
-      "Large": "Large Gig Head"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "Announcement",
@@ -1072,10 +1072,10 @@
       "Name_filter_placeholder": "Rotation name",
       "Tags_filter_placeholder": "Tags",
       "Durability_filter_placeholder": "Durability",
-      "Rlvl_filter_placeholder": "Recipe lvl",
+      "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Reset filters",
       "Configuration_popup": "Share with the community",
-      "Min_craftsmanship_filter_placeholder": "Min. Craftsmanship",
+      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
       "Min_control_filter_placeholder": "Min. Control",
       "Min_cp_filter_placeholder": "Min. CP",
       "Difficulty_filter_placeholder": "Difficulty",
@@ -2861,5 +2861,13 @@
   "UPDATER": {
     "New_update_available": "A new update is available and has been downloaded",
     "Restart_to_install": "Do you want to restart now to apply it?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }

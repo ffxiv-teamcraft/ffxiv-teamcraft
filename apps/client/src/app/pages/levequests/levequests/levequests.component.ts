@@ -148,7 +148,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
             itemId: leve.CraftLeve.Item0TargetID,
             exp: leve.ExpReward * (roadToBuff ? 2 : 1),
             gil: leve.GilReward * (roadToBuff ? 2 : 1),
-            hq: this.settings.alwaysHQLeves,
+            hq: this.settings.alwaysHQLeves && leve.ClassJobCategoryTargetID - 1 !== 18,
             allDeliveries: this.settings.alwaysAllDeliveries,
             amount: globalExp ? 0 : 1,
             itemQuantity: leve.CraftLeve.ItemCount0

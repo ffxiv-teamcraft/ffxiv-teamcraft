@@ -51,27 +51,33 @@
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}:</div>
-          <nz-input-number (ngModelChange)="craftsmanshipFilter$.next($event)" [ngModel]="craftsmanshipFilter$ | async"
-                           [nzMin]="1"
-                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_craftsmanship"
-                           tutorialStepIndex="4"
-                           [nzStep]="1"></nz-input-number>
+          <nz-input-group nzAddOnBefore="&lt;">
+            <nz-input-number (ngModelChange)="craftsmanshipFilter$.next($event)" [ngModel]="craftsmanshipFilter$ | async"
+                             [nzMin]="1"
+                             tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_craftsmanship"
+                             tutorialStepIndex="4"
+                             [nzStep]="1"></nz-input-number>
+          </nz-input-group>
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}:</div>
-          <nz-input-number (ngModelChange)="controlFilter$.next($event)" [ngModel]="controlFilter$ | async"
-                           [nzMin]="1"
-                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_control"
-                           tutorialStepIndex="5"
-                           [nzStep]="1"></nz-input-number>
+          <nz-input-group nzAddOnBefore="&lt;">
+            <nz-input-number (ngModelChange)="controlFilter$.next($event)" [ngModel]="controlFilter$ | async"
+                             [nzMin]="1"
+                             tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_control"
+                             tutorialStepIndex="5"
+                             [nzStep]="1"></nz-input-number>
+          </nz-input-group>
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}:</div>
-          <nz-input-number (ngModelChange)="cpFilter$.next($event)" [ngModel]="cpFilter$ | async"
-                           [nzMin]="1"
-                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_cp"
-                           tutorialStepIndex="6"
-                           [nzStep]="1"></nz-input-number>
+          <nz-input-group nzAddOnBefore="&lt;">
+            <nz-input-number (ngModelChange)="cpFilter$.next($event)" [ngModel]="cpFilter$ | async"
+                             [nzMin]="1"
+                             tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_cp"
+                             tutorialStepIndex="6"
+                             [nzStep]="1"></nz-input-number>
+          </nz-input-group>
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Difficulty_filter_placeholder' | translate}}:</div>

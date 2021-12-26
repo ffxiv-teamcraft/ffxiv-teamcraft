@@ -365,7 +365,7 @@
               </div>
               <div fxLayout="row" fxLayoutGap="5px">
                 <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
-                <ng-container *ngIf="item.recipe">
+                <ng-container *ngIf="item.recipe && item.recipe.job">
                   <img *ngIf="(item.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
                        alt="{{item.recipe.job | i18nRow:'jobAbbr' | i18n}}"
                        class="job-icon small"

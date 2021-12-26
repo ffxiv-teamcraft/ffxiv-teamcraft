@@ -25,7 +25,7 @@
     <nz-tab *ngFor="let row of results" [nzTitle]="title">
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <img *ngIf="((row.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
+          <img *ngIf="((row.job | i18nRow:'jobAbbr') | async)?.en as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/job/{{icon}}.png">
           <div>{{row.job | i18nRow:'jobName' | i18n}}</div>
         </div>
       </ng-template>

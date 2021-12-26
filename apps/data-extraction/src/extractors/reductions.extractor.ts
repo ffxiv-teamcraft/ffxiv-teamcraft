@@ -34,15 +34,11 @@ export class ReductionsExtractor extends AbstractExtractor {
         sheetRows.forEach((row, index) => {
           const itemReductions = [];
           const itemId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row.Item.toLowerCase());
-          if (isNaN(itemId)) {
-            // console.log('Invalid row', index, row);
-          } else {
+          if (!isNaN(itemId) && itemId > 500) {
             for (let i = 0; i < 5; i++) {
               if (row[`r${i}`] && row[`r${i}`].length > 0) {
                 const reductionId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row[`r${i}`].toLowerCase());
-                if (isNaN(reductionId)) {
-                  // console.log('Invalid row reduction', index, i, row);
-                } else {
+                if (!isNaN(reductionId)) {
                   itemReductions.push(reductionId);
                 }
               }

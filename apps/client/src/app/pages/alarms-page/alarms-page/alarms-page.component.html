@@ -192,6 +192,7 @@
               </ng-template>
               <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
             </div>
+            <app-gathering-item-uses [itemId]="row.alarm.itemId"></app-gathering-item-uses>
             <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
           </div>
         </ng-template>
@@ -351,6 +352,7 @@
           </div>
         </div>
         <div nz-col nzMd="1" fxLayout="row wrap">
+          <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
           <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type-compact"
                src="{{row.alarm.type | nodeTypeIcon: true}}">
           <div fxLayout="row" fxLayoutGap="5px" *ngIf="row.alarm.ephemeral">
@@ -424,7 +426,7 @@
             </div>
           </ng-template>
         </div>
-        <div nz-col nzMd="5">
+        <div nz-col nzMd="6">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
               {{aetheryte.nameid | i18nRow:'places' | i18n}}

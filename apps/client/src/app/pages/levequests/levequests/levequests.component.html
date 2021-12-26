@@ -140,7 +140,7 @@
                   x {{leve.amount}})</span>
                 </div>
                 <div nz-col nzSm="6">
-                  <label [(ngModel)]="leve.hq" class="hq-checkbox" nz-checkbox>
+                  <label [(ngModel)]="leve.hq" class="hq-checkbox" nz-checkbox *ngIf="leve.jobId !== 18">
                     {{'Hq' | translate}}
                   </label>
                   <nz-input-number [(ngModel)]="leve.amount" [nzMax]="999" [nzMin]="0" [nzPrecision]="0"

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -13,6 +13,15 @@ import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { SpearfishingShadowSize } from '../../../core/data/model/spearfishing-shadow-size';
 import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
+import { FormBuilder } from '@angular/forms';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { chunk } from 'lodash';
+
+interface ResultRow {
+  originalItemId: number,
+  node: GatheringNode,
+  alarms: Alarm[]
+}
 
 @Component({
   selector: 'app-gathering-location',
@@ -26,9 +35,32 @@ export class GatheringLocationComponent {
 
   SpearfishingShadowSize = SpearfishingShadowSize;
 
+  nodeTypes = [
+    'Mining',
+    'Quarrying',
+    'Logging',
+    'Harvesting',
+    'Fishing',
+    'Spearfishing'
+  ];
+
+  uses = [
+    {
+      needsTranslate: true,
+      value: 'Reduction',
+      icon: 'https://www.garlandtools.org/db/images/item/Reduce.png'
+    },
+    {
+      value: 25200
+    },
+    {
+      value: 33914
+    }
+  ];
+
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  results$: Observable<{ originalItemId: number, node: GatheringNode, alarms: Alarm[] }[]>;
+  results$: Observable<{ rows: ResultRow[], total: number }>;
 
   alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 
@@ -42,54 +74,151 @@ export class GatheringLocationComponent {
 
   compactDisplay$ = new BehaviorSubject<boolean>(localStorage.getItem('gathering-location:compact') === 'true');
 
+  filtersForm = this.fb.group({
+    type: [-1],
+    use: [-1]
+  });
+
+  filters$ = new BehaviorSubject<any>(this.filtersForm.getRawValue());
+
+  itemsSearchIndex$ = combineLatest([
+    this.lazyData.getSearchIndex('items'),
+    this.lazyData.getEntry('gatheringSearchIndex'),
+    this.lazyData.getEntry('scripIndex'),
+    this.lazyData.getEntry('aetherialReduce')
+  ]).pipe(
+    first(),
+    map(([items, index, scripIndex, aetherialReduce]) => {
+      return items.filter(row => {
+        return index[row.id] !== undefined;
+      }).map(row => {
+        return {
+          ...row,
+          scrip: scripIndex[row.id],
+          reduction: aetherialReduce[row.id] > 0,
+          type: index[row.id]
+        };
+      });
+    })
+  );
+
+  // It's page # not index, starting at 1
+  page$ = new BehaviorSubject<number>(1);
+
+  pageSize = 12;
+
   constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private router: Router,
               private route: ActivatedRoute, public translate: TranslateService,
-              private gatheringNodesService: GatheringNodesService, private message: NzMessageService) {
+              private gatheringNodesService: GatheringNodesService, private message: NzMessageService,
+              private fb: FormBuilder, private lazyData: LazyDataFacade) {
 
-    this.results$ = this.query$.pipe(
+    const resultsData$ = combineLatest([
+      this.query$,
+      this.filters$
+    ]).pipe(
       debounceTime(500),
-      tap((query) => {
+      tap(([query, filters]) => {
+        const queryParams: any = {
+          query: query.length > 0 ? query : null
+        };
+        if (filters.type > -1) {
+          queryParams.type = filters.type;
+        } else {
+          queryParams.type = null;
+        }
+        if (filters.use !== -1) {
+          queryParams.use = filters.use;
+        } else {
+          queryParams.use = null;
+        }
         this.router.navigate([], {
           queryParamsHandling: 'merge',
-          queryParams: { query: query.length > 0 ? query : null },
+          queryParams,
           relativeTo: this.route
         });
-        this.showIntro = query.length === 0;
+        this.showIntro = query.length === 0 && Object.values<number>(filters).every(e => e === -1);
         this.loading = true;
       }),
-      filter(query => query.length > 0),
-      switchMap(query => this.dataService.searchGathering(query)),
-      switchMap(itemIds => {
-        return combineLatest(itemIds.map(itemId => {
-            return this.gatheringNodesService.getItemNodes(itemId).pipe(
-              map(nodes => {
-                return nodes.map(node => {
-                  return {
-                    originalItemId: itemId,
-                    node: node,
-                    alarms: this.alarmsFacade.generateAlarms(node)
-                  };
-                });
+      filter(([query, filters]) => query.length > 0 || Object.values(filters).some(v => v !== -1)),
+      switchMap(([query, filters]) => {
+        return this.itemsSearchIndex$.pipe(
+          map(searchIndex => {
+            let res = searchIndex;
+            if (query) {
+              res = searchIndex.filter(row => {
+                return (row.name[this.dataService.searchLang] || row.name.en).includes(query);
+              });
+            }
+
+            if (filters.use !== -1) {
+              res = res.filter(row => {
+                if (filters.use === 'Reduction') {
+                  return row.reduction;
+                } else {
+                  return row.scrip === +filters.use;
+                }
+              });
+            }
+            if (filters.type !== -1) {
+              res = res.filter(row => {
+                return row.type === +filters.type;
+              });
+            }
+            return res;
+          }),
+          switchMap(rows => {
+            return combineLatest(rows.map(row => {
+                const itemId = row.id;
+                return this.gatheringNodesService.getItemNodes(itemId).pipe(
+                  map(nodes => {
+                    return nodes.map(node => {
+                      return {
+                        originalItemId: itemId,
+                        node: node,
+                        alarms: this.alarmsFacade.generateAlarms(node)
+                      };
+                    });
+                  })
+                );
               })
             );
-          })
-        ).pipe(
-          map(nodes => nodes.flat())
+          }),
+          map(nodes => nodes.flat().sort((a, b) => b.node.level - a.node.level))
         );
       }),
-      tap((results) => {
+      tap(() => {
         this.loading = false;
-        if (results.length > 25 && !this.compactDisplay$.value) {
-          this.compactDisplay$.next(true);
-          this.message.info(this.translate.instant('GATHERING_LOCATIONS.Switched_to_compact'));
-        }
+        this.page$.next(1);
+      }),
+      map(res => {
+        return {
+          data: chunk(res, this.pageSize),
+          total: res.length
+        };
+      })
+    );
+
+    this.results$ = combineLatest([resultsData$, this.page$]).pipe(
+      map(([results, page]) => {
+        return {
+          rows: results.data[page - 1],
+          total: results.total
+        };
       })
     );
 
     this.route.queryParams
+      .pipe(first())
       .subscribe(params => {
         this.query$.next(params.query || '');
+        if (params.use || params.type) {
+          this.filtersForm.patchValue({
+            use: params.use || -1,
+            type: +params.type || -1
+          });
+          this.submitFilters();
+        }
       });
   }
 
@@ -114,6 +243,15 @@ export class GatheringLocationComponent {
         && alarm.type === a.type
         && alarm.fishEyes === a.fishEyes;
     }) === undefined;
+  }
+
+  public submitFilters(): void {
+    this.filters$.next(this.filtersForm.getRawValue());
+  }
+
+  public resetFilters(): void {
+    this.filtersForm.reset();
+    this.submitFilters();
   }
 
   public saveCompactDisplay(value: boolean): void {

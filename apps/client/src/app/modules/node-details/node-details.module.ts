@@ -9,14 +9,18 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { MapModule } from '../map/map.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GatheringItemUsesComponent } from './gathering-item-uses/gathering-item-uses.component';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
 
 
 @NgModule({
   declarations: [
-    NodeDetailsComponent
+    NodeDetailsComponent,
+    GatheringItemUsesComponent
   ],
   exports: [
-    NodeDetailsComponent
+    NodeDetailsComponent,
+    GatheringItemUsesComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CoreModule,
     AlarmsModule,
     NzDropDownModule,
-    MapModule
+    MapModule,
+    NzPopoverModule
   ]
 })
 export class NodeDetailsModule {

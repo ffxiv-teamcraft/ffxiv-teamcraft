@@ -230,6 +230,14 @@ export class SettingsService {
     this.setSetting('commissions:minPrice', price.toString());
   }
 
+  public get materiaConfidenceRate(): number {
+    return +this.getSetting('materias:confidence', '0.5');
+  }
+
+  public set materiaConfidenceRate(rate: number) {
+    this.setSetting('materias:confidence', rate.toString());
+  }
+
   public get autoDownloadUpdate(): boolean {
     return this.getBoolean('auto-download-update', true);
   }

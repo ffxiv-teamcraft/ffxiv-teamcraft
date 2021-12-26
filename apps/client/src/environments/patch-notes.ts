@@ -1,23 +1,20 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed alarms being played again on language switch.
-* **alarms-sidebar:** fixed coords sometimes going too far in decimal accuracy.
-* **alarms-sidebar:** moved gathering type icon to not conflict with collectable flag.
-* **db:** fixed some old trade sources not filtered properly.
-* **desktop:** fixed weird padding bottom in overlays.
-* **desktop:** tentative fix to hide startup powershell window.
-* **gearsets:** fixed SGE and RPR sets not being created properly.
-* **i18n:** fixed misslabel in french settings.
-* **layout:** fixed level cap for recipes unlock sometimes inaccurate.
-* **recipe-finder:** fixed item name input sometimes not enabling the add button properly.
-* **simulator:** change overlay toggle button color.
-* **simulator:** fixed food sharing in url not working properly.
-* **ux:** use proper icons for fishing and speafishing in maps.
+* **alarms:** fixed alarms not ringing anymore on desktop app.
+* **collectables:** better alignment for easier reading.
+* **db:** added dividers between each node in gathering details.
+* **db:** added limited icons to limited nodes in map display.
+* **db:** moved obtention details to the top of fishing db pages.
+* **desktop:** fixed overlay clickthrough and other settings not being applied properly.
+* **gearsets:** fixed some materia estimates set to 0.
+* **levequests:** removed HQ checkbox from FSH leves.
+* **lodestone:** fixed lodestone character loading acting weird on desktop app.
+* **search:** fixed company workshop builds not being added to selection properly.
+* **ux:** added < symbols next to min. filters in community rotations for clarity.
 
 
 ### Features
 
-* **alarms:** alarm panels collapse state is now persisted accross sessions.
-* **allagan-reports:** added map name to mobs when they have a known position.
-* **desktop:** alarms won't ring anymore when you're in a dungeon/raid.
-* **gearsets:** updated materia estimate function to be more realistic.`;
+* **gathering:** complete refactor of the gathering finder and new data on alarms.
+* **gearset:** materia melding rate confidence is now a setting.
+* **gearsets:** restored default materia melding confidence rate to 50%.`;
