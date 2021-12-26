@@ -215,6 +215,9 @@ export class LazyDataFacade {
    * @param extendedProperty if we want to grab data for a sub field (like "description" for instance)
    */
   public getI18nName<K extends LazyDataI18nKey>(propertyKey: K, id: number, extendedProperty?: keyof Extract<LazyDataEntries[K], I18nName>): Observable<I18nName | null> {
+    if (id === null) {
+      return of(null);
+    }
     return this.settings.region$.pipe(
       switchMap(region => {
         return this.getRow(propertyKey, id).pipe(
