@@ -147,7 +147,7 @@ export class GatheringLocationComponent {
             let res = searchIndex;
             if (query) {
               res = searchIndex.filter(row => {
-                return (row.name[this.dataService.searchLang] || row.name.en).includes(query);
+                return (row.name[this.dataService.searchLang] || row.name.en).toLowerCase().includes(query.toLowerCase());
               });
             }
 

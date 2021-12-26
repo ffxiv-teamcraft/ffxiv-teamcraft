@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.1"></a>
+## [9.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.0...v9.3.1) (2021-12-26)
+
+
+### Bug Fixes
+
+* **gathering-locations:** fixed search by string sometimes breaking the results display ([8fd95bf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fd95bf))
+
+
+
 <a name="9.3.0"></a>
 # [9.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.2.14...v9.3.0) (2021-12-26)
 
