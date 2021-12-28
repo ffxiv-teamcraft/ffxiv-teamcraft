@@ -23,6 +23,7 @@ export class LayoutsEffects {
     map(layouts => [
       this.layoutService.defaultLayout,
       this.layoutService.defaultLayoutNoVendor,
+      this.layoutService.venilisCraftsTimedFirst,
       ...layouts
     ]),
     map(layouts => new LayoutsLoaded(layouts))
