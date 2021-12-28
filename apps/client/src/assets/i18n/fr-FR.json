@@ -2579,6 +2579,7 @@
     "Selling": "{{amount}} objets en vente",
     "X_items": "{{amount}} objets",
     "Task_complete": "Tâche terminée",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} a terminé sa tâche",
     "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
     "Task_completion_alarm": "Alarme de complétion de tâche",
