@@ -32,7 +32,7 @@ export class ReportsManagementComponent extends TeamcraftComponent {
     shareReplay(1)
   );
 
-  protected readonly fates$ = this.lazyData.getSearchIndex('fates');
+  protected readonly fates$ = this.lazyData.getSearchIndex('fates', 'name');
 
   protected readonly ventures$ = this.lazyData.getSearchIndex('ventures');
 

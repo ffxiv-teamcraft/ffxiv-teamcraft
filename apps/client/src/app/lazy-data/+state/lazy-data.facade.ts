@@ -22,6 +22,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { Language } from '../../core/data/language';
 import { normalizeI18nName } from '../../core/tools/normalize-i18n';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyData } from '../lazy-data';
 
 @Injectable({
   providedIn: 'root'
@@ -390,7 +391,7 @@ export class LazyDataFacade {
     );
   }
 
-  public getSearchIndex(entry: LazyDataI18nKey): Observable<{ id: number, name: I18nName }[]> {
+  public getSearchIndex<K extends LazyDataI18nKey>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{ id: number, name: I18nName }[]> {
     if (!this.searchIndexCache[entry]) {
       this.searchIndexCache[entry] = this.getEntry(entry).pipe(
         map(lazyEntry => {
@@ -398,7 +399,7 @@ export class LazyDataFacade {
             .map(key => {
               return {
                 id: +key,
-                name: lazyEntry[key]
+                name: additionalProperty ? lazyEntry[key][additionalProperty] : lazyEntry[key]
               };
             });
         }),
