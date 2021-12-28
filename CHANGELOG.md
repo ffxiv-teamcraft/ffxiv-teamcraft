@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.2"></a>
+## [9.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.1...v9.3.2) (2021-12-28)
+
+
+### Bug Fixes
+
+* **db:** fixed quicksearch sometimes showing weird undefined results ([4b51412](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b51412))
+* **gearset:** fixed confidence rate resetting when including other tools in DoH sets ([270b2f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/270b2f2))
+* **gearsets:** fixed total materias and total trades popups in gearset editor ([a916040](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a916040))
+* **list:** fixed copy to clipboard not copying all the tiers ([d9038b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9038b6))
+* **retainers:** fixed "missing name" label for when there's no task assigned to a retainer ([2a337ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a337ec))
+
+
+### Features
+
+* **db:** import of over 200 allagan reports from a single user (big thanks to Rivahn Fireshadow) ([279adc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/279adc2))
+* **layouts:** new layout in the default pool: crafts and timed first ([da7a5d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da7a5d0))
+
+
+
 <a name="9.3.1"></a>
 ## [9.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.0...v9.3.1) (2021-12-26)
 
