@@ -649,7 +649,7 @@
     "Include_final_items_in_main_layout": "基本レイアウトに最終アイテムを含める",
     "Can_skip_buying_X": "{{amount}} 個スキップ可能",
     "Can_skip_buying_entirely": "すべてスキップ可能",
-    "Can_skip_tooltip": "他のアイテムを買うには該当アイテムが必要になります。つまり、該当パネルにある全てを買う計画でしたらアイテムを少なめに買うか、完全に飛ばされる事ができます",
+    "Can_skip_tooltip": "このアイテムは別のアイテムを作るのに必要とされています。つまり、ここにある全てのアイテムを買う予定であれば、このアイテムは少なめまたは完全に買う必要がなくなります。",
     "Requirements_ignored": "除外した素材",
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
