@@ -2579,6 +2579,7 @@
     "Selling": "Продает {{amount}} товаров",
     "X_items": "{{amount}} предметов",
     "Task_complete": "Задание выполнено",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
     "Task_completion_alarm": "Сигнал выполнения задания",
