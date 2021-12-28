@@ -129,8 +129,9 @@
     "Tags_filter_reset": "重置标签筛选",
     "Exclude_filter_placeholder": "通过标签排除",
     "Exclude_filter_reset": "重置排除过滤器",
-    "Name_filter_placeholder": "清单名筛选",
-    "No_lists_matching": "没有符合的搜索结果"
+    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "Search": "Search"
   },
   "COMMON": {
     "Length": "长度",
@@ -496,6 +497,8 @@
     "Has_access_to_housing_vendor_explain": "在 “按 NPC 显示” 时优先使用房屋专属商人。在拥有房屋时非常有用。",
     "Hide_back_button": "在侧边栏隐藏返回按钮",
     "Reload_auth_token": "Reload auth token",
+    "Materia_confidence_rate": "Melding confidence rate",
+    "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -909,11 +912,9 @@
     "Ephemeral_warning": "限时采集点有多个位置，坐标为近似值。",
     "Legendary": "传奇",
     "Switched_to_compact": "因结果太多，已切换为紧凑显示。",
-    "GIG_HEAD": {
-      "Small": "小型渔叉尖",
-      "Normal": "中型渔叉尖",
-      "Large": "大型渔叉尖"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "公告",
@@ -1071,10 +1072,10 @@
       "Name_filter_placeholder": "手法名",
       "Tags_filter_placeholder": "标签",
       "Durability_filter_placeholder": "耐久",
-      "Rlvl_filter_placeholder": "配方等级",
+      "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "重置筛选",
       "Configuration_popup": "与社区共享",
-      "Min_craftsmanship_filter_placeholder": "最小作业精度",
+      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
       "Difficulty_filter_placeholder": "难度",
@@ -2578,6 +2579,7 @@
     "Selling": "出售中（{{amount}} 件）",
     "X_items": "{{amount}} 个物品",
     "Task_complete": "委托完成",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} 完成了探险",
     "Task_completed_notification_content": "{{name}} 完成了探险委托 {{taskName}}",
     "Task_completion_alarm": "探险完成提醒",
@@ -2856,5 +2858,17 @@
     "SUNSET": "Sunset",
     "DAY": "Day",
     "NIGHT": "Night"
+  },
+  "UPDATER": {
+    "New_update_available": "A new update is available and has been downloaded",
+    "Restart_to_install": "Do you want to restart now to apply it?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }

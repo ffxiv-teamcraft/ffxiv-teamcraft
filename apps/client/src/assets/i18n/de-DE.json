@@ -129,8 +129,9 @@
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
     "Exclude_filter_placeholder": "Benutze Tags ausschließen",
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
-    "Name_filter_placeholder": "Nach Name filtern",
-    "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
+    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "Search": "Search"
   },
   "COMMON": {
     "Length": "Länge",
@@ -496,6 +497,8 @@
     "Has_access_to_housing_vendor_explain": "Haushändler in NPC Übersicht bevorzugen; nützlich wenn du Zugang zu einem hast.",
     "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
+    "Materia_confidence_rate": "Melding confidence rate",
+    "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -909,11 +912,9 @@
     "Ephemeral_warning": "Vergängliche Abbaustellen haben verschiedene Positionen, Position ist eine Annäherung.",
     "Legendary": "Legendär",
     "Switched_to_compact": "Es wurde zur Kompaktansicht gewechselt, weil es zu viele Ergebnisse gibt.",
-    "GIG_HEAD": {
-      "Small": "Kleine Speerspitze",
-      "Normal": "Normale Speerspitze",
-      "Large": "Große Speerspitze"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -1071,10 +1072,10 @@
       "Name_filter_placeholder": "Name der Rotation",
       "Tags_filter_placeholder": "Markierungen",
       "Durability_filter_placeholder": "Belastbarkeit",
-      "Rlvl_filter_placeholder": "Rezeptstufe",
+      "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Filter zurücksetzen",
       "Configuration_popup": "Mit der Community teilen",
-      "Min_craftsmanship_filter_placeholder": "Minimum-Kunstfertigkeit",
+      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
       "Min_control_filter_placeholder": "Minimum-Kontrolle",
       "Min_cp_filter_placeholder": "Minimum-HP",
       "Difficulty_filter_placeholder": "Schwierigkeit",
@@ -1930,7 +1931,7 @@
     "Install_npcap": "Npcap fehlt auf dem System",
     "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
-    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
+    "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als Anonymer",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
@@ -2578,6 +2579,7 @@
     "Selling": "{{amount}} Artikel verkaufen",
     "X_items": "{{amount}} Gegenstände",
     "Task_complete": "Unternehmung abgeschlossen",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} hat die Unternehmung beendet",
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
     "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
@@ -2815,20 +2817,20 @@
     "Rarity_Rare": "Selten",
     "No_missing_fish_data": "Kein Fisch mit fehlenden Daten",
     "Sources_filter": "Quellen filtern",
-    "Speed": "Speed",
-    "Shadow_size": "Shadow size",
+    "Speed": "Geschwindigkeit",
+    "Shadow_size": "Schattengröße",
     "SPEEDS": {
-      "VERY_SLOW": "Very slow",
-      "SLOW": "Slow",
-      "AVERAGE": "Average",
-      "FAST": "Fast",
-      "FASTER": "Faster",
-      "VERY_FAST": "Very fast"
+      "VERY_SLOW": "Sehr langsam",
+      "SLOW": "Langsam",
+      "AVERAGE": "Durchschnittlich",
+      "FAST": "Schnell",
+      "FASTER": "Schneller",
+      "VERY_FAST": "Sehr schnell"
     },
     "SHADOWS": {
-      "SMALL": "Small",
+      "SMALL": "Klein",
       "NORMAL": "Normal",
-      "LARGE": "Large"
+      "LARGE": "Groß"
     },
     "SOURCE": {
       "DESYNTH": "DESYNTHESE",
@@ -2856,5 +2858,17 @@
     "SUNSET": "Sonnenuntergang",
     "DAY": "Tag",
     "NIGHT": "Nacht"
+  },
+  "UPDATER": {
+    "New_update_available": "Ein neues Update ist verfügbar und wurde heruntergeladen",
+    "Restart_to_install": "Möchten du jetzt neu starten zum Anwenden?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }
