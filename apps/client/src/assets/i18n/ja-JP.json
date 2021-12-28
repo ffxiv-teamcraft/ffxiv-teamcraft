@@ -17,7 +17,7 @@
   "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "Copying the list to your account…",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
-  "Hide_zone_duplicates": "重なる領域を隠す(複数領域にあるアイテムの場合1回だけ表示されます)",
+  "Hide_zone_duplicates": "複数のエリアで入手できるアイテムは一度だけ表示するようにする",
   "Patch_notes": "{{version}} の変更",
   "Patch_notes_footer": "新機能は気に入っていただけましたか？Patreonでのプロジェクトのサポートを検討してください",
   "Selection": "選択",
