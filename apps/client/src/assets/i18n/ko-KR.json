@@ -2579,6 +2579,7 @@
     "Selling": "출품 중 ({{amount}}건)",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
     "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람",
