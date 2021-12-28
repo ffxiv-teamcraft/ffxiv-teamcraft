@@ -172,7 +172,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
 
   collectable$ = observeInput(this, 'itemId').pipe(
     switchMap(itemId => this.lazyData.getRow('collectables', itemId)),
-    map(res => res && res.collectable !== 0)
+    map(res => res && res?.collectable !== 0)
   );
 
   @ViewChild('menuHost', { read: ViewContainerRef })

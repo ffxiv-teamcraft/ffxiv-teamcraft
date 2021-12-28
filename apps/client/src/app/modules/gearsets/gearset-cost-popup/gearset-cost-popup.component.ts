@@ -28,7 +28,7 @@ export class GearsetCostPopupComponent {
 
   costs$: Observable<{ id: string | number, amount: number }[]> = combineLatest([
     observeInput(this, 'gearset'),
-    observeInput(this, 'progression')
+    observeInput(this, 'progression', true)
   ]).pipe(
     switchMap(([gearset, progression]) => {
       return safeCombineLatest(Object.keys(gearset)

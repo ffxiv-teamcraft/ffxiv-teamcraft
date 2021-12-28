@@ -30,12 +30,14 @@ export class MateriasNeededPopupComponent {
   constructor(private materiaService: MateriaService) {
     this.totalNeeded$ = combineLatest([
       observeInput(this, 'gearset'),
-      observeInput(this, 'progression'),
-      observeInput(this, 'includeAllTools')
+      observeInput(this, 'progression', true),
+      observeInput(this, 'includeAllTools', true)
     ]).pipe(
       switchMap(([gearset, progression, includeAllTools]) => {
-        localStorage.setItem('gearsets:include-all-tools', this.includeAllTools.toString());
-        return this.materiaService.getTotalNeededMaterias(gearset, includeAllTools, progression);
+        if (includeAllTools !== null) {
+          localStorage.setItem('gearsets:include-all-tools', includeAllTools.toString());
+        }
+        return this.materiaService.getTotalNeededMaterias(gearset, includeAllTools || false, progression);
       })
     );
   }

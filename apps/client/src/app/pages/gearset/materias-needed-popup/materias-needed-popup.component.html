@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded$ | async as totalNeeded">
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded$ | async as totalNeeded; else loader">
   <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools">
     {{'GEARSETS.Include_all_tools' | translate}}
   </label>
@@ -30,3 +30,6 @@
     </tbody>
   </table>
 </div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

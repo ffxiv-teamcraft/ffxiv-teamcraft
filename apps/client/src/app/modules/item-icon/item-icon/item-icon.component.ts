@@ -81,7 +81,7 @@ export class ItemIconComponent {
       }
       return combineLatest([
         this.lazyData.getRow('collectables', itemId, { collectable: 0 }).pipe(
-          map(colectableRow => colectableRow.collectable)
+          map(colectableRow => colectableRow?.collectable)
         ),
         this.lazyData.getRow('aetherialReduce', itemId, 0).pipe(
           map(reduce => reduce > 0)

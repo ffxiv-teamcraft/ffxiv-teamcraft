@@ -38,6 +38,7 @@ import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.compon
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pcap-popup.component';
 import { FavoritesModule } from '../favorites/favorites.module';
+import { PageLoaderModule } from '../page-loader/page-loader.module';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { FavoritesModule } from '../favorites/favorites.module';
     FullpageMessageModule,
     NzTagModule,
     NzTimelineModule,
-    FavoritesModule
+    FavoritesModule,
+    PageLoaderModule
   ],
   exports: [
     MateriaSlotIconComponent,
