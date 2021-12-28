@@ -2579,6 +2579,7 @@
     "Selling": "{{amount}} Artikel verkaufen",
     "X_items": "{{amount}} Gegenstände",
     "Task_complete": "Unternehmung abgeschlossen",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} hat die Unternehmung beendet",
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
     "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
