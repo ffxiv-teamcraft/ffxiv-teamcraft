@@ -2579,6 +2579,7 @@
     "Selling": "{{amount}} 個のアイテムを販売中",
     "X_items": "{{amount}} 個のアイテム",
     "Task_complete": "ベンチャーが完了しました。",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} がベンチャーを終了しました",
     "Task_completed_notification_content": "{{name}} がベンチャー {{taskName}} を終了しました",
     "Task_completion_alarm": "ベンチャー完了アラーム",
