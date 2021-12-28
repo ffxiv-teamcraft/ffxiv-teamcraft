@@ -2579,6 +2579,7 @@
     "Selling": "出售中（{{amount}} 件）",
     "X_items": "{{amount}} 个物品",
     "Task_complete": "委托完成",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} 完成了探险",
     "Task_completed_notification_content": "{{name}} 完成了探险委托 {{taskName}}",
     "Task_completion_alarm": "探险完成提醒",
