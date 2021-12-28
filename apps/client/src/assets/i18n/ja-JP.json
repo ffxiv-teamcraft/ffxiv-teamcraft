@@ -524,7 +524,7 @@
       "Inventory_tracking": "所持品同期化",
       "Character_tracking": "キャラクター同期化",
       "Tooling": "高級",
-      "Import_export": "インポート/エクスポート(持ってくる/取り出す)",
+      "Import_export": "インポート/エクスポート",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -764,7 +764,7 @@
       "Reorder_panels": "パネルの並べ替え",
       "Select_preview_list": "プレビューするレイアウトをリストから選択",
       "Hidden_if_empty": "空欄の場合は隠す",
-      "Collapsed_by_default": "リスト隠しをデフォルトとして設定",
+      "Collapsed_by_default": "デフォルトでパネルを折りたたむ",
       "No_preview": "プレビューするリストがありません",
       "Please_pick_list": "上の選択ボックスを使ってリストを選択してください",
       "Layouts": "レイアウト",
