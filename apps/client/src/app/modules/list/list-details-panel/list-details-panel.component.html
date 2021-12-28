@@ -121,15 +121,15 @@
               <i nz-icon nzType="reload"></i>
             </button>
           </div>
-          <div>
-            <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)" *ngIf="hasNavigationMap && displayRow.zoneBreakdown"
+          <div *ngIf="hasNavigationMap && displayRow.zoneBreakdown">
+            <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)"
                     [nzTooltipTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
                     nzSize="small">
               <i nzIconfont="icon-map" nz-icon></i>
             </button>
           </div>
-          <div>
-            <button (click)="$event.stopPropagation();openTotalPricePopup()" *ngIf="hasTrades"
+          <div *ngIf="hasTrades">
+            <button (click)="$event.stopPropagation();openTotalPricePopup()"
                     [nzTooltipTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
                     nzSize="small">
               <i class="material-icons">local_atm</i>
@@ -139,7 +139,7 @@
             <button (click)="$event.stopPropagation()"
                     [clipboard]="getTextExport"
                     [clipboardFnArgs]="tiers$ | async"
-                  [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
+                    [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
                     [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
                     nz-button nz-tooltip nzShape="circle" nzSize="small">
               <i nz-icon nzType="copy"></i>

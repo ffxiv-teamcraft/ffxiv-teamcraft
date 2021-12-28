@@ -1,4 +1,4 @@
-<ng-container *ngIf="costs$ | async as costs">
+<ng-container *ngIf="costs$ | async as costs; else loader">
   <table *ngIf="costs.length > 0">
     <thead>
     <tr>
@@ -22,3 +22,6 @@
     {{'GEARSETS.No_trades_needed' | translate}}
   </app-fullpage-message>
 </ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

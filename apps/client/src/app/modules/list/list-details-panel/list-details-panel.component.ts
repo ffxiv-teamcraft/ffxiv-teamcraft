@@ -336,9 +336,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport = (tiers?: ListRow[][]) => {
+  public getTextExport = (...tiers: ListRow[][]) => {
     let rows: ListRow[];
-    if (tiers && this.displayRow.tiers) {
+    if (tiers.length > 0 && (this.displayRow.tiers || this.displayRow.reverseTiers)) {
       rows = tiers.flat();
     } else {
       rows = this.displayRow.rows;

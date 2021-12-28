@@ -37,7 +37,7 @@ export class GatheringItemUsesComponent {
     switchMap(itemId => {
       return this.lazyData.getRow('collectables', itemId).pipe(
         map(collectable => {
-          if (!collectable || collectable.collectable === 0) {
+          if (!collectable || collectable?.collectable === 0) {
             return null;
           }
           return collectable;

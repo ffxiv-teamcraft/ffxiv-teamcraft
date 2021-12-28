@@ -24,7 +24,9 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LayoutsFacade {
   loaded$ = this.store.select(layoutsQuery.getLoaded);
 

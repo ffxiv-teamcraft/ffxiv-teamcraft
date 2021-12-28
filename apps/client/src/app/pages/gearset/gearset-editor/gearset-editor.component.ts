@@ -41,7 +41,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   itemFiltersform: FormGroup = this.fb.group({
     ilvlMin: [540],
     ilvlMax: [999],
-    elvlMin: [this.environment.maxLevel - 1],
+    elvlMin: [1],
     elvlMax: [this.environment.maxLevel]
   });
 

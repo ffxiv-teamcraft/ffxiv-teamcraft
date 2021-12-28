@@ -204,7 +204,7 @@ export class IpcListenersManager {
         }
 
         this.overlayManager.forEachOverlay(overlay => {
-          overlay.setIgnoreMouseEvents(settings.clickthrough);
+          overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
           overlay.webContents.send('update-settings', settings);
         });
         this.mainWindow.win.webContents.send('update-settings', settings);

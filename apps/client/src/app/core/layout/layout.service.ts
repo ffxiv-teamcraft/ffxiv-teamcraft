@@ -7,6 +7,7 @@ import { ListLayout } from './list-layout';
 import { FirestoreRelationalStorage } from '../database/storage/firestore/firestore-relational-storage';
 import { PendingChangesService } from '../database/pending-changes/pending-changes.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import * as venilisLayout from './default/venili.json';
 
 @Injectable()
 export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
@@ -73,6 +74,14 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
     ];
     layout.recipeOrder = LayoutRowOrder.ASC;
     layout.recipeOrderBy = 'JOB';
+    return layout;
+  }
+
+  public get venilisCraftsTimedFirst(): ListLayout {
+    const layout = new ListLayout();
+    Object.assign(layout, this.serializer.deserialize<ListLayout>(venilisLayout, ListLayout));
+    layout.default = true;
+    layout.$key = 'venilisCraftsTimedFirst';
     return layout;
   }
 

@@ -129,8 +129,9 @@
     "Tags_filter_reset": "Сбросить фильтр",
     "Exclude_filter_placeholder": "Исключить использование тегов",
     "Exclude_filter_reset": "Сбросить фильтр исключений",
-    "Name_filter_placeholder": "Фильтр по названию",
-    "No_lists_matching": "По данному фильтру ничего не найдено"
+    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
+    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "Search": "Search"
   },
   "COMMON": {
     "Length": "Длина",
@@ -496,6 +497,8 @@
     "Has_access_to_housing_vendor_explain": "Prioritize housing vendor in npc breakdown system, useful if you have access to one.",
     "Hide_back_button": "Скрыть кнопку \"Назад\" в боковой панели",
     "Reload_auth_token": "Перезагрузить токен авторизации",
+    "Materia_confidence_rate": "Melding confidence rate",
+    "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -909,11 +912,9 @@
     "Ephemeral_warning": "Ephemeral nodes имеют несколько мест, положение — приблизительное.",
     "Legendary": "Легендарное",
     "Switched_to_compact": "Дисплей был переключен на компактный из-за слишком большого количества результатов.",
-    "GIG_HEAD": {
-      "Small": "Маленькая насадка",
-      "Normal": "Нормальная насадка",
-      "Large": "Большая насадка"
-    }
+    "Node_type": "Type",
+    "Use": "Use",
+    "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
     "Title": "Объявление",
@@ -1071,10 +1072,10 @@
       "Name_filter_placeholder": "Название ротации",
       "Tags_filter_placeholder": "Теги",
       "Durability_filter_placeholder": "Прочность",
-      "Rlvl_filter_placeholder": "Уровень рецепта",
+      "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Сбросить фильтры",
       "Configuration_popup": "Поделиться с сообществом",
-      "Min_craftsmanship_filter_placeholder": "Мин. Мастерство",
+      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
       "Min_control_filter_placeholder": "Мин. Контроль",
       "Min_cp_filter_placeholder": "Мин. CP",
       "Difficulty_filter_placeholder": "Сложность",
@@ -2578,6 +2579,7 @@
     "Selling": "Продает {{amount}} товаров",
     "X_items": "{{amount}} предметов",
     "Task_complete": "Задание выполнено",
+    "No_task": "No task",
     "Task_completed_notification_title": "{{name}} завершил свое задание",
     "Task_completed_notification_content": "{{name}} выполнил задание {{taskName}}",
     "Task_completion_alarm": "Сигнал выполнения задания",
@@ -2856,5 +2858,17 @@
     "SUNSET": "Закат",
     "DAY": "День",
     "NIGHT": "Ночь"
+  },
+  "UPDATER": {
+    "New_update_available": "A new update is available and has been downloaded",
+    "Restart_to_install": "Do you want to restart now to apply it?"
+  },
+  "NODE_TYPE": {
+    "Mining": "Mining",
+    "Quarrying": "Quarrying",
+    "Logging": "Logging",
+    "Harvesting": "Harvesting",
+    "Fishing": "Fishing",
+    "Spearfishing": "Spearfishing"
   }
 }
