@@ -6,7 +6,7 @@ import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { InstanceData } from '../../model/garland-tools/instance-data';
 import { QuestData } from '../../model/garland-tools/quest-data';
@@ -527,7 +527,7 @@ export class DataService {
           }
         }))
     }).pipe(
-      map(res => {
+      switchMap(res => {
         return safeCombineLatest(res.Results.map(row => {
           switch (row._) {
             case SearchIndex.INSTANCECONTENT:
@@ -571,7 +571,8 @@ export class DataService {
         return row;
       })))
     ], 100).pipe(
-      map(results => [].concat.apply([], results))
+      map(results => [].concat.apply([], results)),
+      tap(console.log)
     );
   }
 

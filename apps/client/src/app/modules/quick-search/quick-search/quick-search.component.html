@@ -11,6 +11,7 @@
       [nzShowArrow]="false"
       (nzOnSearch)="query$.next($event)"
       [nzLoading]="loading"
+      [nzOptionHeightPx]="54"
     >
       <nz-option *ngFor="let row of results$ | async"
                  nzCustomContent
