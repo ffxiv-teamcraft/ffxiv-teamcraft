@@ -2820,6 +2820,7 @@
     "Sources_filter": "Filtrer les sources",
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2845,7 +2846,8 @@
       "FISHING": "Pêche",
       "SPEARFISHING": "Pêche au harpon",
       "FATE": "Aléa",
-      "MOGSTATION": "MOGSTATION"
+      "MOGSTATION": "MOGSTATION",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
