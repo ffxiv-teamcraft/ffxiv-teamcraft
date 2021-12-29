@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "Enable metrics capture",
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Detailed",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -1796,6 +1796,7 @@
     "Placeholder": "Item name",
     "No_missing_ingredients": "No missing ingredients",
     "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "Missing",
     "Results": "Possible crafts",
     "Basket": "Basket",
