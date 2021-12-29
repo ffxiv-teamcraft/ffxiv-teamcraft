@@ -1047,6 +1047,7 @@
     "Total_macro_duration": "Total macro duration: {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Detailed",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
