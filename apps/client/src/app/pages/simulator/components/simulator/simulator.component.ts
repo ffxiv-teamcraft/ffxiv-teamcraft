@@ -892,7 +892,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       shareReplay(1)
     );
 
-    combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables')]).pipe(
+    combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(
       startWith([]),
       pairwise(),
       map(([before, after]) => {
