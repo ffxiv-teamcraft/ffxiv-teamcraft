@@ -2820,6 +2820,7 @@
     "Sources_filter": "Quellen filtern",
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -2845,7 +2846,8 @@
       "FISHING": "FISCHEN",
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
-      "MOGSTATION": "Online-Shop"
+      "MOGSTATION": "Online-Shop",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
