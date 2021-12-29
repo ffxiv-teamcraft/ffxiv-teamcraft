@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "ジョブの切り替え時にパラメータ/レベルを自動的に更新する",
     "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
-    "Metrics_capture_tooltip": "この機能は今後のアップデートで追加されます。ただ、データキャプチャを有効にする状態だったら、その時点からデータが記録されます。",
     "Metrics_capture_folder": "メトリックログフォルダ",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "キャラクターデータフォルダ(CHRXXXXXXXフォルダがある所)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "マクロの合計時間: {{duration}}秒。",
     "Compact": "コンパクト表示",
     "Detailed": "詳細",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "最高品質",
       "Good": "高品質",
@@ -1796,6 +1796,7 @@
     "Placeholder": "アイテム名",
     "No_missing_ingredients": "全ての素材有り",
     "Missing_X_ingredients": "{{amount}} 個の素材不足",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "不足な素材:",
     "Results": "制作可能な品目",
     "Basket": "制作リスト",
