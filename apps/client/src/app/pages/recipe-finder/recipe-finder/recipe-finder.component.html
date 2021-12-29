@@ -276,10 +276,10 @@
                 >{{'RECIPE_FINDER.No_missing_ingredients' | translate}}</nz-tag>
                 <nz-tag *ngIf="row.entry.missing.length === 1"
                         [style.border-color]="'#f2b10e'"
-                        class="custom-tag">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.entry.missing.length } }}</nz-tag>
+                        class="custom-tag">{{'RECIPE_FINDER.Missing_X_ingredients_for_one_more' | translate:{ amount: row.entry.missing.length } }}</nz-tag>
                 <nz-tag *ngIf="row.entry.missing.length > 1"
                         [style.border-color]="'#f50'"
-                        class="custom-tag">{{'RECIPE_FINDER.Missing_X_ingredients' | translate:{ amount: row.entry.missing.length } }}</nz-tag>
+                        class="custom-tag">{{'RECIPE_FINDER.Missing_X_ingredients_for_one_more' | translate:{ amount: row.entry.missing.length } }}</nz-tag>
               </div>
             </ng-template>
             <ng-template #avatar>

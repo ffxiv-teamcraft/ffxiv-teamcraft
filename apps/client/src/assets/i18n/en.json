@@ -1796,6 +1796,7 @@
     "Placeholder": "Item name",
     "No_missing_ingredients": "No missing ingredients",
     "Missing_X_ingredients": "Missing {{amount}} ingredient(s)",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "Missing",
     "Results": "Possible crafts",
     "Basket": "Basket",
