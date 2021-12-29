@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "Автоматически обновлять статистику/уровни при смене профессии",
     "Enable_metrics_capture": "Включить захват метрик",
     "Enable_metrics_capture_explain": "(позволяет собирать аналитику по вашим доходам/расходам gil и предметов, никогда не загружается на сервер, это только для вас)",
-    "Metrics_capture_tooltip": "Эта функция будет добавлена в будущем обновлении, но включение захвата данных сейчас означает, что, как только она будет, у вас данные будут с текущего момента вместо того, когда функция только заработает.",
     "Metrics_capture_folder": "Папка логов с метрикой",
     "Enable_local_fishing_dump": "Включить локальные дампы отчетов о рыболовстве",
     "Char_data_folder": "Папка с данными персонажа (где расположены папки CHRXXXXXXX)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
     "Compact": "Компактный",
     "Detailed": "Подробный",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -1796,6 +1796,7 @@
     "Placeholder": "Название предмета",
     "No_missing_ingredients": "Нет недостающих ингредиентов",
     "Missing_X_ingredients": "Отсутствует {{amount}} компонент(ов)",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "Отсутствует",
     "Results": "Возможные рецепты для крафта",
     "Basket": "Корзина",
