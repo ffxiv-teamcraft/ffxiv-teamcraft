@@ -2820,6 +2820,7 @@
     "Sources_filter": "Filter sources",
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2845,7 +2846,8 @@
       "FISHING": "낚시",
       "SPEARFISHING": "작살 낚시",
       "FATE": "돌발 임무",
-      "MOGSTATION": "모그스테이션"
+      "MOGSTATION": "모그스테이션",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "제안",
