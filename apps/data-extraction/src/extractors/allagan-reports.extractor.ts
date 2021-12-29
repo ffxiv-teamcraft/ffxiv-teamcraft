@@ -15,7 +15,9 @@ enum AllaganReportSource {
   DROP = 'DROP', // Drop from monsters kill
   INSTANCE = 'INSTANCE', // Obtained inside an instance
   FATE = 'FATE', // Obtained as fate reward
-  MOGSTATION = 'MOGSTATION'
+  MOGSTATION = 'MOGSTATION',
+
+  DEPRECATED = 'DEPRECATED' // Cannot be obtained anymore
 }
 
 export class AllaganReportsExtractor extends AbstractExtractor {
@@ -30,6 +32,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const desynth = this.requireLazyFile('desynth');
         const reduction = this.requireLazyFile('reduction');
         const voyageSources = this.requireLazyFile('voyage-sources');
+        const deprecated = {};
         const fishing = {};
         const spearFishing = {};
         const loots = {};
@@ -85,6 +88,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                 case AllaganReportSource.DESYNTH:
                   this.addItemAsSource(desynth, report.itemId, report.data.itemId);
                   break;
+                case AllaganReportSource.DEPRECATED:
+                  this.addItemAsSource(deprecated, report.itemId, 1);
+                  break;
                 case AllaganReportSource.MOGSTATION:
                   this.addItemAsSource(mogstation, report.itemId, { price: report.data.price, id: report.data.productId }, true);
                   break;
@@ -139,6 +145,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             });
 
             this.persistToJsonAsset('desynth', desynth);
+            this.persistToJsonAsset('deprecated-items', deprecated);
             this.persistToJsonAsset('reduction', reduction);
             this.persistToJsonAsset('voyage-sources', voyageSources);
             this.persistToJsonAsset('fishing-sources', fishing);

@@ -462,6 +462,11 @@
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
             <ng-container *ngFor="let source of data.sources">
               <ng-container [ngSwitch]="source.type">
+                <div *ngSwitchCase="dataTypes.DEPRECATED" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                  <app-fullpage-message height="150px">
+                    {{'ALLAGAN_REPORTS.Deprecated' | translate}}
+                  </app-fullpage-message>
+                </div>
                 <nz-card *ngSwitchCase="dataTypes.GARDENING" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
                          nzBordered="false">
                   <ng-template #title>

@@ -1,4 +1,5 @@
 export enum DataType {
+  DEPRECATED = -1,
   NONE,
   CRAFTED_BY,
   TRADE_SOURCES,

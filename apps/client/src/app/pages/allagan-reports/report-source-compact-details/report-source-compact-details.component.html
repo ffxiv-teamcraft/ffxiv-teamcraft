@@ -1,4 +1,7 @@
 <div [ngSwitch]="source">
+  <ng-container *ngSwitchCase="AllaganReportSource.DEPRECATED">
+    <span>{{'ALLAGAN_REPORTS.Deprecated' | translate}}</span>
+  </ng-container>
   <ng-container *ngSwitchCase="AllaganReportSource.GARDENING">
     <ng-container *ngTemplateOutlet="itemIdTpl;context:{$implicit: data.itemId}"></ng-container>
   </ng-container>

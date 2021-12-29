@@ -1,5 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="source">
   <div [ngSwitch]="source">
+    <i *ngSwitchCase="AllaganReportSource.DEPRECATED" nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"></i>
     <img *ngSwitchCase="AllaganReportSource.GARDENING" class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
     <i *ngSwitchCase="AllaganReportSource.DESYNTH" nzIconfont="icon-vectorcombine" nz-icon></i>
     <img *ngSwitchCase="AllaganReportSource.DROP" alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
