@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "잡 변경 시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
-    "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "캐릭터 데이터 폴더 (CHRXXXXXXX 폴더가 있는 곳)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
     "Compact": "간소화",
     "Detailed": "세부 정보",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -1796,6 +1796,7 @@
     "Placeholder": "아이템 이름",
     "No_missing_ingredients": "모든 재료가 있음",
     "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
