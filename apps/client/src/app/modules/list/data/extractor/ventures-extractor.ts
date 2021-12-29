@@ -6,7 +6,7 @@ import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { LazyRetainerTask } from '../../../../lazy-data/model/lazy-retainer-task';
 
-export class VenturesExtractor extends AbstractExtractor<LazyRetainerTask[]> {
+export class VenturesExtractor extends AbstractExtractor<Partial<LazyRetainerTask>[]> {
 
   constructor(private lazyData: LazyDataFacade) {
     super();
@@ -20,7 +20,7 @@ export class VenturesExtractor extends AbstractExtractor<LazyRetainerTask[]> {
     return DataType.VENTURES;
   }
 
-  protected doExtract(itemId: number): Observable<LazyRetainerTask[]> {
+  protected doExtract(itemId: number): Observable<Partial<LazyRetainerTask>[]> {
     return combineLatest([
       this.lazyData.getEntry('retainerTasks'),
       this.lazyData.getRow('ventureSources', itemId, [])
@@ -29,7 +29,7 @@ export class VenturesExtractor extends AbstractExtractor<LazyRetainerTask[]> {
         const deterministic = retainerTasks.filter(task => task.item === itemId).map(task => task.id);
         const resultVentures = uniq([...deterministic, ...ventures]);
         return resultVentures.map(id => {
-          return retainerTasks.find(t => t.id === id);
+          return retainerTasks.find(t => t.id === id) || {id};
         });
       })
     );

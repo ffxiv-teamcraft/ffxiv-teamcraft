@@ -3,7 +3,12 @@
     <nz-list-item [nzContent]="content">
       <nz-list-item-meta
         [nzTitle]="venture.name ? (venture.job | i18nRow:'jobAbbr' | i18n) || (DOWM | i18n): (venture.id | i18nRow:'ventures' | i18n)"
-        nzDescription="Lv. {{venture.lvl}}">
+        [nzDescription]="description">
+        <ng-template #description>
+          <span *ngIf="venture.lvl">
+            Lv. {{venture.lvl}}
+          </span>
+        </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
         <div fxLayout="column">
