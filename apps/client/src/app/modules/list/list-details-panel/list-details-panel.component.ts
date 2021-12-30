@@ -293,7 +293,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
-      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, row.amount - row.done, row.recipeId, row.amount, false);
+      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, row.amount - row.done, row.recipeId, row.amount, false);
     });
   }
 
@@ -303,7 +303,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public resetPanel(): void {
     this.displayRow.rows.forEach(row => {
-      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems, -row.done, row.recipeId, row.amount, false);
+      this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, -row.done, row.recipeId, row.amount, false);
     });
   }
 
