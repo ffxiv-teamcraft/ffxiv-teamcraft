@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.3"></a>
+## [9.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.2...v9.3.3) (2021-12-30)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed FATE reports input not being completed properly ([556cd50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/556cd50))
+* **db:** fixed non-targetted retainer ventures not redered properly ([d8049b9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8049b9))
+* **db:** fixed some items not linked to their shop properly ([488e0ee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/488e0ee))
+* **desktop:** fixed mappy reporter ([1c70ee3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c70ee3))
+* **desktop:** possible fix for retainers import ([a8b9e3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8b9e3b))
+* **gathering-location:** fixed aethersands not being properly searchable ([b8604f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8604f7))
+* **list:** fixed "mark panel as HQ" not working with final items inside of it ([84aa191](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84aa191))
+* **lists:** fixed korea and chinese region not having working worhshop items ([d97eb00](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d97eb00))
+* **recipe-finder:** fixed missing ingredients label in basket ([90a3ca9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90a3ca9))
+* **settings:** removed WIP tooltip on metrics capture checkbox ([34b0818](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34b0818))
+* **simulator:** fixed missing name for remove Initial Preparations macro entry ([fb42627](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb42627))
+* **simulator:** fixed some rotations not loading properly ([bf9c7f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf9c7f8))
+
+
+### Features
+
+* **allagan-reports:** new data source: DEPRECATED, for items that cannot be obtained anymore ([a8e449a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8e449a))
+
+
+
 <a name="9.3.2"></a>
 ## [9.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.1...v9.3.2) (2021-12-28)
 
