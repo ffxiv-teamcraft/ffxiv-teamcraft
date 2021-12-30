@@ -18,8 +18,11 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
       node.fishes.forEach(itemId => index[itemId] = 5);
     });
 
-    Object.values<any>(reductions).forEach(itemId => {
-      index[itemId] = -1;
+    Object.entries<any>(reductions).forEach(([sourceId, itemIds]) => {
+      index[sourceId] = -1;
+      itemIds.forEach(itemId => {
+        index[itemId] = -1;
+      });
     });
 
     delete index[0];

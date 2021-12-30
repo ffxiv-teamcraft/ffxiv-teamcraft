@@ -570,6 +570,8 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
 
   private getData(source: AllaganReportSource, formState: any): Observable<any> {
     switch (source) {
+      case AllaganReportSource.DEPRECATED:
+        return of(true);
       case AllaganReportSource.DESYNTH:
       case AllaganReportSource.REDUCTION:
       case AllaganReportSource.GARDENING:

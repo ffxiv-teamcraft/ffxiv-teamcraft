@@ -78,7 +78,7 @@ export interface MappyReporterState {
 })
 export class MappyReporterService {
 
-  private static readonly XIVAPI_URL = 'staging.xivapi.com';
+  private static readonly XIVAPI_URL = 'xivapi.com';
 
   public available = false;
 
@@ -512,11 +512,13 @@ export class MappyReporterService {
         });
       }
       this.setState(newState);
-
     });
   }
 
   private addMappyData(mapId: number): void {
+    if (mapId === 0) {
+      return;
+    }
     this.http.get<XivapiReportEntry[]>(`https://${MappyReporterService.XIVAPI_URL}/mappy/map/${mapId}`)
       .pipe(
         withLazyData(this.lazyData, 'gatheringPointToNodeId', 'nodes')

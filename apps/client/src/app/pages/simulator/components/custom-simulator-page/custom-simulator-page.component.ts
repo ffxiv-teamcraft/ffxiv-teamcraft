@@ -41,12 +41,12 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [481, [Validators.min(1), Validators.required]],
+      rlvl: [560, [Validators.min(1), Validators.required]],
       level: [this.curMaxLevel, [Validators.min(1), Validators.max(this.curMaxLevel), Validators.required]],
-      progress: [9181, [Validators.min(1), Validators.required]],
-      quality: [64862, [Validators.min(1), Validators.required]],
-      durability: [60, [Validators.min(1), Validators.required]],
-      expert: [true]
+      progress: [3500, [Validators.min(1), Validators.required]],
+      quality: [7200, [Validators.min(1), Validators.required]],
+      durability: [80, [Validators.min(1), Validators.required]],
+      expert: [false]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
       filter(rotation => {
@@ -59,12 +59,12 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 481,
+        rlvl: 560,
         level: this.env.maxLevel,
-        progress: 9181,
-        quality: 64862,
-        durability: 60,
-        expert: true
+        progress: 3500,
+        quality: 7200,
+        durability: 80,
+        expert: false
       }),
       map(form => {
         return {

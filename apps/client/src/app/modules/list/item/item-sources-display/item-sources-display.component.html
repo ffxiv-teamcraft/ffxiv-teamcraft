@@ -1,6 +1,11 @@
 <div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
   <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
     <ng-container [ngSwitch]="source.type">
+      <div *ngSwitchCase="dataTypes.DEPRECATED">
+        <i nz-icon nzType="close-circle" nzTheme="twotone" [nzTwotoneColor]="'#F5222DFF'"
+           nz-tooltip [nzTooltipTitle]="'ALLAGAN_REPORTS.Deprecated' | translate">
+        </i>
+      </div>
       <button (click)="openGardeningPopup(item)" *ngSwitchCase="dataTypes.GARDENING" nz-button
               nz-tooltip
               nzShape="circle" nzTooltipTitle="{{'Gardening' | translate}}">

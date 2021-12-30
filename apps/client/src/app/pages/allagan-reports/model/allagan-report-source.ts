@@ -11,5 +11,7 @@ export enum AllaganReportSource {
   DROP = 'DROP', // Drop from monsters kill
   INSTANCE = 'INSTANCE', // Obtained inside an instance
   FATE = 'FATE', // Obtained as fate reward
-  MOGSTATION = 'MOGSTATION'
+  MOGSTATION = 'MOGSTATION',
+
+  DEPRECATED = 'DEPRECATED' // Cannot be obtained anymore
 }

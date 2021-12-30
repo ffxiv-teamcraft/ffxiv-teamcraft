@@ -213,14 +213,14 @@ export class StatsService {
                     statsToCompute[stat.ID] = this.getBaseValue(stat.ID, set.job, level, tribe);
                   }
                 });
-              materias.forEach(([materia, bonus]) => {
+              materias.filter(materia => materia).forEach(([materia, bonus]) => {
                 if (!statsToCompute[materia.baseParamId]) {
                   statsToCompute[materia.baseParamId] = this.getBaseValue(materia.baseParamId, set.job, level, tribe);
                 }
               });
 
               if (itemSetBonuses) {
-                itemSetBonuses.bonuses.forEach((bonus) => {
+                itemSetBonuses.bonuses.filter(bonus => bonus).forEach((bonus) => {
                   if (!statsToCompute[bonus.baseParam]) {
                     statsToCompute[bonus.baseParam] = this.getBaseValue(bonus.baseParam, set.job, level, tribe);
                   }

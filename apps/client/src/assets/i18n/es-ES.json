@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "Automatically update stats/levels when switching job ingame",
     "Enable_metrics_capture": "Activar captura de métricas",
     "Enable_metrics_capture_explain": "(permite capturar analíticas de su gil y los ingresos de artículos, nunca son subidos al servidor, esto es sólo para usted)",
-    "Metrics_capture_tooltip": "Esta característica se añadirá en una actualización futura, pero habilitar la captura de datos ahora significa que una vez que esté aquí, tendrá datos comenzando ahora en lugar de cuando se agregue a la aplicación.",
     "Metrics_capture_folder": "Carpeta de registro de métricas",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "Duración total de la macro: {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Detailed",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
@@ -1796,6 +1796,7 @@
     "Placeholder": "Nombre del artículo",
     "No_missing_ingredients": "No faltan ingredientes",
     "Missing_X_ingredients": "Falta(n) {{amount}} ingrediente(s)",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "Faltante",
     "Results": "Posibles artesanías",
     "Basket": "Cesta",
@@ -2819,6 +2820,7 @@
     "Sources_filter": "Filter sources",
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2844,7 +2846,8 @@
       "FISHING": "FISHING",
       "SPEARFISHING": "SPEARFISHING",
       "FATE": "FATE",
-      "MOGSTATION": "MOGSTATION"
+      "MOGSTATION": "MOGSTATION",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

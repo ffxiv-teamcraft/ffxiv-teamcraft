@@ -585,8 +585,7 @@
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
-                   [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
+            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_metrics_capture' | translate}}
             </label>
             <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>

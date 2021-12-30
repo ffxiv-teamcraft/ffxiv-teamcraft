@@ -301,9 +301,31 @@ export class LazyDataFacade {
   public getRecipes(): Observable<LazyRecipe[]> {
     switch (this.settings.region) {
       case Region.China:
-        return this.getEntry('zhRecipes');
+        return combineLatest([
+          this.getEntry('zhRecipes'),
+          this.getEntry('recipes')
+        ]).pipe(
+          map(([eRecipes, recipes]) => {
+            return recipes.map(r => {
+              const eRecipe = eRecipes.find(e => e.id === r.id);
+              return eRecipe || r;
+            });
+          }),
+          shareReplay(1)
+        );
       case Region.Korea:
-        return this.getEntry('koRecipes');
+        return combineLatest([
+          this.getEntry('koRecipes'),
+          this.getEntry('recipes')
+        ]).pipe(
+          map(([eRecipes, recipes]) => {
+            return recipes.map(r => {
+              const eRecipe = eRecipes.find(e => e.id === r.id);
+              return eRecipe || r;
+            });
+          }),
+          shareReplay(1)
+        );
       default:
         return this.getEntry('recipes');
     }
@@ -390,7 +412,7 @@ export class LazyDataFacade {
     );
   }
 
-  public getSearchIndex(entry: LazyDataI18nKey): Observable<{ id: number, name: I18nName }[]> {
+  public getSearchIndex<K extends LazyDataI18nKey>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{ id: number, name: I18nName }[]> {
     if (!this.searchIndexCache[entry]) {
       this.searchIndexCache[entry] = this.getEntry(entry).pipe(
         map(lazyEntry => {
@@ -398,7 +420,7 @@ export class LazyDataFacade {
             .map(key => {
               return {
                 id: +key,
-                name: lazyEntry[key]
+                name: additionalProperty ? lazyEntry[key][additionalProperty] : lazyEntry[key]
               };
             });
         }),

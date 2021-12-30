@@ -1,13 +1,19 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed quicksearch sometimes showing weird undefined results.
-* **gearset:** fixed confidence rate resetting when including other tools in DoH sets.
-* **gearsets:** fixed total materias and total trades popups in gearset editor.
-* **list:** fixed copy to clipboard not copying all the tiers.
-* **retainers:** fixed "missing name" label for when there's no task assigned to a retainer.
+* **allagan-reports:** fixed FATE reports input not being completed properly.
+* **db:** fixed non-targetted retainer ventures not redered properly.
+* **db:** fixed some items not linked to their shop properly.
+* **desktop:** fixed mappy reporter.
+* **desktop:** possible fix for retainers import.
+* **gathering-location:** fixed aethersands not being properly searchable.
+* **list:** fixed "mark panel as HQ" not working with final items inside of it.
+* **lists:** fixed korea and chinese region not having working worhshop items.
+* **recipe-finder:** fixed missing ingredients label in basket.
+* **settings:** removed WIP tooltip on metrics capture checkbox.
+* **simulator:** fixed missing name for remove Initial Preparations macro entry.
+* **simulator:** fixed some rotations not loading properly.
 
 
 ### Features
 
-* **db:** import of over 200 allagan reports from a single user (big thanks to Rivahn Fireshadow).
-* **layouts:** new layout in the default pool: crafts and timed first.`;
+* **allagan-reports:** new data source: DEPRECATED, for items that cannot be obtained anymore.`;

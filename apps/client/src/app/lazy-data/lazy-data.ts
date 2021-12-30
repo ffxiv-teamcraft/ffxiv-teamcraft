@@ -12,6 +12,7 @@ import {LazyCollectablesShopItemGroup} from './model/lazy-collectables-shop-item
 import {LazyCollectable} from './model/lazy-collectable';
 import {LazyCraftAction} from './model/lazy-craft-action';
 import {LazyCraftingLogPage} from './model/lazy-crafting-log-page';
+import {LazyDeprecatedItem} from './model/lazy-deprecated-item';
 import {LazyDiademTerritory} from './model/lazy-diadem-territory';
 import {LazyEquipSlotCategory} from './model/lazy-equip-slot-category';
 import {LazyEquipment} from './model/lazy-equipment';
@@ -114,6 +115,7 @@ export interface LazyData {
   craftingLevels: Record<number, number>;
   craftingLogPages: Array<LazyCraftingLogPage[]>;
   craftingLog: Array<number[]>;
+  deprecatedItems: Record<number, LazyDeprecatedItem[]>;
   desynth: Record<number, number[]>;
   diademTerritory: LazyDiademTerritory;
   dropSources: Record<number, number[]>;

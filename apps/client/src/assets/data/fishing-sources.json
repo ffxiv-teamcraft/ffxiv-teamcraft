@@ -12573,6 +12573,14 @@
       "snagging": false
     }
   ],
+  "22679": [
+    {
+      "spot": 175,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 29717
+    }
+  ],
   "22680": [
     {
       "spot": 179,
@@ -17741,7 +17749,8 @@
         4
       ],
       "weathersFrom": [
-        3
+        3,
+        4
       ],
       "snagging": false
     }

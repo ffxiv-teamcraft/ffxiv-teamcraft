@@ -101,13 +101,13 @@
           <i nz-icon nzType="share-alt"></i>
         </button>
       </ng-container>
-            <button (click)="findRotation()" [nzShape]="'circle'"
-                    [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
-                    [nzType]="'primary'"
-                    nz-button
-                    nz-tooltip>
-              <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
-            </button>
+      <button (click)="findRotation()" [nzShape]="'circle'"
+              [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
+              [nzType]="'primary'"
+              nz-button
+              nz-tooltip>
+        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
+      </button>
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
@@ -617,7 +617,13 @@
                                   [simulation]="resultData.simulation"
                                   [tooltipDisabled]="tooltipsDisabled"></app-action>
                       <div *ngIf="settings.detailedSimulatorActions">
-                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                        <div class="action-name">
+                          <span
+                            *ngIf="action.getId(resultData.simulation.crafterStats.jobId) === -1; else actionName">{{'SIMULATOR.Remove_IP' | translate}}</span>
+                          <ng-template #actionName>
+                            {{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}
+                          </ng-template>
+                        </div>
                       </div>
                     </div>
                   </ng-container>

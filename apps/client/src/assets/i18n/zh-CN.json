@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "游戏内切换职业时自动更新统计数据/级别",
     "Enable_metrics_capture": "启用计量捕获",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
-    "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "角色数据文件夹 （CHRXXXXXXX 所在位置）",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
     "Compact": "简洁",
     "Detailed": "详细",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -1796,6 +1796,7 @@
     "Placeholder": "物品名称",
     "No_missing_ingredients": "无缺失素材",
     "Missing_X_ingredients": "缺少{{amount}} 个素材",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "缺少",
     "Results": "可能的配方",
     "Basket": "愿望篮",
@@ -2819,6 +2820,7 @@
     "Sources_filter": "Filter sources",
     "Speed": "Speed",
     "Shadow_size": "Shadow size",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Very slow",
       "SLOW": "Slow",
@@ -2844,7 +2846,8 @@
       "FISHING": "FISHING",
       "SPEARFISHING": "SPEARFISHING",
       "FATE": "FATE",
-      "MOGSTATION": "MOGSTATION"
+      "MOGSTATION": "MOGSTATION",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",

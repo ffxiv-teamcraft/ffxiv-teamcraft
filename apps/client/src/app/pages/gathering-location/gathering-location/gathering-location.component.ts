@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { debounceTime, filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -16,6 +16,7 @@ import { SpearfishingSpeed } from '../../../core/data/model/spearfishing-speed';
 import { FormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 interface ResultRow {
   originalItemId: number,
@@ -99,7 +100,8 @@ export class GatheringLocationComponent {
           type: index[row.id]
         };
       });
-    })
+    }),
+    shareReplay(1)
   );
 
   // It's page # not index, starting at 1
@@ -168,7 +170,7 @@ export class GatheringLocationComponent {
             return res;
           }),
           switchMap(rows => {
-            return combineLatest(rows.map(row => {
+            return safeCombineLatest(rows.map(row => {
                 const itemId = row.id;
                 return this.gatheringNodesService.getItemNodes(itemId).pipe(
                   map(nodes => {
@@ -184,7 +186,9 @@ export class GatheringLocationComponent {
               })
             );
           }),
-          map(nodes => nodes.flat().sort((a, b) => b.node.level - a.node.level))
+          map(nodes => {
+            return nodes.flat().sort((a, b) => b.node.level - a.node.level);
+          })
         );
       }),
       tap(() => {
@@ -202,7 +206,7 @@ export class GatheringLocationComponent {
     this.results$ = combineLatest([resultsData$, this.page$]).pipe(
       map(([results, page]) => {
         return {
-          rows: results.data[page - 1],
+          rows: results.data[page - 1] || [],
           total: results.total
         };
       })

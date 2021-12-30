@@ -468,7 +468,6 @@
     "Enable_auto_stats_updating": "Status/Stufen beim Jobwechsel automatisch aktualisieren",
     "Enable_metrics_capture": "Metrikerfassung aktivieren",
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
-    "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
     "Enable_local_fishing_dump": "Enable local fishing reports dump",
     "Char_data_folder": "Charakterdatenordner (wo sich die CHRXXXXXXX-Ordner befinden)",
@@ -1048,6 +1047,7 @@
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
     "Compact": "Kompakt",
     "Detailed": "Detailliert",
+    "Remove_IP": "Remove initial preparations",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -1796,6 +1796,7 @@
     "Placeholder": "Gegenstandsname",
     "No_missing_ingredients": "Keine fehlenden Zutaten",
     "Missing_X_ingredients": "Fehlende Zutaten: {{amount}}",
+    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
     "Missing": "Fehlt",
     "Results": "Mögliche Rezepte",
     "Basket": "Korb",
@@ -2819,6 +2820,7 @@
     "Sources_filter": "Quellen filtern",
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
+    "Deprecated": "This item cannot be obtained anymore",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -2844,7 +2846,8 @@
       "FISHING": "FISCHEN",
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
-      "MOGSTATION": "Online-Shop"
+      "MOGSTATION": "Online-Shop",
+      "DEPRECATED": "DEPRECATED"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",

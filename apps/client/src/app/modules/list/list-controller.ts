@@ -413,6 +413,9 @@ export class ListController {
   }
 
   public static resetDone(list: List, item: ListRow): void {
+    if (!item) {
+      return;
+    }
     item.done = 0;
     item.used = 0;
     if (item.requires !== undefined) {
