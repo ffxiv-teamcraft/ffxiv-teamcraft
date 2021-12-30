@@ -151,7 +151,7 @@ export class ShopsExtractor extends AbstractExtractor {
             currencies: tradeIndexes.map(tradeIndex => {
               const entry = {
                 id: specialShop[`ItemCost${tradeIndex}TargetID`],
-                amount: specialShop[`CountCost${tradeIndex}`],
+                amount: specialShop[`CountCost${tradeIndex}`] || (specialShop.UseCurrencyType === 8 ? specialShop[`ItemReceive${tradeIndex}`]?.PriceMid || 0 : 0),
                 hq: specialShop[`HQCost${tradeIndex}`] === 1,
                 collectability: specialShop[`CollectabilityRatingCost${tradeIndex}`]
               };
@@ -252,7 +252,7 @@ export class ShopsExtractor extends AbstractExtractor {
         if (dataID > 0) {
           npcsByShopID[dataID] = [
             ...(npcsByShopID[dataID] || []),
-            ...(npcsByShopID[topic.ID] || []),
+            ...(npcsByShopID[topic.ID] || [])
           ];
           topicSelects[dataID] = topic.ID;
         }
