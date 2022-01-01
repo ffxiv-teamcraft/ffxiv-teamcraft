@@ -397,7 +397,13 @@ export class SettingsPopupComponent {
       })
     ).subscribe(user => {
       this.authFacade.updateUser(user);
+      this.message.success(this.translate.instant('SETTINGS.Reset_linked_characters_ok'));
     });
+  }
+
+  resetIgnoredChars(): void {
+    this.settings.ignoredContentIds = [];
+    this.message.success(this.translate.instant('SETTINGS.Reset_ignored_characters_ok'));
   }
 
   clearCache(): void {
