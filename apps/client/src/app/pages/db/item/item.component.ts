@@ -352,7 +352,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           flex: '1 1 auto',
           type: UsedForType.TRADES,
           title: 'DB.Used_for_trades',
-          icon: 'https://www.garlandtools.org/db/images/Shop.png',
+          icon: 'https://www.garlandtools.org/db/images/marker/Shop.png',
           trades
         });
       }
