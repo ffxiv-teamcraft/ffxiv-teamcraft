@@ -108,9 +108,13 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Fixtures') ||
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en)
+              || division.name.en.startsWith('Fixtures') ||
               division.name.en.indexOf('Furnishings') > -1 || division.name.en.startsWith('Table') ||
               division.name.en.startsWith('Wall-mounted') || division.name.en.startsWith('Ornaments');
+            if ((tab as any).divisionId === 1039) {
+              (tab as any).requiredForAchievement = false;
+            }
             tab.recipes = tab.recipes.map(entry => {
               (entry as any).leves = Object.entries<any>(leves)
                 .filter(([, leve]) => {
@@ -137,7 +141,7 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
             tab.items = tab.items.map(item => {
               (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
                 .slice(0, 3)
