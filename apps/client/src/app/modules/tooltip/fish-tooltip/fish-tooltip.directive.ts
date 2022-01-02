@@ -81,7 +81,9 @@ export class FishTooltipDirective implements OnDestroy {
     const positionStrategy = this._overlay
       .position()
       .flexibleConnectedTo(this._elementRef)
-      .withPositions([{ originX: 'end', originY: 'bottom', overlayX: 'start', overlayY: 'bottom' }]);
+      .withPositions([
+        { originX: 'start', originY: 'center', overlayX: 'end', overlayY: 'center' },
+      ]);
 
     // Create the overlay that will contain the tooltip.
     this._overlayRef = this._overlay.create({
