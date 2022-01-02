@@ -629,6 +629,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.availableLevels
     );
     this.customStats$.next(stats);
+    this.message.success(this.translate.instant('SIMULATOR.Stats_applied'));
   }
 
   saveSet(): void {
@@ -899,7 +900,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return [...after, before[0] ? before[0].$key !== after[0].$key : true];
       }),
       takeUntil(this.onDestroy$),
-      withLazyData(this.lazyData, 'foods', 'medicines'),
+      withLazyData(this.lazyData, 'foods', 'medicines')
     ).subscribe(([[rotation, stats, routeConsumables, rotationChanged], lazyFoods, lazyMedicines]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));

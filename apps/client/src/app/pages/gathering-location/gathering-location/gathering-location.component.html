@@ -212,7 +212,7 @@
     </ng-container>
   </div>
   <ng-container *ngTemplateOutlet="paginator"></ng-container>
-  <ng-container *ngIf="results.length === 0">
+  <ng-container *ngIf="results.total === 0">
     <app-fullpage-message fontSize="2rem">
       {{'GATHERING_LOCATIONS.No_items' | translate}}
     </app-fullpage-message>

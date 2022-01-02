@@ -159,7 +159,7 @@ export class MateriasPopupComponent {
       map(([meldingChances, materia]) => {
         if (meldingChances === 0) {
           // If a materia has 0% chances of melding, nuke it.
-          return -1000;
+          return -10000000000000;
         }
         switch (materia.tier) {
           case 1:

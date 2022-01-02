@@ -75,21 +75,26 @@ export class FoodPickerComponent extends TeamcraftComponent {
           })
           .filter(i => !!i)
           .sort((a, b) => {
-            if (a.bonuses[0].Value > b.bonuses[0].Value) {
-              return -1;
-            } else if (a.bonuses[0].Value < b.bonuses[0].Value) {
-              return 1;
-            } else {
-              if (a.bonuses[1]?.Value > b.bonuses[1]?.Value) {
-                return -1;
-              } else if (a.bonuses[1]?.Value < b.bonuses[1]?.Value) {
-                return 1;
-              }
-            }
+            return this.sortBy(a, b, 'Max') || this.sortBy(a, b, 'Value');
           });
       }),
       tap(() => this.loading = false)
     );
+  }
+
+  sortBy(a: any, b: any, prop: 'Value' | 'Max'): 1 | 0 | -1 {
+    if (a.bonuses[0][prop] > b.bonuses[0][prop]) {
+      return -1;
+    } else if (a.bonuses[0][prop] < b.bonuses[0][prop]) {
+      return 1;
+    } else if (a.bonuses[1] && b.bonuses[1]) {
+      if (a.bonuses[1][prop] > b.bonuses[1][prop]) {
+        return -1;
+      } else if (a.bonuses[1][prop] < b.bonuses[1][prop]) {
+        return 1;
+      }
+    }
+    return 0;
   }
 
   updateStats(pickedStats: any[]): void {

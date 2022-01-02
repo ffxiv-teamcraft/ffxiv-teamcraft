@@ -8,20 +8,34 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
     const fishing = this.requireLazyFile('fishing-spots');
     const reductions = this.requireLazyFile('reduction');
 
-    const index: Record<number, number> = {};
+    const index: Record<number, { type?: number, reduction?: boolean }> = {};
 
-    Object.values<any>(nodes).forEach(node => {
-      node.items.forEach(itemId => index[itemId] = node.type);
+    Object.entries<any>(nodes).forEach(([id, node]) => {
+      [...node.items, ...(node.hiddenItems || [])].forEach(itemId => {
+        index[itemId] = {
+          type: node.type
+        };
+      });
     });
 
     Object.values<any>(fishing).forEach(node => {
-      node.fishes.forEach(itemId => index[itemId] = 5);
+      node.fishes.forEach(itemId => {
+        index[itemId] = {
+          type: 5
+        };
+      });
     });
 
     Object.entries<any>(reductions).forEach(([sourceId, itemIds]) => {
-      index[sourceId] = -1;
+      index[sourceId] = {
+        ...(index[sourceId] || {}),
+        reduction: true
+      };
       itemIds.forEach(itemId => {
-        index[itemId] = -1;
+        index[itemId] = {
+          ...(index[itemId] || {}),
+          reduction: true
+        };
       });
     });
 

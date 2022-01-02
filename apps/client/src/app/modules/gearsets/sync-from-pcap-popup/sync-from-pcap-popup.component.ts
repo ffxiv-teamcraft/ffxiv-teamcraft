@@ -45,6 +45,7 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
                 gearset.name = name;
                 gearset.job = classInfo.classId;
                 gearset.fromSync = true;
+                delete gearset.crystal;
                 packets
                   .filter(p => p.containerId === 1000)
                   .forEach(packet => {

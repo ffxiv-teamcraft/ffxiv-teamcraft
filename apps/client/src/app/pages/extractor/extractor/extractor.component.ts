@@ -16,6 +16,8 @@ import { DataType } from '../../../modules/list/data/data-type';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { EnvironmentService } from '../../../core/environment.service';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { updatedItemIds } from '../../../core/data/sources/updated-items';
 
 @Component({
   selector: 'app-extractor',
@@ -76,7 +78,7 @@ export class ExtractorComponent {
 
   public doEverything(): void {
     this.running = true;
-    this.doExtracts().pipe(
+    this.doExtracts(false).pipe(
       switchMap(extracts => {
         return combineLatest([
           this.doCollectablesData(),
@@ -106,9 +108,13 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Fixtures') ||
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en)
+              || division.name.en.startsWith('Fixtures') ||
               division.name.en.indexOf('Furnishings') > -1 || division.name.en.startsWith('Table') ||
               division.name.en.startsWith('Wall-mounted') || division.name.en.startsWith('Ornaments');
+            if ((tab as any).divisionId === 1039) {
+              (tab as any).requiredForAchievement = false;
+            }
             tab.recipes = tab.recipes.map(entry => {
               (entry as any).leves = Object.entries<any>(leves)
                 .filter(([, leve]) => {
@@ -135,7 +141,7 @@ export class ExtractorComponent {
               return notebookDivision[key].pages.includes(tab.id);
             });
             const division = notebookDivision[(tab as any).divisionId];
-            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
+            (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
             tab.items = tab.items.map(item => {
               (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
                 .slice(0, 3)
@@ -289,13 +295,13 @@ export class ExtractorComponent {
     return res$;
   }
 
-  public doExtracts(): Observable<LazyDataWithExtracts['extracts']> {
+  public doExtracts(onlyUpdatedItems: boolean): Observable<LazyDataWithExtracts['extracts']> {
     this.running = true;
     this.currentLabel = 'Extracts';
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
     this.lazyData.getEntry('items').pipe(
       switchMap(lazyItems => {
-        const itemIds = Object.keys(lazyItems);
+        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys(lazyItems);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {
@@ -304,12 +310,13 @@ export class ExtractorComponent {
           tap(() => this.done$.next(this.done$.value + 1)),
           bufferCount(itemIds.length)
         );
-      })
-    ).subscribe(items => {
+      }),
+      withLazyData(this.lazyData, 'extracts')
+    ).subscribe(([items, lazyExtracts]) => {
       const extracts = [].concat.apply([], items).reduce((acc, i) => {
         acc[i.id] = i;
         return acc;
-      }, {});
+      }, onlyUpdatedItems ? lazyExtracts : {});
       this.downloadFile('extracts.json', extracts);
       res$.next(extracts);
     });
