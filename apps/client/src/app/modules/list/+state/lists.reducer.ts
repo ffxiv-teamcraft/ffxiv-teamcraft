@@ -180,7 +180,7 @@ export function listsReducer(
         ...state,
         listDetails: [
           ...state.listDetails.filter(list => list.$key !== action.payload.$key),
-          <List>action.payload
+          ListController.clone(<List>action.payload, true)
         ]
       };
       break;
