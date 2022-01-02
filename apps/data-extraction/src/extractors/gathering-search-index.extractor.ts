@@ -10,8 +10,8 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
 
     const index: Record<number, number> = {};
 
-    Object.values<any>(nodes).forEach(node => {
-      node.items.forEach(itemId => index[itemId] = node.type);
+    Object.entries<any>(nodes).forEach(([id, node]) => {
+      [...node.items, ...(node.hiddenItems || [])].forEach(itemId => index[itemId] = node.type);
     });
 
     Object.values<any>(fishing).forEach(node => {

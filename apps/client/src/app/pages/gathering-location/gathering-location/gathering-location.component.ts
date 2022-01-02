@@ -197,7 +197,7 @@ export class GatheringLocationComponent {
       }),
       map(res => {
         return {
-          data: chunk(res, this.pageSize),
+          data: chunk(res, this.pageSize) || [],
           total: res.length
         };
       })
