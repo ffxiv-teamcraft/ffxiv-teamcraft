@@ -482,7 +482,9 @@
     "Clear_inventory_on_startup": "Vider l'inventaire au démarrage",
     "Switch_tc_when_switch_ingame_character": "Changer de personnage sur Teamcraft quand il change en jeu",
     "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
+    "Reset_ignored_characters_ok": "Ignored characters have been reset",
     "Reset_contentid_characters": "Réinitialiser les caractères liés",
+    "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
     "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres personnages dans les listes",
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
@@ -1048,6 +1050,7 @@
     "Compact": "Compact",
     "Detailed": "Détaillé",
     "Remove_IP": "Remove initial preparations",
+    "Stats_applied": "Stats applied",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
