@@ -12,9 +12,6 @@ export class GatheringSearchIndexExtractor extends AbstractExtractor {
 
     Object.entries<any>(nodes).forEach(([id, node]) => {
       [...node.items, ...(node.hiddenItems || [])].forEach(itemId => {
-        if (+id === 828) {
-          console.log(itemId, node.type);
-        }
         index[itemId] = {
           type: node.type
         };
