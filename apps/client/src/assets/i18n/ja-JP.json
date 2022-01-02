@@ -482,7 +482,9 @@
     "Clear_inventory_on_startup": "実行時所持品を空にする",
     "Switch_tc_when_switch_ingame_character": "ゲーム内でキャラクター変更時Teamcraftのキャラクターも一緒に変更",
     "Reset_ignored_characters": "無視されたキャラクター初期化",
+    "Reset_ignored_characters_ok": "Ignored characters have been reset",
     "Reset_contentid_characters": "キャラクター連結初期化",
+    "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
     "Show_other_characters_inventories_in_inventory_page": "所持品ページに他のキャラクターの所持品を表示",
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
@@ -1048,6 +1050,7 @@
     "Compact": "コンパクト表示",
     "Detailed": "詳細",
     "Remove_IP": "Remove initial preparations",
+    "Stats_applied": "Stats applied",
     "STATE": {
       "Excellent": "最高品質",
       "Good": "高品質",
