@@ -482,7 +482,9 @@
     "Clear_inventory_on_startup": "Очистить инвентарь при запуске",
     "Switch_tc_when_switch_ingame_character": "Переключать персонажа Teamcraft при переключении в игре",
     "Reset_ignored_characters": "Сброс игнорируемых персонажей",
+    "Reset_ignored_characters_ok": "Ignored characters have been reset",
     "Reset_contentid_characters": "Сброс привязанных персонажей",
+    "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "Показывать инвентарь других персонажей в списках",
     "Show_other_characters_inventories_in_inventory_page": "Показывать инвентарь других персонажей на странице инвентаря",
     "Alarm_panels_collapsed_by_default": "Свернуть панель группы оповещений по умолчанию",
@@ -1048,6 +1050,7 @@
     "Compact": "Компактный",
     "Detailed": "Подробный",
     "Remove_IP": "Remove initial preparations",
+    "Stats_applied": "Stats applied",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
