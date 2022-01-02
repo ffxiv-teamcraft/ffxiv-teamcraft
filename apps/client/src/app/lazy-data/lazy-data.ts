@@ -28,6 +28,7 @@ import {LazyFreeCompanyAction} from './model/lazy-free-company-action';
 import {LazyGatheringBonus} from './model/lazy-gathering-bonus';
 import {LazyGatheringItem} from './model/lazy-gathering-item';
 import {LazyGatheringLogPage} from './model/lazy-gathering-log-page';
+import {LazyGatheringSearchIndex} from './model/lazy-gathering-search-index';
 import {LazyGcName} from './model/lazy-gc-name';
 import {LazyGilShopName} from './model/lazy-gil-shop-name';
 import {LazyHunt} from './model/lazy-hunt';
@@ -139,7 +140,7 @@ export interface LazyData {
   gatheringLevels: Record<number, number>;
   gatheringLogPages: Array<LazyGatheringLogPage[]>;
   gatheringPointToNodeId: Record<number, number>;
-  gatheringSearchIndex: Record<number, number>;
+  gatheringSearchIndex: Record<number, LazyGatheringSearchIndex>;
   gcNames: Record<number, LazyGcName>;
   gilShopNames: Record<number, LazyGilShopName>;
   hqFlags: Record<number, number>;

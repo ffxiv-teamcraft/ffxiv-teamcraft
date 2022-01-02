@@ -97,7 +97,7 @@ export class GatheringLocationComponent {
           ...row,
           scrip: scripIndex[row.id],
           reduction: aetherialReduce[row.id] > 0,
-          type: index[row.id]
+          type: index[row.id].type
         };
       });
     }),
@@ -164,7 +164,7 @@ export class GatheringLocationComponent {
             }
             if (filters.type !== -1) {
               res = res.filter(row => {
-                return row.type === +filters.type;
+                return Math.abs(row.type) === +filters.type;
               });
             }
             return res;
