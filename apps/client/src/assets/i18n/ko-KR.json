@@ -482,7 +482,9 @@
     "Clear_inventory_on_startup": "실행시 소지품 비우기",
     "Switch_tc_when_switch_ingame_character": "인게임에서 캐릭터 변경시 팀크래프트 캐릭터도 함께 변경",
     "Reset_ignored_characters": "무시된 캐릭터 초기화",
+    "Reset_ignored_characters_ok": "Ignored characters have been reset",
     "Reset_contentid_characters": "캐릭터 연결 초기화",
+    "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
     "Show_other_characters_inventories_in_inventory_page": "소지품 페이지에서 다른 캐릭터의 소지품도 표시",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
@@ -1048,6 +1050,7 @@
     "Compact": "간소화",
     "Detailed": "세부 정보",
     "Remove_IP": "Remove initial preparations",
+    "Stats_applied": "Stats applied",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
