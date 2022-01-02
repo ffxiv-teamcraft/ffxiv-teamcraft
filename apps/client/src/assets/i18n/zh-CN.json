@@ -482,7 +482,9 @@
     "Clear_inventory_on_startup": "启动时清空物品栏",
     "Switch_tc_when_switch_ingame_character": "在切换游戏角色时自动切换 Teamcraft 角色",
     "Reset_ignored_characters": "重置已忽略的角色",
+    "Reset_ignored_characters_ok": "Ignored characters have been reset",
     "Reset_contentid_characters": "重置已连接的角色",
+    "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "在清单中显示其他角色的物品栏",
     "Show_other_characters_inventories_in_inventory_page": "在物品栏页面中显示其他角色的物品栏",
     "Alarm_panels_collapsed_by_default": "默认折叠闹钟分组面板",
@@ -1048,6 +1050,7 @@
     "Compact": "简洁",
     "Detailed": "详细",
     "Remove_IP": "Remove initial preparations",
+    "Stats_applied": "Stats applied",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
