@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.5"></a>
+## [9.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.4...v9.3.5) (2022-01-02)
+
+
+### Bug Fixes
+
+* **alarms-sidebar:** fixed bait tooltip not showing properly ([b11ec63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b11ec63))
+* **allagan-reports:** fixed broken Garlandtools icon ([e2ac852](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2ac852))
+* **db:** fixed trade icon in some item pages ([82de786](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82de786))
+* **desktop:** fixed autofill being slow even without slow mode ([9e1a775](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e1a775))
+* **desktop:** fixed gearset import not removing job stone properly ([08f74f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08f74f2))
+* **gathering-locations:** fixed hidden items not being detected properly ([96eebaa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96eebaa))
+* **gathering-locations:** fixed reduction filter not working properly ([8246a9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8246a9e))
+* **gearsets:** fixed optimize materias order ([5141616](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5141616))
+* **log-tracker:** fixed Collectables being marked as required ([3107084](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3107084))
+* **ux:** added feedback notifications to various interactions ([bae84a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bae84a8))
+
+
+### Features
+
+* **db:** 200+ allagan reports imported ([4f42f3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4f42f3b))
+* **food-picker:** now sorting by max instead of % ([8607786](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8607786))
+
+
+
 <a name="9.3.4"></a>
 ## [9.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.3...v9.3.4) (2021-12-30)
 
