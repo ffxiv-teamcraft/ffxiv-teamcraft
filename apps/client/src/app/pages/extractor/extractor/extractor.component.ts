@@ -16,6 +16,8 @@ import { DataType } from '../../../modules/list/data/data-type';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
 import { EnvironmentService } from '../../../core/environment.service';
+import { withLazyData } from '../../../core/rxjs/with-lazy-data';
+import { updatedItemIds } from '../../../core/data/sources/updated-items';
 
 @Component({
   selector: 'app-extractor',
@@ -76,7 +78,7 @@ export class ExtractorComponent {
 
   public doEverything(): void {
     this.running = true;
-    this.doExtracts().pipe(
+    this.doExtracts(false).pipe(
       switchMap(extracts => {
         return combineLatest([
           this.doCollectablesData(),
@@ -289,13 +291,13 @@ export class ExtractorComponent {
     return res$;
   }
 
-  public doExtracts(): Observable<LazyDataWithExtracts['extracts']> {
+  public doExtracts(onlyUpdatedItems: boolean): Observable<LazyDataWithExtracts['extracts']> {
     this.running = true;
     this.currentLabel = 'Extracts';
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
     this.lazyData.getEntry('items').pipe(
       switchMap(lazyItems => {
-        const itemIds = Object.keys(lazyItems);
+        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys(lazyItems);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {
@@ -304,12 +306,13 @@ export class ExtractorComponent {
           tap(() => this.done$.next(this.done$.value + 1)),
           bufferCount(itemIds.length)
         );
-      })
-    ).subscribe(items => {
+      }),
+      withLazyData(this.lazyData, 'extracts')
+    ).subscribe(([items, lazyExtracts]) => {
       const extracts = [].concat.apply([], items).reduce((acc, i) => {
         acc[i.id] = i;
         return acc;
-      }, {});
+      }, onlyUpdatedItems ? lazyExtracts : {});
       this.downloadFile('extracts.json', extracts);
       res$.next(extracts);
     });

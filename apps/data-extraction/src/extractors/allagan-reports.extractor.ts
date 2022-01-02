@@ -22,6 +22,8 @@ enum AllaganReportSource {
 
 export class AllaganReportsExtractor extends AbstractExtractor {
 
+  private updatedItemIds = [];
+
   private identity = (row) => {
     return row !== undefined && row !== null && (!Array.isArray(row) || row.length > 0);
   };
@@ -67,7 +69,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             if (isNaN(itemId)) {
               return;
             }
-            this.addItemAsSource(instanceDrops, itemId, instanceId);
+            this.addItemAsSource(instanceDrops, itemId, instanceId, false, false);
           });
         });
 
@@ -77,6 +79,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         itemId
         source
         data
+        applied
       }
     }`).pipe(
           tap(res => {
@@ -86,37 +89,37 @@ export class AllaganReportsExtractor extends AbstractExtractor {
               }
               switch (report.source) {
                 case AllaganReportSource.DESYNTH:
-                  this.addItemAsSource(desynth, report.itemId, report.data.itemId);
+                  this.addItemAsSource(desynth, report.itemId, report.data.itemId, false, !report.applied);
                   break;
                 case AllaganReportSource.DEPRECATED:
-                  this.addItemAsSource(deprecated, report.itemId, 1);
+                  this.addItemAsSource(deprecated, report.itemId, 1, false, !report.applied);
                   break;
                 case AllaganReportSource.MOGSTATION:
-                  this.addItemAsSource(mogstation, report.itemId, { price: report.data.price, id: report.data.productId }, true);
+                  this.addItemAsSource(mogstation, report.itemId, { price: report.data.price, id: report.data.productId }, true, !report.applied);
                   break;
                 case AllaganReportSource.REDUCTION:
-                  this.addItemAsSource(reduction, report.itemId, report.data.itemId);
+                  this.addItemAsSource(reduction, report.itemId, report.data.itemId, false, !report.applied);
                   break;
                 case AllaganReportSource.GARDENING:
                   // Let's ignore gardening for now since the seeds extractor does the job
                   break;
                 case AllaganReportSource.LOOT:
-                  this.addItemAsSource(loots, report.itemId, report.data.itemId);
+                  this.addItemAsSource(loots, report.itemId, report.data.itemId, false, !report.applied);
                   break;
                 case AllaganReportSource.INSTANCE:
-                  this.addItemAsSource(instanceDrops, report.itemId, report.data.instanceId);
+                  this.addItemAsSource(instanceDrops, report.itemId, report.data.instanceId, false, !report.applied);
                   break;
                 case AllaganReportSource.VENTURE:
-                  this.addItemAsSource(ventures, report.itemId, report.data.ventureId);
+                  this.addItemAsSource(ventures, report.itemId, report.data.ventureId, false, !report.applied);
                   break;
                 case AllaganReportSource.DROP:
-                  this.addItemAsSource(drops, report.itemId, report.data.monsterId);
+                  this.addItemAsSource(drops, report.itemId, report.data.monsterId, false, !report.applied);
                   break;
                 case AllaganReportSource.FATE:
-                  this.addItemAsSource(fateSources, report.itemId, report.data.fateId);
+                  this.addItemAsSource(fateSources, report.itemId, report.data.fateId, false, !report.applied);
                   break;
                 case AllaganReportSource.VOYAGE:
-                  this.addItemAsSource(voyageSources, report.itemId, { id: report.data.voyageId, type: report.data.voyageType });
+                  this.addItemAsSource(voyageSources, report.itemId, { id: report.data.voyageId, type: report.data.voyageType }, false, !report.applied);
                   break;
                 case AllaganReportSource.SPEARFISHING:
                   this.addItemAsSource(spearFishing, report.itemId, pickBy({
@@ -125,7 +128,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                     predators: report.data.predators,
                     spawn: report.data.spawn,
                     duration: report.data.duration
-                  }, this.identity));
+                  }, this.identity), false, !report.applied);
                   return;
                 case AllaganReportSource.FISHING:
                   return this.addItemAsSource(fishing, report.itemId, pickBy({
@@ -140,7 +143,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                     snagging: report.data.snagging,
                     predators: report.data.predators,
                     oceanFishingTime: report.data.oceanFishingTime
-                  }, this.identity));
+                  }, this.identity), false, !report.applied);
               }
             });
 
@@ -156,6 +159,8 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
+
+            this.persistToTypescript('updated-items', 'updatedItemIds', this.updatedItemIds);
           }),
           switchMap(() => {
             return this.gubalRequest(`
@@ -172,7 +177,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
     });
   }
 
-  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject = false): void {
+  private addItemAsSource(targetObject: Object, targetItem: number, sourceDetails: any, isObject: boolean, isNew: boolean): void {
     if (isObject) {
       if (targetObject[targetItem] !== undefined) {
         console.warn(`Overriding source for ${targetItem} with ${JSON.stringify(sourceDetails)}`);
@@ -180,6 +185,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
       targetObject[targetItem] = sourceDetails;
     } else if (!!sourceDetails) {
       targetObject[targetItem] = uniq([...(targetObject[targetItem] || []), sourceDetails]);
+    }
+    if (isNew) {
+      this.updatedItemIds.push(targetItem);
     }
   }
 

@@ -2,7 +2,10 @@
   <h2>Which extract do you want to run?</h2>
   <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
     <div>
-      <button nz-button nzType="primary" (click)="doExtracts()">Extracts</button>
+      <button nz-button nzType="primary" (click)="doExtracts(false)">Extracts</button>
+    </div>
+    <div>
+      <button nz-button nzType="primary" (click)="doExtracts(true)">Extracts (allagan reports)</button>
     </div>
     <div>
       <button nz-button nzType="primary" (click)="doCollectablesData()">Collectables</button>
