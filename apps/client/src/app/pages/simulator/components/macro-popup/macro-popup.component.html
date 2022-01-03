@@ -43,7 +43,7 @@
 <div class="macro">
   <div *ngFor="let macroFragment of macro; index as i">
     <pre class="macro-fragment">
-      <button [clipboard]="getText(macroFragment)" class="copy-macro" nz-button nzShape="circle"
+      <button [clipboard]="getText(macroFragment)" [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate" class="copy-macro" nz-button nzShape="circle"
               nzSize="small">
           <i nz-icon nzType="copy"></i>
       </button>
