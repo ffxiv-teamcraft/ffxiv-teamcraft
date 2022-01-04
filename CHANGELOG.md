@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.8"></a>
+## [9.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.7...v9.3.8) (2022-01-04)
+
+
+### Bug Fixes
+
+* **db:** fixed fate vendors not linked properly ([3b21791](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b21791))
+* **simulator:** fixed possible float accuracy issue on some 90** rotations ([641ac88](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/641ac88))
+
+
+
 <a name="9.3.7"></a>
 ## [9.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.6...v9.3.7) (2022-01-04)
 
