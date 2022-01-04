@@ -278,6 +278,9 @@ export abstract class AbstractExtractor {
         query: gql
       }
     }, (err, _, res) => {
+      if (!res.data) {
+        console.log(JSON.stringify(res));
+      }
       AbstractExtractor.TOTAL_REQUESTS++;
       if (err) {
         console.error(err);
