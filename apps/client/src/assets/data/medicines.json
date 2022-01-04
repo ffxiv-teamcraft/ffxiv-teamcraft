@@ -1403,6 +1403,81 @@
   },
   {
     "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Max": 151,
+        "MaxHQ": 189,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 36109,
+    "LevelEquip": 1,
+    "LevelItem": 580
+  },
+  {
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Max": 151,
+        "MaxHQ": 189,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 36110,
+    "LevelEquip": 1,
+    "LevelItem": 580
+  },
+  {
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Max": 155,
+        "MaxHQ": 194,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 36111,
+    "LevelEquip": 1,
+    "LevelItem": 580
+  },
+  {
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Max": 151,
+        "MaxHQ": 189,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 36112,
+    "LevelEquip": 1,
+    "LevelItem": 580
+  },
+  {
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Max": 151,
+        "MaxHQ": 189,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 36113,
+    "LevelEquip": 1,
+    "LevelItem": 580
+  },
+  {
+    "Bonuses": {
       "Craftsmanship": {
         "ID": 70,
         "Max": 40,

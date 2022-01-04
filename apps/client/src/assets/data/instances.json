@@ -4188,11 +4188,15 @@
     ]
   },
   "30108": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Fourth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：辺獄編4",
+    "de": "Asphodelos - Vierter Kreis (episch)",
+    "fr": "Les Limbes du Pandæmonium - Abîme (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32517,
+      32500
+    ]
   },
   "30109": {
     "en": "Asphodelos: The Third Circle",
@@ -4206,11 +4210,15 @@
     ]
   },
   "30110": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Third Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：辺獄編3",
+    "de": "Asphodelos - Dritter Kreis (episch)",
+    "fr": "Les Limbes du Pandæmonium - Fournaise (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32201,
+      32200
+    ]
   },
   "30111": {
     "en": "Asphodelos: The First Circle",
@@ -4224,11 +4232,15 @@
     ]
   },
   "30112": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The First Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：辺獄編1",
+    "de": "Asphodelos - Erster Kreis (episch)",
+    "fr": "Les Limbes du Pandæmonium - Parvis (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      32118,
+      32100
+    ]
   },
   "30113": {
     "en": "Asphodelos: The Second Circle",
@@ -4242,11 +4254,15 @@
     ]
   },
   "30114": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Asphodelos: The Second Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：辺獄編2",
+    "de": "Asphodelos - Zweiter Kreis (episch)",
+    "fr": "Les Limbes du Pandæmonium - Cloaque (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      30904,
+      30901
+    ]
   },
   "30115": {
     "en": null,
@@ -4937,11 +4953,15 @@
     ]
   },
   "55009": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Excitatron 6000",
+    "ja": "宝物庫 エキサイトロン",
+    "de": "Euphoratron",
+    "fr": "Le Ludodrome",
+    "icon": "/i/061000/061808.png",
+    "contentText": [
+      12810,
+      12800
+    ]
   },
   "55010": {
     "en": null,

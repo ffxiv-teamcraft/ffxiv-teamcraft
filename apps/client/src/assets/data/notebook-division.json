@@ -1581,10 +1581,10 @@
   },
   "1038": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Master Recipes (9)",
+      "ja": "秘伝書:第9巻",
+      "de": "Meister (9)",
+      "fr": "Expert - tome 9"
     },
     "pages": [
       1304,
@@ -1596,8 +1596,8 @@
       1310,
       1311
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 90,
+    "gatheringLevel": 255
   },
   "1039": {
     "name": {

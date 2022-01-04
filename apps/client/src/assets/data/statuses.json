@@ -19166,18 +19166,18 @@
     "icon": "/i/017000/017333.png"
   },
   "2739": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Cold Spell",
+    "ja": "氷の侵食",
+    "de": "Zehrendes Eis",
+    "fr": "Corrosion de glace",
+    "icon": "/i/015000/015373.png"
   },
   "2740": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Hot Spell",
+    "ja": "火の侵食",
+    "de": "Zehrendes Feuer",
+    "fr": "Corrosion de feu",
+    "icon": "/i/015000/015374.png"
   },
   "2741": {
     "en": "",
@@ -19320,11 +19320,11 @@
     "icon": "/i/015000/015381.png"
   },
   "2761": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Darkened Fire",
+    "ja": "闇の炎",
+    "de": "Schwarze Lohe",
+    "fr": "Flamme sombre",
+    "icon": "/i/017000/017551.png"
   },
   "2762": {
     "en": "",
@@ -19362,11 +19362,11 @@
     "icon": ""
   },
   "2767": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mark of Easy Prey",
+    "ja": "生餌の刻印",
+    "de": "Mal der Beute",
+    "fr": "Marque de la proie",
+    "icon": "/i/015000/015729.png"
   },
   "2768": {
     "en": "",
@@ -19411,11 +19411,11 @@
     "icon": ""
   },
   "2774": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Dropsy",
+    "ja": "水毒",
+    "de": "Wassersucht",
+    "fr": "Œdème",
+    "icon": "/i/015000/015529.png"
   },
   "2775": {
     "en": "",
@@ -19586,11 +19586,11 @@
     "icon": "/i/013000/013103.png"
   },
   "2799": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Aethersucker",
+    "ja": "エーテル吸収",
+    "de": "Ätherlabung",
+    "fr": "Absorption d'éther",
+    "icon": "/i/015000/015429.png"
   },
   "2800": {
     "en": "",
@@ -20111,17 +20111,17 @@
     "icon": "/i/016000/016403.png"
   },
   "2874": {
-    "en": "時限の魔鎖",
+    "en": "Shackles of Time",
     "ja": "時限の魔鎖",
     "de": "Aspektierende Ketten",
-    "fr": "時限の魔鎖",
+    "fr": "Chaîne à retardement",
     "icon": "/i/015000/015372.png"
   },
   "2875": {
-    "en": "時限の魔鎖",
+    "en": "Shackles of Time",
     "ja": "時限の魔鎖",
     "de": "Aspektierende Ketten",
-    "fr": "時限の魔鎖",
+    "fr": "Chaîne à retardement",
     "icon": "/i/015000/015372.png"
   },
   "2876": {
