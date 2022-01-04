@@ -1916,7 +1916,7 @@
     "Banner_description": "팀크래프트가 게임 내의 패킷을 읽을 수 있도록 패킷 캡쳐를 활성화시킬 수 있습니다. (설정에 있는 체크박스로 활성화/비활성화 할 수 있음) 활성화시켰을 경우 아이템을 얻을 경우 자동으로 목록을 채워주며, 해당 정보를 Universalis에 제공하여 장터 애그리게이터(aggragator) 에 기여합니다.",
     "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없습니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
-    "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
+    "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
     "Please_sort": "현재 플레이 중인 캐릭터가 확인되지 않아 소지품 동기화를 할 수 없습니다. 소지품에서 아이템 정렬/정렬 되돌리기를 실행하시거나 Teamcraft를 실행한 채로 현재 캐릭터를 재접속 해주세요.",
     "Unknown_character": "알 수 없는 인게임 캐릭터",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
