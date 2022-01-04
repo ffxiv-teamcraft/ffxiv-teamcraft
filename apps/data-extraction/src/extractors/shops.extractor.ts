@@ -167,6 +167,10 @@ export class ShopsExtractor extends AbstractExtractor {
               if (specialShop.UseCurrencyType === 16) {
                 entry.id = StaticData.CURRENCIES[entry.id];
               }
+
+              if (specialShop.UseCurrencyType === 4) {
+                entry.id = StaticData.TOMESTONES[entry.id];
+              }
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0),
             items: tradeIndexes.map(tradeIndex => {

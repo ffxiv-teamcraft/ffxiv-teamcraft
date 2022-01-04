@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** support for Global 6.05.`;
+* **db:** support for Global 6.05.`;
