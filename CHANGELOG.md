@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.6"></a>
+## [9.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.5...v9.3.6) (2022-01-04)
+
+
+### Bug Fixes
+
+* **lists:** fixed amount input sometimes acting weird ([d440ed8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d440ed8))
+* **simulator:** fixed float precision issue with some specific stats ([d3417b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3417b4))
+
+
+### Features
+
+* **db:** support for Global 6.05 ([08798f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08798f6))
+
+
+
 <a name="9.3.5"></a>
 ## [9.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.4...v9.3.5) (2022-01-02)
 
