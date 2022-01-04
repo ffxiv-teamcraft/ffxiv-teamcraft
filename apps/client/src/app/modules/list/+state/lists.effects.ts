@@ -218,6 +218,7 @@ export class ListsEffects {
 
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
+    debounceTime(1000),
     withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
     filter(([action, permission]) => {
       return permission < PermissionLevel.WRITE || !ListController.isComplete(action.payload);
