@@ -1916,7 +1916,7 @@
     "Banner_description": "Du kannst die Paketerfassung aktivieren, damit Teamcraft deine FFXIV-Pakete lesen kann (Kann auch in den Einstellungen aktiviert/deaktiviert werden). Hierdurch werden Listen automatisch ausgefüllt, wenn du einen Gegenstand erhältst. Die Daten helfen außerdem Universalis, dem Marktbrett-Aggregator.",
     "Banner_description_warning": "Die Paketerfassung ist gegen die Nutzungsbedingungen von FFXIV, weshalb sie standardmäßig deaktiviert ist. Solange du niemandem davon im Spiel erzählst, ist es aber in Ordnung diese zu benutzen.",
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
-    "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
+    "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
     "Please_sort": "Inventar-Tracking funktioniert nicht, ohne zu wissen, welchen Charakter du gerade spielst, sortiere/entsortiere dein Inventar oder melde dich mit deinem Charakter an, damit Teamcraft deinen aktuellen Charakter erkennen kann.",
     "Unknown_character": "Unbekannter Ingame Charakter",
     "No_character_id": "Keine Charakter-ID gesetzt",
