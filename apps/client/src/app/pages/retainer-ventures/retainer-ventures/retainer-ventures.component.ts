@@ -204,12 +204,13 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
     });
   }
 
-  selectRetainer(retainer: Retainer & { ilvl: number, gathering: number }): void {
+  selectRetainer(retainer: Retainer & { ilvl: number, gathering: number, perception: number }): void {
     this.form.patchValue({
       job: retainer.job,
       level: retainer.level,
       ilvl: retainer.ilvl,
-      gathering: retainer.gathering
+      gathering: retainer.gathering,
+      perception: retainer.perception
     });
   }
 
