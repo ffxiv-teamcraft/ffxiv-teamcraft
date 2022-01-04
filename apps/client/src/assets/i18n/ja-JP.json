@@ -1916,7 +1916,7 @@
     "Banner_description": "チームクラフトがゲーム内のパケットを読み取ることができるよう、パケットキャプチャを有効にすることができます。（設定のチェックボックスに有効/無効にすることができる）を有効にさせた場合のアイテムを取得する場合、自動的にリストを満たしてくれて、その情報をUniversalisに提供して市場アグリゲータ（aggragator）に貢献します。",
     "Banner_description_warning": "パケットキャプチャは利用規約（ToS）に違反するので、デフォルトでは無効になっています。ゲーム上で他の人には、この機能を使用していることを言わなかったら、この機能を使用するには問題はありません。",
     "Empty_inventory": "所持品をまだロードされていません",
-    "Please_zone": "所持品システムを初期化するには、任意の位置にテレポートしてチョコボバッグを開けてください。",
+    "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
     "Please_sort": "現在プレイ中のキャラクターが確認されてないので所持品同期化ができません。所持品からアイテム整せいとん/せいとん戻しを実行するか、TCを実行したままで現在キャラクターを再度ログインしてください",
     "Unknown_character": "不明なゲーム内のキャラクター",
     "No_character_id": "キャラクターidの設定が存在しません。",
