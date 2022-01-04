@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.3.7",
+  "version": "9.3.8",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -154,7 +154,7 @@
     "@angular/platform-browser-dynamic": "^12.2.10",
     "@angular/platform-server": "^12.2.12",
     "@angular/router": "^12.2.10",
-    "@ffxiv-teamcraft/simulator": "^3.0.9",
+    "@ffxiv-teamcraft/simulator": "^3.0.10",
     "@ffxiv-teamcraft/simulator-cn": "npm:@ffxiv-teamcraft/simulator@2.10.12",
     "@ffxiv-teamcraft/simulator-kr": "npm:@ffxiv-teamcraft/simulator@2.10.12",
     "@firebase/auth-types": "^0.10.1",
