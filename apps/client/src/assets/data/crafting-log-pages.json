@@ -5982,6 +5982,192 @@
       ]
     },
     {
+      "id": 1304,
+      "masterbook": {
+        "ID": 80,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Zimmerern (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35618,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 863,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Carpenter IX",
+          "Name_de": "Der Meister-Zimmerer IX",
+          "Name_en": "Master Carpenter IX",
+          "Name_fr": "Menuiserie experte IX",
+          "Name_ja": "木工秘伝書:第9巻",
+          "Plural": "copies of Master Carpenter IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Zimmerer IX“",
+          "Plural_en": "copies of Master Carpenter IX",
+          "Plural_fr": "exemplaires de Menuiserie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Carpenter IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Zimmerer IX“",
+          "Singular_en": "copy of Master Carpenter IX",
+          "Singular_fr": "exemplaire de Menuiserie experte IX",
+          "Singular_ja": "木工秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35618,
+        "Name": "Master Carpenter IX",
+        "Name_de": "Der Meister-Zimmerer IX",
+        "Name_en": "Master Carpenter IX",
+        "Name_fr": "Menuiserie experte IX",
+        "Name_ja": "木工秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34893,
+          "itemId": 36201,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34803,
+          "itemId": 35023,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34804,
+          "itemId": 35024,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34809,
+          "itemId": 35029,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34808,
+          "itemId": 35028,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34865,
+          "itemId": 35085,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34866,
+          "itemId": 35086,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34867,
+          "itemId": 35087,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34869,
+          "itemId": 35089,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34868,
+          "itemId": 35088,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1312,
       "masterbook": null,
       "startLevel": {
@@ -6597,6 +6783,11 @@
           "recipeId": 5366,
           "itemId": 35583,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5377,
+          "itemId": 35585,
+          "rlvl": 540
         }
       ]
     },
@@ -6962,6 +7153,11 @@
         {
           "recipeId": 5364,
           "itemId": 35564,
+          "rlvl": 540
+        },
+        {
+          "recipeId": 5379,
+          "itemId": 35578,
           "rlvl": 540
         }
       ]
@@ -7501,6 +7697,11 @@
           "recipeId": 4717,
           "itemId": 33286,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5380,
+          "itemId": 35575,
+          "rlvl": 540
         },
         {
           "recipeId": 5370,
@@ -15748,6 +15949,197 @@
       ]
     },
     {
+      "id": 1305,
+      "masterbook": {
+        "ID": 81,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Grobschmieden (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35619,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 864,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Blacksmith IX",
+          "Name_de": "Der Meister-Grobschmied IX",
+          "Name_en": "Master Blacksmith IX",
+          "Name_fr": "Métallurgie experte IX",
+          "Name_ja": "鍛冶秘伝書:第9巻",
+          "Plural": "copies of Master Blacksmith IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Grobschmied IX“",
+          "Plural_en": "copies of Master Blacksmith IX",
+          "Plural_fr": "exemplaires de Métallurgie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Blacksmith IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Grobschmied IX“",
+          "Singular_en": "copy of Master Blacksmith IX",
+          "Singular_fr": "exemplaire de Métallurgie experte IX",
+          "Singular_ja": "鍛冶秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35619,
+        "Name": "Master Blacksmith IX",
+        "Name_de": "Der Meister-Grobschmied IX",
+        "Name_en": "Master Blacksmith IX",
+        "Name_fr": "Métallurgie experte IX",
+        "Name_ja": "鍛冶秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34890,
+          "itemId": 36173,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34800,
+          "itemId": 35020,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34802,
+          "itemId": 35022,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34806,
+          "itemId": 35026,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34815,
+          "itemId": 35035,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34818,
+          "itemId": 35038,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34801,
+          "itemId": 35021,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34813,
+          "itemId": 35033,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34805,
+          "itemId": 35025,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34807,
+          "itemId": 35027,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34816,
+          "itemId": 35036,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1313,
       "masterbook": null,
       "startLevel": {
@@ -16058,6 +16450,11 @@
           "recipeId": 4723,
           "itemId": 33301,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5375,
+          "itemId": 35586,
+          "rlvl": 540
         }
       ]
     },
@@ -23036,6 +23433,212 @@
           "recipeId": 34641,
           "itemId": 33228,
           "rlvl": 412
+        }
+      ]
+    },
+    {
+      "id": 1306,
+      "masterbook": {
+        "ID": 82,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Plattnern (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35620,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 865,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Armorer IX",
+          "Name_de": "Der Meister-Plattner IX",
+          "Name_en": "Master Armorer IX",
+          "Name_fr": "Armurerie experte IX",
+          "Name_ja": "板金秘伝書:第9巻",
+          "Plural": "copies of Master Armorer IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Plattner IX“",
+          "Plural_en": "copies of Master Armorer IX",
+          "Plural_fr": "exemplaires d'Armurerie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Armorer IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Plattner IX“",
+          "Singular_en": "copy of Master Armorer IX",
+          "Singular_fr": "exemplaire d'Armurerie experte IX",
+          "Singular_ja": "板金秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35620,
+        "Name": "Master Armorer IX",
+        "Name_de": "Der Meister-Plattner IX",
+        "Name_en": "Master Armorer IX",
+        "Name_fr": "Armurerie experte IX",
+        "Name_ja": "板金秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34891,
+          "itemId": 36173,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34819,
+          "itemId": 35039,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34820,
+          "itemId": 35040,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34825,
+          "itemId": 35045,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34830,
+          "itemId": 35050,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34840,
+          "itemId": 35060,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34831,
+          "itemId": 35051,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34841,
+          "itemId": 35061,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34822,
+          "itemId": 35042,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34827,
+          "itemId": 35047,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34832,
+          "itemId": 35052,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34842,
+          "itemId": 35062,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34824,
+          "itemId": 35044,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34844,
+          "itemId": 35064,
+          "rlvl": 580
         }
       ]
     },
@@ -33057,6 +33660,227 @@
       ]
     },
     {
+      "id": 1307,
+      "masterbook": {
+        "ID": 83,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Goldschmieden (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35621,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 866,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Goldsmith IX",
+          "Name_de": "Der Meister-Goldschmied IX",
+          "Name_en": "Master Goldsmith IX",
+          "Name_fr": "Orfèvrerie experte IX",
+          "Name_ja": "彫金秘伝書:第9巻",
+          "Plural": "copies of Master Goldsmith IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Goldschmied IX“",
+          "Plural_en": "copies of Master Goldsmith IX",
+          "Plural_fr": "exemplaires d'Orfèvrerie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Goldsmith IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Goldschmied IX“",
+          "Singular_en": "copy of Master Goldsmith IX",
+          "Singular_fr": "exemplaire d'Orfèvrerie experte IX",
+          "Singular_ja": "彫金秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35621,
+        "Name": "Master Goldsmith IX",
+        "Name_de": "Der Meister-Goldschmied IX",
+        "Name_en": "Master Goldsmith IX",
+        "Name_fr": "Orfèvrerie experte IX",
+        "Name_ja": "彫金秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34892,
+          "itemId": 36187,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34814,
+          "itemId": 35034,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34812,
+          "itemId": 35032,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34817,
+          "itemId": 35037,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34850,
+          "itemId": 35070,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34845,
+          "itemId": 35065,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34847,
+          "itemId": 35067,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34855,
+          "itemId": 35075,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34856,
+          "itemId": 35076,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34857,
+          "itemId": 35077,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34859,
+          "itemId": 35079,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34858,
+          "itemId": 35078,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34870,
+          "itemId": 35090,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34871,
+          "itemId": 35091,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34872,
+          "itemId": 35092,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34874,
+          "itemId": 35094,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34873,
+          "itemId": 35093,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1315,
       "masterbook": null,
       "startLevel": {
@@ -33602,6 +34426,11 @@
           "recipeId": 4577,
           "itemId": 28164,
           "rlvl": 415
+        },
+        {
+          "recipeId": 5383,
+          "itemId": 35587,
+          "rlvl": 540
         },
         {
           "recipeId": 5362,
@@ -42584,6 +43413,222 @@
       ]
     },
     {
+      "id": 1308,
+      "masterbook": {
+        "ID": 84,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Gerbern (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35622,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 867,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Leatherworker IX",
+          "Name_de": "Der Meister-Gerber IX",
+          "Name_en": "Master Leatherworker IX",
+          "Name_fr": "Tannerie experte IX",
+          "Name_ja": "革細工秘伝書:第9巻",
+          "Plural": "copies of Master Leatherworker IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Gerber IX“",
+          "Plural_en": "copies of Master Leatherworker IX",
+          "Plural_fr": "exemplaires de Tannerie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Leatherworker IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Gerber IX“",
+          "Singular_en": "copy of Master Leatherworker IX",
+          "Singular_fr": "exemplaire de Tannerie experte IX",
+          "Singular_ja": "革細工秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35622,
+        "Name": "Master Leatherworker IX",
+        "Name_de": "Der Meister-Gerber IX",
+        "Name_en": "Master Leatherworker IX",
+        "Name_fr": "Tannerie experte IX",
+        "Name_ja": "革細工秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3700,
+        "Durability": 80,
+        "ID": 570,
+        "ProgressDivider": 130,
+        "ProgressModifier": 90,
+        "Quality": 7400,
+        "QualityDivider": 115,
+        "QualityModifier": 80,
+        "Stars": 1,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34913,
+          "itemId": 35869,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 34914,
+          "itemId": 35870,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 34915,
+          "itemId": 35871,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 34895,
+          "itemId": 36252,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34836,
+          "itemId": 35056,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34852,
+          "itemId": 35072,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34829,
+          "itemId": 35049,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34834,
+          "itemId": 35054,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34839,
+          "itemId": 35059,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34854,
+          "itemId": 35074,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34849,
+          "itemId": 35069,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34860,
+          "itemId": 35080,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34861,
+          "itemId": 35081,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34862,
+          "itemId": 35082,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34864,
+          "itemId": 35084,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34863,
+          "itemId": 35083,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1316,
       "masterbook": null,
       "startLevel": {
@@ -42916,6 +43961,11 @@
           "recipeId": 1975,
           "itemId": 7092,
           "rlvl": 90
+        },
+        {
+          "recipeId": 5382,
+          "itemId": 35556,
+          "rlvl": 540
         }
       ]
     },
@@ -51636,6 +52686,217 @@
       ]
     },
     {
+      "id": 1309,
+      "masterbook": {
+        "ID": 85,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Webern (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35623,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 868,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Weaver IX",
+          "Name_de": "Der Meister-Weber IX",
+          "Name_en": "Master Weaver IX",
+          "Name_fr": "Couture experte IX",
+          "Name_ja": "裁縫秘伝書:第9巻",
+          "Plural": "copies of Master Weaver IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Weber IX“",
+          "Plural_en": "copies of Master Weaver IX",
+          "Plural_fr": "exemplaires de Couture experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Weaver IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Weber IX“",
+          "Singular_en": "copy of Master Weaver IX",
+          "Singular_fr": "exemplaire de Couture experte IX",
+          "Singular_ja": "裁縫秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35623,
+        "Name": "Master Weaver IX",
+        "Name_de": "Der Meister-Weber IX",
+        "Name_en": "Master Weaver IX",
+        "Name_fr": "Couture experte IX",
+        "Name_ja": "裁縫秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3700,
+        "Durability": 80,
+        "ID": 570,
+        "ProgressDivider": 130,
+        "ProgressModifier": 90,
+        "Quality": 7400,
+        "QualityDivider": 115,
+        "QualityModifier": 80,
+        "Stars": 1,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34912,
+          "itemId": 35868,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 34894,
+          "itemId": 36213,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34835,
+          "itemId": 35055,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34821,
+          "itemId": 35041,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34826,
+          "itemId": 35046,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34851,
+          "itemId": 35071,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34846,
+          "itemId": 35066,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34837,
+          "itemId": 35057,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34823,
+          "itemId": 35043,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34828,
+          "itemId": 35048,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34833,
+          "itemId": 35053,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34843,
+          "itemId": 35063,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34838,
+          "itemId": 35058,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34853,
+          "itemId": 35073,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34848,
+          "itemId": 35068,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1317,
       "masterbook": null,
       "startLevel": {
@@ -52274,6 +53535,11 @@
           "recipeId": 4658,
           "itemId": 32234,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5381,
+          "itemId": 35559,
+          "rlvl": 540
         }
       ]
     },
@@ -59063,6 +60329,202 @@
       ]
     },
     {
+      "id": 1310,
+      "masterbook": {
+        "ID": 86,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Alchemisten (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35624,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 869,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Alchemist IX",
+          "Name_de": "Der Meister-Alchemist IX",
+          "Name_en": "Master Alchemist IX",
+          "Name_fr": "Alchimie experte IX",
+          "Name_ja": "錬成秘伝書:第9巻",
+          "Plural": "copies of Master Alchemist IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Alchemist IX“",
+          "Plural_en": "copies of Master Alchemist IX",
+          "Plural_fr": "exemplaires d'Alchimie experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Alchemist IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Alchemist IX“",
+          "Singular_en": "copy of Master Alchemist IX",
+          "Singular_fr": "exemplaire d'Alchimie experte IX",
+          "Singular_ja": "錬成秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35624,
+        "Name": "Master Alchemist IX",
+        "Name_de": "Der Meister-Alchemist IX",
+        "Name_en": "Master Alchemist IX",
+        "Name_fr": "Alchimie experte IX",
+        "Name_ja": "錬成秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34896,
+          "itemId": 36232,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34897,
+          "itemId": 36233,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34898,
+          "itemId": 36234,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34899,
+          "itemId": 36235,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34900,
+          "itemId": 36236,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34810,
+          "itemId": 35030,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34811,
+          "itemId": 35031,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34885,
+          "itemId": 36109,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34886,
+          "itemId": 36110,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34887,
+          "itemId": 36111,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34888,
+          "itemId": 36112,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34889,
+          "itemId": 36113,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1318,
       "masterbook": null,
       "startLevel": {
@@ -59705,6 +61167,11 @@
         {
           "recipeId": 5367,
           "itemId": 35566,
+          "rlvl": 540
+        },
+        {
+          "recipeId": 5376,
+          "itemId": 35568,
           "rlvl": 540
         },
         {
@@ -64839,6 +66306,192 @@
       ]
     },
     {
+      "id": 1311,
+      "masterbook": {
+        "ID": 87,
+        "Item": {
+          "AdditionalData": 0,
+          "Adjective": 0,
+          "AetherialReduce": 0,
+          "AlwaysCollectable": 0,
+          "Article": 0,
+          "BaseParam0": 0,
+          "BaseParam1": 0,
+          "BaseParam2": 0,
+          "BaseParam3": 0,
+          "BaseParam4": 0,
+          "BaseParam5": 0,
+          "BaseParamModifier": 0,
+          "BaseParamSpecial0": 0,
+          "BaseParamSpecial1": 0,
+          "BaseParamSpecial2": 0,
+          "BaseParamSpecial3": 0,
+          "BaseParamSpecial4": 0,
+          "BaseParamSpecial5": 0,
+          "BaseParamValue0": 0,
+          "BaseParamValue1": 0,
+          "BaseParamValue2": 0,
+          "BaseParamValue3": 0,
+          "BaseParamValue4": 0,
+          "BaseParamValue5": 0,
+          "BaseParamValueSpecial0": 0,
+          "BaseParamValueSpecial1": 0,
+          "BaseParamValueSpecial2": 0,
+          "BaseParamValueSpecial3": 0,
+          "BaseParamValueSpecial4": 0,
+          "BaseParamValueSpecial5": 0,
+          "Block": 0,
+          "BlockRate": 0,
+          "CanBeHq": 0,
+          "ClassJobCategory": 0,
+          "ClassJobRepair": 0,
+          "ClassJobUse": 0,
+          "CooldownS": 0,
+          "DamageMag": 0,
+          "DamagePhys": 0,
+          "DefenseMag": 0,
+          "DefensePhys": 0,
+          "DelayMs": 0,
+          "Description": "This esoteric tome─the ninth in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians level 90 and higher.",
+          "Description_de": "Dieser kostbare Foliant enthält Rezepte, die nur von meisterlichen Gourmets (Stufe 90) entziffert werden können.",
+          "Description_en": "This esoteric tome─the ninth in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians level 90 and higher.",
+          "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 90 dans la discipline.",
+          "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv90～",
+          "Desynth": 0,
+          "EquipRestriction": 0,
+          "EquipSlotCategory": 0,
+          "FilterGroup": 23,
+          "GrandCompany": 0,
+          "ID": 35625,
+          "Icon": "/i/026000/026156.png",
+          "IconHD": "/i/026000/026156_hr1.png",
+          "IconID": 26156,
+          "IsAdvancedMeldingPermitted": 0,
+          "IsCollectable": 0,
+          "IsCrestWorthy": 0,
+          "IsDyeable": 0,
+          "IsGlamourous": 0,
+          "IsIndisposable": 1,
+          "IsPvP": 0,
+          "IsUnique": 1,
+          "IsUntradable": 1,
+          "ItemAction": 870,
+          "ItemGlamour": 0,
+          "ItemRepair": 0,
+          "ItemSearchCategory": 0,
+          "ItemSeries": 0,
+          "ItemSortCategory": 59,
+          "ItemSpecialBonus": 0,
+          "ItemSpecialBonusParam": 0,
+          "ItemUICategory": 63,
+          "LevelEquip": 1,
+          "LevelItem": 1,
+          "Lot": 0,
+          "MateriaSlotCount": 0,
+          "MaterializeType": 0,
+          "ModelMain": "0, 0, 0, 0",
+          "ModelSub": "0, 0, 0, 0",
+          "Name": "Master Culinarian IX",
+          "Name_de": "Der Meister-Gourmet IX",
+          "Name_en": "Master Culinarian IX",
+          "Name_fr": "Cuisine experte IX",
+          "Name_ja": "調理秘伝書:第9巻",
+          "Plural": "copies of Master Culinarian IX",
+          "Plural_de": "Abschriften[p] von „Der Meister-Gourmet IX“",
+          "Plural_en": "copies of Master Culinarian IX",
+          "Plural_fr": "exemplaires de Cuisine experte IX",
+          "Plural_ja": "",
+          "PossessivePronoun": 0,
+          "PriceLow": 0,
+          "PriceMid": 2,
+          "Pronoun": 0,
+          "Rarity": 1,
+          "Singular": "copy of Master Culinarian IX",
+          "Singular_de": "Abschrift[p] von „Der Meister-Gourmet IX“",
+          "Singular_en": "copy of Master Culinarian IX",
+          "Singular_fr": "exemplaire de Cuisine experte IX",
+          "Singular_ja": "調理秘伝書:第9巻",
+          "StackSize": 1,
+          "StartsWithVowel": 0,
+          "SubStatCategory": 0
+        },
+        "ItemTarget": "Item",
+        "ItemTargetID": 35625,
+        "Name": "Master Culinarian IX",
+        "Name_de": "Der Meister-Gourmet IX",
+        "Name_en": "Master Culinarian IX",
+        "Name_fr": "Cuisine experte IX",
+        "Name_ja": "調理秘伝書:第9巻"
+      },
+      "startLevel": {
+        "ClassJobLevel": 90,
+        "ConditionsFlag": 15,
+        "Difficulty": 3900,
+        "Durability": 70,
+        "ID": 580,
+        "ProgressDivider": 130,
+        "ProgressModifier": 80,
+        "Quality": 7800,
+        "QualityDivider": 115,
+        "QualityModifier": 70,
+        "Stars": 2,
+        "SuggestedControl": 2703,
+        "SuggestedCraftsmanship": 2924
+      },
+      "recipes": [
+        {
+          "recipeId": 34875,
+          "itemId": 36067,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34876,
+          "itemId": 36068,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34877,
+          "itemId": 36069,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34878,
+          "itemId": 36070,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34879,
+          "itemId": 36071,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34880,
+          "itemId": 36072,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34881,
+          "itemId": 36073,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34882,
+          "itemId": 36074,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34883,
+          "itemId": 36075,
+          "rlvl": 580
+        },
+        {
+          "recipeId": 34884,
+          "itemId": 36076,
+          "rlvl": 580
+        }
+      ]
+    },
+    {
       "id": 1319,
       "masterbook": null,
       "startLevel": {
@@ -65259,6 +66912,11 @@
         {
           "recipeId": 5369,
           "itemId": 35569,
+          "rlvl": 540
+        },
+        {
+          "recipeId": 5378,
+          "itemId": 35796,
           "rlvl": 540
         }
       ]

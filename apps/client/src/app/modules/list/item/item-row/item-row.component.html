@@ -236,8 +236,8 @@
           </ng-template>
         </button>
       </span>
-      <nz-input-number #input (keypress.enter)="itemDoneChanged(input.ngModel, item)"
-                       (ngModelChange)="itemDoneChanged($event, item)" [disabled]="permissionLevel < 20"
+      <nz-input-number #input (keypress.enter)="itemDoneChange$.next(input.ngModel)"
+                       (ngModelChange)="itemDoneChange$.next($event)" [disabled]="permissionLevel < 20"
                        [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
                        [nzMax]="item.amount"
                        [nzMin]="0"

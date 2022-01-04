@@ -5826,7 +5826,7 @@ export const mapIds = [
   {
     "id": 729,
     "zone": 4111,
-    "name": "",
+    "name": "The Excitatron 6000",
     "territory": 1000,
     "scale": 100,
     "weatherRate": 0

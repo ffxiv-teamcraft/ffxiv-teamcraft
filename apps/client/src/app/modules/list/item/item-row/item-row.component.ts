@@ -4,7 +4,7 @@ import { ListsFacade } from '../../+state/lists.facade';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -22,6 +22,7 @@ import {
   startWith,
   switchMap,
   switchMapTo,
+  takeUntil,
   withLatestFrom
 } from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
@@ -350,6 +351,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this._layout = l;
   }
 
+  public itemDoneChange$ = new Subject<number>();
+
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
   }
@@ -361,6 +364,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.cdRef.detectChanges();
+    });
+
+    this.itemDoneChange$.pipe(
+      takeUntil(this.onDestroy$),
+      debounceTime(500)
+    ).subscribe(value => {
+      this.itemDoneChanged(value, this.item);
     });
 
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
