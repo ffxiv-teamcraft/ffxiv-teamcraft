@@ -29,4 +29,10 @@ export class StaticData {
     '27': 28188,
     '28': 30341
   };
+
+  public static readonly TOMESTONES = {
+    '1': 28,
+    '2': 42,
+    '3': 43
+  };
 }

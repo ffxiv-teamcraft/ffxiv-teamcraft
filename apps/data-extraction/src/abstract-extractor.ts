@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
-import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { catchError, first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import * as request from 'request';
 import * as querystring from 'querystring';
@@ -227,8 +227,8 @@ export abstract class AbstractExtractor {
     this.getAllPages(endpoint, body, label).subscribe(page => {
       data.push(...page.Results);
     }, (e) => {
-      console.log(endpoint);
-      console.log(e);
+      console.log('ERROR', endpoint);
+      console.error(e);
     }, () => {
       res$.next(data);
       res$.complete();
