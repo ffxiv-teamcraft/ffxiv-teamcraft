@@ -1,3 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed 6.05 tomestone mats not listed as trades.`;
+* **db:** fixed fate vendors not linked properly.
+* **simulator:** fixed possible float accuracy issue on some 90** rotations.`;
