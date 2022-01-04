@@ -8,10 +8,9 @@ export interface LazyShopsByNpc {
 }
 
 export interface Trade {
-  currencies:        Currency[];
-  items:             Currency[];
-  requiredGCRank?:   number;
-  requiredFateRank?: number;
+  currencies:      Currency[];
+  items:           Currency[];
+  requiredGCRank?: number;
 }
 
 export interface Currency {

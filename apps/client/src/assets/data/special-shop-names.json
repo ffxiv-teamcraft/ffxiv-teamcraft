@@ -5280,7 +5280,7 @@
     "fr": "[NvObj 470] Outil secondaire du fiélon et équipement de spécialiste"
   },
   "1770429": {
-    "en": "Landsaint's Gear (IL 500)",
+    "en": "Landsaint Gear (IL 500)",
     "ja": "【ILv500】セイントランド装備",
     "de": "[G.-St. 500] Sammlerheiligen-Ausrüstung",
     "fr": "[NvObj 500] Outils et équipement de saint"
@@ -5322,22 +5322,22 @@
     "fr": "Mémoquartz allagois aphoristiques (magie)"
   },
   "1770436": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Allagan Tomestones of Aphorism (Other)",
+    "ja": "アラガントームストーン:経典の取引（その他）",
+    "de": "Allagische Steine des Aphorismus (Anderes)",
+    "fr": "Mémoquartz allagois aphoristiques (divers)"
   },
   "1770437": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Allagan Tomestones of Astronomy (DoW)",
+    "ja": "アラガントームストーン:天文の取引（ファイター）",
+    "de": "Allagische Steine der Astronomie (Krieger)",
+    "fr": "Mémoquartz allagois astronomiques (guerre)"
   },
   "1770438": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Allagan Tomestones of Astronomy (DoM)",
+    "ja": "アラガントームストーン:天文の取引（ソーサラー）",
+    "de": "Allagische Steine der Astronomie (Magier)",
+    "fr": "Mémoquartz allagois astronomiques (magie)"
   },
   "1770439": {
     "en": "",
@@ -5346,64 +5346,64 @@
     "fr": ""
   },
   "1770440": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unsung Relic of Asphodelos Exchange (DoW) I",
+    "ja": "朽ちた装備【辺獄】の取引（ファイターその1）",
+    "de": "Asphodeische Ausrüstung (Krieger I)",
+    "fr": "Équipements rouillés des Limbes (guerre 1)"
   },
   "1770441": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unsung Relic of Asphodelos Exchange (DoW) II",
+    "ja": "朽ちた装備【辺獄】の取引（ファイターその2）",
+    "de": "Asphodeische Ausrüstung (Krieger II)",
+    "fr": "Équipements rouillés des Limbes (guerre 2)"
   },
   "1770442": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unsung Relic of Asphodelos Exchange (DoM)",
+    "ja": "朽ちた装備【辺獄】の取引（ソーサラー）",
+    "de": "Asphodeische Ausrüstung (Magier)",
+    "fr": "Équipements rouillés des Limbes (magie)"
   },
   "1770443": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Asphodelos Mythos Exchange (DoW) I",
+    "ja": "辺獄の断章の取引（ファイターその1）",
+    "de": "Asphodeische Kodizes (Krieger I)",
+    "fr": "Codex des Limbes (guerre 1)"
   },
   "1770444": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Asphodelos Mythos Exchange (DoW) II",
+    "ja": "辺獄の断章の取引（ファイターその2）",
+    "de": "Asphodeische Kodizes (Krieger II)",
+    "fr": "Codex des Limbes (guerre 2)"
   },
   "1770445": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Asphodelos Mythos Exchange (DoM)",
+    "ja": "辺獄の断章の取引（ソーサラー）",
+    "de": "Asphodeische Kodizes (Magier)",
+    "fr": "Codex des Limbes (magie)"
   },
   "1770446": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Allagan Tomestones of Astronomy Exchange (Weapons)",
+    "ja": "アラガントームストーン:天文の取引（武器）",
+    "de": "Allagische Steine der Astronomie (Waffen)",
+    "fr": "Mémoquartz allagois astronomiques (armes)"
   },
   "1770447": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Radiant's Gear Augmentation (DoW) I",
+    "ja": "「レディアント装備」の強化（ファイターその1）",
+    "de": "Himmelsheer-Ausrüstung (Krieger I)",
+    "fr": "Échange d'équipements radieux (guerre 1)"
   },
   "1770448": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Radiant's Gear Augmentation (DoW) II",
+    "ja": "「レディアント装備」の強化（ファイターその2）",
+    "de": "Himmelsheer-Ausrüstung (Krieger II)",
+    "fr": "Échange d'équipements radieux (guerre 2)"
   },
   "1770449": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Radiant's Gear Augmentation (DoM)",
+    "ja": "「レディアント装備」の強化（ソーサラー）",
+    "de": "Himmelsheer-Ausrüstung (Magier)",
+    "fr": "Échange d'équipements radieux (magie)"
   },
   "1770450": {
     "en": "Job Gear (Tank)",
@@ -5568,10 +5568,10 @@
     "fr": "Insignes des contrats de chasse"
   },
   "1770477": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Purple Scrip Exchange (Lv. 90 Materials)",
+    "ja": "紫貨の取引：Lv90～向け素材",
+    "de": "Violette Scheine (ab St. 80, Materialien)",
+    "fr": "Assignats mauves : matériaux (Nv ≧ 90)"
   },
   "1770478": {
     "en": "White Scrip Exchange (Lv. 60/IL 200)",
