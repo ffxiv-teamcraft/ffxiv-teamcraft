@@ -35,7 +35,7 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
     filter(([query]) => query.length > 1),
     switchMap(([query, searchType]) => {
       this.loading = true;
-      return this.data.search(query, searchType, []);
+      return this.data.search(query.trim(), searchType, []);
     }),
     tap(() => this.loading = false)
   ));
