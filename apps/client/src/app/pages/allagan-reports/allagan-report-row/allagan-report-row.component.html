@@ -107,6 +107,15 @@
     </div>
   </div>
   <div nz-col nzMd="12" class="right-block" fxLayout="column">
+    <ng-container *ngIf="source === AllaganReportSource.SPEARFISHING">
+      <div *ngIf="data.spawn !== undefined">
+        {{'ALLAGAN_REPORTS.Spawn' | translate}}: {{data.spawn}}:00
+      </div>
+      <div *ngIf="data.spawn !== undefined">
+        {{'ALLAGAN_REPORTS.Duration' | translate}}: {{data.duration}}{{'TIMERS.Hours' | translate}} ({{data.spawn}}:00
+        - {{(data.spawn + data.duration) % 24}}:00)
+      </div>
+    </ng-container>
     <ng-container *ngIf="source === AllaganReportSource.FISHING">
       <div class="spot-name">
       </div>
