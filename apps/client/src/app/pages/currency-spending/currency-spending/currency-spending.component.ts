@@ -14,6 +14,7 @@ import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-currency-spending',
@@ -81,7 +82,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
         this.loading = true;
         return this.lazyData.getEntry('shops').pipe(
           map(shops => {
-            return shops.filter(shop => {
+            return uniqBy(shops.filter(shop => {
               return shop.trades.some(t => t.currencies.some(c => c.id === currency))
             }).map(shop => {
               return shop.trades
@@ -95,7 +96,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                     rate: +t.items[0].amount / currencyEntry.amount
                   };
                 })
-            }).flat()
+            }).flat(), 'item');
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
