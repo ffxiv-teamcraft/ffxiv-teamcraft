@@ -34,7 +34,6 @@
                     <ng-template #dohTitleTemplate>
                     <span [class.not-required]="!page.requiredForAchievement">
                       <app-i18n-name content="notebookDivision" [id]="page.divisionId" width="50"></app-i18n-name>
-                       ({{page.id}} {{page.divisionId}})
                       <span *ngIf="page.requiredForAchievement" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
                             nz-tooltip>*</span>
                       ({{getDohPageCompletion(page)}})
