@@ -169,7 +169,6 @@ export class I18nToolsService {
         break;
       }
       if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
-        console.log(key, array[key][language].toString(), array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-'), name.toLowerCase().replace(cleanupRegexp, '-'));
         res = +key;
         break;
       }
