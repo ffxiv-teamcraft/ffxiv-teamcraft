@@ -3,7 +3,7 @@
      [class.odd]="odd" class="item-row"
      fxLayout="row wrap" nz-row *ngIf="item$ | async as item">
   <ng-container *ngIf="alarmsDisplay$ | async as alarmsDisplay">
-    <div [nzSm]="alarmsDisplay.alarms?.length > 0?12:6" class="block left-block" nz-col nzMd="8" [nzXs]="overlay?12:24">
+    <div [nzSm]="alarmsDisplay.alarms?.length > 0?12:6" class="block left-block" nz-col [nzMd]="(layout?.showVendors || alarmsDisplay.alarms.length > 0) ? 8 : 12" [nzXs]="overlay?12:24">
       <div *ngIf="!item.custom" class="icon">
         <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
                        [width]="24" [forceCollectable]="item.collectable"></app-item-icon>
@@ -161,7 +161,7 @@
         </div>
       </div>
     </div>
-    <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24" *ngIf="!overlay">
+    <div class="block center-block" nz-col [nzMd]="(layout?.showVendors || alarmsDisplay.alarms.length > 0) ? 7 : 3" nzSm="12" nzXs="24" *ngIf="!overlay">
       <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <div *ngFor="let alarm of alarmsDisplay.alarms; trackBy: trackByAlarm"
              tutorialStep="TUTORIAL.LIST.Alarm_button"
