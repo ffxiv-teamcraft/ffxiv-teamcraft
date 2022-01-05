@@ -168,7 +168,7 @@ export class ShopsExtractor extends AbstractExtractor {
                 entry.id = StaticData.CURRENCIES[entry.id];
               }
 
-              if (specialShop.UseCurrencyType === 4 && entry.id < 100) {
+              if (specialShop.UseCurrencyType === 4 && entry.id < 10) {
                 entry.id = {...StaticData.CURRENCIES, ...StaticData.TOMESTONES}[entry.id];
               }
               return entry;
