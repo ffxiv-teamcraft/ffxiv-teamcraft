@@ -228,7 +228,7 @@
     "fast-json-patch": "^3.0.0-1",
     "file-saver": "^2.0.5",
     "firebase": "^9.6.1",
-    "firebase-tools": "^9.1.0",
+    "firebase-tools": "^10.0.1",
     "graphql": "^14.5.0",
     "graphql-tag": "^2.10.0",
     "hammerjs": "^2.0.8",
