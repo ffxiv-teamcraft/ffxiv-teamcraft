@@ -79,25 +79,23 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     this.results$ = combineLatest([this.currency$, this.server$]).pipe(
       switchMap(([currency, server]) => {
         this.loading = true;
-        return this.dataService.getItem(currency).pipe(
-          map((item: ItemData) => {
-            let entries = item.item.tradeCurrency?.filter(entry => entry.npcs.length > 0);
-
-            if (entries.length === 0 && item.item.tradeCurrency?.length > 0) {
-              entries = item.item.tradeCurrency;
-            }
-
-            return [].concat.apply([], entries.map(entry => {
-              return entry.listings.map(listing => {
-                const currencyEntry = listing.currency.find(c => +c.id === currency);
-                return {
-                  npcs: entry.npcs,
-                  item: +listing.item[0].id,
-                  HQ: listing.item[0].hq === 1,
-                  rate: listing.item[0].amount / currencyEntry.amount
-                };
-              });
-            }));
+        return this.lazyData.getEntry('shops').pipe(
+          map(shops => {
+            return shops.filter(shop => {
+              return shop.trades.some(t => t.currencies.some(c => c.id === currency))
+            }).map(shop => {
+              return shop.trades
+                .filter(t => t.currencies.some(c => c.id === currency))
+                .map(t => {
+                  const currencyEntry = t.currencies.find(c => +c.id === currency);
+                  return {
+                    npcs: shop.npcs,
+                    item: +t.items[0].id,
+                    HQ: +t.items[0].hq,
+                    rate: +t.items[0].amount / currencyEntry.amount
+                  };
+                })
+            }).flat()
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
@@ -136,9 +134,11 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                         const amountSoldLastWeek = Math.floor(mbRow.regularSaleVelocity * 7);
                         return <SpendingEntry>{
                           ...entry,
+                          HQ: entry.HQ === 1,
+                          itemID: entry.item,
                           npcs: getItemSource(extract, DataType.TRADE_SOURCES)
                             .filter(trade => trade.trades.some(t => t.currencies.some(c => c.id === currency)))
-                            .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)),
+                            .map(tradeSource => tradeSource.npcs.filter(npc => !npc.festival).map(npc => npc.id)).flat(),
                           price: avgPrice,
                           score: avgPrice / entry.rate * amountSoldLastWeek,
                           amountSoldLastWeek
