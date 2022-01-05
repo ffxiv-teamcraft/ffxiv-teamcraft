@@ -135,9 +135,9 @@ export class I18nToolsService {
     return name$.pipe(
       withLazyData(this.lazyData, 'craftActions', 'actions'),
       map(([baseName, craftActions, actions]) => {
-        let res = this.getIndexByName(craftActions, name, language, true);
+        let res = this.getIndexByName(craftActions, baseName, language, true);
         if (res === -1) {
-          res = this.getIndexByName(actions, name, language, true);
+          res = this.getIndexByName(actions, baseName, language, true);
         }
         if (res === -1) {
           throw new Error('Data row not found.');
@@ -159,7 +159,7 @@ export class I18nToolsService {
     if (flip) {
       keys = keys.reverse();
     }
-    const cleanupRegexp = /[^a-z\s,.]/;
+    const cleanupRegexp = /[^a-z\s,\u3000-\u303F\u3040-\u309F\u30A0-\u30FF\uFF00-\uFFEF\u4E00-\u9FAF\u2605-\u2606\u2190-\u2195\u3041-\u3096\u2E80-\u2FD5]/;
     for (const key of keys) {
       if (!array[key]) {
         continue;
@@ -169,6 +169,7 @@ export class I18nToolsService {
         break;
       }
       if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
+        console.log(key, array[key][language].toString(), array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-'), name.toLowerCase().replace(cleanupRegexp, '-'));
         res = +key;
         break;
       }

@@ -8,6 +8,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { I18nElement } from '../../../lazy-data/lazy-data-types';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-macro-translator',
@@ -35,13 +36,13 @@ export class MacroTranslatorComponent {
   ];
 
   private findActionsRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|["”“][^"”“]+["”“])?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|[\u3041-\u3096]|[\u2E80-\u2FD5]|\u203B)+|["”“][^"”“]+["”“])?.*/, 'i');
 
 
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
-  constructor(private lazyData: LazyDataFacade) {
+  constructor(private lazyData: LazyDataFacade, private i18n: I18nToolsService) {
   }
 
   translateMacro(): void {
@@ -143,9 +144,9 @@ export class MacroTranslatorComponent {
             language = 'en';
           }
         }
-        let resultIndex = this.getIndexByName(craftActions, name, language, true);
+        let resultIndex = this.i18n.getIndexByName(craftActions, name, language, true);
         if (resultIndex === -1) {
-          resultIndex = this.getIndexByName(actions, name, language, true);
+          resultIndex = this.i18n.getIndexByName(actions, name, language, true);
         }
         if (name === 'Scrutiny' && language === 'en') {
           resultIndex = 22185;
@@ -162,37 +163,4 @@ export class MacroTranslatorComponent {
       })
     );
   }
-
-  public getIndexByName(array: I18nElement, name: string, language: string, flip = false): number {
-    if (array === undefined) {
-      return -1;
-    }
-    if (['en', 'fr', 'de', 'ja', 'ko', 'zh'].indexOf(language) === -1) {
-      language = 'en';
-    }
-    let res = -1;
-    let keys = Object.keys(array);
-    if (flip) {
-      keys = keys.reverse();
-    }
-    const cleanupRegexp = /[^a-z\s,.]/;
-    for (const key of keys) {
-      if (!array[key]) {
-        continue;
-      }
-      if (array[key].name && array[key].name[language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
-        res = +key;
-        break;
-      }
-      if (array[key][language] && array[key][language].toString().toLowerCase().replace(cleanupRegexp, '-') === name.toLowerCase().replace(cleanupRegexp, '-')) {
-        res = +key;
-        break;
-      }
-    }
-    if (['ko', 'zh'].indexOf(language) > -1 && res === -1) {
-      return this.getIndexByName(array, name, 'en');
-    }
-    return res;
-  }
-
 }
