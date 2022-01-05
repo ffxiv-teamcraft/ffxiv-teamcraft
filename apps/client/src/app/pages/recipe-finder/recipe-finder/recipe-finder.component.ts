@@ -137,7 +137,7 @@ export class RecipeFinderComponent implements OnDestroy {
         this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
         this.settings.showOnlyLeveItemsInRecipeFinder = onlyLeveItems;
         const possibleEntries = [];
-        for (const item of this.pool) {
+        for (const item of this.pool.filter(i => i.id > 100)) {
           possibleEntries.push(...(recipesIngredientLookup.searchIndex[item.id] || [])
             .map(id => recipesIngredientLookup.recipes[id])
             .filter(entry => {
@@ -150,6 +150,10 @@ export class RecipeFinderComponent implements OnDestroy {
             }));
         }
         const uniquified = _.uniqBy(possibleEntries, 'recipeId');
+        const indexedPool = this.pool.reduce((acc, item) => {
+          acc[item.id] = item;
+          return acc;
+        }, {});
         // Now that we have all possible recipes, let's filter and rate them
         const finalEntries = uniquified.map(entry => {
           const jobSet = sets.find(set => entry.job === set.jobId);
@@ -158,7 +162,7 @@ export class RecipeFinderComponent implements OnDestroy {
             // Ignore crystals
             .filter(i => i.id > 19)
             .map(i => {
-              const poolItem = this.pool.find(item => item.id === i.id);
+              const poolItem = indexedPool[i.id];
               if (!poolItem) {
                 return i;
               } else {
@@ -235,6 +239,9 @@ export class RecipeFinderComponent implements OnDestroy {
   }
 
   public canCraft(entry: any, amount: number): boolean {
+    if (amount > 9999) {
+      return false;
+    }
     const allAvailableIngredients = entry.ingredients.filter(i => this.pool.some(item => i.id === item.id));
     const neededIngredients = allAvailableIngredients
       // Ignore crystals
