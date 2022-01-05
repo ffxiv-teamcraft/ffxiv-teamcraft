@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.3.9"></a>
+## [9.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.8...v9.3.9) (2022-01-05)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed spawn data not showing on spearfishing ([2bfb15c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2bfb15c))
+* **currency-spending:** fixed npc name sometimes missing ([9c7baa8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c7baa8))
+* **db:** fixed some old links to faux leaves ([97f4fda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97f4fda))
+* **db:** fixed wolf mark trades not using right currency ([feb49bc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/feb49bc))
+* **i18n:** fixed some japanese action names not being parsed properly ([4c90691](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c90691))
+* **layout:** grid optimizations for better list display ([167536a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/167536a))
+* **log-tracker:** remove useless ids shown in parenthesis ([442ad72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/442ad72))
+* **profile:** added new masterbooks to masterbooks popup ([8059348](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8059348))
+* **recipe-finder:** fixed finder sometimes running forever ([80c2f04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80c2f04))
+
+
+
 <a name="9.3.8"></a>
 ## [9.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.7...v9.3.8) (2022-01-04)
 
