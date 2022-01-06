@@ -311,7 +311,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       filter(res => res && res.rotation.length > 0),
       withLazyData(this.lazyData, 'foods', 'medicines')
     ).subscribe(([rotation, lazyFoods, lazyMedicines]) => {
-      console.log('APPLIED?');
 
       const foods = this.consumablesService.fromLazyData(lazyFoods);
       const medicines = this.consumablesService.fromLazyData(lazyMedicines);

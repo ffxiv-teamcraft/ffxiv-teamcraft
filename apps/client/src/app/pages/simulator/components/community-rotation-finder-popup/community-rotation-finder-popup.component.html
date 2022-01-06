@@ -1,3 +1,11 @@
+<nz-card>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <div><label nz-checkbox [ngModel]="showRotationsAboveStats$ | async" (ngModelChange)="showRotationsAboveStats$.next($event)"></label></div>
+      <div>{{'SIMULATOR.Show_rotations_above_stats' | translate}}</div>
+    </div>
+  </div>
+</nz-card>
 <div fxLayout="column" fxLayoutGap="10px" *ngIf="rotations$ | async as rows; else loader">
   <nz-empty *ngIf="rows.length === 0" [nzNotFoundContent]="'SIMULATOR.No_matching_rotations' | translate"></nz-empty>
   <nz-divider *ngIf="rows.length > 0" [nzText]="'SIMULATOR.Click_on_rotation' | translate"></nz-divider>
@@ -47,6 +55,7 @@
       </div>
     </div>
   </nz-card>
+  <button nz-button *ngIf="rows.length === 3" nzType="primary" nzBlock (click)="amountToShow$.next(5)">{{'COMMON.Show_more' | translate}}</button>
 </div>
 <ng-template #loader>
   <app-page-loader [loading]="true" [message]="'SIMULATOR.Searching_for_rotation' | translate"></app-page-loader>
