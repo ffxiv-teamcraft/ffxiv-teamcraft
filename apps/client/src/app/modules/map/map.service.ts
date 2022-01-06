@@ -56,6 +56,12 @@ export class MapService {
     if (aetheryte.id === 173 && target.y > 15) {
       distance *= 2;
     }
+    if (aetheryte.id === 147 && target.y > 24) {
+      distance *= 2;
+    }
+    if (aetheryte.id === 148 && target.y <= 24) {
+      distance *= 2;
+    }
     return distance;
   }
 
