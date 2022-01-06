@@ -1,97 +1,109 @@
 <ng-container *ngIf="rotation$ | async as rotation">
   <div *ngIf="!rotation.notFound; else notFound" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-    <div class="buttons" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="buttons" [class.expanded]="(showFullButtons$ | async)" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
       <button (click)="saveRotationAsNew(rotation)" *ngIf="rotation.$key !== undefined"
               [nzTooltipTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
               nz-tooltip
               tutorialStep="TUTORIAL.SIMULATOR.Save_as_new"
               tutorialStepAlign="right"
               tutorialStepIndex="0"
-              nzShape="circle" nzType="primary">
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              nzType="primary">
         <i nz-icon nzType="copy"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Save_as_new' | translate}}</span>
       </button>
       <button (click)="saveRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 30"
               [nzTooltipTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
-              nzShape="circle" nzType="primary">
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'" nzType="primary">
         <i nz-icon nzType="save"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Persist' | translate}}</span>
       </button>
       <ng-container *ngIf="dirty">
         <button (nzOnConfirm)="resetToSavedRotation(rotation)"
                 [nzTooltipTitle]="'SIMULATOR.Reset_saved' | translate"
                 [nzPopconfirmTitle]="'Confirmation' | translate"
                 nz-button nz-popconfirm nz-tooltip
-                nzShape="circle"
+                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
                 nzType="primary">
           <i nz-icon nzType="rollback" nzTheme="outline"></i>
+          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset_saved' | translate}}</span>
         </button>
       </ng-container>
       <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
               nz-button nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="redo"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Convert_rotation' | translate}}</span>
       </button>
       <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
               [nzTooltipTitle]="'SIMULATOR.Reset' | translate"
               [nzPopconfirmTitle]="'Confirmation' | translate"
               nz-button nz-popconfirm nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="reload"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset' | translate}}</span>
       </button>
       <button (click)="importFromCraftingOptimizer()"
               [nzTooltipTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
               nz-button nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="download"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}</span>
       </button>
       <button [clipboardSuccessMessage]="'SIMULATOR.Export_copied' | translate"
               [clipboard]="getCraftOptExportString"
               [disabled]="actions$.value.length === 0"
               [nzTooltipTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
               nz-button nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="upload"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Export_crafting_optimizer' | translate}}</span>
       </button>
       <button (click)="importFromXIVMacro()" [nzTooltipTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
               tutorialStepAlign="right"
               tutorialStepIndex="1"
               nzType="primary">
         <i nz-icon nzType="select"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Import_macro' | translate}}</span>
       </button>
       <button (click)="openMacroPopup(simulation)" *ngIf="simulation$ | async as simulation"
               [disabled]="actions$.value.length === 0" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate"
               nz-button
               nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               tutorialStep="TUTORIAL.SIMULATOR.Generate_ingame_macro"
               tutorialStepAlign="right"
               tutorialStepIndex="2"
               nzType="primary" class="text-icon">
         <span class="text-icon">XIV</span>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Generate_ingame_macro' | translate}}</span>
       </button>
       <button (click)="openMinStatsPopup(simulation)" *ngIf="simulation$ | async as simulation"
               [nzTooltipTitle]="'SIMULATOR.Min_stats' | translate" nz-button
               nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="safety-certificate"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Min_stats' | translate}}</span>
       </button>
       <button (click)="openStepByStepReportPopup(resultData)" *ngIf="result$ | async as resultData"
               [nzTooltipTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
               nz-tooltip
-              nzShape="circle"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
               nzType="primary">
         <i nz-icon nzType="ordered-list"></i>
+        <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Step_by_step_report' | translate}}</span>
       </button>
       <ng-container *ngIf="crafterStats$ | async as stats">
         <button (click)="openSharePopup(rotation, stats)"
                 *ngIf="rotation.$key"
-                [nzShape]="'circle'"
+                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
                 [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                 tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
                 tutorialStepAlign="right"
@@ -99,33 +111,37 @@
                 [nzType]="'primary'"
                 nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
+          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Share_button_tooltip' | translate}}</span>
         </button>
-        <button (click)="findRotation(stats)" [nzShape]="'circle'"
+        <button (click)="findRotation(stats)"
+                [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
                 [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
           <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
+          <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Find_rotation' | translate}}</span>
         </button>
       </ng-container>
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
                   [disabled]="tips?.length === 0"
-                  [nzShape]="'circle'"
-                  [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate" [nzType]="'primary'"
+                  [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+                  [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate"
+                  [nzType]="'primary'"
                   nz-button
                   nz-tooltip>
             <i nz-icon nzType="bulb"></i>
+            <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Rotation_tips' | translate}}</span>
           </button>
         </nz-badge>
       </ng-container>
-      <app-favorite-button *ngIf="rotation.$key" [key]="rotation.$key" type="rotations"></app-favorite-button>
       <ng-container *ngIf="simulation$ | async as simulation">
         <ng-container *ngIf="crafterStats$ | async as stats">
           <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
-                  [nzShape]="'circle'"
+                  [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
                   [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
                   nz-button
                   nz-tooltip
@@ -135,13 +151,16 @@
         </ng-container>
       </ng-container>
       <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
-              [nzShape]="'circle'" [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
               nz-button
               nz-popconfirm>
         <i nz-icon nzType="desktop"></i>
       </button>
+      <app-favorite-button *ngIf="rotation.$key" [key]="rotation.$key" type="rotations"></app-favorite-button>
     </div>
-    <div class="simulator" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+    <div class="simulator" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px"
+         [class.buttons-collapsed]="!(showFullButtons$ | async)" [class.buttons-expanded]="(showFullButtons$ | async)">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <nz-tag *ngIf="rotation.public" [nzColor]="'geekblue'">
           {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
@@ -165,6 +184,13 @@
                        [ngModel]="safeMode$ | async"></nz-switch>
           </div>
           <div>{{'SIMULATOR.Safe_mode' | translate}}</div>
+        </div>
+        <div fxFlex="1 1 auto"></div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div>
+            <nz-switch [ngModel]="(showFullButtons$ | async)" (ngModelChange)="showFullButtons$.next($event)"></nz-switch>
+          </div>
+          <div>{{'SIMULATOR.Full_buttons' | translate}}</div>
         </div>
       </div>
       <nz-collapse>

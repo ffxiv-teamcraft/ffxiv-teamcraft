@@ -74,6 +74,7 @@ import { safeCombineLatest } from '../../../../core/rxjs/safe-combine-latest';
 import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 import { observeInput } from '../../../../core/rxjs/observe-input';
 import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
+import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-simulator',
@@ -124,6 +125,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   public report$: Observable<SimulationReliabilityReport>;
 
   public tips$: Observable<RotationTip[]>;
+
+  public showFullButtons$ = new LocalStorageBehaviorSubject('simulator:full-buttons', false);
 
   public customStats$: ReplaySubject<CrafterStats> = new ReplaySubject<CrafterStats>();
 
