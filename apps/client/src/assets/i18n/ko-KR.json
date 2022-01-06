@@ -1038,7 +1038,7 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Find_rotation": "커뮤니티 로테이션 검색기",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
     "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
@@ -1052,6 +1052,7 @@
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
