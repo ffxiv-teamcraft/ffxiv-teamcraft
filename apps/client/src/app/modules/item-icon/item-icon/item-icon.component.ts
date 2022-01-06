@@ -103,6 +103,7 @@ export class ItemIconComponent {
 
   handleClick(event: MouseEvent): void {
     event.preventDefault();
+    event.stopPropagation();
     if (this.disableClick) {
       return;
     }
