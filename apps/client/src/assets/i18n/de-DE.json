@@ -1038,7 +1038,7 @@
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
-    "Find_rotation": "Community Rotationen Finder",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Suche nach Community Rotationen…",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
@@ -1052,6 +1052,7 @@
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
