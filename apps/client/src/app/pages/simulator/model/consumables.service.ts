@@ -2,6 +2,7 @@ import { BonusType } from './consumable-bonus';
 import { Injectable } from '@angular/core';
 import { Consumable } from './consumable';
 import { ConsumableDataRow } from './consumable-data-row';
+import { FreeCompanyAction } from './free-company-action';
 
 @Injectable()
 export class ConsumablesService {
@@ -49,5 +50,49 @@ export class ConsumablesService {
       }
       return consumables;
     }));
+  }
+
+  getBonusValue(bonusType: BonusType, baseValue: number, food: Consumable, medicine: Consumable, fcActions: FreeCompanyAction[]): number {
+    let bonusFromFood = 0;
+    let bonusFromMedicine = 0;
+    let bonusFromFreeCompanyAction = 0;
+
+    if (food) {
+      const foodBonus = food.getBonus(bonusType);
+      if (foodBonus !== undefined) {
+        bonusFromFood = Math.floor(baseValue * foodBonus.value);
+        if (bonusFromFood > foodBonus.max) {
+          bonusFromFood = foodBonus.max;
+        }
+      }
+    }
+    if (medicine) {
+      const medicineBonus = medicine.getBonus(bonusType);
+      if (medicineBonus !== undefined) {
+        bonusFromMedicine = Math.floor(baseValue * medicineBonus.value);
+        if (bonusFromMedicine > medicineBonus.max) {
+          bonusFromMedicine = medicineBonus.max;
+        }
+      }
+    }
+
+    if (fcActions) {
+      bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType, fcActions);
+    }
+
+    return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction;
+  }
+
+
+
+  getFreeCompanyActionValue(bonusType: BonusType, actions: FreeCompanyAction[]): number {
+    let value = 0;
+    const action = actions.find(a => a.type === bonusType);
+
+    if (action !== undefined) {
+      value = action.value;
+    }
+
+    return value;
   }
 }

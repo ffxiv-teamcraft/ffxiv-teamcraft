@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CraftingRotationService } from '../../../../core/database/crafting-rotation/crafting-rotation.service';
 import {
   Craft,
+  CrafterLevels,
   CrafterStats,
   CraftingAction,
   SimulationReliabilityReport,
@@ -11,9 +12,12 @@ import {
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
+import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
+import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
+import { ConsumablesService } from '../../model/consumables.service';
 
 @Component({
   selector: 'app-community-rotation-finder-popup',
@@ -38,7 +42,8 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
 
   constructor(private rotationsService: CraftingRotationService,
               private modalRef: NzModalRef, private simulationService: SimulationService,
-              private settings: SettingsService, public translate: TranslateService) {
+              private settings: SettingsService, public translate: TranslateService,
+              private lazyData: LazyDataFacade, public consumablesService: ConsumablesService) {
   }
 
   private get simulator() {
@@ -57,11 +62,35 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
       tags: [],
       name: ''
     }).pipe(
-      map(rotations => {
-        return rotations.slice(0, 20)
+      withLazyData(this.lazyData, 'foods', 'medicines'),
+      map(([rotations, lazyFoods, lazyMedicines]) => {
+        const foods = this.consumablesService.fromLazyData(lazyFoods);
+        const medicines = this.consumablesService.fromLazyData(lazyMedicines);
+        return rotations.slice(0, 40)
           .map(rotation => {
+            let food = null;
+            let medicine = null;
+            if (rotation.food) {
+              food = foods.find(f => f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+            }
+            if (rotation.medicine) {
+              medicine = medicines.find(m => m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+            }
+            const bonuses = {
+              craftsmanship: this.consumablesService.getBonusValue('Craftsmanship', this.stats.craftsmanship, food, medicine, []),
+              control: this.consumablesService.getBonusValue('Control', this.stats._control, food, medicine, []),
+              cp: this.consumablesService.getBonusValue('CP', this.stats.cp, food, medicine, [])
+            };
+            const statsWithConsumables = new this.simulator.CrafterStats(
+              this.stats.jobId,
+              this.stats.craftsmanship + bonuses.craftsmanship,
+              this.stats._control + bonuses.control,
+              this.stats.cp + bonuses.cp,
+              this.stats.specialist,
+              this.stats.level,
+              this.stats.levels as CrafterLevels);
             const actions = this.simulator.CraftingActionsRegistry.deserializeRotation(rotation.rotation);
-            const simulation = new this.simulator.Simulation(this.recipe, actions, this.stats);
+            const simulation = new this.simulator.Simulation(this.recipe, actions, statsWithConsumables);
             const result = simulation.run();
             const reliability = simulation.getReliabilityReport();
             return {
@@ -74,15 +103,18 @@ export class CommunityRotationFinderPopupComponent implements OnInit {
             };
           })
           .sort((a, b) => {
-            return (b.reliability.averageHQPercent * b.reliability.successPercent)
-              - (a.reliability.averageHQPercent * a.reliability.successPercent);
+            if(a.reliability.successPercent === b.reliability.successPercent){
+              return b.reliability.averageHQPercent - a.reliability.averageHQPercent;
+            }
+            return b.reliability.successPercent - a.reliability.successPercent;
           })
           .slice(0, 3);
-      })
+      }),
+      first()
     );
   }
 
-  select(rotation: CraftingAction[]): void {
+  select(rotation: CraftingRotation): void {
     this.modalRef.close(rotation);
   }
 

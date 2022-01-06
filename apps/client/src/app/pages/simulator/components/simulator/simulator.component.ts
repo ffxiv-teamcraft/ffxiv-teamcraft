@@ -293,24 +293,48 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     return this.simulator.CraftingActionsRegistry;
   }
 
-  findRotation(): void {
+  findRotation(stats: CrafterStats): void {
     this.simulation$.pipe(
       first(),
       switchMap(simulation => {
-        return this.dialog.create({
+        return this.dialog.create<CommunityRotationFinderPopupComponent, CraftingRotation>({
           nzFooter: null,
           nzContent: CommunityRotationFinderPopupComponent,
           nzComponentParams: {
             recipe: simulation.recipe,
-            stats: simulation.crafterStats
+            stats: stats
           },
           nzWidth: '60vw',
           nzTitle: this.translate.instant('SIMULATOR.Find_rotation')
         }).afterClose;
       }),
-      filter(res => res && res.length > 0)
-    ).subscribe(rotation => {
-      this.actions$.next([...rotation]);
+      filter(res => res && res.rotation.length > 0),
+      withLazyData(this.lazyData, 'foods', 'medicines')
+    ).subscribe(([rotation, lazyFoods, lazyMedicines]) => {
+      console.log('APPLIED?');
+
+      const foods = this.consumablesService.fromLazyData(lazyFoods);
+      const medicines = this.consumablesService.fromLazyData(lazyMedicines);
+
+      if (rotation.food) {
+        this.selectedFood = foods.find(f => f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+      } else {
+        delete this.selectedFood;
+      }
+      if (rotation.medicine) {
+        this.selectedMedicine = medicines.find(m => m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+      } else {
+        delete this.selectedMedicine;
+      }
+      if (rotation.freeCompanyActions) {
+        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
+      } else {
+        this.selectedFreeCompanyActions = [];
+      }
+      this.applyConsumables(stats);
+      this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
+      this.stepStates$.next({});
+
       this.dirty = true;
       this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
     });
@@ -664,53 +688,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   applyConsumables(crafterStats: CrafterStats): void {
     this.dirtyConsumables = false;
     this.bonuses$.next({
-      craftsmanship: this.getBonusValue('Craftsmanship', crafterStats.craftsmanship),
-      control: this.getBonusValue('Control', crafterStats._control),
-      cp: this.getBonusValue('CP', crafterStats.cp)
+      craftsmanship: this.consumablesService.getBonusValue('Craftsmanship', crafterStats.craftsmanship, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || []),
+      control: this.consumablesService.getBonusValue('Control', crafterStats._control, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || []),
+      cp: this.consumablesService.getBonusValue('CP', crafterStats.cp, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || [])
     });
-  }
-
-  getBonusValue(bonusType: BonusType, baseValue: number): number {
-    let bonusFromFood = 0;
-    let bonusFromMedicine = 0;
-    let bonusFromFreeCompanyAction = 0;
-
-    if (this.selectedFood !== undefined && this.selectedFood !== null) {
-      const foodBonus = this.selectedFood.getBonus(bonusType);
-      if (foodBonus !== undefined) {
-        bonusFromFood = Math.floor(baseValue * foodBonus.value);
-        if (bonusFromFood > foodBonus.max) {
-          bonusFromFood = foodBonus.max;
-        }
-      }
-    }
-    if (this.selectedMedicine !== undefined && this.selectedMedicine !== null) {
-      const medicineBonus = this.selectedMedicine.getBonus(bonusType);
-      if (medicineBonus !== undefined) {
-        bonusFromMedicine = Math.floor(baseValue * medicineBonus.value);
-        if (bonusFromMedicine > medicineBonus.max) {
-          bonusFromMedicine = medicineBonus.max;
-        }
-      }
-    }
-
-    if (this.selectedFreeCompanyActions !== undefined && this.selectedFreeCompanyActions !== null) {
-      bonusFromFreeCompanyAction = this.getFreeCompanyActionValue(bonusType);
-    }
-
-    return bonusFromFood + bonusFromMedicine + bonusFromFreeCompanyAction;
-  }
-
-  getFreeCompanyActionValue(bonusType: BonusType): number {
-    let value = 0;
-    const actions = this.selectedFreeCompanyActions || [];
-    const action = actions.find(a => a.type === bonusType);
-
-    if (action !== undefined) {
-      value = action.value;
-    }
-
-    return value;
   }
 
   getFreeCompanyActions(type: string): FreeCompanyAction[] {
@@ -788,9 +769,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         rotation: rotation,
         simulation: simulation.clone(),
         bonuses: {
-          craftsmanship: this.getBonusValue('Craftsmanship', stats.craftsmanship),
-          control: this.getBonusValue('Control', stats._control),
-          cp: this.getBonusValue('CP', stats.cp)
+          craftsmanship: this.consumablesService.getBonusValue('Craftsmanship', stats.craftsmanship, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || []),
+          control: this.consumablesService.getBonusValue('Control', stats._control, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || []),
+          cp: this.consumablesService.getBonusValue('CP', stats.cp, this.selectedFood, this.selectedMedicine, this.selectedFreeCompanyActions || [])
         }
       },
       nzTitle: this.translate.instant('SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup'),
