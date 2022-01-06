@@ -3,7 +3,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { combineLatest, Observable } from 'rxjs';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
@@ -82,7 +82,9 @@ export class FavoritesComponent {
       })
     );
 
-    this.rotationFolders$ = this.rotationFoldersFacade.favoriteRotationFolders$;
+    this.rotationFolders$ = this.rotationFoldersFacade.favoriteRotationFolders$.pipe(
+      first()
+    );
   }
 
 }
