@@ -1038,7 +1038,7 @@
     "Current_control": "現在加工熟練度: {{value}}",
     "Current_control_bonus": "現在のボーナス",
     "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
-    "Find_rotation": "コミュニティースキル回しファイダー",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "要求に合致するコミュニティスキル回しが見つかりませんでした。",
     "Click_on_rotation": "スキル回しをクリックして選択します",
@@ -1052,6 +1052,7 @@
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "最高品質",
       "Good": "高品質",
