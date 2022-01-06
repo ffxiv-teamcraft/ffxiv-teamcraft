@@ -1038,7 +1038,7 @@
     "Current_control": "当前加工精度：{{value}}",
     "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
-    "Find_rotation": "共享手法搜索",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "没有找到符合您需求的共享手法",
     "Click_on_rotation": "点击一个手法来选择它",
@@ -1052,6 +1052,7 @@
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
