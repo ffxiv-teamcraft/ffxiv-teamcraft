@@ -1038,7 +1038,7 @@
     "Current_control": "Текущее значение контроля: {{value}}",
     "Current_control_bonus": "Текущий бонус",
     "Macrolock": "Добавить блокировку макроса",
-    "Find_rotation": "Поиск ротации сообщества",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "Ротация сообщества не найдена в соответствии с вашим запросом",
     "Click_on_rotation": "Нажмите на ротацию для выбора",
@@ -1052,6 +1052,7 @@
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
