@@ -24,7 +24,7 @@
   "Change_character": "角色",
   "Check_guides": "查阅我们的指南",
   "Guides_links": "TC引导手册",
-  "Db_ban": "You do not have permission to post comments on database due to your previous activity in database comments. If you would like to discuss this ban, please DM Miu#1568 on Discord.",
+  "Db_ban": "由于您之前在数据库评论的活动，您当前没有发表评论的权限。如果您对此有任何意见，请到Discord联系Miu#1568。",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -105,7 +105,7 @@
     "Patreon_supporters": "Patreon 支持者",
     "Contributors": "贡献者"
   },
-  "Patreon_login_success": "Patreon login success!",
+  "Patreon_login_success": "Patreon 登录成功！",
   "Hide_if_empty": "隐藏空栏",
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
@@ -129,9 +129,9 @@
     "Tags_filter_reset": "重置标签筛选",
     "Exclude_filter_placeholder": "通过标签排除",
     "Exclude_filter_reset": "重置排除过滤器",
-    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
-    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Name_filter_placeholder": "输入名称搜索(最小5个字符)",
+    "No_lists_matching": "没有符合搜索规则的清单，请确保你至少选择了一个标签和/或一个长度至少为5个字符的名称",
+    "Search": "搜索"
   },
   "COMMON": {
     "Length": "长度",
@@ -149,8 +149,8 @@
     "Copy_to_clipboard": "复制",
     "Language": "语言",
     "Opened_in_desktop": "此页面已在客户端中打开，你可以现在关闭本页了。",
-    "Opened_in_desktop_setting": "You can disable this behavior inside the Settings",
-    "Opened_in_desktop_button": "Or by clicking this button",
+    "Opened_in_desktop_setting": "你可以在设置中禁用此行为",
+    "Opened_in_desktop_button": "或者通过点击此按钮",
     "Open_in_desktop": "在客户端中打开",
     "Admin": "管理员",
     "Moderator": "管理员",
