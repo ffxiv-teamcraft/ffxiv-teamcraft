@@ -1,6 +1,7 @@
 {
   "functions": {
-    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build"
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build",
+    "runtime": "nodejs14"
   },
   "hosting": {
     "public": "dist/apps/client",
