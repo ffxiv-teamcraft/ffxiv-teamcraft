@@ -2868,8 +2868,8 @@
     "NIGHT": "Night"
   },
   "UPDATER": {
-    "New_update_available": "A new update is available and has been downloaded",
-    "Restart_to_install": "Do you want to restart now to apply it?"
+    "New_update_available": "已下载新的版本",
+    "Restart_to_install": "你想要现在重启以安装更新吗？"
   },
   "NODE_TYPE": {
     "Mining": "Mining",
