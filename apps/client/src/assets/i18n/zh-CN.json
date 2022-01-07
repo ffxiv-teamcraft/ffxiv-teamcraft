@@ -1331,15 +1331,15 @@
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
       "Public_lists": "从共享社区复制现成的清单。共享社区里有玩家分享的各等级段理符、制作笔记、飞空艇、毕业套等所有你感兴趣的生产清单。",
       "Alarms": "闹钟使你不会错过限时/未知/传承采集点。分文件夹管理闹钟、导入到游戏——一切皆有可能。",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required book, and more!",
-      "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
+      "Gathering_location": "寻找采集物品信息，创建闹钟，获得采集点地图位置、最近传送点、所需传承录，还有更多！",
+      "Rotations": "使用生产模拟器创建生产手法并即时测试，您还可以使用生产模拟器来检验您的理论手法！",
       "Levequests": "查找特定职业/等级的理符，查看报酬，并创建清单。",
-      "Macro_translation": "Got some macros but not in your language? Go to macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "拿到一个制作宏但不是中文的？使用宏转换器可以将其转换为任意语言！"
     }
   },
   "UPDATE": {
-    "New_update_available": "A new update is available!",
-    "New_update_available_desktop": "A new update is available!\nClick here to download and install it.",
+    "New_update_available": "发现新版本！",
+    "New_update_available_desktop": "发现新版本！\n点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。",
     "Downloading_update": "正在下载更新，完成后会提醒您进行安装",
     "Possible_update_issue": "下载过程中遇到问题，请点击此图标下载最新的安装包。"
@@ -1360,7 +1360,7 @@
     "Required_for_achievement": "成就所需",
     "Select_spot": "选择地点以查看其详情",
     "Hide_completed": "隐藏已完成的配方",
-    "Show_not_required": "Show items not required for achievement",
+    "Show_not_required": "显示成就无关的物品",
     "Hide_completed_items": "隐藏已完成的物品",
     "MIN_optimized_path": "为所有采矿工采集点优化的路径",
     "BTN_optimized_path": "为所有园艺工采集点优化的路径",
@@ -1381,7 +1381,7 @@
     }
   },
   "LOADING_SCREEN": {
-    "Loading_data": "Loading items, actions, and more!"
+    "Loading_data": "正在载入物品、技能和其它信息！"
   },
   "CUSTOM_ITEMS": {
     "Title": "自定义物品",
@@ -1446,7 +1446,7 @@
       "Format": "格式",
       "Folder": "文件夹",
       "No_folder": "没有文件夹",
-      "Parsing_file": "Parsing file content…",
+      "Parsing_file": "正在解析文件内容……",
       "Saving_items": "正在保存 ({{done}}/{{todo}})"
     }
   },
@@ -1466,7 +1466,7 @@
     "Job": "职业",
     "Level": "分解技能",
     "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
-    "Loading_message": "Loading…",
+    "Loading_message": "正在加载……",
     "TAGS": {
       "Higher_chances": "成功率高",
       "Lower_exp": "经验少",
@@ -1558,8 +1558,8 @@
       "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
       "X_Equipped": "已装备 {{amount}}：",
       "Item_series": "套装详情",
-      "Requires_fate_rank": "Requires FATE rank {{rank}}",
-      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
+      "Requires_fate_rank": "所需危命任务完成度 {{rank}}",
+      "Requires_gc_rank": "所需大国防联军军衔 {{rank}}"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1749,7 +1749,7 @@
       "No_comments": "暂无评论",
       "Post": "发布",
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)",
-      "Disclaimer": "Database comments are meant to be useful additional informations, using them to complain about the game or its content may result in a restriction to post comments."
+      "Disclaimer": "数据库评论意在传达有用的额外信息，滥用数据库评论以抱怨游戏内容可能导致会导致您的评论发表功能受限。"
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
@@ -1834,7 +1834,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "Got too much of a currency? Select your currency, set an amount, a server and find which item is the best to buy to get gil from your currencies!",
+    "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
@@ -1918,7 +1918,7 @@
     "Banner_description": "您可以启用数据包捕获功能，以允许 Teamcraft 读取游戏的数据包（设置中也提供了此功能的开关）。此功能可以在您获得物品时自动填写清单中的内容，并向市场聚合平台 Universalis 贡献数据。",
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
-    "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
     "Please_sort": "TeamCraft 需要扫描你当前的角色才能使用背包相关功能。请在游戏中整理你的背包或者返回标题界面再登录游戏。",
     "Unknown_character": "未知游戏角色",
     "No_character_id": "未设置游戏内角色 ID",
@@ -1937,8 +1937,8 @@
     "Install_npcap": "您未安装 Npcap",
     "Install_npcap_description": "为在默认的 Npcap 下使用 Teamcraft 的数据包捕获功能，您需要安装 Npcap。Teamcraft 可以帮你安装并在安装完成后自动重启本应用。",
     "Install_npcap_button": "安装 Npcap 并重启 Teamcraft",
-    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
+    "Not_as_anonymous": "在未登录状态下数据包捕获可能不会正常工作。",
+    "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
@@ -1988,11 +1988,11 @@
     "Unhide_optimizer": "不再隐藏此优化器",
     "Remove_ignore_container": "不再忽略对此物品栏的提示",
     "Show_ignored": "显示被忽略的物品",
-    "Hide_empty": "Hide empty optimizers",
+    "Hide_empty": "隐藏空的优化栏",
     "Show_hidden": "显示隐藏的优化器",
     "No_optimizations": "没有可用的优化",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
-    "Pause_tracking": "Pause inventory tracking",
+    "Optimization_copied": "优化已以JSON形式复制到剪贴板",
+    "Pause_tracking": "暂停物品栏追踪",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
       "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。",
@@ -2207,7 +2207,7 @@
     "DESYNTH": {
       "Job": "选择你想要提升等级的职业",
       "Level": "输入分解技能值（而非职业等级）",
-      "Search": "Click search, and it's done!"
+      "Search": "点击搜索即可！"
     },
     "RESET_TIMERS": {
       "Toggle": "打开此开关可以为对应的计时器设置闹钟"
@@ -2249,7 +2249,7 @@
         "Welcome_add_column": "欢迎来到面板布局编辑器，您可以使用此按钮添加列 (最多5列)。",
         "Save": "在您编辑面板后不要忘记保存您的修改。",
         "Revert": "又或者，如果你不喜欢这么做，请在编辑之前用这个回到原来的布局。",
-        "Delete_column": "Want to remove a column? Here it is!",
+        "Delete_column": "想要删除一列吗？这里！",
         "Add_panel": "点击此处添加一个新面板。",
         "Reorder": "您可以使用拖放来移动任何您想要的面板。",
         "Data_type": "首先，请选择您想要使用的计量方式。",
@@ -2585,16 +2585,16 @@
     "Selling": "出售中（{{amount}} 件）",
     "X_items": "{{amount}} 个物品",
     "Task_complete": "委托完成",
-    "No_task": "No task",
+    "No_task": "没有委托",
     "Task_completed_notification_title": "{{name}} 完成了探险",
     "Task_completed_notification_content": "{{name}} 完成了探险委托 {{taskName}}",
     "Task_completion_alarm": "探险完成提醒",
     "Reset_retainers": "重置雇员",
-    "Check_prices": "Check selling prices against Marketboard (2h cooldown)",
-    "Cannot_fetch": "Price check is on 2h cooldown, last price check: {{date}}",
-    "X%_above": "Your price is {{diff}}% above the current lowest price",
-    "X%_below": "Your price is {{diff}}% below the current lowest price",
-    "Lowest_price": "Lowest price"
+    "Check_prices": "对照市场检查销售价格 (2小时冷却)",
+    "Cannot_fetch": "价格检查处于冷却状态，最后一次价格检查： {{date}}",
+    "X%_above": "您的价格比当前最低价格高出 {{diff}}%",
+    "X%_below": "您的价格比当前最低价格低 {{diff}}%",
+    "Lowest_price": "最低价格"
   },
   "RETAINER_VENTURES": {
     "Title": "雇员探险",
