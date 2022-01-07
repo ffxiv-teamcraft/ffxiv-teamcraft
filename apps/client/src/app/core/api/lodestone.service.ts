@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
@@ -16,9 +16,9 @@ export class LodestoneService {
   private static CACHE: { [index: number]: Observable<Partial<CharacterResponse>> } = {};
 
   constructor(private userService: UserService, private xivapi: XivapiService,
-              private http: HttpClient, private ipc: IpcService) {
+              private http: HttpClient, private ipc: IpcService, private ngZone: NgZone) {
     if (!LodestoneService.INTERVAL) {
-      LodestoneService.INTERVAL = interval(100).subscribe((i) => {
+      LodestoneService.INTERVAL = interval(200).subscribe((i) => {
         const subject = LodestoneService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
@@ -51,33 +51,36 @@ export class LodestoneService {
   }
 
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
-    let dataSource$: Observable<Partial<CharacterResponse>>;
-    if (this.ipc.ready) {
-      const result$ = new ReplaySubject<Partial<CharacterResponse>>();
-      this.ipc.once(`lodestone:character:${id}`, (event, res) => {
-        result$.next(res);
-        result$.complete();
-      });
-      this.ipc.send('lodestone:getCharacter', id);
-      dataSource$ = result$.asObservable();
-    } else {
-      let params = new HttpParams();
-      if (columns) {
-        params = params.set('columns', columns.join(','));
+    return this.ngZone.runOutsideAngular(() => {
+      let dataSource$: Observable<Partial<CharacterResponse>>;
+      if (this.ipc.ready) {
+        const result$ = new ReplaySubject<Partial<CharacterResponse>>();
+        this.ipc.once(`lodestone:character:${id}`, (event, res) => {
+          result$.next(res);
+          result$.complete();
+        });
+        this.ipc.send('lodestone:getCharacter', id);
+        dataSource$ = result$.asObservable();
+      } else {
+        let params = new HttpParams();
+        if (columns) {
+          params = params.set('columns', columns.join(','));
+        }
+        dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
       }
-      dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
-    }
-    return dataSource$.pipe(
-      map(res => {
-        return {
-          ...res,
-          Character: {
-            ...res.Character,
-            Server: (res.Character as any).World
-          }
-        };
-      })
-    );
+      return dataSource$.pipe(
+        map(res => {
+          return {
+            ...res,
+            Character: {
+              ...res.Character,
+              Server: (res.Character as any).World
+            }
+          };
+        })
+      );
+    });
+
   }
 
   public getCharacter(id: number, noCache = false): Observable<Partial<CharacterResponse>> {
@@ -87,7 +90,7 @@ export class LodestoneService {
         switchMap(() => {
           if (noCache || !this.getCachedCharacter(id)) {
             return this.getCharacterFromLodestoneApi(id).pipe(
-              tap(res => this.cacheCharacter(res))
+              // tap(res => this.cacheCharacter(res))
             );
           } else {
             return of(this.getCachedCharacter(id));
