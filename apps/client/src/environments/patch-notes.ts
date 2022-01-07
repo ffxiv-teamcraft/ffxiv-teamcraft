@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 * **layout:** grid optimizations for better list display.
 * **log-tracker:** remove useless ids shown in parenthesis.
 * **profile:** added new masterbooks to masterbooks popup.
-* **recipe-finder:** fixed finder sometimes running forever.`;
+* **recipe-finder:** fixed finder sometimes running forever.`;
