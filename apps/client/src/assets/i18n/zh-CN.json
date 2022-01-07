@@ -367,7 +367,7 @@
   "Email_not_found": "没有找到该电子邮件地址",
   "Email_sent": "已发送一封电子邮件，内含重置您密码的方法。",
   "ALARM": {
-    "Spawned": "{{itemName}} will spawn!",
+    "Spawned": "{{itemName}} 即将出现！",
     "See_on_map": "坐标",
     "Note": "备注"
   },
@@ -482,9 +482,9 @@
     "Clear_inventory_on_startup": "启动时清空物品栏",
     "Switch_tc_when_switch_ingame_character": "在切换游戏角色时自动切换 Teamcraft 角色",
     "Reset_ignored_characters": "重置已忽略的角色",
-    "Reset_ignored_characters_ok": "Ignored characters have been reset",
+    "Reset_ignored_characters_ok": "忽略的角色已被重置",
     "Reset_contentid_characters": "重置已连接的角色",
-    "Reset_contentid_characters_ok": "Linked characters have been reset",
+    "Reset_contentid_characters_ok": "连接的角色已重置",
     "Show_other_characters_inventories_in_list": "在清单中显示其他角色的物品栏",
     "Show_other_characters_inventories_in_inventory_page": "在物品栏页面中显示其他角色的物品栏",
     "Alarm_panels_collapsed_by_default": "默认折叠闹钟分组面板",
@@ -497,7 +497,7 @@
     "Has_access_to_housing_vendor": "优先使用房屋专属商人",
     "Has_access_to_housing_vendor_explain": "在 “按 NPC 显示” 时优先使用房屋专属商人。在拥有房屋时非常有用。",
     "Hide_back_button": "在侧边栏隐藏返回按钮",
-    "Reload_auth_token": "Reload auth token",
+    "Reload_auth_token": "重新加载认证口令",
     "Materia_confidence_rate": "Melding confidence rate",
     "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
     "COLORS": {
