@@ -394,7 +394,8 @@
         </div>
       </nz-content>
       <nz-sider *ngIf="!overlay"
-                [(nzCollapsed)]="collapsedAlarmsBar"
+                [nzCollapsed]="collapsedAlarmsBar$ | async"
+                (nzCollapsedChange)="collapsedAlarmsBar$.next($event)"
                 [nzCollapsedWidth]="0"
                 [nzWidth]="230"
                 [nzZeroTrigger]="alarmsTrigger"
