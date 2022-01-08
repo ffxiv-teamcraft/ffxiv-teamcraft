@@ -4,7 +4,6 @@ import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import * as _ from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -80,23 +79,33 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     this.results$ = combineLatest([this.currency$, this.server$]).pipe(
       switchMap(([currency, server]) => {
         this.loading = true;
-        return this.lazyData.getEntry('shops').pipe(
-          map(shops => {
-            return uniqBy(shops.filter(shop => {
-              return shop.trades.some(t => t.currencies.some(c => c.id === currency))
-            }).map(shop => {
-              return shop.trades
-                .filter(t => t.currencies.some(c => c.id === currency))
-                .map(t => {
-                  const currencyEntry = t.currencies.find(c => +c.id === currency);
-                  return {
-                    npcs: shop.npcs,
-                    item: +t.items[0].id,
-                    HQ: +t.items[0].hq,
-                    rate: +t.items[0].amount / currencyEntry.amount
-                  };
-                })
-            }).flat(), 'item');
+        return combineLatest([
+          this.lazyData.getEntry('shops'),
+          this.lazyData.getEntry('marketItems')
+        ]).pipe(
+          map(([shops, marketItems]) => {
+            return shops
+              .filter(shop => {
+                return shop.trades.some(t => {
+                  return t.currencies.some(c => c.id === currency)
+                    && t.items.some(i => marketItems.includes(i.id));
+                }) && shop.npcs.length > 0;
+              })
+              .map(shop => {
+                return shop.trades
+                  .filter(t => t.items.length > 0 && t.currencies.some(c => c.id === currency))
+                  .map(t => {
+                    const currencyEntry = t.currencies.find(c => +c.id === currency);
+                    return {
+                      npcs: shop.npcs,
+                      item: +t.items[0].id,
+                      HQ: +t.items[0].hq,
+                      rate: +t.items[0].amount / currencyEntry.amount
+                    };
+                  });
+              })
+              .flat()
+              .slice(0, 200);
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)

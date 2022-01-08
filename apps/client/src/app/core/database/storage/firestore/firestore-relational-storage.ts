@@ -5,12 +5,11 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
-import { catchError, distinctUntilChanged, map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/firestore';
 import { Observable, throwError } from 'rxjs';
 import { Query } from '@angular/fire/compat/firestore/interfaces';
-import { compare } from 'fast-json-patch';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -44,13 +43,18 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
         }),
         tap(() => this.recordOperation('read')),
         map((snaps: DocumentChangeAction<T>[]) => {
-          const rows = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
-              delete snap.payload;
-              return valueWithKey;
-            });
-          return this.serializer.deserialize<T>(rows, [this.getClass()]);
+          try {
+            const rows = snaps
+              .map((snap: DocumentChangeAction<any>) => {
+                const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
+                delete snap.payload;
+                return valueWithKey;
+              });
+            return this.serializer.deserialize<T>(rows, [this.getClass()]);
+          } catch (e) {
+            console.error(e);
+            return [];
+          }
         })
       );
   }
@@ -79,13 +83,18 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           }),
           tap(() => this.recordOperation('read')),
           map((snaps: DocumentChangeAction<T>[]) => {
-            const elements = snaps
-              .map((snap: DocumentChangeAction<any>) => {
-                const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
-                delete snap.payload;
-                return valueWithKey;
-              });
-            return this.serializer.deserialize<T>(elements, [this.getClass()]);
+            try {
+              const elements = snaps
+                .map((snap: DocumentChangeAction<any>) => {
+                  const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
+                  delete snap.payload;
+                  return valueWithKey;
+                });
+              return this.serializer.deserialize<T>(elements, [this.getClass()]);
+            } catch (e) {
+              console.error(e);
+              return [];
+            }
           }),
           map(elements => {
             return elements.map(el => {
