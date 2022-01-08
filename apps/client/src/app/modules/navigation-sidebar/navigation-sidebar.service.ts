@@ -285,9 +285,10 @@ export class NavigationSidebarService {
             },
             {
               name: 'PROFITS.Title',
+              hidden: !loggedIn,
               icon: {
-                type: SidebarIconType.CUSTOM_FONT,
-                content: this.sanitizer.bypassSecurityTrustHtml('&#xE903;')
+                type: SidebarIconType.ANTD,
+                content: 'dollar'
               },
               link: '/profits-helper'
             }
