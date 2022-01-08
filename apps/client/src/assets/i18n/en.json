@@ -1039,7 +1039,7 @@
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Include macro lock",
-    "Find_rotation": "Community rotation finder",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "No community rotation found that match your needs",
     "Click_on_rotation": "Click on a rotation to select it",
@@ -1052,6 +1052,8 @@
     "Detailed": "Detailed",
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
+    "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",

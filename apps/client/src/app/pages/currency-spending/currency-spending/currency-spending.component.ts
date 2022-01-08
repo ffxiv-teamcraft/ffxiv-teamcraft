@@ -13,6 +13,7 @@ import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-currency-spending',
