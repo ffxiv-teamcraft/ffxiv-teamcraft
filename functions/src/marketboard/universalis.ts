@@ -5,14 +5,14 @@ import axiosRetry from "axios-retry";
 
 
 const UNIVERSALIS_REQ_PER_SECOND = 13;
-const CONCURRENCY = 2;
+const CONCURRENCY = 1;
 
 axiosRetry(axios, {retries: 3, retryDelay: c => c * 1000})
 
 const queue$ = new Subject<{ url: string, res$: Subject<any> }>();
 
 let avgResponseTime = 0;
-let requestsDone: number[] = [];
+const requestsDone: number[] = [];
 
 let queueSub: Subscription | null = initQueue();
 

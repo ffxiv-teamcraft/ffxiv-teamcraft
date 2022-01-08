@@ -193,7 +193,8 @@
     "Submarine": "Submarine",
     "Voyage": "Voyage",
     "Instance": "Instance",
-    "Fate": "Fate"
+    "Fate": "Fate",
+    "Reload": "Reload"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -2876,5 +2877,21 @@
     "Harvesting": "Harvesting",
     "Fishing": "Fishing",
     "Spearfishing": "Spearfishing"
+  },
+  "PROFITS": {
+    "Title": "Profits Helper",
+    "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Self_sufficient": "Self sufficient",
+    "Crafting": "Crafting",
+    "Gathering": "Gathering",
+    "Complexity": "Complexity",
+    "Sold_last_24h": "# sold during the last 24h",
+    "Total_listed": "Total on sale",
+    "Unit_price": "Unit price",
+    "Cost_to_craft": "Cost to craft",
+    "Explain_complexity":"A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
+    "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
+    "Empty_list": "Empty list, click the + button on an item to add it here",
+    "Add_to_list": "Add these items to a list"
   }
 }

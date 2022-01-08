@@ -1,6 +1,6 @@
 import { createClient, RedisClientType } from 'redis';
 import { Item } from './item';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { subHours } from 'date-fns';
 import { map, switchMap } from 'rxjs/operators';
 import { doUniversalisRequest } from './universalis';
@@ -105,14 +105,21 @@ export function getLevelRequirements(item: Item, items: Record<number, Item>): n
 export function updateItems(server: string, itemIds: number[]): Observable<{ server: string, data: any[] }> {
   const yesterday = Math.floor(subHours(new Date(), 24).getTime() / 1000);
   const oneDaybeforeYesterday = Math.floor(subHours(new Date(), 48).getTime() / 1000);
-  return doUniversalisRequest(`https://universalis.app/api/${server}/${itemIds.join(',')}?statsWithin=0&entriesWithin=172800`).pipe(
-    map(data => {
+  return combineLatest([
+    doUniversalisRequest(`https://universalis.app/api/${server}/${itemIds.join(',')}?statsWithin=0`),
+    doUniversalisRequest(`https://universalis.app/api/history/${server}/${itemIds.join(',')}?entriesWithin=172800&statsWithin=0`)
+  ]).pipe(
+    map(([listing, history]) => {
       return {
         server,
-        data: data.items.reduce((acc: Record<string, any>, item: any) => {
-          const v24 = item.recentHistory.filter((h: { timestamp: number }) => h.timestamp > yesterday).reduce((total: number, e: { quantity: number }) => total + e.quantity, 0);
-          const v48 = item.recentHistory.filter((h: { timestamp: number }) => h.timestamp > oneDaybeforeYesterday).reduce((total: number, e: { quantity: number }) => total + e.quantity, 0);
-          const avg24 = Math.floor(item.recentHistory.filter((h: { timestamp: number }) => h.timestamp > yesterday).reduce((total: number, e: { total: number }) => total + e.total, 0) / v24) || 0;
+        data: listing.items.reduce((acc: Record<string, any>, item: any) => {
+          const historyEntry = history.items.find((hItem: any) => hItem.itemID === item.itemID) || { entries: [] };
+          const last24hSales = historyEntry?.entries.filter((h: { timestamp: number }) => h.timestamp > yesterday) || [];
+          const tr24 = last24hSales.slice(-5).reduce((accp: number, row: any) => accp + row.pricePerUnit, 0) - last24hSales.slice(0, 5).reduce((accp: number, row: any) => accp + row.pricePerUnit, 0);
+          const v24 = last24hSales.reduce((total: number, e: { quantity: number }) => total + e.quantity, 0);
+          const v48 = historyEntry.entries.filter((h: { timestamp: number }) => h.timestamp > oneDaybeforeYesterday).reduce((total: number, e: { quantity: number }) => total + e.quantity, 0);
+          const avg24 = Math.floor(last24hSales.reduce((total: number, e: { total: number }) => total + e.total, 0) / v24) || 0;
+          const t = item.listings.reduce((accp: number, a: any) => accp + a.quantity, 0);
           const c = item.listings.sort((a: any, b: any) => a.pricePerUnit - b.pricePerUnit)[0]?.pricePerUnit || 0;
           const c10 = item.listings.filter((l: any) => l.quantity >= 10).sort((a: any, b: any) => a.pricePerUnit - b.pricePerUnit)[0]?.pricePerUnit || 0;
           const c50 = item.listings.filter((l: any) => l.quantity >= 50).sort((a: any, b: any) => a.pricePerUnit - b.pricePerUnit)[0]?.pricePerUnit || 0;
@@ -124,7 +131,9 @@ export function updateItems(server: string, itemIds: number[]): Observable<{ ser
               avg24,
               c,
               c10,
-              c50
+              c50,
+              t,
+              tr24
             }
           };
         }, {})
@@ -159,6 +168,8 @@ export function updateCache(servers: string[], items: Record<number, Item>, redi
         profit: await computeProfit(item, server, redis),
         v24: parsedMbEntry.v24,
         v48: parsedMbEntry.v48,
+        total: parsedMbEntry.t,
+        trend24: parsedMbEntry.tr24,
         levelReqs: getLevelRequirements(item, items)
       });
     }

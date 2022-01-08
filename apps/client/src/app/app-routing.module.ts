@@ -244,6 +244,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/allagan-reports/allagan-reports.module').then(m => m.AllaganReportsModule)
   },
   {
+    path: 'profits-helper',
+    loadChildren: () => import('./pages/profits-helper/profits-helper.module').then(m => m.ProfitsHelperModule)
+  },
+  {
     path: 'extractor',
     loadChildren: () => import('./pages/extractor/extractor.module').then(m => m.ExtractorModule),
     canLoad: [DevGuard]

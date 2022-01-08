@@ -1,5 +1,4 @@
 import { CompactMasterbook } from '../../../model/common/compact-masterbook';
-import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { Complexity } from '../../../model/garland-tools/complexity';
 
 export interface CraftedBy {
