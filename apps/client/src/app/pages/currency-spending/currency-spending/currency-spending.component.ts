@@ -104,8 +104,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                     };
                   });
               })
-              .flat()
-              .slice(0, 200);
+              .flat();
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
@@ -159,7 +158,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 );
               }),
               map((res: SpendingEntry[]) => {
-                return res.filter(entry => entry.price)
+                return uniqBy(res.filter(entry => entry.price), 'itemID')
                   .sort((a, b) => {
                     return b.score - a.score;
                   });

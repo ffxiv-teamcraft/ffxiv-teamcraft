@@ -4,8 +4,8 @@ import axios from "axios";
 import axiosRetry from "axios-retry";
 
 
-const UNIVERSALIS_REQ_PER_SECOND = 13;
-const CONCURRENCY = 1;
+const UNIVERSALIS_REQ_PER_SECOND = 14;
+const CONCURRENCY = 2;
 
 axiosRetry(axios, {retries: 3, retryDelay: c => c * 1000})
 
