@@ -2824,16 +2824,16 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
-    "Speed": "Speed",
+    "Speed": "속도",
     "Shadow_size": "Shadow size",
-    "Deprecated": "This item cannot be obtained anymore",
+    "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
     "SPEEDS": {
-      "VERY_SLOW": "Very slow",
-      "SLOW": "Slow",
-      "AVERAGE": "Average",
-      "FAST": "Fast",
-      "FASTER": "Faster",
-      "VERY_FAST": "Very fast"
+      "VERY_SLOW": "매우 느림",
+      "SLOW": "느림",
+      "AVERAGE": "보통",
+      "FAST": "빠름",
+      "FASTER": "매우 빠름",
+      "VERY_FAST": "고속"
     },
     "SHADOWS": {
       "SMALL": "Small",
@@ -2883,17 +2883,17 @@
   "PROFITS": {
     "Title": "Profits Helper",
     "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
-    "Self_sufficient": "Self sufficient",
-    "Crafting": "Crafting",
-    "Gathering": "Gathering",
+    "Self_sufficient": "자급자족",
+    "Crafting": "제작",
+    "Gathering": "채집",
     "Complexity": "Complexity",
-    "Sold_last_24h": "# sold during the last 24h",
+    "Sold_last_24h": "#최근 24시간동안 판매됨",
     "Total_listed": "Total on sale",
-    "Unit_price": "Unit price",
-    "Cost_to_craft": "Cost to craft",
-    "Explain_complexity": "A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
-    "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
-    "Empty_list": "Empty list, click the + button on an item to add it here",
-    "Add_to_list": "Add these items to a list"
+    "Unit_price": "개당 가격",
+    "Cost_to_craft": "제작 비용",
+    "Explain_complexity": "아이템 하나를 만드는 데 걸리는 시간을 나타내는 점수, 하나의 제작을 여러 번 하는 것은 텔레포를 다시 할 필요가 없기 때문에 확실히 빠릅니다.",
+    "Explain_cost_to_craft": "장터 게시판에서 모든 재료를 구매하여 제작하였을 때 필요한 금액입니다. (크리스탈 제외)",
+    "Empty_list": "비어있는 목록, +버튼을 클릭하여 아이템을 여기에 추가할 수 있습니다",
+    "Add_to_list": "해당 아이템을 목록에 추가"
   }
 }
