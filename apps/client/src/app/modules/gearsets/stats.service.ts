@@ -194,7 +194,9 @@ export class StatsService {
               return safeCombineLatest(
                 piece.materias
                   .filter(materia => materia > 0)
-                  .map((materia, index) => combineLatest([this.materiasService.getMateria(materia), this.materiasService.getMateriaBonus(piece, materia, index)]))
+                  .map((materia, index) => {
+                    return combineLatest([this.materiasService.getMateria(materia), this.materiasService.getMateriaBonus(piece, materia, index)]);
+                  })
               ).pipe(
                 map(materias => {
                   return [piece, materias, ...rest];
