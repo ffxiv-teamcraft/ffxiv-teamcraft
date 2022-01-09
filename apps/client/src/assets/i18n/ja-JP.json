@@ -194,7 +194,8 @@
     "Voyage": "ボイジャー",
     "Instance": "ダンジョン",
     "Fate": "F. A. T. E",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "商店販売価格",
-    "From_crafting": "制作費用",
     "Expect_to_sell_everything": "販売予定",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "マーケットボード価格に基づいて自動入力する",
-    "Autofill_panel_prices_your_server": "マケットボード値段で自動入力(キャラクターのサーバー基準)",
-    "Autofill_panel_prices_warning": "この作業は所要時間があって完了まで {{time}} ぐらいかかりますが、よろしいですか?",
-    "Copy_earnings_as_text": "内容をテキストにコピーする",
     "Content_copied": "クリップボードに内容がコピーされました。",
-    "Cheaper_at_vendor": "NPC から購入した方が安い ({{price}} ギル)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
-    "Check_precraft_prices": "マーケットボードで最安値をチェックしてください",
-    "Craft_price": "製作単価",
-    "Marketboard_price": "NQ 値段",
-    "Marketboard_price_hq": "HQ 値段",
-    "Enter_total_earnings": "総収入",
-    "Ignore_completed_items": "完了したアイテム除外"
+    "Ignore_completed_items": "完了したアイテム除外",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "チョコボかばん",
       "FC_chest": "カンパニーチェスト",
       "Bag": "所持品",
+      "Crystal": "Crystal",
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
       "Current_Gear": "現在の装備",
