@@ -1051,8 +1051,8 @@
     "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
     "Compact": "Compact",
     "Detailed": "Détaillé",
-    "Remove_IP": "Remove initial preparations",
-    "Stats_applied": "Stats applied",
+    "Remove_IP": "Supprimer dernières vérifications",
+    "Stats_applied": "Statistiques appliquées",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
     "Full_buttons": "Show full buttons",
     "STATE": {
