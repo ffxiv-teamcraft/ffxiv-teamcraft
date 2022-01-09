@@ -194,7 +194,8 @@
     "Voyage": "탐사",
     "Instance": "던전",
     "Fate": "돌발 임무",
-    "Reload": "새로고침"
+    "Reload": "새로고침",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "상인 판매 가격",
-    "From_crafting": "제작 비용",
     "Expect_to_sell_everything": "전체 판매 가정",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
-    "Autofill_panel_prices_your_server": "장터게시판 가격으로 자동입력 (캐릭터의 서버기준)",
-    "Autofill_panel_prices_warning": "이 작업은 시간이 소요되며 완료까지 {{time}}초 정도 걸릴 것으로 예상됩니다. 진행하시겠습니까?",
-    "Copy_earnings_as_text": "내용을 텍스트로 복사하기",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
-    "Cheaper_at_vendor": "NPC 구입이 더 저렴함({{price}} 길)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "이 패널을 텍스트로 복사",
-    "Check_precraft_prices": "장터게시판에서 최저가를 확인하세요",
-    "Craft_price": "제작 단가",
-    "Marketboard_price": "NQ 가격",
-    "Marketboard_price_hq": "HQ 가격",
-    "Enter_total_earnings": "총 수익",
-    "Ignore_completed_items": "완료된 아이템 제외"
+    "Ignore_completed_items": "완료된 아이템 제외",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
       "Bag": "소지품",
+      "Crystal": "Crystal",
       "Other": "다른 소지품",
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
