@@ -358,6 +358,8 @@ export class InventoryService {
 
   public getContainerName(containerId: number): string {
     switch (containerId) {
+      case ContainerType.Crystal:
+        return 'Crystal';
       case ContainerType.Bag0:
       case ContainerType.Bag1:
       case ContainerType.Bag2:
@@ -482,6 +484,26 @@ export class InventoryService {
       inventory.items[inventory.contentId] = {};
     }
     inventory.items[inventory.contentId][containerKey] = {};
+
+    const currencyCrystals: CurrencyCrystalInfo[] = itemInfos.filter(i => i.containerId === 2000) as CurrencyCrystalInfo[];
+
+    if (currencyCrystals.length > 0) {
+      currencyCrystals.forEach(row => {
+        const item: InventoryItem = {
+          itemId: +row.catalogId,
+          containerId: +row.containerId,
+          slot: +row.slot,
+          quantity: +row.quantity,
+          hq: false,
+          materias: [],
+          spiritBond: 0
+        };
+        if (isRetainer) {
+          item.retainerName = retainer;
+        }
+        inventory.items[inventory.contentId][containerKey][row.slot] = item;
+      });
+    }
 
     itemInfos.forEach((itemInfo: ItemInfo) => {
       const item: InventoryItem = {

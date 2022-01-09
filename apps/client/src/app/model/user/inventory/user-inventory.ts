@@ -9,6 +9,7 @@ import { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarket
 export class UserInventory extends DataModel {
 
   public static readonly DISPLAYED_CONTAINERS = [
+    ContainerType.Crystal,
     ContainerType.Bag0,
     ContainerType.Bag1,
     ContainerType.Bag2,
