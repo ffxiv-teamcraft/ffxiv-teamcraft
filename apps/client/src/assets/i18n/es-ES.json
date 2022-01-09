@@ -194,7 +194,8 @@
     "Voyage": "Voyage",
     "Instance": "Instance",
     "Fate": "Fate",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Precio del vendedor",
-    "From_crafting": "Precio de fabricación",
     "Expect_to_sell_everything": "Asumir que se vende todo",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Llenar precios basado en precios del mercado",
-    "Autofill_panel_prices_your_server": "Rellene los precios basados en los precios del mercado (sólo su servidor)",
-    "Autofill_panel_prices_warning": "Este es un proceso lento y debería tomar alrededor de {{time}} segundos para completarse. ¿Está seguro?",
-    "Copy_earnings_as_text": "Copiar contenido como texto",
     "Content_copied": "Contenido copiado a su portapapeles",
-    "Cheaper_at_vendor": "Más barato si compra de PNJ ({{price}} gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copiar este panel como texto",
-    "Check_precraft_prices": "Busque precios más baratos dentro del mercado",
-    "Craft_price": "Precio de fabricación",
-    "Marketboard_price": "Precio NQ",
-    "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Ingrese ganancias totales",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Exclude completed items",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "Alforja de Chocobo",
       "FC_chest": "Cofre FC",
       "Bag": "Inventario",
+      "Crystal": "Crystal",
       "Other": "Otro inventario",
       "Armory": "Armería",
       "Current_Gear": "Current gear",
