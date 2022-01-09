@@ -194,7 +194,8 @@
     "Voyage": "Erkundung",
     "Instance": "Inhalt",
     "Fate": "FATE",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Verkäuferpreis",
-    "From_crafting": "Herstellungspreis",
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
-    "Autofill_panel_prices_your_server": "Preise auf Basis des Marktplatzes befüllen (nur von Heimatwelt)",
-    "Autofill_panel_prices_warning": "Dies ist ein langsamer Prozess und sollte ca. {{time}} Sekunden dauern, bist du sicher?",
-    "Copy_earnings_as_text": "Kopiere Inhalt als Text",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
-    "Cheaper_at_vendor": "Günstiger wenn du vom NPC kaufst ({{price}} Gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
-    "Check_precraft_prices": "Nach günstigeren Preisen am Marktbrett schauen",
-    "Craft_price": "Preis zur Herstellung",
-    "Marketboard_price": "NQ Preis",
-    "Marketboard_price_hq": "HQ Preis",
-    "Enter_total_earnings": "Gesamteinnahmen eingeben",
-    "Ignore_completed_items": "Abgeschlossene Elemente ausschließen"
+    "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
+      "Crystal": "Crystal",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
