@@ -194,7 +194,8 @@
     "Voyage": "探索",
     "Instance": "副本",
     "Fate": "危命任务",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "商店价格",
-    "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅当前服务器)",
-    "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
-    "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
-    "Cheaper_at_vendor": "NPC 卖得更便宜 ({{price}} gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "复制为文本",
-    "Check_precraft_prices": "检查市场内的更低价格",
-    "Craft_price": "制作价格",
-    "Marketboard_price": "NQ价格",
-    "Marketboard_price_hq": "HQ 价格",
-    "Enter_total_earnings": "输入总收入",
-    "Ignore_completed_items": "排除已完成的物品"
+    "Ignore_completed_items": "排除已完成的物品",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "部队储物柜",
       "Bag": "背包",
+      "Crystal": "Crystal",
       "Other": "其他物品栏",
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
