@@ -194,7 +194,8 @@
     "Voyage": "Voyage",
     "Instance": "Instance",
     "Fate": "Aléa",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Prix au vendeur",
-    "From_crafting": "Prix de l’artisanat",
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
-    "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
-    "Autofill_panel_prices_warning": "C’est un processus lent qui devrait prendre environ {{time}} secondes, lancer maintenant ?",
-    "Copy_earnings_as_text": "Copier le contenu au format texte",
     "Content_copied": "Contenu copié dans le presse-papiers",
-    "Cheaper_at_vendor": "Moins cher si vous achetez au vendeur ({{price}} gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
-    "Check_precraft_prices": "Vérifier les prix moins chers dans l’hôtel des ventes",
-    "Craft_price": "Prix de fabrication",
-    "Marketboard_price": "Prix NQ",
-    "Marketboard_price_hq": "Prix HQ",
-    "Enter_total_earnings": "Entrez les gains totaux",
-    "Ignore_completed_items": "Ignorer les objets complétés"
+    "Ignore_completed_items": "Ignorer les objets complétés",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
       "Bag": "Inventaire",
+      "Crystal": "Crystal",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
