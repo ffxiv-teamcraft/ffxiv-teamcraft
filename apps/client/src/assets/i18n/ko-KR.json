@@ -735,7 +735,7 @@
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
-    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
+    "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
@@ -914,7 +914,7 @@
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
     "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
-    "Node_type": "Type",
+    "Node_type": "유형",
     "Use": "Use",
     "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
@@ -1039,8 +1039,8 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Find_rotation": "Rotation finder",
-    "Searching_for_rotation": "Searching for community rotations…",
+    "Find_rotation": "로테이션 파인더",
+    "Searching_for_rotation": "커뮤니티 로테이션 검색 중...",
     "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
     "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
@@ -2869,8 +2869,8 @@
     "NIGHT": "밤"
   },
   "UPDATER": {
-    "New_update_available": "A new update is available and has been downloaded",
-    "Restart_to_install": "Do you want to restart now to apply it?"
+    "New_update_available": "이용가능한 새 업데이트가 다운로도되었습니다",
+    "Restart_to_install": "적용을 위해 재시작하시겠습니까?"
   },
   "NODE_TYPE": {
     "Mining": "Mining",
@@ -2878,7 +2878,7 @@
     "Logging": "Logging",
     "Harvesting": "Harvesting",
     "Fishing": "Fishing",
-    "Spearfishing": "Spearfishing"
+    "Spearfishing": "작살"
   },
   "PROFITS": {
     "Title": "Profits Helper",
