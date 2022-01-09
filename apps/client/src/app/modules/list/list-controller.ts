@@ -139,7 +139,6 @@ export class ListController {
           done: 0,
           used: 0,
           yield: 1,
-          usePrice: true,
           collectable: data.collectable
         });
       });
@@ -529,7 +528,6 @@ export class ListController {
                   done: 0,
                   used: 0,
                   yield: 1,
-                  usePrice: true,
                   collectable: false
                 });
                 listManager.addDetails(list);
@@ -547,7 +545,6 @@ export class ListController {
                     done: 0,
                     used: 0,
                     yield: yields,
-                    usePrice: true,
                     collectable: false
                   });
                   nextIteration.push({
@@ -561,8 +558,7 @@ export class ListController {
                     amount: element.amount * addition.amount,
                     done: 0,
                     used: 0,
-                    yield: 1,
-                    usePrice: true
+                    yield: 1
                   };
                   // Handle possible additional requirements
                   const requirements = getItemSource(elementDetails, DataType.REQUIREMENTS);
@@ -578,7 +574,6 @@ export class ListController {
                         done: 0,
                         used: 0,
                         yield: 1,
-                        usePrice: true,
                         requires: reqRecipeId ? recipes.find((r) => (r as any).id.toString() === reqRecipeId.toString()).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS),
                         collectable: false
                       });
@@ -616,7 +611,6 @@ export class ListController {
             done: 0,
             used: 0,
             yield: 1,
-            usePrice: true,
             collectable: false
           });
           listManager.addDetails(list);
@@ -629,7 +623,6 @@ export class ListController {
             itemDetailsClone.amount = element.amount * addition.amount;
             itemDetailsClone.done = 0;
             itemDetailsClone.used = 0;
-            itemDetailsClone.usePrice = true;
             itemDetailsClone.id = itemDetails.$key;
             const added = ListController.add(list, list.items, itemDetailsClone);
             if (itemDetailsClone.requires !== undefined) {
@@ -653,7 +646,6 @@ export class ListController {
                     done: 0,
                     used: 0,
                     yield: yields,
-                    usePrice: true,
                     collectable: false
                   });
                   return {
@@ -669,7 +661,6 @@ export class ListController {
                     done: 0,
                     used: 0,
                     yield: 1,
-                    usePrice: true,
                     collectable: false
                   });
                 }

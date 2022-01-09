@@ -37,8 +37,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     'requires',
     'canBeCrafted',
     'hasAllBaseIngredients',
-    'craftableAmount',
-    'usePrice'
+    'craftableAmount'
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,

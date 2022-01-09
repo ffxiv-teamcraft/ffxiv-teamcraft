@@ -24,7 +24,6 @@ import {
 } from './lists.actions';
 import {
   catchError,
-  debounce,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -39,7 +38,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, from, of, timer } from 'rxjs';
+import { combineLatest, EMPTY, from, of } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -66,6 +65,7 @@ import { Action } from '@ngrx/store';
 import { ListController } from '../list-controller';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
+import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -296,6 +296,7 @@ export class ListsEffects {
       if (pin === action.key) {
         this.listsFacade.unpin();
       }
+      this.pricingService.removeEntriesForList(action.key);
       if (action.offline) {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
@@ -531,7 +532,8 @@ export class ListsEffects {
     private lazyData: LazyDataFacade,
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService,
-    private soundNotificationService: SoundNotificationService
+    private soundNotificationService: SoundNotificationService,
+    private pricingService: ListPricingService
   ) {
   }
 
