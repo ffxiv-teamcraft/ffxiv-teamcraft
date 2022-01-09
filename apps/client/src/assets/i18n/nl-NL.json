@@ -194,7 +194,8 @@
     "Voyage": "Voyage",
     "Instance": "Instance",
     "Fate": "Fate",
-    "Reload": "Reload"
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "Wekkers",
@@ -1198,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor",
-    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copy this panel as text",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price",
-    "Enter_total_earnings": "Enter total earnings",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Exclude completed items",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -1965,6 +1960,7 @@
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
       "Bag": "Inventory",
+      "Crystal": "Crystal",
       "Other": "Other inventory",
       "Armory": "Armory",
       "Current_Gear": "Current gear",
