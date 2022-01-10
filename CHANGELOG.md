@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.1"></a>
+## [9.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.0...v9.4.1) (2022-01-10)
+
+
+### Bug Fixes
+
+* **gearset:** fixed stats formulas ([ef5f27e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef5f27e))
+* **gearsets:** added wrapping to the import buttons ([197393c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/197393c))
+* **lists:** fixed list completion sometimes not applied properly ([4e8635b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e8635b))
+
+
+### Features
+
+* **gearsets:** tribe is now saved across gearsets ([34b5622](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34b5622))
+* **pricing:** brought back "fill with only server" button ([e48c384](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e48c384))
+* **pricing:** new button in spendings card header to fill all the prices from MB at once ([d0f17e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0f17e5))
+* **pricing:** new toggle to fill precraft prices from materials or manually ([6059288](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6059288))
+* **pricing:** panels are now collapsed or expanded based on layout settings ([8a20650](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a20650))
+
+
+
 <a name="9.4.0"></a>
 # [9.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.9...v9.4.0) (2022-01-10)
 
