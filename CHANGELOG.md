@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.0"></a>
+# [9.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.9...v9.4.0) (2022-01-10)
+
+
+### Bug Fixes
+
+* **community-rotations:** added 55 as possible durability value ([87ecd33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87ecd33))
+* **core:** fixed Endwalker expansion missing in some filters ([14732fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/14732fa))
+* **currency-spending:** fixed duplicate items in results ([f0c545b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0c545b))
+* **currency-spending:** fixed page sometimes not loading data properly ([b242c57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b242c57))
+* **db:** added *2 distance weight to garlemald train station aetheryte ([e5cf2d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e5cf2d6))
+* **favorites:** fixed favorite rotation folders sometimes not expanding properly ([56dff98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/56dff98))
+* **gearsets:** updated base values for combat gearsets, thanks Fürst for the help ([51f4490](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51f4490))
+* **layout:** fixed an issue with levels filters sometimes acting up on gathering ([d6fc44d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6fc44d))
+* **layout:** fixed ONLY_FROM_VENDOR layout filter ([1bd015d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1bd015d))
+* **leveling-equipment:** removed Waist gear row ([a62fa19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a62fa19))
+* **retainers:** fixed retainers select box not available (needs retainers reset) ([413a41c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/413a41c))
+* **rotation-finder:** now applying consumables from rotation properly ([bfa7b46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bfa7b46))
+* **search:** remove trailing and leading spaces to avoid search issues ([5bb81ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bb81ae))
+* **simulator:** fixed specialist flag not applied properly from shared link with stats ([16e9550](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16e9550))
+* **simulator:** remove final appraisal is now only enabled when FA buff is up ([16f6aa0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16f6aa0))
+* **ux:** added different color on timer for when node is spawned ([f4b44df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4b44df))
+* **ux:** possible fir for middle click on item icons triggering scroll behavior ([9eefe07](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9eefe07))
+
+
+### Features
+
+* **core:** new profits helper page under currencies to find best items to craft or gather ([b53d426](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b53d426)), closes [#2125](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2125)
+* **gearsets:** you can now import a gearset from etro ([9f852ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f852ea))
+* **list:** support for crystals tracking ([c830693](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c830693))
+* **lists:** you can now import a list from an Etro gearset ([e3e7e5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e3e7e5c)), closes [#2138](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2138)
+* **pricing-mode:** complete refactor of the pricing mode, faster, more reliable ([1d7f60f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d7f60f))
+* **simulator:** new "show more" button in rotation finder and stats toggle ([c3e0241](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3e0241))
+* **simulator:** new toggle to show full buttons instead of small icons ([ca99e5d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca99e5d))
+
+
+
 <a name="9.3.9"></a>
 ## [9.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.3.8...v9.3.9) (2022-01-05)
 
