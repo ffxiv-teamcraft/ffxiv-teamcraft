@@ -357,13 +357,11 @@ export class StatsService {
       map(([modifier, tribeBonus]) => {
         if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
           return Math.floor(StatsService.LEVEL_TABLE[level][0] * modifier)
-            + tribeBonus
-            + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
+            + tribeBonus;
         }
         if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
           return Math.floor(StatsService.LEVEL_TABLE[level][1] * modifier)
-            + tribeBonus
-            + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
+            + tribeBonus;
         }
         return 0;
       }),
@@ -649,22 +647,6 @@ export class StatsService {
     );
   }
 
-  private getMainStatBonus(level: number): number {
-    if (level >= 70) {
-      return 48;
-    }
-    if (level >= 60) {
-      // Probably not accurate, seems like it's one value per extension
-      return 48;
-    }
-    if (level >= 50) {
-      // Probably not accurate, seems like it's one value per extension
-      return 48;
-    }
-    // Probably not accurate, seems like it's one value per extension
-    return 8;
-  }
-
   private getTribeBonus(baseParamId: number, tribe: number): Observable<number> {
     return this.lazyData.getRow('tribes', tribe).pipe(
       map(tribeData => {
@@ -725,9 +707,10 @@ export class StatsService {
     return this.lazyData.getRow('classJobsModifiers', job).pipe(
       map(modifiers => {
         const levelModHP = StatsService.LEVEL_TABLE[level][3];
+        const mainBase = StatsService.LEVEL_TABLE[level][0];
         const jobMod = modifiers.ModifierHitPoints;
         const roleMod = modifiers.Role === 1 ? 34.6 : 24.3;
-        return Math.floor((Math.floor(levelModHP * (jobMod / 100)) + vitality) * roleMod);
+        return Math.floor((levelModHP * jobMod / 100)) + Math.floor((vitality - mainBase) * roleMod);
       })
     );
   }
