@@ -141,7 +141,10 @@ export class ListPricingComponent extends TeamcraftComponent {
 
   public fillMbCosts(listId: string, rows: ListRow[], currentPrices: FullPricingRow[], forceOnlyServer = false, finalItems = false): void {
     const stopInterval$ = new Subject<void>();
-    const rowsToFill = rows;
+    const rowsToFill = rows.filter(row => {
+      const priceRow = currentPrices.find(p => p.id === row.id);
+      return priceRow?.custom;
+    });
     if (rowsToFill.length === 0) {
       return;
     }

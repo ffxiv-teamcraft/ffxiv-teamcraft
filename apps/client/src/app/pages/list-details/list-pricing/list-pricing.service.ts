@@ -15,6 +15,7 @@ interface DBEntry {
   key: string;
   listId: string;
   use: boolean;
+  custom: boolean;
   array: ListArray;
   itemId: number;
   nq: number;
@@ -37,8 +38,8 @@ export class ListPricingService {
 
   constructor(private lazyData: LazyDataFacade, private settings: SettingsService) {
     this.db = new Dexie('ListPricing');
-    this.db.version(1).stores({
-      items: 'key, listId, use, itemId, nq, nqServer, hq, hqServer, fromVendor, fromMB, updated, amountNQ, amountHQ'
+    this.db.version(2).stores({
+      items: 'key, listId, use, custom, itemId, nq, nqServer, hq, hqServer, fromVendor, fromMB, updated, amountNQ, amountHQ'
     });
   }
 
@@ -54,6 +55,7 @@ export class ListPricingService {
             id: row.itemId,
             array: row.array,
             use: row.use,
+            custom: row.custom,
             price: {
               nq: row.nq,
               nqServer: row.nqServer,
@@ -83,6 +85,7 @@ export class ListPricingService {
               return {
                 key: `${list.$key}:items:${item.id}`,
                 use: true,
+                custom: true,
                 array: 'items',
                 listId: list.$key,
                 itemId: item.id,
@@ -95,6 +98,7 @@ export class ListPricingService {
               return {
                 key: `${list.$key}:finalItems:${item.id}`,
                 use: true,
+                custom: true,
                 array: 'finalItems',
                 listId: list.$key,
                 itemId: item.id,
@@ -123,6 +127,7 @@ export class ListPricingService {
             {
               key: `${listId}:${array}:${item.id}`,
               use: true,
+              custom: true,
               array: array,
               listId: listId,
               itemId: item.id,
@@ -142,6 +147,7 @@ export class ListPricingService {
             {
               key: `${listId}:items:${item.id}`,
               use: true,
+              custom: true,
               array: array,
               listId: listId,
               itemId: item.id,
@@ -155,9 +161,9 @@ export class ListPricingService {
     });
   }
 
-  public saveItem(listId: string, array: ListArray, itemId: number, price: Price, amount: ItemAmount, use: boolean): void {
+  public saveItem(listId: string, array: ListArray, itemId: number, price: Price, amount: ItemAmount, use: boolean, automated = false): void {
     this.db.table('items')
-      .update(`${listId}:${array}:${itemId}`, this.generateDbModel(listId, itemId, array, price, amount, use));
+      .update(`${listId}:${array}:${itemId}`, this.generateDbModel(listId, itemId, array, price, amount, use, automated));
   }
 
   public removeEntriesForList(listId: string): void {
@@ -165,11 +171,12 @@ export class ListPricingService {
       .where('listId').equals(listId).delete();
   }
 
-  private generateDbModel(listKey: string, itemId: number, array: ListArray, price: Price, amount: ItemAmount, use: boolean): DBEntry {
+  private generateDbModel(listKey: string, itemId: number, array: ListArray, price: Price, amount: ItemAmount, use: boolean, automated = false): DBEntry {
     return {
       key: `${listKey}:${array}:${itemId}`,
       array: array,
       use: use,
+      custom: !automated,
       listId: listKey,
       itemId: itemId,
       nq: price.nq,

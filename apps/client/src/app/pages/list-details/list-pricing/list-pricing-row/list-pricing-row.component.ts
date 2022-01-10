@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FullPricingRow, ListArray } from '../model/full-pricing-row';
 import { observeInput } from '../../../../core/rxjs/observe-input';
-import { debounceTime, map, switchMap, takeUntil } from 'rxjs/operators';
+import { debounceTime, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListRow } from 'apps/client/src/app/modules/list/model/list-row';
@@ -9,6 +9,7 @@ import { TeamcraftComponent } from '../../../../core/component/teamcraft-compone
 import { ListPricingService } from '../list-pricing.service';
 import { DataType } from 'apps/client/src/app/modules/list/data/data-type';
 import { TranslateService } from '@ngx-translate/core';
+import { Price } from '../model/price';
 
 @Component({
   selector: 'app-list-pricing-row',
@@ -42,6 +43,10 @@ export class ListPricingRowComponent extends TeamcraftComponent {
   @Input()
   odd = false;
 
+  isCraft$ = this.listRow$.pipe(
+    map(row => row.requires?.length > 0)
+  );
+
   showHqInput$ = this.itemId$.pipe(
     switchMap(id => {
       return this.lazyData.getRow('hqFlags', id);
@@ -64,13 +69,15 @@ export class ListPricingRowComponent extends TeamcraftComponent {
     })
   );
 
-  priceToCraft$ = combineLatest([
+  priceToCraft$: Observable<{ price: Price }> = combineLatest([
     this.listRow$,
     this.pricingData$
   ]).pipe(
     map(([listRow, pricingData]) => {
       if (listRow.sources.some(s => s.type === DataType.CRAFTED_BY)) {
-        return this.listPricingService.getCraftingPrice(listRow, pricingData);
+        return {
+          price: this.listPricingService.getCraftingPrice(listRow, pricingData)
+        };
       }
     })
   );
@@ -91,16 +98,33 @@ export class ListPricingRowComponent extends TeamcraftComponent {
               public translate: TranslateService) {
     super();
     this.updates$.pipe(
-      debounceTime(1000),
+      debounceTime(100),
       takeUntil(this.onDestroy$)
     ).subscribe((update) => {
-      this.listPricingService.saveItem(this.listId, this.array, update.id, update.price, update.amount, update.use);
+      this.listPricingService.saveItem(this.listId, this.array, update.id, update.price, update.amount, update.use, !update.custom);
+    });
+    combineLatest([this.itemPrice$, this.priceToCraft$]).pipe(
+      filter(([itemPrice, priceToCraft]) => !itemPrice.custom && itemPrice?.price.nq !== priceToCraft?.price.nq),
+      takeUntil(this.onDestroy$)
+    ).subscribe(([itemPrice, priceToCraft]) => {
+      itemPrice.price.nq = Math.round(priceToCraft.price.nq);
+      itemPrice.price.hq = Math.round(priceToCraft.price.hq);
+      this.listPricingService.saveItem(this.listId, this.array, itemPrice.id, itemPrice.price, itemPrice.amount, itemPrice.use, !itemPrice.custom);
     });
   }
 
   setVendorPrice(itemPrice: FullPricingRow, newPrice: number): void {
     itemPrice.price.nq = newPrice;
     itemPrice.price.fromVendor = true;
+    this.updates$.next({ ...itemPrice });
+  }
+
+  applyCustomPriceChange(custom: boolean, itemPrice: FullPricingRow, priceToCraft: number): void {
+    itemPrice.custom = custom;
+    if (!custom) {
+      itemPrice.price.nq = Math.round(priceToCraft);
+      itemPrice.price.hq = Math.round(priceToCraft);
+    }
     this.updates$.next({ ...itemPrice });
   }
 

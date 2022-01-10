@@ -7,6 +7,7 @@ export type ListArray = 'items' | 'finalItems';
 export interface FullPricingRow {
   id: number;
   use: boolean;
+  custom: boolean;
   price: Price;
   amount: ItemAmount;
   array: ListArray;
