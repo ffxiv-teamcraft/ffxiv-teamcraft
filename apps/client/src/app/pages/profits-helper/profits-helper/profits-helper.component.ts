@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProfitsService } from '../profits.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { first, map, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -25,14 +25,16 @@ export class ProfitsHelperComponent {
 
   levels$ = this.authFacade.mainCharacterEntry$.pipe(
     map(character => {
-      return character.stats.map(row => row.level);
-    })
+      return character.stats.sort((a, b) => a.jobId - b.jobId).map(row => row.level);
+    }),
+    first()
   );
 
   serverFromCharacter$ = this.authFacade.mainCharacter$.pipe(
     map(character => {
       return character.Server;
-    })
+    }),
+    first()
   );
 
   serverFromInput$ = new Subject<string>();
