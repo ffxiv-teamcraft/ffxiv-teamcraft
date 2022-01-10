@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.3"></a>
+## [9.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.2...v9.4.3) (2022-01-10)
+
+
+### Bug Fixes
+
+* **pricing:** fix for pricing mode not loading details panels properly ([533a357](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/533a357))
+
+
+### Features
+
+* **pricing:** opening pricing mode on a list for the first time now uses known prices ([50bd20f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50bd20f))
+
+
+
 <a name="9.4.2"></a>
 ## [9.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.1...v9.4.2) (2022-01-10)
 

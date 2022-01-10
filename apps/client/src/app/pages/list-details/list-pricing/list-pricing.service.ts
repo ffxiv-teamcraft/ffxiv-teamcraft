@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import Dexie, { liveQuery } from 'dexie';
-import { Observable } from 'rxjs';
+import { combineLatest, from, Observable } from 'rxjs';
 import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
 import { List } from '../../../modules/list/model/list';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { first } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { FullPricingRow, ListArray } from './model/full-pricing-row';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
@@ -118,9 +118,12 @@ export class ListPricingService {
   }
 
   public initItem(listId: string, array: ListArray, item: ListRow): void {
-    this.lazyData.getEntry('hqFlags').pipe(
+    combineLatest([
+      this.lazyData.getEntry('hqFlags'),
+      this.getItemPrice(item)
+    ]).pipe(
       first()
-    ).subscribe(hqFlags => {
+    ).subscribe(([hqFlags, itemPrice]) => {
       if (array === 'finalItems') {
         this.db.table('items')
           .add(
@@ -151,7 +154,7 @@ export class ListPricingService {
               array: array,
               listId: listId,
               itemId: item.id,
-              ...this.getItemPrice(item),
+              ...itemPrice,
               amountNQ: item.amount,
               amountHQ: 0
             }
@@ -191,22 +194,40 @@ export class ListPricingService {
     };
   }
 
-  private getItemPrice(item: ListRow): Price {
-    const fromVendor = this.getVendorPrice(item);
-    if (fromVendor > 0) {
-      return {
-        nq: fromVendor,
-        hq: 0,
-        fromVendor: true,
-        fromMB: false
-      };
-    }
-    return {
-      nq: 0,
-      hq: 0,
-      fromVendor: false,
-      fromMB: false
-    };
+  private getItemPrice(item: ListRow): Observable<Price> {
+    return from(this.db.table('items')
+      .where('itemId')
+      .equals(item.id)
+      .toArray()).pipe(
+      map((entries: DBEntry[]) => {
+        const existingEntry = entries[0];
+        if (existingEntry) {
+          return {
+            nq: existingEntry.nq,
+            nqServer: existingEntry.nqServer,
+            hq: existingEntry.hq,
+            hqServer: existingEntry.hqServer,
+            fromMB: existingEntry.fromMB,
+            fromVendor: existingEntry.fromVendor
+          };
+        }
+        const fromVendor = this.getVendorPrice(item);
+        if (fromVendor > 0) {
+          return {
+            nq: fromVendor,
+            hq: 0,
+            fromVendor: true,
+            fromMB: false
+          };
+        }
+        return {
+          nq: 0,
+          hq: 0,
+          fromVendor: false,
+          fromMB: false
+        };
+      })
+    );
   }
 
   public getVendorPrice(item: ListRow): number {

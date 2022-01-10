@@ -18,6 +18,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { FullPricingRow } from './model/full-pricing-row';
 import { Price } from './model/price';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 
 @Component({
   selector: 'app-list-pricing',
@@ -56,7 +57,6 @@ export class ListPricingComponent extends TeamcraftComponent {
 
   display$ = this.listsFacade.selectedList$.pipe(
     switchMap((list) => this.layoutsFacade.getDisplay(list, false)),
-    first(),
     shareReplay(1)
   );
 
@@ -208,6 +208,10 @@ export class ListPricingComponent extends TeamcraftComponent {
         first()
       )
       .subscribe();
+  }
+
+  trackByPanel(index: number, panel: LayoutRowDisplay): string {
+    return panel.title;
   }
 
 }

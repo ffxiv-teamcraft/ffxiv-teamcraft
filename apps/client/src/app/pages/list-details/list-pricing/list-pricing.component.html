@@ -62,7 +62,7 @@
                                       array="items"></app-list-pricing-row>
               </nz-collapse-panel>
             </nz-collapse>
-            <nz-collapse *ngFor="let panel of listDisplay.rows">
+            <nz-collapse *ngFor="let panel of listDisplay.rows; trackBy: trackByPanel">
               <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="panel.collapsedByDefault">
                 <ng-template #panelHeader>
                   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="panel-header">
