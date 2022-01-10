@@ -36,6 +36,7 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { GearsetsFacade } from './gearsets.facade';
 import { GearsetProgression, newEmptyProgression } from '../../../model/gearset/gearset-progression';
 import { SyncFromPcapPopupComponent } from '../sync-from-pcap-popup/sync-from-pcap-popup.component';
+import { EtroImportPopupComponent } from '../etro-import-popup/etro-import-popup.component';
 
 @Injectable()
 export class GearsetsEffects {
@@ -154,6 +155,38 @@ export class GearsetsEffects {
             nzContent: AriyalaImportPopupComponent,
             nzFooter: null,
             nzTitle: this.translate.instant('GEARSETS.Import_from_ariyala')
+          }).afterClose.pipe(
+            filter(opts => opts),
+            map((gearset) => {
+              gearset.authorId = userId;
+              return gearset;
+            })
+          );
+        }),
+        switchMap(gearset => {
+          return this.gearsetService.add(gearset);
+        })
+      );
+    }),
+    tap((res) => {
+      this.router.navigate(['/gearset', res]);
+    }),
+    switchMapTo(EMPTY)
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  importEtroGearset$ = this.actions$.pipe(
+    ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportEtroGearset),
+    switchMap(() => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: EtroImportPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('GEARSETS.Import_from_etro')
           }).afterClose.pipe(
             filter(opts => opts),
             map((gearset) => {
