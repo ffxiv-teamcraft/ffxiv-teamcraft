@@ -1025,7 +1025,7 @@
       "spot": 48,
       "hookset": 1,
       "tug": 0,
-      "bait": 2598,
+      "bait": 2617,
       "snagging": false
     },
     {
@@ -20375,7 +20375,7 @@
       "spot": 265,
       "hookset": 1,
       "tug": 0,
-      "bait": 36589,
+      "bait": 36591,
       "spawn": 16,
       "duration": 8,
       "weathers": [

@@ -13,15 +13,18 @@ import * as isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
-import { Character, CharacterSearch } from '@xivapi/nodestone';
+import { CharacterSearch } from '@xivapi/nodestone';
+import { Worker } from 'worker_threads';
+
 
 export class IpcListenersManager {
 
   private mappyState: any = {};
+
   private appState: any = {};
+
   private fishingState: any = {};
 
-  private characterParser = new Character();
   private characterSearchParser = new CharacterSearch();
 
   constructor(private pcap: PacketCapture, private overlayManager: OverlayManager,
@@ -412,14 +415,24 @@ export class IpcListenersManager {
 
   private setupLodestoneListeners(): void {
     ipcMain.on('lodestone:getCharacter', (event, id) => {
-      this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
+      const worker = new Worker(join(__dirname, '../workers/lodestone.js'), {
+        workerData: id
+      });
+      worker.on('message', (char) => {
         event.sender.send(`lodestone:character:${id}`, {
           Character: {
             ID: +id,
             ...char
           }
         });
-      }).catch(e => console.error(e));
+      });
+      worker.on('error', () => {
+        worker.terminate();
+      });
+      worker.on('exit', (code) => {
+        if (code !== 0)
+          worker.terminate();
+      });
     });
     ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
       this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {

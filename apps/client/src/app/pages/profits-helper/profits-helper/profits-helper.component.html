@@ -1,0 +1,119 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div>
+    <h1>{{'PROFITS.Title' | translate}} - {{server$ | async}}</h1>
+  </div>
+  <div>
+    <button nz-button nzShape="circle" class="reload-button" nzType="primary" (click)="reloader$.next()" nz-tooltip
+            [nzTooltipTitle]="'COMMON.Reload' | translate">
+      <i nz-icon nzType="reload" nzTheme="outline"></i>
+    </button>
+  </div>
+</div>
+<p>{{'PROFITS.Description' | translate}}</p>
+
+<ng-template #dataTable let-rows let-crafting="crafting" let-hideCost="hideCost" let-loading="loading">
+  <nz-table #table [nzData]="rows" [nzLoading]="loading" nzSize="small" nzPageSize="4">
+    <thead>
+    <tr>
+      <th>{{'COMMON.Item' | translate}}</th>
+      <th *ngIf="crafting && hideCost">{{'PROFITS.Complexity' | translate}} <i nz-icon nzType="question-circle" nzTheme="outline" nz-tooltip
+                                                                               [nzTooltipTitle]="'PROFITS.Explain_complexity' | translate"></i></th>
+      <th *ngIf="!hideCost">{{'PROFITS.Cost_to_craft' | translate}} <i nz-icon nzType="question-circle" nzTheme="outline" nz-tooltip
+                                                                       [nzTooltipTitle]="'PROFITS.Explain_cost_to_craft' | translate"></i></th>
+      <th>{{'PROFITS.Sold_last_24h' | translate}}</th>
+      <th>{{'PROFITS.Total_listed' | translate}}</th>
+      <th>{{'PROFITS.Unit_price' | translate}}</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of table.data">
+      <td>
+        <app-item-icon [itemId]="+row.id" width="32" class="item-icon"></app-item-icon>
+        <app-i18n-name content="items" [id]="+row.id"></app-i18n-name>
+        <app-marketboard-icon [itemId]="+row.id" [showHistory]="true"></app-marketboard-icon>
+      </td>
+      <td *ngIf="crafting && hideCost">{{row.complexity}}</td>
+      <td *ngIf="!hideCost">
+        <app-item-icon [itemId]="1" width="24"></app-item-icon>
+        {{row.cost | number:'1.0-0':translate.currentLang }}
+      </td>
+      <td>
+        {{row.v24 | number:'1.0-0':translate.currentLang }}
+      </td>
+      <td>
+        {{row.total | number:'1.0-0':translate.currentLang }}
+      </td>
+      <td>
+        <app-item-icon [itemId]="1" width="24"></app-item-icon>
+        {{row.profit.c | number:'1.0-0':translate.currentLang }}
+      </td>
+      <td>
+        <button nz-button nzSize="small" nzType="primary" nzShape="circle" (click)="addItemToList(row)" *ngIf="!itemsInList[+row.id]">
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </nz-table>
+</ng-template>
+
+<ng-template #loading>
+  <div fxLayout="row" fxLayoutAlign="center center" class="loader">
+    <div>
+      <nz-spin nzSize="large"></nz-spin>
+    </div>
+  </div>
+</ng-template>
+<div nz-row>
+  <div fxLayout="column" fxLayoutGap="10px" nz-col nzMd="16" nzSm="24">
+    <nz-card [nzTitle]="craftingTitle">
+      <ng-template #craftingTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div [innerHTML]="8 | jobUnicode" class="companion-svg"></div>
+          <div>
+            {{'PROFITS.Crafting' | translate}}
+          </div>
+          <div fxFlex="1 1 auto"></div>
+          <div>
+            <label nz-checkbox [ngModel]="selfSufficient$ | async" (ngModelChange)="selfSufficient$.next($event)"></label>
+            {{'PROFITS.Self_sufficient' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <ng-container *ngIf="crafts$ | async as crafts else loading">
+        <ng-container
+          *ngTemplateOutlet="dataTable;context:{$implicit: crafts, crafting:true, hideCost: selfSufficient$ | async, loading: loadingCrafting}"></ng-container>
+      </ng-container>
+    </nz-card>
+
+    <nz-card [nzTitle]="gatheringTitle">
+      <ng-template #gatheringTitle>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div [innerHTML]="17 | jobUnicode" class="companion-svg"></div>
+          <div>
+            {{'PROFITS.Gathering' | translate}}
+          </div>
+        </div>
+      </ng-template>
+      <ng-container *ngIf="gatherings$ | async as crafts else loading">
+        <ng-container *ngTemplateOutlet="dataTable;context:{$implicit: crafts, crafting:false, hideCost: true, loading: loadingGathering}"></ng-container>
+      </ng-container>
+    </nz-card>
+  </div>
+  <div fxLayout="column" [fxLayoutAlign]="list.length === 0 ? 'center center' : 'flex-start flex-start'" nz-col nzMd="8" nzSm="24" class="list-container">
+    <button *ngIf="list.length > 0" nz-button nzBlock nzType="primary" (click)="createList()">
+      {{'PROFITS.Add_to_list' | translate}}
+    </button>
+    <div *ngFor="let row of list;let last = last" class="list-row" [class.last]="last" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <app-item-icon [itemId]="row.id" width="32"></app-item-icon>
+      <app-i18n-name content="items" [id]="row.id"></app-i18n-name>
+      <div fxFlex="1 1 auto"></div>
+      <nz-input-number [(ngModel)]="row.amount" [nzMin]="1"></nz-input-number>
+      <button nz-button nzDanger (click)="removeItemFromList(row.id)">
+        <i nz-icon nzType="close" nzTheme="outline"></i>
+      </button>
+    </div>
+    <nz-empty *ngIf="list.length === 0" [nzNotFoundContent]="'PROFITS.Empty_list' | translate"></nz-empty>
+  </div>
+</div>

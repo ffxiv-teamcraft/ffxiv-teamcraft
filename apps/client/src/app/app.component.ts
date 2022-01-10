@@ -64,6 +64,7 @@ import { split } from 'apollo-link';
 import { getMainDefinition } from 'apollo-utilities';
 import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../environments/is-headless';
+import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-subject';
 
 declare const gtag: Function;
 
@@ -99,7 +100,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedAlarmsBar = true;
+  collapsedAlarmsBar$ = new LocalStorageBehaviorSubject('alarms-sidebar:collapsed', true);
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()

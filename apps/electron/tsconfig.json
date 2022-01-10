@@ -19,6 +19,7 @@
     "outDir": "../../dist/apps/electron"
   },
   "files": [
-    "src/main.ts"
+    "src/main.ts",
+    "src/workers/index.ts"
   ]
 }

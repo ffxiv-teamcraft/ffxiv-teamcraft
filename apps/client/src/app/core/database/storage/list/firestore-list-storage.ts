@@ -37,8 +37,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     'requires',
     'canBeCrafted',
     'hasAllBaseIngredients',
-    'craftableAmount',
-    'usePrice'
+    'craftableAmount'
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
@@ -64,6 +63,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public prepareData(list: Partial<List>): List {
+    if (!list) {
+      return list as List;
+    }
     const clone: List = JSON.parse(JSON.stringify(list));
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));

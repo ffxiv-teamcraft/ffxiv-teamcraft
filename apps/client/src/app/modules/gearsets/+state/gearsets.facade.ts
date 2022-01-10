@@ -8,6 +8,7 @@ import {
   CreateGearset,
   DeleteGearset,
   ImportAriyalaGearset,
+  ImportEtroGearset,
   ImportFromPcap,
   ImportLodestoneGearset,
   LoadGearset,
@@ -38,6 +39,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
+import { EtroLinkParser } from '../../../pages/lists/list-import-popup/link-parser/etro-link-parser';
 
 @Injectable({
   providedIn: 'root'
@@ -151,6 +153,10 @@ export class GearsetsFacade {
     this.store.dispatch(new ImportAriyalaGearset());
   }
 
+  importEtroGearset(): void {
+    this.store.dispatch(new ImportEtroGearset());
+  }
+
   importFromPcap(): void {
     this.store.dispatch(new ImportFromPcap());
   }
@@ -243,6 +249,41 @@ export class GearsetsFacade {
         gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal', itemMeldingData, hqFlags, lazyMaterias);
         if (dataset.normal.items.food) {
           gearset.food = foods.find(food => food.ID === dataset.normal.items.food);
+          if (gearset.food) {
+            gearset.food.HQ = true;
+          }
+        }
+        return gearset;
+      }),
+      catchError((e) => {
+        console.error(e);
+        return of(null);
+      })
+    );
+  }
+
+  fromEtroLink(url: string): Observable<TeamcraftGearset> {
+    const identifier: string = url.match(EtroLinkParser.REGEXP)[1];
+    return this.http.get<any>(`${EtroLinkParser.API_URL}${identifier}`).pipe(
+      withLazyData(this.lazyData, 'foods', 'itemMeldingData', 'hqFlags'),
+      map(([data, foods, itemMeldingData, hqFlags]) => {
+        const gearset = new TeamcraftGearset();
+        gearset.job = data.job;
+        gearset.name = url;
+        gearset.mainHand = this.getEtroEquipmentPiece(data, 'weapon', itemMeldingData, hqFlags);
+        gearset.offHand = this.getEtroEquipmentPiece(data, 'offHand', itemMeldingData, hqFlags);
+        gearset.head = this.getEtroEquipmentPiece(data, 'head', itemMeldingData, hqFlags);
+        gearset.chest = this.getEtroEquipmentPiece(data, 'body', itemMeldingData, hqFlags);
+        gearset.gloves = this.getEtroEquipmentPiece(data, 'hands', itemMeldingData, hqFlags);
+        gearset.legs = this.getEtroEquipmentPiece(data, 'legs', itemMeldingData, hqFlags);
+        gearset.feet = this.getEtroEquipmentPiece(data, 'feet', itemMeldingData, hqFlags);
+        gearset.earRings = this.getEtroEquipmentPiece(data, 'ears', itemMeldingData, hqFlags);
+        gearset.necklace = this.getEtroEquipmentPiece(data, 'neck', itemMeldingData, hqFlags);
+        gearset.bracelet = this.getEtroEquipmentPiece(data, 'wrists', itemMeldingData, hqFlags);
+        gearset.ring1 = this.getEtroEquipmentPiece(data, 'fingerL', itemMeldingData, hqFlags);
+        gearset.ring2 = this.getEtroEquipmentPiece(data, 'fingerR', itemMeldingData, hqFlags);
+        if (data.food) {
+          gearset.food = foods.find(food => food.ID === data.food);
           if (gearset.food) {
             gearset.food.HQ = true;
           }
@@ -368,6 +409,32 @@ export class GearsetsFacade {
       case 'Wrists':
         return 'bracelet';
     }
+  }
+
+  private getEtroEquipmentPiece(gearset: any, etroSlotName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags']): EquipmentPiece | null {
+    const itemId = gearset[etroSlotName];
+    if (itemId === null) {
+      return null;
+    }
+    const itemMeldingData = lazyItemMeldingData[itemId];
+    const canBeHq = hqFlags[itemId] === 1;
+    const materias = Object.values<number>(gearset.materia[itemId] || {});
+    while (materias.length < itemMeldingData.slots) {
+      materias.push(0);
+    }
+    if (itemMeldingData.overmeld) {
+      while (materias.length < 5) {
+        materias.push(0);
+      }
+    }
+    return {
+      itemId: itemId,
+      materias: materias,
+      materiaSlots: itemMeldingData.slots,
+      canOvermeld: itemMeldingData.overmeld,
+      baseParamModifier: itemMeldingData.modifier,
+      hq: canBeHq
+    };
   }
 
   private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string, lazyItemMeldingData: LazyData['itemMeldingData'], hqFlags: LazyData['hqFlags'], lazyMaterias: LazyData['materias']): EquipmentPiece | null {

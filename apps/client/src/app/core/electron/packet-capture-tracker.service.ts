@@ -116,7 +116,11 @@ export class PacketCaptureTrackerService {
             {
               nzCloseIcon: null,
               nzDuration: 0,
-              nzKey: 'autofill_gathering_crafting'
+              nzKey: 'autofill_gathering_crafting',
+              nzStyle: {
+                right: localStorage.getItem('alarms-sidebar:collapsed') === 'false' ? `240px` : `10px`,
+                top: '85px'
+              }
             }
           );
         }

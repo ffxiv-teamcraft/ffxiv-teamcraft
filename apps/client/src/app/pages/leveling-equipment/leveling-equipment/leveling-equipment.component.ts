@@ -47,7 +47,6 @@ export class LevelingEquipmentComponent extends TeamcraftComponent {
     { property: 'head', name: 'Head', equipSlotCategoryIds: [3] },
     { property: 'chest', name: 'Body', equipSlotCategoryIds: [4] },
     { property: 'gloves', name: 'Gloves', equipSlotCategoryIds: [5] },
-    { property: 'belt', name: 'Waist', equipSlotCategoryIds: [6] },
     { property: 'legs', name: 'Legs', equipSlotCategoryIds: [7] },
     { property: 'feet', name: 'Feet', equipSlotCategoryIds: [8] },
     { property: 'earRings', name: 'Ears', equipSlotCategoryIds: [9] },

@@ -193,7 +193,9 @@
     "Submarine": "Submarine",
     "Voyage": "Voyage",
     "Instance": "Instance",
-    "Fate": "Fate"
+    "Fate": "Fate",
+    "Reload": "Reload",
+    "Click_to_apply": "Click to apply"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -1038,7 +1040,7 @@
     "Current_control": "Current control: {{value}}",
     "Current_control_bonus": "Current bonus",
     "Macrolock": "Include macro lock",
-    "Find_rotation": "Community rotation finder",
+    "Find_rotation": "Rotation finder",
     "Searching_for_rotation": "Searching for community rotations…",
     "No_matching_rotations": "No community rotation found that match your needs",
     "Click_on_rotation": "Click on a rotation to select it",
@@ -1051,6 +1053,8 @@
     "Detailed": "Detailed",
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Stats applied",
+    "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -1195,22 +1199,16 @@
     }
   },
   "PRICING": {
-    "From_vendor": "Price from vendor",
-    "From_crafting": "Price from crafting",
     "Expect_to_sell_everything": "Expect to sell everything",
+    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
-    "Autofill_panel_prices_warning": "This is a slow process and should take around {{time}} seconds to complete, are you sure?",
-    "Copy_earnings_as_text": "Copy content as text",
     "Content_copied": "Content copied in your clipboard",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC ({{price}} gil)",
+    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copy this panel as text",
-    "Check_precraft_prices": "Check for cheaper prices inside marketboard",
-    "Craft_price": "Crafting price",
-    "Marketboard_price": "NQ price",
-    "Marketboard_price_hq": "HQ price",
-    "Enter_total_earnings": "Enter total earnings",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Exclude completed items",
+    "Price_to_craft": "Price to craft",
+    "Price_from_vendor": "Price from vendor",
+    "Last_update": "Last update"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -1962,6 +1960,7 @@
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
       "Bag": "Inventory",
+      "Crystal": "Crystal",
       "Other": "Other inventory",
       "Armory": "Armory",
       "Current_Gear": "Current gear",
@@ -2065,12 +2064,14 @@
     "Pick_a_job": "Pick a job",
     "New_gearset": "New gearset",
     "Please_input_ariyala_link": "Please input an ariyala link",
+    "Please_input_etro_link": "Please input an etro link",
     "Link_not_supported": "Link not supported",
     "Compare_gearset": "Compare this gearset with another",
     "Stats": "Stats",
     "Materias": "Materias",
     "Pieces": "Gear pieces",
     "Import_from_ariyala": "Import from Ariyala",
+    "Import_from_etro": "Import from Etro",
     "Import_from_lodestone": "Import from Lodestone",
     "Import_using_pcap": "Import using packet capture",
     "Sync_with_pcap": "Sync gearsets with packet capture",
@@ -2876,5 +2877,21 @@
     "Harvesting": "Harvesting",
     "Fishing": "Fishing",
     "Spearfishing": "Spearfishing"
+  },
+  "PROFITS": {
+    "Title": "Profits Helper",
+    "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Self_sufficient": "Self sufficient",
+    "Crafting": "Crafting",
+    "Gathering": "Gathering",
+    "Complexity": "Complexity",
+    "Sold_last_24h": "# sold during the last 24h",
+    "Total_listed": "Total on sale",
+    "Unit_price": "Unit price",
+    "Cost_to_craft": "Cost to craft",
+    "Explain_complexity": "A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
+    "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
+    "Empty_list": "Empty list, click the + button on an item to add it here",
+    "Add_to_list": "Add these items to a list"
   }
 }

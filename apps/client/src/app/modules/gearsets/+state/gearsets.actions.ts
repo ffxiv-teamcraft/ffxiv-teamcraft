@@ -5,6 +5,7 @@ import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 export enum GearsetsActionTypes {
   CreateGearset = '[Gearsets] Create Gearset',
   ImportAriyalaGearset = '[Gearsets] Import Ariyala Gearset',
+  ImportEtroGearset = '[Gearsets] Import Etro Gearset',
   ImportLodestoneGearset = '[Gearsets] Import Lodestone Gearset',
   ImportFromPcap = '[Gearsets] Import From Pcap',
   SyncFromPcap = '[Gearsets] Sync From Pcap',
@@ -53,6 +54,10 @@ export class CreateGearset implements Action {
 
 export class ImportAriyalaGearset implements Action {
   readonly type = GearsetsActionTypes.ImportAriyalaGearset;
+}
+
+export class ImportEtroGearset implements Action {
+  readonly type = GearsetsActionTypes.ImportEtroGearset;
 }
 
 export class ImportFromPcap implements Action {
@@ -140,6 +145,7 @@ export type GearsetsAction =
   | DeleteGearset
   | CreateGearset
   | ImportAriyalaGearset
+  | ImportEtroGearset
   | ImportLodestoneGearset
   | ImportFromPcap
   | PureUpdateGearset

@@ -39,6 +39,7 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pcap-popup.component';
 import { FavoritesModule } from '../favorites/favorites.module';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
+import { EtroImportPopupComponent } from './etro-import-popup/etro-import-popup.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { PageLoaderModule } from '../page-loader/page-loader.module';
     GearsetCostPopupComponent,
     ItemCapsTableComponent,
     StatsPopupComponent,
-    SyncFromPcapPopupComponent
+    SyncFromPcapPopupComponent,
+    EtroImportPopupComponent
   ],
   imports: [
     CommonModule,

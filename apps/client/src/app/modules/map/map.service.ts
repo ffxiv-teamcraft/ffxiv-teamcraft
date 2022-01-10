@@ -51,12 +51,26 @@ export class MapService {
     return this.cache[mapId];
   }
 
+  private getDistanceFromAetheryte(aetheryte: LazyAetheryte, target: Vector2 | Vector3): number {
+    let distance = this.mathService.distance(aetheryte, target);
+    if (aetheryte.id === 173 && target.y > 15) {
+      distance *= 2;
+    }
+    if (aetheryte.id === 147 && target.y > 24) {
+      distance *= 2;
+    }
+    if (aetheryte.id === 148 && target.y <= 24) {
+      distance *= 2;
+    }
+    return distance;
+  }
+
   public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Observable<LazyAetheryte> {
     return this.getAetherytes(mapData.id, true).pipe(
       map(aetherytes => {
         let nearest = aetherytes[0];
         for (const aetheryte of aetherytes) {
-          if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
+          if (this.getDistanceFromAetheryte(aetheryte, coords) < this.getDistanceFromAetheryte(nearest, coords)) {
             nearest = aetheryte;
           }
         }

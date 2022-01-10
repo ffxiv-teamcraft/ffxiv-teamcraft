@@ -77,8 +77,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public listIsLarge: boolean;
 
-  public pricingMode = false;
-
   public loggedIn$ = this.authFacade.loggedIn$;
 
   public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');

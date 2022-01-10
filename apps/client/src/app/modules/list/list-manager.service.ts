@@ -197,7 +197,6 @@ export class ListManagerService {
     itemClone.amount = amount;
     itemClone.done = 0;
     itemClone.used = 0;
-    itemClone.usePrice = true;
     itemClone.id = itemClone.$key;
     const added = ListController.addToFinalItems(addition, itemClone);
     if (itemClone.requires.length > 0) {

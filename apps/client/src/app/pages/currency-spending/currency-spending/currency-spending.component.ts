@@ -4,7 +4,6 @@ import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { bufferCount, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { SpendingEntry } from '../spending-entry';
 import { DataService } from '../../../core/api/data.service';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import * as _ from 'lodash';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -14,6 +13,7 @@ import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-currency-spending',
@@ -79,23 +79,32 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
     this.results$ = combineLatest([this.currency$, this.server$]).pipe(
       switchMap(([currency, server]) => {
         this.loading = true;
-        return this.lazyData.getEntry('shops').pipe(
-          map(shops => {
-            return shops.filter(shop => {
-              return shop.trades.some(t => t.currencies.some(c => c.id === currency))
-            }).map(shop => {
-              return shop.trades
-                .filter(t => t.currencies.some(c => c.id === currency))
-                .map(t => {
-                  const currencyEntry = t.currencies.find(c => +c.id === currency);
-                  return {
-                    npcs: shop.npcs,
-                    item: +t.items[0].id,
-                    HQ: +t.items[0].hq,
-                    rate: +t.items[0].amount / currencyEntry.amount
-                  };
-                })
-            }).flat()
+        return combineLatest([
+          this.lazyData.getEntry('shops'),
+          this.lazyData.getEntry('marketItems')
+        ]).pipe(
+          map(([shops, marketItems]) => {
+            return shops
+              .filter(shop => {
+                return shop.trades.some(t => {
+                  return t.currencies.some(c => c.id === currency)
+                    && t.items.some(i => marketItems.includes(i.id));
+                }) && shop.npcs.length > 0;
+              })
+              .map(shop => {
+                return shop.trades
+                  .filter(t => t.items.length > 0 && t.currencies.some(c => c.id === currency))
+                  .map(t => {
+                    const currencyEntry = t.currencies.find(c => +c.id === currency);
+                    return {
+                      npcs: shop.npcs,
+                      item: +t.items[0].id,
+                      HQ: +t.items[0].hq,
+                      rate: +t.items[0].amount / currencyEntry.amount
+                    };
+                  });
+              })
+              .flat();
           }),
           switchMap(entries => {
             const batches = _.chunk(entries, 100)
@@ -149,7 +158,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
                 );
               }),
               map((res: SpendingEntry[]) => {
-                return res.filter(entry => entry.price)
+                return uniqBy(res.filter(entry => entry.price), 'itemID')
                   .sort((a, b) => {
                     return b.score - a.score;
                   });

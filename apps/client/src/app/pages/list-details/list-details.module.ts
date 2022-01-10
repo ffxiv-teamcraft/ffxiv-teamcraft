@@ -26,7 +26,6 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { TeamsModule } from '../../modules/teams/teams.module';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
-import { PricingModule } from '../../modules/pricing/pricing.module';
 import { NumberQuestionPopupModule } from '../../modules/number-question-popup/number-question-popup.module';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
@@ -40,11 +39,18 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { InventoryCleanupPopupComponent } from './inventory-cleanup-popup/inventory-cleanup-popup.component';
 import { InventoryModule } from '../../modules/inventory/inventory.module';
+import { ListPricingComponent } from './list-pricing/list-pricing.component';
+import { ListPricingRowComponent } from './list-pricing/list-pricing-row/list-pricing-row.component';
 
 const routes: Routes = [
   {
     path: ':listId',
     component: ListDetailsComponent,
+    canActivate: [MaintenanceGuard, VersionLockGuard]
+  },
+  {
+    path: ':listId/pricing',
+    component: ListPricingComponent,
     canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
@@ -74,7 +80,6 @@ const routes: Routes = [
     UserAvatarModule,
     FavoritesModule,
     MarketboardModule,
-    PricingModule,
     NumberQuestionPopupModule,
     FishingBaitModule,
     ItemPickerModule,
@@ -98,7 +103,9 @@ const routes: Routes = [
     TotalPanelPricePopupComponent,
     ListContributionsComponent,
     InventorySynthesisPopupComponent,
-    InventoryCleanupPopupComponent
+    InventoryCleanupPopupComponent,
+    ListPricingComponent,
+    ListPricingRowComponent
   ]
 })
 export class ListDetailsModule {

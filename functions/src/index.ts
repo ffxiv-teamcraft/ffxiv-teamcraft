@@ -1,10 +1,17 @@
+import { RuntimeOptions } from 'firebase-functions';
+import { Item } from './marketboard/item';
+import { combineLatest, from } from 'rxjs';
+import axios from 'axios';
+import { createRedisClient, updateCache, updateItems, updateServerData } from './marketboard/common';
+import { map, switchMap } from 'rxjs/operators';
+import { chunk, uniq } from 'lodash';
+import { closeUniversalisQueue, doUniversalisRequest } from './marketboard/universalis';
+
 const functions = require('firebase-functions');
 require('firebase/app');
 require('firebase/firestore');
 const crypto = require('crypto');
 const admin = require('firebase-admin');
-const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
-const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
 const { PubSub } = require('@google-cloud/pubsub');
 admin.initializeApp();
 const firestore = admin.firestore();
@@ -15,7 +22,7 @@ const algoliasearch = require('algoliasearch');
 const client = algoliasearch('7E5QY6H5LR', functions.config().algolia.key);
 const searchIndex = client.initIndex('community_lists');
 
-const runtimeOpts = {
+const runtimeOpts: RuntimeOptions = {
   timeoutSeconds: 120,
   memory: '256MB'
 };
@@ -33,7 +40,7 @@ function getAlgoliaEntry(snapshot) {
 /**
  * SEARCH STUFF
  */
-exports.updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((change) => {
+export const updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onUpdate((change) => {
   if (change.after.data().public !== change.before.data().public) {
     // If is has been added as community list
     if (change.after.data().public) {
@@ -46,13 +53,13 @@ exports.updateSearchOnEdit = functions.runWith(runtimeOpts).firestore.document('
   }
 });
 
-exports.updateSearchOnDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
+export const updateSearchOnDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete((snap) => {
   if (snap.data().public) {
     return searchIndex.deleteObject(snap.id);
   }
 });
 
-exports.searchCommunityLists = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
+export const searchCommunityLists = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   res.set('Access-Control-Allow-Methods', 'POST');
   res.set('Access-Control-Allow-Origin', '*');
   res.set('Access-Control-Allow-Headers', '*');
@@ -61,12 +68,13 @@ exports.searchCommunityLists = functions.runWith(runtimeOpts).https.onRequest((r
     // Send response to OPTIONS requests
     return res.status(204).send('');
   }
-  const options = {};
+  const options: any = {};
   if (req.query.tags) {
     options.tagFilters = req.query.tags;
   }
   if (!req.query.tags && !req.query.name) {
-    return res.status(400).send();
+    res.status(400).send();
+    return;
   }
   searchIndex.search(decodeURIComponent(req.query.name || '').toString(), options).then(results => {
     if (results.nbHits === 0) {
@@ -90,7 +98,7 @@ exports.searchCommunityLists = functions.runWith(runtimeOpts).https.onRequest((r
 
 
 // Firestore counts
-exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
+export const firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
   return creationsRef.transaction(current => {
@@ -98,33 +106,35 @@ exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.doc
   }).then(() => null);
 });
 
-exports.firestoreCountRotationsCreate = functions.runWith(runtimeOpts).firestore.document('/rotations/{uid}').onCreate(() => {
+export const firestoreCountRotationsCreate = functions.runWith(runtimeOpts).firestore.document('/rotations/{uid}').onCreate(() => {
   const creationsRef = admin.database().ref('/rotations_created');
   return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
 });
 
-exports.firestoreCountGearsetsCreate = functions.runWith(runtimeOpts).firestore.document('/gearsets/{uid}').onCreate(() => {
+export const firestoreCountGearsetsCreate = functions.runWith(runtimeOpts).firestore.document('/gearsets/{uid}').onCreate(() => {
   const creationsRef = admin.database().ref('/gearsets_created');
   return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
 });
 
-exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.document('/crafting-replays/{uid}').onCreate(() => {
+export const firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.document('/crafting-replays/{uid}').onCreate(() => {
   const creationsRef = admin.database().ref('/crafting_replays_created');
   return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
 });
 
-exports.desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
+export const desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   if (req.path === '/RELEASES') {
-    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest/download/RELEASES`);
+    res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest/download/RELEASES`);
+    return;
   } else if (req.path.endsWith('.nupkg')) {
     const version = req.path.split('-')[2];
-    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.path}`);
+    res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.path}`);
+    return;
   }
   return res.status(400).end();
 });
@@ -134,11 +144,11 @@ function notifyBot(event, commission) {
   commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ event, commission })));
 }
 
-exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
+export const commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
   return notifyBot('created', { $key: snapshot.$key, ...snapshot.data() });
 });
 
-exports.commissionDeletionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onDelete((snapshot) => {
+export const commissionDeletionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onDelete((snapshot) => {
   return notifyBot('deleted', { $key: snapshot.$key, ...snapshot.data() });
 });
 
@@ -151,7 +161,7 @@ function addUserCommissionNotification(targetId, type, payload) {
   });
 }
 
-exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
+export const commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
   const before = { $key: change.before.id, ...change.before.data() };
   const after = { $key: change.after.id, ...change.after.data() };
   notifyBot('updated', after);
@@ -269,7 +279,7 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
   }
 });
 
-exports.subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   if (!data.token || data.token.length === 0) {
     return Promise.resolve();
   }
@@ -281,7 +291,7 @@ exports.subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data
   });
 });
 
-exports.unsubscribeFromUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const unsubscribeFromUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   return admin.messaging().unsubscribeFromTopic(data.token, `users.${context.auth.uid}`).then(res => {
     return {
       ...res,
@@ -303,12 +313,13 @@ functions.runWith(runtimeOpts).pubsub.schedule('0 0 * * *').onRun(() => {
     });
 });
 
-validatedCache = {};
+const validatedCache = {};
 
-exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
+export const userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
   const userId = request.query.userId;
   if (validatedCache[userId] !== undefined) {
-    return response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${validatedCache[userId]}}`);
+    response.status(200).set('Content-Type', 'application/json').send(`{"valid": ${validatedCache[userId]}}`);
+    return;
   }
   return firestore.collection('users').doc(userId).get().then(snap => {
     validatedCache[userId] = snap.exists;
@@ -316,31 +327,7 @@ exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((reques
   });
 });
 
-exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
-  res.set('Access-Control-Allow-Methods', 'POST');
-  res.set('Access-Control-Allow-Origin', '*');
-  res.set('Access-Control-Allow-Headers', '*');
-  res.set('Access-Control-Max-Age', '3600');
-  if (req.method === 'OPTIONS') {
-    // Send response to OPTIONS requests
-    res.status(204).send('');
-  } else {
-    const stats = new CrafterStats(
-      req.body.stats.jobId,
-      req.body.stats.craftsmanship,
-      req.body.stats.control,
-      req.body.stats.cp,
-      req.body.stats.specialist,
-      req.body.stats.level,
-      req.body.stats.levels
-    );
-    const solver = new Solver(req.body.recipe, stats, req.body.configuration);
-    const seed = req.body.seed ? CraftingActionsRegistry.deserializeRotation(req.body.seed) : undefined;
-    return res.json(CraftingActionsRegistry.serializeRotation(solver.run(seed)));
-  }
-});
-
-const hashReplay = (replay) => {
+const computeReplayHash = (replay) => {
   const hmac = crypto.createHmac('sha256', functions.config().replays.hmac.secret);
   hmac.update(JSON.stringify(Object.entries(replay).sort((a, b) => {
     return a[0] > b[0] ? 1 : -1;
@@ -348,16 +335,16 @@ const hashReplay = (replay) => {
   return hmac.digest('hex');
 };
 
-exports.hashReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const hashReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   if (context.auth.uid === undefined || context.auth.token === undefined) {
     return { hash: 'nope' };
   }
-  return { hash: hashReplay(data.replay) };
+  return { hash: computeReplayHash(data.replay) };
 });
 
-exports.saveReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const saveReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   const { hash, ...dataToHash } = data.replay;
-  const hashCheck = hashReplay(dataToHash);
+  const hashCheck = computeReplayHash(dataToHash);
   if (hash === hashCheck) {
     const { $key, ...dataToSave } = data.replay;
     firestore.collection('crafting-replays').doc($key).set({
@@ -371,7 +358,7 @@ exports.saveReplay = functions.runWith(runtimeOpts).https.onCall((data, context)
 });
 
 
-exports.getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+export const getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   return admin.auth().getUserByEmail(data.email)
     .then(res => {
       return {
@@ -408,11 +395,11 @@ function getTokenClaims(user) {
   };
 }
 
-exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(async (data, context) => {
+export const setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(async (data, context) => {
   const user = await firestore.collection('users').doc(data.uid).get().then(doc => doc.data());
   // Check if user meets role criteria:
   // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
-  let customClaims = {
+  const customClaims = {
     'https://hasura.io/jwt/claims': {
       ...getTokenClaims(user),
       'x-hasura-user-id': data.uid
@@ -430,4 +417,137 @@ exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(async 
       console.log(error);
     });
 });
+
+let items: Record<number, Item>;
+
+
+export const updateCacheForAllServers = functions
+  .runWith({
+    vpcConnector: `projects/ffxivteamcraft/locations/us-central1/connectors/functions-connector`,
+    timeoutSeconds: 270,
+    memory: '512MB'
+  })
+  .pubsub
+  .schedule('every 1 minutes').onRun(async () => {
+    if (!items) {
+      items = {};
+      const extractsReq = await axios.get('https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/raw/staging/apps/client/src/assets/extracts/extracts.json');
+      const recipesReq = await axios.get('https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src/assets/data/recipes.json');
+      const extracts = extractsReq.data;
+      const recipes = recipesReq.data;
+      Object.values<any>(extracts)
+        .filter(e => !e.sources.some((s: any) => s.type === -1))
+        .forEach(extract => {
+          const crafting = extract.sources.find((source: any) => source.type === 1)?.data || null;
+          const gathering = extract.sources.find((source: any) => source.type === 7)?.data || null;
+          const vendors = extract.sources.find((source: any) => source.type === 3)?.data || null;
+          const trades = extract.sources.find((source: any) => source.type === 2)?.data || null;
+          const reduction = extract.sources.find((source: any) => source.type === 4)?.data || null;
+          const requirements = crafting ? recipes.find((r: any) => r.id.toString() === crafting[0].id.toString())?.ingredients : null;
+          items[extract.id] = {
+            id: extract.id,
+            crafting,
+            gathering,
+            vendors,
+            trades,
+            reduction,
+            requirements
+          };
+        });
+    }
+
+    return new Promise<void>(resolve => {
+      createRedisClient().then(redis => {
+        from(axios.get('https://xivapi.com/servers')).pipe(
+          switchMap(res => {
+            const servers: string[] = res.data;
+            return combineLatest(servers.map(server => {
+              return updateServerData(server);
+            }));
+          })
+        ).subscribe(async res => {
+          for (const row of res) {
+            const itemIds = Object.keys(row.data);
+            for (const id of itemIds) {
+              await redis.set(`mb:${row.server}:${id}`, JSON.stringify(row.data[+id]));
+            }
+          }
+          updateCache(uniq(res.map(row => row.server)), items, redis);
+          closeUniversalisQueue();
+          resolve();
+        });
+      });
+    });
+  });
+
+export const updateFullDataForAllServers = functions
+  .runWith({
+    vpcConnector: `projects/ffxivteamcraft/locations/us-central1/connectors/functions-connector`,
+    timeoutSeconds: 540,
+    memory: '512MB'
+  })
+  .pubsub
+  .schedule('every 2 hours').onRun(async () => {
+    if (!items) {
+      items = {};
+      const extractsReq = await axios.get('https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/raw/staging/apps/client/src/assets/extracts/extracts.json');
+      const recipesReq = await axios.get('https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src/assets/data/recipes.json');
+      const extracts = extractsReq.data;
+      const recipes = recipesReq.data;
+      Object.values<any>(extracts)
+        .filter(e => !e.sources.some((s: any) => s.type === -1))
+        .forEach(extract => {
+          const crafting = extract.sources.find((source: any) => source.type === 1)?.data || null;
+          const gathering = extract.sources.find((source: any) => source.type === 7)?.data || null;
+          const vendors = extract.sources.find((source: any) => source.type === 3)?.data || null;
+          const trades = extract.sources.find((source: any) => source.type === 2)?.data || null;
+          const reduction = extract.sources.find((source: any) => source.type === 4)?.data || null;
+          const requirements = crafting ? recipes.find((r: any) => r.id.toString() === crafting[0].id.toString())?.ingredients : null;
+          items[extract.id] = {
+            id: extract.id,
+            crafting,
+            gathering,
+            vendors,
+            trades,
+            reduction,
+            requirements
+          };
+        });
+    }
+
+    return new Promise<void>(resolve => {
+      createRedisClient().then(redis => {
+        from(axios.get('https://xivapi.com/servers')).pipe(
+          switchMap((res) => {
+            const partitionToPick = Math.floor(new Date().getUTCHours() / 2);
+            const servers: string[] = chunk(res.data, Math.ceil(res.data.length / 12))[partitionToPick] as string[];
+            return doUniversalisRequest('https://universalis.app/api/marketable').pipe(
+              switchMap((itemIds: number[]) => {
+                console.log('Starting MB data aggregation');
+                return combineLatest(servers.map(server => {
+                    const chunks = chunk(itemIds, 100);
+                    return combineLatest(chunks.map((ids, index) => {
+                      return updateItems(server, ids);
+                    }));
+                  })
+                ).pipe(
+                  map((mbRes: any[]) => mbRes.flat())
+                );
+              })
+            );
+          })
+        ).subscribe(async (res: any) => {
+          for (const row of res) {
+            const itemIds = Object.keys(row.data);
+            for (const id of itemIds) {
+              await redis.set(`mb:${row.server}:${id}`, JSON.stringify(row.data[+id]));
+            }
+          }
+          closeUniversalisQueue();
+          updateCache(uniq(res.map(row => row.server)), items, redis);
+          resolve();
+        });
+      });
+    });
+  });
 

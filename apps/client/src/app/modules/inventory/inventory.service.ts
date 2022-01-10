@@ -33,6 +33,8 @@ import { SettingsService } from '../settings/settings.service';
 import { ContentIdLinkingPopupComponent } from './content-id-linking-popup/content-id-linking-popup.component';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { InventoryState } from './sync-state/inventory-state';
+import { LazyMateria } from '../../lazy-data/model/lazy-materia';
+import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
   providedIn: 'root'
@@ -93,7 +95,8 @@ export class InventoryService {
   constructor(private ipc: IpcService, private authFacade: AuthFacade,
               private translate: TranslateService, private retainersService: RetainersService,
               private serializer: NgSerializerService, private http: HttpClient,
-              private settings: SettingsService, private modal: NzModalService) {
+              private settings: SettingsService, private modal: NzModalService,
+              private lazyData: LazyDataFacade) {
     this.retainerInformations$.connect();
     this.authFacade.characterEntries$.subscribe(entries => {
       this.characterEntries = entries;
@@ -147,8 +150,11 @@ export class InventoryService {
       }
     });
 
-    this.inventory$ = baseInventoryState$.pipe(
-      switchMap(baseInventoryState => {
+    this.inventory$ = combineLatest([
+      baseInventoryState$,
+      this.lazyData.getEntry('materias')
+    ]).pipe(
+      switchMap(([baseInventoryState, materias]) => {
         const packetActions$ = merge(containerInfoMessages$, itemInfoMessages$, currencyCrystalInfoMessages$,
           inventoryModifyHandlerMessages$, updateInventorySlotMessages$, inventoryTransactionMessages$);
         const packetActions2$ = merge(itemMarketBoardInfoMessages$, clientTriggerMbPriceMessages$);
@@ -194,13 +200,13 @@ export class InventoryService {
                   return {
                     ...state,
                     itemInfoQueue: newQueue,
-                    inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos)
+                    inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos, materias)
                   };
                 }
               case 'RetainerSpawn':
                 let inventory = state.inventory.clone();
                 state.retainerInventoryQueue.forEach(entry => {
-                  inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, action.retainer);
+                  inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
                 });
                 state.retainerUpdateSlotQueue.forEach(entry => {
                   inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
@@ -352,6 +358,8 @@ export class InventoryService {
 
   public getContainerName(containerId: number): string {
     switch (containerId) {
+      case ContainerType.Crystal:
+        return 'Crystal';
       case ContainerType.Bag0:
       case ContainerType.Bag1:
       case ContainerType.Bag2:
@@ -463,7 +471,7 @@ export class InventoryService {
     this.resetInventory$.next({ type: 'Reset' });
   }
 
-  private handleContainerInfo(inventory: UserInventory, packet: ContainerInfo, itemInfos: Array<ItemInfo | CurrencyCrystalInfo>, retainer?: string): UserInventory {
+  private handleContainerInfo(inventory: UserInventory, packet: ContainerInfo, itemInfos: Array<ItemInfo | CurrencyCrystalInfo>, materias: LazyMateria[], retainer?: string): UserInventory {
     const isRetainer = !!retainer;
     const containerKey = isRetainer ? `${retainer}:${packet.containerId}` : packet.containerId;
     if (containerKey === 2001) {
@@ -477,15 +485,39 @@ export class InventoryService {
     }
     inventory.items[inventory.contentId][containerKey] = {};
 
-    itemInfos.forEach(itemInfo => {
+    const currencyCrystals: CurrencyCrystalInfo[] = itemInfos.filter(i => i.containerId === 2000) as CurrencyCrystalInfo[];
+
+    if (currencyCrystals.length > 0) {
+      currencyCrystals.forEach(row => {
+        const item: InventoryItem = {
+          itemId: +row.catalogId,
+          containerId: +row.containerId,
+          slot: +row.slot,
+          quantity: +row.quantity,
+          hq: false,
+          materias: [],
+          spiritBond: 0
+        };
+        if (isRetainer) {
+          item.retainerName = retainer;
+        }
+        inventory.items[inventory.contentId][containerKey][row.slot] = item;
+      });
+    }
+
+    itemInfos.forEach((itemInfo: ItemInfo) => {
       const item: InventoryItem = {
         itemId: +itemInfo.catalogId,
         containerId: +itemInfo.containerId,
         slot: +itemInfo.slot,
         quantity: +itemInfo.quantity,
-        hq: (itemInfo as ItemInfo).hqFlag || false,
-        spiritBond: +(itemInfo as ItemInfo).spiritBond || 0,
-        materias: (itemInfo as ItemInfo).materia || []
+        hq: itemInfo.hqFlag || false,
+        spiritBond: +itemInfo.spiritBond || 0,
+        materias: (itemInfo.materia || []).map((m, i) => {
+          return materias.find(lazyMateria => {
+            return lazyMateria.id === m && lazyMateria.tier === itemInfo.materiaTiers[i];
+          })?.itemId || 0;
+        })
       };
       if (isRetainer) {
         item.retainerName = retainer;

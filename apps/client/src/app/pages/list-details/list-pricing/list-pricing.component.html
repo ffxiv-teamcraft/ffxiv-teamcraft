@@ -1,0 +1,132 @@
+<h1><a routerLink=".."><i nz-icon nzType="arrow-left" nz-tooltip [nzTooltipTitle]="'Back_to_list' | translate"></i></a>
+  {{'Pricing_mode' | translate}} - {{selectedListName$ | async}}</h1>
+
+<ng-container *ngIf="listKey$ | async as listKey">
+  <ng-container *ngIf="pricingData$ | async as pricingData">
+    <div *ngIf="display$ | async as listDisplay" class="list-display" fxLayout="column" fxLayoutGap="20px">
+      <nz-card [nzTitle]="spendingsTitle">
+        <ng-template #spendingsTitle>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div>
+              {{'Spending' | translate}} (
+              <app-item-icon [itemId]="1" width="16"></app-item-icon>
+              {{spendingTotal$ | async | number:'1.0-0':translate.currentLang}})
+            </div>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <label [(ngModel)]="settings.expectToSellEverything" nz-checkbox nz-tooltip
+                     [nzTooltipTitle]="'PRICING.Expect_to_sell_everything_explain' | translate">
+                {{'PRICING.Expect_to_sell_everything' | translate}}
+              </label>
+              <label [(ngModel)]="settings.ignoreCompletedItemInPricing" nz-checkbox>
+                {{'PRICING.Ignore_completed_items' | translate}}
+              </label>
+            </div>
+          </div>
+        </ng-template>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <nz-collapse *ngIf="listDisplay.crystalsPanel">
+            <nz-collapse-panel [nzHeader]="crystalsHeader" nzActive *ngIf="crystals$ | async as crystals">
+              <ng-template #crystalsHeader>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="panel-header">
+                  <div>{{'Crystals' | translate}}</div>
+                  <div fxFlex="1 1 auto"></div>
+                  <div>
+                    <button (click)="$event.stopPropagation();fillMbCosts(listKey, crystals, pricingData)"
+                            *ngIf="loggedIn$ | async"
+                            nz-button
+                            nz-tooltip
+                            [nzTooltipTitle]="'PRICING.Autofill_panel_prices' | translate"
+                            nzShape="circle">
+                      <i nzIconfont="icon-dollar" nz-icon></i>
+                    </button>
+                  </div>
+                </div>
+              </ng-template>
+              <app-list-pricing-row *ngFor="let item of crystals; let odd = odd" [odd]="odd" [listId]="listKey" [listRow]="item"
+                                    [pricingData]="pricingData"
+                                    [itemId]="item.id"
+                                    array="items"></app-list-pricing-row>
+            </nz-collapse-panel>
+          </nz-collapse>
+          <nz-collapse *ngFor="let panel of listDisplay.rows">
+            <nz-collapse-panel [nzHeader]="panelHeader" nzActive>
+              <ng-template #panelHeader>
+                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="panel-header">
+                  <div>{{panel.title | translate}}</div>
+                  <div fxFlex="1 1 auto"></div>
+                  <div>
+                    <button (click)="$event.stopPropagation();fillMbCosts(listKey, panel.rows, pricingData)"
+                            *ngIf="loggedIn$ | async"
+                            nz-button
+                            nz-tooltip
+                            [nzTooltipTitle]="'PRICING.Autofill_panel_prices' | translate"
+                            nzShape="circle">
+                      <i nzIconfont="icon-dollar" nz-icon></i>
+                    </button>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-container *ngIf="!panel.hideIfEmpty || panel.rows.length > 0">
+                <app-list-pricing-row *ngFor="let item of panel.rows; let odd = odd" [odd]="odd" [listId]="listKey" [listRow]="item" [pricingData]="pricingData"
+                                      [itemId]="item.id"
+                                      array="items"></app-list-pricing-row>
+              </ng-container>
+            </nz-collapse-panel>
+          </nz-collapse>
+        </div>
+      </nz-card>
+      <nz-card [nzTitle]="earningsTitle" *ngIf="finalItemsRow$ | async as finalItems">
+        <ng-template #earningsTitle>{{'Earning' | translate}} (
+          <app-item-icon [itemId]="1" width="16"></app-item-icon>
+          {{earningTotal$ | async | number:'1.0-0':translate.currentLang}})
+        </ng-template>
+        <nz-collapse>
+          <nz-collapse-panel [nzHeader]="panelHeader" nzActive>
+            <ng-template #panelHeader>
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="panel-header">
+                <div>{{finalItems.title | translate}}</div>
+                <div fxFlex="1 1 auto"></div>
+                <div>
+                  <button (click)="$event.stopPropagation();fillMbCosts(listKey, finalItems.rows, pricingData, true)"
+                          *ngIf="loggedIn$ | async"
+                          nz-button
+                          nz-tooltip
+                          [nzTooltipTitle]="'PRICING.Autofill_panel_prices' | translate"
+                          nzShape="circle">
+                    <i nzIconfont="icon-dollar" nz-icon></i>
+                  </button>
+                </div>
+              </div>
+            </ng-template>
+            <app-list-pricing-row *ngFor="let item of finalItems.rows; let odd = odd" [odd]="odd" [listId]="listKey" [listRow]="item"
+                                  [pricingData]="pricingData" [itemId]="item.id"
+                                  array="finalItems"></app-list-pricing-row>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </nz-card>
+
+      <nz-card [nzTitle]="'Discounts' | translate">
+        <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="10px">
+          <nz-input-group [nzAddOnBefore]="'Flat_discount' | translate" nzAddOnAfter="gil">
+            <input [ngModel]="flatDiscount$ | async" (ngModelChange)="flatDiscount$.next($event)" nz-input type="number"/>
+          </nz-input-group>
+          <nz-input-group [nzAddOnBefore]="'Percent_discount' | translate" nzAddOnAfter="%">
+            <input [ngModel]="percentDiscount$ | async" (ngModelChange)="percentDiscount$.next($event)" nz-input type="number"/>
+          </nz-input-group>
+        </div>
+      </nz-card>
+
+      <nz-alert *ngIf="benefits$ | async as benefits" [nzMessage]="message"
+                [nzType]="benefits >= 0 ? 'success' : 'error'" class="dark">
+        <ng-template #message>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div>
+              <app-item-icon [itemId]="1" width="16"></app-item-icon>
+              {{'Benefits' | translate}}: {{ benefits | number:'1.0-0'}}
+            </div>
+          </div>
+        </ng-template>
+      </nz-alert>
+    </div>
+  </ng-container>
+</ng-container>

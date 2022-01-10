@@ -31,7 +31,7 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
           control: +split[1],
           cp: +split[2],
           level: +split[3],
-          spec: +split[3] === 1
+          spec: +split[4] === 1
         };
       })
     );

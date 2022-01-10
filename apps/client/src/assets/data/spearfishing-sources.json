@@ -1,4 +1,12 @@
 {
+  "21179": [
+    {
+      "speed": 5,
+      "shadowSize": 2,
+      "spawn": 2,
+      "duration": 10
+    }
+  ],
   "36523": [
     {
       "speed": 1,

@@ -282,6 +282,15 @@ export class NavigationSidebarService {
                 content: this.sanitizer.bypassSecurityTrustHtml('&#xE903;')
               },
               link: '/collectables'
+            },
+            {
+              name: 'PROFITS.Title',
+              hidden: !loggedIn,
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'dollar'
+              },
+              link: '/profits-helper'
             }
           ]
         },

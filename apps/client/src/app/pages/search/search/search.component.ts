@@ -328,7 +328,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
         });
       }),
       switchMap(([query, type, filters, sort]) => {
-        return this.data.search(query, type, filters, sort);
+        return this.data.search(query.trim(), type, filters, sort);
       }),
       tap(() => {
         this.loading = false;

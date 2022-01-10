@@ -1,0 +1,9 @@
+service: profits-api
+runtime: nodejs16
+instance_class: F1
+entrypoint: node index.js
+vpc_access_connector:
+  name: projects/ffxivteamcraft/locations/us-central1/connectors/functions-connector
+  egress_setting: private-ranges-only
+automatic_scaling:
+  max_instances: 3

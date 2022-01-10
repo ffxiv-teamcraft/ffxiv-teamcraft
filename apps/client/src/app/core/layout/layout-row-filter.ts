@@ -34,7 +34,11 @@ export class LayoutRowFilter {
   }, 'CAN_BE_BOUGHT');
 
   static IS_ONLY_FROM_VENDOR = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
-    return getItemSource(row, DataType.TRADE_SOURCES).length === 0;
+    return row.sources.length === 1 || row.sources.length === 2 &&
+      (
+        getItemSource(row, DataType.TRADE_SOURCES).length > 0
+        || getItemSource(row, DataType.QUESTS).length > 0
+      );
   }, 'IS_ONLY_FROM_VENDOR'));
 
   static IS_HQ = new LayoutRowFilter((row, list) => {

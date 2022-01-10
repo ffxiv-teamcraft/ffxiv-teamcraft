@@ -63,13 +63,6 @@ export class ListRow extends DataModel {
 
   hidden?: boolean;
 
-
-  /**
-   * Should we ignore the price of this item for pricing mode?
-   * @type {boolean}
-   */
-  usePrice?: boolean;
-
   custom?: boolean;
 
   attachedRotation?: string;

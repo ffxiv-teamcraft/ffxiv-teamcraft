@@ -83,6 +83,10 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     this.gearsetsFacade.importAriyalaGearset();
   }
 
+  importEtroGearset(): void {
+    this.gearsetsFacade.importEtroGearset();
+  }
+
   importFromPcap(): void {
     this.gearsetsFacade.importFromPcap();
   }
