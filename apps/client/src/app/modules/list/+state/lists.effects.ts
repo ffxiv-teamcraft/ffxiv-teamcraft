@@ -220,9 +220,6 @@ export class ListsEffects {
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
     debounceTime(1000),
     withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
-    filter(([, permission]) => {
-      return permission < PermissionLevel.WRITE;
-    }),
     map(([action]) => action),
     withLatestFrom(this.listsFacade.selectedClone$),
     switchMap(([action, clone]) => {
