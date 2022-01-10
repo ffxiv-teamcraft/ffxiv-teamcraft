@@ -30,6 +30,7 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { EnvironmentService } from '../../../core/environment.service';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-gearset-display',
@@ -52,7 +53,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public level$ = new BehaviorSubject<number>(this.env.maxLevel);
 
-  public tribe$ = new BehaviorSubject<number>(1);
+  public tribe$ = new LocalStorageBehaviorSubject<number>('gearsets: tribe', 1);
 
   public food$ = new BehaviorSubject<any>(null);
 
