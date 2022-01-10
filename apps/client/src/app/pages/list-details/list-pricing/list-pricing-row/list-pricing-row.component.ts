@@ -98,7 +98,7 @@ export class ListPricingRowComponent extends TeamcraftComponent {
               public translate: TranslateService) {
     super();
     this.updates$.pipe(
-      debounceTime(100),
+      debounceTime(1000),
       takeUntil(this.onDestroy$)
     ).subscribe((update) => {
       this.listPricingService.saveItem(this.listId, this.array, update.id, update.price, update.amount, update.use, !update.custom);
