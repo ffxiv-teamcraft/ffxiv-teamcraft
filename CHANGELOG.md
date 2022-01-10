@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.4"></a>
+## [9.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.3...v9.4.4) (2022-01-10)
+
+
+### Bug Fixes
+
+* **inventory-page:** fixed Shadowbringers showing twice in expansion dropdown ([a256930](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a256930))
+* **pricing:** fixed universalis API spamming and input acting up ([82d76e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82d76e9))
+
+
+
 <a name="9.4.3"></a>
 ## [9.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.2...v9.4.3) (2022-01-10)
 
