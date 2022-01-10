@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.2"></a>
+## [9.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.1...v9.4.2) (2022-01-10)
+
+
+### Bug Fixes
+
+* **levequests:** fixed exp formula for leves < 70 on level > 70 ([776d2a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/776d2a6))
+* **pricing:** fixed panels collapsing themselves randomly on desktop app ([6edc860](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6edc860))
+* **profits:** fixed level filters sometimes not applied properly ([1708dd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1708dd0))
+* **profits:** fixed page loading forever with empty profile ([91b9fc8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91b9fc8))
+
+
+
 <a name="9.4.1"></a>
 ## [9.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.0...v9.4.1) (2022-01-10)
 

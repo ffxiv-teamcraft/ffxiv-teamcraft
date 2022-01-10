@@ -361,9 +361,6 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
         if (leve.hq) {
           leveExp *= 2;
         }
-        if (leve.level < 70 && expObj.level >= 70) {
-          leveExp = 3000;
-        }
         if (leve.level < 80 && expObj.level >= 80) {
           leveExp = 1000;
         }

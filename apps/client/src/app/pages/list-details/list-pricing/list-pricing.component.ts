@@ -28,6 +28,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 export class ListPricingComponent extends TeamcraftComponent {
 
   pricingData$ = this.listsFacade.selectedList$.pipe(
+    first(),
     switchMap(list => {
       return this.pricingService.getPricingForList(list.$key).pipe(
         tap(res => {
@@ -47,21 +48,26 @@ export class ListPricingComponent extends TeamcraftComponent {
     map(list => list.name)
   );
 
-  list$ = this.listsFacade.selectedList$;
+  list$ = this.listsFacade.selectedList$.pipe(
+    first()
+  );
 
   listKey$ = this.listsFacade.selectedListKey$;
 
   display$ = this.listsFacade.selectedList$.pipe(
     switchMap((list) => this.layoutsFacade.getDisplay(list, false)),
+    first(),
     shareReplay(1)
   );
 
   finalItemsRow$ = this.listsFacade.selectedList$.pipe(
-    switchMap((list) => this.layoutsFacade.getFinalItemsDisplay(list, false))
+    switchMap((list) => this.layoutsFacade.getFinalItemsDisplay(list, false)),
+    first()
   );
 
   crystals$ = this.listsFacade.selectedList$.pipe(
-    map(list => ListController.getCrystals(list).sort((a, b) => a.id - b.id))
+    map(list => ListController.getCrystals(list).sort((a, b) => a.id - b.id)),
+    first()
   );
 
   spendingTotal$ = combineLatest([
