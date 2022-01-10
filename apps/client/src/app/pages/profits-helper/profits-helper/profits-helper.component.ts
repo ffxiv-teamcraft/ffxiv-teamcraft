@@ -23,9 +23,9 @@ export class ProfitsHelperComponent {
 
   selfSufficient$ = new LocalStorageBehaviorSubject('profits:self-sufficient', true);
 
-  levels$ = this.authFacade.mainCharacterEntry$.pipe(
-    map(character => {
-      return character.stats.sort((a, b) => a.jobId - b.jobId).map(row => row.level);
+  levels$ = this.authFacade.gearSets$.pipe(
+    map(gearsets => {
+      return gearsets.sort((a, b) => a.jobId - b.jobId).map(row => row.level);
     }),
     first()
   );
