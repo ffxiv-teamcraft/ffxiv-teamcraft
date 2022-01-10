@@ -426,7 +426,8 @@ export class IpcListenersManager {
           }
         });
       });
-      worker.on('error', () => {
+      worker.on('error', (e) => {
+        console.error(e);
         worker.terminate();
       });
       worker.on('exit', (code) => {
