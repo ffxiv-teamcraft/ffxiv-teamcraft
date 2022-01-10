@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { map, switchMap } from 'rxjs/operators';
+import { first, map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout-editor-page',
@@ -20,7 +20,8 @@ export class LayoutEditorPageComponent {
           size: l.finalItems.length
         };
       });
-    })
+    }),
+    first()
   );
 
   public selectedListKey$ = this.listsFacade.selectedList$.pipe(
@@ -29,7 +30,9 @@ export class LayoutEditorPageComponent {
 
   public display$ = this.listsFacade.selectedList$.pipe(
     switchMap(list => {
-      return this.layoutsFacade.getDisplay(list, false);
+      return this.layoutsFacade.getDisplay(list, false).pipe(
+        first()
+      );
     })
   );
 
