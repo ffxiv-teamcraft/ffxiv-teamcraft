@@ -1053,8 +1053,8 @@
     "Detailed": "Détaillé",
     "Remove_IP": "Supprimer dernières vérifications",
     "Stats_applied": "Statistiques appliquées",
-    "Show_rotations_above_stats": "Include rotations with required stats above yours",
-    "Full_buttons": "Show full buttons",
+    "Show_rotations_above_stats": "Inclure les rotations avec les statistiques requises au-dessus des vôtres",
+    "Full_buttons": "Afficher les boutons complets",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
@@ -1082,12 +1082,12 @@
       "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Réinitialiser les filtres",
       "Configuration_popup": "Partager avec la communauté",
-      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
+      "Min_craftsmanship_filter_placeholder": "Habileté min.",
       "Min_control_filter_placeholder": "Contrôle min",
       "Min_cp_filter_placeholder": "PS min",
       "Difficulty_filter_placeholder": "Difficulté",
       "Quality_filter_placeholder": "Qualité",
-      "Intro": "Input a recipe lvl to get started",
+      "Intro": "Entrez un niveau de recette pour commencer",
       "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
       "Fail": "Echec",
       "Success": "Succès : {{HQ}}% HQ",
@@ -1200,15 +1200,15 @@
   },
   "PRICING": {
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
-    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
+    "Expect_to_sell_everything_explain": "N'inclut pas les restes d'objets des prés dans vos dépenses car ils seront revendus.",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
     "Content_copied": "Contenu copié dans le presse-papiers",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
+    "Cheaper_at_vendor": "Moins cher chez le vendeur",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
     "Ignore_completed_items": "Ignorer les objets complétés",
-    "Price_to_craft": "Price to craft",
-    "Price_from_vendor": "Price from vendor",
-    "Last_update": "Last update"
+    "Price_to_craft": "Prix du craft",
+    "Price_from_vendor": "Prix du vendeur",
+    "Last_update": "Dernière mise à jour"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1442,7 +1442,7 @@
       "Format": "Format",
       "Folder": "Dossier",
       "No_folder": "Aucun dossier",
-      "Parsing_file": "Parsing file content…",
+      "Parsing_file": "Analyse du contenu du fichier…",
       "Saving_items": "Sauvegarde des objets ({{done}}/{{todo}})"
     }
   },
@@ -1462,7 +1462,7 @@
     "Job": "Job",
     "Level": "Niveau de recyclage",
     "Intro": "Sélectionnez un job et saisissez un niveau pour trouver les meilleurs objets pour monter votre recyclage",
-    "Loading_message": "Loading…",
+    "Loading_message": "Chargement…",
     "TAGS": {
       "Higher_chances": "Meilleur taux de succès",
       "Lower_exp": "Moins d'exp",
@@ -1554,8 +1554,8 @@
       "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet",
       "X_Equipped": "{{amount}} Équipé :",
       "Item_series": "Bonus d'ensemble",
-      "Requires_fate_rank": "Requires FATE rank {{rank}}",
-      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
+      "Requires_fate_rank": "Nécessite le rang ALEA {{rank}}",
+      "Requires_gc_rank": "Nécessite le rang de Grand Compagnie {{rank}}"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -1797,7 +1797,7 @@
     "Placeholder": "Nom de l'objet",
     "No_missing_ingredients": "Aucun ingrédient manquant",
     "Missing_X_ingredients": "Manque {{amount}} ingrédient(s)",
-    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
+    "Missing_X_ingredients_for_one_more": "Il manque {{amount}} ingrédient(s) pour ajouter un autre",
     "Missing": "Manque",
     "Results": "Recettes possibles",
     "Basket": "Panier",
@@ -1914,7 +1914,7 @@
     "Banner_description": "Vous pouvez activer la capture de paquets pour permettre à Teamcraft de lire vos paquets FFXIV (une case est également à l'intérieur des paramètres pour l'activer/désactiver), cela permet de remplir automatiquement les listes au fur et à mesure que vous obtenez des éléments, et de contribuer à Universalis, l’agrégateur de données d'HDV.",
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
-    "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "Please_zone": "Veuillez vous téléporter à un endroit aléatoire dans une autre zone et ouvrir votre sac de selle chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
     "Please_sort": "Le suivi de l'inventaire ne peut pas fonctionner sans savoir quel personnage vous jouez actuellement, veuillez trier/annuler de tri de votre inventaire ou connectez-vous avec votre personnage pour que Teamcraft détecte votre personnage actuel.",
     "Unknown_character": "Personnage en jeu inconnu",
     "No_character_id": "Personnage actuel inconnu",
@@ -1933,8 +1933,8 @@
     "Install_npcap": "Npcap est manquant dans votre système",
     "Install_npcap_description": "Afin de capturer les paquets sur Teamcraft avec son mode npcap par défaut, vous devez installer npcap. Teamcraft peut l'installer pour vous et redémarrer l'application une fois terminé.",
     "Install_npcap_button": "Installez npcap et redémarrez Teamcraft",
-    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
+    "Not_as_anonymous": "La capture de paquets ne fonctionnera pas correctement en anonyme",
+    "Not_as_anonymous_description": "Veuillez vous inscrire en survolant le nom \"Anonyme\" dans le coin supérieur droit et en cliquant sur \"Inscription\" ou en désactivant la capture de paquets dans les paramètres."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
@@ -1960,7 +1960,7 @@
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
       "Bag": "Inventaire",
-      "Crystal": "Crystal",
+      "Crystal": "Cristaux",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
@@ -1989,7 +1989,7 @@
     "Show_hidden": "Afficher les optimiseurs masqués",
     "No_optimizations": "Aucune optimisation disponible",
     "Optimization_copied": "Optimisation copiée dans le presse-papiers au format JSON",
-    "Pause_tracking": "Pause inventory tracking",
+    "Pause_tracking": "Mettre en pause le suivi d'inventaire",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
       "Message": "Cet objet peut être acheté aux PNJ avec des gils et n'a pas besoin de réputation de tribu.",
@@ -2064,12 +2064,14 @@
     "Pick_a_job": "Choisir un job",
     "New_gearset": "Nouvelle tenue",
     "Please_input_ariyala_link": "Veuillez entrer un lien ariyala",
+    "Please_input_etro_link": "Please input an etro link",
     "Link_not_supported": "Lien non pris en charge",
     "Compare_gearset": "Comparer cette tenue avec une autre",
     "Stats": "Stats",
     "Materias": "Matérias",
     "Pieces": "Pièces d'équipement",
     "Import_from_ariyala": "Importer depuis Ariyala",
+    "Import_from_etro": "Import from Etro",
     "Import_from_lodestone": "Importer depuis Lodestone",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
     "Sync_with_pcap": "Synchroniser les tenues avec la capture de paquets",
@@ -2119,7 +2121,7 @@
       "Wrists": "Poignets"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with…",
+      "Compare_popup_title": "Comparer {{setName}} avec…",
       "Error_title": "Impossible de comparer ces deux tenues",
       "Error_description": "Merci de vérifier que la seconde tenue existe et utilise le même type d'équipement (la même stat principale)",
       "Type": "Type de tenue",
@@ -2149,7 +2151,7 @@
       "Tag_tooltip": "Cette tenue est synchronisée via la capture de paquets, elle sera mise à jour si la synchronisation est lancée de nouveau.",
       "Importing_gearset": "Import en cours pour la tenue {{name}}",
       "Imported_gearset": "Tenue {{name}} importée",
-      "Syncing_gearsets": "Synchronizing gearsets…"
+      "Syncing_gearsets": "Synchronisation des tenues…"
     }
   },
   "FOLDERS": {
@@ -2582,7 +2584,7 @@
     "Selling": "{{amount}} objets en vente",
     "X_items": "{{amount}} objets",
     "Task_complete": "Tâche terminée",
-    "No_task": "No task",
+    "No_task": "Aucune tâche",
     "Task_completed_notification_title": "{{name}} a terminé sa tâche",
     "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
     "Task_completion_alarm": "Alarme de complétion de tâche",
@@ -2820,21 +2822,21 @@
     "Rarity_Rare": "Rare",
     "No_missing_fish_data": "Aucun poisson avec des données manquantes",
     "Sources_filter": "Filtrer les sources",
-    "Speed": "Speed",
-    "Shadow_size": "Shadow size",
-    "Deprecated": "This item cannot be obtained anymore",
+    "Speed": "Vitesse",
+    "Shadow_size": "Taille de l'ombre",
+    "Deprecated": "Cet objet ne peut plus être obtenu",
     "SPEEDS": {
-      "VERY_SLOW": "Very slow",
-      "SLOW": "Slow",
-      "AVERAGE": "Average",
-      "FAST": "Fast",
-      "FASTER": "Faster",
-      "VERY_FAST": "Very fast"
+      "VERY_SLOW": "Très lent",
+      "SLOW": "Lent",
+      "AVERAGE": "Moyen",
+      "FAST": "Rapide",
+      "FASTER": "Plus rapide",
+      "VERY_FAST": "Très rapide"
     },
     "SHADOWS": {
-      "SMALL": "Small",
+      "SMALL": "Petit",
       "NORMAL": "Normal",
-      "LARGE": "Large"
+      "LARGE": "Grand"
     },
     "SOURCE": {
       "DESYNTH": "DESYNH",
@@ -2849,7 +2851,7 @@
       "SPEARFISHING": "Pêche au harpon",
       "FATE": "Aléa",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "Déprécié"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
@@ -2865,31 +2867,31 @@
     "NIGHT": "Nuit"
   },
   "UPDATER": {
-    "New_update_available": "A new update is available and has been downloaded",
-    "Restart_to_install": "Do you want to restart now to apply it?"
+    "New_update_available": "Une nouvelle mise à jour est disponible et a été téléchargée",
+    "Restart_to_install": "Voulez-vous redémarrer maintenant pour l'appliquer ?"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
-    "Spearfishing": "Spearfishing"
+    "Mining": "Extraction de minerai",
+    "Quarrying": "Extraction de pierres",
+    "Logging": "Coupe",
+    "Harvesting": "Fauche",
+    "Fishing": "Pêche",
+    "Spearfishing": "Pêche au harpon"
   },
   "PROFITS": {
-    "Title": "Profits Helper",
-    "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
-    "Self_sufficient": "Self sufficient",
-    "Crafting": "Crafting",
-    "Gathering": "Gathering",
-    "Complexity": "Complexity",
-    "Sold_last_24h": "# sold during the last 24h",
-    "Total_listed": "Total on sale",
-    "Unit_price": "Unit price",
-    "Cost_to_craft": "Cost to craft",
-    "Explain_complexity": "A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
-    "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
-    "Empty_list": "Empty list, click the + button on an item to add it here",
-    "Add_to_list": "Add these items to a list"
+    "Title": "Aide aux profits",
+    "Description": "Trouvez les meilleurs objets à fabriquer ou à collecter en fonction de vos niveaux et des données de l'HDV depuis Universalis",
+    "Self_sufficient": "Auto-suffisant",
+    "Crafting": "Artisanat",
+    "Gathering": "Récolte",
+    "Complexity": "Complexité",
+    "Sold_last_24h": "# vendu au cours des dernières 24h",
+    "Total_listed": "Total en vente",
+    "Unit_price": "Prix unitaire",
+    "Cost_to_craft": "Coût de fabrication",
+    "Explain_complexity": "Un score représentant le temps nécessaire pour fabriquer un objet, fabriquer plusieurs est évidemment plus rapide car vous n'avez pas besoin de vous téléporter à nouveau.",
+    "Explain_cost_to_craft": "Le coût ajouté de tous les matériaux excluant les cristaux pour fabriquer un seul objet en utilisant uniquement des matériaux du tableau de bord.",
+    "Empty_list": "Liste vide, cliquez sur le bouton + sur un élément pour l'ajouter ici",
+    "Add_to_list": "Ajouter ces éléments à une liste"
   }
 }
