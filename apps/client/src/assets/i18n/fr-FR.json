@@ -1202,6 +1202,7 @@
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Expect_to_sell_everything_explain": "N'inclut pas les restes d'objets des prés dans vos dépenses car ils seront revendus.",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher chez le vendeur",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
