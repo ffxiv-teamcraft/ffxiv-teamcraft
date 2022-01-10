@@ -87,13 +87,19 @@
                 <div>{{finalItems.title | translate}}</div>
                 <div fxFlex="1 1 auto"></div>
                 <div>
-                  <button (click)="$event.stopPropagation();fillMbCosts(listKey, finalItems.rows, pricingData, true)"
+                  <button (click)="$event.stopPropagation();fillMbCosts(listKey, finalItems.rows, pricingData, false,true)"
                           *ngIf="loggedIn$ | async"
                           nz-button
-                          nz-tooltip
-                          [nzTooltipTitle]="'PRICING.Autofill_panel_prices' | translate"
-                          nzShape="circle">
-                    <i nzIconfont="icon-dollar" nz-icon></i>
+                          nzSize="small">
+                    {{'PRICING.Autofill_panel_prices' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="$event.stopPropagation();fillMbCosts(listKey, finalItems.rows, pricingData, true,true)"
+                          *ngIf="loggedIn$ | async"
+                          nz-button
+                          nzSize="small" nzType="primary">
+                    {{'PRICING.Autofill_panel_prices_your_server' | translate}}
                   </button>
                 </div>
               </div>

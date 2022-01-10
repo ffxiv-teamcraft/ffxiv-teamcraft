@@ -137,7 +137,7 @@ export class ListPricingComponent extends TeamcraftComponent {
   }
 
 
-  public fillMbCosts(listId: string, rows: ListRow[], currentPrices: FullPricingRow[], finalItems = false): void {
+  public fillMbCosts(listId: string, rows: ListRow[], currentPrices: FullPricingRow[], forceOnlyServer = false, finalItems = false): void {
     const stopInterval$ = new Subject<void>();
     const rowsToFill = rows;
     if (rowsToFill.length === 0) {
@@ -165,7 +165,7 @@ export class ListPricingComponent extends TeamcraftComponent {
               map(res => {
                 const item = res[0];
                 let prices = item.Prices;
-                if (finalItems || this.settings.disableCrossWorld) {
+                if (forceOnlyServer || finalItems || this.settings.disableCrossWorld) {
                   prices = prices.filter(price => (<any>price).Server === server);
                 }
                 const cheapestHq = prices.filter(p => p.IsHQ)
