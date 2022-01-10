@@ -5,9 +5,10 @@
     <app-i18n-name content="items" [id]="itemId"></app-i18n-name>
     <app-marketboard-icon [itemId]="itemId" [showHistory]="true"></app-marketboard-icon>
   </div>
-  <div nz-col nzMd="11" fxLayout="row" fxLayoutGap="5px">
+  <div nz-col nzMd="7" fxLayout="row" fxLayoutGap="5px">
     <div *ngIf="priceToCraft$ | async as priceToCraft" fxLayout="row" fxLayoutGap="5px">
-      <nz-tag *ngIf="priceToCraft.nq > 0">{{'PRICING.Price_to_craft' | translate}}: {{priceToCraft.nq | number:'1.0-0':translate.currentLang}}</nz-tag>
+      <nz-tag *ngIf="priceToCraft.price.nq > 0">{{'PRICING.Price_to_craft' | translate}}
+        : {{priceToCraft.price.nq | number:'1.0-0':translate.currentLang}}</nz-tag>
     </div>
     <div *ngIf="itemPrice.price.updated" fxLayout="row" fxLayoutGap="5px">
       <nz-tag>{{'PRICING.Last_update' | translate}}: {{itemPrice.price.updated | date:'short':null:translate.currentLang}}</nz-tag>
@@ -20,7 +21,15 @@
       </button>
     </div>
   </div>
-  <div nz-col nzMd="7" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+  <div nz-col nzMd="11" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
+    <ng-container *ngIf="priceToCraft$ | async as priceToCraft">
+      <nz-switch *ngIf="isCraft$ | async"
+                 [nzCheckedChildren]="'Custom price'"
+                 [nzUnCheckedChildren]="'Price from craft'"
+                 [(ngModel)]="itemPrice.custom"
+                 (ngModelChange)="applyCustomPriceChange($event, itemPrice, priceToCraft.price.nq)"
+      ></nz-switch>
+    </ng-container>
     <i nz-icon nzType="user" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'PRICING.Price_from_vendor' | translate" *ngIf="itemPrice.price.fromVendor"></i>
     <div class="input-group" fxLayout="row" fxLayoutAlign="flex-end center">
       <nz-input-group [nzAddOnBefore]="addonBeforeNQ" nzCompact nzSize="small">
@@ -28,7 +37,7 @@
           <div class="server-span" [class.has-server]="itemPrice.price.nqServer">NQ<span *ngIf="itemPrice.price.fromMB && itemPrice.price.nqServer">
               ({{itemPrice.price.nqServer | worldName | i18n}})</span></div>
         </ng-template>
-        <input [(ngModel)]="itemPrice.price.nq" class="price" lang="en-150" min="0"
+        <input [(ngModel)]="itemPrice.price.nq" [disabled]="!itemPrice.custom" class="price" lang="en-150" min="0"
                nz-input type="number" (ngModelChange)="itemPrice.price.fromVendor = false;itemPrice.price.fromMB = false;updates$.next(itemPrice)">
       </nz-input-group>
       <nz-input-group [nzAddOnBefore]="'x'" nzCompact nzSize="small" class="addon-no-radius">
@@ -42,7 +51,7 @@
           <div class="server-span" [class.has-server]="itemPrice.price.hqServer">HQ<span *ngIf="itemPrice.price.fromMB && itemPrice.price.hqServer">
               ({{itemPrice.price.hqServer | worldName | i18n}})</span></div>
         </ng-template>
-        <input [(ngModel)]="itemPrice.price.hq" class="price" lang="en-150" min="0"
+        <input [(ngModel)]="itemPrice.price.hq" [disabled]="!itemPrice.custom" class="price" lang="en-150" min="0"
                nz-input type="number" (ngModelChange)="itemPrice.price.fromVendor = false;itemPrice.price.fromMB = false;updates$.next(itemPrice)">
       </nz-input-group>
       <nz-input-group [nzAddOnBefore]="'x'" nzCompact nzSize="small" class="addon-no-radius">

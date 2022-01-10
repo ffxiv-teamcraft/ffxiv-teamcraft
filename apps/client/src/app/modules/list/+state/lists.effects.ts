@@ -220,8 +220,8 @@ export class ListsEffects {
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
     debounceTime(1000),
     withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
-    filter(([action, permission]) => {
-      return permission < PermissionLevel.WRITE || !ListController.isComplete(action.payload);
+    filter(([, permission]) => {
+      return permission < PermissionLevel.WRITE;
     }),
     map(([action]) => action),
     withLatestFrom(this.listsFacade.selectedClone$),
@@ -261,9 +261,6 @@ export class ListsEffects {
   updateListInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(1000),
-    filter(action => {
-      return !ListController.isComplete(action.payload);
-    }),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
@@ -445,7 +442,7 @@ export class ListsEffects {
   openCompletionPopup$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
     withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
-    filter(([action, list, userId]) => {
+    filter(([, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
     debounceTime(2000),

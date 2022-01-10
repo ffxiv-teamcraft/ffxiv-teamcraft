@@ -13,7 +13,7 @@ import * as isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
-import { CharacterSearch } from '@xivapi/nodestone';
+import { Character, CharacterSearch } from '@xivapi/nodestone';
 import { Worker } from 'worker_threads';
 
 
@@ -26,6 +26,8 @@ export class IpcListenersManager {
   private fishingState: any = {};
 
   private characterSearchParser = new CharacterSearch();
+
+  private characterParser = new Character();
 
   constructor(private pcap: PacketCapture, private overlayManager: OverlayManager,
               private mainWindow: MainWindow, private store: Store,
@@ -426,7 +428,16 @@ export class IpcListenersManager {
           }
         });
       });
-      worker.on('error', () => {
+      worker.on('error', (e) => {
+        console.error(`Worker Lodestone parsing error`, e);
+        this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
+          event.sender.send(`lodestone:character:${id}`, {
+            Character: {
+              ID: +id,
+              ...char
+            }
+          });
+        }).catch(err => console.error(`Direct lodestone parsing error`, err));
         worker.terminate();
       });
       worker.on('exit', (code) => {
