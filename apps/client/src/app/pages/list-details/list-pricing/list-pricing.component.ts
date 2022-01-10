@@ -160,6 +160,7 @@ export class ListPricingComponent extends TeamcraftComponent {
       mergeMap(index => {
         const row = rowsToFill[index];
         return this.server$.pipe(
+          first(),
           switchMap(server => {
             return this.lazyData.datacenters$.pipe(
               first(),
@@ -173,6 +174,7 @@ export class ListPricingComponent extends TeamcraftComponent {
           }),
           mergeMap(({ server, dc }) => {
             return this.universalis.getDCPrices(dc, row.id).pipe(
+              first(),
               map(res => {
                 const item = res[0];
                 let prices = item.Prices;
