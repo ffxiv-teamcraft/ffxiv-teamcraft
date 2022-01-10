@@ -47,6 +47,8 @@ export class ListPricingComponent extends TeamcraftComponent {
     map(list => list.name)
   );
 
+  list$ = this.listsFacade.selectedList$;
+
   listKey$ = this.listsFacade.selectedListKey$;
 
   display$ = this.listsFacade.selectedList$.pipe(
