@@ -23,7 +23,7 @@ export class TeamcraftDesktopApp {
   start(): void {
     // app.releaseSingleInstanceLock();
     app.setAsDefaultProtocolClient('teamcraft');
-    let deepLink = this.store.get('deepLink', '');
+    let deepLink = '';
 
     app.whenReady().then(() => {
       protocol.registerFileProtocol('teamcraft', (req) => {
@@ -46,7 +46,7 @@ export class TeamcraftDesktopApp {
 
       request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${(this.argv[0] || '').replace('teamcraft://', '')}`, (err, res) => {
         if (err) {
-          this.bootApp();
+          this.bootApp(deepLink);
         } else {
           (<any>app).isQuitting = true;
           app.quit();
@@ -71,10 +71,6 @@ export class TeamcraftDesktopApp {
       }
     });
 
-    this.mainWindow.closed$.subscribe(() => {
-      this.store.set('router:uri', deepLink);
-    });
-
     app.on('before-quit', () => {
       if (this.httpServer) {
         this.httpServer.close(() => {
@@ -84,7 +80,7 @@ export class TeamcraftDesktopApp {
     });
   }
 
-  private bootApp(): void {
+  private bootApp(deepLink = ''): void {
     const loaderWindow = new BrowserWindow({
       width: 400,
       height: 500,
@@ -117,7 +113,7 @@ export class TeamcraftDesktopApp {
         res.writeHead(200);
         if (req.url.startsWith('/oauth')) {
           this.mainWindow.win.webContents.send('oauth-reply', parse(req.url, true).query.code);
-          res.write('<script>window.close();</script>You can now close this tab.')
+          res.write('<script>window.close();</script>You can now close this tab.');
         } else if (req.url.length > 1) {
           this.mainWindow.win.webContents.send('navigate', req.url);
         }
@@ -125,6 +121,9 @@ export class TeamcraftDesktopApp {
       }).listen(TeamcraftDesktopApp.MAIN_WINDOW_PORT, 'localhost');
 
       ipcMain.once('app-ready', () => {
+        if (deepLink.length > 0) {
+          this.mainWindow.win.webContents.send('navigate', deepLink);
+        }
         if (this.store.get<boolean>('machina', false) === true) {
           this.pcap.start();
         }

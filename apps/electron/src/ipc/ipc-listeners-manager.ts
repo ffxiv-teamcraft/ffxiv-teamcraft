@@ -298,7 +298,9 @@ export class IpcListenersManager {
     });
 
     ipcMain.on('navigated', (event, uri) => {
-      this.store.set('deepLink', uri);
+      if (uri.length > 1) {
+        this.store.set('router:uri', uri);
+      }
     });
 
     ipcMain.on('zoom-in', () => {

@@ -431,12 +431,13 @@ export class AppComponent implements OnInit {
         ).subscribe((event: any) => {
         this.tutorialService.reset();
         this.seoService.resetConfig();
-        this.ipc.send('navigated', event.url);
         if (this.overlay) {
           this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
             this.overlayOpacity = value;
           });
           this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
+        } else if(event.url !== '/') {
+          this.ipc.send('navigated', event.url);
         }
         gtag('set', 'page', event.url);
         gtag('send', 'pageview');
