@@ -233,7 +233,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 item_amount: item.amount_needed - item.done,
                 type: partial.type,
                 gatheringType: partial.gatheringType,
-                monster: partial.monster
+                monster: partial.monster,
+                fnalItem: this.finalItems || item.finalItem || false
               };
             }
             return undefined;
@@ -262,7 +263,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   item_amount: item.amount_needed - item.done,
                   type: partial.type,
                   gatheringType: partial.gatheringType,
-                  monster: partial.monster
+                  monster: partial.monster,
+                  fnalItem: this.finalItems || item.finalItem || false
                 };
               }
               return undefined;
@@ -287,7 +289,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       }),
       takeUntil(ref.afterClose)
     ).subscribe(step => {
-      this.listsFacade.setItemDone(step.itemId, step.iconid, false, step.item_amount, null, step.total_item_amount);
+      this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
     });
   }
 
