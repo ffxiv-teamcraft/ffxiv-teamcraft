@@ -487,7 +487,7 @@ export const updateFullDataForAllServers = functions
     memory: '512MB'
   })
   .pubsub
-  .schedule('every 2 hours').onRun(async () => {
+  .schedule('every 30 minutes').onRun(async () => {
     if (!items) {
       items = {};
       const extractsReq = await axios.get('https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/raw/staging/apps/client/src/assets/extracts/extracts.json');
@@ -519,8 +519,8 @@ export const updateFullDataForAllServers = functions
       createRedisClient().then(redis => {
         from(axios.get('https://xivapi.com/servers')).pipe(
           switchMap((res) => {
-            const partitionToPick = Math.floor(new Date().getUTCHours() / 2);
-            const servers: string[] = chunk(res.data, Math.ceil(res.data.length / 12))[partitionToPick] as string[];
+            const partitionToPick = Math.floor((Date.now() % 86400000) / (60000 * 30));
+            const servers: string[] = chunk(res.data, Math.ceil(res.data.length / 48))[partitionToPick] as string[];
             return doUniversalisRequest('https://universalis.app/api/marketable').pipe(
               switchMap((itemIds: number[]) => {
                 console.log('Starting MB data aggregation');
