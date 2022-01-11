@@ -131,7 +131,7 @@
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
     "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Search": "Suche"
   },
   "COMMON": {
     "Length": "Länge",
@@ -194,8 +194,8 @@
     "Voyage": "Erkundung",
     "Instance": "Inhalt",
     "Fate": "FATE",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "Neu laden",
+    "Click_to_apply": "Klicken zum anwenden"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -216,7 +216,7 @@
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay umschalten",
     "Open_alarms_overlay": "Alarme-Overlay umschalten",
-    "More_available": "and {{amount}} more…",
+    "More_available": "und {{amount}} mehr…",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
@@ -285,7 +285,7 @@
   "No": "Nein",
   "Crystals": "Kristalle",
   "Gathering": "Sammeln",
-  "Perception": "Perception",
+  "Perception": "Expertise",
   "Drops_or_GC": "Inhalte/Beute oder staatliche Gesellschaft",
   "Other": "Anderes",
   "Pre_crafts": "Vorhergehende Handwerksschritte",
@@ -1082,7 +1082,7 @@
       "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Filter zurücksetzen",
       "Configuration_popup": "Mit der Community teilen",
-      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
+      "Min_craftsmanship_filter_placeholder": "Min. Kunstfert.",
       "Min_control_filter_placeholder": "Minimum-Kontrolle",
       "Min_cp_filter_placeholder": "Minimum-HP",
       "Difficulty_filter_placeholder": "Schwierigkeit",
@@ -2825,7 +2825,7 @@
     "Sources_filter": "Quellen filtern",
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
-    "Deprecated": "This item cannot be obtained anymore",
+    "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -2852,7 +2852,7 @@
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
       "MOGSTATION": "Online-Shop",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "VERALTET"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
@@ -2872,15 +2872,15 @@
     "Restart_to_install": "Möchten du jetzt neu starten zum Anwenden?"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
-    "Spearfishing": "Spearfishing"
+    "Mining": "Abbauen",
+    "Quarrying": "Herausbrechen",
+    "Logging": "Abholzen",
+    "Harvesting": "Abernten",
+    "Fishing": "Fischen",
+    "Spearfishing": "Speerfischen"
   },
   "PROFITS": {
-    "Title": "Profits Helper",
+    "Title": "Profithelfer",
     "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
     "Self_sufficient": "Self sufficient",
     "Crafting": "Herstellen",
