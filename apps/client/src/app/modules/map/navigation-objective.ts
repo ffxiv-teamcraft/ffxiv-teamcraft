@@ -14,4 +14,5 @@ export interface NavigationObjective extends Vector2 {
   gatheringType?: number;
   fate?: number;
   monster?: number;
+  finalItem?: boolean
 }

@@ -50,7 +50,7 @@ export class NavigationMapComponent implements OnInit {
 
   markStepAsDone(step: NavigationStep): void {
     this.markedAsDone.push(step.itemId);
-    this.listsFacade.setItemDone(step.itemId, step.iconid, false, step.item_amount, null, step.total_item_amount);
+    this.listsFacade.setItemDone(step.itemId, step.iconid, step.finalItem, step.item_amount, null, step.total_item_amount);
   }
 
 }

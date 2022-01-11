@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.5"></a>
+## [9.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.4...v9.4.5) (2022-01-11)
+
+
+### Bug Fixes
+
+* **desktop:** app should now properly open on last visited link ([07c3659](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07c3659))
+* **lists:** fixed a bug preventing lists from updating properly in database ([210a8e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/210a8e9))
+* **lists:** fixed navigation breakdown not marking final items as done properly ([86db58b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86db58b))
+
+
+
 <a name="9.4.4"></a>
 ## [9.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.3...v9.4.4) (2022-01-10)
 
