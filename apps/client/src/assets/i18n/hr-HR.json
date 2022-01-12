@@ -368,6 +368,7 @@
   "Email_enter": "Email",
   "Email_not_found": "Email nije pronađen",
   "Email_sent": "Poslan je email s uputama za promjenu lozinke.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Lokacija",
