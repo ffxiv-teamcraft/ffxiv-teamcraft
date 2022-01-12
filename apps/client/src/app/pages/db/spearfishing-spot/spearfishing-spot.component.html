@@ -71,7 +71,7 @@
           </div>
         </ng-template>
         <app-map [mapId]="data.map"
-                 [markers]="[{x: data.x, y: data.y, iconType: 'img', iconImg: data.type | nodeTypeIcon:data.limited}]"></app-map>
+                 [markers]="[{x: data.x, y: data.y, iconType: 'img', iconImg: 4 | nodeTypeIcon:data.limited}]"></app-map>
       </nz-card>
       <nz-card *ngIf="data.items.length > 0" [nzTitle]="title"
                class="details-card"
