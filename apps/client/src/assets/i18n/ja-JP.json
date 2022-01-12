@@ -368,6 +368,7 @@
   "Email_enter": "メールアドレッス",
   "Email_not_found": "メールアドレスを見付け出しません",
   "Email_sent": "パスワード変更メールが発送されました",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} 出現予定",
     "See_on_map": "地図に見られます",
