@@ -368,6 +368,7 @@
   "Email_enter": "Email",
   "Email_not_found": "Email não encontrado",
   "Email_sent": "Um email foi enviado com as instruções para trocar sua senha.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Localização",
