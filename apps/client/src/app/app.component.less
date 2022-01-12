@@ -29,6 +29,9 @@
 
 .sidebar-container {
   height: calc(~"100vh - @{layout-header-height} - 48px");
+  @media @mobile, @tablet {
+    height: 100%;
+  }
 
   .menu-categories-container {
     overflow: hidden;
