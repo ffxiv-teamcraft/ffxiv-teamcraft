@@ -183,6 +183,8 @@ export class AppComponent implements OnInit {
 
   private dirty = false;
 
+  public currentLink = () => `https://ffxivteamcraft.com${window.location.hash.replace('#', '')}`;
+
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
@@ -436,7 +438,7 @@ export class AppComponent implements OnInit {
             this.overlayOpacity = value;
           });
           this.ipc.send('overlay:get-opacity', { uri: this.ipc.overlayUri });
-        } else if(event.url !== '/') {
+        } else if (event.url !== '/') {
           this.ipc.send('navigated', event.url);
         }
         gtag('set', 'page', event.url);
