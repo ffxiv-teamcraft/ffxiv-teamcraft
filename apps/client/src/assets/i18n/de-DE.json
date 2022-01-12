@@ -131,7 +131,7 @@
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
     "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Search": "Suche"
   },
   "COMMON": {
     "Length": "Länge",
@@ -194,8 +194,8 @@
     "Voyage": "Erkundung",
     "Instance": "Inhalt",
     "Fate": "FATE",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "Neu laden",
+    "Click_to_apply": "Klicken zum anwenden"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -216,7 +216,7 @@
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
     "Open_overlay": "Overlay umschalten",
     "Open_alarms_overlay": "Alarme-Overlay umschalten",
-    "More_available": "and {{amount}} more…",
+    "More_available": "und {{amount}} mehr…",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
@@ -285,7 +285,7 @@
   "No": "Nein",
   "Crystals": "Kristalle",
   "Gathering": "Sammeln",
-  "Perception": "Perception",
+  "Perception": "Expertise",
   "Drops_or_GC": "Inhalte/Beute oder staatliche Gesellschaft",
   "Other": "Anderes",
   "Pre_crafts": "Vorhergehende Handwerksschritte",
@@ -368,6 +368,7 @@
   "Email_enter": "E-Mail",
   "Email_not_found": "E-Mail nicht gefunden",
   "Email_sent": "Eine E-Mail mit Anweisungen, wie du dein Passwort ändern kannst, wurde verschickt",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} erscheint!",
     "See_on_map": "Position",
@@ -1082,7 +1083,7 @@
       "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "Filter zurücksetzen",
       "Configuration_popup": "Mit der Community teilen",
-      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
+      "Min_craftsmanship_filter_placeholder": "Min. Kunstfert.",
       "Min_control_filter_placeholder": "Minimum-Kontrolle",
       "Min_cp_filter_placeholder": "Minimum-HP",
       "Difficulty_filter_placeholder": "Schwierigkeit",
@@ -1202,13 +1203,14 @@
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
+    "Autofill_panel_prices_your_server": "Preise auf Basis des Marktbrettes befüllen (nur von Heimatserver)",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
+    "Cheaper_at_vendor": "Günstiger wenn vom NPC gekauft",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
     "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
-    "Price_to_craft": "Price to craft",
-    "Price_from_vendor": "Price from vendor",
-    "Last_update": "Last update"
+    "Price_to_craft": "Herstellungskosten",
+    "Price_from_vendor": "Händlerpreis",
+    "Last_update": "Letzte Aktualisierung"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -1960,7 +1962,7 @@
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
       "Bag": "Inventar",
-      "Crystal": "Crystal",
+      "Crystal": "Kristall",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
@@ -1989,7 +1991,7 @@
     "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "Optimization_copied": "Optimierung als JSON in die Zwischenablage kopiert",
-    "Pause_tracking": "Pause inventory tracking",
+    "Pause_tracking": "Inventarerfassung pausieren",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
       "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
@@ -2824,7 +2826,7 @@
     "Sources_filter": "Quellen filtern",
     "Speed": "Geschwindigkeit",
     "Shadow_size": "Schattengröße",
-    "Deprecated": "This item cannot be obtained anymore",
+    "Deprecated": "Dieser Gegenstand kann nicht mehr erhalten werden",
     "SPEEDS": {
       "VERY_SLOW": "Sehr langsam",
       "SLOW": "Langsam",
@@ -2850,8 +2852,8 @@
       "FISHING": "FISCHEN",
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
-      "MOGSTATION": "Online-Shop",
-      "DEPRECATED": "DEPRECATED"
+      "MOGSTATION": "ONLINE-SHOP",
+      "DEPRECATED": "VERALTET"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
@@ -2871,27 +2873,27 @@
     "Restart_to_install": "Möchten du jetzt neu starten zum Anwenden?"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
-    "Spearfishing": "Spearfishing"
+    "Mining": "Abbauen",
+    "Quarrying": "Herausbrechen",
+    "Logging": "Abholzen",
+    "Harvesting": "Abernten",
+    "Fishing": "Fischen",
+    "Spearfishing": "Speerfischen"
   },
   "PROFITS": {
-    "Title": "Profits Helper",
-    "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
-    "Self_sufficient": "Self sufficient",
-    "Crafting": "Crafting",
-    "Gathering": "Gathering",
-    "Complexity": "Complexity",
-    "Sold_last_24h": "# sold during the last 24h",
-    "Total_listed": "Total on sale",
-    "Unit_price": "Unit price",
-    "Cost_to_craft": "Cost to craft",
-    "Explain_complexity": "A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
-    "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
-    "Empty_list": "Empty list, click the + button on an item to add it here",
-    "Add_to_list": "Add these items to a list"
+    "Title": "Profithelfer",
+    "Description": "Finde die besten Gegenstände zum Herstellen oder Sammeln auf Basis deiner Level- und Marktbrettdaten von Universalis",
+    "Self_sufficient": "Ich sammle alles selbst",
+    "Crafting": "Herstellen",
+    "Gathering": "Sammeln",
+    "Complexity": "Komplexität",
+    "Sold_last_24h": "# Verkäufe der letzten 24h",
+    "Total_listed": "Gesamtverkäufe",
+    "Unit_price": "Einzelpreis",
+    "Cost_to_craft": "Herstellungskosten",
+    "Explain_complexity": "Ein Wert, der zeigt, wie viel Zeit zur Herstellung eines Gegenstands benötigt wird. Das Herstellen mehrerer ist offensichtlich schneller, da du nicht erneut teleportieren musst.",
+    "Explain_cost_to_craft": "Zusätzlich Kosten für alle Materialien, ausgenommen Kristalle, um einen Gegenstand nur mit Materialien vom Marktbrett herzustellen.",
+    "Empty_list": "Leere Liste, klicke auf die + Schaltfläche eines Gegenstands um ihn hier hinzuzufügen",
+    "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
   }
 }

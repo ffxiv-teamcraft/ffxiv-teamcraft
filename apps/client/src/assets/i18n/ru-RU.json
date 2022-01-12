@@ -368,6 +368,7 @@
   "Email_enter": "Почта",
   "Email_not_found": "Адрес эл. почты не найден",
   "Email_sent": "Вам направлено письмо со ссылкой для сброса пароля.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Расположение",
@@ -1202,6 +1203,7 @@
     "Expect_to_sell_everything": "Ожидайте, чтобы продать все",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Content_copied": "Скопировано в буфер обмена",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Скопировать эту панель как текст",

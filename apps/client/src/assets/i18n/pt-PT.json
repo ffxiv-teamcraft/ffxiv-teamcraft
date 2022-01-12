@@ -368,6 +368,7 @@
   "Email_enter": "Email",
   "Email_not_found": "Email não encontrado",
   "Email_sent": "Um email foi enviado com as instruções para trocar sua senha.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Localização",
@@ -1202,6 +1203,7 @@
     "Expect_to_sell_everything": "Expect to sell everything",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Fill prices based on marketboard prices",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Content_copied": "Content copied in your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copy this panel as text",
