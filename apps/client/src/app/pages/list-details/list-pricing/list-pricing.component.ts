@@ -19,6 +19,8 @@ import { FullPricingRow } from './model/full-pricing-row';
 import { Price } from './model/price';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-list-pricing',
@@ -131,7 +133,7 @@ export class ListPricingComponent extends TeamcraftComponent {
               public translate: TranslateService, private authFacade: AuthFacade,
               private dialog: NzModalService, private universalis: UniversalisService,
               private lazyData: LazyDataFacade, public settings: SettingsService,
-              private progressService: ProgressPopupService) {
+              private progressService: ProgressPopupService, private i18n: I18nToolsService) {
     super();
     this.activatedRoute.paramMap
       .pipe(
@@ -144,6 +146,56 @@ export class ListPricingComponent extends TeamcraftComponent {
       });
   }
 
+  public getEarningText = (rows: FullPricingRow[], totalEarnings: number) => {
+    return safeCombineLatest(rows.filter(row => row.use !== false).map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithName => {
+        return rowsWithName.reduce((total, { row, itemName }) => {
+          const price = row.price;
+          const amount = row.amount;
+          let priceString: string;
+          if (price.hq > 0 && amount.hq > 0) {
+            priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ)`;
+            if (price.nq > 0 && amount.nq > 0) {
+              priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ)`;
+            }
+          } else {
+            priceString = `${price.nq}gil x${amount.nq}(NQ)`;
+          }
+          return `${total}\n ${itemName}: ${priceString}`;
+        }, `${this.translate.instant('COMMON.Total')}: ${totalEarnings.toLocaleString()}gil\n`);
+      })
+    );
+  };
+
+  public getSpendingText = (rows: FullPricingRow[], totalSpendings: number) => {
+    return safeCombineLatest(rows.filter(row => row.use).map(row => {
+      return this.i18n.getNameObservable('items', row.id).pipe(
+        map(itemName => ({ row, itemName }))
+      );
+    })).pipe(
+      map(rowsWithName => {
+        return rowsWithName
+          .reduce((total, { row, itemName }) => {
+            const price = row.price;
+            const amount = row.amount;
+            let priceString: string;
+            if (price.hq > 0 && amount.hq > 0) {
+              priceString = `${price.hq.toLocaleString()}gil x${amount.hq}(HQ) (${this.getWorldName(price.hqServer)})`;
+              if (price.nq > 0 || amount.nq > 0) {
+                priceString += `, ${price.nq.toLocaleString()}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
+              }
+            } else {
+              priceString = `${price.nq}gil x${amount.nq}(NQ) (${this.getWorldName(price.nqServer)})`;
+            }
+            return `${total}\n ${itemName}: ${priceString}`;
+          }, `${this.translate.instant('COMMON.Total')}: ${totalSpendings.toLocaleString()}gil\n`);
+      })
+    );
+  };
 
   public fillMbCosts(listId: string, rows: ListRow[], currentPrices: FullPricingRow[], forceOnlyServer = false, finalItems = false): void {
     const stopInterval$ = new Subject<void>();
@@ -214,6 +266,10 @@ export class ListPricingComponent extends TeamcraftComponent {
 
   trackByPanel(index: number, panel: LayoutRowDisplay): string {
     return panel.title;
+  }
+
+  private getWorldName(world: string): string {
+    return this.i18n.getName(this.lazyData.getWorldName(world));
   }
 
 }
