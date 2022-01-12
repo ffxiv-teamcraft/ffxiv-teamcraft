@@ -472,7 +472,7 @@ export const updateCacheForAllServers = functions
               await redis.set(`mb:${row.server}:${id}`, JSON.stringify(row.data[+id]));
             }
           }
-          updateCache(uniq(res.map(row => row.server)), items, redis);
+          await updateCache(uniq(res.map(row => row.server)), items, redis);
           closeUniversalisQueue();
           resolve();
         });
@@ -544,7 +544,7 @@ export const updateFullDataForAllServers = functions
             }
           }
           closeUniversalisQueue();
-          updateCache(uniq(res.map(row => row.server)), items, redis);
+          await updateCache(uniq(res.map(row => row.server)), items, redis);
           resolve();
         });
       });
