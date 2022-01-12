@@ -195,7 +195,7 @@
     "Instance": "던전",
     "Fate": "돌발 임무",
     "Reload": "새로고침",
-    "Click_to_apply": "Click to apply"
+    "Click_to_apply": "클릭하여 적용"
   },
   "ALARMS": {
     "Title": "알람",
@@ -368,6 +368,7 @@
   "Email_enter": "이메일",
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 메일이 발송되었습니다.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
@@ -1052,9 +1053,9 @@
     "Compact": "간소화",
     "Detailed": "세부 정보",
     "Remove_IP": "Remove initial preparations",
-    "Stats_applied": "Stats applied",
+    "Stats_applied": "능력치 적용됨",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
-    "Full_buttons": "Show full buttons",
+    "Full_buttons": "모든 버튼 표시",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -1202,13 +1203,14 @@
     "Expect_to_sell_everything": "전체 판매 가정",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
-    "Cheaper_at_vendor": "Cheaper if you buy from NPC",
+    "Cheaper_at_vendor": "NPC 구매시 더 저렴함",
     "Copy_panel_as_text": "이 패널을 텍스트로 복사",
     "Ignore_completed_items": "완료된 아이템 제외",
-    "Price_to_craft": "Price to craft",
-    "Price_from_vendor": "Price from vendor",
-    "Last_update": "Last update"
+    "Price_to_craft": "제작 원가",
+    "Price_from_vendor": "상인 판매 가격",
+    "Last_update": "최종 갱신"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1356,7 +1358,7 @@
     "Required_for_achievement": "업적에 적용됨",
     "Select_spot": "표시할 장소를 선택해주세요",
     "Hide_completed": "완료한 제작법 숨기기",
-    "Show_not_required": "Show items not required for achievement",
+    "Show_not_required": "업적 달성이 필요하지 않은 아이템 표시",
     "Hide_completed_items": "완료된 아이템 숨기기",
     "MIN_optimized_path": "모든 광부 채집물의 추천 경로",
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
@@ -1442,7 +1444,7 @@
       "Format": "형식",
       "Folder": "폴더",
       "No_folder": "폴더 없음",
-      "Parsing_file": "Parsing file content…",
+      "Parsing_file": "파일 내용 분석중...",
       "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
   },
@@ -1960,7 +1962,7 @@
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
       "Bag": "소지품",
-      "Crystal": "Crystal",
+      "Crystal": "크리스탈",
       "Other": "다른 소지품",
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
@@ -2064,14 +2066,14 @@
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
-    "Please_input_etro_link": "Please input an etro link",
+    "Please_input_etro_link": "Etro 링크를 입력하세요",
     "Link_not_supported": "지원하지 않는 링크",
     "Compare_gearset": "다른 장비세트와 비교하기",
     "Stats": "능력치",
     "Materias": "마테리아",
     "Pieces": "부위",
     "Import_from_ariyala": "Ariyala에서 가져오기",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "Etro에서 가져오기",
     "Import_from_lodestone": "Lodestone을 이용하여 가져오기",
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
     "Sync_with_pcap": "패킷 캡처로 장비 세트 동기화",

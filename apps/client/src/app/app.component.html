@@ -235,6 +235,10 @@
 
             <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
                  *ngIf="platformService.isDesktop()">
+              <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'Copy_current_link' | translate"
+                      [clipboard]="currentLink">
+                <i nz-icon nzType="share-alt"></i>
+              </button>
               <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
                       (click)="openOverlay('/alarms-overlay')">
                 <i nz-icon nzType="bell"></i>

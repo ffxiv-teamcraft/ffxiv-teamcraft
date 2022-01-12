@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.6"></a>
+## [9.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.5...v9.4.6) (2022-01-12)
+
+
+### Bug Fixes
+
+* **db:** better icon for spearfishing spot page ([7c9d0b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c9d0b2))
+* **desktop:** possible fix for page not persisted when quitting the app ([5d1e806](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d1e806))
+* **gearset:** properly remove offhands on gear sync ([62b67df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62b67df))
+* **gearsets:** fixed stats effects formulas ([3bf53c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bf53c9))
+* **layout:** Crafts and Timed first layout now doesn't hide completed rows by default anymore ([8418a13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8418a13))
+* **layouts:** sidebar collapse button no longer takes space in smaller layouts ([ebea097](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebea097))
+* **pricing:** fixed input sometimes acting up when setting a price ([a457089](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a457089))
+
+
+### Features
+
+* **db:** support for korean v5.58 update ([6cfe427](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6cfe427))
+* **desktop:** new icon in sidebar to copy a link to the current page on web ([08da0c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08da0c0))
+* **pricing:** you can now copy earnings or spendings as text ([d78b921](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d78b921))
+
+
+
 <a name="9.4.5"></a>
 ## [9.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.4...v9.4.5) (2022-01-11)
 

@@ -25,6 +25,19 @@
                   <i nzIconfont="icon-dollar" nz-icon></i>
                 </button>
               </div>
+              <div>
+                <button (click)="$event.stopPropagation()"
+                        [clipboard]="getSpendingText"
+                        [clipboardFnArgs]="[pricingData, spendingTotal$ | async]"
+                        [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
+                        [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
+                        nz-button
+                        nz-tooltip
+                        nzShape="circle"
+                        nzSize="small">
+                  <i nz-icon nzType="copy"></i>
+                </button>
+              </div>
               <div fxFlex="1 1 auto"></div>
               <div fxLayout="row" fxLayoutGap="5px">
                 <label [(ngModel)]="settings.expectToSellEverything" nz-checkbox nz-tooltip
@@ -91,9 +104,26 @@
           </div>
         </nz-card>
         <nz-card [nzTitle]="earningsTitle" *ngIf="finalItemsRow$ | async as finalItems">
-          <ng-template #earningsTitle>{{'Earning' | translate}} (
-            <app-item-icon [itemId]="1" width="16"></app-item-icon>
-            {{earningTotal$ | async | number:'1.0-0':translate.currentLang}})
+          <ng-template #earningsTitle>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <div>
+                {{'Earning' | translate}} (
+                <app-item-icon [itemId]="1" width="16"></app-item-icon>
+                {{earningTotal$ | async | number:'1.0-0':translate.currentLang}})
+              </div>
+              <div>
+                <button [clipboard]="getEarningText"
+                        [clipboardFnArgs]="[pricingData, earningTotal$ | async]"
+                        [clipboardSuccessMessage]="'PRICING.Content_copied' | translate"
+                        [nzTooltipTitle]="'PRICING.Copy_earnings_as_text' | translate"
+                        nz-button
+                        nz-tooltip
+                        nzSize="small"
+                        nzShape="circle">
+                  <i nz-icon nzType="copy"></i>
+                </button>
+              </div>
+            </div>
           </ng-template>
           <nz-collapse>
             <nz-collapse-panel [nzHeader]="panelHeader" [nzActive]="false">

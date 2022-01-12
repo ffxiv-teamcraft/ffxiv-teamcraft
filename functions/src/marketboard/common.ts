@@ -142,8 +142,9 @@ export function updateItems(server: string, itemIds: number[]): Observable<{ ser
   );
 }
 
-export function updateCache(servers: string[], items: Record<number, Item>, redis: RedisClientType): void {
-  servers.forEach(async server => {
+export async function updateCache(servers: string[], items: Record<number, Item>, redis: RedisClientType): Promise<void> {
+  console.log(`STARTING CACHE UPDATE FOR ${servers.length} servers`);
+  for(const server of servers){
     const currentServerCacheRaw = await redis.get(`profit:${server}`);
     let currentServerCache = [];
     if (currentServerCacheRaw) {
@@ -170,13 +171,14 @@ export function updateCache(servers: string[], items: Record<number, Item>, redi
         v48: parsedMbEntry.v48,
         total: parsedMbEntry.t,
         trend24: parsedMbEntry.tr24,
-        levelReqs: getLevelRequirements(item, items)
+        levelReqs: getLevelRequirements(item, items),
+        updated: Date.now()
       });
     }
     const newCache = uniqBy([...serverCache, ...currentServerCache], 'id');
     console.log(`UPDATED CACHE FOR ${server}, ${serverCache.length} entries (${newCache.length} total)`);
     await redis.set(`profit:${server}`, JSON.stringify(newCache));
-  });
+  }
 }
 
 

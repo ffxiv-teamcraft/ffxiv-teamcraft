@@ -368,6 +368,7 @@
   "Email_enter": "电子邮箱",
   "Email_not_found": "没有找到该电子邮件地址",
   "Email_sent": "已发送一封电子邮件，内含重置您密码的方法。",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} 即将出现！",
     "See_on_map": "坐标",
@@ -1202,6 +1203,7 @@
     "Expect_to_sell_everything": "计划出售",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "基于市场物价填充价格",
+    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "复制为文本",
