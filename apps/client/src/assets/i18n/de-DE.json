@@ -368,6 +368,7 @@
   "Email_enter": "E-Mail",
   "Email_not_found": "E-Mail nicht gefunden",
   "Email_sent": "Eine E-Mail mit Anweisungen, wie du dein Passwort ändern kannst, wurde verschickt",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} erscheint!",
     "See_on_map": "Position",
