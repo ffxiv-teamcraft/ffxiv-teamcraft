@@ -368,6 +368,7 @@
   "Email_enter": "이메일",
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 메일이 발송되었습니다.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
