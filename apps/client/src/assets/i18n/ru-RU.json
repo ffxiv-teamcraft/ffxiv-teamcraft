@@ -368,6 +368,7 @@
   "Email_enter": "Почта",
   "Email_not_found": "Адрес эл. почты не найден",
   "Email_sent": "Вам направлено письмо со ссылкой для сброса пароля.",
+  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
     "See_on_map": "Расположение",
