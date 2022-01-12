@@ -104,7 +104,7 @@ export class ListPricingRowComponent extends TeamcraftComponent {
       this.listPricingService.saveItem(this.listId, this.array, update.id, update.price, update.amount, update.use, !update.custom);
     });
     combineLatest([this.itemPrice$, this.priceToCraft$]).pipe(
-      filter(([itemPrice, priceToCraft]) => !itemPrice.custom && itemPrice?.price.nq !== priceToCraft?.price.nq),
+      filter(([itemPrice, priceToCraft]) => itemPrice.custom === false && itemPrice?.price.nq !== priceToCraft?.price.nq),
       takeUntil(this.onDestroy$)
     ).subscribe(([itemPrice, priceToCraft]) => {
       itemPrice.price.nq = Math.round(priceToCraft.price.nq);
