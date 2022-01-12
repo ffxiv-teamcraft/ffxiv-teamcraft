@@ -25,6 +25,13 @@
         ]
       },
       {
+        "from": "./dist/apps/electron/workers",
+        "to": "Workers",
+        "filter": [
+          "**/*.js"
+        ]
+      },
+      {
         "from": "./desktop",
         "to": "MachinaWrapper",
         "filter": [

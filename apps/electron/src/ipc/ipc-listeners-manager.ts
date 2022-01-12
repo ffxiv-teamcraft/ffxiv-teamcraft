@@ -419,7 +419,7 @@ export class IpcListenersManager {
 
   private setupLodestoneListeners(): void {
     ipcMain.on('lodestone:getCharacter', (event, id) => {
-      const worker = new Worker(join(__dirname, '../workers/lodestone.js'), {
+      const worker = new Worker(isDev ? join(__dirname, '../workers/lodestone.js') : join(app.getAppPath(), '../../resources/Workers/lodestone.js'), {
         workerData: id
       });
       worker.on('message', (char) => {
