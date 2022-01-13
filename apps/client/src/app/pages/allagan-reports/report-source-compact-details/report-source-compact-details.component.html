@@ -25,6 +25,7 @@
   <ng-container *ngSwitchCase="AllaganReportSource.DROP">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div>{{data.monsterId | i18nRow:'mobs' | i18n}}</div>
+
       <app-db-button [id]="data.monsterId" type="mob"></app-db-button>
     </div>
   </ng-container>
