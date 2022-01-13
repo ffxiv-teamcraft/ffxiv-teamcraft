@@ -25,8 +25,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
         return this.getTradeEntries(source).length > 0;
       })
       .sort((a, b) => {
-        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id]
-          - TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id];
+        return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id] || 0)
+          - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id] || 0);
       })[0];
   }
 
@@ -47,11 +47,13 @@ export class TotalPanelPricePopupComponent implements OnInit {
         }
       } else if (tradeSources.length > 0) {
         const tradeSource = this.getTradeSourceByPriority(tradeSources);
-        const trade = tradeSource.trades[0];
+        const trade = tradeSource.trades.sort((a, b) => {
+          return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(b.currencies)[0]?.id] || 0)
+            - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(a.currencies)[0]?.id] || 0);
+        })[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         this.getFilteredCurrencies(trade.currencies).forEach(currency => {
           const costs = tradeSource.trades
-            .sort((ta) => ta.items[0].hq ? 1 : -1)
             .map(t => {
               const e = t.currencies.find(c => c.id === currency.id);
               if (e) {
@@ -71,7 +73,6 @@ export class TotalPanelPricePopupComponent implements OnInit {
             });
           } else {
             tradeRow.costs[0] = (tradeRow.costs[0] || 0) + costs[0];
-            tradeRow.costs[1] = (tradeRow.costs[1] || tradeRow.costs[0]) + costs[1];
           }
         });
       }
@@ -92,7 +93,10 @@ export class TotalPanelPricePopupComponent implements OnInit {
           ...this.getFilteredCurrencies(trade.currencies)
         ];
       }, []);
-    }));
+    })).sort((a, b) => {
+      return (TradeIconPipe.TRADE_SOURCES_PRIORITIES[b.id] || 0)
+        - (TradeIconPipe.TRADE_SOURCES_PRIORITIES[a.id] || 0);
+    });
   }
 
   private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
