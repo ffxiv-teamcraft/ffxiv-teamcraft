@@ -28,7 +28,8 @@ export class MainWindow {
       title: 'FFXIV Teamcraft',
       webPreferences: {
         nodeIntegration: true,
-        contextIsolation: false
+        contextIsolation: false,
+        backgroundThrottling: false,
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));
