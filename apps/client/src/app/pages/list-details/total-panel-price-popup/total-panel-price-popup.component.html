@@ -11,9 +11,6 @@
         </ng-template>
         <ng-template #description>
           x{{entry.costs[0] | number}}
-          <span *ngIf="entry.costs[1]">
-               (NQ) - {{entry.costs[1]}} (HQ)
-           </span>
         </ng-template>
         <ng-template #ignoreSource>
           <button nz-button nz-tooltip
