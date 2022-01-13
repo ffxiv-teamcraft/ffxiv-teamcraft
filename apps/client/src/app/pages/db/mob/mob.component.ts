@@ -51,9 +51,9 @@ export class MobComponent extends TeamcraftPageComponent {
           map(dropSources => {
             return [
               ...Object.keys(dropSources)
-                .filter(key => dropSources[key].includes(mobId))
+                .filter(key => dropSources[key].includes(+mobId))
                 .map(key => +key),
-              ...monsterDrops[mobId]
+              ...(monsterDrops[mobId] || [])
             ];
           })
         );
