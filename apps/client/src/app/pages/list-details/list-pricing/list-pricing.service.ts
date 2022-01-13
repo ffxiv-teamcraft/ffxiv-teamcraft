@@ -76,38 +76,51 @@ export class ListPricingService {
   }
 
   public initList(list: List): void {
-    this.lazyData.getEntry('hqFlags').pipe(
+    combineLatest([
+      this.lazyData.getEntry('hqFlags'),
+      combineLatest(list.items.map(item => this.getItemEntry(item.id))),
+      combineLatest(list.finalItems.map(item => this.getItemEntry(item.id)))
+    ]).pipe(
       first()
-    ).subscribe(hqFlags => {
+    ).subscribe(([hqFlags, itemsEntries, finalItemsEntries]) => {
       this.db.table('items')
         .bulkAdd([
             ...list.items.map(item => {
-              return {
-                key: `${list.$key}:items:${item.id}`,
+              const entry = itemsEntries.find(e => e.itemId === item.id);
+              const base = entry ? { ...entry } : {
                 use: true,
                 custom: true,
+                itemId: item.id,
+                nq: 0,
+                hq: 0,
+                fromMB: false,
+                fromVendor: false
+              };
+              return {
+                ...base,
+                key: `${list.$key}:items:${item.id}`,
                 array: 'items',
                 listId: list.$key,
-                itemId: item.id,
-                ...this.getItemPrice(item),
                 amountNQ: item.amount,
                 amountHQ: 0
               };
             }),
             ...list.finalItems.map(item => {
-              return {
-                key: `${list.$key}:finalItems:${item.id}`,
+              const entry = finalItemsEntries.find(e => e.itemId === item.id);
+              const base = entry ? { ...entry } : {
                 use: true,
                 custom: true,
-                array: 'finalItems',
-                listId: list.$key,
                 itemId: item.id,
                 nq: 0,
-                nqServer: null,
                 hq: 0,
-                hqServer: null,
-                fromVendor: false,
                 fromMB: false,
+                fromVendor: false
+              };
+              return {
+                ...base,
+                key: `${list.$key}:finalItems:${item.id}`,
+                array: 'finalItems',
+                listId: list.$key,
                 amountNQ: hqFlags[item.id] ? 0 : item.amount,
                 amountHQ: hqFlags[item.id] ? item.amount : 0
               };
@@ -120,26 +133,21 @@ export class ListPricingService {
   public initItem(listId: string, array: ListArray, item: ListRow): void {
     combineLatest([
       this.lazyData.getEntry('hqFlags'),
-      this.getItemPrice(item)
+      this.getItemEntry(item.id)
     ]).pipe(
       first()
-    ).subscribe(([hqFlags, itemPrice]) => {
+    ).subscribe(([hqFlags, itemEntry]) => {
+      const baseModel: Partial<DBEntry> = {
+        ...itemEntry,
+        key: `${listId}:${array}:${item.id}`,
+        array: array,
+        listId: listId
+      };
       if (array === 'finalItems') {
         this.db.table('items')
           .add(
             {
-              key: `${listId}:${array}:${item.id}`,
-              use: true,
-              custom: true,
-              array: array,
-              listId: listId,
-              itemId: item.id,
-              nq: 0,
-              nqServer: null,
-              hq: 0,
-              hqServer: null,
-              fromVendor: false,
-              fromMB: false,
+              ...baseModel,
               amountNQ: hqFlags[item.id] ? 0 : item.amount,
               amountHQ: hqFlags[item.id] ? item.amount : 0
             }
@@ -148,13 +156,7 @@ export class ListPricingService {
         this.db.table('items')
           .add(
             {
-              key: `${listId}:items:${item.id}`,
-              use: true,
-              custom: true,
-              array: array,
-              listId: listId,
-              itemId: item.id,
-              ...itemPrice,
+              ...baseModel,
               amountNQ: item.amount,
               amountHQ: 0
             }
@@ -227,6 +229,15 @@ export class ListPricingService {
           fromMB: false
         };
       })
+    );
+  }
+
+  private getItemEntry(itemId: number): Observable<DBEntry> {
+    return from(this.db.table('items')
+      .where('itemId')
+      .equals(itemId)
+      .toArray()).pipe(
+      map(items => items[0])
     );
   }
 
