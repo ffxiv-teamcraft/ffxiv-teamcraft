@@ -97,12 +97,14 @@ export class ListPricingRowComponent extends TeamcraftComponent {
   constructor(private lazyData: LazyDataFacade, private listPricingService: ListPricingService,
               public translate: TranslateService) {
     super();
+
     this.updates$.pipe(
       debounceTime(1000),
       takeUntil(this.onDestroy$)
     ).subscribe((update) => {
       this.listPricingService.saveItem(this.listId, this.array, update.id, update.price, update.amount, update.use, !update.custom);
     });
+
     combineLatest([this.itemPrice$, this.priceToCraft$]).pipe(
       filter(([itemPrice, priceToCraft]) => itemPrice.custom === false && itemPrice?.price.nq !== priceToCraft?.price.nq),
       takeUntil(this.onDestroy$)
@@ -110,6 +112,20 @@ export class ListPricingRowComponent extends TeamcraftComponent {
       itemPrice.price.nq = Math.round(priceToCraft.price.nq);
       itemPrice.price.hq = Math.round(priceToCraft.price.hq);
       this.listPricingService.saveItem(this.listId, this.array, itemPrice.id, itemPrice.price, itemPrice.amount, itemPrice.use, !itemPrice.custom);
+    });
+
+    combineLatest([this.itemPrice$, this.listRow$]).pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([itemPrice, listRow]) => {
+      const totalAmount = itemPrice.amount.nq + itemPrice.amount.hq;
+      if (totalAmount !== listRow.amount) {
+        const diff = listRow.amount - totalAmount;
+        if (itemPrice.amount.nq > itemPrice.amount.hq) {
+          itemPrice.amount.nq += diff;
+        } else {
+          itemPrice.amount.hq += diff;
+        }
+      }
     });
   }
 
