@@ -35,6 +35,11 @@
                   </div>
                 </div>
                 <div [ngSwitch]="optimization.type">
+                  <ng-container *ngSwitchCase="'ONLY_FOR_ONE_MATERIAL'">
+                    <button nz-button nzType="primary" nzSize="small" (click)="$event.stopPropagation();addToList(optimization.entries)">
+                      {{'INVENTORY_OPTIMIZER.ONLY_FOR_ONE_MATERIAL.Add_to_list' | translate}}
+                    </button>
+                  </ng-container>
                   <ng-container *ngSwitchCase="'HAS_TOO_FEW'">
                     <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
                       <input type="number" nz-input min="1" [ngModel]="stackSizeThreshold" #stackSizeInput

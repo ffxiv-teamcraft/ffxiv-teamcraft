@@ -17,6 +17,7 @@ import { CanBeBought } from '../optimizations/can-be-bought';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -153,7 +154,8 @@ export class InventoryOptimizerComponent {
 
   constructor(private inventoryFacade: InventoryService, private settings: SettingsService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService) {
+              private lazyData: LazyDataFacade, private message: NzMessageService, private translate: TranslateService,
+              private listPicker: ListPickerService) {
     this.optimizers
       .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
       .forEach(optimizer => {
@@ -297,4 +299,21 @@ export class InventoryOptimizerComponent {
     localStorage.setItem(`optimizations:ignored`, JSON.stringify(array));
   }
 
+  addToList(entries: InventoryOptimization['entries']): void {
+    this.listPicker.addToList(...entries.reduce((acc, entry) => {
+      entry.items.forEach(item => {
+        const row = acc.find(e => e.id === item.messageParams.targetItemId);
+        if (!row) {
+          acc.push({
+            id: item.messageParams.targetItemId,
+            recipeId: item.messageParams.targetRecipeId,
+            amount: item.messageParams.amount
+          });
+        } else {
+          row.amount += item.messageParams.amount;
+        }
+      });
+      return acc;
+    }, []));
+  }
 }

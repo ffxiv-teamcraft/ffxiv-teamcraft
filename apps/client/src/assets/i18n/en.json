@@ -2033,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Items that are only used for a single recipe",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {
