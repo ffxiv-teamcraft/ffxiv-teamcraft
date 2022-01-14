@@ -262,6 +262,9 @@ export class ListPricingService {
     }
     const price = item.requires.reduce((acc, ingredient) => {
       const iPrice = prices.find(p => p.array === 'items' && p.id === ingredient.id);
+      if (!iPrice) {
+        return acc;
+      }
       const avgPrice = (iPrice.price.nq * iPrice.amount.nq + iPrice.price.hq * iPrice.amount.hq) / (iPrice.amount.nq + iPrice.amount.hq);
       if (this.settings.expectToSellEverything) {
         // If you expect to sell everything, just divide by yield.
