@@ -405,6 +405,7 @@
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
     "Always_on_top": "항상 위에 표시",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "트레이 모드로 실행",
     "Always_quit": "닫기 버튼으로 팀크래프트 완전히 종료하기(미설정시 최소화)",
     "Enable_minimize_reduction": "창 최소화시 작업표시줄이 아닌 트레이로 이동시키기",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",
-      "Message": "해당 아이템은 오직 {{targetItem}} 을 만들 때에만 사용됩니다. 다른 형태로 가공하는 것을 고려하세요"
+      "Message": "해당 아이템은 오직 {{targetItem}} 을 만들 때에만 사용됩니다. 다른 형태로 가공하는 것을 고려하세요",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {
