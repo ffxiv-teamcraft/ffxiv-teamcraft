@@ -124,7 +124,7 @@ export class TeamcraftDesktopApp {
       }).listen(TeamcraftDesktopApp.MAIN_WINDOW_PORT, 'localhost');
 
       ipcMain.once('app-ready', () => {
-        if (deepLink.length > 0) {
+        if (deepLink.length > 0 && !this.store.get('disable-initial-navigation', false)) {
           this.mainWindow.win.webContents.send('navigate', deepLink);
         }
         if (this.store.get<boolean>('machina', false) === true) {

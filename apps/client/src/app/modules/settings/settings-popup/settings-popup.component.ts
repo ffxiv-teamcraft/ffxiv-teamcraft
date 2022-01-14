@@ -52,6 +52,8 @@ export class SettingsPopupComponent {
 
   alwaysOnTop = false;
 
+  disableInitialNavigation = false;
+
   machinaToggle = false;
 
   startMinimized = false;
@@ -166,6 +168,9 @@ export class SettingsPopupComponent {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
+    this.ipc.once('disable-initial-navigation', (event, value) => {
+      this.disableInitialNavigation = value;
+    });
     this.ipc.on('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
@@ -230,6 +235,7 @@ export class SettingsPopupComponent {
       }
     });
     this.ipc.send('always-on-top:get');
+    this.ipc.send('disable-initial-navigation:get');
     this.ipc.send('no-shortcut:get');
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
@@ -311,6 +317,10 @@ export class SettingsPopupComponent {
 
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
+  }
+
+  disableInitialNavigationChange(value: boolean): void {
+    this.ipc.send('disable-initial-navigation', value);
   }
 
   noShortcutChange(value: boolean): void {

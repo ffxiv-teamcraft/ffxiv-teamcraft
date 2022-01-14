@@ -236,6 +236,7 @@ export class IpcListenersManager {
       this.mainWindow.win.setAlwaysOnTop(onTop, 'normal');
     });
 
+    this.twoWayBinding('disable-initial-navigation', 'disable-initial-navigation');
     this.twoWayBinding('no-shortcut', 'setup:noShortcut');
     this.twoWayBinding('start-minimized', 'start-minimized');
     this.twoWayBinding('always-quit', 'always-quit', null, true);
