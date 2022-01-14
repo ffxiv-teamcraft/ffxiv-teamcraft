@@ -405,6 +405,7 @@
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "Démarrer en mode réduit",
     "Always_quit": "Quitter en cliquant sur le bouton de fermeture (au lieu de minimiser)",
     "Enable_minimize_reduction": "Réduire dans la barre des tâches lorsque vous cliquez sur le bouton réduire (au lieu de réduire à la barre des tâches)",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Objets qui ne sont utilisés que pour une seule recette",
-      "Message": "Cet objet n'est utilisé que pour faire {{targetItem}}, pensez à le transformer au lieu de le garder brut"
+      "Message": "Cet objet n'est utilisé que pour faire {{targetItem}}, pensez à le transformer au lieu de le garder brut",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {
