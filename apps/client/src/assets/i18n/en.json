@@ -405,6 +405,7 @@
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
     "Always_on_top": "Always on top",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "Start minimized in tray",
     "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",

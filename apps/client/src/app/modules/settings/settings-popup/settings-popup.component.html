@@ -477,6 +477,11 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="disableInitialNavigation" (ngModelChange)="disableInitialNavigationChange($event)" nz-checkbox>
+          {{'SETTINGS.Always_open_on_main_page' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="noShortcut" (ngModelChange)="noShortcutChange($event)" nz-checkbox>
           {{'SETTINGS.No_shortcut' | translate}}
         </label>
