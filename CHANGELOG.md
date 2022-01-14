@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.7"></a>
+## [9.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.6...v9.4.7) (2022-01-14)
+
+
+### Bug Fixes
+
+* **community-rotations:** rlvls are now sorted DESC ([ba4a514](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba4a514))
+* **db:** fixed some monsters not having drops properly displayed ([da2cfe2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da2cfe2))
+* **lists:** fixed total trades sometimes acting up with materias and other trades ([40fbe32](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/40fbe32))
+* **pricing:** fixed crafting flag and prices not properly filled from previous lists ([4c09a30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c09a30))
+* **pricing:** fixed fill prices on earnings not always getting prices from DC ([ab5da53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab5da53))
+* **pricing:** fixed row amounts not reflecting list row amounts ([5355885](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5355885))
+
+
+### Features
+
+* **desktop:** new setting to always open on main page ([da2fbc5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da2fbc5))
+* **inventory-optimizer:** new button to generate a list for items used for one recipe ([8d4d2ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d4d2ce))
+* **list-overlay:** added inventory tags to the overlay details ([47c0b74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47c0b74))
+* **pricing:** you can now click item names to copy them to clipboard ([0bc5ccd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0bc5ccd))
+* enable background work by disabling throttling ([#2153](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2153)) ([d9c32b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9c32b4))
+
+
+
 <a name="9.4.6"></a>
 ## [9.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.5...v9.4.6) (2022-01-12)
 
