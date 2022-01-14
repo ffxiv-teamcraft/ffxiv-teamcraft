@@ -34,13 +34,7 @@ export class ListPricingComponent extends TeamcraftComponent {
   pricingData$ = this.listsFacade.selectedList$.pipe(
     first(),
     switchMap(list => {
-      return this.pricingService.getPricingForList(list.$key).pipe(
-        tap(res => {
-          if (res.length === 0) {
-            this.pricingService.initList(list);
-          }
-        })
-      );
+      return this.pricingService.getPricingForList(list.$key);
     })
   );
 

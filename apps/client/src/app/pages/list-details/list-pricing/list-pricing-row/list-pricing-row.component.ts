@@ -66,7 +66,8 @@ export class ListPricingRowComponent extends TeamcraftComponent {
         this.listPricingService.initItem(this.listId, array, this.listRow);
       }
       return pricing;
-    })
+    }),
+    filter(p => !!p)
   );
 
   priceToCraft$: Observable<{ price: Price }> = combineLatest([
