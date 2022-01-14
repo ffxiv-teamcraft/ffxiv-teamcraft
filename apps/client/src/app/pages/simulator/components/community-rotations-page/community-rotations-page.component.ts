@@ -139,7 +139,7 @@ export class CommunityRotationsPageComponent {
       label: '90 ★★★★',
       value: 640
     }
-  ].sort((a, b) => a.value - b.value);
+  ].sort((a, b) => b.value - a.value);
 
   public tags: any[];
 
