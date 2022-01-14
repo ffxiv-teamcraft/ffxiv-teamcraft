@@ -6,20 +6,7 @@ import * as csv from 'csv-parser';
 export class ReductionsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     // Base handmade data
-    const reductions = {
-      12936: [5214, 5218, 12968, 12971],
-      12937: [12966, 12967, 12969, 12972],
-      12938: [5220, 5224],
-      12939: [12970, 12973],
-      12940: [12831, 12833],
-      15648: [15948, 15949],
-      20014: [20009, 19916, 20181],
-      20015: [20010],
-      20013: [20012, 20011, 20180],
-      20017: [20024],
-      20016: [19937],
-      23182: [23220, 23221]
-    };
+    const reductions = {};
     const items = require('../../../../client/src/assets/data/items.json');
     const sheetRows = [];
     // Credits to Hiems Whiterock / M'aila Batih for the data sheet
