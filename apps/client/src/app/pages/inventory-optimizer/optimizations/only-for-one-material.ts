@@ -24,7 +24,15 @@ export class OnlyForOneMaterial extends InventoryOptimizer {
           if (recipesWithThisItem.length === 1
             && recipesIngredientLookup.searchIndex[recipesIngredientLookup.recipes[recipesWithThisItem[0]].itemId]) {
             return this.i18n.getNameObservable('items', recipesIngredientLookup.recipes[recipesWithThisItem[0]].itemId).pipe(
-              map(targetItem => ({ targetItem }))
+              map(targetItem => {
+                const entry = recipesIngredientLookup.recipes[recipesWithThisItem[0]];
+                return {
+                  targetItem,
+                  targetItemId: entry.itemId,
+                  targetRecipeId: entry.recipeId,
+                  amount: Math.floor(item.quantity / entry.ingredients.find(i => i.id === item.itemId)?.amount) * entry.yields
+                };
+              })
             );
           }
           return of(null);
