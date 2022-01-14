@@ -21,6 +21,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 
 @Component({
   selector: 'app-list-pricing',
@@ -225,14 +226,17 @@ export class ListPricingComponent extends TeamcraftComponent {
             );
           }),
           mergeMap(({ server, dc }) => {
-            return this.universalis.getDCPrices(dc, row.id).pipe(
+            let prices$: Observable<MarketboardItem[]>;
+            if (forceOnlyServer || !finalItems) {
+              prices$ = this.universalis.getServerPrices(server, row.id);
+            } else {
+              prices$ = this.universalis.getDCPrices(dc, row.id);
+            }
+            return prices$.pipe(
               first(),
               map(res => {
                 const item = res[0];
-                let prices = item.Prices;
-                if (forceOnlyServer || finalItems || this.settings.disableCrossWorld) {
-                  prices = prices.filter(price => (<any>price).Server === server);
-                }
+                const prices = item.Prices;
                 const cheapestHq = prices.filter(p => p.IsHQ)
                   .sort((a, b) => a.PricePerUnit - b.PricePerUnit)[0];
                 const cheapestNq = prices.filter(p => !p.IsHQ)
