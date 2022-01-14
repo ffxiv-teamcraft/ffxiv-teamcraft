@@ -2,7 +2,7 @@
   <div nz-col nzMd="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <label nz-checkbox [(ngModel)]="itemPrice.use" (ngModelChange)="updates$.next(itemPrice)"></label>
     <app-item-icon [itemId]="itemId" width="24"></app-item-icon>
-    <app-i18n-name content="items" [id]="itemId"></app-i18n-name>
+    <app-i18n-name content="items" [id]="itemId" [clipboard]="itemId | itemName | i18n"></app-i18n-name>
     <app-marketboard-icon [itemId]="itemId" [showHistory]="true"></app-marketboard-icon>
   </div>
   <div nz-col nzMd="7" fxLayout="row" fxLayoutGap="5px">
