@@ -66,7 +66,8 @@ export const searchCommunityLists = functions.runWith(runtimeOpts).https.onReque
   res.set('Access-Control-Max-Age', '3600');
   if (req.method === 'OPTIONS') {
     // Send response to OPTIONS requests
-    return res.status(204).send('');
+    res.status(204).send('');
+    return;
   }
   const options: any = {};
   if (req.query.tags) {

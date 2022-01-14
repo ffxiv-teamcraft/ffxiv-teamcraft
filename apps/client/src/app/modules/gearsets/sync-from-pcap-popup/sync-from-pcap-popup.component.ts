@@ -12,6 +12,7 @@ import { GearsetsFacade } from '../+state/gearsets.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { MateriaService } from '../materia.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { Job } from '../../../lazy-data/model/lazy-equipment';
 
 @Component({
   selector: 'app-sync-from-pcap-popup',
@@ -28,53 +29,57 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
               private gearsetsFacade: GearsetsFacade, private translate: TranslateService
   ) {
     super();
-    combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$,
-      this.lazyData.getEntry('materias')]).pipe(
+    combineLatest([
+      this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)),
+      this.ipc.updateClassInfoPackets$,
+      this.lazyData.getEntry('materias'),
+      this.lazyData.getEntry('equipment'),
+      this.lazyData.getEntry('itemMeldingData'),
+      this.lazyData.getEntry('jobAbbr')
+    ]).pipe(
       takeUntil(this.onDestroy$),
-      switchMap(([packets, classInfo, materiasData]) => {
-        return this.lazyData.getEntry('itemMeldingData').pipe(
-          switchMap(lazyItemMeldingData => {
-            return this.i18n.getNameObservable('jobName', classInfo.classId).pipe(
-              map(name => {
-                name = name.charAt(0).toUpperCase() + name.slice(1);
-                this.timeline.push({
-                  color: 'blue',
-                  label: this.translate.instant('GEARSETS.SYNC.Importing_gearset', { name })
-                });
-                const gearset = new TeamcraftGearset();
-                gearset.name = name;
-                gearset.job = classInfo.classId;
-                gearset.fromSync = true;
-                delete gearset.crystal;
-                delete gearset.offHand;
-                packets
-                  .filter(p => p.containerId === 1000)
-                  .forEach(packet => {
-                    const itemMeldingData = lazyItemMeldingData[packet.catalogId];
-                    const materias = (packet.materia || <number[]>[]).map((materia, index) => {
-                      return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
-                    });
-                    while (materias.length < itemMeldingData.slots) {
-                      materias.push(0);
-                    }
-                    if (itemMeldingData.overmeld) {
-                      while (materias.length < 5) {
-                        materias.push(0);
-                      }
-                    }
-                    gearset[this.gearsetsFacade.getPropertyName(packet.slot)] = {
-                      itemId: packet.catalogId,
-                      hq: packet.hqFlag,
-                      materias: materias,
-                      canOvermeld: itemMeldingData.overmeld,
-                      materiaSlots: itemMeldingData.slots,
-                      baseParamModifier: itemMeldingData.modifier
-                    };
-                  });
-                return gearset;
+      switchMap(([packets, classInfo, materiasData, equipmentData, lazyItemMeldingData, jobAbbr]) => {
+        return this.i18n.getNameObservable('jobName', classInfo.classId).pipe(
+          map(name => {
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+            this.timeline.push({
+              color: 'blue',
+              label: this.translate.instant('GEARSETS.SYNC.Importing_gearset', { name })
+            });
+            const gearset = new TeamcraftGearset();
+            gearset.name = name;
+            gearset.job = classInfo.classId;
+            gearset.fromSync = true;
+            delete gearset.crystal;
+            delete gearset.offHand;
+            packets
+              .filter(p => {
+                return p.containerId === 1000
+                  && (equipmentData[p.catalogId]?.jobs || []).includes(jobAbbr[classInfo.classId]?.en as Job);
               })
-            );
-
+              .forEach(packet => {
+                const itemMeldingData = lazyItemMeldingData[packet.catalogId];
+                const materias = (packet.materia || <number[]>[]).map((materia, index) => {
+                  return this.materiaService.getMateriaItemIdFromPacketMateria(+materia, packet.materiaTiers[index], materiasData) || 0;
+                });
+                while (materias.length < itemMeldingData.slots) {
+                  materias.push(0);
+                }
+                if (itemMeldingData.overmeld) {
+                  while (materias.length < 5) {
+                    materias.push(0);
+                  }
+                }
+                gearset[this.gearsetsFacade.getPropertyName(packet.slot)] = {
+                  itemId: packet.catalogId,
+                  hq: packet.hqFlag,
+                  materias: materias,
+                  canOvermeld: itemMeldingData.overmeld,
+                  materiaSlots: itemMeldingData.slots,
+                  baseParamModifier: itemMeldingData.modifier
+                };
+              });
+            return gearset;
           })
         );
       }),
@@ -90,9 +95,9 @@ export class SyncFromPcapPopupComponent extends TeamcraftComponent {
               gearset,
               syncGearsets,
               name.charAt(0).toUpperCase() + name.slice(1)
-            ]
+            ];
           })
-        )
+        );
       })
     ).subscribe(([gearset, syncGearsets, name]: [TeamcraftGearset, any[], string]) => {
       const syncGearset = syncGearsets.find(set => {
