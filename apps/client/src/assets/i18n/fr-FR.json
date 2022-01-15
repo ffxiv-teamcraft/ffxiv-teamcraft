@@ -368,7 +368,7 @@
   "Email_enter": "Email",
   "Email_not_found": "Email non trouvé",
   "Email_sent": "Un email a été envoyé avec les instructions de changement de mot de passe.",
-  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
+  "Copy_current_link": "Copiez un lien vers la page actuelle du site web dans votre presse-papiers",
   "ALARM": {
     "Spawned": "{{itemName}} va apparaître !",
     "See_on_map": "Emplacement",
@@ -405,7 +405,7 @@
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
     "Always_on_top": "Toujours au premier plan",
-    "Always_open_on_main_page": "Always open on main page",
+    "Always_open_on_main_page": "Toujours ouvrir sur la page principale",
     "Start_minimized": "Démarrer en mode réduit",
     "Always_quit": "Quitter en cliquant sur le bouton de fermeture (au lieu de minimiser)",
     "Enable_minimize_reduction": "Réduire dans la barre des tâches lorsque vous cliquez sur le bouton réduire (au lieu de réduire à la barre des tâches)",
@@ -490,7 +490,7 @@
     "Reset_contentid_characters": "Réinitialiser les caractères liés",
     "Reset_contentid_characters_ok": "Les personnages liés ont été réinitialisés",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
-    "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres personnages dans les listes",
+    "Show_other_characters_inventories_in_inventory_page": "Afficher les inventaires des autres caractères dans la page d'inventaire",
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de patreon",
@@ -1204,7 +1204,7 @@
     "Expect_to_sell_everything": "Calculer en partant du principe que tout sera vendu",
     "Expect_to_sell_everything_explain": "N'inclut pas les restes d'objets des prés dans vos dépenses car ils seront revendus.",
     "Autofill_panel_prices": "Remplir les prix en se basant sur l’hôtel des ventes",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
+    "Autofill_panel_prices_your_server": "Remplir les prix en se basant sur l’hôtel des ventes (votre serveur uniquement)",
     "Content_copied": "Contenu copié dans le presse-papiers",
     "Cheaper_at_vendor": "Moins cher chez le vendeur",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
@@ -2034,7 +2034,7 @@
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Objets qui ne sont utilisés que pour une seule recette",
       "Message": "Cet objet n'est utilisé que pour faire {{targetItem}}, pensez à le transformer au lieu de le garder brut",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "Ajouter ces éléments à une liste"
     }
   },
   "VERSION_LOCK": {
