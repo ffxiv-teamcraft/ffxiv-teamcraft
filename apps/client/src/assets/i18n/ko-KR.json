@@ -1787,7 +1787,8 @@
     "Trait": "특성",
     "Any": "모두",
     "Achievement": "업적",
-    "Fishing-spot": "낚싯터"
+    "Fishing-spot": "낚싯터",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
