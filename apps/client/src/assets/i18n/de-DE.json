@@ -1787,7 +1787,8 @@
     "Trait": "Eigenschaft",
     "Any": "Alle",
     "Achievement": "Errungenschaft",
-    "Fishing-spot": "Angelplatz"
+    "Fishing-spot": "Angelplatz",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Stufe",
