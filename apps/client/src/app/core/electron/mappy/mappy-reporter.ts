@@ -327,53 +327,54 @@ export class MappyReporterService {
     });
 
     // Objects
-    this.ipc.objectSpawnPackets$.pipe(
-      takeUntil(this.stop$),
-      delayWhen(() => {
-        return this.state.zoning ? interval(2000) : interval(0);
-      }),
-      filter(() => this.state !== undefined),
-      withLazyData(this.lazyData, 'territoryLayers', 'maps', 'gatheringPointToNodeId', 'nodes')
-    ).subscribe(([packet, territoryLayers, maps, gatheringPointToNodeId, nodes]) => {
-      const position = {
-        x: packet.position.x,
-        y: packet.position.z,
-        z: packet.position.y
-      };
-      const coords = this.getCoords(position);
-      const uniqId = `${packet.objId}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
-      if (this.state.objs.some(row => row.uniqId === uniqId)
-        || this.state.outOfBoundsObjs.some(row => row.uniqId === uniqId)
-        || packet.objKind !== 6) {
-        return;
-      }
-      const obj: ObjEntry = {
-        id: packet.objId,
-        kind: packet.objKind,
-        position: position,
-        ingameCoords: coords,
-        displayPosition: this.getPosition(position),
-        uniqId: uniqId,
-        icon: this.getNodeIcon(packet.objId, gatheringPointToNodeId, nodes),
-        timestamp: Date.now()
-      };
-
-      if (this.isInLayer(coords, this.getCurrentLayer(territoryLayers, maps).bounds)) {
-        this.setState({
-          objs: [
-            ...this.state.objs,
-            obj
-          ]
-        });
-      } else {
-        this.setState({
-          outOfBoundsObjs: [
-            ...this.state.outOfBoundsObjs,
-            obj
-          ]
-        });
-      }
-    });
+    // Disabled for now because we don't need to report nodes anymore
+    // this.ipc.objectSpawnPackets$.pipe(
+    //   takeUntil(this.stop$),
+    //   delayWhen(() => {
+    //     return this.state.zoning ? interval(2000) : interval(0);
+    //   }),
+    //   filter(() => this.state !== undefined),
+    //   withLazyData(this.lazyData, 'territoryLayers', 'maps', 'gatheringPointToNodeId', 'nodes')
+    // ).subscribe(([packet, territoryLayers, maps, gatheringPointToNodeId, nodes]) => {
+    //   const position = {
+    //     x: packet.position.x,
+    //     y: packet.position.z,
+    //     z: packet.position.y
+    //   };
+    //   const coords = this.getCoords(position);
+    //   const uniqId = `${packet.objId}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
+    //   if (this.state.objs.some(row => row.uniqId === uniqId)
+    //     || this.state.outOfBoundsObjs.some(row => row.uniqId === uniqId)
+    //     || packet.objKind !== 6) {
+    //     return;
+    //   }
+    //   const obj: ObjEntry = {
+    //     id: packet.objId,
+    //     kind: packet.objKind,
+    //     position: position,
+    //     ingameCoords: coords,
+    //     displayPosition: this.getPosition(position),
+    //     uniqId: uniqId,
+    //     icon: this.getNodeIcon(packet.objId, gatheringPointToNodeId, nodes),
+    //     timestamp: Date.now()
+    //   };
+    //
+    //   if (this.isInLayer(coords, this.getCurrentLayer(territoryLayers, maps).bounds)) {
+    //     this.setState({
+    //       objs: [
+    //         ...this.state.objs,
+    //         obj
+    //       ]
+    //     });
+    //   } else {
+    //     this.setState({
+    //       outOfBoundsObjs: [
+    //         ...this.state.outOfBoundsObjs,
+    //         obj
+    //       ]
+    //     });
+    //   }
+    // });
   }
 
   private getCurrentLayer(territoryLayers: LazyData['territoryLayers'], maps: LazyData['maps']): TerritoryLayer {

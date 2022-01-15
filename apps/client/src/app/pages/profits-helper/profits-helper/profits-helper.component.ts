@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProfitsService } from '../profits.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { first, map, switchMap, tap } from 'rxjs/operators';
+import { first, map, pluck, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { ListRow } from '../../../modules/list/model/list-row';
@@ -43,7 +43,7 @@ export class ProfitsHelperComponent {
 
   reloader$ = new BehaviorSubject<void>(void 0);
 
-  crafts$ = combineLatest([
+  craftsData$ = combineLatest([
     this.server$,
     this.levels$,
     this.selfSufficient$,
@@ -55,7 +55,16 @@ export class ProfitsHelperComponent {
     }),
     tap(() => {
       this.loadingCrafting = false;
-    })
+    }),
+    shareReplay(1)
+  );
+
+  lastUpdated$ = this.craftsData$.pipe(
+    map(res => res.updated)
+  );
+
+  crafts$ = this.craftsData$.pipe(
+    pluck('items')
   );
 
   gatherings$ = combineLatest([
@@ -65,7 +74,9 @@ export class ProfitsHelperComponent {
   ]).pipe(
     switchMap(([server, levels]) => {
       this.loadingGathering = true;
-      return this.profitsService.getGatheringProfit(server, levels, 10);
+      return this.profitsService.getGatheringProfit(server, levels, 10).pipe(
+        pluck('items')
+      );
     }),
     tap(() => {
       this.loadingGathering = false;

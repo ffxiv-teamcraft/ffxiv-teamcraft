@@ -405,6 +405,7 @@
     "no_panel_borders": "パネルの枠線を無効にする",
     "Desktop": "PC版",
     "Always_on_top": "常に最前面",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "起動時に最小化",
     "Always_quit": "閉じるボタンをクリックすると最小化せず終了します",
     "Enable_minimize_reduction": "削減ボタンをクリックした時、トレイに最小化する (タスクバーに減らす代わりに)",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "単一のレシピにのみ使用されるアイテムです。",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {

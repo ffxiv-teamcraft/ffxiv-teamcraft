@@ -75,61 +75,6 @@ export class ListPricingService {
     });
   }
 
-  public initList(list: List): void {
-    combineLatest([
-      this.lazyData.getEntry('hqFlags'),
-      combineLatest(list.items.map(item => this.getItemEntry(item.id))),
-      combineLatest(list.finalItems.map(item => this.getItemEntry(item.id)))
-    ]).pipe(
-      first()
-    ).subscribe(([hqFlags, itemsEntries, finalItemsEntries]) => {
-      this.db.table('items')
-        .bulkAdd([
-            ...list.items.map(item => {
-              const entry = itemsEntries.find(e => e.itemId === item.id);
-              const base = entry ? { ...entry } : {
-                use: true,
-                custom: true,
-                itemId: item.id,
-                nq: 0,
-                hq: 0,
-                fromMB: false,
-                fromVendor: false
-              };
-              return {
-                ...base,
-                key: `${list.$key}:items:${item.id}`,
-                array: 'items',
-                listId: list.$key,
-                amountNQ: item.amount,
-                amountHQ: 0
-              };
-            }),
-            ...list.finalItems.map(item => {
-              const entry = finalItemsEntries.find(e => e.itemId === item.id);
-              const base = entry ? { ...entry } : {
-                use: true,
-                custom: true,
-                itemId: item.id,
-                nq: 0,
-                hq: 0,
-                fromMB: false,
-                fromVendor: false
-              };
-              return {
-                ...base,
-                key: `${list.$key}:finalItems:${item.id}`,
-                array: 'finalItems',
-                listId: list.$key,
-                amountNQ: hqFlags[item.id] ? 0 : item.amount,
-                amountHQ: hqFlags[item.id] ? item.amount : 0
-              };
-            })
-          ]
-        );
-    });
-  }
-
   public initItem(listId: string, array: ListArray, item: ListRow): void {
     combineLatest([
       this.lazyData.getEntry('hqFlags'),
@@ -138,7 +83,15 @@ export class ListPricingService {
       first()
     ).subscribe(([hqFlags, itemEntry]) => {
       const baseModel: Partial<DBEntry> = {
-        ...itemEntry,
+        ...(itemEntry || {
+          use: true,
+          custom: true,
+          itemId: item.id,
+          nq: 0,
+          hq: 0,
+          fromMB: false,
+          fromVendor: false
+        }),
         key: `${listId}:${array}:${item.id}`,
         array: array,
         listId: listId
@@ -196,43 +149,7 @@ export class ListPricingService {
     };
   }
 
-  private getItemPrice(item: ListRow): Observable<Price> {
-    return from(this.db.table('items')
-      .where('itemId')
-      .equals(item.id)
-      .toArray()).pipe(
-      map((entries: DBEntry[]) => {
-        const existingEntry = entries[0];
-        if (existingEntry) {
-          return {
-            nq: existingEntry.nq,
-            nqServer: existingEntry.nqServer,
-            hq: existingEntry.hq,
-            hqServer: existingEntry.hqServer,
-            fromMB: existingEntry.fromMB,
-            fromVendor: existingEntry.fromVendor
-          };
-        }
-        const fromVendor = this.getVendorPrice(item);
-        if (fromVendor > 0) {
-          return {
-            nq: fromVendor,
-            hq: 0,
-            fromVendor: true,
-            fromMB: false
-          };
-        }
-        return {
-          nq: 0,
-          hq: 0,
-          fromVendor: false,
-          fromMB: false
-        };
-      })
-    );
-  }
-
-  private getItemEntry(itemId: number): Observable<DBEntry> {
+  private getItemEntry(itemId: number): Observable<DBEntry | undefined> {
     return from(this.db.table('items')
       .where('itemId')
       .equals(itemId)

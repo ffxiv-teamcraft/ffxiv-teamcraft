@@ -1,11 +1,4 @@
 import { RuntimeOptions } from 'firebase-functions';
-import { Item } from './marketboard/item';
-import { combineLatest, from } from 'rxjs';
-import axios from 'axios';
-import { createRedisClient, updateCache, updateItems, updateServerData } from './marketboard/common';
-import { map, switchMap } from 'rxjs/operators';
-import { chunk, uniq } from 'lodash';
-import { closeUniversalisQueue, doUniversalisRequest } from './marketboard/universalis';
 
 const functions = require('firebase-functions');
 require('firebase/app');
@@ -66,7 +59,8 @@ export const searchCommunityLists = functions.runWith(runtimeOpts).https.onReque
   res.set('Access-Control-Max-Age', '3600');
   if (req.method === 'OPTIONS') {
     // Send response to OPTIONS requests
-    return res.status(204).send('');
+    res.status(204).send('');
+    return;
   }
   const options: any = {};
   if (req.query.tags) {
@@ -418,136 +412,6 @@ export const setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall(a
     });
 });
 
-let items: Record<number, Item>;
 
 
-export const updateCacheForAllServers = functions
-  .runWith({
-    vpcConnector: `projects/ffxivteamcraft/locations/us-central1/connectors/functions-connector`,
-    timeoutSeconds: 270,
-    memory: '512MB'
-  })
-  .pubsub
-  .schedule('every 1 minutes').onRun(async () => {
-    if (!items) {
-      items = {};
-      const extractsReq = await axios.get('https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/raw/staging/apps/client/src/assets/extracts/extracts.json');
-      const recipesReq = await axios.get('https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src/assets/data/recipes.json');
-      const extracts = extractsReq.data;
-      const recipes = recipesReq.data;
-      Object.values<any>(extracts)
-        .filter(e => !e.sources.some((s: any) => s.type === -1))
-        .forEach(extract => {
-          const crafting = extract.sources.find((source: any) => source.type === 1)?.data || null;
-          const gathering = extract.sources.find((source: any) => source.type === 7)?.data || null;
-          const vendors = extract.sources.find((source: any) => source.type === 3)?.data || null;
-          const trades = extract.sources.find((source: any) => source.type === 2)?.data || null;
-          const reduction = extract.sources.find((source: any) => source.type === 4)?.data || null;
-          const requirements = crafting ? recipes.find((r: any) => r.id.toString() === crafting[0].id.toString())?.ingredients : null;
-          items[extract.id] = {
-            id: extract.id,
-            crafting,
-            gathering,
-            vendors,
-            trades,
-            reduction,
-            requirements
-          };
-        });
-    }
-
-    return new Promise<void>(resolve => {
-      createRedisClient().then(redis => {
-        from(axios.get('https://xivapi.com/servers')).pipe(
-          switchMap(res => {
-            const servers: string[] = res.data;
-            return combineLatest(servers.map(server => {
-              return updateServerData(server);
-            }));
-          })
-        ).subscribe(async res => {
-          for (const row of res) {
-            const itemIds = Object.keys(row.data);
-            for (const id of itemIds) {
-              await redis.set(`mb:${row.server}:${id}`, JSON.stringify(row.data[+id]));
-            }
-          }
-          await updateCache(uniq(res.map(row => row.server)), items, redis);
-          closeUniversalisQueue();
-          resolve();
-        });
-      });
-    });
-  });
-
-export const updateFullDataForAllServers = functions
-  .runWith({
-    vpcConnector: `projects/ffxivteamcraft/locations/us-central1/connectors/functions-connector`,
-    timeoutSeconds: 540,
-    memory: '512MB'
-  })
-  .pubsub
-  .schedule('every 30 minutes').onRun(async () => {
-    if (!items) {
-      items = {};
-      const extractsReq = await axios.get('https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/raw/staging/apps/client/src/assets/extracts/extracts.json');
-      const recipesReq = await axios.get('https://raw.githubusercontent.com/ffxiv-teamcraft/ffxiv-teamcraft/staging/apps/client/src/assets/data/recipes.json');
-      const extracts = extractsReq.data;
-      const recipes = recipesReq.data;
-      Object.values<any>(extracts)
-        .filter(e => !e.sources.some((s: any) => s.type === -1))
-        .forEach(extract => {
-          const crafting = extract.sources.find((source: any) => source.type === 1)?.data || null;
-          const gathering = extract.sources.find((source: any) => source.type === 7)?.data || null;
-          const vendors = extract.sources.find((source: any) => source.type === 3)?.data || null;
-          const trades = extract.sources.find((source: any) => source.type === 2)?.data || null;
-          const reduction = extract.sources.find((source: any) => source.type === 4)?.data || null;
-          const requirements = crafting ? recipes.find((r: any) => r.id.toString() === crafting[0].id.toString())?.ingredients : null;
-          items[extract.id] = {
-            id: extract.id,
-            crafting,
-            gathering,
-            vendors,
-            trades,
-            reduction,
-            requirements
-          };
-        });
-    }
-
-    return new Promise<void>(resolve => {
-      createRedisClient().then(redis => {
-        from(axios.get('https://xivapi.com/servers')).pipe(
-          switchMap((res) => {
-            const partitionToPick = Math.floor((Date.now() % 86400000) / (60000 * 30));
-            const servers: string[] = chunk(res.data, Math.ceil(res.data.length / 48))[partitionToPick] as string[];
-            return doUniversalisRequest('https://universalis.app/api/marketable').pipe(
-              switchMap((itemIds: number[]) => {
-                console.log('Starting MB data aggregation');
-                return combineLatest(servers.map(server => {
-                    const chunks = chunk(itemIds, 100);
-                    return combineLatest(chunks.map((ids, index) => {
-                      return updateItems(server, ids);
-                    }));
-                  })
-                ).pipe(
-                  map((mbRes: any[]) => mbRes.flat())
-                );
-              })
-            );
-          })
-        ).subscribe(async (res: any) => {
-          for (const row of res) {
-            const itemIds = Object.keys(row.data);
-            for (const id of itemIds) {
-              await redis.set(`mb:${row.server}:${id}`, JSON.stringify(row.data[+id]));
-            }
-          }
-          closeUniversalisQueue();
-          await updateCache(uniq(res.map(row => row.server)), items, redis);
-          resolve();
-        });
-      });
-    });
-  });
 

@@ -1,6 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
   <div>
     <h1>{{'PROFITS.Title' | translate}} - {{server$ | async}}</h1>
+    <p>({{'MAPPY.Last_updated' | translate}}: {{lastUpdated$ | async | date:'medium':null:translate.currentLang}})</p>
   </div>
   <div>
     <button nz-button nzShape="circle" class="reload-button" nzType="primary" (click)="reloader$.next()" nz-tooltip

@@ -13,4 +13,5 @@ export interface ProfitEntry {
   v24: number;
   v48: number;
   levelReqs: number[];
+  updated: number;
 }

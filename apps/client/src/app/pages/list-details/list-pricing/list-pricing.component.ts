@@ -21,7 +21,6 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 
 @Component({
   selector: 'app-list-pricing',
@@ -34,13 +33,7 @@ export class ListPricingComponent extends TeamcraftComponent {
   pricingData$ = this.listsFacade.selectedList$.pipe(
     first(),
     switchMap(list => {
-      return this.pricingService.getPricingForList(list.$key).pipe(
-        tap(res => {
-          if (res.length === 0) {
-            this.pricingService.initList(list);
-          }
-        })
-      );
+      return this.pricingService.getPricingForList(list.$key);
     })
   );
 
@@ -226,9 +219,18 @@ export class ListPricingComponent extends TeamcraftComponent {
             );
           }),
           mergeMap(({ server, dc }) => {
-            let prices$: Observable<MarketboardItem[]>;
-            if (forceOnlyServer || !finalItems) {
-              prices$ = this.universalis.getServerPrices(server, row.id);
+            let prices$;
+            if (forceOnlyServer || (!finalItems && this.settings.disableCrossWorld)) {
+              prices$ = this.universalis.getServerPrices(server, row.id).pipe(
+                map(prices => {
+                  return prices.map(price => {
+                    return {
+                      ...price,
+                      Server: server
+                    };
+                  });
+                })
+              );
             } else {
               prices$ = this.universalis.getDCPrices(dc, row.id);
             }
@@ -244,9 +246,9 @@ export class ListPricingComponent extends TeamcraftComponent {
                 const pricingEntry = currentPrices.find(p => p.id === row.id && p.array === (finalItems ? 'finalItems' : 'items'));
                 pricingEntry.price = {
                   nq: cheapestNq ? cheapestNq.PricePerUnit : pricingEntry.price.nq,
-                  nqServer: cheapestNq ? (<any>cheapestNq).Server : null,
+                  nqServer: cheapestNq ? ((<any>cheapestNq).Server || item.Server) : null,
                   hq: cheapestHq ? cheapestHq.PricePerUnit : pricingEntry.price.hq,
-                  hqServer: cheapestHq ? (<any>cheapestHq).Server : null,
+                  hqServer: cheapestHq ? ((<any>cheapestHq).Server || item.Server) : null,
                   updated: item.Updated,
                   fromMB: (cheapestNq || cheapestHq) !== undefined,
                   fromVendor: false
