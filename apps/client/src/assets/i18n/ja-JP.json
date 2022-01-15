@@ -499,7 +499,7 @@
     "Import_successful": "設定を呼び出しました。",
     "Import_error": "設定を呼び出す途中で、エラーが起こされました。",
     "Has_access_to_housing_vendor": "ハウジングNPCを優先する",
-    "Has_access_to_housing_vendor_explain": "NPCグループ化システムのハウジングNPC優先順位は利用が可能ならば便利です。",
+    "Has_access_to_housing_vendor_explain": "NPCグループ化時にハウジングNPCを購入先として優先します。",
     "Hide_back_button": "サイドバーの戻るボタンを隠す",
     "Reload_auth_token": "認証トークンを再読み込みする",
     "Materia_confidence_rate": "Melding confidence rate",
