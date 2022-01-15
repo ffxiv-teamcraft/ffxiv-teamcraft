@@ -1787,7 +1787,8 @@
     "Trait": "Rasgo",
     "Any": "Cualquiera",
     "Achievement": "Logro",
-    "Fishing-spot": "Lugar de pesca"
+    "Fishing-spot": "Lugar de pesca",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
