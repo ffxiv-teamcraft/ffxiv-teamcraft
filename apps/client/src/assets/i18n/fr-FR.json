@@ -1787,7 +1787,8 @@
     "Trait": "Trait",
     "Any": "Tout",
     "Achievement": "Haut-fait",
-    "Fishing-spot": "Point de pêche"
+    "Fishing-spot": "Point de pêche",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
