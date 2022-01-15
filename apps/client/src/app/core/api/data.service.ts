@@ -35,6 +35,7 @@ import { Language } from '../data/language';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../rxjs/with-lazy-data';
 import { safeCombineLatest } from '../rxjs/safe-combine-latest';
+import { GatheringNodeSearchResult } from '../../model/search/gathering-node-search-result';
 
 @Injectable()
 export class DataService {
@@ -390,6 +391,9 @@ export class DataService {
         break;
       case SearchType.FISHING_SPOT:
         searchRequest$ = this.searchFishingSpot(query, filters);
+        break;
+      case SearchType.GATHERING_NODE:
+        searchRequest$ = this.searchGatheringNode(query, filters);
         break;
       default:
         searchRequest$ = this.searchItem(query, filters, false, sort);
@@ -987,6 +991,36 @@ export class DataService {
                 return {
                   id: spot.id,
                   spot: spot
+                };
+              });
+          })
+        );
+      })
+    );
+  }
+
+  searchGatheringNode(query: string, filters: SearchFilter[]): Observable<GatheringNodeSearchResult[]> {
+    return this.lazyData.getEntry('nodes').pipe(
+      map(nodes => Object.entries(nodes).map(([key, node]) => ({ id: +key, ...node }))),
+      switchMap(nodes => {
+        return safeCombineLatest(
+          nodes.map(node => {
+            return combineLatest([
+              this.i18n.getNameObservable('places', node.zoneid),
+              this.i18n.getMapName(node.map)
+            ]).pipe(
+              map(([placeName, mapName]) => {
+                return { node, matches: placeName.toLowerCase().includes(query.toLowerCase()) || mapName.toLowerCase().includes(query.toLowerCase()) };
+              })
+            );
+          })
+        ).pipe(
+          map(result => {
+            return result.filter(row => row.matches)
+              .map(({ node }) => {
+                return {
+                  id: node.id,
+                  node
                 };
               });
           })

@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+
 <a name="9.4.8"></a>
 ## [9.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.7...v9.4.8) (2022-01-15)
 
@@ -14,6 +16,9 @@ All notable changes to this project will be documented in this file. See [standa
 * **pricing:** fixed server filter setting not applied properly for marketboard ([b91e58a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b91e58a))
 
 
+### Features
+
+* **search:** new search type: Gathering node ([ec0ebb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec0ebb6))
 
 <a name="9.4.7"></a>
 ## [9.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.6...v9.4.7) (2022-01-14)

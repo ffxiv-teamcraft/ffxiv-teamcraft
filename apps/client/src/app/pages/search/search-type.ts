@@ -15,4 +15,5 @@ export enum SearchType {
   TRAIT = 'Trait',
   ACHIEVEMENT = 'Achievement',
   FISHING_SPOT = 'Fishing-spot',
+  GATHERING_NODE = 'Gathering-node',
 }

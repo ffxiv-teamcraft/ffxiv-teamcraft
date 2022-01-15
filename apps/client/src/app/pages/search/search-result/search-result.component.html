@@ -28,9 +28,9 @@
       </div>
       <div *ngIf="row.recipe?.job > 1" class="description">
         <img *ngIf="(row.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
-          alt="{{row.recipe.job | i18nRow:'jobAbbr' | i18n}}"
-          class="job-icon small"
-          src="https://garlandtools.org/db/images/job/{{icon}}.png">
+             alt="{{row.recipe.job | i18nRow:'jobAbbr' | i18n}}"
+             class="job-icon small"
+             src="https://garlandtools.org/db/images/job/{{icon}}.png">
         lvl{{row.recipe.lvl}} <span
         *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
       </div>
@@ -353,6 +353,28 @@
         <div fxLayout="row" fxLayoutGap="5px">
           <div>{{row.spot.zoneId | i18nRow:'places' | i18n}} - {{row.spot.placeId | i18nRow:'places' | i18n}}</div>
           <app-db-button [id]="row.id" type="fishing-spot"></app-db-button>
+        </div>
+        <div fxLayout="row" fxLayoutGap="5px">
+          <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="row.type === searchTypes.GATHERING_NODE" [class.odd]="odd"
+     class="result-row"
+     fxLayout="row"
+     fxLayout.lt-md="column"
+     fxLayoutAlign="flex-start flex-start"
+     fxLayoutAlign.lt-md="center center"
+     fxLayoutGap="5px">
+  <img [src]="row.node.type | nodeTypeIcon" alt="" class="quest-icon" fxFlex="0 0 auto">
+  <div fxLayout="column" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <div fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="5px">
+          <div>{{row.node.map | mapName | i18n}} - {{row.node.zoneid | i18nRow:'places' | i18n}}</div>
+          <app-db-button [id]="row.id" [type]="row.node.type < 4 ? 'node' : 'spearfishing-spot'"></app-db-button>
         </div>
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
