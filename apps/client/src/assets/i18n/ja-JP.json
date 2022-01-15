@@ -1787,7 +1787,8 @@
     "Trait": "特性",
     "Any": "任意",
     "Achievement": "アチーブメント",
-    "Fishing-spot": "釣り場"
+    "Fishing-spot": "釣り場",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
