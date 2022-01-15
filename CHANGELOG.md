@@ -2,47 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+
 <a name="9.4.8"></a>
 ## [9.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.7...v9.4.8) (2022-01-15)
 
 
 ### Bug Fixes
 
-* **community-rotations:** rlvls are now sorted DESC ([d1b74df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1b74df))
-* **db:** fixed some monsters not having drops properly displayed ([c18b3ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c18b3ab))
 * **gearsets:** fixed specialist crystal and offhand items sometimes polluting gearsets ([defeb08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/defeb08))
-* **lists:** fixed total trades sometimes acting up with materias and other trades ([acbef45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acbef45))
 * **mappy:** removed nodes tracking as it's not needed anymore ([82fc4be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82fc4be))
-* **pricing:** fixed crafting flag and prices not properly filled from previous lists ([460228c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/460228c))
-* **pricing:** fixed fill prices on earnings not always getting prices from DC ([d46945c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d46945c))
 * **pricing:** fixed pricing mode sometimes not loading panels properly ([fd8440a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd8440a))
-* **pricing:** fixed row amounts not reflecting list row amounts ([3e7dc1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e7dc1c))
 * **pricing:** fixed server filter setting not applied properly for marketboard ([b91e58a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b91e58a))
 
 
 ### Features
 
-* **desktop:** new setting to always open on main page ([3e71579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e71579))
-* **inventory-optimizer:** new button to generate a list for items used for one recipe ([99e2795](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99e2795))
-* **list-overlay:** added inventory tags to the overlay details ([29261da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29261da))
-* **pricing:** you can now click item names to copy them to clipboard ([19f22e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19f22e8))
 * **search:** new search type: Gathering node ([ec0ebb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec0ebb6))
-* enable background work by disabling throttling ([#2153](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2153)) ([5695047](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5695047))
-
-
-
-<a name="9.4.8"></a>
-## [9.4.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.7...v9.4.8) (2022-01-15)
-
-
-### Bug Fixes
-
-* **gearsets:** fixed specialist crystal and offhand items sometimes polluting gearsets ([defeb08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/defeb08))
-* **mappy:** removed nodes tracking as it's not needed anymore ([82fc4be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82fc4be))
-* **pricing:** fixed pricing mode sometimes not loading panels properly ([fd8440a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd8440a))
-* **pricing:** fixed server filter setting not applied properly for marketboard ([b91e58a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b91e58a))
-
-
 
 <a name="9.4.7"></a>
 ## [9.4.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.6...v9.4.7) (2022-01-14)
