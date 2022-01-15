@@ -1787,7 +1787,8 @@
     "Trait": "Особенность",
     "Any": "Любое",
     "Achievement": "Достижение",
-    "Fishing-spot": "Рыболовное место"
+    "Fishing-spot": "Рыболовное место",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
