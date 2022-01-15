@@ -405,6 +405,7 @@
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
     "Always_on_top": "Immer im Vordergrund",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "Minimiert im Tray starten",
     "Always_quit": "Beim Klicken auf den Schließen-Button beenden anstatt zu minimieren",
     "Enable_minimize_reduction": "Minimiere zum Infobereich wenn du auf minimieren klickst (anstatt in die Taskleiste zu minimieren)",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
-      "Message": "Dieser Gegenstand wird nur verwendet, um {{targetItem}} herzustellen, wäge ab, ihn umzuwandeln statt ihn in Rohform zu behalten"
+      "Message": "Dieser Gegenstand wird nur verwendet, um {{targetItem}} herzustellen, wäge ab, ihn umzuwandeln statt ihn in Rohform zu behalten",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {

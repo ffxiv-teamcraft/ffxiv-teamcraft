@@ -405,6 +405,7 @@
     "no_panel_borders": "隐藏面板边框",
     "Desktop": "客户端",
     "Always_on_top": "总在最上层",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "启动时最小化到托盘",
     "Always_quit": "关闭窗口时退出 (而不是最小化)",
     "Enable_minimize_reduction": "点击最小化按钮时最小化到托盘 (将不会在任务栏显示)",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "仅用于单个配方的项目",
-      "Message": "此物品仅用于制作 {{targetItem}}，考虑转换它而不是保留原始物品"
+      "Message": "此物品仅用于制作 {{targetItem}}，考虑转换它而不是保留原始物品",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {

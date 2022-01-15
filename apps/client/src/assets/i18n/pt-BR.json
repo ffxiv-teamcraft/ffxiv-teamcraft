@@ -405,6 +405,7 @@
     "no_panel_borders": "Desativar as bordas em torno de vários painéis",
     "Desktop": "Área de Trabalho",
     "Always_on_top": "Sempre no topo",
+    "Always_open_on_main_page": "Always open on main page",
     "Start_minimized": "Start minimized in tray",
     "Always_quit": "Quit when clicking on close button (instead of minimizing)",
     "Enable_minimize_reduction": "Minimize to tray when clicking on reduce button (instead of reducing to taskbar)",
@@ -2032,7 +2033,8 @@
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Items that are only used for a single recipe",
-      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw"
+      "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
+      "Add_to_list": "Add these items to a list"
     }
   },
   "VERSION_LOCK": {
