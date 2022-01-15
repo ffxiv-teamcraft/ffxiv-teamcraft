@@ -1787,7 +1787,8 @@
     "Trait": "特性",
     "Any": "任何",
     "Achievement": "成就",
-    "Fishing-spot": "钓场"
+    "Fishing-spot": "钓场",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "等级",
