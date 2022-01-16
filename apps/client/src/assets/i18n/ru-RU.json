@@ -2032,6 +2032,10 @@
       "Title": "Предмет не нужен качества HQ, так как вы можете использовать навык Trained Eye",
       "Message": "Этот предмет используется только в рецептах, где вы можете использовать навык Trained Eye, делая его бесполезным в HQ"
     },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
+    },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Предметы, которые используются только для одного рецепта",
       "Message": "Этот предмет используется только для того, чтобы сделать {{targetItem}}, подумайте о его преобразовании",
