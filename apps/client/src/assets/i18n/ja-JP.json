@@ -1989,11 +1989,11 @@
     "Unhide_optimizer": "隠し解除",
     "Remove_ignore_container": "このリテイナーはこのヒントを無視しない",
     "Show_ignored": "無視された項目を示す",
-    "Hide_empty": "Hide empty optimizers",
-    "Show_hidden": "隠してる項目表示",
+    "Hide_empty": "空の項目を非表示にする",
+    "Show_hidden": "隠してる項目を表示",
     "No_optimizations": "最適化ができません",
     "Optimization_copied": "Optimization copied to clipboard as JSON",
-    "Pause_tracking": "Pause inventory tracking",
+    "Pause_tracking": "所持品トラッカーの一時停止",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
       "Message": "購入可能: ギル / 購入条件: 蛮族クエスト解放",
@@ -2035,7 +2035,7 @@
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "単一のレシピにのみ使用されるアイテムです。",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "アイテムをリストに追加"
     }
   },
   "VERSION_LOCK": {
@@ -2873,7 +2873,7 @@
   },
   "UPDATER": {
     "New_update_available": "A new update is available and has been downloaded",
-    "Restart_to_install": "Do you want to restart now to apply it?"
+    "Restart_to_install": "今すぐ再起動して更新しますか？"
   },
   "NODE_TYPE": {
     "Mining": "Mining",
