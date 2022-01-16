@@ -2032,6 +2032,10 @@
       "Title": "このアイテムは「匠の早業」を使用できますのでHQ素材を要求しません",
       "Message": "このアイテムは「匠の早業」を使用できるレシピだけに必要なので、HQを要求しません"
     },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
+    },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "単一のレシピにのみ使用されるアイテムです。",
       "Message": "This item is only used to make {{targetItem}}, consider transforming it instead of keeping it raw",
