@@ -101,7 +101,8 @@ export class PacketCaptureTrackerService {
 
     const debouncedPatches$ = patches$.pipe(debounceTime(8000));
     const statusIsNull$ = combineLatest([patches$, eventStatus$, this.listsFacade.selectedList$]).pipe(
-      filter(([, status, list]) => status === null || list.offline)
+      filter(([, status, list]) => status === null || list.offline),
+      shareReplay(1)
     );
 
     combineLatest([eventStatus$, this.listsFacade.selectedList$, currentPage$])
