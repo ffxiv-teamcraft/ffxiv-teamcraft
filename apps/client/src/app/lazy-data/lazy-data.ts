@@ -108,6 +108,7 @@ export interface LazyData {
   baitItems: Array<number>;
   baseParams: Record<number, LazyBaseParam>;
   classJobsModifiers: Record<number, LazyClassJobsModifier>;
+  collectableFlags: Record<number, number>;
   collectablesPageData: Record<number, LazyCollectablesPageData[]>;
   collectablesShopItemGroup: Record<number, LazyCollectablesShopItemGroup>;
   collectablesShops: Record<number, number[]>;

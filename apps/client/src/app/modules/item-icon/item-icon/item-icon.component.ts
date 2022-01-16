@@ -79,15 +79,8 @@ export class ItemIconComponent {
       if (forceCollectable) {
         return of(forceCollectable);
       }
-      return combineLatest([
-        this.lazyData.getRow('collectables', itemId, { collectable: 0 }).pipe(
-          map(colectableRow => colectableRow?.collectable)
-        ),
-        this.lazyData.getRow('aetherialReduce', itemId, 0).pipe(
-          map(reduce => reduce > 0)
-        )
-      ]).pipe(
-        map(res => res.some(v => !!v))
+      return this.lazyData.getRow('collectableFlags', itemId, 0).pipe(
+        map(flag => flag === 1)
       );
     }),
     shareReplay(1)
