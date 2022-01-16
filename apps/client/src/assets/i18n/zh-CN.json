@@ -2032,6 +2032,10 @@
       "Title": "不需要保留 HQ 的物品（因为可以使用工匠的神速技巧）",
       "Message": "该物品仅在可以使用工匠的神速技巧的配方中有用，所以不需要保留 HQ"
     },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
+    },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "仅用于单个配方的项目",
       "Message": "此物品仅用于制作 {{targetItem}}，考虑转换它而不是保留原始物品",
