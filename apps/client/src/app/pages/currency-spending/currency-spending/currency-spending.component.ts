@@ -71,7 +71,9 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
             // Remove gil, venture and outdated tomes/scrips
             return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 36, 37, 38, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
           }).map(item => item.ID as number),
-          33870
+          33870,
+          15857,
+          15858
         ];
       })
     );
