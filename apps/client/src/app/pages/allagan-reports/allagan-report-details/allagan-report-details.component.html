@@ -68,8 +68,8 @@
               nz-input
             />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of itemCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+              <nz-auto-option *ngFor="let option of itemCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }}
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
@@ -85,8 +85,8 @@
               nz-input
             />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of instanceCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
+              <nz-auto-option *ngFor="let option of instanceCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }} ({{(option.id < 0 ? 'DB.Map' : 'COMMON.Instance') | translate}}#{{option.id | absolute}})
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
@@ -103,8 +103,8 @@
               nz-input
             />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of ventureCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+              <nz-auto-option *ngFor="let option of ventureCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }}
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
@@ -113,7 +113,6 @@
           <nz-form-label [nzSpan]="3" nzRequired>{{'COMMON.Monster' | translate}}</nz-form-label>
           <nz-form-control [nzSpan]="10">
             <input
-
               formControlName="mob"
               (input)="mobInput$.next($event.target?.value)"
               [nzAutocomplete]="auto"
@@ -121,8 +120,8 @@
               nz-input
             />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of mobCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }} <span *ngIf="option.details">({{option.details.zoneid | i18nRow:'places' | i18n}})</span>
+              <nz-auto-option *ngFor="let option of mobCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }} <span *ngIf="option.details">({{option.details.zoneid | i18nRow:'places' | i18n}})</span>
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
@@ -138,14 +137,14 @@
               nz-input
             />
             <nz-autocomplete #auto nzBackfill>
-              <nz-auto-option *ngFor="let option of fateCompletion$ | async" [nzValue]="option.name | i18n">
-                {{ option.name | i18n }}
+              <nz-auto-option *ngFor="let option of fateCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                [{{option.id}}] {{ option.name | i18n }}
               </nz-auto-option>
             </nz-autocomplete>
           </nz-form-control>
         </nz-form-item>
         <ng-container *ngIf="source === AllaganReportSource.MOGSTATION">
-          <nz-form-item >
+          <nz-form-item>
             <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Price' | translate}}</nz-form-label>
             <nz-form-control [nzSpan]="10">
               <nz-input-group class="spawn-input" nzAddOnBefore="$">
@@ -153,7 +152,7 @@
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
-          <nz-form-item >
+          <nz-form-item>
             <nz-form-label [nzSpan]="3">{{'ALLAGAN_REPORTS.Product_id' | translate}}</nz-form-label>
             <nz-form-control [nzSpan]="10" [nzExtra]="'ALLAGAN_REPORTS.Product_id_explain' | translate">
               <nz-input-group class="spawn-input" nzAddOnBefore="https://store.finalfantasyxiv.com/ffxivstore/en-us/product/">
@@ -184,8 +183,8 @@
                 nz-input
               />
               <nz-autocomplete #auto nzBackfill>
-                <nz-auto-option *ngFor="let option of voyageCompletion$ | async" [nzValue]="option.name | i18n">
-                  {{ option.name | i18n }}
+                <nz-auto-option *ngFor="let option of voyageCompletion$ | async" nzValue="[{{option.id}}] {{ option.name | i18n }}">
+                  [{{option.id}}] {{ option.name | i18n }}
                 </nz-auto-option>
               </nz-autocomplete>
             </nz-form-control>
@@ -295,7 +294,8 @@
                     </nz-form-control>
                   </nz-form-item>
                   <nz-form-item>
-                    <nz-form-label [nzSpan]="3" [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
+                    <nz-form-label [nzSpan]="3"
+                                   [nzRequired]="form.getRawValue()?.spawn !== '' && form.getRawValue()?.spawn !== null">{{'ALLAGAN_REPORTS.Duration' | translate}}</nz-form-label>
                     <nz-form-control [nzSpan]="10" [nzExtra]="gubalAnalysisDuration">
                       <nz-input-number [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min"
                                        formControlName="duration">
@@ -383,7 +383,8 @@
               <nz-select formControlName="speed">
                 <nz-option *ngFor="let row of speeds" [nzValue]="row.key" [nzLabel]="('ALLAGAN_REPORTS.SPEEDS.' + row.value) | translate"></nz-option>
               </nz-select>
-              <img *ngIf="form.getRawValue()?.speed !== null" src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif" style="width: 320px;margin-top:5px">
+              <img *ngIf="form.getRawValue()?.speed !== null" src="./assets/spearfishing/speed_{{form.getRawValue()?.speed}}.gif"
+                   style="width: 320px;margin-top:5px">
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>
