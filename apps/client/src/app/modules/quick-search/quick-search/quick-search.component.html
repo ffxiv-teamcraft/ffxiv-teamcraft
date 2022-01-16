@@ -47,7 +47,8 @@
                 </span>
               <span *ngSwitchCase="searchTypes.MONSTER">
                   {{row.id | i18nRow:'mobs' | i18n}}
-                </span>
+                  <div *ngIf="row.zoneid">{{row.zoneid | i18nRow:'places' | i18n}}</div>
+              </span>
               <span *ngSwitchCase="searchTypes.FATE">
                   {{row.id | i18nRow:'fates' | i18n}}
                 </span>
