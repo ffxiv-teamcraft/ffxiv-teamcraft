@@ -69,6 +69,9 @@ export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
       if (row.type === SearchType.MONSTER) {
         type = 'mob';
       }
+      if (row.type === SearchType.GATHERING_NODE) {
+        type = (<any>row).node.type < 4 ? 'node' : 'spearfishing-spot';
+      }
       setTimeout(() => {
         this.router.navigate([
           'db',

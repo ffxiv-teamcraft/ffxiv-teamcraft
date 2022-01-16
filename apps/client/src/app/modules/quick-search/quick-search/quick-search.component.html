@@ -23,6 +23,7 @@
             <img class="result-icon" *ngSwitchCase="searchTypes.RECIPE" src="{{row.icon}}" alt="">
             <img class="result-icon" *ngSwitchCase="searchTypes.MAP" src="{{'/c/PlaceName.png' | xivapiIcon}}" alt="">
             <img class="result-icon" *ngSwitchCase="searchTypes.FISHING_SPOT" src="./assets/icons/classjob/fisher.png" alt="">
+            <img class="result-icon" *ngSwitchCase="searchTypes.GATHERING_NODE" [src]="row.node.type | nodeTypeIcon" alt="">
             <img class="result-icon" *ngSwitchDefault src="{{row.icon | xivapiIcon}}" alt="">
           </div>
           <div fxLayout="column">
@@ -70,6 +71,9 @@
               <span *ngSwitchCase="searchTypes.FISHING_SPOT">
                   {{row.spot.zoneId | i18nRow:'places' | i18n}}
                 </span>
+              <span *ngSwitchCase="searchTypes.GATHERING_NODE">
+                  {{row.node.zoneid | i18nRow:'places' | i18n}}
+                </span>
             </div>
             <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           </div>
@@ -110,6 +114,8 @@
                    [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
                    [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
+        <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.GATHERING_NODE) | translate"
+                   [nzValue]="searchTypes.GATHERING_NODE"></nz-option>
       </nz-select>
     </ng-template>
   </nz-input-group>
