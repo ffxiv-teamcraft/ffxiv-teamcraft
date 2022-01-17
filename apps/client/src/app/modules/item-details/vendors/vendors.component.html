@@ -6,9 +6,10 @@
       </nz-list-item-meta>
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div>{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
+          <div *ngIf="vendor.npcId > 1000000">{{vendor.npcId | i18nRow:'npcs' | i18n}}</div>
+          <div *ngIf="vendor.npcId < 1000000">{{vendor.npcId | i18nRow:'mobs' | i18n}}</div>
           <nz-tag class="custom-tag" style.border-color="f50" *ngIf="vendor.festival">{{'COMMON.Festival' | translate}}</nz-tag>
-          <app-db-button [id]="vendor.npcId" type="npc" (click)="modalRef?.close()"></app-db-button>
+          <app-db-button  *ngIf="vendor.npcId > 1000000" [id]="vendor.npcId" type="npc" (click)="modalRef?.close()"></app-db-button>
         </div>
       </ng-template>
       <ng-template #price>
