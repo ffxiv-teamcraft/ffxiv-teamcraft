@@ -344,13 +344,20 @@ export class IpcService {
     });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);
-      if (url.endsWith('/')) {
-        url = url.substr(0, url.length - 1);
+      // tslint:disable-next-line:prefer-const
+      let [path, params] = url.split('?');
+      if (path.endsWith('/')) {
+        path = path.substr(0, url.length - 1);
       }
       if (url.startsWith('/')) {
-        url = url.substr(1);
+        path = path.substr(1);
       }
-      this.router.navigate(url.split('/'));
+      if (params) {
+        const queryParams = new URLSearchParams(params);
+        this.router.navigate(path.split('/'), { queryParams });
+      } else {
+        this.router.navigate(path.split('/'));
+      }
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));
     this.on('install-npcap-prompt', () => {

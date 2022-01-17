@@ -176,6 +176,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.layoutsFacade.loadAll();
     this.teamsFacade.loadMyTeams();
     this.layoutsFacade.loadAll();
+    this.listsFacade.loadMyLists();
     this.activatedRoute.paramMap
       .pipe(
         map(params => params.get('listId')),
