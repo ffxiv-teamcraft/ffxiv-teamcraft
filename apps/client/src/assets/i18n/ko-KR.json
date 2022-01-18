@@ -1787,7 +1787,8 @@
     "Trait": "특성",
     "Any": "모두",
     "Achievement": "업적",
-    "Fishing-spot": "낚싯터"
+    "Fishing-spot": "낚싯터",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
@@ -2030,6 +2031,10 @@
     "USELESS_HQ": {
       "Title": "해당 아이템은 '장인의 날랜손'을 사용할 수 있기 때문에 HQ재료가 필요하지 않습니다",
       "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
+    },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",

@@ -1787,7 +1787,8 @@
     "Trait": "Eigenschaft",
     "Any": "Alle",
     "Achievement": "Errungenschaft",
-    "Fishing-spot": "Angelplatz"
+    "Fishing-spot": "Angelplatz",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Stufe",
@@ -2030,6 +2031,10 @@
     "USELESS_HQ": {
       "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
       "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
+    },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
