@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.9"></a>
+## [9.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.8...v9.4.9) (2022-01-18)
+
+
+### Bug Fixes
+
+* **alarms:** fixed duplicate map names in custom alarm popup ([c5f1563](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5f1563))
+* **db:** fixed "Can contain items" container overflowing ([d57d894](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d57d894)), closes [#2162](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2162)
+* **db:** fixed lvl 10 la noscea node having wrong Y coord ([e5bd6c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e5bd6c0))
+* **db:** fixed missing db links on some shops ([1a56b1d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a56b1d))
+* **db:** fixed wrong collectable flags on some items ([9ebf2b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ebf2b6)), closes [#2152](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2152)
+* **desktop:** fix for slow autofill with non-gathering/crafting obtention ([0529c9a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0529c9a))
+* **desktop:** fixed some pages not loading properly when opening the app ([8f7f68d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f7f68d)), closes [#2158](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2158)
+* **list:** no longer show skip tag if skippable amount is <= 0 ([4e0ba17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e0ba17))
+* **user:** fixed free company ID not applied properly to user profile ([848951b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/848951b))
+
+
+### Features
+
+* **allagan-reports:** added id in [] to avoid confusion, more details on drops as well ([625a9ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/625a9ed))
+* **currency-spending:** added Voidrakes and Althyk Lavender ([455d248](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/455d248))
+* **db:** added monster location to the quick search when known ([7fbfad0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fbfad0))
+* **inventory-optimizer:** new optimizer for items that are now functioning as NQ ([1c474f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c474f3))
+* **search:** added gathering node to quick search ([df78ec0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/df78ec0))
+* **simulator:** new error message for when level or stats are too low for the recipe ([797e79f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/797e79f))
+
+
+### Performance Improvements
+
+* **lists:** improved list details loading performances ([66ef522](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66ef522))
+* **lists:** migrated the history to its own subcollection ([8415bda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8415bda))
+
 
 
 <a name="9.4.8"></a>
