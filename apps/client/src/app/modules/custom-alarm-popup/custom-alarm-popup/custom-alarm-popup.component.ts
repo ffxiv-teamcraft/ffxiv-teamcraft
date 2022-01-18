@@ -76,7 +76,7 @@ export class CustomAlarmPopupComponent implements OnInit {
   constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
               private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
-      columns: ['ID', 'PlaceName.ID', 'TerritoryType.WeatherRate'],
+      columns: ['ID', 'PlaceName.ID', 'TerritoryType.WeatherRate', 'PlaceNameSub'],
       max_items: 1000
     }).pipe(
       map(list => list.Results),
