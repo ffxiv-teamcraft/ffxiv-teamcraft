@@ -64,12 +64,12 @@ export class NodesExtractor extends AbstractExtractor {
             duration: 0,
             zoneid: point.PlaceNameTargetID,
             ...(point.TerritoryType?.Map ? this.getCoords({
-              x: point.ExportedGatheringPoint.X,
-              y: point.ExportedGatheringPoint.Y,
+              x: +point.ExportedGatheringPoint.X,
+              y: +point.ExportedGatheringPoint.Y,
               z: 0
             }, {
-              offset_x: point.TerritoryType.Map.OffsetX,
-              offset_y: point.TerritoryType.Map.OffsetY,
+              offset_x: +point.TerritoryType.Map.OffsetX,
+              offset_y: +point.TerritoryType.Map.OffsetY,
               offset_z: 0,
               size_factor: point.TerritoryType.Map.SizeFactor
             }) : { x: 0, y: 0, z: 0 })
