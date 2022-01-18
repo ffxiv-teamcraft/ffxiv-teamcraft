@@ -2,7 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import { EMPTY, interval, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
 
@@ -74,7 +74,8 @@ export class LodestoneService {
             ...res,
             Character: {
               ...res.Character,
-              Server: (res.Character as any).World
+              Server: (res.Character as any).World,
+              FreeCompanyId: (res.Character as any).FreeCompany?.ID
             }
           };
         })
@@ -83,18 +84,20 @@ export class LodestoneService {
 
   }
 
-  public getCharacter(id: number, noCache = false): Observable<Partial<CharacterResponse>> {
+  public getCharacter(id: number, cacheCharacter = false): Observable<Partial<CharacterResponse>> {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
       LodestoneService.CACHE[id] = trigger.pipe(
         switchMap(() => {
-          if (noCache || !this.getCachedCharacter(id)) {
-            return this.getCharacterFromLodestoneApi(id).pipe(
-              // tap(res => this.cacheCharacter(res))
-            );
-          } else {
-            return of(this.getCachedCharacter(id));
-          }
+          return this.getCharacterFromLodestoneApi(id).pipe(
+            tap(res => {
+              if (cacheCharacter) {
+                this.cacheCharacter(res as any);
+              }
+            }),
+            startWith(this.getCachedCharacter(id)),
+            filter(res => !!res)
+          );
         }),
         filter(res => res !== null),
         shareReplay(1)
