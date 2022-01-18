@@ -43,7 +43,6 @@ import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
-import { uniqBy } from 'lodash';
 import { ListController } from '../../../modules/list/list-controller';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
@@ -60,8 +59,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public finalItemsRow$: Observable<LayoutRowDisplay>;
 
   public list$: Observable<List>;
-
-  public showContributionsButton$: Observable<boolean>;
 
   public crystals$: Observable<ListRow[]>;
 
@@ -123,12 +120,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }),
       map(([list]) => list),
       shareReplay(1)
-    );
-
-    this.showContributionsButton$ = this.list$.pipe(
-      map(list => {
-        return uniqBy(list.modificationsHistory, 'userId').length > 1;
-      })
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
@@ -374,6 +365,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   resetList(list: List): void {
     ListController.reset(list);
     this.listsFacade.updateList(list);
+    this.listsFacade.clearModificationsHistory(list);
   }
 
   openLayoutOptions(): void {

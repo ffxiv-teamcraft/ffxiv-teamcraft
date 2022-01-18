@@ -1,10 +1,10 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, from, Observable, of, throwError } from 'rxjs';
+import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, mapTo, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
@@ -15,6 +15,7 @@ import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { ModificationEntry } from '../../../../modules/list/model/modification-entry';
 
 @Injectable({
   providedIn: 'root'
@@ -100,10 +101,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
 
   public completeListData(list: List): Observable<List> {
     return combineLatest([
-      this.lazyData.getEntry('extracts'),
-      this.lazyData.getEntry('ilvls')
+      this.lazyData.getEntry('extracts')
     ]).pipe(
-      map(([extracts, ilvls]) => {
+      map(([extracts]) => {
         list.items = list.items.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
@@ -117,11 +117,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return Object.assign(item, extracts[item.id]);
         });
         ListController.afterDeserialized(list);
-        if (list.modificationsHistory.length > 25) {
-          const popped = list.modificationsHistory.slice(26);
-          list.contributionStats = ListController.getContributionStats(list, popped, ilvls);
-          list.modificationsHistory = list.modificationsHistory.slice(0, 25);
-        }
         return list;
       })
     );
@@ -179,6 +174,80 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.http.get<{ lists: List[] }>('https://us-central1-ffxivteamcraft.cloudfunctions.net/searchCommunityLists', { params }).pipe(
       switchMap(res => {
         return this.completeLists(this.serializer.deserialize<List>((res.lists || []), [this.getClass()]));
+      })
+    );
+  }
+
+  getModificationsHistory(listId: string): Observable<ModificationEntry[]> {
+    return this.firestore.collection(`/lists/${listId}/history`).snapshotChanges().pipe(
+      tap(() => this.recordOperation('read')),
+      map((snaps: DocumentChangeAction<ModificationEntry>[]) => {
+        return snaps
+          .map((snap: DocumentChangeAction<any>) => {
+            const valueWithKey: ModificationEntry = <ModificationEntry>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+            delete snap.payload;
+            return valueWithKey;
+          });
+      })
+    );
+  }
+
+  addModificationsHistoryEntry(listId: string, entry: ModificationEntry): Observable<void> {
+    const res$ = new Subject<void>();
+    from(this.firestore.collection(`/lists/${listId}/history`).add(entry)).pipe(
+      tap(() => this.recordOperation('write')),
+      mapTo(null),
+      first()
+    ).subscribe(() => {
+      res$.next();
+    });
+    return res$;
+  }
+
+  removeModificationsHistoryEntry(listId: string, entryId: string): Observable<void> {
+    return from(this.firestore.collection(`/lists/${listId}/history`).doc(entryId).delete()).pipe(
+      tap(() => this.recordOperation('delete')),
+      mapTo(null)
+    );
+  }
+
+  resetModificationsHistory(listId: string): Observable<void> {
+    const res$ = new Subject<void>();
+    this.getModificationsHistory(listId).pipe(
+      switchMap(history => {
+        const batches = [this.af.firestore.batch()];
+        let ops = 0;
+        let index = 0;
+        history.forEach(entry => {
+          const batch = batches[index];
+          batch.delete(this.firestore.collection(`/lists/${listId}/history`).doc(entry.$key).ref);
+          ops++;
+          if (ops >= 450) {
+            batches.push(this.af.firestore.batch());
+            ops = 0;
+            index++;
+          }
+        });
+        return combineLatest(batches.map(batch => from(batch.commit().catch(e => console.log(e)))));
+      }),
+      first()
+    ).subscribe(() => {
+      res$.next();
+    }, error => console.log(error));
+    return res$;
+  }
+
+  migrateListModificationEntries(list: List): Observable<void> {
+    const batch = this.af.firestore.batch();
+    (list as any).modificationsHistory.forEach((entry: ModificationEntry) => {
+      batch.set(this.af.firestore.collection(`/lists/${list.$key}/history`).doc(this.af.createId()), entry);
+    });
+    return from(batch.commit()).pipe(
+      switchMap(() => {
+        const newList = ListController.clone(list, true);
+        delete (newList as any).modificationsHistory;
+        delete (newList as any).contributionStats;
+        return this.set(list.$key, newList);
       })
     );
   }

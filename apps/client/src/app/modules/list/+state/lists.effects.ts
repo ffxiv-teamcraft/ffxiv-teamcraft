@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   ArchivedListsLoaded,
+  ClearModificationsHistory,
   ConvertLists,
   CreateList,
   DeleteList,
@@ -31,6 +32,7 @@ import {
   filter,
   first,
   map,
+  mapTo,
   mergeMap,
   switchMap,
   tap,
@@ -166,6 +168,14 @@ export class ListsEffects {
       }
       return [listKey, null];
     }),
+    switchMap(([key, list]: [string, List]) => {
+      if (list && (list as any).modificationsHistory) {
+        return this.listService.migrateListModificationEntries(list).pipe(
+          mapTo([key, list])
+        );
+      }
+      return of([key, list]);
+    }),
     map(([key, list]: [string, List]) => {
       if (list === null) {
         return new ListDetailsLoaded({ $key: key, notFound: true });
@@ -295,14 +305,22 @@ export class ListsEffects {
         this.removeFromLocalStorage(action.key);
         return EMPTY;
       }
-      return this.listService.remove(action.key);
+      return this.listService.resetModificationsHistory(action.key).pipe(
+        switchMap(() => {
+          return this.listService.remove(action.key);
+        })
+      );
     })
   ), { dispatch: false });
 
   deleteListsFromDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteLists>(ListsActionTypes.DeleteLists),
     switchMap(({ keys }) => {
-      return this.listService.removeMany(keys);
+      return combineLatest(keys.map(key => {
+        this.listService.resetModificationsHistory(key);
+      })).pipe(switchMap(() => {
+        return this.listService.removeMany(keys);
+      }));
     })
   ), { dispatch: false });
 
@@ -322,6 +340,13 @@ export class ListsEffects {
       return new UpdateList(list);
     })
   ));
+
+  clearModificationsHistory$ = createEffect(() => this.actions$.pipe(
+    ofType<ClearModificationsHistory>(ListsActionTypes.ClearModificationsHistory),
+    switchMap(action => {
+      return this.listService.resetModificationsHistory(action.payload.$key);
+    })
+  ), { dispatch: false });
 
   updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
@@ -345,23 +370,15 @@ export class ListsEffects {
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
     switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      const historyEntry = list.modificationsHistory.find(entry => {
-        return entry.itemId === action.itemId && (Date.now() - entry.date < 600000);
+      this.listService.addModificationsHistoryEntry(list.$key, {
+        amount: action.doneDelta,
+        date: Date.now(),
+        itemId: action.itemId,
+        userId: userId,
+        finalItem: action.finalItem || false,
+        total: action.totalNeeded,
+        recipeId: action.recipeId || null
       });
-      if (historyEntry !== undefined) {
-        historyEntry.amount += action.doneDelta;
-      } else {
-        list.modificationsHistory.unshift({
-          amount: action.doneDelta,
-          date: Date.now(),
-          itemId: action.itemId,
-          itemIcon: action.itemIcon,
-          userId: userId,
-          finalItem: action.finalItem,
-          total: action.totalNeeded,
-          recipeId: action.recipeId
-        });
-      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
@@ -476,6 +493,16 @@ export class ListsEffects {
                 this.listsFacade.deleteList(list.$key, false);
               }
             });
+          }),
+          switchMap(lists => {
+            return combineLatest(lists.map(list => {
+              if (list && (list as any).modificationsHistory) {
+                return this.listService.migrateListModificationEntries(list);
+              }
+              return of(null);
+            })).pipe(
+              mapTo(lists)
+            );
           }),
           map(lists => new MyListsLoaded(lists, userId))
         );
