@@ -3921,10 +3921,10 @@
     "zh": "发现自身周围15米内隐藏的陷阱\n若周围15米内没有陷阱，则可以获知周围36米内是否存在陷阱\n此文理技能仅在迷宫内有效"
   },
   "14477": {
-    "zh": "令自身发动魔法造成的伤害提高35%，魔法防御力增加1000，并且发动魔法消耗的魔力降低\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“记忆”系技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>同时使用\n切换任务指令时消失\n再次发动时则取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+    "zh": "令自身发动魔法攻击造成的伤害提高35%，魔法防御力增加1000，并且发动魔法消耗的魔力降低\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“记忆”系技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>同时使用\n切换任务指令时消失\n再次发动时则取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
   },
   "14478": {
-    "zh": "令自身发动物理攻击力造成的伤害提高40%，最大体力增加15%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“记忆”系技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>同时使用\n切换任务指令时消失\n再次发动时则取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
+    "zh": "令自身发动物理攻击造成的伤害提高40%，最大体力增加15%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“记忆”系技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>同时使用\n切换任务指令时消失\n再次发动时则取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
   },
   "14479": {
     "zh": "令自身的发动物理时造成的伤害提高25%，并且回避率提高25%\n无法与其他<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>“记忆”系技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>同时使用\n切换任务指令时消失\n再次发动时则取消该状态　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久"
