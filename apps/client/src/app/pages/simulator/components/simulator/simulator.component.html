@@ -1,6 +1,7 @@
 <ng-container *ngIf="rotation$ | async as rotation">
   <div *ngIf="!rotation.notFound; else notFound" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-    <div class="buttons" [class.expanded]="(showFullButtons$ | async)" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="buttons" [class.expanded]="(showFullButtons$ | async)" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center"
+         fxLayoutGap="10px">
       <button (click)="saveRotationAsNew(rotation)" *ngIf="rotation.$key !== undefined"
               [nzTooltipTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
               nz-tooltip
@@ -512,6 +513,8 @@
                          [nzUnCheckedChildren]="'SIMULATOR.Compact' | translate"
                          [nzCheckedChildren]="'SIMULATOR.Detailed' | translate"></nz-switch>
             </div>
+            <nz-alert nzType="error" nzShowIcon *ngIf="statsTooLow$ | async" [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_STATS_REQUIREMENT' | translate"></nz-alert>
+            <nz-alert nzType="error" nzShowIcon *ngIf="levelTooLow$ | async" [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate"></nz-alert>
             <div class="category-row">
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
