@@ -1,7 +1,6 @@
 import { ListRow } from './list-row';
 import { ListTag } from './list-tag.enum';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
-import { ModificationEntry } from './modification-entry';
 import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
@@ -40,8 +39,6 @@ export class List extends DataWithPermissions {
   forks = 0;
 
   ephemeral: boolean;
-
-  modificationsHistory: ModificationEntry[] = [];
 
   @ForeignKey(Team)
   teamId: string;

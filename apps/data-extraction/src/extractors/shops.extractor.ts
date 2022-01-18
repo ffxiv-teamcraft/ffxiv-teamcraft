@@ -46,20 +46,33 @@ export class ShopsExtractor extends AbstractExtractor {
       this.aggregateAllPages('https://xivapi.com/PreHandler?columns=ID,TargetTargetID,UnlockQuestTargetID,Image'),
       this.aggregateAllPages('https://xivapi.com/EnpcResident?columns=ID,Base'),
       this.aggregateAllPages('https://xivapi.com/FateShop?columns=ID,SpecialShop0TargetID,SpecialShop1TargetID'),
-      this.aggregateAllPages('https://xivapi.com/InclusionShop?columns=ID,Category*')
+      this.aggregateAllPages('https://xivapi.com/InclusionShop?columns=ID,Category*'),
+      this.aggregateAllPages('https://xivapi.com/BnpcBase?columns=ID,ArrayEventHandler'),
+      this.get('https://xivapi.com/mappy/json')
     ]).pipe(
       map(([gilShops,
              specialShops,
              gcShopItems, gcShopCategories,
              topicSelect, customTalk, preHandler, npcs,
              fateShops,
-             inclusionShops]) => {
+             inclusionShops,
+             bnpcBases, mappyJSON]) => {
         const shops = uniqBy([
           ...this.handleGilShops(gilShops),
           ...this.handleSpecialShops(specialShops),
           ...this.handleGCShop(gcShopItems, gcShopCategories)
         ], 'id');
-        const linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
+        const mappyJSONRecord = mappyJSON.reduce((acc, e) => {
+          if (e.Type !== 'BNPC') {
+            return acc;
+          }
+          return {
+            ...acc,
+            [e.BNpcBaseID]: e.BNpcNameID
+          };
+        }, {});
+        let linked = this.linkNpcs(shops, npcs, topicSelect, customTalk, preHandler, fateShops, inclusionShops, specialShops);
+        linked = this.linkBNPCs(shops, bnpcBases, mappyJSONRecord);
         return linked.map(shop => {
           if (shop.npcs.length === 0 && linked.some(s => this.hashShop(s) === this.hashShop(shop) && s.npcs.length > 0)) {
             return null;
@@ -169,7 +182,7 @@ export class ShopsExtractor extends AbstractExtractor {
               }
 
               if (specialShop.UseCurrencyType === 4 && entry.id < 10) {
-                entry.id = {...StaticData.CURRENCIES, ...StaticData.TOMESTONES}[entry.id];
+                entry.id = { ...StaticData.CURRENCIES, ...StaticData.TOMESTONES }[entry.id];
               }
               return entry;
             }).filter(row => row.id > 0 && row.amount > 0),
@@ -225,6 +238,37 @@ export class ShopsExtractor extends AbstractExtractor {
         shop.topicSelectId = topicSelects[shop.id];
       }
       shop.npcs = uniq(npcsByShopID[shop.id]);
+      return shop;
+    });
+  }
+
+  private linkBNPCs(shops: Shop[], bnpcs: { ID: number, ArrayEventHandler: any }[], mappyJSON: Record<number, number>): Shop[] {
+    const npcsByShopID = bnpcs.filter(bnpc => {
+      return bnpc.ArrayEventHandler && Object.entries<string>(bnpc.ArrayEventHandler).some(([key, value]) => key.endsWith('Target') && value.endsWith('Shop'));
+    }).reduce((acc, bnpc) => {
+      const nameId = mappyJSON[bnpc.ID];
+      if (!nameId) {
+        return acc;
+      }
+      Object.keys(bnpc.ArrayEventHandler)
+        .forEach(key => {
+          if (key.endsWith('Target') && bnpc.ArrayEventHandler[key]?.endsWith('Shop')) {
+            const shopID = bnpc.ArrayEventHandler[`${key}ID`];
+            if (shopID > 0) {
+              acc[shopID] = [
+                ...(acc[shopID] || []),
+                nameId
+              ];
+            }
+          }
+        });
+      return acc;
+    }, {});
+    return shops.map(shop => {
+      if (shop.type === 'GCShop') {
+        return shop;
+      }
+      shop.npcs = uniq([...(shop.npcs || []), ...(npcsByShopID[shop.id] || [])]);
       return shop;
     });
   }
@@ -297,6 +341,9 @@ export class ShopsExtractor extends AbstractExtractor {
       '1769958': [1027538],
       '1769957': [1027998]
     };
+    const hardcodedLinks = {
+      721385: [262919]
+    };
     const dataIdsByCustomTalks = customTalks.reduce((acc, talk) => {
       if (!acc[talk.ID]) {
         acc[talk.ID] = [];
@@ -325,7 +372,7 @@ export class ShopsExtractor extends AbstractExtractor {
         }
       }
       return acc;
-    }, {});
+    }, hardcodedLinks);
 
     return Object.keys(npcIdsByDataId)
       .reduce((acc, key) => {

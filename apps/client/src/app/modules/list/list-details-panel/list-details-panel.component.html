@@ -9,7 +9,7 @@
                       [overlay]="overlay"
                       [finalItem]="finalItems"
                       [alarmGroups]="alarmGroups"
-                      [skip]="skip && skip[item.id]"
+                      [skip]="skip && (skip[item.id] > 0) ? skip[item.id] : 0"
                       [item]="item"
                       [layout]="displayRow.layout"
                       [odd]="odd"></app-item-row>

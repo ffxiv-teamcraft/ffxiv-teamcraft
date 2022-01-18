@@ -101,7 +101,6 @@
             <i nz-icon nzType="split-cells" nzTheme="outline"></i>
           </button>
           <button (click)="openContributionsPopup()"
-                  *ngIf="showContributionsButton$ | async"
                   [disabled]="(permissionLevel$ | async) < 20"
                   [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"
                   nz-button
@@ -139,7 +138,7 @@
             <i nz-icon nzType="number" nzTheme="outline"></i>
           </button>
           <button (click)="openHistoryPopup()"
-                  [disabled]="list.modificationsHistory.length === 0 || (permissionLevel$ | async) < 20"
+                  [disabled]="(permissionLevel$ | async) < 20"
                   [nzTooltipTitle]="'LIST.History' | translate" nz-button
                   nz-tooltip
                   nzShape="circle">

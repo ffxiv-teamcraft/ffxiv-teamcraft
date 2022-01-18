@@ -59,7 +59,8 @@ const patrons = [
   '[Ultros] Nyumi Aitken',
   'Syleboris Whitemaw (Phoenix)',
   'Arimathean Industries™',
-  'MommaMiah'
+  'MommaMiah',
+  'Chuang Mei@Faerie'
 ];
 
 const gifs = [

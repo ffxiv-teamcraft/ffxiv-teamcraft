@@ -215,6 +215,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
+  public statsTooLow$: Observable<boolean>;
+
+  public levelTooLow$: Observable<boolean>;
+
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18n: I18nToolsService,
@@ -863,6 +867,28 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           stats.specialist,
           stats.level,
           levels as CrafterLevels);
+      })
+    );
+
+    this.statsTooLow$ = combineLatest([
+      this.stats$,
+      this.recipe$
+    ]).pipe(
+      map(([stats, recipe]) => {
+        return recipe.controlReq > stats._control || recipe.craftsmanshipReq > stats.craftsmanship;
+      })
+    );
+
+    this.levelTooLow$ = combineLatest([
+      this.stats$,
+      this.recipe$.pipe(
+        switchMap(recipe => {
+          return this.lazyData.getRow('craftingLevels', +recipe.id, 0);
+        })
+      )
+    ]).pipe(
+      map(([stats, levelReq]) => {
+        return stats.level < levelReq;
       })
     );
 

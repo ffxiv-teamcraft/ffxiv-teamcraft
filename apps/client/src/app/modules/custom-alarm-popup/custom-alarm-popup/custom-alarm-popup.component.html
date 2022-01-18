@@ -9,7 +9,8 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawn' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-group class="spawn-input" nzAddOnAfter=":00">
-        <nz-input-number mouseWheel [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon" formControlName="spawn"
+        <nz-input-number mouseWheel [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon"
+                         formControlName="spawn"
                          (mouseWheelUp)="adjust('spawn', 1)" (mouseWheelDown)="adjust('spawn', -1)"
                          id="spawn"></nz-input-number>
       </nz-input-group>
@@ -51,7 +52,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>{{'ALARMS.CUSTOM.Map' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select *ngIf="maps$ | async as maps; else loading" formControlName="mapId" nzAllowClear nzShowSearch>
-        <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName.ID | i18nRow:'places' | i18n"
+        <nz-option *ngFor="let map of maps" nzLabel="{{map.PlaceName.ID | i18nRow:'places' | i18n}}{{map.PlaceNameSub?' - ':''}}{{map.PlaceNameSub?(map.PlaceNameSub.ID | i18nRow:'places' | i18n) : ''}}"
                    [nzValue]="map.ID"></nz-option>
       </nz-select>
       <ng-template #loading>
@@ -80,7 +81,7 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">X</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number mouseWheel [nzMax]="X_VALIDATOR.max"  [nzMin]="X_VALIDATOR.min" formControlName="x"
+      <nz-input-number mouseWheel [nzMax]="X_VALIDATOR.max" [nzMin]="X_VALIDATOR.min" formControlName="x"
                        (mouseWheelUp)="adjust('x', 1)" (mouseWheelDown)="adjust('x', -1)">
       </nz-input-number>
     </nz-form-control>

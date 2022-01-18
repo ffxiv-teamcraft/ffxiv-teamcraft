@@ -82,7 +82,6 @@ export class ListController {
 
   public static reset(list: List): void {
     list.finalItems.forEach(recipe => ListController.resetDone(list, recipe));
-    list.modificationsHistory = [];
     ListController.updateAllStatuses(list);
   }
 

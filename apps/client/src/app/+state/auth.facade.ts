@@ -97,7 +97,7 @@ export class AuthFacade {
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {
-          return this.characterService.getCharacter(entry.id)
+          return this.characterService.getCharacter(entry.id, true)
             .pipe(
               catchError(() => of(null))
             );
@@ -116,7 +116,7 @@ export class AuthFacade {
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {
-          return this.characterService.getCharacter(entry.id)
+          return this.characterService.getCharacter(entry.id, true)
             .pipe(
               catchError(() => of(null)),
               map(c => {
@@ -171,7 +171,7 @@ export class AuthFacade {
 
   mainCharacter$ = this.mainCharacterEntry$.pipe(
     map((entry) => {
-      return entry.character as Character;
+      return entry.character as Character & { FreeCompany: { ID: number } };
     }),
     filter(c => !!c)
   );

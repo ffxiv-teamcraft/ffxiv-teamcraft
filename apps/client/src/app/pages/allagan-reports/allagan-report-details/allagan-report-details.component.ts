@@ -174,30 +174,30 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   // tslint:disable-next-line:member-ordering
   form: FormGroup = this.fb.group({
     source: [null, Validators.required],
-    item: [null, null, this.requiredIfSource([AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT], 'items$')],
-    instance: [null, null, this.requiredIfSource([AllaganReportSource.INSTANCE], 'instances$')],
-    venture: [null, null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
-    fate: [null, null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
-    mob: [null, null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
-    voyageType: [null, null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
-    voyage: [null, null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
+    item: [null, this.requiredIfSource([AllaganReportSource.DESYNTH, AllaganReportSource.REDUCTION, AllaganReportSource.GARDENING, AllaganReportSource.LOOT], 'items$')],
+    instance: [null, this.requiredIfSource([AllaganReportSource.INSTANCE], 'instances$')],
+    venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
+    fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
+    mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
+    voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     rarity: [null],
-    spot: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    spot: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     hookset: [null],
-    tug: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
-    bait: [null, null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    tug: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
+    bait: [null, this.requiredIfSource([AllaganReportSource.FISHING])],
     spawn: [null],
     duration: [null, durationRequired],
     weathers: [[]],
     weathersFrom: [[]],
     predators: [[]],
     snagging: [false],
-    speed: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
-    shadowSize: [null, null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
+    speed: [null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
+    shadowSize: [null, this.requiredIfSource([AllaganReportSource.SPEARFISHING])],
     oceanFishingTime: [0],
     minGathering: [0],
-    price: [0, null, this.requiredIfSource([AllaganReportSource.MOGSTATION])],
-    productId: [null, null, this.requiredIfSource([AllaganReportSource.MOGSTATION])]
+    price: [0, this.requiredIfSource([AllaganReportSource.MOGSTATION])],
+    productId: [null, this.requiredIfSource([AllaganReportSource.MOGSTATION])]
   });
 
   fishingSpotPatch$ = new Subject<any>();
@@ -357,23 +357,20 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     });
   }
 
-  requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, Observable<any>>): (control: AbstractControl) => Observable<ValidationErrors | null> {
+  requiredIfSource(sources: AllaganReportSource[], registryKey?: keyof Extract<ReportsManagementComponent, Observable<any>>): (control: AbstractControl) => ValidationErrors | null {
     return (control: AbstractControl) => {
       if (sources.includes(control.parent?.get('source').value)) {
         const required = Validators.required(control);
         if (required || !registryKey) {
-          return of(required);
+          return required;
         }
-        return this.getEntryId(this[registryKey] as unknown as Observable<any>, control.value).pipe(
-          map(id => {
-            if (!id) {
-              return { invalid: true };
-            }
-            return null;
-          })
-        );
+        const id = this.getEntryId(control.value);
+        if (!id) {
+          return { invalid: true };
+        }
+        return null;
       }
-      return of(null);
+      return null;
     };
   }
 
@@ -576,29 +573,29 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
       case AllaganReportSource.REDUCTION:
       case AllaganReportSource.GARDENING:
       case AllaganReportSource.LOOT:
-        return this.getEntryId(this.items$, formState.item).pipe(
+        return of(this.getEntryId(formState.item)).pipe(
           map(id => ({ itemId: id }))
         );
       case AllaganReportSource.MOGSTATION:
         return of({ price: formState.price, productId: formState.productId });
       case AllaganReportSource.INSTANCE:
-        return this.getEntryId(this.instances$, formState.instance).pipe(
+        return of(this.getEntryId(formState.instance)).pipe(
           map(id => ({ instanceId: id }))
         );
       case AllaganReportSource.FATE:
-        return this.getEntryId(this.fates$, formState.fate).pipe(
+        return of(this.getEntryId(formState.fate)).pipe(
           map(id => ({ fateId: id }))
         );
       case AllaganReportSource.VENTURE:
-        return this.getEntryId(this.ventures$, formState.venture).pipe(
+        return of(this.getEntryId(formState.venture)).pipe(
           map(id => ({ ventureId: id }))
         );
       case AllaganReportSource.DROP:
-        return this.getEntryId(this.mobs$, formState.mob).pipe(
+        return of(this.getEntryId(formState.mob)).pipe(
           map(id => ({ monsterId: id }))
         );
       case AllaganReportSource.VOYAGE:
-        return this.getEntryId([this.airshipVoyages$, this.submarineVoyages$][formState.voyageType], formState.voyage).pipe(
+        return of(this.getEntryId(formState.voyage)).pipe(
           map(id => ({
             voyageId: id,
             voyageType: formState.voyageType,
@@ -635,10 +632,12 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     return spot?.placeId === 3477;
   }
 
-  private getEntryId(registry$: Observable<{ id: number, name: I18nName }[]>, name: string): Observable<number> {
-    return registry$.pipe(
-      map(registry => registry.find(entry => this.i18n.getName(entry.name).toLowerCase() === name.toLowerCase())?.id)
-    );
+  private getEntryId(name: string): number | null {
+    const match = name.match(/\[(\d+)]\s.*/);
+    if (!match) {
+      return null;
+    }
+    return +match[1];
   }
 
   private getEntryName(registry$: Observable<{ id: number, name: I18nName }[]>, id: number): Observable<string> {

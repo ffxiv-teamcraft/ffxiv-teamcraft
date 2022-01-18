@@ -17,9 +17,14 @@ export class ListContributionsComponent {
     value: 'ascend'
   });
 
-  public contributions$ = combineLatest([this.listsFacade.selectedList$, this.sort$, this.lazyData.getEntry('ilvls')]).pipe(
-    map(([list, sort, ilvls]) => {
-      const result = ListController.getContributionStats(list, list.modificationsHistory, ilvls);
+  public contributions$ = combineLatest([
+    this.listsFacade.selectedList$,
+    this.sort$,
+    this.lazyData.getEntry('ilvls'),
+    this.listsFacade.selectedListModificationHistory$
+  ]).pipe(
+    map(([list, sort, ilvls, history]) => {
+      const result = ListController.getContributionStats(list, history, ilvls);
       result.entries.sort((a, b) => {
         return sort.value === 'ascend' ? a[sort.key] - b[sort.key] : b[sort.key] - a[sort.key];
       });

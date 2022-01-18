@@ -38,6 +38,8 @@ export enum ListsActionTypes {
   ConvertLists = '[Lists] Convert Lists',
   OfflineListsLoaded = '[Lists] Offline lists loaded',
 
+  ClearModificationsHistory = '[Lists] Clear modifications history',
+
   NeedsVerification = '[Lists] Needs character verification',
   ToggleAutocompletion = '[Lists] Toggle autocompletion',
   ToggleCompletionNotification = '[Lists] Toggle completion notification',
@@ -206,6 +208,13 @@ export class UpdateList implements Action {
   }
 }
 
+export class ClearModificationsHistory implements Action {
+  readonly type = ListsActionTypes.ClearModificationsHistory;
+
+  constructor(public readonly payload: List) {
+  }
+}
+
 export class UpdateListProgress implements Action {
   readonly type = ListsActionTypes.UpdateListProgress;
 
@@ -290,4 +299,5 @@ export type ListsAction =
   | UpdateListProgress
   | UpdateSelectedClone
   | MarkItemsHq
-  | UnloadListDetails;
+  | UnloadListDetails
+  | ClearModificationsHistory;

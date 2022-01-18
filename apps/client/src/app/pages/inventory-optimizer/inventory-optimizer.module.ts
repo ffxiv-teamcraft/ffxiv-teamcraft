@@ -31,6 +31,7 @@ import { InventoryService } from '../../modules/inventory/inventory.service';
 import { OnlyForOneMaterial } from './optimizations/only-for-one-material';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { DeprecatedHq } from './optimizations/deprecated-hq';
 
 const optimisations: Provider[] = [
   {
@@ -70,6 +71,12 @@ const optimisations: Provider[] = [
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: UselessHq,
+    multi: true,
+    deps: [AuthFacade, LazyDataFacade]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: DeprecatedHq,
     multi: true,
     deps: [AuthFacade, LazyDataFacade]
   },

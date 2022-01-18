@@ -99,7 +99,7 @@ export class LayoutsFacade {
             })]
           }).pipe(
             expand(({ rows, unfilteredRows, layoutRows }) => {
-              if (unfilteredRows.length === 0) {
+              if (unfilteredRows.length === 0 || layoutRows.length === 0) {
                 return EMPTY;
               }
               const row = layoutRows.shift();

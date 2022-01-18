@@ -1787,7 +1787,8 @@
     "Trait": "Trait",
     "Any": "Tout",
     "Achievement": "Haut-fait",
-    "Fishing-spot": "Point de pêche"
+    "Fishing-spot": "Point de pêche",
+    "Gathering-node": "Gathering node"
   },
   "SEARCH_FILTERS": {
     "Level": "Niveau",
@@ -2030,6 +2031,10 @@
     "USELESS_HQ": {
       "Title": "Objets dont vous n'avez pas besoin en HQ car vous pouvez utiliser Main Preste",
       "Message": "Cet objet est utilisé uniquement dans les recettes sur lesquelles vous pouvez utiliser Main Preste, le rendant inutile en HQ"
+    },
+    "DEPRECATED_HQ": {
+      "Title": "Items you don't need HQ because they function as normal-quality item",
+      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Objets qui ne sont utilisés que pour une seule recette",

@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
-import { catchError, first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { first, map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import * as request from 'request';
 import * as querystring from 'querystring';
@@ -81,11 +81,11 @@ export abstract class AbstractExtractor {
 
   protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): { x: number, y: number, z: number } {
     const c = mapData.size_factor / 100;
-    const x = (coords.x + mapData.offset_x) * c;
-    const y = (coords.y + mapData.offset_y) * c;
+    const x = ((+coords.x) + mapData.offset_x) * c;
+    const y = ((+coords.y) + mapData.offset_y) * c;
     return {
-      x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) / 100,
-      y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) / 100,
+      x: Math.floor(((41.0 / c) * ((+x + 1024.0) / 2048.0) + 1) * 100) / 100,
+      y: Math.floor(((41.0 / c) * ((+y + 1024.0) / 2048.0) + 1) * 100) / 100,
       z: Math.floor((coords.z - mapData.offset_z)) / 100
     };
   }

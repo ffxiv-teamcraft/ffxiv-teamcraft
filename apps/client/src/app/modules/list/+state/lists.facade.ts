@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
+  ClearModificationsHistory,
   CreateList,
   DeleteList,
   DeleteLists,
@@ -49,6 +50,8 @@ import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
+import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { ModificationEntry } from '../model/modification-entry';
 
 declare const gtag: Function;
 
@@ -148,6 +151,12 @@ export class ListsFacade {
     shareReplay(1)
   );
 
+  selectedListModificationHistory$ = this.store.select(listsQuery.getSelectedId).pipe(
+    distinctUntilChanged(),
+    switchMap(key => this.listService.getModificationsHistory(key)),
+    shareReplay(1)
+  );
+
   selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
     filter(list => list !== undefined)
   );
@@ -197,7 +206,8 @@ export class ListsFacade {
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryService,
               private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
-              private listManager: ListManagerService, private progress: ProgressPopupService) {
+              private listManager: ListManagerService, private progress: ProgressPopupService,
+              private listService: FirestoreListStorage) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -209,6 +219,10 @@ export class ListsFacade {
       ).subscribe((event: any) => {
       this.overlay = event.url.indexOf('?overlay') > -1;
     });
+  }
+
+  removeModificationsHistoryEntry(key: string, entryId: string): Observable<void> {
+    return this.listService.removeModificationsHistoryEntry(key, entryId);
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -316,6 +330,10 @@ export class ListsFacade {
 
   updateList(list: List, updateCompact = false, force = false): void {
     this.store.dispatch(new UpdateList(list, updateCompact, force));
+  }
+
+  clearModificationsHistory(list: List): void {
+    this.store.dispatch(new ClearModificationsHistory(list));
   }
 
   pureUpdateList($key: string, data: Partial<List>): void {
