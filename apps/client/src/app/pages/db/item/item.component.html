@@ -172,29 +172,31 @@
                    target="_blank">{{'DB.Track_on_attt' | translate}}</a>
               </div>
               <div *ngIf="row.links" fxLayout="column" fxLayoutGap="5px">
-                <div *ngFor="let link of row.links">
-                  <div *ngIf="link.itemId" fxLayout="column">
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <app-item-icon [icon]="link.itemId | lazyIcon" [itemId]="link.itemId" width="32"></app-item-icon>
-                      <div fxLayout="column">
-                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                          <div [appItemRarity]="link.itemId">
-                            {{link.itemId | itemName | i18n}}
+                <app-lazy-scroll [rowTemplate]="rowTpl" [rowSize]="32" [displayedRows]="12" [data]="row.links">
+                  <ng-template #rowTpl let-link>
+                    <div *ngIf="link.itemId" fxLayout="column">
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <app-item-icon [icon]="link.itemId | lazyIcon" [itemId]="link.itemId" width="32"></app-item-icon>
+                        <div fxLayout="column">
+                          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                            <div [appItemRarity]="link.itemId">
+                              {{link.itemId | itemName | i18n}}
+                            </div>
+                            <app-db-button [id]="link.itemId" type="item"></app-db-button>
                           </div>
-                          <app-db-button [id]="link.itemId" type="item"></app-db-button>
-                        </div>
-                        <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
-                          <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
-                               fxLayoutGap="5px">
-                            <img *ngIf="((recipe.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="smaller-img-icon"
-                                 src="https://garlandtools.org/db/images/{{icon}}.png">
-                            <div>lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
+                          <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
+                            <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
+                                 fxLayoutGap="5px">
+                              <img *ngIf="((recipe.job | i18nRow:'jobAbbr').en | async) as icon" alt="" class="smaller-img-icon"
+                                   src="https://garlandtools.org/db/images/{{icon}}.png">
+                              <div>lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </ng-template>
+                </app-lazy-scroll>
               </div>
               <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
                 <div class="masterpiece-entry rowena">
