@@ -575,8 +575,7 @@ export class DataService {
         return row;
       })))
     ], 100).pipe(
-      map(results => [].concat.apply([], results)),
-      tap(console.log)
+      map(results => [].concat.apply([], results))
     );
   }
 

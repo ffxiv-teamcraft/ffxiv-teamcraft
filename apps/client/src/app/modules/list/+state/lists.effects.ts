@@ -496,7 +496,6 @@ export class ListsEffects {
             });
           }),
           switchMap(lists => {
-            console.log(lists.length);
             return safeCombineLatest(lists.map(list => {
               if (list && (list as any).modificationsHistory) {
                 return this.listService.migrateListModificationEntries(list);
