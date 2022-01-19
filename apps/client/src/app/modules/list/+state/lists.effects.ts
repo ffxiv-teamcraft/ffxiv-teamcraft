@@ -68,6 +68,7 @@ import { ListController } from '../list-controller';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
+import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -495,7 +496,8 @@ export class ListsEffects {
             });
           }),
           switchMap(lists => {
-            return combineLatest(lists.map(list => {
+            console.log(lists.length);
+            return safeCombineLatest(lists.map(list => {
               if (list && (list as any).modificationsHistory) {
                 return this.listService.migrateListModificationEntries(list);
               }

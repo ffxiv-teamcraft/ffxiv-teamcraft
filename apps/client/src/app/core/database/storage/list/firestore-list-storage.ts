@@ -242,6 +242,12 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     (list as any).modificationsHistory.forEach((entry: ModificationEntry) => {
       batch.set(this.af.firestore.collection(`/lists/${list.$key}/history`).doc(this.af.createId()), entry);
     });
+    if ((list as any).modificationsHistory.length === 0) {
+      const newList = ListController.clone(list, true);
+      delete (newList as any).modificationsHistory;
+      delete (newList as any).contributionStats;
+      return this.set(list.$key, newList);
+    }
     return from(batch.commit()).pipe(
       switchMap(() => {
         const newList = ListController.clone(list, true);
