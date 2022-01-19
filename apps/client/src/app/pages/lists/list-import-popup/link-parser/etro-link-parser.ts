@@ -65,7 +65,13 @@ export class EtroLinkParser implements ExternalListLinkParser {
             quantity = 30;
           }
           entries.push(`${item},null,${quantity}`);
-          const materias: number[] = Object.values<number>(gear.materia[item] || {});
+          let itemKeySuffix = '';
+          if (slot === 'fingerL' && gear[slot] === gear['fingerR']) {
+            itemKeySuffix = 'L';
+          } else if (slot === 'fingerR' && gear[slot] === gear['fingerL']) {
+            itemKeySuffix = 'R';
+          }
+          const materias: number[] = Object.values<number>(gear.materia[`${item}${itemKeySuffix}`] || {});
           if (materias !== undefined) {
             materias.forEach((materia, i) => {
               const materiaQuantity = estimateOvermeldMateria

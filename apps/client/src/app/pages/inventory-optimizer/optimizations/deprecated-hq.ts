@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { LazyDataKey } from '../../../lazy-data/lazy-data-types';
 
 @Injectable()
@@ -18,9 +18,12 @@ export class DeprecatedHq extends InventoryOptimizer {
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): Observable<{ [p: string]: number | string } | null> {
     if (item.hq) {
-      return this.lazyData.getRow('hqFlags', item.itemId, 0).pipe(
-        map(flag => {
-          if (flag === 1) {
+      return combineLatest([
+        this.lazyData.getRow('hqFlags', item.itemId, 0),
+        this.lazyData.getRow('collectableFlags', item.itemId, 0)
+      ]).pipe(
+        map(([hqFlag, collectableFlag]) => {
+          if (hqFlag === 1 || collectableFlag === 1) {
             return null;
           }
           return {};

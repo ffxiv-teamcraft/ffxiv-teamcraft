@@ -418,7 +418,13 @@ export class GearsetsFacade {
     }
     const itemMeldingData = lazyItemMeldingData[itemId];
     const canBeHq = hqFlags[itemId] === 1;
-    const materias = Object.values<number>(gearset.materia[itemId] || {});
+    let itemKeySuffix = '';
+    if (etroSlotName === 'fingerL' && gearset[etroSlotName] === gearset['fingerR']) {
+      itemKeySuffix = 'L';
+    } else if (etroSlotName === 'fingerR' && gearset[etroSlotName] === gearset['fingerL']) {
+      itemKeySuffix = 'R';
+    }
+    const materias = Object.values<number>(gearset.materia[`${itemId}${itemKeySuffix}`] || {});
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
     }

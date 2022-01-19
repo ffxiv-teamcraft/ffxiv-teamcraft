@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.10"></a>
+## [9.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.9...v9.4.10) (2022-01-19)
+
+
+### Bug Fixes
+
+* **gearsets:** fixed etro gearset import with identical rings ([508123c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/508123c))
+* **inventory-optimizer:** collectables won't be listed as deprecated HQ anymore ([26de2a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/26de2a3))
+* **lists:** fixed lists page sometimes not loading properly ([11f1672](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/11f1672))
+* **pricing:** prices are now properly populated from vendor prices ([80f2e5c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80f2e5c))
+
+
+
 <a name="9.4.9"></a>
 ## [9.4.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.8...v9.4.9) (2022-01-18)
 

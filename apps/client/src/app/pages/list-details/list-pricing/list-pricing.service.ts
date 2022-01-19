@@ -3,7 +3,6 @@ import Dexie, { liveQuery } from 'dexie';
 import { combineLatest, from, Observable } from 'rxjs';
 import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
-import { List } from '../../../modules/list/model/list';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { first, map } from 'rxjs/operators';
 import { FullPricingRow, ListArray } from './model/full-pricing-row';
@@ -82,15 +81,16 @@ export class ListPricingService {
     ]).pipe(
       first()
     ).subscribe(([hqFlags, itemEntry]) => {
+      const vendorPrice = this.getVendorPrice(item);
       const baseModel: Partial<DBEntry> = {
         ...(itemEntry || {
           use: true,
           custom: true,
           itemId: item.id,
-          nq: 0,
+          nq: Math.max(vendorPrice, 0),
           hq: 0,
           fromMB: false,
-          fromVendor: false
+          fromVendor: vendorPrice > 0
         }),
         key: `${listId}:${array}:${item.id}`,
         array: array,
