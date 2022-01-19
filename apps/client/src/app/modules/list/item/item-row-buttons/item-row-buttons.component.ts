@@ -198,8 +198,10 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
 
   @Input()
   set attachedRotation(rotationKey: string) {
-    this.rotationsFacade.getRotation(rotationKey);
-    this._attachedRotationKey$.next(rotationKey);
+    if (rotationKey) {
+      this.rotationsFacade.getRotation(rotationKey);
+      this._attachedRotationKey$.next(rotationKey);
+    }
   }
 
   @Input()
