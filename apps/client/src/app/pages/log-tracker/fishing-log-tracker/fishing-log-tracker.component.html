@@ -70,8 +70,9 @@
                     <div fxLayoutAlign="flex-start center" nz-row>
                       <div [nzMd]="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" nz-col>
                         <app-item-icon *ngIf="true | ifMobile: false"
-                                       [icon]="item.icon | xivapiIcon"
                                        [itemId]="item.itemId"
+                                       [tooltipDisabled]="true"
+                                       [appFishTooltip]="item.itemId"
                                        [width]="32">
                         </app-item-icon>
                         <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">

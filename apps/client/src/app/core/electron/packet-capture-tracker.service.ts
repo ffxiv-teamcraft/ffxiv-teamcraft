@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { buffer, debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
-import { combineLatest, merge } from 'rxjs';
+import { buffer, debounce, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { combineLatest, merge, timer } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { ContainerType } from '../../model/user/inventory/container-type';
@@ -99,10 +99,20 @@ export class PacketCaptureTrackerService {
         map(([patch]) => patch)
       );
 
-    const debouncedPatches$ = patches$.pipe(debounceTime(8000));
     const statusIsNull$ = combineLatest([patches$, eventStatus$, this.listsFacade.selectedList$]).pipe(
       filter(([, status, list]) => status === null || list.offline),
       shareReplay(1)
+    );
+
+    const debouncedPatches$ = patches$.pipe(
+      withLatestFrom(statusIsNull$),
+      debounce(([statusIsNull]) => {
+            if (statusIsNull) {
+              return timer(500);
+            }
+            return timer(8000);
+      }),
+      map(([patches]) => patches)
     );
 
     combineLatest([eventStatus$, this.listsFacade.selectedList$, currentPage$])

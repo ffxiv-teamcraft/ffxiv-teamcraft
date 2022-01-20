@@ -43,7 +43,6 @@
             "assets": [
               "apps/client/src/favicon.ico",
               "apps/client/src/assets",
-              "apps/client/src/firebase-messaging-sw.js",
               {
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
@@ -238,7 +237,6 @@
             "optimization": false,
             "externalDependencies": [
               "firebase",
-              "@firebase/messaging/sw",
               "@firebase/app",
               "@firebase/firestore",
               "@firebase/analytics",

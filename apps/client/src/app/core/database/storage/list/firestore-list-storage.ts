@@ -180,7 +180,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
 
   getModificationsHistory(listId: string): Observable<ModificationEntry[]> {
     return this.firestore.collection(`/lists/${listId}/history`).snapshotChanges().pipe(
-      tap(() => this.recordOperation('read')),
+      tap(() => this.recordOperation('read', 'history')),
       map((snaps: DocumentChangeAction<ModificationEntry>[]) => {
         return snaps
           .map((snap: DocumentChangeAction<any>) => {
@@ -195,7 +195,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   addModificationsHistoryEntry(listId: string, entry: ModificationEntry): Observable<void> {
     const res$ = new Subject<void>();
     from(this.firestore.collection(`/lists/${listId}/history`).add(entry)).pipe(
-      tap(() => this.recordOperation('write')),
+      tap(() => this.recordOperation('write', 'history')),
       mapTo(null),
       first()
     ).subscribe(() => {
@@ -206,7 +206,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
 
   removeModificationsHistoryEntry(listId: string, entryId: string): Observable<void> {
     return from(this.firestore.collection(`/lists/${listId}/history`).doc(entryId).delete()).pipe(
-      tap(() => this.recordOperation('delete')),
+      tap(() => this.recordOperation('delete', 'history')),
       mapTo(null)
     );
   }
@@ -238,9 +238,17 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   migrateListModificationEntries(list: List): Observable<void> {
-    const batch = this.af.firestore.batch();
+    const batches = [this.af.firestore.batch()];
+    let ops = 0;
+    let index = 0;
     (list as any).modificationsHistory.forEach((entry: ModificationEntry) => {
-      batch.set(this.af.firestore.collection(`/lists/${list.$key}/history`).doc(this.af.createId()), entry);
+      batches[index].set(this.af.firestore.collection(`/lists/${list.$key}/history`).doc(this.af.createId()), entry);
+      ops++;
+      if (ops >= 450) {
+        batches.push(this.af.firestore.batch());
+        ops = 0;
+        index++;
+      }
     });
     if ((list as any).modificationsHistory.length === 0) {
       const newList = ListController.clone(list, true);
@@ -248,7 +256,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       delete (newList as any).contributionStats;
       return this.set(list.$key, newList);
     }
-    return from(batch.commit()).pipe(
+    return combineLatest(batches.map(batch => from(batch.commit().catch(e => console.log(e))))).pipe(
       switchMap(() => {
         const newList = ListController.clone(list, true);
         delete (newList as any).modificationsHistory;

@@ -2397,6 +2397,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
+    "Not_found": "Commission not found",
     "Price_tbd": "가격 협의",
     "X_items": "아이템 {{amount}}개",
     "Open_commission_details": "의뢰 자세히보기",

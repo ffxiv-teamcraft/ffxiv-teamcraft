@@ -223,7 +223,7 @@ interface FishStatistics {
   };
 }
 
-interface FishStatisticsResult {
+export interface FishStatisticsResult {
   snagging: FishSnagging[];
   stats: FishStatistics;
 }

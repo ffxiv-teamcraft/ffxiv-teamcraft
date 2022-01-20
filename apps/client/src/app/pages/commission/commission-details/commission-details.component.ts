@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { combineLatest, Observable, Subject } from 'rxjs';
@@ -24,8 +24,12 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   ratingDone: Record<string, boolean> = {};
 
+  public commissionNotFound$ = this.commissionsFacade.selectedCommission$.pipe(
+    map(commission => commission?.notFound)
+  );
+
   public display$ = combineLatest([
-    this.commissionsFacade.selectedCommission$.pipe(filter(c => !!c)),
+    this.commissionsFacade.selectedCommission$.pipe(filter(c => !!c && !c.notFound)),
     this.authFacade.userId$,
     this.authFacade.loggedIn$
   ]).pipe(

@@ -2397,6 +2397,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "Neuer Auftrag",
+    "Not_found": "Commission not found",
     "Price_tbd": "Zu besprechen",
     "X_items": "{{amount}} Gegenstände",
     "Open_commission_details": "Öffne Auftragdetails",

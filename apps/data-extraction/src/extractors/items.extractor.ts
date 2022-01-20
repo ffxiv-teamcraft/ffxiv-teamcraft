@@ -49,7 +49,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const extractableItems = {};
     const aetherialReduce = {};
     const collectableFlags = {};
-    this.getAllPages(`https://xivapi.com/Item?columns=IsCollectable,AetherialReduce,Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,BaseParamSpecial*,BaseParamValueSpecial*`)
+    this.getAllPages(`https://xivapi.com/Item?columns=AlwaysCollectable,AetherialReduce,Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,IconHD,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,BaseParamSpecial*,BaseParamValueSpecial*`)
       .subscribe(page => {
         page.Results.forEach(item => {
           itemIcons[item.ID] = item.IconHD || item.Icon;
@@ -81,7 +81,7 @@ export class ItemsExtractor extends AbstractExtractor {
           if (item.AetherialReduce) {
             aetherialReduce[item.ID] = item.AetherialReduce;
           }
-          if (item.IsCollectable) {
+          if (item.AlwaysCollectable) {
             collectableFlags[item.ID] = 1;
           }
           if (item.Stats) {

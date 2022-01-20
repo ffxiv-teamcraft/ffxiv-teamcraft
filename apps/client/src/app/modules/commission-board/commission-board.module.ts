@@ -8,7 +8,6 @@ import { CommissionsFacade } from './+state/commissions.facade';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { CommissionPanelComponent } from './commission-panel/commission-panel.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { RouterModule } from '@angular/router';
@@ -56,7 +55,6 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     ),
     EffectsModule.forFeature([CommissionsEffects]),
     TranslateModule,
-    AngularFireMessagingModule,
 
     NzModalModule,
     NzCollapseModule,

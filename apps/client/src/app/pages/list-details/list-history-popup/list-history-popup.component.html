@@ -1,27 +1,29 @@
-<nz-list [nzDataSource]="history$ | async" [nzRenderItem]="historyRow">
-  <ng-template #historyRow let-entry>
-    <nz-list-item [nzActions]="entry.finalItem !== undefined ? [undoTemplate]:[]">
-      <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="description" [nzTitle]="title">
-        <ng-template #avatar>
-          <app-user-avatar [userId]="entry.userId"></app-user-avatar>
-        </ng-template>
-        <ng-template
-          #title>{{entry.itemId | itemName | i18n}} {{entry.amount > 0 ? '+' : ''}}{{entry.amount}}</ng-template>
-        <ng-template #description>
-          <div *ngIf="entry.userId !== undefined; else anonymousName">
-            {{entry.userId | characterName | async}} - {{entry.date | date: 'short'}}
-          </div>
-          <ng-template #anonymousName>
-            {{'COMMON.Anonymous' | translate}}, {{entry.date | date: 'short'}}
+<nz-list>
+  <app-lazy-scroll [data]="history$ | async" [displayedRows]="10" [rowSize]="73" [rowTemplate]="historyRow">
+    <ng-template #historyRow let-entry>
+      <nz-list-item [nzActions]="entry.finalItem !== undefined ? [undoTemplate]:[]">
+        <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="description" [nzTitle]="title">
+          <ng-template #avatar>
+            <app-user-avatar [userId]="entry.userId"></app-user-avatar>
           </ng-template>
+          <ng-template
+            #title>{{entry.itemId | itemName | i18n}} {{entry.amount > 0 ? '+' : ''}}{{entry.amount}}</ng-template>
+          <ng-template #description>
+            <div *ngIf="entry.userId !== undefined; else anonymousName">
+              {{entry.userId | characterName | async}} - {{entry.date | date: 'short'}}
+            </div>
+            <ng-template #anonymousName>
+              {{'COMMON.Anonymous' | translate}}, {{entry.date | date: 'short'}}
+            </ng-template>
+          </ng-template>
+        </nz-list-item-meta>
+        <ng-template #undoTemplate>
+          <button (click)="undo(entry)" [nzTooltipTitle]="'COMMON.Undo' | translate" nz-button nz-tooltip nzShape="circle"
+                  nzSize="small">
+            <i nz-icon nzType="rollback"></i>
+          </button>
         </ng-template>
-      </nz-list-item-meta>
-      <ng-template #undoTemplate>
-        <button (click)="undo(entry)" [nzTooltipTitle]="'COMMON.Undo' | translate" nz-button nz-tooltip nzShape="circle"
-                nzSize="small">
-          <i nz-icon nzType="rollback"></i>
-        </button>
-      </ng-template>
-    </nz-list-item>
-  </ng-template>
+      </nz-list-item>
+    </ng-template>
+  </app-lazy-scroll>
 </nz-list>

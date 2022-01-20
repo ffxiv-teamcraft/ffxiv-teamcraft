@@ -112,7 +112,6 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
-import { AngularFireMessagingModule } from '@angular/fire/compat/messaging';
 import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
 import { APP_INITIALIZERS } from './app-initializers';
 import { FreeCompanyWorkshopsModule } from './modules/free-company-workshops/free-company-workshops.module';
@@ -219,7 +218,6 @@ const nzConfig: NzConfig = {
       synchronizeTabs: true
     }),
     AngularFireFunctionsModule,
-    AngularFireMessagingModule,
 
     XivapiClientModule.forRoot(),
 

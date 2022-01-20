@@ -20,10 +20,11 @@ export class DeprecatedHq extends InventoryOptimizer {
     if (item.hq) {
       return combineLatest([
         this.lazyData.getRow('hqFlags', item.itemId, 0),
-        this.lazyData.getRow('collectableFlags', item.itemId, 0)
+        this.lazyData.getRow('collectableFlags', item.itemId, 0),
+        this.lazyData.getEntry('recipesIngredientLookup')
       ]).pipe(
-        map(([hqFlag, collectableFlag]) => {
-          if (hqFlag === 1 || collectableFlag === 1) {
+        map(([hqFlag, collectableFlag, recipesIngredientLookup]) => {
+          if (!recipesIngredientLookup.searchIndex[item.itemId] || hqFlag === 1 || collectableFlag === 1) {
             return null;
           }
           return {};

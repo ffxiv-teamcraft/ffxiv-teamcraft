@@ -211,14 +211,21 @@ export class AuthEffects {
     debounceBufferTime(2000),
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
-    switchMap(([actions, user]) => {
-      return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, actions.map(action => {
+    withLatestFrom(this.authFacade.logTracking$),
+    switchMap(([[actions, user], logTracking]) => {
+      const entries = actions.filter(action => {
+        return !logTracking[action.log].includes(action.itemId);
+      }).map(action => {
         return {
           itemId: action.itemId,
           log: action.log,
           done: action.done
         };
-      }));
+      });
+      if (entries.length > 0) {
+        return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, entries);
+      }
+      return EMPTY;
     })
   );
 
