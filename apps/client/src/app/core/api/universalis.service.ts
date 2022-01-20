@@ -243,7 +243,13 @@ export class UniversalisService {
         };
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
-        });
+        }).pipe(
+          catchError(e => {
+            console.error(e);
+            console.log(data);
+            return of(null);
+          })
+        );
       })
     ).subscribe();
   }

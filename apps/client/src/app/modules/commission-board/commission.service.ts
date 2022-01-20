@@ -3,39 +3,19 @@ import { AngularFirestore, DocumentChangeAction } from '@angular/fire/compat/fir
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
-import { catchError, map, mapTo, switchMap, tap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Commission } from './model/commission';
 import { QueryFn } from '@angular/fire/compat/firestore/interfaces';
 import { CommissionStatus } from './model/commission-status';
-import { AngularFireMessaging } from '@angular/fire/compat/messaging';
-import { AngularFireFunctions } from '@angular/fire/compat/functions';
 import { CommissionTag } from './model/commission-tag';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionService extends FirestoreRelationalStorage<Commission> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging,
-              private fns: AngularFireFunctions) {
+              protected pendingChangesService: PendingChangesService) {
     super(firestore, serializer, zone, pendingChangesService);
-  }
-
-  public enableNotifications(datacenter: string): Observable<boolean> {
-    return this.afm.requestToken
-      .pipe(
-        switchMap(token => {
-          return this.fns.httpsCallable('subscribeToCommissions')({
-            datacenter: datacenter,
-            token: token
-          });
-        }),
-        mapTo(true),
-        catchError((e) => {
-          console.error(e);
-          return of(false);
-        })
-      );
   }
 
   public getByCrafterId(userId: string, archived = false): Observable<Commission[]> {
