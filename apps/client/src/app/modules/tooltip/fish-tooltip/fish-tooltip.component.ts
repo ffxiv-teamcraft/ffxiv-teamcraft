@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { FishingBait } from '../../../core/data/model/fishing-bait';
 import { Observable } from 'rxjs';
+import { FishDataService } from '../../../pages/db/service/fish-data.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fish-tooltip-component',
@@ -15,8 +16,10 @@ export class FishTooltipComponent {
 
   public fshData$: Observable<GatheringNode[]>;
 
-  constructor(private gt: GarlandToolsService,
-              private gatheringNodesService: GatheringNodesService) {
+  public minGathering$: Observable<number>;
+
+  constructor(private gatheringNodesService: GatheringNodesService,
+              private fishData: FishDataService) {
   }
 
   private _fish: any;
@@ -29,6 +32,11 @@ export class FishTooltipComponent {
   set fish(fish: any) {
     this._fish = fish;
     this.fshData$ = this.gatheringNodesService.getItemNodes(fish.ID);
+    this.minGathering$ = this.fishData.getStatisticsByFishId(fish.ID).pipe(
+      map(res => {
+        return res.data.stats.aggregate.min.gathering;
+      })
+    );
   }
 
   public trackByNode(index: number, node: GatheringNode): number {

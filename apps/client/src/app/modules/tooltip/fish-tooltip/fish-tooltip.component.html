@@ -11,6 +11,9 @@
   <div *ngIf="fish.Description !== undefined && fish.Description.length > 0" class="description">
     <span [innerHtml]="fish | xivapiI18n: 'Description' | xivUIText"></span>
   </div>
+  <div *ngIf="minGathering$ | async as minGathering" class="description">
+    <span>{{'DB.FISH.Min_gathering' | translate}}: {{minGathering}}</span>
+  </div>
   <div *ngIf="fshData$ | async as nodes" class="details">
     <div *ngFor="let node of nodes; let last = last; trackBy: trackByNode">
       <app-node-details [node]="node" [showAlarmsIntegration]="false"></app-node-details>

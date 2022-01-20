@@ -64,9 +64,6 @@ import { NodeComponent } from './node/node.component';
 import { NpcComponent } from './npc/npc.component';
 import { PatchComponent } from './patch/patch.component';
 import { QuestComponent } from './quest/quest.component';
-import { FishContextService } from './service/fish-context.service';
-import * as FishGQLProviders from './service/fish-data.gql';
-import { FishDataService } from './service/fish-data.service';
 import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
@@ -78,6 +75,7 @@ import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot
 import { ChartModule } from 'angular2-chartjs';
 import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
 import { ApolloClientResolver } from '../../core/apollo-client.resolver';
+import { FishDataModule } from './fish/fish-data.module';
 
 const routes: Routes = [
   {
@@ -339,9 +337,10 @@ const routes: Routes = [
     NzCommentModule,
     NzAvatarModule,
     LazyScrollModule,
-    ChartModule
+    ChartModule,
+    FishDataModule
   ],
-  providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)]
+  providers: [ItemContextService]
 })
 export class DbModule {
 }
