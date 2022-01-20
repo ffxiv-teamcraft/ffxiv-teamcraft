@@ -2397,6 +2397,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "新しい依頼",
+    "Not_found": "Commission not found",
     "Price_tbd": "議論されるには",
     "X_items": "{{amount}} 個のアイテム",
     "Open_commission_details": "依頼の詳しくを開く",
