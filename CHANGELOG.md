@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.4.11"></a>
+## [9.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.10...v9.4.11) (2022-01-20)
+
+
+### Bug Fixes
+
+* **commissions:** added not found message when opening a missing commission ([2b1bf20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b1bf20))
+* **db:** removed collectable icon from some items that cannot be crafted as such anymore ([5738256](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5738256))
+* **desktop:** autofill is now faster when not crafting or gathering ([6caeecb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6caeecb))
+* **inventory-optimizer:** only consider ingredients for deprecated HQ optimizer ([a0d9c58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0d9c58))
+* **lists:** fixed FC sharing not always working properly ([a31b5a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a31b5a1))
+* **lists:** fixed lists page sometimes not loading ([4aef275](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4aef275))
+
+
+### Features
+
+* added min gathering when available in fish tooltips ([3dbdbfe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3dbdbfe))
+
+
+### Performance Improvements
+
+* **list-details:** fixed performance issue with rows loading useless data ([79ecf98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79ecf98))
+* **list-history:** added virtual scrolling to prevent issues loading the popup ([c341b53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c341b53))
+
+
+
 <a name="9.4.10"></a>
 ## [9.4.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.9...v9.4.10) (2022-01-19)
 
