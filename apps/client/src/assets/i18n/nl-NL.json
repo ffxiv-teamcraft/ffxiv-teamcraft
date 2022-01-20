@@ -2397,6 +2397,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
+    "Not_found": "Commission not found",
     "Price_tbd": "To be discussed",
     "X_items": "{{amount}} items",
     "Open_commission_details": "Open commission details",

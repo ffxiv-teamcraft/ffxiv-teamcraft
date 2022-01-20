@@ -2397,6 +2397,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
+    "Not_found": "Commission not found",
     "Price_tbd": "待定",
     "X_items": "{{amount}} 个物品",
     "Open_commission_details": "打开委托详情",
