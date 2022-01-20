@@ -5,7 +5,7 @@ import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
 import { commissionLoaded, commissionsLoaded } from './commissions.actions';
-import { distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { combineLatest, of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -45,7 +45,9 @@ export class CommissionsEffects {
     return this.actions$.pipe(
       ofType(CommissionsActions.loadCommission),
       mergeMap(({ key }) => {
-        return this.commissionService.get(key);
+        return this.commissionService.get(key).pipe(
+          catchError(() => of({ $key: key, notFound: true } as Commission))
+        );
       }),
       map(commission => {
         return commissionLoaded({ commission });
