@@ -1974,12 +1974,7 @@
       "de": "50-70",
       "fr": "50-70"
     },
-    "pages": [
-      2032,
-      2033,
-      2034,
-      2035
-    ],
+    "pages": [],
     "craftLevel": 255,
     "gatheringLevel": 50
   },
@@ -1990,12 +1985,7 @@
       "de": "71-80",
       "fr": "71-80"
     },
-    "pages": [
-      2036,
-      2037,
-      2038,
-      2039
-    ],
+    "pages": [],
     "craftLevel": 255,
     "gatheringLevel": 70
   },
@@ -2007,10 +1997,10 @@
       "fr": "Légendes des mers du Nord et d'Ilsabard"
     },
     "pages": [
-      2040,
-      2041,
-      2042,
-      2043
+      2032,
+      2033,
+      2034,
+      2035
     ],
     "craftLevel": 255,
     "gatheringLevel": 80
@@ -2023,10 +2013,10 @@
       "fr": "Légendes de l'espace intersidéral"
     },
     "pages": [
-      2044,
-      2045,
-      2046,
-      2047
+      2028,
+      2029,
+      2030,
+      2031
     ],
     "craftLevel": 255,
     "gatheringLevel": 80
@@ -2039,10 +2029,10 @@
       "fr": "Légendes de l'ancien monde"
     },
     "pages": [
-      2048,
-      2049,
-      2050,
-      2051
+      2024,
+      2025,
+      2026,
+      2027
     ],
     "craftLevel": 255,
     "gatheringLevel": 80
