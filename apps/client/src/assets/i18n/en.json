@@ -658,6 +658,7 @@
     "Requirements_ignored": "Requirements ignored",
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
