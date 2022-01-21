@@ -231,6 +231,7 @@
     "Remove_from_group": "Удалить из этой группы",
     "No_folder": "Нет папки",
     "Click_to_show_all_alarms": "Нажмите, чтобы показать все оповещения",
+    "Enable_TTS": "Enable Text-to-Speech",
     "REALTIME": {
       "Reset_timers": "Таймеры сброса",
       "WEEKLY_RESETS": "Еженедельное",
@@ -658,6 +659,7 @@
     "Requirements_ignored": "Требования игнорируются",
     "Mark_whole_panel_nq": "Удалить ручные HQ флаги",
     "Mark_whole_panel_hq": "Отметить всю панель HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "По умолчанию",
       "Only_large": "Только крупные списки",
