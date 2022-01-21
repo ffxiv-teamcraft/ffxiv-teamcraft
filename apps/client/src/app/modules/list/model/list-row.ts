@@ -44,6 +44,8 @@ export class ListRow extends DataModel {
 
   collectable = false;
 
+  hasComments = false;
+
   /** @deprecated use getItemSource instead, with DataType.ALARMS; **/
   alarms?: Alarm[] = [];
 
