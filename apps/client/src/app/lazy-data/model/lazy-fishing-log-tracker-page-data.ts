@@ -62,10 +62,12 @@ export interface Alarm {
   predators:    Predator[];
   note:         string;
   enabled:      boolean;
-  baits:        Bait[];
-  hookset:      number;
+  baits?:       Bait[];
+  hookset?:     number;
   fishEyes?:    boolean;
   folklore?:    number;
+  speed?:       number;
+  shadowSize?:  number;
 }
 
 export interface Bait {
