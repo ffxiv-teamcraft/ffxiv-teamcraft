@@ -147,7 +147,7 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
-    throttleTime<List>(1000),
+    throttleTime<List>(200),
     shareReplay(1)
   );
 

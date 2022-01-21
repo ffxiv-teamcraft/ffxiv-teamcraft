@@ -229,7 +229,7 @@ export class ListsEffects {
 
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
-    debounceTime(1000),
+    debounceTime(4000),
     withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
     map(([action]) => action),
     withLatestFrom(this.listsFacade.selectedClone$),
