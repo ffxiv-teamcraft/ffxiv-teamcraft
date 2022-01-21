@@ -29,7 +29,7 @@ export class MainWindow {
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
-        backgroundThrottling: false,
+        backgroundThrottling: false
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));
@@ -46,6 +46,7 @@ export class MainWindow {
 
     this.win.loadURL(`file://${Constants.BASE_APP_PATH}/index.html#${deepLink}`);
     this.win.setAlwaysOnTop(this.store.get('win:alwaysOnTop', false), 'normal');
+
 
     if (!this.store.get('start-minimized', false)) {
       this.win.show();
@@ -88,6 +89,7 @@ export class MainWindow {
       this.store.set('win:bounds', this.win.getBounds());
       this.store.set('win:fullscreen', this.win.isMaximized());
       this.store.set('win:alwaysOnTop', this.win.isAlwaysOnTop());
+      this.store.set('win:zoom', this.win.webContents.getZoomFactor());
     });
 
     this.win.on('minimize', (event) => {
@@ -101,7 +103,7 @@ export class MainWindow {
       if (url !== this.win.webContents.getURL()) {
         e.preventDefault();
         if (url.indexOf('ffxivteamcraft.com') > -1 || url.indexOf('index.html#') > -1) {
-          url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`
+          url = `${url}${url.indexOf('?') > -1 ? '&' : '?'}noDesktop=true`;
         }
         require('electron').shell.openExternal(url);
       }
@@ -116,6 +118,7 @@ export class MainWindow {
     if (!this.store.get('start-minimized', false)) {
       this.win.focus();
       this.win.show();
+      this.win.webContents.setZoomFactor(this.store.get('win:zoom', 1));
       if (this.store.get('win:fullscreen', false)) {
         this.win.maximize();
       }
