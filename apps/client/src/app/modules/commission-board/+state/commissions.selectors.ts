@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { COMMISSIONS_FEATURE_KEY, CommissionsPartialState, State } from './commissions.reducer';
 
 // Lookup the 'Commissions' feature state managed by NgRx
-export const getCommissionsState = createFeatureSelector<CommissionsPartialState,
+export const getCommissionsState = createFeatureSelector<
   State>(COMMISSIONS_FEATURE_KEY);
 
 export const getCommissionsLoaded = createSelector(

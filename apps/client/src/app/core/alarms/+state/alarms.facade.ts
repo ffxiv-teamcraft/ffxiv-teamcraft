@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
@@ -51,9 +51,10 @@ export class AlarmsFacade {
 
   regenerating = false;
 
-  loaded$ = this.store.select(alarmsQuery.getLoaded);
+  loaded$ = this.store.pipe(select(alarmsQuery.getLoaded));
 
-  allAlarms$ = this.store.select(alarmsQuery.getAllAlarms).pipe(
+  allAlarms$ = this.store.pipe(
+    select(alarmsQuery.getAllAlarms),
     map(alarms => {
       if (this.regenerating) {
         return [null];
@@ -67,11 +68,11 @@ export class AlarmsFacade {
     filter(alarms => alarms.length === 0 || !!alarms[0])
   );
 
-  allGroups$ = this.store.select(alarmsQuery.getAllGroups);
+  allGroups$ = this.store.pipe(select(alarmsQuery.getAllGroups));
 
-  externalGroup$ = this.store.select(alarmsQuery.getExternalGroup);
+  externalGroup$ = this.store.pipe(select(alarmsQuery.getExternalGroup));
 
-  externalGroupAlarms$ = this.store.select(alarmsQuery.getExternalGroupAlarms);
+  externalGroupAlarms$ = this.store.pipe(select(alarmsQuery.getExternalGroupAlarms));
 
   alarmsPageDisplay$ = combineLatest([this.allAlarms$, this.allGroups$]).pipe(
     map(([alarms, groups]) => {

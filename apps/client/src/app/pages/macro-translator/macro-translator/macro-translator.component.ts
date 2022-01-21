@@ -5,8 +5,6 @@ import { zhActions } from '../../../core/data/sources/zh-actions';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { LazyData } from '../../../lazy-data/lazy-data';
-import { I18nElement } from '../../../lazy-data/lazy-data-types';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
@@ -106,7 +104,7 @@ export class MacroTranslatorComponent {
         });
       }
     })).pipe(
-      map(lines => {
+      map((lines: Partial<{ original: string, translated: string, replace: (input: string) => string, skillName: string }>[]) => {
         lines
           .filter(line => !!line)
           .forEach(line => {

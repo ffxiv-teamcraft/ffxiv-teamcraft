@@ -366,7 +366,7 @@ export class SettingsPopupComponent {
   }
 
   public handleFile = (event: any) => {
-    const res = new Subject();
+    const res$ = new Subject<void>();
     const reader = new FileReader();
     let data = '';
     reader.onload = ((_) => {
@@ -382,17 +382,17 @@ export class SettingsPopupComponent {
         }
         this.settings.settingsChange$.next('');
         this.message.success(this.translate.instant('SETTINGS.Import_successful'));
-        res.next();
-        res.complete();
+        res$.next();
+        res$.complete();
       } catch (e) {
         console.error(e);
         this.message.error(this.translate.instant('SETTINGS.Import_error'));
-        res.error(e);
+        res$.error(e);
       }
     };
     // Read in the image file as a data URL.
     reader.readAsText(event.file);
-    return res.subscribe();
+    return res$.subscribe();
   };
 
   resetLinkedChars(): void {

@@ -13,27 +13,24 @@ import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.componen
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    OverlayModule,
-    TranslateModule,
-    NzButtonModule,
-    FlexLayoutModule,
-    NzDividerModule,
-    NzModalModule
-  ],
-  declarations: [
-    TutorialStepDirective,
-    TutorialStepComponent,
-    TutorialPopupComponent
-  ],
-  entryComponents: [
-    TutorialStepComponent
-  ],
-  exports: [
-    TutorialStepDirective
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        OverlayModule,
+        TranslateModule,
+        NzButtonModule,
+        FlexLayoutModule,
+        NzDividerModule,
+        NzModalModule
+    ],
+    declarations: [
+        TutorialStepDirective,
+        TutorialStepComponent,
+        TutorialPopupComponent
+    ],
+    exports: [
+        TutorialStepDirective
+    ]
 })
 export class TutorialModule {
 }

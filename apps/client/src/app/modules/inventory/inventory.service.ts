@@ -10,7 +10,6 @@ import { Retainer, RetainersService } from '../../core/electron/retainers.servic
 import { AuthFacade } from '../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
-import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 import { CharacterResponse } from '@xivapi/angular-client';
 import {
   ClientTrigger,
@@ -35,6 +34,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { InventoryState } from './sync-state/inventory-state';
 import { LazyMateria } from '../../lazy-data/model/lazy-materia';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 
 @Injectable({
   providedIn: 'root'
@@ -99,7 +99,7 @@ export class InventoryService {
               private lazyData: LazyDataFacade) {
     this.retainerInformations$.connect();
     this.authFacade.characterEntries$.subscribe(entries => {
-      this.characterEntries = entries;
+      this.characterEntries = entries as Array<LodestoneIdEntry & { character: CharacterResponse }>;
     });
     this.ipc.on('dat:content-id', (event, contentId) => {
       this.setContentId(contentId);

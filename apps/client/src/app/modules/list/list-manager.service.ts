@@ -19,6 +19,7 @@ import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats'
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
+import { Team } from '../../model/team/team';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -62,7 +63,7 @@ export class ListManagerService {
                      ignoreHooks = false,
                      upgradeCustom = false
                    }: ListAdditionParams): Observable<List> {
-    let team$ = of(null);
+    let team$: Observable<Team | null> = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
       team$ = this.teamsFacade.allTeams$

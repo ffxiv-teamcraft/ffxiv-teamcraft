@@ -671,7 +671,7 @@ export class ListController {
       }),
       tap((res) => {
         if (res !== null && res !== undefined) {
-          nextIteration.push(res);
+          nextIteration.push(res as CraftAddition);
         }
         index++;
         if (item.requires[index] !== undefined) {

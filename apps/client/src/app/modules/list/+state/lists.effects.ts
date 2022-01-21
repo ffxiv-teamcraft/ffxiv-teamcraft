@@ -144,13 +144,13 @@ export class ListsEffects {
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
             this.teamsFacade.selectedTeam$,
-            loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
+            loggedIn ? this.authFacade.fcId$ : of(null),
             this.listService.get(action.key).pipe(catchError(() => of(null)))
           ]);
         })
       );
     }),
-    map(([listKey, user, userId, team, fcId, list]: [string, TeamcraftUser | null, string, Team, string | null, List]) => {
+    map(([listKey, user, userId, team, fcId, list]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
