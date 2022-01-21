@@ -214,6 +214,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   resetModificationsHistory(listId: string): Observable<void> {
     const res$ = new Subject<void>();
     this.getModificationsHistory(listId).pipe(
+      first(),
       switchMap(history => {
         const batches = [this.af.firestore.batch()];
         let ops = 0;
