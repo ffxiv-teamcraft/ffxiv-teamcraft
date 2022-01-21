@@ -5,6 +5,7 @@ import { ContainerType } from './container-type';
 import { CharacterInventory } from './character-inventory';
 import { ItemSearchResult } from './item-search-result';
 import { ClientTrigger, InventoryModifyHandler, InventoryTransaction, ItemMarketBoardInfo, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { uniqBy } from 'lodash';
 
 export class UserInventory extends DataModel {
 
@@ -55,6 +56,8 @@ export class UserInventory extends DataModel {
 
   items: { [contentId: string]: CharacterInventory } = {};
 
+  _containers: ItemSearchResult[] = [];
+
   lastZone: number;
 
   private searchCache: ItemSearchResult[] = [];
@@ -75,6 +78,11 @@ export class UserInventory extends DataModel {
 
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
+  }
+
+  getContainers() {
+    this.generateSearchCacheIfNeeded();
+    return this._containers;
   }
 
   hasItem(itemId: number, onlyCurrentCharacter = false, onlyUserInventory = false): boolean {
@@ -291,6 +299,7 @@ export class UserInventory extends DataModel {
 
   resetSearchCache(): void {
     this.searchCache = [];
+    this._containers = [];
   }
 
   clone(): UserInventory {
@@ -354,6 +363,7 @@ export class UserInventory extends DataModel {
             .flat();
         })
         .flat();
+      this._containers = uniqBy(this.searchCache, e => `${e.containerId}:${e.retainerName}`);
     }
   }
 }
