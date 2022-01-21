@@ -359,7 +359,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
                                before: List, after: List, serverList: List): void {
     // Get diff between local backup and new version
     const diff = compare(before, after);
-    if (diff.length > 20) {
+    if (diff.length > 20 || diff.some(change => change.op !== 'replace' || isNaN(change.value))) {
       transaction.set(ref, after);
     } else {
       // Update the diff so the values are applied to the server list instead

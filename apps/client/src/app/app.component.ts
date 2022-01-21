@@ -534,19 +534,23 @@ export class AppComponent implements OnInit {
 
   showPatchNotes(): Observable<any> {
     const res$ = new Subject();
-    this.dialog.create({
-      nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
-      nzContent: ChangelogPopupComponent,
-      nzFooter: null,
-      nzStyle: {
-        'z-index': 10000
-      }
-    }).afterClose
-      .pipe(
-        tap(() => {
-          this.settings.lastChangesSeen = version;
-        })
-      ).subscribe(() => res$.next());
+    this.translate.get('Patch_notes', { version: environment.version }).pipe(
+      switchMap(title => {
+        return this.dialog.create({
+          nzTitle: title,
+          nzContent: ChangelogPopupComponent,
+          nzFooter: null,
+          nzStyle: {
+            'z-index': 10000
+          }
+        }).afterClose
+          .pipe(
+            tap(() => {
+              this.settings.lastChangesSeen = version;
+            })
+          );
+      })
+    ).subscribe(() => res$.next());
     return res$;
   }
 
