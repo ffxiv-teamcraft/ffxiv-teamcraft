@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, mapTo, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, mapTo, retry, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
@@ -60,7 +60,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       });
     }).then(() => {
       this.pendingChangesService.removePendingChange(`List Transaction ${uid}`);
-    }));
+    })).pipe(
+      retry(3)
+    );
   }
 
   public prepareData(list: Partial<List>): List {
