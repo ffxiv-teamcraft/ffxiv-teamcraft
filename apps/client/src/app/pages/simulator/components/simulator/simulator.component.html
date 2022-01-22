@@ -9,13 +9,15 @@
               tutorialStepAlign="right"
               tutorialStepIndex="0"
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="copy"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Save_as_new' | translate}}</span>
       </button>
       <button (click)="saveRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 30"
               [nzTooltipTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
-              [nzShape]="(showFullButtons$ | async) ? null : 'circle'" nzType="primary">
+              [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async" nzType="primary">
         <i nz-icon nzType="save"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Persist' | translate}}</span>
       </button>
@@ -25,6 +27,7 @@
                 [nzPopconfirmTitle]="'Confirmation' | translate"
                 nz-button nz-popconfirm nz-tooltip
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
                 nzType="primary">
           <i nz-icon nzType="rollback" nzTheme="outline"></i>
           <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset_saved' | translate}}</span>
@@ -33,6 +36,7 @@
       <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
               nz-button nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="redo"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Convert_rotation' | translate}}</span>
@@ -42,6 +46,7 @@
               [nzPopconfirmTitle]="'Confirmation' | translate"
               nz-button nz-popconfirm nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="reload"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset' | translate}}</span>
@@ -50,6 +55,7 @@
               [nzTooltipTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
               nz-button nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="download"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Import_from_crafting_optimizer' | translate}}</span>
@@ -60,12 +66,14 @@
               [nzTooltipTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
               nz-button nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="upload"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Export_crafting_optimizer' | translate}}</span>
       </button>
       <button (click)="importFromXIVMacro()" [nzTooltipTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
               tutorialStepAlign="right"
               tutorialStepIndex="1"
@@ -78,6 +86,7 @@
               nz-button
               nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               tutorialStep="TUTORIAL.SIMULATOR.Generate_ingame_macro"
               tutorialStepAlign="right"
               tutorialStepIndex="2"
@@ -89,6 +98,7 @@
               [nzTooltipTitle]="'SIMULATOR.Min_stats' | translate" nz-button
               nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="safety-certificate"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Min_stats' | translate}}</span>
@@ -97,6 +107,7 @@
               [nzTooltipTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
               nz-tooltip
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               nzType="primary">
         <i nz-icon nzType="ordered-list"></i>
         <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Step_by_step_report' | translate}}</span>
@@ -105,6 +116,7 @@
         <button (click)="openSharePopup(rotation, stats)"
                 *ngIf="rotation.$key"
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
                 [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                 tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
                 tutorialStepAlign="right"
@@ -116,6 +128,7 @@
         </button>
         <button (click)="findRotation(stats)"
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
                 [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
                 [nzType]="'primary'"
                 nz-button
@@ -129,6 +142,7 @@
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
                   [disabled]="tips?.length === 0"
                   [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
                   [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate"
                   [nzType]="'primary'"
                   nz-button
@@ -143,6 +157,7 @@
           <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
                   [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
                   [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
                   nz-button
                   nz-tooltip
@@ -153,6 +168,7 @@
       </ng-container>
       <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
               [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
+              [class.full-button]="showFullButtons$ | async"
               [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
               nz-button
               nz-popconfirm>
