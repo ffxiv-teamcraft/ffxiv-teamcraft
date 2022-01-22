@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { CreateLayout, DeleteLayout, LayoutsActionTypes, LayoutsLoaded, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutService } from '../layout.service';
 import { distinctUntilChanged, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
@@ -11,8 +11,8 @@ import { EMPTY } from 'rxjs';
 @Injectable()
 export class LayoutsEffects {
 
-  @Effect()
-  loadLayouts$ = this.actions$.pipe(
+
+  loadLayouts$ = createEffect(() => this.actions$.pipe(
     ofType(LayoutsActionTypes.LoadLayouts),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
@@ -27,10 +27,10 @@ export class LayoutsEffects {
       ...layouts
     ]),
     map(layouts => new LayoutsLoaded(layouts))
-  );
+  ));
 
-  @Effect()
-  createLayoutInDatabaseAndSelect$ = this.actions$.pipe(
+
+  createLayoutInDatabaseAndSelect$ = createEffect(() => this.actions$.pipe(
     ofType(LayoutsActionTypes.CreateLayout),
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]: [CreateLayout, string]) => {
@@ -38,20 +38,20 @@ export class LayoutsEffects {
       return this.layoutService.add(action.layout);
     }),
     map((createdLayoutKey) => new SelectLayout(createdLayoutKey))
-  );
+  ));
 
-  @Effect()
-  updateLayoutInDatabase$ = this.actions$.pipe(
+
+  updateLayoutInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateLayout>(LayoutsActionTypes.UpdateLayout),
     filter(action => action.layout.$key !== undefined),
     switchMap((action: UpdateLayout) => {
       return this.layoutService.set(action.layout.$key, action.layout);
     }),
     mergeMap(() => EMPTY)
-  );
+  ), { dispatch: false });
 
-  @Effect()
-  removeLayoutInDatabase = this.actions$.pipe(
+
+  removeLayoutInDatabase = createEffect(() => this.actions$.pipe(
     ofType(LayoutsActionTypes.DeleteLayout),
     switchMap((action: DeleteLayout) => {
       return this.layoutService.remove(action.key);
@@ -60,7 +60,7 @@ export class LayoutsEffects {
     map(([, layouts]) => {
       return new SelectLayout(layouts[0].$key);
     })
-  );
+  ));
 
   constructor(
     private actions$: Actions,

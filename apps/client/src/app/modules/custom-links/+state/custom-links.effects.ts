@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateCustomLink,
   CustomLinkLoaded,
@@ -20,8 +20,8 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 @Injectable()
 export class CustomLinksEffects {
 
-  @Effect()
-  loadMyCustomLinks$ = this.actions$.pipe(
+
+  loadMyCustomLinks$ = createEffect(() => this.actions$.pipe(
     ofType(CustomLinksActionTypes.LoadMyCustomLinks),
     switchMap(() => this.authFacade.user$),
     filter(user => {
@@ -33,10 +33,10 @@ export class CustomLinksEffects {
         map(links => new MyCustomLinksLoaded(links, userId))
       );
     })
-  );
+  ));
 
-  @Effect()
-  loadCustomLink$ = this.actions$.pipe(
+
+  loadCustomLink$ = createEffect(() => this.actions$.pipe(
     ofType<LoadCustomLink>(CustomLinksActionTypes.LoadCustomLink),
     mergeMap(action => {
       return this.customLinksService.getByUriAndNickname(action.linkName, action.nickname).pipe(
@@ -54,10 +54,10 @@ export class CustomLinksEffects {
       );
     }),
     map(link => new CustomLinkLoaded(<CustomLink>link))
-  );
+  ));
 
-  @Effect()
-  createCustomLink$ = this.actions$.pipe(
+
+  createCustomLink$ = createEffect(() => this.actions$.pipe(
     ofType<CreateCustomLink>(CustomLinksActionTypes.CreateCustomLink),
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]) => {
@@ -65,23 +65,21 @@ export class CustomLinksEffects {
       return this.customLinksService.add(action.link);
     }),
     switchMap(() => EMPTY)
-  );
+  ), { dispatch: false });
 
 
-  @Effect()
-  updateCustomLink$ = this.actions$.pipe(
+  updateCustomLink$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateCustomLink>(CustomLinksActionTypes.UpdateCustomLink),
     switchMap(action => this.customLinksService.update(action.link.$key, action.link)),
     switchMap(() => EMPTY)
-  );
+  ), { dispatch: false });
 
 
-  @Effect()
-  deleteCustomLink$ = this.actions$.pipe(
+  deleteCustomLink$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteCustomLink>(CustomLinksActionTypes.DeleteCustomLink),
     switchMap(action => this.customLinksService.remove(action.key)),
     switchMap(() => EMPTY)
-  );
+  ), { dispatch: false });
 
   constructor(
     private actions$: Actions,

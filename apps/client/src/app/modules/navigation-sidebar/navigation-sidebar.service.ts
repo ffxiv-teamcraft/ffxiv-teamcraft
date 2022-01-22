@@ -392,14 +392,6 @@ export class NavigationSidebarService {
                 content: 'hourglass'
               },
               link: '/reset-timers'
-            },
-            {
-              name: 'CUSTOM_ITEMS.Title',
-              icon: {
-                type: SidebarIconType.ANTD_ICONFONT,
-                content: 'icon-custom'
-              },
-              link: '/custom-items'
             }
           ]
         }

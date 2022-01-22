@@ -2,7 +2,7 @@ import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { LAZY_DATA_FEATURE_KEY, LazyDataPartialState, State } from './lazy-data.reducer';
 
 // Lookup the 'LazyData' feature state managed by NgRx
-export const getLazyDataState = createFeatureSelector<LazyDataPartialState,
+export const getLazyDataState = createFeatureSelector<
   State>(LAZY_DATA_FEATURE_KEY);
 
 export const getEntry = createSelector(

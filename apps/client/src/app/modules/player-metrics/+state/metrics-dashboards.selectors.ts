@@ -3,7 +3,7 @@ import { METRICSDASHBOARDS_FEATURE_KEY, metricsDashboardsAdapter, MetricsDashboa
 import { MetricsDashboardLayout } from '../display/metrics-dashboard-layout';
 
 // Lookup the 'MetricsDashboards' feature state managed by NgRx
-export const getMetricsDashboardsState = createFeatureSelector<MetricsDashboardsPartialState,
+export const getMetricsDashboardsState = createFeatureSelector<
   State>(METRICSDASHBOARDS_FEATURE_KEY);
 
 const { selectAll, selectEntities } = metricsDashboardsAdapter.getSelectors();

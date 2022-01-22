@@ -1,5 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   AddAlarms,
   AddAlarmsAndGroup,
@@ -38,8 +38,8 @@ import { IS_HEADLESS } from '../../../../environments/is-headless';
 })
 export class AlarmsEffects {
 
-  @Effect()
-  loadAlarms$ = this.actions$.pipe(
+  
+  loadAlarms$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.LoadAlarms),
     switchMap(() => this.authFacade.userId$),
     // We want to connect the observable only the first time, no need to reload as it's firestore.
@@ -52,19 +52,19 @@ export class AlarmsEffects {
     }),
     debounceTime(500),
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
-  );
+  ));
 
-  @Effect({ dispatch: false })
-  deleteAllAlarms$ = this.actions$.pipe(
+  
+  deleteAllAlarms$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.DeleteAllAlarms),
     withLatestFrom(this.alarmsFacade.allAlarms$),
     switchMap(([, alarms]) => {
       return this.alarmsService.deleteAll(alarms);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect()
-  loadAlarmGroup$ = this.actions$.pipe(
+  
+  loadAlarmGroup$ = createEffect(() => this.actions$.pipe(
     ofType<LoadAlarmGroup>(AlarmsActionTypes.LoadAlarmGroup),
     switchMap((action) => {
       return this.alarmGroupsService.get(action.key).pipe(
@@ -85,10 +85,10 @@ export class AlarmsEffects {
         })
       );
     })
-  );
+  ));
 
-  @Effect()
-  addAlarmsToDatabase$ = this.actions$
+  
+  addAlarmsToDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<AddAlarms>(AlarmsActionTypes.AddAlarms),
       withLatestFrom(this.authFacade.userId$),
@@ -117,10 +117,10 @@ export class AlarmsEffects {
         );
       }),
       map((alarms) => new AlarmsCreated(alarms.length))
-    );
+    ));
 
-  @Effect()
-  addAlarmsAndGroupToDatabase$ = this.actions$
+  
+  addAlarmsAndGroupToDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<AddAlarmsAndGroup>(AlarmsActionTypes.AddAlarmsAndGroup),
       withLatestFrom(this.authFacade.userId$, this.alarmsFacade.allAlarms$),
@@ -158,18 +158,18 @@ export class AlarmsEffects {
           })
         );
       })
-    );
+    ));
 
 
-  @Effect({ dispatch: false })
-  updateAlarmInDatabase$ = this.actions$
+  
+  updateAlarmInDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType(AlarmsActionTypes.UpdateAlarm),
       switchMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm))
-    );
+    ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  removeAlarmFromDatabase$ = this.actions$
+  
+  removeAlarmFromDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<RemoveAlarm>(AlarmsActionTypes.RemoveAlarm),
       withLatestFrom(this.alarmsFacade.allGroups$),
@@ -187,25 +187,25 @@ export class AlarmsEffects {
         }
         return this.alarmsService.remove(action.id);
       })
-    );
+    ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  setAlarmsInDatabase$ = this.actions$.pipe(
+  
+  setAlarmsInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<SetAlarms>(AlarmsActionTypes.SetAlarms),
     switchMap((action) => {
       return this.alarmsService.setMany(action.alarms);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  clearLocalstorageOnAlarmDelete$ = this.actions$
+  
+  clearLocalstorageOnAlarmDelete$ = createEffect(() => this.actions$
     .pipe(
       ofType(AlarmsActionTypes.RemoveAlarm),
       map((action: RemoveAlarm) => localStorage.removeItem(`played:${action.id}`))
-    );
+    ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  addGroupToDatabase$ = this.actions$.pipe(
+  
+  addGroupToDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<CreateAlarmGroup>(AlarmsActionTypes.CreateAlarmGroup),
     withLatestFrom(this.authFacade.userId$),
     switchMap(([action, userId]) => {
@@ -214,46 +214,46 @@ export class AlarmsEffects {
       group.userId = userId;
       return this.alarmGroupsService.add(group);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  deleteGroupFromDatabase = this.actions$.pipe(
+  
+  deleteGroupFromDatabase = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.DeleteAlarmGroup),
     switchMap((action: DeleteAlarmGroup) => {
       return this.alarmGroupsService.remove(action.id);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  setGroupsInDatabase$ = this.actions$.pipe(
+  
+  setGroupsInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<SetGroups>(AlarmsActionTypes.SetGroups),
     switchMap((action) => {
       return this.alarmGroupsService.setMany(action.groups);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  updateGroupInsideDatabase$ = this.actions$.pipe(
+  
+  updateGroupInsideDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateAlarmGroup>(AlarmsActionTypes.UpdateAlarmGroup),
     withLatestFrom(this.alarmsFacade.allGroups$),
     switchMap(([action, groups]) => {
       const editedGroup = groups.find(group => group.$key === action.group.$key);
       return this.alarmGroupsService.set(editedGroup.$key, editedGroup);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  saveAlarmGroupAssignment$ = this.actions$.pipe(
+  
+  saveAlarmGroupAssignment$ = createEffect(() => this.actions$.pipe(
     ofType<AssignGroupToAlarm>(AlarmsActionTypes.AssignGroupToAlarm),
     withLatestFrom(this.alarmsFacade.allGroups$),
     switchMap(([action, groups]) => {
       const group = groups.find(g => g.$key === action.groupId);
       return this.alarmGroupsService.set(group.$key, group);
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({ dispatch: false })
-  showAlarmsCreatedNotification$ = this.actions$.pipe(
+  
+  showAlarmsCreatedNotification$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.AlarmsCreated),
     isPlatformBrowser(this.platform) && !IS_HEADLESS ? bufferTime(300) : map(() => []),
     filter(actions => actions.length > 0),
@@ -268,7 +268,7 @@ export class AlarmsEffects {
         nzDuration: 2000
       });
     })
-  );
+  ), { dispatch: false });
 
   constructor(private actions$: Actions, private alarmsFacade: AlarmsFacade,
               private authFacade: AuthFacade, private alarmsService: AlarmsService,

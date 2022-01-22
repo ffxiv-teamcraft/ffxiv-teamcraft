@@ -33,7 +33,7 @@ export class MappyComponent extends TeamcraftComponent {
       return combineLatest([
         this.xivapi.get('mappy/map' as XivapiEndpoint, mapId),
         this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true }),
-        this.xivapi.getList(`mappy/map/${mapId}/nodes` as XivapiEndpoint, { staging: true }).pipe(map(res => res as any as number[])),
+        this.xivapi.getList(`mappy/map/${mapId}/nodes` as unknown as XivapiEndpoint, { staging: true }).pipe(map(res => res as any as number[])),
         this.lazyData.getRow('maps', mapId),
         this.lazyData.getEntry('nodes'),
         this.lazyData.getEntry('gatheringPointToNodeId')

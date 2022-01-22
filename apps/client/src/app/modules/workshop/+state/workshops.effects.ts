@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
   CreateWorkshop,
   DeleteWorkshop,
@@ -15,15 +15,15 @@ import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap,
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { WorkshopService } from '../../../core/database/workshop.service';
-import { combineLatest, EMPTY, of } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { WorkshopsFacade } from './workshops.facade';
 import { Workshop } from '../../../model/other/workshop';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
 export class WorkshopsEffects {
-  @Effect()
-  loadMyWorkshops$ = this.actions$.pipe(
+
+  loadMyWorkshops$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.LoadMyWorkshops),
     switchMap(() => this.authFacade.userId$),
     distinctUntilChanged(),
@@ -31,10 +31,10 @@ export class WorkshopsEffects {
       return this.workshopService.getByForeignKey(TeamcraftUser, userId);
     }),
     map(workshops => new MyWorkshopsLoaded(workshops))
-  );
+  ));
 
-  @Effect()
-  loadSharedWorkshops$ = this.actions$.pipe(
+
+  loadSharedWorkshops$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.LoadSharedWorkshops),
     switchMap(() => combineLatest([this.authFacade.userId$, this.authFacade.fcId$])),
     distinctUntilChanged(),
@@ -54,10 +54,10 @@ export class WorkshopsEffects {
       );
     }),
     map(workshops => new SharedWorkshopsLoaded(workshops))
-  );
+  ));
 
-  @Effect()
-  loadWorkshop$ = this.actions$.pipe(
+
+  loadWorkshop$ = createEffect(() => this.actions$.pipe(
     ofType<LoadWorkshop>(WorkshopsActionTypes.LoadWorkshop),
     withLatestFrom(this.workshopsFacade.allWorkshops$),
     filter(([action, workshops]) => workshops.find(workshop => workshop.$key === action.key) === undefined && action.key !== undefined),
@@ -69,14 +69,14 @@ export class WorkshopsEffects {
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
-            loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
+            loggedIn ? this.authFacade.fcId$ : of(null),
             this.workshopService.get(action.key).pipe(catchError(() => of(null)))
           ]);
         })
       );
     }),
     distinctUntilChanged(),
-    map(([WorkshopKey, user, userId, fcId, workshop]: [string, TeamcraftUser | null, string, string | null, Workshop]) => {
+    map(([WorkshopKey, user, userId, fcId, workshop]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
@@ -98,39 +98,36 @@ export class WorkshopsEffects {
       }
       return new WorkshopLoaded(workshop);
     })
-  );
+  ));
 
-  @Effect()
-  createWorkshopInDatabase$ = this.actions$.pipe(
+
+  createWorkshopInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.CreateWorkshop),
     withLatestFrom(this.authFacade.userId$),
     map(([action, userId]) => {
       (<CreateWorkshop>action).payload.authorId = userId;
       return (<CreateWorkshop>action).payload;
     }),
-    switchMap(list => this.workshopService.add(list)),
-    switchMap(() => EMPTY)
-  );
+    switchMap(list => this.workshopService.add(list))
+  ), { dispatch: false });
 
-  @Effect()
-  updateWorkshopInDatabase$ = this.actions$.pipe(
+
+  updateWorkshopInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.UpdateWorkshop),
     debounceTime(500),
     map(action => action as UpdateWorkshop),
-    switchMap(action => this.workshopService.update(action.payload.$key, action.payload)),
-    switchMap(() => EMPTY)
-  );
+    switchMap(action => this.workshopService.update(action.payload.$key, action.payload))
+  ), { dispatch: false });
 
-  @Effect()
-  deleteWorkshopFromDatabase$ = this.actions$.pipe(
+
+  deleteWorkshopFromDatabase$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.DeleteWorkshop),
     map(action => action as DeleteWorkshop),
-    switchMap(action => this.workshopService.remove(action.key)),
-    switchMap(() => EMPTY)
-  );
+    switchMap(action => this.workshopService.remove(action.key))
+  ), { dispatch: false });
 
-  @Effect()
-  removeListFromWorkshop$ = this.actions$.pipe(
+
+  removeListFromWorkshop$ = createEffect(() => this.actions$.pipe(
     ofType(WorkshopsActionTypes.RemoveListFromWorkshop),
     withLatestFrom(this.workshopsFacade.allWorkshops$),
     map(([action, workshops]: [RemoveListFromWorkshop, Workshop[]]) => {
@@ -138,7 +135,7 @@ export class WorkshopsEffects {
       workshop.listIds = workshop.listIds.filter(id => id !== action.listKey);
       return new UpdateWorkshop(workshop);
     })
-  );
+  ));
 
   constructor(
     private actions$: Actions,

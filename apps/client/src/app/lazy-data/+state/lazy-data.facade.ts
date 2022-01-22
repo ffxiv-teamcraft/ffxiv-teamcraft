@@ -462,7 +462,7 @@ export class LazyDataFacade {
   }
 
   private findPrefixedProperty(property: LazyDataI18nKey, prefix: 'ko' | 'zh'): LazyDataI18nKey {
-    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as LazyDataI18nKey;
+    return `${prefix}${property[0].toUpperCase()}${property.slice(1)}` as unknown as LazyDataI18nKey;
   }
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {

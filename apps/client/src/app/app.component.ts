@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
 
   public character$: Observable<Character | { loading: boolean }>;
 
-  public otherCharacters$: Observable<Character[]>;
+  public otherCharacters$: Observable<Partial<Character>[]>;
 
   public userId$ = this.authFacade.userId$.pipe(
     isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
@@ -533,7 +533,7 @@ export class AppComponent implements OnInit {
   }
 
   showPatchNotes(): Observable<any> {
-    const res$ = new Subject();
+    const res$ = new Subject<void>();
     this.translate.get('Patch_notes', { version: environment.version }).pipe(
       switchMap(title => {
         return this.dialog.create({
