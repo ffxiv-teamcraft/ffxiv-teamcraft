@@ -25,7 +25,7 @@
     "firebase-admin": "^9.4.1",
     "firebase-functions": "^3.11.0",
     "https-post": "^0.1.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "protobufjs": "^6.8.4",
     "redis": "^4.0.1",
     "rxjs": "^7.5.1",
