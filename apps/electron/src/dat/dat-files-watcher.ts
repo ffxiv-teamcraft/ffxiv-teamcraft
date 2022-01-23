@@ -1,13 +1,13 @@
-import * as log from 'electron-log';
+import log from 'electron-log';
 import { FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
 import { join } from 'path';
 import { MainWindow } from '../window/main-window';
-import * as BufferReader from 'buffer-reader';
+import BufferReader from 'buffer-reader';
 import { InventoryCoords } from './inventory-coords';
 import { RetainerInventory } from './retainer-inventory';
 import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
 import { Store } from '../store';
-import * as hashFiles from 'hash-files';
+import hashFiles from 'hash-files';
 
 class UnexpectedSizeError extends Error {
   constructor(expected, real) {

@@ -1,6 +1,6 @@
 import { OauthProvider } from './oauth-provider';
-import * as querystring from 'querystring';
-import * as nodeUrl from 'url';
+import querystring from 'querystring';
+import nodeUrl from 'url';
 import { BrowserWindow, session } from 'electron';
 
 export class Oauth {

@@ -1,5 +1,5 @@
 import { app, ipcMain, nativeImage, shell } from 'electron';
-import * as log from 'electron-log';
+import log from 'electron-log';
 import { Oauth } from '../oauth/oauth';
 import { PacketCapture } from '../pcap/packet-capture';
 import { Store } from '../store';
@@ -9,7 +9,7 @@ import { join } from 'path';
 import { Constants } from '../constants';
 import { TrayMenu } from '../window/tray-menu';
 import { exec } from 'child_process';
-import * as isDev from 'electron-is-dev';
+import isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
 import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';

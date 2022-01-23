@@ -7,7 +7,7 @@ import { IpcListenersManager } from './ipc/ipc-listeners-manager';
 import { SquirrelEventHandler } from './update/squirrel-event-handler';
 import { TeamcraftDesktopApp } from './teamcraft-desktop-app';
 import { ProxyManager } from './tools/proxy-manager';
-import * as log from 'electron-log';
+import log from 'electron-log';
 import { app, ipcMain } from 'electron';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
 import { MetricsSystem } from './ipc/metrics-system';

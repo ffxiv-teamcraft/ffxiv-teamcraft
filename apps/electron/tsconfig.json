@@ -1,15 +1,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES5",
+    "target": "ES2017",
     "importHelpers": true,
     "module": "commonjs",
     "sourceMap": true,
     "declaration": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
+    "esModuleInterop": true,
     "typeRoots": [
       "node_modules/@types"
     ],

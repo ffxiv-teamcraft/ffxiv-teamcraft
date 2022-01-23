@@ -3,8 +3,9 @@ import { MainWindow } from '../window/main-window';
 import { Store } from '../store';
 import { join, resolve } from 'path';
 import { app } from 'electron';
-import * as isDev from 'electron-is-dev';
-import * as log from 'electron-log';
+import isDev from 'electron-is-dev';
+import log from 'electron-log';
+import { default as isElevated } from 'native-is-elevated';
 import { CaptureInterface, CaptureInterfaceOptions, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class PacketCapture {
@@ -88,7 +89,7 @@ export class PacketCapture {
   }
 
   start(): void {
-    if(this.store.get('rawsock', false)){
+    if (this.store.get('rawsock', false)) {
       this.startMachina();
     } else {
       try {
@@ -149,9 +150,9 @@ export class PacketCapture {
   private async startMachina(): Promise<void> {
     const region = this.store.get('region', 'Global');
     const rawsock = this.store.get('rawsock', false);
-    const elevated = await require('is-elevated')();
 
     if (rawsock) {
+      const elevated = await isElevated();
       if (!elevated) {
         this.mainWindow.win.webContents.send('rawsock-needs-admin', true);
         return;
