@@ -7,6 +7,7 @@ import { beastTribeNpcs } from '../data/sources/beast-tribe-npcs';
 import { DataType } from '../../modules/list/data/data-type';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Vendor } from '../../modules/list/model/vendor';
+import { housingMaterialSuppliers } from '../data/sources/housing-material-suppliers';
 
 export class LayoutRowFilter {
 
@@ -32,6 +33,19 @@ export class LayoutRowFilter {
     }
     return vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
+
+  static IS_FROM_HOUSING_VENDOR = new LayoutRowFilter((row, _, settings) => {
+    let vendors = getItemSource<Vendor[]>(row, DataType.VENDORS).filter(s => {
+      return housingMaterialSuppliers.includes(s.npcId);
+    });
+    if (settings.maximumVendorPrice > 0) {
+      vendors = vendors.filter(vendor => vendor.price <= settings.maximumVendorPrice);
+    }
+    if (settings.maximumTotalVendorPrice > 0) {
+      vendors = vendors.filter(vendor => vendor.price * row.amount <= settings.maximumTotalVendorPrice);
+    }
+    return vendors.length > 0;
+  }, 'IS_FROM_HOUSING_VENDOR');
 
   static IS_ONLY_FROM_VENDOR = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
     return row.sources.length === 1 || row.sources.length === 2 &&

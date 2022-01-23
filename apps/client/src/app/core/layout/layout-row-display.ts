@@ -5,6 +5,7 @@ import { ListLayout } from './list-layout';
 export interface LayoutRowDisplay {
   title: string;
   rows: ListRow[];
+  crafts: number;
   index: number;
   zoneBreakdown: boolean;
   npcBreakdown: boolean;

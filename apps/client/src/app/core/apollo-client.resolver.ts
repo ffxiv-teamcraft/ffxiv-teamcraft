@@ -12,7 +12,7 @@ export class ApolloClientResolver implements Resolve<unknown> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<unknown> {
     // Ugly hack to check for apollo client before loading a page, ugly due to apollo-angular being shit.
-    const watcher$ = new Subject();
+    const watcher$ = new Subject<void>();
     const interval = setInterval(() => {
       if (this.apollo.getClient() !== undefined) {
         watcher$.next();

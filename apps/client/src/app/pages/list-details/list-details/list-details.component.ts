@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
@@ -45,6 +45,7 @@ import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inven
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { ListController } from '../../../modules/list/list-controller';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { uniq } from 'lodash';
 
 @Component({
   selector: 'app-list-details',
@@ -85,6 +86,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public machinaToggle = false;
 
   public pinnedList$ = this.listsFacade.pinnedList$;
+
+  public inventories$ = this.inventoryFacade.inventory$.pipe(
+    distinctUntilChanged((a, b) => a.getContainers().length === b.getContainers().length),
+    map(inventory => {
+      return uniq(inventory.getContainers().map(e => this.inventoryFacade.getContainerDisplayName(e)));
+    }),
+    shareReplay(1)
+  );
 
   private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
 
@@ -459,12 +468,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  public fillWithInventory(list: List): void {
+  public fillWithInventory(list: List, containerName: string): void {
     this.inventoryFacade.inventory$.pipe(
       first(),
       map(inventory => {
         list.items.forEach(item => {
-          let inventoryItems = inventory.getItem(item.id, true);
+          let inventoryItems = inventory.getItem(item.id)
+            .filter(e => {
+              return this.inventoryFacade.getContainerDisplayName(e) === containerName;
+            });
           const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
@@ -481,7 +493,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
         });
         list.finalItems.forEach(item => {
-          let inventoryItems = inventory.getItem(item.id, true);
+          let inventoryItems = inventory.getItem(item.id)
+            .filter(e => {
+              return this.inventoryFacade.getContainerDisplayName(e) === containerName;
+            });
           const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);

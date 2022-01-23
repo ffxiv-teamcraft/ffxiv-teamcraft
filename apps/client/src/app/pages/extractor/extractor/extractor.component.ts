@@ -88,11 +88,11 @@ export class ExtractorComponent {
     ).subscribe();
   }
 
-  public doLogTrackingData(extractsInput?: LazyDataWithExtracts['extracts']): Observable<any> {
+  public doLogTrackingData(extractsInput?: LazyDataWithExtracts['extracts']): Observable<void> {
     const extracts$ = extractsInput ? of(extractsInput) : this.lazyData.getEntry('extracts');
     this.running = true;
     this.currentLabel = 'Log tracking data';
-    const res$ = new ReplaySubject<any>();
+    const res$ = new ReplaySubject<void>();
     this.totalTodo$.next(14);
     this.done$.next(0);
     const dohTabs$ = combineLatest([
@@ -323,7 +323,7 @@ export class ExtractorComponent {
     return res$;
   }
 
-  private getCollectables(jobId: number): Observable<any[]> {
+  private getCollectables(jobId: number): Observable<any> {
     return combineLatest([
       this.lazyData.getEntry('collectables'),
       this.lazyData.getEntry('collectablesShops')

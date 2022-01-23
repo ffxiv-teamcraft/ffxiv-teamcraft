@@ -231,6 +231,7 @@
     "Remove_from_group": "該当グループを削除",
     "No_folder": "フォルダー無し",
     "Click_to_show_all_alarms": "クリックしてすべてのアラームを表示",
+    "Enable_TTS": "Enable Text-to-Speech",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
@@ -658,6 +659,7 @@
     "Requirements_ignored": "除外した素材",
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "デフォルト",
       "Only_large": "超過された時のみ",

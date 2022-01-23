@@ -98,7 +98,7 @@
       <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>{{displayRow.title | translate}}</div>
-          &nbsp;({{displayRow.rows.length}} {{'items' | translate}})
+          &nbsp;({{displayRow.rows.length}} {{'items' | translate}}<span *ngIf="displayRow.rows.length !== displayRow.crafts">, {{displayRow.crafts}} {{'LIST.Crafts' | translate}}</span>)&nbsp;
           <i *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)" nz-icon
              nzType="check"></i>
         </div>

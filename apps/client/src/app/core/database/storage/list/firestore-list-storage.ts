@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, mapTo, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, mapTo, retry, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
@@ -60,7 +60,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       });
     }).then(() => {
       this.pendingChangesService.removePendingChange(`List Transaction ${uid}`);
-    }));
+    })).pipe(
+      retry(3)
+    );
   }
 
   public prepareData(list: Partial<List>): List {
@@ -214,6 +216,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   resetModificationsHistory(listId: string): Observable<void> {
     const res$ = new Subject<void>();
     this.getModificationsHistory(listId).pipe(
+      first(),
       switchMap(history => {
         const batches = [this.af.firestore.batch()];
         let ops = 0;
@@ -359,7 +362,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
                                before: List, after: List, serverList: List): void {
     // Get diff between local backup and new version
     const diff = compare(before, after);
-    if (diff.length > 20) {
+    if (diff.length > 20 || diff.some(change => change.op !== 'replace' || isNaN(change.value))) {
       transaction.set(ref, after);
     } else {
       // Update the diff so the values are applied to the server list instead

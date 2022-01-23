@@ -51,7 +51,6 @@ import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
-import { ModificationEntry } from '../model/modification-entry';
 
 declare const gtag: Function;
 
@@ -147,7 +146,7 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
-    throttleTime<List>(1000),
+    throttleTime<List>(200),
     shareReplay(1)
   );
 
@@ -168,7 +167,7 @@ export class ListsFacade {
         loggedIn ? this.authFacade.user$ : of(null),
         this.authFacade.userId$,
         this.teamsFacade.selectedTeam$,
-        loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null)
+        loggedIn ? this.authFacade.fcId$ : of(null)
       ]);
     }),
     filter(([list]) => list !== undefined),

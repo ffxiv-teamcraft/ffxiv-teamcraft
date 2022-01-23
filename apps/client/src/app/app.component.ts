@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
 
   public character$: Observable<Character | { loading: boolean }>;
 
-  public otherCharacters$: Observable<Character[]>;
+  public otherCharacters$: Observable<Partial<Character>[]>;
 
   public userId$ = this.authFacade.userId$.pipe(
     isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
@@ -533,20 +533,24 @@ export class AppComponent implements OnInit {
   }
 
   showPatchNotes(): Observable<any> {
-    const res$ = new Subject();
-    this.dialog.create({
-      nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
-      nzContent: ChangelogPopupComponent,
-      nzFooter: null,
-      nzStyle: {
-        'z-index': 10000
-      }
-    }).afterClose
-      .pipe(
-        tap(() => {
-          this.settings.lastChangesSeen = version;
-        })
-      ).subscribe(() => res$.next());
+    const res$ = new Subject<void>();
+    this.translate.get('Patch_notes', { version: environment.version }).pipe(
+      switchMap(title => {
+        return this.dialog.create({
+          nzTitle: title,
+          nzContent: ChangelogPopupComponent,
+          nzFooter: null,
+          nzStyle: {
+            'z-index': 10000
+          }
+        }).afterClose
+          .pipe(
+            tap(() => {
+              this.settings.lastChangesSeen = version;
+            })
+          );
+      })
+    ).subscribe(() => res$.next());
     return res$;
   }
 

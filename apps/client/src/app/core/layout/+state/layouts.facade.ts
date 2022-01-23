@@ -153,6 +153,7 @@ export class LayoutsFacade {
                       {
                         title: row.name,
                         rows: orderedAccepted,
+                        crafts: orderedAccepted.reduce((acc, r) => acc + (r.requires.length > 0 ? r.amount_needed : 1), 0),
                         index: row.index,
                         zoneBreakdown: row.zoneBreakdown,
                         npcBreakdown: row.npcBreakdown,
@@ -213,6 +214,7 @@ export class LayoutsFacade {
         return {
           title: 'Items',
           rows: rows,
+          crafts: rows.reduce((acc, r) => acc + (r.requires.length > 0 ? r.amount_needed : 1), 0),
           // Random number, as this panel isn't ordered at all
           index: 10000,
           hideIfEmpty: false,

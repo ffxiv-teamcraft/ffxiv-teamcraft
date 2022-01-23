@@ -65,7 +65,7 @@ export class RetainersComponent {
             return {
               characterName: characterEntry ? characterEntry.character.Character.Name : 'Unknown',
               server: characterEntry ? characterEntry.character.Character.Server : 'Unknown',
-              retainers: charRetainers
+              retainers: charRetainers as any[]
             };
           });
       }),

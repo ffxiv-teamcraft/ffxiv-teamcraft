@@ -36,7 +36,6 @@ import { combineLatest, from, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
-import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
@@ -64,6 +63,8 @@ export class AuthFacade {
   user$ = this.store.select(authQuery.getUser).pipe(filter(u => !!u && !u.notFound && u.$key !== undefined));
 
   logTracking$ = this.store.select(authQuery.getLogTracking).pipe(filter(log => !!log));
+
+  serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(filter(log => !!log));
 
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
@@ -171,7 +172,7 @@ export class AuthFacade {
 
   mainCharacter$ = this.mainCharacterEntry$.pipe(
     map((entry) => {
-      return entry.character as Character & { FreeCompany: { ID: number } };
+      return entry.character as Character;
     }),
     filter(c => !!c)
   );
@@ -204,9 +205,9 @@ export class AuthFacade {
       }
       return of(null);
     }),
-    map((data: Partial<LodestoneIdEntry>) => {
+    map((data) => {
       if (data === null) {
-        data = { stats: [] };
+        data = { stats: [] } as any;
       }
       return [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(jobId => {
         const set = (data.stats || []).find(stat => stat.jobId === jobId);

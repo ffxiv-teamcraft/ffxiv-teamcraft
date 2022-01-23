@@ -13,9 +13,9 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
 import { SoundNotificationService } from '../sound-notification/sound-notification.service';
-import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
+import { SoundNotificationType } from '../sound-notification/sound-notification-type';
 
 @Injectable({
   providedIn: 'root'
@@ -33,9 +33,20 @@ export class AlarmBellService {
   /**
    * Plays the sound part of the alarm.
    * @param alarm
+   * @param itemName
    */
-  public ring(alarm: Alarm): void {
-    this.soundNotificationService.play(SoundNotificationType.ALARM);
+  public ring(alarm: Alarm, itemName: string): void {
+    if (this.settings.TTSAlarms) {
+      const notificationSettings = this.settings.getNotificationSettings(SoundNotificationType.ALARM);
+      const speech = new SpeechSynthesisUtterance(itemName);
+      speech.pitch = 1.1;
+      speech.lang = this.translate.currentLang;
+      speech.rate = 1;
+      speech.volume = notificationSettings.volume;
+      window.speechSynthesis.speak(speech);
+    } else {
+      this.soundNotificationService.play(SoundNotificationType.ALARM);
+    }
     localStorage.setItem(`played:${alarm.$key}`, Date.now().toString());
   }
 
@@ -96,6 +107,7 @@ export class AlarmBellService {
           }
         ).subscribe();
         this.notificationService.info(notificationTitle, notificationBody);
+        this.ring(alarm, itemName);
       }
     });
   }
@@ -146,7 +158,6 @@ export class AlarmBellService {
       ).subscribe(alarmsToPlay => {
       alarmsToPlay.forEach(alarm => {
         if (!this.settings.alarmsMuted) {
-          this.ring(alarm);
           this.notify(alarm);
         }
       });

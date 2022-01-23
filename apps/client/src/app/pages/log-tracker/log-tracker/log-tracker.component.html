@@ -25,9 +25,9 @@
             <nz-tab *ngFor="let tab of dohTabs$ | async; let index = index" [nzTitle]="titleTemplate">
               <ng-template #titleTemplate>
                 <img [class.small-icon]="false | ifMobile: true" [src]="getDohIcon(index)" alt=""
-                     class="job-icon">{{ tab.name }}
+                     class="job-icon">{{ (index + 8) | i18nRow:'jobName' | i18n }}
               </ng-template>
-              <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left">
+              <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                 <ng-container *ngFor="let page of tab">
                   <nz-tab *ngIf="(!hideCompleted || !isDoHPageDone(page)) && (showNotRequired || page.requiredForAchievement)" [nzTitle]="dohTitleTemplate"
                           (nzSelect)="dohSelectedPage = page.id">
@@ -126,7 +126,6 @@
               <i nzIconfont="icon-map" nz-icon></i>
               <img alt="BTN" class="job-icon" src="./assets/icons/BTN.png">
             </button>
-
           </div>
         </ng-template>
         <ng-template nz-tab>
@@ -140,7 +139,7 @@
                      class="job-icon">{{ tab.name }}
               </ng-template>
               <ng-template nz-tab>
-                <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left">
+                <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                   <ng-container *ngFor="let page of tab">
                     <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
                       <ng-template #titleTemplate>

@@ -14,11 +14,11 @@ const getAllGroups = createSelector(getAlarmsState, getLoaded, (state: AlarmsSta
   return isLoaded ? state.groups : [];
 });
 
-const getExternalGroup = createSelector(getAlarmsState, getLoaded, (state: AlarmsState) => {
+const getExternalGroup = createSelector(getAlarmsState, getLoaded, (state: AlarmsState, isLoaded) => {
   return state.externalGroup;
 });
 
-const getExternalGroupAlarms = createSelector(getAlarmsState, getLoaded, (state: AlarmsState) => {
+const getExternalGroupAlarms = createSelector(getAlarmsState, getLoaded, (state: AlarmsState, isLoaded) => {
   return state.externalGroupAlarms;
 });
 

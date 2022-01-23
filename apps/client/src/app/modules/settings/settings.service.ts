@@ -879,6 +879,14 @@ export class SettingsService {
     return this.getBoolean(`overlay:clock:${overlay}`, true);
   }
 
+  public get TTSAlarms(): boolean {
+    return this.getBoolean('alarms:tts', false);
+  }
+
+  public set TTSAlarms(enabled: boolean) {
+    this.setBoolean('alarms:tts', enabled);
+  }
+
   public getBoolean(name: string, defaultValue: boolean): boolean {
     return this.getSetting(name, defaultValue.toString()) === 'true';
   }

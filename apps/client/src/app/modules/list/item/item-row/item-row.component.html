@@ -54,7 +54,6 @@
                 [attachedRotation]="item.attachedRotation"
                 [userId]="userId"
                 [loggedIn]="loggedIn$ | async"
-                [commentBadge]="commentBadge$ | async"
                 [team]="team$ | async"
                 [workingOnIt]="item.workingOnIt"
                 [requiredForFinalCraft]="requiredForFinalCraft$ | async"
@@ -241,8 +240,7 @@
                        [nzMax]="item.amount"
                        [nzMin]="0"
                        [nzSize]="'small'"
-                       [nzStep]="1"
-                       style="margin-top:1px"></nz-input-number>
+                       [nzStep]="1"></nz-input-number>
       <span *ngIf="!settings.displayRemaining" class="amount-max">
         /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
       </span>
@@ -257,7 +255,9 @@
           <i nz-icon nzType="check"></i>
         </button>
         <ng-template #done>
-          <i (click)="permissionLevel >= 20 ? resetDone(item) : null" class="done-icon" nz-icon nzType="check"></i>
+          <div>
+            <i (click)="permissionLevel >= 20 ? resetDone(item) : null" class="done-icon" nz-icon nzType="check"></i>
+          </div>
         </ng-template>
       </ng-container>
     </div>

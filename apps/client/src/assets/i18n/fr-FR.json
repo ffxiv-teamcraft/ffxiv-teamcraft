@@ -231,6 +231,7 @@
     "Remove_from_group": "Retirer de ce groupe",
     "No_folder": "Aucun dossier",
     "Click_to_show_all_alarms": "Cliquez pour afficher toutes les alarmes",
+    "Enable_TTS": "Enable Text-to-Speech",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -658,6 +659,7 @@
     "Requirements_ignored": "Pré-requis ignorés",
     "Mark_whole_panel_nq": "Supprimer les flags HQ manuels",
     "Mark_whole_panel_hq": "Marquer tout le panneau HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",

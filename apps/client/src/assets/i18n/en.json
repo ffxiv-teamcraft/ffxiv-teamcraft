@@ -231,6 +231,7 @@
     "Remove_from_group": "Remove from this group",
     "No_folder": "No folder",
     "Click_to_show_all_alarms": "Click to show all alarms",
+    "Enable_TTS": "Enable Text-to-Speech",
     "REALTIME": {
       "Reset_timers": "Reset timers",
       "WEEKLY_RESETS": "Weeklies",
@@ -658,6 +659,7 @@
     "Requirements_ignored": "Requirements ignored",
     "Mark_whole_panel_nq": "Remove manual HQ flags",
     "Mark_whole_panel_hq": "Mark whole panel HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",

@@ -1,3 +1,5 @@
+@import "../../../../common";
+
 :host ::ng-deep {
 
   .ant-tabs-small > .ant-tabs-bar .ant-tabs-tab {
@@ -30,6 +32,10 @@
       color: var(--text-color) !important;
     }
   }
+
+  .vertical-tabs {
+    height: calc(~"100vh - @{layout-header-height} - 175px");
+  }
 }
 
 .dol-path-buttons {
@@ -42,6 +48,8 @@
 
   .path-button {
     width: 50px;
+    display: flex;
+    align-items: center;
   }
 }
 

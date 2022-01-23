@@ -34,11 +34,17 @@ const getLogTracking = createSelector(
   (state: AuthState) => state.logTracking
 );
 
+const getServerLogTracking = createSelector(
+  getAuthState,
+  (state: AuthState) => state.serverLogTracking
+);
+
 export const authQuery = {
   getLoaded,
   getLinkingCharacter,
   getLoggedIn,
   getUser,
   getUserId,
-  getLogTracking
+  getLogTracking,
+  getServerLogTracking
 };

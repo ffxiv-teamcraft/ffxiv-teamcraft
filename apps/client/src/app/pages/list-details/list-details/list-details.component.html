@@ -72,13 +72,19 @@
             {{team.name}}
           </nz-tag>
         </div>
-        <button nz-button nzType="primary" nzShape="circle" (click)="fillWithInventory(list)" nz-tooltip
+        <button nz-button nzType="primary" nzShape="circle" nz-tooltip
                 *ngIf="platform.isDesktop()"
-                tutorialStep="TUTORIAL.LIST.Fill_with_inventory"
-                tutorialStepIndex="2"
-                [nzTooltipTitle]="'LIST_DETAILS.Fill_with_inventory' | translate">
+                nz-dropdown
+                [nzDropdownMenu]="menu">
           <i nz-icon nzType="shopping" nzTheme="outline"></i>
         </button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul *ngIf="inventories$ | async as inventories" nz-menu>
+            <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
+              {{inventory | translate}}
+            </li>
+          </ul>
+        </nz-dropdown-menu>
       </div>
       <div class="spacer"></div>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">

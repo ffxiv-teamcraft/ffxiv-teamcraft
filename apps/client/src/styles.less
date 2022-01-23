@@ -14,9 +14,36 @@ h1, h2, h3, h4, h5 {
   width: 16px;
 }
 
-.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
-  top: 50% !important;
-  transform: translateY(-70%) !important;
+/**
+Collapse
+ */
+
+.ant-input, .ant-select, .ant-collapse, .ant-input-group-addon, .ant-btn:not(.ant-btn-dangerous), .ant-collapse-content, .ant-select-selection, .ant-input-number, .ant-collapse-item,
+.ant-list-item, .ant-card-bordered {
+  border-color: #444 !important;
+}
+
+.ant-tabs-top, .ant-tabs-bottom {
+  .ant-tabs-tab:first-child {
+    margin: 0 32px 0 0;
+  }
+}
+
+.ant-tabs-left, .ant-tabs-right {
+  .ant-tabs-tab:first-child {
+    margin: 0 0 16px 0;
+  }
+}
+
+
+.ant-collapse-header {
+  display: flex !important;
+  align-items: center !important;
+  padding: 6px 0 6px 16px !important;
+
+  .panel-header {
+    flex: 1 1 auto;
+  }
 }
 
 .custom-tag {
@@ -56,11 +83,6 @@ h1, h2, h3, h4, h5 {
   }
 
   margin-top: 25px;
-}
-
-.ant-input, .ant-select, .ant-collapse, .ant-input-group-addon, .ant-btn, .ant-collapse-content, .ant-select-selection, .ant-input-number, .ant-collapse-item,
-.ant-list-item, .ant-card-bordered {
-  border-color: #444 !important;
 }
 
 .ant-alert-close-text {

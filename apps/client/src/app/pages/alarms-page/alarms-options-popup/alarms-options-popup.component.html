@@ -1,35 +1,43 @@
 <p>{{'ALARMS.Volume' | translate}}</p>
-<nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="alarmSettings.volume * 100" [nzMax]="100" [nzMin]="1"
-           [nzStep]="1"></nz-slider>
+<div fxLayout="column" fxLayoutGap="5px">
+  <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="alarmSettings.volume * 100" [nzMax]="100" [nzMin]="1"
+             [nzStep]="1"></nz-slider>
 
-<div *ngIf="platform.isDesktop()">
-  <nz-switch [(ngModel)]="enableCustomSound"></nz-switch>
-  {{'ALARMS.Custom_sound' | translate}}
-</div>
-
-<div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
-  <div class="sound-preview">{{alarmSettings.sound}}
-    <button (click)="previewSound()" nz-button>
-      <i nz-icon nzType="play-o"></i>
-    </button>
+  <div *ngIf="platform.isDesktop()">
+    <nz-switch [(ngModel)]="enableCustomSound"></nz-switch>
+    {{'ALARMS.Custom_sound' | translate}}
   </div>
-  <input (change)="setSound($event.target.files[0].path)" type="file">
-</div>
+  <div>
+    <nz-switch [(ngModel)]="settings.TTSAlarms"></nz-switch>
+    {{'ALARMS.Enable_TTS' | translate}}
+  </div>
 
-<ng-template #soundSelect>
-  <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
-  <nz-select (ngModelChange)="setSound($event)" [ngModel]="alarmSettings.sound" class="select-box" id="sound">
-    <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
-    </nz-option>
-  </nz-select>
-</ng-template>
+  <div *ngIf="!settings.TTSAlarms">
+    <div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
+      <div class="sound-preview">{{alarmSettings.sound}}
+        <button (click)="previewSound()" nz-button>
+          <i nz-icon nzType="play-o"></i>
+        </button>
+      </div>
+      <input (change)="setSound($event.target.files[0].path)" type="file">
+    </div>
 
-<div>
-  <nz-form-label nzFor="early-alarm">{{'Early_by' | translate}}</nz-form-label>
-  <nz-select (ngModelChange)="setHoursBefore($event)" [ngModel]="settings.alarmHoursBefore" class="select-box"
-             id="early-alarm">
-    <nz-option *ngFor="let value of [-1,-0.5,0,0.5,1,2,5]" [nzLabel]="value" [nzValue]="value">
-    </nz-option>
-  </nz-select>
-  <i>{{'ALARMS.Early_by_tip' | translate}}</i>
+    <ng-template #soundSelect>
+      <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
+      <nz-select (ngModelChange)="setSound($event)" [ngModel]="alarmSettings.sound" class="select-box" id="sound">
+        <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
+        </nz-option>
+      </nz-select>
+    </ng-template>
+  </div>
+
+  <div>
+    <nz-form-label nzFor="early-alarm">{{'Early_by' | translate}}</nz-form-label>
+    <nz-select (ngModelChange)="setHoursBefore($event)" [ngModel]="settings.alarmHoursBefore" class="select-box"
+               id="early-alarm">
+      <nz-option *ngFor="let value of [-1,-0.5,0,0.5,1,2,5]" [nzLabel]="value" [nzValue]="value">
+      </nz-option>
+    </nz-select>
+    <i>{{'ALARMS.Early_by_tip' | translate}}</i>
+  </div>
 </div>

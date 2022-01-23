@@ -231,6 +231,7 @@
     "Remove_from_group": "从此分组中移除",
     "No_folder": "无文件夹",
     "Click_to_show_all_alarms": "点击显示所有闹钟",
+    "Enable_TTS": "Enable Text-to-Speech",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
@@ -658,6 +659,7 @@
     "Requirements_ignored": "已忽略素材",
     "Mark_whole_panel_nq": "移除所有手动添加的HQ标志",
     "Mark_whole_panel_hq": "标记整个面板为HQ",
+    "Crafts": "crafts",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",

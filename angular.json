@@ -213,19 +213,10 @@
               "apps/client/src/favicon.ico",
               "apps/client/src/assets"
             ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/client/tsconfig.app.json",
-              "apps/client/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
+          },
+          "outputs": [
+            "coverage/apps/client/"
+          ]
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
@@ -278,7 +269,8 @@
             "production": {}
           }
         }
-      }
+      },
+      "tags": []
     },
     "client-e2e": {
       "root": "apps/client-e2e",
@@ -297,39 +289,9 @@
               "devServerTarget": "client:serve:production"
             }
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
-      }
-    }
-  },
-  "cli": {
-    "warnings": {
-      "typescriptMismatch": false,
-      "versionMismatch": false
-    },
-    "defaultCollection": "@nrwl/angular",
-    "analytics": false
-  },
-  "defaultProject": "client",
-  "schematics": {
-    "@nrwl/schematics:library": {
-      "unitTestRunner": "karma",
-      "framework": "angular"
-    },
-    "@nrwl/schematics:application": {
-      "unitTestRunner": "karma",
-      "e2eTestRunner": "protractor"
-    },
-    "@nrwl/schematics:node-application": {
-      "framework": "express"
+      },
+      "tags": []
     }
   }
 }

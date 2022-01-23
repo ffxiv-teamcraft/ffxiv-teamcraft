@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
   CreateFolder,
@@ -27,8 +27,8 @@ import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 @Injectable()
 export class FoldersEffects {
 
-  @Effect()
-  loadFolders$ = this.actions$.pipe(
+  
+  loadFolders$ = createEffect(() => this.actions$.pipe(
     ofType<LoadFolders>(FoldersActionTypes.LoadFolders),
     exhaustMap((action) => {
       return this.authFacade.userId$.pipe(
@@ -39,10 +39,10 @@ export class FoldersEffects {
       );
     }),
     map(sets => new FoldersLoaded(sets))
-  );
+  ));
 
-  @Effect()
-  loadFolder$ = this.actions$.pipe(
+  
+  loadFolder$ = createEffect(() => this.actions$.pipe(
     ofType<LoadFolder>(FoldersActionTypes.LoadFolder),
     onlyIfNotConnected(this.foldersFacade.allFolders$, action => action.key),
     mergeMap(action => {
@@ -50,53 +50,51 @@ export class FoldersEffects {
         .pipe(catchError(() => of({ $key: action.key, content: [], subFolders: [], notFound: true } as Folder<any>)));
     }),
     map(folder => new FolderLoaded(folder))
-  );
+  ));
 
-  @Effect({
-    dispatch: false
-  })
-  updateFolder$ = this.actions$.pipe(
+  
+  updateFolder$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateFolder>(FoldersActionTypes.UpdateFolder),
     switchMap(action => {
       return this.foldersService.update(action.key, action.folder);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  pureUpdateFolder = this.actions$.pipe(
+  });
+
+  
+  pureUpdateFolder = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateFolder>(FoldersActionTypes.PureUpdateFolder),
     switchMap(action => {
       return this.foldersService.pureUpdate(action.key, action.folder);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  deleteFolder$ = this.actions$.pipe(
+  });
+
+  
+  deleteFolder$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteFolder>(FoldersActionTypes.DeleteFolder),
     switchMap(action => {
       return this.foldersService.remove(action.key);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  updateFolderIndexes$ = this.actions$.pipe(
+  });
+
+  
+  updateFolderIndexes$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateFolderIndexes>(FoldersActionTypes.UpdateFolderIndexes),
     switchMap(action => {
       return this.foldersService.updateIndexes(action.payload);
     })
-  );
-
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  createFolder$ = this.actions$.pipe(
+  });
+
+
+  
+  createFolder$ = createEffect(() => this.actions$.pipe(
     ofType<CreateFolder>(FoldersActionTypes.CreateFolder),
     switchMap((action: CreateFolder) => {
       return this.authFacade.userId$.pipe(
@@ -122,7 +120,9 @@ export class FoldersEffects {
       );
     }),
     switchMapTo(EMPTY)
-  );
+  ), {
+    dispatch: false
+  });
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private foldersService: FoldersService, private dialog: NzModalService,

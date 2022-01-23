@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
 import {
@@ -41,8 +41,8 @@ import { EtroImportPopupComponent } from '../etro-import-popup/etro-import-popup
 @Injectable()
 export class GearsetsEffects {
 
-  @Effect()
-  loadGearsets$ = this.actions$.pipe(
+  
+  loadGearsets$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearsets>(GearsetsActionTypes.LoadGearsets),
     exhaustMap(() => {
       return this.authFacade.userId$.pipe(
@@ -53,10 +53,10 @@ export class GearsetsEffects {
       );
     }),
     map(sets => new GearsetsLoaded(sets))
-  );
+  ));
 
-  @Effect()
-  loadGearset$ = this.actions$.pipe(
+  
+  loadGearset$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearset>(GearsetsActionTypes.LoadGearset),
     onlyIfNotConnected(this.gearsetsFacade.allGearsets$, action => action.key),
     mergeMap(action => {
@@ -64,10 +64,10 @@ export class GearsetsEffects {
         .pipe(catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset)));
     }),
     map(gearset => new GearsetLoaded(gearset))
-  );
+  ));
 
-  @Effect()
-  loadGearsetProgression$ = this.actions$.pipe(
+  
+  loadGearsetProgression$ = createEffect(() => this.actions$.pipe(
     ofType<LoadGearsetProgression>(GearsetsActionTypes.LoadGearsetProgression),
     map(action => {
       const rawString = localStorage.getItem(`gp:${action.key}`);
@@ -79,30 +79,28 @@ export class GearsetsEffects {
       }
       return new GearsetProgressionLoaded(action.key, res);
     })
-  );
+  ));
 
-  @Effect({ dispatch: false })
-  saveGearsetProgression$ = this.actions$.pipe(
+  
+  saveGearsetProgression$ = createEffect(() => this.actions$.pipe(
     ofType<SaveGearsetProgression>(GearsetsActionTypes.SaveGearsetProgression),
     map(action => {
       localStorage.setItem(`gp:${action.key}`, JSON.stringify(action.progression));
     })
-  );
+  ), { dispatch: false });
 
-  @Effect({
-    dispatch: false
-  })
-  updateIndexes$ = this.actions$.pipe(
+  
+  updateIndexes$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateGearsetIndexes>(GearsetsActionTypes.UpdateGearsetIndexes),
     switchMap(action => {
       return this.gearsetService.updateIndexes(action.payload);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  createGearset$ = this.actions$.pipe(
+  });
+
+  
+  createGearset$ = createEffect(() => this.actions$.pipe(
     ofType<CreateGearset>(GearsetsActionTypes.CreateGearset),
     switchMap((action: CreateGearset) => {
       return this.authFacade.userId$.pipe(
@@ -140,12 +138,12 @@ export class GearsetsEffects {
       );
     }),
     switchMapTo(EMPTY)
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  importAriyalaGearset$ = this.actions$.pipe(
+  });
+
+  
+  importAriyalaGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportAriyalaGearset),
     switchMap(() => {
       return this.authFacade.userId$.pipe(
@@ -172,12 +170,12 @@ export class GearsetsEffects {
       this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  importEtroGearset$ = this.actions$.pipe(
+  });
+
+  
+  importEtroGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportEtroGearset),
     switchMap(() => {
       return this.authFacade.userId$.pipe(
@@ -204,13 +202,13 @@ export class GearsetsEffects {
       this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
-  );
-
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  importFrompcap$ = this.actions$.pipe(
+  });
+
+
+  
+  importFrompcap$ = createEffect(() => this.actions$.pipe(
     ofType<ImportFromPcap>(GearsetsActionTypes.ImportFromPcap),
     switchMap(() => {
       return this.authFacade.userId$.pipe(
@@ -237,13 +235,13 @@ export class GearsetsEffects {
       this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
-  );
-
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  syncFromPcap$ = this.actions$.pipe(
+  });
+
+
+  
+  syncFromPcap$ = createEffect(() => this.actions$.pipe(
     ofType<SyncFromPcap>(GearsetsActionTypes.SyncFromPcap),
     switchMap(() => {
       return this.dialog.create({
@@ -252,12 +250,12 @@ export class GearsetsEffects {
         nzTitle: this.translate.instant('GEARSETS.SYNC.Title')
       }).afterClose;
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  importLodestoneGearset$ = this.actions$.pipe(
+  });
+
+  
+  importLodestoneGearset$ = createEffect(() => this.actions$.pipe(
     ofType<ImportLodestoneGearset>(GearsetsActionTypes.ImportLodestoneGearset),
     switchMap(() => {
       return this.authFacade.userId$.pipe(
@@ -284,39 +282,41 @@ export class GearsetsEffects {
       this.router.navigate(['/gearset', res, 'edit']);
     }),
     switchMapTo(EMPTY)
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  updateGearset$ = this.actions$.pipe(
+  });
+
+  
+  updateGearset$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
     debounceTime(500),
     filter(action => !action.isReadonly),
     switchMap(action => {
       return this.gearsetService.update(action.key, action.gearset);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  pureUpdateGearset = this.actions$.pipe(
+  });
+
+  
+  pureUpdateGearset = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateGearset>(GearsetsActionTypes.PureUpdateGearset),
     switchMap(action => {
       return this.gearsetService.pureUpdate(action.key, action.gearset);
     })
-  );
-
-  @Effect({
+  ), {
     dispatch: false
-  })
-  deleteGearset$ = this.actions$.pipe(
+  });
+
+  
+  deleteGearset$ = createEffect(() => this.actions$.pipe(
     ofType<DeleteGearset>(GearsetsActionTypes.DeleteGearset),
     switchMap(action => {
       return this.gearsetService.remove(action.key);
     })
-  );
+  ), {
+    dispatch: false
+  });
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private gearsetService: GearsetService, private dialog: NzModalService,

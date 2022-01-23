@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
 import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
@@ -43,8 +43,8 @@ import { SettingsService } from '../modules/settings/settings.service';
 @Injectable()
 export class AuthEffects {
 
-  @Effect()
-  getUser$ = this.actions$.pipe(
+
+  getUser$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
     mergeMap(() => this.af.authState),
     map((authState: User) => {
@@ -60,17 +60,17 @@ export class AuthEffects {
         return new Authenticated(payload, payload.uid, new Date(authState.metadata.creationTime));
       }
     })
-  );
+  ));
 
-  @Effect()
-  loginAsAnonymous$ = this.actions$.pipe(
+
+  loginAsAnonymous$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
     mergeMap(() => from(this.af.signInAnonymously())),
     map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
-  );
+  ));
 
-  @Effect()
-  fetchUser$ = this.actions$.pipe(
+
+  fetchUser$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
     exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
       return this.userService.get(action.uid, false, true).pipe(
@@ -109,10 +109,10 @@ export class AuthEffects {
     }),
     map(user => new UserFetched(user)),
     debounceTime(250)
-  );
+  ));
 
-  @Effect()
-  watchNoLinkedCharacter$ = this.actions$.pipe(
+
+  watchNoLinkedCharacter$ = createEffect(() => this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
       return a.user.notFound !== b.user.notFound
@@ -125,10 +125,10 @@ export class AuthEffects {
         && [...action.user.customCharacters, ...action.user.lodestoneIds].length === 0;
     }),
     map(() => new NoLinkedCharacter())
-  );
+  ));
 
-  @Effect()
-  openLinkPopupOnNoLinkedCharacter$ = this.actions$.pipe(
+
+  openLinkPopupOnNoLinkedCharacter$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
     withLatestFrom(this.authFacade.linkingCharacter$),
     filter(([, linking]) => !linking),
@@ -136,17 +136,17 @@ export class AuthEffects {
       this.authFacade.addCharacter(true, true);
     }),
     map(() => new LinkingCharacter())
-  );
+  ));
 
-  @Effect()
-  setAsDefaultCharacter$ = this.actions$.pipe(
+
+  setAsDefaultCharacter$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.AddCharacter),
     filter((action: AddCharacter) => action.setAsDefault),
     map((action: AddCharacter) => new SetDefaultCharacter(action.lodestoneId))
-  );
+  ));
 
-  @Effect()
-  saveUserOnEdition$ = this.actions$.pipe(
+
+  saveUserOnEdition$ = createEffect(() => this.actions$.pipe(
     ofType(
       AuthActionTypes.AddCharacter,
       AuthActionTypes.RemoveCharacter,
@@ -164,10 +164,10 @@ export class AuthEffects {
     debounceTime(100),
     withLatestFrom(this.authFacade.user$),
     map(([, user]) => new UpdateUser(user))
-  );
+  ));
 
-  @Effect()
-  selectContentId$ = this.actions$.pipe(
+
+  selectContentId$ = createEffect(() => this.actions$.pipe(
     ofType<ApplyContentId>(AuthActionTypes.ApplyContentId),
     filter(() => this.settings.followIngameCharacterSwitches),
     withLatestFrom(this.authFacade.user$),
@@ -178,43 +178,43 @@ export class AuthEffects {
       }
       return new UpdateUser(user);
     })
-  );
+  ));
 
-  @Effect()
-  updateUser$ = this.actions$.pipe(
+
+  updateUser$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
     debounceTime(2000),
     switchMap((action) => {
       return this.userService.set(action.user.$key, action.user);
     }),
     map(() => new UserPersisted())
-  );
+  ));
 
-  @Effect()
-  registerUser$ = this.actions$.pipe(
+
+  registerUser$ = createEffect(() => this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
     switchMap((action) => {
       return this.userService.set(action.uid, action.user);
     }),
     map(() => new UserPersisted())
-  );
+  ));
 
-  @Effect()
-  fetchAlarmsOnUserAuth$ = this.actions$.pipe(
+
+  fetchAlarmsOnUserAuth$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
     map(() => new LoadAlarms())
-  );
+  ));
 
-  @Effect({ dispatch: false })
-  markAsDoneInLog$ = this.actions$.pipe(
+
+  markAsDoneInLog$ = createEffect(() => this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
     debounceBufferTime(2000),
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
-    withLatestFrom(this.authFacade.logTracking$),
+    withLatestFrom(this.authFacade.serverLogTracking$),
     switchMap(([[actions, user], logTracking]) => {
       const entries = actions.filter(action => {
-        return !logTracking[action.log].includes(action.itemId);
+        return !action.done || !logTracking[action.log].includes(action.itemId);
       }).map(action => {
         return {
           itemId: action.itemId,
@@ -227,10 +227,10 @@ export class AuthEffects {
       }
       return EMPTY;
     })
-  );
+  ), { dispatch: false });
 
-  @Effect()
-  fetchCommissionProfile$ = this.actions$.pipe(
+
+  fetchCommissionProfile$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
     switchMap(({ uid }) => {
       return this.commissionProfileService.get(uid)
@@ -243,7 +243,7 @@ export class AuthEffects {
         );
     }),
     map(cProfile => new CommissionProfileLoaded(cProfile))
-  );
+  ));
 
   fetchLogTracking$ = createEffect(() =>
     this.actions$.pipe(
@@ -264,8 +264,8 @@ export class AuthEffects {
 
   private nickNameWarningShown = false;
 
-  @Effect({ dispatch: false })
-  showNicknameWarning$ = this.actions$.pipe(
+
+  showNicknameWarning$ = createEffect(() => this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     debounceTime(10000),
     tap((action: UserFetched) => {
@@ -276,7 +276,7 @@ export class AuthEffects {
       }
     }),
     switchMapTo(EMPTY)
-  );
+  ), { dispatch: false });
 
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,

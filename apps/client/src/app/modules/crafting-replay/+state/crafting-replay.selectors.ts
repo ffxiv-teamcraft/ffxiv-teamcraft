@@ -7,7 +7,7 @@ import {
 } from './crafting-replay.reducer';
 
 // Lookup the 'CraftingReplay' feature state managed by NgRx
-export const getCraftingReplayState = createFeatureSelector<CraftingReplayPartialState,
+export const getCraftingReplayState = createFeatureSelector<
   State>(CRAFTINGREPLAY_FEATURE_KEY);
 
 const { selectAll, selectEntities } = craftingReplayAdapter.getSelectors();
