@@ -1,19 +1,24 @@
 export const patchNotes = `### Bug Fixes
 
-* **commissions:** added not found message when opening a missing commission.
-* **db:** removed collectable icon from some items that cannot be crafted as such anymore.
-* **desktop:** autofill is now faster when not crafting or gathering.
-* **inventory-optimizer:** only consider ingredients for deprecated HQ optimizer.
-* **lists:** fixed FC sharing not always working properly.
-* **lists:** fixed lists page sometimes not loading.
+* **desktop:** better slow mode for autofill.
+* **list-details:** better reliability on transactional write.
+* **list-details:** increased debounce on list update to prevent rollbacks.
+* **log-tracker:** fixed gathering folklores using wrong labels.
+* **log-tracker:** fixed progression not being saved properly.
 
 
 ### Features
 
-* added min gathering when available in fish tooltips.
+* **alarms:** new setting in alarms popup to enable TTS notification.
+* **desktop:** app now remembers zoom factor on close.
+* **layout:** new filter: IS_FROM_HOUSING_VENDOR.
+* **list-details:** added # of crafts in the title of panels containing crafts.
+* **list-details:** fill with inventory now allows you to select the inventory to fill from.
+* **log-tracker:** better layout using scroll container for pages.
 
 
 ### Performance Improvements
 
-* **list-details:** fixed performance issue with rows loading useless data.
-* **list-history:** added virtual scrolling to prevent issues loading the popup.`;
+* **core:** update to Angular 13 and Antd 13.
+* **list-details:** removed badge on comment button to improve loading performances.
+* **lists:** fixed a possible OOM crash when deleting a list with a large history.`;
