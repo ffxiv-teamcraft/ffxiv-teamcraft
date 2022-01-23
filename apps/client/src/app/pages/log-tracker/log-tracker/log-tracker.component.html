@@ -126,7 +126,6 @@
               <i nzIconfont="icon-map" nz-icon></i>
               <img alt="BTN" class="job-icon" src="./assets/icons/BTN.png">
             </button>
-
           </div>
         </ng-template>
         <ng-template nz-tab>
@@ -140,7 +139,7 @@
                      class="job-icon">{{ tab.name }}
               </ng-template>
               <ng-template nz-tab>
-                <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left">
+                <nz-tabset nzAnimated="false" nzSize="small" nzTabPosition="left" class="vertical-tabs">
                   <ng-container *ngFor="let page of tab">
                     <nz-tab *ngIf="!hideCompleted || !isDoLPageDone(page)" [nzTitle]="titleTemplate" (nzSelect)="dolSelectedPage = page.id">
                       <ng-template #titleTemplate>
