@@ -43,7 +43,7 @@ import { SettingsService } from '../modules/settings/settings.service';
 @Injectable()
 export class AuthEffects {
 
-  
+
   getUser$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
     mergeMap(() => this.af.authState),
@@ -62,14 +62,14 @@ export class AuthEffects {
     })
   ));
 
-  
+
   loginAsAnonymous$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
     mergeMap(() => from(this.af.signInAnonymously())),
     map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
   ));
 
-  
+
   fetchUser$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
     exhaustMap((action: LoggedInAsAnonymous | Authenticated) => {
@@ -111,7 +111,7 @@ export class AuthEffects {
     debounceTime(250)
   ));
 
-  
+
   watchNoLinkedCharacter$ = createEffect(() => this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     distinctUntilChanged((a, b) => {
@@ -127,7 +127,7 @@ export class AuthEffects {
     map(() => new NoLinkedCharacter())
   ));
 
-  
+
   openLinkPopupOnNoLinkedCharacter$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.NoLinkedCharacter),
     withLatestFrom(this.authFacade.linkingCharacter$),
@@ -138,14 +138,14 @@ export class AuthEffects {
     map(() => new LinkingCharacter())
   ));
 
-  
+
   setAsDefaultCharacter$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.AddCharacter),
     filter((action: AddCharacter) => action.setAsDefault),
     map((action: AddCharacter) => new SetDefaultCharacter(action.lodestoneId))
   ));
 
-  
+
   saveUserOnEdition$ = createEffect(() => this.actions$.pipe(
     ofType(
       AuthActionTypes.AddCharacter,
@@ -166,7 +166,7 @@ export class AuthEffects {
     map(([, user]) => new UpdateUser(user))
   ));
 
-  
+
   selectContentId$ = createEffect(() => this.actions$.pipe(
     ofType<ApplyContentId>(AuthActionTypes.ApplyContentId),
     filter(() => this.settings.followIngameCharacterSwitches),
@@ -180,7 +180,7 @@ export class AuthEffects {
     })
   ));
 
-  
+
   updateUser$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateUser>(AuthActionTypes.UpdateUser),
     debounceTime(2000),
@@ -190,7 +190,7 @@ export class AuthEffects {
     map(() => new UserPersisted())
   ));
 
-  
+
   registerUser$ = createEffect(() => this.actions$.pipe(
     ofType<RegisterUser>(AuthActionTypes.RegisterUser),
     switchMap((action) => {
@@ -199,22 +199,22 @@ export class AuthEffects {
     map(() => new UserPersisted())
   ));
 
-  
+
   fetchAlarmsOnUserAuth$ = createEffect(() => this.actions$.pipe(
     ofType(AuthActionTypes.Authenticated, AuthActionTypes.LoggedInAsAnonymous),
     map(() => new LoadAlarms())
   ));
 
-  
+
   markAsDoneInLog$ = createEffect(() => this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
     debounceBufferTime(2000),
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
-    withLatestFrom(this.authFacade.logTracking$),
+    withLatestFrom(this.authFacade.serverLogTracking$),
     switchMap(([[actions, user], logTracking]) => {
       const entries = actions.filter(action => {
-        return !logTracking[action.log].includes(action.itemId);
+        return !action.done || !logTracking[action.log].includes(action.itemId);
       }).map(action => {
         return {
           itemId: action.itemId,
@@ -229,7 +229,7 @@ export class AuthEffects {
     })
   ), { dispatch: false });
 
-  
+
   fetchCommissionProfile$ = createEffect(() => this.actions$.pipe(
     ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
     switchMap(({ uid }) => {
@@ -264,7 +264,7 @@ export class AuthEffects {
 
   private nickNameWarningShown = false;
 
-  
+
   showNicknameWarning$ = createEffect(() => this.actions$.pipe(
     ofType<UserFetched>(AuthActionTypes.UserFetched),
     debounceTime(10000),

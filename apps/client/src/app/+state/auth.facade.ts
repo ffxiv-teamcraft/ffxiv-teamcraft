@@ -64,6 +64,8 @@ export class AuthFacade {
 
   logTracking$ = this.store.select(authQuery.getLogTracking).pipe(filter(log => !!log));
 
+  serverLogTracking$ = this.store.select(authQuery.getServerLogTracking).pipe(filter(log => !!log));
+
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.af.user.pipe(
