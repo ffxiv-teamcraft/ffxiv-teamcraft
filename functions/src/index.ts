@@ -30,7 +30,8 @@ function getAlgoliaEntry(snapshot) {
   };
 }
 
-export * as stats from './stats';
+// Uncomment to enable stats monitoring, can have a pretty high GCF usage so be careful with these.
+// export * as stats from './stats';
 
 /**
  * SEARCH STUFF
