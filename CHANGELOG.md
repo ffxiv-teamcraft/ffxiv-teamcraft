@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.0"></a>
+# [9.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.11...v9.5.0) (2022-01-23)
+
+
+### Bug Fixes
+
+* **desktop:** better slow mode for autofill ([abf4790](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/abf4790))
+* **list-details:** better reliability on transactional write ([e87b33c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e87b33c))
+* **list-details:** increased debounce on list update to prevent rollbacks ([c5de35f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5de35f))
+* **log-tracker:** fixed gathering folklores using wrong labels ([721bdb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/721bdb2))
+* **log-tracker:** fixed progression not being saved properly ([1438abc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1438abc))
+
+
+### Features
+
+* **alarms:** new setting in alarms popup to enable TTS notification ([878b1b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/878b1b3))
+* **desktop:** app now remembers zoom factor on close ([267d5d7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/267d5d7))
+* **layout:** new filter: IS_FROM_HOUSING_VENDOR ([91705a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91705a6))
+* **list-details:** added # of crafts in the title of panels containing crafts ([a0bd3be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0bd3be))
+* **list-details:** fill with inventory now allows you to select the inventory to fill from ([ac9311d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac9311d))
+* **log-tracker:** better layout using scroll container for pages ([b4bbbd3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4bbbd3))
+
+
+### Performance Improvements
+
+* **core:** update to Angular 13 and Antd 13 ([2f07ef4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f07ef4))
+* **list-details:** removed badge on comment button to improve loading performances ([bd656e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd656e5))
+* **lists:** fixed a possible OOM crash when deleting a list with a large history ([22c3165](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22c3165))
+
+
+
 <a name="9.4.11"></a>
 ## [9.4.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.10...v9.4.11) (2022-01-20)
 
