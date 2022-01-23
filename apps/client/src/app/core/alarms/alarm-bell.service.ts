@@ -112,8 +112,8 @@ export class AlarmBellService {
           }
         ).subscribe();
         this.notificationService.info(notificationTitle, notificationBody);
-        this.ring(alarm, itemName);
       }
+      this.ring(alarm, itemName);
     });
   }
 
