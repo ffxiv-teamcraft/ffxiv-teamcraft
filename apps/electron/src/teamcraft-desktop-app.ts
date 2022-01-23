@@ -1,11 +1,11 @@
 import { app, BrowserWindow, ipcMain, protocol } from 'electron';
 import { createServer as createHttpServer, Server } from 'http';
-import * as request from 'request';
+import request from 'request';
 import { MainWindow } from './window/main-window';
 import { TrayMenu } from './window/tray-menu';
 import { Store } from './store';
 import { PacketCapture } from './pcap/packet-capture';
-import * as log from 'electron-log';
+import log from 'electron-log';
 import { Constants } from './constants';
 import { join } from 'path';
 import { parse } from 'url';

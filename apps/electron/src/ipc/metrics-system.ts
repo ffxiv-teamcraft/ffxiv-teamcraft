@@ -1,6 +1,6 @@
 import { dialog, ipcMain, OpenDialogOptions } from 'electron';
 import { Store } from '../store';
-import * as isDev from 'electron-is-dev';
+import isDev from 'electron-is-dev';
 import { join } from 'path';
 import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync } from 'fs';
 import { moveSync } from 'fs-extra';

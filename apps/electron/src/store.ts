@@ -1,4 +1,4 @@
-import * as ElectronStore from 'electron-store';
+import ElectronStore from 'electron-store';
 
 export class Store {
   private store = new ElectronStore();
