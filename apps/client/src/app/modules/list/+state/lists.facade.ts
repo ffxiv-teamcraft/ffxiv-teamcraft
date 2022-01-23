@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
+  AddHistoryEntry,
   ClearModificationsHistory,
   CreateList,
   DeleteList,
@@ -51,6 +52,7 @@ import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { InventoryService } from '../../inventory/inventory.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { ModificationEntry } from '../model/modification-entry';
 
 declare const gtag: Function;
 
@@ -150,11 +152,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedListModificationHistory$ = this.store.select(listsQuery.getSelectedId).pipe(
-    distinctUntilChanged(),
-    switchMap(key => this.listService.getModificationsHistory(key)),
-    shareReplay(1)
-  );
+  selectedListModificationHistory$ = this.store.select(listsQuery.getCurrentListHistory);
 
   selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
     filter(list => list !== undefined)
@@ -510,5 +508,9 @@ export class ListsFacade {
       })
     );
 
+  }
+
+  addModificationsHistoryEntry(entry: ModificationEntry): void {
+    this.store.dispatch(new AddHistoryEntry(entry));
   }
 }

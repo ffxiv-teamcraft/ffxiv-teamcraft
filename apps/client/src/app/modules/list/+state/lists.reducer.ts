@@ -1,6 +1,7 @@
 import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { ListController } from '../list-controller';
+import { ModificationEntry } from '../model/modification-entry';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -17,6 +18,7 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
+  selectedListHistory: ModificationEntry[];
 }
 
 export const initialState: ListsState = {
@@ -26,7 +28,8 @@ export const initialState: ListsState = {
   deleted: [],
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
-  showArchived: false
+  showArchived: false,
+  selectedListHistory: []
 };
 
 export function listsReducer(
@@ -171,6 +174,14 @@ export function listsReducer(
       state = {
         ...state,
         selectedClone: action.payload
+      };
+      break;
+    }
+
+    case ListsActionTypes.ListHistoryLoaded: {
+      state = {
+        ...state,
+        selectedListHistory: action.history
       };
       break;
     }

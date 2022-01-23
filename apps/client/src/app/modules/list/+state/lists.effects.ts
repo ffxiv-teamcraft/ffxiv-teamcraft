@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
+  AddHistoryEntry,
   ArchivedListsLoaded,
   ClearModificationsHistory,
   ConvertLists,
@@ -8,12 +9,14 @@ import {
   DeleteList,
   DeleteLists,
   ListDetailsLoaded,
+  ListHistoryLoaded,
   ListsActionTypes,
   LoadListDetails,
   LoadTeamLists,
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
+  SelectList,
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
@@ -69,6 +72,8 @@ import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
+import { ModificationEntry } from '../model/modification-entry';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -371,7 +376,7 @@ export class ListsEffects {
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
     switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      this.listService.addModificationsHistoryEntry(list.$key, {
+      this.listsFacade.addModificationsHistoryEntry({
         amount: action.doneDelta,
         date: Date.now(),
         itemId: action.itemId,
@@ -532,6 +537,50 @@ export class ListsEffects {
         return EMPTY;
       }
       return this.listService.pureUpdate(action.$key, action.payload);
+    })
+  ), { dispatch: false });
+
+
+  /**
+   * HISTORY STUFF
+   */
+  loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
+    ofType<SelectList>(ListsActionTypes.SelectList),
+    switchMap(action => {
+      return this.listService.getModificationsHistory(action.key);
+    }),
+    map(history => new ListHistoryLoaded(history))
+  ));
+
+  addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
+    ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
+    debounceBufferTime(8000),
+    withLatestFrom(this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$),
+    mergeMap(([actions, history, selectedListKey]) => {
+      const update: { key: string, increment: number }[] = [];
+      const create: ModificationEntry[] = [];
+
+      actions.forEach(({ entry }) => {
+        const historyEntry = history.find(e => {
+          return e.itemId === entry.itemId
+            && e.finalItem === entry.finalItem
+            && e.userId === entry.userId
+            && (Date.now() - e.date) <= 1200000;
+        });
+        if (historyEntry) {
+          update.push({
+            key: historyEntry.$key,
+            increment: entry.amount
+          });
+        } else {
+          create.push(entry);
+        }
+      });
+
+      return combineLatest([
+        ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
+        ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
+      ]);
     })
   ), { dispatch: false });
 
