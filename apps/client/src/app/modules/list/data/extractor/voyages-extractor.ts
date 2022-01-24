@@ -5,6 +5,7 @@ import { VoyageSource } from '../../model/voyage-source';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { uniqBy } from 'lodash';
 
 export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
 
@@ -27,12 +28,12 @@ export class VoyagesExtractor extends AbstractExtractor<VoyageSource[]> {
       this.lazyData.getRow('voyageSources', itemId, [])
     ]).pipe(
       map(([airshipVoyages, submarineVoyages, voyageSource]) => {
-        return voyageSource.map(({ type, id }) => {
+        return uniqBy(voyageSource, e => `${e.type}:${e.id}`).map(({ type, id }) => {
           return {
             type,
             name: (type === ExplorationType.AIRSHIP ? airshipVoyages : submarineVoyages)[id]
           };
-        });
+        }).filter(e => !!e.name);
       })
     );
   }
