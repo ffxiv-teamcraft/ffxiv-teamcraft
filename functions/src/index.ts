@@ -30,6 +30,9 @@ function getAlgoliaEntry(snapshot) {
   };
 }
 
+// Uncomment to enable stats monitoring, can have a pretty high GCF usage so be careful with these.
+// export * as stats from './stats';
+
 /**
  * SEARCH STUFF
  */
@@ -127,6 +130,11 @@ export const desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((re
     return;
   } else if (req.path.endsWith('.nupkg')) {
     const version = req.path.split('-')[2];
+    const creationsRef = admin.database().ref(`/downloads/${version.replace(/\./gmi, '-')}`);
+    // Increment the number of lists created using the tool.
+    creationsRef.transaction(current => {
+      return (current || 0) + 1;
+    });
     res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.path}`);
     return;
   }

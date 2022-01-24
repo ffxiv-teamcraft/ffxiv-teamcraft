@@ -73,18 +73,18 @@ export class LogsExtractor extends AbstractExtractor {
                 return 1000 + 8 * (row.ID - 1000) + index;
               } else if (row.ID >= 2010 && row.ID <= 2012) {
                 return [
-                  [2032, 2033, 2034, 2035],
-                  [2028, 2029, 2030, 2031],
-                  [2024, 2025, 2026, 2027]
-                ][row.ID - 2010][index];
-              } else if ([2008, 2009].includes(row.ID)) {
+                  // Quarrying, Mining, Logging, Harvesting
+                  [-1, -1, -1, 2027], // Ilsabard
+                  [-1, 2029, -1, 2031], // Sea of Stars
+                  [2033, 2024, 2034, -1]  // World Sundered
+                ][row.ID - 2010][index] || -1;
+              } else if ([2006, 2007, 2008, 2009].includes(row.ID)) {
                 return -1;
               } else {
                 // DoL folklores, only 4 DoLs tho
                 return index < 4 ? (2000 + 4 * (row.ID - 2000) + index) : -1;
               }
-            })
-            .filter(id => id > -1),
+            }),
           craftLevel: row.CraftOpeningLevel,
           gatheringLevel: row.GatheringOpeningLevel
         };

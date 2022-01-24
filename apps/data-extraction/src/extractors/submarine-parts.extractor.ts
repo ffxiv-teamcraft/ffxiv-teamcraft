@@ -1,6 +1,5 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { XivapiEndpoint } from '@xivapi/angular-client';
 import { combineLatest } from 'rxjs';
 
 export class SubmarinePartsExtractor extends AbstractExtractor {
@@ -9,14 +8,14 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
     const parts = {};
 
     this.getAllPages(this.getSearchEndpointWithQuery({
-      indexes: XivapiEndpoint.Item,
+      indexes: 'Item',
       columns: 'ID',
-      filters: 'FilterGroup=36',
+      filters: 'FilterGroup=36'
     })).pipe(
       switchMap(res => {
         return combineLatest(res.Results.map(row => {
-          return this.get(`https://xivapi.com/Item/${row.ID}`)
-        }))
+          return this.get(`https://xivapi.com/Item/${row.ID}`);
+        }));
       }),
       map((items) => items.map((item) => {
         return {
@@ -25,7 +24,7 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
         };
       })),
       switchMap((itemResults) => {
-        return this.get(this.getResourceEndpointWithQuery(XivapiEndpoint.SubmarinePart, {
+        return this.get(this.getResourceEndpointWithQuery('SubmarinePart' as any, {
           ids: itemResults.map((r) => r.additionalData.ID).join(','),
           columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,Class,RepairMaterials'
         }))
@@ -34,21 +33,21 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
             tap((partResults) => {
               partResults
                 .forEach((part) => {
-                parts[part.ID] = {
-                  id: part.ID,
-                  slot: part.Slot,
-                  rank: part.Rank,
-                  components: part.Components,
-                  surveillance: part.Surveillance,
-                  retrieval: part.Retrieval,
-                  speed: part.Speed,
-                  range: part.Range,
-                  favor: part.Favor,
-                  class: part.Class,
-                  repairMaterials: part.RepairMaterials,
-                  itemId: itemResults.filter((r) => r.additionalData.ID === part.ID)[0]['itemId']
-                };
-              });
+                  parts[part.ID] = {
+                    id: part.ID,
+                    slot: part.Slot,
+                    rank: part.Rank,
+                    components: part.Components,
+                    surveillance: part.Surveillance,
+                    retrieval: part.Retrieval,
+                    speed: part.Speed,
+                    range: part.Range,
+                    favor: part.Favor,
+                    class: part.Class,
+                    repairMaterials: part.RepairMaterials,
+                    itemId: itemResults.filter((r) => r.additionalData.ID === part.ID)[0]['itemId']
+                  };
+                });
             })
           );
       })

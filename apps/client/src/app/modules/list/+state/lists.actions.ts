@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { List } from '../model/list';
 import { ListRow } from '../model/list-row';
+import { ModificationEntry } from '../model/modification-entry';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
@@ -26,6 +27,8 @@ export enum ListsActionTypes {
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
+  ListHistoryLoaded = '[Lists] List History Loaded',
+  AddHistoryEntry = '[Lists] Add List History Entry',
 
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
@@ -194,6 +197,20 @@ export class ListDetailsLoaded implements Action {
   }
 }
 
+export class ListHistoryLoaded implements Action {
+  readonly type = ListsActionTypes.ListHistoryLoaded;
+
+  constructor(public history: ModificationEntry[]) {
+  }
+}
+
+export class AddHistoryEntry implements Action {
+  readonly type = ListsActionTypes.AddHistoryEntry;
+
+  constructor(public entry: ModificationEntry) {
+  }
+}
+
 export class CreateList implements Action {
   readonly type = ListsActionTypes.CreateList;
 
@@ -300,4 +317,6 @@ export type ListsAction =
   | UpdateSelectedClone
   | MarkItemsHq
   | UnloadListDetails
-  | ClearModificationsHistory;
+  | ClearModificationsHistory
+  | ListHistoryLoaded
+  | AddHistoryEntry;

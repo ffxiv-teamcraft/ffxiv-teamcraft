@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.1"></a>
+## [9.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.0...v9.5.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms not ringing and spamming notifications ([a119c60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a119c60))
+* **alarms:** fixed notification spam when TTS failed ([fe5abb0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe5abb0))
+* **db:** fixed duplicates and wrong entries in voyage data ([84de85e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/84de85e))
+* **log-tracker:** fixed new folklore pages not showing up properly ([7ab5177](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ab5177))
+* **log-tracker:** fixed page content not being scrollable with new sidebar nav ([b3e1445](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3e1445))
+
+
+
 <a name="9.5.0"></a>
 # [9.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.4.11...v9.5.0) (2022-01-23)
 

@@ -1,17 +1,16 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { map, tap } from 'rxjs/operators';
-import { XivapiEndpoint } from '@xivapi/angular-client';
 
 export class SubmarineRanksExtractor extends AbstractExtractor {
 
   protected doExtract(): any {
     const ranks = {};
 
-    this.getAllPages(this.getResourceEndpointWithQuery(XivapiEndpoint.SubmarineRank, {
-      columns: 'ID,Capacity,ExpToNext,SurveillanceBonus,RetrievalBonus,SpeedBonus,RangeBonus,FavorBonus',
+    this.getAllPages(this.getResourceEndpointWithQuery('SubmarineRank' as any, {
+      columns: 'ID,Capacity,ExpToNext,SurveillanceBonus,RetrievalBonus,SpeedBonus,RangeBonus,FavorBonus'
     })).pipe(
       map((page) => page.Results),
-      tap((rankResults)  => {
+      tap((rankResults) => {
         rankResults.forEach((result) => {
           ranks[result.ID] = {
             id: result.ID,
@@ -21,10 +20,10 @@ export class SubmarineRanksExtractor extends AbstractExtractor {
             retrievalBonus: result.RetrievalBonus,
             speedBonus: result.SpeedBonus,
             rangeBonus: result.RangeBonus,
-            favorBonus: result.FavorBonus,
+            favorBonus: result.FavorBonus
           };
         });
-      }),
+      })
     ).subscribe(() => {
       this.persistToJsonAsset('submarine-ranks', ranks);
       this.done();

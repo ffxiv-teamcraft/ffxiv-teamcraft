@@ -206,6 +206,18 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return res$;
   }
 
+  incrementModificationsHistoryEntry(listId: any, entry: { key: string; increment: number }) {
+    const res$ = new Subject<void>();
+    from(this.firestore.collection(`/lists/${listId}/history`).doc(entry.key).update({ amount: firebase.firestore.FieldValue.increment(entry.increment) })).pipe(
+      tap(() => this.recordOperation('write', 'history')),
+      mapTo(null),
+      first()
+    ).subscribe(() => {
+      res$.next();
+    });
+    return res$;
+  }
+
   removeModificationsHistoryEntry(listId: string, entryId: string): Observable<void> {
     return from(this.firestore.collection(`/lists/${listId}/history`).doc(entryId).delete()).pipe(
       tap(() => this.recordOperation('delete', 'history')),
