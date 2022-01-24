@@ -86,6 +86,7 @@ export class FishingLogTrackerComponent extends TrackerComponent {
           this.message.success(this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy_success'));
         }
       } catch (e) {
+        console.error(e);
         this.message.error(this.translate.instant('LOG_TRACKER.Import_from_carbuncleplushy_failed'));
       }
     });
