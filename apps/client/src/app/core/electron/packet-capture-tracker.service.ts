@@ -108,7 +108,7 @@ export class PacketCaptureTrackerService {
       withLatestFrom(statusIsNull$),
       debounce(([, statusIsNull]) => {
         if (statusIsNull) {
-          return timer(500);
+          return timer(2000);
         }
         return timer(8000);
       }),
