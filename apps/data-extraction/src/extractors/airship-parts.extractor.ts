@@ -1,6 +1,5 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { XivapiEndpoint } from '@xivapi/angular-client';
 import { combineLatest } from 'rxjs';
 
 export class AirshipPartsExtractor extends AbstractExtractor {
@@ -9,7 +8,7 @@ export class AirshipPartsExtractor extends AbstractExtractor {
     const parts = {};
 
     this.getAllPages(this.getSearchEndpointWithQuery({
-      indexes: XivapiEndpoint.Item,
+      indexes: 'Item',
       columns: 'ID',
       filters: 'FilterGroup=28'
     })).pipe(
@@ -25,7 +24,7 @@ export class AirshipPartsExtractor extends AbstractExtractor {
         };
       })),
       switchMap((itemResults) => {
-        return this.get(this.getResourceEndpointWithQuery(XivapiEndpoint.AirshipExplorationPart, {
+        return this.get(this.getResourceEndpointWithQuery('AirshipExplorationPart' as any, {
           ids: itemResults.map((r) => r.additionalData.ID).join(','),
           columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,Class,RepairMaterials'
         }))

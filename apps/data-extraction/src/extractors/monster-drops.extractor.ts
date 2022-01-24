@@ -1,7 +1,7 @@
 import { AbstractExtractor } from '../abstract-extractor';
 import { createReadStream } from 'fs-extra';
 import { join } from 'path';
-import * as csv from 'csv-parser';
+import csv from 'csv-parser';
 
 export class MonsterDropsExtractor extends AbstractExtractor {
   protected doExtract(): any {
