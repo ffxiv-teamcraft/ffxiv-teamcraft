@@ -20,6 +20,7 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
+  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndexes,
@@ -38,6 +39,7 @@ import {
   mapTo,
   mergeMap,
   switchMap,
+  takeUntil,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -546,10 +548,18 @@ export class ListsEffects {
    */
   loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
     ofType<SelectList>(ListsActionTypes.SelectList),
-    switchMap(action => {
-      return this.listService.getModificationsHistory(action.key);
-    }),
-    map(history => new ListHistoryLoaded(history))
+    withLatestFrom(this.listsFacade.listHistories$),
+    filter(([action, histories]) => !histories[action.key]),
+    mergeMap(([action]) => {
+      const stop$ = this.actions$.pipe(
+        ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+        filter(a => a.key === action.key)
+      );
+      return this.listService.getModificationsHistory(action.key).pipe(
+        takeUntil(stop$),
+        map(history => new ListHistoryLoaded(action.key, history))
+      );
+    })
   ));
 
   addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
@@ -580,7 +590,9 @@ export class ListsEffects {
       return combineLatest([
         ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
         ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
-      ]);
+      ]).pipe(
+        first()
+      );
     })
   ), { dispatch: false });
 

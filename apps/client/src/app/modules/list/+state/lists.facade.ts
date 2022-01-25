@@ -152,6 +152,8 @@ export class ListsFacade {
     shareReplay(1)
   );
 
+  listHistories$ = this.store.select(listsQuery.getListHistories);
+
   selectedListModificationHistory$ = this.store.select(listsQuery.getCurrentListHistory);
 
   selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
