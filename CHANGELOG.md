@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.2"></a>
+## [9.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.1...v9.5.2) (2022-01-25)
+
+
+### Bug Fixes
+
+* **desktop:** fixed a layout issue in retainers page ([0d5d3e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d5d3e7))
+
+
+### Performance Improvements
+
+* **lists:** better memory management and history loading system ([0492e18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0492e18))
+
+
+
 <a name="9.5.1"></a>
 ## [9.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.0...v9.5.1) (2022-01-24)
 

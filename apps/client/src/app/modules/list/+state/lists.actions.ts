@@ -27,6 +27,7 @@ export enum ListsActionTypes {
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
+  LoadListHistory = '[Lists] Load List History',
   ListHistoryLoaded = '[Lists] List History Loaded',
   AddHistoryEntry = '[Lists] Add List History Entry',
 
@@ -200,7 +201,14 @@ export class ListDetailsLoaded implements Action {
 export class ListHistoryLoaded implements Action {
   readonly type = ListsActionTypes.ListHistoryLoaded;
 
-  constructor(public history: ModificationEntry[]) {
+  constructor(public listId: string, public history: ModificationEntry[]) {
+  }
+}
+
+export class LoadListHistory implements Action {
+  readonly type = ListsActionTypes.LoadListHistory;
+
+  constructor(public listId: string) {
   }
 }
 
@@ -319,4 +327,5 @@ export type ListsAction =
   | UnloadListDetails
   | ClearModificationsHistory
   | ListHistoryLoaded
+  | LoadListHistory
   | AddHistoryEntry;

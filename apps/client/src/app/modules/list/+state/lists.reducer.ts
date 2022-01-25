@@ -18,7 +18,7 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
-  selectedListHistory: ModificationEntry[];
+  listHistories: Record<string, ModificationEntry[]>;
 }
 
 export const initialState: ListsState = {
@@ -29,7 +29,7 @@ export const initialState: ListsState = {
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
   showArchived: false,
-  selectedListHistory: []
+  listHistories: {}
 };
 
 export function listsReducer(
@@ -181,7 +181,21 @@ export function listsReducer(
     case ListsActionTypes.ListHistoryLoaded: {
       state = {
         ...state,
-        selectedListHistory: action.history
+        listHistories: {
+          ...state.listHistories,
+          [action.listId]: action.history
+        }
+      };
+      break;
+    }
+
+    case ListsActionTypes.UnloadListDetails: {
+      state = {
+        ...state,
+        listHistories: {
+          ...state.listHistories,
+          [action.key]: null
+        }
       };
       break;
     }

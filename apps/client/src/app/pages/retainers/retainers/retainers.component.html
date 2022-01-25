@@ -38,7 +38,7 @@
             <nz-collapse-panel [nzHeader]="retainerHeader" [nzActive]="panelsState[retainer.name]"
                                (nzActiveChange)="updatePanelsState(panelsState,retainer.name, $event)">
               <ng-template #retainerHeader>
-                <div nz-row>
+                <div nz-row class="retainer-panel-header">
                   <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="flex-start center">
                     {{retainer.name}}
                   </div>
