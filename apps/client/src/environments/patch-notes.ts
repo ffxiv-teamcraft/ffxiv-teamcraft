@@ -1,8 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed a layout issue in retainers page.
+* **list:** better data integrity system to prevent rollbacks.
 
 
 ### Performance Improvements
 
-* **lists:** better memory management and history loading system.`;
+* **list:** change detector optimizations for better inital loading (~60% faster).`;
