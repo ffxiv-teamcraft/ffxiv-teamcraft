@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, Type } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, Type } from '@angular/core';
 import { ItemSource } from '../../model/item-source';
 import { DataType } from '../../data/data-type';
 import { Craft } from '../../../../model/garland-tools/craft';
@@ -25,6 +25,7 @@ import { MogstationComponent } from '../../../item-details/mogstation/mogstation
 import { QuestsComponent } from '../../../item-details/quests/quests.component';
 import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
 import { first } from 'rxjs/operators';
+import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -32,7 +33,7 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./item-sources-display.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemSourcesDisplayComponent {
+export class ItemSourcesDisplayComponent extends TeamcraftOptimizedComponent {
   @Input()
   sources: ItemSource[];
 
@@ -51,7 +52,8 @@ export class ItemSourcesDisplayComponent {
   dataTypes = DataType;
 
   constructor(private modal: NzModalService, private i18n: I18nToolsService,
-              private rotationPicker: RotationPickerService) {
+              private rotationPicker: RotationPickerService, cd: ChangeDetectorRef) {
+    super(cd);
   }
 
   public openGatheredByPopup(item: ListRow): void {
