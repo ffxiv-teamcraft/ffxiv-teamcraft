@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-crafting-replay-row',
@@ -26,7 +27,7 @@ export class CraftingReplayRowComponent {
   }
 
   get permissionLevel(): PermissionLevel {
-    return this.replay.getPermissionLevel(this.userId);
+    return PermissionsController.getPermissionLevel(this.replay, this.userId);
   }
 
   saveReplay(replay: CraftingReplay): void {

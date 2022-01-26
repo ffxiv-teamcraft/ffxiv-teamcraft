@@ -17,6 +17,7 @@ import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custo
 import { CustomLink } from '../../../../core/database/custom-links/custom-link';
 import { FolderAdditionPickerComponent } from '../../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
+import { PermissionsController } from '../../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-rotation-folder-panel',
@@ -36,7 +37,7 @@ export class RotationFolderPanelComponent {
   private folder$: ReplaySubject<CraftingRotationsFolder> = new ReplaySubject<CraftingRotationsFolder>();
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.folder$]).pipe(
-    map(([userId, folder]) => folder.getPermissionLevel(userId)),
+    map(([userId, folder]) => PermissionsController.getPermissionLevel(folder, userId)),
     distinctUntilChanged(),
     shareReplay(1)
   );

@@ -208,7 +208,7 @@ export class ListHistoryLoaded implements Action {
 export class LoadListHistory implements Action {
   readonly type = ListsActionTypes.LoadListHistory;
 
-  constructor(public listId: string) {
+  constructor(public key: string) {
   }
 }
 

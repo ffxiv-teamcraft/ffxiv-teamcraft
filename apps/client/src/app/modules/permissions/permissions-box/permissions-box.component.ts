@@ -2,10 +2,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { PermissionDisplayRow } from '../permission-display-row';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { filter, first, map, switchMap } from 'rxjs/operators';
-import { XivapiService } from '@xivapi/angular-client';
-import { combineLatest, of, ReplaySubject, Subject } from 'rxjs';
 import { UserService } from '../../../core/database/user.service';
 import { UserPickerService } from '../../user-picker/user-picker.service';
 import { FreecompanyPickerService } from '../../freecompany-picker/freecompany-picker.service';
@@ -13,6 +11,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
 import { LodestoneService } from '../../../core/api/lodestone.service';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-permissions-box',
@@ -121,7 +120,7 @@ export class PermissionsBoxComponent implements OnInit {
         filter(res => res !== undefined)
       )
       .subscribe((userId) => {
-        this.data.addPermissionRow(userId);
+        PermissionsController.addPermissionRow(this.data, userId);
         this.changes$.next(this.data);
       });
   }
@@ -132,13 +131,13 @@ export class PermissionsBoxComponent implements OnInit {
         filter(res => res !== undefined)
       )
       .subscribe((fcId) => {
-        this.data.addPermissionRow(fcId);
+        PermissionsController.addPermissionRow(this.data, fcId);
         this.changes$.next(this.data);
       });
   }
 
   public updatePermission(id: string, newLevel: PermissionLevel): void {
-    this.data.setPermissionLevel(id, newLevel);
+    PermissionsController.setPermissionLevel(this.data, id, newLevel);
     this.changes$.next(this.data);
   }
 

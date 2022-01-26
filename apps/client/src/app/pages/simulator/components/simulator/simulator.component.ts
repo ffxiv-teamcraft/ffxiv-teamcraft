@@ -75,6 +75,7 @@ import { FinalAppraisal } from '@ffxiv-teamcraft/simulator';
 import { observeInput } from '../../../../core/rxjs/observe-input';
 import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
+import { PermissionsController } from '../../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-simulator',
@@ -182,7 +183,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public permissionLevel$ = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => {
-      return rotation.authorId === undefined ? 40 : rotation.getPermissionLevel(userId);
+      return rotation.authorId === undefined ? 40 : PermissionsController.getPermissionLevel(rotation, userId);
     })
   );
 

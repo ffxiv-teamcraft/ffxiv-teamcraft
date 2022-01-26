@@ -12,11 +12,11 @@ import {
   ListHistoryLoaded,
   ListsActionTypes,
   LoadListDetails,
+  LoadListHistory,
   LoadTeamLists,
   MarkItemsHq,
   MyListsLoaded,
   PureUpdateList,
-  SelectList,
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
@@ -30,7 +30,6 @@ import {
 import {
   catchError,
   debounceTime,
-  delay,
   distinctUntilChanged,
   exhaustMap,
   filter,
@@ -76,6 +75,7 @@ import { ListPricingService } from '../../../pages/list-details/list-pricing/lis
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { ModificationEntry } from '../model/modification-entry';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
@@ -166,7 +166,7 @@ export class ListsEffects {
         }
       }
       if (list !== null && !list.notFound) {
-        const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
+        const permissionLevel = Math.max(PermissionsController.getPermissionLevel(list, userId), PermissionsController.getPermissionLevel(list, fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
         }
@@ -236,9 +236,7 @@ export class ListsEffects {
 
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
-    debounceTime(4000),
-    withLatestFrom(this.listsFacade.selectedListPermissionLevel$),
-    map(([action]) => action),
+    debounceTime(1000),
     withLatestFrom(this.listsFacade.selectedClone$),
     switchMap(([action, clone]) => {
       if (action.payload.offline) {
@@ -263,10 +261,10 @@ export class ListsEffects {
       ListsActionTypes.TeamListsLoaded,
       ListsActionTypes.ArchivedListsLoaded
     ),
-    withLatestFrom(this.listsFacade.selectedListKey$),
-    switchMap(([{ payload }, key]) => {
-      const selected = payload.find(l => l.$key === key);
-      if (selected) {
+    withLatestFrom(this.listsFacade.selectedList$),
+    switchMap(([{ payload }, list]) => {
+      const selected = payload.find(l => l.$key === list.$key);
+      if (selected && selected.etag > list.etag) {
         return of(new UpdateSelectedClone(this.listService.prepareData(ListController.clone(selected, true))));
       }
       return EMPTY;
@@ -438,7 +436,7 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListProgress, ListsActionTypes.UpdateListAtomic),
     filter(action => action.payload.ephemeral && ListController.isComplete(action.payload)),
     map(action => new DeleteList(action.payload.$key, action.payload.offline)),
-    delay(500),
+    debounceTime(500),
     tap(() => this.router.navigate(['/lists']))
   ));
 
@@ -547,7 +545,7 @@ export class ListsEffects {
    * HISTORY STUFF
    */
   loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
-    ofType<SelectList>(ListsActionTypes.SelectList),
+    ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
     withLatestFrom(this.listsFacade.listHistories$),
     filter(([action, histories]) => !histories[action.key]),
     mergeMap(([action]) => {
@@ -566,7 +564,7 @@ export class ListsEffects {
     ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
     debounceBufferTime(8000),
     withLatestFrom(this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$),
-    mergeMap(([actions, history, selectedListKey]) => {
+    mergeMap(([actions, history, selectedListKey]: [AddHistoryEntry[], ModificationEntry[], string]) => {
       const update: { key: string, increment: number }[] = [];
       const create: ModificationEntry[] = [];
 
@@ -577,11 +575,19 @@ export class ListsEffects {
             && e.userId === entry.userId
             && (Date.now() - e.date) <= 1200000;
         });
+        const creationEntry = create.find(e => {
+          return e.itemId === entry.itemId
+            && e.finalItem === entry.finalItem
+            && e.userId === entry.userId
+            && (Date.now() - e.date) <= 1200000;
+        });
         if (historyEntry) {
           update.push({
             key: historyEntry.$key,
             increment: entry.amount
           });
+        } else if (creationEntry) {
+          creationEntry.amount += entry.amount;
         } else {
           create.push(entry);
         }

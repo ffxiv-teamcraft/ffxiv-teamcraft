@@ -12,6 +12,7 @@ import { PermissionLevel } from '../database/permissions/permission-level.enum';
 import { ListController } from '../../modules/list/list-controller';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { combineLatest, Observable, of } from 'rxjs';
+import { PermissionsController } from '../database/permissions-controller';
 
 @Injectable()
 export class DiscordWebhookService {
@@ -111,7 +112,7 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, fcId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if (list.getPermissionLevel(memberId) < PermissionLevel.PARTICIPATE && list.getPermissionLevel(fcId) < PermissionLevel.PARTICIPATE) {
+    if (PermissionsController.getPermissionLevel(list, memberId) < PermissionLevel.PARTICIPATE && PermissionsController.getPermissionLevel(list, fcId) < PermissionLevel.PARTICIPATE) {
       return;
     }
     const row = ListController.getItemById(list, itemId, !finalItem, finalItem);

@@ -28,6 +28,7 @@ import { PlatformService } from '../../../../core/tools/platform.service';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { EnvironmentService } from '../../../../core/environment.service';
+import { PermissionsController } from '../../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -44,7 +45,7 @@ export class RotationPanelComponent implements OnInit {
   actions$: Observable<CraftingAction[]>;
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
-    map(([rotation, userId]) => rotation.getPermissionLevel(userId))
+    map(([rotation, userId]) => PermissionsController.getPermissionLevel(rotation, userId))
   );
 
   public user$ = this.authFacade.user$;

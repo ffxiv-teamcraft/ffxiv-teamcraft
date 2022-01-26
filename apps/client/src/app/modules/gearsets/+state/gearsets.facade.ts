@@ -40,6 +40,7 @@ import { LazyData } from '../../../lazy-data/lazy-data';
 import { LazyMateria } from '../../../lazy-data/model/lazy-materia';
 import { AriyalaStatToBaseParamId } from '../../../pages/lists/list-import-popup/link-parser/ariyala-stat-to-base-param-id';
 import { EtroLinkParser } from '../../../pages/lists/list-import-popup/link-parser/etro-link-parser';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Injectable({
   providedIn: 'root'
@@ -85,7 +86,7 @@ export class GearsetsFacade {
   selectedGearsetPermissionLevel$: Observable<PermissionLevel> = combineLatest([this.selectedGearset$, this.authFacade.userId$])
     .pipe(
       map(([gearset, userId]) => {
-        return !gearset.notFound && gearset.getPermissionLevel(userId);
+        return !gearset.notFound && PermissionsController.getPermissionLevel(gearset, userId);
       })
     );
 

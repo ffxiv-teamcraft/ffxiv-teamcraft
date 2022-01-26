@@ -9,6 +9,9 @@ import firebase from 'firebase/compat/app';
 import { SettingsService } from '../../settings/settings.service';
 
 export class List extends DataWithPermissions {
+
+  etag = 0;
+
   offline?: boolean;
 
   name: string;

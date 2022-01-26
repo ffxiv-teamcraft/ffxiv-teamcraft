@@ -32,6 +32,7 @@ import { ListColor } from '../model/list-color';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ListSplitPopupComponent } from '../list-split-popup/list-split-popup.component';
 import { ListController } from '../list-controller';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-list-panel',
@@ -99,13 +100,13 @@ export class ListPanelComponent extends TeamcraftComponent {
             const isTeamList = list.teamId && teams.some(team => list.teamId === team.$key);
             const teamLeader = isTeamList && (teams.find(team => list.teamId === team.$key).leader === userId);
             return [Math.max(
-              list.getPermissionLevel(userId),
-              list.getPermissionLevel(user.currentFcId),
+              PermissionsController.getPermissionLevel(list, userId),
+              PermissionsController.getPermissionLevel(list, user.currentFcId),
               isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE,
               teamLeader ? PermissionLevel.WRITE : PermissionLevel.NONE
             ), isFavorite.value];
           } else {
-            return [list.getPermissionLevel(userId), isFavorite.value];
+            return [PermissionsController.getPermissionLevel(list, userId), isFavorite.value];
           }
         }),
         map(([permissionLevel, isFavorite]: [PermissionLevel, boolean]) => {

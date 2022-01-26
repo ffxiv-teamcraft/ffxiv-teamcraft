@@ -304,6 +304,7 @@ export class ListController {
         }
       }
     }
+    list.etag++;
   }
 
   public static canBeCrafted(list: List, item: ListRow): boolean {

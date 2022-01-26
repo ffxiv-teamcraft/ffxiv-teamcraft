@@ -13,6 +13,7 @@ import {
   ListDetailsLoaded,
   LoadArchivedLists,
   LoadListDetails,
+  LoadListHistory,
   LoadMyLists,
   LoadSharedLists,
   LoadTeamLists,
@@ -53,6 +54,7 @@ import { ProgressPopupService } from '../../progress-popup/progress-popup.servic
 import { InventoryService } from '../../inventory/inventory.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ModificationEntry } from '../model/modification-entry';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 declare const gtag: Function;
 
@@ -91,8 +93,8 @@ export class ListsFacade {
           map(([compacts, userId]) => {
             return compacts.filter(c => {
               return !c.notFound
-                && c.getPermissionLevel(userId) >= PermissionLevel.READ
-                && c.hasExplicitPermissions(userId)
+                && PermissionsController.getPermissionLevel(c, userId) >= PermissionLevel.READ
+                && PermissionsController.hasExplicitPermissions(c, userId)
                 && c.authorId !== userId;
             });
           })
@@ -110,8 +112,8 @@ export class ListsFacade {
           return this.sortLists(
             compacts.filter(c => {
               return !c.notFound
-                && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.READ
-                && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
+                && Math.max(PermissionsController.getPermissionLevel(c, userId), PermissionsController.getPermissionLevel(c, fcId)) >= PermissionLevel.READ
+                && (PermissionsController.hasExplicitPermissions(c, userId) || PermissionsController.hasExplicitPermissions(c, fcId))
                 && c.authorId !== userId;
             })
           );
@@ -132,9 +134,9 @@ export class ListsFacade {
       }
       return this.sortLists(
         compacts.filter(c => {
-          const hasFcPermission = Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE;
+          const hasFcPermission = Math.max(PermissionsController.getPermissionLevel(c, userId), PermissionsController.getPermissionLevel(c, fcId)) >= PermissionLevel.WRITE;
           const hasTeamPermission = teams.map(team => `team:${team.$key}`).some(key => {
-            return c.getPermissionLevel(key) >= PermissionLevel.WRITE;
+            return PermissionsController.getPermissionLevel(c, key) >= PermissionLevel.WRITE;
           });
           return !c.notFound
             && (hasFcPermission || hasTeamPermission)
@@ -154,7 +156,20 @@ export class ListsFacade {
 
   listHistories$ = this.store.select(listsQuery.getListHistories);
 
-  selectedListModificationHistory$ = this.store.select(listsQuery.getCurrentListHistory);
+  selectedListModificationHistory$ = combineLatest([
+    this.store.select(listsQuery.getCurrentListHistory),
+    this.selectedListKey$
+  ]).pipe(
+    switchMap(([history, key]) => {
+      if (!history) {
+        this.loadListHistory(key);
+        return of(null);
+      }
+      return of(history);
+    }),
+    filter(h => !!h),
+    shareReplay(1)
+  );
 
   selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
     filter(list => list !== undefined)
@@ -184,9 +199,9 @@ export class ListsFacade {
       }
       let teamPermissionLevel = 0;
       if (team !== undefined && list.teamId === team.$key) {
-        teamPermissionLevel = Math.max(list.getPermissionLevel(`team:${list.teamId}`), 20);
+        teamPermissionLevel = Math.max(PermissionsController.getPermissionLevel(list, `team:${list.teamId}`), 20);
       }
-      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), teamPermissionLevel);
+      return Math.max(PermissionsController.getPermissionLevel(list, userId), PermissionsController.getPermissionLevel(list, fcId), teamPermissionLevel);
     }),
     distinctUntilChanged(),
     shareReplay(1)
@@ -514,5 +529,9 @@ export class ListsFacade {
 
   addModificationsHistoryEntry(entry: ModificationEntry): void {
     this.store.dispatch(new AddHistoryEntry(entry));
+  }
+
+  loadListHistory(selectedListKey: string): void {
+    this.store.dispatch(new LoadListHistory(selectedListKey));
   }
 }
