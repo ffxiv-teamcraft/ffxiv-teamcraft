@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.4"></a>
+## [9.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.3...v9.5.4) (2022-01-26)
+
+
+### Bug Fixes
+
+* **lists:** fixed delete multiple lists system not working ([fccd4e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fccd4e7))
+* **lists:** fixed offline list details not updating properly ([fa54c62](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa54c62))
+* **profile:** fixed verification result banner font color ([3547794](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3547794))
+
+
+
 <a name="9.5.3"></a>
 ## [9.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.2...v9.5.3) (2022-01-26)
 
