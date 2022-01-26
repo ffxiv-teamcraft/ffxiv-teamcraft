@@ -1,8 +1,5 @@
 export const patchNotes = `### Bug Fixes
 
-* **list:** better data integrity system to prevent rollbacks.
-
-
-### Performance Improvements
-
-* **list:** change detector optimizations for better inital loading (~60% faster).`;
+* **lists:** fixed delete multiple lists system not working.
+* **lists:** fixed offline list details not updating properly.
+* **profile:** fixed verification result banner font color.`;

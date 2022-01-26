@@ -18,7 +18,7 @@
       <div fxLayout="row" fxLayoutGap="5px">
         <ng-container *ngIf="userId$ | async as userId">
           <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" nz-button
-                  nzShape="circle" nzSize="small"
+                  nzSize="small"
                   nzType="primary">
             {{'PROFILE.VERIFICATION.Button' | translate}}
           </button>
@@ -28,7 +28,8 @@
                 nzSize="small" nzType="primary">
           <i nz-icon nzType="plus"></i>
         </button>
-        <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1" [nzTooltipTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
+        <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1"
+                [nzTooltipTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small"
                 nzDanger>
@@ -67,7 +68,7 @@
                       </div>
                     </div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                      <div nz-tooltip [nzTooltipTitle]="'PROFILE.Gearset_priority_explain' | translate">{{'PROFILE.Gearset_priority' | translate}}: </div>
+                      <div nz-tooltip [nzTooltipTitle]="'PROFILE.Gearset_priority_explain' | translate">{{'PROFILE.Gearset_priority' | translate}}:</div>
                       <nz-slider [(ngModel)]="set.priority" (ngModelChange)="saveSet(set)" nzMin="0" nzMax="8" class="priority-slider"></nz-slider>
                     </div>
                   </div>
@@ -102,7 +103,8 @@
                   <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="contact"
                                      [nzTitle]="contact | characterName | async">
                     <ng-template #delete>
-                      <button (nzOnConfirm)="removeContact(user, contact)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzShape="circle"
+                      <button (nzOnConfirm)="removeContact(user, contact)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm
+                              nzShape="circle"
                               nzSize="small" nzDanger>
                         <i nz-icon nzType="delete"></i>
                       </button>

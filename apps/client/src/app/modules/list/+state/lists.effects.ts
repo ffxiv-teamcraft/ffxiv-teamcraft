@@ -323,7 +323,7 @@ export class ListsEffects {
     ofType<DeleteLists>(ListsActionTypes.DeleteLists),
     switchMap(({ keys }) => {
       return combineLatest(keys.map(key => {
-        this.listService.resetModificationsHistory(key);
+        return this.listService.resetModificationsHistory(key);
       })).pipe(switchMap(() => {
         return this.listService.removeMany(keys);
       }));

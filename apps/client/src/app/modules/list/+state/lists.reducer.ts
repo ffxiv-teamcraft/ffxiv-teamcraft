@@ -116,10 +116,9 @@ export function listsReducer(
     case ListsActionTypes.OfflineListsLoaded: {
       state = {
         ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
+        listDetails: listsAdapter.setMany(action.payload,
           listsAdapter.removeMany(list => {
-            return list.$key !== state.selectedId &&
-              list.offline;
+            return list.offline;
           }, state.listDetails)
         )
       };
