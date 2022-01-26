@@ -18,6 +18,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { ListPickerService } from '../../list-picker/list-picker.service';
 import { FolderAdditionPickerComponent } from '../../folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Component({
   selector: 'app-workshop-panel',
@@ -37,7 +38,7 @@ export class WorkshopPanelComponent {
   private workshop$: ReplaySubject<Workshop> = new ReplaySubject<Workshop>();
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
-    map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
+    map(([userId, workshop]) => PermissionsController.getPermissionLevel(workshop, userId)),
     distinctUntilChanged(),
     shareReplay(1)
   );
@@ -158,10 +159,10 @@ export class WorkshopPanelComponent {
             map(([lists, userId]) => {
               return lists
                 .filter(list => {
-                  return list.getPermissionLevel(userId) >= 40;
+                  return PermissionsController.getPermissionLevel(list, userId) >= 40;
                 })
                 .map(list => {
-                  list.mergePermissions(workshop, true);
+                  PermissionsController.mergePermissions(list, workshop, true);
                   return list;
                 });
             })

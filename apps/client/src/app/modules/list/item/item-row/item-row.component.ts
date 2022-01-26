@@ -59,6 +59,7 @@ import { InventoryService } from '../../../inventory/inventory.service';
 import { ListController } from '../../list-controller';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
+import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
 
 @Component({
   selector: 'app-item-row',
@@ -66,7 +67,7 @@ import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service
   styleUrls: ['./item-row.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemRowComponent extends TeamcraftComponent implements OnInit {
+export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnInit {
 
   private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
 
@@ -281,8 +282,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryService,
               private simulationService: SimulationService,
-              private lazyData: LazyDataFacade, private etime: EorzeanTimeService) {
-    super();
+              private lazyData: LazyDataFacade, private etime: EorzeanTimeService,
+              cd: ChangeDetectorRef) {
+    super(cd);
 
     this.missingBooks$ = this.masterbooksReloader$.pipe(
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
@@ -363,7 +365,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
     this.itemDoneChange$.pipe(
       takeUntil(this.onDestroy$),
-      debounceTime(500)
+      debounceTime(1000)
     ).subscribe(value => {
       this.itemDoneChanged(value, this.item);
     });

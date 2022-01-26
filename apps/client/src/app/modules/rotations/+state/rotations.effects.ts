@@ -6,6 +6,7 @@ import { catchError, distinctUntilChanged, exhaustMap, filter, map, mergeMap, sw
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { EMPTY, of } from 'rxjs';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Injectable()
 export class RotationsEffects {
@@ -38,7 +39,7 @@ export class RotationsEffects {
     ofType<UpdateRotation>(RotationsActionTypes.UpdateRotation),
     withLatestFrom(this.authFacade.userId$),
     mergeMap(([action, userId]) => {
-      if (action.rotation.$key === undefined || action.rotation.getPermissionLevel(userId) < 30) {
+      if (action.rotation.$key === undefined || PermissionsController.getPermissionLevel(action.rotation, userId) < 30) {
         action.rotation.authorId = userId;
         return this.rotationsService.add(action.rotation);
       } else {

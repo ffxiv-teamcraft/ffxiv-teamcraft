@@ -19,6 +19,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Workshop } from '../../../model/other/workshop';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { uniqBy } from 'lodash';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Injectable()
 export class WorkshopsFacade {
@@ -37,8 +38,8 @@ export class WorkshopsFacade {
   sharedWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$]).pipe(
     map(([compacts, userId, fcId]) => {
       return uniqBy(compacts.filter(c => {
-        return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
-          && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
+        return Math.max(PermissionsController.getPermissionLevel(c, userId), PermissionsController.getPermissionLevel(c, fcId)) >= PermissionLevel.PARTICIPATE
+          && (PermissionsController.hasExplicitPermissions(c, userId) || PermissionsController.hasExplicitPermissions(c, fcId))
           && c.authorId !== userId;
       }), '$key');
     }),

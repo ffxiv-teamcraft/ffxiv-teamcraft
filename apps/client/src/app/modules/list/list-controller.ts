@@ -56,6 +56,7 @@ export class ListController {
     clone.name = list.name;
     clone.version = list.version || '1.0.0';
     clone.tags = list.tags;
+    clone.etag = internal ? list.etag : 0;
     clone.ignoreRequirementsRegistry = list.ignoreRequirementsRegistry;
     if (internal) {
       Object.assign(clone, deepClone(list));
@@ -304,6 +305,10 @@ export class ListController {
         }
       }
     }
+    if (isNaN(list.etag)) {
+      list.etag = 0;
+    }
+    list.etag++;
   }
 
   public static canBeCrafted(list: List, item: ListRow): boolean {

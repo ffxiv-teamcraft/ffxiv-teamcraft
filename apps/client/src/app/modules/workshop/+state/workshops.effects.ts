@@ -19,6 +19,7 @@ import { combineLatest, of } from 'rxjs';
 import { WorkshopsFacade } from './workshops.facade';
 import { Workshop } from '../../../model/other/workshop';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { PermissionsController } from '../../../core/database/permissions-controller';
 
 @Injectable()
 export class WorkshopsEffects {
@@ -85,7 +86,7 @@ export class WorkshopsEffects {
         }
       }
       if (workshop !== null) {
-        const permissionLevel = Math.max(workshop.getPermissionLevel(userId), workshop.getPermissionLevel(fcId));
+        const permissionLevel = Math.max(PermissionsController.getPermissionLevel(workshop, userId), PermissionsController.getPermissionLevel(workshop, fcId));
         if (permissionLevel >= PermissionLevel.READ) {
           return [WorkshopKey, workshop];
         }

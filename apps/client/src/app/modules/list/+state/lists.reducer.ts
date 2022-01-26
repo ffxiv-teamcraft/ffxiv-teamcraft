@@ -2,12 +2,18 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { ListController } from '../list-controller';
 import { ModificationEntry } from '../model/modification-entry';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
 
+export const listsAdapter: EntityAdapter<List> = createEntityAdapter<List>({
+  selectId: list => list.$key,
+  sortComparer: (a, b) => a.index - b.index
+});
+
 export interface ListsState {
-  listDetails: List[];
+  listDetails: EntityState<List>;
   selectedId?: string; // which Lists record has been selected
   selectedClone?: List; // a clone of the currently selected list for diff updates
   autocompletionEnabled?: boolean;
@@ -22,7 +28,7 @@ export interface ListsState {
 }
 
 export const initialState: ListsState = {
-  listDetails: [],
+  listDetails: listsAdapter.getInitialState(),
   listsConnected: false,
   needsVerification: false,
   deleted: [],
@@ -65,10 +71,14 @@ export function listsReducer(
     case ListsActionTypes.MyListsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.authorId !== action.userId || list.offline || list.archived),
-          ...action.payload
-        ],
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
+          listsAdapter.removeMany(list => {
+            return list.$key !== state.selectedId &&
+              list.authorId === action.userId
+              && !list.offline
+              && !list.archived;
+          }, state.listDetails)
+        ),
         listsConnected: true
       };
       break;
@@ -93,10 +103,12 @@ export function listsReducer(
     case ListsActionTypes.ArchivedListsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.authorId !== action.userId || !list.archived),
-          ...action.payload
-        ]
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
+          listsAdapter.removeMany(list => {
+            return list.$key !== state.selectedId &&
+              list.authorId === action.userId && list.archived;
+          }, state.listDetails)
+        )
       };
       break;
     }
@@ -104,10 +116,12 @@ export function listsReducer(
     case ListsActionTypes.OfflineListsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => !list.offline),
-          ...action.payload
-        ]
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
+          listsAdapter.removeMany(list => {
+            return list.$key !== state.selectedId &&
+              list.offline;
+          }, state.listDetails)
+        )
       };
       break;
     }
@@ -122,10 +136,12 @@ export function listsReducer(
     case ListsActionTypes.TeamListsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.teamId !== action.teamId),
-          ...action.payload
-        ],
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
+          listsAdapter.removeMany(list => {
+            return list.$key !== state.selectedId &&
+              list.teamId === action.teamId;
+          }, state.listDetails)
+        ),
         connectedTeams: [
           ...state.connectedTeams,
           action.teamId
@@ -137,10 +153,7 @@ export function listsReducer(
     case ListsActionTypes.SharedListsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => action.payload.find(c => c.$key === list.$key) === undefined),
-          ...action.payload
-        ]
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId), state.listDetails)
       };
       break;
     }
@@ -148,23 +161,35 @@ export function listsReducer(
     case ListsActionTypes.ListsForTeamsLoaded: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => action.payload.find(c => c.$key === list.$key) === undefined),
-          ...action.payload
-        ]
+        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId), state.listDetails)
       };
       break;
     }
 
     case ListsActionTypes.ListDetailsLoaded: {
+      const newVersion = action.payload as List;
+      let updated = false;
+      let listDetails = state.listDetails;
+      if (state.listDetails.entities[action.payload.$key]) {
+        listDetails = listsAdapter.mapOne({
+          id: action.payload.$key,
+          map: current => {
+            updated = (newVersion.etag || 0) >= (current.etag || 0);
+            if (updated) {
+              return newVersion;
+            }
+            return current;
+          }
+        }, state.listDetails);
+      } else {
+        listDetails = listsAdapter.setOne(action.payload as List, state.listDetails);
+        updated = true;
+      }
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
-          <List>action.payload
-        ]
+        listDetails
       };
-      if (state.selectedId === action.payload.$key && !action.payload.notFound) {
+      if (updated && state.selectedId === action.payload.$key && !action.payload.notFound) {
         state.selectedClone = ListController.clone(action.payload as List, true);
       }
       break;
@@ -203,10 +228,7 @@ export function listsReducer(
     case ListsActionTypes.UpdateListProgress: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.payload.$key),
-          ListController.clone(<List>action.payload, true)
-        ]
+        listDetails: listsAdapter.setOne(action.payload, state.listDetails)
       };
       break;
     }
@@ -214,16 +236,14 @@ export function listsReducer(
     case ListsActionTypes.DeleteList: {
       state = {
         ...state,
-        listDetails: [
-          ...state.listDetails.filter(list => list.$key !== action.key)
-        ],
+        listDetails: listsAdapter.removeOne(action.key, state.listDetails),
         deleted: [...state.deleted, action.key]
       };
       break;
     }
 
     case ListsActionTypes.SelectList: {
-      const selected = state.listDetails.find(l => l.$key === action.key);
+      const selected = state.listDetails.entities[action.key];
       state = {
         ...state,
         selectedId: action.key,

@@ -1,5 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ListsState } from './lists.reducer';
+import { listsAdapter, ListsState } from './lists.reducer';
+
+const { selectAll } = listsAdapter.getSelectors();
+
 
 // Lookup the 'Lists' feature state managed by NgRx
 const getListsState = createFeatureSelector<ListsState>('lists');
@@ -32,7 +35,7 @@ const getCompletionNotificationEnabled = createSelector(
 const getAllListDetails = createSelector(
   getListsState,
   (state: ListsState) => {
-    return state.listDetails.filter(d => {
+    return selectAll(state.listDetails).filter(d => {
       return !state.deleted.includes(d.$key)
         && (state.showArchived || !d.archived);
     });
@@ -42,7 +45,7 @@ const getAllListDetails = createSelector(
 const getAllListDetailsWithArchived = createSelector(
   getListsState,
   (state: ListsState) => {
-    return state.listDetails.filter(d => {
+    return selectAll(state.listDetails).filter(d => {
       return !state.deleted.includes(d.$key);
     });
   }
