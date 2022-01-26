@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.3"></a>
+## [9.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.2...v9.5.3) (2022-01-26)
+
+
+### Bug Fixes
+
+* **list:** better data integrity system to prevent rollbacks ([3a41ae6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a41ae6))
+
+
+### Performance Improvements
+
+* **list:** change detector optimizations for better inital loading (~60% faster) ([0eaab79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0eaab79))
+
+
+
 <a name="9.5.2"></a>
 ## [9.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.1...v9.5.2) (2022-01-25)
 
