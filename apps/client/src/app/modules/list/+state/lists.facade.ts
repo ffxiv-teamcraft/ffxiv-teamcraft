@@ -158,7 +158,7 @@ export class ListsFacade {
 
   selectedListModificationHistory$ = combineLatest([
     this.store.select(listsQuery.getCurrentListHistory),
-    this.selectedListKey$
+    this.selectedListKey$.pipe(filter(Boolean))
   ]).pipe(
     switchMap(([history, key]) => {
       if (!history) {

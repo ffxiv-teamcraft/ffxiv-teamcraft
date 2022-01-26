@@ -29,9 +29,9 @@ export class NavigationSidebarService {
   public content$: Observable<SidebarCategory[]> = combineLatest([
     this.settingsChange$,
     this.ipc.machinaToggle$,
-    this.authFacade.loggedIn$,
+    this.authFacade.loggedIn$.pipe(startWith(false)),
     this.authFacade.mainCharacter$.pipe(startWith(null as any)),
-    this.commissionNotificationsCount$
+    this.commissionNotificationsCount$.pipe(startWith(0))
   ]).pipe(
     map(([, pcapEnabled, loggedIn, character, commissionNotificationsCount]) => {
       const layout: SidebarCategory[] = [
