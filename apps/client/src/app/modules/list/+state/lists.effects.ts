@@ -264,7 +264,7 @@ export class ListsEffects {
     withLatestFrom(this.listsFacade.selectedList$),
     switchMap(([{ payload }, list]) => {
       const selected = payload.find(l => l.$key === list.$key);
-      if (selected && selected.etag > list.etag) {
+      if (selected && selected.etag >= list.etag) {
         return of(new UpdateSelectedClone(this.listService.prepareData(ListController.clone(selected, true))));
       }
       return EMPTY;

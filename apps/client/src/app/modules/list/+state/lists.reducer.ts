@@ -174,8 +174,8 @@ export function listsReducer(
         listDetails = listsAdapter.mapOne({
           id: action.payload.$key,
           map: current => {
-            updated = newVersion.etag > current.etag;
-            if (newVersion.etag > current.etag) {
+            updated = (newVersion.etag || 0) >= (current.etag || 0);
+            if (updated) {
               return newVersion;
             }
             return current;
