@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Character, CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
+import { Character, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
