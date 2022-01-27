@@ -55,6 +55,7 @@ import { InventoryService } from '../../inventory/inventory.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { ListController } from '../list-controller';
 
 declare const gtag: Function;
 
@@ -344,7 +345,7 @@ export class ListsFacade {
   }
 
   updateList(list: List, updateCompact = false, force = false): void {
-    this.store.dispatch(new UpdateList(list, updateCompact, force));
+    this.store.dispatch(new UpdateList(ListController.clone(list, true), updateCompact, force));
   }
 
   clearModificationsHistory(list: List): void {

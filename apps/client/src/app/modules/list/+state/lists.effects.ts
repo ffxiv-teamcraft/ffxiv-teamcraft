@@ -289,6 +289,10 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(1000),
     switchMap((action) => {
+      if (isNaN(action.payload.etag)) {
+        action.payload.etag = 0;
+      }
+      action.payload.etag++;
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
@@ -556,6 +560,7 @@ export class ListsEffects {
   pureListUpdate$ = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateList>(ListsActionTypes.PureUpdateList),
     mergeMap(action => {
+      action.payload.etag++;
       const localList = this.localStore.find(l => l.$key === action.$key);
       if (localList) {
         Object.assign(localList, action.payload);
