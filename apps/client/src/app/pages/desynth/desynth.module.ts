@@ -15,6 +15,7 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
   {
@@ -41,7 +42,8 @@ const routes: Routes = [
     PageLoaderModule,
 
     RouterModule.forChild(routes),
-    ItemIconModule
+    ItemIconModule,
+    NzPaginationModule
   ]
 })
 export class DesynthModule {
