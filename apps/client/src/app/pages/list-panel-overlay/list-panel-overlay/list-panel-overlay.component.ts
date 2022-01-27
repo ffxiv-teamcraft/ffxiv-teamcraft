@@ -6,6 +6,7 @@ import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { List } from '../../../modules/list/model/list';
 
 @Component({
   selector: 'app-list-panel-overlay',
@@ -43,7 +44,7 @@ export class ListPanelOverlayComponent {
         return state.lists && state.lists.selectedId && state.layouts;
       })
     ).subscribe((state) => {
-      this.listsFacade.overlayListsLoaded(state.lists.listDetails);
+      this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities));
       this.listsFacade.select(state.lists.selectedId);
       this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
     });
