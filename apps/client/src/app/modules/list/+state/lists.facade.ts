@@ -172,7 +172,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
+  selectedListServerVersion$ = this.store.select(listsQuery.getSelectedClone()).pipe(
     filter(list => list !== undefined)
   );
 

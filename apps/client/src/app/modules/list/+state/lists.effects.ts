@@ -29,6 +29,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  concatMap,
   debounceTime,
   distinctUntilChanged,
   exhaustMap,
@@ -37,6 +38,7 @@ import {
   map,
   mapTo,
   mergeMap,
+  shareReplay,
   switchMap,
   takeUntil,
   tap,
@@ -62,7 +64,6 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { CommissionService } from '../../commission-board/commission.service';
 import { SoundNotificationService } from '../../../core/sound-notification/sound-notification.service';
@@ -76,11 +77,16 @@ import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 
 // noinspection JSUnusedGlobalSymbols
 @Injectable()
 export class ListsEffects {
 
+  private selectedListClone$ = this.listsFacade.selectedList$.pipe(
+    map(list => ListController.clone(list, true)),
+    shareReplay(1)
+  );
 
   loadArchivedLists$ = createEffect(() => this.actions$.pipe(
     ofType(ListsActionTypes.LoadArchivedLists),
@@ -237,19 +243,27 @@ export class ListsEffects {
   updateListProgressInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateListProgress>(ListsActionTypes.UpdateListProgress),
     debounceTime(1000),
-    withLatestFrom(this.listsFacade.selectedClone$),
-    switchMap(([action, clone]) => {
-      if (action.payload.offline) {
-        this.saveToLocalstorage(action.payload, false);
-        return of(null);
-      }
-      if (action.payload.hasCommission) {
-        this.updateCommission(action.payload);
-      }
-      if (ListController.isLarge(action.payload)) {
-        return this.listService.set(action.payload.$key, action.payload);
-      }
-      return this.listService.update(action.payload.$key, clone, action.payload);
+    concatMap((action) => {
+      return this.listsFacade.selectedListServerVersion$.pipe(
+        filter(clone => {
+          return clone.etag === action.payload.etag - 1
+            || (action.payload.etag - clone.etag) > 10;
+        }),
+        first(),
+        switchMap(clone => {
+          if (action.payload.offline) {
+            this.saveToLocalstorage(action.payload, false);
+            return of(null);
+          }
+          if (action.payload.hasCommission) {
+            this.updateCommission(action.payload);
+          }
+          if (ListController.isLarge(action.payload) || (action.payload.etag - clone.etag) > 10) {
+            return this.listService.set(action.payload.$key, action.payload);
+          }
+          return this.listService.update(action.payload.$key, clone, action.payload);
+        })
+      );
     })
   ), { dispatch: false });
 
@@ -261,7 +275,7 @@ export class ListsEffects {
       ListsActionTypes.TeamListsLoaded,
       ListsActionTypes.ArchivedListsLoaded
     ),
-    withLatestFrom(this.listsFacade.selectedList$),
+    withLatestFrom(this.selectedListClone$),
     switchMap(([{ payload }, list]) => {
       const selected = payload.find(l => l.$key === list.$key);
       if (selected && selected.etag >= list.etag) {
@@ -332,7 +346,7 @@ export class ListsEffects {
 
   markItemsHq = createEffect(() => this.actions$.pipe(
     ofType<MarkItemsHq>(ListsActionTypes.MarkItemsHq),
-    withLatestFrom(this.listsFacade.selectedList$),
+    withLatestFrom(this.selectedListClone$),
     map(([{ itemIds, hq }, list]) => {
       list.items = list.items.map(i => {
         if (itemIds.includes(i.id)) {
@@ -356,7 +370,7 @@ export class ListsEffects {
 
   updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$,
+    withLatestFrom(this.selectedListClone$,
       this.teamsFacade.selectedTeam$,
       this.authFacade.userId$,
       this.authFacade.fcId$,
@@ -408,28 +422,35 @@ export class ListsEffects {
                 });
               }
               this.notificationService.info(notificationTitle, notificationBody);
-              return [action, list];
+              return action;
             })
           );
         }
       }
-      return of([action, list]);
+      return of(action);
     }),
-    map(([action, list]: [SetItemDone, List]) => {
-      const workingCopy = ListController.clone(list, true);
-      ListController.setDone(workingCopy, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      ListController.updateAllStatuses(workingCopy, action.itemId);
-      if (workingCopy.hasCommission) {
-        this.updateCommission(workingCopy);
-      }
-      if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
-        if (action.recipeId) {
-          this.markAsDoneInDoHLog(+(action.recipeId));
-        } else {
-          this.markAsDoneInDoLLog(action.itemId);
+    debounceBufferTime(20),
+    withLatestFrom(this.selectedListClone$),
+    map(([actions, list]: [SetItemDone[], List]) => {
+      actions.forEach(action => {
+        ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+        ListController.updateAllStatuses(list, action.itemId);
+        if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
+          if (action.recipeId) {
+            this.markAsDoneInDoHLog(+(action.recipeId));
+          } else {
+            this.markAsDoneInDoLLog(action.itemId);
+          }
         }
+      });
+      if (list.hasCommission) {
+        this.updateCommission(list);
       }
-      return new UpdateListProgress(workingCopy, action.fromPacket);
+      if (isNaN(list.etag)) {
+        list.etag = 0;
+      }
+      list.etag++;
+      return new UpdateListProgress(list, actions[0].fromPacket);
     })
   ));
 
@@ -443,9 +464,8 @@ export class ListsEffects {
 
   updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),
-    withLatestFrom(this.listsFacade.selectedList$),
-    map(([action, _list]) => {
-      const list = ListController.clone(_list, true);
+    withLatestFrom(this.selectedListClone$),
+    map(([action, list]) => {
       if (isNaN(list.etag)) {
         list.etag = 0;
       }
@@ -467,7 +487,7 @@ export class ListsEffects {
 
   openCompletionPopup$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
+    withLatestFrom(this.selectedListClone$, this.authFacade.userId$),
     filter(([, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
