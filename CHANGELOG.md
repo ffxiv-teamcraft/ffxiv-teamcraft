@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.5"></a>
+## [9.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.4...v9.5.5) (2022-01-27)
+
+
+### Bug Fixes
+
+* **desktop:** fixed list overlay not loading properly ([4dab1a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4dab1a7))
+* **desynth-guide:** fixed pagination and job list ([f0246ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0246ce))
+* **list:** fixed attach/detach rotation not working properly ([5dd4aa0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5dd4aa0))
+* **list:** fixed bulk operations on list rows not working properly ([c9287a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9287a3))
+
+
+### Performance Improvements
+
+* **db:** more db read optimizations ([aa8e9a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa8e9a7))
+* **list:** hide completed rows and progress bars now update instantly ([463f29c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/463f29c))
+
+
+
 <a name="9.5.4"></a>
 ## [9.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.3...v9.5.4) (2022-01-26)
 
