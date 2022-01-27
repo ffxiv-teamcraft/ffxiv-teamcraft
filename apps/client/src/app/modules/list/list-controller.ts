@@ -305,10 +305,6 @@ export class ListController {
         }
       }
     }
-    if (isNaN(list.etag)) {
-      list.etag = 0;
-    }
-    list.etag++;
   }
 
   public static canBeCrafted(list: List, item: ListRow): boolean {

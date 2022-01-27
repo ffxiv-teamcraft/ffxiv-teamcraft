@@ -251,7 +251,7 @@
           </label>
         </div>
         <div>
-          <label (ngModelChange)="setHideCompleted($event)" [ngModel]="hideCompletedGlobal$ | async"
+          <label (ngModelChange)="hideCompletedGlobal$.next($event)" [ngModel]="hideCompletedGlobal$ | async"
                  nz-checkbox nz-tooltip>
             {{'Hide_completed' | translate}}
           </label>

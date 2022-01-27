@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
-import { debounce, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { debounce, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DesynthSearchResult } from '../desynth-search-result';
 import { SearchResult } from '../../../model/search/search-result';
@@ -12,6 +11,8 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { LazyJobAbbr } from '../../../lazy-data/model/lazy-job-abbr';
 
 @Component({
   selector: 'app-desynth',
@@ -20,7 +21,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 })
 export class DesynthComponent {
 
-  jobList: any[] = [];
+  jobList$: Observable<[string, LazyJobAbbr][]>;
 
   job$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
@@ -40,21 +41,23 @@ export class DesynthComponent {
 
   public totalLength = 0;
 
-  constructor(private gt: GarlandToolsService, private xivapi: XivapiService,
+  constructor(private xivapi: XivapiService, private lazyData: LazyDataFacade,
               private router: Router, route: ActivatedRoute,
               private listManager: ListManagerService, private notificationService: NzNotificationService,
               private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
-    this.jobList = this.gt.getJobs().slice(8, 16);
-    const searchResults$ = combineLatest([this.job$, this.level$]).pipe(
+    this.jobList$ = this.lazyData.getEntry('jobAbbr').pipe(
+      map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key <= 16))
+    );
+    const searchResults$ = combineLatest([this.job$, this.level$, this.jobList$]).pipe(
       debounce(() => this.search$),
       filter(([job, level]) => job !== null && level !== null),
-      tap(([job, level]) => {
+      tap(([job, level, jobList]) => {
         this.pristine = false;
         this.loading = true;
         router.navigate([], {
           queryParams: {
-            job: this.jobList.find(j => j.id === +job).abbreviation,
+            job: jobList.find(([key]) => +key === +job)[1].en,
             level: level
           },
           relativeTo: route
@@ -140,14 +143,17 @@ export class DesynthComponent {
       );
 
     route.queryParamMap
-      .pipe(first())
-      .subscribe((query) => {
+      .pipe(
+        first(),
+        withLatestFrom(this.jobList$)
+      )
+      .subscribe(([query, jobList]) => {
         if (query.get('level') !== null) {
           this.level$.next(+query.get('level'));
         }
         if (query.get('job') !== null) {
-          const job = this.jobList.find(j => j.abbreviation === query.get('job'));
-          this.job$.next(job.id);
+          const job = jobList.find(([, abbr]) => abbr.en === query.get('job'));
+          this.job$.next(+job[0]);
         }
         setTimeout(() => {
           this.search$.next();

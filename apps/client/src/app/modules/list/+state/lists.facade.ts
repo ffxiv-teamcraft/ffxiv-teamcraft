@@ -35,7 +35,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -160,6 +160,7 @@ export class ListsFacade {
     this.store.select(listsQuery.getCurrentListHistory),
     this.selectedListKey$.pipe(filter(Boolean))
   ]).pipe(
+    debounceTime(500),
     switchMap(([history, key]) => {
       if (!history) {
         this.loadListHistory(key);
@@ -171,7 +172,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedClone$ = this.store.select(listsQuery.getSelectedClone()).pipe(
+  selectedListServerVersion$ = this.store.select(listsQuery.getSelectedClone()).pipe(
     filter(list => list !== undefined)
   );
 

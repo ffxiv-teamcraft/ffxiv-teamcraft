@@ -73,8 +73,7 @@ export function listsReducer(
         ...state,
         listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
           listsAdapter.removeMany(list => {
-            return list.$key !== state.selectedId &&
-              list.authorId === action.userId
+            return list.authorId === action.userId
               && !list.offline
               && !list.archived;
           }, state.listDetails)
@@ -105,8 +104,7 @@ export function listsReducer(
         ...state,
         listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
           listsAdapter.removeMany(list => {
-            return list.$key !== state.selectedId &&
-              list.authorId === action.userId && list.archived;
+            return list.authorId === action.userId && list.archived;
           }, state.listDetails)
         )
       };
@@ -137,8 +135,7 @@ export function listsReducer(
         ...state,
         listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
           listsAdapter.removeMany(list => {
-            return list.$key !== state.selectedId &&
-              list.teamId === action.teamId;
+            return list.teamId === action.teamId;
           }, state.listDetails)
         ),
         connectedTeams: [

@@ -46,6 +46,7 @@ import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { ListController } from '../../../modules/list/list-controller';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { uniq } from 'lodash';
+import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 
 @Component({
   selector: 'app-list-details',
@@ -77,7 +78,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   public loggedIn$ = this.authFacade.loggedIn$;
 
-  public hideCompletedGlobal$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('hide-completed-rows') === 'true');
+  public hideCompletedGlobal$: LocalStorageBehaviorSubject<boolean> = new LocalStorageBehaviorSubject<boolean>('hide-completed-rows', false);
 
   public layouts$: Observable<ListLayout[]>;
 
@@ -216,11 +217,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListAddedToTeam(team, list);
     }
-  }
-
-  setHideCompleted(newValue: boolean): void {
-    localStorage.setItem('hide-completed-rows', newValue.toString());
-    this.hideCompletedGlobal$.next(newValue);
   }
 
   removeTeam(list: List, team: Team): void {
