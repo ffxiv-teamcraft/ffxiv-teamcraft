@@ -549,7 +549,7 @@ export class ListsEffects {
     ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
     withLatestFrom(this.listsFacade.listHistories$),
     filter(([action, histories]) => !histories[action.key]),
-    mergeMap(([action]) => {
+    switchMap(([action]) => {
       const stop$ = this.actions$.pipe(
         ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
         filter(a => a.key === action.key)
@@ -563,42 +563,46 @@ export class ListsEffects {
 
   addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
     ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
-    debounceBufferTime(8000),
-    withLatestFrom(this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$),
-    mergeMap(([actions, history, selectedListKey]: [AddHistoryEntry[], ModificationEntry[], string]) => {
-      const update: { key: string, increment: number }[] = [];
-      const create: ModificationEntry[] = [];
+    debounceBufferTime(5000),
+    mergeMap((actions) => {
+      return combineLatest([this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$]).pipe(
+        first(),
+        switchMap(([history, selectedListKey]) => {
+          const update: { key: string, increment: number }[] = [];
+          const create: ModificationEntry[] = [];
 
-      actions.forEach(({ entry }) => {
-        const historyEntry = history.find(e => {
-          return e.itemId === entry.itemId
-            && e.finalItem === entry.finalItem
-            && e.userId === entry.userId
-            && (Date.now() - e.date) <= 1200000;
-        });
-        const creationEntry = create.find(e => {
-          return e.itemId === entry.itemId
-            && e.finalItem === entry.finalItem
-            && e.userId === entry.userId
-            && (Date.now() - e.date) <= 1200000;
-        });
-        if (historyEntry) {
-          update.push({
-            key: historyEntry.$key,
-            increment: entry.amount
+          actions.forEach(({ entry }) => {
+            const historyEntry = history.find(e => {
+              return e.itemId === entry.itemId
+                && e.finalItem === entry.finalItem
+                && e.userId === entry.userId
+                && (Date.now() - e.date) <= 1200000;
+            });
+            const creationEntry = create.find(e => {
+              return e.itemId === entry.itemId
+                && e.finalItem === entry.finalItem
+                && e.userId === entry.userId
+                && (Date.now() - e.date) <= 1200000;
+            });
+            if (historyEntry) {
+              update.push({
+                key: historyEntry.$key,
+                increment: entry.amount
+              });
+            } else if (creationEntry) {
+              creationEntry.amount += entry.amount;
+            } else {
+              create.push(entry);
+            }
           });
-        } else if (creationEntry) {
-          creationEntry.amount += entry.amount;
-        } else {
-          create.push(entry);
-        }
-      });
 
-      return combineLatest([
-        ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
-        ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
-      ]).pipe(
-        first()
+          return combineLatest([
+            ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
+            ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
+          ]).pipe(
+            first()
+          );
+        })
       );
     })
   ), { dispatch: false });
