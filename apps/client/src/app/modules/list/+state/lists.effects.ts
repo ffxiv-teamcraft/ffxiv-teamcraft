@@ -416,10 +416,11 @@ export class ListsEffects {
       return of([action, list]);
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      ListController.updateAllStatuses(list, action.itemId);
-      if (list.hasCommission) {
-        this.updateCommission(list);
+      const workingCopy = ListController.clone(list, true);
+      ListController.setDone(workingCopy, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      ListController.updateAllStatuses(workingCopy, action.itemId);
+      if (workingCopy.hasCommission) {
+        this.updateCommission(workingCopy);
       }
       if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
         if (action.recipeId) {
@@ -428,7 +429,7 @@ export class ListsEffects {
           this.markAsDoneInDoLLog(action.itemId);
         }
       }
-      return new UpdateListProgress(list, action.fromPacket);
+      return new UpdateListProgress(workingCopy, action.fromPacket);
     })
   ));
 
