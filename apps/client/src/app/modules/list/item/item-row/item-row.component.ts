@@ -45,7 +45,6 @@ import { ListLayout } from '../../../../core/layout/list-layout';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { ListPickerService } from '../../../list-picker/list-picker.service';
 import * as _ from 'lodash';
-import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';

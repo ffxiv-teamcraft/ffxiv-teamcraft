@@ -444,7 +444,12 @@ export class ListsEffects {
   updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),
     withLatestFrom(this.listsFacade.selectedList$),
-    map(([action, list]) => {
+    map(([action, _list]) => {
+      const list = ListController.clone(_list, true);
+      if (isNaN(list.etag)) {
+        list.etag = 0;
+      }
+      list.etag++;
       const items = action.finalItem ? list.finalItems : list.items;
       const updatedItems = items.map(item => item.id === action.item.id ? action.item : item);
       if (action.finalItem) {
