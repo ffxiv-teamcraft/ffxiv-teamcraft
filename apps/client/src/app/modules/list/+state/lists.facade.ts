@@ -5,7 +5,6 @@ import { Store } from '@ngrx/store';
 import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
-  AddHistoryEntry,
   ClearModificationsHistory,
   CreateList,
   DeleteList,
@@ -13,7 +12,6 @@ import {
   ListDetailsLoaded,
   LoadArchivedLists,
   LoadListDetails,
-  LoadListHistory,
   LoadMyLists,
   LoadSharedLists,
   LoadTeamLists,
@@ -35,7 +33,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -152,25 +150,6 @@ export class ListsFacade {
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
     throttleTime<List>(200),
-    shareReplay(1)
-  );
-
-  listHistories$ = this.store.select(listsQuery.getListHistories);
-
-  selectedListModificationHistory$ = combineLatest([
-    this.store.select(listsQuery.getCurrentListHistory),
-    this.selectedListKey$.pipe(filter(Boolean))
-  ]).pipe(
-    debounceTime(500),
-    switchMap(([history, key]) => {
-      // if (!history && !key.startsWith('offline')) {
-      //   this.loadListHistory(key);
-      //   return of(null);
-      // }
-      // return of(history);
-      return of(null);
-    }),
-    filter(h => !!h),
     shareReplay(1)
   );
 
@@ -531,10 +510,6 @@ export class ListsFacade {
   }
 
   addModificationsHistoryEntry(entry: ModificationEntry): void {
-    this.store.dispatch(new AddHistoryEntry(entry));
-  }
-
-  loadListHistory(selectedListKey: string): void {
-    this.store.dispatch(new LoadListHistory(selectedListKey));
+    // TODO local history
   }
 }

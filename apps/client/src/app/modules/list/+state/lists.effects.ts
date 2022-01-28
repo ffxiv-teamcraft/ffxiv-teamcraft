@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
-  AddHistoryEntry,
   ArchivedListsLoaded,
   ClearModificationsHistory,
   ConvertLists,
@@ -9,10 +8,8 @@ import {
   DeleteList,
   DeleteLists,
   ListDetailsLoaded,
-  ListHistoryLoaded,
   ListsActionTypes,
   LoadListDetails,
-  LoadListHistory,
   LoadTeamLists,
   MarkItemsHq,
   MyListsLoaded,
@@ -20,7 +17,6 @@ import {
   SetItemDone,
   SharedListsLoaded,
   TeamListsLoaded,
-  UnloadListDetails,
   UpdateItem,
   UpdateList,
   UpdateListIndexes,
@@ -40,7 +36,6 @@ import {
   mergeMap,
   shareReplay,
   switchMap,
-  takeUntil,
   tap,
   withLatestFrom
 } from 'rxjs/operators';
@@ -75,7 +70,6 @@ import { withLazyRow } from '../../../core/rxjs/with-lazy-row';
 import { ListPricingService } from '../../../pages/list-details/list-pricing/list-pricing.service';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
-import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 
@@ -572,72 +566,6 @@ export class ListsEffects {
       return this.listService.pureUpdate(action.$key, action.payload);
     })
   ), { dispatch: false });
-
-
-  /**
-   * HISTORY STUFF
-   */
-  // loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
-  //   ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
-  //   withLatestFrom(this.listsFacade.listHistories$),
-  //   filter(([action, histories]) => !histories[action.key] && !action.key.startsWith('offline')),
-  //   switchMap(([action]) => {
-  //     const stop$ = this.actions$.pipe(
-  //       ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
-  //       filter(a => a.key === action.key)
-  //     );
-  //     return this.listService.getModificationsHistory(action.key).pipe(
-  //       takeUntil(stop$),
-  //       map(history => new ListHistoryLoaded(action.key, history))
-  //     );
-  //   })
-  // ));
-  //
-  // addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
-  //   ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
-  //   debounceBufferTime(5000),
-  //   mergeMap((actions) => {
-  //     return combineLatest([this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$]).pipe(
-  //       first(),
-  //       switchMap(([history, selectedListKey]) => {
-  //         const update: { key: string, increment: number }[] = [];
-  //         const create: ModificationEntry[] = [];
-  //
-  //         actions.forEach(({ entry }) => {
-  //           const historyEntry = history.find(e => {
-  //             return e.itemId === entry.itemId
-  //               && e.finalItem === entry.finalItem
-  //               && e.userId === entry.userId
-  //               && (Date.now() - e.date) <= 1200000;
-  //           });
-  //           const creationEntry = create.find(e => {
-  //             return e.itemId === entry.itemId
-  //               && e.finalItem === entry.finalItem
-  //               && e.userId === entry.userId
-  //               && (Date.now() - e.date) <= 1200000;
-  //           });
-  //           if (historyEntry) {
-  //             update.push({
-  //               key: historyEntry.$key,
-  //               increment: entry.amount
-  //             });
-  //           } else if (creationEntry) {
-  //             creationEntry.amount += entry.amount;
-  //           } else {
-  //             create.push(entry);
-  //           }
-  //         });
-  //
-  //         return combineLatest([
-  //           ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
-  //           ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
-  //         ]).pipe(
-  //           first()
-  //         );
-  //       })
-  //     );
-  //   })
-  // ), { dispatch: false });
 
   constructor(
     private actions$: Actions,

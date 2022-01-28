@@ -198,27 +198,6 @@ export class ListDetailsLoaded implements Action {
   }
 }
 
-export class ListHistoryLoaded implements Action {
-  readonly type = ListsActionTypes.ListHistoryLoaded;
-
-  constructor(public listId: string, public history: ModificationEntry[]) {
-  }
-}
-
-export class LoadListHistory implements Action {
-  readonly type = ListsActionTypes.LoadListHistory;
-
-  constructor(public key: string) {
-  }
-}
-
-export class AddHistoryEntry implements Action {
-  readonly type = ListsActionTypes.AddHistoryEntry;
-
-  constructor(public entry: ModificationEntry) {
-  }
-}
-
 export class CreateList implements Action {
   readonly type = ListsActionTypes.CreateList;
 
@@ -325,7 +304,4 @@ export type ListsAction =
   | UpdateSelectedClone
   | MarkItemsHq
   | UnloadListDetails
-  | ClearModificationsHistory
-  | ListHistoryLoaded
-  | LoadListHistory
-  | AddHistoryEntry;
+  | ClearModificationsHistory;

@@ -1,7 +1,6 @@
 import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 import { ListController } from '../list-controller';
-import { ModificationEntry } from '../model/modification-entry';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 
@@ -24,7 +23,6 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
-  listHistories: Record<string, ModificationEntry[]>;
 }
 
 export const initialState: ListsState = {
@@ -34,8 +32,7 @@ export const initialState: ListsState = {
   deleted: [],
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
-  showArchived: false,
-  listHistories: {}
+  showArchived: false
 };
 
 export function listsReducer(
@@ -195,28 +192,6 @@ export function listsReducer(
       state = {
         ...state,
         selectedClone: action.payload
-      };
-      break;
-    }
-
-    case ListsActionTypes.ListHistoryLoaded: {
-      state = {
-        ...state,
-        listHistories: {
-          ...state.listHistories,
-          [action.listId]: action.history
-        }
-      };
-      break;
-    }
-
-    case ListsActionTypes.UnloadListDetails: {
-      state = {
-        ...state,
-        listHistories: {
-          ...state.listHistories,
-          [action.key]: null
-        }
       };
       break;
     }

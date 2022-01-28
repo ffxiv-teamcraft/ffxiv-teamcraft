@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ModificationEntry } from '../../../modules/list/model/modification-entry';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-list-history-popup',
@@ -11,11 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class ListHistoryPopupComponent {
 
-  public history$: Observable<ModificationEntry[]> = this.listsFacade.selectedListModificationHistory$.pipe(
-    map(entries => {
-      return (entries || []).sort((a, b) => b.date - a.date);
-    })
-  );
+  public history$: Observable<ModificationEntry[]> = of([]);
 
   constructor(private listsFacade: ListsFacade) {
   }

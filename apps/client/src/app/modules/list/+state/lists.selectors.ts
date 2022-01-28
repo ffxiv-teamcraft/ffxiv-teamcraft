@@ -56,17 +56,6 @@ const getSelectedId = createSelector(
   (state: ListsState) => state.selectedId
 );
 
-const getListHistories = createSelector(
-  getListsState,
-  (state: ListsState) => state.listHistories
-);
-
-const getCurrentListHistory = createSelector(
-  getListHistories,
-  getSelectedId,
-  (histories, id) => histories[id]
-);
-
 const getSelectedList = () => createSelector(
   getAllListDetailsWithArchived,
   getSelectedId,
@@ -97,7 +86,5 @@ export const listsQuery = {
   getCompletionNotificationEnabled,
   getListsLoading,
   getConnectedTeams,
-  getSelectedId,
-  getListHistories,
-  getCurrentListHistory
+  getSelectedId
 };
