@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.6"></a>
+## [9.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.5...v9.5.6) (2022-01-28)
+
+
+### Bug Fixes
+
+* **lists:** fixed various list manipulations, like adding items, not working ([b2a4cba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2a4cba))
+
+
+### Performance Improvements
+
+* **list:** contribution stats and history features have been disabled for now ([963d8ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/963d8ce))
+
+
+
 <a name="9.5.5"></a>
 ## [9.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.4...v9.5.5) (2022-01-27)
 

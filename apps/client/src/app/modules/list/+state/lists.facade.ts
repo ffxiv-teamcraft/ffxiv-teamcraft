@@ -55,6 +55,7 @@ import { InventoryService } from '../../inventory/inventory.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { ModificationEntry } from '../model/modification-entry';
 import { PermissionsController } from '../../../core/database/permissions-controller';
+import { ListController } from '../list-controller';
 
 declare const gtag: Function;
 
@@ -162,11 +163,12 @@ export class ListsFacade {
   ]).pipe(
     debounceTime(500),
     switchMap(([history, key]) => {
-      if (!history) {
-        this.loadListHistory(key);
-        return of(null);
-      }
-      return of(history);
+      // if (!history && !key.startsWith('offline')) {
+      //   this.loadListHistory(key);
+      //   return of(null);
+      // }
+      // return of(history);
+      return of(null);
     }),
     filter(h => !!h),
     shareReplay(1)
@@ -344,7 +346,7 @@ export class ListsFacade {
   }
 
   updateList(list: List, updateCompact = false, force = false): void {
-    this.store.dispatch(new UpdateList(list, updateCompact, force));
+    this.store.dispatch(new UpdateList(ListController.clone(list, true), updateCompact, force));
   }
 
   clearModificationsHistory(list: List): void {

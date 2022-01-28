@@ -289,6 +289,10 @@ export class ListsEffects {
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(1000),
     switchMap((action) => {
+      if (isNaN(action.payload.etag)) {
+        action.payload.etag = 0;
+      }
+      action.payload.etag++;
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
@@ -390,15 +394,17 @@ export class ListsEffects {
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
     switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      this.listsFacade.addModificationsHistoryEntry({
-        amount: action.doneDelta,
-        date: Date.now(),
-        itemId: action.itemId,
-        userId: userId,
-        finalItem: action.finalItem || false,
-        total: action.totalNeeded,
-        recipeId: action.recipeId || null
-      });
+      if (!list.offline) {
+        this.listsFacade.addModificationsHistoryEntry({
+          amount: action.doneDelta,
+          date: Date.now(),
+          itemId: action.itemId,
+          userId: userId,
+          finalItem: action.finalItem || false,
+          total: action.totalNeeded,
+          recipeId: action.recipeId || null
+        });
+      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
@@ -556,6 +562,7 @@ export class ListsEffects {
   pureListUpdate$ = createEffect(() => this.actions$.pipe(
     ofType<PureUpdateList>(ListsActionTypes.PureUpdateList),
     mergeMap(action => {
+      action.payload.etag++;
       const localList = this.localStore.find(l => l.$key === action.$key);
       if (localList) {
         Object.assign(localList, action.payload);
@@ -570,67 +577,67 @@ export class ListsEffects {
   /**
    * HISTORY STUFF
    */
-  loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
-    ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
-    withLatestFrom(this.listsFacade.listHistories$),
-    filter(([action, histories]) => !histories[action.key]),
-    switchMap(([action]) => {
-      const stop$ = this.actions$.pipe(
-        ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
-        filter(a => a.key === action.key)
-      );
-      return this.listService.getModificationsHistory(action.key).pipe(
-        takeUntil(stop$),
-        map(history => new ListHistoryLoaded(action.key, history))
-      );
-    })
-  ));
-
-  addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
-    ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
-    debounceBufferTime(5000),
-    mergeMap((actions) => {
-      return combineLatest([this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$]).pipe(
-        first(),
-        switchMap(([history, selectedListKey]) => {
-          const update: { key: string, increment: number }[] = [];
-          const create: ModificationEntry[] = [];
-
-          actions.forEach(({ entry }) => {
-            const historyEntry = history.find(e => {
-              return e.itemId === entry.itemId
-                && e.finalItem === entry.finalItem
-                && e.userId === entry.userId
-                && (Date.now() - e.date) <= 1200000;
-            });
-            const creationEntry = create.find(e => {
-              return e.itemId === entry.itemId
-                && e.finalItem === entry.finalItem
-                && e.userId === entry.userId
-                && (Date.now() - e.date) <= 1200000;
-            });
-            if (historyEntry) {
-              update.push({
-                key: historyEntry.$key,
-                increment: entry.amount
-              });
-            } else if (creationEntry) {
-              creationEntry.amount += entry.amount;
-            } else {
-              create.push(entry);
-            }
-          });
-
-          return combineLatest([
-            ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
-            ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
-          ]).pipe(
-            first()
-          );
-        })
-      );
-    })
-  ), { dispatch: false });
+  // loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
+  //   ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
+  //   withLatestFrom(this.listsFacade.listHistories$),
+  //   filter(([action, histories]) => !histories[action.key] && !action.key.startsWith('offline')),
+  //   switchMap(([action]) => {
+  //     const stop$ = this.actions$.pipe(
+  //       ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
+  //       filter(a => a.key === action.key)
+  //     );
+  //     return this.listService.getModificationsHistory(action.key).pipe(
+  //       takeUntil(stop$),
+  //       map(history => new ListHistoryLoaded(action.key, history))
+  //     );
+  //   })
+  // ));
+  //
+  // addListHistoryEntry$ = createEffect(() => this.actions$.pipe(
+  //   ofType<AddHistoryEntry>(ListsActionTypes.AddHistoryEntry),
+  //   debounceBufferTime(5000),
+  //   mergeMap((actions) => {
+  //     return combineLatest([this.listsFacade.selectedListModificationHistory$, this.listsFacade.selectedListKey$]).pipe(
+  //       first(),
+  //       switchMap(([history, selectedListKey]) => {
+  //         const update: { key: string, increment: number }[] = [];
+  //         const create: ModificationEntry[] = [];
+  //
+  //         actions.forEach(({ entry }) => {
+  //           const historyEntry = history.find(e => {
+  //             return e.itemId === entry.itemId
+  //               && e.finalItem === entry.finalItem
+  //               && e.userId === entry.userId
+  //               && (Date.now() - e.date) <= 1200000;
+  //           });
+  //           const creationEntry = create.find(e => {
+  //             return e.itemId === entry.itemId
+  //               && e.finalItem === entry.finalItem
+  //               && e.userId === entry.userId
+  //               && (Date.now() - e.date) <= 1200000;
+  //           });
+  //           if (historyEntry) {
+  //             update.push({
+  //               key: historyEntry.$key,
+  //               increment: entry.amount
+  //             });
+  //           } else if (creationEntry) {
+  //             creationEntry.amount += entry.amount;
+  //           } else {
+  //             create.push(entry);
+  //           }
+  //         });
+  //
+  //         return combineLatest([
+  //           ...update.map(e => this.listService.incrementModificationsHistoryEntry(selectedListKey, e)),
+  //           ...create.map(e => this.listService.addModificationsHistoryEntry(selectedListKey, e))
+  //         ]).pipe(
+  //           first()
+  //         );
+  //       })
+  //     );
+  //   })
+  // ), { dispatch: false });
 
   constructor(
     private actions$: Actions,
