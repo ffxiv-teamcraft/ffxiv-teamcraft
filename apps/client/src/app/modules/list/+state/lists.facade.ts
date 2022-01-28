@@ -163,7 +163,7 @@ export class ListsFacade {
   ]).pipe(
     debounceTime(500),
     switchMap(([history, key]) => {
-      if (!history) {
+      if (!history && !key.startsWith('offline')) {
         this.loadListHistory(key);
         return of(null);
       }

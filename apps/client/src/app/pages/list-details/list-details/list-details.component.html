@@ -107,6 +107,7 @@
             <i nz-icon nzType="split-cells" nzTheme="outline"></i>
           </button>
           <button (click)="openContributionsPopup()"
+                  *ngIf="!list.offline"
                   [disabled]="(permissionLevel$ | async) < 20"
                   [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"
                   nz-button
@@ -145,6 +146,7 @@
           </button>
           <button (click)="openHistoryPopup()"
                   [disabled]="(permissionLevel$ | async) < 20"
+                  *ngIf="!list.offline"
                   [nzTooltipTitle]="'LIST.History' | translate" nz-button
                   nz-tooltip
                   nzShape="circle">

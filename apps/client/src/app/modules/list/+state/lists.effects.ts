@@ -394,15 +394,17 @@ export class ListsEffects {
     withLazyRow(this.lazyData, 'itemIcons', ([action]) => action.itemId),
     switchMap(([[action, list, team, userId, fcId, autofillEnabled, completionNotificationEnabled], icon]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
-      this.listsFacade.addModificationsHistoryEntry({
-        amount: action.doneDelta,
-        date: Date.now(),
-        itemId: action.itemId,
-        userId: userId,
-        finalItem: action.finalItem || false,
-        total: action.totalNeeded,
-        recipeId: action.recipeId || null
-      });
+      if (!list.offline) {
+        this.listsFacade.addModificationsHistoryEntry({
+          amount: action.doneDelta,
+          date: Date.now(),
+          itemId: action.itemId,
+          userId: userId,
+          finalItem: action.finalItem || false,
+          total: action.totalNeeded,
+          recipeId: action.recipeId || null
+        });
+      }
       if (team && list.teamId === team.$key && action.doneDelta > 0) {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
@@ -578,7 +580,7 @@ export class ListsEffects {
   loadSelectedListHistory$ = createEffect(() => this.actions$.pipe(
     ofType<LoadListHistory>(ListsActionTypes.LoadListHistory),
     withLatestFrom(this.listsFacade.listHistories$),
-    filter(([action, histories]) => !histories[action.key]),
+    filter(([action, histories]) => !histories[action.key] && !action.key.startsWith('offline')),
     switchMap(([action]) => {
       const stop$ = this.actions$.pipe(
         ofType<UnloadListDetails>(ListsActionTypes.UnloadListDetails),
