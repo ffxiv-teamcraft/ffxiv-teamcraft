@@ -420,7 +420,7 @@ export class IpcListenersManager {
 
   private setupLodestoneListeners(): void {
     ipcMain.on('lodestone:getCharacter', (event, id) => {
-      const worker = new Worker(isDev ? join(__dirname, '../workers/lodestone.js') : join(app.getAppPath(), '../../resources/Workers/lodestone.js'), {
+      const worker = new Worker(isDev ? join(__dirname, '../workers/lodestone.js') : join(app.getAppPath(), '../../resources/app.asar.unpacked/dist/apps/electron/src/workers/lodestone.js'), {
         workerData: id
       });
       worker.on('message', (char) => {
