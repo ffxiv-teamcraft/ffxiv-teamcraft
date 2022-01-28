@@ -106,16 +106,16 @@
                   nzType="default">
             <i nz-icon nzType="split-cells" nzTheme="outline"></i>
           </button>
-          <button (click)="openContributionsPopup()"
-                  *ngIf="!list.offline"
-                  [disabled]="(permissionLevel$ | async) < 20"
-                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"
-                  nz-button
-                  nz-tooltip
-                  nzShape="circle"
-                  nzType="default">
-            <i nz-icon nzType="pie-chart"></i>
-          </button>
+<!--          <button (click)="openContributionsPopup()"-->
+<!--                  *ngIf="!list.offline"-->
+<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+<!--                  [nzTooltipTitle]="'LIST_DETAILS.Contributions_popup' | translate"-->
+<!--                  nz-button-->
+<!--                  nz-tooltip-->
+<!--                  nzShape="circle"-->
+<!--                  nzType="default">-->
+<!--            <i nz-icon nzType="pie-chart"></i>-->
+<!--          </button>-->
           <button (click)="openTagsPopup(list)" [disabled]="(permissionLevel$ | async) < 40"
                   [nzTooltipTitle]="'LIST_DETAILS.Tags_popup' | translate" [nzType]="list.public?'primary':'default'"
                   nz-button
@@ -144,14 +144,14 @@
                   nzType="primary">
             <i nz-icon nzType="number" nzTheme="outline"></i>
           </button>
-          <button (click)="openHistoryPopup()"
-                  [disabled]="(permissionLevel$ | async) < 20"
-                  *ngIf="!list.offline"
-                  [nzTooltipTitle]="'LIST.History' | translate" nz-button
-                  nz-tooltip
-                  nzShape="circle">
-            <i nz-icon nzType="field-time" nzTheme="outline"></i>
-          </button>
+<!--          <button (click)="openHistoryPopup()"-->
+<!--                  [disabled]="(permissionLevel$ | async) < 20"-->
+<!--                  *ngIf="!list.offline"-->
+<!--                  [nzTooltipTitle]="'LIST.History' | translate" nz-button-->
+<!--                  nz-tooltip-->
+<!--                  nzShape="circle">-->
+<!--            <i nz-icon nzType="field-time" nzTheme="outline"></i>-->
+<!--          </button>-->
         </div>
       </div>
     </div>

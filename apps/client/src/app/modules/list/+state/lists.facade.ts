@@ -163,11 +163,12 @@ export class ListsFacade {
   ]).pipe(
     debounceTime(500),
     switchMap(([history, key]) => {
-      if (!history && !key.startsWith('offline')) {
-        this.loadListHistory(key);
-        return of(null);
-      }
-      return of(history);
+      // if (!history && !key.startsWith('offline')) {
+      //   this.loadListHistory(key);
+      //   return of(null);
+      // }
+      // return of(history);
+      return of(null);
     }),
     filter(h => !!h),
     shareReplay(1)

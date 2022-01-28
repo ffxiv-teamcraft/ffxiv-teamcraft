@@ -13,7 +13,7 @@ export class ListHistoryPopupComponent {
 
   public history$: Observable<ModificationEntry[]> = this.listsFacade.selectedListModificationHistory$.pipe(
     map(entries => {
-      return entries.sort((a, b) => b.date - a.date);
+      return (entries || []).sort((a, b) => b.date - a.date);
     })
   );
 
