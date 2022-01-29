@@ -153,10 +153,6 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  selectedListServerVersion$ = this.store.select(listsQuery.getSelectedClone()).pipe(
-    filter(list => list !== undefined)
-  );
-
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
     switchMap(loggedIn => {
       return combineLatest([

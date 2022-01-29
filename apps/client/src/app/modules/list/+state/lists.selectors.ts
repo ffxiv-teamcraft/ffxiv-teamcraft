@@ -64,11 +64,6 @@ const getSelectedList = () => createSelector(
   }
 );
 
-const getSelectedClone = () => createSelector(
-  getListsState,
-  (state: ListsState) => state.selectedClone
-);
-
 const getPinnedListKey = () => createSelector(
   getListsState,
   (state) => {
@@ -79,7 +74,6 @@ const getPinnedListKey = () => createSelector(
 export const listsQuery = {
   getAllListDetails,
   getSelectedList,
-  getSelectedClone,
   getPinnedListKey,
   getNeedsVerification,
   getAutocompleteEnabled,
