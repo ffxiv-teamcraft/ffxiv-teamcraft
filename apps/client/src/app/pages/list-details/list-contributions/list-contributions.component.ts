@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, of } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../modules/list/list-controller';
 
@@ -17,20 +17,8 @@ export class ListContributionsComponent {
     value: 'ascend'
   });
 
-  public contributions$ = combineLatest([
-    this.listsFacade.selectedList$,
-    this.sort$,
-    this.lazyData.getEntry('ilvls'),
-    this.listsFacade.selectedListModificationHistory$
-  ]).pipe(
-    map(([list, sort, ilvls, history]) => {
-      const result = ListController.getContributionStats(list, history, ilvls);
-      result.entries.sort((a, b) => {
-        return sort.value === 'ascend' ? a[sort.key] - b[sort.key] : b[sort.key] - a[sort.key];
-      });
-      return result;
-    })
-  );
+  // TODO
+  public contributions$ = of({});
 
   constructor(private listsFacade: ListsFacade, private lazyData: LazyDataFacade) {
   }

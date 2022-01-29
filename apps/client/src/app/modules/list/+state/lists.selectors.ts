@@ -56,28 +56,12 @@ const getSelectedId = createSelector(
   (state: ListsState) => state.selectedId
 );
 
-const getListHistories = createSelector(
-  getListsState,
-  (state: ListsState) => state.listHistories
-);
-
-const getCurrentListHistory = createSelector(
-  getListHistories,
-  getSelectedId,
-  (histories, id) => histories[id]
-);
-
 const getSelectedList = () => createSelector(
   getAllListDetailsWithArchived,
   getSelectedId,
   (lists, id) => {
     return lists.find(it => it.$key === id);
   }
-);
-
-const getSelectedClone = () => createSelector(
-  getListsState,
-  (state: ListsState) => state.selectedClone
 );
 
 const getPinnedListKey = () => createSelector(
@@ -90,14 +74,11 @@ const getPinnedListKey = () => createSelector(
 export const listsQuery = {
   getAllListDetails,
   getSelectedList,
-  getSelectedClone,
   getPinnedListKey,
   getNeedsVerification,
   getAutocompleteEnabled,
   getCompletionNotificationEnabled,
   getListsLoading,
   getConnectedTeams,
-  getSelectedId,
-  getListHistories,
-  getCurrentListHistory
+  getSelectedId
 };

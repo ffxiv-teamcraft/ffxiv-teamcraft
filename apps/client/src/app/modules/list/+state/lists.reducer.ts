@@ -1,8 +1,7 @@
 import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
-import { ListController } from '../list-controller';
-import { ModificationEntry } from '../model/modification-entry';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { ListController } from '../list-controller';
 
 
 const PINNED_LIST_LS_KEY = 'lists:pinned';
@@ -15,7 +14,6 @@ export const listsAdapter: EntityAdapter<List> = createEntityAdapter<List>({
 export interface ListsState {
   listDetails: EntityState<List>;
   selectedId?: string; // which Lists record has been selected
-  selectedClone?: List; // a clone of the currently selected list for diff updates
   autocompletionEnabled?: boolean;
   completionNotificationEnabled?: boolean;
   listsConnected: boolean;
@@ -24,7 +22,7 @@ export interface ListsState {
   deleted: string[];
   pinned: string;
   showArchived: boolean;
-  listHistories: Record<string, ModificationEntry[]>;
+  readLock: boolean;
 }
 
 export const initialState: ListsState = {
@@ -35,8 +33,36 @@ export const initialState: ListsState = {
   connectedTeams: [],
   pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none',
   showArchived: false,
-  listHistories: {}
+  readLock: false
 };
+
+function updateLists(lists: List[], state: ListsState, matchingPredicate = (list: List) => false): ListsState {
+  const listsByKey = lists.reduce((acc, list) => ({ ...acc, [list.$key]: list }), {});
+  const checkedLists = {};
+  const toDelete = [];
+  const afterMap = listsAdapter.map(storeList => {
+    checkedLists[storeList.$key] = true;
+    const patch = listsByKey[storeList.$key];
+    if (patch && patch.etag >= storeList.etag) {
+      if (storeList.$key === state.selectedId && state.readLock) {
+        return storeList;
+      }
+      return patch;
+    }
+    if (!patch && matchingPredicate(storeList)) {
+      toDelete.push(storeList.$key);
+    }
+    return storeList;
+  }, state.listDetails);
+  const afterSet = lists.filter(list => !checkedLists[list.$key])
+    .reduce((acc, list) => {
+      return listsAdapter.setOne(list, acc);
+    }, afterMap);
+  return {
+    ...state,
+    listDetails: listsAdapter.removeMany(toDelete, afterSet)
+  };
+}
 
 export function listsReducer(
   state: ListsState = initialState,
@@ -68,16 +94,33 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.MyListsLoaded: {
+    case ListsActionTypes.SetItemDone: {
+      const list = ListController.clone(state.listDetails.entities[state.selectedId], true);
+      ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      ListController.updateAllStatuses(list, action.itemId);
       state = {
         ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
-          listsAdapter.removeMany(list => {
-            return list.authorId === action.userId
-              && !list.offline
-              && !list.archived;
-          }, state.listDetails)
-        ),
+        readLock: true,
+        listDetails: listsAdapter.setOne(list, state.listDetails)
+      };
+      break;
+    }
+
+    case ListsActionTypes.RemoveReadLock: {
+      state = {
+        ...state,
+        readLock: false
+      };
+      break;
+    }
+
+    case ListsActionTypes.MyListsLoaded: {
+      state = {
+        ...updateLists(action.payload, state, list => {
+          return list.authorId === action.userId
+            && !list.offline
+            && !list.archived;
+        }),
         listsConnected: true
       };
       break;
@@ -100,44 +143,24 @@ export function listsReducer(
     }
 
     case ListsActionTypes.ArchivedListsLoaded: {
-      state = {
-        ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
-          listsAdapter.removeMany(list => {
-            return list.authorId === action.userId && list.archived;
-          }, state.listDetails)
-        )
-      };
+      state = updateLists(action.payload, state, list => {
+        return list.authorId === action.userId && list.archived;
+      });
       break;
     }
 
     case ListsActionTypes.OfflineListsLoaded: {
-      state = {
-        ...state,
-        listDetails: listsAdapter.setMany(action.payload,
-          listsAdapter.removeMany(list => {
-            return list.offline;
-          }, state.listDetails)
-        )
-      };
-      break;
-    }
-
-    case ListsActionTypes.LoadTeamLists: {
-      state = {
-        ...state
-      };
+      state = updateLists(action.payload, state, list => {
+        return list.offline;
+      });
       break;
     }
 
     case ListsActionTypes.TeamListsLoaded: {
       state = {
-        ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId),
-          listsAdapter.removeMany(list => {
-            return list.teamId === action.teamId;
-          }, state.listDetails)
-        ),
+        ...updateLists(action.payload, state, list => {
+          return list.teamId === action.teamId;
+        }),
         connectedTeams: [
           ...state.connectedTeams,
           action.teamId
@@ -147,18 +170,12 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SharedListsLoaded: {
-      state = {
-        ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId), state.listDetails)
-      };
+      state = updateLists(action.payload, state);
       break;
     }
 
     case ListsActionTypes.ListsForTeamsLoaded: {
-      state = {
-        ...state,
-        listDetails: listsAdapter.setMany(action.payload.filter(list => list.$key !== state.selectedId), state.listDetails)
-      };
+      state = updateLists(action.payload, state);
       break;
     }
 
@@ -185,47 +202,6 @@ export function listsReducer(
         ...state,
         listDetails
       };
-      if (updated && state.selectedId === action.payload.$key && !action.payload.notFound) {
-        state.selectedClone = ListController.clone(action.payload as List, true);
-      }
-      break;
-    }
-
-    case ListsActionTypes.UpdateSelectedClone: {
-      state = {
-        ...state,
-        selectedClone: action.payload
-      };
-      break;
-    }
-
-    case ListsActionTypes.ListHistoryLoaded: {
-      state = {
-        ...state,
-        listHistories: {
-          ...state.listHistories,
-          [action.listId]: action.history
-        }
-      };
-      break;
-    }
-
-    case ListsActionTypes.UnloadListDetails: {
-      state = {
-        ...state,
-        listHistories: {
-          ...state.listHistories,
-          [action.key]: null
-        }
-      };
-      break;
-    }
-
-    case ListsActionTypes.UpdateListProgress: {
-      state = {
-        ...state,
-        listDetails: listsAdapter.setOne(action.payload, state.listDetails)
-      };
       break;
     }
 
@@ -239,11 +215,9 @@ export function listsReducer(
     }
 
     case ListsActionTypes.SelectList: {
-      const selected = state.listDetails.entities[action.key];
       state = {
         ...state,
-        selectedId: action.key,
-        selectedClone: selected ? ListController.clone(selected, true) : null
+        selectedId: action.key
       };
       break;
     }

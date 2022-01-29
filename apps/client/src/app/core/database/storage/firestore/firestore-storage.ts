@@ -205,6 +205,14 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(batch.commit());
   }
 
+  public runTransaction(listId: string, transactionFn: (transaction: firebase.firestore.Transaction, serverCopy: firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>) => void): Observable<void> {
+    return from(this.firestore.firestore.runTransaction(async transaction => {
+      const ref = this.firestore.firestore.collection(this.getBaseUri()).doc(listId);
+      const serverCopy = await transaction.get(ref);
+      return transactionFn(transaction, serverCopy);
+    }));
+  }
+
   updateIndexes(rows: T[]): Observable<void> {
     this.recordOperation('write', rows.map(row => row.$key));
     const batch = this.firestore.firestore.batch();

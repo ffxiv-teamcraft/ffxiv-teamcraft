@@ -1,7 +1,6 @@
 import { Action } from '@ngrx/store';
 import { List } from '../model/list';
 import { ListRow } from '../model/list-row';
-import { ModificationEntry } from '../model/modification-entry';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
@@ -27,9 +26,7 @@ export enum ListsActionTypes {
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
 
-  LoadListHistory = '[Lists] Load List History',
-  ListHistoryLoaded = '[Lists] List History Loaded',
-  AddHistoryEntry = '[Lists] Add List History Entry',
+  RemoveReadLock = '[Lists] Remove Read Lock',
 
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
@@ -163,6 +160,10 @@ export class MyListsLoaded implements Action {
   }
 }
 
+export class RemoveReadLock implements Action {
+  readonly type = ListsActionTypes.RemoveReadLock;
+}
+
 export class ArchivedListsLoaded implements Action {
   readonly type = ListsActionTypes.ArchivedListsLoaded;
 
@@ -198,27 +199,6 @@ export class ListDetailsLoaded implements Action {
   }
 }
 
-export class ListHistoryLoaded implements Action {
-  readonly type = ListsActionTypes.ListHistoryLoaded;
-
-  constructor(public listId: string, public history: ModificationEntry[]) {
-  }
-}
-
-export class LoadListHistory implements Action {
-  readonly type = ListsActionTypes.LoadListHistory;
-
-  constructor(public key: string) {
-  }
-}
-
-export class AddHistoryEntry implements Action {
-  readonly type = ListsActionTypes.AddHistoryEntry;
-
-  constructor(public entry: ModificationEntry) {
-  }
-}
-
 export class CreateList implements Action {
   readonly type = ListsActionTypes.CreateList;
 
@@ -235,20 +215,6 @@ export class UpdateList implements Action {
 
 export class ClearModificationsHistory implements Action {
   readonly type = ListsActionTypes.ClearModificationsHistory;
-
-  constructor(public readonly payload: List) {
-  }
-}
-
-export class UpdateListProgress implements Action {
-  readonly type = ListsActionTypes.UpdateListProgress;
-
-  constructor(public readonly payload: List, public fromPacket: boolean) {
-  }
-}
-
-export class UpdateSelectedClone implements Action {
-  readonly type = ListsActionTypes.UpdateSelectedClone;
 
   constructor(public readonly payload: List) {
   }
@@ -321,11 +287,7 @@ export type ListsAction =
   | ArchivedListsLoaded
   | UnLoadArchivedLists
   | PureUpdateList
-  | UpdateListProgress
-  | UpdateSelectedClone
   | MarkItemsHq
   | UnloadListDetails
   | ClearModificationsHistory
-  | ListHistoryLoaded
-  | LoadListHistory
-  | AddHistoryEntry;
+  | RemoveReadLock;

@@ -4,14 +4,13 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, mapTo, retry, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, mapTo, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { Class } from '@kaiu/serializer';
 import firebase from 'firebase/compat/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
-import { applyPatch, compare, getValueByPointer } from 'fast-json-patch';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { ListController } from '../../../../modules/list/list-controller';
 import { HttpClient, HttpParams } from '@angular/common/http';
@@ -45,24 +44,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
               protected pendingChangesService: PendingChangesService, private lazyData: LazyDataFacade,
               private http: HttpClient) {
     super(af, serializer, zone, pendingChangesService);
-  }
-
-  public update(uid: string, localSnapshot: List, update: List, uriParams?: any): Observable<void> {
-    this.pendingChangesService.addPendingChange(`List Transaction ${uid}`);
-    return from(this.af.firestore.runTransaction(transaction => {
-      const ref = this.af.firestore.collection(this.getBaseUri()).doc(uid);
-      return transaction.get(ref).then(snap => {
-        this.recordOperation('read', uid);
-        const serverList = { $key: snap.id, ...snap.data() } as List;
-        const before = this.prepareData(localSnapshot);
-        const after = this.prepareData(update);
-        return this.runTransactionUpdate(ref, transaction, before, after, serverList);
-      });
-    }).then(() => {
-      this.pendingChangesService.removePendingChange(`List Transaction ${uid}`);
-    })).pipe(
-      retry(3)
-    );
   }
 
   public prepareData(list: Partial<List>): List {
@@ -367,39 +348,5 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
       );
-  }
-
-  private runTransactionUpdate(ref: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>,
-                               transaction: firebase.firestore.Transaction,
-                               before: List, after: List, serverList: List): void {
-    // Get diff between local backup and new version
-    try {
-      const diff = compare(before, after);
-      if (diff.length > 20 || diff.some(change => change.op !== 'replace' || isNaN(change.value))) {
-        transaction.set(ref, after);
-      } else {
-        // Update the diff so the values are applied to the server list instead
-        const transactionDiff = diff.map(change => {
-          if (change.op === 'replace' && typeof change.value === 'number' && !change.path.includes('createdAt')) {
-            try {
-              const currentServerValue = getValueByPointer(serverList, change.path);
-              const currentLocalValue = getValueByPointer(before, change.path);
-              change.value = change.value - currentLocalValue + currentServerValue;
-            } catch (e) {
-              console.warn(e);
-            }
-          }
-          return change;
-        });
-        // Apply patch to the server list
-        const patched = applyPatch(serverList, transactionDiff).newDocument;
-        // Save inside Database
-        transaction.set(ref, patched);
-      }
-    } catch (diffErr) {
-      console.warn(`Transaction update error:`, diffErr);
-    }
-
-    this.recordOperation('write', before.$key);
   }
 }

@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.5.6",
+  "version": "9.5.7",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -25,13 +25,6 @@
         ]
       },
       {
-        "from": "./dist/apps/electron/workers",
-        "to": "Workers",
-        "filter": [
-          "**/*.js"
-        ]
-      },
-      {
         "from": "./desktop",
         "to": "MachinaWrapper",
         "filter": [
@@ -39,6 +32,7 @@
         ]
       }
     ],
+    "asarUnpack": "./dist/apps/electron/src/workers/lodestone.js",
     "protocols": {
       "name": "ffxiv-teamcraft",
       "schemes": [
