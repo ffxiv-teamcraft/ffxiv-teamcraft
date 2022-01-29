@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.7"></a>
+## [9.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.6...v9.5.7) (2022-01-29)
+
+
+### Bug Fixes
+
+* **desktop:** fixed fish db page freezing on load ([ca197b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca197b6))
+* **list:** refactoring of the transaction system to fix list tracking ([e459db2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e459db2))
+
+
+
 <a name="9.5.6"></a>
 ## [9.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.5...v9.5.6) (2022-01-28)
 
