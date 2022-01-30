@@ -305,9 +305,10 @@ export class ListsEffects {
   ), { dispatch: false });
 
   deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListProgress, ListsActionTypes.UpdateListAtomic),
-    filter(action => action.payload.ephemeral && ListController.isComplete(action.payload)),
-    map(action => new DeleteList(action.payload.$key, action.payload.offline)),
+    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.SetItemDone, ListsActionTypes.UpdateListAtomic),
+    withLatestFrom(this.listsFacade.selectedList$),
+    filter(([, list]) => list.ephemeral && ListController.isComplete(list)),
+    map(([, list]) => new DeleteList(list.$key, list.offline)),
     debounceTime(500),
     tap(() => this.router.navigate(['/lists']))
   ));
@@ -430,7 +431,7 @@ export class ListsEffects {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
-        const itemDone = item.done + action.doneDelta >= item.amount;
+        const itemDone = item.done >= item.amount;
         if (itemDone) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
             map(itemName => {
@@ -458,6 +459,7 @@ export class ListsEffects {
     }),
     debounceBufferTime(2000),
     withLatestFrom(this.selectedListClone$),
+    filter(([, list]) => list !== undefined)
   ).pipe(
     switchMap(([actions, list]: [SetItemDone[], List]) => {
       if (list.hasCommission) {
@@ -526,7 +528,7 @@ export class ListsEffects {
     filter(([, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
-    debounceTime(2000),
+    debounceTime(500),
     tap(([, list]) => {
       if (!list.hasCommission) {
         this.dialog.create({

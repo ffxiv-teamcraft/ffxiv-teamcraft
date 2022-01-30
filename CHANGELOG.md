@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.8"></a>
+## [9.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.7...v9.5.8) (2022-01-30)
+
+
+### Bug Fixes
+
+* **lists:** fixed autofill HQ items and double completion notifications ([4322b17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4322b17))
+* **lists:** fixed ephemeral lists not deleting themselves properly ([5ce7efa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ce7efa))
+* **pricing:** fixed wrong formula for recipes yielding > 1 item ([9703f0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9703f0d))
+
+
+
 <a name="9.5.7"></a>
 ## [9.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.6...v9.5.7) (2022-01-29)
 

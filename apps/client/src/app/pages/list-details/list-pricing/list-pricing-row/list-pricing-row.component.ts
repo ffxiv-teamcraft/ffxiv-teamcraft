@@ -107,7 +107,7 @@ export class ListPricingRowComponent extends TeamcraftComponent {
     });
 
     combineLatest([this.itemPrice$, this.priceToCraft$]).pipe(
-      filter(([itemPrice, priceToCraft]) => itemPrice.custom === false && itemPrice?.price.nq !== priceToCraft?.price.nq),
+      filter(([itemPrice, priceToCraft]) => itemPrice.custom === false && Math.round(itemPrice?.price.nq) !== Math.round(priceToCraft?.price.nq)),
       takeUntil(this.onDestroy$)
     ).subscribe(([itemPrice, priceToCraft]) => {
       itemPrice.price.nq = Math.round(priceToCraft.price.nq);
