@@ -431,7 +431,7 @@ export class ListsEffects {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
-        const itemDone = item.done + action.doneDelta >= item.amount;
+        const itemDone = item.done >= item.amount;
         if (itemDone) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
             map(itemName => {

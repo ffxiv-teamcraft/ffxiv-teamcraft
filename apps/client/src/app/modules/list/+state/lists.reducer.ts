@@ -96,13 +96,24 @@ export function listsReducer(
 
     case ListsActionTypes.SetItemDone: {
       const list = ListController.clone(state.listDetails.entities[state.selectedId], true);
-      ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      ListController.updateAllStatuses(list, action.itemId);
-      state = {
-        ...state,
-        readLock: true,
-        listDetails: listsAdapter.setOne(list, state.listDetails)
-      };
+      const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
+      const requiredHq = ListController.requiredAsHQ(list, item) > 0;
+      let fill = true;
+      if (state.autocompletionEnabled && action.settings.enableAutofillHQFilter && requiredHq) {
+        fill = !action.fromPacket || action.hq;
+      }
+      if (state.autocompletionEnabled && action.settings.enableAutofillNQFilter && !requiredHq) {
+        fill = !action.fromPacket || !action.hq;
+      }
+      if (fill) {
+        ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+        ListController.updateAllStatuses(list, action.itemId);
+        state = {
+          ...state,
+          readLock: true,
+          listDetails: listsAdapter.setOne(list, state.listDetails)
+        };
+      }
       break;
     }
 
