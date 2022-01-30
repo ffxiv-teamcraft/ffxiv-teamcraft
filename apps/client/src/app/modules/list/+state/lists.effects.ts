@@ -305,9 +305,10 @@ export class ListsEffects {
   ), { dispatch: false });
 
   deleteEphemeralListsOnComplete$ = createEffect(() => this.actions$.pipe(
-    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.UpdateListProgress, ListsActionTypes.UpdateListAtomic),
-    filter(action => action.payload.ephemeral && ListController.isComplete(action.payload)),
-    map(action => new DeleteList(action.payload.$key, action.payload.offline)),
+    ofType<UpdateList>(ListsActionTypes.UpdateList, ListsActionTypes.SetItemDone, ListsActionTypes.UpdateListAtomic),
+    withLatestFrom(this.listsFacade.selectedList$),
+    filter(([, list]) => list.ephemeral && ListController.isComplete(list)),
+    map(([, list]) => new DeleteList(list.$key, list.offline)),
     debounceTime(500),
     tap(() => this.router.navigate(['/lists']))
   ));
@@ -458,6 +459,7 @@ export class ListsEffects {
     }),
     debounceBufferTime(2000),
     withLatestFrom(this.selectedListClone$),
+    filter(([, list]) => list !== undefined)
   ).pipe(
     switchMap(([actions, list]: [SetItemDone[], List]) => {
       if (list.hasCommission) {
