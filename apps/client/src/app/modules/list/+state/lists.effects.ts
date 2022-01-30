@@ -528,7 +528,7 @@ export class ListsEffects {
     filter(([, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
-    debounceTime(2000),
+    debounceTime(500),
     tap(([, list]) => {
       if (!list.hasCommission) {
         this.dialog.create({
