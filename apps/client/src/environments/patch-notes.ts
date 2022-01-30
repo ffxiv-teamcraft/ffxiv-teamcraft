@@ -1,4 +1,5 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed fish db page freezing on load.
-* **list:** refactoring of the transaction system to fix list tracking.`;
+* **lists:** fixed autofill HQ items and double completion notifications.
+* **lists:** fixed ephemeral lists not deleting themselves properly.
+* **pricing:** fixed wrong formula for recipes yielding > 1 item.`;
