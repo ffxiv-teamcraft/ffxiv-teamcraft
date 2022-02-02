@@ -1,7 +1,7 @@
 {
   "Mogstation": "Mogstation",
   "Quests": "Квесты",
-  "Facebook_notice": "Facebook логин больше не доступен, вы можете добавить пароль к своей учетной записи, используя систему \"сброса пароля\" или попросив Miu в дискорде.",
+  "Facebook_notice": "Facebook login is no longer available. You can add a password to your account using the \"reset password\" system, or by asking Miu on Discord.",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
   "Pick_a_fc": "Выбрать FC",
@@ -16,10 +16,10 @@
   "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
   "List_fork_in_progress": "Copying the list to your account…",
-  "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
+  "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
-  "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
   "Check_guides": "Check our guides",
@@ -45,7 +45,7 @@
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
     "Reset_filters": "Сбросить фильтры",
-    "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
+    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
@@ -55,9 +55,9 @@
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
   "Find_us_on_twitter": "Мы в Twitter",
-  "Join_discord_server": "Присоединяйтесь к нам в Discord",
-  "See_code_github": "Просмотреть код на github",
-  "Support_on_patreon": "Поддержите проект в patreon",
+  "Join_discord_server": "Join our Discord server",
+  "See_code_github": "See the code on Github",
+  "Support_on_patreon": "Support the project on Patreon",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
   "Like_the_tool": "Вам нравится этот инструмент?",
   "Default": "По умолчанию",
@@ -85,7 +85,7 @@
     "Workshops": "Мастерские",
     "Add_one_list": "Добавить список",
     "Add_workshop": "Добавить мастерскую",
-    "Delete_message": "Удаление мастерской не удалит в ней списки, они будут перемещены в списки без мастерских",
+    "Delete_message": "Deleting a workshop won't delete the lists in it. They will only be brought back to workshop-less lists",
     "List_selection_title": "Выберите списки для добавлению в мастерскую {{workshopName}}",
     "Name_dialog": "Название мастерской",
     "Created_by": "Создано {{name}}",
@@ -130,7 +130,7 @@
     "Exclude_filter_placeholder": "Исключить использование тегов",
     "Exclude_filter_reset": "Сбросить фильтр исключений",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
-    "No_lists_matching": "No lists matching your filters, make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
     "Search": "Search"
   },
   "COMMON": {
@@ -148,7 +148,7 @@
     "Success": "Успешно",
     "Copy_to_clipboard": "Копировать в буфер обмена",
     "Language": "Язык",
-    "Opened_in_desktop": "Эта страница была открыта в приложении, теперь вы можете её закрыть.",
+    "Opened_in_desktop": "This page has been opened inside your desktop app. You can now close it.",
     "Opened_in_desktop_setting": "Вы можете отключить это поведение в настройках",
     "Opened_in_desktop_button": "Or by clicking this button",
     "Open_in_desktop": "Открыть в приложении",
@@ -183,7 +183,7 @@
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
     "Back": "Назад",
-    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
+    "Support_us_remove_ads": "Support us on Patreon to remove ads",
     "Support_us": "Поддержите нас",
     "Show_more": "Показать еще",
     "Item": "Предмет",
@@ -235,9 +235,9 @@
     "REALTIME": {
       "Reset_timers": "Таймеры сброса",
       "WEEKLY_RESETS": "Еженедельное",
-      "WEEKLY_RESETS_DESCRIPTION": "Специальные доставки, Wondrous Tails, еженедельные дропы (с различных рейдов), Jumbo cactpot, журнал вызовов, Fashion report, охота на B-ранги.",
+      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
       "ROULETTES_RESET": "Рулетки и племена зверолюдей",
-      "ROULETTES_RESET_DESCRIPTION": "Сброс всех рулеток, ежедневных заданий зверолюдей, ежедневная охота и mini cactpot.",
+      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
       "DELIVERIES_RESET": "Доставки",
       "DELIVERIES_RESET_DESCRIPTION": "Сброс доставок для Grand Company",
       "LEVE_ALLOWANCES": "Разрешения ливквестов",
@@ -248,7 +248,7 @@
       "Name": "Название",
       "Spawn": "Время появления (Eorzean time)",
       "Spawns_twice": "Двойной спавн",
-      "Spawns_twice_description": "Спавнится дважды за внутриигровой день (Один днем, второй ночью)",
+      "Spawns_twice_description": "Spawns twice per Eorzean day (One spawn AM, one PM)",
       "Duration": "Продолжительность (Eorzean часов)",
       "Slot": "Слот",
       "Slot_description": "Ячейка (1-8), где появляется предмет внутри интерфейса сбора (Не супер важно из-за патча 5.1)",
@@ -331,7 +331,7 @@
   "MIN/BTN": "Шахтер / Ботаник",
   "Game_Term/FSH": "Рыбак",
   "Reduction": "Снижение",
-  "Upgrade_list": "Восстановить список с учётом последнего обновления",
+  "Upgrade_list": "Recreate and update list for the latest app version",
   "List_recreated": "Восстановить список правильно",
   "List_popup_title": "Восстановление списка, пожалуйста, подождите",
   "Please_wait": "Скоро закончим, подождите немного!",
@@ -343,7 +343,7 @@
   "Recipe_Added": "1 предмет добавлен в список {{listname}}",
   "Recipes_Added": "{{itemcount}} предметов добавлено в список {{listname}}, нажмите на это уведомление, чтобы открыть список.",
   "Character_name": "Имя персонажа",
-  "Character_add_warning": "Если вы это видите не удаляя персонажа вручную, ничего не вводите и обновите страницу, либо перезапустите приложение. Если проблема останется, пожалуйста, сообщите об этом на дискорд-сервере.",
+  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the Discord server.",
   "Disconnect_and_anonymous": "Выйти и продолжить анонимно",
   "Add_manual_character": "Добавить персонажа",
   "Character_informations": "Информация о персонаже",
@@ -360,7 +360,7 @@
   "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Показать обратные тиры",
   "Timer_options": "Настройки таймера",
-  "Early_by": "Рано (эорзейские часы)",
+  "Early_by": "Early by (Eorzean hours)",
   "Sound": "Звук",
   "Share_link_copied": "Ссылка списка скопирована в буфер обмена",
   "Share": "Поделиться",
@@ -368,7 +368,7 @@
   "Forgot_password": "Забыли пароль?",
   "Email_enter": "Почта",
   "Email_not_found": "Адрес эл. почты не найден",
-  "Email_sent": "Вам направлено письмо со ссылкой для сброса пароля.",
+  "Email_sent": "An email has been sent with instructions on how to change your password.",
   "Copy_current_link": "Copy a link to the current page on website to your clipboard",
   "ALARM": {
     "Spawned": "{{itemName}} will spawn!",
@@ -399,7 +399,7 @@
     "General": "Главное",
     "Link_base": "Ссылка на предмет",
     "Region": "Регион",
-    "Region_explain": "Источник данных и функции, основанные на конкретной версии игры, будут корректироваться в зависимости от региона. Некоторые из них могут быть недоступны в определенных регионах.",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
     "Proxy": "Прокси",
     "Proxy_bypass": "Нет прокси для",
     "Theme": "Тема",
@@ -421,8 +421,8 @@
     "Reset_password": "Сбросить пароль",
     "Reset_password_warning": "Вы уверены, что хотите сбросить пароль?",
     "Password_reset_mail_sent": "Отправлено электронное письмо о сбросе пароля",
-    "Connect_with_patreon": "Связать с patreon",
-    "Connected_with_patreon": "Подключено с patreon",
+    "Connect_with_patreon": "Connect with Patreon",
+    "Connected_with_patreon": "Connected with Patreon",
     "Nickname": "Ник",
     "Nickname_used": "Данный ник уже используется",
     "No_nickname_warning": "Пожалуйста, перейдите на страницу настроек и установите ник, чтобы иметь возможность использовать эксклюзивные функции Patreon'а.",
@@ -468,7 +468,7 @@
     "Enable_tutorials": "Включить систему обучения",
     "Show_patch_notes_on_update": "Показывать заметки о новых обновлениях",
     "Scrolling_behavior": "Режим прокрутки",
-    "Scrolling_behavior_explain": "Настройте как работает прокрутка в панелях списка, по умолчанию означает разрешение до 12 элементов на панель перед прокруткой.",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves. Default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Автоматически отмечать предметы в журнале как выполненные при сборе/крафте",
     "Enable_auto_stats_updating": "Автоматически обновлять статистику/уровни при смене профессии",
     "Enable_metrics_capture": "Включить захват метрик",
@@ -481,7 +481,7 @@
     "Maximum_total_vendor_price": "Максимальная общая цена у продавца",
     "Maximum_total_vendor_price_explain": "Максимальная цена для всей строки (цена за единицу * количество), которая будет учтена фильтром CAN_BE_BOUGHT (0 = нет максимума)",
     "Rawsock_flag": "Использовать RawSocket для захвата пакетов",
-    "Rawsock_details": "Использование RawSocket захватывает трафик без npcap, может помочь с VPN. Тем не менее, в целом это менее надежно, и вы должны вручную запускать TC как администратор каждый раз",
+    "Rawsock_details": "Using RawSocket captures the traffic without npcap, and can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "Favorite_features": "Избранные функции",
     "Favorite_features_explain": "Функции, которые вы хотите показать в разделе Избранное на боковой панели.",
     "Clear_inventory_on_startup": "Очистить инвентарь при запуске",
@@ -491,10 +491,10 @@
     "Reset_contentid_characters": "Сброс привязанных персонажей",
     "Reset_contentid_characters_ok": "Linked characters have been reset",
     "Show_other_characters_inventories_in_list": "Показывать инвентарь других персонажей в списках",
-    "Show_other_characters_inventories_in_inventory_page": "Показывать инвентарь других персонажей на странице инвентаря",
+    "Show_other_characters_inventories_in_inventory_page": "Show other characters' inventories in inventory page",
     "Alarm_panels_collapsed_by_default": "Свернуть панель группы оповещений по умолчанию",
     "Alarm_groups_before_no_group": "Показывать группы оповещений перед оповещениями без группы",
-    "Disconnect_patreon": "Отключиться от Patreon",
+    "Disconnect_patreon": "Disconnect from Patreon",
     "Export_settings": "Экспорт настроек",
     "Import_settings": "Импорт настроек",
     "Import_successful": "Настройки импортированы",
@@ -504,7 +504,7 @@
     "Hide_back_button": "Скрыть кнопку \"Назад\" в боковой панели",
     "Reload_auth_token": "Перезагрузить токен авторизации",
     "Materia_confidence_rate": "Melding confidence rate",
-    "Materia_confidence_rate_explain": "Confidence rate for materia estimate, higher means that more materias will be suggested to be more confident that with this amount, it'll fit your melds",
+    "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -554,17 +554,17 @@
     "Jobs": "Профессии",
     "Stats": "Характеристики",
     "View_on_apkallu_falls": "Открыть в Apkallu Falls",
-    "Masterbooks": "Книги",
+    "Masterbooks": "Master books",
     "Patreon_supporter": "Patreon донатеры",
     "Patreon_features": "Функции донатеров Patreon",
     "Contacts": "Контакты",
     "Add_new_contact": "Новый контакт",
     "Save_for_all": "Сохранить для всех крафтеров",
-    "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
+    "User_not_verified": "User not verified. Click to verify user.",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
     "Autofill_from_packets": "Автозаполнение параметров с помощью захвата пакетов (также будет учитываться использованная еда)",
-    "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
+    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done. Please make sure you don't have any active food, or else it'll save your stats with the food active.",
     "Open_public_profile": "Открыть профиль",
     "Community_contributions": "Вклад в сообщество",
     "Fishing_rankings": "Рейтинг Рыбалки",
@@ -576,8 +576,8 @@
       "Button": "Подтвердить",
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
-      "Success": "Персонаж подтверждён! Теперь вы можете закрыть это окно. Не стесняйтесь удалить код из вашего профиля, он больше не нужен.",
-      "Error": "Не удалось найти код в вашем профиле, пожалуйста, убедитесь, что вы вставили его и применили изменения, а затем подождите ~30 сек и повторите попытку.",
+      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, as it isn't needed anymore.",
+      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes, then wait ~30s and retry.",
       "Validate": "Подтвердить"
     }
   },
@@ -599,7 +599,7 @@
     "Lists_search_placeholder": "Search for a list…",
     "Add_to_a_list": "Добавить в список",
     "Please_pick_recipe": "Пожалуйста, выберите рецепт для этого предмета",
-    "Import_description": "Выберите рецепт, который вы хотите использовать для предметов, которые можно создать и выберите список. Предметы будут добавлены в этот список и вы будете перенаправлены в него.",
+    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list. The items will be added to this list and you'll be redirected to it.",
     "Delete_after_merge": "Удалить исходные списки после объединения",
     "Favorite_lists": "Избранные списки",
     "No_favorite_lists": "У вас нет избранных списков",
@@ -644,7 +644,7 @@
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
-    "Offline_help": "Оффлайн списки хранятся в браузере или приложении, они доступны только внутри этого экземпляра и не могут быть общими, но они быстрее, так как не требуют сетевых подключений.",
+    "Offline_help": "Offline lists are stored inside the browser or the app. They are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
     "Mark_whole_panel_done": "Пометить содержимое панели как готово",
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
@@ -709,12 +709,12 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Список завершен",
-    "Public_list_description": "Изменение типа списка на публичный добавит его в раздел публичных списков. Это не требуется для того, чтобы им поделиться!",
-    "Missing_tags_before_button": "Этот список отображается как список сообщества, но не содержит тегов, пожалуйста, добавьте несколько тегов с ",
+    "Public_list_description": "Setting a list to public adds it to the public lists section. THIS IS NOT REQUIRED TO SHARE A LIST",
+    "Missing_tags_before_button": "This list is shown as a Community List but has no tags. Please add some tags using ",
     "Missing_tags_after_button": " кнопка",
     "Add_remove_amount": "Добавить/удалить данное количество",
     "Add_from_external": "Добавить как внешний (вы не использовали материалы для этого)",
-    "Missing_masterbook": "Этой книги нет в вашем профиле. Нажмите здесь, чтобы добавить её в профиль.",
+    "Missing_masterbook": "You don't have this Master book in your profile. Click to add it to the profile.",
     "No_note": "Нет заметок",
     "Edit_note": "Нет заметок",
     "Note_placeholder": "Заметка",
@@ -741,7 +741,7 @@
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Autofill_crafting_gathering_title": "Обнаружен процесс крафта или сбора",
     "Autofill_crafting_gathering_message": "Автозаполнение работает в медленном режиме до тех пор, пока вы не завершите крафт (встанете в игре) или сбор (закроете интерфейс), чтобы избежать проблем с автозаполнением.",
-    "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
+    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
     "X_needed": "{{amount}} требуется",
@@ -764,7 +764,7 @@
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
-      "Default_readonly_message": "Макет по умолчанию доступен только для чтения, вы должны создать новый макет с помощью кнопки +, чтобы иметь возможность настроить его.",
+      "Default_readonly_message": "Default layout is readonly. You have to create a new layout using the + button to be able to customize it.",
       "Buttons": "Кнопки",
       "Menu": "Меню",
       "Edit_row_buttons_display": "Редактировать отображение кнопок строки",
@@ -804,7 +804,7 @@
     },
     "OVERLAY": {
       "Open": "Открыть оверлей списка",
-      "No_display": "Открыть список в главном окне для начала",
+      "No_display": "Open a list in the main window to get started",
       "No_panel_selected": "Выберите панель, используя кнопки выше"
     },
     "SPLIT": {
@@ -908,15 +908,15 @@
     "Ephemeral_node": "Эфемерная нода, можно респаунить",
     "Intro": "Место сбора позволяет легко найти собираемый предмет и увидеть подробности о нём, где его найти и создать уведомление для нужной ноды. Просто введите название в поле выше и оно найдёт то, что вы ищете!",
     "Hidden_item": "Скрытый",
-    "Fish_eyes": "Требует скилл Fish eyes чтобы переживать только о погодных условиях",
+    "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
     "Add_alarm": "Добавить оповещение",
-    "Add_alarm_fish_eyes": "Добавить оповещение с fish eyes",
-    "Snagging": "Требуется \"snagging\"",
+    "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
+    "Snagging": "Requires Snagging",
     "Predators": "Ловите этих рыб до",
     "Fish_eyes_duration": "Для того, чтобы поймать рыбу, на \"fish eyes\" должно оставаться столько секунд. Нажмите, чтобы изменить формат.",
     "Spawned_for": "Деспавнится через {{timer}}",
     "Will_spawn_in": "Заспавнится через {{timer}}",
-    "Ephemeral_warning": "Ephemeral nodes имеют несколько мест, положение — приблизительное.",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
     "Legendary": "Легендарное",
     "Switched_to_compact": "Дисплей был переключен на компактный из-за слишком большого количества результатов.",
     "Node_type": "Type",
@@ -939,7 +939,7 @@
     "Not_found": "Шаблон не найден",
     "STATUS": {
       "Loading": "Загрузка шаблона из базы данных",
-      "Copying": "Создание копии списка в ваш аккаунт, вы будете перенаправлены на него после завершения"
+      "Copying": "Creating a copy of the list in your account. You'll be redirected to it once it's done"
     }
   },
   "PERMISSIONS": {
@@ -968,7 +968,7 @@
   },
   "WIKI": {
     "Title": "Вики",
-    "Not_found_in_current_lang": "Эта страница не найдена на вашем языке, будет показана английская версия",
+    "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
     "Not_found": "Cтраница не найдена"
   },
   "SIMULATOR": {
@@ -1015,7 +1015,7 @@
     "Import_from_crafting_optimizer": "Импортировать из crafting optimizer",
     "Export_crafting_optimizer": "Экспортировать используя формать crafting optimizer",
     "Export_copied": "Код экспорта для crafting optimizer'а скопирован в буфер",
-    "Unsaved_changes": "У вас есть несохраненные изменения, пожалуйста, сохраните их, прежде чем оставить эту страницу, иначе изменения будут потеряны.",
+    "Unsaved_changes": "You have unsaved changes. Please save before leaving this page or changes will be lost.",
     "Crafting_optimizer_code": "Код импорта crafting optimizer'а",
     "Generated_macro": "Внутриигровой макрос",
     "Generate_ingame_macro": "Сгенерировать внутриигровой макрос",
@@ -1036,7 +1036,7 @@
     "Change_rotation": "Изменить ротацию",
     "New_rotation_folder": "Новая папка",
     "Safe_mode": "Безопасный режим",
-    "Safe_mode_tooltip": "Выключает все навыки, шанс успеха которых не 100% (учитывает баффы)",
+    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chance to succeed (takes buffs into account)",
     "Quality_needed": "{{amount}} больше качества до 100%",
     "Rotation_tips": "Подсказки о ротации",
     "Progress_action_100_potency": "Прогресс при 100% эффективности: {{value}}",
@@ -1049,7 +1049,7 @@
     "No_matching_rotations": "Ротация сообщества не найдена в соответствии с вашим запросом",
     "Click_on_rotation": "Нажмите на ротацию для выбора",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
-    "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
+    "Could_not_find_minstats": "Could not find minimum stats for this rotation",
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
     "Macro_duration": "Длительность макроса: {{duration}}сек.",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
@@ -1097,7 +1097,7 @@
       "Success": "Успешно: {{HQ}}% HQ",
       "Success_collectable": "Успех: {{collectability}}",
       "Set_to_simulate": "Характеристики",
-      "Specialist_rotation_warning": "Показанный результат использует характеристики не специалиста для ротации специалиста, поэтому результат HQ% может быть ниже, чем ожидается.",
+      "Specialist_rotation_warning": "The result shown uses a non specialist stat set for a specialist rotation, which is why resulting HQ% might be way lower than expected.",
       "Steps_count": "{{count}} шагов",
       "TAGS": {
         "SPECIALIST": "Специалист",
@@ -1146,7 +1146,7 @@
     },
     "CONFIGURATION": {
       "Job": "Профессия",
-      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию. Перейдите на страницу профиля, чтобы настроить ее и установить характеристики.",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your Profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",
@@ -1159,14 +1159,14 @@
       "Apply_foods": "Использовать расходные материалы",
       "Food": "Выбрать еду",
       "Medicine": "Выбрать медикамент",
-      "Action": "Выберите баффы FC",
+      "Action": "Choose Free Company actions",
       "Save_on_profile": "Сохранить в профиль",
       "Reset_set": "Сбросить характеристики",
       "Save_consumables": "Сохранить эти расходные материалы по умолчанию",
       "No_food": "Без еды",
       "No_medicine": "Нет медикаментов",
       "No_fc_buffs": "Нет FC баффов",
-      "Quest_warning": "Убедитесь, что вы выполнили задание 70 ур. для \"Stroke of Genius\"",
+      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
       "Starting_quality": "Начальное качество",
       "STATS": {
         "CP": "CP",
@@ -1176,10 +1176,10 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
-      "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
+      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
       "NOT_ENOUGH_CP": "Недостаточно CP",
-      "MISSING_LEVEL_REQUIREMENT": "У вас нет требуемого уровня для создания этого предмета.",
-      "NOT_SPECIALIST": "Ротация специалиста, но вы не являетесь специалистом",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
+      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet",
       "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта"
     },
@@ -1191,14 +1191,14 @@
       "Use_durability_restoration_later": "Вы должны использовать действие восстановления прочности на шаге {{index}} позже, чтобы избежать восстановления прочности впустую.",
       "Use_patient_touch_faster": "Вам следует использовать Patient Touch перед добавлением Inner Quiet, чтобы минимизировать потерю стаков если действие провалится.",
       "Do_not_overlap_buffs": "Ваш бафф с шага {{overlappedIndex}} пересекается с баффом на шаге {{overlappingIndex}}. Лучше отложить второй бафф чтобы максимизировать пользу от обоих.",
-      "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
+      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
       "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
-      "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
+      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
       "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
-      "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
-      "Requires_reuse_to_proc": "Ротация требует прока Reuse для правильной работы, убедитесь, что она может работать без этого прока.",
+      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
       "Use_reuse": "Ваша ротация достигает 100% HQ и у вас достаточно CP для использования Reuse, подумайте о его добавлении, чтобы получить дополнительные ресурсы обратно."
     }
   },
@@ -1207,7 +1207,7 @@
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Заполнить цены на основе цен MB",
     "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
-    "Content_copied": "Скопировано в буфер обмена",
+    "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
     "Ignore_completed_items": "Исключить завершенные предметы",
@@ -1232,7 +1232,7 @@
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
-      "Second_line": "Выберите профессию, введите диапазон уровней, и вы увидите ряд соответствующих levequest'ов, которые вы сможете добавить в список. Рецепты для предметов levequest'а будут автоматически внесены в список.",
+      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
       "Third_line": "Вы также можете искать по названию, если знаете, что именно ищете."
     }
   },
@@ -1305,7 +1305,7 @@
     "Unit_price": "Цена единицы",
     "History": "История",
     "Purchase_date": "Дата",
-    "More_on_universalis": "Подробнее на Universalis",
+    "More_on_universalis": "More details on Universalis",
     "Server": "Сервер",
     "Last_updated": "Последнее обновление"
   },
@@ -1329,21 +1329,21 @@
     "Buy_merch": "Купить мерч Teamcraft",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
-      "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
-      "Public_lists": "Копируй списки, созданные сообществом, чтобы крафтить предметы для levequest'ов, заполнения логов, кораблей, BiS оружия и доспехов. Здесь можно найти всё что угодно.",
-      "Alarms": "Настройте оповещения, чтобы не пропустить ни одного спауна ноды, сортируйте их по группам, импортируйте в игру, возможно всё.",
-      "Gathering_location": "Здесь ты можешь найти информацию о том, как собрать любой предмет, настроить оповещение, сразу найти его координаты, ближайший телепорт, книгу, которая его открывает и другое!",
+      "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
+      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
+      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "Создавай ротации для крафта предметов, тестируй их в симуляторе, или проверь свои теории о крафте в специальном симуляторе!",
-      "Levequests": "Найдите несколько левеквестов для заданной профессии и/или диапазона уровней, смотрите мгновенные выгоды на них и создавайте списки для них.",
-      "Macro_translation": "У вас есть макросы но на другом языке? Перейдите на страницу макрос переводчика и переведите его на ваш язык, чтобы он работал в FFXIV!"
+      "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
+      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
   "UPDATE": {
     "New_update_available": "Доступно новое обновление!",
     "New_update_available_desktop": "Доступно новое обновление!\nНажмите здесь, чтобы скачать и установить его.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
-    "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его",
-    "Possible_update_issue": "Похоже, ваша загрузка не работает. Пожалуйста, нажмите на эту иконку, чтобы загрузить последнюю настройку."
+    "Downloading_update": "Downloading the update! You'll be prompted to install once the download is done",
+    "Possible_update_issue": "It seems like your download is having an issue. Please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Трекер журнала",
@@ -1367,10 +1367,10 @@
     "BTN_optimized_path": "Оптимизированный путь для всех точек BTN",
     "Import_from_carbuncleplushy": "Импорт прогресса из CarbunclePlushy",
     "Import_from_carbuncleplushy_failed": "Импорт не удался, неправильный JSON был предоставлен, убедитесь, что используются полные настройки экспорта",
-    "Import_from_carbuncleplushy_success": "Трекер логов рыбалки успешно обновлен",
+    "Import_from_carbuncleplushy_success": "Fishing Log Tracker updated successfully",
     "Export_FSH_completion": "Экспорт завершен как JSON",
     "Export_FSH_completion_copied": "JSON скопирован в буфер обмена",
-    "Log_in_to_track": "Войдите, чтобы иметь возможность отслеживать завершенность журнала",
+    "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
     "PAGE": {
       "Master_recipes": "Рецепты мастера ({{number}})",
       "Housing_items": "Мебель для дома ({{number}})",
@@ -1408,7 +1408,7 @@
       "CRAFT": {
         "Title": "Крафтится",
         "Job": "Профессия",
-        "No_requirement_warning": "У вас нет никаких требований для этого предмета, это означает, что вы создаете ремесло с 0 ингредиентами."
+        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
       },
       "GATHERING": {
         "Title": "Собирается",
@@ -1466,7 +1466,7 @@
     "Title": "Гид по дезинтезу",
     "Job": "Профессия",
     "Level": "Уровень десинтеза",
-    "Intro": "Выберите профессию и введите уровень для поиска лучших вещей для повышения уровня десинтеза",
+    "Intro": "Select a job and input a level to find the best items to level up your desynth",
     "Loading_message": "Loading…",
     "TAGS": {
       "Higher_chances": "Высокий шанс",
@@ -1506,8 +1506,8 @@
     "TT_card_unlock": "Разблокирует карту в коллекции",
     "Track_on_attt": "Отслеживать в Another Triple Triad Tracker",
     "Unlocked_by_quest": "Разблокируется квестом",
-    "More_on_attt_npc": "Подробнее об этом npc на Another Triple Triad Tracker",
-    "Triple_triad_pack": "Набор карт Triple triad",
+    "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
+    "Triple_triad_pack": "Triple Triad card pack",
     "Dungeons": "Подземелья/Триалы",
     "Used_for_trades": "Обмен",
     "Can_contain_items": "Может содержать предметы",
@@ -1518,7 +1518,7 @@
     "Min_ilevel": "ilvl мин.",
     "Sync_to": "Уровень макс.",
     "Exp": "Опыт",
-    "Week_restriction": "Недельное ограничение",
+    "Week_restriction": "Weekly restriction",
     "Fights": "Сражения",
     "Instance_details": "Информация",
     "Instance_rewards": "Награда",
@@ -1583,8 +1583,8 @@
       "Used_as_mooch_for": "Используется как mooch для",
       "No_known_mooch_usage": "Для этой рыбы не используется mooch",
       "No_spot_filter": "Нет фильтра точки",
-      "Chances_for_transition": "Шансы на такой переход",
-      "Weather_chances": "Шансы на появление каждой погоды",
+      "Chances_for_transition": "Chance for this transition to happen",
+      "Weather_chances": "Chance for each weather to appear",
       "Bait": "Рыболовная приманка",
       "Refresh_data": "Обновить данные",
       "Bite_times": "Время клева",
@@ -1620,8 +1620,8 @@
         "Size": "Размер",
         "Time_since_thrown": "Время с момента броска",
         "ERRORS": {
-          "No_bait": "Не обнаружено наживки, смените наживку один раз.",
-          "No_stats": "Параметры не обнаружены, переключитесь снова на рыбака."
+          "No_bait": "No bait detected. Switch bait once to fix.",
+          "No_stats": "No stats detected. Switch to Fisher again to fix."
         }
       }
     },
@@ -1750,7 +1750,7 @@
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
       "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)",
-      "Disclaimer": "Комментарии базы данных предназначены для использования в качестве полезной дополнительной информации, их использование, чтобы пожаловаться на игру или ее содержание, может привести к ограничению комментирования."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
@@ -1818,10 +1818,10 @@
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
     "Import_from_clipboard": "Импорт из ретейнера",
     "Import_from_inventory": "Импорт из инвентаря",
-    "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
+    "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
     "Extension_link": "Получить расширение в chrome",
     "Clear": "Очистить список",
-    "Clipboard_import_duplicates": "Некоторые товары здесь видно дважды, потому что lodestone показывает стаки, которые внутри вашего ретейнера лежат раздельно.",
+    "Clipboard_import_duplicates": "Items that show twice are here because Lodestone shows stacks, so they are inside your retainer as separate stacks.",
     "Inventory": "Инвентарь",
     "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
     "Pool_copied": "Инвентарь скопирован в буфер обмена",
@@ -1836,11 +1836,11 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
-    "Description": "У вас слишком много валюты? Выберите валюту, установите сумму, сервер и найдите, какой предмет лучше купить, чтобы получить gil из ваших валют!",
+    "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
     "Pick_currency": "Выберите валюту",
     "You_can_buy": "Вы можете купить {{amount}}",
     "Disabled": "Гид по трате валют более не работает",
-    "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи.",
+    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Загрузка данных о сделках для выбранной валюты",
     "Loading_universalis": "Получение цен на рынке от Universalis для {{amount}} позиций",
     "X_sold_last_week": "{{amount}} продано на прошлой неделе"
@@ -1855,7 +1855,7 @@
   },
   "ERRORS": {
     "Http_request_error": "С {{tool}} возникла проблема, пожалуйста, подождите немного и повторите попытку. Если проблема остается, проверьте #announcements на сервере Teamcraft Discord.",
-    "Firebase_blocked": "Teamcraft не смог достучаться к базе данных. Похоже, что-то блокирует её, либо у вас нет доступа в интернет."
+    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
   },
   "SEARCH": {
     "Sort_by": "Сортировка по: ",
@@ -1917,34 +1917,34 @@
   "PACKET_CAPTURE": {
     "Banner_title": "Захват пакетов доступен",
     "Button_label": "Включить захват пакетов",
-    "Banner_description": "Вы можете включить захват пакетов, чтобы Teamcraft мог читать ваши пакеты FFXIV (галочка также находится в настройках, чтобы включить/выключить его), это позволяет автоматически заполнить списки по мере получения предметов, а также вносить данные в Universalis (данные с маркетборда).",
-    "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
+    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Please teleport to a random location in another zone and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
-    "Please_sort": "Отслеживание инвентаря не может работать, не зная каким персонажем вы сейчас играете, отсортируйте инвентарь или перезайдите в игру за нужного персонажа, чтобы Teamcraft обнаружил вашего текущего персонажа.",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing. Please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Неизвестный игровой персонаж",
-    "No_character_id": "Не указан игровой id персонажа",
-    "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
+    "No_character_id": "No ingame character ID set",
+    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame). This is only needed once.",
     "Inventory_outdated": "Ваш инвентарь устарел",
     "Please_update_inventory_popup": "Пожалуйста, измените зону (по телепорту или войдите в дом), чтобы обновить ваш инвентарь. Это всплывающее окно будет закрыто, как только это будет сделано. Если эта проблема повторится, посмотрите руководство по устранению неполадок захвата пакетов в канале #troubleshooting на сервере Teamcraft Discord.",
     "Outdated": "Захват пакетов не работает",
     "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях.",
     "Possible_missing_firewall_rule": "Захват пакетов работает некорректно",
     "Possible_missing_firewall_rule_description": "Teamcraft видит только некоторые пакеты и не содержит тех, которые связаны с инвентарем, параметрами, одеждой и т.д., это может быть вызвано отсутствием правила брандмауэра на вашем компьютере.",
-    "Possible_missing_firewall_rule_check": "Если это сообщение не исчезает после телепорта в новую область, отсутствует правило брандмауэра или захват пакетов вообще не работает по другой причине (если это так, перейдите на канал #troubleshooting на сервере Teamcraft Discord).",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
     "Rawsock_needs_admin": "Для режима захвата RawSocket требуются права администратора",
     "Rawsock_needs_admin_description": "Чтобы правильно управлять правилами брандмауэра и иметь возможность захватывать трафик из игры, режим RawSocket требует запуск TC в правах администратора. Вы можете закрыть его и запустить снова как администратор, чтобы исправить эту проблему, или выбрать один из вариантов ниже.",
     "Switch_to_winpcap": "Переключиться в режим winpcap",
     "Disable_pcap": "Отключить захват пакетов",
     "Install_npcap": "Npcap отсутствует в вашей системе",
-    "Install_npcap_description": "Для захвата Teamcraft с исходным npcap режимом, необходимо установить npcap. Teamcraft может установить его для вас и перезапустить приложение, как только оно будет завершено.",
+    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Установить npcap и перезапустить Teamcraft",
-    "Not_as_anonymous": "Packet capture won't work properly as anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\" or disable packet capture inside the settings."
+    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
+    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
-    "Banner_description": "Вы можете изменить регион в котором играете для лучшего опыта в базе данных, симуляторе, захвате пакетов и т.д.",
+    "Banner_description": "You can change the region to the one which you played in for a better experience in database, simulator, packet capture, etc.",
     "Button_label": "Изменить регион"
   },
   "INVENTORY": {
@@ -1954,7 +1954,7 @@
     "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
     "Copied_to_clipboard": "Инвентарь скопирован в буфер обмена",
     "Click_to_add_to_progression": "Нажмите, чтобы добавить к прогрессу предмета",
-    "Contribute_to_universalis": "Внести данные в universalis",
+    "Contribute_to_universalis": "Contribute data to Universalis",
     "Reset_inventory": "Сбросить этот инвентарь",
     "Clean_all": "Сбросить все ваши инвентари",
     "Search_for_an_item": "Поиск предмета",
@@ -1978,8 +1978,8 @@
       "Linked_tooltip": "Этот персонаж уже связан с другим игровым персонажем, выбрав его, вы удалите связь с другим персонажем",
       "Override_link_confirmation": "Вы уверены, что хотите переопределить эту ссылку?",
       "Ignore": "Игнорировать этого игрового персонажа",
-      "You_can_reset_ignore": "Вы можете сбросить игнорируемых персонажей на странице настроек рабочего стола",
-      "Tip": "Если вы уже связали персонажа, на котором вы сейчас играете, вы можете спокойно проигнорировать этого персонажа, Teamcraft читает изменения файлов, некоторые файлы могут быть изменены по какой-либо причине, если файл не связан еще."
+      "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
+      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character. Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2035,8 +2035,8 @@
       "Message": "Этот предмет используется только в рецептах, где вы можете использовать навык Trained Eye, делая его бесполезным в HQ"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as normal-quality item",
-      "Message": "Since 6.0, this item functions as normal-quality item even if it's HQ"
+      "Title": "Items you don't need HQ because they function as a normal-quality item",
+      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Предметы, которые используются только для одного рецепта",
@@ -2046,7 +2046,7 @@
   },
   "VERSION_LOCK": {
     "Outdated": "Вы используете устаревшую версию Teamcraft, которая больше не может работать правильно",
-    "Refresh_or_download_latest": "Если вы пользуетесь сайтом, просто нажмите Ctrl + F5, чтобы обновиться. Если вы используете приложение для рабочего стола, скачайте последнюю версию здесь: "
+    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely. If you're using the desktop app, download the latest version here: "
   },
   "GEARSETS": {
     "Title": "Снаряжение",
@@ -2071,11 +2071,11 @@
     "Cost": "Стоимость",
     "Modal_editor": "Материи для {{itemName}}",
     "Unavailable_slot": "Слот не доступен",
-    "Warning_job_switch": "Смена профессии уберет кристалл, основное и второстепенное оружие, включая материи. Пожалуйста, обратите внимание на это, прежде чем переключаться, если вы хотите использовать те же материи.",
+    "Warning_job_switch": "Switching job will remove job crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Выберите профессию",
     "New_gearset": "Новый набор снаряжения",
-    "Please_input_ariyala_link": "Введите ссылку с Аriyala",
-    "Please_input_etro_link": "Please input an etro link",
+    "Please_input_ariyala_link": "Please input an Ariyala link",
+    "Please_input_etro_link": "Please input an Etro link",
     "Link_not_supported": "Ссылка не поддерживается",
     "Compare_gearset": "Сравнить набор с другим",
     "Stats": "Статы",
@@ -2113,7 +2113,7 @@
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Режим локального редактирования",
-    "Editing_others_gearset_description": "Вы редактируете чужой набор снаряжения, ничего не будет сохранено пока вы не нажмете на кнопку «Сохранить», чтобы создать собственную копию.",
+    "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
     "Empty_materias": "Удалить все материалы из выбранного снаряжения",
     "SLOT": {
       "Body": "Броня",
@@ -2136,7 +2136,7 @@
       "Error_title": "Не удалось сравнить наборы",
       "Error_description": "Пожалуйста убедитесь, что выбранный набор существует и он такого же типа как и текущий (такой же основной стат)",
       "Type": "Тип набора",
-      "Ariyala": "Ariyala set",
+      "Ariyala": "An Ariyala set",
       "External_gearset": "Набор в Тимкрафте для кого-то другого",
       "Personal_gearset": "Один из ваших наборов",
       "Paste_link_step_title": "Ссылка на набор",
@@ -2159,7 +2159,7 @@
     "SYNC": {
       "Title": "Синхронизировать наборы снаряжения",
       "Tag": "Синхр.",
-      "Tag_tooltip": "Этот набор снаряжения создан после синхронизации с помощью захвата пакетов, он будет обновлен если вы синхронизируетесь снова для этой профессии.",
+      "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
       "Importing_gearset": "Импорт набора для {{name}}",
       "Imported_gearset": "Импортированный набор для {{name}}",
       "Syncing_gearsets": "Synchronizing gearsets…"
@@ -2181,9 +2181,9 @@
     "Done": "Готово",
     "POPUP": {
       "Title": "Добро пожаловать в FFXIV Teamcraft",
-      "Explanation": "Teamcraft имеет небольшое пособие как использовать его основные функции и особенности. Оно появится в виде небольших окон и оповещений на различных страницах приложения.",
+      "Explanation": "Teamcraft has a small tutorial on how to use its basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
       "Question": "Вы хотите включить эту функцию?",
-      "Can_be_changed_in_settings": "Можно включить или выключить в настройках"
+      "Can_be_changed_in_settings": "Can be switched on or off inside the settings."
     },
     "APP": {
       "Profile": "Введите свое имя для доступа к редактору профиля и настройки уровней, параметров и многого другого."
@@ -2194,14 +2194,14 @@
       "Filters": "Откройте эту панель, чтобы использовать дополнительные фильтры: по параметрам, бонусам, ilvl и прочему"
     },
     "LIST_PANEL": {
-      "Share": "Нажмите здесь, чтобы скопировать ссылку на этот список, чтобы легко им поделиться",
-      "Open_list": "Нажмите здесь, чтобы получить подробную информацию о списке, или можете дважды нажать на название списка.",
+      "Share": "Click here to copy a link to this list, to easily share it.",
+      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
       "More": "Нажмите на это меню, чтобы переименовать список, управлять разрешениями и многое другое."
     },
     "LIST": {
-      "HQ_mark": "Эта иконка означает, что этот предмет необходим для итогового рецепта, вы можете захотеть чтобы он был в HQ, но это не обязательно.",
-      "Layout": "Вы можете полностью редактировать дисплей, изменять панели и как стоят фильтры данных, открыв редактор макета. Кнопка слева от этого используется в качестве быстрого переключателя между ними.",
-      "Permissions": "Вы можете редактировать права доступа, добавлять других пользователей, делать список доступным только для чтения, делиться им в ФК, и многое другое, если открыть редактор разрешений.",
+      "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
+      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
+      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
       "Fill_with_inventory": "Вы можете добавить всё, что есть в вашем инвентаре внутри этого списка.",
       "Pricing_mode_button": "Легко подготавливать и прогнозировать свои выгоды для этого списка, используя режим ценообразования.",
       "More_actions_button": "Эта кнопка открывает меню с множеством различных действий для текущей строки списка. Вы можете преобразовать эти действия в кнопки с помощью редактора макетов.",
@@ -2209,7 +2209,7 @@
     },
     "LISTS": {
       "Merge": "Вы можете объединить два списка, используя кнопку объединения.",
-      "Import": "Вы можете импортировать списки с различных сайтов, таких как ariyala, craftingasaservce and garlandtools."
+      "Import": "You can import lists from various websites such as Ariyala, Craftingasaservice and Garlandtools."
     },
     "DB": {
       "Button": "Нажатие на эту кнопку открывает страницу базы данных, содержащую подробности о том, что это (имя нпс, карта, предмет, монстр и т.д.). Для предметов нажатие на значок также открывает страницу базы данных."
@@ -2226,11 +2226,11 @@
       "Character_configuration": "Настройте здесь ваш уровень и ваши параметры.",
       "HQ_ingredients": "Введите здесь HQ ингредиенты, чтобы установить начальное качество.",
       "Consumables": "Настройте здесь расходные материалы и баффы ФК.",
-      "Right_click_condition": "Щелкните правой кнопкой мыши на действии, чтобы установить его состояние (хорошее, отличное, плохое, провал и т.д.) и предсказать результаты.",
+      "Right_click_condition": "Right click on an action to set its condition (Good, Excellent, Poor, fail, etc) and predict the results.",
       "Save_as_new": "Нажмите здесь, чтобы сохранить копию этой ротации в вашем аккаунте.",
       "Import_ingame_macro": "Нажмите здесь, чтобы импортировать из игрового макроса.",
       "Generate_ingame_macro": "Нажмите здесь, чтобы создать игровой макрос для этой ротации.",
-      "Share_with_stats": "Нажмите здесь, чтобы открыть всплывающее окно \"Поделиться\", позволяющее делиться параметрами и расходными материалами."
+      "Share_with_stats": "Click here to open the share popup, allowing you to share the rotation with your stats and consumables."
     },
     "ALARMS": {
       "Settings": "Нажмите здесь, чтобы изменить настройки оповещений (звук, громкость и т.д.).",
@@ -2243,16 +2243,16 @@
       "Rlvl_filter": "Фильтруйте по уровню рецепта, используя этот флажок",
       "Durability_filter": "Фильтруйте по прочности, используя этот флажок",
       "Min_craftsmanship": "Фильтр по минимальному craftsmanship, найдет только ротации с требуемым craftsmanship ниже вашего значения.",
-      "Min_control": "Фильтр по минимальному control, найдет только ротации с требуемым control ниже вашего значения.",
-      "Min_cp": "Фильтр по минимальному CP, найдет только ротации с требуемым cp ниже вашего значения.",
-      "Set_selector": "Выберите какая профессия должна использоваться для симуляций, используемых для отображения вероятности успеха ротации."
+      "Min_control": "Filter by minimum Control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum CP required here, this will find only rotations with required CP < your value.",
+      "Set_selector": "Select which job should be used for the simulations used to show success rate of the resulting rotations."
     },
     "METRICS": {
-      "Welcome_time_range": "Добро пожаловать на страницу с панелями метрик, здесь вы можете выбрать временной диапазон, для которого вы хотите увидеть отображаемые данные, по умолчанию сегодня.",
+      "Welcome_time_range": "Welcome to the metrics dashboard page. Here you can select the time range for which you want to see data displayed, it defaults to today.",
       "Select_dashboard": "Вы можете иметь несколько панелей и легко переключаться между ними, чтобы увидеть то что важно для вас.",
-      "Edit_dashboard": "Вы можете войти в режим редактирования, используя эту кнопку, она доступна только для панелей которые не по умолчанию.",
-      "Create_dashboard": "Создавайте свои собственные панели легко, не забудьте редактировать их после того, как вы их создали, иначе это будет просто копия панели по умолчанию.",
-      "Delete_layout": "Хотите избавиться от панели, нажмите эту кнопку, подтвердить и готово (удаление не может быть отменено).",
+      "Edit_dashboard": "You can enter edit mode using this button. It's only available for non-default dashboards.",
+      "Create_dashboard": "Create your own dashboards easily. Don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Delete_layout": "Want to get rid of a dashboard? Press this button, confirm, and poof (deletion cannot be reverted).",
       "Export_layout": "Хотите поделиться своей потрясающей панелью с друзьями? Нажмите эту кнопку, чтобы скопировать код экспорта для вашей текущей панели.",
       "Import_layout": "Если кто-то поделится с вами панелью, используя код экспорта, используйте эту кнопку для импорта.",
       "EDITOR": {
@@ -2307,7 +2307,7 @@
     "Import_failed": "Не удалось импортировать панель, неверный код",
     "Import_success": "Панель импортирована и выбрана",
     "Nothing_to_show": "Нет данных для отображения",
-    "Nothing_to_show_description": "Убедитесь, что вы выбрали период, в течение которого TC захватил данные и убедитесь, что эта опция включена (внутренние настройки -> рабочий стол -> разрешить сбор метрик)",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
     "SOURCES": {
       "UNKNOWN": "Неизвестно",
       "GATHERING": "Сбор",
@@ -2348,8 +2348,8 @@
       "Pie_metric": "Метрика",
       "Add_filter": "Добавить фильтр",
       "Operator": "Оператор",
-      "Cannot_edit_default": "Вы не можете редактировать макет по умолчанию, создайте новый макет для его настройки",
-      "Cannot_delete_default": "Вы не можете удалить макет по умолчанию",
+      "Cannot_edit_default": "You can't edit a default layout, create a new layout to customize it instead",
+      "Cannot_delete_default": "You can't delete a default layout",
       "FILTER_TIPS": {
         "FishFilter": "Принимать только рыбу, полученную из рыболовных мест",
         "ItemFilter": "Принимает только заданный набор предметов",
@@ -2377,7 +2377,7 @@
   },
   "COLLECTABLES": {
     "Title": "Сollectables",
-    "No_collectables_for_this_level": "Нет доступных collectables"
+    "No_collectables_for_this_level": "No collectables available for this level"
   },
   "CRAFTING_REPLAYS": {
     "Title": "Повторы крафта",
@@ -2404,14 +2404,14 @@
     "X_items": "{{amount}} предметов",
     "Open_commission_details": "Открыть детали о заказе",
     "Your_commissions_as_client": "Ваши заказы как клиента",
-    "No_commissions_as_client": "У вас нет заказов как клиента",
+    "No_commissions_as_client": "You don't have any commissions as a client",
     "Your_commissions_as_crafter": "Заказы, над которыми вы работаете",
-    "No_commissions_as_crafter": "Вы не работаете ни над одним заказом",
+    "No_commissions_as_crafter": "You're not working on any commissions",
     "Delete_commission": "Удалить этот заказ",
     "Delete_list_too": "Удалить список",
     "Delete_commission_only": "Удалить только заказ",
     "Your_archived_commissions_as_client": "Заказы как клиента",
-    "No_archived_commissions_as_client": "У вас нет архивных заказов как клиента",
+    "No_archived_commissions_as_client": "You have no archived commissions as client",
     "Your_archived_commissions_as_crafter": "Заказы в качестве крафтера",
     "No_archived_commissions_as_crafter": "У вас нет архивных заказов в качестве крафтера",
     "Updates": "Обновления",
@@ -2442,14 +2442,14 @@
       "Only_requires_materials": "Этот заказ требует материалы только этого списка",
       "Contact_info": "Контактная информация",
       "Contact_info_placeholder": "Как исполнители могут связаться с вами когда они будут приняты для заказа? Discord, ingame, email, как вы хотите.",
-      "Contact_info_required_error": "Пожалуйста, включите контактную информацию",
+      "Contact_info_required_error": "Please include contact information",
       "Description": "Описание",
       "Description_placeholder": "Если вы хотите дать более подробную информацию о своем заказе, это здесь",
       "Description_max_length_error": "Описание должно быть не больше 1000 символов",
       "Warning": "Предупреждение",
       "Warning_description": "Создание спама приведет к удалению заказов и возможным действиям против вашего аккаунта.",
       "Copy_link": "Копировать код импорта",
-      "Copy_link_tooltip": "Дает вам url-адрес для открытия, чтобы создать этот конкретный заказ, полезно для написания гайдов.",
+      "Copy_link_tooltip": "Gives you the URL to open to create this exact commission, useful for guide writing.",
       "Link_copied": "Код импорта заказа скопирован"
     },
     "BOARD": {
@@ -2457,7 +2457,7 @@
       "Filter_with_tags": "Фильтр по тегам",
       "No_matching_commissions": "Нет подходящих заказов",
       "Min_price": "Мин. цена",
-      "Tracking_tip": "Вы можете получать уведомления о новых заказах на вашем датацентре, используя официальный раздел заказов в discord"
+      "Tracking_tip": "You can get notifications for new commissions on your data center using the official Teamcraft Discord server's commissions section"
     },
     "DETAILS": {
       "Created_by": "Создано {{name}}",
@@ -2539,7 +2539,7 @@
     },
     "FIRED": {
       "Please_pick_reason": "Почему вы увольняете этого исполнителя?",
-      "NO_ACTIVE_SUB": "У исполнителя больше нет активной подписки.",
+      "NO_ACTIVE_SUB": "Contractor no longer has an active subscription.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "Больше не удобно работать с этим исполнителем.",
       "NO_LONGER_NEED_JOB_DONE": "Заказ больше не требуется.",
       "FOUND_SOMEONE_ELSE": "Найден другой исполнитель для этого заказа.",
@@ -2547,11 +2547,11 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "Почему вы отказываетесь от этого заказа?",
-      "NO_ACTIVE_SUB": "У меня больше нет активной подписки.",
+      "NO_ACTIVE_SUB": "I no longer have an active subscription.",
       "UNCOMFORTABLE_WITH_CLIENT": "Неудобно работать с клиентом.",
       "CANNOT_COMPLETE_LEVEL": "Я не могу завершить этот заказ из-за требований по уровню, которым я не отвечаю.",
       "CANNOT_COMPLETE_CONTENT": "Я не могу завершить этот заказ, потому что у меня нет доступа к требуемому контенту (например: у меня нет последнего дополнения).",
-      "CANNOT_GATHER": "Я не могу собирать необходимые предметы. Клиент не будет собирать предметы."
+      "CANNOT_GATHER": "I am not capable of collecting the required items. Client will not collect items."
     },
     "IMPORT": {
       "Title": "Импорт заказа",
@@ -2592,7 +2592,7 @@
   },
   "RETAINERS": {
     "Title": "Ретейнеры",
-    "No_retainers": "Нет ретейнеров, пожалуйста используйте колокол призыва чтобы загрузить информацию о ваших ретейнерах.",
+    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
     "Selling": "Продает {{amount}} товаров",
     "X_items": "{{amount}} предметов",
     "Task_complete": "Задание выполнено",
@@ -2609,7 +2609,7 @@
   },
   "RETAINER_VENTURES": {
     "Title": "Задания ретейнеров",
-    "Description": "Введите вашу работу в контейнере, уровень, ilvl и сбор (если это необходимо), чтобы найти идеальное задание для получения прибыли. Это может занять до минуты, если ваш ретейнер имеет высокий уровень, потому что он рассмотрит каждый отдельный предмет, который может принести прибыль.",
+    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
     "Retainer_ilvl": "ilvl",
     "Gathering": "Собирательство",
     "Task_level": "Уровень задания",
@@ -2618,22 +2618,22 @@
     "Select_retainer": "Выберите одного из ваших ретейнеров"
   },
   "PATREON": {
-    "By_supporting_us": "Поддерживая нас на Patreon, вы получите:",
+    "By_supporting_us": "By supporting us on Patreon, you get:",
     "No_ads": "Никакой рекламы на верхней панели",
-    "Exclusive_discord_role": "Эксклюзивная роль в дискорде и доступ к закрытому каналу",
+    "Exclusive_discord_role": "An exclusive Discord role, and access to supporters-only channel",
     "Your_name_in_loading_screen": "Ваше имя на экране загрузки (необходимо запрашивать)",
     "Goodies": "Бесплатный стикер, бесплатная футболка, бесплатный постер (в зависимости от уровня)",
     "Starting_at_X": "Начиная с ${{monthly}} в месяц или ${{yearly}} в год",
     "Footer_text": "Всего 1 доллар в месяц оказывает существенное влияние на развитие Teamcraft и приближает меня к моей мечте стать полноправным разработчиком этого проекта и расширить его не только в качестве инструмента для FFXIV.",
     "Already_supporter": "Уже поддерживаете?",
-    "Disable_ads_explanation": "Чтобы отключить рекламу, подключитесь с вашей учётной записью, чтобы Teamcraft смог проверить вашу поддержку и автоматически отключить рекламу"
+    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
   },
   "SUPPORT_US": {
     "Popup_introduction": "Привет, я Miu, разработчик инструмента, который вы сейчас используете.<br/> Teamcraft для меня последние года был хобби, и моя мечта состоит в том, чтобы сделать это основной работой. <br/><br/> С вашей помощью эта мечта может стать реальностью, вы можете поддержать проект на patreon, каждый доллар считается и поможет мне достичь этой цели. <br/><br/> Поддержка проекта на patreon также дает вам некоторые выгоды:",
-    "Already_supporting": "Уже поддерживаете на patreon? Убедитесь, что вы привязали свой аккаунт к patreon в настройках",
+    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
     "PATREON_BENEFITS": {
       "No_ads": "Teamcraft без рекламы",
-      "Discord_rank": "Особые ранги на дискорд-сервере, дающие доступ на канал для поддержавших, где можно увидеть, над чем сейчас идёт работа (${{price}})",
+      "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
       "Custom_theme": "Улучшенная кастомизация тем, с возможностью выбора любого цвета (${{price}})",
       "Pins_badge": "Эксклюзивные значки Teamcraft, которые будут отправлены вам (${{price}}) (требует заполнения информации о доставке на Patreon)",
@@ -2643,7 +2643,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "Импорт используя захват пакетов",
-    "Import_from_pcap_notice": "1. Перейдите в мастерскую вашей ФК (убедитесь, что вы войдете после открытия этого всплывающего окна)<br>2. Откройте окно Free Company<br>3. Взаимодействуйте с каждой подводной лодкой или воздушным судном с помощью интерфейса управления",
+    "Import_from_pcap_notice": "1. Go to your company's Workshop (make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
     "Airships": "Дирижабль",
     "Submersibles": "Подлодка"
   },
@@ -2761,7 +2761,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "Новая функция: Allagan отчеты",
-    "Feature_banner_description": "Нашли предмет с отсутствующими данными? Теперь вы можете сообщать об источниках предметов в системе отчетов (Общие > Allagan отчеты) и включать их в приложение в следующее обновление!",
+    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
     "Title": "Allagan отчеты",
     "Reports": "Отчеты",
     "Pending_changes": "Ожидающие изменения",
@@ -2851,7 +2851,7 @@
       "LARGE": "Large"
     },
     "SOURCE": {
-      "DESYNTH": "DESYNTH",
+      "DESYNTHED_FROM": "DESYNTHED_FROM",
       "REDUCTION": "REDUCTION",
       "GARDENING": "GARDENING",
       "LOOT": "LOOT",
@@ -2892,7 +2892,7 @@
   },
   "PROFITS": {
     "Title": "Profits Helper",
-    "Description": "Find best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Description": "Find the best items to craft or gather based on your levels and marketboard data from Universalis",
     "Self_sufficient": "Self sufficient",
     "Crafting": "Crafting",
     "Gathering": "Gathering",
@@ -2901,7 +2901,7 @@
     "Total_listed": "Total on sale",
     "Unit_price": "Unit price",
     "Cost_to_craft": "Cost to craft",
-    "Explain_complexity": "A score representing how much time is needed to craft one item, crafting multiple ones is obviously faster as you don't have to do teleports again.",
+    "Explain_complexity": "A score representing how much time is needed to craft one item. Crafting multiple items is obviously faster as you don't have to do teleports again.",
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
