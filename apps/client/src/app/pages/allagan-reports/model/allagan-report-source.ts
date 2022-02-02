@@ -1,7 +1,7 @@
 export enum AllaganReportSource {
   FISHING = 'FISHING',
   SPEARFISHING = 'SPEARFISHING',
-  DESYNTH = 'DESYNTHED_FROM',
+  DESYNTHED_FROM = 'DESYNTHED_FROM',
   REDUCTION = 'REDUCTION',
   GARDENING = 'GARDENING',
   LOOT = 'LOOT', // Obtained by using a given item (timeworn maps, sacks, chests, etc)
