@@ -633,7 +633,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
   }
 
   private getEntryId(name: string): number | null {
-    const match = name.match(/\[(\d+)]\s.*/);
+    const match = name.match(/\[(-?\d+)]\s.*/);
     if (!match) {
       return null;
     }
