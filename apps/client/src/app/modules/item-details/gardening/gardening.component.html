@@ -20,5 +20,5 @@
       </div>
     </div>
   </div>
-  <a *ngIf="seedId$ | async | ffxivgardening | i18n as ffxivgId" [href]="ffxivgId" target="_blank">{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}</a>
+  <a *ngIf="seedId$ | async as ffxivgId" [href]="ffxivgId | ffxivgardening | i18n " target="_blank">{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}</a>
 </div>
