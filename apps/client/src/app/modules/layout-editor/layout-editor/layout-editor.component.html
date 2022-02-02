@@ -45,12 +45,16 @@
       <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.default"
              nz-input type="text">
     </nz-input-group>
-    <button (click)="editRowButtons(layout)" [disabled]="layout.default" nz-button nzBlock>
-      {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
-    </button>
-    <button (click)="openReorderPopup(layout)" [disabled]="layout.default" nz-button nzBlock>
-      {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
-    </button>
+    <div>
+      <button (click)="editRowButtons(layout)" [disabled]="layout.default" nz-button nzBlock>
+        {{'LIST_DETAILS.LAYOUT_DIALOG.Edit_row_buttons_display' | translate}}
+      </button>
+    </div>
+    <div>
+      <button (click)="openReorderPopup(layout)" [disabled]="layout.default" nz-button nzBlock>
+        {{'LIST_DETAILS.LAYOUT_DIALOG.Reorder_panels' | translate}}
+      </button>
+    </div>
     <nz-card [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Global_options' | translate">
       <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.considerCrystalsAsItems" (ngModelChange)="dirty = true"
@@ -122,12 +126,12 @@
                nz-checkbox>{{"Hide_zone_duplicates" | translate}}</label>
       </div>
     </nz-card>
-    <div (drop)="moveRow($event.value, $event.dropIndex, layout)" fxLayout="column" fxLayoutGap="10px" ngxDroppable>
+    <div fxLayout="column" fxLayoutGap="10px" ngxDroppable>
       <button (click)="addPanel(layout)" [disabled]="layout.default" nz-button nzBlock
               nzType="primary">
         <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
       </button>
-      <div *ngFor="let row of layout.rows; trackBy: trackByRow" [model]="row" ngxDraggable>
+      <div *ngFor="let row of layout.rows; trackBy: trackByRow" [model]="row">
         <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
                                [readonly]="layout.default"
                                [row]="row"></app-layout-editor-row>
