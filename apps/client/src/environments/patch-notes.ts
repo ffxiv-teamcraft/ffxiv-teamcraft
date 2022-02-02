@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 * **layouts:** removed drag and drop from layout editor.
 * **list:** fixed progress persistence on offline lists.
 * **lists:** fixed link notes hiding interaction buttons.
-* **simulator:** renaming a rotation doesn't save it anymore.`;
+* **simulator:** renaming a rotation doesn't save it anymore.`;
