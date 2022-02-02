@@ -457,26 +457,34 @@ export class ListsEffects {
       }
       return of(action);
     }),
-    debounceBufferTime(2000),
+    debounceBufferTime(3000),
     withLatestFrom(this.selectedListClone$),
     filter(([, list]) => list !== undefined)
   ).pipe(
     switchMap(([actions, list]: [SetItemDone[], List]) => {
-      if (list.hasCommission) {
-        this.updateCommission(list);
-      }
-      return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
-        const serverList = serverCopy.data() as List;
+      if (list.offline) {
         actions.forEach(action => {
-          ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-          ListController.updateAllStatuses(serverList, action.itemId);
+          ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+          ListController.updateAllStatuses(list, action.itemId);
         });
-        if (isNaN(serverList.etag)) {
-          serverList.etag = 0;
+        this.saveToLocalstorage(list, false);
+      } else {
+        if (list.hasCommission) {
+          this.updateCommission(list);
         }
-        serverList.etag++;
-        transaction.set(serverCopy.ref, serverList);
-      });
+        return this.listService.runTransaction(list.$key, (transaction, serverCopy) => {
+          const serverList = serverCopy.data() as List;
+          actions.forEach(action => {
+            ListController.setDone(serverList, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+            ListController.updateAllStatuses(serverList, action.itemId);
+          });
+          if (isNaN(serverList.etag)) {
+            serverList.etag = 0;
+          }
+          serverList.etag++;
+          transaction.set(serverCopy.ref, serverList);
+        });
+      }
     }),
     map(() => new RemoveReadLock()),
     debounceTime(1000)
