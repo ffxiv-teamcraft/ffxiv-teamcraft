@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.9"></a>
+## [9.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.8...v9.5.9) (2022-02-02)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed Map instances not being added as source ([3f8607e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f8607e))
+* **db:** fixed missing gardening data from allagan reports ([0018ebb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0018ebb))
+* **db:** fixed shops using ice shards as currency instead of tomestones ([3d7b844](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d7b844))
+* **desktop:** fixed hide completed items in list overlay ([592e31e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/592e31e))
+* **layout:** reordering panels in reorder popup now saves the layout ([99ec95f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99ec95f))
+* **layouts:** removed drag and drop from layout editor ([2e5f952](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e5f952))
+* **list:** fixed progress persistence on offline lists ([b0325e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0325e5))
+* **lists:** fixed link notes hiding interaction buttons ([e79f9ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e79f9ed))
+* **simulator:** renaming a rotation doesn't save it anymore ([fd1742b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd1742b))
+
+
+
 <a name="9.5.8"></a>
 ## [9.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.7...v9.5.8) (2022-01-30)
 
