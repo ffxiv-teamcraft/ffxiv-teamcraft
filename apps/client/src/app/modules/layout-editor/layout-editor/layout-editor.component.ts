@@ -45,7 +45,7 @@ export class LayoutEditorComponent {
       nzFooter: null
     }).afterClose
       .subscribe(() => {
-        this.dirty = true;
+        this.save(layout);
       });
   }
 

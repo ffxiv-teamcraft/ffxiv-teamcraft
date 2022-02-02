@@ -131,7 +131,7 @@
               nzType="primary">
         <i nz-icon nzType="plus"></i> {{'LIST_DETAILS.LAYOUT_DIALOG.Add_panel' | translate}}
       </button>
-      <div *ngFor="let row of layout.rows; trackBy: trackByRow" [model]="row">
+      <div *ngFor="let row of layout.rows; trackBy: trackByRow">
         <app-layout-editor-row (delete)="removePanel(layout, row)" (rowChange)="updatePanel(layout, $event)"
                                [readonly]="layout.default"
                                [row]="row"></app-layout-editor-row>
