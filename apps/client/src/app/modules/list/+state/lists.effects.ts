@@ -468,6 +468,7 @@ export class ListsEffects {
           ListController.updateAllStatuses(list, action.itemId);
         });
         this.saveToLocalstorage(list, false);
+        return of(null);
       } else {
         if (list.hasCommission) {
           this.updateCommission(list);
