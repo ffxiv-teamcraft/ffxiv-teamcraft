@@ -25,9 +25,11 @@ export class GardeningComponent extends ItemDetailsPopup<GardeningData> implemen
 
   ngOnInit(): void {
     const targetDate = addHours(new Date(), this.details.duration);
-    this.formattedDuration = formatDistance(new Date(), targetDate);
-    this.seedId$ = this.lazyData.getRow('seeds', this.item.id, { ffxivgId: null, duration: 0, seed: 0 }).pipe(
-      pluck('ffxivgId')
-    );
+    if (this.details.duration > 0) {
+      this.formattedDuration = formatDistance(new Date(), targetDate);
+      this.seedId$ = this.lazyData.getRow('seeds', this.item.id, { ffxivgId: null, duration: 0, seed: 0 }).pipe(
+        pluck('ffxivgId')
+      );
+    }
   }
 }

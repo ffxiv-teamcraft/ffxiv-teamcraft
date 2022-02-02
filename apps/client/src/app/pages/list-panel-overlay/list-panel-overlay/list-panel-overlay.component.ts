@@ -21,7 +21,7 @@ export class ListPanelOverlayComponent {
     switchMap(([list, hideCompletedOverride]) => {
       return combineLatest([
         this.layoutsFacade.getDisplay(list, false, hideCompletedOverride),
-        this.layoutsFacade.getFinalItemsDisplay(list, false)
+        this.layoutsFacade.getFinalItemsDisplay(list, false, hideCompletedOverride)
       ]);
     }),
     map(([display, finalRow]) => ([...display.rows, finalRow])),

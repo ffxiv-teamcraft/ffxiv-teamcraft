@@ -45,7 +45,7 @@ export class LayoutEditorComponent {
       nzFooter: null
     }).afterClose
       .subscribe(() => {
-        this.dirty = true;
+        this.save(layout);
       });
   }
 
@@ -78,20 +78,6 @@ export class LayoutEditorComponent {
 
   addLayout(): void {
     this.layoutsFacade.createNewLayout();
-  }
-
-  moveRow(row: LayoutRow, index: number, layout: ListLayout): void {
-    // Remove list from the array
-    layout.rows = layout.rows.filter(r => r.filterName !== row.filterName || r.name !== row.name);
-    // Insert it at new index
-    layout.rows.splice(index, 0, row);
-    // Update indexes and persist
-    layout.rows = layout.rows
-      .map((r, i) => {
-        r.index = i;
-        return r;
-      });
-    this.dirty = true;
   }
 
   deleteLayout(key: string): void {

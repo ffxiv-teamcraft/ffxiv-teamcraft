@@ -136,6 +136,7 @@ export interface LazyData {
   foods: Array<LazyFood>;
   freeCompanyActions: Record<number, LazyFreeCompanyAction>;
   gardeningSeedIds: Record<number, number>;
+  gardeningSources: Record<number, number[]>;
   gatheringBonuses: Record<number, LazyGatheringBonus>;
   gatheringItems: Record<number, LazyGatheringItem>;
   gatheringLevels: Record<number, number>;
