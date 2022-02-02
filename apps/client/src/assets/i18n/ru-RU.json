@@ -2851,7 +2851,7 @@
       "LARGE": "Large"
     },
     "SOURCE": {
-      "DESYNTHED_FROM": "DESYNTHED_FROM",
+      "DESYNTH": "DESYNTHED_FROM",
       "REDUCTION": "REDUCTION",
       "GARDENING": "GARDENING",
       "LOOT": "LOOT",
