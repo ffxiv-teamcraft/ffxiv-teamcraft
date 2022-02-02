@@ -158,7 +158,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public dirty = false;
 
-  public rotation$ = this.rotationsFacade.selectedRotation$.pipe(
+  private unsavedChanges$ = new Subject<CraftingRotation>();
+
+  public rotation$ = merge(
+    this.rotationsFacade.selectedRotation$,
+    this.unsavedChanges$
+  ).pipe(
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
@@ -418,6 +423,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   renameRotation(rotation: CraftingRotation): void {
+    this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzComponentParams: { baseName: rotation.getName() },
@@ -430,9 +437,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         return rotation;
       })
     ).subscribe(r => {
-      this.saveRotation(r);
-      this.dirty = false;
-      this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
+      this.unsavedChanges$.next(r);
     });
   }
 
@@ -794,6 +799,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.formChangesSubscription.unsubscribe();
 
     this.onDestroy$.next(null);
+    this.unsavedChanges$.complete();
   }
 
   ngOnInit(): void {
