@@ -3,7 +3,7 @@
     <app-item-icon [itemId]="details.seedItemId" width="24"></app-item-icon>
     <div>{{details.seedItemId | itemName | i18n}}</div>
   </div>
-  <div>{{'GARDENING.Growth_time' | translate}}: {{formattedDuration}}</div>
+  <div *ngIf="formattedDuration">{{'GARDENING.Growth_time' | translate}}: {{formattedDuration}}</div>
   <div *ngIf="details.crossBreeds.length > 0">
     <nz-divider nzOrientation="left" [nzText]="'GARDENING.Cross_breeds' | translate"></nz-divider>
     <div  class="breed-container" fxLayout="column" fxLayoutGap="5px">
@@ -20,5 +20,5 @@
       </div>
     </div>
   </div>
-  <a [href]="seedId$ | async | ffxivgardening | i18n" target="_blank">{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}</a>
+  <a *ngIf="seedId$ | async | ffxivgardening | i18n as ffxivgId" [href]="ffxivgId" target="_blank">{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}</a>
 </div>

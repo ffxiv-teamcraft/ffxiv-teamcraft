@@ -1,10 +1,7 @@
 import { AbstractExtractor } from './abstract-extractor';
-import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { Item } from '../../../../model/garland-tools/item';
-import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { GardeningData } from '../../model/gardening-data';
-import { Observable, of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
@@ -30,10 +27,19 @@ export class GardeningExtractor extends AbstractExtractor<GardeningData> {
   }
 
   protected doExtract(itemId: number): Observable<GardeningData> {
-    return this.lazyData.getRow('seeds', itemId).pipe(
+    return combineLatest([
+      this.lazyData.getRow('seeds', itemId),
+      this.lazyData.getRow('gardeningSources', itemId)
+    ]).pipe(
       withLazyData(this.lazyData, 'gardeningSeedIds'),
-      switchMap(([entry, gardeningSeedIds]) => {
-        if (!entry) {
+      switchMap(([[entry, reportSeeds], gardeningSeedIds]) => {
+        if (reportSeeds) {
+          return of({
+            seedItemId: reportSeeds[0],
+            duration: 0,
+            crossBreeds: []
+          });
+        } else if (!entry) {
           return of(null);
         }
         const params: HttpParams = new HttpParams().append('seedId', entry.ffxivgId);

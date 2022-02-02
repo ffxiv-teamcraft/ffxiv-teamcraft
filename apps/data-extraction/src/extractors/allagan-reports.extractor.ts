@@ -43,6 +43,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const instanceDrops = {};
         const fateSources = {};
         const mogstation = {};
+        const gardening = {};
         const instances = this.requireLazyFile('instances');
         const items = this.requireLazyFile('items');
 
@@ -101,7 +102,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                   this.addItemAsSource(reduction, report.itemId, report.data.itemId, false, !report.applied);
                   break;
                 case AllaganReportSource.GARDENING:
-                  // Let's ignore gardening for now since the seeds extractor does the job
+                  this.addItemAsSource(gardening, report.itemId, report.data.itemId, false, !report.applied);
                   break;
                 case AllaganReportSource.LOOT:
                   this.addItemAsSource(loots, report.itemId, report.data.itemId, false, !report.applied);
@@ -159,6 +160,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);
+            this.persistToJsonAsset('gardening-sources', gardening);
 
             this.persistToTypescript('updated-items', 'updatedItemIds', this.updatedItemIds);
           }),
