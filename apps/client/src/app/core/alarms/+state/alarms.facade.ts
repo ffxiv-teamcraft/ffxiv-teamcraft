@@ -575,8 +575,8 @@ export class AlarmsFacade {
     const patch = this.itemPatch && this.itemPatch[alarm.itemId];
     const expansion = this.patches.find(p => p.ID === patch)?.ExVersion;
     const isLegendary = this.legendaryFish && this.legendaryFish[alarm.itemId];
-    // The changes only apply to fishes pre-SB and non-legendary
-    if (expansion < 2 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
+    // The changes only apply to fishes pre-ShB and non-legendary
+    if (expansion < 3 && alarm.weathers?.length > 0 && alarm.spawns && !isLegendary) {
       const { spawns, ...alarmWithFishEyesEnabled } = alarm;
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
