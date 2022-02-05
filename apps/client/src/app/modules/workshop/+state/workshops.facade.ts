@@ -11,7 +11,7 @@ import {
   RemoveListFromWorkshop,
   SelectWorkshop,
   UpdateWorkshop,
-  UpdateWorkshopIndex
+  UpdateWorkshopIndexes
 } from './workshops.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
@@ -61,8 +61,8 @@ export class WorkshopsFacade {
     this.store.dispatch(new UpdateWorkshop(workshop));
   }
 
-  updateWorkshopIndex(workshop: Workshop): void {
-    this.store.dispatch(new UpdateWorkshopIndex(workshop));
+  updateWorkshopIndexes(workshops: Workshop[]): void {
+    this.store.dispatch(new UpdateWorkshopIndexes(workshops));
   }
 
   loadWorkshop(key: string): void {

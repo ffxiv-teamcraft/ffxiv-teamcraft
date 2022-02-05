@@ -18,6 +18,7 @@ import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { DeleteMultipleListsPopupComponent } from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-lists',
@@ -235,23 +236,13 @@ export class ListsComponent {
     }));
   }
 
-  setWorkshopIndex(workshop: Workshop, index: number, workshopDisplays: WorkshopDisplay[]): void {
-    // Remove workshop from the array
-    const workshops = workshopDisplays
-      .map(display => display.workshop)
-      .filter(w => w.$key !== workshop.$key);
-    // Insert it at new index
-    workshops.splice(index, 0, workshop);
-    // Update indexes and persist
-    workshops
-      .filter((w, i) => w.index !== i)
-      .map((w, i) => {
-        w.index = i;
-        return w;
-      })
-      .forEach(w => {
-        this.workshopsFacade.updateWorkshop(w);
-      });
+  setWorkshopIndex(event: CdkDragDrop<WorkshopDisplay>, workshopDisplays: WorkshopDisplay[]): void {
+    const root = workshopDisplays.map(d => d.workshop);
+    moveItemInArray(root, event.previousIndex, event.currentIndex);
+    root.forEach((row, i) => {
+      row.index = i;
+    });
+    this.workshopsFacade.updateWorkshopIndexes(root);
   }
 
   openMergeDialog(): void {

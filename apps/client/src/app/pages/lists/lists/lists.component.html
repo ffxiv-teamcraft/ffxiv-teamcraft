@@ -77,12 +77,10 @@
     <div *ngIf="workshops$ | async as workshops">
       <div *ngIf="workshops.length > 0">
         <nz-divider [nzText]="'WORKSHOP.Workshops' | translate" nzOrientation="left"></nz-divider>
-        <div (drop)="setWorkshopIndex($event.value, $event.dropIndex, workshops)" class="ngx-dnd-container"
-             ngxDroppable="workshop">
-          <div *ngFor="let workshopDisplay of workshops; trackBy: trackByList" [model]="workshopDisplay.workshop"
-               class="ngx-dnd-item workshop-panel" ngxDraggable="workshop">
-            <app-workshop-panel [lists]="workshopDisplay.lists"
-                                [workshop]="workshopDisplay.workshop"></app-workshop-panel>
+        <div (cdkDropListDropped)="setWorkshopIndex($event, workshops)" cdkDropList>
+          <div *ngFor="let workshopDisplay of workshops; trackBy: trackByList" class="workshop-panel" cdkDrag
+               [cdkDragData]="workshopDisplay.workshop">
+            <app-workshop-panel [lists]="workshopDisplay.lists" [workshop]="workshopDisplay.workshop"></app-workshop-panel>
           </div>
         </div>
       </div>

@@ -20,6 +20,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { DeleteMultipleListsPopupComponent } from './delete-multiple-lists-popup/delete-multiple-lists-popup.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
     TranslateModule,
     AntdSharedModule,
     NgxDnDModule,
+    DragDropModule,
 
     RouterModule.forChild(routes)
   ],
