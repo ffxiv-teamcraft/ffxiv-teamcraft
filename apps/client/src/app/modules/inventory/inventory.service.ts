@@ -35,6 +35,7 @@ import { InventoryState } from './sync-state/inventory-state';
 import { LazyMateria } from '../../lazy-data/model/lazy-materia';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
+import { PlatformService } from '../../core/tools/platform.service';
 
 @Injectable({
   providedIn: 'root'
@@ -96,7 +97,7 @@ export class InventoryService {
               private translate: TranslateService, private retainersService: RetainersService,
               private serializer: NgSerializerService, private http: HttpClient,
               private settings: SettingsService, private modal: NzModalService,
-              private lazyData: LazyDataFacade) {
+              private lazyData: LazyDataFacade, private platform: PlatformService) {
     this.retainerInformations$.connect();
     this.authFacade.characterEntries$.subscribe(entries => {
       this.characterEntries = entries as Array<LodestoneIdEntry & { character: CharacterResponse }>;
@@ -139,141 +140,151 @@ export class InventoryService {
 
     const baseInventoryState$ = new Subject<UserInventory>();
 
-    this.ipc.once('inventory:value', (e, inventory) => {
-      const inventoryInstance = this.serializer.deserialize<UserInventory>(inventory, UserInventory);
-      if (this.settings.clearInventoryOnStartup) {
-        const reset = new UserInventory();
-        reset.contentId = inventoryInstance.contentId;
-        baseInventoryState$.next(reset);
-      } else {
-        baseInventoryState$.next(inventoryInstance);
-      }
-    });
+    if (this.platform.isOverlay()) {
+      this.inventory$ = new Observable<UserInventory>(observer => {
+        this.ipc.on('inventory:value', (e, data) => {
+          const inventoryInstance = this.serializer.deserialize<UserInventory>(data, UserInventory);
+          observer.next(inventoryInstance);
+        });
+      });
+    } else {
+      this.ipc.once('inventory:value', (e, inventory) => {
+        const inventoryInstance = this.serializer.deserialize<UserInventory>(inventory, UserInventory);
+        if (this.settings.clearInventoryOnStartup) {
+          const reset = new UserInventory();
+          reset.contentId = inventoryInstance.contentId;
+          baseInventoryState$.next(reset);
+        } else {
+          baseInventoryState$.next(inventoryInstance);
+        }
+      });
+      this.inventory$ = combineLatest([
+        baseInventoryState$,
+        this.lazyData.getEntry('materias')
+      ]).pipe(
+        switchMap(([baseInventoryState, materias]) => {
+          const packetActions$ = merge(containerInfoMessages$, itemInfoMessages$, currencyCrystalInfoMessages$,
+            inventoryModifyHandlerMessages$, updateInventorySlotMessages$, inventoryTransactionMessages$);
+          const packetActions2$ = merge(itemMarketBoardInfoMessages$, clientTriggerMbPriceMessages$);
 
-    this.inventory$ = combineLatest([
-      baseInventoryState$,
-      this.lazyData.getEntry('materias')
-    ]).pipe(
-      switchMap(([baseInventoryState, materias]) => {
-        const packetActions$ = merge(containerInfoMessages$, itemInfoMessages$, currencyCrystalInfoMessages$,
-          inventoryModifyHandlerMessages$, updateInventorySlotMessages$, inventoryTransactionMessages$);
-        const packetActions2$ = merge(itemMarketBoardInfoMessages$, clientTriggerMbPriceMessages$);
+          const retainerActions$: Observable<{ type: 'RetainerSpawn', retainer: string }> = this.retainerSpawn$.pipe(
+            map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
+          );
 
-        const retainerActions$: Observable<{ type: 'RetainerSpawn', retainer: string }> = this.retainerSpawn$.pipe(
-          map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
-        );
-
-        const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
-        return merge(packetActions$, customActions$, packetActions2$).pipe(
-          scan((state: InventoryState, action) => {
-            if (!action) {
-              return state;
-            }
-            if (action.type !== 'SetContentId' && !state.inventory.contentId) {
-              return state;
-            }
-            switch (action.type) {
-              case 'SetContentId':
-                state.inventory.contentId = action.contentId;
-                delete state.inventory.items['null'];
-                delete state.inventory.items['undefined'];
-                return { ...state, inventory: state.inventory };
-              case 'Reset':
-                const reset = new UserInventory();
-                reset.contentId = state.inventory.contentId;
-                return { ...state, inventory: reset };
-              case 'Set':
-                return { ...state, inventory: action.inventory };
-              case 'containerInfo':
-                const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
-                const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
-                if (this.isRetainer(action.parsedIpcData.containerId)) {
-                  if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
-                    state.retainerInventoryQueue = [];
+          const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
+          return merge(packetActions$, customActions$, packetActions2$).pipe(
+            scan((state: InventoryState, action) => {
+              if (!action) {
+                return state;
+              }
+              if (action.type !== 'SetContentId' && !state.inventory.contentId) {
+                return state;
+              }
+              switch (action.type) {
+                case 'SetContentId':
+                  state.inventory.contentId = action.contentId;
+                  delete state.inventory.items['null'];
+                  delete state.inventory.items['undefined'];
+                  return { ...state, inventory: state.inventory };
+                case 'Reset':
+                  const reset = new UserInventory();
+                  reset.contentId = state.inventory.contentId;
+                  return { ...state, inventory: reset };
+                case 'Set':
+                  return { ...state, inventory: action.inventory };
+                case 'containerInfo':
+                  const itemInfos = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence === action.parsedIpcData.sequence);
+                  const newQueue = state.itemInfoQueue.filter(itemInfo => itemInfo.containerSequence !== action.parsedIpcData.sequence);
+                  if (this.isRetainer(action.parsedIpcData.containerId)) {
+                    if (action.parsedIpcData.containerId === ContainerType.RetainerBag0) {
+                      state.retainerInventoryQueue = [];
+                    }
+                    return {
+                      ...state,
+                      itemInfoQueue: newQueue,
+                      retainerInventoryQueue: [...state.retainerInventoryQueue, { containerInfo: action.parsedIpcData, itemInfos: itemInfos }]
+                    };
+                  } else {
+                    return {
+                      ...state,
+                      itemInfoQueue: newQueue,
+                      inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos, materias)
+                    };
                   }
+                case 'RetainerSpawn':
+                  let inventory = state.inventory.clone();
+                  state.retainerInventoryQueue.forEach(entry => {
+                    inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
+                  });
+                  state.retainerUpdateSlotQueue.forEach(entry => {
+                    inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
+                  });
+                  state.retainerMarketboardInfoQueue.forEach(entry => {
+                    inventory = this.handleItemMarketboardInfo(inventory, entry, action.retainer);
+                  });
                   return {
                     ...state,
-                    itemInfoQueue: newQueue,
-                    retainerInventoryQueue: [...state.retainerInventoryQueue, { containerInfo: action.parsedIpcData, itemInfos: itemInfos }]
+                    retainer: action.retainer,
+                    retainerInventoryQueue: [],
+                    retainerUpdateSlotQueue: [],
+                    retainerMarketboardInfoQueue: [],
+                    inventory
                   };
-                } else {
+                case 'inventoryModifyHandler':
+                  return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
+                case 'updateInventorySlot':
+                case 'inventoryTransaction':
+                  if (this.isRetainer(action.parsedIpcData.containerId) && state.retainerInventoryQueue.length > 0) {
+                    return {
+                      ...state,
+                      retainerUpdateSlotQueue: [...state.retainerUpdateSlotQueue, action.parsedIpcData]
+                    };
+                  } else {
+                    return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
+                  }
+                case 'clientTrigger':
                   return {
                     ...state,
-                    itemInfoQueue: newQueue,
-                    inventory: this.handleContainerInfo(state.inventory, action.parsedIpcData, itemInfos, materias)
+                    inventory: this.handleClientTrigger400(state.inventory, action.parsedIpcData, state.retainer)
                   };
-                }
-              case 'RetainerSpawn':
-                let inventory = state.inventory.clone();
-                state.retainerInventoryQueue.forEach(entry => {
-                  inventory = this.handleContainerInfo(inventory, entry.containerInfo, entry.itemInfos, materias, action.retainer);
-                });
-                state.retainerUpdateSlotQueue.forEach(entry => {
-                  inventory = this.handleUpdateInventorySlot(inventory, entry, action.retainer);
-                });
-                state.retainerMarketboardInfoQueue.forEach(entry => {
-                  inventory = this.handleItemMarketboardInfo(inventory, entry, action.retainer);
-                });
-                return {
-                  ...state,
-                  retainer: action.retainer,
-                  retainerInventoryQueue: [],
-                  retainerUpdateSlotQueue: [],
-                  retainerMarketboardInfoQueue: [],
-                  inventory
-                };
-              case 'inventoryModifyHandler':
-                return { ...state, inventory: this.handleInventoryModifyHandler(state.inventory, action.parsedIpcData, state.retainer) };
-              case 'updateInventorySlot':
-              case 'inventoryTransaction':
-                if (this.isRetainer(action.parsedIpcData.containerId) && state.retainerInventoryQueue.length > 0) {
-                  return {
-                    ...state,
-                    retainerUpdateSlotQueue: [...state.retainerUpdateSlotQueue, action.parsedIpcData]
-                  };
-                } else {
-                  return { ...state, inventory: this.handleUpdateInventorySlot(state.inventory, action.parsedIpcData, state.retainer) };
-                }
-              case 'clientTrigger':
-                return {
-                  ...state,
-                  inventory: this.handleClientTrigger400(state.inventory, action.parsedIpcData, state.retainer)
-                };
-              case 'itemMarketBoardInfo':
-                return { ...state, retainerMarketboardInfoQueue: [...state.retainerMarketboardInfoQueue, action.parsedIpcData] };
-              case 'itemInfo':
-              case 'currencyCrystalInfo':
-                return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
-              default:
-                return { ...state };
-            }
-          }, {
-            itemInfoQueue: [],
-            retainerInventoryQueue: [],
-            retainerUpdateSlotQueue: [],
-            retainerMarketboardInfoQueue: [],
-            inventory: baseInventoryState,
-            retainer: ''
-          }),
-          map(state => state.inventory),
-          startWith(baseInventoryState)
-        );
-      }),
-      debounceTime(1000),
-      shareReplay(1)
-    );
+                case 'itemMarketBoardInfo':
+                  return { ...state, retainerMarketboardInfoQueue: [...state.retainerMarketboardInfoQueue, action.parsedIpcData] };
+                case 'itemInfo':
+                case 'currencyCrystalInfo':
+                  return { ...state, itemInfoQueue: [...state.itemInfoQueue, action.parsedIpcData] };
+                default:
+                  return { ...state };
+              }
+            }, {
+              itemInfoQueue: [],
+              retainerInventoryQueue: [],
+              retainerUpdateSlotQueue: [],
+              retainerMarketboardInfoQueue: [],
+              inventory: baseInventoryState,
+              retainer: ''
+            }),
+            map(state => state.inventory),
+            startWith(baseInventoryState)
+          );
+        }),
+        debounceTime(1000),
+        shareReplay(1)
+      );
+    }
   }
 
   public init(): void {
-    this.inventory$.subscribe(inventory => {
-      this.ipc.send('inventory:set', inventory);
-    });
-    this.inventory$.pipe(
-      map(inventory => inventory.contentId),
-      distinctUntilChanged()
-    ).subscribe(cid => {
-      this.retainersService.contentId = cid;
-    });
+    if (!this.platform.isOverlay()) {
+      this.inventory$.subscribe(inventory => {
+        this.ipc.send('inventory:set', inventory);
+      });
+      this.inventory$.pipe(
+        map(inventory => inventory.contentId),
+        distinctUntilChanged()
+      ).subscribe(cid => {
+        this.retainersService.contentId = cid;
+      });
+    }
     this.ipc.send('inventory:get');
     this.ipc.send('dat:all-odr');
   }

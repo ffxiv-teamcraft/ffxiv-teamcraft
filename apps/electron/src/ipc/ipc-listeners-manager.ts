@@ -377,6 +377,9 @@ export class IpcListenersManager {
 
     ipcMain.on('inventory:set', (event, inventory) => {
       writeFileSync(inventoryPath, JSON.stringify(inventory));
+      this.overlayManager.forEachOverlay(overlay => {
+        overlay.webContents.send('inventory:value', inventory);
+      });
     });
 
     ipcMain.on('inventory:get', (event, inventory) => {
