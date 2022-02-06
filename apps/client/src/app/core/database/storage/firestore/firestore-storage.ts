@@ -4,7 +4,7 @@ import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, finalize, map, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, takeUntil, tap } from 'rxjs/operators';
 import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
@@ -213,7 +213,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }));
   }
 
-  updateIndexes(rows: T[]): Observable<void> {
+  updateIndexes<R extends T & { index: number }>(rows: Array<R>): Observable<void> {
     this.recordOperation('write', rows.map(row => row.$key));
     const batch = this.firestore.firestore.batch();
     rows.forEach(row => {

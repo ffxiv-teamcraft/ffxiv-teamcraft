@@ -15,4 +15,8 @@ export class PlatformService {
   public isDesktop(): boolean {
     return IS_ELECTRON;
   }
+
+  public isOverlay(): boolean {
+    return window.location.href.indexOf('?overlay') > -1;
+  }
 }

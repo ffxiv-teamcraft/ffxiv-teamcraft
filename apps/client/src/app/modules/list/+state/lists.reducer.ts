@@ -106,6 +106,7 @@ export function listsReducer(
         fill = !action.fromPacket || !action.hq;
       }
       if (fill) {
+        console.log(action, list.finalItems.filter(i => i.done >= i.amount).length);
         ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
         ListController.updateAllStatuses(list, action.itemId);
         state = {

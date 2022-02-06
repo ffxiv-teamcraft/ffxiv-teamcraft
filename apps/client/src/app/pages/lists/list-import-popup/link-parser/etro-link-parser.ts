@@ -65,28 +65,30 @@ export class EtroLinkParser implements ExternalListLinkParser {
             quantity = 30;
           }
           entries.push(`${item},null,${quantity}`);
-          let itemKeySuffix = '';
-          if (slot === 'fingerL' && gear[slot] === gear['fingerR']) {
-            itemKeySuffix = 'L';
-          } else if (slot === 'fingerR' && gear[slot] === gear['fingerL']) {
-            itemKeySuffix = 'R';
-          }
-          const materias: number[] = Object.values<number>(gear.materia[`${item}${itemKeySuffix}`] || {});
-          if (materias !== undefined) {
-            materias.forEach((materia, i) => {
-              const materiaQuantity = estimateOvermeldMateria
-                ? this.calcMateriaQuantity(materia, i + 1, gear.job, isTool, item, lazyMaterias, meldingData)
-                : 1;
-              if (groupTogether) {
-                if (materia in materiaTotals) {
-                  materiaTotals[materia] += materiaQuantity;
+          if (gear.materia) {
+            let itemKeySuffix = '';
+            if (slot === 'fingerL' && gear[slot] === gear['fingerR']) {
+              itemKeySuffix = 'L';
+            } else if (slot === 'fingerR' && gear[slot] === gear['fingerL']) {
+              itemKeySuffix = 'R';
+            }
+            const materias: number[] = Object.values<number>(gear.materia[`${item}${itemKeySuffix}`] || {});
+            if (materias !== undefined) {
+              materias.forEach((materia, i) => {
+                const materiaQuantity = estimateOvermeldMateria
+                  ? this.calcMateriaQuantity(materia, i + 1, gear.job, isTool, item, lazyMaterias, meldingData)
+                  : 1;
+                if (groupTogether) {
+                  if (materia in materiaTotals) {
+                    materiaTotals[materia] += materiaQuantity;
+                  } else {
+                    materiaTotals[materia] = materiaQuantity;
+                  }
                 } else {
-                  materiaTotals[materia] = materiaQuantity;
+                  entries.push(`${materia},null,${Math.ceil(materiaQuantity)}`);
                 }
-              } else {
-                entries.push(`${materia},null,${Math.ceil(materiaQuantity)}`);
-              }
-            });
+              });
+            }
           }
         });
 

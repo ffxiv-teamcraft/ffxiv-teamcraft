@@ -8,6 +8,7 @@ import {
   RemoveListFromWorkshop,
   SharedWorkshopsLoaded,
   UpdateWorkshop,
+  UpdateWorkshopIndexes,
   WorkshopLoaded,
   WorkshopsActionTypes
 } from './workshops.actions';
@@ -137,6 +138,13 @@ export class WorkshopsEffects {
       return new UpdateWorkshop(workshop);
     })
   ));
+
+  persistUpdateIndexes$ = createEffect(() => this.actions$.pipe(
+    ofType<UpdateWorkshopIndexes>(WorkshopsActionTypes.UpdateWorkshopIndexes),
+    switchMap(action => {
+      return this.workshopService.updateIndexes(action.payload);
+    })
+  ), { dispatch: false });
 
   constructor(
     private actions$: Actions,

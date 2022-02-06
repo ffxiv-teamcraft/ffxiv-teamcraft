@@ -10,9 +10,9 @@ export enum WorkshopsActionTypes {
   MyWorkshopsLoaded = '[Workshops] My Workshops Loaded',
   WorkshopLoaded = '[Workshops] Workshop Loaded',
   SharedWorkshopsLoaded = '[Workshops] Shared Workshops Loaded',
+  UpdateWorkshopIndexes = '[Workshops] Update Workshops Indexes',
 
   CreateWorkshop = '[Workshops] Create Workshop',
-  UpdateWorkshopIndex = '[Workshops] Update Workshop Index',
   UpdateWorkshop = '[Workshops] Update Workshop',
   RemoveListFromWorkshop = '[Workshops] Remove List from Workshop',
   DeleteWorkshop = '[Workshops] Delete Workshop',
@@ -82,10 +82,10 @@ export class RemoveListFromWorkshop implements Action {
   }
 }
 
-export class UpdateWorkshopIndex implements Action {
-  readonly type = WorkshopsActionTypes.UpdateWorkshopIndex;
+export class UpdateWorkshopIndexes implements Action {
+  readonly type = WorkshopsActionTypes.UpdateWorkshopIndexes;
 
-  constructor(public readonly payload: Workshop) {
+  constructor(public readonly payload: Workshop[]) {
   }
 }
 
@@ -101,7 +101,7 @@ export type WorkshopsAction =
   | MyWorkshopsLoaded
   | CreateWorkshop
   | SelectWorkshop
-  | UpdateWorkshopIndex
+  | UpdateWorkshopIndexes
   | LoadSharedWorkshops
   | SharedWorkshopsLoaded
   | UpdateWorkshop

@@ -60,16 +60,6 @@ export function workshopsReducer(
       break;
     }
 
-    case WorkshopsActionTypes.UpdateWorkshopIndex: {
-      state = {
-        ...state,
-        workshops: [
-          ...state.workshops.map(workshop => workshop.$key === action.payload.$key ? action.payload : workshop)
-        ]
-      };
-      break;
-    }
-
     case WorkshopsActionTypes.DeleteWorkshop: {
       state = {
         ...state,

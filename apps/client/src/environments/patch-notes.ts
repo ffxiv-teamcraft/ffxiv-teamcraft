@@ -1,11 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **allagan-reports:** fixed Map instances not being added as source.
-* **db:** fixed missing gardening data from allagan reports.
-* **db:** fixed shops using ice shards as currency instead of tomestones.
-* **desktop:** fixed hide completed items in list overlay.
-* **layout:** reordering panels in reorder popup now saves the layout.
-* **layouts:** removed drag and drop from layout editor.
-* **list:** fixed progress persistence on offline lists.
-* **lists:** fixed link notes hiding interaction buttons.
-* **simulator:** renaming a rotation doesn't save it anymore.`;
+* **alarms:** SB fish now have the option to add an alarm with fish eyes.
+* **commissions:** disabled possibility to create a commission from an offline list.
+* **desktop:** fixed list overlay tags not up to date with main window.
+* **layout-editor:** fixed list preview.
+* **list:** fixed automatic HQ flags disable checkbox.
+* **list-import:** fixed import from etro with no materias.
+* **lists:** fixed completion popup not showing up when marking final panel as done.
+* **workshops:** fixed drag and drop ordering not saved properly.`;

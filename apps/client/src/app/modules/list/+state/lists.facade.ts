@@ -33,7 +33,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -149,7 +149,6 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
-    throttleTime<List>(200),
     shareReplay(1)
   );
 

@@ -30,9 +30,7 @@ export class LayoutEditorPageComponent {
 
   public display$ = this.listsFacade.selectedList$.pipe(
     switchMap(list => {
-      return this.layoutsFacade.getDisplay(list, false).pipe(
-        first()
-      );
+      return this.layoutsFacade.getDisplay(list, false);
     })
   );
 

@@ -489,7 +489,7 @@ export class ListsEffects {
     }),
     map(() => new RemoveReadLock()),
     debounceTime(1000)
-  ));
+  ), { useEffectsErrorHandler: true });
 
   updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),
@@ -533,7 +533,7 @@ export class ListsEffects {
    */
   openCompletionPopup$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.selectedListClone$, this.authFacade.userId$),
+    withLatestFrom(this.listsFacade.selectedList$, this.authFacade.userId$),
     filter(([, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && ListController.isComplete(list);
     }),
