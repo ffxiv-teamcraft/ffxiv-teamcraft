@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.10"></a>
+## [9.5.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.9...v9.5.10) (2022-02-06)
+
+
+### Bug Fixes
+
+* **alarms:** SB fish now have the option to add an alarm with fish eyes ([b407a08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b407a08))
+* **commissions:** disabled possibility to create a commission from an offline list ([7448ab7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7448ab7))
+* **desktop:** fixed list overlay tags not up to date with main window ([7e49d18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e49d18))
+* **layout-editor:** fixed list preview ([8c2d42f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c2d42f))
+* **list:** fixed automatic HQ flags disable checkbox ([5b874c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b874c7))
+* **list-import:** fixed import from etro with no materias ([f461d22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f461d22))
+* **lists:** fixed completion popup not showing up when marking final panel as done ([24c803b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24c803b))
+* **workshops:** fixed drag and drop ordering not saved properly ([54955de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54955de))
+
+
+
 <a name="9.5.9"></a>
 ## [9.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.8...v9.5.9) (2022-02-02)
 
