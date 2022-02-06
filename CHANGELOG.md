@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.11"></a>
+## [9.5.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.10...v9.5.11) (2022-02-06)
+
+
+### Bug Fixes
+
+* **desktop:** fixed critical crash when completing a list item ingame ([b52c169](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b52c169))
+
+
+
 <a name="9.5.10"></a>
 ## [9.5.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.9...v9.5.10) (2022-02-06)
 

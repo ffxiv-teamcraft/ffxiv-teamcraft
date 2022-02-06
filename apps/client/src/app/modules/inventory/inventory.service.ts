@@ -142,7 +142,7 @@ export class InventoryService {
 
     if (this.platform.isOverlay()) {
       this.inventory$ = new Observable<UserInventory>(observer => {
-        this.ipc.on('inventory:value', (e, data) => {
+        this.ipc.on('inventory:overlay:set', (e, data) => {
           const inventoryInstance = this.serializer.deserialize<UserInventory>(data, UserInventory);
           observer.next(inventoryInstance);
         });
@@ -154,14 +154,17 @@ export class InventoryService {
           const reset = new UserInventory();
           reset.contentId = inventoryInstance.contentId;
           baseInventoryState$.next(reset);
+          baseInventoryState$.complete();
         } else {
           baseInventoryState$.next(inventoryInstance);
+          baseInventoryState$.complete();
         }
       });
       this.inventory$ = combineLatest([
         baseInventoryState$,
         this.lazyData.getEntry('materias')
       ]).pipe(
+        first(),
         switchMap(([baseInventoryState, materias]) => {
           const packetActions$ = merge(containerInfoMessages$, itemInfoMessages$, currencyCrystalInfoMessages$,
             inventoryModifyHandlerMessages$, updateInventorySlotMessages$, inventoryTransactionMessages$);

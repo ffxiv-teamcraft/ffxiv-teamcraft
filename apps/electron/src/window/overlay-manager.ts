@@ -5,6 +5,7 @@ import { Constants } from '../constants';
 export class OverlayManager {
 
   private openedOverlayUris = [];
+
   private openedOverlays: Record<string, BrowserWindow> = {};
 
   constructor(private store: Store) {
