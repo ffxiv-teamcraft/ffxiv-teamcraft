@@ -7,4 +7,4 @@ export const patchNotes = `### Bug Fixes
 * **list:** fixed automatic HQ flags disable checkbox.
 * **list-import:** fixed import from etro with no materias.
 * **lists:** fixed completion popup not showing up when marking final panel as done.
-* **workshops:** fixed drag and drop ordering not saved properly.`;
+* **workshops:** fixed drag and drop ordering not saved properly.`;
