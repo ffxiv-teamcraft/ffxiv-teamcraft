@@ -29,7 +29,8 @@ export class MainWindow {
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
-        backgroundThrottling: false
+        backgroundThrottling: false,
+        nodeIntegrationInWorker: true
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));
