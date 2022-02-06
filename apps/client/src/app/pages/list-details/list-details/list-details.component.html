@@ -40,14 +40,15 @@
           <i nz-icon nzType="copy" theme="outline"></i>
         </button>
         <app-favorite-button *ngIf="!list.offline" [key]="list.$key" type="lists"></app-favorite-button>
-        <button nz-button nzShape="circle" (click)="createCommission(list)" *ngIf="!list.hasCommission && (permissionLevel$ | async) >= 40"
+        <button nz-button nzShape="circle" (click)="createCommission(list)" *ngIf="!list.offline && !list.hasCommission && (permissionLevel$ | async) >= 40"
                 nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.Create_commission' | translate">
           <i nz-icon nzType="shop" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle"
                 *ngIf="pinnedList$ | async as pinnedList"
                 (click)="pinnedList === list.$key ? unpinList() :pinList(list)"
-                [nzType]="pinnedList === list.$key ? 'danger' : 'default'">
+                [nzDanger]="pinnedList === list.$key"
+                [nzType]="'default'">
           <i nz-icon nzType="pushpin" nzTheme="outline"></i>
         </button>
         <div *ngIf="teams$ | async as teams">
