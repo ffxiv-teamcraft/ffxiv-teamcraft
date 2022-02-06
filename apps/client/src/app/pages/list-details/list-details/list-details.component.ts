@@ -207,6 +207,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.listsFacade.updateList(list);
   }
 
+  toggleAutomaticHQFlag(list: List, flag: boolean): void {
+    this.listsFacade.pureUpdateList(list.$key, {
+      disableHQSuggestions: flag
+    });
+  }
+
   getLink = (list: List) => {
     return this.linkTools.getLink(`/list/${list.$key}`);
   };

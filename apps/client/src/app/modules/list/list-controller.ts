@@ -195,6 +195,9 @@ export class ListController {
   }
 
   public static requiredAsHQ(list: List, item: ListRow): number {
+    if (list.disableHQSuggestions) {
+      return 0;
+    }
     if (!item || item.id < 20 || !syncHqFlags[item.id]) {
       return 0;
     }
@@ -205,9 +208,6 @@ export class ListController {
       });
     if (item.requiredAsHQ) {
       return item.amount;
-    }
-    if (list.disableHQSuggestions) {
-      return 0;
     }
     if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
       return 0;

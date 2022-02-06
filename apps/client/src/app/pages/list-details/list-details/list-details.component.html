@@ -246,8 +246,8 @@
                  nz-checkbox>{{'LIST_DETAILS.Adaptative_filter' | translate}}</label>
         </div>
         <div>
-          <label (ngModelChange)="save(list)" *ngIf="(loggedIn$ | async) && (permissionLevel$ | async) >= 40"
-                 [(ngModel)]="list.disableHQSuggestions"
+          <label (ngModelChange)="toggleAutomaticHQFlag(list, $event)" *ngIf="(loggedIn$ | async) && (permissionLevel$ | async) >= 40"
+                 [ngModel]="list.disableHQSuggestions"
                  nz-checkbox>
             {{'LIST_DETAILS.Disable_HQ_suggestions' | translate}}
           </label>
