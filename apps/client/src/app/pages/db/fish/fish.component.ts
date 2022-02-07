@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnDestroy, TemplateRef } fro
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishContextService } from '../service/fish-context.service';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-fish',
@@ -14,7 +15,8 @@ export class FishComponent implements OnDestroy {
 
   @Input() obtentionTpl: TemplateRef<any>;
 
-  constructor(public translate: TranslateService, public settings: SettingsService, public readonly fishCtx: FishContextService) {
+  constructor(public translate: TranslateService, public settings: SettingsService, public readonly fishCtx: FishContextService,
+              public platform: PlatformService) {
   }
 
   ngOnDestroy() {
