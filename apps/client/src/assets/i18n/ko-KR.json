@@ -1632,6 +1632,7 @@
       "Fish_per_weather": "날씨당 물고기",
       "Fish_per_bait": "미끼당 물고기",
       "Fish_per_tug": "입질당 물고기",
+      "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss"
     },
