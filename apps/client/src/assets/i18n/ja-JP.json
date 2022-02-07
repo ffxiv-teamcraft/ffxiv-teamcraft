@@ -131,7 +131,7 @@
     "Exclude_filter_reset": "除外フィルタをリセット",
     "Name_filter_placeholder": "Filter using name (5 characters minimum)",
     "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Search": "検索"
   },
   "COMMON": {
     "Length": "長さ",
@@ -1083,7 +1083,7 @@
       "Name_filter_placeholder": "スキル回し名",
       "Tags_filter_placeholder": "タグ",
       "Durability_filter_placeholder": "耐久性",
-      "Rlvl_filter_placeholder": "Rlvl",
+      "Rlvl_filter_placeholder": "レシピレベル",
       "Filters_reset": "フィルターリセット",
       "Configuration_popup": "コミュニティーにシェアする",
       "Min_craftsmanship_filter_placeholder": "Min. Craft.",
