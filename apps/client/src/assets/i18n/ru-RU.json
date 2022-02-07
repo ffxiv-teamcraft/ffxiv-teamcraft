@@ -1632,6 +1632,7 @@
       "Fish_per_weather": "Рыба в погоду",
       "Fish_per_bait": "Рыба за наживку",
       "Fish_per_tug": "Рыба за tug",
+      "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Включать пропущенные",
       "Miss": "Пропущено"
     },
