@@ -1632,6 +1632,7 @@
       "Fish_per_weather": "天気ごとの魚",
       "Fish_per_bait": "餌ごとの魚",
       "Fish_per_tug": "当たりごとの魚",
+      "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss"
     },
