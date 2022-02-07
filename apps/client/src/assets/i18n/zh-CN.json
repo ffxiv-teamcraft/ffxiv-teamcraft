@@ -1632,6 +1632,7 @@
       "Fish_per_weather": "不同天气的上钩概率",
       "Fish_per_bait": "不同钓饵的上钩概率",
       "Fish_per_tug": "不同咬饵的上钩概率",
+      "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
       "Miss": "Miss"
     },
