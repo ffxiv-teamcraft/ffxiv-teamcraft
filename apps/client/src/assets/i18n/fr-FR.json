@@ -1632,6 +1632,7 @@
       "Fish_per_weather": "Poisson par météo",
       "Fish_per_bait": "Poisson par appât",
       "Fish_per_tug": "Poisson par touche",
+      "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Inclure les ratés",
       "Miss": "Raté"
     },
