@@ -2579,11 +2579,11 @@
     "Phase": "Phase {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_purchases": "Include purchases",
+    "Title": "レベリング装備",
+    "Include_crafting": "製作アイテムを含める",
+    "Include_purchases": "ショップ販売アイテムを含める",
     "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Description": "ジョブとレベル、検索フィルターを設定し、検索をクリックしてください",
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
