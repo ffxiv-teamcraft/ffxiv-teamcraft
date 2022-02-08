@@ -89,7 +89,7 @@
       </div>
       <div class="spacer"></div>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
-        <label (ngModelChange)="list.index = -1;listsFacade.updateList(list)" *ngIf="!list.offline"
+        <label (ngModelChange)="list.index = -1;setPublicFlag(list, $event)" *ngIf="!list.offline"
                [(ngModel)]="list.public"
                [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral || list.hasCommission"
                [nzTooltipTitle]="'LIST_DETAILS.Public_list_description' | translate" nz-checkbox

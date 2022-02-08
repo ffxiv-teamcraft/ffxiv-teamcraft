@@ -203,13 +203,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.layoutsFacade.select(layout);
   }
 
-  save(list: List): void {
-    this.listsFacade.updateList(list);
-  }
-
   toggleAutomaticHQFlag(list: List, flag: boolean): void {
     this.listsFacade.pureUpdateList(list.$key, {
       disableHQSuggestions: flag
+    });
+  }
+
+  setPublicFlag(list: List, flag: boolean): void {
+    this.listsFacade.pureUpdateList(list.$key, {
+      public: flag
     });
   }
 
