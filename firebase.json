@@ -25,10 +25,7 @@
     "rewrites": [
       {
         "source": "**",
-        "run": {
-          "serviceId": "tc-ssr",
-          "region": "europe-west1"
-        }
+        "destination": "/index.html"
       }
     ],
     "headers": [
