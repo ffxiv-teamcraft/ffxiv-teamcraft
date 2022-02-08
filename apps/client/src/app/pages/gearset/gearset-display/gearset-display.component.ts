@@ -131,11 +131,12 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
         const craftsmanship = stats.find(s => s.id === BaseParam.CRAFTSMANSHIP).value;
         const control = stats.find(s => s.id === BaseParam.CONTROL).value;
         const cp = stats.find(s => s.id === BaseParam.CP).value;
+        const specialist = !!gearset.crystal;
         this.dialog.create({
           nzFooter: null,
           nzContent: RecipeChoicePopupComponent,
           nzComponentParams: {
-            statsStr: `${craftsmanship}/${control}/${cp}/${this.level$.value}/${1}`,
+            statsStr: `${craftsmanship}/${control}/${cp}/${this.level$.value}/${specialist ? 1 : 0}`,
             pickRotation: true
           },
           nzTitle: this.translate.instant('Pick_a_recipe')
