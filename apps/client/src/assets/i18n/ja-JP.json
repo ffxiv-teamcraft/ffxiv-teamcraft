@@ -916,7 +916,7 @@
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
     "Spawned_for": "{{timer}} 以降消滅",
     "Will_spawn_in": "{{timer}} 以降現れる",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
+    "Ephemeral_warning": "刻限の採集場所は複数に分かれています。座標はおおよその位置です。",
     "Legendary": "伝説",
     "Switched_to_compact": "結果が多すぎるため、コンパクトモードに切り替えました。",
     "Node_type": "Type",
