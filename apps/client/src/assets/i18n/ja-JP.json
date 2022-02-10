@@ -2884,10 +2884,10 @@
     "Restart_to_install": "今すぐ再起動して更新しますか？"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
+    "Mining": "採掘",
+    "Quarrying": "砕岩",
+    "Logging": "伐採",
+    "Harvesting": "草刈",
     "Fishing": "Fishing",
     "Spearfishing": "Spearfishing"
   },
