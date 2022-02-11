@@ -293,6 +293,7 @@ export class ListsEffects {
         }
         return i;
       });
+      list.etag++;
       return new UpdateList(list);
     })
   ));

@@ -201,14 +201,14 @@ export class ListController {
     if (!item || item.id < 20 || !syncHqFlags[item.id]) {
       return 0;
     }
+    if (item.requiredAsHQ) {
+      return item.amount;
+    }
     const recipesNeedingItem = list.finalItems
       .filter(i => i.requires !== undefined)
       .filter(i => {
         return (i.requires || []).some(req => req.id === item.id);
       });
-    if (item.requiredAsHQ) {
-      return item.amount;
-    }
     if (recipesNeedingItem.length === 0 || item.requiredAsHQ === false) {
       return 0;
     } else {
