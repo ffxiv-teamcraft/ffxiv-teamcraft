@@ -243,7 +243,7 @@
     "jasmine-spec-reporter": "~4.2.1",
     "jsdom": "^18.0.0",
     "jsonlint-cli": "^1.0.1",
-    "karma": "~6.3.4",
+    "karma": "~6.3.14",
     "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "~1.4.2",
