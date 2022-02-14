@@ -493,7 +493,7 @@
     "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
     "Show_other_characters_inventories_in_inventory_page": "Show other characters' inventories in inventory page",
     "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
-    "Alarm_groups_before_no_group": "グループ指定ができてないアラーム前にグループアラームを表示",
+    "Alarm_groups_before_no_group": "アラームグループをグループ指定のないアラームより前に表示",
     "Disconnect_patreon": "Patreonアカウントとの連携を解除する",
     "Export_settings": "設定をエクスポート",
     "Import_settings": "設定をインポート",
