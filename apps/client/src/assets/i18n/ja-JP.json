@@ -235,7 +235,7 @@
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
+      "WEEKLY_RESETS_DESCRIPTION": "お得意様取引、クロの空想帳、週制限報酬（アライアンスレイド、レイド：零式、ノーマルレイド）、ジャンボくじテンダー、攻略手帳、ファッションチェック、リスキーモブ手配書",
       "ROULETTES_RESET": "コンテンツルーレット & 蛮族デイリークエスト",
       "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
       "DELIVERIES_RESET": "調達依頼",
