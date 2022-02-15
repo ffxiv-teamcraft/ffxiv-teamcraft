@@ -1938,7 +1938,7 @@
     "Switch_to_winpcap": "Winpcapモードに切り替える",
     "Disable_pcap": "パケットキャプチャを無効にする",
     "Install_npcap": "Npcapがシステムから見つかりません。",
-    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_description": "デフォルトのnpcapモードでパケットキャプチャを利用するためにはnpcapのインストールが必要です。npcapのインストールとTeamcraftの再起動を行いますか？",
     "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
     "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
