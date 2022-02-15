@@ -1932,7 +1932,7 @@
     "Outdated_description": "あなたのバージョンのTeamcraftは現在のゲームバージョンで正しく動作していません。今後のアップデートで修正されます。",
     "Possible_missing_firewall_rule": "パケットキャプチャが正しく動作していません",
     "Possible_missing_firewall_rule_description": "現在使用するPCのファイアウォールのルールにパケットキャプチャがない故、収集された所持品、能力値、装備などのデータが一部欠けています。",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
+    "Possible_missing_firewall_rule_check": "新しいエリアにテレポしてもこのメッセージが消えない場合は、ファイアウォールのルールが設定されていないかもしくはパケットキャプチャが別の理由で動作していません。後者の場合はDiscordサーバーに参加して、#troubleshooting チャンネルで報告してください。",
     "Rawsock_needs_admin": "RawSocketキャプチャモードには管理者権限が必要です",
     "Rawsock_needs_admin_description": "ファイアウォールのルールとパケットキャプチャが問題なく作動するには、TCに管理者権限が必要です。ウィンドウを閉じて管理者権限で実行するか、以下のオプションの中で１つを選ぶ事ができます",
     "Switch_to_winpcap": "Winpcapモードに切り替える",
@@ -1940,7 +1940,7 @@
     "Install_npcap": "Npcapがシステムから見つかりません。",
     "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
+    "Not_as_anonymous": "パケットキャプチャは匿名ユーザでは正しく動作しません",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
