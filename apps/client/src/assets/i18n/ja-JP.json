@@ -231,7 +231,7 @@
     "Remove_from_group": "該当グループを削除",
     "No_folder": "フォルダー無し",
     "Click_to_show_all_alarms": "クリックしてすべてのアラームを表示",
-    "Enable_TTS": "Enable Text-to-Speech",
+    "Enable_TTS": "テキスト読み上げの有効化",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
