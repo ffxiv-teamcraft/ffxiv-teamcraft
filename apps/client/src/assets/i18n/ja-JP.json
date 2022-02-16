@@ -1159,7 +1159,7 @@
       "Apply_foods": "飯と薬を適用する",
       "Food": "飯を選び出します",
       "Medicine": "薬を選び出します",
-      "Action": "Choose Free Company actions",
+      "Action": "フリーカンパニーアクションを選択",
       "Save_on_profile": "プロフィールに保存する",
       "Reset_set": "サブステをリセットする",
       "Save_consumables": "現在の消耗品をデフォルトに設定保存する",
@@ -1176,7 +1176,7 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "必要工数に到達する前に耐久が0になりました",
       "NOT_ENOUGH_CP": "CP不足",
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
