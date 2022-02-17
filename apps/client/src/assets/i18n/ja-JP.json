@@ -1049,7 +1049,7 @@
     "No_matching_rotations": "要求に合致するコミュニティスキル回しが見つかりませんでした。",
     "Click_on_rotation": "スキル回しをクリックして選択します",
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
-    "Could_not_find_minstats": "Could not find minimum stats for this rotation",
+    "Could_not_find_minstats": "このローテーションの下限ステータスを見つけることができませんでした",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
     "Macro_duration": "マクロの合計時間: {{duration}}秒。",
     "Total_macro_duration": "マクロの合計時間: {{duration}}秒。",
@@ -1178,7 +1178,7 @@
       "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
       "DURABILITY_REACHED_ZERO": "必要工数に到達する前に耐久が0になりました",
       "NOT_ENOUGH_CP": "CP不足",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "このアイテムを製作するにはレベルが足りません。",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
       "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。"
