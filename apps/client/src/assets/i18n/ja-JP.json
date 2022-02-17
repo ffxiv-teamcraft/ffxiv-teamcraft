@@ -2047,7 +2047,7 @@
   },
   "VERSION_LOCK": {
     "Outdated": "現在のチームクラフト旧バージョンを使用中であるため、一部の機能が正常に動作しないことがあります",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely. If you're using the desktop app, download the latest version here: "
+    "Refresh_or_download_latest": "Web版Teamcraftを使用している場合は、Ctrl + F5キーを押して完全にリフレッシュしてください。デスクトップアプリを使用中であれば、最新バージョンをこちらからダウンロードしてください："
   },
   "GEARSETS": {
     "Title": "ギアセット",
@@ -2643,14 +2643,14 @@
     "Select_retainer": "Pick one of your retainers"
   },
   "FREE_COMPANY_WORKSHOPS": {
-    "Import_using_pcap": "Import using packet capture",
+    "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Import_from_pcap_notice": "1. Go to your company's Workshop (make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
-    "Airships": "Airships",
+    "Airships": "飛空艇",
     "Submersibles": "Submersibles"
   },
   "VOYAGE_TRACKER": {
     "Title": "Voyage tracker",
-    "Import_using_pcap": "Import using packet capture",
+    "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Voyage_completion_alarm": "Voyage completion alarm",
     "Voyage_completed_notification_title": "{{name}} has completed its voyage",
     "Voyage_completed_notification_content": "[{{server}}][{{freeCompanyTag}}] {{freeCompanyName}}",
