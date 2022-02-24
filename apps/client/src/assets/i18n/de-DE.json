@@ -2047,7 +2047,7 @@
   },
   "VERSION_LOCK": {
     "Outdated": "Du verwendest eine veraltete Version von Teamcraft die nicht mehr richtig funktioniert",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely. If you're using the desktop app, download the latest version here: "
+    "Refresh_or_download_latest": "Wenn du die Website verwendest, drücke einfach Strg + F5, um sie vollständig zu aktualisieren. Wenn du die Desktop-App verwendest, lade hier die neueste Version herunter: "
   },
   "GEARSETS": {
     "Title": "Ausrüstungssets",
