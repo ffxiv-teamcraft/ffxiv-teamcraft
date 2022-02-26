@@ -45,7 +45,7 @@
     "Add_to_list": "Diesen Gegenstand zu einer Liste hinzufügen",
     "Apply_filters": "Filter übernehmen",
     "Reset_filters": "Filter zurücksetzen",
-    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
     "Only_craftable": "Nur Rezepte",
@@ -129,7 +129,7 @@
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
     "Exclude_filter_placeholder": "Benutze Tags ausschließen",
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
-    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
+    "Name_filter_placeholder": "Filtern mit Namen (mindestens 5 Zeichen)",
     "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
     "Search": "Suche"
   },
@@ -2037,7 +2037,7 @@
     },
     "DEPRECATED_HQ": {
       "Title": "Items you don't need HQ because they function as a normal-quality item",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Message": "Seit 6.0 funktioniert dieser Gegenstand nur noch als normaler Gegenstand auch wenn er in hoher Qualität ist"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
