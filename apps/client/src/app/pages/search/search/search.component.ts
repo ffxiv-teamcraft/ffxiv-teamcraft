@@ -53,6 +53,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
+  queryChangeValue?: string | null;
+
   results$: Observable<SearchResult[]>;
 
   selection$: BehaviorSubject<SearchResult[]> = new BehaviorSubject<SearchResult[]>([]);
@@ -268,9 +270,14 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  queryChange(value: string): void {
-    this.query$.next(value);
-    this.submitFilters();
+  queryChange(value: string, fromEnter: boolean): void {
+    if (!this.settings.disableSearchDebounce || fromEnter) {
+      this.query$.next(value);
+      this.submitFilters();
+      this.queryChangeValue = null;
+    } else {
+      this.queryChangeValue = value;
+    }
   }
 
   ngOnInit(): void {
@@ -436,6 +443,10 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   }
 
   submitFilters(): void {
+    if (this.queryChangeValue) {
+      this.query$.next(this.queryChangeValue);
+      this.queryChangeValue = null;
+    }
     switch (this.searchType$.value) {
       case SearchType.ITEM:
       case SearchType.RECIPE:

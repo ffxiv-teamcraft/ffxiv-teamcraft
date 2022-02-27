@@ -1,5 +1,5 @@
 import { RotationTip } from '../rotation-tip';
-import { IntensiveSynthesis, PreciseTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
+import { HeartAndSoul, IntensiveSynthesis, PreciseTouch, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { RotationTipType } from '../rotation-tip-type';
 
 export class AvoidUsingGoodActions extends RotationTip {
@@ -13,9 +13,10 @@ export class AvoidUsingGoodActions extends RotationTip {
   }
 
   matches(simulationResult: SimulationResult): boolean {
-    return simulationResult.steps.some(step => {
-      return step.action.is(PreciseTouch)
-        || step.action.is(IntensiveSynthesis);
+    return simulationResult.steps.some((step, index) => {
+      return (step.action.is(PreciseTouch)
+        || step.action.is(IntensiveSynthesis))
+        && (index === 0 || !simulationResult.steps[index - 1].action.is(HeartAndSoul));
     });
   }
 

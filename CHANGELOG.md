@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.12"></a>
+## [9.5.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.11...v9.5.12) (2022-02-27)
+
+
+### Bug Fixes
+
+* **db:** fixed fishng icon on some items ([bca40f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bca40f3))
+* **gearsets:** fixed specialist flag always set to true when using in simulator ([f466a05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f466a05))
+* **list:** fixed display not updating after filling from inventory ([3bf8860](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3bf8860))
+* **list:** fixed HQ requirement flag sometimes not saved properly ([9aa007e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9aa007e))
+* **list:** fixes community checkbox not applying the change properly ([77d6ac3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/77d6ac3))
+* **log:** fixed Rime Dolomite now shown in the right category ([27f2657](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27f2657))
+* **search:** applying filters now applies query properly with debounce off ([e57e8b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e57e8b6))
+* **simulator:** fixed good actions rotation tip showing even when using Heart and Soul ([e1eb4e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1eb4e5))
+* **ui:** fixed tug name sometimes shown as undefined ([20b82d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20b82d2))
+
+
+### Features
+
+* **db:** new hooksets data matrix on fishing spots ([3d68a23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3d68a23))
+
+
+### Performance Improvements
+
+* **db:** removed fish ranking on desktop app to avoid loading freezes ([c9e3d35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9e3d35))
+
+
+
 <a name="9.5.11"></a>
 ## [9.5.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.10...v9.5.11) (2022-02-06)
 

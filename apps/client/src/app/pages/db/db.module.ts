@@ -76,6 +76,7 @@ import { ChartModule } from 'angular2-chartjs';
 import 'chartjs-chart-box-and-violin-plot/build/Chart.BoxPlot.js';
 import { ApolloClientResolver } from '../../core/apollo-client.resolver';
 import { FishDataModule } from './fish/fish-data.module';
+import { FishingSpotHooksetDatagridComponent } from './fishing-spot/fishing-spot-hookset-datagrid/fishing-spot-hookset-datagrid.component';
 
 const routes: Routes = [
   {
@@ -307,7 +308,8 @@ const routes: Routes = [
     FishingSpotDatagridComponent,
     FishingSpotBaitDatagridComponent,
     FishingSpotWeatherDatagridComponent,
-    FishingSpotTugDatagridComponent
+    FishingSpotTugDatagridComponent,
+    FishingSpotHooksetDatagridComponent
   ],
   imports: [
     CommonModule,

@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.5.11",
+  "version": "9.5.12",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -133,7 +133,7 @@
     "native-is-elevated": "^0.4.3",
     "ngx-google-analytics": "^11.2.1",
     "request": "^2.88.2",
-    "rxjs": "^7.5.2",
+    "rxjs": "^7.5.4",
     "tslib": "^2.3.1"
   },
   "devDependencies": {

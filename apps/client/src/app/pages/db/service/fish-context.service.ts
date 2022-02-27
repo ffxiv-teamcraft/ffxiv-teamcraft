@@ -305,9 +305,13 @@ export class FishContextService {
     switchMap((spotId) => this.data.getHooksets(undefined, spotId))
   );
 
-  /** An observable containing information about the weathers during which to catch fish at the active spot. */
   public readonly tugsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
     map(datagridResultMapper('tugs', 'itemId', 'tug')),
+    shareReplay(1)
+  );
+
+  public readonly hooksetsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
+    map(datagridResultMapper('hooksets', 'itemId', 'hookset')),
     shareReplay(1)
   );
 

@@ -11,7 +11,7 @@
     >
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img src="./assets/icons/classjob/fisher.png" fxFlex="0 0 auto" />
+          <img src="./assets/icons/classjob/fisher.png" fxFlex="0 0 auto"/>
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{ spot.PlaceName | xivapiL12n: 'places' | i18n }}</h2>
             <div class="item-kind">{{ spot.TerritoryType.PlaceName | xivapiL12n: 'places' | i18n }}</div>
@@ -59,11 +59,18 @@
         [activeFish]="highlightedFish$ | async"
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-weather-datagrid>
-      <app-fishing-spot-tug-datagrid
-        fxFlex="none"
-        [activeFish]="highlightedFish$ | async"
-        (activeFishChange)="highlightedFish$.next($event)"
-      ></app-fishing-spot-tug-datagrid>
+      <div fxLayout="column" fxLayoutGap="10px">
+        <app-fishing-spot-tug-datagrid
+          fxFlex="none"
+          [activeFish]="highlightedFish$ | async"
+          (activeFishChange)="highlightedFish$.next($event)"
+        ></app-fishing-spot-tug-datagrid>
+        <app-fishing-spot-hookset-datagrid
+          fxFlex="none"
+          [activeFish]="highlightedFish$ | async"
+          (activeFishChange)="highlightedFish$.next($event)"
+        ></app-fishing-spot-hookset-datagrid>
+      </div>
       <app-fishing-spot-bite-times
         fxFlex="100"
         [activeFish]="highlightedFish$ | async"

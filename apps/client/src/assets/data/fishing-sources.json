@@ -319,6 +319,20 @@
   ],
   "4873": [
     {
+      "spot": 48,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2587,
+      "snagging": false
+    },
+    {
+      "spot": 44,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 2587,
+      "snagging": false
+    },
+    {
       "spot": 37,
       "hookset": 2,
       "tug": 2,
@@ -326,24 +340,10 @@
       "snagging": false
     },
     {
-      "spot": 44,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2591,
-      "snagging": false
-    },
-    {
       "spot": 47,
       "hookset": 2,
       "tug": 2,
-      "bait": 2591,
-      "snagging": false
-    },
-    {
-      "spot": 48,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2591,
+      "bait": 2587,
       "snagging": false
     }
   ],
@@ -2776,13 +2776,6 @@
   "4942": [
     {
       "spot": 24,
-      "hookset": 2,
-      "tug": 2,
-      "bait": 2592,
-      "snagging": false
-    },
-    {
-      "spot": 55,
       "hookset": 2,
       "tug": 2,
       "bait": 2592,
@@ -15491,6 +15484,78 @@
       "tug": 1,
       "bait": 29715,
       "oceanFishingTime": 0
+    }
+  ],
+  "29566": [
+    {
+      "spot": 227,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29569": [
+    {
+      "spot": 228,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29570": [
+    {
+      "spot": 226,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29571": [
+    {
+      "spot": 225,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 27582
+    }
+  ],
+  "29572": [
+    {
+      "spot": 227,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 27582
+    }
+  ],
+  "29575": [
+    {
+      "spot": 245,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 27582
+    }
+  ],
+  "29576": [
+    {
+      "spot": 227,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29577": [
+    {
+      "spot": 228,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
+    }
+  ],
+  "29580": [
+    {
+      "spot": 226,
+      "hookset": 2,
+      "tug": 2,
+      "bait": 27582
     }
   ],
   "29673": [

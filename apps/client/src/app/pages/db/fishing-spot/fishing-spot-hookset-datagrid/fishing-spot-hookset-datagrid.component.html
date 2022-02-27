@@ -1,0 +1,19 @@
+<nz-card
+  [nzTitle]="'DB.FISHING_SPOT.Fish_per_hookset' | translate"
+  class="expanded mw-300"
+  [nzLoading]="loading$ | async"
+  [class.card-with-list]="!(loading$ | async)"
+>
+  <ng-template #iconRender let-id>
+    <div class="icon-container">
+      <img src="{{id | hooksetActionId | actionIcon | xivapiIcon}}" class="hookset-icon"/>
+    </div>
+  </ng-template>
+  <app-fishing-spot-datagrid
+    style="width: 100%"
+    [activeFish]="activeFish"
+    (activeFishChange)="activeFishChange.next($event)"
+    [rowIconRender]="iconRender"
+    [table]="table$ | async"
+  ></app-fishing-spot-datagrid>
+</nz-card>
