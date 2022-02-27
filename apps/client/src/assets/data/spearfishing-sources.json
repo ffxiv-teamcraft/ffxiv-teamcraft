@@ -23,9 +23,81 @@
       "shadowSize": 1
     }
   ],
+  "20194": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "20195": [
+    {
+      "speed": 0,
+      "shadowSize": 2
+    }
+  ],
+  "20197": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "20205": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "20207": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
+  "20208": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
   "20211": [
     {
       "speed": 0,
+      "shadowSize": 0
+    }
+  ],
+  "20214": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
+  "20216": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "20223": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "20225": [
+    {
+      "speed": 0,
+      "shadowSize": 1
+    }
+  ],
+  "20235": [
+    {
+      "speed": 4,
+      "shadowSize": 2
+    }
+  ],
+  "20237": [
+    {
+      "speed": 2,
       "shadowSize": 0
     }
   ],
@@ -73,10 +145,22 @@
       "shadowSize": 0
     }
   ],
+  "36522": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
   "36523": [
     {
       "speed": 1,
       "shadowSize": 0
+    }
+  ],
+  "36524": [
+    {
+      "speed": 2,
+      "shadowSize": 1
     }
   ],
   "36525": [
@@ -85,10 +169,34 @@
       "shadowSize": 1
     }
   ],
+  "36526": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
   "36527": [
     {
       "speed": 5,
       "shadowSize": 2
+    }
+  ],
+  "36528": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
+  "36529": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "36530": [
+    {
+      "speed": 2,
+      "shadowSize": 1
     }
   ],
   "36531": [
@@ -97,16 +205,92 @@
       "shadowSize": 1
     }
   ],
+  "36532": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "36533": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36534": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "36535": [
+    {
+      "speed": 5,
+      "shadowSize": 0,
+      "predators": [
+        {
+          "id": 36546,
+          "amount": 2
+        },
+        {
+          "id": 36547,
+          "amount": 3
+        }
+      ]
+    }
+  ],
   "36536": [
     {
       "speed": 1,
       "shadowSize": 1
     }
   ],
+  "36537": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "36538": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36539": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36540": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
   "36541": [
     {
       "speed": 4,
       "shadowSize": 0
+    }
+  ],
+  "36542": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "36543": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36544": [
+    {
+      "speed": 1,
+      "shadowSize": 2
     }
   ],
   "36545": [
@@ -118,6 +302,18 @@
   "36546": [
     {
       "speed": 2,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 36531,
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "36547": [
+    {
+      "speed": 2,
       "shadowSize": 2
     }
   ],
@@ -127,10 +323,40 @@
       "shadowSize": 0
     }
   ],
+  "36549": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
+  "36550": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
   "36551": [
     {
       "speed": 0,
       "shadowSize": 1
+    }
+  ],
+  "36552": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36553": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "36554": [
+    {
+      "speed": 2,
+      "shadowSize": 0
     }
   ],
   "36555": [
@@ -139,15 +365,207 @@
       "shadowSize": 0
     }
   ],
+  "36556": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36557": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "36558": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "36559": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36560": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
+  "36561": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "36562": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "36563": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36564": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36565": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "36566": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "36567": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
+  "36568": [
+    {
+      "speed": 5,
+      "shadowSize": 1
+    }
+  ],
+  "36569": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "36570": [
+    {
+      "speed": 5,
+      "shadowSize": 2
+    }
+  ],
+  "36571": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36572": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "36573": [
+    {
+      "speed": 3,
+      "shadowSize": 0,
+      "predators": [
+        {
+          "id": 36553,
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "36574": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36575": [
+    {
+      "speed": 3,
+      "shadowSize": 0
+    }
+  ],
+  "36576": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
   "36577": [
     {
       "speed": 2,
       "shadowSize": 1
     }
   ],
+  "36578": [
+    {
+      "speed": 2,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 36553,
+          "amount": 10
+        }
+      ]
+    }
+  ],
+  "36579": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "36580": [
+    {
+      "speed": 1,
+      "shadowSize": 2
+    }
+  ],
+  "36581": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
+  "36582": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "36583": [
+    {
+      "speed": 5,
+      "shadowSize": 0
+    }
+  ],
+  "36584": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
+  "36585": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
   "36586": [
     {
       "speed": 1,
+      "shadowSize": 2
+    }
+  ],
+  "36587": [
+    {
+      "speed": 5,
       "shadowSize": 2
     }
   ]
