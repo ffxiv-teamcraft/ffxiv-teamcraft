@@ -11525,6 +11525,9 @@
   "69530": {
     "zh": "乌尔达哈的马丁似乎想称赞冒险者。"
   },
+  "69531": {
+    "zh": "※本任务是特定期间内的任务。\n\n格里达尼亚的冒险者行会的调查员正在戒备着什么。"
+  },
   "69532": {
     "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的莉赛特·德·瓦伦提昂正在烦恼着什么。"
   },
@@ -11657,24 +11660,6 @@
   "69579": {
     "zh": "古姆拉村的矮人族老爹有工作想要委托冒险者。"
   },
-  "69580": {
-    "zh": "古姆拉村的矮人族老爹有事情想要告诉旅行者。"
-  },
-  "69581": {
-    "zh": "古姆拉村的矮人族老爹有话要说。"
-  },
-  "69582": {
-    "zh": "古姆拉村的矮人族老爹有东西想要交给旅行者。"
-  },
-  "69583": {
-    "zh": "古姆拉村的矮人族老爹想要感谢旅行者。"
-  },
-  "69584": {
-    "zh": "古姆拉村的矮人族老爹正在等待旅行者。"
-  },
-  "69585": {
-    "zh": "古姆拉村的矮人族老爹满脸喜悦。"
-  },
   "69586": {
     "zh": "古姆拉村的悲观的村民有工作想要委托冒险者。"
   },
@@ -11725,6 +11710,42 @@
   },
   "69602": {
     "zh": "芙蓉圆桌的嘉恩·艾·神纳正在思考对策。"
+  },
+  "69603": {
+    "zh": "※本任务是特职贤者的开放任务。\n\n利姆萨·罗敏萨下层甲板的北洋风格的女性正在很好奇地张望。"
+  },
+  "69604": {
+    "zh": "和风陆门的菈菈·基恩加尔想要向冒险者介绍贤具。"
+  },
+  "69605": {
+    "zh": "田园郡的菈菈·基恩加尔有事要向冒险者汇报。"
+  },
+  "69606": {
+    "zh": "田园郡的菈菈·基恩加尔想要整理事情的经过。"
+  },
+  "69607": {
+    "zh": "田园郡的菈菈·基恩加尔想要向冒险者汇报现状。"
+  },
+  "69608": {
+    "zh": "田园郡的菈菈·基恩加尔做好了准备。"
+  },
+  "69609": {
+    "zh": "※本任务是特职钐镰客的开放任务。\n\n乌尔达哈焦急的佣人正在寻找强者。"
+  },
+  "69610": {
+    "zh": "夜游魂总部的德鲁西拉正在打量装备着钐镰客之证的冒险者。"
+  },
+  "69611": {
+    "zh": "夜游魂总部的德鲁西拉想要为冒险者说明如何铲除妖异。"
+  },
+  "69612": {
+    "zh": "夜游魂总部的德鲁西拉正在等待阿恩吉斯的联络。"
+  },
+  "69613": {
+    "zh": "夜游魂总部的德鲁西拉有点担心冒险者。"
+  },
+  "69614": {
+    "zh": "夜游魂总部的赫尔敏正在焦急地等待着冒险者的到来。"
   },
   "69615": {
     "zh": "天穹街的弗朗塞尔发现了令人在意的人物。"
@@ -11791,5 +11812,1232 @@
   },
   "69637": {
     "zh": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>特殊规则： 职业固定<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n甘戈斯的兹拉坦希望冒险者能去收集光辉的激情晶块。"
+  },
+  "69638": {
+    "zh": "流星之间的格里达尼亚的驻外武官有话要对冒险者说。"
+  },
+  "69639": {
+    "zh": "蛇巢司令部的白蛇守护人有话要对冒险者说。"
+  },
+  "69640": {
+    "zh": "蛇巢司令部的白蛇守护人有急事要告诉冒险者。"
+  },
+  "69641": {
+    "zh": "蛇巢司令部的白蛇守护人正在等待冒险者。"
+  },
+  "69642": {
+    "zh": "蛇巢司令部的白蛇守护人正在等待着莫古力族的报告。"
+  },
+  "69643": {
+    "zh": "蛇巢司令部的白蛇守护人正在等待冒险者。"
+  },
+  "69644": {
+    "zh": "流星之间的阿拉米格的驻外武官有话要对冒险者说。"
+  },
+  "69645": {
+    "zh": "阿拉米格人居住区的伪神兽临时部队的战士有话要对冒险者说。"
+  },
+  "69646": {
+    "zh": "阿拉米格人居住区的伪神兽临时部队的战士有话要对冒险者说。"
+  },
+  "69647": {
+    "zh": "阿拉米格人居住区的伪神兽临时部队的战士有话要对冒险者说。"
+  },
+  "69648": {
+    "zh": "阿拉米格人居住区的伪神兽临时部队的战士慌张不已。"
+  },
+  "69649": {
+    "zh": "阿拉米格人居住区的伪神兽临时部队的战士有急事要告诉冒险者。"
+  },
+  "69650": {
+    "zh": "流星之间的利姆萨·罗敏萨的驻外武官有话要对冒险者说。"
+  },
+  "69651": {
+    "zh": "黑涡团军令部的黑涡团书记官似乎想向冒险者传达新情报。"
+  },
+  "69652": {
+    "zh": "黑涡军令部的黑涡团书记官正在等待着冒险者的到来。"
+  },
+  "69653": {
+    "zh": "黑涡军令部的黑涡团书记官似乎有急事要向你报告。"
+  },
+  "69654": {
+    "zh": "黑涡团军令部的黑涡团书记官似乎没有新情报要告诉冒险者。"
+  },
+  "69655": {
+    "zh": "黑涡团军令部的黑涡团书记官似乎正在为找不到伪神兽的踪迹发愁。"
+  },
+  "69656": {
+    "zh": "拉札罕流星之间的多玛的驻外武官有事想要委托冒险者。"
+  },
+  "69657": {
+    "zh": "多玛飞地的夕雾好像在担心什么。"
+  },
+  "69658": {
+    "zh": "多玛飞地的夕雾似乎有事想要拜托冒险者。"
+  },
+  "69659": {
+    "zh": "多玛飞地的夕雾似乎有事想向冒险者报告。"
+  },
+  "69660": {
+    "zh": "多玛飞地的夕雾正等待着冒险者。"
+  },
+  "69661": {
+    "zh": "多玛飞地的夕雾神情肃穆。"
+  },
+  "69662": {
+    "zh": "流星之间的伊修加德的驻外武官寻求内心坚强之人。"
+  },
+  "69663": {
+    "zh": "伊修加德作战会议室的阿图瓦雷尔正在等待报告。"
+  },
+  "69664": {
+    "zh": "伊修加德作战会议室的阿图瓦雷尔正在等待冒险者的到访。"
+  },
+  "69665": {
+    "zh": "伊修加德作战会议室的阿图瓦雷尔正在继续应对伪神兽事件。"
+  },
+  "69666": {
+    "zh": "伊修加德作战会议室的阿图瓦雷尔表情略显紧张。"
+  },
+  "69667": {
+    "zh": "伊修加德作战会议室的阿图瓦雷尔正在为最后的战斗做准备。"
+  },
+  "69668": {
+    "zh": "屯集堂的博里克正在发愁。"
+  },
+  "69669": {
+    "zh": "精制堂的露露夏想要立刻开始修复作业。"
+  },
+  "69670": {
+    "zh": "精制堂的露露夏发现缺少零件。"
+  },
+  "69671": {
+    "zh": "精制堂的露露夏需要一种少见的零件。"
+  },
+  "69672": {
+    "zh": "精制堂的露露夏有事想委托冒险者。"
+  },
+  "69673": {
+    "zh": "精制堂的露露夏正在发愁。"
+  },
+  "69674": {
+    "zh": "精制堂的露露夏想要借助冒险者的智慧。"
+  },
+  "69675": {
+    "zh": "屯集堂的裘德正在发愁。"
+  },
+  "69676": {
+    "zh": "精制堂的裘德开始制作观星镜。"
+  },
+  "69677": {
+    "zh": "精制堂的裘德想要继续拜托冒险者制作部件。"
+  },
+  "69678": {
+    "zh": "精制堂的裘德想要委托冒险者制作下一个部件。"
+  },
+  "69679": {
+    "zh": "精制堂的裘德似乎下定了某种决心。"
+  },
+  "69680": {
+    "zh": "精制堂的裘德打算继续制作观星镜。"
+  },
+  "69681": {
+    "zh": "精制堂的裘德在完成观星镜之前有话想说。"
+  },
+  "69682": {
+    "zh": "屯集堂的德布罗依看上去面色不佳。"
+  },
+  "69683": {
+    "zh": "精制堂的德布罗依一心想改善完美食料的味道。"
+  },
+  "69684": {
+    "zh": "精制堂的德布罗依似乎已经想出了改善口感的对策。"
+  },
+  "69685": {
+    "zh": "精制堂的德布罗依似乎已经有了为试制品添加香味的灵感。"
+  },
+  "69686": {
+    "zh": "精制堂的德布罗依似乎充满干劲。"
+  },
+  "69687": {
+    "zh": "精制堂的德布罗依似乎很困扰。"
+  },
+  "69688": {
+    "zh": "精制堂的德布罗依似乎比平时更加干劲十足。"
+  },
+  "69689": {
+    "zh": "屯集堂的雏芥子正在寻找协助者。"
+  },
+  "69690": {
+    "zh": "屯集堂的雏芥子对研究充满了干劲。"
+  },
+  "69691": {
+    "zh": "屯集堂的雏芥子开始对研究得心应手。"
+  },
+  "69692": {
+    "zh": "屯集堂的雏芥子正埋头于研究。"
+  },
+  "69693": {
+    "zh": "屯集堂的雏芥子正在享受研究的乐趣。"
+  },
+  "69694": {
+    "zh": "屯集堂的雏芥子正在回味研究旅行。"
+  },
+  "69695": {
+    "zh": "屯集堂的雏芥子对现在的生活很满足。"
+  },
+  "69696": {
+    "zh": "屯集堂的茶·拉恰·提亚正在寻找协助者。"
+  },
+  "69697": {
+    "zh": "屯集堂的茶·拉恰·提亚正在翘首以待论文的数据采集。"
+  },
+  "69698": {
+    "zh": "屯集堂的茶·拉恰·提亚正在为论文数据的采集工作有所进展而欣喜。"
+  },
+  "69699": {
+    "zh": "屯集堂的茶·拉恰·提亚对于论文的数据采集蠢蠢欲动。"
+  },
+  "69700": {
+    "zh": "屯集堂的茶·拉恰·提亚很希望数据采集工作能够一鼓作气地推进。"
+  },
+  "69701": {
+    "zh": "屯集堂的茶·拉恰·提亚正在为构建论文的设想而发愁。"
+  },
+  "69702": {
+    "zh": "屯集堂的茶·拉恰·提亚正在认真对待即将完成的论文。"
+  },
+  "69703": {
+    "zh": "旧萨雷安的惴惴不安的兔兔族正在拼命寻找冒险者。"
+  },
+  "69704": {
+    "zh": "旧萨雷安的聆听威正在寻找冒险者。"
+  },
+  "69708": {
+    "zh": "伊修加德以太之光广场的贡德兰博在等待着英雄的造访。"
+  },
+  "69709": {
+    "zh": "以太之光广场的强壮的星战士想要给冒险者介绍某设施。"
+  },
+  "69712": {
+    "zh": "旧萨雷安的小个子拾穗人正在寻找冒险者。"
+  },
+  "69713": {
+    "zh": "旧萨雷安的诺尔拖塔很钦佩冒险者。"
+  },
+  "69714": {
+    "zh": "旧萨雷安的诺尔拖塔对哲学家议会发表的内容感到惊讶。"
+  },
+  "69715": {
+    "zh": "旧萨雷安的诺尔拖塔对冒险者的成绩感到惊叹。"
+  },
+  "69716": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n思考者圆亭的等待心上人的女性需要人手。"
+  },
+  "69717": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n露天集市的巴尔德希斯对来自外面的冒险者很感兴趣。"
+  },
+  "69718": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n露天集市的拖夫维布想委托给冒险者一份工作。"
+  },
+  "69719": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n漂流的终点的猫魅族少女看上去十分烦恼。"
+  },
+  "69720": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n卫辅城上层的外环的研究员很在意一件事情。"
+  },
+  "69721": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n卫辅城上层的诺诺拉特很着急的样子。"
+  },
+  "69722": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n卫辅城上层的新手拾穗人有事想委托冒险者。"
+  },
+  "69723": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n公堂保管院的体格魁梧的研究员正在寻找愿意接受委托的人。"
+  },
+  "69724": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n公堂保管院的恩·纳佳莉有东西想要交给冒险者。"
+  },
+  "69725": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n公堂保管院的维耶尔正在找人。"
+  },
+  "69726": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n公堂保管院的孛剌合真正在寻找愿意帮忙的人。"
+  },
+  "69727": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n公堂保管院的恰特伯特看起来很慌张。"
+  },
+  "69728": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的容基内希望冒险者能提供帮助。"
+  },
+  "69729": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的茹布·阿·艾波卡恩正在寻找愿意帮忙的人。"
+  },
+  "69730": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的埃马涅特看中了冒险者的身手。"
+  },
+  "69731": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的帕贝洛瓦想要跟冒险者打招呼。"
+  },
+  "69732": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的凯菲剌孜希望有人帮忙。"
+  },
+  "69733": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的麦如恩纳有事情想拜托冒险者。"
+  },
+  "69734": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的敖龙族少女好像在担心什么事。"
+  },
+  "69735": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的瓦尔帕萨正在寻找着什么。"
+  },
+  "69736": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的耶及娜正在寻求帮手。"
+  },
+  "69737": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的纳休瑞哈尔想要了解同伴的真心话。"
+  },
+  "69738": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的健壮的炼金术士正寻求制作涂料的素材。"
+  },
+  "69739": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的迦罗穆奇正在担心同事。"
+  },
+  "69740": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的软弱的悌阳象族正在寻求护卫。"
+  },
+  "69741": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的实诚的炼金术士正在寻求帮手。"
+  },
+  "69742": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的林萨如德正在寻找失踪的桓娑。"
+  },
+  "69743": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的悌阳象族青年想要雇佣护卫。"
+  },
+  "69744": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的阿帕萨想要委托冒险者帮忙配送东西。"
+  },
+  "69745": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n代米尔遗烈乡的库殊玛有事情想拜托冒险者。"
+  },
+  "69746": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n所见大讲堂的帕斯梅朗想让冒险者帮忙进行实验。"
+  },
+  "69747": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n萨雷安魔法大学的空地上有一个沾满了煤的信封。"
+  },
+  "69748": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n所见大讲堂的弗蕾索瓦娜正在寻找什么。"
+  },
+  "69749": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n萨雷安魔法大学的软弱的魔法大学生看起来非常苦恼。"
+  },
+  "69750": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n萨雷安魔法大学的拉拉菲尔族魔法大学生看起来充满了干劲。"
+  },
+  "69751": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n所思大书院的伊西尔希斯正在发愁。"
+  },
+  "69752": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的金发的补给队员想委托冒险者做护卫工作。"
+  },
+  "69753": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n啜饮洞的金发的补给队员希望冒险者协助她解决问题。"
+  },
+  "69754": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n啜饮洞的金发的补给队员想向行省人确认一些事。"
+  },
+  "69755": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的救援队补给官想要找人帮忙。"
+  },
+  "69756": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的目贯似乎十分担忧。"
+  },
+  "69757": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的琼有事想要拜托冒险者。"
+  },
+  "69758": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的塔隆似乎很焦躁。"
+  },
+  "69759": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的伊莉艾特充满干劲。"
+  },
+  "69760": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的俺巴孩正在寻找冒险者。"
+  },
+  "69761": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的阿玛涅想给孩子弄一碗荞麦糊。"
+  },
+  "69762": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的退役魔导技师想实现自己的愿望。"
+  },
+  "69763": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的斯普利乌斯想给昏暗的室内添一盏灯。"
+  },
+  "69764": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的救援队的黑涡团团员似乎正在找什么人。"
+  },
+  "69765": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的多塞努斯想委托冒险者回收青磷水。"
+  },
+  "69766": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新房区的模儿部的救援队员想要委托冒险者搜索友军部队。"
+  },
+  "69767": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的救援队的神殿骑士正在派发热汤。"
+  },
+  "69768": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的蓝发女性正在寻找出走的儿子。"
+  },
+  "69769": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的马卡戈·诺卡戈似乎很困扰。"
+  },
+  "69770": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的救援队的恒辉队队员正在寻找冒险者。"
+  },
+  "69771": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的伊莉艾特似乎有事想请冒险者帮忙。"
+  },
+  "69772": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的波塞洛米似乎正在烦恼着什么事。"
+  },
+  "69773": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的科茶茶似乎急需大量人手。"
+  },
+  "69774": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的塔隆收到了同伴的求助。"
+  },
+  "69775": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的救援队的斥候正在寻找魔导装甲的驾驶员。"
+  },
+  "69776": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萝卜所的观行威有案子需要冒险者侦破。"
+  },
+  "69777": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萝卜所的困醒威希望冒险者能帮他把兔兔族们带回来吃饭。"
+  },
+  "69778": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里，录影威正在为资料不足发愁。"
+  },
+  "69779": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n喜欢刨根问底的兔兔族正在胡萝卜所收集关于人类的情报。"
+  },
+  "69780": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萝卜所的眼睛闪闪发光的兔兔族，想向冒险者解释中控水晶的作用。"
+  },
+  "69781": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞的里，吵吵嚷嚷的兔兔族正在实验新的游乐项目。"
+  },
+  "69782": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里飘飘摇摇的兔兔族需要冒险者的帮助。"
+  },
+  "69783": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里壮壮实实的兔兔族需要冒险者帮助他调整警备系统。"
+  },
+  "69784": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最伟大的森林里学庭威有事需要冒险者帮忙。"
+  },
+  "69785": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里爽爽利利的兔兔族需要冒险者助他一臂之力。"
+  },
+  "69786": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里的引领威有问题需要冒险者解答。"
+  },
+  "69787": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最伟大的森林里，高高兴兴的兔兔族想征求冒险者的意见。"
+  },
+  "69788": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里扭扭捏捏的兔兔族有秘密想要告诉冒险者。"
+  },
+  "69789": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里骂骂咧咧的兔兔族有事情要告诉冒险者。"
+  },
+  "69790": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里慌慌张张的兔兔族有急事要找冒险者。"
+  },
+  "69791": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最伟大的森林里消明威正惊慌失措地想要找冒险者帮忙。"
+  },
+  "69792": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的维剌班看上去很失落。"
+  },
+  "69793": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的疲惫的星战士有事情想要确认。"
+  },
+  "69794": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的乌陀帕拉心中有一位在意的人。"
+  },
+  "69795": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的星战士团兵长想要请冒险者帮忙。"
+  },
+  "69796": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的敖龙族舞者正在为某件事情烦恼。"
+  },
+  "69797": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的玖卜喀尔正端着金属饭盒发愁。"
+  },
+  "69798": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的悌阳象族青年正在为朋友担心。"
+  },
+  "69799": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的敖龙族父亲正在寻找女儿。"
+  },
+  "69800": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的悌阳象族女孩好像一副忧心忡忡的样子。"
+  },
+  "69801": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的库芮德正为素材不足发愁。"
+  },
+  "69802": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的弥萨加想要为冒险者占卜。"
+  },
+  "69803": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的熟练的猎人想要邀请冒险者一起狩猎。"
+  },
+  "69804": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的奇异的长尾神猴好像要带冒险者去某个地方。"
+  },
+  "69805": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽德酒房的梅丽德希望冒险者帮忙寻找遗失物的主人。"
+  },
+  "69806": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n织风桑田的弥林希望冒险者去看看孩子们的情况。"
+  },
+  "69807": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n阿尔扎达尔大街的无助的冒险者从乌尔达哈送来了信件。"
+  },
+  "69808": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n帕克夏大街的悌阳象族的大胃王因为肚子饿动不了了。"
+  },
+  "69809": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n帕克夏大街的悌阳象族青年希望冒险者帮忙挑选孩子的衣服。"
+  },
+  "69810": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n妮洛帕拉畜产局的维休剌德想找人帮忙喂食。"
+  },
+  "69811": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n达摩法区的星战士团守卫长正在处理争执。"
+  },
+  "69812": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的欧几里得需要人手。"
+  },
+  "69813": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的进行实验的观察者正在找人。"
+  },
+  "69814": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的宙克西斯正在寻找助手。"
+  },
+  "69815": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的菲狄亚斯要对新的创造物进行观察。"
+  },
+  "69816": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的威风的观察者很在意周围的情况。"
+  },
+  "69817": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的体态优美的观察者正在寻找使魔。"
+  },
+  "69818": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的帕罗蒙诺斯正在注视着冒险者。"
+  },
+  "69819": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的卡利阿斯因创造物的管理工作而繁忙。"
+  },
+  "69820": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的欧律多墨有事想要拜托冒险者。"
+  },
+  "69821": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的风雅的创造者对冒险者非常感兴趣。"
+  },
+  "69822": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的沉稳的观察者一脸担心地看着冒险者。"
+  },
+  "69823": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的布拉斯忒正在寻找使魔。"
+  },
+  "69824": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的希波托厄的旁边有个小小的生物。"
+  },
+  "69825": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的希波托厄想要继续委托与迅尾兽相关的工作。"
+  },
+  "69826": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的格里洛斯遭到了正在观察的创造生物的愚弄。"
+  },
+  "69827": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的希拉克斯有事想找使魔帮忙。"
+  },
+  "69828": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的克洛里斯想要参与大规模的工作。"
+  },
+  "69829": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的阿尔克墨涅有事想要委托使魔。"
+  },
+  "69830": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的浮岛的创造者正在进行议论。"
+  },
+  "69831": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n十二奇园的负责坐骑的观察者想要针对创造生物的实用性进行观察。"
+  },
+  "69832": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的负责战斗生物的观察者有事情想要证实。"
+  },
+  "69833": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的疯狂的创造者有事想委托阿谢姆的使魔。"
+  },
+  "69834": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的冷静的观察者想要唤回同事。"
+  },
+  "69835": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的喜欢浮游植物的观察者有想要回收的东西。"
+  },
+  "69836": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的埃丽娜有件事想试一试。"
+  },
+  "69837": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的墨勒阿革洛斯想要找人帮忙。"
+  },
+  "69838": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的使魔爱好者对冒险者很感兴趣。"
+  },
+  "69839": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的格劳孔很担心冒险者。"
+  },
+  "69840": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的烦恼的取名人正在为某事发愁。"
+  },
+  "69841": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的浮岛调整员正在寻找协助者。"
+  },
+  "69842": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的米特隆院的创造者看上去十分烦恼。"
+  },
+  "69843": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的埃皮菲隆好像在担心什么事。"
+  },
+  "69844": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的伯里克利正在寻找协助者帮忙观察。"
+  },
+  "69845": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的尤埃翁正在寻找迷路的创造生物。"
+  },
+  "69846": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的洛多庇斯正在担心同事。"
+  },
+  "69847": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的慌张的观察者正在着急寻找帮手。"
+  },
+  "69848": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的顽固的取名人正在寻求灵感。"
+  },
+  "69849": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的学院研究生正在为朋友迟迟未归而担心。"
+  },
+  "69850": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的即将出发的异国人很在意冒险者。"
+  },
+  "69851": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的革罗菲拉正在为抽不开身而发愁。"
+  },
+  "69852": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n背水咖啡厅的员工想要制作布丁。"
+  },
+  "69853": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n以太之光广场附近的神秘女性饶有兴趣地望着冒险者。"
+  },
+  "69854": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n漂流的终点的莱韦耶勒尔家的佣人正在从事慈善事业。"
+  },
+  "69855": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n背水咖啡厅的迪康正在忙于咖啡厅的工作。"
+  },
+  "69856": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的维埃拉族的拾穗人注视着冒险者。"
+  },
+  "69857": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的四处转悠的兔兔族看上去十分烦恼。"
+  },
+  "69858": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的维伊尔塞姆有事想要拜托冒险者。"
+  },
+  "69859": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的魔法学研究员看上去十分烦恼。"
+  },
+  "69860": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的鲁加族研究员十分担心。"
+  },
+  "69861": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的精悍的文献管理委员正在寻找协助者。"
+  },
+  "69862": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的菲约拉似乎很迷茫。"
+  },
+  "69863": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的高地之民研究员在烦恼着什么。"
+  },
+  "69864": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的夏尔蒙陷入了沉思。"
+  },
+  "69865": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的拉拉菲尔族兽医在烦恼着什么。"
+  },
+  "69866": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的猫魅族烹调师对现状感到绝望。"
+  },
+  "69867": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的阿·纳伊嘉想要告诉冒险者何为斯卡尼特。"
+  },
+  "69868": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的杰萨米看上去非常着急。"
+  },
+  "69869": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的属性增殖炉的职员想委托冒险者找人。"
+  },
+  "69870": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n无路总部的玛芙尼有事想委托冒险者。"
+  },
+  "69871": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n无路总部的朝寒想让冒险者帮忙收集资料。"
+  },
+  "69872": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n无路总部的塔塔萨科想让冒险者为月面开拓时代做准备。"
+  },
+  "69873": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的科姆·诺斯克一副忧心忡忡的样子。"
+  },
+  "69874": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的科尔·阿雷正在为某事发愁。"
+  },
+  "69875": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的疲惫不堪的龙正在警惕着什么。"
+  },
+  "69876": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的塞伊·罗斯克眺望着远方。"
+  },
+  "69877": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的奈什·欧罗有事想问冒险者。"
+  },
+  "69878": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的思考的异亚有事想找冒险者帮忙。"
+  },
+  "69879": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n辞世绝句碑的娄·娄嘶有事想问冒险者。"
+  },
+  "69880": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的交·交嘎想让冒险者帮忙叫人。"
+  },
+  "69881": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的岑·岑嘶想要答谢冒险者。"
+  },
+  "69882": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的诺·诺咔想让冒险者跟其他异亚也打声招呼。"
+  },
+  "69883": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的寻求肉体的异亚希望冒险者帮忙打倒遗光。"
+  },
+  "69884": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的瑟斯·托斯克从冒险者身上感受到了同胞的气息。"
+  },
+  "69885": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的站在水边的老龙正在为泉水污浊而叹息。"
+  },
+  "69886": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n半途终旅的衰弱的老龙很在意小龙的情况。"
+  },
+  "69887": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n辞世绝句碑的崩·崩嘎正在寻找朋友的去向。"
+  },
+  "69888": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的忧郁的异亚很羡慕冒险者的肉体。"
+  },
+  "69889": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n异亚村落的很是担心的异亚望着他们的住处。"
+  },
+  "69890": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奥密克戎基地的N-4486正在寻找模拟战的对手。"
+  },
+  "69891": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奥密克戎基地的正在进行验证的奥密克戎想要解明某种现象。"
+  },
+  "69892": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奥密克戎基地的正在执行警戒任务的奥密克戎想要寻求冒险者的建议。"
+  },
+  "69893": {
+    "zh": "石之家的阿尔菲诺有了新的提案。"
+  },
+  "69894": {
+    "zh": "知识神海港的可露儿正在观望着同伴们的情况。"
+  },
+  "69895": {
+    "zh": "正厅的可露儿想要揭开哲学家议会的秘密。"
+  },
+  "69896": {
+    "zh": "所思大书院前的阿莉塞想要小憩一下。"
+  },
+  "69897": {
+    "zh": "列柱廊的阿莉塞有些静不下心的样子。"
+  },
+  "69898": {
+    "zh": "卫辅城上层的可露儿陷入了思考。"
+  },
+  "69899": {
+    "zh": "公堂保管院前的阿尔菲诺正在窥望里面的情况。"
+  },
+  "69900": {
+    "zh": "第三十三期扩建坑道前的阿莉塞正在等待出发。"
+  },
+  "69901": {
+    "zh": "中环的阿莉塞正在追踪埃伦维尔的身影。"
+  },
+  "69902": {
+    "zh": "中环的阿莉塞正在目视埃伦维尔离开的方向。"
+  },
+  "69903": {
+    "zh": "七贤人庭园的阿莉塞神色黯然。"
+  },
+  "69904": {
+    "zh": "正厅的桑克瑞德打算出发前往萨维奈岛。"
+  },
+  "69905": {
+    "zh": "新港的桑克瑞德打算开始行动。"
+  },
+  "69906": {
+    "zh": "新港的摩提夏显得有些胆怯。"
+  },
+  "69907": {
+    "zh": "新港的埃斯蒂尼安好像在思考什么事情。"
+  },
+  "69908": {
+    "zh": "白滨村的摩提夏好像很高兴的样子。"
+  },
+  "69909": {
+    "zh": "熏香丘陵的尼答娜正在观望冒险者的情况。"
+  },
+  "69910": {
+    "zh": "代米尔遗烈乡的尼答娜再次打起精神。"
+  },
+  "69911": {
+    "zh": "巨胆石采掘场的泽伊努哈正在准备石材。"
+  },
+  "69912": {
+    "zh": "代米尔遗烈乡的桑克瑞德神情肃穆。"
+  },
+  "69913": {
+    "zh": "正厅的可露儿正在注视着伙伴们的情况。"
+  },
+  "69914": {
+    "zh": "监视所的桑克瑞德终于松了一口气。"
+  },
+  "69915": {
+    "zh": "云使宫前的阿尔菲诺准备出发前往制药堂。"
+  },
+  "69916": {
+    "zh": "巴尔德西昂分馆的可露儿正在和古·拉哈·提亚谈话。"
+  },
+  "69917": {
+    "zh": "公开讲堂的可露儿正在回味蒙蒂谢涅的话。"
+  },
+  "69918": {
+    "zh": "阿拉米格人居住区的马克西马想为众人带路。"
+  },
+  "69919": {
+    "zh": "阿拉米格人居住区的塔塔露干劲十足。"
+  },
+  "69920": {
+    "zh": "碎璃营地的埃马内兰很在意冒险者一行人的动向。"
+  },
+  "69921": {
+    "zh": "封赏别墅的丽茜妮娅似乎在思考什么事情。"
+  },
+  "69922": {
+    "zh": "啜饮洞的亚雷克在等待两人的下文。"
+  },
+  "69923": {
+    "zh": "封赏别墅的阿尔菲诺静静地伫立着。"
+  },
+  "69924": {
+    "zh": "第四市外站的尤卢斯正在警戒着周围的情况。"
+  },
+  "69925": {
+    "zh": "第三站的尤卢斯严厉地看着冒险者一行人。"
+  },
+  "69926": {
+    "zh": "第三站的尤卢斯正在等冒险者一行人准备好开始任务。"
+  },
+  "69927": {
+    "zh": "索鲁斯广场的尤卢斯熄灭了取暖的火堆。"
+  },
+  "69928": {
+    "zh": "第三站的尤卢斯似乎有心事。"
+  },
+  "69929": {
+    "zh": "碎璃营地的露琪亚正在梳理情况。"
+  },
+  "69930": {
+    "zh": "碎璃营地的露琪亚正在稳步地推进接收工作。"
+  },
+  "69931": {
+    "zh": "碎璃营地的露琪亚看到冒险者平安归来松了一口气。"
+  },
+  "69932": {
+    "zh": "神门之间的古·拉哈·提亚注视着转移装置陷入了沉思。"
+  },
+  "69933": {
+    "zh": "月面监视者似乎有话想对冒险者说。"
+  },
+  "69934": {
+    "zh": "散发光辉的大狗正在警惕着周围的动静。"
+  },
+  "69935": {
+    "zh": "月面监视者有重要的事要说。"
+  },
+  "69936": {
+    "zh": "月面监视者想要完成最后的工作。"
+  },
+  "69937": {
+    "zh": "最佳威兔洞的桑克瑞德正在回味刚才看到的景象。"
+  },
+  "69938": {
+    "zh": "最佳威兔洞的生命威看上去很着急。"
+  },
+  "69939": {
+    "zh": "胡萝卜所的生命威有些焦躁不安。"
+  },
+  "69940": {
+    "zh": "最佳威兔洞的增盈威一脸无精打采的样子。"
+  },
+  "69941": {
+    "zh": "最伟大的森林的桑克瑞德发现了什么。"
+  },
+  "69942": {
+    "zh": "叹息海的于里昂热静静地等待着冒险者。"
+  },
+  "69943": {
+    "zh": "最伟大的森林的增盈威有些焦躁不安。"
+  },
+  "69944": {
+    "zh": "泪湾的雅·修特拉暗自下了决心。"
+  },
+  "69945": {
+    "zh": "巴尔德西昂分馆的塔塔露一脸凝重。"
+  },
+  "69946": {
+    "zh": "阿尔扎达尔大街的阿希旺正在思考。"
+  },
+  "69947": {
+    "zh": "梅丽德酒馆的弥利尔打算为冒险者指路。"
+  },
+  "69948": {
+    "zh": "鲁维达纺丝局的古·拉哈·提亚打算和伙伴们汇合。"
+  },
+  "69949": {
+    "zh": "波洛伽护法村的阿尔菲诺继续为村民疗伤。"
+  },
+  "69950": {
+    "zh": "波洛伽护法村的摩提夏惶惶不安。"
+  },
+  "69951": {
+    "zh": "神我寺的阿莉塞凝视着树丛的方向。"
+  },
+  "69952": {
+    "zh": "圣仙阿迦玛之墓的埃斯蒂尼安安静地等待着。"
+  },
+  "69953": {
+    "zh": "波洛伽护法村的摩提夏正在等待搭话的时机。"
+  },
+  "69954": {
+    "zh": "亲卫队的星战士想向拂晓血盟传达口信。"
+  },
+  "69955": {
+    "zh": "阿尔扎达尔大街的古·拉哈·提亚有东西想要交给冒险者。"
+  },
+  "69956": {
+    "zh": "自由辩论馆的琳看起来非常坚定。"
+  },
+  "69957": {
+    "zh": "前关门的希斯拉德有件很在意的事。"
+  },
+  "69958": {
+    "zh": "新芽玄关的希斯拉德正在等待冒险者做好准备。"
+  },
+  "69959": {
+    "zh": "南风诺托斯的感叹的赫尔墨斯暂时松了一口气。"
+  },
+  "69960": {
+    "zh": "醒悟天测园的赫尔墨斯已经调整好了心情。"
+  },
+  "69961": {
+    "zh": "汐沫庭的爱梅特赛尔克陷入了沉思。"
+  },
+  "69962": {
+    "zh": "醒悟天测园的赫尔墨斯有件事很在意。"
+  },
+  "69963": {
+    "zh": "十二奇园的赫尔墨斯准备去进行讨论。"
+  },
+  "69964": {
+    "zh": "十二奇园的赫尔墨斯表情凝重。"
+  },
+  "69965": {
+    "zh": "十二奇园的希斯拉德想谈谈之后的行动。"
+  },
+  "69966": {
+    "zh": "西风仄费罗斯的喝彩的维涅斯看起来很开心。"
+  },
+  "69967": {
+    "zh": "创作者之家的维涅斯正在回味了解到的信息。"
+  },
+  "69968": {
+    "zh": "转移六洋院的维涅斯想要继续调查。"
+  },
+  "69969": {
+    "zh": "西风仄费罗斯的喝彩的维涅斯带领着阿尔戈斯和它的分身。"
+  },
+  "69970": {
+    "zh": "极北造物院的希斯拉德看上去意气风发。"
+  },
+  "69971": {
+    "zh": "东风航的爱梅特赛尔克正在静静地等待。"
+  },
+  "69972": {
+    "zh": "忘海的希斯拉德若有所思。"
+  },
+  "69973": {
+    "zh": "忘海的希斯拉德正在集中精力。"
+  },
+  "69974": {
+    "zh": "汐沫庭前的维涅斯正静静地凝视着冒险者。"
+  },
+  "69975": {
+    "zh": "正厅的可露儿想要共享情报。"
+  },
+  "69976": {
+    "zh": "碎璃营地的露琪亚正在确认众人的平安。"
+  },
+  "69977": {
+    "zh": "哲学家广场的富尔什诺打算遵从议会的决定。"
+  },
+  "69978": {
+    "zh": "可可罗工房的阿尔菲诺鼓足了精神。"
+  },
+  "69979": {
+    "zh": "小萨雷安的于里昂热正在思考。"
+  },
+  "69980": {
+    "zh": "理性其一的厨行威要按捺不住了。"
+  },
+  "69981": {
+    "zh": "理性其一的于里昂热正在扫视兔兔族们。"
+  },
+  "69982": {
+    "zh": "小萨雷安的于里昂热已经平复了心情。"
+  },
+  "69983": {
+    "zh": "无路总部的古·拉哈·提亚想去给人帮忙。"
+  },
+  "69984": {
+    "zh": "可可罗工房的可可罗·丹可罗如坐针毡。"
+  },
+  "69985": {
+    "zh": "惊愕所的富尔什诺正在等待冒险者一行人做好准备。"
+  },
+  "69986": {
+    "zh": "巴尔德西昂分馆的可露儿有事情要告诉冒险者。"
+  },
+  "69987": {
+    "zh": "露天集市的塔塔露兴高采烈。"
+  },
+  "69988": {
+    "zh": "巴尔德西昂分馆的欧吉卡·岑吉卡和善地看着冒险者。"
+  },
+  "69989": {
+    "zh": "诸神黄昏号魔导船附近的阿尔菲诺谨慎地观察着周围。"
+  },
+  "69990": {
+    "zh": "半途终旅的于里昂热表情沉痛。"
+  },
+  "69991": {
+    "zh": "瓦铭癸辛的埃斯蒂尼安好像有什么烦心事。"
+  },
+  "69992": {
+    "zh": "瓦铭丙的阿尔菲诺领会了同伴的苦心。"
+  },
+  "69993": {
+    "zh": "异亚村落的空·空嘎晃晃悠悠地等待着同胞。"
+  },
+  "69994": {
+    "zh": "异亚村落的于里昂热若有所思。"
+  },
+  "69995": {
+    "zh": "辞世绝句碑的古·拉哈·提亚静静地注视着同伴们。"
+  },
+  "69996": {
+    "zh": "瓦铭癸己的古·拉哈·提亚做好了出发的准备。"
+  },
+  "69997": {
+    "zh": "生命树的古·拉哈·提亚准备好继续前进了。"
+  },
+  "69998": {
+    "zh": "斯提格玛一的阿尔菲诺似乎下定了决心。"
+  },
+  "69999": {
+    "zh": "无命镇的阿莉塞看起来并没有灰心。"
+  },
+  "70000": {
+    "zh": "拂晓血盟已为迈进终章做好准备。"
+  },
+  "70001": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的莉赛特·德·瓦伦提昂似乎在担心着什么。"
+  },
+  "70002": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的库普卡·叩普有件很在意的事。"
+  },
+  "70003": {
+    "zh": "米·凯特露天剧场的普库缇·皮叩需要冒险者的帮助。"
+  },
+  "70004": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的阿姆·加兰基好像有事情想找冒险者商量。"
+  },
+  "70005": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的阿姆·加兰基想要说明一下活动情况。"
+  },
+  "70006": {
+    "zh": "※本クエストは、期間限定のクエストとなります。\n\nミィ・ケット野外音楽堂のアム・ガランジは、冒険者に会わせたい人物がいるようだ。"
+  },
+  "70007": {
+    "zh": "※本任务是特定期间内的任务。\n\n乌尔达哈的玛拉贝尔像是在找什么人。"
+  },
+  "70008": {
+    "zh": "※本クエストは、期間限定のクエストとなります。\n\nウルダハのマラベルは、とても嬉しげな様子だ。"
+  },
+  "70009": {
+    "zh": "屯集堂的奇伊·阿里亚珀想要委托魔法大学的工作。"
+  },
+  "70010": {
+    "zh": "屯集堂的奇伊·阿里亚珀在等待冒险者。"
+  },
+  "70016": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的软弱的管理人看起来不知所措。"
+  },
+  "70017": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n朝露林的小毛球干劲十足。"
+  },
+  "70018": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的生物学研究员充满了干劲。"
+  },
+  "70019": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场的小毛球正在陷入沉思。"
+  },
+  "70020": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的米萨尔弗雷十分担心。"
+  },
+  "70021": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的维尔波莱纳看起来很高兴。"
+  },
+  "70022": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n闪耀中枢的维尔波莱纳陷入了沉思。"
+  },
+  "70023": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n梅丽奥尔实验农场南边的维尔波莱纳精神抖擞。"
+  },
+  "70024": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n小萨雷安的维尔波莱纳有事想要拜托冒险者。"
+  },
+  "70025": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的斡兀立感到很惊恐。"
+  },
+  "70026": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的勘恰娜想要委托另一份工作。"
+  },
+  "70027": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n微风海岸的斡兀立打算返回新港。"
+  },
+  "70028": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n新港的斡兀立想要抓住盗窃犯。"
+  },
+  "70029": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的耶赞正在发愁。"
+  },
+  "70030": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的耶赞想要冒险者帮忙。"
+  },
+  "70031": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的娑乌罗想前往一个地方。"
+  },
+  "70032": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的耶赞想要再推波助澜一下。"
+  },
+  "70033": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n波洛伽护法村的耶赞有事想拜托冒险者。"
+  },
+  "70034": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的里梅尔诺想要征求冒险者的意见。"
+  },
+  "70035": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的里梅尔诺很担忧营地内的供暖设施。"
+  },
+  "70036": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的里梅尔诺想要推进重启水上钻井平台的计划。"
+  },
+  "70037": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n朱图尔娜七号水上钻井平台的里梅尔诺似乎想出了推进重启计划的方法。"
+  },
+  "70038": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n碎璃营地的加拉似乎有事要找冒险者。"
+  },
+  "70039": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的沃卢斯在确认父母的安全之前不想离开车站。"
+  },
+  "70040": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的加拉想帮忙寻找沃卢斯的母亲。"
+  },
+  "70041": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n帝国新宫的加拉想要继续寻找维普萨尼亚的行踪。"
+  },
+  "70042": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n第三站的维普萨尼亚似乎还有烦恼。"
+  },
+  "70043": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的索克勒斯对冒险者很感兴趣。"
+  },
+  "70044": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的索克勒斯依然对冒险者很感兴趣。"
+  },
+  "70045": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n汐沫庭的卡尔密恩打算继续介绍工作人员的生活状态。"
+  },
+  "70046": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n醒悟天测园的卡尔密恩最后有事想要询问冒险者。"
+  },
+  "70047": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的麦拉正在发愁。"
+  },
+  "70048": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的克勒翁期待着冒险者的帮助。"
+  },
+  "70049": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n西风仄费罗斯的喝彩的克勒翁还有很在意的生物。"
+  },
+  "70050": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n西风仄费罗斯的喝彩的克勒翁满心期待地看着冒险者。"
+  },
+  "70051": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n创作者之家的麦拉和哥哥有事想找冒险者帮忙。"
+  },
+  "70052": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里的敲鸣威有事想要和冒险者谈谈。"
+  },
+  "70053": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里的梦明威想向冒险者介绍自己平日里的生活。"
+  },
+  "70054": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n最佳威兔洞里的梦明威正在等待冒险者。"
+  },
+  "70055": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n胡萝卜所的梦明威非常想让冒险者了解自己的工作。"
+  },
+  "70056": {
+    "zh": "※本クエストは、期間限定のクエストとなります。\n\nベントブランチ牧場の冒険者ギルドの調査員は、冒険者のことを待っているようだ。"
   }
 }
