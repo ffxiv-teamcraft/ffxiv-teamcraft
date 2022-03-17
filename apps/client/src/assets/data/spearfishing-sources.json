@@ -17,6 +17,18 @@
       "shadowSize": 0
     }
   ],
+  "20187": [
+    {
+      "speed": 2,
+      "shadowSize": 0
+    }
+  ],
+  "20188": [
+    {
+      "speed": 0,
+      "shadowSize": 1
+    }
+  ],
   "20193": [
     {
       "speed": 3,
@@ -36,6 +48,12 @@
     }
   ],
   "20197": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
+  "20200": [
     {
       "speed": 2,
       "shadowSize": 2
@@ -77,6 +95,12 @@
       "shadowSize": 2
     }
   ],
+  "20218": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
   "20223": [
     {
       "speed": 3,
@@ -87,6 +111,12 @@
     {
       "speed": 0,
       "shadowSize": 1
+    }
+  ],
+  "20228": [
+    {
+      "speed": 4,
+      "shadowSize": 2
     }
   ],
   "20235": [
