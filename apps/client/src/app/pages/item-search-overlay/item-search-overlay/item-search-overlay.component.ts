@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { combineLatest, Observable, Subject } from 'rxjs';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, filter, map, switchMap } from 'rxjs/operators';
+import { debounceTime, filter, map, startWith, switchMap } from 'rxjs/operators';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { UniversalisService } from '../../../core/api/universalis.service';
@@ -11,6 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { InventoryService } from '../../../modules/inventory/inventory.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
+import { UserInventory } from '../../../model/user/inventory/user-inventory';
 
 interface Display {
   data: ListRow,
@@ -79,6 +80,7 @@ export class ItemSearchOverlayComponent {
     }),
     switchMap(extract => {
       return this.inventoryFacade.inventory$.pipe(
+        startWith(new UserInventory()),
         switchMap(inventory => {
           return this.lazyData.getEntry('marketItems').pipe(
             map(marketItems => {

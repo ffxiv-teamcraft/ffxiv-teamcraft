@@ -433,7 +433,8 @@ export class ListsEffects {
       }
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
         const itemDone = item.done >= item.amount;
-        if (itemDone) {
+        const played = localStorage.getItem('autofill:completion');
+        if (itemDone && (!played || +played < Date.now() - 10000)) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
             map(itemName => {
               const notificationTitle = this.translate.instant('LIST_DETAILS.Autofill_notification_title');
@@ -451,6 +452,7 @@ export class ListsEffects {
                 });
               }
               this.notificationService.info(notificationTitle, notificationBody);
+              localStorage.setItem('autofill:completion', Date.now().toString());
               return action;
             })
           );
@@ -465,7 +467,6 @@ export class ListsEffects {
     switchMap(([actions, list]: [SetItemDone[], List]) => {
       if (list.offline) {
         actions.forEach(action => {
-          ListController.setDone(list, action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
           ListController.updateAllStatuses(list, action.itemId);
         });
         this.saveToLocalstorage(list, false);

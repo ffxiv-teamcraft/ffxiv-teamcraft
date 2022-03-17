@@ -48,7 +48,7 @@
     "zh": "灵巧值增加16点"
   },
   "17": {
-    "zh": "为自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>强力射击（发动几率20%）"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>强力射击（发动几率20%）"
   },
   "18": {
     "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.1倍"
@@ -84,19 +84,19 @@
     "zh": "智力值增加16点"
   },
   "29": {
-    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍\n星极火与灵极冰可以累积到2档"
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
   },
   "30": {
     "zh": "智力值增加24点"
   },
   "31": {
-    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍\n星极火与灵极冰可以累积到3档\n在3档的状态下，相反属性的魔法咏唱时间减半"
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
   },
   "32": {
-    "zh": "下次咏唱爆炎时不需要咏唱时间也不会消耗魔力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>火炎（发动几率40%）"
+    "zh": "下次咏唱爆炎时不需要咏唱时间也不会消耗魔力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>火炎（发动几率40%）"
   },
   "33": {
-    "zh": "下次咏唱的闪雷、震雷、暴雷、霹雷在命中时额外追加持续伤害总量的伤害，并且咏唱时间与消耗魔力均为0\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>闪雷、暴雷的持续伤害起效时（发动几率10%）或震雷、霹雷的持续伤害起效时（发动几率3%）"
+    "zh": "下次咏唱的闪雷、震雷、暴雷、霹雷在命中时额外追加持续伤害总量的伤害，并且咏唱时间与消耗魔力均为0\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>40秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>闪雷、暴雷的持续伤害起效时（发动几率10%）或震雷、霹雷的持续伤害起效时（发动几率3%）"
   },
   "34": {
     "zh": "转换到园艺工职业时自动发动三角测量的效果"
@@ -129,7 +129,7 @@
     "zh": "能够发现良材及草场在采集次数方面的特殊性质"
   },
   "44": {
-    "zh": "能够发现良材及草场在优质获得率方面的特殊性质"
+    "zh": "能够发现良材及草场在额外采集奖励发生率方面的特殊性质"
   },
   "45": {
     "zh": "能够发现良材及草场在获得个数方面的特殊性质"
@@ -147,7 +147,7 @@
     "zh": "能够发现矿脉及石场在采集次数方面的特殊性质"
   },
   "50": {
-    "zh": "能够发现矿脉及石场在优质获得率方面的特殊性质"
+    "zh": "能够发现矿脉及石场在额外采集奖励发生率方面的特殊性质"
   },
   "51": {
     "zh": "能够发现矿脉及石场在获得个数方面的特殊性质"
@@ -174,7 +174,7 @@
     "zh": "利用潜行可以回避的怪物等级提高到50级"
   },
   "59": {
-    "zh": "能够发现最高15级的鱼洞"
+    "zh": "能够发现不高于自身等级的鱼洞"
   },
   "60": {
     "zh": "能够发现最高35级的鱼洞"
@@ -279,7 +279,7 @@
     "zh": "提升自身的移动速度"
   },
   "94": {
-    "zh": "在采集不存在优质属性的道具时采集数量增多\n发动条件可通过<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>筹备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>来确认"
+    "zh": "采集时水晶及部分道具的获得数增加"
   },
   "95": {
     "zh": "有时能够发现矿脉及石场的隐藏特殊性质"
@@ -294,7 +294,7 @@
     "zh": "利用潜行可以回避的怪物等级提高到60级"
   },
   "99": {
-    "zh": "在采集不存在优质属性的道具时采集数量增多\n发动条件可通过<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>筹备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>来确认"
+    "zh": "采集时水晶及部分道具的获得数增加"
   },
   "100": {
     "zh": "有时能够发现良材及草场的隐藏特殊性质"
@@ -369,7 +369,7 @@
     "zh": "精神值增加24点"
   },
   "124": {
-    "zh": "下次咏唱的福星必定发动暴击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>吉星（发动几率15%）"
+    "zh": "下次咏唱的福星必定暴击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>吉星（发动几率15%）"
   },
   "125": {
     "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
@@ -483,10 +483,10 @@
     "zh": "罗刹冲变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "162": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，并且此时的威力上升110"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，并且此时的威力上升100"
   },
   "163": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n在龙眼累积到第二阶段的状态下使用武神枪，苍天龙血就会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>红莲龙血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n在红莲龙血的状态下武神枪会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死者之岸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n持续时间结束后，红莲龙血会恢复成苍天龙血\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>在<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>苍天龙血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态下发动幻象冲"
+    "zh": "发动幻象冲命中后，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>巨龙怒目<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n在巨龙怒目攒到二档时使用武神枪，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>红莲龙血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n在红莲龙血的状态下武神枪会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死者之岸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒"
   },
   "164": {
     "zh": "自身发动除自动攻击外的技能造成的物理伤害提高5%"
@@ -531,7 +531,7 @@
     "zh": "猛毒菌变为剧毒菌，瘴气变为瘴暍"
   },
   "178": {
-    "zh": "自身<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>附体深度<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加深1档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>龙神附体状态结束时"
+    "zh": "龙神附体变为龙神召唤"
   },
   "179": {
     "zh": "飞石变为坚石"
@@ -582,7 +582,7 @@
     "zh": "采集力的自动恢复量基本值提高1点"
   },
   "195": {
-    "zh": "摇荡变为震荡\n将赤闪雷和赤疾风的威力提高到370\n将赤火炎和赤飞石的威力提高到310"
+    "zh": "摇荡变为震荡\n将赤闪雷和赤疾风的威力提高到360\n将赤火炎和赤飞石的威力提高到300"
   },
   "196": {
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>治疗百合<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到3档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身进入战斗状态后每经过30秒"
@@ -639,16 +639,16 @@
     "zh": "内力迸发的复唱时间缩短到120秒"
   },
   "214": {
-    "zh": "毁灭变为气炎法\n并将毁坏和破阵法的威力提高到160"
+    "zh": "毁灭变为气炎法\n同时，毁坏的威力提高到160，破阵法的威力提高到165"
   },
   "215": {
-    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>剑气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定战技命中时"
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>剑气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定战技命中时或发动心眼成功减轻所受的伤害时"
   },
   "216": {
-    "zh": "发动有咏唱时间的魔法时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>连续咏唱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连续咏唱效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下次咏唱魔法不需要咏唱时间\n若在持续时间中发动自动攻击或能力之外的技能，会立即解除连续咏唱状态"
+    "zh": "发动有咏唱时间的魔法时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>连续咏唱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连续咏唱效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下次咏唱魔法不需要咏唱时间\n若在持续时间中发动自动攻击或能力之外的技能，会立即解除连续咏唱状态"
   },
   "217": {
-    "zh": "毁灭变为毁荡"
+    "zh": "毁灭变为毁坏"
   },
   "218": {
     "zh": "狂暴变为原初的解放"
@@ -713,6 +713,24 @@
   "238": {
     "zh": "采集力的自动恢复量基本值提高2点"
   },
+  "239": {
+    "zh": "采集力的自动恢复量基本值提高3点，采集成功时采集力的恢复量基本值提高1点"
+  },
+  "240": {
+    "zh": "采集力的自动恢复量基本值提高3点，采集成功时采集力的恢复量基本值提高1点"
+  },
+  "241": {
+    "zh": "采集力的自动恢复量基本值提高3点"
+  },
+  "242": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>理智同兴预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>石工之理状态中（发动几率50%）"
+  },
+  "243": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>理智同兴预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>农夫之智状态中（发动几率50%）"
+  },
+  "244": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>捕鱼人之计<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>获得大尺寸的鱼时（一定几率）<If(Equal(PlayerParameter(68),18))><If(GreaterThanOrEqualTo(PlayerParameter(69),61))>\n钓鱼与刺鱼的发动几率不同<Else/></If><Else/></If>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10"
+  },
   "245": {
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率上升到100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时"
   },
@@ -720,7 +738,7 @@
     "zh": "暴乱剑与深奥之灵可恢复魔力"
   },
   "247": {
-    "zh": "精准刺威力提高至290，贯通刺威力提高至140，开膛枪威力提高至150\n另外，在使用龙牙龙爪命中后使用龙尾大回旋时，或在使用龙尾大回旋命中后使用龙牙龙爪时，若攻击正确的方向，会对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n效果时间内，精准刺变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "zh": "精准刺威力提高至230，贯通刺威力提高至130，开膛枪威力提高至140\n另外，在使用龙牙龙爪命中后使用龙尾大回旋时，或在使用龙尾大回旋命中后使用龙牙龙爪时，会对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n发动近身攻击战技会导致该效果消失\n效果时间内，精准刺变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "249": {
     "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>兽魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>凶残裂与暴风斩连击成功时"
@@ -741,7 +759,7 @@
     "zh": "前冲步变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "255": {
-    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n效果时间内，自身或队员使用战技或魔法时，可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n伶俐量值的获得数量与发动几率会根据各特职产生变化"
+    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>对自身附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>倾泻、逆瀑泻、喷泉、坠喷泉、风车、升风车、落刃雨、落血雨命中后，获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>为队员附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>队员使用战技或魔法时，自身获得10点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n队员的伶俐发动几率会根据各特职产生变化"
   },
   "256": {
     "zh": "前冲步最多可积蓄3次"
@@ -750,7 +768,7 @@
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>晶壤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到2档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>迅连斩连击成功时"
   },
   "258": {
-    "zh": "对自身附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>残暴弹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>残暴弹连击成功时"
+    "zh": "对自身附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>残暴弹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>残暴弹连击成功时"
   },
   "259": {
     "zh": "危险领域变为爆破领域"
@@ -768,7 +786,7 @@
     "zh": "一定时间内，咏唱魔法不需要咏唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>安魂祈祷<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
   },
   "264": {
-    "zh": "对自身附加3档的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忠义之剑<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>王权剑连击成功时"
+    "zh": "对自身附加3档的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忠义之剑<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>王权剑连击成功时"
   },
   "265": {
     "zh": "原初之魂变为裂石飞环"
@@ -801,28 +819,28 @@
     "zh": "跳跃变为高跳"
   },
   "276": {
-    "zh": "苍天龙血与红莲龙血的持续时间延长到30秒"
+    "zh": "红莲龙血的持续时间延长到30秒"
   },
   "277": {
     "zh": "居合术的咏唱时间缩短到1.3秒"
   },
   "278": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>阵风<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>士风<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果量提高到13%"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>风月<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>风花<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果量提高到13%"
   },
   "279": {
     "zh": "缩地变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "280": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>影牙命中时或旋风刃和强甲破点突连击成功时"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>旋风刃或强甲破点突连击成功时"
   },
   "282": {
     "zh": "直线射击变为辉煌箭"
   },
   "283": {
-    "zh": "重置失血箭与死亡箭雨的复唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>连珠箭命中时（发动几率30%）"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>影噬箭预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>连珠箭命中时（发动几率35%）"
   },
   "284": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>狂风蚀箭、烈毒咬箭、伶牙俐齿命中时（发动几率35%）"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>狂风蚀箭、烈毒咬箭、伶牙俐齿命中时（发动几率35%）"
   },
   "285": {
     "zh": "强力射击变为爆发射击"
@@ -849,16 +867,16 @@
     "zh": "虹吸弹和弹射积蓄次数增加到3次"
   },
   "293": {
-    "zh": "野火的“每命中1次战技的威力”提高到200"
+    "zh": "野火的“每命中1次战技的威力”提高到150"
   },
   "294": {
     "zh": "车式浮空炮塔变为后式自走人偶，超档车式炮塔变为超档后式人偶"
   },
   "295": {
-    "zh": "对自身附加1档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>玄冰"
+    "zh": "对自身附加3档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>玄冰"
   },
   "296": {
-    "zh": "当自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>达到最高档数时，相反属性的魔法将不消耗魔力\n但不适用于核爆"
+    "zh": "发动部分魔法后，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n当自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>达到最高档数时，相反属性的魔法将不消耗魔力\n但不适用于核爆"
   },
   "297": {
     "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>通晓<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到2档"
@@ -882,7 +900,7 @@
     "zh": "散碎变为冲击"
   },
   "304": {
-    "zh": "移转的威力提高到200"
+    "zh": "移转的威力提高到180"
   },
   "305": {
     "zh": "倍增的复唱时间缩短到110秒\n并附加自身造成的魔法伤害提高5%的效果"
@@ -1068,6 +1086,459 @@
     "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短15%"
   },
   "367": {
-    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短20%"
+    "zh": "自动攻击间隔、战技与魔法的咏唱及复唱时间缩短20%\n同时，功力的效果量提高到15%"
+  },
+  "368": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "369": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "370": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>蛇胆<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n每隔20秒获得一档蛇胆\n陷入无法战斗状态不影响获得蛇胆"
+  },
+  "371": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发炎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>均衡注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>35"
+  },
+  "372": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发炎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>均衡注药的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>40"
+  },
+  "373": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>蛇刺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>均衡诊断<UIGlow>01</UIGlow><UIForeground>01</UIForeground>因吸收到足够的伤害而消失时"
+  },
+  "374": {
+    "zh": "注药变为注药II\n发炎变为发炎II\n均衡注药变为均衡注药II\n同时，箭毒的威力提高到300"
+  },
+  "375": {
+    "zh": "坚角清汁追加持续恢复效果"
+  },
+  "376": {
+    "zh": "注药II变为注药III\n发炎II变为发炎III\n均衡注药II变为均衡注药III\n失衡变为失衡II\n箭毒变为箭毒II"
+  },
+  "377": {
+    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>诊断的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>心关的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>均衡诊断的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>均衡预后的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量320%的伤害"
+  },
+  "378": {
+    "zh": "活化的复唱时间缩短到90秒"
+  },
+  "379": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定战技命中时或自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死亡烙印<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的目标在持续时间内被打倒"
+  },
+  "380": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>切割的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>增盈切割的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>死亡之影的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>勾刃的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>旋转钐割的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>地狱切割的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>死亡之涡的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>噩梦钐割的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
+  },
+  "381": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>妖异之镰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n发动战技或魔法会导致该效果消失\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>隐匿挥割或束缚挥割命中时"
+  },
+  "382": {
+    "zh": "地狱入境或地狱出境发动后在移动前的地点生成<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>地狱之门<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，并对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>回退预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n地狱入境发动后地狱出境变为回退，地狱出境发动后地狱入境变为回退"
+  },
+  "383": {
+    "zh": "灵魂切割与灵魂钐割变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "384": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魂衣<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>绞决、缢杀、断首命中时"
+  },
+  "385": {
+    "zh": "为自身及周围15米以内的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>活性纹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>活性纹效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>持续恢复目标的体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身附加的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>守护纹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>因吸收到足够的伤害而消失时"
+  },
+  "386": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>虚无魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>虚无收割、交错收割、阴冷收割命中时"
+  },
+  "387": {
+    "zh": "为自身及周围队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>祭祀环<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>5秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>祭祀环：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>持续时间内受自身祭祀环影响的目标发动战技或魔法攻击命中时，自身获得1档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死亡祭品<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>8档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死亡祭祀<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>6秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>死亡祭祀效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>从受到自身祭祀环影响的目标身上获得死亡祭品\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>神秘环发动时"
+  },
+  "388": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "389": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "390": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "391": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "392": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "393": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "394": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "395": {
+    "zh": "提高品质成功时，自身便会附加“内静”\n内静档数每上升1档，提升品质的技能效率提升10%\n最大档数：10"
+  },
+  "396": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "397": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "398": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "399": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "400": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "401": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "402": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "403": {
+    "zh": "模范制作的效率提高到180"
+  },
+  "404": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "405": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "406": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "407": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "408": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "409": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "410": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "411": {
+    "zh": "坯料制作的效率提高到360"
+  },
+  "412": {
+    "zh": "盾阵变为圣盾阵"
+  },
+  "413": {
+    "zh": "干预的持续时间延长到8秒，并追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>骑士的坚守<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>骑士的坚守效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标受到的伤害减轻10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>骑士的加护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>12秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>骑士的加护效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标体力持续恢复\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250"
+  },
+  "414": {
+    "zh": "圣灵与圣环可恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
+  },
+  "415": {
+    "zh": "深奥之灵变为偿赎剑"
+  },
+  "416": {
+    "zh": "同时为获得圣光幕帘防护罩的同伴恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
+  },
+  "417": {
+    "zh": "发动摆脱后，为目标恢复体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300"
+  },
+  "418": {
+    "zh": "原初的直觉变为原初的血气"
+  },
+  "419": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的勇猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的持续时间延长到8秒\n同时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血潮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的血潮效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标受到的伤害减轻10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血烟<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n该防护罩能够抵消相当于恢复力400的伤害量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒"
+  },
+  "420": {
+    "zh": "发动泰然自若时，持续恢复自身的体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
+  },
+  "421": {
+    "zh": "猛攻的积蓄次数增加到3次"
+  },
+  "422": {
+    "zh": "跳斩的复唱时间缩短5秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>伤残命中敌人时，部分特定敌人除外"
+  },
+  "423": {
+    "zh": "英雄的掠影发动的暗影波动变为暗影使者\n\n向目标所在方向发出无属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n攻击复数敌人时，对目标之外的敌人威力降低25%"
+  },
+  "424": {
+    "zh": "石之心变为刚玉之心"
+  },
+  "425": {
+    "zh": "极光变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "426": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>超高速预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>爆发击发动后"
+  },
+  "427": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>晶壤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到3档\n另外，发动血壤可获得3档晶壤"
+  },
+  "428": {
+    "zh": "铁山靠变为阴阳斗气斩"
+  },
+  "429": {
+    "zh": "空鸣拳变为万象斗气圈"
+  },
+  "430": {
+    "zh": "破坏神冲变为破坏神脚"
+  },
+  "431": {
+    "zh": "轻身步法的积蓄次数增加到3次"
+  },
+  "432": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义结金兰：斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时必定对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "433": {
+    "zh": "自身发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔猿身形、盗龙身形、猛豹身形<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的战技时，获得对应的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>魔猿身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔猿脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>盗龙身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>盗龙脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>猛豹身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>猛豹脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>震脚<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "434": {
+    "zh": "跳跃的威力提高至320，破碎冲的威力提高至250"
+  },
+  "435": {
+    "zh": "山境酷刑连击成功时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n发动近身攻击战技会导致该效果消失\n持续时间内死天枪变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼苍穹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "436": {
+    "zh": "破碎冲变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "437": {
+    "zh": "直刺变为苍穹刺，樱花怒放变为樱花缭乱"
+  },
+  "438": {
+    "zh": "龙剑变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "439": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到15\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>旋风刃或强甲破点突连击成功时"
+  },
+  "440": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>命水<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>命水效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下一次发动的六道轮回威力提高到500\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命水发动时"
+  },
+  "441": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>月影雷兽预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n发动近身攻击战技会导致该效果消失\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>雷遁之术发动时"
+  },
+  "442": {
+    "zh": "燕回返变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "443": {
+    "zh": "明镜止水变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "444": {
+    "zh": "连珠箭变为百首龙牙箭"
+  },
+  "445": {
+    "zh": "失血箭与死亡箭雨的积蓄次数增加到3次"
+  },
+  "446": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>爆破箭预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n该状态附加后绝峰箭变为爆破箭\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>灵魂之声80点以上时发动绝峰箭"
+  },
+  "447": {
+    "zh": "行吟的复唱时间缩短到90秒"
+  },
+  "448": {
+    "zh": "发动贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲时，对自身附加对应的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>尾声标识<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动贤者的叙事谣时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>贤者尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动军神的赞美歌时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动放浪神的小步舞曲时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>放浪神尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "449": {
+    "zh": "散射变为霰弹枪"
+  },
+  "450": {
+    "zh": "整备变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "451": {
+    "zh": "后式自走人偶发动打桩枪后，接着发动皇家对撞机后消失"
+  },
+  "452": {
+    "zh": "策动的复唱时间缩短到90秒"
+  },
+  "453": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>提拉纳预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n该效果附加后技巧舞步结束变为提拉纳\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>技巧舞步结束成功时"
+  },
+  "454": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>逆瀑泻、坠喷泉、升风车、落血雨"
+  },
+  "455": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>扇舞·终预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>百花争艳发动时"
+  },
+  "456": {
+    "zh": "防守之桑巴的复唱时间缩短到90秒"
+  },
+  "457": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>流星舞预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>进攻之探戈发动时"
+  },
+  "458": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到2档"
+  },
+  "459": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到3档\n同时，发动烈炎命中时，对自身附加最大档数的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，发动冰冻命中时，对自身附加最大档数的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态"
+  },
+  "460": {
+    "zh": "自身发动魔法攻击造成的伤害提高5%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中\n同时，在星极火效果中发动烈炎命中时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>核爆效果提高<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n星极火状态消失时该状态也会同时消失"
+  },
+  "461": {
+    "zh": "发动秽浊不需要咏唱时间"
+  },
+  "462": {
+    "zh": "烈炎变为高烈炎，冰冻变为高冰冻"
+  },
+  "463": {
+    "zh": "魔泉的复唱时间缩短到120秒"
+  },
+  "464": {
+    "zh": "激情咏唱变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "465": {
+    "zh": "点亮<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>悖论水晶<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n该状态附加后冰结与火炎变为悖论\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>最大档数时，将自身的状态转变为相反的属性"
+  },
+  "466": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>红宝石的奥秘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>黄宝石的奥秘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>以太蓄能发动时"
+  },
+  "467": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>红宝石的奥秘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>黄宝石的奥秘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>绿宝石的奥秘<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>以太蓄能发动时"
+  },
+  "468": {
+    "zh": "红宝石召唤变为火神召唤"
+  },
+  "469": {
+    "zh": "黄宝石召唤变为土神召唤"
+  },
+  "470": {
+    "zh": "绿宝石召唤变为风神召唤"
+  },
+  "471": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>火神召唤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>土神召唤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>风神召唤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>召唤出的召唤兽的技能发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>火神召唤：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>燃火强袭变为地狱之火炎\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>土神召唤：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>碎岩变为大地之怒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>风神召唤：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>大气风斩变为大气爆发"
+  },
+  "473": {
+    "zh": "毁坏变为毁荡"
+  },
+  "474": {
+    "zh": "以太蓄能变为龙神附体"
+  },
+  "475": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>毁绝预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>能量吸收及能量抽取发动时"
+  },
+  "476": {
+    "zh": "根据自身附加的不同<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太<UIGlow>01</UIGlow><UIForeground>01</UIForeground>宝石耀发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>火属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为红宝石之仪\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>土属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为黄宝石之仪\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>风属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为绿宝石之仪"
+  },
+  "477": {
+    "zh": "迸裂变为三重灾祸"
+  },
+  "478": {
+    "zh": "根据自身附加的不同<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太<UIGlow>01</UIGlow><UIForeground>01</UIForeground>宝石辉发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>火属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为红宝石灾变\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>土属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为黄宝石灾变\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>风属性以太：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>变为绿宝石灾变"
+  },
+  "479": {
+    "zh": "毁荡、红宝石之仪、黄宝石之仪、绿宝石之仪的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>毁荡的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>310\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>红宝石之仪的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>黄宝石之仪的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>绿宝石之仪的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>230"
+  },
+  "480": {
+    "zh": "守护之光变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "481": {
+    "zh": "火神召唤变为火神召唤II，土神召唤变为土神召唤II，风神召唤变为风神召唤II"
+  },
+  "482": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔元集<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n当魔元集累积3档时，赤闪雷与赤震雷变为赤核爆\n当学会赤神圣后，赤疾风与赤烈风变为赤神圣\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>魔回刺、魔交击斩、魔连攻、魔化圆斩命中时"
+  },
+  "483": {
+    "zh": "赤闪雷变为赤暴雷，赤疾风变为赤暴风\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔元集<UIGlow>01</UIGlow><UIForeground>01</UIForeground>累积3档时，赤暴雷变为赤核爆，赤暴风变为赤神圣"
+  },
+  "484": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赤震雷的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赤烈风的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赤火炎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赤飞石的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>330\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>震荡的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>310\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>冲击的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>210\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>魔续斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>330"
+  },
+  "485": {
+    "zh": "促进变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "486": {
+    "zh": "倍增的最大档数增加至6档"
+  },
+  "487": {
+    "zh": "闪耀变为闪灼"
+  },
+  "488": {
+    "zh": "神圣变为豪圣"
+  },
+  "489": {
+    "zh": "部分技能的恢复力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>治疗的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医治的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>救疗的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>800\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>再生的持续恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>愈疗的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>600\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医济的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医济的持续恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>安慰之心的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>800\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>狂喜之心的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400"
+  },
+  "490": {
+    "zh": "神祝祷变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "491": {
+    "zh": "死炎法变为极炎法\n毁坏的威力提高至220"
+  },
+  "492": {
+    "zh": "破阵法变为裂阵法"
+  },
+  "493": {
+    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医术的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>日光的拥抱的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>鼓舞激励之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>士气高昂之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量160%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>炽天的幕帘的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180"
+  },
+  "494": {
+    "zh": "展开战术的复唱时间缩短到90秒"
+  },
+  "495": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>重抽预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抽卡发动时"
+  },
+  "496": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>日<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>月<UIGlow>01</UIGlow><UIForeground>01</UIForeground>、<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星<UIGlow>01</UIGlow><UIForeground>01</UIForeground>三种标识中的一种\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>在战斗状态下使用卡片技能"
+  },
+  "497": {
+    "zh": "煞星变为落陷凶星"
+  },
+  "498": {
+    "zh": "重力变为中重力"
+  },
+  "499": {
+    "zh": "部分技能的恢复力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>吉星的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>500\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>阳星的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>400\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>福星的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>800\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>吉星相位的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>吉星相位的持续恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>阳星相位的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>阳星相位的持续恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>150"
+  },
+  "500": {
+    "zh": "天星交错变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "501": {
+    "zh": "在宇宙钓场也能抛竿钓鱼"
+  },
+  "502": {
+    "zh": "龙神召唤变为不死鸟召唤\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>亚灵神巴哈姆特显现结束后"
+  },
+  "503": {
+    "zh": "发动部分技能后星极超流发生变化\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动火神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为深红旋风\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动黄宝石之仪与黄宝石灾变时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为山崩\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动风神召唤时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>星极超流变为螺旋气流"
+  },
+  "504": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>先锋剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴乱剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>王权剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>130\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>圣灵的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>270\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>赎罪剑的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>420"
+  },
+  "505": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重劈的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>凶残裂的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>130\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>暴风碎的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
+  },
+  "506": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>重斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>吸收斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>噬魂斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
+  },
+  "507": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>利刃斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>170\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>残暴弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>迅连斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120"
+  },
+  "508": {
+    "zh": "武神枪的威力提高至260，死者之岸的威力提高至360\n另外，在使用龙眼雷电与龙眼苍穹时，对自身附加1档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>天龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "509": {
+    "zh": "天语的效果量提高到20%"
+  },
+  "510": {
+    "zh": "自生变为自生II"
+  },
+  "511": {
+    "zh": "英雄的掠影发动攻击的威力提高至300"
+  },
+  "512": {
+    "zh": "爆裂脚变为凤凰舞"
+  },
+  "513": {
+    "zh": "斗魂旋风脚变为梦幻斗舞"
+  },
+  "514": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>奥义斩浪预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>意气冲天发动时"
+  },
+  "515": {
+    "zh": "断绝变为梦幻三段"
+  },
+  "516": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>双刃旋的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>210\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>绝风的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>160\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>旋风刃的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>强甲破点突的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>140"
+  },
+  "517": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热分裂弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热独头弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>120\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>热狙击弹的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>110"
+  },
+  "518": {
+    "zh": "部分技能的威力提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>210\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>正拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>崩拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>250\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>双掌打的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>280\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>破碎拳的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>70\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>双龙脚的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>320\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>阴阳斗气斩的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>340\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>六合星导脚的威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>550"
+  },
+  "519": {
+    "zh": "风雅变为风光"
   }
 }
