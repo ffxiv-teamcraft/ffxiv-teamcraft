@@ -147,7 +147,7 @@ export class ListManagerService {
       add.push(this.addToList({
         itemId: recipe.id,
         list: list,
-        recipeId: recipe.recipeId,
+        recipeId: 0,
         amount: recipe.amount,
         collectable: recipe.collectable,
         ignoreHooks: true,
