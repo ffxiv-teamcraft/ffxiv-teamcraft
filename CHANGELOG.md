@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.13"></a>
+## [9.5.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.12...v9.5.13) (2022-03-17)
+
+
+### Bug Fixes
+
+* **desktop:** fixed double completion notification ([ec842f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec842f4))
+* **item-search-overlay:** fixed search overlay not returning any results at all ([ed03168](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed03168))
+* **list:** fixed regenerating list not applying crafting priorities ([63b4039](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63b4039))
+* **lists:** fixed an issue with offline lists counting progression twice ([91f0497](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91f0497))
+
+
+### Features
+
+* **data:** update for cn patch-6.0 ([2b02395](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b02395))
+* **db:** applied allagan reports changes to the extracted data ([9b8e1d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b8e1d5))
+
+
+
 <a name="9.5.12"></a>
 ## [9.5.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.11...v9.5.12) (2022-02-27)
 
