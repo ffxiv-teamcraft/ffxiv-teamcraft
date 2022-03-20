@@ -40,7 +40,7 @@
       <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
         <div *ngIf="alarm.remainingTime"
              fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <div [class.spawned]="alarm.spawned">{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
+          <div [timerTooltip]="alarm.remainingTime" [class.spawned]="alarm.spawned">{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
           <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
                [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
                alt="" class="fish-eyes-alarm">

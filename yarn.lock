@@ -1576,17 +1576,17 @@
   dependencies:
     heap-js "^2.1.5"
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.10.12", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.10.12":
-  version "2.10.12"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.12.tgz#93a71acabbcc611337021a70d55f382f0d61aa51"
-  integrity sha512-xEFI89w5LU1LemMwLWErptTyYmRLonm0AMyWNeedCEY8ZrwvMuvPC8+A27aFIcDrFwdt+bosCkEzv///b8UlzA==
-  dependencies:
-    "@kaiu/serializer" "^1.4.0"
-
-"@ffxiv-teamcraft/simulator@^3.0.11":
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@3.0.11", "@ffxiv-teamcraft/simulator@^3.0.11":
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.0.11.tgz#515e5bb4b0b1cbf6cb1a376d55bce66e6e33d8c9"
   integrity sha512-JsVY2uy40c/9WTWM/lHunWFmi3JQfZWIQN3YbC7vGfIkXLktjfg1QRHWfK4F3HOT45nbRtigHwzWLUrAtVcDUQ==
+  dependencies:
+    "@kaiu/serializer" "^1.4.0"
+
+"@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.10.12":
+  version "2.10.12"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.12.tgz#93a71acabbcc611337021a70d55f382f0d61aa51"
+  integrity sha512-xEFI89w5LU1LemMwLWErptTyYmRLonm0AMyWNeedCEY8ZrwvMuvPC8+A27aFIcDrFwdt+bosCkEzv///b8UlzA==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

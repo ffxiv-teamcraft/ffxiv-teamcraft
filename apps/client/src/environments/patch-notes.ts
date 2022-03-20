@@ -1,12 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed double completion notification.
-* **item-search-overlay:** fixed search overlay not returning any results at all.
-* **list:** fixed regenerating list not applying crafting priorities.
-* **lists:** fixed an issue with offline lists counting progression twice.
+* **core:** fix simulator and level cap for chinese 6.0.
+* **inventory-optimizer:** removed fishing from easily gathered optimizer.
 
 
 ### Features
 
-* **data:** update for cn patch-6.0.
-* **db:** applied allagan reports changes to the extracted data.`;
+* **core:** added tooltip to spawn timers in alarms page and sidebar.`;

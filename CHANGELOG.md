@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.14"></a>
+## [9.5.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.13...v9.5.14) (2022-03-20)
+
+
+### Bug Fixes
+
+* **core:** fix simulator and level cap for chinese 6.0 ([a904093](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a904093))
+* **inventory-optimizer:** removed fishing from easily gathered optimizer ([3494395](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3494395)), closes [#2218](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2218)
+
+
+### Features
+
+* **core:** added tooltip to spawn timers in alarms page and sidebar ([b5def4d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5def4d)), closes [#2200](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2200)
+
+
+
 <a name="9.5.13"></a>
 ## [9.5.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.12...v9.5.13) (2022-03-17)
 
