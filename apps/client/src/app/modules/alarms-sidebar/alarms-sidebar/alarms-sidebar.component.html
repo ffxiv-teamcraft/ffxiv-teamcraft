@@ -31,7 +31,7 @@
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
-            <div class="timer">{{row.remainingTime | timer}}</div>
+            <div class="timer" [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
             <div class="map" *ngIf="row.alarm.mapId | closestAetheryte:row.alarm.coords | async as aetheryte">
               {{aetheryte.nameid | i18nRow:'places' | i18n}}
             </div>

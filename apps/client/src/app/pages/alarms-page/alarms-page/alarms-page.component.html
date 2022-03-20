@@ -229,7 +229,7 @@
             </span>
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{row.remainingTime | timer}}</div>
+            <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
             <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                  [nzPopoverTitle]="'ALARMS.Node_content' | translate"
                  nz-popover>
@@ -376,7 +376,7 @@
         </div>
         <div nz-col nzMd="2">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <div>{{row.remainingTime | timer}}</div>
+            <div [timerTooltip]="row.remainingTime">{{row.remainingTime | timer}}</div>
             <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
                  [nzPopoverTitle]="'ALARMS.Node_content' | translate"
                  nz-popover>
