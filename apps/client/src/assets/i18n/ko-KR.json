@@ -331,7 +331,7 @@
   "MIN/BTN": "광부 / 원예가",
   "Game_Term/FSH": "어부",
   "Reduction": "정제",
-  "Upgrade_list": "Recreate and update list for the latest app version",
+  "Upgrade_list": "최신 앱 버전으로 목록 재생성 및 업데이트",
   "List_recreated": "목록이 재생성되었습니다",
   "List_popup_title": "목록을 갱신중입니다. 잠시만 기다려주세요",
   "Please_wait": "금방 될거에요. 잠깐만 기다려주세요",
@@ -369,7 +369,7 @@
   "Email_enter": "이메일",
   "Email_not_found": "이메일을 찾을 수 없습니다",
   "Email_sent": "비밀번호 변경 방법에 대한 메일이 발송되었습니다.",
-  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
+  "Copy_current_link": "현재 웹페이지 링크를 클립보드에서 복사",
   "ALARM": {
     "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
@@ -406,7 +406,7 @@
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
     "Always_on_top": "항상 위에 표시",
-    "Always_open_on_main_page": "Always open on main page",
+    "Always_open_on_main_page": "항상 메인 화면만 열기",
     "Start_minimized": "트레이 모드로 실행",
     "Always_quit": "닫기 버튼으로 팀크래프트 완전히 종료하기(미설정시 최소화)",
     "Enable_minimize_reduction": "창 최소화시 작업표시줄이 아닌 트레이로 이동시키기",
@@ -2072,7 +2072,7 @@
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Warning_job_switch": "Switching job will remove job crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "직업 변경은 전문장인 증표, 주. 부무기에 포함된 마테리아를 제거합니다. 같은 스펙으로 금단을 할 예정이라면 해당 부분을 참고하시길 바랍니다.",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
@@ -2378,7 +2378,7 @@
   },
   "COLLECTABLES": {
     "Title": "소장품",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "No_collectables_for_this_level": "현재 레벨에 가능한 소장품이 없습니다"
   },
   "CRAFTING_REPLAYS": {
     "Title": "제작 리플레이",
@@ -2400,7 +2400,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
-    "Not_found": "Commission not found",
+    "Not_found": "의뢰를 찾을 수 없습니다",
     "Price_tbd": "가격 협의",
     "X_items": "아이템 {{amount}}개",
     "Open_commission_details": "의뢰 자세히보기",
@@ -2412,7 +2412,7 @@
     "Delete_list_too": "목록도 함께 삭제",
     "Delete_commission_only": "의뢰만 삭제",
     "Your_archived_commissions_as_client": "다른 유저에게 부탁한 의뢰",
-    "No_archived_commissions_as_client": "You have no archived commissions as client",
+    "No_archived_commissions_as_client": "완료한 타인에게 부탁한 의뢰가 없습니다",
     "Your_archived_commissions_as_crafter": "다른 유저에게 받은 의뢰",
     "No_archived_commissions_as_crafter": "완료한 타인의 의뢰가 없습니다",
     "Updates": "업데이트",
@@ -2443,14 +2443,14 @@
       "Only_requires_materials": "최종 아이템을 제외한 목록의 재료만 의뢰합니다",
       "Contact_info": "연락 가능한 방법",
       "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
-      "Contact_info_required_error": "Please include contact information",
+      "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
       "Description": "설명",
       "Description_placeholder": "의뢰에 대한 추가 설명을 이 곳에 적습니다",
       "Description_max_length_error": "1000자 이내로 적어야 합니다",
       "Warning": "경고",
       "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
       "Copy_link": "불러오기 코드 복사",
-      "Copy_link_tooltip": "Gives you the URL to open to create this exact commission, useful for guide writing.",
+      "Copy_link_tooltip": "가이드 작성 시 유용할, 동일한 의뢰를 만들 수 있는 URL을 제공합니다.",
       "Link_copied": "유저 의뢰 불러오기 코드가 복사되었습니다"
     },
     "BOARD": {
@@ -2458,7 +2458,7 @@
       "Filter_with_tags": "태그를 사용하여 필터링",
       "No_matching_commissions": "조건에 맞는 의뢰가 없습니다",
       "Min_price": "최소 가격",
-      "Tracking_tip": "You can get notifications for new commissions on your data center using the official Teamcraft Discord server's commissions section"
+      "Tracking_tip": "팀크래프트 디스코드의 commissions 채널에서 원하는 데이터센터의 알람을 받아보실 수 있습니다"
     },
     "DETAILS": {
       "Created_by": "의뢰자: {{name}}",
@@ -2540,7 +2540,7 @@
     },
     "FIRED": {
       "Please_pick_reason": "왜 해당 플레이어를 퇴출하나요:?",
-      "NO_ACTIVE_SUB": "Contractor no longer has an active subscription.",
+      "NO_ACTIVE_SUB": "의뢰를 받은 플레이어가 더 이상 게임 이용권을 결제하지 않음.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함.",
       "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어짐.",
       "FOUND_SOMEONE_ELSE": "의뢰를 대신 해줄 다른 플레이어를 찾음.",
@@ -2548,11 +2548,11 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "왜 해당 의뢰를 포기하나요?",
-      "NO_ACTIVE_SUB": "I no longer have an active subscription.",
+      "NO_ACTIVE_SUB": "게임 이용권을 구입할 계획이 없음.",
       "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
       "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
       "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
-      "CANNOT_GATHER": "I am not capable of collecting the required items. Client will not collect items."
+      "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     },
     "IMPORT": {
       "Title": "유저 의뢰 불러오기",
@@ -2593,7 +2593,7 @@
   },
   "RETAINERS": {
     "Title": "집사",
-    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
+    "No_retainers": "집사가 없습니다. 집사 초인종을 클릭하여 집사들의 정보를 불러오기 해주세요.",
     "Selling": "출품 중 ({{amount}}건)",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
@@ -2610,7 +2610,7 @@
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",
-    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Description": "집사의 직업, 레벨, 아이템레벨, 획득력(필요하다면) 을 입력하고 가장 수익이 좋은 집사 수행을 찾을 수 있습니다. 해당 작업은 집사레벨이 높은 경우에는 모든 아이템의 시세를 체크하기 때문에 최대 1분의 시간이 소요될 수 있습니다.",
     "Retainer_ilvl": "아이템 레벨",
     "Gathering": "획득력",
     "Task_level": "수행 레벨",
@@ -2619,22 +2619,22 @@
     "Select_retainer": "집사를 선택하세요"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on Patreon, you get:",
+    "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
     "No_ads": "상단에 더 이상 광고가 표시되지 않습니다",
-    "Exclusive_discord_role": "An exclusive Discord role, and access to supporters-only channel",
+    "Exclusive_discord_role": "디스코드에서의 특별한 역할과 #supporters 채널 입장 가능",
     "Your_name_in_loading_screen": "내 닉네임을 로딩 화면에 표시(요청해야함)",
     "Goodies": "무료 스티커, 티셔츠, 포스터 (후원 등급에 따라 다름)",
     "Starting_at_X": "매달 ${{monthly}} 또는 매년 ${{yearly}} 으로 시작할 수 있습니다",
     "Footer_text": "한달에 1달러만 후원하셔도 팀크래프트 개발에 큰 기여를 할 수 있으며, 개발자가 팀크래프트 프로젝트에 모든 시간을 투자하여 더 나은 파이널 판타지14 툴 개발에 힘쓸 수 있습니다.",
     "Already_supporter": "이미 후원 중이신가요?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "광고를 제거하기 위해서는 patreon 계정을 팀크래프트에 연동해야 합니다"
   },
   "SUPPORT_US": {
     "Popup_introduction": "안녕하세요, 저는 팀크래프트 개발자 Miu입니다.<br/> 팀크래프트는 지난 몇 년 전부터 저의 취미였고 현재는 취미가 아닌 제 직업으로 삼기 위한 꿈으로써, 그 꿈을 이루기 위해 노력하고 있습니다. <br/><br/>만약 여러분들이 patreon으로 도움을 주신다면, 팀크래프트를 더욱 더 개선시키고 저는 제 꿈을 현실로 이룰 수 있습니다.<br/><br/> patreon에서 프로젝트에 도움을 주신다면 다음과 같은 멋진 특전을 얻으실 수 있습니다.",
-    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
+    "Already_supporting": "이미 Patreon 후원자이신가요? 그렇다면 설정에서 계정을 patreon과 연동시킬 수 있습니다",
     "PATREON_BENEFITS": {
       "No_ads": "광고 없는 팀크래프트 경험하기",
-      "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Discord_rank": "현재 진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord서버 특별 등급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
@@ -2644,7 +2644,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop (make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. 자유부대의 공방으로 이동(해당 팝업을 연 후에 꼭 입력하세요)<br>2. 자유부대 창을 열기<br>3. 관리 인터페이스를 사용하여 각 잠수함 또는 비공정과 상호작용",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -2762,7 +2762,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "새로운 기능: 알라간 리포트",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "누락된 데이터가 있는 아이템을 찾으셨나요? 이제 알라간 리포트 시스템 (일반 > 알라간 리포트) 에서 아이템 출처를 보고하여 다음 업데이트에 적용시킬 수 있습니다!",
     "Title": "알라간 리포트",
     "Reports": "리포트",
     "Pending_changes": "보류 중인 변경 사항",
@@ -2852,7 +2852,7 @@
       "LARGE": "Large"
     },
     "SOURCE": {
-      "DESYNTH": "DESYNTHED_FROM",
+      "DESYNTH": "분해로 획득",
       "REDUCTION": "정제",
       "GARDENING": "가드닝",
       "LOOT": "보상 상자",
@@ -2888,7 +2888,7 @@
     "Quarrying": "Quarrying",
     "Logging": "Logging",
     "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
+    "Fishing": "낚시터",
     "Spearfishing": "작살"
   },
   "PROFITS": {
@@ -2899,7 +2899,7 @@
     "Gathering": "채집",
     "Complexity": "Complexity",
     "Sold_last_24h": "#최근 24시간동안 판매됨",
-    "Total_listed": "Total on sale",
+    "Total_listed": "총 판매수",
     "Unit_price": "개당 가격",
     "Cost_to_craft": "제작 비용",
     "Explain_complexity": "아이템 하나를 만드는 데 걸리는 시간을 나타내는 점수, 하나의 제작을 여러 번 하는 것은 텔레포를 다시 할 필요가 없기 때문에 확실히 빠릅니다.",
