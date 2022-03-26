@@ -2202,7 +2202,7 @@
     "LIST": {
       "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
       "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
+      "Permissions": "Du kannst Berechtigungen bearbeiten, andere Benutzer hinzufügen, die Liste schreibschützen, sie mit deiner FG teilen und vieles mehr, indem du den Berechtigungen-Editor öffnest.",
       "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
       "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
       "More_actions_button": "Dies öffnet ein Menü mit vielen verschiedenen Aktionen für die aktuelle Listenzeile. Du kannst diese Aktionen mit Hilfe des Layout-Editors in Schaltflächen umwandeln.",
@@ -2210,7 +2210,7 @@
     },
     "LISTS": {
       "Merge": "Du kannst zwei Listen mit \"Zusammenfassen\" kombinieren.",
-      "Import": "You can import lists from various websites such as Ariyala, Craftingasaservice and Garlandtools."
+      "Import": "Du kannst Listen von verschiedenen Websites wie Ariyala, Craftingasaservce und Garlandtools importieren."
     },
     "DB": {
       "Button": "Mit einem Klick auf diese Informationen-Schaltfläche öffnet sich die Datenbankseite mit Informationen über das, was der Schaltfläche am nächsten ist (Npc Name, Karte, Gegenstand, Monster, etc). Für Gegenstände öffnet ein Klick auf das Symbol ebenfalls die Datenbankseite."
@@ -2227,11 +2227,11 @@
       "Character_configuration": "Konfiguriere hier deine Stufe und deine Attribute.",
       "HQ_ingredients": "Gib hier HQ-Materialien an, um die Anfangsqualität zu bestimmen.",
       "Consumables": "Konfiguriere hier Verbrauchsgegenstände und FG-Buffs.",
-      "Right_click_condition": "Right click on an action to set its condition (Good, Excellent, Poor, fail, etc) and predict the results.",
+      "Right_click_condition": "Klicke mit der rechten Maustaste auf eine Aktion, um seine Bedingung zu setzen (gut, ausgezeichnet, schlecht, Fehlschlag, usw.) und sag so die Ergebnisse voraus.",
       "Save_as_new": "Klicke hier, um eine Kopie dieser Liste in deinem Account zu speichern.",
       "Import_ingame_macro": "Klicke hier, um ein Makro aus dem Spiel zu importieren.",
       "Generate_ingame_macro": "Klicke hier, um aus dieser Rotation ein Makro für das Spiel zu generieren.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share the rotation with your stats and consumables."
+      "Share_with_stats": "Klicke hier, um das Teilen-Popup zu öffnen, mit dessen Hilfe du die Rotation mit deinen Werten und Verbrauchsgegenstände teilen kannst."
     },
     "ALARMS": {
       "Settings": "Klicke hier, um die Einstellungen für Erinnerungen zu bearbeiten (Ton, Lautstärke, usw.).",
@@ -2244,16 +2244,16 @@
       "Rlvl_filter": "Filtere mit dieser Auswahlbox nach Rezeptstufe",
       "Durability_filter": "Filtere mit dieser Auswahlbox nach Belastbarkeit",
       "Min_craftsmanship": "Filtert nach minimaler Kunstfertigkeit. Hier werden nur Rotationen gefunden, bei denen die benötigte Kunstfertigkeit kleiner als der von dir angegebene Wert ist.",
-      "Min_control": "Filter by minimum Control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum CP required here, this will find only rotations with required CP < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the resulting rotations."
+      "Min_control": "Filtert nach minimaler Kontrolle. Hier werden nur Rotationen gefunden, bei denen die benötigte Kontrolle kleiner als der von dir angegebene Wert ist.",
+      "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
+      "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page. Here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Welcome_time_range": "Willkommen auf der Metriken-Übersichtsseite. Hier kannst du Zeiträume auswählen, für die die angezeigten Daten angezeigt werden sollen. Standardmäßig geht dieser bis heute.",
       "Select_dashboard": "Du kannst mehrere Übersichtsseiten haben und leicht zwischen ihnen wechseln, um schnell die Informationen zu sehen, die für dich wichtig sind.",
-      "Edit_dashboard": "You can enter edit mode using this button. It's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily. Don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard? Press this button, confirm, and poof (deletion cannot be reverted).",
+      "Edit_dashboard": "Mit dieser Schaltfläche kannst du in den Bearbeitungsmodus wechseln. Nur für Nicht-Standard-Übersichtsseiten verfügbar.",
+      "Create_dashboard": "Erstelle damit einfach deine eigenen Übersichtsseiten. Vergiss aber nicht, diese nach der Erstellung auch zu bearbeiten, denn sonst ist es nur eine Kopie der Standard-Übersichtsseite.",
+      "Delete_layout": "Um eine Übersichtsseite loszuwerden, klicke auf diese Schaltfläche, bestätige und Simsalabim, sie ist weg (Löschung kann nicht rückgängig gemacht werden).",
       "Export_layout": "Du möchtest deine verdammt gut gelungene Übersichtsseite mit deinen Freunden teilen? Dann klicke auf diese Schaltfläche, um den Exportcode für die aktuell ausgewählte Übersichtsseite zu kopieren.",
       "Import_layout": "Wenn jemand eine Übersichtsseite mit dir durch einen Exportcode teilt, verwende diese Schaltfläche, um sie zu importieren.",
       "EDITOR": {
@@ -2308,7 +2308,7 @@
     "Import_failed": "Import der Übersichtsseite fehlgeschlagen. Der Code ist ungültig.",
     "Import_success": "Übersichtsseite importiert und ausgewählt",
     "Nothing_to_show": "Keine anzuzeigenden Daten",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
     "SOURCES": {
       "UNKNOWN": "Unbekannt",
       "GATHERING": "Sammeln",
@@ -2349,8 +2349,8 @@
       "Pie_metric": "Metrik",
       "Add_filter": "Filter hinzufügen",
       "Operator": "Operator",
-      "Cannot_edit_default": "You can't edit a default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete a default layout",
+      "Cannot_edit_default": "Du kannst ein Standardlayout nicht bearbeiten. Erstelle stattdessen ein neues Layout, um dieses anzupassen",
+      "Cannot_delete_default": "Ein Standardlayout kann nicht gelöscht werden",
       "FILTER_TIPS": {
         "FishFilter": "Nur Fische akzeptieren, die aus Fischvorkommen stammen",
         "ItemFilter": "Nur eine bestimmte Gruppe von Gegenständen akzeptieren",
@@ -2378,7 +2378,7 @@
   },
   "COLLECTABLES": {
     "Title": "Sammlerstücke",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "No_collectables_for_this_level": "Keine Sammlerstücke für dieses Level verfügbar"
   },
   "CRAFTING_REPLAYS": {
     "Title": "Herstellungswiederholung",
@@ -2395,12 +2395,12 @@
     "Create_folder": "Neues Verzeichnis",
     "Save_replay": "Wiederholung in Datenbank speichern",
     "Replay_result": "Ergebnis",
-    "Delete_offline": "Delete offline replays",
+    "Delete_offline": "Offline-Wiederholungen löschen",
     "Confirm_delete_offline": "Bist du dir sicher, dass all deine Offline-Wiederholungen löschen möchtest? Dies kann nicht rückgängig gemacht werden"
   },
   "COMMISSIONS": {
     "New_commission": "Neuer Auftrag",
-    "Not_found": "Commission not found",
+    "Not_found": "Kommission nicht gefunden",
     "Price_tbd": "Zu besprechen",
     "X_items": "{{amount}} Gegenstände",
     "Open_commission_details": "Öffne Auftragdetails",
@@ -2450,7 +2450,7 @@
       "Warning": "Warnung",
       "Warning_description": "Die Erstellung von Troll/Spam-Aufträgen führt dazu, dass der Auftrag gelöscht wird und mögliche Maßnahmen gegen dein Konto ergriffen werden können.",
       "Copy_link": "Importcode kopieren",
-      "Copy_link_tooltip": "Gives you the URL to open to create this exact commission, useful for guide writing.",
+      "Copy_link_tooltip": "Gibt dir die URL zum Öffnen, um diesen genauen Auftrag zu erstellen, nützlich für das Schreiben von Anleitungen.",
       "Link_copied": "Importcode für Auftrag kopiert"
     },
     "BOARD": {
@@ -2458,7 +2458,7 @@
       "Filter_with_tags": "Nach Markierungen filtern",
       "No_matching_commissions": "Keine passenden Aufträge",
       "Min_price": "Min. Preis",
-      "Tracking_tip": "You can get notifications for new commissions on your data center using the official Teamcraft Discord server's commissions section"
+      "Tracking_tip": "Du kannst Benachrichtigungen für neue Aufträge deines Datenzentrums über den Auftragsbereich des offiziellen Teamcraft Discord-Servers erhalten"
     },
     "DETAILS": {
       "Created_by": "Erstellt von {{name}}",
@@ -2540,7 +2540,7 @@
     },
     "FIRED": {
       "Please_pick_reason": "Warum feuerst du diesen Auftragnehmer?",
-      "NO_ACTIVE_SUB": "Contractor no longer has an active subscription.",
+      "NO_ACTIVE_SUB": "Auftragnehmer hat kein aktives Abonnement mehr.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "Die Arbeit mit diesem Auftragnehmer ist nicht mehr angenehm.",
       "NO_LONGER_NEED_JOB_DONE": "Der Auftrag wird nicht mehr benötigt.",
       "FOUND_SOMEONE_ELSE": "Anderen Auftragnehmer für diesen Auftrag gefunden.",
@@ -2548,7 +2548,7 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "Warum trittst du von diesem Auftrag zurück?",
-      "NO_ACTIVE_SUB": "I no longer have an active subscription.",
+      "NO_ACTIVE_SUB": "Ich habe kein aktives Abonnement mehr.",
       "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
       "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
       "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
@@ -2610,7 +2610,7 @@
   },
   "RETAINER_VENTURES": {
     "Title": "Gehilfenunternehmungen",
-    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Description": "Gib die Klasse, Stufe, Gegenstandsstufe und Sammelgeschick (falls benötigt) deines Gehilfen ein, um die ideale Unternehmung für den besten Gewinn zu finden. Dies kann bis zu einer Minute dauern, wenn dein Gehilfe ein hohes Level hat, weil es jeden Gegenstand berücksichtigt, den er gewinnbringend abbauen kann.",
     "Retainer_ilvl": "G.-Stufe",
     "Gathering": "Sammeln",
     "Task_level": "Stufe der Unternehmung",
