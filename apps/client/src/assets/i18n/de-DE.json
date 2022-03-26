@@ -85,7 +85,7 @@
     "Workshops": "Werkstätten",
     "Add_one_list": "Eine Liste hinzufügen",
     "Add_workshop": "Workshop hinzufügen",
-    "Delete_message": "Deleting a workshop won't delete the lists in it. They will only be brought back to workshop-less lists",
+    "Delete_message": "Das Löschen eines Workshops wird nicht die beinhalteten Listen löschen, stattdessen werden sie zu den Listen ohne Workshop hinzugefügt",
     "List_selection_title": "Listen auswählen, die der Werkstatt {{workshopName}} hinzugefügt werden sollen",
     "Name_dialog": "Workshopname",
     "Created_by": "Erstellt von {{name}}",
@@ -481,7 +481,7 @@
     "Maximum_total_vendor_price": "Maximaler Gesamthändlerpreis",
     "Maximum_total_vendor_price_explain": "Maximaler Preis für eine ganze Reihe (Stückpreis * Menge) für den Abruf durch den Layoutfilter (0 = kein Maximum)",
     "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
-    "Rawsock_details": "Using RawSocket captures the traffic without npcap, and can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
+    "Rawsock_details": "RawSocket Nutzung, die die Aktivität ohne npcap erfasst, kann bei VPNs helfen. Allerdings ist es weniger zuverlässig und du musst TC jedes mal manuell als Admin ausführen",
     "Favorite_features": "Lieblingsfunktionen",
     "Favorite_features_explain": "Die Funktionen, die du im Favoritenbereich der Seitenleiste angezeigt werden.",
     "Clear_inventory_on_startup": "Inventar beim Start bereinigen",
@@ -576,8 +576,8 @@
       "Button": "Verifizieren",
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
-      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, as it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes, then wait ~30s and retry.",
+      "Success": "Charakter verifiziert! Du kannst dieses Popup jetzt schließen. Der Code kann jetzt aus dem Profil entfernt werden.",
+      "Error": "Der Code konnte nicht in deiner Beschreibung gefunden werden. Stelle sicher dass er eingefügt und gespeichert wurde, und versuche es in ~30 Sekunden erneut.",
       "Validate": "Verifizieren"
     }
   },
@@ -2137,7 +2137,7 @@
       "Error_title": "Ausrüstungssets konnten nicht verglichen werden",
       "Error_description": "Bitte stelle sicher, dass das eingegebene Ausrüstungsset existiert und vom gleichen Typ wie das aktuelle ist (gleiches Hauptattribut)",
       "Type": "Ausrüstungsset-Typ",
-      "Ariyala": "An Ariyala set",
+      "Ariyala": "Ein Ariyala-Set",
       "External_gearset": "Ein Teamcraft-Ausrüstungsset von jemand anderem",
       "Personal_gearset": "Eines deiner Ausrüstungssets",
       "Paste_link_step_title": "Link zum Ausrüstungsset",
@@ -2160,7 +2160,7 @@
     "SYNC": {
       "Title": "Synchronisiere Ausrüstungssets",
       "Tag": "Synchronisieren",
-      "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
+      "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importiere Set für {{name}}",
       "Imported_gearset": "Importierte Gruppe für {{name}}",
       "Syncing_gearsets": "Synchronisiere Ausrüstungssets…"
@@ -2182,9 +2182,9 @@
     "Done": "Fertig",
     "POPUP": {
       "Title": "Willkommen bei FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use its basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Explanation": "Teamcraft hat ein kleines Tutorial, das erklärt, wie man die grundlegenden Funktionen nutzen kann. Dieses erscheint in Form von kleinen Fenstern und Pop-ups auf verschiedenen Seiten in der gesamten App.",
       "Question": "Möchtest du diese Funktion aktivieren?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings."
+      "Can_be_changed_in_settings": "Kann in den Einstellungen ein- oder ausgeschaltet werden."
     },
     "APP": {
       "Profile": "Bewege die Maus über deinen Namen, um den Profileditior zu öffnen und deine Stufen, Attribute und andere Dinge einzustellen."
@@ -2195,13 +2195,13 @@
       "Filters": "Öffne dieses Fenster, um erweiterte Filter einzublenden, die dabei helfen, nach Attribut, Bonus, ilvl und mehr zu filtern"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it.",
-      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
+      "Share": "Klicke hier, um den Link dieser Liste zu kopieren und ihn einfach zu teilen.",
+      "Open_list": "Klicke hier, um die Listendetails zu öffnen. Du kannst den Namen der Liste auch doppelklicken.",
       "More": "Klicke auf dieses Menü, um die Liste umzubenennen, Berechtigungen zu verwalten und mehr."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
+      "HQ_mark": "Dieses Symbol bedeutet, dass dieses Element für das endgültiges Rezept benötigt wird und du es daher eventuell gerne in HQ haben möchtest.",
+      "Layout": "Du kannst die Anzeige komplett anpassen, die Felder ändern und die Art und Weise ändern, wie Daten gefiltert werden, indem du den Layout-Editor öffnest. Die Schaltfläche auf der linken Seite kann dabei als Schalter zum schnellen Layout-Wechsel benutzt werden.",
       "Permissions": "Du kannst Berechtigungen bearbeiten, andere Benutzer hinzufügen, die Liste schreibschützen, sie mit deiner FG teilen und vieles mehr, indem du den Berechtigungen-Editor öffnest.",
       "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
       "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
