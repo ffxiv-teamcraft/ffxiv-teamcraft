@@ -1056,7 +1056,7 @@
     "Compact": "Kompakt",
     "Detailed": "Detailliert",
     "Remove_IP": "Remove initial preparations",
-    "Stats_applied": "Stats applied",
+    "Stats_applied": "Werte angewendet",
     "Show_rotations_above_stats": "Include rotations with required stats above yours",
     "Full_buttons": "Show full buttons",
     "STATE": {
@@ -2552,7 +2552,7 @@
       "UNCOMFORTABLE_WITH_CLIENT": "Die Arbeit mit diesem Auftraggeber ist nicht mehr angenehm.",
       "CANNOT_COMPLETE_LEVEL": "Ich kann diese Kommission aufgrund von Levelanforderungen nicht abschließen.",
       "CANNOT_COMPLETE_CONTENT": "Ich kann diesen Auftrag nicht abschließen, weil ich keinen Zugriff auf die benötigten Inhalte habe (Beispiel: Ich habe nicht die neueste Erweiterung).",
-      "CANNOT_GATHER": "I am not capable of collecting the required items. Client will not collect items."
+      "CANNOT_GATHER": "Ich bin nicht in der Lage, die benötigten Gegenstände zu sammeln. Der Auftraggeber wird keine Gegenstände sammeln."
     },
     "IMPORT": {
       "Title": "Auftragsimport",
@@ -2593,11 +2593,11 @@
   },
   "RETAINERS": {
     "Title": "Gehilfen",
-    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
+    "No_retainers": "Keine Gehilfen. Bitte benutze die Krämerklingel, um Informationen über deine Gehilfen zu erhalten.",
     "Selling": "{{amount}} Artikel verkaufen",
     "X_items": "{{amount}} Gegenstände",
     "Task_complete": "Unternehmung abgeschlossen",
-    "No_task": "No task",
+    "No_task": "Keine Aufgabe",
     "Task_completed_notification_title": "{{name}} hat die Unternehmung beendet",
     "Task_completed_notification_content": "{{name}} hat die Unternehmung {{taskName}} beendet",
     "Task_completion_alarm": "Alarm bei Abschluss der Unternehmung",
@@ -2852,7 +2852,7 @@
       "LARGE": "Groß"
     },
     "SOURCE": {
-      "DESYNTH": "DESYNTHED_FROM",
+      "DESYNTH": "MATERIALVERWERTUNG_AUS",
       "REDUCTION": "RAFFINATION",
       "GARDENING": "GARTENBAU",
       "LOOT": "BELOHNUNG",
@@ -2893,7 +2893,7 @@
   },
   "PROFITS": {
     "Title": "Profithelfer",
-    "Description": "Find the best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Description": "Finde die besten Gegenstände zum Herstellen oder Sammeln auf Basis deiner Level- und Marktbrettdaten von Universalis",
     "Self_sufficient": "Ich sammle alles selbst",
     "Crafting": "Herstellen",
     "Gathering": "Sammeln",
@@ -2902,7 +2902,7 @@
     "Total_listed": "Gesamtverkäufe",
     "Unit_price": "Einzelpreis",
     "Cost_to_craft": "Herstellungskosten",
-    "Explain_complexity": "A score representing how much time is needed to craft one item. Crafting multiple items is obviously faster as you don't have to do teleports again.",
+    "Explain_complexity": "Ein Wert, der zeigt, wie viel Zeit zur Herstellung eines Gegenstands benötigt wird. Das Herstellen mehrerer Gegenstände ist offensichtlich schneller, da du nicht erneut teleportieren musst.",
     "Explain_cost_to_craft": "Zusätzlich Kosten für alle Materialien, ausgenommen Kristalle, um einen Gegenstand nur mit Materialien vom Marktbrett herzustellen.",
     "Empty_list": "Leere Liste, klicke auf die + Schaltfläche eines Gegenstands um ihn hier hinzuzufügen",
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
