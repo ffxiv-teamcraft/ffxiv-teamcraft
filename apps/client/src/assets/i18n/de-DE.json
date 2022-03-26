@@ -714,7 +714,7 @@
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
     "Add_from_external": "Als extern hinzufügen (du hast keine Materialien dafür verwendet)",
-    "Missing_masterbook": "You don't have this Master book in your profile. Click to add it to the profile.",
+    "Missing_masterbook": "Du hast dieses Meisterbuch laut deinem Profil nicht, klicke um es hinzuzufügen.",
     "No_note": "Keine Notiz",
     "Edit_note": "Keine Notiz",
     "Note_placeholder": "Notiz",
@@ -740,8 +740,8 @@
     "Autofill_notification_title": "Gegenstand fertiggestellt",
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Autofill_crafting_gathering_title": "Herstellungs- oder Sammelmethode erkannt",
-    "Autofill_crafting_gathering_message": "Autofill is on slow mode until you are done crafting (stand up ingame) or gathering (close the UI) in order to prevent database issues with autofilling too fast.",
-    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
+    "Autofill_crafting_gathering_message": "Automatisches Ausfüllen ist im Slowmode solange du etwas herstellst (stehe ingame auf) oder sammelst (schließe das Fenster), um Datenbankprobleme durch zu schnelles Ausfüllen zu verhindern.",
+    "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
@@ -764,7 +764,7 @@
       "Layout_name": "Layoutname",
       "Invalid_import": "Ungültiger Layout Import Code!",
       "Global_options": "Allgemeine Optionen",
-      "Default_readonly_message": "Default layout is readonly. You have to create a new layout using the + button to be able to customize it.",
+      "Default_readonly_message": "Standardlayout ist schreibgeschützt. Erstelle mit dem + Button ein neues, um es zu ändern.",
       "Buttons": "Schaltflächen",
       "Menu": "Menü",
       "Edit_row_buttons_display": "Anzeige der Zeilenschaltflächen bearbeiten",
@@ -804,7 +804,7 @@
     },
     "OVERLAY": {
       "Open": "Listen-Overlay umschalten",
-      "No_display": "Open a list in the main window to get started",
+      "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     },
     "SPLIT": {
