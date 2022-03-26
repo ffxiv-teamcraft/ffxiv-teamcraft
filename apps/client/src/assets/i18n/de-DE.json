@@ -910,7 +910,7 @@
     "Hidden_item": "Versteckt",
     "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
     "Add_alarm": "Benachrichtigung hinzufügen",
-    "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
+    "Add_alarm_fish_eyes": "Alarm mit Fischaugen hinzufügen",
     "Snagging": "Requires Snagging",
     "Predators": "Zunächst diese Fische angeln",
     "Fish_eyes_duration": "Deine Fischaugen müssen diese Dauer haben, um den Fisch zu bekommen. Klicke um das Format zu ändern.",
@@ -919,9 +919,9 @@
     "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
     "Legendary": "Legendär",
     "Switched_to_compact": "Es wurde zur Kompaktansicht gewechselt, weil es zu viele Ergebnisse gibt.",
-    "Node_type": "Type",
-    "Use": "Use",
-    "Page_range": "{{start}}-{{end}} of {{total}} items"
+    "Node_type": "Typ",
+    "Use": "Benutzen",
+    "Page_range": "{{start}}-{{end}} von {{total}} Gegenständen"
   },
   "ANNOUNCEMENT": {
     "Title": "Ankündigung",
@@ -939,7 +939,7 @@
     "Not_found": "Vorlage nicht gefunden",
     "STATUS": {
       "Loading": "Lade Vorlage aus der Datenbank",
-      "Copying": "Creating a copy of the list in your account. You'll be redirected to it once it's done"
+      "Copying": "Kopie der Liste wird in deinem Konto erstellt, du wirst nach Abschluss weitergeleitet"
     }
   },
   "PERMISSIONS": {
@@ -968,7 +968,7 @@
   },
   "WIKI": {
     "Title": "Wiki",
-    "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
+    "Not_found_in_current_lang": "Diese Seite wurde nicht in deiner Sprache gefunden, deshalb wird die englische Version angezeigt",
     "Not_found": "Seite nicht gefunden"
   },
   "SIMULATOR": {
