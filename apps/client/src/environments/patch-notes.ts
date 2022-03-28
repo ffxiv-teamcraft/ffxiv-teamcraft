@@ -1,9 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **core:** fix simulator and level cap for chinese 6.0.
-* **inventory-optimizer:** removed fishing from easily gathered optimizer.
-
-
-### Features
-
-* **core:** added tooltip to spawn timers in alarms page and sidebar.`;
+* **db:** fixed missing ko/zh item names breaking the app.
+* **leveling-equipment:** removed blue items from results.`;

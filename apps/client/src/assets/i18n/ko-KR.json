@@ -1,7 +1,7 @@
 {
   "Mogstation": "모그스테이션",
   "Quests": "퀘스트",
-  "Facebook_notice": "Facebook login is no longer available. You can add a password to your account using the \"reset password\" system, or by asking Miu on Discord.",
+  "Facebook_notice": "페이스북 로그인은 더이상 지원하지 않습니다. '비밀번호 재설정' 을 통해 비밀번호를 변경하시거나, 팀크래프트 디스코드에서 Miu에게 비밀번호 변경을 요청할 수 있습니다.",
   "Pick_a_list": "목록 선택",
   "Pick_a_user": "유저 선택",
   "Pick_a_fc": "자유부대 선택",
@@ -16,10 +16,10 @@
   "No_known_coordinates": "알려진 좌표 없음",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
-  "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
+  "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 Tc디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "Patch_notes": "{{version}} 변경점",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
+  "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "Selection": "선택",
   "Change_character": "캐릭터",
   "Check_guides": "팀크래프트 가이드 보기",
@@ -45,7 +45,7 @@
     "Add_to_list": "목록에 추가",
     "Apply_filters": "필터적용",
     "Reset_filters": "필터 초기화",
-    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
     "Only_craftable": "제작가능한 제작법만 검색",
@@ -55,9 +55,9 @@
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
   "Find_us_on_twitter": "공식 트위터",
-  "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
-  "Support_on_patreon": "Support the project on Patreon",
+  "Join_discord_server": "팀크래프트 디스코드 참여",
+  "See_code_github": "Github에서 코드 보기",
+  "Support_on_patreon": "Patreon에서 프로젝트 후원",
   "Access_patreon_page": "Patreon 페이지로 이동",
   "Like_the_tool": "해당 기능에 만족하셨나요?",
   "Default": "기본 설정",
@@ -85,7 +85,7 @@
     "Workshops": "공방",
     "Add_one_list": "목록 추가",
     "Add_workshop": "공방 추가",
-    "Delete_message": "Deleting a workshop won't delete the lists in it. They will only be brought back to workshop-less lists",
+    "Delete_message": "공방이 삭제되더라도 내부의 목록은 지워지지 않고 공방이 없는 목록으로 돌아갑니다.",
     "List_selection_title": "공방 {{workshopName}} 에 추가할 목록 선택",
     "Name_dialog": "공방 이름",
     "Created_by": "제작자: {{name}}",
@@ -130,7 +130,7 @@
     "Exclude_filter_placeholder": "추가된 필터 제외",
     "Exclude_filter_reset": "제외된 필터 초기화",
     "Name_filter_placeholder": "이름을 사용하여 필터링 (최소 5글자)",
-    "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
+    "No_lists_matching": "필터와 일치하는 목록이 없습니다. 하나 이상의 태그 또는 최소 5글자 이상의 이름을 입력해야 합니다",
     "Search": "검색"
   },
   "COMMON": {
@@ -148,7 +148,7 @@
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
-    "Opened_in_desktop": "This page has been opened inside your desktop app. You can now close it.",
+    "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Opened_in_desktop_setting": "설정에서 해당 동작을 비활성화할 수 있습니다",
     "Opened_in_desktop_button": "또는 이 버튼 클릭하기",
     "Open_in_desktop": "데스크톱 앱에서 열기",
@@ -183,7 +183,7 @@
     "Never": "하지 않음",
     "Festival": "이벤트 기간에만 가능",
     "Back": "뒤로 가기",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Patreon 후원하고 광고 없애기",
     "Support_us": "후원하기",
     "Show_more": "더 보기",
     "Item": "아이템",
@@ -231,13 +231,13 @@
     "Remove_from_group": "해당 그룹 삭제",
     "No_folder": "폴더 없음",
     "Click_to_show_all_alarms": "클릭하여 모든 알람 표시",
-    "Enable_TTS": "Enable Text-to-Speech",
+    "Enable_TTS": "텍스트 음성 변환(TTS) 사용",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
+      "WEEKLY_RESETS_DESCRIPTION": "단골 거래, 쿠로의 공상수첩, 주 제한 획득 (24인 연합 레이드, 영웅 레이드 보상, 일반 레이드 무기 교환품), 주간 복권, 공략수첩, 패션 체크, B급 정예 마물 수배서",
       "ROULETTES_RESET": "무작위 임무 & 야만족 일일 퀘스트",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
+      "ROULETTES_RESET_DESCRIPTION": "무작위 임무, 야만족 일일 퀘스트 수주권, 일일 마물 수배서, 일일 복권 초기화",
       "DELIVERIES_RESET": "조달 임무",
       "DELIVERIES_RESET_DESCRIPTION": "총사령부 조달 품목 초기화",
       "LEVE_ALLOWANCES": "의뢰 수주권",
@@ -248,7 +248,7 @@
       "Name": "이름",
       "Spawn": "출현 시간(에오르제아 시간)",
       "Spawns_twice": "2회 출현",
-      "Spawns_twice_description": "Spawns twice per Eorzean day (One spawn AM, one PM)",
+      "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
       "Duration": "지속/제한시간(에오르제아 시간)",
       "Slot": "슬롯",
       "Slot_description": "게임 내 채집 인터페이스에 아이템이 등장하는 슬롯(1-8) (5.1패치부터는 필수는 아닙니다)",
@@ -331,7 +331,7 @@
   "MIN/BTN": "광부 / 원예가",
   "Game_Term/FSH": "어부",
   "Reduction": "정제",
-  "Upgrade_list": "Recreate and update list for the latest app version",
+  "Upgrade_list": "최신 앱 버전으로 목록 재생성 및 업데이트",
   "List_recreated": "목록이 재생성되었습니다",
   "List_popup_title": "목록을 갱신중입니다. 잠시만 기다려주세요",
   "Please_wait": "금방 될거에요. 잠깐만 기다려주세요",
@@ -343,7 +343,7 @@
   "Recipe_Added": "1개의 아이템이 {{listname}} 목록에 추가되었습니다",
   "Recipes_Added": "{{listname}} 에 {{itemcount}} 개의 아이템이 추가되었습니다, 알림을 클릭하면 목록이 열립니다.",
   "Character_name": "캐릭터 이름",
-  "Character_add_warning": "If you are seeing this without having deleted your character manually, don't input anything and refresh the page or restart the app. If this problem persists, please report it on the Discord server.",
+  "Character_add_warning": "직접 캐릭터를 삭제하지 않았는데 이것이 보인다면, 아무것도 입력하지 말고 페이지를 새로고침 하거나 앱을 재시작하세요. 그래도 이 문제가 지속되면 디스코드 서버에 보고 해주세요.",
   "Disconnect_and_anonymous": "로그아웃 후 익명으로 계속하기",
   "Add_manual_character": "캐릭터 수동추가",
   "Character_informations": "캐릭터 정보",
@@ -360,7 +360,7 @@
   "Npc_breakdown": "Npc 그룹화",
   "Reverse_tiers": "단계 역순 표시",
   "Timer_options": "타이머 옵션",
-  "Early_by": "Early by (Eorzean hours)",
+  "Early_by": "출현 전 알림 (에오르제아 시간 기준)",
   "Sound": "소리",
   "Share_link_copied": "링크가 클립보드에 복사되었습니다",
   "Share": "공유하기",
@@ -368,8 +368,8 @@
   "Forgot_password": "비밀번호 찾기",
   "Email_enter": "이메일",
   "Email_not_found": "이메일을 찾을 수 없습니다",
-  "Email_sent": "An email has been sent with instructions on how to change your password.",
-  "Copy_current_link": "Copy a link to the current page on website to your clipboard",
+  "Email_sent": "비밀번호 변경 방법에 대한 메일이 발송되었습니다.",
+  "Copy_current_link": "현재 웹페이지 링크를 클립보드에서 복사",
   "ALARM": {
     "Spawned": "{{itemName}} 출현 예정!",
     "See_on_map": "위치",
@@ -399,14 +399,14 @@
     "General": "일반",
     "Link_base": "아이템 링크",
     "Region": "지역",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain regions.",
+    "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Proxy": "프록시",
     "Proxy_bypass": "프록시를 쓰지 않을 주소",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
     "Always_on_top": "항상 위에 표시",
-    "Always_open_on_main_page": "Always open on main page",
+    "Always_open_on_main_page": "항상 메인 화면만 열기",
     "Start_minimized": "트레이 모드로 실행",
     "Always_quit": "닫기 버튼으로 팀크래프트 완전히 종료하기(미설정시 최소화)",
     "Enable_minimize_reduction": "창 최소화시 작업표시줄이 아닌 트레이로 이동시키기",
@@ -421,8 +421,8 @@
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
     "Password_reset_mail_sent": "비밀번호 재설정 이메일이 전송되었습니다.",
-    "Connect_with_patreon": "Connect with Patreon",
-    "Connected_with_patreon": "Connected with Patreon",
+    "Connect_with_patreon": "Patreon에 연결",
+    "Connected_with_patreon": "Patreon에 연결되었습니다.",
     "Nickname": "닉네임",
     "Nickname_used": "이미 사용중인 닉네임입니다.",
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
@@ -468,7 +468,7 @@
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Show_patch_notes_on_update": "새 업데이트마다 패치노트 보여주기",
     "Scrolling_behavior": "스크롤 설정",
-    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves. Default means allow up to 12 items per panel before scrolling.",
+    "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
     "Enable_auto_stats_updating": "잡 변경 시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
@@ -481,7 +481,7 @@
     "Maximum_total_vendor_price": "상점 구매가 최대치",
     "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
     "Rawsock_flag": "패킷 캡처를 위하여 RawSocket 사용하기",
-    "Rawsock_details": "Using RawSocket captures the traffic without npcap, and can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
+    "Rawsock_details": "RawSocket을 사용하면 npcap 없이 트래픽을 캡처하므로 VPN 사용시에 도움이 될 수 있습니다. 하지만 전반적으로 신뢰성이 떨어지며 팀크래프트 실행시마다 수동으로 관리자권한 실행을 하셔야 합니다.",
     "Favorite_features": "즐겨찾는 기능",
     "Favorite_features_explain": "사이드바에 원하는 기능을 즐겨찾기로 보여주기.",
     "Clear_inventory_on_startup": "실행시 소지품 비우기",
@@ -491,10 +491,10 @@
     "Reset_contentid_characters": "캐릭터 연결 초기화",
     "Reset_contentid_characters_ok": "연결된 캐릭터가 초기화되었습니다",
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
-    "Show_other_characters_inventories_in_inventory_page": "Show other characters' inventories in inventory page",
+    "Show_other_characters_inventories_in_inventory_page": "소지품 페이지에서 다른 캐릭터의 소지품도 표시",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
     "Alarm_groups_before_no_group": "그룹지정이 안된 알람 앞에 그룹 알람을 표시",
-    "Disconnect_patreon": "Disconnect from Patreon",
+    "Disconnect_patreon": "Patreon 연결 끊기",
     "Export_settings": "설정 내보내기",
     "Import_settings": "설정 가져오기",
     "Import_successful": "설정을 불러왔습니다",
@@ -504,7 +504,7 @@
     "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
     "Reload_auth_token": "인증 토큰 다시 불러오기",
     "Materia_confidence_rate": "금단 신뢰율",
-    "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Materia_confidence_rate_explain": "마테리아 예측 신뢰율이 높다는 것은 더 많은 마테리아가 요구되며, 해당 수량 이내로 금단을 끝낼 가능성이 높다는 것을 의미합니다",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -554,17 +554,17 @@
     "Jobs": "직업",
     "Stats": "능력치",
     "View_on_apkallu_falls": "아프칼루 폭포에서 열기",
-    "Masterbooks": "Master books",
+    "Masterbooks": "비전서",
     "Patreon_supporter": "Patreon 후원자",
     "Patreon_features": "Patreon 후원자 특전",
     "Contacts": "연락처",
     "Add_new_contact": "새 연락처",
     "Save_for_all": "모든 직업에 적용",
-    "User_not_verified": "User not verified. Click to verify user.",
+    "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요.",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
     "Autofill_from_packets": "패킷 캡처를 사용하여 능력치 자동채우기 (음식 사용시 음식도 포함됩니다)",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, and close this popup once you're done. Please make sure you don't have any active food, or else it'll save your stats with the food active.",
+    "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해주시고, 완료가 되면 이 팝업창을 닫으세요.(음식효과가 포함되지않게 해주세요. 시뮬레이터 사용시 음식효과가 포함된 능력치면 사용할 때 문제가 생길 수 있습니다)",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
     "Fishing_rankings": "낚시 순위",
@@ -576,8 +576,8 @@
       "Button": "인증",
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
-      "Success": "Character verified! You can now close this popup. Feel free to remove the code from your profile, as it isn't needed anymore.",
-      "Error": "Couldn't find the code in your bio. Please make sure you pasted it and applied the changes, then wait ~30s and retry.",
+      "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
+      "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
       "Validate": "인증"
     }
   },
@@ -599,7 +599,7 @@
     "Lists_search_placeholder": "목록 검색...",
     "Add_to_a_list": "목록에 추가",
     "Please_pick_recipe": "이 아이템에 대한 제작법을 선택해주세요.",
-    "Import_description": "Pick the recipe you want to use for the items that can be crafted and select a list. The items will be added to this list and you'll be redirected to it.",
+    "Import_description": "만들고자 하는 아이템에 대한 제작법을 고르고 목록을 선택하세요. 그러면 아이템이 목록에 추가되고 자동으로 해당 목록으로 이동합니다.",
     "Delete_after_merge": "병합 후 기존 목록 삭제",
     "Favorite_lists": "즐겨찾기 목록",
     "No_favorite_lists": "즐겨찾기 목록이 없습니다",
@@ -644,7 +644,7 @@
     "Optimized_full_path": "모든 추천 경로 표시 (가장 저렴하고 빠른 경로)",
     "Quick_layout_swap": "빠른 레이아웃 전환",
     "Offline": "오프라인",
-    "Offline_help": "Offline lists are stored inside the browser or the app. They are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline_help": "오프라인 목록은 브라우저 혹은 앱 내에 저장됩니다. 해당 목록은 공유를 할 수 없지만 네트워크를 사용하지 않으며 더 빠르게 로딩됩니다.",
     "Mark_whole_panel_done": "패널의 내용을 완료됨으로 표시",
     "Set_color": "목록 색상 설정",
     "Go_to_pinned": "고정해둔 목록으로 가기 (우클릭시 고정해제)",
@@ -659,7 +659,7 @@
     "Requirements_ignored": "무시된 재료",
     "Mark_whole_panel_nq": "수동 HQ 마크 제거",
     "Mark_whole_panel_hq": "전체 패널 HQ 마크",
-    "Crafts": "crafts",
+    "Crafts": "제작",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -709,12 +709,12 @@
   },
   "LIST_DETAILS": {
     "List_finished": "목록 완성",
-    "Public_list_description": "Setting a list to public adds it to the public lists section. THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as a Community List but has no tags. Please add some tags using ",
+    "Public_list_description": "목록 공개 설정은 이 목록을 공개 목록 섹션에 추가시킵니다. <b>공유는 필요하지 않습니다.</b>",
+    "Missing_tags_before_button": "커뮤니티 목록에 등록된 목록에 태그가 없습니다. 태그를 달아주세요. ",
     "Missing_tags_after_button": " 버튼",
     "Add_remove_amount": "현재 수량에 추가/제거",
     "Add_from_external": "외부재로 추가(재료 불필요)",
-    "Missing_masterbook": "You don't have this Master book in your profile. Click to add it to the profile.",
+    "Missing_masterbook": "이 비전서를 보유하고 있지 않습니다. 프로필에 추가하려면 클릭해주세요.",
     "No_note": "메모 없음",
     "Edit_note": "메모 수정",
     "Note_placeholder": "메모",
@@ -741,7 +741,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Autofill_crafting_gathering_title": "제작 또는 채집이 탐지됨",
     "Autofill_crafting_gathering_message": "자동채우기는 기본적으로 제작/채집이 완료될 때까지(인게임에서, UI를 닫을 때까지) 슬로우 모드로 동작합니다. 이것은 빠르게 자동 채우기를 하는 경우에 데이터가 꼬이는 문제를 방지하기 위함입니다.",
-    "Fill_with_inventory": "Fill with inventory (only accounts for what you have in personal inventory)",
+    "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}}개 필요",
@@ -764,7 +764,7 @@
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
-      "Default_readonly_message": "Default layout is readonly. You have to create a new layout using the + button to be able to customize it.",
+      "Default_readonly_message": "기본 레이아웃은 읽기전용이며, + 버튼을 눌러 편집 가능한 새 레이아웃을 만들 수 있습니다.",
       "Buttons": "버튼",
       "Menu": "메뉴",
       "Edit_row_buttons_display": "행 버튼 편집",
@@ -804,7 +804,7 @@
     },
     "OVERLAY": {
       "Open": "목록 오버레이 켜기/끄기",
-      "No_display": "Open a list in the main window to get started",
+      "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     },
     "SPLIT": {
@@ -817,7 +817,7 @@
     "HEAVENSWARD": "창천의 이슈가르드",
     "STORMBLOOD": "홍련의 해방자",
     "SHADOWBRINGERS": "칠흑의 반역자",
-    "ENDWALKER": "Endwalker",
+    "ENDWALKER": "효월의 종언",
     "OUTDATED": "만료",
     "GEAR": "장비",
     "CONSUMABLE": "소모품",
@@ -844,12 +844,12 @@
     "WHM": "백마",
     "SCH": "학자",
     "AST": "점성",
-    "SGE": "SGE",
+    "SGE": "현",
     "MNK": "몽크",
     "DRG": "용기사",
     "NIN": "닌자",
     "SAM": "사무",
-    "RPR": "RPR",
+    "RPR": "리",
     "BRD": "음유",
     "MCH": "기공",
     "DNC": "댄서",
@@ -908,20 +908,20 @@
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
-    "Fish_eyes": "Requires Fish Eyes to only care about weather requirement",
+    "Fish_eyes": "오직 날씨 조건만을 위하여 물고기의 눈 필요",
     "Add_alarm": "알람 추가",
-    "Add_alarm_fish_eyes": "Add alarm with Fish Eyes",
-    "Snagging": "Requires Snagging",
+    "Add_alarm_fish_eyes": "물고기의 눈과 함께 알람을 추가",
+    "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "이 물고기를 낚기 위해서는 해당 지속시간만큼의 물고기의 눈이 필요합니다. 형식을 변경하려면 클릭하세요.",
     "Spawned_for": "{{timer}} 이후 사라짐",
     "Will_spawn_in": "{{timer}} 이후 나타남",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations. Position is an approximation.",
+    "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
     "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
     "Node_type": "유형",
     "Use": "Use",
-    "Page_range": "{{start}}-{{end}} of {{total}} items"
+    "Page_range": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템"
   },
   "ANNOUNCEMENT": {
     "Title": "공지사항",
@@ -939,7 +939,7 @@
     "Not_found": "템플릿을 찾을 수 없습니다",
     "STATUS": {
       "Loading": "데이터베이스에서 서식을 불러오는 중",
-      "Copying": "Creating a copy of the list in your account. You'll be redirected to it once it's done"
+      "Copying": "목록 복사본을 계정에 생성중입니다. 완료시 자동으로 이동합니다."
     }
   },
   "PERMISSIONS": {
@@ -968,7 +968,7 @@
   },
   "WIKI": {
     "Title": "위키",
-    "Not_found_in_current_lang": "This page wasn't found in your current language. English version will be shown",
+    "Not_found_in_current_lang": "이 페이지는 지금 사용중인 언어로 번역되지 않았습니다. 영문 페이지가 보여집니다.",
     "Not_found": "페이지를 찾을 수 없습니다."
   },
   "SIMULATOR": {
@@ -1015,7 +1015,7 @@
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
     "Export_crafting_optimizer": "Crafting optimizer 형식으로 내보내기",
     "Export_copied": "Crafting optimizer 내보내기 코드를 클립보드에 복사하였습니다.",
-    "Unsaved_changes": "You have unsaved changes. Please save before leaving this page or changes will be lost.",
+    "Unsaved_changes": "저장되지 않은 변경점이 있습니다. 페이지를 나가기 전에 저장을 하지 않으면 변경한 부분이 사라집니다.",
     "Crafting_optimizer_code": "Crafting optimizer 코드[=인게임 제작매크로]",
     "Generated_macro": "인게임 매크로",
     "Generate_ingame_macro": "인게임 매크로 생성",
@@ -1036,7 +1036,7 @@
     "Change_rotation": "로테이션 변경",
     "New_rotation_folder": "새 폴더 만들기",
     "Safe_mode": "안전 모드",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chance to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "성공률 100%가 아닌 스킬들은 사용불가(버프 포함)",
     "Quality_needed": "HQ 100%까지 품질 {{amount}} 남음",
     "Rotation_tips": "로테이션 팁",
     "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
@@ -1049,7 +1049,7 @@
     "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
     "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
-    "Could_not_find_minstats": "Could not find minimum stats for this rotation",
+    "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "Macro_duration": "매크로 길이: {{duration}}초",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
@@ -1057,7 +1057,7 @@
     "Detailed": "세부 정보",
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "능력치 적용됨",
-    "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Show_rotations_above_stats": "현재 능력치보다 높은 능력치를 요구하는 로테이션 포함",
     "Full_buttons": "모든 버튼 표시",
     "STATE": {
       "Excellent": "최고품질",
@@ -1091,13 +1091,13 @@
       "Min_cp_filter_placeholder": "최소 CP",
       "Difficulty_filter_placeholder": "작업량",
       "Quality_filter_placeholder": "품질",
-      "Intro": "Input a recipe lvl to get started",
+      "Intro": "레시피 레벨을 입력하세요",
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
       "Success_collectable": "성공률: {{collectability}}",
       "Set_to_simulate": "능력치",
-      "Specialist_rotation_warning": "The result shown uses a non specialist stat set for a specialist rotation, which is why resulting HQ% might be way lower than expected.",
+      "Specialist_rotation_warning": "보여주는 결과값은 비전문장인 상태로 전문장인 로테이션을 사용하기 때문에 HQ확률이 예상보다 훨씬 더 낮을 수 있습니다",
       "Steps_count": "{{count}} 공정",
       "TAGS": {
         "SPECIALIST": "전문장인",
@@ -1146,7 +1146,7 @@
     },
     "CONFIGURATION": {
       "Job": "직업",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your Profile page to configure it properly and set stats.",
+      "Job_not_configured": "아직 이 직업을 설정하지 않은 것 같습니다. 프로필 페이지에서 직업 설정이 되었는지 확인한 뒤 능력치를 설정해주세요.",
       "Job_not_configured_anonymous": "정확한 시뮬레이션을 위해 능력치를 입력하거나 계정에 로그인 해 주시길 바랍니다",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
@@ -1159,14 +1159,14 @@
       "Apply_foods": "소모품 적용",
       "Food": "음식 선택",
       "Medicine": "약차 선택",
-      "Action": "Choose Free Company actions",
+      "Action": "자유부대 버프선택",
       "Save_on_profile": "프로필에 저장",
       "Reset_set": "능력치 초기화",
       "Save_consumables": "현재 소모품을 기본값으로 세팅",
       "No_food": "음식 없음",
       "No_medicine": "약차 없음",
       "No_fc_buffs": "부대버프 없음",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
+      "Quest_warning": "70레벨 직업 퀘스트로 '명인의 발상'을 획득했는지 꼭 확인하세요",
       "Starting_quality": "초기 품질",
       "STATS": {
         "CP": "CP",
@@ -1176,10 +1176,10 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "안전모드에 맞지 않는 스킬이 사용됨",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "작업 완료 전에 내구도가 0이 됨",
       "NOT_ENOUGH_CP": "CP부족",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
-      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
+      "MISSING_LEVEL_REQUIREMENT": "이 아이템을 제작하기에는 레벨이 부족합니다",
+      "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
       "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다"
     },
@@ -1191,14 +1191,14 @@
       "Use_durability_restoration_later": "내구도 회복스킬을 낭비하지 않기 위해서는 {{index}} 번째 공정이후 내구도 회복스킬을 사용하세요.",
       "Use_patient_touch_faster": "'전념 가공'은 '정신집중'의 스택이 쌓이기 전에 사용하세요. 만약 스킬이 실패한다면 스택이 낭비될 수도 있습니다.",
       "Do_not_overlap_buffs": "{{overlappedIndex}} 번째 공정에서 사용한 버프가 {{overlappingIndex}} 번째 공정에서 사용한 버프와 중복됩니다. 버프의 효과를 최대한 받을 수 있도록 조금 늦게 사용해야 합니다.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
+      "Use_byregot_brow_5_stacks": "'비레고의 축복' 대신 '비레고의 기교'를 사용하시면 같은 품질량이 상승하면서도 CP 6을 절약할 수 있습니다.",
       "Use_ingenuity_before_byregot": "더 높은 품질향상을 위해 '비레고' 스킬을 사용하기 전에 '독창적 발상' 을 사용해야 합니다",
       "Use_more_quality_actions": "내구도가 남은 상태로 제작을 끝마쳤습니다. 남은 내구도를 이용하여 더 많은 가공스킬을 사용할 수 있습니다.",
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
+      "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
+      "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
+      "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요",
       "Use_reuse": "현재 로테이션이 HQ100%에 도달하면서도 '재사용'을 사용할 CP가 충분하므로, '재사용'을 고려해보세요."
     }
   },
@@ -1206,8 +1206,8 @@
     "Expect_to_sell_everything": "전체 판매 가정",
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "장터게시판 가격으로 자동입력",
-    "Autofill_panel_prices_your_server": "Fill prices based on marketboard prices (your server only)",
-    "Content_copied": "Content copied to your clipboard",
+    "Autofill_panel_prices_your_server": "장터게시판 가격으로 자동입력 (캐릭터의 서버기준)",
+    "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구매시 더 저렴함",
     "Copy_panel_as_text": "이 패널을 텍스트로 복사",
     "Ignore_completed_items": "완료된 아이템 제외",
@@ -1232,7 +1232,7 @@
     "INTRO": {
       "Title": "길드 의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
-      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
+      "Second_line": "직업을 고르고, 레벨 범위를 입력하면 이에 따른 길드의뢰들이 표시됩니다. 원하는 길드의뢰를 선택한 뒤 목록에 추가하면 필요한 제작법이 자동으로 선택된 목록에 추가됩니다.",
       "Third_line": "또한 길드의뢰명을 알고 있을 경우 이름으로 검색할 수 있습니다."
     }
   },
@@ -1305,7 +1305,7 @@
     "Unit_price": "개당 가격",
     "History": "최근 기록",
     "Purchase_date": "날짜",
-    "More_on_universalis": "More details on Universalis",
+    "More_on_universalis": "universalis에서 자세히 보기",
     "Server": "서버",
     "Last_updated": "최종 갱신"
   },
@@ -1329,21 +1329,21 @@
     "Buy_merch": "팀크래프트 상품 구매하기",
     "Features_header": "시작하기!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
-      "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
+      "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
+      "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
+      "Alarms": "알람을 만들어 채집장소 출현을 놓치지 않고, 그룹으로 묶고, 인게임으로 내보내는 것과 같은 모든 것을 할 수 있습니다!",
+      "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다!",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로를 번역할 수 있습니다."
     }
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다!",
     "New_update_available_desktop": "새로운 업데이트가 추가되었습니다!\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
-    "Downloading_update": "Downloading the update! You'll be prompted to install once the download is done",
-    "Possible_update_issue": "It seems like your download is having an issue. Please click this icon to download latest setup."
+    "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
+    "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
   },
   "LOG_TRACKER": {
     "Title": "수첩 트래커",
@@ -1367,10 +1367,10 @@
     "BTN_optimized_path": "모든 원예가 채집물의 추천 경로",
     "Import_from_carbuncleplushy": "CarbunclePlushy에서 불러오기",
     "Import_from_carbuncleplushy_failed": "가져오기 실패, 잘못된 JSON이 있었습니다. 전체 설정 내보내기를 사용해야만 합니다",
-    "Import_from_carbuncleplushy_success": "Fishing Log Tracker updated successfully",
+    "Import_from_carbuncleplushy_success": "낚시 로그 트래커를 업데이트했습니다",
     "Export_FSH_completion": "JSON 형식으로 완료 목록 내보내기",
     "Export_FSH_completion_copied": "JSON 형식의 완료 목록이 클립보드에 복사되었습니다",
-    "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
+    "Log_in_to_track": "로그 트래커 완료를 추적하기 위해 로그인",
     "PAGE": {
       "Master_recipes": "비전서: 제{{number}}권",
       "Housing_items": "하우징({{number}})",
@@ -1408,7 +1408,7 @@
       "CRAFT": {
         "Title": "제작 방법",
         "Job": "직업",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "아이템에 필요한 재료를 설정하지 않았습니다. 이것은 어떠한 재료도 없이 제작한다는 것을 의미합니다."
       },
       "GATHERING": {
         "Title": "채집 방법",
@@ -1466,7 +1466,7 @@
     "Title": "분해 가이드",
     "Job": "직업",
     "Level": "분해 레벨",
-    "Intro": "Select a job and input a level to find the best items to level up your desynth",
+    "Intro": "직업을 선택하고 분해 레벨을 입력해서 분해 레벨링에 최적화된 아이템을 찾으세요",
     "Loading_message": "불러오는 중...",
     "TAGS": {
       "Higher_chances": "높은 분해 확률",
@@ -1506,8 +1506,8 @@
     "TT_card_unlock": "카드 목록에 추가",
     "Track_on_attt": "다른 트리플 트라이어드 사이트에서 확인",
     "Unlocked_by_quest": "선행 퀘스트",
-    "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
-    "Triple_triad_pack": "Triple Triad card pack",
+    "More_on_attt_npc": "다른 트리플 트라이어드 사이트에서 해당 NPC에 대해 자세히 보기",
+    "Triple_triad_pack": "트리플 트라이어드 팩",
     "Dungeons": "던전/토벌전",
     "Used_for_trades": "교환",
     "Can_contain_items": "획득 가능한 아이템",
@@ -1518,7 +1518,7 @@
     "Min_ilevel": "최소 아이템레벨",
     "Sync_to": "최대 조율레벨",
     "Exp": "경험치",
-    "Week_restriction": "Weekly restriction",
+    "Week_restriction": "주간 보상 제한",
     "Fights": "네임드 보스",
     "Instance_details": "던전 세부 정보",
     "Instance_rewards": "보상",
@@ -1559,8 +1559,8 @@
       "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시",
       "X_Equipped": "장착됨: {{amount}} 개",
       "Item_series": "장비 세부정보",
-      "Requires_fate_rank": "Requires FATE rank {{rank}}",
-      "Requires_gc_rank": "Requires Grand Company rank {{rank}}"
+      "Requires_fate_rank": "돌발 랭크 {{rank}} 필요",
+      "Requires_gc_rank": "자유부대 {{rank}} 랭크 필요"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -1583,8 +1583,8 @@
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
       "No_spot_filter": "필터링 없음",
-      "Chances_for_transition": "Chance for this transition to happen",
-      "Weather_chances": "Chance for each weather to appear",
+      "Chances_for_transition": "이 날씨로 바뀔 확률",
+      "Weather_chances": "각 날씨별 나올수 있는 확률",
       "Bait": "미끼",
       "Refresh_data": "새로고침",
       "Bite_times": "입질 시간",
@@ -1620,8 +1620,8 @@
         "Size": "크기",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
-          "No_bait": "No bait detected. Switch bait once to fix.",
-          "No_stats": "No stats detected. Switch to Fisher again to fix."
+          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
+          "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
         }
       }
     },
@@ -1751,7 +1751,7 @@
       "No_comments": "댓글 없음",
       "Post": "게시",
       "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한을 받을 수 있습니다."
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
@@ -1791,7 +1791,7 @@
     "Any": "모두",
     "Achievement": "업적",
     "Fishing-spot": "낚싯터",
-    "Gathering-node": "Gathering node"
+    "Gathering-node": "채집 지점"
   },
   "SEARCH_FILTERS": {
     "Level": "레벨",
@@ -1819,10 +1819,10 @@
     "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",
     "Import_from_clipboard": "클립보드 내용을 불러오기",
     "Import_from_inventory": "소지품에서 불러오기",
-    "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
+    "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
     "Clear": "아이템 목록 초기화",
-    "Clipboard_import_duplicates": "Items that show twice are here because Lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러칸 차지하는 경우에 중복되어 보일 수 있습니다.",
     "Inventory": "소지품",
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
@@ -1837,11 +1837,11 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
-    "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
+    "Description": "[글로벌 서버 전용] 석판 또는 화폐가 많나요? 원하는 석판 또는 화폐를 선택하고, 수량을 입력하고, 서버를 고르세요. 그러면 현재 자신의 화폐/석판으로 교환 가능한 품목 중에서 가장 비싼 품목을 찾아줍니다!",
     "Pick_currency": "교환용 아이템 선택",
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
+    "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 작업할 수 없습니다.",
     "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
     "X_sold_last_week": "지난 주 {{amount}} 개 판매"
@@ -1856,7 +1856,7 @@
   },
   "ERRORS": {
     "Http_request_error": "{{tool}} 에 문제가 있으며, 다시 한번 시도 해주시기 바랍니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #announcements 채널에 고정된 메세지를 참고하세요.",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
+    "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
     "Sort_by": "정렬 기준: ",
@@ -1918,34 +1918,34 @@
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
     "Button_label": "패킷 캡쳐 활성화",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
+    "Banner_description": "팀크래프트가 게임 내의 패킷을 읽을 수 있도록 패킷 캡쳐를 활성화시킬 수 있습니다. (설정에 있는 체크박스로 활성화/비활성화 할 수 있음) 활성화시켰을 경우 아이템을 얻을 경우 자동으로 목록을 채워주며, 해당 정보를 Universalis에 제공하여 장터 애그리게이터(aggragator) 에 기여합니다.",
+    "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없습니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 다른 지역으로 텔레포 한 다음 초코보 가방을 열어주세요.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing. Please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "현재 플레이 중인 캐릭터가 확인되지 않아 소지품 동기화를 할 수 없습니다. 소지품에서 아이템 정렬/정렬 되돌리기를 실행하시거나 Teamcraft를 실행한 채로 현재 캐릭터를 재접속 해주세요.",
     "Unknown_character": "알 수 없는 인게임 캐릭터",
-    "No_character_id": "No ingame character ID set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame). This is only needed once.",
+    "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
+    "Please_relog": "Universalis에 기여하기 위해서는 게임을 한번 로그아웃 하신 후에 재접속하셔야 합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
     "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다.",
     "Possible_missing_firewall_rule": "패킷 캡처가 제대로 작동하지 않고 있습니다",
     "Possible_missing_firewall_rule_description": "현재 사용하시는 PC의 방화벽 규칙에 패킷 캡처가 없기 때문에 수집된 소지품, 능력치, 장비 등의 데이터가 일부 누락되었습니다.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
+    "Possible_missing_firewall_rule_check": "새로운 지역으로 이동하셔도 패킷 캡처가 작동하지 않는다면 방화벽 규칙이 추가되지 않았거나 패킷 캡처가 알 수 없는 이유로 작동하지 않는 중입니다 (만약 이런 경우에는 팀크래프트 디스코드 #troubleshooting 채널을 통해 문의해주세요).",
     "Rawsock_needs_admin": "RawSocket 캡처모드는 관리자 권한이 필요합니다",
     "Rawsock_needs_admin_description": "방화벽 규칙과 패킷 캡처가 정상적으로 작동하기 위해서는 TC에 관리자 권한이 있어야 합니다. 창을 닫고 관리자 권한으로 재실행하여 문제를 해결하거나, 아래의 옵션 중에서 하나를 선택할 수 있습니다.",
     "Switch_to_winpcap": "winpcap모드 전환",
     "Disable_pcap": "패킷 캡쳐 비활성화",
     "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
-    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
     "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
     "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
-    "Banner_description": "You can change the region to the one which you played in for a better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "지역을 알맞게 변경하시면 데이터베이스, 시뮬레이터, 패킷 캡쳐 등의 기능을 좀 더 편리하게 사용하실 수 있습니다.",
     "Button_label": "지역 변경"
   },
   "INVENTORY": {
@@ -1955,7 +1955,7 @@
     "Copy_to_clipboard": "소지품 내역을 클립보드로 복사",
     "Copied_to_clipboard": "소지품 내역이 클립보드에 복사되었습니다",
     "Click_to_add_to_progression": "아이템 추가를 진행하려면 클릭하세요.",
-    "Contribute_to_universalis": "Contribute data to Universalis",
+    "Contribute_to_universalis": "Universalis에 데이터를 기여하기",
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
@@ -1979,8 +1979,8 @@
       "Linked_tooltip": "해당 캐릭터는 이미 다른 인게임 캐릭터와 연결되었습니다. 선택하면 다른 캐릭터와의 연결이 해제됩니다",
       "Override_link_confirmation": "정말 연결을 해제하고 싶으신가요?",
       "Ignore": "해당 인게임 캐릭터를 무시",
-      "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character. Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "You_can_reset_ignore": "데스크톱 앱의 설정에서 무시된 캐릭터를 초기화할 수 있습니다",
+      "Tip": "현재 플레이 중인 캐릭터가 이미 연결되었다면 감지된 캐릭터를 안전하게 무시할 수 있습니다. 어떤 이유로든 캐릭터 파일이 수정될 수 있으며 Teamcraft는 이러한 파일 변경 사항을 감지합니다. 아직 설정하지 않은 캐릭터 파일의 변경이 감지되었습니다."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2042,12 +2042,12 @@
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",
       "Message": "해당 아이템은 오직 {{targetItem}} 을 만들 때에만 사용됩니다. 다른 형태로 가공하는 것을 고려하세요",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "해당 아이템을 목록에 추가"
     }
   },
   "VERSION_LOCK": {
     "Outdated": "현재 팀크래프트 구버전을 사용중이기 때문에 일부 기능이 정상적으로 작동하지 않을 수 있습니다",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely. If you're using the desktop app, download the latest version here: "
+    "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버전을 해당 링크에서 다운 받을 수 있습니다: "
   },
   "GEARSETS": {
     "Title": "장비 세트",
@@ -2072,11 +2072,11 @@
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Warning_job_switch": "Switching job will remove job crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "직업 변경은 전문장인 증표, 주. 부무기에 포함된 마테리아를 제거합니다. 같은 스펙으로 금단을 할 예정이라면 해당 부분을 참고하시길 바랍니다.",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
-    "Please_input_ariyala_link": "Please input an Ariyala link",
-    "Please_input_etro_link": "Please input an Etro link",
+    "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
+    "Please_input_etro_link": "Etro 링크를 입력하세요",
     "Link_not_supported": "지원하지 않는 링크",
     "Compare_gearset": "다른 장비세트와 비교하기",
     "Stats": "능력치",
@@ -2114,7 +2114,7 @@
     "Value_for_next": "다음 중단점",
     "Value_for_previous": "이전 중단점",
     "Editing_others_gearset": "로컬 편집 모드",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset_description": "현재 다른 플레이어의 장비 세트를 수정 중입니다. 만약 저장 버튼을 사용하여 사본을 만들지 않으면 창을 닫은 후에 데이터가 손실됩니다.",
     "Empty_materias": "선택된 모든 장비의 마테리아 제거",
     "SLOT": {
       "Body": "몸통",
@@ -2137,7 +2137,7 @@
       "Error_title": "장비세트를 비교할 수 없습니다",
       "Error_description": "비교할려는 장비 세트의 직업군이 현재 장비 세트의 직업군과 동일한지 확인하세요(같은 메인 능력치를 사용하는 직업)",
       "Type": "비교할 장비세트",
-      "Ariyala": "An Ariyala set",
+      "Ariyala": "Ariyala 장비세트",
       "External_gearset": "다른 사람의 팀크래프트 장비세트",
       "Personal_gearset": "내 장비세트",
       "Paste_link_step_title": "장비세트 링크를 입력하세요",
@@ -2160,7 +2160,7 @@
     "SYNC": {
       "Title": "장비 세트 동기화",
       "Tag": "동기화",
-      "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
+      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트됩니다.",
       "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
       "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
       "Syncing_gearsets": "장비 세트를 동기화 중..."
@@ -2182,9 +2182,9 @@
     "Done": "완료",
     "POPUP": {
       "Title": "FFXIV 팀크래프트에 어서오십시오!",
-      "Explanation": "Teamcraft has a small tutorial on how to use its basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러페이지로 구성되어 있습니다.",
       "Question": "이 기능을 활성화하시겠습니까?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings."
+      "Can_be_changed_in_settings": "설정에서 켜고 끌수 있습니다."
     },
     "APP": {
       "Profile": "이름위에 마우스를 올리면 프로필 에디터와 레벨, 능력치 등을 수정할 수 있는 드롭다운 메뉴가 나타납니다."
@@ -2195,14 +2195,14 @@
       "Filters": "스탯, 보너스, 아이템레벨 등, 확장된 필터기능을 사용하려면 이 패널을 여세요"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it.",
-      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
+      "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
+      "Open_list": "자세한 정보를 보려면 여기를 클릭하세요. (더블클릭 가능)",
       "More": "여기를 눌러서 권한을 관리하고 목록 이름을 변경할 수 있습니다."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
+      "HQ_mark": "이 아이콘은 이 아이템이 최종 레시피에 필요하다는 뜻입니다. HQ가 필요한 상황이 생길 수 있지만 필수는 아닙니다.",
+      "Layout": "레이아웃 편집기를 열고 전체적인 데이터의 필터링 방식과 패널을 변경할 수 있습니다. 좌측에 있는 버튼은 레이아웃을 빠르게 스위칭할 때 사용합니다.",
+      "Permissions": "권한 편집기에서는 사용 권한 편집, 다른 사용자 추가, 읽기 전용 목록으로 변경, 자유부대에 공유 등의 일을 할 수 있습니다.",
       "Fill_with_inventory": "가방에 들고있는 아이템을 목록에 자동으로 추가할 수 있습니다.",
       "Pricing_mode_button": "가격계산 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다.",
       "More_actions_button": "이 버튼으로 지금 목록에서 할 수 있는 여러 다른 액션 메뉴를 열수 있습니다. 여러분들은 레이아웃 에디터를 통해 이 액션 버튼들을 편집할 수 있습니다.",
@@ -2210,7 +2210,7 @@
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
-      "Import": "You can import lists from various websites such as Ariyala, Craftingasaservice and Garlandtools."
+      "Import": "Ariyala, garlandtools, craftingasaservce에서도 목록을 가져올 수 있습니다."
     },
     "DB": {
       "Button": "인포메이션 버튼을 눌러 상세정보(NPC 이름, 지도, 아이템, 몬스터 등)를 포함한 데이터베이스 페이지를 열수 있습니다. 아이템들은 아이콘을 눌러서도 열수 있습니다."
@@ -2227,11 +2227,11 @@
       "Character_configuration": "레벨과 스탯을 설정하세요.",
       "HQ_ingredients": "HQ재료를 입력하세요. 시작 품질에 영향을 줍니다.",
       "Consumables": "여기에서 소모품 및 자유부대 버프를 설정하세요.",
-      "Right_click_condition": "Right click on an action to set its condition (Good, Excellent, Poor, fail, etc) and predict the results.",
+      "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하면(고품질, 최고품질, 저품질, 실패 등) 결과를 예측할 수 있습니다.",
       "Save_as_new": "여기를 눌러 이 로테이션을 여러분의 계정에 복사하세요.",
       "Import_ingame_macro": "여기를 눌러 인게임 매크로를 입력하세요.",
       "Generate_ingame_macro": "여기를 눌러 이 로테이션의 인게임 매크로를 생성하세요.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share the rotation with your stats and consumables."
+      "Share_with_stats": "여기를 눌러 공유팝업을 여세요, 여러분의 능력치와 소모품들까지 공유가 가능합니다."
     },
     "ALARMS": {
       "Settings": "알람을 설정할려면 여기를 클릭하세요(알람소리, 볼륨 등).",
@@ -2244,16 +2244,16 @@
       "Rlvl_filter": "선택 박스를 이용하여 레시피 레벨 별로 필터링할 수 있습니다",
       "Durability_filter": "선택 박스를 이용하여 내구도 별로 필터링할 수 있습니다",
       "Min_craftsmanship": "필요한 최소 작업 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 작업 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
-      "Min_control": "Filter by minimum Control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum CP required here, this will find only rotations with required CP < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the resulting rotations."
+      "Min_control": "필요한 최소 가공 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 가공 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
+      "Min_cp": "필요한 최소 CP를 입력하면 해당 로테이션에 맞는 [필요한 CP < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
+      "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page. Here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Welcome_time_range": "메트릭스 대시보드 페이지에 어서오세요. 여기서 원하는 기간을 설정할 수 있습니다. 기본값은 '오늘' 입니다.",
       "Select_dashboard": "여러 대시보드를 동시에 운용하면서 중요한 내용들을 확인할 수 있습니다.",
-      "Edit_dashboard": "You can enter edit mode using this button. It's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily. Don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard? Press this button, confirm, and poof (deletion cannot be reverted).",
+      "Edit_dashboard": "해당 버튼을 사용하면 편집모드를 사용할 수 있습니다. 이 기능은 기본 대시보드가 아닐 때에만 사용가능합니다.",
+      "Create_dashboard": "자신만의 대시보드를 만들고 수정하는 것을 잊지마세요. 수정하지 않으면 그저 기본 대시보드와 똑같을 뿐입니다.",
+      "Delete_layout": "만약 대시보드를 삭제하기 원한다면 해당 버튼을 누르세요(꼭 확인할 것! 삭제된 데이터는 되돌릴 수 없습니다).",
       "Export_layout": "자신이 만든 멋진 대시보드를 다른 친구들에게 공유하고 싶나요? 현재 대시보드의 내보내기 코드를 복사하고 싶다면 이 버튼을 클릭하세요.",
       "Import_layout": "다른 사람이 공유한 대시보드를 사용하고 싶다면, 이 버튼을 클릭하고 내보내기 코드를 입력하세요.",
       "EDITOR": {
@@ -2308,7 +2308,7 @@
     "Import_failed": "대시보드 가져오기 실패(잘못된 코드)",
     "Import_success": "대시보드 선택 및 가져오기",
     "Nothing_to_show": "표시할 데이터가 없습니다",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "TC에서 데이터를 캡쳐한 기간을 선택하고 (설정 -> 데스크탑 -> 메트릭스 캡쳐) 옵션을 활성화시켰는지 확인하세요",
     "SOURCES": {
       "UNKNOWN": "알 수 없음",
       "GATHERING": "채집",
@@ -2349,8 +2349,8 @@
       "Pie_metric": "통계방식",
       "Add_filter": "필터 추가",
       "Operator": "관리자",
-      "Cannot_edit_default": "You can't edit a default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete a default layout",
+      "Cannot_edit_default": "기본 레이아웃은 수정할 수 없으며, 새로운 레이아웃은 커스텀 마이징 할 수 있습니다",
+      "Cannot_delete_default": "기본 레이아웃은 삭제할 수 없습니다",
       "FILTER_TIPS": {
         "FishFilter": "낚싯터에서 낚은 물고기만 허용",
         "ItemFilter": "정해진 아이템만 허용",
@@ -2378,7 +2378,7 @@
   },
   "COLLECTABLES": {
     "Title": "소장품",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "No_collectables_for_this_level": "현재 레벨에 가능한 소장품이 없습니다"
   },
   "CRAFTING_REPLAYS": {
     "Title": "제작 리플레이",
@@ -2400,19 +2400,19 @@
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
-    "Not_found": "Commission not found",
+    "Not_found": "의뢰를 찾을 수 없습니다",
     "Price_tbd": "가격 협의",
     "X_items": "아이템 {{amount}}개",
     "Open_commission_details": "의뢰 자세히보기",
     "Your_commissions_as_client": "다른 유저에게 부탁한 의뢰",
-    "No_commissions_as_client": "You don't have any commissions as a client",
+    "No_commissions_as_client": "타인에게 의뢰한 내역이 없습니다",
     "Your_commissions_as_crafter": "작업 중인 의뢰",
-    "No_commissions_as_crafter": "You're not working on any commissions",
+    "No_commissions_as_crafter": "작업 중인 의뢰가 없습니다",
     "Delete_commission": "해당 의뢰 삭제",
     "Delete_list_too": "목록도 함께 삭제",
     "Delete_commission_only": "의뢰만 삭제",
     "Your_archived_commissions_as_client": "다른 유저에게 부탁한 의뢰",
-    "No_archived_commissions_as_client": "You have no archived commissions as client",
+    "No_archived_commissions_as_client": "완료한 타인에게 부탁한 의뢰가 없습니다",
     "Your_archived_commissions_as_crafter": "다른 유저에게 받은 의뢰",
     "No_archived_commissions_as_crafter": "완료한 타인의 의뢰가 없습니다",
     "Updates": "업데이트",
@@ -2443,14 +2443,14 @@
       "Only_requires_materials": "최종 아이템을 제외한 목록의 재료만 의뢰합니다",
       "Contact_info": "연락 가능한 방법",
       "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
-      "Contact_info_required_error": "Please include contact information",
+      "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
       "Description": "설명",
       "Description_placeholder": "의뢰에 대한 추가 설명을 이 곳에 적습니다",
       "Description_max_length_error": "1000자 이내로 적어야 합니다",
       "Warning": "경고",
       "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
       "Copy_link": "불러오기 코드 복사",
-      "Copy_link_tooltip": "Gives you the URL to open to create this exact commission, useful for guide writing.",
+      "Copy_link_tooltip": "가이드 작성 시 유용할, 동일한 의뢰를 만들 수 있는 URL을 제공합니다.",
       "Link_copied": "유저 의뢰 불러오기 코드가 복사되었습니다"
     },
     "BOARD": {
@@ -2458,7 +2458,7 @@
       "Filter_with_tags": "태그를 사용하여 필터링",
       "No_matching_commissions": "조건에 맞는 의뢰가 없습니다",
       "Min_price": "최소 가격",
-      "Tracking_tip": "You can get notifications for new commissions on your data center using the official Teamcraft Discord server's commissions section"
+      "Tracking_tip": "팀크래프트 디스코드의 commissions 채널에서 원하는 데이터센터의 알람을 받아보실 수 있습니다"
     },
     "DETAILS": {
       "Created_by": "의뢰자: {{name}}",
@@ -2540,7 +2540,7 @@
     },
     "FIRED": {
       "Please_pick_reason": "왜 해당 플레이어를 퇴출하나요:?",
-      "NO_ACTIVE_SUB": "Contractor no longer has an active subscription.",
+      "NO_ACTIVE_SUB": "의뢰를 받은 플레이어가 더 이상 게임 이용권을 결제하지 않음.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함.",
       "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어짐.",
       "FOUND_SOMEONE_ELSE": "의뢰를 대신 해줄 다른 플레이어를 찾음.",
@@ -2548,11 +2548,11 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "왜 해당 의뢰를 포기하나요?",
-      "NO_ACTIVE_SUB": "I no longer have an active subscription.",
+      "NO_ACTIVE_SUB": "게임 이용권을 구입할 계획이 없음.",
       "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
       "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
       "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
-      "CANNOT_GATHER": "I am not capable of collecting the required items. Client will not collect items."
+      "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     },
     "IMPORT": {
       "Title": "유저 의뢰 불러오기",
@@ -2593,7 +2593,7 @@
   },
   "RETAINERS": {
     "Title": "집사",
-    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
+    "No_retainers": "집사가 없습니다. 집사 초인종을 클릭하여 집사들의 정보를 불러오기 해주세요.",
     "Selling": "출품 중 ({{amount}}건)",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
@@ -2610,7 +2610,7 @@
   },
   "RETAINER_VENTURES": {
     "Title": "집사 수행",
-    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Description": "집사의 직업, 레벨, 아이템레벨, 획득력(필요하다면) 을 입력하고 가장 수익이 좋은 집사 수행을 찾을 수 있습니다. 해당 작업은 집사레벨이 높은 경우에는 모든 아이템의 시세를 체크하기 때문에 최대 1분의 시간이 소요될 수 있습니다.",
     "Retainer_ilvl": "아이템 레벨",
     "Gathering": "획득력",
     "Task_level": "수행 레벨",
@@ -2619,22 +2619,22 @@
     "Select_retainer": "집사를 선택하세요"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on Patreon, you get:",
+    "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
     "No_ads": "상단에 더 이상 광고가 표시되지 않습니다",
-    "Exclusive_discord_role": "An exclusive Discord role, and access to supporters-only channel",
+    "Exclusive_discord_role": "디스코드에서의 특별한 역할과 #supporters 채널 입장 가능",
     "Your_name_in_loading_screen": "내 닉네임을 로딩 화면에 표시(요청해야함)",
     "Goodies": "무료 스티커, 티셔츠, 포스터 (후원 등급에 따라 다름)",
     "Starting_at_X": "매달 ${{monthly}} 또는 매년 ${{yearly}} 으로 시작할 수 있습니다",
     "Footer_text": "한달에 1달러만 후원하셔도 팀크래프트 개발에 큰 기여를 할 수 있으며, 개발자가 팀크래프트 프로젝트에 모든 시간을 투자하여 더 나은 파이널 판타지14 툴 개발에 힘쓸 수 있습니다.",
     "Already_supporter": "이미 후원 중이신가요?",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "광고를 제거하기 위해서는 patreon 계정을 팀크래프트에 연동해야 합니다"
   },
   "SUPPORT_US": {
     "Popup_introduction": "안녕하세요, 저는 팀크래프트 개발자 Miu입니다.<br/> 팀크래프트는 지난 몇 년 전부터 저의 취미였고 현재는 취미가 아닌 제 직업으로 삼기 위한 꿈으로써, 그 꿈을 이루기 위해 노력하고 있습니다. <br/><br/>만약 여러분들이 patreon으로 도움을 주신다면, 팀크래프트를 더욱 더 개선시키고 저는 제 꿈을 현실로 이룰 수 있습니다.<br/><br/> patreon에서 프로젝트에 도움을 주신다면 다음과 같은 멋진 특전을 얻으실 수 있습니다.",
-    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
+    "Already_supporting": "이미 Patreon 후원자이신가요? 그렇다면 설정에서 계정을 patreon과 연동시킬 수 있습니다",
     "PATREON_BENEFITS": {
       "No_ads": "광고 없는 팀크래프트 경험하기",
-      "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Discord_rank": "현재 진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord서버 특별 등급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
       "Custom_theme": "사용자 지정 색상을 포함한 개선된 테마 커스터마이즈 (${{price}})",
       "Pins_badge": "한정판 Teamcraft 배지 배송 (${{price}}) (Patreon에 배송 정보 입력 필수)",
@@ -2644,7 +2644,7 @@
   },
   "FREE_COMPANY_WORKSHOPS": {
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Import_from_pcap_notice": "1. Go to your company's Workshop (make sure you enter after you opened this popup)<br>2. Open your Free Company's window<br>3. Interact with each submarine or airship using the management interface",
+    "Import_from_pcap_notice": "1. 자유부대의 공방으로 이동(해당 팝업을 연 후에 꼭 입력하세요)<br>2. 자유부대 창을 열기<br>3. 관리 인터페이스를 사용하여 각 잠수함 또는 비공정과 상호작용",
     "Airships": "비공정",
     "Submersibles": "잠수함"
   },
@@ -2762,7 +2762,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "새로운 기능: 알라간 리포트",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "누락된 데이터가 있는 아이템을 찾으셨나요? 이제 알라간 리포트 시스템 (일반 > 알라간 리포트) 에서 아이템 출처를 보고하여 다음 업데이트에 적용시킬 수 있습니다!",
     "Title": "알라간 리포트",
     "Reports": "리포트",
     "Pending_changes": "보류 중인 변경 사항",
@@ -2852,7 +2852,7 @@
       "LARGE": "Large"
     },
     "SOURCE": {
-      "DESYNTH": "DESYNTHED_FROM",
+      "DESYNTH": "분해로 획득",
       "REDUCTION": "정제",
       "GARDENING": "가드닝",
       "LOOT": "보상 상자",
@@ -2888,7 +2888,7 @@
     "Quarrying": "Quarrying",
     "Logging": "Logging",
     "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
+    "Fishing": "낚시터",
     "Spearfishing": "작살"
   },
   "PROFITS": {
@@ -2897,12 +2897,12 @@
     "Self_sufficient": "자급자족",
     "Crafting": "제작",
     "Gathering": "채집",
-    "Complexity": "Complexity",
+    "Complexity": "복잡성",
     "Sold_last_24h": "#최근 24시간동안 판매됨",
-    "Total_listed": "Total on sale",
+    "Total_listed": "총 판매수",
     "Unit_price": "개당 가격",
     "Cost_to_craft": "제작 비용",
-    "Explain_complexity": "A score representing how much time is needed to craft one item. Crafting multiple items is obviously faster as you don't have to do teleports again.",
+    "Explain_complexity": "아이템 하나를 만드는 데 걸리는 시간을 나타내는 점수, 하나의 제작을 여러 번 하는 것은 텔레포를 다시 할 필요가 없기 때문에 확실히 빠릅니다.",
     "Explain_cost_to_craft": "장터 게시판에서 모든 재료를 구매하여 제작하였을 때 필요한 금액입니다. (크리스탈 제외)",
     "Empty_list": "비어있는 목록, +버튼을 클릭하여 아이템을 여기에 추가할 수 있습니다",
     "Add_to_list": "해당 아이템을 목록에 추가"

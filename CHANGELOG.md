@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.15"></a>
+## [9.5.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.14...v9.5.15) (2022-03-28)
+
+
+### Bug Fixes
+
+* **db:** fixed missing ko/zh item names breaking the app ([c12244c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c12244c))
+* **leveling-equipment:** removed blue items from results ([36e6b6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36e6b6e))
+
+
+
 <a name="9.5.14"></a>
 ## [9.5.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.13...v9.5.14) (2022-03-20)
 
