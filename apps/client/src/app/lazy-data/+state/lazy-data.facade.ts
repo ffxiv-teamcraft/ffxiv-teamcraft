@@ -171,13 +171,17 @@ export class LazyDataFacade {
             this.store.dispatch(loadLazyDataEntityEntry({ entity: propertyKey, id }));
           }
         }),
-        map(([res, status]) => {
+        switchMap(([res, status]) => {
           if (status === 'full' && !res) {
-            return fallback || null;
+            if (propertyKey.startsWith('zh') || propertyKey.startsWith('ko')) {
+              const globalPropertyKey = propertyKey.replace(/^ko|zh/, '');
+              return this.getRow(`${globalPropertyKey[0].toLowerCase()}${globalPropertyKey.slice(1)}` as LazyDataRecordKey, id, fallback);
+            }
+            return of(fallback || null);
           } else if (res) {
-            return res;
+            return of(res);
           }
-          return undefined;
+          return of(undefined);
         }),
         filter(res => res !== undefined || (fallback !== undefined && res === fallback)),
         first()
