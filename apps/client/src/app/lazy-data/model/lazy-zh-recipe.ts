@@ -16,10 +16,16 @@ export interface LazyZhRecipe {
   craftsmanshipReq:       number;
   rlvl:                   number;
   ingredients:            Ingredient[];
+  progressDivider:        number;
+  qualityDivider:         number;
+  progressModifier:       number;
+  qualityModifier:        number;
+  expert:                 boolean;
+  conditionsFlag:         number;
 }
 
 export interface Ingredient {
   id:      number;
   amount:  number;
-  quality: number;
+  quality: number | null;
 }
