@@ -74,7 +74,12 @@ export class CharacterLinkPopupComponent {
     'MoDuNa',
     'HaiMaoChaWu',
     'RouFengHaiWan',
-    'HuPoYuan'
+    'HuPoYuan',
+    'ShuiJingTa2',
+    'YinLeiHu2',
+    'TaiYangHaiAn2',
+    'YiXiuJiaDe2',
+    'HongChaChuan2'
   ];
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리', '펜리르'];
@@ -99,7 +104,9 @@ export class CharacterLinkPopupComponent {
 
     this.result$ = combineLatest([this.selectedServer.valueChanges, this.characterName.valueChanges])
       .pipe(
-        tap(() => this.loadingResults = true),
+        tap(([selectedServer]) => {
+          this.loadingResults = !this.chineseServers.includes(selectedServer) && this.koreanServers.includes(selectedServer);
+        }),
         debounceTime(500),
         mergeMap(([selectedServer, characterName]) => {
           return this.lodestoneService.searchCharacter(characterName, selectedServer);

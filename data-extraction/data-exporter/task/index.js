@@ -94,52 +94,61 @@ output('quests', () => db('Quest').simpleObject('Name'))
 output('races', () => db('Race').simpleObject('Masculine'))
 
 const craftTypeJobMap = [8, 9, 10, 11, 12, 13, 14, 15]
-output('recipes', () => db('Recipe', false).map(recipe => {
-  if (!+recipe['#'] || !+recipe['Item{Result}']) return null
-  const level = db('RecipeLevelTable', false, true).findById(recipe.RecipeLevelTable)
+output('recipes', () => {
+  const canBeHq = db('Item').toObject(row => row.CanBeHq === 'True')
+  return db('Recipe', false).map(recipe => {
+    if (!+recipe['#'] || !+recipe['Item{Result}']) return null
+    const level = db('RecipeLevelTable', false, true).findById(recipe.RecipeLevelTable)
 
-  const ingredients = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(index => {
-    const id = +recipe[`Item{Ingredient}[${index}]`]
-    const amount = +recipe[`Amount{Ingredient}[${index}]`]
+    const ingredients = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(index => {
+      const id = +recipe[`Item{Ingredient}[${index}]`]
+      const amount = +recipe[`Amount{Ingredient}[${index}]`]
 
-    if (!id || !amount) {
-      return null
-    }
+      if (!id || !amount) {
+        return null
+      }
+
+      return {
+        id,
+        amount,
+        ilvl: id < 20 ? 0 : +db('Item', null, true).findById(id)['Level{Item}']
+      }
+    }).filter(a => a)
+    const totalIlvl = ingredients.reduce((sum, { amount, ilvl }) => sum + amount * ilvl, 0)
+    const maxQuality = Math.floor((+level.Quality) * (+recipe.QualityFactor) / 100)
+    const totalContrib = maxQuality * (+recipe.MaterialQualityFactor) / 100
 
     return {
-      id,
-      amount,
-      ilvl: id < 20 ? 0 : +db('Item', null, true).findById(id)['Level{Item}']
+      id: +recipe['#'],
+      job: craftTypeJobMap[+recipe.CraftType],
+      lvl: +level.ClassJobLevel,
+      yields: +recipe['Amount{Result}'],
+      result: +recipe['Item{Result}'],
+      stars: +level.Stars,
+      qs: recipe.CanQuickSynth === 'True',
+      hq: recipe.CanHq === 'True',
+      durability: Math.floor((+level.Durability) * (+recipe.DurabilityFactor) / 100),
+      quality: maxQuality,
+      progress: Math.floor((+level.Difficulty) * (+recipe.DifficultyFactor) / 100),
+      suggestedControl: +level.SuggestedControl,
+      suggestedCraftsmanship: +level.SuggestedCraftsmanship,
+      controlReq: +recipe.RequiredControl,
+      craftsmanshipReq: +recipe.RequiredCraftsmanship,
+      rlvl: +recipe.RecipeLevelTable,
+      ingredients: ingredients.map(({ id, amount, ilvl }) => ({
+        id,
+        amount,
+        quality: canBeHq[id] ? (ilvl / totalIlvl * totalContrib) : null,
+      })),
+      progressDivider: +level.ProgressDivider,
+      qualityDivider: +level.QualityDivider,
+      progressModifier: +level.ProgressModifier,
+      qualityModifier: +level.QualityModifier,
+      expert: recipe.IsExpert === 'True',
+      conditionsFlag: +level.ConditionsFlag
     }
   }).filter(a => a)
-  const totalIlvl = ingredients.reduce((sum, { amount, ilvl }) => sum + amount * ilvl, 0)
-  const quality = Math.floor((+level.Quality) * (+recipe.QualityFactor) / 100)
-  const materialQuality = quality * (+recipe.MaterialQualityFactor) / 100
-
-  return {
-    id: +recipe['#'],
-    job: craftTypeJobMap[+recipe.CraftType],
-    lvl: +level.ClassJobLevel,
-    yields: +recipe['Amount{Result}'],
-    result: +recipe['Item{Result}'],
-    stars: +level.Stars,
-    qs: recipe.CanQuickSynth === 'True',
-    hq: recipe.CanHq === 'True',
-    durability: Math.floor((+level.Durability) * (+recipe.DurabilityFactor) / 100),
-    quality: quality,
-    progress: Math.floor((+level.Difficulty) * (+recipe.DifficultyFactor) / 100),
-    suggestedControl: +level.SuggestedControl,
-    suggestedCraftsmanship: +level.SuggestedCraftsmanship,
-    controlReq: +recipe.RequiredControl,
-    craftsmanshipReq: +recipe.RequiredCraftsmanship,
-    rlvl: +recipe.RecipeLevelTable,
-    ingredients: ingredients.map(({ id, amount, ilvl }) => ({
-      id,
-      amount,
-      quality: ilvl / totalIlvl * materialQuality
-    }))
-  }
-}).filter(a => a))
+})
 
 output('shops', Object.assign(db('GilShop').simpleObject('Name'), db('SpecialShop').simpleObject('Name')))
 output('status-descriptions', () => db('Status').simpleObject('Description'))
@@ -149,7 +158,7 @@ output('traits', () => db('Trait').simpleObject('Name'))
 output('tribes', () => db('Tribe').simpleObject('Masculine'))
 output('triple-triad-rule-descriptions', () => db('TripleTriadRule').simpleObject('Description'))
 output('triple-triad-rules', () => db('TripleTriadRule').simpleObject('Name'))
-output('ventures', () => db('RetainerTask').toObject(row => {
+output('ventures', () => db('RetainerTask', false).toObject(row => {
   if (!row.Task || +row.Task == 0) {
     return
   }
@@ -157,7 +166,7 @@ output('ventures', () => db('RetainerTask').toObject(row => {
   if (row.Task > 30000) {
     return i18n('RetainerTaskRandom', row.Task, 'Name')
   } else {
-    const id = +db('RetainerTaskNormal', null, true).findById(row.Task)['Item']
+    const id = +db('RetainerTaskNormal', false, true).findById(row.Task)['Item']
     return i18n('Item', id, 'Name')
   }
 }))

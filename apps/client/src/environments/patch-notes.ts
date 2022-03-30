@@ -1,4 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed missing ko/zh item names breaking the app.
-* **leveling-equipment:** removed blue items from results.`;
+* **character:** fixed new chinese servers not linking characters properly.
+* **desktop:** fixed retainer information not loaded properly on chinese version.
+
+
+### Features
+
+* **data-extraction:** update recipes format for zh/kr.`;

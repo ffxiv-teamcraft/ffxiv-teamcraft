@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.16"></a>
+## [9.5.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.15...v9.5.16) (2022-03-30)
+
+
+### Bug Fixes
+
+* **character:** fixed new chinese servers not linking characters properly ([4fba80d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4fba80d))
+* **desktop:** fixed retainer information not loaded properly on chinese version ([27a8fdd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27a8fdd))
+
+
+### Features
+
+* **data-extraction:** update recipes format for zh/kr ([7d6397d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7d6397d))
+
+
+
 <a name="9.5.15"></a>
 ## [9.5.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.14...v9.5.15) (2022-03-28)
 

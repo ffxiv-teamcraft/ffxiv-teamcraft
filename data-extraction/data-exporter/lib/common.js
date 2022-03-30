@@ -75,6 +75,12 @@ Array.prototype.kvmap = function (nKey = 'Name', valueFunc = (val) => val) {
   return this.map(item => ({ key: item['#'], value: valueFunc(item[nKey]) }))
 }
 
+/**
+ * Make an object
+ * @param {*} valueFunc Value mapping function
+ * @param {*} idKey Column key of ID (defaults to '#')
+ * @returns 
+ */
 Array.prototype.toObject = function (valueFunc = (val) => val, idKey = '#') {
   return this.reduce((obj, row) => {
     obj[row[idKey]] = valueFunc(row)
@@ -82,6 +88,11 @@ Array.prototype.toObject = function (valueFunc = (val) => val, idKey = '#') {
   }, {})
 }
 
+/**
+ * Make an object with i18n
+ * @param {string} key Column key
+ * @returns Object
+ */
 Array.prototype.simpleObject = function (key) {
   if (!this._meta) {
     throw new Error('Method called on non-db-rows array')
@@ -91,6 +102,16 @@ Array.prototype.simpleObject = function (key) {
 }
 
 const dbStore = {}
+
+/**
+ * Read csv data
+ * @param {string} name csv file name
+ * @param {string|null|false} lang The language you want to read. 
+ * Pass `false` if the table is not divided by language. 
+ * Pass `null` to use the first language in config.
+ * @param {boolean} cache Use cached csv data instead of parsing.
+ * @returns {Array}
+ */
 const db = function (name, lang = null, cache = false) {
   if (!lang && lang !== false) {
     lang = config.languages[0].file
@@ -112,6 +133,13 @@ const db = function (name, lang = null, cache = false) {
 }
 
 const outputList = process.argv[2] ? process.argv[2].split(',') : null
+
+/**
+ * Write data to file
+ * @param {string} name File name
+ * @param {function|object} content Content to write
+ * @returns {void}
+ */
 const output = function (name, content) {
   if (outputList && !outputList.includes(name)) return
 
@@ -123,6 +151,14 @@ const output = function (name, content) {
   fs.writeFileSync(config.outputPath(name), JSON.stringify(content, null, 2) + '\n')
 }
 
+/**
+ * Get i18n object from a string (e.g. some item name)
+ * @param {*} dbName Table name
+ * @param {*} value String
+ * @param {*} from The language of string
+ * @param {*} nKey Column key of string (defaults to 'Name')
+ * @returns {object}
+ */
 const translate = function (dbName, value, from, nKey = 'Name') {
   const query = value.toLowerCase()
   const row = db(dbName, from, true).find(item => item[nKey].toLowerCase() === query)
