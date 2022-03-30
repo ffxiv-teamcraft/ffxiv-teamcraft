@@ -144,7 +144,7 @@ output('recipes', () => {
       qualityDivider: +level.QualityDivider,
       progressModifier: +level.ProgressModifier,
       qualityModifier: +level.QualityModifier,
-      expert: recipe.IsExpert === '1',
+      expert: recipe.IsExpert === 'True',
       conditionsFlag: +level.ConditionsFlag
     }
   }).filter(a => a)
