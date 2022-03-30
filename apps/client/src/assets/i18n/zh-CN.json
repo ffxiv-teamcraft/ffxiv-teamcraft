@@ -1370,7 +1370,7 @@
     "Import_from_carbuncleplushy_success": "捕鱼日志记录器已成功更新",
     "Export_FSH_completion": "导出完成为 JSON",
     "Export_FSH_completion_copied": "捕鱼记录的JSON已复制到剪贴板",
-    "Log_in_to_track": "Log in to be able to track your Log Tracker completion",
+    "Log_in_to_track": "登录以使用捕鱼日志记录",
     "PAGE": {
       "Master_recipes": "秘籍 ({{number}})",
       "Housing_items": "房屋 ({{number}})",
@@ -1408,7 +1408,7 @@
       "CRAFT": {
         "Title": "制作职业",
         "Job": "职业",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "没有设置素材，意味着你将使用 0 个素材制作物品。"
       },
       "GATHERING": {
         "Title": "采集方法",
@@ -1466,7 +1466,7 @@
     "Title": "分解指南",
     "Job": "职业",
     "Level": "分解技能",
-    "Intro": "Select a job and input a level to find the best items to level up your desynth",
+    "Intro": "选择职业并输入分解品级，即可找到最适合您当前分解品级的物品",
     "Loading_message": "正在加载……",
     "TAGS": {
       "Higher_chances": "成功率高",
@@ -1506,8 +1506,8 @@
     "TT_card_unlock": "从卡包中获取",
     "Track_on_attt": "在 Another Triple Triad Tracker 上追踪",
     "Unlocked_by_quest": "任务解锁",
-    "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
-    "Triple_triad_pack": "Triple Triad card pack",
+    "More_on_attt_npc": "在 Another Triple Triad Tracker 上查看关于该 NPC 的更多信息",
+    "Triple_triad_pack": "九宫幻卡卡包",
     "Dungeons": "副本",
     "Used_for_trades": "交换",
     "Can_contain_items": "可能包含物品",
@@ -1518,7 +1518,7 @@
     "Min_ilevel": "最低品级",
     "Sync_to": "同步等级",
     "Exp": "经验",
-    "Week_restriction": "Weekly restriction",
+    "Week_restriction": "周限制",
     "Fights": "首领",
     "Instance_details": "副本详情",
     "Instance_rewards": "奖励",
@@ -1583,8 +1583,8 @@
       "Used_as_mooch_for": "以小钓大",
       "No_known_mooch_usage": "根据已知记录，这条鱼不能用于以小钓大",
       "No_spot_filter": "未过滤钓场",
-      "Chances_for_transition": "Chance for this transition to happen",
-      "Weather_chances": "Chance for each weather to appear",
+      "Chances_for_transition": "转换发生的概率",
+      "Weather_chances": "每种天气下出现的概率",
       "Bait": "钓饵",
       "Refresh_data": "更新数据",
       "Bite_times": "咬钩次数",
@@ -1593,7 +1593,7 @@
       "Top_users": "排行榜",
       "Your_ranking": "你的排名",
       "Include_fisheyes_data": "包括使用鱼眼的数据",
-      "Not_enough_data_points": "Not enough data points to display this chart",
+      "Not_enough_data_points": "数据不足，无法生成图表",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1620,8 +1620,8 @@
         "Size": "尺寸",
         "Time_since_thrown": "抛竿以来的时间",
         "ERRORS": {
-          "No_bait": "No bait detected. Switch bait once to fix.",
-          "No_stats": "No stats detected. Switch to Fisher again to fix."
+          "No_bait": "未检测到钓饵，请重新“选饵”",
+          "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
         }
       }
     },
@@ -1751,7 +1751,7 @@
       "No_comments": "暂无评论",
       "Post": "发布",
       "Editor_tip": "输入 <页面类型>:\"<页面标题>\" 以链接到其它页面。例如， item:\"无锋剑柯塔纳\"、action:\"制作\"、map:\"魔晶堂\" 。支持的页面类型有：item(物品), map(地图), mob(怪物), achievement(成就), leve(理符), npc, instance(副本), quest(任务), trait(特性), action(技能), status(状态)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "数据库评论意在传达有用的额外信息，滥用数据库评论以抱怨游戏内容可能导致会导致您的评论发表功能受限。"
     },
     "PATCH": {
       "Open_patch_page": "点击此处在数据库中打开新版本的全部改动",
@@ -1791,7 +1791,7 @@
     "Any": "任何",
     "Achievement": "成就",
     "Fishing-spot": "钓场",
-    "Gathering-node": "Gathering node"
+    "Gathering-node": "采集点"
   },
   "SEARCH_FILTERS": {
     "Level": "等级",
@@ -1841,14 +1841,14 @@
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
+    "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
     "X_sold_last_week": "上周已售出 {{amount}} 个"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
-    "Description": "You want to know which food will give the stats you want? Look no further, you're where you need to be!",
+    "Description": "想知道哪个食物有你需要的属性？找对地方了！",
     "Pick_stat": "选择一个属性"
   },
   "BLOG": {
@@ -1856,7 +1856,7 @@
   },
   "ERRORS": {
     "Http_request_error": "{{tool}} 存在问题，请稍后重试。如果问题仍然存在，请到 Discord 关注 Teamcraft 的 #announcements 频道。",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
+    "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
     "Sort_by": "排序： ",
@@ -1918,34 +1918,34 @@
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
     "Button_label": "启用数据包捕获",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
+    "Banner_description": "您可以启用数据包捕获功能，以允许 Teamcraft 读取游戏的数据包（设置中也提供了此功能的开关）。此功能可以在您获得物品时自动填写清单中的内容，并向市场聚合平台 Universalis 贡献数据。",
+    "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing. Please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "TeamCraft 需要扫描你当前的角色才能使用背包相关功能。请在游戏中整理你的背包或者返回标题界面再登录游戏。",
     "Unknown_character": "未知游戏角色",
-    "No_character_id": "No ingame character ID set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame). This is only needed once.",
+    "No_character_id": "未设置游戏内角色 ID",
+    "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容，操作完成后此提示会自动关闭。如上述操作无效，请查看 https://www.yuque.com/ffcafe/tc/debugpackets",
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。",
     "Possible_missing_firewall_rule": "数据包捕获功能不可用",
     "Possible_missing_firewall_rule_description": "Teamcraft只能捕获到一部分数据包，丢失了与物品栏、 统计、装备等相关的数据包，可能是由于您的 PC 上缺少防火墙规则。",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
+    "Possible_missing_firewall_rule_check": "如果此消息不会在你传送到新区域后消失，可能是由于防火墙规则缺失或封包捕获因故无法工作。请加入 Discord 服务器，前往 #troubleshooting 频道解决。",
     "Rawsock_needs_admin": "RawSocket 抓包模式需要管理员权限",
     "Rawsock_needs_admin_description": "TC 需要管理员权限才能使用 RawSocket 抓包和设置防火墙规则。用管理员权限运行 TC，或者从下面选择一个选项：",
     "Switch_to_winpcap": "切换至 WinPcap 模式",
     "Disable_pcap": "停用数据包捕获",
     "Install_npcap": "您未安装 Npcap",
-    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_description": "为在默认的 Npcap 下使用 Teamcraft 的数据包捕获功能，您需要安装 Npcap。Teamcraft 可以帮你安装并在安装完成后自动重启本应用。",
     "Install_npcap_button": "安装 Npcap 并重启 Teamcraft",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous": "在未登录状态下数据包捕获无法正常工作。",
+    "Not_as_anonymous_description": "请在界面右上角“匿名”标签悬停，并点击“注册”或在设置内禁用数据包捕获功能。"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
-    "Banner_description": "You can change the region to the one which you played in for a better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "您可以设置您正在游戏的区服，以在数据库、模拟器、数据包捕获等功能中获得更佳体验。",
     "Button_label": "更改区域"
   },
   "INVENTORY": {
@@ -1955,7 +1955,7 @@
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Copied_to_clipboard": "物品栏已复制到剪贴板",
     "Click_to_add_to_progression": "点击添加到物品进展",
-    "Contribute_to_universalis": "Contribute data to Universalis",
+    "Contribute_to_universalis": "向 Universalis 提交数据",
     "Reset_inventory": "重置此物品栏",
     "Clean_all": "重置所有物品栏",
     "Search_for_an_item": "搜索物品",
@@ -1967,7 +1967,7 @@
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "部队储物柜",
       "Bag": "背包",
-      "Crystal": "Crystal",
+      "Crystal": "水晶",
       "Other": "其他物品栏",
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
@@ -1979,8 +1979,8 @@
       "Linked_tooltip": "该 TC 角色已经关联到了另一个游戏角色，选择该角色的话将覆盖该关联。",
       "Override_link_confirmation": "确定要覆盖关联吗？",
       "Ignore": "忽略此游戏角色",
-      "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character. Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "You_can_reset_ignore": "在客户端设置中可以清空角色忽略设置",
+      "Tip": "如果你已经关联了正在游玩的角色，则可以放心忽略此角色。Teamcraft 会监测文件变化。某些尚未关联的文件会因未知原因改变并触发此设置。"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2552,7 +2552,7 @@
       "UNCOMFORTABLE_WITH_CLIENT": "与客户合作不愉快",
       "CANNOT_COMPLETE_LEVEL": "我不满足等级要求，无法完成此委托",
       "CANNOT_COMPLETE_CONTENT": "我无法获得所需的物品，无法完成此委托（例如：在国际服中未购买最新版本）",
-      "CANNOT_GATHER": "I am not capable of collecting the required items. Client will not collect items."
+      "CANNOT_GATHER": "我无法采集所需的物品，客户也拒绝采集物品"
     },
     "IMPORT": {
       "Title": "委托模板",
@@ -2593,7 +2593,7 @@
   },
   "RETAINERS": {
     "Title": "雇员",
-    "No_retainers": "No retainers, please ring the retainer bell to load information about your retainers.",
+    "No_retainers": "未检测到雇员。请使用雇员铃以捕获雇员信息。",
     "Selling": "出售中（{{amount}} 件）",
     "X_items": "{{amount}} 个物品",
     "Task_complete": "委托完成",
@@ -2610,7 +2610,7 @@
   },
   "RETAINER_VENTURES": {
     "Title": "雇员探险",
-    "Description": "Input your retainer job, level, ilvl and Gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Description": "输入你的雇员职业、等级、装等和获得力（如需）以找到收益最高的探险委托。此功能会考虑所有能获得收益的物品。当雇员等级较高时，查询时间可能长达一分钟。",
     "Retainer_ilvl": "装等",
     "Gathering": "采集",
     "Task_level": "探险等级",
@@ -2619,9 +2619,9 @@
     "Select_retainer": "选择一名雇员"
   },
   "PATREON": {
-    "By_supporting_us": "By supporting us on Patreon, you get:",
+    "By_supporting_us": "在 Patreon 赞助我们后可以获得：",
     "No_ads": "不再显示顶栏中的广告",
-    "Exclusive_discord_role": "An exclusive Discord role, and access to supporters-only channel",
+    "Exclusive_discord_role": "专属的 Discord 角色和仅供赞助者使用的频道",
     "Your_name_in_loading_screen": "在加载过程中显示你的名字（需要申请）",
     "Goodies": "免费的贴纸、T恤和海报（取决于赞助级别）",
     "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
