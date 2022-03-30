@@ -2627,18 +2627,18 @@
     "Starting_at_X": "按月支付 {{monthly}} 美元或按年支付 {{yearly}} 美元",
     "Footer_text": "仅需每月一美元即可显著推动 Teamcraft 的开发进程，并使我更接近梦想——专职与此项目的开发并使其不仅局限于作为一个 FFXIV 的工具。",
     "Already_supporter": "已经成为支持者？",
-    "Disable_ads_explanation": "To disable ads, connect with your Patreon account to make Teamcraft able to verify your support and disable ads automatically"
+    "Disable_ads_explanation": "要禁用广告，请连接你的 Patreon 账号，以验证赞助情况并自动禁用广告。"
   },
   "SUPPORT_US": {
     "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
-    "Already_supporting": "Already a Patreon supporter? Make sure you link your account to Patreon in the settings",
+    "Already_supporting": "已经是 Patreon 赞助者？请确认您已经在设置中关联了 Patreon 账号",
     "PATREON_BENEFITS": {
       "No_ads": "无广告的 Teamcraft 界面",
-      "Discord_rank": "Special rank on the Discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
+      "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
       "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
       "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
-      "Loading_screen_message": "Add a new entry inside the \"Brought to you by…\" loading message, with your name, your FC name, LS name, whatever you want to add! (${{price}})"
+      "Loading_screen_message": "在加载界面的 \"Brought to you by...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     },
     "Select_retainer": "选择一名雇员"
   },
@@ -2762,7 +2762,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "新功能：亚拉戈报告",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "发现缺少数据的物品？ 您现在可以在亚拉戈报告系统 (基本功能 > 亚拉戈报告) 中报告物品来源，并在未来的更新中实装！",
     "Title": "亚拉戈报告",
     "Reports": "报告",
     "Pending_changes": "待处理的更改",
@@ -2792,7 +2792,7 @@
     "Submit_modification_suggestion": "提交修改建议",
     "Last_updated": "上次更新",
     "Submitted": "已提交",
-    "Spawn": "Spawn",
+    "Spawn": "生成",
     "Duration": "Duration",
     "Predator": "Predator",
     "Predator_explain": "在直感或叉鱼前必须捕获的鱼",
@@ -2821,39 +2821,39 @@
     "Ocean_fishing_time": "海钓时间",
     "Fate_placeholder": "输入危命任务名称",
     "Open_details": "No space for the details, open the page to approve or reject",
-    "Accept_many": "Accept selected reports ({{amount}})",
-    "Reject_many": "Reject selected reports ({{amount}})",
+    "Accept_many": "接受选定的报告 ({{amount}})",
+    "Reject_many": "拒绝选定的报告 ({{amount}})",
     "Jump_to_item": "跳转至另一物品",
     "Price": "价格",
     "Product_id": "产品ID",
     "Product_id_explain": "产品的ID，位于商店链接的“/product/”之后。",
     "Open_item": "在亚拉戈报告中打开",
     "Delete": "删除",
-    "Voyage_rarity": "Rarity",
-    "Rarity_Common": "Common",
-    "Rarity_Voyage_exclusive": "Voyage exclusive",
-    "Rarity_Rare": "Rare",
+    "Voyage_rarity": "稀有度",
+    "Rarity_Common": "常见",
+    "Rarity_Voyage_exclusive": "仅限飞空艇/潜水艇",
+    "Rarity_Rare": "稀有",
     "No_missing_fish_data": "无缺少数据的鱼类",
-    "Sources_filter": "Filter sources",
-    "Speed": "Speed",
-    "Shadow_size": "Shadow size",
-    "Deprecated": "This item cannot be obtained anymore",
+    "Sources_filter": "根据来源过滤",
+    "Speed": "速度",
+    "Shadow_size": "阴影大小",
+    "Deprecated": "该物品已经无法获得",
     "SPEEDS": {
-      "VERY_SLOW": "Very slow",
-      "SLOW": "Slow",
-      "AVERAGE": "Average",
-      "FAST": "Fast",
-      "FASTER": "Faster",
-      "VERY_FAST": "Very fast"
+      "VERY_SLOW": "非常慢",
+      "SLOW": "慢",
+      "AVERAGE": "一般",
+      "FAST": "快",
+      "FASTER": "较快",
+      "VERY_FAST": "非常快"
     },
     "SHADOWS": {
-      "SMALL": "Small",
-      "NORMAL": "Normal",
-      "LARGE": "Large"
+      "SMALL": "小",
+      "NORMAL": "中",
+      "LARGE": "大"
     },
     "SOURCE": {
-      "DESYNTH": "DESYNTHED_FROM",
-      "REDUCTION": "REDUCTION",
+      "DESYNTH": "分解",
+      "REDUCTION": "精选",
       "GARDENING": "采集",
       "LOOT": "战利品",
       "VENTURE": "商店",
@@ -2874,8 +2874,8 @@
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
-    "SUNSET": "Sunset",
+    "ANY": "任意",
+    "SUNSET": "日落",
     "DAY": "Day",
     "NIGHT": "Night"
   },
@@ -2884,12 +2884,12 @@
     "Restart_to_install": "你想要现在重启以安装更新吗？"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
-    "Fishing": "Fishing",
-    "Spearfishing": "Spearfishing"
+    "Mining": "采掘",
+    "Quarrying": "碎石",
+    "Logging": "采伐",
+    "Harvesting": "割草",
+    "Fishing": "钓鱼",
+    "Spearfishing": "刺鱼"
   },
   "PROFITS": {
     "Title": "Profits Helper",
