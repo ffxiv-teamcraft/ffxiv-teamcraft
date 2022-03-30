@@ -1055,7 +1055,7 @@
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
     "Compact": "简洁",
     "Detailed": "详细",
-    "Remove_IP": "Remove initial preparations",
+    "Remove_IP": "移除初期准备",
     "Stats_applied": "已应用属性",
     "Show_rotations_above_stats": "显示需求属性高于当前属性的手法",
     "Full_buttons": "显示完整按钮",
@@ -1632,9 +1632,9 @@
       "Fish_per_weather": "不同天气的上钩概率",
       "Fish_per_bait": "不同钓饵的上钩概率",
       "Fish_per_tug": "不同咬饵的上钩概率",
-      "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Fish_per_hookset": "每次提钩获得的鱼",
+      "Include_misses": "包含提钩失败记录",
+      "Miss": "提钩失败"
     },
     "NODE": {
       "Items": "物品",
@@ -1804,7 +1804,7 @@
     "Placeholder": "物品名称",
     "No_missing_ingredients": "无缺失素材",
     "Missing_X_ingredients": "缺少{{amount}} 个素材",
-    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
+    "Missing_X_ingredients_for_one_more": "缺少 {{amount}} 个原料以制作另一个",
     "Missing": "缺少",
     "Results": "可能的配方",
     "Basket": "愿望篮",
@@ -1819,10 +1819,10 @@
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
     "Import_from_clipboard": "从剪切板导入",
     "Import_from_inventory": "从物品栏导入",
-    "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
+    "Extension_tip": "针对国际服玩家：您可以使用 Lodestone inventory grabber 插件将雇员的背包复制到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
-    "Clipboard_import_duplicates": "Items that show twice are here because Lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Clipboard_import_duplicates": "由于 Lodestone 会显示不同的堆叠，在雇员中拆分存放的物品会显示两次。",
     "Inventory": "目录",
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Pool_copied": "物品栏已复制到剪贴板",
@@ -1837,7 +1837,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
+    "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
@@ -2036,18 +2036,18 @@
       "Message": "该物品仅在可以使用工匠的神速技巧的配方中有用，所以不需要保留 HQ"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as a normal-quality item",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Title": "不需要保留 HQ 物品，他们和 NQ 物品的作用相同",
+      "Message": "6.0 后，此物品的 HQ 和 NQ 功能相同"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "仅用于单个配方的项目",
       "Message": "此物品仅用于制作 {{targetItem}}，考虑转换它而不是保留原始物品",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "将这些物品添加到清单"
     }
   },
   "VERSION_LOCK": {
     "Outdated": "你正在使用的 Teamcraft 版本已过期，无法正常工作",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely. If you're using the desktop app, download the latest version here: "
+    "Refresh_or_download_latest": "如果您正在使用网页版，请按 Ctrl + F5 强制刷新；如果您正在使用桌面应用，请在这里下载最新版本： "
   },
   "GEARSETS": {
     "Title": "配装",
@@ -2072,18 +2072,18 @@
     "Cost": "消耗",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
-    "Warning_job_switch": "Switching job will remove job crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "切换职业将会卸下灵魂水晶、主副手武器和魔晶石。如果你想使用相同的镶嵌方案，请在切换前做好记录。",
     "Pick_a_job": "选择一个职业",
     "New_gearset": "新建配装",
-    "Please_input_ariyala_link": "Please input an Ariyala link",
-    "Please_input_etro_link": "Please input an Etro link",
+    "Please_input_ariyala_link": "请输入 Ariyala 链接",
+    "Please_input_etro_link": "请输入 Erto 链接",
     "Link_not_supported": "不支持此链接",
     "Compare_gearset": "与其他配装对比",
     "Stats": "属性",
     "Materias": "魔晶石",
     "Pieces": "部件",
     "Import_from_ariyala": "从 Ariyala 导入",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "从 Etro 导入",
     "Import_from_lodestone": "从 Lodestone 导入",
     "Import_using_pcap": "使用数据包捕获导入",
     "Sync_with_pcap": "使用数据包捕获同步",
@@ -2114,7 +2114,7 @@
     "Value_for_next": "下一临界值",
     "Value_for_previous": "上一临界值",
     "Editing_others_gearset": "本地编辑模式",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset_description": "您目前正在编辑他人的配装。除非您点击上面的保存按钮来创建您自己的副本，否则任何东西都不会被保存。",
     "Empty_materias": "从所选套装中移除所有魔晶石",
     "SLOT": {
       "Body": "身体",
@@ -2133,11 +2133,11 @@
       "Wrists": "腕部"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with…",
+      "Compare_popup_title": "比较 {{setName}} ...",
       "Error_title": "无法比较配装",
       "Error_description": "请确保您输入的配装存在，且与当前配装的职业主属性类型相同（即同类职业）",
       "Type": "配装类型",
-      "Ariyala": "An Ariyala set",
+      "Ariyala": "来自 Ariyala 的配装",
       "External_gearset": "其他人的 Teamcraft 配装",
       "Personal_gearset": "您的配装",
       "Paste_link_step_title": "配装链接",
@@ -2160,10 +2160,10 @@
     "SYNC": {
       "Title": "同步配装",
       "Tag": "同步",
-      "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
+      "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
       "Importing_gearset": "正在导入 {{name}} 的配装",
       "Imported_gearset": "已导入 {{name}} 的配装",
-      "Syncing_gearsets": "Synchronizing gearsets…"
+      "Syncing_gearsets": "正在同步配装…"
     }
   },
   "FOLDERS": {
@@ -2182,9 +2182,9 @@
     "Done": "完成",
     "POPUP": {
       "Title": "欢迎使用 FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use its basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Explanation": "Teamcraft 有一个关于如何使用它的基本特性和功能的小教程。它将以小窗口和浮层的形式出现在应用的各个页面上。",
       "Question": "您想要启用此功能吗？",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings."
+      "Can_be_changed_in_settings": "可以在设置中开启或关闭."
     },
     "APP": {
       "Profile": "在用户名处悬浮并访问个人资料，可以对职业等级、属性等进行设置"
@@ -2195,14 +2195,14 @@
       "Filters": "展开此面板可以使用高级过滤器，通过属性、加成、物品品级等进行过滤"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it.",
-      "Open_list": "Click here to open the list's details. You can also double click the list's name.",
+      "Share": "点击此处拷贝清单链接并轻松进行分享.",
+      "Open_list": "点击这里或双击清单名打开清单详情",
       "More": "点击此菜单可以进行重命名、权限管理等操作"
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, so you might want to have it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button to the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list read-only, share it to a FC, and more, by opening the permission editor.",
+      "HQ_mark": "此图标意味着此物品是最终配方必须的。你可能需要 HQ，但并不强制",
+      "Layout": "你可以在布局编辑器中任意编辑布局、修改面板样式及其过滤条件。页面左侧的此按钮用于快速切换布局",
+      "Permissions": "点击这里可以进行权限设置，例如添加其他用户、将清单设置为只读、共享到部队等等",
       "Fill_with_inventory": "你可以将物品栏中已有的物品填充至清单",
       "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
       "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
@@ -2210,7 +2210,7 @@
     },
     "LISTS": {
       "Merge": "可以使用“合并清单”按钮合并两个清单",
-      "Import": "You can import lists from various websites such as Ariyala, Craftingasaservice and Garlandtools."
+      "Import": "你可以从 Ariyala、Crafting as a Service、Garland Tools 等网站导入清单"
     },
     "DB": {
       "Button": "点击 NPC 名称、地图、物品、怪物等内容旁边的信息按钮或物品图标，可以在数据库中打开其详情页"
@@ -2227,11 +2227,11 @@
       "Character_configuration": "在这里设置你的等级和属性",
       "HQ_ingredients": "在这里选择 HQ 材料以设置起始品质",
       "Consumables": "在这里设置消耗品和部队特效",
-      "Right_click_condition": "Right click on an action to set its condition (Good, Excellent, Poor, fail, etc) and predict the results.",
+      "Right_click_condition": "右键点击技能可以设定其发动条件（高品质、最高品质、低品质、制作失败等）并预测结果",
       "Save_as_new": "点击这里将手法保存到你的账号下",
       "Import_ingame_macro": "点击这里导入游戏中的用户宏",
       "Generate_ingame_macro": "点击这里生成手法对应的游戏宏",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share the rotation with your stats and consumables."
+      "Share_with_stats": "点击这里打开分享对话框，你可以选择是否分享你的属性和消耗品"
     },
     "ALARMS": {
       "Settings": "点击这里修改闹钟设置（例如提示音和音量）",
@@ -2244,16 +2244,16 @@
       "Rlvl_filter": "在这里通过配方等级过滤手法",
       "Durability_filter": "在这里通过配方耐久过滤手法",
       "Min_craftsmanship": "在这里通过最低作业精度过滤手法，过滤后只会显示所需作业精度低于设定值的手法",
-      "Min_control": "Filter by minimum Control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum CP required here, this will find only rotations with required CP < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the resulting rotations."
+      "Min_control": "在这里通过最低加工精度过滤手法，过滤后只会显示所需加工精度低于设定值的手法",
+      "Min_cp": "在这里通过最低制作力过滤手法，过滤后只会显示所需制作力低于设定值的手法",
+      "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page. Here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Welcome_time_range": "欢迎来到统计面板页面，在这里您可以选择您想要看到数据显示的时间范围，默认本日。",
       "Select_dashboard": "您可以有多个面板，并且可以轻松地在它们之间切换看到对你来说什么是重要的。",
-      "Edit_dashboard": "You can enter edit mode using this button. It's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily. Don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard? Press this button, confirm, and poof (deletion cannot be reverted).",
+      "Edit_dashboard": "你可以使用此按钮进入编辑模式，它只适用于非默认面板。",
+      "Create_dashboard": "轻松创建您自己的面板，不要忘记在创建它们后编辑它们，否则它将只是默认面板的副本。",
+      "Delete_layout": "如果想要移除面板，点击此按钮并确认（删除无法撤销）",
       "Export_layout": "想要将您精心制作的面板与您的好友分享吗？点击此按钮复制您当前选定面板的导出代码。",
       "Import_layout": "如果有人使用导出代码向您分享一个面板，请使用此按钮导入它。",
       "EDITOR": {
@@ -2308,7 +2308,7 @@
     "Import_failed": "面板导入失败，代码无效",
     "Import_success": "表盘已面板",
     "Nothing_to_show": "没有可展示的数据",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside Settings -> Desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "请确保您选择了一个您启用了 TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端 中勾选启用计量捕获)",
     "SOURCES": {
       "UNKNOWN": "未知",
       "GATHERING": "采集",
@@ -2349,8 +2349,8 @@
       "Pie_metric": "计量",
       "Add_filter": "添加筛选器",
       "Operator": "操作员",
-      "Cannot_edit_default": "You can't edit a default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete a default layout",
+      "Cannot_edit_default": "您不能编辑默认布局，请创建一个新的布局来自定义内容",
+      "Cannot_delete_default": "您无法删除默认布局",
       "FILTER_TIPS": {
         "FishFilter": "只接受来自钓场的鱼",
         "ItemFilter": "只接受指定的物品",
@@ -2378,7 +2378,7 @@
   },
   "COLLECTABLES": {
     "Title": "收藏品",
-    "No_collectables_for_this_level": "No collectables available for this level"
+    "No_collectables_for_this_level": "当前等级没有合适的收藏品"
   },
   "CRAFTING_REPLAYS": {
     "Title": "工序重现",
@@ -2400,12 +2400,12 @@
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
-    "Not_found": "Commission not found",
+    "Not_found": "找不到该委托",
     "Price_tbd": "待定",
     "X_items": "{{amount}} 个物品",
     "Open_commission_details": "打开委托详情",
     "Your_commissions_as_client": "提出的委托",
-    "No_commissions_as_client": "You don't have any commissions as a client",
+    "No_commissions_as_client": "您没有提出的委托",
     "Your_commissions_as_crafter": "正在承包的委托",
     "No_commissions_as_crafter": "您没有正在承包的委托",
     "Delete_commission": "删除委托",
@@ -2820,7 +2820,7 @@
     "Others": "其他物品",
     "Ocean_fishing_time": "海钓时间",
     "Fate_placeholder": "输入危命任务名称",
-    "Open_details": "No space for the details, open the page to approve or reject",
+    "Open_details": "没有足够空间显示详情，请打开页面审批或拒绝",
     "Accept_many": "接受选定的报告 ({{amount}})",
     "Reject_many": "拒绝选定的报告 ({{amount}})",
     "Jump_to_item": "跳转至另一物品",
@@ -2867,7 +2867,7 @@
       "DEPRECATED": "已弃用"
     },
     "STATUS": {
-      "PROPOSAL": "PROPOSAL",
+      "PROPOSAL": "提议",
       "MODIFICATION": "修改",
       "DELETION": "删除",
       "ACCEPTED": "已通过"
@@ -2876,8 +2876,8 @@
   "OCEAN_FISHING": {
     "ANY": "任意",
     "SUNSET": "日落",
-    "DAY": "Day",
-    "NIGHT": "Night"
+    "DAY": "白天",
+    "NIGHT": "夜间"
   },
   "UPDATER": {
     "New_update_available": "已下载新的版本",
