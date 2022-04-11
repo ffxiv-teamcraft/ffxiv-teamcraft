@@ -12,6 +12,7 @@ import { ProgressPopupService } from '../../../modules/progress-popup/progress-p
 import { Router } from '@angular/router';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
+import { EnvironmentService } from '../../../core/environment.service';
 
 @Component({
   selector: 'app-gc-supply',
@@ -38,7 +39,7 @@ export class GcSupplyComponent {
 
   constructor(private authFacade: AuthFacade, private fb: FormBuilder, private xivapi: XivapiService,
               private listPicker: ListPickerService, private listsFacade: ListsFacade, private progressService: ProgressPopupService,
-              private router: Router, private listManager: ListManagerService) {
+              private router: Router, private listManager: ListManagerService, private environment: EnvironmentService) {
     this.form$ = this.sets$.pipe(
       map(sets => {
         const groupConfig = sets.reduce((group, set) => {
@@ -61,8 +62,8 @@ export class GcSupplyComponent {
             { jobId: +key, level: Math.max(levels[key] - 2, 1) },
             { jobId: +key, level: Math.max(levels[key] - 3, 1) },
             { jobId: +key, level: Math.max(levels[key] - 4, 1) },
-            { jobId: +key, level: Math.max(levels[key] - 5, 1) }
-          ];
+            levels[key] === environment ? null : { jobId: +key, level: Math.max(levels[key] - 5, 1) }
+          ].filter(row => row !== null);
         }));
         const uniqLevels = _.uniq(levelsArray.map(entry => entry.level));
         const requests = uniqLevels.map((level: number) => {
