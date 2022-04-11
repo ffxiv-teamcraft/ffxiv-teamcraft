@@ -73,19 +73,22 @@
             {{team.name}}
           </nz-tag>
         </div>
-        <button nz-button nzType="primary" nzShape="circle" nz-tooltip
-                *ngIf="platform.isDesktop()"
-                nz-dropdown
-                [nzDropdownMenu]="menu">
-          <i nz-icon nzType="shopping" nzTheme="outline"></i>
-        </button>
-        <nz-dropdown-menu #menu="nzDropdownMenu">
-          <ul *ngIf="inventories$ | async as inventories" nz-menu>
-            <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
-              {{inventory | translate}}
-            </li>
-          </ul>
-        </nz-dropdown-menu>
+        <ng-container *ngIf="inventories$ | async as inventories">
+          <button nz-button nzType="primary" nzShape="circle" nz-tooltip
+                  *ngIf="platform.isDesktop()"
+                  nz-dropdown
+                  [nzDropdownMenu]="inventories.length < 20 ? menu : null"
+          (click)="inventories.length < 20 ? null : fillWithInventory(list, null)">
+            <i nz-icon nzType="shopping" nzTheme="outline"></i>
+          </button>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul  nz-menu class="inventories-menu">
+              <li (click)="fillWithInventory(list, inventory)" *ngFor="let inventory of inventories" nz-menu-item>
+                {{inventory | translate}}
+              </li>
+            </ul>
+          </nz-dropdown-menu>
+        </ng-container>
       </div>
       <div class="spacer"></div>
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
