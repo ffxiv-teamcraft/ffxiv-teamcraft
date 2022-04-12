@@ -140,7 +140,7 @@ export class AlarmBellService {
 
             const groupsForThisAlarm = groups.filter(g => g.alarms.includes(alarm.$key));
 
-            const hasOneGroupEnabled = groupsForThisAlarm.some(group => {
+            const hasOneGroupEnabled = groupsForThisAlarm.length === 0 || groupsForThisAlarm.some(group => {
               return group.enabled && group.alarms.includes(alarm.$key);
             });
             // If this alarm has a group and it's muted, don't even go further
