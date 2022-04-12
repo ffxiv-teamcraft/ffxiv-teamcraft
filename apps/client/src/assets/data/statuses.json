@@ -17773,11 +17773,11 @@
     "icon": "/i/015000/015362.png"
   },
   "2540": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Freezing Up",
+    "ja": "冷却",
+    "de": "Kühlung",
+    "fr": "Réfrigération",
+    "icon": "/i/015000/015355.png"
   },
   "2541": {
     "en": "不浄の侵食",
@@ -18823,10 +18823,10 @@
     "icon": "/i/012000/012914.png"
   },
   "2690": {
-    "en": "Forked Raiju Ready",
-    "ja": "月影雷獣爪実行可",
+    "en": "Raiju Ready",
+    "ja": "月影雷獣実行可",
     "de": "Raiju-Blitz",
-    "fr": "Griffe de Raijû préparée",
+    "fr": "Technique de Raijû préparée",
     "icon": "/i/017000/017597.png"
   },
   "2691": {
@@ -19180,39 +19180,39 @@
     "icon": "/i/015000/015374.png"
   },
   "2741": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Time",
+    "ja": "時限の魔鎖",
+    "de": "Aspektierende Ketten",
+    "fr": "Chaîne à retardement",
+    "icon": "/i/015000/015372.png"
   },
   "2742": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Companionship",
+    "ja": "近呪の魔鎖",
+    "de": "Bindender Fluch",
+    "fr": "Malédiction contigüe",
+    "icon": "/i/015000/015375.png"
   },
   "2743": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Loneliness",
+    "ja": "遠呪の魔鎖",
+    "de": "Treibender Fluch",
+    "fr": "Malédiction lointaine",
+    "icon": "/i/015000/015377.png"
   },
   "2744": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Inescapable Companionship",
+    "ja": "近呪の魔鎖：発動",
+    "de": "Bindende Ketten",
+    "fr": "Chaîne contigüe",
+    "icon": "/i/015000/015376.png"
   },
   "2745": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Inescapable Loneliness",
+    "ja": "遠呪の魔鎖：発動",
+    "de": "Treibene Ketten",
+    "fr": "Chaîne lointaine",
+    "icon": "/i/015000/015378.png"
   },
   "2746": {
     "en": "",
@@ -19327,11 +19327,11 @@
     "icon": "/i/017000/017551.png"
   },
   "2762": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Death's Toll",
+    "ja": "死の運命",
+    "de": "Eid des Abschieds",
+    "fr": "Destin mortel",
+    "icon": "/i/017000/017556.png"
   },
   "2763": {
     "en": "Smiley Face",
@@ -19369,46 +19369,46 @@
     "icon": "/i/015000/015729.png"
   },
   "2768": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mark of the Tides",
+    "ja": "激流の刻印",
+    "de": "Mal des Stroms",
+    "fr": "Marque du torrent",
+    "icon": "/i/015000/015903.png"
   },
   "2769": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mark of the Depths",
+    "ja": "重圧の刻印",
+    "de": "Mal der Wucht",
+    "fr": "Marque d'oppression",
+    "icon": "/i/015000/015696.png"
   },
   "2770": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fore Mark of the Tides",
+    "ja": "激動の刻印：前",
+    "de": "Mal des Abwärtsstroms",
+    "fr": "Marque déferlante avant",
+    "icon": "/i/015000/015387.png"
   },
   "2771": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rear Mark of the Tides",
+    "ja": "激動の刻印：後",
+    "de": "Mal des Aufwärtsstroms",
+    "fr": "Marque déferlante arrière",
+    "icon": "/i/015000/015387.png"
   },
   "2772": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Left Mark of the Tides",
+    "ja": "激動の刻印：左",
+    "de": "Mal des linken Stroms",
+    "fr": "Marque déferlante gauche",
+    "icon": "/i/015000/015387.png"
   },
   "2773": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Right Mark of the Tides",
+    "ja": "激動の刻印：右",
+    "de": "Mal des rechten Stroms",
+    "fr": "Marque déferlante droite",
+    "icon": "/i/015000/015387.png"
   },
   "2774": {
     "en": "Dropsy",
@@ -19593,39 +19593,39 @@
     "icon": "/i/015000/015429.png"
   },
   "2800": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2800_-1_1_C0_0Status",
+    "ja": "_rsv_2800_-1_0_C0_0Status",
+    "de": "_rsv_2800_-1_2_C0_0Status",
+    "fr": "_rsv_2800_-1_3_C0_0Status",
+    "icon": "/i/015000/015430.png"
   },
   "2801": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2801_-1_1_C0_0Status",
+    "ja": "_rsv_2801_-1_0_C0_0Status",
+    "de": "_rsv_2801_-1_2_C0_0Status",
+    "fr": "_rsv_2801_-1_3_C0_0Status",
+    "icon": "/i/015000/015431.png"
   },
   "2802": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2802_-1_1_C0_0Status",
+    "ja": "_rsv_2802_-1_0_C0_0Status",
+    "de": "_rsv_2802_-1_2_C0_0Status",
+    "fr": "_rsv_2802_-1_3_C0_0Status",
+    "icon": "/i/015000/015432.png"
   },
   "2803": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2803_-1_1_C0_0Status",
+    "ja": "_rsv_2803_-1_0_C0_0Status",
+    "de": "_rsv_2803_-1_2_C0_0Status",
+    "fr": "_rsv_2803_-1_3_C0_0Status",
+    "icon": "/i/015000/015433.png"
   },
   "2804": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2804_-1_1_C0_0Status",
+    "ja": "_rsv_2804_-1_0_C0_0Status",
+    "de": "_rsv_2804_-1_2_C0_0Status",
+    "fr": "_rsv_2804_-1_3_C0_0Status",
+    "icon": "/i/015000/015386.png"
   },
   "2805": {
     "en": "Carrot of Happiness",
@@ -19838,32 +19838,32 @@
     "icon": ""
   },
   "2835": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Forward Bearing",
+    "ja": "方向転換：前",
+    "de": "Wende: Vorne",
+    "fr": "Changement de cap: en avant",
+    "icon": "/i/015000/015423.png"
   },
   "2836": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Backward Bearing",
+    "ja": "方向転換：後",
+    "de": "Wende: Hinten",
+    "fr": "Changement de cap: en arrière",
+    "icon": "/i/015000/015424.png"
   },
   "2837": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Leftward Bearing",
+    "ja": "方向転換：左",
+    "de": "Wende: Links",
+    "fr": "Changement de cap: à gauche",
+    "icon": "/i/015000/015425.png"
   },
   "2838": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Rightward Bearing",
+    "ja": "方向転換：右",
+    "de": "Wende: Rechts",
+    "fr": "Changement de cap: à droite",
+    "icon": "/i/015000/015426.png"
   },
   "2839": {
     "en": "Suiton",
@@ -19957,11 +19957,11 @@
     "icon": "/i/015000/015765.png"
   },
   "2852": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "HP Recovery Down",
+    "ja": "被回復低下",
+    "de": "Heilung -",
+    "fr": "Soins diminués",
+    "icon": "/i/015000/015427.png"
   },
   "2853": {
     "en": "Titan's Favor",
@@ -20188,46 +20188,46 @@
     "icon": "/i/016000/016825.png"
   },
   "2885": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Companionship",
+    "ja": "近呪の魔鎖",
+    "de": "Bindender Fluch",
+    "fr": "Malédiction contigüe",
+    "icon": "/i/015000/015375.png"
   },
   "2886": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Companionship",
+    "ja": "近呪の魔鎖",
+    "de": "Bindender Fluch",
+    "fr": "Malédiction contigüe",
+    "icon": "/i/015000/015375.png"
   },
   "2887": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Companionship",
+    "ja": "近呪の魔鎖",
+    "de": "Bindender Fluch",
+    "fr": "Malédiction contigüe",
+    "icon": "/i/015000/015375.png"
   },
   "2888": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Loneliness",
+    "ja": "遠呪の魔鎖",
+    "de": "Treibender Fluch",
+    "fr": "Malédiction lointaine",
+    "icon": "/i/015000/015377.png"
   },
   "2889": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Loneliness",
+    "ja": "遠呪の魔鎖",
+    "de": "Treibender Fluch",
+    "fr": "Malédiction lointaine",
+    "icon": "/i/015000/015377.png"
   },
   "2890": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Loneliness",
+    "ja": "遠呪の魔鎖",
+    "de": "Treibender Fluch",
+    "fr": "Malédiction lointaine",
+    "icon": "/i/015000/015377.png"
   },
   "2891": {
     "en": "Spearfisher's Intuition",
@@ -20328,11 +20328,11 @@
     "icon": "/i/015000/015382.png"
   },
   "2905": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Revolutionary",
+    "ja": "反転モード",
+    "de": "Inversionsmodus",
+    "fr": "Renversant",
+    "icon": "/i/015000/015422.png"
   },
   "2906": {
     "en": "●偽神獣の猛毒",
@@ -20454,53 +20454,53 @@
     "icon": "/i/015000/015530.png"
   },
   "2923": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Companionship",
+    "ja": "近呪の魔鎖",
+    "de": "Bindender Fluch",
+    "fr": "Malédiction contigüe",
+    "icon": "/i/015000/015375.png"
   },
   "2924": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shackles of Loneliness",
+    "ja": "遠呪の魔鎖",
+    "de": "Treibender Fluch",
+    "fr": "Malédiction lointaine",
+    "icon": "/i/015000/015377.png"
   },
   "2925": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2925_-1_1_C0_0Status",
+    "ja": "_rsv_2925_-1_0_C0_0Status",
+    "de": "_rsv_2925_-1_2_C0_0Status",
+    "fr": "_rsv_2925_-1_3_C0_0Status",
+    "icon": "/i/015000/015434.png"
   },
   "2926": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2926_-1_1_C0_0Status",
+    "ja": "_rsv_2926_-1_0_C0_0Status",
+    "de": "_rsv_2926_-1_2_C0_0Status",
+    "fr": "_rsv_2926_-1_3_C0_0Status",
+    "icon": "/i/015000/015435.png"
   },
   "2927": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2927_-1_1_C0_0Status",
+    "ja": "_rsv_2927_-1_0_C0_0Status",
+    "de": "_rsv_2927_-1_2_C0_0Status",
+    "fr": "_rsv_2927_-1_3_C0_0Status",
+    "icon": "/i/015000/015436.png"
   },
   "2928": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fountain of Fire",
+    "ja": "霊泉の炎",
+    "de": "Quell des Feuers",
+    "fr": "Flamme de la vie",
+    "icon": "/i/015000/015383.png"
   },
   "2929": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Trickle of Fire",
+    "ja": "霊泉の炎［弱］",
+    "de": "Kleiner Quell des Feuers",
+    "fr": "Flammèche de la vie",
+    "icon": "/i/015000/015383.png"
   },
   "2930": {
     "en": "",
@@ -20538,11 +20538,11 @@
     "icon": "/i/015000/015910.png"
   },
   "2935": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sustained Damage",
+    "ja": "継続ダメージ",
+    "de": "Schaden über Zeit",
+    "fr": "Dégâts continus",
+    "icon": "/i/015000/015067.png"
   },
   "2936": {
     "en": "Temporary Misdirection",
@@ -20552,11 +20552,11 @@
     "icon": "/i/015000/015809.png"
   },
   "2937": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fire Resistance Down II",
+    "ja": "火属性耐性低下[強]",
+    "de": "Feuerresistenz - (stark)",
+    "fr": "Résistance au feu réduite+",
+    "icon": "/i/015000/015595.png"
   },
   "2938": {
     "en": "Kerakeia",
@@ -20874,11 +20874,11 @@
     "icon": ""
   },
   "2983": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sleep",
+    "ja": "睡眠",
+    "de": "Schlaf",
+    "fr": "Sommeil",
+    "icon": "/i/015000/015013.png"
   },
   "2984": {
     "en": "",

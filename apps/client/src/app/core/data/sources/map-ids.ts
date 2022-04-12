@@ -59,7 +59,7 @@ export const mapIds = [
     "id": 8,
     "zone": 58,
     "name": "The Tam-Tara Deepcroft",
-    "territory": 164,
+    "territory": 1037,
     "scale": 300,
     "weatherRate": 0
   },
@@ -67,7 +67,7 @@ export const mapIds = [
     "id": 9,
     "zone": 61,
     "name": "The Thousand Maws of Toto-Rak",
-    "territory": 169,
+    "territory": 1039,
     "scale": 200,
     "weatherRate": 0
   },
@@ -243,7 +243,7 @@ export const mapIds = [
     "id": 31,
     "zone": 35,
     "name": "Sastasha",
-    "territory": 157,
+    "territory": 1036,
     "scale": 200,
     "weatherRate": 0
   },
@@ -259,7 +259,7 @@ export const mapIds = [
     "id": 33,
     "zone": 359,
     "name": "The Navel",
-    "territory": 206,
+    "territory": 1046,
     "scale": 400,
     "weatherRate": 23
   },
@@ -267,7 +267,7 @@ export const mapIds = [
     "id": 34,
     "zone": 48,
     "name": "Copperbell Mines",
-    "territory": 161,
+    "territory": 1038,
     "scale": 200,
     "weatherRate": 0
   },
@@ -275,7 +275,7 @@ export const mapIds = [
     "id": 35,
     "zone": 357,
     "name": "Bowl of Embers",
-    "territory": 202,
+    "territory": 1045,
     "scale": 400,
     "weatherRate": 25
   },
@@ -291,7 +291,7 @@ export const mapIds = [
     "id": 37,
     "zone": 401,
     "name": "Stone Vigil",
-    "territory": 168,
+    "territory": 1042,
     "scale": 200,
     "weatherRate": 27
   },
@@ -307,7 +307,7 @@ export const mapIds = [
     "id": 39,
     "zone": 361,
     "name": "The Howling Eye",
-    "territory": 208,
+    "territory": 1047,
     "scale": 400,
     "weatherRate": 26
   },
@@ -315,7 +315,7 @@ export const mapIds = [
     "id": 40,
     "zone": 48,
     "name": "Copperbell Mines",
-    "territory": 161,
+    "territory": 1038,
     "scale": 200,
     "weatherRate": 0
   },
@@ -323,7 +323,7 @@ export const mapIds = [
     "id": 41,
     "zone": 48,
     "name": "Copperbell Mines",
-    "territory": 161,
+    "territory": 1038,
     "scale": 200,
     "weatherRate": 0
   },
@@ -355,7 +355,7 @@ export const mapIds = [
     "id": 45,
     "zone": 36,
     "name": "Brayflox's Longstop",
-    "territory": 158,
+    "territory": 1041,
     "scale": 200,
     "weatherRate": 0
   },
@@ -371,7 +371,7 @@ export const mapIds = [
     "id": 47,
     "zone": 260,
     "name": "Castrum Meridianum",
-    "territory": 217,
+    "territory": 1043,
     "scale": 200,
     "weatherRate": 0
   },
@@ -379,7 +379,7 @@ export const mapIds = [
     "id": 48,
     "zone": 59,
     "name": "Haukke Manor",
-    "territory": 166,
+    "territory": 1040,
     "scale": 200,
     "weatherRate": 0
   },
@@ -427,7 +427,7 @@ export const mapIds = [
     "id": 54,
     "zone": 59,
     "name": "Haukke Manor",
-    "territory": 166,
+    "territory": 1040,
     "scale": 200,
     "weatherRate": 0
   },
@@ -435,7 +435,7 @@ export const mapIds = [
     "id": 55,
     "zone": 59,
     "name": "Haukke Manor",
-    "territory": 166,
+    "territory": 1040,
     "scale": 200,
     "weatherRate": 0
   },
@@ -443,7 +443,7 @@ export const mapIds = [
     "id": 56,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 200,
     "weatherRate": 0
   },
@@ -787,7 +787,7 @@ export const mapIds = [
     "id": 99,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 200,
     "weatherRate": 0
   },
@@ -795,7 +795,7 @@ export const mapIds = [
     "id": 100,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 200,
     "weatherRate": 0
   },
@@ -803,7 +803,7 @@ export const mapIds = [
     "id": 101,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 200,
     "weatherRate": 0
   },
@@ -811,7 +811,7 @@ export const mapIds = [
     "id": 102,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 200,
     "weatherRate": 0
   },
@@ -819,7 +819,7 @@ export const mapIds = [
     "id": 103,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 100,
     "weatherRate": 0
   },
@@ -827,7 +827,7 @@ export const mapIds = [
     "id": 104,
     "zone": 440,
     "name": "The Praetorium",
-    "territory": 224,
+    "territory": 1044,
     "scale": 100,
     "weatherRate": 0
   },
@@ -2789,7 +2789,7 @@ export const mapIds = [
     "name": "Lichenweed",
     "territory": 632,
     "scale": 200,
-    "weatherRate": 73
+    "weatherRate": 0
   },
   {
     "id": 350,
@@ -3517,7 +3517,7 @@ export const mapIds = [
     "name": "Crystal Tower Training Grounds",
     "territory": 745,
     "scale": 200,
-    "weatherRate": 90
+    "weatherRate": 0
   },
   {
     "id": 441,
@@ -5977,11 +5977,11 @@ export const mapIds = [
   },
   {
     "id": 748,
-    "zone": 3769,
+    "zone": 4033,
     "name": "The Gates of Pandæmonium",
     "territory": 1025,
     "scale": 100,
-    "weatherRate": 0
+    "weatherRate": 145
   },
   {
     "id": 749,
@@ -6010,7 +6010,7 @@ export const mapIds = [
   {
     "id": 752,
     "zone": 4154,
-    "name": "",
+    "name": "Alzadaal's Legacy",
     "territory": 1050,
     "scale": 200,
     "weatherRate": 0
@@ -6018,7 +6018,7 @@ export const mapIds = [
   {
     "id": 753,
     "zone": 4154,
-    "name": "",
+    "name": "Alzadaal's Legacy",
     "territory": 1050,
     "scale": 200,
     "weatherRate": 0
@@ -6026,13 +6026,213 @@ export const mapIds = [
   {
     "id": 754,
     "zone": 4154,
-    "name": "",
+    "name": "Alzadaal's Legacy",
     "territory": 1050,
     "scale": 200,
     "weatherRate": 0
   },
   {
     "id": 755,
+    "zone": 4167,
+    "name": "Aglaia",
+    "territory": 1054,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 756,
+    "zone": 4167,
+    "name": "Aglaia",
+    "territory": 1054,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 757,
+    "zone": 4167,
+    "name": "Aglaia",
+    "territory": 1054,
+    "scale": 200,
+    "weatherRate": 147
+  },
+  {
+    "id": 758,
+    "zone": 4098,
+    "name": "",
+    "territory": 968,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 759,
+    "zone": 4090,
+    "name": "The Palaistra",
+    "territory": 1032,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 760,
+    "zone": 4091,
+    "name": "The Volcanic Heart",
+    "territory": 1033,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 761,
+    "zone": 4092,
+    "name": "Cloud Nine",
+    "territory": 1034,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 762,
+    "zone": 0,
+    "name": null,
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 763,
+    "zone": 457,
+    "name": "Porta Decumana",
+    "territory": 1048,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 764,
+    "zone": 4032,
+    "name": "The Porta Decumana",
+    "territory": 1048,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 765,
+    "zone": 4099,
+    "name": "",
+    "territory": 968,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 766,
+    "zone": 4031,
+    "name": "The Omphalos",
+    "territory": 1061,
+    "scale": 400,
+    "weatherRate": 147
+  },
+  {
+    "id": 767,
+    "zone": 4034,
+    "name": "Restricted Archives",
+    "territory": 1057,
+    "scale": 400,
+    "weatherRate": 137
+  },
+  {
+    "id": 768,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 769,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 770,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 771,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 772,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 773,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 774,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 775,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 776,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 777,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 778,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 779,
+    "zone": 0,
+    "name": null,
+    "territory": 0,
+    "scale": 100,
+    "weatherRate": null
+  },
+  {
+    "id": 780,
     "zone": 0,
     "name": null,
     "territory": 0,

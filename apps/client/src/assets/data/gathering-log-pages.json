@@ -1498,6 +1498,13 @@
           "lvl": 90,
           "stars": 1,
           "hidden": 0
+        },
+        {
+          "itemId": 37279,
+          "ilvl": 580,
+          "lvl": 90,
+          "stars": 1,
+          "hidden": 0
         }
       ]
     }
@@ -6142,6 +6149,13 @@
         {
           "itemId": 36207,
           "ilvl": 570,
+          "lvl": 90,
+          "stars": 1,
+          "hidden": 0
+        },
+        {
+          "itemId": 37278,
+          "ilvl": 580,
           "lvl": 90,
           "stars": 1,
           "hidden": 0

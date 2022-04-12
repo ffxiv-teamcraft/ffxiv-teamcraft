@@ -306,7 +306,7 @@ export class ExtractorComponent {
         return from(itemIds).pipe(
           mergeMap(itemId => {
             return this.extractor.addDataToItem({ id: +itemId } as ListRow);
-          }, 200),
+          }, 50),
           tap(() => this.done$.next(this.done$.value + 1)),
           bufferCount(itemIds.length)
         );

@@ -13553,7 +13553,7 @@
     "en": "Empire Builder",
     "ja": "指定採集：放流トラウトの適応確認",
     "de": "Auch Fische frieren",
-    "fr": "Collecte: bâtisseur d'empire",
+    "fr": "Collecte: bâtisseuse d'empire",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -13572,7 +13572,7 @@
     "en": "Laird of the Lakes",
     "ja": "指定採集：保存食用のパイク",
     "de": "Ein toller Hecht",
-    "fr": "Collecte: maître des lacs",
+    "fr": "Collecte: maîtresse des lacs",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -13610,7 +13610,7 @@
     "en": "Rationally Speaking",
     "ja": "大量採集：撒き餌用のローチ",
     "de": "Köderfische",
-    "fr": "Grosse récolte: rations de gardon",
+    "fr": "Grosse récolte: rations de loche",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -22216,7 +22216,7 @@
     "en": "Brace Yourselves",
     "ja": "製作依頼：商品見本用の革製品",
     "de": "Leder wundersamer Tiere",
-    "fr": "Fabrication: Cuir, cuir, cuir... de gazelle",
+    "fr": "Fabrication: cuir, cuir, cuir... de gazelle",
     "job": {
       "en": "LTW",
       "ja": "革細工師",
@@ -24495,7 +24495,7 @@
     ]
   },
   "1393": {
-    "en": "Perhaps Not-So-Common",
+    "en": "Perhaps Not-so-common",
     "ja": "大量採集：酒蒸し用のツブ",
     "de": "Lieferung im Schneckentempo",
     "fr": "Grosse récolte: coquillages et crustacés",
@@ -27578,7 +27578,7 @@
     "en": "Magic Mushrooms",
     "ja": "指定採集：幻覚性菌類の医療活用について",
     "de": "Krabbenpilzbehandlung",
-    "fr": "Collecte: fungis guérisseurs",
+    "fr": "Collecte: fungi guérisseurs",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -28393,9 +28393,9 @@
   },
   "1606": {
     "en": "Planisphere to Paper",
-    "ja": "製作依頼：論文執筆用の天球義",
+    "ja": "製作依頼：論文執筆用の天球儀",
     "de": "Von der Planisphäre aufs Papier",
-    "fr": "Fabrication: Planisphère magitek en chondrite",
+    "fr": "Fabrication: planisphère magitek en chondrite",
     "job": {
       "en": "GSM",
       "ja": "彫金師",
@@ -28830,7 +28830,7 @@
   },
   "1629": {
     "en": "Nearly Bare",
-    "ja": "製作依頼：ガシャ革張りの魔道書",
+    "ja": "製作依頼：ガジャ革張りの魔道書",
     "de": "Ein erschreckender Mangel",
     "fr": "Fabrication: grimoire en cuir de gaja",
     "job": {
@@ -28889,7 +28889,7 @@
     "en": "Rebuilding to Code",
     "ja": "製作依頼：サイガ革の魔道書",
     "de": "Buchreplikation",
-    "fr": "Fabrication: codex en cuir de Saïga",
+    "fr": "Fabrication: codex en cuir de saïga",
     "job": {
       "en": "ALC",
       "ja": "錬金術師",
@@ -29098,7 +29098,7 @@
     "en": "A Stickler for Carrots",
     "ja": "製作依頼：特製のキャロットラペ",
     "de": "Ein mäkeliger Esser",
-    "fr": "Fabrication: carottes rapées maison",
+    "fr": "Fabrication: carottes râpées maison",
     "job": {
       "en": "CUL",
       "ja": "調理師",
@@ -29401,9 +29401,9 @@
   },
   "1663": {
     "en": "One Man's Rock",
-    "ja": "確認作業：観賞用の美しい石",
+    "ja": "確認採集：観賞用の美しい石",
     "de": "Die Kunst im Stein",
-    "fr": "Échantillons: belle pierre ornementale",
+    "fr": "Échantillons: beau minéral ornemental",
     "job": {
       "en": "MIN",
       "ja": "採掘師",
@@ -29487,7 +29487,7 @@
     "en": "Training Up",
     "ja": "確認採集：XLIX式客車の外装",
     "de": "Zugrecycling",
-    "fr": "Échantillons: tôle de wagons",
+    "fr": "Échantillons: tôle de wagon",
     "job": {
       "en": "MIN",
       "ja": "採掘師",
@@ -29571,7 +29571,7 @@
     "en": "Rocks of a Feather",
     "ja": "確認採集：観賞用の至高の石",
     "de": "Das Gute in der Nähe",
-    "fr": "Échantillons: suprême pierre d'agrément",
+    "fr": "Échantillons: suprême minéral d'agrément",
     "job": {
       "en": "MIN",
       "ja": "採掘師",
@@ -29651,7 +29651,7 @@
     "en": "Water Works",
     "ja": "指定採集：近東原産種の繁殖環境サンプル",
     "de": "Wasserproben",
-    "fr": "Collecte: échantillon d'une variété d'orient",
+    "fr": "Collecte: échantillon d'une variété d'Orient",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -29670,7 +29670,7 @@
     "en": "Fishing for the Future",
     "ja": "指定採集：図鑑のための斑紋魚",
     "de": "Fischstudien",
-    "fr": "Collecte: poisson-globe pour collection",
+    "fr": "Collecte: poisson-roche pour collection",
     "job": {
       "en": "FSH",
       "ja": "漁師",
@@ -29746,7 +29746,7 @@
     "en": "Simple as Salt",
     "ja": "指定採集：塩辛イカはいかな味？",
     "de": "Salzkalmar",
-    "fr": "Collecte: quel goût ont les viscères de calamar?",
+    "fr": "Collecte: quel goût ont les viscères de calmar?",
     "job": {
       "en": "FSH",
       "ja": "漁師",

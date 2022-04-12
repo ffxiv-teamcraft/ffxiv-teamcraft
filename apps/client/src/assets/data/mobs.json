@@ -11229,7 +11229,7 @@
     "en": "Atomos",
     "ja": "アトモス",
     "de": "Atomos",
-    "fr": "Atomos"
+    "fr": "atomos"
   },
   "1873": {
     "en": "Allagan bomb",
@@ -19503,7 +19503,7 @@
     "en": "Atomos Prime",
     "ja": "アトモス・プライム",
     "de": "Prim-Atomos",
-    "fr": "Primo-Atomos"
+    "fr": "primo-atomos"
   },
   "3252": {
     "en": "sacrificed soldier",
@@ -45651,7 +45651,7 @@
     "en": "Atomos asipu",
     "ja": "アルター・アトモス",
     "de": "Altar-Atomos",
-    "fr": "Atomos du temple sacré"
+    "fr": "atomos du temple sacré"
   },
   "7610": {
     "en": "korrigan",
@@ -46362,7 +46362,7 @@
     "fr": "Eldthurs"
   },
   "7728": {
-    "en": "sulfuric slime",
+    "en": "sulphuric slime",
     "ja": "スルフルスライム",
     "de": "Schwefelschleim",
     "fr": "gluant sulfurique"
@@ -51126,7 +51126,7 @@
     "fr": "iguane de Kholusia"
   },
   "8522": {
-    "en": "sulfur byrgen",
+    "en": "sulphur byrgen",
     "ja": "サルファー・ビルゲン",
     "de": "Schwefelspross",
     "fr": "byrgen de sulfure"
@@ -62197,7 +62197,7 @@
   },
   "10367": {
     "en": "Terminus horror",
-    "ja": "ターミナス・トランプラー",
+    "ja": "ターミナス・ホラー",
     "de": "Terminus-Horror",
     "fr": "horreur de l'apocalypse"
   },
@@ -62670,7 +62670,7 @@
     "fr": "astre azuré"
   },
   "10446": {
-    "en": "crimson star",
+    "en": "fiery star",
     "ja": "赤色天体",
     "de": "rot[a] Himmelskörper",
     "fr": "astre incarnat"
@@ -64101,7 +64101,7 @@
     "en": "stray mandragora",
     "ja": "ストレイ・マンドラゴラ",
     "de": "streunend[a] Mandragora",
-    "fr": "mandragore errant"
+    "fr": "mandragore errante"
   },
   "10685": {
     "en": "stray korrigan",
@@ -66836,7 +66836,7 @@
   "11140": {
     "en": "territorial stellar amphiptere",
     "ja": "テリトリアル・ステラアンフィプテレ",
-    "de": "hinterhältig[a] Stellar-Libelle",
+    "de": "hinterhältig[a] Stellar-Amphitere",
     "fr": "amphiptère stellaire territorial"
   },
   "11141": {
@@ -67302,274 +67302,274 @@
     "fr": "orbe de foudre"
   },
   "11218": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's qutrub",
+    "ja": "アルザダール・クトゥルブ",
+    "de": "Alzadaal-Qutrub",
+    "fr": "qutrub d'Alzadaal"
   },
   "11219": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's langur",
+    "ja": "アルザダール・ラングール",
+    "de": "Alzadaal-Langur",
+    "fr": "langur d'Azadaal"
   },
   "11220": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's asvattha",
+    "ja": "アルザダール・アシュヴァッタ",
+    "de": "Alzadaal-Asvattha",
+    "fr": "asvattha d'Alzadaal"
   },
   "11221": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's vajralangula",
+    "ja": "アルザダール・ヴァジュララングラ",
+    "de": "Alzadaal-Vajralangula",
+    "fr": "vajralangula d'Alzadaal"
   },
   "11222": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty monk",
+    "ja": "バウンティ・シーモンク",
+    "de": "Myriaden-Mönch",
+    "fr": "moine de mer de l'Abondance"
   },
   "11223": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty uragnite",
+    "ja": "バウンティ・ウラグナイト",
+    "de": "Myriaden-Uragnit",
+    "fr": "uragnite de l'Abondance"
   },
   "11224": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty ogrebon",
+    "ja": "バウンティ・オーガボン",
+    "de": "Myriaden-Ogerbon",
+    "fr": "ogrebon de l'Abondance"
   },
   "11225": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty craklaw",
+    "ja": "バウンティ・クラックロー",
+    "de": "Myriaden-Kraklaw",
+    "fr": "craqulov de l'Abondance"
   },
   "11226": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty vepar",
+    "ja": "バウンティ・ヴェパル",
+    "de": "Myriaden-Vepar",
+    "fr": "vepar de l'Abondance"
   },
   "11227": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's rampart",
+    "ja": "アルザダール・ランパート",
+    "de": "Alzadaal-Schutzwall",
+    "fr": "rampart d'Alzadaal"
   },
   "11228": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty ruszor",
+    "ja": "バウンティ・ルスゾル",
+    "de": "Myriaden-Ruszor",
+    "fr": "ruszor de l'Abondance"
   },
   "11229": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty xzomit",
+    "ja": "バウンティ・ゾミト",
+    "de": "Myriaden-Xzomit",
+    "fr": "xzomit de l'Abondance"
   },
   "11230": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bounty rockfin",
+    "ja": "バウンティ・ロックフィン",
+    "de": "Myriaden-Felsenflosse",
+    "fr": "rocquin de l'Abondance"
   },
   "11231": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Clawtrap Alzadaal XIV",
+    "ja": "サトラップ・アルザダールXIV",
+    "de": "Magistrat Alzadaal [t] Vierzehnt[a]",
+    "fr": "satrape Alzadaal XIV"
   },
   "11232": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Radiant crab",
+    "ja": "レディアント・クラブ",
+    "de": "Himmelskrabbe",
+    "fr": "crabe rayonnant"
   },
   "11233": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's acrolith",
+    "ja": "アルザダール・アクロリス",
+    "de": "Alzadaal-Acrolith",
+    "fr": "acrolithe d'Alzadaal"
   },
   "11234": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's guardian",
+    "ja": "アルザダール・ガーディアン",
+    "de": "Alzadaal-Wächter",
+    "fr": "gardien d'Alzadaal"
   },
   "11235": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mystic weapon",
+    "ja": "ミスティックウェポン",
+    "de": "mystisch[a] Waffe",
+    "fr": "arme mystique"
   },
   "11236": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mystic weapon",
+    "ja": "ミスティックウェポン",
+    "de": "mystisch[a] Waffe",
+    "fr": "arme mystique"
   },
   "11237": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's mimic",
+    "ja": "アルザダール・ミミック",
+    "de": "Alzadaal-Mimik",
+    "fr": "mimic d'Alzadaal"
   },
   "11238": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kapikulu",
+    "ja": "カプクル",
+    "de": "Kapikulu",
+    "fr": "Kapikulu"
   },
   "11239": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "armored chariot",
+    "ja": "アーマード・チャリオット",
+    "de": "gepanzert[a] Chariot",
+    "fr": "char cuirassé"
   },
   "11240": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "armored drudge",
+    "ja": "アーマード・スレイヴ",
+    "de": "gepanzert[a] Sklave",
+    "fr": "esclave cuirassé"
   },
   "11241": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ambujam",
+    "ja": "アムブジャ",
+    "de": "Ambujam",
+    "fr": "Ambujam"
   },
   "11242": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "scarlet tentacle",
+    "ja": "紅の触手",
+    "de": "Scharlachtentakel",
+    "fr": "tentacule pourpre"
   },
   "11243": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "cyan tentacle",
+    "ja": "蒼の触手",
+    "de": "Azurtentakel",
+    "fr": "tentacule turquoise"
   },
   "11244": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus beholder",
+    "ja": "ターミナス・ビホルダー",
+    "de": "Terminus-Betrachter",
+    "fr": "tyrannœil de l'apocalypse"
   },
   "11245": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus twitcher",
+    "ja": "ターミナス・ツイッチャー",
+    "de": "Terminus-Zerrer",
+    "fr": "picoreur de l'apocalypse"
   },
   "11246": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus sprinter",
+    "ja": "ターミナス・スプリンター",
+    "de": "Terminus-Sprinter",
+    "fr": "sprinteur de l'apocalypse"
   },
   "11247": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus flesher",
+    "ja": "ターミナス・フレッシャー",
+    "de": "Terminus-Zerfleischer",
+    "fr": "boucher de l'apocalypse"
   },
   "11248": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus shriver",
+    "ja": "ターミナス・シュライヴァー",
+    "de": "Terminus-Schänder",
+    "fr": "flétrisseur de l'apocalypse"
   },
   "11249": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus trampler",
+    "ja": "ターミナス・トランプラー",
+    "de": "Terminus-Trampler",
+    "fr": "annélide de l'apocalypse"
   },
   "11250": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus lacerator",
+    "ja": "ターミナス・ラサレーター",
+    "de": "Terminus-Schlitzer",
+    "fr": "lacérateur de l'apocalypse"
   },
   "11251": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus detonator",
+    "ja": "ターミナス・デトネーター",
+    "de": "Terminus-Detonator",
+    "fr": "détonateur de l'apocalypse"
   },
   "11252": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus bellwether",
+    "ja": "ターミナス・ベルウェザー",
+    "de": "Läuter[p] der Totenglocke",
+    "fr": "sonneur de glas de l'apocalypse"
   },
   "11253": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Nerva yae Galvus",
+    "ja": "ネルウァ・イェー・ガルヴァス",
+    "de": "Nerva yae Galvus",
+    "fr": "Nerva yae Galvus"
   },
   "11254": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Terminus moaner",
+    "ja": "ターミナス・モーナー",
+    "de": "Terminus-Klager",
+    "fr": "âme en deuil de l'apocalypse"
   },
   "11255": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "dark sphere",
+    "ja": "ダークスフィア",
+    "de": "dunkl[a] Kugel",
+    "fr": "sphère sombre"
   },
   "11256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kan-E-Senna",
+    "ja": "カヌ・エ・センナ",
+    "de": "Kan-E-Senna",
+    "fr": "Kan-E-Senna"
   },
   "11257": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Merlwyb",
+    "ja": "メルウィブ",
+    "de": "Merlwyb",
+    "fr": "Merlwyb"
   },
   "11258": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Raubahn",
+    "ja": "ラウバーン",
+    "de": "Raubahn",
+    "fr": "Raubahn"
   },
   "11259": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hien",
+    "ja": "ヒエン",
+    "de": "Hien",
+    "fr": "Hien"
   },
   "11260": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Fourchenault",
+    "ja": "フルシュノ",
+    "de": "Fourchenault",
+    "fr": "Fourchenault"
   },
   "11261": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Iron Nero",
+    "ja": "アイアン・ネロ",
+    "de": "eisern[a] Nero",
+    "fr": "Nero"
   },
   "11262": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Aymeric",
+    "ja": "アイメリク",
+    "de": "Aymeric",
+    "fr": "Aymeric"
   },
   "11263": {
     "en": "",
@@ -67626,142 +67626,142 @@
     "fr": "avatar de G'raha Tia"
   },
   "11272": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "breaking point",
+    "ja": "衝突点",
+    "de": "Durchbruch",
+    "fr": "front énergétique"
   },
   "11273": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Rhalgr",
+    "ja": "ラールガー",
+    "de": "Rhalgr",
+    "fr": "Rhalgr"
   },
   "11274": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Rhalgr's emissary",
+    "ja": "ラールガーズ・エミッサリー",
+    "de": "Rhalgrs Abgesandt[a]",
+    "fr": "émissaire de Rhalgr"
   },
   "11275": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "imperial centurion",
+    "ja": "インペリアル・センチュリオン",
+    "de": "garleisch[a] Centurio",
+    "fr": "centurio impérial"
   },
   "11276": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "imperial pilus prior",
+    "ja": "インペリアル・ピルスプリオル",
+    "de": "garleisch[a] Pilus Prior",
+    "fr": "pilus prior impérial"
   },
   "11277": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Azeyma",
+    "ja": "アーゼマ",
+    "de": "Azeyma",
+    "fr": "Azeyma"
   },
   "11278": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Azeyma's heat",
+    "ja": "アーゼマの蜃気楼",
+    "de": "Azeymas Spiegelung",
+    "fr": "mirage d'Azeyma"
   },
   "11279": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sunstorm",
+    "ja": "陽霊気",
+    "de": "Azeymas Aura",
+    "fr": "aura solaire"
   },
   "11280": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "prodigal sun",
+    "ja": "幻太陽",
+    "de": "Schemensonne",
+    "fr": "soleil illusoire"
   },
   "11281": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Byregot",
+    "ja": "ビエルゴ",
+    "de": "Byregot",
+    "fr": "Byregot"
   },
   "11282": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Byregot's avatar",
+    "ja": "ビエルゴの分体",
+    "de": "Byregots Abbild",
+    "fr": "double de Byregot"
   },
   "11283": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "roiling cloud",
+    "ja": "雷雲",
+    "de": "Donnerwolke",
+    "fr": "nuage de foudre"
   },
   "11284": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Deryk",
+    "ja": "デリック",
+    "de": "Deryk",
+    "fr": "Deryk"
   },
   "11285": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "phantom Gaius",
+    "ja": "ガイウスの幻影",
+    "de": "Gaius-Projektion",
+    "fr": "spectre de Gaius"
   },
   "11286": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Nald'thal",
+    "ja": "ナルザル",
+    "de": "Nald'thal",
+    "fr": "Nald'thal"
   },
   "11287": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "gate below",
+    "ja": "死の門",
+    "de": "Tor[p] des Todes",
+    "fr": "porte de la mort"
   },
   "11288": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Nald",
+    "ja": "ナル神",
+    "de": "Nald",
+    "fr": "Nald"
   },
   "11289": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Thal",
+    "ja": "ザル神",
+    "de": "Thal",
+    "fr": "Thal"
   },
   "11290": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "soul vessel",
+    "ja": "魂の器",
+    "de": "Seelengefäß",
+    "fr": "réceptacle d'âme"
   },
   "11291": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "soul vessel",
+    "ja": "魂の器",
+    "de": "Seelengefäß",
+    "fr": "réceptacle d'âme"
   },
   "11292": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lion of Aglaia",
+    "ja": "アグライア・ライオン",
+    "de": "Aglaia-Löwe",
+    "fr": "lion d'Aglaé"
   },
   "11293": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lioness of Aglaia",
+    "ja": "アグライア・ライオネス",
+    "de": "Aglaia-Löwin",
+    "fr": "lionne d'Aglaé"
   },
   "11294": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lions of Aglaia",
+    "ja": "アグライア・ライオンズ",
+    "de": "Aglaia-Löwenpaar",
+    "fr": "couple léonin"
   },
   "11295": {
     "en": "",
@@ -67794,6 +67794,354 @@
     "fr": ""
   },
   "11300": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11301": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11302": {
+    "en": "Rhalgr",
+    "ja": "ラールガー",
+    "de": "Rhalgr",
+    "fr": "Rhalgr"
+  },
+  "11303": {
+    "en": "fist of wrath",
+    "ja": "幻右拳",
+    "de": "recht[a] Schemenfaust",
+    "fr": "poing droit du Destructeur"
+  },
+  "11304": {
+    "en": "fist of judgment",
+    "ja": "幻左拳",
+    "de": "link[a] Schemenfaust",
+    "fr": "poing gauche du Destructeur"
+  },
+  "11305": {
+    "en": "lightning orb",
+    "ja": "雷球",
+    "de": "Blitzkugel",
+    "fr": "orbe de foudre"
+  },
+  "11306": {
+    "en": "looming voice",
+    "ja": "海底遺跡の守護者",
+    "de": "Ruinenwächter",
+    "fr": "sentinelle du palais sous-marin"
+  },
+  "11307": {
+    "en": "ichorous drip",
+    "ja": "イコラウス・ドリップ",
+    "de": "tropfend[a] Ichor",
+    "fr": "goutte ichoreuse"
+  },
+  "11308": {
+    "en": "Terminus stalker",
+    "ja": "ターミナス・ストーカー",
+    "de": "Terminus-Schleicher",
+    "fr": "traqueur de l'apocalypse"
+  },
+  "11309": {
+    "en": "happy bunny",
+    "ja": "しあわせうさぎ",
+    "de": "Glückshase",
+    "fr": "lapin du bonheur"
+  },
+  "11310": {
+    "en": "foul-tempered chicken",
+    "ja": "荒ぶるニワトリ",
+    "de": "empört[a] Huhn",
+    "fr": "poule en colère"
+  },
+  "11311": {
+    "en": "Hatching-tide helpmeet",
+    "ja": "エッグハント実行委員",
+    "de": "Eiersuchkomitee-Vorstandsmitglied",
+    "fr": "organisateur de la chasse aux Prœufs"
+  },
+  "11312": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11313": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11314": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11315": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11316": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11317": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11318": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11319": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11320": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11321": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11322": {
+    "en": "Warden's flame",
+    "ja": "日神の焔扇",
+    "de": "Flammenfächer",
+    "fr": "éventail solaire"
+  },
+  "11323": {
+    "en": "shallows monk",
+    "ja": "シャロウ・シーモンク",
+    "de": "Flachküsten-Mönch",
+    "fr": "moine de mer des hauts-fonds"
+  },
+  "11324": {
+    "en": "shallows ogrebon",
+    "ja": "シャロウ・オーガボン",
+    "de": "Flachküsten-Ogerbon",
+    "fr": "ogrebon des hauts-fonds"
+  },
+  "11325": {
+    "en": "shallows xzomit",
+    "ja": "シャロウ・ゾミト",
+    "de": "Flachküsten-Xzomit",
+    "fr": "xzomit des hauts-fonds"
+  },
+  "11326": {
+    "en": "eager marauder",
+    "ja": "気鋭の斧術士",
+    "de": "kühn[a] Marodeur",
+    "fr": "maraudeur volontaire"
+  },
+  "11327": {
+    "en": "eager lancer",
+    "ja": "気鋭の槍術士",
+    "de": "kühn[a] Pikenier",
+    "fr": "maître d'hast volontaire"
+  },
+  "11328": {
+    "en": "eager thaumaturge",
+    "ja": "気鋭の呪術士",
+    "de": "kühn[a] Thaumaturg",
+    "fr": "occultiste volontaire"
+  },
+  "11329": {
+    "en": "eager conjurer",
+    "ja": "気鋭の幻術士",
+    "de": "kühn[a] Druide",
+    "fr": "élémentaliste volontaire"
+  },
+  "11330": {
+    "en": "Scion marauder",
+    "ja": "暁の斧術士",
+    "de": "Marodeur[p] der Morgenröte",
+    "fr": "maraudeur des Héritiers"
+  },
+  "11331": {
+    "en": "Scion lancer",
+    "ja": "暁の槍術士",
+    "de": "Pikenier[p] der Morgenröte",
+    "fr": "maître d'hast des Héritiers"
+  },
+  "11332": {
+    "en": "Scion thaumaturge",
+    "ja": "暁の呪術士",
+    "de": "Thaumaturg[p] der Morgenröte",
+    "fr": "occultiste des Héritiers"
+  },
+  "11333": {
+    "en": "Scion conjurer",
+    "ja": "暁の幻術士",
+    "de": "Druide[p] der Morgenröte",
+    "fr": "élémentaliste des Héritiers"
+  },
+  "11334": {
+    "en": "storm marauder",
+    "ja": "黒渦団の斧術士",
+    "de": "Mahlstrom-Marodeur",
+    "fr": "maraudeur du Maelstrom"
+  },
+  "11335": {
+    "en": "serpent lancer",
+    "ja": "双蛇党の槍術士",
+    "de": "Bruderschaftspikenier",
+    "fr": "maître d'hast des Deux Vipères"
+  },
+  "11336": {
+    "en": "flame thaumaturge",
+    "ja": "不滅隊の呪術士",
+    "de": "Legionsthaumaturg",
+    "fr": "occultiste des Immortels"
+  },
+  "11337": {
+    "en": "serpent conjurer",
+    "ja": "双蛇党の幻術士",
+    "de": "Bruderschaftsdruide",
+    "fr": "élémentaliste des Deux Vipères"
+  },
+  "11338": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11339": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11340": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11341": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11342": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11343": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11344": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11345": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11346": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11347": {
+    "en": "Terminus shriver",
+    "ja": "ターミナス・シュライヴァー",
+    "de": "Terminus-Schänder",
+    "fr": "flétrisseur de l'apocalypse"
+  },
+  "11348": {
+    "en": "Terminus twitcher",
+    "ja": "ターミナス・ツイッチャー",
+    "de": "Terminus-Zerrer",
+    "fr": "picoreur de l'apocalypse"
+  },
+  "11349": {
+    "en": "Terminus beholder",
+    "ja": "ターミナス・ビホルダー",
+    "de": "Terminus-Betrachter",
+    "fr": "tyrannœil de l'apocalypse"
+  },
+  "11350": {
+    "en": "tactical crystal",
+    "ja": "タクティカルクリスタル",
+    "de": "taktisch[a] Kristall",
+    "fr": "cristal tactique"
+  },
+  "11351": {
+    "en": "bomb core",
+    "ja": "ボムの魂",
+    "de": "Bomberseele",
+    "fr": "âme de bombo"
+  },
+  "11352": {
+    "en": "turbulence",
+    "ja": "乱気流",
+    "de": "Turbulenz",
+    "fr": "turbulence"
+  },
+  "11353": {
+    "en": "black chocobo feather",
+    "ja": "黒チョコボの羽根",
+    "de": "schwarz[a] Chocobo-Feder",
+    "fr": "plume de chocobo noir"
+  },
+  "11354": {
+    "en": "phantom Lahabrea",
+    "ja": "ラハブレアの幻影",
+    "de": "Lahabreas Schatten",
+    "fr": "ombre de Lahabrea"
+  },
+  "11355": {
+    "en": "arcane sphere",
+    "ja": "立体魔法陣",
+    "de": "arkan[a] Sphäre",
+    "fr": "sphère arcanique"
+  },
+  "11356": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11357": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11358": {
     "en": "",
     "ja": "",
     "de": "",
