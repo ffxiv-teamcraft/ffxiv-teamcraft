@@ -759,7 +759,7 @@
     "zh": "前冲步变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "255": {
-    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>对自身附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>倾泻、逆瀑泻、喷泉、坠喷泉、风车、升风车、落刃雨、落血雨命中后，获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>为队员附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>队员使用战技或魔法时，自身获得10点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n队员的伶俐发动几率会根据各特职产生变化"
+    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>对自身附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>瀑泻、逆瀑泻、喷泉、坠喷泉、风车、升风车、落刃雨、落血雨命中后，获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>为队员附加的伶俐效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>队员发动战技或魔法命中时，自身获得10点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n队员的伶俐发动几率会根据各特职产生变化"
   },
   "256": {
     "zh": "前冲步最多可积蓄3次"
@@ -1242,7 +1242,7 @@
     "zh": "原初的直觉变为原初的血气"
   },
   "419": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的勇猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的持续时间延长到8秒\n同时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血潮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的血潮效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标受到的伤害减轻10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血烟<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n该防护罩能够抵消相当于恢复力400的伤害量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的勇猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的持续时间延长到8秒\n同时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的武猛<UIGlow>01</UIGlow><UIForeground>01</UIForeground>追加以下效果\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血潮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的血潮效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令目标受到的伤害减轻10%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>为目标附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的血烟<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n该防护罩能够抵消相当于恢复力400的伤害量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒"
   },
   "420": {
     "zh": "发动泰然自若时，持续恢复自身的体力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒"
@@ -1281,7 +1281,7 @@
     "zh": "轻身步法的积蓄次数增加到3次"
   },
   "432": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义结金兰：斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时必定对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>义结金兰：斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态下必定对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "433": {
     "zh": "自身发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔猿身形、盗龙身形、猛豹身形<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的战技时，获得对应的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>魔猿身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔猿脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>盗龙身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>盗龙脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>猛豹身形的战技：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>猛豹脉轮<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>震脚<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
@@ -1329,7 +1329,7 @@
     "zh": "行吟的复唱时间缩短到90秒"
   },
   "448": {
-    "zh": "发动贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲时，对自身附加对应的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>尾声标识<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动贤者的叙事谣时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>贤者尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动军神的赞美歌时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动放浪神的小步舞曲时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>放浪神尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "zh": "发动贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲时，对自身附加对应的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>尾声标识<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动贤者的叙事谣时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>贤者的尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动军神的赞美歌时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动放浪神的小步舞曲时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>放浪神的尾声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
   },
   "449": {
     "zh": "散射变为霰弹枪"
@@ -1428,7 +1428,7 @@
     "zh": "火神召唤变为火神召唤II，土神召唤变为土神召唤II，风神召唤变为风神召唤II"
   },
   "482": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔元集<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n当魔元集累积3档时，赤闪雷与赤震雷变为赤核爆\n当学会赤神圣后，赤疾风与赤烈风变为赤神圣\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>魔回刺、魔交击斩、魔连攻、魔化圆斩命中时"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔元集<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>3\n当魔元集累积3档时，赤闪雷与赤震雷变为赤核爆\n当学会赤神圣后，赤疾风与赤烈风变为赤神圣\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>魔回刺、魔交击斩、魔连攻、魔划圆斩命中时"
   },
   "483": {
     "zh": "赤闪雷变为赤暴雷，赤疾风变为赤暴风\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔元集<UIGlow>01</UIGlow><UIForeground>01</UIForeground>累积3档时，赤暴雷变为赤核爆，赤暴风变为赤神圣"
@@ -1461,7 +1461,7 @@
     "zh": "破阵法变为裂阵法"
   },
   "493": {
-    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医术的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>日光的拥抱的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>鼓舞激励之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>士气高昂之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量160%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>炽天的幕帘的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180"
+    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医术的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>仙光的拥抱的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>鼓舞激励之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>士气高昂之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量160%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>炽天的幕帘的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180"
   },
   "494": {
     "zh": "展开战术的复唱时间缩短到90秒"

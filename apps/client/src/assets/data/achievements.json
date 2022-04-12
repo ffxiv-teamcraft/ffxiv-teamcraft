@@ -10624,7 +10624,7 @@
     "itemReward": 0
   },
   "1329": {
-    "en": "An Eye for Quality: Miner IV",
+    "en": "An Eye for Quantity: Miner IV",
     "ja": "腕利きの採掘師：ランク4",
     "de": "Die Menge macht's: Minenarbeiter IV",
     "fr": "Bonne trouvaille : mineur IV",
@@ -10632,7 +10632,7 @@
     "itemReward": 0
   },
   "1330": {
-    "en": "An Eye for Quality: Botanist IV",
+    "en": "An Eye for Quantity: Botanist IV",
     "ja": "腕利きの園芸師：ランク4",
     "de": "Die Menge macht's: Gärtner IV",
     "fr": "Bonne trouvaille : botaniste IV",
@@ -11472,7 +11472,7 @@
     "itemReward": 14249
   },
   "1435": {
-    "en": "Look Who's Coming to Dinner I",
+    "en": "Battle Bred I",
     "ja": "狼たちの饗宴：ランク1",
     "de": "Durch den Wolf gedreht I",
     "fr": "Manger comme un loup I",
@@ -11480,7 +11480,7 @@
     "itemReward": 0
   },
   "1436": {
-    "en": "Look Who's Coming to Dinner II",
+    "en": "Battle Bred II",
     "ja": "狼たちの饗宴：ランク2",
     "de": "Durch den Wolf gedreht II",
     "fr": "Manger comme un loup II",
@@ -11488,7 +11488,7 @@
     "itemReward": 0
   },
   "1437": {
-    "en": "Look Who's Coming to Dinner III",
+    "en": "Battle Bred III",
     "ja": "狼たちの饗宴：ランク3",
     "de": "Durch den Wolf gedreht III",
     "fr": "Manger comme un loup III",
@@ -11496,7 +11496,7 @@
     "itemReward": 0
   },
   "1438": {
-    "en": "Look Who's Coming to Dinner IV",
+    "en": "Battle Bred IV",
     "ja": "狼たちの饗宴：ランク4",
     "de": "Durch den Wolf gedreht IV",
     "fr": "Manger comme un loup IV",
@@ -11504,7 +11504,7 @@
     "itemReward": 0
   },
   "1439": {
-    "en": "Look Who's Coming to Dinner V",
+    "en": "Battle Bred V",
     "ja": "狼たちの饗宴：ランク5",
     "de": "Durch den Wolf gedreht V",
     "fr": "Manger comme un loup V",
@@ -11512,7 +11512,7 @@
     "itemReward": 0
   },
   "1440": {
-    "en": "A Clean Plate",
+    "en": "Raised by Wolves",
     "ja": "饗宴の主賓",
     "de": "Teil des Rudels",
     "fr": "Festin de loup",
@@ -11520,7 +11520,7 @@
     "itemReward": 0
   },
   "1441": {
-    "en": "You Are What You Eat I",
+    "en": "Blood Born I",
     "ja": "爪を研ぐ者：ランク1",
     "de": "Ein gefundenes Fressen I",
     "fr": "Avoir de grandes dents I",
@@ -11528,7 +11528,7 @@
     "itemReward": 0
   },
   "1442": {
-    "en": "You Are What You Eat II",
+    "en": "Blood Born II",
     "ja": "爪を研ぐ者：ランク2",
     "de": "Ein gefundenes Fressen II",
     "fr": "Avoir de grandes dents II",
@@ -11536,7 +11536,7 @@
     "itemReward": 0
   },
   "1443": {
-    "en": "You Are What You Eat III",
+    "en": "Blood Born III",
     "ja": "爪を研ぐ者：ランク3",
     "de": "Ein gefundenes Fressen III",
     "fr": "Avoir de grandes dents III",
@@ -11544,7 +11544,7 @@
     "itemReward": 0
   },
   "1444": {
-    "en": "You Are What You Eat IV",
+    "en": "Blood Born IV",
     "ja": "爪を研ぐ者：ランク4",
     "de": "Ein gefundenes Fressen IV",
     "fr": "Avoir de grandes dents IV",
@@ -11552,7 +11552,7 @@
     "itemReward": 14089
   },
   "1445": {
-    "en": "You Are What You Eat V",
+    "en": "Blood Born V",
     "ja": "爪を研ぐ者：ランク5",
     "de": "Ein gefundenes Fressen V",
     "fr": "Avoir de grandes dents V",
@@ -11560,7 +11560,7 @@
     "itemReward": 0
   },
   "1446": {
-    "en": "Breaking Fast with Champions",
+    "en": "The Young and the Relentless",
     "ja": "鋭き爪",
     "de": "Der Alpha-Wolf",
     "fr": "Avoir les crocs",
@@ -14160,7 +14160,7 @@
     "itemReward": 0
   },
   "1771": {
-    "en": "Fatal Feast",
+    "en": "Fame Fatale",
     "ja": "轟天",
     "de": "Fatales Fest",
     "fr": "Festin fatal",
@@ -22816,7 +22816,7 @@
     "itemReward": 0
   },
   "2853": {
-    "en": "You Say Goodbye, I Say Hielo...",
+    "en": "You Say Good-bye, I Say Hielo...",
     "ja": "氷菓",
     "de": "Schabeeiskonditor",
     "fr": "Un sorbet fait avec le cœur",
@@ -24066,7 +24066,7 @@
   "3009": {
     "en": "Frequent Flyer IV",
     "ja": "暁月の風を知る者",
-    "de": "Vielflieger III",
+    "de": "Vielflieger IV",
     "fr": "Navigateur des cieux infinis",
     "icon": "/i/021000/021901.png",
     "itemReward": 0
@@ -24317,6 +24317,390 @@
     "de": "Pandæmonium Æthericum, Ungekürzt III",
     "fr": "Démons et merveilles III",
     "icon": "/i/064000/064848.png",
+    "itemReward": 0
+  },
+  "3041": {
+    "en": "Crystal Lining I",
+    "ja": "クリスタルコンフリクト：ランク1",
+    "de": "Kristallstreif I",
+    "fr": "Soif de victoire I",
+    "icon": "/i/002000/002555.png",
+    "itemReward": 0
+  },
+  "3042": {
+    "en": "Crystal Lining II",
+    "ja": "クリスタルコンフリクト：ランク2",
+    "de": "Kristallstreif II",
+    "fr": "Soif de victoire II",
+    "icon": "/i/002000/002555.png",
+    "itemReward": 0
+  },
+  "3043": {
+    "en": "Crystal Lining III",
+    "ja": "クリスタルコンフリクト：ランク3",
+    "de": "Kristallstreif III",
+    "fr": "Soif de victoire III",
+    "icon": "/i/002000/002555.png",
+    "itemReward": 0
+  },
+  "3044": {
+    "en": "Crystal Lining IV",
+    "ja": "クリスタルコンフリクト：ランク4",
+    "de": "Kristallstreif IV",
+    "fr": "Soif de victoire IV",
+    "icon": "/i/002000/002555.png",
+    "itemReward": 0
+  },
+  "3045": {
+    "en": "Crystal Lining V",
+    "ja": "クリスタルコンフリクト：ランク5",
+    "de": "Kristallstreif V",
+    "fr": "Soif de victoire V",
+    "icon": "/i/002000/002555.png",
+    "itemReward": 0
+  },
+  "3046": {
+    "en": "Solid Bronze",
+    "ja": "クリスタルベアラー：ブロンズ",
+    "de": "Kristallträger: Bronze",
+    "fr": "Siège de cristal : bronze",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3047": {
+    "en": "Solid Silver",
+    "ja": "クリスタルベアラー：シルバー",
+    "de": "Kristallträger: Silber",
+    "fr": "Siège de cristal : argent",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3048": {
+    "en": "Solid Gold",
+    "ja": "クリスタルベアラー：ゴールド",
+    "de": "Kristallträger: Gold",
+    "fr": "Siège de cristal : or",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3049": {
+    "en": "Solid Platinum",
+    "ja": "クリスタルベアラー：プラチナ",
+    "de": "Kristallträger: Platin",
+    "fr": "Siège de cristal : platine",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3050": {
+    "en": "Solid Diamond",
+    "ja": "クリスタルベアラー：ダイヤモンド",
+    "de": "Kristallträger: Diamant",
+    "fr": "Siège de cristal : diamant",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3051": {
+    "en": "Solid Crystal",
+    "ja": "クリスタルベアラー：クリスタル",
+    "de": "Kristallträger: Kristall",
+    "fr": "Siège de cristal : cristal",
+    "icon": "/i/000000/000821.png",
+    "itemReward": 0
+  },
+  "3052": {
+    "en": "Top Tier",
+    "ja": "コンフリクトの王者",
+    "de": "Kristallkönig",
+    "fr": "Roi du conflit",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3053": {
+    "en": "Crystal in the Rough",
+    "ja": "コンフリクトの勇者",
+    "de": "Kristallfürst",
+    "fr": "Prince du conflit",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3054": {
+    "en": "Ranked and Filed",
+    "ja": "コンフリクトの入賞者",
+    "de": "Kristallkämpfer",
+    "fr": "As du conflit",
+    "icon": "/i/000000/000210.png",
+    "itemReward": 0
+  },
+  "3055": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3056": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3057": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3058": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3059": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3060": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3061": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3062": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3063": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3064": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3065": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3066": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3067": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3068": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3069": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3070": {
+    "en": "Mapping the Realm: Alzadaal's Legacy",
+    "ja": "アルザダール海底遺跡群を踏破せし者",
+    "de": "Kartograph: Alzadaals Vermächtnis",
+    "fr": "Cartographe du continent : Legs d'Alzadaal",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3071": {
+    "en": "Mapping the Realm: Aglaia",
+    "ja": "アグライアを踏破せし者",
+    "de": "Kartograph: Aglaia",
+    "fr": "Cartographe du continent : Aglaé",
+    "icon": "/i/001000/001001.png",
+    "itemReward": 0
+  },
+  "3072": {
+    "en": "Silence Is Golden",
+    "ja": "終焉を退けし者",
+    "de": "Letzte Ode der Endsängerin",
+    "fr": "En finir avec la fin",
+    "icon": "/i/000000/000317.png",
+    "itemReward": 0
+  },
+  "3073": {
+    "en": "Divine Intervention",
+    "ja": "アグライアを制覇せし者",
+    "de": "Feste auf die Zwölf",
+    "fr": "Divine splendeur",
+    "icon": "/i/002000/002669.png",
+    "itemReward": 0
+  },
+  "3074": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3075": {
+    "en": "Newfound Adventure",
+    "ja": "新たなる冒険",
+    "de": "Newfound Adventure",
+    "fr": "Vers de nouvelles aventures",
+    "icon": "/i/026000/026002.png",
+    "itemReward": 0
+  },
+  "3076": {
+    "en": "Sum of Our Parts",
+    "ja": "亡国の絶望を払いし者",
+    "de": "Patriot",
+    "fr": "Lénifier l'errance",
+    "icon": "/i/002000/002698.png",
+    "itemReward": 0
+  },
+  "3077": {
+    "en": "Go Big Till the End I",
+    "ja": "暁月の太公望：ランク1",
+    "de": "Apokalyptische Kapitalbeschaffung I",
+    "fr": "Pêcheur de légendes intemporel",
+    "icon": "/i/001000/001102.png",
+    "itemReward": 0
+  },
+  "3078": {
+    "en": "Happy Hunting",
+    "ja": "しあわせハンター",
+    "de": "Jäger des Glücks",
+    "fr": "Chasseur bienheureux",
+    "icon": "/i/059000/059850.png",
+    "itemReward": 0
+  },
+  "3079": {
+    "en": "Senor Advisor",
+    "ja": "セニョール・アドバイザー",
+    "de": "Stimme von Señor Kaktor",
+    "fr": "Señor conseiller",
+    "icon": "/i/064000/064420.png",
+    "itemReward": 0
+  },
+  "3080": {
+    "en": "頼れる先輩冒険者",
+    "ja": "頼れる先輩冒険者",
+    "de": "Ein Hindernisparkour mit Hindernissen",
+    "fr": "頼れる先輩冒険者",
+    "icon": "/i/042000/042851.png",
+    "itemReward": 0
+  },
+  "3081": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3082": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
+    "icon": "",
+    "itemReward": 0
+  },
+  "3083": {
+    "en": "Echoes of the Makai Blade",
+    "ja": "魔戒闘師・斬",
+    "de": "Echos der Makai-Klinge",
+    "fr": "Échos du tranchant Makai",
+    "icon": "/i/040000/040248.png",
+    "itemReward": 0
+  },
+  "3084": {
+    "en": "Echoes of the Makai Crimson",
+    "ja": "魔戒法師・紅",
+    "de": "Echos des Makai-Scharlachs",
+    "fr": "Échos pourpres Makai",
+    "icon": "/i/040000/040248.png",
+    "itemReward": 0
+  },
+  "3085": {
+    "en": "Echoes of the Makai Guardian",
+    "ja": "魔戒軍師・護",
+    "de": "Echos des Makai-Wächters",
+    "fr": "Échos de la protection Makai",
+    "icon": "/i/040000/040248.png",
+    "itemReward": 0
+  },
+  "3086": {
+    "en": "Echoes of the Makai Flicker",
+    "ja": "魔戒弓師・舞",
+    "de": "Echos der Makai-Anmut",
+    "fr": "Échos de la danse Makai",
+    "icon": "/i/040000/040248.png",
+    "itemReward": 0
+  },
+  "3087": {
+    "en": "Echoes of the Makai End",
+    "ja": "魔戒闘師・刃",
+    "de": "Echos des Makai-Endes",
+    "fr": "Échos de la lame Makai",
+    "icon": "/i/040000/040248.png",
+    "itemReward": 0
+  },
+  "3088": {
+    "en": "Echoes of the Makai Mind",
+    "ja": "魔戒導師・智",
+    "de": "Echos der Makai-Lehre",
+    "fr": "Échos de la sagesse Makai",
+    "icon": "/i/040000/040248.png",
     "itemReward": 0
   }
 }

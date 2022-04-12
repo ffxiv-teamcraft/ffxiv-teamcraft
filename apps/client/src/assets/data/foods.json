@@ -8446,8 +8446,8 @@
     "Bonuses": {
       "GP": {
         "ID": 10,
-        "Max": 38,
-        "MaxHQ": 48,
+        "Max": 44,
+        "MaxHQ": 55,
         "Relative": true,
         "Value": 23,
         "ValueHQ": 29
@@ -9130,5 +9130,51 @@
     "ID": 36076,
     "LevelEquip": 1,
     "LevelItem": 580
+  },
+  {
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Max": 66,
+        "MaxHQ": 82,
+        "Relative": true,
+        "Value": 21,
+        "ValueHQ": 26
+      },
+      "Craftsmanship": {
+        "ID": 70,
+        "Max": 96,
+        "MaxHQ": 120,
+        "Relative": true,
+        "Value": 4,
+        "ValueHQ": 5
+      }
+    },
+    "ID": 37282,
+    "LevelEquip": 1,
+    "LevelItem": 590
+  },
+  {
+    "Bonuses": {
+      "Gathering": {
+        "ID": 72,
+        "Max": 51,
+        "MaxHQ": 64,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3
+      },
+      "Perception": {
+        "ID": 73,
+        "Max": 99,
+        "MaxHQ": 124,
+        "Relative": true,
+        "Value": 6,
+        "ValueHQ": 7
+      }
+    },
+    "ID": 37283,
+    "LevelEquip": 1,
+    "LevelItem": 590
   }
 ]

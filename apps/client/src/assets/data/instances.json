@@ -6,8 +6,8 @@
     "fr": "les Mille Gueules de Toto-Rak",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      1203,
-      1200
+      33305,
+      33300
     ]
   },
   "2": {
@@ -166,19 +166,19 @@
     "fr": "Castrum Meridianum",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      3918,
-      3900
+      33526,
+      33500
     ]
   },
   "16": {
-    "en": "the Praetorium",
-    "ja": "最終決戦 魔導城プラエトリウム",
-    "de": "Castrum Meridianum - Praetorium",
-    "fr": "le Praetorium",
-    "icon": "/i/061000/061801.png",
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null,
     "contentText": [
-      4050,
-      4000
+      32921,
+      32900
     ]
   },
   "17": {
@@ -471,7 +471,7 @@
   },
   "43": {
     "en": "the Antitower",
-    "ja": "星海観測 逆さの塔 ",
+    "ja": "星海観測 逆さの塔",
     "de": "Antiturm",
     "fr": "L'Antitour",
     "icon": "/i/061000/061801.png",
@@ -943,18 +943,26 @@
     ]
   },
   "86": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "the Praetorium",
+    "ja": "最終決戦 魔導城プラエトリウム",
+    "de": "Castrum Meridianum - Praetorium",
+    "fr": "le Praetorium",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      32921,
+      32900
+    ]
   },
   "87": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Alzadaal's Legacy",
+    "ja": "近東秘宝 アルザダール海底遺跡群",
+    "de": "Alzadaals Vermächtnis",
+    "fr": "Le legs d'Alzadaal",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      32814,
+      32800
+    ]
   },
   "88": {
     "en": null,
@@ -1665,13 +1673,39 @@
     ]
   },
   "5059": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Forlorn Glory",
+    "ja": "ネルウァの帝国",
+    "de": "Nervas Reich",
+    "fr": "Nerva, le patriote",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      32733,
+      32700
+    ]
   },
   "5060": {
+    "en": "Cape Westwind",
+    "ja": "リットアティン強襲戦",
+    "de": "Kap Westwind",
+    "fr": "le Cap Vendouest",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      33429,
+      33400
+    ]
+  },
+  "5061": {
+    "en": "Devastation",
+    "ja": "アシエン・ラハブレア討伐戦",
+    "de": "Das Antlitz der Kaltblütigkeit",
+    "fr": "le Praetorium en flammes",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      33713,
+      33700
+    ]
+  },
+  "5062": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2110,15 +2144,11 @@
     ]
   },
   "20007": {
-    "en": "Cape Westwind",
-    "ja": "リットアティン強襲戦",
-    "de": "Kap Westwind",
-    "fr": "le Cap Vendouest",
-    "icon": "/i/061000/061804.png",
-    "contentText": [
-      3603,
-      3600
-    ]
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20008": {
     "en": "the Bowl of Embers (Extreme)",
@@ -2915,18 +2945,26 @@
     ]
   },
   "20082": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Porta Decumana",
+    "ja": "アルテマウェポン破壊作戦",
+    "de": "Porta Decumana",
+    "fr": "Porta Decumana",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      33235,
+      33200
+    ]
   },
   "20083": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Minstrel's Ballad: Endsinger's Aria",
+    "ja": "終極の戦い",
+    "de": "Eschatos - Endsängerin",
+    "fr": "le Répons final (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      33617,
+      33600
+    ]
   },
   "20084": {
     "en": null,
@@ -4265,6 +4303,17 @@
     ]
   },
   "30115": {
+    "en": "Aglaia",
+    "ja": "輝ける神域 アグライア",
+    "de": "Aglaia",
+    "fr": "Domaine divin - Aglaé",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      33089,
+      33000
+    ]
+  },
+  "30116": {
     "en": null,
     "ja": null,
     "de": null,
@@ -4506,6 +4555,27 @@
     "fr": null,
     "icon": null
   },
+  "36000": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "36001": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "36002": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
   "40000": {
     "en": null,
     "ja": null,
@@ -4563,11 +4633,11 @@
     "icon": null
   },
   "40008": {
-    "en": "the Feast (4 on 4 - Training)",
-    "ja": "ザ・フィースト (4対4 / カジュアルマッチ)",
-    "de": "The Feast (4 gegen 4, Übungskampf)",
-    "fr": "The Feast (4x4/entraînement)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40009": {
     "en": null,
@@ -4577,11 +4647,11 @@
     "icon": null
   },
   "40010": {
-    "en": "the Feast (4 on 4 - Ranked)",
-    "ja": "ザ・フィースト (4対4 / ランクマッチ)",
-    "de": "The Feast (4 gegen 4, gewertet)",
-    "fr": "The Feast (4x4/classé)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40011": {
     "en": null,
@@ -4605,11 +4675,11 @@
     "icon": null
   },
   "40014": {
-    "en": "the Feast (Custom Match - Feasting Grounds)",
-    "ja": "ザ・フィースト (ウルヴズジェイル演習場：カスタムマッチ）",
-    "de": "The Feast (Wolfshöhle: Schaukampf)",
-    "fr": "The Feast (personnalisé/Festin des loups)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40015": {
     "en": null,
@@ -4619,11 +4689,11 @@
     "icon": null
   },
   "40016": {
-    "en": "the Feast (4 on 4 - Training)",
-    "ja": "ザ・フィースト (4対4 / カジュアルマッチ)",
-    "de": "The Feast (4 gegen 4, Übungskampf)",
-    "fr": "The Feast (4x4/entraînement)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40017": {
     "en": null,
@@ -4633,11 +4703,11 @@
     "icon": null
   },
   "40018": {
-    "en": "the Feast (4 on 4 - Ranked)",
-    "ja": "ザ・フィースト (4対4 / ランクマッチ)",
-    "de": "The Feast (4 gegen 4, gewertet)",
-    "fr": "The Feast (4x4/classé)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40019": {
     "en": null,
@@ -4654,109 +4724,109 @@
     "icon": null
   },
   "40021": {
-    "en": "the Feast (Custom Match - Lichenweed)",
-    "ja": "ザ・フィースト (ライケンウィード演習場：カスタムマッチ）",
-    "de": "The Feast (Flechtenhain: Schaukampf)",
-    "fr": "The Feast (personnalisé/Pré-de-lichen)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40022": {
-    "en": "the Feast (Team Ranked)",
-    "ja": "ザ・フィースト (チーム用ランクマッチ)",
-    "de": "The Feast (Team, gewertet)",
-    "fr": "The Feast (classé/équipe JcJ)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40023": {
-    "en": "the Feast (Ranked)",
-    "ja": "ザ・フィースト (ランクマッチ)",
-    "de": "The Feast (gewertet)",
-    "fr": "The Feast (classé)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40024": {
-    "en": "the Feast (Training)",
-    "ja": "ザ・フィースト (カジュアルマッチ)",
-    "de": "The Feast (Übungskampf)",
-    "fr": "The Feast (entraînement)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40025": {
-    "en": "the Feast (Custom Match - Crystal Tower)",
-    "ja": "ザ・フィースト (クリスタルタワー演習場：カスタムマッチ）",
-    "de": "The Feast (Kristallturm-Arena: Schaukampf)",
-    "fr": "The Feast (personnalisé/Tour de Cristal)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40026": {
-    "en": "the Feast (Team Custom Match - Crystal Tower)",
-    "ja": "ザ・フィースト (クリスタルタワー演習場：チーム用カスタムマッチ)",
-    "de": "The Feast (Kristallturm-Arena: Team-Schaukampf) ",
-    "fr": "The Feast (personnalisé/équipe JcJ/Tour de Cristal)",
-    "icon": "/i/061000/061806.png"
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "40027": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Palaistra",
+    "ja": "パライストラ",
+    "de": "Die Palästra",
+    "fr": "Le Palestre",
+    "icon": "/i/061000/061806.png"
   },
   "40028": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Volcanic Heart",
+    "ja": "ヴォルカニック・ハート",
+    "de": "Das Herz des Vulkans",
+    "fr": "Le Cœur volcanique",
+    "icon": "/i/061000/061806.png"
   },
   "40029": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Cloud Nine",
+    "ja": "クラウドナイン",
+    "de": "Wolke Sieben",
+    "fr": "Le Petit Nuage",
+    "icon": "/i/061000/061806.png"
   },
   "40030": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Palaistra",
+    "ja": "パライストラ",
+    "de": "Die Palästra",
+    "fr": "Le Palestre",
+    "icon": "/i/061000/061806.png"
   },
   "40031": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "The Volcanic Heart",
+    "ja": "ヴォルカニック・ハート",
+    "de": "Das Herz des Vulkans",
+    "fr": "Le Cœur volcanique",
+    "icon": "/i/061000/061806.png"
   },
   "40032": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Cloud Nine",
+    "ja": "クラウドナイン",
+    "de": "Wolke Sieben",
+    "fr": "Le Petit Nuage",
+    "icon": "/i/061000/061806.png"
   },
   "40033": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Crystalline Conflict (Custom Match - The Palaistra)",
+    "ja": "クリスタルコンフリクト(パライストラ：カスタムマッチ)",
+    "de": "Crystalline Conflict: Die Palästra (Schaukampf)",
+    "fr": "Crystalline Conflict (partie personnalisée - Le Palestre)",
+    "icon": "/i/061000/061806.png"
   },
   "40034": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Crystalline Conflict (Custom Match - The Volcanic Heart)",
+    "ja": "クリスタルコンフリクト(ヴォルカニック・ハート：カスタムマッチ)",
+    "de": "Crystalline Conflict: Das Herz des Vulkans (Schaukampf)",
+    "fr": "Crystalline Conflict (partie personnalisée - Le Cœur volcanique)",
+    "icon": "/i/061000/061806.png"
   },
   "40035": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Crystalline Conflict (Custom Match - Cloud Nine)",
+    "ja": "クリスタルコンフリクト(クラウドナイン：カスタムマッチ)",
+    "de": "Crystalline Conflict: Wolke Sieben (Schaukampf)",
+    "fr": "Crystalline Conflict (partie personnalisée - Le Petit Nuage)",
+    "icon": "/i/061000/061806.png"
   },
   "40036": {
     "en": null,
@@ -5450,11 +5520,15 @@
     "icon": null
   },
   "64004": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Ultima's Bane (Unreal)",
+    "ja": "幻アルテマウェポン破壊作戦",
+    "de": "Traumprüfung - Ultima",
+    "fr": "Le fléau d'Ultima (irréel)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      4050,
+      4044
+    ]
   },
   "64005": {
     "en": null,

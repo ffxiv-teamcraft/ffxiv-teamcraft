@@ -3566,7 +3566,7 @@
   "595": {
     "en": "At Art's Horizon",
     "ja": "At Art's Horizon",
-    "de": "am Horizont der Handwerks",
+    "de": "am Horizont des Handwerks",
     "fr": "Prodige de la main"
   },
   "596": {
@@ -3596,7 +3596,7 @@
   "600": {
     "en": "Vrtra's Valiant",
     "ja": "Vrtra's Valiant",
-    "de": "Mut der Vrtra",
+    "de": "Mut des Vrtra",
     "fr": "Défenseur de Thavnair"
   },
   "601": {
@@ -3730,5 +3730,137 @@
     "ja": "Patron of the Fates",
     "de": "Meister der schicksalhaften Begegnungen",
     "fr": "Maître des aléas du destin"
+  },
+  "623": {
+    "en": "The Arbiter",
+    "ja": "the Arbiter",
+    "de": "der Schlichter",
+    "fr": "L'Arbitre"
+  },
+  "624": {
+    "en": "Bronze Bearer",
+    "ja": "Bronze Bearer",
+    "de": "Bronzeträger",
+    "fr": "Médaillé de bronze"
+  },
+  "625": {
+    "en": "Silver Bearer",
+    "ja": "Silver Bearer",
+    "de": "Silberträger",
+    "fr": "Médaillé d'argent"
+  },
+  "626": {
+    "en": "Gold Bearer",
+    "ja": "Gold Bearer",
+    "de": "Goldträger",
+    "fr": "Médaillé d'or"
+  },
+  "627": {
+    "en": "Platinum Bearer",
+    "ja": "Platinum Bearer",
+    "de": "Platinträger",
+    "fr": "Médaillé de platine"
+  },
+  "628": {
+    "en": "Diamond Bearer",
+    "ja": "Diamond Bearer",
+    "de": "Diamantträger",
+    "fr": "Médaillé de diamant"
+  },
+  "629": {
+    "en": "Crystal Bearer",
+    "ja": "Crystal Bearer",
+    "de": "Kristallträger",
+    "fr": "Médaillé de cristal"
+  },
+  "630": {
+    "en": "Of the Final Conflict",
+    "ja": "of the Final Conflict",
+    "de": "vom finalen Konflikt",
+    "fr": "Légende conflictuelle"
+  },
+  "631": {
+    "en": "Of the Endless Conflict",
+    "ja": "of the Endless Conflict",
+    "de": "vom endlosen Konflikt",
+    "fr": "Histoire conflictuelle"
+  },
+  "632": {
+    "en": "Of the Rising Conflict",
+    "ja": "of the Rising Conflict",
+    "de": "vom zunehmenden Konflikt",
+    "fr": "Parcours conflictuel"
+  },
+  "633": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "634": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "635": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "637": {
+    "en": "Newfound Adventurer",
+    "ja": "Newfound Adventurer",
+    "de": "Neu entdeckter Abenteurer",
+    "fr": "Aventurier de nouveaux horizons"
+  },
+  "638": {
+    "en": "Blessed Relief",
+    "ja": "Blessed Relief",
+    "de": "Herr seiner Domäne",
+    "fr": "L'aide lénificatrice"
+  },
+  "639": {
+    "en": "Makai Samurai",
+    "ja": "Makai Samurai",
+    "de": "Makai-Samurai",
+    "fr": "Samouraï Makai"
+  },
+  "640": {
+    "en": "Makai Red Mage",
+    "ja": "Makai Red Mage",
+    "de": "Makai-Rotmagier",
+    "fr": "Mage rouge Makai"
+  },
+  "641": {
+    "en": "Makai Gunbreaker",
+    "ja": "Makai Gunbreaker",
+    "de": "Makai-Revolverklinge",
+    "fr": "Pistosabreur Makai"
+  },
+  "642": {
+    "en": "Makai Dancer",
+    "ja": "Makai Dancer",
+    "de": "Makai-Tänzer",
+    "fr": "Danseur Makai"
+  },
+  "643": {
+    "en": "Makai Reaper",
+    "ja": "Makai Reaper",
+    "de": "Makai-Schnitter",
+    "fr": "Faucheur Makai"
+  },
+  "644": {
+    "en": "Makai Sage",
+    "ja": "Makai Sage",
+    "de": "Makai-Weiser",
+    "fr": "Sage Makai"
   }
 }

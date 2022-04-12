@@ -1059,25 +1059,25 @@
     "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100404": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),9))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100405": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),10))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100406": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),11))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100407": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),12))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100408": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),13))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100409": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),14))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100410": {
-    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),8))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：<If(Equal(PlayerParameter(68),15))><If(GreaterThanOrEqualTo(PlayerParameter(69),86))>360<Else/>300</If><Else/>300</If>\n成功率：100%\n耐久消耗：20"
   },
   "100411": {
     "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：100%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中级加工　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击中消耗制作力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18"

@@ -1758,10 +1758,10 @@
     "fr": "Armes/Outils Nv 50"
   },
   "262446": {
-    "en": "Purchase Quest Rewards",
-    "ja": "クエスト報酬の再購入",
-    "de": "Auftragsvergütungen",
-    "fr": "Récompenses de quêtes"
+    "en": "Purchase Quest Rewards I",
+    "ja": "クエスト報酬の再購入（その1）",
+    "de": "Auftragsvergütungen I",
+    "fr": "Récompenses de quêtes 1"
   },
   "262449": {
     "en": "Purchase Achievement Rewards I",
@@ -4416,10 +4416,10 @@
     "fr": ""
   },
   "262920": {
-    "en": "Purchase Quest Rewards",
-    "ja": "クエスト報酬の再購入",
-    "de": "Auftragsvergütungen",
-    "fr": "Récompenses de quêtes"
+    "en": "Purchase Quest Rewards I",
+    "ja": "クエスト報酬の再購入（その1）",
+    "de": "Auftragsvergütungen I",
+    "fr": "Récompenses de quêtes 1"
   },
   "262921": {
     "en": "",
@@ -5638,5 +5638,113 @@
     "ja": "アイテムの購入（栽培用品）",
     "de": "Waren (Gartenbau)",
     "fr": "Objets (jardinage)"
+  },
+  "263124": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263125": {
+    "en": "アイテムの購入",
+    "ja": "アイテムの購入",
+    "de": "アイテムの購入",
+    "fr": "アイテムの購入"
+  },
+  "263126": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263127": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263128": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263129": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "263130": {
+    "en": "Purchase Paintings (The Northern Empty)",
+    "ja": "絵画の購入（北洋地域）",
+    "de": "Gemälde (Nördliche Meere)",
+    "fr": "Peintures (mers du Nord)"
+  },
+  "263131": {
+    "en": "Purchase Paintings (Ilsabard)",
+    "ja": "絵画の購入（イルサバード）",
+    "de": "Gemälde (Ilsabard)",
+    "fr": "Peintures (Ilsabard)"
+  },
+  "263132": {
+    "en": "Purchase Paintings (The World Unsundered)",
+    "ja": "絵画の購入（古代世界）",
+    "de": "Gemälde (Unzersplitterte Welt)",
+    "fr": "Peintures (ancien monde)"
+  },
+  "263133": {
+    "en": "Purchase Paintings (The Sea of Stars)",
+    "ja": "絵画の購入（星外宙域）",
+    "de": "Gemälde (Kosmos)",
+    "fr": "Peintures (espace intersidéral)"
+  },
+  "263134": {
+    "en": "Purchase Quest Rewards II",
+    "ja": "クエスト報酬の再購入（その2）",
+    "de": "Auftragsvergütungen II",
+    "fr": "Récompenses de quêtes 2"
+  },
+  "263135": {
+    "en": "Repurchase Samurai Gear",
+    "ja": "侍用装備の再購入",
+    "de": "Garo-Ausrüstung (Samurai)",
+    "fr": "Armure Garo de samouraï"
+  },
+  "263136": {
+    "en": "Repurchase Red Mage Gear",
+    "ja": "赤魔道士用装備の再購入",
+    "de": "Garo-Ausrüstung (Rotmagier)",
+    "fr": "Armure Garo de mage rouge"
+  },
+  "263137": {
+    "en": "Repurchase Gunbreaker Gear",
+    "ja": "ガンブレイカー用装備の再購入",
+    "de": "Garo-Ausrüstung (Revolverklinge)",
+    "fr": "Armure Garo de pistosabreur"
+  },
+  "263138": {
+    "en": "Repurchase Dancer Gear",
+    "ja": "踊り子用装備の再購入",
+    "de": "Garo-Ausrüstung (Tänzer)",
+    "fr": "Armure Garo de danseur"
+  },
+  "263139": {
+    "en": "Repurchase Reaper Gear",
+    "ja": "リーパー用装備の再購入",
+    "de": "Garo-Ausrüstung (Schnitter)",
+    "fr": "Armure Garo de faucheur"
+  },
+  "263140": {
+    "en": "Repurchase Sage Gear",
+    "ja": "賢者用装備の再購入",
+    "de": "Garo-Ausrüstung (Weiser)",
+    "fr": "Armure Garo de sage"
+  },
+  "263141": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

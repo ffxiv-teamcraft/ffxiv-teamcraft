@@ -2739,7 +2739,7 @@
     "en": "Porta Decumana",
     "ja": "ポルタ・デクマーナ",
     "de": "Porta Decumana",
-    "fr": "Porta decumana"
+    "fr": "Porta Decumana"
   },
   "458": {
     "en": "Armor Recognition Chamber",
@@ -2859,7 +2859,7 @@
     "en": "Porta Decumana",
     "ja": "ポルタ・デクマーナ",
     "de": "Porta Decumana",
-    "fr": "Porta decumana"
+    "fr": "Porta Decumana"
   },
   "478": {
     "en": "Labyrinth of the Ancients",
@@ -15384,10 +15384,10 @@
     "fr": "Guide de la résistance"
   },
   "2565": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Andron",
+    "ja": "ナップルーム(宿屋)",
+    "de": "Ruheräume",
+    "fr": "Chambre à coucher"
   },
   "2566": {
     "en": "",
@@ -22536,10 +22536,10 @@
     "fr": "Nord-ouest d'Onokoro"
   },
   "3757": {
-    "en": "Eastern Bekko",
-    "ja": "ベッコウ島東",
-    "de": "Bekko (Ost)",
-    "fr": "Est de l'île de Bekko"
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   },
   "3758": {
     "en": "Loch Seld Northeastern Lakebed",
@@ -23137,7 +23137,7 @@
   },
   "3857": {
     "en": "Gajasimha Bridge",
-    "ja": "ガシャシンハ大橋",
+    "ja": "ガジャシンハ大橋",
     "de": "Gajasimha-Brücke",
     "fr": "Pont de Gajasimha"
   },
@@ -24174,34 +24174,34 @@
     "fr": "Portail oublié"
   },
   "4030": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Svarna",
+    "ja": "スワルナの大蔵",
+    "de": "Svarna",
+    "fr": "Svarna"
   },
   "4031": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Omphalos",
+    "ja": "オムファロス",
+    "de": "Omphalos",
+    "fr": "Omphalos"
   },
   "4032": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Porta Decumana",
+    "ja": "ポルタ・デクマーナ",
+    "de": "Porta Decumana",
+    "fr": "Porta Decumana"
   },
   "4033": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Gates of Pandæmonium",
+    "ja": "パンデモニウム正門",
+    "de": "Pforten des Pandæmoniums",
+    "fr": "Limbes du Pandæmonium - Parvis"
   },
   "4034": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Restricted Archives",
+    "ja": "ヌーメノン大書院：禁書庫",
+    "de": "Verbotener Flügel",
+    "fr": "Archives interdites du Noumène"
   },
   "4035": {
     "en": "",
@@ -24534,22 +24534,22 @@
     "fr": ""
   },
   "4090": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Palaistra",
+    "ja": "パライストラ",
+    "de": "Die Palästra",
+    "fr": "Le Palestre"
   },
   "4091": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Volcanic Heart",
+    "ja": "ヴォルカニック・ハート",
+    "de": "Das Herz des Vulkans",
+    "fr": "Le Cœur volcanique"
   },
   "4092": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cloud Nine",
+    "ja": "クラウドナイン",
+    "de": "Wolke Sieben",
+    "fr": "Le Petit Nuage"
   },
   "4093": {
     "en": "",
@@ -24858,7 +24858,7 @@
     "fr": "Porte des Altruistes"
   },
   "4144": {
-    "en": "Dangoulin's Devotion",
+    "en": "Dangoulain's Devotion",
     "ja": "ダングラン記念公園",
     "de": "Dangoulins Hingabe",
     "fr": "Mémorial Dangoulin"
@@ -24906,7 +24906,7 @@
     "fr": "Porte des Altruistes [Annexe]"
   },
   "4152": {
-    "en": "Dangoulin's Devotion Subdivision",
+    "en": "Dangoulain's Devotion Subdivision",
     "ja": "[拡張街]ダングラン記念公園",
     "de": "[Erweiterung] Dangoulins Hingabe",
     "fr": "Mémorial Dangoulin [Annexe]"
@@ -24918,102 +24918,156 @@
     "fr": "Roquerie du Nouveau Refrain [Annexe]"
   },
   "4154": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alzadaal's Legacy",
+    "ja": "アルザダール海底遺跡群",
+    "de": "Aldazaals Vermächtnis",
+    "fr": "Legs d'Alzadaal"
   },
   "4155": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Bhaflau Remnants",
+    "ja": "バフラウ遺構",
+    "de": "Bhaflau-Ruinen",
+    "fr": "Ruines de Bhaflau"
   },
   "4156": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Arrapago Remnants",
+    "ja": "アラパゴ遺構",
+    "de": "Arrapago-Ruinen",
+    "fr": "Ruines d'Arrapago"
   },
   "4157": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Zhayolm Remnants",
+    "ja": "ゼオルム遺構",
+    "de": "Zhayolm-Ruinen",
+    "fr": "Ruines de Zhayolm"
   },
   "4158": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Undersea Entrance",
+    "ja": "崩れかけた広間",
+    "de": "Versunkene Pforte",
+    "fr": "Hall dévasté"
   },
   "4159": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Threshold of Bounty",
+    "ja": "豊穣の間",
+    "de": "Schwelle zum Reichtum",
+    "fr": "Chambre de l'Abondance"
   },
   "4160": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Weaver's Warding",
+    "ja": "封宝の間",
+    "de": "Webers Wehr",
+    "fr": "Chambre scellée du tisserand"
   },
   "4161": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Bhaflau Remnants",
+    "ja": "バフラウ遺構",
+    "de": "Bhaflau-Ruinen",
+    "fr": "Ruines de Bhaflau"
   },
   "4162": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Arrapago Remnants",
+    "ja": "アラパゴ遺構",
+    "de": "Arrapago-Ruinen",
+    "fr": "Ruines d'Arrapago"
   },
   "4163": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Zhayolm Remnants",
+    "ja": "ゼオルム遺構",
+    "de": "Zhayolm-Ruinen",
+    "fr": "Ruines de Zhayolm"
   },
   "4164": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "●玉座の間",
+    "ja": "●玉座の間",
+    "de": "●玉座の間",
+    "fr": "●玉座の間"
   },
   "4165": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "●財宝の間",
+    "ja": "●財宝の間",
+    "de": "●財宝の間",
+    "fr": "●財宝の間"
   },
   "4166": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Thrice-won Hoard",
+    "ja": "アルザダール3世の宝物殿",
+    "de": "Hort des Alzadaal",
+    "fr": "Coffre-fort d'Alzadaal III"
   },
   "4167": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Aglaia",
+    "ja": "輝ける神域 アグライア",
+    "de": "Aglaia",
+    "fr": "Domaine divin - Aglaé"
   },
   "4168": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Heaven of Lightning",
+    "ja": "雷天",
+    "de": "Donnerhimmel",
+    "fr": "Voûte de la foudre"
   },
   "4169": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Heaven of Fire",
+    "ja": "炎天",
+    "de": "Flammenhimmel",
+    "fr": "Voûte du feu"
   },
   "4170": {
+    "en": "The Twin Halls",
+    "ja": "二面宮",
+    "de": "Schrein der Zwei",
+    "fr": "Palais jumeau"
+  },
+  "4171": {
+    "en": "Heaven of Lightning",
+    "ja": "雷天",
+    "de": "Donnerhimmel",
+    "fr": "Voûte de la foudre"
+  },
+  "4172": {
+    "en": "Heaven of Fire",
+    "ja": "炎天",
+    "de": "Flammenhimmel",
+    "fr": "Voûte du feu"
+  },
+  "4173": {
+    "en": "Ingenuity's Foothold",
+    "ja": "技巧宮",
+    "de": "Schrein des Handwerks",
+    "fr": "Gloire de l'ingéniosité"
+  },
+  "4174": {
+    "en": "The Path",
+    "ja": "導きの歩廊",
+    "de": "Pfad der Führung",
+    "fr": "Corridor céleste"
+  },
+  "4175": {
+    "en": "Monument to Destruction",
+    "ja": "彗星宮",
+    "de": "Schrein des Kometen",
+    "fr": "Monument à la destruction"
+  },
+  "4176": {
+    "en": "Endless City",
+    "ja": "壮麗なる都",
+    "de": "Stadt der Herrlichkeit",
+    "fr": "Cité des splendeurs"
+  },
+  "4177": {
+    "en": "Circle of Inquiry",
+    "ja": "審理宮",
+    "de": "Schrein des Urteils",
+    "fr": "Cercle de la justice"
+  },
+  "4178": {
+    "en": "The Twin Halls",
+    "ja": "二面宮",
+    "de": "Schrein der Zwei",
+    "fr": "Palais jumeau"
+  },
+  "4179": {
     "en": "",
     "ja": "",
     "de": "",

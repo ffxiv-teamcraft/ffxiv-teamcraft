@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.17"></a>
+## [9.5.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.16...v9.5.17) (2022-04-12)
+
+
+### Bug Fixes
+
+* **alarms:** fixed disabled alarms sometimes still ringing ([b090ed0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b090ed0))
+* **gc-supply:** removed lvl 85 recipes from possible poll at level 90 ([fe2d962](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe2d962))
+* **inventory-optimizer:** removed fish from easily gathered items ([c8fb0b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8fb0b7))
+
+
+### Features
+
+* **db:** support for global 6.1 update ([c27ddc0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c27ddc0))
+* **lists:** "fill with inventory" will only show dropdown with < 20 containers ([7b2e5e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b2e5e6))
+
+
+
 <a name="9.5.16"></a>
 ## [9.5.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.15...v9.5.16) (2022-03-30)
 

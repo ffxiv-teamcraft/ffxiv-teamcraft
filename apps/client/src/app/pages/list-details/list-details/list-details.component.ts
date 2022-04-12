@@ -472,14 +472,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  public fillWithInventory(list: List, containerName: string): void {
+  public fillWithInventory(list: List, containerName: string | null): void {
     this.inventoryFacade.inventory$.pipe(
       first(),
       map(inventory => {
         list.items.forEach(item => {
           let inventoryItems = inventory.getItem(item.id)
             .filter(e => {
-              return this.inventoryFacade.getContainerDisplayName(e) === containerName;
+              return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
             });
           const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
@@ -499,7 +499,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         list.finalItems.forEach(item => {
           let inventoryItems = inventory.getItem(item.id)
             .filter(e => {
-              return this.inventoryFacade.getContainerDisplayName(e) === containerName;
+              return containerName === null || this.inventoryFacade.getContainerDisplayName(e) === containerName;
             });
           const requiredHq = ListController.requiredAsHQ(list, item) > 0;
           if (requiredHq && this.settings.enableAutofillHQFilter) {
