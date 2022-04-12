@@ -92,4 +92,12 @@ export interface GatheringNode {
   oceanFishingTime?: null;
   folklore?:         number;
   weathers?:         number[];
+  predators?:        Predator[];
+  speed?:            number;
+  shadowSize?:       number;
+}
+
+export interface Predator {
+  id:     number;
+  amount: number;
 }

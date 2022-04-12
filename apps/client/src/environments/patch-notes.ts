@@ -1,9 +1,11 @@
 export const patchNotes = `### Bug Fixes
 
-* **character:** fixed new chinese servers not linking characters properly.
-* **desktop:** fixed retainer information not loaded properly on chinese version.
+* **alarms:** fixed disabled alarms sometimes still ringing.
+* **gc-supply:** removed lvl 85 recipes from possible poll at level 90.
+* **inventory-optimizer:** removed fish from easily gathered items.
 
 
 ### Features
 
-* **data-extraction:** update recipes format for zh/kr.`;
+* **db:** support for global 6.1 update.
+* **lists:** "fill with inventory" will only show dropdown with < 20 containers.`;
