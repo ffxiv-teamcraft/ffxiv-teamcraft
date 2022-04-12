@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **db:** support for global 6.1 update.
-* **lists:** "fill with inventory" will only show dropdown with < 20 containers.`;
+* **lists:** "fill with inventory" will only show dropdown with < 20 containers.`;
