@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.18"></a>
+## [9.5.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.17...v9.5.18) (2022-04-12)
+
+
+### Bug Fixes
+
+* **alarms:** fixed some alarms not ringing at all ([026206d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/026206d))
+* **db:** fixed missing recipes ([958dcdf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/958dcdf))
+
+
+
 <a name="9.5.17"></a>
 ## [9.5.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.16...v9.5.17) (2022-04-12)
 
