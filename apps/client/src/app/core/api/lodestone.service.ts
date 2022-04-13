@@ -152,7 +152,7 @@ export class LodestoneService {
   }
 
   private getCachedCharacter(id: number): CharacterResponse | null {
-    const data = localStorage.getItem(`character:${id}`);
+    const data = localStorage.getItem(`character:1:${id}`);
     if (data) {
       return JSON.parse(data);
     }
