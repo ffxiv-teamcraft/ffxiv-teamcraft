@@ -152,7 +152,7 @@ export class LodestoneService {
   }
 
   private getCachedCharacter(id: number): CharacterResponse | null {
-    const data = localStorage.getItem(`character:${id}`);
+    const data = localStorage.getItem(`character:1:${id}`);
     if (data) {
       return JSON.parse(data);
     }
@@ -170,7 +170,7 @@ export class LodestoneService {
       Portrait: data.Character.Portrait,
       Bio: data.Character.Bio
     };
-    localStorage.setItem(`character:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
+    localStorage.setItem(`character:1:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
   }
 
   private addToQueue(trigger: Subject<void>): void {
