@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.19"></a>
+## [9.5.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.18...v9.5.19) (2022-04-13)
+
+
+### Bug Fixes
+
+* **desktop:** fixed profits helper and commissions infinite loading ([2f59838](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f59838))
+
+
+### Features
+
+* **lists:** follow "only show current characters inventory" in fill dropdown ([b00814a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b00814a))
+
+
+
 <a name="9.5.18"></a>
 ## [9.5.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.17...v9.5.18) (2022-04-12)
 
