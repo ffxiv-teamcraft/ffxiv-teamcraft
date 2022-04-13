@@ -91,7 +91,13 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   public inventories$ = this.inventoryFacade.inventory$.pipe(
     distinctUntilChanged((a, b) => a.getContainers().length === b.getContainers().length),
     map(inventory => {
-      return uniq(inventory.getContainers().map(e => this.inventoryFacade.getContainerDisplayName(e)));
+      if (this.settings.showOthercharacterInventoriesInList) {
+        return uniq(inventory.getContainers().map(e => this.inventoryFacade.getContainerDisplayName(e)));
+      } else {
+        return uniq(inventory.getContainers()
+          .filter(container => container.isCurrentCharacter)
+          .map(e => this.inventoryFacade.getContainerDisplayName(e)));
+      }
     }),
     shareReplay(1)
   );
@@ -472,7 +478,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     });
   }
 
-  public fillWithInventory(list: List, containerName: string | null): void {
+  public fillWithInventory(list: List, containerName: string): void {
     this.inventoryFacade.inventory$.pipe(
       first(),
       map(inventory => {

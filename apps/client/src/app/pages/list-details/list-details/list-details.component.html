@@ -77,8 +77,7 @@
           <button nz-button nzType="primary" nzShape="circle" nz-tooltip
                   *ngIf="platform.isDesktop()"
                   nz-dropdown
-                  [nzDropdownMenu]="inventories.length < 20 ? menu : null"
-          (click)="inventories.length < 20 ? null : fillWithInventory(list, null)">
+                  [nzDropdownMenu]="menu">
             <i nz-icon nzType="shopping" nzTheme="outline"></i>
           </button>
           <nz-dropdown-menu #menu="nzDropdownMenu">
