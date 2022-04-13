@@ -1,4 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed some alarms not ringing at all.
-* **db:** fixed missing recipes.`;
+* **desktop:** fixed profits helper and commissions infinite loading.
+
+
+### Features
+
+* **lists:** follow "only show current characters inventory" in fill dropdown.`;
