@@ -1,8 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed profits helper and commissions infinite loading.
+* **db:** fixed missing trade sources from 6.1 update.
+* **profile:** removed fishing rankings for now and fixed missing job icons.
 
 
 ### Features
 
-* **lists:** follow "only show current characters inventory" in fill dropdown.`;
+* **community-lists:** now sorting by most recent app version and then by # of forks.`;

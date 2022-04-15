@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.5.20"></a>
+## [9.5.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.19...v9.5.20) (2022-04-15)
+
+
+### Bug Fixes
+
+* **db:** fixed missing trade sources from 6.1 update ([6d43e11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d43e11))
+* **profile:** removed fishing rankings for now and fixed missing job icons ([445fec0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/445fec0)), closes [#2236](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2236)
+
+
+### Features
+
+* **community-lists:** now sorting by most recent app version and then by # of forks ([c4865df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4865df)), closes [#2242](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2242)
+
+
+
 <a name="9.5.19"></a>
 ## [9.5.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.18...v9.5.19) (2022-04-13)
 

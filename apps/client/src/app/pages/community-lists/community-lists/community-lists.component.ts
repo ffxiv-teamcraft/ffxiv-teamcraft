@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
+import * as semver from 'semver';
 
 @Component({
   selector: 'app-community-lists',
@@ -91,8 +92,15 @@ export class CommunityListsComponent implements OnDestroy {
         return this.listService.getCommunityLists(filters.tags, filters.name).pipe(
           map(lists => {
             return lists
-              .filter(list => !list.tags.some(tags => filters.exclude.includes(tags)))
-              .sort((a, b) => b.forks - a.forks);
+              .filter(list => !list.tags.some(tags => filters.exclude.includes(tags)) && list.finalItems.length > 0)
+              .sort((a, b) => {
+                if (semver.gt(a.version, b.version)) {
+                  return -1;
+                } else if (semver.gt(b.version, a.version)) {
+                  return 1;
+                }
+                return b.forks - a.forks;
+              });
           }),
           tap(lists => {
             this.totalLength = lists.length;
