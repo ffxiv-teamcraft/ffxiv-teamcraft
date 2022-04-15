@@ -14,6 +14,7 @@ import { CraftingRotationService } from '../../../core/database/crafting-rotatio
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { Apollo } from 'apollo-angular';
 import { TranslateService } from '@ngx-translate/core';
+import * as semver from 'semver';
 
 @Component({
   selector: 'app-public-profile',
@@ -62,7 +63,18 @@ export class PublicProfileComponent {
     );
     this.communityLists$ = userId$.pipe(
       switchMap(userId => {
-        return this.listsService.getUserCommunityLists(userId);
+        return this.listsService.getUserCommunityLists(userId).pipe(
+          map(lists => {
+            return lists.sort((a, b) => {
+              if (semver.gt(a.version, b.version)) {
+                return -1;
+              } else if (semver.gt(b.version, a.version)) {
+                return 1;
+              }
+              return b.forks - a.forks;
+            });
+          })
+        );
       }),
       shareReplay(1)
     );
