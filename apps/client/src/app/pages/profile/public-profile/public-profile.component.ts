@@ -13,7 +13,6 @@ import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
 import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -33,7 +32,7 @@ export class PublicProfileComponent {
 
   public communityRotations$: Observable<CraftingRotation[]>;
 
-  public fishingRankings$: Observable<any>;
+  public fishingRankings$: Observable<any> = EMPTY;
 
   public notFound = false;
 
@@ -73,48 +72,48 @@ export class PublicProfileComponent {
       }),
       shareReplay(1)
     );
-    this.fishingRankings$ = this.user$.pipe(
-      switchMap(user => {
-        return this.apollo.query<any>({
-          query: gql`query userRankings {
-            user_rankings:fishingresults(where:{userId: {_eq: "${user.$key}"}, ranking: { rank: {_lte: 3}}, itemId: {_gt: 0}}) {
-                size,
-                date,
-                itemId,
-                baitId,
-                ranking {
-                  rank
-                }
-            }
-          }`,
-          fetchPolicy: 'no-cache'
-        });
-      }),
-      map(result => {
-        const dataDisplay = result.data.user_rankings
-          .reduce((display, row) => {
-            const displayRow = display.find(dRow => {
-              return dRow.itemId === row.itemId;
-            });
-            if (displayRow && displayRow.ranking.rank <= row.ranking.rank) {
-              display = display.filter(dRow => dRow.itemId !== row.itemId);
-            }
-            display.push(row);
-            return display;
-          }, [])
-          .sort((a, b) => {
-            return a.ranking.rank - b.ranking.rank;
-          });
-        return {
-          summary: {
-            1: dataDisplay.filter(row => row.ranking.rank === 1).length,
-            2: dataDisplay.filter(row => row.ranking.rank === 2).length,
-            3: dataDisplay.filter(row => row.ranking.rank === 3).length
-          },
-          data: dataDisplay
-        };
-      })
-    );
+    // this.fishingRankings$ = this.user$.pipe(
+    //   switchMap(user => {
+    //     return this.apollo.query<any>({
+    //       query: gql`query userRankings {
+    //         user_rankings:fishingresults(where:{userId: {_eq: "${user.$key}"}, ranking: { rank: {_lte: 3}}, itemId: {_gt: 0}}) {
+    //             size,
+    //             date,
+    //             itemId,
+    //             baitId,
+    //             ranking {
+    //               rank
+    //             }
+    //         }
+    //       }`,
+    //       fetchPolicy: 'no-cache'
+    //     });
+    //   }),
+    //   map(result => {
+    //     const dataDisplay = result.data.user_rankings
+    //       .reduce((display, row) => {
+    //         const displayRow = display.find(dRow => {
+    //           return dRow.itemId === row.itemId;
+    //         });
+    //         if (displayRow && displayRow.ranking.rank <= row.ranking.rank) {
+    //           display = display.filter(dRow => dRow.itemId !== row.itemId);
+    //         }
+    //         display.push(row);
+    //         return display;
+    //       }, [])
+    //       .sort((a, b) => {
+    //         return a.ranking.rank - b.ranking.rank;
+    //       });
+    //     return {
+    //       summary: {
+    //         1: dataDisplay.filter(row => row.ranking.rank === 1).length,
+    //         2: dataDisplay.filter(row => row.ranking.rank === 2).length,
+    //         3: dataDisplay.filter(row => row.ranking.rank === 3).length
+    //       },
+    //       data: dataDisplay
+    //     };
+    //   })
+    // );
   }
 
 }

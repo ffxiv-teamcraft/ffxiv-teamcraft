@@ -21,7 +21,7 @@
       </ng-container>
       <div *ngIf="gearSets$ | async as sets" fxLayout="row wrap" fxLayoutAlign="space-evenly">
         <div *ngFor="let set of sets" class="stat-row" fxLayout="column" fxLayoutAlign="center center">
-          <img *ngIf="((set.jobId | i18nRow:'jobAbbr').en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
+          <div [innerHTML]="set.jobId | jobUnicode" class="companion-svg"></div>
           <div>{{set.level}}</div>
         </div>
       </div>
@@ -68,9 +68,9 @@
         </nz-list>
       </ng-container>
       <ng-template #loadingFishRankings>
-        <div fxLayout="row" fxLayoutAlign="center center" class="fish-rankings-loader">
-          <nz-spin nzSimple [nzTip]="'PROFILE.Loading_fish_rankings' | translate"></nz-spin>
-        </div>
+<!--        <div fxLayout="row" fxLayoutAlign="center center" class="fish-rankings-loader">-->
+<!--          <nz-spin nzSimple [nzTip]="'PROFILE.Loading_fish_rankings' | translate"></nz-spin>-->
+<!--        </div>-->
       </ng-template>
     </div>
   </div>
