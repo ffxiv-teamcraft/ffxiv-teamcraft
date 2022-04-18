@@ -1,9 +1,9 @@
 export interface LazySpearfishingSource {
   speed:      number;
   shadowSize: number;
+  predators?: Predator[];
   spawn?:     number;
   duration?:  number;
-  predators?: Predator[];
 }
 
 export interface Predator {
