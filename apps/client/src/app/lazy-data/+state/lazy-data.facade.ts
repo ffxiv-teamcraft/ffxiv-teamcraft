@@ -416,7 +416,7 @@ export class LazyDataFacade {
     );
   }
 
-  public getSearchIndex<K extends LazyDataI18nKey>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{ id: number, name: I18nName }[]> {
+  public getSearchIndex<K extends LazyDataI18nKey | 'koItems' | 'zhItems'>(entry: K, additionalProperty?: keyof LazyDataEntries[K]): Observable<{ id: number, name: I18nName }[]> {
     if (!this.searchIndexCache[entry]) {
       this.searchIndexCache[entry] = this.getEntry(entry).pipe(
         map(lazyEntry => {
