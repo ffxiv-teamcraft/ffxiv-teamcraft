@@ -27,7 +27,7 @@
                 [nzPopconfirmTitle]="'Confirmation' | translate"
                 nz-button nz-popconfirm nz-tooltip
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
+                [class.full-button]="showFullButtons$ | async"
                 nzType="primary">
           <i nz-icon nzType="rollback" nzTheme="outline"></i>
           <span *ngIf="(showFullButtons$ | async)">{{'SIMULATOR.Reset_saved' | translate}}</span>
@@ -116,7 +116,7 @@
         <button (click)="openSharePopup(rotation, stats)"
                 *ngIf="rotation.$key"
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
+                [class.full-button]="showFullButtons$ | async"
                 [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                 tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
                 tutorialStepAlign="right"
@@ -128,7 +128,7 @@
         </button>
         <button (click)="findRotation(stats)"
                 [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
+                [class.full-button]="showFullButtons$ | async"
                 [nzTooltipTitle]="'SIMULATOR.Find_rotation' | translate"
                 [nzType]="'primary'"
                 nz-button
@@ -142,7 +142,7 @@
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
                   [disabled]="tips?.length === 0"
                   [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
+                  [class.full-button]="showFullButtons$ | async"
                   [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate"
                   [nzType]="'primary'"
                   nz-button
@@ -157,7 +157,7 @@
           <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
                   [nzShape]="(showFullButtons$ | async) ? null : 'circle'"
-              [class.full-button]="showFullButtons$ | async"
+                  [class.full-button]="showFullButtons$ | async"
                   [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
                   nz-button
                   nz-tooltip
@@ -371,15 +371,21 @@
                       </nz-option>
                     </nz-select>
                     <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
-                      <div>
-                        <b>{{selectedFood.itemId | itemName | i18n}}</b>
-                        <img *ngIf="selectedFood.hq" alt="(HQ)" src="./assets/icons/HQ.png">
+                      <div fxLayout="row" fxLayoutGap="10px">
+                        <app-item-icon [itemId]="selectedFood.itemId" width="32" [hq]="selectedFood.hq"></app-item-icon>
+                        <div fxLayout="column" fxLayoutGap="5px">
+                          <div>
+                            <b>{{selectedFood.itemId | itemName | i18n}}</b>
+                            <img *ngIf="selectedFood.hq" alt="(HQ)" src="./assets/icons/HQ.png">
+                          </div>
+                          <div *ngFor="let bonus of selectedFood.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
+                            %
+                            ({{bonus.max}})
+                          </div>
+                        </div>
                       </div>
-                      <div *ngFor="let bonus of selectedFood.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
-                        %
-                        ({{bonus.max}})
-                      </div>
+
                     </div>
                     <ng-template #noFood>
                       <div class="nothing-selected">
@@ -396,13 +402,19 @@
                       </nz-option>
                     </nz-select>
                     <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
-                      <div>
-                        <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
-                        <img *ngIf="selectedMedicine.hq" alt="(HQ)" src="./assets/icons/HQ.png">
-                      </div>
-                      <div *ngFor="let bonus of selectedMedicine.bonuses">
-                        {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{bonus.value * 100}}%
-                        ({{bonus.max}})
+                      <div fxLayout="row" fxLayoutGap="10px">
+                        <app-item-icon [itemId]="selectedMedicine.itemId" width="32" [hq]="selectedMedicine.hq"></app-item-icon>
+                        <div fxLayout="column" fxLayoutGap="5px">
+                          <div>
+                            <b>{{selectedMedicine.itemId | itemName | i18n}}</b>
+                            <img *ngIf="selectedMedicine.hq" alt="(HQ)" src="./assets/icons/HQ.png">
+                          </div>
+                          <div *ngFor="let bonus of selectedMedicine.bonuses">
+                            {{('SIMULATOR.CONFIGURATION.STATS.' + bonus.type) | translate}}: {{(bonus.value * 100) | floor}}
+                            %
+                            ({{bonus.max}})
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <ng-template #noMedicine>
@@ -529,8 +541,10 @@
                          [nzUnCheckedChildren]="'SIMULATOR.Compact' | translate"
                          [nzCheckedChildren]="'SIMULATOR.Detailed' | translate"></nz-switch>
             </div>
-            <nz-alert nzType="error" nzShowIcon *ngIf="statsTooLow$ | async" [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_STATS_REQUIREMENT' | translate"></nz-alert>
-            <nz-alert nzType="error" nzShowIcon *ngIf="levelTooLow$ | async" [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate"></nz-alert>
+            <nz-alert nzType="error" nzShowIcon *ngIf="statsTooLow$ | async"
+                      [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_STATS_REQUIREMENT' | translate"></nz-alert>
+            <nz-alert nzType="error" nzShowIcon *ngIf="levelTooLow$ | async"
+                      [nzMessage]="'SIMULATOR.FAIL_CAUSE.MISSING_LEVEL_REQUIREMENT' | translate"></nz-alert>
             <div class="category-row">
               <div>
                 <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
