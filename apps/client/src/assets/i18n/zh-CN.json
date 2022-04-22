@@ -572,6 +572,9 @@
     "Loading_fish_rankings": "正在加载垂钓排行",
     "Gearset_priority": "优先级",
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
+    "Characters": "Characters",
+    "Missing_character": "Missing character",
+    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
       "Button": "验证",
       "Title": "角色验证",
@@ -809,7 +812,8 @@
     },
     "SPLIT": {
       "Pick_items": "选择要添加到另一个清单的项目",
-      "Remove_from_list": "从当前清单中移除"
+      "Remove_from_list": "从当前清单中移除",
+      "Select_not_completed": "Select items not completed"
     }
   },
   "LIST_TAGS": {
