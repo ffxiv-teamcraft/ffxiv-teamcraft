@@ -119,7 +119,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "0.9.10",
+    "@ffxiv-teamcraft/pcap-ffxiv": "0.9.11",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
     "electron-is-dev": "^1.1.0",
