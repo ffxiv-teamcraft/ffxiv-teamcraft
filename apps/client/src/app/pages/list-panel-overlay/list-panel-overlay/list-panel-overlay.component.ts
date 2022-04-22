@@ -44,7 +44,7 @@ export class ListPanelOverlayComponent {
         return state.lists && state.lists.selectedId && state.layouts;
       })
     ).subscribe((state) => {
-      this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities));
+      this.listsFacade.overlayListsLoaded(Object.values<List>(state.lists.listDetails.entities).filter(list => list.$key === state.lists.selectedId));
       this.listsFacade.select(state.lists.selectedId);
       this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
     });
