@@ -1,10 +1,15 @@
-<h3>{{'LIST_DETAILS.SPLIT.Pick_items' | translate}}</h3>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h3>{{'LIST_DETAILS.SPLIT.Pick_items' | translate}}</h3>
+  <button nz-button (click)="selectNotCompletedItems()">
+    {{'LIST_DETAILS.SPLIT.Select_not_completed' | translate}}
+  </button>
+</div>
 
 <div fxLayout="column" fxLayoutGap="20px">
   <div fxLayout="column" fxLayoutGap="5px">
     <div *ngFor="let item of list.finalItems" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <div>
-        <label (ngModelChange)="setSelection(item, $event)" [ngModel]="false" nz-checkbox></label>
+        <label (ngModelChange)="setSelection(item, $event)" [ngModel]="isSelected(item.id)" nz-checkbox></label>
       </div>
       <app-item-icon [itemId]="item.id" width="32"></app-item-icon>
       <div>{{item.id | itemName | i18n}}</div>

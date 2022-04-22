@@ -812,7 +812,8 @@
     },
     "SPLIT": {
       "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Remove_from_list": "Remove from the current list",
+      "Select_not_completed": "Select items not completed"
     }
   },
   "LIST_TAGS": {
