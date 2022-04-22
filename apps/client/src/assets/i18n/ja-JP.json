@@ -572,6 +572,9 @@
     "Loading_fish_rankings": "釣りのランキングを読み込み中",
     "Gearset_priority": "優先度",
     "Gearset_priority_explain": "インゴット、ナゲット、或はその他の飛行艇の修理材料など色んな制作ジョブが制作可能なレシピを選択する事に使用します。",
+    "Characters": "Characters",
+    "Missing_character": "Missing character",
+    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
       "Button": "Verify",
       "Title": "キャラクター認証",
@@ -809,7 +812,8 @@
     },
     "SPLIT": {
       "Pick_items": "他のリストに追加するアイテムを選択",
-      "Remove_from_list": "現在リストから消去"
+      "Remove_from_list": "現在リストから消去",
+      "Select_not_completed": "Select items not completed"
     }
   },
   "LIST_TAGS": {
