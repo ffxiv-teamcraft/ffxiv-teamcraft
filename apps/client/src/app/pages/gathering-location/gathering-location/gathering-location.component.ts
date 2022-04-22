@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -17,6 +17,7 @@ import { FormBuilder } from '@angular/forms';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { chunk } from 'lodash';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface ResultRow {
   originalItemId: number,
@@ -82,26 +83,36 @@ export class GatheringLocationComponent {
 
   filters$ = new BehaviorSubject<any>(this.filtersForm.getRawValue());
 
-  itemsSearchIndex$ = combineLatest([
-    this.lazyData.getSearchIndex('items'),
-    this.lazyData.getEntry('gatheringSearchIndex'),
-    this.lazyData.getEntry('scripIndex'),
-    this.lazyData.getEntry('aetherialReduce')
-  ]).pipe(
-    first(),
-    map(([items, index, scripIndex, aetherialReduce]) => {
-      return items.filter(row => {
-        return index[row.id] !== undefined;
-      }).map(row => {
-        return {
-          ...row,
-          scrip: scripIndex[row.id],
-          reduction: aetherialReduce[row.id] > 0,
-          type: index[row.id].type
-        };
-      });
-    }),
-    shareReplay(1)
+  itemsSearchIndex$ = of(this.dataService.searchLang).pipe(
+    switchMap(lang => {
+      let index$ = this.lazyData.getSearchIndex('items');
+      if (lang === 'ko') {
+        index$ = this.lazyData.getSearchIndex('koItems');
+      } else if (lang === 'zh') {
+        index$ = this.lazyData.getSearchIndex('zhItems');
+      }
+      return combineLatest([
+        index$,
+        this.lazyData.getEntry('gatheringSearchIndex'),
+        this.lazyData.getEntry('scripIndex'),
+        this.lazyData.getEntry('aetherialReduce')
+      ]).pipe(
+        first(),
+        map(([items, index, scripIndex, aetherialReduce]) => {
+          return items.filter(row => {
+            return index[row.id] !== undefined;
+          }).map(row => {
+            return {
+              ...row,
+              scrip: scripIndex[row.id],
+              reduction: aetherialReduce[row.id] > 0,
+              type: index[row.id].type
+            };
+          });
+        }),
+        shareReplay(1)
+      );
+    })
   );
 
   // It's page # not index, starting at 1
@@ -113,7 +124,8 @@ export class GatheringLocationComponent {
               private mapService: MapService, private router: Router,
               private route: ActivatedRoute, public translate: TranslateService,
               private gatheringNodesService: GatheringNodesService, private message: NzMessageService,
-              private fb: FormBuilder, private lazyData: LazyDataFacade) {
+              private fb: FormBuilder, private lazyData: LazyDataFacade,
+              private settings: SettingsService) {
 
     const resultsData$ = combineLatest([
       this.query$,

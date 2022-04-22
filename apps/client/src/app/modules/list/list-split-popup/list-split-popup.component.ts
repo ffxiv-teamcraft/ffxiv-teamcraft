@@ -32,6 +32,16 @@ export class ListSplitPopupComponent {
     }
   }
 
+  selectNotCompletedItems(): void {
+    this.selectedItems = this.list.finalItems.filter(item => {
+      return item.done < item.amount;
+    }).map(item => item.id);
+  }
+
+  isSelected(itemId: number): boolean {
+    return this.selectedItems.includes(itemId);
+  }
+
   split(): void {
     const itemsToAdd = this.list.finalItems.filter(row => this.selectedItems.includes(row.id));
     this.listPicker.addToList(...itemsToAdd);

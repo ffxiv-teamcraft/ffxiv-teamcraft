@@ -40,6 +40,20 @@ export class ProfileEditorComponent {
     shareReplay(1)
   );
 
+  charactersForManagement$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
+    map(([chars, user]) => {
+      return user.lodestoneIds
+        .map(lodestoneIdEntry => {
+          const character = chars.find(c => c.Character.ID === lodestoneIdEntry.id);
+          return {
+            ...lodestoneIdEntry,
+            character
+          };
+        });
+    }),
+    shareReplay(1)
+  );
+
   gearSets$ = this.authFacade.gearSets$;
 
   now = Math.floor(Date.now() / 1000);

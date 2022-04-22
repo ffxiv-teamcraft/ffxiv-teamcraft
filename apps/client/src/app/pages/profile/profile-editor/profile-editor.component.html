@@ -122,6 +122,50 @@
             </button>
           </nz-card>
         </div>
+        <ng-container *ngIf="charactersForManagement$ | async as characters">
+          <div [nzXXl]="24" [nzXs]="24" class="profile-card" nz-col *ngIf="characters.length > 0">
+            <nz-card [nzTitle]="'PROFILE.Characters' | translate">
+              <nz-list [nzDataSource]="characters" [nzRenderItem]="characterTpl">
+                <ng-template #characterTpl let-character>
+                  <nz-list-item [nzActions]="[delete]">
+                    <nz-list-item-meta [nzAvatar]="character.character?.Character.Avatar" [nzDescription]="characterDetails"
+                                       [nzTitle]="title">
+                      <ng-template #title>
+                        <ng-container *ngIf="character.character">
+                          {{character.character?.Character.Name}} ({{character.character?.Character.World}})
+                        </ng-container>
+                        <span *ngIf="!character.character" class="missing-character">
+                          {{'PROFILE.Missing_character' | translate}}
+                        </span>
+                      </ng-template>
+                      <ng-template #characterDetails>
+                        <div fxLayout="row wrap" fxLayoutGap="5px">
+                          <div *ngFor="let stat of character.stats"><span [innerHTML]="stat.jobId | jobUnicode" class="companion-svg"></span>{{stat.level}}
+                          </div>
+                        </div>
+                        <ng-container *ngIf="!character.character">
+                          {{'PROFILE.Missing_character_description' | translate}}
+                        </ng-container>
+                      </ng-template>
+                      <ng-template #delete>
+                        <button (nzOnConfirm)="removeCharacter(character.id)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm
+                                nzShape="circle"
+                                [disabled]="character.id === user.defaultLodestoneId"
+                                nzSize="small" nzDanger>
+                          <i nz-icon nzType="delete"></i>
+                        </button>
+                      </ng-template>
+                    </nz-list-item-meta>
+                  </nz-list-item>
+                </ng-template>
+              </nz-list>
+              <button (click)="newContact(user)" nz-button nzBlock nzType="primary">
+                <i nz-icon nzType="plus"></i>
+                {{'PROFILE.Add_new_contact' | translate}}
+              </button>
+            </nz-card>
+          </div>
+        </ng-container>
       </ng-container>
     </div>
   </div>

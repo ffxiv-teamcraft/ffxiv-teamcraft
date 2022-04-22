@@ -41,6 +41,7 @@
             <app-fishing-bait [baits]="row.alarm.baits" flex="row wrap" hideNames="true" iconWidth="24"></app-fishing-bait>
           </div>
         </div>
+        <img *ngIf="row.alarm.hookset" src="{{row.alarm.hookset | hooksetActionId | actionIcon | xivapiIcon}}" class="hookset-icon"/>
         <img *ngIf="row.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
              [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
         <div *ngIf="!overlayMode" class="map-button">

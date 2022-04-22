@@ -164,12 +164,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.rotationsFacade.selectedRotation$,
     this.unsavedChanges$
   ).pipe(
+    distinctUntilChanged(),
     tap(rotation => {
       if (rotation.$key === undefined && rotation.rotation.length > 0) {
         this.dirty = true;
         this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
       }
-    })
+    }),
+    shareReplay(1)
   );
 
   public savedSet = true;
@@ -433,8 +435,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose.pipe(
       filter(name => name !== undefined),
       map(name => {
-        rotation.name = name;
-        return rotation;
+        const patched = new CraftingRotation();
+        Object.assign(patched, {
+          ...rotation,
+          name: name
+        });
+        return patched;
       })
     ).subscribe(r => {
       this.unsavedChanges$.next(r);

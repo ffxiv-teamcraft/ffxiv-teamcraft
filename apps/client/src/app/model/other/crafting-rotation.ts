@@ -44,7 +44,7 @@ export class CraftingRotation extends DataWithPermissions {
   public xivVersion = '6.0';
 
   public getName(): string {
-    if (this.recipe) {
+    if (this.recipe || this.name) {
       return this.name || `rlvl${this.recipe.rlvl} - ${this.rotation.length} steps, ${this.recipe.durability} dur`;
     } else {
       return 'New rotation';

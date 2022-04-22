@@ -172,7 +172,7 @@
                 </span>
                 <ul>
                   <li nz-menu-item *ngFor="let character of characters" (click)="switchCharacter(character.ID)">
-                    {{character.Name}}
+                    {{character.Name}} ({{character.Server}})
                   </li>
                 </ul>
               </span>

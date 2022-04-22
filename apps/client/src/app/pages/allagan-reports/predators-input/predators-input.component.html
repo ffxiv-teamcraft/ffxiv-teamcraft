@@ -1,15 +1,15 @@
 <div class="input-container" fxLayout="row">
-  <nz-select fxFlex="1 1 auto" class="left-element" [(ngModel)]="predatorModel.id">
+  <nz-select fxFlex="1 1 auto" class="left-element" [(ngModel)]="predatorModel.id" nzShowSearch>
     <ng-container *ngFor="let fish of (fishingSpot?.fishes || possibleFishList)">
       <nz-option *ngIf="fish > 0" [nzValue]="fish" [nzLabel]="fish | itemName | i18n"></nz-option>
     </ng-container>
   </nz-select>
   <input type="number" class="middle-element" [(ngModel)]="predatorModel.amount" nz-input placeholder="{{'COMMON.Amount' | translate}}" fxFlex="0 0 100px"/>
   <button nz-button [disabled]="!predatorModel.amount || !predatorModel.id" class="right-element" nzType="primary" nzSearch (click)="addPredator()"
-          fxFlex="1 1 50px"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
+          fxFlex="1 1 50px" type="button"><i nz-icon nzType="plus" nzTheme="outline"></i></button>
 </div>
 <div fxLayout="column" fxLayoutGap="10px">
-  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-sdtart center" *ngFor="let predator of predators">
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngFor="let predator of predators">
     <div>
       <app-item-icon [itemId]="predator.id" width="24"></app-item-icon>
     </div>
@@ -21,7 +21,7 @@
     </div>
     <div fxFlex="1 1 auto"></div>
     <div>
-      <button nz-button nzDanger nzSize="small" nzShape="circle" (click)="removePredator(predator.id)">
+      <button nz-button nzDanger nzSize="small" nzShape="circle" type="button" (click)="removePredator(predator.id)">
         <i nz-icon nzType="close"></i>
       </button>
     </div>

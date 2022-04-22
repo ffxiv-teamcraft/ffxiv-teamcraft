@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.0"></a>
+# [9.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.20...v9.6.0) (2022-04-22)
+
+
+### Bug Fixes
+
+* **allagan-reports:** better UX for spearfishing input ([379258f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/379258f))
+* **community-rotations:** add 50 durability as possible value ([f23f97a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f23f97a))
+* **db:** add missing voyages from 6.1 update ([8c69bc1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c69bc1)), closes [#2245](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2245)
+* **desktop:** fixed submarine progression capture ([52553c6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52553c6))
+* **desktop:** possible fix for list overlay freezing entirely ([71bc14f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71bc14f))
+* **search:** fixed gathering search for korean region ([918c11a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/918c11a))
+* **simulator:** fixed name change not applied to display ([4176ff9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4176ff9))
+
+
+### Features
+
+* **alarms:** added hookset icon to sidebar and overlay ([a075197](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a075197))
+* **core:** added server name next ot character name in quick switch ([5c68702](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c68702))
+* **db:** 500+ allagan reports imported ([5539f48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5539f48))
+* **db:** new allagan reports import ([2f70520](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f70520))
+* **lists:** new button to select items that are not completed in list split popup ([45ec7ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45ec7ac))
+* **profile:** new characters management box in profile editor ([c684fb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c684fb8))
+* **simulator:** added icons next to selected food and medicine ([f41e8e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f41e8e0))
+
+
+
 <a name="9.5.20"></a>
 ## [9.5.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.19...v9.5.20) (2022-04-15)
 
