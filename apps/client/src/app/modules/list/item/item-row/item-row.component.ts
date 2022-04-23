@@ -4,7 +4,7 @@ import { ListsFacade } from '../../+state/lists.facade';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -60,6 +60,7 @@ import { ListController } from '../../list-controller';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { EorzeanTimeService } from '../../../../core/eorzea/eorzean-time.service';
 import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
+import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 
 @Component({
   selector: 'app-item-row',
@@ -377,6 +378,9 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
     this.commentBadge$ = this.commentBadgeReloader$.pipe(
       exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
       switchMap(([list, itemId]) => {
+        if (this.buttonsCache[ItemRowMenuElement.COMMENTS]) {
+          return of([]);
+        }
         return this.commentsService.getComments(
           CommentTargetType.LIST,
           list.$key,
