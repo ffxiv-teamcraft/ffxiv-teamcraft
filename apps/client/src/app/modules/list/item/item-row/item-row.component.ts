@@ -14,6 +14,7 @@ import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import {
   debounceTime,
   distinctUntilChanged,
+  exhaustMap,
   filter,
   first,
   map,
@@ -125,6 +126,10 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
   team$: Observable<Team>;
 
   missingBooks$: Observable<number[]>;
+
+  commentBadge$: Observable<boolean>;
+
+  commentBadgeReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
   tagInputVisible = false;
 
@@ -368,6 +373,19 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
     ).subscribe(value => {
       this.itemDoneChanged(value, this.item);
     });
+
+    this.commentBadge$ = this.commentBadgeReloader$.pipe(
+      exhaustMap(() => combineLatest([this.list$, this.item$.pipe(map(i => i.id))])),
+      switchMap(([list, itemId]) => {
+        return this.commentsService.getComments(
+          CommentTargetType.LIST,
+          list.$key,
+          `${this.finalItem ? 'finalItems' : 'items'}:${itemId}`
+        );
+      }),
+      map(comments => comments.length > 0),
+      startWith(false)
+    );
   }
 
   openMarketboardDialog(item: ListRow): void {
@@ -561,7 +579,9 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
           })
         );
       })
-    ).subscribe();
+    ).subscribe(() => {
+      this.commentBadgeReloader$.next(null);
+    });
   }
 
   setWorkingOnIt(uid: string, item: ListRow): void {
