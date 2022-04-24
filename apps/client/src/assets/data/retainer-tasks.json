@@ -2494,28 +2494,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -2531,28 +2530,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -2568,28 +2566,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -2605,28 +2602,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -2642,28 +2638,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -2679,28 +2674,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -3940,28 +3934,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -3977,28 +3970,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -4014,28 +4006,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -4051,28 +4042,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -4088,28 +4078,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -4125,28 +4114,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 17
@@ -5710,28 +5698,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -5747,28 +5734,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -5784,28 +5770,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -5821,28 +5806,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -5858,28 +5842,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -5895,28 +5878,27 @@
     "quantities": [
       {
         "quantity": 60,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 80,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8668,28 +8650,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8705,28 +8686,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8742,28 +8722,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8779,28 +8758,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8816,28 +8794,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18
@@ -8853,28 +8830,27 @@
     "quantities": [
       {
         "quantity": 30,
-        "stat": "perception",
-        "value": 0
+        "stat": "perception"
       },
       {
         "quantity": 60,
         "stat": "perception",
-        "value": 0
+        "value": 164
       },
       {
         "quantity": 100,
         "stat": "perception",
-        "value": 0
+        "value": 1350
       },
       {
         "quantity": 110,
         "stat": "perception",
-        "value": 0
+        "value": 1485
       },
       {
         "quantity": 120,
         "stat": "perception",
-        "value": 0
+        "value": 1620
       }
     ],
     "category": 18

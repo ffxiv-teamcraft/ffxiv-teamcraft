@@ -3476,7 +3476,7 @@
   "586": {
     "en": "Adamantite Ore",
     "ja": "アダマン鉱",
-    "de": "Adamantium-Erz",
+    "de": "Adamantit-Erz",
     "fr": "Minerai d'adamant"
   },
   "587": {
@@ -5342,7 +5342,7 @@
   "897": {
     "en": "Chloroschist",
     "ja": "緑色片岩",
-    "de": "Grünschieferklumen",
+    "de": "Grünschieferklumpen",
     "fr": "Schiste vert"
   },
   "898": {
@@ -5654,7 +5654,7 @@
   "949": {
     "en": "Dynamis Crystal",
     "ja": "デュナミスシャード",
-    "de": "Dynamit-Splitter",
+    "de": "Dynamis-Splitter",
     "fr": "Éclat de dynamis"
   },
   "950": {
@@ -5722,5 +5722,29 @@
     "ja": "ラミーノーズテトラ",
     "de": "Rotkopfsalmler",
     "fr": "Tétra à nez rouge"
+  },
+  "961": {
+    "en": "Field Exploration XXVIII",
+    "ja": "探索依頼：平地 G28",
+    "de": "Felderkundung XXVIII",
+    "fr": "Exploration en plaine XXVIII"
+  },
+  "962": {
+    "en": "Highland Exploration XXVIII",
+    "ja": "探索依頼：山岳 G28",
+    "de": "Hochlanderkundung XXVIII",
+    "fr": "Exploration en montagne XXVIII"
+  },
+  "963": {
+    "en": "Woodland Exploration XXVIII",
+    "ja": "探索依頼：森林 G28",
+    "de": "Forsterkundung XXVIII",
+    "fr": "Exploration en forêt XXVIII"
+  },
+  "964": {
+    "en": "Waterside Exploration XXVIII",
+    "ja": "探索依頼：水辺 G28",
+    "de": "Gewässererkundung XXVIII",
+    "fr": "Exploration en rivage XXVIII"
   }
 }
