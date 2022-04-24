@@ -574,7 +574,7 @@
     "Gearset_priority_explain": "用于决定物品可被多个职业制作（例如金属锭、金属块、飞空艇修理材料等）时选择配方的顺序。",
     "Characters": "角色",
     "Missing_character": "Missing character",
-    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
+    "Missing_character_description": "此角色不再存在，请从您的个人资料中删除它。",
     "VERIFICATION": {
       "Button": "验证",
       "Title": "角色验证",
