@@ -51,7 +51,7 @@
     <div>
       {{data.voyageId | voyageName: data.voyageType | i18n}}
     </div>
-    <div *ngIf="data.rarity !== undefined">
+    <div *ngIf="data.rarity">
       {{('ALLAGAN_REPORTS.' + ['Rarity_Common', 'Rarity_Voyage_exclusive', 'Rarity_Rare'][data.rarity]) | translate}}
     </div>
   </ng-container>

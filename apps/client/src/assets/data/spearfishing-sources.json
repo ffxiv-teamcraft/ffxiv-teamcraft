@@ -275,6 +275,18 @@
       "shadowSize": 1
     }
   ],
+  "20189": [
+    {
+      "speed": 0,
+      "shadowSize": 0
+    }
+  ],
+  "20190": [
+    {
+      "speed": 2,
+      "shadowSize": 2
+    }
+  ],
   "20191": [
     {
       "speed": 0,
@@ -327,6 +339,12 @@
     {
       "speed": 2,
       "shadowSize": 2
+    }
+  ],
+  "20201": [
+    {
+      "speed": 2,
+      "shadowSize": 1
     }
   ],
   "20202": [
@@ -491,6 +509,12 @@
       "shadowSize": 2
     }
   ],
+  "20229": [
+    {
+      "speed": 4,
+      "shadowSize": 1
+    }
+  ],
   "20230": [
     {
       "speed": 1,
@@ -619,9 +643,21 @@
       "shadowSize": 0
     }
   ],
+  "27574": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
+  ],
   "29578": [
     {
       "speed": 1,
+      "shadowSize": 0
+    }
+  ],
+  "29589": [
+    {
+      "speed": 3,
       "shadowSize": 0
     }
   ],

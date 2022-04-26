@@ -6058,7 +6058,7 @@ export const mapIds = [
   {
     "id": 758,
     "zone": 4098,
-    "name": "",
+    "name": "Medias Res",
     "territory": 968,
     "scale": 400,
     "weatherRate": 0
@@ -6114,7 +6114,7 @@ export const mapIds = [
   {
     "id": 765,
     "zone": 4099,
-    "name": "",
+    "name": "Medias Res",
     "territory": 968,
     "scale": 400,
     "weatherRate": 0

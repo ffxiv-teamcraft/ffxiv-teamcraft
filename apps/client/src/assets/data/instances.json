@@ -4208,11 +4208,15 @@
     ]
   },
   "30106": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Dragonsong's Reprise (Ultimate)",
+    "ja": "絶竜詩戦争",
+    "de": "Drachenkrieg (fatal)",
+    "fr": "la Guerre du chant des dragons (fatal)",
+    "icon": "/i/061000/061832.png",
+    "contentText": [
+      32628,
+      32600
+    ]
   },
   "30107": {
     "en": "Asphodelos: The Fourth Circle",

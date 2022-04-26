@@ -122321,6 +122321,126 @@
     "slots": 0,
     "overmeld": false
   },
+  "36943": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36944": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36945": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36946": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36947": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36948": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36949": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36950": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36951": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36952": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36953": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36954": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36955": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36956": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36957": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36958": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36959": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36960": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36961": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 3,
+    "overmeld": false
+  },
+  "36962": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
   "36963": {
     "modifier": 1,
     "prop": "1HWpn%",

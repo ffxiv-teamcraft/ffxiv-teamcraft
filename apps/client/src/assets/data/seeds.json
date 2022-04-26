@@ -483,5 +483,10 @@
     "seed": 35744,
     "duration": 1,
     "ffxivgId": 97
+  },
+  "37303": {
+    "seed": 37302,
+    "duration": 1,
+    "ffxivgId": 98
   }
 }
