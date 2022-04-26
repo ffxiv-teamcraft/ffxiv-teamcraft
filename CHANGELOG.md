@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.1"></a>
+## [9.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.0...v9.6.1) (2022-04-26)
+
+
+### Bug Fixes
+
+* **db:** fixed missing ventures data from 6.1 update ([d012adc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d012adc))
+
+
+### Features
+
+* **db:** 6.11 data update ([fcbf91a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fcbf91a))
+
+
+
 <a name="9.6.0"></a>
 # [9.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.5.20...v9.6.0) (2022-04-22)
 
