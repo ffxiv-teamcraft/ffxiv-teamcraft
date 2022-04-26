@@ -62,7 +62,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   userId: string;
 
   @Input()
-  loggedIn: boolean | null;
+  loggedIn: string;
 
   @Input()
   commentBadge: boolean;

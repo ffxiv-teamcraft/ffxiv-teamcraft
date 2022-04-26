@@ -572,6 +572,9 @@
     "Loading_fish_rankings": "Chargement des classements de pêche",
     "Gearset_priority": "Priorité",
     "Gearset_priority_explain": "Utilisé pour décider quelle recette choisir pour les objets qui peuvent être fabriqués par plusieurs jobs tels que les lingots, les pépites et d'autres matériaux de réparation d'aéronefs.",
+    "Characters": "Characters",
+    "Missing_character": "Missing character",
+    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
       "Button": "Vérifier",
       "Title": "Vérification de personnage",
@@ -809,7 +812,8 @@
     },
     "SPLIT": {
       "Pick_items": "Choisir les éléments à ajouter à une autre liste",
-      "Remove_from_list": "Retirer de la liste actuelle"
+      "Remove_from_list": "Retirer de la liste actuelle",
+      "Select_not_completed": "Select items not completed"
     }
   },
   "LIST_TAGS": {

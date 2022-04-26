@@ -876,7 +876,7 @@
     "zh": "对自身附加3档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>玄冰"
   },
   "296": {
-    "zh": "发动部分魔法后，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n当自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>达到最高档数时，相反属性的魔法将不消耗魔力\n但不适用于核爆"
+    "zh": "发动部分魔法后，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最大档数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n当自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>达到最高档数时，相反属性的魔法将不消耗魔力\n但不适用于核爆"
   },
   "297": {
     "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>通晓<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到2档"
@@ -1461,7 +1461,7 @@
     "zh": "破阵法变为裂阵法"
   },
   "493": {
-    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医术的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>仙光的拥抱的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>鼓舞激励之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>士气高昂之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量160%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>炽天的幕帘的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180"
+    "zh": "部分技能与防护罩的效果提高\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>医术的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>450\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>仙光的拥抱的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>鼓舞激励之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量180%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>士气高扬之策的效果量：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>抵消相当于治疗量160%的伤害\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>炽天的幕帘的恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>180"
   },
   "494": {
     "zh": "展开战术的复唱时间缩短到90秒"

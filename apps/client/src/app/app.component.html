@@ -4,6 +4,7 @@
              class="app-container" [class.blur]="desktopLoading$ | async">
     <nz-layout *ngIf="!overlay">
       <nz-header class="header">
+        <img src="./assets/logo_home.png" alt="LOGO" class="logo-img" *ngIf="true | ifMobile: false">
         <a class="logo" routerLink="/" fxLayout="row" fxLayoutAlign="center center" [innerHTML]="titleBreakpoints | widthBreakpoints"></a>
         <div class="language-swap" *ngIf="true | ifMobile: false">
           <nz-select (ngModelChange)="use($event)" [ngModel]="translate.currentLang"

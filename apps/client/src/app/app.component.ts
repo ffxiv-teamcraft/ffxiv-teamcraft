@@ -95,7 +95,7 @@ export class AppComponent implements OnInit {
 
   public titleBreakpoints = {
     785: `TC\nv${this.version}`,
-    default: `FFXIV&nbsp;Teamcraft&nbsp;v${this.version}`
+    default: `v${this.version}`
   };
 
   public overlayOpacity = 1;
