@@ -572,6 +572,9 @@
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
     "Gearset_priority": "Priorität",
     "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
+    "Characters": "Characters",
+    "Missing_character": "Missing character",
+    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
       "Button": "Verifizieren",
       "Title": "Charakterverifizierung",
@@ -809,7 +812,8 @@
     },
     "SPLIT": {
       "Pick_items": "Elemente auswählen um sie einer anderen Liste hinzuzufügen",
-      "Remove_from_list": "Von aktueller Liste entfernen"
+      "Remove_from_list": "Von aktueller Liste entfernen",
+      "Select_not_completed": "Select items not completed"
     }
   },
   "LIST_TAGS": {
