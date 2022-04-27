@@ -33,7 +33,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
