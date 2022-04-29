@@ -1208,7 +1208,7 @@
   },
   "PRICING": {
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
-    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
+    "Expect_to_sell_everything_explain": "Schließt übriggebliebene Items aus vorherigen Herstellungen nicht ein, da sie weiterverkauft werden",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_your_server": "Preise auf Basis des Marktbrettes befüllen (nur von Heimatserver)",
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
@@ -1333,10 +1333,10 @@
     "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Los geht's!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
+      "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
       "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
@@ -1412,7 +1412,7 @@
       "CRAFT": {
         "Title": "Hergestellt von",
         "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "Du hast keine Voraussetzungen für diesen Gegenstand angegeben, das heißt du erstellst ein Rezept mit 0 Zutaten."
       },
       "GATHERING": {
         "Title": "Gesammelt von",
@@ -1470,7 +1470,7 @@
     "Title": "Desynthese-Leitfaden",
     "Job": "Job",
     "Level": "Verwertungsstufe",
-    "Intro": "Select a job and input a level to find the best items to level up your desynth",
+    "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
     "Loading_message": "Lädt…",
     "TAGS": {
       "Higher_chances": "Höhere Chancen",
@@ -1638,7 +1638,7 @@
       "Fish_per_tug": "Fisch pro Spitze",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Fehlschläge einbeziehen",
-      "Miss": "Miss"
+      "Miss": "Fehlschlag"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -1795,7 +1795,7 @@
     "Any": "Alle",
     "Achievement": "Errungenschaft",
     "Fishing-spot": "Angelplatz",
-    "Gathering-node": "Gathering node"
+    "Gathering-node": "Abbaustelle"
   },
   "SEARCH_FILTERS": {
     "Level": "Stufe",
@@ -1826,7 +1826,7 @@
     "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
     "Extension_link": "Installiere die Erweiterung aus dem Chrome Web Store",
     "Clear": "Gegenstandsliste löschen",
-    "Clipboard_import_duplicates": "Items that show twice are here because Lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Clipboard_import_duplicates": "Gegenstände werden hier ggf. doppelt angezeigt, da Lodestone nur Stapel anzeigt, diese Dopplungen sind also seperate Stapel bei deinen Gehilfen.",
     "Inventory": "Inventar",
     "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
     "Pool_copied": "Inventar wurde in die Zwischenablage kopiert",
@@ -1841,7 +1841,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
-    "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
+    "Description": "Du hast zu viel von einer bestimmten Währung? Wähle die Währung aus, gib die Anzahl ein, wähle einen Server aus und wir zeigen dir, mit welchem Gegenstand du am meisten Gil bekommst!",
     "Pick_currency": "Währung auswählen",
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
@@ -1922,7 +1922,7 @@
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
     "Button_label": "Paketerfassung aktivieren",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description": "Du kannst die Paketerfassung aktivieren, damit Teamcraft deine FFXIV-Pakete lesen kann (kann auch in den Einstellungen aktiviert/deaktiviert werden). Hierdurch werden Listen automatisch ausgefüllt, wenn du einen Gegenstand erhältst. Die Daten werden außerdem Universalis zur Verfügung gestellt, dem Marktbrett-Aggregator.",
     "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort in einem anderen Gebiet und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
@@ -1984,7 +1984,7 @@
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
       "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character. Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Wenn du den Charakter bereits verlinkt hast, mit dem du gerade spielst, kannst du diesen Charakter sicher ignorieren, Teamcraft liest Dateiänderungen und einige Dateien könnten sich aus irgendeinem Grund ändern, was dies auslöst, wenn die Datei noch nicht verknüpft ist."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2040,13 +2040,13 @@
       "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as a normal-quality item",
+      "Title": "Items die du nicht in HQ benötigst, weil sie wie normale Items funktionieren",
       "Message": "Seit 6.0 funktioniert dieser Gegenstand nur noch als normaler Gegenstand auch wenn er in hoher Qualität ist"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
       "Message": "Dieser Gegenstand wird nur verwendet, um {{targetItem}} herzustellen, wäge ab, ihn umzuwandeln statt ihn in Rohform zu behalten",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
     }
   },
   "VERSION_LOCK": {
@@ -2766,7 +2766,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "Neue Funktion: Allagische Meldungen",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "Du hast ein Element mit fehlenden Daten gefunden? Du kannst nun Gegenstandsquellen im Allagischen Meldungssystem (Allgemein > Allagische Meldungen) melden und sie in das folgende Update einbinden lassen!",
     "Title": "Allagische Meldungen",
     "Reports": "Meldungen",
     "Pending_changes": "Ausstehende Änderungen",
@@ -2878,7 +2878,7 @@
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
+    "ANY": "Beliebig",
     "SUNSET": "Sonnenuntergang",
     "DAY": "Tag",
     "NIGHT": "Nacht"
