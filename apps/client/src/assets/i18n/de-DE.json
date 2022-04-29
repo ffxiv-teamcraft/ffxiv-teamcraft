@@ -572,9 +572,9 @@
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
     "Gearset_priority": "Priorität",
     "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
-    "Characters": "Characters",
-    "Missing_character": "Missing character",
-    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
+    "Characters": "Charaktere",
+    "Missing_character": "Fehlende Charaktere",
+    "Missing_character_description": "Dieser Charakter existiert nicht mehr, bitte lösche ihn aus deinem Profil.",
     "VERIFICATION": {
       "Button": "Verifizieren",
       "Title": "Charakterverifizierung",
@@ -661,8 +661,8 @@
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "Requirements_ignored": "Anforderungen ignoriert",
     "Mark_whole_panel_nq": "Manuelle HQ-Markierungen entfernen",
-    "Mark_whole_panel_hq": "Mark whole panel HQ",
-    "Crafts": "crafts",
+    "Mark_whole_panel_hq": "Gesamtes Panel HQ markieren",
+    "Crafts": "herstellungen",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
@@ -712,7 +712,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Liste erfolgreich abgeschlossen",
-    "Public_list_description": "Setting a list to public adds it to the public lists section. THIS IS NOT REQUIRED TO SHARE A LIST",
+    "Public_list_description": "Wenn du eine Liste auf öffentlich setzt, wird es den Communitylisten hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN",
     "Missing_tags_before_button": "Deine Communityliste hat keine Markierungen. Bitte füge einige mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
