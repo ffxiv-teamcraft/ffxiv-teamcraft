@@ -504,7 +504,7 @@
     "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
-    "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -813,7 +813,7 @@
     "SPLIT": {
       "Pick_items": "Elemente auswählen um sie einer anderen Liste hinzuzufügen",
       "Remove_from_list": "Von aktueller Liste entfernen",
-      "Select_not_completed": "Select items not completed"
+      "Select_not_completed": "Wähle nicht fertiggestellte Elemente"
     }
   },
   "LIST_TAGS": {
@@ -1040,7 +1040,7 @@
     "Change_rotation": "Rotation wechseln",
     "New_rotation_folder": "Neuer Ordner",
     "Safe_mode": "Sicherer Modus",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chance to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "Quality_needed": "{{amount}} mehr Qualität, um 100% zu erreichen",
     "Rotation_tips": "Tipps für die Rotation",
     "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
@@ -1048,12 +1048,12 @@
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
-    "Find_rotation": "Rotation finder",
+    "Find_rotation": "Rotationsfinder",
     "Searching_for_rotation": "Suche nach Community Rotationen…",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
-    "Could_not_find_minstats": "Could not find minimum stats for this rotation",
+    "Could_not_find_minstats": "Konnte keine Mindestwerte für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "Macro_duration": "Makrodauer: {{duration}}s.",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
@@ -1061,7 +1061,7 @@
     "Detailed": "Detailliert",
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Werte angewendet",
-    "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Show_rotations_above_stats": "Rotationen mit den erforderlichen Werten über deinen einbeziehen",
     "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Exzellent",
@@ -1163,7 +1163,7 @@
       "Apply_foods": "Verzehrbares übernehmen",
       "Food": "Wähle ein Gericht",
       "Medicine": "Wähle eine Arznei",
-      "Action": "Choose Free Company actions",
+      "Action": "Wähle ein Kommando der Freien Gesellschaft",
       "Save_on_profile": "Im Profil speichern",
       "Reset_set": "Benutzerdefinierte Attribute zurücksetzen",
       "Save_consumables": "Das ausgewählte Verzehrbare als Standard speichern",
@@ -1180,10 +1180,10 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Unsicheres Kommando bei sicherem Modus",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "Belastbarkeit hat 0 erreicht, bevor Synthese vollendet wurde",
       "NOT_ENOUGH_CP": "Nicht genug HP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
-      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
+      "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
+      "NOT_SPECIALIST": "Spezialisten-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
       "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
     },
@@ -1195,14 +1195,14 @@
       "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
       "Use_patient_touch_faster": "Du solltest Hingebungsvolle Veredelung nutzen bevor du Innere Ruhe aufbaust, um den Verlust beim Fehlschlagen zu minimieren.",
       "Do_not_overlap_buffs": "Du hast den bei Schritt {{overlappedIndex}} genutzten Statuseffekt in Schritt {{overlappingIndex}} überschnitten. Du solltest den zweiten verzögern um den maximalen Nutzen aus den Effekten zu ziehen.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
+      "Use_byregot_brow_5_stacks": "Du solltest lieber Byregots Schwung anstelle von Byregots Benediktion benutzen, da dies die gleiche Qualität für 6 HP weniger gibt.",
       "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
       "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
+      "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
       "Do_not_use_brand_without_name": "Benutze nicht Zeichen der Elemente ohne Name der Elemente.",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
+      "Avoid_using_good_actions": "Vermeide Aktionen in einem Makro, die den Zustand \"gut\" erfordern, da sie nicht vorhergesagt werden können",
+      "Requires_reuse_to_proc": "Deine Rotation ist davon abhängig, dass Wiederverwertung aktiviert wird. Stelle sicher, dass sie auch ohne Wiederverwertung funktionieren kann.",
       "Use_reuse": "Deine Rotation erreicht 100% HQ und du hast genügend HP, um Wiederverwerten zu benutzen. Ziehe in Erwähnung dies einzusetzen, um Materialien zurückzugewinnen."
     }
   },
@@ -1211,7 +1211,7 @@
     "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_your_server": "Preise auf Basis des Marktbrettes befüllen (nur von Heimatserver)",
-    "Content_copied": "Content copied to your clipboard",
+    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
     "Cheaper_at_vendor": "Günstiger wenn vom NPC gekauft",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
     "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
@@ -1236,7 +1236,7 @@
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
-      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
+      "Second_line": "Wähle einen Job, stelle den Stufenbereich ein und du erhälst eine Liste der betreffenden Freibriefe. Markiere die Freibriefe um die Rezepte einer Liste hinzuzufügen.",
       "Third_line": "Du kannst ebenfalls nach Name suchen, wenn du schon weißt wonach du suchst."
     }
   },
@@ -1309,7 +1309,7 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_universalis": "More details on Universalis",
+    "More_on_universalis": "Weitere Infos auf Universalis",
     "Server": "Welt",
     "Last_updated": "Letzte Aktualisierung"
   },
@@ -1511,7 +1511,7 @@
     "Track_on_attt": "Auf anderem Triple-Triad-Tracker verfolgen",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
     "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
-    "Triple_triad_pack": "Triple Triad card pack",
+    "Triple_triad_pack": "Triple-Triad-Boosterpaket",
     "Dungeons": "Dungeons/Prüfungen",
     "Used_for_trades": "Handel",
     "Can_contain_items": "Enthält Gegenstände",
@@ -1522,7 +1522,7 @@
     "Min_ilevel": "Min. Gegenstandsstufe",
     "Sync_to": "Max. Stufe",
     "Exp": "Routine",
-    "Week_restriction": "Weekly restriction",
+    "Week_restriction": "Wochenbeschränkung",
     "Fights": "Kämpfe",
     "Instance_details": "Instanzdetails",
     "Instance_rewards": "Belohnungen",
@@ -1587,8 +1587,8 @@
       "Used_as_mooch_for": "Köderfisch für",
       "No_known_mooch_usage": "Keine bekannte Köderfischnutzung für diesen Fisch",
       "No_spot_filter": "Kein Ortfilter",
-      "Chances_for_transition": "Chance for this transition to happen",
-      "Weather_chances": "Chance for each weather to appear",
+      "Chances_for_transition": "Wahrscheinlichkeit für diesen Wetterwechsel",
+      "Weather_chances": "Wahrscheinlichkeiten für jedes Wetter",
       "Bait": "Fischköder",
       "Refresh_data": "Daten aktualisieren",
       "Bite_times": "Zeit zum Anbeißen",
@@ -1624,8 +1624,8 @@
         "Size": "Größe",
         "Time_since_thrown": "Zeit seit Wurf",
         "ERRORS": {
-          "No_bait": "No bait detected. Switch bait once to fix.",
-          "No_stats": "No stats detected. Switch to Fisher again to fix."
+          "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
+          "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
         }
       }
     },
