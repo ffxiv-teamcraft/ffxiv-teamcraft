@@ -15,10 +15,10 @@
     </div>
     <div>
       <nz-divider [nzText]="'DB.FISH.Tugs' | translate" nzOrientation="left"></nz-divider>
-      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of tugs$ | async">
-        <div>{{ row.tug | tugName | translate }}</div>
-        <div>{{ row.percent | number: '1.0-1' }}%</div>
-        <div>({{ row.amount | number: '1.0-1' }})</div>
+      <div nz-row *ngFor="let row of tugs$ | async">
+        <div nz-col nzMd="10">{{ row.tug | tugName | translate }}</div>
+        <div nz-col nzMd="6" class="number-col">{{ row.percent | number: '1.0-1' }}%</div>
+        <div nz-col nzMd="8" class="number-col">({{ row.amount | number: '1.0-1' }})</div>
       </div>
     </div>
   </div>
