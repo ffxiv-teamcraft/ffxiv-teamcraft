@@ -12,6 +12,7 @@ export class LgbExtractor extends AbstractExtractor {
     const npcs = require('../../../../client/src/assets/data/npcs.json');
     const territoryLayers = require('../../../../client/src/assets/data/territory-layers.json');
     const lgbFolder = '../../../input/lgb';
+    const housingMaterialSuppliers = [];
 
     const aetherytes = [];
 
@@ -120,6 +121,9 @@ export class LgbExtractor extends AbstractExtractor {
                   if (lgbLayer.FestivalID > 0) {
                     npc.festival = lgbLayer.FestivalID;
                   }
+                  if (npc.en === 'material supplier' && mapEntry.housing) {
+                    housingMaterialSuppliers.push(object.Object.ParentData.ParentData.BaseId);
+                  }
                   break;
                 // Aetherytes
                 case 40:
@@ -166,6 +170,7 @@ export class LgbExtractor extends AbstractExtractor {
         this.persistToJsonAsset('aetherytes', aetherytes);
         this.persistToJsonAsset('fates', fates);
         this.persistToJsonAsset('npcs', npcs);
+        this.persistToTypescript('housing-material-suppliers', 'housingMaterialSuppliers', housingMaterialSuppliers);
         this.persistToJsonAsset('territory-layers', territoryLayers);
         this.done();
       });

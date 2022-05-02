@@ -5,7 +5,7 @@ export class MapsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const maps = {};
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
+      this.aggregateAllPages('https://xivapi.com/Map?columns=ID,GameContentLinks,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
       this.aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ'),
       this.aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name')
     ]).subscribe(([xivapiMaps, territories, contentFinderConditions]) => {
@@ -28,7 +28,8 @@ export class MapsExtractor extends AbstractExtractor {
           size_factor: mapData.SizeFactor,
           territory_id: mapData.TerritoryTypeTargetID,
           index: mapData.MapIndex,
-          dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name))
+          dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name)),
+          housing: mapData.GameContentLinks.HousingMapMarkerInfo !== undefined
         };
       });
     }, null, () => {

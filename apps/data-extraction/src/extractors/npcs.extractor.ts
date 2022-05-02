@@ -23,13 +23,9 @@ export class NpcsExtractor extends AbstractExtractor {
         if (npc.BalloonTargetID > 0) {
           npcs[npc.ID].balloon = npc.BalloonTargetID;
         }
-        if (npc.Name_en === 'material supplier') {
-          housingMaterialSuppliers.push(npc.ID);
-        }
       });
     }, null, () => {
       this.persistToJsonAsset('npcs', npcs);
-      this.persistToTypescript('housing-material-suppliers', 'housingMaterialSuppliers', housingMaterialSuppliers);
       this.done();
     });
   }
