@@ -1,7 +1,6 @@
 import { Action } from '@ngrx/store';
 import { List } from '../model/list';
 import { ListRow } from '../model/list-row';
-import { SettingsService } from '../../settings/settings.service';
 
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
@@ -134,7 +133,7 @@ export class SetItemDone implements Action {
 
   constructor(public readonly itemId: number, public readonly itemIcon: number,
               public readonly finalItem: boolean, public readonly doneDelta: number,
-              public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: SettingsService,
+              public readonly recipeId: string, public readonly totalNeeded: number, public readonly settings: { enableAutofillHQFilter: boolean, enableAutofillNQFilter: boolean },
               public readonly external = false, public readonly fromPacket = false,
               public readonly hq = false) {
   }

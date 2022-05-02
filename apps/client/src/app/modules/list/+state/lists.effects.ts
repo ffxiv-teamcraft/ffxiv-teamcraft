@@ -506,6 +506,7 @@ export class ListsEffects {
             serverList.etag = 0;
           }
           serverList.etag++;
+          this.listService.recordOperation('write');
           transaction.set(serverCopy.ref, serverList);
         });
       }

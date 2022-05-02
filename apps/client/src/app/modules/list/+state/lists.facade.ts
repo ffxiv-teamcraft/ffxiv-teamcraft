@@ -281,7 +281,10 @@ export class ListsFacade {
   }
 
   setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, this.settings, external, fromPacket, hq));
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
+      enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
+      enableAutofillNQFilter: this.settings.enableAutofillNQFilter
+    }, external, fromPacket, hq));
   }
 
   markAsHq(itemIds: number[], hq: boolean): void {

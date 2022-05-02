@@ -223,7 +223,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     return from(batch.commit());
   }
 
-  protected recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
+  public recordOperation(operation: 'read' | 'write' | 'delete', debugData?: any): void {
     if ((window as any).verboseOperations || environment.verboseOperations) {
       console.log('OPERATION', operation, this.getBaseUri(), debugData);
     }
