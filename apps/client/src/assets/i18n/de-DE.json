@@ -504,7 +504,7 @@
     "Hide_back_button": "Verberge Zurück-Schaltfläche in Seitenleiste",
     "Reload_auth_token": "Authentifizierungs-Token neu laden",
     "Materia_confidence_rate": "Erfolgsrate fürs Materia einsetzen",
-    "Materia_confidence_rate_explain": "Confidence rate for materia estimate. Higher means that more materias will be suggested to be more confident that with this amount, your melds will succeed",
+    "Materia_confidence_rate_explain": "Zuversichtsrate für Materiaschätzungen. Höher bedeutet, dass mehr Materia vorgeschlagen wird, damit der Wert für erfolgreiche Verschmelzungen verlässlicher wird",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -572,9 +572,9 @@
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
     "Gearset_priority": "Priorität",
     "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
-    "Characters": "Characters",
-    "Missing_character": "Missing character",
-    "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
+    "Characters": "Charaktere",
+    "Missing_character": "Fehlende Charaktere",
+    "Missing_character_description": "Dieser Charakter existiert nicht mehr, bitte lösche ihn aus deinem Profil.",
     "VERIFICATION": {
       "Button": "Verifizieren",
       "Title": "Charakterverifizierung",
@@ -661,8 +661,8 @@
     "Can_skip_tooltip": "Ein anderer Gegenstand, den du kaufst, benötigt diesen Gegenstand, bedeutet, dass du weniger von diesem kaufen kannst oder es komplett überspringen kannst, wenn du alles in diesem Panel kaufen möchtest",
     "Requirements_ignored": "Anforderungen ignoriert",
     "Mark_whole_panel_nq": "Manuelle HQ-Markierungen entfernen",
-    "Mark_whole_panel_hq": "Mark whole panel HQ",
-    "Crafts": "crafts",
+    "Mark_whole_panel_hq": "Gesamtes Panel HQ markieren",
+    "Crafts": "herstellungen",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
@@ -712,7 +712,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Liste erfolgreich abgeschlossen",
-    "Public_list_description": "Setting a list to public adds it to the public lists section. THIS IS NOT REQUIRED TO SHARE A LIST",
+    "Public_list_description": "Wenn du eine Liste auf öffentlich setzt, wird es den Communitylisten hinzugefügt. DAS IST NICHT NÖTIG UM LISTEN ZU TEILEN",
     "Missing_tags_before_button": "Deine Communityliste hat keine Markierungen. Bitte füge einige mit der Schaltfläche ",
     "Missing_tags_after_button": " hinzu.",
     "Add_remove_amount": "Eine Menge hinzufügen/abziehen",
@@ -813,7 +813,7 @@
     "SPLIT": {
       "Pick_items": "Elemente auswählen um sie einer anderen Liste hinzuzufügen",
       "Remove_from_list": "Von aktueller Liste entfernen",
-      "Select_not_completed": "Select items not completed"
+      "Select_not_completed": "Wähle nicht fertiggestellte Elemente"
     }
   },
   "LIST_TAGS": {
@@ -1040,7 +1040,7 @@
     "Change_rotation": "Rotation wechseln",
     "New_rotation_folder": "Neuer Ordner",
     "Safe_mode": "Sicherer Modus",
-    "Safe_mode_tooltip": "Disables all the skills that aren't 100% chance to succeed (takes buffs into account)",
+    "Safe_mode_tooltip": "Deaktiviert alle Fähigkeiten, die (inklusive Statuseffekten) keine 100% Erfolgschance haben",
     "Quality_needed": "{{amount}} mehr Qualität, um 100% zu erreichen",
     "Rotation_tips": "Tipps für die Rotation",
     "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
@@ -1048,12 +1048,12 @@
     "Current_control": "Aktuelle Kontrolle: {{value}}",
     "Current_control_bonus": "Aktueller Bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
-    "Find_rotation": "Rotation finder",
+    "Find_rotation": "Rotationsfinder",
     "Searching_for_rotation": "Suche nach Community Rotationen…",
     "No_matching_rotations": "Keine Community Rotationen für deine Bedürfnisse gefunden",
     "Click_on_rotation": "Klicke auf eine Rotation zum Auswählen",
     "Recipe_picker_placeholder": "Gib den Namen des Rezeptes ein, welches du herstellen möchtest",
-    "Could_not_find_minstats": "Could not find minimum stats for this rotation",
+    "Could_not_find_minstats": "Konnte keine Mindestwerte für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "Macro_duration": "Makrodauer: {{duration}}s.",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
@@ -1061,7 +1061,7 @@
     "Detailed": "Detailliert",
     "Remove_IP": "Remove initial preparations",
     "Stats_applied": "Werte angewendet",
-    "Show_rotations_above_stats": "Include rotations with required stats above yours",
+    "Show_rotations_above_stats": "Rotationen mit den erforderlichen Werten über deinen einbeziehen",
     "Full_buttons": "Show full buttons",
     "STATE": {
       "Excellent": "Exzellent",
@@ -1163,7 +1163,7 @@
       "Apply_foods": "Verzehrbares übernehmen",
       "Food": "Wähle ein Gericht",
       "Medicine": "Wähle eine Arznei",
-      "Action": "Choose Free Company actions",
+      "Action": "Wähle ein Kommando der Freien Gesellschaft",
       "Save_on_profile": "Im Profil speichern",
       "Reset_set": "Benutzerdefinierte Attribute zurücksetzen",
       "Save_consumables": "Das ausgewählte Verzehrbare als Standard speichern",
@@ -1180,10 +1180,10 @@
     },
     "FAIL_CAUSE": {
       "UNSAFE_ACTION": "Unsicheres Kommando bei sicherem Modus",
-      "DURABILITY_REACHED_ZERO": "Durability reached 0 before Progression reached max",
+      "DURABILITY_REACHED_ZERO": "Belastbarkeit hat 0 erreicht, bevor Synthese vollendet wurde",
       "NOT_ENOUGH_CP": "Nicht genug HP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
-      "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
+      "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
+      "NOT_SPECIALIST": "Spezialisten-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
       "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
     },
@@ -1195,23 +1195,23 @@
       "Use_durability_restoration_later": "Du solltest das Kommando zum Wiederherstellen der Belastbarkeit in Schritt {{index}} später nutzen, um keine Belastbarkeit zu verschwenden.",
       "Use_patient_touch_faster": "Du solltest Hingebungsvolle Veredelung nutzen bevor du Innere Ruhe aufbaust, um den Verlust beim Fehlschlagen zu minimieren.",
       "Do_not_overlap_buffs": "Du hast den bei Schritt {{overlappedIndex}} genutzten Statuseffekt in Schritt {{overlappingIndex}} überschnitten. Du solltest den zweiten verzögern um den maximalen Nutzen aus den Effekten zu ziehen.",
-      "Use_byregot_brow_5_stacks": "You should use Byregot's Brow instead of Byregot's Blessing for the same quality added but 6 less CP used.",
+      "Use_byregot_brow_5_stacks": "Du solltest lieber Byregots Schwung anstelle von Byregots Benediktion benutzen, da dies die gleiche Qualität für 6 HP weniger gibt.",
       "Use_ingenuity_before_byregot": "Du solltest Einfallsreichtum vor einem Byregots Kommando nutzen um mehr Qualität zu erhalten.",
       "Use_more_quality_actions": "Du hast nach Fertigstellung noch Belastbarkeit übrig. Diese solltest du am besten für Qualitäts-Kommandos nutzen.",
       "Use_prudent_touch_manipulation": "Da du Stufe 66+ bist, solltest du die Kombination Manipulation + Nachhaltige Veredelung nutzen, um die maximale Qualität und höhere Zuverlässigkeit zu erhalten.",
-      "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the failure of the action is better for your rotation's reliability.",
+      "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
       "Do_not_use_brand_without_name": "Benutze nicht Zeichen der Elemente ohne Name der Elemente.",
-      "Avoid_using_good_actions": "Avoid using actions that require the Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a Reuse proc.",
+      "Avoid_using_good_actions": "Vermeide Aktionen in einem Makro, die den Zustand \"gut\" erfordern, da sie nicht vorhergesagt werden können",
+      "Requires_reuse_to_proc": "Deine Rotation ist davon abhängig, dass Wiederverwertung aktiviert wird. Stelle sicher, dass sie auch ohne Wiederverwertung funktionieren kann.",
       "Use_reuse": "Deine Rotation erreicht 100% HQ und du hast genügend HP, um Wiederverwerten zu benutzen. Ziehe in Erwähnung dies einzusetzen, um Materialien zurückzugewinnen."
     }
   },
   "PRICING": {
     "Expect_to_sell_everything": "Gehe davon aus alles zu verkaufen",
-    "Expect_to_sell_everything_explain": "Doesn't include leftover items from precrafts in your spendings as they will be resold",
+    "Expect_to_sell_everything_explain": "Schließt übriggebliebene Items aus vorherigen Herstellungen nicht ein, da sie weiterverkauft werden",
     "Autofill_panel_prices": "Rufe die Preise aus dem Marktbrett ab",
     "Autofill_panel_prices_your_server": "Preise auf Basis des Marktbrettes befüllen (nur von Heimatserver)",
-    "Content_copied": "Content copied to your clipboard",
+    "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
     "Cheaper_at_vendor": "Günstiger wenn vom NPC gekauft",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
     "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
@@ -1236,7 +1236,7 @@
     "INTRO": {
       "Title": "Freibriefe",
       "First_line": "Diese Seite stellt eine Suche nach einem oder mehreren Freibriefen zur Verfügung um von den Ergebnissen eine Liste zu erstellen",
-      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
+      "Second_line": "Wähle einen Job, stelle den Stufenbereich ein und du erhälst eine Liste der betreffenden Freibriefe. Markiere die Freibriefe um die Rezepte einer Liste hinzuzufügen.",
       "Third_line": "Du kannst ebenfalls nach Name suchen, wenn du schon weißt wonach du suchst."
     }
   },
@@ -1309,7 +1309,7 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_universalis": "More details on Universalis",
+    "More_on_universalis": "Weitere Infos auf Universalis",
     "Server": "Welt",
     "Last_updated": "Letzte Aktualisierung"
   },
@@ -1333,10 +1333,10 @@
     "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Los geht's!",
     "DESCRIPTION": {
-      "Lists": "Create lists to get information about all materials, share them with your friends... everything starts here! Just search for an item, expand filters to get specific items, and start crafting things.",
+      "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
-      "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
+      "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
       "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
@@ -1412,7 +1412,7 @@
       "CRAFT": {
         "Title": "Hergestellt von",
         "Job": "Job",
-        "No_requirement_warning": "You don't have any requirement setup for this item. It means that you are creating a craft with 0 ingredients."
+        "No_requirement_warning": "Du hast keine Voraussetzungen für diesen Gegenstand angegeben, das heißt du erstellst ein Rezept mit 0 Zutaten."
       },
       "GATHERING": {
         "Title": "Gesammelt von",
@@ -1470,7 +1470,7 @@
     "Title": "Desynthese-Leitfaden",
     "Job": "Job",
     "Level": "Verwertungsstufe",
-    "Intro": "Select a job and input a level to find the best items to level up your desynth",
+    "Intro": "Wähle einen Job und eine Stufe, um die besten Gegenstände zum Erhöhen der Desynthese-Stufe zu finden",
     "Loading_message": "Lädt…",
     "TAGS": {
       "Higher_chances": "Höhere Chancen",
@@ -1511,7 +1511,7 @@
     "Track_on_attt": "Auf anderem Triple-Triad-Tracker verfolgen",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
     "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
-    "Triple_triad_pack": "Triple Triad card pack",
+    "Triple_triad_pack": "Triple-Triad-Boosterpaket",
     "Dungeons": "Dungeons/Prüfungen",
     "Used_for_trades": "Handel",
     "Can_contain_items": "Enthält Gegenstände",
@@ -1522,7 +1522,7 @@
     "Min_ilevel": "Min. Gegenstandsstufe",
     "Sync_to": "Max. Stufe",
     "Exp": "Routine",
-    "Week_restriction": "Weekly restriction",
+    "Week_restriction": "Wochenbeschränkung",
     "Fights": "Kämpfe",
     "Instance_details": "Instanzdetails",
     "Instance_rewards": "Belohnungen",
@@ -1587,8 +1587,8 @@
       "Used_as_mooch_for": "Köderfisch für",
       "No_known_mooch_usage": "Keine bekannte Köderfischnutzung für diesen Fisch",
       "No_spot_filter": "Kein Ortfilter",
-      "Chances_for_transition": "Chance for this transition to happen",
-      "Weather_chances": "Chance for each weather to appear",
+      "Chances_for_transition": "Wahrscheinlichkeit für diesen Wetterwechsel",
+      "Weather_chances": "Wahrscheinlichkeiten für jedes Wetter",
       "Bait": "Fischköder",
       "Refresh_data": "Daten aktualisieren",
       "Bite_times": "Zeit zum Anbeißen",
@@ -1624,8 +1624,8 @@
         "Size": "Größe",
         "Time_since_thrown": "Zeit seit Wurf",
         "ERRORS": {
-          "No_bait": "No bait detected. Switch bait once to fix.",
-          "No_stats": "No stats detected. Switch to Fisher again to fix."
+          "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
+          "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
         }
       }
     },
@@ -1638,7 +1638,7 @@
       "Fish_per_tug": "Fisch pro Spitze",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Fehlschläge einbeziehen",
-      "Miss": "Miss"
+      "Miss": "Fehlschlag"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -1795,7 +1795,7 @@
     "Any": "Alle",
     "Achievement": "Errungenschaft",
     "Fishing-spot": "Angelplatz",
-    "Gathering-node": "Gathering node"
+    "Gathering-node": "Abbaustelle"
   },
   "SEARCH_FILTERS": {
     "Level": "Stufe",
@@ -1826,7 +1826,7 @@
     "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
     "Extension_link": "Installiere die Erweiterung aus dem Chrome Web Store",
     "Clear": "Gegenstandsliste löschen",
-    "Clipboard_import_duplicates": "Items that show twice are here because Lodestone shows stacks, so they are inside your retainer as separate stacks.",
+    "Clipboard_import_duplicates": "Gegenstände werden hier ggf. doppelt angezeigt, da Lodestone nur Stapel anzeigt, diese Dopplungen sind also seperate Stapel bei deinen Gehilfen.",
     "Inventory": "Inventar",
     "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
     "Pool_copied": "Inventar wurde in die Zwischenablage kopiert",
@@ -1841,7 +1841,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
-    "Description": "Got too much of a currency? Select your currency, set an amount, select a server, and find which item is the best to buy to get gil from your currencies!",
+    "Description": "Du hast zu viel von einer bestimmten Währung? Wähle die Währung aus, gib die Anzahl ein, wähle einen Server aus und wir zeigen dir, mit welchem Gegenstand du am meisten Gil bekommst!",
     "Pick_currency": "Währung auswählen",
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
@@ -1922,7 +1922,7 @@
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
     "Button_label": "Paketerfassung aktivieren",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it). This allows Teamcraft to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description": "Du kannst die Paketerfassung aktivieren, damit Teamcraft deine FFXIV-Pakete lesen kann (kann auch in den Einstellungen aktiviert/deaktiviert werden). Hierdurch werden Listen automatisch ausgefüllt, wenn du einen Gegenstand erhältst. Die Daten werden außerdem Universalis zur Verfügung gestellt, dem Marktbrett-Aggregator.",
     "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort in einem anderen Gebiet und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
@@ -1984,7 +1984,7 @@
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
       "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character. Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Wenn du den Charakter bereits verlinkt hast, mit dem du gerade spielst, kannst du diesen Charakter sicher ignorieren, Teamcraft liest Dateiänderungen und einige Dateien könnten sich aus irgendeinem Grund ändern, was dies auslöst, wenn die Datei noch nicht verknüpft ist."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2040,13 +2040,13 @@
       "Message": "Dieses Item wird nur in Rezepten verwendet, auf denen du Flinke Hand benutzen kannst, deshalb brauchst du HQ-Gegenstände nicht"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as a normal-quality item",
+      "Title": "Items die du nicht in HQ benötigst, weil sie wie normale Items funktionieren",
       "Message": "Seit 6.0 funktioniert dieser Gegenstand nur noch als normaler Gegenstand auch wenn er in hoher Qualität ist"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "Gegenstände, die nur für ein einziges Rezept verwendet werden",
       "Message": "Dieser Gegenstand wird nur verwendet, um {{targetItem}} herzustellen, wäge ab, ihn umzuwandeln statt ihn in Rohform zu behalten",
-      "Add_to_list": "Add these items to a list"
+      "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
     }
   },
   "VERSION_LOCK": {
@@ -2766,7 +2766,7 @@
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "Neue Funktion: Allagische Meldungen",
-    "Feature_banner_description": "Found an item with missing data? You can now report item sources in the Allagan Reports system (General > Allagan Reports) and get them included inside the app in the following update!",
+    "Feature_banner_description": "Du hast ein Element mit fehlenden Daten gefunden? Du kannst nun Gegenstandsquellen im Allagischen Meldungssystem (Allgemein > Allagische Meldungen) melden und sie in das folgende Update einbinden lassen!",
     "Title": "Allagische Meldungen",
     "Reports": "Meldungen",
     "Pending_changes": "Ausstehende Änderungen",
@@ -2878,7 +2878,7 @@
     }
   },
   "OCEAN_FISHING": {
-    "ANY": "Any",
+    "ANY": "Beliebig",
     "SUNSET": "Sonnenuntergang",
     "DAY": "Tag",
     "NIGHT": "Nacht"
