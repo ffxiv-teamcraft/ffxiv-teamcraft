@@ -80,6 +80,7 @@ export class ListsEffects {
 
   private selectedListClone$ = this.listsFacade.selectedList$.pipe(
     map(list => ListController.clone(list, true)),
+    debounceTime(50),
     shareReplay(1)
   );
 
@@ -395,14 +396,34 @@ export class ListsEffects {
    * Unit update stuff, for items, progression, the core of the realtime part.
    */
 
+    // tslint:disable-next-line:member-ordering
+  static LAST_HANDLED: SetItemDone;
+
   updateItemDone$ = createEffect(() => this.actions$.pipe(
     ofType<SetItemDone>(ListsActionTypes.SetItemDone),
-    withLatestFrom(this.selectedListClone$,
-      this.teamsFacade.selectedTeam$,
-      this.authFacade.userId$,
-      this.authFacade.fcId$,
-      this.listsFacade.autocompleteEnabled$,
-      this.listsFacade.completionNotificationEnabled$),
+    /**
+     * This is a hotfix to a black magic bug I don't understand
+     * Basically, the action is received twice here while it's only emitted once
+     * Just like if this effect was created twice but it's not, since the second part (the buffer part) only runs once.
+     */
+    filter(action => {
+      const ok = action !== ListsEffects.LAST_HANDLED;
+      ListsEffects.LAST_HANDLED = action;
+      return ok;
+    }),
+    switchMap(action => {
+      return combineLatest([
+        of(action),
+        this.selectedListClone$,
+        this.teamsFacade.selectedTeam$,
+        this.authFacade.userId$,
+        this.authFacade.fcId$,
+        this.listsFacade.autocompleteEnabled$,
+        this.listsFacade.completionNotificationEnabled$
+      ]).pipe(
+        first()
+      );
+    }),
     filter(([action, list, , , , autofillEnabled, _]) => {
       const item = ListController.getItemById(list, action.itemId, !action.finalItem, action.finalItem);
       const requiredHq = ListController.requiredAsHQ(list, item) > 0;
@@ -485,13 +506,14 @@ export class ListsEffects {
             serverList.etag = 0;
           }
           serverList.etag++;
+          this.listService.recordOperation('write');
           transaction.set(serverCopy.ref, serverList);
         });
       }
     }),
     map(() => new RemoveReadLock()),
     debounceTime(1000)
-  ), { useEffectsErrorHandler: true });
+  ));
 
   updateItem$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateItem>(ListsActionTypes.UpdateItem),

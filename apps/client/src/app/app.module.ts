@@ -122,6 +122,7 @@ import * as AllaganReportsGQLProviders from './pages/allagan-reports/allagan-rep
 import { LazyDataModule } from './lazy-data/lazy-data.module';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
+import { ListsActionTypes, SetItemDone } from './modules/list/+state/lists.actions';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -284,7 +285,21 @@ const nzConfig: NzConfig = {
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument({
-      name: 'FFXIV Teamcraft'
+      name: 'FFXIV Teamcraft',
+      stateSanitizer: (state) => {
+        const { lazyData, ...sanitized } = state;
+        return sanitized;
+      },
+      actionSanitizer: (action) => {
+        if (action.type.includes('LazyData')) {
+          return { type: action.type };
+        }
+        if(action.type === ListsActionTypes.SetItemDone){
+          const { settings, ...sanitized } = (action as SetItemDone);
+          return sanitized;
+        }
+        return action;
+      }
     }) : [],
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),

@@ -15,4 +15,5 @@ export interface LazyMap {
   territory_id:     number;
   index:            number;
   dungeon:          boolean;
+  housing:          boolean;
 }

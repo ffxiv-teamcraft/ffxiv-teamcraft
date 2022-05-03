@@ -33,7 +33,7 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { debounceTime, distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, concat, Observable, of } from 'rxjs';
@@ -281,7 +281,10 @@ export class ListsFacade {
   }
 
   setItemDone(itemId: number, itemIcon: number, finalItem: boolean, delta: number, recipeId: string, totalNeeded: number, external = false, fromPacket = false, hq = false): void {
-    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, this.settings, external, fromPacket, hq));
+    this.store.dispatch(new SetItemDone(itemId, itemIcon, finalItem, delta, recipeId, totalNeeded, {
+      enableAutofillHQFilter: this.settings.enableAutofillHQFilter,
+      enableAutofillNQFilter: this.settings.enableAutofillNQFilter
+    }, external, fromPacket, hq));
   }
 
   markAsHq(itemIds: number[], hq: boolean): void {

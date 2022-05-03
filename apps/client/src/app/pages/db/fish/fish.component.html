@@ -27,12 +27,12 @@
       <app-fish-mooches fxFlexOrder="8" fxFlex fxFlex.gt-sm="40" fxFlex.gt-md="22" fxFlex.gt-lg="28"></app-fish-mooches>
     </div>
 
-    <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>
+<!--    <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>-->
 
-    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
-      <app-fish-top-users *ngIf="!platform.isDesktop()" fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-top-users>
-      <app-fish-user-ranking fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-user-ranking>
-    </div>
+<!--    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">-->
+<!--      <app-fish-top-users *ngIf="!platform.isDesktop()" fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-top-users>-->
+<!--      <app-fish-user-ranking fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-user-ranking>-->
+<!--    </div>-->
 
     <ng-container *ngIf="usedForTpl">
       <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
