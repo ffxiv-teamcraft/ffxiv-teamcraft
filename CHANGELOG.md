@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.2"></a>
+## [9.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.1...v9.6.2) (2022-05-03)
+
+
+### Bug Fixes
+
+* **core:** fixed a bug happening randomly with list persistence ([99cf2d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99cf2d8))
+* **db:** fixed tug name for medium never displayed ([7ff564c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ff564c))
+* **layout:** fixed IS_FROM_HOUSING_VENDOR filter ([bca36ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bca36ca))
+* **lists:** fixed double notification on discord webhook ([0ba5c4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ba5c4f))
+* **log-tracker:** added missing 6.1 recipes ([d3d1c1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3d1c1e))
+
+
+### Features
+
+* **db:** removed ranking components from fish pages ([0cdfe93](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0cdfe93))
+
+
+
 <a name="9.6.1"></a>
 ## [9.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.0...v9.6.1) (2022-04-26)
 

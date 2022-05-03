@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.6.1",
+  "version": "9.6.2",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
