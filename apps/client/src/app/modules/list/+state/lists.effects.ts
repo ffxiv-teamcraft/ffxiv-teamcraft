@@ -453,7 +453,7 @@ export class ListsEffects {
         this.discordWebhookService.notifyItemChecked(team, list, userId, fcId, action.doneDelta, action.itemId, action.totalNeeded, action.finalItem);
       }
       if (autofillEnabled && completionNotificationEnabled && action.fromPacket) {
-        const itemDone = item.done >= item.amount;
+        const itemDone = item.done + action.doneDelta >= item.amount;
         const played = localStorage.getItem('autofill:completion');
         if (itemDone && (!played || +played < Date.now() - 10000)) {
           return this.i18n.getNameObservable('items', action.itemId).pipe(
