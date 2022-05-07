@@ -13,7 +13,7 @@ export class TradeIconPipe implements PipeTransform {
     21: 30, // Serpent
     22: 30, // Flame
     27: 29, // Allied
-    10307: 30, // Centurio
+    10307: 19, // Centurio
     26533: 30, // Sack of nuts (lol)
     // Scrips
     10309: 0, // Red crafter
@@ -213,7 +213,7 @@ export class TradeIconPipe implements PipeTransform {
     21197: 5, // Bahamut
     23175: 5, // Ultima Arma
     // Gardening
-    15857: 3, // Althyk Lavender
+    15857: 20, // Althyk Lavender
     15858: 3, // Voidrake
     // Spoils
     13630: 1, // Brass
