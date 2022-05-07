@@ -9,4 +9,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** removed ranking components from fish pages.`;
+* **db:** removed ranking components from fish pages.`;
