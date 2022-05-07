@@ -19622,6 +19622,14 @@
       "oceanFishingTime": 1
     }
   ],
+  "32902": [
+    {
+      "spot": 10022,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 32894
+    }
+  ],
   "33219": [
     {
       "spot": 126,
@@ -21149,8 +21157,8 @@
       "hookset": 1,
       "tug": 1,
       "bait": 36518,
-      "spawn": 22,
-      "duration": 6
+      "spawn": 0,
+      "duration": 4
     }
   ],
   "36679": [

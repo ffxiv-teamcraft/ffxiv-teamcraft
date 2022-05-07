@@ -317,6 +317,12 @@
       "shadowSize": 2
     }
   ],
+  "20196": [
+    {
+      "speed": 4,
+      "shadowSize": 1
+    }
+  ],
   "20197": [
     {
       "speed": 2,
@@ -369,6 +375,12 @@
     {
       "speed": 1,
       "shadowSize": 1
+    }
+  ],
+  "20206": [
+    {
+      "speed": 1,
+      "shadowSize": 0
     }
   ],
   "20207": [
@@ -425,6 +437,12 @@
       "shadowSize": 0
     }
   ],
+  "20215": [
+    {
+      "speed": 3,
+      "shadowSize": 2
+    }
+  ],
   "20216": [
     {
       "speed": 3,
@@ -477,6 +495,12 @@
     {
       "speed": 3,
       "shadowSize": 1
+    }
+  ],
+  "20224": [
+    {
+      "speed": 2,
+      "shadowSize": 0
     }
   ],
   "20225": [
@@ -569,10 +593,40 @@
       "shadowSize": 2
     }
   ],
+  "20236": [
+    {
+      "speed": 2,
+      "shadowSize": 1
+    }
+  ],
   "20237": [
     {
       "speed": 2,
       "shadowSize": 0
+    }
+  ],
+  "20238": [
+    {
+      "speed": 1,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 20236,
+          "amount": 7
+        }
+      ]
+    }
+  ],
+  "20239": [
+    {
+      "speed": 4,
+      "shadowSize": 2,
+      "predators": [
+        {
+          "id": 20236,
+          "amount": 7
+        }
+      ]
     }
   ],
   "20528": [
@@ -647,6 +701,18 @@
     {
       "speed": 1,
       "shadowSize": 0
+    }
+  ],
+  "29573": [
+    {
+      "speed": 1,
+      "shadowSize": 1
+    }
+  ],
+  "29574": [
+    {
+      "speed": 2,
+      "shadowSize": 2
     }
   ],
   "29578": [

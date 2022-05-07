@@ -77,10 +77,15 @@
               <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
             </div>
             <div class="description">
-              {{_list.note}}
+              <nz-tag nz-tooltip [nzTooltipTitle]="_list.note" class="custom-tag" [style.border-color]="'#108ee9'"  *ngIf="publicDisplay && _list.note">
+                <i nz-icon nzType="read" nzTheme="outline"></i>
+                {{'LIST_DETAILS.Note_placeholder' | translate}}
+              </nz-tag>
+              <ng-container *ngIf="!publicDisplay">{{_list.note}}</ng-container>
             </div>
           </div>
-          <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay && (permissionLevel$ | async)?.value >= 20"></app-list-progressbar>
+          <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang"
+                                *ngIf="!publicDisplay && (permissionLevel$ | async)?.value >= 20"></app-list-progressbar>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
           <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10"
@@ -102,7 +107,8 @@
             </button>
           </nz-badge>
           <ng-template #copyNoCount>
-            <button (click)="$event.stopPropagation();cloneList(_list)" *ngIf="settings.showCopyOnOwnList || (permissionLevel$ | async)?.value < 20" [nzShape]="'circle'"
+            <button (click)="$event.stopPropagation();cloneList(_list)" *ngIf="settings.showCopyOnOwnList || (permissionLevel$ | async)?.value < 20"
+                    [nzShape]="'circle'"
                     [nzTooltipTitle]="'List_fork' | translate"
                     nz-button nz-tooltip>
               <i nz-icon nzType="copy" theme="outline"></i>
