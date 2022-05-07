@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.3"></a>
+## [9.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.2...v9.6.3) (2022-05-07)
+
+
+### Bug Fixes
+
+* **desktop:** possible fix for autofill notification not ringing ([481eaff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/481eaff))
+* **layout:** fix icon priority for Althyk Lavender trades ([c25e4a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c25e4a0))
+* **layout:** fixed IS_FROM_HOUSING_VENDOR filter not working on materials ([95d159c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95d159c))
+
+
+
 <a name="9.6.2"></a>
 ## [9.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.1...v9.6.2) (2022-05-03)
 
