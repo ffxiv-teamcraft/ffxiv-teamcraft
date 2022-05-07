@@ -12,7 +12,7 @@ export class LgbExtractor extends AbstractExtractor {
     const npcs = require('../../../../client/src/assets/data/npcs.json');
     const territoryLayers = require('../../../../client/src/assets/data/territory-layers.json');
     const lgbFolder = '../../../input/lgb';
-    const housingMaterialSuppliers = [];
+    const housingMaterialSuppliers = [1008837];
 
     const aetherytes = [];
 
