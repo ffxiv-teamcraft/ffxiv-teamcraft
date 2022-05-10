@@ -969,7 +969,7 @@
     "ko": "주술사 길드마스터 코코부키는 모험가에게 '주술의 심연' 다음 장을 가르치려는 듯하다."
   },
   "65887": {
-    "ko": "주술사 길드마스터 코코부키는 모험가에게 '주술의 심연' 다음 장을 가르치려는 듯하다."
+    "ko": "주술사 길드마스터 코코부키는모험가에게 '주술의 심연' 다음 장을 가르치려는 듯하다."
   },
   "65888": {
     "ko": "주술사 길드마스터 코코비고는 모험가와 의논할 일이 있는 듯하다."
@@ -1077,7 +1077,7 @@
     "ko": "거울못 나루의 아르멜은 도로에 남겨진 짐을 가져다주기 바라는 듯하다."
   },
   "65924": {
-    "ko": "검은솔 정류소의 쇠등불단 단원 이셀자이스는 근처에 있는 구리칼날단 오스버트에게 <Sheet(Item,　4552,0)/><13>FF15022811FF054974656DFF08E38080343535320103FF04EBA5BCFF04EC9D84</13> 사서 갖다 주었으면 하는 듯하다."
+    "ko": "검은솔 정류소의 쇠등불단 단원 이셀자이스는 근처에 있는 구리칼날단 오스버트에게 <Sheet(Item,　4552,0)/><13>FF15022811FF054974656DFF08E38080343535320103FF04EBA5BCFF04EC9D84</13> 사서 갖다주었으면 하는 듯하다."
   },
   "65925": {
     "ko": "철도원 케케자니는 당직 당번에 지각했다고 한다. 하다못해 '광산 철도 시간표'만이라도 일터에 가져다줬으면 좋겠다고 하는데……."
@@ -1269,7 +1269,7 @@
     "ko": "비술사 길드마스터 대리인 투뷔르가임은 모험가가 훈련의 성과를 증명하기를 바라는 듯하다."
   },
   "65992": {
-    "ko": "비술사 길드마스터 대리인 투뷔르가임은 모험가가 훈련의 성과를 증명하기를 바라는 것 같다."
+    "ko": "비술사 길드의 투뷔르가임은 모험가가 훈련의 성과를 증명하기를 바라는 것 같다."
   },
   "65993": {
     "ko": "비술사 길드마스터 대리인 투뷔르가임은 모험가가 훈련의 성과를 증명하기를 바라는 것 같다."
@@ -2811,7 +2811,7 @@
     "ko": "채석공방 사냥꾼 이자르무아는 어떤 마물의 고기를 구하고 싶은 듯하다."
   },
   "66547": {
-    "ko": "채석공방의 케리히는 모험가의 관심을 받고 싶어하는 듯하다."
+    "ko": "채석공방의 케리히는 모험가의 관심을 받고 싶어 하는 듯하다."
   },
   "66548": {
     "ko": "채석공방의 시미는 모험가에게 뭔가를 맡기고 싶은 듯하다."
@@ -3084,7 +3084,7 @@
     "ko": "도끼술사 길드의 알카 졸카는 모험가에게 부탁할 일이 있는 듯하다."
   },
   "66639": {
-    "ko": "비술사 길드마스터 대리인 투뷔르가임은 모험가에게 중대한 이야기를 하려는 듯하다."
+    "ko": "비술사 길드의 투뷔르가임은 모험가에게 중대한 이야기를 하려는 듯하다."
   },
   "66640": {
     "ko": "흑와단 대령 르아샤는 모험가에게 할 말이 있는 듯하다."
@@ -3687,7 +3687,7 @@
     "ko": "망자의 종소리에 있는 알리스는 모험가에게 누군가를 소개하려는 듯하다."
   },
   "66845": {
-    "ko": "라레나가 야만신의 제기를 매입하고 싶어하는 것 같다."
+    "ko": "라레나가 야만신의 제기를 매입하고 싶어 하는 것 같다."
   },
   "66846": {
     "ko": "초코보 운수 직원 머컬린은 모험가와 잡담을 나누고 싶은 듯하다."
@@ -4107,7 +4107,7 @@
     "ko": "눈물이 그렁한 이병은 작전 상황을 설명하려는 듯하다."
   },
   "66987": {
-    "ko": "이다는 현자들이 어디로 갔는지 짐작이 가는 듯하다."
+    "ko": "이다는 현인들이 어디로 갔는지 짐작이 가는 듯하다."
   },
   "66988": {
     "ko": "파파리모는 야만신 '라무'가 소환된 장소를 알아낸 듯하다."
@@ -5532,7 +5532,7 @@
     "ko": "바스의 토굴집의 날쌘돌이는 모험가를 기대하는 눈빛으로 바라보고 있다."
   },
   "67467": {
-    "ko": "대현자 기념비의 울닉스는 모험가의 실력을 가늠하고 있는 듯하다."
+    "ko": "대현인 기념비의 울닉스는 모험가의 실력을 가늠하고 있는 듯하다."
   },
   "67468": {
     "ko": "이딜샤이어에 있는 한밤의 이슬은 모험가를 시험하려는 듯하다."
@@ -5625,7 +5625,7 @@
     "ko": "학문의 거리의 넝마주이 고블린은 거대 몰볼 때문에 애를 먹고 있는 듯하다."
   },
   "67498": {
-    "ko": "대현자 기념비의 울닉스는 어찌할 줄 모르고 있는 듯하다."
+    "ko": "대현인 기념비의 울닉스는 어찌할 줄 모르고 있는 듯하다."
   },
   "67499": {
     "ko": "심사의 거리에 있는 한밤의 이슬은 분노에 치를 떨고 있는 듯하다."
@@ -6966,10 +6966,10 @@
     "ko": "재봉사 길드마스터 향기로운 장미는 멋진 소식을 전하려는 듯하다."
   },
   "67969": {
-    "ko": "쿠가네에 있는 케이메이는 새로운 선물을 준비하고 싶어하는 듯하다."
+    "ko": "쿠가네에 있는 케이메이는 새로운 선물을 준비하고 싶어 하는 듯하다."
   },
   "67970": {
-    "ko": "쿠가네에 있는 케이메이는 새로운 선물을 준비하고 싶어하는 듯하다."
+    "ko": "쿠가네에 있는 케이메이는 새로운 선물을 준비하고 싶어 하는 듯하다."
   },
   "67971": {
     "ko": "쿠가네에 있는 케이메이는 상의하고 싶은 일이 있는 듯하다."
@@ -7170,7 +7170,7 @@
     "ko": "재회시장에 있는 유우기리는 히엔의 행방이 궁금한 모양이다."
   },
   "68037": {
-    "ko": "재회시장에 있는 시리나는 영험한 나무 뿌리를 찾으러 가려는 모양이다."
+    "ko": "재회시장에 있는 시리나는 영험한 나무뿌리를 찾으러 가려는 모양이다."
   },
   "68038": {
     "ko": "재회시장에 있는 시리나는 히엔의 행방을 알려주겠다고 한다."
@@ -7329,19 +7329,19 @@
     "ko": "알라미고 성문 앞에서 동료들이 알라미고 탈환을 위한 마지막 전투를 시작하려 하고 있다."
   },
   "68090": {
-    "ko": "광부 길드에 있는 아달베르타는 모험가에게 다시 새로운 일을 알선하고 싶어하는 듯하다."
+    "ko": "광부 길드에 있는 아달베르타는 모험가에게 다시 새로운 일을 알선하고 싶어 하는 듯하다."
   },
   "68091": {
     "ko": "이딜샤이어에 있는 노노와토는 모험가에게 광석 채굴을 부탁하고 싶은 모양이다."
   },
   "68092": {
-    "ko": "이딜샤이어의 노노와토는 모험가에게 광석 채굴을 다시 부탁하고 싶어하는 듯하다."
+    "ko": "이딜샤이어의 노노와토는 모험가에게 광석 채굴을 다시 부탁하고 싶어 하는 듯하다."
   },
   "68093": {
     "ko": "이딜샤이어에 있는 노노와토는 아무래도 고민이 있는 듯하다."
   },
   "68094": {
-    "ko": "이딜샤이어에 있는 노노와토는 모험가에게 마지막 의뢰를 하고 싶어하는 듯하다."
+    "ko": "이딜샤이어에 있는 노노와토는 모험가에게 마지막 의뢰를 하고 싶어 하는 듯하다."
   },
   "68095": {
     "ko": "※ 이 퀘스트는 직업 '사무라이'를 획득하기 위한 퀘스트입니다. \n\n에메랄드 거리에서 울다하 시민이 무언가에 흥분한 모습이다."
@@ -7506,7 +7506,7 @@
     "ko": "가죽공예가 길드 근처에 있는 아텔루네는 박제의 평판에 대해서 알려주고 싶은 듯하다. "
   },
   "68151": {
-    "ko": "가죽공예가 길드 근처에 있는 아텔루네는 모험가에게 다시 일을 의뢰하고 싶어하는 듯하다. "
+    "ko": "가죽공예가 길드 근처에 있는 아텔루네는 모험가에게 다시 일을 의뢰하고 싶어 하는 듯하다. "
   },
   "68152": {
     "ko": "대장장이 길드에 있는 브리샐은 속 쓰림이 다시 도진 듯하다."
@@ -7530,7 +7530,7 @@
     "ko": "초록 농원의 에드기스는 모험가에게 말하고 싶은 것이 있는 듯하다."
   },
   "68159": {
-    "ko": "초록 농원의 에드기스는 모험가에게 결과를 보고하고 싶어하는 듯하다."
+    "ko": "초록 농원의 에드기스는 모험가에게 결과를 보고하고 싶어 하는 듯하다."
   },
   "68160": {
     "ko": "초록 농원에 있는 에드기스는 모험가에게 보고하고 싶은 내용이 있는 듯하다."
@@ -8064,7 +8064,7 @@
     "ko": "몰 일로에 있는 자상해 보이는 몰족 남자는 신탁 대행자를 찾고 있는 듯하다."
   },
   "68337": {
-    "ko": "몰 일로에 있는 부제그는 의식 준비를 하고 싶어하는 듯하다. "
+    "ko": "몰 일로에 있는 부제그는 의식 준비를 하고 싶어 하는 듯하다. "
   },
   "68338": {
     "ko": "몰 일로에 있는 젠크시는 아무래도 구하고 싶은 것이 있는 듯하다. "
@@ -8115,7 +8115,7 @@
     "ko": "비라 닐리야에 있는 가리마는 부탁하고 싶은 것이 있는 듯하다. "
   },
   "68354": {
-    "ko": "빌라 닐리야에 있는 자난티는 사냥 준비를 하고 있는 듯하다. "
+    "ko": "비라 닐리야에 있는 자난티는 사냥 준비를 하고 있는 듯하다."
   },
   "68355": {
     "ko": "비라 닐리야에 있는 비라파 사냥꾼은 찾고 있는 물건이 있는 듯하다. "
@@ -8172,7 +8172,7 @@
     "ko": "알라기리에 있는 해방군 투사는 모험가를 찾고 있는 듯하다. "
   },
   "68373": {
-    "ko": "알라기리에 있는 즈즈데스는 모험가에게 일을 부탁하고 싶어하는 듯하다. "
+    "ko": "알라기리에 있는 즈즈데스는 모험가에게 일을 부탁하고 싶어 하는 듯하다. "
   },
   "68374": {
     "ko": "알라기리에 있는 웨이드헤리는 다시 모험가에게 부탁하고 싶은 것이 있는 듯하다."
@@ -8208,7 +8208,7 @@
     "ko": "백귀암 벌판 북쪽의 낭떠러지 절벽에 있는 군트마르는 다시 모험가에게 부탁하고 싶은 것이 있는 듯하다. "
   },
   "68385": {
-    "ko": "라디아타에 있는 수다쟁이 옹두리는 새로운 장사 준비를 하고 싶어하는 듯하다. "
+    "ko": "라디아타에 있는 수다쟁이 옹두리는 새로운 장사 준비를 하고 싶어 하는 듯하다. "
   },
   "68386": {
     "ko": "라디아타에 있는 고다프레는 가져오길 바라는 것이 있는 듯하다. "
@@ -8226,7 +8226,7 @@
     "ko": "라디아타에 있는 고다프레는 부탁하고 싶은 것이 있는 듯하다. "
   },
   "68391": {
-    "ko": "라디아타에 있는 오게리는 뿌리가 썩은 나무를 치료하고 싶어하는 듯하다. "
+    "ko": "라디아타에 있는 오게리는 뿌리가 썩은 나무를 치료하고 싶어 하는 듯하다. "
   },
   "68392": {
     "ko": "라디아타에 있는 흐로디거는 같이 돈을 벌 동료를 찾고 있는 듯하다. "
@@ -8241,7 +8241,7 @@
     "ko": "잔불 마을에 있는 로우킨은 다리가 튼튼한 협력자를 찾고 있는 듯하다."
   },
   "68396": {
-    "ko": "잔불 마을의 사가르는 모험가에게 사람 찾는 일을 부탁하고 싶어하는 듯하다. "
+    "ko": "잔불 마을의 사가르는 모험가에게 사람 찾는 일을 부탁하고 싶어 하는 듯하다. "
   },
   "68397": {
     "ko": "잔불 마을에 있는 사가르는 외지에서 온 모험가에게 부탁할 일이 있는 듯하다."
@@ -8259,7 +8259,7 @@
     "ko": "잔불 마을에 있는 사가르는 베레타 때문에 또 부탁할 일이 있는 듯하다."
   },
   "68402": {
-    "ko": "라디아타에 있는 청순가련한 여자는 꽃을 갖고 싶어하는 듯하다. "
+    "ko": "라디아타에 있는 청순가련한 여자는 꽃을 갖고 싶어 하는 듯하다. "
   },
   "68403": {
     "ko": "라디아타에 있는 유능한 개미는 친구의 귀가를 기다리고 있는 듯하다. "
@@ -8292,7 +8292,7 @@
     "ko": "알라가나에 있는 알라가나 출신의 남자는 연막탄을 개량한 듯하다."
   },
   "68413": {
-    "ko": "포르타 프라이토리아에 있는 무니프리드는 전투 경험이 풍부한 모험가에게 임무를 부탁하고 싶어하는 듯하다. "
+    "ko": "포르타 프라이토리아에 있는 무니프리드는 전투 경험이 풍부한 모험가에게 임무를 부탁하고 싶어 하는 듯하다. "
   },
   "68414": {
     "ko": "포르타 프라이토리아에 있는 쌍사당 대위 당토뉴엘은 명성 높은 모험가에게 임무를 맡기고 싶은 듯하다. "
@@ -9183,7 +9183,7 @@
     "ko": "에오르제아 동맹군 본진에 있는 리세는 전투를 준비하고 있는 듯하다."
   },
   "68720": {
-    "ko": "돌의 집에 있는 빛바랜 바위는 현자들의 쾌유를 빌고 있는 듯하다."
+    "ko": "돌의 집에 있는 빛바랜 바위는 현인들의 쾌유를 빌고 있는 듯하다."
   },
   "68721": {
     "ko": "포르타 프라이토리아에 있는 알라미고 해방군 상급 투사는 모험가를 기다리고 있는 듯하다."
@@ -9228,7 +9228,7 @@
     "ko": "울다하에 있는 울보 라토쟈는 모험가를 기다리고 있었던 듯하다."
   },
   "68735": {
-    "ko": "울다하에 있는 울보 라토쟈는 모험가를 칭송하고 싶어하는 듯하다."
+    "ko": "울다하에 있는 울보 라토쟈는 모험가를 칭송하고 싶어 하는 듯하다."
   },
   "68736": {
     "ko": "전혼탑 광장에 있는 신문팔이는 모험가에게 묻고 싶은 것이 있는 듯하다."
@@ -10872,7 +10872,7 @@
     "ko": "파노브 마을에 있는 야슈톨라는 들르고 싶은 곳이 있는 듯하다."
   },
   "69303": {
-    "ko": "맺어진 서약에 있는 야슈톨라는 템페스트로 출발하고 싶어하는 듯하다."
+    "ko": "맺어진 서약에 있는 야슈톨라는 템페스트로 출발하고 싶어 하는 듯하다."
   },
   "69304": {
     "ko": "온도 바다웅덩이에 있는 위리앙제는 비스마르크에게 가고 싶은 듯하다."
@@ -11504,6 +11504,9 @@
   "69530": {
     "ko": "울다하에 있는 마틴은 모험가를 칭찬하고 싶은 듯하다."
   },
+  "69531": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다\n\n그리다니아의 모험가 길드 조사원은 뭔가를 경계하고 있는 듯하다."
+  },
   "69532": {
     "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 리제트 드 발렌티온은 고민이 있는 듯하다."
   },
@@ -11556,7 +11559,7 @@
     "ko": "저지 드라바니아에 있는 알피노는 낭보를 전하고 싶은 듯하다."
   },
   "69549": {
-    "ko": "방파벽 회관에 있는 알피노는 크리스탈의 출처를 찾고 싶어하는 듯하다."
+    "ko": "방파벽 회관에 있는 알피노는 크리스탈의 출처를 찾고 싶어 하는 듯하다."
   },
   "69550": {
     "ko": "삼나무 숲에 있는 알피노는 림사 로민사에 돌아가고 싶은 듯하다."
@@ -11687,6 +11690,42 @@
   "69602": {
     "ko": "말없는 선인의 좌탁에 있는 카느 에 센나는 앞으로의 방침에 대해 생각하고 있는 듯하다."
   },
+  "69603": {
+    "ko": "※ 이 퀘스트는 직업 '현자'를 획득하기 위한 퀘스트입니다.\n\n림사 로민사의 하층 갑판에 있는 북해 복장의 여성은 흥미진진한 표정으로 주변을 둘러보고 있다."
+  },
+  "69604": {
+    "ko": "산들바람 관문에 있는 라라 진잘은 현학도구에 대해 설명하고 싶은 듯하다."
+  },
+  "69605": {
+    "ko": "이딜샤이어에 있는 라라 진잘은 모험가에게 보고할 것이 있는 듯하다."
+  },
+  "69606": {
+    "ko": "이딜샤이어에 있는 라라 진잘은 지금까지의 일을 정리하고 싶은 모양이다."
+  },
+  "69607": {
+    "ko": "이딜샤이어에 있는 라라 진잘은 현 상황을 공유하고 싶은 듯하다."
+  },
+  "69608": {
+    "ko": "이딜샤이어에 있는 라라 진잘은 준비를 마친 모양이다."
+  },
+  "69609": {
+    "ko": "※이 퀘스트는 직업 '리퍼'를 획득하기 위한 퀘스트입니다.\n\n울다하에 있는 초조해하는 하인은 실력자를 찾고 있는 듯하다."
+  },
+  "69610": {
+    "ko": "레무레스 사무실에 있는 드루실라는 리퍼의 증표를 장비한 모험가를 살펴보는 듯하다."
+  },
+  "69611": {
+    "ko": "레무레스 사무실에 있는 드루실라는 요마 사냥에 대해 설명하려는 듯하다."
+  },
+  "69612": {
+    "ko": "레무레스 사무실에 있는 드루실라는 안기스의 연락을 기다리고 있는 듯하다."
+  },
+  "69613": {
+    "ko": "레무레스 사무실에 있는 드루실라는 모험가가 걱정되는 듯하다. "
+  },
+  "69614": {
+    "ko": "레무레스 사무실에 있는 헤르민은 절박한 모습으로 모험가를 기다리는 듯하다."
+  },
   "69615": {
     "ko": "창천 거리에 있는 프란셀은 신경 쓰이는 인물을 발견한 듯하다."
   },
@@ -11752,5 +11791,1232 @@
   },
   "69637": {
     "ko": "<UIForeground>F201F6</UIForeground><UIGlow>F201F7</UIGlow>특수 규칙:  직업 고정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n강고스에 있는 즐라탄은 '빛나는 격정 덩어리'를 모으고 싶은 듯하다."
+  },
+  "69638": {
+    "ko": "유성의 방에 있는 그리다니아 주재 무관은 모험가에게 할 말이 있는 듯하다."
+  },
+  "69639": {
+    "ko": "쌍사당 통합사령부에 있는 흰 뱀의 수호자는 모험가에게 할 말이 있는 듯하다."
+  },
+  "69640": {
+    "ko": "쌍사당 통합사령부에 있는 흰 뱀의 수호자는 모험가에게 급히 보고할 일이 있는 듯하다."
+  },
+  "69641": {
+    "ko": "쌍사당 통합사령부에 있는 흰 뱀의 수호자는 모험가를 기다리고 있던 듯하다."
+  },
+  "69642": {
+    "ko": "쌍사당 통합사령부에 있는 흰 뱀의 수호자는 보고가 들어오기를 기다리는 듯하다."
+  },
+  "69643": {
+    "ko": "쌍사당 통합사령부에 있는 흰 뱀의 수호자는 모험가를 기다리고 있던 듯하다."
+  },
+  "69644": {
+    "ko": "유성의 방에 있는 알라미고 주재 무관은 모험가에게 할 말이 있는 듯하다."
+  },
+  "69645": {
+    "ko": "알라미고인 거주구에 있는 위신수 대책부대 투사는 모험가에게 할 말이 있는 모양이다."
+  },
+  "69646": {
+    "ko": "알라미고인 거주구에 있는 위신수 대책부대 투사는 모험가에게 할 말이 있는 모양이다."
+  },
+  "69647": {
+    "ko": "알라미고인 거주구에 있는 위신수 대책부대 투사는 모험가에게 할 말이 있는 모양이다. "
+  },
+  "69648": {
+    "ko": "알라미고인 거주구에 있는 위신수 대책부대 투사는 당황한 듯하다."
+  },
+  "69649": {
+    "ko": "알라미고인 거주구에 있는 위신수 대책부대 투사는 급히 할 말이 있는 듯하다."
+  },
+  "69650": {
+    "ko": "유성의 방에 있는 림사 로민사 주재 무관은 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69651": {
+    "ko": "흑와단 군령부에 있는 흑와단 서기관은 모험가에게 공유하고 싶은 정보가 있는 듯하다."
+  },
+  "69652": {
+    "ko": "흑와단 군령부에 있는 서기관은 모험가를 기다리고 있었던 듯하다."
+  },
+  "69653": {
+    "ko": "흑와단 군령부에 있는 흑와단 서기관은 급히 알려줄 일이 있는 듯하다."
+  },
+  "69654": {
+    "ko": "흑와단 군령부에 있는 서기관은 아직 전달할 만한 정보가 없는 듯하다."
+  },
+  "69655": {
+    "ko": "흑와단 군령부에 있는 흑와단 서기관은 위신수의 행방을 찾지 못해 초조한 모양이다."
+  },
+  "69656": {
+    "ko": "라자한 유성의 방에 있는 도마 주재 무관은 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69657": {
+    "ko": "도마 도읍지에 있는 유우기리는 걱정거리가 있는 듯하다."
+  },
+  "69658": {
+    "ko": "도마 도읍지에 있는 유우기리는 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69659": {
+    "ko": "도마 도읍지에 있는 유우기리는 모험가에게 보고할 것이 있는 듯하다."
+  },
+  "69660": {
+    "ko": "도마 도읍지에 있는 유우기리는 모험가를 기다리고 있었던 듯하다."
+  },
+  "69661": {
+    "ko": "도마 도읍지에 있는 유우기리는 차분한 표정이다."
+  },
+  "69662": {
+    "ko": "유성의 방에 있는 이슈가르드 주재 무관은 강인한 마음을 가진 자를 찾고 있는 듯하다."
+  },
+  "69663": {
+    "ko": "이슈가르드 작전 계획실에 있는 아르투아렐은 보고를 기다리고 있는 듯하다. "
+  },
+  "69664": {
+    "ko": "이슈가르드 작전 계획실에 있는 아르투아렐은 모험가의 방문을 기다리는 듯하다."
+  },
+  "69665": {
+    "ko": "이슈가르드 작전 계획실에 있는 아르투아렐은 위신수 대책을 계속 생각 중이다."
+  },
+  "69666": {
+    "ko": "이슈가르드 작전 계획실에 있는 아르투아렐은 다소 긴장한 모습이다."
+  },
+  "69667": {
+    "ko": "이슈가르드 작전 계획실에 있는 아르투아렐은 마지막 전투를 준비 중이다."
+  },
+  "69668": {
+    "ko": "심사의 전당에 있는 보릭은 고민하고 있는 듯하다."
+  },
+  "69669": {
+    "ko": "예술의 전당에 있는 루루샤는 빨리 복원을 시작하고 싶은 듯하다."
+  },
+  "69670": {
+    "ko": "예술의 전당에 있는 루루샤는 어떤 부품이 부족한지 알아낸 듯하다."
+  },
+  "69671": {
+    "ko": "예술의 전당에 있는 루루샤는 어떤 부품에 관심이 있는 듯하다."
+  },
+  "69672": {
+    "ko": "예술의 전당에 있는 루루샤는 부탁할 일이 있는 듯하다."
+  },
+  "69673": {
+    "ko": "예술의 전당에 있는 루루샤는 고민거리가 있는 듯하다."
+  },
+  "69674": {
+    "ko": "예술의 전당에 있는 루루샤는 모험가의 지혜를 빌리고 싶은 듯하다."
+  },
+  "69675": {
+    "ko": "심사의 전당에 있는 주드는 곤란해하고 있는 듯하다."
+  },
+  "69676": {
+    "ko": "예술의 전당에 있는 주드는 성견경 제작을 시작한 듯하다."
+  },
+  "69677": {
+    "ko": "예술의 전당에 있는 주드는 이어서 의뢰를 하려는 듯하다."
+  },
+  "69678": {
+    "ko": "예술의 전당에 있는 주드는 다음 의뢰를 맡기려는 듯하다."
+  },
+  "69679": {
+    "ko": "예술의 전당에 있는 주드는 뭔가 결심한 모양이다."
+  },
+  "69680": {
+    "ko": "예술의 전당에 있는 주드는 성견경을 계속 제작하려는 듯하다."
+  },
+  "69681": {
+    "ko": "예술의 전당에 있는 주드는 성견경 완성을 앞두고 할 말이 있는 듯하다."
+  },
+  "69682": {
+    "ko": "심사의 전당에 있는 데브로이는 속이 메슥거리는 듯하다."
+  },
+  "69683": {
+    "ko": "예술의 전당에 있는 데브로이는 맛의 개선에 의욕적인 듯하다."
+  },
+  "69684": {
+    "ko": "예술의 전당에 있는 데브로이는 식감 개선을 위해 고민하고 있는 듯하다."
+  },
+  "69685": {
+    "ko": "예술의 전당에 있는 데브로이는 냄새를 개선할 방법을 찾은 듯하다."
+  },
+  "69686": {
+    "ko": "예술의 전당에 있는 데브로이는 의욕이 충만한 듯하다."
+  },
+  "69687": {
+    "ko": "예술의 전당에 있는 데브로이는 무척 곤란해하고 있는 듯하다."
+  },
+  "69688": {
+    "ko": "예술의 전당에 있는 데브로이는 유난히 의욕을 보이고 있는 듯하다."
+  },
+  "69689": {
+    "ko": "심사의 전당에 있는 히나게시는 도움이 필요한 듯하다."
+  },
+  "69690": {
+    "ko": "심사의 전당에 있는 히나게시는 연구에 의욕을 보이고 있는 듯하다."
+  },
+  "69691": {
+    "ko": "심사의 전당에 있는 히나게시는 연구에 보람을 느끼는 듯하다."
+  },
+  "69692": {
+    "ko": "심사의 전당에 있는 히나게시는 연구에 열중한다."
+  },
+  "69693": {
+    "ko": "심사의 전당에 있는 히나게시는 즐겁게 연구하고 있는 듯하다."
+  },
+  "69694": {
+    "ko": "심사의 전당에 있는 히나게시는 연구 여행을 돌이켜보고 있다."
+  },
+  "69695": {
+    "ko": "심사의 전당에 있는 히나게시는 지금의 생활이 만족스러운 듯하다."
+  },
+  "69696": {
+    "ko": "심사의 전당에 있는 차라카 티아는 협력자를 찾고 있는 듯하다."
+  },
+  "69697": {
+    "ko": "심사의 전당에 있는 차라카 티아는 논문에 필요한 데이터가 모아지기를 바라고 있는 듯하다."
+  },
+  "69698": {
+    "ko": "심사의 전당에 있는 차라카 티아는 논문에 쓸 데이터가 순조롭게 모아져서 기쁜 듯하다."
+  },
+  "69699": {
+    "ko": "심사의 전당에 있는 차라카 티아는 논문에 쓸 데이터를 모으는 데 의욕적인 듯하다."
+  },
+  "69700": {
+    "ko": "심사의 전당에 있는 차라카 티아는 데이터 수집에 큰 진척이 생기기를 기대하는 듯하다."
+  },
+  "69701": {
+    "ko": "심사의 전당에 있는 차라카 티아는 논문의 가설을 세우는 데 어려움을 겪고 있는 듯하다."
+  },
+  "69702": {
+    "ko": "심사의 전당에 있는 차라카 티아는 완성을 앞둔 논문에 진지하게 임하고 있는 듯하다."
+  },
+  "69703": {
+    "ko": "올드 샬레이안에 있는 허둥지둥 레포릿은 필사적으로 모험가를 찾았던 모양이다."
+  },
+  "69704": {
+    "ko": "올드 샬레이안에 있는 재밍웨이는 모험가를 찾는 모양이다."
+  },
+  "69708": {
+    "ko": "이슈가르드 에테라이트 광장에 있는 곤델램보는 영웅이 찾아오길 기다리고 있었던 듯하다."
+  },
+  "69709": {
+    "ko": "에테라이트 광장에 있는 건장한 별빛전사는 모험가에게 소개하고 싶은 시설이 있는 듯하다."
+  },
+  "69712": {
+    "ko": "올드 샬레이안에 있는 키 작은 조달꾼은 모험가를 찾고 있는 듯하다."
+  },
+  "69713": {
+    "ko": "올드 샬레이안에 있는 노르토타는 모험가에게 감명을 받은 듯하다."
+  },
+  "69714": {
+    "ko": "올드 샬레이안에 있는 노르토타는 철학자 의회의 발표 내용에 놀란 듯하다."
+  },
+  "69715": {
+    "ko": "올드 샬레이안에 있는 노르토타는 모험가의 실적에 경탄을 금치 못하는 듯하다."
+  },
+  "69716": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n묵고의 원형정자에서 연인을 기다리는 여성은 도움이 필요해 보인다."
+  },
+  "69717": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아고라에 있는 발드스위스는 외부에서 온 모험가에게 관심이 있어 보인다."
+  },
+  "69718": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아고라에 있는 토프위브는 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69719": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n표류자의 언덕에 있는 미코테족 소녀는 난처한 사정이 있는 듯하다."
+  },
+  "69720": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n상부 아크린토스에 있는 바깥둘레 연구원은 근심에 찬 모양이다."
+  },
+  "69721": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n상부 아크린토스에 있는 노노라토는 절박한 상황인 듯하다."
+  },
+  "69722": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n상부 아크린토스에 있는 신입 조달꾼은 부탁할 일이 있는 듯하다."
+  },
+  "69723": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아르케이온 보관원 출구에 있는 덩치 좋은 연구원은 부탁을 들어줄 사람을 찾는 듯하다."
+  },
+  "69724": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아르케이온 보관원에 있는 응나갈리는 모험가에게 뭔가 주고 싶은 모양이다."
+  },
+  "69725": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아르케이온 보관원에 있는 바이얼은 누군가를 기다리는 듯하다."
+  },
+  "69726": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아르케이온 보관원에 있는 보라그친은 도와줄 사람을 찾는 듯하다."
+  },
+  "69727": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아르케이온 보관원에 있는 채트베르트는 무척 당황한 듯하다."
+  },
+  "69728": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 종키네는 모험가의 도움을 받고 싶은 듯하다."
+  },
+  "69729": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 레라아 에포칸은 도와줄 사람을 찾는 듯하다."
+  },
+  "69730": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 에마니에트는 모험가가 확실한 실력을 지녔다고 생각하는 듯하다."
+  },
+  "69731": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 파르벨루아는 모험가에게 말을 걸고 싶은 듯하다."
+  },
+  "69732": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 케피라즈는 도와줬으면 하는 일이 있는 듯하다."
+  },
+  "69733": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 메룬나는 부탁할 일이 있는 듯하다."
+  },
+  "69734": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 아우라족 소녀는 걱정이 있는 듯하다."
+  },
+  "69735": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 바르파사는 뭔가를 찾고 있는 듯하다."
+  },
+  "69736": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 예지나는 도와줄 사람을 찾는 듯하다."
+  },
+  "69737": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 나쉬리할은 동료의 속마음이 궁금한 듯하다."
+  },
+  "69738": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 근육질 연금술사는 도료용 소재를 구하고 싶은 듯하다."
+  },
+  "69739": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 잘라무치는 동료를 걱정하는 듯하다."
+  },
+  "69740": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 심약한 아르카소다라족은 호위를 원하는 듯하다."
+  },
+  "69741": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 성실한 연금술사는 도움을 바라는 듯하다."
+  },
+  "69742": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 린사루드는 행방불명된 함사를 찾는 듯하다."
+  },
+  "69743": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 아르카소다라족 청년은 호위를 맡기고 싶은 듯하다."
+  },
+  "69744": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 아파사는 배달을 부탁하려는 듯하다."
+  },
+  "69745": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n데미르의 유열향에 있는 쿠수마는 모험가에게 의뢰할 일이 있는 듯하다."
+  },
+  "69746": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n페노메논 대강당에 있는 파스메랑은 모험가가 실험을 도와줬으면 하는 듯하다."
+  },
+  "69747": {
+    "ko": "샬레이안 마법대학 부지 내에 그을음투성이 봉투가 떨어져 있는 듯하다."
+  },
+  "69748": {
+    "ko": "페노메논 대강당에 있는 프레주안은 뭔가를 찾는 듯하다."
+  },
+  "69749": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n샬레이안 마법대학에 있는 심약해 보이는 마법대학생은 큰 고민거리가 있는 듯하다."
+  },
+  "69750": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n샬레이안 마법대학에 있는 라라펠족 마법대학생은 의욕이 넘치는 듯하다."
+  },
+  "69751": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n누메논 대서원에 있는 이실스위스는 애를 먹고 있는 듯하다."
+  },
+  "69752": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 금발 보급대원은 모험가에게 호위를 부탁하려는 듯하다."
+  },
+  "69753": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n벼룩 소굴에 있는 금발 보급대원은 의뢰 해결을 위한 도움을 바라는 듯하다."
+  },
+  "69754": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n벼룩 소굴에 있는 금발 보급대원은 식민지 주민에게 확인할 것이 있어 보인다."
+  },
+  "69755": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 파견단 보급 장교는 도와줄 사람을 찾는 듯하다."
+  },
+  "69756": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 메누키는 왠지 걱정스러운 표정이다."
+  },
+  "69757": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 쌍사당 일병 준은 모험가에게 긴히 부탁할 일이 있는 듯하다."
+  },
+  "69758": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 불멸대 소위 탈론은 왠지 안절부절못하고 있다."
+  },
+  "69759": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 일리에트는 의욕이 충만해 보인다."
+  },
+  "69760": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 암바가이는 모험가를 찾고 있는 듯하다."
+  },
+  "69761": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 아마니우는 아이에게 카샤를 먹여주고 싶은 듯하다."
+  },
+  "69762": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 퇴역한 마도 기술자는 자신의 부탁을 들어줬으면 하는 듯하다."
+  },
+  "69763": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 스푸리우스는 어두운 역 구내에 등불을 밝히고 싶은 듯하다."
+  },
+  "69764": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 파견단 흑와단원은 사람을 찾는 듯하다."
+  },
+  "69765": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 도센누스는 모험가에게 청린수를 회수해달라고 의뢰하려는 듯하다."
+  },
+  "69766": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n갈레안 도모룸 구역에 있는 몰족 파견단원은 아군 부대의 수색을 의뢰하려는 듯하다."
+  },
+  "69767": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 파견단 신전기사는 뜨끈뜨끈한 수프를 나눠주고 싶은 듯하다."
+  },
+  "69768": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 하늘색 머리 여성은 사라진 아들을 찾고 있는 듯하다."
+  },
+  "69769": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 흑와단 하사 마카고 노카고는 발을 동동 구르고 있는 듯하다."
+  },
+  "69770": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 파견단 불멸대원은 모험가를 찾고 있었던 듯하다."
+  },
+  "69771": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 일리에트는 긴히 부탁할 일이 있는 듯하다."
+  },
+  "69772": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 흑와단 소위 버셀미에게 어떤 문제가 생긴 듯하다."
+  },
+  "69773": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 불멸대 중사 코차차는 많은 인력이 필요한 듯하다."
+  },
+  "69774": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 불멸대 소위 탈론은 동료에게 요청을 받은 상태다."
+  },
+  "69775": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 파견단 척후병은 마도 아머 기수를 찾고 있는 듯하다."
+  },
+  "69776": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n당근관에 있는 워칭웨이는 모험가에게 사건 해결을 맡기고 싶은 듯하다."
+  },
+  "69777": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n당근관에 있는 요닝웨이는 식사 시간이 됐기 때문에 레포릿들을 모으고 싶은 모양이다."
+  },
+  "69778": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 레코딩웨이는 데이터 부족을 안타까워하고 있다."
+  },
+  "69779": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n당근관에 있는 오물오물 레포릿은 인간의 정보를 수집하고 싶은 모양이다."
+  },
+  "69780": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n당근관에 있는 번쩍번쩍 레포릿은 중앙 크리스탈에 대해 말하고 싶은 모양이다."
+  },
+  "69781": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 시끌시끌 레포릿은 새로운 놀이를 시험해 보려는 듯하다."
+  },
+  "69782": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 나풀나풀 레포릿은 모험가의 도움이 필요한 듯하다."
+  },
+  "69783": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 불끈불끈 레포릿은 경비 기계를 수정하는 방법에 대해 고민하는 모양이다."
+  },
+  "69784": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최고의 숲에 있는 런닝웨이는 함께 도와줬으면 하는 일이 있는 모양이다."
+  },
+  "69785": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 또랑또랑 레포릿은 도움이 필요한 모양이다."
+  },
+  "69786": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 가이딩웨이는 모험가에게 묻고 싶은 것이 있나 보다."
+  },
+  "69787": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최고의 숲에 있는 룰루랄라 레포릿은 모험가의 의견을 구하고 싶은 모양이다."
+  },
+  "69788": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 우물쭈물 레포릿은 비밀스러운 이야기가 있나 보다."
+  },
+  "69789": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 아작아작 레포릿은 모험가에게 물어볼 것이 있는 모양이다."
+  },
+  "69790": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 긁적긁적 레포릿은 매우 당황한 모양이다."
+  },
+  "69791": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최고의 숲에 있는 모핑웨이는 매우 당황한 듯하다."
+  },
+  "69792": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 비라반은 낙담한 듯하다."
+  },
+  "69793": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 지친 별빛전사는 확인하고 싶은 것이 있나 보다."
+  },
+  "69794": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 우트팔라는 걱정되는 사람이 있는 모양이다."
+  },
+  "69795": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 별빛전사단 병장은 모험가의 도움을 받고 싶은 듯하다."
+  },
+  "69796": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 아우라족 무도가는 고민이 있는 듯하다."
+  },
+  "69797": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 주브칼은 금속제 도시락을 손에 들고 곤란한 듯하다."
+  },
+  "69798": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 아르카소다라족 청년은 친구가 걱정인 듯하다."
+  },
+  "69799": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 아우라족 아버지는 딸을 찾는 듯하다."
+  },
+  "69800": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 아르카소다라족 소녀는 걱정거리가 있는 듯하다."
+  },
+  "69801": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 케리드는 재료가 부족해서 곤란한 듯하다."
+  },
+  "69802": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 미사자는 모험가에게 점을 봐주고 싶은 듯하다."
+  },
+  "69803": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 노련한 사냥꾼은 모험가와 사냥을 함께 하고 싶은 듯하다."
+  },
+  "69804": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 신비한 하누만랑구르는 모험가를 어디론가 안내하려는 듯하다."
+  },
+  "69805": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리드의 주막에 있는 메리드는 분실물의 주인을 찾는 듯하다."
+  },
+  "69806": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n바람의 양잠소에 있는 미린은 아이들의 상황을 보고 와 줬으면 하는 듯하다."
+  },
+  "69807": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n알자달 거리에 있는 곤경에 처한 모험가는 편지를 전하기 위해 울다하에서 온 듯하다."
+  },
+  "69808": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팍샤 거리에 있는 대식가 아르카소다라족은 배가 고파서 움직이지 못하는 듯하다."
+  },
+  "69809": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팍샤 거리에 있는 아르카소다라족 청년은 모험가가 아이 옷을 골라줬으면 하는 듯하다."
+  },
+  "69810": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n닐로팔라 축산국에 있는 비쉬라드는 먹이 주는 것을 도와주기 바라는 듯하다."
+  },
+  "69811": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n다르마 구역에 있는 별빛전사단 수위대장은 다툼을 말리려고 애쓰고 있다."
+  },
+  "69812": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 에우클레이데스는 일손이 필요한 듯하다."
+  },
+  "69813": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 실험하는 관찰자는 사람을 찾고 있는 듯하다."
+  },
+  "69814": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 제우크시스는 조수를 구하고 싶은 듯하다."
+  },
+  "69815": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 페이디아스는 새로운 창조물을 관찰하려는 듯하다."
+  },
+  "69816": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 늠름한 관찰자는 주변을 둘러보고 있는 듯하다."
+  },
+  "69817": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 쾌활한 관찰자는 사역마를 찾고 있는 듯하다."
+  },
+  "69818": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 파라모노스는 모험가를 바라보고 있다."
+  },
+  "69819": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 칼리아스는 창조물 관리로 몹시 바쁜 듯하다."
+  },
+  "69820": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 에우리도메는 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69821": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 점잔 떠는 창조자는 모험가에게 무척 관심이 있는 듯하다."
+  },
+  "69822": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 온화한 관찰자는 걱정스럽게 모험가를 바라보고 있다."
+  },
+  "69823": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 블라스테는 사역마를 찾고 있는 듯하다."
+  },
+  "69824": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 히포토에 곁에는 작은 생물이 있다."
+  },
+  "69825": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 히포토에는 계속해서 아일루로스 관련 의뢰를 하려는 듯하다."
+  },
+  "69826": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 그륄로스는 관찰 중인 창조 생물에게 농락당하는 듯하다."
+  },
+  "69827": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 히에락스는 물어볼 것이 있는 듯하다."
+  },
+  "69828": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 클로리스는 큰일을 처리하려는 듯하다."
+  },
+  "69829": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 알크메네는 사역마에게 맡길 일이 있는 듯하다."
+  },
+  "69830": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 하늘섬 창조자는 논의를 거듭하고 있다."
+  },
+  "69831": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n십이절 정원에 있는 탈짐승 관찰자는 창조 생물의 유용성을 관찰하려는 듯하다."
+  },
+  "69832": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 전투 생물 담당 관찰자는 입증하고 싶은 것이 있는 듯하다."
+  },
+  "69833": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 괴짜 창조자는 아젬의 사역마에게 부탁이 있는 듯하다."
+  },
+  "69834": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 침착한 관찰자는 동료를 다시 부르고 싶은 모양이다."
+  },
+  "69835": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 부유 식물을 좋아하는 관찰자는 회수하고 싶은 것이 있나 보다."
+  },
+  "69836": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 에린나는 시험하고 싶은 것이 있는 듯하다."
+  },
+  "69837": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 멜레아그로스는 심부름을 부탁하려는 듯하다."
+  },
+  "69838": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 사역마 애호가는 모험가를 보며 흥미진진해한다."
+  },
+  "69839": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 글라우콘은 모험가를 걱정하는 듯하다."
+  },
+  "69840": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 고민하는 작명가는 결심을 못 하고 있다."
+  },
+  "69841": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 하늘섬 조정사는 도와줄 사람을 찾는 듯하다."
+  },
+  "69842": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 미트론 학술원 창조자는 난처한 일이 있는 듯하다."
+  },
+  "69843": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 에피프론은 걱정거리가 있는 듯하다."
+  },
+  "69844": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 페리클레스는 관찰을 도와줄 자를 찾는 모양이다."
+  },
+  "69845": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 에우아이온은 길 잃은 창조 생물을 찾는 모양이다."
+  },
+  "69846": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 로도피스는 동료를 걱정하는 듯하다."
+  },
+  "69847": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 당황한 관찰자는 급히 수색 인원을 찾는 모양이다."
+  },
+  "69848": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 고지식한 작명가는 영감을 원하는 듯하다."
+  },
+  "69849": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 아카데미아 원생은 친구의 귀가가 늦어서 걱정하는 모양이다."
+  },
+  "69850": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 여행을 앞둔 이방인은 모험가가 신경 쓰이나 보다."
+  },
+  "69851": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 글라퓌라는 일손이 모자라서 난감한 듯하다."
+  },
+  "69852": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n라스트 스탠드 종업원은 푸딩을 대접하고 싶은 듯하다."
+  },
+  "69853": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n에테라이트 광장 부근에 있는 정체불명의 여성은 모험가를 흥미롭게 바라보고 있다."
+  },
+  "69854": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n표류자의 언덕에 있는 르베유르 가 시종은 자선 사업에 나선 듯하다."
+  },
+  "69855": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n라스트 스탠드에 있는 딕콘은 카페 일을 열심히 하고 있다."
+  },
+  "69856": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 비에라족 조달꾼은 모험가를 바라보고 있다."
+  },
+  "69857": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 우왕좌왕 레포릿은 난처한 일이 있는 듯하다."
+  },
+  "69858": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 웨일세임은 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "69859": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 마법학 연구원은 난처한 일이 있는 듯하다."
+  },
+  "69860": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 루가딘족 연구원은 뭔가 걱정거리가 있는 듯하다."
+  },
+  "69861": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 결단력 있는 사서파는 도와줄 사람을 찾는 듯하다."
+  },
+  "69862": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 퓌올라는 고민거리가 있는 듯하다."
+  },
+  "69863": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 고원 부족 연구원은 고민거리가 있는 듯하다."
+  },
+  "69864": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 샤르몽은 생각에 잠겨 있다."
+  },
+  "69865": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 라라펠족 수의사는 고민거리가 있는 듯하다."
+  },
+  "69866": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 미코테족 요리사는 현 상황에 절망하고 있는 듯하다."
+  },
+  "69867": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 아나이쟈는 스카네테에 대해 가르쳐 주고 싶은 듯하다."
+  },
+  "69868": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 제샤미는 무척 초조한 듯하다."
+  },
+  "69869": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 속성 증식로 직원은 사람 찾는 일을 도와줬으면 하는 듯하다."
+  },
+  "69870": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아포리아 본부에 있는 마르빈은 모험가에게 의뢰할 일이 있는 듯하다."
+  },
+  "69871": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아포리아 본부에 있는 아사사무는 모험가가 자료 수집을 도와줬으면 하는 듯하다."
+  },
+  "69872": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아포리아 본부에 있는 타타사코는 월면 개척 시대에 대비하고 싶은 듯하다."
+  },
+  "69873": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 콤 노스크는 근심거리가 있는 듯하다."
+  },
+  "69874": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 콜 알레는 걱정거리가 있는 듯하다."
+  },
+  "69875": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 녹초가 된 용은 경계하고 있는 듯하다."
+  },
+  "69876": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 세이 로스크는 먼 곳을 바라보고 있다."
+  },
+  "69877": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 네쉬 오르는 묻고 싶은 것이 있는 듯하다."
+  },
+  "69878": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 생각하는 이아는 모험가의 힘을 빌리고 싶은 안건이 있는 듯하다."
+  },
+  "69879": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n절명시 비석에 있는 로우 로스는 모험가에게 묻고 싶은 것이 있는 듯하다."
+  },
+  "69880": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 쟈우 쟈그는 모험가가 누군가를 부르러 가 줬으면 하는 듯하다."
+  },
+  "69881": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 케에 케스는 모험가에게 고마움을 표하고 싶은 듯하다."
+  },
+  "69882": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 노오 노크는 모험가가 다른 이아에게도 말을 걸어 줬으면 하는 듯하다."
+  },
+  "69883": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 육체를 원하는 이아는 루미니언 퇴치를 부탁하려는 듯하다."
+  },
+  "69884": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 세스 토스크는 모험가에게서 동포의 기척을 느끼는 듯하다."
+  },
+  "69885": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라의 물가에 머무는 늙은 용은 샘이 오염된 것을 한탄하고 있는 듯하다."
+  },
+  "69886": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리아 타라에 있는 초췌한 어미용은 아기용이 걱정되는 듯하다."
+  },
+  "69887": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n절명시 비석에 있는 보프 보크는 친구의 행방을 찾고 있는 듯하다."
+  },
+  "69888": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 우울한 이아는 모험가의 육체가 부러운 듯하다."
+  },
+  "69889": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n이아 마을에 있는 걱정스러운 이아는 그들의 거주지를 올려다보고 있다."
+  },
+  "69890": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n오미크론 기지에 있는 N-4486은 모의 전투 상대를 찾고 있는 듯하다."
+  },
+  "69891": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n오미크론 기지에서 검증 중인 오미크론은 규명하고 싶은 현상이 있는 듯하다."
+  },
+  "69892": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n오미크론 기지에 있는 경계 임무 중인 오미크론은 모험가의 조언을 바라는 듯하다."
+  },
+  "69893": {
+    "ko": "돌의 집에 있는 알피노는 새롭게 제안할 것이 있는 듯하다."
+  },
+  "69894": {
+    "ko": "지식신의 항구에 있는 쿠루루는 동료들을 지켜보고 있다."
+  },
+  "69895": {
+    "ko": "대회의실에 있는 쿠루루는 철학자 의회의 비밀을 파헤치고 싶은 듯하다."
+  },
+  "69896": {
+    "ko": "누메논 대서원 앞에 있는 알리제는 휴식 중이다."
+  },
+  "69897": {
+    "ko": "줄기둥 화물보관소에 있는 알리제는 들떠 보인다."
+  },
+  "69898": {
+    "ko": "상부 아크린토스에 있는 쿠루루는 생각에 잠겨 있다."
+  },
+  "69899": {
+    "ko": "아르케이온 보관원 앞에 있는 알피노는 안쪽의 상황을 살피고 있다."
+  },
+  "69900": {
+    "ko": "제33기 확장 갱도 앞에 있는 알리제는 출발을 기다리고 있는 듯하다."
+  },
+  "69901": {
+    "ko": "사잇둘레에 있는 알리제는 에렌빌의 뒤를 쫓고 있는 듯하다."
+  },
+  "69902": {
+    "ko": "사잇둘레에 있는 알리제는 에렌빌이 떠난 쪽을 보고 있다."
+  },
+  "69903": {
+    "ko": "일곱 현인의 뜰에 있는 알리제는 우울한 표정을 짓고 있다."
+  },
+  "69904": {
+    "ko": "대회의실에 있는 산크레드는 사베네어 섬으로 출발하고 싶은 듯하다."
+  },
+  "69905": {
+    "ko": "예드리만에 있는 산크레드는 행동을 시작하려는 듯하다."
+  },
+  "69906": {
+    "ko": "예드리만에 있는 마트샤는 주뼛거리고 있다."
+  },
+  "69907": {
+    "ko": "예드리만에 있는 에스티니앙은 생각에 잠긴 듯하다."
+  },
+  "69908": {
+    "ko": "아크얄리에 있는 마트샤는 왠지 기뻐 보인다."
+  },
+  "69909": {
+    "ko": "훈향 언덕에 있는 니다나는 모험가의 표정을 살피고 있다."
+  },
+  "69910": {
+    "ko": "데미르의 유열향에 있는 니다나는 다시금 각오를 다진 듯하다."
+  },
+  "69911": {
+    "ko": "거인석 채석장에 있는 제이누하는 돌을 준비해 주고 있다."
+  },
+  "69912": {
+    "ko": "데미르의 유열향에 있는 산크레드는 진지한 표정이다."
+  },
+  "69913": {
+    "ko": "대회의실에 있는 쿠루루는 동료들을 바라보고 있다."
+  },
+  "69914": {
+    "ko": "감시소에 있는 산크레드는 한숨 돌리고 있는 듯하다."
+  },
+  "69915": {
+    "ko": "메가두타 궁전 앞에 있는 알피노는 제약당으로 출발하려는 듯하다."
+  },
+  "69916": {
+    "ko": "발데시온 분관에 있는 쿠루루는 그라하 티아와 대화를 나누고 있었던 듯하다."
+  },
+  "69917": {
+    "ko": "공개 강당에 있는 쿠루루는 몽티셰뉴의 말을 곱씹고 있는 듯하다."
+  },
+  "69918": {
+    "ko": "알라미고인 거주구에 있는 막시마는 안내를 해주려는 듯하다."
+  },
+  "69919": {
+    "ko": "알라미고인 거주구에 있는 타타루는 의욕이 충만해 보인다."
+  },
+  "69920": {
+    "ko": "깨진 유리 전초지에 있는 에마넬랭은 모험가 일행의 동향이 궁금한 듯하다."
+  },
+  "69921": {
+    "ko": "공신의 포상에 있는 리키니아는 깊이 생각에 빠진 듯하다."
+  },
+  "69922": {
+    "ko": "벼룩 소굴에 있는 야렉은 이야기를 들어줄 것 같다."
+  },
+  "69923": {
+    "ko": "공신의 포상에 있는 알피노는 가만히 서 있다."
+  },
+  "69924": {
+    "ko": "제IV시외역에 있는 율루스는 주위를 경계하고 있다."
+  },
+  "69925": {
+    "ko": "테르티움 역에 있는 율루스는 험악한 표정으로 모험가 일행을 바라보고 있다."
+  },
+  "69926": {
+    "ko": "테르티움 역에 있는 율루스는 임무 시작 준비가 되기를 기다리고 있다."
+  },
+  "69927": {
+    "ko": "솔 시민광장에 있는 율루스는 모닥불의 뒤처리를 끝낸 듯하다."
+  },
+  "69928": {
+    "ko": "테르티움 역에 있는 율루스는 생각에 잠긴 모습이다."
+  },
+  "69929": {
+    "ko": "깨진 유리 전초지에 있는 루키아는 상황을 정리하고 싶은 듯하다."
+  },
+  "69930": {
+    "ko": "깨진 유리 전초지에 있는 루키아는 착실하게 일을 진행시키고 있는 듯하다."
+  },
+  "69931": {
+    "ko": "깨진 유리 전초지에 있는 루키아는 모험가가 돌아와서 안도한 듯하다."
+  },
+  "69932": {
+    "ko": "신의 문에 있는 그라하 티아는 전송장치를 바라보며 생각에 잠겨 있다."
+  },
+  "69933": {
+    "ko": "달의 감시자는 모험자에게 할 말이 있는 듯하다."
+  },
+  "69934": {
+    "ko": "빛을 머금은 개는 주변을 강하게 경계하고 있다."
+  },
+  "69935": {
+    "ko": "달의 감시자는 중대한 이야기를 하려는 듯하다."
+  },
+  "69936": {
+    "ko": "달의 감시자는 마지막 임무를 완수하려 하고 있다."
+  },
+  "69937": {
+    "ko": "베스트웨이 피난처에 있는 산크레드는 방금 본 광경을 곱씹고 있는 듯하다."
+  },
+  "69938": {
+    "ko": "베스트웨이 피난처에 있는 리빙웨이는 초조해하는 듯하다."
+  },
+  "69939": {
+    "ko": "당근관에 있는 리빙웨이는 진정하지 못하는 모습이다."
+  },
+  "69940": {
+    "ko": "베스트웨이 피난처의 그로잉웨이는 풀이 죽은 모습이다."
+  },
+  "69941": {
+    "ko": "최고의 숲에 있는 산크레드는 뭔가를 깨달은 듯하다."
+  },
+  "69942": {
+    "ko": "비탄의 바다에 있는 위리앙제는 모험가를 조용히 기다리고 있다."
+  },
+  "69943": {
+    "ko": "최고의 숲에 있는 그로잉웨이는 초조해하는 모습이다."
+  },
+  "69944": {
+    "ko": "눈물의 만에 있는 야슈톨라는 조용한 결의에 차 있다."
+  },
+  "69945": {
+    "ko": "발데시온 분관에 있는 타타루는 굳은 표정이다."
+  },
+  "69946": {
+    "ko": "알자달 거리에 있는 아히완은 고심하고 있는 듯하다."
+  },
+  "69947": {
+    "ko": "메리드의 주막에 있는 미릴은 안내를 해주려는 듯하다."
+  },
+  "69948": {
+    "ko": "루베이다 섬유국에 있는 그라하 티아는 동료들과 합류하려는 듯하다."
+  },
+  "69949": {
+    "ko": "팔라카 마을에 있는 알피노는 치료를 계속하려는 듯하다."
+  },
+  "69950": {
+    "ko": "팔라카 마을에 있는 마트샤는 매우 당황한 듯하다."
+  },
+  "69951": {
+    "ko": "푸루샤 사원에 있는 알리제는 숲 안쪽을 응시하고 있다."
+  },
+  "69952": {
+    "ko": "성선 아가마 분묘에 있는 에스티니앙은 조용히 기다리고 있다."
+  },
+  "69953": {
+    "ko": "팔라카 마을에 있는 마트샤는 말을 꺼낼 타이밍을 살피는 듯하다."
+  },
+  "69954": {
+    "ko": "별빛전사단 근위병은 '새벽의 혈맹'에게 전할 말이 있는 듯하다."
+  },
+  "69955": {
+    "ko": "알자달 거리에 있는 그라하 티아는 주고 싶은 물건이 있는 듯하다."
+  },
+  "69956": {
+    "ko": "자유토론관에 있는 린은 겁먹지 않고 당당한 모습이다."
+  },
+  "69957": {
+    "ko": "프로필라이온에 있는 휘틀로다이우스는 신경 쓰이는 점이 있는 듯하다."
+  },
+  "69958": {
+    "ko": "움트는 현관에 있는 휘틀로다이우스는 준비가 다 되기를 기다리고 있다."
+  },
+  "69959": {
+    "ko": "노토스의 감탄에 있는 헤르메스는 일단 진정한 듯하다."
+  },
+  "69960": {
+    "ko": "아나그노리시스 천측원에 있는 헤르메스는 기운을 차린 모양이다."
+  },
+  "69961": {
+    "ko": "'바닷방울 뜰'에 있는 에메트셀크는 생각에 잠긴 것 같다."
+  },
+  "69962": {
+    "ko": "아나그노리시스 천측원에 있는 헤르메스는 뭔가가 마음에 걸리는 듯하다."
+  },
+  "69963": {
+    "ko": "십이절 정원에 있는 헤르메스는 이야기를 나누러 가려는 듯하다."
+  },
+  "69964": {
+    "ko": "십이절 정원에 있는 헤르메스는 심각한 표정이다."
+  },
+  "69965": {
+    "ko": "십이절 정원에 있는 휘틀로다이우스는 앞으로에 관해 상의하고 싶은 듯하다."
+  },
+  "69966": {
+    "ko": "제피로스의 갈채에 있는 베네스는 쾌활해 보인다."
+  },
+  "69967": {
+    "ko": "작가의 집에 있는 베네스는 알아낸 것을 곱씹고 있는 듯하다."
+  },
+  "69968": {
+    "ko": "메타바시스 해양원에 있는 베네스는 추가로 조사를 진행하려는 듯하다."
+  },
+  "69969": {
+    "ko": "제피로스의 갈채에 있는 베네스는 아르고스를 데리고 있다."
+  },
+  "69970": {
+    "ko": "휘페르보레아 조물원에 있는 휘틀로다이우스는 의기양양하다."
+  },
+  "69971": {
+    "ko": "나우스: 에우로스에 있는 에메트셀크는 조용히 때를 기다리고 있다."
+  },
+  "69972": {
+    "ko": "레테 해에 있는 휘틀로다이우스는 머리를 굴리고 있다."
+  },
+  "69973": {
+    "ko": "레테 해에 있는 휘틀로다이우스는 뭔가에 집중하는 듯하다."
+  },
+  "69974": {
+    "ko": "바닷방울 뜰 앞에 있는 베네스는 조용히 모험가를 바라보고 있다."
+  },
+  "69975": {
+    "ko": "대회의실에 있는 쿠루루는 정보를 공유하고 싶은 듯하다."
+  },
+  "69976": {
+    "ko": "깨진 유리 전초지에 있는 루키아는 일동의 안부를 확인하고 있는 듯하다."
+  },
+  "69977": {
+    "ko": "철학자 광장에 있는 푸르슈노는 의회의 결정에 따르는 듯하다."
+  },
+  "69978": {
+    "ko": "쿠쿠로 공방에 있는 알피노는 의욕이 충만해 보인다."
+  },
+  "69979": {
+    "ko": "리틀 샬레이안에 있는 위리앙제는 생각에 잠긴 듯하다."
+  },
+  "69980": {
+    "ko": "로기스티콘 알파에 있는 쿠킹웨이는 안절부절못하고 있는 듯하다."
+  },
+  "69981": {
+    "ko": "로기스티콘 알파에 있는 위리앙제는 모두를 바라보고 있다."
+  },
+  "69982": {
+    "ko": "리틀 샬레이안에 있는 위리앙제는 한숨 돌린 듯하다."
+  },
+  "69983": {
+    "ko": "아포리아 본부에 있는 그라하 티아는 부탁을 받은 듯하다."
+  },
+  "69984": {
+    "ko": "쿠쿠로 공방에 있는 쿠쿠로 단쿠로는 안절부절못하는 듯하다."
+  },
+  "69985": {
+    "ko": "타우마제인에 있는 푸르슈노는 모험가 일행의 준비가 끝나기를 기다리고 있다."
+  },
+  "69986": {
+    "ko": "발데시온 분관에 있는 쿠루루는 전할 말이 있는 듯하다."
+  },
+  "69987": {
+    "ko": "아고라에 있는 타타루는 무척 기뻐하고 있다."
+  },
+  "69988": {
+    "ko": "발데시온 분관에 있는 오지카 츤지카는 따뜻한 눈빛으로 모험가를 보고 있다."
+  },
+  "69989": {
+    "ko": "마도선 라그나로크 부근에 있는 알피노는 신중하게 주변을 탐색하고 있다."
+  },
+  "69990": {
+    "ko": "리아 타라에 있는 위리앙제는 침통한 표정이다."
+  },
+  "69991": {
+    "ko": "오스트라콘 데카옥토에 있는 에스티니앙은 한숨을 쉬고 있다."
+  },
+  "69992": {
+    "ko": "오스트라콘 트리아에 있는 알피노는 동료의 마음을 받아들인 듯하다."
+  },
+  "69993": {
+    "ko": "이아 마을에 있는 코프 코그는 둥실둥실 뜬 상태로 동포들을 기다리고 있다."
+  },
+  "69994": {
+    "ko": "이아 마을에 있는 위리앙제는 생각이 있는 모양이다."
+  },
+  "69995": {
+    "ko": "절명시 비석에 있는 그라하 티아는 가만히 동료들을 바라보고 있다."
+  },
+  "69996": {
+    "ko": "오스트라콘 데카엑시에 있는 그라하 티아는 출발하려고 하고 있다."
+  },
+  "69997": {
+    "ko": "생명의 나무에 있는 그라하 티아는 다음 한 걸음을 내딛으려 하고 있다."
+  },
+  "69998": {
+    "ko": "스티그마-1에 있는 알피노는 단단히 결심한 모양이다."
+  },
+  "69999": {
+    "ko": "생명 없는 도시에 있는 알리제는 포기하지 않은 듯하다."
+  },
+  "70000": {
+    "ko": "'새벽의 혈맹'은 마지막 장으로 향하려는 듯하다."
+  },
+  "70001": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 리제트 드 발렌티온은 걱정거리가 있는 듯하다."
+  },
+  "70002": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 쿠뿌카 쿠뿌는 신경 쓰이는 일이 있는 듯하다."
+  },
+  "70003": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 뿌쿠티 삐코는 도움이 필요한 듯하다."
+  },
+  "70004": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 아므 가란지는 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "70005": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 아므 가란지는 행사 설명을 하려는 듯하다."
+  },
+  "70006": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n미 케토 야외음악당에 있는 아므 가란지는 모험가가 만나줬으면 하는 사람이 있는 모양이다."
+  },
+  "70007": {
+    "ko": "※이 퀘스트는 기간 한정 퀘스트입니다.\n\n울다하에 있는 마라벨은 사람을 찾고 있는 듯하다."
+  },
+  "70008": {
+    "ko": "※이 퀘스트는 기간 한정 퀘스트입니다.\n\n울다하에 있는 마라벨은 무척 기뻐 보인다."
+  },
+  "70009": {
+    "ko": "심사의 전당에 있는 키 알리아포는 마법대학의 업무에 관심이 있는 사람을 찾는 듯하다."
+  },
+  "70010": {
+    "ko": "심사의 전당에 있는 키 알리아포는 모험가를 기다리고 있었던 듯하다."
+  },
+  "70016": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 소심한 관리인은 안절부절못하고 있다."
+  },
+  "70017": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아침이슬 숲에 있는 복슬이는 의욕이 넘친다."
+  },
+  "70018": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 생물학 연구원은 의욕이 넘치는 듯하다."
+  },
+  "70019": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 복슬이는 생각에 잠긴 듯하다."
+  },
+  "70020": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 뮈살프레는 뭔가 걱정거리가 있는 듯하다."
+  },
+  "70021": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 베르폴렌은 기분이 좋아 보인다."
+  },
+  "70022": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n포이보스 제어탑에 있는 베르폴렌은 생각에 잠겨 있다."
+  },
+  "70023": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장 남쪽에 있는 베르폴렌은 활기가 넘친다."
+  },
+  "70024": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n리틀 샬레이안에 있는 베르폴렌은 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "70025": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 오굴은 겁을 먹은 듯하다."
+  },
+  "70026": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만의 칸차나는 의뢰할 것이 하나 더 있는 모양이다."
+  },
+  "70027": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n솔솔바람 해변에 있는 오굴은 예드리만으로 돌아가려는 듯하다."
+  },
+  "70028": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n예드리만에 있는 오굴은 절도범을 잡고 싶은 듯하다."
+  },
+  "70029": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 예잔은 고민이 있는 듯하다."
+  },
+  "70030": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 예잔은 모험가의 도움이 필요한 듯하다."
+  },
+  "70031": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 슐라는 가고 싶은 곳이 있는 듯하다."
+  },
+  "70032": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 예잔은 조금 더 밀어붙여 보려는 듯하다."
+  },
+  "70033": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라카 마을에 있는 예잔은 모험가에게 부탁할 일이 있는 듯하다."
+  },
+  "70034": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 리멜노는 모험가에게 의견을 구하고 싶은 듯하다."
+  },
+  "70035": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 리멜노는 난방 설비의 상태가 신경 쓰이는 모양이다."
+  },
+  "70036": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 리멜노는 수상 채굴기 재가동 계획을 추진하려는 듯하다."
+  },
+  "70037": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n유투르나 G 수상 채굴기에 있는 리멜노는 수상 채굴기 재가동 계획에 대한 아이디어가 있나 보다."
+  },
+  "70038": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n깨진 유리 전초지에 있는 갈라는 모험가에게 물어볼 것이 있는 듯하다."
+  },
+  "70039": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 볼루수스는 부모님의 안부를 알 때까지 역에서 움직일 생각이 없다."
+  },
+  "70040": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 갈라는 볼루수스의 어머니 찾기를 도와줬으면 하는 듯하다."
+  },
+  "70041": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n팔라티움 노붐에 있는 갈라는 계속해서 위프사니아의 행적을 좇고 싶은 모양이다."
+  },
+  "70042": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n테르티움 역에 있는 위프사니아는 아직 걱정거리가 있는 듯하다."
+  },
+  "70043": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 소클레스는 모험가에게 호기심을 갖고 있는 듯하다."
+  },
+  "70044": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 소클레스는 모험가에게 계속 호기심을 갖고 있는 듯하다."
+  },
+  "70045": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n바닷방울 뜰에 있는 카르미온은 직원들의 생활상을 계속 소개하고 싶은 듯하다."
+  },
+  "70046": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n아나그노리시스 천측원에 있는 카르미온은 마지막으로 모험가에게 질문이 있는 듯하다."
+  },
+  "70047": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 마이라는 난처한 일이 있는 듯하다."
+  },
+  "70048": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 클레온은 모험가가 도와줄 것을 기대하고 있다."
+  },
+  "70049": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n제피로스의 갈채에 있는 클레온은 마음에 걸리는 생물이 더 있는 것 같다."
+  },
+  "70050": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n제피로스의 갈채에 있는 클레온은 기대에 찬 눈으로 모험가를 바라보고 있다."
+  },
+  "70051": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n작가의 집에 있는 마이라는 오빠와 함께 용건이 있는 듯하다."
+  },
+  "70052": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 노킹웨이는 모험가에게 하고 싶은 말이 있는 듯하다."
+  },
+  "70053": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 드리밍웨이는 모험가에게 자신의 평소 생활을 소개하고 싶은 듯하다."
+  },
+  "70054": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 드리밍웨이는 모험가를 애타게 기다리는 듯하다."
+  },
+  "70055": {
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 드리밍웨이는 모험가에게 자신의 일을 소개하고 싶어서 안달 난 듯하다."
+  },
+  "70056": {
+    "ko": "※ 이 퀘스트는 기간 한정 퀘스트입니다.\n\n굽은가지 목장에 있는 모험가 길드 조사원은 모험가를 기다리는 듯하다."
   }
 }

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.4"></a>
+## [9.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.3...v9.6.4) (2022-05-10)
+
+
+### Features
+
+* **db:** support for korean v6.0 update ([6a03e2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a03e2b))
+
+
+
 <a name="9.6.3"></a>
 ## [9.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.2...v9.6.3) (2022-05-07)
 
