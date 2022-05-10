@@ -1,5 +1,3 @@
-export const patchNotes = `### Bug Fixes
+export const patchNotes = `### Features
 
-* **desktop:** possible fix for autofill notification not ringing.
-* **layout:** fix icon priority for Althyk Lavender trades.
-* **layout:** fixed IS_FROM_HOUSING_VENDOR filter not working on materials.`;
+* **db:** support for korean v6.0 update.`;
