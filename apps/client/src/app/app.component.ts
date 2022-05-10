@@ -441,6 +441,7 @@ export class AppComponent implements OnInit {
         } else if (event.url !== '/') {
           this.ipc.send('navigated', event.url);
         }
+        gtag('set', 'platform', this.platformService.isDesktop() ? 'electron' : 'web');
         gtag('set', 'page', event.url);
         gtag('send', 'pageview');
         const languageIndex = event.url.indexOf('?lang=');
