@@ -15,6 +15,9 @@ import { existsSync, readFile, writeFileSync } from 'fs';
 import { createFileSync, readFileSync } from 'fs-extra';
 import { Character, CharacterSearch } from '@xivapi/nodestone';
 import { Worker } from 'worker_threads';
+import ua from 'universal-analytics';
+import { v4 as uuidv4 } from 'uuid';
+import fetch from 'electron-fetch';
 
 
 export class IpcListenersManager {
@@ -58,6 +61,8 @@ export class IpcListenersManager {
     this.setupProxyManagerListeners();
     this.setupInventoryListeners();
     this.setupFreeCompanyWorkshopsListeners();
+
+    this.setupAnalyticsListeners();
   }
 
   private setupOauthListeners(): void {
@@ -457,6 +462,51 @@ export class IpcListenersManager {
       this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
         event.sender.send('lodestone:character:search', res.List);
       });
+    });
+  }
+
+  private sendPageView(key: string, ga3user: any, ga4Id: string, uuid: string, url: string): void {
+    fetch(`https://www.google-analytics.com/mp/collect?api_secret=${key}&measurement_id=${ga4Id}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        client_id: uuid,
+        user_properties: {
+          platform: {
+            value: 'electron'
+          }
+        },
+        events: [
+          {
+            name: 'page_view',
+            params: {
+              page_location: `https://ffxivteamcraft.com${url.startsWith('/') ? '' : '/'}${url}`
+            }
+          }
+        ]
+      })
+    });
+    ga3user.pageview(url).send();
+  }
+
+  private setupAnalyticsListeners(): void {
+    let ga3user = null;
+    let ga4Id = null;
+    let key = null;
+    const uuid = this.store.get('analytics:uuid', uuidv4());
+    this.store.set('analytics:uuid', uuid);
+
+    ipcMain.on('analytics:init', async (event, { ga3, ga4 }) => {
+      ga3user = ua(ga3, uuid, null, { platform: 'electron' });
+      ga4Id = ga4;
+      key = await fetch('https://us-central1-ffxivteamcraft.cloudfunctions.net/electron-mp').then(async res => await res.text());
+      this.sendPageView(key, ga3user, ga4Id, uuid, '/');
+    });
+
+    ipcMain.on('analytics:pageView', (event, url) => {
+      if (key) {
+        this.sendPageView(key, ga3user, ga4Id, uuid, url);
+      }
     });
   }
 }

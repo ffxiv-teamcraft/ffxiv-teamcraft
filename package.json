@@ -122,6 +122,7 @@
     "@ffxiv-teamcraft/pcap-ffxiv": "0.9.12",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
+    "electron-google-analytics": "^1.0.2",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
@@ -134,7 +135,9 @@
     "ngx-google-analytics": "^11.2.1",
     "request": "^2.88.2",
     "rxjs": "^7.5.4",
-    "tslib": "^2.3.1"
+    "tslib": "^2.3.1",
+    "universal-analytics": "^0.5.3",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^13.0.0",
