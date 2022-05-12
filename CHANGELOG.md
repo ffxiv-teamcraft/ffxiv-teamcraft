@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.5"></a>
+## [9.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.4...v9.6.5) (2022-05-12)
+
+
+### Bug Fixes
+
+* **simulator:** fix rounding issue with progress formula ([e03ff31](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e03ff31))
+* **voyage-tracker:** fix max submarine rank ([c20ae68](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c20ae68)), closes [#2259](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2259)
+
+
+### Features
+
+* **alarms:** location button in sidebar now opens fishing spot ([32cd456](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32cd456))
+
+
+
 <a name="9.6.4"></a>
 ## [9.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.3...v9.6.4) (2022-05-10)
 
