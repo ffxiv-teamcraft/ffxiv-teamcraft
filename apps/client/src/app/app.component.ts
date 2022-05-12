@@ -66,8 +66,6 @@ import { LazyDataFacade } from './lazy-data/+state/lazy-data.facade';
 import { IS_HEADLESS } from '../environments/is-headless';
 import { LocalStorageBehaviorSubject } from './core/rxjs/local-storage-behavior-subject';
 
-declare const gtag: Function;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -441,8 +439,6 @@ export class AppComponent implements OnInit {
         } else if (event.url !== '/') {
           this.ipc.send('navigated', event.url);
         }
-        gtag('set', 'page', event.url);
-        gtag('send', 'pageview');
         const languageIndex = event.url.indexOf('?lang=');
         if (languageIndex > -1) {
           this.use(event.url.substr(languageIndex + 6, 2), false, true);

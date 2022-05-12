@@ -40,12 +40,6 @@
     function gtag() {
       dataLayer.push(arguments);
     }
-
-    gtag('js', new Date());
-    const isElectron = navigator && navigator.userAgent.toLowerCase().indexOf('electron/') > -1;
-    gtag('set', { 'ds': isElectron ? 'electron' : 'web' });
-
-    gtag('config', 'UA-104948571-1');
   </script>
 
 

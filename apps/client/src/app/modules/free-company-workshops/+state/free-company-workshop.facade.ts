@@ -472,12 +472,7 @@ export class FreeCompanyWorkshopFacade {
 
   @Memoized()
   public getSubmarineMaxRank(): Observable<number> {
-    return this.lazyData.getEntry('submarineRanks').pipe(
-      map((submarineRanks) => {
-        return +Object.keys(submarineRanks).pop();
-      }),
-      shareReplay(1)
-    );
+    return of(95);
   }
 
   @Memoized()

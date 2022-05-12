@@ -123,6 +123,7 @@ import { LazyDataModule } from './lazy-data/lazy-data.module';
 import { initialState as listsInitialState, listsReducer } from './modules/list/+state/lists.reducer';
 import { ListsEffects } from './modules/list/+state/lists.effects';
 import { ListsActionTypes, SetItemDone } from './modules/list/+state/lists.actions';
+import { GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER } from './core/analytics/analytics-router-initializer';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -185,6 +186,7 @@ const nzConfig: NzConfig = {
     AppComponent
   ],
   providers: [
+    GOOGLE_ANALYTICS_ROUTER_INITIALIZER_PROVIDER,
     { provide: NZ_I18N, useValue: en_US },
     {
       provide: NZ_CONFIG,
@@ -294,7 +296,7 @@ const nzConfig: NzConfig = {
         if (action.type.includes('LazyData')) {
           return { type: action.type };
         }
-        if(action.type === ListsActionTypes.SetItemDone){
+        if (action.type === ListsActionTypes.SetItemDone) {
           const { settings, ...sanitized } = (action as SetItemDone);
           return sanitized;
         }
@@ -318,8 +320,6 @@ const nzConfig: NzConfig = {
     NzAlertModule,
     NavigationSidebarModule,
     AdsModule,
-    NgxGoogleAnalyticsModule.forRoot('G-RNVD9NJW4N'),
-    NgxGoogleAnalyticsRouterModule,
     LazyDataModule
   ],
   bootstrap: [AppComponent]
