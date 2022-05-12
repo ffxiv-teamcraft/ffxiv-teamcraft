@@ -45,7 +45,10 @@
         <img *ngIf="row.alarm.fishEyes" [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
              [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
         <div *ngIf="!overlayMode" class="map-button">
-          <button (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
+          <button *ngIf="row.alarm.type > -1" (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
+            <i nz-icon nzType="environment-o"></i>
+          </button>
+          <button *ngIf="row.alarm.type === -5" routerLink="/db/{{translate.currentLang}}/fishing-spot/{{row.alarm.nodeId}}" nz-button nzShape="circle" nzSize="small" nzType="primary">
             <i nz-icon nzType="environment-o"></i>
           </button>
         </div>

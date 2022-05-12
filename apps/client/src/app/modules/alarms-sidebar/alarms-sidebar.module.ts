@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
 import { NodeDetailsModule } from '../node-details/node-details.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { NodeDetailsModule } from '../node-details/node-details.module';
     PipesModule,
     AntdSharedModule,
     FishingBaitModule,
-    NodeDetailsModule
+    NodeDetailsModule,
+    RouterModule
   ],
   declarations: [AlarmsSidebarComponent],
   exports: [AlarmsSidebarComponent]

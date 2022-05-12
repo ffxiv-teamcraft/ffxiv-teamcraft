@@ -9,6 +9,7 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { MapComponent } from '../../map/map/map.component';
 import { SettingsService } from '../../settings/settings.service';
 import { tap } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-alarms-sidebar',
@@ -27,7 +28,7 @@ export class AlarmsSidebarComponent implements OnInit {
   public overlayMode = false;
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
-              private dialog: NzModalService,
+              private dialog: NzModalService, public translate: TranslateService,
               private i18n: I18nToolsService, public settings: SettingsService,
               private cd: ChangeDetectorRef) {
   }
