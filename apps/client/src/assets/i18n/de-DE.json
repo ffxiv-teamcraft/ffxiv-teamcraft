@@ -1823,7 +1823,7 @@
     "Clipboard_content_malformed": "Der Inhalt in deiner Zwischenablage ist fehlerhaft",
     "Import_from_clipboard": "Aus Zwischenablage importieren",
     "Import_from_inventory": "Aus Inventar importieren",
-    "Extension_tip": "Du kannst das Inventar deines Gehilfen in die Zwischenablage kopieren, indem du die Inventar-Erfassen-Erweiterung benutzt: ",
+    "Extension_tip": "Du kannst das Inventar deines Gehilfen in die Zwischenablage kopieren, indem du die Inventarerfassungs-Erweiterung benutzt: ",
     "Extension_link": "Installiere die Erweiterung aus dem Chrome Web Store",
     "Clear": "Gegenstandsliste löschen",
     "Clipboard_import_duplicates": "Gegenstände werden hier ggf. doppelt angezeigt, da Lodestone nur Stapel anzeigt, diese Dopplungen sind also seperate Stapel bei deinen Gehilfen.",
