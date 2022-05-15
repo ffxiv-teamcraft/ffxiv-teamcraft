@@ -4,6 +4,7 @@ import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 
 declare const gtag: Function;
+declare const fathom: any;
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,9 @@ export class AnalyticsService {
   public pageView(url: string): void {
     if (this.platformService.isDesktop()) {
       this.ipc.send('analytics:pageView', url);
+      fathom.trackPageview({
+        url: url
+      });
     } else {
       gtag('set', 'page', url);
       gtag('send', 'pageview');

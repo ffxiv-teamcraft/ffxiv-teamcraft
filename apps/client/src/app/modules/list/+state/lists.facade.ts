@@ -56,6 +56,7 @@ import { PermissionsController } from '../../../core/database/permissions-contro
 import { ListController } from '../list-controller';
 
 declare const gtag: Function;
+declare const fathom: any;
 
 @Injectable({
   providedIn: 'root'
@@ -261,6 +262,7 @@ export class ListsFacade {
         const list = this.newListWithName(res.name);
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
+        fathom.trackGoal('AYCCVISE', 0);
         return list;
       })
     );
