@@ -813,7 +813,7 @@
     "SPLIT": {
       "Pick_items": "다른 목록에 추가할 아이템을 선택",
       "Remove_from_list": "현재 목록에서 제거",
-      "Select_not_completed": "Select items not completed"
+      "Select_not_completed": "완료되지 않은 아이템 선택"
     }
   },
   "LIST_TAGS": {
@@ -2897,7 +2897,7 @@
   },
   "PROFITS": {
     "Title": "Profits Helper",
-    "Description": "Find the best items to craft or gather based on your levels and marketboard data from Universalis",
+    "Description": "캐릭터의 레벨과 Universalis의 장터 데이터를 기반으로 가장 적합한 채집/제작 아이템을 찾습니다.",
     "Self_sufficient": "자급자족",
     "Crafting": "제작",
     "Gathering": "채집",
