@@ -22,6 +22,7 @@ import { Craft } from '@ffxiv-teamcraft/simulator';
 import { syncHqFlags } from '../../core/data/sources/sync-hq-flags';
 
 
+declare const fathom: any;
 declare const gtag: Function;
 
 interface CraftAdditionParams {
@@ -74,6 +75,7 @@ export class ListController {
         'event_label': 'clone',
         'non_interaction': true
       });
+      fathom.trackGoal('AYCCVISE', 0);
       list.forks++;
       ListController.reset(clone);
     }

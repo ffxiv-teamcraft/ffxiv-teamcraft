@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.6.5",
+  "version": "9.6.6",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -225,9 +225,9 @@
     "del-cli": "^1.1.0",
     "dexie": "^3.2.0",
     "dotenv": "10.0.0",
-    "electron": "16.0.0",
-    "electron-builder": "22.13.1",
-    "electron-builder-squirrel-windows": "22.14.7",
+    "electron": "^18.2.4",
+    "electron-builder": "^23.0.3",
+    "electron-builder-squirrel-windows": "^23.0.9",
     "enquirer": "^2.3.6",
     "express": "^4.17.1",
     "fast-json-patch": "^3.0.0-1",
@@ -256,7 +256,7 @@
     "multi-progress": "^2.0.0",
     "ng-drag-drop": "^5.0.0",
     "ng-push-ivy": "^1.0.8",
-    "ng-zorro-antd": "13.0.1",
+    "ng-zorro-antd": "13.2.2",
     "ngx-color-picker": "^11.0.0",
     "ngx-markdown": "^12.0.1",
     "nz-tslint-rules": "^0.901.2",
@@ -277,7 +277,7 @@
     "ws": "^8.2.3",
     "xhr2": "^0.2.1",
     "yargs": "^17.1.1",
-    "zone.js": "0.11.4"
+    "zone.js": "0.11.5"
   },
   "resolutions": {
     "@types/node": "14.14.45"
