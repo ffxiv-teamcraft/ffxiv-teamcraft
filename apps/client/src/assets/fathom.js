@@ -84,7 +84,6 @@ window.fathom = function() {
 
   return tracker, {
     siteId: siteId, send: function(params) {
-      console.log('SEND', trackingEnabled());
       var img;
       trackingEnabled()
       && ((img = document.createElement('img')).setAttribute('alt', ''), img.setAttribute('aria-hidden', 'true'), img.style.position = 'absolute', img.src = trackerUrl + encodeParameters(params), img.addEventListener('load', function() {

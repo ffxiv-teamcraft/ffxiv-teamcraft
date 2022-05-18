@@ -48,6 +48,7 @@ export class AnalyticsService {
     script.setAttribute('data-site', AnalyticsService.FATHOM_ID);
     script.setAttribute('data-spa', 'auto');
     script.setAttribute('data-tracker-url', 'https://beard-genuine.ffxivteamcraft.com/');
+    script.setAttribute('data-excluded-domains', 'localhost');
     if (desktop) {
       script.setAttribute('data-host', 'https://ffxivteamcraft.electron');
     }
