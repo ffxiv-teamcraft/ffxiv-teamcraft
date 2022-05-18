@@ -1150,7 +1150,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your Profile page to configure it properly and set stats.",
+      "Job_not_configured": "Du hast diesen Job noch nicht konfiguriert. Gehe in dein Profil, um ihn zu konfigurieren und die Attribute zu speichern.",
       "Job_not_configured_anonymous": "Bitte gib für eine akkurate Simulation deine Attribute an oder melde dich mit deinem Konto an",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
@@ -1170,7 +1170,7 @@
       "No_food": "Kein Gericht",
       "No_medicine": "Keine Arznei",
       "No_fc_buffs": "Keine FG Buffs",
-      "Quest_warning": "Make sure you have done the lvl 70 quest for Stroke of Genius",
+      "Quest_warning": "Stelle sicher, dass die Stufe 70-Quest für die Eigenschaft \"Genialer Funke\" erledigt wurde",
       "Starting_quality": "Anfangsqualität",
       "STATS": {
         "CP": "HP",
@@ -1335,19 +1335,19 @@
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
       "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
-      "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
+      "Alarms": "Erstelle Alarme, um kein Erscheinen eines Vorkommens zu verpassen, organisiere sie in Gruppen, importiere sie im Spiel, alles ist möglich!",
       "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
       "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
-      "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
+      "Macro_translation": "Du hast Makros, die nicht in deiner Sprache sind? Nutze die Makro-Übersetzung und übersetze es in deine Sprache damit es auch in deiner Sprachversion von FFXIV funktioniert!"
     }
   },
   "UPDATE": {
     "New_update_available": "Eine neue Version ist verfügbar!",
     "New_update_available_desktop": "Eine neue Version ist verfügbar!\nKlicke hier, um sie herunterzuladen und zu installieren.",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden.",
-    "Downloading_update": "Downloading the update! You'll be prompted to install once the download is done",
-    "Possible_update_issue": "It seems like your download is having an issue. Please click this icon to download latest setup."
+    "Downloading_update": "Das Update wird heruntergeladen. Sobald es abgeschlossen ist, bekommst du eine Benachrichtigung",
+    "Possible_update_issue": "Es sieht aus, als hätte der Download ein Problem. Bitte klicke auf dieses Symbol um das neueste Setup herunterzuladen."
   },
   "LOG_TRACKER": {
     "Title": "Notizbuch-Tracker",
@@ -1510,7 +1510,7 @@
     "TT_card_unlock": "Schaltet die Karte in der Sammlung frei",
     "Track_on_attt": "Auf anderem Triple-Triad-Tracker verfolgen",
     "Unlocked_by_quest": "Wird durch Quest freigeschaltet",
-    "More_on_attt_npc": "See more details about this NPC on Another Triple Triad Tracker",
+    "More_on_attt_npc": "Weitere Details über diesen NPC auf \"Another Triple Triad Tracker\" ansehen",
     "Triple_triad_pack": "Triple-Triad-Boosterpaket",
     "Dungeons": "Dungeons/Prüfungen",
     "Used_for_trades": "Handel",
@@ -1823,7 +1823,7 @@
     "Clipboard_content_malformed": "Der Inhalt in deiner Zwischenablage ist fehlerhaft",
     "Import_from_clipboard": "Aus Zwischenablage importieren",
     "Import_from_inventory": "Aus Inventar importieren",
-    "Extension_tip": "You can copy your retainer's inventory on Lodestone to your clipboard using the inventory grabber extension: ",
+    "Extension_tip": "Du kannst das Inventar deines Gehilfen in die Zwischenablage kopieren, indem du die Inventarerfassungs-Erweiterung benutzt: ",
     "Extension_link": "Installiere die Erweiterung aus dem Chrome Web Store",
     "Clear": "Gegenstandsliste löschen",
     "Clipboard_import_duplicates": "Gegenstände werden hier ggf. doppelt angezeigt, da Lodestone nur Stapel anzeigt, diese Dopplungen sind also seperate Stapel bei deinen Gehilfen.",
@@ -1845,7 +1845,7 @@
     "Pick_currency": "Währung auswählen",
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
-    "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
+    "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix, da wir nichts daran ändern können.",
     "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
     "X_sold_last_week": "{{amount}} verkauft in der letzten Woche"
@@ -1860,7 +1860,7 @@
   },
   "ERRORS": {
     "Http_request_error": "Es gibt ein Problem mit {{tool}}. Bitte warte einen Moment und versuche es erneut. Wenn das Problem weiterhin besteht, überprüfe #announcements im Teamcraft-Discord für Server-Updates.",
-    "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to the internet."
+    "Firebase_blocked": "Teamcraft konnte die Datenbank nicht erreichen. Scheinbar wird der Zugriff blockiert oder du hast keine Internetverbindung."
   },
   "SEARCH": {
     "Sort_by": "Sortieren nach:",
@@ -1923,10 +1923,10 @@
     "Banner_title": "Die Paketerfassung ist verfügbar",
     "Button_label": "Paketerfassung aktivieren",
     "Banner_description": "Du kannst die Paketerfassung aktivieren, damit Teamcraft deine FFXIV-Pakete lesen kann (kann auch in den Einstellungen aktiviert/deaktiviert werden). Hierdurch werden Listen automatisch ausgefüllt, wenn du einen Gegenstand erhältst. Die Daten werden außerdem Universalis zur Verfügung gestellt, dem Marktbrett-Aggregator.",
-    "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default. Just make sure to avoid telling everybody ingame and you'll be fine.",
+    "Banner_description_warning": "Die Paketerfassung ist gegen die Nutzungsbedingungen von Ffxiv, weshalb sie standardmäßig deaktiviert ist. Solange du niemandem davon im Spiel erzählst, ist es aber in Ordnung diese zu benutzen.",
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort in einem anderen Gebiet und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing. Please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Inventarerfassung funktioniert nicht, ohne zu wissen, welchen Charakter du gerade spielst, sortiere/entsortiere dein Inventar oder melde dich mit deinem Charakter an, damit Teamcraft deinen aktuellen Charakter erkennen kann.",
     "Unknown_character": "Unbekannter Ingame Charakter",
     "No_character_id": "No ingame character ID set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame). This is only needed once.",
