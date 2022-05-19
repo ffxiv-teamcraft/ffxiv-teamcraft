@@ -149,7 +149,7 @@ export class MateriaService {
     );
   }
 
-  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean, progression?: GearsetProgression): Observable<{ id: number, amount: number, scrip?: { id: number, amount: number } }[]> {
+  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean, progression?: GearsetProgression): Observable<{ id: number, slots: number, amount: number, scrip?: { id: number, amount: number } }[]> {
     const materiasObsArray$ = Object.keys(gearset)
       .filter(key => gearset[key] && gearset[key].itemId !== undefined)
       .map(key => {
@@ -184,6 +184,7 @@ export class MateriaService {
                 id: materia.itemId,
                 baseParamId: materia.baseParamId,
                 tier: materia.tier,
+                slots: 0,
                 amount: 0,
                 value: materia.value
               });
@@ -197,21 +198,26 @@ export class MateriaService {
               return;
             }
             let amount = Math.max(Math.ceil(Math.log(1 - this.settings.materiaConfidenceRate) / Math.log(1 - (overmeldChances / 100))), 1);
+            let slots = 1;
             // If we're including all tools and it's a tool
             if (includeAllTools && ['mainHand', 'offHand'].indexOf(slot) > -1) {
               // If DoH
               if (gearset.job < 16) {
                 amount *= 8;
+                slots *= 8;
               } else if (gearset.job < 19) {
                 if (slot === 'mainHand') {
                   amount *= 3;
+                  slots *= 3;
                 } else {
                   // You can't meld FSH's offhand
                   amount *= 2;
+                  slots *= 2;
                 }
               }
             }
             materiaRow.amount += amount;
+            materiaRow.slots += slots;
           });
           return acc;
         }, []).sort((a, b) => {
