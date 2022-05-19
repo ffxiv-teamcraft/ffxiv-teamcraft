@@ -96,7 +96,7 @@
         <div fxLayout="column" fxLayoutGap="10px">
           <div *ngFor="let row of column; trackBy: trackByRow">
             <app-metric-display [title]="row.title" [data]="row.data" [component]="row.component"
-                                [params]="row.params"></app-metric-display>
+                                [params]="row.params" [filters]="row.filters"></app-metric-display>
           </div>
         </div>
       </div>
