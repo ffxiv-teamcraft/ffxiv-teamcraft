@@ -1,16 +1,21 @@
-<nz-table #dataTable [nzData]="data$ | async">
+<nz-table *ngIf="columns$ | async as columns" #dataTable [nzData]="data$ | async">
   <thead>
   <tr>
     <th>{{'METRICS.TABLE.Entry_label' | translate}}</th>
-    <th *ngFor="let column of columns" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">{{('METRICS.TABLE.' + column.title) | translate}}</th>
+    <th *ngFor="let column of columns"
+        [nzSortFn]="column.compare"
+        [nzSortPriority]="column.priority"
+        (nzSortOrderChange)="saveSort(column.title, $event)"
+        [nzSortOrder]="sortState[column.title]"
+    >{{('METRICS.TABLE.' + column.title) | translate}}</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let row of dataTable.data">
     <!-- TODO: if we ever support other probes than currency and item, this will need a switch/case system -->
-    <td [nzEllipsis]="true"><a routerLink="/db/{{translate.currentLang}}/item/{{row.data[0]}}"></a>{{row.data[0] | itemName | i18n}}</td>
+    <td [nzEllipsis]="true"><div class="item-name" [style.width]="labelWidth | widthBreakpoints">{{row.data[0] | itemName | i18n}}</div></td>
     <td>{{row.data[1] | number:'1.0-0':translate.currentLang}}</td>
-    <td>{{('METRICS.SOURCES.' + ProbeSource[row.source]) | translate}}</td>
+    <td *ngIf="showSourceColumn$ | async">{{('METRICS.SOURCES.' + ProbeSource[row.source]) | translate}}</td>
     <td>{{(row.timestamp * 1000) | date:'medium'}}</td>
   </tr>
   </tbody>

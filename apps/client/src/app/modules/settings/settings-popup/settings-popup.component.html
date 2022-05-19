@@ -264,7 +264,7 @@
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Materia_confidence_rate' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" [nzExtra]="'SETTINGS.Materia_confidence_rate_explain' | translate">
-          <nz-input-number [nzMax]="0.99" [nzMin]="0.1" [(ngModel)]="settings.materiaConfidenceRate"></nz-input-number>
+          <nz-input-number [nzMax]="0.99" [nzMin]="0.1" [nzStep]="0.1" [(ngModel)]="settings.materiaConfidenceRate"></nz-input-number>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item class="empty-label">

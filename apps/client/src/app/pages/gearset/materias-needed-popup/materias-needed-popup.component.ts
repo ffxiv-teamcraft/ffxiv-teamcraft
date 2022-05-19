@@ -5,6 +5,7 @@ import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { combineLatest, Observable } from 'rxjs';
 import { observeInput } from '../../../core/rxjs/observe-input';
 import { switchMap } from 'rxjs/operators';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-materias-needed-popup',
@@ -27,7 +28,7 @@ export class MateriasNeededPopupComponent {
 
   totalNeeded$: Observable<{ id: number, amount: number, scrip?: { id: number, amount: number } }[]>;
 
-  constructor(private materiaService: MateriaService) {
+  constructor(private materiaService: MateriaService, public settings: SettingsService) {
     this.totalNeeded$ = combineLatest([
       observeInput(this, 'gearset'),
       observeInput(this, 'progression', true),

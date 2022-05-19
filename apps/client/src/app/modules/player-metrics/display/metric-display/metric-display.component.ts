@@ -57,6 +57,11 @@ export class MetricDisplayComponent extends AbstractMetricDisplayComponent imple
       ).subscribe(data => {
         componentRef.instance.data = data;
       });
+      this.filters$.pipe(
+        takeUntil(this.onDestroy$)
+      ).subscribe(filters => {
+        componentRef.instance.filters = filters;
+      });
       componentRef.instance.title = this.title;
       componentRef.instance.params = this.params;
       this.cdRef.detectChanges();

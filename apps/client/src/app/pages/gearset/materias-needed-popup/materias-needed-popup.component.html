@@ -1,12 +1,23 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded$ | async as totalNeeded; else loader">
-  <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools">
-    {{'GEARSETS.Include_all_tools' | translate}}
-  </label>
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <nz-input-group class="confidence-input" nzAddOnBefore="{{'SETTINGS.Materia_confidence_rate' | translate}}" [nzAddOnAfter]="info">
+      <ng-template #info>
+        <i nz-icon nzType="info-circle" nz-tooltip [nzTooltipTitle]="'SETTINGS.Materia_confidence_rate_explain' | translate"></i>
+      </ng-template>
+      <nz-input-number [nzMax]="0.99" [nzMin]="0.1" [nzStep]="0.1" [(ngModel)]="settings.materiaConfidenceRate"></nz-input-number>
+    </nz-input-group>
+    <div>
+      <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools">
+        {{'GEARSETS.Include_all_tools' | translate}}
+      </label>
+    </div>
+  </div>
   <table>
     <thead>
     <tr>
       <th>{{'GEARSETS.Materia' | translate}}</th>
       <th>{{'GEARSETS.Amount_needed' | translate}}</th>
+      <th>{{'GEARSETS.Slots_used' | translate}} <i nz-icon nzType="info-circle" nz-tooltip [nzTooltipTitle]="'GEARSETS.Slots_used_explain' | translate"></i></th>
       <th>{{'GEARSETS.Cost' | translate}}</th>
     </tr>
     </thead>
@@ -18,6 +29,9 @@
       </td>
       <td class="amount">
         {{row.amount}}
+      </td>
+      <td class="amount">
+        {{row.slots}}
       </td>
       <td class="amount">
         <div *ngIf="row.scrip; else costUnknown" fxLayout="row" fxLayoutAlign="flex-end center">

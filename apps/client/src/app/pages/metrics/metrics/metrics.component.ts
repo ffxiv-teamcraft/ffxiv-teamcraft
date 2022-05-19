@@ -49,6 +49,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
               title: row.title,
               component: row.component,
               params: row.params,
+              filters: row.filters,
               data: logs.filter(log => {
                 return log !== undefined && (!log.type || log.type === row.type) && filterFn(log);
               })
