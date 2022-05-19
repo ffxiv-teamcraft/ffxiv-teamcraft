@@ -2,7 +2,12 @@
   <thead>
   <tr>
     <th>{{'METRICS.TABLE.Entry_label' | translate}}</th>
-    <th *ngFor="let column of columns" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">{{('METRICS.TABLE.' + column.title) | translate}}</th>
+    <th *ngFor="let column of columns"
+        [nzSortFn]="column.compare"
+        [nzSortPriority]="column.priority"
+        (nzSortOrderChange)="saveSort(column.title, $event)"
+        [nzSortOrder]="sortState[column.title]"
+    >{{('METRICS.TABLE.' + column.title) | translate}}</th>
   </tr>
   </thead>
   <tbody>

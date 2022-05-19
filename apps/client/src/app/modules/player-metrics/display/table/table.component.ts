@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { ProbeSource } from '../../model/probe-source';
 import { TranslateService } from '@ngx-translate/core';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./table.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TableComponent extends AbstractMetricDisplayComponent {
+export class TableComponent extends AbstractMetricDisplayComponent implements OnInit {
   ProbeSource = ProbeSource;
 
   public columns = [
@@ -31,7 +30,18 @@ export class TableComponent extends AbstractMetricDisplayComponent {
     }
   ];
 
+  public sortState: Record<string, string | null> = {};
+
   constructor(public translate: TranslateService) {
     super();
+  }
+
+  saveSort(column: string, sort: string | null): void {
+    this.sortState[column] = sort;
+    localStorage.setItem(`metrics:table:sort:${this.title}`, JSON.stringify(this.sortState));
+  }
+
+  ngOnInit(): void {
+    this.sortState = JSON.parse(localStorage.getItem(`metrics:table:sort:${this.title}`) || '{}');
   }
 }
