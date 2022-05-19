@@ -2073,6 +2073,8 @@
     "Total_cost": "Costo total (intercambios, gil, etc.)",
     "Materia": "Materia",
     "Amount_needed": "Cantidad",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "Cost",
     "Modal_editor": "Materias para {{itemName}}",
     "Unavailable_slot": "Ranura no disponible",
