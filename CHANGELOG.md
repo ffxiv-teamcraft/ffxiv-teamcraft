@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.7"></a>
+## [9.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.6...v9.6.7) (2022-05-19)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an error with jsdelivr loading in China ([de57eb8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de57eb8)), closes [#2262](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2262)
+
+
+### Features
+
+* **gearset:** better display for total materia needed ([620e0c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/620e0c2)), closes [#2270](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2270)
+* **metrics:** better display logic for label column ([297dff2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/297dff2)), closes [#2266](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2266)
+* **metrics:** hide source column when it's not needed ([05a92dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/05a92dd)), closes [#2268](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2268)
+* **metrics:** save table sort accross sessions ([c4bd340](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4bd340)), closes [#2267](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2267)
+
+
+
 <a name="9.6.6"></a>
 ## [9.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.5...v9.6.6) (2022-05-18)
 
