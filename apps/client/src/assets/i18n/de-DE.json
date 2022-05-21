@@ -2809,7 +2809,7 @@
     "Gubal_analysis_suggestion": "Vorschlag basierend auf Datenanalyse",
     "Cannot_report_for_this_spot": "Du kannst keine Details für diesen Ort und diesem Fisch melden, da sie bereits existieren",
     "Please_suggest_edit_instead": "Bitte schlage stattdessen eine Änderung zu einem bestehenden vor",
-    "Add_data_sources": "Datenquellen für dieses Element hinzufügen",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "Nicht übernommen",
     "Not_applied_yet_explain": "Diese Quelle wird bei der nächsten Aktualisierung zur Liste und zum Datenbanksystem hinzugefügt",
     "Pending_changes_count": "{{amount}} anstehende Änderungen zum Überprüfen",
