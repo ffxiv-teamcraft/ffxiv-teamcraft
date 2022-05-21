@@ -15,11 +15,6 @@
         "source": "/desktop",
         "destination": "https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest",
         "type": 301
-      },
-      {
-        "source": "/ads.txt",
-        "destination": "https://adstxt.venatusmedia.com/6017dadc35df310fc2d5f194_ads.txt",
-        "type": 301
       }
     ],
     "rewrites": [
