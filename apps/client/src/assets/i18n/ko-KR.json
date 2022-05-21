@@ -2809,7 +2809,7 @@
     "Gubal_analysis_suggestion": "데이터 분석을 기반으로 한 제안",
     "Cannot_report_for_this_spot": "해당 물고기의 데이터는 이미 존재하기 때문에 해당 낚시터에 대한 세부정보를 리포트할 수 없습니다",
     "Please_suggest_edit_instead": "기존에 제안했던 리포트를 편집해주세요",
-    "Add_data_sources": "해당 아이템의 데이터 출처를 추가",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "적용되지 않음",
     "Not_applied_yet_explain": "해당 출처는 다음 업데이트에 목록과 데이터베이스 시스템에 추가됩니다",
     "Pending_changes_count": "{{amount}} pending changes to review",
