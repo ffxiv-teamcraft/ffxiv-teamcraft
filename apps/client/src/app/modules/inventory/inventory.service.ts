@@ -123,7 +123,7 @@ export class InventoryService {
     let constantsUrl = 'https://raw.githubusercontent.com/karashiiro/FFXIVOpcodes/master/constants.min.json';
 
     if (this.settings.region === Region.China) {
-      constantsUrl = 'https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json';
+      constantsUrl = 'https://opcodes.xivcdn.com/constants.min.json';
     }
 
     const inventoryTransactionMessages$ = this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>(constantsUrl).pipe(
