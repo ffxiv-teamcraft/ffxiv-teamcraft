@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.8"></a>
+## [9.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.7...v9.6.8) (2022-05-21)
+
+
+### Bug Fixes
+
+* **desktop:** load constants from xivcdn instead of jsdelivr for chinese region ([0ea145a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ea145a))
+
+
+
 <a name="9.6.7"></a>
 ## [9.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.6...v9.6.7) (2022-05-19)
 
