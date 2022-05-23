@@ -2842,7 +2842,7 @@
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
     "Speed": "속도",
-    "Shadow_size": "Shadow size",
+    "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
@@ -2853,9 +2853,9 @@
       "VERY_FAST": "고속"
     },
     "SHADOWS": {
-      "SMALL": "Small",
-      "NORMAL": "Normal",
-      "LARGE": "Large"
+      "SMALL": "소형",
+      "NORMAL": "중형",
+      "LARGE": "대형"
     },
     "SOURCE": {
       "DESYNTH": "분해로 획득",
@@ -2890,10 +2890,10 @@
     "Restart_to_install": "적용을 위해 재시작하시겠습니까?"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
+    "Mining": "광물 캐기",
+    "Quarrying": "암석 캐기",
+    "Logging": "나무 베기",
+    "Harvesting": "풀 베기",
     "Fishing": "낚시터",
     "Spearfishing": "작살"
   },
