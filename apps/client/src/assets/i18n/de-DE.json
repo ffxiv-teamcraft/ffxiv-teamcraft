@@ -1059,7 +1059,7 @@
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
     "Compact": "Kompakt",
     "Detailed": "Detailliert",
-    "Remove_IP": "Remove initial preparations",
+    "Remove_IP": "Entferne Fulminanter Start",
     "Stats_applied": "Werte angewendet",
     "Show_rotations_above_stats": "Rotationen mit den erforderlichen Werten über deinen einbeziehen",
     "Full_buttons": "Show full buttons",
@@ -1949,7 +1949,7 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
-    "Banner_description": "You can change the region to the one which you played in for a better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "Du kannst die Region, in der du spielst, ändern, um bessere Resultate (Datenbank, Simulator, Paketerfassung usw.) zu erzielen.",
     "Button_label": "Region wechseln"
   },
   "INVENTORY": {
