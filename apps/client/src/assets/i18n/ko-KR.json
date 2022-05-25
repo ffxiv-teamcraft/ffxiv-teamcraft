@@ -924,7 +924,7 @@
     "Legendary": "전설",
     "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
     "Node_type": "유형",
-    "Use": "Use",
+    "Use": "용도",
     "Page_range": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템"
   },
   "ANNOUNCEMENT": {
@@ -1090,7 +1090,7 @@
       "Rlvl_filter_placeholder": "Rlvl",
       "Filters_reset": "필터 초기화",
       "Configuration_popup": "커뮤니티에 공유하기",
-      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
+      "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
       "Difficulty_filter_placeholder": "작업량",
@@ -1944,8 +1944,8 @@
     "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
     "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
+    "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2041,7 +2041,7 @@
     },
     "DEPRECATED_HQ": {
       "Title": "품질이 상승하지 않아 HQ가 필요없는 아이템",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Message": "6.0 패치 이후로 해당 아이템은 HQ여도 일반 품질로 적용됩니다"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",
@@ -2073,8 +2073,8 @@
     "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
-    "Slots_used": "Slots",
-    "Slots_used_explain": "# of slots this materia is used for",
+    "Slots_used": "슬롯",
+    "Slots_used_explain": "해당 마테리아가 적용된 슬롯 수",
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
