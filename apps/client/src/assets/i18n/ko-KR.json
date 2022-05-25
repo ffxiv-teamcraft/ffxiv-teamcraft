@@ -1087,7 +1087,7 @@
       "Name_filter_placeholder": "로테이션 이름",
       "Tags_filter_placeholder": "태그",
       "Durability_filter_placeholder": "내구도",
-      "Rlvl_filter_placeholder": "Rlvl",
+      "Rlvl_filter_placeholder": "제작법 레벨",
       "Filters_reset": "필터 초기화",
       "Configuration_popup": "커뮤니티에 공유하기",
       "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
@@ -1636,9 +1636,9 @@
       "Fish_per_weather": "날씨당 물고기",
       "Fish_per_bait": "미끼당 물고기",
       "Fish_per_tug": "입질당 물고기",
-      "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Fish_per_hookset": "낚아채기당 물고기",
+      "Include_misses": "놓친 수 포함",
+      "Miss": "놓침"
     },
     "NODE": {
       "Items": "아이템",
@@ -1999,7 +1999,7 @@
     "Hide_empty": "숨기기",
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "소지품 최적화를 JSON 형식으로 클립보드에 복사했습니다",
     "Pause_tracking": "소지품 트래킹 일시정지",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
