@@ -1059,7 +1059,7 @@
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
     "Compact": "간소화",
     "Detailed": "세부 정보",
-    "Remove_IP": "Remove initial preparations",
+    "Remove_IP": "최종 확인 제거",
     "Stats_applied": "능력치 적용됨",
     "Show_rotations_above_stats": "현재 능력치보다 높은 능력치를 요구하는 로테이션 포함",
     "Full_buttons": "모든 버튼 표시",
