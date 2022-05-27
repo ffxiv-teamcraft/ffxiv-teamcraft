@@ -160,7 +160,7 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
-      return !this.platformService.isDesktop() && !(user.admin || user.moderator || user.patron);
+      return true; //!(user.admin || user.moderator || user.patron);
     })
   );
 

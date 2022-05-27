@@ -45,10 +45,18 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    if (!this.platform.isDesktop()) {
-      this.addAd();
-      this.loaded = true;
+    if (this.platform.isDesktop() && !this.platform.isOverlay()) {
+      (<any>window).ramp = (<any>window).ramp || {};
+      (<any>window).ramp.que = (<any>window).ramp.que || [];
+      const pwScript = document.createElement('script');
+      pwScript.setAttribute('src', 'https://cdn.intergient.com/1024627/73554/ramp_config.js');
+      document.head.appendChild(pwScript);
+      const adScript = document.createElement('script');
+      adScript.setAttribute('src', 'https://cdn.intergient.com/ramp_core.js');
+      document.body.appendChild(adScript);
     }
+    this.addAd();
+    this.loaded = true;
   }
 
   ngOnDestroy(): void {
@@ -56,15 +64,24 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   }
 
   private addAd(): void {
-    if (this.placementId) {
-      (window as any).top.__vm_add = (window as any).top.__vm_add || [];
-      (window as any).top.__vm_add.push(this.vmAdRef.nativeElement);
+    if (!this.platform.isDesktop()) {
+      if (this.placementId) {
+        (window as any).top.__vm_add = (window as any).top.__vm_add || [];
+        (window as any).top.__vm_add.push(this.vmAdRef.nativeElement);
+      }
+    } else {
+      (<any>window).ramp.que.push(function () {
+        // this parameter must match the ID of the div to render the ad inside of
+        (<any>window).ramp.addTag('pwAdBanner');
+      });
     }
   }
 
   private removeAd(): void {
-    (window as any).top.__vm_remove = (window as any).top.__vm_remove || [];
-    (window as any).top.__vm_remove.push(this.vmAdRef.nativeElement);
+    if (!this.platform.isDesktop()) {
+      (window as any).top.__vm_remove = (window as any).top.__vm_remove || [];
+      (window as any).top.__vm_remove.push(this.vmAdRef.nativeElement);
+    }
   }
 
 }
