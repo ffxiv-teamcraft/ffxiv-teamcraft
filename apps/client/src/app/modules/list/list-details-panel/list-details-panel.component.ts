@@ -12,7 +12,7 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { Observable, of } from 'rxjs';
+import { merge, Observable, of, ReplaySubject } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
@@ -35,6 +35,7 @@ import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
+import { ListAggregate } from '../../../pages/list-aggregate/model/list-aggregate';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -57,6 +58,16 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   @Input()
   largeList = false;
 
+  @Input()
+  aggregate: ListAggregate;
+
+  private _forcePermissionLevel$ = new ReplaySubject<PermissionLevel>();
+
+  @Input()
+  set permissionLevel(level: PermissionLevel) {
+    this._forcePermissionLevel$.next(level);
+  }
+
   collapsed = false;
 
   zoneBreakdown: ZoneBreakdown;
@@ -69,7 +80,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMapForZone: { [index: number]: boolean } = {};
 
-  permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
+  permissionLevel$: Observable<PermissionLevel> = merge(
+    this.listsFacade.selectedListPermissionLevel$,
+    this._forcePermissionLevel$
+  );
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 

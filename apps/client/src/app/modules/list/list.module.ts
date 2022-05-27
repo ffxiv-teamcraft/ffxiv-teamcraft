@@ -66,6 +66,7 @@ import { QuestsExtractor } from './data/extractor/quests-extractor';
 import { AchievementsExtractor } from './data/extractor/achievements-extractor';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { DeprecatedExtractor } from './data/extractor/deprecated-extractor';
+import { AggregateItemRowComponent } from './item/aggregate-item-row/aggregate-item-row.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -145,7 +146,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemRowButtonsComponent,
     ListProgressbarComponent,
     ListSplitPopupComponent,
-    ItemRowMenuComponent
+    ItemRowMenuComponent,
+    AggregateItemRowComponent
   ],
   exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
 })

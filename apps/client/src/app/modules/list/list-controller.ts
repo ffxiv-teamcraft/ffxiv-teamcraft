@@ -154,7 +154,7 @@ export class ListController {
    * @param {List} otherList
    * @returns {List}
    */
-  public static merge(list: List, otherList: List): List {
+  public static merge(list: List, otherList: Pick<List, 'items' | 'finalItems'>): List {
     otherList.items.forEach(item => {
       ListController.add(list, list.items, item);
     });

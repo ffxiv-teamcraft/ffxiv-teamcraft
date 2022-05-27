@@ -2912,5 +2912,16 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "LIST_AGGREGATE": {
+    "Home_title": "List Aggregate",
+    "Home_subtitle": "Open multiple lists at once in an aggregated view",
+    "Select_lists": "Select the lists you want to aggregate",
+    "Select_layout": "Select a layout",
+    "Open_aggregate": "Open an aggregated view",
+    "Title": "Aggregated list view",
+    "Select_panel": "Select a panel to open its aggregated view",
+    "Missing_lists": "{{amount}} list(s) could not be loaded properly",
+    "Missing_lists_description": "Please make sure you have enough permissions on all the lists and that they still exist (missing ids: {{ids}})."
   }
 }

@@ -182,7 +182,7 @@ export class ListsEffects {
       }
       return [listKey, null];
     }),
-    switchMap(([key, list]: [string, List]) => {
+    mergeMap(([key, list]: [string, List]) => {
       if (list && (list as any).modificationsHistory) {
         return this.listService.migrateListModificationEntries(list).pipe(
           mapTo([key, list])

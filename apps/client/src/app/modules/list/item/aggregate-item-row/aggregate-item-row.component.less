@@ -1,0 +1,136 @@
+@import '../../../../../common';
+
+.item-row {
+  padding: 2px 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &.can-skip {
+    opacity: .5;
+  }
+
+  .amount-in-inventories {
+    margin-left: 10px;
+  }
+
+  .inventory-hq {
+    margin-bottom: 3px;
+  }
+
+  .inventory-tag {
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+
+  .working-on-it {
+    margin-left: 5px;
+  }
+
+  .item-name {
+    cursor: pointer;
+  }
+
+  .node-type-icon {
+    width: 24px;
+  }
+
+  .img-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .gardening-icon {
+    margin-top: 4px;
+  }
+
+  .gathering-icon {
+    margin-top: -5px;
+  }
+
+  .round-icon {
+    border-radius: 50%;
+    margin-top: -3px;
+  }
+
+  .amount-input {
+    display: inline-flex;
+  }
+}
+
+.obtentions-container {
+  width: 100%;
+  padding-left: 20px;
+  @media @large-desktop {
+    padding-left: 50px;
+  }
+}
+
+.odd {
+  background-color: rgba(77, 77, 77, .5);
+}
+
+.block {
+  display: flex;
+}
+
+.left-block {
+  @media @mobile {
+    justify-content: center;
+    margin: 5px 0;
+  }
+}
+
+.center-block {
+  justify-content: center;
+  @media @mobile {
+    margin: 5px 0;
+    &.empty {
+      margin: 0;
+    }
+  }
+}
+
+.books-and-input-block {
+  justify-content: flex-end;
+  align-items: center;
+  @media @mobile {
+    justify-content: center;
+    margin: 5px 0;
+  }
+}
+
+.item-obtention {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.needed {
+  font-weight: bold;
+}
+
+.skip-tag {
+  margin-left: 5px;
+}
+
+.menu-buttons {
+  margin-left: 5px;
+}
+
+.done-button {
+  margin-left: 5px;
+}
+
+.done-icon {
+  width: 24px;
+  margin-left: 5px;
+}
+
+.masterbooks {
+  margin-right: 5px;
+}

@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/list-details/list-details.module').then(m => m.ListDetailsModule)
   },
   {
+    path: 'list-aggregate',
+    loadChildren: () => import('./pages/list-aggregate/list-aggregate.module').then(m => m.ListAggregateModule)
+  },
+  {
     path: 'workshop',
     loadChildren: () => import('./pages/workshop-details/workshop-details.module').then(m => m.WorkshopDetailsModule)
   },

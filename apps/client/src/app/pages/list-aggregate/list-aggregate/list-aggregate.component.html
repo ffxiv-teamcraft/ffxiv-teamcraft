@@ -1,0 +1,26 @@
+<nz-page-header [nzTitle]="'LIST_AGGREGATE.Title' | translate" [nzSubtitle]="subtitle$ | async"></nz-page-header>
+
+<nz-alert *ngIf="missingLists$ | async as missingLists"
+          nzType="warning"
+          nzShowIcon
+          [nzMessage]="'LIST_AGGREGATE.Missing_lists' | translate:{amount: missingLists.length}"
+          [nzDescription]="'LIST_AGGREGATE.Missing_lists_description' | translate: {ids: missingLists}">
+</nz-alert>
+
+<ng-container *ngIf="selectedPanelTitle$ | async; else pickPanel">
+  <ng-container *ngIf="panelDisplay$ | async as display">
+    <app-list-details-panel *ngIf="display.panel" [finalItems]="display.finalItems" [displayRow]="display.panel"
+                            [permissionLevel]="permissionLevel$ | async" [aggregate]="aggregate$ | async"></app-list-details-panel>
+  </ng-container>
+</ng-container>
+<ng-template #pickPanel>
+  <h3>{{'LIST_AGGREGATE.Select_panel' | translate}}</h3>
+  <ng-container *ngIf="withLayoutApplied$ | async as withLayoutApplied">
+    <div class="panel-selector" *ngFor="let panel of withLayoutApplied.items.rows" [routerLink]="panel.title">
+      {{panel.title | translate}} ({{'LIST.Items_count' | translate: { amount: panel.rows.length } }})
+    </div>
+    <div class="panel-selector" *ngIf="withLayoutApplied.finalItems.length > 0" [routerLink]="withLayoutApplied.finalItems.title">
+      {{withLayoutApplied.finalItems.title | translate}} ({{'LIST.Items_count' | translate: { amount: withLayoutApplied.finalItems.rows.length } }})
+    </div>
+  </ng-container>
+</ng-template>

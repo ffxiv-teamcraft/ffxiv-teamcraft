@@ -9,7 +9,7 @@
              class="avatar" nz-tooltip>
         <ng-template #krAvatar>
           <nz-avatar [nzText]="character.Name[0]"
-                     [nzTooltipTitle]="tooltip" [style.height.px]="width"
+                     [nzTooltipTitle]="disableTooltip?null:tooltip" [style.height.px]="width"
                      [style.width.px]="width"
                      nz-tooltip></nz-avatar>
         </ng-template>
