@@ -78,7 +78,8 @@ export class MarketboardPopupComponent implements OnInit {
             return res;
           })
         );
-      })
+      }),
+      shareReplay(1)
     );
 
     this.prices$ = combineLatest([data$
