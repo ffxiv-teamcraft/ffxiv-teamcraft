@@ -238,8 +238,10 @@ export class AuthFacade {
       this.setCID(packet.contentId.toString());
     });
 
-    this.ipc.worldId$.subscribe(worldId => {
-      this.setWorld(worldId);
+    this.ipc.worldId$.pipe(
+      distinctUntilChanged()
+    ).subscribe((worldId) => {
+        this.setWorld(worldId);
     });
   }
 
