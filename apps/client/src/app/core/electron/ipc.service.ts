@@ -4,7 +4,7 @@ import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { BehaviorSubject, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { bufferCount, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { Store } from '@ngrx/store';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -96,6 +96,7 @@ export class IpcService {
   public get worldId$(): Observable<number> {
     return this.packets$.pipe(
       ofMessageType('playerSpawn'),
+      filter(packet => packet.header.sourceActor === packet.header.targetActor),
       toIpcData(),
       map(packet => {
         return packet.currentWorldId;

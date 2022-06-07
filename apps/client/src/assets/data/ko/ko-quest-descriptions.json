@@ -12216,7 +12216,7 @@
     "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 불끈불끈 레포릿은 경비 기계를 수정하는 방법에 대해 고민하는 모양이다."
   },
   "69784": {
-    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최고의 숲에 있는 런닝웨이는 함께 도와줬으면 하는 일이 있는 모양이다."
+    "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n최고의 숲에 있는 러닝웨이는 함께 도와줬으면 하는 일이 있는 모양이다."
   },
   "69785": {
     "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n베스트웨이 피난처에 있는 또랑또랑 레포릿은 도움이 필요한 모양이다."
@@ -12895,6 +12895,21 @@
   },
   "70010": {
     "ko": "심사의 전당에 있는 키 알리아포는 모험가를 기다리고 있었던 듯하다."
+  },
+  "70011": {
+    "ko": "일곱 현인의 뜰에 있는 넴지지는 모험가를 기다리고 있던 듯하다."
+  },
+  "70012": {
+    "ko": "바닷방울 뜰에 있는 테미스는 모험가에게 제안하고 싶은 게 있는 모양이다."
+  },
+  "70013": {
+    "ko": "판데모니움 정문에 있는 에리크토니오스는 내부 상황을 살피고 있는 모양이다."
+  },
+  "70014": {
+    "ko": "판데모니움 정문에 있는 테미스는 걱정거리가 있는 듯하다."
+  },
+  "70015": {
+    "ko": "판데모니움 정문에 있는 테미스는 에리크토니오스의 이야기를 듣고 싶은 듯하다."
   },
   "70016": {
     "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n메리올 실험 농장에 있는 소심한 관리인은 안절부절못하고 있다."

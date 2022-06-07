@@ -18613,25 +18613,25 @@
     "icon": ""
   },
   "2660": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Brightwinged Fortitude",
+    "ja": "蒼天の光翼：守",
+    "de": "Schützende Lichtschwingen",
+    "fr": "Vol céleste: défense",
+    "icon": "/i/015000/015445.png"
   },
   "2661": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Skyblind",
+    "ja": "蒼天の刻印",
+    "de": "Mal des Himmels",
+    "fr": "Sceau céleste",
+    "icon": "/i/015000/015446.png"
   },
   "2662": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Planar Imprisonment",
+    "ja": "ディメンションジェイル",
+    "de": "Dimensionsfalle",
+    "fr": "Prison dimensionnelle",
+    "icon": "/i/015000/015447.png"
   },
   "2663": {
     "en": "Inner Strength",
@@ -18641,11 +18641,11 @@
     "icon": "/i/012000/012556.png"
   },
   "2664": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Brightwinged Fury",
+    "ja": "蒼天の光翼：攻",
+    "de": "Schlagende Lichtschwingen",
+    "fr": "Vol céleste: attaque",
+    "icon": "/i/015000/015448.png"
   },
   "2665": {
     "en": "Heart and Soul",
@@ -19124,11 +19124,11 @@
     "icon": "/i/015000/015384.png"
   },
   "2733": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Discomposed",
+    "ja": "動転",
+    "de": "Furcht",
+    "fr": "Choc psychologique",
+    "icon": "/i/015000/015449.png"
   },
   "2734": {
     "en": "Epic Echo",
@@ -19215,11 +19215,11 @@
     "icon": "/i/015000/015378.png"
   },
   "2746": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Heart of Man",
+    "ja": "竜人形態",
+    "de": "Drachenreiter",
+    "fr": "Cœur d'homme",
+    "icon": "/i/015000/015731.png"
   },
   "2747": {
     "en": "",
@@ -19229,18 +19229,18 @@
     "icon": ""
   },
   "2748": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2748_-1_1_C0_0Status",
+    "ja": "_rsv_2748_-1_0_C0_0Status",
+    "de": "_rsv_2748_-1_2_C0_0Status",
+    "fr": "_rsv_2748_-1_3_C0_0Status",
+    "icon": "/i/015000/015450.png"
   },
   "2749": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2749_-1_1_C0_0Status",
+    "ja": "_rsv_2749_-1_0_C0_0Status",
+    "de": "_rsv_2749_-1_2_C0_0Status",
+    "fr": "_rsv_2749_-1_3_C0_0Status",
+    "icon": "/i/015000/015451.png"
   },
   "2750": {
     "en": "Soulsow",
@@ -19278,39 +19278,39 @@
     "icon": "/i/015000/015399.png"
   },
   "2755": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "High Jump Target",
+    "ja": "ターゲッティング：ダークハイジャンプ",
+    "de": "Ziel von Hochsprung des Dunkels",
+    "fr": "Portée de grand saut sombre",
+    "icon": "/i/015000/015389.png"
   },
   "2756": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spineshatter Dive Target",
+    "ja": "ターゲッティング：ダークスパインダイブ",
+    "de": "Ziel von Wirbelsprenger des Dunkels",
+    "fr": "Portée de piqué brise-échine sombre",
+    "icon": "/i/015000/015390.png"
   },
   "2757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Elusive Jump Target",
+    "ja": "ターゲッティング：ダークイルーシブジャンプ",
+    "de": "Ziel von Ausweichsprung des Dunkels",
+    "fr": "Portée de saut insaisissable sombre",
+    "icon": "/i/015000/015391.png"
   },
   "2758": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2758_-1_1_C0_0Status",
+    "ja": "_rsv_2758_-1_0_C0_0Status",
+    "de": "_rsv_2758_-1_2_C0_0Status",
+    "fr": "_rsv_2758_-1_3_C0_0Status",
+    "icon": "/i/015000/015452.png"
   },
   "2759": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2759_-1_1_C0_0Status",
+    "ja": "_rsv_2759_-1_0_C0_0Status",
+    "de": "_rsv_2759_-1_2_C0_0Status",
+    "fr": "_rsv_2759_-1_3_C0_0Status",
+    "icon": "/i/015000/015453.png"
   },
   "2760": {
     "en": "Borrowed Flesh",
@@ -19418,25 +19418,25 @@
     "icon": "/i/015000/015529.png"
   },
   "2775": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Clawbound",
+    "ja": "邪竜の爪",
+    "de": "Nidhoggs Klaue",
+    "fr": "Griffe de Nidhogg",
+    "icon": "/i/015000/015734.png"
   },
   "2776": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fangbound",
+    "ja": "邪竜の牙",
+    "de": "Nidhoggs Fang",
+    "fr": "Croc de Nidhogg",
+    "icon": "/i/015000/015735.png"
   },
   "2777": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2777_-1_1_C0_0Status",
+    "ja": "_rsv_2777_-1_0_C0_0Status",
+    "de": "_rsv_2777_-1_2_C0_0Status",
+    "fr": "_rsv_2777_-1_3_C0_0Status",
+    "icon": "/i/015000/015454.png"
   },
   "2778": {
     "en": "Angler's Art",
@@ -19824,18 +19824,18 @@
     "icon": "/i/015000/015408.png"
   },
   "2833": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Thunderstruck",
+    "ja": "サンダーウィング",
+    "de": "Donnerschwinge",
+    "fr": "Aile-de-foudre",
+    "icon": "/i/015000/015597.png"
   },
   "2834": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Neurolink",
+    "ja": "アラグの拘束具",
+    "de": "Neurolink",
+    "fr": "Sangles allagoises",
+    "icon": "/i/015000/015455.png"
   },
   "2835": {
     "en": "Forward Bearing",
@@ -20258,67 +20258,67 @@
     "icon": ""
   },
   "2895": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2895_-1_1_C0_0Status",
+    "ja": "_rsv_2895_-1_0_C0_0Status",
+    "de": "_rsv_2895_-1_2_C0_0Status",
+    "fr": "_rsv_2895_-1_3_C0_0Status",
+    "icon": "/i/015000/015456.png"
   },
   "2896": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2896_-1_1_C0_0Status",
+    "ja": "_rsv_2896_-1_0_C0_0Status",
+    "de": "_rsv_2896_-1_2_C0_0Status",
+    "fr": "_rsv_2896_-1_3_C0_0Status",
+    "icon": "/i/015000/015457.png"
   },
   "2897": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2897_-1_1_C0_0Status",
+    "ja": "_rsv_2897_-1_0_C0_0Status",
+    "de": "_rsv_2897_-1_2_C0_0Status",
+    "fr": "_rsv_2897_-1_3_C0_0Status",
+    "icon": "/i/015000/015458.png"
   },
   "2898": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Boiling",
+    "ja": "徐々にヒート",
+    "de": "Nagende Hitze",
+    "fr": "Chaleur graduelle",
+    "icon": "/i/015000/015459.png"
   },
   "2899": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Freezing",
+    "ja": "徐々に氷結",
+    "de": "Allmähliche Kühlung",
+    "fr": "Congélation graduelle",
+    "icon": "/i/015000/015238.png"
   },
   "2900": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sustained Dark Damage",
+    "ja": "継続ダメージ：闇",
+    "de": "Schrittweiser Dunkelschaden",
+    "fr": "Dégâts continus: Ténèbres",
+    "icon": "/i/015000/015460.png"
   },
   "2901": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Sustained Light Damage",
+    "ja": "継続ダメージ：光",
+    "de": "Schrittweiser Lichtschaden",
+    "fr": "Dégâts continus: Lumière",
+    "icon": "/i/015000/015461.png"
   },
   "2902": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fire Resistance Down II",
+    "ja": "火属性耐性低下[強]",
+    "de": "Feuerresistenz - (stark)",
+    "fr": "Résistance au feu réduite+",
+    "icon": "/i/015000/015595.png"
   },
   "2903": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Ice Resistance Down II",
+    "ja": "氷属性耐性低下[強]",
+    "de": "Eisresistenz - (stark)",
+    "fr": "Résistance à la glace réduite+",
+    "icon": "/i/015000/015596.png"
   },
   "2904": {
     "en": "Unforgotten",
@@ -20825,25 +20825,25 @@
     "icon": "/i/015000/015443.png"
   },
   "2976": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Doom",
+    "ja": "死の宣告",
+    "de": "Verhängnis",
+    "fr": "Glas",
+    "icon": "/i/015000/015503.png"
   },
   "2977": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2977_-1_1_C0_0Status",
+    "ja": "_rsv_2977_-1_0_C0_0Status",
+    "de": "_rsv_2977_-1_2_C0_0Status",
+    "fr": "_rsv_2977_-1_3_C0_0Status",
+    "icon": "/i/015000/015427.png"
   },
   "2978": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "_rsv_2978_-1_1_C0_0Status",
+    "ja": "_rsv_2978_-1_0_C0_0Status",
+    "de": "_rsv_2978_-1_2_C0_0Status",
+    "fr": "_rsv_2978_-1_3_C0_0Status",
+    "icon": "/i/015000/015427.png"
   },
   "2979": {
     "en": "",
@@ -20979,11 +20979,11 @@
     "icon": "/i/014000/014980.png"
   },
   "2998": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lightning Resistance Down II",
+    "ja": "雷属性耐性低下［強］",
+    "de": "Blitzresistenz - (stark)",
+    "fr": "Résistance à la foudre réduite+",
+    "icon": "/i/015000/015597.png"
   },
   "2999": {
     "en": "In Event",
@@ -21021,25 +21021,25 @@
     "icon": "/i/012000/012971.png"
   },
   "3004": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "First in Line",
+    "ja": "ファーストターゲット",
+    "de": "Erstes Ziel",
+    "fr": "Première cible",
+    "icon": "/i/015000/015401.png"
   },
   "3005": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Second in Line",
+    "ja": "セカンドターゲット",
+    "de": "Zweites Ziel",
+    "fr": "Deuxième cible",
+    "icon": "/i/015000/015402.png"
   },
   "3006": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Third in Line",
+    "ja": "サードターゲット",
+    "de": "Drittes Ziel",
+    "fr": "Troisième cible",
+    "icon": "/i/015000/015403.png"
   },
   "3007": {
     "en": "Petrification",
@@ -21297,7 +21297,7 @@
     "en": "Powder Barrel",
     "ja": "ソイル",
     "de": "Erda-Patrone",
-    "fr": "Caroute d'éther",
+    "fr": "Cartouche d'éther",
     "icon": "/i/014000/014898.png"
   },
   "3044": {
@@ -21896,39 +21896,39 @@
     "icon": "/i/010000/010214.png"
   },
   "3129": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Damage Up",
+    "ja": "ダメージ上昇",
+    "de": "Schaden +",
+    "fr": "Bonus de dégâts",
+    "icon": "/i/015000/015519.png"
   },
   "3130": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Slashing Resistance Down",
+    "ja": "斬属性耐性低下",
+    "de": "Hiebresistenz -",
+    "fr": "Résistance au tranchant réduite",
+    "icon": "/i/015000/015786.png"
   },
   "3131": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Piercing Resistance Down",
+    "ja": "突属性耐性低下",
+    "de": "Stichresistenz -",
+    "fr": "Résistance au perforant réduite",
+    "icon": "/i/015000/015065.png"
   },
   "3132": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Blunt Resistance Down",
+    "ja": "打属性耐性低下",
+    "de": "Schlagresistenz -",
+    "fr": "Résistance au contondant réduite",
+    "icon": "/i/015000/015064.png"
   },
   "3133": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Suppuration",
+    "ja": "熱傷",
+    "de": "Verbrennung",
+    "fr": "Morsure du feu",
+    "icon": "/i/015000/015979.png"
   },
   "3134": {
     "en": "Bind",
@@ -21938,18 +21938,18 @@
     "icon": "/i/015000/015003.png"
   },
   "3135": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Light Resistance Down",
+    "ja": "光属性耐性低下",
+    "de": "Lichtresistenz -",
+    "fr": "Résistance à la Lumière réduite",
+    "icon": "/i/017000/017890.png"
   },
   "3136": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Dark Resistance Down",
+    "ja": "闇属性耐性低下",
+    "de": "Dunkelresistenz -",
+    "fr": "Résistance aux Ténèbres réduite",
+    "icon": "/i/017000/017910.png"
   },
   "3137": {
     "en": "Repertoire",
@@ -22148,18 +22148,18 @@
     "icon": "/i/013000/013721.png"
   },
   "3165": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Down for the Count",
+    "ja": "ノックダウン",
+    "de": "Am Boden",
+    "fr": "Au tapis",
+    "icon": "/i/015000/015044.png"
   },
   "3166": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": "",
-    "icon": ""
+    "en": "Damage Down",
+    "ja": "ダメージ低下",
+    "de": "Schaden -",
+    "fr": "Malus de dégâts",
+    "icon": "/i/015000/015520.png"
   },
   "3167": {
     "en": "Heavy",
