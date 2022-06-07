@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.8...v9.6.9) (2022-06-07)
+
+
+### Bug Fixes
+
+* **marketboard-popup:** change shareReplay() calls to prevent observables staying alive ([ea8fdef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea8fdef))
+* **packet capture:** prevent world ID updating needlessly ([33481a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33481a7))
+
+
+### Features
+
+* **db:** support for 6.15 data ([add20a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/add20a7))
+* **db:** support for korean v6.01 update ([85d3fa6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85d3fa6))
+
+
+
 <a name="9.6.8"></a>
 ## [9.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.7...v9.6.8) (2022-05-21)
 
