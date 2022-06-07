@@ -898,5 +898,105 @@
     "speedBonus": 40,
     "rangeBonus": 60,
     "favorBonus": 50
+  },
+  "91": {
+    "id": 91,
+    "capacity": 80,
+    "expToNext": 5153074,
+    "surveillanceBonus": 57,
+    "retrievalBonus": 70,
+    "speedBonus": 41,
+    "rangeBonus": 62,
+    "favorBonus": 51
+  },
+  "92": {
+    "id": 92,
+    "capacity": 80,
+    "expToNext": 5738860,
+    "surveillanceBonus": 57,
+    "retrievalBonus": 70,
+    "speedBonus": 43,
+    "rangeBonus": 64,
+    "favorBonus": 52
+  },
+  "93": {
+    "id": 93,
+    "capacity": 80,
+    "expToNext": 6383225,
+    "surveillanceBonus": 58,
+    "retrievalBonus": 72,
+    "speedBonus": 43,
+    "rangeBonus": 66,
+    "favorBonus": 54
+  },
+  "94": {
+    "id": 94,
+    "capacity": 80,
+    "expToNext": 19149676,
+    "surveillanceBonus": 58,
+    "retrievalBonus": 74,
+    "speedBonus": 45,
+    "rangeBonus": 68,
+    "favorBonus": 54
+  },
+  "95": {
+    "id": 95,
+    "capacity": 80,
+    "expToNext": 7162907,
+    "surveillanceBonus": 60,
+    "retrievalBonus": 80,
+    "speedBonus": 45,
+    "rangeBonus": 70,
+    "favorBonus": 55
+  },
+  "96": {
+    "id": 96,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "97": {
+    "id": 97,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "98": {
+    "id": 98,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "99": {
+    "id": 99,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "100": {
+    "id": 100,
+    "capacity": 0,
+    "expToNext": 0,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
   }
 }
