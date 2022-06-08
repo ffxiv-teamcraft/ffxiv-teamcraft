@@ -3,6 +3,8 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { filter } from 'rxjs/operators';
 import { NavigationEnd, Router } from '@angular/router';
 
+declare const tyche: any;
+
 @Component({
   selector: 'app-ad',
   templateUrl: './ad.component.html',
@@ -23,6 +25,26 @@ export class AdComponent implements AfterViewInit, OnDestroy {
       this.removeAd();
       this.addAd();
     });
+
+    if (!this.platform.isOverlay()) {
+      (<any>window).tyche = {
+        mode: 'tyche',
+        config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
+        passiveMode: true,
+        onReady: () => {
+          console.log('TYCHE READY !');
+          tyche.addUnits([{
+            selectorId: 'pwAdBanner',
+            type: 'leaderboard_atf'
+          }]).then(() => {
+            tyche.displayUnits();
+          }).catch((e) => {
+            tyche.displayUnits();
+            console.error('TYCHE ERROR', e);
+          });
+        }
+      };
+    }
   }
 
   private _placementId: string;
@@ -45,11 +67,19 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    if (this.platform.isDesktop() && !this.platform.isOverlay()) {
+    if (!this.platform.isOverlay()) {
+      // Tyche
+      const tycheCDNScript = document.createElement('script');
+      tycheCDNScript.id = 'tyche';
+      tycheCDNScript.setAttribute('src', 'https://cdn.intergi.com/hera/tyche.js');
+      document.head.appendChild(tycheCDNScript);
+
+
+      // // Ramp
       (<any>window).ramp = (<any>window).ramp || {};
       (<any>window).ramp.que = (<any>window).ramp.que || [];
       const pwScript = document.createElement('script');
-      pwScript.setAttribute('src', 'https://cdn.intergient.com/1024627/73554/ramp_config.js');
+      pwScript.setAttribute('src', `https://cdn.intergient.com/1024627/${this.platform.isDesktop() ? 73554 : 73498}/ramp_config.js`);
       document.head.appendChild(pwScript);
       const adScript = document.createElement('script');
       adScript.setAttribute('src', 'https://cdn.intergient.com/ramp_core.js');
@@ -69,11 +99,6 @@ export class AdComponent implements AfterViewInit, OnDestroy {
         (window as any).top.__vm_add = (window as any).top.__vm_add || [];
         (window as any).top.__vm_add.push(this.vmAdRef.nativeElement);
       }
-    } else {
-      (<any>window).ramp.que.push(function () {
-        // this parameter must match the ID of the div to render the ad inside of
-        (<any>window).ramp.addTag('pwAdBanner');
-      });
     }
   }
 

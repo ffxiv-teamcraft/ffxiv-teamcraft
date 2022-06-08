@@ -4,6 +4,7 @@ import { Store } from '../store';
 import { OverlayManager } from './overlay-manager';
 import { ProxyManager } from '../tools/proxy-manager';
 import { Subject } from 'rxjs';
+import { session } from 'electron/main';
 
 export class MainWindow {
 
@@ -112,6 +113,16 @@ export class MainWindow {
     this.win.webContents.on('will-navigate', handleRedirect);
     this.win.webContents.on('new-window', handleRedirect);
     (this.store.get('overlays', []) || []).forEach(overlayUri => this.overlayManager.toggleOverlay({ url: overlayUri }));
+
+    session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
+      if (details.url.includes('ads?') && details.url.includes('url=file')) {
+        callback({
+          redirectURL: details.url.replace(/url=[^&]+/gm, `url=https://ffxivteamcraft.com`)
+        });
+      } else {
+        callback({});
+      }
+    });
   }
 
   public show(): void {
