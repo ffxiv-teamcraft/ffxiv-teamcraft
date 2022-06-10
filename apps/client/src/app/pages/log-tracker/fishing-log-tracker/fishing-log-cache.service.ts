@@ -66,7 +66,7 @@ export class FishingLogCacheService {
         });
         display.tabs = display.tabs
           .sort((a, b) => {
-            return b.placeId - a.placeId;
+            return a.placeId - b.placeId;
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;
