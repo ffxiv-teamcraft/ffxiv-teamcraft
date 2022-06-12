@@ -1755,7 +1755,8 @@
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
       "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
