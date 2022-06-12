@@ -19,7 +19,7 @@ export class FishingLogCacheService {
 
   public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$, this.lazyData.getEntry('places')]).pipe(
     map(([completeDisplay, completion, places]) => {
-      return completeDisplay.map(display => {
+      return completeDisplay.map((display, displayIndex) => {
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
         display.tabs.forEach(area => {
@@ -56,17 +56,28 @@ export class FishingLogCacheService {
           });
           area.spots = area.spots
             .sort((a, b) => {
-              if (a.id > 20000) {
-                return fshSpearLogOrder.indexOf(places[a.placeId].en) - fshSpearLogOrder.indexOf(places[b.placeId].en);
+              const logOrder = (displayIndex === 1) ? fshSpearLogOrder : fshLogOrder;
+              const a_name = places[a.placeId].en;
+              const b_name = places[b.placeId].en;
+              if (logOrder.includes(a_name) && logOrder.includes(b_name)) {
+                return logOrder.indexOf(a_name) - logOrder.indexOf(b_name);
+              } else {
+                return a.placeId - b.placeId;
               }
-              return fshLogOrder.indexOf(places[a.placeId].en) - fshLogOrder.indexOf(places[b.placeId].en);
             });
           area.total = uniqueMapTotal.length;
           area.done = uniqueMapDone.length;
         });
         display.tabs = display.tabs
           .sort((a, b) => {
-            return a.placeId - b.placeId;
+            const logOrder = (displayIndex === 1) ? fshSpearLogOrder : fshLogOrder;
+            const a_name = places[a.placeId].en;
+            const b_name = places[b.placeId].en;
+            if (logOrder.includes(a_name) && logOrder.includes(b_name)) {
+              return logOrder.indexOf(a_name) - logOrder.indexOf(b_name);
+            } else {
+              return a.placeId - b.placeId;
+            }
           });
         display.total = uniqueDisplayTotal.length;
         display.done = uniqueDisplayDone.length;
