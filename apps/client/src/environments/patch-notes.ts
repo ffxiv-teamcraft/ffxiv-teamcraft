@@ -7,4 +7,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **db:** support for 6.15 data.
-* **db:** support for korean v6.01 update.`;
+* **db:** support for korean v6.01 update.`;

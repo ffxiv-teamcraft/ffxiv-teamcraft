@@ -8,7 +8,6 @@
   "main": "dist/apps/electron/src/main.js",
   "build": {
     "appId": "ffxiv-teamcraft",
-    "forceCodeSigning": true,
     "productName": "FFXIV Teamcraft",
     "directories": {
       "output": "release"
@@ -51,10 +50,6 @@
         "provider": "github",
         "releaseType": "release"
       }
-    },
-    "squirrelWindows": {
-      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://update.ffxivteamcraft.com/"
     }
   },
   "scripts": {
@@ -119,7 +114,7 @@
   },
   "private": true,
   "dependencies": {
-    "@ffxiv-teamcraft/pcap-ffxiv": "0.9.14",
+    "@ffxiv-teamcraft/pcap-ffxiv": "0.10.2",
     "@xivapi/nodestone": "^0.2.5",
     "buffer-reader": "^0.1.0",
     "electron-google-analytics": "^1.0.2",

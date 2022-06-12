@@ -42,7 +42,7 @@ export class FishingReporter implements DataReporter {
     const spot$ = this.lazyData.getEntry('fishingSpots').pipe(
       switchMap(fishingSpots => {
         return packets$.pipe(
-          ofMessageType('someDirectorUnk4'),
+          ofMessageType('systemLogMessage'),
           toIpcData(),
           map((packet) => {
             return fishingSpots.find(spot => spot.zoneId === packet.param3);
@@ -132,7 +132,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const mooch$ = packets$.pipe(
-      ofMessageType('someDirectorUnk4'),
+      ofMessageType('systemLogMessage'),
       toIpcData(),
       filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
       map(packet => {
@@ -143,7 +143,7 @@ export class FishingReporter implements DataReporter {
 
     const misses$ = combineLatest([
       packets$.pipe(
-        ofMessageType('someDirectorUnk4'),
+        ofMessageType('systemLogMessage'),
         toIpcData(),
         map(packet => {
           return {
