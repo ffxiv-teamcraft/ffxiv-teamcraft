@@ -1378,5 +1378,17 @@
       "speed": 5,
       "shadowSize": 2
     }
+  ],
+  "36659": [
+    {
+      "speed": 3,
+      "shadowSize": 1
+    }
+  ],
+  "36661": [
+    {
+      "speed": 1,
+      "shadowSize": 0
+    }
   ]
 }

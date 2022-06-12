@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.10"></a>
+## [9.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.9...v9.6.10) (2022-06-12)
+
+
+### Bug Fixes
+
+* **data:** fix missing names on various new items ([ec095d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec095d6))
+* **db:** fix bite times chart not loading ([b7b0828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7b0828))
+* **db:** fix filters reset in fishing misses popup table ([32fa46b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32fa46b))
+* **db:** fixed missing translation for deleted comments display ([5e115cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e115cb))
+* **desktop:** support for 6.15 packet capture changes ([9a88cc6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a88cc6))
+* **fish-log-tracker:** re-sort/add missing areas/spots ([2fa1de9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fa1de9))
+* **fish-log-tracker:** reverse area order to be more like in-game log ([7e01f59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e01f59))
+* **log-tracker:** remove lvl mention from fishing spots ([01239ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01239ba))
+
+
+
 <a name="9.6.9"></a>
 ## [9.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.8...v9.6.9) (2022-06-07)
 

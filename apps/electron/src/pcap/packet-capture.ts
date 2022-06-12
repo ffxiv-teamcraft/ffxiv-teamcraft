@@ -51,7 +51,7 @@ export class PacketCapture {
     'prepareZoning',
     'resultDialog',
     'retainerInformation',
-    'someDirectorUnk4',
+    'systemLogMessage',
     'submarineExplorationResult',
     'submarineProgressionStatus',
     'submarineStatusList',
@@ -73,7 +73,7 @@ export class PacketCapture {
     'eventStart',
     'eventFinish',
     'eventPlay4',
-    'someDirectorUnk4',
+    'systemLogMessage',
     'npcSpawn',
     'objectSpawn'
   ];

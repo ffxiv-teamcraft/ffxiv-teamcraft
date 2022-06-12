@@ -1,10 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **marketboard-popup:** change shareReplay() calls to prevent observables staying alive.
-* **packet capture:** prevent world ID updating needlessly.
-
-
-### Features
-
-* **db:** support for 6.15 data.
-* **db:** support for korean v6.01 update.`;
+* **data:** fix missing names on various new items.
+* **db:** fix bite times chart not loading.
+* **db:** fix filters reset in fishing misses popup table.
+* **db:** fixed missing translation for deleted comments display.
+* **desktop:** support for 6.15 packet capture changes.
+* **fish-log-tracker:** re-sort/add missing areas/spots.
+* **fish-log-tracker:** reverse area order to be more like in-game log.
+* **log-tracker:** remove lvl mention from fishing spots.`;

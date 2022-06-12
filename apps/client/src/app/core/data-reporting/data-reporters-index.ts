@@ -1,5 +1,4 @@
 import { InjectionToken, Provider } from '@angular/core';
-import { DesynthResultReporter } from './desynth-result-reporter';
 import { ReductionResultReporter } from './reduction-result-reporter';
 import { PacketCaptureTrackerService } from '../electron/packet-capture-tracker.service';
 import { FishingReporter } from './fishing-reporter';
@@ -14,7 +13,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 export const DataReporters = new InjectionToken('DataReporters');
 
 export const DATA_REPORTERS: Provider[] = [
-  { provide: DataReporters, useClass: DesynthResultReporter, multi: true },
+  // { provide: DataReporters, useClass: DesynthResultReporter, multi: true },
   { provide: DataReporters, useClass: ReductionResultReporter, multi: true, deps: [PacketCaptureTrackerService] },
   { provide: DataReporters, useClass: FishingReporter, multi: true, deps: [EorzeaFacade, LazyDataFacade, EorzeanTimeService, IpcService, SettingsService] },
   { provide: DataReporters, useClass: SubmarineExplorationResultReporter, multi: true, deps: [LazyDataFacade] },
