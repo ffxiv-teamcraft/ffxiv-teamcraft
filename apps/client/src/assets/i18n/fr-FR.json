@@ -1755,7 +1755,8 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
