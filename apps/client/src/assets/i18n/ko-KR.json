@@ -1755,7 +1755,8 @@
       "No_comments": "댓글 없음",
       "Post": "게시",
       "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한을 받을 수 있습니다."
+      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한을 받을 수 있습니다.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
