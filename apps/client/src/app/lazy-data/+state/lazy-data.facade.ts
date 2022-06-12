@@ -80,7 +80,7 @@ export class LazyDataFacade {
   public getEntry<K extends LazyDataKey>(propertyKey: K): Observable<LazyDataWithExtracts[K]> {
     if (this.getCacheEntry(propertyKey) === null) {
       const obs$ = combineLatest([
-        this.store.pipe(select(LazyDataSelectors.getEntry, { key: propertyKey })),
+        this.store.pipe(select(LazyDataSelectors.getEntry(propertyKey))),
         this.getStatus(propertyKey)
       ]).pipe(
         tap(([, status]) => {
@@ -480,7 +480,7 @@ export class LazyDataFacade {
   private getCacheEntry<K extends LazyDataKey>(entity: K): Observable<LazyDataWithExtracts[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id: number): Observable<LazyDataEntries[K]> | null;
   private getCacheEntry<K extends LazyDataKey>(entity: K, id?: number): Observable<LazyDataWithExtracts[K]> | Observable<LazyDataEntries[K]> | null {
-    const key = entity + (id ? `:${id}` : '');
+    const key = entity + (id !== undefined ? `:${id}` : '');
     return this.cache[key] || null;
   }
 }

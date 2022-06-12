@@ -112,7 +112,9 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
               outlierRadius: 3,
               outlierColor: colors.map(color => `rgba(${color}, 0.5)`),
               data: sortedNames.map((el, index) => {
-                fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
+                if (itemIcons) {
+                  fishImageUrls[index] = 'https://xivapi.com' + itemIcons[el.id];
+                }
                 return Object.entries(res.data.byFish[el.id].byTime)
                   .map(([time, occurences]) => {
                     return new Array(occurences).fill(+time);
