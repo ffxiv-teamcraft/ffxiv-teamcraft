@@ -1755,7 +1755,8 @@
       "No_comments": "コメントなし",
       "Post": "投稿",
       "Editor_tip": "他のページへのリンクを作成するため<page type>：\"<Content Name>\"を入力してください。例：item：\"Curtana\"、action：\"Basic Synthesis\"、map：\"The Crystarium\"サポートしているページの種類：item、map、mob、achievement、leve、npc、instance、quest、trait、action、status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "データベースのパッチ変更点はこちらをクリックしてください",
