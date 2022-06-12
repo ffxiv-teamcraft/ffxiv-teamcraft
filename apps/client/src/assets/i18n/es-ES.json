@@ -1755,7 +1755,8 @@
       "No_comments": "Sin comentarios",
       "Post": "Publicar",
       "Editor_tip": "Escriba <tipo de pagina>:\"<Nombre del Contenido>\" para crear un enlace a otra página. Ejemplos: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Tipos de páginas soportados: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Haga clic aquí para abrir cambios de parche completos en la base de datos",
