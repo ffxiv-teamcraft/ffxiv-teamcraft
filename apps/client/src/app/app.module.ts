@@ -294,7 +294,7 @@ const nzConfig: NzConfig = {
       },
       actionSanitizer: (action) => {
         if (action.type.includes('LazyData')) {
-          return { type: action.type };
+          return { type: action.type, key: (action as any).key };
         }
         if (action.type === ListsActionTypes.SetItemDone) {
           const { settings, ...sanitized } = (action as SetItemDone);
