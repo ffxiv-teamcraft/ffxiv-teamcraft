@@ -3,8 +3,8 @@ import { map, shareReplay, startWith } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { fshSpearLogOrder } from '../fsh-spear-log-order';
-import { fshLogOrder } from '../fsh-log-order';
+import { fshSpearLogAreas } from '../fsh-spear-log-order';
+import { fshLogAreas } from '../fsh-log-order';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class FishingLogCacheService {
   public display$ = combineLatest([this.lazyData.getEntry('fishingLogTrackerPageData'), this.completion$, this.lazyData.getEntry('places')]).pipe(
     map(([completeDisplay, completion, places]) => {
       return completeDisplay.map((display, displayIndex) => {
+        const areaLogOrder = (displayIndex === 0) ? fshLogAreas : fshSpearLogAreas;
         const uniqueDisplayDone = [];
         const uniqueDisplayTotal = [];
         display.tabs.forEach(area => {
@@ -54,13 +55,14 @@ export class FishingLogCacheService {
             spot.total = uniqueSpotTotal.length;
             spot.done = uniqueSpotDone.length;
           });
+          const areaName = places[area.placeId].en;
+          const spotNames = areaLogOrder.find(e => e.areaName === areaName)?.spotNames;
           area.spots = area.spots
             .sort((a, b) => {
-              const logOrder = (displayIndex === 1) ? fshSpearLogOrder : fshLogOrder;
               const a_name = places[a.placeId].en;
               const b_name = places[b.placeId].en;
-              if (logOrder.includes(a_name) && logOrder.includes(b_name)) {
-                return logOrder.indexOf(a_name) - logOrder.indexOf(b_name);
+              if (spotNames?.includes(a_name) && spotNames?.includes(b_name)) {
+                return spotNames.indexOf(a_name) - spotNames.indexOf(b_name);
               } else {
                 return a.placeId - b.placeId;
               }
@@ -68,13 +70,13 @@ export class FishingLogCacheService {
           area.total = uniqueMapTotal.length;
           area.done = uniqueMapDone.length;
         });
+        const areaNames = areaLogOrder.map(e => e.areaName);
         display.tabs = display.tabs
           .sort((a, b) => {
-            const logOrder = (displayIndex === 1) ? fshSpearLogOrder : fshLogOrder;
             const a_name = places[a.placeId].en;
             const b_name = places[b.placeId].en;
-            if (logOrder.includes(a_name) && logOrder.includes(b_name)) {
-              return logOrder.indexOf(a_name) - logOrder.indexOf(b_name);
+            if (areaNames.includes(a_name) && areaNames.includes(b_name)) {
+              return areaNames.indexOf(a_name) - areaNames.indexOf(b_name);
             } else {
               return a.placeId - b.placeId;
             }
