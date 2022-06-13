@@ -1144,9 +1144,27 @@ export class DataService {
           })
           .map(key => {
             return +key;
-          });
+          })
+          .sort((a, b) => {
+            return this.similar(data[b][lang], terms) - this.similar(data[a][lang], terms);
+          })
+          .slice(0, 100);
       })
     );
+  }
+
+  private similar(a: string, b: string): number {
+    let equivalency = 0;
+    const minLength = (a.length > b.length) ? b.length : a.length;
+    const maxLength = (a.length < b.length) ? b.length : a.length;
+    for (let i = 0; i < minLength; i++) {
+      if (a[i]?.toLowerCase() === b[i]?.toLowerCase()) {
+        equivalency++;
+      }
+    }
+
+    const weight = equivalency / maxLength;
+    return weight * 100;
   }
 
   private mapAchievement(achievement: any): StatusSearchResult {
