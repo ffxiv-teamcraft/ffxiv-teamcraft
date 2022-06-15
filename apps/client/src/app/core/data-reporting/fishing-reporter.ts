@@ -10,6 +10,7 @@ import { Tug } from '../data/model/tug';
 import { Hookset } from '../data/model/hookset';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 
 export class FishingReporter implements DataReporter {
@@ -69,11 +70,21 @@ export class FishingReporter implements DataReporter {
       shareReplay({ bufferSize: 1, refCount: true })
     );
 
-    const eventPlay$ = packets$.pipe(
+    const eventPlay$: Observable<EventPlay> = packets$.pipe(
       ofMessageType('eventPlay'),
       toIpcData(),
       filter(packet => packet.eventId === 0x150001)
     );
+
+    eventPlay$.pipe(
+      filter(p => {
+        return p.scene === 2;
+      })
+    ).subscribe(() => {
+      this.setState({
+        throwData: null
+      });
+    });
 
     const moochId$ = new BehaviorSubject<number>(null);
 
