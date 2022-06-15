@@ -56,14 +56,14 @@ export class LeveComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getLeve(+id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiLeve$ = leveId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Leve, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.items$ = this.xivapiLeve$.pipe(

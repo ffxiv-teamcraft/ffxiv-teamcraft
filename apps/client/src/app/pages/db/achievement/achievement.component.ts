@@ -42,7 +42,7 @@ export class AchievementComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Achievement, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.rewards$ = this.achievement$.pipe(

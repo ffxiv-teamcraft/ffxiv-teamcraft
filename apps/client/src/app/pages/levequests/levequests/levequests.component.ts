@@ -133,7 +133,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           limit: 105
         });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.results$ = combineLatest([this.globalExpChange$, res$, this.hideLargeChange$, this.roadToBuffChange$]).pipe(

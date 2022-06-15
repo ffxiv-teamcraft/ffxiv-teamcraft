@@ -23,14 +23,14 @@ export class AirshipExplorationResultReporter extends ExplorationResultReporter 
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const resultLog$ = packets$.pipe(
       ofMessageType('airshipExplorationResult'),
       toIpcData(),
       map((packet) => packet.explorationResult),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const status$ = packets$.pipe(

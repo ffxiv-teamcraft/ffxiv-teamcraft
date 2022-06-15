@@ -28,7 +28,7 @@ export class FreecompanyPickerComponent {
   public loadingResults = false;
 
   constructor(private xivapi: XivapiService, private modalRef: NzModalRef) {
-    this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
+    this.servers$ = this.xivapi.getServerList().pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(

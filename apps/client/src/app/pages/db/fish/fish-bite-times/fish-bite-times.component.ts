@@ -22,7 +22,7 @@ export class FishBiteTimesComponent {
         avg: sortedBiteTimes.reduce((acc, entry) => entry.id * entry.occurrences + acc, 0) / res.data.total
       };
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {

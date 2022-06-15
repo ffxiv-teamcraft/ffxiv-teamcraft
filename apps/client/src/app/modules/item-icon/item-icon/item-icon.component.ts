@@ -67,7 +67,7 @@ export class ItemIconComponent {
         })
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
 
@@ -83,7 +83,7 @@ export class ItemIconComponent {
         map(flag => flag === 1)
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private translate: TranslateService, private lazyData: LazyDataFacade,

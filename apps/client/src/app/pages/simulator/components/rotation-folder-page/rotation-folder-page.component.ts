@@ -37,7 +37,7 @@ export class RotationFolderPageComponent {
           .map(id => rotations.find(r => r.$key === id))
           .filter(rotation => rotation && !rotation.notFound);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

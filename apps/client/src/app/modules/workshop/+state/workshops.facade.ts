@@ -32,7 +32,7 @@ export class WorkshopsFacade {
   myWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$])
     .pipe(
       map(([workshops, userId]) => workshops.filter(w => w.authorId === userId)),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
   sharedWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$]).pipe(
@@ -43,7 +43,7 @@ export class WorkshopsFacade {
           && c.authorId !== userId;
       }), '$key');
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private store: Store<{ workshops: WorkshopsState }>, private authFacade: AuthFacade) {

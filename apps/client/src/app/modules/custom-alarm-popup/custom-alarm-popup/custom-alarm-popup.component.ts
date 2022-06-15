@@ -80,7 +80,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       max_items: 1000
     }).pipe(
       map(list => list.Results),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -138,7 +138,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       map((m: { TerritoryType: { WeatherRate: number } }) => {
         return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => +row.weatherId)) as number[];
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

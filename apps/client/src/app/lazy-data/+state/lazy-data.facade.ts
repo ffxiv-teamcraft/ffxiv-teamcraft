@@ -35,11 +35,11 @@ export class LazyDataFacade {
   );
 
   public patches$ = this.http.get<XivapiPatch[]>('https://xivapi.com/patchlist').pipe(
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public datacenters$ = this.xivapi.getDCList().pipe(
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   // This is a temporary cache system to absorb possible call spams on some methods, TTL for each row is 10s toa void memory issues
@@ -315,7 +315,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       case Region.Korea:
         return combineLatest([
@@ -328,7 +328,7 @@ export class LazyDataFacade {
               return eRecipe || r;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       default:
         return this.getEntry('recipes');
@@ -363,7 +363,7 @@ export class LazyDataFacade {
             return res;
           });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -428,7 +428,7 @@ export class LazyDataFacade {
               };
             });
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }
     return this.searchIndexCache[entry];
@@ -470,8 +470,8 @@ export class LazyDataFacade {
   }
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
-    const key = entity + (id ? `:${id}` : '');
-    this.cache[key] = observable.pipe(shareReplay(1));
+    const key = entity + (id !== undefined ? `:${id}` : '');
+    this.cache[key] = observable.pipe(shareReplay({ bufferSize: 1, refCount: true }));
     setTimeout(() => {
       delete this.cache[key];
     }, LazyDataFacade.CACHE_TTL);

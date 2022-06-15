@@ -218,7 +218,7 @@ export class GearsetsFacade {
         return of([matchesBody, true]);
       }),
       map(([matchesBody, matchesLegs]) => matchesBody && matchesLegs),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

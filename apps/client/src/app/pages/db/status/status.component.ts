@@ -39,7 +39,7 @@ export class StatusComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Status, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.links$ = this.xivapiStatus$.pipe(

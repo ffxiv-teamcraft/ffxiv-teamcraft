@@ -52,7 +52,7 @@ export class FishingReporter implements DataReporter {
             this.eorzea.setZone(spot.zoneId);
             this.eorzea.setMap(spot.mapId);
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       })
     );
@@ -66,7 +66,7 @@ export class FishingReporter implements DataReporter {
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const eventPlay$ = packets$.pipe(

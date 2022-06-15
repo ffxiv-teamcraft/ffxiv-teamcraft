@@ -74,7 +74,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
       );
     }),
     startWith([]),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly biteTimesChartJSData$: Observable<any> = combineLatest([this.fishCtx.biteTimesBySpot$, this.fishCtx.tugsBySpotByFish$]).pipe(
@@ -131,7 +131,7 @@ export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
         debounceTime(100)
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   gridColor = 'rgba(255,255,255,.3)';

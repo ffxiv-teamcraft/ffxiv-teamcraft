@@ -49,7 +49,7 @@ export class SearchJobPickerComponent implements ControlValueAccessor {
         casterClass: [7, 26]
       };
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private onChange: (_: any) => void;

@@ -38,7 +38,7 @@ export class IpcService {
     map(packets => {
       return packets.every(packet => packet.header.operation === 'send');
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private readonly _ipc: IpcRenderer | undefined = undefined;

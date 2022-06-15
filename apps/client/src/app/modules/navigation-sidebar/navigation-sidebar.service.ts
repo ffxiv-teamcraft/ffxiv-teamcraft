@@ -18,7 +18,7 @@ export class NavigationSidebarService {
 
   public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
     map(notifications => notifications.length),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private settingsChange$ = this.settings.settingsChange$.pipe(
@@ -421,7 +421,7 @@ export class NavigationSidebarService {
       }
       return layout;
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(

@@ -34,7 +34,7 @@ export class CustomLinksFacade {
 
   myCustomLinks$ = combineLatest([this.allCustomLinks$, this.authFacade.userId$]).pipe(
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private store: Store<CustomLinksPartialState>,

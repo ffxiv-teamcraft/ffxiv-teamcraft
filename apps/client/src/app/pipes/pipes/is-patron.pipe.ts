@@ -16,7 +16,7 @@ export class IsPatronPipe implements PipeTransform {
       map(user => {
         return user.patron;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

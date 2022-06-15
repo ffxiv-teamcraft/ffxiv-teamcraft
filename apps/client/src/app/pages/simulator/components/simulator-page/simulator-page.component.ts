@@ -24,7 +24,7 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
       return this.dataService.getItem(+params.get('itemId'));
     }),
     map(itemData => itemData.item),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   recipe$: Observable<Craft | LazyRecipe> = this.route.paramMap.pipe(
@@ -39,7 +39,7 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
         })
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   thresholds$: Observable<number[]> = this.item$.pipe(

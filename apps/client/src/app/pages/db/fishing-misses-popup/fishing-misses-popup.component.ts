@@ -114,7 +114,7 @@ export class FishingMissesPopupComponent implements OnInit {
       }),
       debounceTime(500),
       first(),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

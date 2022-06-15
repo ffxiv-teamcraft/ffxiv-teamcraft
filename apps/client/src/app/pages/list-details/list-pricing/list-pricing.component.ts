@@ -53,7 +53,7 @@ export class ListPricingComponent extends TeamcraftComponent {
 
   display$ = this.listsFacade.selectedList$.pipe(
     switchMap((list) => this.layoutsFacade.getDisplay(list, false)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   finalItemsRow$ = this.listsFacade.selectedList$.pipe(

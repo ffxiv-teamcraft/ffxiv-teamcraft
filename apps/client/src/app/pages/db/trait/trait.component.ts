@@ -44,7 +44,7 @@ export class TraitComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Trait, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.relatedActions$ = this.xivapiTrait$.pipe(

@@ -271,7 +271,7 @@ export class InventoryService {
           );
         }),
         debounceTime(1000),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }
   }
