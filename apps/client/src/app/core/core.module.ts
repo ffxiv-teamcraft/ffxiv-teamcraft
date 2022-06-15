@@ -57,6 +57,7 @@ import { I18nNameComponent } from './i18n/i18n-name/i18n-name.component';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { CommonModule } from '@angular/common';
 import { I18nRowPipe } from './i18n/i18n-row.pipe';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 
 @NgModule({
@@ -99,7 +100,8 @@ import { I18nRowPipe } from './i18n/i18n-row.pipe';
     NzIconModule,
     NzDividerModule,
     NzModalModule,
-    NzSkeletonModule
+    NzSkeletonModule,
+    NzNotificationModule
   ],
   providers: [
     PendingChangesService,
