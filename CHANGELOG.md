@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.12"></a>
+## [9.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.11...v9.6.12) (2022-06-15)
+
+
+### Bug Fixes
+
+* **db:** added missing recipes and extracts ([4842217](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4842217))
+
+
+
 <a name="9.6.11"></a>
 ## [9.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.10...v9.6.11) (2022-06-15)
 
