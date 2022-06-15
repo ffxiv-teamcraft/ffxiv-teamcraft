@@ -2915,9 +2915,9 @@
     "Add_to_list": "해당 아이템을 목록에 추가"
   },
   "MACHINA_ERRORS": {
-    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "Wrapper_failed_to_start": "Machina Wrapper 실행 실패",
     "DESCRIPTION": {
-      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+      "Wrapper_failed_to_start": "게임이 실행 중인지 확인해 주세요. (관리자 권한으로 게임을 실행했다면 TC도 관리자 권한으로 실행해주세요). {{retryDelay}}초 후 재시도"
     }
   }
 }
