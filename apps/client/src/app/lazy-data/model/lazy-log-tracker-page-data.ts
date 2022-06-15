@@ -117,6 +117,7 @@ export interface ItemClass {
   Block:                      number;
   BlockRate:                  number;
   CanBeHq:                    number;
+  CastTimeS:                  number;
   ClassJobCategory:           number;
   ClassJobRepair:             number;
   ClassJobUse:                number;
