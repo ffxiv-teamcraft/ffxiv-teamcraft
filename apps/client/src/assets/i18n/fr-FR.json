@@ -2913,5 +2913,11 @@
     "Explain_cost_to_craft": "Le coût ajouté de tous les matériaux excluant les cristaux pour fabriquer un seul objet en utilisant uniquement des matériaux du tableau de bord.",
     "Empty_list": "Liste vide, cliquez sur le bouton + sur un élément pour l'ajouter ici",
     "Add_to_list": "Ajouter ces éléments à une liste"
+  },
+  "MACHINA_ERRORS": {
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+    }
   }
 }
