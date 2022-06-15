@@ -45,7 +45,7 @@ export class MapService {
             })
           );
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }
     return this.cache[mapId];

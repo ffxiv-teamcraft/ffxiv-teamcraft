@@ -601,7 +601,7 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
 
       this.character$ = this.authFacade.mainCharacter$.pipe(
-        shareReplay(1),
+        shareReplay({ bufferSize: 1, refCount: true }),
         startWith({ loading: true })
       );
 

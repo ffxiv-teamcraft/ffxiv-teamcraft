@@ -35,14 +35,14 @@ export class UniversalisService {
     map(user => user.cid),
     filter(cid => !!cid),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private worldId$: Observable<number> = this.authFacade.user$.pipe(
     map(user => user.world),
     filter(world => world !== undefined),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private http: HttpClient, private lazyData: LazyDataFacade, private authFacade: AuthFacade,
@@ -85,7 +85,7 @@ export class UniversalisService {
             return item as MarketboardItem;
           });
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 

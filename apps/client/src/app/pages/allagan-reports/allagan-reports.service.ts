@@ -83,7 +83,7 @@ export class AllaganReportsService {
           appliedReportsCount: resApplied.data.applied_reports.aggregate.count
         };
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 
@@ -118,7 +118,7 @@ export class AllaganReportsService {
               return row;
             });
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       })
     );

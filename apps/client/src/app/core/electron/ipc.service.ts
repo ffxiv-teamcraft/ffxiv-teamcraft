@@ -14,6 +14,7 @@ import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-insta
 import { FreeCompanyDialog, Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { UpdateInstallPopupComponent } from '../../modules/ipc-popups/update-install-popup/update-install-popup.component';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -38,7 +39,7 @@ export class IpcService {
     map(packets => {
       return packets.every(packet => packet.header.operation === 'send');
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
@@ -51,7 +52,7 @@ export class IpcService {
 
   constructor(private platformService: PlatformService, private router: Router,
               private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private notification: NzNotificationService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
@@ -343,6 +344,9 @@ export class IpcService {
     this.on('packet', (event, message: Message) => {
       this.handleMessage(message);
     });
+    this.on('machina:error', (event, error: { message: string, retryDelay: number }) => {
+      this.handleMachinaError(error);
+    });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);
       // tslint:disable-next-line:prefer-const
@@ -477,5 +481,15 @@ export class IpcService {
         console.info(packet.type, packet);
       }
     }
+  }
+
+  private handleMachinaError(error: { message: string; retryDelay: number }): void {
+    this.notification.error(
+      this.translate.instant(`MACHINA_ERRORS.${error.message}`),
+      this.translate.instant(`MACHINA_ERRORS.DESCRIPTION.${error.message}`, { retryDelay: error.retryDelay }),
+      {
+        nzDuration: error.retryDelay * 1000
+      }
+    );
   }
 }

@@ -1228,9 +1228,23 @@
           "hidden": 0
         },
         {
+          "itemId": 36669,
+          "ilvl": 495,
+          "lvl": 81,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
           "itemId": 36163,
           "ilvl": 500,
           "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36673,
+          "ilvl": 510,
+          "lvl": 83,
           "stars": 0,
           "hidden": 0
         },
@@ -2452,6 +2466,13 @@
           "hidden": 0
         },
         {
+          "itemId": 36670,
+          "ilvl": 495,
+          "lvl": 81,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
           "itemId": 35600,
           "ilvl": 495,
           "lvl": 81,
@@ -2460,6 +2481,20 @@
         },
         {
           "itemId": 36175,
+          "ilvl": 500,
+          "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36671,
+          "ilvl": 500,
+          "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36672,
           "ilvl": 500,
           "lvl": 82,
           "stars": 0,
@@ -3756,6 +3791,27 @@
           "itemId": 36191,
           "ilvl": 500,
           "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36671,
+          "ilvl": 500,
+          "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36672,
+          "ilvl": 500,
+          "lvl": 82,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36673,
+          "ilvl": 510,
+          "lvl": 83,
           "stars": 0,
           "hidden": 0
         },
@@ -5862,6 +5918,20 @@
         },
         {
           "itemId": 36202,
+          "ilvl": 495,
+          "lvl": 81,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36669,
+          "ilvl": 495,
+          "lvl": 81,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 36670,
           "ilvl": 495,
           "lvl": 81,
           "stars": 0,

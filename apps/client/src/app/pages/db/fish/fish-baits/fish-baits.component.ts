@@ -33,7 +33,7 @@ export class FishBaitsComponent {
       );
     }),
     startWith([]),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(

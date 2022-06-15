@@ -97,7 +97,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             })
           );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.related$ = this.map$.pipe(
@@ -110,7 +110,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
         ]);
       }),
       map((res) => res.flat()),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const filteredTypes$ = combineLatest([this.related$, this.enabledTypes$]).pipe(

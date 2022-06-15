@@ -208,7 +208,7 @@ export class AuthEffects {
 
   markAsDoneInLog$ = createEffect(() => this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
-    debounceBufferTime(2000),
+    debounceBufferTime(1000),
     withLatestFrom(this.authFacade.user$),
     filter(([, user]) => user.defaultLodestoneId !== undefined),
     withLatestFrom(this.authFacade.serverLogTracking$),

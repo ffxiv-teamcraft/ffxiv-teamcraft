@@ -33,7 +33,7 @@ export class TeamService extends FirestoreStorage<Team> {
           teams.forEach(team => team.afterDeserialized());
           return teams;
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 

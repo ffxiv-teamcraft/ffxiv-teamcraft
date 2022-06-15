@@ -171,7 +171,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
       }
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public savedSet = true;
@@ -842,12 +842,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           .filter(i => i.id > 20 && i.quality > 0)
           .map(ingredient => ({ id: +ingredient.id, amount: 0, max: ingredient.amount, quality: ingredient.quality }));
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(
       debounceTime(1000),
-      shareReplay(1),
+      shareReplay({ bufferSize: 1, refCount: true }),
       tap(stats => {
         const levels = stats.levels;
         levels[stats.jobId - 8] = stats.level;
@@ -912,7 +912,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         }
         return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     combineLatest([this.rotation$, this.crafterStats$, observeInput(this, 'routeConsumables', true)]).pipe(
@@ -972,7 +972,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       tap(result => {
         this.actionFailed = result.steps.find(step => !step.success) !== undefined;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.qualityPer100$ = this.result$.pipe(

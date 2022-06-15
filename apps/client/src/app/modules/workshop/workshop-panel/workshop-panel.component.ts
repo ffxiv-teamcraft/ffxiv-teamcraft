@@ -40,7 +40,7 @@ export class WorkshopPanelComponent {
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => PermissionsController.getPermissionLevel(workshop, userId)),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private syncLinkUrl: string;
@@ -52,7 +52,7 @@ export class WorkshopPanelComponent {
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.workshop$]).pipe(
       map(([links, workshop]) => links.find(link => link.redirectTo === `workshop/${workshop.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

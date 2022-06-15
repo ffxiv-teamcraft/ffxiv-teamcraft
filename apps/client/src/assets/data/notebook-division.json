@@ -1821,10 +1821,10 @@
   },
   "1050": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Ameliance",
+      "ja": "アメリアンス",
+      "de": "Ameliance",
+      "fr": "Ameliance"
     },
     "pages": [
       1400,
@@ -1836,8 +1836,8 @@
       1406,
       1407
     ],
-    "craftLevel": 0,
-    "gatheringLevel": 0
+    "craftLevel": 80,
+    "gatheringLevel": 255
   },
   "1051": {
     "name": {

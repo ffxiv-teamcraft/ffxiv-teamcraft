@@ -66,7 +66,7 @@ export class ListPickerDrawerComponent {
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.lists$ = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.query$]).pipe(
@@ -91,11 +91,11 @@ export class ListPickerDrawerComponent {
           otherLists: lists.filter(l => !l.public)
         };
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.listsWithWriteAccess$ = this.listsFacade.listsWithWriteAccess$.pipe(
       debounceTime(100),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.listsFacade.loadMyLists();

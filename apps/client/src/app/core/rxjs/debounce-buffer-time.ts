@@ -5,7 +5,7 @@ export function debounceBufferTime<T>(
   duration: number
 ): OperatorFunction<T, T[]> {
   return (source: Observable<T>) => {
-    const sharedSource = source.pipe(shareReplay(1));
+    const sharedSource = source.pipe(shareReplay({ bufferSize: 1, refCount: true }));
     return sharedSource.pipe(
       buffer(sharedSource.pipe(
         debounceTime(duration)

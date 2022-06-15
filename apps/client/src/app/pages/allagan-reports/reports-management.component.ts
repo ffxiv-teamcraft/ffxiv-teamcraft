@@ -29,7 +29,7 @@ export class ReportsManagementComponent extends TeamcraftComponent {
     )
   ]).pipe(
     map(entries => entries.flat()),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   protected readonly fates$ = this.lazyData.getSearchIndex('fates', 'name');

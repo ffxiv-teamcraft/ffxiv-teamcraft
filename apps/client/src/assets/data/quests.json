@@ -70247,30 +70247,56 @@
   },
   "70059": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Of Mothers and Merchants",
+      "ja": "お得意様アメリアンス",
+      "de": "Ameliances Bildungsinitiative",
+      "fr": "Ameliance et ses commandes spéciales"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36053,
+        "amount": 3
+      },
+      {
+        "id": 36054,
+        "amount": 3
+      }
+    ]
   },
   "70060": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Mother's Love",
+      "ja": "魔法人形は自立する",
+      "de": "Das Herz einer Mutter",
+      "fr": "Une poupée magique très autonome"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36060,
+        "amount": 3
+      },
+      {
+        "id": 36061,
+        "amount": 3
+      }
+    ]
   },
   "70061": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Gift from House Leveilleur",
+      "ja": "旅の無事を祈って",
+      "de": "Ein Geschenk der Leveilleurs",
+      "fr": "Un cadeau des Leveilleur"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 37493,
+        "amount": 1
+      }
+    ]
   },
   "70062": {
     "name": {
@@ -70475,19 +70501,19 @@
   },
   "70076": {
     "name": {
-      "en": "紅蓮祭と帰ってきた常夏の魔城",
+      "en": "A Matter of Course",
       "ja": "紅蓮祭と帰ってきた常夏の魔城",
       "de": "Leicht wie eine Feder",
-      "fr": "Les Feux de la Mort et Pas dans l'tas le r'voilà"
+      "fr": "Pas dans l'tas le r'voilà"
     },
     "icon": "/i/080000/080101.png"
   },
   "70077": {
     "name": {
-      "en": "紅蓮祭と再出発の一歩",
+      "en": "Fhul Me Once",
       "ja": "紅蓮祭と再出発の一歩",
       "de": "Wahre Abenteurer",
-      "fr": "Les Feux de la Mort et un premier pas vers un nouveau départ"
+      "fr": "Un premier pas vers un nouveau départ"
     },
     "icon": "/i/080000/080101.png",
     "rewards": [
@@ -70515,19 +70541,19 @@
   },
   "70078": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Sleeping Gentleman",
+      "ja": "紳士の長い眠り",
+      "de": "Was leuchtet und hat Manieren?",
+      "fr": "Il dit “pardonné”?"
     },
     "icon": "/i/071000/071221.png"
   },
   "70079": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Soulful Reunion",
+      "ja": "士女の再会",
+      "de": "Ein Mann der Ehren weckt Begehren",
+      "fr": "Un corps à prendre?"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -70542,309 +70568,477 @@
   },
   "70081": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Hippos Born to Run",
+      "ja": " 爆走ヒッポ、島を駆る",
+      "de": " Die rasenden Flusspferde von Thavnair",
+      "fr": " Hippos dans la poussière"
     },
     "icon": "/i/071000/071221.png"
   },
   "70082": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Pachyderm's Promptitude",
+      "ja": " 運送屋の新たな仕事",
+      "de": " Schneller ist besser",
+      "fr": " Les Hippotracteurs à la conquête de Thavnair"
     },
     "icon": "/i/071000/071221.png"
   },
   "70083": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Hippo Healing",
+      "ja": " 癒し癒されヒッポッポ",
+      "de": " Sauryamäßig schlecht gelaunt",
+      "fr": " Un hippo averti en vaut deux"
     },
     "icon": "/i/071000/071221.png"
   },
   "70084": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Defiant Ogul, Deified!",
+      "ja": " オグルはマヌシャのふりをした！",
+      "de": " Der große Acala",
+      "fr": " Les fourberies d'Ogul"
     },
     "icon": "/i/071000/071221.png"
   },
   "70085": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Leader to Leader",
+      "ja": " アルカソーダラとガジャースラ",
+      "de": " Hippohott!",
+      "fr": " Dans l'œil rouge des Gajasuras"
     },
     "icon": "/i/071000/071221.png"
   },
   "70086": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " The Hippo Riders",
+      "ja": " ヒッポライダーズ",
+      "de": " Eine geschenkte Gelegenheit",
+      "fr": " La botte secrète de Kancana"
     },
     "icon": "/i/071000/071221.png"
   },
   "70087": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Ridin' Flyers for Flyin' Riders",
+      "ja": " ヒッポ便のビラ配り",
+      "de": " Handzettel der Hipporaser",
+      "fr": " Des dépliants pour les hippos"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70088": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Deal by the Docks",
+      "ja": " ヒッポ乗りと海都の取引",
+      "de": " Lieferung aus Übersee",
+      "fr": " Une affaire qui roule"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70089": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Do It for the Vine",
+      "ja": " ヒッポカートの必需品",
+      "de": " Ranken für die Hippowagen",
+      "fr": " Répare ton char"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70090": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Missing Rider",
+      "ja": " 消えたヒッポカートを追え！",
+      "de": " Auf der Spur des vermissten Hipporasers",
+      "fr": " À la recherche du livreur perdu"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70091": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Flowers for Sanduruva",
+      "ja": " 商売繁盛の獣神さま",
+      "de": " Göttlicher Beistand für die Hipporaser",
+      "fr": " Samanta préfère le vert"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70092": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Anxious Rookie",
+      "ja": " 悩める配達員",
+      "de": " Reden will gelernt sein",
+      "fr": " Débuts timides"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70093": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Gulal Generosity",
+      "ja": " 色粉に祈りを込めて",
+      "de": " Farbenfroher Segen",
+      "fr": " Une prière qui sent la poudre"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70094": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Essential Eggredients",
+      "ja": " ハンサの卵で美味しいごはん",
+      "de": " Hipporaser lieben Hamsa-Eier",
+      "fr": " Attention, fragile!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70095": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Darling Defender",
+      "ja": " 譲れない理由がある",
+      "de": " Aus gutem Grund",
+      "fr": " Un cœur gros comme ça"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70096": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Bloomin' Ocean",
+      "ja": " 重宝する海の花",
+      "de": " Kostbare Meeresblumen",
+      "fr": " Délices sous-marins"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70097": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Fresh Eats and Ripe Sweets",
+      "ja": " 素敵な差し入れ",
+      "de": " Köstliche Geschenke",
+      "fr": " Vos plats préférés, toujours bien livrés"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70098": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Waste Not, Want None of That",
+      "ja": " 廃棄食材、熱烈歓迎",
+      "de": " Verwertung von Essensresten",
+      "fr": " Recyclage, réduction, réutilisation"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70099": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Seedy Affair",
+      "ja": " アシュヴァッタの臭～い実",
+      "de": " Stinkende Asvattha-Knospen",
+      "fr": " Prends-en de la graine"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70100": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Olfactory Warfare",
+      "ja": " ハヌマンラングールは外、福は内！",
+      "de": " Glücksverheißende Düfte",
+      "fr": " Poudre d'escampette"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70101": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Ridin' Hazards",
+      "ja": " ヒッポの交通安全",
+      "de": " Schreckhafte Flusspferde",
+      "fr": " Invasion de starmites"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70102": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Hippo Scrub",
+      "ja": " 泡々オーガニック石鹸",
+      "de": " Flusspferdseife",
+      "fr": " Un bon bain qui fait du bien"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70103": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Vanaspati's Blessing",
+      "ja": " ヴァナスパティの恵み",
+      "de": " Nur das beste Futter",
+      "fr": " Les bienfaits de Vanaspati"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70104": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Hells Hath No Fury as a Hippo Scorned",
+      "ja": " はらへりヒッポの大脱走",
+      "de": " Es will doch nur fressen",
+      "fr": " L'échappée de l'hippo affamé"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70105": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Tusk Trouble",
+      "ja": " ヒッポの強靭な牙",
+      "de": " Gefährliche Eckzähne",
+      "fr": " Des dents dures comme fer"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70106": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Patching Up",
+      "ja": " 水漏れトラブルのお供",
+      "de": " Natürliche Imprägnierung",
+      "fr": " Fuite d'eau dans les tuyaux"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70107": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Hippo's Best Friend",
+      "ja": " 意外な保湿剤",
+      "de": " Dick, aber empfindlich",
+      "fr": " Une crème solaire pas comme les autres"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70108": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " An Explosive Brew",
+      "ja": " 刺激的なルーツ",
+      "de": " Anregendes Nebenprodukt",
+      "fr": " Une origine explosive"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70109": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Gathering Moss",
+      "ja": " 苔の使い道",
+      "de": " Schmackhaftes Moos",
+      "fr": " Vous prendrez bien un peu de mousse?"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70110": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Blood from a Stonemason",
+      "ja": " ツケ払いはしっかりと！",
+      "de": " Bezahlt eure Rechnung!",
+      "fr": " Paie ton ardoise!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70111": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " A Radiant Delivery",
+      "ja": " 星戦士団の御用達",
+      "de": " Lieferung an das Himmelsheer",
+      "fr": " Les fournitures de l'Ost rayonnant"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70112": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Like a Crate to Water",
+      "ja": " カバ大暴れ、ゾウ溺れ",
+      "de": " Gepäck unter Wasser",
+      "fr": " Hippo déchaîné, éléphant trempé"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70113": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Manusyan for a Day",
+      "ja": " お願い、マヌシャ神！",
+      "de": " Manusya sei Dank",
+      "fr": " Ô Manusya, entendez mon appel!"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70114": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Steep the Legs",
+      "ja": " 魅惑のアキャーリクラブ",
+      "de": " Köstliche Akyaali-Krabbe",
+      "fr": " Des pattes de crabe appétissantes"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 36657,
+        "amount": 1
+      }
+    ]
   },
   "70115": {
     "name": {
@@ -70926,10 +71120,10 @@
   },
   "70119": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Small Business, Big Dreams",
+      "ja": "世界を繋げ、大繁盛の輪！",
+      "de": "Wohlstand, der die Welt verbindet!",
+      "fr": "Opération promotionnelle"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -70959,21 +71153,27 @@
   },
   "70122": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Heartless Hypothesis",
+      "ja": "心を持たぬ者は思考する",
+      "de": "Eine herzlose Hypothese",
+      "fr": "Voyage à cœur ouvert"
     },
     "icon": "/i/071000/071221.png"
   },
   "70123": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Goodbye, ε̆│̆│Δ",
+      "ja": "グッバイ・＊＊＊",
+      "de": "Auf Wiedersehen, ***",
+      "fr": "∀∪ я∈vФiя, FIN?"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/071000/071221.png",
+    "rewards": [
+      {
+        "id": 37414,
+        "amount": 1
+      }
+    ]
   },
   "70124": {
     "name": {

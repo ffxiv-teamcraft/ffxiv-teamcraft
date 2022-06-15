@@ -44,7 +44,7 @@ export class UserAvatarComponent implements OnInit {
         return of(null);
       }),
       filter(c => c !== null),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.character$ = character$.pipe(map(res => res.character));
     this.status$ = character$.pipe(map(res => ({ verified: res.verified })), startWith({ verified: false }));

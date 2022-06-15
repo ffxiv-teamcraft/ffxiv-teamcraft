@@ -119,7 +119,7 @@ export class ListPanelComponent extends TeamcraftComponent {
           return permissionLevel;
         }),
         distinctUntilChanged(),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }),
     map(level => {
@@ -134,7 +134,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   public customLink$: Observable<CustomLink> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
     map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
     tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private updateAmountDebounces: { [index: number]: Subject<any> } = {};

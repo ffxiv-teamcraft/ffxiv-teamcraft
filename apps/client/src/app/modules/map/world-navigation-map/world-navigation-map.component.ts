@@ -52,7 +52,7 @@ export class WorldNavigationMapComponent extends TeamcraftComponent implements O
   ngOnInit() {
     this.optimizedPath$ = this.mapService.getOptimizedPathInWorld(this.points).pipe(
       first(),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.currentPath$ = combineLatest([this.optimizedPath$, this.currentPathIndex$]).pipe(

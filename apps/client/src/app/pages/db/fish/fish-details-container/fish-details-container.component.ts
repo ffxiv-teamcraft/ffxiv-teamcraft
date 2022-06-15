@@ -36,7 +36,7 @@ export class FishDetailsContainerComponent {
       snagging: res.data?.snagging
     })),
     startWith({}),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(public readonly settings: SettingsService, private readonly fishCtx: FishContextService) {

@@ -20595,6 +20595,51 @@
     "weathered": 0,
     "stars": 0
   },
+  "36660": {
+    "id": 1143,
+    "itemId": 36660,
+    "level": 81,
+    "icon": "/i/029000/029233.png",
+    "mapId": 696,
+    "zoneId": 3709,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
+    }
+  },
+  "36662": {
+    "id": 1144,
+    "itemId": 36662,
+    "level": 82,
+    "icon": "/i/029000/029718.png",
+    "mapId": 214,
+    "zoneId": 2002,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "36663": {
+    "id": 1145,
+    "itemId": 36663,
+    "level": 83,
+    "icon": "/i/029000/029062.png",
+    "mapId": 696,
+    "zoneId": 3709,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 0
+  },
   "36679": {
     "id": 1135,
     "itemId": 36679,

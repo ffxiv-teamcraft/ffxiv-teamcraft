@@ -37,7 +37,7 @@ export class UserPickerComponent {
 
   constructor(private xivapi: XivapiService, private lodestone: LodestoneService, private modalRef: NzModalRef,
               private userService: UserService, private authFacade: AuthFacade) {
-    this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
+    this.servers$ = this.xivapi.getServerList().pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
     this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(

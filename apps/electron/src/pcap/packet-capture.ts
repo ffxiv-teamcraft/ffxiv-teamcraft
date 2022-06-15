@@ -209,6 +209,15 @@ export class PacketCapture {
       .catch((err) => {
         log.error(`Couldn't start packet capture`);
         log.error(err);
+        if (err.message === `Cannot call write after a stream was destroyed`) {
+          this.mainWindow.win.webContents.send('machina:error', {
+            message: 'Wrapper_failed_to_start',
+            retryDelay: 120
+          });
+          setTimeout(() => {
+            this.start();
+          });
+        }
       });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {

@@ -99,7 +99,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           .map(e => this.inventoryFacade.getContainerDisplayName(e)));
       }
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private adaptativeFilter$ = new BehaviorSubject<boolean>(localStorage.getItem('adaptative-filter') === 'true');
@@ -135,7 +135,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         }
       }),
       map(([list]) => list),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
@@ -144,7 +144,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     );
     this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       switchMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.crystals$ = this.list$.pipe(
       map(list => ListController.getCrystals(list).sort((a, b) => a.id - b.id))

@@ -52,7 +52,7 @@ export class PacketCaptureTrackerService {
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const isGathering$ = merge(
@@ -64,7 +64,7 @@ export class PacketCaptureTrackerService {
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const eventStatus$ = combineLatest([isCrafting$, isGathering$]).pipe(
@@ -101,7 +101,7 @@ export class PacketCaptureTrackerService {
 
     const statusIsNull$ = combineLatest([patches$, eventStatus$, this.listsFacade.selectedList$]).pipe(
       map(([, status, list]) => status === null || list.offline),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const debouncedPatches$ = patches$.pipe(

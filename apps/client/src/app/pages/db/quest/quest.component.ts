@@ -58,7 +58,7 @@ export class QuestComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getQuest(+id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiQuest$ = questId$.pipe(
@@ -69,7 +69,7 @@ export class QuestComponent extends TeamcraftPageComponent {
         quest.chainLength = questChainLengths[quest.ID];
         return quest;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.startingPoint$ = this.xivapiQuest$.pipe(
@@ -189,7 +189,7 @@ export class QuestComponent extends TeamcraftPageComponent {
         textData.Dialogue = textData.Dialogue.filter(d => d.Text !== 'deleted');
         return textData;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.links$ = combineLatest([this.xivapiQuest$]).pipe(

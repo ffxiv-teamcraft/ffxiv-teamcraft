@@ -22,7 +22,7 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const resultLog$ = packets$.pipe(

@@ -69,7 +69,7 @@ export class RetainersComponent {
             };
           });
       }),
-      shareReplay(1),
+      shareReplay({ bufferSize: 1, refCount: true }),
       switchMap(display => {
         return combineLatest([this.inventoryService.inventory$, this.retainersPrices$]).pipe(
           switchMap(([inventory, retainerPrices]) => {

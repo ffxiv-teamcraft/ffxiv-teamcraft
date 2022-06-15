@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.11"></a>
+## [9.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.10...v9.6.11) (2022-06-15)
+
+
+### Bug Fixes
+
+* **db:** add missing log and gathering data from 6.1 update ([a771a30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a771a30))
+* **db:** added some missing recipes ([d3ae42a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3ae42a))
+* **desktop:** tentative fix for inventory tracking stopping suddenly ([b41381d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b41381d))
+* **fishing-overlay:** fixed throw timer not resetting when hooking before bite ([b2cacca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2cacca))
+* **gearsets:** fixed etro import skipping ring materias ([4a0a1d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a0a1d2))
+* **log:** better save logic for completion data ([68ebe91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68ebe91))
+* **search:** fixed korean item search ([5db70c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5db70c7))
+* **teams:** fixed discord webhook permission issue ([a77582e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a77582e))
+
+
+### Features
+
+* **desktop:** better error handling for wrapper errors ([5086baf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5086baf))
+
+
+### Performance Improvements
+
+* **core:** better Observable cache management ([4c88fbf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c88fbf))
+
+
+
 <a name="9.6.10"></a>
 ## [9.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.9...v9.6.10) (2022-06-12)
 

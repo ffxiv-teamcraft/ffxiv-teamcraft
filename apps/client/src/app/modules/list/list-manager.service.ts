@@ -50,7 +50,7 @@ export class ListManagerService {
               private authFacade: AuthFacade) {
 
     this.customItemsFacade.loadAll();
-    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay(1));
+    this.customItems$ = this.customItemsFacade.allCustomItems$.pipe(shareReplay({ bufferSize: 1, refCount: true }));
 
   }
 

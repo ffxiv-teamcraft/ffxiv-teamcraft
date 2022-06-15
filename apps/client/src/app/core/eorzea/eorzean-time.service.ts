@@ -55,7 +55,7 @@ export class EorzeanTimeService {
 
   public getEorzeanTime(): Observable<Date> {
     return this._timerObservable.pipe(
-      shareReplay(1),
+      shareReplay({ bufferSize: 1, refCount: true }),
       isPlatformServer(this.platform) || IS_HEADLESS ? first() : tap()
     );
   }
