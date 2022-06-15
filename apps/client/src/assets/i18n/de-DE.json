@@ -2913,5 +2913,11 @@
     "Explain_cost_to_craft": "Zusätzlich Kosten für alle Materialien, ausgenommen Kristalle, um einen Gegenstand nur mit Materialien vom Marktbrett herzustellen.",
     "Empty_list": "Leere Liste, klicke auf die + Schaltfläche eines Gegenstands um ihn hier hinzuzufügen",
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
+  },
+  "MACHINA_ERRORS": {
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+    }
   }
 }
