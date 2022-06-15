@@ -2913,5 +2913,11 @@
     "Explain_cost_to_craft": "장터 게시판에서 모든 재료를 구매하여 제작하였을 때 필요한 금액입니다. (크리스탈 제외)",
     "Empty_list": "비어있는 목록, +버튼을 클릭하여 아이템을 여기에 추가할 수 있습니다",
     "Add_to_list": "해당 아이템을 목록에 추가"
+  },
+  "MACHINA_ERRORS": {
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+    }
   }
 }
