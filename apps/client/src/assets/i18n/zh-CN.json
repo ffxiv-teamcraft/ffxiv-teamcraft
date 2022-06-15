@@ -2913,5 +2913,11 @@
     "Explain_cost_to_craft": "包含从市场板购买所有除水晶之外的材料的支出。",
     "Empty_list": "当前清单为空，请点击 + 按钮添加物品",
     "Add_to_list": "将这些物品加入到清单"
+  },
+  "MACHINA_ERRORS": {
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+    }
   }
 }
