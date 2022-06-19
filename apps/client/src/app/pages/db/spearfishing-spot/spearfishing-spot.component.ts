@@ -94,11 +94,11 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
         if (!(base.GameContentLinks && base.GameContentLinks.GatheringPoint)) {
           return of(base);
         }
-        return combineLatest([base.GameContentLinks.GatheringPoint.GatheringPointBase.map(
+        return combineLatest(base.GameContentLinks.GatheringPoint.GatheringPointBase.map(
           point => {
             return this.xivapi.get(XivapiEndpoint.GatheringPoint, point);
           }
-        )]).pipe(
+        )).pipe(
           map(points => {
             base.GatheringPoints = points;
             return base;
