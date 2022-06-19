@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Inclure les ratés",
-      "Miss": "Raté"
+      "Miss": "Raté",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Objets",
@@ -2915,9 +2916,10 @@
     "Add_to_list": "Ajouter ces éléments à une liste"
   },
   "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
     "Wrapper_failed_to_start": "Machina Wrapper failed to start",
     "DESCRIPTION": {
-      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin). Retrying in {{retryDelay}}s"
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
     }
   }
 }
