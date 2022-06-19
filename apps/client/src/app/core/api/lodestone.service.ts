@@ -100,7 +100,7 @@ export class LodestoneService {
           );
         }),
         filter(res => res !== null),
-        shareReplay({ bufferSize: 1, refCount: true })
+        shareReplay(1)
       );
       this.addToQueue(trigger);
     }
