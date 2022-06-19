@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "Fish per tug",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Miss": "Miss",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Items",
