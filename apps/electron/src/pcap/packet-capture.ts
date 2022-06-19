@@ -214,11 +214,16 @@ export class PacketCapture {
             message: 'Wrapper_failed_to_start',
             retryDelay: 120
           });
-          setTimeout(() => {
-            this.start();
-          });
         }
+        setTimeout(() => {
+          this.start();
+        }, 120000);
       });
+    this.captureInterface.on('error', err => {
+      this.mainWindow.win.webContents.send('machina:error:raw', {
+        message: err
+      });
+    });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
       if (this.options.verbose) {

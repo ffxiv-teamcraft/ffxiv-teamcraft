@@ -347,6 +347,9 @@ export class IpcService {
     this.on('machina:error', (event, error: { message: string, retryDelay: number }) => {
       this.handleMachinaError(error);
     });
+    this.on('machina:error:raw', (event, error: { message: string, retryDelay: number }) => {
+      this.handleMachinaError(error, true);
+    });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);
       // tslint:disable-next-line:prefer-const
@@ -483,13 +486,23 @@ export class IpcService {
     }
   }
 
-  private handleMachinaError(error: { message: string; retryDelay: number }): void {
-    this.notification.error(
-      this.translate.instant(`MACHINA_ERRORS.${error.message}`),
-      this.translate.instant(`MACHINA_ERRORS.DESCRIPTION.${error.message}`, { retryDelay: error.retryDelay }),
-      {
-        nzDuration: error.retryDelay * 1000
-      }
-    );
+  private handleMachinaError(error: { message: string; retryDelay: number }, raw = false): void {
+    if (raw) {
+      this.notification.error(
+        this.translate.instant(`MACHINA_ERRORS.Default`),
+        error.message,
+        {
+          nzDuration: 60000
+        }
+      );
+    } else {
+      this.notification.error(
+        this.translate.instant(`MACHINA_ERRORS.${error.message}`),
+        this.translate.instant(`MACHINA_ERRORS.DESCRIPTION.${error.message}`, { retryDelay: error.retryDelay }),
+        {
+          nzDuration: error.retryDelay * 1000
+        }
+      );
+    }
   }
 }
