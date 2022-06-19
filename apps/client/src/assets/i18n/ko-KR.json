@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "입질당 물고기",
       "Fish_per_hookset": "낚아채기당 물고기",
       "Include_misses": "놓친 수 포함",
-      "Miss": "놓침"
+      "Miss": "놓침",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "아이템",
@@ -2915,9 +2916,10 @@
     "Add_to_list": "해당 아이템을 목록에 추가"
   },
   "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
     "Wrapper_failed_to_start": "Machina Wrapper 실행 실패",
     "DESCRIPTION": {
-      "Wrapper_failed_to_start": "게임이 실행 중인지 확인해 주세요. (관리자 권한으로 게임을 실행했다면 TC도 관리자 권한으로 실행해주세요). {{retryDelay}}초 후 재시도"
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
     }
   }
 }
