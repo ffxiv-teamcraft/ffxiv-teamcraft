@@ -2445,7 +2445,7 @@
       "Tags": "태그",
       "Price": "지불할 금액",
       "Price_tip": "상대방과 가격을 협의하고 싶다면 금액란에 0을 입력하세요",
-      "Only_crafting": "제작직만 가능",
+      "Only_crafting": "제작만",
       "Includes_materials_label": "모든 재료를 제공하며 제작만 의뢰합니다",
       "Only_materials": "재료만",
       "Only_requires_materials": "최종 아이템을 제외한 목록의 재료만 의뢰합니다",
