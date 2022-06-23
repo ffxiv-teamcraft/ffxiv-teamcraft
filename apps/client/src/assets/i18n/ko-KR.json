@@ -1853,7 +1853,7 @@
     "X_sold_last_week": "지난 주 {{amount}} 개 판매"
   },
   "FOOD_PICKER": {
-    "Title": "음식 선택기",
+    "Title": "음식 선택 도우미",
     "Description": "어떤 도핑 아이템이 원하는 능력치를 올려주는지 궁금하시나요? 다른 곳에서 찾지말고 이 곳에서 전부 찾아보세요!",
     "Pick_stat": "능력치 선택"
   },
@@ -2900,7 +2900,7 @@
     "Spearfishing": "작살"
   },
   "PROFITS": {
-    "Title": "Profits Helper",
+    "Title": "장터 판매 도우미",
     "Description": "캐릭터의 레벨과 Universalis의 장터 데이터를 기반으로 가장 적합한 채집/제작 아이템을 찾습니다.",
     "Self_sufficient": "자급자족",
     "Crafting": "제작",
