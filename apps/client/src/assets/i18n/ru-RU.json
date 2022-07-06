@@ -1,7 +1,7 @@
 {
   "Mogstation": "Mogstation",
   "Quests": "Квесты",
-  "Facebook_notice": "Facebook login is no longer available. You can add a password to your account using the \"reset password\" system, or by asking Miu on Discord.",
+  "Facebook_notice": "Facebook логин больше не доступен, вы можете добавить пароль к своей учетной записи, используя систему \"сброса пароля\" или попросив Miu в дискорде.",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
   "Pick_a_fc": "Выбрать FC",
@@ -15,15 +15,15 @@
   "See_on_map": "Посмотреть на карте",
   "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
-  "List_fork_in_progress": "Copying the list to your account…",
-  "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
+  "List_fork_in_progress": "Копирование списка на ваш аккаунт…",
+  "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
+  "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Выбор",
   "Change_character": "Персонаж",
-  "Check_guides": "Check our guides",
-  "Guides_links": "Teamcraft Guides",
+  "Check_guides": "Посмотрите наши руководства",
+  "Guides_links": "Руоководства Teamcraft",
   "Db_ban": "У вас нет прав на публикацию комментариев в базе данных из-за вашей предыдущей активности. Если вы хотите обсудить этот бан, напишите Miu#1568 в Discord.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
@@ -45,7 +45,7 @@
     "Add_to_list": "Добавить предмет в список",
     "Apply_filters": "Применить фильтры",
     "Reset_filters": "Сбросить фильтры",
-    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
@@ -55,9 +55,9 @@
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
   "Find_us_on_twitter": "Мы в Twitter",
-  "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
-  "Support_on_patreon": "Support the project on Patreon",
+  "Join_discord_server": "Присоединиться к нашему Discord серверу",
+  "See_code_github": "Просмотреть код на github",
+  "Support_on_patreon": "Поддержать проект на Патреоне",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
   "Like_the_tool": "Вам нравится этот инструмент?",
   "Default": "По умолчанию",
@@ -85,7 +85,7 @@
     "Workshops": "Мастерские",
     "Add_one_list": "Добавить список",
     "Add_workshop": "Добавить мастерскую",
-    "Delete_message": "Deleting a workshop won't delete the lists in it. They will only be brought back to workshop-less lists",
+    "Delete_message": "Удаление мастерской не удалит в ней списки, они будут перемещены в списки без мастерских",
     "List_selection_title": "Выберите списки для добавлению в мастерскую {{workshopName}}",
     "Name_dialog": "Название мастерской",
     "Created_by": "Создано {{name}}",
@@ -129,9 +129,9 @@
     "Tags_filter_reset": "Сбросить фильтр",
     "Exclude_filter_placeholder": "Исключить использование тегов",
     "Exclude_filter_reset": "Сбросить фильтр исключений",
-    "Name_filter_placeholder": "Filter using name (5 characters minimum)",
-    "No_lists_matching": "No lists matching your filters. Make sure you have at least one tag selected and/or a name with a length of at least 5 characters",
-    "Search": "Search"
+    "Name_filter_placeholder": "Отфильтроваь используя имя (не менее 5 символов)",
+    "No_lists_matching": "Ни один список не совпал с фильтром. Убедись в том что хотя бы один тег выбран и/или в названии не менее 5 символов",
+    "Search": "Поиск"
   },
   "COMMON": {
     "Length": "Длина",
@@ -148,7 +148,7 @@
     "Success": "Успешно",
     "Copy_to_clipboard": "Копировать в буфер обмена",
     "Language": "Язык",
-    "Opened_in_desktop": "This page has been opened inside your desktop app. You can now close it.",
+    "Opened_in_desktop": "Эта страница была открыта в приложении, теперь вы можете её закрыть.",
     "Opened_in_desktop_setting": "Вы можете отключить это поведение в настройках",
     "Opened_in_desktop_button": "Or by clicking this button",
     "Open_in_desktop": "Открыть в приложении",
@@ -183,19 +183,19 @@
     "Never": "Никогда",
     "Festival": "Только во время фестиваля",
     "Back": "Назад",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Поддержите нас на patreon, чтобы убрать рекламу",
     "Support_us": "Поддержите нас",
     "Show_more": "Показать еще",
     "Item": "Предмет",
     "Venture": "Venture",
     "Monster": "Монстр",
-    "Airship": "Airship",
+    "Airship": "Дирижабль",
     "Submarine": "Субмарина",
-    "Voyage": "Voyage",
+    "Voyage": "Экспедиция",
     "Instance": "Инстанс",
     "Fate": "Fate",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "Перезагрузка",
+    "Click_to_apply": "Щелкните, чтобы применить"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -216,7 +216,7 @@
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Включить оверлей",
     "Open_alarms_overlay": "Открыть оверлей оповещений",
-    "More_available": "and {{amount}} more…",
+    "More_available": "добавить ещё {{amount}}…",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "Рыба за tug",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Включать пропущенные",
-      "Miss": "Пропущено"
+      "Miss": "Пропущено",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1755,7 +1756,8 @@
       "No_comments": "Нет комментариев",
       "Post": "Разместить",
       "Editor_tip": "Введите <тип страницы>:\"<Название Контента>\" чтоб создать ссылку на другую страницу. Например: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". Поддерживаемые типы страниц: item (предмет), map (карта), mob (монстр), achievement (достижение), leve (ливквест), npc, instance (инстанс), quest (квест), trait (пассивный эффект), action (действие), status (эффект)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Нажмите здесь чтобы открыть полный список изменений патча",
@@ -2912,5 +2914,12 @@
     "Explain_cost_to_craft": "Added cost of all materials excluding crystals to craft one item using only materials from marketboard.",
     "Empty_list": "Empty list, click the + button on an item to add it here",
     "Add_to_list": "Add these items to a list"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
   }
 }
