@@ -293,6 +293,7 @@ export class CommunityRotationsPageComponent {
         }
       });
     this.filteredRotations$ = this.filters$.pipe(
+      filter(filters => !!filters.rlvl),
       tap(() => this.loading = true),
       debounceTime(250),
       switchMap((filters) => {

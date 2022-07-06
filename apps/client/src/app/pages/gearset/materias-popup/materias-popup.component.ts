@@ -63,7 +63,7 @@ export class MateriasPopupComponent {
     const cacheKey = `${materia}:${index}`;
     if (!this.bonusesCache[cacheKey]) {
       this.bonusesCache[cacheKey] = this.materiasService.getMateriaBonus(this.equipmentPiece, materia, index).pipe(
-        shareReplay({ bufferSize: 1, refCount: true })
+        shareReplay(1)
       );
     }
     return this.bonusesCache[cacheKey];
@@ -76,7 +76,7 @@ export class MateriasPopupComponent {
     const cacheKey = `${materiaItemId}:${slot}`;
     if (!this.meldingChancesCache[cacheKey]) {
       this.meldingChancesCache[cacheKey] = this.materiasService.getMeldingChances(this.equipmentPiece, materiaItemId, slot).pipe(
-        shareReplay({ bufferSize: 1, refCount: true })
+        shareReplay(1)
       );
     }
     return this.meldingChancesCache[cacheKey];

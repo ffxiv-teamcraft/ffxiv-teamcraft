@@ -13,17 +13,18 @@ import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 const fishImageUrls = [];
 
 Chart.pluginService.register({
-  afterDraw: chart => {
-    const ctx = chart.chart.ctx;
-    const xAxis = chart.scales['x-axis-0'];
-    const yAxis = chart.scales['y-axis-0'];
-    yAxis.ticks.forEach((value, index) => {
-      const y = yAxis.getPixelForTick(index);
-      const image = new Image();
-      image.src = fishImageUrls[index],
-        ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
-    });
-  }
+  // TODO fix image loading
+  // afterDraw: chart => {
+  //   const ctx = chart.chart.ctx;
+  //   const xAxis = chart.scales['x-axis-0'];
+  //   const yAxis = chart.scales['y-axis-0'];
+  //   yAxis.ticks.forEach((value, index) => {
+  //     const y = yAxis.getPixelForTick(index);
+  //     const image = new Image();
+  //     image.src = fishImageUrls[index],
+  //       ctx.drawImage(image, xAxis.left - 33, y - 16, 32, 32);
+  //   });
+  // }
 });
 
 interface FishingSpotChartData {

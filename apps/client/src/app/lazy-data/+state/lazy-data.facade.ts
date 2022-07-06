@@ -428,7 +428,7 @@ export class LazyDataFacade {
               };
             });
         }),
-        shareReplay({ bufferSize: 1, refCount: true })
+        shareReplay(1)
       );
     }
     return this.searchIndexCache[entry];
@@ -471,7 +471,7 @@ export class LazyDataFacade {
 
   private cacheObservable<T>(observable: Observable<T>, entity: LazyDataKey, id?: number): void {
     const key = entity + (id !== undefined ? `:${id}` : '');
-    this.cache[key] = observable.pipe(shareReplay({ bufferSize: 1, refCount: true }));
+    this.cache[key] = observable.pipe(shareReplay(1));
     setTimeout(() => {
       delete this.cache[key];
     }, LazyDataFacade.CACHE_TTL);

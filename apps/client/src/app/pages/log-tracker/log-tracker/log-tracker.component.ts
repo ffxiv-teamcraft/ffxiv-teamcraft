@@ -45,8 +45,6 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
-  public nodeDataCache: Record<string, Observable<{ gatheringNode: GatheringNode, alarms: Alarm[] }[]>> = {};
-
   public dolSubTabIndex = 0;
 
   public dohSubTabIndex = 0;
