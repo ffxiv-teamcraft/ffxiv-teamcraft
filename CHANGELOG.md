@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.13"></a>
+## [9.6.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.12...v9.6.13) (2022-07-06)
+
+
+### Bug Fixes
+
+* **community-rotations:** require rlvl before running search ([02ed147](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02ed147))
+* **db:** fix anemone gardens fishing spot name not displayed properly ([4ee0593](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ee0593))
+* **db:** fix for instanced fishing holes not loading properly ([78ec21d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78ec21d))
+* **lodestone:** fixed lodestone profile sometimes not loading properly ([1590993](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1590993))
+
+
+### Features
+
+* **db:** support for korean v6.05 update ([39fda3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39fda3b))
+* **desktop:** better packet capture error handling and reporting ([943b072](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/943b072))
+* **desktop:** support for 6.18 packet capture ([befc4cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/befc4cf))
+
+
+### Performance Improvements
+
+* **list:** virtual scrolling buffer for better scrolling behavior ([a4531c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4531c4))
+
+
+
 <a name="9.6.12"></a>
 ## [9.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.11...v9.6.12) (2022-06-15)
 
