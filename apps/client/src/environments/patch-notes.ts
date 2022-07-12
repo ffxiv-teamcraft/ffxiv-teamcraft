@@ -9,4 +9,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** support for korean v6.051 update.`;
+* **db:** support for korean v6.051 update.`;

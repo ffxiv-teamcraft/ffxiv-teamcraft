@@ -1,10 +1,9 @@
-import { app, BrowserWindow, BrowserWindowConstructorOptions } from 'electron';
+import { app, BrowserWindow, BrowserWindowConstructorOptions, session } from 'electron';
 import { Constants } from '../constants';
 import { Store } from '../store';
 import { OverlayManager } from './overlay-manager';
 import { ProxyManager } from '../tools/proxy-manager';
 import { Subject } from 'rxjs';
-import { session } from 'electron/main';
 
 export class MainWindow {
 
@@ -112,10 +111,48 @@ export class MainWindow {
 
     this.win.webContents.on('will-navigate', handleRedirect);
     this.win.webContents.on('new-window', handleRedirect);
+
+    app
+      .whenReady()
+      .then(() => {
+        // Modify the user agent for all requests to the following urls.
+        const filter = {
+          urls: [
+            '*://cdn.intergient.com/*',
+            '*://securepubads.g.doubleclick.net/*',
+            '*://tpc.googlesyndication.com/*', // TODO: Still getting file:// ???
+            '*://tpc.googlesyndication.com/*/*',
+            '*://tpc.googlesyndication.com/**',
+            '*://www.googletagservices.com/*',
+            '*://www.googletagservices.com/**'
+          ]
+        };
+
+        // Before sending headers
+        session.defaultSession.webRequest.onBeforeSendHeaders(
+          filter,
+          (details, callback) => {
+            // details.requestHeaders['User-Agent'] = 'MyAgent';
+            details.requestHeaders.referrer = 'https://ffxivteamcraft.com/';
+            details.requestHeaders.origin = 'https://ffxivteamcraft.com/';
+
+            details.requestHeaders['sec-ch-ua-mobile'] = 'x-client-data';
+
+            details.requestHeaders['sec-ch-ua-mobile'] = '?0';
+            details.requestHeaders['sec-ch-ua-platform'] = 'windows';
+
+            details.requestHeaders['sec-ch-ua'] =
+              '"Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"';
+            details.referrer = 'https://ffxivteamcraft.com/';
+            callback({ requestHeaders: details.requestHeaders });
+          }
+        );
+      });
+
     (this.store.get('overlays', []) || []).forEach(overlayUri => this.overlayManager.toggleOverlay({ url: overlayUri }));
 
     session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
-      if (details.url.includes('ads?') && details.url.includes('url=file')) {
+      if (details.url.includes('ads') && details.url.includes('url=file')) {
         callback({
           redirectURL: details.url.replace(/url=[^&]+/gm, `url=https://ffxivteamcraft.com`)
         });
