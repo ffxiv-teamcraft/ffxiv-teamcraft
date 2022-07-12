@@ -34,7 +34,7 @@ export class AdComponent implements AfterViewInit, OnDestroy {
         onReady: () => {
           console.log('TYCHE READY !');
           tyche.addUnits([{
-            selectorId: 'pwAdBanner',
+            selectorId: 'pw-ad-banner',
             type: 'leaderboard_atf'
           }]).then(() => {
             tyche.displayUnits();
@@ -94,6 +94,7 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   }
 
   private addAd(): void {
+    return;
     if (!this.platform.isDesktop()) {
       if (this.placementId) {
         (window as any).top.__vm_add = (window as any).top.__vm_add || [];
@@ -103,6 +104,7 @@ export class AdComponent implements AfterViewInit, OnDestroy {
   }
 
   private removeAd(): void {
+    return;
     if (!this.platform.isDesktop()) {
       (window as any).top.__vm_remove = (window as any).top.__vm_remove || [];
       (window as any).top.__vm_remove.push(this.vmAdRef.nativeElement);
