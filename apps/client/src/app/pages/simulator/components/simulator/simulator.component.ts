@@ -901,6 +901,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       )
     ]).pipe(
       map(([stats, levelReq]) => {
+        if (levelReq === 255) {
+          levelReq = 0;
+        }
         return stats.level < levelReq;
       })
     );
