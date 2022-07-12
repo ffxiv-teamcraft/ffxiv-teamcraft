@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.14"></a>
+## [9.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.13...v9.6.14) (2022-07-12)
+
+
+### Bug Fixes
+
+* **currency-spending:** fix amount sold last week fixed to 5 ([ba9d74c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba9d74c))
+* **layout:** gathering icon now updates according to its area in breakdown ([a95138c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a95138c))
+* **lists:** experimental fix for list persistence not applied properly ([96beb4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96beb4b))
+* **simulator:** fix byregot's blessing import for korean rotations ([6eed006](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6eed006))
+* **simulator:** fix level 1-5 recipes being shown as level not met ([ff72743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff72743))
+
+
+### Features
+
+* **db:** support for korean v6.051 update ([d06ffaf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d06ffaf))
+
+
+
 <a name="9.6.13"></a>
 ## [9.6.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.12...v9.6.13) (2022-07-06)
 

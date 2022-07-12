@@ -1,10 +1,10 @@
-import { from, Observable, of, Subject, throwError } from 'rxjs';
+import { defer, from, Observable, of, Subject, throwError } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, distinctUntilChanged, filter, map, takeUntil, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, map, retry, takeUntil, tap } from 'rxjs/operators';
 import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/compat/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
@@ -206,11 +206,18 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   public runTransaction(listId: string, transactionFn: (transaction: firebase.firestore.Transaction, serverCopy: firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData>) => void): Observable<void> {
-    return from(this.firestore.firestore.runTransaction(async transaction => {
-      const ref = this.firestore.firestore.collection(this.getBaseUri()).doc(listId);
-      const serverCopy = await transaction.get(ref);
-      return transactionFn(transaction, serverCopy);
-    }));
+    return defer(() =>
+      this.firestore.firestore.runTransaction(async transaction => {
+        const ref = this.firestore.firestore.collection(this.getBaseUri()).doc(listId);
+        const serverCopy = await transaction.get(ref);
+        return transactionFn(transaction, serverCopy);
+      })
+    ).pipe(
+      retry({
+        count: 3,
+        delay: 200
+      })
+    );
   }
 
   updateIndexes<R extends T & { index: number }>(rows: Array<R>): Observable<void> {
