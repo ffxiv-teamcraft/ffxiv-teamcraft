@@ -45,7 +45,7 @@ export class PublicProfileComponent {
               private apollo: Apollo, public translate: TranslateService) {
     const userId$ = this.route.paramMap.pipe(
       map(params => params.get('userId')),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.characterEntry$ = userId$.pipe(
       switchMap(userId => this.characterService.getUserCharacter(userId)),
@@ -54,7 +54,7 @@ export class PublicProfileComponent {
         return EMPTY;
       })
     );
-    this.user$ = userId$.pipe(switchMap(uid => this.userService.get(uid)), shareReplay(1));
+    this.user$ = userId$.pipe(switchMap(uid => this.userService.get(uid)), shareReplay({ bufferSize: 1, refCount: true }));
     this.gearSets$ = this.user$.pipe(
       map(user => {
         const lodestoneId = user.defaultLodestoneId ? user.defaultLodestoneId : user.lodestoneIds[0].id;
@@ -76,13 +76,13 @@ export class PublicProfileComponent {
           })
         );
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.communityRotations$ = userId$.pipe(
       switchMap(userId => {
         return this.craftingRotationsService.getUserCommunityRotations(userId);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     // this.fishingRankings$ = this.user$.pipe(
     //   switchMap(user => {

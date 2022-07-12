@@ -17,7 +17,7 @@ export class IsVerifiedPipe implements PipeTransform {
         const entry = user.lodestoneIds.find(e => e.id === user.defaultLodestoneId);
         return entry && entry.verified;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

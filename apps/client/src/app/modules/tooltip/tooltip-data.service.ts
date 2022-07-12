@@ -33,11 +33,11 @@ export class TooltipDataService {
     if (this.actions[id] === undefined) {
       if (id > 99999) {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.CraftAction, id).pipe(
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       } else {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.Action, id).pipe(
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       }
     }

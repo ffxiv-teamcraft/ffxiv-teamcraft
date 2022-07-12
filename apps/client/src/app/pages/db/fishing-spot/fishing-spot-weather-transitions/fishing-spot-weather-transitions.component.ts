@@ -46,7 +46,7 @@ export class FishingSpotWeatherTransitionsComponent {
         })
         .sort((a, b) => (a.active ? -1 : b.active ? 1 : a.next.getTime() - b.next.getTime()));
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(

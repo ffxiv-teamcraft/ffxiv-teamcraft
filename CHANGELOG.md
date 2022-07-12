@@ -2,6 +2,121 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.14"></a>
+## [9.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.13...v9.6.14) (2022-07-12)
+
+
+### Bug Fixes
+
+* **currency-spending:** fix amount sold last week fixed to 5 ([ba9d74c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba9d74c))
+* **layout:** gathering icon now updates according to its area in breakdown ([a95138c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a95138c))
+* **lists:** experimental fix for list persistence not applied properly ([96beb4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96beb4b))
+* **simulator:** fix byregot's blessing import for korean rotations ([6eed006](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6eed006))
+* **simulator:** fix level 1-5 recipes being shown as level not met ([ff72743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff72743))
+
+
+### Features
+
+* **db:** support for korean v6.051 update ([d06ffaf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d06ffaf))
+
+
+
+<a name="9.6.13"></a>
+## [9.6.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.12...v9.6.13) (2022-07-06)
+
+
+### Bug Fixes
+
+* **community-rotations:** require rlvl before running search ([02ed147](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02ed147))
+* **db:** fix anemone gardens fishing spot name not displayed properly ([4ee0593](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ee0593))
+* **db:** fix for instanced fishing holes not loading properly ([78ec21d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78ec21d))
+* **lodestone:** fixed lodestone profile sometimes not loading properly ([1590993](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1590993))
+
+
+### Features
+
+* **db:** support for korean v6.05 update ([39fda3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39fda3b))
+* **desktop:** better packet capture error handling and reporting ([943b072](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/943b072))
+* **desktop:** support for 6.18 packet capture ([befc4cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/befc4cf))
+
+
+### Performance Improvements
+
+* **list:** virtual scrolling buffer for better scrolling behavior ([a4531c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4531c4))
+
+
+
+<a name="9.6.12"></a>
+## [9.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.11...v9.6.12) (2022-06-15)
+
+
+### Bug Fixes
+
+* **db:** added missing recipes and extracts ([4842217](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4842217))
+
+
+
+<a name="9.6.11"></a>
+## [9.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.10...v9.6.11) (2022-06-15)
+
+
+### Bug Fixes
+
+* **db:** add missing log and gathering data from 6.1 update ([a771a30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a771a30))
+* **db:** added some missing recipes ([d3ae42a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d3ae42a))
+* **desktop:** tentative fix for inventory tracking stopping suddenly ([b41381d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b41381d))
+* **fishing-overlay:** fixed throw timer not resetting when hooking before bite ([b2cacca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2cacca))
+* **gearsets:** fixed etro import skipping ring materias ([4a0a1d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a0a1d2))
+* **log:** better save logic for completion data ([68ebe91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68ebe91))
+* **search:** fixed korean item search ([5db70c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5db70c7))
+* **teams:** fixed discord webhook permission issue ([a77582e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a77582e))
+
+
+### Features
+
+* **desktop:** better error handling for wrapper errors ([5086baf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5086baf))
+
+
+### Performance Improvements
+
+* **core:** better Observable cache management ([4c88fbf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c88fbf))
+
+
+
+<a name="9.6.10"></a>
+## [9.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.9...v9.6.10) (2022-06-12)
+
+
+### Bug Fixes
+
+* **data:** fix missing names on various new items ([ec095d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec095d6))
+* **db:** fix bite times chart not loading ([b7b0828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7b0828))
+* **db:** fix filters reset in fishing misses popup table ([32fa46b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32fa46b))
+* **db:** fixed missing translation for deleted comments display ([5e115cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e115cb))
+* **desktop:** support for 6.15 packet capture changes ([9a88cc6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a88cc6))
+* **fish-log-tracker:** re-sort/add missing areas/spots ([2fa1de9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fa1de9))
+* **fish-log-tracker:** reverse area order to be more like in-game log ([7e01f59](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e01f59))
+* **log-tracker:** remove lvl mention from fishing spots ([01239ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01239ba))
+
+
+
+<a name="9.6.9"></a>
+## [9.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.8...v9.6.9) (2022-06-07)
+
+
+### Bug Fixes
+
+* **marketboard-popup:** change shareReplay() calls to prevent observables staying alive ([ea8fdef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea8fdef))
+* **packet capture:** prevent world ID updating needlessly ([33481a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33481a7))
+
+
+### Features
+
+* **db:** support for 6.15 data ([add20a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/add20a7))
+* **db:** support for korean v6.01 update ([85d3fa6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85d3fa6))
+
+
+
 <a name="9.6.8"></a>
 ## [9.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.7...v9.6.8) (2022-05-21)
 

@@ -83,7 +83,7 @@ export class ListsFacade {
     map(lists => {
       return this.sortLists(lists);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   sharedLists$ = this.authFacade.loggedIn$.pipe(
@@ -120,7 +120,7 @@ export class ListsFacade {
         })
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public listsWithWriteAccess$ = combineLatest([this.allListDetails$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$, this.teamsFacade.myTeams$]).pipe(
@@ -150,7 +150,7 @@ export class ListsFacade {
 
   selectedList$ = this.store.select(listsQuery.getSelectedList()).pipe(
     filter(list => list !== undefined),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   selectedListPermissionLevel$ = this.authFacade.loggedIn$.pipe(
@@ -182,7 +182,7 @@ export class ListsFacade {
       return Math.max(PermissionsController.getPermissionLevel(list, userId), PermissionsController.getPermissionLevel(list, fcId), teamPermissionLevel);
     }),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   needsVerification$ = this.store.select(listsQuery.getNeedsVerification);

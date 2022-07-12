@@ -58,7 +58,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
             })
           );
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
     }
     return this.userCache[uid];

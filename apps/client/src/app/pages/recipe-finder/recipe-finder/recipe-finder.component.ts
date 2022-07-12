@@ -105,7 +105,7 @@ export class RecipeFinderComponent implements OnDestroy {
     map(([items, input, amount]) => {
       return amount <= 0 || !items.some(i => this.i18n.getName(i.name).toLowerCase() === input.toLowerCase());
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private lazyData: LazyDataFacade, private translate: TranslateService,
@@ -228,7 +228,7 @@ export class RecipeFinderComponent implements OnDestroy {
         }
         return withLeves;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.results$ = combineLatest([results$, this.page$]).pipe(
       map(([results, page]) => {

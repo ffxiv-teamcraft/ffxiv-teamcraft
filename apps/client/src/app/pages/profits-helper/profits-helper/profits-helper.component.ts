@@ -56,7 +56,7 @@ export class ProfitsHelperComponent {
     tap(() => {
       this.loadingCrafting = false;
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   lastUpdated$ = this.craftsData$.pipe(

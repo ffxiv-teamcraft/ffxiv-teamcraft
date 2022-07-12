@@ -175,7 +175,7 @@ export class MateriasPopupComponent {
             return meldingChances * 30;
         }
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

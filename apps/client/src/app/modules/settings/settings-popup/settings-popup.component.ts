@@ -123,7 +123,7 @@ export class SettingsPopupComponent {
 
   public allAetherytes$ = this.lazyData.getEntry('aetherytes').pipe(
     map(aetherytes => aetherytes.filter(a => a.nameid !== 0)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public sidebarFavorites = [...this.settings.sidebarFavorites];

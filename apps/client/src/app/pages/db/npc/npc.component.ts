@@ -50,14 +50,14 @@ export class NpcComponent extends TeamcraftPageComponent {
       switchMap(id => {
         return this.gt.getNpc(+id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiNpc$ = npcId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.ENpcResident, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.trades$ = npcId$.pipe(

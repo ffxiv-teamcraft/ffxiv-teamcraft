@@ -10,6 +10,7 @@ import { Tug } from '../data/model/tug';
 import { Hookset } from '../data/model/hookset';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { EventPlay } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 
 export class FishingReporter implements DataReporter {
@@ -42,7 +43,7 @@ export class FishingReporter implements DataReporter {
     const spot$ = this.lazyData.getEntry('fishingSpots').pipe(
       switchMap(fishingSpots => {
         return packets$.pipe(
-          ofMessageType('someDirectorUnk4'),
+          ofMessageType('systemLogMessage'),
           toIpcData(),
           map((packet) => {
             return fishingSpots.find(spot => spot.zoneId === packet.param3);
@@ -52,7 +53,7 @@ export class FishingReporter implements DataReporter {
             this.eorzea.setZone(spot.zoneId);
             this.eorzea.setMap(spot.mapId);
           }),
-          shareReplay(1)
+          shareReplay({ bufferSize: 1, refCount: true })
         );
       })
     );
@@ -66,14 +67,24 @@ export class FishingReporter implements DataReporter {
         return packet.type === 'eventStart';
       }),
       startWith(false),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
-    const eventPlay$ = packets$.pipe(
+    const eventPlay$: Observable<EventPlay> = packets$.pipe(
       ofMessageType('eventPlay'),
       toIpcData(),
       filter(packet => packet.eventId === 0x150001)
     );
+
+    eventPlay$.pipe(
+      filter(p => {
+        return p.scene === 2;
+      })
+    ).subscribe(() => {
+      this.setState({
+        throwData: null
+      });
+    });
 
     const moochId$ = new BehaviorSubject<number>(null);
 
@@ -132,7 +143,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const mooch$ = packets$.pipe(
-      ofMessageType('someDirectorUnk4'),
+      ofMessageType('systemLogMessage'),
       toIpcData(),
       filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
       map(packet => {
@@ -143,7 +154,7 @@ export class FishingReporter implements DataReporter {
 
     const misses$ = combineLatest([
       packets$.pipe(
-        ofMessageType('someDirectorUnk4'),
+        ofMessageType('systemLogMessage'),
         toIpcData(),
         map(packet => {
           return {

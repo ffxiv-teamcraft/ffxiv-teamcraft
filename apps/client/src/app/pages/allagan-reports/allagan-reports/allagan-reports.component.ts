@@ -47,7 +47,7 @@ export class AllaganReportsComponent {
   isDataChecker$ = this.authFacade.user$.pipe(
     map(user => user.admin || user.moderator || user.allaganChecker),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public status$ = combineLatest([

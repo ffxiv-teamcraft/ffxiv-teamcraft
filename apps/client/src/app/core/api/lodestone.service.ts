@@ -112,7 +112,7 @@ export class LodestoneService {
       const trigger = new Subject<void>();
       LodestoneService.CACHE[id] = trigger.pipe(
         switchMapTo(this.xivapi.getFreeCompany(id)),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
       this.addToQueue(trigger);
     }
@@ -147,7 +147,7 @@ export class LodestoneService {
             }))
           );
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 

@@ -94,7 +94,7 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
       }
       return item;
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   buttonsCache = {};
@@ -226,7 +226,7 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
       }
       return false;
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
@@ -311,7 +311,7 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
         }
         return team;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.requiredForFinalCraft$ = combineLatest([this.list$, this.item$]).pipe(

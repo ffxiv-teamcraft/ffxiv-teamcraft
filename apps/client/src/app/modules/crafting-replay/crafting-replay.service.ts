@@ -29,7 +29,7 @@ export class CraftingReplayService {
         [this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel, this.env.maxLevel]
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private ipc: IpcService, private afs: AngularFirestore, private craftingReplayFacade: CraftingReplayFacade,

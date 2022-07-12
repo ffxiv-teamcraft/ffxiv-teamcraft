@@ -37,7 +37,7 @@ export class ProfileEditorComponent {
           };
         });
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   charactersForManagement$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
@@ -51,7 +51,7 @@ export class ProfileEditorComponent {
           };
         });
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   gearSets$ = this.authFacade.gearSets$;

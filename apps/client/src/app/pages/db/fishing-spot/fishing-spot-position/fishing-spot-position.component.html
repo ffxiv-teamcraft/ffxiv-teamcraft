@@ -1,5 +1,6 @@
 <nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" [style.max-width.px]="360" [nzLoading]="loading">
   <app-map
+    *ngIf="spot.customData.coords; else noPos"
     [hideDbButton]="true"
     [mapId]="spot.TerritoryType.MapTargetID"
     [markers]="[
@@ -9,4 +10,7 @@
       }
     ]"
   ></app-map>
+  <ng-template #noPos>
+    <nz-empty [nzNotFoundContent]="'DB.FISHING_SPOT.Position_unknown' | translate"></nz-empty>
+  </ng-template>
 </nz-card>

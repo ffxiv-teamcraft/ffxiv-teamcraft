@@ -187,7 +187,7 @@ export class I18nToolsService {
       this.lazyData.getEntry('actions')
     ]).pipe(
       map(([koCraftActions, koActions, craftActions, actions]) => {
-        const craftActionId = Object.keys(koCraftActions).find(
+        const craftActionId = Object.keys(koCraftActions).reverse().find(
           (key) => koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
         );
         if (craftActionId) {

@@ -1991,6 +1991,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -2212,6 +2213,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -2393,6 +2395,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -2689,6 +2692,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -3140,6 +3144,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -3361,6 +3366,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -3468,6 +3474,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 35000,
+          "itemId": 37320,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33997,
           "itemId": 30815,
           "rlvl": 320
@@ -3480,6 +3491,11 @@
         {
           "recipeId": 34671,
           "itemId": 33601,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35001,
+          "itemId": 37321,
           "rlvl": 320
         },
         {
@@ -3500,6 +3516,11 @@
         {
           "recipeId": 34017,
           "itemId": 30835,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35005,
+          "itemId": 37325,
           "rlvl": 320
         },
         {
@@ -3777,6 +3798,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -3963,6 +3985,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -4279,6 +4302,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -6019,6 +6043,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -6164,6 +6189,21 @@
           "recipeId": 34868,
           "itemId": 35088,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34975,
+          "itemId": 36701,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34977,
+          "itemId": 36703,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34971,
+          "itemId": 36697,
+          "rlvl": 590
         }
       ]
     },
@@ -6534,6 +6574,66 @@
           "rlvl": 70
         },
         {
+          "recipeId": 5403,
+          "itemId": 36882,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5404,
+          "itemId": 36883,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5405,
+          "itemId": 36884,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5407,
+          "itemId": 36886,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5416,
+          "itemId": 36895,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5409,
+          "itemId": 36888,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5384,
+          "itemId": 36863,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5387,
+          "itemId": 36866,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5390,
+          "itemId": 36869,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5393,
+          "itemId": 36872,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5396,
+          "itemId": 36875,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5399,
+          "itemId": 36878,
+          "rlvl": 150
+        },
+        {
           "recipeId": 3696,
           "itemId": 20698,
           "rlvl": 255
@@ -6788,6 +6888,11 @@
           "recipeId": 5377,
           "itemId": 35585,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5453,
+          "itemId": 37400,
+          "rlvl": 560
         }
       ]
     },
@@ -7146,11 +7251,6 @@
           "rlvl": 540
         },
         {
-          "recipeId": 5371,
-          "itemId": 35574,
-          "rlvl": 540
-        },
-        {
           "recipeId": 5364,
           "itemId": 35564,
           "rlvl": 540
@@ -7159,6 +7259,16 @@
           "recipeId": 5379,
           "itemId": 35578,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5440,
+          "itemId": 37363,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5431,
+          "itemId": 37355,
+          "rlvl": 560
         }
       ]
     },
@@ -7450,6 +7560,11 @@
           "recipeId": 5365,
           "itemId": 35565,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5428,
+          "itemId": 37347,
+          "rlvl": 560
         }
       ]
     },
@@ -7591,6 +7706,11 @@
           "recipeId": 4701,
           "itemId": 33264,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5371,
+          "itemId": 35574,
+          "rlvl": 540
         }
       ]
     },
@@ -7707,6 +7827,72 @@
           "recipeId": 5370,
           "itemId": 35571,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5432,
+          "itemId": 37353,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5447,
+          "itemId": 37364,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5442,
+          "itemId": 37373,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5433,
+          "itemId": 37360,
+          "rlvl": 560
+        }
+      ]
+    },
+    {
+      "id": 1400,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34921,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34922,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34923,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34924,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34925,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -11483,6 +11669,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -11694,6 +11881,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -11900,6 +12088,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -12191,6 +12380,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -12468,6 +12658,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 34994,
+          "itemId": 37289,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31369,
           "itemId": 13793,
           "rlvl": 210
@@ -12475,6 +12670,11 @@
         {
           "recipeId": 31414,
           "itemId": 13838,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 34997,
+          "itemId": 37292,
           "rlvl": 210
         },
         {
@@ -12610,6 +12810,11 @@
         {
           "recipeId": 31422,
           "itemId": 13846,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 34995,
+          "itemId": 37290,
           "rlvl": 210
         },
         {
@@ -12797,6 +13002,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -13008,6 +13214,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -13130,6 +13337,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34999,
+          "itemId": 37319,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33783,
           "itemId": 30074,
           "rlvl": 320
@@ -13152,6 +13364,11 @@
         {
           "recipeId": 34673,
           "itemId": 33603,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35003,
+          "itemId": 37323,
           "rlvl": 320
         },
         {
@@ -13200,6 +13417,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 34998,
+          "itemId": 37318,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33790,
           "itemId": 30081,
           "rlvl": 320
@@ -13225,6 +13447,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 35010,
+          "itemId": 37330,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33782,
           "itemId": 30073,
           "rlvl": 320
@@ -13247,6 +13474,11 @@
         {
           "recipeId": 34672,
           "itemId": 33602,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35002,
+          "itemId": 37322,
           "rlvl": 320
         },
         {
@@ -13280,6 +13512,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 35004,
+          "itemId": 37324,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33793,
           "itemId": 30084,
           "rlvl": 320
@@ -13307,6 +13544,11 @@
         {
           "recipeId": 34667,
           "itemId": 36130,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35012,
+          "itemId": 37333,
           "rlvl": 320
         },
         {
@@ -13524,6 +13766,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -13835,6 +14078,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -14171,6 +14415,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -15986,6 +16231,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -16069,19 +16315,24 @@
       "startLevel": {
         "ClassJobLevel": 90,
         "ConditionsFlag": 15,
-        "Difficulty": 3900,
-        "Durability": 70,
-        "ID": 580,
+        "Difficulty": 3700,
+        "Durability": 80,
+        "ID": 570,
         "ProgressDivider": 130,
-        "ProgressModifier": 80,
-        "Quality": 7800,
+        "ProgressModifier": 90,
+        "Quality": 7400,
         "QualityDivider": 115,
-        "QualityModifier": 70,
-        "Stars": 2,
+        "QualityModifier": 80,
+        "Stars": 1,
         "SuggestedControl": 2703,
         "SuggestedCraftsmanship": 2924
       },
       "recipes": [
+        {
+          "recipeId": 35014,
+          "itemId": 37380,
+          "rlvl": 570
+        },
         {
           "recipeId": 34890,
           "itemId": 36173,
@@ -16136,6 +16387,81 @@
           "recipeId": 34816,
           "itemId": 35036,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34961,
+          "itemId": 36687,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34972,
+          "itemId": 36698,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34962,
+          "itemId": 36688,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34973,
+          "itemId": 36699,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34963,
+          "itemId": 36689,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34974,
+          "itemId": 36700,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34964,
+          "itemId": 36690,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34965,
+          "itemId": 36691,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34976,
+          "itemId": 36702,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34978,
+          "itemId": 36704,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34979,
+          "itemId": 36705,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34969,
+          "itemId": 36695,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34980,
+          "itemId": 36706,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34970,
+          "itemId": 36696,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34981,
+          "itemId": 36707,
+          "rlvl": 590
         }
       ]
     },
@@ -16321,6 +16647,41 @@
           "rlvl": 142
         },
         {
+          "recipeId": 5414,
+          "itemId": 36893,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5419,
+          "itemId": 36898,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5420,
+          "itemId": 36899,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5421,
+          "itemId": 36900,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5410,
+          "itemId": 36889,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5411,
+          "itemId": 36890,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5412,
+          "itemId": 36891,
+          "rlvl": 150
+        },
+        {
           "recipeId": 3678,
           "itemId": 20680,
           "rlvl": 255
@@ -16349,6 +16710,11 @@
           "recipeId": 4668,
           "itemId": 32253,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5427,
+          "itemId": 37410,
+          "rlvl": 560
         }
       ]
     },
@@ -16455,6 +16821,11 @@
           "recipeId": 5375,
           "itemId": 35586,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5452,
+          "itemId": 37401,
+          "rlvl": 560
         }
       ]
     },
@@ -16556,6 +16927,26 @@
           "recipeId": 4637,
           "itemId": 30405,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5439,
+          "itemId": 37365,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5429,
+          "itemId": 37348,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5448,
+          "itemId": 37367,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5444,
+          "itemId": 37374,
+          "rlvl": 560
         }
       ]
     },
@@ -16749,6 +17140,57 @@
           "recipeId": 5368,
           "itemId": 35577,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5438,
+          "itemId": 37362,
+          "rlvl": 560
+        }
+      ]
+    },
+    {
+      "id": 1401,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34926,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34927,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34928,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34929,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34930,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -19335,6 +19777,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -19551,6 +19994,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -19737,6 +20181,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -20068,6 +20513,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -20624,6 +21070,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -20820,6 +21267,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -20959,6 +21407,11 @@
         {
           "recipeId": 34682,
           "itemId": 36130,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35013,
+          "itemId": 37333,
           "rlvl": 320
         },
         {
@@ -21121,6 +21574,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -21322,6 +21776,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -21658,6 +22113,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -23474,6 +23930,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -23557,19 +24014,24 @@
       "startLevel": {
         "ClassJobLevel": 90,
         "ConditionsFlag": 15,
-        "Difficulty": 3900,
-        "Durability": 70,
-        "ID": 580,
+        "Difficulty": 3700,
+        "Durability": 80,
+        "ID": 570,
         "ProgressDivider": 130,
-        "ProgressModifier": 80,
-        "Quality": 7800,
+        "ProgressModifier": 90,
+        "Quality": 7400,
         "QualityDivider": 115,
-        "QualityModifier": 70,
-        "Stars": 2,
+        "QualityModifier": 80,
+        "Stars": 1,
         "SuggestedControl": 2703,
         "SuggestedCraftsmanship": 2924
       },
       "recipes": [
+        {
+          "recipeId": 35015,
+          "itemId": 36849,
+          "rlvl": 570
+        },
         {
           "recipeId": 34891,
           "itemId": 36173,
@@ -23639,6 +24101,16 @@
           "recipeId": 34844,
           "itemId": 35064,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34967,
+          "itemId": 36693,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34968,
+          "itemId": 36694,
+          "rlvl": 590
         }
       ]
     },
@@ -23832,6 +24304,51 @@
           "recipeId": 1719,
           "itemId": 6469,
           "rlvl": 49
+        },
+        {
+          "recipeId": 5406,
+          "itemId": 36885,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5413,
+          "itemId": 36892,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5417,
+          "itemId": 36896,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5385,
+          "itemId": 36864,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5388,
+          "itemId": 36867,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5391,
+          "itemId": 36870,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5394,
+          "itemId": 36873,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5397,
+          "itemId": 36876,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5400,
+          "itemId": 36879,
+          "rlvl": 150
         },
         {
           "recipeId": 3680,
@@ -24105,6 +24622,16 @@
           "recipeId": 1981,
           "itemId": 7101,
           "rlvl": 90
+        },
+        {
+          "recipeId": 5443,
+          "itemId": 37376,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5441,
+          "itemId": 37369,
+          "rlvl": 560
         }
       ]
     },
@@ -24212,6 +24739,52 @@
           "recipeId": 4635,
           "itemId": 30403,
           "rlvl": 430
+        }
+      ]
+    },
+    {
+      "id": 1402,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34931,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34932,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34933,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34934,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34935,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -28933,6 +29506,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -29149,6 +29723,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -29420,6 +29995,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -29786,6 +30362,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -30113,6 +30690,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 34996,
+          "itemId": 37291,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31347,
           "itemId": 13302,
           "rlvl": 210
@@ -30377,6 +30959,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -30613,6 +31196,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -30735,6 +31319,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 35006,
+          "itemId": 37326,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33791,
           "itemId": 30082,
           "rlvl": 320
@@ -30757,6 +31346,11 @@
         {
           "recipeId": 34681,
           "itemId": 33611,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35011,
+          "itemId": 37331,
           "rlvl": 320
         },
         {
@@ -30792,6 +31386,11 @@
         {
           "recipeId": 34679,
           "itemId": 33609,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35009,
+          "itemId": 37329,
           "rlvl": 320
         },
         {
@@ -31099,6 +31698,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -31400,6 +32000,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -31721,6 +32322,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -33697,6 +34299,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -33877,6 +34480,16 @@
           "recipeId": 34873,
           "itemId": 35093,
           "rlvl": 580
+        },
+        {
+          "recipeId": 35018,
+          "itemId": 37280,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34966,
+          "itemId": 36692,
+          "rlvl": 590
         }
       ]
     },
@@ -34292,6 +34905,26 @@
           "rlvl": 139
         },
         {
+          "recipeId": 5415,
+          "itemId": 36894,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5422,
+          "itemId": 36901,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5423,
+          "itemId": 36902,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5424,
+          "itemId": 36903,
+          "rlvl": 150
+        },
+        {
           "recipeId": 3706,
           "itemId": 20708,
           "rlvl": 255
@@ -34355,6 +34988,16 @@
           "recipeId": 4598,
           "itemId": 28961,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5425,
+          "itemId": 37408,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5426,
+          "itemId": 37409,
+          "rlvl": 560
         }
       ]
     },
@@ -34436,6 +35079,16 @@
           "recipeId": 5362,
           "itemId": 35582,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5449,
+          "itemId": 37397,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5450,
+          "itemId": 37398,
+          "rlvl": 560
         }
       ]
     },
@@ -34594,14 +35247,14 @@
           "rlvl": 430
         },
         {
-          "recipeId": 5372,
-          "itemId": 35576,
-          "rlvl": 540
-        },
-        {
           "recipeId": 5361,
           "itemId": 35561,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5430,
+          "itemId": 37349,
+          "rlvl": 560
         }
       ]
     },
@@ -34643,6 +35296,16 @@
           "recipeId": 4712,
           "itemId": 33281,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5372,
+          "itemId": 35576,
+          "rlvl": 540
+        },
+        {
+          "recipeId": 5436,
+          "itemId": 37361,
+          "rlvl": 560
         }
       ]
     },
@@ -34830,6 +35493,57 @@
           "recipeId": 4724,
           "itemId": 33293,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5446,
+          "itemId": 37351,
+          "rlvl": 560
+        }
+      ]
+    },
+    {
+      "id": 1403,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34936,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34937,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34938,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34939,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34940,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -38611,6 +39325,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -38852,6 +39567,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -39073,6 +39789,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -39719,6 +40436,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -40360,6 +41078,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -40611,6 +41330,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -40907,6 +41627,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -41158,6 +41879,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -41504,6 +42226,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -43450,6 +44173,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -43562,6 +44286,11 @@
           "rlvl": 570
         },
         {
+          "recipeId": 35023,
+          "itemId": 36840,
+          "rlvl": 570
+        },
+        {
           "recipeId": 34895,
           "itemId": 36252,
           "rlvl": 580
@@ -43625,6 +44354,31 @@
           "recipeId": 34863,
           "itemId": 35083,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34984,
+          "itemId": 36710,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34989,
+          "itemId": 36715,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34990,
+          "itemId": 36716,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34986,
+          "itemId": 36712,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34991,
+          "itemId": 36717,
+          "rlvl": 590
         }
       ]
     },
@@ -44023,6 +44777,52 @@
           "recipeId": 1890,
           "itemId": 6672,
           "rlvl": 55
+        }
+      ]
+    },
+    {
+      "id": 1404,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34941,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34942,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34943,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34944,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34945,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -47914,6 +48714,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -48145,6 +48946,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -48366,6 +49168,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -48942,6 +49745,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -49503,6 +50307,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -49734,6 +50539,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -50205,6 +51011,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -50466,6 +51273,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -50842,6 +51650,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -52723,6 +53532,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -52820,8 +53630,33 @@
       },
       "recipes": [
         {
+          "recipeId": 35020,
+          "itemId": 36837,
+          "rlvl": 570
+        },
+        {
           "recipeId": 34912,
           "itemId": 35868,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 35021,
+          "itemId": 36838,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 35024,
+          "itemId": 36841,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 35022,
+          "itemId": 36839,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 35025,
+          "itemId": 36842,
           "rlvl": 570
         },
         {
@@ -52893,6 +53728,31 @@
           "recipeId": 34848,
           "itemId": 35068,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34982,
+          "itemId": 36708,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34987,
+          "itemId": 36713,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34983,
+          "itemId": 36709,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34988,
+          "itemId": 36714,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34985,
+          "itemId": 36711,
+          "rlvl": 590
         }
       ]
     },
@@ -53323,6 +54183,11 @@
           "recipeId": 4626,
           "itemId": 30390,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5434,
+          "itemId": 37357,
+          "rlvl": 560
         }
       ]
     },
@@ -53576,6 +54441,52 @@
           "recipeId": 4625,
           "itemId": 30389,
           "rlvl": 430
+        }
+      ]
+    },
+    {
+      "id": 1405,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34946,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34947,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34948,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34949,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34950,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -55382,6 +56293,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -55753,6 +56665,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -55979,6 +56892,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -56300,6 +57214,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -56681,6 +57596,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -56882,6 +57798,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -57004,6 +57921,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 35007,
+          "itemId": 37327,
+          "rlvl": 320
+        },
+        {
           "recipeId": 33788,
           "itemId": 30079,
           "rlvl": 320
@@ -57026,6 +57948,11 @@
         {
           "recipeId": 34678,
           "itemId": 33608,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 35008,
+          "itemId": 37328,
           "rlvl": 320
         },
         {
@@ -57263,6 +58190,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -57479,6 +58407,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -57790,6 +58719,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -60228,6 +61158,51 @@
           "recipeId": 5355,
           "itemId": 35999,
           "rlvl": 403
+        },
+        {
+          "recipeId": 5454,
+          "itemId": 37293,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5455,
+          "itemId": 37294,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5456,
+          "itemId": 37295,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5457,
+          "itemId": 37296,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5458,
+          "itemId": 37297,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5459,
+          "itemId": 37298,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5460,
+          "itemId": 37299,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5461,
+          "itemId": 37300,
+          "rlvl": 403
+        },
+        {
+          "recipeId": 5462,
+          "itemId": 37301,
+          "rlvl": 403
         }
       ]
     },
@@ -60366,6 +61341,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -60449,19 +61425,29 @@
       "startLevel": {
         "ClassJobLevel": 90,
         "ConditionsFlag": 15,
-        "Difficulty": 3900,
-        "Durability": 70,
-        "ID": 580,
+        "Difficulty": 3700,
+        "Durability": 80,
+        "ID": 570,
         "ProgressDivider": 130,
-        "ProgressModifier": 80,
-        "Quality": 7800,
+        "ProgressModifier": 90,
+        "Quality": 7400,
         "QualityDivider": 115,
-        "QualityModifier": 70,
-        "Stars": 2,
+        "QualityModifier": 80,
+        "Stars": 1,
         "SuggestedControl": 2703,
         "SuggestedCraftsmanship": 2924
       },
       "recipes": [
+        {
+          "recipeId": 35016,
+          "itemId": 37412,
+          "rlvl": 570
+        },
+        {
+          "recipeId": 35017,
+          "itemId": 37413,
+          "rlvl": 570
+        },
         {
           "recipeId": 34896,
           "itemId": 36232,
@@ -60521,6 +61507,11 @@
           "recipeId": 34889,
           "itemId": 36113,
           "rlvl": 580
+        },
+        {
+          "recipeId": 35019,
+          "itemId": 37281,
+          "rlvl": 590
         }
       ]
     },
@@ -60719,6 +61710,51 @@
           "recipeId": 2052,
           "itemId": 8004,
           "rlvl": 55
+        },
+        {
+          "recipeId": 5402,
+          "itemId": 36881,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5418,
+          "itemId": 36897,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5408,
+          "itemId": 36887,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5386,
+          "itemId": 36865,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5389,
+          "itemId": 36868,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5392,
+          "itemId": 36871,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5395,
+          "itemId": 36874,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5398,
+          "itemId": 36877,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 5401,
+          "itemId": 36880,
+          "rlvl": 150
         },
         {
           "recipeId": 4695,
@@ -60960,6 +61996,11 @@
           "recipeId": 4719,
           "itemId": 33295,
           "rlvl": 430
+        },
+        {
+          "recipeId": 5451,
+          "itemId": 37402,
+          "rlvl": 560
         }
       ]
     },
@@ -61234,6 +62275,11 @@
           "recipeId": 5363,
           "itemId": 35563,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5437,
+          "itemId": 37359,
+          "rlvl": 560
         }
       ]
     },
@@ -61340,6 +62386,52 @@
           "recipeId": 2165,
           "itemId": 8859,
           "rlvl": 70
+        }
+      ]
+    },
+    {
+      "id": 1406,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34951,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34952,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34953,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34954,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34955,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }
@@ -63171,6 +64263,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -63362,6 +64455,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -63518,6 +64612,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -63709,6 +64804,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -63930,6 +65026,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -64091,6 +65188,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -64317,6 +65415,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -64513,6 +65612,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -66343,6 +67443,7 @@
           "Block": 0,
           "BlockRate": 0,
           "CanBeHq": 0,
+          "CastTimeS": 2,
           "ClassJobCategory": 0,
           "ClassJobRepair": 0,
           "ClassJobUse": 0,
@@ -66488,6 +67589,16 @@
           "recipeId": 34884,
           "itemId": 36076,
           "rlvl": 580
+        },
+        {
+          "recipeId": 34992,
+          "itemId": 37282,
+          "rlvl": 590
+        },
+        {
+          "recipeId": 34993,
+          "itemId": 37283,
+          "rlvl": 590
         }
       ]
     },
@@ -66918,6 +68029,62 @@
           "recipeId": 5378,
           "itemId": 35796,
           "rlvl": 540
+        },
+        {
+          "recipeId": 5435,
+          "itemId": 37356,
+          "rlvl": 560
+        },
+        {
+          "recipeId": 5445,
+          "itemId": 37358,
+          "rlvl": 560
+        }
+      ]
+    },
+    {
+      "id": 1407,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
+        "Difficulty": 1780,
+        "Durability": 80,
+        "ID": 430,
+        "ProgressDivider": 110,
+        "ProgressModifier": 100,
+        "Quality": 4600,
+        "QualityDivider": 90,
+        "QualityModifier": 100,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 34956,
+          "itemId": 36664,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34957,
+          "itemId": 36665,
+          "rlvl": 440
+        },
+        {
+          "recipeId": 34958,
+          "itemId": 36666,
+          "rlvl": 517
+        },
+        {
+          "recipeId": 34959,
+          "itemId": 36667,
+          "rlvl": 520
+        },
+        {
+          "recipeId": 34960,
+          "itemId": 36668,
+          "rlvl": 525
         }
       ]
     }

@@ -924,7 +924,7 @@
     "Legendary": "전설",
     "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
     "Node_type": "유형",
-    "Use": "Use",
+    "Use": "용도",
     "Page_range": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템"
   },
   "ANNOUNCEMENT": {
@@ -1059,7 +1059,7 @@
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
     "Compact": "간소화",
     "Detailed": "세부 정보",
-    "Remove_IP": "Remove initial preparations",
+    "Remove_IP": "최종 확인 제거",
     "Stats_applied": "능력치 적용됨",
     "Show_rotations_above_stats": "현재 능력치보다 높은 능력치를 요구하는 로테이션 포함",
     "Full_buttons": "모든 버튼 표시",
@@ -1087,10 +1087,10 @@
       "Name_filter_placeholder": "로테이션 이름",
       "Tags_filter_placeholder": "태그",
       "Durability_filter_placeholder": "내구도",
-      "Rlvl_filter_placeholder": "Rlvl",
+      "Rlvl_filter_placeholder": "제작법 레벨",
       "Filters_reset": "필터 초기화",
       "Configuration_popup": "커뮤니티에 공유하기",
-      "Min_craftsmanship_filter_placeholder": "Min. Craft.",
+      "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
       "Difficulty_filter_placeholder": "작업량",
@@ -1636,9 +1636,10 @@
       "Fish_per_weather": "날씨당 물고기",
       "Fish_per_bait": "미끼당 물고기",
       "Fish_per_tug": "입질당 물고기",
-      "Fish_per_hookset": "Fish per hookset",
-      "Include_misses": "Include misses",
-      "Miss": "Miss"
+      "Fish_per_hookset": "낚아채기당 물고기",
+      "Include_misses": "놓친 수 포함",
+      "Miss": "놓침",
+      "Position_unknown": "알 수 없는 장소"
     },
     "NODE": {
       "Items": "아이템",
@@ -1755,7 +1756,8 @@
       "No_comments": "댓글 없음",
       "Post": "게시",
       "Editor_tip": "다른 페이지 링크를 생성하기 위해 <page type>:\"<Content Name>\"을 입력하세요. 예시: item:\"Curtana\", action:\"Basic Synthesis\", map:\"The Crystarium\". 지원하는 페이지 종류: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한을 받을 수 있습니다."
+      "Disclaimer": "데이터베이스의 코멘트는 유용한 정보입니다. 만약 코멘트 기능을 게임의 불만을 작성하기 위해 사용하는 경우에는 팀크래프트 사용에 제한을 받을 수 있습니다.",
+      "Deleted_comment": "해당 댓글은 삭제되었습니다"
     },
     "PATCH": {
       "Open_patch_page": "데이터베이스내 패치 변경점을 모두 보려면 이곳을 클릭하세요",
@@ -1851,7 +1853,7 @@
     "X_sold_last_week": "지난 주 {{amount}} 개 판매"
   },
   "FOOD_PICKER": {
-    "Title": "음식 선택기",
+    "Title": "음식 선택 도우미",
     "Description": "어떤 도핑 아이템이 원하는 능력치를 올려주는지 궁금하시나요? 다른 곳에서 찾지말고 이 곳에서 전부 찾아보세요!",
     "Pick_stat": "능력치 선택"
   },
@@ -1944,8 +1946,8 @@
     "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
     "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
     "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous": "익명 상태에서는 패킷 캡쳐가 제대로 작동하지 않습니다",
+    "Not_as_anonymous_description": "우측 상단의 \"익명\"에 커서를 올려 계정을 등록하거나 설정에서 패킷 캡쳐를 비활성화 해주세요"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -1999,7 +2001,7 @@
     "Hide_empty": "숨기기",
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
-    "Optimization_copied": "Optimization copied to clipboard as JSON",
+    "Optimization_copied": "소지품 최적화를 JSON 형식으로 클립보드에 복사했습니다",
     "Pause_tracking": "소지품 트래킹 일시정지",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
@@ -2040,8 +2042,8 @@
       "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
     },
     "DEPRECATED_HQ": {
-      "Title": "Items you don't need HQ because they function as a normal-quality item",
-      "Message": "Since 6.0, this item functions as a normal-quality item even if it's HQ"
+      "Title": "품질이 상승하지 않아 HQ가 필요없는 아이템",
+      "Message": "6.0 패치 이후로 해당 아이템은 HQ여도 일반 품질로 적용됩니다"
     },
     "ONLY_FOR_ONE_MATERIAL": {
       "Title": "단일 레시피에서만 사용되는 아이템입니다",
@@ -2073,6 +2075,8 @@
     "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
+    "Slots_used": "홈",
+    "Slots_used_explain": "해당 마테리아가 적용된 홈의 수",
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
@@ -2441,7 +2445,7 @@
       "Tags": "태그",
       "Price": "지불할 금액",
       "Price_tip": "상대방과 가격을 협의하고 싶다면 금액란에 0을 입력하세요",
-      "Only_crafting": "제작직만 가능",
+      "Only_crafting": "제작만",
       "Includes_materials_label": "모든 재료를 제공하며 제작만 의뢰합니다",
       "Only_materials": "재료만",
       "Only_requires_materials": "최종 아이템을 제외한 목록의 재료만 의뢰합니다",
@@ -2601,7 +2605,7 @@
     "Selling": "출품 중 ({{amount}}건)",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
-    "No_task": "No task",
+    "No_task": "수행 임무 없음",
     "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
     "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람",
@@ -2807,7 +2811,7 @@
     "Gubal_analysis_suggestion": "데이터 분석을 기반으로 한 제안",
     "Cannot_report_for_this_spot": "해당 물고기의 데이터는 이미 존재하기 때문에 해당 낚시터에 대한 세부정보를 리포트할 수 없습니다",
     "Please_suggest_edit_instead": "기존에 제안했던 리포트를 편집해주세요",
-    "Add_data_sources": "해당 아이템의 데이터 출처를 추가",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "적용되지 않음",
     "Not_applied_yet_explain": "해당 출처는 다음 업데이트에 목록과 데이터베이스 시스템에 추가됩니다",
     "Pending_changes_count": "{{amount}} pending changes to review",
@@ -2840,7 +2844,7 @@
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
     "Speed": "속도",
-    "Shadow_size": "Shadow size",
+    "Shadow_size": "그림자 크기",
     "Deprecated": "해당 아이템은 더 이상 획득할 수 없습니다",
     "SPEEDS": {
       "VERY_SLOW": "매우 느림",
@@ -2851,9 +2855,9 @@
       "VERY_FAST": "고속"
     },
     "SHADOWS": {
-      "SMALL": "Small",
-      "NORMAL": "Normal",
-      "LARGE": "Large"
+      "SMALL": "소형",
+      "NORMAL": "중형",
+      "LARGE": "대형"
     },
     "SOURCE": {
       "DESYNTH": "분해로 획득",
@@ -2868,7 +2872,7 @@
       "SPEARFISHING": "작살 낚시",
       "FATE": "돌발 임무",
       "MOGSTATION": "모그스테이션",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "더 이상 사용되지 않음"
     },
     "STATUS": {
       "PROPOSAL": "제안",
@@ -2888,15 +2892,15 @@
     "Restart_to_install": "적용을 위해 재시작하시겠습니까?"
   },
   "NODE_TYPE": {
-    "Mining": "Mining",
-    "Quarrying": "Quarrying",
-    "Logging": "Logging",
-    "Harvesting": "Harvesting",
+    "Mining": "광물 캐기",
+    "Quarrying": "암석 캐기",
+    "Logging": "나무 베기",
+    "Harvesting": "풀 베기",
     "Fishing": "낚시터",
     "Spearfishing": "작살"
   },
   "PROFITS": {
-    "Title": "Profits Helper",
+    "Title": "장터 판매 도우미",
     "Description": "캐릭터의 레벨과 Universalis의 장터 데이터를 기반으로 가장 적합한 채집/제작 아이템을 찾습니다.",
     "Self_sufficient": "자급자족",
     "Crafting": "제작",
@@ -2910,5 +2914,12 @@
     "Explain_cost_to_craft": "장터 게시판에서 모든 재료를 구매하여 제작하였을 때 필요한 금액입니다. (크리스탈 제외)",
     "Empty_list": "비어있는 목록, +버튼을 클릭하여 아이템을 여기에 추가할 수 있습니다",
     "Add_to_list": "해당 아이템을 목록에 추가"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper 에러",
+    "Wrapper_failed_to_start": "Machina Wrapper 실행 실패",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요).<br>만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.<br><br> {{retryDelay}}초 후에 재시도"
+    }
   }
 }

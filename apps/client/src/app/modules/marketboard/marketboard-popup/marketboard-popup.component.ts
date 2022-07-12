@@ -48,7 +48,7 @@ export class MarketboardPopupComponent implements OnInit {
   ngOnInit() {
     this.server$ = this.authFacade.mainCharacter$.pipe(
       map(character => character.Server),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     const data$: Observable<MarketboardItem> = this.server$.pipe(
@@ -78,7 +78,8 @@ export class MarketboardPopupComponent implements OnInit {
             return res;
           })
         );
-      })
+      }),
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.prices$ = combineLatest([data$
@@ -90,7 +91,7 @@ export class MarketboardPopupComponent implements OnInit {
           this.error = true;
           return of([]);
         }),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       ),
       this.sort$
     ]).pipe(
@@ -129,7 +130,7 @@ export class MarketboardPopupComponent implements OnInit {
             };
           });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.lastUpdated$ = data$.pipe(

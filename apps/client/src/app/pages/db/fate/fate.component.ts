@@ -52,14 +52,14 @@ export class FateComponent extends TeamcraftPageComponent {
         }
         return data;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.xivapiFate$ = fateId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.Fate, +id);
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.links$ = combineLatest([this.xivapiFate$, this.gtData$]).pipe(

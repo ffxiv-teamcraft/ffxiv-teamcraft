@@ -1059,7 +1059,7 @@
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
     "Compact": "Kompakt",
     "Detailed": "Detailliert",
-    "Remove_IP": "Remove initial preparations",
+    "Remove_IP": "Entferne Fulminanter Start",
     "Stats_applied": "Werte angewendet",
     "Show_rotations_above_stats": "Rotationen mit den erforderlichen Werten über deinen einbeziehen",
     "Full_buttons": "Show full buttons",
@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "Fisch pro Spitze",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Fehlschläge einbeziehen",
-      "Miss": "Fehlschlag"
+      "Miss": "Fehlschlag",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -1755,7 +1756,8 @@
       "No_comments": "Keine Kommentare",
       "Post": "Abschicken",
       "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekte)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Hier klicken, um die vollständigen Patchnotes in der Datenbank anzuzeigen",
@@ -1949,7 +1951,7 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
-    "Banner_description": "You can change the region to the one which you played in for a better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "Du kannst die Region, in der du spielst, ändern, um bessere Resultate (Datenbank, Simulator, Paketerfassung usw.) zu erzielen.",
     "Button_label": "Region wechseln"
   },
   "INVENTORY": {
@@ -1959,7 +1961,7 @@
     "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
     "Copied_to_clipboard": "Inventar wurde in die Zwischenablage kopiert",
     "Click_to_add_to_progression": "Klicken Sie hier, um zum Artikelverlauf hinzuzufügen",
-    "Contribute_to_universalis": "Contribute data to Universalis",
+    "Contribute_to_universalis": "Daten für Universalis beitragen",
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
     "Search_for_an_item": "Nach Gegenstand suchen",
@@ -1983,7 +1985,7 @@
       "Linked_tooltip": "Dieser Charakter ist bereits mit einem anderen Ingame-Charakter verknüpft. Auswählen führt zur Löschung des anderen Charakters",
       "Override_link_confirmation": "Soll dieser Link wirklich überschrieben werden?",
       "Ignore": "Diesen Ingame-Charakter ignorieren",
-      "You_can_reset_ignore": "You can reset ignored characters in the Settings page, Desktop section",
+      "You_can_reset_ignore": "Du kannst ignorierte Charakter auf der Einstellungsseite im Desktop-Bereich zurücksetzen",
       "Tip": "Wenn du den Charakter bereits verlinkt hast, mit dem du gerade spielst, kannst du diesen Charakter sicher ignorieren, Teamcraft liest Dateiänderungen und einige Dateien könnten sich aus irgendeinem Grund ändern, was dies auslöst, wenn die Datei noch nicht verknüpft ist."
     }
   },
@@ -2073,6 +2075,8 @@
     "Total_cost": "Gesamtkosten (Handel, Gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# von Slots für die diese Materia verwendet wird",
     "Cost": "Kosten",
     "Modal_editor": "Materia für {{itemName}}",
     "Unavailable_slot": "Platz nicht verfügbar",
@@ -2087,7 +2091,7 @@
     "Materias": "Materia",
     "Pieces": "Ausrüstungsgegenstände",
     "Import_from_ariyala": "Aus Ariyala importieren",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "Von Etro importieren",
     "Import_from_lodestone": "Aus dem Lodestone importieren",
     "Import_using_pcap": "Durch Paketerfassung importieren",
     "Sync_with_pcap": "Synchronisiere Ausrüstungsset mit Paketaufzeichnung",
@@ -2118,7 +2122,7 @@
     "Value_for_next": "Next breakpoint",
     "Value_for_previous": "Previous breakpoint",
     "Editing_others_gearset": "Lokaler Bearbeitungsmodus",
-    "Editing_others_gearset_description": "You're currently editing someone else's gearset. Nothing will be saved unless you click the save button above to create your own copy.",
+    "Editing_others_gearset_description": "Du bearbeitest gerade das Ausrüstungsset eines anderen Benutzers. Es wird nichts gespeichert, solange du nicht oben auf die Schaltfläche \"Speichern\" klickst, um deine eigene Kopie zu erstellen.",
     "Empty_materias": "Alle Materia aus der ausgewählten Ausrüstung entfernen",
     "SLOT": {
       "Body": "Rumpf",
@@ -2807,7 +2811,7 @@
     "Gubal_analysis_suggestion": "Vorschlag basierend auf Datenanalyse",
     "Cannot_report_for_this_spot": "Du kannst keine Details für diesen Ort und diesem Fisch melden, da sie bereits existieren",
     "Please_suggest_edit_instead": "Bitte schlage stattdessen eine Änderung zu einem bestehenden vor",
-    "Add_data_sources": "Datenquellen für dieses Element hinzufügen",
+    "Add_data_sources": "Datenquellen für dieses Element hinzufügen/ändern",
     "Not_applied_yet": "Nicht übernommen",
     "Not_applied_yet_explain": "Diese Quelle wird bei der nächsten Aktualisierung zur Liste und zum Datenbanksystem hinzugefügt",
     "Pending_changes_count": "{{amount}} anstehende Änderungen zum Überprüfen",
@@ -2910,5 +2914,12 @@
     "Explain_cost_to_craft": "Zusätzlich Kosten für alle Materialien, ausgenommen Kristalle, um einen Gegenstand nur mit Materialien vom Marktbrett herzustellen.",
     "Empty_list": "Leere Liste, klicke auf die + Schaltfläche eines Gegenstands um ihn hier hinzuzufügen",
     "Add_to_list": "Diese Gegenstände zu einer Liste hinzufügen"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.<br><br> Wiederholung in {{retryDelay}}s"
+    }
   }
 }

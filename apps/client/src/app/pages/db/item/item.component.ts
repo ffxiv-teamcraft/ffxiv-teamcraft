@@ -113,14 +113,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       }
       return of(item);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly garlandToolsItem$: Observable<ItemData> = this.itemId$.pipe(
     switchMap((itemId) => {
       return this.gt.getItem(itemId);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(

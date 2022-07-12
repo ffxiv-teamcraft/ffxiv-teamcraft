@@ -15152,7 +15152,7 @@
   "2526": {
     "en": "Loch Seld Southeastern Lakebed",
     "ja": "ロッホ・セル湖底南東",
-    "de": "Seldsee (Nordost)",
+    "de": "Seldsee (Südost)",
     "fr": "Fond du lac Seld (sud-est)"
   },
   "2527": {
@@ -22536,10 +22536,10 @@
     "fr": "Nord-ouest d'Onokoro"
   },
   "3757": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Anemone Gardens",
+    "ja": "イシボタンの巌窟周辺",
+    "de": "Anemonengärten",
+    "fr": "Jardins d'anémones"
   },
   "3758": {
     "en": "Loch Seld Northeastern Lakebed",
@@ -25068,9 +25068,9 @@
     "fr": "Palais jumeau"
   },
   "4179": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Southwestern Loch Seld",
+    "ja": "ロッホ・セル湖南西",
+    "de": "Seldsee (Südwest)",
+    "fr": "Sud-ouest du lac de Seld"
   }
 }

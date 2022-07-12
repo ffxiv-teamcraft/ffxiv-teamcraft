@@ -26,7 +26,7 @@ export class TeamsFacade {
     map(([teams, userId]) => {
       return teams.filter(team => !team.notFound && team.members.indexOf(userId) > -1);
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private store: Store<{ teams: TeamsState }>, private authFacade: AuthFacade, private teamInviteService: TeamInviteService) {
@@ -54,7 +54,7 @@ export class TeamsFacade {
       map(invites => {
         return invites.filter(i => i.expires === undefined || new Date(i.expires).getTime() > new Date().getTime());
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

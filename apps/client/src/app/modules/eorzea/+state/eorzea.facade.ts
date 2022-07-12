@@ -30,7 +30,7 @@ export class EorzeaFacade {
       }
       return of(this.weatherService.getWeather(mapId, time.getTime(), weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]));
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public previousWeatherId$ = combineLatest([this.etime.getEorzeanTime(), this.mapId$]).pipe(
@@ -42,7 +42,7 @@ export class EorzeaFacade {
       }
       return of(this.weatherService.getWeather(mapId, time.getTime() - 8 * 3600 * 1000, weatherIndex[mapIds.find(m => m.id === mapId).weatherRate]));
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   public baitId$ = this.store.pipe(select(eorzeaQuery.getBait)).pipe(filter(baitId => baitId > 0));
@@ -83,7 +83,7 @@ export class EorzeaFacade {
         })
       );
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(private store: Store<EorzeaPartialState>,

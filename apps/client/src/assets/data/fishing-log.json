@@ -15662,7 +15662,7 @@
   {
     "itemId": 36662,
     "level": 54,
-    "icon": "",
+    "icon": "/i/029000/029718.png",
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2017,
@@ -28262,7 +28262,7 @@
   {
     "itemId": 36663,
     "level": 81,
-    "icon": "",
+    "icon": "/i/029000/029062.png",
     "mapId": 696,
     "placeId": 3709,
     "zoneId": 4060,
@@ -28532,7 +28532,7 @@
   {
     "itemId": 36660,
     "level": 85,
-    "icon": "",
+    "icon": "/i/029000/029233.png",
     "mapId": 696,
     "placeId": 3709,
     "zoneId": 4064,

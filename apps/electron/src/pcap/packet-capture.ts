@@ -51,7 +51,7 @@ export class PacketCapture {
     'prepareZoning',
     'resultDialog',
     'retainerInformation',
-    'someDirectorUnk4',
+    'systemLogMessage',
     'submarineExplorationResult',
     'submarineProgressionStatus',
     'submarineStatusList',
@@ -73,7 +73,7 @@ export class PacketCapture {
     'eventStart',
     'eventFinish',
     'eventPlay4',
-    'someDirectorUnk4',
+    'systemLogMessage',
     'npcSpawn',
     'objectSpawn'
   ];
@@ -209,7 +209,21 @@ export class PacketCapture {
       .catch((err) => {
         log.error(`Couldn't start packet capture`);
         log.error(err);
+        if (err.message === `Cannot call write after a stream was destroyed`) {
+          this.mainWindow.win.webContents.send('machina:error', {
+            message: 'Wrapper_failed_to_start',
+            retryDelay: 120
+          });
+        }
+        setTimeout(() => {
+          this.start();
+        }, 120000);
       });
+    this.captureInterface.on('error', err => {
+      this.mainWindow.win.webContents.send('machina:error:raw', {
+        message: err
+      });
+    });
     this.captureInterface.setMaxListeners(0);
     this.captureInterface.on('message', (message) => {
       if (this.options.verbose) {

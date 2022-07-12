@@ -1638,7 +1638,8 @@
       "Fish_per_tug": "Poisson par touche",
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Inclure les ratés",
-      "Miss": "Raté"
+      "Miss": "Raté",
+      "Position_unknown": "Unknown location"
     },
     "NODE": {
       "Items": "Objets",
@@ -1755,7 +1756,8 @@
       "No_comments": "Aucun commentaire",
       "Post": "Publier",
       "Editor_tip": "Tapez <page type>:\"<Content Name>\" pour créer un lien vers une autre page. Exemples : item:\"Curtana\", action:\"Travail de base\", map:\"Cristarium\". Types de pages supportés: item, map, mob, achievement, leve, npc, instance, quest, trait, action, status",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments."
+      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
+      "Deleted_comment": "This comment has been deleted"
     },
     "PATCH": {
       "Open_patch_page": "Cliquez ici pour ouvrir les modifications de patch dans la base de données",
@@ -2073,6 +2075,8 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
+    "Slots_used": "Slots",
+    "Slots_used_explain": "# of slots this materia is used for",
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
@@ -2807,7 +2811,7 @@
     "Gubal_analysis_suggestion": "Suggestion basée sur l'analyse des données",
     "Cannot_report_for_this_spot": "Vous ne pouvez pas rapporter de détails pour ce point de pêche sur ce poisson car il existe déjà",
     "Please_suggest_edit_instead": "Veuillez suggérer une modification à celle existante",
-    "Add_data_sources": "Ajouter des sources de données pour cet élément",
+    "Add_data_sources": "Add/modify data sources for this item",
     "Not_applied_yet": "Non appliqué",
     "Not_applied_yet_explain": "Cette source sera ajoutée à la liste et à la base de données lors de la prochaine mise à jour",
     "Pending_changes_count": "{{amount}} modifications en attente à verifier",
@@ -2910,5 +2914,12 @@
     "Explain_cost_to_craft": "Le coût ajouté de tous les matériaux excluant les cristaux pour fabriquer un seul objet en utilisant uniquement des matériaux du tableau de bord.",
     "Empty_list": "Liste vide, cliquez sur le bouton + sur un élément pour l'ajouter ici",
     "Add_to_list": "Ajouter ces éléments à une liste"
+  },
+  "MACHINA_ERRORS": {
+    "Default": "Machina Wrapper error",
+    "Wrapper_failed_to_start": "Machina Wrapper failed to start",
+    "DESCRIPTION": {
+      "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
   }
 }

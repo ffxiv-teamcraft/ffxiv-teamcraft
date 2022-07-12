@@ -366,7 +366,7 @@ export class StatsService {
         }
         return 0;
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
   }

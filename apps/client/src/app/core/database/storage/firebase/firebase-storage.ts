@@ -36,7 +36,7 @@ export abstract class FirebaseStorage<T extends DataModel> extends DataStore<T> 
           return this.serializer.deserialize<T>(valueWithKey, this.getClass());
         }),
         debounceTime(50),
-        shareReplay(1)
+        shareReplay({ bufferSize: 1, refCount: true })
       );
   }
 

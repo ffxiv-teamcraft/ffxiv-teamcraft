@@ -53,7 +53,7 @@
           </ul>
           <div *ngIf="pageDisplay$ | async as spot; else noSelectedSpot" fxFlex="1 1 auto" fxLayout="column"
                fxLayoutGap="5px">
-            <h2 class="spot-title">{{spot.placeId | i18nRow:'places' | i18n}} - lvl{{spot.level}} ({{spot.done}}/{{spot.total}})</h2>
+            <h2 class="spot-title">{{spot.placeId | i18nRow:'places' | i18n}} ({{spot.done}}/{{spot.total}})</h2>
             <div fxLayout="row" fxLayoutGap="5px">
               <div *ngIf="true | ifMobile: false" fxFlex="0 1 400px">
                 <app-map [mapId]="spot.mapId" [markers]="[spot.coords]"></app-map>

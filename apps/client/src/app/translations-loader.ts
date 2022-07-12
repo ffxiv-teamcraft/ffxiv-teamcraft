@@ -40,11 +40,11 @@ export class TranslationsLoader implements TranslateLoader {
 
   public getTranslation(lang: string): Observable<any> {
     if (isPlatformServer(this.platform)) {
-      return this.http.get(`${environment.ssrHost}/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+      return this.http.get(`${environment.ssrHost}/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay({ bufferSize: 1, refCount: true }));
     } else if (this.platformService.isDesktop() || !environment.production) {
-      return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+      return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay({ bufferSize: 1, refCount: true }));
     } else {
-      return this.http.get(`https://cdn.ffxivteamcraft.com/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+      return this.http.get(`https://cdn.ffxivteamcraft.com/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay({ bufferSize: 1, refCount: true }));
     }
   }
 }

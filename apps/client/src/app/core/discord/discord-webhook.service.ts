@@ -112,7 +112,9 @@ export class DiscordWebhookService {
   }
 
   notifyItemChecked(team: Team, list: List, memberId: string, fcId: string, amount: number, itemId: number, totalNeeded: number, finalItem: boolean): void {
-    if (PermissionsController.getPermissionLevel(list, memberId) < PermissionLevel.PARTICIPATE && PermissionsController.getPermissionLevel(list, fcId) < PermissionLevel.PARTICIPATE) {
+    if (PermissionsController.getPermissionLevel(list, memberId) < PermissionLevel.PARTICIPATE
+      && PermissionsController.getPermissionLevel(list, fcId) < PermissionLevel.PARTICIPATE
+      && !team.members.includes(memberId)) {
       return;
     }
     const row = ListController.getItemById(list, itemId, !finalItem, finalItem);

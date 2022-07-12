@@ -36,7 +36,7 @@ export class FishingSpotWeathersComponent implements OnInit, OnDestroy {
         })
         .sort((a, b) => (a.active ? -1 : b.active ? 1 : a.next - b.next));
     }),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private readonly highlightColor$ = this.utils.getHighlightColor(0.5).pipe(distinctUntilChanged());

@@ -39,7 +39,7 @@ export class RotationFolderPanelComponent {
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.folder$]).pipe(
     map(([userId, folder]) => PermissionsController.getPermissionLevel(folder, userId)),
     distinctUntilChanged(),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   private syncLinkUrl: string;
@@ -51,7 +51,7 @@ export class RotationFolderPanelComponent {
     this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.folder$]).pipe(
       map(([links, folder]) => links.find(link => link.redirectTo === `rotation-folder/${folder.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 

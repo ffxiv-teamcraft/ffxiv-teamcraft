@@ -81,7 +81,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
           return this.compareComments(a, b);
         });
       }),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
 
     this.comments$ = combineLatest([comments$, this.showMoreComments$]).pipe(

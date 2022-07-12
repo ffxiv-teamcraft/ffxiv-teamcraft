@@ -44,7 +44,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
       return spot;
     }),
     tap(() => this.loadingSub$.next(false)),
-    shareReplay(1)
+    shareReplay({ bufferSize: 1, refCount: true })
   );
 
   constructor(

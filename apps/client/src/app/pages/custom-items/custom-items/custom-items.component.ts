@@ -70,7 +70,7 @@ export class CustomItemsComponent {
     this.customItemsFacade.loadAllFolders();
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, { columns: ['ID', 'PlaceName.Name_*'], max_items: 1000 }).pipe(
       map(list => list.Results),
-      shareReplay(1)
+      shareReplay({ bufferSize: 1, refCount: true })
     );
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
