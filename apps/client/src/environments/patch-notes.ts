@@ -1,12 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **currency-spending:** fix amount sold last week fixed to 5.
-* **layout:** gathering icon now updates according to its area in breakdown.
-* **lists:** experimental fix for list persistence not applied properly.
-* **simulator:** fix byregot's blessing import for korean rotations.
-* **simulator:** fix level 1-5 recipes being shown as level not met.
+* **db:** fixed deprecated currencies still showing in some trades.
+* **db:** fixed empty gathering data showing on some items.
+* **layout:** fixed duplicate rows displayed in area breakdown.
 
 
 ### Features
 
-* **db:** support for korean v6.051 update.`;
+* **db:** better layout and performance for trades data display.`;
