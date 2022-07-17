@@ -40,7 +40,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             gatheringItem = Object.values(gatheringItems).find(g => g.itemId === itemId);
             break;
         }
-        if (!gatheringItem) {
+        if (!gatheringItem || nodes.length === 0) {
           return null;
         }
         return {

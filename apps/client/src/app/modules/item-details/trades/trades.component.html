@@ -1,40 +1,42 @@
 <div fxLayout="column" fxLayoutGap="10px">
-  <nz-card *ngFor="let tradeSource of tradeSources" fxFlex="1 1 auto" fxLayoutGap="5px">
+  <nz-card *ngFor="let tradeSource of tradeSources$ | async" fxFlex="1 1 auto" fxLayoutGap="5px">
     <nz-card-meta [nzTitle]="title">
       <ng-template #title>
         <span title="{{tradeSource.type}}#{{tradeSource.id}}">{{tradeSource.shopName | i18n}}</span>
       </ng-template>
     </nz-card-meta>
-    <div *ngFor="let trade of tradeSource.trades" class="trades" fxLayout="column" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <div *ngFor="let currency of trade.currencies" class="item-container">
-          <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
-                         [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
-          <span>x{{currency.amount}}</span>
-        </div>
-        <i nz-icon nzType="arrow-right"></i>
-        <div *ngFor="let tradeItem of trade.items" class="item-container">
-          <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="tradeItem.id"
-                         [itemName]="tradeItem.id | itemName | i18n" [width]="32"></app-item-icon>
-          <span>x{{tradeItem.amount}}</span>
-        </div>
-      </div>
-      <i *ngIf="trade.requiredFateRank">{{'DB.ITEM.Requires_fate_rank' | translate:{ rank: trade.requiredFateRank } }}</i>
-      <i *ngIf="trade.requiredGCRank">{{'DB.ITEM.Requires_gc_rank' | translate:{ rank: trade.requiredGCRank } }}</i>
-      <ng-container *ngIf="!fromExternalTrades && !dbDisplay">
-        <div *ngIf="totalPrice(trade) as totalTradePrice" class="total-price" fxLayout="row"
-             fxLayoutAlign="center center"
-             fxLayoutGap="5px">
-          <div>
-            {{'LIST.Total_trade_price' | translate}}
-          </div>
-          <div *ngFor="let currency of totalTradePrice" class="item-container">
-            <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="currency.id"
+    <div nz-row>
+      <div *ngFor="let trade of tradeSource.trades" class="trades" nz-col [nzMd]="6" [nzSm]="12" [nzXs]="24">
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <div *ngFor="let currency of trade.currencies" class="item-container">
+            <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="+currency.id"
                            [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
             <span>x{{currency.amount}}</span>
           </div>
+          <i nz-icon nzType="arrow-right"></i>
+          <div *ngFor="let tradeItem of trade.items" class="item-container">
+            <app-item-icon [hq]="tradeItem.hq" [icon]="tradeItem.icon" [itemId]="+tradeItem.id"
+                           [itemName]="tradeItem.id | itemName | i18n" [width]="32"></app-item-icon>
+            <span>x{{tradeItem.amount}}</span>
+          </div>
         </div>
-      </ng-container>
+        <i *ngIf="trade.requiredFateRank">{{'DB.ITEM.Requires_fate_rank' | translate:{ rank: trade.requiredFateRank } }}</i>
+        <i *ngIf="trade.requiredGCRank">{{'DB.ITEM.Requires_gc_rank' | translate:{ rank: trade.requiredGCRank } }}</i>
+        <ng-container *ngIf="(isExternalTrades$ | async) === false && !dbDisplay">
+          <div *ngIf="totalPrice(trade) as totalTradePrice" class="total-price" fxLayout="row"
+               fxLayoutAlign="center center"
+               fxLayoutGap="5px">
+            <div>
+              {{'LIST.Total_trade_price' | translate}}
+            </div>
+            <div *ngFor="let currency of totalTradePrice" class="item-container">
+              <app-item-icon [hq]="currency.hq" [icon]="currency.icon" [itemId]="+currency.id"
+                             [itemName]="currency.id | itemName | i18n" [width]="32"></app-item-icon>
+              <span>x{{currency.amount}}</span>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
     <nz-list [nzDataSource]="tradeSource.npcs" [nzRenderItem]="npcTemplate">
       <ng-template #npcTemplate let-npc>
@@ -62,4 +64,5 @@
       </ng-template>
     </nz-list>
   </nz-card>
+  <button nz-button nzBlock nzType="primary" *ngIf="hasMoreAvailable$ | async" (click)="showMore()">{{'COMMON.Show_more' | translate}}</button>
 </div>
