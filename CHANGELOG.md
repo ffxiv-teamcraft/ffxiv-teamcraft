@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.15"></a>
+## [9.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.14...v9.6.15) (2022-07-17)
+
+
+### Bug Fixes
+
+* **db:** fixed deprecated currencies still showing in some trades ([235a27b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/235a27b))
+* **db:** fixed empty gathering data showing on some items ([a2fbdd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a2fbdd8))
+* **layout:** fixed duplicate rows displayed in area breakdown ([d90eea1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d90eea1))
+
+
+### Features
+
+* **db:** better layout and performance for trades data display ([fbb3a4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbb3a4e))
+
+
+
 <a name="9.6.14"></a>
 ## [9.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.13...v9.6.14) (2022-07-12)
 
