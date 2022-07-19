@@ -3,7 +3,7 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class GubalExtractor extends AbstractExtractor {
   gubalToObject(rows) {
     return rows.reduce((res, row) => {
-      if (row.itemId < 500 || row.resultItemId < 500) {
+      if (row.itemId < 500 || row.resultItemId < 500 || row.resultItemId > 100000 || row.itemId > 100000) {
         return res;
       }
       return {
@@ -15,7 +15,7 @@ export class GubalExtractor extends AbstractExtractor {
 
   gubalToReverseObject(rows) {
     return rows.reduce((res, row) => {
-      if (row.itemId < 500 || row.resultItemId < 500) {
+      if (row.itemId < 500 || row.resultItemId < 500 || row.resultItemId > 100000 || row.itemId > 100000) {
         return res;
       }
       return {
