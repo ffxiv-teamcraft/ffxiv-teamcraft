@@ -3,7 +3,7 @@ import { ItemDetailsPopup } from '../item-details-popup';
 import { TradeSource } from '../../list/model/trade-source';
 import { Trade } from '../../list/model/trade';
 import { TradeEntry } from '../../list/model/trade-entry';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -14,13 +14,13 @@ import { map } from 'rxjs/operators';
 })
 export class TradesComponent extends ItemDetailsPopup implements OnChanges {
 
-  private tradeSourcesData$ = new ReplaySubject<TradeSource[]>();
+  private externalSources$ = new ReplaySubject<TradeSource[]>();
 
   public isExternalTrades$ = new BehaviorSubject<boolean>(false);
 
   @Input()
   set externalTradeSources(ts: TradeSource[]) {
-    this.tradeSourcesData$.next(ts);
+    this.externalSources$.next(ts);
     this.isExternalTrades$.next(true);
   }
 
@@ -28,6 +28,8 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
   public dbDisplay = false;
 
   public displayedTrades$ = new BehaviorSubject<number>(5);
+
+  public tradeSourcesData$ = merge(this.externalSources$, this.details$);
 
   public tradeSources$: Observable<TradeSource[]> = combineLatest([
     this.tradeSourcesData$,
@@ -65,7 +67,6 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.details && changes.details.currentValue.length > 0) {
-      this.tradeSourcesData$.next(changes.details.currentValue);
       this.isExternalTrades$.next(false);
     }
   }
