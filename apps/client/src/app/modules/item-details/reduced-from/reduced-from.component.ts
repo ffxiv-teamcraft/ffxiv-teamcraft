@@ -37,6 +37,7 @@ export class ReducedFromComponent extends ItemDetailsPopup<number[]> implements 
   }
 
   ngOnInit(): void {
+    super.ngOnInit();
     this.nodes$ = combineLatest(this.details.map(reduction => {
       return this.gatheringNodesService.getItemNodes(reduction).pipe(
         map(nodes => {

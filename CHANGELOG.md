@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.6.16"></a>
+## [9.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.15...v9.6.16) (2022-07-20)
+
+
+### Bug Fixes
+
+* **db:** fixed broken desynth data links ([c47a0cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c47a0cb))
+* **inventory-optimizer:** only show recipes you have enough materials for ([7433215](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7433215))
+* **list:** fixed trade details not showing in dialog box ([199065c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/199065c))
+* **profile:** fix wrong label in character addition button ([c2a2d69](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c2a2d69))
+
+
+### Features
+
+* **gearsets:** you can now clone a gearset from the gearsets page ([d8b07e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d8b07e7))
+
+
+
 <a name="9.6.15"></a>
 ## [9.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.14...v9.6.15) (2022-07-17)
 

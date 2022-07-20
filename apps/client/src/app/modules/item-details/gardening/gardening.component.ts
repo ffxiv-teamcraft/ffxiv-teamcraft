@@ -31,5 +31,6 @@ export class GardeningComponent extends ItemDetailsPopup<GardeningData> implemen
         pluck('ffxivgId')
       );
     }
+    super.ngOnInit();
   }
 }

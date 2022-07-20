@@ -16,7 +16,7 @@ export class LazyRowPipe implements PipeTransform {
   transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field: F): Observable<LazyDataEntries[K][F]>
   transform<K extends LazyDataRecordKey, F extends keyof LazyDataEntries[K]>(id: number, entry: K, field?: F): Observable<LazyDataEntries[K] | LazyDataEntries[K][F]> {
     return this.lazyData.getRow(entry, id).pipe(
-      map(row => field ? row[field] : row)
+      map(row => field && row ? row[field] : row)
     );
   }
 
