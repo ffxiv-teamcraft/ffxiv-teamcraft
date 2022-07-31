@@ -183,7 +183,7 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
@@ -194,8 +194,8 @@
     "Voyage": "ボイジャー",
     "Instance": "ダンジョン",
     "Fate": "F. A. T. E",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "再読み込み",
+    "Click_to_apply": "クリックして適用する"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -225,7 +225,7 @@
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
     "Delete_alarm": "このアラームを削除",
-    "Regenerating_alarms": "Regenerating your alarms…",
+    "Regenerating_alarms": "アラーム更新中......",
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
@@ -923,8 +923,8 @@
     "Ephemeral_warning": "刻限の採集場所は複数に分かれています。座標はおおよその位置です。",
     "Legendary": "伝説",
     "Switched_to_compact": "結果が多すぎるため、コンパクトモードに切り替えました。",
-    "Node_type": "Type",
-    "Use": "Use",
+    "Node_type": "タイプ",
+    "Use": "用途",
     "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
@@ -2091,7 +2091,7 @@
     "Materias": "マテリア",
     "Pieces": "装備品",
     "Import_from_ariyala": "Ariyalaからインポートする",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "Etroからインポートする",
     "Import_from_lodestone": "ロドストからインポートさせる",
     "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Sync_with_pcap": "ギアセットとパケットキャプチャを同期",
@@ -2169,8 +2169,8 @@
       "Title": "ギアセットの同期化",
       "Tag": "同期",
       "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "{{name}}のギアセットをインポートする",
+      "Imported_gearset": "{{name}}のギアセットをインポートしました",
       "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },
