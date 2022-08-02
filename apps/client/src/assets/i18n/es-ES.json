@@ -208,7 +208,7 @@
     "Early_by_tip": "Valor negativo = ya hizo spawn",
     "New_group": "Nuevo grupo de alarmas",
     "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
-    "Delete_group": "Delete group",
+    "Delete_group": "Eliminar grupo",
     "Delete_group_and_alarms": "Eliminar grupo con todas las alarmas",
     "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
@@ -216,16 +216,16 @@
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Alternar capa sobrepuesta",
     "Open_alarms_overlay": "Alternar capa sobrepuesta de alarmas",
-    "More_available": "and {{amount}} more…",
+    "More_available": "y {{amount}} más…",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
-    "Group_link_copied": "Alarm group link copied",
-    "Group_not_found": "Alarm group not found",
-    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
-    "Delete_all": "Delete all your alarms",
-    "Delete_alarm": "Delete this alarm",
-    "Regenerating_alarms": "Regenerating your alarms…",
+    "Group_link_copied": "Alarma de grupo copiada",
+    "Group_not_found": "Alarma de grupo no encontrada",
+    "Add_group_and_alarms": "Añadir este grupo y todas sus alarmas a tus alarmas",
+    "Delete_all": "Borrar todas tus alarmas",
+    "Delete_alarm": "Borrar esta alarma",
+    "Regenerating_alarms": "Recreando tus alarmas…",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
     "Remove_from_group": "Remove from this group",
@@ -1232,11 +1232,11 @@
     "More_on_gamerescape": "Más detalles en gamerescape",
     "Deliver_to": "Entregar a {{placename}}",
     "Hide_large": "Ocultar leves grandes",
-    "Road_to_buff": "Include \"road to XX\" buff",
+    "Road_to_buff": "Incluye el bono \"camino a XX\"",
     "INTRO": {
       "Title": "Misiones Leve",
       "First_line": "Esta página le permite buscar una determinada misión leve o múltiples misiones leve para crear una lista de los resultados",
-      "Second_line": "Select a job and input a level range. You'll get a listing of the corresponding leves that you can check and add to a list. Recipes will be automatically added to the selected list.",
+      "Second_line": "Selecciona una profesión e indica un margen de niveles. Obtendrás un listado de las correspondientes misiones leve, que puedes seleccionar y añadir a una lista. Las recetas se añadirán automáticamente a la lista seleccionada.",
       "Third_line": "También puede buscar por nombre, en caso de que sepa lo que está buscando."
     }
   },
@@ -1338,7 +1338,7 @@
       "Alarms": "Create alarms to make sure you wont miss a node spawn, organize them in groups, import them ingame... everything is possible!",
       "Gathering_location": "Find informations about any gathering item, create an alarm, get instant coordinates, closest aetheryte, required Folklore book, and more!",
       "Rotations": "Create crafting rotations, test them inside the simulator, or theorycraft rotations using the custom simulator!",
-      "Levequests": "Find some levequests for a given job and/or level range, see instant benefits on them and create lists for them.",
+      "Levequests": "Para encontrar misiones leve de una profesión y niveles determinados, ver sus bonos y crear listas para ellos.",
       "Macro_translation": "Got some macros but not in your language? Go to the macro translator and translate it back to your language so it works in your FFXIV game language!"
     }
   },
@@ -1839,7 +1839,7 @@
     "Recipe_level": "Recipe level",
     "Shown_only_not_completed": "Only not done in log",
     "Add_results_to_pool": "Add to pool when adding to basket",
-    "Show_only_leve_items": "Only items used in levequests"
+    "Show_only_leve_items": "Solamente objetos usados en misiones leve"
   },
   "CURRENCY_SPENDING": {
     "Title": "Guía de Gastos de Monedas",
@@ -1914,7 +1914,7 @@
     "Other": "Otros",
     "Commissions": "Commissions",
     "Commission_board": "Board",
-    "My_commissions": "My Commissions",
+    "My_commissions": "Mis pedidos",
     "Archived_commissions": "Archives",
     "Leveling": "Leveling",
     "Currencies": "Currencies",
