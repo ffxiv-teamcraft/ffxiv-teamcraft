@@ -662,7 +662,7 @@
     "Requirements_ignored": "Requisitos ignorados",
     "Mark_whole_panel_nq": "Quitar los marcadores HQ manuales",
     "Mark_whole_panel_hq": "Marcar todo el panel HQ",
-    "Crafts": "artesanía",
+    "Crafts": "artesanías",
     "SCROLLING": {
       "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
@@ -683,7 +683,7 @@
       "Attach": "Adjuntar rotación",
       "Detach": "Desligar rotación",
       "Click_to_copy_macro": "Haga clic para abrir la ventana de copia de macro",
-      "Open_in_overlay": "Open in rotation overlay"
+      "Open_in_overlay": "Abrir en la ventana de rotación"
     },
     "INVENTORY": {
       "Show_final_items": "Mostrar artículos finales",
@@ -712,12 +712,12 @@
   },
   "LIST_DETAILS": {
     "List_finished": "Lista completada",
-    "Public_list_description": "Setting a list to public adds it to the public lists section. THIS IS NOT REQUIRED TO SHARE A LIST",
-    "Missing_tags_before_button": "This list is shown as a Community List but has no tags. Please add some tags using ",
+    "Public_list_description": "Marcar una lista como pública la añade a la sección de listas públicas. NO ES NECESARIO HACERLO PARA COMPARTIR LA LISTA",
+    "Missing_tags_before_button": "Esta lista está marcada comunitaria pero no tiene etiquetas. Por favor, añade algunas etiquetas usando ",
     "Missing_tags_after_button": " botón",
     "Add_remove_amount": "Agregar/Quitar cierta cantidad",
     "Add_from_external": "Añadir como externo (no utilizó materiales para esto)",
-    "Missing_masterbook": "You don't have this Master book in your profile. Click to add it to the profile.",
+    "Missing_masterbook": "No tiene este libro de maestría en el perfil, haga clic para agregarlo.",
     "No_note": "No hay nota",
     "Edit_note": "No hay nota",
     "Note_placeholder": "Nota",
