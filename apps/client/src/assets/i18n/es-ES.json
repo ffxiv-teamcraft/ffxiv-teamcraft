@@ -573,7 +573,7 @@
     "Gearset_priority": "Prioridad",
     "Gearset_priority_explain": "Utilizado para decidir qué receta elegir para objetos que pueden ser fabricados por múltiples trabajos como lingotes, nuggets y otros materiales de reparación de aeronaves.",
     "Characters": "Personajes",
-    "Missing_character": "Missing character",
+    "Missing_character": "Personaje no disponible",
     "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
       "Button": "Verify",
