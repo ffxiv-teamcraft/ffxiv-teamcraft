@@ -9,9 +9,9 @@
                    tutorialStep="TUTORIAL.DESYNTH.Job"
                    tutorialStepIndex="0"
                    nzShowSearch>
-          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job[1] | i18n" [nzValue]="job[0]" nzCustomContent>
+          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="+job[0] | lazyRow:'jobAbbr' |  i18n" [nzValue]="job[0]" nzCustomContent>
             <span class="companion-svg" [innerHTML]="+job[0] | jobUnicode"></span>
-            {{job[1] | i18n}}
+            {{+job[0] | lazyRow:'jobAbbr' |  i18n}}
           </nz-option>
         </nz-select>
       </nz-form-control>

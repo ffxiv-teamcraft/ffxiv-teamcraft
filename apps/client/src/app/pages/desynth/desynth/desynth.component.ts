@@ -47,7 +47,7 @@ export class DesynthComponent {
               private i18n: I18nToolsService, private listPicker: ListPickerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService) {
     this.jobList$ = this.lazyData.getEntry('jobAbbr').pipe(
-      map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key <= 16))
+      map(record => Object.entries(record).filter(([key]) => +key >= 8 && +key < 16))
     );
     const searchResults$ = combineLatest([this.job$, this.level$, this.jobList$]).pipe(
       debounce(() => this.search$),
