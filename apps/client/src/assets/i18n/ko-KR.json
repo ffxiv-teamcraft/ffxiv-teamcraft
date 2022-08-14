@@ -1214,6 +1214,7 @@
     "Content_copied": "클립보드로 내용이 복사되었습니다.",
     "Cheaper_at_vendor": "NPC 구매시 더 저렴함",
     "Copy_panel_as_text": "이 패널을 텍스트로 복사",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "완료된 아이템 제외",
     "Price_to_craft": "제작 원가",
     "Price_from_vendor": "상인 판매 가격",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 작업할 수 없습니다.",
     "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
-    "X_sold_last_week": "지난 주 {{amount}} 개 판매"
+    "X_sold_last_week": "지난 주 {{amount}} 개 판매",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "음식 선택 도우미",
