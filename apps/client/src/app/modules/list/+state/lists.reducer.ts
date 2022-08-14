@@ -216,6 +216,17 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.PureUpdateList: {
+      state = {
+        ...state,
+        listDetails: listsAdapter.mapOne({
+          id: action.$key,
+          map: current => Object.assign(current, action.payload)
+        }, state.listDetails)
+      };
+      break;
+    }
+
     case ListsActionTypes.DeleteList: {
       state = {
         ...state,
