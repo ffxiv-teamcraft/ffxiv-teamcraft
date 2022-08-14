@@ -13,6 +13,7 @@ import { WorldNavigationMapComponent } from './world-navigation-map/world-naviga
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     RouterModule,
 
     AntdSharedModule,
+    NzToolTipModule,
 
     PipesModule,
     CoreModule
