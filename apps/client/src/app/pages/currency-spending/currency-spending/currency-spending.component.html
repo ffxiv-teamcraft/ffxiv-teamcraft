@@ -49,7 +49,10 @@
 
 <ng-container *ngIf="results$ | async as results">
   <ng-container *ngIf="!loading">
-    <nz-list [nzDataSource]="results" [nzRenderItem]="item">
+    <nz-list [nzDataSource]="results" [nzRenderItem]="item" [nzNoResult]="noTrades">
+      <ng-template #noTrades>
+        <nz-empty [nzNotFoundContent]="'CURRENCY_SPENDING.No_trades' | translate"></nz-empty>
+      </ng-template>
       <ng-template #item let-item>
         <nz-list-item [nzContent]="content" class="result-item">
           <ng-template #content>
