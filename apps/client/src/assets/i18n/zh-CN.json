@@ -1214,6 +1214,7 @@
     "Content_copied": "已复制",
     "Cheaper_at_vendor": "从 NPC 购买更便宜",
     "Copy_panel_as_text": "复制为文本",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "排除已完成的物品",
     "Price_to_craft": "制作成本",
     "Price_from_vendor": "商店价格",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "由于 Square Enix 禁止我们读取交易板信息，此功能已关闭。如您有意见，请向 Square Enix 投诉。",
     "Loading_data": "加载选定货币的交易数据",
     "Loading_universalis": "正在从 Universalis 获取 {{amount}} 个物品的市场价格",
-    "X_sold_last_week": "上周已售出 {{amount}} 个"
+    "X_sold_last_week": "上周已售出 {{amount}} 个",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
