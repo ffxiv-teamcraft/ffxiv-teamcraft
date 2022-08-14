@@ -124,6 +124,25 @@ export class AllaganReportsService {
     );
   }
 
+  getUnappliedCount(): Observable<number> {
+    const query = gql`subscription AllaganReportsToApplyCount {
+          allagan_reports_aggregate(where: {applied: {_eq: false}}) {
+            aggregate {
+              count
+            }
+          }
+        }`;
+    return this.apollo.subscribe<any>({
+      query,
+      fetchPolicy: 'network-only'
+    }).pipe(
+      map(res => {
+        return res.data.allagan_reports_aggregate.aggregate.count;
+      }),
+      shareReplay({ bufferSize: 1, refCount: true })
+    );
+  }
+
   addReportToQueue(report: AllaganReport): Observable<any> {
     const query = gql`mutation addAllaganReportToQueue($data: allagan_reports_queue_insert_input!) {
         insert_allagan_reports_queue_one(object: $data) {
