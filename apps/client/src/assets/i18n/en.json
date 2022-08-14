@@ -1214,6 +1214,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Copy this panel as text",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Exclude completed items",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
