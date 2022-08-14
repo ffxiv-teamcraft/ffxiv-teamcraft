@@ -455,7 +455,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         },
         {
           title: 'Gamer Escape',
-          url: `https://ffxiv.gamerescape.com/wiki/${xivapiItem.Name_en.toString().split(' ').join('_')}`,
+          url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiItem.Name_en.toString().split(' ').join('_'))}`,
           icon: './assets/icons/ge.png'
         }
       ];

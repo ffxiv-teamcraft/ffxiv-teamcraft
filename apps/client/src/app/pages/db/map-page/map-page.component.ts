@@ -184,7 +184,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
             return [
               {
                 title: 'Gamer Escape',
-                url: `https://ffxiv.gamerescape.com/wiki/${place.en.split(' ').join('_')}`,
+                url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(place.en.split(' ').join('_'))}`,
                 icon: './assets/icons/ge.png'
               }
             ];

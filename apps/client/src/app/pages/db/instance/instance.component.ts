@@ -68,7 +68,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiInstance.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiInstance.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];

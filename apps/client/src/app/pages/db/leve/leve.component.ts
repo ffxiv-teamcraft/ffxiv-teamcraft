@@ -169,7 +169,7 @@ export class LeveComponent extends TeamcraftPageComponent {
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiLeve.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiLeve.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];

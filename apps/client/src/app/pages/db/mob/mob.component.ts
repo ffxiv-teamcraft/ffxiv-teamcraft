@@ -122,7 +122,7 @@ export class MobComponent extends TeamcraftPageComponent {
         return [
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiMob.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${encodeURIComponent(xivapiMob.Name_en.toString().split(' ').join('_'))}`,
             icon: './assets/icons/ge.png'
           }
         ];
