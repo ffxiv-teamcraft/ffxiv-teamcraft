@@ -11,6 +11,12 @@ export class TimeUtils {
   }
 
   static getIntersection(a: Interval, b: Interval): Interval | null {
+    if (a[0] === a[1]) {
+      return b;
+    }
+    if (b[0] === b[1]) {
+      return a;
+    }
     if (a[1] < a[0] || b[1] < b[0]) {
       return this.getComplexIntersection(a, b);
     }

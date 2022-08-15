@@ -1,4 +1,4 @@
 export interface LazyVoyageSource {
   type: number;
-  id:   number;
+  id?:  number | null;
 }
