@@ -1214,6 +1214,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "Скопировать эту панель как текст",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Исключить завершенные предметы",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Загрузка данных о сделках для выбранной валюты",
     "Loading_universalis": "Получение цен на рынке от Universalis для {{amount}} позиций",
-    "X_sold_last_week": "{{amount}} продано на прошлой неделе"
+    "X_sold_last_week": "{{amount}} продано на прошлой неделе",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "Подборщик еды",

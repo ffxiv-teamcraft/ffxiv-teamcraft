@@ -183,7 +183,7 @@
     "Never": "しない",
     "Festival": "フェスティバルの間のみ",
     "Back": "戻る",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Patreonをサポートして広告を消す",
     "Support_us": "サポート",
     "Show_more": "詳細を表示",
     "Item": "アイテム",
@@ -194,8 +194,8 @@
     "Voyage": "ボイジャー",
     "Instance": "ダンジョン",
     "Fate": "F. A. T. E",
-    "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Reload": "再読み込み",
+    "Click_to_apply": "クリックして適用する"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -225,7 +225,7 @@
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
     "Delete_alarm": "このアラームを削除",
-    "Regenerating_alarms": "Regenerating your alarms…",
+    "Regenerating_alarms": "アラーム更新中......",
     "Regenerate": "アラーム更新",
     "Group_outdated": "このグループは古いです。使用者が新しいアップデートをしてログインをすると更新されます。",
     "Remove_from_group": "該当グループを削除",
@@ -554,7 +554,7 @@
     "Jobs": "ジョブ",
     "Stats": "サブステ",
     "View_on_apkallu_falls": "アプカル・フォールズに開く",
-    "Masterbooks": "Master books",
+    "Masterbooks": "秘伝書",
     "Patreon_supporter": "Patreonサポーター",
     "Patreon_features": "Patreonサポーターの特典",
     "Contacts": "連絡先",
@@ -572,7 +572,7 @@
     "Loading_fish_rankings": "釣りのランキングを読み込み中",
     "Gearset_priority": "優先度",
     "Gearset_priority_explain": "インゴット、ナゲット、或はその他の飛行艇の修理材料など色んな制作ジョブが制作可能なレシピを選択する事に使用します。",
-    "Characters": "Characters",
+    "Characters": "キャラクター",
     "Missing_character": "Missing character",
     "Missing_character_description": "This character does not exist anymore, please delete it from your profile.",
     "VERIFICATION": {
@@ -923,8 +923,8 @@
     "Ephemeral_warning": "刻限の採集場所は複数に分かれています。座標はおおよその位置です。",
     "Legendary": "伝説",
     "Switched_to_compact": "結果が多すぎるため、コンパクトモードに切り替えました。",
-    "Node_type": "Type",
-    "Use": "Use",
+    "Node_type": "タイプ",
+    "Use": "用途",
     "Page_range": "{{start}}-{{end}} of {{total}} items"
   },
   "ANNOUNCEMENT": {
@@ -1214,6 +1214,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Cheaper if you buy from NPC",
     "Copy_panel_as_text": "このパネルをテキストとしてコピーする",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "完了したアイテム除外",
     "Price_to_craft": "Price to craft",
     "Price_from_vendor": "Price from vendor",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "選択した通貨の取引データを読み込み中",
     "Loading_universalis": "Fetching marketboard prices from Universalis for {{amount}} items",
-    "X_sold_last_week": "{{amount}} sold last week"
+    "X_sold_last_week": "{{amount}} sold last week",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "調理品・薬品検索",
@@ -2091,7 +2093,7 @@
     "Materias": "マテリア",
     "Pieces": "装備品",
     "Import_from_ariyala": "Ariyalaからインポートする",
-    "Import_from_etro": "Import from Etro",
+    "Import_from_etro": "Etroからインポートする",
     "Import_from_lodestone": "ロドストからインポートさせる",
     "Import_using_pcap": "パケットキャプチャを使用してインポート",
     "Sync_with_pcap": "ギアセットとパケットキャプチャを同期",
@@ -2169,8 +2171,8 @@
       "Title": "ギアセットの同期化",
       "Tag": "同期",
       "Tag_tooltip": "This gearset is from a synchronization operation using packet capture. It will be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "{{name}}のギアセットをインポートする",
+      "Imported_gearset": "{{name}}のギアセットをインポートしました",
       "Syncing_gearsets": "Synchronizing gearsets…"
     }
   },

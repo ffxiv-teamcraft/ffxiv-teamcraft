@@ -1214,6 +1214,7 @@
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
     "Cheaper_at_vendor": "Günstiger wenn vom NPC gekauft",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
     "Price_to_craft": "Herstellungskosten",
     "Price_from_vendor": "Händlerpreis",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix, da wir nichts daran ändern können.",
     "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
-    "X_sold_last_week": "{{amount}} verkauft in der letzten Woche"
+    "X_sold_last_week": "{{amount}} verkauft in der letzten Woche",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
