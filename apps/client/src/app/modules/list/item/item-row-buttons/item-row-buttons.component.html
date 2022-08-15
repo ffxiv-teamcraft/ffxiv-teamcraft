@@ -27,7 +27,7 @@
     </ng-template>
   </ng-container>
 
-  <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)">
+  <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)  && !offlineList">
     <button (click)="openCommentsPopup.emit()" [nzTooltipTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">

@@ -42,6 +42,9 @@ export class ItemRowButtonsComponent extends TeamcraftComponent {
   finalItem: boolean;
 
   @Input()
+  offlineList: boolean;
+
+  @Input()
   itemId: number;
 
   @Input()
