@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **gearsets:** you can now clone a gearset from the gearsets page.`;
+* **gearsets:** you can now clone a gearset from the gearsets page.`;
