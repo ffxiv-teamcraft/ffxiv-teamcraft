@@ -1185,7 +1185,8 @@
       "MISSING_LEVEL_REQUIREMENT": "このアイテムを製作するにはレベルが足りません。",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
-      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。"
+      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
