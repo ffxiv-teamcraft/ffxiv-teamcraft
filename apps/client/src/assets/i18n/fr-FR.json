@@ -1185,7 +1185,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
-      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
+      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
