@@ -1185,7 +1185,8 @@
       "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
-      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
+      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
