@@ -1185,7 +1185,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",

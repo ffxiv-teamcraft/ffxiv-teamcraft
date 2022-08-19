@@ -42,8 +42,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
     shareReplay({ bufferSize: 1, refCount: true })
   );
 
-  thresholds$: Observable<number[]> = this.item$.pipe(
-    switchMap(item => {
+  thresholds$: Observable<number[]> = combineLatest([this.item$, this.recipe$]).pipe(
+    switchMap(([item, recipe]) => {
       if (item.collectable === 1) {
         // If it's a delivery item
         if (item.satisfaction !== undefined) {
@@ -65,6 +65,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
             })
           );
         }
+      } else if ((recipe as Craft).requiredQuality) {
+        return of([(recipe as Craft).requiredQuality]);
       }
     })
   );
