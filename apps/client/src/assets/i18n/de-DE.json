@@ -1185,7 +1185,8 @@
       "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
       "NOT_SPECIALIST": "Spezialisten-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
-      "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
+      "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
