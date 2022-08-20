@@ -87,8 +87,8 @@ export class AppComponent implements OnInit {
 
   public adsPlacementBreakpoints = {
     475: null,
-    1350: '601845b9cf90756a43f6c4f8',
-    default: '601845ad7730eb16d35ec25a'
+    1350: '320x50',
+    default: 'leaderboard_atf'
   };
 
   public titleBreakpoints = {

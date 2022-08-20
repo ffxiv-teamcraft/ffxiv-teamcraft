@@ -49,7 +49,7 @@
           </ng-container>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-          <app-ad *ngIf="showAd$ | async" [placementId]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
+          <app-ad *ngIf="showAd$ | async" [unitType]="adsPlacementBreakpoints | widthBreakpoints"></app-ad>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="user$ | async as user">
