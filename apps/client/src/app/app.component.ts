@@ -85,12 +85,6 @@ export class AppComponent implements OnInit {
 
   version = environment.version;
 
-  public adsPlacementBreakpoints = {
-    475: null,
-    1350: '320x50',
-    default: 'leaderboard_atf'
-  };
-
   public titleBreakpoints = {
     785: `TC\nv${this.version}`,
     default: `v${this.version}`
