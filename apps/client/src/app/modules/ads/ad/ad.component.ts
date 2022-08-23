@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { fromEvent } from 'rxjs';
-import { auditTime, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
+import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 declare const tyche: any;
@@ -13,7 +13,6 @@ declare const tyche: any;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdComponent extends TeamcraftComponent {
-  private ready = false;
 
   constructor(private platform: PlatformService) {
     super();
@@ -23,6 +22,7 @@ export class AdComponent extends TeamcraftComponent {
         config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
         passiveMode: true,
         onReady: () => {
+          console.log('Tyche ready !')
           fromEvent(window, 'resize')
             .pipe(
               map(event => (event.currentTarget as any).innerWidth),
@@ -37,7 +37,8 @@ export class AdComponent extends TeamcraftComponent {
                 return null;
               }),
               distinctUntilChanged(),
-              takeUntil(this.onDestroy$)
+              takeUntil(this.onDestroy$),
+              delay(2000)
             )
             .subscribe((p) => {
               this.applyPlatform(p);
@@ -47,7 +48,7 @@ export class AdComponent extends TeamcraftComponent {
       const tycheCDNScript = document.createElement('script');
       tycheCDNScript.id = 'tyche';
       tycheCDNScript.async = true;
-      tycheCDNScript.setAttribute('src', 'https://cdn.intergi.com/hera/tyche.js');
+      tycheCDNScript.setAttribute('src', 'https://cdn.intergient.com/ramp.js');
       document.head.appendChild(tycheCDNScript);
     }
   }
@@ -72,6 +73,7 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private enableDesktopAd(): void {
+    console.log('DESKTOP ADS LETSGO');
     tyche.destroyUnits('all');
     tyche.settings.device = 'desktop';
     tyche.isMobile = false;

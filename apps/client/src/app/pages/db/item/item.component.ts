@@ -85,32 +85,32 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       // For now we only have more details if there's an associated series
       item.hasMoreDetails = item.ItemSeries !== null;
 
-      if (item.ItemSeries) {
-        return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
-          switchMap(itemSeries => {
-            if (itemSeries.items.length > 20) {
-              return of(item);
-            }
-            return safeCombineLatest(itemSeries.items.map(itemId => {
-              return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
-                map(bonuses => {
-                  return {
-                    itemId,
-                    bonuses
-                  };
-                })
-              );
-            })).pipe(
-              map(bonuses => {
-                return {
-                  ...item,
-                  bonuses
-                };
-              })
-            );
-          })
-        );
-      }
+      // if (item.ItemSeries) {
+      //   return this.lazyData.getRow('itemSeries', item.ItemSeries.ID).pipe(
+      //     switchMap(itemSeries => {
+      //       if (itemSeries.items.length > 20) {
+      //         return of(item);
+      //       }
+      //       return safeCombineLatest(itemSeries.items.map(itemId => {
+      //         return this.lazyData.getRow('itemSetBonuses', itemId, { bonuses: [], itemSeriesId: item.ItemSeries.ID }).pipe(
+      //           map(bonuses => {
+      //             return {
+      //               itemId,
+      //               bonuses
+      //             };
+      //           })
+      //         );
+      //       })).pipe(
+      //         map(bonuses => {
+      //           return {
+      //             ...item,
+      //             bonuses
+      //           };
+      //         })
+      //       );
+      //     })
+      //   );
+      // }
       return of(item);
     }),
     shareReplay({ bufferSize: 1, refCount: true })
