@@ -104,7 +104,7 @@ export class NodesExtractor extends AbstractExtractor {
 
     combineLatest([gatheringItems$, gatheringPoints$, gatheringItemPoints$]).pipe(
       switchMap(([gi, gp, gip]) => {
-        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
+        return this.getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,GameContentLinks,GatheringLevel')
           .pipe(
             map((page) => [page, gi, gp, gip])
           );

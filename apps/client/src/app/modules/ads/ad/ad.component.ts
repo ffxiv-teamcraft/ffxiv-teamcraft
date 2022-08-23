@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { fromEvent } from 'rxjs';
-import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
+import { auditTime, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 declare const tyche: any;
@@ -12,9 +12,8 @@ declare const tyche: any;
   styleUrls: ['./ad.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdComponent extends TeamcraftComponent implements OnInit {
-
-  public _unitType: string;
+export class AdComponent extends TeamcraftComponent {
+  private ready = false;
 
   constructor(private platform: PlatformService) {
     super();
@@ -22,7 +21,28 @@ export class AdComponent extends TeamcraftComponent implements OnInit {
       (<any>window).tyche = {
         mode: 'tyche',
         config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
-        passiveMode: true
+        passiveMode: true,
+        onReady: () => {
+          fromEvent(window, 'resize')
+            .pipe(
+              map(event => (event.currentTarget as any).innerWidth),
+              startWith(window.innerWidth),
+              auditTime(1000),
+              map(width => {
+                if (width > 475 && width < 1350) {
+                  return 'mobile';
+                } else if (width >= 350) {
+                  return 'desktop';
+                }
+                return null;
+              }),
+              distinctUntilChanged(),
+              takeUntil(this.onDestroy$)
+            )
+            .subscribe((p) => {
+              this.applyPlatform(p);
+            });
+        }
       };
       const tycheCDNScript = document.createElement('script');
       tycheCDNScript.id = 'tyche';
@@ -32,52 +52,49 @@ export class AdComponent extends TeamcraftComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    fromEvent(window, 'resize')
-      .pipe(
-        map(event => (event.currentTarget as any).innerWidth),
-        startWith(window.innerWidth),
-        auditTime(1000),
-        delay(3000), // Arbitrary delay to have enough time for tyche to load, should use onReady instead
-        map(width => {
-          if (width > 475 && width < 1350) {
-            return 'mobile';
-          } else if (width >= 350) {
-            return 'desktop';
-          }
-          return null;
-        }),
-        distinctUntilChanged(),
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe((platform) => {
+  private applyPlatform(platform: string | null): void {
+    switch (platform) {
+      case 'mobile':
+        this.enableMobileAd();
+        break;
+      case 'desktop':
+        this.enableDesktopAd();
+        break;
+      default:
         this.removeAd();
-        console.log('Loading ad for platform', platform);
-        switch (platform) {
-          case 'mobile':
-            this.enableMobileAd();
-            break;
-          case 'desktop':
-            this.enableDesktopAd();
-            break;
-        }
-      });
+        break;
+    }
   }
 
   private removeAd(): void {
     tyche.changePath('no-ads');
+    tyche.destroyUnits('all');
   }
 
   private enableDesktopAd(): void {
-    tyche.changePath('ROS');
+    tyche.destroyUnits('all');
     tyche.settings.device = 'desktop';
     tyche.isMobile = false;
+    tyche.changePath('ROS');
+    tyche.addUnits([{
+      selectorId: 'pw-ad-banner',
+      type: 'leaderboard_atf'
+    }]).then(() => {
+      tyche.displayUnits();
+    });
   }
 
   private enableMobileAd(): void {
-    tyche.changePath('mobile-ad');
+    tyche.destroyUnits('all');
     tyche.settings.device = 'mobile';
     tyche.isMobile = true;
+    tyche.changePath('mobile-ad');
+    tyche.addUnits([{
+      selectorId: 'pw-ad-banner',
+      type: 'leaderboard_atf'
+    }]).then(() => {
+      tyche.displayUnits();
+    });
   }
 
 }

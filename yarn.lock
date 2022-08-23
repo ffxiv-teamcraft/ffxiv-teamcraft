@@ -1622,10 +1622,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.1.0.tgz#581b6a3aaa7274c0353017e69b2c3c7e34afa38e"
-  integrity sha512-NrZ8b25JEArSDJfF622fnBf1g6eUYd8U9GrJReXA3x4AQzjuGnywxE4mno9r7baDhlZwZ7jidTJJmCY20amQgQ==
+"@ffxiv-teamcraft/simulator@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-3.1.1.tgz#973004659652db87835abcb9867d29c59e0b3339"
+  integrity sha512-/L8TpK34Q0XpFciLSBNjG6eARP8yRkpnp685PfEXbqg7Qc74KwO8UqqTRyDqdvlwarG1QsbQhlqymk1mFTCSvQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
