@@ -1,7 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PlatformService } from '../../../core/tools/platform.service';
-import { filter } from 'rxjs/operators';
-import { NavigationEnd, Router } from '@angular/router';
+import { fromEvent } from 'rxjs';
+import { auditTime, delay, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+
+declare const tyche: any;
 
 @Component({
   selector: 'app-ad',
@@ -9,62 +12,72 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./ad.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdComponent implements AfterViewInit, OnDestroy {
+export class AdComponent extends TeamcraftComponent implements OnInit {
 
-  @ViewChild('vmAdRef', { static: false })
-  vmAdRef: ElementRef;
+  public _unitType: string;
 
-  private loaded = false;
-
-  constructor(private platform: PlatformService, router: Router) {
-    router.events.pipe(
-      filter(e => e instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.removeAd();
-      this.addAd();
-    });
-  }
-
-  private _placementId: string;
-
-  public get placementId(): string {
-    return this._placementId;
-  }
-
-  @Input()
-  public set placementId(id: string) {
-    if (this.loaded) {
-      this.removeAd();
-      this._placementId = id;
-      if (id !== null) {
-        this.addAd();
-      }
-    } else {
-      this._placementId = id;
+  constructor(private platform: PlatformService) {
+    super();
+    if (!this.platform.isOverlay()) {
+      (<any>window).tyche = {
+        mode: 'tyche',
+        config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
+        passiveMode: true
+      };
+      const tycheCDNScript = document.createElement('script');
+      tycheCDNScript.id = 'tyche';
+      tycheCDNScript.async = true;
+      tycheCDNScript.setAttribute('src', 'https://cdn.intergi.com/hera/tyche.js');
+      document.head.appendChild(tycheCDNScript);
     }
   }
 
-  ngAfterViewInit(): void {
-    if (!this.platform.isDesktop()) {
-      this.addAd();
-      this.loaded = true;
-    }
-  }
-
-  ngOnDestroy(): void {
-    this.removeAd();
-  }
-
-  private addAd(): void {
-    if (this.placementId) {
-      (window as any).top.__vm_add = (window as any).top.__vm_add || [];
-      (window as any).top.__vm_add.push(this.vmAdRef.nativeElement);
-    }
+  ngOnInit(): void {
+    fromEvent(window, 'resize')
+      .pipe(
+        map(event => (event.currentTarget as any).innerWidth),
+        startWith(window.innerWidth),
+        auditTime(1000),
+        delay(3000), // Arbitrary delay to have enough time for tyche to load, should use onReady instead
+        map(width => {
+          if (width > 475 && width < 1350) {
+            return 'mobile';
+          } else if (width >= 350) {
+            return 'desktop';
+          }
+          return null;
+        }),
+        distinctUntilChanged(),
+        takeUntil(this.onDestroy$)
+      )
+      .subscribe((platform) => {
+        this.removeAd();
+        console.log('Loading ad for platform', platform);
+        switch (platform) {
+          case 'mobile':
+            this.enableMobileAd();
+            break;
+          case 'desktop':
+            this.enableDesktopAd();
+            break;
+        }
+      });
   }
 
   private removeAd(): void {
-    (window as any).top.__vm_remove = (window as any).top.__vm_remove || [];
-    (window as any).top.__vm_remove.push(this.vmAdRef.nativeElement);
+    tyche.changePath('no-ads');
+  }
+
+  private enableDesktopAd(): void {
+    tyche.changePath('ROS');
+    tyche.settings.device = 'desktop';
+    tyche.isMobile = false;
+  }
+
+  private enableMobileAd(): void {
+    tyche.changePath('mobile-ad');
+    tyche.settings.device = 'mobile';
+    tyche.isMobile = true;
   }
 
 }
