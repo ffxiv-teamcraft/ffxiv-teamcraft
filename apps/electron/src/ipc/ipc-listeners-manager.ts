@@ -429,40 +429,40 @@ export class IpcListenersManager {
   }
 
   private setupLodestoneListeners(): void {
-    ipcMain.on('lodestone:getCharacter', (event, id) => {
-      const worker = new Worker(isDev ? join(__dirname, '../workers/lodestone.js') : join(app.getAppPath(), '../../resources/app.asar.unpacked/dist/apps/electron/src/workers/lodestone.js'), {
-        workerData: id
-      });
-      worker.on('message', (char) => {
-        event.sender.send(`lodestone:character:${id}`, {
-          Character: {
-            ID: +id,
-            ...char
-          }
-        });
-      });
-      worker.on('error', (e) => {
-        console.error(`Worker Lodestone parsing error`, e);
-        this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
-          event.sender.send(`lodestone:character:${id}`, {
-            Character: {
-              ID: +id,
-              ...char
-            }
-          });
-        }).catch(err => console.error(`Direct lodestone parsing error`, err));
-        worker.terminate();
-      });
-      worker.on('exit', (code) => {
-        if (code !== 0)
-          worker.terminate();
-      });
-    });
-    ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
-      this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
-        event.sender.send('lodestone:character:search', res.List);
-      });
-    });
+    // ipcMain.on('lodestone:getCharacter', (event, id) => {
+    //   const worker = new Worker(isDev ? join(__dirname, '../workers/lodestone.js') : join(app.getAppPath(), '../../resources/app.asar.unpacked/dist/apps/electron/src/workers/lodestone.js'), {
+    //     workerData: id
+    //   });
+    //   worker.on('message', (char) => {
+    //     event.sender.send(`lodestone:character:${id}`, {
+    //       Character: {
+    //         ID: +id,
+    //         ...char
+    //       }
+    //     });
+    //   });
+    //   worker.on('error', (e) => {
+    //     console.error(`Worker Lodestone parsing error`, e);
+    //     this.characterParser.parse({ params: { characterId: id } } as any).then(char => {
+    //       event.sender.send(`lodestone:character:${id}`, {
+    //         Character: {
+    //           ID: +id,
+    //           ...char
+    //         }
+    //       });
+    //     }).catch(err => console.error(`Direct lodestone parsing error`, err));
+    //     worker.terminate();
+    //   });
+    //   worker.on('exit', (code) => {
+    //     if (code !== 0)
+    //       worker.terminate();
+    //   });
+    // });
+    // ipcMain.on('lodestone:searchCharacter', (event, { name, server }) => {
+    //   this.characterSearchParser.parse({ query: { name, server } } as any).then((res: { List: any[] }) => {
+    //     event.sender.send('lodestone:character:search', res.List);
+    //   });
+    // });
   }
 
   private sendPageView(ga3user: any, url: string): void {

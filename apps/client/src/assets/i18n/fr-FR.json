@@ -1214,6 +1214,7 @@
     "Content_copied": "Content copied to your clipboard",
     "Cheaper_at_vendor": "Moins cher chez le vendeur",
     "Copy_panel_as_text": "Copier ce panneau sous forme de texte",
+    "Copy_panel_as_csv": "Copy this panel as CSV",
     "Ignore_completed_items": "Ignorer les objets complétés",
     "Price_to_craft": "Prix du craft",
     "Price_from_vendor": "Prix du vendeur",
@@ -1850,7 +1851,8 @@
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard information. If you want to complain about this, please complain to Square Enix, as there is nothing we can do to make this work without them.",
     "Loading_data": "Chargement des données d'échange pour la devise sélectionnée",
     "Loading_universalis": "Récupération des prix HDV depuis Universalis pour {{amount}} objets",
-    "X_sold_last_week": "{{amount}} vendu la semaine dernière"
+    "X_sold_last_week": "{{amount}} vendu la semaine dernière",
+    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
   },
   "FOOD_PICKER": {
     "Title": "Sélecteur de nourriture",

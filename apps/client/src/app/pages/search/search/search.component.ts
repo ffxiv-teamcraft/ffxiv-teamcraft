@@ -120,7 +120,7 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
     map(([query, type]) => {
       return (JSON.parse(localStorage.getItem('search:history') || '{}')[type] || [])
-        .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1 && entry.length > 0)
+        .filter(entry => entry.toLowerCase().indexOf(query.toLowerCase()) > -1 && entry.length > 0 && entry !== query)
         .reverse();
     })
   );

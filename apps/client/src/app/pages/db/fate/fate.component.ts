@@ -63,16 +63,16 @@ export class FateComponent extends TeamcraftPageComponent {
     );
 
     this.links$ = combineLatest([this.xivapiFate$, this.gtData$]).pipe(
-      map(([xivapiNpc, gtData]) => {
+      map(([xivapiFate, gtData]) => {
         return [
           {
             title: 'GarlandTools',
-            url: `https://www.garlandtools.org/db/#npc/${xivapiNpc.ID}`,
+            url: `https://www.garlandtools.org/db/#fate/${xivapiFate.ID}`,
             icon: 'https://garlandtools.org/favicon.png'
           },
           {
             title: 'Gamer Escape',
-            url: `https://ffxiv.gamerescape.com/wiki/${xivapiNpc.Name_en.toString().split(' ').join('_')}`,
+            url: `https://ffxiv.gamerescape.com/wiki/${xivapiFate.Name_en.toString().split(' ').join('_').replace('\'', '%27')}`,
             icon: './assets/icons/ge.png'
           }
         ];

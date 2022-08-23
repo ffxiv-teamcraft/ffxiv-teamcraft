@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.0"></a>
+# [9.7.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.16...v9.7.0) (2022-08-23)
+
+
+### Bug Fixes
+
+* **alarms:** fix some weather + time issues on fish alarms ([72463be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72463be))
+* **community-rotations:** fixed first visit behavior ([90404ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90404ba))
+* **currency-spending:** better feedback when there's no available trades ([4940ff5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4940ff5))
+* **db:** fix some broken links to GamerEscape ([90483a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90483a8))
+* **db:** removed diadem from FSH log tracker ([97395b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97395b0))
+* **desktop:** lighter Machina error messages ([ece9a2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ece9a2b))
+* **i18n:** better loading system for KO/ZH locales ([f1e3aaa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1e3aaa)), closes [#2303](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2303)
+* **inventory:** better error handling behavior ([444ca0f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/444ca0f))
+* **list:** disable comments on offline lists ([af33b7c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af33b7c))
+* **list:** fix disable automatic HQ flags not applying ([bf96453](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf96453))
+* **map:** fix for tooltips not showing in optimized path ([292771f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/292771f))
+* **path-optimizer:** fixed map sometimes not switching properly ([15d6b5e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/15d6b5e))
+* **profile:** add character button now adds character, not contact ([37f42ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/37f42ef))
+* **profile:** fix stats updating even after closing the autofill popup ([f79cfe0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f79cfe0))
+* **simulator:** fix +/-1 precision issue on quality actions ([9de8680](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9de8680))
+* **ux:** fix fish tooltip position on some resolutions ([a3bf0f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3bf0f2))
+
+
+### Features
+
+* **data:** update for cn patch-6.1 ([f3c9262](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f3c9262))
+* **db:** allagan reports import ([6f23053](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f23053))
+* **db:** support for 6.2 data ([b0996c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0996c2))
+* **list:** better NPC rbeakdown grouping logic ([7dc3fb3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7dc3fb3))
+* **pricing:** copy panel as CSV ([887585a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/887585a)), closes [#2301](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2301)
+* **simulator:** support for new quality requirement system ([d6f90c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6f90c4))
+
+
+
 <a name="9.6.16"></a>
 ## [9.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.15...v9.6.16) (2022-07-20)
 

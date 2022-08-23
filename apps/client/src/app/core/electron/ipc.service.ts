@@ -348,7 +348,7 @@ export class IpcService {
       this.handleMachinaError(error);
     });
     this.on('machina:error:raw', (event, error: { message: string, retryDelay: number }) => {
-      this.handleMachinaError(error, true);
+      console.log(error.message);
     });
     this.on('navigate', (event, url: string) => {
       console.log('NAVIGATE', url);

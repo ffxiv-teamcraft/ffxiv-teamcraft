@@ -9,6 +9,8 @@ import { Observable, of } from 'rxjs';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { map } from 'rxjs/operators';
 import { housingMaterialSuppliers } from '../../core/data/sources/housing-material-suppliers';
+import { LazyShopsByNpc } from '../../lazy-data/model/lazy-shops-by-npc';
+import { LazyNpc } from '../../lazy-data/model/lazy-npc';
 
 export class NpcBreakdown {
   private readonly _rows: NpcBreakdownRow[] = [];
@@ -120,24 +122,26 @@ export class NpcBreakdown {
       return of(10 + sameNpc.items.length);
     }
     return safeCombineLatest([
+      this.lazyData.getRow('shopsByNpc', npcId),
       this.lazyData.getRow('npcs', npcId).pipe(
         map(res => ({ id: npcId, ...res }))
       ),
-      ...this._rows.map(r => {
+      safeCombineLatest(this._rows.map(r => {
         return this.lazyData.getRow('npcs', r.npcId).pipe(
           map(res => ({ id: r.npcId, ...res }))
         );
-      })
+      }))
     ]).pipe(
-      map(([currentNpc, ...rowsNpcs]) => {
+      map(([shops, currentNpc, rowsNpcs]: [LazyShopsByNpc[], LazyNpc, LazyNpc[]]) => {
+        const bonus = shops.reduce((acc, s) => acc + s.trades.length, 0);
         if (rowsNpcs.some(npc => npc.position && npc.position?.map === currentNpc?.position?.map)) {
-          return 8;
+          return 8 * bonus;
         }
         if (currentNpc?.position) {
-          return 5;
+          return 3 * bonus;
         }
         if (beastTribeNpcs.includes(npcId)) {
-          return 3;
+          return 2 * bonus;
         }
         return 0;
       })

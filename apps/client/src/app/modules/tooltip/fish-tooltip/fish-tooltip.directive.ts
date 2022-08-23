@@ -82,7 +82,7 @@ export class FishTooltipDirective implements OnDestroy {
       .position()
       .flexibleConnectedTo(this._elementRef)
       .withPositions([
-        { originX: 'start', originY: 'center', overlayX: 'end', overlayY: 'center' },
+        { originX: 'end', originY: 'center', overlayX: 'start', overlayY: 'top' },
       ]);
 
     // Create the overlay that will contain the tooltip.

@@ -355,7 +355,7 @@
     "fr": "le Gardien du lac",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      7509,
+      7516,
       7500
     ]
   },
@@ -432,7 +432,7 @@
     "fr": "L'Aire",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8518,
+      8524,
       8500
     ]
   },
@@ -965,11 +965,15 @@
     ]
   },
   "88": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "the Fell Court of Troia",
+    "ja": "異界孤城 トロイアコート",
+    "de": "Der Schwarze Hof von Troia",
+    "fr": "Le Château de Troïa",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      33929,
+      33900
+    ]
   },
   "89": {
     "en": null,
@@ -1706,6 +1710,28 @@
     ]
   },
   "5062": {
+    "en": "Where Everything Begins",
+    "ja": "失われた力",
+    "de": "Wo alles seinen Anfang nimmt",
+    "fr": "Au commencement était Zero",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      33132,
+      33100
+    ]
+  },
+  "5063": {
+    "en": "the Steps of Faith",
+    "ja": "皇都イシュガルド防衛戦",
+    "de": "Der Schicksalsweg",
+    "fr": "Le Siège de la sainte Cité d'Ishgard",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      34842,
+      34800
+    ]
+  },
+  "5064": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2190,8 +2216,8 @@
     "fr": "la Lisière de ronces (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      4902,
-      4900
+      33809,
+      33800
     ]
   },
   "20012": {
@@ -2359,15 +2385,11 @@
     "icon": "/i/061000/061804.png"
   },
   "20028": {
-    "en": "the Steps of Faith",
-    "ja": "皇都イシュガルド防衛戦",
-    "de": "Der Schicksalsweg",
-    "fr": "le Siège de la sainte Cité d'Ishgard",
-    "icon": "/i/061000/061804.png",
-    "contentText": [
-      8029,
-      8000
-    ]
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "20029": {
     "en": "the Chrysalis",
@@ -2945,7 +2967,7 @@
     ]
   },
   "20082": {
-    "en": "The Porta Decumana",
+    "en": "the Porta Decumana",
     "ja": "アルテマウェポン破壊作戦",
     "de": "Porta Decumana",
     "fr": "Porta Decumana",
@@ -2967,18 +2989,26 @@
     ]
   },
   "20084": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Storm's Crown",
+    "ja": "バルバリシア討滅戦",
+    "de": "Prophetie - Barbarizia",
+    "fr": "La Toison des tempêtes",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      34526,
+      34500
+    ]
   },
   "20085": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Storm's Crown (Extreme)",
+    "ja": "極バルバリシア討滅戦",
+    "de": "Eschatos - Barbarizia",
+    "fr": "La Toison des tempêtes (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      34526,
+      34500
+    ]
   },
   "20086": {
     "en": null,
@@ -4318,6 +4348,94 @@
     ]
   },
   "30116": {
+    "en": "Abyssos: The Fifth Circle",
+    "ja": "万魔殿パンデモニウム：煉獄編1",
+    "de": "Abyssos - Fünfter Kreis",
+    "fr": "Le Purgatoire du Pandæmonium - Cages",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34900,
+      34900
+    ]
+  },
+  "30117": {
+    "en": "Abyssos: The Fifth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：煉獄編1",
+    "de": "Abyssos - Fünfter Kreis (episch)",
+    "fr": "Le Purgatoire du Pandæmonium - Cages (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34900,
+      34900
+    ]
+  },
+  "30118": {
+    "en": "Abyssos: The Seventh Circle",
+    "ja": "万魔殿パンデモニウム：煉獄編3",
+    "de": "Abyssos - Siebter Kreis",
+    "fr": "Le Purgatoire du Pandæmonium - Racines",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34617,
+      34600
+    ]
+  },
+  "30119": {
+    "en": "Abyssos: The Seventh Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：煉獄編3",
+    "de": "Abyssos - Siebter Kreis (episch)",
+    "fr": "Le Purgatoire du Pandæmonium - Racines (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34618,
+      34600
+    ]
+  },
+  "30120": {
+    "en": "Abyssos: The Sixth Circle",
+    "ja": "万魔殿パンデモニウム：煉獄編2",
+    "de": "Abyssos - Sechster Kreis",
+    "fr": "Le Purgatoire du Pandæmonium - Croisements",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34709,
+      34700
+    ]
+  },
+  "30121": {
+    "en": "Abyssos: The Sixth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：煉獄編2",
+    "de": "Abyssos - Sechster Kreis (episch)",
+    "fr": "Le Purgatoire du Pandæmonium - Croisements (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      34709,
+      34700
+    ]
+  },
+  "30122": {
+    "en": "Abyssos: The Eighth Circle",
+    "ja": "万魔殿パンデモニウム：煉獄編4",
+    "de": "Abyssos - Achter Kreis",
+    "fr": "Le Purgatoire du Pandæmonium - Hérédité",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      35033,
+      35000
+    ]
+  },
+  "30123": {
+    "en": "Abyssos: The Eighth Circle (Savage)",
+    "ja": "万魔殿パンデモニウム零式：煉獄編4",
+    "de": "Abyssos - Achter Kreis (episch)",
+    "fr": "Le Purgatoire du Pandæmonium - Hérédité (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      35033,
+      35000
+    ]
+  },
+  "30124": {
     "en": null,
     "ja": null,
     "de": null,
@@ -4580,6 +4698,34 @@
     "fr": null,
     "icon": null
   },
+  "37000": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "37001": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "37002": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "37003": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
   "40000": {
     "en": null,
     "ja": null,
@@ -4791,24 +4937,24 @@
     "icon": "/i/061000/061806.png"
   },
   "40030": {
-    "en": "The Palaistra",
-    "ja": "パライストラ",
-    "de": "Die Palästra",
-    "fr": "Le Palestre",
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
     "icon": "/i/061000/061806.png"
   },
   "40031": {
-    "en": "The Volcanic Heart",
-    "ja": "ヴォルカニック・ハート",
-    "de": "Das Herz des Vulkans",
-    "fr": "Le Cœur volcanique",
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
     "icon": "/i/061000/061806.png"
   },
   "40032": {
-    "en": "Cloud Nine",
-    "ja": "クラウドナイン",
-    "de": "Wolke Sieben",
-    "fr": "Le Petit Nuage",
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": "",
     "icon": "/i/061000/061806.png"
   },
   "40033": {
@@ -5038,6 +5184,13 @@
     ]
   },
   "55010": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "55011": {
     "en": null,
     "ja": null,
     "de": null,
@@ -5524,17 +5677,24 @@
     "icon": null
   },
   "64004": {
-    "en": "Ultima's Bane (Unreal)",
-    "ja": "幻アルテマウェポン破壊作戦",
-    "de": "Traumprüfung - Ultima",
-    "fr": "Le fléau d'Ultima (irréel)",
-    "icon": "/i/061000/061804.png",
-    "contentText": [
-      4050,
-      4044
-    ]
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "64005": {
+    "en": "Containment Bay S1T7 (Unreal)",
+    "ja": "幻魔神セフィロト討滅戦",
+    "de": "Traumprüfung - Sephirot",
+    "fr": "Unité de contention S1P7 (irréel)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      9907,
+      9900
+    ]
+  },
+  "64006": {
     "en": null,
     "ja": null,
     "de": null,

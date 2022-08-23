@@ -6424,21 +6424,25 @@
     "map": 213
   },
   "338": {
-    "items": [],
-    "limited": true,
-    "level": 0,
-    "type": 0,
-    "legendary": false,
-    "ephemeral": true,
-    "spawns": [
-      20
+    "items": [
+      37817
     ],
-    "duration": 240,
-    "zoneid": 2754,
-    "x": 28.97,
-    "y": 6.7,
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      6,
+      18
+    ],
+    "duration": 120,
+    "zoneid": 3915,
+    "x": 31.95,
+    "y": 17.35,
     "z": 0,
-    "map": 354
+    "map": 697,
+    "folklore": 36598
   },
   "339": {
     "items": [
@@ -6595,9 +6599,25 @@
     "folklore": 12698
   },
   "346": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      37820
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 0,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      8,
+      20
+    ],
+    "duration": 120,
+    "zoneid": 3964,
+    "x": 29.63,
+    "y": 22.39,
+    "z": 0,
+    "map": 698,
+    "folklore": 36600
   },
   "347": {
     "items": [
@@ -7615,9 +7635,25 @@
     "type": 0
   },
   "400": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      37822
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 1,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      10,
+      22
+    ],
+    "duration": 120,
+    "zoneid": 3848,
+    "x": 11.15,
+    "y": 21.41,
+    "z": 0,
+    "map": 695,
+    "folklore": 36598
   },
   "401": {
     "items": [
@@ -8870,9 +8906,25 @@
     "map": 0
   },
   "463": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      37818
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      2,
+      14
+    ],
+    "duration": 120,
+    "zoneid": 3929,
+    "x": 9.82,
+    "y": 29.85,
+    "z": 0,
+    "map": 700,
+    "folklore": 36605
   },
   "464": {
     "items": [
@@ -12076,20 +12128,25 @@
     "map": 492
   },
   "627": {
-    "items": [],
-    "limited": true,
-    "level": 0,
-    "type": 0,
-    "legendary": false,
-    "ephemeral": true,
-    "spawns": [
-      0
+    "items": [
+      37819
     ],
-    "duration": 1440,
-    "zoneid": 0,
-    "x": 0,
-    "y": 0,
-    "z": 0
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      0,
+      12
+    ],
+    "duration": 120,
+    "zoneid": 3892,
+    "x": 29.12,
+    "y": 26.87,
+    "z": 0,
+    "map": 696,
+    "folklore": 36602
   },
   "628": {
     "items": [
@@ -13408,9 +13465,25 @@
     "map": 0
   },
   "695": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      37821
+    ],
+    "limited": true,
+    "level": 90,
+    "type": 2,
+    "legendary": true,
+    "ephemeral": false,
+    "spawns": [
+      4,
+      16
+    ],
+    "duration": 120,
+    "zoneid": 3839,
+    "x": 28.14,
+    "y": 11.4,
+    "z": 0,
+    "map": 695,
+    "folklore": 36602
   },
   "696": {
     "items": [
@@ -16058,7 +16131,8 @@
     "items": [
       36215,
       36216,
-      37279
+      37279,
+      37694
     ],
     "limited": true,
     "level": 90,
@@ -16548,7 +16622,8 @@
   "858": {
     "items": [
       36214,
-      36217
+      36217,
+      37691
     ],
     "limited": true,
     "level": 90,
@@ -17422,5 +17497,235 @@
     "y": 27.3,
     "z": 0,
     "map": 371
+  },
+  "905": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "906": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "907": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "908": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "909": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "910": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "911": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "912": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "913": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "914": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "915": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "916": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "917": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "918": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "919": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "920": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "921": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "922": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "923": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "924": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "925": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "926": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "927": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "928": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "929": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "930": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "931": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "932": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "933": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "934": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "935": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "936": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "937": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "938": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "939": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "940": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "941": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "942": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "943": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "944": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "945": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "946": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "947": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "948": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "949": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "950": {
+    "items": [],
+    "level": 0,
+    "type": 0
   }
 }

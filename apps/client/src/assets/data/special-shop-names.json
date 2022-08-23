@@ -6006,10 +6006,10 @@
     "fr": "Équipements totémiques (Guerre du chant des dragons)"
   },
   "1770550": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Arkasodara Pana Exchange",
+    "ja": "アルカソーダラ星鈷貨の取引",
+    "de": "Arkasodara-Pana",
+    "fr": "Échange de seiko arkasodaras"
   },
   "1770551": {
     "en": "Wolf Gear",
@@ -6165,7 +6165,7 @@
     "en": "Late Allagan Gear",
     "ja": "エクスアラガン装備",
     "de": "Spätallagische Ausrüstung",
-    "fr": "Équipement de de précellence allagoise"
+    "fr": "Équipement de précellence allagoise"
   },
   "1770577": {
     "en": "Wolf Gear",
@@ -6225,7 +6225,7 @@
     "en": "Late Allagan Gear",
     "ja": "エクスアラガン装備",
     "de": "Gebieter-Ausrüstung",
-    "fr": "Équipement de de précellence allagoise"
+    "fr": "Équipement de précellence allagoise"
   },
   "1770587": {
     "en": "Miscellaneous",
@@ -6242,7 +6242,7 @@
   "1770589": {
     "en": "Trophy Crystal Exchange (DoM Weapons)",
     "ja": "トロフィークリスタルの取引（ソーサラー用武器）",
-    "de": "Kristalltrophäen (Zauberer-Waffen)",
+    "de": "Kristalltrophäen (Magier-Waffen)",
     "fr": "Cristaux-trophées (armes de mages)"
   },
   "1770590": {
@@ -6254,7 +6254,7 @@
   "1770591": {
     "en": "Trophy Crystal Exchange (DoM Gear)",
     "ja": "トロフィークリスタルの取引（ソーサラー用防具）",
-    "de": "Kristalltrophäen (Zauberer-Rüstungen)",
+    "de": "Kristalltrophäen (Magier-Rüstungen)",
     "fr": "Cristaux-trophées (protections de mages)"
   },
   "1770592": {

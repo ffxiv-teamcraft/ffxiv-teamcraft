@@ -123,7 +123,9 @@ export class ShopsExtractor extends AbstractExtractor {
   }
 
   private handleGilShops(gilShops: any[]): Shop[] {
+
     return gilShops
+      .filter(shop => shop.Items !== null)
       .map(gilShop => {
         return {
           id: gilShop.ID,

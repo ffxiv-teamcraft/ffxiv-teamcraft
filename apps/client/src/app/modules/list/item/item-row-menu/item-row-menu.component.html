@@ -28,7 +28,7 @@
     </ng-container>
 
 
-    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COMMENTS)">
+    <ng-container *ngIf="!isButton(buttonsComponentRef.itemRowTypes.COMMENTS) && !buttonsComponentRef.offlineList">
       <li (click)="buttonsComponentRef.openCommentsPopup.emit()"
           nz-menu-item>
         <nz-badge [nzDot]="buttonsComponentRef.commentBadge">

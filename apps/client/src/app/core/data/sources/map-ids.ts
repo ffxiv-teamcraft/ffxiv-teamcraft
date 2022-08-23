@@ -283,7 +283,7 @@ export const mapIds = [
     "id": 36,
     "zone": 360,
     "name": "Thornmarch",
-    "territory": 207,
+    "territory": 1067,
     "scale": 400,
     "weatherRate": 30
   },
@@ -1387,7 +1387,7 @@ export const mapIds = [
     "id": 174,
     "zone": 404,
     "name": "Snowcloak",
-    "territory": 371,
+    "territory": 1062,
     "scale": 200,
     "weatherRate": 42
   },
@@ -1483,7 +1483,7 @@ export const mapIds = [
     "id": 186,
     "zone": 406,
     "name": "Steps of Faith",
-    "territory": 143,
+    "territory": 1068,
     "scale": 200,
     "weatherRate": 28
   },
@@ -1603,7 +1603,7 @@ export const mapIds = [
     "id": 201,
     "zone": 418,
     "name": "The Keeper of the Lake",
-    "territory": 150,
+    "territory": 1063,
     "scale": 200,
     "weatherRate": 74
   },
@@ -1611,7 +1611,7 @@ export const mapIds = [
     "id": 202,
     "zone": 418,
     "name": "The Keeper of the Lake",
-    "territory": 150,
+    "territory": 1063,
     "scale": 200,
     "weatherRate": 74
   },
@@ -1619,7 +1619,7 @@ export const mapIds = [
     "id": 203,
     "zone": 418,
     "name": "The Keeper of the Lake",
-    "territory": 150,
+    "territory": 1063,
     "scale": 200,
     "weatherRate": 74
   },
@@ -1811,7 +1811,7 @@ export const mapIds = [
     "id": 227,
     "zone": 2007,
     "name": "Sohm Al Foothills",
-    "territory": 441,
+    "territory": 1064,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1819,7 +1819,7 @@ export const mapIds = [
     "id": 228,
     "zone": 2007,
     "name": "Sohm Al Foothills",
-    "territory": 441,
+    "territory": 1064,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1827,7 +1827,7 @@ export const mapIds = [
     "id": 229,
     "zone": 2007,
     "name": "Sohm Al Foothills",
-    "territory": 441,
+    "territory": 1064,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1979,7 +1979,7 @@ export const mapIds = [
     "id": 248,
     "zone": 2327,
     "name": "The Vault",
-    "territory": 421,
+    "territory": 1066,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1987,7 +1987,7 @@ export const mapIds = [
     "id": 249,
     "zone": 2327,
     "name": "The Vault",
-    "territory": 421,
+    "territory": 1066,
     "scale": 200,
     "weatherRate": 0
   },
@@ -1995,7 +1995,7 @@ export const mapIds = [
     "id": 250,
     "zone": 2327,
     "name": "The Vault",
-    "territory": 421,
+    "territory": 1066,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2003,7 +2003,7 @@ export const mapIds = [
     "id": 251,
     "zone": 2327,
     "name": "The Vault",
-    "territory": 421,
+    "territory": 1066,
     "scale": 200,
     "weatherRate": 0
   },
@@ -2011,7 +2011,7 @@ export const mapIds = [
     "id": 252,
     "zone": 2050,
     "name": "The Aery",
-    "territory": 435,
+    "territory": 1065,
     "scale": 200,
     "weatherRate": 28
   },
@@ -6091,9 +6091,9 @@ export const mapIds = [
     "id": 762,
     "zone": 0,
     "name": null,
-    "territory": 1055,
+    "territory": 0,
     "scale": 100,
-    "weatherRate": 0
+    "weatherRate": null
   },
   {
     "id": 763,
@@ -6137,106 +6137,346 @@ export const mapIds = [
   },
   {
     "id": 768,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
-    "scale": 100,
-    "weatherRate": null
+    "zone": 4180,
+    "name": "The Fell Court of Troia",
+    "territory": 1070,
+    "scale": 200,
+    "weatherRate": 149
   },
   {
     "id": 769,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
-    "scale": 100,
-    "weatherRate": null
+    "zone": 4180,
+    "name": "The Fell Court of Troia",
+    "territory": 1070,
+    "scale": 200,
+    "weatherRate": 149
   },
   {
     "id": 770,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
-    "scale": 100,
-    "weatherRate": null
+    "zone": 4180,
+    "name": "The Fell Court of Troia",
+    "territory": 1070,
+    "scale": 200,
+    "weatherRate": 149
   },
   {
     "id": 771,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
-    "scale": 100,
-    "weatherRate": null
+    "zone": 4196,
+    "name": "The Pestilent Purgatory",
+    "territory": 1083,
+    "scale": 400,
+    "weatherRate": 145
   },
   {
     "id": 772,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 773,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 774,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 775,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 776,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 777,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 778,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 779,
-    "zone": 0,
-    "name": null,
-    "territory": 0,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
     "scale": 100,
-    "weatherRate": null
+    "weatherRate": 148
   },
   {
     "id": 780,
+    "zone": 4043,
+    "name": "Unnamed Island",
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 148
+  },
+  {
+    "id": 781,
+    "zone": 0,
+    "name": null,
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 148
+  },
+  {
+    "id": 782,
+    "zone": 4036,
+    "name": "The Fell Court of Troia",
+    "territory": 1089,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 783,
+    "zone": 4036,
+    "name": "The Fell Court of Troia",
+    "territory": 1089,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 784,
+    "zone": 4036,
+    "name": "The Fell Court of Troia",
+    "territory": 1089,
+    "scale": 200,
+    "weatherRate": 149
+  },
+  {
+    "id": 785,
+    "zone": 4035,
+    "name": "Alzadaal's Legacy",
+    "territory": 1056,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 786,
+    "zone": 4038,
+    "name": "Zero's Domain",
+    "territory": 1077,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 787,
+    "zone": 4039,
+    "name": "Meghaduta Guest Chambers",
+    "territory": 1078,
+    "scale": 800,
+    "weatherRate": 138
+  },
+  {
+    "id": 788,
+    "zone": 4037,
+    "name": "The Aitiascope",
+    "territory": 1079,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 789,
+    "zone": 4040,
+    "name": "Sneaky Hollow",
+    "territory": 1094,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 790,
+    "zone": 4045,
+    "name": "Storm's Crown",
+    "territory": 1092,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 791,
     "zone": 0,
     "name": null,
     "territory": 0,
-    "scale": 100,
+    "scale": 400,
     "weatherRate": null
+  },
+  {
+    "id": 792,
+    "zone": 4198,
+    "name": "The Hollow Purgatory",
+    "territory": 1085,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 793,
+    "zone": 0,
+    "name": null,
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 148
+  },
+  {
+    "id": 794,
+    "zone": 0,
+    "name": null,
+    "territory": 1055,
+    "scale": 100,
+    "weatherRate": 148
+  },
+  {
+    "id": 795,
+    "zone": 4251,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 796,
+    "zone": 4252,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 797,
+    "zone": 4253,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 798,
+    "zone": 4254,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 799,
+    "zone": 4255,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 800,
+    "zone": 4256,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 801,
+    "zone": 4042,
+    "name": "",
+    "territory": 1073,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 802,
+    "zone": 4197,
+    "name": "Storm's Crown",
+    "territory": 1071,
+    "scale": 400,
+    "weatherRate": 149
+  },
+  {
+    "id": 803,
+    "zone": 4199,
+    "name": "",
+    "territory": 1069,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 804,
+    "zone": 4227,
+    "name": "",
+    "territory": 1075,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 805,
+    "zone": 4227,
+    "name": "",
+    "territory": 1075,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 806,
+    "zone": 4227,
+    "name": "",
+    "territory": 1075,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 807,
+    "zone": 4249,
+    "name": "The Caustic Purgatory",
+    "territory": 1081,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 808,
+    "zone": 4250,
+    "name": "Stygian Insenescence Cells",
+    "territory": 1087,
+    "scale": 400,
+    "weatherRate": 145
+  },
+  {
+    "id": 809,
+    "zone": 4250,
+    "name": "Stygian Insenescence Cells",
+    "territory": 1093,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 810,
+    "zone": 4198,
+    "name": "The Hollow Purgatory",
+    "territory": 1085,
+    "scale": 400,
+    "weatherRate": 145
   }
 ];

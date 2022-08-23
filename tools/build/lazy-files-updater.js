@@ -32,11 +32,11 @@ function getType(file) {
   const data = fs.readFileSync(path.join(__dirname, '../../apps/client/src/assets/data/', file), 'utf8');
   const dataObj = JSON.parse(data);
   let indexType = Array.isArray(dataObj) ? 'Array<T>' : 'Record<number, T>';
-  if(Object.keys(dataObj).filter(k => !isNaN(k)).length === 0){
+  if (Object.keys(dataObj).filter(k => !isNaN(k)).length === 0) {
     return {
       type: className,
       importStr: `import {${className}} from './model/${_.kebabCase(className)}';`
-    }
+    };
   }
   const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
   if (valuesAreArrays) {
@@ -167,6 +167,25 @@ export interface LazyData {${properties}
   );
 
   console.log(colors.green(`Lazy loaded data interface updated`));
+
+
+  console.log(colors.cyan(`Updating keys list`));
+
+  const keys =
+    [...baseFiles, ...koFiles, ...zhFiles]
+      .filter((row) => {
+        return row.indexOf('.json') > -1;
+      })
+      .map(row => getPropertyName(row));
+
+
+  fs.writeFileSync(
+    path.join(__dirname, '../../apps/client/src/app/lazy-data/lazy-data-keys.ts'),
+    `export const LazyDataKeys = ${JSON.stringify(keys,null, 2)}`.replace(/"/g, '\'')
+  );
+
+  console.log(colors.green(`Keys list updated`));
+
   return '';
 })().then(() => {
   colors.cyan('ALL GOOD');

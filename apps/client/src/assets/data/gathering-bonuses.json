@@ -912,8 +912,20 @@
     }
   },
   "58": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 3750,
+    "bonus": {
+      "en": " Gathering Attempts/Integrity +<Value>IntegerParameter(1)</Value>",
+      "de": "Sammelversuche/Belastbarkeit +<Value>IntegerParameter(1)</Value>",
+      "ja": "採集回数／耐久＋<Value>IntegerParameter(1)</Value>",
+      "fr": " Nombre de tentatives + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "59": {
     "value": 1,
@@ -1256,16 +1268,52 @@
     }
   },
   "81": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 3800,
+    "bonus": {
+      "en": " Gatherer's Boon Chance +<Value>IntegerParameter(1)</Value>%",
+      "de": "Chance auf Stückzahl-Bonus +<Value>IntegerParameter(1)</Value> %",
+      "ja": "獲得数ボーナス発生率＋<Value>IntegerParameter(1)</Value>%",
+      "fr": "Chance de récolte supp. +<Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Expertise min. <Value>IntegerParameter(1)</Value>",
+      "ja": "技術力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Savoir-faire ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "82": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 3590,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>～",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "獲得数＋<Value>IntegerParameter(1)</Value>個（上昇タイプ）",
+      "fr": " Quantité + <Value>IntegerParameter(1)</Value> (↑)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "83": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 850,
+    "bonus": {
+      "en": " Gathering Attempts/Integrity +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche/Belastbarkeit +<Value>IntegerParameter(1)</Value> (↑)",
+      "ja": "採集回数／耐久＋<Value>IntegerParameter(1)</Value>（上昇タイプ）",
+      "fr": " Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "84": {
     "value": 10,
@@ -1332,12 +1380,36 @@
     }
   },
   "88": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 50,
+    "conditionValue": 3910,
+    "bonus": {
+      "en": "Sublime Rate +<Value>IntegerParameter(1)</Value>% (Requires Maximum Collectability)",
+      "de": "Bei maximalem Sammlerwert: Erhabenheitsrate +<Value>IntegerParameter(1)</Value> %",
+      "ja": "収集価値MAX時：昇華率＋<Value>IntegerParameter(1)</Value>%",
+      "fr": "Sublimation + <Value>IntegerParameter(1)</Value>% lorsque la valeur de collection est au maximum."
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "89": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 10,
+    "conditionValue": 3300,
+    "bonus": {
+      "en": "Sublime Rate +<Value>IntegerParameter(1)</Value>%～ (Requires Maximum Collectability)",
+      "de": "Bei maximalem Sammlerwert: Erhabenheitsrate +<Value>IntegerParameter(1)</Value> % (↑)",
+      "ja": "収集価値MAX時：昇華率＋<Value>IntegerParameter(1)</Value>%（上昇タイプ）",
+      "fr": "Sublimation + <Value>IntegerParameter(1)</Value>% (↑) lorsque la valeur de collection est au maximum."
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "90": {
     "value": 0,

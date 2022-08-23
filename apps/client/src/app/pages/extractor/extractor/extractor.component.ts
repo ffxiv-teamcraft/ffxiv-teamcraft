@@ -139,11 +139,14 @@ export class ExtractorComponent {
           return page.map(tab => {
             (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
               return notebookDivision[key].pages.includes(tab.id);
-            });
+            }) || 0;
             const division = notebookDivision[(tab as any).divisionId];
+            if (!division) {
+              console.log(tab);
+            }
             (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
             tab.items = tab.items.map(item => {
-              (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
+              (item as any).nodes = (getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes || [])
                 .slice(0, 3)
                 .map(node => {
                   return {
@@ -211,39 +214,41 @@ export class ExtractorComponent {
           map(([fishingFish, spearFishingFish]) => {
             return [fishingFish, spearFishingFish].map(log => {
               this.done$.next(this.done$.value + 1);
-              return log.reduce((display, fish) => {
-                const displayCopy = { ...display };
-                let row = displayCopy.tabs.find(e => e.mapId === fish.entry.mapId);
-                if (row === undefined) {
-                  displayCopy.tabs.push({
-                    id: fish.id,
-                    mapId: fish.entry.mapId,
-                    placeId: fish.entry.placeId,
-                    done: 0,
-                    total: 0,
-                    spots: []
-                  });
-                  row = displayCopy.tabs[displayCopy.tabs.length - 1];
-                }
-                const spotId = fish.entry.spot ? fish.entry.spot.id : fish.entry.id;
-                let spot = row.spots.find(s => s.id === spotId);
-                if (spot === undefined) {
-                  const coords = fish.entry.spot ? fish.entry.spot.coords : fish.entry.coords;
-                  row.spots.push({
-                    id: spotId,
-                    placeId: fish.entry.zoneId,
-                    mapId: fish.entry.mapId,
-                    done: 0,
-                    total: 0,
-                    coords: coords,
-                    fishes: []
-                  });
-                  spot = row.spots[row.spots.length - 1];
-                }
-                const { entry, ...fishRow } = fish;
-                spot.fishes.push(fishRow);
-                return displayCopy;
-              }, { tabs: [], total: 0, done: 0 });
+              return log
+                .filter(fish => fish.entry.mapId !== 358)
+                .reduce((display, fish) => {
+                  const displayCopy = { ...display };
+                  let row = displayCopy.tabs.find(e => e.mapId === fish.entry.mapId);
+                  if (row === undefined) {
+                    displayCopy.tabs.push({
+                      id: fish.id,
+                      mapId: fish.entry.mapId,
+                      placeId: fish.entry.placeId,
+                      done: 0,
+                      total: 0,
+                      spots: []
+                    });
+                    row = displayCopy.tabs[displayCopy.tabs.length - 1];
+                  }
+                  const spotId = fish.entry.spot ? fish.entry.spot.id : fish.entry.id;
+                  let spot = row.spots.find(s => s.id === spotId);
+                  if (spot === undefined) {
+                    const coords = fish.entry.spot ? fish.entry.spot.coords : fish.entry.coords;
+                    row.spots.push({
+                      id: spotId,
+                      placeId: fish.entry.zoneId,
+                      mapId: fish.entry.mapId,
+                      done: 0,
+                      total: 0,
+                      coords: coords,
+                      fishes: []
+                    });
+                    spot = row.spots[row.spots.length - 1];
+                  }
+                  const { entry, ...fishRow } = fish;
+                  spot.fishes.push(fishRow);
+                  return displayCopy;
+                }, { tabs: [], total: 0, done: 0 });
             });
           })
         );

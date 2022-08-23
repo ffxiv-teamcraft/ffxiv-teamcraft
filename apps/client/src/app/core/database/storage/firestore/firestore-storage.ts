@@ -73,6 +73,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     if (this.cache[uid] === undefined) {
       this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
         .pipe(
+          filter(change => !change.payload.metadata.fromCache),
           catchError(error => {
             console.error(`GET ${this.getBaseUri(uriParams)}/${uid}`);
             console.error(error);
