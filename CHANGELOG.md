@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.1"></a>
+## [9.7.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.0...v9.7.1) (2022-08-23)
+
+
+### Bug Fixes
+
+* **desktop:** fix profile not loading and blocking many pages ([2b192bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b192bb))
+* **log-tracker:** fixed new log pages labelled as "1 - 5" ([172ecb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/172ecb9))
+* **patreon:** fix ads removal benefit ([9c24cd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c24cd8))
+* **simulator:** fix recipe requirements ([9e1f7fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e1f7fa))
+
+
+
 <a name="9.7.0"></a>
 # [9.7.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.6.16...v9.7.0) (2022-08-23)
 
