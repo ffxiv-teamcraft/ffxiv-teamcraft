@@ -53,21 +53,11 @@ export class LodestoneService {
   public getCharacterFromLodestoneApi(id: number, columns?: string[]): Observable<Partial<CharacterResponse>> {
     return this.ngZone.runOutsideAngular(() => {
       let dataSource$: Observable<Partial<CharacterResponse>>;
-      if (this.ipc.ready) {
-        const result$ = new ReplaySubject<Partial<CharacterResponse>>();
-        this.ipc.once(`lodestone:character:${id}`, (event, res) => {
-          result$.next(res);
-          result$.complete();
-        });
-        this.ipc.send('lodestone:getCharacter', id);
-        dataSource$ = result$.asObservable();
-      } else {
-        let params = new HttpParams();
-        if (columns) {
-          params = params.set('columns', columns.join(','));
-        }
-        dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
+      let params = new HttpParams();
+      if (columns) {
+        params = params.set('columns', columns.join(','));
       }
+      dataSource$ = this.http.get<any>(`https://lodestone.ffxivteamcraft.com/Character/${id}`, { params });
       return dataSource$.pipe(
         map(res => {
           return {

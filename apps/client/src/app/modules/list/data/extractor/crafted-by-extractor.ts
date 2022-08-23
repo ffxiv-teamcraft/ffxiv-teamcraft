@@ -4,7 +4,7 @@ import { DataType } from '../data-type';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Masterbook } from '../../../../lazy-data/model/lazy-recipe';
+import { MasterbookClass } from '../../../../lazy-data/model/lazy-recipe';
 
 export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
 
@@ -42,10 +42,10 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
               craftedBy.masterbook = {
                 id: craft.masterbook
               };
-            } else if (craft.masterbook && (craft.masterbook as Masterbook).id) {
+            } else if (craft.masterbook && (craft.masterbook as MasterbookClass).id) {
               craftedBy.masterbook = {
-                id: (craft.masterbook as Masterbook).id,
-                name: (craft.masterbook as Masterbook).name
+                id: (craft.masterbook as MasterbookClass).id,
+                name: (craft.masterbook as MasterbookClass).name
               };
             }
             return craftedBy;
