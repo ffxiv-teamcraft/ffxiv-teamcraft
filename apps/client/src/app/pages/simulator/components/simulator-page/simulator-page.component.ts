@@ -65,8 +65,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
             })
           );
         }
-      } else if ((recipe as Craft).requiredQualityPercent) {
-        return of([Math.floor(((recipe as Craft).requiredQualityPercent / 100) * recipe.quality)]);
+      } else if (recipe.requiredQuality) {
+        return of([recipe.requiredQuality]);
       }
     })
   );
