@@ -154,7 +154,7 @@ export class AppComponent implements OnInit {
 
   public showAd$ = this.authFacade.user$.pipe(
     map(user => {
-      return true; //!(user.admin || user.moderator || user.patron);
+      return !(user.admin || user.moderator || user.patron);
     })
   );
 
