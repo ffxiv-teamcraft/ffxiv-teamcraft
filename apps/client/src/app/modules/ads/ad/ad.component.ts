@@ -22,7 +22,6 @@ export class AdComponent extends TeamcraftComponent {
         config: `https://config.playwire.com/1024627/v2/websites/${this.platform.isDesktop() ? 73554 : 73498}/banner.json`,
         passiveMode: true,
         onReady: () => {
-          console.log('Tyche ready !')
           fromEvent(window, 'resize')
             .pipe(
               map(event => (event.currentTarget as any).innerWidth),
@@ -48,7 +47,7 @@ export class AdComponent extends TeamcraftComponent {
       const tycheCDNScript = document.createElement('script');
       tycheCDNScript.id = 'tyche';
       tycheCDNScript.async = true;
-      tycheCDNScript.setAttribute('src', 'https://cdn.intergient.com/ramp.js');
+      tycheCDNScript.setAttribute('src', 'https://cdn.intergi.com/hera/tyche.js');
       document.head.appendChild(tycheCDNScript);
     }
   }
@@ -73,13 +72,12 @@ export class AdComponent extends TeamcraftComponent {
   }
 
   private enableDesktopAd(): void {
-    console.log('DESKTOP ADS LETSGO');
     tyche.destroyUnits('all');
     tyche.settings.device = 'desktop';
     tyche.isMobile = false;
     tyche.changePath('ROS');
     tyche.addUnits([{
-      selectorId: 'pw-ad-banner',
+      selectorId: 'pwAdBanner',
       type: 'leaderboard_atf'
     }]).then(() => {
       tyche.displayUnits();
@@ -92,7 +90,7 @@ export class AdComponent extends TeamcraftComponent {
     tyche.isMobile = true;
     tyche.changePath('mobile-ad');
     tyche.addUnits([{
-      selectorId: 'pw-ad-banner',
+      selectorId: 'pwAdBanner',
       type: 'leaderboard_atf'
     }]).then(() => {
       tyche.displayUnits();

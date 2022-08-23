@@ -1162,7 +1162,7 @@
   "1017": {
     "name": {
       "en": "Ixal Quests",
-      "ja": "イクサル族蛮族クエスト",
+      "ja": "イクサル族",
       "de": "Aufträge der Ixal",
       "fr": "Quêtes ixali"
     },
@@ -1182,7 +1182,7 @@
   "1018": {
     "name": {
       "en": "Moogle Quests",
-      "ja": "モーグリ族蛮族クエスト",
+      "ja": "モーグリ族",
       "de": "Aufträge der Mogrys",
       "fr": "Quêtes mogs"
     },
@@ -1202,7 +1202,7 @@
   "1019": {
     "name": {
       "en": "Namazu Quests",
-      "ja": "ナマズオ族蛮族クエスト",
+      "ja": "ナマズオ族",
       "de": "Aufträge der Namazuo",
       "fr": "Quêtes namazu"
     },
@@ -1402,7 +1402,7 @@
   "1029": {
     "name": {
       "en": "Dwarf Quests",
-      "ja": "ドワーフ族蛮族クエスト",
+      "ja": "ドワーフ族",
       "de": "Aufträge der Zwerge",
       "fr": "Quêtes naines"
     },
@@ -1521,10 +1521,10 @@
   },
   "1035": {
     "name": {
-      "en": "Ornaments",
-      "ja": "オーナメント",
-      "de": "Dekorationen",
-      "fr": "Barrettes"
+      "en": "Ornaments (1)",
+      "ja": "オーナメント（その1）",
+      "de": "Zierrat (1)",
+      "fr": "Accessoires (1)"
     },
     "pages": [
       1280,
@@ -1841,10 +1841,10 @@
   },
   "1051": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Master Recipes (10)",
+      "ja": "秘伝書:第10巻",
+      "de": "Meister (10)",
+      "fr": "Expert - tome 10"
     },
     "pages": [
       1408,
@@ -1855,6 +1855,46 @@
       1413,
       1414,
       1415
+    ],
+    "craftLevel": 90,
+    "gatheringLevel": 255
+  },
+  "1052": {
+    "name": {
+      "en": "Ornaments (2)",
+      "ja": "オーナメント（その2）",
+      "de": "Zierrat (2)",
+      "fr": "Accessoires (2)"
+    },
+    "pages": [
+      1416,
+      1417,
+      1418,
+      1419,
+      1420,
+      1421,
+      1422,
+      1423
+    ],
+    "craftLevel": 73,
+    "gatheringLevel": 255
+  },
+  "1053": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "pages": [
+      1424,
+      1425,
+      1426,
+      1427,
+      1428,
+      1429,
+      1430,
+      1431
     ],
     "craftLevel": 0,
     "gatheringLevel": 0

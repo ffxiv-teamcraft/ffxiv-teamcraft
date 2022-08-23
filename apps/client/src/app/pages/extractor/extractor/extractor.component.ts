@@ -139,11 +139,14 @@ export class ExtractorComponent {
           return page.map(tab => {
             (tab as any).divisionId = +Object.keys(notebookDivision).find(key => {
               return notebookDivision[key].pages.includes(tab.id);
-            });
+            }) || 0;
             const division = notebookDivision[(tab as any).divisionId];
+            if (!division) {
+              console.log(tab);
+            }
             (tab as any).requiredForAchievement = /\d{1,2}-\d{1,2}/.test(division.name.en);
             tab.items = tab.items.map(item => {
-              (item as any).nodes = getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes
+              (item as any).nodes = (getItemSource(extracts[item.itemId], DataType.GATHERED_BY).nodes || [])
                 .slice(0, 3)
                 .map(node => {
                   return {

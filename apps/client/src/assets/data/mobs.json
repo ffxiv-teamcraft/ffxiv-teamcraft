@@ -3285,7 +3285,7 @@
     "en": "Kottos",
     "ja": "憤怒のコットス",
     "de": "Kottos",
-    "fr": "Cottos l'irrascible"
+    "fr": "Cottos l'irascible"
   },
   "549": {
     "en": "Redbelly navvy",
@@ -12456,7 +12456,7 @@
     "fr": "cuirassier ishgardais"
   },
   "2077": {
-    "en": "Ishgardian chirurgeon",
+    "en": "Temple chirurgeon",
     "ja": "神殿騎士団の治療師",
     "de": "Ishgarder Wundarzt",
     "fr": "chirurgien ishgardais"
@@ -12474,7 +12474,7 @@
     "fr": "cavalier ishgardais"
   },
   "2080": {
-    "en": "Ishgardian banneret",
+    "en": "Temple banneret",
     "ja": "神殿騎士団の槍騎兵",
     "de": "Ishgard-Bannerherr",
     "fr": "lancier ishgardais"
@@ -19890,10 +19890,10 @@
     "fr": "cuirassier ishgardais"
   },
   "3316": {
-    "en": "Ishgardian chirurgeon",
+    "en": "Temple chirurgeon",
     "ja": "神殿騎士団の治療師",
     "de": "Ishgarder Wundarzt",
-    "fr": "chirurgien ishgardais"
+    "fr": "chirurgienne ishgardaise"
   },
   "3317": {
     "en": "Ishgardian archer",
@@ -19908,7 +19908,7 @@
     "fr": "cavalier ishgardais"
   },
   "3319": {
-    "en": "Ishgardian banneret",
+    "en": "Temple banneret",
     "ja": "神殿騎士団の槍騎兵",
     "de": "Ishgard-Bannerherr",
     "fr": "lancier ishgardais"
@@ -34689,7 +34689,7 @@
     "en": "Matanga",
     "ja": "マタンガ",
     "de": "Matanga",
-    "fr": "matanga"
+    "fr": "Matanga"
   },
   "5783": {
     "en": "manzasiri",
@@ -34833,7 +34833,7 @@
     "en": "Matanga mugger",
     "ja": "マタンガ・マガー",
     "de": "Matanga-Meuchler",
-    "fr": "matanga agressif"
+    "fr": "Matanga agressif"
   },
   "5807": {
     "en": "Gyr Abanian mud slug",
@@ -39819,7 +39819,7 @@
     "en": "canal Matanga",
     "ja": "カナル・マタンガ",
     "de": "Kanal-Matanga",
-    "fr": "matanga des canaux"
+    "fr": "Matanga des canaux"
   },
   "6638": {
     "en": "canal vanara",
@@ -44199,7 +44199,7 @@
     "en": "heavenly Matanga",
     "ja": "アメノ・マタンガ",
     "de": "Himmelssäulen-Matanga",
-    "fr": "matanga des Cieux"
+    "fr": "Matanga des Cieux"
   },
   "7368": {
     "en": "heavenly Gozu",
@@ -45615,7 +45615,7 @@
     "en": "altar Matanga",
     "ja": "アルター・マタンガ",
     "de": "Altar-Matanga",
-    "fr": "matanga du temple sacré"
+    "fr": "Matanga du temple sacré"
   },
   "7604": {
     "en": "altar onion",
@@ -45753,7 +45753,7 @@
     "en": "gold whisker and altar Matanga",
     "ja": "ナマキンとアルター・マタンガ",
     "de": "Altar-Matanga",
-    "fr": "matanga du temple sacré"
+    "fr": "namazu nain doré et Matanga du temple sacré"
   },
   "7627": {
     "en": "altar diresaur",
@@ -47013,7 +47013,7 @@
     "en": "Matanga castaway",
     "ja": "マタンガ・ドリフター",
     "de": "Matanga-Vertrieben[a]",
-    "fr": "matanga égaré"
+    "fr": "Matanga égaré"
   },
   "7837": {
     "en": "Pyros treant",
@@ -48147,7 +48147,7 @@
     "en": "nomadic Matanga",
     "ja": "ノマド・マタンガ",
     "de": "nomadisch[a] Matanga",
-    "fr": "matanga nomade"
+    "fr": "Matanga nomade"
   },
   "8026": {
     "en": "Val tulihand",
@@ -61782,10 +61782,10 @@
     "fr": "rivalité enfouie"
   },
   "10298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Barbariccia",
+    "ja": "バルバリシア",
+    "de": "Barbarizia",
+    "fr": "Barbariccia"
   },
   "10299": {
     "en": "sinking desire",
@@ -61794,10 +61794,10 @@
     "fr": "désir enfoui"
   },
   "10300": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "stiff breeze",
+    "ja": "荒風",
+    "de": "Föhn",
+    "fr": "rafale de vent"
   },
   "10301": {
     "en": "sinking partiality",
@@ -62096,7 +62096,7 @@
   "10350": {
     "en": "Grebuloff",
     "ja": "グレビュオフ",
-    "de": "Typhoid",
+    "de": "Grebuloff",
     "fr": "Grébuloff"
   },
   "10351": {
@@ -67359,7 +67359,7 @@
     "en": "Alzadaal's rampart",
     "ja": "アルザダール・ランパート",
     "de": "Alzadaal-Schutzwall",
-    "fr": "rampart d'Alzadaal"
+    "fr": "rempart d'Alzadaal"
   },
   "11228": {
     "en": "Bounty ruszor",
@@ -67908,10 +67908,10 @@
     "fr": "œil droit de Nidhogg"
   },
   "11319": {
-    "en": "_rsv_11319_-1_1_C0_0BNpcName",
-    "ja": "_rsv_11319_-1_0_C0_0BNpcName",
-    "de": "_rsv_11319_-1_2_C0_0BNpcName",
-    "fr": "_rsv_11319_-1_3_C0_0BNpcName"
+    "en": "Dragon-king Thordan",
+    "ja": "騎竜神トールダン",
+    "de": "König Thordan",
+    "fr": "Thordan le Dieu Dragon"
   },
   "11320": {
     "en": "spear of the Fury",
@@ -68022,58 +68022,58 @@
     "fr": "élémentaliste des Deux Vipères"
   },
   "11338": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "full-grown manjusaka",
+    "ja": "フルグロウン・マンジュサカ",
+    "de": "ausgewachsen[a] Manjusaka",
+    "fr": "jeune manjusaka"
   },
   "11339": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "overgrown manjusaka",
+    "ja": "オーバーグロウン・マンジュサカ",
+    "de": "überwachsen[a] Manjusaka",
+    "fr": "manjusaka mature"
   },
   "11340": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "raging valras",
+    "ja": "レイジング・ヴァルラス",
+    "de": "wütend[a] Vaalaras",
+    "fr": "vaalaras enragé"
   },
   "11341": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "brilliant starmite",
+    "ja": "ブリリアント・スターマイト",
+    "de": "gleißend[a] Sternmilbe",
+    "fr": "starmite étincelant"
   },
   "11342": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sparkling odqan",
+    "ja": "スパークリング・オドカン",
+    "de": "schäumend[a] Odqan",
+    "fr": "odqan étincelant"
   },
   "11343": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "long-legged Akyaali crab",
+    "ja": "ロングレッグ・アキャーリクラブ",
+    "de": "langbeinig[a] Akyaali-Krabbe",
+    "fr": "crabe d'Akyaali à longues pattes"
   },
   "11344": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "raging vajralangula",
+    "ja": "レイジング・ヴァジュララングラ",
+    "de": "wütend[a] Vajralangula",
+    "fr": "vajralangula enragé"
   },
   "11345": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "murderous asvattha",
+    "ja": "マロドラス・アシュヴァッタ",
+    "de": "modernd[a] Asvattha",
+    "fr": "asvattha malodorant"
   },
   "11346": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tiny Gajasura",
+    "ja": "ガジャースラ・サグ",
+    "de": "Gajasura-Strolch",
+    "fr": "malfrat gajasura"
   },
   "11347": {
     "en": "Terminus shriver",
@@ -68130,18 +68130,3870 @@
     "fr": "sphère arcanique"
   },
   "11356": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Troian watchkeep",
+    "ja": "トロイアン・ウォッチ",
+    "de": "troianisch[a] Wächter",
+    "fr": "veilleur de Troïa"
   },
   "11357": {
+    "en": "Troian sentry",
+    "ja": "トロイアン・セントリー",
+    "de": "troianisch[a] Schildwache",
+    "fr": "sentinelle de Troïa"
+  },
+  "11358": {
+    "en": "Troian scavenger",
+    "ja": "トロイアン・スカベンジャー",
+    "de": "troianisch[a] Plünderer",
+    "fr": "charognard de Troïa"
+  },
+  "11359": {
+    "en": "Troian pawn",
+    "ja": "トロイアン・ポーン",
+    "de": "troianisch[a] Landsknecht",
+    "fr": "pion de Troïa"
+  },
+  "11360": {
+    "en": "Troian guard",
+    "ja": "トロイアン・ガード",
+    "de": "troianisch[a] Garde",
+    "fr": "garde de Troïa"
+  },
+  "11361": {
+    "en": "Troian hound",
+    "ja": "トロイアン・ハウンド",
+    "de": "troianisch[a] Hund",
+    "fr": "limier de Troïa"
+  },
+  "11362": {
+    "en": "Troian rider",
+    "ja": "トロイアン・ライダー",
+    "de": "troianisch[a] Reiter",
+    "fr": "cavalier de Troïa"
+  },
+  "11363": {
+    "en": "Troian knight",
+    "ja": "トロイアン・ナイト",
+    "de": "troianisch[a] Ritter",
+    "fr": "chevalier de Troïa"
+  },
+  "11364": {
+    "en": "Troian bishop",
+    "ja": "トロイアン・ビショップ",
+    "de": "troianisch[a] Bischof",
+    "fr": "évêque de Troïa"
+  },
+  "11365": {
+    "en": "Troian trapper",
+    "ja": "トロイアン・トラッパー",
+    "de": "troianisch[a] Jäger",
+    "fr": "trappeur de Troïa"
+  },
+  "11366": {
+    "en": "Troian equerry",
+    "ja": "トロイアン・エクエリー",
+    "de": "troianisch[a] Stallmeister",
+    "fr": "écuyer de Troïa"
+  },
+  "11367": {
+    "en": "Troian butler",
+    "ja": "トロイアン・バトラー",
+    "de": "troianisch[a] Mundschenk",
+    "fr": "majordome de Troïa"
+  },
+  "11368": {
+    "en": "Troian steward",
+    "ja": "トロイアン・スチュワード",
+    "de": "troianisch[a] Haushofmeister",
+    "fr": "intendant de Troïa"
+  },
+  "11369": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "11358": {
+  "11370": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11371": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11372": {
+    "en": "Scarmiglione",
+    "ja": "スカルミリョーネ",
+    "de": "Scarmiglione",
+    "fr": "Scarmiglione"
+  },
+  "11373": {
+    "en": "necroserf",
+    "ja": "スカルミリョーネ・サーバント",
+    "de": "Nekroknecht",
+    "fr": "serviteur de Scarmiglione"
+  },
+  "11374": {
+    "en": "Agdistis",
+    "ja": "アグディスティス",
+    "de": "Agdistis",
+    "fr": "Agdistis"
+  },
+  "11375": {
+    "en": "forbidden fruit",
+    "ja": "生命の果実",
+    "de": "verboten[a] Frucht",
+    "fr": "fruit de la vie"
+  },
+  "11376": {
+    "en": "forbidden fruit",
+    "ja": "生命の果実",
+    "de": "verboten[a] Frucht",
+    "fr": "fruit de la vie"
+  },
+  "11377": {
+    "en": "forbidden fruit",
+    "ja": "生命の果実",
+    "de": "verboten[a] Frucht",
+    "fr": "fruit de la vie"
+  },
+  "11378": {
+    "en": "immature io",
+    "ja": "イマチュア・イーオー",
+    "de": "unreif[a] Io",
+    "fr": "io immature"
+  },
+  "11379": {
+    "en": "immature stymphalide",
+    "ja": "イマチュア・ステュムパリデス",
+    "de": "unreif[a] Stymphalides",
+    "fr": "stymphalide immature"
+  },
+  "11380": {
+    "en": "immature minotaur",
+    "ja": "イマチュア・タウロス",
+    "de": "unreif[a] Minotaurus",
+    "fr": "minotaure immature"
+  },
+  "11381": {
+    "en": "Hegemone",
+    "ja": "ヘーゲモネー",
+    "de": "Hegemone",
+    "fr": "Hégémone"
+  },
+  "11382": {
+    "en": "evil dreamer",
+    "ja": "ドリームエビル",
+    "de": "bös[a] Träumer",
+    "fr": "rêveur maudit"
+  },
+  "11383": {
+    "en": "evil dreamer",
+    "ja": "ドリームエビル",
+    "de": "bös[a] Träumer",
+    "fr": "rêveur maudit"
+  },
+  "11384": {
+    "en": "Beatrice",
+    "ja": "ベアトリーチェ",
+    "de": "Beatrice",
+    "fr": "Béatrice"
+  },
+  "11385": {
+    "en": "Aery brobinyak",
+    "ja": "エアリー・ブロビニャク",
+    "de": "Nest-Brobinyak",
+    "fr": "brobinyak de L'Aire"
+  },
+  "11386": {
+    "en": "inflammable fumes",
+    "ja": "可燃性ガス",
+    "de": "entzündlich[a] Gas",
+    "fr": "gaz inflammable"
+  },
+  "11387": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11388": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11390": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11391": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11392": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11393": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11394": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11395": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11396": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11397": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11398": {
+    "en": "Barbariccia",
+    "ja": "バルバリシア",
+    "de": "Barbarizia",
+    "fr": "Barbariccia"
+  },
+  "11399": {
+    "en": "Hephaistos",
+    "ja": "ヘファイストス",
+    "de": "Hephaistos",
+    "fr": "Héphaïstos"
+  },
+  "11400": {
+    "en": "Hephaistos",
+    "ja": "ヘファイストス",
+    "de": "Hephaistos",
+    "fr": "Héphaïstos"
+  },
+  "11401": {
+    "en": "Hephaistos",
+    "ja": "ヘファイストス",
+    "de": "Hephaistos",
+    "fr": "Héphaïstos"
+  },
+  "11402": {
+    "en": "Hephaistos",
+    "ja": "ヘファイストス",
+    "de": "Hephaistos",
+    "fr": "Héphaïstos"
+  },
+  "11403": {
+    "en": "sunshadow",
+    "ja": "炎霊鳥",
+    "de": "Frucht[p] des Phoinix",
+    "fr": "oiselet en flammes"
+  },
+  "11404": {
+    "en": "suneater",
+    "ja": "炎霊蛇",
+    "de": "Schlund[p] des Phoinix",
+    "fr": "serpent en flammes"
+  },
+  "11405": {
+    "en": "Illusory Hephaistos",
+    "ja": "ヘファイストスの幻影",
+    "de": "Hephaistos-Phantom",
+    "fr": "spectre d'Héphaïstos"
+  },
+  "11406": {
+    "en": "Illusory Hephaistos",
+    "ja": "ヘファイストスの幻影",
+    "de": "Hephaistos-Phantom",
+    "fr": "spectre d'Héphaïstos"
+  },
+  "11407": {
+    "en": "Scarmiglione",
+    "ja": "スカルミリョーネ",
+    "de": "Scarmiglione",
+    "fr": "Scarmiglione"
+  },
+  "11408": {
+    "en": "plundered pawn",
+    "ja": "プランダード・ポーン",
+    "de": "geraubt[a] Landsknecht",
+    "fr": "pion dépouillé"
+  },
+  "11409": {
+    "en": "plundered butler",
+    "ja": "プランダード・バトラー",
+    "de": "geraubt[a] Mundschenk",
+    "fr": "majordome dépouillé"
+  },
+  "11410": {
+    "en": "plundered steward",
+    "ja": "プランダード・スチュワード",
+    "de": "geraubt[a] Haushofmeister",
+    "fr": "intendant dépouillé"
+  },
+  "11411": {
+    "en": "plundered maid",
+    "ja": "プランダード・メイド",
+    "de": "geraubt[a] Zofe",
+    "fr": "servante dépouillée"
+  },
+  "11412": {
+    "en": "plundered trapper",
+    "ja": "プランダード・トラッパー",
+    "de": "geraubt[a] Jäger",
+    "fr": "trappeur dépouillé"
+  },
+  "11413": {
+    "en": "plundered guard",
+    "ja": "プランダード・ガード",
+    "de": "geraubt[a] Garde",
+    "fr": "garde dépouillé"
+  },
+  "11414": {
+    "en": "filthy shackle",
+    "ja": "呪鎖",
+    "de": "unrein[a] Fessel",
+    "fr": "chaîne poisseuse"
+  },
+  "11415": {
+    "en": "Y'shtola",
+    "ja": "ヤ・シュトラ",
+    "de": "Y'shtola",
+    "fr": "Y'shtola"
+  },
+  "11416": {
+    "en": "Varshahn",
+    "ja": "ヴァルシャン",
+    "de": "Varshahn",
+    "fr": "Varshahn"
+  },
+  "11417": {
+    "en": "Estinien",
+    "ja": "エスティニアン",
+    "de": "Estinien",
+    "fr": "Estinien"
+  },
+  "11418": {
+    "en": "Zero",
+    "ja": "ゼロ",
+    "de": "Zero",
+    "fr": "Zero"
+  },
+  "11419": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11420": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11421": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11422": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11423": {
+    "en": "Lucia the Radiant",
+    "ja": "極光のルキア",
+    "de": "Lucia Nordlicht",
+    "fr": "Lucia l'éclatante"
+  },
+  "11424": {
+    "en": "Thancred",
+    "ja": "サンクレッド",
+    "de": "Thancred",
+    "fr": "Thancred"
+  },
+  "11425": {
+    "en": "Y'shtola",
+    "ja": "ヤ・シュトラ",
+    "de": "Y'shtola",
+    "fr": "Y'shtola"
+  },
+  "11426": {
+    "en": "Papalymo",
+    "ja": "パパリモ",
+    "de": "Papalymo",
+    "fr": "Papalymo"
+  },
+  "11427": {
+    "en": "Yda",
+    "ja": "イダ",
+    "de": "Yda",
+    "fr": "Yda"
+  },
+  "11428": {
+    "en": "Estinien Wyrmblood",
+    "ja": "屠龍のエスティニアン",
+    "de": "Estinien Drachenblut",
+    "fr": "Estinien"
+  },
+  "11429": {
+    "en": "Knight Dragoon",
+    "ja": "精鋭の竜騎士",
+    "de": "Ritter-Dragoon",
+    "fr": "chevalier dragon d'élite"
+  },
+  "11430": {
+    "en": "devoted dragoon",
+    "ja": "イシュガルドの竜騎士",
+    "de": "eifrig[a] Dragoon",
+    "fr": "chevalier dragon ishgardais"
+  },
+  "11431": {
+    "en": "Temple Knight",
+    "ja": "神殿騎士団の正騎士",
+    "de": "Tempelritter",
+    "fr": "templier chevalier"
+  },
+  "11432": {
+    "en": "Ishgardian heavy infantry",
+    "ja": "神殿騎士団の重騎兵",
+    "de": "schwer[a] Ishgarder Waffenknecht",
+    "fr": "cuirassier ishgardais"
+  },
+  "11433": {
+    "en": "Temple banneret",
+    "ja": "神殿騎士団の槍騎兵",
+    "de": "Ishgard-Bannerherr",
+    "fr": "lancier ishgardais"
+  },
+  "11434": {
+    "en": "Ishgardian archer",
+    "ja": "神殿騎士団の射手",
+    "de": "Ishgarder Bogenschütze",
+    "fr": "archer ishgardais"
+  },
+  "11435": {
+    "en": "stalwart adventurer",
+    "ja": "義勇兵の冒険者",
+    "de": "freiwillig[a] Abenteurer",
+    "fr": "aventurier volontaire"
+  },
+  "11436": {
+    "en": "stalwart adventurer",
+    "ja": "義勇兵の冒険者",
+    "de": "freiwillig[a] Abenteurer",
+    "fr": "aventurier volontaire"
+  },
+  "11437": {
+    "en": "stalwart adventurer",
+    "ja": "義勇兵の冒険者",
+    "de": "freiwillig[a] Abenteurer",
+    "fr": "aventurier volontaire"
+  },
+  "11438": {
+    "en": "stalwart adventurer",
+    "ja": "義勇兵の冒険者",
+    "de": "freiwillig[a] Abenteurer",
+    "fr": "aventurier volontaire"
+  },
+  "11439": {
+    "en": "devoted dragoon",
+    "ja": "イシュガルドの竜騎士",
+    "de": "eifrig[a] Dragoon",
+    "fr": "chevalier dragon ishgardais"
+  },
+  "11440": {
+    "en": "proto-Carbuncle",
+    "ja": "プロトカーバンクル",
+    "de": "Proto-Karfunkel",
+    "fr": "Proto-Carbuncle"
+  },
+  "11441": {
+    "en": "lively bait",
+    "ja": "ライブリー・ベイト",
+    "de": "zappelnd[a] Köder",
+    "fr": "amuse-gueule"
+  },
+  "11442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11443": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11444": {
+    "en": "Lahabrea",
+    "ja": "ラハブレア",
+    "de": "Lahabrea",
+    "fr": "Lahabrea"
+  },
+  "11445": {
+    "en": "Themis",
+    "ja": "テミス",
+    "de": "Themis",
+    "fr": "Thémis"
+  },
+  "11446": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11447": {
+    "en": "Troian footman",
+    "ja": "トロイアン・フットマン",
+    "de": "troianisch[a] Dienstbote",
+    "fr": "fantassin de Troïa"
+  },
+  "11448": {
+    "en": "apkallu of paradise",
+    "ja": "パライソアプカル",
+    "de": "Paradies-Apkallu",
+    "fr": "apkallu paradisiaque"
+  },
+  "11449": {
+    "en": "coblyn",
+    "ja": "コブラン",
+    "de": "Kobalos",
+    "fr": "coblyn"
+  },
+  "11450": {
+    "en": "yellow coblyn",
+    "ja": "イエローコブラン",
+    "de": "gelb[a] Kobalos",
+    "fr": "coblyn jaune"
+  },
+  "11451": {
+    "en": "dodo of paradise",
+    "ja": "パライソドードー",
+    "de": "Paradies-Dodo",
+    "fr": "dodo paradisiaque"
+  },
+  "11452": {
+    "en": "island doe",
+    "ja": "アイランド・ドゥ",
+    "de": "Insel-Antilopenkuh",
+    "fr": "biche insulaire"
+  },
+  "11453": {
+    "en": "island stag",
+    "ja": "アイランド・スタッグ",
+    "de": "Insel-Antilopenbock",
+    "fr": "cerf insulaire"
+  },
+  "11454": {
+    "en": "glyptodon pup",
+    "ja": "グリプトドン・カフ",
+    "de": "Glyptodon-Jung[a]",
+    "fr": "bébé glyptodon"
+  },
+  "11455": {
+    "en": "grand buffalo",
+    "ja": "グランバッファロー",
+    "de": "groß[a] Büffel",
+    "fr": "grand buffle"
+  },
+  "11456": {
+    "en": "island nanny",
+    "ja": "アイランド・ナニー",
+    "de": "Insel-Geiß",
+    "fr": "étagne insulaire"
+  },
+  "11457": {
+    "en": "island billy",
+    "ja": "アイランド・ビリー",
+    "de": "Insel-Bock",
+    "fr": "bouquetin insulaire"
+  },
+  "11458": {
+    "en": "twinklefleece",
+    "ja": "シャインフリース",
+    "de": "Funkelvlies",
+    "fr": "touffeblanche"
+  },
+  "11459": {
+    "en": "beachcomb",
+    "ja": "ビーチシェル",
+    "de": "Strandräuber",
+    "fr": "coquiplage"
+  },
+  "11460": {
+    "en": "alligator",
+    "ja": "アリゲーター",
+    "de": "Alligator",
+    "fr": "alligator"
+  },
+  "11461": {
+    "en": "Mogglesguard",
+    "ja": "モーグリ家臣団",
+    "de": "Mogrygarde",
+    "fr": "vassaux de Moggle Mog XII"
+  },
+  "11462": {
+    "en": "parasitos",
+    "ja": "寄生生物",
+    "de": "Parasit",
+    "fr": "créature parasite"
+  },
+  "11463": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11464": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11465": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11466": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11467": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11468": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11469": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11470": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11471": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11472": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11477": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11478": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11479": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11480": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11481": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11482": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11483": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11484": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11487": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11488": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11490": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11491": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11492": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11493": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11494": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11495": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11496": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11497": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11498": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11499": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11500": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11501": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11502": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11503": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11504": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11505": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11506": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11507": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11508": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11509": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11510": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11511": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11512": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11513": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11514": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11515": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11516": {
+    "en": "Agdistis",
+    "ja": "アグディスティス",
+    "de": "Agdistis",
+    "fr": "Agdistis"
+  },
+  "11517": {
+    "en": "gorgon",
+    "ja": "ゴルゴン",
+    "de": "Gorgone",
+    "fr": "gorgone"
+  },
+  "11518": {
+    "en": "insensate adventurer",
+    "ja": "昏倒した冒険者",
+    "de": "bewusstlos[a] Abenteurer",
+    "fr": "aventurier évanoui"
+  },
+  "11519": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11520": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11521": {
+    "en": "cherry bomb",
+    "ja": "タイニーボム",
+    "de": "Kirschbomber",
+    "fr": "bombino"
+  },
+  "11522": {
+    "en": "mammet #001",
+    "ja": "マメット001",
+    "de": "Marionette Nr. 001",
+    "fr": "pantin P001"
+  },
+  "11523": {
+    "en": "wayward hatchling",
+    "ja": "チョコチョコボ",
+    "de": "Chocobo-Küken",
+    "fr": "bébé chocobo"
+  },
+  "11524": {
+    "en": "Cait Sith doll",
+    "ja": "マメット・ケットシー",
+    "de": "Cait Sith-Puppe",
+    "fr": "poupée Cait Sith"
+  },
+  "11525": {
+    "en": "baby behemoth",
+    "ja": "ベビーモス",
+    "de": "Baby-Behemoth",
+    "fr": "bébéhémoth"
+  },
+  "11526": {
+    "en": "mammet #003L",
+    "ja": "マメット003L",
+    "de": "Marionette Nr. 003L",
+    "fr": "pantin P003L"
+  },
+  "11527": {
+    "en": "mammet #003G",
+    "ja": "マメット003G",
+    "de": "Marionette Nr. 003G",
+    "fr": "pantin P003G"
+  },
+  "11528": {
+    "en": "mammet #003U",
+    "ja": "マメット003U",
+    "de": "Marionette Nr. 003U",
+    "fr": "pantin P003U"
+  },
+  "11529": {
+    "en": "storm hatchling",
+    "ja": "黒渦のチョコチョコボ",
+    "de": "Mahlstrom-Küken",
+    "fr": "bébé chocobo du Maelstrom"
+  },
+  "11530": {
+    "en": "serpent hatchling",
+    "ja": "双蛇のチョコチョコボ",
+    "de": "Bruderschafts-Küken",
+    "fr": "bébé chocobo des Deux Vipères"
+  },
+  "11531": {
+    "en": "flame hatchling",
+    "ja": "不滅のチョコチョコボ",
+    "de": "Legions-Küken",
+    "fr": "bébé chocobo des Immortels"
+  },
+  "11532": {
+    "en": "morbol seedling",
+    "ja": "モルボルバルブ",
+    "de": "Morbol-Knolle",
+    "fr": "bulbe de morbol"
+  },
+  "11533": {
+    "en": "tiny rat",
+    "ja": "タイニースクウィレル",
+    "de": "klein[a] Ratte",
+    "fr": "écureuil nain"
+  },
+  "11534": {
+    "en": "baby bun",
+    "ja": "ベイビーファンガー",
+    "de": "Mini-Pilz",
+    "fr": "fungus miniature"
+  },
+  "11535": {
+    "en": "chigoe larva",
+    "ja": "チゴーラーヴァ",
+    "de": "Stechmücken-Larve",
+    "fr": "chigoe apprivoisé"
+  },
+  "11536": {
+    "en": "bluebird",
+    "ja": "ブルーバード",
+    "de": "blau[a] Vögelchen",
+    "fr": "oiseau bleu"
+  },
+  "11537": {
+    "en": "wide-eyed fawn",
+    "ja": "アンテロープ・フォーン",
+    "de": "Rehkitz",
+    "fr": "faon aux yeux de biche"
+  },
+  "11538": {
+    "en": "infant imp",
+    "ja": "ベイビーインプ",
+    "de": "Baby-Imp",
+    "fr": "bébé imp"
+  },
+  "11539": {
+    "en": "coeurl kitten",
+    "ja": "タイニークァール",
+    "de": "Mini-Coeurl",
+    "fr": "joli coeurl"
+  },
+  "11540": {
+    "en": "black coeurl",
+    "ja": "ブラッククァール",
+    "de": "schwarz[a] Coeurl",
+    "fr": "coeurl noir"
+  },
+  "11541": {
+    "en": "wind-up gentleman",
+    "ja": "マメット・ヒルディ",
+    "de": "Hildibrand-Puppe",
+    "fr": "Hildibrand miniature"
+  },
+  "11542": {
+    "en": "gravel golem",
+    "ja": "グラベルゴーレム",
+    "de": "Kiesgolem",
+    "fr": "golem graveleux"
+  },
+  "11543": {
+    "en": "wind-up tonberry",
+    "ja": "マメット・トンベリ",
+    "de": "Tomberry-Stofftier",
+    "fr": "tomberry mécanique"
+  },
+  "11544": {
+    "en": "tiny tortoise",
+    "ja": "タイニーアダマンタス",
+    "de": "Zwergschildkröte",
+    "fr": "tortue naine"
+  },
+  "11545": {
+    "en": "baby raptor",
+    "ja": "ベイビーラプトル",
+    "de": "Baby-Raptor",
+    "fr": "bébé raptor"
+  },
+  "11546": {
+    "en": "baby bat",
+    "ja": "ベイビーバット",
+    "de": "Baby-Fledermaus",
+    "fr": "bébé chauve-souris"
+  },
+  "11547": {
+    "en": "tiny bulb",
+    "ja": "タイニーバルブ",
+    "de": "Mini-Knolle",
+    "fr": "bulbe miniature"
+  },
+  "11548": {
+    "en": "dust bunny",
+    "ja": "ダストバニー",
+    "de": "Staubhäschen",
+    "fr": "lapin mutin"
+  },
+  "11549": {
+    "en": "wind-up dullahan",
+    "ja": "マメット・デュラハン",
+    "de": "mechanisch[a] Dullahan",
+    "fr": "dullahan nain"
+  },
+  "11550": {
+    "en": "gigantpole",
+    "ja": "ギガンジャクシ",
+    "de": "Kaulquappe",
+    "fr": "têtard géant"
+  },
+  "11551": {
+    "en": "pudgy puk",
+    "ja": "パジープーク",
+    "de": "Schwabbelpuk",
+    "fr": "puk potelé"
+  },
+  "11552": {
+    "en": "buffalo calf",
+    "ja": "バッファロー・カフ",
+    "de": "Büffelkalb",
+    "fr": "bufflon"
+  },
+  "11553": {
+    "en": "cactuar cutting",
+    "ja": "ミニテンダー",
+    "de": "Kaktorfigur",
+    "fr": "mini-pampa"
+  },
+  "11554": {
+    "en": "smallshell",
+    "ja": "スモールシェル",
+    "de": "Mini-Krabbe",
+    "fr": "coquépique"
+  },
+  "11555": {
+    "en": "wolf pup",
+    "ja": "ウルフ・パップ",
+    "de": "Wolfshundwelpe",
+    "fr": "bébé chacal"
+  },
+  "11556": {
+    "en": "beady eye",
+    "ja": "タイニーアイ",
+    "de": "Wächterauge",
+    "fr": "œil apprivoisé"
+  },
+  "11557": {
+    "en": "fledgling dodo",
+    "ja": "タイニードードー",
+    "de": "Dodo-Küken",
+    "fr": "dodu dodo"
+  },
+  "11558": {
+    "en": "coblyn larva",
+    "ja": "コブランラーヴァ",
+    "de": "Kobalos-Larve",
+    "fr": "larve de coblyn"
+  },
+  "11559": {
+    "en": "wind-up aldgoat",
+    "ja": "マメット・ゴート",
+    "de": "Steinbock-Stofftier",
+    "fr": "mini-bouquetin"
+  },
+  "11560": {
+    "en": "fledgling apkallu",
+    "ja": "タイニーアプカル",
+    "de": "Apkallu-Küken",
+    "fr": "apkallu nain"
+  },
+  "11561": {
+    "en": "goobbue sproutling",
+    "ja": "グゥーブー・スプラウト",
+    "de": "Baby-Goobbue",
+    "fr": "goobbue goulu"
+  },
+  "11562": {
+    "en": "bite-sized pudding",
+    "ja": "ミニプリン",
+    "de": "Mini-Pudding",
+    "fr": "mini-pudding"
+  },
+  "11563": {
+    "en": "model vanguard",
+    "ja": "魔導ヴァンガード追従型",
+    "de": "Aufzieh-Frontbrecher",
+    "fr": "maquette magitek"
+  },
+  "11564": {
+    "en": "demon brick",
+    "ja": "デモンズブロック",
+    "de": "Dämonenwürfel",
+    "fr": "bloc démonique"
+  },
+  "11565": {
+    "en": "mini mole",
+    "ja": "ミニモール",
+    "de": "Mini-Mull",
+    "fr": "taupe trapue"
+  },
+  "11566": {
+    "en": "tender lamb",
+    "ja": "タイニーラム",
+    "de": "Schäfchen",
+    "fr": "belin bêlant"
+  },
+  "11567": {
+    "en": "slime puddle",
+    "ja": "ミニスライム",
+    "de": "Schleimpfütze",
+    "fr": "mini-gluant"
+  },
+  "11568": {
+    "en": "kidragora",
+    "ja": "ミニマンドラゴラ",
+    "de": "Kindragora",
+    "fr": "mini-mini-mandragore"
+  },
+  "11569": {
+    "en": "wind-up goblin",
+    "ja": "マメット・ゴブリン",
+    "de": "Goblin-Stofftier",
+    "fr": "Gobelin articulé"
+  },
+  "11570": {
+    "en": "wind-up sylph",
+    "ja": "マメット・シルフ",
+    "de": "Sylphen-Puppe",
+    "fr": "Sylphe nain"
+  },
+  "11571": {
+    "en": "wind-up cursor",
+    "ja": "マメット・カーソル",
+    "de": "Zeigerhändchen",
+    "fr": "curseur flottant"
+  },
+  "11572": {
+    "en": "wind-up airship",
+    "ja": "マメット・インビンシブル",
+    "de": "Aufzieh-Luftschiff",
+    "fr": "aéronef mécanique"
+  },
+  "11573": {
+    "en": "wind-up Qiqirn",
+    "ja": "マメット・キキルン",
+    "de": "Qiqirn-Stofftier",
+    "fr": "Qiqirn mécanique"
+  },
+  "11574": {
+    "en": "black chocobo chick",
+    "ja": "黒チョコチョコボ",
+    "de": "schwarz[a] Chocobo-Küken",
+    "fr": "bébé chocobo noir"
+  },
+  "11575": {
+    "en": "wind-up Dalamud",
+    "ja": "マメット・ダラガブ",
+    "de": "mechanisch[a] Dalamud",
+    "fr": "Dalamud mécanique"
+  },
+  "11576": {
+    "en": "minute mindflayer",
+    "ja": "カインドフレア",
+    "de": "Mini-Gedankenschinder",
+    "fr": "gentil flagelleur"
+  },
+  "11577": {
+    "en": "tight-beaked parrot",
+    "ja": "アントーキング・コリブリ",
+    "de": "schnatterfaul[a] Kolibri",
+    "fr": "perroquet taciturne"
+  },
+  "11578": {
+    "en": "wind-up Amalj'aa",
+    "ja": "マメット・アマルジャ",
+    "de": "Aufzieh-Amalj'aa",
+    "fr": "Amalj'aa mécanique"
+  },
+  "11579": {
+    "en": "wind-up Ixal",
+    "ja": "マメット・イクサル",
+    "de": "Ixal-Puppe",
+    "fr": "Ixal mécanique"
+  },
+  "11580": {
+    "en": "wind-up kobold",
+    "ja": "マメット・コボルド",
+    "de": "Kobold-Puppe",
+    "fr": "poupée kobolde"
+  },
+  "11581": {
+    "en": "wind-up Sahagin",
+    "ja": "マメット・サハギン",
+    "de": "Jung-Sahagin",
+    "fr": "pantin sahuagin"
+  },
+  "11582": {
+    "en": "wind-up brickman",
+    "ja": "ゴレムス",
+    "de": "Golem",
+    "fr": "Siman mécanique"
+  },
+  "11583": {
+    "en": "wind-up Shantotto",
+    "ja": "マメット・シャントット",
+    "de": "Aufzieh-Shantotto",
+    "fr": "poupée Shantotto"
+  },
+  "11584": {
+    "en": "wind-up Edvya",
+    "ja": "マメット・エドヴィア",
+    "de": "Aufzieh-Edvya",
+    "fr": "mini-princesse Edvya"
+  },
+  "11585": {
+    "en": "wind-up sun",
+    "ja": "クロックワークサン",
+    "de": "portabl[a] Studiosonne",
+    "fr": "soleil mécanique"
+  },
+  "11586": {
+    "en": "plush cushion",
+    "ja": "ふかふかクッション",
+    "de": "Sitzkissen",
+    "fr": "coussin moelleux"
+  },
+  "11587": {
+    "en": "Minion of Light",
+    "ja": "マメット・オブ・ライト",
+    "de": "Begleiter[p] des Lichts",
+    "fr": "héros de la Lumière"
+  },
+  "11588": {
+    "en": "Minion of Light",
+    "ja": "マメット・オブ・ライト",
+    "de": "Begleiter[p] des Lichts",
+    "fr": "héros de la Lumière"
+  },
+  "11589": {
+    "en": "Minion of Light",
+    "ja": "マメット・オブ・ライト",
+    "de": "Begleiter[p] des Lichts",
+    "fr": "héros de la Lumière"
+  },
+  "11590": {
+    "en": "Minion of Light",
+    "ja": "マメット・オブ・ライト",
+    "de": "Begleiter[p] des Lichts",
+    "fr": "héros de la Lumière"
+  },
+  "11591": {
+    "en": "wind-up leader",
+    "ja": "マメット・リーダー",
+    "de": "Aufzieh-Anführer",
+    "fr": "dirigeant miniature"
+  },
+  "11592": {
+    "en": "wind-up Merlwyb",
+    "ja": "マメット・メルウィブ",
+    "de": "Aufzieh-Merlwyb",
+    "fr": "Merlwyb miniature"
+  },
+  "11593": {
+    "en": "wind-up Kan-E",
+    "ja": "マメット・カヌ・エ",
+    "de": "Aufzieh-Kan-E",
+    "fr": "Kan-E miniature"
+  },
+  "11594": {
+    "en": "wind-up Raubahn",
+    "ja": "マメット・ラウバーン",
+    "de": "Aufzieh-Raubahn",
+    "fr": "Raubahn miniature"
+  },
+  "11595": {
+    "en": "princely hatchling",
+    "ja": "チョコチョコボ・プリンス",
+    "de": "Chocobo-Prinz",
+    "fr": "prince bébé chocobo"
+  },
+  "11596": {
+    "en": "wind-up Odin",
+    "ja": "マメット・オーディン",
+    "de": "Mini-Odin",
+    "fr": "Odin mécanique"
+  },
+  "11597": {
+    "en": "wind-up Warrior of Light",
+    "ja": "ウォーリア・オブ・ライト",
+    "de": "Mini-Lichtkrieger",
+    "fr": "guerrier de la Lumière"
+  },
+  "11598": {
+    "en": "wind-up Bahamut",
+    "ja": "マメット・バハムート",
+    "de": "Aufzieh-Bahamut",
+    "fr": "bébé Bahamut"
+  },
+  "11599": {
+    "en": "wind-up moogle",
+    "ja": "マメット・モーグリ",
+    "de": "Mogry-Stofftier",
+    "fr": "poupée mog"
+  },
+  "11600": {
+    "en": "baby opo-opo",
+    "ja": "ベイビーオポオポ",
+    "de": "Stoff-Opo-Opo",
+    "fr": "bébé opo-opo"
+  },
+  "11601": {
+    "en": "magic broom",
+    "ja": "マメット・ブルーム",
+    "de": "emsig[a] Besen",
+    "fr": "balai enchanté"
+  },
+  "11602": {
+    "en": "wind-up succubus",
+    "ja": "マメット・サキュバス",
+    "de": "Sukkubus-Puppe",
+    "fr": "poupée succube"
+  },
+  "11603": {
+    "en": "zu hatchling",
+    "ja": "ズー・ハッチリング",
+    "de": "Zu-Küken",
+    "fr": "poussin zu"
+  },
+  "11604": {
+    "en": "wind-up Nanamo",
+    "ja": "マメット・ナナモ",
+    "de": "Nanamo-Puppe",
+    "fr": "Nanamo miniature"
+  },
+  "11605": {
+    "en": "wind-up Gilgamesh",
+    "ja": "マメット・ギルガメッシュ",
+    "de": "Aufzieh-Gilgamesch",
+    "fr": "pantin Gilgamesh"
+  },
+  "11606": {
+    "en": "Onion Prince",
+    "ja": "オニオンプリンス",
+    "de": "Prinz Zwiebel",
+    "fr": "Prince oignon"
+  },
+  "11607": {
+    "en": "Eggplant Knight",
+    "ja": "エッグナイト",
+    "de": "Ritter Aubergine",
+    "fr": "Chevalier aubergine"
+  },
+  "11608": {
+    "en": "Garlic Jester",
+    "ja": "ガーリックスター",
+    "de": "Sir Knoblauch",
+    "fr": "Baron ail"
+  },
+  "11609": {
+    "en": "Tomato King",
+    "ja": "キングトマト",
+    "de": "König Tomate",
+    "fr": "Roi tomate"
+  },
+  "11610": {
+    "en": "Mandragora Queen",
+    "ja": "マンドラクイーン",
+    "de": "Königin Mandragora",
+    "fr": "Reine mandragore"
+  },
+  "11611": {
+    "en": "wind-up Y'shtola",
+    "ja": "マメット・ヤ・シュトラ",
+    "de": "Y'shtola-Puppe",
+    "fr": "Y'shtola miniature"
+  },
+  "11612": {
+    "en": "wind-up onion knight",
+    "ja": "マメット・オニオン",
+    "de": "Aufzieh-Zwiebelritter",
+    "fr": "poupée chevalier oignon"
+  },
+  "11613": {
+    "en": "treasure box",
+    "ja": "トレジャーボックス",
+    "de": "Schatzkiste",
+    "fr": "coffre au trésor mécanique"
+  },
+  "11614": {
+    "en": "tiny tapir",
+    "ja": "タイニーバク",
+    "de": "Tapirjung[a]",
+    "fr": "petit tapir"
+  },
+  "11615": {
+    "en": "Nana bear",
+    "ja": "ナナッコ・ベアー",
+    "de": "Nana-Stoffbär",
+    "fr": "ourson de Nanakko"
+  },
+  "11616": {
+    "en": "miniature minecart",
+    "ja": "クロックワークトロッコ",
+    "de": "Miniaturlore",
+    "fr": "wagonnet mécanique"
+  },
+  "11617": {
+    "en": "nutkin",
+    "ja": "ナッツイーター",
+    "de": "Nussfresser",
+    "fr": "écureuil grignoteur"
+  },
+  "11618": {
+    "en": "wind-up Minfilia",
+    "ja": "マメット・ミンフィリア",
+    "de": "Minfilia-Puppe",
+    "fr": "Minfilia miniature"
+  },
+  "11619": {
+    "en": "wind-up Thancred",
+    "ja": "マメット・サンクレッド",
+    "de": "Thancred-Puppe",
+    "fr": "Thancred miniature"
+  },
+  "11620": {
+    "en": "model magitek bit",
+    "ja": "魔導ビット自律型",
+    "de": "Aufzieh-Magitek-Drohne",
+    "fr": "micro-drone magitek"
+  },
+  "11621": {
+    "en": "puff of darkness",
+    "ja": "薄闇の雲",
+    "de": "Wölkchen[p] der Dunkelheit",
+    "fr": "nuage noir miniature"
+  },
+  "11622": {
+    "en": "naughty nanka",
+    "ja": "タイニーナンカ",
+    "de": "Ninki-Nanka-Puppe",
+    "fr": "nanka narquois"
+  },
+  "11623": {
+    "en": "panda cub",
+    "ja": "マメット・パンダ",
+    "de": "Panda-Stofftier",
+    "fr": "petit panda pataud"
+  },
+  "11624": {
+    "en": "wind-up Ultros",
+    "ja": "マメット・オルトロス",
+    "de": "Aufzieh-Ultros",
+    "fr": "Orthros articulé"
+  },
+  "11625": {
+    "en": "Hoary the Snowman",
+    "ja": "マメット・スノーマン",
+    "de": "Zuckerschneemann",
+    "fr": "bébé bonhomme de neige"
+  },
+  "11626": {
+    "en": "heavy hatchling",
+    "ja": "ポチャチョコボ",
+    "de": "Chocopummelchen",
+    "fr": "bébé chocobo grassouillet"
+  },
+  "11627": {
+    "en": "wind-up Yda",
+    "ja": "マメット・イダ",
+    "de": "Yda-Puppe",
+    "fr": "Yda miniature"
+  },
+  "11628": {
+    "en": "wind-up Papalymo",
+    "ja": "マメット・パパリモ",
+    "de": "Papalymo-Puppe",
+    "fr": "Papalymo miniature"
+  },
+  "11629": {
+    "en": "wind-up Urianger",
+    "ja": "マメット・ウリエンジェ",
+    "de": "Urianger-Puppe",
+    "fr": "Urianger miniature"
+  },
+  "11630": {
+    "en": "fat cat",
+    "ja": "ファットキャット",
+    "de": "dick[a] Katze",
+    "fr": "gros minou"
+  },
+  "11631": {
+    "en": "Littlefoot",
+    "ja": "リトルフット",
+    "de": "Kleinfuß",
+    "fr": "petit yéti"
+  },
+  "11632": {
+    "en": "mummy's little mummy",
+    "ja": "リトルマミー",
+    "de": "Mini-Mumie",
+    "fr": "mini-momie"
+  },
+  "11633": {
+    "en": "model Enterprise",
+    "ja": "マメット・エンタープライズ",
+    "de": "Aufzieh-Enterprise",
+    "fr": "maquette de l'Entreprise"
+  },
+  "11634": {
+    "en": "wind-up delivery moogle",
+    "ja": "マメット・レターモーグリ",
+    "de": "Mogry-Stoffpostbote",
+    "fr": "poupée Mog postier"
+  },
+  "11635": {
+    "en": "assassin fry",
+    "ja": "アサシンフライ",
+    "de": "fliegend[a] Kampffisch",
+    "fr": "fretin assassin"
+  },
+  "11636": {
+    "en": "demon box",
+    "ja": "プレゼンター",
+    "de": "beseelt[a] Geschenkpäckchen",
+    "fr": "cadeau ambulant"
+  },
+  "11637": {
+    "en": "water imp",
+    "ja": "カッパッパ",
+    "de": "Flusskobold",
+    "fr": "petit kappa"
+  },
+  "11638": {
+    "en": "wind-up Louisoix",
+    "ja": "マメット・ルイゾワ",
+    "de": "Aufzieh-Louisoix",
+    "fr": "Louisoix miniature"
+  },
+  "11639": {
+    "en": "Midgardsormr",
+    "ja": "ミドガルズオルム",
+    "de": "Midgardsormr",
+    "fr": "Midgardsormr"
+  },
+  "11640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11641": {
+    "en": "Doman magpie",
+    "ja": "ピカピカ",
+    "de": "klein[a] Elster",
+    "fr": "pie pimpante"
+  },
+  "11642": {
+    "en": "Enkidu",
+    "ja": "エンキドゥ",
+    "de": "Aufzieh-Enkidu",
+    "fr": "Enkidu"
+  },
+  "11643": {
+    "en": "wind-up Violet",
+    "ja": "マメット・バイオレット",
+    "de": "Finstrigen-Puppe",
+    "fr": "poupée de méchant Sylphe"
+  },
+  "11644": {
+    "en": "wind-up founder",
+    "ja": "マメット・ファウンダー",
+    "de": "Aufzieh-Gründer",
+    "fr": "poupée du maître fondateur"
+  },
+  "11645": {
+    "en": "wind-up Dezul Qualan",
+    "ja": "マメット・デズル",
+    "de": "Dezul-Qualan-Puppe",
+    "fr": "Dezul miniature"
+  },
+  "11646": {
+    "en": "wind-up kobolder",
+    "ja": "マメット・コボルド2号",
+    "de": "Aufzieh-Kobold[p] Nr. 2",
+    "fr": "poupée kobolde n°2"
+  },
+  "11647": {
+    "en": "wind-up Sea Devil",
+    "ja": "マメット・シーデビル",
+    "de": "Aufzieh-Seeteufel",
+    "fr": "démon des mers mécanique"
+  },
+  "11648": {
+    "en": "chocobo chick courier",
+    "ja": "黒チョコチョコボ・フライヤー",
+    "de": "Brief-Chocobo-Küken",
+    "fr": "bébé chocobo noir volant"
+  },
+  "11649": {
+    "en": "wind-up Kain",
+    "ja": "マメット・カイン",
+    "de": "Kain-Puppe",
+    "fr": "Kaïn miniature"
+  },
+  "11650": {
+    "en": "wind-up Alphinaud",
+    "ja": "マメット・アルフィノ",
+    "de": "Aufzieh-Alphinaud",
+    "fr": "Alphinaud miniature"
+  },
+  "11651": {
+    "en": "wind-up Alisaie",
+    "ja": "マメット・アリゼー",
+    "de": "Aufzieh-Alisaie",
+    "fr": "Alisaie miniature"
+  },
+  "11652": {
+    "en": "wind-up Tataru",
+    "ja": "マメット・タタル",
+    "de": "Tataru-Puppe",
+    "fr": "Tataru miniature"
+  },
+  "11653": {
+    "en": "wind-up Cid",
+    "ja": "マメット・シド",
+    "de": "Cid-Puppe",
+    "fr": "Cid miniature"
+  },
+  "11654": {
+    "en": "unicolt",
+    "ja": "ユニコルト",
+    "de": "Kleinhorn",
+    "fr": "bébé licorne"
+  },
+  "11655": {
+    "en": "wind-up Gundu warrior",
+    "ja": "マメット・グンド",
+    "de": "Aufzieh-Gundo",
+    "fr": "poupée gundu"
+  },
+  "11656": {
+    "en": "atrophied Atomos",
+    "ja": "ミニマムアトモス",
+    "de": "Mini-Atomos",
+    "fr": "atomos atrophié"
+  },
+  "11657": {
+    "en": "owlet",
+    "ja": "オウレット",
+    "de": "Eulette",
+    "fr": "bébé hibou"
+  },
+  "11658": {
+    "en": "ugly duckling",
+    "ja": "アグリー・ダックリング",
+    "de": "hässlich[a] Entlein",
+    "fr": "vilain petit canard"
+  },
+  "11659": {
+    "en": "gaelikitten",
+    "ja": "ゲイラキトン",
+    "de": "Geira-Kätzchen",
+    "fr": "gaélichaton"
+  },
+  "11660": {
+    "en": "clockwork barrow",
+    "ja": "クロックワークカート",
+    "de": "Aufzieh-Schubkarre",
+    "fr": "brouette mécanique"
+  },
+  "11661": {
+    "en": "lesser panda",
+    "ja": "レッサーパンダ",
+    "de": "Rotpanda-Stofftier",
+    "fr": "petit panda roux"
+  },
+  "11662": {
+    "en": "page 63",
+    "ja": "63ページ",
+    "de": "Seite[p] 63",
+    "fr": "page 63"
+  },
+  "11663": {
+    "en": "iron dwarf",
+    "ja": "鉄小人",
+    "de": "Eisenzwerg",
+    "fr": "nain d'acier"
+  },
+  "11664": {
+    "en": "griffin hatchling",
+    "ja": "グリフィン・ハッチリング",
+    "de": "Greifen-Küken",
+    "fr": "bébé griffon"
+  },
+  "11665": {
+    "en": "wind-up Iceheart",
+    "ja": "マメット・イゼル",
+    "de": "Eisherz-Puppe",
+    "fr": "Ysayle miniature"
+  },
+  "11666": {
+    "en": "Gestahl",
+    "ja": "ガストラ",
+    "de": "Gestahl-Schoßhund",
+    "fr": "Gestahl"
+  },
+  "11667": {
+    "en": "steam-powered gobwalker G-VII",
+    "ja": "VII号スチームウォーカー",
+    "de": "Dampf-Stampfer",
+    "fr": "gobblindé G-VII à vapeur"
+  },
+  "11668": {
+    "en": "behemoth heir",
+    "ja": "ロイヤルベビーモス",
+    "de": "blaublütig[a] Behemoth",
+    "fr": "prince bébéhémoth"
+  },
+  "11669": {
+    "en": "accompaniment node",
+    "ja": "追従システム",
+    "de": "Begleitmodul",
+    "fr": "sphère de guidage"
+  },
+  "11670": {
+    "en": "wind-up Yugiri",
+    "ja": "マメット・ユウギリ",
+    "de": "Yugiri-Puppe",
+    "fr": "Yugiri miniature"
+  },
+  "11671": {
+    "en": "Peridot Carbuncle",
+    "ja": "カーバンクル・ペリドット",
+    "de": "Peridot-Karfunkel",
+    "fr": "Carbuncle péridot"
+  },
+  "11672": {
+    "en": "Heliodor Carbuncle",
+    "ja": "カーバンクル・ヘリオドール",
+    "de": "Heliodor-Karfunkel",
+    "fr": "Carbuncle héliodore"
+  },
+  "11673": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11674": {
+    "en": "gold rush minecart",
+    "ja": "ゴールドラッシュ",
+    "de": "Goldrausch-Karre",
+    "fr": "chariot de mine mécanique"
+  },
+  "11675": {
+    "en": "set of Primogs",
+    "ja": "ザ・プライモグズ",
+    "de": "Primog-Kapelle",
+    "fr": "fanfare des Primogs"
+  },
+  "11676": {
+    "en": "wind-up Gnath",
+    "ja": "マメット・グナース",
+    "de": "Gnath-Puppe",
+    "fr": "poupée gnathe"
+  },
+  "11677": {
+    "en": "paissa brat",
+    "ja": "パイッサ・ブラット",
+    "de": "Paissa-Fratz",
+    "fr": "petiot païssa"
+  },
+  "11678": {
+    "en": "wind-up Illuminatus",
+    "ja": "マメット・ブルーハンド",
+    "de": "Indigohand-Puppe",
+    "fr": "Gobelin de la Mimine bleue"
+  },
+  "11679": {
+    "en": "Pumpkin Butler",
+    "ja": "パンプキンバトラー",
+    "de": "Kürbis-Butler",
+    "fr": "majordome citrouille"
+  },
+  "11680": {
+    "en": "wind-up Echidna",
+    "ja": "マメット・エキドナ",
+    "de": "Aufzieh-Echidna",
+    "fr": "Echidna miniature"
+  },
+  "11681": {
+    "en": "wind-up Relm",
+    "ja": "マメット・リルム",
+    "de": "Relm-Puppe",
+    "fr": "Relm miniature"
+  },
+  "11682": {
+    "en": "hunting hawk",
+    "ja": "ハンティング・ホーク",
+    "de": "Jagdfalke",
+    "fr": "buse chasseuse"
+  },
+  "11683": {
+    "en": "shalloweye",
+    "ja": "シャローアイ",
+    "de": "Stumpfauge",
+    "fr": "poussin oculus"
+  },
+  "11684": {
+    "en": "penguin prince",
+    "ja": "プリンスペンギン",
+    "de": "Pinguinprinz",
+    "fr": "manchot prince"
+  },
+  "11685": {
+    "en": "clockwork Twintania",
+    "ja": "マメット・ツインタニア",
+    "de": "Uhrwerk-Twintania",
+    "fr": "mini-Gémellia"
+  },
+  "11686": {
+    "en": "korpokkur kid",
+    "ja": "コロコロポックル",
+    "de": "Korpokkur-Pflänzchen",
+    "fr": "pon-korpokkur"
+  },
+  "11687": {
+    "en": "wind-up Firion",
+    "ja": "マメット・フリオニール",
+    "de": "Firion-Puppe",
+    "fr": "Firion miniature"
+  },
+  "11688": {
+    "en": "wind-up Ifrit",
+    "ja": "マメット・イフリート",
+    "de": "Mini-Ifrit",
+    "fr": "petit Ifrit"
+  },
+  "11689": {
+    "en": "wind-up Garuda",
+    "ja": "マメット・ガルーダ",
+    "de": "Mini-Garuda",
+    "fr": "petite Garuda"
+  },
+  "11690": {
+    "en": "wind-up Titan",
+    "ja": "マメット・タイタン",
+    "de": "Mini-Titan",
+    "fr": "petit Titan"
+  },
+  "11691": {
+    "en": "wind-up Leviathan",
+    "ja": "マメット・リヴァイアサン",
+    "de": "Mini-Leviathan",
+    "fr": "petit Léviathan"
+  },
+  "11692": {
+    "en": "wind-up Zundu warrior",
+    "ja": "マメット・ズンド",
+    "de": "Aufzieh-Zundo-Krieger",
+    "fr": "poupée zundu"
+  },
+  "11693": {
+    "en": "wind-up Haurchefant",
+    "ja": "マメット・オルシュファン",
+    "de": "Haurchefant-Puppe",
+    "fr": "Haurchefant miniature"
+  },
+  "11694": {
+    "en": "wind-up Nero tol Scaeva",
+    "ja": "マメット・ネロ",
+    "de": "Nero-Puppe",
+    "fr": "Nero tol Scaeva miniature"
+  },
+  "11695": {
+    "en": "wind-up Vath",
+    "ja": "マメット・ヴァス",
+    "de": "Vath-Puppe",
+    "fr": "poupée vathe"
+  },
+  "11696": {
+    "en": "faustlet",
+    "ja": "ミニファウスト",
+    "de": "Fäustchen",
+    "fr": "faust articulé"
+  },
+  "11697": {
+    "en": "dress-up Y'shtola",
+    "ja": "ニュー・ヤ・シュトラ",
+    "de": "neu[a] Y'shtola-Puppe",
+    "fr": "nouvelle Y'shtola miniature"
+  },
+  "11698": {
+    "en": "Calca",
+    "ja": "カルコ",
+    "de": "Calco-Puppe",
+    "fr": "Calca"
+  },
+  "11699": {
+    "en": "Brina",
+    "ja": "ブリーナ",
+    "de": "Brina-Puppe",
+    "fr": "Brina"
+  },
+  "11700": {
+    "en": "morpho",
+    "ja": "モルフォ",
+    "de": "Morpho",
+    "fr": "morpho"
+  },
+  "11701": {
+    "en": "Poro Roggo",
+    "ja": "ポロ・ロッゴ",
+    "de": "Poro Roggo",
+    "fr": "Poro Roggo"
+  },
+  "11702": {
+    "en": "spoony bard",
+    "ja": "マメット・ギルバート",
+    "de": "Aufzieh-Edward",
+    "fr": "Edward miniature"
+  },
+  "11703": {
+    "en": "Fenrir pup",
+    "ja": "フェンリル・パップ",
+    "de": "Fenrir-Welpe",
+    "fr": "bébé Fenrir"
+  },
+  "11704": {
+    "en": "wind-up dragonet",
+    "ja": "マメット・ドラゴネット",
+    "de": "Drachenjung[a]",
+    "fr": "mini-dragonnet"
+  },
+  "11705": {
+    "en": "wind-up Ramuh",
+    "ja": "マメット・ラムウ",
+    "de": "Mini-Ramuh",
+    "fr": "petit Ramuh"
+  },
+  "11706": {
+    "en": "wind-up Shiva",
+    "ja": "マメット・シヴァ",
+    "de": "Mini-Shiva",
+    "fr": "petite Shiva"
+  },
+  "11707": {
+    "en": "Piggy",
+    "ja": "ポーキー",
+    "de": "Ferkelchen",
+    "fr": "porcelet promeneur"
+  },
+  "11708": {
+    "en": "magic bucket",
+    "ja": "マジックバケツ",
+    "de": "magisch[a] Eimer",
+    "fr": "seau d'eau magique"
+  },
+  "11709": {
+    "en": "calamari",
+    "ja": "ゲソ",
+    "de": "Tentakel",
+    "fr": "tentacule minuscule"
+  },
+  "11710": {
+    "en": "baby brachiosaur",
+    "ja": "マメット・ブラキオ",
+    "de": "Brachiosaurus-Baby",
+    "fr": "bébé brachiosaure"
+  },
+  "11711": {
+    "en": "wind-up cheerleader",
+    "ja": "マメット・チアガール",
+    "de": "Aufzieh-Cheerleaderin",
+    "fr": "marionnette majorette"
+  },
+  "11712": {
+    "en": "wind-up Krile",
+    "ja": "マメット・クルル",
+    "de": "Krile-Puppe",
+    "fr": "Krile miniature"
+  },
+  "11713": {
+    "en": "wind-up Aymeric",
+    "ja": "マメット・アイメリク",
+    "de": "Aymeric-Puppe",
+    "fr": "Aymeric miniature"
+  },
+  "11714": {
+    "en": "pegasus colt",
+    "ja": "ペガサスコルト",
+    "de": "Pegasus-Fohlen",
+    "fr": "poulain pégase"
+  },
+  "11715": {
+    "en": "wind-up Calofisteri",
+    "ja": "マメット・カロフィステリ",
+    "de": "Mini-Calofisteri",
+    "fr": "poupée Calofisteri"
+  },
+  "11716": {
+    "en": "wind-up sasquatch",
+    "ja": "マメット・サスカッチ",
+    "de": "Sasquatch-Stofftier",
+    "fr": "mini-sasquatch"
+  },
+  "11717": {
+    "en": "dwarf rabbit",
+    "ja": "ドワーフラビット",
+    "de": "Zwergkaninchen",
+    "fr": "lapin nain"
+  },
+  "11718": {
+    "en": "hecteye",
+    "ja": "ヘクトアイ",
+    "de": "Hektokulinchen",
+    "fr": "hectoculus monoculaire"
+  },
+  "11719": {
+    "en": "Taoist moogle",
+    "ja": "道士モーグリ",
+    "de": "Daoisten-Mogry",
+    "fr": "Mog dàoshi"
+  },
+  "11720": {
+    "en": "Jibanyan",
+    "ja": "ジバニャン",
+    "de": "Jibanyan",
+    "fr": "Jibanyan"
+  },
+  "11721": {
+    "en": "Komasan",
+    "ja": "コマさん",
+    "de": "Komasan",
+    "fr": "Komasan"
+  },
+  "11722": {
+    "en": "Whisper",
+    "ja": "ウィスパー",
+    "de": "Whisper",
+    "fr": "Whisper"
+  },
+  "11723": {
+    "en": "Blizzaria",
+    "ja": "ふぶき姫",
+    "de": "Glazia",
+    "fr": "Blizzaria"
+  },
+  "11724": {
+    "en": "Kyubi",
+    "ja": "キュウビ",
+    "de": "Kyubi",
+    "fr": "Kyubi"
+  },
+  "11725": {
+    "en": "Komajiro",
+    "ja": "コマじろう",
+    "de": "Komajiro",
+    "fr": "Komajiro"
+  },
+  "11726": {
+    "en": "Manjimutt",
+    "ja": "じんめん犬",
+    "de": "Möter",
+    "fr": "Corniot"
+  },
+  "11727": {
+    "en": "Noko",
+    "ja": "ツチノコ",
+    "de": "Noko",
+    "fr": "Noko"
+  },
+  "11728": {
+    "en": "Venoct",
+    "ja": "オロチ",
+    "de": "Viptor",
+    "fr": "Octorgone"
+  },
+  "11729": {
+    "en": "Shogunyan",
+    "ja": "ブシニャン",
+    "de": "Shogunyan",
+    "fr": "Shogunyan"
+  },
+  "11730": {
+    "en": "Hovernyan",
+    "ja": "フユニャン",
+    "de": "Hovernyan",
+    "fr": "Hovernyan"
+  },
+  "11731": {
+    "en": "Robonyan F-type",
+    "ja": "ロボニャンＦ型",
+    "de": "Robonyan[p] F-Type",
+    "fr": "Robonyan F-Type"
+  },
+  "11732": {
+    "en": "USApyon",
+    "ja": "ＵＳＡピョン",
+    "de": "Usapyon",
+    "fr": "Usapyon"
+  },
+  "11733": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11734": {
+    "en": "Namingway",
+    "ja": "ネミングウェイ",
+    "de": "Namingway-Puppe",
+    "fr": "poupée Namingway"
+  },
+  "11735": {
+    "en": "toy Alexander",
+    "ja": "ミニアレキサンダー",
+    "de": "Mini-Alexander",
+    "fr": "Alexander articulé"
+  },
+  "11736": {
+    "en": "shaggy shoat",
+    "ja": "うり坊",
+    "de": "Frischling",
+    "fr": "marcassin"
+  },
+  "11737": {
+    "en": "dress-up Thancred",
+    "ja": "ニュー・サンクレッド",
+    "de": "neu[a] Thancred-Puppe",
+    "fr": "nouveau Thancred miniature"
+  },
+  "11738": {
+    "en": "dress-up Alisaie",
+    "ja": "ニュー・アリゼー",
+    "de": "neu[a] Alisaie-Puppe",
+    "fr": "nouvelle Alisaie miniature"
+  },
+  "11739": {
+    "en": "wind-up Edda",
+    "ja": "マメット・エッダ",
+    "de": "Edda-Puppe",
+    "fr": "Edda miniature"
+  },
+  "11740": {
+    "en": "wind-up Yuna",
+    "ja": "マメット・ユウナ",
+    "de": "Yuna-Puppe",
+    "fr": "Yuna miniature"
+  },
+  "11741": {
+    "en": "wind-up Rikku",
+    "ja": "マメット・リュック",
+    "de": "Rikku-Puppe",
+    "fr": "Rikku miniature"
+  },
+  "11742": {
+    "en": "wind-up Lulu",
+    "ja": "マメット・ルールー",
+    "de": "Lulu-Puppe",
+    "fr": "Lulu miniature"
+  },
+  "11743": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11744": {
+    "en": "wind-up Moenbryda",
+    "ja": "マメット・ムーンブリダ",
+    "de": "Moenbryda-Puppe",
+    "fr": "Moenbryda miniature"
+  },
+  "11745": {
+    "en": "Continental eye",
+    "ja": "コンチネンタルアイ",
+    "de": "Circus-Auge",
+    "fr": "Œil du Cirque"
+  },
+  "11746": {
+    "en": "bullpup",
+    "ja": "ブルパピー",
+    "de": "Bulldoggenwelpe",
+    "fr": "chiot bulldog"
+  },
+  "11747": {
+    "en": "angel of mercy",
+    "ja": "レイズエンジェル",
+    "de": "Liebesengel",
+    "fr": "ange de la résurrection"
+  },
+  "11748": {
+    "en": "wind-up Estinien",
+    "ja": "マメット・エスティニアン",
+    "de": "Estinien-Puppe",
+    "fr": "Estinien miniature"
+  },
+  "11749": {
+    "en": "wind-up Hraesvelgr",
+    "ja": "マメット・フレースヴェルグ",
+    "de": "Hraesvelgr-Stofftier",
+    "fr": "Hraesvelgr miniature"
+  },
+  "11750": {
+    "en": "Gigi",
+    "ja": "ギギ",
+    "de": "Gigi",
+    "fr": "Gigi"
+  },
+  "11751": {
+    "en": "anima",
+    "ja": "人造精霊",
+    "de": "Anima",
+    "fr": "esprit synthétique"
+  },
+  "11752": {
+    "en": "wind-up Scathach",
+    "ja": "マメット・スカアハ",
+    "de": "Aufzieh-Scathach",
+    "fr": "Scáthach miniature"
+  },
+  "11753": {
+    "en": "wind-up Nidhogg",
+    "ja": "マメット・ニーズヘッグ",
+    "de": "Nidhogg-Stofftier",
+    "fr": "Nidhogg miniature"
+  },
+  "11754": {
+    "en": "hellpup",
+    "ja": "ヘルパピー",
+    "de": "Höllenhundwelpe",
+    "fr": "chiot des enfers"
+  },
+  "11755": {
+    "en": "wind-up Ohl Deeh",
+    "ja": "マメット・オル・ディー",
+    "de": "Aufzieh-Ohl Deeh",
+    "fr": "Ohl Deeh miniature"
+  },
+  "11756": {
+    "en": "wind-up moon",
+    "ja": "クロックワークムーン",
+    "de": "portabl[a] Studiomond",
+    "fr": "lune mécanique"
+  },
+  "11757": {
+    "en": "castaway chocobo chick",
+    "ja": "海チョコチョコボ",
+    "de": "schiffbrüchig[a] Chocobo-Küken",
+    "fr": "bébé chocobo des mers"
+  },
+  "11758": {
+    "en": "wind-up Bartz",
+    "ja": "マメット・バッツ",
+    "de": "Bartz-Puppe",
+    "fr": "Bartz miniature"
+  },
+  "11759": {
+    "en": "wind-up red mage",
+    "ja": "マメット・レッドメイジ",
+    "de": "Rotmagier-Puppe",
+    "fr": "mage rouge mécanique"
+  },
+  "11760": {
+    "en": "faepup",
+    "ja": "フェイパピー",
+    "de": "Feenhundwelpe",
+    "fr": "chiot fantasmagorique"
+  },
+  "11761": {
+    "en": "odder otter",
+    "ja": "ウソウソ",
+    "de": "obskur[a] Otter",
+    "fr": "loutre choute"
+  },
+  "11762": {
+    "en": "fox kit",
+    "ja": "豆妖狐",
+    "de": "Fuchswelpe",
+    "fr": "bébé renard"
+  },
+  "11763": {
+    "en": "Tora-jiro",
+    "ja": "トラジロウ",
+    "de": "Tora-jiro",
+    "fr": "Tora-jiro"
+  },
+  "11764": {
+    "en": "tiny tatsunoko",
+    "ja": "タツマゴ",
+    "de": "winzig[a] Tatsunoko",
+    "fr": "hippocampoupon"
+  },
+  "11765": {
+    "en": "bombfish",
+    "ja": "ハリセンボム",
+    "de": "Igelbomber",
+    "fr": "poisson-bombo"
+  },
+  "11766": {
+    "en": "Bom Boko",
+    "ja": "ブンブク",
+    "de": "Bom Boko",
+    "fr": "Bunbuku"
+  },
+  "11767": {
+    "en": "road sparrow",
+    "ja": "タビスズメ",
+    "de": "Straßenspatz",
+    "fr": "moineau voyageur"
+  },
+  "11768": {
+    "en": "wind-up Lyse",
+    "ja": "マメット・リセ",
+    "de": "Lyse-Puppe",
+    "fr": "Lyse miniature"
+  },
+  "11769": {
+    "en": "dress-up Yugiri",
+    "ja": "ニュー・ユウギリ",
+    "de": "neu[a] Yugiri-Puppe",
+    "fr": "Yugiri miniature revisitée"
+  },
+  "11770": {
+    "en": "wind-up Gosetsu",
+    "ja": "マメット・ゴウセツ",
+    "de": "Gosetsu-Puppe",
+    "fr": "Gosetsu miniature"
+  },
+  "11771": {
+    "en": "wind-up Yotsuyu",
+    "ja": "マメット・ヨツユ",
+    "de": "Yotsuyu-Puppe",
+    "fr": "Yotsuyu miniature"
+  },
+  "11772": {
+    "en": "mock-up Grynewaht",
+    "ja": "マメット・グリーンワート",
+    "de": "Aufzieh-Grynewaht",
+    "fr": "Grynewaht miniature"
+  },
+  "11773": {
+    "en": "wind-up Namazu",
+    "ja": "マメット・ナマズオ",
+    "de": "Aufzieh-Namazuo",
+    "fr": "Namazu mécanique"
+  },
+  "11774": {
+    "en": "Ivon Coeurlfist doll",
+    "ja": "イヴォン人形",
+    "de": "Ivon Coeurlfaust-Puppe",
+    "fr": "poupée Ivon le Coeurl"
+  },
+  "11775": {
+    "en": "wind-up chimera",
+    "ja": "マメットキメラ",
+    "de": "Aufzieh-Chimära",
+    "fr": "chimère mécanique"
+  },
+  "11776": {
+    "en": "wind-up meateater",
+    "ja": "マメット・ミートイーター",
+    "de": "Aufzieh-Fleischfresser",
+    "fr": "croque-viande mécanique"
+  },
+  "11777": {
+    "en": "magitek avenger F1",
+    "ja": "魔導アヴェンジャー追従型",
+    "de": "A-Rächer[p] der XII. Legion",
+    "fr": "vengeur magitek S1"
+  },
+  "11778": {
+    "en": "Ghido",
+    "ja": "ギード",
+    "de": "Ghido",
+    "fr": "Ghido"
+  },
+  "11779": {
+    "en": "wind-up Exdeath",
+    "ja": "マメット・エクスデス",
+    "de": "Aufzieh-Exdeath",
+    "fr": "Exdeath miniature"
+  },
+  "11780": {
+    "en": "wind-up Khloe",
+    "ja": "マメット・クロ",
+    "de": "Khloe-Puppe",
+    "fr": "Khloe miniature"
+  },
+  "11781": {
+    "en": "wind-up Susano",
+    "ja": "マメット・スサノオ",
+    "de": "Susano-Puppe",
+    "fr": "petit Susano"
+  },
+  "11782": {
+    "en": "wind-up Lakshmi",
+    "ja": "マメット・ラクシュミ",
+    "de": "Lakshmi-Puppe",
+    "fr": "petite Lakshmi"
+  },
+  "11783": {
+    "en": "wind-up Bismarck",
+    "ja": "マメット・ビスマルク",
+    "de": "Aufzieh-Bismarck",
+    "fr": "petit Bismarck"
+  },
+  "11784": {
+    "en": "wind-up Hien",
+    "ja": "マメット・ヒエン",
+    "de": "Hien-Puppe",
+    "fr": "Hien miniature"
+  },
+  "11785": {
+    "en": "wind-up Ravana",
+    "ja": "マメット・ラーヴァナ",
+    "de": "Mini-Ravana",
+    "fr": "petit Ravana"
+  },
+  "11786": {
+    "en": "wind-up Kojin",
+    "ja": "マメット・コウジン",
+    "de": "Kojin-Puppe",
+    "fr": "Kojin mécanique"
+  },
+  "11787": {
+    "en": "mameshiba",
+    "ja": "豆柴",
+    "de": "Mameshiba",
+    "fr": "mame shiba"
+  },
+  "11788": {
+    "en": "tengu doll",
+    "ja": "天狗人形",
+    "de": "Tengu-Puppe",
+    "fr": "poupée Tengu"
+  },
+  "11789": {
+    "en": "wind-up Matanga",
+    "ja": "マメット・マタンガ",
+    "de": "Matanga-Puppe",
+    "fr": "Matanga mécanique"
+  },
+  "11790": {
+    "en": "wind-up Ramza",
+    "ja": "マメット・ラムザ",
+    "de": "Ramza-Puppe",
+    "fr": "Ramza miniature"
+  },
+  "11791": {
+    "en": "koala joey",
+    "ja": "子コアラ",
+    "de": "Koala-Bärchen",
+    "fr": "bébé koala"
+  },
+  "11792": {
+    "en": "salt & pepper seal",
+    "ja": "ゴマ塩アザラシ",
+    "de": "Gomashio-Seehund",
+    "fr": "bébé phoque"
+  },
+  "11793": {
+    "en": "axolotl eft",
+    "ja": "ウーパールーパー",
+    "de": "Axolotl-Molch",
+    "fr": "axolotl"
+  },
+  "11794": {
+    "en": "wind-up Ixion",
+    "ja": "マメット・イクシオン",
+    "de": "Ixion-Puppe",
+    "fr": "petit Ixion"
+  },
+  "11795": {
+    "en": "wind-up Shinryu",
+    "ja": "マメット・神龍",
+    "de": "Mini-Shinryu",
+    "fr": "mini-Shinryu"
+  },
+  "11796": {
+    "en": "dress-up Raubahn",
+    "ja": "ニュー・ラウバーン",
+    "de": "neu[a] Raubahn-Puppe",
+    "fr": "nouveau Raubahn miniature"
+  },
+  "11797": {
+    "en": "wind-up Ananta",
+    "ja": "マメット・アナンタ",
+    "de": "Aufzieh-Ananta",
+    "fr": "poupée ananta"
+  },
+  "11798": {
+    "en": "private moai",
+    "ja": "ミニモアイ",
+    "de": "Moai-Statuette",
+    "fr": "mini moai"
+  },
+  "11799": {
+    "en": "white whittret",
+    "ja": "シロイタチ",
+    "de": "Schneewiesel",
+    "fr": "fouine blanche"
+  },
+  "11800": {
+    "en": "motley egg",
+    "ja": "ジョーカーエッグ",
+    "de": "Joker-Ei",
+    "fr": "œuf bouffon"
+  },
+  "11801": {
+    "en": "wind-up Kefka",
+    "ja": "マメット・ケフカ",
+    "de": "Kefka-Puppe",
+    "fr": "Kefka miniature"
+  },
+  "11802": {
+    "en": "wind-up Magnai",
+    "ja": "マメット・マグナイ",
+    "de": "Magnai-Puppe",
+    "fr": "Magnai miniature"
+  },
+  "11803": {
+    "en": "aurelia polyp",
+    "ja": "舞海月",
+    "de": "Aurelia-Polyp",
+    "fr": "aurélie polype"
+  },
+  "11804": {
+    "en": "Byakko cub",
+    "ja": "白小虎",
+    "de": "Byakko-Jungtier",
+    "fr": "bébé Byakko"
+  },
+  "11805": {
+    "en": "wind-up Fafnir",
+    "ja": "マメット・ファヴニル",
+    "de": "Mini-Fafnir",
+    "fr": "Fafnir mécanique"
+  },
+  "11806": {
+    "en": "wind-up Mithra",
+    "ja": "マメット・ミスラ",
+    "de": "Mithra-Puppe",
+    "fr": "poupée mithra"
+  },
+  "11807": {
+    "en": "the Prince of Anemos",
+    "ja": "プリンス・オブ・アネモス",
+    "de": "Prinz[p] von Anemos",
+    "fr": "Prince d'Anemos"
+  },
+  "11808": {
+    "en": "komainu",
+    "ja": "狛犬",
+    "de": "Komainu",
+    "fr": "petit Komainu"
+  },
+  "11809": {
+    "en": "the Gold Whisker",
+    "ja": "ナマキン",
+    "de": "Goldbartel",
+    "fr": "Namazu nain doré"
+  },
+  "11810": {
+    "en": "monkey king",
+    "ja": "セイテンショウセイ",
+    "de": "Affenkönig",
+    "fr": "petit Qitian Dasheng"
+  },
+  "11811": {
+    "en": "clockwork lantern",
+    "ja": "クロックワークランタン",
+    "de": "Uhrwerk-Laterne",
+    "fr": "lanterne mécanique"
+  },
+  "11812": {
+    "en": "frilled dragon",
+    "ja": "クラミドサウルス",
+    "de": "Kragenechse",
+    "fr": "lézard à collerette"
+  },
+  "11813": {
+    "en": "wind-up Cirina",
+    "ja": "マメット・シリナ",
+    "de": "Cirina-Puppe",
+    "fr": "Cirina miniature"
+  },
+  "11814": {
+    "en": "wind-up Sadu",
+    "ja": "マメット・サドゥ",
+    "de": "Sadu-Puppe",
+    "fr": "Sadu miniature"
+  },
+  "11815": {
+    "en": "copycat bulb",
+    "ja": "キャシーバルブ",
+    "de": "Cassie-Knolle",
+    "fr": "pousse de Cassie"
+  },
+  "11816": {
+    "en": "wind-up Tarutaru",
+    "ja": "マメット・タルタル",
+    "de": "Tarutaru-Puppe",
+    "fr": "poupée tarutaru"
+  },
+  "11817": {
+    "en": "wind-up Tsukuyomi",
+    "ja": "マメット・ツクヨミ",
+    "de": "Tsukuyomi-Puppe",
+    "fr": "poupée Tsukuyomi"
+  },
+  "11818": {
+    "en": "wind-up Zhloe",
+    "ja": "マメット・シロ",
+    "de": "Zhloe-Puppe",
+    "fr": "Zhloe miniature"
+  },
+  "11819": {
+    "en": "Construct 8",
+    "ja": "労働八号",
+    "de": "Automat[p] Nr. 8",
+    "fr": "Bâtisseur n°8"
+  },
+  "11820": {
+    "en": "Palico",
+    "ja": "アイルー",
+    "de": "Felyne",
+    "fr": "Felyne"
+  },
+  "11821": {
+    "en": "Poogie",
+    "ja": "プーギー",
+    "de": "Poogie",
+    "fr": "Poogie"
+  },
+  "11822": {
+    "en": "attendee #777",
+    "ja": "祭ナマズオ",
+    "de": "Festival-Namazuo",
+    "fr": "Namazu nain festif"
+  },
+  "11823": {
+    "en": "scarlet peacock",
+    "ja": "朱孔雀",
+    "de": "Feuerpfau",
+    "fr": "paonne vermillon"
+  },
+  "11824": {
+    "en": "wind-up Alpha",
+    "ja": "マメット・アルファ",
+    "de": "Alpha-Puppe",
+    "fr": "Alpha mécanique"
+  },
+  "11825": {
+    "en": "OMG",
+    "ja": "プチオメガ",
+    "de": "Mini-Omega",
+    "fr": "mini-Oméga"
+  },
+  "11826": {
+    "en": "wind-up G'raha Tia",
+    "ja": "マメット・グ・ラハ",
+    "de": "G'raha-Tia-Puppe",
+    "fr": "G'raha Tia miniature"
+  },
+  "11827": {
+    "en": "Little Yin",
+    "ja": "陰気なゴースト人形",
+    "de": "mürrisch[a] Geistlein",
+    "fr": "fantôme triste"
+  },
+  "11828": {
+    "en": "Little Yang",
+    "ja": "陽気なゴースト人形",
+    "de": "munter[a] Geistlein",
+    "fr": "fantôme joyeux"
+  },
+  "11829": {
+    "en": "wind-up Cloud",
+    "ja": "マメット・クラウド",
+    "de": "Cloud-Puppe",
+    "fr": "Cloud miniature"
+  },
+  "11830": {
+    "en": "wind-up Aerith",
+    "ja": "マメット・エアリス",
+    "de": "Aerith-Puppe",
+    "fr": "Aerith miniature"
+  },
+  "11831": {
+    "en": "wind-up Tifa",
+    "ja": "マメット・ティファ",
+    "de": "Tifa-Puppe",
+    "fr": "Tifa miniature"
+  },
+  "11832": {
+    "en": "mudpie",
+    "ja": "ドロップチ",
+    "de": "Schlammprinz",
+    "fr": "pâté de boue"
+  },
+  "11833": {
+    "en": "bridesmoogle",
+    "ja": "ブーケモーグリ",
+    "de": "Brautjungfer-Mogry",
+    "fr": "Mog d'honneur"
+  },
+  "11834": {
+    "en": "wind-up Elvaan",
+    "ja": "マメット・エルヴァーン",
+    "de": "Elvaan-Marionette",
+    "fr": "poupée elvaan"
+  },
+  "11835": {
+    "en": "dhalmel calf",
+    "ja": "ダルメル・カフ",
+    "de": "Dhalmel-Kalb",
+    "fr": "bébé dhalmel"
+  },
+  "11836": {
+    "en": "capybara pup",
+    "ja": "カピバラ・パップ",
+    "de": "Capybara-Jungtier",
+    "fr": "bébé cabiaï"
+  },
+  "11837": {
+    "en": "baby gremlin",
+    "ja": "ベイビーグレムリン",
+    "de": "Baby-Gremlin",
+    "fr": "bébé gremlin"
+  },
+  "11838": {
+    "en": "Conditional Virtue",
+    "ja": "プチヴァーチュー",
+    "de": "Tugendhaft[a] Begleiter",
+    "fr": "mini-vertu"
+  },
+  "11839": {
+    "en": "yukinko snowflake",
+    "ja": "コユキンコ",
+    "de": "Schnee-Korpokkur",
+    "fr": "ko-yukinko"
+  },
+  "11840": {
+    "en": "dress-up Tataru",
+    "ja": "ニュー・タタル",
+    "de": "neu[a] Tataru-Puppe",
+    "fr": "nouvelle Tataru miniature"
+  },
+  "11841": {
+    "en": "wind-up weapon",
+    "ja": "アームドミニオン",
+    "de": "Panzerwaffen-Miniatur",
+    "fr": "mascotte blindée"
+  },
+  "11842": {
+    "en": "wind-up Qalyana",
+    "ja": "マメット・カリヤナ",
+    "de": "Aufzieh-Qalyana",
+    "fr": "poupée qalyana"
+  },
+  "11843": {
+    "en": "wind-up Redback",
+    "ja": "マメット・ベニコウラ",
+    "de": "Rotpanzer-Puppe",
+    "fr": "Kojin rouge mécanique"
+  },
+  "11844": {
+    "en": "minitek conveyor",
+    "ja": "マメット・キャリアー",
+    "de": "Mini-Magitek-Transporter",
+    "fr": "transporteur miniature"
+  },
+  "11845": {
+    "en": "wind-up Fran",
+    "ja": "マメット・フラン",
+    "de": "Fran-Puppe",
+    "fr": "Fran miniature"
+  },
+  "11846": {
+    "en": "wind-up Nu Mou",
+    "ja": "マメット・ン・モゥ",
+    "de": "Nu-Mou-Stofftier",
+    "fr": "Nu Mou miniature"
+  },
+  "11847": {
+    "en": "Seitei",
+    "ja": "青帝",
+    "de": "Seitei",
+    "fr": "dragonnet azur"
+  },
+  "11848": {
+    "en": "zephyrous zabuton",
+    "ja": "ふかふか座布団",
+    "de": "Zabuton-Sitzkissen",
+    "fr": "coussin zabuton moelleux"
+  },
+  "11849": {
+    "en": "abroader otter",
+    "ja": "アロハウソウソ",
+    "de": "Aloha-Otter",
+    "fr": "loutre aloha"
+  },
+  "11850": {
+    "en": "hedgehoglet",
+    "ja": "ヘッジホッグ",
+    "de": "Igel",
+    "fr": "hérisson mignon"
+  },
+  "11851": {
+    "en": "brave new Y'shtola",
+    "ja": "ファースト・ヤ・シュトラ",
+    "de": "Splitterwelt-Y'shtola",
+    "fr": "Y'shtola miniature (premier reflet)"
+  },
+  "11852": {
+    "en": "wind-up Ryne",
+    "ja": "マメット・リーン",
+    "de": "Ryne-Puppe",
+    "fr": "Ryne miniature"
+  },
+  "11853": {
+    "en": "black hayate",
+    "ja": "黒柴",
+    "de": "schwarz[a] Shiba-Welpe",
+    "fr": "kuro shiba"
+  },
+  "11854": {
+    "en": "chameleon",
+    "ja": "カメレオン",
+    "de": "Zwergchamäleon",
+    "fr": "caméléon"
+  },
+  "11855": {
+    "en": "wind-up Fuath",
+    "ja": "マメット・フーア",
+    "de": "Fuath-Puppe",
+    "fr": "Fuath miniature"
+  },
+  "11856": {
+    "en": "armadillo bowler",
+    "ja": "アルマジロ・ボーラー",
+    "de": "artistisch[a] Gürteltier",
+    "fr": "tatou-boule"
+  },
+  "11857": {
+    "en": "the Great Serpent of Ronka",
+    "ja": "ロンカの水蛇？",
+    "de": "Klein[a] Schlange[p] von Ronka",
+    "fr": "serpent marin de Ronka ?"
+  },
+  "11858": {
+    "en": "micro gigantender",
+    "ja": "ミニギガテンダー",
+    "de": "Mini-Riesenkaktor",
+    "fr": "mini-gigapampa"
+  },
+  "11859": {
+    "en": "clionid larva",
+    "ja": "クリオニッド・ラーヴァ",
+    "de": "Clionidenlarve",
+    "fr": "jeune clionide"
+  },
+  "11860": {
+    "en": "bitty duckbill",
+    "ja": "タイニーダックビル",
+    "de": "Baby-Schnabeltier",
+    "fr": "ornithorynque nain"
+  },
+  "11861": {
+    "en": "Eden Minor",
+    "ja": "ミニエデン",
+    "de": "Mini-Eden",
+    "fr": "mini-Éden"
+  },
+  "11862": {
+    "en": "giant beaver",
+    "ja": "ジャイアントビーバー",
+    "de": "Riesenbiber",
+    "fr": "castor géant"
+  },
+  "11863": {
+    "en": "wind-up Suzaku",
+    "ja": "からくり朱雀",
+    "de": "Aufzieh-Suzaku",
+    "fr": "Suzaku mécanique"
+  },
+  "11864": {
+    "en": "wind-up Omega-M",
+    "ja": "マメット・オメガM",
+    "de": "männlich[a] Omega-Puppe",
+    "fr": "Oméga-M miniature"
+  },
+  "11865": {
+    "en": "wind-up Omega-F",
+    "ja": "マメット・オメガF",
+    "de": "weiblich[a] Omega-Puppe",
+    "fr": "Oméga-F miniature"
+  },
+  "11866": {
+    "en": "tinker's bell",
+    "ja": "ティンカーベル",
+    "de": "Glöckchen",
+    "fr": "Clochette"
+  },
+  "11867": {
+    "en": "tiny echevore",
+    "ja": "タイニーエケボア",
+    "de": "klein[a] Echevore",
+    "fr": "échevore nain"
+  },
+  "11868": {
+    "en": "sharksucker-class insubmersible",
+    "ja": "コバンザメ級潜水艦",
+    "de": "Tauchboot[p] der Haiklasse",
+    "fr": "sous-marin de classe Rémora"
+  },
+  "11869": {
+    "en": "shoebill",
+    "ja": "ハシビロコウ",
+    "de": "Schuhschnäbelchen",
+    "fr": "bec-en-sabot"
+  },
+  "11870": {
+    "en": "butterfly effect",
+    "ja": "バタフライエフェクト",
+    "de": "Schmetterlingspaar",
+    "fr": "couple de papillons"
+  },
+  "11871": {
+    "en": "ironfrog ambler",
+    "ja": "フロッガーA",
+    "de": "Eisenfrosch",
+    "fr": "grenouilleur A"
+  },
+  "11872": {
+    "en": "forgiven hate",
+    "ja": "フォーギヴン・ヘイト",
+    "de": "Mini-Sündenbereuer",
+    "fr": "haine pardonnée"
+  },
+  "11873": {
+    "en": "bacon bits",
+    "ja": "ポークシー・ビッツ",
+    "de": "Mini-Quiexie",
+    "fr": "bout-de-cochon"
+  },
+  "11874": {
+    "en": "wind-up pixie",
+    "ja": "マメット・ピクシー",
+    "de": "Pixie-Puppe",
+    "fr": "Pixie miniature"
+  },
+  "11875": {
+    "en": "mystic weapon",
+    "ja": "ミスティックウェポン",
+    "de": "mystisch[a] Waffe",
+    "fr": "arme mystique"
+  },
+  "11876": {
+    "en": "meerkat",
+    "ja": "ミーアキャット",
+    "de": "Erdmännchen",
+    "fr": "suricate"
+  },
+  "11877": {
+    "en": "miniature white knight",
+    "ja": "ホワイト・ミニナイト",
+    "de": "weiß[a] Miniaturritter",
+    "fr": "mini-cavalier blanc"
+  },
+  "11878": {
+    "en": "Cute Justice",
+    "ja": "極合金ジャスティス",
+    "de": "Mini-Brutalus",
+    "fr": "Ultragokin Justice"
+  },
+  "11879": {
+    "en": "domakin",
+    "ja": "ドマキン",
+    "de": "Domakin",
+    "fr": "domakin"
+  },
+  "11880": {
+    "en": "dress-up Estinien",
+    "ja": "ニュー・エスティニアン",
+    "de": "neu[a] Estinien-Puppe",
+    "fr": "nouvel Estinien miniature"
+  },
+  "11881": {
+    "en": "little leannan",
+    "ja": "プチリャナンシー",
+    "de": "klein[a] Leanan",
+    "fr": "mini-Leannan Sith"
+  },
+  "11882": {
+    "en": "wind-up hobgoblin",
+    "ja": "マメット・ホブゴブリン",
+    "de": "Hobgoblin-Puppe",
+    "fr": "hobgobelin miniature"
+  },
+  "11883": {
+    "en": "Cerberpup",
+    "ja": "ケルベロス・パピー",
+    "de": "Cerberus-Welpe",
+    "fr": "cerbère chiot"
+  },
+  "11884": {
+    "en": "pod 054",
+    "ja": "ポッド054",
+    "de": "Pod[p] 054",
+    "fr": "pod 054"
+  },
+  "11885": {
+    "en": "pod 316",
+    "ja": "ポッド316",
+    "de": "Pod[p] 316",
+    "fr": "pod 316"
+  },
+  "11886": {
+    "en": "sungold Talos",
+    "ja": "ゴールドタロース",
+    "de": "Gold-Talos",
+    "fr": "talos d'or"
+  },
+  "11887": {
+    "en": "Malone",
+    "ja": "マローン",
+    "de": "Malone",
+    "fr": "Malone"
+  },
+  "11888": {
+    "en": "little leafman",
+    "ja": "草こびと",
+    "de": "Grasgrummelchen",
+    "fr": "enfeuillé miniature"
+  },
+  "11889": {
+    "en": "the Behelmeted Serpent of Ronka",
+    "ja": "ホパルの水蛇？",
+    "de": "Wasserschlange[p] des Hopl",
+    "fr": "Grand Serpent de Hopl ?"
+  },
+  "11890": {
+    "en": "the Behatted Serpent of Ronka",
+    "ja": "キタリの水蛇？",
+    "de": "Wasserschlange[p] der Qitari",
+    "fr": "Grand Serpent des Qitari ?"
+  },
+  "11891": {
+    "en": "silver dasher",
+    "ja": "シマエナガ",
+    "de": "Langschwanzmeise",
+    "fr": "mésange à longue queue"
+  },
+  "11892": {
+    "en": "paissa patissier",
+    "ja": "パイッサ・クリナリアン",
+    "de": "Paissa-Gourmet",
+    "fr": "païssa cuisinier"
+  },
+  "11893": {
+    "en": "paissa threadpuller",
+    "ja": "パイッサ・ウィーバー",
+    "de": "Paissa-Weber",
+    "fr": "païssa couturier"
+  },
+  "11894": {
+    "en": "ancient one",
+    "ja": "古代人形",
+    "de": "Ascian-Puppe",
+    "fr": "poupée ascienne"
+  },
+  "11895": {
+    "en": "the Major-General",
+    "ja": "コマンダー・シャーク",
+    "de": "Haikrieger",
+    "fr": "requin commandeur"
+  },
+  "11896": {
+    "en": "wind-up Dulia-Chai",
+    "ja": "マメット・ドゥリア",
+    "de": "Dulia-Chai-Puppe",
+    "fr": "Dulia-Chai miniature"
+  },
+  "11897": {
+    "en": "amaro hatchling",
+    "ja": "アマロ・ハッチリング",
+    "de": "Amaro-Küken",
+    "fr": "bébé amaro"
+  },
+  "11898": {
+    "en": "Laladile",
+    "ja": "ララダイル",
+    "de": "Laladil",
+    "fr": "laladile"
+  },
+  "11899": {
+    "en": "unlucky rabbit",
+    "ja": "アンラッキーラビット",
+    "de": "Unglückshase",
+    "fr": "lapin malchanceux"
+  },
+  "11900": {
+    "en": "Lalinator 5.H0",
+    "ja": "ラリホードワーフ",
+    "de": "Holladrio-Zwerg",
+    "fr": "Nain lali-ho"
+  },
+  "11901": {
+    "en": "wind-up Mystel",
+    "ja": "マメット・ミステル",
+    "de": "Mystel-Puppe",
+    "fr": "Mystel miniature"
+  },
+  "11902": {
+    "en": "wind-up Ardbert",
+    "ja": "マメット・アルバート",
+    "de": "Aufzieh-Ardbert",
+    "fr": "Ardbert miniature"
+  },
+  "11903": {
+    "en": "magitek helldiver F1",
+    "ja": "魔導ヘルダイバー追従型",
+    "de": "A-Magitek-Höllentaucher",
+    "fr": "plongeur infernal S1"
+  },
+  "11904": {
+    "en": "weatherproof gaelicat",
+    "ja": "もちもちゲイラキャット",
+    "de": "Geira-Flauschekatze",
+    "fr": "gaélichat emmitouflé"
+  },
+  "11905": {
+    "en": "ephemeral necromancer",
+    "ja": "幻影のネクロマンサー",
+    "de": "Phantom-Nekromantin",
+    "fr": "nécromancienne évanescente"
+  },
+  "11906": {
+    "en": "Allagan melon",
+    "ja": "アラガンメロン",
+    "de": "allagisch[a] Melone",
+    "fr": "melon allagois"
+  },
+  "11907": {
+    "en": "sand fox",
+    "ja": "サンドフォックス",
+    "de": "Sandfuchs",
+    "fr": "renard des sables"
+  },
+  "11908": {
+    "en": "petit pteranodon",
+    "ja": "プチラノドン",
+    "de": "Pteranoknirps",
+    "fr": "ptiranodon"
+  },
+  "11909": {
+    "en": "Dáinsleif F1",
+    "ja": "ダーインスレイヴ追従型",
+    "de": "A-Dáinsleif",
+    "fr": "Dáinsleif S1"
+  },
+  "11910": {
+    "en": "Lord Enma",
+    "ja": "エンマ",
+    "de": "Meister Enma[p]",
+    "fr": "baron Enma"
+  },
+  "11911": {
+    "en": "Lord Ananta",
+    "ja": "蛇王カイラ",
+    "de": "Meister Ananta[p]",
+    "fr": "baron Ananta"
+  },
+  "11912": {
+    "en": "Zazel",
+    "ja": "ぬらりひょん",
+    "de": "Sasel",
+    "fr": "Zazel"
+  },
+  "11913": {
+    "en": "Damona",
+    "ja": "百鬼姫",
+    "de": "Dämona",
+    "fr": "Damona"
+  },
+  "11914": {
+    "en": "2B automaton",
+    "ja": "オートマトン２Ｂ",
+    "de": "Aufzieh-2B",
+    "fr": "automate 2B"
+  },
+  "11915": {
+    "en": "2P automaton",
+    "ja": "オートマトン２Ｐ",
+    "de": "Aufzieh-2P",
+    "fr": "automate 2P"
+  },
+  "11916": {
+    "en": "much-coveted Mora",
+    "ja": "モモラ・モラ！！！",
+    "de": "anhänglich[a] Momora Mora",
+    "fr": "Momo Ramora"
+  },
+  "11917": {
+    "en": "Syldrion-class insubmersible",
+    "ja": "シルドラ級潜水艦P型",
+    "de": "P-Tauchboot[p] der Klasse „Syldra“",
+    "fr": "sous-marin aérien de classe Syldra"
+  },
+  "11918": {
+    "en": "wind-up Gaia",
+    "ja": "マメット・ガイア",
+    "de": "Gaia-Puppe",
+    "fr": "Gaïa miniature"
+  },
+  "11919": {
+    "en": "wind-up Palom",
+    "ja": "マメット・パロム",
+    "de": "Palom-Puppe",
+    "fr": "Palom miniature"
+  },
+  "11920": {
+    "en": "wind-up Porom",
+    "ja": "マメット・ポロム",
+    "de": "Porom-Puppe",
+    "fr": "Porom miniature"
+  },
+  "11921": {
+    "en": "wind-up Edge",
+    "ja": "マメット・エッジ",
+    "de": "Edge-Puppe",
+    "fr": "Edge miniature"
+  },
+  "11922": {
+    "en": "wind-up Rydia",
+    "ja": "マメット・リディア",
+    "de": "Rydia-Puppe",
+    "fr": "Rydia miniature"
+  },
+  "11923": {
+    "en": "wind-up Rosa",
+    "ja": "マメット・ローザ",
+    "de": "Rosa-Puppe",
+    "fr": "Rosa miniature"
+  },
+  "11924": {
+    "en": "Save the Princess",
+    "ja": "セイブ・ザ・プリンセス",
+    "de": "Prinzessinnenwache",
+    "fr": "Garde-la-Princesse"
+  },
+  "11925": {
+    "en": "Drippy",
+    "ja": "ドリッピー",
+    "de": "Tröpfel",
+    "fr": "Drippy"
+  },
+  "11926": {
+    "en": "Trike",
+    "ja": "トライク",
+    "de": "Tricero",
+    "fr": "Trike"
+  },
+  "11927": {
+    "en": "golden beaver",
+    "ja": "ゴールデンビーバー",
+    "de": "Goldbiber",
+    "fr": "castor doré"
+  },
+  "11928": {
+    "en": "gull",
+    "ja": "ガル",
+    "de": "Möwe",
+    "fr": "Goé"
+  },
+  "11929": {
+    "en": "anteater",
+    "ja": "アントイーター",
+    "de": "Ameisenbär",
+    "fr": "Tamandua"
+  },
+  "11930": {
+    "en": "dolphin calf",
+    "ja": "ドルフィン・カフ",
+    "de": "Delphinkalb",
+    "fr": "bébé dauphin"
+  },
+  "11931": {
+    "en": "magitek predator F1",
+    "ja": "魔導プレデター追従型",
+    "de": "A-Magitek-Prädator",
+    "fr": "prédateur magitek S1"
+  },
+  "11932": {
+    "en": "Senorita Sabotender",
+    "ja": "セニョリータ・サボテンダー",
+    "de": "Señorita[p] Kaktor",
+    "fr": "Señorita Pampa"
+  },
+  "11933": {
+    "en": "Benben stone",
+    "ja": "ベンベン",
+    "de": "Benben-Pyramide",
+    "fr": "Benben"
+  },
+  "11934": {
+    "en": "wanderer's campfire",
+    "ja": "放浪者の焚き火",
+    "de": "Reise-Lagerfeuer",
+    "fr": "feu de camp de voyageur"
+  },
+  "11935": {
+    "en": "smaller stubby",
+    "ja": "機械生命体",
+    "de": "Maschinenwesen-Puppe",
+    "fr": "forme de vie mécanique"
+  },
+  "11936": {
+    "en": "wind-up Lyna",
+    "ja": "マメット・ライナ",
+    "de": "Lyna-Puppe",
+    "fr": "Lyna miniature"
+  },
+  "11937": {
+    "en": "wind-up Runar",
+    "ja": "マメット・ルナル",
+    "de": "Runar-Puppe",
+    "fr": "Runar miniature"
+  },
+  "11938": {
+    "en": "wind-up Gunnhildr",
+    "ja": "マメット・グンヒルド",
+    "de": "Gunnhildr-Puppe",
+    "fr": "Gunnhildr miniature"
+  },
+  "11939": {
+    "en": "9S automaton",
+    "ja": "オートマトン９Ｓ",
+    "de": "Aufzieh-9S",
+    "fr": "automate 9S"
+  },
+  "11940": {
+    "en": "wind-up Rudy",
+    "ja": "マメット・ルディ",
+    "de": "Rudy-Stofftier",
+    "fr": "Rudy miniature"
+  },
+  "11941": {
+    "en": "squirrel emperor",
+    "ja": "幻栗斎",
+    "de": "Phantom-Rissai",
+    "fr": "Rissai chimérique"
+  },
+  "11942": {
+    "en": "Flag",
+    "ja": "フラッグ",
+    "de": "Fähnchen",
+    "fr": "Drapo"
+  },
+  "11943": {
+    "en": "wee Ea",
+    "ja": "プチイーア",
+    "de": "Klein-Ea",
+    "fr": "mini-Éa"
+  },
+  "11944": {
+    "en": "wind-up Magus Sisters",
+    "ja": "マメット・メーガス",
+    "de": "Magus-Schwestern-Puppentrio",
+    "fr": "sœurs Magus miniatures"
+  },
+  "11945": {
+    "en": "optimus Omicron",
+    "ja": "オプティマス・オミクロン",
+    "de": "Optimus Omikron[p]",
+    "fr": "Omicron Optimus"
+  },
+  "11946": {
+    "en": "wind-up Anima",
+    "ja": "マメット・アニマ",
+    "de": "Aufzieh-Anima",
+    "fr": "Anima miniature"
+  },
+  "11947": {
+    "en": "starbird",
+    "ja": "スターバード",
+    "de": "Sternenvogel",
+    "fr": "oiseau stellaire"
+  },
+  "11948": {
+    "en": "Nagxian cat",
+    "ja": "ナグサキャット",
+    "de": "nagxianisch[a] Katze",
+    "fr": "chat nagxien"
+  },
+  "11949": {
+    "en": "brave new Urianger",
+    "ja": "ニュー・ウリエンジェ",
+    "de": "neu[a] Urianger-Puppe",
+    "fr": "nouvel Urianger miniature"
+  },
+  "11950": {
+    "en": "wind-up Vrtra",
+    "ja": "マメット・ヴリトラ",
+    "de": "Aufzieh-Vrtra",
+    "fr": "Vrtra miniature"
+  },
+  "11951": {
+    "en": "hippo calf",
+    "ja": "ヒッポカフ",
+    "de": "Flusspferdkalb",
+    "fr": "bébé hippo"
+  },
+  "11952": {
+    "en": "crabe de la crabe",
+    "ja": "カニカニ",
+    "de": "Krabbenkrebs",
+    "fr": "crabe du crabe"
+  },
+  "11953": {
+    "en": "Prince Lunatender",
+    "ja": "ルナテンダー・プリンス",
+    "de": "Lunatender-Prinz",
+    "fr": "Prince pampa sélénien"
+  },
+  "11954": {
+    "en": "tiny troll",
+    "ja": "リトルトロル",
+    "de": "Tröllchen",
+    "fr": "petit troll"
+  },
+  "11955": {
+    "en": "Caduceus",
+    "ja": "カドゥケウス",
+    "de": "Caduceus",
+    "fr": "Caducée"
+  },
+  "11956": {
+    "en": "adventure basket",
+    "ja": "アドベンチャーバスケット",
+    "de": "Abenteurerkorb",
+    "fr": "malle d'aventure"
+  },
+  "11957": {
+    "en": "Golden Dhyata",
+    "ja": "黄金のチャタ号",
+    "de": "Golden[a] Dhyata",
+    "fr": "Dhyata dorée"
+  },
+  "11958": {
+    "en": "greener gleaner",
+    "ja": "グリーングリーナー",
+    "de": "Laub-Klauber",
+    "fr": "glaneur vert"
+  },
+  "11959": {
+    "en": "wind-up Grebuloff",
+    "ja": "マメット・グレビュオフ",
+    "de": "Grebuloff-Puppe",
+    "fr": "Grébuloff miniature"
+  },
+  "11960": {
+    "en": "nosferatu",
+    "ja": "ノスフェラトゥ",
+    "de": "Nosferatu-Puppe",
+    "fr": "Nosferatu"
+  },
+  "11961": {
+    "en": "wind-up herois",
+    "ja": "マメット・ヘロイス",
+    "de": "heroisch[a] Puppe",
+    "fr": "héroïne miniature"
+  },
+  "11962": {
+    "en": "wind-up Daivadipa",
+    "ja": "マメット・ダイヴァディーパ",
+    "de": "Daivadipa-Puppe",
+    "fr": "Daïvadipa miniature"
+  },
+  "11963": {
+    "en": "royal lunatender",
+    "ja": "ルナテンダー・ロイヤル",
+    "de": "königlich[a] Lunatender",
+    "fr": "Roi pampa sélénien"
+  },
+  "11964": {
+    "en": "wind-up Arkasodara",
+    "ja": "マメット・アルカソーダラ",
+    "de": "Arkasodara-Puppe",
+    "fr": "Arkasodara miniature"
+  },
+  "11965": {
+    "en": "wind-up kangaroo",
+    "ja": "マメット・カンガルー",
+    "de": "Aufzieh-Känguru",
+    "fr": "kangourou miniature"
+  },
+  "11966": {
+    "en": "protonaught",
+    "ja": "プロト・ドレッドノート",
+    "de": "Proto-Brummonaut",
+    "fr": "proto-Dreadnaught"
+  },
+  "11967": {
+    "en": "teacup Kapikulu",
+    "ja": "カププクル",
+    "de": "Kapipikulu",
+    "fr": "kapipikulu"
+  },
+  "11968": {
+    "en": "Chewy",
+    "ja": "チワワン",
+    "de": "Chiwauwau",
+    "fr": "chihuaouaf"
+  },
+  "11969": {
+    "en": "clockwork Novus D",
+    "ja": "クロックワーク・ノウスD",
+    "de": "Aufzieh-Novus[p] D",
+    "fr": "Novus D. mécanique"
+  },
+  "11970": {
+    "en": "hatching bunny",
+    "ja": "ハッピーエッグバニー",
+    "de": "Wunderhäschen",
+    "fr": "laprœuf joyeux"
+  },
+  "11971": {
+    "en": "wind-up Azeyma",
+    "ja": "マメット・アーゼマ",
+    "de": "Azeyma-Puppe",
+    "fr": "Azeyma miniature"
+  },
+  "11972": {
+    "en": "wind-up Ragnarok",
+    "ja": "マメット・ラグナロク",
+    "de": "Ragnarök-Miniatur",
+    "fr": "Ragnarok miniature"
+  },
+  "11973": {
+    "en": "blue-footed booby",
+    "ja": "青足のカツォ",
+    "de": "Blaufußtölpel",
+    "fr": "fou à pattes bleues"
+  },
+  "11974": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11975": {
+    "en": "clockwork Solus",
+    "ja": "クロックワーク・ソル",
+    "de": "Aufzieh-Solus",
+    "fr": "Solus mécanique"
+  },
+  "11976": {
+    "en": "felicitous fuzzball",
+    "ja": "こねこみみさん",
+    "de": "Miaurizius",
+    "fr": "Madmiaouselle"
+  },
+  "11977": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11978": {
+    "en": "clockwork crimson chaser",
+    "ja": "クロックワーク・レッドチェイサー",
+    "de": "rot[a] Aufzieh-Chaser",
+    "fr": "croiseur mécanique carmin"
+  },
+  "11979": {
+    "en": "clockwork cerulean chaser",
+    "ja": "クロックワーク・ブルーチェイサー",
+    "de": "blau[a] Aufzieh-Chaser",
+    "fr": "croiseur mécanique céruléen"
+  },
+  "11980": {
+    "en": "wind-up Scarmiglione",
+    "ja": "マメット・スカルミリョーネ",
+    "de": "Mini-Scarmiglione",
+    "fr": "Scarmiglione miniature"
+  },
+  "11981": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11982": {
+    "en": "pterosquirrel",
+    "ja": "モモンガ",
+    "de": "Flughörnchen",
+    "fr": "momonga"
+  },
+  "11983": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11984": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11985": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11986": {
+    "en": "wind-up Erichthonios",
+    "ja": "マメット・エリクトニオス",
+    "de": "Erichthonios-Puppe",
+    "fr": "Érichthonios miniature"
+  },
+  "11987": {
+    "en": "seasoned adventurer",
+    "ja": "熟練の冒険者",
+    "de": "erfahren[a] Abenteurerin",
+    "fr": "aventurière expérimentée"
+  },
+  "11988": {
+    "en": "plucky adventurer",
+    "ja": "凛々しい冒険者",
+    "de": "galant[a] Abenteurer",
+    "fr": "aventurier flamboyant"
+  },
+  "11989": {
+    "en": "carefree adventurer",
+    "ja": "飄々とした冒険者",
+    "de": "unbefangen[a] Abenteurerin",
+    "fr": "aventurière insouciante"
+  },
+  "11990": {
+    "en": "adventurous frontier hand",
+    "ja": "元開拓団の冒険者",
+    "de": "ehemalig[a] Abenteurer",
+    "fr": "ancien soldat"
+  },
+  "11991": {
+    "en": "earnest adventurer",
+    "ja": "真面目な冒険者",
+    "de": "seriös[a] Abenteurerin",
+    "fr": "aventurière sérieuse"
+  },
+  "11992": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11993": {
+    "en": "Aery red dragon",
+    "ja": "エアリー・レッドドラゴン",
+    "de": "rot[a] Nest-Drache",
+    "fr": "dragon rouge de L'Aire"
+  },
+  "11994": {
+    "en": "Aery yellow dragon",
+    "ja": "エアリー・イエロードラゴン",
+    "de": "gelb[a] Nest-Drache",
+    "fr": "dragon jaune de L'Aire"
+  },
+  "11995": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11996": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11997": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11998": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "11999": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "12000": {
     "en": "",
     "ja": "",
     "de": "",

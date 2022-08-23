@@ -19,10 +19,11 @@ export interface LazyRecipe {
   controlReq?:             number;
   craftsmanshipReq?:       number;
   rlvl?:                   number;
+  requiredQualityPercent?: number;
   ingredients:             Ingredient[];
   expert?:                 boolean;
   conditionsFlag?:         number;
-  masterbook?:             MasterbookClass | number;
+  masterbook?:             Masterbook;
 }
 
 export interface Ingredient {
@@ -32,7 +33,7 @@ export interface Ingredient {
   phase?:  number;
 }
 
-export interface MasterbookClass {
+export interface Masterbook {
   id:   string;
   name: Name;
 }

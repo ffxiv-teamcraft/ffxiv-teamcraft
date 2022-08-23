@@ -19,10 +19,10 @@ export interface LazyRecipesPerItem {
   controlReq:             number;
   craftsmanshipReq:       number;
   rlvl:                   number;
+  requiredQualityPercent: number;
   ingredients:            Ingredient[];
   expert:                 boolean;
   conditionsFlag:         number;
-  masterbook?:            number;
 }
 
 export interface Ingredient {

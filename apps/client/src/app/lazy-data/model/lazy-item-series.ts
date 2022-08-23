@@ -3,5 +3,5 @@ export interface LazyItemSeries {
   ja:    string;
   de:    string;
   fr:    string;
-  items: null;
+  items: number[];
 }
