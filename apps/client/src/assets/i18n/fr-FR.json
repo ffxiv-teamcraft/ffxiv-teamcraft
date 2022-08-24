@@ -2301,7 +2301,8 @@
         "Check": "Exécuter le contrôle d'intégrité"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Tous les personnages liés sont valides"
+        "All_characters_valid": "Tous les personnages liés sont valides",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
