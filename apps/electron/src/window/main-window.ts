@@ -77,8 +77,7 @@ export class MainWindow {
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
-        backgroundThrottling: false,
-        partition: 'persist:ads'
+        backgroundThrottling: false
       }
     };
     Object.assign(opts, this.store.get('win:bounds', {}));
