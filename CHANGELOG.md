@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.2"></a>
+## [9.7.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.1...v9.7.2) (2022-08-24)
+
+
+### Bug Fixes
+
+* **db:** fix tomestone shops not processed properly ([58e4b0c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58e4b0c))
+* **desktop:** better Machina error handling ([f365c02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f365c02))
+* **desktop:** fixed settings and offline lists resetting with 9.7 ([ba5069a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba5069a))
+
+
+### Features
+
+* **profile:** added new 6.2 masterbooks in masterbooks popup ([2252f58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2252f58))
+
+
+
 <a name="9.7.1"></a>
 ## [9.7.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.0...v9.7.1) (2022-08-23)
 
