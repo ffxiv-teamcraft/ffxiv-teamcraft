@@ -112,6 +112,10 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       );
   }
 
+  public getByForeignKeyRaw(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<Partial<List>[]> {
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, queryModifier, cacheSuffix);
+  }
+
   get(uid: string): Observable<List> {
     return super.get(uid)
       .pipe(

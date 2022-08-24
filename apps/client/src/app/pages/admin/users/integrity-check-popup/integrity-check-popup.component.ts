@@ -3,7 +3,8 @@ import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { INTEGRITY_CHECKS, IntegrityCheck } from '../integrity-checks/integrity-check';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { UserService } from '../../../../core/database/user.service';
-import { map, startWith, switchMap } from 'rxjs/operators';
+import { map, startWith, switchMap, takeUntil } from 'rxjs/operators';
+import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-integrity-check-popup',
@@ -11,7 +12,7 @@ import { map, startWith, switchMap } from 'rxjs/operators';
   styleUrls: ['./integrity-check-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IntegrityCheckPopupComponent {
+export class IntegrityCheckPopupComponent extends TeamcraftComponent {
 
   user$: ReplaySubject<TeamcraftUser> = new ReplaySubject<TeamcraftUser>();
 
@@ -23,11 +24,13 @@ export class IntegrityCheckPopupComponent {
         check: check,
         result: 'loading'
       };
-    }))
+    })),
+    takeUntil(this.onDestroy$)
   );
 
   constructor(@Inject(INTEGRITY_CHECKS) private integrityChecks: IntegrityCheck[],
               private userService: UserService) {
+    super();
   }
 
   private _user: TeamcraftUser;
