@@ -2301,7 +2301,8 @@
         "Check": "무결성 검사 실행"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "이상없음"
+        "All_characters_valid": "이상없음",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
