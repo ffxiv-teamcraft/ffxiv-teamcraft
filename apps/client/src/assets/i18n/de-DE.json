@@ -2301,7 +2301,8 @@
         "Check": "Integrität prüfen"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Alle verlinkten Charaktere sind gültig"
+        "All_characters_valid": "Alle verlinkten Charaktere sind gültig",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
