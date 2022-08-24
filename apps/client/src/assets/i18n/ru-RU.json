@@ -2301,7 +2301,8 @@
         "Check": "Запустить проверку целостности"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Все привязанные персонажи действительны"
+        "All_characters_valid": "Все привязанные персонажи действительны",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
