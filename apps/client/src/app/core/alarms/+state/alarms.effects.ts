@@ -38,7 +38,7 @@ import { IS_HEADLESS } from '../../../../environments/is-headless';
 })
 export class AlarmsEffects {
 
-  
+
   loadAlarms$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.LoadAlarms),
     switchMap(() => this.authFacade.userId$),
@@ -54,7 +54,7 @@ export class AlarmsEffects {
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
   ));
 
-  
+
   deleteAllAlarms$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.DeleteAllAlarms),
     withLatestFrom(this.alarmsFacade.allAlarms$),
@@ -63,7 +63,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   loadAlarmGroup$ = createEffect(() => this.actions$.pipe(
     ofType<LoadAlarmGroup>(AlarmsActionTypes.LoadAlarmGroup),
     switchMap((action) => {
@@ -87,7 +87,7 @@ export class AlarmsEffects {
     })
   ));
 
-  
+
   addAlarmsToDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<AddAlarms>(AlarmsActionTypes.AddAlarms),
@@ -119,7 +119,7 @@ export class AlarmsEffects {
       map((alarms) => new AlarmsCreated(alarms.length))
     ));
 
-  
+
   addAlarmsAndGroupToDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<AddAlarmsAndGroup>(AlarmsActionTypes.AddAlarmsAndGroup),
@@ -161,14 +161,13 @@ export class AlarmsEffects {
     ));
 
 
-  
   updateAlarmInDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType(AlarmsActionTypes.UpdateAlarm),
       switchMap((action: UpdateAlarm) => this.alarmsService.update(action.alarm.$key, action.alarm))
     ), { dispatch: false });
 
-  
+
   removeAlarmFromDatabase$ = createEffect(() => this.actions$
     .pipe(
       ofType<RemoveAlarm>(AlarmsActionTypes.RemoveAlarm),
@@ -189,7 +188,7 @@ export class AlarmsEffects {
       })
     ), { dispatch: false });
 
-  
+
   setAlarmsInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<SetAlarms>(AlarmsActionTypes.SetAlarms),
     switchMap((action) => {
@@ -197,14 +196,14 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   clearLocalstorageOnAlarmDelete$ = createEffect(() => this.actions$
     .pipe(
       ofType(AlarmsActionTypes.RemoveAlarm),
       map((action: RemoveAlarm) => localStorage.removeItem(`played:${action.id}`))
     ), { dispatch: false });
 
-  
+
   addGroupToDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<CreateAlarmGroup>(AlarmsActionTypes.CreateAlarmGroup),
     withLatestFrom(this.authFacade.userId$),
@@ -216,7 +215,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   deleteGroupFromDatabase = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.DeleteAlarmGroup),
     switchMap((action: DeleteAlarmGroup) => {
@@ -224,7 +223,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   setGroupsInDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<SetGroups>(AlarmsActionTypes.SetGroups),
     switchMap((action) => {
@@ -232,7 +231,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   updateGroupInsideDatabase$ = createEffect(() => this.actions$.pipe(
     ofType<UpdateAlarmGroup>(AlarmsActionTypes.UpdateAlarmGroup),
     withLatestFrom(this.alarmsFacade.allGroups$),
@@ -242,7 +241,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   saveAlarmGroupAssignment$ = createEffect(() => this.actions$.pipe(
     ofType<AssignGroupToAlarm>(AlarmsActionTypes.AssignGroupToAlarm),
     withLatestFrom(this.alarmsFacade.allGroups$),
@@ -252,7 +251,7 @@ export class AlarmsEffects {
     })
   ), { dispatch: false });
 
-  
+
   showAlarmsCreatedNotification$ = createEffect(() => this.actions$.pipe(
     ofType(AlarmsActionTypes.AlarmsCreated),
     isPlatformBrowser(this.platform) && !IS_HEADLESS ? bufferTime(300) : map(() => []),

@@ -1,6 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fix profile not loading and blocking many pages.
-* **log-tracker:** fixed new log pages labelled as "1 - 5".
-* **patreon:** fix ads removal benefit.
-* **simulator:** fix recipe requirements.`;
+* **db:** fix tomestone shops not processed properly.
+* **desktop:** better Machina error handling.
+* **desktop:** fixed settings and offline lists resetting with 9.7.
+
+
+### Features
+
+* **profile:** added new 6.2 masterbooks in masterbooks popup.`;
