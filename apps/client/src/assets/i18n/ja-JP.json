@@ -2301,7 +2301,8 @@
         "Check": "整合性チェックを実行"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "All characters linked are valid",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
