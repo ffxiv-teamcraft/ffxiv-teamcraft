@@ -2301,7 +2301,8 @@
         "Check": "运行完整性检查"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "所有关联的角色均有效"
+        "All_characters_valid": "所有关联的角色均有效",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
