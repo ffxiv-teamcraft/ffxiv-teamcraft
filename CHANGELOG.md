@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.3"></a>
+## [9.7.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.2...v9.7.3) (2022-08-25)
+
+
+
 <a name="9.7.2"></a>
 ## [9.7.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.1...v9.7.2) (2022-08-24)
 

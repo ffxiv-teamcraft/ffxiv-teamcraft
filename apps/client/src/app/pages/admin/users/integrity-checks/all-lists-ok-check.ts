@@ -13,11 +13,17 @@ export class AllListsOkCheck implements IntegrityCheck<string[]> {
     return 'All_lists_ok';
   }
 
-  check(user: TeamcraftUser): Observable<string[]> {
+  check(user: TeamcraftUser): Observable<string[] | null> {
     return this.listsService.getByForeignKeyRaw(TeamcraftUser, user.$key)
       .pipe(
         map(lists => {
           return lists.filter(list => !list.name).map(list => list.$key);
+        }),
+        map(lists => {
+          if (lists.length === 0) {
+            return null;
+          }
+          return lists;
         })
       );
   }
