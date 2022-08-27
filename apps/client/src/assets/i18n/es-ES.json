@@ -1228,7 +1228,7 @@
     "No_results": "No se encontraron misiones leve",
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
-    "All_deliveries": "Todas las {{value}} entregas",
+    "All_deliveries": "Todas las entregas ({{value}})",
     "Compute_exp": "Mostrar impacto en exp",
     "Global_exp": "Usar experiencia global",
     "More_on_gamerescape": "Más detalles en gamerescape",
