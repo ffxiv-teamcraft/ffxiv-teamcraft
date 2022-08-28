@@ -50,7 +50,8 @@
     "Share_url_copied": "Url de recherche copié dans le presse-papiers",
     "Only_craftable": "Recettes uniquement",
     "Want_filters": "Besoin de plus de filtres ?",
-    "Open_search": "Ouvrir la page de recherche"
+    "Open_search": "Ouvrir la page de recherche",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
     "Consider_requirements": "Afficher les pré-requis",
     "Ignore_requirements": "Ignorer les pré-requis",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
