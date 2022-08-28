@@ -50,7 +50,8 @@
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
     "Only_craftable": "제작가능한 제작법만 검색",
     "Want_filters": "더 많은 필터가 필요한가요?",
-    "Open_search": "대신 검색 페이지 열기"
+    "Open_search": "대신 검색 페이지 열기",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "여기는 목록에 사용되지 않는 소지품 내아이템입니다",
     "Consider_requirements": "재료 포함하기",
     "Ignore_requirements": "재료 무시하기",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
