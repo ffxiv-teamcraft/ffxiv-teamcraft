@@ -50,7 +50,8 @@
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
     "Only_craftable": "レシピのみ",
     "Want_filters": "さらにフィルターが必要ですか？",
-    "Open_search": "代わりに検索ページを開く"
+    "Open_search": "代わりに検索ページを開く",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
     "Consider_requirements": "素材要求",
     "Ignore_requirements": "素材を除外する",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
