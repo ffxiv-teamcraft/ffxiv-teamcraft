@@ -50,7 +50,8 @@
     "Share_url_copied": "Zoek-url gekopieerd naar uw klembord",
     "Only_craftable": "Alleen recepten",
     "Want_filters": "Need more filters?",
-    "Open_search": "Open search page instead"
+    "Open_search": "Open search page instead",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Gebruik als standaard teken",
   "Download_desktop_app": "Download desktop app",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Ignore requirements",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
