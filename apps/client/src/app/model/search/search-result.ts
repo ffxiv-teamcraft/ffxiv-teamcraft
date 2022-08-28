@@ -1,8 +1,10 @@
 import { Recipe } from './recipe';
 import { BaseSearchResult } from './base-search-result';
+import { LazyDataI18nKey } from '../../lazy-data/lazy-data-types';
 
 export interface SearchResult extends BaseSearchResult {
   itemId: number | string;
+  contentType: LazyDataI18nKey;
   id?: number;
   icon: string;
   recipe?: Recipe;

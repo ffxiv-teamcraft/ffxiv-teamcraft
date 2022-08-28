@@ -19,4 +19,5 @@ export interface CraftedBy {
   craftsmanshipReq?: number;
   unlockId?: number;
   complexity?: Complexity;
+  isIslandRecipe?: boolean;
 }

@@ -1,5 +1,5 @@
 <div fxLayout="column">
-  <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center" *ngIf="details.type !== -10">
     lvl {{details.level}}{{details.stars_tooltip}}
   </div>
   <div fxLayout="column" fxLayoutGap="10px">

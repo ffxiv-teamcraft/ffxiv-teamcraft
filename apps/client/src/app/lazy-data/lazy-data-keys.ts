@@ -56,6 +56,8 @@ export const LazyDataKeys = [
   'ilvls',
   'instanceSources',
   'instances',
+  'islandBuildings',
+  'islandGatheringItems',
   'itemEquipSlotCategory',
   'itemIcons',
   'itemLevel',

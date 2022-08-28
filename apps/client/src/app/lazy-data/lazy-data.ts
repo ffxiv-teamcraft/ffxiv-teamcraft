@@ -35,6 +35,8 @@ import {LazyHunt} from './model/lazy-hunt';
 import {LazyHwdInspection} from './model/lazy-hwd-inspection';
 import {LazyHwdPhase} from './model/lazy-hwd-phase';
 import {LazyInstance} from './model/lazy-instance';
+import {LazyIslandBuilding} from './model/lazy-island-building';
+import {LazyIslandGatheringItem} from './model/lazy-island-gathering-item';
 import {LazyItemLevel} from './model/lazy-item-level';
 import {LazyItemMainAttribute} from './model/lazy-item-main-attribute';
 import {LazyItemMeldingData} from './model/lazy-item-melding-data';
@@ -152,6 +154,8 @@ export interface LazyData {
   ilvls: Record<number, number>;
   instanceSources: Record<number, number[]>;
   instances: Record<number, LazyInstance>;
+  islandBuildings: Record<number, LazyIslandBuilding>;
+  islandGatheringItems: Record<number, LazyIslandGatheringItem>;
   itemEquipSlotCategory: Record<number, number>;
   itemIcons: Record<number, string>;
   itemLevel: Record<number, LazyItemLevel>;

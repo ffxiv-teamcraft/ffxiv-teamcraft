@@ -3,12 +3,12 @@ import { get } from 'lodash';
 
 export class I18nExtractor extends AbstractExtractor {
 
-  constructor(private contentName: string, private fileName: string, private additionalColumns: Record<string, string> = {}, private nameColumn = 'Name_', private startsAt0 = false) {
+  constructor(private contentName: string, private fileName: string, private additionalColumns: Record<string, string> = {}, private nameColumn = 'Name_', private startsAt0 = false, private dataMapper = (row, rows) => row) {
     super();
   }
 
   protected doExtract(): any {
-    const entites = {};
+    const entities = {};
     let source = this.aggregateAllPages(`https://xivapi.com/${this.contentName}?columns=ID,${this.nameColumn}*,${Object.keys(this.additionalColumns).join(',')}`);
     if (this.startsAt0) {
       source = this.getAllEntries(`https://xivapi.com/${this.contentName}`, true);
@@ -16,23 +16,24 @@ export class I18nExtractor extends AbstractExtractor {
     source.subscribe({
       next: rows => {
         rows.forEach(entity => {
-          entites[entity.ID] = {
-            en: entity[`${this.nameColumn}en`].toString(),
-            ja: entity[`${this.nameColumn}ja`].toString(),
-            de: entity[`${this.nameColumn}de`].toString(),
-            fr: entity[`${this.nameColumn}fr`].toString()
+          const mapped = this.dataMapper(entity, entities);
+          entities[mapped.ID] = {
+            en: mapped[`${this.nameColumn}en`].toString(),
+            ja: mapped[`${this.nameColumn}ja`].toString(),
+            de: mapped[`${this.nameColumn}de`].toString(),
+            fr: mapped[`${this.nameColumn}fr`].toString()
           };
           Object.keys(this.additionalColumns)
             .forEach(key => {
-              entites[entity.ID] = {
-                ...entites[entity.ID],
-                [this.additionalColumns[key]]: get(entity, key)
+              entities[mapped.ID] = {
+                ...entities[mapped.ID],
+                [this.additionalColumns[key]]: get(mapped, key)
               };
             });
         });
       },
       complete: () => {
-        this.persistToJsonAsset(this.fileName, entites);
+        this.persistToJsonAsset(this.fileName, entities);
         this.done();
       }
     });

@@ -21339,5 +21339,62 @@
       "tug": 0,
       "bait": 36593
     }
+  ],
+  "37697": [
+    {
+      "spot": 268,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36447,
+      "spawn": 3,
+      "duration": 3
+    }
+  ],
+  "37845": [
+    {
+      "spot": 253,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 16,
+      "duration": 4,
+      "weathers": [
+        15
+      ]
+    }
+  ],
+  "37850": [
+    {
+      "spot": 272,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 0,
+      "duration": 2
+    }
+  ],
+  "37852": [
+    {
+      "spot": 284,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36597,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        49
+      ]
+    }
+  ],
+  "37853": [
+    {
+      "spot": 275,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36478,
+      "weathers": [
+        49
+      ]
+    }
   ]
 }

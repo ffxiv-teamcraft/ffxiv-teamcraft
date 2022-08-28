@@ -566,7 +566,7 @@
                       <nz-card-meta [nzTitle]="recipeTitle">
                         <ng-template #recipeTitle>
                           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="getRecipe(recipeSource.id, gtData) | async as recipe">
-                            <ng-container *ngIf="recipe.job !== 0">
+                            <ng-container *ngIf="recipe.job > 0">
                               <div class="recipe-title" fxLayout="column">
                                 <div fxLayout="row" fxLayoutGap="5px">
                                   <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
@@ -595,6 +595,12 @@
                                   <b>{{'SIMULATOR.Quality' | translate}}</b>:
                                   <div>{{recipe.quality}}</div>
                                 </div>
+                              </div>
+                            </ng-container>
+                            <ng-container *ngIf="recipe.isIslandRecipe">
+                              <div class="recipe-title">
+                                <img src="./assets/icons/island.png" alt="Island Recipe" class="job-icon small">
+                                {{'ITEMS.Island_recipe' | translate}}
                               </div>
                             </ng-container>
                           </div>

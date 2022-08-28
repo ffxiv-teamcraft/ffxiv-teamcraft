@@ -94,14 +94,17 @@
             <div>{{craft.lvl}}</div>
             <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
           </ng-container>
+          <ng-container *ngIf="craft.isIslandRecipe">
+            <img src="./assets/icons/island.png" alt="Island Recipe" class="img-icon" nz-tooltip [nzTooltipTitle]="'ITEMS.Island_recipe' | translate">
+          </ng-container>
           <app-company-workshop-tree-button *ngIf="craft.job == 0" [recipeId]="craft.id"></app-company-workshop-tree-button>
         </div>
       </ng-container>
       <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <button (click)="openGatheredByPopup(item)" nz-button nzShape="circle">
-          <img class="gathering-icon" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
+        <button (click)="openGatheredByPopup(item)" nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.SOURCES.Gatherable' | translate">
+          <img class="gathering-icon" [class.small]="source.data.type === -10" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
         </button>
-        <div>{{source.data.level}}</div>
+        <div *ngIf="!source.data.nodes[0].isIslandNode">{{source.data.level}}</div>
         <div *ngIf="source.data.stars_tooltip !== undefined">{{source.data.stars_tooltip}}</div>
       </div>
     </ng-container>

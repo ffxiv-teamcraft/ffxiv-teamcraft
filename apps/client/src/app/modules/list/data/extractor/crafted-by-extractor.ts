@@ -36,7 +36,8 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
               durability: craft.durability,
               progression: craft.progress,
               quality: craft.quality,
-              yield: craft.yields
+              yield: craft.yields,
+              isIslandRecipe: craft.isIslandRecipe || false
             };
             if (craft.masterbook && typeof craft.masterbook === 'number') {
               craftedBy.masterbook = {
