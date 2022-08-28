@@ -31,7 +31,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     this.get('https://raw.githubusercontent.com/ufx/GarlandTools/master/Supplemental/FFXIV%20Data%20-%20Duties.json').pipe(
       switchMap(GTDuties => {
-        const desynth = this.requireLazyFile('desynth');
+        const desynth = {};
         const reduction = this.requireLazyFile('reduction');
         const voyageSources = this.requireLazyFile('voyage-sources');
         const deprecated = {};
