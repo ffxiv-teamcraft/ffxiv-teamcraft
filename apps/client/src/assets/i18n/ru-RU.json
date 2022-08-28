@@ -50,7 +50,8 @@
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
     "Want_filters": "Хотите больше фильтров?",
-    "Open_search": "Вместо этого откройте страницу поиска"
+    "Open_search": "Вместо этого откройте страницу поиска",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
     "Consider_requirements": "Рассмотреть требования",
     "Ignore_requirements": "Игнорировать требования",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
