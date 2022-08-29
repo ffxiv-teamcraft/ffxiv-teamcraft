@@ -18,11 +18,21 @@
       <nz-list-item [nzContent]="content">
         <nz-list-item-meta [nzAvatar]="avatar"
                            [nzDescription]="result.recipe !== undefined?description:null"
-                           [nzTitle]="result.isCustom ? (result.itemId | customItemName | async) : (result.itemId | itemName | i18n)">
+                           [nzTitle]="title">
+          <ng-template #title>
+            <span *ngIf="result.isCustom">
+              {{result.itemId | customItemName | async}}
+            </span>
+            <span *ngIf="!result.isCustom">
+              <app-i18n-name [content]="result.contentType" [id]="result.itemId"></app-i18n-name>
+            </span>
+          </ng-template>
           <ng-template #avatar>
             <div class="item-icon-container">
               <label nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
-              <app-item-icon [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+              <app-item-icon *ngIf="result.contentType === 'items'" [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
+              <app-item-icon *ngIf="result.contentType === 'islandBuildings'" [icon]="result.icon" [itemId]="null" [width]="32"
+                             [tooltipDisabled]="true"></app-item-icon>
             </div>
           </ng-template>
           <ng-template #description>
