@@ -13,8 +13,11 @@ export class RecipesExtractor extends AbstractExtractor {
     const recipesPerItem = {};
     combineLatest([
       this.getAllEntries('https://xivapi.com/CompanyCraftSequence'),
-      this.aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,RequiredQuality,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert,SecretRecipeBook')
-    ]).subscribe(([companyCrafts, xivapiRecipes]) => {
+      this.aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,RequiredQuality,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert,SecretRecipeBook'),
+      this.getAllEntries('https://xivapi.com/MJIRecipe'),
+      this.getAllEntries('https://xivapi.com/MJICraftworksObject'),
+      this.getAllEntries('https://xivapi.com/MJIBuilding'),
+    ]).subscribe(([companyCrafts, xivapiRecipes, mjiRecipes, mjiCraftworksObjects, mjiBuildings]) => {
       xivapiRecipes.forEach(recipe => {
         if (recipe.RecipeLevelTable === null) {
           return;
@@ -135,6 +138,166 @@ export class RecipesExtractor extends AbstractExtractor {
           }
         }
         recipes.push(recipe);
+      });
+
+      mjiRecipes.forEach(mjiRecipe => {
+        const ingredients = Object.keys(mjiRecipe)
+          .filter(k => /Material\d/.test(k))
+          .sort((a, b) => a < b ? -1 : 1)
+          .filter(key => mjiRecipe[key] && mjiRecipe[key].ID > 0)
+          .map((key) => {
+            const index = +/Material(\d)/.exec(key)[1];
+            return {
+              id: mjiRecipe[key].ItemPouch?.ItemTargetID,
+              amount: +mjiRecipe[`Amount${index}`]
+            };
+          })
+          .filter(i => !!i.id);
+        const lazyRecipeRow = {
+          id: `mji-${mjiRecipe.ID}`,
+          job: -10,
+          lvl: 1,
+          yields: 1,
+          result: mjiRecipe.KeyItem?.ItemTargetID || mjiRecipe.KeyItem?.ItemPouch?.ItemTargetID,
+          qs: false,
+          hq: false,
+          durability: 0,
+          quality: 0,
+          progress: 0,
+          suggestedControl: 0,
+          suggestedCraftsmanship: 0,
+          progressDivider: 0,
+          qualityDivider: 0,
+          progressModifier: 0,
+          qualityModifier: 0,
+          controlReq: 0,
+          craftsmanshipReq: 0,
+          rlvl: 0,
+          requiredQuality: 0,
+          ingredients: ingredients
+            .map(ingredient => {
+              return {
+                id: ingredient.id,
+                amount: ingredient.amount,
+                quality: 0
+              };
+            }),
+          expert: false,
+          conditionsFlag: 0,
+          isIslandRecipe: true
+        };
+
+        if (lazyRecipeRow.result && lazyRecipeRow.ingredients.length > 0) {
+          recipes.push(lazyRecipeRow);
+          recipesPerItem[lazyRecipeRow.result] = [...(recipesPerItem[lazyRecipeRow.result] || []), lazyRecipeRow];
+        }
+      });
+
+      mjiCraftworksObjects.forEach(mjiCraftworksObject => {
+        const ingredients = Object.keys(mjiCraftworksObject)
+          .filter(k => /Material\d/.test(k))
+          .sort((a, b) => a < b ? -1 : 1)
+          .filter(key => mjiCraftworksObject[key] && mjiCraftworksObject[key].ID > 0)
+          .map((key) => {
+            const index = +/Material(\d)/.exec(key)[1];
+            return {
+              id: mjiCraftworksObject[key].ItemTargetID,
+              amount: +mjiCraftworksObject[`Amount${index}`]
+            };
+          })
+          .filter(i => !!i.id);
+        const lazyRecipeRow = {
+          id: `mji-craftworks-${mjiCraftworksObject.ID}`,
+          job: -10,
+          lvl: 1,
+          yields: 1,
+          result: mjiCraftworksObject.ItemTargetID,
+          qs: false,
+          hq: false,
+          durability: 0,
+          quality: 0,
+          progress: 0,
+          suggestedControl: 0,
+          suggestedCraftsmanship: 0,
+          progressDivider: 0,
+          qualityDivider: 0,
+          progressModifier: 0,
+          qualityModifier: 0,
+          controlReq: 0,
+          craftsmanshipReq: 0,
+          rlvl: 0,
+          requiredQuality: 0,
+          ingredients: ingredients
+            .map(ingredient => {
+              return {
+                id: ingredient.id,
+                amount: ingredient.amount,
+                quality: 0
+              };
+            }),
+          expert: false,
+          conditionsFlag: 0,
+          isIslandRecipe: true
+        };
+
+        if (lazyRecipeRow.result && lazyRecipeRow.ingredients.length > 0) {
+          recipes.push(lazyRecipeRow);
+          recipesPerItem[lazyRecipeRow.result] = [...(recipesPerItem[lazyRecipeRow.result] || []), lazyRecipeRow];
+        }
+      });
+
+      mjiBuildings.forEach(building => {
+        const ingredients = Object.keys(building)
+          .filter(k => /Material\d/.test(k))
+          .sort((a, b) => a < b ? -1 : 1)
+          .filter(key => !!building[key])
+          .map((key) => {
+            const index = +/Material(\d)/.exec(key)[1];
+            return {
+              id: building[key].ItemTargetID,
+              amount: +building[`Amount${index}`]
+            };
+          })
+          .filter(i => !!i.id);
+        const ID = -10000 + -1 * (+building.ID * 100);
+        const lazyRecipeRow = {
+          id: `mji-building-${building.ID}`,
+          job: -10,
+          lvl: 1,
+          yields: 1,
+          result: ID,
+          qs: false,
+          hq: false,
+          durability: 0,
+          quality: 0,
+          progress: 0,
+          suggestedControl: 0,
+          suggestedCraftsmanship: 0,
+          progressDivider: 0,
+          qualityDivider: 0,
+          progressModifier: 0,
+          qualityModifier: 0,
+          controlReq: 0,
+          craftsmanshipReq: 0,
+          rlvl: 0,
+          requiredQuality: 0,
+          ingredients: ingredients
+            .map(ingredient => {
+              return {
+                id: ingredient.id,
+                amount: ingredient.amount,
+                quality: 0
+              };
+            }),
+          expert: false,
+          conditionsFlag: 0,
+          isIslandRecipe: true
+        };
+
+        if (lazyRecipeRow.result && lazyRecipeRow.ingredients.length > 0) {
+          recipes.push(lazyRecipeRow);
+          recipesPerItem[lazyRecipeRow.result] = [...(recipesPerItem[lazyRecipeRow.result] || []), lazyRecipeRow];
+        }
       });
 
       this.persistToJsonAsset('recipes', recipes);

@@ -6,9 +6,15 @@ import { AbstractExtractor } from '../abstract-extractor';
 export class NodesExtractor extends AbstractExtractor {
 
   private gatheringItems = {};
+
+  private mjiGatheringItems = {};
+
   private gatheringPoints = {};
+
   private gatheringItemPoints = {};
+
   private nodes = {};
+
   private gatheringPointToBaseId = {};
 
   public isSpecific = true;
@@ -21,6 +27,7 @@ export class NodesExtractor extends AbstractExtractor {
     const gatheringItems$ = new Subject();
     const gatheringPoints$ = new Subject();
     const gatheringItemPoints$ = new Subject();
+
 
     this.getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
       page.Results

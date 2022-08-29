@@ -21339,5 +21339,123 @@
       "tug": 0,
       "bait": 36593
     }
+  ],
+  "37697": [
+    {
+      "spot": 268,
+      "hookset": 1,
+      "tug": 0,
+      "bait": 36447,
+      "spawn": 3,
+      "duration": 3
+    }
+  ],
+  "37845": [
+    {
+      "spot": 253,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 16,
+      "duration": 4,
+      "weathers": [
+        15
+      ]
+    }
+  ],
+  "37846": [
+    {
+      "spot": 257,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36590,
+      "spawn": 8,
+      "duration": 8,
+      "weathers": [
+        3
+      ],
+      "weathersFrom": [
+        1,
+        2
+      ]
+    }
+  ],
+  "37847": [
+    {
+      "spot": 261,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36592,
+      "weathers": [
+        4
+      ],
+      "weathersFrom": [
+        1,
+        2
+      ]
+    }
+  ],
+  "37848": [
+    {
+      "spot": 266,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36590,
+      "spawn": 8,
+      "duration": 8,
+      "weathers": [
+        7
+      ],
+      "weathersFrom": [
+        2,
+        1
+      ]
+    }
+  ],
+  "37850": [
+    {
+      "spot": 272,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 0,
+      "duration": 2
+    }
+  ],
+  "37851": [
+    {
+      "spot": 281,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        149
+      ]
+    }
+  ],
+  "37852": [
+    {
+      "spot": 284,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36597,
+      "spawn": 2,
+      "duration": 2,
+      "weathers": [
+        49
+      ]
+    }
+  ],
+  "37853": [
+    {
+      "spot": 275,
+      "hookset": 1,
+      "tug": 1,
+      "bait": 36478,
+      "weathers": [
+        49
+      ]
+    }
   ]
 }

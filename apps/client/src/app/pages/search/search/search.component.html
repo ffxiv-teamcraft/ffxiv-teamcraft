@@ -360,14 +360,15 @@
             <div (nzOnConfirm)="removeSelection(item, results)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
               <i nz-icon nzType="close"></i>
             </div>
-            <app-item-icon [itemId]="item.itemId" [width]="24"></app-item-icon>
+            <app-item-icon *ngIf="item.contentType === 'items'" [icon]="item.icon" [itemId]="item.itemId" [width]="24"></app-item-icon>
+            <app-item-icon *ngIf="item.contentType === 'islandBuildings'" [icon]="item.icon" [itemId]="null" [width]="24" [tooltipDisabled]="true"></app-item-icon>
             <div fxLayout="column">
               <div>
-                <app-i18n-name content="items" [id]="item.itemId"></app-i18n-name>
+                <app-i18n-name [content]="item.contentType" [id]="item.itemId"></app-i18n-name>
               </div>
               <div fxLayout="row" fxLayoutGap="5px">
                 <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
-                <ng-container *ngIf="item.recipe && item.recipe.job">
+                <ng-container *ngIf="item.recipe && item.recipe.job > 0">
                   <img *ngIf="(item.recipe.job | i18nRow:'jobAbbr' | async).en as icon"
                        alt="{{item.recipe.job | i18nRow:'jobAbbr' | i18n}}"
                        class="job-icon small"

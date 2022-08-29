@@ -304,13 +304,30 @@ export class ExtractorComponent {
     this.running = true;
     this.currentLabel = 'Extracts';
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
-    this.lazyData.getEntry('items').pipe(
-      switchMap(lazyItems => {
-        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys(lazyItems);
+    combineLatest([
+      this.lazyData.getEntry('items'),
+      this.lazyData.getEntry('islandBuildings')
+    ]).pipe(
+      switchMap(([lazyItems, islandBuildings]) => {
+        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys({ ...islandBuildings, ...lazyItems }).sort((a, b) => +a - +b);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {
-            return this.extractor.addDataToItem({ id: +itemId } as ListRow);
+            let row$: Observable<ListRow> = of({ id: +itemId } as ListRow);
+            if (itemId <= -10000) {
+              row$ = this.lazyData.getRow('islandBuildings', +itemId).pipe(
+                map(building => {
+                  return {
+                    id: +itemId,
+                    contentType: 'islandBuildings',
+                    xivapiIcon: building.icon
+                  } as ListRow;
+                })
+              );
+            }
+            return row$.pipe(
+              switchMap(row => this.extractor.addDataToItem(row))
+            );
           }, 50),
           tap(() => this.done$.next(this.done$.value + 1)),
           bufferCount(itemIds.length)

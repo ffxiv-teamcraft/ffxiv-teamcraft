@@ -1,0 +1,272 @@
+{
+  "-10000": {
+    "key": "0.0",
+    "icon": "/i/053000/053919_hr1.png",
+    "en": "Cozy Cabin I",
+    "de": "Strandhütte I",
+    "ja": "アイランドホール I",
+    "fr": "Hutte placide I",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 10
+      },
+      {
+        "id": 37551,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 5
+      },
+      {
+        "id": 37554,
+        "amount": 5
+      },
+      {
+        "id": 37559,
+        "amount": 5
+      }
+    ]
+  },
+  "-10010": {
+    "key": "0.1",
+    "icon": "/i/053000/053920_hr1.png",
+    "en": "Cozy Cabin II",
+    "de": "Strandhütte II",
+    "ja": "アイランドホール II",
+    "fr": "Hutte placide II",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 15
+      },
+      {
+        "id": 37562,
+        "amount": 10
+      },
+      {
+        "id": 37565,
+        "amount": 10
+      },
+      {
+        "id": 37551,
+        "amount": 5
+      },
+      {
+        "id": 37564,
+        "amount": 5
+      }
+    ]
+  },
+  "-10020": {
+    "key": "0.2",
+    "icon": "/i/053000/053921_hr1.png",
+    "en": "Cozy Cabin III",
+    "de": "Strandhütte III",
+    "ja": "アイランドホール III",
+    "fr": "Hutte placide III",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 10
+      },
+      {
+        "id": 37568,
+        "amount": 10
+      },
+      {
+        "id": 37569,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 5
+      }
+    ]
+  },
+  "-10100": {
+    "key": "1.0",
+    "icon": "/i/053000/053916_hr1.png",
+    "en": "Workshop I",
+    "de": "Inselatelier I",
+    "ja": "開拓工房 I",
+    "fr": "Fabrique I",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 10
+      },
+      {
+        "id": 37551,
+        "amount": 10
+      },
+      {
+        "id": 37565,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 5
+      },
+      {
+        "id": 37559,
+        "amount": 5
+      }
+    ]
+  },
+  "-10110": {
+    "key": "1.1",
+    "icon": "/i/053000/053917_hr1.png",
+    "en": "Workshop II",
+    "de": "Inselatelier II",
+    "ja": "開拓工房 II",
+    "fr": "Fabrique II",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 15
+      },
+      {
+        "id": 37569,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 5
+      },
+      {
+        "id": 37564,
+        "amount": 5
+      }
+    ]
+  },
+  "-10120": {
+    "key": "1.2",
+    "icon": "/i/053000/053918_hr1.png",
+    "en": "Workshop III",
+    "de": "Inselatelier III",
+    "ja": "開拓工房 III",
+    "fr": "Fabrique III",
+    "ingredients": [
+      {
+        "id": 37572,
+        "amount": 15
+      },
+      {
+        "id": 37574,
+        "amount": 15
+      },
+      {
+        "id": 37560,
+        "amount": 10
+      },
+      {
+        "id": 37569,
+        "amount": 10
+      },
+      {
+        "id": 37579,
+        "amount": 3
+      }
+    ]
+  },
+  "-10200": {
+    "key": "2.0",
+    "icon": "/i/053000/053922_hr1.png",
+    "en": "Granary I",
+    "de": "Kornkammer I",
+    "ja": "グラナリーオフィス I",
+    "fr": "Grange I",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 10
+      },
+      {
+        "id": 37560,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37564,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 5
+      }
+    ]
+  },
+  "-10210": {
+    "key": "2.1",
+    "icon": "/i/053000/053923_hr1.png",
+    "en": "Granary II",
+    "de": "Kornkammer II",
+    "ja": "グラナリーオフィス II",
+    "fr": "Grange II",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 15
+      },
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37569,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 5
+      },
+      {
+        "id": 37571,
+        "amount": 5
+      }
+    ]
+  },
+  "-10220": {
+    "key": "2.2",
+    "icon": "/i/053000/053924_hr1.png",
+    "en": "Granary III",
+    "de": "Kornkammer III",
+    "ja": "グラナリーオフィス III",
+    "fr": "Grange III",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37572,
+        "amount": 15
+      },
+      {
+        "id": 37574,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37580,
+        "amount": 3
+      }
+    ]
+  }
+}

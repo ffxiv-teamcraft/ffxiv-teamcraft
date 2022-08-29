@@ -55,6 +55,13 @@ export class ItemIconComponent {
     observeInput(this, 'icon', true)
   ]).pipe(
     switchMap(([itemId, icon]) => {
+      if (!itemId) {
+        this.tooltipDisabled = true;
+        this.disableClick = true;
+      }
+      if (!itemId) {
+        return of(icon);
+      }
       if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
         return of(icon);
       }
@@ -97,7 +104,7 @@ export class ItemIconComponent {
   handleClick(event: MouseEvent): void {
     event.preventDefault();
     event.stopPropagation();
-    if (this.disableClick) {
+    if (this.disableClick || this.itemId === null) {
       return;
     }
     if (event.which === 2) {

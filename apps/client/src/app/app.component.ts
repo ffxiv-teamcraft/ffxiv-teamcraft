@@ -168,6 +168,7 @@ export class AppComponent implements OnInit {
   public vmAdRef: ElementRef;
 
   public allaganReportsQueueCount$: Observable<number> = of(0);
+
   public allaganReportsUnappliedCount$: Observable<number> = of(0);
 
   private reloadTime$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
@@ -248,7 +249,7 @@ export class AppComponent implements OnInit {
         this.allaganReportsQueueCount$ = this.allaganReportsService.getQueueStatus().pipe(
           map(status => status.length)
         );
-        this.allaganReportsQueueCount$ = this.allaganReportsService.getUnappliedCount();
+        this.allaganReportsUnappliedCount$ = this.allaganReportsService.getUnappliedCount();
       }, 2000);
     });
 

@@ -11,19 +11,22 @@
              nz-checkbox></label>
     </div>
     <div class="avatar">
-      <app-item-icon [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType === 'islandBuildings'" [icon]="row.icon" [itemId]="null" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
     <div fxLayout="column">
       <div [appItemRarity]="+row.itemId" class="item-name" fxLayout="row" fxLayoutGap="5px">
-        <app-i18n-name content="items" [id]="+row.itemId"></app-i18n-name>
-        <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"></app-db-button>
+        <app-i18n-name [content]="row.contentType" [id]="row.itemId"></app-i18n-name>
+        <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"
+                       *ngIf="row.contentType === 'items'"></app-db-button>
         <div>
           <a nz-button nzSize="small" nzShape="circle" routerLink="/allagan-reports/{{row.itemId}}" nz-tooltip
+             *ngIf="row.contentType === 'items'"
              [nzTooltipTitle]="'ALLAGAN_REPORTS.Open_item' | translate">
             <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
           </a>
         </div>
-        <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"></app-marketboard-icon>
+        <app-marketboard-icon [itemId]="row.itemId" [showHistory]="true"  *ngIf="row.contentType === 'items'"></app-marketboard-icon>
         <app-company-workshop-tree-button *ngIf="row.recipe?.job == 0" [recipeId]="row.recipe.recipeId" size="small"></app-company-workshop-tree-button>
       </div>
       <div *ngIf="row.recipe?.job > 1" class="description">
@@ -34,8 +37,13 @@
         lvl{{row.recipe.lvl}} <span
         *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
       </div>
-      <div *ngIf="row.recipe?.job <= 0" class="result-type">
+      <div *ngIf="row.recipe?.job <= 0 && row.recipe?.job > -10" class="result-type">
         {{('SEARCH_TYPES.' + row.type) | translate}}
+      </div>
+      <!-- Island craft-->
+      <div *ngIf="row.recipe?.job === -10">
+        <img src="./assets/icons/island.png" alt="Island Recipe" class="job-icon small">
+        {{'ITEMS.Island_recipe' | translate}}
       </div>
     </div>
   </div>
@@ -68,7 +76,7 @@
               nz-button nz-tooltip>
         <i nz-icon nzType="clock-circle-o"></i>
       </button>
-      <button (click)="openInSimulator.emit()" *ngIf="row.recipe !== undefined" [nzShape]="'circle'"
+      <button (click)="openInSimulator.emit()" *ngIf="row.recipe !== undefined && row.recipe.job > 0" [nzShape]="'circle'"
               [nzTooltipTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
               nz-button
               nz-tooltip>

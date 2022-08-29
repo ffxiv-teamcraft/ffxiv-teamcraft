@@ -20,6 +20,7 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
 import { Team } from '../../model/team/team';
+import { LazyIslandBuilding } from '../../lazy-data/model/lazy-island-building';
 
 export interface ListAdditionParams {
   itemId: number | string;
@@ -73,7 +74,14 @@ export class ListManagerService {
           first()
         );
     }
-    const itemSource$ = typeof itemId === 'number' ? this.lazyData.getRow('extracts', itemId) : this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
+    let itemSource$: Observable<ListRow | CustomItem>;
+    if (typeof itemId === 'number') {
+      itemSource$ = this.lazyData.getRow('extracts', itemId);
+    } else if (itemId.startsWith('mjibuilding')) {
+      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
+    } else {
+      itemSource$ = this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
+    }
     return itemSource$.pipe(
       switchMap(itemSource => {
         return team$.pipe(

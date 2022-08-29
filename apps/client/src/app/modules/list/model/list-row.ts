@@ -14,6 +14,7 @@ import { FateData } from './fate-data';
 import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 import { GardeningData } from './gardening-data';
 import { MogstationItem } from './mogstation-item';
+import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -31,6 +32,10 @@ export class ListRow extends DataModel {
 
   // The amount of crafts needed to get the amount of items needed.
   amount_needed?: number;
+
+  contentType?: LazyDataI18nKey;
+
+  xivapiIcon?: string;
 
   done: number;
 
