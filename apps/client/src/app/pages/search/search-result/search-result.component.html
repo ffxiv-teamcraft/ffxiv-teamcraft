@@ -12,7 +12,7 @@
     </div>
     <div class="avatar">
       <app-item-icon *ngIf="row.contentType === 'items'" [icon]="row.icon" [itemId]="row.itemId" [width]="32"></app-item-icon>
-      <app-item-icon *ngIf="row.contentType === 'islandBuildings'" [icon]="row.icon" [itemId]="null" [width]="32"></app-item-icon>
+      <app-item-icon *ngIf="row.contentType === 'islandBuildings'" [icon]="row.icon" [itemId]="null" [width]="32" [tooltipDisabled]="true"></app-item-icon>
     </div>
     <div fxLayout="column">
       <div [appItemRarity]="+row.itemId" class="item-name" fxLayout="row" fxLayoutGap="5px">

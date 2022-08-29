@@ -56,6 +56,10 @@ export class ItemIconComponent {
   ]).pipe(
     switchMap(([itemId, icon]) => {
       if (!itemId) {
+        this.tooltipDisabled = true;
+        this.disableClick = true;
+      }
+      if (!itemId) {
         return of(icon);
       }
       if (icon && icon.toString() === icon && icon.toString().indexOf('custom/') > -1 && !icon.toString().startsWith('t/')) {
