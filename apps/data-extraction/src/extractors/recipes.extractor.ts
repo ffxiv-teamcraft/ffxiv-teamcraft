@@ -158,7 +158,7 @@ export class RecipesExtractor extends AbstractExtractor {
           job: -10,
           lvl: 1,
           yields: 1,
-          result: mjiRecipe.KeyItem?.ItemTargetID || mjiRecipe.KeyItem?.ItemPouch?.ItemTargetID,
+          result: mjiRecipe.KeyItem?.ItemTargetID || mjiRecipe.ItemPouch?.ItemTargetID,
           qs: false,
           hq: false,
           durability: 0,
