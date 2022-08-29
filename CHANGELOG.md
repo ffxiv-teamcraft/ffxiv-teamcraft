@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.4"></a>
+## [9.7.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.3...v9.7.4) (2022-08-29)
+
+
+### Bug Fixes
+
+* **allagan-reports:** fixed counts being mixed up in topbar link ([1938054](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1938054))
+* **desynth:** removed automated extractor to only use allagan reports as resource ([d2f40d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2f40d8))
+
+
+### Features
+
+* **lists:** support for Island Sanctuary recipes and buildings ([23683b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23683b1))
+
+
+
 <a name="9.7.3"></a>
 ## [9.7.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.2...v9.7.3) (2022-08-25)
 
