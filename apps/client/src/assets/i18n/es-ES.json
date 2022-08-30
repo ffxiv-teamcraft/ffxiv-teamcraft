@@ -1984,7 +1984,8 @@
       "Other": "Otro inventario",
       "Armory": "Armería",
       "Current_Gear": "Current gear",
-      "RetainerMarket": "En venta por retenedores"
+      "RetainerMarket": "En venta por retenedores",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
