@@ -1984,7 +1984,8 @@
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
-      "RetainerMarket": "Im Verkauf bei Gehilfen"
+      "RetainerMarket": "Im Verkauf bei Gehilfen",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Um mehrere Charaktere und andere nützliche Funktionen zu unterstützen, muss Teamcraft wissen, welchen Charakter du momentan spielst oder zumindest welcher Charakter mit dem aktuellem Ingame Charakter verknüpft werden soll.",
