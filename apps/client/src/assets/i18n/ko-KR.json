@@ -1984,7 +1984,8 @@
       "Other": "다른 소지품",
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
-      "RetainerMarket": "집사가 판매중"
+      "RetainerMarket": "집사가 판매중",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤건지 알아야 합니다.",
