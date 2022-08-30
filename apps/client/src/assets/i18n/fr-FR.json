@@ -1984,7 +1984,8 @@
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
-      "RetainerMarket": "En vente par les servants"
+      "RetainerMarket": "En vente par les servants",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
