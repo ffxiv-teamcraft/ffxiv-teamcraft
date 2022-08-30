@@ -1984,7 +1984,8 @@
       "Other": "其他物品栏",
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
-      "RetainerMarket": "雇员出售列表"
+      "RetainerMarket": "雇员出售列表",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "请选择你当前登录的游戏角色要关联的 TC 角色。",
