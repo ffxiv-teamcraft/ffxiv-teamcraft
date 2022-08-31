@@ -516,7 +516,7 @@ export class InventoryService {
   private handleIslandPacket(inventory: UserInventory, action: { type: 'IslandInventoryPacket', itemId: number, quantity: number }): UserInventory {
     inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] || {};
     const previousEntry = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
-    if (action.quantity === 0) {
+    if (action.quantity === 0 || action.itemId < 37000) {
       delete inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
     } else {
       inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId] = {
@@ -529,7 +529,7 @@ export class InventoryService {
         spiritBond: 0
       };
     }
-    if (previousEntry) {
+    if (previousEntry && action.itemId >= 37000) {
       this._inventoryPatches$.next({
         itemId: action.itemId,
         containerId: ContainerType.IslandSanctuaryBag,
