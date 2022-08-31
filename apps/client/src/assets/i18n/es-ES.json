@@ -50,7 +50,8 @@
     "Share_url_copied": "URL de búsqueda copiado al portapapeles",
     "Only_craftable": "Solo recetas",
     "Want_filters": "¿Necesitas más filtros?",
-    "Open_search": "En su lugar, abre la página de búsqueda"
+    "Open_search": "En su lugar, abre la página de búsqueda",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Estos son los objetos de tu inventario que no se usan en la lista",
     "Consider_requirements": "Considerar requisitos",
     "Ignore_requirements": "Ignorar los requisitos",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado",
-      "MISSING_STATS_REQUIREMENT": "No tiene los atributos mínimos necesarios para fabricar esto"
+      "MISSING_STATS_REQUIREMENT": "No tiene los atributos mínimos necesarios para fabricar esto",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
@@ -1227,7 +1232,7 @@
     "No_results": "No se encontraron misiones leve",
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
-    "All_deliveries": "Todas las {{value}} entregas",
+    "All_deliveries": "Todas las entregas ({{value}})",
     "Compute_exp": "Mostrar impacto en exp",
     "Global_exp": "Usar experiencia global",
     "More_on_gamerescape": "Más detalles en gamerescape",
@@ -1979,7 +1984,8 @@
       "Other": "Otro inventario",
       "Armory": "Armería",
       "Current_Gear": "Current gear",
-      "RetainerMarket": "En venta por retenedores"
+      "RetainerMarket": "En venta por retenedores",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
@@ -2300,7 +2306,8 @@
         "Check": "Comprobar integridad"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Todos los personajes vinculados son válidos"
+        "All_characters_valid": "Todos los personajes vinculados son válidos",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },

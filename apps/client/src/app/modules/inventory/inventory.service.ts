@@ -36,6 +36,7 @@ import { LazyMateria } from '../../lazy-data/model/lazy-materia';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { LodestoneIdEntry } from '../../model/user/lodestone-id-entry';
 import { PlatformService } from '../../core/tools/platform.service';
+import { toIpcData } from '../../core/rxjs/to-ipc-data';
 
 @Injectable({
   providedIn: 'root'
@@ -119,6 +120,11 @@ export class InventoryService {
     const updateInventorySlotMessages$ = this.ipc.packets$.pipe(ofMessageType('updateInventorySlot'));
     const itemMarketBoardInfoMessages$ = this.ipc.packets$.pipe(ofMessageType('itemMarketBoardInfo'));
     const clientTriggerMbPriceMessages$ = this.ipc.packets$.pipe(ofMessageType('clientTrigger'), filter(m => m.parsedIpcData.commandId === 400));
+    const islandSanctuaryInventoryPackets$ = this.ipc.packets$.pipe(
+      ofMessageType('actorControlSelf'),
+      toIpcData(),
+      filter(p => p.category === 378)
+    );
 
     let constantsUrl = 'https://raw.githubusercontent.com/karashiiro/FFXIVOpcodes/master/constants.min.json';
 
@@ -174,8 +180,18 @@ export class InventoryService {
             map(retainer => ({ type: 'RetainerSpawn', retainer: retainer }))
           );
 
+          const islandPackets$: Observable<{ type: 'IslandInventoryPacket', itemId: number, quantity: number }> = islandSanctuaryInventoryPackets$.pipe(
+            map(p => {
+              return {
+                type: 'IslandInventoryPacket',
+                itemId: p.param2,
+                quantity: p.param4
+              };
+            })
+          );
+
           const customActions$ = merge(this.contentId$, this.setInventory$, this.resetInventory$, retainerActions$);
-          return merge(packetActions$, customActions$, packetActions2$).pipe(
+          return merge(packetActions$, customActions$, packetActions2$, islandPackets$).pipe(
             scan((state: InventoryState, action) => {
               if (!action) {
                 return state;
@@ -188,6 +204,8 @@ export class InventoryService {
               }
               try {
                 switch (action.type) {
+                  case 'IslandInventoryPacket':
+                    return { ...state, inventory: this.handleIslandPacket(state.inventory, action) };
                   case 'SetContentId':
                     state.inventory.contentId = action.contentId;
                     delete state.inventory.items['null'];
@@ -380,6 +398,8 @@ export class InventoryService {
 
   public getContainerName(containerId: number): string {
     switch (containerId) {
+      case ContainerType.IslandSanctuaryBag:
+        return 'IslandSanctuaryBag';
       case ContainerType.Crystal:
         return 'Crystal';
       case ContainerType.Bag0:
@@ -491,6 +511,35 @@ export class InventoryService {
 
   public resetInventory(): void {
     this.resetInventory$.next({ type: 'Reset' });
+  }
+
+  private handleIslandPacket(inventory: UserInventory, action: { type: 'IslandInventoryPacket', itemId: number, quantity: number }): UserInventory {
+    inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag] || {};
+    const previousEntry = inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
+    if (action.quantity === 0) {
+      delete inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId];
+    } else {
+      inventory.items[inventory.contentId][ContainerType.IslandSanctuaryBag][action.itemId] = {
+        itemId: action.itemId,
+        quantity: action.quantity,
+        hq: false,
+        materias: [],
+        slot: action.itemId,
+        containerId: ContainerType.IslandSanctuaryBag,
+        spiritBond: 0
+      };
+    }
+    if (previousEntry) {
+      this._inventoryPatches$.next({
+        itemId: action.itemId,
+        containerId: ContainerType.IslandSanctuaryBag,
+        hq: false,
+        quantity: action.quantity - previousEntry.quantity,
+        retainerName: null,
+        moved: false
+      });
+    }
+    return inventory;
   }
 
   private handleContainerInfo(inventory: UserInventory, packet: ContainerInfo, itemInfos: Array<ItemInfo | CurrencyCrystalInfo>, materias: LazyMateria[], retainer?: string): UserInventory {

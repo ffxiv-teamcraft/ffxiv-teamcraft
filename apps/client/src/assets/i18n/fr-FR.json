@@ -50,7 +50,8 @@
     "Share_url_copied": "Url de recherche copié dans le presse-papiers",
     "Only_craftable": "Recettes uniquement",
     "Want_filters": "Besoin de plus de filtres ?",
-    "Open_search": "Ouvrir la page de recherche"
+    "Open_search": "Ouvrir la page de recherche",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
     "Consider_requirements": "Afficher les pré-requis",
     "Ignore_requirements": "Ignorer les pré-requis",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
-      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
+      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
@@ -1979,7 +1984,8 @@
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
-      "RetainerMarket": "En vente par les servants"
+      "RetainerMarket": "En vente par les servants",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
@@ -2300,7 +2306,8 @@
         "Check": "Exécuter le contrôle d'intégrité"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Tous les personnages liés sont valides"
+        "All_characters_valid": "Tous les personnages liés sont valides",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },

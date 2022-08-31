@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.5"></a>
+## [9.7.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.4...v9.7.5) (2022-08-31)
+
+
+### Bug Fixes
+
+* **alarms:** fixed custom alarms to properly support Island Sanctuary ([d1cbb45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1cbb45))
+* **allagan-reports:** fixed main page not loading ([bab869b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bab869b))
+* **db:** fix some island recipes not being added to lists with requirements ([aba5ebc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aba5ebc))
+* **gearset:** fixed materia order optimizer ([90f6e0e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90f6e0e))
+* **list:** fix addition popup not loading Island items properly ([4bb9b9b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4bb9b9b))
+* **log-tracker:** fixed missing 6.2 fish data ([4244350](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4244350))
+* **requirements:** fix requirements popup using wrong name ([c7b0252](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7b0252))
+* **simulator:** fix Muscle Memory Primed interaction and steps count ([8142eac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8142eac))
+* **simulator:** fixed rouding error on some specific quality actions/stats combo ([9641885](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9641885))
+
+
+### Features
+
+* **data:** update for cn patch-6.11 ([88a0b02](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/88a0b02))
+* **desktop:** Island Sanctuary inventory tracking ([9350a51](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9350a51))
+
+
+
 <a name="9.7.4"></a>
 ## [9.7.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.3...v9.7.4) (2022-08-29)
 
