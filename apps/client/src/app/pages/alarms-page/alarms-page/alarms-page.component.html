@@ -193,7 +193,7 @@
               <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
             </div>
             <app-gathering-item-uses [itemId]="row.alarm.itemId"></app-gathering-item-uses>
-            <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+            <img *ngIf="row.alarm.type !== null && row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
           </div>
         </ng-template>
         <ng-template #cardDescription>
@@ -210,7 +210,7 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
-                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
+                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type ? (row.alarm.type | nodeTypeIcon: true) : null}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
             <app-db-button [type]="row.dbType" [id]="row.alarm.nodeId"></app-db-button>
             <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
@@ -297,7 +297,7 @@
         </ng-template>
         <ng-template #map>
           <app-map *ngIf="row.alarm.mapId > 0" [mapId]="row.alarm.mapId"
-                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}]"></app-map>
+                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type ? (row.alarm.type | nodeTypeIcon: true) : null}]"></app-map>
         </ng-template>
         <ng-template #deleteAlarmTpl>
           <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTooltipTitle]="'ALARMS.Delete_alarm' | translate" nz-tooltip
