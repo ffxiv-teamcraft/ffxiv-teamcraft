@@ -472,7 +472,7 @@ export class FreeCompanyWorkshopFacade {
 
   @Memoized()
   public getSubmarineMaxRank(): Observable<number> {
-    return of(95);
+    return of(100);
   }
 
   @Memoized()
