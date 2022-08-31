@@ -50,7 +50,8 @@
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
     "Only_craftable": "Nur Rezepte",
     "Want_filters": "Brauchen Sie mehr Filter?",
-    "Open_search": "Suchseite stattdessen öffnen"
+    "Open_search": "Suchseite stattdessen öffnen",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Anforderungen ignorieren",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -1062,7 +1066,7 @@
     "Remove_IP": "Entferne Fulminanter Start",
     "Stats_applied": "Werte angewendet",
     "Show_rotations_above_stats": "Rotationen mit den erforderlichen Werten über deinen einbeziehen",
-    "Full_buttons": "Show full buttons",
+    "Full_buttons": "Zeige volle Schaltflächen",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -1101,7 +1105,7 @@
       "Success": "Erfolg: {{HQ}}% HQ",
       "Success_collectable": "Erfolg: {{collectability}}",
       "Set_to_simulate": "Attribute",
-      "Specialist_rotation_warning": "The result shown uses a non specialist stat set for a specialist rotation, which is why resulting HQ% might be way lower than expected.",
+      "Specialist_rotation_warning": "Das gezeigte Resultat verwendet für eine Spezialisten-Rotation die Attribute eines Nicht-Spezialisten, weshalb die resultierende HQ% wesentlich kleiner als erwartet ausfallen kann.",
       "Steps_count": "{{count}} Schritte",
       "TAGS": {
         "SPECIALIST": "Spezialist",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
       "NOT_SPECIALIST": "Spezialisten-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
-      "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
+      "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen",
+      "QUALITY_TOO_LOW": "Qualität entspricht nicht der geforderten Qualität des Rezepts"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
@@ -1214,7 +1219,7 @@
     "Content_copied": "Inhalt wurde in die Zwischenablage kopiert",
     "Cheaper_at_vendor": "Günstiger wenn vom NPC gekauft",
     "Copy_panel_as_text": "Diesen Bereich als Text kopieren",
-    "Copy_panel_as_csv": "Copy this panel as CSV",
+    "Copy_panel_as_csv": "Diesen Bereich als CSV kopieren",
     "Ignore_completed_items": "Abgeschlossene Elemente ausschließen",
     "Price_to_craft": "Herstellungskosten",
     "Price_from_vendor": "Händlerpreis",
@@ -1335,7 +1340,7 @@
     "Features_header": "Los geht's!",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fange an Dinge herzustellen.",
-      "Public_lists": "Clone lists created by the community that help you craft things, levekits, airships, BiS gear, everything can be found here.",
+      "Public_lists": "Klone von der Community erstellte Listen, die dir helfen Dinge herzustellen. Ausrüstung, Freibriefe, Notizbücher, Luftschiffe, alles kann hier gefunden werden.",
       "Alarms": "Erstelle Alarme, um kein Erscheinen eines Vorkommens zu verpassen, organisiere sie in Gruppen, importiere sie im Spiel, alles ist möglich!",
       "Gathering_location": "Finde Informationen über alle Sammlergegenstände, erstelle Alarme, erhalte sofort Koordinaten, den nächsten Ätheryten, erforderliche Bücher, und mehr!",
       "Rotations": "Erstelle Rotationen zum Herstellen, teste sie im Simulator, oder teste theoretische Rotationen mit dem benutzerdefinierten Simulator!",
@@ -1640,7 +1645,7 @@
       "Fish_per_hookset": "Fish per hookset",
       "Include_misses": "Fehlschläge einbeziehen",
       "Miss": "Fehlschlag",
-      "Position_unknown": "Unknown location"
+      "Position_unknown": "Unbekannter Ort"
     },
     "NODE": {
       "Items": "Gegenstände",
@@ -1757,8 +1762,8 @@
       "No_comments": "Keine Kommentare",
       "Post": "Abschicken",
       "Editor_tip": "Schreibe <Seitentyp>:\"<Name>\" um auf eine andere Seite zu verweisen. Beispiele: item:\"Curtana\", action:\"Bearbeiten\", map:\"Crystarium\". Unterstützte Seitentypen: item (Gegenstände), map (Karten), mob (Monster), achievement (Errungenschaften), leve (Freibriefe), npc, instance (Inhalte), quest (Aufgaben), trait (Eigenschaften), action (Kommandos), status (Statuseffekte)",
-      "Disclaimer": "Database comments are meant to be useful additional information. Using them to complain about the game or its content may result in a restriction from posting comments.",
-      "Deleted_comment": "This comment has been deleted"
+      "Disclaimer": "Datenbankkommentare sind nützliche zusätzliche Informationen, nutzt du sie, um sich über das Spiel oder dessen Inhalt zu beschweren, kann dies zu einer Einschränkung führen, Kommentare zu veröffentlichen.",
+      "Deleted_comment": "Dieser Kommentar wurde gelöscht"
     },
     "PATCH": {
       "Open_patch_page": "Hier klicken, um die vollständigen Patchnotes in der Datenbank anzuzeigen",
@@ -1811,7 +1816,7 @@
     "Placeholder": "Gegenstandsname",
     "No_missing_ingredients": "Keine fehlenden Zutaten",
     "Missing_X_ingredients": "Fehlende Zutaten: {{amount}}",
-    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
+    "Missing_X_ingredients_for_one_more": "Fehlende {{amount}} Zutat(en), um eine weitere hinzuzufügen",
     "Missing": "Fehlt",
     "Results": "Mögliche Rezepte",
     "Basket": "Korb",
@@ -1852,7 +1857,7 @@
     "Loading_data": "Lade Handelsdaten für die ausgewählte Währung",
     "Loading_universalis": "Abrufen der Marktbrettpreise von Universalis für {{amount}} Artikel",
     "X_sold_last_week": "{{amount}} verkauft in der letzten Woche",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "Diese Währung kann nicht mit etwas gehandelt werden, das auf dem Marktbrett verkauft werden kann"
   },
   "FOOD_PICKER": {
     "Title": "Essens-Wähler",
@@ -1932,24 +1937,24 @@
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort in einem anderen Gebiet und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
     "Please_sort": "Inventarerfassung funktioniert nicht, ohne zu wissen, welchen Charakter du gerade spielst, sortiere/entsortiere dein Inventar oder melde dich mit deinem Charakter an, damit Teamcraft deinen aktuellen Charakter erkennen kann.",
     "Unknown_character": "Unbekannter Ingame Charakter",
-    "No_character_id": "No ingame character ID set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame). This is only needed once.",
+    "No_character_id": "Keine Ingame-Charakter-ID gesetzt",
+    "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
     "Inventory_outdated": "Dein Inventar ist veraltet",
     "Please_update_inventory_popup": "Bitte ändere die Zone (durch Teleportieren oder Betreten eines Hauses), um dein Inventar zu aktualisieren. Dieses Popup wird geschlossen, sobald der Vorgang fertig ist. Falls dieses Problem weiterhin besteht, probiere den Leitfaden zur Fehlerbehebung von Paketen in den angehefteten Nachrichten von #troubleshooting auf dem Teamcraft-Discord.",
     "Outdated": "Die Paketerfassung funktioniert nicht",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben.",
     "Possible_missing_firewall_rule": "Die Paketerfassung funktioniert nicht ordnungsgemäß",
     "Possible_missing_firewall_rule_description": "Teamcraft sieht nur einige der Pakete und kann die Pakete, die im Zusammenhang mit dem Inventar, Statistiken, Ausrüstung, etc. stehen, nicht einsehen. Dies kann auf eine fehlende Firewall-Regel auf deinem PC zurückzuführen sein.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if that's the case, join the Discord server and go to #troubleshooting channel).",
+    "Possible_missing_firewall_rule_check": "Wenn diese Nachricht nicht verschwindet, nachdem du dich in einen neuen Bereich teleportiert hast, fehlt eventuell eine Firewall-Regel oder die Paketerfassung funktioniert aus einem anderen Grund nicht (falls dies der Fall ist, tritt bitte dem Discord Server bei und besuche den Kanal #troubleshooting).",
     "Rawsock_needs_admin": "RawSocket-Aufnahmemodus benötigt Administratorrechte",
     "Rawsock_needs_admin_description": "Um Firewall-Regeln richtig zu steuern und den Datenverkehr vom Spiel erfassen zu können, benötigt der RawSocket-Modus die Ausführung von TC mit Administratorenrechten. Du kannst es schließen und erneut als Admin ausführen, um dieses Problem zu beheben oder wähle eine der folgenden Optionen.",
     "Switch_to_winpcap": "Zum winpcap-Modus wechseln",
     "Disable_pcap": "Paketerfassung deaktivieren",
     "Install_npcap": "Npcap fehlt auf dem System",
-    "Install_npcap_description": "In order to have Teamcraft capture packets with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_description": "Um in Teamcraft die Paketerfassung mit seinem ursprünglichen npcap Modus nutzen zu können, muss npcap installiert sein. Teamcraft kann es für dich installieren und die Anwendung neu starten, sobald es fertig ist.",
     "Install_npcap_button": "Installiere npcap und starte Teamcraft neu",
-    "Not_as_anonymous": "Packet capture won't work properly as Anonymous",
-    "Not_as_anonymous_description": "Please register by hovering the \"Anonymous\" label in the top-right corner and clicking \"Register\", or disable packet capture inside the settings."
+    "Not_as_anonymous": "Paketerfassung funktioniert nicht korrekt als anonyme Person",
+    "Not_as_anonymous_description": "Bitte registriere dich, indem du die Bezeichnung \"Anonymous\" in der oberen rechten Ecke drückst und auf \"Registrieren\" klickst, oder die Paketaufnahme innerhalb der Einstellungen deaktivierst."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Region zu {{region}} wechseln",
@@ -1979,7 +1984,8 @@
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
-      "RetainerMarket": "Im Verkauf bei Gehilfen"
+      "RetainerMarket": "Im Verkauf bei Gehilfen",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Um mehrere Charaktere und andere nützliche Funktionen zu unterstützen, muss Teamcraft wissen, welchen Charakter du momentan spielst oder zumindest welcher Charakter mit dem aktuellem Ingame Charakter verknüpft werden soll.",
@@ -2077,7 +2083,7 @@
     "Total_cost": "Gesamtkosten (Handel, Gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
-    "Slots_used": "Slots",
+    "Slots_used": "Sockelplätze",
     "Slots_used_explain": "# von Slots für die diese Materia verwendet wird",
     "Cost": "Kosten",
     "Modal_editor": "Materia für {{itemName}}",
@@ -2300,7 +2306,8 @@
         "Check": "Integrität prüfen"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Alle verlinkten Charaktere sind gültig"
+        "All_characters_valid": "Alle verlinkten Charaktere sind gültig",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
@@ -2821,7 +2828,7 @@
     "Imported_from_GT_data": "Aus Garlandtools importiert",
     "Status": "Status",
     "Count": "# der Meldungen",
-    "Applied_count": "# der angewendeten Meldungen",
+    "Applied_count": "# der verwendeten Meldungen",
     "Fish_coverage": "Fishing coverage",
     "Items_with_no_source": "Elemente ohne Daten",
     "Data_needs": "Elemente, die Daten benötigen",

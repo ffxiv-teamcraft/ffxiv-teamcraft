@@ -50,7 +50,8 @@
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
     "Only_craftable": "レシピのみ",
     "Want_filters": "さらにフィルターが必要ですか？",
-    "Open_search": "代わりに検索ページを開く"
+    "Open_search": "代わりに検索ページを開く",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
     "Consider_requirements": "素材要求",
     "Ignore_requirements": "素材を除外する",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "このアイテムを製作するにはレベルが足りません。",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
-      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。"
+      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
@@ -1979,7 +1984,8 @@
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
       "Current_Gear": "現在の装備",
-      "RetainerMarket": "リテイナーが出品中"
+      "RetainerMarket": "リテイナーが出品中",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "マルチキャラクター同期化と他の素敵な機能を使いたいのでしたら、TCは現在プレイ中のキャラクターまたは同期化を望むキャラクターがどれかを知る必要があります",
@@ -2300,7 +2306,8 @@
         "Check": "整合性チェックを実行"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "All characters linked are valid",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },

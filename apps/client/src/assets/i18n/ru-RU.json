@@ -50,7 +50,8 @@
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
     "Want_filters": "Хотите больше фильтров?",
-    "Open_search": "Вместо этого откройте страницу поиска"
+    "Open_search": "Вместо этого откройте страницу поиска",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Здесь предметы, которые находятся в вашем инвентаре и не используются для списка",
     "Consider_requirements": "Рассмотреть требования",
     "Ignore_requirements": "Игнорировать требования",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet",
-      "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта"
+      "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Почти все ротации должны включать Inner Quiet, если целью будет HQ предмет. Это обеспечивает действительно хороший рост качества и позволяет действия, такие как Byregot's Blessing.",
@@ -1979,7 +1984,8 @@
       "Other": "Другой инвентарь",
       "Armory": "Armory",
       "Current_Gear": "Текущее снаряжение",
-      "RetainerMarket": "На продаже у ретейнеров"
+      "RetainerMarket": "На продаже у ретейнеров",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Для поддержки отслеживания нескольких персонажей и других удобных функций, Teamcraft нужно знать, на каком персонаже вы играете, или по крайней мере какой персонаж должен быть привязан к текущей игровой сессии.",
@@ -2300,7 +2306,8 @@
         "Check": "Запустить проверку целостности"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "Все привязанные персонажи действительны"
+        "All_characters_valid": "Все привязанные персонажи действительны",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },

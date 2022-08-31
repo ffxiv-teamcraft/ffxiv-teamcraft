@@ -50,7 +50,8 @@
     "Share_url_copied": "搜索链接已复制到剪贴板",
     "Only_craftable": "仅显示有配方的物品",
     "Want_filters": "需要更多过滤方式？",
-    "Open_search": "打开搜索页面"
+    "Open_search": "打开搜索页面",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "这是物品栏中已有但是未被此清单使用的物品",
     "Consider_requirements": "计算素材",
     "Ignore_requirements": "忽略素材",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
-      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
+      "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
@@ -1979,7 +1984,8 @@
       "Other": "其他物品栏",
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
-      "RetainerMarket": "雇员出售列表"
+      "RetainerMarket": "雇员出售列表",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "请选择你当前登录的游戏角色要关联的 TC 角色。",
@@ -2300,7 +2306,8 @@
         "Check": "运行完整性检查"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "所有关联的角色均有效"
+        "All_characters_valid": "所有关联的角色均有效",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },

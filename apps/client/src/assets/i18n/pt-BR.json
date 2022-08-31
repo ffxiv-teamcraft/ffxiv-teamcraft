@@ -50,7 +50,8 @@
     "Share_url_copied": "Url de busca copiado para sua área de transferência",
     "Only_craftable": "Only recipes",
     "Want_filters": "Need more filters?",
-    "Open_search": "Open search page instead"
+    "Open_search": "Open search page instead",
+    "Island_recipe": "Island Sanctuary recipe"
   },
   "Use_as_default_character": "Usar como personagem padrão",
   "Download_desktop_app": "Baixar app desktop",
@@ -757,6 +758,9 @@
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Ignore requirements",
+    "SOURCES": {
+      "Gatherable": "Can be gathered, click to see more details"
+    },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -1185,7 +1189,8 @@
       "MISSING_LEVEL_REQUIREMENT": "You don't have the required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not a Specialist",
       "NO_INNER_QUIET": "Tentativa de usar Inner Quiet sem o buff do Inner Quiet ativo",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft",
+      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Almost all the rotations should include Inner Quiet if your goal is to HQ the item. It provides a really good quality boost and enables actions like Byregot's Blessing.",
@@ -1979,7 +1984,8 @@
       "Other": "Other inventory",
       "Armory": "Armory",
       "Current_Gear": "Current gear",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "On sale by retainers",
+      "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
@@ -2300,7 +2306,8 @@
         "Check": "Run integrity check"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "All characters linked are valid",
+        "All_lists_ok": "All lists are working properly"
       }
     }
   },
