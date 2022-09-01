@@ -146,6 +146,6 @@ export class TeamcraftDesktopApp {
       return url.href;
     };
 
-    loaderWindow.loadURL(resolveHtmlPath(join(__dirname, 'loader.html')));
+    loaderWindow.loadURL(resolveHtmlPath('loader.html'));
   }
 }

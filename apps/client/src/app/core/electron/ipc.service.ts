@@ -80,6 +80,13 @@ export class IpcService {
     );
   }
 
+  public get islandWorkshopSupplyDemandPackets$() {
+    return this.packets$.pipe(
+      ofMessageType('islandWorkshopSupplyDemand'),
+      toIpcData()
+    );
+  }
+
   public get updateInventorySlotPackets$() {
     return this.packets$.pipe(
       ofMessageType('updateInventorySlot'),
