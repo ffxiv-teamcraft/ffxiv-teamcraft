@@ -1926,7 +1926,8 @@
     "Leveling": "Leveling",
     "Currencies": "Currencies",
     "Add_to_favorites": "Add to favorites",
-    "Remove_from_favorites": "Remove from favorites"
+    "Remove_from_favorites": "Remove from favorites",
+    "Island_Sanctuary":  "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",
