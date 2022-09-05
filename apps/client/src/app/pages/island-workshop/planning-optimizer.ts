@@ -9,13 +9,13 @@ export class PlanningOptimizer {
 
   private static POPULATION_SIZE = 200;
 
-  private static GENERATIONS = 300;
+  private static GENERATIONS = 200;
 
   private static MUTATION_FACTOR = 1;
 
-  private readonly previousDailyReset: number;
+  private static WEEKLY_RESET_DAY = 2;
 
-  private readonly nextDailyReset: number;
+  private static RESET_HOUR = 8;
 
   private readonly remainingHoursBeforeReset: number;
 
@@ -23,19 +23,34 @@ export class PlanningOptimizer {
 
   private population: Genome[] = [];
 
-  constructor(objects: CraftworksObject[], private supply: LazyData['islandSupply'], private readonly maxBonus = 10) {
-    let reset = new Date();
-    reset.setUTCSeconds(0);
-    reset.setUTCMinutes(0);
-    reset.setUTCMilliseconds(0);
-    if (reset.getUTCHours() < 8) {
-      // This means the reset was yesterday
-      reset = subDays(reset, 1);
+  constructor(objects: CraftworksObject[], private supply: LazyData['islandSupply'], private weekly = false, private readonly maxBonus = 10) {
+    if (weekly) {
+      let nextWeeklyReset = new Date();
+      nextWeeklyReset.setUTCSeconds(0);
+      nextWeeklyReset.setUTCMinutes(0);
+      nextWeeklyReset.setUTCMilliseconds(0);
+      if (nextWeeklyReset.getUTCDay() === PlanningOptimizer.WEEKLY_RESET_DAY && nextWeeklyReset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
+        nextWeeklyReset = addDays(nextWeeklyReset, 7);
+      } else {
+        while (nextWeeklyReset.getUTCDay() !== PlanningOptimizer.WEEKLY_RESET_DAY) {
+          nextWeeklyReset = addDays(nextWeeklyReset, 1);
+        }
+      }
+      nextWeeklyReset = addDays(nextWeeklyReset, 7);
+      this.remainingHoursBeforeReset = Math.floor((nextWeeklyReset.getTime() - Date.now()) / 3600000);
+    } else {
+      let reset = new Date();
+      reset.setUTCSeconds(0);
+      reset.setUTCMinutes(0);
+      reset.setUTCMilliseconds(0);
+      if (reset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
+        // This means the reset was yesterday
+        reset = subDays(reset, 1);
+      }
+      reset.setUTCHours(PlanningOptimizer.RESET_HOUR);
+      const nextDailyReset = addDays(reset, 1).getTime();
+      this.remainingHoursBeforeReset = Math.floor((nextDailyReset - Date.now()) / 3600000);
     }
-    reset.setUTCHours(8);
-    this.previousDailyReset = reset.getTime();
-    this.nextDailyReset = addDays(reset, 1).getTime();
-    this.remainingHoursBeforeReset = Math.floor((this.nextDailyReset - Date.now()) / 3600000);
     this.objects = objects.map((obj, index) => ({ ...obj, index }));
     this.population = new Array(PlanningOptimizer.POPULATION_SIZE)
       .fill(null)
@@ -58,7 +73,7 @@ export class PlanningOptimizer {
       .slice(0, 5)
       .map(({ individual }) => {
         return {
-          score: this.fitness(individual),
+          score: this.getRealScore(individual),
           planning: individual.map(chromosome => {
             return this.objects[chromosome];
           })
@@ -171,6 +186,10 @@ export class PlanningOptimizer {
   }
 
   private fitness(genome: Genome): number {
+   return this.getRealScore(genome, 100);
+  }
+
+  private getRealScore(genome: Genome, bonusWeight = 1):number{
     return genome.reduce((acc, chromosome, index) => {
       if (acc.totalTime > this.remainingHoursBeforeReset) {
         return {
@@ -185,7 +204,7 @@ export class PlanningOptimizer {
       if (index > 0) {
         const previous = this.objects[genome[index - 1]];
         if (previous.craftworksEntry.themes.some(theme => entry.craftworksEntry.themes.includes(theme))) {
-          acc.bonus = Math.min(acc.bonus + 1, this.maxBonus);
+          acc.bonus = Math.min(acc.bonus + bonusWeight, this.maxBonus * bonusWeight);
         }
       }
       const entryScore = entry.craftworksEntry.value * (this.supply[entry.supply] / 100) * (entry.popularity.ratio / 100);

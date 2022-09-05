@@ -203,7 +203,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.startOptimizer$
   ]).pipe(
     map(([objects, supply]) => {
-      return new PlanningOptimizer(objects, supply, 35).run();
+      return new PlanningOptimizer(objects, supply).run();
     })
   );
 
