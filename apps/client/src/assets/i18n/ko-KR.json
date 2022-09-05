@@ -1926,7 +1926,8 @@
     "Leveling": "레벨링",
     "Currencies": "화폐",
     "Add_to_favorites": "즐겨찾기에 추가",
-    "Remove_from_favorites": "즐겨찾기에서 제거"
+    "Remove_from_favorites": "즐겨찾기에서 제거",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
@@ -2929,6 +2930,47 @@
     "Wrapper_failed_to_start": "Machina Wrapper 실행 실패",
     "DESCRIPTION": {
       "Wrapper_failed_to_start": "게임이 실행 중인지, 그리고 관리자 권한으로 실행되었는지 확인해 주세요 (이 경우에는 팀크래프트앱을 관리자 권한으로 실행해 주세요).<br>만약 이 문제가 계속 지속된다면 팀크래프트 디스코드 #troubleshooting 채널에 오류 메세지와 함께 스크린샷을 올려주세요.<br><br> {{retryDelay}}초 후에 재시도"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated during the last 24 hours",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edition mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the day",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
     }
   }
 }
