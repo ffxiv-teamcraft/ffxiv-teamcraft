@@ -6,8 +6,11 @@
           <app-lazy-scroll [data]="listContent$ | async" [displayedRows]="8" rowSize="42" [rowTemplate]="itemRow" [trackBy]="trackByItem">
             <ng-template #itemRow let-item let-odd="odd" let-last="last">
               <div class="list-item-row" [class.odd]="odd" [class.last]="last" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
-                <div>{{item.id | itemName:item | i18n}}</div>
+                <app-item-icon [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+                               [width]="24" [forceCollectable]="item.collectable" *ngIf="!item.xivapiIcon"></app-item-icon>
+                <app-item-icon [icon]="item.xivapiIcon | xivapiIcon" [itemId]="null"
+                               [width]="24" *ngIf="item.xivapiIcon" [tooltipDisabled]="true"></app-item-icon>
+                <app-i18n-name [content]="item.contentType || 'items'" [id]="item.id" [fallback]="item.name"></app-i18n-name>
                 <div class="spacer"></div>
                 <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
                                  mouseWheel (mouseWheelUp)="mouseWheelUpAmount($event, item)" (mouseWheelDown)="mouseWheelDownAmount($event, item)"
