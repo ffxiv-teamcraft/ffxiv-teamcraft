@@ -1,0 +1,98 @@
+{
+  "1": {
+    "en": "Preserved Food",
+    "ja": "保存食",
+    "de": "Haltbares",
+    "fr": "À longue conservation"
+  },
+  "2": {
+    "en": "Attire",
+    "ja": "防具",
+    "de": "Rüstung",
+    "fr": "Armure"
+  },
+  "3": {
+    "en": "Foodstuffs",
+    "ja": "料理",
+    "de": "Gericht",
+    "fr": "Plat"
+  },
+  "4": {
+    "en": "Confections",
+    "ja": "菓子",
+    "de": "Süßigkeit",
+    "fr": "Pâtisserie"
+  },
+  "5": {
+    "en": "Sundries",
+    "ja": "日用品",
+    "de": "Täglicher Bedarf",
+    "fr": "Article du quotidien"
+  },
+  "6": {
+    "en": "Furnishings",
+    "ja": "調度品",
+    "de": "Möbelstück",
+    "fr": "Meuble"
+  },
+  "7": {
+    "en": "Arms",
+    "ja": "武器",
+    "de": "Waffe",
+    "fr": "Arme"
+  },
+  "8": {
+    "en": "Concoctions",
+    "ja": "薬品",
+    "de": "Präparat",
+    "fr": "Concoction"
+  },
+  "9": {
+    "en": "Ingredients",
+    "ja": "調味料",
+    "de": "Zutat",
+    "fr": "Condiment"
+  },
+  "10": {
+    "en": "Accessories",
+    "ja": "アクセサリ",
+    "de": "Accessoire",
+    "fr": "Accessoire"
+  },
+  "11": {
+    "en": "Metalworks",
+    "ja": "金属製品",
+    "de": "Metallarbeit",
+    "fr": "En métal"
+  },
+  "12": {
+    "en": "Woodworks",
+    "ja": "木工製品",
+    "de": "Holzarbeit",
+    "fr": "En bois"
+  },
+  "13": {
+    "en": "Textiles",
+    "ja": "布製品",
+    "de": "Textilarbeit",
+    "fr": "Textile"
+  },
+  "14": {
+    "en": "Creature Creations",
+    "ja": "動物製品",
+    "de": "Tierprodukt",
+    "fr": "Animalier"
+  },
+  "15": {
+    "en": "Marine Merchandise",
+    "ja": "海産製品",
+    "de": "Meeresprodukt ",
+    "fr": "Marin"
+  },
+  "16": {
+    "en": "Unburied Treasures",
+    "ja": "窯業製品",
+    "de": "Keramik",
+    "fr": "En céramique"
+  }
+}

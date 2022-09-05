@@ -7,6 +7,7 @@ export class IslandExtractor extends AbstractExtractor {
   protected doExtract(): void {
     const gatheringDone$ = new Subject();
     const buildingsDone$ = new Subject();
+    const workshopDone$ = new Subject();
 
 
     this.get('https://xivapi.com/Map/772').pipe(
@@ -77,8 +78,67 @@ export class IslandExtractor extends AbstractExtractor {
     });
 
     combineLatest([
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksPopularity?columns=*'),
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksSupplyDefine?columns=ID,Ratio'),
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value,Theme0TargetID,Theme1TargetID')
+    ]).pipe(
+      map(([popularity, supplyDefine, craftworksObjects]) => {
+        const supplyObj = supplyDefine.reduce((acc, row) => {
+          return {
+            ...acc,
+            [row.ID]: row.Ratio
+          };
+        }, {});
+
+        const popularityMatrix = popularity.reduce((acc, row) => {
+          const entry = Object.keys(row)
+            .filter(k => /^Popularity\d+$/.test(k))
+            .sort((a, b) => a < b ? -1 : 1)
+            .reduce((eacc, key) => {
+              const id = +/^Popularity(\d+)$/.exec(key)[1];
+              return {
+                ...eacc,
+                [id]: {
+                  id: row[key].ID,
+                  ratio: row[key].Ratio
+                }
+              };
+            }, {});
+          return {
+            ...acc,
+            [row.ID]: entry
+          };
+        }, {});
+
+        const craftworksIndex = craftworksObjects.reduce((acc, obj) => {
+          return {
+            ...acc,
+            [obj.ID]: {
+              itemId: obj.ItemTargetID,
+              value: obj.Value,
+              craftingTime: obj.CraftingTime,
+              themes: [obj.Theme0TargetID, obj.Theme1TargetID].filter(theme => theme > 0)
+            }
+          };
+        }, {});
+
+        return {
+          supplyObj,
+          popularityMatrix,
+          craftworksIndex
+        };
+      })
+    ).subscribe(({ supplyObj, popularityMatrix, craftworksIndex }) => {
+      this.persistToJsonAsset('island-supply', supplyObj);
+      this.persistToJsonAsset('island-popularity', popularityMatrix);
+      this.persistToJsonAsset('island-craftworks', craftworksIndex);
+      workshopDone$.next(true);
+    });
+
+    combineLatest([
       gatheringDone$,
-      buildingsDone$
+      buildingsDone$,
+      workshopDone$
     ]).subscribe(() => {
       this.done();
     });

@@ -218,6 +218,24 @@ export class NavigationSidebarService {
           ]
         },
         {
+          name: 'SIDEBAR.Island_Sanctuary',
+          collapsedKey: 'island',
+          icon: {
+            type: SidebarIconType.ANTD_ICONFONT,
+            content: 'icon-tree'
+          },
+          children: [
+            {
+              name: 'ISLAND_SANCTUARY.WORKSHOP.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'area-chart'
+              },
+              link: '/island-workshop'
+            },
+          ]
+        },
+        {
           name: 'SIDEBAR.Leveling',
           collapsedKey: 'leveling',
           icon: {

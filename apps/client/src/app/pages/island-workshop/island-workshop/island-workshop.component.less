@@ -1,0 +1,48 @@
+.ui-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.supply-icon:not(:last-child) {
+  margin-left: -12px;
+}
+
+.supply-icons {
+  width: 70px;
+  direction: rtl;
+  display: flex;
+}
+
+.run-optimizer {
+  margin-bottom: 10px
+}
+
+.planning {
+  background-color: var(--topbar-color);
+  border: 1px solid #444;
+
+  .planning-score {
+    padding: 10px;
+    font-weight: bold;
+    background-color: var(--primary-color-20);
+  }
+
+  .schedule-row {
+    border-top: 1px solid #444;
+    padding: 10px;
+    min-width: 200px;
+
+    &.duration-4 {
+      height: 50px;
+    }
+
+    &.duration-8 {
+      height: 100px;
+    }
+
+    .theme-name {
+      font-size: 11px;
+    }
+  }
+
+}
