@@ -833,8 +833,8 @@
     "LEVE": "Leve",
     "GLAMOUR": "Glamour",
     "HOUSING": "Casa",
-    "SUBMARINE": "Submarine",
-    "AIRSHIP": "Airship",
+    "SUBMARINE": "Submarino",
+    "AIRSHIP": "Dirigible",
     "MISC": "Misc",
     "QUEST": "Misión",
     "TANK": "Tanque",
@@ -881,7 +881,7 @@
     "Title": "Traductor de Macros",
     "Macro_language": "Lenguaje de Macro",
     "Macro_to_translate": "Macro a traducir",
-    "Do_translate": "Translate!",
+    "Do_translate": "¡Traduce!",
     "Invalid_macro_or_language": "Macro o lenguaje invalido."
   },
   "CUSTOM_LINKS": {
