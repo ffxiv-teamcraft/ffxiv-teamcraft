@@ -290,7 +290,7 @@ export class DataService {
       );
     }
 
-    const MJIResults$ = this.lazyData.getEntry('islandBuildings').pipe(
+    const MJIResults$ = query.length > 3 ? this.lazyData.getEntry('islandBuildings').pipe(
       map(buildings => {
         return Object.entries(buildings)
           .filter(([, building]) => {
@@ -315,7 +315,7 @@ export class DataService {
             };
           });
       })
-    );
+    ) : of([]);
 
     const baseUrl = this.baseUrl;
     const baseResults = results$.pipe(
