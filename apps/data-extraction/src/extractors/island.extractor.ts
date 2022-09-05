@@ -80,7 +80,7 @@ export class IslandExtractor extends AbstractExtractor {
     combineLatest([
       this.aggregateAllPages('https://xivapi.com/MJICraftworksPopularity?columns=*'),
       this.aggregateAllPages('https://xivapi.com/MJICraftworksSupplyDefine?columns=ID,Ratio'),
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value')
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value,Theme0TargetID,Theme1TargetID')
     ]).pipe(
       map(([popularity, supplyDefine, craftworksObjects]) => {
         const supplyObj = supplyDefine.reduce((acc, row) => {
@@ -88,7 +88,7 @@ export class IslandExtractor extends AbstractExtractor {
             ...acc,
             [row.ID]: row.Ratio
           };
-        });
+        }, {});
 
         const popularityMatrix = popularity.reduce((acc, row) => {
           const entry = Object.keys(row)
@@ -116,7 +116,8 @@ export class IslandExtractor extends AbstractExtractor {
             [obj.ID]: {
               itemId: obj.ItemTargetID,
               value: obj.Value,
-              craftingTime: obj.CraftingTime
+              craftingTime: obj.CraftingTime,
+              themes: [obj.Theme0TargetID, obj.Theme1TargetID].filter(theme => theme > 0)
             }
           };
         }, {});

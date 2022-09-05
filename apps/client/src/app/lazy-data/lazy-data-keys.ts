@@ -57,6 +57,7 @@ export const LazyDataKeys = [
   'instanceSources',
   'instances',
   'islandBuildings',
+  'islandCraftworksTheme',
   'islandCraftworks',
   'islandGatheringItems',
   'islandPopularity',

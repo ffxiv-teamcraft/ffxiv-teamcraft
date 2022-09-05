@@ -2,15 +2,18 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { map, Observable } from 'rxjs';
+import { combineLatest, map, Observable, Subject, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { filter } from 'rxjs/operators';
+import { distinctUntilChanged, filter } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { addDays, subDays } from 'date-fns';
+import { CraftworksObject } from '../craftworks-object';
+import { PlanningOptimizer } from '../planning-optimizer';
 
 interface ColumnItem {
   name: string;
@@ -53,6 +56,39 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     4: 'Overflowing'
   };
 
+  public previousReset$ = timer(0, 1000).pipe(
+    map(() => {
+      // Only supports EU servers for now.
+      let reset = new Date();
+      reset.setUTCSeconds(0);
+      reset.setUTCMinutes(0);
+      reset.setUTCMilliseconds(0);
+      if (reset.getUTCHours() < 8) {
+        // This means the reset was yesterday
+        reset = subDays(reset, 1);
+      }
+      reset.setUTCHours(8);
+      return reset.getTime();
+    }),
+    distinctUntilChanged()
+  );
+
+  public nextReset$ = this.previousReset$.pipe(
+    map(reset => {
+      return addDays(new Date(reset), 1).getTime();
+    })
+  );
+
+  public remainingHours$ = combineLatest([
+    this.nextReset$,
+    timer(0, 60000)
+  ]).pipe(
+    map(([reset]) => {
+      return Math.floor((reset - Date.now()) / 3600000);
+    }),
+    distinctUntilChanged()
+  );
+
   public supplies = Object.entries(IslandWorkshopComponent.SUPPLY_KEYS)
     .map(([value, label]) => ({ value: +value, label }));
 
@@ -62,6 +98,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   public now = Date.now();
 
   public editMode = false;
+
+  public startOptimizer$ = new Subject<void>();
 
   public state$ = new LocalStorageBehaviorSubject('island:state', {
     popularity: -1,
@@ -133,7 +171,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public craftworksObjects$ = this.state$.pipe(
+  public craftworksObjects$: Observable<CraftworksObject[]> = this.state$.pipe(
     withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks'),
     map(([state, islandPopularity, islandCraftworks]) => {
       const popularityEntry = islandPopularity[state.popularity];
@@ -146,6 +184,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           return {
             ...row,
             itemId: islandCraftworks[row.id].itemId,
+            craftworksEntry: islandCraftworks[row.id],
             supplyKey: IslandWorkshopComponent.SUPPLY_KEYS[row.supply],
             supplyIcon: new Array(row.supply).fill(null),
             demandKey: IslandWorkshopComponent.DEMAND_SHIFT_KEYS[row.demand],
@@ -158,12 +197,22 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  public optimizerResult$ = combineLatest([
+    this.craftworksObjects$,
+    this.lazyData.getEntry('islandSupply'),
+    this.startOptimizer$
+  ]).pipe(
+    map(([objects, supply]) => {
+      return new PlanningOptimizer(objects, supply, 35).run();
+    })
+  );
+
   public getExport = () => {
     return JSON.stringify(this.state$.value);
   };
 
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
-              private translate: TranslateService, private dialog: NzModalService,
+              public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService) {
     super();
     this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {

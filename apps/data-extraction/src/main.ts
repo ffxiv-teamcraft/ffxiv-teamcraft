@@ -78,8 +78,8 @@ const extractors: AbstractExtractor[] = [
         Name_en: realName.en,
         Name_de: realName.de,
         Name_ja: realName.ja,
-        Name_fr: realName.fr,
-      }
+        Name_fr: realName.fr
+      };
     }
     return row;
   }),
@@ -95,6 +95,7 @@ const extractors: AbstractExtractor[] = [
   new I18nExtractor('GrandCompany', 'gc-names'),
   new I18nExtractor('AirshipExplorationPoint', 'airship-voyages', { ID: 'id' }, 'NameShort_', true),
   new I18nExtractor('SubmarineExploration', 'submarine-voyages', { ID: 'id' }, 'Destination_'),
+  new I18nExtractor('MJICraftworksObjectTheme', 'island-craftworks-theme'),
   new IslandExtractor(),
   new ShopsExtractor(),
   new NodesExtractor(),

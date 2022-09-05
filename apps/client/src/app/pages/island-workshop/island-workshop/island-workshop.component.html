@@ -15,10 +15,11 @@
   <nz-alert *ngIf="now - state.updated > 86400000" nzType="warning"
             [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync' | translate"
             [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.Out_of_sync_explain' | translate"
+            nzCloseable
   ></nz-alert>
 </ng-container>
 <ng-container *ngIf="tableColumns$ | async as tableColumns">
-  <nz-table *ngIf="craftworksObjects$ | async as craftworksObjects" #craftworksTable [nzData]="craftworksObjects" nzSize="small">
+  <nz-table *ngIf="craftworksObjects$ | async as craftworksObjects" #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="8">
     <thead>
     <tr>
       <th *ngFor="let column of tableColumns"
@@ -82,4 +83,23 @@
     </tr>
     </tbody>
   </nz-table>
+</ng-container>
+
+<button nz-button nzType="primary" (click)="startOptimizer$.next(null)" nzBlock class="run-optimizer">
+  {{'ISLAND_SANCTUARY.WORKSHOP.Run_optimizer' | translate}}
+</button>
+<ng-container *ngIf="optimizerResult$ | async as optimizerResult">
+  <div class="optimizer-results" fxLayout="row wrap" fxLayoutGap="10px">
+    <div *ngFor="let schedule of optimizerResult" fxLayout="column" class="planning">
+      <div class="planning-score">{{'ISLAND_SANCTUARY.WORKSHOP.Total_value' | translate}}: {{schedule.score}}</div>
+      <div *ngFor="let row of schedule.planning"
+           class="schedule-row duration-{{row.craftworksEntry.craftingTime}}"
+           fxLayout="column" fxLayoutAlign="center center">
+        <app-i18n-name content="items" [id]="row.itemId"></app-i18n-name>
+        <i *ngFor="let theme of row.craftworksEntry.themes;last as last" class="theme-name">
+          <app-i18n-name content="islandCraftworksTheme" [id]="theme"></app-i18n-name>
+          <span *ngIf="!last">,&nbsp;</span></i>
+      </div>
+    </div>
+  </div>
 </ng-container>
