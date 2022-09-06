@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ItemDetailsPopup } from '../item-details-popup';
 import { TradeSource } from '../../list/model/trade-source';
 import { Trade } from '../../list/model/trade';
 import { TradeEntry } from '../../list/model/trade-entry';
 import { BehaviorSubject, combineLatest, merge, Observable, ReplaySubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-trades',
@@ -29,14 +29,14 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
 
   public displayedTrades$ = new BehaviorSubject<number>(5);
 
-  public tradeSourcesData$ = merge(this.externalSources$, this.details$);
+  public tradeSourcesData$ = merge(this.externalSources$, this.details$.pipe(filter(d => d !== undefined)));
 
   public tradeSources$: Observable<TradeSource[]> = combineLatest([
     this.tradeSourcesData$,
     this.displayedTrades$
   ]).pipe(
     map(([data, displayed]) => {
-      return data.slice(0, displayed);
+      return (data || []).slice(0, displayed);
     })
   );
 
@@ -44,7 +44,7 @@ export class TradesComponent extends ItemDetailsPopup implements OnChanges {
     this.tradeSourcesData$,
     this.displayedTrades$
   ]).pipe(
-    map(([data, displayed]) => data.length > displayed)
+    map(([data, displayed]) => data?.length || 0 > displayed)
   );
 
   constructor() {
