@@ -12,6 +12,7 @@ import { FlexModule } from '@angular/flex-layout';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzCardModule } from 'ng-zorro-antd/card';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
     CoreModule,
     FlexModule,
     NzCheckboxModule,
-    NzSelectModule
+    NzSelectModule,
+    NzCardModule
   ]
 })
 export class IslandWorkshopModule { }
