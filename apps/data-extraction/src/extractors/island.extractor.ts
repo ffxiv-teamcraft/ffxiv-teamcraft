@@ -17,18 +17,26 @@ export class IslandExtractor extends AbstractExtractor {
             page.Results
               .filter(item => !!item.Item)
               .forEach(item => {
+                let pos = this.getCoords({
+                  x: item.X,
+                  y: item.Y,
+                  z: 0
+                }, {
+                  size_factor: islandMap.SizeFactor,
+                  offset_y: +islandMap.OffsetY,
+                  offset_x: +islandMap.OffsetX,
+                  offset_z: 0
+                });
+                if (item.Item.ID === 37562) {
+                  pos = {
+                    x: 18,
+                    y: 17.6,
+                    z: 0
+                  };
+                }
                 mjiGatheringItems[item.Item.ID] = {
                   itemId: item.Item.ID,
-                  ...this.getCoords({
-                    x: item.X,
-                    y: item.Y,
-                    z: 0
-                  }, {
-                    size_factor: islandMap.SizeFactor,
-                    offset_y: +islandMap.OffsetY,
-                    offset_x: +islandMap.OffsetX,
-                    offset_z: 0
-                  }),
+                  ...pos,
                   radius: item.Radius
                 };
               });
