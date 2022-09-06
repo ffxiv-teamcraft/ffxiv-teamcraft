@@ -52,7 +52,7 @@ export interface Alarm {
   areaId:       number;
   type:         number;
   coords:       AlarmCoords;
-  spawns:       number[];
+  spawns?:      number[];
   reduction:    boolean;
   ephemeral:    boolean;
   nodeContent:  number[];
@@ -64,6 +64,7 @@ export interface Alarm {
   enabled:      boolean;
   baits?:       Bait[];
   hookset?:     number;
+  fishEyes?:    boolean;
   folklore?:    number;
   speed?:       number;
   shadowSize?:  number;
