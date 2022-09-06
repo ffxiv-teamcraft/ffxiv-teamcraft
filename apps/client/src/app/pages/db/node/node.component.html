@@ -114,7 +114,7 @@
                                fxLayoutGap="5px">
                             <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
                                     nzSize="small">
-                              <i nz-icon nzType="clock-circle"></i>
+                              <i nz-icon nzType="bell"></i>
                             </button>
                             <ng-container *ngIf="alarmGroups$ | async as groups">
                               <ng-container *ngIf="groups.length > 0">
