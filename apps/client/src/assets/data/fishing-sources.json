@@ -21404,11 +21404,29 @@
       "spawn": 8,
       "duration": 8,
       "weathers": [
-        7
+        7,
+        8
       ],
       "weathersFrom": [
         2,
         1
+      ]
+    }
+  ],
+  "37849": [
+    {
+      "spot": 271,
+      "hookset": 2,
+      "tug": 1,
+      "bait": 36591,
+      "spawn": 2,
+      "duration": 6,
+      "weathers": [
+        15
+      ],
+      "weathersFrom": [
+        3,
+        4
       ]
     }
   ],

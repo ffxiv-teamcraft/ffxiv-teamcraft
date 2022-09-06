@@ -116,32 +116,9 @@
             <div *ngIf="data.limited">
               <ng-container *ngFor="let alarmEntry of item.alarms">
                 <ng-container *ngIf="(alarmEntry | alarmDisplay | async) as alarm">
-                  <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
-                       fxLayoutGap="5px">
-                    <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
-                            nzSize="small">
-                      <i nz-icon nzType="clock-circle"></i>
-                    </button>
-                    <ng-container *ngIf="alarmGroups$ | async as groups">
-                      <ng-container *ngIf="groups.length > 0">
-                        <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu"
-                                [nzPlacement]="'bottomCenter'" nz-button
-                                nz-dropdown nzShape="circle" nzSize="small">
-                          <i nz-icon nzType="folder-open"></i>
-                        </button>
-                        <nz-dropdown-menu #menu="nzDropdownMenu">
-                          <ul nz-menu>
-                            <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                              {{group.name}}
-                            </li>
-                          </ul>
-                        </nz-dropdown-menu>
-                      </ng-container>
-                    </ng-container>
-                  </div>
-                  <ng-template #alarmCreated>
-                    {{'ALARMS.Alarm_already_created' | translate}}
-                  </ng-template>
+                  <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)"
+                                    (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)" [alarmGroups]="alarmGroups$ | async"
+                                    [showPosition]="false"></app-alarm-button>
                 </ng-container>
               </ng-container>
             </div>

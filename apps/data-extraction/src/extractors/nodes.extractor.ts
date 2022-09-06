@@ -7,8 +7,6 @@ export class NodesExtractor extends AbstractExtractor {
 
   private gatheringItems = {};
 
-  private mjiGatheringItems = {};
-
   private gatheringPoints = {};
 
   private gatheringItemPoints = {};

@@ -35,6 +35,7 @@ export class PacketCapture {
     'inventoryTransaction',
     'itemInfo',
     'itemMarketBoardInfo',
+    'islandWorkshopSupplyDemand',
     'containerInfo',
     'logout',
     'marketBoardItemListing',

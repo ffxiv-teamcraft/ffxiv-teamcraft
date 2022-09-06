@@ -35,6 +35,7 @@ import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../../core/rxjs/safe-combine-latest';
 import { observeInput } from '../../../core/rxjs/observe-input';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -115,7 +116,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
               public settings: SettingsService, private lazyData: LazyDataFacade,
-              private cd: ChangeDetectorRef) {
+              private cd: ChangeDetectorRef, private authFacade: AuthFacade) {
   }
 
   public get displayMode(): LayoutRowDisplayMode {
@@ -296,6 +297,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   public markPanelAsDone(): void {
     this.displayRow.rows.forEach(row => {
       this.listsFacade.setItemDone(row.id, row.icon, this.finalItems || row.finalItem, row.amount - row.done, row.recipeId, row.amount, false);
+      if (this.settings.autoMarkAsCompleted) {
+        if (row.sources.some(s => s.type === DataType.GATHERED_BY)) {
+          this.authFacade.markAsDoneInLog('gathering', row.id, true);
+        }
+        if (row.sources.some(s => s.type === DataType.CRAFTED_BY)) {
+          this.authFacade.markAsDoneInLog('crafting', row.id, true);
+        }
+      }
     });
   }
 

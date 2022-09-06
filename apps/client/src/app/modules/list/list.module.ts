@@ -46,7 +46,6 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
 import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
-import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
@@ -66,6 +65,7 @@ import { QuestsExtractor } from './data/extractor/quests-extractor';
 import { AchievementsExtractor } from './data/extractor/achievements-extractor';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { DeprecatedExtractor } from './data/extractor/deprecated-extractor';
+import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -93,7 +93,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({
@@ -128,7 +128,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     SimulatorModule,
     CompanyWorkshopTreeModule,
     InventoryModule,
-    HttpClientModule
+    HttpClientModule,
+    AlarmButtonModule
   ],
   providers: [
     ...DATA_EXTRACTORS,
@@ -141,13 +142,12 @@ export const DATA_EXTRACTORS: Provider[] = [
     TagsPopupComponent,
     ListCompletionPopupComponent,
     ItemSourcesDisplayComponent,
-    AlarmButtonComponent,
     ItemRowButtonsComponent,
     ListProgressbarComponent,
     ListSplitPopupComponent,
     ItemRowMenuComponent
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
 })
 export class ListModule {
 

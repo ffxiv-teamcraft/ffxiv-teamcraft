@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.6"></a>
+## [9.7.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.5...v9.7.6) (2022-09-06)
+
+
+### Bug Fixes
+
+* **alarms:** reuse generic alarm button in more places ([70ebc26](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70ebc26))
+* **db:** fix create alarm button icon on node pages ([a95fdfc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a95fdfc))
+* **db:** fixed trades not loading on NPC pages ([dfa5fda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dfa5fda))
+* **desktop:** remove currencies from Island Sanctuary inventory tracking ([86b44f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86b44f7))
+* **island-sanctuary:** better gathering location for Island Vine ([d0023fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0023fd))
+* **list:** fix item names not showing in list panel ([2e02148](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e02148))
+* **list:** fixed requirements popup showing wrong numbers ([8e31e47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e31e47))
+* **lists:** fixed panel mark as done not checking as done in log ([7f3ab6e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7f3ab6e))
+* **log-tracker:** fixed fish eyes not showing in fishing log tracker ([3260387](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3260387))
+* **search:** removed island buildings from query-less search ([6bc4ddd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6bc4ddd))
+* **sumbarine:** fix max submarine rank ([33fe3c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33fe3c4))
+* **universalis:** better query for item entries count ([62855f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62855f5))
+* **voyages:** add missing voyages from 6.2 update ([829f80c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/829f80c))
+
+
+### Features
+
+* **island:** new in-app workshop table with daily optimizer ([#2320](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2320)) ([b4add6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4add6a))
+
+
+
 <a name="9.7.5"></a>
 ## [9.7.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.4...v9.7.5) (2022-08-31)
 
