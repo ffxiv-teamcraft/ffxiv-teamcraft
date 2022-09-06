@@ -759,7 +759,7 @@
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Anforderungen ignorieren",
     "SOURCES": {
-      "Gatherable": "Can be gathered, click to see more details"
+      "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
     },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -2937,7 +2937,7 @@
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
       "Out_of_sync": "Status wurde in den letzten 24 Stunden nicht aktualisiert",
-      "Out_of_sync_explain": "Bitte öffne das Angebot/Nachfrage Fenster auf deiner einsamen Insel um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Importzustands-Button verwenden kannst.",
+      "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deiner einsamen Insel um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Importzustands-Button verwenden kannst.",
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
       "Import_state": "Importiere Status",
@@ -2961,8 +2961,8 @@
         "Non_existant": "Nicht vorhanden",
         "Insufficient": "Wenig",
         "Sufficient": "Normal",
-        "Surplus": "Surplus",
-        "Overflowing": "Overflowing"
+        "Surplus": "Viel",
+        "Overflowing": "Überschuss"
       },
       "DEMAND_SHIFT": {
         "Skyrocketing": "steigt stark",
