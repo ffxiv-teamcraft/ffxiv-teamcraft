@@ -51,7 +51,7 @@
     "Only_craftable": "Nur Rezepte",
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Inselparadiesrezept"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -1927,7 +1927,7 @@
     "Currencies": "Währungen",
     "Add_to_favorites": "Zu Favoriten hinzufügen",
     "Remove_from_favorites": "Aus Favoriten entfernen",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "Inselparadies"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
@@ -1986,7 +1986,7 @@
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
       "RetainerMarket": "Im Verkauf bei Gehilfen",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "Inselbeutel"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Um mehrere Charaktere und andere nützliche Funktionen zu unterstützen, muss Teamcraft wissen, welchen Charakter du momentan spielst oder zumindest welcher Charakter mit dem aktuellem Ingame Charakter verknüpft werden soll.",
@@ -2944,32 +2944,32 @@
       "State_imported": "Status korrekt importiert",
       "Product": "Produkt",
       "Popularity": "Beliebtheit",
-      "Supply": "Supply",
-      "Demand_shift": "Demand shift",
-      "Predicted_popularity": "Voraussichtliche Nachfrage",
-      "Edit_mode": "Edition mode",
-      "Best_items_to_craft": "Best items to craft",
-      "Total_value": "Total value",
-      "Run_optimizer": "Find best planning for the rest of the day",
+      "Supply": "Angebot",
+      "Demand_shift": "Nachfrage",
+      "Predicted_popularity": "Künftige Beliebtheit",
+      "Edit_mode": "Bearbeitungsmodus",
+      "Best_items_to_craft": "Beste Gegenstände zum Herstellen",
+      "Total_value": "Gesamtwert",
+      "Run_optimizer": "Finde die beste Planung für den Rest des Tages",
       "POPULARITY": {
-        "Very_high": "Very high",
-        "High": "High",
-        "Average": "Average",
-        "Low": "Low"
+        "Very_high": "Riesig",
+        "High": "Groß",
+        "Average": "Normal",
+        "Low": "Kaum"
       },
       "SUPPLY": {
-        "Non_existant": "Non existant",
-        "Insufficient": "Insufficient",
-        "Sufficient": "Sufficient",
+        "Non_existant": "Nicht vorhanden",
+        "Insufficient": "Wenig",
+        "Sufficient": "Normal",
         "Surplus": "Surplus",
         "Overflowing": "Overflowing"
       },
       "DEMAND_SHIFT": {
-        "Skyrocketing": "Skyrocketing",
-        "Increasing": "Increasing",
-        "None": "None",
-        "Decreasing": "Decreasing",
-        "Plummeting": "Plummeting"
+        "Skyrocketing": "steigt stark",
+        "Increasing": "steigt",
+        "None": "bleibt gleich",
+        "Decreasing": "sinkt",
+        "Plummeting": "sinkt stark"
       }
     }
   }
