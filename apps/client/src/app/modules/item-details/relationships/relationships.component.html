@@ -11,8 +11,8 @@
                      [width]="32" *ngIf="req.xivapiIcon"></app-item-icon>
       <div fxLayout="column" fxLayoutGap="5px">
         <div>
-          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>&nbsp;<i>x{{req.reqAmount * ((req.amount_needed - req.done / req.yield) | ceil)}}({{req.reqAmount}}
-          x {{((req.amount_needed - req.done / req.yield) | ceil)}})</i>
+          <app-i18n-name [content]="req.contentType || 'items'" [id]="req.id" [fallback]="req.name"></app-i18n-name>&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}}
+          x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
         </div>
         <!-- Inventory informations -->
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
