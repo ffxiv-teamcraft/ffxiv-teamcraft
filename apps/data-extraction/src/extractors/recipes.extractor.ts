@@ -14,7 +14,7 @@ export class RecipesExtractor extends AbstractExtractor {
     combineLatest([
       this.getAllEntries('https://xivapi.com/CompanyCraftSequence'),
       this.aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,RequiredQuality,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert,SecretRecipeBook'),
-      this.getAllEntries('https://xivapi.com/MJIRecipe'),
+      this.getAllEntries('https://xivapi.com/MJIRecipe', true),
       this.getAllEntries('https://xivapi.com/MJICraftworksObject'),
       this.getAllEntries('https://xivapi.com/MJIBuilding'),
       this.getAllEntries('https://xivapi.com/MJILandmark'),
