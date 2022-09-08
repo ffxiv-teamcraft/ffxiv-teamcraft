@@ -79,6 +79,8 @@ export class ListManagerService {
       itemSource$ = this.lazyData.getRow('extracts', itemId);
     } else if (itemId.startsWith('mjibuilding')) {
       itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjibuilding-', ''));
+    } else if (itemId.startsWith('mjilandmark')) {
+      itemSource$ = this.lazyData.getRow('extracts', +itemId.replace('mjilandmark-', ''));
     } else {
       itemSource$ = this.customItems$.pipe(map(items => items.find(i => i.$key === itemId)));
     }

@@ -7,6 +7,7 @@ export class IslandExtractor extends AbstractExtractor {
   protected doExtract(): void {
     const gatheringDone$ = new Subject();
     const buildingsDone$ = new Subject();
+    const landmarksDone$ = new Subject();
     const workshopDone$ = new Subject();
 
 
@@ -83,6 +84,43 @@ export class IslandExtractor extends AbstractExtractor {
     ).subscribe(buildings => {
       this.persistToJsonAsset('island-buildings', buildings);
       buildingsDone$.next(true);
+    });
+
+    this.aggregateAllPages('https://xivapi.com/MJILandmark?columns=Material0,Amount0,Material1,Amount1,Material2,Amount2,Material3,Amount3,Material4,Amount4,Name,IconHD,ID').pipe(
+      map(mjiLandmarks => {
+        return mjiLandmarks
+          .filter(l => l.Name !== null)
+          .reduce((landmarks, landmark) => {
+            const ID = -11000 + -1 * (+landmark.ID * 10);
+            const ingredients = Object.keys(landmark)
+              .filter(k => /Material\d/.test(k))
+              .sort((a, b) => a < b ? -1 : 1)
+              .filter(key => !!landmark[key])
+              .map((key) => {
+                const index = +/Material(\d)/.exec(key)[1];
+                return {
+                  id: landmark[key].ItemTargetID,
+                  amount: +landmark[`Amount${index}`]
+                };
+              })
+              .filter(i => !!i.id);
+            return {
+              ...landmarks,
+              [ID]: {
+                key: landmark.ID,
+                icon: landmark.IconHD,
+                en: landmark.Name.Text_en,
+                de: landmark.Name.Text_de,
+                ja: landmark.Name.Text_ja,
+                fr: landmark.Name.Text_fr,
+                ingredients
+              }
+            };
+          }, {});
+      })
+    ).subscribe(landmarks => {
+      this.persistToJsonAsset('island-landmarks', landmarks);
+      landmarksDone$.next(true);
     });
 
     combineLatest([

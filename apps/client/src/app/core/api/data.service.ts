@@ -290,30 +290,57 @@ export class DataService {
       );
     }
 
-    const MJIResults$ = query.length > 3 ? this.lazyData.getEntry('islandBuildings').pipe(
-      map(buildings => {
-        return Object.entries(buildings)
-          .filter(([, building]) => {
-            return building[searchLang]?.toLowerCase().includes(query.toLowerCase());
-          })
-          .map(([key, building]) => {
-            return <SearchResult>{
-              id: +key,
-              itemId: +key,
-              icon: `${baseUrl}${building.icon}`,
-              amount: 1,
-              contentType: 'islandBuildings',
-              recipe: {
-                recipeId: `mjibuilding-${key}`,
+    const MJIResults$ = query.length > 3 ? combineLatest([
+      this.lazyData.getEntry('islandBuildings'),
+      this.lazyData.getEntry('islandLandmarks')
+    ]).pipe(
+      map(([buildings, landmarks]) => {
+        return [
+          ...Object.entries(buildings)
+            .filter(([, building]) => {
+              return building[searchLang]?.toLowerCase().includes(query.toLowerCase());
+            })
+            .map(([key, building]) => {
+              return <SearchResult>{
+                id: +key,
                 itemId: +key,
-                collectible: false,
-                job: -10,
-                stars: 0,
-                lvl: 1,
-                icon: `${baseUrl}${building.icon}`
-              }
-            };
-          });
+                icon: `${baseUrl}${building.icon}`,
+                amount: 1,
+                contentType: 'islandBuildings',
+                recipe: {
+                  recipeId: `mjibuilding-${key}`,
+                  itemId: +key,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: `${baseUrl}${building.icon}`
+                }
+              };
+            }),
+          ...Object.entries(landmarks)
+            .filter(([, landmark]) => {
+              return landmark[searchLang]?.toLowerCase().includes(query.toLowerCase());
+            })
+            .map(([key, landmark]) => {
+              return <SearchResult>{
+                id: +key,
+                itemId: +key,
+                icon: `${baseUrl}${(landmark as any).icon}`,
+                amount: 1,
+                contentType: 'islandLandmarks',
+                recipe: {
+                  recipeId: `mjilandmark-${key}`,
+                  itemId: +key,
+                  collectible: false,
+                  job: -10,
+                  stars: 0,
+                  lvl: 1,
+                  icon: `${baseUrl}${(landmark as any).icon}`
+                }
+              };
+            })
+        ];
       })
     ) : of([]);
 
@@ -371,8 +398,8 @@ export class DataService {
 
     return combineLatest([baseResults, MJIResults$])
       .pipe(
-        map(([a,b]) => a.concat(b))
-      )
+        map(([a, b]) => a.concat(b))
+      );
   }
 
   public search(query: string, type: SearchType, filters: SearchFilter[], sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {

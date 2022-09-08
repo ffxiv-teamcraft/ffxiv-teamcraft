@@ -1,0 +1,152 @@
+{
+  "-11010": {
+    "key": 1,
+    "icon": "/i/053000/053914_hr1.png",
+    "en": "Quixotic Windmill",
+    "de": "Windmühle",
+    "ja": "風車",
+    "fr": "Moulin",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 15
+      },
+      {
+        "id": 37561,
+        "amount": 10
+      },
+      {
+        "id": 37562,
+        "amount": 5
+      },
+      {
+        "id": 37564,
+        "amount": 5
+      }
+    ]
+  },
+  "-11020": {
+    "key": 2,
+    "icon": "/i/053000/053911_hr1.png",
+    "en": "Towering Tree Fort",
+    "de": "Baumhaus",
+    "ja": "ツリーハウス",
+    "fr": "Cabane forestière",
+    "ingredients": [
+      {
+        "id": 37561,
+        "amount": 15
+      },
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 10
+      },
+      {
+        "id": 37558,
+        "amount": 5
+      },
+      {
+        "id": 37562,
+        "amount": 5
+      }
+    ]
+  },
+  "-11030": {
+    "key": 3,
+    "icon": "/i/053000/053910_hr1.png",
+    "en": "Boiling Bathhouse",
+    "de": "Heiße Quelle",
+    "ja": "温泉小屋",
+    "fr": "Sources thermales",
+    "ingredients": [
+      {
+        "id": 37560,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 15
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37551,
+        "amount": 10
+      },
+      {
+        "id": 37555,
+        "amount": 3
+      }
+    ]
+  },
+  "-11040": {
+    "key": 4,
+    "icon": "/i/053000/053913_hr1.png",
+    "en": "Lominsan Lighthouse",
+    "de": "Leuchtturm",
+    "ja": "灯台",
+    "fr": "Phare",
+    "ingredients": [
+      {
+        "id": 37574,
+        "amount": 20
+      },
+      {
+        "id": 37569,
+        "amount": 10
+      },
+      {
+        "id": 37560,
+        "amount": 10
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37582,
+        "amount": 3
+      }
+    ]
+  },
+  "-11050": {
+    "key": 5,
+    "icon": "/i/053000/053912_hr1.png",
+    "en": "Water Otter Fountain",
+    "de": "Otterborn",
+    "ja": "ウソウソの泉",
+    "fr": "Fontaine ressourçante",
+    "ingredients": [
+      {
+        "id": 37574,
+        "amount": 15
+      },
+      {
+        "id": 37565,
+        "amount": 15
+      },
+      {
+        "id": 37570,
+        "amount": 10
+      },
+      {
+        "id": 37558,
+        "amount": 10
+      },
+      {
+        "id": 37578,
+        "amount": 3
+      }
+    ]
+  }
+}

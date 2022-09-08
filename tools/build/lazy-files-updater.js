@@ -38,6 +38,13 @@ function getType(file) {
       importStr: `import {${className}} from './model/${_.kebabCase(className)}';`
     };
   }
+  // We need to override this case, weird quicktype derp
+  if (className === 'LazyIslandLandmark') {
+    return {
+      type: 'Record<number, The110>',
+      importStr: `import {The110} from './model/${_.kebabCase(className)}';`
+    };
+  }
   const valuesAreArrays = Array.isArray(dataObj[0] || dataObj[Object.keys(dataObj)[0]]);
   if (valuesAreArrays) {
     indexType = indexType.replace('T', 'T[]');
@@ -181,7 +188,7 @@ export interface LazyData {${properties}
 
   fs.writeFileSync(
     path.join(__dirname, '../../apps/client/src/app/lazy-data/lazy-data-keys.ts'),
-    `export const LazyDataKeys = ${JSON.stringify(keys,null, 2)}`.replace(/"/g, '\'')
+    `export const LazyDataKeys = ${JSON.stringify(keys, null, 2)}`.replace(/"/g, '\'')
   );
 
   console.log(colors.green(`Keys list updated`));
