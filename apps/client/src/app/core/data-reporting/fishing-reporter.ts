@@ -22,7 +22,10 @@ export class FishingReporter implements DataReporter {
               private settings: SettingsService) {
   }
 
-  getDataReports(packets$: Observable<any>): Observable<any[]> {
+  getDataReports(_packets$: Observable<any>): Observable<any[]> {
+    const packets$ = _packets$.pipe(
+      filter(packet => packet.header.sourceActor === packet.header.targetActor)
+    );
     const actorControlSelf$ = packets$.pipe(
       ofMessageType('actorControlSelf'),
       toIpcData(),

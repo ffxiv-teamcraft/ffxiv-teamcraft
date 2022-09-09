@@ -24,7 +24,7 @@ export class IslandAnimalsExtractor extends AbstractExtractor<IslandAnimal[]> {
     return this.lazyData.getRow('islandAnimalSources', itemId).pipe(
       map((sources) => {
         if (sources) {
-          return uniqBy(sources.map(s => ({ id: s })), 'id');
+          return uniqBy((sources as unknown as number[]).map(s => ({ id: s })), 'id');
         }
       })
     );

@@ -12,7 +12,10 @@ export class SubmarineExplorationResultReporter extends ExplorationResultReporte
     super();
   }
 
-  getDataReports(packets$: Observable<any>): Observable<any[]> {
+  getDataReports(_packets$: Observable<any>): Observable<any[]> {
+    const packets$ = _packets$.pipe(
+      filter(packet => packet.header.sourceActor === packet.header.targetActor)
+    );
     const isSubmarineMenuOpen$: Observable<boolean> = merge(
       packets$.pipe(ofMessageType('eventStart')),
       packets$.pipe(ofMessageType('eventFinish'))
