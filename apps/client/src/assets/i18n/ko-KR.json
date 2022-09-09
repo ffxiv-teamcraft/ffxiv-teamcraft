@@ -304,6 +304,7 @@
   "Reset_progression": "진행상황 초기화",
   "Gardening": "재배",
   "Hunting": "사냥",
+  "Island_animal": "Island animal",
   "Desynth": "분해",
   "Vendors": "상인",
   "Open": "열기",
@@ -2882,7 +2883,8 @@
       "SPEARFISHING": "작살 낚시",
       "FATE": "돌발 임무",
       "MOGSTATION": "모그스테이션",
-      "DEPRECATED": "더 이상 사용되지 않음"
+      "DEPRECATED": "더 이상 사용되지 않음",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "제안",
@@ -2933,6 +2935,7 @@
     }
   },
   "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
@@ -2951,6 +2954,8 @@
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
       "Run_optimizer": "Find best planning for the rest of the day",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
