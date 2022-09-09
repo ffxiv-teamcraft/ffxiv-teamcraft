@@ -304,6 +304,7 @@
   "Reset_progression": "重置进度",
   "Gardening": "园艺",
   "Hunting": "击杀",
+  "Island_animal": "Island animal",
   "Desynth": "分解",
   "Vendors": "商人",
   "Open": "打开",
@@ -2882,7 +2883,8 @@
       "SPEARFISHING": "叉鱼",
       "FATE": "危命任务",
       "MOGSTATION": "商城物品",
-      "DEPRECATED": "已弃用"
+      "DEPRECATED": "已弃用",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "提议",
@@ -2933,6 +2935,7 @@
     }
   },
   "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
@@ -2951,6 +2954,8 @@
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
       "Run_optimizer": "Find best planning for the rest of the day",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
