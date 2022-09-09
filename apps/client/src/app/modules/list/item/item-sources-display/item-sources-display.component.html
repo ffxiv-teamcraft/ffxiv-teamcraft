@@ -16,6 +16,11 @@
               nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
         <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
       </button>
+      <button (click)="openIslandAnimalsPopup(item)" *ngSwitchCase="dataTypes.ISLAND_ANIMAL" nz-button
+              nz-tooltip
+              nzShape="circle" nzTooltipTitle="{{'Island_animal' | translate}}">
+        <img class="gathering-icon" src="https://xivapi.com/i/063000/063949.png" alt="Island animals">
+      </button>
       <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
               nz-button
               nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">

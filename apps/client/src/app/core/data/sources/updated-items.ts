@@ -1,7 +1,1 @@
-export const updatedItemIds = [
-  -11010,
-  -11020,
-  -11030,
-  -11040,
-  -11050
-];
+export const updatedItemIds = [37604];

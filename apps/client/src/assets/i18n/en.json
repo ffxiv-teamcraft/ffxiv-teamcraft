@@ -304,6 +304,7 @@
   "Reset_progression": "Reset progression",
   "Gardening": "Gardening",
   "Hunting": "Hunting",
+  "Island_animal": "Island animal",
   "Desynth": "Desynth",
   "Vendors": "Vendors",
   "Open": "Open",
@@ -2882,7 +2883,8 @@
       "SPEARFISHING": "SPEARFISHING",
       "FATE": "FATE",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "DEPRECATED"
+      "DEPRECATED": "DEPRECATED",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "PROPOSAL",
@@ -2933,6 +2935,7 @@
     }
   },
   "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",

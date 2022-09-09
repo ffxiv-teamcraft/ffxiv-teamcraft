@@ -26,6 +26,7 @@ import { QuestsComponent } from '../../../item-details/quests/quests.component';
 import { AchievementsComponent } from '../../../item-details/achievements/achievements.component';
 import { first } from 'rxjs/operators';
 import { TeamcraftOptimizedComponent } from '../../../../core/component/teamcraft-optimized-component';
+import { IslandAnimalComponent } from '../../../item-details/island-animal/island-animal.component';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -66,6 +67,10 @@ export class ItemSourcesDisplayComponent extends TeamcraftOptimizedComponent {
 
   public openHuntingPopup(item: ListRow): void {
     this.openDetailsPopup(HuntingComponent, item, DataType.DROPS);
+  }
+
+  public openIslandAnimalsPopup(item: ListRow): void {
+    this.openDetailsPopup(IslandAnimalComponent, item, DataType.ISLAND_ANIMAL);
   }
 
   public openInstancesPopup(item: ListRow): void {

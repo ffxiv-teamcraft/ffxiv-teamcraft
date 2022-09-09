@@ -66,6 +66,7 @@ import { AchievementsExtractor } from './data/extractor/achievements-extractor';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { DeprecatedExtractor } from './data/extractor/deprecated-extractor';
 import { AlarmButtonModule } from '../alarm-button/alarm-button.module';
+import { IslandAnimalsExtractor } from './data/extractor/island-animals-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -93,7 +94,8 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true }
+  { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: IslandAnimalsExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({

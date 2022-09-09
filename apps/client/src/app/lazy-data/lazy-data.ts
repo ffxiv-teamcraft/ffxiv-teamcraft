@@ -158,6 +158,7 @@ export interface LazyData {
   ilvls: Record<number, number>;
   instanceSources: Record<number, number[]>;
   instances: Record<number, LazyInstance>;
+  islandAnimalSources: Record<number, number[]>;
   islandBuildings: Record<number, LazyIslandBuilding>;
   islandCraftworksTheme: Record<number, LazyIslandCraftworksTheme>;
   islandCraftworks: Record<number, LazyIslandCraftwork>;
