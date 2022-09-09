@@ -89,6 +89,8 @@
   {{'ISLAND_SANCTUARY.WORKSHOP.Run_optimizer' | translate}}
 </button>
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
+  <nz-alert *ngIf="optimizerResult.length === 0" [nzMessage]="'ISLAND_SANCTUARY.WORKSHOP.No_schedule_found' | translate"
+            [nzDescription]="'ISLAND_SANCTUARY.WORKSHOP.No_schedule_found_explain' | translate" nzType="error"></nz-alert>
   <div class="optimizer-results" fxLayout="row wrap" fxLayoutGap="10px">
     <nz-card *ngFor="let schedule of optimizerResult" nzTitle="{{'ISLAND_SANCTUARY.WORKSHOP.Total_value' | translate}}: {{schedule.score}}" nzSize="small">
       <div fxLayout="column" class="planning">

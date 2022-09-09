@@ -58,6 +58,9 @@ export class PlanningOptimizer {
   }
 
   public run(): { score: number, planning: CraftworksObject[] }[] {
+    if (this.remainingHoursBeforeReset < 4) {
+      return [];
+    }
     for (let i = 0; i < PlanningOptimizer.GENERATIONS; i++) {
       this.population = this.newGeneration();
     }
@@ -186,10 +189,10 @@ export class PlanningOptimizer {
   }
 
   private fitness(genome: Genome): number {
-   return this.getRealScore(genome, 100);
+    return this.getRealScore(genome, 100);
   }
 
-  private getRealScore(genome: Genome, bonusWeight = 1):number{
+  private getRealScore(genome: Genome, bonusWeight = 1): number {
     return genome.reduce((acc, chromosome, index) => {
       if (acc.totalTime > this.remainingHoursBeforeReset) {
         return {

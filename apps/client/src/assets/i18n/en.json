@@ -2951,6 +2951,8 @@
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
       "Run_optimizer": "Find best planning for the rest of the day",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
