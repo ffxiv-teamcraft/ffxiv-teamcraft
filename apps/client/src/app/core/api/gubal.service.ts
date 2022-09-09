@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IpcService } from '../electron/ipc.service';
-import { catchError, debounceTime, filter, first, mapTo, switchMap } from 'rxjs/operators';
+import { catchError, debounceTime, first, mapTo, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../+state/auth.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { DataReporter } from '../data-reporting/data-reporter';
@@ -25,26 +25,24 @@ export class GubalService {
 
   public init(): void {
     combineLatest(this.reporters.map(reporter => {
-      return reporter.getDataReports(this.ipc.packets$.pipe(
-          filter(packet => packet.header.sourceActor === packet.header.targetActor)
-        )
-      ).pipe(
+      return reporter.getDataReports(this.ipc.packets$).pipe(
         debounceTime(500),
         switchMap(dataReports => {
           if (dataReports.length === 0) {
             return of(null);
           }
-          return combineLatest(dataReports.map(data => {
-            return this.submitData(reporter.getDataType(), data);
-          }));
+          return this.submitData(reporter.getDataType(), dataReports);
         })
       );
     })).subscribe();
   }
 
-  private submitData(dataType: string, data: any): Observable<void> {
-    const query = gql`mutation add${dataType}Data($data: ${dataType}_insert_input!) {
-        insert_${dataType}(objects: [$data]) {
+  private submitData(dataType: string, data: any[]): Observable<void> {
+    const query = gql`mutation add${dataType}Data($data: [${dataType}_insert_input!]!) {
+        insert_${dataType}(objects: $data, on_conflict: {
+      constraint: bnpc_bnpcName_bnpcBase_key,
+      update_columns: []
+    }) {
           affected_rows
         }
       }`;
@@ -54,11 +52,11 @@ export class GubalService {
         return this.apollo.mutate({
           mutation: query,
           variables: {
-            data: {
-              ...data,
+            data: data.map(row => ({
+              ...row,
               userId: userId,
               version: this.version
-            }
+            }))
           }
         });
       }),

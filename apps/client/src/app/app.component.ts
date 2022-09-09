@@ -261,7 +261,7 @@ export class AppComponent implements OnInit {
 
     this.applyTheme(this.settings.theme);
 
-    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_jhyzb5fkcnq.js' });
+    this.iconService.fetchFromIconfont({ scriptUrl: 'https://at.alicdn.com/t/c/font_931253_ylxiqmgyxl.js' });
 
     this.time$ = this.reloadTime$.pipe(
       switchMap(() => {

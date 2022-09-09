@@ -30,7 +30,9 @@ export const APP_INITIALIZERS = [
     provide: APP_INITIALIZER,
     useFactory: (service: GubalService) => {
       return () => {
-        service.init();
+        setTimeout(() => {
+          service.init();
+        }, 10000);
       };
     },
     deps: [GubalService],

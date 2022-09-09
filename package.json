@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "9.7.6",
+  "version": "9.7.7",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -258,7 +258,7 @@
     "p-queue": "^7.1.0",
     "papaparse": "^5.2.0",
     "prettier": "2.3.1",
-    "quicktype-core": "^6.0.70",
+    "quicktype-core": "^6.0.71",
     "semver": "^5.4.1",
     "standard-version": "^4.4.0",
     "subscriptions-transport-ws": "^0.9.19",

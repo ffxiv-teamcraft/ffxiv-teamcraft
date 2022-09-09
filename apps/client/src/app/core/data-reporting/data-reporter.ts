@@ -1,7 +1,8 @@
 import { Observable } from 'rxjs';
+import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export interface DataReporter {
-  getDataReports(packets$: Observable<any>): Observable<any[]>;
+  getDataReports(packets$: Observable<Message>): Observable<any[]>;
 
   getDataType(): string;
 }

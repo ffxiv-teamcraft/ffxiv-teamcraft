@@ -9,6 +9,8 @@ import { SubmarineExplorationResultReporter } from './submarine-exploration-resu
 import { AirshipExplorationResultReporter } from './airship-exploration-result-reporter';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
+import { BnpcReporter } from './bnpc-reporter';
+import { Apollo } from 'apollo-angular';
 
 export const DataReporters = new InjectionToken('DataReporters');
 
@@ -17,5 +19,6 @@ export const DATA_REPORTERS: Provider[] = [
   { provide: DataReporters, useClass: ReductionResultReporter, multi: true, deps: [PacketCaptureTrackerService] },
   { provide: DataReporters, useClass: FishingReporter, multi: true, deps: [EorzeaFacade, LazyDataFacade, EorzeanTimeService, IpcService, SettingsService] },
   { provide: DataReporters, useClass: SubmarineExplorationResultReporter, multi: true, deps: [LazyDataFacade] },
-  { provide: DataReporters, useClass: AirshipExplorationResultReporter, multi: true, deps: [LazyDataFacade] }
+  { provide: DataReporters, useClass: AirshipExplorationResultReporter, multi: true, deps: [LazyDataFacade] },
+  { provide: DataReporters, useClass: BnpcReporter, multi: true, deps: [Apollo] },
 ];

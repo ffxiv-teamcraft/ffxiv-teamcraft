@@ -306,15 +306,26 @@ export class ExtractorComponent {
     const res$ = new ReplaySubject<LazyDataWithExtracts['extracts']>();
     combineLatest([
       this.lazyData.getEntry('items'),
-      this.lazyData.getEntry('islandBuildings')
+      this.lazyData.getEntry('islandBuildings'),
+      this.lazyData.getEntry('islandLandmarks')
     ]).pipe(
-      switchMap(([lazyItems, islandBuildings]) => {
-        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys({ ...islandBuildings, ...lazyItems }).sort((a, b) => +a - +b);
+      switchMap(([lazyItems, islandBuildings, islandLandmarks]) => {
+        const itemIds = onlyUpdatedItems ? updatedItemIds : Object.keys({ ...islandBuildings, ...islandLandmarks, ...lazyItems }).sort((a, b) => +a - +b);
         this.totalTodo$.next(itemIds.length);
         return from(itemIds).pipe(
           mergeMap(itemId => {
             let row$: Observable<ListRow> = of({ id: +itemId } as ListRow);
-            if (itemId <= -10000) {
+            if (itemId <= -11000) {
+              row$ = this.lazyData.getRow('islandLandmarks', +itemId).pipe(
+                map(landmark => {
+                  return {
+                    id: +itemId,
+                    contentType: 'islandLandmarks',
+                    xivapiIcon: landmark.icon
+                  } as ListRow;
+                })
+              );
+            } else if (itemId <= -10000) {
               row$ = this.lazyData.getRow('islandBuildings', +itemId).pipe(
                 map(building => {
                   return {

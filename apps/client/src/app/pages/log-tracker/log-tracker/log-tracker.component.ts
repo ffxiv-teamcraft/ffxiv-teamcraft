@@ -16,8 +16,6 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
-import { GatheringNode } from '../../../core/data/model/gathering-node';
-import { Alarm } from '../../../core/alarms/alarm';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { LazyLogTrackerPageData } from '../../../lazy-data/model/lazy-log-tracker-page-data';

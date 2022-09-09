@@ -1,3 +1,1 @@
-export const updatedItemIds = [
-  37562
-];
+export const updatedItemIds = [37604];

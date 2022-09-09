@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.7"></a>
+## [9.7.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.6...v9.7.7) (2022-09-09)
+
+
+### Bug Fixes
+
+* **collectables:** fix alarm buttons not showing on timed items ([49b95dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49b95dd))
+* **db:** fix Islekeep's Stone Hatchet recipe ([b1d5909](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b1d5909))
+* **island-workshop:** display error message when no plannings are found ([d183d1c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d183d1c))
+* **log-tracker:** fixed selected recipes not resetting on page change ([6f191a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f191a8))
+
+
+### Features
+
+* **allagan-reports:** support for island pasture animal source ([0c267ab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0c267ab))
+* **lists:** add support for landmark recipes ([4607389](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4607389))
+
+
+
 <a name="9.7.6"></a>
 ## [9.7.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.5...v9.7.6) (2022-09-06)
 

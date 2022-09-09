@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, from, Observable, of, Subject, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { catchError, first, map, mapTo, switchMap, tap } from 'rxjs/operators';
+import { catchError, first, map, mapTo, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/compat/firestore';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
@@ -97,6 +97,9 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
+          if (item.id < 0) {
+            console.log(extracts[item.id]);
+          }
           return Object.assign(item, extracts[item.id]);
         });
         ListController.afterDeserialized(list);
@@ -121,7 +124,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .pipe(
         switchMap(list => {
           return this.completeListData(list);
-        })
+        }),
+        shareReplay(1)
       );
   }
 

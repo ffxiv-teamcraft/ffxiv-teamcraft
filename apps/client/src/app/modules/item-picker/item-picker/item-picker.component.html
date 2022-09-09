@@ -31,7 +31,7 @@
             <div class="item-icon-container">
               <label nz-checkbox [(ngModel)]="result.selected" *ngIf="multi"></label>
               <app-item-icon *ngIf="result.contentType === 'items'" [icon]="result.icon" [itemId]="result.itemId" [width]="32"></app-item-icon>
-              <app-item-icon *ngIf="result.contentType === 'islandBuildings'" [icon]="result.icon" [itemId]="null" [width]="32"
+              <app-item-icon *ngIf="result.contentType !== 'items'" [icon]="result.icon" [itemId]="null" [width]="32"
                              [tooltipDisabled]="true"></app-item-icon>
             </div>
           </ng-template>

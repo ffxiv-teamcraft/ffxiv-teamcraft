@@ -24,6 +24,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
 import { MapModule } from '../../modules/map/map.module';
 import { ListModule } from '../../modules/list/list.module';
+import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 
 const routes: Routes = [
   {
@@ -67,7 +68,8 @@ const routes: Routes = [
     PageLoaderModule,
     NodeDetailsModule,
     MapModule,
-    ListModule
+    ListModule,
+    AlarmButtonModule
   ],
   declarations: [
     CollectablesComponent

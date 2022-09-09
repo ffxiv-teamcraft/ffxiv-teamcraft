@@ -179,6 +179,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
     venture: [null, this.requiredIfSource([AllaganReportSource.VENTURE], 'ventures$')],
     fate: [null, this.requiredIfSource([AllaganReportSource.FATE], 'fates$')],
     mob: [null, this.requiredIfSource([AllaganReportSource.DROP], 'mobs$')],
+    islandAnimal: [false],
     voyageType: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     voyage: [null, this.requiredIfSource([AllaganReportSource.VOYAGE])],
     rarity: [null],
@@ -591,6 +592,7 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           map(id => ({ ventureId: id }))
         );
       case AllaganReportSource.DROP:
+      case AllaganReportSource.ISLAND_ANIMAL:
         return of(this.getEntryId(formState.mob)).pipe(
           map(id => ({ monsterId: id }))
         );

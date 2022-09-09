@@ -82,7 +82,7 @@ export class ItemRowComponent extends TeamcraftOptimizedComponent implements OnI
       item.masterbooks = getItemSource(item, DataType.MASTERBOOKS);
       if (item.recipeId) {
         item.sources = item.sources.map(source => {
-          if (source.type === DataType.CRAFTED_BY) {
+          if (source.type === DataType.CRAFTED_BY && source.data.length > 1) {
             return {
               ...source,
               data: source.data

@@ -13,6 +13,7 @@ enum AllaganReportSource {
   VENTURE = 'VENTURE', // Retainer venture
   VOYAGE = 'VOYAGE', // Airship/Submarine voyage
   DROP = 'DROP', // Drop from monsters kill
+  ISLAND_ANIMAL = 'ISLAND_ANIMAL', // Drop from island animals
   INSTANCE = 'INSTANCE', // Obtained inside an instance
   FATE = 'FATE', // Obtained as fate reward
   MOGSTATION = 'MOGSTATION',
@@ -40,6 +41,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
         const loots = {};
         const ventures = {};
         const drops = {};
+        const islandAnimals = {};
         const instanceDrops = {};
         const fateSources = {};
         const mogstation = {};
@@ -116,6 +118,9 @@ export class AllaganReportsExtractor extends AbstractExtractor {
                 case AllaganReportSource.DROP:
                   this.addItemAsSource(drops, report.itemId, report.data.monsterId, false, !report.applied);
                   break;
+                case AllaganReportSource.ISLAND_ANIMAL:
+                  this.addItemAsSource(islandAnimals, report.itemId, report.data.monsterId, false, !report.applied);
+                  break;
                 case AllaganReportSource.FATE:
                   this.addItemAsSource(fateSources, report.itemId, report.data.fateId, false, !report.applied);
                   break;
@@ -157,6 +162,7 @@ export class AllaganReportsExtractor extends AbstractExtractor {
             this.persistToJsonAsset('loot-sources', loots);
             this.persistToJsonAsset('venture-sources', ventures);
             this.persistToJsonAsset('drop-sources', drops);
+            this.persistToJsonAsset('island-animal-sources', islandAnimals);
             this.persistToJsonAsset('instance-sources', instanceDrops);
             this.persistToJsonAsset('fate-sources', fateSources);
             this.persistToJsonAsset('mogstation-sources', mogstation);

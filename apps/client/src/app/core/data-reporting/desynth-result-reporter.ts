@@ -4,12 +4,14 @@ import { Injectable } from '@angular/core';
 import { ofMessageType } from '../rxjs/of-message-type';
 import { toIpcData } from '../rxjs/to-ipc-data';
 import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
+import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class DesynthResultReporter implements DataReporter {
 
   getDataReports(packets$: Observable<Message>): Observable<any[]> {
     const desynthResult$ = packets$.pipe(
+      filter(packet => packet.header.sourceActor === packet.header.targetActor),
       ofMessageType('desynthResult'),
       toIpcData()
     );
