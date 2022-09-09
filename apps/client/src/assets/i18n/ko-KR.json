@@ -149,7 +149,7 @@
     "Success": "성공",
     "Copy_to_clipboard": "클립보드에 복사하기",
     "Language": "언어",
-    "Opened_in_desktop": "이 페이지는 데스크톱 앱 내에 열렸습니다. 이제 페이지를 닫으셔도 됩니다.",
+    "Opened_in_desktop": "이 페이지는 데스크톱 앱에서 열려 있습니다. 이제 페이지를 닫으셔도 됩니다.",
     "Opened_in_desktop_setting": "설정에서 해당 동작을 비활성화할 수 있습니다",
     "Opened_in_desktop_button": "또는 이 버튼 클릭하기",
     "Open_in_desktop": "데스크톱 앱에서 열기",
@@ -287,7 +287,7 @@
   "No": "X",
   "Crystals": "크리스탈",
   "Gathering": "채집",
-  "Perception": "감별력",
+  "Perception": "기술력",
   "Drops_or_GC": "던전/전리품 또는 총사령부",
   "Other": "기타",
   "Pre_crafts": "밑재료",
@@ -358,7 +358,7 @@
   "List_not_found": "목록이 없거나 접근할 권한이 없습니다",
   "Requirements_for_craft": "상세정보",
   "Zone_breakdown": "지역 그룹화",
-  "Npc_breakdown": "Npc 그룹화",
+  "Npc_breakdown": "NPC 그룹화",
   "Reverse_tiers": "단계 역순 표시",
   "Timer_options": "타이머 옵션",
   "Early_by": "출현 전 알림 (에오르제아 시간 기준)",
@@ -469,7 +469,7 @@
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Show_patch_notes_on_update": "새 업데이트마다 패치노트 보여주기",
     "Scrolling_behavior": "스크롤 설정",
-    "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
+    "Scrolling_behavior_explain": "목록 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
     "Enable_auto_stats_updating": "잡 변경 시 자동으로 능력치/레벨을 팀크래프트에 업데이트하기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
@@ -494,15 +494,15 @@
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
     "Show_other_characters_inventories_in_inventory_page": "소지품 페이지에서 다른 캐릭터의 소지품도 표시",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
-    "Alarm_groups_before_no_group": "그룹지정이 안된 알람 앞에 그룹 알람을 표시",
+    "Alarm_groups_before_no_group": "그룹 지정이 안된 알람 앞에 그룹 알람을 표시",
     "Disconnect_patreon": "Patreon 연결 끊기",
     "Export_settings": "설정 내보내기",
     "Import_settings": "설정 가져오기",
     "Import_successful": "설정을 불러왔습니다",
     "Import_error": "설정을 가져오는 중 오류 발생",
     "Has_access_to_housing_vendor": "하우징 상인 우선순위",
-    "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위는 이용이 가능하다면 유용합니다.",
-    "Hide_back_button": "사이드바의 뒤로가기 버튼 숨기기",
+    "Has_access_to_housing_vendor_explain": "NPC 지역화 시스템의 하우징 상인 우선순위 기능은 사용할 수 있다면 유용합니다",
+    "Hide_back_button": "사이드바의 뒤로 가기 버튼 숨기기",
     "Reload_auth_token": "인증 토큰 다시 불러오기",
     "Materia_confidence_rate": "금단 신뢰율",
     "Materia_confidence_rate_explain": "마테리아 예측 신뢰율이 높다는 것은 더 많은 마테리아가 요구되며, 해당 수량 이내로 금단을 끝낼 가능성이 높다는 것을 의미합니다",
@@ -528,7 +528,7 @@
       "Lists": "목록",
       "Alarms": "알람",
       "Other": "기타",
-      "Inventory_tracking": "소지품 트래킹",
+      "Inventory_tracking": "소지품 동기화",
       "Character_tracking": "캐릭터 동기화",
       "Tooling": "고급",
       "Import_export": "가져오기/내보내기",
@@ -542,9 +542,9 @@
     "NOTIFICATIONS": {
       "Title": "공지",
       "Alarms": "알람",
-      "Autofill_completion": "자동채우기 완료",
-      "Retainer_tracker": "집사 트래커",
-      "Voyage_tracker": "탐사 트래커",
+      "Autofill_completion": "자동 채우기 완료",
+      "Retainer_tracker": "집사 동기화",
+      "Voyage_tracker": "탐사 동기화",
       "Reset_timer": "초기화 타이머"
     }
   },
@@ -564,8 +564,8 @@
     "User_not_verified": "인증되지 않은 사용자입니다. 사용자 인증을 눌러주세요.",
     "More_than_100_lists_created": "100개 이상의 목록 제작",
     "Veteran": "베테랑",
-    "Autofill_from_packets": "패킷 캡처를 사용하여 능력치 자동채우기 (음식 사용시 음식도 포함됩니다)",
-    "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해주시고, 완료가 되면 이 팝업창을 닫으세요.(음식효과가 포함되지않게 해주세요. 시뮬레이터 사용시 음식효과가 포함된 능력치면 사용할 때 문제가 생길 수 있습니다)",
+    "Autofill_from_packets": "패킷 캡처를 사용하여 능력치 자동 채우기 (음식 사용 시 음식도 포함됩니다)",
+    "Autofill_stats_explain": "갱신을 위해 원하는 직업으로 변경해 주시고, 완료가 되면 이 팝업창을 닫으세요.(음식 효과가 포함되지 않게 해주세요. 시뮬레이터 사용 시 음식 효과가 포함된 능력치라면 사용할 때 문제가 생길 수 있습니다)",
     "Open_public_profile": "공개 프로필 보기",
     "Community_contributions": "커뮤니티 목록 및 로테이션",
     "Fishing_rankings": "낚시 순위",
@@ -575,19 +575,19 @@
     "Gearset_priority_explain": "주괴나 덩어리, 혹은 그 외 비공정 수리 재료와 같이 여러 제작 직업이 제작 가능한 레시피들을 선택하는 데 사용됩니다.",
     "Characters": "캐릭터",
     "Missing_character": "캐릭터 정보 없음",
-    "Missing_character_description": "캐릭터 정보가 더이상 유효하지 않습니다. 프로필에서 캐릭터 정보를 삭제해주세요.",
+    "Missing_character_description": "캐릭터 정보가 더 이상 유효하지 않습니다. 프로필에서 캐릭터 정보를 삭제해주세요.",
     "VERIFICATION": {
       "Button": "인증",
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
       "Success": "캐릭터가 인증되었습니다! 이 팝업을 닫으셔도 됩니다. 더 이상 코드가 필요없기 때문에, 프로필에서 코드를 제거하셔도 됩니다.",
-      "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여넣고 변경이 되었는지 확인해주세요. 그리고 약 30초 뒤에 재시도해주세요.",
+      "Error": "Bio에서 코드를 찾을 수 없습니다. 코드를 붙여 넣고 변경이 되었는지 확인해 주세요. 그리고 약 30초 뒤에 재시도 해주세요.",
       "Validate": "인증"
     }
   },
   "LISTS": {
     "Load_archived": "보관된 목록 불러오기",
-    "Needs_verification": "캐릭터가 공유된 FC 목록에 엑세스할 수 있는지 확인해주세요 (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
+    "Needs_verification": "캐릭터가 공유된 FC 목록에 엑세스할 수 있는지 확인 해주세요 (https://wiki.ffxivteamcraft.com/guides/verify-your-character)",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
     "Merge_lists": "목록 병합",
@@ -755,7 +755,7 @@
     "Create_commission": "해당 목록에 대한 유저 의뢰를 만들기",
     "Commission_list": "유저 의뢰 목록",
     "Inventory_cleanup": "소지품 정리",
-    "Inventory_cleanup_description": "여기는 목록에 사용되지 않는 소지품 내아이템입니다",
+    "Inventory_cleanup_description": "여기는 목록에 사용되지 않는 소지품 내의 아이템입니다",
     "Consider_requirements": "재료 포함하기",
     "Ignore_requirements": "재료 무시하기",
     "SOURCES": {
@@ -811,7 +811,7 @@
     },
     "OVERLAY": {
       "Open": "목록 오버레이 켜기/끄기",
-      "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
+      "No_display": "시작하려면 목록을 메인 프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     },
     "SPLIT": {
@@ -914,7 +914,7 @@
     "No_items": "채집 장소를 찾을 수 없습니다.",
     "Gathering_name": "아이템 이름을 입력하세요",
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
-    "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
+    "Intro": "채집 수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
     "Fish_eyes": "오직 날씨 조건만을 위하여 물고기의 눈 필요",
     "Add_alarm": "알람 추가",
@@ -926,7 +926,7 @@
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
     "Legendary": "전설",
-    "Switched_to_compact": "너무 많은 결과값으로 인해 간소화로 전환됩니다",
+    "Switched_to_compact": "너무 많은 결과값으로 인해 간소화 모드로 전환됩니다",
     "Node_type": "유형",
     "Use": "용도",
     "Page_range": "총 {{total}} 종류의 아이템 중 {{start}}-{{end}} 번째 아이템"
@@ -1052,12 +1052,12 @@
     "Current_control": "현재 가공 숙련도: {{value}}",
     "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
-    "Find_rotation": "로테이션 파인더",
+    "Find_rotation": "로테이션 검색기",
     "Searching_for_rotation": "커뮤니티 로테이션 검색 중...",
     "No_matching_rotations": "조건에 맞는 커뮤니티 로테이션을 찾지 못했습니다",
     "Click_on_rotation": "로테이션을 선택하고 싶다면 클릭",
     "Recipe_picker_placeholder": "제작하고자 하는 아이템명을 입력하세요",
-    "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
+    "Could_not_find_minstats": "이 로테이션에서 최소 스탯을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "Macro_duration": "매크로 길이: {{duration}}초",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
@@ -1099,7 +1099,7 @@
       "Min_cp_filter_placeholder": "최소 CP",
       "Difficulty_filter_placeholder": "작업량",
       "Quality_filter_placeholder": "품질",
-      "Intro": "레시피 레벨을 입력하세요",
+      "Intro": "제작법 레벨을 입력하세요",
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
       "Success": "HQ확률: {{HQ}}%",
@@ -1206,7 +1206,7 @@
       "Use_prudent_touch_manipulation": "66레벨 이상일 경우 '교묘한 손놀림' 과 '절약 가공'을 사용하여 확실하게 더 높은 품질을 얻어야 합니다",
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
-      "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
+      "Avoid_using_good_actions": "매크로를 구상할 때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
       "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요",
       "Use_reuse": "현재 로테이션이 HQ100%에 도달하면서도 '재사용'을 사용할 CP가 충분하므로, '재사용'을 고려해보세요."
     }
@@ -1242,7 +1242,7 @@
     "INTRO": {
       "Title": "길드 의뢰",
       "First_line": "이 페이지에서는 주어진 길드의뢰나 여러 개의 길드의뢰에 대한 목록을 만들 수 있습니다.",
-      "Second_line": "직업을 고르고, 레벨 범위를 입력하면 이에 따른 길드의뢰들이 표시됩니다. 원하는 길드의뢰를 선택한 뒤 목록에 추가하면 필요한 제작법이 자동으로 선택된 목록에 추가됩니다.",
+      "Second_line": "직업을 고르고, 레벨 범위를 입력하면 이에 따른 길드 의뢰들이 표시됩니다. 원하는 길드 의뢰를 선택한 뒤 목록에 추가하면 필요한 제작법이 자동으로 선택된 목록에 추가됩니다.",
       "Third_line": "또한 길드의뢰명을 알고 있을 경우 이름으로 검색할 수 있습니다."
     }
   },
@@ -1341,19 +1341,19 @@
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
       "Public_lists": "제작품, 길드의뢰 납품세트나 제작수첩 완료, 비공정, BiS 장비 등 모든 것을 당신의 커뮤니티 목록으로 복사할 수 있습니다.",
-      "Alarms": "알람을 만들어 채집장소 출현을 놓치지 않고, 그룹으로 묶고, 인게임으로 내보내는 것과 같은 모든 것을 할 수 있습니다!",
+      "Alarms": "알람을 만들어 채집물을 놓치지 않고, 채집물을 그룹으로 묶고, 인게임으로 내보내는 것 등의 모든 것을 할 수 있습니다!",
       "Gathering_location": "채집물에 대한 정보를 찾고, 알람을 만들고, 지도 좌표, 가장 가까운 에테레이트, 그리고 필요한 전승록과 추가 정보를 확인할 수 있습니다!",
       "Rotations": "제작 로테이션을 만들고 시뮬레이터에서 확인하거나, 사용자 지정 시뮬레이터를 이용해 이론 상의 로테이션을 구성할 수 있습니다.",
       "Levequests": "직업과 레벨에 맞는 길드의뢰를 찾고, 보상을 확인하고, 목록을 만들 수 있습니다.",
-      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로를 번역할 수 있습니다."
+      "Macro_translation": "매크로를 찾았지만 언어가 다른가요? 매크로 번역기에서는 당신이 플레이하는 FFXIV 게임 언어에 맞는 매크로로 번역할 수 있습니다."
     }
   },
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다!",
     "New_update_available_desktop": "새로운 업데이트가 추가되었습니다!\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
-    "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
-    "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
+    "Downloading_update": "업데이트 다운로드가 완료되면 설치 페이지가 표시됩니다",
+    "Possible_update_issue": "다운로드에 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
   },
   "LOG_TRACKER": {
     "Title": "수첩 트래커",
@@ -1457,7 +1457,7 @@
       "Format": "형식",
       "Folder": "폴더",
       "No_folder": "폴더 없음",
-      "Parsing_file": "파일 내용 분석중...",
+      "Parsing_file": "파일 내용 분석 중...",
       "Saving_items": "아이템 저장 중 ({{done}}/{{todo}})"
     }
   },
@@ -1630,8 +1630,8 @@
         "Size": "크기",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
-          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
-          "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
+          "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
+          "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 직업을 변경하여 해결하세요."
         }
       }
     },
@@ -1834,7 +1834,7 @@
     "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
     "Clear": "아이템 목록 초기화",
-    "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러칸 차지하는 경우에 중복되어 보일 수 있습니다.",
+    "Clipboard_import_duplicates": "목록에 중복되어 보이는 아이템이 있을 수 있습니다. 이 기능은 로드스톤과 연동된 집사 소지품 상태를 보여주기 때문에, 집사 내 소지품에서 해당 아이템이 소지품칸을 여러 칸 차지하는 경우에 중복되어 보일 수 있습니다.",
     "Inventory": "소지품",
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
@@ -1892,7 +1892,7 @@
     "Item_type_placeholder": "아이템 유형 선택",
     "Item_level": "아이템 레벨",
     "Required_level": "요구 레벨",
-    "Recipe_level": "레시피 레벨",
+    "Recipe_level": "제작법 레벨",
     "Crafted_by": "제작 직업",
     "Worn_by": "착용 직업",
     "Gear_stats": "장비 능력치",
@@ -1989,13 +1989,13 @@
       "IslandSanctuaryBag": "Island Sanctuary Bag"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤건지 알아야 합니다.",
+      "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이 중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤 건지 알아야 합니다.",
       "Linked": "연결됨",
       "Linked_tooltip": "해당 캐릭터는 이미 다른 인게임 캐릭터와 연결되었습니다. 선택하면 다른 캐릭터와의 연결이 해제됩니다",
       "Override_link_confirmation": "정말 연결을 해제하고 싶으신가요?",
       "Ignore": "해당 인게임 캐릭터를 무시",
       "You_can_reset_ignore": "데스크톱 앱의 설정에서 무시된 캐릭터를 초기화할 수 있습니다",
-      "Tip": "현재 플레이 중인 캐릭터가 이미 연결되었다면 감지된 캐릭터를 안전하게 무시할 수 있습니다. 어떤 이유로든 캐릭터 파일이 수정될 수 있으며 Teamcraft는 이러한 파일 변경 사항을 감지합니다. 아직 설정하지 않은 캐릭터 파일의 변경이 감지되었습니다."
+      "Tip": "현재 플레이 중인 캐릭터가 이미 연결되었다면 감지된 캐릭터를 무시하셔도 됩니다. 어떤 이유로든 캐릭터 파일이 수정될 수 있으며 Teamcraft는 이러한 파일 변경 사항을 감지합니다."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2011,7 +2011,7 @@
     "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "Optimization_copied": "소지품 최적화를 JSON 형식으로 클립보드에 복사했습니다",
-    "Pause_tracking": "소지품 트래킹 일시정지",
+    "Pause_tracking": "소지품 동기화 일시정지",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
@@ -2199,9 +2199,9 @@
     "Done": "완료",
     "POPUP": {
       "Title": "FFXIV 팀크래프트에 어서오십시오!",
-      "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러페이지로 구성되어 있습니다.",
+      "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러 페이지로 구성되어 있습니다.",
       "Question": "이 기능을 활성화하시겠습니까?",
-      "Can_be_changed_in_settings": "설정에서 켜고 끌수 있습니다."
+      "Can_be_changed_in_settings": "설정에서 켜고 끌 수 있습니다."
     },
     "APP": {
       "Profile": "이름위에 마우스를 올리면 프로필 에디터와 레벨, 능력치 등을 수정할 수 있는 드롭다운 메뉴가 나타납니다."
@@ -2213,7 +2213,7 @@
     },
     "LIST_PANEL": {
       "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
-      "Open_list": "자세한 정보를 보려면 여기를 클릭하세요. (더블클릭 가능)",
+      "Open_list": "자세한 정보를 보려면 여기를 클릭하세요. (목록의 이름을 더블클릭해도 가능)",
       "More": "여기를 눌러서 권한을 관리하고 목록 이름을 변경할 수 있습니다."
     },
     "LIST": {
@@ -2421,7 +2421,7 @@
     "Not_found": "의뢰를 찾을 수 없습니다",
     "Price_tbd": "가격 협의",
     "X_items": "아이템 {{amount}}개",
-    "Open_commission_details": "의뢰 자세히보기",
+    "Open_commission_details": "의뢰 자세히 보기",
     "Your_commissions_as_client": "다른 유저에게 부탁한 의뢰",
     "No_commissions_as_client": "타인에게 의뢰한 내역이 없습니다",
     "Your_commissions_as_crafter": "작업 중인 의뢰",
@@ -2569,7 +2569,7 @@
       "NO_ACTIVE_SUB": "게임 이용권을 구입할 계획이 없음.",
       "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
       "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
-      "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
+      "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했음 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
       "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     },
     "IMPORT": {
@@ -2612,7 +2612,7 @@
   "RETAINERS": {
     "Title": "집사",
     "No_retainers": "집사가 없습니다. 집사 초인종을 클릭하여 집사들의 정보를 불러오기 해주세요.",
-    "Selling": "출품 중 ({{amount}}건)",
+    "Selling": "{{amount}}개 아이템 출품 중",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
     "No_task": "수행 임무 없음",
@@ -2640,7 +2640,7 @@
     "By_supporting_us": "Patreon 후원시 얻을 수 있는 것들:",
     "No_ads": "상단에 더 이상 광고가 표시되지 않습니다",
     "Exclusive_discord_role": "디스코드에서의 특별한 역할과 #supporters 채널 입장 가능",
-    "Your_name_in_loading_screen": "내 닉네임을 로딩 화면에 표시(요청해야함)",
+    "Your_name_in_loading_screen": "내 닉네임을 로딩 화면에 표시 (요청해야함)",
     "Goodies": "무료 스티커, 티셔츠, 포스터 (후원 등급에 따라 다름)",
     "Starting_at_X": "매달 ${{monthly}} 또는 매년 ${{yearly}} 으로 시작할 수 있습니다",
     "Footer_text": "한달에 1달러만 후원하셔도 팀크래프트 개발에 큰 기여를 할 수 있으며, 개발자가 팀크래프트 프로젝트에 모든 시간을 투자하여 더 나은 파이널 판타지14 툴 개발에 힘쓸 수 있습니다.",
@@ -2667,7 +2667,7 @@
     "Submersibles": "잠수함"
   },
   "VOYAGE_TRACKER": {
-    "Title": "탐사 트래커",
+    "Title": "탐사 동기화",
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
     "Voyage_completion_alarm": "탐사 완료 알람",
     "Voyage_completed_notification_title": "{{name}} 가 탐사를 완료했습니다",
@@ -2683,7 +2683,7 @@
     "Rank_column": "랭크",
     "Build_column": "부품",
     "Voyage_column": "탐사",
-    "Nothing_to_show": "표시 할 내용 없음",
+    "Nothing_to_show": "표시할 내용 없음",
     "Please_import_pcap": "패킵 캡처를 사용하여 비공정과 잠수정을 연동하세요",
     "SECTOR_PROGRESSION": {
       "Airship": "비공정",
@@ -2776,7 +2776,7 @@
   },
   "GARDENING": {
     "Growth_time": "성장 시간",
-    "Cross_breeds": "품질개량(교배)"
+    "Cross_breeds": "품질 개량(교배)"
   },
   "ALLAGAN_REPORTS": {
     "Feature_banner_title": "새로운 기능: 알라간 리포트",
@@ -2789,8 +2789,8 @@
     "Submit_new_report": "새 리포트 제안서 제출",
     "Source": "출처",
     "Report_added": "제출된 리포트 제안서",
-    "Instance_placeholder": "던전 이름",
-    "Venture_placeholder": "집사 수행 이름",
+    "Instance_placeholder": "던전명",
+    "Venture_placeholder": "집사 수행명",
     "Monster_placeholder": "몬스터 이름",
     "Voyage_placeholder": "탐사 이름",
     "Voyage_type": "탐사 종류",
@@ -2818,7 +2818,7 @@
     "Gig_head": "작살",
     "No_predators": "포식자 없음",
     "Loading_gubal_analysis": "구브라 분석 로딩 중",
-    "Gubal_analysis_suggestion": "데이터 분석을 기반으로 한 제안",
+    "Gubal_analysis_suggestion": "데이터 분석을 기반으로 제안",
     "Cannot_report_for_this_spot": "해당 물고기의 데이터는 이미 존재하기 때문에 해당 낚시터에 대한 세부정보를 리포트할 수 없습니다",
     "Please_suggest_edit_instead": "기존에 제안했던 리포트를 편집해주세요",
     "Add_data_sources": "해당 아이템의 데이터 출처를 추가/수정",
@@ -2872,7 +2872,7 @@
     "SOURCE": {
       "DESYNTH": "분해로 획득",
       "REDUCTION": "정제",
-      "GARDENING": "가드닝",
+      "GARDENING": "재배",
       "LOOT": "보상 상자",
       "VENTURE": "집사 수행",
       "VOYAGE": "탐사",
@@ -2898,7 +2898,7 @@
     "NIGHT": "밤"
   },
   "UPDATER": {
-    "New_update_available": "이용가능한 새 업데이트가 다운로도되었습니다",
+    "New_update_available": "이용 가능한 새 업데이트가 다운로드되었습니다",
     "Restart_to_install": "적용을 위해 재시작하시겠습니까?"
   },
   "NODE_TYPE": {
