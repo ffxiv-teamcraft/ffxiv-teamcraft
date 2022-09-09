@@ -7,11 +7,11 @@ type Genome = number[];
 
 export class PlanningOptimizer {
 
-  private static POPULATION_SIZE = 200;
+  private static POPULATION_SIZE = 500;
 
-  private static GENERATIONS = 200;
+  private static GENERATIONS = 301;
 
-  private static MUTATION_FACTOR = 1;
+  private static MUTATION_FACTOR = 5;
 
   private static WEEKLY_RESET_DAY = 2;
 
@@ -63,20 +63,23 @@ export class PlanningOptimizer {
     }
     for (let i = 0; i < PlanningOptimizer.GENERATIONS; i++) {
       this.population = this.newGeneration();
+      // if (i % 100 === 0) {
+      //   this.printDebugScore(i);
+      // }
     }
     return uniqBy(this.population, e => JSON.stringify(e))
       .map(individual => {
         return {
           individual,
-          score: this.fitness(individual)
+          score: this.getRealScore(individual)
         };
       }).sort((a, b) => {
         return b.score - a.score;
       })
       .slice(0, 5)
-      .map(({ individual }) => {
+      .map(({ individual, score }) => {
         return {
-          score: this.getRealScore(individual),
+          score: score,
           planning: individual.map(chromosome => {
             return this.objects[chromosome];
           })
@@ -84,7 +87,7 @@ export class PlanningOptimizer {
       });
   }
 
-  private printDebugScore(): void {
+  private printDebugScore(iteration: number): void {
     const scored = this.population
       .map(individual => {
         return {
@@ -95,8 +98,10 @@ export class PlanningOptimizer {
       .sort((a, b) => {
         return b.score - a.score;
       });
+    console.group(`ITERATION #${iteration}`);
     console.log(`AVG SCORE: ${scored.reduce((acc, e) => acc + e.score, 0) / this.population.length}`);
     console.log(`BEST: ${scored[0].score}`);
+    console.groupEnd();
   }
 
   private newGeneration(): Genome[] {
@@ -189,7 +194,7 @@ export class PlanningOptimizer {
   }
 
   private fitness(genome: Genome): number {
-    return this.getRealScore(genome, 100);
+    return this.getRealScore(genome, 1);
   }
 
   private getRealScore(genome: Genome, bonusWeight = 1): number {
