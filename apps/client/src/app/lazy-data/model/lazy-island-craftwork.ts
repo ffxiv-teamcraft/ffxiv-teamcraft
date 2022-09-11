@@ -3,4 +3,5 @@ export interface LazyIslandCraftwork {
   value:        number;
   craftingTime: number;
   themes:       number[];
+  lvl:          number;
 }

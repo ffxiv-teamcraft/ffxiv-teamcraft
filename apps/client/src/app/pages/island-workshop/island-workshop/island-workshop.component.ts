@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { distinctUntilChanged, filter } from 'rxjs/operators';
+import { distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
@@ -55,6 +55,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     3: 'Surplus',
     4: 'Overflowing'
   };
+
+  static RANK_RATIO = [0, 100, 110, 120, 130];
 
   public previousReset$ = timer(0, 1000).pipe(
     map(() => {
@@ -107,6 +109,12 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     supplyDemand: [],
     updated: 0
   });
+
+  public islandLevel$ = new LocalStorageBehaviorSubject<number>('island-workshop:level', 1);
+
+  public landmarks$ = new LocalStorageBehaviorSubject<number>('island-workshop:landmarks', 0);
+
+  public rank$ = new LocalStorageBehaviorSubject<number>('island-workshop:rank', 1);
 
   public tableColumns$: Observable<ColumnItem[]> = this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High').pipe(
     // Just a small trick to only compute all this once translations are loaded
@@ -171,9 +179,12 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public craftworksObjects$: Observable<CraftworksObject[]> = this.state$.pipe(
+  public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
+    this.state$,
+    this.islandLevel$
+  ]).pipe(
     withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks'),
-    map(([state, islandPopularity, islandCraftworks]) => {
+    map(([[state, islandLevel], islandPopularity, islandCraftworks]) => {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
@@ -193,17 +204,37 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             popularity,
             predictedPopularity
           };
-        });
+        })
+        .filter(row => row.craftworksEntry.lvl <= islandLevel);
     })
   );
 
-  public optimizerResult$ = combineLatest([
-    this.craftworksObjects$,
-    this.lazyData.getEntry('islandSupply'),
-    this.startOptimizer$
-  ]).pipe(
-    map(([objects, supply]) => {
-      return new PlanningOptimizer(objects, supply).run();
+  public optimizerResult$ = this.startOptimizer$.pipe(
+    switchMap(() => {
+      return combineLatest([
+        this.craftworksObjects$,
+        this.lazyData.getEntry('islandSupply'),
+        this.islandLevel$,
+        this.landmarks$,
+        this.rank$
+      ]);
+    }),
+    map(([objects, supply, islandLevel, landmarks, rank]) => {
+      return new PlanningOptimizer(objects, supply, {
+        weekly: false,
+        maxBonus: [
+          10,
+          15,
+          20,
+          25,
+          35
+        ][landmarks] || 10,
+        islandLevel
+      }).run()
+        .map(res => {
+          res.score = Math.floor(res.score * (IslandWorkshopComponent.RANK_RATIO[rank] || 100) / 100);
+          return res;
+        });
     })
   );
 

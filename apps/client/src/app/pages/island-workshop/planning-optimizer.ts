@@ -2,6 +2,7 @@ import { CraftworksObject } from './craftworks-object';
 import { addDays, subDays } from 'date-fns';
 import { LazyData } from '../../lazy-data/lazy-data';
 import { uniqBy } from 'lodash';
+import { PlanningOptimizerConfig } from './planning-optimizer-config';
 
 type Genome = number[];
 
@@ -23,8 +24,10 @@ export class PlanningOptimizer {
 
   private population: Genome[] = [];
 
-  constructor(objects: CraftworksObject[], private supply: LazyData['islandSupply'], private weekly = false, private readonly maxBonus = 10) {
-    if (weekly) {
+  constructor(objects: CraftworksObject[],
+              private supply: LazyData['islandSupply'],
+              private config: PlanningOptimizerConfig) {
+    if (config.weekly) {
       let nextWeeklyReset = new Date();
       nextWeeklyReset.setUTCSeconds(0);
       nextWeeklyReset.setUTCMinutes(0);
@@ -208,14 +211,16 @@ export class PlanningOptimizer {
       }
       // Grab craftworks object from the chromosome value
       const entry = this.objects[chromosome];
+      let efficiencyMultiplier = 1;
       // If not the first one, apply bonus if it can be applied
       if (index > 0) {
         const previous = this.objects[genome[index - 1]];
         if (previous.craftworksEntry.themes.some(theme => entry.craftworksEntry.themes.includes(theme))) {
-          acc.bonus = Math.min(acc.bonus + bonusWeight, this.maxBonus * bonusWeight);
+          acc.bonus = Math.min(acc.bonus + bonusWeight, this.config.maxBonus * bonusWeight);
+          efficiencyMultiplier = 2
         }
       }
-      const entryScore = entry.craftworksEntry.value * (this.supply[entry.supply] / 100) * (entry.popularity.ratio / 100);
+      const entryScore = entry.craftworksEntry.value * efficiencyMultiplier * (this.supply[entry.supply] / 100) * (entry.popularity.ratio / 100);
       acc.score += Math.floor(entryScore * (1 + acc.bonus / 100));
       return acc;
     }, { score: 0, bonus: 0, totalTime: 0 }).score;

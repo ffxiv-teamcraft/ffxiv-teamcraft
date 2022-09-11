@@ -10,6 +10,25 @@
       <span nz-icon nzType="upload" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate}}
     </button>
   </nz-page-header-extra>
+  <nz-page-header-content>
+    <div fxLayout="row wrap" fxLayoutGap="10px">
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Island_level' | translate">
+          <nz-input-number [ngModel]="islandLevel$ | async" (ngModelChange)="islandLevel$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Landmarks' | translate">
+          <nz-input-number [ngModel]="landmarks$ | async" (ngModelChange)="landmarks$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+      <div>
+        <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Workshop_rank' | translate">
+          <nz-input-number [ngModel]="rank$ | async" (ngModelChange)="rank$.next($event)" [nzMin]="0"></nz-input-number>
+        </nz-input-group>
+      </div>
+    </div>
+  </nz-page-header-content>
 </nz-page-header>
 <ng-container *ngIf="state$ | async as state">
   <nz-alert *ngIf="now - state.updated > 86400000" nzType="warning"
