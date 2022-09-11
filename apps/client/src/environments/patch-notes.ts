@@ -1,8 +1,3 @@
-export const patchNotes = `### Features
+export const patchNotes = `### Performance Improvements
 
-* **island-workshop:** optimizer configuration & island level filter.
-
-
-### Performance Improvements
-
-* **core:** removed recent changes that made the app slower.`;
+* **desktop:** fixed a big performance issue on app startup.`;
