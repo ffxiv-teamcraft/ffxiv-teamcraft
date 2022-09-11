@@ -97,9 +97,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          if (item.id < 0) {
-            console.log(extracts[item.id]);
-          }
           return Object.assign(item, extracts[item.id]);
         });
         ListController.afterDeserialized(list);
@@ -124,8 +121,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .pipe(
         switchMap(list => {
           return this.completeListData(list);
-        }),
-        shareReplay(1)
+        })
       );
   }
 
