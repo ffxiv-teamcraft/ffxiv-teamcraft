@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.8"></a>
+## [9.7.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.7...v9.7.8) (2022-09-11)
+
+
+### Features
+
+* **island-workshop:** optimizer configuration & island level filter ([4527dd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4527dd0))
+
+
+### Performance Improvements
+
+* **core:** removed recent changes that made the app slower ([e6bc2ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6bc2ae))
+
+
+
 <a name="9.7.7"></a>
 ## [9.7.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.6...v9.7.7) (2022-09-09)
 

@@ -126,7 +126,8 @@ export class IslandExtractor extends AbstractExtractor {
     combineLatest([
       this.aggregateAllPages('https://xivapi.com/MJICraftworksPopularity?columns=*'),
       this.aggregateAllPages('https://xivapi.com/MJICraftworksSupplyDefine?columns=ID,Ratio'),
-      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value,Theme0TargetID,Theme1TargetID')
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksObject?columns=ID,ItemTargetID,CraftingTime,Value,Theme0TargetID,Theme1TargetID,LevelReq'),
+      this.aggregateAllPages('https://xivapi.com/MJICraftworksRankRatio?columns=ID,Ratio')
     ]).pipe(
       map(([popularity, supplyDefine, craftworksObjects]) => {
         const supplyObj = supplyDefine.reduce((acc, row) => {
@@ -163,7 +164,8 @@ export class IslandExtractor extends AbstractExtractor {
               itemId: obj.ItemTargetID,
               value: obj.Value,
               craftingTime: obj.CraftingTime,
-              themes: [obj.Theme0TargetID, obj.Theme1TargetID].filter(theme => theme > 0)
+              themes: [obj.Theme0TargetID, obj.Theme1TargetID].filter(theme => theme > 0),
+              lvl: obj.LevelReq
             }
           };
         }, {});

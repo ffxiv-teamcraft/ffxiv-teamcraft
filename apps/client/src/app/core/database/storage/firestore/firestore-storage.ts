@@ -97,8 +97,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
           tap(res => {
             this.syncCache[uid] = res;
           }),
-          takeUntil(this.stop$.pipe(filter(stop => stop === uid))),
-          finalize(() => delete this.cache[uid])
+          takeUntil(this.stop$.pipe(filter(stop => stop === uid)))
         );
     }
     return this.cache[uid].pipe(

@@ -13,6 +13,8 @@ import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { FormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 const routes: Routes = [
   {
@@ -39,7 +41,9 @@ const routes: Routes = [
     FlexModule,
     NzCheckboxModule,
     NzSelectModule,
-    NzCardModule
+    NzCardModule,
+    NzInputModule,
+    NzInputNumberModule
   ]
 })
 export class IslandWorkshopModule { }
