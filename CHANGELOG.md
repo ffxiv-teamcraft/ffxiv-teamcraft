@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.9"></a>
+## [9.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.8...v9.7.9) (2022-09-11)
+
+
+### Performance Improvements
+
+* **desktop:** fixed a big performance issue on app startup ([69b1b8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69b1b8a))
+
+
+
 <a name="9.7.8"></a>
 ## [9.7.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.7...v9.7.8) (2022-09-11)
 
