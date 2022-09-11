@@ -2936,6 +2936,9 @@
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
     "WORKSHOP": {
       "Title": "Atelier",
       "Subtitle": "Verfolge und verwalte dein Atelier",
