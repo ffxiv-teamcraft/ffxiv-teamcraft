@@ -2936,8 +2936,8 @@
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
-    "Island_level": "Island level",
-    "Landmarks": "Landmarks",
+    "Island_level": "Insel Level",
+    "Landmarks": "Wahrzeichen",
     "Workshop_rank": "Workshop rank",
     "WORKSHOP": {
       "Title": "Atelier",
@@ -2958,7 +2958,7 @@
       "Total_value": "Gesamtwert",
       "Run_optimizer": "Finde die beste Planung für den Rest des Tages",
       "No_schedule_found": "No planning found",
-      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "No_schedule_found_explain": "Vergewissere dich, dass die Rücksetzung in weniger als 4 Stunden ist",
       "POPULARITY": {
         "Very_high": "Riesig",
         "High": "Groß",
