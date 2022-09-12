@@ -8,12 +8,14 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
 import { PlanningOptimizer } from '../planning-optimizer';
+import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 interface ColumnItem {
   name: string;
@@ -109,6 +111,13 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     supplyDemand: [],
     updated: 0
   });
+
+  public stateIsOutdated$ = combineLatest([
+    this.state$,
+    this.previousReset$
+  ]).pipe(
+    map(([state, reset]) => state.updated < reset)
+  );
 
   public islandLevel$ = new LocalStorageBehaviorSubject<number>('island-workshop:level', 1);
 
@@ -244,14 +253,30 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
-              private message: NzMessageService) {
+              private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
+              private platformService: PlatformService) {
     super();
-    this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
-      this.state$.next({
-        ...packet,
-        updated: Date.now()
+
+    if (this.platformService.isDesktop()) {
+      combineLatest([this.previousReset$, this.state$]).pipe(
+        switchMap(([reset, state]) => {
+          return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+            catchError(() => {
+              return this.mjiWorkshopStatusService.set(reset.toString(), {
+                objects: state.supplyDemand,
+                start: reset
+              });
+            })
+          );
+        })
+      ).subscribe();
+      this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
+        this.state$.next({
+          ...packet,
+          updated: Date.now()
+        });
       });
-    });
+    }
   }
 
   importState(): void {
