@@ -1,6 +1,6 @@
-<nz-alert [nzDescription]="'ISLAND_SANCTUARY.Animal_source' | translate"></nz-alert>
-<nz-list [nzDataSource]="details" [nzRenderItem]="animalTpl">
-  <ng-template #animalTpl let-animal>
-    <nz-list-item [nzContent]="animal.id | lazyRow:'mobs' | i18n"></nz-list-item>
-  </ng-template>
+<nz-list>
+  <nz-list-item *ngFor="let animal of animalsDetails$ | async">
+    <nz-list-item-meta [nzTitle]="animal.bnpcName | lazyRow:'mobs' | i18n"
+                       [nzAvatar]="animal.icon | xivapiIcon"></nz-list-item-meta>
+  </nz-list-item>
 </nz-list>

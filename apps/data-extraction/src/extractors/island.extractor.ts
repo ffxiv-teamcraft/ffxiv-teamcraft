@@ -9,6 +9,7 @@ export class IslandExtractor extends AbstractExtractor {
     const buildingsDone$ = new Subject();
     const landmarksDone$ = new Subject();
     const workshopDone$ = new Subject();
+    const pastureDone$ = new Subject();
 
 
     this.get('https://xivapi.com/Map/772').pipe(
@@ -84,6 +85,28 @@ export class IslandExtractor extends AbstractExtractor {
     ).subscribe(buildings => {
       this.persistToJsonAsset('island-buildings', buildings);
       buildingsDone$.next(true);
+    });
+
+    combineLatest([
+      this.aggregateAllPages('https://xivapi.com/MJIAnimals?columns=BNpcBaseTargetID,Reward0TargetID,Reward1TargetID,ID,IconHD'),
+      this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
+    ]).pipe(
+      map(([mjiAnimals, bnpcs]) => {
+        return mjiAnimals.reduce((acc, animal) => {
+          return {
+            ...acc,
+            [animal.ID]: {
+              id: animal.ID,
+              rewards: [animal.Reward0TargetID, animal.Reward1TargetID],
+              icon: animal.IconHD,
+              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBaseTargetID)?.bnpcName
+            }
+          };
+        }, {});
+      })
+    ).subscribe(animals => {
+      this.persistToJsonAsset('island-animals', animals);
+      pastureDone$.next(true);
     });
 
     this.aggregateAllPages('https://xivapi.com/MJILandmark?columns=Material0,Amount0,Material1,Amount1,Material2,Amount2,Material3,Amount3,Material4,Amount4,Name,IconHD,ID').pipe(
@@ -186,7 +209,8 @@ export class IslandExtractor extends AbstractExtractor {
     combineLatest([
       gatheringDone$,
       buildingsDone$,
-      workshopDone$
+      workshopDone$,
+      pastureDone$
     ]).subscribe(() => {
       this.done();
     });

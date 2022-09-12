@@ -36,6 +36,7 @@ import {LazyHwdInspection} from './model/lazy-hwd-inspection';
 import {LazyHwdPhase} from './model/lazy-hwd-phase';
 import {LazyInstance} from './model/lazy-instance';
 import {LazyIslandAnimalSource} from './model/lazy-island-animal-source';
+import {LazyIslandAnimal} from './model/lazy-island-animal';
 import {LazyIslandBuilding} from './model/lazy-island-building';
 import {LazyIslandCraftworksTheme} from './model/lazy-island-craftworks-theme';
 import {LazyIslandCraftwork} from './model/lazy-island-craftwork';
@@ -160,6 +161,7 @@ export interface LazyData {
   instanceSources: Record<number, number[]>;
   instances: Record<number, LazyInstance>;
   islandAnimalSources: Record<number, LazyIslandAnimalSource[]>;
+  islandAnimals: Record<number, LazyIslandAnimal>;
   islandBuildings: Record<number, LazyIslandBuilding>;
   islandCraftworksTheme: Record<number, LazyIslandCraftworksTheme>;
   islandCraftworks: Record<number, LazyIslandCraftwork>;

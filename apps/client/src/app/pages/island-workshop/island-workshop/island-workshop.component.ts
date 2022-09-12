@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, map, Observable, Subject, timer } from 'rxjs';
+import { combineLatest, map, Observable, of, Subject, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
@@ -262,10 +262,13 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             catchError(() => {
-              return this.mjiWorkshopStatusService.set(reset.toString(), {
-                objects: state.supplyDemand,
-                start: reset
-              });
+              if (state.updated >= reset) {
+                return this.mjiWorkshopStatusService.set(reset.toString(), {
+                  objects: state.supplyDemand,
+                  start: reset
+                });
+              }
+              return of(null);
             })
           );
         })

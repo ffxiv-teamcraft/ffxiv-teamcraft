@@ -15,6 +15,7 @@ import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-sta
 import { GardeningData } from './gardening-data';
 import { MogstationItem } from './mogstation-item';
 import { LazyDataI18nKey } from '../../../lazy-data/lazy-data-types';
+import { IslandAnimal } from './island-animal';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -94,6 +95,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.MASTERBOOKS
 export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.MOGSTATION, isObject?: boolean): MogstationItem
+export function getItemSource<T = any>(item: ListRow, type: DataType.ISLAND_PASTURE, isObject?: boolean): IslandAnimal[]
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
   if (item.sources === undefined) {
