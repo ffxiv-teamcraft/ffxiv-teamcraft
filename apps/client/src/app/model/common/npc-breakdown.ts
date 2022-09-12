@@ -114,8 +114,8 @@ export class NpcBreakdown {
       return of(0);
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
-    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(npcId)) {
-      return of(100);
+    if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId)) {
+      return of(1000);
     }
     const sameNpc = this._rows.find(r => r.npcId === npcId);
     if (sameNpc) {
