@@ -2947,13 +2947,15 @@
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
       "State_imported": "State properly imported",
       "Product": "Product",
       "Popularity": "Popularity",
       "Supply": "Supply",
       "Demand_shift": "Demand shift",
       "Predicted_popularity": "Predicted demand",
-      "Edit_mode": "Edition mode",
+      "Edit_mode": "Edit mode",
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
       "Run_optimizer": "Find best planning for the rest of the day",
@@ -2979,6 +2981,15 @@
         "Decreasing": "Decreasing",
         "Plummeting": "Plummeting"
       }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm"
     }
   }
 }

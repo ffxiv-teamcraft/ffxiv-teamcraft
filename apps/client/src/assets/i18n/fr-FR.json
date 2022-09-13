@@ -304,6 +304,7 @@
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",
+  "Island_animal": "Island animal",
   "Desynth": "Recyclage",
   "Vendors": "Vendeurs",
   "Open": "Ouvrir",
@@ -1926,7 +1927,8 @@
     "Leveling": "Leveling",
     "Currencies": "Devises",
     "Add_to_favorites": "Ajouter aux favoris",
-    "Remove_from_favorites": "Retirer des favoris"
+    "Remove_from_favorites": "Retirer des favoris",
+    "Island_Sanctuary": "Island Sanctuary"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -2881,7 +2883,8 @@
       "SPEARFISHING": "Pêche au harpon",
       "FATE": "Aléa",
       "MOGSTATION": "MOGSTATION",
-      "DEPRECATED": "Déprécié"
+      "DEPRECATED": "Déprécié",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
@@ -2929,6 +2932,62 @@
     "Wrapper_failed_to_start": "Machina Wrapper failed to start",
     "DESCRIPTION": {
       "Wrapper_failed_to_start": "Please make sure the game is running and is not running as admin (or, in that case, start TC as admin).<br>If this issue persists, please report to discord's #troubleshooting channel with a screenshot of the above messages.<br><br> Retrying in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Island level",
+    "Landmarks": "Landmarks",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Workshop",
+      "Subtitle": "Track and manage your workshop",
+      "Out_of_sync": "State has not been updated during the last 24 hours",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button.",
+      "Export_state": "Export supply/demand state",
+      "State_copied": "State copied to your clipboard",
+      "Import_state": "Import state",
+      "State_imported": "State properly imported",
+      "Product": "Product",
+      "Popularity": "Popularity",
+      "Supply": "Supply",
+      "Demand_shift": "Demand shift",
+      "Predicted_popularity": "Predicted demand",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Best items to craft",
+      "Total_value": "Total value",
+      "Run_optimizer": "Find best planning for the rest of the day",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "POPULARITY": {
+        "Very_high": "Very high",
+        "High": "High",
+        "Average": "Average",
+        "Low": "Low"
+      },
+      "SUPPLY": {
+        "Non_existant": "Non existant",
+        "Insufficient": "Insufficient",
+        "Sufficient": "Sufficient",
+        "Surplus": "Surplus",
+        "Overflowing": "Overflowing"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "Skyrocketing",
+        "Increasing": "Increasing",
+        "None": "None",
+        "Decreasing": "Decreasing",
+        "Plummeting": "Plummeting"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm"
     }
   }
 }

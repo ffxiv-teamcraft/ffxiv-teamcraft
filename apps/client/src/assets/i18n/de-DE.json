@@ -51,7 +51,7 @@
     "Only_craftable": "Nur Rezepte",
     "Want_filters": "Brauchen Sie mehr Filter?",
     "Open_search": "Suchseite stattdessen öffnen",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Inselparadiesrezept"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -304,6 +304,7 @@
   "Reset_progression": "Fortschritt zurücksetzen",
   "Gardening": "Haus/Wohnungs-Gärtnerei",
   "Hunting": "Monsterjagd",
+  "Island_animal": "Island animal",
   "Desynth": "Materialverwertung",
   "Vendors": "Verkäufer",
   "Open": "Offen",
@@ -759,7 +760,7 @@
     "Consider_requirements": "Consider requirements",
     "Ignore_requirements": "Anforderungen ignorieren",
     "SOURCES": {
-      "Gatherable": "Can be gathered, click to see more details"
+      "Gatherable": "Kann gesammelt werden, klicke um mehr Details zu sehen"
     },
     "LAYOUT_DIALOG": {
       "Title": "Layout",
@@ -1926,7 +1927,8 @@
     "Leveling": "Leveln",
     "Currencies": "Währungen",
     "Add_to_favorites": "Zu Favoriten hinzufügen",
-    "Remove_from_favorites": "Aus Favoriten entfernen"
+    "Remove_from_favorites": "Aus Favoriten entfernen",
+    "Island_Sanctuary": "Inselparadies"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
@@ -1985,7 +1987,7 @@
       "Armory": "Arsenal",
       "Current_Gear": "Aktuelle Ausrüstung",
       "RetainerMarket": "Im Verkauf bei Gehilfen",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "Inselbeutel"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Um mehrere Charaktere und andere nützliche Funktionen zu unterstützen, muss Teamcraft wissen, welchen Charakter du momentan spielst oder zumindest welcher Charakter mit dem aktuellem Ingame Charakter verknüpft werden soll.",
@@ -2881,7 +2883,8 @@
       "SPEARFISHING": "SPEERFISCHEN",
       "FATE": "FATE",
       "MOGSTATION": "ONLINE-SHOP",
-      "DEPRECATED": "VERALTET"
+      "DEPRECATED": "VERALTET",
+      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
     },
     "STATUS": {
       "PROPOSAL": "VORSCHLAG",
@@ -2929,6 +2932,62 @@
     "Wrapper_failed_to_start": "Machina Wrapper failed to start",
     "DESCRIPTION": {
       "Wrapper_failed_to_start": "Bitte stelle sicher, dass das Spiel läuft und nicht als Admininstrator ausgeführt wird (oder, in diesem Fall, TC als Administrator starten).<br>Wenn dieses Problem weiterhin besteht, melde dich bitte an Discords Fehlerbehebungskanal #troubleshooting mit einem Screenshot der obigen Nachrichten.<br><br> Wiederholung in {{retryDelay}}s"
+    }
+  },
+  "ISLAND_SANCTUARY": {
+    "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
+    "Island_level": "Insel Level",
+    "Landmarks": "Wahrzeichen",
+    "Workshop_rank": "Workshop rank",
+    "WORKSHOP": {
+      "Title": "Atelier",
+      "Subtitle": "Verfolge und verwalte dein Atelier",
+      "Out_of_sync": "Status wurde in den letzten 24 Stunden nicht aktualisiert",
+      "Out_of_sync_explain": "Bitte öffne das Angebot-/Nachfrage-Fenster auf deiner einsamen Insel um den Status zu aktualisieren. Wenn du keine Paketerfassung verwendest, bitten einen anderen Benutzer, deinen Status zu aktualisieren und ihn dann zu exportieren, damit du den Importzustands-Button verwenden kannst.",
+      "Export_state": "Exportiere Angebot-/Nachfrage-Status",
+      "State_copied": "Status wurde in die Zwischenablage kopiert",
+      "Import_state": "Importiere Status",
+      "State_imported": "Status korrekt importiert",
+      "Product": "Produkt",
+      "Popularity": "Beliebtheit",
+      "Supply": "Angebot",
+      "Demand_shift": "Nachfrage",
+      "Predicted_popularity": "Künftige Beliebtheit",
+      "Edit_mode": "Edit mode",
+      "Best_items_to_craft": "Beste Gegenstände zum Herstellen",
+      "Total_value": "Gesamtwert",
+      "Run_optimizer": "Finde die beste Planung für den Rest des Tages",
+      "No_schedule_found": "No planning found",
+      "No_schedule_found_explain": "Vergewissere dich, dass die Rücksetzung in weniger als 4 Stunden ist",
+      "POPULARITY": {
+        "Very_high": "Riesig",
+        "High": "Groß",
+        "Average": "Normal",
+        "Low": "Kaum"
+      },
+      "SUPPLY": {
+        "Non_existant": "Nicht vorhanden",
+        "Insufficient": "Wenig",
+        "Sufficient": "Normal",
+        "Surplus": "Viel",
+        "Overflowing": "Überschuss"
+      },
+      "DEMAND_SHIFT": {
+        "Skyrocketing": "steigt stark",
+        "Increasing": "steigt",
+        "None": "bleibt gleich",
+        "Decreasing": "sinkt",
+        "Plummeting": "sinkt stark"
+      }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm"
     }
   }
 }

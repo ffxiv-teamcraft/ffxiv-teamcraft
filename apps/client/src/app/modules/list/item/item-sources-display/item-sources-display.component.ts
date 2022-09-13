@@ -70,7 +70,7 @@ export class ItemSourcesDisplayComponent extends TeamcraftOptimizedComponent {
   }
 
   public openIslandAnimalsPopup(item: ListRow): void {
-    this.openDetailsPopup(IslandAnimalComponent, item, DataType.ISLAND_ANIMAL);
+    this.openDetailsPopup(IslandAnimalComponent, item, DataType.ISLAND_PASTURE);
   }
 
   public openInstancesPopup(item: ListRow): void {

@@ -62,10 +62,6 @@ export class NavigationSidebarComponent {
     this.nzContextMenuService.create($event, menu);
   }
 
-  closeMenu(): void {
-    this.nzContextMenuService.close();
-  }
-
   addToFavorites(entry: SidebarItem): void {
     this.settings.sidebarFavorites = [
       ...this.settings.sidebarFavorites,

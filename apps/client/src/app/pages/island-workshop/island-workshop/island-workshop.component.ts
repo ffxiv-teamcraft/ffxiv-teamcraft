@@ -2,18 +2,22 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, map, Observable, Subject, timer } from 'rxjs';
+import { combineLatest, map, Observable, of, Subject, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
 import { PlanningOptimizer } from '../planning-optimizer';
+import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { WorkshopStatusData } from '../workshop-status-data';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface ColumnItem {
   name: string;
@@ -109,6 +113,13 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     supplyDemand: [],
     updated: 0
   });
+
+  public stateIsOutdated$ = combineLatest([
+    this.state$,
+    this.previousReset$
+  ]).pipe(
+    map(([state, reset]) => state.updated < reset)
+  );
 
   public islandLevel$ = new LocalStorageBehaviorSubject<number>('island-workshop:level', 1);
 
@@ -238,20 +249,59 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  public onlineState$ = this.previousReset$.pipe(
+    switchMap(reset => {
+      return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+        retry({
+          count: 60,
+          delay: 60000
+        }),
+        catchError(() => of({ objects: [] }))
+      );
+    })
+  );
+
+  public machinaToggle = false;
+
   public getExport = () => {
     return JSON.stringify(this.state$.value);
   };
 
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
-              private message: NzMessageService) {
+              private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
+              private platformService: PlatformService, public settings: SettingsService) {
     super();
-    this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
-      this.state$.next({
-        ...packet,
-        updated: Date.now()
+
+    if (this.platformService.isDesktop()) {
+      this.ipc.on('toggle-machina:value', (event, value) => {
+        this.machinaToggle = value;
       });
-    });
+      this.ipc.send('toggle-machina:get');
+      combineLatest([this.previousReset$, this.state$]).pipe(
+        switchMap(([reset, state]) => {
+          return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+            catchError(() => {
+              if (state.updated >= reset) {
+                return this.mjiWorkshopStatusService.set(reset.toString(), {
+                  objects: state.supplyDemand,
+                  popularity: state.popularity,
+                  predictedPopularity: state.predictedPopularity,
+                  start: reset
+                });
+              }
+              return of(null);
+            })
+          );
+        })
+      ).subscribe();
+      this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
+        this.state$.next({
+          ...packet,
+          updated: Date.now()
+        });
+      });
+    }
   }
 
   importState(): void {
@@ -267,6 +317,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         this.state$.next(JSON.parse(data));
         this.message.success(this.translate.instant('ISLAND_SANCTUARY.WORKSHOP.State_imported'));
       });
+  }
+
+  importOnlineState(state: WorkshopStatusData): void {
+    this.state$.next({
+      popularity: state.popularity,
+      predictedPopularity: state.predictedPopularity,
+      supplyDemand: state.objects,
+      updated: +state.$key
+    });
   }
 
   setStateRowProperty(index: number, key: 'demand' | 'supply', value: number): void {

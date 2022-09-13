@@ -5,7 +5,7 @@ import { I18nName } from '../model/common/i18n-name';
 import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
 
-type I18nInput = { name: I18nName } | I18nName | I18nNameLazy | Observable<I18nName> | string | Observable<string>;
+type I18nInput = { name: I18nName } | I18nName | I18nNameLazy | Observable<I18nName> | Observable<{ name: I18nName }> | string | Observable<string>;
 
 /**
  * A pipe that coerces an I18nName object into a string matching the user's preferred language.

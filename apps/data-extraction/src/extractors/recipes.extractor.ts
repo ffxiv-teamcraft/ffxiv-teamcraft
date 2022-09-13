@@ -198,7 +198,7 @@ export class RecipesExtractor extends AbstractExtractor {
         const ingredients = Object.keys(mjiCraftworksObject)
           .filter(k => /Material\d/.test(k))
           .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => mjiCraftworksObject[key] && mjiCraftworksObject[key].ID > 0)
+          .filter(key => mjiCraftworksObject[key])
           .map((key) => {
             const index = +/Material(\d)/.exec(key)[1];
             return {

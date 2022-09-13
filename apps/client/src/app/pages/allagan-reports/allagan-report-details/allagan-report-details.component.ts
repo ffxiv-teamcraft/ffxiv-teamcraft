@@ -592,7 +592,6 @@ export class AllaganReportDetailsComponent extends ReportsManagementComponent {
           map(id => ({ ventureId: id }))
         );
       case AllaganReportSource.DROP:
-      case AllaganReportSource.ISLAND_ANIMAL:
         return of(this.getEntryId(formState.mob)).pipe(
           map(id => ({ monsterId: id }))
         );

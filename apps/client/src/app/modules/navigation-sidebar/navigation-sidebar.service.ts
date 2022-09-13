@@ -233,6 +233,14 @@ export class NavigationSidebarService {
               },
               link: '/island-workshop'
             },
+            {
+              name: 'ISLAND_SANCTUARY.ANIMALS.Title',
+              icon: {
+                type: SidebarIconType.CUSTOM,
+                content: this.sanitizer.bypassSecurityTrustHtml('<img class="anticon" style="width:24px; height:24px; margin-right: 5px;" src="./assets/icons/island/capture.png"/>')
+              },
+              link: '/island-animals'
+            },
           ]
         },
         {
