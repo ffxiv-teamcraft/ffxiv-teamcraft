@@ -2979,6 +2979,15 @@
         "Decreasing": "Decreasing",
         "Plummeting": "Plummeting"
       }
+    },
+    "ANIMALS": {
+      "Title": "Animals",
+      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Name": "Name",
+      "Coords": "Position",
+      "Spawn_time": "Spawn time",
+      "Weather": "Weather",
+      "Alarm": "Alarm"
     }
   }
 }
