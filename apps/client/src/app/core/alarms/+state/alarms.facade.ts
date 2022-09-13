@@ -204,6 +204,8 @@ export class AlarmsFacade {
             && a.type === alarm.type
             && a.fishEyes === alarm.fishEyes
             && a.nodeId === alarm.nodeId;
+        } else if (alarm.type === -10) {
+          return a.bnpcName === alarm.bnpcName;
         } else {
           // If it's a custom alarm
           return a.name === alarm.name && a.duration === alarm.duration && a.type === alarm.type;
