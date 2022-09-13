@@ -1,3 +1,10 @@
-export const patchNotes = `### Performance Improvements
+export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed a big performance issue on app startup.`;
+* **i18n:** fixed wrong label for workshop edit mode.
+* **vendors:** fixed housing vendors priority system.
+
+
+### Features
+
+* **db:** support for all island pasture drops.
+* **island:** new animals tracking page.`;
