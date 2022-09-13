@@ -5,6 +5,10 @@ export class WorkshopStatusData extends DataModel {
 
   objects: CraftworksObject[];
 
+  popularity: number;
+
+  predictedPopularity: number;
+
   start: number;
 
   constructor() {

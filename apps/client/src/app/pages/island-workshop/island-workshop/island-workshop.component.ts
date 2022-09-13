@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
@@ -16,6 +16,8 @@ import { CraftworksObject } from '../craftworks-object';
 import { PlanningOptimizer } from '../planning-optimizer';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { WorkshopStatusData } from '../workshop-status-data';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 interface ColumnItem {
   name: string;
@@ -247,6 +249,20 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  public onlineState$ = this.previousReset$.pipe(
+    switchMap(reset => {
+      return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+        retry({
+          count: 60,
+          delay: 60000
+        }),
+        catchError(() => of({ objects: [] }))
+      );
+    })
+  );
+
+  public machinaToggle = false;
+
   public getExport = () => {
     return JSON.stringify(this.state$.value);
   };
@@ -254,10 +270,14 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
-              private platformService: PlatformService) {
+              private platformService: PlatformService, public settings: SettingsService) {
     super();
 
     if (this.platformService.isDesktop()) {
+      this.ipc.on('toggle-machina:value', (event, value) => {
+        this.machinaToggle = value;
+      });
+      this.ipc.send('toggle-machina:get');
       combineLatest([this.previousReset$, this.state$]).pipe(
         switchMap(([reset, state]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
@@ -265,6 +285,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               if (state.updated >= reset) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
+                  popularity: state.popularity,
+                  predictedPopularity: state.predictedPopularity,
                   start: reset
                 });
               }
@@ -295,6 +317,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         this.state$.next(JSON.parse(data));
         this.message.success(this.translate.instant('ISLAND_SANCTUARY.WORKSHOP.State_imported'));
       });
+  }
+
+  importOnlineState(state: WorkshopStatusData): void {
+    this.state$.next({
+      popularity: state.popularity,
+      predictedPopularity: state.predictedPopularity,
+      supplyDemand: state.objects,
+      updated: +state.$key
+    });
   }
 
   setStateRowProperty(index: number, key: 'demand' | 'supply', value: number): void {

@@ -9,6 +9,20 @@
     <button nz-button (click)="importState()">
       <span nz-icon nzType="upload" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_state' | translate}}
     </button>
+    <ng-container *ngIf="!machinaToggle">
+      <ng-container *ngIf="onlineState$ | async as onlineState">
+        <span nz-tooltip
+              [nzTooltipTitle]="onlineState.objects.length === 0 ? ('ISLAND_SANCTUARY.WORKSHOP.Online_state_missing' | translate) : null">
+          <button
+            nz-button
+            (click)="importOnlineState(onlineState)"
+            [disabled]="onlineState.objects.length === 0"
+            nzType="primary">
+            <span nz-icon nzType="cloud-download" nzTheme="outline"></span> {{'ISLAND_SANCTUARY.WORKSHOP.Import_online_state' | translate}}
+          </button>
+        </span>
+      </ng-container>
+    </ng-container>
   </nz-page-header-extra>
   <nz-page-header-content>
     <div fxLayout="row wrap" fxLayoutGap="10px">
