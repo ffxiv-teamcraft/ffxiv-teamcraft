@@ -173,7 +173,8 @@
               <app-item-icon *ngIf="row.alarm.itemId; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
                              [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
               <ng-template #customAlarmIcon>
-                <nz-avatar [nzText]="row.alarm.name?row.alarm.name[0]:'?'"></nz-avatar>
+                <nz-avatar *ngIf="!row.alarm.icon" [nzText]="row.alarm.name?row.alarm.name[0]:'?'"></nz-avatar>
+                <nz-avatar *ngIf="row.alarm.icon" [nzSrc]="row.alarm.icon | xivapiIcon"></nz-avatar>
               </ng-template>
               <nz-switch (click)="$event.stopPropagation();"
                          [(ngModel)]="row.alarm.enabled"
@@ -188,12 +189,14 @@
           <span *ngIf="row.alarm.itemId; else customName" class="alarm-item-name"
                 fxFlex="1 1 auto">{{row.alarm.itemId | itemName | i18n}}</span>
               <ng-template #customName>
-                <span class="alarm-item-name" fxFlex="1 1 auto">{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto"  *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</span>
               </ng-template>
               <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
             </div>
             <app-gathering-item-uses [itemId]="row.alarm.itemId"></app-gathering-item-uses>
-            <img *ngIf="row.alarm.type !== null && row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+            <img *ngIf="row.alarm.type > 0" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
+            <img *ngIf="row.alarm.type === -10" alt="" class="node-type" src="https://xivapi.com/i/063000/063949.png">
           </div>
         </ng-template>
         <ng-template #cardDescription>

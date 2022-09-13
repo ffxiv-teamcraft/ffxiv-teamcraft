@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fishing-time';
 
@@ -14,7 +13,7 @@ import { OceanFishingTime } from '../../../pages/allagan-reports/model/ocean-fis
   styleUrls: ['./node-details.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NodeDetailsComponent implements OnInit {
+export class NodeDetailsComponent {
 
   OceanFishingTime = OceanFishingTime;
 
@@ -56,19 +55,6 @@ export class NodeDetailsComponent implements OnInit {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
-  public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
-    return this.alarms$.pipe(
-      map(alarms => {
-        return !alarms.some(alarm => {
-          return alarm.itemId === generatedAlarm.itemId
-            && alarm.zoneId === generatedAlarm.zoneId
-            && alarm.fishEyes === generatedAlarm.fishEyes
-            && alarm.nodeId === generatedAlarm.nodeId;
-        });
-      })
-    );
-  }
-
   getDespawnTime(time: number, uptime: number): string {
     const res = (time + uptime / 60) % 24;
     return res.toString();
@@ -76,9 +62,6 @@ export class NodeDetailsComponent implements OnInit {
 
   trackByAlarm(index: number, alarm: Partial<Alarm>): string {
     return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
-  }
-
-  ngOnInit(): void {
   }
 
 }

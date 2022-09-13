@@ -11,6 +11,7 @@
           </span> - {{display.alarm.zoneId | i18nRow:'places' | i18n}}
       </span>
       <span *ngIf="!display.alarm.itemId">{{display.alarm.name}}</span>
+      <span *ngIf="display.alarm.type === -10"><app-i18n-name content="mobs" [id]="display.alarm.bnpcName"></app-i18n-name></span>
       <span *ngIf="display.alarm.fishEyes">{{'GATHERING_LOCATIONS.Fish_eyes' | translate}}</span>
     </ng-template>
     <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
