@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.10"></a>
+## [9.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.9...v9.7.10) (2022-09-13)
+
+
+### Bug Fixes
+
+* **i18n:** fixed wrong label for workshop edit mode ([00cc8fd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00cc8fd))
+* **vendors:** fixed housing vendors priority system ([1d38ef4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d38ef4))
+
+
+### Features
+
+* **db:** support for all island pasture drops ([49e8a8f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49e8a8f))
+* **island:** new animals tracking page ([2fb411e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2fb411e))
+
+
+
 <a name="9.7.9"></a>
 ## [9.7.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.8...v9.7.9) (2022-09-11)
 
