@@ -65,4 +65,8 @@ export class IslandAnimalsComponent {
     }
   }
 
+  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup): void {
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
+  }
+
 }

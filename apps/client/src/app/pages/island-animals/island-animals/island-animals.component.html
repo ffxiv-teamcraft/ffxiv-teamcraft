@@ -1,6 +1,7 @@
 <nz-page-header [nzTitle]="'ISLAND_SANCTUARY.ANIMALS.Title' | translate" [nzSubtitle]="'ISLAND_SANCTUARY.ANIMALS.Subtitle' | translate"></nz-page-header>
 
-<nz-table #animalsTable [nzData]="animalsWithData$ | async" nzSize="small" [nzScroll]="{x: null, y: 'calc(100vh - 240px)' }" [nzPageSize]="999" nzHideOnSinglePage>
+<nz-table #animalsTable [nzData]="animalsWithData$ | async" nzSize="small" [nzScroll]="{x: null, y: 'calc(100vh - 240px)' }" [nzPageSize]="999"
+          nzHideOnSinglePage>
   <thead>
   <tr>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Name' | translate}}</th>
@@ -28,8 +29,8 @@
     </td>
     <td>
       <app-alarm-button *ngIf="animal.alarm" [alarm]="animal.alarm" [showPosition]="false"
-                        (toggleAlarm)="addAlarm($event.alarm, null,event.registered)"
-                        (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
+                        (toggleAlarm)="addAlarm($event)"
+                        (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"
                         [alarmGroups]="alarmGroups$ | async"></app-alarm-button>
     </td>
   </tr>
