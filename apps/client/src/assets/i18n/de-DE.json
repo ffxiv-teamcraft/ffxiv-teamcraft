@@ -2947,6 +2947,8 @@
       "Export_state": "Exportiere Angebot-/Nachfrage-Status",
       "State_copied": "Status wurde in die Zwischenablage kopiert",
       "Import_state": "Importiere Status",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
       "State_imported": "Status korrekt importiert",
       "Product": "Produkt",
       "Popularity": "Beliebtheit",
