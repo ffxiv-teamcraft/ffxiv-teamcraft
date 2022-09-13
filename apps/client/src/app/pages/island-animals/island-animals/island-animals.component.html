@@ -28,7 +28,7 @@
     </td>
     <td>
       <app-alarm-button *ngIf="animal.alarm" [alarm]="animal.alarm" [showPosition]="false"
-                        (toggleAlarm)="addAlarm($event.alarm)"
+                        (toggleAlarm)="addAlarm($event.alarm, null,event.registered)"
                         (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
                         [alarmGroups]="alarmGroups$ | async"></app-alarm-button>
     </td>
