@@ -2959,7 +2959,7 @@
       "Best_items_to_craft": "Beste Gegenstände zum Herstellen",
       "Total_value": "Gesamtwert",
       "Run_optimizer": "Finde die beste Planung für den Rest des Tages",
-      "No_schedule_found": "No planning found",
+      "No_schedule_found": "Keine Pläne gefunden",
       "No_schedule_found_explain": "Vergewissere dich, dass die Rücksetzung in weniger als 4 Stunden ist",
       "POPULARITY": {
         "Very_high": "Riesig",
@@ -2983,12 +2983,12 @@
       }
     },
     "ANIMALS": {
-      "Title": "Animals",
-      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
+      "Title": "Tiere",
+      "Subtitle": "Eine umfassende Liste der Tiere, wo und wann sie zu finden sind, mit Alarm-Integration",
       "Name": "Name",
       "Coords": "Position",
-      "Spawn_time": "Spawn time",
-      "Weather": "Weather",
+      "Spawn_time": "Spawnzeit",
+      "Weather": "Wetter",
       "Alarm": "Alarm"
     }
   }
