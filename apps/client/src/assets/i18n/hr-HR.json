@@ -2947,6 +2947,8 @@
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
       "State_imported": "State properly imported",
       "Product": "Product",
       "Popularity": "Popularity",
