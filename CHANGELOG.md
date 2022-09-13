@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.11"></a>
+## [9.7.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.10...v9.7.11) (2022-09-13)
+
+
+### Bug Fixes
+
+* **alarms:** fixed island animals alarms not displayed in sidebar ([c97a1cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c97a1cc))
+* **island-animals:** fixed alarm button shown as "remove alarm" for inexistant alarms ([4c8ad23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c8ad23))
+* **island-animals:** fixed coords and alarms associated with wrong animal ([ec2bc4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec2bc4f))
+
+
+
 <a name="9.7.10"></a>
 ## [9.7.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.9...v9.7.10) (2022-09-13)
 

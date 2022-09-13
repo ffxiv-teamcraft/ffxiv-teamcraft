@@ -1,4 +1,4 @@
-import { Vector2 } from "../../core/tools/vector2";
+import { Vector2 } from '../../core/tools/vector2';
 
 export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spawn?: number, duration?: number }> = {
   1: {
@@ -50,92 +50,92 @@ export const animalsSpawnData: Record<number, Vector2 & { weather?: number, spaw
     weather: 4
   },
   11: {
-    x: 17.8,
-    y: 12.6,
-    spawn: 0,
-    duration: 3,
-    weather: 7
+    x: 16,
+    y: 12
   },
   12: {
+    x: 16,
+    y: 12,
+    spawn: 15,
+    duration: 3
+  },
+  13: {
+    x: 21,
+    y: 19
+  },
+  14: {
+    x: 20,
+    y: 19,
+    spawn: 18,
+    duration: 3
+  },
+  15: {
+    x: 20,
+    y: 21
+  },
+  16: {
+    x: 13,
+    y: 11,
+    weather: 1
+  },
+  17: {
+    x: 30,
+    y: 11
+  },
+  18: {
+    x: 31,
+    y: 11,
+    spawn: 0,
+    duration: 3
+  },
+  19: {
+    x: 12,
+    y: 17
+  },
+  20: {
+    x: 12,
+    y: 17,
+    weather: 3
+  },
+  21: {
+    x: 26,
+    y: 24
+  },
+  22: {
+    x: 26,
+    y: 22,
+    spawn: 3,
+    duration: 3
+  },
+  23: {
+    x: 28,
+    y: 28
+  },
+  24: {
+    x: 31,
+    y: 28,
+    weather: 7
+  },
+  25: {
     x: 22.1,
     y: 20.8,
     spawn: 18,
     duration: 3,
     weather: 4
   },
-  13: {
-    x: 16,
-    y: 12
-  },
-  14: {
-    x: 16,
-    y: 12,
-    spawn: 15,
-    duration: 3
-  },
-  15: {
-    x: 21,
-    y: 19
-  },
-  16: {
-    x: 20,
-    y: 19,
-    spawn: 18,
-    duration: 3
-  },
-  17: {
-    x: 20,
-    y: 21
-  },
-  18: {
-    x: 13,
-    y: 11,
-    weather: 1
-  },
-  19: {
-    x: 30,
-    y: 11
-  },
-  20: {
-    x: 31,
-    y: 11,
+  26: {
+    x: 17.8,
+    y: 12.6,
     spawn: 0,
-    duration: 3
+    duration: 3,
+    weather: 7
   },
-  21: {
+  27: {
     x: 25,
     y: 28,
     spawn: 12,
     duration: 3,
     weather: 2
-  },
-  22: {
-    x: 12,
-    y: 17
-  },
-  23: {
-    x: 12,
-    y: 17,
-    weather: 3
-  },
-  24: {
-    x: 26,
-    y: 24
-  },
-  25: {
-    x: 26,
-    y: 22,
-    spawn: 3,
-    duration: 3
-  },
-  26: {
-    x: 28,
-    y: 28
-  },
-  27: {
-    x: 31,
-    y: 28,
-    weather: 7
   },
   28: {
     x: 17,
