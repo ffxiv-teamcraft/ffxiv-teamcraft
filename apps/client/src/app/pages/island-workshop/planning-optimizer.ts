@@ -1,16 +1,17 @@
 import { CraftworksObject } from './craftworks-object';
-import { addDays, subDays } from 'date-fns';
+import { addDays } from 'date-fns';
 import { LazyData } from '../../lazy-data/lazy-data';
 import { uniqBy } from 'lodash';
 import { PlanningOptimizerConfig } from './planning-optimizer-config';
+import { IslandWorkshopSimulator } from './island-workshop-simulator';
 
-type Genome = number[];
+type Genome = number[][];
 
 export class PlanningOptimizer {
 
   private static POPULATION_SIZE = 500;
 
-  private static GENERATIONS = 301;
+  private static GENERATIONS = 200;
 
   private static MUTATION_FACTOR = 5;
 
@@ -24,43 +25,32 @@ export class PlanningOptimizer {
 
   private population: Genome[] = [];
 
+  private simulator: IslandWorkshopSimulator;
+
   constructor(objects: CraftworksObject[],
               private supply: LazyData['islandSupply'],
               private config: PlanningOptimizerConfig) {
-    if (config.weekly) {
-      let nextWeeklyReset = new Date();
-      nextWeeklyReset.setUTCSeconds(0);
-      nextWeeklyReset.setUTCMinutes(0);
-      nextWeeklyReset.setUTCMilliseconds(0);
-      if (nextWeeklyReset.getUTCDay() === PlanningOptimizer.WEEKLY_RESET_DAY && nextWeeklyReset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
-        nextWeeklyReset = addDays(nextWeeklyReset, 7);
-      } else {
-        while (nextWeeklyReset.getUTCDay() !== PlanningOptimizer.WEEKLY_RESET_DAY) {
-          nextWeeklyReset = addDays(nextWeeklyReset, 1);
-        }
-      }
+    let nextWeeklyReset = new Date();
+    nextWeeklyReset.setUTCSeconds(0);
+    nextWeeklyReset.setUTCMinutes(0);
+    nextWeeklyReset.setUTCMilliseconds(0);
+    if (nextWeeklyReset.getUTCDay() === PlanningOptimizer.WEEKLY_RESET_DAY && nextWeeklyReset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
       nextWeeklyReset = addDays(nextWeeklyReset, 7);
-      this.remainingHoursBeforeReset = Math.floor((nextWeeklyReset.getTime() - Date.now()) / 3600000);
     } else {
-      let reset = new Date();
-      reset.setUTCSeconds(0);
-      reset.setUTCMinutes(0);
-      reset.setUTCMilliseconds(0);
-      if (reset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
-        // This means the reset was yesterday
-        reset = subDays(reset, 1);
+      while (nextWeeklyReset.getUTCDay() !== PlanningOptimizer.WEEKLY_RESET_DAY) {
+        nextWeeklyReset = addDays(nextWeeklyReset, 1);
       }
-      reset.setUTCHours(PlanningOptimizer.RESET_HOUR);
-      const nextDailyReset = addDays(reset, 1).getTime();
-      this.remainingHoursBeforeReset = Math.floor((nextDailyReset - Date.now()) / 3600000);
     }
+    nextWeeklyReset = addDays(nextWeeklyReset, 7);
+    this.remainingHoursBeforeReset = Math.floor((nextWeeklyReset.getTime() - Date.now()) / 3600000);
     this.objects = objects.map((obj, index) => ({ ...obj, index }));
     this.population = new Array(PlanningOptimizer.POPULATION_SIZE)
       .fill(null)
       .map(() => this.createGenome());
+    this.simulator = new IslandWorkshopSimulator(this.objects, this.config.workshops, this.supply, this.config.landmarks);
   }
 
-  public run(): { score: number, planning: CraftworksObject[] }[] {
+  public run(): { score: number, planning: CraftworksObject[][] }[] {
     if (this.remainingHoursBeforeReset < 4) {
       return [];
     }
@@ -83,8 +73,10 @@ export class PlanningOptimizer {
       .map(({ individual, score }) => {
         return {
           score: score,
-          planning: individual.map(chromosome => {
-            return this.objects[chromosome];
+          planning: individual.map(workshop => {
+            return workshop.map(chromosome => {
+              return this.objects[chromosome];
+            });
           })
         };
       });
@@ -146,10 +138,18 @@ export class PlanningOptimizer {
 
   private reproduction(parents: [Genome, Genome]): [Genome, Genome] {
     const [firstParent, secondParent] = parents;
-    return [this.makeChild(firstParent, secondParent), this.makeChild(secondParent, firstParent)];
+
+    return [
+      firstParent.map((workshop, i) => {
+        return this.makeChild(workshop, secondParent[i]);
+      }),
+      secondParent.map((workshop, i) => {
+        return this.makeChild(workshop, firstParent[i]);
+      })
+    ];
   }
 
-  private makeChild(firstParent: Genome, secondParent: Genome): Genome {
+  private makeChild(firstParent: number[], secondParent: number[]): number[] {
     // Split at length - 1 to have at least one chromosome from second parent
     const splitIndex = Math.floor(Math.random() * firstParent.length - 1);
     const child = firstParent.slice(0, splitIndex);
@@ -187,51 +187,33 @@ export class PlanningOptimizer {
     let remainingHours = this.remainingHoursBeforeReset;
     let matches = this.objects.filter(o => o.craftworksEntry.craftingTime <= remainingHours);
     const genome = [];
-    while (matches.length > 0) {
-      const randomObject = matches[Math.floor(Math.random() * matches.length)];
-      genome.push(randomObject.index);
-      remainingHours -= randomObject.craftworksEntry.craftingTime;
-      matches = this.objects.filter(o => o.craftworksEntry.craftingTime <= remainingHours);
-    }
+    this.config.workshops.forEach((ws, i) => {
+      genome[i] = [];
+      while (matches.length > 0) {
+        const randomObject = matches[Math.floor(Math.random() * matches.length)];
+        genome[i].push(randomObject.index);
+        remainingHours -= randomObject.craftworksEntry.craftingTime;
+        matches = this.objects.filter(o => o.craftworksEntry.craftingTime <= remainingHours);
+      }
+    });
     return genome;
   }
 
   private fitness(genome: Genome): number {
-    return this.getRealScore(genome, 1);
+    return this.getRealScore(genome);
   }
 
-  private getRealScore(genome: Genome, bonusWeight = 1): number {
-    return genome.reduce((acc, chromosome, index) => {
-      if (acc.totalTime > this.remainingHoursBeforeReset) {
-        return {
-          ...acc,
-          score: 0,
-          bonus: 0
-        };
-      }
-      // Grab craftworks object from the chromosome value
-      const entry = this.objects[chromosome];
-      let efficiencyMultiplier = 1;
-      // If not the first one, apply bonus if it can be applied
-      if (index > 0) {
-        const previous = this.objects[genome[index - 1]];
-        if (previous.craftworksEntry.themes.some(theme => entry.craftworksEntry.themes.includes(theme))) {
-          acc.bonus = Math.min(acc.bonus + bonusWeight, this.config.maxBonus * bonusWeight);
-          efficiencyMultiplier = 2
-        }
-      }
-      const entryScore = entry.craftworksEntry.value * efficiencyMultiplier * (this.supply[entry.supply] / 100) * (entry.popularity.ratio / 100);
-      acc.score += Math.floor(entryScore * (1 + acc.bonus / 100));
-      return acc;
-    }, { score: 0, bonus: 0, totalTime: 0 }).score;
+  private getRealScore(genome: Genome): number {
+    return this.simulator.getScore(genome);
   }
 
-  private mutate(genome: Genome): Genome {
-    const clone = [...genome];
-    const mutationIndex = Math.floor(Math.random() * clone.length);
-    const mutated = clone[mutationIndex];
+  private mutate(genome: number[]): number[] {
+    const clone = JSON.parse(JSON.stringify(genome));
+    const mutationWorkshop = Math.floor(Math.random() * clone.length);
+    const mutationIndex = Math.floor(Math.random() * clone[mutationWorkshop].length);
+    const mutated = clone[mutationWorkshop][mutationIndex];
     const possibleMutations = this.objects.filter(o => o.craftworksEntry.craftingTime === this.objects[mutated].craftworksEntry.craftingTime);
-    clone[mutationIndex] = possibleMutations[Math.floor(Math.random() * possibleMutations.length)].index;
+    clone[mutationWorkshop][mutationIndex] = possibleMutations[Math.floor(Math.random() * possibleMutations.length)].index;
     return clone;
   }
 }

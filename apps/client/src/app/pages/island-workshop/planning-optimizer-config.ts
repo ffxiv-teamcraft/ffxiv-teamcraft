@@ -1,5 +1,5 @@
 export interface PlanningOptimizerConfig {
-  maxBonus: number;
-  weekly: boolean;
   islandLevel: number;
+  landmarks: number;
+  workshops: number[];
 }

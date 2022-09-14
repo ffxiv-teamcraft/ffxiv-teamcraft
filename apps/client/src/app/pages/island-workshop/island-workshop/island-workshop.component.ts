@@ -18,6 +18,7 @@ import { IslandWorkshopStatusService } from '../../../core/database/island-works
 import { PlatformService } from '../../../core/tools/platform.service';
 import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
 
 interface ColumnItem {
   name: string;
@@ -60,7 +61,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     4: 'Overflowing'
   };
 
-  static RANK_RATIO = [0, 100, 110, 120, 130];
+  days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
 
   public previousReset$ = timer(0, 1000).pipe(
     map(() => {
@@ -75,6 +84,26 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       }
       reset.setUTCHours(8);
       return reset.getTime();
+    }),
+    distinctUntilChanged()
+  );
+
+  public previousWeeklyReset$ = timer(0, 1000).pipe(
+    map(() => {
+      // Only supports EU servers for now.
+      let nextWeeklyReset = new Date();
+      nextWeeklyReset.setUTCSeconds(0);
+      nextWeeklyReset.setUTCMinutes(0);
+      nextWeeklyReset.setUTCMilliseconds(0);
+      if (nextWeeklyReset.getUTCDay() === 2 && nextWeeklyReset.getUTCHours() < 8) {
+        nextWeeklyReset = addDays(nextWeeklyReset, 7);
+      } else {
+        while (nextWeeklyReset.getUTCDay() !== 2) {
+          nextWeeklyReset = addDays(nextWeeklyReset, 1);
+        }
+      }
+      nextWeeklyReset.setUTCHours(8);
+      return subDays(nextWeeklyReset, 7).getTime();
     }),
     distinctUntilChanged()
   );
@@ -174,6 +203,18 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
           filterMultiple: true
         },
         {
+          name: 'Possible_peak_days',
+          listOfFilter: new Array(7).fill(null).map((_, i) => {
+            const day = this.days[i];
+            return {
+              value: i,
+              text: this.translate.instant(`COMMON.DAYS.${day}`)
+            };
+          }),
+          filterFn: (values, item) => values.some(value => item.patterns.some(p => p.day === value)),
+          filterMultiple: true
+        },
+        {
           name: 'Predicted_popularity',
           sortOrder: null,
           sortFn: (a, b) => a.predictedPopularity.id - b.predictedPopularity.id,
@@ -190,12 +231,27 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  private stateHistory$ = this.previousWeeklyReset$.pipe(
+    switchMap(reset => {
+      const historyEntriesToFetch = [reset.toString()];
+      let nextDay = reset + 86400000;
+      while (nextDay < Date.now()) {
+        historyEntriesToFetch.push(nextDay.toString());
+        nextDay += 86400000;
+      }
+      return combineLatest(historyEntriesToFetch.map(date => {
+        return this.mjiWorkshopStatusService.get(date);
+      }));
+    })
+  );
+
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
     this.state$,
-    this.islandLevel$
+    this.islandLevel$,
+    this.stateHistory$
   ]).pipe(
     withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks'),
-    map(([[state, islandLevel], islandPopularity, islandCraftworks]) => {
+    map(([[state, islandLevel, history], islandPopularity, islandCraftworks]) => {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
@@ -216,7 +272,28 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             predictedPopularity
           };
         })
-        .filter(row => row.craftworksEntry.lvl <= islandLevel);
+        .filter(row => row.craftworksEntry.lvl <= islandLevel)
+        .map(item => {
+          item.patterns = this.findPatterns(history, item);
+          return item;
+        });
+    })
+  );
+
+  public objectsForTomorrow$ = combineLatest([
+    this.nextReset$,
+    this.craftworksObjects$
+  ]).pipe(
+    map(([reset, objects]) => {
+      return objects.filter(object => {
+        return object.patterns.some(p => p.day === new Date(reset).getUTCDay())
+          && object.popularity.id <= 2;
+      }).sort((a, b) => {
+        if (a.patterns[0].strong === b.patterns[0].strong) {
+          return a.popularity.id - b.popularity.id;
+        }
+        return Number(b.patterns[0].strong) - Number(a.patterns[0].strong);
+      });
     })
   );
 
@@ -232,20 +309,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     }),
     map(([objects, supply, islandLevel, landmarks, rank]) => {
       return new PlanningOptimizer(objects, supply, {
-        weekly: false,
-        maxBonus: [
-          10,
-          15,
-          20,
-          25,
-          35
-        ][landmarks] || 10,
+        workshops: [3, 3, 3],
+        landmarks: landmarks,
         islandLevel
-      }).run()
-        .map(res => {
-          res.score = Math.floor(res.score * (IslandWorkshopComponent.RANK_RATIO[rank] || 100) / 100);
-          return res;
-        });
+      }).run();
     })
   );
 
@@ -332,5 +399,27 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     const editedState = { ...this.state$.value };
     editedState.supplyDemand[index + 1][key] = value;
     this.state$.next(editedState);
+  }
+
+  private findPatterns(history: WorkshopStatusData[], item: CraftworksObject): { index: number, pattern: WorkshopPattern }[] {
+    const itemHistory = history.map(day => {
+      return [day.objects[item.id].supply, day.objects[item.id].demand];
+    });
+    const matches: { index: number, day: number, pattern: WorkshopPattern, strong: boolean }[] = [];
+    workshopPatterns.forEach((pattern, i) => {
+      const patternMatches = itemHistory.every((day, index) => {
+        const patternEntry = pattern[index];
+        return day[0] === patternEntry[0]
+          && (
+            patternEntry[1] === -1
+            || (patternEntry[1] === -2 && day[1] !== 0)
+            || day[1] === patternEntry[1]
+          );
+      });
+      if (patternMatches) {
+        matches.push({ day: (3 + Math.floor(i / 2)) % 7, index: i, pattern, strong: i % 2 === 1 });
+      }
+    });
+    return matches;
   }
 }

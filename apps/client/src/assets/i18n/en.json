@@ -196,7 +196,16 @@
     "Instance": "Instance",
     "Fate": "Fate",
     "Reload": "Reload",
-    "Click_to_apply": "Click to apply"
+    "Click_to_apply": "Click to apply",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -2958,9 +2967,12 @@
       "Edit_mode": "Edit mode",
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
-      "Run_optimizer": "Find best planning for the rest of the day",
+      "Run_optimizer": "Find best planning for the rest of the week",
       "No_schedule_found": "No planning found",
       "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
