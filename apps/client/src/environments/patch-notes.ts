@@ -1,5 +1,11 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed island animals alarms not displayed in sidebar.
-* **island-animals:** fixed alarm button shown as "remove alarm" for inexistant alarms.
-* **island-animals:** fixed coords and alarms associated with wrong animal.`;
+* **island-animals:** fixed alarm button adding more alarms instead of removing existing one.
+* **island-animals:** fixed alarm button switching timers randomly.
+* **voyage-tracker:** fixed new servers shown as undefined.
+
+
+### Features
+
+* **island-animals:** add animal size to the display table.
+* **island-workshop:** best items to craft for tomorrow.`;

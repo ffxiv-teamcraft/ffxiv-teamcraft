@@ -3,4 +3,5 @@ export interface LazyIslandAnimal {
   rewards:  number[];
   icon:     string;
   bnpcName: number;
+  size:     number;
 }

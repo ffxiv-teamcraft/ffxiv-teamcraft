@@ -6,6 +6,7 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { Observable } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 
 @Component({
   selector: 'app-island-animals',
@@ -56,7 +57,15 @@ export class IslandAnimalsComponent {
   constructor(private lazyData: LazyDataFacade, private alarmsFacade: AlarmsFacade) {
   }
 
-  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+  public addAlarm(display: AlarmDisplay, group?: AlarmGroup): void {
+    if (display.registered) {
+      this.alarmsFacade.deleteAlarm(display.alarm);
+    } else {
+      this.alarmsFacade.addAlarmInGroup(display.alarm, group);
+    }
+  }
+
+  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup): void {
     this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 

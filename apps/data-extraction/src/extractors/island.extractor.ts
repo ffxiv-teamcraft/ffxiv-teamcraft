@@ -88,7 +88,7 @@ export class IslandExtractor extends AbstractExtractor {
     });
 
     combineLatest([
-      this.aggregateAllPages('https://xivapi.com/MJIAnimals?columns=BNpcBaseTargetID,Reward0TargetID,Reward1TargetID,ID,IconHD'),
+      this.aggregateAllPages('https://xivapi.com/MJIAnimals?columns=BNpcBaseTargetID,Reward0TargetID,Reward1TargetID,ID,IconHD,Size'),
       this.getNonXivapiUrl('https://gubal.hasura.app/api/rest/bnpc')
     ]).pipe(
       map(([mjiAnimals, bnpcs]) => {
@@ -99,7 +99,8 @@ export class IslandExtractor extends AbstractExtractor {
               id: animal.ID,
               rewards: [animal.Reward0TargetID, animal.Reward1TargetID],
               icon: animal.IconHD,
-              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBaseTargetID)?.bnpcName
+              bnpcName: bnpcs.bnpc.find(e => e.bnpcBase === animal.BNpcBaseTargetID)?.bnpcName,
+              size: animal.Size
             }
           };
         }, {});

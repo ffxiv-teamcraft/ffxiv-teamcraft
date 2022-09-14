@@ -269,7 +269,7 @@ export class AlarmsFacade {
   }
 
   public getNextSpawn(alarm: Alarm, etime: Date): NextSpawn {
-    const cacheKey = `${alarm.itemId}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}`;
+    const cacheKey = `${alarm.itemId}-${alarm.bnpcName}-${alarm.zoneId}-${(alarm.spawns || []).join(',')}-${(alarm.weathers || []).join(',')}`;
     if (this.nextSpawnCache[cacheKey] === undefined || this.nextSpawnCache[cacheKey].expires.getTime() < Date.now()) {
       const sortedSpawns = (alarm.spawns || []).sort((a, b) => {
         const timeBeforeA = this.getMinutesBefore(etime, { hours: a, days: 0 });
