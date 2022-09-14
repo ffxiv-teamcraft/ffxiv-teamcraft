@@ -98,9 +98,11 @@ import {LazyWeather} from './model/lazy-weather';
 import {LazyKoFate} from './model/lazy-ko-fate';
 import {LazyKoGatheringBonus} from './model/lazy-ko-gathering-bonus';
 import {LazyKoRecipe} from './model/lazy-ko-recipe';
+import {LazyKoStatus} from './model/lazy-ko-status';
 import {LazyZhFate} from './model/lazy-zh-fate';
 import {LazyZhGatheringBonus} from './model/lazy-zh-gathering-bonus';
 import {LazyZhRecipe} from './model/lazy-zh-recipe';
+import {LazyZhStatus} from './model/lazy-zh-status';
 
 export interface LazyData {
   achievements: Record<number, LazyAchievement>;
@@ -282,7 +284,7 @@ export interface LazyData {
   koRecipes: Array<LazyKoRecipe>;
   koShops: Record<number, {ko: string}>;
   koStatusDescriptions: Record<number, {ko: string}>;
-  koStatuses: Record<number, {ko: string}>;
+  koStatuses: Record<number, LazyKoStatus>;
   koSubmarineVoyages: Record<number, {ko: string}>;
   koTraitDescriptions: Record<number, {ko: string}>;
   koTraits: Record<number, {ko: string}>;
@@ -336,7 +338,7 @@ export interface LazyData {
   zhRecipes: Array<LazyZhRecipe>;
   zhShops: Record<number, {zh: string}>;
   zhStatusDescriptions: Record<number, {zh: string}>;
-  zhStatuses: Record<number, {zh: string}>;
+  zhStatuses: Record<number, LazyZhStatus>;
   zhSubmarineVoyages: Record<number, {zh: string}>;
   zhTraitDescriptions: Record<number, {zh: string}>;
   zhTraits: Record<number, {zh: string}>;
