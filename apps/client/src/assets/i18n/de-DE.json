@@ -2986,6 +2986,7 @@
       "Title": "Tiere",
       "Subtitle": "Eine umfassende Liste der Tiere, wo und wann sie zu finden sind, mit Alarm-Integration",
       "Name": "Name",
+      "Size": "Size",
       "Coords": "Position",
       "Spawn_time": "Spawnzeit",
       "Weather": "Wetter",
