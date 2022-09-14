@@ -429,7 +429,7 @@ export class AlarmsFacade {
             }
           }
           // If custom alarm, return it
-          if (alarm.name) {
+          if (alarm.name || alarm.type === -10) {
             alarm.appVersion = environment.version;
             return of(alarm);
           }
