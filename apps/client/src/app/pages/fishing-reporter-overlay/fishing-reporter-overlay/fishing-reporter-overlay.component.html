@@ -96,7 +96,7 @@
             <div *ngIf="report.biteTime; else unknown">{{(report.biteTime / 10) | number: '1.0-1'}} s</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{'Hq' | translate}}</div>
+            <div>{{'DB.FISH.OVERLAY.Large' | translate}}</div>
             <div>{{(report.hq ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -111,7 +111,7 @@
             <div>{{(report.snagging ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div>{{735 | i18nRow:'statuses' | async | i18n}}</div>
+            <div>{{568 | i18nRow:'statuses' | async | i18n}}</div>
             <div>{{(report.intuition ? 'Yes' : 'No') | translate}}</div>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between center">

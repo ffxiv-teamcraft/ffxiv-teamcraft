@@ -15,11 +15,11 @@ output('ex-versions', () => db('ExVersion').simpleObject('Name'))
 output('fates', () => db('Fate').toObject(row => {
   if (!row.Name) return
 
-  let icon = ('000000' + row['Icon{Map}']).substr(-6)
+  let icon = ('000000' + row['Icon{Map}']).slice(-6)
   return row.Name ? {
     name: i18n('Fate', row['#'], 'Name'),
     description: i18n('Fate', row['#'], 'Description'),
-    icon: `ui/icon/${icon.substr(0, 2)}0000/${icon}.tex`
+    icon: `/i/${icon.substring(0, 3)}000/${icon}.png`
   } : undefined
 }))
 output('gathering-bonuses', () => db('GatheringPointBonus', false).toObject(row => {
@@ -87,7 +87,7 @@ output('quest-descriptions', () => db('Quest').toObject(row => {
   let id = row.Id
   if (!id) return
 
-  let questPath = `quest/${id.substr(id.indexOf('_') + 1, 3)}/${id}`
+  let questPath = `quest/${id.substring(id.indexOf('_') + 1, id.indexOf('_') + 4)}/${id}`
   return i18n(questPath, item => item['#1'] === `TEXT_${id.toUpperCase()}_SEQ_00`, '#2')
 }))
 output('quests', () => db('Quest').simpleObject('Name'))
@@ -152,7 +152,14 @@ output('recipes', () => {
 
 output('shops', Object.assign(db('GilShop').simpleObject('Name'), db('SpecialShop').simpleObject('Name')))
 output('status-descriptions', () => db('Status').simpleObject('Description'))
-output('statuses', () => db('Status').simpleObject('Name'))
+output('statuses', () => db('Status').toObject(row => {
+  if (!row.Name) return
+
+  let status = i18n('Status', row['#'], 'Name')
+  let icon = ('000000' + row['Icon']).slice(-6)
+  status.icon = `/i/${icon.substring(0, 3)}000/${icon}.png`
+  return row.Name ? status: undefined
+}))
 output('trait-descriptions', () => db('TraitTransient').simpleObject('Description'))
 output('traits', () => db('Trait').simpleObject('Name'))
 output('tribes', () => db('Tribe').simpleObject('Masculine'))

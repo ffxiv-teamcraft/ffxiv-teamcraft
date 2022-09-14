@@ -1638,6 +1638,7 @@
         "Last_report": "Last report",
         "Fish": "Fish",
         "Size": "Size",
+        "Large": "Large",
         "Time_since_thrown": "Time since throw",
         "ERRORS": {
           "No_bait": "No bait detected. Switch bait once to fix.",
