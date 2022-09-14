@@ -196,7 +196,16 @@
     "Instance": "던전",
     "Fate": "돌발 임무",
     "Reload": "새로고침",
-    "Click_to_apply": "클릭하여 적용"
+    "Click_to_apply": "클릭하여 적용",
+    "DAYS": {
+      "Monday": "Monday",
+      "Tuesday": "Tuesday",
+      "Wednesday": "Wednesday",
+      "Thursday": "Thursday",
+      "Friday": "Friday",
+      "Saturday": "Saturday",
+      "Sunday": "Sunday"
+    }
   },
   "ALARMS": {
     "Title": "알람",
@@ -1629,6 +1638,7 @@
         "Last_report": "최근 보고",
         "Fish": "물고기",
         "Size": "크기",
+        "Large": "Large",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
@@ -2942,8 +2952,8 @@
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
-      "Out_of_sync": "State has not been updated during the last 24 hours",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button.",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",
@@ -2958,9 +2968,12 @@
       "Edit_mode": "Edit mode",
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
-      "Run_optimizer": "Find best planning for the rest of the day",
+      "Run_optimizer": "Find best planning for the rest of the week",
       "No_schedule_found": "No planning found",
       "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
