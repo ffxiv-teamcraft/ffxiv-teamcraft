@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.7.12"></a>
+## [9.7.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.11...v9.7.12) (2022-09-14)
+
+
+### Bug Fixes
+
+* **island-animals:** fixed alarm button adding more alarms instead of removing existing one ([3c5fcce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c5fcce))
+* **island-animals:** fixed alarm button switching timers randomly ([6ddad0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ddad0a))
+* **voyage-tracker:** fixed new servers shown as undefined ([c3b8465](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3b8465)), closes [#2332](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/2332)
+
+
+### Features
+
+* **island-animals:** add animal size to the display table ([fa997e0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa997e0))
+* **island-workshop:** best items to craft for tomorrow ([eb2cb0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb2cb0a))
+
+
+
 <a name="9.7.11"></a>
 ## [9.7.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.10...v9.7.11) (2022-09-13)
 
