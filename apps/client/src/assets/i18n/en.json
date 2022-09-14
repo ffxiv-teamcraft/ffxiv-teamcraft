@@ -2942,8 +2942,8 @@
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
-      "Out_of_sync": "State has not been updated during the last 24 hours",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button.",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",
