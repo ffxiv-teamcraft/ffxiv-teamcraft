@@ -1827,7 +1827,7 @@
     "Placeholder": "아이템 이름",
     "No_missing_ingredients": "모든 재료가 있음",
     "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
-    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
+    "Missing_X_ingredients_for_one_more": "추가로 제작하기엔 {{amount}} 가지 재료가 부족",
     "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
@@ -1868,7 +1868,7 @@
     "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
     "X_sold_last_week": "지난 주 {{amount}} 개 판매",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "이 화폐는 교환하여 장터에 판매 가능한 아이템을 얻을 수 없습니다."
   },
   "FOOD_PICKER": {
     "Title": "음식 선택 도우미",
@@ -2858,10 +2858,10 @@
     "Product_id_explain": "상품 URL에서 \"/product/\" 바로 옆에 있는 게 상품 ID",
     "Open_item": "알라간 리포트에서 열기",
     "Delete": "삭제",
-    "Voyage_rarity": "Rarity",
-    "Rarity_Common": "Common",
-    "Rarity_Voyage_exclusive": "Voyage exclusive",
-    "Rarity_Rare": "Rare",
+    "Voyage_rarity": "희귀도",
+    "Rarity_Common": "일반",
+    "Rarity_Voyage_exclusive": "탐사 전용",
+    "Rarity_Rare": "희귀",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
     "Speed": "속도",
