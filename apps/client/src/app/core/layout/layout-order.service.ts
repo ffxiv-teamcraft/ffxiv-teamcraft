@@ -67,6 +67,9 @@ export class LayoutOrderService {
         return this.orderFunctions['NAME'](a, b);
       }
       return a.timer - b.timer;
+    },
+    'INGAME_LOG': (a, b) => {
+      return this.orderFunctions['JOB'](a, b);
     }
   };
 
