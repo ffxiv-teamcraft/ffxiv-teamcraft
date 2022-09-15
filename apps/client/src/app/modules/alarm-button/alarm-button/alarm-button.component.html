@@ -3,7 +3,7 @@
           [nzType]="display.spawned?'primary':'default'"
           nz-button
           nz-tooltip
-          [nzTooltipTitle]="tooltip">
+          [nzTooltipTitle]="tooltipText || tooltip">
     <ng-template #tooltip>
       <span *ngIf="display.alarm.itemId">
           <span *ngIf="display.alarm.mapId | closestAetheryte:display.alarm.coords | async as aetheryte">

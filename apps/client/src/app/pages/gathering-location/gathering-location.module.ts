@@ -20,6 +20,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
 import { SpearfishingSpeedModule } from '../../modules/spearfishing-speed-tooltip/spearfishing-speed.module';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 
 const routes: Routes = [
   {
@@ -53,7 +54,8 @@ const routes: Routes = [
     NodeDetailsModule,
     SpearfishingSpeedModule,
     ReactiveFormsModule,
-    NzPaginationModule
+    NzPaginationModule,
+    AlarmButtonModule
   ],
   declarations: [GatheringLocationComponent]
 })

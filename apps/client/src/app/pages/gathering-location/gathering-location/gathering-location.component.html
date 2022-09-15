@@ -106,7 +106,7 @@
   <div class="results">
     <ng-container *ngFor="let row of results.rows" [class.compact-node]="compactDisplay$ | async">
       <nz-card [nzActions]="(row.node.spawns?.length > 0 || row.node.weathers?.length > 0)?
-             (alarmGroups$ | async)?.length > 0 && canCreateAlarmFromNode(alarms$ | async, row.node)?[actionAlarm, actionAlarmToGroup]:[actionAlarm]
+             (alarmGroups$ | async)?.length > 0 && canCreateAlarmFromNode(alarms$ | async, row.node)?[actionAlarm]:[actionAlarm]
              :[]"
                [nzCover]="(compactDisplay$ | async)?null:map">
         <nz-card-meta [nzAvatar]="itemIcon" [nzDescription]="description" [nzTitle]="title">
@@ -166,44 +166,18 @@
           <div fxFlex="1 1 auto"></div>
         </div>
       </ng-template>
-      <ng-template #alarmCreated>
-        {{'ALARMS.Alarm_already_created' | translate}}
-      </ng-template>
       <ng-template #actionAlarm>
         <div fxLayout="row" fxLayoutAlign="space-around center">
-          <div *ngFor="let alarm of row.alarms; trackBy: trackByAlarm">
-            <ng-container *ngIf="canCreateAlarm(alarms$ | async, alarm); else alarmCreated">
-              <ng-container *ngIf="alarmsLoaded$ | async">
-                <div nz-tooltip [nzTooltipTitle]="('GATHERING_LOCATIONS.Add_alarm' + (alarm.fishEyes?'_fish_eyes':'')) | translate" fxLayout="row"
-                     fxLayoutAlign="center center">
-                  <i (click)="addAlarm(alarm)" class="material-icons create-alarm">
-                    alarm_add
-                  </i>
-                  <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
-                </div>
-              </ng-container>
-            </ng-container>
-          </div>
-        </div>
-      </ng-template>
-      <ng-template #actionAlarmToGroup>
-        <div *ngIf="alarmGroups$ | async as groups" fxLayout="row" fxLayoutAlign="space-around center">
-          <ng-container *ngFor="let alarm of row.alarms; trackBy: trackByAlarm">
-            <ng-container *ngIf="canCreateAlarm(alarms$ | async, alarm); else alarmCreated">
-              <ng-container *ngIf="alarmsLoaded$ | async">
-                <i [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" class="add-to-group"
-                   nz-dropdown nz-icon
-                   nzType="folder-open"
-                ></i>
-                <img [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon" *ngIf="alarm.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
-                <nz-dropdown-menu #menu="nzDropdownMenu">
-                  <ul nz-menu>
-                    <li (click)="addAlarm(alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                      {{group.name}}
-                    </li>
-                  </ul>
-                </nz-dropdown-menu>
-              </ng-container>
+          <ng-container *ngFor="let generatedAlarm of row.alarms; trackBy: trackByAlarm">
+            <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
+              <div *ngIf="alarm.remainingTime"
+                   fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
+                     [src]="762 | lazyRow:'statuses':'icon' | async | xivapiIcon"
+                     alt="" class="fish-eyes-alarm">
+                <app-alarm-button [alarm]="alarm.alarm" (toggleAlarm)="addAlarm($event.alarm)" (addAlarmWithGroup)="addAlarm($event.alarm, $event.group)"
+                                  [alarmGroups]="alarmGroups$ | async" [showPosition]="false" [tooltipText]="'GATHERING_LOCATIONS.Add_alarm' | translate"></app-alarm-button>
+              </div>
             </ng-container>
           </ng-container>
         </div>

@@ -30,6 +30,9 @@ export class AlarmButtonComponent {
   @Input()
   showPosition = true;
 
+  @Input()
+  tooltipText?: string;
+
   constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
   }
 
