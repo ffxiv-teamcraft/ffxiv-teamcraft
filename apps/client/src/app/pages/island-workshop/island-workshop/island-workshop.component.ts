@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, first, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
@@ -280,23 +280,6 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public objectsForTomorrow$ = combineLatest([
-    this.nextReset$,
-    this.craftworksObjects$
-  ]).pipe(
-    map(([reset, objects]) => {
-      return objects.filter(object => {
-        return object.patterns.some(p => p.day === new Date(reset).getUTCDay())
-          && object.popularity.id <= 2;
-      }).sort((a, b) => {
-        if (a.patterns[0].strong === b.patterns[0].strong) {
-          return a.popularity.id - b.popularity.id;
-        }
-        return Number(b.patterns[0].strong) - Number(a.patterns[0].strong);
-      });
-    })
-  );
-
   public optimizerResult$ = this.startOptimizer$.pipe(
     switchMap(() => {
       return combineLatest([
@@ -305,11 +288,11 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         this.islandLevel$,
         this.landmarks$,
         this.rank$
-      ]);
+      ]).pipe(first());
     }),
     map(([objects, supply, islandLevel, landmarks, rank]) => {
       return new PlanningOptimizer(objects, supply, {
-        workshops: [3, 3, 3],
+        workshops: [rank, rank, rank],
         landmarks: landmarks,
         islandLevel
       }).run();

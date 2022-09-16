@@ -1,5 +1,4 @@
 import { CraftworksObject } from './craftworks-object';
-import { addDays } from 'date-fns';
 import { LazyData } from '../../lazy-data/lazy-data';
 import { uniqBy } from 'lodash';
 import { PlanningOptimizerConfig } from './planning-optimizer-config';
@@ -9,15 +8,15 @@ type Genome = number[][];
 
 export class PlanningOptimizer {
 
-  private static POPULATION_SIZE = 500;
+  private static POPULATION_SIZE = 1000;
 
-  private static GENERATIONS = 200;
+  private static GENERATIONS = 300;
 
   private static MUTATION_FACTOR = 5;
 
-  private static WEEKLY_RESET_DAY = 2;
-
-  private static RESET_HOUR = 8;
+  // private static WEEKLY_RESET_DAY = 2;
+  //
+  // private static RESET_HOUR = 8;
 
   private readonly remainingHoursBeforeReset: number;
 
@@ -30,19 +29,20 @@ export class PlanningOptimizer {
   constructor(objects: CraftworksObject[],
               private supply: LazyData['islandSupply'],
               private config: PlanningOptimizerConfig) {
-    let nextWeeklyReset = new Date();
-    nextWeeklyReset.setUTCSeconds(0);
-    nextWeeklyReset.setUTCMinutes(0);
-    nextWeeklyReset.setUTCMilliseconds(0);
-    if (nextWeeklyReset.getUTCDay() === PlanningOptimizer.WEEKLY_RESET_DAY && nextWeeklyReset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
-      nextWeeklyReset = addDays(nextWeeklyReset, 7);
-    } else {
-      while (nextWeeklyReset.getUTCDay() !== PlanningOptimizer.WEEKLY_RESET_DAY) {
-        nextWeeklyReset = addDays(nextWeeklyReset, 1);
-      }
-    }
-    nextWeeklyReset = addDays(nextWeeklyReset, 7);
-    this.remainingHoursBeforeReset = Math.floor((nextWeeklyReset.getTime() - Date.now()) / 3600000);
+    // Keeping this in here just in case, but for now we're optimizing for the full week.
+    // let nextWeeklyReset = new Date();
+    // nextWeeklyReset.setUTCSeconds(0);
+    // nextWeeklyReset.setUTCMinutes(0);
+    // nextWeeklyReset.setUTCMilliseconds(0);
+    // if (nextWeeklyReset.getUTCDay() === PlanningOptimizer.WEEKLY_RESET_DAY && nextWeeklyReset.getUTCHours() < PlanningOptimizer.RESET_HOUR) {
+    //   nextWeeklyReset = addDays(nextWeeklyReset, 7);
+    // } else {
+    //   while (nextWeeklyReset.getUTCDay() !== PlanningOptimizer.WEEKLY_RESET_DAY) {
+    //     nextWeeklyReset = addDays(nextWeeklyReset, 1);
+    //   }
+    // }
+    // nextWeeklyReset = addDays(nextWeeklyReset, 7);
+    this.remainingHoursBeforeReset = 168;
     this.objects = objects.map((obj, index) => ({ ...obj, index }));
     this.population = new Array(PlanningOptimizer.POPULATION_SIZE)
       .fill(null)
@@ -50,7 +50,7 @@ export class PlanningOptimizer {
     this.simulator = new IslandWorkshopSimulator(this.objects, this.config.workshops, this.supply, this.config.landmarks);
   }
 
-  public run(): { score: number, planning: CraftworksObject[][] }[] {
+  public run(): { score: number, planning: (CraftworksObject | -1)[][] }[] {
     if (this.remainingHoursBeforeReset < 4) {
       return [];
     }
@@ -75,7 +75,10 @@ export class PlanningOptimizer {
           score: score,
           planning: individual.map(workshop => {
             return workshop.map(chromosome => {
-              return this.objects[chromosome];
+              if (chromosome >= 0) {
+                return this.objects[chromosome];
+              }
+              return -1;
             });
           })
         };
@@ -156,9 +159,15 @@ export class PlanningOptimizer {
     let totalTime = 0;
     while (totalTime < this.remainingHoursBeforeReset && this.remainingHoursBeforeReset - totalTime > 4) {
       totalTime = child.reduce((acc, taskIndex) => {
+        if (taskIndex === -1) {
+          return acc + 24;
+        }
         return acc + this.objects[taskIndex].craftworksEntry.craftingTime;
       }, 0);
-      const possibleParentChromosome = secondParent.filter((chromosome) => this.objects[chromosome].craftworksEntry.craftingTime <= (this.remainingHoursBeforeReset - totalTime) && child[child.length - 1] !== chromosome);
+      const possibleParentChromosome = secondParent.filter((chromosome) => {
+        const craftingTime = chromosome === -1 ? 24 : this.objects[chromosome].craftworksEntry.craftingTime;
+        return craftingTime <= (this.remainingHoursBeforeReset - totalTime) && child[child.length - 1] !== chromosome;
+      });
       if (possibleParentChromosome.length === 0) {
         const possibleGlobalTasks = this.objects.filter(o => o.craftworksEntry.craftingTime <= (this.remainingHoursBeforeReset - totalTime));
         if (possibleGlobalTasks.length > 0) {
@@ -184,12 +193,19 @@ export class PlanningOptimizer {
   }
 
   private createGenome(): Genome {
-    let remainingHours = this.remainingHoursBeforeReset;
-    let matches = this.objects.filter(o => o.craftworksEntry.craftingTime <= remainingHours);
     const genome = [];
     this.config.workshops.forEach((ws, i) => {
-      genome[i] = [];
+      let remainingHours = this.remainingHoursBeforeReset;
+      let matches = this.objects.filter(o => o.craftworksEntry.craftingTime <= remainingHours);
+      // Let's start with a rest day
+      genome[i] = [-1];
+      remainingHours -= 24;
       while (matches.length > 0) {
+        if (genome.filter(id => id === -1).length < 2) {
+          if (Math.random() > 0.5) {
+            genome[i].push(-1);
+          }
+        }
         const randomObject = matches[Math.floor(Math.random() * matches.length)];
         genome[i].push(randomObject.index);
         remainingHours -= randomObject.craftworksEntry.craftingTime;
@@ -212,6 +228,9 @@ export class PlanningOptimizer {
     const mutationWorkshop = Math.floor(Math.random() * clone.length);
     const mutationIndex = Math.floor(Math.random() * clone[mutationWorkshop].length);
     const mutated = clone[mutationWorkshop][mutationIndex];
+    if (!mutated || mutated === -1) {
+      return clone;
+    }
     const possibleMutations = this.objects.filter(o => o.craftworksEntry.craftingTime === this.objects[mutated].craftworksEntry.craftingTime);
     clone[mutationWorkshop][mutationIndex] = possibleMutations[Math.floor(Math.random() * possibleMutations.length)].index;
     return clone;
