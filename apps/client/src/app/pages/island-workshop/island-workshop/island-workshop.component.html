@@ -55,7 +55,7 @@
 <ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
 
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
-  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score"></app-workshop-planning>
+  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"></app-workshop-planning>
 </ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">

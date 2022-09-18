@@ -8,7 +8,7 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
@@ -245,6 +245,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       }));
     })
   );
+
+  public today$ = this.stateHistory$.pipe(
+    map(history => history.length - 1)
+  )
 
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
     this.state$,

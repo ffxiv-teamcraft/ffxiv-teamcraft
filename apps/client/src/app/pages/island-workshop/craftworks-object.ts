@@ -18,4 +18,5 @@ export interface CraftworksObject {
   predictedPopularityKey?: string;
   patterns?: { index: number, day: number, pattern: WorkshopPattern, strong: boolean }[];
   hasPeaked?: boolean;
+  isPeaking?: boolean;
 }

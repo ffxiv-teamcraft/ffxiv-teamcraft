@@ -22,17 +22,20 @@ export class PlanningFormulaOptimizer {
         planning: []
       };
       if (i <= 1) {
-        // First of all, first day is always rest day
+        // First of all, D1 and D2 are rest days to make things easier
         day.rest = true;
         return day;
       }
-      const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
       // For the other days, check if there's any strong peak
       // Compute projected supply
-      const strongPeaks = this.getBestItems(projectedSupplyObjects, objectsUsage);
+      const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
+
+      const unknownDay = projectedSupplyObjects.some(object => {
+        return object.isPeaking && object.patterns.length > 1;
+      });
 
       // If there's some unknown peaks for this day, consider it as not ready to optimize
-      if (strongPeaks.some(obj => obj.patterns.length > 1)) {
+      if (unknownDay) {
         day.unknown = true;
         return day;
       }
@@ -42,8 +45,8 @@ export class PlanningFormulaOptimizer {
 
       let totalTime = 0;
       // If we have crafting time <= 6, we want to start with combo item to trigger bonus, else start with best item to craft 3 instead of 2 (including bonus)
-      let lastWasBestItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
-      let projectedTime = combo.craftworksEntry.craftingTime;
+      let lastWasBestItem = best.isPeaking;
+      let projectedTime = lastWasBestItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       while (totalTime + projectedTime <= 24) {
         const item = lastWasBestItem ? combo : best;
         const alternativeCombo = lastWasBestItem ? alternative : null;
@@ -130,8 +133,18 @@ export class PlanningFormulaOptimizer {
           return p.pattern[dayIndex][0];
         }).sort((a, b) => a - b)[0] + Math.floor((objectsUsage[object.id] || 0) / 8);
         object.hasPeaked = object.patterns.every(p => p.pattern.every(day => day[0] >= object.supply));
+        object.isPeaking = object.patterns[0] && this.findLastIndex(object.patterns[0].pattern, ([supply]) => supply === object.supply) === dayIndex;
         return object;
       });
+  }
+
+  private findLastIndex<T>(array: Array<T>, predicate: (value: T, index: number, obj: T[]) => boolean): number {
+    let l = array.length;
+    while (l--) {
+      if (predicate(array[l], l, array))
+        return l;
+    }
+    return -1;
   }
 
 }

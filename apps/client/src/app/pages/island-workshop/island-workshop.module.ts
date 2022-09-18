@@ -17,6 +17,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { WorkshopPlanningComponent } from './workshop-planning/workshop-planning.component';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 const routes: Routes = [
   {
@@ -47,7 +48,8 @@ const routes: Routes = [
     NzCardModule,
     NzInputModule,
     NzInputNumberModule,
-    NzDividerModule
+    NzDividerModule,
+    NzEmptyModule
   ]
 })
 export class IslandWorkshopModule { }

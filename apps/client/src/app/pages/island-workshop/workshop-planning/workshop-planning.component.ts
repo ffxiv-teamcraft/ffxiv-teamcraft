@@ -18,6 +18,9 @@ export class WorkshopPlanningComponent {
   @Input()
   totalScore: number;
 
+  @Input()
+  today: number;
+
   days = [
     'Tuesday',
     'Wednesday',
