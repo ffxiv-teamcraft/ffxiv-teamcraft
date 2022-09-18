@@ -45,6 +45,9 @@ export class PlanningFormulaOptimizer {
       if (!bestComboItem) {
         // If we have no combo available (which is possible at lower ranks), just grab a random item with good value
         [bestComboItem, alternativeComboItem] = this.getProjectedSupplyObjects(i).sort((a, b) => {
+          if (a.craftworksEntry.craftingTime === b.craftworksEntry.craftingTime) {
+            return b.popularity.id - a.popularity.id;
+          }
           return a.craftworksEntry.craftingTime - b.craftworksEntry.craftingTime;
         });
       }

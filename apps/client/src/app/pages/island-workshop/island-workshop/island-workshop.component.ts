@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, map, Observable, of, Subject, timer } from 'rxjs';
+import { combineLatest, EMPTY, map, Observable, of, Subject, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
@@ -140,7 +140,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     popularity: -1,
     predictedPopularity: -1,
     supplyDemand: [],
-    updated: 0
+    updated: 0,
+    edited: false
   });
 
   public stateIsOutdated$ = combineLatest([
@@ -319,8 +320,16 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       combineLatest([this.previousReset$, this.state$]).pipe(
         switchMap(([reset, state]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+            map((historyEntry) => {
+              return !state.edited && historyEntry.objects.some((obj, i) => {
+                return state.supplyDemand[i].supply < obj.supply;
+              });
+            }),
             catchError(() => {
-              if (state.updated >= reset && state.supplyDemand.every(({ supply }) => supply < 3)) {
+              return of(true);
+            }),
+            switchMap(shouldUpdate => {
+              if (shouldUpdate && state.updated >= reset && state.supplyDemand.every(({ supply }) => supply < 3)) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
                   popularity: state.popularity,
@@ -328,7 +337,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   start: reset
                 });
               }
-              return of(null);
+              return EMPTY;
             })
           );
         })
@@ -336,7 +345,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
         this.state$.next({
           ...packet,
-          updated: Date.now()
+          updated: Date.now(),
+          edited: false
         });
       });
     }
@@ -352,7 +362,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         filter(res => res !== undefined)
       )
       .subscribe((data: string) => {
-        this.state$.next(JSON.parse(data));
+        this.state$.next({ ...JSON.parse(data), edited: true });
         this.message.success(this.translate.instant('ISLAND_SANCTUARY.WORKSHOP.State_imported'));
       });
   }
@@ -362,13 +372,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       popularity: state.popularity,
       predictedPopularity: state.predictedPopularity,
       supplyDemand: state.objects,
-      updated: +state.$key
+      updated: +state.$key,
+      edited: false
     });
   }
 
   setStateRowProperty(index: number, key: 'demand' | 'supply', value: number): void {
     const editedState = { ...this.state$.value };
     editedState.supplyDemand[index + 1][key] = value;
+    editedState.edited = true;
     this.state$.next(editedState);
   }
 
