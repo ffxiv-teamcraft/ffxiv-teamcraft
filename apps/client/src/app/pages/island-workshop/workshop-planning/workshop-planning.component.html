@@ -1,8 +1,6 @@
 <div fxLayout="row" class="planning-container">
   <div *ngFor="let day of planning; index as i;first as first, last as last" fxLayout="column" fxFlex="1 0 14%">
-    <div class="day-title" [class.first]="first" [class.last]="last">{{days[i]}} [{{'COMMON.Total' | translate}}
-      : {{day.score | number:'1.0-0':translate.currentLang}}]
-    </div>
+    <div class="day-title" [class.first]="first" [class.last]="last">{{days[i]}}</div>
     <div class="cell" [class.first-day]="first" *ngIf="day.rest" [style.height.px]="baseCellHeight * 24">
       <span nz-icon nzType="coffee" nzTheme="outline"></span>&nbsp;{{'ISLAND_SANCTUARY.WORKSHOP.Rest' | translate}}
     </div>
@@ -24,5 +22,5 @@
   </div>
 </div>
 <div class="footer">
-  {{'COMMON.Total' | translate}}: {{totalScore | number:'1.0-0':translate.currentLang}}
+  {{'COMMON.Total' | translate}}: <app-item-icon [itemId]="37549" width="24"></app-item-icon> {{totalScore | number:'1.0-0':translate.currentLang}}
 </div>
