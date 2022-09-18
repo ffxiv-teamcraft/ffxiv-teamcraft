@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { WorkshopPlanning } from '../optimizer/workshop-planning';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-workshop-planning',
@@ -14,6 +15,9 @@ export class WorkshopPlanningComponent {
   @Input()
   planning: WorkshopPlanning[];
 
+  @Input()
+  totalScore: number;
+
   days = [
     'Tuesday',
     'Wednesday',
@@ -23,4 +27,7 @@ export class WorkshopPlanningComponent {
     'Sunday',
     'Monday'
   ];
+
+  constructor(public translate: TranslateService) {
+  }
 }

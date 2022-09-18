@@ -1,20 +1,25 @@
 import { LazyData } from '../../../lazy-data/lazy-data';
 import { CraftworksObject } from '../craftworks-object';
 import { WorkshopPlanning } from './workshop-planning';
+import { IslandWorkshopSimulator } from './island-workshop-simulator';
 
 
 export class PlanningFormulaOptimizer {
 
   private objectsUsage: Record<number, number> = {};
 
-  constructor(private objects: CraftworksObject[], private workshops: number, private supply: LazyData['islandSupply']) {
+  private simulator = new IslandWorkshopSimulator(this.supply, this.workshops, this.landmarks, this.workshopLevel);
+
+  constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply']) {
   }
 
-  public run(): WorkshopPlanning[] {
-    return new Array(7).fill(null).map((_, i) => {
+  public run(): { planning: WorkshopPlanning[], score: number } {
+    const planning = new Array(7).fill(null).map((_, i) => {
       const day = {
         rest: false,
         unknown: false,
+        score: 0,
+        groove: 0,
         planning: []
       };
       if (i <= 1) {
@@ -58,14 +63,23 @@ export class PlanningFormulaOptimizer {
       while (totalTime + projectedTime <= 24) {
         const item = lastWasBestItem ? bestComboItem : bestItem;
         const alternative = lastWasBestItem ? alternativeComboItem : null;
-        day.planning.push({ ...item, alternative });
+        day.planning.push({ ...JSON.parse(JSON.stringify(item)), alternative });
         projectedTime = lastWasBestItem ? bestItem.craftworksEntry.craftingTime : bestComboItem.craftworksEntry.craftingTime;
         lastWasBestItem = !lastWasBestItem;
         totalTime += item.craftworksEntry.craftingTime;
         this.objectsUsage[item.id] = (this.objectsUsage[item.id] || 0) + this.workshops;
       }
+      const result = this.simulator.getScoreForDay(day);
+      day.score += result.score;
+      day.groove = result.groove;
       return day;
     });
+
+    const score = this.simulator.getScore(planning);
+    return {
+      planning,
+      score
+    }
   }
 
   private getBoostedValuePerHour(object: CraftworksObject): number {

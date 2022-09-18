@@ -281,10 +281,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public optimizerResult$ = combineLatest([this.craftworksObjects$, this.lazyData.getEntry('islandSupply')]).pipe(
+  public optimizerResult$ = combineLatest([
+    this.craftworksObjects$,
+    this.lazyData.getEntry('islandSupply'),
+    this.landmarks$,
+    this.rank$
+  ]).pipe(
     filter(([objects]) => objects.length > 0),
-    map(([objects, supply]) => {
-      return new PlanningFormulaOptimizer(objects, 3, supply).run();
+    map(([objects, supply, landmarks, rank]) => {
+      return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply).run();
     })
   );
 
