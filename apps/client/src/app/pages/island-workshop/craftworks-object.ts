@@ -17,4 +17,5 @@ export interface CraftworksObject {
   popularityKey?: string;
   predictedPopularityKey?: string;
   patterns?: { index: number, day: number, pattern: WorkshopPattern, strong: boolean }[];
+  score?: number;
 }

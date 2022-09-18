@@ -31,11 +31,16 @@ export class IslandWorkshopSimulator {
     }).score;
   }
 
+  private getSupplyRatio(supply: number): number {
+    return this.supply[supply] || this.supply[4];
+  }
+
   public getScoreForDay(day: WorkshopPlanning, baseGroove = 0): { score: number, groove: number } {
     return day.planning.reduce((acc, object, i) => {
       const isEfficient = i > 0 && day.planning[i - 1].id !== object.id && day.planning[i - 1].craftworksEntry.themes.some(t => object.craftworksEntry.themes.includes(t));
-      const score = this.workshops * object.craftworksEntry.value
-        * (this.supply[object.supply] / 100)
+      const score = this.workshops
+        * object.craftworksEntry.value
+        * (this.getSupplyRatio(object.supply) / 100)
         * (object.popularity.ratio / 100)
         * (1 + acc.groove / 100)
         * (isEfficient ? 2 : 1)

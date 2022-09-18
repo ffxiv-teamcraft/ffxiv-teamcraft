@@ -10,6 +10,7 @@
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="object.itemId" [width]="24"></app-item-icon>
         <app-i18n-name content="items" [id]="object.itemId"></app-i18n-name>
+        {{object.score}}
       </div>
       <span *ngIf="object.alternative">
       <nz-divider [nzText]="'Or' | translate"></nz-divider>
