@@ -10,7 +10,6 @@
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
         <app-item-icon [itemId]="object.itemId" [width]="24"></app-item-icon>
         <app-i18n-name content="items" [id]="object.itemId"></app-i18n-name>
-        {{object.score}}
       </div>
       <span *ngIf="object.alternative">
       <nz-divider [nzText]="'Or' | translate"></nz-divider>
@@ -23,5 +22,7 @@
   </div>
 </div>
 <div class="footer">
-  {{'COMMON.Total' | translate}}: <app-item-icon [itemId]="37549" width="24"></app-item-icon> {{totalScore | number:'1.0-0':translate.currentLang}}
+  {{'COMMON.Total' | translate}}:
+  <app-item-icon [itemId]="37549" width="24"></app-item-icon>
+  {{totalScore | number:'1.0-0':translate.currentLang}}
 </div>
