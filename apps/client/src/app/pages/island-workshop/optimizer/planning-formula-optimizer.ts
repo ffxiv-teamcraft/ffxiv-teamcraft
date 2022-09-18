@@ -41,7 +41,8 @@ export class PlanningFormulaOptimizer {
       const bestItem = this.getBestItems(i, objectsUsage).sort((a, b) => {
         return this.getBoostedValuePerHour(b) - this.getBoostedValuePerHour(a);
       })[0];
-      let [bestComboItem, alternativeComboItem] = this.getProjectedSupplyObjects(i, objectsUsage).filter(obj => {
+      const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
+      let [bestComboItem] = projectedSupplyObjects.filter(obj => {
         return obj.id !== bestItem.id
           && obj.craftworksEntry.themes.some(t => bestItem.craftworksEntry.themes.includes(t));
       }).sort((a, b) => {
@@ -49,7 +50,7 @@ export class PlanningFormulaOptimizer {
       });
       if (!bestComboItem) {
         // If we have no combo available (which is possible at lower ranks), just grab a random item with good value
-        [bestComboItem, alternativeComboItem] = this.getProjectedSupplyObjects(i, objectsUsage)
+        [bestComboItem] = projectedSupplyObjects
           .sort((a, b) => {
             if (a.craftworksEntry.craftingTime === b.craftworksEntry.craftingTime) {
               return b.popularity.id - a.popularity.id;
@@ -57,6 +58,10 @@ export class PlanningFormulaOptimizer {
             return a.craftworksEntry.craftingTime - b.craftworksEntry.craftingTime;
           });
       }
+      const alternativeComboItem = projectedSupplyObjects
+        .filter(obj => obj.craftworksEntry.craftingTime === bestComboItem.craftworksEntry.craftingTime)
+        .sort((a, b) => this.getBoostedValuePerHour(b) - this.getBoostedValuePerHour(a))[0];
+
       let totalTime = 0;
       // If we have crafting time <= 6, we want to start with combo item to trigger bonus, else start with best item to craft 3 instead of 2 (including bonus)
       let lastWasBestItem = bestComboItem.craftworksEntry.craftingTime + bestItem.craftworksEntry.craftingTime <= 12;
@@ -68,9 +73,9 @@ export class PlanningFormulaOptimizer {
         projectedTime = lastWasBestItem ? bestItem.craftworksEntry.craftingTime : bestComboItem.craftworksEntry.craftingTime;
         lastWasBestItem = !lastWasBestItem;
         totalTime += item.craftworksEntry.craftingTime;
-        objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops;
+        objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         if (alternative) {
-          objectsUsage[alternative.id] = (objectsUsage[alternative.id] || 0) + this.workshops;
+          objectsUsage[alternative.id] = (objectsUsage[alternative.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         }
       }
       const result = this.simulator.getScoreForDay(day);
@@ -80,7 +85,6 @@ export class PlanningFormulaOptimizer {
     });
 
     const score = this.simulator.getScore(planning);
-    console.log(score);
     return {
       planning,
       score
@@ -106,12 +110,14 @@ export class PlanningFormulaOptimizer {
 
   private getProjectedSupplyObjects(dayIndex: number, objectsUsage: Record<number, number>): CraftworksObject[] {
     // Always return worst case scenario
-    return this.objects.map(object => {
-      object.supply = object.patterns.map(p => {
-        return p.pattern[dayIndex][0];
-      }).sort((a, b) => a - b)[0] + Math.floor((objectsUsage[object.id] || 0) / 8);
-      return object;
-    });
+    return this.objects
+      .filter(obj => objectsUsage[obj.id] === undefined)
+      .map(object => {
+        object.supply = object.patterns.map(p => {
+          return p.pattern[dayIndex][0];
+        }).sort((a, b) => a - b)[0] + Math.floor((objectsUsage[object.id] || 0) / 8);
+        return object;
+      });
   }
 
 }
