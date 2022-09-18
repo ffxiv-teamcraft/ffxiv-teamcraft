@@ -54,15 +54,8 @@
 
 <ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
 
-<button nz-button nzType="primary" (click)="startOptimizer$.next(null)" nzBlock class="run-optimizer">
-  {{'ISLAND_SANCTUARY.WORKSHOP.Run_optimizer' | translate}}
-</button>
-
 <ng-container *ngIf="optimizerResult$ | async as optimizerResult">
-  <nz-card *ngFor="let schedule of optimizerResult" nzTitle="{{'ISLAND_SANCTUARY.WORKSHOP.Total_value' | translate}}: {{schedule.score}}" nzSize="small">
-    <div fxLayout="column" class="planning">
-    </div>
-  </nz-card>
+  <app-workshop-planning [planning]="optimizerResult"></app-workshop-planning>
 </ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">

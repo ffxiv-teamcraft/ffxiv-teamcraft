@@ -1,0 +1,38 @@
+:host ::ng-deep {
+  nz-divider {
+    margin: 0 !important;
+  }
+}
+
+.day-title {
+  font-weight: 500;
+  background: #3F3F3F;
+  padding: 8px;
+  border-bottom: 1px solid #666;
+
+  &.first {
+    border-top-left-radius: 4px;
+  }
+
+  &.last {
+    border-top-right-radius: 4px;
+  }
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #666;
+  border-right: 1px solid #666;
+  background: #292929;
+  padding: 8px;
+
+  &.first-day {
+    border-left: 1px solid #666;
+  }
+
+  &:hover {
+    background: #3F3F3F;
+  }
+}

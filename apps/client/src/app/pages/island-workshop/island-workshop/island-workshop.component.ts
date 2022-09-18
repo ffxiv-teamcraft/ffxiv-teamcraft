@@ -8,17 +8,17 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, first, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
-import { PlanningOptimizer } from '../planning-optimizer';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
+import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
 
 interface ColumnItem {
   name: string;
@@ -280,22 +280,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public optimizerResult$ = this.startOptimizer$.pipe(
-    switchMap(() => {
-      return combineLatest([
-        this.craftworksObjects$,
-        this.lazyData.getEntry('islandSupply'),
-        this.islandLevel$,
-        this.landmarks$,
-        this.rank$
-      ]).pipe(first());
-    }),
-    map(([objects, supply, islandLevel, landmarks, rank]) => {
-      return new PlanningOptimizer(objects, supply, {
-        workshops: [rank, rank, rank],
-        landmarks: landmarks,
-        islandLevel
-      }).run();
+  public optimizerResult$ = combineLatest([this.craftworksObjects$, this.lazyData.getEntry('islandSupply')]).pipe(
+    filter(([objects]) => objects.length > 0),
+    map(([objects, supply]) => {
+      return new PlanningFormulaOptimizer(objects, 3, supply).run();
     })
   );
 
@@ -332,7 +320,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             catchError(() => {
-              if (state.updated >= reset) {
+              if (state.updated >= reset && state.supplyDemand.every(({ supply }) => supply < 3)) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
                   popularity: state.popularity,
@@ -392,7 +380,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     workshopPatterns.forEach((pattern, i) => {
       const patternMatches = itemHistory.every((day, index) => {
         const patternEntry = pattern[index];
-        return day[0] === patternEntry[0]
+        return Math.min(day[0], 2) === patternEntry[0]
           && (
             patternEntry[1] === -1
             || (patternEntry[1] === -2 && day[1] !== 0)
