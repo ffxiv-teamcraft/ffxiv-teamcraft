@@ -93,9 +93,9 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true },
   { provide: EXTRACTORS, useClass: DeprecatedExtractor, deps: [LazyDataFacade], multi: true },
-  { provide: EXTRACTORS, useClass: IslandPastureExtractor, deps: [LazyDataFacade], multi: true }
+  { provide: EXTRACTORS, useClass: IslandPastureExtractor, deps: [LazyDataFacade], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [LazyDataFacade], multi: true }
 ];
 
 @NgModule({

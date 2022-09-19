@@ -365,9 +365,9 @@
                   <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
                     <nz-select [(ngModel)]="selectedFood" (ngModelChange)="dirtyConsumables = true"
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
-                               nzAllowClear nzShowSearch>
+                               nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
                       <nz-option *ngFor="let food of foods" [nzValue]="food"
-                                 nzLabel="{{food.hq?'HQ':''}} {{food.itemId | itemName | i18n}} ">
+                                 nzLabel="{{food.hq?'HQ':''}} {{food.itemId | itemName | i18n}}">
                       </nz-option>
                     </nz-select>
                     <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
@@ -396,7 +396,7 @@
                   <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
                     <nz-select [(ngModel)]="selectedMedicine" (ngModelChange)="dirtyConsumables = true"
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate"
-                               nzAllowClear nzShowSearch>
+                               nzAllowClear nzShowSearch [nzFilterOption]="filterOptions">
                       <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
                                  nzLabel=" {{medicine.hq?'HQ':''}} {{medicine.itemId | itemName | i18n}}">
                       </nz-option>

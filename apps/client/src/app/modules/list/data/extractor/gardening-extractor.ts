@@ -3,7 +3,7 @@ import { DataType } from '../data-type';
 import { GardeningData } from '../../model/gardening-data';
 import { combineLatest, Observable, of } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { LazyDataFacade } from '../../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../../core/rxjs/with-lazy-data';
 
@@ -58,7 +58,8 @@ export class GardeningExtractor extends AbstractExtractor<GardeningData> {
                 };
               })
             };
-          })
+          }),
+          catchError(() => of(null))
         );
       })
     );

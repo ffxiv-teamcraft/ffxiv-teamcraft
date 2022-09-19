@@ -76,6 +76,7 @@ import { observeInput } from '../../../../core/rxjs/observe-input';
 import { withLazyData } from 'apps/client/src/app/core/rxjs/with-lazy-data';
 import { LocalStorageBehaviorSubject } from '../../../../core/rxjs/local-storage-behavior-subject';
 import { PermissionsController } from '../../../../core/database/permissions-controller';
+import { NzOptionComponent } from 'ng-zorro-antd/select';
 
 @Component({
   selector: 'app-simulator',
@@ -306,6 +307,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private get registry() {
     return this.simulator.CraftingActionsRegistry;
+  }
+
+  filterOptions(input?: string, option?: NzOptionComponent): boolean {
+    return option.nzLabel?.toString().toLowerCase().includes(input.toLowerCase());
   }
 
   findRotation(stats: CrafterStats): void {

@@ -53,8 +53,10 @@
 </ng-container>
 
 <ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: craftworksObjects$ | async, pageSize: 8}"></ng-container>
-<nz-divider [nzText]="'ISLAND_SANCTUARY.WORKSHOP.Items_to_prepare' | translate" nzOrientation="left"></nz-divider>
-<ng-container *ngTemplateOutlet="objectsTable;context:{$implicit: objectsForTomorrow$ | async, pageSize: 5}"></ng-container>
+
+<ng-container *ngIf="optimizerResult$ | async as optimizerResult">
+  <app-workshop-planning [planning]="optimizerResult.planning" [totalScore]="optimizerResult.score" [today]="today$ | async"></app-workshop-planning>
+</ng-container>
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
   <ng-container *ngIf="tableColumns$ | async as tableColumns">
@@ -130,5 +132,4 @@
     </nz-table>
   </ng-container>
 </ng-template>
-
 

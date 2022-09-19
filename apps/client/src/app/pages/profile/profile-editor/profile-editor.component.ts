@@ -116,8 +116,7 @@ export class ProfileEditorComponent {
     this.userPicker.pickUserId(true).pipe(
       filter(userId => {
         return userId !== undefined && (user.contacts || []).indexOf(userId) === -1;
-      }),
-      first()
+      })
     ).subscribe(contactId => {
       if (user.contacts === undefined) {
         user.contacts = [];

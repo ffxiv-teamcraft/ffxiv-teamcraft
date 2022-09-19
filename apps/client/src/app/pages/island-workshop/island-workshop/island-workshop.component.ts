@@ -2,23 +2,23 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { LocalStorageBehaviorSubject } from '../../../core/rxjs/local-storage-behavior-subject';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest, map, Observable, of, Subject, timer } from 'rxjs';
+import { combineLatest, EMPTY, map, Observable, of, Subject, timer } from 'rxjs';
 import { LazyDataFacade } from '../../../lazy-data/+state/lazy-data.facade';
 import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { addDays, subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
-import { PlanningOptimizer } from '../planning-optimizer';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
+import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
 
 interface ColumnItem {
   name: string;
@@ -140,7 +140,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     popularity: -1,
     predictedPopularity: -1,
     supplyDemand: [],
-    updated: 0
+    updated: 0,
+    edited: false
   });
 
   public stateIsOutdated$ = combineLatest([
@@ -245,6 +246,10 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
+  public today$ = this.stateHistory$.pipe(
+    map(history => history.length - 1)
+  )
+
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
     this.state$,
     this.islandLevel$,
@@ -280,39 +285,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     })
   );
 
-  public objectsForTomorrow$ = combineLatest([
-    this.nextReset$,
-    this.craftworksObjects$
+  public optimizerResult$ = combineLatest([
+    this.craftworksObjects$,
+    this.lazyData.getEntry('islandSupply'),
+    this.landmarks$,
+    this.rank$
   ]).pipe(
-    map(([reset, objects]) => {
-      return objects.filter(object => {
-        return object.patterns.some(p => p.day === new Date(reset).getUTCDay())
-          && object.popularity.id <= 2;
-      }).sort((a, b) => {
-        if (a.patterns[0].strong === b.patterns[0].strong) {
-          return a.popularity.id - b.popularity.id;
-        }
-        return Number(b.patterns[0].strong) - Number(a.patterns[0].strong);
-      });
-    })
-  );
-
-  public optimizerResult$ = this.startOptimizer$.pipe(
-    switchMap(() => {
-      return combineLatest([
-        this.craftworksObjects$,
-        this.lazyData.getEntry('islandSupply'),
-        this.islandLevel$,
-        this.landmarks$,
-        this.rank$
-      ]);
-    }),
-    map(([objects, supply, islandLevel, landmarks, rank]) => {
-      return new PlanningOptimizer(objects, supply, {
-        workshops: [3, 3, 3],
-        landmarks: landmarks,
-        islandLevel
-      }).run();
+    filter(([objects]) => objects.length > 0),
+    map(([objects, supply, landmarks, rank]) => {
+      return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply).run();
     })
   );
 
@@ -348,8 +329,16 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       combineLatest([this.previousReset$, this.state$]).pipe(
         switchMap(([reset, state]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
+            map((historyEntry) => {
+              return !state.edited && historyEntry.objects.some((obj, i) => {
+                return state.supplyDemand[i].supply < obj.supply;
+              });
+            }),
             catchError(() => {
-              if (state.updated >= reset) {
+              return of(true);
+            }),
+            switchMap(shouldUpdate => {
+              if (shouldUpdate && state.updated >= reset && state.supplyDemand.every(({ supply }) => supply < 3)) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
                   popularity: state.popularity,
@@ -357,7 +346,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
                   start: reset
                 });
               }
-              return of(null);
+              return EMPTY;
             })
           );
         })
@@ -365,7 +354,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
         this.state$.next({
           ...packet,
-          updated: Date.now()
+          updated: Date.now(),
+          edited: false
         });
       });
     }
@@ -381,7 +371,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         filter(res => res !== undefined)
       )
       .subscribe((data: string) => {
-        this.state$.next(JSON.parse(data));
+        this.state$.next({ ...JSON.parse(data), edited: true });
         this.message.success(this.translate.instant('ISLAND_SANCTUARY.WORKSHOP.State_imported'));
       });
   }
@@ -391,13 +381,15 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       popularity: state.popularity,
       predictedPopularity: state.predictedPopularity,
       supplyDemand: state.objects,
-      updated: +state.$key
+      updated: +state.$key,
+      edited: false
     });
   }
 
   setStateRowProperty(index: number, key: 'demand' | 'supply', value: number): void {
     const editedState = { ...this.state$.value };
     editedState.supplyDemand[index + 1][key] = value;
+    editedState.edited = true;
     this.state$.next(editedState);
   }
 
@@ -409,7 +401,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     workshopPatterns.forEach((pattern, i) => {
       const patternMatches = itemHistory.every((day, index) => {
         const patternEntry = pattern[index];
-        return day[0] === patternEntry[0]
+        return Math.min(day[0], 2) === patternEntry[0]
           && (
             patternEntry[1] === -1
             || (patternEntry[1] === -2 && day[1] !== 0)
