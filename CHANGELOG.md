@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.0"></a>
+# [9.8.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.12...v9.8.0) (2022-09-19)
+
+
+### Bug Fixes
+
+* **alarms:** fix island animals alarms in compact and picker display ([bf2646c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf2646c))
+* **gathering-location:** fix missing alarm timer in results ([0b0a191](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b0a191))
+* **layout:** fix order by ingame log not working as expected ([3db88df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3db88df))
+* **lists:** support for more housing items ([28e1a97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/28e1a97))
+* **simulator:** fixed consumables input search box not working properly ([c159cc1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c159cc1))
+
+
+### Features
+
+* **island-animals:** better tooltips on alarm buttons ([506f507](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/506f507))
+* **island-sanctuary:** added kudos and donation link to the poking paradise team ([999fd2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/999fd2f))
+* **island-workshop:** full week planning solver ([2a9f45f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a9f45f))
+
+
+
 <a name="9.7.12"></a>
 ## [9.7.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.11...v9.7.12) (2022-09-14)
 
