@@ -19,6 +19,10 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
     return true;
   }
 
+  getRequirements(): DataType[] {
+    return [DataType.TRADE_SOURCES];
+  }
+
   protected doExtract(itemId: number, row: ListRow): Observable<Ingredient[]> {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
     return combineLatest([
@@ -54,7 +58,7 @@ export class RequirementsExtractor extends AbstractExtractor<Ingredient[]> {
           }
         }
         // Modified airships
-        if (tradeSources.length === 1 && tradeSources[0].shopName?.en === 'Submersible Frames') {
+        if (tradeSources.length === 1 && ['Submersible Frames', 'Items of Interest'].some(name => tradeSources[0].shopName?.en === name)) {
           const trade = tradeSources[0].trades[0];
           return [{
             id: trade.currencies[0].id,

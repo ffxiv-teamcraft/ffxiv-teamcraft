@@ -20,7 +20,6 @@ import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
 import { safeCombineLatest } from '../../core/rxjs/safe-combine-latest';
 import { ListController } from './list-controller';
 import { Team } from '../../model/team/team';
-import { LazyIslandBuilding } from '../../lazy-data/model/lazy-island-building';
 
 export interface ListAdditionParams {
   itemId: number | string;
