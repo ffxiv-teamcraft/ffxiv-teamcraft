@@ -1,9 +1,10 @@
-<nz-button-group *ngIf="alarm | alarmDisplay | async as display">
+<nz-button-group *ngIf="alarm | alarmDisplay | async as display"
+                 [timerTooltip]="useTimerTooltip ? display.remainingTime:null">
   <button (click)="toggleAlarm.emit(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
           [nzType]="display.spawned?'primary':'default'"
           nz-button
           nz-tooltip
-          [nzTooltipTitle]="tooltipText || tooltip">
+          [nzTooltipTitle]="!useTimerTooltip ? tooltipText || tooltip:null">
     <ng-template #tooltip>
       <span *ngIf="display.alarm.itemId">
           <span *ngIf="display.alarm.mapId | closestAetheryte:display.alarm.coords | async as aetheryte">

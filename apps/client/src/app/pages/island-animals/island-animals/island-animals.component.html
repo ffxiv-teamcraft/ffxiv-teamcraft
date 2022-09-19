@@ -35,6 +35,7 @@
       <app-alarm-button *ngIf="animal.alarm" [alarm]="animal.alarm" [showPosition]="false"
                         (toggleAlarm)="addAlarm($event)"
                         (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"
+                        [useTimerTooltip]="true"
                         [alarmGroups]="alarmGroups$ | async"></app-alarm-button>
     </td>
   </tr>

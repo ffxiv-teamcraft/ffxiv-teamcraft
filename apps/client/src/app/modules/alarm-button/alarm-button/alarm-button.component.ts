@@ -33,6 +33,9 @@ export class AlarmButtonComponent {
   @Input()
   tooltipText?: string;
 
+  @Input()
+  useTimerTooltip: boolean;
+
   constructor(private dialog: NzModalService, private i18n: I18nToolsService) {
   }
 
