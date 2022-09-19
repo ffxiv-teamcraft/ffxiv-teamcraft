@@ -201,6 +201,22 @@ export class AlarmsPageComponent implements OnInit {
     );
   };
 
+  private alarmToEntry(alarm: Alarm, groupName?: string): AdditionPickerEntry {
+    const entry: AdditionPickerEntry = {
+      $key: alarm.$key,
+      name: of(''),
+      description: groupName || this.translate.instant('ALARMS.No_folder')
+    };
+    if (alarm.itemId) {
+      entry.name = this.i18n.getNameObservable('items', alarm.itemId);
+    } else if (alarm.bnpcName) {
+      entry.name = this.i18n.getNameObservable('mobs', alarm.bnpcName);
+    } else {
+      entry.name = of(alarm.name);
+    }
+    return entry;
+  }
+
   addAlarmsToGroup(targetGroup: AlarmGroup): void {
     this.display$.pipe(
       first(),
@@ -211,20 +227,12 @@ export class AlarmsPageComponent implements OnInit {
           nzComponentParams: {
             elements: [
               ...display.noGroup.map(({ alarm }) => {
-                return {
-                  $key: alarm.$key,
-                  name: alarm.itemId ? this.i18n.getNameObservable('items', alarm.itemId) : of(alarm.name),
-                  description: this.translate.instant('ALARMS.No_folder')
-                };
+                return this.alarmToEntry(alarm);
               }),
               ...Object.values<AdditionPickerEntry[]>(
                 groupBy<AdditionPickerEntry>([].concat.apply([], display.groupedAlarms.map(({ group, alarms }) => {
                   return alarms.map(({ alarm }) => {
-                    return {
-                      $key: alarm.$key,
-                      name: alarm.itemId ? this.i18n.getNameObservable('items', alarm.itemId) : of(alarm.name),
-                      description: group.name
-                    };
+                    return this.alarmToEntry(alarm, group.name);
                   });
                 })), '$key')
               ).map(entries => {

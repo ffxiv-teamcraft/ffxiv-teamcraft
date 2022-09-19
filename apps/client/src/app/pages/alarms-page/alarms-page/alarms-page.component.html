@@ -341,23 +341,25 @@
                        [(ngModel)]="row.alarm.enabled"
                        (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                        nzSize="small"></nz-switch>
-            <app-item-icon *ngIf="row.alarm.itemId; else customAlarmIcon"
+            <app-item-icon *ngIf="row.alarm.itemId; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
                            [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
             <ng-template #customAlarmIcon>
-              <nz-avatar [nzText]="row.alarm.name?row.alarm.name[0]:'?'"></nz-avatar>
+              <nz-avatar *ngIf="!row.alarm.icon" [nzText]="row.alarm.name?row.alarm.name[0]:'?'"></nz-avatar>
+              <nz-avatar *ngIf="row.alarm.icon" [nzSrc]="row.alarm.icon | xivapiIcon"></nz-avatar>
             </ng-template>
             <div class="text-col">
               <span *ngIf="row.alarm.itemId; else customName">{{row.alarm.itemId | itemName | i18n}}</span>
               <ng-template #customName>
-                <span>{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto"  *ngIf="row.alarm.type !== -10">{{row.alarm.name}}</span>
+                <span class="alarm-item-name" fxFlex="1 1 auto" *ngIf="row.alarm.type === -10">{{row.alarm.bnpcName | lazyRow:'mobs' | i18n}}</span>
               </ng-template>
             </div>
           </div>
         </div>
         <div nz-col nzMd="1" fxLayout="row wrap">
           <app-gathering-item-uses [itemId]="row.alarm.itemId" [compact]="true"></app-gathering-item-uses>
-          <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type-compact"
-               src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <img *ngIf="row.alarm.type > 0" alt="" class="node-type-compact" src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <img *ngIf="row.alarm.type === -10" alt="" class="node-type-compact" src="https://xivapi.com/i/063000/063949.png">
           <div fxLayout="row" fxLayoutGap="5px" *ngIf="row.alarm.ephemeral">
             <div>
               <i [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
