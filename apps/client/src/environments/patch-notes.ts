@@ -1,11 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **island-animals:** fixed alarm button adding more alarms instead of removing existing one.
-* **island-animals:** fixed alarm button switching timers randomly.
-* **voyage-tracker:** fixed new servers shown as undefined.
+* **alarms:** fix island animals alarms in compact and picker display.
+* **gathering-location:** fix missing alarm timer in results.
+* **layout:** fix order by ingame log not working as expected.
+* **lists:** support for more housing items.
+* **simulator:** fixed consumables input search box not working properly.
 
 
 ### Features
 
-* **island-animals:** add animal size to the display table.
-* **island-workshop:** best items to craft for tomorrow.`;
+* **island-animals:** better tooltips on alarm buttons.
+* **island-sanctuary:** added kudos and donation link to the poking paradise team.
+* **island-workshop:** full week planning solver.`;
