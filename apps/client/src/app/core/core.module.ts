@@ -22,7 +22,7 @@ import { LinkToolsService } from './tools/link-tools.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
-import { PatreonService } from './patreon/patreon.service';
+import { SupportService } from './patreon/support.service';
 import { CustomLink } from './database/custom-links/custom-link';
 import { ListTemplate } from './database/custom-links/list-template';
 import { WeatherService } from './eorzea/weather.service';
@@ -111,7 +111,7 @@ import { NzNotificationModule } from 'ng-zorro-antd/notification';
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService,
-    PatreonService,
+    SupportService,
     WeatherService,
     AdminGuard,
     ModeratorGuard,

@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class PatreonService {
+export class SupportService {
 
   constructor(private http: HttpClient, private authFacade: AuthFacade,
               private dialog: NzModalService, private translate: TranslateService,

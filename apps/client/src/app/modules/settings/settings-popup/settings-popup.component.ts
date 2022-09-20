@@ -22,7 +22,7 @@ import { from, Observable, Subject } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 import { saveAs } from 'file-saver';
-import { PatreonService } from '../../../core/patreon/patreon.service';
+import { SupportService } from '../../../core/patreon/support.service';
 import { InventoryService } from '../../inventory/inventory.service';
 import { NotificationSettings } from '../notification-settings';
 import { SoundNotificationType } from '../../../core/sound-notification/sound-notification-type';
@@ -163,7 +163,7 @@ export class SettingsPopupComponent {
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryService,
               private lazyData: LazyDataFacade, private mappy: MappyReporterService,
-              private navigationSidebarService: NavigationSidebarService, private patreonService: PatreonService,
+              private navigationSidebarService: NavigationSidebarService, private patreonService: SupportService,
               private soundNotificationService: SoundNotificationService) {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
