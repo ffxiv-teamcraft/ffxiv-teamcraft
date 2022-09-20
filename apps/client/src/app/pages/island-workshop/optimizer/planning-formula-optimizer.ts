@@ -13,7 +13,8 @@ export class PlanningFormulaOptimizer {
 
   public run(): { planning: WorkshopPlanning[], score: number } {
     const objectsUsage: Record<number, number> = {};
-    const planning = new Array(7).fill(null).map((_, i) => {
+    // let restDayApplied = false;
+    const planning = new Array(7).fill(null).map((_, i, array) => {
       const day = {
         rest: false,
         unknown: false,
@@ -31,7 +32,8 @@ export class PlanningFormulaOptimizer {
       const projectedSupplyObjects = this.getProjectedSupplyObjects(i, objectsUsage);
 
       const unknownDay = projectedSupplyObjects.some(object => {
-        return object.isPeaking && object.patterns.length > 1;
+        // If some items have possible pattern peak for today but also other days, it's an unknown day
+        return object.patterns.length > 1 && object.patterns.some(p => (1 + Math.floor(p.index / 2)) === i);
       });
 
       // If there's some unknown peaks for this day, consider it as not ready to optimize
@@ -61,8 +63,15 @@ export class PlanningFormulaOptimizer {
         [best, combo, alternative] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
       }
       const result = this.simulator.getScoreForDay(day);
-      day.score += result.score;
+      day.score = result.score;
       day.groove = result.groove;
+      // if (result.score < 3500 && !restDayApplied) {
+      //   restDayApplied = true;
+      //   day.rest = true;
+      //   day.score = 0;
+      //   day.groove = 0;
+      //   day.planning = [];
+      // }
       return day;
     });
 
@@ -131,9 +140,9 @@ export class PlanningFormulaOptimizer {
       .map(object => {
         object.supply = object.patterns.map(p => {
           return p.pattern[dayIndex][0];
-        }).sort((a, b) => a - b)[0] + Math.floor((objectsUsage[object.id] || 0) / 8);
-        object.hasPeaked = object.patterns.every(p => p.pattern.every(day => day[0] >= object.supply));
-        object.isPeaking = object.patterns[0] && this.findLastIndex(object.patterns[0].pattern, ([supply]) => supply === object.supply) === dayIndex;
+        }).sort((a, b) => a - b)[0];
+        object.hasPeaked = dayIndex > 0 && object.patterns.every(p => p.pattern.slice(1).every(day => day[0] >= object.supply));
+        object.isPeaking = object.patterns.length === 1 && this.findLastIndex(object.patterns[0].pattern, ([supply]) => supply === object.supply) === dayIndex;
         return object;
       });
   }
