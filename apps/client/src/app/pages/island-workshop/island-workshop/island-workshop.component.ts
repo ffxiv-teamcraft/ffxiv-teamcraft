@@ -8,10 +8,10 @@ import { withLazyData } from '../../../core/rxjs/with-lazy-data';
 import { NzTableFilterFn, NzTableFilterList, NzTableSortFn, NzTableSortOrder } from 'ng-zorro-antd/table';
 import { TranslateService } from '@ngx-translate/core';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { catchError, distinctUntilChanged, filter, retry, switchMap, tap } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, retry, switchMap } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { addDays, subDays } from 'date-fns';
+import { subDays } from 'date-fns';
 import { CraftworksObject } from '../craftworks-object';
 import { IslandWorkshopStatusService } from '../../../core/database/island-workshop-status.service';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -90,36 +90,19 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public previousWeeklyReset$ = timer(0, 1000).pipe(
     map(() => {
-      // Only supports EU servers for now.
-      let nextWeeklyReset = new Date();
-      nextWeeklyReset.setUTCSeconds(0);
-      nextWeeklyReset.setUTCMinutes(0);
-      nextWeeklyReset.setUTCMilliseconds(0);
-      if (nextWeeklyReset.getUTCDay() === 2 && nextWeeklyReset.getUTCHours() < 8) {
-        nextWeeklyReset = addDays(nextWeeklyReset, 7);
+      let previousWeeklyReset = new Date();
+      previousWeeklyReset.setUTCSeconds(0);
+      previousWeeklyReset.setUTCMinutes(0);
+      previousWeeklyReset.setUTCMilliseconds(0);
+      if (previousWeeklyReset.getUTCDay() === 2 && previousWeeklyReset.getUTCHours() < 8) {
+        previousWeeklyReset = subDays(previousWeeklyReset, 7);
       } else {
-        while (nextWeeklyReset.getUTCDay() !== 2) {
-          nextWeeklyReset = addDays(nextWeeklyReset, 1);
+        while (previousWeeklyReset.getUTCDay() !== 2) {
+          previousWeeklyReset = subDays(previousWeeklyReset, 1);
         }
       }
-      nextWeeklyReset.setUTCHours(8);
-      return subDays(nextWeeklyReset, 7).getTime();
-    }),
-    distinctUntilChanged()
-  );
-
-  public nextReset$ = this.previousReset$.pipe(
-    map(reset => {
-      return addDays(new Date(reset), 1).getTime();
-    })
-  );
-
-  public remainingHours$ = combineLatest([
-    this.nextReset$,
-    timer(0, 60000)
-  ]).pipe(
-    map(([reset]) => {
-      return Math.floor((reset - Date.now()) / 3600000);
+      previousWeeklyReset.setUTCHours(8);
+      return previousWeeklyReset.getTime();
     }),
     distinctUntilChanged()
   );
@@ -248,7 +231,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public today$ = this.stateHistory$.pipe(
     map(history => history.length - 1)
-  )
+  );
 
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
     this.state$,
