@@ -50,7 +50,7 @@ import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
-import { PatreonService } from './core/patreon/patreon.service';
+import { SupportService } from './core/patreon/support.service';
 import { UpdaterStatus } from './model/other/updater-status';
 import { RemoveAdsPopupComponent } from './modules/ads/remove-ads-popup/remove-ads-popup.component';
 import { FreeCompanyWorkshopFacade } from './modules/free-company-workshops/+state/free-company-workshop.facade';
@@ -198,7 +198,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryService, @Inject(PLATFORM_ID) private platform: any,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
+              private playerMetricsService: PlayerMetricsService, private patreonService: SupportService,
               private freeCompanyWorkshopFacade: FreeCompanyWorkshopFacade, private cd: ChangeDetectorRef,
               private data: DataService, private allaganReportsService: AllaganReportsService) {
 

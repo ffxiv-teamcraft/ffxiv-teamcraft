@@ -20,11 +20,25 @@
     <img src="./assets/become_a_patron_button@2x.png" alt="Become a patron">
   </a>
 
+  <nz-divider [nzText]="'Or' | translate"></nz-divider>
+
+  <a href="https://tipeee.com/ffxiv-teamcraft" class="tipeee-widget" target="_blank">
+    <img src="./assets/tipeee_logo_red.png" alt="Send us a tip">
+  </a>
+
   <nz-divider [nzText]="'PATREON.Already_supporter' | translate"></nz-divider>
 
   <p>{{'PATREON.Disable_ads_explanation' | translate}}</p>
 
-  <button (click)="patreonOauth()" nz-button  nzType="primary">
-    {{'SETTINGS.Connect_with_patreon' | translate}}
-  </button>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <button (click)="patreonOauth()" nz-button  nzType="primary">
+      {{'SETTINGS.Connect_with_patreon' | translate}}
+    </button>
+
+    <nz-divider nzType="vertical"></nz-divider>
+
+    <button (click)="tipeeeOauth()" nz-button  nzType="primary">
+      {{'SETTINGS.Connect_with_tipeee' | translate}}
+    </button>
+  </div>
 </div>

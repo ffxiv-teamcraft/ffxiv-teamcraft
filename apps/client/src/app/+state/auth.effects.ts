@@ -32,7 +32,7 @@ import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';
 import { User } from '@firebase/auth-types';
 import { AuthFacade } from './auth.facade';
-import { PatreonService } from '../core/patreon/patreon.service';
+import { SupportService } from '../core/patreon/support.service';
 import { diff } from 'deep-diff';
 import { LogTrackingService } from '../core/database/log-tracking.service';
 import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
@@ -279,7 +279,7 @@ export class AuthEffects {
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private patreonService: PatreonService, private logTrackingService: LogTrackingService,
+              private patreonService: SupportService, private logTrackingService: LogTrackingService,
               private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
   }
 }
