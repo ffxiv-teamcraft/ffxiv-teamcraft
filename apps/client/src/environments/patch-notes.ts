@@ -1,3 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **island-workshop:** fixed planning trying to compute result on first day.`;
+* **list:** better npc grouping logic.
+
+
+### Features
+
+* **island-workshop:** you can now set your second rest day (first one stays hardcoded to D1).`;

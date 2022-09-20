@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { WorkshopPlanning } from '../optimizer/workshop-planning';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-workshop-planning',
@@ -31,6 +32,6 @@ export class WorkshopPlanningComponent {
     'Monday'
   ];
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, public settings: SettingsService) {
   }
 }

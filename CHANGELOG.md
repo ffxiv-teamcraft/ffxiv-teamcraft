@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.3"></a>
+## [9.8.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.2...v9.8.3) (2022-09-20)
+
+
+### Bug Fixes
+
+* **list:** better npc grouping logic ([a4bbfee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4bbfee))
+
+
+### Features
+
+* **island-workshop:** you can now set your second rest day (first one stays hardcoded to D1) ([761ffbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/761ffbb))
+
+
+
 <a name="9.8.2"></a>
 ## [9.8.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.1...v9.8.2) (2022-09-20)
 
