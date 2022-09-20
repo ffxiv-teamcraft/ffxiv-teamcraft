@@ -272,11 +272,12 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.craftworksObjects$,
     this.lazyData.getEntry('islandSupply'),
     this.landmarks$,
-    this.rank$
+    this.rank$,
+    this.settings.watchSetting<number>('island-workshop:rest-day', this.settings.islandWorkshopRestDay)
   ]).pipe(
     filter(([objects]) => objects.length > 0),
-    map(([objects, supply, landmarks, rank]) => {
-      return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply).run();
+    map(([objects, supply, landmarks, rank, secondRestDay]) => {
+      return new PlanningFormulaOptimizer(objects, 3, landmarks, rank, supply, secondRestDay).run();
     })
   );
 

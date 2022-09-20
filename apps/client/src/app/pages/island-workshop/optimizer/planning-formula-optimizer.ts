@@ -8,13 +8,14 @@ export class PlanningFormulaOptimizer {
 
   private simulator = new IslandWorkshopSimulator(this.supply, this.workshops, this.landmarks, this.workshopLevel);
 
-  constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply']) {
+  constructor(private objects: CraftworksObject[], private workshops: number, private landmarks: number, private workshopLevel: number, private supply: LazyData['islandSupply'],
+              private secondRestDay: number) {
   }
 
   public run(): { planning: WorkshopPlanning[], score: number } {
     const objectsUsage: Record<number, number> = {};
     // let restDayApplied = false;
-    const planning = new Array(7).fill(null).map((_, i, array) => {
+    const planning = new Array(7).fill(null).map((_, i) => {
       const day = {
         rest: false,
         unknown: false,
@@ -22,7 +23,7 @@ export class PlanningFormulaOptimizer {
         groove: 0,
         planning: []
       };
-      if (i <= 1) {
+      if (i === 0 || i === this.secondRestDay) {
         // First of all, D1 and D2 are rest days to make things easier
         day.rest = true;
         return day;
