@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.2"></a>
+## [9.8.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.1...v9.8.2) (2022-09-20)
+
+
+### Bug Fixes
+
+* **island-workshop:** fixed planning trying to compute result on first day ([7bd2684](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bd2684))
+
+
+
 <a name="9.8.1"></a>
 ## [9.8.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.0...v9.8.1) (2022-09-20)
 
