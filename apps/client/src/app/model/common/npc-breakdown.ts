@@ -5,9 +5,11 @@ import { TradeSource } from '../../modules/list/model/trade-source';
 import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
 import { beastTribeNpcs } from '../../core/data/sources/beast-tribe-npcs';
 import { LazyDataFacade } from '../../lazy-data/+state/lazy-data.facade';
-import { combineLatest, from, Observable, of, switchMap } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { housingMaterialSuppliers } from '../../core/data/sources/housing-material-suppliers';
 import { map, mergeScan } from 'rxjs/operators';
+import { Vendor } from '../../modules/list/model/vendor';
+import { TradeNpc } from '../../modules/list/model/trade-npc';
 
 export class NpcBreakdown {
   private readonly canSkip: Record<number, number> = {};
@@ -45,20 +47,15 @@ export class NpcBreakdown {
         if (entry.npcs.length === 0) {
           return this.addRow(-1, entry.row, breakdown);
         }
-        return combineLatest(entry.npcs.map(npc => {
-          return this.getRowScore(npc, rowsWithNpcs).pipe(
-            map(score => {
-              return {
-                npc,
-                score
-              };
-            })
-          );
-        })).pipe(
-          switchMap(scoredNpcs => {
-            return this.addRow(scoredNpcs.sort((a, b) => b.score - a.score)[0].npc, entry.row, breakdown);
+        const bestNpc = entry.npcs
+          .map(npc => {
+            return {
+              npc,
+              score: this.getRowScore(npc, rowsWithNpcs)
+            };
           })
-        );
+          .sort((a, b) => b.score - a.score)[0];
+        return this.addRow(this.getNpcId(bestNpc.npc), entry.row, breakdown);
       }, [] as NpcBreakdownRow[], 1),
       map(breakdown => {
         return breakdown.sort((a, b) => {
@@ -85,29 +82,27 @@ export class NpcBreakdown {
       })[0];
   }
 
-  private getRowScore(npcId: number, rowsWithNpcs: { row: ListRow, npcs: number[] }[]): Observable<number> {
+  private getRowScore(npc: TradeNpc | Vendor, rowsWithNpcs: { row: ListRow, npcs: ReturnType<NpcBreakdown['getNpcs']> }[]): number {
+    const npcId = this.getNpcId(npc);
     // Hardcoded fix for Anna, has a wrong map for some reason.
     if (npcId === 1033785) {
-      return of(0);
+      return 0;
     }
     // If it's sold by material supplier and setting is enabled, favor this over anything else.
     if (this.prioritizeHousingSupplier && housingMaterialSuppliers.includes(+npcId)) {
-      return of(1000);
+      return 1000;
     }
-    const commonNpcBonus = rowsWithNpcs.filter(row => row.npcs.some(npc => npc === npcId)).length;
+    const commonNpcBonus = rowsWithNpcs.filter(row => row.npcs.some(n => this.getNpcId(n) === npcId)).length;
     if (beastTribeNpcs.includes(npcId)) {
-      return of(2 * commonNpcBonus);
+      return 2 * commonNpcBonus;
     }
-    return this.lazyData.getRow('npcs', npcId).pipe(
-      map(res => ({ id: npcId, ...res }))
-    ).pipe(
-      map((currentNpc) => {
-        if (currentNpc?.position) {
-          return 3 * commonNpcBonus;
-        }
-        return 0;
-      })
-    );
+    if (npc.coords) {
+      return 3 * commonNpcBonus;
+    }
+  }
+
+  private getNpcId(npc: TradeNpc | Vendor): number {
+    return (npc as TradeNpc).id || (npc as Vendor).npcId;
   }
 
   private addRow(npcId: number, row: ListRow, rows: NpcBreakdownRow[]): Observable<NpcBreakdownRow[]> {
@@ -125,10 +120,10 @@ export class NpcBreakdown {
     );
   }
 
-  private getNpcs(row: ListRow): number[] {
+  private getNpcs(row: ListRow): Array<TradeNpc | Vendor> {
     const vendors = getItemSource(row, DataType.VENDORS);
     if (vendors.length > 0) {
-      return vendors.filter(v => !v.festival).map(v => v.npcId);
+      return vendors.filter(v => !v.festival);
     }
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
     if (tradeSources.length > 0) {
@@ -143,8 +138,7 @@ export class NpcBreakdown {
         .sort((a, b) => b.tradeSourceScore - a.tradeSourceScore)
         .map(ts => ts.tradeSource.npcs)
         .flat()
-        .filter(npc => !!npc && !npc.festival)
-        .map(npc => npc.id);
+        .filter(npc => !!npc && !npc.festival);
     }
   }
 }
