@@ -333,7 +333,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             })
           );
         })
-      ).subscribe();
+      ).subscribe(() => console.log('UPLOADED STATE'));
       this.ipc.islandWorkshopSupplyDemandPackets$.subscribe(packet => {
         this.state$.next({
           ...packet,
@@ -396,5 +396,9 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
       }
     });
     return matches;
+  }
+
+  trackByRow(index: number, row: { id: number, supply: number, demand: number }): string {
+    return `${row.id}:${row.supply}:${row.demand}`;
   }
 }
