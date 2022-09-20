@@ -77,7 +77,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let row of craftworksTable.data; index as i">
+      <tr *ngFor="let row of craftworksTable.data; index as i; trackBy: trackByRow">
         <td>
           <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
             <app-item-icon [itemId]="row.itemId" [width]="24"></app-item-icon>

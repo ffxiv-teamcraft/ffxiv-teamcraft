@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.1"></a>
+## [9.8.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.0...v9.8.1) (2022-09-20)
+
+
+### Bug Fixes
+
+* **island-workshop:** fixed table edit mode on page > 3 ([80027c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80027c7))
+* **island-workshop:** fixed workshop not loading on tuesday morning ([feecb7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/feecb7d))
+
+
+
 <a name="9.8.0"></a>
 # [9.8.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.7.12...v9.8.0) (2022-09-19)
 
