@@ -45,11 +45,16 @@ export class GubalExtractor extends AbstractExtractor {
     voyageId
     type
   }
+  bnpc {
+    bnpcBase
+    bnpcName
+  }
 }
 `).subscribe(res => {
       this.persistToJsonAsset('reduction', this.gubalToObject(res.data.reductionresults_stats));
       this.persistToJsonAsset('reverse-reduction', this.gubalToReverseObject(res.data.reductionresults_stats));
       this.persistToJsonAsset('voyage-sources', this.gubalVoyageAggregatorToObject(res.data.exploration_per_item));
+      this.persistToJsonAsset('gubal-bnpcs-index', res.data.bnpc.reduce((acc, row) => ({ ...acc, [row.bnpcBase]: row.bnpcName }), {}));
       this.done();
     });
   }
