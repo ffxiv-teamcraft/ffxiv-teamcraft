@@ -2978,6 +2978,9 @@
       "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
       "Set_rest_day": "Set as second rest day",
       "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
@@ -3007,7 +3010,9 @@
       "Coords": "Position",
       "Spawn_time": "Spawn time",
       "Weather": "Weather",
-      "Alarm": "Alarm"
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
     }
   }
 }
