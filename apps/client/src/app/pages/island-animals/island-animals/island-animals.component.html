@@ -7,6 +7,8 @@
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Name' | translate}}</th>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Size' | translate}}</th>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Coords' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Main_drop' | translate}}</th>
+    <th>{{'ISLAND_SANCTUARY.ANIMALS.Rare_drop' | translate}}</th>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Spawn_time' | translate}}</th>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Weather' | translate}}</th>
     <th>{{'ISLAND_SANCTUARY.ANIMALS.Alarm' | translate}}</th>
@@ -23,6 +25,14 @@
     </td>
     <td>
       <app-map-position [mapId]="772" [zoneId]="2566" [marker]="animal" flex="row"></app-map-position>
+    </td>
+    <td>
+      <app-item-icon [width]="24" [itemId]="animal.rewards[0]"></app-item-icon>
+      <app-i18n-name content="items" [id]="animal.rewards[0]"></app-i18n-name>
+    </td>
+    <td>
+      <app-item-icon [width]="24" [itemId]="animal.rewards[1]"></app-item-icon>
+      <app-i18n-name content="items" [id]="animal.rewards[1]"></app-i18n-name>
     </td>
     <td>
       <span *ngIf="animal.spawn !== undefined">{{animal.spawn}}:00 - {{(animal.spawn + animal.duration) % 24}}:00</span>

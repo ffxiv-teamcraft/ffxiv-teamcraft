@@ -3010,7 +3010,9 @@
       "Coords": "Position",
       "Spawn_time": "Spawn time",
       "Weather": "Weather",
-      "Alarm": "Alarm"
+      "Alarm": "Alarm",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
     }
   }
 }
