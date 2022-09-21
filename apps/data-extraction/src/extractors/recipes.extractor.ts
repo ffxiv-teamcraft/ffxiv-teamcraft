@@ -206,7 +206,7 @@ export class RecipesExtractor extends AbstractExtractor {
               amount: +mjiCraftworksObject[`Amount${index}`]
             };
           })
-          .filter(i => !!i.id);
+          .filter(i => !!i.id && i.amount > 0);
         const lazyRecipeRow = {
           id: `mji-craftworks-${mjiCraftworksObject.ID}`,
           job: -10,
