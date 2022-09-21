@@ -42,7 +42,8 @@ export class IslandWorkshopSimulator {
       const score = this.workshops
         * Math.floor(itemScore * (object.popularity.ratio / 100) * (this.getSupplyRatio(object.supply) / 100))
         * (isEfficient ? 2 : 1);
-      if (isEfficient) {
+      const hasGroove = day.planning[i + 1] && day.planning[i + 1].id !== object.id && day.planning[i + 1].craftworksEntry.themes.some(t => object.craftworksEntry.themes.includes(t));
+      if (hasGroove) {
         acc.groove = Math.min(this.maxGroove, acc.groove + 3);
       }
       acc.score += score;
