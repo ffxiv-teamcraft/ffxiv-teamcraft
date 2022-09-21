@@ -219,13 +219,17 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     switchMap(reset => {
       const historyEntriesToFetch = [reset.toString()];
       let nextDay = reset + 86400000;
-      while (nextDay < Date.now()) {
+      while (nextDay < Date.now() + 86400000) {
         historyEntriesToFetch.push(nextDay.toString());
         nextDay += 86400000;
       }
       return combineLatest(historyEntriesToFetch.map(date => {
-        return this.mjiWorkshopStatusService.get(date);
-      }));
+        return this.mjiWorkshopStatusService.get(date).pipe(
+          catchError(() => of(null))
+        );
+      })).pipe(
+        map(history => history.filter(h => h !== null))
+      );
     })
   );
 
@@ -302,7 +306,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
-              private platformService: PlatformService, public settings: SettingsService) {
+              public platformService: PlatformService, public settings: SettingsService) {
     super();
 
     if (this.platformService.isDesktop()) {

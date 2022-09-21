@@ -60,7 +60,7 @@
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
   <ng-container *ngIf="tableColumns$ | async as tableColumns">
-    <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage>
+    <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage [nzFooter]="platformService.isDesktop() ? ('ISLAND_SANCTUARY.WORKSHOP.Import_explain' | translate) : null">
       <thead>
       <tr>
         <th *ngFor="let column of tableColumns"
