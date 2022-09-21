@@ -2977,6 +2977,7 @@
       "Rest": "Rest day",
       "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
       "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
       "POPULARITY": {
         "Very_high": "Riesig",
         "High": "Groß",
