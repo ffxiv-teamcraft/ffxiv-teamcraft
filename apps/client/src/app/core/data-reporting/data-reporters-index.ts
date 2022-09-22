@@ -19,5 +19,5 @@ export const DATA_REPORTERS: Provider[] = [
   { provide: DataReporters, useClass: FishingReporter, multi: true, deps: [EorzeaFacade, LazyDataFacade, EorzeanTimeService, IpcService, SettingsService] },
   { provide: DataReporters, useClass: SubmarineExplorationResultReporter, multi: true, deps: [LazyDataFacade] },
   { provide: DataReporters, useClass: AirshipExplorationResultReporter, multi: true, deps: [LazyDataFacade] },
-  { provide: DataReporters, useClass: BnpcReporter, multi: true },
+  { provide: DataReporters, useClass: BnpcReporter, multi: true, deps: [LazyDataFacade] }
 ];
