@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.4"></a>
+## [9.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.3...v9.8.4) (2022-09-22)
+
+
+### Bug Fixes
+
+* **island-recipes:** fixed some recipes having ingredients x0 listed in database ([c9135a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c9135a3))
+* **island-workshop:** better groove formula in cowries prediction ([9a7b3a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a7b3a0))
+* **island-workshop:** fixed state import not always importing properly ([d33510e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d33510e))
+
+
+### Features
+
+* **island-animals:** added drops to the animals table ([55b7f4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/55b7f4c))
+* **island-workshop:** new button to generate a list for the current planning ([29db415](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/29db415))
+* **island-workshop:** new checkbox to exclude items that require pasture materials ([2a0fb2d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a0fb2d))
+
+
+
 <a name="9.8.3"></a>
 ## [9.8.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.2...v9.8.3) (2022-09-20)
 

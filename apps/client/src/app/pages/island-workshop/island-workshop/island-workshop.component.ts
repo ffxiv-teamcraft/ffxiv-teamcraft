@@ -19,6 +19,8 @@ import { WorkshopStatusData } from '../workshop-status-data';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
 import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
+import { getItemSource } from '../../../modules/list/model/list-row';
+import { DataType } from '../../../modules/list/data/data-type';
 
 interface ColumnItem {
   name: string;
@@ -140,6 +142,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public rank$ = new LocalStorageBehaviorSubject<number>('island-workshop:rank', 1);
 
+  public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
+
   public tableColumns$: Observable<ColumnItem[]> = this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High').pipe(
     // Just a small trick to only compute all this once translations are loaded
     map(() => {
@@ -219,13 +223,17 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     switchMap(reset => {
       const historyEntriesToFetch = [reset.toString()];
       let nextDay = reset + 86400000;
-      while (nextDay < Date.now()) {
+      while (nextDay < Date.now() + 86400000) {
         historyEntriesToFetch.push(nextDay.toString());
         nextDay += 86400000;
       }
       return combineLatest(historyEntriesToFetch.map(date => {
-        return this.mjiWorkshopStatusService.get(date);
-      }));
+        return this.mjiWorkshopStatusService.get(date).pipe(
+          catchError(() => of(null))
+        );
+      })).pipe(
+        map(history => history.filter(h => h !== null))
+      );
     })
   );
 
@@ -236,14 +244,22 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   public craftworksObjects$: Observable<CraftworksObject[]> = combineLatest([
     this.state$,
     this.islandLevel$,
-    this.stateHistory$
+    this.stateHistory$,
+    this.excludePastureMaterials$
   ]).pipe(
-    withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks'),
-    map(([[state, islandLevel, history], islandPopularity, islandCraftworks]) => {
+    withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks', 'recipes', 'extracts'),
+    map(([[state, islandLevel, history, excludePasture], islandPopularity, islandCraftworks, recipes, extracts]) => {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => row.id > 0 && islandCraftworks[row.id].itemId > 0)
+        .filter(row => {
+          if (excludePasture) {
+            const recipe = recipes.find(r => r.id === `mji-craftworks-${row.id}`);
+            return recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+          }
+          return true;
+        })
         .map(row => {
           const popularity = popularityEntry[row.id];
           const predictedPopularity = predictedPopularityEntry[row.id];
@@ -302,7 +318,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
-              private platformService: PlatformService, public settings: SettingsService) {
+              public platformService: PlatformService, public settings: SettingsService) {
     super();
 
     if (this.platformService.isDesktop()) {

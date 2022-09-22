@@ -155,6 +155,7 @@ export interface LazyData {
   gatheringSearchIndex: Record<number, LazyGatheringSearchIndex>;
   gcNames: Record<number, LazyGcName>;
   gilShopNames: Record<number, LazyGilShopName>;
+  gubalBnpcsIndex: Record<number, number>;
   hqFlags: Record<number, number>;
   hunts: Array<LazyHunt>;
   hwdInspections: Array<LazyHwdInspection>;

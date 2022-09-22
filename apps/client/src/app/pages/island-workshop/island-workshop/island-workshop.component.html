@@ -25,7 +25,7 @@
     </ng-container>
   </nz-page-header-extra>
   <nz-page-header-content>
-    <div fxLayout="row wrap" fxLayoutGap="10px">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
       <div>
         <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Island_level' | translate">
           <nz-input-number [ngModel]="islandLevel$ | async" (ngModelChange)="islandLevel$.next($event)" [nzMin]="0"></nz-input-number>
@@ -40,6 +40,10 @@
         <nz-input-group [nzAddOnBefore]="'ISLAND_SANCTUARY.Workshop_rank' | translate">
           <nz-input-number [ngModel]="rank$ | async" (ngModelChange)="rank$.next($event)" [nzMin]="0"></nz-input-number>
         </nz-input-group>
+      </div>
+      <div>
+        <label nz-checkbox [ngModel]="excludePastureMaterials$ | async" (ngModelChange)="excludePastureMaterials$.next($event)">
+          {{'ISLAND_SANCTUARY.WORKSHOP.Exclude_pasture_materials' | translate}}</label>
       </div>
     </div>
   </nz-page-header-content>
@@ -60,7 +64,8 @@
 
 <ng-template #objectsTable let-craftworksObjects let-pageSize="pageSize">
   <ng-container *ngIf="tableColumns$ | async as tableColumns">
-    <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage>
+    <nz-table #craftworksTable [nzData]="craftworksObjects" nzSize="small" [nzPageSize]="pageSize" nzHideOnSinglePage
+              [nzFooter]="platformService.isDesktop() ? ('ISLAND_SANCTUARY.WORKSHOP.Import_explain' | translate) : null">
       <thead>
       <tr>
         <th *ngFor="let column of tableColumns"

@@ -196,7 +196,16 @@
     "Instance": "던전",
     "Fate": "돌발 임무",
     "Reload": "새로고침",
-    "Click_to_apply": "클릭하여 적용"
+    "Click_to_apply": "클릭하여 적용",
+    "DAYS": {
+      "Monday": "월요일",
+      "Tuesday": "화요일",
+      "Wednesday": "수요일",
+      "Thursday": "목요일",
+      "Friday": "금요일",
+      "Saturday": "토요일",
+      "Sunday": "일요일"
+    }
   },
   "ALARMS": {
     "Title": "알람",
@@ -476,12 +485,12 @@
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
-    "Enable_local_fishing_dump": "Enable local fishing reports dump",
+    "Enable_local_fishing_dump": "로컬 덤프의 낚시 보고 사용하기",
     "Char_data_folder": "캐릭터 데이터 폴더 (CHRXXXXXXX 폴더가 있는 곳)",
     "Maximum_vendor_price": "상점 구매가 최대치",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
     "Maximum_total_vendor_price": "상점 구매가 최대치",
-    "Maximum_total_vendor_price_explain": "Maximum price for an entire row (unit price * quantity) for it to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum)",
+    "Maximum_total_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 전체 가격(단일 가격 * 수량) 최대치 (0 = 최대치 없음)",
     "Rawsock_flag": "패킷 캡처를 위하여 RawSocket 사용하기",
     "Rawsock_details": "RawSocket을 사용하면 npcap 없이 트래픽을 캡처하므로 VPN 사용시에 도움이 될 수 있습니다. 하지만 전반적으로 신뢰성이 떨어지며 팀크래프트 실행시마다 수동으로 관리자권한 실행을 하셔야 합니다.",
     "Favorite_features": "즐겨찾는 기능",
@@ -760,7 +769,7 @@
     "Consider_requirements": "재료 포함하기",
     "Ignore_requirements": "재료 무시하기",
     "SOURCES": {
-      "Gatherable": "Can be gathered, click to see more details"
+      "Gatherable": "채집 가능, 클릭하여 자세히 보기"
     },
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
@@ -785,7 +794,7 @@
       "Layouts": "레이아웃",
       "Want_to_learn_more": "레이아웃과 사용법에 대해 더 알고싶나요?",
       "Open_wiki_page": "레이아웃 시스템 위키 페이지 열기",
-      "Filter_using_level": "Use crafting and gathering level in corresponding filters",
+      "Filter_using_level": "제작자 및 채집가 레벨을 사용하여 필터",
       "ITEMS": {
         "COMMENTS": "댓글",
         "COPY_NAME_NOT_FAVORITE": "선호하지 않는 복사 모드",
@@ -1191,7 +1200,7 @@
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
       "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다",
-      "QUALITY_TOO_LOW": "Quality doesn't meet the required quality of the recipe"
+      "QUALITY_TOO_LOW": "제작법이 요구하는 품질에 도달하지 못했습니다"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
@@ -1629,6 +1638,7 @@
         "Last_report": "최근 보고",
         "Fish": "물고기",
         "Size": "크기",
+        "Large": "월척",
         "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 재인식을 위해 미끼를 한번 바꿔주세요",
@@ -1817,7 +1827,7 @@
     "Placeholder": "아이템 이름",
     "No_missing_ingredients": "모든 재료가 있음",
     "Missing_X_ingredients": "{{amount}} 가지 재료가 부족",
-    "Missing_X_ingredients_for_one_more": "Missing {{amount}} ingredient(s) to add one more",
+    "Missing_X_ingredients_for_one_more": "추가로 제작하기엔 {{amount}} 가지 재료가 부족",
     "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
@@ -1858,7 +1868,7 @@
     "Loading_data": "선택된 화폐의 데이터 로딩 중",
     "Loading_universalis": "Universalis에서 {{amount}} 개의 장터 가격 가져오기",
     "X_sold_last_week": "지난 주 {{amount}} 개 판매",
-    "No_trades": "This currency cannot be traded with something that can be sold on marketboard"
+    "No_trades": "이 화폐는 교환하여 장터에 판매 가능한 아이템을 얻을 수 없습니다."
   },
   "FOOD_PICKER": {
     "Title": "음식 선택 도우미",
@@ -2848,10 +2858,10 @@
     "Product_id_explain": "상품 URL에서 \"/product/\" 바로 옆에 있는 게 상품 ID",
     "Open_item": "알라간 리포트에서 열기",
     "Delete": "삭제",
-    "Voyage_rarity": "Rarity",
-    "Rarity_Common": "Common",
-    "Rarity_Voyage_exclusive": "Voyage exclusive",
-    "Rarity_Rare": "Rare",
+    "Voyage_rarity": "희귀도",
+    "Rarity_Common": "일반",
+    "Rarity_Voyage_exclusive": "탐사 전용",
+    "Rarity_Rare": "희귀",
     "No_missing_fish_data": "No fish with missing data",
     "Sources_filter": "Filter sources",
     "Speed": "속도",
@@ -2942,11 +2952,13 @@
     "WORKSHOP": {
       "Title": "Workshop",
       "Subtitle": "Track and manage your workshop",
-      "Out_of_sync": "State has not been updated during the last 24 hours",
-      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button.",
+      "Out_of_sync": "State has not been updated since the last reset",
+      "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
       "Export_state": "Export supply/demand state",
       "State_copied": "State copied to your clipboard",
       "Import_state": "Import state",
+      "Import_online_state": "Import state from database",
+      "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
       "State_imported": "State properly imported",
       "Product": "Product",
       "Popularity": "Popularity",
@@ -2956,9 +2968,19 @@
       "Edit_mode": "Edit mode",
       "Best_items_to_craft": "Best items to craft",
       "Total_value": "Total value",
-      "Run_optimizer": "Find best planning for the rest of the day",
+      "Run_optimizer": "Find best planning for the rest of the week",
       "No_schedule_found": "No planning found",
       "No_schedule_found_explain": "Make sure the reset is in more than 4 hours",
+      "Possible_peak_days": "Possible peaks",
+      "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
+      "Items_to_prepare": "Best items to prepare for tomorrow",
+      "Rest": "Rest day",
+      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Set_rest_day": "Set as second rest day",
+      "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
+      "Amount_of_workshops": "# of workshops :",
+      "Create_list": "Create a list for this planning",
+      "Exclude_pasture_materials": "Exclude pasture materials",
       "POPULARITY": {
         "Very_high": "Very high",
         "High": "High",
@@ -2983,11 +3005,14 @@
     "ANIMALS": {
       "Title": "Animals",
       "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
-      "Name": "Name",
-      "Coords": "Position",
-      "Spawn_time": "Spawn time",
-      "Weather": "Weather",
-      "Alarm": "Alarm"
+      "Name": "이름",
+      "Size": "크기",
+      "Coords": "위치",
+      "Spawn_time": "출몰 시간",
+      "Weather": "날씨",
+      "Alarm": "알람",
+      "Main_drop": "Main drop",
+      "Rare_drop": "Rare drop"
     }
   }
 }

@@ -9,6 +9,7 @@ import { MapModule } from '../../modules/map/map.module';
 import { CoreModule } from '../../core/core.module';
 import { AlarmButtonModule } from '../../modules/alarm-button/alarm-button.module';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
     MapModule,
     CoreModule,
     AlarmButtonModule,
-    NzPageHeaderModule
+    NzPageHeaderModule,
+    ItemIconModule
   ]
 })
 export class IslandAnimalsModule {

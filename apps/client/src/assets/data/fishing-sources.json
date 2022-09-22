@@ -9636,29 +9636,6 @@
       "snagging": false
     }
   ],
-  "13733": [
-    {
-      "spot": 10005,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
-      "snagging": false
-    },
-    {
-      "spot": 10006,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
-      "snagging": false
-    },
-    {
-      "spot": 10004,
-      "hookset": 0,
-      "tug": -1,
-      "bait": 12712,
-      "snagging": false
-    }
-  ],
   "13734": [
     {
       "spot": 10005,
@@ -15275,7 +15252,8 @@
       "spawn": 2,
       "duration": 10,
       "weathers": [
-        2
+        2,
+        1
       ],
       "weathersFrom": [
         3,

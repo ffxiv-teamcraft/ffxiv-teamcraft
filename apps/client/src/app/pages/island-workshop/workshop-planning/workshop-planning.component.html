@@ -3,11 +3,11 @@
     <div class="day-title" [class.today]="today === i" [class.first]="first" [class.last]="last">
       {{days[i]}}
       <ng-container *ngIf="!day.rest">
-      &nbsp;
-      <button nz-button nzSize="small" nzShape="circle" nzType="primary"
-              nz-tooltip
-              [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Set_rest_day' | translate"
-              (click)="settings.islandWorkshopRestDay = i"><i nz-icon nzType="coffee" nzTheme="outline"></i></button>
+        &nbsp;
+        <button nz-button nzSize="small" nzShape="circle" nzType="primary"
+                nz-tooltip
+                [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Set_rest_day' | translate"
+                (click)="settings.islandWorkshopRestDay = i"><i nz-icon nzType="coffee" nzTheme="outline"></i></button>
       </ng-container>
     </div>
     <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngIf="day.rest" [style.height.px]="baseCellHeight * 24">
@@ -33,10 +33,20 @@
     </div>
   </div>
 </div>
-<div class="footer">
-  {{'COMMON.Total' | translate}}:
-  <app-item-icon [itemId]="37549" width="24"></app-item-icon>
-  {{totalScore | number:'1.0-0':translate.currentLang}}
+<div class="footer" fxLayout="row" fxLayoutAlign="space-between center">
+  <div>
+    {{'COMMON.Total' | translate}}:
+    <app-item-icon [itemId]="37549" width="24"></app-item-icon>
+    {{totalScore | number:'1.0-0':translate.currentLang}}
+  </div>
+  <div>
+    <nz-input-group nzSearch [nzAddOnBefore]="'ISLAND_SANCTUARY.WORKSHOP.Amount_of_workshops' | translate" [nzAddOnAfter]="createListButton">
+      <nz-input-number [(ngModel)]="workshops"></nz-input-number>
+      <ng-template #createListButton>
+        <button nz-button (click)="createList(planning)" nzSearch nzType="primary">{{'ISLAND_SANCTUARY.WORKSHOP.Create_list' | translate}}</button>
+      </ng-template>
+    </nz-input-group>
+  </div>
 </div>
 <div class="credits">
   <em>Kudos to the <a href="https://discord.gg/eWqxu9E7m3" target="_blank">Poking Paradise</a> team for the research, data and contribution to this solver.

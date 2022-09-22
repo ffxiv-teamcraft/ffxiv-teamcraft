@@ -49,6 +49,7 @@ export const LazyDataKeys = [
   'gatheringSearchIndex',
   'gcNames',
   'gilShopNames',
+  'gubalBnpcsIndex',
   'hqFlags',
   'hunts',
   'hwdInspections',
