@@ -2,6 +2,7 @@
   <div *ngFor="let day of planning; index as i;first as first, last as last" fxLayout="column" fxFlex="1 0 14%">
     <div class="day-title" [class.today]="today === i" [class.first]="first" [class.last]="last">
       {{days[i]}}
+      {{(weeklyReset + 86400000 * i) | date:'dd/MM'}}
       <app-item-icon [itemId]="37549" width="24"></app-item-icon>
       {{day.score | number:'1.0-0':translate.currentLang}} <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip'">({{day.groove}})</span>
       <ng-container *ngIf="!day.rest">
