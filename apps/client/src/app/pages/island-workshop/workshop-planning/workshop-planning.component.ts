@@ -23,6 +23,9 @@ export class WorkshopPlanningComponent {
   @Input()
   today: number;
 
+  @Input()
+  weeklyReset: number;
+
   days = [
     'Tuesday',
     'Wednesday',
