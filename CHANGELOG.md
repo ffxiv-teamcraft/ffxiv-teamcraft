@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.5"></a>
+## [9.8.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.4...v9.8.5) (2022-09-22)
+
+
+### Bug Fixes
+
+* **desktop:** TC will no longer prevent the game from applying updates ([9475761](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9475761))
+* **island-workshop:** better logic fod 6-4 combo optimization ([4ccb43c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ccb43c))
+
+
+### Features
+
+* **island-workshop:** add score per day and date for each day ([46e8ff6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/46e8ff6))
+
+
+
 <a name="9.8.4"></a>
 ## [9.8.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.3...v9.8.4) (2022-09-22)
 
