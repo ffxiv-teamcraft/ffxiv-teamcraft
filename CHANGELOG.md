@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.6"></a>
+## [9.8.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.5...v9.8.6) (2022-09-22)
+
+
+### Bug Fixes
+
+* **desktop:** hotfix for pcap not working as of 9.8.5 ([2893ba0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2893ba0))
+
+
+
 <a name="9.8.5"></a>
 ## [9.8.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.4...v9.8.5) (2022-09-22)
 
