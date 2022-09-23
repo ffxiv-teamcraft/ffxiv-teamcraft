@@ -4,7 +4,7 @@
       {{days[i]}}
       {{(weeklyReset + 86400000 * i) | date:'dd/MM'}}
       <app-item-icon [itemId]="37549" width="24"></app-item-icon>
-      {{day.score | number:'1.0-0':translate.currentLang}} <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip'">({{day.groove}})</span>
+      {{day.score | number:'1.0-0':translate.currentLang}} <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip' | translate">({{day.groove}})</span>
       <ng-container *ngIf="!day.rest">
         &nbsp;
         <button nz-button nzSize="small" nzShape="circle" nzType="primary"
