@@ -1,17 +1,18 @@
 <div fxLayout="row" class="planning-container">
   <div *ngFor="let day of planning; index as i;first as first, last as last" fxLayout="column" fxFlex="1 0 14%">
     <div class="day-title" [class.today]="today === i" [class.first]="first" [class.last]="last">
-      {{days[i]}}
-      {{(weeklyReset + 86400000 * i) | date:'dd/MM'}}
-      <app-item-icon [itemId]="37549" width="24"></app-item-icon>
-      {{day.score | number:'1.0-0':translate.currentLang}} <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip' | translate">({{day.groove}})</span>
-      <ng-container *ngIf="!day.rest">
-        &nbsp;
-        <button nz-button nzSize="small" nzShape="circle" nzType="primary"
-                nz-tooltip
-                [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Set_rest_day' | translate"
-                (click)="settings.islandWorkshopRestDay = i"><i nz-icon nzType="coffee" nzTheme="outline"></i></button>
-      </ng-container>
+      <div>{{days[i]}}&nbsp;{{(weeklyReset + 86400000 * i) | date:'dd/MM'}}</div>
+      <div>
+        <app-item-icon [itemId]="37549" width="24"></app-item-icon>
+        {{day.score | number:'1.0-0':translate.currentLang}}
+        <span nz-tooltip [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Groove_tooltip' | translate">({{day.groove}})&nbsp;</span>
+        <ng-container *ngIf="!day.rest">
+          <button nz-button nzSize="small" nzShape="circle" nzType="primary"
+                  nz-tooltip
+                  [nzTooltipTitle]="'ISLAND_SANCTUARY.WORKSHOP.Set_rest_day' | translate"
+                  (click)="settings.islandWorkshopRestDay = i"><i nz-icon nzType="coffee" nzTheme="outline"></i></button>
+        </ng-container>
+      </div>
     </div>
     <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngIf="day.rest" [style.height.px]="baseCellHeight * 24">
       <span nz-icon nzType="coffee" nzTheme="outline"></span>&nbsp;{{'ISLAND_SANCTUARY.WORKSHOP.Rest' | translate}}

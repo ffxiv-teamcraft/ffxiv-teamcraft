@@ -47,17 +47,17 @@ export class PlanningFormulaOptimizer {
       let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
 
       let totalTime = 0;
-      // If we have crafting time <= 6, we want to start with combo item to trigger bonus, else start with best item to craft 3 instead of 2 (including bonus)
-      let lastWasBestItem = best.isPeaking;
-      let projectedTime = lastWasBestItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
+      // Start with combo item if we have more than 12h total crafting time
+      let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
+      let projectedTime = useComboItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       while (totalTime + projectedTime <= 24) {
-        const item = lastWasBestItem ? combo : best;
-        day.planning.push({ ...JSON.parse(JSON.stringify(item)) });
-        projectedTime = lastWasBestItem ? best.craftworksEntry.craftingTime : combo.craftworksEntry.craftingTime;
-        lastWasBestItem = !lastWasBestItem;
+        const item = JSON.parse(JSON.stringify(useComboItem ? combo : best));
+        day.planning.push(item);
+        useComboItem = !useComboItem;
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        projectedTime = useComboItem ? best.craftworksEntry.craftingTime : combo.craftworksEntry.craftingTime;
       }
       if (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
