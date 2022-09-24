@@ -1,3 +1,4 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** hotfix for pcap not working as of 9.8.5.`;
+* **island-workshop:** better planning logic for 6-4-6-4 combos.
+* **island-workshop:** removed combo alternatives to prevent optimization issues.`;

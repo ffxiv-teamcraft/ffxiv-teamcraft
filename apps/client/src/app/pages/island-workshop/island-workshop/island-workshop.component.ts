@@ -338,7 +338,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               return of(true);
             }),
             switchMap(shouldUpdate => {
-              if (shouldUpdate && state.updated >= reset && state.supplyDemand.every(({ supply }) => supply < 3)) {
+              if (shouldUpdate && state.updated >= reset) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
                   popularity: state.popularity,

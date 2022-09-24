@@ -44,24 +44,20 @@ export class PlanningFormulaOptimizer {
       }
 
       // Okay, if we're here, we know what'll peak and how, so we want to build an optimized value route now
-      let [best, combo, alternative] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+      let [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
 
       let totalTime = 0;
-      // If we have crafting time <= 6, we want to start with combo item to trigger bonus, else start with best item to craft 3 instead of 2 (including bonus)
-      let lastWasBestItem = best.isPeaking;
-      let projectedTime = lastWasBestItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
+      // Start with combo item if we have more than 12h total crafting time
+      let useComboItem = combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
+      let projectedTime = useComboItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       while (totalTime + projectedTime <= 24) {
-        const item = lastWasBestItem ? combo : best;
-        const alternativeCombo = lastWasBestItem ? alternative : null;
-        day.planning.push({ ...JSON.parse(JSON.stringify(item)), alternative: alternativeCombo });
-        projectedTime = lastWasBestItem ? best.craftworksEntry.craftingTime : combo.craftworksEntry.craftingTime;
-        lastWasBestItem = !lastWasBestItem;
+        const item = JSON.parse(JSON.stringify(useComboItem ? combo : best));
+        day.planning.push(item);
+        useComboItem = !useComboItem;
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
-        if (alternativeCombo) {
-          objectsUsage[alternativeCombo.id] = (objectsUsage[alternativeCombo.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
-        }
-        [best, combo, alternative] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
+        projectedTime = useComboItem ? best.craftworksEntry.craftingTime : combo.craftworksEntry.craftingTime;
       }
       if (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
@@ -104,18 +100,18 @@ export class PlanningFormulaOptimizer {
         && obj.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime <= 12;
     });
     let [combo] = comboCandidates.sort((a, b) => {
-      return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
+      return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
     });
     if (!combo) {
       // If we have no combo available (which is possible at lower ranks), just grab a random item with good value
       [combo] = projectedSupplyObjects
         .sort((a, b) => {
-          return this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]);
+          return this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0);
         });
     }
     const alternative = comboCandidates
-      .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id)
-      .sort((a, b) => this.getBoostedValue(b, objectsUsage[b.id]) - this.getBoostedValue(a, objectsUsage[a.id]))[0];
+      .filter(obj => obj.craftworksEntry.craftingTime === combo.craftworksEntry.craftingTime && obj.id !== combo.id && (!objectsUsage[obj.id] || !objectsUsage[combo.id]))
+      .sort((a, b) => this.getBoostedValue(b, 0) - this.getBoostedValue(a, 0))[0];
 
     return [
       best,
