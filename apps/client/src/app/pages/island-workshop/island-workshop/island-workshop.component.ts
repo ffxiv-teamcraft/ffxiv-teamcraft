@@ -21,6 +21,7 @@ import { WorkshopPattern, workshopPatterns } from '../workshop-patterns';
 import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimizer';
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 interface ColumnItem {
   name: string;
@@ -318,7 +319,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
   constructor(private ipc: IpcService, private lazyData: LazyDataFacade,
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
-              public platformService: PlatformService, public settings: SettingsService) {
+              public platformService: PlatformService, public settings: SettingsService,
+              private authFacade: AuthFacade) {
     super();
 
     if (this.platformService.isDesktop()) {
@@ -326,24 +328,26 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         this.machinaToggle = value;
       });
       this.ipc.send('toggle-machina:get');
-      combineLatest([this.previousReset$, this.state$]).pipe(
-        switchMap(([reset, state]) => {
+      combineLatest([this.previousReset$, this.state$, this.authFacade.user$]).pipe(
+        switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
-              return !state.edited && historyEntry.objects.some((obj, i) => {
+              return !historyEntry.lock && state.updated - reset < 7200000 && !state.edited && historyEntry.objects.some((obj, i) => {
                 return state.supplyDemand[i].supply < obj.supply;
-              });
+              }) && !state.supplyDemand.some(entry => entry.supply > 3);
             }),
             catchError(() => {
               return of(true);
             }),
             switchMap(shouldUpdate => {
+              // Only update if reset was less than 2h ago, else it's probably bad data anyways
               if (shouldUpdate && state.updated >= reset) {
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
                   objects: state.supplyDemand,
                   popularity: state.popularity,
                   predictedPopularity: state.predictedPopularity,
-                  start: reset
+                  start: reset,
+                  lock: user.admin
                 });
               }
               return EMPTY;
