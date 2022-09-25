@@ -1,7 +1,7 @@
 {
   "Mogstation": "Station Mog",
   "Quests": "Quests",
-  "Facebook_notice": "Facebook login is no longer available. You can add a password to your account using the \"reset password\" system, or by asking Miu on Discord.",
+  "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur discord.",
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez un utilisateur",
   "Pick_a_fc": "Choisissez une compagnie libre",
@@ -16,10 +16,10 @@
   "No_known_coordinates": "Pas de coordonnées connues",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours",
-  "Network_error_logged_out": "A network error has been detected, and you have been logged out. If this issue persists, please contact Miu on the Discord server.",
+  "Network_error_logged_out": "Une erreur réseau a été détectée et vous avez été déconnecté. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft.",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "Patch_notes": "Patch notes de la version {{version}}",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on Patreon",
+  "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur Patreon",
   "Selection": "Sélection",
   "Change_character": "Personnage",
   "Check_guides": "Consultez nos guides (en anglais)",
@@ -45,20 +45,20 @@
     "Add_to_list": "Ajouter cet élément à une liste",
     "Apply_filters": "Appliquer les filtres",
     "Reset_filters": "Réinitialiser les filtres",
-    "Too_many_results_warning": "This search returned over 100 items. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
+    "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers",
     "Only_craftable": "Recettes uniquement",
     "Want_filters": "Besoin de plus de filtres ?",
     "Open_search": "Ouvrir la page de recherche",
-    "Island_recipe": "Island Sanctuary recipe"
+    "Island_recipe": "Recettes de Félicité Insulaire"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
   "Find_us_on_twitter": "Suivez-nous sur Twitter",
-  "Join_discord_server": "Join our Discord server",
-  "See_code_github": "See the code on Github",
-  "Support_on_patreon": "Support the project on Patreon",
+  "Join_discord_server": "Rejoignez notre serveur Discord",
+  "See_code_github": "Voir le code sur Github",
+  "Support_on_patreon": "Soutenir le projet sur Patreon",
   "Access_patreon_page": "Rendez-vous sur notre page Patreon",
   "Like_the_tool": "Vous appréciez cet outil jusqu'à présent ?",
   "Default": "Défaut",
@@ -184,7 +184,7 @@
     "Never": "Jamais",
     "Festival": "Seulement pendant un festival",
     "Back": "Précédent",
-    "Support_us_remove_ads": "Support us on Patreon to remove ads",
+    "Support_us_remove_ads": "Soutenez-nous sur Patreon pour supprimer les publicités",
     "Support_us": "Soutenez-nous",
     "Show_more": "Voir plus",
     "Item": "Objet",
@@ -198,13 +198,13 @@
     "Reload": "Recharger",
     "Click_to_apply": "Cliquez pour appliquer",
     "DAYS": {
-      "Monday": "Monday",
-      "Tuesday": "Tuesday",
-      "Wednesday": "Wednesday",
-      "Thursday": "Thursday",
-      "Friday": "Friday",
-      "Saturday": "Saturday",
-      "Sunday": "Sunday"
+      "Monday": "Lundi",
+      "Tuesday": "Mardi",
+      "Wednesday": "Mercredi",
+      "Thursday": "Jeudi",
+      "Friday": "Vendredi",
+      "Saturday": "Samedi",
+      "Sunday": "Dimanche"
     }
   },
   "ALARMS": {
@@ -245,9 +245,9 @@
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
-      "WEEKLY_RESETS_DESCRIPTION": "Custom deliveries, WT, Weekly drops (24-man raids, savage tokens, NM raid's weapon token), Jumbo Cactpot, Challenge Log, Fashion Report, B-Rank Hunt marks.",
+      "WEEKLY_RESETS_DESCRIPTION": "Commandes spéciales, Carnet de Khloé, Récompenses hebdomadaire (raids 24 joueurs, raids sadiques, raids 8 joueurs), Méga Cactpot, Carnet d'objectifs, Revue de Mode, Chasse Rang B.",
       "ROULETTES_RESET": "Roulettes & tribus tribales",
-      "ROULETTES_RESET_DESCRIPTION": "Reset of all the roulettes, beast tribe quests, daily hunts and mini Cactpot.",
+      "ROULETTES_RESET_DESCRIPTION": "Réinitialisation des roulettes, quêtes tribales, contrats de chasse quotidiens et le mini Cactpot.",
       "DELIVERIES_RESET": "Livraisons",
       "DELIVERIES_RESET_DESCRIPTION": "Réinitialisation des livraisons de grande compagnie",
       "LEVE_ALLOWANCES": "Autorisations de mandats",
@@ -258,7 +258,7 @@
       "Name": "Nom",
       "Spawn": "Spawn (heure éorzéenne)",
       "Spawns_twice": "Deux apparitions",
-      "Spawns_twice_description": "Spawns twice per Eorzean day (One spawn AM, one PM)",
+      "Spawns_twice_description": "Apparaît deux fois en une journée éorzéenne (un le matin et un l'après midi)",
       "Duration": "Durée (heures éorzéennes)",
       "Slot": "Emplacement",
       "Slot_description": "Le numéro d'emplacement (1-8) dans l'interface de collecte en jeu (Ce n'est pas super important depuis la mise à jour 5.1)",
@@ -313,7 +313,7 @@
   "Reset_progression": "Remettre la progression à 0",
   "Gardening": "Jardinage",
   "Hunting": "Chasse",
-  "Island_animal": "Island animal",
+  "Island_animal": "Pâturage de la Félicité Insulaire",
   "Desynth": "Recyclage",
   "Vendors": "Vendeurs",
   "Open": "Ouvrir",
@@ -1938,7 +1938,7 @@
     "Currencies": "Devises",
     "Add_to_favorites": "Ajouter aux favoris",
     "Remove_from_favorites": "Retirer des favoris",
-    "Island_Sanctuary": "Island Sanctuary"
+    "Island_Sanctuary": "Félicité Insulaire"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1997,7 +1997,7 @@
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
       "RetainerMarket": "En vente par les servants",
-      "IslandSanctuaryBag": "Island Sanctuary Bag"
+      "IslandSanctuaryBag": "Sacoche de la Félicité Insulaire"
     },
     "CONTENT_ID_POPUP": {
       "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
@@ -2894,7 +2894,7 @@
       "FATE": "Aléa",
       "MOGSTATION": "MOGSTATION",
       "DEPRECATED": "Déprécié",
-      "ISLAND_ANIMAL": "ISLAND_ANIMAL"
+      "ISLAND_ANIMAL": "Pâturage de la Félicité Insulaire"
     },
     "STATUS": {
       "PROPOSAL": "Proposition",
@@ -2946,11 +2946,11 @@
   },
   "ISLAND_SANCTUARY": {
     "Animal_source": "You need to gather this item from one of the following animals in your Island Sanctuary pasture",
-    "Island_level": "Island level",
-    "Landmarks": "Landmarks",
-    "Workshop_rank": "Workshop rank",
+    "Island_level": "Rang de Félicité",
+    "Landmarks": "Édifices",
+    "Workshop_rank": "Rang de Fabrique",
     "WORKSHOP": {
-      "Title": "Workshop",
+      "Title": "Fabrique",
       "Subtitle": "Track and manage your workshop",
       "Out_of_sync": "State has not been updated since the last reset",
       "Out_of_sync_explain": "Please open the supply/demand window in your Island Sanctuary to update the state. If you're not using packet capture, ask another user to update their state and then export it so you can use the import state button, or import from database.",
@@ -2961,7 +2961,7 @@
       "Online_state_missing": "Nobody updated their state yet, this button will enable itself once it's done",
       "State_imported": "State properly imported",
       "Product": "Product",
-      "Popularity": "Popularity",
+      "Popularity": "Popularité",
       "Supply": "Supply",
       "Demand_shift": "Demand shift",
       "Predicted_popularity": "Predicted demand",
@@ -2974,30 +2974,30 @@
       "Possible_peak_days": "Possible peaks",
       "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
       "Items_to_prepare": "Best items to prepare for tomorrow",
-      "Rest": "Rest day",
+      "Rest": "Cycle de repos",
       "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
-      "Set_rest_day": "Set as second rest day",
+      "Set_rest_day": "Définir comme deuxième cycle de repos",
       "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
       "Amount_of_workshops": "# of workshops :",
       "Create_list": "Create a list for this planning",
       "Exclude_pasture_materials": "Exclude pasture materials",
       "Groove_tooltip": "Groove at the end of the day",
       "POPULARITY": {
-        "Very_high": "Very high",
-        "High": "High",
-        "Average": "Average",
-        "Low": "Low"
+        "Very_high": "Très élevée",
+        "High": "Élevée",
+        "Average": "Moyenne",
+        "Low": "Faible"
       },
       "SUPPLY": {
-        "Non_existant": "Non existant",
-        "Insufficient": "Insufficient",
-        "Sufficient": "Sufficient",
-        "Surplus": "Surplus",
-        "Overflowing": "Overflowing"
+        "Non_existant": "Introuvable",
+        "Insufficient": "Insuffisant",
+        "Sufficient": "Suffisant",
+        "Surplus": "En surplus",
+        "Overflowing": "Excédentaire"
       },
       "DEMAND_SHIFT": {
-        "Skyrocketing": "Skyrocketing",
-        "Increasing": "Increasing",
+        "Skyrocketing": "Forte augmentation",
+        "Increasing": "Augmentation",
         "None": "None",
         "Decreasing": "Decreasing",
         "Plummeting": "Plummeting"
@@ -3005,13 +3005,13 @@
     },
     "ANIMALS": {
       "Title": "Animals",
-      "Subtitle": "A comprehensive list of animals, where and when to find them, with alarms integration",
-      "Name": "Name",
-      "Size": "Size",
+      "Subtitle": "Une liste complète des animaux, où et quand les trouver, avec intégration d'alarmes",
+      "Name": "Nom",
+      "Size": "Taille",
       "Coords": "Position",
-      "Spawn_time": "Spawn time",
-      "Weather": "Weather",
-      "Alarm": "Alarm",
+      "Spawn_time": "Apparitions",
+      "Weather": "Météo",
+      "Alarm": "Alarme",
       "Main_drop": "Main drop",
       "Rare_drop": "Rare drop"
     }
