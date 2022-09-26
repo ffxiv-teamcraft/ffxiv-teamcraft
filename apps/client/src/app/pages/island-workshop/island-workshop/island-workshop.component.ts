@@ -22,6 +22,7 @@ import { PlanningFormulaOptimizer } from '../optimizer/planning-formula-optimize
 import { getItemSource } from '../../../modules/list/model/list-row';
 import { DataType } from '../../../modules/list/data/data-type';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 interface ColumnItem {
   name: string;
@@ -145,9 +146,12 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
-  public tableColumns$: Observable<ColumnItem[]> = this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High').pipe(
+  public tableColumns$: Observable<ColumnItem[]> = combineLatest([
+    this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
+    this.lazyData.getEntry('islandCraftworksTheme')
+  ]).pipe(
     // Just a small trick to only compute all this once translations are loaded
-    map(() => {
+    map(([, themes]) => {
       return [
         {
           name: 'Product'
@@ -214,6 +218,30 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             };
           }),
           filterFn: (values, item) => values.some(value => item.predictedPopularity.id === value),
+          filterMultiple: true
+        },
+        {
+          name: 'Crafting_time',
+          sortOrder: null,
+          sortFn: (a, b) => a.craftworksEntry.craftingTime - b.craftworksEntry.craftingTime,
+          listOfFilter: [4, 6, 8].map(time => {
+            return {
+              value: time,
+              text: `${time}h`
+            };
+          }),
+          filterFn: (values, item) => values.some(value => item.craftworksEntry.craftingTime === value),
+          filterMultiple: true
+        },
+        {
+          name: 'Categories',
+          listOfFilter: Object.keys(themes).map(key => {
+            return {
+              value: +key,
+              text: this.i18n.getName(themes[key])
+            }
+          }),
+          filterFn: (values, item) => values.some(value => item.craftworksEntry.themes.includes(value)),
           filterMultiple: true
         }
       ];
@@ -320,7 +348,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
               public translate: TranslateService, private dialog: NzModalService,
               private message: NzMessageService, private mjiWorkshopStatusService: IslandWorkshopStatusService,
               public platformService: PlatformService, public settings: SettingsService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private i18n: I18nToolsService) {
     super();
 
     if (this.platformService.isDesktop()) {
