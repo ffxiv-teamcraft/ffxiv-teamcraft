@@ -10,6 +10,7 @@ export class IslandExtractor extends AbstractExtractor {
     const landmarksDone$ = new Subject();
     const workshopDone$ = new Subject();
     const pastureDone$ = new Subject();
+    const cropsDone$ = new Subject();
 
 
     this.get('https://xivapi.com/Map/772').pipe(
@@ -207,11 +208,30 @@ export class IslandExtractor extends AbstractExtractor {
       workshopDone$.next(true);
     });
 
+    this.aggregateAllPages('https://xivapi.com/MJIItemPouch?columns=ID,Item,Crop').pipe(
+      map(itemPouch => {
+        return itemPouch
+          .filter(row => row.Crop !== null)
+          .reduce((acc, pouch) => {
+            return {
+              ...acc,
+              [pouch.Crop.ItemTargetID]: {
+                seed: pouch.Item.ID
+              }
+            };
+          }, {});
+      })
+    ).subscribe(cropsData => {
+      this.persistToJsonAsset('island-crops', cropsData);
+      cropsDone$.next(cropsData);
+    });
+
     combineLatest([
       gatheringDone$,
       buildingsDone$,
       workshopDone$,
-      pastureDone$
+      pastureDone$,
+      cropsDone$
     ]).subscribe(() => {
       this.done();
     });

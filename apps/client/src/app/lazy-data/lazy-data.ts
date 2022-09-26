@@ -40,6 +40,7 @@ import {LazyIslandAnimal} from './model/lazy-island-animal';
 import {LazyIslandBuilding} from './model/lazy-island-building';
 import {LazyIslandCraftworksTheme} from './model/lazy-island-craftworks-theme';
 import {LazyIslandCraftwork} from './model/lazy-island-craftwork';
+import {LazyIslandCrop} from './model/lazy-island-crop';
 import {LazyIslandGatheringItem} from './model/lazy-island-gathering-item';
 import {The110} from './model/lazy-island-landmark';
 import {LazyIslandPopularity} from './model/lazy-island-popularity';
@@ -168,6 +169,7 @@ export interface LazyData {
   islandBuildings: Record<number, LazyIslandBuilding>;
   islandCraftworksTheme: Record<number, LazyIslandCraftworksTheme>;
   islandCraftworks: Record<number, LazyIslandCraftwork>;
+  islandCrops: Record<number, LazyIslandCrop>;
   islandGatheringItems: Record<number, LazyIslandGatheringItem>;
   islandLandmarks: Record<number, The110>;
   islandPopularity: Record<number, LazyIslandPopularity>;
