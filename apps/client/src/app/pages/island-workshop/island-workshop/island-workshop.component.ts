@@ -146,6 +146,8 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
 
   public excludePastureMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_pasture', false);
 
+  public excludeCropMaterials$ = new LocalStorageBehaviorSubject<boolean>('island-workshop:exclude_crops', false);
+
   public tableColumns$: Observable<ColumnItem[]> = combineLatest([
     this.translate.get('ISLAND_SANCTUARY.WORKSHOP.POPULARITY.High'),
     this.lazyData.getEntry('islandCraftworksTheme')
@@ -239,7 +241,7 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
             return {
               value: +key,
               text: this.i18n.getName(themes[key])
-            }
+            };
           }),
           filterFn: (values, item) => values.some(value => item.craftworksEntry.themes.includes(value)),
           filterMultiple: true
@@ -274,20 +276,27 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
     this.state$,
     this.islandLevel$,
     this.stateHistory$,
-    this.excludePastureMaterials$
+    this.excludePastureMaterials$,
+    this.excludeCropMaterials$
   ]).pipe(
     withLazyData(this.lazyData, 'islandPopularity', 'islandCraftworks', 'recipes', 'extracts'),
-    map(([[state, islandLevel, history, excludePasture], islandPopularity, islandCraftworks, recipes, extracts]) => {
+    map(([[state, islandLevel, history, excludePasture, excludeCrops], islandPopularity, islandCraftworks, recipes, extracts]) => {
       const popularityEntry = islandPopularity[state.popularity];
       const predictedPopularityEntry = islandPopularity[state.predictedPopularity];
       return state.supplyDemand
         .filter(row => row.id > 0 && islandCraftworks[row.id].itemId > 0)
         .filter(row => {
-          if (excludePasture) {
+          let matches = true;
+          if (excludePasture || excludeCrops) {
             const recipe = recipes.find(r => r.id === `mji-craftworks-${row.id}`);
-            return recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+            if (excludePasture) {
+              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_PASTURE)?.length === 0);
+            }
+            if (excludeCrops) {
+              matches = matches && recipe.ingredients.every(i => getItemSource(extracts[i.id], DataType.ISLAND_CROP, true).seed === undefined);
+            }
           }
-          return true;
+          return matches;
         })
         .map(row => {
           const popularity = popularityEntry[row.id];
