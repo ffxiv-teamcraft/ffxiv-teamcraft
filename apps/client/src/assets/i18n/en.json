@@ -2976,7 +2976,7 @@
       "Peak_days_explain": "The days on which it's more likely that this item will peak in value. Bold = strong peak.",
       "Items_to_prepare": "Best items to prepare for tomorrow",
       "Rest": "Rest day",
-      "Unknown_day_planning": "Unknown planning for now (will be known later this week)",
+      "Unknown_day_planning": "Available on {{day}}",
       "Set_rest_day": "Set as second rest day",
       "Import_explain": "You can update your supply/demand table by opening it ingame with the desktop app running and packet capture enabled.",
       "Amount_of_workshops": "# of workshops :",

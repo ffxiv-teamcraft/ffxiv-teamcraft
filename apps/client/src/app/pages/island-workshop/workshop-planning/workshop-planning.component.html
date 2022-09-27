@@ -18,7 +18,8 @@
       <span nz-icon nzType="coffee" nzTheme="outline"></span>&nbsp;{{'ISLAND_SANCTUARY.WORKSHOP.Rest' | translate}}
     </div>
     <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngIf="day.unknown" [style.height.px]="baseCellHeight * 24">
-      <nz-empty nzNotFoundContent="{{'ISLAND_SANCTUARY.WORKSHOP.Unknown_day_planning' | translate}}"></nz-empty>
+      <nz-empty
+        nzNotFoundContent="{{'ISLAND_SANCTUARY.WORKSHOP.Unknown_day_planning' | translate: {day: (days[planningAvailability[i]] | translate)}  }}"></nz-empty>
     </div>
     <div class="cell" [class.today]="today === i" [class.first-day]="first" *ngFor="let object of day.planning"
          [style.height.px]="baseCellHeight * object.craftworksEntry.craftingTime"
