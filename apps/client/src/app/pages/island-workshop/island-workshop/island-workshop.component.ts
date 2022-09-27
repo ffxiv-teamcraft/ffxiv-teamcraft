@@ -369,18 +369,31 @@ export class IslandWorkshopComponent extends TeamcraftComponent {
         switchMap(([reset, state, user]) => {
           return this.mjiWorkshopStatusService.get(reset.toString()).pipe(
             map((historyEntry) => {
-              return !historyEntry.lock && state.updated - reset < 7200000 && !state.edited && historyEntry.objects.some((obj, i) => {
-                return state.supplyDemand[i].supply < obj.supply;
-              }) && !state.supplyDemand.some(entry => entry.supply > 3);
+              const shouldUpdate = !historyEntry.lock
+                && !state.edited
+                && historyEntry.objects.some((obj, i) => {
+                  return state.supplyDemand[i].supply < obj.supply;
+                })
+                && !state.supplyDemand.some(entry => entry.supply > 3);
+              return {
+                shouldUpdate,
+                historyEntry
+              };
             }),
             catchError(() => {
-              return of(true);
+              return of({ shouldUpdate: true, historyEntry: null });
             }),
-            switchMap(shouldUpdate => {
+            switchMap(({ shouldUpdate, historyEntry }) => {
               // Only update if reset was less than 2h ago, else it's probably bad data anyways
               if (shouldUpdate && state.updated >= reset) {
+                let supplyDemand = state.supplyDemand;
+                if (historyEntry) {
+                  supplyDemand = state.supplyDemand.map((row, i) => {
+                    row.supply = Math.min(historyEntry.objects[i].supply, row.supply);
+                  });
+                }
                 return this.mjiWorkshopStatusService.set(reset.toString(), {
-                  objects: state.supplyDemand,
+                  objects: supplyDemand,
                   popularity: state.popularity,
                   predictedPopularity: state.predictedPopularity,
                   start: reset,
