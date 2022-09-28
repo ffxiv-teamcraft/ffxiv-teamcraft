@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="9.8.10"></a>
+## [9.8.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.9...v9.8.10) (2022-09-28)
+
+
+### Bug Fixes
+
+* **desktop:** fixed packet capture not starting properly ([cd31579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd31579))
+
+
+
 <a name="9.8.9"></a>
 ## [9.8.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v9.8.8...v9.8.9) (2022-09-28)
 
