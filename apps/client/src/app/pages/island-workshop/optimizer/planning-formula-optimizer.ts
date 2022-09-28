@@ -56,7 +56,7 @@ export class PlanningFormulaOptimizer {
         totalTime += item.craftworksEntry.craftingTime;
         objectsUsage[item.id] = (objectsUsage[item.id] || 0) + this.workshops * (totalTime === 0 ? 1 : 2);
         [best, combo] = this.findBestAndComboObjects(projectedSupplyObjects, objectsUsage);
-        projectedTime = useComboItem ? combo.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
+        projectedTime = useComboItem ? combo.craftworksEntry.craftingTime + best.craftworksEntry.craftingTime : best.craftworksEntry.craftingTime;
       }
       if (totalTime < 24) {
         const bestFirstItem = projectedSupplyObjects.filter(obj => {
