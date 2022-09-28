@@ -1608,10 +1608,10 @@
     minimatch "^3.0.4"
     plist "^3.0.4"
 
-"@ffxiv-teamcraft/pcap-ffxiv@0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.3.tgz#54570ced2033ed492c1be1f87f8e75e797162c71"
-  integrity sha512-O6wDT/JhrHU5p4/qbw9Y2BwwGjPs5Ko0BCi6K5tGWTj2nEu4TQVZyx5l6N8yvzuQsqWLxDqpcadezPwcn2J/pA==
+"@ffxiv-teamcraft/pcap-ffxiv@0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/pcap-ffxiv/-/pcap-ffxiv-0.11.0.tgz#d3012b80cde68295afd5a928f2771259210996e5"
+  integrity sha512-UVXBUw7qZ/00gQXEg8Dii/hiYBi+TBAgBewDBuaH7pLp8QAHe+sGoGGkjBnstrm8clbMuzotts1rLG7UnZRreg==
   dependencies:
     heap-js "^2.1.5"
 
